@@ -15,18 +15,21 @@
 @property(retain) NSXPCConnection * xpcConnection;
 
 + (id)defaultManager;
++ (id)routineModeToString:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)clearRoutine;
 - (void)createConnection;
 - (void)dealloc;
-- (void)fetchAllPredictedLocationsOfInterestWithHandler:(id)arg1;
+- (void)fetchAllLocationsOfInterestWithHandler:(id)arg1;
 - (void)fetchBBPluginSupportedWithHandler:(id)arg1;
+- (void)fetchLocationsOfInterestOfType:(int)arg1 withHandler:(id)arg2;
+- (void)fetchLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 withHandler:(id)arg3;
 - (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(id)arg4;
 - (void)fetchNextPredictedLocationsOfInterestWithHandler:(id)arg1;
-- (void)fetchPredictedLocationsOfInterestOfType:(int)arg1 withHandler:(id)arg2;
-- (void)fetchPredictedLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 withHandler:(id)arg3;
+- (void)fetchPredictedLocationsOfInterestFromStartingLocationOfInterest:(id)arg1 withHandler:(id)arg2;
 - (void)fetchRoutineEnabledWithHandler:(id)arg1;
+- (void)fetchRoutineModeFromLocation:(id)arg1 withHandler:(id)arg2;
 - (void)handleDaemonStart;
 - (id)init;
 - (id)queue;
@@ -35,7 +38,6 @@
 - (void)setRoutineEnabled:(BOOL)arg1;
 - (void)setRoutineManagerProxy:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
-- (void)synchronizeDefaults;
 - (id)xpcConnection;
 
 @end

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <PLApplicationCameraViewControllerDelegate>, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<PLAlbumProtocol>, PLCameraImageWellView, PLKeepDaemonAliveAssertion, UIToolbar, UIViewController;
+@class <PLApplicationCameraViewControllerDelegate>, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<PLAlbumProtocol>, PLKeepDaemonAliveAssertion, UIToolbar, UIViewController;
 
 @interface PLApplicationCameraViewController : PLCameraViewController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLCameraPreviewWellImageChangeObserver, UINavigationControllerDelegate, PLPhotoBrowserControllerDelegate> {
     UIViewController *__cameraRollViewController;
@@ -24,7 +24,6 @@
     BOOL _isReadyToTest;
     PLKeepDaemonAliveAssertion *_keepDaemonAliveAssertion;
     NSObject<OS_dispatch_queue> *_photoStreamDispatchQueue;
-    PLCameraImageWellView *_photosButton;
     id _previewButtonAction;
     double _sessionStartTime;
     int _testPictureCounter;
@@ -84,6 +83,7 @@
 - (BOOL)_shouldShowCameraRoll;
 - (void)_startCameraPreviewWithPreviewStartedBlock:(id)arg1;
 - (void)_startPictureTestAfterSeconds:(double)arg1;
+- (id)_stringForHDRMode:(int)arg1;
 - (void)_updateVolumeButtonEventsAbility;
 - (void)animateBlurForSuspension;
 - (void)applicationDidResume;

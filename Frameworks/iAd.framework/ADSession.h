@@ -21,10 +21,12 @@
 - (void)_appWillResignActive;
 - (id)_linkedOnVersion;
 - (void)_orientationChanged;
+- (void)_remote_gatewayEnabledStationIDsDidChange:(id)arg1;
 - (void)_remote_heartbeatTokenDidChange:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
 - (void)_remote_policyEngineTestStationDescriptionsComputed:(id)arg1;
 - (id)adSpaces;
 - (BOOL)applicationCanReceiveBackgroundAds;
+- (void)determineAppInstallAttributionWithCompletionHandler:(id)arg1;
 - (id)init;
 - (void)registerAdSpace:(id)arg1;
 - (id)serverURL;

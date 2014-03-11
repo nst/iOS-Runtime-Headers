@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class <PLAssetContainerList>, NSIndexPath, NSMutableArray, PLDeletePhotosActionController, PUActivityViewController, PUAlbumListTransitionContext, PUAlbumPickerViewController, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotoSelectionManager, PUPhotosGridViewControllerSpec, PUPhotosSinglePickerViewController, PUPopoverController, PUPreheatManager, PUSessionInfo, UIActionSheet, UIBarButtonItem, UICollectionViewLayout, UICollectionViewLayout<PUGridLayoutProtocol>, UILongPressGestureRecognizer, UINavigationButton, UIView, _UIContentUnavailableView;
+@class <PLAssetContainer>, <PLAssetContainerList>, NSIndexPath, NSMutableArray, PLDeletePhotosActionController, PUActivityViewController, PUAlbumListTransitionContext, PUAlbumPickerViewController, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotoSelectionManager, PUPhotosGridViewControllerSpec, PUPhotosSinglePickerViewController, PUPopoverController, PUPreheatManager, PUSessionInfo, UIActionSheet, UIBarButtonItem, UICollectionViewLayout, UICollectionViewLayout<PUGridLayoutProtocol>, UILongPressGestureRecognizer, UINavigationButton, UIView, _UIContentUnavailableView;
 
-@interface PUPhotosGridViewController : UICollectionViewController <UIPopoverControllerDelegate, PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLSlideshowSettingsViewControllerDelegate, PUCollectionViewReorderDelegate, PUActivityViewControllerDelegate, PUSessionInfoObserver, PLDeletePhotosActionControllerDelegate, UIGestureRecognizerDelegate, PLNavigableAssetContainerViewController, PLDismissableViewController, PUStackedAlbumControllerTransition> {
+@interface PUPhotosGridViewController : UICollectionViewController <UIPopoverControllerDelegate, PLAssetContainerListChangeObserver, PLAssetContainerObserver, PUCollectionViewReorderDelegate, PUSessionInfoObserver, PLDeletePhotosActionControllerDelegate, _UISettingsKeyObserver, UIGestureRecognizerDelegate, PLNavigableAssetContainerViewController, PLDismissableViewController, PUStackedAlbumControllerTransition> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -49,6 +49,8 @@
     PUPhotosGridViewControllerSpec *_gridSpec;
     BOOL _initiallyScrolledToBottom;
     BOOL _isCopyPasteIndexPathExact;
+    <PLAssetContainer> *_lastAccessedCollection;
+    int _lastAccessedCollectionIndex;
     float _lastUpdateLayoutMetricsCollectionViewWidth;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UICollectionViewLayout<PUGridLayoutProtocol> *_mainGridLayout;
@@ -64,6 +66,8 @@
     UINavigationButton *_selectionButton;
     PUSessionInfo *_sessionInfo;
     UIBarButtonItem *_shareToolbarButton;
+    UIBarButtonItem *_slideshowButton;
+    UIBarButtonItem *_slideshowButtonSpacer;
 }
 
 @property(setter=_setActivityViewController:,retain) PUActivityViewController * _activityViewController;
@@ -94,8 +98,6 @@
 @property(setter=_setPhotoSelectionManager:,retain) PUPhotoSelectionManager * photoSelectionManager;
 @property(retain) PUSessionInfo * sessionInfo;
 
-+ (void)initialize;
-
 - (void).cxx_destruct;
 - (id)_activityViewController;
 - (void)_addButtonPressed:(id)arg1;
@@ -106,6 +108,7 @@
 - (id)_assetsAllowingDelete:(BOOL)arg1 orRemove:(BOOL)arg2 fromAssets:(id)arg3;
 - (id)_assetsAllowingEditOperation:(int)arg1 fromAssets:(id)arg2;
 - (id)_assetsAtIndexPaths:(id)arg1;
+- (id)_avalancheStackImageForAsset:(id)arg1 partialStack:(BOOL)arg2;
 - (id)_barButtonSpacerWithWidth:(float)arg1;
 - (void)_beginInteractiveNavigationForItemAtIndexPath:(id)arg1;
 - (void)_beginInteractiveStackCollapse:(id)arg1;
@@ -135,7 +138,6 @@
 - (void)_navigateToPhotoAtIndexPath:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (id)_newEditActionItemsWithWideSpacing:(BOOL)arg1;
 - (id)_pickerBannerView;
-- (id)_pl_debugItems;
 - (unsigned int)_previousCollectionsCount;
 - (struct CGPoint { float x1; float x2; })_previousPreheatContentOffset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
@@ -166,6 +168,7 @@
 - (id)_shareableAssetsFromAssets:(id)arg1;
 - (id)_sharingPhotosPickerViewController;
 - (void)_slideshowButtonPressed:(id)arg1;
+- (void)_startSlideshowWithSettings:(id)arg1;
 - (void)_updateCollectionViewMultipleSelection;
 - (void)_updateEmptyPlaceholderAnimated:(BOOL)arg1;
 - (void)_updateGlobalFooterVisibility;
@@ -185,14 +188,14 @@
 - (id)assetAtIndexPath:(id)arg1;
 - (void)assetContainerDidChange:(id)arg1;
 - (void)assetContainerListDidChange:(id)arg1;
-- (void)attachProtoSettingsListener;
+- (id)assetIndexPathForPhotoToken:(id)arg1;
 - (id)bestReferenceItemIndexPath;
 - (BOOL)canAddToOtherAlbumContent;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canBeginStackCollapseTransition;
-- (BOOL)canBeginZoomIntoPhotoTransition;
 - (BOOL)canDeleteContent;
 - (BOOL)canDisplayEditButton;
+- (BOOL)canNavigateToPhotoInteractively:(BOOL)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (int)cellFillMode;
 - (BOOL)collectionView:(id)arg1 canReorderItemAtIndexPath:(id)arg2;
@@ -225,6 +228,7 @@
 - (void)handleLongPressGesture:(id)arg1;
 - (void)handleNavigateToAsset:(id)arg1 inContainer:(id)arg2;
 - (void)handleTransitionFade:(BOOL)arg1 animate:(BOOL)arg2;
+- (id)indexPathForAsset:(id)arg1 hintCollection:(id)arg2 hintIndexPath:(id)arg3;
 - (id)indexPathForAsset:(id)arg1 inCollection:(id)arg2;
 - (id)indexPathsForPreheatingInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithCollectionViewLayout:(id)arg1;
@@ -257,16 +261,11 @@
 - (id)preheatManager;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)processPendingModelChangeNotifications;
-- (void)protoSettingsDidChange:(id)arg1;
-- (BOOL)protoSettingsEnabled;
-- (void)protoSettingsPressed:(id)arg1;
+- (id)pu_debugRows;
 - (BOOL)pu_handleSecondTabTap;
 - (BOOL)pu_wantsTabBarVisible;
 - (BOOL)pu_wantsToolbarVisible;
-- (void)removeProtoSettingsListener;
 - (void)resetPreheating;
-- (void)saveSlideshowSettings:(id)arg1;
-- (id)savedSlideshowSettings;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)sectionedGridLayout:(id)arg1 didPrepareTransitionIsAppearing:(BOOL)arg2;
 - (id)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(id)arg1;
@@ -294,15 +293,11 @@
 - (void)setPhotoCollections:(id)arg1;
 - (void)setSelected:(BOOL)arg1 itemsAtIndexes:(id)arg2 inSection:(int)arg3 animated:(BOOL)arg4;
 - (void)setSessionInfo:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldPerformFullReloadForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;
 - (BOOL)shouldShowTabBar;
 - (BOOL)shouldShowToolbar;
-- (id)slideshowSettingsViewController:(id)arg1 alternateTransitionLocalizationsForAirPlayRoute:(id)arg2;
-- (void)slideshowSettingsViewController:(id)arg1 didSelectAirPlayRoute:(id)arg2;
-- (id)slideshowSettingsViewController:(id)arg1 slideshowSettingsForAirPlayRoute:(id)arg2;
-- (id)slideshowSettingsViewController:(id)arg1 transitionKeysForAirPlayRoute:(id)arg2;
-- (void)slideshowSettingsViewControllerPlayButtonWasPressed:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)uninstallGestureRecognizers;
 - (void)updateInterfaceForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;

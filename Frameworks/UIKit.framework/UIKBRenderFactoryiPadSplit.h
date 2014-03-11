@@ -23,6 +23,7 @@
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;
 - (struct CGPoint { float x1; float x2; })shiftKeyOffset;
+- (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (float)skinnyKeyThreshold;
 - (float)symbolFrameInset;

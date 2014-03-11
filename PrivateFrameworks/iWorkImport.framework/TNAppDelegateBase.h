@@ -30,6 +30,7 @@
 - (void)registerClassTypeMappings;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
+- (id)templateSFFDocumentType;
 - (id)templateTypeDisplayName;
 - (void)wakeUpDownloadManager;
 

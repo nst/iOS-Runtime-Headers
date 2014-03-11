@@ -99,6 +99,7 @@
 - (void)callAuthHandlerWithError:(id)arg1;
 - (BOOL)canChangePhoto;
 - (void)cancelAuthentication;
+- (void)completeAuthenticationWithResponse:(id)arg1 error:(id)arg2;
 - (id)currentAlert;
 - (id)currentFriendRequestInvocation;
 - (void)daemonCancelledGameInvite:(id)arg1;

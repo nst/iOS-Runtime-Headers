@@ -60,7 +60,7 @@
 - (void)_setEntryField:(id)arg1;
 - (void)_setLegibilitySettings:(id)arg1;
 - (void)_setLuminosityBoost:(float)arg1;
-- (void)_updateStatusText:(id)arg1 animated:(BOOL)arg2;
+- (void)_updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
 - (void)_updateStatusTextForBioEvent:(unsigned int)arg1 animated:(BOOL)arg2;
 - (BOOL)_wantsBiometricAuthentication;
 - (float)backgroundAlpha;
@@ -97,5 +97,6 @@
 - (BOOL)showsEmergencyCallButton;
 - (BOOL)showsStatusField;
 - (int)style;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

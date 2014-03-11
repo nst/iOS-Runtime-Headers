@@ -9,7 +9,7 @@
         float strokeWidthRegularPoints; 
         double halfWidthRegularPoints; 
         double halfWidthRegularUnselectedScale; 
-        double halfWidthRealisticMeters; 
+        double halfWidthRealistic; 
         struct _VGLColor { 
             float r; 
             float g; 

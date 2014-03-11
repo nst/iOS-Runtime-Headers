@@ -6,17 +6,17 @@
    See Warning(s) below.
  */
 
-@class AVCaptureConnection, AVCaptureSession, MPAudioDeviceController, NSDate, NSMutableArray, NSString, RCAudioInputWaveformDataSource, RCCaptureAudioFileOutput, RCSavedRecording;
+@class AVCaptureConnection, MPAVRoutingController, NSDate, NSMutableArray, NSString, RCAudioInputWaveformDataSource, RCCaptureAudioFileOutput, RCSavedRecording;
 
-@interface RCAudioInputDevice : NSObject <RCCaptureAudioFileOutputRecordingDelegate> {
+@interface RCAudioInputDevice : NSObject <RCCaptureAudioFileOutputRecordingDelegate, MPAVRoutingControllerDelegate> {
     RCSavedRecording *_activeRecording;
+    int _activeRecordingLockFileFD;
+    BOOL _activeRecordingShouldBeDeleted;
     RCAudioInputWaveformDataSource *_activeWaveformDataSource;
-    MPAudioDeviceController *_audioDeviceController;
     BOOL _audioInputAvailable;
     unsigned int _backgroundTaskIdentifier;
     RCCaptureAudioFileOutput *_captureAudioOutput;
     AVCaptureConnection *_captureConnection;
-    AVCaptureSession *_captureSession;
     BOOL _handlingRecordingDidFinishCapturing;
     BOOL _isInterrupted;
     BOOL _lastRecordingDidStop;
@@ -25,9 +25,8 @@
     int _prepareToRecordState;
     BOOL _recordingSampleBuffers;
     NSDate *_recordingStartDate;
+    MPAVRoutingController *_routingController;
     id _sampleBufferHandlerBlock;
-    BOOL _sessionFailedToStart;
-    BOOL _waitingForCaptureSessionDidStart;
 }
 
 @property(readonly) RCSavedRecording * activeRecording;
@@ -46,34 +45,30 @@
 
 - (void).cxx_destruct;
 - (void)_applicationWillTerminate:(id)arg1;
-- (BOOL)_attachCaptureSessionDeviceInput;
+- (BOOL)_attachInputToCaptureSession:(id)arg1;
 - (void)_availableModesDidChange:(id)arg1;
-- (void)_beginRecordingWithIntermediateRecordingURL:(id)arg1;
+- (void)_beginRecordingWithIntermediateRecordingURL:(id)arg1 creationDate:(id)arg2;
 - (void)_closeCaptureSession;
-- (void)_handleRecordingDidFinishCapturingWithError:(id)arg1;
+- (void)_handleRecordingCaptureSessionDidError:(id)arg1;
+- (void)_handleRecordingDidFinalizeWritingOutputToURL:(id)arg1;
 - (id)_init;
-- (void)_interruptionDidBegin:(id)arg1;
 - (void)_onMainQueueHandleRecordingDidFinishCapturingAfterCompletionSound;
 - (BOOL)_openCaptureSessionAndWaitUntilRunning;
-- (void)_registerForCatpureSessionNotifications;
-- (void)_sessionDidStartRunning:(id)arg1;
-- (void)_sessionDidStopRunning:(id)arg1;
-- (void)_sessionErrored:(id)arg1;
 - (void)_setDisableSBMediaHUD:(BOOL)arg1;
 - (void)_setPostPrepareRequestedState:(int)arg1;
-- (void)_unregisterForCatpureSessionNotifications;
 - (void)_updateAudioInputAvailable;
 - (id)activeRecording;
 - (id)activeWaveformDataSource;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (BOOL)audioInputAvailable;
 - (void)beginRecordingWithCustomRecordingLabel:(id)arg1 prepareFinishedCompletionBlock:(id)arg2;
+- (void)captureOutput:(id)arg1 captureSessionDidTerminateWithError:(id)arg2;
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 error:(id)arg3;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
 - (void)captureOutput:(id)arg1 didPauseRecordingToOutputFileAtURL:(id)arg2;
 - (void)captureOutput:(id)arg1 didResumeRecordingToOutputFileAtURL:(id)arg2;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2;
 - (void)dealloc;
+- (void)deleteActiveRecording;
 - (double)elapsedRecordingTime;
 - (void)endRecording;
 - (id)init;
@@ -85,6 +80,7 @@
 - (void)pauseRecording;
 - (id)recordingStartDate;
 - (void)resumeRecording;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (id)sampleBufferHandlerBlock;
 - (void)setRecordingStartDate:(id)arg1;
 - (void)setSampleBufferHandlerBlock:(id)arg1;

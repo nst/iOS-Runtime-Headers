@@ -26,10 +26,12 @@
 - (void)notifyOnNextUserInteraction;
 - (void)pulseHelpButton;
 - (void)serviceBulletinWithIdentifier:(id)arg1 replyHandler:(id)arg2;
-- (void)serviceDidFinishRequest;
+- (void)serviceDidDismissBugReporter;
+- (void)serviceDidPresentBugReporter;
 - (void)serviceDidReadBulletinWithIdentifier:(id)arg1;
 - (void)serviceLaunchApplicationWithBundleIdentifier:(id)arg1 withURL:(id)arg2 replyHandler:(id)arg3;
-- (void)serviceOpenURL:(id)arg1 replyHandler:(id)arg2;
+- (void)serviceOpenURL:(id)arg1 appBundleID:(id)arg2 allowSiriDismissal:(BOOL)arg3;
+- (void)serviceOpenURL:(id)arg1 delaySessionEndForTTS:(BOOL)arg2 replyHandler:(id)arg3;
 - (void)serviceRequestsDismissal;
 - (void)serviceStartGuidedAccess;
 - (void)serviceStartRequestWithOptions:(id)arg1;
@@ -44,6 +46,7 @@
 - (void)setHelpButtonEmphasized:(BOOL)arg1;
 - (void)setRequestOptions:(id)arg1;
 - (void)setSession:(id)arg1;
+- (void)setSpeechSynthesis:(id)arg1;
 - (void)setStatusBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
 - (void)setStatusViewDisabled:(BOOL)arg1;
@@ -57,6 +60,7 @@
 - (void)siriWillActivateFromSource:(int)arg1;
 - (void)siriWillHidePasscodeUnlock;
 - (void)siriWillShowPasscodeUnlock;
+- (id)speechSynthesisDelegate;
 - (void)userInteractionDidOccur;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

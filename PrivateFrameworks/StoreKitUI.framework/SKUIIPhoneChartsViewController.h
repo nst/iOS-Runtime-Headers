@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIChartsViewControllerDelegate>, NSArray, NSMutableDictionary, NSOperationQueue, SKUIClientContext, SKUIResourceLoader, SKUISegmentedTableHeaderView, SUSegmentedControl;
+@class <SKUIChartsViewControllerDelegate>, NSArray, NSMutableDictionary, NSOperationQueue, SKUIClientContext, SKUIResourceLoader, SKUISegmentedTableHeaderView, UISegmentedControl;
 
 @interface SKUIIPhoneChartsViewController : UIViewController <SKUIItemListTableDelegate> {
     struct UIEdgeInsets { 
@@ -19,7 +19,7 @@
     BOOL _delegateWantsWillDisplay;
     SKUISegmentedTableHeaderView *_headerView;
     NSOperationQueue *_operationQueue;
-    SUSegmentedControl *_segmentedControl;
+    UISegmentedControl *_segmentedControl;
     int _selectedChartIndex;
 }
 
@@ -58,5 +58,6 @@
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

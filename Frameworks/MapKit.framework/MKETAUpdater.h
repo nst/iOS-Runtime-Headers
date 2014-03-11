@@ -2,10 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class <MKETAUpdaterDelegate>, GEOClientETATrafficUpdateRequest, GEOLocation, GEORoute, GEORouteAttributes, GEOWaypoint, NSData, NSTimer, VKAttributedRouteMatch;
 
 @interface MKETAUpdater : NSObject {
@@ -17,14 +13,12 @@
     NSTimer *_etaIdleTimer;
     int _etaState;
     double _lastETARequestTime;
-    id _receivedResponseHandler;
     double _requestInterval;
     GEORoute *_route;
     GEORouteAttributes *_routeAttributes;
     VKAttributedRouteMatch *_routeMatch;
     BOOL _shouldUseConditionalRequest;
     GEOLocation *_userLocation;
-    id _willSendRequestHandler;
 }
 
 @property BOOL allowRequests;
@@ -32,19 +26,18 @@
 @property <MKETAUpdaterDelegate> * delegate;
 @property(retain) GEOWaypoint * destination;
 @property(retain) NSData * directionsResponseID;
-@property(copy) id receivedResponseHandler;
 @property double requestInterval;
 @property(retain) GEORoute * route;
 @property(retain) GEORouteAttributes * routeAttributes;
 @property(retain) VKAttributedRouteMatch * routeMatch;
 @property BOOL shouldUseConditionalRequest;
 @property(retain) GEOLocation * userLocation;
-@property(copy) id willSendRequestHandler;
 
+- (void).cxx_destruct;
 - (void)_addCurrentRouteToETARequest:(id)arg1 currentStepIndex:(unsigned int)arg2 percentOfCurrentStepRemaining:(double)arg3;
 - (void)_clearCurrentETARequest;
 - (void)_clearTimer;
-- (BOOL)_handleETARequestFinished:(id)arg1 currentStep:(id)arg2 percentOfCurrentStepRemaining:(double)arg3;
+- (void)_continueUpdateRequests;
 - (BOOL)_sendETARequest:(id)arg1 isUpdate:(BOOL)arg2;
 - (BOOL)_shouldStartConditionalETARequest;
 - (void)_startConditionalConnectionETARequest;
@@ -57,7 +50,6 @@
 - (id)directionsResponseID;
 - (id)init;
 - (id)initWithRoute:(id)arg1 destination:(id)arg2 routeAttributes:(id)arg3;
-- (id)receivedResponseHandler;
 - (double)requestInterval;
 - (void)reset;
 - (id)route;
@@ -68,19 +60,16 @@
 - (void)setDestination:(id)arg1;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)setEtaState:(int)arg1;
-- (void)setReceivedResponseHandler:(id)arg1;
 - (void)setRequestInterval:(double)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)setRouteMatch:(id)arg1;
 - (void)setShouldUseConditionalRequest:(BOOL)arg1;
 - (void)setUserLocation:(id)arg1;
-- (void)setWillSendRequestHandler:(id)arg1;
 - (BOOL)shouldUseConditionalRequest;
 - (void)startUpdateRequests;
-- (void)startUpdateRequestsWithRequestHandler:(id)arg1 responseHandler:(id)arg2;
 - (void)stopUpdateRequests;
+- (BOOL)updateRouteWithETATrafficUpdateResponse:(id)arg1;
 - (id)userLocation;
-- (id)willSendRequestHandler;
 
 @end

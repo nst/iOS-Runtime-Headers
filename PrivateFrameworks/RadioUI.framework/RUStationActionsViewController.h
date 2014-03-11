@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUStationActionsViewControllerDelegate>, MPRadioAVItem, NSArray, NSMutableArray, RUStationTuningView, RadioStation, UILabel, UISwitch, UITableView, UITableViewCell, UIView, _RUStationTrackInfoView;
+@class <RUStationActionsViewControllerDelegate>, MPAVItem, NSArray, NSMutableArray, RUInnerShadowHeaderFooterView, RUStationTuningView, RadioStation, UILabel, UISwitch, UITableView, UITableViewCell, _RUStationTrackInfoView;
 
 @interface RUStationActionsViewController : UIViewController <_RUStationTrackInfoViewDelegate, MCProfileConnectionObserver, SKStoreProductViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UILabel *_copyrightLabel;
     int _currentAction;
     <RUStationActionsViewControllerDelegate> *_delegate;
     BOOL _isProfileExplicitContentRestricted;
-    MPRadioAVItem *_item;
+    MPAVItem *_item;
     UILabel *_navigationTitleLabel;
     UISwitch *_playExplicitTracksSwitch;
     NSArray *_playbackQueue;
@@ -18,23 +18,24 @@
     UITableViewCell *_stationTuningCell;
     RUStationTuningView *_stationTuningView;
     UITableView *_tableView;
-    UIView *_topShadowView;
+    RUInnerShadowHeaderFooterView *_topShadowView;
     _RUStationTrackInfoView *_trackInfoView;
 }
 
 @property <RUStationActionsViewControllerDelegate> * delegate;
-@property(readonly) MPRadioAVItem * item;
+@property(readonly) MPAVItem * item;
 @property(readonly) RadioStation * station;
 
 - (void).cxx_destruct;
 - (void)_addDerivedStationUsingArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)_avItemStoreIDDidChangeNotification:(id)arg1;
+- (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1;
 - (id)_indexPathForStationAction:(int)arg1;
 - (void)_layoutTopShadowView;
 - (id)_newSectionHeaderWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2;
 - (id)_newShadowViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_playExplicitSwitchAction:(id)arg1;
-- (void)_radioAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_showStoreSheetAction:(id)arg1;
 - (int)_stationActionForIndexPath:(id)arg1;
@@ -65,6 +66,7 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)trackInfoViewDidTapArtwork:(id)arg1;
 - (void)viewDidLayoutSubviews;

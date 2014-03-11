@@ -43,7 +43,6 @@
 - (BOOL)isConcurrent;
 - (int)method;
 - (id)requestURLForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
-- (id)requestURLForConnection:(id)arg1;
 - (void)setBodyData:(id)arg1;
 - (void)setExcludeSessionIDFromURL:(BOOL)arg1;
 - (void)setMethod:(int)arg1;

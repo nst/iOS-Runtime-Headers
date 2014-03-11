@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollection, MPMediaLibrary, MPMediaPlaylist, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSArray, NSSet, NSString;
+@class MPMediaItemCollection, MPMediaLibrary, MPMediaPlaylist, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSArray, NSDictionary, NSSet, NSString;
 
 @interface MPMediaQuery : NSObject <NSSecureCoding, NSCopying> {
     MPMediaQueryCriteria *_criteria;
@@ -35,6 +35,7 @@
 @property(retain) MPMediaLibrary * mediaLibrary;
 @property(getter=music_playlist,readonly) MPMediaPlaylist * music_playlist;
 @property(getter=music_playlistTitle,readonly) NSString * music_playlistTitle;
+@property(getter=_orderingDirectionMappings,setter=_setOrderingDirectionMappings:,copy) NSDictionary * orderingDirectionMappings;
 @property(getter=_orderingProperties,setter=_setOrderingProperties:,copy) NSArray * orderingProperties;
 @property BOOL sortItems;
 @property(readonly) BOOL specifiesPlaylistItems;
@@ -89,7 +90,9 @@
 - (BOOL)_hasItems;
 - (BOOL)_isFilteringDisabled;
 - (id)_music_nowPlayingComparableQuery;
+- (id)_orderingDirectionMappings;
 - (id)_orderingProperties;
+- (void)_setOrderingDirectionMappings:(id)arg1;
 - (void)_setOrderingProperties:(id)arg1;
 - (BOOL)_updatePredicateForProperty:(id)arg1 withPropertyPredicate:(id)arg2;
 - (id)_valueForAggregateFunction:(id)arg1 onProperty:(id)arg2 entityType:(int)arg3;

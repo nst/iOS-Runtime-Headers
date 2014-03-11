@@ -5,8 +5,10 @@
 @class NSConditionLock, NSMutableArray;
 
 @interface MFInvocationQueue : NSObject {
+    BOOL _isForeground;
     NSMutableArray *_items;
     NSConditionLock *_lock;
+    struct __CFSet { } *_lowPriorityThreads;
     unsigned int _maxThreads;
     unsigned int _numThreads;
     int _threadPriorityTrigger;
@@ -23,8 +25,13 @@
 + (id)sharedInvocationQueue;
 + (unsigned int)totalInvocationCount;
 
+- (void)_adjustThreadPrioritiesIsForeground:(BOOL)arg1;
 - (void)_drainQueue:(id)arg1;
+- (void)_processInvocation:(id)arg1;
 - (void)addInvocation:(id)arg1;
+- (void)applicationWillResume;
+- (void)applicationWillSuspend;
+- (id)copyDiagnosticInformation;
 - (void)dealloc;
 - (void)didCancel:(id)arg1;
 - (id)init;

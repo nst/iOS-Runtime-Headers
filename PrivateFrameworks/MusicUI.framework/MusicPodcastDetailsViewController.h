@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPodcastDetailsViewController : MusicTableViewController {
+@interface MusicPodcastDetailsViewController : MusicSongsViewController {
 }
+
++ (id)actionCellConfigurationClasses;
 
 - (void)reloadData;
 

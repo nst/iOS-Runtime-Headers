@@ -28,6 +28,8 @@
 @property(getter=isSelected) BOOL selected;
 @property(retain) UIView * selectedBackgroundView;
 
++ (Class)_contentViewClass;
+
 - (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;

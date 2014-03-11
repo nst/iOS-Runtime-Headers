@@ -39,6 +39,7 @@
 - (void)didEndZooming;
 - (BOOL)i_shouldRenderStroke:(id)arg1;
 - (void)i_updateFrameRep;
+- (BOOL)isPlaceholder;
 - (id)mediaInfo;
 - (id)mediaLayout;
 - (id)newTrackerForKnob:(id)arg1;
@@ -51,6 +52,8 @@
 - (struct CGPoint { float x1; float x2; })positionOfHyperlinkKnob;
 - (void)processChangedProperty:(int)arg1;
 - (BOOL)replaceButtonContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)shouldAllowReplacementFromDrop;
+- (BOOL)shouldAllowReplacementFromPaste;
 - (BOOL)shouldCreateKnobs;
 - (BOOL)shouldShowMediaReplaceUI;
 - (void)updatePositionsOfKnobs:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSMutableDictionary, NSRunLoop, NSString, NSURL, NSURLConnection, PBDataReader;
+@class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSMutableDictionary, NSRunLoop, NSString, NSThread, NSURL, NSURLConnection, PBDataReader;
 
 @interface PBRequester : NSObject <NSURLConnectionDelegate> {
     struct { 
@@ -39,6 +39,7 @@
     int _responseStatusCode;
     NSMutableArray *_responses;
     BOOL _shouldHandleCookies;
+    NSThread *_startThread;
     unsigned long long _timeRequestSent;
     unsigned long long _timeResponseReceived;
     double _timeoutSeconds;
@@ -75,6 +76,9 @@
 - (void)_failWithError:(id)arg1;
 - (void)_failWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
 - (id)_languageLocale;
+- (void)_logErrorIfNecessary:(id)arg1;
+- (void)_logRequestsIfNecessary:(id)arg1;
+- (void)_logResponsesIfNecessary:(id)arg1;
 - (id)_osVersion;
 - (void)_removeTimeoutTimer;
 - (void)_resetTimeoutTimer;

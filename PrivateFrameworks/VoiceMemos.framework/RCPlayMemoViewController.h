@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSTimer, RCSavedRecording, UIButton;
+@class NSTimer, RCSavedRecording, UIButton, UIProgressView;
 
 @interface RCPlayMemoViewController : RCMemoPlaybackViewController <RCAVPreviewControllerObserver> {
     UIButton *_beginTrimButton;
@@ -17,20 +17,22 @@
     UIButton *_performTrimButton;
     NSTimer *_playbackTimer;
     RCSavedRecording *_savedRecording;
+    BOOL _showTrimProgress;
+    UIProgressView *_trimProgressView;
     BOOL _trimming;
     BOOL _trimmingEnabled;
-    BOOL _trimmingEnabledBeforeOverride;
 }
 
 @property(copy) id endTrimReloadDataSourceBlock;
 @property double nextStartTime;
-@property(readonly) RCSavedRecording * savedRecording;
+@property(retain) RCSavedRecording * savedRecording;
 @property(getter=isTrimming) BOOL trimming;
 @property(getter=isTrimmingEnabled) BOOL trimmingEnabled;
 
 - (void).cxx_destruct;
 - (void)_beginTrimming;
 - (void)_beginTrimmingAction;
+- (BOOL)_canTrimAsset;
 - (void)_cancelTrim;
 - (void)_deleteSelectedTimeRangeAsCopy:(BOOL)arg1 completionBlock:(id)arg2;
 - (void)_endTrimming;
@@ -42,6 +44,7 @@
 - (void)_setPlaying:(BOOL)arg1 updatePlayer:(BOOL)arg2;
 - (void)_updateInterfaceForAVPlaybackState;
 - (void)_updateTrimModeButtons;
+- (void)_updateTrimProgress:(float)arg1;
 - (void)commitEditing;
 - (void)dealloc;
 - (int)defaultControlsConfiguration;
@@ -56,15 +59,19 @@
 - (void)previewController:(id)arg1 playbackTimeDidJumpWithPreviousTime:(double)arg2;
 - (void)previewController:(id)arg1 playbackTimeDidUpdateToCurrentTime:(double)arg2;
 - (id)previewController;
+- (id)recording;
 - (id)savedRecording;
 - (void)setCurrentTime:(double)arg1;
+- (void)setDuration:(double)arg1;
 - (void)setEndTrimReloadDataSourceBlock:(id)arg1;
 - (void)setNextStartTime:(double)arg1;
 - (void)setPlaying:(BOOL)arg1;
+- (void)setSavedRecording:(id)arg1;
 - (void)setScreenUpdatesDisabled:(BOOL)arg1;
 - (void)setTrimming:(BOOL)arg1;
 - (void)setTrimmingEnabled:(BOOL)arg1;
 - (void)updateNavigationItem;
+- (void)updateTrimViews;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

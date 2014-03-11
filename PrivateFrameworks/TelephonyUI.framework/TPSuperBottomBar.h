@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPSuperBottomBarDelegateProtocol>, NSArray, NSMutableArray, TPButton, TPSlidingButton;
+@class <TPSuperBottomBarDelegateProtocol>, NSArray, NSMutableArray, TPSlidingButton, UIButton;
 
 @interface TPSuperBottomBar : UIView <TPSlidingButtonDelegateProtocol> {
     BOOL _blursBackground;
@@ -15,14 +15,18 @@
     BOOL _enabled;
     NSMutableArray *_hijackedGestureRecognizers;
     NSArray *_horizontalConstraintsForSupplementalButtons;
-    TPButton *_mainLeftButton;
-    TPButton *_mainRightButton;
-    TPButton *_sideButtonLeft;
-    TPButton *_sideButtonRight;
+    UIButton *_mainLeftButton;
+    UIButton *_mainRightButton;
+    int _orientation;
+    UIButton *_sideButtonLeft;
+    UIButton *_sideButtonRight;
     TPSlidingButton *_slidingButton;
     NSMutableArray *_stateStack;
-    TPButton *_supplementalTopLeftButton;
-    TPButton *_supplementalTopRightButton;
+    UIButton *_supplementalBottomLeftButton;
+    UIButton *_supplementalBottomRightButton;
+    UIButton *_supplementalTopLeftButton;
+    UIButton *_supplementalTopRightButton;
+    BOOL _usesLowerButtons;
 }
 
 @property BOOL blursBackground;
@@ -36,14 +40,18 @@
 @property BOOL enabled;
 @property(retain) NSMutableArray * hijackedGestureRecognizers;
 @property(retain) NSArray * horizontalConstraintsForSupplementalButtons;
-@property(retain) TPButton * mainLeftButton;
-@property(retain) TPButton * mainRightButton;
-@property(retain) TPButton * sideButtonLeft;
-@property(retain) TPButton * sideButtonRight;
+@property(retain) UIButton * mainLeftButton;
+@property(retain) UIButton * mainRightButton;
+@property int orientation;
+@property(retain) UIButton * sideButtonLeft;
+@property(retain) UIButton * sideButtonRight;
 @property(retain) TPSlidingButton * slidingButton;
 @property(retain) NSMutableArray * stateStack;
-@property(retain) TPButton * supplementalTopLeftButton;
-@property(retain) TPButton * supplementalTopRightButton;
+@property(retain) UIButton * supplementalBottomLeftButton;
+@property(retain) UIButton * supplementalBottomRightButton;
+@property(retain) UIButton * supplementalTopLeftButton;
+@property(retain) UIButton * supplementalTopRightButton;
+@property BOOL usesLowerButtons;
 
 + (float)defaultBottomMargin;
 + (float)defaultInterButtonSpacing;
@@ -55,12 +63,16 @@
 - (id)_horizontalConstraintsForSupplementalButtonsUsingLabels:(id)arg1;
 - (void)_updateHorizontalConstraintsForSupplementalButtons;
 - (void)addSubview:(id)arg1;
-- (void)animateFromIncomingCallStateToFaceTimeInCallStateWithCompletion:(id)arg1;
+- (void)animateFromIncomingCallStateToFaceTimeInCallState:(int)arg1 withCompletion:(id)arg2;
 - (void)animateFromIncomingCallStateToInCallStateWithCompletion:(id)arg1;
+- (void)animateFromOutgoingStateToInCallStateWithCompletion:(id)arg1;
 - (BOOL)animateFromState:(int)arg1 toState:(int)arg2 completion:(id)arg3;
+- (void)animateInSupplementalBottomRightButton:(id)arg1 WithCompletion:(id)arg2;
 - (void)animateOutLeftAndRightMainButtonsAndAddNewMainButton:(id)arg1 completion:(id)arg2;
 - (void)animateOutMainButtonAndAddNewLeftButton:(id)arg1 newRightButton:(id)arg2 completion:(id)arg3;
-- (void)animateOutRightMainButtonWithCompletion:(id)arg1;
+- (void)animateOutMainButtonAndAddNewLeftButton:(id)arg1 newSupplementalBottomRightButton:(id)arg2 completion:(id)arg3;
+- (void)animateOutSupplementalBottomLeftButtonWithCompletion:(id)arg1;
+- (void)animateOutSupplementalBottomRightButtonWithCompletion:(id)arg1;
 - (BOOL)blursBackground;
 - (float)bottomMargin;
 - (id)buttonLayoutConstraints;
@@ -76,6 +88,7 @@
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })effectiveSize;
 - (BOOL)enabled;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForControlWithActionType:(int)arg1;
 - (id)hijackedGestureRecognizers;
 - (id)horizontalConstraintsForSupplementalButtons;
 - (id)init;
@@ -83,8 +96,9 @@
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)mainLeftButton;
 - (id)mainRightButton;
-- (id)makeButtonWithType:(int)arg1 title:(id)arg2 image:(id)arg3 color:(int)arg4 font:(id)arg5 fontColor:(id)arg6;
+- (id)makeButtonWithType:(int)arg1 title:(id)arg2 image:(id)arg3 color:(id)arg4 font:(id)arg5 fontColor:(id)arg6;
 - (id)makeSlidingButtonWithType:(int)arg1;
+- (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)popStateAnimated:(BOOL)arg1 animationCompletionBlock:(id)arg2;
 - (void)prepareButtonsForAnimationBegin;
@@ -109,19 +123,28 @@
 - (void)setHorizontalConstraintsForSupplementalButtons:(id)arg1;
 - (void)setMainLeftButton:(id)arg1;
 - (void)setMainRightButton:(id)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setSideButtonLeft:(id)arg1;
 - (void)setSideButtonRight:(id)arg1;
 - (void)setSlidingButton:(id)arg1;
 - (void)setStateStack:(id)arg1;
+- (void)setSupplementalBottomLeftButton:(id)arg1;
+- (void)setSupplementalBottomRightButton:(id)arg1;
 - (void)setSupplementalTopLeftButton:(id)arg1;
 - (void)setSupplementalTopRightButton:(id)arg1;
+- (void)setUsesLowerButtons:(BOOL)arg1;
+- (void)shrinkButtonFontSizesIfNecessary;
 - (id)sideButtonLeft;
 - (id)sideButtonRight;
 - (void)slidingButton:(id)arg1 didSlideToProportion:(float)arg2;
 - (id)slidingButton;
+- (void)slidingButtonDidFinishSlide;
 - (id)stateStack;
+- (id)supplementalBottomLeftButton;
+- (id)supplementalBottomRightButton;
 - (id)supplementalTopLeftButton;
 - (id)supplementalTopRightButton;
+- (BOOL)usesLowerButtons;
 - (id)viewLabels;
 
 @end

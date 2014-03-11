@@ -7,6 +7,7 @@
 @interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <UITextFieldDelegate> {
     unsigned int _showsLocation : 1;
     UITableViewCell *_locationCell;
+    BOOL _locationModified;
     UITableViewCell *_titleCell;
 }
 

@@ -39,6 +39,7 @@
 
 @property float frictionTorque;
 @property float lowerAngleLimit;
+@property float rotationSpeed;
 @property BOOL shouldEnableLimits;
 @property float upperAngleLimit;
 
@@ -53,8 +54,10 @@
 - (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
 - (id)initWithCoder:(id)arg1;
 - (float)lowerAngleLimit;
+- (float)rotationSpeed;
 - (void)setFrictionTorque:(float)arg1;
 - (void)setLowerAngleLimit:(float)arg1;
+- (void)setRotationSpeed:(float)arg1;
 - (void)setShouldEnableLimits:(BOOL)arg1;
 - (void)setUpperAngleLimit:(float)arg1;
 - (void)set_joint:(struct b2Joint { int (**x1)(); int x2; struct b2Joint {} *x3; struct b2Joint {} *x4; struct b2JointEdge { struct b2Body {} *x_5_1_1; struct b2Joint {} *x_5_1_2; struct b2JointEdge {} *x_5_1_3; struct b2JointEdge {} *x_5_1_4; } x5; struct b2JointEdge { struct b2Body {} *x_6_1_1; struct b2Joint {} *x_6_1_2; struct b2JointEdge {} *x_6_1_3; struct b2JointEdge {} *x_6_1_4; } x6; struct b2Body {} *x7; struct b2Body {} *x8; boolx9; boolx10; void *x11; }*)arg1;

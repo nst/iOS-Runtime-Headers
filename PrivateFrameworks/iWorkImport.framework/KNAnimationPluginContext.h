@@ -8,6 +8,7 @@
     KNAnimatedBuild *_animatedBuild;
     unsigned int _direction;
     double _duration;
+    BOOL _isWarmingUp;
     NSArray *_magicMoveMatches;
     double _percent;
     int _rendererType;
@@ -22,6 +23,7 @@
 @property(readonly) BOOL isFrameRenderer;
 @property(readonly) BOOL isMagicMove;
 @property(readonly) BOOL isTransition;
+@property BOOL isWarmingUp;
 @property NSArray * magicMoveMatches;
 @property double percent;
 @property int rendererType;
@@ -36,12 +38,14 @@
 - (BOOL)isFrameRenderer;
 - (BOOL)isMagicMove;
 - (BOOL)isTransition;
+- (BOOL)isWarmingUp;
 - (id)magicMoveMatches;
 - (double)percent;
 - (int)rendererType;
 - (void)setAnimatedBuild:(id)arg1;
 - (void)setDirection:(unsigned int)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setIsWarmingUp:(BOOL)arg1;
 - (void)setMagicMoveMatches:(id)arg1;
 - (void)setPercent:(double)arg1;
 - (void)setRendererType:(int)arg1;

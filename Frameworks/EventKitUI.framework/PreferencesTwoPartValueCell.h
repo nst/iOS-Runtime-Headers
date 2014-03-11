@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)_layoutSubviewsCore;
 - (void)checkValueWidths;
+- (id)description;
 - (void)layoutSubviews;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
 - (void)setShortener:(id)arg1;

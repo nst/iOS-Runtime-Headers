@@ -19,14 +19,15 @@
 
 @property BOOL allowDatelineWraparound;
 @property(readonly) double altitude;
-@property(retain) NSArray * alwaysVisibleTrafficIncidents;
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
 @property int annotationTrackingZoomStyle;
 @property struct { double x1; double x2; double x3; } centerCoordinate;
+@property BOOL debugDynamicMapModesEnabled;
 @property(retain) VKCamera * defaultTrackingCamera;
 @property <VKInteractiveMapDelegate> * delegate;
 @property BOOL dynamicMapModesEnabled;
 @property(readonly) VKAnchorWrapper * externalAnchors;
+@property(retain) NSArray * externalTrafficIncidents;
 @property(retain) VKPolylineOverlayPainter * focusedLabelsPolylinePainter;
 @property(getter=isFullyDrawn,readonly) BOOL fullyDrawn;
 @property(getter=isFullyPitched,readonly) BOOL fullyPitched;
@@ -46,6 +47,7 @@
 @property(readonly) double presentationYaw;
 @property <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
 @property(retain) <VKRoutePreloadSession> * routePreloadSession;
+@property struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
 @property int shieldIdiom;
 @property int shieldSize;
 @property BOOL shouldLoadFallbackTiles;
@@ -66,10 +68,12 @@
 @property(readonly) NSArray * visibleTileSets;
 @property(readonly) double yaw;
 
-+ (BOOL)supportsMapType:(int)arg1;
++ (BOOL)supportsMapType:(int)arg1 scale:(int)arg2;
 
 - (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })_centerScreenPoint;
+- (void)_resetMaximumZoomLevel;
+- (void)_setMaximumZoomLevel:(double)arg1;
 - (void)_setStyleTransitionProgress:(float)arg1 targetStyle:(int)arg2 step:(int)arg3;
 - (float)_styleTransitionProgress;
 - (void)_updateViewTransform;
@@ -80,7 +84,6 @@
 - (void)addRasterOverlay:(id)arg1;
 - (BOOL)allowDatelineWraparound;
 - (double)altitude;
-- (id)alwaysVisibleTrafficIncidents;
 - (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
 - (id)annotationCoordinateTest;
 - (id)annotationMarkerDeselectionCallback;
@@ -90,13 +93,17 @@
 - (int)annotationTrackingZoomStyle;
 - (id)attributionsForCurrentRegion;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
+- (void)cameraController:(id)arg1 canZoomInDidChange:(BOOL)arg2;
+- (void)cameraController:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
+- (void)cameraController:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
 - (void)cameraController:(id)arg1 pouncingToCameraPosition:(struct VKPoint { double x1; double x2; double x3; })arg2 orientation:(const struct { double x1[4][4]; }*)arg3;
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
+- (void)cameraController:(id)arg1 willChangeRegionAnimated:(BOOL)arg2;
 - (void)cameraControllerDidChangeCameraState:(id)arg1;
-- (void)cameraControllerDidStopRegionAnimation:(id)arg1 completed:(BOOL)arg2;
-- (void)cameraControllerWillStartRegionAnimation:(id)arg1;
 - (BOOL)canEnter3DMode;
+- (BOOL)canZoomInForTileSize:(int)arg1;
+- (BOOL)canZoomOutForTileSize:(int)arg1;
 - (struct { double x1; double x2; double x3; })centerCoordinate;
 - (void)clearScene;
 - (id)consoleString:(BOOL)arg1;
@@ -108,7 +115,9 @@
 - (BOOL)currentSceneRequiresMSAA;
 - (double)currentZoomLevel;
 - (BOOL)currentZoomLevelAllowsRotation;
+- (double)currentZoomLevelForTileSize:(int)arg1;
 - (void)dealloc;
+- (BOOL)debugDynamicMapModesEnabled;
 - (void)debugHighlightLabelAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)defaultTrackingCamera;
 - (id)delegate;
@@ -127,6 +136,7 @@
 - (void)enter3DMode;
 - (void)exit3DMode;
 - (id)externalAnchors;
+- (id)externalTrafficIncidents;
 - (id)focusedLabelsPolylinePainter;
 - (void)forceSceneLoad;
 - (void)goToTileX:(int)arg1 Y:(int)arg2 Z:(int)arg3 tileSize:(int)arg4;
@@ -149,6 +159,7 @@
 - (id)map;
 - (void)mapModel:(id)arg1 didAnimateInAnnotationMarkers:(id)arg2;
 - (void)mapModel:(id)arg1 didFinishAddingAnnotationMarkers:(id)arg2;
+- (void)mapModel:(id)arg1 didUpdateNavigationPuckSize:(float)arg2;
 - (void)mapModel:(id)arg1 needsPanByOffset:(struct CGPoint { float x1; float x2; })arg2 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg3 animated:(BOOL)arg4 duration:(double)arg5 completionHandler:(id)arg6;
 - (id)mapModel:(id)arg1 painterForOverlay:(id)arg2;
 - (void)mapModel:(id)arg1 selectedLabelMarkerWillDisappear:(id)arg2;
@@ -167,11 +178,14 @@
 - (id)mapRegionOfInterest;
 - (int)mapType;
 - (double)maximumZoomLevel;
+- (double)maximumZoomLevelForTileSize:(int)arg1;
 - (double)minimumZoomLevel;
+- (double)minimumZoomLevelForTileSize:(int)arg1;
 - (id)navTileSource;
 - (int)navigationShieldSize;
 - (id)overlays;
 - (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id)arg5;
+- (void)pauseTracking;
 - (id)persistentOverlays;
 - (double)pitch;
 - (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1;
@@ -190,27 +204,30 @@
 - (BOOL)restoreViewportFromInfo:(id)arg1;
 - (id)routeLineSplitAnnotation;
 - (id)routePreloadSession;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeUserOffset;
 - (struct VKPoint { double x1; double x2; double x3; })screenPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)selectAnnotationMarker:(id)arg1;
 - (void)selectLabelMarker:(id)arg1;
 - (id)selectedAnnotationMarker;
 - (id)selectedLabelMarker;
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
-- (void)setAlwaysVisibleTrafficIncidents:(id)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
 - (void)setContentsScale:(float)arg1;
 - (void)setCurrentLocationText:(id)arg1;
+- (void)setDebugDynamicMapModesEnabled:(BOOL)arg1;
 - (void)setDefaultTrackingCamera:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredMapMode:(int)arg1 immediate:(BOOL)arg2;
 - (void)setDynamicMapModesEnabled:(BOOL)arg1;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setExternalTrafficIncidents:(id)arg1;
 - (void)setFocusedLabelsPolylinePainter:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setIsPitchable:(BOOL)arg1;
@@ -223,7 +240,6 @@
 - (void)setMapRegion:(id)arg1;
 - (void)setMapType:(int)arg1;
 - (void)setNavigationShieldSize:(int)arg1;
-- (void)setPuckHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setRouteLineSplitAnnotation:(id)arg1;
 - (void)setRoutePreloadSession:(id)arg1;
 - (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
@@ -274,8 +290,11 @@
 - (void)stylesheetAnimationDidProgress:(float)arg1;
 - (void)stylesheetAnimationWillStartFromStyle:(int)arg1 toStyle:(int)arg2;
 - (int)targetDisplay;
+- (double)topDownMinimumZoomLevelForTileSize:(int)arg1;
 - (id)trackingAnnotation;
 - (int)trackingCameraPanStyle;
+- (BOOL)trackingCanZoomIn;
+- (BOOL)trackingCanZoomOut;
 - (double)trackingZoomScale;
 - (BOOL)trafficEnabled;
 - (void)transferCamera:(id)arg1;
@@ -293,6 +312,7 @@
 - (id)visibleTileSets;
 - (double)yaw;
 - (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
+- (double)zoomLevelAdjustmentForTileSize:(int)arg1;
 - (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

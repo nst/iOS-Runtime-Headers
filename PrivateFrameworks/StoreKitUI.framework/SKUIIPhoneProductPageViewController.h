@@ -56,6 +56,7 @@
 - (void)_setHeaderPositionForChildViewController:(id)arg1;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setProductPage:(id)arg1 error:(id)arg2;
+- (void)_setSectionIndexWithFragment:(int)arg1;
 - (void)_shareButtonAction:(id)arg1;
 - (void)_showActivityViewController;
 - (void)_showError:(id)arg1;
@@ -81,6 +82,7 @@
 - (void)productPageChildViewControllerDidLoad:(id)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
 - (void)productPageChildViewControllerDidScroll:(id)arg1;
+- (void)productPageHeaderView:(id)arg1 didReloadItemOffer:(id)arg2;
 - (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(int)arg2;
 - (void)productPageHeaderView:(id)arg1 didSelectURL:(id)arg2;
 - (void)productViewControllerDidFinish:(id)arg1;

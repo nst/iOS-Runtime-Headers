@@ -74,6 +74,8 @@
 - (id)objectInFilteredAlbumsAtIndex:(unsigned int)arg1;
 - (id)photoLibrary;
 - (id)predicate;
+- (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
+- (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)registerDerivedAlbumList:(struct NSObject { Class x1; }*)arg1;
 - (void)removeFilteredAlbumsAtIndexes:(id)arg1;
 - (void)removeObjectFromFilteredAlbumsAtIndex:(unsigned int)arg1;

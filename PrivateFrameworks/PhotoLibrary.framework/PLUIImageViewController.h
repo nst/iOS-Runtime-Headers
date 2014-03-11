@@ -56,6 +56,7 @@
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)dealloc;
+- (int)desiredStatusBarAnimation;
 - (void)didChooseVideoAtURL:(id)arg1 options:(id)arg2;
 - (int)imageFormat;
 - (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
@@ -79,6 +80,7 @@
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
 - (void)setAllowsEditing:(BOOL)arg1;
+- (void)setCropOverlayDone;
 - (void)setupNavigationItem;
 - (id)useButtonTitle;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;
@@ -95,5 +97,6 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)wantsStatusBarVisible;
 
 @end

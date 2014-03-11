@@ -24,6 +24,7 @@
 + (Class)contextClass;
 
 - (void)_spinScene:(id)arg1;
+- (void)animationDidResume:(id)arg1;
 - (void)animationDidStop:(id)arg1;
 - (id)camera;
 - (void)cancelLoad;

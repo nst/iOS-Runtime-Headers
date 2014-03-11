@@ -42,6 +42,7 @@
 - (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;
 - (BOOL)routeOtherThanHandsetAndSpeakerIsAvailable;
 - (BOOL)routeOtherThanHandsetIsAvailable;
+- (id)routeTypeAtIndex:(unsigned int)arg1;
 - (void)setAVController:(id)arg1;
 - (void)setCurrentAudioRoute:(id)arg1;
 - (void)setDelegate:(id)arg1;

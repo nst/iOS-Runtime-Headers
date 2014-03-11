@@ -23,6 +23,7 @@
 - (void)_loadURLBag;
 - (void)_loadWithCompletionBlock:(id)arg1;
 - (void)dealloc;
+- (id)existingBagDictionary;
 - (void)getTrustForURL:(id)arg1 completionBlock:(id)arg2;
 - (id)init;
 - (id)initWithURLBagContext:(id)arg1;

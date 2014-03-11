@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class <MCBrowserViewControllerDelegate>, MCNearbyServiceBrowser, MCPeerID, MCSession, NSBundle, NSMutableArray, NSMutableDictionary, UIBarButtonItem, UITableView;
+@class <MCBrowserViewControllerDelegate>, MCNearbyServiceBrowser, MCPeerID, MCSession, NSBundle, NSMutableArray, NSMutableDictionary, UIBarButtonItem, UINavigationBar, UITableView;
 
-@interface MCBrowserViewController : UIViewController <MCSessionPrivateDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, MCNearbyServiceBrowserDelegate> {
+@interface MCBrowserViewController : UIViewController <MCSessionPrivateDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UINavigationBarDelegate, MCNearbyServiceBrowserDelegate> {
     MCNearbyServiceBrowser *_browser;
     UIBarButtonItem *_cancelButton;
     <MCBrowserViewControllerDelegate> *_delegate;
@@ -16,6 +16,7 @@
     unsigned int _maximumNumberOfPeers;
     unsigned int _minimumNumberOfPeers;
     MCPeerID *_myPeerID;
+    UINavigationBar *_navigationBar;
     NSMutableArray *_nearbyPeersSection;
     MCSession *_session;
     UITableView *_tableView;
@@ -32,6 +33,7 @@
 @property unsigned int maximumNumberOfPeers;
 @property unsigned int minimumNumberOfPeers;
 @property(copy) MCPeerID * myPeerID;
+@property(retain) UINavigationBar * navigationBar;
 @property(retain) NSMutableArray * nearbyPeersSection;
 @property(retain) MCSession * session;
 @property(retain) UITableView * tableView;
@@ -59,9 +61,11 @@
 - (unsigned int)maximumNumberOfPeers;
 - (unsigned int)minimumNumberOfPeers;
 - (id)myPeerID;
+- (id)navigationBar;
 - (id)nearbyPeersSection;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)peer:(id)arg1 changedStateTo:(int)arg2;
+- (int)positionForBar:(id)arg1;
 - (void)session:(id)arg1 didFinishReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 atURL:(id)arg4 withError:(id)arg5 propagate:(BOOL*)arg6;
 - (void)session:(id)arg1 didReceiveData:(id)arg2 fromPeer:(id)arg3 propagate:(BOOL*)arg4;
 - (void)session:(id)arg1 didReceiveStream:(id)arg2 withName:(id)arg3 fromPeer:(id)arg4 propagate:(BOOL*)arg5;
@@ -79,6 +83,7 @@
 - (void)setMaximumNumberOfPeers:(unsigned int)arg1;
 - (void)setMinimumNumberOfPeers:(unsigned int)arg1;
 - (void)setMyPeerID:(id)arg1;
+- (void)setNavigationBar:(id)arg1;
 - (void)setNearbyPeersSection:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setTableView:(id)arg1;

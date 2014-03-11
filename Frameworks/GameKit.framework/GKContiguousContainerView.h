@@ -5,8 +5,14 @@
 @class NSArray, UIView;
 
 @interface GKContiguousContainerView : UIView {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     BOOL _applyOrthogonalConstraints;
     UIView *_baselineView;
+    } _insets;
     float _overlap;
     NSArray *_replaceableConstraints;
     BOOL _vertical;
@@ -14,6 +20,7 @@
 
 @property BOOL applyOrthogonalConstraints;
 @property UIView * baselineView;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
 @property float overlap;
 @property(retain) NSArray * replaceableConstraints;
 @property BOOL vertical;
@@ -25,12 +32,14 @@
 - (BOOL)applyOrthogonalConstraints;
 - (id)baselineView;
 - (void)dealloc;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (float)overlap;
 - (void)replaceSubviews:(id)arg1;
 - (id)replaceableConstraints;
 - (void)setApplyOrthogonalConstraints:(BOOL)arg1;
 - (void)setBaselineView:(id)arg1;
+- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setOverlap:(float)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
 - (void)setVertical:(BOOL)arg1;

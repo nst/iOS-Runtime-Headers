@@ -23,6 +23,10 @@
             int _x; 
             int _y; 
         } _panPreviousCursor; 
+        struct Vector2i { 
+            int _x; 
+            int _y; 
+        } _panStartCursor; 
         struct Position3d { 
             double _latitude; 
             double _longitude; 
@@ -71,6 +75,7 @@
         bool_zoomRotateToNorth; 
         bool_useTiltLimit; 
         int _tiltLimitMode; 
+        bool_tiltLimitPushDownEnabled; 
         bool_tiltLimitTransferInProgress; 
         bool_tiltLimitPushDown; 
         double _startPushDownTilt; 
@@ -117,12 +122,14 @@
 - (void)_stopAnimations;
 - (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
+- (void)cameraController:(id)arg1 canZoomInDidChange:(BOOL)arg2;
+- (void)cameraController:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
+- (void)cameraController:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
 - (void)cameraController:(id)arg1 requestsDisplayRate:(int)arg2;
+- (void)cameraController:(id)arg1 willChangeRegionAnimated:(BOOL)arg2;
 - (void)cameraControllerDidChangeCameraState:(id)arg1;
-- (void)cameraControllerDidStopRegionAnimation:(id)arg1 completed:(BOOL)arg2;
-- (void)cameraControllerWillStartRegionAnimation:(id)arg1;
 - (BOOL)canEnter3DMode;
 - (BOOL)currentZoomLevelAllowsRotation;
 - (void)dealloc;

@@ -2,15 +2,34 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PLAssetContainerList>, <PUPhotosSharingViewControllerDelegate>, NSIndexPath, NSMutableArray, NSMutableSet, PLManagedAsset, PUActivityViewController, PUImageManager, PUPhotoSelectionManager, PUPhotosSharingCollectionViewLayout, PUPhotosSharingTransitionContext, PUPhotosSharingViewControllerSpec, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer, UIView;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface PUPhotosSharingViewController : UIViewController <PLDismissableViewController, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUActivityViewControllerDelegate, PUPhotosSharingGridCellDelegate, PUPhotosSharingCollectionViewLayoutDelegate, UIActivityViewControllerDelegate, PUPhotosSharingTransitionViewController> {
-    PUActivityViewController *__activityViewController;
-    BOOL __embedsActivityView;
+@class <PLAssetContainerList>, <PUPhotosSharingViewControllerDelegate>, NSIndexPath, NSMutableArray, NSMutableSet, PLManagedAsset, PUActivityViewController, PUImageManager, PUPhotoPinchGestureRecognizer, PUPhotoSelectionManager, PUPhotosSharingCollectionViewLayout, PUPhotosSharingTransitionContext, PUPhotosSharingViewControllerSpec, PUPhotosZoomingSharingGridCell, PUScrollViewSpeedometer, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer, UIView;
+
+@interface PUPhotosSharingViewController : UIViewController <PLDismissableViewController, UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUPhotosSharingCollectionViewLayoutDelegate, UIActivityViewControllerDelegate, PUTransitionViewAnimatorDelegate, PUScrollViewSpeedometerDelegate, PUActivityViewControllerDelegate, PUPhotosSharingTransitionViewController> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    PUActivityViewController *__embeddedActivityViewController;
     PUImageManager *__imageManager;
     PLManagedAsset *__lastKnownReferenceAsset;
     NSIndexPath *__lastKnownReferenceIndexPath;
+    PUTransitionViewAnimator *__photoZoomAnimator;
+    PUPhotosZoomingSharingGridCell *__photoZoomCell;
+    PUPhotoPinchGestureRecognizer *__photoZoomPinchGestureRecognizer;
+    id __pptOnDidEndScrollingBlock;
+    NSMutableSet *__preheatedAssets;
+    } __previousPreheatRect;
     UICollectionViewLayout *__transitionLayout;
+    PUActivityViewController *__unembeddedActivityViewController;
     BOOL __viewInSyncWithModel;
     float _cachedEmbeddedActivityViewHeight;
     UIBarButtonItem *_cancelButton;
@@ -19,6 +38,7 @@
     UIBarButtonItem *_doneButton;
     UIView *_embeddedActivityView;
     NSIndexPath *_inFlightReferenceIndexPath;
+    BOOL _inFlightRotation;
     UICollectionView *_mainCollectionView;
     PUPhotosSharingCollectionViewLayout *_mainCollectionViewLayout;
     UIBarButtonItem *_nextButton;
@@ -27,18 +47,25 @@
     <PLAssetContainerList> *_photoCollections;
     PUPhotoSelectionManager *_photoSelectionManager;
     PUPhotosSharingTransitionContext *_photosSharingTransitionContext;
-    NSMutableSet *_preheatedAssets;
     BOOL _shouldScrollToSelection;
     PUPhotosSharingViewControllerSpec *_spec;
+    PUScrollViewSpeedometer *_speedometer;
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(setter=_setActivityViewController:,retain) PUActivityViewController * _activityViewController;
-@property(readonly) BOOL _embedsActivityView;
+@property(readonly) PUActivityViewController * _activityViewController;
+@property(setter=_setEmbeddedActivityViewController:,retain) PUActivityViewController * _embeddedActivityViewController;
 @property(readonly) PUImageManager * _imageManager;
 @property(setter=_setLastKnownReferenceAsset:,retain) PLManagedAsset * _lastKnownReferenceAsset;
 @property(setter=_setLastKnownReferenceIndexPath:,retain) NSIndexPath * _lastKnownReferenceIndexPath;
+@property(setter=_setPhotoZoomAnimator:,retain) PUTransitionViewAnimator * _photoZoomAnimator;
+@property(setter=_setPhotoZoomCell:,retain) PUPhotosZoomingSharingGridCell * _photoZoomCell;
+@property(setter=_setPhotoZoomPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _photoZoomPinchGestureRecognizer;
+@property(setter=_pptSetOnDidEndScrollingBlock:,copy) id _pptOnDidEndScrollingBlock;
+@property(setter=_setPreheatedAssets:,retain) NSMutableSet * _preheatedAssets;
+@property(setter=_setPreviousPreheatRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
 @property(setter=_setTransitionLayout:,retain) UICollectionViewLayout * _transitionLayout;
+@property(setter=_setUnembeddedActivityViewController:,retain) PUActivityViewController * _unembeddedActivityViewController;
 @property(getter=_isViewInSyncWithModel,setter=_setViewInSyncWithModel:) BOOL _viewInSyncWithModel;
 @property(readonly) NSIndexPath * currentIndexPath;
 @property <PUPhotosSharingViewControllerDelegate> * delegate;
@@ -54,13 +81,16 @@
 - (id)_activityViewController;
 - (void)_activityViewControllerDidDismissWithActivityType:(id)arg1 didComplete:(BOOL)arg2;
 - (id)_assetAtIndexPath:(id)arg1;
+- (void)_beginZoomingForCellAtIndexPath:(id)arg1;
 - (void)_cancel:(id)arg1;
-- (id)_currentSelectedAssetItemSources;
 - (id)_currentSelectedAssets;
 - (void)_didFinishPostingNotifications:(id)arg1;
+- (id)_embeddedActivityViewController;
 - (BOOL)_embedsActivityView;
+- (void)_endZoomingForCell;
 - (void)_getFirstValidIndexPath:(id*)arg1 lastValidIndexPath:(id*)arg2;
 - (void)_getMainCollectionViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 collectionViewLayoutInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 embeddedActivityViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (void)_handlePhotoPinch:(id)arg1;
 - (void)_handleTapAtIndexPath:(id)arg1;
 - (void)_handleTapInMainCollectionView:(id)arg1;
 - (float)_horizontalOffsetInCollectionView:(id)arg1 forCenteringOnItemAtIndexPath:(id)arg2;
@@ -79,24 +109,39 @@
 - (int)_numberOfSections;
 - (void)_pageToIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (id)_photoCollectionAtIndex:(int)arg1;
+- (id)_photoZoomAnimator;
+- (id)_photoZoomCell;
+- (id)_photoZoomPinchGestureRecognizer;
+- (id)_pptOnDidEndScrollingBlock;
+- (void)_pptSetOnDidEndScrollingBlock:(id)arg1;
+- (id)_preheatedAssets;
 - (void)_prepareActivityViewControllerForUse;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
+- (id)_requiredActivityViewController;
+- (void)_resetPreheating;
 - (id)_selectionViewAtIndexPath:(id)arg1 forCollectionView:(id)arg2;
-- (void)_setActivityViewController:(id)arg1;
 - (void)_setEmbeddedActivityView:(id)arg1;
+- (void)_setEmbeddedActivityViewController:(id)arg1;
 - (void)_setLastKnownReferenceAsset:(id)arg1 indexPath:(id)arg2;
 - (void)_setLastKnownReferenceAsset:(id)arg1;
 - (void)_setLastKnownReferenceIndexPath:(id)arg1;
 - (void)_setMainCollectionView:(id)arg1;
 - (void)_setMainCollectionViewLayout:(id)arg1;
+- (void)_setPhotoZoomAnimator:(id)arg1;
+- (void)_setPhotoZoomCell:(id)arg1;
+- (void)_setPhotoZoomPinchGestureRecognizer:(id)arg1;
 - (void)_setPreheatedAssets:(id)arg1;
+- (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setSelected:(BOOL)arg1 atIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (void)_setTransitionLayout:(id)arg1;
+- (void)_setUnembeddedActivityViewController:(id)arg1;
 - (void)_setViewInSyncWithModel:(BOOL)arg1;
 - (BOOL)_shouldShowAsset:(id)arg1;
 - (struct CGSize { float x1; float x2; })_sizeForItemAtIndexPath:(id)arg1;
 - (void)_statusBarFrameDidChange:(id)arg1;
 - (void)_statusBarFrameWillChange:(id)arg1;
 - (id)_transitionLayout;
+- (id)_unembeddedActivityViewController;
 - (void)_updateActivityViewAnimated:(BOOL)arg1;
 - (void)_updateCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)_updateEmbeddedActivityViewAppearance;
@@ -105,9 +150,10 @@
 - (void)_updateMainViewAnimated:(BOOL)arg1;
 - (void)_updateNavigationBarAnimated:(BOOL)arg1;
 - (void)_updatePeripheralInterfaceAnimated:(BOOL)arg1;
+- (void)_updatePhotoForAsset:(id)arg1 cell:(id)arg2 atIndexPath:(id)arg3;
 - (void)_updatePreheatedAssets;
 - (id)_validIndexPathFromIndexPath:(id)arg1;
-- (void)activityViewController:(id)arg1 displayVideoRemakerProgressView:(id)arg2;
+- (BOOL)activityViewControllerShouldCancelAfterRemakingCanceled:(id)arg1;
 - (void)activityViewControllerWillStartAirdropTransfer:(id)arg1;
 - (void)assetContainerDidChange:(id)arg1;
 - (void)assetContainerListDidChange:(id)arg1;
@@ -123,6 +169,7 @@
 - (id)embeddedActivityView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(BOOL)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (id)initWithSpec:(id)arg1 photoCollections:(id)arg2 selection:(id)arg3;
 - (id)layout:(id)arg1 collectionView:(id)arg2 referenceIndexPathWithOffsetX:(float*)arg3;
@@ -133,13 +180,17 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)photoCollections;
 - (id)photoSelectionManager;
-- (id)photosSharingGridCellBadgeForZooming:(id)arg1 layoutAnchor:(unsigned int*)arg2;
-- (void)photosSharingGridCellDidEndZooming:(id)arg1;
-- (BOOL)photosSharingGridCellShouldBeginZooming:(id)arg1;
-- (id)photosSharingGridCellViewForZooming:(id)arg1;
 - (id)photosSharingTransitionContext;
+- (void)ppt_faultInScollViewContentSize;
+- (BOOL)ppt_scrollToAssetAtRelativeIndex:(int)arg1 completion:(id)arg2;
+- (id)ppt_scrollView;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewSpeedometer:(id)arg1 regimeDidChange:(int)arg2 from:(int)arg3;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionBadgeFrameForItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atIndexPath:(id)arg2;
 - (void)setDelegate:(id)arg1;
@@ -149,6 +200,7 @@
 - (void)setSpec:(id)arg1;
 - (id)spec;
 - (id)transitionCollectionView;
+- (void)transitionViewAnimatorDidEnd:(id)arg1 finished:(BOOL)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

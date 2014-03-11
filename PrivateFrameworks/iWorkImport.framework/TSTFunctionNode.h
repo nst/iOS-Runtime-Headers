@@ -35,6 +35,7 @@
 - (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)dealloc;
 - (id)exportString;
+- (id)formulaPlainText;
 - (id)functionEndNode;
 - (int)functionIndex;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;

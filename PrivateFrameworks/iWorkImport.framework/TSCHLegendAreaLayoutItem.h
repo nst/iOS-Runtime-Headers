@@ -21,6 +21,7 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForRenderingLabel:(unsigned int)arg1 paragraphStyle:(id)arg2 cellType:(int)arg3 rangePtr:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4 outElementSize:(struct CGSize { float x1; float x2; }*)arg5 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg6;
 - (void)protected_iterateHitChartElements:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id)arg2;
 - (id)renderersWithRep:(id)arg1;
+- (void)resetLayoutSize;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLegendModelGeometryFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingBadge:(unsigned int)arg1 cellType:(int)arg2 outElementSize:(struct CGSize { float x1; float x2; }*)arg3 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;

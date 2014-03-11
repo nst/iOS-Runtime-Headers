@@ -10,6 +10,7 @@
     NSString *_confirmationText;
     long long _fileSize;
     NSString *_fileSizeText;
+    int _offerType;
     float _price;
 }
 
@@ -19,9 +20,11 @@
 @property(readonly) NSString * confirmationText;
 @property(readonly) long long fileSize;
 @property(readonly) NSString * fileSizeText;
+@property(readonly) int offerType;
 @property(readonly) float price;
 
 - (void).cxx_destruct;
+- (void)_addActionParameterWithName:(id)arg1 value:(id)arg2;
 - (void)_setFileSizeWithAssets:(id)arg1;
 - (void)_setFileSizeWithFlavors:(id)arg1;
 - (id)actionParameters;
@@ -35,6 +38,7 @@
 - (id)initWithLookupDictionary:(id)arg1;
 - (id)initWithOfferDictionary:(id)arg1;
 - (id)initWithRedownloadToken:(id)arg1;
+- (int)offerType;
 - (float)price;
 
 @end

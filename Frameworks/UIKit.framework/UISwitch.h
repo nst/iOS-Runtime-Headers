@@ -54,6 +54,7 @@
 - (void)_setOnColor:(id)arg1;
 - (void)_setOnTintColor:(id)arg1;
 - (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (BOOL)_shouldAlterCodedFrame;
 - (BOOL)_useOldSize;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)dealloc;

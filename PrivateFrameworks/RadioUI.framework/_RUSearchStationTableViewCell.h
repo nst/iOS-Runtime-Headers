@@ -20,6 +20,7 @@
 @property(copy) NSAttributedString * attributedStationName;
 @property(retain) MPImageCache * imageCache;
 @property BOOL showActivityIndicator;
+@property BOOL showsArtwork;
 @property(retain) MPImageCacheRequest * stationImageRequest;
 
 - (void).cxx_destruct;
@@ -35,8 +36,10 @@
 - (void)setAttributedStationName:(id)arg1;
 - (void)setImageCache:(id)arg1;
 - (void)setShowActivityIndicator:(BOOL)arg1;
+- (void)setShowsArtwork:(BOOL)arg1;
 - (void)setStationImageRequest:(id)arg1;
 - (BOOL)showActivityIndicator;
+- (BOOL)showsArtwork;
 - (id)stationDescription;
 - (id)stationImage;
 - (id)stationImageRequest;

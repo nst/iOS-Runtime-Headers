@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSPersistentStoreCoordinator, NSSQLCore, NSSet, NSString, PFUbiquityLocation, PFUbiquityRecordsImporterSchedulingContext, PFUbiquitySwitchboardCacheWrapper, _PFUbiquityRecordsExporter, _PFUbiquityRecordsImporter;
+@class NSMutableSet, NSObject<OS_dispatch_queue>, NSPersistentStoreCoordinator, NSSQLCore, NSSet, NSString, PFUbiquityBaselineHeuristics, PFUbiquityLocation, PFUbiquityRecordsImporterSchedulingContext, PFUbiquitySwitchboardCacheWrapper, _PFUbiquityRecordsExporter, _PFUbiquityRecordsImporter;
 
 @interface PFUbiquitySwitchboardEntryMetadata : NSObject {
     NSString *_activeModelVersionHash;
+    PFUbiquityBaselineHeuristics *_baselineHeuristics;
     PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
     _PFUbiquityRecordsExporter *_exporter;
     _PFUbiquityRecordsImporter *_importer;
@@ -19,11 +20,11 @@
     NSMutableSet *_stores;
     PFUbiquityLocation *_ubiquityRootLocation;
     BOOL _useLocaAccount;
-    BOOL _useLocalAccount;
     BOOL _useLocalStorage;
 }
 
 @property(readonly) NSString * activeModelVersionHash;
+@property(readonly) PFUbiquityBaselineHeuristics * baselineHeuristics;
 @property(retain) PFUbiquitySwitchboardCacheWrapper * cacheWrapper;
 @property(readonly) _PFUbiquityRecordsExporter * exporter;
 @property(readonly) _PFUbiquityRecordsImporter * importer;
@@ -37,6 +38,7 @@
 
 - (id)activeModelVersionHash;
 - (void)addPersistentStore:(id)arg1;
+- (id)baselineHeuristics;
 - (id)cacheWrapper;
 - (void)dealloc;
 - (id)exporter;

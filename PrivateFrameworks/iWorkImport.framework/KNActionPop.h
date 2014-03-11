@@ -19,5 +19,6 @@
 + (id)thumbnailImageNameForType:(int)arg1;
 
 - (id)animationsForTextureSet:(id)arg1 finalTextureSet:(id)arg2 duration:(double)arg3 attributes:(id)arg4 previousAttributes:(id)arg5;
+- (void)p_addAnimationsToLayer:(id)arg1 maxScale:(float)arg2 duration:(double)arg3 result:(id)arg4;
 
 @end

@@ -5,6 +5,7 @@
 @class IMHandle, NSAttributedString, NSString, UIImage;
 
 @interface CKEntity : NSObject <CKTranscriptDataRowObject> {
+    NSAttributedString *_attributedTranscriptText;
     IMHandle *_handle;
 }
 
@@ -37,7 +38,9 @@
 - (BOOL)__ck_transcriptUsesTextAlignmentInsets;
 - (BOOL)__ck_wantsDrawerLayout;
 - (void*)abRecord;
+- (void)addressBookChanged:(id)arg1;
 - (id)attributedTranscriptText;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
 - (id)defaultIMHandle;
 - (id)description;

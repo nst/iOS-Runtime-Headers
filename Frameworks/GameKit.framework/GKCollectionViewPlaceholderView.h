@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKPlaceholderContentStateMachine, GKPlaceholderView, NSString, UIActivityIndicatorView;
+@class GKPlaceholderContentStateMachine, GKPlaceholderView, NSArray, NSString, UIActivityIndicatorView;
 
 @interface GKCollectionViewPlaceholderView : UICollectionReusableView <GKStateMachineDelegate> {
+    int _alignment;
+    NSArray *_constraints;
     NSString *_errorMessage;
     NSString *_errorTitle;
     UIActivityIndicatorView *_loadingIndicatorView;
@@ -15,6 +17,8 @@
     GKPlaceholderView *_placeholderView;
 }
 
+@property int alignment;
+@property(retain) NSArray * constraints;
 @property(retain) NSString * errorMessage;
 @property(retain) NSString * errorTitle;
 @property(retain) UIActivityIndicatorView * loadingIndicatorView;
@@ -24,6 +28,8 @@
 @property(retain) NSString * noContentTitle;
 @property(retain) GKPlaceholderView * placeholderView;
 
+- (int)alignment;
+- (id)constraints;
 - (void)dealloc;
 - (void)delayedShowLoadingIndicator;
 - (void)didEnterErrorState;
@@ -41,6 +47,8 @@
 - (id)noContentMessage;
 - (id)noContentTitle;
 - (id)placeholderView;
+- (void)setAlignment:(int)arg1;
+- (void)setConstraints:(id)arg1;
 - (void)setErrorMessage:(id)arg1;
 - (void)setErrorTitle:(id)arg1;
 - (void)setLoadingIndicatorView:(id)arg1;
@@ -49,5 +57,6 @@
 - (void)setNoContentMessage:(id)arg1;
 - (void)setNoContentTitle:(id)arg1;
 - (void)setPlaceholderView:(id)arg1;
+- (void)updateConstraints;
 
 @end

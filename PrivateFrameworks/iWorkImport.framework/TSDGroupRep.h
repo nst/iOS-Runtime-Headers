@@ -14,6 +14,7 @@
 - (struct CGPoint { float x1; float x2; })convertNaturalPointFromUnscaledCanvas:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)dynamicOperationDidBegin;
 - (id)dynamicResizeDidBegin;
 - (void)dynamicResizeDidEndWithTracker:(id)arg1;
 - (void)dynamicallyResizingWithTracker:(id)arg1;

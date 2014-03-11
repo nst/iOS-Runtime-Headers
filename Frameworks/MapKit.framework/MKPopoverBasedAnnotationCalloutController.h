@@ -24,6 +24,7 @@
 @property BOOL allowsPopoverWhenNotInWindow;
 @property(readonly) UIPopoverController * popoverController;
 
+- (void).cxx_destruct;
 - (BOOL)_isShowingCallout;
 - (void)_popoverControllerDidFinishMapsTransitionExpanding:(id)arg1;
 - (void)_popoverControllerWillBeginMapsTransitionMovingSideways:(id)arg1;

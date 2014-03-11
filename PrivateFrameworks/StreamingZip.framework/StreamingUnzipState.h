@@ -25,15 +25,67 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    struct CC_MD5state_st { 
-        unsigned int A; 
-        unsigned int B; 
-        unsigned int C; 
-        unsigned int D; 
-        unsigned int Nl; 
-        unsigned int Nh; 
-        unsigned int data[16]; 
-        int num; 
+    struct { 
+        int hashType; 
+        union { 
+            struct CC_MD5state_st { 
+                unsigned int A; 
+                unsigned int B; 
+                unsigned int C; 
+                unsigned int D; 
+                unsigned int Nl; 
+                unsigned int Nh; 
+                unsigned int data[16]; 
+                int num; 
+            } md5; 
+            struct CC_SHA1state_st { 
+                unsigned int h0; 
+                unsigned int h1; 
+                unsigned int h2; 
+                unsigned int h3; 
+                unsigned int h4; 
+                unsigned int Nl; 
+                unsigned int Nh; 
+                unsigned int data[16]; 
+                int num; 
+            } sha1; 
+            struct CC_MD2state_st { 
+                int num; 
+                unsigned char data[16]; 
+                unsigned int cksm[16]; 
+                unsigned int state[16]; 
+            } md2; 
+            struct CC_MD4state_st { 
+                unsigned int A; 
+                unsigned int B; 
+                unsigned int C; 
+                unsigned int D; 
+                unsigned int Nl; 
+                unsigned int Nh; 
+                unsigned int data[16]; 
+                unsigned int num; 
+            } md4; 
+            struct CC_SHA256state_st { 
+                unsigned int count[2]; 
+                unsigned int hash[8]; 
+                unsigned int wbuf[16]; 
+            } sha224; 
+            struct CC_SHA256state_st { 
+                unsigned int count[2]; 
+                unsigned int hash[8]; 
+                unsigned int wbuf[16]; 
+            } sha256; 
+            struct CC_SHA512state_st { 
+                unsigned long long count[2]; 
+                unsigned long long hash[8]; 
+                unsigned long long wbuf[16]; 
+            } sha384; 
+            struct CC_SHA512state_st { 
+                unsigned long long count[2]; 
+                unsigned long long hash[8]; 
+                unsigned long long wbuf[16]; 
+            } sha512; 
+        } context; 
     unsigned long long _bytesHashedInChunk;
     unsigned long _currentCRC32;
     BOOL _currentLFIsStreamMetadata;
@@ -42,14 +94,14 @@
     unsigned long _currentLFRecordAllocationSize;
     unsigned long long _currentOffset;
     int _currentOutputFD;
+    } _hashContext;
     unsigned long long _hashedChunkSize;
+    NSArray *_hashes;
     NSMutableData *_incompleteData;
     unsigned char _lastBlockEndLastByte;
     unsigned char _lastBlockEndNumUnusedBits;
     NSString *_lastChunkPartialHash;
     unsigned long long _lastResumptionSavedOffset;
-    } _md5Context;
-    NSArray *_md5Hashes;
     unsigned long long _outputFileOffsetAtLastBlockEnd;
     unsigned long long _recordsProcessed;
     NSDictionary *_streamInfoDict;
@@ -71,6 +123,7 @@
 @property unsigned long currentLFRecordAllocationSize;
 @property unsigned long long currentOffset;
 @property int currentOutputFD;
+@property(readonly) struct { int x1; union { struct CC_MD5state_st { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7[16]; int x_1_2_8; } x_2_1_1; struct CC_SHA1state_st { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; unsigned int x_2_2_4; unsigned int x_2_2_5; unsigned int x_2_2_6; unsigned int x_2_2_7; unsigned int x_2_2_8[16]; int x_2_2_9; } x_2_1_2; struct CC_MD2state_st { int x_3_2_1; unsigned char x_3_2_2[16]; unsigned int x_3_2_3[16]; unsigned int x_3_2_4[16]; } x_2_1_3; struct CC_MD4state_st { unsigned int x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; unsigned int x_4_2_4; unsigned int x_4_2_5; unsigned int x_4_2_6; unsigned int x_4_2_7[16]; unsigned int x_4_2_8; } x_2_1_4; struct CC_SHA256state_st { unsigned int x_5_2_1[2]; unsigned int x_5_2_2[8]; unsigned int x_5_2_3[16]; } x_2_1_5; struct CC_SHA256state_st { unsigned int x_6_2_1[2]; unsigned int x_6_2_2[8]; unsigned int x_6_2_3[16]; } x_2_1_6; struct CC_SHA512state_st { unsigned long long x_7_2_1[2]; unsigned long long x_7_2_2[8]; unsigned long long x_7_2_3[16]; } x_2_1_7; struct CC_SHA512state_st { unsigned long long x_8_2_1[2]; unsigned long long x_8_2_2[8]; unsigned long long x_8_2_3[16]; } x_2_1_8; } x2; } hashContext;
 @property(readonly) unsigned long long hashedChunkSize;
 @property(retain) NSMutableData * incompleteData;
 @property(retain) NSString * lastChunkPartialHash;
@@ -85,7 +138,7 @@
 @property(readonly) NSString * unzipPath;
 @property(readonly) struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; }* zlibState;
 
-+ (id)unzipStateWithPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3 error:(id*)arg4;
++ (id)unzipStateWithPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 
 - (struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; }*)zlibState;
 - (void).cxx_destruct;
@@ -103,10 +156,11 @@
 - (int)currentOutputFD;
 - (void)dealloc;
 - (id)finishStream;
+- (struct { int x1; union { struct CC_MD5state_st { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7[16]; int x_1_2_8; } x_2_1_1; struct CC_SHA1state_st { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; unsigned int x_2_2_4; unsigned int x_2_2_5; unsigned int x_2_2_6; unsigned int x_2_2_7; unsigned int x_2_2_8[16]; int x_2_2_9; } x_2_1_2; struct CC_MD2state_st { int x_3_2_1; unsigned char x_3_2_2[16]; unsigned int x_3_2_3[16]; unsigned int x_3_2_4[16]; } x_2_1_3; struct CC_MD4state_st { unsigned int x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; unsigned int x_4_2_4; unsigned int x_4_2_5; unsigned int x_4_2_6; unsigned int x_4_2_7[16]; unsigned int x_4_2_8; } x_2_1_4; struct CC_SHA256state_st { unsigned int x_5_2_1[2]; unsigned int x_5_2_2[8]; unsigned int x_5_2_3[16]; } x_2_1_5; struct CC_SHA256state_st { unsigned int x_6_2_1[2]; unsigned int x_6_2_2[8]; unsigned int x_6_2_3[16]; } x_2_1_6; struct CC_SHA512state_st { unsigned long long x_7_2_1[2]; unsigned long long x_7_2_2[8]; unsigned long long x_7_2_3[16]; } x_2_1_7; struct CC_SHA512state_st { unsigned long long x_8_2_1[2]; unsigned long long x_8_2_2[8]; unsigned long long x_8_2_3[16]; } x_2_1_8; } x2; })hashContext;
 - (unsigned long long)hashedChunkSize;
 - (id)incompleteData;
 - (id)init;
-- (id)initWithPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3 error:(id*)arg4;
+- (id)initWithPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)lastChunkPartialHash;
 - (void)markResumptionPoint;
 - (void)markResumptionPointWithLastCompressedByte:(unsigned char)arg1;
@@ -137,7 +191,7 @@
 - (id)unfinishedCompressedData;
 - (id)unsureData;
 - (id)unzipPath;
-- (id)updateMD5HashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3 onlyFinishCurrentChunk:(BOOL)arg4;
-- (id)updateMD5HashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3;
+- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3 onlyFinishCurrentChunk:(BOOL)arg4;
+- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3;
 
 @end

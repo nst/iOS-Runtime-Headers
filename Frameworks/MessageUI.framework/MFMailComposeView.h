@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFComposeRecipientViewDelegate>, <MFMailComposeViewDelegate>, <MFMailPopoverManagerDelegate>, MFComposeBodyField, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeScrollView, MFComposeSubjectView, MFComposeTextContentView, MFFromAddressViewController, MFMailComposeContactsSearchController, MFMailComposeRecipientView, NSArray, NSInvocation, UIPickerView, UIResponder, UITableView, UIView;
+@class <MFComposeRecipientTextViewDelegate>, <MFMailComposeViewDelegate>, <MFMailPopoverManagerDelegate>, MFComposeBodyField, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeScrollView, MFComposeSubjectView, MFComposeTextContentView, MFFromAddressViewController, MFMailComposeContactsSearchController, MFMailComposeRecipientView, MFSearchResultsViewController, NSArray, NSInvocation, UIPickerView, UIResponder, UITableView, UIView;
 
 @interface MFMailComposeView : UITransitionView <UITextContentViewDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeContactsSearchControllerDelegate, MFComposeBodyFieldDelegate, MFDragContext> {
     struct CGSize { 
@@ -24,7 +24,7 @@
     MFComposeBodyField *_bodyField;
     MFComposeScrollView *_bodyScroller;
     MFMailComposeRecipientView *_ccField;
-    <MFComposeRecipientViewDelegate> *_composeRecipientViewDelegate;
+    <MFComposeRecipientTextViewDelegate> *_composeRecipientViewDelegate;
     UIView *_contentView;
     } _currentContentSize;
     NSInvocation *_delayedPopoverInvocation;
@@ -47,6 +47,7 @@
     MFMailComposeContactsSearchController *_searchController;
     NSArray *_searchResults;
     UITableView *_searchResultsTable;
+    MFSearchResultsViewController *_searchViewController;
     UIView *_shadowView;
     MFComposeSubjectView *_subjectField;
     MFComposeTextContentView *_textView;
@@ -60,7 +61,7 @@
 @property(readonly) MFComposeTextContentView * bodyTextView;
 @property(readonly) MFMailComposeRecipientView * ccField;
 @property(getter=isChangingRecipients) BOOL changingRecipients;
-@property <MFComposeRecipientViewDelegate> * composeRecipientDelegate;
+@property <MFComposeRecipientTextViewDelegate> * composeRecipientDelegate;
 @property <MFMailComposeViewDelegate> * composeViewDelegate;
 @property(readonly) MFComposeFromView * fromField;
 @property(readonly) MFComposeImageSizeView * imageSizeField;
@@ -83,6 +84,7 @@
 - (id)_focusedRecipientView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForFromAddressPicker;
 - (float)_heightForBottomView;
+- (void)_layoutComposeHeaderViewsWithChangingHeader:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 withPinFrame:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (void)_layoutFromFieldWithChangingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_layoutMultiFieldWithChangingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_layoutSubviews:(BOOL)arg1 changingView:(id)arg2 toSize:(struct CGSize { float x1; float x2; })arg3 searchResultsWereDismissed:(BOOL)arg4;
@@ -181,7 +183,7 @@
 - (void)setKeyboardVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setLoading:(BOOL)arg1;
 - (void)setPopoverOwner:(id)arg1;
-- (void)setRecipientFieldsEditable:(BOOL)arg1;
+- (void)setRecipientFieldsEditable:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setScrollsToTop:(BOOL)arg1;
 - (void)setShowingPeoplePicker:(BOOL)arg1;
 - (id)subjectField;

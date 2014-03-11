@@ -5,6 +5,8 @@
 @interface TSWPFloatingCommentEditor : TSWPShapeEditor {
 }
 
++ (BOOL)shouldSuppressMultiselection;
+
 - (int)canPerformEditorAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)suppressesStyleInspector;
 - (BOOL)suppressesTextInspector;

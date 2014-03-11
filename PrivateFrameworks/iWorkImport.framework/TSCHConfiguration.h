@@ -8,6 +8,7 @@
     BOOL mDisableHighQualityRenderingIfNecessary;
     BOOL mExportsUsingSageKeynoteChartNonStyleDefaultsOverride;
     Class mMultiDataChartOptionsControllerBuildSupportClass;
+    BOOL mShouldForceDiscreteGraphicsFor3D;
     BOOL mShowMessageOnSelection;
     BOOL mSupports3DFillDataEmbeddingRecovery;
     BOOL mSupportsChartDataEditor;
@@ -21,6 +22,7 @@
 @property BOOL disableHighQualityRenderingIfNecessary;
 @property BOOL exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
 @property Class multiDataChartOptionsControllerBuildSupportClass;
+@property BOOL shouldForceDiscreteGraphicsFor3D;
 @property BOOL showMessageOnSelection;
 @property BOOL supports3DFillDataEmbeddingRecovery;
 @property BOOL supportsChartDataEditor;
@@ -47,6 +49,7 @@
 - (void)setDisableHighQualityRenderingIfNecessary:(BOOL)arg1;
 - (void)setExportsUsingSageKeynoteChartNonStyleDefaultsOverride:(BOOL)arg1;
 - (void)setMultiDataChartOptionsControllerBuildSupportClass:(Class)arg1;
+- (void)setShouldForceDiscreteGraphicsFor3D:(BOOL)arg1;
 - (void)setShowMessageOnSelection:(BOOL)arg1;
 - (void)setSupports3DFillDataEmbeddingRecovery:(BOOL)arg1;
 - (void)setSupportsChartDataEditor:(BOOL)arg1;
@@ -54,6 +57,7 @@
 - (void)setSupportsNumberFormatSameAsSource:(BOOL)arg1;
 - (void)setSupportsTextBackground:(BOOL)arg1;
 - (void)setUse3DFillFor3DChartFallback:(BOOL)arg1;
+- (BOOL)shouldForceDiscreteGraphicsFor3D;
 - (BOOL)showMessageOnSelection;
 - (BOOL)supports3DFillDataEmbeddingRecovery;
 - (BOOL)supportsChartDataEditor;

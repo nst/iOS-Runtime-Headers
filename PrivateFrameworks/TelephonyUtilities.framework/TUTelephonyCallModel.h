@@ -14,8 +14,11 @@
 - (BOOL)_booleanValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)_callManagementDictionary;
 - (void)_invalidateCachedState;
+- (void)_invalidateNetworkCanTakeCallsPrivateCache;
 - (BOOL)_isAmbiguousCallList;
 - (BOOL)_isAmbiguousMultiPartyCall;
+- (BOOL)_networkCanTakeCallsPrivate;
+- (BOOL)_valueExistsForKey:(struct __CFString { }*)arg1;
 - (int)ambiguityState;
 - (void)dealloc;
 - (id)description;
@@ -27,5 +30,6 @@
 - (BOOL)isHoldAndAnswerAllowed;
 - (BOOL)isMergeable;
 - (BOOL)isSwappable;
+- (BOOL)isTakingCallsPrivateAllowed;
 
 @end

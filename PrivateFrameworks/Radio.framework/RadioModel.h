@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class BKSProcessAssertion, NSArray, NSFetchRequest, NSFetchedResultsController, NSManagedObjectContext, NSManagedObjectModel, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSPersistentStoreCoordinator, NSString;
+@class BKSProcessAssertion, NSArray, NSFetchRequest, NSFetchedResultsController, NSManagedObjectContext, NSManagedObjectModel, NSMapTable, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSOperationQueue, NSPersistentStoreCoordinator, NSString;
 
 @interface RadioModel : NSObject <NSFetchedResultsControllerDelegate> {
+    NSObject<OS_dispatch_queue> *_accessSerialQueue;
+    NSOperationQueue *_backgroundCleanupQueue;
     BKSProcessAssertion *_backgroundProcessAssertion;
-    NSObject<OS_dispatch_queue> *_backgroundTaskAccessQueue;
     int _backgroundTaskCount;
     NSObject<OS_dispatch_source> *_backgroundTaskInvalidateTimerSource;
     NSManagedObjectContext *_context;
@@ -18,12 +19,9 @@
     BOOL _modelDeletedTokenIsValid;
     NSFetchRequest *_stationFetchRequest;
     NSFetchedResultsController *_stationFetchedResultsController;
+    NSMapTable *_stationToSkipControllerMapTable;
     NSPersistentStoreCoordinator *_storeCoordinator;
-    NSFetchRequest *_trackHistoriesFetchRequest;
-    NSFetchedResultsController *_trackHistoriesFetchedResultsController;
     int _transactionCount;
-    NSFetchRequest *_wishlistedTracksFetchRequest;
-    NSFetchedResultsController *_wishlistedTracksFetchedResultsController;
 }
 
 @property unsigned long long authenticatedAccountIdentifier;
@@ -34,14 +32,13 @@
 @property(readonly) NSArray * reportProblemIssueTypes;
 @property(copy) NSArray * stationSortOrdering;
 @property(readonly) NSArray * stations;
-@property(readonly) NSArray * trackHistories;
-@property(readonly) NSArray * trackHistorySections;
-@property(readonly) NSArray * wishlistedTracks;
 
++ (void)_postAccountDidDeauthenticateNotification;
++ (id)_radioDatabasePath;
++ (id)_radioDirectoryPath;
 + (id)backgroundModel;
 + (void)deleteAllData;
 + (void)initialize;
-+ (unsigned int)maxStationArtworkSize;
 + (id)sharedModel;
 
 - (void).cxx_destruct;
@@ -50,28 +47,27 @@
 - (void)_beginBackgroundTaskAssertion;
 - (void)_contextDidSaveNotification:(id)arg1;
 - (void)_createRadioDirectoryAndDatabaseIfNecessary;
-- (void)_cullTrackHistoryIfNecessary;
 - (id)_databasePropertyValueForKey:(id)arg1;
 - (void)_defaultRadioModelInitialization;
 - (void)_endBackgroundTaskAssertion;
 - (id)_init;
 - (id)_initBackgroundModelWithPersistentStoreCoordinator:(id)arg1;
 - (void)_insertRevisionWithStationID:(long long)arg1 revisionType:(int)arg2;
-- (void)_internalAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
 - (id)_managedSkipHistoryWithSkipIdentifier:(id)arg1;
 - (id)_managedSkipHistoryWithStationHash:(id)arg1;
 - (id)_managedSkipHistoryWithStationID:(long long)arg1;
 - (id)_newManagedSkipHistoryWithSkipIdentifier:(id)arg1;
 - (id)_newManagedSkipHistoryWithStationHash:(id)arg1;
 - (id)_newManagedSkipHistoryWithStationID:(long long)arg1;
-- (unsigned int)_numberOfSkipsUsedWithSkipTimestamps:(id)arg1 currentTimestamp:(double)arg2 skipInterval:(double)arg3;
+- (unsigned int)_numberOfSkipsUsedWithSkipTimestamps:(id)arg1 currentTimestamp:(double)arg2 skipInterval:(double)arg3 returningEarliestSkipTimestamp:(double*)arg4;
 - (void)_performTransactionAndSave:(BOOL)arg1 withBlock:(id)arg2;
 - (void)_postContextDidChangeNotification:(id)arg1;
 - (void)_prepareModel;
+- (void)_registerStationSkipController:(id)arg1;
 - (void)_resetModel;
 - (id)_setByReplacingManagedObjectsInSet:(id)arg1;
 - (void)_setDatabasePropertyValue:(id)arg1 forKey:(id)arg2;
-- (id)audioClipWithStoreID:(long long)arg1;
+- (void)_unregisterStationSkipController:(id)arg1;
 - (unsigned long long)authenticatedAccountIdentifier;
 - (BOOL)canSkipTracksForStation:(id)arg1;
 - (id)context;
@@ -84,53 +80,39 @@
 - (long long)databaseVersion;
 - (void)dealloc;
 - (void)deleteAllData;
-- (void)deleteAllTrackHistory;
-- (void)deleteAllWishlistedTracks;
 - (void)deletePreviewStation:(id)arg1;
 - (void)deleteStation:(id)arg1;
 - (void)deleteStationWithID:(long long)arg1;
-- (void)deleteTrackFromWishlist:(id)arg1;
-- (void)deleteTrackHistoryItem:(id)arg1;
-- (void)deleteUnreferencedTracks;
 - (void)enumerateRevisionsSinceRevisionID:(long long)arg1 usingBlock:(id)arg2;
 - (id)featuredStations;
 - (id)globalHash;
 - (unsigned long long)globalVersion;
 - (id)init;
-- (void)insertHistoryForTrack:(id)arg1 station:(id)arg2 date:(id)arg3;
-- (void)insertHistoryForTrack:(id)arg1 stationID:(long long)arg2 stationHash:(id)arg3 stationName:(id)arg4 date:(id)arg5;
-- (void)insertHistoryForTrackStoreID:(long long)arg1 stationID:(long long)arg2 stationHash:(id)arg3 stationName:(id)arg4 date:(id)arg5;
-- (void)markTracksNeedRefreshForStation:(id)arg1;
-- (id)newAudioClipWithDictionary:(id)arg1;
 - (id)newFeaturedStationWithDictionary:(id)arg1;
-- (id)newHistoryForTrack:(id)arg1 station:(id)arg2 date:(id)arg3;
 - (id)newPreviewStationWithDictionary:(id)arg1;
 - (id)newStationWithDictionary:(id)arg1;
-- (id)newTrackWithDictionary:(id)arg1;
+- (void)noteTrackWasSkippedForStation:(id)arg1 onDate:(id)arg2;
 - (void)noteTrackWasSkippedForStation:(id)arg1;
+- (unsigned int)numberOfTracksSkippedForStation:(id)arg1 returningEarliestSkipDate:(id*)arg2;
 - (unsigned int)numberOfTracksSkippedForStation:(id)arg1;
 - (void)performTransactionWithBlock:(id)arg1;
 - (void)performWriteTransactionWithBlock:(id)arg1;
 - (id)previewStations;
-- (void)removeAllTracksForPlaybackFromStation:(id)arg1;
-- (void)removeTrackForPlayback:(id)arg1 fromStation:(id)arg2;
-- (void)removeTracksForPlaybackFromAllStations;
+- (void)removeTrackPlaybackDescriptor:(id)arg1 fromStation:(id)arg2;
+- (void)removeTrackPlaybackDescriptorQueuesForAllStations;
 - (id)reportProblemIssueTypes;
 - (void)setAuthenticatedAccountIdentifier:(unsigned long long)arg1;
-- (void)setCurrentPlayingTrack:(id)arg1 withTime:(double)arg2 forStation:(id)arg3;
 - (void)setDatabaseVersion:(long long)arg1;
 - (void)setGlobalHash:(id)arg1;
 - (void)setGlobalVersion:(unsigned long long)arg1;
 - (void)setReportProblemIssueTypes:(id)arg1;
 - (void)setStationSortOrdering:(id)arg1;
+- (void)setTrackPlaybackDescriptorQueue:(id)arg1 forStation:(id)arg2;
+- (id)skipControllerForStation:(id)arg1;
 - (id)stationSortOrdering;
 - (id)stationWithHash:(id)arg1;
 - (id)stationWithID:(long long)arg1;
 - (id)stationWithPersistentID:(long long)arg1;
 - (id)stations;
-- (id)trackHistories;
-- (id)trackHistorySections;
-- (id)trackWithStoreID:(long long)arg1;
-- (id)wishlistedTracks;
 
 @end

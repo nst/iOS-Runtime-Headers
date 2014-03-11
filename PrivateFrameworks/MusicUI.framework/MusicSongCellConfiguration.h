@@ -7,7 +7,7 @@
 
 + (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
 + (void)configureDownloadStatusForCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
-+ (id)isPlayableProperties;
++ (id)mediaEntityPropertiesToFetch;
 + (Class)tableViewCellClass;
 
 @end

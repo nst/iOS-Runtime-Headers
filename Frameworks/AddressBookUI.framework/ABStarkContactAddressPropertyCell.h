@@ -2,23 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABStarkContactAddressPropertyCell : ABPropertyCell {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInsets;
+@interface ABStarkContactAddressPropertyCell : ABPropertyPostalAddressCell {
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)contentViewConstraints;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setLabelTextAttributes:(id)arg1;
-- (void)setValueTextAttributes:(id)arg1;
-- (void)updateWithPropertyItem:(id)arg1;
+- (void)transportButtonClicked:(id)arg1;
+- (void)updateTransportButtons;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, UIImageView, UIView, _MKCalloutBackgroundMaskView;
+@class NSMutableArray, UIColor, UIImageView, UIView, _MKCalloutBackgroundMaskView;
 
 @interface MKCalloutBackgroundView : UIPopoverBackgroundView {
     unsigned int _arrowDirection;
@@ -15,6 +15,7 @@
     NSMutableArray *_vendedMaskViews;
 }
 
+@property(readonly) UIColor * calloutBackgroundColor;
 @property int mapDisplayStyle;
 
 + (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
@@ -24,6 +25,7 @@
 + (void)setBeingCreatedForSmallCalloutController:(id)arg1;
 + (BOOL)wantsDefaultContentAppearance;
 
+- (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewInsets;
 - (void)_extendLeftRightArrow;
 - (void)_hideArrow;
@@ -34,7 +36,7 @@
 - (void)_showArrow;
 - (unsigned int)arrowDirection;
 - (float)arrowOffset;
-- (void)dealloc;
+- (id)calloutBackgroundColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (int)mapDisplayStyle;

@@ -60,12 +60,14 @@
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)_isLikedDidChangeNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
+- (void)_itemDurationDidChangeNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (void)_reloadViewWithAnimation:(BOOL)arg1;
 - (void)_timeMarkersAvailableNotification:(id)arg1;
 - (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(unsigned long long)arg3;
-- (void)_updateButtonImageForPart:(unsigned long long)arg1;
 - (void)_updateEnabledStates:(BOOL)arg1;
+- (void)_updatePlayButtonImage;
+- (void)_updateTintColorForPart:(unsigned long long)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (BOOL)allowsWirelessPlayback;
 - (BOOL)allowsWirelessPlaybackForCurrentItem;
@@ -110,9 +112,9 @@
 - (void)setVisibleParts:(unsigned long long)arg1;
 - (BOOL)showsVolumeSliderWhenNoVolumeControlAvailable;
 - (id)target;
+- (void)tintColorDidChange;
 - (id)tintColorForPart:(unsigned long long)arg1;
 - (void)unregisterForPlayerNotifications;
-- (void)updateVisibleButtonImages;
 - (BOOL)usesTintColorForControls;
 - (unsigned long long)visibleParts;
 

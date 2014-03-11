@@ -5,12 +5,14 @@
 @class <KeychainSyncPasscodeFieldDelegate>, PSPasscodeField;
 
 @interface PasscodeFieldCell : PSTableCell <UIKeyInput, PSPasscodeFieldDelegate> {
+    BOOL _convertsNumeralsToASCII;
     <KeychainSyncPasscodeFieldDelegate> *_delegate;
     PSPasscodeField *_passcodeField;
 }
 
 @property int autocapitalizationType;
 @property int autocorrectionType;
+@property BOOL convertsNumeralsToASCII;
 @property <KeychainSyncPasscodeFieldDelegate> * delegate;
 @property BOOL enablesReturnKeyAutomatically;
 @property int keyboardAppearance;
@@ -20,6 +22,7 @@
 @property int spellCheckingType;
 
 - (void)_setSecureTextEntry:(BOOL)arg1;
+- (BOOL)convertsNumeralsToASCII;
 - (void)dealloc;
 - (id)delegate;
 - (void)deleteBackward;
@@ -30,6 +33,7 @@
 - (void)layoutSubviews;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (id)passcodeText;
+- (void)setConvertsNumeralsToASCII:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPasscodeText:(id)arg1;
 

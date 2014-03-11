@@ -23,6 +23,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (BOOL)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(int)arg2;
 - (void)viewDidLoad;
 
 @end

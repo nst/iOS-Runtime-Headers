@@ -2,47 +2,58 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
+@class NSArray, NSDictionary, NSString;
 
 @interface TSDGLFrameBuffer : NSObject {
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int _currentTextureIndex;
-    unsigned int _desiredTextureIndex;
+    unsigned int _currentTextureIndex[16];
+    unsigned int _desiredTextureIndex[16];
     unsigned int _framebuffer;
     BOOL _isBound;
-    NSArray *_namesArray;
-    int _previousFramebuffer;
+    BOOL _isUsingNonDefaultAttachments;
+    NSString *_name;
+    NSDictionary *_namesToTextureDict;
     BOOL _shouldDeleteTexturesOnTeardown;
     } _size;
     NSArray *_textureConfigs;
-    unsigned int _textureCount;
-    unsigned int *_textures;
+    unsigned int _textureCount[16];
+    unsigned int *_textures[16];
 }
 
-@property(readonly) unsigned int currentGLTexture;
 @property(readonly) BOOL isBound;
+@property(copy) NSString * name;
 @property BOOL shouldDeleteTexturesOnTeardown;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 
++ (int)currentGLFramebuffer;
++ (void)setCurrentGLFramebuffer:(int)arg1;
+
+- (unsigned int)GLTextureAtIndex:(unsigned int)arg1 attachment:(unsigned int)arg2;
 - (unsigned int)GLTextureAtIndex:(unsigned int)arg1;
 - (unsigned int)GLTextureNamed:(id)arg1;
 - (void)bindFramebuffer;
 - (unsigned int)currentGLTexture;
+- (unsigned int)currentGLTextureAtAttachment:(unsigned int)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureConfigs:(id)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureCount:(unsigned int)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isBound;
+- (id)name;
+- (void)setCurrentTextureIndex:(unsigned int)arg1 atAttachment:(unsigned int)arg2;
 - (void)setCurrentTextureIndex:(unsigned int)arg1;
 - (void)setCurrentTextureNamed:(id)arg1;
 - (void)setCurrentTextureToNext;
+- (void)setCurrentTextureToNextAtAttachment:(unsigned int)arg1;
+- (void)setName:(id)arg1;
 - (void)setShouldDeleteTexturesOnTeardown:(BOOL)arg1;
 - (void)setupFramebufferIfNecessary;
 - (BOOL)shouldDeleteTexturesOnTeardown;
 - (struct CGSize { float x1; float x2; })size;
 - (void)teardown;
-- (void)unbindFramebuffer;
+- (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1;
 
 @end

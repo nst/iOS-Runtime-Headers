@@ -35,7 +35,6 @@
 @property(readonly) NSString * buildImageTitle;
 @property(readonly) KNBuild * buildIn;
 @property(readonly) KNBuild * buildOut;
-@property(readonly) NSString * buildTitle;
 @property(readonly) NSArray * builds;
 @property(readonly) BOOL canSizeBeChangedIncrementally;
 @property(copy) <TSDAnnotationHosting> * comment;
@@ -74,7 +73,6 @@
 - (id)buildImageTitle;
 - (id)buildIn;
 - (id)buildOut;
-- (id)buildTitle;
 - (id)builds;
 - (BOOL)canAnchor;
 - (BOOL)canChangeWrapType;

@@ -16,7 +16,6 @@
 
 + (float)heightForWidth:(float)arg1;
 
-- (id)_attributedStringForPlaceholder;
 - (id)addCommentButton;
 - (id)contentLabel;
 - (void)dealloc;

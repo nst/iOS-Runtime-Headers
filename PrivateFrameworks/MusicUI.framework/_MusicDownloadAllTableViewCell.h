@@ -24,5 +24,6 @@
 - (void)layoutSubviews;
 - (void)setDownloadAllCellForArtist:(BOOL)arg1;
 - (void)setDownloadableSongCount:(int)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 
 @end

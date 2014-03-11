@@ -62,12 +62,11 @@
 - (struct CGSize { float x1; float x2; })_contentSize;
 - (void)_createCardPileContainerView;
 - (int)_defaultContentModeForPresentationState:(int)arg1 index:(unsigned int)arg2;
-- (int)_edgeStylesObscuredByTopCornersOfPassStyle:(int)arg1;
-- (int)_edgeStylesObscuredByTopMiddleOfPassStyle:(int)arg1;
+- (int)_edgeStylesObscuredByTopCornersOfPassStyle:(unsigned int)arg1;
+- (int)_edgeStylesObscuredByTopMiddleOfPassStyle:(unsigned int)arg1;
 - (void)_endGroupPanWithGestureRecognizer:(id)arg1;
 - (void)_enumerateLoadedGroupViews:(id)arg1;
 - (void)_fanAndPageGroupView:(id)arg1;
-- (void)_flushCachesForGroupID:(id)arg1;
 - (void)_generateModalGroupPileWithVisibleIndexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 reservePlaceForModalGroup:(BOOL)arg2;
 - (float)_groupHeightMultiplier;
 - (id)_groupViewAtIndex:(unsigned int)arg1;
@@ -101,7 +100,7 @@
 - (float)_scaleForGroupView:(id)arg1 forState:(int)arg2;
 - (void)_setModalGroupView:(id)arg1;
 - (id)_sortedGroupViewIndexes;
-- (int)_startVisibleIndex;
+- (unsigned int)_startVisibleIndex;
 - (void)_stopAutoscrollTimer;
 - (void)_tileGroupsForState:(int)arg1 eager:(BOOL)arg2;
 - (void)_transformCardGroupView:(id)arg1 toState:(int)arg2 startTime:(float)arg3 animated:(BOOL)arg4;

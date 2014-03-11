@@ -14,6 +14,7 @@
     NSString *_bundleID;
     NSString *_categoryName;
     unsigned int _deviceFamilies;
+    BOOL _hasInAppPurchases;
     long long _itemIdentifier;
     int _itemKind;
     NSString *_itemKindString;
@@ -22,6 +23,7 @@
     SKUIArtworkList *_newsstandArtworks;
     int _newsstandBindingEdge;
     int _newsstandBindingType;
+    int _numberOfChildItems;
     int _numberOfUserRatings;
     int _parentalControlsRank;
     BOOL _prerenderedArtwork;
@@ -39,15 +41,19 @@
 @property(readonly) NSString * bundleIdentifier;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 @property(readonly) NSString * categoryName;
+@property(readonly) NSArray * childItemIdentifiers;
 @property(readonly) unsigned int deviceFamilies;
+@property(readonly) BOOL hasInAppPurchases;
 @property(readonly) long long itemIdentifier;
 @property(readonly) int itemKind;
 @property(readonly) NSString * itemKindString;
 @property(readonly) NSURL * largestArtworkURL;
+@property(readonly) NSArray * loadedChildItems;
 @property(getter=isNewsstandApp,readonly) BOOL newsstandApp;
 @property(readonly) SKUIArtworkList * newsstandArtworks;
 @property(readonly) int newsstandBindingEdge;
 @property(readonly) int newsstandBindingType;
+@property(readonly) int numberOfChildItems;
 @property(readonly) int numberOfUserRatings;
 @property(readonly) int parentalControlsRank;
 @property(getter=hasPrerenderedArtwork,readonly) BOOL prerenderedArtwork;
@@ -60,6 +66,8 @@
 @property(readonly) NSString * versionString;
 
 - (void).cxx_destruct;
+- (void)_setHasInAppPurchases:(BOOL)arg1;
+- (void)addItemOfferParameterWithName:(id)arg1 value:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })ageBandRange;
 - (id)artistName;
 - (id)artworkURLForSize:(int)arg1;
@@ -67,7 +75,10 @@
 - (id)bundleIdentifier;
 - (id)cacheRepresentation;
 - (id)categoryName;
+- (id)childItemForIdentifier:(id)arg1;
+- (id)childItemIdentifiers;
 - (unsigned int)deviceFamilies;
+- (BOOL)hasInAppPurchases;
 - (BOOL)hasPrerenderedArtwork;
 - (unsigned int)hash;
 - (id)initWithCacheRepresentation:(id)arg1;
@@ -78,9 +89,11 @@
 - (int)itemKind;
 - (id)itemKindString;
 - (id)largestArtworkURL;
+- (id)loadedChildItems;
 - (id)newsstandArtworks;
 - (int)newsstandBindingEdge;
 - (int)newsstandBindingType;
+- (int)numberOfChildItems;
 - (int)numberOfUserRatings;
 - (int)parentalControlsRank;
 - (id)primaryItemOffer;

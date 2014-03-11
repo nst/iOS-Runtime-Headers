@@ -7,15 +7,11 @@
 @interface ML3DatabaseDistantResult : ML3DatabaseResult {
     NSArray *_cachedRows;
     ML3DatabaseDistantConnection *_distantConnection;
-    NSString *_limitProperty;
-    long long _limitValue;
     NSArray *_parameters;
     NSString *_sql;
 }
 
 @property(readonly) ML3DatabaseDistantConnection * distantConnection;
-@property(retain) NSString * limitProperty;
-@property long long limitValue;
 @property(readonly) NSArray * parameters;
 @property(readonly) NSString * sql;
 
@@ -31,12 +27,7 @@
 - (id)init;
 - (id)initWithDistantConnection:(id)arg1 sql:(id)arg2 parameters:(id)arg3;
 - (id)initWithStatement:(id)arg1;
-- (id)limitProperty;
-- (long long)limitValue;
 - (id)parameters;
-- (void)setLimitProperty:(id)arg1 limitValue:(long long)arg2;
-- (void)setLimitProperty:(id)arg1;
-- (void)setLimitValue:(long long)arg1;
 - (id)sql;
 
 @end

@@ -29,7 +29,6 @@
 @property(copy) NSString * album;
 @property(copy) NSString * artist;
 @property(retain) UIImage * artworkImage;
-@property float backgroundTransitionProgress;
 @property float cloudRightInset;
 @property(readonly) NSString * copyright;
 @property(copy) id downloadActionBlock;

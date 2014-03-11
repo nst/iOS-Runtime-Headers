@@ -6,15 +6,15 @@
 
 @interface CBMutableCharacteristic : CBCharacteristic {
     NSNumber *_ID;
-    int _permissions;
+    unsigned int _permissions;
     NSMutableArray *_subscribedCentrals;
 }
 
 @property(retain) NSNumber * ID;
 @property(retain) CBUUID * UUID;
 @property(retain) NSArray * descriptors;
-@property int permissions;
-@property int properties;
+@property unsigned int permissions;
+@property unsigned int properties;
 @property(readonly) NSArray * subscribedCentrals;
 @property(retain) NSData * value;
 
@@ -24,12 +24,12 @@
 - (BOOL)handleCentralSubscribed:(id)arg1;
 - (BOOL)handleCentralUnsubscribed:(id)arg1;
 - (id)initWithService:(id)arg1 dictionary:(id)arg2;
-- (id)initWithType:(id)arg1 properties:(int)arg2 value:(id)arg3 permissions:(int)arg4;
-- (int)permissions;
+- (id)initWithType:(id)arg1 properties:(unsigned int)arg2 value:(id)arg3 permissions:(unsigned int)arg4;
+- (unsigned int)permissions;
 - (void)setDescriptors:(id)arg1;
 - (void)setID:(id)arg1;
-- (void)setPermissions:(int)arg1;
-- (void)setProperties:(int)arg1;
+- (void)setPermissions:(unsigned int)arg1;
+- (void)setProperties:(unsigned int)arg1;
 - (id)subscribedCentrals;
 
 @end

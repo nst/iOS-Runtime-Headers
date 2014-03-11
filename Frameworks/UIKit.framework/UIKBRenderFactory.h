@@ -5,6 +5,7 @@
 @class NSArray, NSMutableArray, UIKBRenderConfig;
 
 @interface UIKBRenderFactory : NSObject {
+    BOOL _boldTextEnabled;
     BOOL _lightweightFactory;
     UIKBRenderConfig *_renderConfig;
     float _rivenSizeFactor;
@@ -32,15 +33,21 @@
 - (void)addLayoutSegment:(id)arg1;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (id)controlKeyBackgroundColorName;
+- (id)controlKeyForegroundColorName;
+- (id)controlKeyShadowColorName;
 - (void)dealloc;
 - (id)defaultKeyBackgroundColorName;
+- (id)defaultKeyShadowColorName;
 - (id)deleteKeyImageName;
+- (id)deleteKeyXImageName;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)displayContentsForKey:(id)arg1;
+- (id)extraPasscodePaddleTraits;
 - (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
 - (id)handwritingMoreKeyImageName;
+- (id)hashStringElement;
 - (id)initWithRenderConfig:(id)arg1 skipLayoutSegments:(BOOL)arg2;
 - (float)keyCornerRadius;
 - (id)keyImageNameWithSkinnyVariation:(id)arg1;
@@ -49,9 +56,16 @@
 - (id)lightTextFontName;
 - (BOOL)lightweightFactory;
 - (void)lowQualityTraits:(id)arg1;
+- (void)modifyKeyTraitsForPasscode:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
 - (void)modifyTraitsForDetachedInputSwitcher:(id)arg1 withKey:(id)arg2;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
+- (id)passcodeActiveControlKeyTraits;
+- (id)passcodeBackgroundTraitsForKeyplane:(id)arg1;
+- (id)passcodeControlKeyTraits;
+- (float)passcodeEdgeWeight;
+- (id)passcodeKeyEdgeColorName;
+- (id)passcodeShiftedControlKeyTraits;
 - (void)removeAllLayoutSegments;
 - (id)renderConfig;
 - (float)rivenSizeFactor;
@@ -63,6 +77,7 @@
 - (void)setScale:(float)arg1;
 - (void)setupLayoutSegments;
 - (id)shiftKeyImageName;
+- (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (BOOL)shouldClearBaseDisplayStringForVariants;
 - (float)skinnyKeyThreshold;

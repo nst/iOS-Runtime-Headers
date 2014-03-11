@@ -15,12 +15,14 @@
     NSMutableArray *_behaviorOverrideStatusChangeClients;
     NSDate *_behaviorOverrideStatusEffectiveTime;
     NSArray *_behaviorOverrides;
+    NSMutableArray *_behaviorOverridesChangeClients;
     BOOL _behaviorOverridesEffectiveWhileUnlocked;
     NSObject<OS_dispatch_source> *_behaviorOverridesTimer;
     NSDate *_behaviorOverridesWakeTime;
     NSMutableDictionary *_bulletinIDsBySectionID;
     NSMutableDictionary *_bulletinRequestsByID;
     NSMutableDictionary *_bulletinsByID;
+    NSMutableSet *_carObservers;
     NSMutableDictionary *_clearedSections;
     unsigned int _currentSystemState;
     NSMutableDictionary *_dataProviderFactoriesBySection;
@@ -81,7 +83,7 @@
 - (void)_assignIDToBulletinRequest:(id)arg1;
 - (unsigned int)_behaviorOverrideState;
 - (void)_behaviorOverrideStatusChanged;
-- (void)_behaviorOverridesChanged;
+- (void)_behaviorOverrideTypesChanged;
 - (id)_behaviorOverridesPath;
 - (id)_bulletinIDsInSortedArray:(id)arg1 withDateForKey:(id)arg2 beforeCutoff:(id)arg3;
 - (id)_bulletinRequestsForIDs:(id)arg1;
@@ -166,7 +168,7 @@
 - (void)_sendModifyBulletin:(id)arg1 toFeeds:(unsigned int)arg2;
 - (void)_sendRemoveBulletin:(id)arg1 toFeeds:(unsigned int)arg2 shouldSync:(BOOL)arg3;
 - (void)_sendRemoveBulletins:(id)arg1 toFeeds:(unsigned int)arg2 shouldSync:(BOOL)arg3;
-- (void)_sendUpdateBehaviorOverrides;
+- (void)_sendUpdateBehaviorOverrideTypes;
 - (void)_sendUpdateSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)_sendUpdateSectionOrderForCategory:(int)arg1;
 - (void)_sendUpdateSectionOrderRule;
@@ -197,6 +199,7 @@
 - (id)activeSectionIDsForDefaultCategory;
 - (id)allBulletinIDsForSectionID:(id)arg1;
 - (id)bulletinIDsForSectionID:(id)arg1 inFeed:(unsigned int)arg2;
+- (id)carBulletinIDsForSectionID:(id)arg1;
 - (id)dataProviderForSectionID:(id)arg1;
 - (void)dealloc;
 - (void)deliverResponse:(id)arg1;
@@ -255,6 +258,7 @@
 - (void)settingsGateway:(id)arg1 setBehaviorOverrideStatus:(int)arg2;
 - (void)settingsGateway:(id)arg1 setBehaviorOverrideStatusChangeUpdatesEnabled:(BOOL)arg2;
 - (void)settingsGateway:(id)arg1 setBehaviorOverrides:(id)arg2;
+- (void)settingsGateway:(id)arg1 setBehaviorOverridesChangeUpdatesEnabled:(BOOL)arg2;
 - (void)settingsGateway:(id)arg1 setBehaviorOverridesEffectiveWhileUnlocked:(BOOL)arg2;
 - (void)settingsGateway:(id)arg1 setOrderedSectionIDs:(id)arg2 forCategory:(int)arg3;
 - (void)settingsGateway:(id)arg1 setPrivilegedSenderAddressBookGroupRecordID:(int)arg2 name:(id)arg3;

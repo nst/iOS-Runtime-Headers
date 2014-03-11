@@ -5,6 +5,7 @@
 @class NSArray, NSString, NSURL, SKUIProductPageItem, SKUIReviewConfiguration, SKUIUber, SSMetricsConfiguration;
 
 @interface SKUIProductPage : NSObject <NSCopying> {
+    int _defaultPageFragment;
     SKUIProductPageItem *_item;
     SSMetricsConfiguration *_metricsConfiguration;
     NSString *_metricsPageDescription;
@@ -14,6 +15,7 @@
     SKUIUber *_uber;
 }
 
+@property int defaultPageFragment;
 @property(retain) SKUIProductPageItem * item;
 @property(retain) SSMetricsConfiguration * metricsConfiguration;
 @property(copy) NSString * metricsPageDescription;
@@ -24,12 +26,14 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)defaultPageFragment;
 - (id)item;
 - (id)metricsConfiguration;
 - (id)metricsPageDescription;
 - (id)pageURL;
 - (id)relatedContentSwooshes;
 - (id)reviewConfiguration;
+- (void)setDefaultPageFragment:(int)arg1;
 - (void)setItem:(id)arg1;
 - (void)setMetricsConfiguration:(id)arg1;
 - (void)setMetricsPageDescription:(id)arg1;

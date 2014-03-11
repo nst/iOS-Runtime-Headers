@@ -13,11 +13,12 @@
     BOOL _downloadableOverCellular;
     NSString *_humanReadableUpdateName;
     unsigned long long _installationSize;
-    unsigned long long _preparationSize;
+    unsigned long long _msuPrepareSize;
     NSString *_productBuildVersion;
     NSString *_productSystemName;
     NSString *_productVersion;
     NSString *_publisher;
+    unsigned long long _unarchiveSize;
     int _updateType;
 }
 
@@ -27,17 +28,22 @@
 @property(getter=isDownloadable) BOOL downloadable;
 @property(getter=isDownloadableOverCellular) BOOL downloadableOverCellular;
 @property unsigned long long installationSize;
-@property unsigned long long preparationSize;
+@property(getter=_msuPrepareSize,setter=_setMsuPrepareSize:) unsigned long long msuPrepareSize;
 @property(retain) NSString * productBuildVersion;
 @property(retain) NSString * productSystemName;
 @property(retain) NSString * productVersion;
 @property(retain) NSString * publisher;
+@property(getter=_unarchiveSize,setter=_setUnarchiveSize:) unsigned long long unarchiveSize;
 @property int updateType;
 
 + (BOOL)supportsSecureCoding;
 
 - (id)_buildCompareKey;
 - (BOOL)_hasValue:(id)arg1;
+- (unsigned long long)_msuPrepareSize;
+- (void)_setMsuPrepareSize:(unsigned long long)arg1;
+- (void)_setUnarchiveSize:(unsigned long long)arg1;
+- (unsigned long long)_unarchiveSize;
 - (BOOL)autoDownloadAllowableForCellular;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -65,7 +71,6 @@
 - (void)setDownloadable:(BOOL)arg1;
 - (void)setDownloadableOverCellular:(BOOL)arg1;
 - (void)setInstallationSize:(unsigned long long)arg1;
-- (void)setPreparationSize:(unsigned long long)arg1;
 - (void)setProductBuildVersion:(id)arg1;
 - (void)setProductSystemName:(id)arg1;
 - (void)setProductVersion:(id)arg1;

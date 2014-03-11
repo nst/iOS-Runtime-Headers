@@ -11,9 +11,9 @@
 
 @property(getter=isSearching,readonly) BOOL searching;
 
+- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)cancel;
-- (void)dealloc;
 - (id)initWithRequest:(id)arg1;
 - (BOOL)isSearching;
 - (void)startWithCompletionHandler:(id)arg1;

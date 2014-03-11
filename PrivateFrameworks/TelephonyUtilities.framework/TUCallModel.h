@@ -18,5 +18,6 @@
 - (BOOL)isHoldAndAnswerAllowed;
 - (BOOL)isMergeable;
 - (BOOL)isSwappable;
+- (BOOL)isTakingCallsPrivateAllowed;
 
 @end

@@ -13,6 +13,7 @@
 - (void)_sendMessage:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)getStateWithCompletionBlock:(id)arg1;
 - (id)init;
+- (void)renewPurchaseTokenWithAuthToken:(id)arg1 completionBlock:(id)arg2;
 - (void)resetWithCompletionBlock:(id)arg1;
 - (void)setAllowed:(BOOL)arg1 completionBlock:(id)arg2;
 - (void)setEnabled:(BOOL)arg1 withAuthToken:(id)arg2 completionBlock:(id)arg3;

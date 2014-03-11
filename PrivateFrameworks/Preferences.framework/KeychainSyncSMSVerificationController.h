@@ -24,6 +24,7 @@
 - (id)countryCode;
 - (void)dealloc;
 - (id)dialingPrefix;
+- (void)dismissAlerts;
 - (id)init;
 - (id)keychainSyncManager;
 - (void)loadView;

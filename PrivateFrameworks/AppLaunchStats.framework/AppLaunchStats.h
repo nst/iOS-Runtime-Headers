@@ -61,7 +61,6 @@
     int pushToken;
     id recommendHandler;
     int resourceStatus;
-    int resourceToken;
     int semaphoreSigToken;
     NSObject<OS_dispatch_source> *theTimer;
     NSDate *timeOfLastFetch;
@@ -80,7 +79,7 @@
 - (id)aplsState;
 - (void)appActivityForecastStartingOnDate:(id)arg1 duration:(double)arg2 granularity:(int)arg3 appFilter:(id)arg4 completionHandler:(id)arg5;
 - (id)appLaunchStatDQueue;
-- (int)bundlePredictionZone:(id)arg1 launchzone:(int)arg2;
+- (int)bundlePredictionZone:(id)arg1 launchzone:(int)arg2 top:(int)arg3 filter:(bool)arg4;
 - (void)carryDailyBudget:(id)arg1 completionHandler:(id)arg2;
 - (void)checkWifiChargerConnected;
 - (id)conn;
@@ -145,7 +144,6 @@
 - (void)updateDailyPowerBudgets;
 - (void)updatePowerBudgetPool;
 - (void)updateResourceAvailability;
-- (void)updateResourceAvailabilityNow:(unsigned long long)arg1;
 - (void)updateStateFromExternalNotification:(unsigned long long)arg1;
 - (void)updateTrendingBehavior:(unsigned long long)arg1 withBundleID:(id)arg2;
 - (void)whatToLaunch:(id)arg1;

@@ -21,6 +21,7 @@
 - (id)newAccessoryView;
 - (id)pickedEntities;
 - (id)playlist;
+- (BOOL)shouldDisplayAddAllAsDisabledFromDataSource:(id)arg1;
 - (BOOL)shouldDisplayEntityAsDisabled:(id)arg1;
 - (id)title;
 - (void)viewController:(id)arg1 didPickAllEntitiesFromDataSource:(id)arg2;

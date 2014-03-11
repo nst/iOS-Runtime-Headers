@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class KeychainSyncAdvancedSecurityCodeController, KeychainSyncDevicePINController, KeychainSyncPhoneNumberController, KeychainSyncSMSVerificationController, KeychainSyncSecurityCodeController, NSString, NSTimer, PSRootController, PSSetupController, UIAlertView, UIViewController;
+@class KeychainSyncAdvancedSecurityCodeController, KeychainSyncDevicePINController, KeychainSyncPhoneNumberController, KeychainSyncSMSVerificationController, KeychainSyncSecurityCodeController, NSString, NSTimer, PSRootController, PSSetupController, UIAlertView, UIView, UIViewController;
 
 @interface PSKeychainSyncManager : NSObject <KeychainSyncViewControllerDelegate> {
     KeychainSyncAdvancedSecurityCodeController *_advancedSecurityCodeChoiceController;
@@ -20,12 +20,14 @@
     id _completion;
     KeychainSyncSecurityCodeController *_complexSecurityCodeController;
     NSTimer *_credentialExpirationTimer;
+    UIAlertView *_deleteSafariPasswordsAlert;
     UIAlertView *_devicePINChoiceAlert;
     UIAlertView *_devicePasscodeChangeAlert;
     UIAlertView *_devicePasscodeTooWeakAlert;
     KeychainSyncDevicePINController *_devicePinController;
     UIAlertView *_enableWithExistingBackupAlert;
     int _flow;
+    UIAlertView *_genericErrorAlert;
     UIAlertView *_iCSCHardLimitAlert;
     UIAlertView *_iCSCHardLimitWithApprovalAlert;
     UIAlertView *_iCSCSoftLimitAlert;
@@ -43,9 +45,10 @@
     KeychainSyncSecurityCodeController *_simpleSecurityCodeController;
     KeychainSyncSMSVerificationController *_smsValidationController;
     unsigned int _spinnerCount;
-    UIViewController *_spinningViewController;
+    UIView *_spinningView;
     NSString *_stagedSecurityCode;
     int _stagedSecurityCodeType;
+    UIAlertView *_verificationCodeLimitAlert;
 }
 
 @property(retain) NSString * appleIDPassword;
@@ -64,6 +67,7 @@
 @property(readonly) NSString * stagedSecurityCode;
 @property(readonly) int stagedSecurityCodeType;
 
++ (void)getStatusWithCompletion:(id)arg1;
 + (id)sharedManager;
 
 - (void)_autoVetSMSValidationWithToken:(id)arg1;
@@ -78,10 +82,12 @@
 - (void)_peerApprovalFromRecoveryFlow;
 - (void)_preSetupCancelledWithCurrentStatus;
 - (void)_recoverWithSecurityCode:(id)arg1 verificationCode:(id)arg2;
+- (void)_registerForCircleChangeNotifications;
 - (void)_registerForCircleChangeNotificationsWithCompletion:(id)arg1;
 - (BOOL)_resetCircleAndDisableBackupWithError:(id*)arg1;
 - (void)_resetFromRecoveryFlow;
 - (void)_showGenericFlowErrorAlert;
+- (void)_showInvalidPhoneNumberAlertWithDigits:(id)arg1 countryInfo:(id)arg2;
 - (void)_showResetFlowOverController:(id)arg1 withEnableBackupText:(BOOL)arg2 withCompletion:(id)arg3;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)appleIDPassword;
@@ -107,6 +113,7 @@
 - (id)navigationController;
 - (id)passwordPromptCompletion;
 - (void)pinChoiceAlertDidChooseToUseDevicePasscode:(BOOL)arg1;
+- (id)preferencesApp;
 - (void)promptForDevicePasscodeChangeToPasscode:(id)arg1;
 - (void)promptForPasswordIfCredentialsNotCachedOverController:(id)arg1 withCompletion:(id)arg2;
 - (void)promptForPasswordIfNeededForWritingOverController:(id)arg1 withCompletion:(id)arg2;

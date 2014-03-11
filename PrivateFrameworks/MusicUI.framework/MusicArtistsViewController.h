@@ -3,16 +3,23 @@
  */
 
 @interface MusicArtistsViewController : MusicTableViewController {
+    BOOL _allowsActions;
 }
 
+@property BOOL allowsActions;
+
++ (id)actionCellConfigurationClasses;
 + (int)groupingType;
 + (id)itemPersistentIDProperty;
 + (id)persistentIDProperty;
 
 - (void)_appDefaultsDidChangeNotification:(id)arg1;
+- (BOOL)allowsActions;
 - (void)dealloc;
 - (void)defaultsDidChange;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
+- (void)setAllowsActions:(BOOL)arg1;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

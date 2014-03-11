@@ -71,6 +71,7 @@
 - (id)identityPersist;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
+- (BOOL)isShutdown;
 - (id)password;
 - (int)port;
 - (id)queuedTasks;

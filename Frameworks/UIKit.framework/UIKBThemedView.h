@@ -30,8 +30,8 @@
 
 - (BOOL)_canDrawContent;
 - (BOOL)_hasInsets;
+- (void)_popuplateLayer:(id)arg1 withContents:(id)arg2;
 - (void)_setRenderConfig:(id)arg1;
-- (id)_setupLayerIfNoLayer:(id)arg1 withContents:(id)arg2;
 - (BOOL)active;
 - (BOOL)cacheDeferable;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cacheInsets;
@@ -43,6 +43,7 @@
 - (void)drawContentsOfRenderers:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (BOOL)keepNonPersistent;
+- (void)layoutSubviews;
 - (void)setActive:(BOOL)arg1;
 - (void)setCacheInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setStyle:(int)arg1;

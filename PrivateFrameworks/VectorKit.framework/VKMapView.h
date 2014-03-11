@@ -5,6 +5,12 @@
 @class <VKMapViewDelegate>, <VKRoutePreloadSession>, CADisplay, GEOMapRegion, NSArray, NSString, VKAnimation, VKClassicGlobeCanvas, VKLabelMarker, VKMapCanvas, VKPolylineOverlayPainter;
 
 @interface VKMapView : CALayer <VKInteractiveMapDelegate> {
+    struct VKEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _animatingToEdgeInsets;
     VKMapCanvas *_canvas;
     VKAnimation *_edgeInsetAnimation;
     VKClassicGlobeCanvas *_globe;
@@ -19,7 +25,6 @@
 
 @property BOOL allowDatelineWraparound;
 @property(readonly) double altitude;
-@property(retain) NSArray * alwaysVisibleTrafficIncidents;
 @property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
 @property(readonly) NSArray * annotationMarkers;
 @property int annotationTrackingZoomStyle;
@@ -27,6 +32,7 @@
 @property(readonly) BOOL canShowAnimationForPlaceCard;
 @property(readonly) BOOL canShowFlyover;
 @property struct { double x1; double x2; double x3; } centerCoordinate;
+@property(readonly) double currentZoomLevel;
 @property BOOL debugDrawContinuously;
 @property BOOL debugEnableMultisampling;
 @property(readonly) float debugFramesPerSecond;
@@ -36,6 +42,7 @@
 @property BOOL dynamicMapModesEnabled;
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property(readonly) BOOL enableDebugLabelHighlighting;
+@property(retain) NSArray * externalTrafficIncidents;
 @property(retain) VKPolylineOverlayPainter * focusedLabelsPolylinePainter;
 @property(getter=isFullyDrawn,readonly) BOOL fullyDrawn;
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } fullyOccludedEdgeInsets;
@@ -50,6 +57,7 @@
 @property(readonly) NSArray * labelMarkers;
 @property int labelScaleFactor;
 @property BOOL localizeLabels;
+@property(readonly) VKMapCanvas * mapCanvas;
 @property <VKMapViewDelegate> * mapDelegate;
 @property int mapDisplayStyle;
 @property(retain) GEOMapRegion * mapRegion;
@@ -73,9 +81,11 @@
 @property BOOL showsPointsOfInterest;
 @property BOOL staysCenteredDuringPinch;
 @property BOOL staysCenteredDuringRotation;
+@property int targetDisplay;
 @property int trackingCameraPanStyle;
 @property double trackingZoomScale;
 @property BOOL trafficEnabled;
+@property BOOL useTimerDisplayLink;
 @property double userZoomFocusStyleGroundspanMeters;
 @property double userZoomFocusStyleMaxGroundspanMeters;
 @property double userZoomFocusStyleMinGroundspanMeters;
@@ -84,9 +94,12 @@
 
 + (id)installedStylesheetNames;
 
+- (id).cxx_construct;
 - (void)_createGlobe;
 - (void)_initializeGlobe;
 - (void)_mapkit_configureFromDefaults:(BOOL)arg1;
+- (void)_resetMaximumZoomLevel;
+- (void)_setMaximumZoomLevel:(double)arg1;
 - (void)_setStyleTransitionProgress:(float)arg1 targetStyle:(int)arg2 step:(int)arg3;
 - (float)_styleTransitionProgress;
 - (void)addAnnotationMarker:(id)arg1 allowAnimation:(BOOL)arg2;
@@ -96,7 +109,6 @@
 - (void)addRasterOverlay:(id)arg1;
 - (BOOL)allowDatelineWraparound;
 - (double)altitude;
-- (id)alwaysVisibleTrafficIncidents;
 - (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
 - (id)annotationCoordinateTest;
 - (id)annotationMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 avoidCurrent:(BOOL)arg2;
@@ -109,6 +121,8 @@
 - (BOOL)canShowAnimationForPlaceCard;
 - (BOOL)canShowAnimationForSearchResultWithMapRegion:(id)arg1;
 - (BOOL)canShowFlyover;
+- (BOOL)canZoomInForTileSize:(int)arg1;
+- (BOOL)canZoomOutForTileSize:(int)arg1;
 - (struct { double x1; double x2; double x3; })centerCoordinate;
 - (void)clearScene;
 - (void)closeLoaderConnection;
@@ -121,8 +135,10 @@
 - (id)currentCanvas;
 - (double)currentZoomLevel;
 - (BOOL)currentZoomLevelAllowsRotation;
+- (double)currentZoomLevelForTileSize:(int)arg1;
 - (void)dealloc;
 - (BOOL)debugDrawContinuously;
+- (BOOL)debugDynamicMapModesEnabled;
 - (BOOL)debugEnableMultisampling;
 - (float)debugFramesPerSecond;
 - (void)debugHighlightLabelAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -142,6 +158,7 @@
 - (BOOL)enableDebugLabelHighlighting;
 - (void)enter3DMode;
 - (void)exit3DMode;
+- (id)externalTrafficIncidents;
 - (id)focusedLabelsPolylinePainter;
 - (void)forceLayout;
 - (void)forceSceneLoad;
@@ -172,15 +189,19 @@
 - (BOOL)localizeLabels;
 - (void)map:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
 - (void)map:(id)arg1 canShowFlyoverDidChange:(BOOL)arg2;
-- (void)map:(id)arg1 didAddAnnotationMarkers:(id)arg2;
+- (void)map:(id)arg1 canZoomInDidChange:(BOOL)arg2;
+- (void)map:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)map:(id)arg1 didAnimateInAnnotationMarkers:(id)arg2;
 - (void)map:(id)arg1 didBecomePitched:(BOOL)arg2;
+- (void)map:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
 - (void)map:(id)arg1 didFinishAddingAnnotationMarkers:(id)arg2;
 - (id)map:(id)arg1 painterForOverlay:(id)arg2;
 - (id)map:(id)arg1 presentationForAnnotation:(id)arg2;
 - (void)map:(id)arg1 selectedLabelMarkerWillDisappear:(id)arg2;
 - (void)map:(id)arg1 willAnimateInAnnotationMarkers:(id)arg2;
+- (void)map:(id)arg1 willChangeRegionAnimated:(BOOL)arg2;
 - (void)map:(id)arg1 willTransitionFrom:(int)arg2 to:(int)arg3 duration:(double)arg4;
+- (id)mapCanvas;
 - (id)mapDelegate;
 - (void)mapDidBecomeFullyDrawn:(id)arg1 hasFailedTiles:(BOOL)arg2;
 - (void)mapDidBecomePartiallyDrawn:(id)arg1;
@@ -190,18 +211,19 @@
 - (void)mapDidFinishChangingMapDisplayStyle:(int)arg1;
 - (void)mapDidFinishLoadingTiles:(id)arg1;
 - (void)mapDidStartLoadingTiles:(id)arg1;
-- (void)mapDidStopRegionAnimation:(id)arg1 completed:(BOOL)arg2;
 - (int)mapDisplayStyle;
 - (id)mapRegion;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mapRegionBounds;
 - (id)mapRegionOfInterest;
 - (int)mapType;
-- (void)mapWillStartRegionAnimation:(id)arg1;
 - (double)maximumZoomLevel;
+- (double)maximumZoomLevelForTileSize:(int)arg1;
 - (double)minimumZoomLevel;
+- (double)minimumZoomLevelForTileSize:(int)arg1;
 - (int)navigationShieldSize;
 - (void)openLoaderConnection;
 - (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id)arg5;
+- (void)pauseTracking;
 - (double)pitch;
 - (BOOL)polygonsDisabled;
 - (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1;
@@ -231,10 +253,10 @@
 - (void)selectLabelMarker:(id)arg1;
 - (id)selectedLabelMarker;
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
-- (void)setAlwaysVisibleTrafficIncidents:(id)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1;
@@ -242,6 +264,7 @@
 - (void)setContentsScale:(float)arg1;
 - (void)setCurrentLocationText:(id)arg1;
 - (void)setDebugDrawContinuously:(BOOL)arg1;
+- (void)setDebugDynamicMapModesEnabled:(BOOL)arg1;
 - (void)setDebugEnableMultisampling:(BOOL)arg1;
 - (void)setDebugLayoutContinuously:(BOOL)arg1;
 - (void)setDebugPaintFrameRateGraph:(BOOL)arg1;
@@ -257,9 +280,10 @@
 - (void)setDisableRoads:(BOOL)arg1;
 - (void)setDisplayRate:(int)arg1;
 - (void)setDynamicMapModesEnabled:(BOOL)arg1;
-- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1 duration:(double)arg2 timingFunction:(id)arg3;
+- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1 duration:(double)arg2 timingFunction:(id)arg3 completionHandler:(id)arg4;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setEnabledBlackRoadLines:(BOOL)arg1;
+- (void)setExternalTrafficIncidents:(id)arg1;
 - (void)setFocusedLabelsPolylinePainter:(id)arg1;
 - (void)setFullyOccludedEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
@@ -282,7 +306,6 @@
 - (void)setNavigationShieldSize:(int)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsLayout;
-- (void)setPuckHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setRendersInBackground:(BOOL)arg1;
 - (void)setRouteLineSplitAnnotation:(id)arg1;
 - (void)setRoutePreloadSession:(id)arg1;
@@ -303,6 +326,7 @@
 - (void)setTrackingCameraPanStyle:(int)arg1;
 - (void)setTrackingZoomScale:(double)arg1;
 - (void)setTrafficEnabled:(BOOL)arg1;
+- (void)setUseTimerDisplayLink:(BOOL)arg1;
 - (void)setUserZoomFocusStyleGroundspanMeters:(double)arg1;
 - (void)setUserZoomFocusStyleMaxGroundspanMeters:(double)arg1;
 - (void)setUserZoomFocusStyleMinGroundspanMeters:(double)arg1;
@@ -337,6 +361,9 @@
 - (id)stylesheet;
 - (id)stylesheetName;
 - (BOOL)supportsMapType:(int)arg1;
+- (BOOL)supportsNightMode;
+- (int)targetDisplay;
+- (double)topDownMinimumZoomLevelForTileSize:(int)arg1;
 - (int)trackingCameraPanStyle;
 - (double)trackingZoomScale;
 - (BOOL)trafficEnabled;
@@ -346,6 +373,7 @@
 - (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
 - (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (void)updateRotationWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 newValue:(double)arg2;
+- (BOOL)useTimerDisplayLink;
 - (double)userZoomFocusStyleGroundspanMeters;
 - (double)userZoomFocusStyleMaxGroundspanMeters;
 - (double)userZoomFocusStyleMinGroundspanMeters;
@@ -354,6 +382,7 @@
 - (void)willEnterForeground;
 - (double)yaw;
 - (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
+- (double)zoomLevelAdjustmentForTileSize:(int)arg1;
 - (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

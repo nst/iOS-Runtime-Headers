@@ -10,7 +10,9 @@
 - (struct CGPoint { float x1; float x2; })abcKeyTextOffset;
 - (id)activeControlKeyTraits;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
+- (id)controlKeyBackgroundColorName;
 - (id)controlKeyTraits;
+- (id)defaultKeyBackgroundColorName;
 - (struct CGPoint { float x1; float x2; })dictationKeyTextOffset;
 - (id)displayContentsForKey:(id)arg1;
 - (unsigned int)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
@@ -20,6 +22,9 @@
 - (struct CGPoint { float x1; float x2; })numberPadKeyPrimaryTextOffset;
 - (struct CGPoint { float x1; float x2; })numberPadKeySecondaryTextOffset;
 - (struct CGPoint { float x1; float x2; })numberPadVBarSecondaryTextOffset;
+- (void)setupColumnLayoutSegmentsWithControlWidth:(float)arg1;
+- (id)shiftedControlKeyTraits;
+- (id)shiftedWhiteControlKeyTraits;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;
 
 @end

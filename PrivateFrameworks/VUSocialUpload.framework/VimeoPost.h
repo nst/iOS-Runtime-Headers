@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class <VimeoPostDelegate>, ACAccount, ALAsset, ALAssetsLibrary, NSArray, NSData, NSString, NSURL;
+@class <VimeoPostDelegate>, ACAccount, ALAsset, ALAssetsLibrary, NSArray, NSData, NSString, NSURL, VUDataReader;
 
 @interface VimeoPost : NSObject {
     unsigned int _accessType;
@@ -14,6 +14,7 @@
     NSURL *_baseURL;
     BOOL _canUploadOverCellular;
     BOOL _continuingUpload;
+    VUDataReader *_dataReader;
     <VimeoPostDelegate> *_delegate;
     NSString *_description;
     NSURL *_exportedVideoURL;
@@ -34,6 +35,7 @@
 @property(retain) ALAsset * asset;
 @property(retain) NSData * assetData;
 @property(retain) NSURL * assetURL;
+@property(retain) VUDataReader * dataReader;
 @property <VimeoPostDelegate> * delegate;
 @property(retain) NSString * description;
 @property(retain) NSURL * exportedVideoURL;
@@ -65,6 +67,7 @@
 - (id)assetData;
 - (id)assetURL;
 - (id)assetsLibrary;
+- (id)dataReader;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -79,6 +82,7 @@
 - (void)setAsset:(id)arg1;
 - (void)setAssetData:(id)arg1;
 - (void)setAssetURL:(id)arg1;
+- (void)setDataReader:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDescription:(id)arg1;
 - (void)setExportedVideoURL:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDFaceTimeCallCancelSent : PBCodable {
+@interface AWDFaceTimeCallCancelSent : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int cancelCode : 1; 
@@ -35,6 +35,7 @@
 
 - (unsigned int)cancelCode;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

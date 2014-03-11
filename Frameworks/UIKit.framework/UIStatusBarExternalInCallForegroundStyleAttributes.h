@@ -5,6 +5,4 @@
 @interface UIStatusBarExternalInCallForegroundStyleAttributes : UIStatusBarExternalForegroundStyleAttributes {
 }
 
-- (id)homeImageName;
-
 @end

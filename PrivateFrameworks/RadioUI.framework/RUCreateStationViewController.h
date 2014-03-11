@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUCreateStationViewControllerDelegate>, NSMutableArray, RUGenreListViewController, RUMetricsController, RUSearchViewController, SKUICircleProgressIndicator, UILabel, UISearchDisplayController;
+@class <RUCreateStationViewControllerDelegate>, NSMutableArray, RUMetricsController, RUSearchViewController, RUStationTreeViewController, UISearchDisplayController;
 
-@interface RUCreateStationViewController : UIViewController <RUGenreListViewControllerDelegate, RUSearchViewControllerDelegate, UIScrollViewDelegate> {
-    SKUICircleProgressIndicator *_activityIndicator;
+@interface RUCreateStationViewController : UIViewController <RUSearchViewControllerDelegate, RUStationTreeViewControllerDelegate, UIScrollViewDelegate> {
     <RUCreateStationViewControllerDelegate> *_delegate;
-    BOOL _didLoadGenres;
-    RUGenreListViewController *_genreListViewController;
-    UILabel *_loadingLabel;
     RUMetricsController *_metricsController;
     NSMutableArray *_queuedMetricsOperations;
     UISearchDisplayController *_searchDisplayController;
     RUSearchViewController *_searchResultsViewController;
     BOOL _shouldScrollSearchBar;
+    RUStationTreeViewController *_stationTreeViewController;
 }
 
 @property <RUCreateStationViewControllerDelegate> * delegate;
@@ -22,20 +19,16 @@
 - (void).cxx_destruct;
 - (void)_addMetricsControllerOperationBlock:(id)arg1;
 - (void)_addStationWithDictionary:(id)arg1;
+- (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1 withEvent:(id)arg2;
-- (void)_radioAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_searchBarSearchingFrame;
 - (id)_searchDisplayController;
 - (void)_statusBarHeightChangedNotification:(id)arg1;
 - (void)_updateSearchBarFrameForced:(BOOL)arg1;
-- (void)_updateViewForDataSourceInvalidation;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)genreListViewController:(id)arg1 didSelectStation:(id)arg2;
-- (void)genreListViewController:(id)arg1 scrollViewDidScroll:(id)arg2;
-- (void)genreListViewControllerGenresDidBecomeAvailable:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)metricsPageDescriptionForSearchViewController:(id)arg1;
 - (id)metricsPageTypeForSearchViewController:(id)arg1;
@@ -46,6 +39,8 @@
 - (void)searchViewControllerWillBeginSearching:(id)arg1;
 - (void)searchViewControllerWillEndSearching:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)stationTreeViewController:(id)arg1 didSelectStationTreeNode:(id)arg2;
+- (void)stationTreeViewController:(id)arg1 scrollViewDidScroll:(id)arg2;
 - (void)viewDidLoad;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

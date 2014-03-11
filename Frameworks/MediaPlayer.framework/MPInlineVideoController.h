@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPAVItem, MPAudioVideoRoutingPopoverController, MPInlineAudioOverlay, MPInlineVideoFullscreenViewController, MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, MPVideoContainerView, MPVideoPlaybackOverlayView, MPVideoView, NSSet, NSString, NSTimer, UIActivityIndicatorView, UIAlertView, UIColor, UIImage, UINavigationController, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>, UIWindow, _UIHostedWindow;
+@class MPAVController, MPAVItem, MPAudioVideoRoutingPopoverController, MPInlineAudioOverlay, MPInlineVideoFullscreenViewController, MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, MPVideoContainerView, MPVideoPlaybackOverlayView, MPVideoView, MPVolumeController, MPWeakTimer, NSSet, NSString, UIActivityIndicatorView, UIAlertView, UIColor, UIImage, UINavigationController, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>, UIWindow, _UIHostedWindow;
 
-@interface MPInlineVideoController : NSObject <MPVideoControllerProtocol, MPSwipableViewDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget, UIAlertViewDelegate, UIPopoverControllerDelegate> {
+@interface MPInlineVideoController : NSObject <MPVolumeControllerDelegate, MPVideoControllerProtocol, MPSwipableViewDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget, UIAlertViewDelegate, UIPopoverControllerDelegate> {
     BOOL _TVOutEnabled;
     BOOL _TVOutEnabledMaster;
     int _activeOverlayUserEvents;
@@ -39,7 +39,7 @@
     BOOL _fullscreenViewSizeIsExternallyManaged;
     UIWindow *_fullscreenWindow;
     BOOL _hasShownFirstVideoFrame;
-    NSTimer *_idleTimer;
+    MPWeakTimer *_idleTimer;
     BOOL _inCloneMirrorMode;
     BOOL _inlinePlaybackUsesTVOut;
     BOOL _isAnimatingOverlay;
@@ -69,6 +69,7 @@
     MPSwipableView *_view;
     NSSet *_viewsToFade;
     unsigned long long _visibleParts;
+    MPVolumeController *_volumeController;
     BOOL _wantsOverlayVisibleWhenItemIsAvailable;
     BOOL _wasPlaying;
     UIWindow *_windowForDisablingAutorotation;
@@ -302,5 +303,6 @@
 - (id)view;
 - (BOOL)viewControllerWillRequestExit;
 - (unsigned long long)visibleParts;
+- (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 
 @end

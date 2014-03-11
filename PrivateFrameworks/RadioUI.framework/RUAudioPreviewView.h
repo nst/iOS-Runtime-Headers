@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUAudioPreviewViewDelegate>, MPDownloadProgressIndicator, NSObject<OS_dispatch_source>, RUPreviewSession, SKUIItemOfferButton, UIImage, UIImageView;
+@class <RUAudioPreviewViewDelegate>, CADisplayLink, MPDownloadProgressIndicator, RUPreviewSession, SKUIItemOfferButton, UIImage, UIImageView, _RUAudioPreviewTicker;
 
 @interface RUAudioPreviewView : UIView <RUPreviewSessionObserver> {
     struct UIEdgeInsets { 
@@ -15,7 +15,6 @@
         float left; 
         float bottom; 
         float right; 
-    NSObject<OS_dispatch_source> *_animationTimer;
     } _artworkEdgeInsets;
     UIImage *_artworkImage;
     UIImageView *_artworkImageView;
@@ -23,11 +22,14 @@
     UIImage *_artworkOverlayImage;
     UIImageView *_artworkOverlayImageView;
     SKUIItemOfferButton *_circleProgressIndicator;
-    double _currentItemDuration;
+    double _currentTimeOverride;
     double _customDuration;
     <RUAudioPreviewViewDelegate> *_delegate;
+    CADisplayLink *_displayLink;
     MPDownloadProgressIndicator *_downloadProgressIndicator;
+    double _durationOverride;
     RUPreviewSession *_previewSession;
+    _RUAudioPreviewTicker *_previewTicker;
     int _style;
 }
 
@@ -43,6 +45,7 @@
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;
 - (void)_cancelAnimationTimer;
+- (void)_displayLinkTickAction:(id)arg1;
 - (void)_setProgress:(float)arg1;
 - (void)_startAnimating;
 - (void)_stopAnimating;
@@ -58,7 +61,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)previewSession:(id)arg1 didBeginWithTrack:(id)arg2;
+- (void)previewSession:(id)arg1 didChangeFromItem:(id)arg2 toItem:(id)arg3;
 - (void)previewSession:(id)arg1 didStopWithOptions:(int)arg2 withFinalTrack:(id)arg3 didFinalTrackPlayToCompletion:(BOOL)arg4;
 - (id)previewSession;
 - (void)setArtworkEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

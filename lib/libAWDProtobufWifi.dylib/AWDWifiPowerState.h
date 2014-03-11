@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufWifi.dylib
  */
 
-@interface AWDWifiPowerState : PBCodable {
+@interface AWDWifiPowerState : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int powerState : 1; 
@@ -17,7 +17,7 @@
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasPowerState;

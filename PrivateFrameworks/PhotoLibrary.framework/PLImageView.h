@@ -90,7 +90,7 @@
 - (void)setName:(id)arg1;
 - (void)setPlaceholderScale:(float)arg1;
 - (void)setShadowEnabled:(BOOL)arg1;
-- (void)setShowsPlaceholder:(BOOL)arg1 withOpaqueState:(BOOL)arg2;
+- (void)setShowsPlaceholder:(BOOL)arg1;
 - (void)setTextBadgeString:(id)arg1;
 - (void)setTransitionProgress:(float)arg1;
 - (void)setVideoView:(id)arg1;

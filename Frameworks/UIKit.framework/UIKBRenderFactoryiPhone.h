@@ -8,11 +8,14 @@
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
+- (BOOL)_popupMenuStyleForKey:(id)arg1;
 - (BOOL)_popupStyleForKey:(id)arg1;
 - (float)_row4ControlSegmentWidth;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)activeControlKeyTraits;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
+- (id)controlKeyBackgroundColorName;
+- (id)controlKeyForegroundColorName;
 - (id)controlKeyTraits;
 - (id)deleteKeyImageName;
 - (struct CGPoint { float x1; float x2; })deleteKeyOffset;
@@ -25,10 +28,13 @@
 - (struct CGPoint { float x1; float x2; })moreABCKeyOffset;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
+- (struct CGPoint { float x1; float x2; })secondaryShiftKeyOffset;
 - (void)setupLayoutSegments;
+- (id)shiftDeleteGlyphTraits;
 - (id)shiftKeyImageName;
 - (struct CGPoint { float x1; float x2; })shiftKeyOffset;
 - (id)shiftLockControlKeyTraits;
+- (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (id)shiftedControlKeyTraits;
 - (float)skinnyKeyThreshold;
@@ -38,5 +44,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
 - (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })wideShadowPaddleInsets;
+- (float)zhuyinFirstToneKeyFontSize;
 
 @end

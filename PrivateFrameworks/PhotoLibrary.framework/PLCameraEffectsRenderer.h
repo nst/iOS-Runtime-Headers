@@ -86,7 +86,7 @@
 - (id)_setupEffectsFullsizeView;
 - (id)_setupEffectsGridView;
 - (void)_setupEffectsView:(id)arg1;
-- (void)_tearDownEffectsView:(id)arg1;
+- (void)_tearDownEffectsView:(id)arg1 removeFromSuperview:(BOOL)arg2;
 - (void)_transitionFromGrid:(id)arg1;
 - (void)_transitionToGrid:(id)arg1;
 - (void)_updateEffectsFullsizeView;

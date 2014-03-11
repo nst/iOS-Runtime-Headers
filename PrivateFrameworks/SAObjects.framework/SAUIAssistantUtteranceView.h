@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SAUIAssistantUtteranceView : SAAceView <SADeferredKeyObject> {
+@interface SAUIAssistantUtteranceView : SAAceView {
 }
 
 @property(copy) NSString * dialogIdentifier;
@@ -13,7 +13,6 @@
 + (id)assistantUtteranceView;
 + (id)assistantUtteranceViewWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)deferredKeys;
 - (id)dialogIdentifier;
 - (id)encodedClassName;
 - (id)groupIdentifier;

@@ -15,6 +15,7 @@
 @property(readonly) BOOL tabBarCovered;
 
 - (void)_ensureWeHaveAPresentedBubbleFlowRootViewController;
+- (void)_gkResetContents;
 - (BOOL)_hasBubbleFlowRootViewController;
 - (BOOL)_isBeingCoveredByBubbleFlowRootViewController;
 - (BOOL)_useBubbleFlowRootViewControllerToPresent:(id)arg1;

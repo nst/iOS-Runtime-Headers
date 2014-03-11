@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPlaceActionDetails;
+@class GEOCarInfo, GEOPlaceActionDetails;
 
 @interface GEOMapsUsageFeedbackCollection : PBCodable <NSCopying> {
     struct { 
@@ -13,6 +13,7 @@
         unsigned int sessionRelativeTimestamp : 1; 
         unsigned int actionType : 1; 
     int _actionType;
+    GEOCarInfo *_carInfo;
     } _has;
     GEOPlaceActionDetails *_placeActionDetails;
     } _sessionID;
@@ -20,7 +21,9 @@
 }
 
 @property int actionType;
+@property(retain) GEOCarInfo * carInfo;
 @property BOOL hasActionType;
+@property(readonly) BOOL hasCarInfo;
 @property(readonly) BOOL hasPlaceActionDetails;
 @property BOOL hasSessionID;
 @property BOOL hasSessionRelativeTimestamp;
@@ -29,12 +32,14 @@
 @property double sessionRelativeTimestamp;
 
 - (int)actionType;
+- (id)carInfo;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasActionType;
+- (BOOL)hasCarInfo;
 - (BOOL)hasPlaceActionDetails;
 - (BOOL)hasSessionID;
 - (BOOL)hasSessionRelativeTimestamp;
@@ -45,6 +50,7 @@
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (double)sessionRelativeTimestamp;
 - (void)setActionType:(int)arg1;
+- (void)setCarInfo:(id)arg1;
 - (void)setHasActionType:(BOOL)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasSessionRelativeTimestamp:(BOOL)arg1;

@@ -9,5 +9,6 @@
 
 - (BOOL)acceptsGzipEncoding;
 - (id)initWithDatabaseID:(unsigned int)arg1 itemID:(unsigned long long)arg2 size:(struct CGSize { float x1; float x2; })arg3;
+- (BOOL)isConcurrent;
 
 @end

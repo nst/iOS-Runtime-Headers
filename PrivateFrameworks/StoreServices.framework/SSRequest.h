@@ -18,6 +18,7 @@
 
 - (void)__beginBackgroundTask;
 - (void)__endBackgroundTask;
+- (BOOL)__shouldUseBackgroundTaskAssertions;
 - (void)_beginBackgroundTask;
 - (void)_endBackgroundTask;
 - (id)_initSSRequest;

@@ -2,41 +2,40 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary, NSString, SSVPlatformContext;
+@class NSDictionary, NSNumber, NSString, NSURL, SSVPlatformContext;
 
 @interface RadioStoreBag : NSObject {
     NSDictionary *_mescalRequestWhitelist;
     NSDictionary *_mescalResponseWhitelist;
     NSString *_mescalSetupCertURLString;
     NSString *_mescalSetupURLString;
-    BOOL _needsMescal;
     SSVPlatformContext *_platformContext;
+    NSNumber *_shouldSendKBSyncDataValue;
     NSString *_srdnldURLString;
     NSDictionary *_tiltDictionary;
 }
 
-@property(readonly) NSString * baseURLString;
+@property(readonly) NSURL * baseURL;
 @property(readonly) NSString * mescalCertificateURLString;
 @property(readonly) NSString * mescalSetupURLString;
-@property(readonly) BOOL needsMescal;
+@property(readonly) NSString * platformLookupURLString;
 @property(readonly) NSDictionary * radioConfigurationDictionary;
+@property(readonly) BOOL shouldSendKBSyncData;
 @property(readonly) NSString * streamingDownloadURLString;
-
-+ (id)cachedBagWithStoreFrontIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_cacheRepresentation;
 - (id)_initWithCacheRepresentation:(id)arg1;
-- (BOOL)_needsMescalForKnownActions;
+- (id)_initWithURLBagDictionary:(id)arg1;
 - (id)_platformContext;
-- (id)baseURLString;
-- (id)initWithURLBagDictionary:(id)arg1;
+- (id)baseURL;
 - (id)mescalCertificateURLString;
 - (id)mescalSetupURLString;
-- (BOOL)needsMescal;
+- (id)platformLookupURLString;
 - (id)radioConfigurationDictionary;
 - (BOOL)shouldMescalSignRequestWithURL:(id)arg1;
 - (BOOL)shouldMescalVerifyResponseFromURL:(id)arg1;
+- (BOOL)shouldSendKBSyncData;
 - (id)streamingDownloadURLString;
 
 @end

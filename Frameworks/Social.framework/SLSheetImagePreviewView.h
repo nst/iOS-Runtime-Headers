@@ -10,8 +10,10 @@
     UIImage *_image;
     UIImageView *_imageView;
     NSMutableDictionary *_intrinsicSizes;
+    BOOL _isTranscoding;
     BOOL _needsLayout;
     NSArray *_principalAttachments;
+    BOOL _sheetPresentationAnimationDidFinish;
 }
 
 @property int currentBarMetrics;
@@ -23,6 +25,7 @@
 + (id)blankWebpageImage;
 
 - (void).cxx_destruct;
+- (void)_setUpActivityViewIfNecessary;
 - (void)barMetricsDidChange;
 - (int)currentBarMetrics;
 - (id)image;
@@ -39,6 +42,7 @@
 - (void)setPreviewImage:(id)arg1 forAttachment:(id)arg2;
 - (void)setPrincipalAttachments:(id)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)sheetPresentationAnimationDidFinish;
 - (struct CGSize { float x1; float x2; })sizeForBarMetrics:(int)arg1;
 
 @end

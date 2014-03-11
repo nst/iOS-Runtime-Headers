@@ -6,6 +6,7 @@
 
 @interface RURadioDataSource : NSObject <RadioPushNotificationControllerDelegate> {
     <RURadioDataSourceDelegate> *_delegate;
+    BOOL _optedInToRadio;
     RadioPushNotificationController *_pushNotificationController;
     int _stationCountToRefresh;
     NSArray *_stations;
@@ -13,26 +14,32 @@
 }
 
 @property <RURadioDataSourceDelegate> * delegate;
+@property(getter=isOptedInToRadio,readonly) BOOL optedInToRadio;
 @property(readonly) NSArray * stations;
 
++ (void)_accountStoreDidChangeNotification:(id)arg1;
++ (void)_networkReachabilityDidChangeNotification:(id)arg1;
++ (void)_reloadRadioAvailability;
++ (void)_storeBagDidLoadNotification:(id)arg1;
++ (void)_updateRadioAvailabilityWithStoreBag:(id)arg1 error:(id)arg2;
++ (void)initialize;
 + (BOOL)isOptedInToRadio;
 + (BOOL)isRadioAvailable;
 
 - (void).cxx_destruct;
-- (void)_accountsDidChangeNotification:(id)arg1;
+- (void)_accountStoreDidChangeNotification:(id)arg1;
 - (void)_deauthenticate;
 - (void)_notifyAssistantOfStationChanges;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
-- (void)_scheduleArtworkPrefetch;
-- (void)_sendDelegateShouldPrefetchArtwork;
+- (void)_reloadOptedInToRadio;
 - (void)checkAcceptedTermsWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (void)deauthenticateIfNecessary;
 - (id)delegate;
 - (id)featuredStations;
 - (id)init;
-- (void)optInWithActiveAccountWithCompletionHandler:(id)arg1;
+- (BOOL)isOptedInToRadio;
 - (void)pushNotificationControllerDidReceiveSyncRequest:(id)arg1 toGlobalVersion:(unsigned long long)arg2;
 - (void)refreshFeaturedStations;
 - (void)setDelegate:(id)arg1;

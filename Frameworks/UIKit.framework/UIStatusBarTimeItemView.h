@@ -8,7 +8,6 @@
     NSString *_timeString;
 }
 
-- (BOOL)cachesImage;
 - (id)contentsImage;
 - (void)dealloc;
 - (int)textStyle;

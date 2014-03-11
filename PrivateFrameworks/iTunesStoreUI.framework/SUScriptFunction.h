@@ -11,7 +11,7 @@
 }
 
 @property(retain) WebScriptObject * scriptObject;
-@property SUScriptObject * thisObject;
+@property id thisObject;
 
 - (id)_copyAdjustedArgumentsForArguments:(id)arg1;
 - (id)callSynchronouslyWithArguments:(id)arg1;

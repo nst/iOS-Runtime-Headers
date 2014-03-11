@@ -2,22 +2,32 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class UIImageView;
+@class NSArray, UIImageView;
 
 @interface GKTurnParticipantCell : GKBaseTurnParticipantCell {
+    NSArray *_interactiveConstraints;
+    NSArray *_staticConstraints;
     UIImageView *_statusImageView;
 }
 
+@property(retain) NSArray * interactiveConstraints;
+@property(retain) NSArray * staticConstraints;
 @property(retain) UIImageView * statusImageView;
+
++ (Class)cellClassForRepresentedItem:(id)arg1;
++ (void)registerCellClassesForCollectionView:(id)arg1;
 
 - (void)dealloc;
 - (void)didUpdateModel;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDetailPressedAction:(SEL)arg1;
-- (void)setMatch:(id)arg1;
-- (void)setNeedsUpdateLineLayoutConstraints;
-- (void)setParticipant:(id)arg1;
+- (id)interactiveConstraints;
+- (BOOL)isTwoLine;
+- (BOOL)matchWantsLocalPlayerAttention;
+- (void)prepareForReuse;
+- (void)setInteractiveConstraints:(id)arg1;
+- (void)setStaticConstraints:(id)arg1;
 - (void)setStatusImageView:(id)arg1;
+- (id)staticConstraints;
 - (id)statusImageView;
 - (void)updateLineLayoutConstraints;
 

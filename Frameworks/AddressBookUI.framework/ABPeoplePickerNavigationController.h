@@ -44,6 +44,7 @@
 @property <ABPeoplePickerNavigationControllerDelegate> * peoplePickerDelegate;
 @property(retain) <ABStyleProvider> * styleProvider;
 
++ (void)initialize;
 + (void)notifyPreferencesChanged;
 
 - (void)__loadDatabaseAtDirectory:(id)arg1;

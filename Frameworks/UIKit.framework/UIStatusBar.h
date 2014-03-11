@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIStatusBarStateProvider>, <UIStatusBarStyleDelegate>, NSMutableArray, NSMutableSet, NSNumber, NSString, UIColor, UILabel, UIStatusBar, UIStatusBarBackgroundView, UIStatusBarForegroundView, UIStatusBarServer, UIStatusBarStyleAnimationParameters, UIStatusBarStyleAttributes, UIStatusBarStyleRequest, UIStatusBarWindow;
+@class <UIStatusBarStateProvider>, <UIStatusBarStyleDelegate>, NSMutableArray, NSMutableSet, NSNumber, NSString, UIColor, UILabel, UIStatusBar, UIStatusBarBackgroundView, UIStatusBarForegroundView, UIStatusBarServer, UIStatusBarStyleAnimationParameters, UIStatusBarStyleAttributes, UIStatusBarStyleRequest, UIStatusBarWindow, UIView;
 
 @interface UIStatusBar : _UIScrollsToTopInitiatorView <UIStatusBarServerClient, UIStatusBarStateObserver> {
     struct { 
@@ -38,6 +38,7 @@
     } _currentRawData;
     NSMutableSet *_disableRasterizationReasons;
     UILabel *_doubleHeightLabel;
+    UIView *_doubleHeightLabelContainer;
     BOOL _foreground;
     UIColor *_foregroundColor;
     UIStatusBarForegroundView *_foregroundView;
@@ -112,7 +113,9 @@
 - (id)_currentComposedData;
 - (id)_currentComposedDataForStyle:(id)arg1;
 - (id)_currentStyleAttributes;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didEnterBackground:(id)arg1;
+- (id)_doubleHeightStatusStringForStyle:(int)arg1;
 - (void)_endDisablingRasterizationForReason:(id)arg1;
 - (void)_evaluateServerRegistration;
 - (void)_finishedSettingStyleWithOldHeight:(float)arg1 newHeight:(float)arg2 animation:(int)arg3;
@@ -133,8 +136,11 @@
 - (void)_setVisualAltitude:(float)arg1;
 - (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_shouldSeekHigherPriorityTouchTarget;
+- (BOOL)_shouldUseInProcessProviderDoubleHeightStatusString;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_slideTransform;
 - (float)_standardHeight;
+- (void)_statusBarDidAnimateRotation;
+- (void)_statusBarWillAnimateRotation;
 - (id)_styleAttributesForRequest:(id)arg1;
 - (void)_styleOverridesDidChange:(id)arg1;
 - (void)_swapToNewBackgroundView;
@@ -207,6 +213,7 @@
 - (void)statusBarServer:(id)arg1 didReceiveGlowAnimationState:(BOOL)arg2 forStyle:(int)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(const struct { BOOL x1[25]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[2][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27; }*)arg2 withActions:(int)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveStyleOverrides:(int)arg2;
+- (void)statusBarStateProvider:(id)arg1 didChangeDoubleHeightStatusStringForStyle:(int)arg2;
 - (void)statusBarStateProvider:(id)arg1 didPostStatusBarData:(const struct { BOOL x1[25]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[2][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27; }*)arg2 withActions:(int)arg3;
 - (id)statusBarWindow;
 - (id)styleDelegate;

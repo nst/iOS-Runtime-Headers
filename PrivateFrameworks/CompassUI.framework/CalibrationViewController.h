@@ -27,7 +27,6 @@
     double _previousTimestamp;
     int _quantizationType;
     BOOL _shouldCompleteTics;
-    BOOL _shouldFillTics;
     double _startTicAngle;
     float *_ticsShowingArray;
     UILabel *_titleLabel;
@@ -41,8 +40,8 @@
 - (void)hideAllTics;
 - (id)init;
 - (id)initWithOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (int)preferredStatusBarStyle;
-- (float)quantizedPercentage:(double)arg1;
+- (BOOL)prefersStatusBarHidden;
+- (float)quantizedPercentage:(double)arg1 forAngle:(double)arg2;
 - (void)reset;
 - (void)setBallAngle:(double)arg1 tiltAngle:(double)arg2;
 - (void)setMotion:(id)arg1;

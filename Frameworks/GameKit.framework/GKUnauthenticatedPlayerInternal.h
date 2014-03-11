@@ -3,9 +3,11 @@
  */
 
 @interface GKUnauthenticatedPlayerInternal : GKLocalPlayerInternal {
+    int _encodingCount;
 }
 
 - (id)alias;
+- (void)encodeWithCoder:(id)arg1;
 - (id)playerID;
 
 @end

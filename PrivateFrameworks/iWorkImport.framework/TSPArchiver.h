@@ -38,6 +38,7 @@
 @property(readonly) NSObject<OS_dispatch_group> * serializeGroup;
 @property(readonly) NSObject<OS_dispatch_data> * serializedData;
 @property(readonly) BOOL shouldSaveAlternates;
+@property(readonly) BOOL success;
 
 - (void).cxx_destruct;
 - (id)addAlternateForMessageVersion:(unsigned long long)arg1;
@@ -57,6 +58,7 @@
 - (void)cleanup;
 - (unsigned long long)documentReadVersion;
 - (unsigned long long)documentWriteVersion;
+- (void)fail;
 - (id)initWithObject:(id)arg1;
 - (BOOL)needsArchive;
 - (void)requiresDocumentReadVersion:(unsigned long long)arg1 writeVersion:(unsigned long long)arg2;
@@ -65,6 +67,7 @@
 - (id)serializeGroup;
 - (id)serializedData;
 - (BOOL)shouldSaveAlternates;
-- (void)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)arg1 withArchiver:(id)arg2;
+- (BOOL)success;
+- (BOOL)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)arg1 withArchiver:(id)arg2;
 
 @end

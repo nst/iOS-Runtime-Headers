@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class SafariFetcherServerProxy, WFUserSettings, WebBookmark, WebBookmarkTitleWordTokenizer;
+@class SafariFetcherServerProxy, WebBookmark, WebBookmarkTitleWordTokenizer;
 
 @interface WebBookmarkCollection : NSObject {
     struct sqlite3 { } *_db;
@@ -12,8 +12,6 @@
     BOOL _merging;
     WebBookmark *_rootBookmark;
     SafariFetcherServerProxy *_safariFetcherServerProxy;
-    int _webFilterRestrictionType;
-    WFUserSettings *_webFilterUserSettings;
     WebBookmarkTitleWordTokenizer *_wordTokenizer;
 }
 
@@ -110,6 +108,7 @@
 - (void)_migrateSchemaVersion34ToVersion35;
 - (void)_migrateSchemaVersion35ToVersion36;
 - (void)_migrateSchemaVersion36ToVersion37;
+- (void)_migrateSchemaVersion37ToVersion38;
 - (void)_migrateSchemaVersion3ToVersion4;
 - (void)_migrateSchemaVersion4ToVersion5;
 - (void)_migrateSchemaVersion5ToVersion6;
@@ -208,6 +207,7 @@
 - (id)listWithID:(unsigned int)arg1;
 - (id)listWithSpecialID:(unsigned int)arg1;
 - (void)localeSettingsChanged;
+- (BOOL)markAllFavoritesAsNeedingIcons;
 - (BOOL)markArchivedReadingListItemsAsNonRecoverable;
 - (BOOL)markWebContentFilterAllowsAllReadingListItems;
 - (BOOL)mergeWithBookmarksDictionary:(id)arg1 clearHidden:(BOOL)arg2 error:(id*)arg3;

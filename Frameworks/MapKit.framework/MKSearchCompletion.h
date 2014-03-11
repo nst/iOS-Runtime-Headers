@@ -14,10 +14,10 @@
 @property(readonly) MKMapItem * mapItem;
 @property(copy) NSString * sourceID;
 
+- (void).cxx_destruct;
 - (void)applyToLocalSearchRequest:(id)arg1;
 - (void)applyToPlaceSearchRequest:(id)arg1;
 - (id)calloutTitle;
-- (void)dealloc;
 - (id)description;
 - (id)displayLines;
 - (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;

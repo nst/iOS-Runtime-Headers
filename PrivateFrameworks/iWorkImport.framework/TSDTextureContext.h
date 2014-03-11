@@ -12,6 +12,7 @@
     unsigned int _shouldNotAddContainedReps : 1;
     unsigned int _shouldNotAddShapeAttributes : 1;
     unsigned int _shouldNotAddText : 1;
+    unsigned int _shouldNotCacheTexture : 1;
     unsigned int _shouldSeparateReflection : 1;
     unsigned int _shouldSeparateShadow : 1;
     unsigned int _shouldSeparateStroke : 1;
@@ -32,6 +33,7 @@
 @property BOOL shouldNotAddContainedReps;
 @property BOOL shouldNotAddShapeAttributes;
 @property BOOL shouldNotAddText;
+@property BOOL shouldNotCacheTexture;
 @property BOOL shouldSeparateReflection;
 @property BOOL shouldSeparateShadow;
 @property BOOL shouldSeparateStroke;
@@ -58,6 +60,7 @@
 - (void)setShouldNotAddContainedReps:(BOOL)arg1;
 - (void)setShouldNotAddShapeAttributes:(BOOL)arg1;
 - (void)setShouldNotAddText:(BOOL)arg1;
+- (void)setShouldNotCacheTexture:(BOOL)arg1;
 - (void)setShouldSeparateReflection:(BOOL)arg1;
 - (void)setShouldSeparateShadow:(BOOL)arg1;
 - (void)setShouldSeparateStroke:(BOOL)arg1;
@@ -70,6 +73,7 @@
 - (BOOL)shouldNotAddContainedReps;
 - (BOOL)shouldNotAddShapeAttributes;
 - (BOOL)shouldNotAddText;
+- (BOOL)shouldNotCacheTexture;
 - (BOOL)shouldSeparateReflection;
 - (BOOL)shouldSeparateShadow;
 - (BOOL)shouldSeparateStroke;

@@ -70,6 +70,7 @@
     BOOL mDragByHandleOnly;
     } mEditingHyperlinkCellID;
     CAShapeLayer *mFindSelectionHighlightLayer;
+    BOOL mHasBeenRemoved;
     CAShapeLayer *mHighlightedHyperlinkLayer;
     TSWPHyperlinkField *mHyperlinkField;
     BOOL mHyperlinkModified;
@@ -113,6 +114,7 @@
 @property(readonly) <TSTTableRepDelegate> * delegate;
 @property(readonly) TSTEditingState * editingState;
 @property(readonly) TSDEditorController * editorController;
+@property(readonly) BOOL isZoomToEditOperationInProgress;
 @property(readonly) CALayer * layerForRep;
 @property(readonly) TSTMasterLayout * masterLayout;
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } ratingsDragCellID;
@@ -133,6 +135,7 @@
 - (id)additionalLayersOverLayer;
 - (id)additionalLayersUnderLayer;
 - (id)animationController;
+- (void)asyncPostTextChangedInRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 strokeRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (void)beginDragInsertFromPalette;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForCellSelection:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)canDrawInBackgroundDuringScroll;
@@ -149,7 +152,6 @@
 - (id)delegate;
 - (id)description;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deviceBoundsForCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)didEndDrawingTilingLayerInBackground:(id)arg1 withToken:(id)arg2;
 - (void)dirtyCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -171,13 +173,13 @@
 - (void)invalidateTableName;
 - (BOOL)isDraggable;
 - (BOOL)isFullyVisibleWithBorder:(int)arg1;
+- (BOOL)isZoomToEditOperationInProgress;
 - (id)itemsToAddToEditMenu;
 - (id)layerForRep;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layerFrameInScaledCanvas;
 - (void)layoutInRootChangedFrom:(id)arg1 to:(id)arg2 translatedOnly:(BOOL)arg3;
 - (id)masterLayout;
 - (BOOL)mustDrawOnMainThreadForInteractiveCanvas;
-- (BOOL)mustDrawTilingLayerOnMainThread:(id)arg1;
 - (id)newCommandToApplyGeometry:(id)arg1 toInfo:(id)arg2;
 - (void)orientationDidChange:(id)arg1;
 - (id)overlayLayers;
@@ -199,9 +201,7 @@
 - (void)setNeedsDisplayInCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRatingsDragCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)shouldBeginDrawingTilingLayerInBackground:(id)arg1 returningToken:(id*)arg2 andQueue:(id*)arg3;
 - (BOOL)shouldCommitPendingTextEdit;
-- (BOOL)shouldLayoutTilingLayer:(id)arg1;
 - (BOOL)shouldRestartTextEditing;
 - (id)tableChrome;
 - (id)tableInfo;
@@ -217,10 +217,10 @@
 - (void)validateFrozenHeaderCorner;
 - (void)validateFrozenHeaderRows;
 - (void)validateFrozenHeaderTableBodyMask;
+- (void)validateStrokesInEditingSpillingTextRange;
 - (void)validateTableName;
 - (void)validateVisibleRect;
 - (void)viewScaleDidChange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsForTilingLayer:(id)arg1;
 - (id)visitorKnobTracker;
 - (void)willBeRemoved;
 

@@ -42,10 +42,7 @@
 - (BOOL)canMakePathEditable;
 - (BOOL)canUseSpecializedHitRegionForKnob:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRectWithoutEffects;
-- (id)colorBehindLayer:(id)arg1;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)didEndDrawingTilingLayerInBackground:(id)arg1 withToken:(id)arg2;
 - (void)didUpdateLayer:(id)arg1;
 - (BOOL)directlyManagesLayerContent;
 - (BOOL)directlyManagesVisibilityOfKnob:(id)arg1;
@@ -107,7 +104,6 @@
 - (id)shapeLayout;
 - (float)shortestDistanceToPoint:(struct CGPoint { float x1; float x2; })arg1 countAsHit:(BOOL*)arg2;
 - (BOOL)shouldAlwaysSmoothText;
-- (BOOL)shouldBeginDrawingTilingLayerInBackground:(id)arg1 returningToken:(id*)arg2 andQueue:(id*)arg3;
 - (BOOL)shouldExpandHitRegionWhenSmall;
 - (BOOL)shouldHideSelectionHighlightDueToRectangularPath;
 - (BOOL)shouldShowAdditionalKnobs;

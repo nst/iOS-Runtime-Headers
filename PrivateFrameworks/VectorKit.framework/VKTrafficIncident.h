@@ -4,20 +4,28 @@
 
 @class NSDate, NSString;
 
-@interface VKTrafficIncident : NSObject {
+@interface VKTrafficIncident : NSObject <NSCopying> {
     struct VKPoint { 
         double x; 
         double y; 
         double z; 
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
     struct { 
         double latitude; 
         double longitude; 
     NSString *_crossStreet;
     NSDate *_endDate;
     NSString *_info;
+    BOOL _isNotForDisplay;
+    BOOL _isOnSelectedRoute;
     NSDate *_lastUpdatedDate;
     } _location;
     float _minZoom;
+    } _routeOffset;
+    unsigned int _routeOffsetInMeters;
+    int _routeRelevance;
     NSDate *_startDate;
     NSString *_street;
     NSString *_subtitle;
@@ -31,8 +39,13 @@
 @property(readonly) NSString * crossStreet;
 @property(readonly) NSDate * endDate;
 @property(readonly) NSString * info;
+@property(readonly) BOOL isNotForDisplay;
+@property BOOL isOnSelectedRoute;
 @property(readonly) NSDate * lastUpdatedDate;
 @property(readonly) float minZoom;
+@property struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
+@property unsigned int routeOffsetInMeters;
+@property int routeRelevance;
 @property(readonly) NSDate * startDate;
 @property(readonly) NSString * street;
 @property(readonly) NSString * subtitle;
@@ -43,6 +56,7 @@
 @property(readonly) struct VKPoint { double x1; double x2; double x3; } worldPoint;
 
 - (id).cxx_construct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)crossStreet;
 - (void)dealloc;
 - (id)endDate;
@@ -51,9 +65,18 @@
 - (id)initWithIncident:(id)arg1 vertices:(struct { int x1; int x2; }*)arg2 tileRect:(struct { double x1; double x2; double x3; double x4; })arg3 tileSize:(double)arg4;
 - (id)initWithIncidentData:(const struct Incident { struct GeoCoordinates { struct Longitude { unsigned int x_1_2_1; } x_1_1_1; struct Latitude { unsigned int x_2_2_1; } x_1_1_2; } x1; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; int x4; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; long long x7; long long x8; long long x9; long long x10; int x11; unsigned char x12; boolx13; }*)arg1 worldPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2 minZoom:(float)arg3;
 - (id)initWithIncidentData:(const struct Incident { struct GeoCoordinates { struct Longitude { unsigned int x_1_2_1; } x_1_1_1; struct Latitude { unsigned int x_2_2_1; } x_1_1_2; } x1; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; int x4; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; long long x7; long long x8; long long x9; long long x10; int x11; unsigned char x12; boolx13; }*)arg1 worldPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2;
-- (id)initWithRouteIncident:(id)arg1;
+- (id)initWithRouteIncident:(id)arg1 routeRelevance:(int)arg2;
+- (BOOL)isNotForDisplay;
+- (BOOL)isOnSelectedRoute;
 - (id)lastUpdatedDate;
 - (float)minZoom;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
+- (unsigned int)routeOffsetInMeters;
+- (int)routeRelevance;
+- (void)setIsOnSelectedRoute:(BOOL)arg1;
+- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
+- (void)setRouteOffsetInMeters:(unsigned int)arg1;
+- (void)setRouteRelevance:(int)arg1;
 - (id)startDate;
 - (id)street;
 - (id)subtitle;

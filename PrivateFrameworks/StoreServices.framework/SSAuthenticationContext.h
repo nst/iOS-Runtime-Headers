@@ -9,6 +9,7 @@
     BOOL _accountNameEditable;
     int _accountScope;
     BOOL _allowsBioAuthentication;
+    BOOL _allowsBootstrapCellularData;
     BOOL _allowsRetry;
     BOOL _canCreateNewAccount;
     BOOL _canSetActiveAccount;
@@ -20,6 +21,7 @@
     BOOL _persistsPasswordFallback;
     NSString *_preferredITunesStoreClient;
     int _promptStyle;
+    NSString *_reasonDescription;
     NSDictionary *_requestParameters;
     NSNumber *_requiredUniqueIdentifier;
     BOOL _shouldCreateNewSession;
@@ -37,6 +39,7 @@
 @property(getter=isAccountNameEditable,readonly) BOOL accountNameEditable;
 @property(readonly) int accountScope;
 @property(readonly) BOOL allowsBioAuthentication;
+@property(readonly) BOOL allowsBootstrapCellularData;
 @property(readonly) BOOL allowsRetry;
 @property(readonly) BOOL canCreateNewAccount;
 @property(readonly) BOOL canSetActiveAccount;
@@ -47,6 +50,7 @@
 @property(readonly) BOOL persistsPasswordFallback;
 @property(readonly) NSString * preferredITunesStoreClient;
 @property(readonly) int promptStyle;
+@property(readonly) NSString * reasonDescription;
 @property(readonly) NSDictionary * requestParameters;
 @property(readonly) NSNumber * requiredUniqueIdentifier;
 @property(readonly) BOOL shouldCreateNewSession;
@@ -67,6 +71,7 @@
 - (id)accountName;
 - (int)accountScope;
 - (BOOL)allowsBioAuthentication;
+- (BOOL)allowsBootstrapCellularData;
 - (BOOL)allowsRetry;
 - (BOOL)canCreateNewAccount;
 - (BOOL)canSetActiveAccount;
@@ -87,6 +92,7 @@
 - (BOOL)persistsPasswordFallback;
 - (id)preferredITunesStoreClient;
 - (int)promptStyle;
+- (id)reasonDescription;
 - (id)requestParameters;
 - (id)requiredUniqueIdentifier;
 - (BOOL)shouldCreateNewSession;

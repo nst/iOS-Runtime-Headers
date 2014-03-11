@@ -9,10 +9,11 @@
     UIStatusBarForegroundStyleAttributes *_foregroundStyle;
     int _idiom;
     int _ignoreDataLevel;
-    BOOL _itemIsEnabled[32];
+    BOOL _itemIsEnabled[30];
     UIStatusBarLayoutManager *_layoutManagers[3];
     int _pendedActions;
     UIStatusBarComposedData *_pendedData;
+    BOOL _usesVerticalLayout;
 }
 
 @property(readonly) UIStatusBarForegroundStyleAttributes * foregroundStyle;
@@ -30,7 +31,7 @@
 - (id)foregroundStyle;
 - (int)idiom;
 - (BOOL)ignoringData;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 foregroundStyle:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 foregroundStyle:(id)arg2 usesVerticalLayout:(BOOL)arg3;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)reflowItemViews:(BOOL)arg1;
 - (void)reflowItemViewsCrossfadingCenter:(id)arg1 duration:(double)arg2;

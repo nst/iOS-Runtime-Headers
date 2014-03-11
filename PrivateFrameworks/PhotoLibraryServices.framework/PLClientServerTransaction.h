@@ -24,6 +24,7 @@
 + (id)transactionTokenFromXPCDictionary:(id)arg1;
 
 - (void)abortTransaction;
+- (void)completeTransaction;
 - (void)dealloc;
 - (void)setTransactionToken:(id)arg1;
 - (void)stillAlive;

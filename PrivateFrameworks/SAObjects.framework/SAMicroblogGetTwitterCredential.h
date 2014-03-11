@@ -2,14 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
+@class NSString;
+
 @interface SAMicroblogGetTwitterCredential : SAMicroblogGetSocialCredential {
 }
+
+@property(copy) NSString * consumerKey;
+@property(copy) NSString * consumerSecret;
 
 + (id)getTwitterCredential;
 + (id)getTwitterCredentialWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)consumerKey;
+- (id)consumerSecret;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
+- (void)setConsumerKey:(id)arg1;
+- (void)setConsumerSecret:(id)arg1;
 
 @end

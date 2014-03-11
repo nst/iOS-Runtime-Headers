@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOClientCapabilities, GEOLocation, GEOMapRegion, GEORouteAttributes, NSData, NSMutableArray;
+@class GEOClientCapabilities, GEODirectionsRequestFeedback, GEOLocation, GEOMapRegion, GEORouteAttributes, NSData, NSMutableArray;
 
 @interface GEODirectionsRequest : PBRequest <NSCopying> {
     struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
+    struct { 
+        unsigned int sessionID : 1; 
         unsigned int departureTime : 1; 
         unsigned int mainTransportTypeMaxRouteCount : 1; 
         unsigned int timeSinceLastRerouteRequest : 1; 
@@ -14,6 +18,7 @@
     GEOMapRegion *_currentMapRegion;
     GEOLocation *_currentUserLocation;
     int _departureTime;
+    GEODirectionsRequestFeedback *_feedback;
     BOOL _getRouteForZilchPoints;
     } _has;
     unsigned int _mainTransportTypeMaxRouteCount;
@@ -22,6 +27,7 @@
     NSData *_originalRouteZilchPoints;
     GEORouteAttributes *_routeAttributes;
     NSMutableArray *_serviceTags;
+    } _sessionID;
     unsigned int _timeSinceLastRerouteRequest;
     NSMutableArray *_waypoints;
 }
@@ -30,17 +36,20 @@
 @property(retain) GEOMapRegion * currentMapRegion;
 @property(retain) GEOLocation * currentUserLocation;
 @property int departureTime;
+@property(retain) GEODirectionsRequestFeedback * feedback;
 @property BOOL getRouteForZilchPoints;
 @property(readonly) BOOL hasClientCapabilities;
 @property(readonly) BOOL hasCurrentMapRegion;
 @property(readonly) BOOL hasCurrentUserLocation;
 @property BOOL hasDepartureTime;
+@property(readonly) BOOL hasFeedback;
 @property BOOL hasGetRouteForZilchPoints;
 @property BOOL hasMainTransportTypeMaxRouteCount;
 @property(readonly) BOOL hasOriginalDirectionsResponseID;
 @property(readonly) BOOL hasOriginalRouteID;
 @property(readonly) BOOL hasOriginalRouteZilchPoints;
 @property(readonly) BOOL hasRouteAttributes;
+@property BOOL hasSessionID;
 @property BOOL hasTimeSinceLastRerouteRequest;
 @property unsigned int mainTransportTypeMaxRouteCount;
 @property(retain) NSData * originalDirectionsResponseID;
@@ -48,6 +57,7 @@
 @property(retain) NSData * originalRouteZilchPoints;
 @property(retain) GEORouteAttributes * routeAttributes;
 @property(retain) NSMutableArray * serviceTags;
+@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property unsigned int timeSinceLastRerouteRequest;
 @property(retain) NSMutableArray * waypoints;
 
@@ -64,17 +74,20 @@
 - (int)departureTime;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)feedback;
 - (BOOL)getRouteForZilchPoints;
 - (BOOL)hasClientCapabilities;
 - (BOOL)hasCurrentMapRegion;
 - (BOOL)hasCurrentUserLocation;
 - (BOOL)hasDepartureTime;
+- (BOOL)hasFeedback;
 - (BOOL)hasGetRouteForZilchPoints;
 - (BOOL)hasMainTransportTypeMaxRouteCount;
 - (BOOL)hasOriginalDirectionsResponseID;
 - (BOOL)hasOriginalRouteID;
 - (BOOL)hasOriginalRouteZilchPoints;
 - (BOOL)hasRouteAttributes;
+- (BOOL)hasSessionID;
 - (BOOL)hasTimeSinceLastRerouteRequest;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -89,14 +102,17 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setCurrentMapRegion:(id)arg1;
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setDepartureTime:(int)arg1;
+- (void)setFeedback:(id)arg1;
 - (void)setGetRouteForZilchPoints:(BOOL)arg1;
 - (void)setHasDepartureTime:(BOOL)arg1;
 - (void)setHasGetRouteForZilchPoints:(BOOL)arg1;
 - (void)setHasMainTransportTypeMaxRouteCount:(BOOL)arg1;
+- (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasTimeSinceLastRerouteRequest:(BOOL)arg1;
 - (void)setMainTransportTypeMaxRouteCount:(unsigned int)arg1;
 - (void)setOriginalDirectionsResponseID:(id)arg1;
@@ -104,6 +120,7 @@
 - (void)setOriginalRouteZilchPoints:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)setServiceTags:(id)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTimeSinceLastRerouteRequest:(unsigned int)arg1;
 - (void)setWaypoints:(id)arg1;
 - (unsigned int)timeSinceLastRerouteRequest;

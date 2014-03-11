@@ -27,7 +27,8 @@
 - (void)_onQueueCloseServiceConnection;
 - (void)_onQueueInvalidatePendingCompletionHandlersWithError:(id)arg1;
 - (id)_retrieveCompletionHandlerForToken:(struct NSNumber { Class x1; }*)arg1;
-- (oneway void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 withCompletionHandler:(id)arg3;
+- (oneway void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
+- (oneway void)cancelImportOperation:(unsigned int)arg1 completionHandler:(id)arg2;
 - (void)closeServiceConnection;
 - (BOOL)connectionOpen;
 - (void)dealloc;
@@ -37,12 +38,11 @@
 - (oneway void)executeUpdate:(id)arg1 withParameters:(id)arg2 onTransaction:(id)arg3 withCompletionHandler:(id)arg4;
 - (id)init;
 - (void)openServiceConnection;
-- (oneway void)performImportFromSource:(unsigned int)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 options:(id)arg4 completionHandler:(id)arg5;
+- (oneway void)performImportFromSource:(unsigned int)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 withPlaylistData:(id)arg4 options:(id)arg5 completionHandler:(id)arg6;
 - (oneway void)pollCurrentImportStatus:(id)arg1;
 - (oneway void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)serviceProxy;
 - (oneway void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;
-- (oneway void)serviceWillTerminateTransactionWithIdentifier:(id)arg1 replyBlock:(id)arg2;
 - (oneway void)setOptions:(id)arg1 withCompletionHandler:(id)arg2;
 - (oneway void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)validateDatabaseForLibrary:(id)arg1 withCompletionHandler:(id)arg2;

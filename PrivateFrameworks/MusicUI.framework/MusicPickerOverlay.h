@@ -25,6 +25,7 @@
 - (void)setAllowsMultipleSelections:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setViewController:(id)arg1;
+- (BOOL)shouldDisplayAddAllAsDisabledFromDataSource:(id)arg1;
 - (BOOL)shouldDisplayEntityAsDisabled:(id)arg1;
 - (id)title;
 - (void)viewController:(id)arg1 didPickAllEntitiesFromDataSource:(id)arg2;

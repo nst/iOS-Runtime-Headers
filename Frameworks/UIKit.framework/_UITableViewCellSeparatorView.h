@@ -6,14 +6,15 @@
 
 @interface _UITableViewCellSeparatorView : UIView {
     UIView *_backgroundView;
-    BOOL _drawsWithVibrantMode;
+    BOOL _drawsWithVibrantLightMode;
     UIView *_overlayView;
 }
 
-@property BOOL drawsWithVibrantMode;
+@property BOOL drawsWithVibrantLightMode;
 
 - (void)dealloc;
-- (BOOL)drawsWithVibrantMode;
-- (void)setDrawsWithVibrantMode:(BOOL)arg1;
+- (BOOL)drawsWithVibrantLightMode;
+- (void)layoutSubviews;
+- (void)setDrawsWithVibrantLightMode:(BOOL)arg1;
 
 @end

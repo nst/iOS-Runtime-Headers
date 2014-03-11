@@ -5,27 +5,17 @@
 @class TSCECalculationEngine, TSCENamedReferenceTrie, TSCEReferenceTracker;
 
 @interface TSCENamedReferenceManager : TSPObject <TSCEReferenceTrackerDelegate> {
-    struct vector<TSCECellReference, std::__1::allocator<TSCECellReference> > { 
-        struct { /* ? */ } *__begin_; 
-        struct { /* ? */ } *__end_; 
-        struct __compressed_pair<TSCECellReference *, std::__1::allocator<TSCECellReference> > { 
-            struct { /* ? */ } *__first_; 
-        } __end_cap_; 
     TSCECalculationEngine *mCalculationEngine;
-    } mCellsToDirtyAfterUnarchive;
     TSCENamedReferenceTrie *mNames;
     TSCEReferenceTracker *mReferenceTracker;
     struct __CFDictionary { } *mStringsByTrackedReferenceByTable;
     struct __CFSet { } *mTablesBeingTracked;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)beginTrackingNameInCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 ofResolver:(id)arg2 addingTrackedReferencesTo:(id)arg3;
 - (void)beginTrackingNamesInRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 ofResolver:(id)arg2 addingTrackedReferencesTo:(id)arg3;
 - (id)beginTrackingNamesInTable:(struct __CFUUID { }*)arg1 limitedToRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg2;
 - (id)cellRangeWasInserted:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
-- (void)cleanupAfterUnarchive;
 - (void)dealloc;
 - (id)description;
 - (void)endTrackingNamesInTable:(struct __CFUUID { }*)arg1;

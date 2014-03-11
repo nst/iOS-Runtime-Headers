@@ -18,6 +18,8 @@
 
 - (void).cxx_destruct;
 - (id)_activityImage;
+- (void)_cleanup;
+- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)_publishOverReferenceViewController;
 - (void)_publishingAgentDidCancel:(id)arg1;

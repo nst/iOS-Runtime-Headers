@@ -21,6 +21,10 @@
     BOOL hasArrowColor;
     BOOL hasArrowColorStale;
     BOOL hasCircleBrightness;
+    BOOL hasOffset;
+    BOOL hasSize;
+    float offset;
+    float size;
 }
 
 @property(readonly) float arrowBrightness;
@@ -31,6 +35,10 @@
 @property(readonly) BOOL hasArrowColor;
 @property(readonly) BOOL hasArrowColorStale;
 @property(readonly) BOOL hasCircleBrightness;
+@property(readonly) BOOL hasOffset;
+@property(readonly) BOOL hasSize;
+@property(readonly) float offset;
+@property(readonly) float size;
 
 - (id).cxx_construct;
 - (float)arrowBrightness;
@@ -41,6 +49,10 @@
 - (BOOL)hasArrowColor;
 - (BOOL)hasArrowColorStale;
 - (BOOL)hasCircleBrightness;
+- (BOOL)hasOffset;
+- (BOOL)hasSize;
+- (float)offset;
+- (float)size;
 - (void)takeFromZoomInvariantProperties:(id)arg1;
 - (id)variant;
 

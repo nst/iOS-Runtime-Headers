@@ -44,7 +44,8 @@
 - (BOOL)isAssetCollectionWithGUIDPending:(id)arg1;
 - (int)itemsForDownloadCountFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2;
 - (id)itemsForUpload;
-- (id)nextItemsForDownloadFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2 thumbnails:(BOOL)arg3 maxCount:(int)arg4;
+- (id)nextItemsForDownloadFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2 maxCount:(int)arg3;
+- (id)nextItemsForDownloadFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2 thumbnails:(BOOL)arg3 maxCount:(int)arg4 isInflight:(BOOL)arg5;
 - (id)nextItemsForUploadAlbumGUID:(id)arg1 maxPriority:(int)arg2 maxCount:(int)arg3;
 - (id)nextItemsForUploadMaxCount:(int)arg1;
 - (long long)nextMMCSItemID;
@@ -56,6 +57,7 @@
 - (void)requeuePendingAssetCollectionsWithAlbumGUID:(id)arg1;
 - (void)setErrorCount:(int)arg1 forAssetCollectionInUploadQueue:(id)arg2;
 - (void)setErrorCount:(int)arg1 forAssetInDownloadQueue:(id)arg2;
+- (void)setInFlightAssets:(id)arg1;
 - (void)setParams:(id)arg1 forCommandWithIdentifier:(long long)arg2;
 - (void)setShouldDownloadEarliestPhotosFirst:(BOOL)arg1;
 - (BOOL)shouldDownloadEarliestPhotosFirst;

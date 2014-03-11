@@ -111,6 +111,7 @@
 - (BOOL)mergingChanges;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (id)photoLibrary;
+- (id)pl_fetchObjectsWithIDs:(id)arg1;
 - (id)ptpNotificationDelegate;
 - (void)recordAlbumForCloudFeedUpdate:(id)arg1;
 - (void)recordAssetForCloudFeedUpdate:(id)arg1;

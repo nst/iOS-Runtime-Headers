@@ -10,6 +10,9 @@
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (struct CGPoint { float x1; float x2; })centerColumnLetterOffset;
 - (struct CGPoint { float x1; float x2; })centerColumnNumberOffset;
+- (id)controlKeyBackgroundColorName;
+- (id)controlKeyForegroundColorName;
+- (id)defaultKeyBackgroundColorName;
 - (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
 - (struct CGPoint { float x1; float x2; })dictationGlyphOffset;
 - (struct CGPoint { float x1; float x2; })leftColumnLetterOffset;

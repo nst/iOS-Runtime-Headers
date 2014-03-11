@@ -16,6 +16,7 @@
 @property(retain) id value;
 
 + (id)formattedStringForDate:(id)arg1;
++ (void)resetTimestampFormaterTimezone;
 + (id)valueWithBool:(BOOL)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithDate:(id)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithDouble:(double)arg1 withUnit:(id)arg2 withFormat:(short)arg3;

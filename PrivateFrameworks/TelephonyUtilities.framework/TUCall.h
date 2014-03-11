@@ -16,6 +16,7 @@
     NSString *_abLabel;
     int _abUid;
     NSString *_companyName;
+    int _disconnectedReason;
     NSString *_displayName;
     int _displayNameBreakPoint;
     BOOL _hold;
@@ -27,6 +28,7 @@
 }
 
 @property(readonly) NSString * bundleIDForHostingApplication;
+@property(getter=_disconnectedReason,readonly) int disconnectedReason;
 @property BOOL hold;
 @property BOOL isOnHold;
 @property BOOL provisionallyBecomingHeld;
@@ -34,6 +36,7 @@
 @property BOOL unhold;
 
 - (int)_addressBookUid;
+- (int)_disconnectedReason;
 - (id)_displayNameWithSeparator:(id)arg1;
 - (void)_handleCallerIDChange;
 - (void)_handleIdentityChange;
@@ -54,6 +57,7 @@
 - (id)desktopImage;
 - (id)destinationID;
 - (void)disconnect;
+- (void)disconnectWithReason:(int)arg1;
 - (id)displayFirstName;
 - (id)displayName;
 - (BOOL)hold;

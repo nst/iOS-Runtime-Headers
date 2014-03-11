@@ -6,14 +6,14 @@
    See Warning(s) below.
  */
 
-@class MPAVController, MPAVItem, MPTransitionController, MPViewController, NSTimer, UIView;
+@class MPAVController, MPAVItem, MPTransitionController, MPViewController, UIView;
 
 @interface MPViewController : UIViewController <MPControllerProtocol, MPAVControllerNode> {
     unsigned int _appearing : 1;
     unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
     unsigned int _showOverlayWhileAppearingDisabled : 1;
     id _delegate;
-    NSTimer *_idleTimerDisablerTimer;
+    BOOL _idleTimerDisabled;
     int _interfaceOrientation;
     MPAVItem *_item;
     MPAVController *_player;

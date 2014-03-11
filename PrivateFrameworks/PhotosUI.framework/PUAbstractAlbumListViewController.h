@@ -6,9 +6,18 @@
    See Warning(s) below.
  */
 
-@class <PLAlbumProtocol>, NSArray, NSDate, NSMapTable, NSObject<PLAlbumContainer>, NSObject<PLAlbumProtocol>, NSString, PUAlbumListViewControllerSpec, PUAlbumStreamActivity, PUCollageView, PUFeedRecentsManager, PUFeedViewController, PUImageManager, PUPhotoPinchGestureRecognizer, PUPhotosGlobalFooterView, PUSessionInfo, UIBarButtonItem, UIView, UIViewController, _UIContentUnavailableView;
+@class <PLAlbumProtocol>, NSArray, NSDate, NSMutableSet, NSObject<PLAlbumContainer>, NSObject<PLAlbumProtocol>, NSOrderedSet, NSString, PUAlbumListViewControllerSpec, PUAlbumStreamActivity, PUCollageView, PUFeedRecentsManager, PUFeedViewController, PUImageManager, PUPhotoPinchGestureRecognizer, PUPhotosGlobalFooterView, PUSessionInfo, UIBarButtonItem, UIView, UIViewController, _UIContentUnavailableView;
 
 @interface PUAbstractAlbumListViewController : UIViewController <UIGestureRecognizerDelegate, PUStackedAlbumTransitionDelegate, PUAlbumStreamActivityDelegate, PUFeedRecentsManagerDelegate, PLNavigableAssetContainerListViewController, PLCloudFeedNavigating, PLNavigablePhotoStreamViewController, PUStackedAlbumControllerTransition> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     BOOL __aboutToCreateAlbum;
     UIView *__backgroundView;
     PUFeedViewController *__cachedFeedViewController;
@@ -21,12 +30,14 @@
     id __justCreatedAlbumAnimationCompletionHandler;
     id __onViewDidLayoutSubviewsBlock;
     PUPhotoPinchGestureRecognizer *__photoPinchGestureRecognizer;
-    NSMapTable *__preheatedAssetsByAlbum;
+    NSMutableSet *__preheatedAlbums;
+    } __previousPreheatRect;
     NSArray *__syncProgressAlbums;
     UIBarButtonItem *_albumCreationButtonItem;
     struct NSObject { Class x1; } *_albumList;
     PUAlbumStreamActivity *_albumStreamActivity;
     NSString *_albumSubtitleFormat;
+    NSOrderedSet *_albums;
     UIBarButtonItem *_cancelButtonItem;
     UIBarButtonItem *_doneButtonItem;
     BOOL _isRootSharedAlbumList;
@@ -54,9 +65,11 @@
 @property(setter=_setJustCreatedAlbumAnimationCompletionHandler:,copy) id _justCreatedAlbumAnimationCompletionHandler;
 @property(setter=_setOnViewDidLayoutSubviewsBlock:,copy) id _onViewDidLayoutSubviewsBlock;
 @property(setter=_setPhotoPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _photoPinchGestureRecognizer;
-@property(readonly) NSMapTable * _preheatedAssetsByAlbum;
+@property(setter=_setPreheatedAlbums:,retain) NSMutableSet * _preheatedAlbums;
+@property(setter=_setPreviousPreheatRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
 @property(readonly) NSArray * _syncProgressAlbums;
 @property(retain) NSObject<PLAlbumContainer> * albumList;
+@property(retain) NSOrderedSet * albums;
 @property(readonly) int albumsSection;
 @property(readonly) int bottomPlaceholdersSection;
 @property(readonly) BOOL isRootSharedAlbumList;
@@ -65,7 +78,6 @@
 @property(retain) UIViewController * pushedController;
 @property(retain) NSObject<PLAlbumProtocol> * retitlingAlbum;
 @property(retain) PUSessionInfo * sessionInfo;
-@property BOOL showAddNewAlbumPlaceholder;
 @property(readonly) PUAlbumListViewControllerSpec * spec;
 @property(retain) PUPhotosGlobalFooterView * syncProgressView;
 @property(readonly) int topPlaceholdersSection;
@@ -74,7 +86,6 @@
 - (void).cxx_destruct;
 - (BOOL)_aboutToCreateAlbum;
 - (id)_albumCreationButtonItem;
-- (id)_albumsToPreheat;
 - (BOOL)_appAllowsSupressionOfAlerts;
 - (void)_appWillEnterForeground:(id)arg1;
 - (id)_backgroundView;
@@ -103,13 +114,18 @@
 - (struct NSObject { Class x1; }*)_justCreatedAlbum;
 - (id)_justCreatedAlbumAnimationCompletionHandler;
 - (void)_keyboardWillChangeFrame:(id)arg1;
+- (id)_neededAlbumProperties;
+- (id)_neededAlbumRelationships;
 - (id)_nextCloudFeedNavigatingObject;
 - (id)_onViewDidLayoutSubviewsBlock;
 - (id)_photoPinchGestureRecognizer;
 - (id)_pickerBannerView;
-- (id)_preheatedAssetsByAlbum;
+- (id)_preheatedAlbums;
 - (void)_prepareStackView:(id)arg1 withStackCount:(int)arg2 withCustomEmptyPlaceHolderImage:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
+- (void)_resetPreheating;
 - (void)_setAboutToCreateAlbum:(BOOL)arg1;
+- (void)_setAlbums:(id)arg1;
 - (void)_setBackgroundView:(id)arg1;
 - (void)_setCachedFeedViewController:(id)arg1;
 - (void)_setEmptyPlaceholderView:(id)arg1;
@@ -118,10 +134,12 @@
 - (void)_setKeyboardAware:(BOOL)arg1;
 - (void)_setOnViewDidLayoutSubviewsBlock:(id)arg1;
 - (void)_setPhotoPinchGestureRecognizer:(id)arg1;
-- (void)_setPreheatedAssets:(id)arg1 forAlbum:(struct NSObject { Class x1; }*)arg2 asImages:(BOOL)arg3;
+- (void)_setPreheatedAlbums:(id)arg1;
+- (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_someAlbumSupportsEditing;
 - (id)_suppressionContexts;
 - (id)_syncProgressAlbums;
+- (void)_updateAddNewAlbumPlaceholderAnimated:(BOOL)arg1;
 - (void)_updateAlbumSubtitleFormat;
 - (void)_updateAlbumsOrderIfNeededSynchronously:(BOOL)arg1;
 - (void)_updateCollageView:(id)arg1 forAssets:(id)arg2;
@@ -131,7 +149,6 @@
 - (void)_updateNavigationBannerAnimated:(BOOL)arg1;
 - (void)_updatePeripheralInterfaceAnimated:(BOOL)arg1;
 - (void)_updatePreheatedAssets;
-- (void)_updatePreheatedAssetsForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)_updateStackView:(id)arg1 forAssets:(id)arg2 withCustomEmptyPlaceholderImage:(id)arg3;
 - (void)_updateStackView:(id)arg1 forFaces:(id)arg2 withCustomEmptyPlaceholderImage:(id)arg3;
 - (id)_visibleAssetsForAlbum:(struct NSObject { Class x1; }*)arg1;
@@ -144,6 +161,7 @@
 - (BOOL)albumListCellContentViewShouldBeginRetitling:(id)arg1;
 - (void)albumStreamActivity:(id)arg1 didCreateAlbum:(struct NSObject { Class x1; }*)arg2;
 - (void)albumStreamActivity:(id)arg1 didFinishSuccessfully:(BOOL)arg2;
+- (id)albums;
 - (int)albumsSection;
 - (void)assetContainerDidChange:(id)arg1;
 - (void)assetContainerListDidChange:(id)arg1;
@@ -173,6 +191,7 @@
 - (id)indexPathForAlbumListCellContentView:(id)arg1;
 - (id)indexPathForCloudFeedPlaceholder;
 - (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)indexPathsForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithSpec:(id)arg1 isRootSharedAlbumList:(BOOL)arg2;
 - (BOOL)isEmpty;
@@ -211,8 +230,6 @@
 - (void)setPushedController:(id)arg1;
 - (void)setRetitlingAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)setSessionInfo:(id)arg1;
-- (void)setShowAddNewAlbumPlaceholder:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShowAddNewAlbumPlaceholder:(BOOL)arg1;
 - (void)setSyncProgressView:(id)arg1;
 - (void)setSyncProgressVisible:(BOOL)arg1;
 - (void)setTitleForCell:(id)arg1 withAlbum:(struct NSObject { Class x1; }*)arg2;
@@ -236,11 +253,10 @@
 - (id)subtitleForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (id)syncProgressView;
 - (int)topPlaceholdersSection;
-- (void)updateAddNewAlbumPlaceholderAnimated:(BOOL)arg1;
 - (void)updateAlbumListCellContentView:(id)arg1 forItemAtIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (void)updateListCellForItemAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)updateNavigationBarAnimated:(BOOL)arg1;
-- (void)updatePlaceholderListCellContentView:(struct PUAlbumListCellContentView { Class x1; id x2; id x3; id x4; id x5; float x6; int x7; id x8; id x9; unsigned int x10; struct { unsigned int x_11_1_1 : 1; unsigned int x_11_1_2 : 1; unsigned int x_11_1_3 : 1; unsigned int x_11_1_4 : 1; unsigned int x_11_1_5 : 1; unsigned int x_11_1_6 : 1; unsigned int x_11_1_7 : 1; unsigned int x_11_1_8 : 1; unsigned int x_11_1_9 : 1; unsigned int x_11_1_10 : 1; unsigned int x_11_1_11 : 1; unsigned int x_11_1_12 : 1; unsigned int x_11_1_13 : 1; unsigned int x_11_1_14 : 1; unsigned int x_11_1_15 : 1; unsigned int x_11_1_16 : 6; unsigned int x_11_1_17 : 1; unsigned int x_11_1_18 : 1; unsigned int x_11_1_19 : 1; unsigned int x_11_1_20 : 1; unsigned int x_11_1_21 : 1; unsigned int x_11_1_22 : 1; unsigned int x_11_1_23 : 1; unsigned int x_11_1_24 : 1; unsigned int x_11_1_25 : 1; unsigned int x_11_1_26 : 1; unsigned int x_11_1_27 : 1; unsigned int x_11_1_28 : 1; unsigned int x_11_1_29 : 1; unsigned int x_11_1_30 : 1; unsigned int x_11_1_31 : 1; unsigned int x_11_1_32 : 1; unsigned int x_11_1_33 : 1; unsigned int x_11_1_34 : 1; unsigned int x_11_1_35 : 1; unsigned int x_11_1_36 : 1; unsigned int x_11_1_37 : 1; unsigned int x_11_1_38 : 1; unsigned int x_11_1_39 : 1; unsigned int x_11_1_40 : 1; unsigned int x_11_1_41 : 1; unsigned int x_11_1_42 : 1; unsigned int x_11_1_43 : 1; unsigned int x_11_1_44 : 1; unsigned int x_11_1_45 : 1; unsigned int x_11_1_46 : 1; unsigned int x_11_1_47 : 1; unsigned int x_11_1_48 : 1; unsigned int x_11_1_49 : 1; unsigned int x_11_1_50 : 1; unsigned int x_11_1_51 : 1; unsigned int x_11_1_52 : 1; unsigned int x_11_1_53 : 1; unsigned int x_11_1_54 : 1; unsigned int x_11_1_55 : 1; unsigned int x_11_1_56 : 1; unsigned int x_11_1_57 : 1; unsigned int x_11_1_58 : 1; unsigned int x_11_1_59 : 3; unsigned int x_11_1_60 : 1; unsigned int x_11_1_61 : 1; unsigned int x_11_1_62 : 1; unsigned int x_11_1_63 : 2; unsigned int x_11_1_64 : 2; unsigned int x_11_1_65 : 1; } x11; }*)arg1 forItemAtIndexPath:(id)arg2 animated:(BOOL)arg3;
+- (void)updatePlaceholderListCellContentView:(struct PUAlbumListCellContentView { Class x1; id x2; id x3; id x4; id x5; float x6; int x7; id x8; id x9; unsigned int x10; struct { unsigned int x_11_1_1 : 1; unsigned int x_11_1_2 : 1; unsigned int x_11_1_3 : 1; unsigned int x_11_1_4 : 1; unsigned int x_11_1_5 : 1; unsigned int x_11_1_6 : 1; unsigned int x_11_1_7 : 1; unsigned int x_11_1_8 : 1; unsigned int x_11_1_9 : 1; unsigned int x_11_1_10 : 1; unsigned int x_11_1_11 : 1; unsigned int x_11_1_12 : 1; unsigned int x_11_1_13 : 1; unsigned int x_11_1_14 : 1; unsigned int x_11_1_15 : 1; unsigned int x_11_1_16 : 6; unsigned int x_11_1_17 : 1; unsigned int x_11_1_18 : 1; unsigned int x_11_1_19 : 1; unsigned int x_11_1_20 : 1; unsigned int x_11_1_21 : 1; unsigned int x_11_1_22 : 1; unsigned int x_11_1_23 : 1; unsigned int x_11_1_24 : 1; unsigned int x_11_1_25 : 1; unsigned int x_11_1_26 : 1; unsigned int x_11_1_27 : 1; unsigned int x_11_1_28 : 1; unsigned int x_11_1_29 : 1; unsigned int x_11_1_30 : 1; unsigned int x_11_1_31 : 1; unsigned int x_11_1_32 : 1; unsigned int x_11_1_33 : 1; unsigned int x_11_1_34 : 1; unsigned int x_11_1_35 : 1; unsigned int x_11_1_36 : 1; unsigned int x_11_1_37 : 1; unsigned int x_11_1_38 : 1; unsigned int x_11_1_39 : 1; unsigned int x_11_1_40 : 1; unsigned int x_11_1_41 : 1; unsigned int x_11_1_42 : 1; unsigned int x_11_1_43 : 1; unsigned int x_11_1_44 : 1; unsigned int x_11_1_45 : 1; unsigned int x_11_1_46 : 1; unsigned int x_11_1_47 : 1; unsigned int x_11_1_48 : 1; unsigned int x_11_1_49 : 1; unsigned int x_11_1_50 : 1; unsigned int x_11_1_51 : 1; unsigned int x_11_1_52 : 1; unsigned int x_11_1_53 : 1; unsigned int x_11_1_54 : 1; unsigned int x_11_1_55 : 1; unsigned int x_11_1_56 : 1; unsigned int x_11_1_57 : 1; unsigned int x_11_1_58 : 1; unsigned int x_11_1_59 : 3; unsigned int x_11_1_60 : 1; unsigned int x_11_1_61 : 1; unsigned int x_11_1_62 : 1; unsigned int x_11_1_63 : 2; unsigned int x_11_1_64 : 2; unsigned int x_11_1_65 : 1; unsigned int x_11_1_66 : 2; unsigned int x_11_1_67 : 1; unsigned int x_11_1_68 : 3; unsigned int x_11_1_69 : 1; unsigned int x_11_1_70 : 1; } x11; }*)arg1 forItemAtIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (void)updateSyncProgress;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -248,7 +264,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)visibleAlbumListCellContentViewAtIndexPath:(id)arg1;
-- (struct PUAlbumListCellContentView { Class x1; id x2; id x3; id x4; id x5; float x6; int x7; id x8; id x9; unsigned int x10; struct { unsigned int x_11_1_1 : 1; unsigned int x_11_1_2 : 1; unsigned int x_11_1_3 : 1; unsigned int x_11_1_4 : 1; unsigned int x_11_1_5 : 1; unsigned int x_11_1_6 : 1; unsigned int x_11_1_7 : 1; unsigned int x_11_1_8 : 1; unsigned int x_11_1_9 : 1; unsigned int x_11_1_10 : 1; unsigned int x_11_1_11 : 1; unsigned int x_11_1_12 : 1; unsigned int x_11_1_13 : 1; unsigned int x_11_1_14 : 1; unsigned int x_11_1_15 : 1; unsigned int x_11_1_16 : 6; unsigned int x_11_1_17 : 1; unsigned int x_11_1_18 : 1; unsigned int x_11_1_19 : 1; unsigned int x_11_1_20 : 1; unsigned int x_11_1_21 : 1; unsigned int x_11_1_22 : 1; unsigned int x_11_1_23 : 1; unsigned int x_11_1_24 : 1; unsigned int x_11_1_25 : 1; unsigned int x_11_1_26 : 1; unsigned int x_11_1_27 : 1; unsigned int x_11_1_28 : 1; unsigned int x_11_1_29 : 1; unsigned int x_11_1_30 : 1; unsigned int x_11_1_31 : 1; unsigned int x_11_1_32 : 1; unsigned int x_11_1_33 : 1; unsigned int x_11_1_34 : 1; unsigned int x_11_1_35 : 1; unsigned int x_11_1_36 : 1; unsigned int x_11_1_37 : 1; unsigned int x_11_1_38 : 1; unsigned int x_11_1_39 : 1; unsigned int x_11_1_40 : 1; unsigned int x_11_1_41 : 1; unsigned int x_11_1_42 : 1; unsigned int x_11_1_43 : 1; unsigned int x_11_1_44 : 1; unsigned int x_11_1_45 : 1; unsigned int x_11_1_46 : 1; unsigned int x_11_1_47 : 1; unsigned int x_11_1_48 : 1; unsigned int x_11_1_49 : 1; unsigned int x_11_1_50 : 1; unsigned int x_11_1_51 : 1; unsigned int x_11_1_52 : 1; unsigned int x_11_1_53 : 1; unsigned int x_11_1_54 : 1; unsigned int x_11_1_55 : 1; unsigned int x_11_1_56 : 1; unsigned int x_11_1_57 : 1; unsigned int x_11_1_58 : 1; unsigned int x_11_1_59 : 3; unsigned int x_11_1_60 : 1; unsigned int x_11_1_61 : 1; unsigned int x_11_1_62 : 1; unsigned int x_11_1_63 : 2; unsigned int x_11_1_64 : 2; unsigned int x_11_1_65 : 1; } x11; }*)visiblePlaceholderListCellContentViewAtIndexPath:(id)arg1;
+- (struct PUAlbumListCellContentView { Class x1; id x2; id x3; id x4; id x5; float x6; int x7; id x8; id x9; unsigned int x10; struct { unsigned int x_11_1_1 : 1; unsigned int x_11_1_2 : 1; unsigned int x_11_1_3 : 1; unsigned int x_11_1_4 : 1; unsigned int x_11_1_5 : 1; unsigned int x_11_1_6 : 1; unsigned int x_11_1_7 : 1; unsigned int x_11_1_8 : 1; unsigned int x_11_1_9 : 1; unsigned int x_11_1_10 : 1; unsigned int x_11_1_11 : 1; unsigned int x_11_1_12 : 1; unsigned int x_11_1_13 : 1; unsigned int x_11_1_14 : 1; unsigned int x_11_1_15 : 1; unsigned int x_11_1_16 : 6; unsigned int x_11_1_17 : 1; unsigned int x_11_1_18 : 1; unsigned int x_11_1_19 : 1; unsigned int x_11_1_20 : 1; unsigned int x_11_1_21 : 1; unsigned int x_11_1_22 : 1; unsigned int x_11_1_23 : 1; unsigned int x_11_1_24 : 1; unsigned int x_11_1_25 : 1; unsigned int x_11_1_26 : 1; unsigned int x_11_1_27 : 1; unsigned int x_11_1_28 : 1; unsigned int x_11_1_29 : 1; unsigned int x_11_1_30 : 1; unsigned int x_11_1_31 : 1; unsigned int x_11_1_32 : 1; unsigned int x_11_1_33 : 1; unsigned int x_11_1_34 : 1; unsigned int x_11_1_35 : 1; unsigned int x_11_1_36 : 1; unsigned int x_11_1_37 : 1; unsigned int x_11_1_38 : 1; unsigned int x_11_1_39 : 1; unsigned int x_11_1_40 : 1; unsigned int x_11_1_41 : 1; unsigned int x_11_1_42 : 1; unsigned int x_11_1_43 : 1; unsigned int x_11_1_44 : 1; unsigned int x_11_1_45 : 1; unsigned int x_11_1_46 : 1; unsigned int x_11_1_47 : 1; unsigned int x_11_1_48 : 1; unsigned int x_11_1_49 : 1; unsigned int x_11_1_50 : 1; unsigned int x_11_1_51 : 1; unsigned int x_11_1_52 : 1; unsigned int x_11_1_53 : 1; unsigned int x_11_1_54 : 1; unsigned int x_11_1_55 : 1; unsigned int x_11_1_56 : 1; unsigned int x_11_1_57 : 1; unsigned int x_11_1_58 : 1; unsigned int x_11_1_59 : 3; unsigned int x_11_1_60 : 1; unsigned int x_11_1_61 : 1; unsigned int x_11_1_62 : 1; unsigned int x_11_1_63 : 2; unsigned int x_11_1_64 : 2; unsigned int x_11_1_65 : 1; unsigned int x_11_1_66 : 2; unsigned int x_11_1_67 : 1; unsigned int x_11_1_68 : 3; unsigned int x_11_1_69 : 1; unsigned int x_11_1_70 : 1; } x11; }*)visiblePlaceholderListCellContentViewAtIndexPath:(id)arg1;
 - (void)visiblyInsertItemAtIndexPath:(id)arg1 completionHandler:(id)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

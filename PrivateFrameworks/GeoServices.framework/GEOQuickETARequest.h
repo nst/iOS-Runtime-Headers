@@ -9,6 +9,7 @@
     GEOLocation *_currentLocation;
     NSDate *_departureDate;
     GEOWaypoint *_destination;
+    BOOL _includeDistance;
     GEOWaypoint *_source;
     int _transportType;
 }
@@ -17,6 +18,7 @@
 @property(readonly) GEOLocation * currentLocation;
 @property(readonly) NSDate * departureDate;
 @property(readonly) GEOWaypoint * destination;
+@property(readonly) BOOL includeDistance;
 @property(readonly) GEOWaypoint * source;
 @property(readonly) int transportType;
 
@@ -26,9 +28,12 @@
 - (id)departureDate;
 - (id)description;
 - (id)destination;
+- (BOOL)includeDistance;
 - (id)initWithDirectionsRequest:(id)arg1;
-- (id)initWithOrigin:(id)arg1 destinationLOI:(id)arg2;
+- (id)initWithOrigin:(id)arg1 destinationPLOI:(id)arg2;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5 includeDistance:(BOOL)arg6;
 - (id)initWithSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 departureDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5 includeDistance:(BOOL)arg6;
 - (id)initWithSource:(id)arg1 destination:(id)arg2 departureDate:(id)arg3 transportType:(int)arg4 currentLocation:(id)arg5;
 - (id)source;
 - (int)transportType;

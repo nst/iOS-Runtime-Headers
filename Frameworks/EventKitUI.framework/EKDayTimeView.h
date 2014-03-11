@@ -42,7 +42,6 @@
 @property BOOL showsTimeMarkerExtension;
 @property(retain) UIColor * timeColor;
 @property(readonly) EKCurrentTimeMarkerView * timeMarker;
-@property(readonly) float timeWidth;
 @property BOOL usesLightText;
 
 + (void)_calculateWidthForOrientation:(int)arg1;
@@ -59,8 +58,10 @@
 + (float)verticalPadding;
 
 - (void).cxx_destruct;
+- (void)_invalidateTimeWidth;
 - (void)_localeChanged;
 - (float)_positionOfSecond:(int)arg1;
+- (float)_timeWidth;
 - (void)dealloc;
 - (float)defaultHeight;
 - (id)delegate;
@@ -70,6 +71,7 @@
 - (float)hoursToPad;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })hoursToRender;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightedHour:(double)arg1;
@@ -91,7 +93,7 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)timeColor;
 - (id)timeMarker;
-- (float)timeWidth;
+- (void)tintColorDidChange;
 - (float)topPadding;
 - (void)updateMarkerPosition;
 - (BOOL)usesLightText;

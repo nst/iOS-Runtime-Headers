@@ -2,28 +2,35 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPMediaQuery, MPMediaQuerySectionInfo, NSArray, NSURL;
+@class MPMediaQuery, MPMediaQuerySectionInfo, NSArray, NSMutableSet, NSURL;
 
 @interface MPUQueryDataSource : MPUDataSource {
+    NSMutableSet *_additionalUniqueItemPropertiesToFetch;
     NSArray *_entities;
+    BOOL _ignoringInvalidationDueToBackgroundApplicationState;
     BOOL _invalidateWhenEnteringForeground;
     MPMediaQuery *_query;
     MPMediaQuerySectionInfo *_sectionInfo;
 }
 
 @property(readonly) NSURL * bestStoreURL;
+@property BOOL ignoringInvalidationDueToBackgroundApplicationState;
 @property(readonly) MPMediaQuery * query;
 
 - (void).cxx_destruct;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (BOOL)_deleteHidesFromCloudForIndex:(unsigned int)arg1 hidesAll:(out BOOL*)arg2;
+- (void)_invalidateCalculatedEntities;
+- (void)_invalidateIfNeeded;
 - (void)_isCloudEnabledDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
-- (void)_postInvalidationNotification;
+- (void)_postInvalidationNotificationIfNeeded;
 - (id)_sectionInfo;
+- (void)addAdditionalMediaEntityPropertiesToFetch:(id)arg1;
 - (id)bestStoreURL;
 - (BOOL)canEditEntityAtIndex:(unsigned int)arg1;
 - (BOOL)canSelectEntityAtIndex:(unsigned int)arg1;
@@ -34,17 +41,19 @@
 - (int)editingTypeForEntityAtIndex:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entities;
+- (BOOL)ignoringInvalidationDueToBackgroundApplicationState;
 - (unsigned int)indexOfSectionForSectionTitleAtIndex:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEntityType:(int)arg1;
 - (id)initWithQuery:(id)arg1 entityType:(int)arg2;
-- (void)invalidateCalculatedEntities;
 - (BOOL)isEmpty;
 - (id)localizedSectionIndexTitles;
 - (id)localizedSectionTitleAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfSections;
 - (id)query;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSectionAtIndex:(unsigned int)arg1;
+- (void)removeAdditionalMediaEntityPropertiesToFetch:(id)arg1;
+- (void)setIgnoringInvalidationDueToBackgroundApplicationState:(BOOL)arg1;
 - (BOOL)showsEntityCountFooter;
 - (BOOL)showsIndexBar;
 - (id)titleForGlobalHeader;

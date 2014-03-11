@@ -6,6 +6,8 @@
 
 @interface MPUDataSource : NSObject <NSCoding> {
     int _entityType;
+    int _invalidationIgnoreCount;
+    int _numberOfIgnoredInvalidations;
 }
 
 @property(readonly) unsigned int count;
@@ -19,6 +21,7 @@
 @property(readonly) NSString * titleForGlobalHeader;
 @property(readonly) BOOL usesSections;
 
+- (void)_invalidateCalculatedEntities;
 - (id)anyEntity;
 - (void)beginIgnoringInvalidation;
 - (BOOL)canEditEntityAtIndex:(unsigned int)arg1;
@@ -41,14 +44,14 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEntityType:(int)arg1;
 - (void)invalidate;
-- (void)invalidateCalculatedEntities;
-- (void)invalidateWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3;
 - (BOOL)isEmpty;
 - (BOOL)isIgnoringInvalidation;
 - (id)localizedSectionIndexTitles;
 - (id)localizedSectionTitleAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfSections;
 - (id)playbackContextForIndex:(unsigned int)arg1;
+- (void)preloadEntities;
+- (void)preloadSectionEntities;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSectionAtIndex:(unsigned int)arg1;
 - (id)sectionEntities;
 - (id)sectionEntityAtIndex:(unsigned int)arg1;

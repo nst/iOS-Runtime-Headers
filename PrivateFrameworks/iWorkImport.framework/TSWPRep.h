@@ -25,6 +25,7 @@
     TSKHighlightArrayController *_highlightArrayController;
     BOOL _hudStateDirty;
     CALayer *_indentAnimationLayer;
+    BOOL _indentAnimationRunning;
     int _indentDelta;
     SEL _indentSelector;
     id _indentTarget;
@@ -128,6 +129,7 @@
 - (id)imageForSearchReference:(id)arg1 forPath:(struct CGPath { }*)arg2 shouldPulsate:(BOOL)arg3;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (void)invalidateHUDState;
+- (void)invalidateKnobs;
 - (BOOL)isEditing;
 - (BOOL)isOverflowing;
 - (BOOL)isPointInSelectedArea:(struct CGPoint { float x1; float x2; })arg1;
@@ -173,7 +175,6 @@
 - (void)p_hideSmartFieldHighlightLayer;
 - (id)p_hyperlinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)p_imageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingGlyphRect:(BOOL)arg2 drawBackground:(BOOL)arg3 shouldPulsate:(BOOL)arg4 forCaret:(BOOL)arg5 drawSelection:(id)arg6 suppressInvisibles:(BOOL)arg7;
-- (void)p_indentAfterAnimationWithOptions:(id)arg1;
 - (void)p_invalidateCommentKnobs;
 - (BOOL)p_isSelectionSingleAnchoredDrawableAttachment;
 - (id)p_lineSelectionsForSelection:(id)arg1;
@@ -258,7 +259,6 @@
 - (void)viewDidAppear;
 - (void)viewScaleDidChange;
 - (void)viewScrollingEnded;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsForTilingLayer:(id)arg1;
 - (BOOL)wantsToHandleTapsOnContainingGroup;
 - (BOOL)wantsToHandleTapsWhenLocked;
 - (void)willBeRemoved;

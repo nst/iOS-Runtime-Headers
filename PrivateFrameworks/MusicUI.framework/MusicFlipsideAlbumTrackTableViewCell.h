@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)ratingControl;
+- (void)setShowsRatingControl:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsRatingControl:(BOOL)arg1;
 
 @end

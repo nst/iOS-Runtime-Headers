@@ -18,8 +18,6 @@
     NSMutableString *trendingCandidates;
 }
 
-+ (id)instance;
-
 - (void).cxx_destruct;
 - (void)concat:(id)arg1 withSlot:(int)arg2;
 - (void)dumpTrending;

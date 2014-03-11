@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufWifi.dylib
  */
 
-@interface AWDWiFiMetricsManagerWatchdogEvent : PBCodable {
+@interface AWDWiFiMetricsManagerWatchdogEvent : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int available : 1; 
@@ -38,7 +38,7 @@
 
 - (int)available;
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)deviceIdentifierMap;
 - (id)dictionaryRepresentation;

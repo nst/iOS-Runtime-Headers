@@ -5,6 +5,7 @@
 @class <CKMessage>, NSAttributedString, NSString;
 
 @interface CKMessageStatus : NSObject <CKTranscriptDataRowObject> {
+    NSAttributedString *_attributedTranscriptText;
     NSString *_guid;
     <CKMessage> *_message;
     int _status;
@@ -32,6 +33,7 @@
 - (BOOL)__ck_transcriptUsesTextAlignmentInsets;
 - (BOOL)__ck_wantsDrawerLayout;
 - (id)attributedTranscriptText;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)guid;
@@ -41,6 +43,7 @@
 - (id)now;
 - (void)setMessage:(id)arg1;
 - (void)setStatus:(int)arg1;
+- (void)significantTimeChange:(id)arg1;
 - (int)status;
 
 @end

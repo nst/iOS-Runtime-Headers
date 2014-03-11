@@ -23,12 +23,14 @@
     unsigned int _updateStamp;
 }
 
+@property(readonly) int activeMapDisplayStyle;
 @property float blendingFactor;
 @property BOOL canSelectIcons;
 @property(readonly) VKGenericShieldDrawStyle * defaultGenericShieldStyle;
 @property(readonly) int mapDisplayStyle;
 @property int mapDisplayStyleVariant;
 @property(readonly) VKPGlobalProperties * styleGlobalProperties;
+@property(readonly) BOOL supportsNightMode;
 @property(readonly) int targetDisplay;
 @property(readonly) unsigned int updateStamp;
 
@@ -37,7 +39,9 @@
 + (id)stylesheetWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(int)arg4;
 
 - (float)_nightShieldBrightnessForVectorType:(int)arg1;
+- (id)_styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3 mapDisplayStyle:(int)arg4 mapDisplayStyleVariant:(int)arg5;
 - (id)_styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3;
+- (int)activeMapDisplayStyle;
 - (float)blendingFactor;
 - (BOOL)canSelectIcons;
 - (void)dealloc;
@@ -58,9 +62,11 @@
 - (float)shieldBrightnessForDisplayStyle:(int)arg1;
 - (float)shieldBrightnessForVectorType:(int)arg1;
 - (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2 locale:(id)arg3;
+- (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2 mapDisplayStyle:(int)arg3;
 - (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2;
 - (id)styleGlobalProperties;
 - (BOOL)supportsMapDisplayStyle:(int)arg1;
+- (BOOL)supportsNightMode;
 - (int)targetDisplay;
 - (unsigned int)updateStamp;
 - (id)variantForStyle:(id)arg1;

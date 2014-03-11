@@ -9,6 +9,7 @@
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1;
 - (void)appendPropertiesToBody:(id)arg1;
 - (BOOL)isBlacklistedByConfiguration:(id)arg1;
+- (BOOL)isFieldBlacklistEnabled;
 - (id)millisecondsFromTimeInterval:(double)arg1;
 - (double)timeIntervalFromMilliseconds:(id)arg1;
 

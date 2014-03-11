@@ -5,10 +5,12 @@
 @class MFActivityMonitor;
 
 @interface MFMonitoredInvocation : NSInvocation {
+    BOOL _isLowPriority;
     MFActivityMonitor *_monitor;
     BOOL _shouldLogInvocation;
 }
 
+@property BOOL isLowPriority;
 @property(readonly) MFActivityMonitor * monitor;
 
 + (id)invocationWithMethodSignature:(id)arg1;
@@ -19,8 +21,10 @@
 - (void)dealloc;
 - (id)description;
 - (void)invoke;
+- (BOOL)isLowPriority;
 - (BOOL)mf_shouldLogInvocation;
 - (id)monitor;
+- (void)setIsLowPriority:(BOOL)arg1;
 - (void)setShouldLogInvocation:(BOOL)arg1;
 
 @end

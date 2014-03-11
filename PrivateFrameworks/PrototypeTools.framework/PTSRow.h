@@ -72,6 +72,7 @@
 - (id)imageKeyPath:(id)arg1;
 - (id)imageKeyPath;
 - (id)init;
+- (id)pu_increment:(float)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)resolveTemplatesWithIndex:(unsigned int)arg1;
 - (Class)rowTableViewCellClass;

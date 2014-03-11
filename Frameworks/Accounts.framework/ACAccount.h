@@ -41,6 +41,7 @@
     ACAccountStore *_store;
     BOOL _supportsAuthentication;
     NSString *_username;
+    BOOL _visible;
 }
 
 @property(readonly) NSDictionary * aa_accountFirstDisplayAlert;
@@ -55,6 +56,7 @@
 @property(readonly) NSString * aa_firstName;
 @property(readonly) ACAccount * aa_fmipAccount;
 @property(readonly) NSString * aa_fmipToken;
+@property(readonly) NSString * aa_hsaToken;
 @property(setter=aa_setPrimaryAccount:) BOOL aa_isPrimaryAccount;
 @property(setter=aa_setPrimaryEmailVerified:) BOOL aa_isPrimaryEmailVerified;
 @property(setter=aa_setSyncedAccount:) BOOL aa_isSyncedAccount;
@@ -103,6 +105,7 @@
 @property(readonly) BOOL supportsPush;
 @property(readonly) NSString * userFullName;
 @property(copy) NSString * username;
+@property(getter=isVisible) BOOL visible;
 
 + (id)_createNewAccountUID;
 + (id)aa_dataclassesBoundToPrimaryAppleAccount;
@@ -137,6 +140,8 @@
 - (id)aa_firstName;
 - (id)aa_fmipAccount;
 - (id)aa_fmipToken;
+- (id)aa_hsaToken;
+- (id)aa_hsaTokenWithError:(id*)arg1;
 - (BOOL)aa_isPrimaryAccount;
 - (BOOL)aa_isPrimaryEmailVerified;
 - (BOOL)aa_isSyncedAccount;
@@ -154,6 +159,7 @@
 - (BOOL)aa_serviceUnavailable;
 - (id)aa_serviceUnavailableInfo;
 - (void)aa_setAuthToken:(id)arg1;
+- (void)aa_setHSAToken:(id)arg1;
 - (void)aa_setMapsToken:(id)arg1;
 - (void)aa_setNeedsToVerifyTerms:(BOOL)arg1;
 - (void)aa_setPassword:(id)arg1;
@@ -212,6 +218,7 @@
 - (BOOL)isMobileMeAccount;
 - (BOOL)isPropertyDirty:(id)arg1;
 - (BOOL)isProvisionedForDataclass:(id)arg1;
+- (BOOL)isVisible;
 - (id)lastCredentialRenewalRejectionDate;
 - (void)markAllPropertiesDirty;
 - (id)mcBackingPayload;
@@ -253,6 +260,7 @@
 - (void)setProvisionedDataclasses:(id)arg1;
 - (void)setSupportsAuthentication:(BOOL)arg1;
 - (void)setUsername:(id)arg1;
+- (void)setVisible:(BOOL)arg1;
 - (id)shortDebugName;
 - (void)storeOriginalUsername;
 - (BOOL)supportsAuthentication;

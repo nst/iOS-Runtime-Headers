@@ -19,6 +19,7 @@
 @property(retain) PKPass * pass;
 
 - (int)_backgroundForBucketTemplate:(id)arg1;
+- (id)_fieldViewsByWidth;
 - (void)_measureAndFitEvenlySizedSubviews;
 - (void)_measureAndFitVariablySizedSubviews;
 - (void)_updateSubviews;
@@ -26,6 +27,7 @@
 - (id)bucketTemplate;
 - (id)colorProfile;
 - (void)dealloc;
+- (id)description;
 - (void)layoutSubviews;
 - (id)pass;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;

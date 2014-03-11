@@ -17,6 +17,7 @@
 + (void)addFactoryDefaults:(id)arg1;
 + (BOOL)boolForKey:(id)arg1;
 + (double)doubleForKey:(id)arg1;
++ (id)factoryDefaults;
 + (int)integerForKey:(id)arg1;
 + (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 + (void)setDouble:(double)arg1 forKey:(id)arg2;

@@ -6,7 +6,6 @@
 }
 
 - (id)initWithRep:(id)arg1;
-- (id)knobImage;
 - (void)updateHitRegionPathForRep:(id)arg1;
 
 @end

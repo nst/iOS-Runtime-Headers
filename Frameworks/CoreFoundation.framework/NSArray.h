@@ -103,7 +103,6 @@
 - (void)_makeObjectsPerformSelector:(SEL)arg1 object:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)_mapkit_arrayByRemovingObject:(id)arg1;
 - (unsigned int)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
-- (id)_mapkit_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
 - (id)_maxForKeyPath:(id)arg1;
 - (id)_minForKeyPath:(id)arg1;
@@ -302,8 +301,8 @@
 - (unsigned int)pl_indexOfLastObjectPassingTest:(id)arg1;
 - (id)pl_shortDescription;
 - (int)propertyAtIndex:(unsigned int)arg1;
-- (id)pu_localizedComposedStringThatFitsWidth:(float)arg1 withFont:(id)arg2 uppercase:(BOOL)arg3;
-- (id)pu_localizedComposedStringWithCount:(unsigned int)arg1 uppercase:(BOOL)arg2;
+- (id)pu_localizedComposedStringThatFitsWidth:(float)arg1 withMeasuringLabel:(id)arg2;
+- (id)pu_localizedComposedStringWithCount:(unsigned int)arg1;
 - (id)rangeCheckedObjectAtIndex:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
@@ -333,6 +332,7 @@
 - (id)specifierForID:(id)arg1;
 - (id)stringsByAppendingPathComponent:(id)arg1;
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)subarraysOfSize:(unsigned int)arg1;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;

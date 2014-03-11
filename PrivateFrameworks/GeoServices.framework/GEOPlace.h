@@ -4,7 +4,7 @@
 
 @class GEOAddress, GEOBusiness, GEOLatLng, GEOMapRegion, GEORating, NSMutableArray, NSString;
 
-@interface GEOPlace : PBCodable <NSCopying> {
+@interface GEOPlace : PBCodable <GEOURLSerializable, NSCopying> {
     struct { 
         unsigned int area : 1; 
         unsigned int geoId : 1; 
@@ -13,6 +13,7 @@
         unsigned int localSearchProviderID : 1; 
         unsigned int type : 1; 
         unsigned int version : 1; 
+        unsigned int waypointLabelType : 1; 
         unsigned int isDisputed : 1; 
     GEOAddress *_address;
     int _addressGeocodeAccuracy;
@@ -22,17 +23,20 @@
     NSMutableArray *_entryPoints;
     long long _geoId;
     } _has;
+    NSString *_inputLanguage;
     BOOL _isDisputed;
     int _localSearchProviderID;
     GEOMapRegion *_mapRegion;
     NSString *_name;
     GEOAddress *_phoneticAddress;
+    NSString *_phoneticLocaleIdentifier;
     NSString *_phoneticName;
     NSString *_spokenAddress;
     NSString *_spokenName;
     int _type;
     long long _uID;
     int _version;
+    int _waypointLabelType;
 }
 
 @property(retain) GEOAddress * address;
@@ -49,30 +53,65 @@
 @property BOOL hasArea;
 @property(readonly) BOOL hasCenter;
 @property BOOL hasGeoId;
+@property(readonly) BOOL hasInputLanguage;
 @property BOOL hasIsDisputed;
 @property BOOL hasLocalSearchProviderID;
 @property(readonly) BOOL hasMapRegion;
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasPhoneticAddress;
+@property(readonly) BOOL hasPhoneticLocaleIdentifier;
 @property(readonly) BOOL hasPhoneticName;
 @property(readonly) BOOL hasSpokenAddress;
 @property(readonly) BOOL hasSpokenName;
 @property BOOL hasType;
 @property BOOL hasUID;
 @property BOOL hasVersion;
+@property BOOL hasWaypointLabelType;
+@property(retain) NSString * inputLanguage;
 @property BOOL isDisputed;
 @property int localSearchProviderID;
 @property(retain) GEOMapRegion * mapRegion;
 @property(retain) NSString * name;
 @property(retain) GEOAddress * phoneticAddress;
+@property(retain) NSString * phoneticLocaleIdentifier;
 @property(retain) NSString * phoneticName;
 @property(retain) NSString * spokenAddress;
 @property(retain) NSString * spokenName;
 @property int type;
 @property long long uID;
 @property int version;
+@property int waypointLabelType;
 @property(readonly) NSString * yelpID;
 
++ (id)_placesFromDirectionsAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
++ (id)_placesFromPresentAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
++ (id)_placesFromShowAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
++ (id)_placesFromURL:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
++ (id)_urlForAction:(id)arg1 rison:(id)arg2;
++ (id)_urlForDirectionsFromOrigin:(id)arg1 toDestination:(id)arg2 options:(id)arg3;
++ (id)_urlRepresentationForCurrentLocation;
++ (id)_urlToPresentAction:(id)arg1 present:(id)arg2;
++ (id)_urlToPresentCurrentLocationAndPlaces:(id)arg1 currentLocationIndex:(unsigned int)arg2 options:(id)arg3;
++ (id)_urlToPresentCurrentLocationWithOptions:(id)arg1;
++ (id)_urlToPresentDirectionsForItems:(id)arg1 options:(id)arg2;
++ (id)_urlToPresentDirectionsForPlaces:(id)arg1 options:(id)arg2;
++ (id)_urlToPresentPlaces:(id)arg1 options:(id)arg2;
++ (id)_urlToShowCurrentLocationAndPlaces:(id)arg1 currentLocationIndex:(unsigned int)arg2 options:(id)arg3;
++ (id)_urlToShowCurrentLocationWithOptions:(id)arg1;
++ (id)_urlToShowPlaces:(id)arg1 options:(id)arg2;
++ (id)_urlToShowURLRepresentations:(id)arg1 options:(id)arg2;
+
+- (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
+- (id)_urlForDirectionsFromCurrentLocationWithOptions:(id)arg1;
+- (id)_urlForDirectionsFromPlace:(id)arg1 options:(id)arg2;
+- (id)_urlForDirectionsToCurrentLocationWithOptions:(id)arg1;
+- (id)_urlForDirectionsToPlace:(id)arg1 options:(id)arg2;
+- (id)_urlToPresentDirectionsFromCurrentLocationWithOptions:(id)arg1;
+- (id)_urlToPresentDirectionsFromPlace:(id)arg1 options:(id)arg2;
+- (id)_urlToPresentDirectionsToCurrentLocationWithOptions:(id)arg1;
+- (id)_urlToPresentDirectionsToPlace:(id)arg1 options:(id)arg2;
+- (id)_urlToPresentWithOptions:(id)arg1;
+- (id)_urlToShowWithOptions:(id)arg1;
 - (void)addBusiness:(id)arg1;
 - (void)addEntryPoint:(id)arg1;
 - (id)address;
@@ -108,11 +147,13 @@
 - (BOOL)hasArea;
 - (BOOL)hasCenter;
 - (BOOL)hasGeoId;
+- (BOOL)hasInputLanguage;
 - (BOOL)hasIsDisputed;
 - (BOOL)hasLocalSearchProviderID;
 - (BOOL)hasMapRegion;
 - (BOOL)hasName;
 - (BOOL)hasPhoneticAddress;
+- (BOOL)hasPhoneticLocaleIdentifier;
 - (BOOL)hasPhoneticName;
 - (BOOL)hasSingleBusiness;
 - (BOOL)hasSpokenAddress;
@@ -120,15 +161,19 @@
 - (BOOL)hasType;
 - (BOOL)hasUID;
 - (BOOL)hasVersion;
+- (BOOL)hasWaypointLabelType;
 - (unsigned int)hash;
 - (id)initWithCLLocation:(id)arg1;
 - (id)initWithPlacemark:(id)arg1;
+- (id)initWithUrlRepresentation:(id)arg1;
+- (id)inputLanguage;
 - (BOOL)isDisputed;
 - (BOOL)isEqual:(id)arg1;
 - (int)localSearchProviderID;
 - (id)mapRegion;
 - (id)name;
 - (id)phoneticAddress;
+- (id)phoneticLocaleIdentifier;
 - (id)phoneticName;
 - (double)radialDistance;
 - (BOOL)readFrom:(id)arg1;
@@ -147,22 +192,28 @@
 - (void)setHasType:(BOOL)arg1;
 - (void)setHasUID:(BOOL)arg1;
 - (void)setHasVersion:(BOOL)arg1;
+- (void)setHasWaypointLabelType:(BOOL)arg1;
+- (void)setInputLanguage:(id)arg1;
 - (void)setIsDisputed:(BOOL)arg1;
 - (void)setLocalSearchProviderID:(int)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneticAddress:(id)arg1;
+- (void)setPhoneticLocaleIdentifier:(id)arg1;
 - (void)setPhoneticName:(id)arg1;
 - (void)setSpokenAddress:(id)arg1;
 - (void)setSpokenName:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setUID:(long long)arg1;
 - (void)setVersion:(int)arg1;
+- (void)setWaypointLabelType:(int)arg1;
 - (id)spokenAddress;
 - (id)spokenName;
 - (int)type;
 - (long long)uID;
+- (id)urlRepresentation;
 - (int)version;
+- (int)waypointLabelType;
 - (void)writeTo:(id)arg1;
 - (id)yelpID;
 

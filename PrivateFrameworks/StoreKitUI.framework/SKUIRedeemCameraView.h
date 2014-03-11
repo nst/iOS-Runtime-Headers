@@ -2,10 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIRedeemCameraViewDelegate>, NSString, SKUIRedeemCameraLandingView, SKUIRedeemTextField, UIButton, UIImage, UIView;
+@class <SKUIRedeemCameraViewDelegate>, NSString, SKUIClientContext, SKUIITunesPassConfiguration, SKUIRedeemCameraLandingView, SKUIRedeemITunesPassLockup, SKUIRedeemTextField, UIButton, UIImage, UIView;
 
 @interface SKUIRedeemCameraView : UIView <UITextFieldDelegate> {
+    SKUIClientContext *_clientContext;
     <SKUIRedeemCameraViewDelegate> *_delegate;
+    SKUIITunesPassConfiguration *_iTunesPassConfiguration;
+    SKUIRedeemITunesPassLockup *_iTunesPassLockup;
     SKUIRedeemTextField *_inputAccessoryTextField;
     SKUIRedeemCameraLandingView *_landingView;
     UIView *_overlay;
@@ -14,13 +17,16 @@
     SKUIRedeemTextField *_textField;
 }
 
+@property(retain) SKUIITunesPassConfiguration * ITunesPassConfiguration;
 @property <SKUIRedeemCameraViewDelegate> * delegate;
-@property BOOL enabled;
+@property(getter=isEnabled) BOOL enabled;
 @property(retain) UIImage * image;
 @property(copy) NSString * text;
 
 - (void).cxx_destruct;
+- (id)ITunesPassConfiguration;
 - (void)_hideKeyboard;
+- (void)_iTunesPassLearnMoreAction:(id)arg1;
 - (BOOL)_isShowingRedeemer;
 - (void)_landingButtonAction:(id)arg1;
 - (id)_newTextFieldWithClientContext:(id)arg1 placeholderColor:(id)arg2;
@@ -31,9 +37,9 @@
 - (void)_termsButtonAction:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)enabled;
 - (id)image;
 - (id)initWithClientContext:(id)arg1;
+- (BOOL)isEnabled;
 - (void)keyboardDidHide:(id)arg1;
 - (void)keyboardDidShow:(id)arg1;
 - (void)keyboardWillHide:(id)arg1;
@@ -41,6 +47,7 @@
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setITunesPassConfiguration:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)showKeyboard;

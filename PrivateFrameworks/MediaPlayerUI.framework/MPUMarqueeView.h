@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UIView;
+@class NSUUID, UIView;
 
 @interface MPUMarqueeView : UIView {
     struct CGSize { 
@@ -11,6 +11,7 @@
     float _contentGap;
     } _contentSize;
     UIView *_contentView;
+    NSUUID *_currentAnimationID;
     double _marqueeDelay;
     BOOL _marqueeEnabled;
     double _marqueeScrollRate;

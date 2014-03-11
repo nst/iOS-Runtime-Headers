@@ -12,8 +12,8 @@
     float mWidth;
 }
 
-- (id)initWithSpacingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ofOrientation:(int)arg2 icc:(id)arg3 useVisibleRect:(BOOL)arg4 useViewScale:(BOOL)arg5;
+- (id)initWithSpacingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ofOrientation:(int)arg2 icc:(id)arg3 useVisibleRect:(BOOL)arg4;
 - (void)p_generateArrowLayerForSpacingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andViewScale:(float)arg2;
-- (void)setFrameFromSpacingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 icc:(id)arg2 useViewScale:(BOOL)arg3;
+- (void)setFrameFromSpacingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 icc:(id)arg2;
 
 @end

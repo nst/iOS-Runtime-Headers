@@ -17,7 +17,6 @@
 + (unsigned int)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
-+ (int)rendererTypeForCapabilities:(id)arg1;
 + (BOOL)requiresSingleTexturePerStage;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;

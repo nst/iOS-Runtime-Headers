@@ -5,21 +5,26 @@
 @class NSString, PSSpecifier, PSTableCell, UIView<UIKeyInput>;
 
 @interface KeychainSyncTextEntryController : PSKeychainSyncViewController <KeychainSyncPasscodeFieldDelegate> {
+    BOOL _convertsNumeralsToASCII;
     BOOL _hidesNextButton;
     BOOL _secureTextEntry;
     PSTableCell *_textEntryCell;
     PSSpecifier *_textEntrySpecifier;
     int _textEntryType;
     UIView<UIKeyInput> *_textEntryView;
+    BOOL _textFieldHasRoundBorder;
     NSString *_textValue;
 }
 
+@property BOOL convertsNumeralsToASCII;
 @property BOOL hidesNextButton;
 @property BOOL secureTextEntry;
 @property int textEntryType;
+@property BOOL textFieldHasRoundBorder;
 @property(retain) NSString * textValue;
 
 - (BOOL)becomeFirstResponder;
+- (BOOL)convertsNumeralsToASCII;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;
 - (id)getTextValueForSpecifier:(id)arg1;
@@ -31,10 +36,12 @@
 - (void)passcodeField:(id)arg1 didUpdateEnteredPasscode:(id)arg2;
 - (id)placeholderText;
 - (BOOL)secureTextEntry;
+- (void)setConvertsNumeralsToASCII:(BOOL)arg1;
 - (void)setHidesNextButton:(BOOL)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setTextEntryText:(id)arg1;
 - (void)setTextEntryType:(int)arg1;
+- (void)setTextFieldHasRoundBorder:(BOOL)arg1;
 - (void)setTextValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)setTextValue:(id)arg1;
 - (id)specifiers;
@@ -48,6 +55,7 @@
 - (id)textEntryView;
 - (void)textEntryViewDidChange:(id)arg1;
 - (void)textFieldChanged:(id)arg1;
+- (BOOL)textFieldHasRoundBorder;
 - (id)textValue;
 - (void)updateNextButton;
 - (void)viewWillAppear:(BOOL)arg1;

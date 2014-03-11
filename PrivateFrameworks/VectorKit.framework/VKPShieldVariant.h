@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface VKPShieldVariant : PBCodable {
+@interface VKPShieldVariant : PBCodable <NSCopying> {
     struct { 
         struct { 
             float _a; 
@@ -98,6 +98,7 @@
 - (unsigned int)centerPointsCount;
 - (void)clearCenterPoints;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

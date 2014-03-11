@@ -173,6 +173,7 @@
 - (id)cellsPendingWrite;
 - (id)cellsToInvalidateAfterRecalc;
 - (id)cellsToInvalidateNonoverflowingAfterRecalc;
+- (void)chooseUniqueNameInContainer:(id)arg1 forPaste:(BOOL)arg2 needsNewName:(BOOL)arg3;
 - (void)chooseUniqueNameInContainer:(id)arg1 forPaste:(BOOL)arg2;
 - (id)columnNameForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 cellRangeContainingName:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg2 restrictToBodyRange:(BOOL)arg3;
 - (id)columnWidths;

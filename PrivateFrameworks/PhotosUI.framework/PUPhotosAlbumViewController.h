@@ -30,9 +30,7 @@
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)setupScrubber;
 - (void)updateTitle;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (BOOL)wantsGlobalFooter;
 
 @end

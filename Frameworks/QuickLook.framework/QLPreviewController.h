@@ -45,7 +45,7 @@
 - (BOOL)_needsAVControls;
 - (BOOL)_needsToolbar;
 - (BOOL)_overlayVisible;
-- (id)_pdfPreviewDataAtURL:(id)arg1 loadIfNeeded:(BOOL)arg2;
+- (id)_pdfPreviewDataAtURL:(id)arg1;
 - (void)_prepareDelayedAppearance;
 - (void)_removeChildPreviewContentControllerIfNeeded;
 - (void)_setControlsOverlayVisible:(BOOL)arg1 withStatusBar:(BOOL)arg2 duration:(double)arg3;

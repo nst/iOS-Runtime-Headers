@@ -14,8 +14,6 @@
 
 @property(readonly) MPConcreteMediaEntityPropertiesCache * cachedPropertyValues;
 
-+ (void)didChangeEntityWithDataProviderEntityClass:(Class)arg1 persistentID:(unsigned long long)arg2 deleted:(BOOL)arg3;
-
 - (void).cxx_destruct;
 - (id)_initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5 propertiesCache:(id)arg6;
 - (id)cachedPropertyValues;

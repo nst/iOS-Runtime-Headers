@@ -29,6 +29,7 @@
     struct CGColor { } *_symbolColor;
 }
 
++ (BOOL)boldText;
 + (unsigned char)colCount:(BOOL)arg1;
 + (id)emojiFontAttributes;
 + (id)emojiFontAttributesForPortrait:(BOOL)arg1;

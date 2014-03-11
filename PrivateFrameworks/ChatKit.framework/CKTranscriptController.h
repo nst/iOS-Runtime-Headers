@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CKTranscriptComposeDelegate>, CKAudioTrimViewController, CKComposition, CKConversation, CKGradientReferenceView, CKMessageEncodingInfo, CKMessageEntryView, CKQLPreviewController, CKRecipientSelectionController, CKTranscriptCollectionViewController, CKTranscriptHeaderController, CKTranscriptStatusController, CKTranscriptTypingIndicatorCell, CKVideoTrimController, NSArray, NSMutableArray, NSNotification, NSNumber, NSString, UIAlertView, UIBarButtonItem, UIImagePickerController, UINavigationItem, UITapGestureRecognizer, UIToolbar, UIView, UIWindow;
+@class <CKTranscriptComposeDelegate>, CKAudioTrimViewController, CKComposition, CKConversation, CKGradientReferenceView, CKMessageEncodingInfo, CKMessageEntryView, CKQLPreviewController, CKRecipientSelectionController, CKScheduledUpdater, CKTranscriptCollectionViewController, CKTranscriptHeaderController, CKTranscriptStatusController, CKTranscriptTypingIndicatorCell, CKVideoTrimController, NSArray, NSMutableArray, NSNotification, NSNumber, NSString, UIAlertView, UIBarButtonItem, UIImagePickerController, UINavigationItem, UITapGestureRecognizer, UIToolbar, UIView, UIWindow;
 
 @interface CKTranscriptController : UIViewController <UIAlertViewDelegate, ABPeoplePickerNavigationControllerDelegate, CKTranscriptCollectionViewControllerDelegate, CKRecipientSelectionControllerDelegate, CKTranscriptHeaderControllerDelegate, CKMessageEntryViewDelegate, CKTrimControllerDelegate, UIActionSheetDelegate, UIModalViewDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, UINavigationControllerDelegate, AFContextProvider, UIKeyInput, QLPreviewControllerDelegate, UIGestureRecognizerDelegate> {
     struct UIEdgeInsets { 
@@ -108,6 +108,7 @@
     float _transcriptTableBottomOffset;
     UIAlertView *_trimAlert;
     CKTranscriptTypingIndicatorCell *_typingIndicatorForSendAnimation;
+    CKScheduledUpdater *_typingUpdater;
     CKVideoTrimController *_videoTrimController;
     BOOL _willRotateView;
 }
@@ -138,6 +139,7 @@
 @property(retain) NSMutableArray * throwEndFrames;
 @property(retain) NSMutableArray * throwIntermediateFrames;
 @property(retain) CKTranscriptHeaderController * transcriptHeaderViewController;
+@property(retain) CKScheduledUpdater * typingUpdater;
 
 + (void)_sendDidFinishSavingImageNotificationWithImage:(id)arg1 error:(id)arg2 context:(void*)arg3;
 + (void)_sendDidFinishSavingVideoNotificationWithPath:(id)arg1 error:(id)arg2 context:(void*)arg3;
@@ -150,6 +152,7 @@
 - (void)_actuallyClearCurrentMessageThread;
 - (void)_addPart:(id)arg1;
 - (void)_adjustCustomTitleViewFrame:(int)arg1;
+- (id)_alertView:(id)arg1 externalButtonTitleForMainScreenButtonTitle:(id)arg2 atIndex:(int)arg3;
 - (void)_applicationBecameActive:(id)arg1;
 - (void)_beginTransitioningToTranscript;
 - (float)_bottomInset;
@@ -245,8 +248,8 @@
 - (id)_supportedMediaTypesForPhotoPicker;
 - (void)_teardownTranscriptHeaderView;
 - (struct CGPoint { float x1; float x2; })_transcriptScrollToBottomOffsetWithHeightDelta:(float)arg1;
+- (void)_transferFinished:(id)arg1;
 - (void)_transferRestored:(id)arg1;
-- (void)_transferUpdated:(id)arg1;
 - (void)_updateActionsToolbarItems;
 - (void)_updateActionsToolbarItemsForRotation:(int)arg1;
 - (void)_updateBackPlacardSubviews;
@@ -379,9 +382,11 @@
 - (void)setThrowEndFrames:(id)arg1;
 - (void)setThrowIntermediateFrames:(id)arg1;
 - (void)setTranscriptHeaderViewController:(id)arg1;
+- (void)setTypingUpdater:(id)arg1;
 - (void)setupForNewRecipient;
 - (void)setupScrollingForKeyboardInteraction;
 - (BOOL)sharedShouldPresentMessageCompositionWithVCard:(id)arg1 filename:(id)arg2;
+- (BOOL)shouldAutorotate;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldDismissAfterSend;
 - (void)showAddToExistingContactViewForEntity:(id)arg1;
@@ -419,6 +424,7 @@
 - (void)transitionFromNewMessageToConversation;
 - (void)trimController:(id)arg1 didFinishTrimmingMediaObject:(id)arg2 withReplacementMediaObject:(id)arg3;
 - (void)trimControllerDidCancel:(id)arg1;
+- (id)typingUpdater;
 - (id)unatomizedRecipientText;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPresentMessageCompositionWithVCard:(id)arg2 filename:(id)arg3;
@@ -426,6 +432,7 @@
 - (void)updateNavigationButtons;
 - (void)updateQLPreviewControllerIfVisible;
 - (void)updateTitle;
+- (void)updateTyping;
 - (void)video:(id)arg1 didFinishSavingWithError:(id)arg2 contextInfo:(void*)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidAppearDeferredSetup;

@@ -12,6 +12,7 @@
     float _rightMargin;
     BOOL _shouldApplyGameCenterTheme;
     GKLabel *_textLabel;
+    float _topMargin;
 }
 
 @property float bottomMargin;
@@ -21,6 +22,7 @@
 @property float rightMargin;
 @property BOOL shouldApplyGameCenterTheme;
 @property(retain) GKLabel * textLabel;
+@property float topMargin;
 
 - (id)attributedStringForString:(id)arg1 withStyle:(id)arg2;
 - (float)bottomMargin;
@@ -38,7 +40,9 @@
 - (void)setRightMargin:(float)arg1;
 - (void)setShouldApplyGameCenterTheme:(BOOL)arg1;
 - (void)setTextLabel:(id)arg1;
+- (void)setTopMargin:(float)arg1;
 - (BOOL)shouldApplyGameCenterTheme;
 - (id)textLabel;
+- (float)topMargin;
 
 @end

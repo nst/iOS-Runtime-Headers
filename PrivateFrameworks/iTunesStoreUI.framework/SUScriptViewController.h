@@ -40,6 +40,7 @@
 - (id)_parentViewControllerForVolumeViewController;
 - (void)_presentModalViewController:(id)arg1 withTransition:(id)arg2;
 - (int)_transitionForString:(id)arg1;
+- (void)addPassbookPassWithURL:(id)arg1;
 - (id)attributeKeys;
 - (id)backgroundColor;
 - (id)contextDictionary;

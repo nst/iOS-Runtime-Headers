@@ -62,7 +62,7 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (oneway void)forceUpdate;
+- (void)forceUpdate:(id)arg1;
 - (void)getResourceManifestWithHandler:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (void)openConnection;

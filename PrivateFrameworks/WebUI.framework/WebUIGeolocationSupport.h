@@ -34,7 +34,9 @@
 - (void)_decidePolicyForGeolocationRequestFromOrigin:(id)arg1 requestingURL:(id)arg2 window:(id)arg3 listener:(id)arg4;
 - (void)_executeNextChallenge;
 - (int)_getChallengeCountFromHistoryForToken:(id)arg1 requestingURL:(id)arg2;
+- (id)_siteFileInContainerDirectory:(id)arg1 creatingIntermediateDirectoriesIfNecessary:(BOOL)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)clearAllCaches;
 - (void)clearCache;
 - (void)dealloc;
 - (void)decidePolicyForGeolocationRequestFromOrigin:(id)arg1 requestingURL:(id)arg2 window:(id)arg3 listener:(id)arg4;

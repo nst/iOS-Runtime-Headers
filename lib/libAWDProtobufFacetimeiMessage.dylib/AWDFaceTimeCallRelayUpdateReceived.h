@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDFaceTimeCallRelayUpdateReceived : PBCodable {
+@interface AWDFaceTimeCallRelayUpdateReceived : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int isVideo : 1; 
@@ -22,6 +22,7 @@
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

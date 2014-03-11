@@ -6,34 +6,40 @@
 
 @interface ABContactCell : UITableViewCell {
     ABCardGroupItem *_cardGroupItem;
+    UIColor *_contactSeparatorColor;
+    BOOL _hasBeenDisplayed;
     float _leftContentMargin;
     float _rightContentMargin;
-    UIColor *_separatorColor;
     UIView *_separatorView;
     BOOL _showSeparator;
 }
 
 @property(retain) ABCardGroupItem * cardGroupItem;
+@property(retain) UIColor * contactSeparatorColor;
+@property BOOL hasBeenDisplayed;
 @property float leftContentMargin;
 @property float rightContentMargin;
-@property(retain) UIColor * separatorColor;
 @property(readonly) UIView * separatorView;
 @property BOOL showSeparator;
 
 - (id)cardGroupItem;
+- (id)contactSeparatorColor;
 - (void)dealloc;
+- (BOOL)hasBeenDisplayed;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (float)leftContentMargin;
 - (void)performAccessoryAction;
 - (void)performDefaultAction;
 - (float)rightContentMargin;
-- (id)separatorColor;
 - (id)separatorView;
 - (void)setCardGroupItem:(id)arg1;
+- (void)setContactSeparatorColor:(id)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHasBeenDisplayed:(BOOL)arg1;
 - (void)setLeftContentMargin:(float)arg1;
+- (void)setNeedsLayout;
 - (void)setRightContentMargin:(float)arg1;
-- (void)setSeparatorColor:(id)arg1;
 - (void)setShowSeparator:(BOOL)arg1;
 - (BOOL)shouldPerformAccessoryAction;
 - (BOOL)shouldPerformDefaultAction;

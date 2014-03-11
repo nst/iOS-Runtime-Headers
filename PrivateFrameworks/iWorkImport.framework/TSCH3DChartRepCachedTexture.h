@@ -46,7 +46,7 @@
 - (void)dealloc;
 - (unsigned int)deliveryStyle;
 - (int)effectiveTextureStage;
-- (BOOL)hasCachedForEffectiveStage:(int)arg1 deliveryStyle:(unsigned int)arg2;
+- (BOOL)hasCacheForEffectiveStage:(int)arg1 deliveryStyle:(unsigned int)arg2;
 - (id)init;
 - (id)legend;
 - (void)p_addTexture:(id)arg1 toTextureSet:(id)arg2 forFinalElements:(BOOL)arg3;

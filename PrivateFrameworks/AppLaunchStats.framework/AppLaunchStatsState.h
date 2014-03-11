@@ -24,10 +24,13 @@
     unsigned long long appForecastQuality;
     NSMutableDictionary *appsAliveInLSTDict;
     booldoUniformBudget;
+    boolhasCellConnected;
+    boolhasWifiConnected;
     boolisBatteryChargerConnected;
     boolisDataResourceAvailable;
     boolisDeviceInCall;
     boolisDeviceInGoodCellularCondition;
+    boolisDevicePhoneType;
     boolisDeviceUnderThermalPressure;
     boolisFetchPowerResourceAvailable;
     boolisFetchPushPowerResourceAvailable;
@@ -57,6 +60,7 @@
     NSDate *startTimeStamp;
     NSDate *startTimeStampOOB;
     NSObject<OS_dispatch_queue> *stateQueue;
+    int thermalStatusToken;
     NSMutableArray *weeklyLaunchArrays;
 }
 
@@ -96,6 +100,8 @@
 @property(readonly) float globalNonactivePWPC;
 @property(readonly) float globalPushPWPC;
 @property(readonly) long long globalTimeThreshold;
+@property(readonly) bool hasCellConnected;
+@property(readonly) bool hasWifiConnected;
 @property bool isBatteryChargerConnected;
 @property bool isDataResourceAvailable;
 @property bool isDeviceInCall;
@@ -137,6 +143,7 @@
 - (id)dataForecastArray;
 - (unsigned long long)dataForecastQuality;
 - (float)dataWifiMultiplier;
+- (void)dealloc;
 - (bool)doUniformBudget;
 - (BOOL)enableBlackListCheck;
 - (BOOL)enableBudgetCheck;
@@ -148,6 +155,7 @@
 - (long long)endofdayNDISCDataBudget;
 - (id)fireDates;
 - (bool)getAppsAliveInLSTList:(id)arg1;
+- (BOOL)getInCallStatus;
 - (id)getOutOfBandAppList;
 - (long long)globalDataBudgetCap;
 - (long long)globalDataCarryCap;
@@ -156,7 +164,9 @@
 - (float)globalNonactivePWPC;
 - (float)globalPushPWPC;
 - (long long)globalTimeThreshold;
+- (bool)hasCellConnected;
 - (bool)hasResourcesAvailable:(bool)arg1 forTriggerType:(int)arg2;
+- (bool)hasWifiConnected;
 - (id)init;
 - (bool)isBatteryChargerConnected;
 - (bool)isChargeOnWifiOn;

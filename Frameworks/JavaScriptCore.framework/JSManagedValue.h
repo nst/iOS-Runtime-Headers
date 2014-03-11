@@ -3,9 +3,30 @@
  */
 
 @interface JSManagedValue : NSObject {
-    struct Weak<JSC::JSObject> { 
+    struct Weak<JSC::JSGlobalObject> { 
         struct WeakImpl {} *m_impl; 
-    } m_value;
+    struct WeakValueRef { 
+        int m_tag; 
+        union WeakValueUnion { 
+            struct JSValue { 
+                union EncodedValueDescriptor { 
+                    long long asInt64; 
+                    double asDouble; 
+                    struct { 
+                        int payload; 
+                        int tag; 
+                    } asBits; 
+                } u; 
+            } m_primitive; 
+            struct Weak<JSC::JSObject> { 
+                struct WeakImpl {} *m_impl; 
+            } m_object; 
+            struct Weak<JSC::JSString> { 
+                struct WeakImpl {} *m_impl; 
+            } m_string; 
+        } u; 
+    } m_globalObject;
+    } m_weakValue;
 }
 
 + (id)managedValueWithValue:(id)arg1;

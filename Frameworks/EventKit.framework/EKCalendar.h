@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKSource, NSArray, NSString, NSURL;
+@class EKSource, NSArray, NSData, NSString, NSURL;
 
 @interface EKCalendar : EKObject {
     struct CGColor { } *_color;
@@ -19,6 +19,7 @@
 @property(readonly) BOOL canBePublished;
 @property(readonly) BOOL canBeShared;
 @property(readonly) NSString * colorString;
+@property(copy) NSData * digest;
 @property int displayOrder;
 @property(copy) NSString * externalID;
 @property(copy) NSString * externalModificationTag;
@@ -30,6 +31,7 @@
 @property(readonly) BOOL isDefaultCalendarForSource;
 @property(readonly) BOOL isFacebookBirthdayCalendar;
 @property(readonly) BOOL isHidden;
+@property(readonly) BOOL isHolidaySubscribedCalendar;
 @property BOOL isMainCalendarForSource;
 @property BOOL isPublished;
 @property(readonly) BOOL isSharingInvitation;
@@ -77,10 +79,12 @@
 - (id)calendarIdentifier;
 - (BOOL)canBePublished;
 - (BOOL)canBeShared;
+- (void)clearInvitationStatus;
 - (id)colorString;
 - (BOOL)commit:(id*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)digest;
 - (int)displayOrder;
 - (int)entityType;
 - (id)externalID;
@@ -94,6 +98,7 @@
 - (BOOL)isDefaultCalendarForSource;
 - (BOOL)isFacebookBirthdayCalendar;
 - (BOOL)isHidden;
+- (BOOL)isHolidaySubscribedCalendar;
 - (BOOL)isImmutable;
 - (BOOL)isMainCalendarForSource;
 - (BOOL)isPublished;
@@ -122,6 +127,7 @@
 - (void)setBulkRequests:(id)arg1;
 - (void)setCGColor:(struct CGColor { }*)arg1;
 - (void)setColorString:(id)arg1;
+- (void)setDigest:(id)arg1;
 - (void)setDisplayOrder:(int)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setExternalModificationTag:(id)arg1;

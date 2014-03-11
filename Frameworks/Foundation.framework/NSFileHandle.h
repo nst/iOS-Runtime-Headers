@@ -31,6 +31,8 @@
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
+- (void)ml_lock;
+- (void)ml_unlock;
 - (unsigned long long)offsetInFile;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNBuildChunk, NSArray, NSMutableArray, NSString;
+@class KNBuildChunk, NSArray, NSMutableArray;
 
 @interface KNDeliveryGroup : NSObject <NSCopying> {
     NSMutableArray *mBuildChunks;
@@ -16,7 +16,6 @@
 @property(readonly) KNBuildChunk * firstChunk;
 @property BOOL isPhantom;
 @property(readonly) KNBuildChunk * lastChunk;
-@property(readonly) NSString * title;
 
 - (void)addBuildChunk:(id)arg1;
 - (id)buildChunkAtIndex:(int)arg1;
@@ -39,6 +38,5 @@
 - (void)removeBuildChunk:(id)arg1;
 - (void)removeBuildChunkAtIndex:(int)arg1;
 - (void)setIsPhantom:(BOOL)arg1;
-- (id)title;
 
 @end

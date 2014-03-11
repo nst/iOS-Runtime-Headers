@@ -25,7 +25,7 @@
 - (void)addNodesToArray:(id)arg1;
 - (void)addTemporarySmoothNodes;
 - (BOOL)allNodesSelected;
-- (void)appendToBezierPath:(id)arg1 selectedNodesOnly:(BOOL)arg2;
+- (void)appendToBezierPath:(id)arg1 selectedNodesOnly:(BOOL)arg2 fromIndex:(unsigned int)arg3;
 - (void)appendToBezierPath:(id)arg1;
 - (id)bezierNodeUnderPoint:(struct CGPoint { float x1; float x2; })arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
 - (id)bezierPath;

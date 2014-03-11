@@ -25,6 +25,7 @@
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
 - (id)initWithContext:(id)arg1 stringValue:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
+- (id)p_languageGuessForString:(id)arg1 isRTL:(BOOL*)arg2;
 - (void)saveToArchive:(struct StringNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setValue:(id)arg1;

@@ -36,7 +36,6 @@
 - (id)composeController;
 - (void)configureViewFactories;
 - (void)dealloc;
-- (void)didEnterLoadedState;
 - (void)done;
 - (id)game;
 - (id)handler;

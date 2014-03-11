@@ -21,7 +21,7 @@
 - (void)finishStreamWithReply:(id)arg1;
 - (id)init;
 - (void)setXpcConnection:(id)arg1;
-- (void)setupUnzipperWithOutputPath:(id)arg1 sandboxExtensionToken:(char *)arg2 md5Hashes:(id)arg3 hashedChunkSize:(unsigned long long)arg4 withReply:(id)arg5;
+- (void)setupUnzipperWithOutputPath:(id)arg1 sandboxExtensionToken:(char *)arg2 options:(id)arg3 withReply:(id)arg4;
 - (void)supplyBytes:(id)arg1 withReply:(id)arg2;
 - (void)supplyDispatchData:(id)arg1 withReply:(id)arg2;
 - (void)supplyRemappableData:(id)arg1 withReply:(id)arg2;

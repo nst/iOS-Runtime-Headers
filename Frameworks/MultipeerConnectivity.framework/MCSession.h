@@ -41,7 +41,8 @@
 
 - (struct OpaqueAGPSession { }*)agpSession;
 - (id)callbackQueue;
-- (void)closeIncomingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 removeObserver:(BOOL)arg5;
+- (void)cancelConnectPeer:(id)arg1;
+- (void)closeIncomingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 reason:(int)arg5 removeObserver:(BOOL)arg6;
 - (void)closeOutgoingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 removeObserver:(BOOL)arg5;
 - (void)closeStreamsForPeer:(id)arg1 state:(id)arg2;
 - (void)connectPeer:(id)arg1 withNearbyConnectionData:(id)arg2;

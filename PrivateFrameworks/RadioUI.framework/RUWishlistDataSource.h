@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUWishlistDataSourceDelegate>, NSArray, RadioModel;
+@class <RUWishlistDataSourceDelegate>, NSArray, RadioGetWishListRequest;
 
 @interface RUWishlistDataSource : NSObject {
     <RUWishlistDataSourceDelegate> *_delegate;
-    RadioModel *_model;
+    RadioGetWishListRequest *_wishlistRequest;
     NSArray *_wishlistedTracks;
 }
 
 @property <RUWishlistDataSourceDelegate> * delegate;
+@property(getter=isRefreshing,readonly) BOOL refreshing;
 @property(readonly) NSArray * wishlistedTracks;
 
 - (void).cxx_destruct;
-- (void)_radioModelDidChangeNotification:(id)arg1;
+- (void)_notifyDidInvalidate;
 - (void)dealloc;
 - (id)delegate;
 - (void)deleteAllWishlistedTracks;
 - (void)deleteWishlistedTrack:(id)arg1;
-- (id)init;
+- (BOOL)isRefreshing;
+- (void)refreshWishlist;
 - (void)setDelegate:(id)arg1;
 - (id)wishlistedTracks;
 

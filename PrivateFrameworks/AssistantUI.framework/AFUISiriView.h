@@ -28,6 +28,7 @@
     UIView<SiriUISiriStatusViewProtocol> *_siriStatusView;
     UIView *_statusViewContainer;
     BOOL _statusViewHidden;
+    id _triggerUpdater;
     unsigned int _unlockAttemptCount;
     id _unlockCompletion;
 }
@@ -56,6 +57,7 @@
 - (id)_lockViewBackgroundColor;
 - (id)_lockViewLegibilityProvider;
 - (void)_preferencesDidChange:(id)arg1;
+- (BOOL)_reducesMotionEffects;
 - (void)_reportBugButtonLongPressed;
 - (void)_reportBugButtonTapped;
 - (BOOL)_showsReportBugButton;
@@ -96,6 +98,8 @@
 - (void)setStatusViewUserInteractionEnabled:(BOOL)arg1;
 - (void)showPasscodeUnlockWithCompletion:(id)arg1;
 - (int)siriSessionState;
+- (void)siriStatusViewHoldDidBegin:(id)arg1;
+- (void)siriStatusViewHoldDidEnd:(id)arg1;
 - (void)siriStatusViewWasTapped:(id)arg1;
 - (BOOL)statusViewHidden;
 

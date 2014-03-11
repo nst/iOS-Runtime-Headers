@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKLabel, GKTextStyle, NSAttributedString, NSString;
+@class GKLabel, GKTextStyle, NSString;
 
 @interface GKValueWithCaptionBubbleControl : GKBubbleWithStackedContent {
     id _blockToken;
@@ -18,8 +18,6 @@
     NSString *_valueText;
 }
 
-@property(retain) NSAttributedString * attributedCaptionText;
-@property(retain) NSAttributedString * attributedValueText;
 @property(retain) id blockToken;
 @property(retain) GKLabel * captionLabel;
 @property(retain) NSString * captionText;
@@ -42,11 +40,11 @@
 - (id)captionLabel;
 - (id)captionText;
 - (id)captionTextStyle;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)didMoveToSuperview;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)labelDidApplyStyle:(id)arg1;
 - (id)normalValueStyle;
 - (id)overrideCaptionStyle;
 - (id)overrideValueStyle;

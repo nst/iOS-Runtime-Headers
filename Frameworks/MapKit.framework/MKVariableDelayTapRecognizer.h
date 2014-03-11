@@ -11,6 +11,7 @@
 
 @property <MKVariableDelayTapRecognizerDelegate> * tapDelayDelegate;
 
+- (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;
 - (void)setTapDelayDelegate:(id)arg1;

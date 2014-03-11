@@ -19,6 +19,7 @@
     NSDate *_receiptExpirationDate;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
+    NSString *_vendorName;
     NSNumber *_versionIdentifier;
     NSArray *_versionOrdering;
     unsigned int _vppStateFlags;
@@ -38,6 +39,7 @@
 @property(readonly) NSDate * receiptExpirationDate;
 @property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
+@property(copy) NSString * vendorName;
 @property(retain) NSNumber * versionIdentifier;
 @property(copy) NSArray * versionOrdering;
 @property(readonly) unsigned int vppStateFlags;
@@ -76,10 +78,12 @@
 - (void)setProfileValidated:(BOOL)arg1;
 - (void)setSoftwareType:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
+- (void)setVendorName:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
 - (void)setVersionOrdering:(id)arg1;
 - (id)softwareType;
 - (id)storeFrontIdentifier;
+- (id)vendorName;
 - (id)versionIdentifier;
 - (id)versionOrdering;
 - (unsigned int)vppStateFlags;

@@ -69,13 +69,14 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSMutableDictionary *_allVisibleViewsDict;
     UIView *_backgroundView;
     NSMutableDictionary *_cellClassDict;
     NSMutableDictionary *_cellNibDict;
     NSMutableDictionary *_cellNibExternalObjectsTables;
     NSMutableDictionary *_cellReuseQueues;
-    NSMutableDictionary *_clonedViewsDict;
+    NSMutableDictionary *_clonedCellsDict;
+    NSMutableDictionary *_clonedDecorationViewsDict;
+    NSMutableDictionary *_clonedSupplementaryViewsDict;
     UICollectionViewData *_collectionViewData;
     } _collectionViewFlags;
     } _currentCenterOffset;
@@ -96,6 +97,7 @@
     id _interactiveCompletionHandler;
     NSMutableDictionary *_interactiveTransitionInfos;
     NSMutableDictionary *_interactiveTransitionValueTrackingDict;
+    NSMutableDictionary *_invalidatedAttributes;
     BOOL _isInInteractiveTransition;
     } _lastLayoutOffset;
     UICollectionViewLayout *_layout;
@@ -127,16 +129,22 @@
     id _updateCompletionHandler;
     int _updateCount;
     } _visibleBounds;
+    NSMutableDictionary *_visibleCellsDict;
+    NSMutableDictionary *_visibleDecorationViewsDict;
+    NSMutableDictionary *_visibleSupplementaryViewsDict;
 }
 
 @property BOOL allowsMultipleSelection;
 @property BOOL allowsSelection;
 @property(retain) UIView * backgroundView;
+@property(getter=_collectionViewData,readonly) UICollectionViewData * collectionViewData;
 @property(retain) UICollectionViewLayout * collectionViewLayout;
 @property(getter=_currentTouch,setter=_setCurrentTouch:,retain) UITouch * currentTouch;
+@property(getter=_currentUpdate,readonly) UICollectionViewUpdate * currentUpdate;
 @property <UICollectionViewDataSource> * dataSource;
 @property <UICollectionViewDelegate> * delegate;
 @property(getter=_navigationCompletion,setter=_setNavigationCompletion:,copy) id navigationCompletion;
+@property(getter=_visibleViews,readonly) NSArray * visibleViews;
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 
@@ -146,6 +154,7 @@
 - (void)_addControlledSubview:(id)arg1 atZIndex:(int)arg2;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2 andSet:(id)arg3;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2;
+- (void)_applyLayoutAttributes:(id)arg1 toView:(id)arg2;
 - (id)_arrayForUpdateAction:(int)arg1;
 - (void)_beginUpdates;
 - (BOOL)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
@@ -160,7 +169,7 @@
 - (id)_currentTouch;
 - (id)_currentUpdate;
 - (BOOL)_dataSourceImplementsNumberOfSections;
-- (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3;
+- (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3 viewCategory:(unsigned int)arg4;
 - (void)_deselectAllAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
 - (void)_deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 startingLayout:(id)arg3 endingLayoutAttributes:(id)arg4 endingLayout:(id)arg5 withAnimationSetup:(id)arg6 animationCompletion:(id)arg7 enableCustomAnimations:(BOOL)arg8 customAnimationsType:(unsigned int)arg9;
@@ -176,7 +185,9 @@
 - (void)_gkRegisterClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2;
 - (id)_gkReuseIdentifierForClass:(Class)arg1;
 - (id)_gkVisibleCellForIndexPath:(id)arg1;
+- (void)_highlightFirstVisibleItemIfAppropriate;
 - (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
+- (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (id)_indexPathForView:(id)arg1 ofType:(unsigned int)arg2;
 - (BOOL)_indexPathIsValid:(id)arg1;
 - (id)_indexPathsForVisibleDecorationViewsOfKind:(id)arg1;
@@ -185,7 +196,6 @@
 - (void)_invalidateLayoutIfNecessary;
 - (void)_invalidateLayoutWithContext:(id)arg1;
 - (id)_keysForObject:(id)arg1 inDictionary:(id)arg2;
-- (id)_layoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_moveWithEvent:(id)arg1;
 - (id)_navigationCompletion;
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
@@ -212,12 +222,15 @@
 - (void)_setNavigationCompletion:(id)arg1;
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withLayoutAttributes:(BOOL)arg2;
 - (void)_setObject:(id)arg1 inDictionary:(id)arg2 forKind:(id)arg3 indexPath:(id)arg4;
+- (void)_setVisibleView:(id)arg1 forLayoutAttributes:(id)arg2;
 - (void)_setupCellAnimations;
+- (BOOL)_shouldFadeCellsForBoundChangeWhileRotating;
 - (BOOL)_shouldShowMenuForCell:(id)arg1;
 - (void)_suspendReloads;
 - (void)_trackLayoutValue:(float)arg1 forKey:(id)arg2;
 - (float)_trackedLayoutValueForKey:(id)arg1;
 - (void)_unhighlightAllItems;
+- (void)_unhighlightAllItemsAndHighlightGlobalItem:(int)arg1;
 - (void)_unhighlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateBackgroundView;
@@ -232,13 +245,16 @@
 - (id)_viewControllerToNotifyOnLayoutSubviews;
 - (BOOL)_visible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBounds;
+- (id)_visibleCellForIndexPath:(id)arg1;
 - (id)_visibleDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)_visibleDecorationViewsOfKind:(id)arg1;
 - (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2 isDecorationView:(BOOL)arg3;
 - (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)_visibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
 - (id)_visibleSupplementaryViewsOfKind:(id)arg1;
-- (id)_visibleViewsDict;
+- (id)_visibleViewDictForElementCategory:(unsigned int)arg1 elementKind:(id)arg2;
+- (id)_visibleViewForLayoutAttributes:(id)arg1;
+- (id)_visibleViews;
 - (BOOL)allowsMultipleSelection;
 - (BOOL)allowsSelection;
 - (id)backgroundView;
@@ -259,7 +275,6 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finishInteractiveTransition;
-- (void)fixVisibleBounds;
 - (int)highlightedGlobalItem;
 - (id)indexPathForCell:(id)arg1;
 - (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -277,6 +292,7 @@
 - (int)maximumGlobalItemIndex;
 - (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)moveSection:(int)arg1 toSection:(int)arg2;
+- (id)next:(int)arg1 indexPathFromIndexPath:(id)arg2;
 - (int)numberOfItemsInSection:(int)arg1;
 - (int)numberOfSections;
 - (void)performBatchUpdates:(id)arg1 completion:(id)arg2;

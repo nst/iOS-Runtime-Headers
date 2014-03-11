@@ -2,20 +2,20 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKCalloutBackgroundView, NSString, UILabel, UIView, UIView<_MKCalloutDetailView>, _MKSmallCalloutPassthroughButton;
+@class MKCalloutBackgroundView, NSString, UILabel, UIView, UIView<_MKCalloutAccessoryView>, _MKSmallCalloutPassthroughButton;
 
 @interface MKSmallCalloutView : UIView <CalloutViewControllerProtocol> {
     struct CGSize { 
         float width; 
         float height; 
     MKCalloutBackgroundView *_calloutBackgroundView;
-    UIView<_MKCalloutDetailView> *_detailView;
-    UIView *_leftView;
+    UIView<_MKCalloutAccessoryView> *_detailView;
+    UIView<_MKCalloutAccessoryView> *_leftView;
     int _mapDisplayStyle;
     _MKSmallCalloutPassthroughButton *_maskedContainerView;
     float _maxWidth;
     } _preferredContentSize;
-    UIView *_rightView;
+    UIView<_MKCalloutAccessoryView> *_rightView;
     BOOL _shouldPositionTitleForMapsTransitionMovingSideways;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
@@ -31,12 +31,14 @@
 @property int mapDisplayStyle;
 @property(retain) UIView * rightView;
 
+- (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centerRect;
 - (float)_leftTextMargin;
 - (void)_preLayoutCenterSubviews;
 - (struct CGSize { float x1; float x2; })_preferredContentSize;
 - (float)_rightTextMargin;
 - (id)_subtitleLabel;
+- (void)_updateAccessoryViewStyles;
 - (void)_updatePreferredContentSize;
 - (float)_widthWithoutTruncation;
 - (void)beginMapsTransitionMovingSideways;

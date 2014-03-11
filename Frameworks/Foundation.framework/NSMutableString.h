@@ -55,6 +55,7 @@
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCString:(const char *)arg2 length:(unsigned int)arg3;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withCharacters:(const unsigned short*)arg2 length:(unsigned int)arg3;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (void)replaceCharactersInSet:(id)arg1 withString:(id)arg2;
 - (void)replaceNewlinesWithSpaces;
 - (unsigned int)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;

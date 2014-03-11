@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKCollectionViewDataSource, GKCollectionViewLayoutAttributes, GKDataSourceMetrics, GKSectionMetrics, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSSet;
+@class GKCollectionViewDataSource, GKCollectionViewLayoutAttributes, GKDataSourceMetrics, GKSectionMetrics, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableSet, NSPointerArray, NSSet;
 
 @interface GKGridLayout : UICollectionViewLayout {
     struct CGSize { 
@@ -43,9 +43,11 @@
     NSMutableDictionary *_oldSectionToMetricKeys;
     unsigned int _portraitInterleavedSectionsCount;
     NSMutableSet *_revealedIndexPaths;
-    struct __CFDictionary { } *_sectionToMetricData;
-    struct __CFDictionary { } *_sectionToPresentationData;
+    NSPointerArray *_sectionToMetricData;
+    NSPointerArray *_sectionToPresentationData;
+    NSMutableIndexSet *_sectionsWithPinnedHeaders;
     float _segmentedHeaderPinningOffset;
+    BOOL _showPlaceholder;
     unsigned int _updateType;
     NSSet *_visibleIndexPathsFilter;
 }
@@ -82,7 +84,11 @@
 @property(retain) NSMutableDictionary * oldSectionToMetricKeys;
 @property unsigned int portraitInterleavedSectionsCount;
 @property(retain) NSMutableSet * revealedIndexPaths;
+@property(retain) NSPointerArray * sectionToMetricData;
+@property(retain) NSPointerArray * sectionToPresentationData;
+@property(retain) NSMutableIndexSet * sectionsWithPinnedHeaders;
 @property float segmentedHeaderPinningOffset;
+@property BOOL showPlaceholder;
 @property unsigned int updateType;
 @property NSSet * visibleIndexPathsFilter;
 
@@ -91,6 +97,7 @@
 
 - (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (BOOL)_areWePortrait;
+- (id)_existingPresentationDataForSection:(int)arg1;
 - (void)_filterPinnedAttributes;
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (unsigned int)_prepareItemLayoutForSection:(int)arg1;
@@ -114,6 +121,7 @@
 - (BOOL)displayClipView;
 - (BOOL)displayingOverlay;
 - (void)enableClipView;
+- (void)enumerateSectionsIndexesOverlappingYOffset:(float)arg1 block:(id)arg2;
 - (unsigned int)filteredTotalItemCountForSection:(int)arg1;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
@@ -139,7 +147,6 @@
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (id)initialLayoutAttributesForAppearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initialLayoutAttributesForSlidingInItemAtIndexPath:(id)arg1;
-- (void)invalidateLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned long long)invalidationFlags;
@@ -174,12 +181,14 @@
 - (void)prepareLayout;
 - (id)presentationDataForSection:(int)arg1;
 - (void)refreshMetrics;
-- (void)resetPinnableAttributes;
 - (id)revealMoreForSectionIndex:(int)arg1 revealCount:(unsigned int)arg2 andDeleteItemCount:(unsigned int)arg3;
 - (id)revealMoreForSectionIndex:(int)arg1;
 - (id)revealedIndexPaths;
-- (id)sectionsOverlappingYOffset:(float)arg1;
+- (int)searchResultsCount;
+- (id)sectionToMetricData;
+- (id)sectionToPresentationData;
 - (unsigned int)sectionsPerRow;
+- (id)sectionsWithPinnedHeaders;
 - (float)segmentedHeaderPinningOffset;
 - (void)setClipViewAttributes:(id)arg1;
 - (void)setCurrentUpdateItems:(id)arg1;
@@ -214,15 +223,20 @@
 - (void)setOldSectionToMetricKeys:(id)arg1;
 - (void)setPortraitInterleavedSectionsCount:(unsigned int)arg1;
 - (void)setRevealedIndexPaths:(id)arg1;
+- (void)setSectionToMetricData:(id)arg1;
+- (void)setSectionToPresentationData:(id)arg1;
+- (void)setSectionsWithPinnedHeaders:(id)arg1;
 - (void)setSegmentedHeaderPinningOffset:(float)arg1;
+- (void)setShowPlaceholder:(BOOL)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
 - (void)setVisibleIndexPathsFilter:(id)arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldSlideInSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
 - (BOOL)shouldSlideOutSupplementaryElementOfKind:(id)arg1 forUpdateItem:(id)arg2 atIndexPath:(id)arg3;
+- (BOOL)showPlaceholder;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updatePlaceholderVisibility:(BOOL)arg1;
+- (void)updatePlaceholderVisibility;
 - (void)updatePresentationDataForLastInterleavedSections;
 - (void)updatePresentationDataInSection:(int)arg1 withAttributes:(id)arg2 supplementaryLocation:(unsigned int)arg3;
 - (unsigned int)updateType;

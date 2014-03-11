@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PLAssetContainer>, <PLAssetContainerList>, <PUAvalancheReviewControllerDelegate>, NSIndexPath, NSMutableSet, PLAvalanche, PLManagedAsset, PUAvalancheReporter, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUImageManager, PUPhotoBrowserController, PUPhotosSharingTransitionContext, PUReviewInstructionalView, PUReviewScrubber, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
+@class <PLAssetContainer>, <PLAssetContainerList>, <PUAvalancheReviewControllerDelegate>, NSIndexPath, NSMutableSet, NSOrderedSet, PLAvalanche, PLManagedAsset, PUAvalancheReporter, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUImageManager, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotosSharingTransitionContext, PUPhotosZoomingSharingGridCell, PUReviewInstructionalView, PUReviewScrubber, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
 
-@interface PUAvalancheReviewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, PUReviewScrubberDataSource, PUReviewScrubberDelegate, PUAvalancheReviewCollectionViewLayoutDelegate, UIGestureRecognizerDelegate, PUPhotosSharingGridCellDelegate, PUPhotosSharingTransitionViewController> {
+@interface PUAvalancheReviewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, PUReviewScrubberDataSource, PUReviewScrubberDelegate, PUAvalancheReviewCollectionViewLayoutDelegate, UIGestureRecognizerDelegate, PUTransitionViewAnimatorDelegate, PUPhotosSharingTransitionViewController> {
     PLAvalanche *__avalancheBeingReviewed;
     PUAvalancheReporter *__avalancheReporter;
     UIBarButtonItem *__cancelBarButtonItem;
@@ -16,7 +16,11 @@
     PUImageManager *__imageManager;
     NSIndexPath *__inFlightReferenceIndexPath;
     PLManagedAsset *__initialAsset;
+    NSOrderedSet *__initialFavorites;
     PUReviewInstructionalView *__instructionalView;
+    PUTransitionViewAnimator *__photoZoomAnimator;
+    PUPhotosZoomingSharingGridCell *__photoZoomCell;
+    PUPhotoPinchGestureRecognizer *__photoZoomPinchGestureRecognizer;
     NSMutableSet *__preheatedAssets;
     PUPhotoBrowserController *__presentingPhotoBrowserController;
     UIBarButtonItem *__reportBarButtonItem;
@@ -40,7 +44,11 @@
 @property(readonly) PUImageManager * _imageManager;
 @property(readonly) NSIndexPath * _inFlightReferenceIndexPath;
 @property(readonly) PLManagedAsset * _initialAsset;
+@property(readonly) NSOrderedSet * _initialFavorites;
 @property(readonly) PUReviewInstructionalView * _instructionalView;
+@property(setter=_setPhotoZoomAnimator:,retain) PUTransitionViewAnimator * _photoZoomAnimator;
+@property(setter=_setPhotoZoomCell:,retain) PUPhotosZoomingSharingGridCell * _photoZoomCell;
+@property(setter=_setPhotoZoomPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _photoZoomPinchGestureRecognizer;
 @property(setter=_setPreheatedAssets:,retain) NSMutableSet * _preheatedAssets;
 @property(readonly) PUPhotoBrowserController * _presentingPhotoBrowserController;
 @property(readonly) UIBarButtonItem * _reportBarButtonItem;
@@ -60,6 +68,7 @@
 - (id)_assetAtIndexPath:(id)arg1;
 - (id)_avalancheBeingReviewed;
 - (id)_avalancheReporter;
+- (void)_beginZoomingForCellAtIndexPath:(id)arg1;
 - (id)_cancelBarButtonItem;
 - (void)_cancelReviewMode;
 - (void)_cancelReviewModeAction:(id)arg1;
@@ -71,9 +80,12 @@
 - (id)_currentAssetContainer;
 - (void)_dismissReviewController;
 - (id)_doneBarButtonItem;
-- (void)_finishReviewModeAction:(id)arg1;
+- (void)_endZoomingForCell;
+- (void)_finishReviewAndDissolveBurst:(BOOL)arg1;
 - (void)_getFirstValidIndexPath:(id*)arg1 lastValidIndexPath:(id*)arg2;
 - (void)_getMainCollectionViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 collectionViewLayoutInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 orientation:(int)arg3;
+- (void)_handleDoneButton:(id)arg1;
+- (void)_handlePhotoPinch:(id)arg1;
 - (void)_handleTapAtIndexPath:(id)arg1;
 - (void)_handleTapInMainCollectionView:(id)arg1;
 - (float)_horizontalOffsetInCollectionView:(id)arg1 forCenteringOnItemAtIndexPath:(id)arg2;
@@ -82,17 +94,25 @@
 - (id)_indexPathInCollectionView:(id)arg1 closestToPoint:(struct CGPoint { float x1; float x2; })arg2 excludingIndexPath:(id)arg3;
 - (id)_indexPathOfCenterVisibleItemInCollectionView:(id)arg1;
 - (id)_initialAsset;
+- (id)_initialFavorites;
 - (id)_instructionalView;
+- (int)_interfaceOrientationFromDeviceOrientation:(int)arg1;
 - (void)_pageToIndexPath:(id)arg1 animated:(BOOL)arg2;
+- (id)_photoZoomAnimator;
+- (id)_photoZoomCell;
+- (id)_photoZoomPinchGestureRecognizer;
 - (id)_preheatedAssets;
 - (id)_presentingPhotoBrowserController;
-- (void)_promoteFavoriteAssetsWithReviewCompletionHandler:(id)arg1;
+- (void)_promoteFavoriteAssetsAndDissolveBurst:(BOOL)arg1 withReviewCompletionHandler:(id)arg2;
 - (void)_reallyToggleCurrentPickStatusAtIndexPath:(id)arg1;
 - (void)_reloadAvalancheDataWithAsset:(id)arg1;
 - (id)_reportBarButtonItem;
 - (void)_reportButtonAction:(id)arg1;
 - (id)_reviewScrubber;
 - (id)_selectionViewAtIndexPath:(id)arg1 forCollectionView:(id)arg2;
+- (void)_setPhotoZoomAnimator:(id)arg1;
+- (void)_setPhotoZoomCell:(id)arg1;
+- (void)_setPhotoZoomPinchGestureRecognizer:(id)arg1;
 - (void)_setPreheatedAssets:(id)arg1;
 - (void)_setTransitionLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })_sizeForItemAtIndexPath:(id)arg1 interfaceOrientation:(int)arg2;
@@ -122,15 +142,12 @@
 - (id)embeddedActivityView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(BOOL)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithSpec:(id)arg1 startingAtAsset:(id)arg2 inAvalanche:(id)arg3 currentAssetContainer:(id)arg4 fromPhotoBrowserController:(id)arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layout:(id)arg1 collectionView:(id)arg2 selectionBadgeFrameForItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 atIndexPath:(id)arg4;
 - (struct CGSize { float x1; float x2; })layout:(id)arg1 collectionView:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (unsigned int)numberOfPhotosInReviewScrubber:(id)arg1;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
-- (id)photosSharingGridCellBadgeForZooming:(id)arg1 layoutAnchor:(unsigned int*)arg2;
-- (void)photosSharingGridCellDidEndZooming:(id)arg1;
-- (BOOL)photosSharingGridCellShouldBeginZooming:(id)arg1;
-- (id)photosSharingGridCellViewForZooming:(id)arg1;
 - (id)photosSharingTransitionContext;
 - (BOOL)pu_wantsNavigationBarVisible;
 - (BOOL)pu_wantsStatusBarVisible;
@@ -154,8 +171,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)transitionCollectionView;
+- (void)transitionViewAnimatorDidEnd:(id)arg1 finished:(BOOL)arg2;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;

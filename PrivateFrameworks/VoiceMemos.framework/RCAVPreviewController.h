@@ -5,22 +5,31 @@
 @class AVItem, AVQueue, NSMutableArray, NSObject<OS_dispatch_source>, NSTimer;
 
 @interface RCAVPreviewController : NSObject {
+    struct { 
+        double beginTime; 
+        double endTime; 
     AVItem *_avItem;
     AVQueue *_avQueue;
     double _currentTimeDelegateUpdateRate;
     double _currentTimeTarget;
     NSObject<OS_dispatch_source> *_monitorUnderlyingAssetSource;
+    } _playableTimeRange;
     BOOL _preparingToPlay;
+    BOOL _resetVoiceMemoSettingsEnabledValue;
     NSTimer *_updateTimer;
+    BOOL _voiceMemoSettingEnabledNeedsReset;
+    BOOL _voiceMemoSettingsEnabled;
     NSMutableArray *_weakObservers;
 }
 
 @property(setter=setAVItem:,retain) AVItem * avItem;
 @property double currentTime;
 @property double currentTimeDelegateUpdateRate;
+@property struct { double x1; double x2; } playableTimeRange;
 @property(getter=isPlaying,readonly) BOOL playing;
 @property(getter=isPreparingToPlay,readonly) BOOL preparingToPlay;
 @property(readonly) float rate;
+@property BOOL voiceMemoSettingsEnabled;
 
 - (void).cxx_destruct;
 - (void)_addTimerForced:(BOOL)arg1;
@@ -53,13 +62,17 @@
 - (void)pause;
 - (void)playOrRestart;
 - (void)playWithTimeRange:(struct { double x1; double x2; })arg1 startTime:(double)arg2;
+- (struct { double x1; double x2; })playableTimeRange;
 - (float)rate;
 - (void)reloadItem;
 - (void)removeObserver:(id)arg1;
 - (void)setAVItem:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setCurrentTimeDelegateUpdateRate:(double)arg1;
+- (void)setPlayableTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setPreparingToPlay:(BOOL)arg1 notifyObservers:(BOOL)arg2;
+- (void)setVoiceMemoSettingsEnabled:(BOOL)arg1;
 - (void)stop;
+- (BOOL)voiceMemoSettingsEnabled;
 
 @end

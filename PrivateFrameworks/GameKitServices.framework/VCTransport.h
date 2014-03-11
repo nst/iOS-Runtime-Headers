@@ -40,6 +40,6 @@
 - (long)updateICERoleForCallID:(unsigned long)arg1 role:(int)arg2 remoteCallID:(unsigned long)arg3 sessionID:(struct __CFString { }*)arg4;
 - (long)updateInterfaceList:(BOOL)arg1 isUpdateNeeded:(int*)arg2;
 - (long)updateQoS:(BOOL)arg1;
-- (long)updateQualityIndicator:(int)arg1;
+- (long)updateQualityIndicator:(int)arg1 isIPv6:(BOOL)arg2;
 
 @end

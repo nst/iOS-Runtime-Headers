@@ -56,6 +56,7 @@
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)downloads;
 - (id)init;
+- (void)pauseDownloads:(id)arg1;
 - (void)prioritizeDownloads:(id)arg1;
 - (void)purchaseManager:(id)arg1 didFinishPurchasesWithResponses:(id)arg2;
 - (void)removeObserver:(id)arg1 forDownloads:(id)arg2;

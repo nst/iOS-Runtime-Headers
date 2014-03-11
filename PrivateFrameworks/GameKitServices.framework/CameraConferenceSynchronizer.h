@@ -13,9 +13,7 @@
         float width; 
         float height; 
     int cameraHasChangedToCapture;
-    int cameraHasChangedToPreview;
     VCVideoRule *captureRule;
-    int didSendDidStopNotification;
     int didSendFirstRemoteFrameNotification;
     id didStopNotificationBlock;
     BOOL isConference720p;
@@ -29,22 +27,18 @@
 @property(setter=setLocalPortraitAspectRatio:) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 
 - (void)cameraSizeChangedTo:(struct CGSize { float x1; float x2; })arg1;
-- (void)cameraSizeChangedToPreview;
 - (void)changeCameraToCaptureSettings:(double)arg1 forced:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
 - (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
-- (void)notifyClientOfDidStop:(double)arg1;
 - (void)notifyClientOfRemoteFrame:(double)arg1;
 - (void)reset;
 - (void)scheduleCameraChangeToCaptureSettings:(id)arg1;
 - (void)scheduleCameraChangeToPreviewSettings;
-- (void)scheduleDidStopNotification:(id)arg1;
 - (void)scheduleFirstRemoteFrameNotification:(id)arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldConferenceChangeCameraToCaptureSettings;
 - (BOOL)shouldConferenceChangeCameraToPreviewSettings;
-- (BOOL)shouldConferenceSendDidStopNotification;
 - (BOOL)shouldConferenceSendFirstRemoteFrameNotification;
 
 @end

@@ -15,5 +15,6 @@
 - (void).cxx_destruct;
 - (id)initWithRecording:(id)arg1;
 - (id)recording;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

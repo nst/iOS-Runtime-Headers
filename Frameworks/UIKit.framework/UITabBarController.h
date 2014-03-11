@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITabBarControllerDelegate>, <UITabBarControllerDelegate><UITabBarControllerDelegate_Private>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSMutableArray, UIMoreNavigationController, UINavigationController, UITabBar, UIView, UIViewController;
+@class <UITabBarControllerDelegate>, <UITabBarControllerDelegate><UITabBarControllerDelegate_Private>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSMutableArray, NSString, UIMoreNavigationController, UINavigationController, UITabBar, UITapGestureRecognizer, UIView, UIViewController;
 
-@interface UITabBarController : UIViewController <UITabBarDelegate, NSCoding, GKContentRefresh, GKURLHandling> {
+@interface UITabBarController : UIViewController <UIGestureRecognizerDelegate, UITabBarDelegate, NSCoding, GKContentRefresh, GKURLHandling> {
     struct { 
         unsigned int isShowingMoreItem : 1; 
         unsigned int needsToRebuildItems : 1; 
@@ -15,8 +15,10 @@
         unsigned int delegateSupportedInterfaceOrientations : 1; 
         unsigned int delegatePreferredInterfaceOrientationForPresentation : 1; 
     <UIViewControllerAnimatedTransitioning> *__animator;
+    NSString *__backdropGroupName;
     <UIViewControllerInteractiveTransitioning> *__interactor;
     UIView *_accessoryView;
+    UITapGestureRecognizer *_backGestureRecognizer;
     UIView *_containerView;
     unsigned int _customMaxItems;
     NSArray *_customizableViewControllers;
@@ -24,6 +26,7 @@
     <UITabBarControllerDelegate><UITabBarControllerDelegate_Private> *_delegate;
     NSMutableArray *_moreChildViewControllers;
     UIMoreNavigationController *_moreNavigationController;
+    UITapGestureRecognizer *_selectGestureRecognizer;
     UIViewController *_selectedViewController;
     UIViewController *_selectedViewControllerDuringWillAppear;
     UITabBar *_tabBar;
@@ -36,6 +39,7 @@
 
 @property(setter=_setAccessoryView:,retain) UIView * _accessoryView;
 @property(setter=_setAnimator:,retain) <UIViewControllerAnimatedTransitioning> * _animator;
+@property(getter=_backdropGroupName,setter=_setBackdropGroupName:,retain) NSString * _backdropGroupName;
 @property(setter=_setInteractor:,retain) <UIViewControllerInteractiveTransitioning> * _interactor;
 @property(copy) NSArray * customizableViewControllers;
 @property <UITabBarControllerDelegate> * delegate;
@@ -57,6 +61,8 @@
 - (BOOL)_allowsAutorotation;
 - (BOOL)_allowsCustomizing;
 - (id)_animator;
+- (id)_backdropBarGroupName;
+- (id)_backdropGroupName;
 - (void)_configureTargetActionForTabBarItem:(id)arg1;
 - (id)_customAnimatorForFromViewController:(id)arg1 toViewController:(id)arg2;
 - (id)_customInteractionControllerForAnimator:(id)arg1;
@@ -67,6 +73,7 @@
 - (id)_existingMoreNavigationController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForWrapperViewForViewController:(id)arg1;
+- (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_gkForceNextContentUpdate;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
@@ -81,18 +88,22 @@
 - (BOOL)_isBarHidden;
 - (BOOL)_isPresentationContextByDefault;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (BOOL)_isTabBarFocused;
 - (void)_layoutContainerView;
 - (void)_layoutViewController:(id)arg1;
-- (id)_pl_innerViewController;
+- (void)_performBackGesture:(id)arg1;
+- (void)_performSelectGesture:(id)arg1;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (void)_prepareTabBar;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)_rebuildTabBarItemsAnimated:(BOOL)arg1;
 - (void)_rebuildTabBarItemsIfNeeded;
+- (id)_responderSelectionContainerViewForResponder:(id)arg1;
 - (void)_selectDefaultViewControllerIfNecessaryWithAppearanceTransitions:(BOOL)arg1;
 - (id)_selectedViewControllerInTabBar;
 - (void)_setAccessoryView:(id)arg1;
 - (void)_setAnimator:(id)arg1;
+- (void)_setBackdropGroupName:(id)arg1;
 - (void)_setBadgeValue:(id)arg1 forTabBarItem:(id)arg2;
 - (void)_setInteractor:(id)arg1;
 - (void)_setMaximumNumberOfItems:(unsigned int)arg1;
@@ -136,7 +147,6 @@
 - (id)moreChildViewControllers;
 - (id)moreNavigationController;
 - (int)preferredInterfaceOrientationForPresentation;
-- (BOOL)pu_isTabBarVisible;
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)revealTabBarSelection;
 - (id)rotatingFooterView;
@@ -166,6 +176,7 @@
 - (void)tabBar:(id)arg1 willBeginCustomizingItems:(id)arg2;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (id)tabBar;
+- (void)tabBarSizingDidChange:(id)arg1;
 - (id)transientViewController;
 - (id)transitionCoordinator;
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 transition:(int)arg3 shouldSetSelected:(BOOL)arg4;

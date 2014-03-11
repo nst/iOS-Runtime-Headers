@@ -53,6 +53,7 @@
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (id)additionalBuyParameters;
 - (id)affiliateIdentifier;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (BOOL)automaticallyDismisses;
 - (id)clientIdentifier;
 - (void)dealloc;

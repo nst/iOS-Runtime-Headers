@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)_contentView;
-- (void)_radioAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
+- (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (int)actionForButtonIndex:(int)arg1;
 - (id)artistText;
 - (id)artworkImage;

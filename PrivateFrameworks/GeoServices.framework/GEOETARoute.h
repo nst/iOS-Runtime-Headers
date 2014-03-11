@@ -14,10 +14,15 @@
         unsigned int count; 
         unsigned int size; 
     struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    struct { 
         unsigned int historicTravelTime : 1; 
         unsigned int routeNoLongerValid : 1; 
     } _has;
     unsigned int _historicTravelTime;
+    } _incidentEndOffsetsInETARoutes;
     NSMutableArray *_incidentsOffReRoutes;
     NSMutableArray *_incidentsOnETARoutes;
     NSMutableArray *_incidentsOnReRoutes;
@@ -36,6 +41,8 @@
 @property BOOL hasRouteNoLongerValid;
 @property(readonly) BOOL hasZilchPoints;
 @property unsigned int historicTravelTime;
+@property(readonly) unsigned int* incidentEndOffsetsInETARoutes;
+@property(readonly) unsigned int incidentEndOffsetsInETARoutesCount;
 @property(retain) NSMutableArray * incidentsOffReRoutes;
 @property(retain) NSMutableArray * incidentsOnETARoutes;
 @property(retain) NSMutableArray * incidentsOnReRoutes;
@@ -50,6 +57,7 @@
 @property(readonly) unsigned int trafficColorsCount;
 @property(retain) NSData * zilchPoints;
 
+- (void)addIncidentEndOffsetsInETARoute:(unsigned int)arg1;
 - (void)addIncidentsOffReRoutes:(id)arg1;
 - (void)addIncidentsOnETARoute:(id)arg1;
 - (void)addIncidentsOnReRoutes:(id)arg1;
@@ -58,6 +66,7 @@
 - (void)addStep:(id)arg1;
 - (void)addTrafficColor:(unsigned int)arg1;
 - (void)addTrafficColorOffset:(unsigned int)arg1;
+- (void)clearIncidentEndOffsetsInETARoutes;
 - (void)clearIncidentsOffReRoutes;
 - (void)clearIncidentsOnETARoutes;
 - (void)clearIncidentsOnReRoutes;
@@ -77,6 +86,9 @@
 - (BOOL)hasZilchPoints;
 - (unsigned int)hash;
 - (unsigned int)historicTravelTime;
+- (unsigned int)incidentEndOffsetsInETARouteAtIndex:(unsigned int)arg1;
+- (unsigned int*)incidentEndOffsetsInETARoutes;
+- (unsigned int)incidentEndOffsetsInETARoutesCount;
 - (id)incidentsOffReRoutes;
 - (id)incidentsOffReRoutesAtIndex:(unsigned int)arg1;
 - (unsigned int)incidentsOffReRoutesCount;
@@ -99,6 +111,7 @@
 - (void)setHasHistoricTravelTime:(BOOL)arg1;
 - (void)setHasRouteNoLongerValid:(BOOL)arg1;
 - (void)setHistoricTravelTime:(unsigned int)arg1;
+- (void)setIncidentEndOffsetsInETARoutes:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setIncidentsOffReRoutes:(id)arg1;
 - (void)setIncidentsOnETARoutes:(id)arg1;
 - (void)setIncidentsOnReRoutes:(id)arg1;

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
+@class NSRegularExpression;
 
 @interface TSCERegexMatcher : NSObject {
-    NSString *mPattern;
+    NSRegularExpression *mRegex;
 }
 
 + (id)regexMatcherWithStringMatch:(id)arg1;

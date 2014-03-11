@@ -55,6 +55,7 @@
 - (double)p_stdDevFactorForAxisID:(id)arg1;
 - (double)p_stdDevMeanForAxisID:(id)arg1;
 - (double)p_stdErrorErrorForAxisID:(id)arg1;
+- (unsigned int)p_stripBadValuesInArray:(double*)arg1 numValues:(unsigned int)arg2;
 - (void)p_updateDataForAxisID:(id)arg1;
 - (void)p_updateMinMaxForAxisID:(id)arg1 forValues:(double*)arg2 withOffsets:(double*)arg3 numValues:(unsigned int)arg4;
 - (void)p_updateMinMaxForStackedPercentageAxis:(id)arg1 forValues:(double*)arg2 withOffsets:(double*)arg3 numValues:(unsigned int)arg4;

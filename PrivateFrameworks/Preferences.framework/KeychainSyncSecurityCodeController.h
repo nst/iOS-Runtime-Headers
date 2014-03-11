@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, UIAlertView, UIButton;
+@class NSString, UIAlertView, UIButton, UILabel;
 
 @interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
     NSString *_firstPasscodeEntry;
     UIButton *_footerButton;
+    UILabel *_footerLabel;
     BOOL _forgotCodeAlertHasApproveButton;
     UIAlertView *_forgotSecurityCodeAlert;
     NSString *_generatedCode;
+    UIAlertView *_iCSCMismatchAlert;
+    float _keyboardHeight;
     int _mode;
-    BOOL _passcodeMismatch;
     UIAlertView *_resetKeychainAlert;
     int _securityCodeType;
     BOOL _showsAdvancedSettings;
@@ -27,6 +29,7 @@
 - (void)animatePasscodeFieldLeft:(BOOL)arg1;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;
+- (void)dismissAlerts;
 - (id)firstPasscodeEntry;
 - (void)forgotSecurityCode;
 - (void)generateRandomCode;
@@ -48,5 +51,6 @@
 - (void)updateNextButton;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -2,15 +2,22 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class ML3DatabaseConnection, ML3MusicLibrary, NSData;
+@class ML3DatabaseConnection, ML3MusicLibrary, NSArray, NSData, NSDictionary, NSMutableDictionary;
 
 @interface SagaPlaylistImporter : NSObject {
+    NSDictionary *_cachedNameOrders;
     ML3DatabaseConnection *_connection;
+    NSMutableDictionary *_containerCloudIDsToParentContainerCloudIDs;
     ML3MusicLibrary *_library;
     NSData *_playlistData;
+    NSArray *_responseContainers;
 }
 
-- (BOOL)importPlaylistData;
+- (void)_buildCacheNameOrderMap;
+- (BOOL)finish;
+- (BOOL)importPlaylistAtIndex:(unsigned int)arg1;
 - (id)initWithData:(id)arg1 library:(id)arg2 connection:(id)arg3;
+- (unsigned int)playlistCount;
+- (BOOL)processDeletedPlaylists;
 
 @end

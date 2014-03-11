@@ -2,21 +2,33 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
+@class UIColor;
+
 @interface SKUISizeToFitImageDataConsumer : SKUIImageDataConsumer {
     struct CGSize { 
         float width; 
         float height; 
     } _constraintSize;
     BOOL _custom;
+    UIColor *_gradientEndColor;
+    float _gradientHeight;
 }
 
 @property struct CGSize { float x1; float x2; } constraintSize;
+@property(retain) UIColor * gradientEndColor;
+@property float gradientHeight;
 
 + (id)consumerWithConstraintSize2:(struct CGSize { float x1; float x2; })arg1;
 + (id)consumerWithConstraintSize:(struct CGSize { float x1; float x2; })arg1;
 
+- (void).cxx_destruct;
+- (void)_drawGradientWithContext:(struct CGContext { }*)arg1 imageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGSize { float x1; float x2; })constraintSize;
+- (id)gradientEndColor;
+- (float)gradientHeight;
 - (id)imageForImage:(id)arg1;
 - (void)setConstraintSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setGradientEndColor:(id)arg1;
+- (void)setGradientHeight:(float)arg1;
 
 @end

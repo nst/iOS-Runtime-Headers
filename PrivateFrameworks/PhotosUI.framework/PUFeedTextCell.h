@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSAttributedString, UIButton, UIImage, UIImageView, UILabel;
+@class NSAttributedString, PUFeedTextCellContentView, UIButton, UIImage, UIImageView, UILabel;
 
 @interface PUFeedTextCell : PUFeedCell {
     struct UIOffset { 
@@ -33,6 +33,7 @@
     int _buttonSize;
     int _buttonType;
     } _contentInsets;
+    PUFeedTextCellContentView *_contentView;
     UIImage *_iconImage;
     int _iconLocation;
     } _iconOffset;
@@ -95,6 +96,7 @@
 - (int)buttonSize;
 - (int)buttonType;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (id)contentView;
 - (id)iconImage;
 - (int)iconLocation;
 - (struct UIOffset { float x1; float x2; })iconOffset;

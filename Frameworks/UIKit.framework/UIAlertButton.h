@@ -5,25 +5,27 @@
 @class UIImage, UIImageView;
 
 @interface UIAlertButton : UIButton {
+    UIImageView *_highlightView;
     float _imageOffset;
     BOOL _isNewStyle;
-    UIImageView *_overlayView;
 }
 
 @property(retain) UIImage * highlightImage;
+@property(readonly) UIImageView * highlightView;
 @property float imageOffset;
 @property BOOL isNewStyle;
-@property(readonly) UIImageView * overlayView;
 
-- (void)_transitionBackgroundViewToHighlighted:(BOOL)arg1;
+- (void)_focusStateDidChange;
+- (BOOL)_isFocusableElement;
+- (void)_transitionHighlightViewToHighlighted:(BOOL)arg1;
 - (void)dealloc;
 - (id)highlightImage;
+- (id)highlightView;
 - (id)image;
 - (float)imageOffset;
 - (id)initWithTitle:(id)arg1;
 - (BOOL)isNewStyle;
 - (void)layoutSubviews;
-- (id)overlayView;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHighlightImage:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;

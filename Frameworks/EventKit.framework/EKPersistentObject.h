@@ -55,6 +55,7 @@
 - (void)_setPendingUpdate:(BOOL)arg1;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
 - (BOOL)_shouldRetainPropertyForKey:(id)arg1;
+- (void)_takeValues:(id)arg1 forProperties:(id)arg2;
 - (void)_takeValuesForDefaultProperties:(id)arg1 inSet:(id)arg2;
 - (void)changed;
 - (id)committedProperties;
@@ -65,6 +66,7 @@
 - (int)entityType;
 - (id)eventStore;
 - (BOOL)existsInStore;
+- (void)faultPropertiesWithNames:(id)arg1;
 - (id)init;
 - (id)initCommon;
 - (BOOL)isDirty;
@@ -104,6 +106,7 @@
 - (void)saved;
 - (void)setCommittedProperties:(id)arg1;
 - (void)takeValues:(id)arg1 forProperties:(id)arg2;
+- (void)takeValuesForDefaultProperties:(id)arg1 inSet:(id)arg2;
 - (void)unloadPropertyForKey:(id)arg1;
 - (BOOL)validate:(id*)arg1;
 

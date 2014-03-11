@@ -2,21 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchRelatedViewDelegate>, NSArray, NSMutableArray, NSString, SKUIClientContext, UIButton, UILabel, UIScrollView, UIView;
+@class <SKUISearchRelatedViewDelegate>, CAGradientLayer, NSArray, NSMutableArray, NSString, SKUIClientContext, UIButton, UILabel, UIScrollView, UIView, _UIBackdropView;
 
 @interface SKUISearchRelatedView : UIView {
     UIButton *_backButton;
+    _UIBackdropView *_backdropView;
+    UIView *_borderView;
     SKUIClientContext *_clientContext;
     <SKUISearchRelatedViewDelegate> *_delegate;
+    CAGradientLayer *_mask;
     UILabel *_noRelatedLabel;
     NSString *_previousRelatedSearchTerm;
     NSMutableArray *_relatedButtons;
     NSArray *_relatedQueries;
     UIScrollView *_scrollView;
+    UIView *_scrollViewSuperview;
     UIView *_separatorView;
     UILabel *_titleLabel;
 }
 
+@property(readonly) _UIBackdropView * backdropView;
 @property(retain) SKUIClientContext * clientContext;
 @property <SKUISearchRelatedViewDelegate> * delegate;
 @property(copy) NSString * previousRelatedSearchTerm;
@@ -25,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)_backAction:(id)arg1;
 - (void)_buttonAction:(id)arg1;
+- (id)backdropView;
 - (id)clientContext;
 - (void)dealloc;
 - (id)delegate;

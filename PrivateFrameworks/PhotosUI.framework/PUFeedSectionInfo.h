@@ -48,6 +48,8 @@
 @property(readonly) NSString * uuid;
 @property(readonly) unsigned int videosCount;
 
++ (void)beginCachingSharedAlbumsByGUIDs;
++ (void)endCachingSharedAlbumsByGUIDs;
 + (id)sectionInfoWithCloudFeedEntry:(id)arg1;
 
 - (void).cxx_destruct;
@@ -98,6 +100,7 @@
 - (void)setShouldBeVisibleWhenEmpty:(BOOL)arg1;
 - (void)setTertiaryKeyAsset:(id)arg1;
 - (id)sharedAlbum;
+- (id)sharedAlbumWithGUID:(id)arg1;
 - (BOOL)shouldBeVisibleWhenEmpty;
 - (id)tertiaryKeyAsset;
 - (id)title;

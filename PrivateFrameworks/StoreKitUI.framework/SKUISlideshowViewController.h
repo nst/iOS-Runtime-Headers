@@ -45,6 +45,7 @@
 - (int)currentIndex;
 - (id)currentItemViewController;
 - (id)dataSource;
+- (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)interactionControllerForDismissal:(id)arg1;

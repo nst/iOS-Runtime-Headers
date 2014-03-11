@@ -16,8 +16,6 @@
 
 @property BOOL hasPlaylist;
 
-+ (BOOL)_shouldDisplayActions;
-
 - (void).cxx_destruct;
 - (void)_itemDidChangeNotification:(id)arg1;
 - (void)_performDone:(id)arg1;
@@ -31,6 +29,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)ratingDidChangeForRatingControl:(id)arg1;
 - (void)setHasPlaylist:(BOOL)arg1;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

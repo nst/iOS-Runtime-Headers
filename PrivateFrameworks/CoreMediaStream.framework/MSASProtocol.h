@@ -75,7 +75,7 @@
 - (void)getAlbumURLForAlbumWithGUID:(id)arg1 completionBlock:(id)arg2;
 - (void)getAssetCollections:(id)arg1 inAlbum:(id)arg2 albumURLString:(id)arg3 completionBlock:(id)arg4;
 - (void)getChangesRootCtag:(id)arg1 completionBlock:(id)arg2;
-- (void)getCommentsFromAssetCollection:(id)arg1 inAlbum:(id)arg2 albumURLString:(id)arg3 fromPosition:(int)arg4 completionBlock:(id)arg5;
+- (void)getCommentChanges:(id)arg1 inAlbumWithGUID:(id)arg2 albumURLString:(id)arg3 completionBlock:(id)arg4;
 - (void)getServerSideConfigCompletionBlock:(id)arg1;
 - (void)getSharingInfoForAlbum:(id)arg1 albumURLString:(id)arg2 completionBlock:(id)arg3;
 - (void)getTokensForAssets:(id)arg1 inAlbum:(id)arg2 albumURLString:(id)arg3 completionBlock:(id)arg4;

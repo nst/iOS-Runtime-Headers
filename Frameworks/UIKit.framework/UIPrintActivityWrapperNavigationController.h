@@ -17,6 +17,7 @@
 - (id)initWithCompletion:(id)arg1;
 - (BOOL)presentedPrintInteractionController;
 - (void)setPresentedPrintInteractionController:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

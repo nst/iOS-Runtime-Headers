@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIActionSheetDelegate>, NSAttributedString, NSMutableArray, NSString, UIGestureRecognizer, UIImage, UIImageView, UILabel, UIPopoverController, UIToolbar, UIView, UIWindow, _UIBackdropView;
+@class <UIActionSheetDelegate>, NSAttributedString, NSMutableArray, NSMutableIndexSet, NSString, UIGestureRecognizer, UIImage, UIImageView, UILabel, UIPopoverController, UITableView, UIToolbar, UIView, UIWindow;
 
 @interface UIActionSheet : UIView {
     struct { 
@@ -51,21 +51,25 @@
         unsigned int cancelWhenDoneAnimating : 1; 
         unsigned int useThreePartButtons : 1; 
         unsigned int useTwoPartButtons : 1; 
-        unsigned int displaySelectedButtonGlyph : 1; 
-        unsigned int indexOfSelectedButton : 7; 
         unsigned int useCustomSelectedButtonGlyph : 1; 
         unsigned int usesNewStyle : 1; 
         unsigned int isDesaturated : 1; 
         unsigned int creatingPopoverForDisplay : 1; 
+        unsigned int delegateShouldDismissForbuttonAtIndex : 1; 
     int _actionSheetStyle;
     NSAttributedString *_attributedTitleString;
-    _UIBackdropView *_backdropView;
+    UIView *_backgroundView;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
+    UITableView *_buttonTable;
     UIView *_buttonTableView;
     NSMutableArray *_buttons;
     NSMutableArray *_buttonsInTable;
     int _cancelButton;
+    UIView *_contentView;
+    UIView *_contentViewBottomSeparator;
+    UIView *_contentViewContainer;
+    UIView *_contentViewTopSeparator;
     id _context;
     int _defaultButton;
     <UIActionSheetDelegate> *_delegate;
@@ -87,6 +91,7 @@
     UIPopoverController *_popoverController;
     UIImage *_selectedButtonGlyphHighlightedImage;
     UIImage *_selectedButtonGlyphImage;
+    NSMutableIndexSet *_selectedButtonsIndexes;
     UIImageView *_shadowImageView;
     float _startY;
     UILabel *_subtitleLabel;
@@ -99,6 +104,7 @@
     UIToolbar *_toolbar;
 }
 
+@property(getter=_contentView,setter=_setContentView:,retain) UIView * _contentView;
 @property int actionSheetStyle;
 @property int cancelButtonIndex;
 @property <UIActionSheetDelegate> * delegate;
@@ -133,10 +139,14 @@
 - (id)_buttonAtIndex:(int)arg1;
 - (void)_buttonClicked:(id)arg1;
 - (float)_buttonHeight;
+- (float)_buttonInset;
 - (BOOL)_canDrawContent;
 - (BOOL)_canShowAlerts;
 - (void)_cancelAnimated:(BOOL)arg1;
+- (float)_cancelButtonMargin;
 - (void)_cleanupAfterPopupAnimation;
+- (id)_contentView;
+- (float)_cornerRadiusForContent;
 - (void)_createBodyTextLabelIfNeeded;
 - (void)_createSubtitleLabelIfNeeded;
 - (void)_createTaglineTextLabelIfNeeded;
@@ -145,11 +155,15 @@
 - (id)_dimView;
 - (id)_dimViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_dimsBackground;
+- (void)_dismissIfCapable;
+- (id)_externalBackgroundColor;
+- (void)_flashScrollIndicatorsIfAppropriate;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)_handleTap:(id)arg1;
 - (void)_hideActionSheetInsidePopOverAnimated:(BOOL)arg1;
 - (void)_hideHostingPopOverViewAnimated:(BOOL)arg1;
+- (id)_indexesOfSelectedButtons;
 - (void)_installGestureRecognizerInDimView;
 - (BOOL)_isAnimating;
 - (BOOL)_isHostedByPopOver;
@@ -165,14 +179,17 @@
 - (id)_normalInheritedTintColor;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1;
 - (void)_performPopup:(BOOL)arg1;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_popoutAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_popoverHiddingAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_popoverRepresentationAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_prepareContentViewContainer;
 - (void)_presentFromBarButtonItem:(id)arg1 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 backgroundStyle:(int)arg6 animated:(BOOL)arg7;
 - (void)_presentPopoverInCenterOfWindowForView:(id)arg1;
 - (void)_presentSheetFromView:(id)arg1 above:(BOOL)arg2;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1 inView:(id)arg2;
-- (void)_presentSheetStartingFromYCoordinate:(double)arg1;
+- (void)_presentSheetStartingFromYCoordinate:(double)arg1 rootWindow:(id)arg2;
 - (void)_presentViaResponderChain:(id)arg1 asPopoverFromBarButtonItem:(id)arg2 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4 withPreferredArrowDirections:(unsigned int)arg5 passthroughViews:(id)arg6 backgroundStyle:(int)arg7 animated:(BOOL)arg8;
 - (void)_presentViaResponderChainFromYCoordinate:(float)arg1;
 - (id)_presentingViewForView:(id)arg1;
@@ -188,7 +205,11 @@
 - (float)_separatorInset;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)_setAttributedTitleString:(id)arg1;
+- (void)_setBackgroundViewMask:(id)arg1;
+- (void)_setCheckmarkVisible:(BOOL)arg1 onButton:(id)arg2;
+- (void)_setContentView:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
+- (void)_setIndexesOfSelectedButtons:(id)arg1;
 - (void)_setupInitialFrame;
 - (void)_setupTitleStyle;
 - (BOOL)_shouldHaveBackdropView;
@@ -199,9 +220,12 @@
 - (id)_titleLabel;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
+- (void)_toggleButtonSelectionAtIndex:(unsigned int)arg1;
+- (void)_transitionToIdiomAppropriateAppearanceIfNecessary;
 - (void)_transitionToLegacyAppearanceIfNecessary;
 - (void)_transitionUIInView:(id)arg1 toSaturated:(BOOL)arg2;
 - (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
+- (void)_updateCheckmarks;
 - (int)actionSheetStyle;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
@@ -227,6 +251,7 @@
 - (id)delegate;
 - (id)destructiveButton;
 - (int)destructiveButtonIndex;
+- (void)didMoveToWindow;
 - (BOOL)dimsBackground;
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
@@ -261,7 +286,6 @@
 - (void)presentSheetInPopoverView:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (void)presentSheetToAboveView:(id)arg1;
-- (void)rc_showInView:(id)arg1 dismissHandlerBlock:(id)arg2;
 - (void)removeFromSuperview;
 - (BOOL)requiresPortraitOrientation;
 - (BOOL)resignFirstResponder;
@@ -280,6 +304,7 @@
 - (void)setDestructiveButtonIndex:(int)arg1;
 - (void)setDimView:(id)arg1;
 - (void)setDimsBackground:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInPopover:(BOOL)arg1;
 - (void)setIndexOfSelectedButton:(int)arg1;
 - (void)setMessage:(id)arg1;

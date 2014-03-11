@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, NSObject<OS_dispatch_queue>, NSURL;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSURL;
 
 @interface TSURemoteDefaults : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasRegisteredDefaults;
-    NSDate *_nextDownloadDate;
+    NSObject<OS_dispatch_source> *_updateTimer;
 }
 
 @property(readonly) NSURL * downloadableContentURL;
@@ -17,18 +16,16 @@
 - (void).cxx_destruct;
 - (id)URLForKey:(id)arg1;
 - (id)URLRequest;
+- (void)checkForUpdate;
 - (void)dealloc;
-- (void)didDownloadData:(id)arg1 error:(id)arg2;
-- (void)downloadConfigurationWithQueue:(id)arg1 completion:(id)arg2;
-- (void)downloadDefaults;
+- (id)dictionaryForKey:(id)arg1;
 - (id)downloadableContentURL;
 - (id)init;
-- (BOOL)needsUpdate;
-- (void)readKey:(id)arg1 accessor:(id)arg2;
+- (id)initInternal;
+- (id)objectForKey:(id)arg1;
+- (void)processResponse:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (void)registerDefaults;
-- (void)setProperties:(id)arg1;
 - (id)stringForKey:(id)arg1;
-- (void)update;
-- (void)updateWithQueue:(id)arg1 completion:(id)arg2;
+- (double)timeIntervalUntilNextUpdate;
 
 @end

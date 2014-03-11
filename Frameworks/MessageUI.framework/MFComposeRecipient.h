@@ -4,7 +4,7 @@
 
 @class MFComposeRecipientOriginContext, NSArray, NSString;
 
-@interface MFComposeRecipient : NSObject <NSCopying, MFDraggableItem> {
+@interface MFComposeRecipient : NSObject <NSCopying, MFDraggableItem, NSCoding> {
     NSString *_address;
     NSArray *_cachedCompleteMatches;
     NSArray *_cachedMatchedStrings;
@@ -27,6 +27,7 @@
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 + (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 
+- (id)IDSCanonicalAddress;
 - (id)_unformattedAddress;
 - (id)address;
 - (id)canonicalAddress;
@@ -40,8 +41,10 @@
 - (id)countryCode;
 - (void)dealloc;
 - (id)displayString;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (int)identifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
 - (BOOL)isEmail;
 - (BOOL)isEqual:(id)arg1;

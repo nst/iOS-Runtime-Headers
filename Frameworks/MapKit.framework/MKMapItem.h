@@ -4,7 +4,7 @@
 
 @class GEOPlace, MKPlacemark, NSNumber, NSString, NSURL;
 
-@interface MKMapItem : NSObject <MKURLSerializable> {
+@interface MKMapItem : NSObject <GEOURLSerializable> {
     NSString *_extSessionGuid;
     BOOL _isCurrentLocation;
     BOOL _isPlaceHolder;
@@ -38,12 +38,11 @@
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)urlForMapItems:(id)arg1 options:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)_getBusiness;
 - (id)_getRating;
-- (id)_structuredAddressForUrlRespresentation:(id)arg1;
-- (id)_urlRepresentationForStructuredAddress:(id)arg1;
+- (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (id)businessID;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)extSessionGuid;

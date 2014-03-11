@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISiriSessionDelegate>, <AFUISiriSessionLocalDataSource>, <AFUISiriSessionLocalDelegate>, AFConnection, AFUIDialogPhase, AFUIStateMachine, NSObject<OS_dispatch_queue>;
+@class <AFUISiriSessionDelegate>, <AFUISiriSessionLocalDataSource>, <AFUISiriSessionLocalDelegate>, AFConnection, AFUIDialogPhase, AFUISpeechSynthesis, AFUIStateMachine, NSObject<OS_dispatch_queue>;
 
 @interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUIStateMachineDelegate, AFUISiriSession> {
     AFConnection *_connection;
@@ -13,6 +13,7 @@
     BOOL _eyesFree;
     <AFUISiriSessionLocalDataSource> *_localDataSource;
     <AFUISiriSessionLocalDelegate> *_localDelegate;
+    AFUISpeechSynthesis *_speechSynthesis;
     AFUIStateMachine *_stateMachine;
 }
 
@@ -22,12 +23,10 @@
 @property(getter=isEyesFree) BOOL eyesFree;
 @property <AFUISiriSessionLocalDataSource> * localDataSource;
 @property <AFUISiriSessionLocalDelegate> * localDelegate;
-@property(getter=_stateMachine,readonly) AFUIStateMachine * stateMachine;
 
 + (void)beginMonitoringSiriAvailability;
 + (id)effectiveCoreLocationBundle;
 + (BOOL)isSiriAvailable;
-+ (id)outputVoice;
 
 - (void).cxx_destruct;
 - (id)_connection;
@@ -44,7 +43,7 @@
 - (void)_requestWillStart;
 - (void)_setDialogPhase:(id)arg1;
 - (void)_siriAvailabilityDidChange:(id)arg1;
-- (void)_startDirectActionRequestWithString:(id)arg1 bulletin:(id)arg2;
+- (void)_startDirectActionRequestWithString:(id)arg1 appID:(id)arg2 withMessageInContext:(id)arg3;
 - (void)_startRequestWithBlock:(id)arg1;
 - (void)_startRequestWithFinalOptions:(id)arg1;
 - (void)_startRequestWithText:(id)arg1;
@@ -62,6 +61,7 @@
 - (void)assistantConnection:(id)arg1 speechRecognized:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecordingDidBeginOnAVRecordRoute:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
+- (void)assistantConnectionDidChangeAudioRecordingPower:(id)arg1;
 - (void)assistantConnectionDismissAssistant:(id)arg1;
 - (void)assistantConnectionRequestFinished:(id)arg1;
 - (void)assistantConnectionRequestWillStart:(id)arg1;
@@ -74,7 +74,8 @@
 - (id)delegate;
 - (id)dialogPhase;
 - (void)end;
-- (id)initWithDelegateQueue:(id)arg1;
+- (void)forceAudioSessionActive;
+- (id)initWithConnection:(id)arg1 delegateQueue:(id)arg2;
 - (BOOL)isEyesFree;
 - (BOOL)isListening;
 - (BOOL)isPreventingActivationGesture;
@@ -97,12 +98,16 @@
 - (void)setLocalDataSource:(id)arg1;
 - (void)setLocalDelegate:(id)arg1;
 - (void)setLockState:(unsigned int)arg1;
+- (void)setOverriddenApplicationContext:(id)arg1 includeSmsInContext:(id)arg2;
+- (id)speechSynthesis;
 - (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2;
 - (void)startRequestWithOptions:(id)arg1;
 - (id)stateMachine:(id)arg1 descriptionForEvent:(int)arg2;
 - (void)stateMachine:(id)arg1 didTransitionFromState:(int)arg2 forEvent:(int)arg3;
 - (void)stopRecordingSpeech;
 - (void)stopRequestWithOptions:(id)arg1;
+- (void)telephonyRequestCompleted;
+- (id)underlyingConnection;
 - (void)updateRequestOptions:(id)arg1;
 
 @end

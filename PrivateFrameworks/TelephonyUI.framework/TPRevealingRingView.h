@@ -96,6 +96,7 @@
 - (void)setRevealed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRingGammaBoost:(float)arg1;
 - (void)setUnrevealAnimationDuration:(float)arg1;
+- (void)setUsesColorBurnBlending:(BOOL)arg1;
 - (void)setUsesColorDodgeBlending:(BOOL)arg1;
 - (float)unrevealAnimationDuration;
 

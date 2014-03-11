@@ -4,7 +4,7 @@
 
 @class NSMutableArray, VKPGlobalProperties;
 
-@interface VKPSheet : PBCodable {
+@interface VKPSheet : PBCodable <NSCopying> {
     struct { 
         unsigned int version : 1; 
     VKPGlobalProperties *_globalProperties;
@@ -22,6 +22,7 @@
 - (void)addStyle:(id)arg1;
 - (void)clearStyles;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

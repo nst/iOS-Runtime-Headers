@@ -7,21 +7,17 @@
 
 + (void)applicationDidBecomeActive;
 + (void)applicationWillResignActive;
-+ (unsigned int)brushProgram;
++ (id)brushProgram;
 + (id)cacheDirectory;
-+ (BOOL)compileShader:(unsigned int*)arg1 type:(unsigned int)arg2 file:(id)arg3;
-+ (BOOL)linkProgram:(unsigned int)arg1;
 + (void)loadBrush:(id)arg1;
 + (id)loadImageForBrush:(id)arg1;
 + (void)loadLineEndTextureForBrush:(id)arg1 lineEnd:(id)arg2 path:(struct CGPath { }*)arg3 andBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 + (void)loadLineEndsForBrush:(id)arg1 inSVGDoc:(struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; }*)arg2;
 + (void)loadSectionsForBrush:(id)arg1 inSVGDoc:(struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; }*)arg2;
-+ (unsigned int)loadShaders;
++ (Class)mutableClass;
 + (struct CGImage { }*)newCGImageFromGL;
 + (id)renderQueue;
 + (id)sharedContext;
-+ (unsigned int)textureWithCGImage:(struct CGImage { }*)arg1 wrapS:(int)arg2;
-+ (BOOL)validateProgram:(unsigned int)arg1;
 
 - (id)brushBoundsForId:(id)arg1;
 - (void)brushPath:(id)arg1 withScaling:(struct { float x1; float x2; })arg2 inElementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 into:(void*)arg4 sectionIndex:(unsigned int*)arg5 viewScale:(float)arg6;
@@ -45,6 +41,7 @@
 - (BOOL)prefersToApplyToCAShapeLayerDuringManipulation;
 - (void)renderOpenGLSection:(id)arg1 sectionIndex:(unsigned int)arg2 ontoPath:(id)arg3 withScaling:(struct { float x1; float x2; })arg4 inElementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 into:(struct vector<TSDBrushVertexData, std::__1::allocator<TSDBrushVertexData> > { struct TSDBrushVertexData {} *x1; struct TSDBrushVertexData {} *x2; struct __compressed_pair<TSDBrushVertexData *, std::__1::allocator<TSDBrushVertexData> > { struct TSDBrushVertexData {} *x_3_1_1; } x3; }*)arg6 viewScale:(float)arg7;
 - (id)strokeLineEnd:(id)arg1;
+- (float)suggestedMinimumLineWidth;
 - (BOOL)supportsPattern;
 
 @end

@@ -29,8 +29,6 @@
 + (void)trackUserActivity:(id)arg1 forAssets:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_activityItemSourceVideoRemakingDidEnd:(id)arg1;
-- (void)_activityItemSourceVideoRemakingProgressChanged:(id)arg1;
 - (void)_cancel;
 - (float)_currentRemakerProgress;
 - (int)_numberOfRemakesCompleted;
@@ -42,8 +40,11 @@
 - (id)_remakerProgressView;
 - (void)_removeVideoRemakerProgressView;
 - (BOOL)_shouldShowSystemActivity:(id)arg1;
-- (void)_showRemakerProgressView:(id)arg1;
+- (void)_showRemakerProgressView:(id)arg1 withCancelationHandler:(id)arg2;
 - (void)activity:(id)arg1 showRemakerProgressView:(id)arg2;
+- (void)activityItemSourceRemakerDidFinish:(id)arg1;
+- (void)activityItemSourceRemakerProgressDidChange:(id)arg1;
+- (void)activityItemSourceShowRemakerProgressView:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithManagedAssets:(id)arg1 photosApplicationActivities:(id)arg2;

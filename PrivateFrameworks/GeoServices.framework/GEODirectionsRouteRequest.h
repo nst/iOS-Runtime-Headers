@@ -10,8 +10,15 @@
 
 - (void)_commonSetup:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithDirectionsRequest:(id)arg1;
-- (id)initWithQuickETARequest:(id)arg1;
+- (void)fetchDirectionsWithCompletion:(id)arg1;
+- (id)init;
+- (id)initWithDeparture:(double)arg1;
+- (id)initWithDirectionsRequest:(id)arg1 withFeedback:(id)arg2;
+- (id)initWithFeedback:(id)arg1;
+- (id)initWithOrigin:(id)arg1 andDestination:(id)arg2 departure:(double)arg3;
+- (id)initWithQuickETARequest:(id)arg1 withFeedback:(id)arg2;
+- (id)initWithRoutineRoute:(id)arg1;
+- (id)initWithZilch:(id)arg1 departure:(double)arg2;
 - (unsigned short)providerID;
 - (Class)responseClass;
 - (void)setProviderID:(unsigned short)arg1;

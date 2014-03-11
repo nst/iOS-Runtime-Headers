@@ -102,6 +102,7 @@
         unsigned int updateInsetBottom : 1; 
         unsigned int beingDraggedByChildScrollView : 1; 
         unsigned int adjustsTargetsOnContentOffsetChanges : 1; 
+        unsigned int forwardsTouchesUpResponderChain : 1; 
     struct CADoublePoint { 
         double x; 
         double y; 
@@ -269,8 +270,10 @@
 - (void)_enableOnlyGestureRecognizersForCurrentTouchLevel;
 - (void)_endPanNormal:(BOOL)arg1;
 - (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_flashScrollIndicatorsPersistingPreviousFlashes:(BOOL)arg1;
 - (void)_forceDelegateScrollViewDidZoom:(BOOL)arg1;
 - (BOOL)_forwardsToParentScroller;
+- (BOOL)_forwardsTouchesUpResponderChain;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_gestureRecognizerFailed:(id)arg1;
@@ -286,6 +289,7 @@
 - (void)_incrementForScrollTest;
 - (BOOL)_isAnimatingScroll;
 - (BOOL)_isAnimatingZoom;
+- (BOOL)_isAutomaticContentOffsetAdjustmentEnabled;
 - (BOOL)_isAutoscrolling;
 - (BOOL)_isBouncing;
 - (BOOL)_isHorizontalBouncing;
@@ -311,7 +315,9 @@
 - (BOOL)_pagingUp;
 - (id)_panGestureRecognizer;
 - (id)_parentScrollView;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5;
 - (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 scrollAxis:(int)arg4;
 - (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
 - (void)_pinContentOffsetToClosestPageBoundary;
 - (void)_popTrackingRunLoopMode;
@@ -352,6 +358,7 @@
 - (void)_setContentOffsetAnimationDuration:(double)arg1;
 - (void)_setContentOffsetPinned:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_setContentOffsetPinned:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setForwardsTouchesUpResponderChain:(BOOL)arg1;
 - (void)_setIgnoreLinkedOnChecks:(BOOL)arg1;
 - (void)_setPagingFriction:(float)arg1;
 - (void)_setShowsBackgroundShadow:(BOOL)arg1;
@@ -404,6 +411,7 @@
 - (void)_updateUsesStaticScrollBar;
 - (void)_updateZoomGestureRecognizersEnabled;
 - (BOOL)_useContentDimensionVariablesForConstraintLowering;
+- (BOOL)_usesLowFidelityPanning;
 - (double)_verticalVelocity;
 - (BOOL)_viewIsInsideNavigationController;
 - (void)_webCustomViewWillBeRemovedFromSuperview;
@@ -467,6 +475,7 @@
 - (BOOL)isZoomEnabled;
 - (BOOL)isZooming;
 - (id)keyForContentMode:(int)arg1;
+- (float)keyboardBottomInsetAdjustmentDelta;
 - (int)keyboardDismissMode;
 - (void)layoutSubviews;
 - (float)maxVelocityInDirection:(int)arg1;

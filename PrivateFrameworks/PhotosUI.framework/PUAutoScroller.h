@@ -22,6 +22,9 @@
 @property struct CGPoint { float x1; float x2; } speed;
 @property(retain) NSTimer * timer;
 
++ (void)_scrollTestFire;
++ (void)performScrollTest:(id)arg1 iterations:(unsigned int)arg2 length:(float)arg3 delta:(float)arg4 vertical:(BOOL)arg5;
+
 - (void).cxx_destruct;
 - (void)_handlerTimer:(id)arg1;
 - (void)_startTimer;

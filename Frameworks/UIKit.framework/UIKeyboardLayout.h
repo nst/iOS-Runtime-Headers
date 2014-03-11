@@ -6,24 +6,32 @@
 
 @interface UIKeyboardLayout : UIView {
     UITouch *_activeTouch;
+    int _cursorLocation;
+    BOOL _disableInteraction;
     UITextInputTraits *_inputTraits;
     UIKBScreenTraits *_screenTraits;
     UITouch *_shiftKeyTouch;
     UIKeyboardTaskQueue *_taskQueue;
     NSMutableArray *_uncommittedTouches;
+    BOOL hideKeysUnderIndicator;
 }
 
 @property(retain) UITouch * activeTouch;
+@property int cursorLocation;
+@property BOOL disableInteraction;
+@property BOOL hideKeysUnderIndicator;
 @property(readonly) int orientation;
 @property(retain) UITouch * shiftKeyTouch;
 @property(retain) UIKeyboardTaskQueue * taskQueue;
 
-- (BOOL)acceptsDirectionInput;
++ (Class)_subclassForScreenTraits:(id)arg1;
+
 - (id)activationIndicatorView;
 - (id)activeTouch;
 - (void)addWipeRecognizer;
 - (id)baseKeyForString:(id)arg1;
 - (BOOL)canForceTouchCommit:(id)arg1;
+- (BOOL)canHandleEvent:(id)arg1;
 - (BOOL)canMultitap;
 - (BOOL)canProduceString:(id)arg1;
 - (id)candidateList;
@@ -33,11 +41,13 @@
 - (void)commitTouches:(id)arg1 executionContext:(id)arg2;
 - (void)commitTouches:(id)arg1;
 - (id)currentKeyplane;
+- (int)cursorLocation;
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(BOOL)arg1 clearingDimming:(BOOL)arg2;
 - (void)dealloc;
 - (void)didClearInput;
 - (void)didCommitTouch:(id)arg1;
+- (BOOL)disableInteraction;
 - (struct CGSize { float x1; float x2; })dragGestureSize;
 - (void)fadeWithInvocation:(id)arg1;
 - (float)flickDistance;
@@ -46,6 +56,7 @@
 - (SEL)handlerForNotification:(id)arg1;
 - (BOOL)hasAccentKey;
 - (BOOL)hasCandidateKeys;
+- (BOOL)hideKeysUnderIndicator;
 - (float)hitBuffer;
 - (BOOL)ignoresShiftState;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -60,15 +71,18 @@
 - (BOOL)performSpaceAction;
 - (void)physicalKeyDownWithEvent:(id)arg1;
 - (void)physicalKeyUpWithEvent:(id)arg1;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)restoreDefaultsForAllKeys;
 - (void)restoreDefaultsForKey:(id)arg1;
 - (void)setAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setActiveTouch:(id)arg1;
 - (void)setAutoshift:(BOOL)arg1;
+- (void)setCursorLocation:(int)arg1;
+- (void)setDisableInteraction:(BOOL)arg1;
+- (void)setHideKeysUnderIndicator:(BOOL)arg1;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
 - (void)setLayoutTag:(id)arg1;
 - (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setPasscodeOutlineAlpha:(float)arg1;
 - (void)setRenderConfig:(id)arg1;
 - (void)setReturnKeyEnabled:(BOOL)arg1 withDisplayName:(id)arg2 withType:(int)arg3;
 - (void)setShift:(BOOL)arg1;

@@ -60,6 +60,6 @@
 - (id)settingsContext;
 - (BOOL)shouldCommitIfPossible;
 - (id)validateFile:(id)arg1;
-- (id)validateRestorePath:(id)arg1;
+- (id)validateRestoreDomain:(id)arg1 relativePath:(id)arg2;
 
 @end

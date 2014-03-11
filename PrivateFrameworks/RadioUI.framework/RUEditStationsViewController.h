@@ -24,10 +24,10 @@
 - (void).cxx_destruct;
 - (void)_beginIgnoringReloadData;
 - (void)_commitDeletingStationWithCompletionHandler:(id)arg1;
+- (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1;
 - (void)_editAction:(id)arg1;
 - (void)_endIgnoringReloadData;
-- (void)_radioAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_updateBarButtonItemsAnimated:(BOOL)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
@@ -39,6 +39,7 @@
 - (void)reloadData;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

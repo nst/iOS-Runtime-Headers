@@ -198,6 +198,7 @@
 - (BOOL)showPreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (id)storePageProtocol;
 - (void)storePageProtocolDidChange;
+- (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (id)urlBagKey;
 - (void)viewDidAppear:(BOOL)arg1;

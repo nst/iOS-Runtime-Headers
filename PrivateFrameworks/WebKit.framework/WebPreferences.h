@@ -81,6 +81,7 @@
 - (void)_setUseSiteSpecificSpoofing:(BOOL)arg1;
 - (BOOL)_standalone;
 - (id)_stringValueForKey:(id)arg1;
+- (void)_synchronizeWebStoragePolicyWithCookiePolicy;
 - (BOOL)_telephoneNumberParsingEnabled;
 - (unsigned int)_unsignedIntValueForKey:(id)arg1;
 - (unsigned long long)_unsignedLongLongValueForKey:(id)arg1;
@@ -268,6 +269,7 @@
 - (void)setStorageTrackerEnabled:(BOOL)arg1;
 - (void)setSuppressesIncrementalRendering:(BOOL)arg1;
 - (void)setTextDirectionSubmenuInclusionBehavior:(int)arg1;
+- (void)setUseLegacyTextAlignPositionedElementBehavior:(BOOL)arg1;
 - (void)setUsePreHTML5ParserQuirks:(BOOL)arg1;
 - (void)setUserStyleSheetEnabled:(BOOL)arg1;
 - (void)setUserStyleSheetLocation:(id)arg1;
@@ -292,6 +294,7 @@
 - (BOOL)storageTrackerEnabled;
 - (BOOL)suppressesIncrementalRendering;
 - (int)textDirectionSubmenuInclusionBehavior;
+- (BOOL)useLegacyTextAlignPositionedElementBehavior;
 - (BOOL)usePreHTML5ParserQuirks;
 - (BOOL)userStyleSheetEnabled;
 - (id)userStyleSheetLocation;

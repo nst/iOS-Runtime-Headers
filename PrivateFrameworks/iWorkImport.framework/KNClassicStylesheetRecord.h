@@ -15,6 +15,7 @@
 
 @property(retain) NSDictionary * identifierToStyleMap;
 
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)dealloc;
 - (id)identifierToStyleMap;
 - (id)initFromUnarchiver:(id)arg1;

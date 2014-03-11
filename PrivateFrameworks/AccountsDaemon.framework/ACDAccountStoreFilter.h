@@ -13,12 +13,12 @@
 + (id)_whiteList;
 
 - (void).cxx_destruct;
-- (BOOL)_accessGrantedForBundleID:(id)arg1 onAccountType:(id)arg2;
-- (BOOL)_accessGrantedForClient:(id)arg1 onAccountType:(id)arg2;
+- (BOOL)_accessGrantedForBundleID:(id)arg1 onAccountTypeID:(id)arg2;
+- (BOOL)_accessGrantedForClient:(id)arg1 onAccountTypeID:(id)arg2;
 - (id)_appPermissionsForAccountTypeIdentifier:(id)arg1;
 - (BOOL)_clientHasPermissionToAddAccount:(id)arg1;
 - (BOOL)_isClientPermittedToAccessAccount:(id)arg1;
-- (BOOL)_isClientPermittedToAccessAccountType:(id)arg1;
+- (BOOL)_isClientPermittedToAccessAccountTypeWithIdentifier:(id)arg1;
 - (BOOL)_isClientPermittedToRemoveAccount:(id)arg1;
 - (BOOL)_wildCardAuthorizationMatchingForAccountTypeIdentifier:(id)arg1;
 - (void)accessKeysForAccountType:(id)arg1 handler:(id)arg2;
@@ -30,6 +30,7 @@
 - (void)accountTypesWithHandler:(id)arg1;
 - (void)accountWithIdentifier:(id)arg1 handler:(id)arg2;
 - (void)accountsWithAccountType:(id)arg1 handler:(id)arg2;
+- (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id)arg3;
 - (void)accountsWithHandler:(id)arg1;
 - (void)addClientToken:(id)arg1 forAccountIdentifier:(id)arg2 completion:(id)arg3;
 - (void)appPermissionsForAccountType:(id)arg1 withHandler:(id)arg2;
@@ -74,5 +75,6 @@
 - (void)typeIdentifierForDomain:(id)arg1 withHandler:(id)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
+- (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 
 @end

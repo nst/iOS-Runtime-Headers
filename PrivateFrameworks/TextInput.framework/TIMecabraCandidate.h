@@ -31,6 +31,7 @@
 - (BOOL)isEmojiCandidate;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isForShortcutConversion;
+- (BOOL)isFullwidthCandidate;
 - (id)mecabraCandidatePointerValue;
 - (void)setMecabraCandidatePointerValue:(id)arg1;
 

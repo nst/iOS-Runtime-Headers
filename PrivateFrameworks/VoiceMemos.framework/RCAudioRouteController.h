@@ -2,48 +2,59 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class MPAudioDeviceController, NSDictionary;
+@class MPAVRoutingController;
 
-@interface RCAudioRouteController : NSObject {
-    MPAudioDeviceController *_audioDeviceController;
+@interface RCAudioRouteController : NSObject <MPAVRoutingControllerDelegate> {
     unsigned int _availableRoutesMask;
     BOOL _defaultSettingsApplied;
     BOOL _expectsFaceContactWhenHandsetSelected;
-    NSDictionary *_lastPickedRouteDescription;
-    int _reportRealRouteSettingDisabledCount;
+    int _lastPickedRCRoute;
+    BOOL _reportUserDefaultForRouteSetting;
+    MPAVRoutingController *_routingController;
+    BOOL _voiceMemoSettingsEnabled;
 }
 
-@property(retain) MPAudioDeviceController * audioDeviceController;
 @property(readonly) unsigned int availableRoutesMask;
 @property BOOL expectsFaceContactWhenHandsetSelected;
-@property(retain) NSDictionary * lastPickedRouteDescription;
 @property(readonly) BOOL speakerRouteIsPicked;
+@property BOOL voiceMemoSettingsEnabled;
 @property(readonly) BOOL wirelessRouteIsPicked;
 
 + (id)sharedRouteController;
 
 - (void).cxx_destruct;
-- (void)_applySpeakerRouteDefault;
+- (BOOL)_AVAudioSessionHandsetRouteIsPickedOutputType;
+- (BOOL)_AVAudioSessionReceiverRouteIsPickedOutputType;
+- (void)_AVAudioSessionRouteChangeNotification:(id)arg1;
+- (BOOL)_AVAudioSessionSpeakerRouteIsPickedOutputType;
+- (BOOL)_AVAudioSessionWirelessRouteIsPickedOutputType;
+- (unsigned int)_RCAudioRouteMaskForPickedAVAudioSessionOutputType;
+- (void)_applyUserDefaultAudioRoute;
 - (unsigned int)_availableRoutesMask;
-- (void)_createAudioController;
+- (void)_initializePreviewControllerOutputRouteCategoryIfNecessaryWithCompletionBlock:(id)arg1;
+- (void)_initializeRouteControllers;
+- (void)_pickAudioDeviceRouteType:(int)arg1;
+- (void)_pickHandsetAudioDeviceRoute;
+- (void)_pickSpeakerAudioDeviceRoute;
+- (BOOL)_routeDefaultBoolForKey:(id)arg1 nonVoiceMemoAppValue:(BOOL)arg2;
+- (void)_setShouldRouteToSpeakerUserDefaultValue:(BOOL)arg1;
+- (BOOL)_speakerIsUserDefaultRoute;
 - (void)_updateProximitySetting;
 - (void)_updateSpeakerRouteDefault;
 - (unsigned int)_updatedCachedRouteMask;
-- (void)applyDefaultSettings;
-- (id)audioDeviceController;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (void)audioDeviceControllerMediaServerDied:(id)arg1;
+- (int)_voiceMemosRouteTypeForRoute:(id)arg1;
+- (void)applyVoiceMemoSettings;
 - (unsigned int)availableRoutesMask;
 - (void)dealloc;
 - (BOOL)expectsFaceContactWhenHandsetSelected;
 - (id)init;
-- (id)lastPickedRouteDescription;
-- (void)setAudioDeviceController:(id)arg1;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setExpectsFaceContactWhenHandsetSelected:(BOOL)arg1;
-- (void)setLastPickedRouteDescription:(id)arg1;
+- (void)setVoiceMemoSettingsEnabled:(BOOL)arg1;
 - (void)showAvailableRoutes;
 - (BOOL)speakerRouteIsPicked;
 - (void)toggleSpeaker;
+- (BOOL)voiceMemoSettingsEnabled;
 - (BOOL)wirelessRouteIsPicked;
 
 @end

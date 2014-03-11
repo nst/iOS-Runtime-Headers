@@ -15,6 +15,7 @@
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;
+- (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (id)thinKeycapsFontName;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;

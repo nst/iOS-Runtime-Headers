@@ -12,6 +12,7 @@
 
 - (id)delegate;
 - (Class)layoutClass;
+- (Class)repClass;
 - (void)setDelegate:(id)arg1;
 
 @end

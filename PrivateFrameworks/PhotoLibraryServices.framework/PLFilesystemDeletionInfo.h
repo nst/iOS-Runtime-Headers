@@ -5,7 +5,9 @@
 @class NSArray, NSString, NSURL;
 
 @interface PLFilesystemDeletionInfo : NSObject {
+    NSString *_directory;
     NSArray *_fileURLs;
+    NSString *_filename;
     NSURL *_objectIDURI;
     NSString *_thumbnailIdentifier;
     unsigned int _thumbnailIndex;
@@ -13,9 +15,11 @@
     NSString *_uuid;
 }
 
-@property(readonly) NSArray * fileURLs;
+@property(readonly) NSString * directory;
+@property(retain) NSArray * fileURLs;
+@property(readonly) NSString * filename;
 @property(readonly) NSURL * objectIDURI;
-@property(readonly) NSString * thumbnailIdentifier;
+@property(retain) NSString * thumbnailIdentifier;
 @property(readonly) unsigned int thumbnailIndex;
 @property(readonly) unsigned long long timestamp;
 @property(readonly) NSString * uuid;
@@ -24,9 +28,13 @@
 
 - (void)dealloc;
 - (id)description;
+- (id)directory;
 - (id)fileURLs;
-- (id)initWithObjectIDURI:(id)arg1 fileURLs:(id)arg2 thumbnailIndex:(unsigned int)arg3 thumbnailIdentifier:(id)arg4 uuid:(id)arg5 timestamp:(unsigned long long)arg6;
+- (id)filename;
+- (id)initWithObjectIDURI:(id)arg1 directory:(id)arg2 filename:(id)arg3 fileURLs:(id)arg4 thumbnailIndex:(unsigned int)arg5 thumbnailIdentifier:(id)arg6 uuid:(id)arg7 timestamp:(unsigned long long)arg8;
 - (id)objectIDURI;
+- (void)setFileURLs:(id)arg1;
+- (void)setThumbnailIdentifier:(id)arg1;
 - (id)thumbnailIdentifier;
 - (unsigned int)thumbnailIndex;
 - (unsigned long long)timestamp;

@@ -30,6 +30,15 @@
             float width; 
             float height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -50,6 +59,7 @@
     int mDisableThreadedLayoutAndRender;
     <TSDAnnotationHosting> *mDisplayedAnnotation;
     TSDDynamicOperationController *mDynOpController;
+    int mDynamicOperationCounter;
     float mDynamicViewScale;
     BOOL mDynamicallyZooming;
     TSDEditorController *mEditorController;
@@ -87,6 +97,7 @@
     BOOL mShouldAnimateAutoscroll;
     BOOL mShouldAutoscrollToSelectionAfterGestures;
     BOOL mShouldAutoscrollToSelectionAfterLayout;
+    BOOL mShouldCenterSelectionWhenAutoscrolling;
     BOOL mShouldClipThemeContentToCanvas;
     BOOL mShouldSuppressRendering;
     BOOL mShowGrayOverlay;
@@ -108,6 +119,7 @@
     TSDUserDefinedGuideController *mUserDefinedGuideController;
     BOOL mUsesAlternateDrawableSelectionHighlight;
     } mVisibleBoundsRectForTiling;
+    } mVisibleUnscaledRect;
     } mZoomCenterInBounds;
 }
 
@@ -115,6 +127,7 @@
 @property(readonly) NSArray * additionalLayersUnderRepLayers;
 @property(readonly) BOOL animatingViewScale;
 @property(readonly) struct CGSize { float x1; float x2; } annotationPopoverSize;
+@property(readonly) int annotationPreferredRectEdge;
 @property(readonly) TSDCanvas * canvas;
 @property(retain) NSObject<TSDCanvasEditor> * canvasEditor;
 @property(readonly) TSDCanvasLayer * canvasLayer;
@@ -130,7 +143,7 @@
 @property(readonly) struct CGSize { float x1; float x2; } defaultMinimumUnscaledCanvasSize;
 @property(readonly) float defaultViewScale;
 @property <TSDInteractiveCanvasControllerDelegate> * delegate;
-@property(retain) <TSDAnnotationHosting> * displayedAnnotation;
+@property(readonly) <TSDAnnotationHosting> * displayedAnnotation;
 @property(readonly) BOOL displayedAnnotationPresentedPinned;
 @property(readonly) TSKDocumentRoot * documentRoot;
 @property(readonly) <TSKDocumentRootProvider> * documentRootProvider;
@@ -151,6 +164,7 @@
 @property(readonly) CALayer * overlayLayer;
 @property BOOL overlayLayerSuppressed;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } p_visibleBoundsRectForTiling;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } p_visibleUnscaledRect;
 @property BOOL preventSettingNilEditorOnTextResponder;
 @property(readonly) CALayer * repContainerLayer;
 @property BOOL resizeCanvasOnLayout;
@@ -175,6 +189,7 @@
 @property float viewScale;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBoundsRect;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBoundsRectForTiling;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBoundsRectUsingSizeOfEnclosingScrollView;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleUnscaledRect;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleUnscaledRectForAutoscroll;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleUnscaledRectForCanvasUI;
@@ -204,6 +219,8 @@
 - (void)annotationChanged:(id)arg1 model:(id)arg2 selection:(id)arg3 beginEditing:(BOOL)arg4;
 - (id)annotationController;
 - (struct CGSize { float x1; float x2; })annotationPopoverSize;
+- (int)annotationPreferredRectEdge;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotationRectInParentView;
 - (void)asyncProcessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (BOOL)attachedCommentsAllowedForDrawable:(id)arg1;
 - (void)backgroundLayoutAndRenderState:(id)arg1 performWorkInBackgroundTilingOnly:(BOOL)arg2;
@@ -214,6 +231,7 @@
 - (id)beginEditingRep:(id)arg1;
 - (id)beginEditingRepForInfo:(id)arg1;
 - (void)beginModalOperationWithLocalizedMessage:(id)arg1 progress:(id)arg2 cancelHandler:(id)arg3;
+- (void)beginPossiblyParallelInspectorDynamicOperation;
 - (void)beginScrollingOperation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForActiveGuidesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)canDrawTilingLayerInBackground:(id)arg1;
@@ -272,6 +290,7 @@
 - (void)endDynamicOperation;
 - (void)endEditing;
 - (void)endModalOperation;
+- (void)endPossiblyParallelInspectorDynamicOperation;
 - (void)endScrollingOperation;
 - (float)fitWidthViewScale;
 - (void)forwardInvocation:(id)arg1;
@@ -333,6 +352,7 @@
 - (void)invalidateVisibleBounds;
 - (BOOL)isCanvasInteractive;
 - (BOOL)isInDynamicOperation;
+- (BOOL)isInInspectorDynamicOperation;
 - (BOOL)isPrinting;
 - (BOOL)isPrintingCanvas;
 - (struct CGPoint { float x1; float x2; })lastTapPoint;
@@ -367,6 +387,7 @@
 - (id)p_backgroundLayoutAndRenderState;
 - (void)p_beginZoomingOperation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_calculateVisibleBoundsRectForTiling;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_calculateVisibleUnscaledRect;
 - (BOOL)p_centerOnInitialSelection;
 - (void)p_commonInit;
 - (id)p_decorators;
@@ -404,6 +425,7 @@
 - (void)p_viewScrollingEnded;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_visibleBoundsRectForTiling;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_visibleBoundsRectUsingSizeOfEnclosingScrollView:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_visibleUnscaledRect;
 - (void)p_willEnterForeground:(id)arg1;
 - (void)presentError:(id)arg1 completionHandler:(id)arg2;
 - (void)presentErrors:(id)arg1 withLocalizedDescription:(id)arg2 completionHandler:(id)arg3;
@@ -411,6 +433,7 @@
 - (void)previousAnnotation:(id)arg1;
 - (id)provideDynamicGuides;
 - (id)provideUserDefinedGuides;
+- (id)queueForDrawingTilingLayerInBackground:(id)arg1;
 - (void)recreateAllLayoutsAndReps;
 - (void)removeBackgroundRenderingObject:(id)arg1;
 - (void)removeCommonObservers;
@@ -457,7 +480,6 @@
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setCreateRepsForOffscreenLayouts:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayedAnnotation:(id)arg1;
 - (void)setInReadMode:(BOOL)arg1;
 - (void)setInVersionBrowsingMode:(BOOL)arg1;
 - (void)setInfosToDisplay:(id)arg1;
@@ -468,6 +490,7 @@
 - (void)setNeedsDisplayOnLayer:(id)arg1;
 - (void)setOverlayLayerSuppressed:(BOOL)arg1;
 - (void)setP_visibleBoundsRectForTiling:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setP_visibleUnscaledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPreventSettingNilEditorOnTextResponder:(BOOL)arg1;
 - (void)setResizeCanvasOnLayout:(BOOL)arg1;
 - (void)setRulerController:(id)arg1;
@@ -492,6 +515,7 @@
 - (BOOL)shouldAutoscrollToSelectionAfterLayout;
 - (BOOL)shouldBeginDrawingTilingLayerInBackground:(id)arg1 returningToken:(id*)arg2 andQueue:(id*)arg3;
 - (BOOL)shouldClipThemeContentToCanvas;
+- (BOOL)shouldDisplayCommentUIForInfo:(id)arg1;
 - (BOOL)shouldEverShowPathHighlightOnInvisibleShapes;
 - (BOOL)shouldLayoutTilingLayer:(id)arg1;
 - (BOOL)shouldPopKnobsOutsideEnclosingScrollView;
@@ -509,6 +533,7 @@
 - (void)showOrHideComments:(id)arg1;
 - (BOOL)showsComments;
 - (struct CGSize { float x1; float x2; })sizeOfScrollViewEnclosingCanvas;
+- (struct CGPoint { float x1; float x2; })smartZoomCenterForNoSelection;
 - (BOOL)spellCheckingSupported;
 - (BOOL)spellCheckingSuppressed;
 - (BOOL)supportsBackgroundTileRendering;
@@ -547,6 +572,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsForTilingLayer:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsRectForTiling;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsRectUsingSizeOfEnclosingScrollView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleScaledBoundsForClippingRepsOnCanvas:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleUnscaledRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleUnscaledRectForAutoscroll;

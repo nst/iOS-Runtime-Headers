@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, CALayer<TSCHMultiDataElementShapeLayer>;
+@class CALayer<TSCHMultiDataElementShapeLayer>, TSCHMultiDataAnimatingFrameLayer;
 
 @interface TSCHMultiDataChartRepElement : NSObject {
     CALayer<TSCHMultiDataElementShapeLayer> *mElementLayer;
     BOOL mElementUndefined;
-    CALayer *mLabelLayer;
+    TSCHMultiDataAnimatingFrameLayer *mLabelLayer;
 }
 
 @property(readonly) CALayer<TSCHMultiDataElementShapeLayer> * elementLayer;
 @property BOOL elementUndefined;
-@property(readonly) CALayer * labelLayer;
+@property(readonly) TSCHMultiDataAnimatingFrameLayer * labelLayer;
 
 + (id)elementWithElementLayer:(id)arg1;
 

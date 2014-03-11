@@ -30,7 +30,7 @@
 - (void)handleMsg:(int)arg1 args:(id)arg2;
 - (void)handleReset;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3 sessionType:(int)arg4;
-- (BOOL)isMainQueue;
+- (BOOL)isSetupOnUIThread;
 - (id)nsArrayWithXpcArray:(id)arg1;
 - (id)nsDictionaryFromXpcDictionary:(id)arg1;
 - (id)nsObjectWithXpcObject:(id)arg1;

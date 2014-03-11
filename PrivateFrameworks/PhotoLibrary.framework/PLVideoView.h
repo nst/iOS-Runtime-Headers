@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLVideoViewDelegate>, AVAsset, AVAssetExportSession, NSArray, NSDictionary, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSURL, PLManagedAsset, PLMoviePlayerController, PLPhotoBakedThumbnails, PLPhotoTileViewController, PLProgressStack, PLSlalomRangeMapper, PLSlalomRegionEditor, PLVideoEditingOverlayView, PLVideoOverlayButton, PLVideoPosterFrameView, UIActivityIndicatorView, UIImage, UIImageView, UIMovieScrubber, UIView;
+@class <PLVideoViewDelegate>, AVAsset, AVAssetExportSession, NSArray, NSDictionary, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSURL, PLManagedAsset, PLMoviePlayerController, PLPhotoBakedThumbnails, PLPhotoTileViewController, PLProgressStack, PLSlalomRangeMapper, PLSlalomRegionEditor, PLVideoEditingOverlayView, PLVideoPosterFrameView, UIActivityIndicatorView, UIImage, UIImageView, UIMovieScrubber, UIView, UIView<PLVideoOverlayButton>;
 
 @interface PLVideoView : UIView <UIMovieScrubberDelegate, UIMovieScrubberDataSource, PLMoviePlayerControllerDelegate, PLSlalomRegionEditorDelegate> {
     struct CGSize { 
@@ -44,9 +44,11 @@
     unsigned int _wasTrimmedInPlace : 1;
     unsigned int _remakingFailed : 1;
     BOOL __didEditSlalom;
+    BOOL __didInsertMoviePlayerView;
     AVAsset *__slalomOriginalAsset;
     NSArray *__slalomRegions;
     PLSlalomRangeMapper *__slalomTimeRangeMapper;
+    AVAssetExportSession *_airplayExportSession;
     BOOL _allowSlalomEditor;
     PLPhotoBakedThumbnails *_bakedLandscapeThumbnails;
     PLPhotoBakedThumbnails *_bakedPortraitThumbnails;
@@ -59,6 +61,7 @@
     NSArray *_imageGenerators;
     PLPhotoTileViewController *_imageTile;
     int _interfaceOrientation;
+    BOOL _isAirPlay;
     NSArray *_landscapeSummaryThumbnailTimestamps;
     double _lastActualValue;
     double _lastScrubbedValue;
@@ -96,12 +99,13 @@
     PLManagedAsset *_trimmedVideoClip;
     PLManagedAsset *_videoCameraImage;
     UIView *_videoOverlayBackgroundView;
-    PLVideoOverlayButton *_videoOverlayPlayButton;
+    UIView<PLVideoOverlayButton> *_videoOverlayPlayButton;
     NSString *_videoPathAfterTrim;
     NSURL *_videoURL;
 }
 
 @property(setter=_setDidEditSlalom:) BOOL _didEditSlalom;
+@property BOOL _didInsertMoviePlayerView;
 @property(readonly) BOOL _didSetPhotoData;
 @property(readonly) BOOL _mediaIsPlayable;
 @property(readonly) NSString * _pathForOriginalFile;
@@ -138,42 +142,57 @@
 @property(readonly) PLManagedAsset * videoCameraImage;
 @property(readonly) NSString * videoPathAfterTrim;
 
++ (id)_dequeueOverlayPlayButton;
++ (void)_enqueueOverlayPlayButton:(id)arg1;
 + (id)videoViewForVideoFileAtURL:(id)arg1;
 
 - (void)_addThumbnailRequestForTimestamp:(id)arg1 isSummaryThumbnail:(BOOL)arg2;
+- (id)_assetForVideoPath:(id)arg1;
 - (BOOL)_canAccessVideo;
 - (BOOL)_canCreateMetadata;
 - (BOOL)_canEditDuration:(double)arg1;
 - (BOOL)_canPlayStreamedVideoWithLocalVideo;
+- (void)_cancelAirplayExportSession;
 - (void)_cancelRemaking:(id)arg1;
 - (void)_clearImageGenerators;
 - (void)_configureImageGenerator:(id)arg1 thumbnailSize:(struct CGSize { float x1; float x2; })arg2 forSummaryThumbnails:(BOOL)arg3;
 - (void)_createScrubberIfNeeded;
+- (void)_deleteFileAtPath:(id)arg1;
 - (void)_didBeginPlayback;
 - (BOOL)_didEditSlalom;
+- (BOOL)_didInsertMoviePlayerView;
 - (void)_didScrubToValue:(double)arg1 withHandle:(int)arg2;
 - (BOOL)_didSetPhotoData;
 - (void)_displayPlaySpinner;
 - (void)_exportCompletedWithSuccess:(BOOL)arg1;
+- (id)_filePathForFlattenedVideo;
+- (id)_filePathForFlattenedVideoMetadata;
+- (void)_flattenVideoWithCompletionHandler:(id)arg1;
 - (void)_handleScreenConnectionChange:(BOOL)arg1;
 - (void)_hideTrimMessageView:(BOOL)arg1;
 - (void)_hideVideoOverlay:(BOOL)arg1;
 - (void)_informDelegateAboutProgressChange:(float)arg1;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
+- (void)_insertMoviePlayerViewIfNecessary;
 - (void)_invalidateSnapshotImage;
+- (BOOL)_isFlattenedVideoUpToDate;
 - (id)_loadThumbnailsIntoDictionary:(id)arg1 isLandscape:(BOOL)arg2 aspectRatio:(float)arg3;
 - (BOOL)_mediaIsPlayable;
 - (BOOL)_mediaIsStreamedVideo;
 - (BOOL)_mediaIsVideo;
+- (id)_metadataForFlattenedVideo;
 - (id)_moviePlayer;
 - (double)_movieScrubberDuration;
 - (double)_movieTimeFromScrubberTime:(double)arg1;
+- (void)_networkReachabilityDidChange:(id)arg1;
 - (id)_pathForOriginalFile;
 - (id)_pathForPrebakedLandscapeScrubberThumbnails;
 - (id)_pathForPrebakedPortraitScrubberThumbnails;
 - (id)_pathForVideoPreviewFile;
 - (void)_playbackFinished;
-- (void)_prepareMoviePlayerIfNeeded;
+- (BOOL)_playerIsAirplay;
+- (BOOL)_prepareMoviePlayerIfNeeded;
+- (id)_readMetadataFromPath:(id)arg1;
 - (void)_reloadScrubberThumbnailsIfNeeded;
 - (void)_removePlaySpinner;
 - (void)_removeScrubberUpdateTimer;
@@ -205,6 +224,7 @@
 - (void)_setSlalomRegions:(id)arg1;
 - (void)_setSlalomTimeRangeMapper:(id)arg1;
 - (void)_setupMoviePlayerIfNecessary;
+- (BOOL)_shouldPlayFlattenedVideo;
 - (BOOL)_shouldShowSlalomEditor;
 - (void)_showVideoOverlay;
 - (id)_slalomOriginalAsset;
@@ -231,6 +251,7 @@
 - (void)_verifyOrRestartPlayback;
 - (void)_videoOverlayFadeOutDidFinish;
 - (id)_videoSnapshot;
+- (void)_writeMetadata:(id)arg1 toPath:(id)arg2;
 - (BOOL)allowSlalomEditor;
 - (BOOL)canEdit;
 - (void)cancelTrim;
@@ -259,7 +280,9 @@
 - (void)moviePlayerControllerDidBecomeActiveController:(id)arg1;
 - (BOOL)moviePlayerControllerShouldAllowExternalPlayback:(id)arg1;
 - (void)moviePlayerControllerWillResignAsActiveController:(id)arg1;
+- (void)moviePlayerDidChangeExternalPlaybackType:(id)arg1;
 - (void)moviePlayerDurationAvailable:(id)arg1;
+- (void)moviePlayerEncounteredAuthenticationError:(id)arg1;
 - (BOOL)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
 - (void)moviePlayerHeadsetNextTrackPressed:(id)arg1;
 - (void)moviePlayerHeadsetPlayPausePressed:(id)arg1;
@@ -330,6 +353,7 @@
 - (void)setShowsScrubber:(BOOL)arg1;
 - (void)setTrimProgressStack:(id)arg1;
 - (void)setTrimmedVideoClip:(id)arg1;
+- (void)set_didInsertMoviePlayerView:(BOOL)arg1;
 - (BOOL)shouldPlayVideoWhenViewAppears;
 - (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showTrimMessage:(id)arg1 withBottomY:(float)arg2;

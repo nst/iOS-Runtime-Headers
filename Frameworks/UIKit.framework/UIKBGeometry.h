@@ -52,6 +52,7 @@
 @property(setter=setX:) struct { float x1; int x2; } x;
 @property(setter=setY:) struct { float x1; int x2; } y;
 
++ (id)codeStringForValue:(struct { float x1; int x2; })arg1;
 + (id)geometry;
 + (id)geometryWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
@@ -86,6 +87,7 @@
 - (void)setX:(struct { float x1; int x2; })arg1;
 - (void)setY:(struct { float x1; int x2; })arg1;
 - (id)shortDescription;
+- (BOOL)usesAutomaticMetrics;
 - (BOOL)usesPercentages;
 - (struct { float x1; int x2; })w;
 - (struct { float x1; int x2; })x;

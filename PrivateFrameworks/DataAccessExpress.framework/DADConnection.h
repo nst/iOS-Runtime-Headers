@@ -17,6 +17,7 @@
     NSMutableDictionary *_inFlightSearchQueries;
     NSMutableDictionary *_inFlightShareRequests;
     NSObject<OS_dispatch_queue> *_muckingWithConn;
+    NSObject<OS_dispatch_queue> *_muckingWithInFlightCollections;
     id _statusReportBlock;
 }
 

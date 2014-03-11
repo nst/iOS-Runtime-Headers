@@ -7,7 +7,10 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface TSTArgumentPlaceholderNode : TSTExpressionNode {
+    NSString *mDetokenizedText;
     short mMode;
 }
 
@@ -31,6 +34,7 @@
 - (id)initWithContext:(id)arg1 firstIndex:(unsigned int)arg2 lastIndex:(unsigned int)arg3;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
 - (short)mode;
+- (void)p_invalidate;
 - (void)saveToArchive:(struct ArgumentPlaceholderNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; unsigned int x4; unsigned int x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setArgumentSpec:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface VKPShieldIndex : PBCodable {
+@interface VKPShieldIndex : PBCodable <NSCopying> {
     NSMutableArray *_entries;
     NSMutableArray *_textEntries;
 }
@@ -18,6 +18,7 @@
 - (void)clearEntries;
 - (void)clearTextEntries;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

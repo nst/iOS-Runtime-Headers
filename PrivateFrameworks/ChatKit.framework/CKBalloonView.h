@@ -27,6 +27,7 @@
 }
 
 @property BOOL canUseOpaqueMask;
+@property(retain) CKBalloonControl * control;
 @property NSObject<CKBalloonViewDelegate> * delegate;
 @property(retain) CKManualUpdater * displayUpdater;
 @property(readonly) UITapGestureRecognizer * doubleTapGestureRecognizer;
@@ -47,6 +48,7 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canUseOpaqueMask;
 - (void)configureForMessagePart:(id)arg1;
+- (id)control;
 - (void)dealloc;
 - (id)delegate;
 - (SEL)delegateActionForAction:(SEL)arg1;
@@ -73,6 +75,7 @@
 - (void)prepareForReuse;
 - (BOOL)resignFirstResponder;
 - (void)setCanUseOpaqueMask:(BOOL)arg1;
+- (void)setControl:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayUpdater:(id)arg1;
 - (void)setFilled:(BOOL)arg1;

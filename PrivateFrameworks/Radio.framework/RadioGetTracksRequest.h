@@ -2,44 +2,47 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, RadioStation, SSURLConnectionRequest;
+@class NSData, RadioPlayEventCollection, RadioPlaybackContext, RadioStation, SSURLConnectionRequest;
 
 @interface RadioGetTracksRequest : RadioRequest {
     unsigned long long _globalVersion;
+    NSData *_heartbeatTokenData;
     BOOL _includeCleanTracksOnly;
     unsigned int _numberOfTracks;
-    BOOL _replaceExistingTracks;
+    RadioPlayEventCollection *_playEventCollection;
+    RadioPlaybackContext *_playbackContext;
+    int _reasonType;
     SSURLConnectionRequest *_request;
+    BOOL _shouldIncludeAsset;
     RadioStation *_station;
-    id _storeIdentifiersBlock;
-    NSArray *_tracksToRemove;
 }
 
+@property(copy) NSData * heartbeatTokenData;
 @property BOOL includeCleanTracksOnly;
 @property unsigned int numberOfTracks;
-@property BOOL replaceExistingTracks;
-@property(copy) id storeIdentifiersBlock;
-@property(copy) NSArray * tracksToRemove;
+@property(copy) RadioPlayEventCollection * playEventCollection;
+@property(copy) RadioPlaybackContext * playbackContext;
+@property int reasonType;
+@property BOOL shouldIncludeAsset;
 
 - (void).cxx_destruct;
 - (void)cancel;
+- (id)heartbeatTokenData;
 - (BOOL)includeCleanTracksOnly;
 - (id)init;
 - (id)initWithStation:(id)arg1 globalVersion:(unsigned long long)arg2;
 - (unsigned int)numberOfTracks;
-- (BOOL)replaceExistingTracks;
+- (id)playEventCollection;
+- (id)playbackContext;
+- (int)reasonType;
+- (void)setHeartbeatTokenData:(id)arg1;
 - (void)setIncludeCleanTracksOnly:(BOOL)arg1;
 - (void)setNumberOfTracks:(unsigned int)arg1;
-- (void)setReplaceExistingTracks:(BOOL)arg1;
-- (void)setStoreIdentifiersBlock:(id)arg1;
-- (void)setTracksToRemove:(id)arg1;
+- (void)setPlayEventCollection:(id)arg1;
+- (void)setPlaybackContext:(id)arg1;
+- (void)setReasonType:(int)arg1;
+- (void)setShouldIncludeAsset:(BOOL)arg1;
+- (BOOL)shouldIncludeAsset;
 - (void)startWithCompletionHandler:(id)arg1;
-- (void)startWithGetTracksCompletionHandler:(id)arg1;
-- (id)storeIdentifiersBlock;
-- (id)tracksToRemove;
 
 @end

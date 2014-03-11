@@ -6,7 +6,8 @@
 }
 
 + (id)_assetFromSourceAsset:(id)arg1 sourceDuration:(double)arg2 slalomRegions:(id)arg3 forExport:(BOOL)arg4 outDuration:(double*)arg5 outAudioMix:(id*)arg6;
-+ (BOOL)_scaleComposition:(id)arg1 regions:(id)arg2 forExport:(BOOL)arg3 outTimeRangeMapper:(id*)arg4;
++ (BOOL)_scaleComposition:(id)arg1 baseDuration:(double)arg2 regions:(id)arg3 forExport:(BOOL)arg4 outTimeRangeMapper:(id*)arg5;
++ (double)_scaleWithinComposition:(id)arg1 fromCursor:(double)arg2 timeStep:(double)arg3 rate:(float)arg4 timeRangeMapper:(id)arg5;
 + (id)_setVolume:(float)arg1 forSlalomRegionsInTrack:(id)arg2 timeRangeMapper:(id)arg3;
 + (float)_slalomRampVolume;
 + (float)_slalomVolume;
@@ -20,6 +21,7 @@
 + (double)durationForBaseDuration:(double)arg1 slalomRegions:(id)arg2;
 + (double)durationForManagedAsset:(id)arg1 applySlalomRegions:(BOOL)arg2;
 + (id)exportPresetForAsset:(id)arg1 preferredPreset:(id)arg2;
++ (id)plistFromPath:(id)arg1;
 + (id)plistFromRegions:(id)arg1;
 + (int)preferredTimeScale;
 + (id)regionsForStartTime:(double)arg1 endTime:(double)arg2;

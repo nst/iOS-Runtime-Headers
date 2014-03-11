@@ -34,6 +34,7 @@
 + (id)_storeDownloadForCompletionOffer:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)_storeDownloadForMediaItem:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadForCompletionOffering:(id)arg1 type:(int)arg2 attributes:(id)arg3;
++ (id)storeDownloadForStoreItemOffer:(id)arg1 attributes:(id)arg2;
 + (id)storeDownloadsForMediaItems:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadsForMediaQuery:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadsForRadioTracks:(id)arg1 type:(int)arg2 attributes:(id)arg3;

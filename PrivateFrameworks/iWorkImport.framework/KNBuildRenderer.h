@@ -24,6 +24,7 @@
     int mNumberOfAnimationsStarted;
     CALayer *mParentLayer;
     NSDictionary *mPreviousAttributes;
+    BOOL mShouldUseMagicMoveTextures;
     int mStageIndex;
     TSDTextureContext *mTextureContext;
     TSDTextureSet *mTextureSet;
@@ -60,6 +61,7 @@
 - (void)forceRemoveAnimations;
 - (id)info;
 - (id)initWithInfo:(id)arg1 build:(id)arg2 stageIndex:(int)arg3 session:(id)arg4 model:(id)arg5 animatedSlideView:(id)arg6;
+- (id)initializeTextureSetForEndOfBuild:(BOOL)arg1 context:(id)arg2;
 - (id)initializeTextureSetForEndOfBuild:(BOOL)arg1;
 - (BOOL)isTextDrawable;
 - (id)loadPluginIfNeeded;

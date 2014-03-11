@@ -10,6 +10,7 @@
 
 + (BOOL)isErrorStatusCode:(int)arg1;
 + (id)localizedStringForStatusCode:(int)arg1;
++ (id)sl_twitterResponseObjectErrorCode:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (id)_clientCertificateChain;
@@ -33,6 +34,8 @@
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
 - (long long)maxExpectedContentLength;
+- (void)radio_mescalVerifyData:(id)arg1 withCompletionHandler:(id)arg2;
+- (int)sl_twitterResponseType:(id)arg1;
 - (int)statusCode;
 
 @end

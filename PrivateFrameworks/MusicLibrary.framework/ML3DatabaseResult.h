@@ -2,27 +2,35 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseStatement, NSDictionary;
+@class ML3DatabaseStatement, NSDictionary, NSString;
 
 @interface ML3DatabaseResult : NSObject {
     NSDictionary *_columnNameIndexMap;
+    unsigned int _limitIndex;
+    NSString *_limitProperty;
+    long long _limitValue;
     ML3DatabaseStatement *_statement;
 }
 
-@property(readonly) ML3DatabaseStatement * statement;
+@property(copy) NSString * limitProperty;
+@property long long limitValue;
 
 - (void).cxx_destruct;
+- (id)_statement;
 - (id)columnNameIndexMap;
-- (void)dealloc;
 - (void)enumerateRowsWithBlock:(id)arg1;
 - (BOOL)hasAtLeastOneRow;
 - (unsigned int)indexForColumnName:(id)arg1;
 - (id)init;
 - (id)initWithStatement:(id)arg1;
 - (long long)int64ValueForFirstRowAndColumn;
+- (id)limitProperty;
+- (long long)limitValue;
 - (id)objectForFirstRowAndColumn;
 - (id)rows;
-- (id)statement;
+- (void)setLimitProperty:(id)arg1 limitValue:(long long)arg2;
+- (void)setLimitProperty:(id)arg1;
+- (void)setLimitValue:(long long)arg1;
 - (id)stringValueForFirstRowAndColumn;
 
 @end

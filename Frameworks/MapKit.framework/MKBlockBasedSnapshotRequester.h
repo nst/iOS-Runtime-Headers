@@ -14,7 +14,7 @@
 
 + (id)snapshotRequesterWitHandler:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)handler;
 - (void)mapSnapshotCreator:(id)arg1 didCreateSnapshot:(id)arg2 attributionString:(id)arg3 context:(id)arg4;
 - (void)setHandler:(id)arg1;

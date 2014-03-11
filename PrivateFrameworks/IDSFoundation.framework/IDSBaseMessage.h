@@ -36,6 +36,7 @@
 @property(readonly) NSData * IDCertificate;
 @property(setter=_setCachedBody:,retain) NSDictionary * _cachedBody;
 @property(setter=_setUsingOutgoingPush:) BOOL _usingOutgoingPush;
+@property(readonly) NSDictionary * additionalInternalHeaders;
 @property(readonly) NSDictionary * additionalMessageHeaders;
 @property(readonly) NSDictionary * additionalMessageHeadersForOutgoingPush;
 @property(readonly) NSDictionary * additionalQueryStringParameters;
@@ -103,6 +104,7 @@
 - (void)_setCachedBody:(id)arg1;
 - (void)_setUsingOutgoingPush:(BOOL)arg1;
 - (BOOL)_usingOutgoingPush;
+- (id)additionalInternalHeaders;
 - (id)additionalMessageHeaders;
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalQueryStringParameters;

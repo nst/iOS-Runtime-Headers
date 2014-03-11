@@ -295,6 +295,7 @@
 - (id)initWithLiteralTextType:(int)arg1 string:(id)arg2 argumentCellReference:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg3 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg4;
 - (id)initWithPredicateType:(int)arg1 arg1:(struct { int x1; union { id x_2_1_1; id x_2_1_2; id x_2_1_3; struct { unsigned char x_4_2_1; unsigned short x_4_2_2; struct __CFUUID {} *x_4_2_3; BOOL x_4_2_4; BOOL x_4_2_5; } x_2_1_4; struct { double x_5_2_1; int x_5_2_2; } x_2_1_5; } x2; })arg2 arg2:(struct { int x1; union { id x_2_1_1; id x_2_1_2; id x_2_1_3; struct { unsigned char x_4_2_1; unsigned short x_4_2_2; struct __CFUUID {} *x_4_2_3; BOOL x_4_2_4; BOOL x_4_2_5; } x_2_1_4; struct { double x_5_2_1; int x_5_2_2; } x_2_1_5; } x2; })arg3 qualifier1:(int)arg4 qualifier2:(int)arg5 argumentCellReference:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg6 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg7;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualForInspector:(id)arg1 atHostCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (int)nodeTag0;
 - (int)nodeTag1;
 - (int)nodeTag2;
@@ -303,7 +304,9 @@
 - (void)p_appendASTForPeriodBoundary:(struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 scale:(int)arg2 direction:(int)arg3 offset:(struct { int x1; union { id x_2_1_1; id x_2_1_2; id x_2_1_3; struct { unsigned char x_4_2_1; unsigned short x_4_2_2; struct __CFUUID {} *x_4_2_3; BOOL x_4_2_4; BOOL x_4_2_5; } x_2_1_4; struct { double x_5_2_1; int x_5_2_2; } x_2_1_5; } x2; })arg4 offsetParamIndex:(int*)arg5 numNodes:(int*)arg6 earlierBound:(BOOL)arg7 isCalPers:(BOOL)arg8 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg9;
 - (int)p_argTypeForNodeTag:(int)arg1 argNum:(unsigned int)arg2 calculationEngine:(id)arg3 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg4;
 - (void)p_clearDerivedVariables;
+- (BOOL)p_isEqualForNonFormulaItems:(id)arg1;
 - (void)p_populateMembersFromFormula;
+- (BOOL)p_predicateArg:(struct { int x1; union { id x_2_1_1; id x_2_1_2; id x_2_1_3; struct { unsigned char x_4_2_1; unsigned short x_4_2_2; struct __CFUUID {} *x_4_2_3; BOOL x_4_2_4; BOOL x_4_2_5; } x_2_1_4; struct { double x_5_2_1; int x_5_2_2; } x_2_1_5; } x2; }*)arg1 isEqual:(struct { int x1; union { id x_2_1_1; id x_2_1_2; id x_2_1_3; struct { unsigned char x_4_2_1; unsigned short x_4_2_2; struct __CFUUID {} *x_4_2_3; BOOL x_4_2_4; BOOL x_4_2_5; } x_2_1_4; struct { double x_5_2_1; int x_5_2_2; } x_2_1_5; } x2; }*)arg2;
 - (void)p_setParamIndex0:(int)arg1;
 - (void)p_setParamIndex1:(int)arg1;
 - (void)p_setParamIndex2:(int)arg1;

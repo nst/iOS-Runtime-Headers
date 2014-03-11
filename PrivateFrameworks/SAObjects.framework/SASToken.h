@@ -17,6 +17,7 @@
 + (id)token;
 + (id)tokenWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)af_speechToken;
 - (id)confidenceScore;
 - (id)encodedClassName;
 - (id)endTime;

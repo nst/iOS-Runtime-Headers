@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface VKPShieldIndexTextEntry : PBCodable {
+@interface VKPShieldIndexTextEntry : PBCodable <NSCopying> {
     struct { 
         unsigned int shieldType : 1; 
     NSString *_artworkIdentifier;
@@ -23,6 +23,7 @@
 - (id)artworkIdentifier;
 - (void)clearShieldTexts;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

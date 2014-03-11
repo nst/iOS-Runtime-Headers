@@ -5,12 +5,14 @@
 @class NSArray, NSString;
 
 @interface SLMicroBlogStatus : NSObject <NSSecureCoding> {
+    NSArray *_imageAssetURLs;
     NSArray *_imageData;
     NSString *_maskedApplicationID;
     NSString *_statusText;
 }
 
-@property NSArray * imageData;
+@property(retain) NSArray * imageAssetURLs;
+@property(retain) NSArray * imageData;
 @property(retain) NSString * maskedApplicationID;
 @property(retain) NSString * statusText;
 
@@ -18,9 +20,12 @@
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
+- (id)imageAssetURLs;
 - (id)imageData;
 - (id)initWithCoder:(id)arg1;
+- (void)loadAssetDataIfNecessaryWithMaxByteSize:(unsigned int)arg1 completion:(id)arg2;
 - (id)maskedApplicationID;
+- (void)setImageAssetURLs:(id)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setMaskedApplicationID:(id)arg1;
 - (void)setStatusText:(id)arg1;

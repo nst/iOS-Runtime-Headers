@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotosSectionHeaderViewDelegate>, NSArray, NSDate, NSString, UIButton, UIImageView, UILabel, UIView, _UIBackdropView;
+@class <PUPhotosSectionHeaderViewDelegate>, NSArray, NSDate, NSString, PUPhotosSectionHeaderContentView, UIButton, UIImageView, UILabel, UIView, _UIBackdropView;
 
 @interface PUPhotosSectionHeaderView : UICollectionReusableView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
+    struct CGSize { 
+        float width; 
+        float height; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -25,21 +24,26 @@
         float bottom; 
         float right; 
     UIButton *_actionButton;
-    } _actionButtonLabelInitialFrame;
+    } _actionButtonInitialContentInsets;
+    } _actionButtonInitialSize;
+    float _actionButtonLabelInitialMaxY;
     NSString *_actionButtonTitle;
     BOOL _allowsLocationInteraction;
     _UIBackdropView *_backdropView;
     NSString *_backdropViewGroupName;
     unsigned int _backgroundStyle;
     } _contentInsets;
+    PUPhotosSectionHeaderContentView *_contentView;
     UILabel *_dateLabel;
     <PUPhotosSectionHeaderViewDelegate> *_delegate;
     BOOL _generateDefaultTitleFromDates;
     } _highlightInsets;
     UIView *_highlightView;
     BOOL _highlightViewVisible;
+    BOOL _inLayoutTransition;
     UIImageView *_locationsIconView;
     UILabel *_locationsLabel;
+    BOOL _performingBatchDateDependentUpdate;
     NSDate *_sectionEndDate;
     int _sectionIndex;
     NSArray *_sectionLocations;
@@ -90,14 +94,14 @@
 - (void)_setHighlightViewVisible:(BOOL)arg1;
 - (void)_setUsingBackgroundBlur:(BOOL)arg1;
 - (void)_updateActionButton;
-- (void)_updateAllowsLocationInteractionAnimated:(BOOL)arg1;
 - (void)_updateBackdropViewGroupName;
 - (void)_updateBackground;
-- (void)_updateDateDependentLabelsAnimated:(BOOL)arg1;
-- (void)_updateDateLabelAnimated:(BOOL)arg1;
+- (void)_updateDateDependentLabels;
+- (void)_updateDateLabel;
 - (void)_updateHighlightView;
-- (void)_updateLocationsLabelVisibilityAnimated:(BOOL)arg1;
-- (void)_updateTitleLabelAnimated:(BOOL)arg1;
+- (void)_updateLocationsIconVisibility;
+- (void)_updateLocationsLabelVisibility;
+- (void)_updateTitleLabel;
 - (BOOL)_usingDateAsTitle;
 - (id)actionButtonTitle;
 - (BOOL)allowLocationTapForTouch:(id)arg1;
@@ -108,11 +112,13 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)dealloc;
 - (id)delegate;
+- (void)didEndDisplaying;
+- (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (BOOL)generateDefaultTitleFromDates;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })highlightInsets;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)prepareBackdropViewForBackground;
+- (void)performBatchUpdateOfDateDependentPropertiesWithBlock:(id)arg1;
 - (void)prepareForReuse;
 - (id)sectionEndDate;
 - (int)sectionIndex;
@@ -120,7 +126,6 @@
 - (id)sectionStartDate;
 - (id)sectionTitle;
 - (void)setActionButtonTitle:(id)arg1;
-- (void)setAllowsLocationInteraction:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setAllowsLocationInteraction:(BOOL)arg1;
 - (void)setBackdropViewGroupName:(id)arg1;
 - (void)setBackgroundStyle:(unsigned int)arg1;
@@ -129,10 +134,8 @@
 - (void)setGenerateDefaultTitleFromDates:(BOOL)arg1 yearOnly:(BOOL)arg2;
 - (void)setHighlightInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSectionIndex:(int)arg1;
-- (void)setSectionLocations:(id)arg1 animated:(BOOL)arg2;
 - (void)setSectionLocations:(id)arg1;
-- (void)setSectionStartDate:(id)arg1 endDate:(id)arg2 animated:(BOOL)arg3;
-- (void)setSectionTitle:(id)arg1 animated:(BOOL)arg2;
+- (void)setSectionStartDate:(id)arg1 endDate:(id)arg2;
 - (void)setSectionTitle:(id)arg1;
 - (void)setShowsActionButton:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
@@ -144,5 +147,6 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)useYearOnlyForDefaultTitle;
+- (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 
 @end

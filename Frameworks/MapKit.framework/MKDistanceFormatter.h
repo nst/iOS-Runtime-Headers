@@ -14,8 +14,8 @@
 @property unsigned int unitStyle;
 @property unsigned int units;
 
+- (void).cxx_destruct;
 - (BOOL)_useMetric;
-- (void)dealloc;
 - (id)description;
 - (double)distanceFromString:(id)arg1;
 - (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;

@@ -17,7 +17,7 @@
     BOOL mDidDrag;
     BOOL mDragEnding;
     BOOL mEndedOperationDueToESC;
-    BOOL mIsKnoblessTracking;
+    BOOL mIsInspectorDrivenTracking;
     TSDKnob *mKnob;
     } mKnobOffset;
     TSDRep *mRep;
@@ -31,7 +31,7 @@
 @property BOOL dragEnding;
 @property(readonly) BOOL endedOperationDueToESC;
 @property(readonly) TSDInteractiveCanvasController * icc;
-@property BOOL isKnoblessTracking;
+@property BOOL isInspectorDrivenTracking;
 @property(retain) TSDKnob * knob;
 @property(readonly) struct CGPoint { float x1; float x2; } knobOffset;
 @property(retain) TSDRep * rep;
@@ -58,7 +58,7 @@
 - (void)i_setKnobOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)icc;
 - (id)initWithRep:(id)arg1 knob:(id)arg2;
-- (BOOL)isKnoblessTracking;
+- (BOOL)isInspectorDrivenTracking;
 - (id)knob;
 - (struct CGPoint { float x1; float x2; })knobOffset;
 - (void)moveKnobToCanvasPosition:(struct CGPoint { float x1; float x2; })arg1;
@@ -69,7 +69,7 @@
 - (void)setCurrentPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDidDrag:(BOOL)arg1;
 - (void)setDragEnding:(BOOL)arg1;
-- (void)setIsKnoblessTracking:(BOOL)arg1;
+- (void)setIsInspectorDrivenTracking:(BOOL)arg1;
 - (void)setKnob:(id)arg1;
 - (void)setRep:(id)arg1;
 - (BOOL)shouldEndMovingKnobOnESC;

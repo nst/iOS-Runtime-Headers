@@ -6,9 +6,13 @@
 }
 
 + (id)fullNameFromServiceCode:(id)arg1;
-+ (id)getBasebandTime;
-+ (id)getBasebandTimeWithAPTimestamp:(id*)arg1;
-+ (id)getLTESleepManagerStats;
++ (id)sharedQMIClient;
 + (id)shortNameFromServiceCode:(id)arg1;
+
+- (void)dealloc;
+- (id)getBasebandTime;
+- (id)getBasebandTimeWithAPTimestamp:(id*)arg1;
+- (id)getLTESleepManagerStats;
+- (id)init;
 
 @end

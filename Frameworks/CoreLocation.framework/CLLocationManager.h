@@ -120,6 +120,8 @@
 - (void)onClientEventRegionResponseDelayed:(id)arg1;
 - (void)onClientEventRegionSetupCompleted:(id)arg1;
 - (void)onClientEventRegionState:(id)arg1;
+- (void)onClientEventVehicleHeading:(id)arg1;
+- (void)onClientEventVehicleSpeed:(id)arg1;
 - (void)onDidBecomeActive:(id)arg1;
 - (void)pauseLocationUpdates:(BOOL)arg1;
 - (BOOL)pausesLocationUpdatesAutomatically;
@@ -151,6 +153,8 @@
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
 - (void)startUpdatingLocationWithPrompt;
+- (void)startUpdatingVehicleHeading;
+- (void)startUpdatingVehicleSpeed;
 - (void)stopAppStatusUpdates;
 - (void)stopMonitoringForRegion:(id)arg1;
 - (void)stopMonitoringSignificantLocationChanges;
@@ -158,6 +162,8 @@
 - (void)stopTechStatusUpdates;
 - (void)stopUpdatingHeading;
 - (void)stopUpdatingLocation;
+- (void)stopUpdatingVehicleHeading;
+- (void)stopUpdatingVehicleSpeed;
 - (BOOL)supportInfo;
 - (id)technologiesInUse;
 

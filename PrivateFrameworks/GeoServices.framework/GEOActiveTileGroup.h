@@ -17,6 +17,8 @@
     NSString *_locationShiftURL;
     NSString *_mapMatchURL;
     NSString *_polyLocationShiftURL;
+    NSString *_problemCategoriesURL;
+    NSString *_problemNotificationAvailabilityURL;
     NSString *_problemStatusURL;
     NSString *_problemSubmissionURL;
     NSMutableArray *_regionalResourceRegions;
@@ -26,11 +28,13 @@
     NSMutableArray *_resources;
     NSString *_resourcesURL;
     NSString *_reverseGeocoderURL;
+    NSString *_reverseGeocoderVersionsURL;
     NSString *_searchAttributionManifestURL;
     NSString *_searchURL;
     NSString *_simpleETAURL;
     NSMutableArray *_tileSets;
     NSString *_uniqueIdentifier;
+    NSString *_usageURL;
 }
 
 @property(retain) NSString * addressCorrectionInitURL;
@@ -51,20 +55,26 @@
 @property(readonly) BOOL hasLocationShiftURL;
 @property(readonly) BOOL hasMapMatchURL;
 @property(readonly) BOOL hasPolyLocationShiftURL;
+@property(readonly) BOOL hasProblemCategoriesURL;
+@property(readonly) BOOL hasProblemNotificationAvailabilityURL;
 @property(readonly) BOOL hasProblemStatusURL;
 @property(readonly) BOOL hasProblemSubmissionURL;
 @property(readonly) BOOL hasRegionalResourcesURL;
 @property(readonly) BOOL hasReleaseInfo;
 @property(readonly) BOOL hasResourcesURL;
 @property(readonly) BOOL hasReverseGeocoderURL;
+@property(readonly) BOOL hasReverseGeocoderVersionsURL;
 @property(readonly) BOOL hasSearchAttributionManifestURL;
 @property(readonly) BOOL hasSearchURL;
 @property(readonly) BOOL hasSimpleETAURL;
 @property(readonly) BOOL hasUniqueIdentifier;
+@property(readonly) BOOL hasUsageURL;
 @property unsigned int identifier;
 @property(retain) NSString * locationShiftURL;
 @property(retain) NSString * mapMatchURL;
 @property(retain) NSString * polyLocationShiftURL;
+@property(retain) NSString * problemCategoriesURL;
+@property(retain) NSString * problemNotificationAvailabilityURL;
 @property(retain) NSString * problemStatusURL;
 @property(retain) NSString * problemSubmissionURL;
 @property(retain) NSMutableArray * regionalResourceRegions;
@@ -74,11 +84,13 @@
 @property(retain) NSMutableArray * resources;
 @property(retain) NSString * resourcesURL;
 @property(retain) NSString * reverseGeocoderURL;
+@property(retain) NSString * reverseGeocoderVersionsURL;
 @property(retain) NSString * searchAttributionManifestURL;
 @property(retain) NSString * searchURL;
 @property(retain) NSString * simpleETAURL;
 @property(retain) NSMutableArray * tileSets;
 @property(retain) NSString * uniqueIdentifier;
+@property(retain) NSString * usageURL;
 
 - (id)_activeTileSetForStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;
 - (void)_resetBestLanguages;
@@ -121,6 +133,8 @@
 - (BOOL)hasLocationShiftURL;
 - (BOOL)hasMapMatchURL;
 - (BOOL)hasPolyLocationShiftURL;
+- (BOOL)hasProblemCategoriesURL;
+- (BOOL)hasProblemNotificationAvailabilityURL;
 - (BOOL)hasProblemStatusURL;
 - (BOOL)hasProblemSubmissionURL;
 - (BOOL)hasRegionalResourcesForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
@@ -128,10 +142,12 @@
 - (BOOL)hasReleaseInfo;
 - (BOOL)hasResourcesURL;
 - (BOOL)hasReverseGeocoderURL;
+- (BOOL)hasReverseGeocoderVersionsURL;
 - (BOOL)hasSearchAttributionManifestURL;
 - (BOOL)hasSearchURL;
 - (BOOL)hasSimpleETAURL;
 - (BOOL)hasUniqueIdentifier;
+- (BOOL)hasUsageURL;
 - (unsigned int)hash;
 - (unsigned int)identifier;
 - (BOOL)isAvailableForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
@@ -143,6 +159,8 @@
 - (id)mapMatchURL;
 - (id)multiTileURLStringForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 useStatusCodes:(BOOL*)arg2;
 - (id)polyLocationShiftURL;
+- (id)problemCategoriesURL;
+- (id)problemNotificationAvailabilityURL;
 - (id)problemStatusURL;
 - (id)problemSubmissionURL;
 - (BOOL)readFrom:(id)arg1;
@@ -161,6 +179,7 @@
 - (unsigned int)resourcesCount;
 - (id)resourcesURL;
 - (id)reverseGeocoderURL;
+- (id)reverseGeocoderVersionsURL;
 - (id)searchAttributionManifestURL;
 - (id)searchURL;
 - (void)setAddressCorrectionInitURL:(id)arg1;
@@ -175,6 +194,8 @@
 - (void)setLocationShiftURL:(id)arg1;
 - (void)setMapMatchURL:(id)arg1;
 - (void)setPolyLocationShiftURL:(id)arg1;
+- (void)setProblemCategoriesURL:(id)arg1;
+- (void)setProblemNotificationAvailabilityURL:(id)arg1;
 - (void)setProblemStatusURL:(id)arg1;
 - (void)setProblemSubmissionURL:(id)arg1;
 - (void)setRegionalResourceRegions:(id)arg1;
@@ -184,11 +205,13 @@
 - (void)setResources:(id)arg1;
 - (void)setResourcesURL:(id)arg1;
 - (void)setReverseGeocoderURL:(id)arg1;
+- (void)setReverseGeocoderVersionsURL:(id)arg1;
 - (void)setSearchAttributionManifestURL:(id)arg1;
 - (void)setSearchURL:(id)arg1;
 - (void)setSimpleETAURL:(id)arg1;
 - (void)setTileSets:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
+- (void)setUsageURL:(id)arg1;
 - (id)simpleETAURL;
 - (BOOL)supportsTileStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;
 - (id)tileSetAtIndex:(unsigned int)arg1;
@@ -196,6 +219,7 @@
 - (unsigned int)tileSetsCount;
 - (double)timeToLiveForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)uniqueIdentifier;
+- (id)usageURL;
 - (unsigned int)versionForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <UIViewControllerTransitioningDelegate>, <_UIViewControllerContentViewEmbedding>, MusicPickerOverlay, NSArray, NSBundle, NSDictionary, NSLayoutConstraint, NSMutableArray, NSString, PUModalTransition, PUNavigationTransition, SUStorePageProtocol, SUViewControllerFactory, UIBarButtonItem, UIDropShadowView, UIImage, UINavigationController, UINavigationItem, UIPopoverController, UIResponder, UIScrollView, UISearchDisplayController, UISplitViewController, UIStoryboard, UITabBarController, UITabBarItem, UITransitionView, UIView, UIViewController, UIWindow, _ADUIViewControllerAdController, _UILayoutGuide;
+@class <UIViewControllerTransitioningDelegate>, <_UIViewControllerContentViewEmbedding>, MusicPickerOverlay, NSArray, NSBundle, NSDictionary, NSLayoutConstraint, NSMutableArray, NSString, PUModalTransition, PUNavigationTransition, SUStorePageProtocol, SUViewControllerFactory, UIBarButtonItem, UIDropShadowView, UINavigationController, UINavigationItem, UIPopoverController, UIResponder, UIScrollView, UISearchDisplayController, UISplitViewController, UIStoryboard, UITabBarController, UITabBarItem, UITransitionView, UIView, UIViewController, UIWindow, _ADUIViewControllerAdController, _UIBackdropView, _UILayoutGuide;
 
 @interface UIViewController : UIResponder <_UIViewServiceDeputy, NSCoding, UIAppearanceContainer, GKContentRefresh, GKURLHandling> {
     struct CGSize { 
@@ -141,7 +141,6 @@
     NSLayoutConstraint *_topBarInsetGuideConstraint;
     _UILayoutGuide *_topLayoutGuide;
     NSArray *_topLevelObjectsToKeepAliveFromStoryboard;
-    <UIViewControllerTransitioningDelegate> *_transitionDelegate;
     <UIViewControllerTransitioningDelegate> *_transitioningDelegate;
     UIView *_view;
     } _viewControllerFlags;
@@ -149,12 +148,8 @@
 }
 
 @property(readonly) int ITunesStoreUIBarStyle;
-@property(getter=MPU_accessoryType,readonly) int MPU_accessoryType;
 @property(getter=MPU_identifier,setter=MPU_setIdentifier:,copy) NSString * MPU_identifier;
-@property(getter=MPU_moreListImage,setter=MPU_setMoreListImage:,retain) UIImage * MPU_moreListImage;
-@property(getter=MPU_selectedMoreListImage,setter=MPU_setSelectedMoreListImage:,retain) UIImage * MPU_selectedMoreListImage;
-@property(getter=MPU_isStatusBarHidden,readonly) BOOL MPU_statusBarHidden;
-@property(getter=MPU_statusBarStyle,readonly) int MPU_statusBarStyle;
+@property(readonly) _UIBackdropView * SKUIPinnedHeaderView;
 @property(readonly) NSLayoutConstraint * _bottomBarInsetGuideConstraint;
 @property(setter=_setContentOverlayInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _contentOverlayInsets;
 @property(readonly) <_UIViewControllerContentViewEmbedding> * _embeddedDelegate;
@@ -258,12 +253,14 @@
 @property(retain) UITabBarItem * tabBarItem;
 @property(copy) NSString * title;
 @property(readonly) _UILayoutGuide * topLayoutGuide;
-@property(retain) <UIViewControllerTransitioningDelegate> * transitioningDelegate;
+@property <UIViewControllerTransitioningDelegate> * transitioningDelegate;
 @property(retain) UIView * view;
 @property(readonly) SUViewControllerFactory * viewControllerFactory;
 @property BOOL wantsFullScreenLayout;
 @property(getter=_window,readonly) UIWindow * window;
 
++ (id)MCD_carDisplayIdentifierForIdentifier:(id)arg1;
++ (void)MCD_registerViewControllerIdentifiers;
 + (id)MPU_defaultDataSourceForViewControllerWithIdentifier:(id)arg1;
 + (void)MPU_registerIdentifier:(id)arg1 withAttributes:(id)arg2 defaultQueryCreationHandler:(id)arg3;
 + (id)MPU_searchViewControllerForIdentifier:(id)arg1 withQuery:(id)arg2;
@@ -277,7 +274,7 @@
 + (id)_MPU_defaultQueryForIdentifier:(id)arg1;
 + (BOOL)_MPU_hasCreationInformationForIdentifier:(id)arg1;
 + (Class)_MPU_viewControllerClassForIdentifier:(id)arg1;
-+ (id)_MPU_viewControllerForIdentifier:(id)arg1 forSearch:(BOOL)arg2 withQuery:(id)arg3;
++ (id)_MPU_viewControllerForIdentifier:(id)arg1 forSearch:(BOOL)arg2 withQuery:(id)arg3 isDefaultQuery:(BOOL)arg4;
 + (id)_allDescriptions;
 + (void)_beginAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
 + (id)_currentStatusBarHiddenViewController;
@@ -295,8 +292,6 @@
 + (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2 ignoreInWindowCheck:(BOOL)arg3;
 + (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2;
 + (int)_keyboardDirectionForTransition:(int)arg1 isOrderingIn:(BOOL)arg2;
-+ (id)_music_queryForIdentifier:(id)arg1;
-+ (id)_music_sanitizedQueryForQuery:(id)arg1;
 + (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 + (BOOL)_preventsAppearanceProxyCustomization;
 + (id)_remoteViewControllerInterface;
@@ -319,7 +314,9 @@
 + (void)endTransitionSafety;
 + (id)existingNibNameMatchingClassName:(id)arg1 bundle:(id)arg2;
 + (void)initialize;
++ (id)music_queryForIdentifier:(id)arg1;
 + (void)music_registerViewControllerIdentifiers;
++ (id)music_sanitizedQueryForQuery:(id)arg1;
 + (void)prepareInterstitialAds;
 + (void)removeViewControllerForView:(id)arg1;
 + (void)setCustomTransitionDuration:(double)arg1;
@@ -331,15 +328,9 @@
 - (int)ITunesStoreUIBarStyle;
 - (BOOL)MPH_supportsCoverFlow;
 - (void)MPH_supportsCoverFlowDidChange;
-- (int)MPU_accessoryType;
 - (id)MPU_identifier;
-- (BOOL)MPU_isStatusBarHidden;
-- (id)MPU_moreListImage;
-- (id)MPU_selectedMoreListImage;
 - (void)MPU_setIdentifier:(id)arg1;
-- (void)MPU_setMoreListImage:(id)arg1;
-- (void)MPU_setSelectedMoreListImage:(id)arg1;
-- (int)MPU_statusBarStyle;
+- (id)SKUIPinnedHeaderView;
 - (void)__prepareForDisconnectionWithCompletionHandler:(id)arg1;
 - (unsigned int)__supportedInterfaceOrientations;
 - (void)__viewControllerWillBePresented:(BOOL)arg1;
@@ -364,7 +355,9 @@
 - (int)_appearState;
 - (id)_appearanceContainer;
 - (id)_appearanceGuideClass;
+- (id)_backdropBarGroupName;
 - (id)_backgroundColorForModalFormSheet;
+- (id)_barBackdropGroupNameForAncestorViewController:(id*)arg1;
 - (void)_beginAppearanceTransitionToViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_beginDelayingPresentation:(double)arg1 cancellationHandler:(id)arg2;
 - (void)_beginDelayingPresentation;
@@ -377,6 +370,7 @@
 - (BOOL)_canReloadView;
 - (void)_cancelDelayedPresentation:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })_centerForOrientation:(int)arg1;
+- (void)_cleanupLayoutGuides;
 - (void)_clearLastKnownInterfaceOrientation;
 - (void)_clearRecordedContentScrollView;
 - (id)_completionBlock;
@@ -418,6 +412,7 @@
 - (void)_endDelayingPresentation;
 - (void)_endDisablingInterfaceAutorotation;
 - (void)_endModalPresentationInPopover;
+- (void)_enumerateAncestorViewControllersUntilStop:(BOOL*)arg1 usingBlock:(id)arg2;
 - (void)_enumerateVisibleChildControllers:(BOOL)arg1 includePresentedChildren:(BOOL)arg2 usingBlock:(id)arg3;
 - (void)_executeAfterAppearanceBlock;
 - (id)_existingNavigationItem;
@@ -527,7 +522,6 @@
 - (void)_overlayPresentAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)_parentModalViewController;
 - (id)_parentViewController;
-- (id)_pl_innerViewController;
 - (id)_popoverController;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (int)_preferredInterfaceOrientationForPresentationInWindow:(id)arg1 fromInterfaceOrientation:(int)arg2;
@@ -649,6 +643,7 @@
 - (id)_viewControllerForRotation;
 - (id)_viewControllerForSupportedInterfaceOrientations;
 - (BOOL)_viewControllerUnderlapsStatusBar;
+- (BOOL)_viewControllerWasSelected;
 - (id)_viewControllersForRotationCallbacks;
 - (id)_viewForContentInPopover;
 - (id)_viewForModalPresentationInPopover;
@@ -804,6 +799,7 @@
 - (id)moreListSelectedImage;
 - (id)moreListTableCell;
 - (BOOL)music_beginPlaybackForVisibleContent;
+- (id)music_createNowPlayingButton;
 - (BOOL)music_hasContent;
 - (id)music_prospectivePlaybackInformation;
 - (void)music_prospectivePlaybackInformationDidChange;
@@ -990,6 +986,7 @@
 - (id)storyboardSegueTemplates;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tabBarController;
+- (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (id)tabBarItem;
 - (id)title;

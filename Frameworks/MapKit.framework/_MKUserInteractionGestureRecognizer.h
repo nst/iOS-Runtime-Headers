@@ -11,7 +11,7 @@
 
 @property <_MKUserInteractionGestureRecognizerTouchObserver> * touchObserver;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setTouchObserver:(id)arg1;
 - (id)touchObserver;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

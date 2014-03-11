@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSString, TSWPParagraphStyle;
 
-@interface TSWPTOCEntryData : NSObject {
+@interface TSWPTOCEntryData : TSPObject {
     NSString *_heading;
     TSWPParagraphStyle *_indexedStyle;
     int _numberFormat;
@@ -20,14 +25,19 @@
 
 + (id)tocEntryDataWithParagraphIndex:(unsigned int)arg1 pageNumber:(unsigned int)arg2 numberFormat:(int)arg3 heading:(id)arg4 indexedStyle:(id)arg5;
 
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)heading;
 - (id)indexedStyle;
+- (id)initFromUnarchiver:(id)arg1;
 - (id)initWithParagraphIndex:(unsigned int)arg1 pageNumber:(unsigned int)arg2 numberFormat:(int)arg3 heading:(id)arg4 indexedStyle:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
+- (void)loadFromArchive:(const struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3; unsigned int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; unsigned int x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
 - (int)numberFormat;
 - (unsigned int)pageNumber;
 - (unsigned int)paragraphIndex;
+- (void)saveToArchive:(struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3; unsigned int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; unsigned int x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchiver:(id)arg1;
 
 @end

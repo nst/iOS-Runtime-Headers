@@ -22,5 +22,6 @@
 - (void)setShouldParseResponse:(BOOL)arg1;
 - (void)setSongsRequestWithSessonID:(unsigned int)arg1 metadataFilter:(id)arg2 purchaseTokenListing:(id)arg3 queryFilter:(id)arg4;
 - (BOOL)shouldParseResponse;
+- (double)timeoutInterval;
 
 @end

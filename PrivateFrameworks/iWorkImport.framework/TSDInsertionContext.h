@@ -9,13 +9,14 @@
 @property(readonly) BOOL hasPreferredCenter;
 @property(readonly) BOOL insertFloating;
 @property(readonly) BOOL insertFromDrag;
+@property(readonly) BOOL insertWillBeDiscarded;
 @property(getter=isInteractive,readonly) BOOL interactive;
 @property(readonly) struct CGPoint { float x1; float x2; } preferredCenter;
 @property(getter=isPreferredCenterRequired,readonly) BOOL preferredCenterRequired;
 @property(readonly) BOOL shouldEndEditing;
 
-+ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { float x1; float x2; })arg1 required:(BOOL)arg2 fromDragToInsertController:(BOOL)arg3;
-+ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { float x1; float x2; })arg1 required:(BOOL)arg2 shouldEndEditing:(BOOL)arg3 fromDragToInsertController:(BOOL)arg4;
++ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { float x1; float x2; })arg1 required:(BOOL)arg2 fromDragToInsertController:(BOOL)arg3 insertWillBeDiscarded:(BOOL)arg4;
++ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { float x1; float x2; })arg1 required:(BOOL)arg2 shouldEndEditing:(BOOL)arg3 fromDragToInsertController:(BOOL)arg4 insertWillBeDiscarded:(BOOL)arg5;
 + (id)nonInteractiveFloatingInsertionContext;
 + (id)nonInteractiveInsertionContext;
 
@@ -24,6 +25,7 @@
 - (id)init;
 - (BOOL)insertFloating;
 - (BOOL)insertFromDrag;
+- (BOOL)insertWillBeDiscarded;
 - (BOOL)isInteractive;
 - (BOOL)isPreferredCenterRequired;
 - (struct CGPoint { float x1; float x2; })preferredCenter;

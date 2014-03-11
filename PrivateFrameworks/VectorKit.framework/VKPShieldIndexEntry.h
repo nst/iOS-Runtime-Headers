@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface VKPShieldIndexEntry : PBCodable {
+@interface VKPShieldIndexEntry : PBCodable <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -22,6 +22,7 @@
 - (id)artworkIdentifier;
 - (void)clearShieldTypes;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

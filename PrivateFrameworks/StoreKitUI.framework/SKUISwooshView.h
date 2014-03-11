@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIButton, UICollectionView, UIColor, UIControl, UILabel, UIView;
+@class NSString, SKUILinkButton, UIButton, UICollectionView, UIColor, UIControl, UILabel, UIView;
 
 @interface SKUISwooshView : UIView {
     struct UIEdgeInsets { 
@@ -20,20 +20,25 @@
     } _collectionViewInsets;
     } _contentInsets;
     UIButton *_seeAllButton;
+    BOOL _showsChevronForTitle;
+    SKUILinkButton *_titleButton;
     UIColor *_titleColor;
     UILabel *_titleLabel;
 }
 
+@property(readonly) UIControl * chevronTitleControl;
 @property(retain) UICollectionView * collectionView;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionViewInsets;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property(readonly) UIControl * seeAllControl;
 @property(copy) NSString * seeAllTitle;
+@property BOOL showsChevronForTitle;
 @property(copy) NSString * title;
 @property(copy) UIColor * titleColor;
 
 - (void).cxx_destruct;
-- (id)_arrowImage;
+- (id)_seeAllArrowImage;
+- (id)chevronTitleControl;
 - (id)collectionView;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
@@ -49,8 +54,10 @@
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSeeAllColor:(id)arg1 forControlState:(unsigned int)arg2;
 - (void)setSeeAllTitle:(id)arg1;
+- (void)setShowsChevronForTitle:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleColor:(id)arg1;
+- (BOOL)showsChevronForTitle;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)title;
 - (id)titleColor;

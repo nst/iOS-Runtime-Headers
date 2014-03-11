@@ -27,6 +27,7 @@
 - (id)init;
 - (BOOL)invertColorsEnabled;
 - (BOOL)isGuidedAccessSelfLockedToApp:(id)arg1;
+- (void)jetsamThirdPartyApps;
 - (void)postEvent:(id)arg1 afterNamedTap:(id)arg2 includeTaps:(id)arg3;
 - (void)postEvent:(id)arg1 systemEvent:(BOOL)arg2;
 - (void)registerAccessibilityUIServicePID:(int)arg1;

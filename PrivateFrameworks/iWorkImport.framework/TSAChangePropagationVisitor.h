@@ -20,7 +20,7 @@
 - (id)initWithChangePropagationMap:(id)arg1 styleReplacementBehavior:(int)arg2;
 - (BOOL)mustFindReplacementStyles;
 - (id)objectsChangingAppearance;
-- (id)p_ancestorPresetForTableInfo:(id)arg1;
+- (id)p_modifiedAncestorPresetForTableInfo:(id)arg1;
 - (void)p_replaceStylesInPropertyMap:(id)arg1 replacements:(id)arg2 forLockedObject:(BOOL)arg3 stylesheetToVaryIn:(id)arg4;
 - (id)p_replacementStyleForStyle:(id)arg1 oldParentStyle:(id)arg2 newParentStyle:(id)arg3 replacements:(id)arg4 forLockedObject:(BOOL)arg5 stylesheetToVaryIn:(id)arg6;
 - (id)p_replacementStyleForStyle:(id)arg1 replacements:(id)arg2 forLockedObject:(BOOL)arg3 stylesheetToVaryIn:(id)arg4;
@@ -34,6 +34,7 @@
 - (id)stylePropertiesToAlwaysReset;
 - (int)styleReplacementBehavior;
 - (void)visitTSCHChartDrawableInfo:(id)arg1;
+- (void)visitTSDConnectionLineInfo:(id)arg1;
 - (void)visitTSDImageInfo:(id)arg1;
 - (void)visitTSDMovieInfo:(id)arg1;
 - (void)visitTSDShapeInfo:(id)arg1;

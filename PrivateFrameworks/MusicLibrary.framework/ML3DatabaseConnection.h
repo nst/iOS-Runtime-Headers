@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <ML3DatabaseConnectionDelegate>, ML3DatabaseConnectionPool, NSFileHandle, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class <ML3DatabaseConnectionDelegate>, ML3DatabaseConnectionPool, ML3DatabaseStatementCache, NSMutableArray, NSString, NSUUID;
 
 @interface ML3DatabaseConnection : NSObject {
     BOOL _automaticCheckpointingEnabled;
@@ -19,15 +19,14 @@
     BOOL _isOpen;
     BOOL _isReadOnly;
     unsigned int _journalingMode;
+    NSString *_lastTracedStatement;
     BOOL _nestedTransactionWantsToRollback;
     ML3DatabaseConnectionPool *_owningPool;
     int _profilingLevel;
-    NSFileHandle *_profilingLogHandle;
     NSMutableArray *_registeredFunctions;
     NSMutableArray *_registeredModules;
     struct sqlite3 { } *_sqlitedb;
-    NSHashTable *_statementsCache;
-    NSObject<OS_dispatch_queue> *_statementsCacheSerialQueue;
+    ML3DatabaseStatementCache *_statementCache;
     unsigned int _statementsSinceLastCheckpoint;
     unsigned int _transactionLevel;
     NSUUID *_uniqueIdentifier;
@@ -44,21 +43,23 @@
 @property(setter=setReadOnly:) BOOL isReadOnly;
 @property unsigned int journalingMode;
 @property int profilingLevel;
+@property(readonly) BOOL transactionMarkedForRollBack;
 @property(readonly) NSUUID * uniqueIdentifier;
 
 - (void).cxx_destruct;
-- (void)_clearStatementCache;
 - (void)_createDatabaseDirectoryIfNonexistent;
 - (void)_createDatabaseFileIfNonexistent;
 - (BOOL)_databaseFileExists;
+- (id)_databaseFilePaths;
 - (void)_ensureConnectionIsOpen;
 - (BOOL)_executeStatement:(id)arg1;
 - (void)_executeTransactionCommitBlocks:(BOOL)arg1;
 - (void)_finalizeAllStatements;
-- (int)_finalizeStatement:(id)arg1 removeFromCache:(BOOL)arg2;
-- (int)_finalizeStatement:(id)arg1;
 - (BOOL)_handleBusyLockWithNumberOfRetries:(int)arg1;
 - (BOOL)_handleDatabaseCorruption;
+- (void)_handleDatabaseProfileStatement:(const char *)arg1 executionTimeNS:(unsigned long long)arg2;
+- (void)_handleDatabaseTraceStatement:(const char *)arg1;
+- (BOOL)_handleZombieSQLiteConnection:(struct sqlite3 { }*)arg1;
 - (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1;
 - (BOOL)_internalEndTransactionAndCommit:(BOOL)arg1;
 - (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
@@ -79,7 +80,6 @@
 - (unsigned int)_transactionLevel;
 - (void)_updateProfilingLevel;
 - (BOOL)_validatePreparedStatement:(id)arg1 error:(id*)arg2;
-- (void)_writeToProfilingLog:(id)arg1;
 - (BOOL)automaticCheckpointingEnabled;
 - (int)checkpointDatabase;
 - (unsigned int)checkpointStatementThreshold;
@@ -106,7 +106,6 @@
 - (BOOL)isReadOnly;
 - (unsigned int)journalingMode;
 - (long long)lastInsertionRowID;
-- (void*)moduleContextForModuleName:(id)arg1;
 - (BOOL)open;
 - (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(long long)arg3 readOnly:(BOOL)arg4;
 - (BOOL)performTransactionWithBlock:(id)arg1 usingBehaviorType:(unsigned int)arg2;
@@ -119,17 +118,18 @@
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 block:(id)arg3;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3 userData:(void*)arg4;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3;
-- (BOOL)registerModuleName:(id)arg1 moduleMethods:(const struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
+- (BOOL)registerModule:(id)arg1;
+- (BOOL)registerModuleName:(id)arg1 moduleMethods:(struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
 - (void)setAutomaticCheckpointingEnabled:(BOOL)arg1;
 - (void)setCheckpointStatementThreshold:(unsigned int)arg1;
 - (void)setConnectionDelegate:(id)arg1;
 - (void)setITunesExtensions:(const void*)arg1;
 - (void)setJournalingMode:(unsigned int)arg1;
-- (void)setModuleContext:(void*)arg1 forModuleName:(id)arg2 contextReleaseBlock:(id)arg3;
 - (void)setProfilingLevel:(int)arg1;
 - (void)setReadOnly:(BOOL)arg1;
 - (id)sqliteError;
 - (BOOL)tableExists:(id)arg1;
+- (BOOL)transactionMarkedForRollBack;
 - (id)uniqueIdentifier;
 
 @end

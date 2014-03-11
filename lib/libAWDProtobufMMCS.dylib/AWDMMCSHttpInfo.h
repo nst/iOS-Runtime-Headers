@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface AWDMMCSHttpInfo : PBCodable {
+@interface AWDMMCSHttpInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int duration : 1; 
         unsigned int responseReceivedDuration : 1; 
@@ -84,6 +84,7 @@
 - (void)clearTcpInfos;
 - (BOOL)connectionReused;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

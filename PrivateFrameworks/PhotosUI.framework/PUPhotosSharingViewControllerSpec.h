@@ -3,32 +3,25 @@
  */
 
 @interface PUPhotosSharingViewControllerSpec : NSObject {
-    int _fastImageFormat;
     float _interItemSpacing;
     BOOL _maximizeImageHeight;
-    int _qualityImageFormat;
-    int _zoomingImageFormat;
 }
 
-@property(readonly) int fastImageFormat;
 @property(readonly) float interItemSpacing;
 @property(readonly) BOOL maximizeImageHeight;
-@property(readonly) int qualityImageFormat;
 @property(readonly) unsigned int selectionBadgeCorner;
 @property(readonly) struct UIOffset { float x1; float x2; } selectionBadgeOffset;
 @property(readonly) struct CGSize { float x1; float x2; } selectionBadgeSize;
-@property(readonly) int zoomingImageFormat;
 
-- (BOOL)allowsInterfaceRotation;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForOrientation:(int)arg1;
 - (BOOL)embedsActivityViewForOrientation:(int)arg1;
-- (int)fastImageFormat;
+- (int)fastImageFormatForOrientation:(int)arg1;
 - (float)interItemSpacing;
 - (BOOL)maximizeImageHeight;
-- (int)qualityImageFormat;
+- (int)qualityImageFormatForOrientation:(int)arg1;
 - (unsigned int)selectionBadgeCorner;
 - (struct UIOffset { float x1; float x2; })selectionBadgeOffset;
 - (struct CGSize { float x1; float x2; })selectionBadgeSize;
-- (int)zoomingImageFormat;
+- (int)zoomingImageFormatForOrientation:(int)arg1;
 
 @end

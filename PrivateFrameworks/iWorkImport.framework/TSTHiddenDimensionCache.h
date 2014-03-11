@@ -4,7 +4,7 @@
 
 @class NSIndexSet, NSMutableIndexSet;
 
-@interface TSTHiddenDimensionCache : NSObject {
+@interface TSTHiddenDimensionCache : NSObject <NSCopying> {
     NSMutableIndexSet *mCachedUserVisible;
     NSMutableIndexSet *mCachedVisible;
     unsigned int mCount;
@@ -16,10 +16,12 @@
 
 - (BOOL)anyHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)anyUserHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)deleteRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)description;
 - (unsigned int)findNextVisibleIndex:(unsigned int)arg1;
+- (unsigned int)findNthPreviousVisibleIndex:(unsigned int)arg1 fromIndex:(unsigned int)arg2;
 - (unsigned int)findPreviousVisibleIndex:(unsigned int)arg1;
 - (id)initWithUserHiddenInformation:(BOOL)arg1;
 - (void)insertRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -30,7 +32,6 @@
 - (unsigned int)numberHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned short)numberOfVisibleIndicesToMarkIndexFrom:(unsigned int)arg1;
 - (unsigned int)numberUserHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)p_moveVisibleCache:(id)arg1 rangeFrom:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 toIndex:(unsigned int)arg3;
 - (void)setAllInvalidValuesUsingBlock:(id)arg1;
 - (void)setAllValuesToZero;
 - (void)setCount:(unsigned int)arg1;

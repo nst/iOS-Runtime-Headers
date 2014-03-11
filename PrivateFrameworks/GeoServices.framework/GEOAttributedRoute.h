@@ -23,6 +23,7 @@
 - (bool)_needsCornerOffsetAt:(unsigned int)arg1;
 - (void)attributedRouteHasChanged;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1 fromRoutePoint:(unsigned int)arg2;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1;
 - (unsigned int)currentDisplayStep;
 - (void)dealloc;
 - (id)description;

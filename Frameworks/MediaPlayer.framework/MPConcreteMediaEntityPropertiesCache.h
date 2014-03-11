@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class <MPMediaLibraryDataProvider>, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface MPConcreteMediaEntityPropertiesCache : NSObject {
+    <MPMediaLibraryDataProvider> *_dataProvider;
     Class _dataProviderEntityClass;
     long long _identifier;
     NSMutableDictionary *_properties;
@@ -12,6 +13,7 @@
     NSMutableDictionary *_valuePersistenceBlocks;
 }
 
+@property(readonly) <MPMediaLibraryDataProvider> * dataProvider;
 @property(readonly) Class dataProviderEntityClass;
 @property(readonly) long long identifier;
 
@@ -19,11 +21,12 @@
 - (void)_onBarrierCacheValues:(id)arg1 persistValueInBackgroundBlock:(id)arg2;
 - (void)cachePropertyValues:(id)arg1 forProperties:(id)arg2 persistValueInBackgroundBlock:(id)arg3;
 - (void)cacheValue:(id)arg1 forProperty:(id)arg2 persistValueInBackgroundBlock:(id)arg3;
+- (id)dataProvider;
 - (Class)dataProviderEntityClass;
 - (void)dealloc;
 - (void)delete;
 - (long long)identifier;
-- (id)initWithDataProviderEntityClass:(Class)arg1 identifier:(long long)arg2;
+- (id)initWithLibraryDataProvider:(id)arg1 dataProviderEntityClass:(Class)arg2 identifier:(long long)arg3;
 - (void)invalidate;
 - (id)valueForProperty:(id)arg1 isCached:(BOOL*)arg2;
 

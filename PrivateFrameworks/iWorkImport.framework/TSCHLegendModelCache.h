@@ -23,6 +23,7 @@
     BOOL mReverseSingleColumnLegendOrder;
     TSDShadow *mShadow;
     TSDStroke *mStroke;
+    float mSymbolGap;
     float mVerticalCellSpacing;
 }
 
@@ -38,6 +39,7 @@
 @property(readonly) BOOL reverseSingleColumnLegendOrder;
 @property(readonly) TSDShadow * shadow;
 @property(readonly) TSDStroke * stroke;
+@property(readonly) float symbolGap;
 @property(readonly) float verticalCellSpacing;
 
 - (unsigned int)cellCount;
@@ -55,6 +57,7 @@
 - (BOOL)reverseSingleColumnLegendOrder;
 - (id)shadow;
 - (id)stroke;
+- (float)symbolGap;
 - (float)verticalCellSpacing;
 - (id)viewCacheForWidth:(float)arg1;
 

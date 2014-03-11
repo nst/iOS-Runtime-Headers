@@ -9,8 +9,6 @@
 + (id)addPlaylistImage;
 + (id)disabledAddAccessoryImage;
 + (id)disabledPlaybackControlColor;
-+ (id)explicitLargeImage;
-+ (id)explicitSmallImage;
 + (id)gradientMaskImageWithGradientDistance:(float)arg1;
 + (id)grayColorGeniusPlaylistImage;
 + (id)miniPlayerEmptyAlbumPlaceholderImage;

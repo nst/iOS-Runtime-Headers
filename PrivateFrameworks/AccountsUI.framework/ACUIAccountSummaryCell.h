@@ -14,8 +14,11 @@
     BOOL _useCustomDetailsText;
 }
 
++ (void)_configureSpecifier:(id)arg1 forAccount:(id)arg2 withStyle:(int)arg3 valueText:(id)arg4;
++ (id)_nameForAccountSpecifier:(id)arg1 withStyle:(int)arg2;
 + (id)_valueForCellSpecifier:(id)arg1;
 + (id)specifierWithStyle:(int)arg1 account:(id)arg2 detailControllerClass:(Class)arg3 presentationStyle:(int)arg4;
++ (id)specifierWithStyle:(int)arg1 account:(id)arg2 target:(id)arg3 controllerLoadAction:(SEL)arg4;
 + (id)specifierWithStyle:(int)arg1 account:(id)arg2 valueText:(id)arg3 detailControllerClass:(Class)arg4 presentationStyle:(int)arg5;
 
 - (void).cxx_destruct;

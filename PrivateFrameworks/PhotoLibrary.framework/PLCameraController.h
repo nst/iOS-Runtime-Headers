@@ -27,6 +27,8 @@
         unsigned int supportsExposure : 1; 
         unsigned int supportsHDRRear : 1; 
         unsigned int supportsHDRFront : 1; 
+        unsigned int supportsSuggestedHDRRear : 1; 
+        unsigned int supportsSuggestedHDRFront : 1; 
         unsigned int supportsAvalancheRear : 1; 
         unsigned int supportsAvalancheFront : 1; 
         unsigned int supportsMogulRear : 1; 
@@ -49,6 +51,7 @@
         unsigned int didSetLocationData : 1; 
         unsigned int isChangingMode : 1; 
         unsigned int flashWillFireAutomatically : 1; 
+        unsigned int torchWillFireAutomatically : 1; 
         unsigned int isCameraApp : 1; 
         unsigned int didSendPreviewStartedCallbackToEmptyDelegate : 1; 
         unsigned int didGetPreviewStartedCallbackAfterResume : 1; 
@@ -96,8 +99,11 @@
         unsigned int delegateFocusDidEnd : 1; 
         unsigned int delegateFaceMetadataDidChange : 1; 
         unsigned int delegateVideoZoomFactorDidChange : 1; 
+        unsigned int delegateFlashWillFireChanged : 1; 
+        unsigned int delegateTorchActiveChanged : 1; 
         unsigned int delegateTorchAvailabilityChanged : 1; 
         unsigned int delegateHDRSuggestionChanged : 1; 
+    BOOL _HDRDetectionEnabled;
     BOOL __atomicEffectsAvailable;
     BOOL __atomicModeChangeWaitingForConfigureSession;
     BOOL __atomicModeChangeWaitingForPreviewStarted;
@@ -106,6 +112,7 @@
     NSMutableArray *__currentFaceMetadata;
     NSObject<OS_dispatch_queue> *__effectFilterIndexQueue;
     NSDictionary *__effectFilterIndices;
+    NSObject<OS_dispatch_queue> *__effectRenderingQueue;
     BOOL __previewLayerEnabledForRenderer;
     BOOL __previewPaused;
     BOOL __videoDataOutputEnabledForRenderer;
@@ -144,7 +151,6 @@
     int _flashMode;
     BOOL _hdrCaptureIncludesEV0Image;
     int _hdrEV0PhotoCaptureCount;
-    BOOL _hdrEnabled;
     NSTimer *_idleTimerTimer;
     BOOL _imageWriterQueueIsAvailable;
     unsigned int _ioSurfaceCounter;
@@ -170,7 +176,8 @@
     id postSessionSetupBlock;
 }
 
-@property(getter=isHDREnabled) BOOL HDREnabled;
+@property(getter=isHDRDetectionEnabled) BOOL HDRDetectionEnabled;
+@property(getter=isHDRSuggested,readonly) BOOL HDRSuggested;
 @property(setter=_setAtomicEffectsAvailable:) BOOL _atomicEffectsAvailable;
 @property(getter=_isAtomicModeChangeWaitingForConfigureSession,setter=_setAtomicModeChangeWaitingForConfigureSession:) BOOL _atomicModeChangeWaitingForConfigureSession;
 @property(getter=_isAtomicModeChangeWaitingForPreviewStarted,setter=_setAtomicModeChangeWaitingForPreviewStarted:) BOOL _atomicModeChangeWaitingForPreviewStarted;
@@ -179,6 +186,7 @@
 @property(readonly) NSMutableArray * _currentFaceMetadata;
 @property(readonly) NSObject<OS_dispatch_queue> * _effectFilterIndexQueue;
 @property(setter=_setEffectFilterIndices:,retain) NSDictionary * _effectFilterIndices;
+@property(readonly) NSObject<OS_dispatch_queue> * _effectRenderingQueue;
 @property(setter=_setEffectsAvailable:) BOOL _effectsAvailable;
 @property(getter=_isModeChangeWaitingForConfigureSession,setter=_setModeChangeWaitingForConfigureSession:) BOOL _modeChangeWaitingForConfigureSession;
 @property(getter=_isModeChangeWaitingForPreviewStarted,setter=_setModeChangeWaitingForPreviewStarted:) BOOL _modeChangeWaitingForPreviewStarted;
@@ -210,6 +218,7 @@
 @property int previewOrientation;
 @property(copy) NSArray * supportedCameraModes;
 @property(readonly) BOOL supportsHDR;
+@property(readonly) BOOL supportsHDRSuggestion;
 @property float videoZoomFactor;
 
 + (id)sharedInstance;
@@ -226,11 +235,11 @@
 - (void)_callStateDidChange:(id)arg1;
 - (void)_cancelDelayedFocusRequests;
 - (id)_captureIsolationQueue;
-- (void)_capturedPhotoWithDictionary:(id)arg1 error:(id)arg2;
+- (void)_capturedPhotoWithDictionary:(id)arg1 error:(id)arg2 HDRUsed:(BOOL)arg3;
 - (void)_cleanupPanoramaOnSessionQueue:(BOOL)arg1;
 - (void)_clearPreviewLayer;
 - (void)_commonFocusFinished;
-- (BOOL)_configureSessionWithCameraMode:(int)arg1 cameraDevice:(int)arg2;
+- (BOOL)_configureSessionWithCameraMode:(int)arg1 cameraDevice:(int)arg2 HDRDetectionEnabled:(BOOL)arg3;
 - (id)_currentFaceMetadata;
 - (id)_currentVideoConnection;
 - (void)_debug_cancelWaitForIris;
@@ -245,6 +254,7 @@
 - (void)_didTakePhoto;
 - (id)_effectFilterIndexQueue;
 - (id)_effectFilterIndices;
+- (id)_effectRenderingQueue;
 - (BOOL)_effectsAvailable;
 - (void)_exposureCompleted;
 - (void)_exposureStarted;
@@ -263,7 +273,6 @@
 - (BOOL)_isAtomicModeChangeWaitingForConfigureSession;
 - (BOOL)_isAtomicModeChangeWaitingForPreviewStarted;
 - (BOOL)_isConfiguringCamera;
-- (BOOL)_isCountingHDREV0Captures;
 - (BOOL)_isModeChangeWaitingForConfigureSession;
 - (BOOL)_isModeChangeWaitingForPreviewStarted;
 - (BOOL)_isPreviewPaused;
@@ -288,11 +297,12 @@
 - (void)_pptTestSetAutofocusDisabled:(BOOL)arg1;
 - (BOOL)_previewLayerEnabledForRenderer;
 - (void)_previewStarted;
-- (void)_processCapturedPhotoWithDictionary:(id)arg1 error:(id)arg2;
+- (void)_processCapturedPhotoWithDictionary:(id)arg1 error:(id)arg2 HDRUsed:(BOOL)arg3;
 - (void)_processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_recoverFromServerError;
 - (void)_removeVideoCaptureFileAndDirectoryAtPath:(id)arg1;
 - (void)_resetIdleTimer;
+- (void)_runOnMainThreadImmediatelyIfPossibleWithBlock:(id)arg1;
 - (BOOL)_safeSetCameraMode:(int)arg1 cameraDevice:(int)arg2;
 - (unsigned int)_sanitizeEffectFilterIndex:(unsigned int)arg1 forMode:(int)arg2;
 - (BOOL)_sanityCheckSessionCanCaptureWithOutput:(id)arg1;
@@ -328,9 +338,12 @@
 - (void)_setupPanoramaForDevice:(id)arg1 output:(id)arg2 options:(out const struct __CFDictionary {}**)arg3;
 - (void)_startPreview:(id)arg1;
 - (void)_startPreviewWithCameraDevice:(int)arg1 cameraMode:(int)arg2 effectFilterIndices:(id)arg3;
+- (void)_suggestedHDRChanged;
+- (BOOL)_supportsHDRSuggestionForCaptureDevice:(id)arg1;
 - (void)_synchronizeHDRSettings;
 - (void)_tearDownCamera;
 - (void)_teardownDelaySuspendTimer;
+- (void)_torchActiveChanged;
 - (void)_torchLevelChanged;
 - (void)_unlockCurrentDeviceForConfiguration;
 - (void)_updateCallStatus;
@@ -377,6 +390,7 @@
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)capturePhoto;
+- (BOOL)capturePhotoUsingHDR:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cleanAperture;
 - (void)continueTimedCapture;
 - (BOOL)convertSampleBufferToJPEG;
@@ -419,9 +433,11 @@
 - (BOOL)isFocusLockSupported;
 - (BOOL)isFocusing;
 - (BOOL)isFocusingOnFace;
-- (BOOL)isHDREnabled;
+- (BOOL)isHDRDetectionEnabled;
+- (BOOL)isHDRSuggested;
 - (BOOL)isPreviewMirrored;
 - (BOOL)isReady;
+- (BOOL)isTorchActive;
 - (BOOL)isTorchDisabled;
 - (BOOL)isTorchOn;
 - (void)lockFocusAndExposureForPano;
@@ -461,7 +477,7 @@
 - (void)setFaceDetectionEnabled:(BOOL)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setFocusDisabled:(BOOL)arg1;
-- (void)setHDREnabled:(BOOL)arg1;
+- (void)setHDRDetectionEnabled:(BOOL)arg1;
 - (void)setIsCameraApp:(BOOL)arg1;
 - (void)setPanoramaCaptureDirection:(int)arg1;
 - (void)setPanoramaImageQueueLayer:(id)arg1;
@@ -482,7 +498,9 @@
 - (id)supportedCameraModes;
 - (BOOL)supportsAvalancheForDevice:(int)arg1;
 - (BOOL)supportsHDR;
-- (BOOL)supportsHDRForDevice:(int)arg1;
+- (BOOL)supportsHDRForDevice:(int)arg1 mode:(int)arg2;
+- (BOOL)supportsHDRSuggestion;
+- (BOOL)supportsHDRSuggestionForDevice:(int)arg1;
 - (BOOL)supportsLiveEffects;
 - (BOOL)supportsPanorama;
 - (BOOL)supportsPreviewDuringHDR;

@@ -27,6 +27,7 @@
     BOOL _readyForStore;
     id _storeCompletion;
     ATStoreInfo *_storeInfo;
+    id _storeInstallCompletion;
     long long _storePID;
     NSString *_storePlist;
     id _storeProgress;
@@ -51,6 +52,7 @@
 @property BOOL readyForStore;
 @property id storeCompletion;
 @property(retain) ATStoreInfo * storeInfo;
+@property id storeInstallCompletion;
 @property long long storePID;
 @property(retain) NSString * storePlist;
 @property id storeProgress;
@@ -74,6 +76,7 @@
 - (BOOL)installOnly;
 - (float)installProgress;
 - (void)invokeStoreCompletion;
+- (void)invokeStoreInstallCompletion:(BOOL)arg1 withError:(id)arg2;
 - (BOOL)isDownload;
 - (BOOL)isRestore;
 - (id)manifestEntry;
@@ -100,12 +103,14 @@
 - (void)setReadyForStore:(BOOL)arg1;
 - (void)setStoreCompletion:(id)arg1;
 - (void)setStoreInfo:(id)arg1;
+- (void)setStoreInstallCompletion:(id)arg1;
 - (void)setStorePID:(long long)arg1;
 - (void)setStorePlist:(id)arg1;
 - (void)setStoreProgress:(id)arg1;
 - (void)setVariantOptions:(id)arg1;
 - (id)storeCompletion;
 - (id)storeInfo;
+- (id)storeInstallCompletion;
 - (long long)storePID;
 - (id)storePlist;
 - (id)storeProgress;

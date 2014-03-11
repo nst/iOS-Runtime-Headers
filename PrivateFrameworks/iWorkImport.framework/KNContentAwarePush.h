@@ -16,7 +16,6 @@
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (BOOL)isCharacterAwareEffect;
 + (id)localizedMenuString:(int)arg1;
-+ (int)rendererTypeForCapabilities:(id)arg1;
 + (BOOL)requiresBullets;
 + (BOOL)requiresMagicMoveTextures;
 + (BOOL)requiresPerspectiveTransform;

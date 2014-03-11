@@ -14,8 +14,8 @@
 @property <_MKWiFiObserverDelegate> * delegate;
 @property(getter=isWifiEnabled,readonly) BOOL wifiEnabled;
 
+- (void).cxx_destruct;
 - (void)_updateWiFiState:(BOOL)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (BOOL)isWifiEnabled;

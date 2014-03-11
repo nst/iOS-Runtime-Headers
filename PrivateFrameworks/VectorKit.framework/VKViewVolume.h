@@ -33,6 +33,6 @@
 - (struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct Vec3Imp<double> { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })farPlane;
 - (struct VKPoint { double x1; double x2; double x3; })lerpPoint:(float*)arg1;
 - (BOOL)rejectsRect:(struct { double x1; double x2; double x3; double x4; })arg1;
-- (void)updateWithFrustum:(struct { BOOL x1; double x2; double x3; double x4; double x5; })arg1 matrix:(const struct { double x1[4][4]; }*)arg2;
+- (void)updateWithFrustum:(struct { BOOL x1; double x2; double x3; double x4; double x5; })arg1 horizontalOffset:(float)arg2 matrix:(const struct { double x1[4][4]; }*)arg3;
 
 @end

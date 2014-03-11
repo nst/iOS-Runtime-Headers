@@ -20,7 +20,7 @@
 
 - (void)_replaceLayer:(id)arg1;
 - (void)dealloc;
-- (void)fixUpViewAfterInsertion;
+- (BOOL)fixUpViewAfterInsertion;
 - (id)initWithLayer:(id)arg1 node:(id)arg2 webBrowserView:(id)arg3;
 - (BOOL)isBeingRemoved;
 - (id)node;

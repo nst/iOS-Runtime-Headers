@@ -38,7 +38,7 @@
 - (void)_markIsReusable:(BOOL)arg1 item:(id)arg2;
 - (void)_pauseOrResumeDownloads:(id)arg1 currentDownloadID:(long long)arg2;
 - (void)_reloadQueueKeepingCurrentItem:(BOOL)arg1 allowReusingItems:(BOOL)arg2;
-- (void)_removeCurrentItem;
+- (void)_removeCurrentItemAndFillQueue:(BOOL)arg1;
 - (void)_removeInvalidItems:(id)arg1;
 - (void)_updatePlayerQueueWithRemovedItems:(id)arg1 addedItems:(id)arg2 removeCurrentItem:(BOOL)arg3;
 - (void)_updateQueueDepthForRateChange;

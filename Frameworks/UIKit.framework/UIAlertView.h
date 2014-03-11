@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIAlertViewDelegate>, NSMutableArray, NSMutableDictionary, NSString, UILabel, UIToolbar, UIView, UIViewController, UIWindow, _UIModalItem;
+@class <UIAlertViewDelegate>, NSMutableArray, NSMutableDictionary, NSString, UILabel, UIToolbar, UIView, UIViewController, UIWindow, _UIAlertExternalViewController, _UIModalItem;
 
 @interface UIAlertView : UIView {
     struct CGPoint { 
@@ -81,6 +81,7 @@
     UIView *_dimView;
     UIWindow *_dimWindow;
     int _dismissButtonIndex;
+    _UIAlertExternalViewController *_externalAlertViewController;
     int _firstOtherButton;
     UIViewController *_hostingViewControllerNeue;
     UIView *_keyboard;
@@ -101,15 +102,19 @@
     NSString *_titleTextNeue;
     UIToolbar *_toolbar;
     UIWindow *_windowFOrSBNeueCompatibility;
+    UIViewController *externalViewControllerForPresentation;
 }
 
 @property int alertViewStyle;
 @property int cancelButtonIndex;
 @property(copy) id complete;
 @property id delegate;
+@property(getter=_externalViewControllerForPresentation,setter=_setExternalViewControllerForPresentation:,retain) UIViewController * externalViewControllerForPresentation;
 @property(readonly) int firstOtherButtonIndex;
+@property BOOL groupsTextFields;
 @property(copy) NSString * message;
 @property(readonly) int numberOfButtons;
+@property BOOL showsOverSpringBoardAlerts;
 @property(copy) NSString * title;
 @property(getter=isVisible,readonly) BOOL visible;
 
@@ -123,6 +128,7 @@
 + (id)alertViewWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
 + (void)applyTransformToAllAlerts:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (struct CGSize { float x1; float x2; })minimumSize;
++ (void)rtb_displayAlertWithTitle:(id)arg1 message:(id)arg2 leftButtonTitle:(id)arg3 leftButtonAction:(id)arg4 rightButtonTitle:(id)arg5 rightButtonAction:(id)arg6;
 
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
@@ -157,6 +163,9 @@
 - (id)_destructiveButton;
 - (id)_dimView;
 - (BOOL)_dimsBackground;
+- (void)_dismissExternalViewController;
+- (id)_externalViewControllerForPresentation;
+- (void)_externalViewControllerHadButtonTapped:(int)arg1;
 - (id)_firstOtherButton;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_handleKeyUIEvent:(id)arg1;
@@ -186,6 +195,7 @@
 - (void)_performPopup:(BOOL)arg1 animationType:(int)arg2;
 - (void)_performPopup:(BOOL)arg1;
 - (void)_popoutAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_prepareExternalViewControllerIfNecessary;
 - (void)_prepareForDisplay;
 - (void)_prepareToBeReplaced;
 - (void)_presentSheetFromView:(id)arg1 above:(BOOL)arg2;
@@ -201,6 +211,7 @@
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)_setDefaultButton:(id)arg1;
 - (void)_setDestructiveButton:(id)arg1;
+- (void)_setExternalViewControllerForPresentation:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupKBWatcher;
@@ -214,6 +225,7 @@
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (id)_textFieldAtIndex:(int)arg1;
 - (float)_titleHorizontalInset;
+- (id)_titleLabel;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
 - (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
@@ -228,6 +240,7 @@
 - (int)addButtonWithTitle:(id)arg1;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (int)alertViewStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
@@ -261,6 +274,7 @@
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 leftButtonTitle:(id)arg3 leftButtonAction:(id)arg4 rightButtonTitle:(id)arg5 rightButtonAction:(id)arg6;
 - (BOOL)isBodyTextTruncated;
 - (BOOL)isVisible;
 - (id)keyboard;

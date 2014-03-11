@@ -44,6 +44,7 @@
 - (BOOL)isCurrentlyPlayable;
 - (BOOL)isPurchasing;
 - (BOOL)isRestoreDownload;
+- (void)pauseDownload;
 - (long long)persistentID;
 - (id)progressHandler;
 - (double)rawDownloadProgress;

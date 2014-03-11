@@ -102,7 +102,7 @@
 - (void)extendSelectionWithPath:(id)arg1 forInfo:(id)arg2;
 - (id)firstChartInfo;
 - (id)firstLayout;
-- (void)forceCanvasTextEditingToEnd;
+- (BOOL)forceCanvasTextEditingToEnd;
 - (void)forceDataEditingToEnd;
 - (BOOL)hasAxisLabelsSelection;
 - (BOOL)hasAxisSeriesLabelsSelection;
@@ -258,7 +258,7 @@
 - (void)strikethrough:(id)arg1;
 - (void)stylePresetInspector:(id)arg1 didSelectPreset:(id)arg2;
 - (void)stylePresetInspector:(id)arg1 didSelectPresetForNonDestructiveApply:(id)arg2;
-- (id)stylePresetsForInspector:(id)arg1;
+- (id)stylePresetKindForInspector;
 - (id)textEditor;
 - (void)toggleBoldface:(id)arg1;
 - (void)toggleItalics:(id)arg1;

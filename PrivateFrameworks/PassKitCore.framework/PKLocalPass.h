@@ -39,10 +39,12 @@
 - (id)fileURL;
 - (BOOL)getResourceValue:(id*)arg1 forKey:(id)arg2 forPassAtURL:(id)arg3 error:(id*)arg4;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithData:(id)arg1 error:(id*)arg2 warnings:(id*)arg3;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
-- (id)initWithFileURL:(id)arg1 fileAccessor:(id)arg2 error:(id*)arg3;
+- (id)initWithFileURL:(id)arg1 fileAccessor:(id)arg2 error:(id*)arg3 warnings:(id*)arg4;
 - (id)initWithFileURL:(id)arg1 fileAccessor:(id)arg2;
 - (id)initWithFileURL:(id)arg1;
+- (BOOL)isValidPassWithURL:(id)arg1 error:(id*)arg2 warnings:(id*)arg3;
 - (id)loadContentFromPassURL:(id)arg1;
 - (id)loadDictionaryFromPassURL:(id)arg1;
 - (id)loadImageSet:(int)arg1 fromPassURL:(id)arg2 displayProfile:(id)arg3;
@@ -62,6 +64,5 @@
 - (void)setFileAccessor:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setRemoveOnDiskRepresentationOnDealloc:(BOOL)arg1;
-- (id)validatePassURL:(id)arg1;
 
 @end

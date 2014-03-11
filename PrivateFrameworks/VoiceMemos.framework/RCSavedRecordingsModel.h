@@ -5,6 +5,7 @@
 @class NSArray, NSFetchRequest, NSFetchedResultsController, NSManagedObjectContext, NSManagedObjectModel;
 
 @interface RCSavedRecordingsModel : NSObject <NSFetchedResultsControllerDelegate> {
+    BOOL _assetManifestWritingDisabled;
     NSManagedObjectContext *_context;
     NSFetchedResultsController *_fetchController;
     NSFetchRequest *_fetchRequest;
@@ -14,6 +15,7 @@
     BOOL _valid;
 }
 
+@property BOOL assetManifestWritingDisabled;
 @property(readonly) unsigned int count;
 @property BOOL isSaveInProgress;
 @property(readonly) NSArray * recordings;
@@ -37,11 +39,11 @@
 - (id)_labelPresetsForQuery:(id)arg1;
 - (void)_postRecordingsModelDidChangeForNotificationName:(id)arg1;
 - (void)_scheduleAutomaticRecordingDeletions;
+- (BOOL)assetManifestWritingDisabled;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
 - (void)controllerDidChangeContent:(id)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (void)deleteOrphanedRecordingsPassingTest:(id)arg1;
 - (void)deleteRecording:(id)arg1;
 - (void)enumerateExistingRecordingsWithBlock:(id)arg1;
 - (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
@@ -60,6 +62,7 @@
 - (void)save;
 - (void)saveIfNecessary;
 - (BOOL)saveManagedObjectContext:(id*)arg1;
+- (void)setAssetManifestWritingDisabled:(BOOL)arg1;
 - (void)setIsSaveInProgress:(BOOL)arg1;
 - (void)setValid:(BOOL)arg1;
 - (BOOL)valid;

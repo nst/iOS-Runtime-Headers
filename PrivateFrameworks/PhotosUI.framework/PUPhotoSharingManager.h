@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotoSharingManagerDelegate>, NSTimer, PLManagedAsset, PLProgressView, PLVideoRemaker, UIActivity;
+@class <PUPhotoSharingManagerDelegate>, NSTimer, PLProgressView, UIActivity;
 
 @interface PUPhotoSharingManager : NSObject {
     UIActivity *_activity;
-    PLManagedAsset *_currentVideo;
     <PUPhotoSharingManagerDelegate> *_delegate;
     NSTimer *_publishingProgressTimer;
     PLProgressView *_publishingProgressView;
-    PLVideoRemaker *_remaker;
-    BOOL _remakingWasCancelled;
 }
 
 @property(retain) UIActivity * activity;
@@ -27,6 +24,7 @@
 - (void)_publishingDidFinish;
 - (void)_updatePublishingProgressView:(id)arg1;
 - (id)activity;
+- (void)cancelRemaking;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

@@ -13,6 +13,7 @@
     NSMutableArray *_waitingJobs;
 }
 
+- (void).cxx_destruct;
 - (BOOL)_dispatchWaitingJobsIfNecessary;
 - (void)_ensureTimer;
 - (BOOL)_replenishAvailableJobsIfNecessary;

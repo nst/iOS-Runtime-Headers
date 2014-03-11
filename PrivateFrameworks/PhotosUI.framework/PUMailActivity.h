@@ -33,6 +33,7 @@
 - (void)activityDidFinish:(BOOL)arg1;
 - (id)activityViewController;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
+- (void)cancelRemaking;
 - (void)composeMailForPhotos;
 - (void)composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2;
 - (void)dealloc;

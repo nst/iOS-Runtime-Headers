@@ -21,6 +21,7 @@
 + (id)valueFont;
 
 - (id)_attributedStringByParsingLinksInString:(id)arg1;
+- (void)_detectLinks;
 - (void)_setupTextAttributes;
 - (struct CGSize { float x1; float x2; })_sizeForValueTextWithWidth:(float)arg1;
 - (void)dealloc;

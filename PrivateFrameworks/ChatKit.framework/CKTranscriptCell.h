@@ -3,9 +3,25 @@
  */
 
 @interface CKTranscriptCell : CKEditableCollectionViewCell {
+    float _drawerPercentRevealed;
+    BOOL _orientation;
+    BOOL _wantsDrawerLayout;
 }
+
+@property float drawerPercentRevealed;
+@property BOOL orientation;
+@property BOOL wantsDrawerLayout;
 
 - (void)configureForRow:(id)arg1;
 - (void)configureForRowObject:(id)arg1;
+- (float)drawerPercentRevealed;
+- (void)layoutSubviews;
+- (void)layoutSubviewsForContents;
+- (void)layoutSubviewsForDrawer;
+- (BOOL)orientation;
+- (void)setDrawerPercentRevealed:(float)arg1;
+- (void)setOrientation:(BOOL)arg1;
+- (void)setWantsDrawerLayout:(BOOL)arg1;
+- (BOOL)wantsDrawerLayout;
 
 @end

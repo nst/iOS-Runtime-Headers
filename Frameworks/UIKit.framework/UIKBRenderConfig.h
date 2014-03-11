@@ -2,39 +2,41 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderConfig : NSObject {
+@interface UIKBRenderConfig : NSObject <NSCopying> {
     float _blurRadius;
     float _blurSaturation;
-    float _keyborderOpacity;
     float _keycapOpacity;
     BOOL _lightKeyboard;
+    float _lightLatinKeycapOpacity;
 }
 
 @property(readonly) int backdropStyle;
 @property float blurRadius;
 @property float blurSaturation;
-@property float keyborderOpacity;
 @property float keycapOpacity;
 @property BOOL lightKeyboard;
+@property float lightLatinKeycapOpacity;
 @property(readonly) BOOL whiteText;
 
++ (int)backdropStyleForStyle:(int)arg1;
++ (id)configForAppearance:(int)arg1;
 + (id)darkConfig;
 + (id)defaultConfig;
-+ (id)passcodeConfig;
 
 - (int)backdropStyle;
 - (float)blurRadius;
 - (float)blurSaturation;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
-- (float)keyborderOpacity;
 - (float)keycapOpacity;
 - (BOOL)lightKeyboard;
+- (float)lightLatinKeycapOpacity;
 - (void)setBlurRadius:(float)arg1;
 - (void)setBlurSaturation:(float)arg1;
-- (void)setKeyborderOpacity:(float)arg1;
 - (void)setKeycapOpacity:(float)arg1;
 - (void)setLightKeyboard:(BOOL)arg1;
+- (void)setLightLatinKeycapOpacity:(float)arg1;
 - (BOOL)whiteText;
 
 @end

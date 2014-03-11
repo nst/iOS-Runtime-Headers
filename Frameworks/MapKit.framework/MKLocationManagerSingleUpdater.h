@@ -6,17 +6,25 @@
    See Warning(s) below.
  */
 
+@class MKLocationManagerSingleUpdater;
+
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
     BOOL _active;
+    double _desiredAccuracy;
     id _handler;
+    MKLocationManagerSingleUpdater *_selfReference;
 }
 
 @property(copy) id handler;
 
+- (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (id)handler;
+- (id)initWithDesiredAccuracy:(double)arg1 handler:(id)arg2;
 - (id)initWithHandler:(id)arg1;
+- (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
+- (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;

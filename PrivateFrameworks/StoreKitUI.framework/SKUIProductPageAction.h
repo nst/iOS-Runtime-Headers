@@ -6,10 +6,11 @@
    See Warning(s) below.
  */
 
-@class NSString, NSURL, UIViewController;
+@class NSString, NSURL, SKUIItem, UIViewController;
 
 @interface SKUIProductPageAction : NSObject {
     int _actionType;
+    SKUIItem *_item;
     NSURL *_url;
     NSString *_urlTitle;
     id _viewControllerBlock;
@@ -17,6 +18,7 @@
 
 @property(copy) NSURL * URL;
 @property int actionType;
+@property(retain) SKUIItem * item;
 @property(readonly) UIViewController * viewController;
 @property(copy) id viewControllerBlock;
 
@@ -25,7 +27,9 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (int)actionType;
+- (id)item;
 - (void)setActionType:(int)arg1;
+- (void)setItem:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setViewControllerBlock:(id)arg1;
 - (id)viewController;

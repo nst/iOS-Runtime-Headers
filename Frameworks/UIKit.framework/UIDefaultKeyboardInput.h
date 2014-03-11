@@ -75,6 +75,7 @@
 - (void)extendCurrentSelection:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForRange:(id)arg1;
 - (id)fontForCaretSelection;
+- (BOOL)forceEnableDictation;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)hasContent;
 - (BOOL)hasSelection;
@@ -114,6 +115,7 @@
 - (void)setAcceptsEmoji:(BOOL)arg1;
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (void)setBecomesEditableWithGestures:(BOOL)arg1;
+- (void)setForceEnableDictation:(BOOL)arg1;
 - (void)setInputDelegate:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setMarkedTextStyle:(id)arg1;

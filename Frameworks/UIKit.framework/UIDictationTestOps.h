@@ -26,6 +26,7 @@
 - (void)performSelectRangeForSpeech:(id)arg1;
 - (id)pop;
 - (void)popAndInvoke;
+- (void)pushInsertCrossfadingTextForSpeech:(id)arg1;
 - (void)pushInsertTextForSpeech:(id)arg1;
 - (void)pushReplaceSelectionWithText:(id)arg1;
 - (void)pushSelectRangeForSpeech:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

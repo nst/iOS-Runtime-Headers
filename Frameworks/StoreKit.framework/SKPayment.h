@@ -9,6 +9,8 @@
 }
 
 @property(readonly) NSString * applicationUsername;
+@property(readonly) NSString * partnerIdentifier;
+@property(readonly) NSString * partnerTransactionIdentifier;
 @property(readonly) NSString * productIdentifier;
 @property(readonly) int quantity;
 @property(readonly) NSData * requestData;
@@ -24,6 +26,8 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)partnerIdentifier;
+- (id)partnerTransactionIdentifier;
 - (id)productIdentifier;
 - (int)quantity;
 - (id)requestData;

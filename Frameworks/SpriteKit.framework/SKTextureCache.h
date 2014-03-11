@@ -15,6 +15,7 @@
     unsigned int *alphaMap;
     } alphaMapSize;
     struct CGImage { } *collisionMask;
+    int filteringMode;
     BOOL hasAlpha;
     BOOL isLoaded;
     BOOL isPOT;
@@ -27,10 +28,12 @@
     unsigned int texId;
     int texInternalFormat;
     unsigned int texType;
+    int wrapMode;
 }
 
 @property unsigned int* alphaMap;
 @property struct CGSize { float x1; float x2; } alphaMapSize;
+@property int filteringMode;
 @property BOOL hasAlpha;
 @property BOOL isLoaded;
 @property BOOL isPOT;
@@ -43,11 +46,13 @@
 @property unsigned int texId;
 @property int texInternalFormat;
 @property unsigned int texType;
+@property int wrapMode;
 
 - (id).cxx_construct;
 - (unsigned int*)alphaMap;
 - (struct CGSize { float x1; float x2; })alphaMapSize;
 - (void)dealloc;
+- (int)filteringMode;
 - (int*)getLock;
 - (BOOL)hasAlpha;
 - (id)init;
@@ -57,6 +62,7 @@
 - (struct CGSize { float x1; float x2; })pixelSize;
 - (void)setAlphaMap:(unsigned int*)arg1;
 - (void)setAlphaMapSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFilteringMode:(int)arg1;
 - (void)setHasAlpha:(BOOL)arg1;
 - (void)setIsLoaded:(BOOL)arg1;
 - (void)setIsPOT:(BOOL)arg1;
@@ -68,11 +74,13 @@
 - (void)setTexId:(unsigned int)arg1;
 - (void)setTexInternalFormat:(int)arg1;
 - (void)setTexType:(unsigned int)arg1;
+- (void)setWrapMode:(int)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (int)state;
 - (unsigned int)texFormat;
 - (unsigned int)texId;
 - (int)texInternalFormat;
 - (unsigned int)texType;
+- (int)wrapMode;
 
 @end

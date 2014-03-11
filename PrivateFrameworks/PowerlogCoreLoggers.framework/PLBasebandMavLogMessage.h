@@ -2,17 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCoreLoggers.framework/PowerlogCoreLoggers
  */
 
-@class NSData;
+@class NSData, NSString;
 
 @interface PLBasebandMavLogMessage : PLBasebandMessage {
     struct _PLBasebandLogHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; } *_header;
     NSData *_payload;
 }
 
+@property(readonly) unsigned int eventCode;
+@property(readonly) NSString * eventCodeString;
 @property struct _PLBasebandLogHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; }* header;
 @property NSData * payload;
 
+- (unsigned int)eventCode;
 - (id)eventCodeString:(unsigned int)arg1;
+- (id)eventCodeString;
 - (struct _PLBasebandLogHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; }*)header;
 - (id)initWithData:(id)arg1;
 - (void)logWithLogger:(id)arg1;

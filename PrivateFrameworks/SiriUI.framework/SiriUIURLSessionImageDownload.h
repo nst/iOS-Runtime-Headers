@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableData, NSObject<OS_dispatch_queue>, UIColor;
+@class NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, UIColor;
 
 @interface SiriUIURLSessionImageDownload : NSObject {
     struct CGSize { 
@@ -20,8 +20,10 @@
     BOOL _hasSentFinished;
     struct CGImageSource { } *_imageSource;
     unsigned int _lastUpdatedLength;
+    BOOL _newDataAvailableToRender;
     id _progressHandler;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_source> *_renderTimer;
 }
 
 - (void).cxx_destruct;

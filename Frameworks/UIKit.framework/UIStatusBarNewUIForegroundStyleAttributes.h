@@ -19,7 +19,9 @@
 - (BOOL)_shouldUseBoldFontForStyle:(int)arg1;
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
 - (float)batteryAccessoryMargin;
+- (int)batteryImageIdWithCapacity:(float)arg1;
 - (float)bluetoothBatteryExtraPadding;
+- (int)bluetoothBatteryImageIdWithCapacity:(float)arg1;
 - (void)dealloc;
 - (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;
 - (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;

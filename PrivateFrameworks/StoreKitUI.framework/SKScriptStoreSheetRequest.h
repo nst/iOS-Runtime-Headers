@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)_className;
+- (id)_safeValueForValue:(id)arg1;
 - (id)attributeKeys;
 - (id)newNativeStorePageRequest;
 - (int)productPageStyle;

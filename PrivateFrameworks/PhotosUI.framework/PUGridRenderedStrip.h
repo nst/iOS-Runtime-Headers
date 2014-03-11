@@ -75,6 +75,7 @@
 - (void)setItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLayout:(id)arg1;
 - (void)setLeftContentInset:(float)arg1;
+- (void)setNeedsRendering;
 - (void)setVisualSectionIndex:(int)arg1 andVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)topContentView;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })visualItemRange;

@@ -6,7 +6,7 @@
 
 @interface WBUFormDataController : WBSFormDataController <UIActionSheetDelegate, UIWebAutoFillDelegate> {
     WBUFormAutoCompleteState *_autoCompleteState;
-    NSMapTable *_formMetadataForLastSubmitEventByFrame;
+    NSMapTable *_formMetadataForLastPasswordGenerationOrSubmitEventByFrame;
     BOOL _savePending;
     BOOL _showsAutocompleteOffHints;
 }
@@ -20,28 +20,36 @@
 
 + (void)_getUsernameAndPasswordFieldAutofillStatesInForm:(id)arg1 frame:(id)arg2 isUsernameAutofilled:(BOOL*)arg3 isPasswordAutofilled:(BOOL*)arg4;
 + (BOOL)_isKeychainSyncEnabled;
-+ (id)autoFillValuesForCredentialMatch:(id)arg1 inLoginForm:(id)arg2;
 + (id)autocompleteOffHintsHistoryDefaultsKey;
 + (id)sharedFormDataController;
 
 - (id)_addressBookMatchesForProxyProperty:(id)arg1;
+- (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationWillTerminate:(id)arg1;
 - (void)_autoFillLoginForm:(id)arg1 inFrame:(id)arg2;
 - (void)_autoFillPreferencesDidChange;
 - (id)_autoFillValuesForLoginForm:(id)arg1 inFrame:(id)arg2 potentialMatches:(id*)arg3;
 - (void)_clearFormAutoFillStateForFrame:(id)arg1;
-- (id)_formMetadataForPolicyAction:(id)arg1 frame:(id)arg2;
+- (id)_credentialMatchesEligibleForUpdateForURL:(id)arg1 username:(id)arg2 oldPassword:(id)arg3;
+- (id)_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
+- (id)_formMetadataAndFrame:(id*)arg1 forPolicyAction:(id)arg2 frame:(id)arg3;
 - (id)_meCard;
+- (void)_recursivelySaveUnsubmittedGeneratedPasswordsInFrame:(id)arg1;
+- (void)_saveUnsubmittedGeneratedPasswordInFrame:(id)arg1 form:(id)arg2 closingWebView:(BOOL)arg3;
+- (void)_saveUnsubmittedGeneratedPasswords;
 - (BOOL)_shouldSaveCreditCardDataInFrame:(id)arg1;
 - (void)_showCreditCardPromptForWebBrowserView:(id)arg1 completionHandler:(id)arg2;
 - (void)_showPasswordNotSavedBecauseNotAllowedAlertIfNeededForURL:(id)arg1 webBrowserView:(id)arg2;
 - (void)_showPasswordPromptForWebBrowserView:(id)arg1 formType:(unsigned int)arg2 username:(id)arg3 isGeneratedPassword:(BOOL)arg4 host:(id)arg5 hasCredentialForCurrentHost:(BOOL)arg6 existingCredentialMatchesForCurrentHost:(id)arg7 otherSubdomainCredentialMatches:(id)arg8 completionHandler:(id)arg9;
-- (BOOL)_webBrowserView:(id)arg1 saveUsernameAndGeneratedPasswordFromForm:(id)arg2 inFrame:(id)arg3 submissionHandler:(id)arg4;
-- (BOOL)_webBrowserView:(id)arg1 willSubmitForm:(id)arg2 fromFrame:(id)arg3 submissionHandler:(id)arg4;
+- (BOOL)_updateCredentialsWithGeneratedPasswordForForm:(id)arg1 inFrame:(id)arg2;
+- (BOOL)_webBrowserView:(id)arg1 navigationType:(int)arg2 willSubmitForm:(id)arg3 fromFrame:(id)arg4 submissionHandler:(id)arg5;
+- (BOOL)_webBrowserView:(id)arg1 navigationType:(int)arg2 willSubmitNewAccountOrChangePasswordFormWithMetadata:(id)arg3 fromFrame:(id)arg4 submissionHandler:(id)arg5;
+- (BOOL)_webBrowserView:(id)arg1 saveUsernameAndGeneratedPasswordFromForm:(id)arg2 inFrame:(id)arg3 confirmOverwritingCurrentPassword:(BOOL)arg4 submissionHandler:(id)arg5;
 - (BOOL)_webBrowserView:(id)arg1 willSubmitFormContainingCreditCardData:(id)arg2 fromFrame:(id)arg3 submissionHandler:(id)arg4;
 - (BOOL)_webBrowserView:(id)arg1 willSubmitLoginFormWithMetadata:(id)arg2 fromFrame:(id)arg3 submissionHandler:(id)arg4;
-- (BOOL)_webBrowserView:(id)arg1 willSubmitNewAccountOrChangePasswordFormWithMetadata:(id)arg2 fromFrame:(id)arg3 submissionHandler:(id)arg4;
 - (BOOL)_webBrowserView:(id)arg1 willSubmitStandardFormWithMetadata:(id)arg2 fromFrame:(id)arg3 submissionHandler:(id)arg4;
+- (void)_webViewWillClose:(id)arg1;
 - (id)addressBookMatchesForProperty:(id)arg1 key:(id)arg2 label:(id)arg3;
 - (BOOL)allowsBypassingAutocompleteOff;
 - (void)autoFillInWebBrowserView:(id)arg1;
@@ -49,6 +57,7 @@
 - (id)completionDBPath;
 - (void)dealloc;
 - (id)decisionListenerForAction:(id)arg1 frame:(id)arg2 originalListener:(id)arg3;
+- (void)didFillFormWithGeneratedPassword:(id)arg1 inFrame:(id)arg2;
 - (void)gatherValuesForForm:(id)arg1 inFrame:(id)arg2 completionHandler:(id)arg3;
 - (BOOL)hasCurrentSuggestionsForWebBrowserView:(id)arg1;
 - (id)init;
@@ -77,6 +86,7 @@
 - (void)webBrowserView:(id)arg1 didFocusTextField:(id)arg2 inFrame:(id)arg3;
 - (void)webBrowserView:(id)arg1 preFillInFrame:(id)arg2;
 - (id)webBrowserView:(id)arg1 suggestionsForString:(id)arg2;
+- (void)webBrowserView:(id)arg1 textDidChangeInTextField:(id)arg2 inFrame:(id)arg3;
 - (void)webBrowserView:(id)arg1 updateAutoFillButton:(id)arg2;
 - (void)webBrowserView:(id)arg1 willSendSubmitEventToForm:(id)arg2 inFrame:(id)arg3 withValues:(id)arg4;
 - (void)webBrowserView:(id)arg1 willSubmitForm:(id)arg2 toFrame:(id)arg3 fromFrame:(id)arg4 withValues:(id)arg5 submissionHandler:(id)arg6;

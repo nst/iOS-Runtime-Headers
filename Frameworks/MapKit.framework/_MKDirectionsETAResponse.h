@@ -29,6 +29,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)destination;
 - (id)directionsResponse;

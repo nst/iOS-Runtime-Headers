@@ -20,6 +20,7 @@
 @property(readonly) BOOL proceduralRoadAlpha;
 @property(readonly) BOOL roadsWithSimpleLineMeshesAvailable;
 @property(readonly) BOOL shouldDrawWhenReady;
+@property(readonly) BOOL shouldStyleLabelsInParallel;
 @property(readonly) BOOL shouldUseTrafficAlphaHack;
 @property(readonly) BOOL supports3DBuildingStrokes;
 @property(readonly) BOOL supportsBuildingStrokes;
@@ -43,6 +44,7 @@
 - (BOOL)proceduralRoadAlpha;
 - (BOOL)roadsWithSimpleLineMeshesAvailable;
 - (BOOL)shouldDrawWhenReady;
+- (BOOL)shouldStyleLabelsInParallel;
 - (BOOL)shouldUseTrafficAlphaHack;
 - (BOOL)supports3DBuildingStrokes;
 - (BOOL)supportsBuildingStrokes;

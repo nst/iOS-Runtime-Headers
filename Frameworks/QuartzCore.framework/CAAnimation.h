@@ -41,6 +41,7 @@
 + (void)CAMLParserStartElement:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)CA_encodesPropertyConditionally:(unsigned int)arg1 type:(int)arg2;
++ (id)TSD_supportedKeyPaths;
 + (id)animation;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
@@ -54,7 +55,7 @@
 - (double)TSD_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2;
 - (BOOL)TSD_containsAnimationForKeyPath:(id)arg1;
 - (id)TSD_valueAtTime:(double)arg1 initialValue:(id)arg2;
-- (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2 initialValues:(id)arg3;
+- (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 - (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2;
 - (int)_mapkit_ID;
 - (BOOL)_mapkit_isScrollingAnimation;

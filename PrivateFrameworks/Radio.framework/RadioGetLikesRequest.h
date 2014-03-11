@@ -8,11 +8,13 @@
     unsigned int _numberOfBannedTracks;
     unsigned int _numberOfLikedTracks;
     SSURLConnectionRequest *_request;
+    BOOL _shouldProcessItems;
     RadioStation *_station;
 }
 
 @property unsigned int numberOfBannedTracks;
 @property unsigned int numberOfLikedTracks;
+@property BOOL shouldProcessItems;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -22,7 +24,8 @@
 - (unsigned int)numberOfLikedTracks;
 - (void)setNumberOfBannedTracks:(unsigned int)arg1;
 - (void)setNumberOfLikedTracks:(unsigned int)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)setShouldProcessItems:(BOOL)arg1;
+- (BOOL)shouldProcessItems;
 - (void)startWithLikeBanCompletionHandler:(id)arg1;
 
 @end

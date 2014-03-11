@@ -23,6 +23,7 @@
 @property(copy) TSDInfoGeometry * geometry;
 @property(getter=isInlineWithText,readonly) BOOL inlineWithText;
 @property(readonly) NSString * instructionalText;
+@property(readonly) BOOL isBulleted;
 @property BOOL matchesObjectPlaceholderGeometry;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
@@ -43,9 +44,6 @@
 - (struct CGPoint { float x1; float x2; })autosizePositionOffsetForGeometry:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })autosizedTransformForInfoGeometry:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)buildImageTitle;
-- (id)buildTitle;
-- (id)buildTitleByAppendingContainedTextToTitle:(id)arg1 forLine:(unsigned int)arg2;
-- (id)buildTitleByAppendingContainedTextToTitle:(id)arg1;
 - (id)childEnumerator;
 - (id)childInfos;
 - (unsigned int)chunkCountForTextureDeliveryStyle:(unsigned int)arg1 byGlyphStyle:(int)arg2 animationFilter:(id)arg3;
@@ -54,8 +52,7 @@
 - (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)containedStorage;
 - (id)containedText;
-- (id)containedTextByTrimmingWhitespaceAndAdditionalLines;
-- (id)containedTextForLine:(unsigned int)arg1;
+- (id)containedTextForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (int)contentWritingDirection;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -68,6 +65,7 @@
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 wpStorage:(id)arg4;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)instructionalText;
+- (BOOL)isBulleted;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ShapeInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeArchive {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
@@ -76,6 +74,8 @@
 - (float)pOffsetForVerticalAlignment:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)p_chunkCountForByBullet;
 - (unsigned int)p_chunkCountForByBulletGroup;
+- (id)p_containedTextForDeliveryStyle:(unsigned int)arg1 chunkIndex:(unsigned int)arg2;
+- (id)p_defaultBuildChunkTitle;
 - (BOOL)p_hasContentForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)p_hasListLabelOrContentForParagraphIndex:(unsigned int)arg1;
 - (id)padding;
@@ -95,7 +95,10 @@
 - (BOOL)shouldHideEmptyBullets;
 - (BOOL)shrinkTextToFit;
 - (Class)styleClass;
+- (id)styleIdentifierTemplateForNewPreset;
 - (id)stylesForCopyStyle;
+- (BOOL)supportsShrinkTextToFit;
+- (BOOL)supportsTextInset;
 - (BOOL)textIsVertical;
 - (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
 - (id)titleForBuildChunk:(id)arg1;

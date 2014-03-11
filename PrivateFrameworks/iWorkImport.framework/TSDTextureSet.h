@@ -64,6 +64,7 @@
     NSMutableArray *mTextures;
 }
 
+@property(readonly) NSArray * allTextures;
 @property(retain) CALayer * alternateLayer;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
 @property(retain) NSDictionary * boundingRectForStage;
@@ -93,8 +94,9 @@
 - (void)addRenderable:(id)arg1 forStage:(int)arg2;
 - (void)addRenderable:(id)arg1;
 - (void)adjustAnchorPointRelativeToCenterOfRotation;
+- (id)allTextures;
 - (id)alternateLayer;
-- (void)applyActionEffect:(id)arg1 viewScale:(float)arg2 isMagicMove:(BOOL)arg3 shouldBake:(BOOL)arg4 applyScaleOnly:(BOOL)arg5 shouldCheckActionKeys:(BOOL)arg6;
+- (void)applyActionEffect:(id)arg1 viewScale:(float)arg2 isMagicMove:(BOOL)arg3 shouldBake:(BOOL)arg4 applyScaleOnly:(BOOL)arg5 ignoreScale:(BOOL)arg6 shouldCheckActionKeys:(BOOL)arg7;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForStage:(int)arg1 isBuildIn:(BOOL)arg2;
 - (id)boundingRectForStage;

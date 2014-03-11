@@ -9,15 +9,19 @@
 
 @property(copy) NSArray * interpretations;
 @property BOOL lowConfidence;
+@property BOOL speechRepairApplied;
 
 + (id)phrase;
 + (id)phraseWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)af_speechInterpretations;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)interpretations;
 - (BOOL)lowConfidence;
 - (void)setInterpretations:(id)arg1;
 - (void)setLowConfidence:(BOOL)arg1;
+- (void)setSpeechRepairApplied:(BOOL)arg1;
+- (BOOL)speechRepairApplied;
 
 @end

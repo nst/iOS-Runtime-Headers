@@ -50,6 +50,7 @@
 - (id)redeemerViewForSKUIRedeemCameraView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInitialCode:(id)arg1;
+- (void)showITunesPassLearnMoreForSKUIRedeemCameraView:(id)arg1;
 - (void)startRedeemerViewForSKUIRedeemCameraView:(id)arg1;
 
 @end

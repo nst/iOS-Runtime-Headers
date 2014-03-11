@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPRadioAdTrack, NSData, NSString, RadioStation;
+@class MPRadioAdTrack, NSString, RadioStation;
 
 @interface MPRadioAdAVItem : MPAVAdItem {
     MPRadioAdTrack *_adTrack;
-    NSData *_artworkImageData;
-    NSString *_artworkMIMEType;
     RadioStation *_station;
     NSString *_stationHash;
     long long _stationID;
@@ -23,14 +21,13 @@
 - (void)_applyLoudnessInfo;
 - (id)adTrack;
 - (id)album;
-- (id)artworkImageData;
-- (id)artworkMIMEType;
-- (id)imageCache;
 - (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
 - (id)initWithAdTrack:(id)arg1;
+- (BOOL)isStreamable;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (void)reevaluateType;
-- (void)setArtworkImageData:(id)arg1 mimeType:(id)arg2;
 - (void)setStation:(id)arg1;
 - (id)station;
 - (id)stationHash;

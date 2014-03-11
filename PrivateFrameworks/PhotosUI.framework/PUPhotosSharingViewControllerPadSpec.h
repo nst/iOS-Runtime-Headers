@@ -5,11 +5,10 @@
 @interface PUPhotosSharingViewControllerPadSpec : PUPhotosSharingViewControllerSpec {
 }
 
-- (BOOL)allowsInterfaceRotation;
 - (BOOL)embedsActivityViewForOrientation:(int)arg1;
-- (int)fastImageFormat;
+- (int)fastImageFormatForOrientation:(int)arg1;
 - (float)interItemSpacing;
-- (int)qualityImageFormat;
-- (int)zoomingImageFormat;
+- (int)qualityImageFormatForOrientation:(int)arg1;
+- (int)zoomingImageFormatForOrientation:(int)arg1;
 
 @end

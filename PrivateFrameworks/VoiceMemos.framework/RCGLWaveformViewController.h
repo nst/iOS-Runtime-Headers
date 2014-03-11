@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCWaveformDataSource>, <RCWaveformViewDelegate>, CADisplayLink, NSMutableArray, NSTimer, RCAcousticAnnotationView, RCGLWaveformRenderer, RCWaveformSelectionOverlay, UIColor, UIScrollView;
+@class <RCGLWaveformViewDelegate>, <RCWaveformDataSource>, CADisplayLink, NSMutableArray, NSTimer, RCAcousticAnnotationView, RCGLWaveformRenderer, RCUIConfiguration, RCWaveformScrollView, RCWaveformSelectionOverlay, UIView;
 
 @interface RCGLWaveformViewController : UIViewController <UIScrollViewDelegate, RCGLWaveformRendererDelegate, RCWaveformSelectionOverlayDelegate> {
     struct { 
@@ -14,22 +14,26 @@
     struct { 
         double beginTime; 
         double endTime; 
+    RCUIConfiguration *_UIConfiguration;
     RCAcousticAnnotationView *_acousticAnnotationView;
     double _autoscrollBaseDuration;
     double _autoscrollRate;
     BOOL _autoscrolling;
-    UIColor *_backgroundColor;
+    UIView *_bottomLineView;
+    BOOL _clipTimeMarkersToDuration;
     double _currentTime;
     unsigned int _currentTimeDisplayOptions;
-    <RCWaveformViewDelegate> *_delegate;
+    <RCGLWaveformViewDelegate> *_delegate;
     CADisplayLink *_displayLink;
     double _duration;
+    float _layoutWidth;
+    double _maximumSelectionDuration;
     NSTimer *_overlayAutoscrollTimer;
-    int _playbackState;
+    BOOL _playing;
     RCGLWaveformRenderer *_rendererController;
     float _resumingToForegroundAutoscrollRate;
     BOOL _screenUpdatesDisabled;
-    UIScrollView *_scrollView;
+    RCWaveformScrollView *_scrollView;
     BOOL _scrubbing;
     BOOL _scrubbingEnabled;
     } _selectedTimeRange;
@@ -40,46 +44,54 @@
     NSMutableArray *_timeMarkerViews;
     BOOL _timeMarkerViewsNeedInitialLayout;
     BOOL _timeMarkerViewsUpdatesDisabled;
+    UIView *_topLineView;
     } _visibleTimeRange;
     } _visibleTimeRangeBeforeSelectionTracking;
 }
 
+@property(copy) RCUIConfiguration * UIConfiguration;
 @property(getter=isAutoscrolling,readonly) BOOL autoscrolling;
-@property(retain) UIColor * backgroundColor;
+@property BOOL clipTimeMarkersToDuration;
 @property double currentTime;
 @property unsigned int currentTimeDisplayOptions;
 @property <RCWaveformDataSource> * dataSource;
-@property <RCWaveformViewDelegate> * delegate;
+@property <RCGLWaveformViewDelegate> * delegate;
 @property double duration;
-@property int playbackState;
+@property double maximumSelectionDuration;
+@property BOOL playing;
 @property BOOL screenUpdatesDisabled;
 @property BOOL scrubbingEnabled;
 @property struct { double x1; double x2; } selectedTimeRange;
 @property(getter=isSelectedTimeRangeEditingEnabled) BOOL selectedTimeRangeEditingEnabled;
 @property float selectionVisibleMargin;
 @property struct { double x1; double x2; } visibleTimeRange;
-@property(retain) UIColor * waveformColor;
 
 - (void).cxx_destruct;
+- (id)UIConfiguration;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_applyUIConfiguration;
 - (void)_autoscrollOverlayIfNecessary;
 - (void)_displayLinkDidUpdate:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTimeMarkerView:(id)arg1;
+- (BOOL)_isScrubbing;
+- (BOOL)_isScrubbingSelectionTimeRange;
 - (void)_layoutTimeMarkerViewsForCurrentlyVisibleTimeRange;
 - (void)_scrollViewPanGestureRecognized:(id)arg1;
 - (void)_setSelectedTimeRange:(struct { double x1; double x2; })arg1 updateVisibleTimeRange:(BOOL)arg2 notifyDelegate:(BOOL)arg3 animationDuration:(double)arg4;
 - (void)_setTimeMarkerViewUpdatesDisabled:(BOOL)arg1;
+- (void)_setTimeMarkerViewsNeedInitialLayout:(BOOL)arg1;
+- (BOOL)_shouldAutoAnimateScrollChanges;
 - (void)_startDisplayLink;
 - (void)_stopDisplayLink;
 - (void)_updateAnnotationViews;
 - (void)_updateCurrentTimeDisplay;
 - (void)_updateSelectionOverlayWithAnimationDuration:(double)arg1;
 - (void)_updateVisibleAreaWithAnimationDuration:(double)arg1;
-- (void)_updateWaveformView;
+- (void)_updateWaveformViewContentSizeAndOffset;
 - (struct { double x1; double x2; })_visibleTimeRangeForCurrentSelectionTimeRange;
 - (id)_waveformRenderer;
-- (id)backgroundColor;
 - (void)beginAutoscrollingAtTime:(double)arg1 atRate:(float)arg2;
+- (BOOL)clipTimeMarkersToDuration;
 - (float)currentPlayheadPosition;
 - (double)currentTime;
 - (unsigned int)currentTimeDisplayOptions;
@@ -90,7 +102,8 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isAutoscrolling;
 - (BOOL)isSelectedTimeRangeEditingEnabled;
-- (int)playbackState;
+- (double)maximumSelectionDuration;
+- (BOOL)playing;
 - (BOOL)screenUpdatesDisabled;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
@@ -98,38 +111,39 @@
 - (BOOL)scrubbingEnabled;
 - (struct { double x1; double x2; })selectedTimeRange;
 - (float)selectionVisibleMargin;
-- (void)setBackgroundColor:(id)arg1;
+- (void)setClipTimeMarkersToDuration:(BOOL)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setCurrentTimeDisplayOptions:(unsigned int)arg1;
-- (void)setDataSource:(id)arg1 currentTime:(double)arg2;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setPlaybackState:(int)arg1;
+- (void)setMaximumSelectionDuration:(double)arg1;
+- (void)setPlaying:(BOOL)arg1;
 - (void)setScreenUpdatesDisabled:(BOOL)arg1;
 - (void)setScrubbingEnabled:(BOOL)arg1;
 - (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;
 - (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setSelectedTimeRangeEditingEnabled:(BOOL)arg1;
 - (void)setSelectionVisibleMargin:(float)arg1;
+- (void)setUIConfiguration:(id)arg1;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2 completionBlock:(id)arg3;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1;
-- (void)setWaveformColor:(id)arg1;
 - (void)stopAutoscrolling;
 - (struct { double x1; double x2; })timeRangeByInsettingVisibleTimeRange:(struct { double x1; double x2; })arg1 inset:(float)arg2;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (struct { double x1; double x2; })visibleTimeRange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })waveformBoundaryRect;
-- (id)waveformColor;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })waveformRectForLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)waveformRenderer:(id)arg1 contentWidthDidChange:(float)arg2;
 - (void)waveformRendererContentDidFinishLoading:(id)arg1;
-- (void)waveformSelectionOverlay:(id)arg1 didFinishTrackingSelectionBeginTime:(BOOL)arg2 endTime:(BOOL)arg3;
+- (void)waveformSelectionOverlay:(id)arg1 didFinishTrackingSelectionBeginTime:(BOOL)arg2 endTime:(BOOL)arg3 assetCurrentTime:(BOOL)arg4;
 - (float)waveformSelectionOverlay:(id)arg1 offsetForTime:(double)arg2;
 - (double)waveformSelectionOverlay:(id)arg1 timeForOffset:(float)arg2;
-- (void)waveformSelectionOverlay:(id)arg1 willBeginTrackingSelectionBeginTime:(BOOL)arg2 endTime:(BOOL)arg3;
+- (void)waveformSelectionOverlay:(id)arg1 willBeginTrackingSelectionBeginTime:(BOOL)arg2 endTime:(BOOL)arg3 assetCurrentTime:(BOOL)arg4;
+- (double)waveformSelectionOverlay:(id)arg1 willChangeAssetCurrentTime:(double)arg2 isTracking:(BOOL)arg3;
 - (struct { double x1; double x2; })waveformSelectionOverlay:(id)arg1 willChangeSelectedTimeRange:(struct { double x1; double x2; })arg2 isTracking:(BOOL)arg3;
 
 @end

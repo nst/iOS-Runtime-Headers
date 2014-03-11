@@ -62,6 +62,7 @@
 - (BOOL)_allowsZeroTimeInterval;
 - (int)_amPmValue;
 - (id)_componentsSelectedAfterEnforcingValidityOfComponents:(id)arg1 withLastManipulatedComponent:(int)arg2;
+- (id)_contentViewForSizingLabelForPositioningInComponent:(int)arg1;
 - (void)_datePickerReset:(id)arg1;
 - (void)_doneLoadingDateOrTime;
 - (void)_fadeLabelForCalendarUnit:(unsigned int)arg1 toText:(id)arg2 animated:(BOOL)arg3;

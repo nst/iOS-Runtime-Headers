@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUQueryDataSource, NSArray, NSMutableArray, NSOperationQueue, NSString;
+@class MPUQueryDataSource, NSArray, NSOperationQueue, NSString, _MPUSearchOperation;
 
 @interface MPUSearchDataSource : MPUQueryDataSource {
     MPUQueryDataSource *_dataSource;
     NSOperationQueue *_operationQueue;
-    NSMutableArray *_operations;
+    _MPUSearchOperation *_searchOperation;
     NSArray *_searchResults;
     NSString *_searchString;
 }
 
 @property(readonly) MPUQueryDataSource * dataSource;
-@property(getter=isSearchInProgress,readonly) BOOL searchInProgress;
 @property(readonly) NSString * searchString;
 
 - (void).cxx_destruct;
@@ -24,8 +23,8 @@
 - (void)dealloc;
 - (id)entities;
 - (void)filterResultsUsingSearchString:(id)arg1;
+- (id)initWithDataSource:(id)arg1 operationQueue:(id)arg2;
 - (id)initWithDataSource:(id)arg1;
-- (BOOL)isSearchInProgress;
 - (id)searchString;
 
 @end

@@ -22,7 +22,9 @@
         unsigned int itemCountsAreValid : 1; 
         unsigned int layoutIsPrepared : 1; 
         unsigned int layoutLocked : 1; 
-    NSMutableArray *_clonedLayoutAttributes;
+    NSMutableArray *_clonedCellAttributes;
+    NSMutableArray *_clonedDecorationAttributes;
+    NSMutableArray *_clonedSupplementaryAttributes;
     UICollectionView *_collectionView;
     } _collectionViewDataFlags;
     } _contentSize;
@@ -40,7 +42,9 @@
     } _validLayoutRect;
 }
 
-@property(readonly) NSArray * clonedLayoutAttributes;
+@property(readonly) NSArray * clonedCellAttributes;
+@property(readonly) NSArray * clonedDecorationAttributes;
+@property(readonly) NSArray * clonedSupplementaryAttributes;
 @property(readonly) BOOL layoutIsPrepared;
 @property(getter=isLayoutLocked) BOOL layoutLocked;
 
@@ -54,7 +58,9 @@
 - (void)_updateItemCounts;
 - (void)_validateContentSize;
 - (void)_validateItemCounts;
-- (id)clonedLayoutAttributes;
+- (id)clonedCellAttributes;
+- (id)clonedDecorationAttributes;
+- (id)clonedSupplementaryAttributes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })collectionViewContentRect;
 - (void)dealloc;
 - (id)existingSupplementaryLayoutAttributes;

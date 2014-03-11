@@ -2,35 +2,48 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class _MKUserTrackingButtonController;
+@class <MKUserTrackingView>, MKMapView, NSMutableDictionary, _MKUserTrackingButtonController;
 
 @interface _MKUserTrackingButton : UIButton <MKUserTrackingButtonTarget> {
     _MKUserTrackingButtonController *_controller;
+    NSMutableDictionary *_customImages;
+    NSMutableDictionary *_customLandscapeImagePhones;
     BOOL _inMiniBar;
+    BOOL _selectsWhenTracking;
 }
 
 @property(readonly) _MKUserTrackingButtonController * controller;
+@property(retain) MKMapView * mapView;
+@property(getter=_selectsWhenTracking,setter=_setSelectsWhenTracking:) BOOL selectsWhenTracking;
+@property(retain) <MKUserTrackingView> * userTrackingView;
 
 + (Class)_activityIndicatorClass;
-+ (id)_buttonWithUserTrackingView:(id)arg1;
 + (id)buttonWithMapView:(id)arg1;
-+ (id)buttonWithWorldView:(id)arg1 forceIdiom:(int)arg2;
-+ (id)buttonWithWorldView:(id)arg1;
++ (id)buttonWithUserTrackingView:(id)arg1;
 
+- (void).cxx_destruct;
 - (int)_activityIndicatorStyle;
+- (id)_defaultImageForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
+- (id)_defaultLandscapeImagePhoneForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
+- (id)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
+- (id)_imageForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
 - (BOOL)_isHighlightedForState:(int)arg1;
+- (id)_landscapeImagePhoneForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
 - (void)_repositionViews;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
+- (BOOL)_selectsWhenTracking;
+- (void)_setImage:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
+- (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
+- (void)_setSelectsWhenTracking:(BOOL)arg1;
 - (void)_setState:(int)arg1;
 - (int)_state;
-- (id)_trackingEmptyImage;
-- (id)_trackingFollowImage;
-- (id)_trackingFollowWithHeadingImage;
-- (id)_trackingNoneImage;
 - (void)_updateForState:(int)arg1;
 - (id)controller;
-- (void)dealloc;
+- (id)mapView;
+- (void)setMapView:(id)arg1;
+- (void)setUserTrackingView:(id)arg1;
 - (void)sizeToFit;
 - (void)updateForMiniBarState:(BOOL)arg1;
+- (id)userTrackingView;
 
 @end

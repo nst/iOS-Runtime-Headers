@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <UINavigationControllerDelegate>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSUUID, UIGestureRecognizer, UINavigationBar, UINavigationTransitionView, UITapGestureRecognizer, UIToolbar, UIView, UIViewController, _UINavigationControllerPalette, _UINavigationInteractiveTransition, _UINavigationParallaxTransition;
+@class <UINavigationControllerDelegate>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSString, NSUUID, UIGestureRecognizer, UINavigationBar, UINavigationTransitionView, UITapGestureRecognizer, UIToolbar, UIView, UIViewController, _UINavigationControllerPalette, _UINavigationInteractiveTransition, _UINavigationParallaxTransition;
 
 @interface UINavigationController : UIViewController <UIGestureRecognizerDelegate, GKContentRefresh, GKURLHandling> {
     struct { 
@@ -50,6 +50,7 @@
         unsigned int skipContentInsetCalculation : 1; 
         unsigned int neverInWindow : 1; 
         unsigned int useCurrentStatusBarHeight : 1; 
+    NSString *__backdropGroupName;
     BOOL __barAnimationWasCancelled;
     _UINavigationInteractiveTransition *__cachedInteractionController;
     _UINavigationParallaxTransition *__cachedTransitionController;
@@ -82,6 +83,7 @@
     _UINavigationControllerPalette *_transitioningTopPalette;
 }
 
+@property(getter=_backdropGroupName,setter=_setBackdropGroupName:,retain) NSString * _backdropGroupName;
 @property(setter=_setBarAnimationWasCancelled:) BOOL _barAnimationWasCancelled;
 @property(setter=_setCachedInteractionController:,retain) _UINavigationInteractiveTransition * _cachedInteractionController;
 @property(setter=_setCachedTransitionController:,retain) _UINavigationParallaxTransition * _cachedTransitionController;
@@ -131,6 +133,8 @@
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(int)arg2 edge:(unsigned int*)arg3 duration:(double*)arg4;
+- (id)_backdropBarGroupName;
+- (id)_backdropGroupName;
 - (BOOL)_barAnimationWasCancelled;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForPalette:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)_builtinInteractionController;
@@ -202,12 +206,12 @@
 - (id)_navbarAnimationId;
 - (BOOL)_navbarIsAppearingInteractively;
 - (void)_navigationBarDidChangeStyle:(id)arg1;
+- (id)_navigationBarHiddenByDefault:(BOOL)arg1;
 - (id)_navigationItems;
 - (int)_navigationTransitionForUITransition:(int)arg1;
 - (void)_navigationTransitionView:(id)arg1 didCancelTransition:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4 wrapperView:(id)arg5;
 - (void)_performBackGesture:(id)arg1;
 - (id)_pinningBarForPalette:(id)arg1;
-- (id)_pl_innerViewController;
 - (void)_popViewControllerAndUpdateInterfaceOrientationAnimated:(BOOL)arg1;
 - (id)_popViewControllerWithTransition:(int)arg1 allowPoppingLast:(BOOL)arg2;
 - (int)_positionForBar:(id)arg1;
@@ -234,6 +238,7 @@
 - (float)_scrollViewBottomContentInsetForViewController:(id)arg1;
 - (float)_scrollViewTopContentInsetForViewController:(id)arg1;
 - (void)_sendNavigationBarToBack;
+- (void)_setBackdropGroupName:(id)arg1;
 - (void)_setBarAnimationWasCancelled:(BOOL)arg1;
 - (void)_setBuiltinTransitionGap:(float)arg1;
 - (void)_setBuiltinTransitionStyle:(int)arg1;
@@ -306,12 +311,14 @@
 - (void)_updateInteractiveTransition:(float)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (id)_updateNavigationBarHandler;
+- (void)_updateNavigationBarItems:(BOOL)arg1;
 - (void)_updatePaletteBackground;
 - (void)_updateScrollViewFromViewController:(id)arg1 toViewController:(id)arg2;
 - (void)_updateToolbarItemsFromViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_useCurrentStatusBarHeight;
 - (BOOL)_usesTransitionController;
 - (id)_viewControllerForDisappearCallback;
+- (BOOL)_viewControllerWasSelected;
 - (id)_viewForContentInPopover;
 - (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
@@ -436,6 +443,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)signInControllerInHierarchy;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (id)tabBarItem;
 - (id)toolbar;

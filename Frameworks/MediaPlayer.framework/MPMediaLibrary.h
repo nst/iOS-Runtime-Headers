@@ -107,8 +107,8 @@
 - (void)_canShowCloudTracksDidChangeNotification:(id)arg1;
 - (BOOL)_checkHasContent:(BOOL*)arg1 determined:(BOOL*)arg2 mediaType:(unsigned int)arg3 queryHasEntitiesBlock:(id)arg4;
 - (BOOL)_checkHasContent:(BOOL*)arg1 determined:(BOOL*)arg2 queryHasEntitiesBlock:(id)arg3;
-- (void)_clearCachedContentDataAndResultSets:(BOOL)arg1 withCompletionBlock:(id)arg2;
-- (void)_clearCachedEntitiesIncludingResultSets:(BOOL)arg1 completionBlock:(id)arg2;
+- (void)_clearCachedContentDataAndResultSets:(BOOL)arg1;
+- (void)_clearCachedEntitiesIncludingResultSets:(BOOL)arg1;
 - (void)_clearPendingDisconnection;
 - (id)_collectionPersistentIdentifiersForQueryCriteria:(id)arg1;
 - (id)_collectionsForQueryCriteria:(id)arg1;
@@ -117,7 +117,6 @@
 - (unsigned int)_countOfItemsForQueryCriteria:(id)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
 - (void)_displayValuesDidChangeNotification:(id)arg1;
-- (void)_enabledMediaTypesDidChangeNotification:(id)arg1;
 - (id)_getCachedValueForQueryCritiera:(id)arg1 valueCriteriaCache:(id)arg2 entitiesForCriteriaCache:(id)arg3 didLoadBlocksByQueryCriteria:(id)arg4 valueLoadedFromEntitiesArrayBlock:(id)arg5 loadValueFromDataProviderBlock:(id)arg6;
 - (BOOL)_hasCollectionsForQueryCriteria:(id)arg1;
 - (BOOL)_hasItemsForQueryCriteria:(id)arg1;
@@ -130,6 +129,7 @@
 - (void)_reloadLibraryForInvisiblePropertyChangeWithNotificationInfo:(id)arg1;
 - (void)_reloadLibraryForRestrictionsChange;
 - (void)_removeConnectionAssertion:(id)arg1;
+- (void)_scheduleLibraryChangeNotificationPostingBlock:(id)arg1;
 - (void)_stopConnectionProgressDisplayLink;
 - (id)_syncValidity;
 - (void)addLibraryFilterPredicate:(id)arg1;
@@ -150,6 +150,8 @@
 - (void)downloadAsset:(id)arg1 completionHandler:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endGeneratingLibraryChangeNotifications;
+- (id)entityCache;
+- (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 usingBlock:(id)arg3;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id)arg2;
 - (id)errorResolverForMediaItem:(id)arg1;
 - (BOOL)hasAlbums;
@@ -212,15 +214,16 @@
 - (BOOL)removeItems:(id)arg1;
 - (void)removeLibraryFilterPredicate:(id)arg1;
 - (BOOL)removePlaylist:(id)arg1;
-- (void)replaceLibraryFilterPredicate:(id)arg1 withPredicate:(id)arg2;
 - (BOOL)requiresAuthentication;
 - (void)setCloudFilteringType:(int)arg1;
 - (void)setLibraryFilterPredicates;
 - (void)setRemovalReason:(int)arg1;
+- (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
 - (int)status;
 - (unsigned long long)syncGenerationID;
 - (id)syncValidity;
 - (id)uniqueIdentifier;
+- (id)valueForDatabaseProperty:(id)arg1;
 - (BOOL)writable;
 
 @end

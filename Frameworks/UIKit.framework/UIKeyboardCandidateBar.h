@@ -24,6 +24,7 @@
     } _dragStartOffset;
     NSIndexPath *_dragStartPreviousPageIndexPath;
     NSArray *_filteredCandidates;
+    BOOL _forceReloadInitiallyHiddenCandidates;
     NSString *_inlineText;
     UIKBThemedView *_secondaryCandidatesViewEdgeGradient;
     BOOL _shouldSkipLayoutUntilScrollViewAnimationEnds;
@@ -45,6 +46,7 @@
 @property struct CGPoint { float x1; float x2; } dragStartOffset;
 @property(copy) NSIndexPath * dragStartPreviousPageIndexPath;
 @property(retain) NSArray * filteredCandidates;
+@property BOOL forceReloadInitiallyHiddenCandidates;
 @property(copy) NSString * inlineText;
 @property(retain) UIKBThemedView * secondaryCandidatesViewEdgeGradient;
 @property BOOL shouldSkipLayoutUntilScrollViewAnimationEnds;
@@ -52,6 +54,8 @@
 @property float upArrowWidth;
 
 + (float)defaultCandidateWidth;
++ (float)defaultPagingDistanceThreshold;
++ (float)defaultPagingVelocityThreshold;
 + (float)height;
 + (float)heightForInterfaceOrientation:(int)arg1;
 + (float)heightForLastRow;
@@ -116,6 +120,7 @@
 - (struct CGPoint { float x1; float x2; })dragStartOffset;
 - (id)dragStartPreviousPageIndexPath;
 - (id)filteredCandidates;
+- (BOOL)forceReloadInitiallyHiddenCandidates;
 - (BOOL)hasCandidates;
 - (BOOL)hasNextPage;
 - (BOOL)hasPreviousPage;
@@ -145,6 +150,7 @@
 - (void)setDragStartOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDragStartPreviousPageIndexPath:(id)arg1;
 - (void)setFilteredCandidates:(id)arg1;
+- (void)setForceReloadInitiallyHiddenCandidates:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInlineText:(id)arg1;
 - (void)setSecondaryCandidatesViewEdgeGradient:(id)arg1;
@@ -165,5 +171,6 @@
 - (id)skippedSetCandidatesBlock;
 - (id)statisticsIdentifier;
 - (float)upArrowWidth;
+- (unsigned int)viewOffsetForCandidateAtIndex:(unsigned int)arg1;
 
 @end

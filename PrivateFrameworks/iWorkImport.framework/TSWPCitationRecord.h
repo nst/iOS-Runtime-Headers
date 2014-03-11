@@ -29,12 +29,14 @@
 @property(copy) NSString * year;
 
 - (id)authorsString;
+- (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)endNoteXML;
 - (BOOL)hideAuthorNames;
 - (BOOL)hideYear;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)p_copyPropertiesToObject:(id)arg1;
 - (id)pageRange;
 - (id)prefix;
 - (void)saveToArchiver:(id)arg1;

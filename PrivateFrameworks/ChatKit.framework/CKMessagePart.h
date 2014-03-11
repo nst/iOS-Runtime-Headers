@@ -8,6 +8,7 @@
     BOOL _color;
     NSAttributedString *_displayText;
     NSString *_guid;
+    BOOL _hasHyperlink;
     <CKMessage> *_parentMessage;
     int _partID;
 }
@@ -15,6 +16,7 @@
 @property BOOL color;
 @property(readonly) NSAttributedString * displayText;
 @property(readonly) NSString * guid;
+@property BOOL hasHyperlink;
 @property(readonly) BOOL isOutgoing;
 @property <CKMessage> * parentMessage;
 @property int partID;
@@ -42,6 +44,7 @@
 - (id)detachedCopy;
 - (id)displayText;
 - (id)guid;
+- (BOOL)hasHyperlink;
 - (id)highlightData;
 - (id)image;
 - (id)imageData;
@@ -57,6 +60,7 @@
 - (id)previewImage;
 - (id)previewText;
 - (void)setColor:(BOOL)arg1;
+- (void)setHasHyperlink:(BOOL)arg1;
 - (void)setParentMessage:(id)arg1;
 - (void)setPartID:(int)arg1;
 - (id)text;

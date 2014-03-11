@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDPerProcessCPULoad : PBCodable {
+@interface AWDPerProcessCPULoad : PBCodable <NSCopying> {
     struct { 
         unsigned int duration : 1; 
     unsigned int _duration;
@@ -18,6 +18,7 @@
 @property(retain) NSString * procName;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

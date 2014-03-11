@@ -2,9 +2,19 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
+@class UIImage;
+
 @interface GKFixedSizeImageView : UIImageView {
+    UIImage *_actualImage;
 }
 
+@property(retain) UIImage * actualImage;
+
+- (id)actualImage;
+- (void)dealloc;
+- (id)image;
 - (void)invalidateIntrinsicContentSize;
+- (void)setActualImage:(id)arg1;
+- (void)setImage:(id)arg1;
 
 @end

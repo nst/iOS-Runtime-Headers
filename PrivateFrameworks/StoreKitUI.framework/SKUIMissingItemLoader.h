@@ -26,7 +26,7 @@
 - (id)imageProfile;
 - (id)init;
 - (id)initWithResourceLoader:(id)arg1;
-- (void)itemRequest:(id)arg1 didFinishWithItems:(id)arg2;
+- (void)itemRequest:(id)arg1 didFinishWithItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (id)keyProfile;
 - (void)loadItemsForPageComponent:(id)arg1 startIndex:(int)arg2 reason:(int)arg3;
 - (void)loadItemsWithIdentifiers:(id)arg1 reason:(int)arg2;

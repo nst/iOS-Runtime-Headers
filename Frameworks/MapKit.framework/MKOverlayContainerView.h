@@ -18,6 +18,7 @@
 @property float mapZoomScale;
 @property(readonly) NSArray * overlays;
 
+- (void).cxx_destruct;
 - (void)_configureAndAddDrawable:(id)arg1 forOverlay:(id)arg2 level:(int)arg3;
 - (id)_considerAddingDrawable:(id)arg1 inAddRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 level:(int)arg3;
 - (int)_drawableIndexForDrawable:(id)arg1 level:(int)arg2;

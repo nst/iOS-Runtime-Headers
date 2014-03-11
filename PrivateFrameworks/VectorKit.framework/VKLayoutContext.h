@@ -17,6 +17,7 @@
     } _pointSize;
     BOOL _preloadOnly;
     float _styleZAdjust;
+    double _timestamp;
     VKCamera *_transitionCamera;
     int _transitionMapMode;
     VKViewTransform *_viewTransform;
@@ -24,6 +25,7 @@
 
 @property(retain) VKAnchorContext * anchorContext;
 @property(retain) VKCamera * defaultTrackingCamera;
+@property double timestamp;
 @property(retain) VKCamera * transitionCamera;
 @property int transitionMapMode;
 @property(retain) VKViewTransform * viewTransform;
@@ -37,9 +39,11 @@
 - (id)initWithCanvas:(id)arg1 camera:(id)arg2;
 - (void)setAnchorContext:(id)arg1;
 - (void)setDefaultTrackingCamera:(id)arg1;
+- (void)setTimestamp:(double)arg1;
 - (void)setTransitionCamera:(id)arg1;
 - (void)setTransitionMapMode:(int)arg1;
 - (void)setViewTransform:(id)arg1;
+- (double)timestamp;
 - (id)transitionCamera;
 - (int)transitionMapMode;
 - (id)viewTransform;

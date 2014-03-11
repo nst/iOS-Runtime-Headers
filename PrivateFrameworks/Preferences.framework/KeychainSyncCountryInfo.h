@@ -16,6 +16,9 @@
 @property(retain) NSString * dialingPrefix;
 @property(retain) NSString * localizedCountryName;
 
++ (void)_loadCountriesIfNeeded;
++ (id)allCountries;
++ (id)countryInfoForCountryCode:(id)arg1 dialingPrefix:(id)arg2;
 + (id)countryInfoWithDictionary:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

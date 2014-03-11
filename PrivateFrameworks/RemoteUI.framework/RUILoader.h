@@ -28,6 +28,7 @@
 - (void)loadXMLUIWithURL:(id)arg1;
 - (void)parseData:(id)arg1;
 - (void)setAllowNonSecureHTTP:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)webViewFinishedLoading;
 
 @end

@@ -21,8 +21,8 @@
 + (struct CGSize { float x1; float x2; })artworkSize;
 
 - (void).cxx_destruct;
+- (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
-- (void)_radioAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
 - (id)_trackActionsView;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (int)actionForButtonIndex:(int)arg1;
@@ -42,6 +42,7 @@
 - (void)setTrackActionsDelegate:(id)arg1;
 - (id)songText;
 - (void)trackActioningObject:(id)arg1 didSelectAction:(int)arg2 atIndex:(int)arg3;
+- (id)trackActioningObject:(id)arg1 localizedTitleForAction:(int)arg2;
 - (void)trackActioningObjectDidChangeContentSize:(id)arg1;
 - (id)trackActionsDelegate;
 - (void)viewDidLoad;

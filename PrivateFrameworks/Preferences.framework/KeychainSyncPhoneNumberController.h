@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <KeychainSyncViewControllerDelegate>, KeychainSyncPhoneSettingsFragment, UIAlertView;
+@class <KeychainSyncViewControllerDelegate>, KeychainSyncPhoneSettingsFragment, UIAlertView, UILabel;
 
 @interface KeychainSyncPhoneNumberController : PSKeychainSyncViewController <KeychainSyncPhoneSettingsFragmentDelegate, UIAlertViewDelegate, KeychainSyncViewController> {
+    UILabel *_footerLabel;
     UIAlertView *_invalidPhoneNumberAlert;
     KeychainSyncPhoneSettingsFragment *_phoneSettingsFragment;
 }
@@ -20,6 +21,7 @@
 - (void)reloadSpecifiers;
 - (id)specifiers;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

@@ -61,6 +61,7 @@
     } __targetAspectRatioSourceFrame;
     float __targetScale;
     } _anchorPoint;
+    BOOL _appliesScaleViaTransform;
     BOOL _autoUpdates;
     } _currentTranslation;
     <PUTransitionViewAnimatorDelegate> *_delegate;
@@ -92,6 +93,7 @@
 @property(setter=_setTargetAspectRatioSourceFrame:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _targetAspectRatioSourceFrame;
 @property(setter=_setTargetScale:) float _targetScale;
 @property(setter=_setAnchorPoint:) struct CGPoint { float x1; float x2; } anchorPoint;
+@property BOOL appliesScaleViaTransform;
 @property BOOL autoUpdates;
 @property struct CGPoint { float x1; float x2; } currentTranslation;
 @property <PUTransitionViewAnimatorDelegate> * delegate;
@@ -152,6 +154,7 @@
 - (void)_update;
 - (void)_updateAutoUpdateDisplayLink;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
+- (BOOL)appliesScaleViaTransform;
 - (BOOL)autoUpdates;
 - (void)cancelWithTranslationVelocity:(struct CGPoint { float x1; float x2; })arg1 rotationVelocity:(float)arg2 scaleVelocity:(float)arg3 shouldBounce:(BOOL)arg4;
 - (void)cancelWithoutAnimation;
@@ -162,6 +165,7 @@
 - (id)initWithView:(id)arg1 sourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 targetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 anchorPoint:(struct CGPoint { float x1; float x2; })arg4 shouldUseTargetAspectRatio:(BOOL)arg5 rampUpDuration:(double)arg6 direction:(unsigned int)arg7;
 - (float)progress;
 - (double)rampUpDuration;
+- (void)setAppliesScaleViaTransform:(BOOL)arg1;
 - (void)setAutoUpdates:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldFinish;

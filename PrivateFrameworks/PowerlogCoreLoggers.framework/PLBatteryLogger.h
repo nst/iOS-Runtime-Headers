@@ -12,6 +12,8 @@
     NSDate *lastBatteryLevelChangeDate;
     BOOL lastConnectedState;
     unsigned int notificationRef;
+    BOOL sleepDisabledGasGaugeOpen;
+    BOOL sleeping;
 }
 
 @property(retain) NSDate * lastBatteryLevelChangeDate;

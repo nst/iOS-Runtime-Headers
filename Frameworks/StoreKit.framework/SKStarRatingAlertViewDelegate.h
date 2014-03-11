@@ -15,6 +15,7 @@
 
 - (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
+- (BOOL)alertViewShouldEnableFirstOtherButton:(id)arg1;
 - (void)dealloc;
 - (void)showAlertView:(id)arg1 withCompletionBlock:(id)arg2;
 

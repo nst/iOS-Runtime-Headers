@@ -14,13 +14,15 @@
             float width; 
             float height; 
         } size; 
+    NSString *_cachedTraitsHashString;
     CALayer *_keyBackgrounds;
     CALayer *_keyBorders;
+    CALayer *_keyCapHint;
     CALayer *_keyCaps;
+    CALayer *_keyForegrounds;
     UIKeyboardMenuView *_popupMenu;
     BOOL _renderAsMask;
     int _renderedKeyState;
-    BOOL _usesControlOpacities;
     struct __CFBoolean { } *m_allowsCaching;
     } m_drawFrame;
     UIKBTree *m_key;
@@ -31,6 +33,7 @@
 @property(readonly) BOOL cacheDeferable;
 @property(readonly) NSString * cacheKey;
 @property(readonly) int cachedRenderFlags;
+@property(retain) NSString * cachedTraitsHashString;
 @property(readonly) float cachedWidth;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } displayInsets;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawFrame;
@@ -40,17 +43,17 @@
 @property UIKeyboardMenuView * popupMenu;
 @property BOOL renderAsMask;
 @property(retain) UIKBRenderConfig * renderConfig;
-@property BOOL usesControlOpacities;
 
 - (void)_applyAppearanceInvocations;
 - (id)_generateBackdropMaskImage;
-- (id)_setupLayerIfNoLayer:(id)arg1 withContents:(id)arg2;
+- (void)_popuplateLayer:(id)arg1 withContents:(id)arg2;
 - (BOOL)_shouldUpdateLayers;
 - (BOOL)_viewShouldBeOpaque;
 - (BOOL)cacheDeferable;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
 - (int)cachedRenderFlags;
+- (id)cachedTraitsHashString;
 - (float)cachedWidth;
 - (void)dealloc;
 - (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
@@ -63,16 +66,18 @@
 - (BOOL)keepNonPersistent;
 - (id)key;
 - (id)keyplane;
+- (void)layoutSubviews;
 - (id)popupMenu;
 - (BOOL)renderAsMask;
 - (id)renderConfig;
+- (BOOL)requiresSublayers;
+- (void)setCachedTraitsHashString:(id)arg1;
 - (void)setDrawFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPopupMenu:(id)arg1;
 - (void)setRenderAsMask:(BOOL)arg1;
 - (void)setRenderConfig:(id)arg1;
-- (void)setUsesControlOpacities:(BOOL)arg1;
 - (int)textEffectsVisibilityLevel;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
-- (BOOL)usesControlOpacities;
 
 @end

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface VKPIcon : PBCodable {
+@interface VKPIcon : PBCodable <NSCopying> {
     struct { 
         unsigned int anchorPointX : 1; 
         unsigned int anchorPointY : 1; 
@@ -53,6 +53,7 @@
 - (unsigned int)anchorPointY;
 - (unsigned int)atlasIndex;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

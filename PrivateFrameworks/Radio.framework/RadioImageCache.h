@@ -16,10 +16,12 @@
 - (id)_cachedResponseForRequest:(id)arg1;
 - (id)_init;
 - (void)_removeAllCachedImages;
-- (id)_requestForStation:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 isExactSizeMatch:(BOOL*)arg3;
+- (id)_requestForRadioArtwork:(id)arg1;
+- (id)cachedImageDataForRadioArtwork:(id)arg1;
 - (id)cachedImageDataForStation:(id)arg1 withExactSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)dealloc;
 - (id)init;
+- (void)loadImageForRadioArtwork:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadImageForStation:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 completionHandler:(id)arg3;
 
 @end

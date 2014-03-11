@@ -24,6 +24,7 @@
 @property(readonly) UINavigationController * radioNavigationController;
 @property(readonly) MusicRadioViewController * radioViewController;
 @property BOOL supportsTransiency;
+@property(readonly) NSArray * visibleViewControllerIdentifiers;
 
 + (Class)_moreNavigationControllerClass;
 
@@ -61,5 +62,6 @@
 - (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (id)visibleViewControllerIdentifiers;
 
 @end

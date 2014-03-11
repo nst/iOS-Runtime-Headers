@@ -6,6 +6,5 @@
 }
 
 - (id)init;
-- (void)viewDidLoad;
 
 @end

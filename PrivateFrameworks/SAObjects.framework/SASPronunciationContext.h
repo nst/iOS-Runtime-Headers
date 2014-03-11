@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@class NSNumber, NSString, NSURL;
 
 @interface SASPronunciationContext : AceObject <SAAceSerializable> {
 }
 
 @property(copy) NSURL * domainObjectIdentifier;
 @property(copy) NSString * domainObjectPropertyIdentifier;
+@property(copy) NSString * fullName;
 @property(copy) NSString * orthography;
+@property(copy) NSNumber * tokenOffset;
 
 + (id)pronunciationContext;
 + (id)pronunciationContextWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,10 +19,14 @@
 - (id)domainObjectIdentifier;
 - (id)domainObjectPropertyIdentifier;
 - (id)encodedClassName;
+- (id)fullName;
 - (id)groupIdentifier;
 - (id)orthography;
 - (void)setDomainObjectIdentifier:(id)arg1;
 - (void)setDomainObjectPropertyIdentifier:(id)arg1;
+- (void)setFullName:(id)arg1;
 - (void)setOrthography:(id)arg1;
+- (void)setTokenOffset:(id)arg1;
+- (id)tokenOffset;
 
 @end

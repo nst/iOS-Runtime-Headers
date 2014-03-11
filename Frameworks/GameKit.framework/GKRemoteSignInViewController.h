@@ -12,8 +12,10 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (id)_managingHostedAuthenticateViewController;
 - (void)populateInitialStateForRemoteView:(id)arg1;
 - (void)remoteViewControllerIsCanceling;
 - (BOOL)serviceNeedsLocalPlayer;
+- (void)unlockRotation;
 
 @end

@@ -18,6 +18,7 @@
     BOOL _isUploaded;
     BOOL _isUploading;
     PFUbiquityLocation *_location;
+    long long _numBytes;
     int _numNotifications;
 }
 
@@ -33,6 +34,7 @@
 @property(readonly) BOOL isUploaded;
 @property(readonly) BOOL isUploading;
 @property(readonly) PFUbiquityLocation * location;
+@property(readonly) long long numBytes;
 @property(readonly) int numNotifications;
 
 - (void)checkFileURLState;
@@ -40,7 +42,6 @@
 - (id)description;
 - (void)encounteredError:(id)arg1;
 - (id)error;
-- (BOOL)getBoolResourceFromURL:(id)arg1 forKey:(id)arg2;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithLocation:(id)arg1;
@@ -59,6 +60,7 @@
 - (void)logWasExported;
 - (void)logWasImported;
 - (void)logWasScheduled;
+- (long long)numBytes;
 - (int)numNotifications;
 - (void)recoveredFromError;
 - (void)setIsDownloading:(BOOL)arg1;

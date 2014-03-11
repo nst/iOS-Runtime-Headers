@@ -35,6 +35,8 @@
 + (void)setLastCachedVersionIdentifier:(id)arg1;
 
 - (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
+- (void)_dropImageKeysFromArray:(id)arg1;
+- (void)_dropImageKeysFromDictionary:(id)arg1;
 - (BOOL)_loadArtworkFromCacheDirectory:(id)arg1;
 - (void)_loadButtonArtworkForSection:(id)arg1 buttons:(id)arg2 cachePath:(id)arg3;
 - (id)_newImageForIdentifier:(id)arg1 variant:(id)arg2 cacheDirectory:(id)arg3;
@@ -44,6 +46,7 @@
 - (void)_writeImage:(id)arg1 toCachePath:(id)arg2 forIdentifier:(id)arg3 variant:(id)arg4;
 - (id)allSections;
 - (void)dealloc;
+- (void)dropEmbeddedImages;
 - (id)init;
 - (id)initWithClientInterface:(id)arg1 cacheDirectory:(id)arg2;
 - (id)initWithClientInterface:(id)arg1 sectionsDictionary:(id)arg2 responseType:(int)arg3;

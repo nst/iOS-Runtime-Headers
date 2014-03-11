@@ -20,6 +20,8 @@
 @property(retain) TSDLineEnd * headLineEnd;
 @property(retain) TSDPathSource * pathSource;
 @property(readonly) TSDShapeStyle * shapeStyle;
+@property(readonly) BOOL supportsShrinkTextToFit;
+@property(readonly) BOOL supportsTextInset;
 @property(retain) TSDLineEnd * tailLineEnd;
 
 - (id)animationFilters;
@@ -60,6 +62,8 @@
 - (id)style;
 - (Class)styleClass;
 - (id)subclassInitFromUnarchiver:(id)arg1;
+- (BOOL)supportsShrinkTextToFit;
+- (BOOL)supportsTextInset;
 - (id)tailLineEnd;
 - (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 

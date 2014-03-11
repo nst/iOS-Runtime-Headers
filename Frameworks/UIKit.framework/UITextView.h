@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInputDelegate>, <UITextInputTokenizer>, <UITextViewDelegate>, NSAttributedString, NSDictionary, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UITextInputController, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UITextContainerView, _UITextViewRestorableScrollPosition;
+@class <UITextInputDelegate>, <UITextInputTokenizer>, <UITextViewDelegate>, NSAttributedString, NSDictionary, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UITextInputController, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UITextContainerView, _UITextViewRestorableScrollPosition;
 
-@interface UITextView : UIScrollView <UITextLinkInteraction, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInput> {
+@interface UITextView : UIScrollView <UITextLinkInteraction, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, UITextInput> {
     struct { 
         unsigned int needsScrollToSelectionAfterLayout : 1; 
         unsigned int isInteractingWithLink : 1; 
@@ -42,44 +42,68 @@
 }
 
 @property(setter=_setDrawsDebugBaselines:) BOOL _drawsDebugBaselines;
+@property BOOL acceptsEmoji;
+@property BOOL acceptsFloatingKeyboard;
+@property BOOL acceptsSplitKeyboard;
 @property BOOL allowsEditingTextAttributes;
 @property(copy) NSAttributedString * attributedText;
 @property int autocapitalizationType;
 @property int autocorrectionType;
 @property(readonly) UITextPosition * beginningOfDocument;
 @property BOOL clearsOnInsertion;
+@property BOOL contentsIsSingleValue;
 @property unsigned int dataDetectorTypes;
+@property BOOL deferBecomingResponder;
 @property <UITextViewDelegate> * delegate;
+@property BOOL displaySecureTextUsingPlainText;
 @property(getter=isEditable) BOOL editable;
+@property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
+@property BOOL enablesReturnKeyOnNonWhiteSpaceContent;
 @property(readonly) UITextPosition * endOfDocument;
 @property(retain) UIFont * font;
+@property BOOL forceEnableDictation;
 @property(retain) UIView * inputAccessoryView;
 @property <UITextInputDelegate> * inputDelegate;
 @property(retain) UIView * inputView;
+@property(retain) UIColor * insertionPointColor;
+@property unsigned int insertionPointWidth;
 @property(getter=_isInteractiveTextSelectionDisabled,setter=_setInteractiveTextSelectionDisabled:) BOOL interactiveTextSelectionDisabled;
+@property BOOL isSingleLineDocument;
 @property int keyboardAppearance;
 @property int keyboardType;
 @property(readonly) NSLayoutManager * layoutManager;
+@property BOOL learnsCorrections;
 @property(copy) NSDictionary * linkTextAttributes;
 @property(readonly) UITextRange * markedTextRange;
 @property(copy) NSDictionary * markedTextStyle;
+@property BOOL returnKeyGoesToNextResponder;
 @property int returnKeyType;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property(getter=isSelectable) BOOL selectable;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
 @property(copy) UITextRange * selectedTextRange;
 @property int selectionAffinity;
+@property(retain) UIColor * selectionBarColor;
+@property(retain) UIImage * selectionDragDotImage;
+@property(retain) UIColor * selectionHighlightColor;
+@property int shortcutConversionType;
 @property int spellCheckingType;
+@property BOOL suppressReturnKeyStyling;
 @property(copy) NSString * text;
 @property int textAlignment;
 @property(retain) UIColor * textColor;
 @property(readonly) NSTextContainer * textContainer;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textContainerInset;
 @property(readonly) UIView * textInputView;
+@property int textLoupeVisibility;
+@property int textSelectionBehavior;
 @property(readonly) NSTextStorage * textStorage;
+@property id textSuggestionDelegate;
+@property struct __CFCharacterSet { }* textTrimmingSet;
 @property(readonly) <UITextInputTokenizer> * tokenizer;
 @property(copy) NSDictionary * typingAttributes;
+@property BOOL useInterfaceLanguageForLocalization;
 
 + (id)_bestInterpretationForDictationResult:(id)arg1;
 + (BOOL)_isCompatibilityTextView;
@@ -138,6 +162,7 @@
 - (id)_textInputViewForAddingGestureRecognizers;
 - (void)_textStorageDidProcessEditing:(id)arg1;
 - (unsigned int)_totalNumberOfTextViewsInLayoutManager;
+- (void)_updateContentSize;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleRangeWithLayout:(BOOL)arg1;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)allowsEditingTextAttributes;
@@ -175,6 +200,7 @@
 - (void)endSelectionChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForRange:(id)arg1;
 - (id)font;
+- (BOOL)forceEnableDictation;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (BOOL)hasText;
@@ -236,6 +262,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
 - (id)selectedText;
 - (id)selectedTextRange;
+- (int)selectionAffinity;
 - (id)selectionRectsForRange:(id)arg1;
 - (id)selectionView;
 - (void)setAllowsEditingTextAttributes:(BOOL)arg1;
@@ -249,6 +276,7 @@
 - (void)setDataDetectorTypes:(unsigned int)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setFont:(id)arg1;
+- (void)setForceEnableDictation:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInputAccessoryView:(id)arg1;
 - (void)setInputDelegate:(id)arg1;
@@ -272,6 +300,7 @@
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startLongInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)takeTraitsFrom:(id)arg1;
 - (void)tapLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)text;
 - (int)textAlignment;

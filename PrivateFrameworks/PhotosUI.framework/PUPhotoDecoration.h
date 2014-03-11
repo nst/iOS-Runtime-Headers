@@ -15,15 +15,12 @@
 @property(copy) UIColor * foregroundColor;
 
 - (void).cxx_destruct;
-- (BOOL)_displaysBorderForWidth:(float)arg1 color:(id)arg2;
 - (id)borderColor;
 - (float)borderWidth;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)foregroundColor;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)overlayImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })overlayInsets;
 - (id)photoDecorationVariantsWithIncreasingAlpha:(int)arg1;
 - (id)photoDecorationVariantsWithIncreasingBorderBrightness:(int)arg1;
 - (void)setBorderColor:(id)arg1;

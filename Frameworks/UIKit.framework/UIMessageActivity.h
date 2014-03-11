@@ -6,9 +6,11 @@
 
 @interface UIMessageActivity : UIActivity {
     MFMessageComposeViewController *_messageComposeViewController;
+    BOOL _sourceIsManaged;
 }
 
 @property(retain) MFMessageComposeViewController * messageComposeViewController;
+@property BOOL sourceIsManaged;
 
 + (int)activityCategory;
 
@@ -23,5 +25,7 @@
 - (id)messageComposeViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setMessageComposeViewController:(id)arg1;
+- (void)setSourceIsManaged:(BOOL)arg1;
+- (BOOL)sourceIsManaged;
 
 @end

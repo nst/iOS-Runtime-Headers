@@ -27,6 +27,7 @@
     BOOL _monitoring;
     NSHashTable *_observers;
     } _runningStatBuffer;
+    unsigned int _runningStatSize;
     float _runningStatSum;
 }
 

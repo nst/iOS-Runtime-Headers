@@ -2,18 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
+@class NSArray, NSString, UIKBKeyDisplayContents;
 
 @interface UIKBKeyDisplayContents : NSObject {
     int _displayPathType;
     NSString *_displayString;
     NSString *_displayStringImage;
-    NSString *_fallbackDisplayString;
-    BOOL _fallbackIsCustomGlyph;
+    UIKBKeyDisplayContents *_fallbackContents;
     BOOL _fillPath;
+    BOOL _force1xImages;
     int _highlightedVariantIndex;
     BOOL _isCustomGlyph;
     NSString *_secondaryDisplayString;
+    NSString *_secondaryDisplayStringImage;
     BOOL _secondaryIsCustomGlyph;
     NSArray *_variantDisplayImages;
     NSArray *_variantDisplayStrings;
@@ -22,12 +23,13 @@
 @property int displayPathType;
 @property(retain) NSString * displayString;
 @property(retain) NSString * displayStringImage;
-@property(retain) NSString * fallbackDisplayString;
-@property BOOL fallbackIsCustomGlyph;
+@property(retain) UIKBKeyDisplayContents * fallbackContents;
 @property BOOL fillPath;
+@property BOOL force1xImages;
 @property int highlightedVariantIndex;
 @property BOOL isCustomGlyph;
 @property(retain) NSString * secondaryDisplayString;
+@property(retain) NSString * secondaryDisplayStringImage;
 @property BOOL secondaryIsCustomGlyph;
 @property(retain) NSArray * variantDisplayImages;
 @property(retain) NSArray * variantDisplayStrings;
@@ -39,22 +41,24 @@
 - (int)displayPathType;
 - (id)displayString;
 - (id)displayStringImage;
-- (id)fallbackDisplayString;
-- (BOOL)fallbackIsCustomGlyph;
+- (id)fallbackContents;
 - (BOOL)fillPath;
+- (BOOL)force1xImages;
 - (int)highlightedVariantIndex;
 - (BOOL)isCustomGlyph;
 - (id)secondaryDisplayString;
+- (id)secondaryDisplayStringImage;
 - (BOOL)secondaryIsCustomGlyph;
 - (void)setDisplayPathType:(int)arg1;
 - (void)setDisplayString:(id)arg1;
 - (void)setDisplayStringImage:(id)arg1;
-- (void)setFallbackDisplayString:(id)arg1;
-- (void)setFallbackIsCustomGlyph:(BOOL)arg1;
+- (void)setFallbackContents:(id)arg1;
 - (void)setFillPath:(BOOL)arg1;
+- (void)setForce1xImages:(BOOL)arg1;
 - (void)setHighlightedVariantIndex:(int)arg1;
 - (void)setIsCustomGlyph:(BOOL)arg1;
 - (void)setSecondaryDisplayString:(id)arg1;
+- (void)setSecondaryDisplayStringImage:(id)arg1;
 - (void)setSecondaryIsCustomGlyph:(BOOL)arg1;
 - (void)setVariantDisplayImages:(id)arg1;
 - (void)setVariantDisplayStrings:(id)arg1;

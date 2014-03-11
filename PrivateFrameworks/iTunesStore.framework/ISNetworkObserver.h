@@ -34,6 +34,7 @@
 + (void)setWiFiEnabled:(BOOL)arg1;
 + (id)sharedInstance;
 
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (int)_currentNetworkType;
 - (id)_dataStatusIndicator;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;

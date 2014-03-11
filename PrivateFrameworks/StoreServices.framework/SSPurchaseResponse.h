@@ -9,7 +9,10 @@
     NSArray *_downloadIdentifiers;
     NSError *_error;
     SSPurchase *_purchase;
+    double _requestStartTime;
     SSURLConnectionResponse *_response;
+    double _responseEndTime;
+    double _responseStartTime;
     NSMutableDictionary *_transactionIdentifiers;
 }
 
@@ -18,6 +21,9 @@
 @property(copy) NSArray * downloadIdentifiers;
 @property(copy) NSError * error;
 @property(copy) SSPurchase * purchase;
+@property double requestStartTime;
+@property double responseEndTime;
+@property double responseStartTime;
 
 - (id)URLResponse;
 - (BOOL)cancelsPurchaseBatch;
@@ -27,10 +33,16 @@
 - (id)error;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)purchase;
+- (double)requestStartTime;
+- (double)responseEndTime;
+- (double)responseStartTime;
 - (void)setCancelsPurchaseBatch:(BOOL)arg1;
 - (void)setDownloadIdentifiers:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPurchase:(id)arg1;
+- (void)setRequestStartTime:(double)arg1;
+- (void)setResponseEndTime:(double)arg1;
+- (void)setResponseStartTime:(double)arg1;
 - (void)setURLResponse:(id)arg1;
 - (id)transactionIdentifierForItemIdentifier:(long long)arg1;
 

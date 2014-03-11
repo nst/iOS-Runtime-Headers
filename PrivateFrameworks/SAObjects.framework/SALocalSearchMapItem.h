@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAAceSerializable>, NSArray, NSNumber, NSString, SADistance, SALocation;
+@class <SAAceSerializable>, NSArray, NSData, NSNumber, NSString, SADistance, SALocation;
 
 @interface SALocalSearchMapItem : SADomainObject {
 }
@@ -16,7 +16,10 @@
 @property(copy) NSString * label;
 @property(copy) NSNumber * localSearchProviderId;
 @property(retain) SALocation * location;
+@property(copy) NSData * placeData;
 @property(copy) NSNumber * placeId;
+@property(copy) NSString * spokenAddress;
+@property(copy) NSString * spokenName;
 
 + (id)mapItem;
 + (id)mapItemWithDictionary:(id)arg1 context:(id)arg2;
@@ -32,6 +35,7 @@
 - (id)label;
 - (id)localSearchProviderId;
 - (id)location;
+- (id)placeData;
 - (id)placeId;
 - (void)setAttributions:(id)arg1;
 - (void)setDetail:(id)arg1;
@@ -42,7 +46,12 @@
 - (void)setLabel:(id)arg1;
 - (void)setLocalSearchProviderId:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setPlaceData:(id)arg1;
 - (void)setPlaceId:(id)arg1;
+- (void)setSpokenAddress:(id)arg1;
+- (void)setSpokenName:(id)arg1;
+- (id)spokenAddress;
+- (id)spokenName;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

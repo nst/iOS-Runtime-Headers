@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFSparseMutable64IndexSet : NSObject {
+@interface MFSparseMutable64IndexSet : NSObject <NSCopying, NSMutableCopying> {
     unsigned int _count;
     unsigned int _cursor;
     unsigned long long *_storage;
@@ -18,11 +18,13 @@
 - (void)addIndex:(unsigned long long)arg1;
 - (void)addIndexes:(id)arg1;
 - (BOOL)containsIndex:(unsigned long long)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (unsigned long long)firstIndex;
 - (unsigned long long)indexGreaterThanIndex:(unsigned long long)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)removeIndex:(unsigned long long)arg1;
 
 @end

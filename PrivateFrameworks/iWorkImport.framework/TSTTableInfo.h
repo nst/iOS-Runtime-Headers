@@ -66,7 +66,6 @@
 - (BOOL)autoListTermination;
 - (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
 - (id)buildImageTitle;
-- (id)buildTitle;
 - (BOOL)canAspectRatioLockBeChangedByUser;
 - (id)childCommandForApplyThemeCommand:(id)arg1;
 - (id)childCommandForReplaceAllCommand:(id)arg1;
@@ -109,6 +108,7 @@
 - (void)loadFromArchive:(const struct TableInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)masterLayout;
 - (float)masterLayoutEffectiveTableNameHeight;
+- (id)mergedContainedStorages;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1;
 - (void)notifyTableOfNewResults;
@@ -153,6 +153,7 @@
 - (BOOL)textIsVertical;
 - (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
 - (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
+- (id)titleForBuildChunk:(id)arg1;
 - (id)trackerForController:(id)arg1;
 - (void)unregisterFromCalculationEngine:(id)arg1;
 - (void)validate;

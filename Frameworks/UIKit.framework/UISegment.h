@@ -19,6 +19,8 @@
         unsigned int autosizeText : 1; 
         unsigned int isMomentary : 1; 
         unsigned int wasSelected : 1; 
+        unsigned int needsBackgroundAndContentViewUpdate : 1; 
+        unsigned int contentTextPaddingEnabled : 1; 
     _UISegmentedControlAppearanceStorage *_appearanceStorage;
     NSString *_badgeValue;
     _UIBadgeView *_badgeView;
@@ -61,12 +63,14 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_paddingInsets;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionInfo;
+- (void)_positionInfoWithoutAnimation;
 - (unsigned int)_segmentState;
 - (void)_setEnabledAppearance:(BOOL)arg1;
 - (void)_setInfoConstraints:(id)arg1;
 - (BOOL)_shouldUsePadMomentaryAppearance;
 - (id)_tintColorArchivingKey;
-- (void)_updateBackgroundImage;
+- (void)_updateBackgroundAndContentViews;
+- (void)_updateBackgroundAndContentViewsIfNeeded;
 - (void)_updateTextColors;
 - (void)animateAdd:(BOOL)arg1;
 - (void)animateRemoveForWidth:(float)arg1;
@@ -88,6 +92,7 @@
 - (BOOL)isMomentary;
 - (BOOL)isSelected;
 - (id)label;
+- (void)layoutSubviews;
 - (id)objectValue;
 - (float)requestedScaleFactor;
 - (void)setAutosizeText:(BOOL)arg1;
@@ -100,6 +105,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setMomentary:(BOOL)arg1;
+- (void)setNeedsBackgroundAndContentViewUpdate;
 - (void)setObjectValue:(id)arg1;
 - (void)setPosition:(unsigned int)arg1;
 - (void)setRequestedScaleFactor:(float)arg1;

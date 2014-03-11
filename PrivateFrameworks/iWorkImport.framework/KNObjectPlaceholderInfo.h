@@ -10,6 +10,5 @@
 - (int)kind;
 - (Class)layoutClass;
 - (Class)repClass;
-- (BOOL)shrinkTextToFit;
 
 @end

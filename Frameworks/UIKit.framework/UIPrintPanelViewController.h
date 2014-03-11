@@ -33,6 +33,7 @@
 - (void)_keyWindowWillRotate:(id)arg1;
 - (void)_presentInParentAnimated:(BOOL)arg1;
 - (void)_presentWindow;
+- (id)_removeRollsFrom:(id)arg1;
 - (void)cancelPrinting;
 - (void)controllerDidDisappear;
 - (int)copies;

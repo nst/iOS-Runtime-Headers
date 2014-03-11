@@ -2,25 +2,27 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSURLRequest, SKUIIPadSearchViewController, SKUIIPhoneSearchViewController, SKUIMetricsController, SKUISearchFieldController, SKUISearchPage, SSMetricsPageEvent, SSVLoadURLOperation;
+@class NSArray, NSDictionary, NSMutableArray, NSString, NSURLRequest, SKUIIPadSearchViewController, SKUIIPhoneSearchViewController, SKUIMetricsController, SKUIProductPageOverlayController, SKUISearchFieldController, SKUISearchPage, SSMetricsPageEvent, SSMetricsSearchEvent, SSVLoadURLOperation;
 
-@interface SKUISearchViewController : SKUIViewController <SKUISearchChildViewControllerDelegate, SKUIMetricsViewController> {
+@interface SKUISearchViewController : SKUIViewController <SKUISearchChildViewControllerDelegate, SKUIProductPageOverlayDelegate, SKUIMetricsViewController, SKUIViewControllerTesting> {
     NSDictionary *_facetSelections;
     SKUIIPadSearchViewController *_iPadViewController;
     SKUIIPhoneSearchViewController *_iPhoneViewController;
     SSMetricsPageEvent *_lastPageEvent;
     SSVLoadURLOperation *_loadOperation;
     SKUIMetricsController *_metricsController;
+    SKUIProductPageOverlayController *_overlayController;
     SKUISearchPage *_page;
+    NSString *_performanceTestName;
     NSMutableArray *_previousRelatedQueries;
+    SSMetricsSearchEvent *_searchEvent;
     NSArray *_searchFacets;
     SKUISearchFieldController *_searchFieldController;
+    NSString *_searchTerm;
     NSURLRequest *_urlRequest;
 }
 
 @property(retain) SKUISearchFieldController * searchFieldController;
-
-+ (id)_customFacetsForFacets:(id)arg1 clientContext:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;
@@ -28,8 +30,8 @@
 - (void)_reloadChildViewController;
 - (void)_reloadOrientation:(int)arg1;
 - (void)_reloadView;
-- (void)_searchWithSearchTerm:(id)arg1 persistRelated:(BOOL)arg2;
-- (void)_searchWithURLRequest:(id)arg1 persistRelated:(BOOL)arg2;
+- (void)_searchWithSearchTerm:(id)arg1 persistRelated:(BOOL)arg2 metricsEvent:(id)arg3;
+- (void)_searchWithURLRequest:(id)arg1 persistRelated:(BOOL)arg2 metricsEvent:(id)arg3;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (id)activeMetricsController;
@@ -40,17 +42,21 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
+- (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
+- (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)reloadData;
 - (void)scrollToTop;
 - (void)searchChildViewController:(id)arg1 didSelectEditorial:(id)arg2;
 - (void)searchChildViewController:(id)arg1 didSelectItem:(id)arg2;
-- (void)searchChildViewController:(id)arg1 didSelectRelatedQuery:(id)arg2;
+- (void)searchChildViewController:(id)arg1 didSelectRelatedQuery:(id)arg2 withMetricsEvent:(id)arg3;
 - (void)searchChildViewController:(id)arg1 didSelectSearchTerm:(id)arg2;
-- (void)searchChildViewControllerDidChangeFacetSelections:(id)arg1;
-- (void)searchChildViewControllerDidSelectRelatedBackButton:(id)arg1;
+- (void)searchChildViewControllerDidChangeFacetSelections:(id)arg1 withMetricsEvent:(id)arg2;
+- (void)searchChildViewControllerDidSelectRelatedBackButton:(id)arg1 withMetricsEvent:(id)arg2;
 - (id)searchFieldController;
 - (void)searchWithExternalURL:(id)arg1;
+- (void)searchWithSearchTerm:(id)arg1 metricsEvent:(id)arg2;
 - (void)searchWithSearchTerm:(id)arg1;
+- (void)searchWithURL:(id)arg1 metricsEvent:(id)arg2;
 - (void)searchWithURL:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setSearchFieldController:(id)arg1;

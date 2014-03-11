@@ -16,6 +16,7 @@
 - (BOOL)isVisible;
 - (id)knobImage;
 - (BOOL)obscuresKnob:(id)arg1;
+- (BOOL)overlapsWithKnob:(id)arg1;
 - (void)setIsBeingTracked:(BOOL)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (void)updateHitRegionPathForRep:(id)arg1;

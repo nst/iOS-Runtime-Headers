@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNObjectPlaceholderLayout : TSWPShapeLayout {
+@interface KNObjectPlaceholderLayout : KNPlaceholderLayout {
 }
 
 - (BOOL)canFlip;

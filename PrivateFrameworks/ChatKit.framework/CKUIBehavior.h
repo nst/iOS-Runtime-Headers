@@ -37,6 +37,7 @@
 @property(readonly) BOOL shouldSetConversationKeyboardOnSearchBeginEnd;
 @property(readonly) BOOL shouldShowContactPhotos;
 @property(readonly) BOOL shouldShowSendProgressIndicator;
+@property(readonly) BOOL shouldUseDynamicScrolling;
 @property(readonly) BOOL showPendingInConversationList;
 @property(readonly) BOOL showTranscriptButtonsInNavigationBar;
 @property(readonly) BOOL splitViewEnabled;
@@ -200,6 +201,7 @@
 - (BOOL)shouldShowContactPhotos;
 - (BOOL)shouldShowDisclosureChevronInRecipientAtoms;
 - (BOOL)shouldShowSendProgressIndicator;
+- (BOOL)shouldUseDynamicScrolling;
 - (BOOL)showPendingInConversationList;
 - (BOOL)showTranscriptButtonsInNavigationBar;
 - (BOOL)showsChevronImage;
@@ -229,6 +231,7 @@
 - (float)timestampBodyLeadingFraction:(float)arg1;
 - (id)timestampDateFormatter;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })timestampTranscriptInsets;
+- (float)toFieldPreferredHeight;
 - (float)topConversationListSpace;
 - (float)topTranscriptSpace;
 - (id)transcriptBackgroundColor;

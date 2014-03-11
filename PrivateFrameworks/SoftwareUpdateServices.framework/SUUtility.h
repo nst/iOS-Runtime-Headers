@@ -10,6 +10,7 @@
 + (void)assignError:(id*)arg1 withCode:(int)arg2;
 + (void)assignError:(id*)arg1 withError:(id)arg2 translate:(BOOL)arg3;
 + (BOOL)cellularDataIsEnabled;
++ (BOOL)createInstallationKeybag:(id)arg1;
 + (id)currentProductBuild;
 + (id)currentProductCategory;
 + (id)currentProductType;
@@ -20,8 +21,11 @@
 + (id)gregorianCalendar;
 + (BOOL)hasCellularRadio;
 + (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1;
++ (int)installationKeybagState;
 + (BOOL)isCellularDataCapable;
 + (BOOL)isDaemon;
++ (BOOL)isPasscodeLocked;
++ (BOOL)isPasswordProtected;
 + (BOOL)isRestoringFromCloud;
 + (BOOL)isWiFiCapable;
 + (id)prettyPrintDate:(id)arg1;

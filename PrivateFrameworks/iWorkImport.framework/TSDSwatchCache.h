@@ -22,8 +22,8 @@
 - (id)init;
 - (id)p_maskInfoForMovieInfo:(id)arg1 context:(id)arg2;
 - (struct CGImage { }*)p_newImageWithConnectionLineKnobsForShape:(id)arg1 atScale:(float)arg2 ofSize:(struct CGSize { float x1; float x2; })arg3 overImage:(struct CGImage { }*)arg4;
+- (id)p_thumbnailImageDataForImageData:(id)arg1;
 - (struct CGSize { float x1; float x2; })shapeSwatchInset;
-- (id)smallVersionOfImageData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)warmStyle:(id)arg1 withFillProperty:(int)arg2 documentRoot:(id)arg3;
 
 @end

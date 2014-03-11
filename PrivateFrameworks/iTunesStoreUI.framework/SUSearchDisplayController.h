@@ -8,6 +8,7 @@
 
 - (id)_createPopoverController;
 - (void)_noEventSetSearchFieldText:(id)arg1;
+- (void)_updateSearchBarMaskIfNecessary;
 - (BOOL)isNavigationBarHidingEnabled;
 - (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setNavigationBarHidingEnabled:(BOOL)arg1;

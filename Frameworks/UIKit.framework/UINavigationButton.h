@@ -8,13 +8,14 @@
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int _wantsLetterpressTitle : 1;
+    unsigned int _wantsLetterpressContent : 1;
     unsigned int _size : 2;
     Class _appearanceGuideClass;
     id _appearanceStorage;
     int _barStyle;
     } _boundsAdjustment;
     int _buttonItemStyle;
+    BOOL _createdByBarButtonItem;
     float _fontScaleAdjustment;
     BOOL _isFontScaleInvalid;
     float _maximumWidth;
@@ -24,13 +25,16 @@
     NSSet *_possibleTitles;
     int _style;
     NSDictionary *_stylesForSizingTitles;
+    BOOL _wantsBlendModeForAccessibilityBackgrounds;
 }
 
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
 @property(setter=_setButtonItemStyle:) int _buttonItemStyle;
+@property(setter=_setCreatedByBarButtonItem:) BOOL _createdByBarButtonItem;
 @property(setter=_setFontScaleAdjustment:) float _fontScaleAdjustment;
 @property(setter=_setFontScaleInvalid:) BOOL _isFontScaleInvalid;
 @property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
+@property(setter=_setWantsBlendModeForAccessibilityBackgrounds:) BOOL _wantsBlendModeForAccessibilityBackgrounds;
 @property int barStyle;
 @property int controlSize;
 @property(retain) UIImage * image;
@@ -40,6 +44,7 @@
 @property(retain) UIColor * tintColor;
 @property(retain) NSString * title;
 
++ (void)_resetRenderingModesForBackgroundImageView:(id)arg1 inBarStyle:(int)arg2 isEnabled:(BOOL)arg3 withAccessibilityBackground:(BOOL)arg4 wantsBlendModeForAccessibilityBackgrounds:(BOOL)arg5;
 + (id)defaultFont;
 
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
@@ -51,6 +56,8 @@
 - (void)_UIAppearance_setTintColor:(id)arg1;
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_accessibilityButtonShapesDidChangeNotification:(id)arg1;
+- (void)_accessibilityButtonShapesParametersDidChange;
 - (void)_adjustBounds;
 - (id)_adjustedDefaultTitleFont;
 - (Class)_appearanceGuideClass;
@@ -63,9 +70,13 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_buttonTitleEdgeInsets;
 - (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (BOOL)_createdByBarButtonItem;
+- (id)_customOrAccessibilityBackgroundImageForState:(unsigned int)arg1 style:(int)arg2 isMini:(BOOL)arg3;
 - (id)_defaultTitleColorForState:(unsigned int)arg1;
 - (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (float)_fontScaleAdjustment;
 - (BOOL)_hasBaselineAlignedAbsoluteVerticalPosition:(out float*)arg1 withinNavBar:(id)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
@@ -85,14 +96,18 @@
 - (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setBoundsAdjustment:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setButtonItemStyle:(int)arg1;
+- (void)_setCreatedByBarButtonItem:(BOOL)arg1;
 - (void)_setFontScaleAdjustment:(float)arg1;
 - (void)_setFontScaleInvalid:(BOOL)arg1;
+- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 deferLayout:(BOOL)arg2;
 - (void)_setStylesForSizingTitles:(id)arg1;
 - (void)_setTintColor:(id)arg1;
 - (void)_setTitleFrozen:(BOOL)arg1;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setWantsLetterpressTitle;
+- (void)_setWantsBlendModeForAccessibilityBackgrounds:(BOOL)arg1;
+- (void)_setWantsLetterpressContent;
+- (BOOL)_showsAccessibilityBackgroundWhenEnabled;
 - (id)_stylesForSizingTitles;
 - (id)_tintColor;
 - (struct UIOffset { float x1; float x2; })_titlePositionAdjustmentForBarMetrics:(int)arg1;
@@ -102,6 +117,8 @@
 - (void)_updateStyle;
 - (void)_updateTitleColorsForState:(unsigned int)arg1;
 - (void)_updateTitleForLetterpress;
+- (BOOL)_wantsAccessibilityButtonShapes;
+- (BOOL)_wantsBlendModeForAccessibilityBackgrounds;
 - (int)barStyle;
 - (BOOL)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
 - (int)controlSize;
@@ -122,7 +139,6 @@
 - (void)setBarStyle:(int)arg1;
 - (void)setControlSize:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setMaximumWidth:(float)arg1;

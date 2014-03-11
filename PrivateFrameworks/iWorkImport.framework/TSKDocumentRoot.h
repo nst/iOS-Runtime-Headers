@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <TSKUndoRedoState>, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<TSKSearchReference>, NSString, TSKAccessController, TSKAnnotationAuthorStorage, TSKChangeNotifier, TSKCommandController, TSKCommandHistory, TSKCommandSelectionBehaviorHistory, TSKDocumentSupport, TSKPasteboardController, TSPObject, TSSStylesheet, TSSTheme;
+@class <TSKUndoRedoState>, NSDictionary, NSLocale, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<TSKSearchReference>, NSString, TSKAccessController, TSKAnnotationAuthorStorage, TSKChangeNotifier, TSKCommandController, TSKCommandHistory, TSKCommandSelectionBehaviorHistory, TSKDocumentSupport, TSKPasteboardController, TSPObject, TSSStylesheet, TSSTheme;
 
 @interface TSKDocumentRoot : TSPObject <TSKAccessControllerDelegate, TSKModel> {
     TSKAccessController *_accessController;
@@ -19,6 +19,7 @@
     NSObject<OS_dispatch_queue> *_iCloudTeardownStackQueue;
     BOOL _isBeingLocalized;
     BOOL _isFindActive;
+    NSLocale *_locale;
     TSKPasteboardController *_pasteboardController;
     NSDictionary *_searchReferencesToHighlight;
     <TSKUndoRedoState> *_undoRedoState;
@@ -42,6 +43,7 @@
 @property(readonly) BOOL hasCommands;
 @property(readonly) BOOL hasICloudConflict;
 @property(readonly) BOOL isBeingLocalized;
+@property(retain) NSLocale * locale;
 @property(retain) TSKPasteboardController * pasteboardController;
 @property(retain) NSDictionary * searchReferencesToHighlight;
 @property(readonly) TSSStylesheet * stylesheet;
@@ -56,6 +58,7 @@
 - (id)accessController;
 - (id)activeSearchReference;
 - (long long)addObserverForICloudTeardownWithBlock:(id)arg1;
+- (id)additionalDocumentPropertiesForWrite;
 - (id)annotationAuthorStorage;
 - (unsigned int)applicationType;
 - (id)cachedRedoActionString;
@@ -97,6 +100,8 @@
 - (BOOL)isDirectionRightToLeft;
 - (BOOL)isFindActive;
 - (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)locale;
+- (void)markAsModifiedIfLocaleIsOutOfDate;
 - (id)modelEnumerator;
 - (id)modelEnumeratorForObjectsConformingToProtocol:(id)arg1;
 - (id)modelEnumeratorForObjectsOfClass:(Class)arg1;
@@ -115,6 +120,7 @@
 - (void)setActiveSearchReference:(id)arg1;
 - (void)setAnnotationAuthorStorage:(id)arg1;
 - (void)setFindActive:(BOOL)arg1;
+- (void)setLocale:(id)arg1;
 - (void)setPasteboardController:(id)arg1;
 - (void)setSearchReferencesToHighlight:(id)arg1;
 - (void)setTheme:(id)arg1;
@@ -128,6 +134,7 @@
 - (id)unavailableDocumentFonts;
 - (id)undoRedoState;
 - (id)uniqueDocumentCachePathForProposedPath:(id)arg1;
+- (void)updateForNonCommandChangesWithWriteLock:(id)arg1;
 - (BOOL)useLigatures;
 - (id)webState;
 - (void)withRootSearchTargetAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSAttributedString, NSString, UIColor, UIFont, UIImage, UIImageView, UILabel, UIView, _UIButtonMaskAnimationView;
+@class NSArray, NSAttributedString, NSString, UIColor, UIFont, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView, _UIButtonMaskAnimationView;
 
 @interface UIButton : UIControl <NSCoding> {
     struct UIEdgeInsets { 
@@ -40,6 +40,7 @@
     NSArray *_contentConstraints;
     } _contentEdgeInsets;
     struct __CFDictionary { } *_contentLookup;
+    unsigned int _externalFlatEdge;
     } _imageEdgeInsets;
     UIImageView *_imageView;
     BOOL _initialized;
@@ -47,6 +48,7 @@
     unsigned int _lastDrawingControlState;
     UIFont *_lazyTitleViewFont;
     _UIButtonMaskAnimationView *_maskAnimationView;
+    UITapGestureRecognizer *_selectGestureRecognizer;
     UIView *_selectionView;
     } _titleEdgeInsets;
     UILabel *_titleView;
@@ -54,6 +56,7 @@
 
 @property(setter=_setContentConstraints:,copy) NSArray * _contentConstraints;
 @property(readonly) UIColor * _currentImageColor;
+@property(setter=_setExternalFlatEdge:) unsigned int _externalFlatEdge;
 @property(setter=_setInternalTitlePaddingInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _internalTitlePaddingInsets;
 @property BOOL adjustsImageWhenDisabled;
 @property BOOL adjustsImageWhenHighlighted;
@@ -110,27 +113,44 @@
 - (id)_contentForState:(unsigned int)arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (id)_createPreparedImageViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_currentImageColor;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (float)_drawingStrokeForState:(unsigned int)arg1;
 - (float)_drawingStrokeForStyle:(int)arg1;
 - (int)_drawingStyleForState:(unsigned int)arg1;
 - (int)_drawingStyleForStroke:(float)arg1;
+- (id)_externalBorderColorForState:(unsigned int)arg1;
+- (int)_externalDrawingStyleForState:(unsigned int)arg1;
+- (unsigned int)_externalFlatEdge;
+- (id)_externalImageColorForState:(unsigned int)arg1;
+- (id)_externalTitleColorForState:(unsigned int)arg1;
 - (id)_fadeOutAnimationWithKeyPath:(id)arg1;
+- (void)_focusStateDidChange;
 - (id)_font;
 - (BOOL)_hasDrawingStyle;
 - (BOOL)_hasHighlightColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBoundsForDrawingStyle;
 - (float)_highlightCornerRadius;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightRectForImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightRectForTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_imageColorForState:(unsigned int)arg1;
 - (id)_imageForState:(unsigned int)arg1 usesImageForNormalState:(BOOL*)arg2;
+- (BOOL)_imageNeedsCompositingModeWhenSelected;
 - (id)_imageView;
+- (void)_installSelectGestureRecognizer;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_internalTitlePaddingInsets;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateContentConstraints;
+- (BOOL)_isExternalRoundedRectButton;
+- (BOOL)_isExternalRoundedRectButtonWithPressednessState;
+- (BOOL)_isFocusableElement;
 - (BOOL)_isModernButton;
 - (BOOL)_isTitleFrozen;
+- (void)_layoutBackgroundImageView;
+- (void)_layoutImageView;
+- (void)_layoutTitleView;
 - (id)_letterpressStyleForState:(unsigned int)arg1;
 - (BOOL)_likelyToHaveTitle;
 - (int)_lineBreakMode;
@@ -140,7 +160,9 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_prepareMaskAnimationViewIfNecessary;
 - (id)_scriptingInfo;
+- (void)_selectGestureChanged:(id)arg1;
 - (float)_selectedIndicatorAlpha;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
 - (id)_selectedIndicatorViewWithImage:(id)arg1;
@@ -153,7 +175,9 @@
 - (void)_setContentHuggingPriorities:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setDrawingStroke:(float)arg1 forState:(unsigned int)arg2;
 - (void)_setDrawingStyle:(int)arg1 forState:(unsigned int)arg2;
+- (void)_setExternalFlatEdge:(unsigned int)arg1;
 - (void)_setFont:(id)arg1;
+- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 deferLayout:(BOOL)arg2;
 - (void)_setImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setImageColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setImageColor:(id)arg1 forStates:(unsigned int)arg2;
@@ -171,9 +195,12 @@
 - (void)_setupImageView;
 - (void)_setupPressednessForState:(unsigned int)arg1;
 - (void)_setupTitleView;
+- (void)_setupTitleViewRequestingLayout:(BOOL)arg1;
 - (id)_shadowColorForState:(unsigned int)arg1;
 - (BOOL)_shouldDefaultToTemplatesForImageViewBackground:(BOOL)arg1;
+- (BOOL)_shouldUpdatePressedness;
 - (void)_takeContentFromArchivableContent:(id)arg1;
+- (BOOL)_textNeedsCompositingModeWhenSelected;
 - (void)_titleAttributesChanged;
 - (id)_titleColorForState:(unsigned int)arg1;
 - (id)_titleForState:(unsigned int)arg1;
@@ -182,9 +209,13 @@
 - (struct CGSize { float x1; float x2; })_titleShadowOffset;
 - (id)_titleView;
 - (id)_transitionAnimationWithKeyPath:(id)arg1;
+- (void)_uninstallSelectGestureRecognizer;
+- (void)_updateBackgroundImageView;
 - (void)_updateEffectsForImageView:(id)arg1 background:(BOOL)arg2;
+- (void)_updateImageView;
 - (void)_updateMaskState;
 - (void)_updateSelectionViewForState:(unsigned int)arg1;
+- (void)_updateTitleView;
 - (void)_willMoveToWindow:(id)arg1;
 - (void)ab_addConferenceIcon;
 - (BOOL)adjustsImageWhenDisabled;

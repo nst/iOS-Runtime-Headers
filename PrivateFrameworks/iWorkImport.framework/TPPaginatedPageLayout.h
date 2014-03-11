@@ -74,6 +74,7 @@
 - (void)dealloc;
 - (id)dependentLayouts;
 - (id)dependentsOfTextLayout:(id)arg1;
+- (void)evacuateOldChildLayoutCache;
 - (id)existingAttachmentLayoutForInfo:(id)arg1;
 - (id)floatingDrawableLayouts;
 - (float)footerHeight;

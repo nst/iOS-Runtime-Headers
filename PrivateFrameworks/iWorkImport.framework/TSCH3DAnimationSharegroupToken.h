@@ -11,6 +11,7 @@
 
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)hasInterestForDiscreteGraphics;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

@@ -7,12 +7,13 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <RadiosPreferencesDelegate>;
+@class <RadiosPreferencesDelegate>, NSObject<OS_dispatch_queue>;
 
 @interface RadiosPreferences : NSObject {
     int _applySkipCount;
     BOOL _cachedAirplaneMode;
     <RadiosPreferencesDelegate> *_delegate;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _isCachedAirplaneModeValid;
     struct __SCPreferences { } *_prefs;
     BOOL notifyForExternalChangeOnly;
@@ -27,6 +28,7 @@
 - (id)delegate;
 - (void*)getValueForKey:(id)arg1;
 - (id)init;
+- (id)initWithQueue:(id)arg1;
 - (void)initializeSCPrefs:(id)arg1;
 - (BOOL)notifyForExternalChangeOnly;
 - (void)notifyTarget:(unsigned int)arg1;

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AXAccessQueue, NSMutableArray, NSString;
+@class AXAccessQueue, NSLock, NSMutableArray, NSString;
 
 @interface AXIPCClient : NSObject {
     unsigned int _assignedServerMachPort;
@@ -18,6 +18,7 @@
     id _portDeathHandler;
     NSMutableArray *_postConnectionTasks;
     struct __CFMachPort { } *_serverPort;
+    NSLock *_serverPortLock;
     NSString *_serviceName;
     float _timeout;
     unsigned int clientCallbackPort;

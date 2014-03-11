@@ -17,6 +17,7 @@
 @property(retain) CAMediaTimingFunction * timingFunction;
 
 + (void)animateWithFactory:(id)arg1 animations:(id)arg2 completion:(id)arg3;
++ (void)animateWithFactory:(id)arg1 animations:(id)arg2;
 + (void)animateWithSettings:(id)arg1 animations:(id)arg2 completion:(id)arg3;
 + (void)animateWithSettings:(id)arg1 delay:(double)arg2 animations:(id)arg3 completion:(id)arg4;
 + (void)animateWithSettings:(id)arg1 delay:(double)arg2 options:(unsigned int)arg3 animations:(id)arg4 completion:(id)arg5;

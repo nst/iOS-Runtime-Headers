@@ -7,6 +7,7 @@
 
 - (int)buttonType;
 - (id)contentsImage;
+- (float)extraRightPadding;
 - (BOOL)usesAdvancedActions;
 
 @end

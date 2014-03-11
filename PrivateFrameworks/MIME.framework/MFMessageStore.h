@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSMutableArray, NSMutableSet;
+@class NSMutableArray, NSMutableSet, NSString;
 
 @interface MFMessageStore : NSObject <NSCopying> {
     union { 
@@ -21,6 +21,8 @@
     } _caches;
     NSMutableSet *_uniqueStrings;
 }
+
+@property(copy) NSString * storagePath;
 
 + (Class)classForMimePart;
 + (Class)headersClass;
@@ -55,6 +57,8 @@
 - (id)headersForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2;
 - (void)setMessageClass:(Class)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
+- (void)setStoragePath:(id)arg1;
+- (id)storagePath;
 - (id)uniquedString:(id)arg1;
 - (BOOL)wantsLineEndingConversionForMIMEPart:(id)arg1;
 

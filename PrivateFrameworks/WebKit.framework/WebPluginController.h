@@ -30,11 +30,11 @@
 - (void)destroyOnePlugin:(id)arg1;
 - (void)destroyPlugin:(id)arg1;
 - (id)initWithDocumentView:(id)arg1;
+- (void)mediaPlugInProxyViewCreated:(id)arg1;
 - (BOOL)plugInsAreRunning;
 - (void)pluginView:(id)arg1 receivedData:(id)arg2;
 - (void)pluginView:(id)arg1 receivedError:(id)arg2;
 - (void)pluginView:(id)arg1 receivedResponse:(id)arg2;
-- (void)pluginViewCreated:(id)arg1;
 - (void)pluginViewFinishedLoading:(id)arg1;
 - (BOOL)processingUserGesture;
 - (void)restorePluginsFromCache;

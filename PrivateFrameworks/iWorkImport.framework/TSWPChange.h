@@ -46,6 +46,7 @@
 - (BOOL)showsHiddenDeletionMarkup;
 - (BOOL)showsMarkup;
 - (id)textMarkupColor;
+- (void)trackedTextDidChange;
 - (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;

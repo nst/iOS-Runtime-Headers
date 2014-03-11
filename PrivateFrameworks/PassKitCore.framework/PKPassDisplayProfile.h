@@ -12,7 +12,7 @@
     PKColor *_labelColor;
     int _layoutMode;
     NSData *_logoHash;
-    int _passStyle;
+    unsigned int _passStyle;
     PKColor *_stripColor;
     NSData *_stripHash;
     BOOL _tallCode;
@@ -26,7 +26,7 @@
 @property(retain) PKColor * labelColor;
 @property(readonly) int layoutMode;
 @property(retain) NSData * logoHash;
-@property int passStyle;
+@property unsigned int passStyle;
 @property(retain) PKColor * stripColor;
 @property(retain) NSData * stripHash;
 @property BOOL tallCode;
@@ -46,14 +46,14 @@
 - (id)labelColor;
 - (int)layoutMode;
 - (id)logoHash;
-- (int)passStyle;
+- (unsigned int)passStyle;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundHash:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setIconHash:(id)arg1;
 - (void)setLabelColor:(id)arg1;
 - (void)setLogoHash:(id)arg1;
-- (void)setPassStyle:(int)arg1;
+- (void)setPassStyle:(unsigned int)arg1;
 - (void)setStripColor:(id)arg1;
 - (void)setStripHash:(id)arg1;
 - (void)setTallCode:(BOOL)arg1;

@@ -2,42 +2,33 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAMButtonLabel;
+@class <CAMHDRButtonDelegate>;
 
-@interface CAMHDRButton : UIButton {
-    CAMButtonLabel *__hdrLabel;
-    CAMButtonLabel *__offLabel;
-    CAMButtonLabel *__onLabel;
-    BOOL _on;
-    int _orientation;
+@interface CAMHDRButton : CAMTriStateButton {
+    <CAMHDRButtonDelegate> *_delegate;
 }
 
-@property(readonly) CAMButtonLabel * _hdrLabel;
-@property(readonly) CAMButtonLabel * _offLabel;
-@property(readonly) CAMButtonLabel * _onLabel;
-@property(getter=isOn) BOOL on;
-@property int orientation;
+@property int HDRMode;
+@property(getter=isAutoDisallowed) int autoDisallowed;
+@property <CAMHDRButtonDelegate> * delegate;
 
-- (void)_commonCAMHDRButtonInitialization;
-- (id)_hdrLabel;
-- (void)_layoutForLandscapeOrientation;
-- (void)_layoutForPortraitOrientation;
-- (id)_offLabel;
-- (id)_onLabel;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForOrientation:(int)arg1;
-- (void)_updateFrameFromOrientation;
-- (void)_updateFromOnState;
-- (void)_updateFromOrientationChangeAnimated:(BOOL)arg1;
-- (void)_updateLabelsFromOrientation;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isOn;
-- (void)layoutSubviews;
-- (int)orientation;
-- (void)setOn:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setOrientation:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
++ (id)HDRButton;
+
+- (int)HDRMode;
+- (int)_HDRModeForTriStateMode:(int)arg1;
+- (id)_autoLabelTextForLandscape:(BOOL)arg1;
+- (id)_featureTextForLandscape;
+- (id)_iconImageName;
+- (void)_notifyDidCollapse;
+- (void)_notifyModeDidChange;
+- (void)_notifyWasPressed;
+- (void)_notifyWillExpand;
+- (id)_offLabelTextForLandscape:(BOOL)arg1;
+- (id)_onLabelTextForLandscape:(BOOL)arg1;
+- (int)_triStateModeForHDRMode:(int)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
+- (void)setHDRMode:(int)arg1 notifyDelegate:(BOOL)arg2;
+- (void)setHDRMode:(int)arg1;
 
 @end

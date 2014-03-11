@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSPersistentStore, NSPersistentStoreCoordinator;
+@class NSArray, NSDictionary, NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSPersistentStore, NSPersistentStoreCoordinator;
 
 @interface PFUbiquityPeerRangeReservationContext : NSObject {
     NSMutableDictionary *_globalIDToLocalURI;
@@ -19,6 +19,7 @@
 @property(readonly) NSArray * globalObjectIDs;
 @property(readonly) NSManagedObjectContext * moc;
 @property(readonly) int numRangesToReserve;
+@property(readonly) NSDictionary * peerEntityNameRangeStartSet;
 @property(readonly) NSPersistentStoreCoordinator * psc;
 @property(readonly) NSPersistentStore * store;
 
@@ -30,6 +31,7 @@
 - (id)initWithPersistentStore:(id)arg1 andGlobalObjectIDs:(id)arg2;
 - (id)moc;
 - (int)numRangesToReserve;
+- (id)peerEntityNameRangeStartSet;
 - (void)prepareForRangeReservationWithRangeStart:(id)arg1 andGlobalID:(id)arg2 andEntityName:(id)arg3;
 - (id)psc;
 - (id)store;

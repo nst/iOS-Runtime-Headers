@@ -4,7 +4,7 @@
 
 @class <TSDRepTrackerDelegate>, CAShapeLayer, TSDRep;
 
-@interface TSDRepRotateTracker : NSObject <TSDDecorator, TSDLayoutManipulatingTracker> {
+@interface TSDRepRotateTracker : NSObject <TSDDecorator, TSDLayoutManipulatingTracker, TSDRepTracker> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -15,7 +15,9 @@
     BOOL mDidBeginRotation;
     CAShapeLayer *mGuideLayer;
     BOOL mHaveSproingedHUD;
+    BOOL mIsInspectorDrivenTracking;
     BOOL mMovedMinimumDistance;
+    float mOriginalAngleForRotationInDegrees;
     float mOriginalAngleInDegrees;
     TSDRep *mOriginalNonFloatingRep;
     float mPreviousSnap;
@@ -27,6 +29,8 @@
 
 @property struct CGPoint { float x1; float x2; } centerForRotation;
 @property(readonly) float currentLogicalAngleInDegrees;
+@property BOOL isInspectorDrivenTracking;
+@property(readonly) float originalAngleInDegrees;
 @property(retain) TSDRep * rep;
 @property BOOL shouldShowHUD;
 @property float snapThreshold;
@@ -41,7 +45,9 @@
 - (void)dealloc;
 - (id)decoratorOverlayLayers;
 - (id)initWithRep:(id)arg1;
+- (BOOL)isInspectorDrivenTracking;
 - (BOOL)operationShouldBeDynamic;
+- (float)originalAngleInDegrees;
 - (void)p_begin;
 - (void)p_hideGuideLayer;
 - (void)p_hideHUD;
@@ -53,6 +59,7 @@
 - (id)rep;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })rotateTransform;
 - (void)setCenterForRotation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setIsInspectorDrivenTracking:(BOOL)arg1;
 - (void)setRep:(id)arg1;
 - (void)setShouldShowHUD:(BOOL)arg1;
 - (void)setSnapThreshold:(float)arg1;

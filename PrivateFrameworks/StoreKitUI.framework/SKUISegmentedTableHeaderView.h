@@ -2,19 +2,21 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SUSegmentedControl, UIView, _UIBackdropView;
+@class UIView, _UIBackdropView;
 
 @interface SKUISegmentedTableHeaderView : UIView {
     _UIBackdropView *_backdropView;
     UIView *_borderView;
-    SUSegmentedControl *_segmentedControl;
+    UIView *_segmentedControl;
 }
 
+@property(readonly) _UIBackdropView * backdropView;
 @property BOOL hidesBorderView;
-@property(retain) SUSegmentedControl * segmentedControl;
+@property(retain) UIView * segmentedControl;
 
 - (void).cxx_destruct;
 - (id)_borderView;
+- (id)backdropView;
 - (BOOL)hidesBorderView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;

@@ -14,7 +14,7 @@
     SFAirDropBrowser *_browser;
     NSMutableSet *_cachedSharedItems;
     UICollectionView *_collectionView;
-    int _contentAreaState;
+    BOOL _darkStyleOnLegacyApp;
     NSObject<SFAirDropActivityViewControllerDelegate> *_delegate;
     SFCollectionViewFlowLayout *_flowLayout;
     int _generatedPreviews;
@@ -37,9 +37,9 @@
     NSMutableDictionary *_sharedItemsRequestIDToPreviewPhoto;
     UILabel *_titleLabel;
     SFWirelessSettingsController *_wirelessSettings;
-    BOOL toggle;
 }
 
+@property BOOL darkStyleOnLegacyApp;
 @property NSObject<SFAirDropActivityViewControllerDelegate> * delegate;
 @property BOOL otherActivityViewPresented;
 @property BOOL sharedItemsAvailable;
@@ -70,23 +70,23 @@
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (BOOL)createURLPayloadForData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 completion:(id)arg6;
+- (BOOL)darkStyleOnLegacyApp;
+- (void)dealloc;
 - (id)delegate;
 - (void)didEnterBackground:(id)arg1;
 - (void)enableAirDropRequiredFeatures;
 - (void)generateSpecialPreviewPhotoForRequestID:(int)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isAssetURL:(id)arg1;
 - (BOOL)isBluetoothEnabled;
-- (BOOL)isImage:(id)arg1;
 - (BOOL)isTetheredModeEnabled;
 - (BOOL)isValidPayload:(id)arg1 toPerson:(id)arg2 invalidMessage:(id*)arg3;
-- (BOOL)isVideo:(id)arg1;
 - (BOOL)isWifiEnabled;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (BOOL)otherActivityViewPresented;
 - (void)personCollectionViewCellDidFinishTransfer:(id)arg1;
 - (void)personCollectionViewCellDidStartTransfer:(id)arg1;
 - (void)personCollectionViewCellDidTerminateTransfer:(id)arg1;
+- (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNeedsRequestingSharedItems;
 - (void)setOtherActivityViewPresented:(BOOL)arg1;
@@ -100,7 +100,7 @@
 - (struct CGSize { float x1; float x2; })suggestedThumbnailSize;
 - (void)unpublishedProgressForPersonWithRealName:(id)arg1;
 - (void)unsubscribeToProgresses;
-- (void)updateContentArea;
+- (void)updateContentAreaAnimated:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

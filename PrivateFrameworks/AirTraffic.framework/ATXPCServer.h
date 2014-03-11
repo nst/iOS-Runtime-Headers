@@ -6,19 +6,19 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSMutableSet, NSSet;
+@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, NSSet;
 
 @interface ATXPCServer : NSObject {
-    struct _xpc_connection_s { } *_conn;
+    NSObject<OS_xpc_object> *_conn;
     NSMutableSet *_connections;
     id _defaultMessageHandler;
     id _disconnectHandler;
     NSMutableDictionary *_handlerMap;
-    struct dispatch_source_s { } *_idleTimerSource;
+    NSObject<OS_dispatch_source> *_idleTimerSource;
     id _lockdownHandler;
     id _shutdownHandler;
     BOOL _timerHasFiredSinceLastMessage;
-    struct dispatch_queue_s { } *_timerQueue;
+    NSObject<OS_dispatch_queue> *_timerQueue;
 }
 
 @property(readonly) NSSet * connections;
@@ -29,9 +29,9 @@
 
 - (id)_connections;
 - (BOOL)_doingWork;
-- (void)_handleNewConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)_handleNewConnection:(id)arg1;
 - (id)_handlerForMessageName:(id)arg1;
-- (struct dispatch_queue_s { }*)_highAvailabilityQueue;
+- (id)_highAvailabilityQueue;
 - (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
 - (void)_resetMessageFlag;
 - (void)_runShutdownHandler;

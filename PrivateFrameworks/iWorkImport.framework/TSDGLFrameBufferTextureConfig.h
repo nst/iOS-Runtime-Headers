@@ -11,6 +11,7 @@
     unsigned int _GLFormat;
     int _GLInternalFormat;
     unsigned int _GLType;
+    unsigned int _attachment;
     NSString *_name;
     } _size;
     NSArray *_textureParameters;
@@ -19,18 +20,22 @@
 @property(readonly) unsigned int GLFormat;
 @property(readonly) int GLInternalFormat;
 @property(readonly) unsigned int GLType;
+@property unsigned int attachment;
 @property(readonly) NSString * name;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 @property(retain) NSArray * textureParameters;
 
-+ (id)textureConfigWithSize:(struct CGSize { float x1; float x2; })arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 name:(id)arg5;
++ (id)textureConfigWithSize:(struct CGSize { float x1; float x2; })arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 attachment:(unsigned int)arg5 name:(id)arg6;
++ (id)textureConfigWithSize:(struct CGSize { float x1; float x2; })arg1 name:(id)arg2;
 
 - (unsigned int)GLFormat;
 - (int)GLInternalFormat;
 - (unsigned int)GLType;
+- (unsigned int)attachment;
 - (void)dealloc;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 name:(id)arg5;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 attachment:(unsigned int)arg5 name:(id)arg6;
 - (id)name;
+- (void)setAttachment:(unsigned int)arg1;
 - (void)setTextureParameters:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (id)textureParameters;

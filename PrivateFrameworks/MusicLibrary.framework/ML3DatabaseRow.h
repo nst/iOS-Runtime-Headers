@@ -6,6 +6,7 @@
 
 @interface ML3DatabaseRow : NSObject {
     ML3DatabaseResult *_parentResult;
+    struct sqlite3_stmt { } *_stmt;
 }
 
 @property(readonly) ML3DatabaseResult * parentResult;

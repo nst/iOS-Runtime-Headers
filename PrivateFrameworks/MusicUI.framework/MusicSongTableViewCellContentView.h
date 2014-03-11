@@ -5,6 +5,7 @@
 @class MPUItemOfferButton, MusicNowPlayingIndicatorView, UIImageView;
 
 @interface MusicSongTableViewCellContentView : MusicTableViewCellContentView {
+    BOOL _displayAsDisabled;
     UIImageView *_explicitImageView;
     BOOL _explicitTrack;
     UIImageView *_geniusImageView;
@@ -15,6 +16,7 @@
     BOOL _playing;
 }
 
+@property(getter=isDisplayingAsDisabled) BOOL displayAsDisabled;
 @property(readonly) UIImageView * explicitImageView;
 @property(getter=isExplicitTrack) BOOL explicitTrack;
 @property(readonly) UIImageView * geniusImageView;
@@ -30,12 +32,14 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)explicitImageView;
 - (id)geniusImageView;
+- (BOOL)isDisplayingAsDisabled;
 - (BOOL)isExplicitTrack;
 - (BOOL)isGeniusTrack;
 - (BOOL)isPlaying;
 - (id)itemOfferButton;
 - (BOOL)itemOfferButtonNeedsSetup;
 - (id)nowPlayingIndicatorView;
+- (void)setDisplayAsDisabled:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setExplicitTrack:(BOOL)arg1;
 - (void)setGeniusTrack:(BOOL)arg1;

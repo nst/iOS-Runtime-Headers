@@ -5,6 +5,8 @@
 @interface PTSButtonRow : PTSRow {
 }
 
++ (id)pu_rowWithTitle:(id)arg1 action:(id)arg2;
++ (id)pu_rowWithTitle:(id)arg1 output:(id)arg2;
 + (id)rowWithTitle:(id)arg1 action:(id)arg2;
 
 - (Class)rowTableViewCellClass;

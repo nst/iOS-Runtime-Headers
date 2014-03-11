@@ -2,47 +2,31 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotosSharingGridCellDelegate>, PUPhotoView, PUPhotosZoomingSharingGridCell, UIImage, UIView;
+@class PUPhotoView, PUPhotosZoomingSharingGridCell, UIView;
 
-@interface PUPhotosSharingGridCell : UICollectionViewCell <UIGestureRecognizerDelegate> {
+@interface PUPhotosSharingGridCell : UICollectionViewCell {
     struct CGPoint { 
         float x; 
         float y; 
     struct CGPoint { 
         float x; 
         float y; 
-    <PUPhotosSharingGridCellDelegate> *_delegate;
     UIView *_highlightOverlayView;
     } _lastZoomPoint;
     } _originalZoomPoint;
     PUPhotoView *_photoView;
-    BOOL _zooming;
     PUPhotosZoomingSharingGridCell *_zoomingCell;
     UIView *_zoomingCellSuperview;
-    UIImage *_zoomingImage;
 }
 
-@property <PUPhotosSharingGridCellDelegate> * delegate;
 @property(readonly) PUPhotoView * photoView;
-@property(getter=isZooming) BOOL zooming;
-@property(retain) UIImage * zoomingImage;
 
 - (void).cxx_destruct;
-- (void)_endZooming;
-- (void)_pinch:(id)arg1;
-- (void)_setZooming:(BOOL)arg1;
 - (void)_updateHighlight;
 - (void)_updateSubviewOrdering;
-- (id)delegate;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isZooming;
 - (void)layoutSubviews;
 - (id)photoView;
-- (void)prepareForReuse;
-- (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setZoomingImage:(id)arg1;
-- (id)zoomingImage;
 
 @end

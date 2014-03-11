@@ -9,36 +9,25 @@
     UIButton *_button;
     UILabel *_messageLabel;
     UILabel *_messageTitleLabel;
-    BOOL _room;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
 }
 
 @property(retain) UIImage * artwork;
 @property(copy) NSString * buttonTitle;
 @property(copy) NSString * message;
 @property(copy) NSString * messageTitle;
-@property(getter=isRoom) BOOL room;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;
 - (id)artwork;
 - (id)buttonTitle;
 - (void)dealloc;
-- (BOOL)isRoom;
 - (void)layoutSubviews;
 - (id)message;
 - (id)messageTitle;
+- (void)prepareForReuse;
 - (void)setArtwork:(id)arg1;
 - (void)setButtonTitle:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageTitle:(id)arg1;
-- (void)setRoom:(BOOL)arg1;
-- (void)setSubtitle:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (id)subtitle;
-- (id)title;
 
 @end

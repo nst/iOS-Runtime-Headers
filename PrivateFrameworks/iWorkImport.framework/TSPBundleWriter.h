@@ -13,6 +13,7 @@
     NSURL *_URL;
     <TSPComponentWriteChannel> *_componentWriteChannel;
     TSUPathSet *_dataPathSet;
+    NSURL *_documentTargetURL;
     SFUCryptoKey *_encryptionKey;
     NSError *_error;
     NSObject<OS_dispatch_queue> *_errorQueue;
@@ -21,11 +22,13 @@
     BOOL _obscureAssetFilenames;
     <TSPPackage> *_originalDocumentPackage;
     <TSPPackage> *_originalSupportPackage;
+    NSURL *_relativeURLForExternalData;
     TSPBundle *_writtenBundle;
 }
 
+@property(readonly) NSURL * documentTargetURL;
 @property BOOL obscureAssetFilenames;
-@property(readonly) NSURL * writeURL;
+@property(readonly) NSURL * relativeURLForExternalData;
 
 - (void).cxx_destruct;
 - (BOOL)addData:(id)arg1 infoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; int x10; unsigned int x11[1]; }*)arg2 saveOperationState:(id)arg3;
@@ -34,13 +37,14 @@
 - (BOOL)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(BOOL)arg2;
 - (id)dataFilenameForPreferredFilename:(id)arg1;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1 packageIdentifier:(unsigned char)arg2 encryptionKey:(id)arg3 originalDocumentPackage:(id)arg4 originalSuppportPackage:(id)arg5 fileCoordinatorDelegate:(id)arg6 error:(id*)arg7;
+- (id)documentTargetURL;
+- (id)initWithURL:(id)arg1 documentTargetURL:(id)arg2 relativeURLForExternalData:(id)arg3 packageIdentifier:(unsigned char)arg4 encryptionKey:(id)arg5 originalDocumentPackage:(id)arg6 originalSuppportPackage:(id)arg7 fileCoordinatorDelegate:(id)arg8 error:(id*)arg9;
 - (id)linkOrCopyDataFromURL:(id)arg1 decryptionKey:(id)arg2 preferredFilename:(id)arg3;
 - (id)newComponentWriteChannelWithPackageLocator:(id)arg1 storeOutsideObjectArchive:(BOOL)arg2;
 - (BOOL)obscureAssetFilenames;
+- (id)relativeURLForExternalData;
 - (void)setObscureAssetFilenames:(BOOL)arg1;
 - (BOOL)writeData:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
-- (id)writeURL;
 - (id)writtenPackage;
 
 @end

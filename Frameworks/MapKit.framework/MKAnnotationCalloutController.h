@@ -15,6 +15,7 @@
 @property <MKAnnotationCalloutControllerDelegate> * delegate;
 @property int mapDisplayStyle;
 
+- (void).cxx_destruct;
 - (void)_addAccessoryTargetForView:(id)arg1;
 - (void)_calloutAccessoryControlTapped:(id)arg1;
 - (BOOL)_isShowingCallout;

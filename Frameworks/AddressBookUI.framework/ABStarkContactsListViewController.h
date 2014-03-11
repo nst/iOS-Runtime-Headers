@@ -2,14 +2,20 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStarkContactsListViewControllerDelegate>, ABMembersDataSource, ABModel;
+@class <ABStarkContactsListViewControllerDelegate>, ABMembersDataSource, ABModel, ABStarkNoContentBannerView, AVExternalDevice;
 
 @interface ABStarkContactsListViewController : UITableViewController <ABMembersDataSourceDelegate, ABContactViewControllerDelegate> {
     ABMembersDataSource *_dataSource;
+    AVExternalDevice *_externalDevice;
+    BOOL _limitedUI;
     ABModel *_model;
+    ABStarkNoContentBannerView *_overlayView;
     <ABStarkContactsListViewControllerDelegate> *_peoplePickerDelegate;
 }
 
+@property(retain) AVExternalDevice * externalDevice;
+@property BOOL limitedUI;
+@property(retain) ABStarkNoContentBannerView * overlayView;
 @property <ABStarkContactsListViewControllerDelegate> * peoplePickerDelegate;
 
 - (BOOL)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(id)arg3 withMemberCell:(id)arg4 animate:(BOOL)arg5;
@@ -17,11 +23,21 @@
 - (BOOL)abDataSourceAllowsShowingPersonsCards:(id)arg1;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
 - (void)dealloc;
+- (id)externalDevice;
 - (id)init;
-- (id)initWithModel:(id)arg1;
 - (id)initWithStyle:(int)arg1;
+- (BOOL)limitedUI;
+- (void)limitedUINotification:(id)arg1;
+- (id)overlayView;
 - (id)peoplePickerDelegate;
+- (void)postMessageOverlay:(id)arg1;
+- (void)removeMessageOverlay;
+- (void)setExternalDevice:(id)arg1;
+- (void)setLimitedUI:(BOOL)arg1;
+- (void)setOverlayView:(id)arg1;
 - (void)setPeoplePickerDelegate:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

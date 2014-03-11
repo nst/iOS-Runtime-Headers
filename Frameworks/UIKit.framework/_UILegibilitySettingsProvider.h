@@ -47,6 +47,7 @@
 - (void)clearContentColorAccumulator;
 - (id)contentColor;
 - (int)currentStyle;
+- (void)dealloc;
 - (BOOL)hasContrast;
 - (float)mostRecentBrightness;
 - (float)mostRecentContrast;

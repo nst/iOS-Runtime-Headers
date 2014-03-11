@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollection, MPMediaQuery, MPStoreOfferContentRating, NSArray, NSDictionary;
+@class MPMediaItemCollection, MPMediaQuery, MPStoreCompletionOfferResponse, MPStoreOfferContentRating, NSArray;
 
 @interface MPStoreOfferMediaItemCollection : MPMediaItemCollection {
     MPStoreOfferContentRating *_collectionContentRating;
@@ -10,7 +10,7 @@
     MPMediaItemCollection *_localCollection;
     MPMediaQuery *_localItemsQuery;
     int _preferredStoreOfferVariant;
-    NSDictionary *_storeLookupPropertyValues;
+    MPStoreCompletionOfferResponse *_storeOfferResponse;
     NSArray *_unmergedStoreMediaItems;
 }
 
@@ -19,7 +19,7 @@
 @property(readonly) NSArray * itemsByRemovingLocalItems;
 @property(readonly) NSArray * itemsByRemovingStoreOffers;
 
-+ (id)childItemIDsForLookupCollectionPropertyValues:(id)arg1;
++ (id)albumOrderedChildItemIDsForLookupCollectionPropertyValues:(id)arg1;
 + (id)collectionLookupKeyForMediaProperty:(id)arg1;
 + (id)contentRatingForCollectionPropertyValues:(id)arg1;
 + (id)defaultPropertyValues;
@@ -43,8 +43,8 @@
 - (BOOL)hasPurchasableStoreOfferItemsForVariant:(int)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLookupResponseCollectionDictionary:(id)arg1 preferredStoreOfferVariant:(int)arg2 offerMediaItems:(id)arg3 localItemsQuery:(id)arg4;
-- (id)initWithLookupResponseCollectionDictionary:(id)arg1 preferredStoreOfferVariant:(int)arg2;
+- (id)initWithStoreOfferResponse:(id)arg1 preferredStoreOfferVariant:(int)arg2 offerMediaItems:(id)arg3 localItemsQuery:(id)arg4;
+- (id)initWithStoreOfferResponse:(id)arg1 preferredStoreOfferVariant:(int)arg2;
 - (BOOL)isCheaperToPurchaseIndividualItems;
 - (BOOL)isCollectionOfferPresentable;
 - (BOOL)isDownloadable;

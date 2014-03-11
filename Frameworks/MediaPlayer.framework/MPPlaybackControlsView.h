@@ -60,7 +60,7 @@
 @property(readonly) unsigned int shuffleType;
 @property unsigned long long visibleParts;
 
-+ (unsigned int)defaultVisibleParts;
++ (unsigned long long)defaultVisibleParts;
 
 - (void).cxx_destruct;
 - (void)_addOpacityAnimationToBezelView:(id)arg1 reversed:(BOOL)arg2;
@@ -74,12 +74,14 @@
 - (void)_geniusButton:(id)arg1;
 - (void)_handleGeniusButtonClick;
 - (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
+- (void)_itemDurationDidChangeNotification:(id)arg1;
 - (void)_mailButton:(id)arg1;
 - (void)_playbackModeDidChangeNotification:(id)arg1;
 - (void)_playbackSpeedButton:(id)arg1;
 - (void)_radioButton:(id)arg1;
 - (void)_radioHistoryButton:(id)arg1;
 - (void)_radioShareButton:(id)arg1;
+- (void)_registerForAVItemNotifications;
 - (void)_repeatButton:(id)arg1;
 - (void)_resetGeniusButtonImages;
 - (void)_rewindButton:(id)arg1;
@@ -89,6 +91,7 @@
 - (void)_tickNotification:(id)arg1;
 - (void)_timeDidJumpNotification:(id)arg1;
 - (void)_trackInfoButton:(id)arg1;
+- (void)_unregisterForAVItemNotifications;
 - (void)_updateButtonVisibility;
 - (void)_updateForPlaybackSpeed;
 - (double)_updatedDisplayDurationForTime:(double)arg1 preciseChapterMarkers:(BOOL)arg2;

@@ -19,8 +19,8 @@
 @property BOOL hasBackgroundGradient;
 @property BOOL verticallyCenterTextViewIfLabelless;
 
-+ (float)labelFontSize;
-+ (float)textFontSize;
++ (float)defaultLabelFontSize;
++ (float)defaultTextFontSize;
 
 - (struct CGPoint { float x1; float x2; })_backgroundGradientViewOrigin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrame;
@@ -45,11 +45,13 @@
 - (void)setHasBackgroundGradient:(BOOL)arg1;
 - (void)setLabel:(id)arg1 animate:(BOOL)arg2;
 - (void)setLabel:(id)arg1;
+- (void)setLabelFontSize:(float)arg1;
 - (void)setLayoutAsLabelled:(BOOL)arg1;
 - (void)setSecondLineText:(id)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setSubImage:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setTextFontSize:(float)arg1;
 - (void)setVerticallyCenterTextViewIfLabelless:(BOOL)arg1;
 - (BOOL)shouldCenterContentView;
 - (BOOL)shouldCenterText;

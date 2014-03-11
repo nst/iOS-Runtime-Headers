@@ -39,6 +39,5 @@
 - (BOOL)viewIsReadyToBeRemoved;
 - (void)viewWillAnimateIn;
 - (void)viewWillAnimateOut;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -66,6 +66,7 @@
 - (void).cxx_destruct;
 - (void)_adjustViewsForPinning;
 - (void)_computeDayStartsAndEnds;
+- (void)_configureOccurrenceViewMarginAndPadding:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_dayRangeForEvent:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_dayRangeForEventWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)_dayStarts;
@@ -76,6 +77,7 @@
 - (void)_tapRecognized:(id)arg1;
 - (BOOL)allowsOccurrenceSelection;
 - (id)calendar;
+- (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (BOOL)containsEvent:(id)arg1;
 - (BOOL)darkensWeekends;
 - (double)dateForPoint:(struct CGPoint { float x1; float x2; })arg1;

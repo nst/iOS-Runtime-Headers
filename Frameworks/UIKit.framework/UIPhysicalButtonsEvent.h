@@ -26,5 +26,6 @@
 - (id)_windows;
 - (void)dealloc;
 - (void)set_triggeringPhysicalButton:(id)arg1;
+- (int)type;
 
 @end

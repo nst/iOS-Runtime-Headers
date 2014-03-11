@@ -4,7 +4,7 @@
 
 @class GKBubbleView;
 
-@interface GKBubbleControl : UIControl {
+@interface GKBubbleControl : UIControl <NSCopying> {
     BOOL _animateOnTouch;
     BOOL _animatingIn;
     GKBubbleView *_bubbleView;
@@ -26,6 +26,7 @@
 - (int)bubbleType;
 - (id)bubbleView;
 - (id)contentsWrapperView;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)didTouchDown;

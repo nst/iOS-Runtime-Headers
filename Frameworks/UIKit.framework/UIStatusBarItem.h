@@ -25,6 +25,8 @@
 - (BOOL)appearsInRegion:(int)arg1;
 - (BOOL)appearsOnLeft;
 - (BOOL)appearsOnRight;
+- (int)centerOrder;
+- (int)compareCenterOrder:(id)arg1;
 - (int)compareLeftOrder:(id)arg1;
 - (int)comparePriority:(id)arg1;
 - (int)compareRightOrder:(id)arg1;

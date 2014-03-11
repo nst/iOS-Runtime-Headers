@@ -14,6 +14,5 @@
 - (id)init;
 - (void)log;
 - (void)logSpringboardNotifications;
-- (void)logWallPaperChange;
 
 @end

@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemStepViewController;
+@class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemConfiguration, SKUIRedeemStepViewController;
 
 @interface SKUIRedeemViewController : UINavigationController {
+    BOOL _cameraRedeemEnabled;
     int _category;
     SKUIClientContext *_clientContext;
     NSString *_initialCode;
     NSOperationQueue *_operationQueue;
+    SKUIRedeemConfiguration *_redeemConfiguration;
     SKUIRedeemStepViewController *_rootViewController;
 }
 
@@ -17,17 +19,19 @@
 @property(copy) NSString * initialCode;
 @property(retain) NSOperationQueue * operationQueue;
 
-+ (id)startingViewControllerForCategory:(int)arg1;
-
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_clientContextDidLoadWithContext:(id)arg1 error:(id)arg2;
+- (void)_configurationDidLoadWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_loadRootViewController;
+- (id)_newRootViewController;
 - (void)_showRootViewController;
 - (int)category;
 - (id)clientContext;
 - (id)initWithRedeemCategory:(int)arg1;
 - (id)initialCode;
 - (id)operationQueue;
+- (void)redeemAgainAnimated:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setInitialCode:(id)arg1;
 - (void)setOperationQueue:(id)arg1;

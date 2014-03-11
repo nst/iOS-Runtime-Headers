@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUI.framework/AccessibilityUI
  */
 
-@class <AXUIClientDelegate>, AXUIClientConnection, AXUIMessageSender, NSObject<OS_xpc_object>, NSString;
+@class <AXUIClientDelegate>, AXUIClientConnection, AXUIMessageSender, NSDictionary, NSObject<OS_xpc_object>, NSString;
 
 @interface AXUIClient : NSObject <AXUIMessageSenderDelegate> {
     AXUIClientConnection *_clientConnection;
     NSObject<OS_xpc_object> *_clientIdentifier;
     <AXUIClientDelegate> *_delegate;
+    NSDictionary *_initializationMessage;
     AXUIMessageSender *_messageSender;
     NSString *_serviceBundleName;
 }
@@ -15,14 +16,17 @@
 @property(retain) AXUIClientConnection * clientConnection;
 @property(retain) NSObject<OS_xpc_object> * clientIdentifier;
 @property <AXUIClientDelegate> * delegate;
+@property(copy) NSDictionary * initializationMessage;
 @property(retain) AXUIMessageSender * messageSender;
 @property(copy) NSString * serviceBundleName;
 
+- (void)_requestInitializationMessageFromDelegateIfNeeded;
 - (id)clientConnection;
 - (id)clientIdentifier;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithServiceBundleName:(id)arg1;
+- (id)initializationMessage;
 - (void)messageSender:(id)arg1 accessXPCConnectionForMessageWithContext:(void*)arg2 usingBlock:(id)arg3;
 - (void*)messageSender:(id)arg1 extractCustomDataFromXPCReply:(id)arg2 numberOfKeyValuePairsForCustomData:(unsigned int*)arg3;
 - (void)messageSender:(id)arg1 processCustomDataFromXPCReply:(void*)arg2;
@@ -36,6 +40,7 @@
 - (void)setClientConnection:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setInitializationMessage:(id)arg1;
 - (void)setMessageSender:(id)arg1;
 - (void)setServiceBundleName:(id)arg1;
 

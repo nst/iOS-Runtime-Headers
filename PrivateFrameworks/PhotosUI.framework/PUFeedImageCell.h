@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PLVideoOverlayButton, PUImageViewExtraction, UIButton, UIImage, UIImageView;
+@class PUImageViewExtraction, UIButton, UIImage, UIImageView, UIView<PLVideoOverlayButton>;
 
 @interface PUFeedImageCell : PUFeedCell {
     struct CGSize { 
@@ -12,7 +12,7 @@
     UIButton *__commentButton;
     int __imageTag;
     UIImageView *__imageView;
-    PLVideoOverlayButton *__overlayPlayButton;
+    UIView<PLVideoOverlayButton> *__overlayPlayButton;
     PUImageViewExtraction *__overlayPlayButtonBackgroundExtraction;
     UIImageView *__overlayPlayButtonBackgroundImageView;
     BOOL __shouldHideCenterOverlayImageView;
@@ -32,7 +32,7 @@
 @property(setter=_setCommentButton:,retain) UIButton * _commentButton;
 @property(setter=_setImageTag:) int _imageTag;
 @property(setter=_setImageView:,retain) UIImageView * _imageView;
-@property(setter=_setOverlayPlayButton:,retain) PLVideoOverlayButton * _overlayPlayButton;
+@property(setter=_setOverlayPlayButton:,retain) UIView<PLVideoOverlayButton> * _overlayPlayButton;
 @property(setter=_setOverlayPlayButtonBackgroundExtraction:,retain) PUImageViewExtraction * _overlayPlayButtonBackgroundExtraction;
 @property(setter=_setOverlayPlayButtonBackgroundImageView:,retain) UIImageView * _overlayPlayButtonBackgroundImageView;
 @property(setter=_setShouldHideCenterOverlayImageView:) BOOL _shouldHideCenterOverlayImageView;
@@ -46,6 +46,8 @@
 @property(getter=isImageHidden) BOOL imageHidden;
 @property struct CGSize { float x1; float x2; } maximumImageSize;
 @property int overlayOptions;
+
++ (Class)_contentViewClass;
 
 - (void).cxx_destruct;
 - (id)_centerOverlayImageView;

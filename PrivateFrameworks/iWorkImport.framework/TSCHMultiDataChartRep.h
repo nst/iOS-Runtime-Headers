@@ -12,11 +12,13 @@
     CALayer *mElementsContainerLayer;
     int mGridDirection;
     NSMutableDictionary *mIndexedElements;
+    BOOL mIsAnimatingForBuilds;
     BOOL mRenderingBackgroundLayer;
     BOOL mRenderingDataSetNameLayer;
     BOOL mRenderingElementLabelsLayer;
     BOOL mRenderingElementShapeLayer;
     CALayer *mRootLayer;
+    BOOL mShouldAnimateLabelsQuickly;
 }
 
 @property(copy) TSCHMultiDataChartRepElementIndex * currentRepElementIndex;
@@ -48,6 +50,7 @@
 - (id)imageFromFill:(id)arg1 forResolutionWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toRepElementTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 skipIntegral:(BOOL)arg4 returningFillFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (BOOL)isHorizontalChart;
+- (BOOL)needsAnimationForAnimationInfo:(id)arg1;
 - (struct CGImage { }*)newChartImageForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 originOffset:(struct CGPoint { float x1; float x2; })arg2 returningAdjustedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (id)newDataSetNameLayer;
 - (void)p_addAnimationsForLabelLayer:(id)arg1 contents:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 animationInfo:(id)arg4;
@@ -70,6 +73,7 @@
 - (id)p_elementLayers;
 - (id)p_fadeAnimationInfosForLayers:(id)arg1 duration:(float)arg2;
 - (BOOL)p_isDataSetNameRenderer:(id)arg1;
+- (id)p_labelsAnimationKeyTimes;
 - (id)p_updateAnimatedLayerLayoutsWithAnimationDuration:(float)arg1;
 - (void)p_updateAnimatedLayers;
 - (void)p_updateDataSetNameLayerWithAnimationInfo:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPhotoScrubberDataSource>, NSMutableArray, UIImageView, UIView;
+@class <PLPhotoScrubberDataSource>, <PLPhotoScrubberSpeedDelegate>, NSMutableArray, NSTimer, UIImageView, UIView;
 
 @interface PLPhotoScrubber : UIControl {
     struct CGRect { 
@@ -14,6 +14,10 @@
             float width; 
             float height; 
         } size; 
+    int __lastSpeedRegime;
+    double __lastTime;
+    float __scrubbingSpeed;
+    NSTimer *__timeoutTimer;
     <PLPhotoScrubberDataSource> *_dataSource;
     BOOL _deferImageLoading;
     unsigned int _displayedImageIndex;
@@ -25,20 +29,38 @@
     UIImageView *_loupeView;
     int _prospectiveImageIndex;
     BOOL _scrubbing;
+    <PLPhotoScrubberSpeedDelegate> *_speedDelegate;
     } _thumbnailBounds;
     UIView *_thumbnailTrackView;
     NSMutableArray *_thumbnailViews;
     double _timeOfLastTouch;
 }
 
+@property(setter=_setLastSpeedRegime:) int _lastSpeedRegime;
+@property(setter=_setLastTime:) double _lastTime;
+@property(setter=_setScrubbingSpeed:) float _scrubbingSpeed;
+@property(setter=_setTimeoutTimer:,retain) NSTimer * _timeoutTimer;
 @property <PLPhotoScrubberDataSource> * dataSource;
+@property <PLPhotoScrubberSpeedDelegate> * speedDelegate;
 
 - (struct CGPoint { float x1; float x2; })_centerForImageAtIndex:(int)arg1;
+- (void)_handleTimeoutTimer:(id)arg1;
 - (unsigned int)_imageIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (int)_lastSpeedRegime;
+- (double)_lastTime;
+- (void)_performSpeedUpdate;
+- (void)_rescheduleTimer;
+- (float)_scrubbingSpeed;
 - (void)_setDisplayedImageIndex:(id)arg1;
 - (void)_setDisplayedImageIndex:(int)arg1 immediately:(BOOL)arg2;
 - (void)_setIsScrubbing:(BOOL)arg1;
+- (void)_setLastSpeedRegime:(int)arg1;
+- (void)_setLastTime:(double)arg1;
+- (void)_setScrubbingSpeed:(float)arg1;
+- (void)_setSpeedRegime:(int)arg1;
+- (void)_setTimeoutTimer:(id)arg1;
 - (unsigned int)_thumbnailIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_timeoutTimer;
 - (void)_updateLoupe:(BOOL)arg1 force:(BOOL)arg2;
 - (void)_updateLoupeWithTouch:(id)arg1 forceUpdate:(BOOL)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -48,8 +70,11 @@
 - (int)displayedImageIndex;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
+- (BOOL)isFastScrubbing;
 - (BOOL)isScrubbing;
 - (void)layoutSubviews;
+- (void)ppt_scrubToAbsoluteIndex:(int)arg1 immediately:(BOOL)arg2;
+- (void)ppt_setIsScrubbing:(BOOL)arg1;
 - (void)reloadData;
 - (void)reloadDataWithNewDisplayedIndex:(unsigned int)arg1;
 - (void)reloadImageAtIndex:(int)arg1;
@@ -61,7 +86,9 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1 atIndex:(int)arg2;
 - (void)setLoupeImage:(id)arg1;
+- (void)setSpeedDelegate:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)speedDelegate;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

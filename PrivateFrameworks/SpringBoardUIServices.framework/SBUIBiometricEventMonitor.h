@@ -15,6 +15,7 @@
     BOOL _matchingEnabled;
     NSHashTable *_observers;
     BOOL _screenIsOff;
+    BOOL _shouldSendFingerOffNotification;
 }
 
 @property <SBUIBiometricEventMonitorDelegate> * delegate;
@@ -37,7 +38,7 @@
 - (BOOL)hasEnrolledIdentities;
 - (id)init;
 - (BOOL)isMatchingEnabled;
-- (void)matchResult:(id)arg1;
+- (void)matchResult:(id)arg1 withDetails:(id)arg2;
 - (void)noteScreenDidTurnOff;
 - (void)noteScreenWillTurnOff;
 - (void)noteScreenWillTurnOn;

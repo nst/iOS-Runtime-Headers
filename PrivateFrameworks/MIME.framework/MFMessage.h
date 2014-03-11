@@ -71,6 +71,7 @@
 - (void)dealloc;
 - (id)defaultAlternativeInPart:(id)arg1;
 - (id)externalID;
+- (BOOL)fetchDataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withConsumer:(id)arg3 isComplete:(BOOL*)arg4 downloadIfNecessary:(BOOL)arg5;
 - (id)firstSender;
 - (int)generationCompare:(id)arg1;
 - (unsigned long long)generationNumber;

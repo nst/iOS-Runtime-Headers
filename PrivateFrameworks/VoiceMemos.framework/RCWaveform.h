@@ -4,21 +4,27 @@
 
 @class NSArray, NSMutableArray;
 
-@interface RCWaveform : NSObject <NSCoding> {
+@interface RCWaveform : NSObject <NSMutableCopying, NSCopying, NSCoding> {
+    unsigned int _decodedVersion;
     NSMutableArray *_segments;
 }
 
+@property(readonly) unsigned int averagePowerLevelsRate;
 @property(readonly) NSArray * segments;
 
 + (void)initialize;
 + (id)waveformPathForSavedRecordingPath:(id)arg1;
-+ (id)waveformWithContentsOfURL:(id)arg1;
++ (id)waveformWithContentsOfURL:(id)arg1 minimumRequiredVersion:(unsigned int)arg2;
 
 - (void).cxx_destruct;
+- (unsigned int)averagePowerLevelsRate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSegments:(id)arg1;
+- (BOOL)isWaveformDataEqualToDataInWaveform:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSegmentsInTimeRange:(struct { double x1; double x2; })arg1;
 - (BOOL)saveContentsToURL:(id)arg1;
 - (id)segments;

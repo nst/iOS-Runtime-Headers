@@ -30,6 +30,7 @@
     float _segmentLengthInPixels;
     NSMutableArray *_segments;
     _MKScaleUnitsView *_unitsView;
+    BOOL _useLightText;
     BOOL _useMetric;
     BOOL _useYardsForShortDistances;
     NSString *_yardAbbreviation;
@@ -38,13 +39,16 @@
 @property double distanceInMeters;
 @property BOOL useLightText;
 
+- (void).cxx_destruct;
 - (void)_calculateSegments;
 - (id)_formattedStringForFloat:(float)arg1;
 - (void)_localizedDistanceStringsWithMeters:(unsigned int)arg1 imperial:(double)arg2 useFeet:(BOOL)arg3 inMetric:(BOOL)arg4 displaysYardsForShortDistances:(BOOL)arg5 strings:(id)arg6;
 - (id)_scaleViewFormattedStringForFloat:(float)arg1;
 - (id)_scaleViewFormattedStringForInteger:(int)arg1;
+- (void)_updateSegmentStrokes;
 - (void)_updateStrings;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (id)init;
 - (void)layoutSubviews;
 - (void)memoryWarning:(id)arg1;

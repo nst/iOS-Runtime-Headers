@@ -20,6 +20,7 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasResources;
 - (unsigned int)hash;
+- (id)initWithResourceManifestData:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)metadata;
 - (BOOL)readFrom:(id)arg1;

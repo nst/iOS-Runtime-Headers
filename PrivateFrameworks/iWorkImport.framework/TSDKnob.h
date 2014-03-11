@@ -19,6 +19,7 @@
     } mPosition;
     float mRadius;
     TSDRep *mRep;
+    BOOL mShouldDisplayDirectlyOverRep;
     unsigned int mTag;
     int mType;
     BOOL mWorksWhenInVersionBrowsingMode;
@@ -32,6 +33,7 @@
 @property struct CGPoint { float x1; float x2; } position;
 @property float radius;
 @property(readonly) TSDRep * rep;
+@property BOOL shouldDisplayDirectlyOverRep;
 @property unsigned int tag;
 @property int type;
 @property BOOL worksWhenInVersionBrowsingMode;
@@ -62,10 +64,12 @@
 - (void)setOffsetValid:(BOOL)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRadius:(float)arg1;
+- (void)setShouldDisplayDirectlyOverRep:(BOOL)arg1;
 - (void)setTag:(unsigned int)arg1;
 - (void)setType:(int)arg1;
 - (void)setWorksWhenInVersionBrowsingMode:(BOOL)arg1;
 - (void)setWorksWhenRepLocked:(BOOL)arg1;
+- (BOOL)shouldDisplayDirectlyOverRep;
 - (unsigned int)tag;
 - (int)type;
 - (void)updateHitRegionPathForRep:(id)arg1;

@@ -27,13 +27,13 @@
     } _textureSize;
 }
 
-+ (unsigned int)distanceFieldTextureWithTexture:(unsigned int)arg1 textureSize:(struct CGSize { float x1; float x2; })arg2;
++ (unsigned int)distanceFieldTextureWithTexture:(unsigned int)arg1 textureSize:(struct CGSize { float x1; float x2; })arg2 maxDistance:(float)arg3;
 
 - (void)dealloc;
 - (id)initWithTexture:(unsigned int)arg1 textureSize:(struct CGSize { float x1; float x2; })arg2;
-- (unsigned int)p_combinedTexture;
-- (void)p_floodTextureInFramebuffer:(id)arg1;
-- (unsigned int)p_gradientTextureFromCombinedTexture:(unsigned int)arg1;
+- (unsigned int)p_combinedTextureWithCurrentGLFramebuffer:(int)arg1;
+- (void)p_floodTextureInFramebuffer:(id)arg1 maxDistance:(float)arg2;
+- (unsigned int)p_gradientTextureFromCombinedTexture:(unsigned int)arg1 withCurrentGLFramebuffer:(int)arg2;
 - (void)p_seedTextureFromTexture:(unsigned int)arg1 invertSeed:(BOOL)arg2;
 - (void)p_setupBuffers;
 - (void)p_setupShaders;

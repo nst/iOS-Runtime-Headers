@@ -54,7 +54,7 @@
 - (void)_setupViewsForFanningWithAnimation:(BOOL)arg1 resizeCards:(BOOL)arg2;
 - (void)_setupViewsForPagingWithAnimation:(BOOL)arg1 resizeCards:(BOOL)arg2;
 - (void)_setupViewsForPileWithAnimation:(BOOL)arg1 resizeCards:(BOOL)arg2;
-- (void)_setupViewsForStackingWithAnimation:(BOOL)arg1 scrolling:(BOOL)arg2 resizeCards:(BOOL)arg3;
+- (void)_setupViewsForStackingWithAnimation:(BOOL)arg1 resizeCards:(BOOL)arg2;
 - (void)_showFrontmostPassOnly:(BOOL)arg1;
 - (id)_stackIndexesFromVisibleIndexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_tilePagesEagerly:(BOOL)arg1;

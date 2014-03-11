@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, CAShapeLayer, NSCache, NSObject<OS_dispatch_queue>, NSRecursiveLock, TSDImageRepSizingState, TSDInstantAlphaTracker, TSDLayoutGeometry;
+@class CALayer, CAShapeLayer, NSCache, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSRecursiveLock, TSDImageRepSizingState, TSDInstantAlphaTracker, TSDLayoutGeometry;
 
 @interface TSDImageRep : TSDMediaRep <TSDMagicMoveMatching, TSDShapeControlRep> {
     struct CGAffineTransform { 
@@ -54,6 +54,7 @@
     TSDLayoutGeometry *mLastMaskGeometryInRoot;
     } mLastPictureFrameLayerTransform;
     NSRecursiveLock *mLayerUpdateAndSizingStateLock;
+    CAShapeLayer *mMaskPathLayer;
     CAShapeLayer *mMaskSublayer;
     BOOL mShowImageHighlight;
     struct CGImage { } *mSizedImage;
@@ -65,6 +66,8 @@
     } mSizedImageSize;
     TSDImageRepSizingState *mSizingState;
     BOOL mSizingStateReady;
+    NSMutableArray *mUpdateFromLayoutBlocks;
+    NSObject<OS_dispatch_semaphore> *mUpdateFromLayoutBlocksLock;
 }
 
 @property(readonly) TSDInstantAlphaTracker * instantAlphaTracker;
@@ -134,6 +137,7 @@
 - (void)maskWithHUD:(BOOL)arg1;
 - (id)newTrackerForKnob:(id)arg1;
 - (id)overlayLayers;
+- (void)p_canvasSelectionDidChange:(id)arg1;
 - (void)p_cleanUpMaskModeUI;
 - (void)p_createMaskLayerForLayer:(id)arg1;
 - (struct CGSize { float x1; float x2; })p_desiredSizedImageSize;
@@ -147,13 +151,16 @@
 - (void)p_generateSizedImage:(id)arg1;
 - (void)p_generateSizedImageIfNecessary;
 - (void)p_generateSizedImageInBackground:(id)arg1;
+- (void)p_getAliasedValuesForMaskToBoundsDirectLayerFrame:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 transform:(out struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2;
 - (BOOL)p_hitCacheGetCachedValue:(BOOL*)arg1 forPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)p_hitCacheSetCachedValue:(BOOL)arg1 forPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (id)p_imageData;
 - (struct CGImage { }*)p_imageForDirectlyManagedLayer:(id)arg1;
 - (id)p_imageProvider;
 - (void)p_invalidateHitTestCache;
 - (void)p_invalidateSizedImage;
-- (struct CGImage { }*)p_newImageByApplyingAdjustmentsToImage:(struct CGImage { }*)arg1;
+- (void)p_invalidateSizedImageFromQueue;
+- (struct CGImage { }*)p_newImageByApplyingAdjustmentsToImage:(struct CGImage { }*)arg1 alreadyEnhanced:(BOOL)arg2;
 - (BOOL)p_okayToGenerateSizedImage;
 - (int)p_orientationForDirectlyManagedLayer;
 - (void)p_popoverViewPresented:(id)arg1;
@@ -182,6 +189,7 @@
 - (void)resetMask;
 - (id)resizedGeometryForTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setMagicMoveTextureAttributes:(id)arg1;
+- (BOOL)shouldAllowReplacementFromPaste;
 - (BOOL)shouldCreateSelectionKnobs;
 - (BOOL)shouldShowDragHUD;
 - (BOOL)shouldShowMediaReplaceUI;

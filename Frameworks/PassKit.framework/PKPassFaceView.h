@@ -28,7 +28,7 @@
     int _invariantViewCreatedRegions;
     UIImage *_partialFaceImage;
     PKPass *_pass;
-    int _style;
+    unsigned int _style;
     int _visibleRegions;
 }
 
@@ -50,12 +50,12 @@
 @property(readonly) NSMutableSet * headerInvariantViews;
 @property(readonly) BOOL isFrontFace;
 @property(readonly) PKPass * pass;
-@property int style;
+@property unsigned int style;
 @property int visibleRegions;
 
-+ (Class)_faceClassForStyle:(int)arg1 front:(BOOL)arg2;
-+ (id)newBackFaceViewForStyle:(int)arg1 tall:(BOOL)arg2;
-+ (id)newFrontFaceViewForStyle:(int)arg1;
++ (Class)_faceClassForStyle:(unsigned int)arg1 front:(BOOL)arg2;
++ (id)newBackFaceViewForStyle:(unsigned int)arg1 tall:(BOOL)arg2;
++ (id)newFrontFaceViewForStyle:(unsigned int)arg1;
 
 - (void)_createContentViewsForRegions:(int)arg1;
 - (void)_createInvariantViewsForRegions:(int)arg1;
@@ -108,10 +108,10 @@
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
 - (void)setHeaderBucketViews:(id)arg1;
 - (void)setPass:(id)arg1 colorProfile:(id)arg2;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(unsigned int)arg1;
 - (void)setVisibleRegions:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
-- (int)style;
+- (unsigned int)style;
 - (int)visibleRegions;
 
 @end

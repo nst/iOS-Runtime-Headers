@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString, SSURLConnectionRequest;
+@class RadioStation, SSURLConnectionRequest;
 
 @interface RadioLikeRequest : RadioRequest {
     BOOL _isSeed;
@@ -10,8 +10,7 @@
     int _likeStatus;
     SSURLConnectionRequest *_request;
     int _seedType;
-    NSString *_stationHash;
-    long long _stationID;
+    RadioStation *_station;
 }
 
 @property BOOL isSeed;

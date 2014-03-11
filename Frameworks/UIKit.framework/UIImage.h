@@ -13,6 +13,7 @@
         unsigned int isCIImage : 1; 
         unsigned int imageSetIdentifer : 16; 
         unsigned int renderingMode : 2; 
+        unsigned int suppressesAccessibilityHairlineThickening : 1; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -50,7 +51,7 @@
 + (id)_defaultBackgroundGradient;
 + (id)_deviceSpecificImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)_deviceSpecificImageNamed:(id)arg1;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForStylePresetName:(id)arg1 scale:(float)arg2;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForStylePresetNames:(id)arg1 scale:(float)arg2;
 + (void)_flushCache:(id)arg1;
 + (void)_flushSharedImageCache;
 + (id)_gkImageWithRawData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 rowBytes:(unsigned long)arg4 bitmapInfo:(unsigned int)arg5;
@@ -122,8 +123,10 @@
 - (id)_applyBackdropViewStyle:(int)arg1 includeTints:(BOOL)arg2 includeBlur:(BOOL)arg3;
 - (id)_automationID;
 - (id)_bezeledImageWithShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 fillRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 drawShadow:(BOOL)arg9;
+- (id)_cachedImageStyledWithPresets:(id)arg1 forTintColor:(id)arg2;
 - (struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })_calculateStatistics;
 - (BOOL)_canEncodeWithName:(id)arg1;
+- (void)_configureFromImage:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectInPixels;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentStretchInPixels;
 - (void)_decompressionComplete;
@@ -151,8 +154,9 @@
 - (id)_imageForLegibilityStyle:(int)arg1;
 - (id)_imageScaledToProportion:(float)arg1 interpolationQuality:(int)arg2;
 - (int)_imageSetIdentifier;
+- (id)_imageThatSuppressesAccessibilityHairlineThickening;
 - (id)_imageWithBrightnessModifiedForLegibilityStyle:(int)arg1;
-- (id)_imageWithLetterpressEffectWithForegroundColor:(id)arg1;
+- (id)_imageWithStylePresets:(id)arg1 withTintColor:(id)arg2;
 - (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 renderingIntent:(int)arg4;
 - (id)_initWithData:(id)arg1 preserveScale:(BOOL)arg2 cache:(BOOL)arg3;
 - (id)_initWithData:(id)arg1 preserveScale:(BOOL)arg2;
@@ -167,6 +171,7 @@
 - (BOOL)_isResizable;
 - (BOOL)_isSubimage;
 - (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_mapkit_dimmedImage;
 - (struct CGColor { }*)_patternColor;
 - (void)_preheatBitmapData;
 - (id)_resizableImageWithCapMask:(int)arg1;
@@ -179,10 +184,12 @@
 - (void)_setCached:(BOOL)arg1;
 - (void)_setImageSetIdentifier:(int)arg1;
 - (void)_setNamed:(BOOL)arg1;
+- (void)_setSuppressesAccessibilityHairlineThickening:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })_sizeInPixels;
 - (void)_startEagerDecompression;
 - (id)_stretchableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)_subimageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_suppressesAccessibilityHairlineThickening;
 - (id)_tabBarItemImageWithTintColor:(id)arg1 selected:(BOOL)arg2 metrics:(int)arg3 style:(int)arg4 forScreenScale:(float)arg5;
 - (struct CGColor { }*)_tiledPatternColor;
 - (id)_unselectedTabBarItemImageWithTintColor:(id)arg1 metrics:(int)arg2 style:(int)arg3 forScreenScale:(float)arg4;

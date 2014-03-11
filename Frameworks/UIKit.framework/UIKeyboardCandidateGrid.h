@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UICollectionViewDelegate>, <UIKeyboardCandidateListDelegate>, NSArray, NSMutableDictionary, NSString, TIKeyboardCandidateResultSet, UIImageView, UIKBBackdropView, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateGridHeader, UIKeyboardCandidateSortControl, UIView;
+@class <UICollectionViewDelegate>, <UIKeyboardCandidateListDelegate>, NSArray, NSMutableDictionary, NSString, TIKeyboardCandidateResultSet, UIImageView, UIKBBackdropView, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateGridHeader, UIKeyboardCandidateRowViewController, UIKeyboardCandidateSortControl, UIView;
 
-@interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateGridCollectionViewControllerDelegate> {
+@interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateGridCollectionViewControllerDelegate, UIKeyboardCandidateRowViewControllerDelegate> {
     UIKBBackdropView *_backdropView;
     UIImageView *_backgroundView;
     UIView *_bottomBarShadow;
@@ -19,7 +19,8 @@
     NSString *_inlineText;
     unsigned int _numberOfColumns;
     <UICollectionViewDelegate> *_scrollViewDelegate;
-    BOOL _showHiddenCandidatesOnly;
+    UIKeyboardCandidateRowViewController *_secondaryCandidatesViewController;
+    BOOL _secondaryCandidatesViewIsCurrent;
     UIKeyboardCandidateSortControl *_sortBar;
     NSArray *_sortedCandidates;
     UIView *_topBarShadow;
@@ -37,7 +38,8 @@
 @property(retain) NSString * inlineText;
 @property unsigned int numberOfColumns;
 @property <UICollectionViewDelegate> * scrollViewDelegate;
-@property BOOL showHiddenCandidatesOnly;
+@property(retain) UIKeyboardCandidateRowViewController * secondaryCandidatesViewController;
+@property BOOL secondaryCandidatesViewIsCurrent;
 @property UIKeyboardCandidateSortControl * sortBar;
 @property(retain) NSArray * sortedCandidates;
 
@@ -79,10 +81,11 @@
 - (id)scrollViewDelegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (id)secondaryCandidatesViewController;
+- (BOOL)secondaryCandidatesViewIsCurrent;
 - (unsigned int)selectedSortIndex;
 - (void)setBackdropView:(id)arg1;
 - (void)setCandidateListDelegate:(id)arg1;
-- (void)setCandidateSet:(id)arg1 showHiddenCandidatesOnly:(BOOL)arg2;
 - (void)setCandidateSet:(id)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
@@ -94,14 +97,14 @@
 - (void)setInlineText:(id)arg1;
 - (void)setNumberOfColumns:(unsigned int)arg1;
 - (void)setScrollViewDelegate:(id)arg1;
-- (void)setShowHiddenCandidatesOnly:(BOOL)arg1;
+- (void)setSecondaryCandidatesViewController:(id)arg1;
+- (void)setSecondaryCandidatesViewIsCurrent:(BOOL)arg1;
 - (void)setSortBar:(id)arg1;
 - (void)setSortedCandidates:(id)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (void)showArrowButton:(BOOL)arg1;
 - (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
-- (BOOL)showHiddenCandidatesOnly;
 - (void)showNextCandidate;
 - (void)showNextPage;
 - (void)showNextRow;

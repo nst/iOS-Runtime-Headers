@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSSet;
+
 @interface TSDStyledDrawableEditor : TSDDrawableEditor {
 }
 
+@property(readonly) NSSet * styledInfos;
+
 - (id)styleClassesToCheckForPasteStyle;
+- (id)styledInfos;
 
 @end

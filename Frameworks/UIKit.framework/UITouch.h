@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIResponder, UIView, UIWindow;
+@class <_UITouchPhaseChangeDelegate>, NSArray, NSMutableArray, UIResponder, UIView, UIWindow;
 
 @interface UITouch : NSObject <_UIResponderForwardable> {
     struct CGPoint { 
@@ -20,6 +20,7 @@
     struct CGSize { 
         float width; 
         float height; 
+    <_UITouchPhaseChangeDelegate> *__phaseChangeDelegate;
     } _displacement;
     BOOL _eaten;
     int _edgeType;
@@ -48,6 +49,7 @@
 @property(setter=_setPathIdentity:) unsigned char _pathIdentity;
 @property(setter=_setPathIndex:) unsigned char _pathIndex;
 @property(setter=_setPathMajorRadius:) float _pathMajorRadius;
+@property(setter=_setPhaseChangeDelegate:,retain) <_UITouchPhaseChangeDelegate> * _phaseChangeDelegate;
 @property(setter=_setResponder:,retain) UIResponder * _responder;
 @property(readonly) NSArray * gestureRecognizers;
 @property BOOL isTap;
@@ -86,6 +88,7 @@
 - (unsigned char)_pathIdentity;
 - (unsigned char)_pathIndex;
 - (float)_pathMajorRadius;
+- (id)_phaseChangeDelegate;
 - (id)_phaseDescription;
 - (void)_popPhase;
 - (struct CGPoint { float x1; float x2; })_previousLocationInWindow:(id)arg1;
@@ -102,6 +105,7 @@
 - (void)_setPathIdentity:(unsigned char)arg1;
 - (void)_setPathIndex:(unsigned char)arg1;
 - (void)_setPathMajorRadius:(float)arg1;
+- (void)_setPhaseChangeDelegate:(id)arg1;
 - (void)_setResponder:(id)arg1;
 - (void)_updateMovementMagnitudeForLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;

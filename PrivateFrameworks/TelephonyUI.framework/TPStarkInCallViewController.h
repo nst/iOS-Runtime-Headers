@@ -2,30 +2,35 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPStarkInCallViewControllerDelegate>, NSArray, NSTimer, TPStarkInCallButtonsView, TPStarkPhoneCallGalleryView, TUCall, UIView;
+@class <TPStarkInCallViewControllerDelegate>, NSArray, NSTimer, TPStarkInCallButtonsView, TPStarkPhoneCallGalleryView, TUCall, TUReplyWithMessageStore, UIActionSheet, UIView;
 
-@interface TPStarkInCallViewController : UIViewController <TPStarkPhoneCallGalleryViewDelegate, TPStarkInCallButtonsViewDelegate> {
+@interface TPStarkInCallViewController : UIViewController <TPStarkPhoneCallGalleryViewDelegate, TPStarkInCallButtonsViewDelegate, UIActionSheetDelegate> {
     TPStarkInCallButtonsView *_buttonsView;
     NSArray *_conferenceParticipants;
-    int _currentMode;
+    unsigned short _currentMode;
     <TPStarkInCallViewControllerDelegate> *_delegate;
     TUCall *_failedCall;
     UIView *_flippyView;
     TPStarkPhoneCallGalleryView *_galleryView;
     TUCall *_incomingPhoneCall;
+    UIActionSheet *_messageResponseActionSheet;
+    TUCall *_messageResponseCall;
     NSArray *_primaryPhoneCalls;
+    TUReplyWithMessageStore *_replyWithMessageStore;
     NSTimer *_viewUpdateClockTickTimer;
 }
 
 @property(retain) TPStarkInCallButtonsView * buttonsView;
 @property(copy) NSArray * conferenceParticipants;
-@property int currentMode;
+@property unsigned short currentMode;
 @property <TPStarkInCallViewControllerDelegate> * delegate;
 @property(retain) TUCall * failedCall;
 @property(retain) UIView * flippyView;
 @property(retain) TPStarkPhoneCallGalleryView * galleryView;
 @property(retain) TUCall * incomingPhoneCall;
 @property(readonly) BOOL isDismissable;
+@property(retain) UIActionSheet * messageResponseActionSheet;
+@property(retain) TUCall * messageResponseCall;
 @property(copy) NSArray * primaryPhoneCalls;
 @property(retain) NSTimer * viewUpdateClockTickTimer;
 
@@ -33,15 +38,20 @@
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
+- (void)_sendMessageResponse:(id)arg1 toCall:(id)arg2;
 - (void)_wheelChangedWithEvent:(id)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)allConferenceParticipantCalls;
+- (BOOL)areIncomingCallOptionsAllowed;
 - (id)buttonsView;
 - (void)callFailedNotification:(id)arg1;
+- (BOOL)canSendMessage;
+- (BOOL)canSendMessageToCall:(id)arg1;
 - (id)conferenceParticipantCallsForPhoneCall:(id)arg1;
 - (id)conferenceParticipants;
 - (id)currentActivePhoneCall;
 - (BOOL)currentCallStateWarrantsCallWaitingMode;
-- (int)currentMode;
+- (unsigned short)currentMode;
 - (void)dealloc;
 - (id)delegate;
 - (id)failedCall;
@@ -56,23 +66,29 @@
 - (BOOL)isMuted;
 - (BOOL)isSwapCallsAllowed;
 - (void)loadView;
+- (id)messageResponseActionSheet;
+- (id)messageResponseCall;
 - (void)muteStateChangedNotification:(id)arg1;
 - (id)primaryPhoneCalls;
 - (id)primaryPhoneCallsForGalleryView:(id)arg1;
+- (id)replyWithMessageStore;
 - (id)representativePhoneCallForConferenceForGalleryView:(id)arg1;
 - (void)setButtonsView:(id)arg1;
 - (void)setConferenceParticipants:(id)arg1;
-- (void)setCurrentMode:(int)arg1;
+- (void)setCurrentMode:(unsigned short)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFailedCall:(id)arg1;
 - (void)setFlippyView:(id)arg1;
 - (void)setGalleryView:(id)arg1;
 - (void)setIncomingPhoneCall:(id)arg1;
 - (void)setIsMuted:(BOOL)arg1;
+- (void)setMessageResponseActionSheet:(id)arg1;
+- (void)setMessageResponseCall:(id)arg1;
 - (void)setPrimaryPhoneCalls:(id)arg1 conferencePhoneCalls:(id)arg2 incomingPhoneCall:(id)arg3;
 - (void)setPrimaryPhoneCalls:(id)arg1;
 - (void)setViewUpdateClockTickTimer:(id)arg1;
 - (void)updateButtonsViewState;
+- (void)viewDidAppear:(BOOL)arg1;
 - (id)viewUpdateClockTickTimer;
 - (void)viewUpdateClockTickTimerFired:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

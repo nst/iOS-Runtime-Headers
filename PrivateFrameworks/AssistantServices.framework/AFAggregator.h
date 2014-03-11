@@ -7,17 +7,20 @@
     BOOL _retryPrefersWWAN;
     BOOL _sessionIsRetrying;
     double _startTime;
-    int _type;
+    unsigned int _type;
 }
 
-@property int connectionType;
+@property unsigned int connectionType;
 @property BOOL hasActiveRequest;
 
 + (id)_fullAggDKeyWithPrefix:(id)arg1 error:(id)arg2;
++ (id)_stringForGatekeeperType:(unsigned int)arg1;
 + (void)logDictationCancelled;
 + (void)logDictationFailedWithError:(id)arg1;
 + (void)logDictationStarted;
 + (void)logDictationSucceeded;
++ (void)logHomeButtonPressToActivationDuration:(double)arg1;
++ (void)logPingTimeout;
 + (void)logRequestCancelAfterSeconds:(double)arg1;
 + (void)logRequestCompletedWithDuration:(double)arg1;
 + (void)logSiriOtherRequestStarted;
@@ -25,6 +28,8 @@
 + (void)logSiriRequestFailedWithError:(id)arg1;
 + (void)logSiriRequestSucceeded;
 + (void)logSiriSpeechRequestStarted;
++ (void)logStarkGatekeeperAppearedForType:(unsigned int)arg1;
++ (void)logStarkGatekeeperDismissedManuallyForType:(unsigned int)arg1;
 + (void)logTimeToBeepWithDuration:(double)arg1;
 + (void)missedAlertContextForRequest;
 + (void)missedAppContextForRequest;
@@ -32,12 +37,12 @@
 - (void)beginSessionRetryPreferringWWAN:(BOOL)arg1;
 - (void)connectionDidDrop;
 - (void)connectionDidFail;
-- (int)connectionType;
+- (unsigned int)connectionType;
 - (BOOL)hasActiveRequest;
-- (void)recordFailure:(int)arg1 forConnectionType:(int)arg2;
+- (void)recordFailure:(int)arg1 forConnectionType:(unsigned int)arg2;
 - (void)recordSessionRetrySuccess;
-- (void)recordSuccessForConnectionType:(int)arg1 isWarm:(BOOL)arg2 forTimeInterval:(double)arg3;
-- (void)setConnectionType:(int)arg1;
+- (void)recordSuccessForConnectionType:(unsigned int)arg1 isWarm:(BOOL)arg2 forTimeInterval:(double)arg3;
+- (void)setConnectionType:(unsigned int)arg1;
 - (void)setHasActiveRequest:(BOOL)arg1;
 - (void)speechResponseFailure;
 - (void)speechResponseReceived;

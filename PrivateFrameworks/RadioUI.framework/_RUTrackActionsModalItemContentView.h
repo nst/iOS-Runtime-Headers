@@ -42,6 +42,7 @@
 - (void)setTrackActionsDelegate:(id)arg1;
 - (id)songText;
 - (void)trackActioningObject:(id)arg1 didSelectAction:(int)arg2 atIndex:(int)arg3;
+- (id)trackActioningObject:(id)arg1 localizedTitleForAction:(int)arg2;
 - (void)trackActioningObjectDidChangeContentSize:(id)arg1;
 - (id)trackActionsDelegate;
 

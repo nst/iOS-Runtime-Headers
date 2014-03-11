@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSSoftwareUpdateStoreDelegate>, NSObject<OS_dispatch_queue>, SSUpdatesDatabase, SSXPCConnection;
+@class NSObject<OS_dispatch_queue>, SSUpdatesDatabase, SSXPCConnection;
 
 @interface SSSoftwareUpdatesStore : NSObject {
     NSObject<OS_dispatch_queue> *_calloutQueue;
     SSXPCConnection *_connection;
     SSUpdatesDatabase *_database;
-    <SSSoftwareUpdateStoreDelegate> *_delegate;
     BOOL _didMigration;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     void *_mobileCoreServices;
@@ -16,21 +15,20 @@
     BOOL _useLocalWrite;
 }
 
-@property <SSSoftwareUpdateStoreDelegate> * delegate;
++ (id)databasePath;
 
 - (id)_copyUpdates;
-- (id)_copyUpdatesWithSession:(id)arg1;
+- (id)_copyUpdatesWithSession:(id)arg1 predicate:(id)arg2;
 - (BOOL)_migrateReadOnlyDatabase;
-- (void)_sendStoreDidChange;
+- (void)_readUsingSessionBlock:(id)arg1;
 - (void)clearExpiredUpdateHistoryWithCompletionBlock:(id)arg1;
 - (void)dealloc;
-- (id)delegate;
 - (void)getUpdatesWithCompletionBlock:(id)arg1;
 - (void)hideApplicationBadgeForPendingUpdates;
 - (id)init;
 - (void)reloadFromServerWithCompletionBlock:(id)arg1;
 - (void)removeUpdateBulletins;
-- (void)setDelegate:(id)arg1;
 - (void)showApplicationBadgeForPendingUpdates;
+- (id)updateWithItemIdentifier:(long long)arg1;
 
 @end

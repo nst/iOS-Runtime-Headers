@@ -3,18 +3,20 @@
  */
 
 @interface MusicPlaybackContext : NSObject {
+    BOOL _keepPlayingCurrentItemIfPossible;
     unsigned int _shuffleType;
 }
 
-@property(readonly) int playbackMode;
+@property BOOL keepPlayingCurrentItemIfPossible;
 @property(readonly) unsigned int realShuffleType;
 @property unsigned int shuffleType;
 
 + (Class)queueFeederClass;
 
 - (id)init;
-- (int)playbackMode;
+- (BOOL)keepPlayingCurrentItemIfPossible;
 - (unsigned int)realShuffleType;
+- (void)setKeepPlayingCurrentItemIfPossible:(BOOL)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
 - (unsigned int)shuffleType;
 

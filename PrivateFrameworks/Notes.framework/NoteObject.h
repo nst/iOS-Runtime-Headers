@@ -24,6 +24,7 @@
 @property(retain) NSString * guid;
 @property(readonly) BOOL hasValidServerIntId;
 @property(retain) NSNumber * integerId;
+@property(readonly) BOOL isBeingMarkedForDeletion;
 @property(retain) NSNumber * isBookkeepingEntry;
 @property(readonly) BOOL isMarkedForDeletion;
 @property BOOL isPlainText;
@@ -44,6 +45,7 @@
 - (id)externalRepresentation;
 - (unsigned long long)flags;
 - (BOOL)hasValidServerIntId;
+- (BOOL)isBeingMarkedForDeletion;
 - (BOOL)isMarkedForDeletion;
 - (BOOL)isPlainText;
 - (void)markForDeletion;

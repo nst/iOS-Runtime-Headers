@@ -2,20 +2,24 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSURLConnectionRequestDelegate>, NSURLRequest, SSAuthenticationContext, SSURLRequestProperties;
+@class <SSURLConnectionRequestDelegate>, NSURLRequest, SSAuthenticationContext, SSURLRequestProperties, SSVURLDataConsumer;
 
 @interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
+    SSVURLDataConsumer *_dataConsumer;
     SSURLRequestProperties *_requestProperties;
     BOOL _runsInProcess;
+    BOOL _sendsResponseForHTTPFailures;
     BOOL _shouldMescalSign;
 }
 
 @property(readonly) NSURLRequest * URLRequest;
 @property(copy) SSAuthenticationContext * authenticationContext;
+@property(retain) SSVURLDataConsumer * dataConsumer;
 @property <SSURLConnectionRequestDelegate> * delegate;
 @property(readonly) SSURLRequestProperties * requestProperties;
 @property BOOL runsInProcess;
+@property BOOL sendsResponseForHTTPFailures;
 @property BOOL shouldMescalSign;
 
 + (id)newRadioRequestWithRequestProperties:(id)arg1;
@@ -24,6 +28,7 @@
 - (BOOL)_canRunInProcess;
 - (id)authenticationContext;
 - (id)copyXPCEncoding;
+- (id)dataConsumer;
 - (void)dealloc;
 - (id)init;
 - (id)initWithRequestProperties:(id)arg1;
@@ -32,8 +37,11 @@
 - (id)requestProperties;
 - (BOOL)runsInProcess;
 - (id)sendSynchronousRequestReturningError:(id*)arg1;
+- (BOOL)sendsResponseForHTTPFailures;
 - (void)setAuthenticationContext:(id)arg1;
+- (void)setDataConsumer:(id)arg1;
 - (void)setRunsInProcess:(BOOL)arg1;
+- (void)setSendsResponseForHTTPFailures:(BOOL)arg1;
 - (void)setShouldMescalSign:(BOOL)arg1;
 - (BOOL)shouldMescalSign;
 - (BOOL)start;

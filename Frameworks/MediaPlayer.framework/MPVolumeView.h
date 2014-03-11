@@ -2,21 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAudioDeviceController, MPAudioVideoRoutingActionSheet, MPAudioVideoRoutingPopoverController, MPVolumeSlider, UIButton, UIImage, UILabel;
+@class MPAVRoutingController, MPAVRoutingSheet, MPAudioVideoRoutingPopoverController, MPVolumeSlider, UIButton, UIImage, UILabel;
 
-@interface MPVolumeView : UIView <MPAudioDeviceControllerDelegate, NSCoding> {
-    MPAudioVideoRoutingActionSheet *_actionSheet;
-    MPAudioDeviceController *_audioDeviceController;
+@interface MPVolumeView : UIView <MPAVRoutingControllerDelegate, NSCoding> {
     BOOL _hasNonDefaultMaxVolumeSliderImage;
     BOOL _hasNonDefaultMinVolumeSliderImage;
     BOOL _hasNonDefaultRouteButtonImages;
     BOOL _hidesRouteLabelWhenNoRouteChoice;
+    BOOL _pushedRouteDiscoveryModeState;
     UIButton *_routeButton;
     BOOL _routeButtonShowsTouchWhenHighlighted;
     BOOL _routeDiscoveryEnabled;
     UILabel *_routeLabel;
     MPAudioVideoRoutingPopoverController *_routePopoverController;
     unsigned int _routePopoverPermittedArrowDirections;
+    MPAVRoutingController *_routingController;
+    MPAVRoutingSheet *_routingSheet;
     BOOL _showingButton;
     BOOL _showingLabel;
     BOOL _showingSlider;
@@ -44,18 +45,22 @@
 @property(getter=areWirelessRoutesAvailable,readonly) BOOL wirelessRoutesAvailable;
 
 - (void).cxx_destruct;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_createSubviews;
 - (id)_defaultRouteButtonImageAsSelected:(BOOL)arg1;
 - (void)_displayAudioRoutePicker;
 - (void)_getDefaultVolumeSliderFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 routeButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_initWithStyle:(int)arg1;
+- (void)_registerNotifications;
 - (id)_routeButton;
+- (void)_setRouteDiscoveryEnabled:(BOOL)arg1;
 - (void)_setShowsRouteButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setShowsVolumeSlider:(BOOL)arg1;
 - (void)_setVolumeAudioCategory:(id)arg1;
+- (void)_unregisterNotifications;
 - (void)_updateWirelessRouteStatus;
 - (BOOL)areWirelessRoutesAvailable;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
@@ -78,6 +83,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })routeButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)routeButtonShowsTouchWhenHighlighted;
 - (unsigned int)routePopoverPermittedArrowDirections;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;

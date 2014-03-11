@@ -19,6 +19,7 @@
 @property(readonly) BOOL isRadioHot;
 @property(readonly) int linkQuality;
 @property(readonly) NSString * linkQualityString;
+@property(readonly) struct __CFString { }* wwanInterfaceName;
 
 + (BOOL)isPoorLinkQuality:(int)arg1;
 + (id)sharedInstanceForIdentifier:(int)arg1;
@@ -41,5 +42,6 @@
 - (int)linkQuality;
 - (id)linkQualityString;
 - (void)removeDelegate:(id)arg1;
+- (struct __CFString { }*)wwanInterfaceName;
 
 @end

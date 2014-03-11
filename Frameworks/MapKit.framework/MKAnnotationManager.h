@@ -44,6 +44,7 @@
 @property <MKAnnotation> * draggedAnnotation;
 @property(readonly) <MKAnnotationRepresentation> * selectedAnnotationRepresentation;
 
+- (void).cxx_destruct;
 - (void)_addAnnotation:(id)arg1 updateVisible:(BOOL)arg2;
 - (id)_addRepresentationForAnnotation:(id)arg1;
 - (void)_removeAnnotation:(id)arg1 updateVisible:(BOOL)arg2 removeFromContainer:(BOOL)arg3;

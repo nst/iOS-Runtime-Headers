@@ -52,7 +52,6 @@
 - (void)remoteViewControllerIsFinishing;
 - (BOOL)serviceNeedsCurrentGame;
 - (BOOL)serviceNeedsLocalPlayer;
-- (BOOL)serviceNeedsStatusBarHeightHack;
 - (void)setBlockToPerformAfterViewDidAppear:(id)arg1;
 - (void)setDidSetRemoteGame:(BOOL)arg1;
 - (void)setDirtyProperties:(id)arg1;

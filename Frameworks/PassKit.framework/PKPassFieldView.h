@@ -31,15 +31,15 @@
 - (id)_labelAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
 - (struct CGSize { float x1; float x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_shouldDisplayLabel;
-- (id)_textAttributesWithTextColor:(id)arg1 alignment:(int)arg2 lineBreakMode:(int)arg3;
 - (id)_valueAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
 - (id)colorProfile;
 - (void)dealloc;
+- (id)description;
 - (id)diffView;
 - (id)field;
 - (id)fieldTemplate;
-- (BOOL)fitsInSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithField:(id)arg1 fieldTemplate:(id)arg2;
+- (void)invalidateCachedFieldSize;
 - (id)labelLabel;
 - (void)layoutSubviews;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;

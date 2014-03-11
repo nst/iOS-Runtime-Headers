@@ -15,5 +15,6 @@
 - (void)dealloc;
 - (id)imageNamed:(id)arg1 forGroup:(id)arg2 withScale:(float)arg3;
 - (id)init;
+- (void)removeImagesInGroup:(id)arg1;
 
 @end

@@ -7,17 +7,19 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class TSSPropertyMap, TSSStyle;
+@class NSMutableSet, NSSet, TSSPropertyMap, TSSStyle;
 
 @interface TSSStyleUpdatePropertyMapCommand : TSKCommand <TSDPropagatableCommand> {
     TSSPropertyMap *mNewPropertyMap;
     BOOL mNotifyForStyleClients;
+    NSMutableSet *mObjectsUsingStyle;
     TSSPropertyMap *mOldPropertyMap;
     TSSStyle *mStyle;
 }
 
 @property(readonly) TSSPropertyMap * newPropertyMap;
 @property BOOL notifyForStyleClients;
+@property(readonly) NSSet * objectsUsingStyle;
 @property(readonly) TSSPropertyMap * oldPropertyMap;
 @property(readonly) TSSStyle * style;
 

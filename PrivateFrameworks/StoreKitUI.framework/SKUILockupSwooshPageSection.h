@@ -27,7 +27,7 @@
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;
-- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
+- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;

@@ -4,15 +4,19 @@
 
 @interface ML3AlbumData : NSObject {
     long long _albumPid;
+    int _albumYear;
     int _userRating;
 }
 
 @property long long albumPid;
+@property int albumYear;
 @property int userRating;
 
 - (long long)albumPid;
-- (id)initWithState:(long long)arg1 userRating:(int)arg2;
+- (int)albumYear;
+- (id)initWithState:(long long)arg1 userRating:(int)arg2 albumYear:(int)arg3;
 - (void)setAlbumPid:(long long)arg1;
+- (void)setAlbumYear:(int)arg1;
 - (void)setUserRating:(int)arg1;
 - (int)userRating;
 

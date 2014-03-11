@@ -55,7 +55,6 @@
 - (void)RUIPage:(id)arg1 pressedNavBarButton:(id)arg2;
 - (void)RUIPage:(id)arg1 toggledEditing:(BOOL)arg2;
 - (void)_cleanupConfirmation;
-- (void)_cleanupRefreshTimer;
 - (void)_displaySupplementalPage:(id)arg1;
 - (id)_firstPageForPresentation;
 - (void)_handleButtonPress:(id)arg1 attributes:(id)arg2;
@@ -73,6 +72,7 @@
 - (id)alertViewInWindow:(id)arg1;
 - (id)allPages;
 - (void)back:(id)arg1;
+- (void)cleanupRefreshTimer;
 - (id)clientInfo;
 - (void)configureRow:(id)arg1;
 - (void)configureSection:(id)arg1;

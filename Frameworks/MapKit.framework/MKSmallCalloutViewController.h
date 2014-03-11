@@ -18,13 +18,13 @@
 
 + (struct CGSize { float x1; float x2; })defaultSize;
 
+- (void).cxx_destruct;
 - (id)_smallCalloutView;
 - (void)beginMapsTransitionMovingSideways;
 - (id)calloutBackgroundView;
 - (id)calloutSubtitle;
 - (id)calloutTitle;
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
-- (void)dealloc;
 - (id)detailView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)leftView;

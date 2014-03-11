@@ -8,6 +8,7 @@
     AVAssetInternal *_assetInternal;
 }
 
+@property(getter=MP_canAffectNetworkPlayability,setter=MP_setCanAffectNetworkPlayability:) BOOL MP_canAffectNetworkPlayability;
 @property(readonly) NSArray * availableChapterLocales;
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
@@ -20,6 +21,8 @@
 + (id)assetWithURL:(id)arg1;
 + (id)keyPathsForValuesAffectingNaturalSizeWithPreferredTransforms;
 
+- (BOOL)MP_canAffectNetworkPlayability;
+- (void)MP_setCanAffectNetworkPlayability:(BOOL)arg1;
 - (id)_absoluteURL;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
@@ -63,6 +66,7 @@
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
 - (id)lyrics;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
+- (id)mediaSelectionGroupForPropertyList:(id)arg1 mediaSelectionOption:(id*)arg2;
 - (id)mediaSelectionGroups;
 - (id)metadata;
 - (id)metadataForFormat:(id)arg1;

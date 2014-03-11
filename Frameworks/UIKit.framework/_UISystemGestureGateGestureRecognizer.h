@@ -12,7 +12,6 @@
 - (id)_gateGestureTypeString;
 - (void)_resetGestureRecognizer;
 - (BOOL)_shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
-- (BOOL)_shouldReceiveTouch:(id)arg1;
 - (void)_systemGestureStateChanged:(id)arg1;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;

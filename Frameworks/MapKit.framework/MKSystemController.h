@@ -12,8 +12,6 @@
 - (BOOL)isWifiEnabled;
 - (BOOL)openURL:(id)arg1;
 - (BOOL)overrideBlurStyle;
-- (oneway void)release;
-- (unsigned int)retainCount;
 - (float)screenScale;
 - (struct CGSize { float x1; float x2; })screenSize;
 - (BOOL)shouldRateLimitSearchCompletions;

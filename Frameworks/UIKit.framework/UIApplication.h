@@ -137,7 +137,6 @@
     UIStatusBarWindow *_statusBarWindow;
     NSMutableArray *_tintViewDurationStack;
     NSArray *_topLevelNibObjects;
-    struct __CFDictionary { } *_touchMap;
     UIEvent *_touchesEvent;
     int _undoButtonIndex;
     UIWheelEvent *_wheelEvent;
@@ -231,6 +230,7 @@
 - (void)_createHangTracerTimerWithDuration:(double)arg1;
 - (void)_createStatusBarWithRequestedStyle:(int)arg1 orientation:(int)arg2 hidden:(BOOL)arg3;
 - (int)_currentExpectedInterfaceOrientation;
+- (id)_currentFrameCountForTestDisplay;
 - (id)_currentTests;
 - (double)_currentTintViewDuration;
 - (id)_currentTintViewWindow;
@@ -282,6 +282,7 @@
 - (void)_handleOpportunisticFetchInitiatedByBackgroundFetchEvent:(struct __GSEvent { }*)arg1;
 - (void)_handleOpportunisticFetchWithSequenceNumber:(id)arg1;
 - (BOOL)_handlePhysicalButtonEvent:(id)arg1;
+- (void)_handleUnicodeEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_handleUserDefaultsDidChange:(id)arg1;
 - (BOOL)_hasApplicationCalledLaunchDelegate;
 - (BOOL)_hasNormalRestorationCompleted;
@@ -349,6 +350,7 @@
 - (void)_playbackTimerCallback:(id)arg1;
 - (void)_popStatusBarTintColorLock;
 - (void)_popTintViewDuration;
+- (void)_postHeadsetOriginatedMediaRemoteCommand:(unsigned int)arg1;
 - (void)_postSimpleRemoteNotificationForAction:(int)arg1 andContext:(int)arg2 trackID:(id)arg3;
 - (void)_postSimpleRemoteNotificationForAction:(int)arg1 andContext:(int)arg2;
 - (id)_preferredContentSizeCategory:(unsigned int)arg1;
@@ -383,6 +385,10 @@
 - (id)_rootViewControllers;
 - (BOOL)_rotationDisabledDuringTouch;
 - (void)_run;
+- (void)_runSubTestForKeyboardBringupWithName:(id)arg1 withShowKeyboardBlock:(id)arg2 withHideKeyboardBlock:(id)arg3 withExtraResultsBlock:(id)arg4 withCleanupBlock:(id)arg5;
+- (void)_runSubTestForKeyboardDismissalWithName:(id)arg1 withHideKeyboardBlock:(id)arg2 withExtraResultsBlock:(id)arg3 withCleanupBlock:(id)arg4;
+- (void)_runSubTestForKeyboardMergeWithName:(id)arg1 withExtraResultsBlock:(id)arg2 withCleanupBlock:(id)arg3;
+- (void)_runSubTestForKeyboardSplitWithName:(id)arg1 withShowKeyboardBlock:(id)arg2 withExtraResultsBlock:(id)arg3 withCleanupBlock:(id)arg4;
 - (void)_runWithURL:(id)arg1 payload:(id)arg2 launchOrientation:(int)arg3 statusBarStyle:(int)arg4 statusBarHidden:(BOOL)arg5;
 - (void)_saveApplicationPreservationState:(id)arg1 viewController:(id)arg2 sessionIdentifier:(id)arg3 beginHandler:(id)arg4 completionHandler:(id)arg5;
 - (void)_saveApplicationPreservationStateIfSupported;
@@ -430,7 +436,6 @@
 - (void)_setSuspendedUnderLock:(BOOL)arg1;
 - (void)_setTextLegibilityEnabled:(BOOL)arg1;
 - (void)_setTopNavBarTintColor:(id)arg1 withDuration:(double)arg2;
-- (void)_setTouchMap:(struct __CFDictionary { }*)arg1;
 - (void)_setUserDefaultsSyncEnabled:(BOOL)arg1;
 - (void)_sheetWithRemoteIdentifierDidDismiss:(id)arg1;
 - (BOOL)_shouldDelayTouchesForControlCenter;
@@ -460,7 +465,6 @@
 - (BOOL)_taskSuspendingUnsupported;
 - (void)_terminateWithStatus:(int)arg1;
 - (int)_testOrientation:(id)arg1 options:(id)arg2;
-- (struct __CFDictionary { }*)_touchMap;
 - (id)_touchesEvent;
 - (void)_unregisterForLanguageChangedNotification;
 - (void)_unregisterForLocaleChangedNotification;
@@ -572,6 +576,8 @@
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2 withTeardownBlock:(id)arg3;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
+- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3 withTeardownBlock:(id)arg4;
+- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3;
 - (void)finishedTest:(id)arg1;
 - (BOOL)firstLaunchAfterBoot;
 - (BOOL)handleDoubleHeightStatusBarTap:(int)arg1;
@@ -588,6 +594,8 @@
 - (void)ignoreSnapshotOnNextApplicationLaunch;
 - (BOOL)ignoresInteractionEvents;
 - (id)init;
+- (void)installCACommitCompletionBlock:(id)arg1;
+- (void)installNotificationObserverForNotificationName:(id)arg1 forOneNotification:(BOOL)arg2 usingBlock:(id)arg3;
 - (int)interfaceOrientation;
 - (BOOL)isHandlingOpenShortCut;
 - (BOOL)isHandlingURL;
@@ -657,6 +665,9 @@
 - (void)runTest:(id)arg1 forAnimation:(id)arg2;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
 - (void)runTest:(id)arg1 startingBeforeAnimation:(id)arg2 stoppingAfterAnimation:(id)arg3;
+- (void)runTestForKeyboardBringupAndDismissalWithName:(id)arg1 withShowKeyboardBlock:(id)arg2 withHideKeyboardBlock:(id)arg3 withExtraResultsBlock:(id)arg4 withCleanupBlock:(id)arg5;
+- (void)runTestForKeyboardRotationWithName:(id)arg1 fromOrientation:(int)arg2 withShowKeyboardBlock:(id)arg3 withExtraResultsBlock:(id)arg4 withCleanupBlock:(id)arg5;
+- (void)runTestForKeyboardSplitAndMergeWithName:(id)arg1 withShowKeyboardBlock:(id)arg2 withExtraResultsBlock:(id)arg3 withCleanupBlock:(id)arg4;
 - (void)saveApplicationPreservationStateWithSessionIdentifier:(id)arg1 viewController:(id)arg2 beginHandler:(id)arg3 completionHandler:(id)arg4;
 - (void)scheduleLocalNotification:(id)arg1;
 - (id)scheduledLocalNotifications;
@@ -722,12 +733,14 @@
 - (BOOL)shouldFenceStatusBarRotation;
 - (BOOL)shouldLaunchSafe;
 - (BOOL)shouldRecordExtendedLaunchTime;
+- (void)showKeyboardUsingBlock:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)showNetworkPromptsIfNecessary:(BOOL)arg1;
 - (void)showTTYPromptForNumber:(id)arg1 withID:(int)arg2;
 - (void)significantTimeChange;
 - (void)startCHUDRecording:(id)arg1;
 - (void)startLeaking;
 - (void)startedIPTest:(id)arg1;
+- (void)startedSubTest:(id)arg1 forTest:(id)arg2 withMetrics:(id)arg3;
 - (void)startedSubTest:(id)arg1 forTest:(id)arg2;
 - (void)startedTest:(id)arg1;
 - (void)statusBar:(id)arg1 didAnimateFromHeight:(float)arg2 toHeight:(float)arg3 animation:(int)arg4;
@@ -748,6 +761,7 @@
 - (void)stopCHUDRecording;
 - (void)stopLeaking;
 - (void)stopModal;
+- (id)subTest:(id)arg1 ForTest:(id)arg2 withMetrics:(id)arg3;
 - (unsigned int)supportedInterfaceOrientationsForWindow:(id)arg1;
 - (void)suspend;
 - (void)suspendReturningToLastApp:(BOOL)arg1;

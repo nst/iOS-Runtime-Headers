@@ -6,6 +6,6 @@
 }
 
 - (id)init;
-- (id)storePageWithDictionary:(id)arg1;
+- (id)storePageWithDictionary:(id)arg1 response:(id)arg2;
 
 @end

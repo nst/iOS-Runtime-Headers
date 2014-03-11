@@ -8,6 +8,7 @@
     BOOL _actionInProgress;
     ADAdSpace *_adSpace;
     BOOL _canLoadMoreThanOnce;
+    int _creativeType;
     <ADInterstitialAdDelegate> *_delegate;
     BOOL _hasLoadedFirstAd;
     <ADInterstitialAdDelegate> *_internalDelegate;
@@ -21,6 +22,7 @@
 @property(retain) ADAdSpace * adSpace;
 @property(readonly) UIView * adSpaceView;
 @property BOOL canLoadMoreThanOnce;
+@property int creativeType;
 @property <ADInterstitialAdDelegate> * delegate;
 @property BOOL hasLoadedFirstAd;
 @property(readonly) int internalAdType;
@@ -32,17 +34,18 @@
 @property(readonly) UIViewController * presentingViewController;
 
 - (BOOL)_considerClosingAdSpace;
-- (id)_initWithOptions:(int)arg1;
 - (id)adSpace;
 - (id)adSpaceView;
 - (BOOL)canLoadMoreThanOnce;
 - (void)cancelAction;
+- (int)creativeType;
 - (void)dealloc;
 - (id)delegate;
 - (void)handleTapOnInterstitialViewAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)hasLoadedFirstAd;
 - (id)identifier;
 - (id)init;
+- (id)initWithCreativeType:(int)arg1 options:(int)arg2;
 - (int)internalAdType;
 - (id)internalDelegate;
 - (id)internalPresentingViewController;
@@ -63,6 +66,7 @@
 - (void)setAdSpace:(id)arg1;
 - (void)setAuthenticationUserName:(id)arg1;
 - (void)setCanLoadMoreThanOnce:(BOOL)arg1;
+- (void)setCreativeType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasLoadedFirstAd:(BOOL)arg1;
 - (void)setInternalDelegate:(id)arg1;

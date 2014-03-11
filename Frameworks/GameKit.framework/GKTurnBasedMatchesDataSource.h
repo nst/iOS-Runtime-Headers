@@ -19,6 +19,7 @@
 - (SEL)detailPressedAction;
 - (id)game;
 - (unsigned int)numberOfMatches;
+- (void)removeItemAtIndexPath:(id)arg1;
 - (void)setDetailPressedAction:(SEL)arg1;
 - (void)setGame:(id)arg1;
 

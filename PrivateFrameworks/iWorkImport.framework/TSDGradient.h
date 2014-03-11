@@ -41,11 +41,12 @@
 + (BOOL)useInflections;
 + (BOOL)useQuartzShadings;
 
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })centeredRadialTransformInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)drawSwatchInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
-- (struct CGPoint { float x1; float x2; })endPointForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })endPointForPath:(id)arg1 andBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)fillType;
 - (id)firstColor;
 - (id)gradientStops;
@@ -95,7 +96,7 @@
 - (void)setIsAdvancedGradient:(BOOL)arg1;
 - (void)setOpacity:(float)arg1;
 - (struct CGShading { }*)shadingRef;
-- (struct CGPoint { float x1; float x2; })startPointForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })startPointForPath:(id)arg1 andBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)stopAfterFraction:(float)arg1;
 - (id)stopAtIndex:(unsigned int)arg1;
 - (id)stopBeforeFraction:(float)arg1;

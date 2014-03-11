@@ -44,6 +44,7 @@
 - (void)_hidePhonePreviewOverlayAnimated:(BOOL)arg1;
 - (void)_hidePreviewOverlayAnimated:(BOOL)arg1;
 - (BOOL)_isReloadingUnderneathTransientViewController;
+- (void)_longPressAction:(id)arg1;
 - (void)_moveTransientViewController:(id)arg1 toSectionWithIdentifier:(id)arg2 asRoot:(BOOL)arg3;
 - (void)_moveView:(id)arg1 toView:(id)arg2;
 - (void)_partnerChanged:(id)arg1;

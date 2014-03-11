@@ -22,6 +22,7 @@
 - (void)loadURL:(id)arg1 completion:(id)arg2;
 - (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 

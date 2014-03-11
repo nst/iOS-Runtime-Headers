@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageChildViewControllerDelegate>, NSMutableArray, NSOperationQueue, SKUIClientContext, SKUILayoutCache, SKUIProductPage, SKUIProductPageHeaderViewController, SKUIProductPageTableHeaderOnlySection, SKUIProductPageTableTextBoxSection, SKUIProductPageTableViewController, UIScrollView;
+@class <SKUIProductPageChildViewControllerDelegate>, NSMutableArray, NSOperationQueue, SKUIClientContext, SKUILayoutCache, SKUIProductPage, SKUIProductPageHeaderViewController, SKUIProductPageTableHeaderOnlySection, SKUIProductPageTableTextBoxSection, SKUIProductPageTableViewController, SKUIResourceLoader, UIScrollView;
 
-@interface SKUIProductPageDetailsViewController : UIViewController <SKUIScreenshotsDelegate, SKUIItemStateCenterObserver, SKUIProductPageChildViewController> {
+@interface SKUIProductPageDetailsViewController : UIViewController <SKUIScreenshotsDelegate, SKUIItemStateCenterObserver, SKUITableViewSectionDelegate, SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
     SKUIProductPageTableHeaderOnlySection *_copyrightSection;
     <SKUIProductPageChildViewControllerDelegate> *_delegate;
     SKUIProductPageTableTextBoxSection *_descriptionSection;
     NSOperationQueue *_operationQueue;
     SKUIProductPage *_productPage;
+    SKUIResourceLoader *_resourceLoader;
     SKUIProductPageTableHeaderOnlySection *_screenshotsSection;
     NSMutableArray *_sections;
     SKUIProductPageTableTextBoxSection *_storeNotesSection;
@@ -30,11 +31,15 @@
 
 - (void).cxx_destruct;
 - (void)_addTapRecognizerForView:(id)arg1 action:(SEL)arg2;
+- (id)_bundledAppsSection;
+- (void)_configureSwooshSection:(id)arg1;
 - (id)_copyrightSection;
 - (id)_descriptionSection;
 - (void)_expandSection:(id)arg1;
 - (id)_featuresSection;
 - (id)_infoSection;
+- (id)_parentBundlesSection;
+- (id)_resourceLoader;
 - (id)_screenshotsSection;
 - (id)_storeNotesSection;
 - (id)_tableViewController;
@@ -55,5 +60,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderViewController:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
+- (id)tableViewForTableViewSection:(id)arg1;
 
 @end

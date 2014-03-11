@@ -28,6 +28,8 @@
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
 + (Class)classForClassName:(id)arg1;
 + (void)initialize;
++ (id)pl_safeUnarchiveObjectWithData:(id)arg1;
++ (id)pl_safeUnarchiveObjectWithFile:(id)arg1;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
@@ -70,6 +72,7 @@
 - (id)init;
 - (id)initForReadingWithData:(id)arg1;
 - (id)initWithStream:(id)arg1;
+- (id)pl_safeInitForReadingWithData:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (BOOL)requiresSecureCoding;
 - (void)setAllowedClasses:(id)arg1;

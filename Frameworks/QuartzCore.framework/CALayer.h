@@ -118,7 +118,6 @@
 + (void)CAMLParserEndElement:(id)arg1;
 + (void)CAMLParserStartElement:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
-+ (id)TSD_supportedKeyPaths;
 + (BOOL)_hasRenderLayerSubclass;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultActionForKey:(id)arg1;
@@ -337,7 +336,7 @@
 - (BOOL)needsLayoutOnGeometryChange;
 - (struct CGImage { }*)newRasterizedImageRef;
 - (float)opacity;
-- (float)opacityByApplyingAnimation:(id)arg1 atTime:(double)arg2;
+- (float)opacityByApplyingAnimation:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 - (BOOL)opaque;
 - (void)p_clearAllLayerDelegates;
 - (float)p_perspectiveZDistanceUsingSize:(struct CGSize { float x1; float x2; })arg1;
@@ -464,6 +463,7 @@
 - (void)setNeedsLayoutOnGeometryChange:(BOOL)arg1;
 - (void)setOpacity:(float)arg1;
 - (void)setOpaque:(BOOL)arg1;
+- (void)setPerspectiveDistance:(float)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPreloadsCache:(BOOL)arg1;
 - (void)setRasterizationScale:(float)arg1;
@@ -518,8 +518,7 @@
 - (BOOL)tilingSafeHasContents;
 - (void)tilingSafeSetSublayers:(id)arg1;
 - (double)timeOffset;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3DByApplyingAnimation:(id)arg1 atTime:(double)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 parentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3DByApplyingAnimation:(id)arg1 atTime:(double)arg2;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3DByApplyingAnimation:(id)arg1 atTime:(double)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 parentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 animationCache:(id)arg5;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform;
 - (void)tsu_transformToQuadrilateralWithTopLeft:(struct CGPoint { float x1; float x2; })arg1 topRight:(struct CGPoint { float x1; float x2; })arg2 bottomLeft:(struct CGPoint { float x1; float x2; })arg3 bottomRight:(struct CGPoint { float x1; float x2; })arg4;
 - (BOOL)uiHasFilterWithName:(id)arg1;

@@ -2,35 +2,61 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVExternalDeviceInternal, NSArray, NSData, NSDictionary, NSString;
+@class <AVExternalDeviceDelegate>, AVExternalDeviceInternal, NSArray, NSData, NSDictionary, NSString;
 
 @interface AVExternalDevice : NSObject {
     AVExternalDeviceInternal *_externalDevice;
 }
 
-@property(readonly) NSArray * HIDMappings;
+@property(readonly) NSData * OEMIcon;
+@property(readonly) NSString * OEMIconLabel;
+@property(readonly) BOOL OEMIconVisible;
+@property <AVExternalDeviceDelegate> * delegate;
 @property(readonly) NSData * dockIcon;
+@property(readonly) NSArray * externalDeviceHIDs;
+@property(readonly) BOOL limitedUI;
+@property(readonly) NSArray * limitedUIElements;
+@property(readonly) BOOL longNonMusicListsAllowed;
 @property(readonly) NSString * modelName;
+@property(readonly) BOOL nightMode;
+@property(readonly) BOOL nightModeSupported;
+@property(readonly) BOOL ownsTurnByTurnNavigation;
+@property(readonly) BOOL rightHandDrive;
 @property(readonly) NSArray * screenIDs;
 @property(readonly) NSDictionary * screenInputCapabilities;
 @property(readonly) NSData * settingsIcon;
 
 + (id)currentExternalDevice;
 
-- (id)HIDMappings;
+- (id)OEMIcon;
+- (id)OEMIconLabel;
+- (BOOL)OEMIconVisible;
 - (struct OpaqueFigEndpoint { }*)_figEndpoint;
 - (id)_figEndpointPropertyValueForKey:(struct __CFString { }*)arg1;
 - (void)_triggerFakeNotificationNamed:(id)arg1 withPayload:(id)arg2;
+- (id)_weakReference;
 - (id)borrowScreenForClient:(id)arg1 reason:(id)arg2;
 - (void)dealloc;
+- (id)delegate;
 - (id)dockIcon;
+- (id)externalDeviceHIDWithUUID:(id)arg1;
+- (id)externalDeviceHIDs;
 - (void)finalize;
 - (id)init;
 - (id)initWithCurrentExternalDevice;
+- (BOOL)limitedUI;
+- (id)limitedUIElements;
+- (BOOL)longNonMusicListsAllowed;
 - (id)modelName;
+- (BOOL)nightMode;
+- (BOOL)nightModeSupported;
+- (BOOL)ownsTurnByTurnNavigation;
 - (void)requestCarUI;
+- (void)requestTurnByTurnNavigationOwnership;
+- (BOOL)rightHandDrive;
 - (id)screenIDs;
 - (id)screenInputCapabilities;
+- (void)setDelegate:(id)arg1;
 - (id)settingsIcon;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
 

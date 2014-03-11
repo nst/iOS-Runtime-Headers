@@ -5,8 +5,8 @@
 @class NSString, SSAuthenticationContext, SSLookupProperties;
 
 @interface SSLookupRequest : SSRequest <SSXPCCoding> {
-    BOOL _authenticatesIfNeeded;
     SSAuthenticationContext *_authenticationContext;
+    int _personalizationStyle;
     SSLookupProperties *_properties;
     int _resultFilters;
 }
@@ -16,9 +16,11 @@
 @property(copy) SSAuthenticationContext * authenticationContext;
 @property(copy) NSString * keyProfile;
 @property int localizationStyle;
+@property int personalizationStyle;
 @property int resultFilters;
 
 - (id)_lookupProperties;
+- (void)_setTimeoutInterval:(id)arg1;
 - (BOOL)authenticatesIfNeeded;
 - (id)authenticationContext;
 - (id)copyXPCEncoding;
@@ -28,11 +30,13 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)keyProfile;
 - (int)localizationStyle;
+- (int)personalizationStyle;
 - (int)resultFilters;
 - (void)setAuthenticatesIfNeeded:(BOOL)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
 - (void)setLocalizationStyle:(int)arg1;
+- (void)setPersonalizationStyle:(int)arg1;
 - (void)setResultFilters:(int)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 - (BOOL)start;

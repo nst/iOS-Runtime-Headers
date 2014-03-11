@@ -4,7 +4,7 @@
 
 @class VKPStyleProperties;
 
-@interface VKPZoomProperty : PBCodable {
+@interface VKPZoomProperty : PBCodable <NSCopying> {
     float _maxZ;
     float _minZ;
     VKPStyleProperties *_properties;
@@ -16,6 +16,7 @@
 
 - (void)applyTo:(id)arg1 zoom:(float)arg2;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

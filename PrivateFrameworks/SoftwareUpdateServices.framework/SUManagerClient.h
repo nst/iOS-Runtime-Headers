@@ -27,6 +27,7 @@
 - (void)cancelDownload:(id)arg1;
 - (int)clientType;
 - (void)connectToServerIfNecessary;
+- (BOOL)createInstallationKeybag:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)download:(id)arg1;
@@ -45,11 +46,13 @@
 - (void)installUpdate:(id)arg1;
 - (void)invalidate;
 - (void)isDownloading:(id)arg1;
+- (BOOL)isInstallationKeybagRequired;
 - (void)isScanning:(id)arg1;
 - (void)isUpdateReadyForInstallation:(id)arg1;
 - (void)noteConnectionDropped;
 - (void)noteServerExiting;
 - (void)pauseDownload:(id)arg1;
+- (void)purgeDownload:(id)arg1;
 - (void)resumeDownload:(id)arg1;
 - (void)scanDidCompleteWithNewUpdateAvailable:(id)arg1 error:(id)arg2;
 - (void)scanForUpdates:(id)arg1 withResult:(id)arg2;

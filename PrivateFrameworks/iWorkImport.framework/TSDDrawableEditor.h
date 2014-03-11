@@ -22,6 +22,7 @@
 @property(readonly) NSSet * selectedObjectsSupportingReflection;
 @property(readonly) NSSet * selectedObjectsSupportingResize;
 @property(readonly) NSSet * selectedObjectsSupportingShadow;
+@property(readonly) NSSet * selectedObjectsSupportingShrinkTextToFit;
 @property(readonly) NSSet * selectedObjectsSupportingSmartShapeAttributes;
 @property(readonly) NSSet * selectedObjectsSupportingStroke;
 @property(readonly) NSSet * selectedObjectsSupportingTextInset;
@@ -34,6 +35,7 @@
 + (id)keyPathsForValuesAffectingFirstInfo;
 + (id)keyPathsForValuesAffectingInfo;
 + (id)keyPathsForValuesAffectingLayouts;
++ (BOOL)shouldSuppressMultiselection;
 
 - (void)addOrShowComment:(id)arg1;
 - (void)applyStylePresetWithIndex:(id)arg1;
@@ -66,6 +68,7 @@
 - (id)selectedObjectsSupportingReflection;
 - (id)selectedObjectsSupportingResize;
 - (id)selectedObjectsSupportingShadow;
+- (id)selectedObjectsSupportingShrinkTextToFit;
 - (id)selectedObjectsSupportingSmartShapeAttributes;
 - (id)selectedObjectsSupportingStroke;
 - (id)selectedObjectsSupportingTextInset;

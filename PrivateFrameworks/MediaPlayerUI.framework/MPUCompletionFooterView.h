@@ -10,7 +10,6 @@
         float left; 
         float bottom; 
         float right; 
-    float _backgroundTransitionProgress;
     UIView *_bottomSeparatorView;
     NSString *_completeMyCollectionTitle;
     NSString *_completeSubtitleFormat;
@@ -20,6 +19,7 @@
     } _contentInsets;
     <MPUCompletionFooterViewDelegate> *_delegate;
     MPUItemOfferButton *_itemOfferButton;
+    int _preferredVariant;
     BOOL _purchasing;
     BOOL _showsVariants;
     int _style;
@@ -31,7 +31,6 @@
     UISegmentedControl *_variantSegmentedControl;
 }
 
-@property float backgroundTransitionProgress;
 @property(retain) UIView * bottomSeparatorView;
 @property(copy) NSString * completeMyCollectionTitle;
 @property(copy) NSString * completeSubtitleFormat;
@@ -41,6 +40,7 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property <MPUCompletionFooterViewDelegate> * delegate;
 @property(retain) MPUItemOfferButton * itemOfferButton;
+@property int preferredVariant;
 @property(getter=isPurchasing) BOOL purchasing;
 @property BOOL showsVariants;
 @property int style;
@@ -60,7 +60,6 @@
 - (void)_configureViewsForCompletionOffering;
 - (id)_createItemOfferButton;
 - (void)_handleTapGesture:(id)arg1;
-- (float)backgroundTransitionProgress;
 - (id)bottomSeparatorView;
 - (id)completeMyCollectionTitle;
 - (id)completeSubtitleFormat;
@@ -76,7 +75,7 @@
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)layoutSeparatorsWithInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)layoutSubviews;
-- (void)setBackgroundTransitionProgress:(float)arg1;
+- (int)preferredVariant;
 - (void)setBottomSeparatorView:(id)arg1;
 - (void)setCompleteMyCollectionTitle:(id)arg1;
 - (void)setCompleteSubtitleFormat:(id)arg1;
@@ -86,11 +85,11 @@
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItemOfferButton:(id)arg1;
+- (void)setPreferredVariant:(int)arg1;
 - (void)setPurchasing:(BOOL)arg1;
 - (void)setShowsVariants:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setSubtitleLabel:(id)arg1;
-- (void)setTableViewStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setTopSeparatorView:(id)arg1;

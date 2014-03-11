@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNSlideNumberPlaceholderLayout : TSWPShapeLayout {
+@interface KNSlideNumberPlaceholderLayout : KNPlaceholderLayout {
 }
 
 @end

@@ -9,7 +9,6 @@
 }
 
 - (BOOL)animatesDataChange;
-- (BOOL)cachesImage;
 - (id)contentsImage;
 - (void)dealloc;
 - (float)extraRightPadding;

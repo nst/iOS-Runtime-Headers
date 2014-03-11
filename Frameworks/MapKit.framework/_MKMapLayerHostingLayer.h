@@ -10,6 +10,7 @@
 
 @property _MKMapLayerHostingView * hostView;
 
+- (void).cxx_destruct;
 - (id)hostView;
 - (void)setHostView:(id)arg1;
 

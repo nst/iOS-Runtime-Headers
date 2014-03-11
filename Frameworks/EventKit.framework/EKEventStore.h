@@ -46,6 +46,8 @@
 @property NSMutableSet * deletedObjects;
 @property(readonly) NSString * eventStoreIdentifier;
 @property unsigned long flags;
+@property(readonly) NSArray * inboxNotifications;
+@property(readonly) NSArray * inboxRepliedSectionItems;
 @property NSMutableSet * insertedObjects;
 @property double lastDatabaseNotificationTimestamp;
 @property(readonly) int notifiableEventCount;
@@ -54,6 +56,7 @@
 @property NSMutableDictionary * registeredObjects;
 @property NSObject<OS_dispatch_queue> * registeredQueue;
 @property(readonly) unsigned int serverPort;
+@property BOOL showDeclinedEvents;
 @property(copy) NSTimeZone * timeZone;
 @property(readonly) int unacknowledgedEventCount;
 @property NSObject<OS_dispatch_queue> * unsavedChangesQueue;
@@ -150,6 +153,8 @@
 - (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
 - (void)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3 completion:(id)arg4;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
+- (id)inboxNotifications;
+- (id)inboxRepliedSectionItems;
 - (id)init;
 - (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
 - (id)insertNewEvent;
@@ -190,7 +195,6 @@
 - (id)predicateForMasterEventsInCalendars:(id)arg1;
 - (id)predicateForNotifiableEvents;
 - (id)predicateForNotificationCenterVisibleEvents;
-- (id)predicateForRecentNotifiableEvents;
 - (id)predicateForRemindersInCalendars:(id)arg1;
 - (id)predicateForRemindersWithSearchTerm:(id)arg1;
 - (id)predicateForRemindersWithTitle:(id)arg1 calendars:(id)arg2;
@@ -266,6 +270,7 @@
 - (void)set_defaultCalendarForNewReminders:(id)arg1;
 - (void)set_sources:(id)arg1;
 - (id)sharedCalendarInvitationsForEntityTypes:(unsigned int)arg1;
+- (BOOL)showDeclinedEvents;
 - (id)sourceWithIdentifier:(id)arg1;
 - (id)sources;
 - (id)stringForColor:(id)arg1;

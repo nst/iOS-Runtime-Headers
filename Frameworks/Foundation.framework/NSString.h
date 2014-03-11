@@ -230,9 +230,11 @@
 - (id)MCAppendDeviceName;
 - (id)MCAppendGreenteaSuffix;
 - (unsigned int)MCHash;
-- (id)MCSHA256DigestWithSalt;
-- (id)MCSafeFilenameHash;
-- (id)MCSafeFilenameHashWithExtension:(id)arg1;
+- (id)MCHashedFilenameWithExtension:(id)arg1;
+- (id)MCOldStyleSafeFilenameHash;
+- (id)MCOldStyleSafeFilenameHashWithExtension:(id)arg1;
+- (id)MCSHA256DigestWithPasscodeSalt;
+- (id)MCSHA256DigestWithSalt:(id)arg1;
 - (id)MLSortString;
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
 - (id)MP_attributedStringWithEmphasizedTextSeparator:(id)arg1 regularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
@@ -318,7 +320,6 @@
 - (id)_copyCsvRows:(unsigned int*)arg1 usingDelimiter:(id)arg2 columnCountIsConstant:(BOOL*)arg3;
 - (id)_copyFormatStringWithConfiguration:(id)arg1;
 - (id)_copyWithoutInsignificantPrefix:(BOOL)arg1 andCharacters:(BOOL)arg2;
-- (id)_coreroutine_urlName;
 - (id)_createSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct CGSize { float x1; float x2; })_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6 truncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg7;
 - (unsigned int)_editDistanceFrom:(id)arg1;
@@ -537,6 +538,7 @@
 - (BOOL)bindToSqlStatement:(struct sqlite3_stmt { }*)arg1 index:(int)arg2 error:(id*)arg3;
 - (BOOL)boolValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2 attributes:(id)arg3 context:(id)arg4;
+- (id)buildTitleByRemovingAdditionalLines;
 - (id)buildTitleByTruncatingToLength:(unsigned int)arg1;
 - (const char *)cString;
 - (unsigned int)cStringLength;
@@ -876,8 +878,10 @@
 - (id)mf_uncommentedAddressRespectingGroups;
 - (id)mf_uniqueFilenameWithRespectToFilenames:(id)arg1;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (id)ml_stringValueForSQL;
 - (id)mobileMeDomain;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)needsReferenceSingleQuoteEscaping;
 - (id)negativeSubpatternOfNumberFormatPattern;
 - (id)negativeSubpatternOfNumberFormatPattern;
 - (id)negativeSubpatternOfNumberFormatPattern;
@@ -905,6 +909,7 @@
 - (double)oi_sizeWithFontName:(id)arg1 size:(int)arg2 bold:(bool)arg3 italic:(bool)arg4;
 - (double)oi_sizeWithFontName:(id)arg1 size:(int)arg2;
 - (void)p_initializeQuotes;
+- (id)p_referenceComponentsSeparatedByCharacterInSet:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })paragraphRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)pathComponentExistsInSet:(id)arg1;
 - (id)pathComponents;
@@ -925,6 +930,7 @@
 - (id)propertyListFromStringsFileFormat;
 - (const char *)protobufString;
 - (BOOL)pu_endsWithFullStopOrEquivalentPunctuationMark;
+- (long long)pu_platformAgnosticHash;
 - (id)queryKeysAndValues;
 - (id)queryToDict;
 - (id)quote;
@@ -943,11 +949,11 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfString:(id)arg1 options:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfString:(id)arg1 searchOptions:(unsigned int)arg2 updatingSearchRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfString:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfWordAtCharacterIndex:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfWordAtCharacterIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfWordAtCharacterIndex:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 includePreviousWord:(BOOL)arg3;
 - (struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })rasterTileKeyValue;
 - (id)referenceComponentsSeparatedByColon;
 - (id)referenceComponentsSeparatedByPathDelimiter;
+- (id)referenceComponentsSeparatedBySpace;
 - (id)removeSlashIfNeeded;
 - (id)removeSlashIfNeeded;
 - (id)replaceOccurrencesOfCharactersInSet:(id)arg1 minimumConsecutiveLength:(unsigned int)arg2 replaceString:(id)arg3;
@@ -1035,7 +1041,9 @@
 - (id)stringByFixingBrokenSurrogatePairs;
 - (id)stringByFixingBrokenSurrogatePairs;
 - (id)stringByFixingCharactersWithLatinFontFamilyName:(id)arg1 symbolFontFamilyName:(id)arg2;
+- (id)stringByFoldingForNamedReferenceMatchingWithLocale:(id)arg1;
 - (id)stringByFoldingWithOptions:(unsigned int)arg1 locale:(id)arg2;
+- (id)stringByForcingSingleQuoteEscapes:(BOOL)arg1;
 - (id)stringByInsertingFormatGroupingSeparators;
 - (id)stringByInsertingFormatGroupingSeparators;
 - (id)stringByInsertingGroupingSeparators;
@@ -1047,7 +1055,6 @@
 - (id)stringByPaddingToLength:(unsigned int)arg1 withString:(id)arg2 startingAtIndex:(unsigned int)arg3;
 - (id)stringByPercentEscaping;
 - (id)stringByPercentEscaping;
-- (id)stringByRemovingAdditionalLines;
 - (id)stringByRemovingCharactersFromSet:(id)arg1;
 - (id)stringByRemovingCharactersInSet:(id)arg1 options:(unsigned int)arg2;
 - (id)stringByRemovingCharactersInSet:(id)arg1 options:(unsigned int)arg2;

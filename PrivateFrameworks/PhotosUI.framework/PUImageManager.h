@@ -19,9 +19,12 @@
 - (void)cancelAllFetches;
 - (void)fetchImageForAsset:(id)arg1 fastFormat:(int)arg2 qualityFormat:(int)arg3 options:(unsigned int)arg4 handler:(id)arg5;
 - (id)init;
+- (void)invalidateCachedImagesForAssets:(id)arg1;
 - (void)resumeFetchesForFormat:(int)arg1;
+- (void)resumeFetchesForFormats:(id)arg1;
 - (void)startPrefetchingImagesForAssets:(id)arg1 format:(int)arg2 options:(unsigned int)arg3;
 - (void)stopFetchingImagesForAssets:(id)arg1 format:(int)arg2;
 - (void)suspendFetchesForFormat:(int)arg1;
+- (void)suspendFetchesForFormats:(id)arg1;
 
 @end

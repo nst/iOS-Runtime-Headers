@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSHashTable, NSMutableDictionary, TSPObjectContext, TSPPasteboard, TSPPasteboardNativeDataProvider, TSPPasteboardObject, TSURetainedPointerKeyDictionary;
+@class NSDictionary, NSHashTable, NSMutableDictionary, NSMutableOrderedSet, TSPObjectContext, TSPPasteboard, TSPPasteboardNativeDataProvider, TSPPasteboardObject, TSURetainedPointerKeyDictionary;
 
 @interface TSPPasteboardWriteAssistant : NSObject <TSPPasteboardWriting, TSPProxyObjectManager> {
     NSDictionary *_contentDescription;
     NSMutableDictionary *_dataProviderMap;
+    NSMutableOrderedSet *_dataProviderTypes;
     NSHashTable *_delayedObjects;
     BOOL _didAttemptToSerializeNativeData;
     long _nativeDataOnceToken;

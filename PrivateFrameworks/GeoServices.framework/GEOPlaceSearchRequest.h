@@ -58,6 +58,7 @@
         unsigned int includeSpokenNames : 1; 
         unsigned int includeStatusCodeInfo : 1; 
         unsigned int includeSuggestionsOnly : 1; 
+        unsigned int includeTravelDistance : 1; 
         unsigned int includeTravelTime : 1; 
         unsigned int includeUnmatchedStrings : 1; 
         unsigned int isFromAPI : 1; 
@@ -92,6 +93,7 @@
     BOOL _includeSpokenNames;
     BOOL _includeStatusCodeInfo;
     BOOL _includeSuggestionsOnly;
+    BOOL _includeTravelDistance;
     BOOL _includeTravelTime;
     BOOL _includeUnmatchedStrings;
     GEOIndexQueryNode *_indexFilter;
@@ -173,6 +175,7 @@
 @property BOOL hasIncludeSpokenNames;
 @property BOOL hasIncludeStatusCodeInfo;
 @property BOOL hasIncludeSuggestionsOnly;
+@property BOOL hasIncludeTravelDistance;
 @property BOOL hasIncludeTravelTime;
 @property BOOL hasIncludeUnmatchedStrings;
 @property(readonly) BOOL hasIndexFilter;
@@ -219,6 +222,7 @@
 @property BOOL includeSpokenNames;
 @property BOOL includeStatusCodeInfo;
 @property BOOL includeSuggestionsOnly;
+@property BOOL includeTravelDistance;
 @property BOOL includeTravelTime;
 @property BOOL includeUnmatchedStrings;
 @property(retain) GEOIndexQueryNode * indexFilter;
@@ -327,6 +331,7 @@
 - (BOOL)hasIncludeSpokenNames;
 - (BOOL)hasIncludeStatusCodeInfo;
 - (BOOL)hasIncludeSuggestionsOnly;
+- (BOOL)hasIncludeTravelDistance;
 - (BOOL)hasIncludeTravelTime;
 - (BOOL)hasIncludeUnmatchedStrings;
 - (BOOL)hasIndexFilter;
@@ -374,6 +379,7 @@
 - (BOOL)includeSpokenNames;
 - (BOOL)includeStatusCodeInfo;
 - (BOOL)includeSuggestionsOnly;
+- (BOOL)includeTravelDistance;
 - (BOOL)includeTravelTime;
 - (BOOL)includeUnmatchedStrings;
 - (id)indexFilter;
@@ -445,6 +451,7 @@
 - (void)setHasIncludeSpokenNames:(BOOL)arg1;
 - (void)setHasIncludeStatusCodeInfo:(BOOL)arg1;
 - (void)setHasIncludeSuggestionsOnly:(BOOL)arg1;
+- (void)setHasIncludeTravelDistance:(BOOL)arg1;
 - (void)setHasIncludeTravelTime:(BOOL)arg1;
 - (void)setHasIncludeUnmatchedStrings:(BOOL)arg1;
 - (void)setHasIntersectingGeoId:(BOOL)arg1;
@@ -479,6 +486,7 @@
 - (void)setIncludeSpokenNames:(BOOL)arg1;
 - (void)setIncludeStatusCodeInfo:(BOOL)arg1;
 - (void)setIncludeSuggestionsOnly:(BOOL)arg1;
+- (void)setIncludeTravelDistance:(BOOL)arg1;
 - (void)setIncludeTravelTime:(BOOL)arg1;
 - (void)setIncludeUnmatchedStrings:(BOOL)arg1;
 - (void)setIndexFilter:(id)arg1;

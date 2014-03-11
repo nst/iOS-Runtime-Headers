@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_semaphore>, TSKAccessController;
 
 @interface TSDTilingBackgroundQueue : NSObject {
+    TSKAccessController *mAccessController;
     NSObject<OS_dispatch_semaphore> *mCanEnqueueReaders;
     NSObject<OS_dispatch_group> *mInFlightReaders;
-    NSObject<OS_dispatch_queue> *mQueue;
     long mShutdownToken;
     BOOL mShuttingDown;
 }
 
 @property(getter=isShuttingDown) BOOL shuttingDown;
 
++ (id)p_sharedLimitedQueue;
+
 - (void)dealloc;
 - (void)drainAndPerformSync:(id)arg1;
 - (id)init;
+- (id)initWithAccessController:(id)arg1;
 - (BOOL)isShuttingDown;
 - (void)performAsync:(id)arg1;
 - (void)setShuttingDown:(BOOL)arg1;

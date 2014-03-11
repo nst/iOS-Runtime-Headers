@@ -2,55 +2,54 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
+@class MPAVRoute, NSDictionary, NSString;
 
 @interface MPAVRoute : NSObject {
-    BOOL _displayIsPicked;
+    NSDictionary *_avRouteDescription;
     int _displayRouteType;
-    BOOL _isPicked;
+    int _pickableRouteType;
+    BOOL _picked;
     BOOL _requiresPassword;
-    unsigned int _routeIndex;
     NSString *_routeName;
     int _routeSubtype;
     int _routeType;
     NSString *_routeUID;
+    MPAVRoute *_wirelessDisplayRoute;
 }
 
-@property BOOL displayIsPicked;
-@property int displayRouteType;
-@property(readonly) BOOL isBluetoothRoute;
-@property BOOL isPicked;
-@property(readonly) NSString * name;
+@property(readonly) BOOL displayIsPicked;
+@property(readonly) int displayRouteType;
+@property(readonly) int pickableRouteType;
+@property(getter=isPicked,readonly) BOOL picked;
 @property(readonly) BOOL requiresPassword;
-@property(readonly) unsigned int routeIndex;
+@property(readonly) NSString * routeName;
 @property(readonly) int routeSubtype;
 @property(readonly) int routeType;
 @property(readonly) NSString * routeUID;
-
-+ (id)_audioDeviceController;
-+ (id)_availableRoutesFromAudioDeviceController:(id)arg1 forType:(unsigned int)arg2;
-+ (int)_routeSubtypeForAVOutputRouteType:(id)arg1;
-+ (BOOL)availableRoutesExistForType:(unsigned int)arg1;
-+ (id)availableRoutesForType:(unsigned int)arg1;
-+ (id)videoRouteForRoute:(id)arg1;
-+ (id)wirelessDisplayRouteForRoute:(id)arg1;
+@property(readonly) MPAVRoute * wirelessDisplayRoute;
 
 - (void).cxx_destruct;
-- (id)_initWithName:(id)arg1 routeType:(int)arg2 routeSubtype:(int)arg3 routeUID:(id)arg4 routeIndex:(unsigned int)arg5 requiresPassword:(BOOL)arg6;
+- (id)_initWithAVRouteDescription:(id)arg1;
+- (void)_routingControllerPickedRouteNotification:(id)arg1;
+- (id)avRouteDescription;
+- (void)dealloc;
+- (id)description;
 - (BOOL)displayIsPicked;
 - (int)displayRouteType;
 - (unsigned int)hash;
-- (BOOL)isBluetoothRoute;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPicked;
-- (id)name;
+- (int)pickableRouteType;
 - (BOOL)requiresPassword;
-- (unsigned int)routeIndex;
+- (id)routeName;
 - (int)routeSubtype;
 - (int)routeType;
 - (id)routeUID;
-- (void)setDisplayIsPicked:(BOOL)arg1;
+- (void)setAVRouteDescription:(id)arg1;
 - (void)setDisplayRouteType:(int)arg1;
-- (void)setIsPicked:(BOOL)arg1;
+- (void)setPicked:(BOOL)arg1;
+- (void)setRouteName:(id)arg1;
+- (void)setWirelessDisplayRoute:(id)arg1;
+- (id)wirelessDisplayRoute;
 
 @end

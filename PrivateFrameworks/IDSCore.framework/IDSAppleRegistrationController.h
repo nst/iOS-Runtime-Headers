@@ -29,6 +29,7 @@
 - (void)_SIMInserted:(id)arg1;
 - (void)_checkTechChange;
 - (BOOL)_ensureProfileQueriesAreReadyForRegistratration:(id)arg1;
+- (void)_notifyAllRegistrationSuccess:(id)arg1;
 - (void)_notifyDeregistrationStarting:(id)arg1;
 - (void)_notifyNeedsNewRegistration;
 - (void)_notifyRegistrationFailure:(id)arg1 error:(int)arg2 info:(id)arg3;
@@ -48,6 +49,7 @@
 - (void)addListener:(id)arg1;
 - (id)authenticatedRegistrations;
 - (void)cancelActionsForRegistrationInfo:(id)arg1;
+- (void)center:(id)arg1 allSucceededRegistrations:(id)arg2;
 - (void)center:(id)arg1 failedAuthentication:(id)arg2 error:(int)arg3 info:(id)arg4;
 - (void)center:(id)arg1 failedCurrentEmailsRequest:(id)arg2 error:(int)arg3 info:(id)arg4;
 - (void)center:(id)arg1 failedIDSAuthentication:(id)arg2 error:(int)arg3 info:(id)arg4;

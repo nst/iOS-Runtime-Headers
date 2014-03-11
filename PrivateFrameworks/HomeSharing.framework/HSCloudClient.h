@@ -32,6 +32,7 @@
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)authenticateWithCompletionHandler:(id)arg1;
 - (void)becomeActive;
+- (void)bulkLoadSagaArtworkWithCompletionHandler:(id)arg1;
 - (BOOL)canShowCloudDownloadButtons;
 - (BOOL)canShowCloudMusic;
 - (BOOL)canShowCloudVideo;
@@ -78,6 +79,7 @@
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
 - (void)updateSagaLibraryWithCompletionHandler:(id)arg1;
+- (void)updateSagaLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)uploadItemProperties;
 
 @end

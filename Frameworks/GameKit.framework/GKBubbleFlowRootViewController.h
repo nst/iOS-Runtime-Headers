@@ -7,11 +7,13 @@
 @interface GKBubbleFlowRootViewController : GKViewController {
     GKBubbleFlowAnimator *_animator;
     BOOL _coveringContentUnderneath;
+    BOOL _currentlyAnimatingADismiss;
     BOOL _showingInterstitial;
 }
 
 @property(retain) GKBubbleFlowAnimator * animator;
 @property(getter=isCoveringContentUnderneath,readonly) BOOL coveringContentUnderneath;
+@property(getter=isCurrentlyAnimatingADismiss) BOOL currentlyAnimatingADismiss;
 @property(getter=isShowingInterstitial) BOOL showingInterstitial;
 
 + (BOOL)_useTwoPartBubbleFlowModalPresentation;
@@ -23,9 +25,12 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isCoveringContentUnderneath;
+- (BOOL)isCurrentlyAnimatingADismiss;
 - (BOOL)isShowingInterstitial;
 - (void)popAllModalViewControllersAnimated:(BOOL)arg1 completion:(id)arg2;
+- (id)pseudoModalViewController;
 - (void)setAnimator:(id)arg1;
+- (void)setCurrentlyAnimatingADismiss:(BOOL)arg1;
 - (void)setShowingInterstitial:(BOOL)arg1;
 - (void)showInterstitialViewAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)viewDidLoad;

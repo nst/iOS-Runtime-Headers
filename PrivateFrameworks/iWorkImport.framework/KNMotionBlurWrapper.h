@@ -2,20 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMapTable, TSDGLMotionBlurEffect, TSDGLShader;
+@class NSArray, NSMapTable, TSDGLMotionBlurEffect, TSDGLShader, TSDGLShaderQualifier;
 
 @interface KNMotionBlurWrapper : NSObject {
     double _duration;
+    TSDGLShader *_hiddenObjectShader;
     BOOL _isBackFaceCullingEnabled;
     TSDGLMotionBlurEffect *_motionBlurEffect;
     NSMapTable *_objectDataBufferMapTable;
     TSDGLShader *_objectShader;
+    TSDGLShaderQualifier *_objectShaderMVPMatrixQualifier;
+    TSDGLShaderQualifier *_objectShaderOpacityQualifier;
+    BOOL _shouldDisableMotionBlurFromDefaults;
+    BOOL _shouldDrawHiddenObjects;
     BOOL _shouldDrawMotionBlur;
     BOOL _shouldDrawTextOnSeparatePass;
     BOOL _shouldDrawTexturesInReverseOrder;
+    BOOL _shouldFillBackground;
     NSArray *_textures;
     NSMapTable *_velocityObjectDataBufferMapTable;
     TSDGLShader *_velocityObjectShader;
+    TSDGLShaderQualifier *_velocityObjectShaderMVPMatrixQualifier;
+    TSDGLShaderQualifier *_velocityObjectShaderPreviousMVPMatrixQualifier;
 }
 
 @property(readonly) TSDGLMotionBlurEffect * motionBlurEffect;
@@ -26,7 +34,7 @@
 @property(retain) NSArray * textures;
 @property(retain) TSDGLShader * velocityObjectShader;
 
-+ (id)newDefaultTextureDrawOptionBlockWithAnimationDict:(id)arg1 pluginContext:(id)arg2 animationContext:(id)arg3 projectionTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg4 hasHiddenAnimationDict:(id)arg5 hasOpacityAnimationDict:(id)arg6 hasDoubleSidedAnimationDict:(id)arg7;
++ (id)newDefaultTextureDrawOptionBlockWithAnimationDict:(id)arg1 pluginContext:(id)arg2 animationContext:(id)arg3 projectionTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg4 animationCacheDict:(id)arg5 animationFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6;
 
 - (void)dealloc;
 - (void)drawMotionBlurAtPercent:(double)arg1 textureDrawOptionsBlock:(id)arg2 setupCustomShaderBlock:(id)arg3;

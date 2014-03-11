@@ -19,11 +19,18 @@
         struct { 
             int type; 
         } orientation; 
+    struct Sample { 
+        double timestamp; 
+        struct { 
+            int type; 
+        } orientation; 
+    boolfEnableOrientationNotification;
     struct Dispatcher { int (**x1)(); id x2; } *fDeviceOrientationDispatcher;
     id fDeviceOrientationHandler;
     NSOperationQueue *fDeviceOrientationQueue;
     NSObject<OS_dispatch_semaphore> *fDeviceOrientationSemaphore;
     BOOL fDidSignalSemaphore;
+    } fLastSignificantOrientationSample;
     } fLatestDeviceOrientationSample;
     int fOrientationCallbackMode;
     int fSampleLock;

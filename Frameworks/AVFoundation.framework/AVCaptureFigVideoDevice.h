@@ -132,6 +132,7 @@
 - (BOOL)_setFlashMode:(int)arg1;
 - (BOOL)_setFloatValue:(float)arg1 forRecorderProperty:(struct __CFString { }*)arg2;
 - (BOOL)_setFocusWithMode:(int)arg1 pointOfInterest:(id)arg2;
+- (void)_setHighDynamicRangeScene:(BOOL)arg1;
 - (BOOL)_setHighDynamicRangeSceneDetectionEnabled:(BOOL)arg1;
 - (BOOL)_setImageControlMode:(int)arg1;
 - (BOOL)_setNumber:(id)arg1 forRecorderProperty:(struct __CFString { }*)arg2;

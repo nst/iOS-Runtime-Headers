@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIRefreshControl, UITableView, UITableViewDataSource;
+@class UIRefreshControl, UITableView, UITableViewDataSource, _UIFilteredDataSource;
 
 @interface UITableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
         unsigned int insetsApplied : 1; 
         unsigned int adjustingInsets : 1; 
+    _UIFilteredDataSource *_filteredDataSource;
+    int _filteredDataType;
     id _keyboardSupport;
     id _staticDataSource;
     } _tableViewControllerFlags;
@@ -21,9 +23,16 @@
 @property(retain) UITableView * tableView;
 
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
+- (void)_applyDefaultDataSourceToTable:(id)arg1;
 - (id)_existingTableView;
+- (int)_filteredDataType;
+- (void)_refreshFilteredDataSourceFilterTypeForScreen:(id)arg1;
+- (int)_resolvedDataSourceFilterTypeForScreen:(id)arg1;
+- (void)_setFilteredDataType:(int)arg1;
 - (void)_setStaticDataSource:(id)arg1;
 - (id)_staticDataSource;
+- (BOOL)_viewControllerWasSelected;
+- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (BOOL)clearsSelectionOnViewWillAppear;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

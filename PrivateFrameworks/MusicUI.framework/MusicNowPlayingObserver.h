@@ -2,37 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MusicAVPlayer, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
-@interface MusicNowPlayingObserver : NSObject {
-    MusicAVPlayer *_avPlayer;
-    NSMutableDictionary *_mediaItemCoalescedUpdateDateAccessedTimers;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_statusBarQueue;
-    BOOL _waitingForItemArtwork;
+@interface MusicNowPlayingObserver : MPNowPlayingObserver {
 }
 
-- (void).cxx_destruct;
-- (int)_MPNowPlayingRepeatModeForMPRepeatType:(unsigned int)arg1;
-- (int)_MPNowPlayingShuffleModeForMPShuffleType:(unsigned int)arg1;
-- (void)_avItemTitlesDidChangeNotification:(id)arg1;
-- (void)_coalescedUpdateLastUsedDateForCurrentItem;
-- (void)_contentsDidChangeNotification:(id)arg1;
-- (void)_crossedTimeMarkerNotification:(id)arg1;
-- (void)_isBannedDidChangeNotification:(id)arg1;
-- (void)_isInWishListDidChangeNotification:(id)arg1;
-- (void)_isLikedDidChangeNotification:(id)arg1;
-- (void)_itemDidChangeNotification:(id)arg1;
-- (void)_mediaArtworkDidLoadNotification:(id)arg1;
-- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
-- (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)_postNowPlayingInfo;
-- (void)_postNowPlayingInfoForItem:(id)arg1;
-- (void)_radioArtworkDidLoadNotification:(id)arg1;
-- (void)_rateDidChangeNotification:(id)arg1;
-- (void)_repeatTypeDidChangeNotification:(id)arg1;
-- (void)_timeDidJumpNotification:(id)arg1;
++ (id)sharedObserver;
+
+- (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id)arg2;
+- (void)_currentStationDidChangeNotfication:(id)arg1;
 - (void)dealloc;
-- (id)initWithMusicAVPlayer:(id)arg1;
+- (id)init;
 
 @end

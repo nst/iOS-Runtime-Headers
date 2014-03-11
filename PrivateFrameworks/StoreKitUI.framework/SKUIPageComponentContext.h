@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDictionary;
+@class NSDictionary, NSMutableSet;
 
 @interface SKUIPageComponentContext : NSObject <NSCopying> {
     NSDictionary *_componentDictionary;
     NSDictionary *_items;
     int _layoutStyle;
     double _pageGenerationTime;
-    NSDictionary *_unavailableItems;
+    NSMutableSet *_unavailableItems;
 }
 
 @property(copy) NSDictionary * componentDictionary;
 @property(copy) NSDictionary * items;
 @property int layoutStyle;
 @property(readonly) double pageGenerationTime;
-@property(copy) NSDictionary * unavailableItems;
 
 - (void).cxx_destruct;
 - (id)componentDictionary;
@@ -30,7 +29,6 @@
 - (void)setComponentDictionary:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)setLayoutStyle:(int)arg1;
-- (void)setUnavailableItems:(id)arg1;
-- (id)unavailableItems;
+- (void)setUnavailableItemIdentifiers:(id)arg1;
 
 @end

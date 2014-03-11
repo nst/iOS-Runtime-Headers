@@ -54,7 +54,7 @@
 - (id)isNowPlayingItemFromGeniusMix;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(id)arg1;
-- (id)nowPlayingRadioTrackID;
+- (id)nowPlayingRadioTrack;
 - (id)numberOfItems;
 - (void)pause;
 - (void)pauseWithFadeoutDuration:(id)arg1;

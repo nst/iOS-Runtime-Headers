@@ -25,14 +25,18 @@
 @property(readonly) UIView * viewForPresentingStationActions;
 @property(readonly) UIView * viewForPresentingTrackActions;
 
++ (unsigned long long)defaultVisibleParts;
+
 - (void).cxx_destruct;
 - (BOOL)_allowsScrubbingForItem:(id)arg1;
 - (void)_applyRepeatSettingsToButton:(id)arg1;
 - (void)_applyShuffleSettingsToButton:(id)arg1;
 - (void)_createButtonAction:(id)arg1;
+- (void)_itemIsExplicitDidChangeNotification:(id)arg1;
 - (void)_itemTitlesDidChangeNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_playerContentsChangedNotification:(id)arg1;
+- (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_updateForChangedShowingCreateLoadingIndicator;
 - (void)_updateMarqueeStatusAllowingCurrentMarqueeToFinish:(BOOL)arg1;
 - (void)_updatePlaybackControlsAnimated:(BOOL)arg1;

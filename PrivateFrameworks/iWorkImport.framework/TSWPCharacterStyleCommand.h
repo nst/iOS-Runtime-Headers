@@ -11,6 +11,7 @@
 - (id)actionString;
 - (void)dealloc;
 - (void)doCommit;
+- (void)doUndoRedo;
 - (id)initWithStorage:(id)arg1 selection:(id)arg2 characterStyle:(id)arg3;
 - (int)persistenceKind;
 

@@ -14,7 +14,6 @@
 - (void)dealloc;
 - (void)fetchContentWithCompletion:(id)arg1;
 - (void)fetchImageSet:(int)arg1 withCompletion:(id)arg2;
-- (void)flushCachedImageSets;
 - (id)passLibrary;
 - (void)setPassLibrary:(id)arg1;
 - (void)setSettings:(int)arg1;

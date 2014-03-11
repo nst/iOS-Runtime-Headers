@@ -17,7 +17,6 @@
     PLCloudSharedComment *_justInsertedComment;
     BOOL _justTappedSmileButton;
     float _keyboardOverlap;
-    BOOL _lastRowMasked;
     CAGradientLayer *_maskLayer;
     BOOL _shouldAdjustInitialScrollPosition;
     UIView *_tableContainerView;
@@ -30,7 +29,6 @@
 @property <PLCommentsViewControllerDelegate> * commentsControllerDelegate;
 @property BOOL editMode;
 @property(retain) PLCloudSharedComment * justInsertedComment;
-@property BOOL lastRowMasked;
 
 - (void)_addCommentButtonTapped:(id)arg1;
 - (void)_adjustInitialScrollPosition:(BOOL)arg1;
@@ -59,7 +57,6 @@
 - (BOOL)editMode;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)justInsertedComment;
-- (BOOL)lastRowMasked;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)photoCommentEntryViewHeightDidChange:(id)arg1;
@@ -68,11 +65,9 @@
 - (void)scrollToComment:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setAsset:(id)arg1;
-- (void)setBottomMaskEnabled:(BOOL)arg1;
 - (void)setCommentsControllerDelegate:(id)arg1;
 - (void)setEditMode:(BOOL)arg1;
 - (void)setJustInsertedComment:(id)arg1;
-- (void)setLastRowMasked:(BOOL)arg1;
 - (void)setRasterization:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldShowCommentPostingUI;

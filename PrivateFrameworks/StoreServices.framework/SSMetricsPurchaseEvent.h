@@ -7,10 +7,19 @@
 @interface SSMetricsPurchaseEvent : SSMetricsBaseEvent {
 }
 
+@property double requestStartTime;
+@property double responseEndTime;
+@property double responseStartTime;
 @property(retain) NSString * transactionIdentifier;
 
 - (void)addFieldsFromPurchaseResponse:(id)arg1;
 - (id)init;
+- (double)requestStartTime;
+- (double)responseEndTime;
+- (double)responseStartTime;
+- (void)setRequestStartTime:(double)arg1;
+- (void)setResponseEndTime:(double)arg1;
+- (void)setResponseStartTime:(double)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)transactionIdentifier;
 

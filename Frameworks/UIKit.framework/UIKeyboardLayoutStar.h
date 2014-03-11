@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIDelayedAction, UIKBBackgroundView, UIKBKeyplaneView, UIKBRenderConfig, UIKBTree, UISwipeGestureRecognizer, UIView, UIView<UIKeyboardRivenTransitionView>;
+@class CADisplayLink, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIDelayedAction, UIKBBackgroundView, UIKBKeyplaneView, UIKBRenderConfig, UIKBTree, UIKeyboardSplitTransitionView, UISwipeGestureRecognizer, UIView;
 
 @interface UIKeyboardLayoutStar : UIKeyboardLayout {
     struct CGPoint { 
@@ -43,6 +43,8 @@
     UIKBTree *_keyplane;
     NSString *_keyplaneName;
     UIKBKeyplaneView *_keyplaneView;
+    NSMutableSet *_keysUnderIndicator;
+    NSString *_layoutTag;
     UISwipeGestureRecognizer *_leftSwipeRecognizer;
     NSString *_localizedInputKey;
     UIDelayedAction *_multitapAction;
@@ -75,7 +77,7 @@
     id _spaceTarget;
     BOOL _swipeDetected;
     id _touchInfo;
-    UIView<UIKeyboardRivenTransitionView> *_transitionView;
+    UIKeyboardSplitTransitionView *_transitionView;
     BOOL _unshiftAfterMultitap;
     UISwipeGestureRecognizer *_upSwipeRecognizer;
     NSMutableSet *_validInputStrings;
@@ -90,6 +92,7 @@
 @property(copy) NSString * keyboardName;
 @property(readonly) UIKBTree * keyplane;
 @property(copy) NSString * keyplaneName;
+@property(retain) NSString * layoutTag;
 @property(copy) NSString * localizedInputKey;
 @property(readonly) NSString * localizedInputMode;
 @property int playKeyClickSoundOn;
@@ -97,15 +100,19 @@
 @property(retain) UIKBRenderConfig * renderConfig;
 @property(getter=isRotating,readonly) BOOL rotating;
 @property BOOL shift;
-@property(readonly) BOOL showDictationKey;
-@property BOOL showIntlKey;
+@property(readonly) BOOL showsDictationKey;
+@property(readonly) BOOL showsInternationalKey;
 
++ (Class)_subclassForScreenTraits:(id)arg1;
++ (void)accessibilitySensitivityChanged;
 + (id)keyboardFromFactoryWithName:(id)arg1 screen:(id)arg2;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
-+ (id)keyboardWithName:(id)arg1 screen:(id)arg2;
++ (id)keyboardWithName:(id)arg1 screenTraits:(id)arg2;
++ (id)sharedRivenKeyplaneGenerator;
 
 - (void)_autoSplit:(id)arg1;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
+- (void)accessibilitySensitivityChanged;
 - (void)activateCompositeKey:(id)arg1 direction:(int)arg2 flickString:(id)arg3 popupInfo:(id)arg4;
 - (id)activationIndicatorView;
 - (id)activeKey;
@@ -216,6 +223,7 @@
 - (id)keyplaneNameForRevertAfterTouch;
 - (id)keyplaneNamed:(id)arg1;
 - (double)lastTouchUpTimestamp;
+- (id)layoutTag;
 - (id)localizedInputKey;
 - (id)localizedInputMode;
 - (void)logHandwritingData;
@@ -237,7 +245,6 @@
 - (id)preTouchKeyplaneName;
 - (void)prepareForSplitTransition;
 - (void)rebuildSplitTransitionView;
-- (void)rebuildSplitTransitionViewFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
 - (void)refreshForDictationAvailablityDidChange;
 - (void)refreshForRivenPreferences;
 - (void)refreshGhostKeyState;
@@ -257,6 +264,8 @@
 - (void)setCompositeImage:(id)arg1 forKey:(id)arg2;
 - (void)setCurrencyKeysForCurrentLocaleOnKeyplane:(id)arg1;
 - (void)setDidLongPress:(BOOL)arg1;
+- (void)setDisableInteraction:(BOOL)arg1;
+- (void)setHideKeysUnderIndicator:(BOOL)arg1;
 - (void)setKeyForTouchInfo:(id)arg1 key:(id)arg2;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardDim:(BOOL)arg1 amount:(float)arg2 withDuration:(float)arg3;
@@ -268,12 +277,12 @@
 - (void)setLayoutTag:(id)arg1;
 - (void)setLocalizedInputKey:(id)arg1;
 - (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
+- (void)setPasscodeOutlineAlpha:(float)arg1;
 - (void)setPlayKeyClickSoundOn:(int)arg1;
 - (void)setPreTouchKeyplaneName:(id)arg1;
 - (void)setRenderConfig:(id)arg1;
 - (void)setReturnKeyEnabled:(BOOL)arg1 withDisplayName:(id)arg2 withType:(int)arg3;
 - (void)setShift:(BOOL)arg1;
-- (void)setShowIntlKey:(BOOL)arg1;
 - (void)setSplit:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSplitProgress:(float)arg1;
 - (void)setState:(int)arg1 forKey:(id)arg2;
@@ -288,14 +297,14 @@
 - (BOOL)shouldShowDictationKey;
 - (BOOL)shouldShowIndicator;
 - (BOOL)shouldSkipResponseToGlobeKey:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)showDictationKey;
 - (void)showFlickView:(int)arg1 withKey:(id)arg2 flickString:(id)arg3;
-- (BOOL)showIntlKey;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
 - (void)showMenu:(id)arg1 forKey:(id)arg2;
 - (void)showPopupVariantsForKey:(id)arg1;
 - (void)showPopupView:(int)arg1 withKey:(id)arg2 popupInfo:(id)arg3 force:(BOOL)arg4;
 - (void)showSplitTransitionView:(BOOL)arg1;
+- (BOOL)showsDictationKey;
+- (BOOL)showsInternationalKey;
 - (id)simulateTouch:(struct CGPoint { float x1; float x2; })arg1;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (id)splitNameForKeyplane:(id)arg1;
@@ -322,6 +331,7 @@
 - (void)updateGlobeKeyDisplayString;
 - (void)updateKeyCentroids;
 - (void)updateKeyboardForKeyplane:(id)arg1;
+- (void)updateLayoutTags;
 - (void)updateLocalizedKeys:(BOOL)arg1;
 - (void)updateLocalizedKeysOnKeyplane:(id)arg1;
 - (void)updateMoreAndInternationalKeys;

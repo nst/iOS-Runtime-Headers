@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface AWDWiFiMetricLinkChangeData : PBCodable {
+@interface AWDWiFiMetricLinkChangeData : PBCodable <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -117,6 +117,7 @@
 - (unsigned int)channelWidth;
 - (void)clearRssiHistorys;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

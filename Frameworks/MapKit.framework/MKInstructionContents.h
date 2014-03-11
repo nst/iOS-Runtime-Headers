@@ -38,6 +38,7 @@
 + (id)contentsWithRoute:(id)arg1 step:(id)arg2;
 + (id)contentsWithSubstep:(id)arg1 transportType:(int)arg2;
 
+- (void).cxx_destruct;
 - (id)_exitNumberFromNameInfo:(id)arg1;
 - (id)_instructionForArrival;
 - (id)_instructionForBranch;
@@ -59,7 +60,6 @@
 - (id)_walkingInstructionForTurn;
 - (id)_walkingInstructionForUTurn;
 - (id)branchNames;
-- (void)dealloc;
 - (id)description;
 - (id)destinationName;
 - (id)exitNumber;

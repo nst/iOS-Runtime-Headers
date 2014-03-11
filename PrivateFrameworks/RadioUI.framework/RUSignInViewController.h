@@ -14,6 +14,7 @@
             float width; 
             float height; 
         } size; 
+    int _accountChangeIgnoreCount;
     SKUICircleProgressIndicator *_activityIndicatorView;
     UITextField *_appleIDTextField;
     UILabel *_appleIDTitleLabel;
@@ -25,6 +26,7 @@
     MPUShapeView *_entryContentView;
     UIButton *_forgotPasswordButton;
     BOOL _isAuthenticating;
+    BOOL _isLoading;
     } _keyboardFrame;
     UILabel *_loadingLabel;
     UITextField *_passwordTextField;
@@ -35,15 +37,19 @@
 @property <RUSignInViewControllerDelegate> * delegate;
 
 - (void).cxx_destruct;
+- (void)_accountStoreDidChangeNotification:(id)arg1;
+- (void)_beginIgnoringAccountChanges;
 - (void)_cancelAction:(id)arg1;
 - (void)_continueAction:(id)arg1;
 - (void)_createAccountAction:(id)arg1;
 - (void)_dismissKeyboardAction:(id)arg1;
+- (void)_endIgnoringAccountChanges;
 - (void)_forgotPasswordAction:(id)arg1;
 - (void)_keyboardWillChangeFrameNotification:(id)arg1;
 - (void)_keyboardWillHideNotification:(id)arg1;
 - (void)_setLoading:(BOOL)arg1;
 - (void)_textFieldDidChangeAction:(id)arg1;
+- (void)_updateAccountRelatedControls;
 - (void)_updateContinueButtonVisibilityAnimated:(BOOL)arg1;
 - (void)dealloc;
 - (id)delegate;

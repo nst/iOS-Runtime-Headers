@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString, NSMutableAttributedString, NSMutableDictionary, NSString, UIColor, UIFont, _UILabelScaledMetrics;
+@class NSAttributedString, NSMutableDictionary, NSString, UIColor, UIFont, _UILabelScaledMetrics;
 
 @interface UILabel : UIView <NSCoding> {
     struct CGSize { 
@@ -29,7 +29,8 @@
         unsigned int drawsDebugBaselines : 1; 
         unsigned int explicitBaselineOffset : 1; 
         unsigned int usesSimpleTextEffects : 1; 
-    NSMutableAttributedString *_attributedText;
+        unsigned int isComplexString : 1; 
+    id _content;
     NSMutableDictionary *_defaultAttributes;
     UIColor *_highlightedColor;
     float _lastLineBaseline;
@@ -44,6 +45,7 @@
     } _size;
     NSAttributedString *_synthesizedAttributedText;
     } _textLabelFlags;
+    BOOL _wantsUnderlineForAccessibilityButtonShapesEnabled;
 }
 
 @property(readonly) float _capOffsetFromBoundsTop;
@@ -54,6 +56,8 @@
 @property(readonly) float _lastLineBaseline;
 @property(setter=_setLastLineBaselineFrameOriginY:) float _lastLineBaselineFrameOriginY;
 @property(getter=_synthesizedAttributedText,setter=_setSynthesizedAttributedText:,retain) NSAttributedString * _synthesizedAttributedText;
+@property(setter=_setWantsUnderlineForAccessibilityButtonShapesEnabled:) BOOL _wantsUnderlineForAccessibilityButtonShapesEnabled;
+@property(setter=_setWantsUnderlineForAccessibilityButtonShapesEnabled:) BOOL _wantsUnderlineForAccessibilityButtonShapesEnabled;
 @property BOOL adjustsFontSizeToFitWidth;
 @property BOOL adjustsLetterSpacingToFitWidth;
 @property(copy) NSAttributedString * attributedText;
@@ -80,6 +84,8 @@
 + (id)defaultFont;
 
 - (void)MPU_configureWithTextAttributes:(id)arg1;
+- (void)_accessibilityButtonShapesChangedNotification:(id)arg1;
+- (void)_accessibilityButtonShapesParametersDidChange;
 - (float)_actualScaleFactor;
 - (id)_associatedScalingLabel;
 - (BOOL)_attributedStringHasAttributesNotCoveredByPrimitives;
@@ -90,6 +96,7 @@
 - (id)_compatibilityAttributedString;
 - (void)_coordinateBeginTimeForMarqueeAnimations:(double)arg1;
 - (id)_defaultAttributes;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (id)_disabledFontColor;
 - (void)_drawFullMarqueeTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 baselineCalculationOnly:(BOOL)arg2;
@@ -102,6 +109,7 @@
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateAsNeededForNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_invalidateDefaultAttributes;
+- (void)_invalidateSynthesizedAttributedTextAndLayout;
 - (void)_invalidateTextSize;
 - (BOOL)_isTextFieldCenteredLabel;
 - (float)_lastLineBaseline;
@@ -114,6 +122,7 @@
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
 - (void)_prepareForSecondIntrinsicContentSizeCalculationWithEngine:(id)arg1;
 - (id)_scriptingInfo;
+- (void)_setAttributedText:(id)arg1 andTakeOwnership:(BOOL)arg2;
 - (void)_setColor:(id)arg1;
 - (void)_setDefaultAttributes:(id)arg1;
 - (void)_setDrawsDebugBaselines:(BOOL)arg1;
@@ -131,18 +140,24 @@
 - (void)_setTextAlignment:(int)arg1;
 - (void)_setTextColor:(id)arg1;
 - (void)_setUsesSimpleTextEffects:(BOOL)arg1;
+- (void)_setWantsUnderlineForAccessibilityButtonShapesEnabled:(BOOL)arg1;
+- (void)_setWantsUnderlineForAccessibilityButtonShapesEnabled:(BOOL)arg1;
 - (void)_setWordRoundingEnabled:(BOOL)arg1;
 - (id)_shadow;
+- (BOOL)_shouldCeilSizeToViewScale;
 - (BOOL)_shouldDrawUnderlinesLikeWebKit;
+- (BOOL)_shouldShowAccessibilityButtonShapesUnderline;
 - (id)_siblingMarqueeLabels;
 - (void)_startMarquee;
 - (void)_startMarqueeIfNecessary;
 - (void)_stopMarqueeWithRedisplay:(BOOL)arg1;
 - (id)_stringDrawingContext;
 - (id)_synthesizedAttributedText;
+- (id)_synthesizedTextAttributes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2 includingShadow:(BOOL)arg3;
 - (BOOL)_updateScaledMetricsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_usesSimpleTextEffects;
+- (BOOL)_wantsUnderlineForAccessibilityButtonShapesEnabled;
 - (BOOL)adjustsFontSizeToFitWidth;
 - (BOOL)adjustsLetterSpacingToFitWidth;
 - (id)attributedText;

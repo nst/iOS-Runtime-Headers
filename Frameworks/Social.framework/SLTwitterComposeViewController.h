@@ -15,7 +15,9 @@
 - (void)loadView;
 - (void)presentNoAccountsAlert;
 - (id)session;
+- (void)sheetPresentationAnimationDidFinish;
 - (void)tearDownSession;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

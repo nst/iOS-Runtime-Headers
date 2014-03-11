@@ -2,25 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSManagedObject, NSManagedObjectContext, NSURL;
+@class NSURL;
 
-@interface RadioAudioClip : RadioTrack <RadioManagedObjectWrapperProtocol> {
-    BOOL _isSkipable;
+@interface RadioAudioClip : RadioTrack {
 }
 
-@property(copy) NSURL * assetURL;
-@property(readonly) NSManagedObjectContext * context;
-@property(readonly) BOOL isSkipable;
-@property BOOL isSkippable;
-@property(readonly) NSManagedObject * managedObject;
-@property long long purchaseID;
+@property(readonly) NSURL * assetURL;
+@property(readonly) long long purchaseID;
+@property(getter=isSkipable,readonly) BOOL skipable;
 
 - (id)assetURL;
 - (BOOL)isSkipable;
-- (BOOL)isSkippable;
 - (long long)purchaseID;
-- (void)setAssetURL:(id)arg1;
-- (void)setIsSkippable:(BOOL)arg1;
-- (void)setPurchaseID:(long long)arg1;
 
 @end

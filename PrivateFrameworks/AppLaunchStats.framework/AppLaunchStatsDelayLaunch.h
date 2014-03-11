@@ -21,5 +21,6 @@
 - (void)save:(id)arg1;
 - (void)saveContext:(id)arg1;
 - (bool)shouldDelayLaunch:(id)arg1 forTrending:(bool)arg2;
+- (int)valueSetForDelay:(id)arg1;
 
 @end

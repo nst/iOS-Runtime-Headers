@@ -43,7 +43,6 @@
 - (void)_invalidateSyncProgressAlbums;
 - (id)_itemPathForLocationInGesture:(id)arg1;
 - (id)_lastZoomInTransitionAnchorIndexPath;
-- (void)_navigateToLowerZoomLevelWithReferenceItemPath:(id)arg1;
 - (void)_reclaimCollectionView;
 - (void)_setCurrentGridZoomTransitionInfo:(id)arg1;
 - (void)_setGridPinchGestureRecognizer:(id)arg1;
@@ -58,8 +57,8 @@
 - (BOOL)allowSlideshowButton;
 - (id)bestTransitionReferenceItemIndexPathOutIsFromLastTransition:(BOOL*)arg1 outIsExplicit:(BOOL*)arg2;
 - (BOOL)canBeginStackCollapseTransition;
-- (BOOL)canBeginZoomIntoPhotoTransition;
 - (BOOL)canDisplayEditButton;
+- (BOOL)canNavigateToPhotoInteractively:(BOOL)arg1;
 - (void)collectionView:(id)arg1 didEndDisplayingSupplementaryView:(id)arg2 forElementOfKind:(id)arg3 atIndexPath:(id)arg4;
 - (id)collectionView:(id)arg1 transitionLayoutForOldLayout:(id)arg2 newLayout:(id)arg3;
 - (BOOL)collectionViewPointInSectionHeader:(struct CGPoint { float x1; float x2; })arg1;
@@ -83,6 +82,7 @@
 - (BOOL)isTransitionAutoAdjustContentOffsetEnabled;
 - (id)magnifiedImageViewController;
 - (id)magnifiedImageViewControllerCreatingIfNecessary:(BOOL)arg1;
+- (void)navigateToLowerZoomLevelWithReferenceItemPath:(id)arg1;
 - (id)newGridLayout;
 - (id)preheatManager;
 - (void)prepareForTransitionToZoomableViewController:(id)arg1 anchorItemIndexPath:(id)arg2 anchorShiftsColumns:(BOOL)arg3 animated:(BOOL)arg4 interactive:(BOOL)arg5;

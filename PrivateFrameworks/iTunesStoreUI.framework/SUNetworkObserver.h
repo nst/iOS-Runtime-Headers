@@ -9,6 +9,7 @@
     NSString *_partnerIdentifier;
     BOOL _partnersEnabled;
     NSTimer *_startupTimer;
+    int _storeServicesNetworkUsageCount;
 }
 
 @property(retain) NSString * partnerIdentifier;
@@ -26,6 +27,8 @@
 - (void)_networkUsageStateChanged:(id)arg1;
 - (void)_partnerHeaderChanged:(id)arg1;
 - (void)_startupTimer:(id)arg1;
+- (void)_storeServicesNetworkStartNotification:(id)arg1;
+- (void)_storeServicesNetworkStopNotification:(id)arg1;
 - (void)_updateNetworkActivityIndicator;
 - (void)checkPartnerAvailability;
 - (void)dealloc;

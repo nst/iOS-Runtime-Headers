@@ -302,9 +302,11 @@
 - (void)invalidateDefaultFontHeights;
 - (void)invalidateDynamicResizeInfo;
 - (void)invalidateTableNameHeight;
+- (BOOL)isDynamicallyChangingColumnCount;
 - (BOOL)isDynamicallyChangingContent;
 - (BOOL)isDynamicallyChangingFontColorOfCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)isDynamicallyChangingInfoGeometry;
+- (BOOL)isDynamicallyChangingRowCount;
 - (BOOL)isDynamicallyChangingRowOrColumnCount;
 - (BOOL)isDynamicallyChangingSelection;
 - (BOOL)isDynamicallyColumnTabResizing;
@@ -381,7 +383,7 @@
 - (void)updateDynamicHidingRowsCols:(int)arg1 hidingCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (void)updateDynamicHidingText:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)updateDynamicInfoGeometry:(id)arg1;
-- (void)updateDynamicRepressFrozenHeader;
+- (void)updateDynamicRepressFrozenHeader:(BOOL)arg1;
 - (void)updateDynamicResize:(int)arg1 resizingRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 resizeAdjustment:(float)arg3;
 - (void)updateDynamicResizeInfo:(id)arg1;
 - (void)updateDynamicRevealingRowsCols:(int)arg1 revealingCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;

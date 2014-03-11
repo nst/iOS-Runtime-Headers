@@ -76,6 +76,7 @@
 - (BOOL)_canEnableRefresh;
 - (void)_cancelMaximumTimeElapsedTimeout;
 - (void)_cancelSyncCompletedTimeout;
+- (id)_cellIdentifierWithSubtitle:(BOOL)arg1;
 - (int)_declinedEventsSwitchSection;
 - (void)_eventStoreChanged:(id)arg1;
 - (id)_filterCalendars:(id)arg1;
@@ -183,7 +184,6 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableView;

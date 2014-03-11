@@ -42,6 +42,7 @@
 - (void)p_applyAttributes:(id)arg1 forRep:(id)arg2 animationLayer:(id)arg3;
 - (int)p_buildTypeForAnimatedBuild:(id)arg1;
 - (unsigned int)p_deliveryStyleFromAnimatedBuild:(id)arg1;
+- (float)p_scaleForAttributes:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformByApplyingTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 centeredAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForAttributes:(id)arg1 rep:(id)arg2;
 - (void)renderFrameWithContext:(id)arg1;

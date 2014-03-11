@@ -74,6 +74,7 @@
 - (void)_handleLatestDeviceMotion;
 - (BOOL)_hasMotionEffectsForView:(id)arg1;
 - (BOOL)_isSuspended;
+- (BOOL)_motionEffect:(id)arg1 belongsToView:(id)arg2;
 - (BOOL)_motionEffectsAreSuspendedForView:(id)arg1;
 - (id)_motionEffectsForView:(id)arg1;
 - (void)_scheduleUpdateWithDeviceMotion:(const struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; boolx6; boolx7; boolx8; }*)arg1 timestamp:(double)arg2;

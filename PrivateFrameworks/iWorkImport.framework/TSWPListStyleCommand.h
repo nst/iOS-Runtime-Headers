@@ -12,6 +12,7 @@
 - (id)actionString;
 - (void)dealloc;
 - (void)doCommit;
+- (void)doUndoRedo;
 - (id)initWithStorage:(id)arg1 selection:(id)arg2 listStyle:(id)arg3 createVariationUsingPropertyMap:(id)arg4;
 - (id)initWithStorage:(id)arg1 selection:(id)arg2 listStyle:(id)arg3;
 - (int)persistenceKind;

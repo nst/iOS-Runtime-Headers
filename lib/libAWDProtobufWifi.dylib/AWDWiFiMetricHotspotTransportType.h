@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufWifi.dylib
  */
 
-@interface AWDWiFiMetricHotspotTransportType : PBCodable {
+@interface AWDWiFiMetricHotspotTransportType : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int bt : 1; 
@@ -26,7 +26,7 @@
 
 - (unsigned int)bt;
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBt;

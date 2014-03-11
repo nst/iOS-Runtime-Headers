@@ -6,6 +6,7 @@
 }
 
 - (BOOL)_reloadWithPlaybackContext:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
+- (id)errorResolverForItem:(id)arg1;
 - (id)init;
 - (Class)itemClass;
 - (id)mix;

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDFaceTimeCallConnected : PBCodable {
+@interface AWDFaceTimeCallConnected : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectDuration : 1; 
@@ -56,6 +56,7 @@
 - (unsigned int)connectDuration;
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)currentNatType;
 - (void)dealloc;
 - (id)description;

@@ -30,7 +30,6 @@
 - (void)_cancelAction:(id)arg1;
 - (void)_datePickerAction:(id)arg1;
 - (void)_finishValidationWithResponse:(id)arg1 error:(id)arg2;
-- (id)_headerImage;
 - (id)_headerView;
 - (id)_itemImage;
 - (id)_itemView;

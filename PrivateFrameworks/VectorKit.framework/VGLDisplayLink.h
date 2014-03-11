@@ -7,10 +7,7 @@
 @interface VGLDisplayLink : NSObject {
     CADisplay *_display;
     CADisplayLink *_displayLink;
-    int _frameInterval;
-    BOOL _paused;
     SEL _selector;
-    int _skippedFrames;
     id _target;
 }
 
@@ -20,6 +17,7 @@
 @property(readonly) double timestamp;
 
 - (void)_displayLinkFired:(id)arg1;
+- (void)_setup;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;
 - (id)display;

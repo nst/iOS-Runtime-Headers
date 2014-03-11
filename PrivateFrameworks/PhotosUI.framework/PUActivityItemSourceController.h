@@ -19,6 +19,7 @@
 - (void)addAsset:(id)arg1;
 - (id)assetItemSources;
 - (id)assets;
+- (void)cancelRemaking;
 - (int)countOfAssetType:(short)arg1;
 - (void)removeAsset:(id)arg1;
 - (void)setActivityViewController:(id)arg1;

@@ -30,12 +30,14 @@
     VKMapModel *_mapModel;
     VGLMesh *_mesh;
     } _projection;
+    unsigned int _renderPass;
     VGLRenderState *_renderState;
     BOOL _simpleGridEnabled;
 }
 
 @property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } fillColor;
 @property VKMapModel * mapModel;
+@property unsigned int renderPass;
 @property BOOL simpleGridEnabled;
 @property(readonly) VKStylesheet * stylesheet;
 
@@ -43,13 +45,15 @@
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (void)drawScene:(id)arg1 withContext:(id)arg2 pass:(unsigned int)arg3;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })fillColor;
 - (id)init;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
 - (id)mapModel;
+- (unsigned int)renderPass;
 - (void)setMapModel:(id)arg1;
+- (void)setRenderPass:(unsigned int)arg1;
 - (void)setSimpleGridEnabled:(BOOL)arg1;
 - (BOOL)simpleGridEnabled;
 - (id)stylesheet;

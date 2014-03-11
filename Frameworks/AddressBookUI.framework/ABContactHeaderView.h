@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPresenterDelegate>, ABContactPhotoView, CNContact, NSArray, NSDictionary, NSString, UIColor, UILabel, UITableView, UIView;
+@class <ABPresenterDelegate>, ABCachingTableView, ABContactPhotoView, CNContact, NSArray, NSDictionary, NSString, UIColor, UILabel, UIView;
 
 @interface ABContactHeaderView : UIView <UITableViewDelegate, UITableViewDataSource, ABPropertyGroupItemDelegate> {
     struct UIEdgeInsets { 
@@ -17,12 +17,15 @@
     <ABPresenterDelegate> *_delegate;
     BOOL _editing;
     NSArray *_editingGroups;
-    UITableView *_editingTable;
+    ABCachingTableView *_editingTable;
+    NSArray *_headerConstraints;
     NSString *_message;
     UILabel *_nameLabel;
     NSDictionary *_nameTextAttributes;
+    BOOL _needsReload;
     UIView *_personHeaderView;
     ABContactPhotoView *_photoView;
+    UIView *_sizedToFitForSuperview;
     UILabel *_taglineLabel;
     NSDictionary *_taglineTextAttributes;
 }
@@ -33,14 +36,22 @@
 @property <ABPresenterDelegate> * delegate;
 @property(getter=isEditing) BOOL editing;
 @property(retain) NSArray * editingGroups;
+@property(retain) NSArray * headerConstraints;
 @property(retain) NSString * message;
 @property(copy) NSDictionary * nameTextAttributes;
+@property(retain) UIView * personHeaderView;
+@property UIView * sizedToFitForSuperview;
 @property(copy) NSDictionary * taglineTextAttributes;
 
++ (id)contactHeaderViewWithContact:(id)arg1 editingGroups:(id)arg2 personHeaderView:(id)arg3;
++ (void)preCacheContent;
++ (void)preCacheDisplay;
++ (void)preCacheEdit;
 + (BOOL)requiresConstraintBasedLayout;
 
 - (id)_headerStringForContact:(id)arg1;
 - (float)_labelsVSpacing;
+- (id)_phoneticNameForValue:(id)arg1 isFamilyName:(BOOL)arg2;
 - (id)_taglineStringForContact:(id)arg1;
 - (float)_topMarginToNameBaselineWithName:(id)arg1 tagline:(id)arg2;
 - (void)_updatePhotoView;
@@ -56,13 +67,16 @@
 - (id)delegate;
 - (id)editingGroups;
 - (void)handleNameLabelLongPress:(id)arg1;
+- (id)headerConstraints;
 - (id)initWithContact:(id)arg1 withEditingGroups:(id)arg2 personHeaderView:(id)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (BOOL)isEditing;
 - (void)menuWillHide:(id)arg1;
 - (id)message;
 - (id)nameTextAttributes;
-- (void)propertyItem:(id)arg1 didChangeValue:(id)arg2;
+- (id)personHeaderView;
+- (void)propertyItem:(id)arg1 willChangeValue:(id)arg2;
 - (void)reloadData;
+- (void)reloadDataIfNeeded;
 - (void)saveContactPhoto;
 - (id)selectEditingGroupAtIndex:(unsigned int)arg1;
 - (void)setAlternateName:(id)arg1;
@@ -70,12 +84,17 @@
 - (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
+- (void)setEditingGroups:(id)arg1 withUpdate:(BOOL)arg2;
 - (void)setEditingGroups:(id)arg1;
+- (void)setHeaderConstraints:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNameTextAttributes:(id)arg1;
-- (void)setNeedsUpdateConstraints;
+- (void)setNeedsReload;
+- (void)setPersonHeaderView:(id)arg1;
+- (void)setSizedToFitForSuperview:(id)arg1;
 - (void)setTaglineTextAttributes:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)sizedToFitForSuperview;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

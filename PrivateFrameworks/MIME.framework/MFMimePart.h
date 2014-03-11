@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFMimePart, MFPartialNetworkData, MFWeakReferenceHolder, NSData, NSMutableDictionary, NSString, NSURL;
+@class MFMimePart, MFPartialNetworkDataConsumer, MFWeakReferenceHolder, NSData, NSMutableDictionary, NSString, NSURL;
 
 @interface MFMimePart : NSObject {
     struct _NSRange { 
@@ -18,7 +18,7 @@
     MFWeakReferenceHolder *_parent;
     NSURL *_parentPartURL;
     NSURL *_partURL;
-    MFPartialNetworkData *_partialData;
+    MFPartialNetworkDataConsumer *_partialDataConsumer;
     } _range;
     NSString *_subtype;
     NSString *_type;

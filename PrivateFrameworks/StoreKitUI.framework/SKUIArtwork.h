@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, NSURL;
+@class NSMutableDictionary, NSString, NSURL;
 
 @interface SKUIArtwork : NSObject <SKUICacheCoding> {
     int _height;
     NSURL *_url;
+    NSString *_urlString;
     int _width;
 }
 

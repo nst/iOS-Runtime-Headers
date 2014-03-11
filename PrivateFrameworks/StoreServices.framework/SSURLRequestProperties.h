@@ -10,6 +10,7 @@
 
 @interface SSURLRequestProperties : NSObject <SSXPCCoding, NSCoding, NSCopying, NSMutableCopying> {
     int _allowedRetryCount;
+    BOOL _allowsBootstrapCellularData;
     unsigned int _cachePolicy;
     NSString *_clientAuditBundleIdentifier;
     NSData *_clientAuditTokenData;
@@ -21,11 +22,12 @@
     NSDictionary *_httpHeaders;
     NSString *_httpMethod;
     BOOL _isITunesStoreRequest;
+    int _kbsyncType;
     BOOL _largeDownload;
     unsigned int _networkServiceType;
     NSDictionary *_requestParameters;
     BOOL _requiresExtendedValidationCertificates;
-    BOOL _shouldAddKBSyncData;
+    BOOL _requiresHTTPS;
     BOOL _shouldDecodeResponse;
     BOOL _shouldDisableCellular;
     BOOL _shouldDisableCellularFallback;
@@ -45,12 +47,14 @@
 @property(readonly) NSDictionary * HTTPHeaders;
 @property(readonly) NSString * HTTPMethod;
 @property(getter=isITunesStoreRequest,readonly) BOOL ITunesStoreRequest;
+@property(readonly) int KBSyncType;
 @property(readonly) NSURL * URL;
 @property(readonly) NSString * URLBagKey;
 @property(readonly) int URLBagType;
 @property(readonly) id URLBagURLBlock;
 @property(readonly) NSArray * URLs;
 @property(readonly) int allowedRetryCount;
+@property(readonly) BOOL allowsBootstrapCellularData;
 @property(readonly) unsigned int cachePolicy;
 @property(readonly) BOOL canBeResolved;
 @property(readonly) NSString * clientAuditBundleIdentifier;
@@ -61,6 +65,7 @@
 @property(readonly) unsigned int networkServiceType;
 @property(readonly) NSDictionary * requestParameters;
 @property(readonly) BOOL requiresExtendedValidationCertificates;
+@property(readonly) BOOL requiresHTTPS;
 @property(readonly) BOOL shouldAddKBSyncData;
 @property(readonly) BOOL shouldDecodeResponse;
 @property(readonly) BOOL shouldDisableCellular;
@@ -75,6 +80,7 @@
 - (id)HTTPBodyStream;
 - (id)HTTPHeaders;
 - (id)HTTPMethod;
+- (int)KBSyncType;
 - (id)URL;
 - (id)URLBagKey;
 - (int)URLBagType;
@@ -82,6 +88,7 @@
 - (id)URLs;
 - (id)_initCommon;
 - (int)allowedRetryCount;
+- (BOOL)allowsBootstrapCellularData;
 - (unsigned int)cachePolicy;
 - (BOOL)canBeResolved;
 - (id)clientAuditBundleIdentifier;
@@ -106,6 +113,7 @@
 - (unsigned int)networkServiceType;
 - (id)requestParameters;
 - (BOOL)requiresExtendedValidationCertificates;
+- (BOOL)requiresHTTPS;
 - (BOOL)shouldAddKBSyncData;
 - (BOOL)shouldDecodeResponse;
 - (BOOL)shouldDisableCellular;

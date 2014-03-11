@@ -17,6 +17,7 @@
 - (void)makeCurrentSelectionPlaceholder:(id)arg1;
 - (id)mediaInfos;
 - (BOOL)p_allSelectedInfosArePlaceholders;
+- (id)p_commandsToSwapConnectionsFromInfo:(id)arg1 infoMap:(id)arg2;
 - (void)p_resetSelectionToInsertedSize:(int)arg1;
 - (void)replaceSelectedMediaWithFileAtURL:(id)arg1;
 - (void)resetSelectionToInsertedSize:(id)arg1;

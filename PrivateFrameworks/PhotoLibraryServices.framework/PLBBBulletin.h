@@ -68,7 +68,7 @@
 - (id)_localizedCountFormatter;
 - (id)albumUUID;
 - (BOOL)allAssetsAreFullResolution;
-- (BOOL)assetWithUUID:(id)arg1 didChangePlaceholderKindTo:(int)arg2 fromOldKind:(int)arg3;
+- (BOOL)assetWithUUID:(id)arg1 didChangePlaceholderKindTo:(short)arg2 fromOldKind:(short)arg3;
 - (id)bulletinByMergingWithBulletin:(id)arg1;
 - (id)bulletinByMergingWithBulletinDictionary:(id)arg1;
 - (long long)bulletinType;

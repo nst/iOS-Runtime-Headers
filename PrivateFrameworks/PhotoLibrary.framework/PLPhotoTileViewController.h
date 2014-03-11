@@ -139,7 +139,7 @@
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 allowZoomToFill:(BOOL)arg3 mode:(int)arg4;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageRef:(struct CGImage { }*)arg2 imageOrientation:(int)arg3 allowZoomToFill:(BOOL)arg4 mode:(int)arg5;
 + (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 modelPhoto:(id)arg2 mode:(int)arg3;
-+ (BOOL)shouldShowPlaceholderForAsset:(id)arg1 useOpaquePlaceholder:(BOOL*)arg2;
++ (BOOL)shouldShowPlaceholderForAsset:(id)arg1;
 + (struct CGSize { float x1; float x2; })tileSize;
 + (struct CGSize { float x1; float x2; })tvOutTileSize;
 
@@ -269,6 +269,7 @@
 - (BOOL)tileIsOnScreen;
 - (id)unscaledImage;
 - (void)updateAfterCollapse;
+- (void)updateAfterZoomTransitionWithImage:(id)arg1;
 - (void)updateForVisibleOverlays:(BOOL)arg1;
 - (void)updateZoomScales;
 - (BOOL)userDidAdjustWallpaper;

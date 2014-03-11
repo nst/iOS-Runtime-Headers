@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableDictionary, NSString, PFUbiquityKnowledgeVector, PFUbiquityPeer, PFUbiquityStoreMetadata, PFUbiquityStoreSaveSnapshot, PFUbiquitySwitchboardCacheWrapper, PFUbiquityTransactionLog, _PFUbiquityStack;
+@class NSDictionary, NSMutableDictionary, NSString, PFUbiquityBaselineHeuristics, PFUbiquityKnowledgeVector, PFUbiquityPeer, PFUbiquityStoreMetadata, PFUbiquityStoreSaveSnapshot, PFUbiquitySwitchboardCacheWrapper, PFUbiquityTransactionLog, _PFUbiquityStack;
 
 @interface PFUbiquityImportContext : NSObject {
     PFUbiquityPeer *_actingPeer;
@@ -11,6 +11,7 @@
     NSString *_exportingPeerID;
     NSMutableDictionary *_globalIDToFetchedObject;
     NSDictionary *_globalIDToLocalIDURICache;
+    PFUbiquityBaselineHeuristics *_heuristics;
     PFUbiquityKnowledgeVector *_kv;
     _PFUbiquityStack *_stack;
     PFUbiquityStoreMetadata *_storeMetadata;
@@ -24,6 +25,7 @@
 @property(retain) NSString * exportingPeerID;
 @property(readonly) NSMutableDictionary * globalIDToFetchedObject;
 @property(retain) NSDictionary * globalIDToLocalIDURICache;
+@property(retain) PFUbiquityBaselineHeuristics * heuristics;
 @property(retain) PFUbiquityKnowledgeVector * knowledgeVector;
 @property(retain) _PFUbiquityStack * stack;
 @property(retain) PFUbiquityStoreMetadata * storeMetadata;
@@ -37,6 +39,7 @@
 - (id)exportingPeerID;
 - (id)globalIDToFetchedObject;
 - (id)globalIDToLocalIDURICache;
+- (id)heuristics;
 - (id)init;
 - (id)initWithStack:(id)arg1 andStoreMetadata:(id)arg2;
 - (id)initWithStoreName:(id)arg1 andUbiquityRootLocation:(id)arg2 withLocalPeerID:(id)arg3;
@@ -47,6 +50,7 @@
 - (void)setCurrentKnowledgeVector:(id)arg1;
 - (void)setExportingPeerID:(id)arg1;
 - (void)setGlobalIDToLocalIDURICache:(id)arg1;
+- (void)setHeuristics:(id)arg1;
 - (void)setKnowledgeVector:(id)arg1;
 - (void)setStack:(id)arg1;
 - (void)setStoreMetadata:(id)arg1;

@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_cancelFlushTimer;
 - (void)_performFlush;
 - (void)addMetricsController:(id)arg1;
 - (void)dealloc;

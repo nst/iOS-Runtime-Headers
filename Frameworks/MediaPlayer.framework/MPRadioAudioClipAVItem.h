@@ -2,44 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, RadioAudioClip, RadioStation, UIImage;
-
-@interface MPRadioAudioClipAVItem : MPAVItem {
-    RadioAudioClip *_audioClip;
-    UIImage *_cachedArtworkImage;
-    RadioStation *_station;
-    NSString *_stationHash;
-    long long _stationID;
-    NSString *_stationName;
+@interface MPRadioAudioClipAVItem : MPRadioAVItem {
 }
 
-@property(retain) RadioStation * station;
-@property(readonly) NSString * stationHash;
-@property(readonly) long long stationID;
-@property(readonly) NSString * stationName;
-
-- (void).cxx_destruct;
-- (void)_applyLoudnessInfoForVolumeNormalization;
-- (id)_cachedArtworkImage;
-- (id)artworkImageData;
-- (id)artworkMIMEType;
 - (id)audioClip;
-- (id)imageCache;
-- (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
 - (id)initWithAudioClip:(id)arg1;
-- (BOOL)isExplicitTrack;
-- (BOOL)isRadioItem;
-- (BOOL)isStreamable;
-- (id)mainTitle;
-- (id)radioTrack;
-- (void)reevaluateType;
-- (void)setStation:(id)arg1;
-- (id)station;
-- (id)stationHash;
-- (long long)stationID;
-- (id)stationName;
+- (void)loadAssetAndPlayerItem;
 - (BOOL)supportsSkip;
-- (id)titlesForTime:(double)arg1;
 - (unsigned int)type;
 
 @end

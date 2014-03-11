@@ -24,6 +24,7 @@
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)dealloc;
+- (void)deselectAllItems;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithSwoosh:(id)arg1;
@@ -34,5 +35,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)unhideImages;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

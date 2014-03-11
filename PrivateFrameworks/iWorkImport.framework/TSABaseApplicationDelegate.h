@@ -20,6 +20,7 @@
 @property(readonly) NSString * tangierEditingFormatDocumentType;
 @property(readonly) NSString * templateDocumentExtension;
 @property(readonly) NSString * templateDocumentType;
+@property(readonly) NSString * templateSFFDocumentType;
 
 + (void)resetSharedConfigurations;
 + (id)sharedDelegate;
@@ -48,5 +49,6 @@
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentExtension;
 - (id)templateDocumentType;
+- (id)templateSFFDocumentType;
 
 @end

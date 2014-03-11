@@ -29,6 +29,7 @@
 - (void)addDataSource:(id)arg1;
 - (bool)canWriteToFile;
 - (void)createFile;
+- (void)dealloc;
 - (void)dumpAllLogs;
 - (id)getTimeStamp;
 - (id)getUniqueFileName;

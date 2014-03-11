@@ -22,6 +22,7 @@
     SLSheetContentView *_contentView;
     int _currentBarMetrics;
     BOOL _didCallPresentSheet;
+    BOOL _didFirstSheetActionLoad;
     BOOL _hasPresentedSheet;
     NSObject<SLSheetViewHostProtocol> *_hostProxy;
     BOOL _isPerformationRotation;
@@ -36,7 +37,6 @@
     int _previewDisplayFormat;
     SLSheetPreviewImageSource *_previewImageSource;
     NSMutableDictionary *_previewOffsets;
-    BOOL _reassembleSheet;
     UIImage *_serviceIconImage;
     } _sheetFrameStartingRotation;
     SLSheetRootViewController *_sheetRootViewController;
@@ -180,7 +180,6 @@
 - (void)updateAttachment:(id)arg1;
 - (void)updateKeyboardSize;
 - (void)updateSheetForBarMetrics:(int)arg1;
-- (void)updateViewConstraints;
 - (void)userTappedSheetAction:(id)arg1;
 - (BOOL)validateAttachments;
 - (BOOL)validateSheetContent;

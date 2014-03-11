@@ -20,12 +20,12 @@
 @property(readonly) UIImageView * rightArrow;
 @property(readonly) UIImageView * topArrow;
 
+- (void).cxx_destruct;
 - (void)_removeArrows;
 - (void)_setupViews;
 - (id)baseView;
 - (id)bottomArrow;
 - (id)currentArrowContainer;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leftArrow;
 - (id)rightArrow;

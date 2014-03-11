@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPInlineVideoController, MPSwipableView, MPVideoPlaybackOverlayView, NSTimer, UIActivityIndicatorView, UIPinchGestureRecognizer, UITapGestureRecognizer;
+@class MPAVItem, MPInlineVideoController, MPSwipableView, MPVideoPlaybackOverlayView, MPVolumeController, MPWeakTimer, UIActivityIndicatorView, UIPinchGestureRecognizer, UITapGestureRecognizer;
 
-@interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget> {
+@interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPVolumeControllerDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget> {
     int _activeOverlayUserEvents;
     BOOL _disableTaps;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
-    NSTimer *_idleTimer;
+    MPWeakTimer *_idleTimer;
     BOOL _isAnimatingOverlay;
     MPAVItem *_item;
     UIActivityIndicatorView *_loadingIndicator;
@@ -19,6 +19,7 @@
     BOOL _statusBarWasHidden;
     MPSwipableView *_swipableView;
     UITapGestureRecognizer *_tapGestureRecognizer;
+    MPVolumeController *_volumeController;
 }
 
 @property(retain) MPAVItem * item;
@@ -27,7 +28,7 @@
 - (void).cxx_destruct;
 - (void)_hideOverlayAnimated:(BOOL)arg1;
 - (void)_hideOverlayDidEnd;
-- (void)_overlayIdleTimerFired:(id)arg1;
+- (void)_overlayIdleTimerFired;
 - (void)_showOverlayDidEnd;
 - (void)_viewWasPinched:(id)arg1;
 - (void)_viewWasTapped:(id)arg1;
@@ -58,6 +59,7 @@
 - (void)updateOverlayView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

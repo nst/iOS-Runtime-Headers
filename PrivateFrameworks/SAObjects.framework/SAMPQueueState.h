@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAMPMediaItem;
+@class NSNumber, NSString, SAMPMediaItem, SAMPNowPlayingQueuePosition, SANPCommandInfo;
 
 @interface SAMPQueueState : AceObject <SABackgroundContextObject> {
 }
 
 @property(copy) NSString * applicationIdentifier;
 @property(retain) SAMPMediaItem * listeningToItem;
+@property(retain) SANPCommandInfo * nowPlayingCommandInfo;
+@property(retain) SAMPNowPlayingQueuePosition * playbackQueuePosition;
+@property(copy) NSNumber * playbackRate;
 @property(copy) NSString * source;
 @property int state;
 
@@ -19,8 +22,14 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)listeningToItem;
+- (id)nowPlayingCommandInfo;
+- (id)playbackQueuePosition;
+- (id)playbackRate;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setListeningToItem:(id)arg1;
+- (void)setNowPlayingCommandInfo:(id)arg1;
+- (void)setPlaybackQueuePosition:(id)arg1;
+- (void)setPlaybackRate:(id)arg1;
 - (void)setSource:(id)arg1;
 - (void)setState:(int)arg1;
 - (id)source;

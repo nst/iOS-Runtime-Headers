@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIFlowcaseArtworkLoader, SKUIFlowcaseComponent, SKUIFlowcaseViewController, SKUIMissingItemLoader;
+@class NSMutableSet, SKUIFlowcaseArtworkLoader, SKUIFlowcaseComponent, SKUIFlowcaseViewController, SKUIMissingItemLoader;
 
 @interface SKUIFlowcasePageSection : SKUIStorePageSection <SKUIFlowcaseDelegate, SKUIMissingItemDelegate> {
     SKUIFlowcaseArtworkLoader *_artworkLoader;
     SKUIFlowcaseViewController *_flowCaseViewController;
     SKUIMissingItemLoader *_missingItemLoader;
     BOOL _pinned;
+    NSMutableSet *_recordedImpressionIDs;
     int _rotationInterfaceOrientation;
 }
 
@@ -29,7 +30,7 @@
 - (id)flowcase:(id)arg1 imageForItem:(id)arg2 index:(int)arg3 orientation:(int)arg4;
 - (void)flowcaseDidChangeVisibleViews:(id)arg1;
 - (id)initWithPageComponent:(id)arg1;
-- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
+- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (int)numberOfCells;
 - (id)popPinnedHeaderView;
 - (void)prefetchResourcesWithReason:(int)arg1;

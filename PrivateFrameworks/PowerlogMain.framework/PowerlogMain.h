@@ -82,9 +82,11 @@
 - (void)powerlogExitRequested;
 - (BOOL)readLogFilePrefix:(id)arg1 buildVersion:(id*)arg2 logDate:(id*)arg3;
 - (id)remainingStringFrom:(id)arg1 byRemovingPrefix:(id)arg2 byRemovingSuffix:(id)arg3;
+- (void)resetTimstampFormater;
 - (void)rolloverTimerFired:(id)arg1;
 - (id)rotatePowerlogDefaultStringValue;
 - (void)run;
+- (void)runBBPowerTool;
 - (void)runThread:(id)arg1;
 - (void)setBasebandPostProcessing:(BOOL)arg1;
 - (void)setBasebandPostProcessingNotify:(BOOL)arg1;

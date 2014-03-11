@@ -34,7 +34,6 @@
 - (void)createReflectionLayer;
 - (void)dealloc;
 - (id)description;
-- (void)didEndDrawingTilingLayerInBackground:(id)arg1 withToken:(id)arg2;
 - (void)didUpdateEffectLayersForLayer:(id)arg1;
 - (void)didUpdateLayer:(id)arg1;
 - (void)disposeReflectionLayer;
@@ -59,13 +58,14 @@
 - (void)dynamicShadowUpdateToValue:(id)arg1;
 - (void)invalidateShadowLayer;
 - (BOOL)isInvisible;
-- (Class)layerClass;
 - (struct CGImage { }*)newShadowImageWithSize:(struct CGSize { float x1; float x2; })arg1 shadow:(id)arg2 drawSelector:(SEL)arg3 unflipped:(BOOL)arg4;
 - (struct CGImage { }*)newShadowImageWithSize:(struct CGSize { float x1; float x2; })arg1 unflipped:(BOOL)arg2 withChildren:(BOOL)arg3;
 - (float)opacity;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_clipRectInRootForTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)p_drawReflectionInContext:(struct CGContext { }*)arg1;
 - (void)p_drawReflectionIntoReflectionFrameInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 shouldClipGradient:(BOOL)arg4 withBlock:(id)arg5;
 - (struct CGImage { }*)p_newReflectionImageWithSize:(struct CGSize { float x1; float x2; })arg1 applyOpacity:(BOOL)arg2 viewScale:(float)arg3 withBlock:(id)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_rectWithEffectsAppliedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 additionalTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 - (id)pathSourceForSelectionHighlightBehavior;
 - (void)positionShadowLayer:(id)arg1 forShadow:(id)arg2 withNaturalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)processChangedProperty:(int)arg1;
@@ -78,7 +78,6 @@
 - (void)setNeedsDisplay;
 - (id)shadow;
 - (id)shadowLayer;
-- (BOOL)shouldBeginDrawingTilingLayerInBackground:(id)arg1 returningToken:(id*)arg2 andQueue:(id*)arg3;
 - (BOOL)shouldHideSelectionHighlightDueToRectangularPath;
 - (BOOL)shouldShowReflection;
 - (BOOL)shouldShowSelectionHighlight;
@@ -87,7 +86,6 @@
 - (id)styledLayout;
 - (id)textureForContext:(id)arg1;
 - (void)viewScaleDidChange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsForTilingLayer:(id)arg1;
 - (void)willUpdateEffectLayersForLayer:(id)arg1;
 - (void)willUpdateLayer:(id)arg1;
 

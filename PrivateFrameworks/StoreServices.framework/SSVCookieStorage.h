@@ -16,10 +16,13 @@
 + (id)sharedInstance;
 + (id)sharedStorage;
 
+- (id)_allUserIdentifiers;
 - (void)_bindInsertStatement:(struct sqlite3_stmt { }*)arg1 forCookie:(id)arg2 userIdentifier:(id)arg3;
 - (BOOL)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
 - (id)_columnNameForCookieProperty:(id)arg1;
+- (id)_copyCookiesWithUserIdentifier:(id)arg1;
 - (id)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
+- (void)_insertCookies:(id)arg1 forUserIdentifier:(id)arg2;
 - (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)init;
@@ -28,6 +31,7 @@
 - (void)removeCookiesWithProperties:(id)arg1;
 - (void)setCookies:(id)arg1 forUserIdentifier:(id)arg2;
 - (void)setCookiesForHTTPResponse:(id)arg1 userIdentifier:(id)arg2;
+- (void)setCookiesFromCookieStorage:(id)arg1;
 - (id)storageLocation;
 - (void)synchronizeCookies;
 

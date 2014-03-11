@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDate, NSDateComponents, NSString, UIColor, UIFont, _UIDatePickerView;
+@class NSArray, NSDate, NSDateComponents, NSNumberFormatter, NSString, UIColor, UIFont, _UIDatePickerView;
 
 @interface _UIDatePickerMode : NSObject {
     struct _NSRange { 
@@ -20,6 +20,7 @@
     UIFont *_defaultTimeFont;
     unsigned int *_elements;
     UIFont *_font;
+    NSNumberFormatter *_formatter;
     NSString *_localizedFormatString;
     } _maxDayRange;
     } _maxMonthRange;

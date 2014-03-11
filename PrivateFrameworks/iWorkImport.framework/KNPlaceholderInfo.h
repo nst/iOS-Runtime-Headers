@@ -7,40 +7,27 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSString;
-
 @interface KNPlaceholderInfo : TSWPShapeInfo {
     BOOL mIsFromPasteboard;
 }
 
-@property(readonly) NSString * buildImageTitleForBodyPlaceholder;
-@property(readonly) NSString * buildImageTitleForTitlePlaceholder;
-@property(readonly) NSString * buildTitleForBodyPlaceholder;
-@property(readonly) NSString * buildTitleForTitlePlaceholder;
-@property(readonly) BOOL isBulleted;
 @property(readonly) BOOL isFromPasteboard;
 
 + (id)newObjectForUnarchiver:(id)arg1;
 
 - (BOOL)autoListRecognition;
 - (BOOL)autoListTermination;
-- (id)buildImageTitleForBodyPlaceholder;
-- (id)buildImageTitleForTitlePlaceholder;
-- (id)buildTitleForBodyPlaceholder;
-- (id)buildTitleForTitlePlaceholder;
 - (id)copyAsShapeInfoWithContext:(id)arg1;
 - (BOOL)displaysInstructionalText;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)instructionalText;
-- (BOOL)isBulleted;
 - (BOOL)isFromPasteboard;
 - (int)kind;
+- (Class)layoutClass;
 - (void)loadFromArchive:(const struct PlaceholderArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeInfoArchive {} *x3; int x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
 - (Class)repClass;
 - (void)saveToArchive:(struct PlaceholderArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeInfoArchive {} *x3; int x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (BOOL)shouldHideEmptyBullets;
-- (BOOL)shrinkTextToFit;
-- (id)titleForBuildChunk:(id)arg1;
 
 @end

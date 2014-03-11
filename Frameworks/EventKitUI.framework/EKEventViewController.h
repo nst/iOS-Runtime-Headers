@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventViewDelegate>, EKEvent, EKEventDetailItem, EKUIEventStatusButtonsView, NSArray, NSString, SingleToolbarItemContainerView, UIActionSheet, UIAlertView, UITableView, _UIAccessDeniedView;
+@class <EKEventViewDelegate>, EKEvent, EKEventDetailItem, EKUIEventStatusButtonsView, EKUIRecurrenceAlertController, NSArray, SingleToolbarItemContainerView, UITableView, _UIAccessDeniedView;
 
 @interface EKEventViewController : UIViewController <EKEventTitleDetailItemDelegate, EKUIEventStatusButtonsViewDelegate> {
     struct _NSRange { 
@@ -10,8 +10,6 @@
         unsigned int length; 
     BOOL _ICSPreview;
     _UIAccessDeniedView *_accessDeniedView;
-    UIActionSheet *_alertSheet;
-    UIAlertView *_alertView;
     BOOL _allowsEditing;
     BOOL _allowsInviteResponses;
     BOOL _allowsSubitems;
@@ -27,7 +25,6 @@
     int _editorHideTransition;
     int _editorShowTransition;
     EKEvent *_event;
-    NSString *_eventId;
     BOOL _forcePreview;
     BOOL _hideNavigationBar;
     BOOL _ignoreDBChanges;
@@ -39,6 +36,7 @@
     float _leftInset;
     BOOL _needsReload;
     int _pendingStatus;
+    EKUIRecurrenceAlertController *_recurrenceAlertController;
     float _rightInset;
     int _scrollToSection;
     EKEventDetailItem *_selectedEditItem;
@@ -52,6 +50,7 @@
     SingleToolbarItemContainerView *_statusButtonsContainerView;
     EKUIEventStatusButtonsView *_statusButtonsView;
     float _statusButtonsViewCachedFontSize;
+    BOOL _tableIsBeingEdited;
     UITableView *_tableView;
     BOOL _trustsStatus;
 }
@@ -85,14 +84,14 @@
 - (void).cxx_destruct;
 - (void)_acceptButtonPressed:(id)arg1;
 - (void)_addToCalendarClicked:(id)arg1;
-- (void)_alertButtonClickedWithTag:(int)arg1 buttonIndex:(int)arg2;
-- (BOOL)_canDetachSingleOccurrence;
 - (void)_configureItemsForStoreConstraintsGivenCalendar:(id)arg1;
 - (void)_declineButtonPressed:(id)arg1;
 - (void)_deleteClicked:(id)arg1;
 - (void)_dismissEditor:(BOOL)arg1 deleted:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_idealSize;
 - (id)_items;
+- (void)_keyboardWasHidden:(id)arg1;
+- (void)_keyboardWasShown:(id)arg1;
 - (void)_layoutStatusButtonsForInterfaceOrientation:(int)arg1;
 - (void)_localeChanged;
 - (void)_maybeButtonPressed:(id)arg1;
@@ -100,7 +99,6 @@
 - (BOOL)_performSave:(int)arg1 animated:(BOOL)arg2;
 - (void)_pop;
 - (void)_prepareEventForEdit;
-- (void)_presentAlertWithTag:(int)arg1;
 - (void)_presentDetachSheet;
 - (void)_presentValidationAlert:(id)arg1;
 - (void)_refreshEventAndReload;
@@ -126,8 +124,6 @@
 - (void)_updateTableContentForSizeCategoryChange:(id)arg1;
 - (void)_updateTableContentInsetForKeyboard:(id)arg1;
 - (id)accessDeniedView;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowContextProvider:(id)arg1;
 - (BOOL)allowsCalendarPreview;
 - (BOOL)allowsEditing;

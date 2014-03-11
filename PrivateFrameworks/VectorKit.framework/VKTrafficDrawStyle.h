@@ -45,40 +45,16 @@
         } secondaryColor; 
         float pattern[3]; 
         float fadingFactor[2]; 
-    struct VKProfileSparseRamp<int> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                int value; 
-                unsigned char hi; 
-            } v[2]; 
-            int *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
     float animationSpeed;
     float antiAliasingFactor[2];
-    } collisionOrder;
-    } collisionRank;
     float glowFadingRange[2];
-    float incidentBrightness;
     } perSpeedTraffic[4];
     float shiftRange[2];
     } width;
 }
 
-@property(readonly) float incidentBrightness;
-
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (float)incidentBrightness;
 - (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
 - (void)takeFromZoomInvariantProperties:(id)arg1;
 - (id)variant;

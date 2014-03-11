@@ -27,6 +27,7 @@
 - (void)_tableViewController_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_tableViewController_itemDidChangeNotification:(id)arg1;
 - (void)_updateNavigationPrompt;
+- (void)_updateTableViewMinimumHeightAdditions;
 - (void)_updateVisibleCellsPlaybackState;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
@@ -34,14 +35,14 @@
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (BOOL)music_beginPlaybackForVisibleContent;
 - (BOOL)music_hasContent;
+- (void)reloadActionRowsAnimated:(BOOL)arg1;
 - (void)reloadData;
-- (void)scrollViewDidScroll:(id)arg1;
 - (void)searchViewControllerWillBeginSearch:(id)arg1;
 - (void)searchViewControllerWillEndSearch:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;

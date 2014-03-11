@@ -25,6 +25,7 @@
 - (void)animateTransition:(id)arg1;
 - (void)cancelInteractiveTransition;
 - (void)completeInteractiveOperation:(int)arg1 finished:(BOOL)arg2;
+- (void)completeTransition:(BOOL)arg1;
 - (void)finishInteractiveTransition;
 - (id)initWithDuration:(double)arg1;
 - (id)initWithPushDuration:(double)arg1 popDuration:(double)arg2;

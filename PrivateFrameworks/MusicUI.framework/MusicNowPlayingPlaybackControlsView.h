@@ -25,6 +25,8 @@
 @property BOOL usesMiniProgressControl;
 @property(readonly) UIView * viewForPresentingRepeat;
 
++ (unsigned long long)defaultVisibleParts;
+
 - (void).cxx_destruct;
 - (void)_applyRepeatSettingsToButton:(id)arg1;
 - (void)_applyShuffleSettingsToButton:(id)arg1;

@@ -71,6 +71,7 @@
 - (void)setThumbnailTextForBodyPlaceholder:(id)arg1;
 - (void)setThumbnailTextForTitlePlaceholder:(id)arg1;
 - (id)tagforNewPlaceholderInfo:(id)arg1;
+- (id)tagsforNewPlaceholderInfos:(id)arg1;
 - (id)thumbnailTextForBodyPlaceholder;
 - (id)thumbnailTextForPlaceholder:(id)arg1;
 - (id)thumbnailTextForTitlePlaceholder;

@@ -114,6 +114,8 @@
     BOOL _animatingIn;
     VKAnimation *_animation;
     } _cameraModel;
+    BOOL _canZoomIn;
+    BOOL _canZoomOut;
     id _completionHandler;
     double _cruiseHeight;
     double _cruiseHeightOverride;
@@ -122,8 +124,7 @@
     double _endZoomScale;
     } _farthestPoi;
     int _focusStyle;
-    double _horizontalOffset;
-    VKAnimation *_horizontalOffsetAnimation;
+    float _halfPuckSize;
     } _insets;
     BOOL _insetsAnimating;
     VKCameraContext *_lastCameraContext;
@@ -175,8 +176,11 @@
     BOOL _zooming;
 }
 
+@property(readonly) BOOL canZoomIn;
+@property(readonly) BOOL canZoomOut;
 @property(retain) VKMapModel * mapModel;
 @property int panStyle;
+@property float puckSize;
 @property BOOL shouldLimitTopDownHeight;
 @property double tracePlaybackSpeedMultiplier;
 @property <VKTrackingCameraControllerDelegate> * trackingDelegate;
@@ -191,8 +195,11 @@
 - (void)_startTapZoomAnimationFrom:(double)arg1 to:(double)arg2 completionHandler:(id)arg3;
 - (void)_step;
 - (void)_updateCameraForStartAnimation:(double)arg1 position:(struct VKPoint { double x1; double x2; double x3; })arg2 orientation:(const struct { double x1[4][4]; }*)arg3;
+- (void)_updateCanZoom;
 - (void)_updateCruiseHeightAndPhi;
 - (void)_updateVerticalGroundspanForCameraContext:(id)arg1 reference:(struct VKPoint { double x1; double x2; double x3; })arg2 focus:(struct VKPoint { double x1; double x2; double x3; })arg3 offset:(double)arg4;
+- (BOOL)canZoomIn;
+- (BOOL)canZoomOut;
 - (void)canvasFrameDidChange;
 - (void)dealloc;
 - (id)detailedDescription;
@@ -209,13 +216,18 @@
 - (void)puckAnimator:(id)arg1 updatedPosition:(struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; }*)arg2;
 - (void)puckAnimator:(id)arg1 updatedTargetPosition:(struct VKPoint { double x1; double x2; double x3; })arg2;
 - (void)puckAnimatorDidStop:(id)arg1;
+- (float)puckSize;
+- (double)relavantMaxZoomScale;
+- (double)relavantMinZoomScale;
 - (double)relevantZoomScale;
 - (void)resumeIfNeeded;
+- (void)setCanZoomIn:(BOOL)arg1;
+- (void)setCanZoomOut:(BOOL)arg1;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setMapModel:(id)arg1;
 - (void)setPanStyle:(int)arg1;
-- (void)setPuckHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
+- (void)setPuckSize:(float)arg1;
 - (void)setRelevantZoomScale:(double)arg1;
 - (void)setShouldLimitTopDownHeight:(BOOL)arg1;
 - (void)setTracePlaybackSpeedMultiplier:(double)arg1;

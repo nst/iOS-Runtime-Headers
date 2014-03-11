@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUIGiftItemView, SKUIItemStateCenter, SKUIRedeem, SKUIRedeemResultMessageView, SKUITextBoxView, SKUITextLayout, UIButton, UIImage, UIImageView;
+@class NSOperationQueue, SKUIGiftItemView, SKUIItemStateCenter, SKUIRedeem, SKUIRedeemITunesPassLockup, SKUIRedeemResultMessageView, SKUITextBoxView, SKUITextLayout, UIButton, UIImage, UIImageView;
 
 @interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate> {
     UIButton *_anotherButton;
@@ -15,6 +15,7 @@
     SKUIGiftItemView *_itemView;
     SKUIRedeemResultMessageView *_messageView;
     NSOperationQueue *_operationQueue;
+    SKUIRedeemITunesPassLockup *_passbookLockup;
     SKUIRedeem *_redeem;
     int _redeemCategory;
 }
@@ -35,6 +36,8 @@
 - (id)_linksSection;
 - (id)_messageViewSection;
 - (void)_openAction:(id)arg1;
+- (id)_passbookLearnMoreSection;
+- (void)_passbookLockupAction:(id)arg1;
 - (void)_redeemAnotherAction:(id)arg1;
 - (void)_reloadResultViewMessage;
 - (void)_reloadSections;

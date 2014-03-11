@@ -7,6 +7,7 @@
 @interface PUCloudSharedAlbumViewController : PUPhotosAlbumViewController <PLAlbumStreamingOptionsViewControllerDelegate, UIPopoverControllerDelegate, PUVideoTrimQueueControllerDelegate, PUPhotoStreamComposeServiceDelegate> {
     BOOL __canContributeToCloudSharedAlbum;
     UIBarButtonItem *__optionsBarButtonItem;
+    UIBarButtonItem *__optionsBarButtonSpacerItem;
     UIPopoverController *__optionsPopoverController;
     UIViewController *__optionsViewController;
     int __selectedItemIndex;
@@ -20,6 +21,7 @@
 
 @property(setter=_setCanContributeToCloudSharedAlbum:) BOOL _canContributeToCloudSharedAlbum;
 @property(setter=_setOptionsBarButtonItem:,retain) UIBarButtonItem * _optionsBarButtonItem;
+@property(setter=_setOptionsBarButtonSpacerItem:,retain) UIBarButtonItem * _optionsBarButtonSpacerItem;
 @property(setter=_setOptionsPopoverController:,retain) UIPopoverController * _optionsPopoverController;
 @property(setter=_setOptionsViewController:,retain) UIViewController * _optionsViewController;
 @property(setter=_setSelectedItemIndex:) int _selectedItemIndex;
@@ -37,11 +39,13 @@
 - (id)_newOptionsViewController;
 - (id)_optionsBarButtonItem;
 - (void)_optionsBarButtonItemPressed:(id)arg1;
+- (id)_optionsBarButtonSpacerItem;
 - (id)_optionsPopoverController;
 - (id)_optionsViewController;
 - (int)_selectedItemIndex;
 - (void)_setCanContributeToCloudSharedAlbum:(BOOL)arg1;
 - (void)_setOptionsBarButtonItem:(id)arg1;
+- (void)_setOptionsBarButtonSpacerItem:(id)arg1;
 - (void)_setOptionsPopoverController:(id)arg1;
 - (void)_setOptionsViewController:(id)arg1;
 - (void)_setSelectedItemIndex:(int)arg1;

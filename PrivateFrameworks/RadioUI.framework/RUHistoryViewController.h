@@ -2,45 +2,46 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUHistoryViewControllerDelegate>, NSArray, NSMutableArray, RUPreviewSession, RUTrackHistoryDataSource, RUWishlistDataSource, RadioGetWishListRequest, SKUICircleProgressIndicator, UIActionSheet, UILabel, UITableView;
+@class <RUHistoryViewControllerDelegate>, MPAVItem, NSArray, NSMutableArray, RUHistoryDataSource, RUPreviewSession, RUWishlistDataSource, RadioHistoryCategory, SKUICircleProgressIndicator, UIActionSheet, UILabel, UITableView;
 
-@interface RUHistoryViewController : UIViewController <RUAudioPreviewViewDelegate, RUTrackHistoryDataSourceDelegate, RUWishlistDataSourceDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface RUHistoryViewController : UIViewController <RUAudioPreviewViewDelegate, RUHistoryDataSourceDelegate, RUWishlistDataSourceDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicator;
     UIActionSheet *_confirmationActionSheet;
     <RUHistoryViewControllerDelegate> *_delegate;
+    NSArray *_historyCategories;
+    RUHistoryDataSource *_historyDataSource;
     int _historyType;
-    BOOL _isRefreshingWishlist;
+    BOOL _isVisible;
     UILabel *_loadingLabel;
     UILabel *_noHistoryLabel;
     RUPreviewSession *_previewSession;
-    int _previewingIndex;
+    MPAVItem *_previewingAVItem;
+    RadioHistoryCategory *_previewingHistoryCategory;
     UITableView *_tableView;
-    RUTrackHistoryDataSource *_trackHistoryDataSource;
-    NSArray *_trackHistorySessions;
     RUWishlistDataSource *_wishlistDataSource;
-    RadioGetWishListRequest *_wishlistRequest;
     NSMutableArray *_wishlistedTracks;
 }
 
 @property <RUHistoryViewControllerDelegate> * delegate;
 @property(readonly) int historyType;
 
-+ (void)initialize;
-
 - (void).cxx_destruct;
 - (void)_clearAction:(id)arg1;
+- (void)_configureCell:(id)arg1 forAdTrack:(id)arg2;
+- (void)_configureCell:(id)arg1 forRadioTrack:(id)arg2;
 - (unsigned int)_count;
+- (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1;
-- (void)_endPreviewPlayback;
+- (void)_endPreviewPlaybackWithOptions:(int)arg1 fadeoutDuration:(double)arg2;
+- (id)_indexPathForPreviewingItem;
+- (BOOL)_isHistoryItem:(id)arg1 effectivelyPlayingWithAVItem:(id)arg2;
 - (BOOL)_isLoading;
 - (id)_newSectionFooterForType:(int)arg1 inSection:(int)arg2;
-- (id)_newSectionHeaderForType:(int)arg1 withAttributedText:(id)arg2;
+- (id)_newSectionHeaderForType:(int)arg1 withAttributedText:(id)arg2 detailAttributedText:(id)arg3;
 - (id)_newSegmentedControl;
-- (id)_newShadowViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_radioAuthenticatedAccountIdentifierDidChangeNotification:(id)arg1;
+- (void)_refreshHistoryTracks;
 - (void)_refreshWishlistedTracks;
 - (void)_selectedSegmentIndexDidChangeAction:(id)arg1;
-- (id)_trackHistoryAtIndexPath:(id)arg1;
 - (void)_updateViewForHistoryChange;
 - (id)_wishlistedTrackAtIndexPath:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
@@ -48,11 +49,13 @@
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
+- (id)historyDataSource:(id)arg1 viewControllerForPresentingAdTrack:(id)arg2;
+- (void)historyDataSourceDidUpdateHistoryCategories:(id)arg1;
 - (int)historyType;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setDelegate:(id)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
@@ -63,9 +66,9 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)trackHistoryDataSource:(id)arg1 didInsertSections:(id)arg2 insertIndexPaths:(id)arg3 updateIndexPaths:(id)arg4 deleteSections:(id)arg5 deleteIndexPaths:(id)arg6;
-- (void)trackHistoryDataSourceDidInvalidate:(id)arg1;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)wishlistDataSourceDidInvalidate:(id)arg1;
 

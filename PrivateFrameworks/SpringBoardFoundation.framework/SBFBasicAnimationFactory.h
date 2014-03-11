@@ -10,5 +10,6 @@
 
 - (id)_animation;
 - (id)_initWithDuration:(double)arg1 delay:(double)arg2;
+- (id)description;
 
 @end

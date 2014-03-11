@@ -6,22 +6,21 @@
    See Warning(s) below.
  */
 
-@class AVPlayer, AVPlayerItem, AVQueuePlayer, MPAudioDeviceController, NSArray, NSDictionary, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class AVPlayer, AVPlayerItem, AVQueuePlayer, MPAVRoute, MPAVRoutingController, NSArray, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface MPQueuePlayer : NSObject <MPAudioDeviceControllerDelegate> {
+@interface MPQueuePlayer : NSObject <MPAVRoutingControllerDelegate> {
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    MPAudioDeviceController *_audioDeviceController;
     AVPlayerItem *_currentItem;
     } _currentTime;
     int _defaultItemEQPresetType;
     BOOL _isExternalPlaybackActive;
+    MPAVRoute *_lastPickedRoute;
     BOOL _outputObscuredDueToInsufficientExternalProtection;
     BOOL _pausedForPlaybackQueueTransaction;
-    NSDictionary *_pickedRouteDescription;
     id _playbackQueueCommitHandler;
     int _playbackQueueTransactionCount;
     AVQueuePlayer *_player;
@@ -30,6 +29,7 @@
     float _rate;
     float _rateBeforePlaybackQueueTransaction;
     BOOL _routeDidChangeDuringPlaybackQueueTransaction;
+    MPAVRoutingController *_routingController;
     int _status;
 }
 
@@ -63,6 +63,7 @@
 - (void)_setCALayerDestinationIsTVOut:(BOOL)arg1;
 - (void)_setClientName:(id)arg1;
 - (void)_setEQPreset:(int)arg1;
+- (void)_setExpectedAssetTypes:(id)arg1;
 - (void)_setPreferredLanguageList:(id)arg1;
 - (void)_setPreparesItemsForPlaybackAsynchronously:(BOOL)arg1;
 - (void)_setStoppingFadeOutDuration:(float)arg1;
@@ -73,7 +74,6 @@
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
 - (void)advanceToNextItem;
 - (BOOL)allowsExternalPlayback;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)beginPlaybackQueueTransactionAndPause:(BOOL)arg1;
 - (void)commitPlaybackQueueTransaction;
 - (id)currentItem;
@@ -100,6 +100,7 @@
 - (float)rate;
 - (void)removeItem:(id)arg1;
 - (void)removeTimeObserver:(id)arg1;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActionAtItemEnd:(int)arg1;

@@ -33,7 +33,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithIsolationQueue:(id)arg1;
-- (void)noteAssetWithUUID:(id)arg1 didChangePlaceholderKindTo:(int)arg2 fromOldKind:(int)arg3;
+- (void)noteAssetWithUUID:(id)arg1 didChangePlaceholderKindTo:(short)arg2 fromOldKind:(short)arg3;
 - (void)removeBulletinsWithAlbumUUID:(id)arg1 bulletinTypes:(id)arg2;
 - (void)removeBulletinsWithAssetUUID:(id)arg1 deleteCommentsOrLikesBulletin:(BOOL)arg2 deletePhotosAddedToAlbumBulletin:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;

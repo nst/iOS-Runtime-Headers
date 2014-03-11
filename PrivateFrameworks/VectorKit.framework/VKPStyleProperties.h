@@ -4,7 +4,7 @@
 
 @class NSString, VKPTrafficStyle;
 
-@interface VKPStyleProperties : PBCodable {
+@interface VKPStyleProperties : PBCodable <NSCopying> {
     struct { 
         float *list; 
         unsigned int count; 
@@ -133,6 +133,8 @@
         unsigned int labelIconGlyphStyle : 1; 
         unsigned int labelIconHaloColor : 1; 
         unsigned int labelIconHaloSize : 1; 
+        unsigned int labelIconSaturation : 1; 
+        unsigned int labelIconScale : 1; 
         unsigned int labelIconSource : 1; 
         unsigned int labelIconStyle : 1; 
         unsigned int labelLayer : 1; 
@@ -167,8 +169,13 @@
         unsigned int navLabelSignBrightness : 1; 
         unsigned int outerStrokeColor : 1; 
         unsigned int outerStrokeWidth : 1; 
+        unsigned int paddingBottom : 1; 
+        unsigned int paddingLeft : 1; 
+        unsigned int paddingRight : 1; 
+        unsigned int paddingTop : 1; 
         unsigned int patternScaler : 1; 
         unsigned int patternScalerQuantizationFactor : 1; 
+        unsigned int poiIconOpacity : 1; 
         unsigned int polygonType : 1; 
         unsigned int puckArrowBrightness : 1; 
         unsigned int puckArrowColor : 1; 
@@ -176,7 +183,9 @@
         unsigned int puckArrowShadowBrightness : 1; 
         unsigned int puckCircleBrightness : 1; 
         unsigned int puckDomeBrightness : 1; 
+        unsigned int puckOffset : 1; 
         unsigned int puckRimBrightness : 1; 
+        unsigned int puckSize : 1; 
         unsigned int railroadPattern : 1; 
         unsigned int routeEnlargementScale : 1; 
         unsigned int routeEnlargementStartZoom : 1; 
@@ -358,6 +367,8 @@
     } _labelIconGradients;
     unsigned int _labelIconHaloColor;
     float _labelIconHaloSize;
+    float _labelIconSaturation;
+    float _labelIconScale;
     int _labelIconSource;
     int _labelIconStyle;
     int _labelLayer;
@@ -403,10 +414,15 @@
     BOOL _onlyShowIfTappable;
     unsigned int _outerStrokeColor;
     float _outerStrokeWidth;
+    float _paddingBottom;
+    float _paddingLeft;
+    float _paddingRight;
+    float _paddingTop;
     float _patternScaler;
     float _patternScalerQuantizationFactor;
     BOOL _poiDisabledLabelIconVisible;
     BOOL _poiDisabledLabelTextVisible;
+    float _poiIconOpacity;
     int _polygonType;
     float _puckArrowBrightness;
     unsigned int _puckArrowColor;
@@ -414,7 +430,9 @@
     float _puckArrowShadowBrightness;
     float _puckCircleBrightness;
     float _puckDomeBrightness;
+    float _puckOffset;
     float _puckRimBrightness;
+    float _puckSize;
     int _railroadPattern;
     BOOL _renderEndCaps;
     float _routeEnlargementScale;
@@ -645,6 +663,8 @@
 @property BOOL hasLabelIconGlyphStyle;
 @property BOOL hasLabelIconHaloColor;
 @property BOOL hasLabelIconHaloSize;
+@property BOOL hasLabelIconSaturation;
+@property BOOL hasLabelIconScale;
 @property BOOL hasLabelIconSource;
 @property BOOL hasLabelIconStyle;
 @property BOOL hasLabelLayer;
@@ -690,10 +710,15 @@
 @property BOOL hasOnlyShowIfTappable;
 @property BOOL hasOuterStrokeColor;
 @property BOOL hasOuterStrokeWidth;
+@property BOOL hasPaddingBottom;
+@property BOOL hasPaddingLeft;
+@property BOOL hasPaddingRight;
+@property BOOL hasPaddingTop;
 @property BOOL hasPatternScaler;
 @property BOOL hasPatternScalerQuantizationFactor;
 @property BOOL hasPoiDisabledLabelIconVisible;
 @property BOOL hasPoiDisabledLabelTextVisible;
+@property BOOL hasPoiIconOpacity;
 @property BOOL hasPolygonType;
 @property BOOL hasPuckArrowBrightness;
 @property BOOL hasPuckArrowColor;
@@ -701,7 +726,9 @@
 @property BOOL hasPuckArrowShadowBrightness;
 @property BOOL hasPuckCircleBrightness;
 @property BOOL hasPuckDomeBrightness;
+@property BOOL hasPuckOffset;
 @property BOOL hasPuckRimBrightness;
+@property BOOL hasPuckSize;
 @property BOOL hasRailroadPattern;
 @property BOOL hasRenderEndCaps;
 @property BOOL hasRouteEnlargementScale;
@@ -817,6 +844,8 @@
 @property(readonly) unsigned int labelIconGradientsCount;
 @property unsigned int labelIconHaloColor;
 @property float labelIconHaloSize;
+@property float labelIconSaturation;
+@property float labelIconScale;
 @property int labelIconSource;
 @property int labelIconStyle;
 @property int labelLayer;
@@ -862,10 +891,15 @@
 @property BOOL onlyShowIfTappable;
 @property unsigned int outerStrokeColor;
 @property float outerStrokeWidth;
+@property float paddingBottom;
+@property float paddingLeft;
+@property float paddingRight;
+@property float paddingTop;
 @property float patternScaler;
 @property float patternScalerQuantizationFactor;
 @property BOOL poiDisabledLabelIconVisible;
 @property BOOL poiDisabledLabelTextVisible;
+@property float poiIconOpacity;
 @property int polygonType;
 @property float puckArrowBrightness;
 @property unsigned int puckArrowColor;
@@ -873,7 +907,9 @@
 @property float puckArrowShadowBrightness;
 @property float puckCircleBrightness;
 @property float puckDomeBrightness;
+@property float puckOffset;
 @property float puckRimBrightness;
+@property float puckSize;
 @property int railroadPattern;
 @property BOOL renderEndCaps;
 @property float routeEnlargementScale;
@@ -977,6 +1013,7 @@
 - (void)clearLabelIconGradients;
 - (void)clearStrokeDashPatterns;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)curbColor;
 - (void)dealloc;
 - (id)description;
@@ -1123,6 +1160,8 @@
 - (BOOL)hasLabelIconGlyphStyle;
 - (BOOL)hasLabelIconHaloColor;
 - (BOOL)hasLabelIconHaloSize;
+- (BOOL)hasLabelIconSaturation;
+- (BOOL)hasLabelIconScale;
 - (BOOL)hasLabelIconSource;
 - (BOOL)hasLabelIconStyle;
 - (BOOL)hasLabelLayer;
@@ -1168,10 +1207,15 @@
 - (BOOL)hasOnlyShowIfTappable;
 - (BOOL)hasOuterStrokeColor;
 - (BOOL)hasOuterStrokeWidth;
+- (BOOL)hasPaddingBottom;
+- (BOOL)hasPaddingLeft;
+- (BOOL)hasPaddingRight;
+- (BOOL)hasPaddingTop;
 - (BOOL)hasPatternScaler;
 - (BOOL)hasPatternScalerQuantizationFactor;
 - (BOOL)hasPoiDisabledLabelIconVisible;
 - (BOOL)hasPoiDisabledLabelTextVisible;
+- (BOOL)hasPoiIconOpacity;
 - (BOOL)hasPolygonType;
 - (BOOL)hasPuckArrowBrightness;
 - (BOOL)hasPuckArrowColor;
@@ -1179,7 +1223,9 @@
 - (BOOL)hasPuckArrowShadowBrightness;
 - (BOOL)hasPuckCircleBrightness;
 - (BOOL)hasPuckDomeBrightness;
+- (BOOL)hasPuckOffset;
 - (BOOL)hasPuckRimBrightness;
+- (BOOL)hasPuckSize;
 - (BOOL)hasRailroadPattern;
 - (BOOL)hasRenderEndCaps;
 - (BOOL)hasRouteEnlargementScale;
@@ -1299,6 +1345,8 @@
 - (unsigned int)labelIconGradientsCount;
 - (unsigned int)labelIconHaloColor;
 - (float)labelIconHaloSize;
+- (float)labelIconSaturation;
+- (float)labelIconScale;
 - (int)labelIconSource;
 - (int)labelIconStyle;
 - (int)labelLayer;
@@ -1344,10 +1392,15 @@
 - (BOOL)onlyShowIfTappable;
 - (unsigned int)outerStrokeColor;
 - (float)outerStrokeWidth;
+- (float)paddingBottom;
+- (float)paddingLeft;
+- (float)paddingRight;
+- (float)paddingTop;
 - (float)patternScaler;
 - (float)patternScalerQuantizationFactor;
 - (BOOL)poiDisabledLabelIconVisible;
 - (BOOL)poiDisabledLabelTextVisible;
+- (float)poiIconOpacity;
 - (int)polygonType;
 - (float)puckArrowBrightness;
 - (unsigned int)puckArrowColor;
@@ -1355,7 +1408,9 @@
 - (float)puckArrowShadowBrightness;
 - (float)puckCircleBrightness;
 - (float)puckDomeBrightness;
+- (float)puckOffset;
 - (float)puckRimBrightness;
+- (float)puckSize;
 - (int)railroadPattern;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)renderEndCaps;
@@ -1530,6 +1585,8 @@
 - (void)setHasLabelIconGlyphStyle:(BOOL)arg1;
 - (void)setHasLabelIconHaloColor:(BOOL)arg1;
 - (void)setHasLabelIconHaloSize:(BOOL)arg1;
+- (void)setHasLabelIconSaturation:(BOOL)arg1;
+- (void)setHasLabelIconScale:(BOOL)arg1;
 - (void)setHasLabelIconSource:(BOOL)arg1;
 - (void)setHasLabelIconStyle:(BOOL)arg1;
 - (void)setHasLabelLayer:(BOOL)arg1;
@@ -1573,10 +1630,15 @@
 - (void)setHasOnlyShowIfTappable:(BOOL)arg1;
 - (void)setHasOuterStrokeColor:(BOOL)arg1;
 - (void)setHasOuterStrokeWidth:(BOOL)arg1;
+- (void)setHasPaddingBottom:(BOOL)arg1;
+- (void)setHasPaddingLeft:(BOOL)arg1;
+- (void)setHasPaddingRight:(BOOL)arg1;
+- (void)setHasPaddingTop:(BOOL)arg1;
 - (void)setHasPatternScaler:(BOOL)arg1;
 - (void)setHasPatternScalerQuantizationFactor:(BOOL)arg1;
 - (void)setHasPoiDisabledLabelIconVisible:(BOOL)arg1;
 - (void)setHasPoiDisabledLabelTextVisible:(BOOL)arg1;
+- (void)setHasPoiIconOpacity:(BOOL)arg1;
 - (void)setHasPolygonType:(BOOL)arg1;
 - (void)setHasPuckArrowBrightness:(BOOL)arg1;
 - (void)setHasPuckArrowColor:(BOOL)arg1;
@@ -1584,7 +1646,9 @@
 - (void)setHasPuckArrowShadowBrightness:(BOOL)arg1;
 - (void)setHasPuckCircleBrightness:(BOOL)arg1;
 - (void)setHasPuckDomeBrightness:(BOOL)arg1;
+- (void)setHasPuckOffset:(BOOL)arg1;
 - (void)setHasPuckRimBrightness:(BOOL)arg1;
+- (void)setHasPuckSize:(BOOL)arg1;
 - (void)setHasRailroadPattern:(BOOL)arg1;
 - (void)setHasRenderEndCaps:(BOOL)arg1;
 - (void)setHasRouteEnlargementScale:(BOOL)arg1;
@@ -1691,6 +1755,8 @@
 - (void)setLabelIconGradients:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setLabelIconHaloColor:(unsigned int)arg1;
 - (void)setLabelIconHaloSize:(float)arg1;
+- (void)setLabelIconSaturation:(float)arg1;
+- (void)setLabelIconScale:(float)arg1;
 - (void)setLabelIconSource:(int)arg1;
 - (void)setLabelIconStyle:(int)arg1;
 - (void)setLabelLayer:(int)arg1;
@@ -1736,10 +1802,15 @@
 - (void)setOnlyShowIfTappable:(BOOL)arg1;
 - (void)setOuterStrokeColor:(unsigned int)arg1;
 - (void)setOuterStrokeWidth:(float)arg1;
+- (void)setPaddingBottom:(float)arg1;
+- (void)setPaddingLeft:(float)arg1;
+- (void)setPaddingRight:(float)arg1;
+- (void)setPaddingTop:(float)arg1;
 - (void)setPatternScaler:(float)arg1;
 - (void)setPatternScalerQuantizationFactor:(float)arg1;
 - (void)setPoiDisabledLabelIconVisible:(BOOL)arg1;
 - (void)setPoiDisabledLabelTextVisible:(BOOL)arg1;
+- (void)setPoiIconOpacity:(float)arg1;
 - (void)setPolygonType:(int)arg1;
 - (void)setPuckArrowBrightness:(float)arg1;
 - (void)setPuckArrowColor:(unsigned int)arg1;
@@ -1747,7 +1818,9 @@
 - (void)setPuckArrowShadowBrightness:(float)arg1;
 - (void)setPuckCircleBrightness:(float)arg1;
 - (void)setPuckDomeBrightness:(float)arg1;
+- (void)setPuckOffset:(float)arg1;
 - (void)setPuckRimBrightness:(float)arg1;
+- (void)setPuckSize:(float)arg1;
 - (void)setRailroadPattern:(int)arg1;
 - (void)setRenderEndCaps:(BOOL)arg1;
 - (void)setRouteEnlargementScale:(float)arg1;

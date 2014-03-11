@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class <CNFDisplayControllerDelegate>, CNFAlertView, CNFInterfaceOverlayView, CNFStatusBarGradientView, CNFVideoGroupView, IMAVChat, IMAVChatParticipant, NSObject<CNFDisplayControllerDelegate>, NSString, NSTimer, TPAudioDeviceView, TPLCDView, TPSuperBottomBar, UIActivityIndicatorView, UIControl, UIImage, UILabel, UIView, _UIBackdropView;
+@class <CNFDisplayControllerDelegate>, CNFAlertView, CNFInterfaceOverlayView, CNFStatusBarGradientView, CNFVideoGroupView, IMAVChat, IMAVChatParticipant, NSObject<CNFDisplayControllerDelegate>, NSString, NSTimer, TPLCDView, TPSuperBottomBar, UIActionSheet, UIActivityIndicatorView, UIControl, UIImage, UILabel, UIView, _UIBackdropView;
 
-@interface CNFDisplayController : UIViewController <TPSuperBottomBarDelegateProtocol> {
+@interface CNFDisplayController : UIViewController <TPSuperBottomBarDelegateProtocol, UIActionSheetDelegatePrivate> {
     UIActivityIndicatorView *_activityIndicator;
     BOOL _alwaysVisible;
     NSTimer *_autodismissRouteListTimer;
@@ -46,13 +46,11 @@
     UIControl *_remoteVideoContainer;
     UIView *_remoteVideoDegradedView;
     UIView *_remoteVideoGroupView;
-    UIView *_remoteVideoOverlayView;
     UIView *_remoteVideoPausedView;
     UIView *_remoteVideoReconnectingView;
     CNFStatusBarGradientView *_remoteVideoStatusBarGradientView;
     UIView *_remoteVideoView;
-    TPAudioDeviceView *_routeList;
-    int _routeListReloadPending;
+    UIActionSheet *_routeList;
     int _routeListVisible;
     BOOL _showsLocalPreviewStatusBarGradient;
     UILabel *_statsHUDTextLabel;
@@ -91,7 +89,6 @@
 @property(retain) UIControl * remoteVideoContainer;
 @property(retain) UIView * remoteVideoDegradedView;
 @property(retain) UIView * remoteVideoGroupView;
-@property(retain) UIView * remoteVideoOverlayView;
 @property(retain) UIView * remoteVideoPausedView;
 @property(retain) UIView * remoteVideoReconnectingView;
 @property(retain) UIView * remoteVideoView;
@@ -100,6 +97,7 @@
 @property BOOL userWantsInCallControlsVisible;
 @property(retain) UIControl * videoGroupView;
 
+- (BOOL)_actionSheet:(id)arg1 shouldDismissForButtonAtIndex:(int)arg2;
 - (void)_addDeviceOrientationChangeObserver;
 - (void)_addStatusBarSingleTapGestureRecognizer;
 - (void)_adjustCallBarsForOrientation:(int)arg1;
@@ -143,8 +141,6 @@
 - (void)_ensureLocalVideoOverlayViewExists;
 - (void)_ensureLocalVideoWillBecomeVisible;
 - (void)_ensureRemoteVideoBackdropViewExists;
-- (void)_ensureRemoteVideoOverlayViewExists;
-- (void)_ensureRemoteVideoOverlayViewExistsForDegradedView;
 - (void)_ensureVideoLayersExist;
 - (void)_fadeInLocalVideo;
 - (BOOL)_fillRemoteVideoOnScreenWithLocalOrientation:(int)arg1 remoteAspectRatio:(struct CGSize { float x1; float x2; })arg2;
@@ -158,11 +154,11 @@
 - (BOOL)_isInPhoneCall;
 - (BOOL)_isOutgoingInvitation;
 - (BOOL)_isValidFaceTimeOrientation:(int)arg1;
+- (void)_muteConference:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })_normalizedScreenSizeForOrientation:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pipBorderBoundsForPIPSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })_pipSizeForAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)_refreshInCallControlsAndPIPAnimated:(BOOL)arg1;
-- (void)_reloadRouteList;
 - (void)_removeDeviceOrientationChangeObserver;
 - (void)_removeErrorAlert;
 - (void)_removeOverlayViews;
@@ -195,6 +191,8 @@
 - (id)_viewWithCenteredTitle:(id)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 center:(struct CGPoint { float x1; float x2; })arg3;
 - (id)_viewWithImage:(id)arg1 title:(id)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 center:(struct CGPoint { float x1; float x2; })arg4;
 - (id)_viewWithTitle:(id)arg1 message:(id)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 center:(struct CGPoint { float x1; float x2; })arg4;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)activityIndicator;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (BOOL)alwaysVisible;
@@ -223,6 +221,7 @@
 - (void)hideAudioRoutingDeviceList;
 - (void)hideInCallUIWithDuration:(double)arg1 animations:(id)arg2 completion:(id)arg3;
 - (BOOL)hidePIPWithOverlays;
+- (void)hideStatusBarGradient;
 - (id)hudOverlayView;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 options:(unsigned int)arg2;
@@ -246,14 +245,12 @@
 - (void)postUserNotificationWithTitle:(id)arg1 message:(id)arg2;
 - (void)prepareForCallWaitingAnimated:(BOOL)arg1;
 - (void)prepareForIncomingFaceTime;
-- (void)reloadRouteList;
 - (id)remoteParticipant;
 - (id)remoteVideoBackView;
 - (id)remoteVideoBackdropView;
 - (id)remoteVideoContainer;
 - (id)remoteVideoDegradedView;
 - (id)remoteVideoGroupView;
-- (id)remoteVideoOverlayView;
 - (id)remoteVideoPausedView;
 - (id)remoteVideoReconnectingView;
 - (id)remoteVideoView;
@@ -266,7 +263,6 @@
 - (void)returnToInCallUIWithDuration:(double)arg1 animations:(id)arg2 completion:(id)arg3;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setAlwaysVisible:(BOOL)arg1;
-- (void)setAudioDevicesButtonSelected:(BOOL)arg1;
 - (void)setBottomBar:(id)arg1;
 - (void)setCallBarOverlayView:(id)arg1;
 - (void)setContactImage:(id)arg1;
@@ -289,7 +285,6 @@
 - (void)setRemoteVideoContainer:(id)arg1;
 - (void)setRemoteVideoDegradedView:(id)arg1;
 - (void)setRemoteVideoGroupView:(id)arg1;
-- (void)setRemoteVideoOverlayView:(id)arg1;
 - (void)setRemoteVideoPausedView:(id)arg1;
 - (void)setRemoteVideoReconnectingView:(id)arg1;
 - (void)setRemoteVideoView:(id)arg1;

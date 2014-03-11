@@ -26,6 +26,7 @@
         struct __CFUUID {} *tableID; 
     BOOL mBlankForKeyboardInsertion;
     TSCECalculationEngine *mCalculationEngine;
+    NSString *mFormulaPlainText;
     struct __CFUUID { } *mHostTableID;
     TSDMultiPaneController *mMenuPopoverController;
     int mRangeContext;
@@ -38,7 +39,6 @@
 
 @property(getter=isBlankForKeyboardInsertion) BOOL blankForKeyboardInsertion;
 @property(readonly) TSCECalculationEngine * calculationEngine;
-@property(getter=isError,readonly) BOOL error;
 @property(setter=setHostTableID:) struct __CFUUID { }* hostTableID;
 @property(getter=isLocalReference,readonly) BOOL localReference;
 @property(getter=isNonSpanningRange,readonly) BOOL nonSpanningRange;
@@ -73,7 +73,6 @@
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
 - (BOOL)isBlankForKeyboardInsertion;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isError;
 - (BOOL)isLocalReference;
 - (BOOL)isNonSpanningRange;
 - (BOOL)isRange;
@@ -81,8 +80,9 @@
 - (BOOL)isResizable;
 - (BOOL)isSimpleRowOrColumnReference;
 - (BOOL)isSingleASTNode;
+- (BOOL)isValidReference;
 - (void)p_buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 forRangeComponent:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 stickyBits:(unsigned char)arg3 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg4;
-- (BOOL)p_isValidReference;
+- (void)p_invalidate;
 - (void)p_resetMenu;
 - (int)rangeContext;
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })rangeCoordinate;

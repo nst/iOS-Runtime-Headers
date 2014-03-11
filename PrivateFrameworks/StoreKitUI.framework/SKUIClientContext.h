@@ -2,19 +2,22 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSBundle, NSDictionary, NSMapTable, NSMutableArray, NSString, SKUIStoreDialogController, SSURLBag, SUClientInterface;
+@class NSArray, NSBundle, NSDictionary, NSMapTable, NSMutableArray, NSString, SKUILocalizedStringDictionary, SKUIStoreDialogController, SSURLBag, SSVPlatformContext, SUClientInterface;
 
 @interface SKUIClientContext : NSObject <SUClientInterfaceDelegate> {
+    NSString *_additionalPurchaseParameters;
     NSBundle *_bundle;
     SUClientInterface *_clientInterface;
     NSDictionary *_configurationDictionary;
     SKUIStoreDialogController *_dialogController;
+    SKUILocalizedStringDictionary *_localizedStrings;
     NSString *_metricsConfigurationIdentifier;
     NSMapTable *_metricsPageContexts;
     NSMutableArray *_navigationHistory;
     NSString *_navigationHistoryPersistenceKey;
+    NSString *_purchaseAffiliateIdentifier;
+    int _purchaseURLBagType;
     NSString *_storeFrontIdentifier;
-    NSDictionary *_strings;
     SSURLBag *_urlBag;
     int _userInterfaceIdiomOverride;
 }
@@ -24,6 +27,7 @@
 @property(copy) NSString * metricsConfigurationIdentifier;
 @property(readonly) NSArray * navigationHistory;
 @property(copy) NSString * navigationHistoryPersistenceKey;
+@property(readonly) SSVPlatformContext * platformContext;
 @property(readonly) NSString * storeFrontIdentifier;
 @property int userInterfaceIdiomOverride;
 
@@ -33,7 +37,11 @@
 
 - (void).cxx_destruct;
 - (id)URLBag;
+- (void)_customizePurchase:(id)arg1;
 - (id)_navigationHistory;
+- (void)_setAdditionalPurchaseParameters:(id)arg1;
+- (void)_setPurchaseAffiliateIdentifier:(id)arg1;
+- (void)_setPurchaseURLBagType:(int)arg1;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
 - (id)clientInterface;
 - (void)dealloc;
@@ -41,11 +49,13 @@
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id)arg1;
 - (id)initWithConfigurationDictionary:(id)arg1;
 - (id)localizedAlertWithError:(id)arg1;
+- (id)localizedStringForKey:(id)arg1 inTable:(id)arg2;
 - (id)localizedStringForKey:(id)arg1;
 - (id)metricsConfigurationIdentifier;
 - (id)metricsPageContextForViewController:(id)arg1;
 - (id)navigationHistory;
 - (id)navigationHistoryPersistenceKey;
+- (id)platformContext;
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;
 - (void)setMetricsConfigurationIdentifier:(id)arg1;
 - (void)setMetricsPageContext:(id)arg1 forViewController:(id)arg2;

@@ -19,6 +19,7 @@
 @property(getter=isCloned,readonly) BOOL cloned;
 @property(getter=isCloningSupported,readonly) BOOL cloningSupported;
 @property(copy) NSString * colorMode;
+@property(readonly) unsigned int connectionSeed;
 @property(retain) CADisplayMode * currentMode;
 @property(readonly) NSString * deviceName;
 @property(readonly) unsigned int displayId;
@@ -30,6 +31,7 @@
 @property(readonly) CADisplayMode * preferredMode;
 @property(readonly) double refreshRate;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } safeBounds;
+@property(readonly) unsigned int seed;
 @property(getter=isSupported,readonly) BOOL supported;
 @property(readonly) int tag;
 @property(readonly) NSString * uniqueId;
@@ -39,12 +41,13 @@
 + (id)displays;
 + (id)mainDisplay;
 
-- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; unsigned int x5; struct __CFString {} *x6; struct ModeSet { unsigned int x_7_1_1; unsigned int x_7_1_2[1]; } x7; int x8; int x9; int x10; struct Bounds { int x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; unsigned int x12; unsigned int x13; float x14; int x15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; unsigned int x22; double x23; boolx24; boolx25; }*)arg1;
+- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; unsigned int x5; unsigned int x6; unsigned int x7; struct __CFString {} *x8; struct ModeSet { unsigned int x_9_1_1; unsigned int x_9_1_2[1]; } x9; int x10; int x11; int x12; struct Bounds { int x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; unsigned int x14; unsigned int x15; float x16; int x17; boolx18; boolx19; boolx20; boolx21; boolx22; boolx23; unsigned int x24; double x25; boolx26; boolx27; }*)arg1;
 - (void)_invalidate;
 - (BOOL)allowsVirtualModes;
 - (id)availableModes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)colorMode;
+- (unsigned int)connectionSeed;
 - (id)currentMode;
 - (id)description;
 - (id)deviceName;
@@ -60,6 +63,7 @@
 - (id)preferredMode;
 - (double)refreshRate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })safeBounds;
+- (unsigned int)seed;
 - (void)setAllowsVirtualModes:(BOOL)arg1;
 - (void)setColorMode:(id)arg1;
 - (void)setCurrentMode:(id)arg1;

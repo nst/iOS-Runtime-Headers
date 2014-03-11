@@ -6,14 +6,14 @@
    See Warning(s) below.
  */
 
-@class NSMutableSet, NSString;
+@class NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
 
 @interface ATXPCConnection : NSObject {
     BOOL _assertionHeld;
-    struct _xpc_connection_s { } *_conn;
+    NSObject<OS_xpc_object> *_conn;
     id _context;
     id _disconnectHandler;
-    struct dispatch_queue_s { } *_eventQueue;
+    NSObject<OS_dispatch_queue> *_eventQueue;
     id _lockdownHandler;
     id _messageHandler;
     NSMutableSet *_outstandingMessages;
@@ -27,20 +27,20 @@
 @property(readonly) NSString * serviceName;
 
 - (void)_handleLockdownMessage:(void*)arg1;
-- (void)_handleXPCError:(void*)arg1;
-- (void)_handleXPCMessage:(void*)arg1;
+- (void)_handleXPCError:(id)arg1;
+- (void)_handleXPCMessage:(id)arg1;
 - (unsigned int)_outstandingMessages;
 - (void)_registerMessage:(id)arg1;
 - (void)_removeMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
-- (void)_setEventHandlerOnConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)_setEventHandlerOnConnection:(id)arg1;
 - (BOOL)assertionHeld;
 - (id)context;
 - (void)dealloc;
 - (id)disconnectHandler;
-- (struct dispatch_queue_s { }*)eventQueue;
-- (id)initWithServiceName:(id)arg1 onQueue:(struct dispatch_queue_s { }*)arg2;
-- (id)initWithXPCConnection:(struct _xpc_connection_s { }*)arg1;
+- (id)eventQueue;
+- (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
+- (id)initWithXPCConnection:(id)arg1;
 - (id)lockdownHandler;
 - (id)messageHandler;
 - (void)sendMessage:(id)arg1 withReply:(id)arg2;

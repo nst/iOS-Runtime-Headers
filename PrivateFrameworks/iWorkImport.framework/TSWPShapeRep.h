@@ -22,7 +22,7 @@
 + (id)magicMoveAnimationMatchesFromMatches:(id)arg1;
 + (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2;
 + (id)magicMoveTextMatchesBetweenOutgoingObjects:(id)arg1 andIncomingObjects:(id)arg2 textureContext:(id)arg3 textDeliveryType:(int)arg4;
-+ (void)p_getOutgoingTextureSet:(id*)arg1 incomingTextureSet:(id*)arg2 withOutgoingRep:(id)arg3 outgoingChunkRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 incomingRep:(id)arg5 incomingChunkRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
++ (void)p_getOutgoingTextureSet:(id*)arg1 incomingTextureSet:(id*)arg2 withOutgoingRep:(id)arg3 outgoingChunkRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 incomingRep:(id)arg5 incomingChunkRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 includeListLabels:(BOOL)arg7;
 + (BOOL)p_listLabelsAreEqualWithOutgoingStorage:(id)arg1 outgoingCharIndex:(int)arg2 incomingStorage:(id)arg3 incomingCharIndex:(int)arg4 shouldMatch:(BOOL*)arg5;
 + (unsigned int)p_longestChunkInOutgoingObjects:(id)arg1 incomingObjects:(id)arg2 textDeliveryType:(int)arg3 addOutgoingChunksToArray:(id)arg4 addIncomingChunksToArray:(id)arg5;
 + (float)p_mmAttributeMatchPercentWithOutgoingChunkDict:(id)arg1 incomingChunkDict:(id)arg2;

@@ -32,6 +32,7 @@
 - (BOOL)hasCompletionOfferForSectionAtIndex:(unsigned int)arg1;
 - (BOOL)hasVariantsForSectionAtIndex:(int)arg1;
 - (unsigned int)indexOfSectionForCompletionOffering:(id)arg1;
+- (id)initWithQuery:(id)arg1 entityType:(int)arg2;
 - (void)invalidate;
 - (BOOL)isShowingCompletionOverlayForSectionAtIndex:(unsigned int)arg1;
 - (void)loadCompletionOfferingForSectionAtIndex:(unsigned int)arg1;

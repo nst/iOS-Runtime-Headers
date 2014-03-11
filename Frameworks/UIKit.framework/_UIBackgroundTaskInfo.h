@@ -15,6 +15,8 @@
     unsigned int _taskId;
 }
 
++ (id)backgroundTaskAssertionQueue;
+
 - (void)dealloc;
 - (void)fireExpirationHandler;
 - (id)initWithProcessAssertion:(id)arg1 expirationHandler:(id)arg2;

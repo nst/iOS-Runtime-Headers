@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UITableViewCell;
+@class EKCalendar, UITableViewCell;
 
 @interface EKEventCalendarDetailItem : EKEventDetailItem {
+    EKCalendar *_calendar;
     UITableViewCell *_cell;
 }
 

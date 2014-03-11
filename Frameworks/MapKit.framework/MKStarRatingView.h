@@ -29,7 +29,7 @@
 @property int numberOfRatingLevels;
 @property float rating;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)emptyStarHighlightedImage;
 - (id)emptyStarImage;
 - (id)fullStarHighlightedImage;

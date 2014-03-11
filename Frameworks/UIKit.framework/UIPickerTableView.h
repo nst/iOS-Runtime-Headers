@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableIndexSet, UIColor;
+@class NSMutableArray, NSMutableIndexSet, UIColor;
 
 @interface UIPickerTableView : UITableView <UITableViewDelegate> {
     struct CGRect { 
@@ -36,6 +36,7 @@
     float _lastClickedOffset;
     int _lastSelectedRow;
     } _pickerTableFlags;
+    NSMutableArray *_referencingCells;
     } _selectionBarRect;
     int _selectionBarRow;
     UIColor *_textColor;

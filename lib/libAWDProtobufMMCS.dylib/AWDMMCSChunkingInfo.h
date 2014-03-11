@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface AWDMMCSChunkingInfo : PBCodable {
+@interface AWDMMCSChunkingInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int byteCount : 1; 
         unsigned int chunkCount : 1; 
@@ -48,6 +48,7 @@
 - (unsigned int)chunkingErrorsCount;
 - (void)clearChunkingErrors;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

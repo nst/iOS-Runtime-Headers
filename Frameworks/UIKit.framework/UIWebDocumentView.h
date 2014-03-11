@@ -133,6 +133,7 @@
     unsigned int _previousScrollWasScrollToTop : 1;
     unsigned int _pageIsLoadedFromPageCache : 1;
     unsigned int _shouldSendWillShowInteractionHighlight : 1;
+    unsigned int _willPanInsteadOfZoom : 1;
     unsigned int _sheetsCount : 2;
     NSArray *_additionalSubviews;
     UIAutoscroll *_autoscroll;
@@ -186,6 +187,7 @@
     UIPanGestureRecognizer *_twoFingerPanGestureRecognizer;
     WebThreadSafeUndoManager *_undoManager;
     _UIWebViewportHandler *_viewportHandler;
+    BOOL _wantsMinimalUI;
     UIWebSelectionAssistant *_webSelectionAssistant;
     WebView *_webView;
     id m_parentTextView;
@@ -248,6 +250,7 @@
 @property struct __CFCharacterSet { }* textTrimmingSet;
 @property(readonly) <UITextInputTokenizer> * tokenizer;
 @property BOOL useInterfaceLanguageForLocalization;
+@property(readonly) BOOL wantsMinimalUI;
 
 + (id)_createDefaultHighlightView;
 + (id)_sharedHighlightView;
@@ -752,6 +755,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrame;
+- (BOOL)wantsMinimalUI;
 - (id)webSelectionAssistant;
 - (void)webThreadWebViewDidLayout:(id)arg1 byScrolling:(BOOL)arg2;
 - (void)webView:(id)arg1 didChangeLocationWithinPageForFrame:(id)arg2;

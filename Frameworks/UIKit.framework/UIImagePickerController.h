@@ -23,6 +23,7 @@
     id _image;
     } _imagePickerFlags;
     NSArray *_mediaTypes;
+    BOOL _previousStatusBarHidden;
     int _previousStatusBarStyle;
     NSMutableDictionary *_properties;
     int _sourceType;

@@ -7,6 +7,7 @@
 @interface MKUserLocationView : MKAnnotationView <VKPuckAnimatorTarget> {
     CALayer *_accuracyLayer;
     BOOL _allowsAccuracyRing;
+    BOOL _allowsHeadingIndicator;
     BOOL _allowsPulse;
     BOOL _effectsEnabled;
     double _headingAccuracy;
@@ -23,6 +24,7 @@
 }
 
 @property BOOL allowsAccuracyRing;
+@property BOOL allowsHeadingIndicator;
 @property BOOL allowsPulse;
 @property(getter=isEffectsEnabled) BOOL effectsEnabled;
 @property double headingAccuracy;
@@ -39,11 +41,12 @@
 + (float)accuracyDiameter:(float)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (void).cxx_destruct;
 - (id)_accuracyAnimation:(float)arg1;
 - (float)_accuracyRadius:(double)arg1;
 - (id)_animationToSynchronizePulse:(id*)arg1;
 - (id)_baseLayer;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 16; unsigned int x_4_1_7 : 2; } x4; }*)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
+- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 16; unsigned int x_4_1_7 : 2; unsigned int x_4_1_8 : 1; } x4; }*)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (id)_layerToMatchAccuracyRing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_visibleRect;
 - (void)_pausePulse;
@@ -63,8 +66,8 @@
 - (void)_updatePulse;
 - (id)_vkMarker;
 - (BOOL)allowsAccuracyRing;
+- (BOOL)allowsHeadingIndicator;
 - (BOOL)allowsPulse;
-- (void)dealloc;
 - (void)didMoveToWindow;
 - (double)headingAccuracy;
 - (id)init;
@@ -78,6 +81,7 @@
 - (float)opacity;
 - (double)presentationCourse;
 - (void)setAllowsAccuracyRing:(BOOL)arg1;
+- (void)setAllowsHeadingIndicator:(BOOL)arg1;
 - (void)setAllowsPulse:(BOOL)arg1;
 - (void)setAnimatingToCoordinate:(BOOL)arg1;
 - (void)setEffectsEnabled:(BOOL)arg1;

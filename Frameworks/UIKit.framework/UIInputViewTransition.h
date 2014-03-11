@@ -95,7 +95,7 @@
             float width; 
             float height; 
         } size; 
-    int activeClippingMode;
+    int activeClippingModes;
     double animationStartTime;
     int animationState;
     UIInputViewAnimationStyle *animationStyle;
@@ -118,7 +118,7 @@
     } snapshotViewEndFrame;
 }
 
-@property int activeClippingMode;
+@property int activeClippingModes;
 @property double animationStartTime;
 @property int animationState;
 @property(retain) UIInputViewAnimationStyle * animationStyle;
@@ -146,7 +146,7 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewEndFrame;
 @property(readonly) int transitioningState;
 
-- (int)activeClippingMode;
+- (int)activeClippingModes;
 - (double)animationStartTime;
 - (int)animationState;
 - (id)animationStyle;
@@ -169,6 +169,7 @@
 - (int)endState;
 - (BOOL)fadeAccessoryView;
 - (BOOL)ignoreFrameChanges;
+- (BOOL)isAccessoryViewChangedOnly;
 - (BOOL)isAlmostDone;
 - (BOOL)isOnScreen;
 - (id)newSet;
@@ -176,7 +177,7 @@
 - (void)postNotificationsForTransitionEnd;
 - (void)postNotificationsForTransitionStart;
 - (BOOL)requiresAutomaticAppearanceEnabled;
-- (void)setActiveClippingMode:(int)arg1;
+- (void)setActiveClippingModes:(int)arg1;
 - (void)setAnimationStartTime:(double)arg1;
 - (void)setAnimationState:(int)arg1;
 - (void)setAnimationStyle:(id)arg1;

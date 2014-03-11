@@ -44,6 +44,9 @@
 - (id)dataForPasteboardType:(id)arg1;
 - (id)description;
 - (void)endTransaction;
+- (id)importableImageTypes;
+- (id)importablePlainTextTypes;
+- (id)importableRichTextTypes;
 - (id)initWithGeneralPasteboard;
 - (id)initWithNativePasteboard:(id)arg1;
 - (id)initWithPasteboardName:(id)arg1 create:(BOOL)arg2;

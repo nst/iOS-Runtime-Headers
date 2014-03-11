@@ -61,6 +61,8 @@
 - (void)processChangedProperty:(int)arg1;
 - (BOOL)providesGuidesWhileAligning;
 - (void)setupPlayerControllerForAudioHUDController:(id)arg1;
+- (BOOL)shouldAllowReplacementFromDrop;
+- (BOOL)shouldAllowReplacementFromPaste;
 - (BOOL)shouldCreateSelectionKnobs;
 - (BOOL)shouldShowDragHUD;
 - (BOOL)shouldShowKnobs;

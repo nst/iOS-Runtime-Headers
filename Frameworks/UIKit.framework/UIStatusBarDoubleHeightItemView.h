@@ -10,7 +10,6 @@
     float _letterSpacing;
 }
 
-- (BOOL)cachesImage;
 - (id)contentsImage;
 - (void)dealloc;
 - (float)extraRightPadding;

@@ -7,13 +7,14 @@
 @interface _WBUPolicyDecisionListener : NSObject <WebPolicyDecisionListener> {
     NSDictionary *_formMetadata;
     WebFrame *_frame;
+    int _navigationType;
     <WebPolicyDecisionListener> *_originalListener;
 }
 
 - (void)dealloc;
 - (void)download;
 - (void)ignore;
-- (id)initWithFrame:(id)arg1 formMetadata:(id)arg2 originalListener:(id)arg3;
+- (id)initWithFrame:(id)arg1 navigationType:(int)arg2 formMetadata:(id)arg3 originalListener:(id)arg4;
 - (void)use;
 
 @end

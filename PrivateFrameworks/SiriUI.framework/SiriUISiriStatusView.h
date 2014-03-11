@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUISiriStatusViewAnimationDelegate>, <SiriUISiriStatusViewDelegate>, SiriUIMicButton, UIImageView, UIView, _UISiriWaveyView;
+@class <SiriUISiriStatusViewAnimationDelegate>, <SiriUISiriStatusViewDelegate>, SiriUIMicButton, UIImageView, UILongPressGestureRecognizer, UIView, _UISiriWaveyView;
 
-@interface SiriUISiriStatusView : UIView <_UISiriWaveyViewDelegate, SiriUISiriStatusViewProtocol> {
+@interface SiriUISiriStatusView : UIView <_UISiriWaveyViewDelegate, UIGestureRecognizerDelegate, SiriUISiriStatusViewProtocol> {
     <SiriUISiriStatusViewAnimationDelegate> *_animationDelegate;
     SiriUIMicButton *_button;
     <SiriUISiriStatusViewDelegate> *_delegate;
     float _disabledMicOpacity;
     int _imageSet;
     double _lastStateChangeTime;
+    UILongPressGestureRecognizer *_longPressRecognizer;
     UIView *_micOutlineLineView;
     int _mode;
     UIImageView *_siriMicGlyphView;
@@ -29,12 +30,13 @@
 
 - (void).cxx_destruct;
 - (id)_animationForCGImages:(id)arg1;
-- (void)_buttonWasTapped;
 - (void)_cancelWhileListening;
 - (id)_defaultMicImage;
 - (void)_hideWaveform;
 - (struct CGImage { }*)_lastToThinkingCGImage;
+- (void)_micButtonHeld:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_micButtonHitRect;
+- (void)_micButtonTapped:(id)arg1;
 - (void)_setMicOutlineLayerContents:(struct CGImage { }*)arg1;
 - (void)_setPressedImageEnabled:(BOOL)arg1;
 - (void)_showWaveform;
@@ -54,6 +56,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (float)disabledMicOpacity;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forImageSet:(int)arg2;
 - (void)layoutSubviews;
 - (int)mode;

@@ -27,13 +27,13 @@
 @property(copy) NSString * unpaddedUnitsString;
 @property BOOL useLightText;
 
+- (void).cxx_destruct;
 - (void)_calculateLegend:(BOOL)arg1;
 - (id)_legendStringForDistanceString:(id)arg1 appendUnits:(BOOL)arg2 index:(int)arg3;
 - (id)_uncachedLegendStringsForDistanceString:(id)arg1;
 - (float)_widthForString:(id)arg1 attributes:(id)arg2;
 - (BOOL)canDisplaySegment:(int)arg1;
 - (void)clearCaches:(id)arg1;
-- (void)dealloc;
 - (id)floatNumberFormatter;
 - (id)init;
 - (id)legendBaseString;

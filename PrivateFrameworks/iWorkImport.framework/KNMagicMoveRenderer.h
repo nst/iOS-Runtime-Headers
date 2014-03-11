@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, NSMutableArray, NSTimer, TSDFPSCounter;
+@class NSDate, NSMutableArray, NSOperationQueue, NSTimer, TSDFPSCounter;
 
 @interface KNMagicMoveRenderer : KNTransitionRenderer {
     double mAnimationStartTime;
@@ -12,7 +12,9 @@
     NSMutableArray *mMatches;
     TSDFPSCounter *mMorphFPSCounter;
     double mMorphFrameDurationAverage;
+    NSMutableArray *mMorphLayerUpdates;
     NSMutableArray *mMorphMatches;
+    NSOperationQueue *mMorphOperationQueue;
     NSTimer *mMorphUpdateTimer;
 }
 

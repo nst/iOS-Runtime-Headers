@@ -31,6 +31,7 @@
     unsigned int _mapType;
     int _mode;
     } _region;
+    BOOL _rendersInBackground;
     float _scale;
     BOOL _showsBuildings;
     BOOL _showsPointsOfInterest;
@@ -42,15 +43,18 @@
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } mapRect;
 @property unsigned int mapType;
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
+@property(getter=_rendersInBackground,setter=_setRendersInBackground:) BOOL rendersInBackground;
 @property float scale;
 @property BOOL showsBuildings;
 @property BOOL showsPointsOfInterest;
 @property struct CGSize { float x1; float x2; } size;
 @property(readonly) BOOL usingRect;
 
+- (void).cxx_destruct;
+- (BOOL)_rendersInBackground;
+- (void)_setRendersInBackground:(BOOL)arg1;
 - (id)camera;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)init;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRect;
 - (unsigned int)mapType;

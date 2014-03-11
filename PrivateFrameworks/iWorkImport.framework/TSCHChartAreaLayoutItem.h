@@ -6,6 +6,7 @@
 
 @interface TSCHChartAreaLayoutItem : TSCH2DChartAbstractAreaLayoutItem {
     TSCHChartAxisLayoutItem *mBottomHorizontalAxis;
+    BOOL mInOutwardLayout;
     TSCHChartAxisLayoutItem *mLeftVerticalAxis;
     unsigned int mRelayoutDepth;
     TSCHChartAxisLayoutItem *mRightVerticalAxis;

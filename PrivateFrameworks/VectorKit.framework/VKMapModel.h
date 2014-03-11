@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKMapModeObserver>, <VKMapModelDelegate>, <VKRouteMatchedAnnotationPresentation>, <VKRoutePreloadSession>, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSSet, VKAnimation, VKAnnotationMarker, VKAnnotationModel, VKBuildingFootprintMapModel, VKDebugModel, VKGridModel, VKGroundCoverMapModel, VKLabelMarker, VKLabelModel, VKMapRasterizer, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKOverlayTileSource, VKPolygonMapModel, VKPolylineOverlayPainter, VKRasterMapModel, VKRasterOverlayMapModel, VKRasterOverlayTileSource, VKRasterTrafficMapModel, VKRealisticMapModel, VKRoadMapModel, VKRoadTrafficMapModel, VKSkyModel, VKStylesheet, VKTileProvider, VKTrafficTileSource;
+@class <VKMapModeObserver>, <VKMapModelDelegate>, <VKRouteMatchedAnnotationPresentation>, <VKRoutePreloadSession>, NSArray, NSMapTable, NSMutableArray, NSMutableSet, NSSet, VKAnimation, VKAnnotationMarker, VKAnnotationModel, VKBuildingFootprintMapModel, VKDebugModel, VKGridModel, VKGroundCoverMapModel, VKHybridRasterMapModel, VKLabelMarker, VKLabelModel, VKMapRasterizer, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKOverlayTileSource, VKPolygonMapModel, VKPolylineOverlayPainter, VKRasterMapModel, VKRasterOverlayMapModel, VKRasterOverlayTileSource, VKRasterTrafficMapModel, VKRealisticMapModel, VKRoadMapModel, VKRoadTrafficMapModel, VKSkyModel, VKStylesheet, VKTileProvider, VKTrafficTileSource;
 
 @interface VKMapModel : VKModelObject <VKAnnotationModelDelegate, VKOverlayContainerDelegate, VKLabelModelDelegate, GEOResourceManifestTileGroupObserver, VKTileProviderClient> {
     struct _VGLColor { 
@@ -35,10 +35,12 @@
     BOOL _dynamicMapModesEnabled;
     BOOL _enableBlackRoadLines;
     NSMutableArray *_externalAnchors;
+    double _forcedMaxZoomLevel;
     BOOL _fullyDrawn;
     VKGridModel *_gridModel;
     VKGroundCoverMapModel *_groundCoverModel;
     BOOL _hasFailedTile;
+    VKHybridRasterMapModel *_hybridRasterModel;
     VKRoadMapModel *_hybridRoadModel;
     VKStylesheet *_hybridStylesheet;
     VKLabelModel *_labelModel;
@@ -53,6 +55,7 @@
     NSMutableArray *_mapTileSubmodels;
     int _mapType;
     VKAnimation *_modeTransitionAnimation;
+    float _navigationPuckSize;
     VKOverlayContainerModel *_overlayContainerModel;
     VKOverlayTileSource *_overlayTileSource;
     VKPolygonMapModel *_polygonModel;
@@ -86,12 +89,12 @@
     double _zoomLevel;
 }
 
-@property(retain) NSArray * alwaysVisibleTrafficIncidents;
 @property(readonly) VKBuildingFootprintMapModel * buildingFootprintModel;
 @property(readonly) BOOL buildingsAreVisible;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } clearColor;
 @property float contentScale;
 @property(readonly) int currentMapMode;
+@property BOOL debugDynamicMapModesEnabled;
 @property <VKMapModelDelegate> * delegate;
 @property BOOL disableBuildingFootprints;
 @property BOOL disableGrid;
@@ -103,19 +106,23 @@
 @property BOOL disableRoads;
 @property BOOL dynamicMapModesEnabled;
 @property BOOL enableBlackRoadLines;
+@property(retain) NSArray * externalTrafficIncidents;
 @property(retain) VKPolylineOverlayPainter * focusedLabelsPolylinePainter;
 @property(readonly) BOOL isFullyDrawn;
 @property BOOL labelMarkerSelectionEnabled;
 @property int labelScaleFactor;
 @property BOOL limitingNavCameraHeight;
 @property BOOL localizeLabels;
+@property double lodBias;
 @property int mapType;
+@property float navigationPuckSize;
 @property int navigationShieldSize;
 @property unsigned int neighborMode;
 @property(readonly) NSArray * overlays;
 @property(readonly) NSSet * persistentOverlays;
 @property <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
 @property(retain) <VKRoutePreloadSession> * routePreloadSession;
+@property struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
 @property(readonly) VKAnnotationMarker * selectedAnnotationMarker;
 @property(readonly) VKLabelMarker * selectedLabelMarker;
 @property int shieldIdiom;
@@ -141,6 +148,8 @@
 - (void)_mapConfigurationDidChange;
 - (id)_rasterOverlayTileSourceForLevel:(unsigned int)arg1;
 - (void)_reloadStylesheet;
+- (void)_resetMaximumZoomLevel;
+- (void)_setMaximumZoomLevel:(double)arg1;
 - (void)_setStyleTransitionProgress:(float)arg1 targetStyle:(int)arg2 step:(int)arg3;
 - (void)_setStylesheetFromMapType:(int)arg1;
 - (float)_styleTransitionProgress;
@@ -156,7 +165,6 @@
 - (void)addPersistentOverlay:(id)arg1;
 - (void)addRasterOverlay:(id)arg1;
 - (void)addSubmodel:(id)arg1;
-- (id)alwaysVisibleTrafficIncidents;
 - (id)annotationCoordinateTest;
 - (id)annotationMarkerDeselectionCallback;
 - (id)annotationMarkerForSelectionAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 avoidCurrent:(BOOL)arg2 canvasSize:(struct CGSize { float x1; float x2; })arg3;
@@ -176,6 +184,7 @@
 - (void)createTrafficTileSourceIfNecessary;
 - (int)currentMapMode;
 - (void)dealloc;
+- (BOOL)debugDynamicMapModesEnabled;
 - (void)debugHighlightLabelAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1 viewTransform:(id)arg2;
 - (id)delegate;
 - (void)deselectAnnotationMarker:(id)arg1;
@@ -199,6 +208,7 @@
 - (BOOL)dynamicMapModesEnabled;
 - (BOOL)enableBlackRoadLines;
 - (id)externalAnchors;
+- (id)externalTrafficIncidents;
 - (void)flushCaches;
 - (id)focusedLabelsPolylinePainter;
 - (void)forceMapType:(int)arg1;
@@ -222,20 +232,23 @@
 - (void)layoutSceneIfNeeded:(id)arg1 withContext:(id)arg2;
 - (BOOL)limitingNavCameraHeight;
 - (BOOL)localizeLabels;
+- (double)lodBias;
 - (int)mapType;
 - (double)maxTileHeightAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (int)maximumZoomLevelInView:(id)arg1;
 - (int)minimumZoomLevelInView:(id)arg1;
 - (id)navTileSource;
+- (float)navigationPuckSize;
 - (int)navigationShieldSize;
 - (unsigned int)neighborMode;
 - (id)overlayContainer:(id)arg1 painterForOverlay:(id)arg2;
 - (id)overlayContainer:(id)arg1 roadTileForTile:(id)arg2;
+- (void)overlayContainer:(id)arg1 showingRouteInStandardModeDidChange:(BOOL)arg2;
 - (BOOL)overlayContainerIsInRealisticMode:(id)arg1;
 - (id)overlays;
 - (void)performStylesheetDidChange;
 - (void)performStylesheetDoneChanging;
-- (void)performStylesheetWillChange;
+- (void)performStylesheetWillTransitionToDisplayStyle:(int)arg1;
 - (id)persistentOverlays;
 - (float)ppi;
 - (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1 context:(id)arg2;
@@ -252,15 +265,16 @@
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (id)routeLineSplitAnnotation;
 - (id)routePreloadSession;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeUserOffset;
 - (void)selectAnnotationMarker:(id)arg1;
 - (void)selectLabelMarker:(id)arg1;
 - (id)selectedAnnotationMarker;
 - (id)selectedLabelMarker;
-- (void)setAlwaysVisibleTrafficIncidents:(id)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
 - (void)setClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContentScale:(float)arg1;
 - (void)setCurrentLocationText:(id)arg1;
+- (void)setDebugDynamicMapModesEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredMapMode:(int)arg1 immediate:(BOOL)arg2;
 - (void)setDisableBuildingFootprints:(BOOL)arg1;
@@ -273,12 +287,15 @@
 - (void)setDisableRoads:(BOOL)arg1;
 - (void)setDynamicMapModesEnabled:(BOOL)arg1;
 - (void)setEnableBlackRoadLines:(BOOL)arg1;
+- (void)setExternalTrafficIncidents:(id)arg1;
 - (void)setFocusedLabelsPolylinePainter:(id)arg1;
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
 - (void)setLabelScaleFactor:(int)arg1;
 - (void)setLimitingNavCameraHeight:(BOOL)arg1;
 - (void)setLocalizeLabels:(BOOL)arg1;
+- (void)setLodBias:(double)arg1;
 - (void)setMapType:(int)arg1;
+- (void)setNavigationPuckSize:(float)arg1;
 - (void)setNavigationShieldSize:(int)arg1;
 - (void)setNeighborMode:(unsigned int)arg1;
 - (void)setRouteLineSplitAnnotation:(id)arg1;

@@ -41,6 +41,7 @@
 - (void)_setBaselineMode:(BOOL)arg1;
 - (void)_setForceWordWrapping:(BOOL)arg1;
 - (void)_setUsesSimpleTextEffects:(BOOL)arg1;
+- (BOOL)_shouldSetOriginalFontAttribute;
 - (BOOL)_usesSimpleTextEffects;
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;

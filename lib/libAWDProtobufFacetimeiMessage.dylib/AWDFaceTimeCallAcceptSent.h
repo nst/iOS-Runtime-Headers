@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDFaceTimeCallAcceptSent : PBCodable {
+@interface AWDFaceTimeCallAcceptSent : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int errorCode : 1; 
@@ -30,6 +30,7 @@
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

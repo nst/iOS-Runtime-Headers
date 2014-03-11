@@ -49,7 +49,6 @@
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 scale:(float)arg2;
-- (id)notificationIconData;
 - (int)orientation;
 - (void)preheatBitmapData;
 - (id)resizableImageByStretchingWithCapInsets:(struct PKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

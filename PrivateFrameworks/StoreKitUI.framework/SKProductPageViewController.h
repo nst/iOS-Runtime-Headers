@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKProductPageViewControllerDelegate>, <SKProductPageViewControllerDelegatePrivate>, NSDictionary, NSURL, SKUIBannerViewController, SKUIClientContext, SKUIIPadProductPageViewController, SKUIIPhoneProductPageViewController, SKUIITunesStoreUIPageViewController, SKUIItemStateCenter, SUBarButtonItem, SUDialogManager, SUPreviewOverlayViewController, SUPurchaseManager;
+@class <SKProductPageViewControllerDelegate>, <SKProductPageViewControllerDelegatePrivate>, NSDictionary, NSString, NSURL, SKUIBannerViewController, SKUIClientContext, SKUIIPadProductPageViewController, SKUIIPhoneProductPageViewController, SKUIITunesStoreUIPageViewController, SKUIItemStateCenter, SSMetricsPageEvent, SUBarButtonItem, SUDialogManager, SUPreviewOverlayViewController, SUPurchaseManager;
 
 @interface SKProductPageViewController : SUViewController <SKUIBannerViewDelegate, SKUIIPadProductPageDelegate, SKUIIPhoneProductPageDelegate, SUClientInterfaceDelegatePrivate, SUPurchaseManagerDelegate, SKUIItemStateCenterObserver> {
+    NSString *_additionalPurchaseParameters;
+    NSString *_affiliateIdentifier;
     SKUIBannerViewController *_bannerViewController;
     SKUIClientContext *_clientContext;
     <SKProductPageViewControllerDelegatePrivate> *_delegate;
@@ -13,6 +15,7 @@
     SKUIIPadProductPageViewController *_ipadProductPageViewController;
     SKUIIPhoneProductPageViewController *_iphoneProductPageViewController;
     SKUIItemStateCenter *_itemStateCenter;
+    SSMetricsPageEvent *_lastPageEvent;
     NSURL *_nativeURL;
     SUPreviewOverlayViewController *_previewOverlay;
     NSDictionary *_productParameters;
@@ -20,8 +23,12 @@
     BOOL _showsStoreButton;
     SKUIITunesStoreUIPageViewController *_storePageViewController;
     int _style;
+    int _urlBagType;
 }
 
+@property int URLBagType;
+@property(copy) NSString * additionalPurchaseParameters;
+@property(copy) NSString * affiliateIdentifier;
 @property <SKProductPageViewControllerDelegate> * delegate;
 @property int productPageStyle;
 @property(copy) NSDictionary * scriptContextDictionary;
@@ -33,6 +40,8 @@
 + (void)getCanLoadWithURL:(id)arg1 completionBlock:(id)arg2;
 
 - (void).cxx_destruct;
+- (int)URLBagType;
+- (void)_applicationWillEnterForeground;
 - (void)_failWithError:(id)arg1;
 - (void)_gotoStoreButtonAction:(id)arg1;
 - (id)_initSKProductPageViewController;
@@ -52,6 +61,8 @@
 - (void)_showPageWithRequest:(id)arg1 animated:(BOOL)arg2;
 - (void)_showPreviewOverlayAnimated:(BOOL)arg1;
 - (void)_showProductPage:(id)arg1 pageEvent:(id)arg2;
+- (id)additionalPurchaseParameters;
+- (id)affiliateIdentifier;
 - (void)bannerView:(id)arg1 didFailWithError:(id)arg2;
 - (void)bannerViewDidClose:(id)arg1;
 - (void)clientInterface:(id)arg1 exitStoreWithReason:(int)arg2;
@@ -82,11 +93,14 @@
 - (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
 - (id)scriptContextDictionary;
 - (id)scriptInterfaceForClientInterface:(id)arg1;
+- (void)setAdditionalPurchaseParameters:(id)arg1;
+- (void)setAffiliateIdentifier:(id)arg1;
 - (void)setClientInterface:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setProductPageStyle:(int)arg1;
 - (void)setScriptContextDictionary:(id)arg1;
 - (void)setShowsStoreButton:(BOOL)arg1;
+- (void)setURLBagType:(int)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsStoreButton;
 - (void)storePage:(id)arg1 finishedWithSuccess:(BOOL)arg2;

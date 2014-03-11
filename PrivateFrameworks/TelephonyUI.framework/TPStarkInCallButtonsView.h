@@ -33,6 +33,7 @@
 - (id)buttonsDictionary;
 - (int)buttonsMode;
 - (void)callCenterModelStateChangedNotification:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
 - (id)delegate;
 - (float)distributedFractionForUndistributedFraction:(float)arg1;

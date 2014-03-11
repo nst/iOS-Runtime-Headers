@@ -24,7 +24,7 @@
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;
-- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
+- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (int)numberOfCells;
 - (id)popPinnedHeaderView;
 - (void)prefetchResourcesWithReason:(int)arg1;

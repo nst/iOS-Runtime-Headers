@@ -28,9 +28,11 @@
 - (id)previewImageNameForEncryptedNativeDocument;
 - (id)previewImageNameForNativeDocument;
 - (BOOL)supportsRTL;
+- (BOOL)supportsScrollingInPhoneCommentUI;
 - (BOOL)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
+- (id)templateSFFDocumentType;
 - (id)templateTypeDisplayName;
 - (BOOL)textInspectorShowsMoreSubpane;
 - (id)wordDocumentTypes;

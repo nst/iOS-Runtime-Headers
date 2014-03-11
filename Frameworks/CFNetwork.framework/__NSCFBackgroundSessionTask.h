@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NDBackgroundSessionProtocol>, __NSCFURLSession;
+@class <NDBackgroundSessionProtocol>, NSError, __NSCFURLSession;
 
 @interface __NSCFBackgroundSessionTask : __NSCFURLSessionTask {
     unsigned int _ident;
+    NSError *_immediateError;
     <NDBackgroundSessionProtocol> *_remoteSession;
     __NSCFURLSession *_session;
 }
 
 @property(readonly) unsigned int ident;
+@property(retain) NSError * immediateError;
 @property(retain) <NDBackgroundSessionProtocol> * remoteSession;
 @property(retain) __NSCFURLSession * session;
 
@@ -23,10 +25,12 @@
 - (void)_onqueue_didSendBodyBytes:(long long)arg1 totalBytesSent:(long long)arg2 totalBytesExpectedToSend:(long long)arg3;
 - (void)dealloc;
 - (unsigned int)ident;
+- (id)immediateError;
 - (id)initWithLocalTask:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned int)arg4;
 - (id)initWithSession:(id)arg1 remoteSession:(id)arg2 request:(id)arg3 ident:(unsigned int)arg4;
 - (id)remoteSession;
 - (id)session;
+- (void)setImmediateError:(id)arg1;
 - (void)setRemoteSession:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setTaskDescription:(id)arg1;

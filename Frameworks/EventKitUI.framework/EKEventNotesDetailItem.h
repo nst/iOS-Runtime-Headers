@@ -6,11 +6,13 @@
 
 @interface EKEventNotesDetailItem : EKEventDetailItem {
     UITableViewCell *_cell;
+    BOOL _cellNeedsUpdate;
     UITableViewCell *_moreButtonCell;
     UITextView *_notesView;
 }
 
 - (void).cxx_destruct;
+- (void)_updateCellIfNeeded;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
@@ -18,5 +20,6 @@
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfSubitems;
 - (void)reset;
+- (void)setCellPosition:(int)arg1;
 
 @end

@@ -158,6 +158,7 @@
 + (void)setTemporaryPassword:(id)arg1 forAccount:(id)arg2 forServiceName:(id)arg3;
 + (id)temporaryPasswordForAccount:(id)arg1 forServiceName:(id)arg2;
 
+- (BOOL)CNFRegIsSignedOut;
 - (BOOL)CNFRegRegisteringLocalPhoneNumberSentinelAlias;
 - (BOOL)CNFRegSignInComplete;
 - (BOOL)CNFRegSignInFailed;

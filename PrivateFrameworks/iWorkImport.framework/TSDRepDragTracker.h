@@ -4,7 +4,7 @@
 
 @class <TSDRepDragTrackerDelegate>, CAShapeLayer, NSMutableSet, NSTimer, TSDAutoscroll, TSDHUDViewController, TSDRep, TSUPointerKeyDictionary;
 
-@interface TSDRepDragTracker : NSObject <TSDLayoutManipulatingTracker, TSDDecorator> {
+@interface TSDRepDragTracker : NSObject <TSDLayoutManipulatingTracker, TSDDecorator, TSDRepTracker> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -43,7 +43,7 @@
     BOOL mInDidEndDynamicOperation;
     BOOL mInWillBeginDynamicOperation;
     } mInitialDragPoint;
-    BOOL mIsInspectorDrivenDrag;
+    BOOL mIsInspectorDrivenTracking;
     } mLogicalDragPoint;
     TSUPointerKeyDictionary *mMapRepsToSnapOffsets;
     } mPreviousActualDragPoint;
@@ -62,7 +62,7 @@
 
 @property BOOL alreadyInCommandGroup;
 @property(readonly) BOOL didBeginDrag;
-@property BOOL isInspectorDrivenDrag;
+@property BOOL isInspectorDrivenTracking;
 @property(retain) TSDRep * rep;
 @property BOOL shouldShowGuides;
 @property BOOL shouldShowRuler;
@@ -83,7 +83,7 @@
 - (void)endPossibleRepDragGesture;
 - (BOOL)handlesCopyingObjects;
 - (id)initWithRep:(id)arg1;
-- (BOOL)isInspectorDrivenDrag;
+- (BOOL)isInspectorDrivenTracking;
 - (BOOL)operationShouldBeDynamic;
 - (BOOL)p_delegateIsHandlingDrag;
 - (void)p_didBeginDrag;
@@ -101,7 +101,7 @@
 - (void)setActualDragPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAlreadyInCommandGroup:(BOOL)arg1;
 - (void)setConstrainingPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setIsInspectorDrivenDrag:(BOOL)arg1;
+- (void)setIsInspectorDrivenTracking:(BOOL)arg1;
 - (void)setLogicalDragPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRep:(id)arg1;
 - (void)setShouldConstrain:(BOOL)arg1;
@@ -117,5 +117,6 @@
 - (BOOL)showDragHUD;
 - (BOOL)supportsAlignmentGuides;
 - (void)willBeginDynamicOperationForReps:(id)arg1;
+- (void)willEndPossibleRepDragGesture;
 
 @end

@@ -17,8 +17,8 @@
 @property(readonly) MKPolyline * polyline;
 @property(readonly) unsigned int transportType;
 
+- (void).cxx_destruct;
 - (id)_initWithGEOStep:(id)arg1 instructions:(id)arg2 transportType:(unsigned int)arg3 polyline:(id)arg4;
-- (void)dealloc;
 - (double)distance;
 - (id)instructions;
 - (id)notice;

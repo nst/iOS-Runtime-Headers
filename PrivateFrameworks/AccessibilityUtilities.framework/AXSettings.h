@@ -83,6 +83,7 @@
 @property BOOL quickSpeakHighlightText;
 @property float quickSpeakSpeakingRate;
 @property float quickSpeakVolume;
+@property float reduceWhitePointLevel;
 @property(retain) NSMutableSet * registeredNotifications;
 @property BOOL shouldStreamToLeftAid;
 @property BOOL shouldStreamToRightAid;
@@ -218,6 +219,7 @@
 - (float)quickSpeakSpeakingRate;
 - (float)quickSpeakSpeakingRateForLanguage:(id)arg1;
 - (float)quickSpeakVolume;
+- (float)reduceWhitePointLevel;
 - (void)registerUpdateBlock:(id)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
 - (id)registeredNotifications;
 - (void)setAllowHearingAidControlOnLockScreen:(BOOL)arg1;
@@ -292,6 +294,7 @@
 - (void)setQuickSpeakSpeakingRate:(float)arg1 forLanguage:(id)arg2;
 - (void)setQuickSpeakSpeakingRate:(float)arg1;
 - (void)setQuickSpeakVolume:(float)arg1;
+- (void)setReduceWhitePointLevel:(float)arg1;
 - (void)setRegisteredNotifications:(id)arg1;
 - (void)setShouldStreamToLeftAid:(BOOL)arg1;
 - (void)setShouldStreamToRightAid:(BOOL)arg1;

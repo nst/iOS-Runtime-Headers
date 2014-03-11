@@ -9,6 +9,7 @@
     unsigned int _edges;
     UIKBGradient *_gradient;
     float _inset;
+    float _opacity;
     float _weight;
 }
 
@@ -16,6 +17,7 @@
 @property(retain) UIKBGradient * gradient;
 @property float inset;
 @property(readonly) BOOL isValid;
+@property float opacity;
 @property(readonly) SEL renderSelector;
 @property(readonly) BOOL renderUnder;
 @property float weight;
@@ -30,12 +32,15 @@
 - (id)gradient;
 - (id)initWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
 - (float)inset;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
+- (float)opacity;
 - (SEL)renderSelector;
 - (BOOL)renderUnder;
 - (void)setEdges:(unsigned int)arg1;
 - (void)setGradient:(id)arg1;
 - (void)setInset:(float)arg1;
+- (void)setOpacity:(float)arg1;
 - (void)setWeight:(float)arg1;
 - (float)weight;
 

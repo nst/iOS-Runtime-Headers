@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MPHSearchViewControllerDelegate>, NSArray, NSDate, NSMutableArray, NSString, NSTimer, SKUICircleProgressIndicator, UIButton, UILabel, UITableView, UITapGestureRecognizer, UIView;
+@class <MPHSearchViewControllerDelegate>, NSArray, NSMutableArray, NSOperationQueue, NSString, SKUICircleProgressIndicator, UIButton, UILabel, UITableView, UITapGestureRecognizer, UIView;
 
 @interface MusicSearchViewController : UIViewController <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicatorView;
     BOOL _canShowContinueSearch;
     UIButton *_continueSearchButton;
     <MPHSearchViewControllerDelegate> *_delegate;
-    NSDate *_lastSearchDate;
     UILabel *_loadingLabel;
     UILabel *_noResultsLabel;
     NSMutableArray *_nonEmptySearchDataSources;
-    NSString *_pendingSearch;
-    NSTimer *_pendingSearchTimer;
     NSArray *_searchDataSources;
+    NSOperationQueue *_searchOperationQueue;
     NSString *_searchTerm;
     UITableView *_tableView;
     UIView *_tableViewBackgroundView;
@@ -24,9 +22,6 @@
 }
 
 @property <MPHSearchViewControllerDelegate> * delegate;
-@property(retain) NSDate * lastSearchDate;
-@property(copy) NSString * pendingSearch;
-@property(retain) NSTimer * pendingSearchTimer;
 @property(readonly) NSString * searchTerm;
 @property(readonly) UITableView * tableView;
 
@@ -41,7 +36,6 @@
 - (Class)_searchCellConfigurationClassForSearchDataSource:(id)arg1;
 - (void)_searchDataSourceDidInvalidateNotification:(id)arg1;
 - (id)_searchSectionTitleForSearchDataSource:(id)arg1;
-- (void)_startPendingSearch;
 - (void)_storeRestrictionsDidChangeNotification:(id)arg1;
 - (void)_tapGestureRecognizerAction:(id)arg1;
 - (void)_updateResultsForSearchTerm:(id)arg1;
@@ -49,10 +43,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)lastSearchDate;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (id)pendingSearch;
-- (id)pendingSearchTimer;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
@@ -62,9 +53,6 @@
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (id)searchTerm;
 - (void)setDelegate:(id)arg1;
-- (void)setLastSearchDate:(id)arg1;
-- (void)setPendingSearch:(id)arg1;
-- (void)setPendingSearchTimer:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;

@@ -2,54 +2,39 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CIContext, TSDCurvedShadow, TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLShader;
+@class CIContext, TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLShader;
 
 @interface TSDGLCurvedShadow : TSDGLShadow {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct { 
-        float x; 
-        float y; 
-        float z; 
-        float w; 
     TSDGLDataBuffer *mAlphaDataBuffer;
     TSDGLFrameBuffer *mAlphaFrameBuffer;
     TSDGLShader *mAlphaShader;
-    float mAngle;
     char *mBuffer;
     CIContext *mCIContext;
-    } mColor;
     TSDGLDataBuffer *mCurveInterpolationDataBuffer;
     TSDGLFrameBuffer *mCurveInterpolationFrameBuffer;
     TSDGLShader *mCurveInterpolationShader;
     TSDGLDataBuffer *mCurvedDataBuffer;
     TSDGLFrameBuffer *mCurvedFrameBuffer;
     TSDGLShader *mCurvedShader;
-    TSDCurvedShadow *mCurvedShadow;
-    } mFramebufferSize;
 }
 
 + (void)applicationDidBecomeActive;
 + (void)applicationWillResignActive;
 
-- (id).cxx_construct;
+- (float)baseBlurRadiusForCurvedShadow:(id)arg1 framebufferSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)dealloc;
 - (void)drawShadow:(id)arg1 forImage:(struct CGImage { }*)arg2 inContext:(struct CGContext { }*)arg3 forSize:(struct CGSize { float x1; float x2; })arg4;
-- (id)initWithFramebufferSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGImage { }*)newCGImageWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 shader:(id)arg3 framebuffer:(id)arg4 databuffer:(id)arg5;
-- (void)p_bindAlphaFramebuffer;
-- (void)p_bindCurveInterpolationFramebuffer;
-- (void)p_bindCurvedFramebuffer;
-- (void)p_deleteFramebuffers;
-- (void)p_newBlurredImageFromImage:(struct CGImage { }*)arg1 numBlurs:(float)arg2 blurredImage:(struct CGImage {}**)arg3;
-- (void)p_newBlurredImageFromImage:(struct CGImage { }*)arg1 numBlurs:(float)arg2 halfBlurredImage:(struct CGImage {}**)arg3 blurredImage:(struct CGImage {}**)arg4;
-- (void)p_newTintedImage:(struct CGImage {}**)arg1 fromImage:(struct CGImage { }*)arg2 withColor:(struct { float x1; float x2; float x3; float x4; })arg3;
-- (void)p_setupAlphaShader;
-- (void)p_setupCIContext;
-- (void)p_setupCurvedInterpolationShader;
-- (void)p_setupCurvedShader;
-- (void)p_unbindFramebuffers;
+- (void)p_bindAlphaShaderForShadow:(id)arg1 framebufferSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)p_bindCurvedInterpolationShaderForShadow:(id)arg1 framebufferSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)p_bindCurvedShaderForShadow:(id)arg1 framebufferSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)p_deleteFramebuffersWithCurrentGLFramebuffer:(int)arg1;
+- (void)p_newBlurredImageFromImage:(struct CGImage { }*)arg1 blurRadius:(float)arg2 blurredImage:(struct CGImage {}**)arg3 framebufferSize:(struct CGSize { float x1; float x2; })arg4;
+- (void)p_newBlurredImageFromImage:(struct CGImage { }*)arg1 blurRadius:(float)arg2 halfBlurredImage:(struct CGImage {}**)arg3 blurredImage:(struct CGImage {}**)arg4 framebufferSize:(struct CGSize { float x1; float x2; })arg5;
+- (void)p_newTintedImage:(struct CGImage {}**)arg1 fromImage:(struct CGImage { }*)arg2 withColor:(struct { float x1; float x2; float x3; float x4; })arg3 framebufferSize:(struct CGSize { float x1; float x2; })arg4;
+- (void)p_setupCIContextForFramebufferSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)p_shrinkImageIfNecessary:(struct CGImage { }*)arg1 originalSize:(struct CGSize { float x1; float x2; })arg2 newImage:(struct CGImage {}**)arg3 newSize:(struct CGSize { float x1; float x2; }*)arg4;
+- (void)p_unbindFramebuffersWithCurrentGLFramebuffer:(int)arg1;
 - (void)releaseShaders;
 
 @end

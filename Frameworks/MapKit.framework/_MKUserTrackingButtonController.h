@@ -17,12 +17,13 @@
 @property int state;
 @property(retain) <MKUserTrackingView> * userTrackingView;
 
+- (void).cxx_destruct;
 - (id)_activityIndicatorView;
 - (void)_authorizationStatusChanged:(id)arg1;
 - (id)_contentAnimation;
 - (id)_expandAnimation;
 - (void)_goToNextMode:(id)arg1;
-- (id)_imageForState:(int)arg1;
+- (id)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
 - (void)_reloadState;
 - (BOOL)_shouldAnimateFromState:(int)arg1 toState:(int)arg2;
 - (id)_shrinkAnimation;

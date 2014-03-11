@@ -38,6 +38,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedToStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (id)characterStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (unsigned long)composedCharacterAtCharIndex:(unsigned int)arg1 isSurrogatePair:(BOOL*)arg2;
 - (void)dealloc;
 - (id)footnoteReferenceAtCharIndex:(unsigned int)arg1;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

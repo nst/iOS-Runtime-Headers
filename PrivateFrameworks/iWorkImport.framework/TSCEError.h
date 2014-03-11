@@ -17,6 +17,7 @@
 + (id)autoNumberAttachmentError;
 + (id)badReferenceError;
 + (id)circularReferenceError;
++ (id)durationNotAllowedError:(id)arg1 argumentNumber:(int)arg2;
 + (id)errorForToken:(id)arg1;
 + (id)errorWithDictionary:(id)arg1;
 + (BOOL)exceptionIsCircularReferenceError:(id)arg1;

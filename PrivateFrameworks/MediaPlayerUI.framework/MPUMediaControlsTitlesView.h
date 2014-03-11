@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUMediaControlsTitlesViewDelegate>, CAGradientLayer;
+@class <MPUMediaControlsTitlesViewDelegate>, CAGradientLayer, NSString;
 
 @interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <SBUIControlCenterControlObserver> {
+    NSString *_appDisplayName;
     <MPUMediaControlsTitlesViewDelegate> *_delegate;
+    BOOL _displayingAppName;
     CAGradientLayer *_edgesLayerMask;
     BOOL _highlighted;
     int _mediaControlsStyle;
@@ -24,7 +26,6 @@
 - (void)_touchControlActivate:(id)arg1;
 - (void)_touchControlDeactivate:(id)arg1;
 - (void)_touchControlTapped:(id)arg1;
-- (void)_updateTrackInformationLabelsWithArtist:(id)arg1 title:(id)arg2 album:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithMediaControlsStyle:(int)arg1;
@@ -33,6 +34,7 @@
 - (int)mediaControlsStyle;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)updateNowPlayingAppDisplayName:(id)arg1;
 - (void)updateTrackInformationWithNowPlayingInfo:(id)arg1;
 
 @end

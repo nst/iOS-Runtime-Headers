@@ -211,6 +211,7 @@
 + (BOOL)rivenInstalled;
 + (BOOL)rivenPreference;
 + (BOOL)rivenTranslationPreference;
++ (void)sendPerformanceNotification:(id)arg1;
 + (void)setParentTestForProfiling:(id)arg1;
 + (void)setPersistentDictationTargetZone:(int)arg1;
 + (void)setPersistentDictationWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
@@ -241,8 +242,12 @@
 - (BOOL)_isShowingCandidateUIWithAvailableCandidates;
 - (id)_keyboardBehaviorState;
 - (id)_layout;
+- (void)_moveWithEvent:(id)arg1;
 - (BOOL)_needsCandidates;
 - (void)_nop;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (int)_positionInCandidateList:(id)arg1;
 - (id)_rangeForAutocorrectionText:(id)arg1;
 - (void)_remapKeyEvent:(id)arg1 withKeyEventMap:(id)arg2;
@@ -253,6 +258,7 @@
 - (BOOL)_shouldMinimizeForHardwareKeyboard;
 - (BOOL)_systemHasKbd;
 - (void)_updateSoundPreheatingForWindow:(id)arg1;
+- (void)_wheelChangedWithEvent:(id)arg1;
 - (void)_willMoveToWindow:(id)arg1 withAncestorView:(id)arg2;
 - (void)acceptAutocorrection;
 - (void)acceptAutocorrectionAndEndComposition;
@@ -306,6 +312,7 @@
 - (BOOL)callShouldDeleteWithWordCountForRapidDelete:(int)arg1 characterCountForRapidDelete:(int)arg2;
 - (BOOL)callShouldInsertText:(id)arg1;
 - (BOOL)callShouldReplaceExtendedRange:(unsigned int)arg1 withText:(id)arg2 includeMarkedText:(BOOL)arg3;
+- (BOOL)canHandleEvent:(id)arg1;
 - (BOOL)canHandleKeyHitTest;
 - (void)cancelAllKeyEvents;
 - (void)cancelSplitTransition;
@@ -498,6 +505,7 @@
 - (BOOL)needsKeyHitTestResults;
 - (BOOL)needsToDeferUpdateTextCandidateView;
 - (BOOL)nextCharacterIsWordCharacter;
+- (id)nextInputModeInPreferencedList;
 - (id)nextInputModeToUse;
 - (BOOL)noContent;
 - (void)notifyShiftState;
@@ -522,7 +530,7 @@
 - (void)releaseInputManager;
 - (void)releaseInputManagerIfInactive;
 - (void)releaseSuppressUpdateCandidateView;
-- (void)remoteControlEvent:(id)arg1;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)removeAllDynamicDictionaries;
 - (void)removeAutocorrectPrompt;
 - (void)removeAutocorrection;
@@ -630,6 +638,7 @@
 - (BOOL)shiftLockedEnabled;
 - (BOOL)shouldAcceptCandidate:(id)arg1 beforeInputString:(id)arg2;
 - (BOOL)shouldEnableShiftForDeletedCharacter:(unsigned long)arg1;
+- (BOOL)shouldForceASCIICapable;
 - (BOOL)shouldIgnoreCandidateSet:(id)arg1 documentOperation:(id)arg2;
 - (BOOL)shouldSetInputModeInNextRun;
 - (BOOL)shouldShowCandidateBar;

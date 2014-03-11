@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDAppUsageInfo : PBCodable {
+@interface AWDAppUsageInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int appBGCount : 1; 
         unsigned int appBGDuration : 1; 
@@ -35,6 +35,7 @@
 - (unsigned int)appFGCount;
 - (unsigned int)appFGDuration;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

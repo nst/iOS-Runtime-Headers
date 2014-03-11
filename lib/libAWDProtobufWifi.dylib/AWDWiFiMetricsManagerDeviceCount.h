@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufWifi.dylib
  */
 
-@interface AWDWiFiMetricsManagerDeviceCount : PBCodable {
+@interface AWDWiFiMetricsManagerDeviceCount : PBCodable <NSCopying> {
     struct { 
         unsigned int timeSinceBoot : 1; 
         unsigned int timestamp : 1; 
@@ -25,7 +25,7 @@
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)deviceCount;
 - (unsigned int)deviceIdentifierMap;

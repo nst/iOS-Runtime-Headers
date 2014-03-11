@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDIMessageAttachmentDownload : PBCodable {
+@interface AWDIMessageAttachmentDownload : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int attachmentSize : 1; 
@@ -52,6 +52,7 @@
 - (unsigned int)attachmentSize;
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

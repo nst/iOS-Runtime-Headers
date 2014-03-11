@@ -19,6 +19,8 @@
 @property(retain) NSString * searchString;
 @property BOOL showDebugGridOverlay;
 @property BOOL showEventsInPhoneMonthView;
+@property BOOL showListView;
+@property BOOL showMonthDividedListView;
 @property BOOL showWeekNumbers;
 @property(retain) NSDate * simulatedCurrentDate;
 @property BOOL usePickerStyleInlineEditorMenus;
@@ -65,6 +67,8 @@
 - (void)setSearchString:(id)arg1;
 - (void)setShowDebugGridOverlay:(BOOL)arg1;
 - (void)setShowEventsInPhoneMonthView:(BOOL)arg1;
+- (void)setShowListView:(BOOL)arg1;
+- (void)setShowMonthDividedListView:(BOOL)arg1;
 - (void)setShowWeekNumbers:(BOOL)arg1;
 - (void)setSimulatedCurrentDate:(id)arg1;
 - (void)setUsePickerStyleInlineEditorMenus:(BOOL)arg1;
@@ -72,6 +76,8 @@
 - (void)setWeekStart:(id)arg1;
 - (BOOL)showDebugGridOverlay;
 - (BOOL)showEventsInPhoneMonthView;
+- (BOOL)showListView;
+- (BOOL)showMonthDividedListView;
 - (BOOL)showWeekNumbers;
 - (id)simulatedCurrentDate;
 - (BOOL)usePickerStyleInlineEditorMenus;

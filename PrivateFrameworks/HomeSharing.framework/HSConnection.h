@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class HSConnectionConfiguration, HSConnectionStream, HSFairPlayInfo, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class HSConnectionConfiguration, HSConnectionStream, HSFairPlayInfo, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL;
 
 @interface HSConnection : NSObject {
+    NSObject<OS_dispatch_source> *_activityTimerSource;
     HSConnectionConfiguration *_configuration;
     int _connectionState;
     HSConnectionStream *_connectionStream;
@@ -13,8 +14,7 @@
     unsigned int _controlPort;
     unsigned int _interfaceID;
     unsigned int _promptID;
-    NSObject<OS_dispatch_queue> *_queue;
-    struct __CFReadStream { } *_readStream;
+    NSObject<OS_dispatch_queue> *_serialQueue;
     BOOL _tokenCheckRequred;
     BOOL authenticationRequired;
     unsigned int basePlaylistContainerID;
@@ -49,7 +49,7 @@
 
 - (void)_continueFPSetupNegotiationWithData:(id)arg1 internalConnectionCompletionHandler:(id)arg2;
 - (void)_loadDatabaseWithInternalConnectionCompletionHandler:(id)arg1;
-- (void)_notifyServerOfActivity;
+- (void)_onSerialQueue_sendRequest:(id)arg1 withInternalResponseHandler:(id)arg2;
 - (unsigned int)_sapVersionForConnectionType;
 - (void)_sendRequest:(id)arg1 withInternalResponseHandler:(id)arg2;
 - (void)_setupControlConnectionWithInternalConnectionCompletionHandler:(id)arg1;

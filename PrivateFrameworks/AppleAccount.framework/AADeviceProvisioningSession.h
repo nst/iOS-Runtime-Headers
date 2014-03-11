@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface AADeviceProvisioningSession : NSObject {
+    struct OpaqueCFHTTPCookieStorage { } *_cookieStorageRef;
     NSString *_dsid;
 }
 
@@ -14,6 +15,7 @@
 - (id)initWithAccount:(id)arg1;
 - (id)initWithDSID:(id)arg1;
 - (long)provisionDeviceWithData:(id)arg1;
+- (void)setCookieStorageRef:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (long)synchronizeProvisioningWithData:(id)arg1;
 
 @end

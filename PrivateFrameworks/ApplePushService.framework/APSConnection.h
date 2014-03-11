@@ -42,6 +42,7 @@
 + (void)_setTokenState;
 + (id)connectionsDebuggingState;
 + (struct __SecIdentity { }*)copyIdentity;
++ (void)invalidateDeviceIdentity;
 + (BOOL)isValidEnvironment:(id)arg1;
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
 + (void)notifySafeToSendFilter;
@@ -66,6 +67,7 @@
 - (void)_disconnectOnIvarQueue;
 - (void)_handleEvent:(id)arg1 withHandler:(id)arg2;
 - (id)_listForIdentifierOnIvarQueue:(unsigned int)arg1;
+- (void)_noteDisconnectedFromDaemonOnIvarQueue;
 - (void)_onIvarQueue_setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3 sendToDaemon:(BOOL)arg4;
 - (void)_sendOutgoingMessage:(id)arg1 fake:(BOOL)arg2;
 - (void)_setEnableCriticalReliability:(BOOL)arg1 sendToDaemon:(BOOL)arg2;

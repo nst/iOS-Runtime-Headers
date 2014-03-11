@@ -33,7 +33,7 @@
 
 - (id)_accessQueue;
 - (BOOL)_allowsAutoRefresh;
-- (BOOL)_booleanPreferenceForKey:(struct __CFString { }*)arg1;
+- (BOOL)_booleanPreferenceForKey:(struct __CFString { }*)arg1 defaultValue:(BOOL)arg2;
 - (id)_cachedSystemVibrationPatterns;
 - (id)_cachedUserGeneratedVibrationPatterns;
 - (id)_copySystemWideVibrationPatternPreferenceKeyForAlertType:(int)arg1 accountIdentifier:(id)arg2;

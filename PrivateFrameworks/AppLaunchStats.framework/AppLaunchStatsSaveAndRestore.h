@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSUserDefaults;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AppLaunchStatsSaveAndRestore : NSObject {
     NSObject<OS_dispatch_queue> *aplsSaveAndRestoreQueue;
     boolallowSave;
     boolhasSavedData;
-    NSUserDefaults *saveRestoreDefaults;
     NSMutableArray *saveRestoreObjects;
+    NSMutableDictionary *saveState;
 }
 
 @property bool allowSave;
@@ -19,12 +19,16 @@
 - (void)addDataSource:(id)arg1;
 - (bool)allowSave;
 - (void)createBasicStoreStructure;
+- (void)doDeepCopySavedState:(id)arg1;
 - (id)getDict:(id)arg1;
 - (id)getList:(id)arg1;
 - (id)getString:(id)arg1;
 - (bool)hasSavedData;
 - (id)init;
-- (void)quickSave:(id)arg1 forKey:(id)arg2;
+- (void)quickSaveBlackList:(id)arg1 forKey:(id)arg2;
+- (void)quickSaveDelayTime:(id)arg1 forKey:(id)arg2;
+- (void)quickSaveInstallApps:(id)arg1 forKey:(id)arg2;
+- (void)quickSaveUnBlackList:(id)arg1 forKey:(id)arg2;
 - (void)restoreAll;
 - (void)saveAll;
 - (void)saveState:(id)arg1 withKey:(id)arg2;

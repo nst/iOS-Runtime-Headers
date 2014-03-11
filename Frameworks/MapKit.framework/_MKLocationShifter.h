@@ -8,7 +8,7 @@
     GEOLocationShifter *_locationShifter;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2;
 

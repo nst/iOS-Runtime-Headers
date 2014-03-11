@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUHorizontalTiledCollectionViewLayoutDelegate>, PUCollectionViewData;
+@class <PUHorizontalTiledCollectionViewLayoutDelegate>, PUCollectionViewData, UICollectionViewLayoutAttributes;
 
 @interface PUHorizontalTiledCollectionViewLayout : UICollectionViewLayout {
     struct UIEdgeInsets { 
@@ -12,6 +12,7 @@
         float right; 
     PUCollectionViewData *_data;
     <PUHorizontalTiledCollectionViewLayoutDelegate> *_delegate;
+    UICollectionViewLayoutAttributes *_dummyAttrs;
     float _interitemSpacing;
     } _itemsContentInset;
 }
@@ -27,7 +28,6 @@
 - (void)_ensureIndexPath:(id)arg1 inData:(id)arg2;
 - (void)_ensureRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inData:(id)arg2 outDeltaOriginX:(float*)arg3;
 - (id)_layoutAttributesForItemAtIndexPath:(id)arg1;
-- (id)_next:(int)arg1 indexPathsFollowingIndexPath:(id)arg2 direction:(int)arg3;
 - (BOOL)_shouldInvalidateCachedLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_updateLayoutData:(id)arg1 inDirection:(int)arg2 outDeltaOriginX:(float*)arg3;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
@@ -41,6 +41,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })itemsContentInset;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (id)layoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)prepareLayout;
 - (void)setDelegate:(id)arg1;
 - (void)setInteritemSpacing:(float)arg1;

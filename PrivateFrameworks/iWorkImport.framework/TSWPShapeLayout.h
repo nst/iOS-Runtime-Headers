@@ -32,6 +32,7 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })autosizedTransform;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })autosizedTransformForInfoGeometry:(id)arg1;
 - (BOOL)autosizes;
+- (BOOL)canAspectRatioLockBeChangedByUser;
 - (id)childSearchTargets;
 - (id)children;
 - (unsigned int)columnCount;
@@ -67,6 +68,7 @@
 - (void)processChangedProperty:(int)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
 - (void)replaceChild:(id)arg1 with:(id)arg2;
+- (BOOL)resizeMayChangeAspectRatio;
 - (void)setChildren:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGeometry:(id)arg1;

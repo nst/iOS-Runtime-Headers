@@ -108,6 +108,7 @@
 - (id)timeMarker;
 - (int)timeMarkerDotDay;
 - (float)timeWidth;
+- (void)tintColorDidChange;
 - (float)topPadding;
 - (void)updateMarkerPosition;
 - (BOOL)usesVibrantGridDrawing;

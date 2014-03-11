@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <MKLocationProvider>, <MKLocationRecorder>, CLHeading, CLLocation, GEOLocation, GEOLocationShifter, NSBundle, NSHashTable, NSString, NSTimer, _MKWiFiObserver;
+@class <MKLocationProvider>, <MKLocationRecorder>, CLHeading, CLLocation, GEOLocation, GEOLocationShifter, NSBundle, NSHashTable, NSMutableArray, NSString, NSTimer, _MKWiFiObserver;
 
 @interface MKLocationManager : NSObject <_MKWiFiObserverDelegate, MKLocationProviderDelegate> {
     BOOL _airplaneModeEnabled;
@@ -20,6 +20,7 @@
     BOOL _continuedAfterBecomingInactive;
     BOOL _continuesWhileInactive;
     BOOL _enabled;
+    BOOL _hasCustomDesiredAccuracy;
     CLHeading *_heading;
     NSHashTable *_headingObservers;
     double _headingUpdateTime;
@@ -28,6 +29,10 @@
     BOOL _lastLocationPushed;
     double _lastLocationReportTime;
     double _lastLocationUpdateTime;
+    double _lastVehicleHeading;
+    double _lastVehicleHeadingUpdateTime;
+    double _lastVehicleSpeed;
+    double _lastVehicleSpeedUpdateTime;
     double _locationAccuracyUpdateTime;
     id _locationCorrector;
     NSHashTable *_locationListeners;
@@ -36,8 +41,10 @@
     <MKLocationRecorder> *_locationRecorder;
     GEOLocationShifter *_locationShifter;
     BOOL _logStartStopLocationUpdates;
+    double _minimumLocationUpdateInterval;
     double _navCourse;
     id _networkActivity;
+    NSMutableArray *_recentLocationUpdateIntervals;
     NSHashTable *_regionMonitors;
     BOOL _suspended;
     CLHeading *_throttledHeading;
@@ -49,9 +56,12 @@
 
 @property int activityType;
 @property BOOL allowUpdateCoalescing;
+@property(copy) id authorizationRequestBlock;
 @property BOOL continuesWhileInactive;
 @property(readonly) GEOLocation * courseCorrectedLocation;
 @property(readonly) GEOLocation * currentLocation;
+@property(readonly) double currentVehicleHeading;
+@property(readonly) double currentVehicleSpeed;
 @property double desiredAccuracy;
 @property double distanceFilter;
 @property(retain) NSBundle * effectiveBundle;
@@ -83,14 +93,17 @@
 @property(getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
 @property(readonly) BOOL locationShiftEnabled;
 @property BOOL logStartStopLocationUpdates;
+@property double minimumLocationUpdateInterval;
 @property(readonly) double navigationCourse;
 @property(copy) id networkActivity;
 @property(retain) CLHeading * throttledHeading;
 @property BOOL useCourseForHeading;
+@property(readonly) double vehicleHeadingOrCourse;
 
 + (void)setCanMonitorWiFiStatus:(BOOL)arg1;
 + (id)sharedLocationManager;
 
+- (void).cxx_destruct;
 - (void)_airplaneModeChanged;
 - (BOOL)_isTimeToResetOnResume;
 - (void)_locationProvider:(id)arg1 didUpdateLocation:(id)arg2 lastKnownNavCourse:(double)arg3;
@@ -103,7 +116,9 @@
 - (void)_reportLocationSuccess;
 - (void)_setTrackingHeading:(BOOL)arg1;
 - (void)_setTrackingLocation:(BOOL)arg1;
+- (BOOL)_shouldAllowLocationUpdateInterval:(double)arg1;
 - (void)_startCoalescingUpdates:(int)arg1;
+- (void)_startLocationUpdateWithObserver:(id)arg1 desiredAccuracy:(double)arg2;
 - (void)_stopCoalescingUpdates;
 - (void)_suspend;
 - (void)_syncLocationProviderWithTracking;
@@ -112,9 +127,12 @@
 - (BOOL)allowUpdateCoalescing;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
+- (id)authorizationRequestBlock;
 - (BOOL)continuesWhileInactive;
 - (id)courseCorrectedLocation;
 - (id)currentLocation;
+- (double)currentVehicleHeading;
+- (double)currentVehicleSpeed;
 - (void)dampenGPSLocationAccuracy:(id*)arg1 oldLocationSource:(int)arg2;
 - (void)dealloc;
 - (double)desiredAccuracy;
@@ -155,6 +173,8 @@
 - (void)locationProvider:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2 lastKnownNavCourse:(double)arg3;
 - (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2;
+- (void)locationProvider:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
+- (void)locationProvider:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (id)locationProvider;
 - (void)locationProviderDidChangeAuthorizationStatus:(id)arg1;
 - (void)locationProviderDidPauseLocationUpdates:(id)arg1;
@@ -163,6 +183,7 @@
 - (id)locationRecorder;
 - (BOOL)locationShiftEnabled;
 - (BOOL)logStartStopLocationUpdates;
+- (double)minimumLocationUpdateInterval;
 - (double)navigationCourse;
 - (id)networkActivity;
 - (void)pushLocation:(id)arg1;
@@ -171,6 +192,7 @@
 - (void)resetAfterResumeIfNecessary;
 - (void)setActivityType:(int)arg1;
 - (void)setAllowUpdateCoalescing:(BOOL)arg1;
+- (void)setAuthorizationRequestBlock:(id)arg1;
 - (void)setCoalesceTimer:(id)arg1;
 - (void)setContinuesWhileInactive:(BOOL)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
@@ -186,21 +208,28 @@
 - (void)setLocationRecorder:(id)arg1;
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (void)setLogStartStopLocationUpdates:(BOOL)arg1;
+- (void)setMinimumLocationUpdateInterval:(double)arg1;
 - (void)setNetworkActivity:(id)arg1;
 - (void)setThrottledHeading:(id)arg1;
 - (void)setUseCourseForHeading:(BOOL)arg1;
 - (BOOL)shouldCoalesceUpdates;
 - (BOOL)shouldStartCoalescingLocation:(id)arg1;
 - (BOOL)shouldStopCoalescingLocation:(id)arg1;
+- (id)singleLocationUpdateWithDesiredAccuracy:(double)arg1 handler:(id)arg2;
 - (id)singleLocationUpdateWithHandler:(id)arg1;
 - (void)startHeadingUpdateWithObserver:(id)arg1;
 - (void)startLocationUpdateWithObserver:(id)arg1;
 - (void)startMonitoringRegion:(id)arg1 observer:(id)arg2;
+- (void)startVehicleHeadingUpdate;
+- (void)startVehicleSpeedUpdate;
 - (void)stopHeadingUpdateWithObserver:(id)arg1;
 - (void)stopLocationUpdateWithObserver:(id)arg1;
 - (void)stopMonitoringRegion:(id)arg1 observer:(id)arg2;
+- (void)stopVehicleHeadingUpdate;
+- (void)stopVehicleSpeedUpdate;
 - (id)throttledHeading;
 - (BOOL)useCourseForHeading;
+- (double)vehicleHeadingOrCourse;
 - (BOOL)wasLastLocationPushed;
 - (void)wiFiObserverDidChangeEnabled:(id)arg1;
 

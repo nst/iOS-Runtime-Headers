@@ -18,5 +18,6 @@
 - (id)previewItems;
 - (void)setDataSource:(id)arg1;
 - (void)setPreviewItems:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

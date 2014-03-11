@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDateFormatter, PKJob, UIButton;
+@class NSDateFormatter, PKJob;
 
 @interface UIPrintStatusTableViewController : UITableViewController {
-    UIButton *_cancelButton;
     PKJob *_printJob;
     NSDateFormatter *_sentFormatter;
 }

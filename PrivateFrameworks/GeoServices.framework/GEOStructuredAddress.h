@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOStructuredAddress : PBCodable <NSCopying> {
+@interface GEOStructuredAddress : PBCodable <GEOURLSerializable, NSCopying> {
     struct { 
         long long *list; 
         unsigned int count; 
@@ -72,6 +72,7 @@
 @property(retain) NSString * subThoroughfare;
 @property(retain) NSString * thoroughfare;
 
+- (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (void)addAreaOfInterest:(id)arg1;
 - (void)addDependentLocality:(id)arg1;
 - (void)addGeoId:(long long)arg1;
@@ -118,6 +119,7 @@
 - (BOOL)hasThoroughfare;
 - (unsigned int)hash;
 - (id)initWithAddressDictionary:(id)arg1;
+- (id)initWithUrlRepresentation:(id)arg1;
 - (id)inlandWater;
 - (BOOL)isEqual:(id)arg1;
 - (id)locality;
@@ -156,6 +158,7 @@
 - (unsigned int)subPremisesCount;
 - (id)subThoroughfare;
 - (id)thoroughfare;
+- (id)urlRepresentation;
 - (void)writeTo:(id)arg1;
 
 @end

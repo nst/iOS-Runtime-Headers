@@ -12,6 +12,7 @@
 @interface EAAccessoryInternal : NSObject {
     int (*_cfAccessoryPortPropertyCallback)();
     NSDictionary *_audioPorts;
+    NSString *_bonjourName;
     unsigned int _capabilities;
     struct __CFAccessory { } *_cfAccessory;
     void *_cfAccessoryPortPropertyContext;
@@ -23,7 +24,9 @@
     NSArray *_eqNames;
     NSString *_firmwareRevision;
     NSString *_hardwareRevision;
+    BOOL _hasIPConnection;
     int _iPodOutOptionsMask;
+    BOOL _isAvailableOverBonjour;
     int _locationSentenceTypesMask;
     NSString *_macAddress;
     NSString *_manufacturer;
@@ -39,6 +42,7 @@
 }
 
 @property(retain) NSDictionary * audioPorts;
+@property(copy) NSString * bonjourName;
 @property unsigned int capabilities;
 @property struct __CFAccessory { }* cfAccessory;
 @property int (* cfAccessoryPortPropertyCallback;
@@ -51,7 +55,9 @@
 @property(retain) NSArray * eqNames;
 @property(copy) NSString * firmwareRevision;
 @property(copy) NSString * hardwareRevision;
+@property BOOL hasIPConnection;
 @property int iPodOutOptionsMask;
+@property BOOL isAvailableOverBonjour;
 @property int locationSentenceTypesMask;
 @property(copy) NSString * macAddress;
 @property(copy) NSString * manufacturer;
@@ -68,6 +74,7 @@
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (void)addSession:(id)arg1;
 - (id)audioPorts;
+- (id)bonjourName;
 - (unsigned int)capabilities;
 - (struct __CFAccessory { }*)cfAccessory;
 - (void*)cfAccessoryPortPropertyContext;
@@ -80,8 +87,10 @@
 - (id)eqNames;
 - (id)firmwareRevision;
 - (id)hardwareRevision;
+- (BOOL)hasIPConnection;
 - (int)iPodOutOptionsMask;
 - (id)init;
+- (BOOL)isAvailableOverBonjour;
 - (int)locationSentenceTypesMask;
 - (id)macAddress;
 - (id)manufacturer;
@@ -94,6 +103,7 @@
 - (id)serialNumber;
 - (id)sessionsList;
 - (void)setAudioPorts:(id)arg1;
+- (void)setBonjourName:(id)arg1;
 - (void)setCapabilities:(unsigned int)arg1;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
 - (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
@@ -106,7 +116,9 @@
 - (void)setEqNames:(id)arg1;
 - (void)setFirmwareRevision:(id)arg1;
 - (void)setHardwareRevision:(id)arg1;
+- (void)setHasIPConnection:(BOOL)arg1;
 - (void)setIPodOutOptionsMask:(int)arg1;
+- (void)setIsAvailableOverBonjour:(BOOL)arg1;
 - (void)setLocationSentenceTypesMask:(int)arg1;
 - (void)setMacAddress:(id)arg1;
 - (void)setManufacturer:(id)arg1;

@@ -7,6 +7,8 @@
 @interface EKEventDetailCell : UITableViewCell {
     BOOL _editable;
     EKEvent *_event;
+    int _lastLaidOutPosition;
+    float _lastLaidOutWidth;
 }
 
 @property(readonly) BOOL isEditable;
@@ -16,6 +18,7 @@
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (BOOL)isEditable;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (BOOL)needsLayoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setEvent:(id)arg1;
 - (BOOL)update;
 

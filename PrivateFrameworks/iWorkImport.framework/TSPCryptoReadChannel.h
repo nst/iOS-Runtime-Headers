@@ -5,10 +5,7 @@
 @class <TSUStreamReadChannel>, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, SFUCryptoKey;
 
 @interface TSPCryptoReadChannel : NSObject <TSUStreamReadChannel> {
-    struct { 
-        unsigned int ctx[96]; 
     char *_buffer;
-    } _ccHmacContext;
     struct _CCCryptor { } *_cryptor;
     SFUCryptoKey *_decryptionKey;
     NSObject<OS_dispatch_data> *_holdData;
@@ -19,9 +16,7 @@
     NSObject<OS_dispatch_queue> *_readChannelQueue;
 }
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_verifyHMAC;
 - (void)close;
 - (void)dealloc;
 - (id)initWithReadChannel:(id)arg1 decryptionKey:(id)arg2;

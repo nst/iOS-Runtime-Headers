@@ -27,6 +27,8 @@
 @property(readonly) float assetScale;
 @property(readonly) TSDFrameSpec * frameSpec;
 
++ (Class)mutableClass;
+
 - (id)archivableFrameName;
 - (float)assetScale;
 - (BOOL)canApplyDirectlyToRepCALayer;

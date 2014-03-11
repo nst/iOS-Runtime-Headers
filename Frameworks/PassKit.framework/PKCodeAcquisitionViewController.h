@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKCodeAcquisitionDelegate>, NSMutableData, NSSet, NSURLConnection, PKBoxLayer, PKCaptureSession, UILabel, UINavigationBar, UIProgressView;
+@class <PKCodeAcquisitionDelegate>, NSMutableData, NSSet, NSURLConnection, PKCaptureSession, PKReticleView, UILabel, UINavigationBar, UIProgressView;
 
 @interface PKCodeAcquisitionViewController : UIViewController <PKCaptureDelegate, NSURLConnectionDataDelegate, UIGestureRecognizerDelegate> {
-    PKBoxLayer *_boxLayer;
     UILabel *_captionLabel;
     PKCaptureSession *_captureSession;
     <PKCodeAcquisitionDelegate> *_delegate;
@@ -16,6 +15,7 @@
     UILabel *_errorLabel;
     UILabel *_helpLabel;
     UINavigationBar *_navBar;
+    PKReticleView *_reticleView;
     NSSet *_supportedBarcodeTypes;
 }
 
@@ -27,7 +27,6 @@
 - (void)_handleDownloadedPass:(id)arg1;
 - (void)_handleFoundCode:(id)arg1;
 - (void)_handleSingleTap:(id)arg1;
-- (void)_resetBoxLayer;
 - (void)_restartCaptureSession;
 - (void)_setCaptureUIState:(int)arg1 animated:(BOOL)arg2;
 - (void)cancel;

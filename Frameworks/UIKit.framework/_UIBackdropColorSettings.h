@@ -9,6 +9,7 @@
     float _averageHue;
     float _averageSaturation;
     float _contrast;
+    BOOL _hasObservedValues;
     _UIBackdropViewSettings *_parentSettings;
     float _previousAverageBrightness;
     float _previousAverageHue;
@@ -21,6 +22,7 @@
 @property float averageSaturation;
 @property(readonly) UIColor * color;
 @property float contrast;
+@property BOOL hasObservedValues;
 @property _UIBackdropViewSettings * parentSettings;
 @property float previousAverageBrightness;
 @property float previousAverageHue;
@@ -33,6 +35,7 @@
 - (float)averageSaturation;
 - (id)color;
 - (float)contrast;
+- (BOOL)hasObservedValues;
 - (id)parentSettings;
 - (float)previousAverageBrightness;
 - (float)previousAverageHue;
@@ -43,6 +46,7 @@
 - (void)setAverageSaturation:(float)arg1;
 - (void)setContrast:(float)arg1;
 - (void)setDefaultValues;
+- (void)setHasObservedValues:(BOOL)arg1;
 - (void)setParentSettings:(id)arg1;
 - (void)setPreviousAverageBrightness:(float)arg1;
 - (void)setPreviousAverageHue:(float)arg1;

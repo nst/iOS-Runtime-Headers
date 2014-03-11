@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufMMCS.dylib
  */
 
-@interface AWDMMCSTcpInfo : PBCodable {
+@interface AWDMMCSTcpInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int tcpiCellRxbytes : 1; 
         unsigned int tcpiCellRxpackets : 1; 
@@ -169,7 +169,7 @@
 @property unsigned long long tcpiWifiTxpackets;
 
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasTcpiCellRxbytes;

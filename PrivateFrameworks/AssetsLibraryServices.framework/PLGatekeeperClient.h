@@ -34,6 +34,7 @@
 - (void)dataMigrationWillFinish;
 - (void)deleteAssetWithURL:(id)arg1 handler:(id)arg2;
 - (id)deviceSpecificReplyQueue;
+- (void)downloadAsset:(id)arg1 requestThumbnail:(BOOL)arg2 shouldPrioritize:(BOOL)arg3 shouldExtendTimer:(BOOL)arg4;
 - (id)emailAddressForKey:(int)arg1;
 - (void)enablePhotostreamsWithStreamID:(id)arg1;
 - (long long)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
@@ -82,6 +83,7 @@
 - (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2;
 - (void)updateSharedAlbumsCachedServerConfigurationLimits;
 - (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(BOOL)arg2 assignNewIndex:(BOOL)arg3 forceRefresh:(BOOL)arg4;
+- (id)videoMetadataAtPath:(id)arg1;
 - (void)waitUntilConnectionSendsAllMessages;
 - (void)writeDataInBackground:(id)arg1 toFileURL:(id)arg2;
 

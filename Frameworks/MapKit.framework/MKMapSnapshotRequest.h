@@ -31,11 +31,11 @@
 @property struct CGSize { float x1; float x2; } size;
 @property unsigned int zoomLevel;
 
+- (void).cxx_destruct;
 - (id)attributionString;
 - (void)cancel;
 - (id)context;
 - (struct { double x1; double x2; })coordinate;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)image;

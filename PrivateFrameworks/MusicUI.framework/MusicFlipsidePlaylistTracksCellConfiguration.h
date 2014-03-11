@@ -5,9 +5,10 @@
 @interface MusicFlipsidePlaylistTracksCellConfiguration : MusicSongListCellConfiguration {
 }
 
++ (BOOL)_showsArtwork;
 + (float)cloudRightInsetForDurationWidth:(float)arg1;
 + (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
-+ (id)propertiesToFetch;
++ (id)mediaEntityPropertiesToFetch;
 + (struct CGSize { float x1; float x2; })sizeForDuration:(double)arg1;
 + (Class)tableViewCellClass;
 + (float)tableViewCellHeight;

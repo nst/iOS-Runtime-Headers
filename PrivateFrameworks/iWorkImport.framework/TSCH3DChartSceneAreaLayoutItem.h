@@ -86,6 +86,7 @@
 - (BOOL)p_inwardLayoutCanUseCacheItem:(id)arg1;
 - (void)p_layoutInward;
 - (void)p_layoutOutward;
+- (BOOL)p_needsRefinementForInwardLayout;
 - (BOOL)p_outwardLayoutCanUseCacheItem:(id)arg1;
 - (void)p_updateBodyLayoutRect;
 - (void)p_updateFromCacheItem:(id)arg1;

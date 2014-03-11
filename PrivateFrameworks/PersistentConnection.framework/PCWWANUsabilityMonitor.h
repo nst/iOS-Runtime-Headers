@@ -34,6 +34,7 @@
 @property(readonly) BOOL isRadioHot;
 @property(readonly) int linkQuality;
 @property(readonly) NSString * linkQualityString;
+@property(readonly) struct __CFString { }* wwanInterfaceName;
 
 - (void)_adjustInterfaceNameForWWANContextID:(long)arg1;
 - (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
@@ -59,5 +60,6 @@
 - (void)setThresholdOffTransitionCount:(unsigned int)arg1;
 - (void)setTrackUsability:(BOOL)arg1;
 - (void)setTrackedTimeInterval:(double)arg1;
+- (struct __CFString { }*)wwanInterfaceName;
 
 @end

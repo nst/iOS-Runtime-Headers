@@ -6,6 +6,10 @@
 
 @interface GEOETATrafficUpdateRequest : PBRequest <NSCopying> {
     struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
+    struct { 
+        unsigned int sessionID : 1; 
         unsigned int includeBetterRouteSuggestion : 1; 
     GEOClientCapabilities *_clientCapabilities;
     GEOLocation *_currentUserLocation;
@@ -16,6 +20,7 @@
     GEORouteAttributes *_routeAttributes;
     NSMutableArray *_routes;
     NSMutableArray *_serviceTags;
+    } _sessionID;
 }
 
 @property(retain) GEOClientCapabilities * clientCapabilities;
@@ -27,10 +32,12 @@
 @property(readonly) BOOL hasDirectionsResponseID;
 @property BOOL hasIncludeBetterRouteSuggestion;
 @property(readonly) BOOL hasRouteAttributes;
+@property BOOL hasSessionID;
 @property BOOL includeBetterRouteSuggestion;
 @property(retain) GEORouteAttributes * routeAttributes;
 @property(retain) NSMutableArray * routes;
 @property(retain) NSMutableArray * serviceTags;
+@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 
 - (void)addDestinationWaypoint:(id)arg1;
 - (void)addRoute:(id)arg1;
@@ -54,6 +61,7 @@
 - (BOOL)hasDirectionsResponseID;
 - (BOOL)hasIncludeBetterRouteSuggestion;
 - (BOOL)hasRouteAttributes;
+- (BOOL)hasSessionID;
 - (unsigned int)hash;
 - (BOOL)includeBetterRouteSuggestion;
 - (BOOL)isEqual:(id)arg1;
@@ -67,15 +75,18 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setDestinationWaypoints:(id)arg1;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)setHasIncludeBetterRouteSuggestion:(BOOL)arg1;
+- (void)setHasSessionID:(BOOL)arg1;
 - (void)setIncludeBetterRouteSuggestion:(BOOL)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)setServiceTags:(id)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -29,6 +29,7 @@
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)_triggeringPhysicalButton;
 - (id)_unmodifiedInput;
+- (float)_wheelVelocity;
 - (id)_windows;
 - (id)allTouches;
 - (BOOL)isKeyDown;

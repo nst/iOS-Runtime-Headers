@@ -33,7 +33,6 @@
 }
 
 @property(readonly) NSString * UUID;
-@property(readonly) NSString * UUIDHashFileName;
 @property(retain) NSString * displayName;
 @property(readonly) NSDate * earliestCertificateExpiryDate;
 @property(getter=isEncrypted) BOOL encrypted;
@@ -87,7 +86,6 @@
 
 - (void).cxx_destruct;
 - (id)UUID;
-- (id)UUIDHashFileName;
 - (BOOL)containsPayloadOfClass:(Class)arg1;
 - (unsigned int)countOfPayloadsOfClass:(Class)arg1;
 - (id)description;

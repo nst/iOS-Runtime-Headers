@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCGLWaveformRendererDelegate>, <RCWaveformDataSource>, CADisplayLink, CALayer, EAGLContext, NSObject<OS_dispatch_queue>, UIColor;
+@class <RCGLWaveformRendererDelegate>, <RCWaveformDataSource>, CADisplayLink, CALayer, EAGLContext, RCUIConfiguration;
 
 @interface RCGLWaveformRenderer : UIViewController <GLKViewDelegate, RCWaveformGeneratorSegmentOutputObserver> {
     struct { 
@@ -26,7 +26,7 @@
     struct { 
         double beginTime; 
         double endTime; 
-    UIColor *_backgroundColor;
+    RCUIConfiguration *_UIConfiguration;
     BOOL _buffersInitialized;
     float _cachedContentWidth;
     BOOL _centerKeylineRendered;
@@ -36,9 +36,7 @@
     <RCWaveformDataSource> *_dataSource;
     CADisplayLink *_displayLink;
     EAGLContext *_eaglContext;
-    UIColor *_foregroundColor;
     int _foregroundColorUniform;
-    NSObject<OS_dispatch_queue> *_glBuffersQueue;
     BOOL _isAnimatingModelview;
     } _lastViewportRect;
     CALayer *_modelviewLayer;
@@ -46,9 +44,8 @@
     BOOL _paused;
     BOOL _preparedForRendering;
     int _projectionUniform;
-    NSObject<OS_dispatch_queue> *_renderQueue;
     } _renderedTimeRange;
-    float _renderedViewportHeight;
+    BOOL _renderedTimeRangeIsApproximatedWaveform;
     unsigned int _renderedWaveformVertices;
     <RCGLWaveformRendererDelegate> *_rendererDelegate;
     unsigned int _renderingHint;
@@ -60,10 +57,9 @@
     } _waveformVertexData;
 }
 
-@property(retain) UIColor * backgroundColor;
+@property(copy) RCUIConfiguration * UIConfiguration;
 @property float dataPointWidth;
 @property <RCWaveformDataSource> * dataSource;
-@property(retain) UIColor * foregroundColor;
 @property(getter=isPaused) BOOL paused;
 @property <RCGLWaveformRendererDelegate> * rendererDelegate;
 @property unsigned int renderingHint;
@@ -74,19 +70,23 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)UIConfiguration;
 - (void)_clearRenderingState;
 - (unsigned int)_compileShaderOfType:(unsigned int)arg1 pathToSource:(id)arg2;
 - (BOOL)_currentViewportRequiresRenderingNewSegments;
 - (void)_didBecomeActiveNotification:(id)arg1;
 - (void)_draw:(id)arg1;
 - (void)_logCompilationErrorForShader:(unsigned int)arg1;
+- (float)_nonCachedContentWidth;
 - (id)_pathForShader:(id)arg1;
+- (void)_performOrDispatchToMainThread:(id)arg1;
 - (float)_pixelOffsetForTime:(double)arg1;
 - (float)_pixelsPerSecond;
 - (float)_pixelsPerSecondWithVisibleTimeRange:(struct { double x1; double x2; })arg1;
 - (void)_renderCenterKeylineIfNeeded;
-- (void)_renderSegments:(id)arg1;
+- (void)_renderSegments:(id)arg1 isApproximatedWaveform:(BOOL)arg2;
 - (void)_renderVisibleTimeRange;
+- (void)_setNeedsRendering;
 - (void)_setupBuffers;
 - (void)_setupGL;
 - (void)_setupNotifications;
@@ -104,13 +104,12 @@
 - (void)_updateProjection;
 - (void)_willResignActiveNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)backgroundColor;
 - (float)contentWidth;
 - (float)dataPointWidth;
 - (id)dataSource;
 - (void)dealloc;
-- (id)foregroundColor;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)glkViewRenderingContextValidityDidChange:(id)arg1;
 - (float)horizontalOffsetAtTime:(double)arg1 withVisibleTimeRange:(struct { double x1; double x2; })arg2;
 - (float)horizontalOffsetAtTime:(double)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -122,14 +121,13 @@
 - (void)reloadData;
 - (id)rendererDelegate;
 - (unsigned int)renderingHint;
-- (void)setBackgroundColor:(id)arg1;
 - (void)setDataPointWidth:(float)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setForegroundColor:(id)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setRendererDelegate:(id)arg1;
 - (void)setRenderingHint:(unsigned int)arg1;
 - (void)setSpacingWidth:(float)arg1;
+- (void)setUIConfiguration:(id)arg1;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1 withAnimationDuration:(double)arg2;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1;
 - (float)spacingWidth;
@@ -142,5 +140,6 @@
 - (struct { double x1; double x2; })visibleTimeRange;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
+- (void)willMoveToParentViewController:(id)arg1;
 
 @end

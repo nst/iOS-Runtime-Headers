@@ -39,6 +39,7 @@
 @property(readonly) UITapGestureRecognizer * twoFingerTapGestureRecognizer;
 @property(getter=isZoomEnabled) BOOL zoomEnabled;
 
+- (void).cxx_destruct;
 - (void)_clearGesture:(id)arg1;
 - (void)beginGesturing;
 - (void)clearGestureRecognizersInFlight;

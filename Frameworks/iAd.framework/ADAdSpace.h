@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADAdRecipient>, <ADSAdSpace_RPC><NSObject>, ADAdImpressionPublicAttributes, NSString, NSURL, _ADRemoteViewController, _UIAsyncInvocation;
+@class <ADAdRecipient>, <ADSAdSpace_RPC><NSObject>, ADAdImpressionPublicAttributes, ADAdSpaceConfiguration, NSString, NSURL, _ADRemoteViewController, _UIAsyncInvocation;
 
 @interface ADAdSpace : NSObject <UIViewControllerTransitioningDelegate, ADAdSpace_RPC> {
     struct CGRect { 
@@ -37,6 +37,7 @@
 @property BOOL actionViewControllerWantsDismissal;
 @property(copy) NSString * advertisingSection;
 @property(copy) NSString * authenticationUserName;
+@property(readonly) ADAdSpaceConfiguration * configuration;
 @property(readonly) NSString * connectionAssertionIdentifier;
 @property(retain) ADAdImpressionPublicAttributes * currentAdImpressionPublicAttributes;
 @property(copy) NSString * identifier;
@@ -76,6 +77,7 @@
 - (id)authenticationUserName;
 - (void)cancelBannerViewAction;
 - (void)close;
+- (id)configuration;
 - (id)connectionAssertionIdentifier;
 - (id)currentAdImpressionPublicAttributes;
 - (void)dealloc;

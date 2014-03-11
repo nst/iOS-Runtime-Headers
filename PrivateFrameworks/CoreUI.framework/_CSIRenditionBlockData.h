@@ -4,6 +4,7 @@
 
 @interface _CSIRenditionBlockData : NSObject {
     char *_data;
+    unsigned char _imageBlockReleaseCount;
     BOOL _name[128];
     unsigned int _nrows;
     int _pixelFormat;
@@ -21,6 +22,9 @@
 - (void)expandCSIBitmapData:(struct _csibitmap { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[0]; }*)arg1 fromSlice:(struct _slice { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg2 makeReadOnly:(BOOL)arg3;
 - (id)initWithPixelWidth:(unsigned int)arg1 pixelHeight:(unsigned int)arg2 pixelFormat:(int)arg3;
 - (unsigned int)nrows;
+- (int)pixelFormat;
 - (unsigned long)rowbytes;
+- (void)tallyImageBlockRelease;
+- (BOOL)wasUsedTransiently;
 
 @end

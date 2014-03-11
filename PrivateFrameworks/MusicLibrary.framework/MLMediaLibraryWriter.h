@@ -32,7 +32,7 @@
 - (id)_transactionForProcessIdentifier:(int)arg1;
 - (id)_transactionWithExistingLocalWriterConnection:(id)arg1;
 - (void)_watchdogTimerFired:(id)arg1;
-- (id)beginTransactionForDatabaseAtPath:(id)arg1 fromXPCConnection:(id)arg2 error:(id*)arg3;
+- (id)beginTransactionForDatabaseAtPath:(id)arg1 fromXPCConnection:(id)arg2 withOptions:(unsigned int)arg3 error:(id*)arg4;
 - (void)cancelActiveTransactionForProcess:(int)arg1;
 - (void)cancelAllActiveDatabaseOperationsAndWaitUntilFinished:(BOOL)arg1;
 - (void)cancelAllActiveTransactions;

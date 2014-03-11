@@ -4,7 +4,7 @@
 
 @class NSCalendar, NSDate, NSLocale, NSTimeZone, UIColor, _UIDatePickerView;
 
-@interface UIDatePicker : UIControl <NSCoding> {
+@interface UIDatePicker : UIControl <UIPickerViewScrollTesting, NSCoding> {
     _UIDatePickerView *_pickerView;
     BOOL _useCurrentDateDuringDecoding;
 }
@@ -47,6 +47,7 @@
 - (BOOL)_isTimeIntervalMode;
 - (id)_labelTextForCalendarUnit:(unsigned int)arg1;
 - (id)_locale;
+- (void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_selectedTextForCalendarUnit:(unsigned int)arg1;
 - (void)_setAllowsZeroCountDownDuration:(BOOL)arg1;

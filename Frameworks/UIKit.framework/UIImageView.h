@@ -10,18 +10,13 @@
         float left; 
         float bottom; 
         float right; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     BOOL __animatesContents;
     } _cachedEdgeInsetsForEffects;
     UIImage *_decompressingHighlightedImage;
     UIImage *_decompressingImage;
-    } _edgeInsetsForEffects;
     BOOL _edgeInsetsForEffectsAreValid;
     id _storage;
+    BOOL _templateSettingsAreInvalid;
 }
 
 @property(setter=_setAnimatesContents:) BOOL _animatesContents;
@@ -30,6 +25,7 @@
 @property(setter=_setEdgeInsetsForEffectsAreValid:) BOOL _edgeInsetsForEffectsAreValid;
 @property(setter=_setMasksTemplateImages:) BOOL _masksTemplateImages;
 @property(setter=_setTemplateImageRenderingEffects:) unsigned int _templateImageRenderingEffects;
+@property(readonly) BOOL _templateSettingsAreInvalid;
 @property double animationDuration;
 @property(copy) NSArray * animationImages;
 @property int animationRepeatCount;
@@ -50,12 +46,14 @@
 - (BOOL)_canDrawContent;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
 - (int)_defaultRenderingMode;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForEffects;
 - (BOOL)_edgeInsetsForEffectsAreValid;
 - (id)_effectiveTintColorWithImage:(id)arg1;
 - (id)_generateBackdropMaskImage;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_invalidateTemplateSettings;
 - (BOOL)_masksTemplateImages;
 - (BOOL)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(BOOL)arg2;
 - (BOOL)_needsImageEffectsForImage:(id)arg1;
@@ -71,6 +69,7 @@
 - (BOOL)_shouldDrawImage:(id)arg1;
 - (BOOL)_shouldTreatImageAsTemplate:(id)arg1;
 - (unsigned int)_templateImageRenderingEffects;
+- (BOOL)_templateSettingsAreInvalid;
 - (void)_templateSettingsDidChange;
 - (void)_updateMasking;
 - (void)_updatePretiledImageCacheForImage:(id)arg1;

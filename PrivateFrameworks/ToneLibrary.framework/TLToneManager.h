@@ -39,6 +39,7 @@
 - (unsigned long)_soundIDForSystemTone:(id)arg1 isValid:(BOOL*)arg2;
 - (BOOL)_toneWithIdentifierIsValid:(id)arg1;
 - (id)aliasForIdentifier:(id)arg1;
+- (id)allSyncedTones;
 - (id)copyCurrentRingtoneIdentifier;
 - (id)copyCurrentRingtoneName;
 - (id)copyCurrentTextToneIdentifier;

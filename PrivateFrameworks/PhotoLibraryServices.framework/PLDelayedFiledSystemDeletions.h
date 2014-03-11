@@ -14,7 +14,7 @@
 + (void)waitForAllDelayedDeletionsToFinish;
 
 - (void)addFilesystemDeletionInfo:(id)arg1;
-- (void)appendToXPCMessage:(id)arg1;
+- (void)appendToXPCMessage:(id)arg1 managedObjectContext:(id)arg2;
 - (void)dealloc;
 - (id)debugDescription;
 - (void)deleteAllRemainingFilesAndThumbnailsWithPhotoLibrary:(id)arg1 completionHandler:(id)arg2;

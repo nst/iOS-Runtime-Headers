@@ -16,12 +16,12 @@
 
 @property(readonly) NSString * reuseIdentifier;
 
-+ (void)_gkSetupSelectableThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 middleLine:(id)arg5 lowerLine:(id)arg6 metricOverrides:(id)arg7;
-+ (void)_gkSetupSelectableTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
-+ (void)_gkSetupThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 middleLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
-+ (void)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 lowerLine:(id)arg4 metricOverrides:(id)arg5;
-+ (id)_gkStandardConstraintMetrics;
-+ (id)_gkStandardConstraintMetricsMergedWithOverrides:(id)arg1;
++ (void)_gkSetupSelectableThreeLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 middleLine:(id)arg5 lowerLine:(id)arg6 metricOverrides:(id)arg7;
++ (void)_gkSetupSelectableTwoLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
++ (id)_gkSetupThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 middleLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
++ (id)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 lowerLine:(id)arg4 metricOverrides:(id)arg5;
++ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1 withOverrides:(id)arg2;
++ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1;
 
 - (void)_addUpdateAnimation;
 - (void)_clearUpdateAnimation;

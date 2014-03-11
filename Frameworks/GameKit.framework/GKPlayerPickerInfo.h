@@ -26,9 +26,10 @@
 @property(readonly) BOOL playedGame;
 @property(retain) GKPlayer * player;
 @property(retain) NSAttributedString * rankString;
-@property unsigned int selectionStatus;
+@property(readonly) unsigned int selectionStatus;
 @property(retain) NSDate * sortDate;
 
+- (void)_setSelectionStatus:(unsigned int)arg1;
 - (id)achievementString;
 - (BOOL)canSelectPlayer;
 - (void)dealloc;
@@ -49,7 +50,6 @@
 - (void)setNearby:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRankString:(id)arg1;
-- (void)setSelectionStatus:(unsigned int)arg1;
 - (void)setSortDate:(id)arg1;
 - (id)sortDate;
 

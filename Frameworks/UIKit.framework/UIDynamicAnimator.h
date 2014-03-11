@@ -49,6 +49,7 @@
     int _registeredImplicitBounds;
     float _speed;
     } _stateFlags;
+    BOOL _stopping;
     long long _ticks;
     NSMutableArray *_topLevelBehaviors;
     PKExtendedPhysicsWorld *_world;

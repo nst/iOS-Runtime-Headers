@@ -4,7 +4,7 @@
 
 @class CALayer, TSCHMultiDataBarElementShapeLayer, TSDFill;
 
-@interface TSCHMultiDataBarFillElementShapeLayer : CALayer <TSCHMultiDataElementShapeLayer> {
+@interface TSCHMultiDataBarFillElementShapeLayer : TSCHMultiDataAnimatingFrameLayer <TSCHMultiDataElementShapeLayer> {
     TSDFill *_p_fill;
     BOOL mAboveIntercept;
     TSDFill *mFill;
@@ -17,6 +17,7 @@
 @property(retain) TSDFill * p_fill;
 
 - (BOOL)aboveIntercept;
+- (id)chartRep;
 - (id)currentValueLayer;
 - (void)dealloc;
 - (id)fill;
@@ -26,6 +27,7 @@
 - (void)p_addAnimationsForUpdatingFillLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(struct CGImage { }*)arg2 toAnimationInfo:(id)arg3;
 - (id)p_fill;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_fillFrameFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 aboveIntercept:(BOOL)arg2 animationInfo:(id)arg3;
+- (BOOL)p_hasNoFill;
 - (id)p_imageWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)p_isColorFill;
 - (BOOL)p_revealsFillLayer;
@@ -37,5 +39,6 @@
 - (void)setFill:(id)arg1;
 - (void)setP_fill:(id)arg1;
 - (void)updateElementFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSeries:(id)arg2 addingAnimationsToAnimationInfo:(id)arg3;
+- (void)updateElementFrameToNullForSeries:(id)arg1 addingAnimationsToAnimationInfo:(id)arg2;
 
 @end

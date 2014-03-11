@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface VKPIconPack : PBCodable {
+@interface VKPIconPack : PBCodable <NSCopying> {
     NSMutableArray *_atlas;
     NSMutableArray *_icons;
     unsigned int _identifier;
@@ -22,6 +22,7 @@
 - (void)clearAtlas;
 - (void)clearIcons;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

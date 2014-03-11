@@ -16,9 +16,11 @@
 @property unsigned int maximumSize;
 @property(readonly) unsigned int size;
 
+- (BOOL)_flush;
 - (BOOL)addItem:(id)arg1;
 - (void)dealloc;
 - (BOOL)flush;
+- (BOOL)flushIfNecessary;
 - (BOOL)handleItems:(id)arg1;
 - (id)init;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;

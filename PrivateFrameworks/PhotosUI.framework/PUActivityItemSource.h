@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSData, NSObject<OS_dispatch_semaphore>, NSString, PLManagedAsset, PLVideoRemaker, PUActivityItemSourceOperation;
+@class NSData, NSObject<OS_dispatch_semaphore>, NSString, PLManagedAsset, PLVideoRemaker, PUActivityItemSourceController, PUActivityItemSourceOperation;
 
 @interface PUActivityItemSource : NSObject <UIActivityItemDeferredSource, UIActivityItemSource> {
     PLManagedAsset *_asset;
+    PUActivityItemSourceController *_controller;
     NSData *_data;
     BOOL _isMogul;
     PUActivityItemSourceOperation *_operation;
@@ -19,6 +20,7 @@
 }
 
 @property(readonly) PLManagedAsset * asset;
+@property(readonly) PUActivityItemSourceController * controller;
 @property(readonly) NSData * data;
 @property float remakerProgress;
 @property(readonly) NSString * utiType;
@@ -37,10 +39,12 @@
 - (id)activityViewControllerOperation:(id)arg1;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)asset;
+- (void)cancelRemaking;
 - (void)cleanupForActivityDidComplete;
+- (id)controller;
 - (id)data;
 - (void)dealloc;
-- (id)initWithAsset:(id)arg1;
+- (id)initWithAsset:(id)arg1 controller:(id)arg2;
 - (BOOL)needsVideoRemakerForActivityType:(id)arg1;
 - (void)prepareItemForActivityType:(id)arg1;
 - (float)remakerProgress;

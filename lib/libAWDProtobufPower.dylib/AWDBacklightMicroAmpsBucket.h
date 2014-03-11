@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufPower.dylib
  */
 
-@interface AWDBacklightMicroAmpsBucket : PBCodable {
+@interface AWDBacklightMicroAmpsBucket : PBCodable <NSCopying> {
     struct { 
         unsigned int bucketDuration : 1; 
     unsigned int _bucketDuration;
@@ -14,7 +14,7 @@
 
 - (unsigned int)bucketDuration;
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBucketDuration;

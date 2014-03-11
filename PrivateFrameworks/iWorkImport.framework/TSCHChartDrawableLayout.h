@@ -49,6 +49,7 @@
 - (id)chartInfo;
 - (id)chartLayout;
 - (id)computeInfoGeometryDuringResize;
+- (id)computeInfoGeometryFromLayoutGeometry:(id)arg1;
 - (id)computeLayoutGeometry;
 - (unsigned int)dataSetIndex;
 - (void)dealloc;

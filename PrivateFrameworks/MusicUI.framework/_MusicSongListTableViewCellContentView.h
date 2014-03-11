@@ -6,8 +6,12 @@
 
 @interface _MusicSongListTableViewCellContentView : MusicSongTableViewCellContentView {
     UILabel *_albumLabel;
+    NSString *_albumText;
     UILabel *_artistLabel;
+    NSString *_artistText;
+    UIImageView *_artworkAnimationImageView;
     UIImageView *_artworkImageView;
+    BOOL _needsUpdate;
     UILabel *_titleLabel;
 }
 
@@ -21,6 +25,8 @@
 @property(readonly) UILabel * titleLabel;
 
 - (void).cxx_destruct;
+- (id)_createArtworkImageView;
+- (void)_updateAlbumArtistLabelPhone;
 - (id)album;
 - (id)albumLabel;
 - (id)artist;
@@ -33,6 +39,7 @@
 - (void)layoutSubviews;
 - (void)setAlbum:(id)arg1;
 - (void)setArtist:(id)arg1;
+- (void)setArtworkImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setArtworkImage:(id)arg1;
 - (void)setDisplayAsDisabled:(BOOL)arg1;
 - (void)setTitle:(id)arg1;

@@ -39,6 +39,7 @@
     float _greyPuckAlphaScale;
     double _presentationCourse;
     BOOL _puckFlipped;
+    double _puckOffset;
     VGLRenderState *_puckRenderState;
     } _puckState;
     int _puckStyle;

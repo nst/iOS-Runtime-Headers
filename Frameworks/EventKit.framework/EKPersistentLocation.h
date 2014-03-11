@@ -7,6 +7,7 @@
 @interface EKPersistentLocation : EKPersistentObject <NSCopying> {
 }
 
+@property(copy) NSString * address;
 @property(copy) NSString * addressBookEntityID;
 @property(copy) NSNumber * latitude;
 @property(copy) NSNumber * longitude;
@@ -16,6 +17,7 @@
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
+- (id)address;
 - (id)addressBookEntityID;
 - (id)alarmOwner;
 - (id)calendarItemOwner;
@@ -26,6 +28,7 @@
 - (id)latitude;
 - (id)longitude;
 - (id)radius;
+- (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setAlarmOwner:(id)arg1;
 - (void)setCalendarItemOwner:(id)arg1;

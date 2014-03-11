@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSLock, NSMutableArray, NSMutableSet, NSString, NSThread;
+@class NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSThread, RadiosPreferences;
 
-@interface MFNetworkController : NSObject {
+@interface MFNetworkController : NSObject <RadiosPreferencesDelegate> {
     NSMutableSet *_backgroundWifiClients;
     NSMutableSet *_calls;
     BOOL _data;
@@ -18,6 +18,8 @@
     BOOL _isWiFiEnabled;
     NSLock *_lock;
     NSMutableArray *_observers;
+    NSObject<OS_dispatch_queue> *_prefsQueue;
+    RadiosPreferences *_radiosPreferences;
     struct __SCNetworkReachability { } *_reachability;
     struct __CFRunLoop { } *_rl;
     struct __SCDynamicStore { } *_store;
@@ -48,6 +50,7 @@
 - (void)_updateWifiClientType;
 - (void)addBackgroundWifiClient:(id)arg1;
 - (id)addNetworkObserverBlock:(id)arg1 queue:(id)arg2;
+- (void)airplaneModeChanged;
 - (id)copyDiagnosticInformation;
 - (int)dataStatus;
 - (void)dealloc;

@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CALayer, CAMAvalancheIndicatorView, CAMAvalancheSession, CAMBlurredSnapshotView, CAMBottomBar, CAMCameraSpec, CAMElapsedTimeView, CAMFilterButton, CAMFlashButton, CAMFlipButton, CAMHDRBadge, CAMHDRButton, CAMHardwareLockIndicatorView, CAMImageWell, CAMModeDial, CAMShutterButton, CAMSlalomIndicatorView, CAMTopBar, CAMZoomSlider, NSData, NSDictionary, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer, PLCameraController, PLCameraElapsedTimeView, PLCameraGuideView, PLCameraIrisAnimationView, PLCameraOptionsButton, PLCameraOverlayTextLabelView, PLCameraPanoramaView, PLCameraPreviewView, PLCameraProgressView, PLCameraSettingsView, PLCameraToggleButton, PLCameraVideoStillCaptureButton, PLCropOverlay, PLLowDiskSpaceAlertView, PLPhotoLibrary, PLPhotoTileViewController, PLPreviewOverlayView, PLVideoView, UIAlertView, UIImage, UIImageView, UILongPressGestureRecognizer, UISwipeGestureRecognizer, UITapGestureRecognizer, UIToolbar, UIView;
+@class CALayer, CAMAvalancheIndicatorView, CAMAvalancheSession, CAMBlurredSnapshotView, CAMBottomBar, CAMCameraSpec, CAMElapsedTimeView, CAMFilterButton, CAMFlashBadge, CAMFlashButton, CAMFlipButton, CAMHDRBadge, CAMHDRButton, CAMHardwareLockIndicatorView, CAMImageWell, CAMModeDial, CAMShutterButton, CAMSlalomIndicatorView, CAMTopBar, CAMZoomSlider, NSData, NSDictionary, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer, PLCameraController, PLCameraGuideView, PLCameraIrisAnimationView, PLCameraOverlayTextLabelView, PLCameraPanoramaView, PLCameraPreviewView, PLCameraProgressView, PLCropOverlay, PLLowDiskSpaceAlertView, PLPhotoLibrary, PLPhotoTileViewController, PLPreviewOverlayView, PLVideoView, UIAlertView, UIImage, UIImageView, UILongPressGestureRecognizer, UISwipeGestureRecognizer, UITapGestureRecognizer, UIToolbar, UIView;
 
-@interface PLCameraView : UIView <CAMModeDialDataSource, CAMZoomSliderDelegate, CAMFlashButtonDelegate, CAMAvalancheSessionDelegate, PLCameraControllerDelegate, PLVideoViewDelegate, PLCameraPanoramaViewDelegate, UIGestureRecognizerDelegate, UIAccelerometerDelegate> {
+@interface PLCameraView : UIView <CAMModeDialDataSource, CAMTopBarDelegate, CAMZoomSliderDelegate, CAMFlashButtonDelegate, CAMHDRButtonDelegate, CAMAvalancheSessionDelegate, PLCameraControllerDelegate, PLVideoViewDelegate, PLCameraPanoramaViewDelegate, UIGestureRecognizerDelegate, UIAccelerometerDelegate> {
     struct CGSize { 
         float width; 
         float height; 
@@ -52,6 +52,8 @@
     unsigned int _imagePickerWantsImageData : 1;
     CAMHDRBadge *__HDRBadge;
     CAMHDRButton *__HDRButton;
+    BOOL __HDRSuggested;
+    BOOL __HDRUsedForLastCapture;
     CAMAvalancheIndicatorView *__avalancheIndicator;
     BOOL __avalancheIndicatorVisible;
     CAMAvalancheSession *__avalancheSession;
@@ -70,6 +72,7 @@
     CAMElapsedTimeView *__elapsedTimeView;
     CAMFilterButton *__filterButton;
     NSMutableSet *__filterNamesSelectedBeforeCapture;
+    CAMFlashBadge *__flashBadge;
     CAMFlashButton *__flashButton;
     CAMFlipButton *__flipButton;
     BOOL __flipping;
@@ -77,7 +80,9 @@
     BOOL __hasMaximumNumberOfInflightImageRequests;
     BOOL __hideFocusForFilterSelection;
     BOOL __hideGridViewForFilterSelection;
-    BOOL __hidingHDRBadgeForFilterUI;
+    BOOL __hidingBadgesForFilterUI;
+    BOOL __ignoringAutomaticBadgeUpdatesDuringCapture;
+    BOOL __ignoringAutomaticBadgeUpdatesForAvalancheIndicator;
     BOOL __ignoringSubsequentTimedCaptureRequests;
     CAMImageWell *__imageWell;
     CAMModeDial *__modeDial;
@@ -88,6 +93,7 @@
     int __numberOfInflightStillImageRequests;
     int __pendingModeIndex;
     BOOL __performingFilterTransition;
+    BOOL __performingTimedCapture;
     BOOL __postprocessing;
     BOOL __preparingToRecord;
     UIView *__previewCounterRotatingView;
@@ -127,15 +133,14 @@
     BOOL _enableAutorotationAfterRecording;
     int _enabledGestures;
     NSTimer *_faceFadeOutTimer;
+    int _flashMode;
     int _flashModeBeforeCapture;
-    int _flashModeBeforeHDR;
     UIView *_flipView;
     BOOL _focusIsLocked;
     BOOL _focusTapIsDown;
     BOOL _gridIsOn;
     BOOL _gridVisible;
     PLCameraGuideView *_guideView;
-    BOOL _hdrIsOn;
     PLCameraProgressView *_hdrProgressView;
     PLCameraOverlayTextLabelView *_hdrTextLabel;
     NSDictionary *_imagePickerOptions;
@@ -152,6 +157,8 @@
     NSTimer *_keepAliveTimer;
     NSData *_lastCapturedImageData;
     NSDictionary *_lastCapturedMetadata;
+    int _lastSelectedHDRMode;
+    int _lastSelectedPhotoFlashMode;
     PLPhotoLibrary *_library;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     BOOL _manipulatingCrop;
@@ -159,17 +166,14 @@
     int _modeToOpenIris;
     NSMutableArray *_openIrisDidFinishSelectors;
     BOOL _optionsAreVisible;
-    PLCameraOptionsButton *_optionsButton;
     PLPreviewOverlayView *_overlayView;
     CALayer *_panoramaPreviewLayer;
     float _panoramaProgress;
     PLCameraPanoramaView *_panoramaView;
-    int _photoFlashMode;
     int _photoSavingOptions;
     UIView *_previewContainerView;
     } _previewContentSize;
     BOOL _previewOriginShouldBeZero;
-    BOOL _previewPaused;
     } _previewTransform;
     PLCameraPreviewView *_previewView;
     int _previewViewAspectMode;
@@ -177,20 +181,17 @@
     BOOL _retakePhotoAfterPreview;
     int _rotationStyle;
     int _selectedModeIndex;
-    PLCameraSettingsView *_settingsView;
     BOOL _shouldEndFocusOnTapUp;
     BOOL _showFaceTracking;
     UITapGestureRecognizer *_singleTapGestureRecognizer;
     CAMCameraSpec *_spec;
     BOOL _squareMaskActive;
     UIImageView *_staticIrisView;
-    PLCameraVideoStillCaptureButton *_stillCaptureButton;
     UIImage *_temporaryThumbnailImage;
     UIView *_textOverlayView;
-    PLCameraElapsedTimeView *_timeView;
-    PLCameraToggleButton *_toggleCameraButton;
     UIAlertView *_torchDisabledAlert;
     } _unzoomedPreviewFrame;
+    BOOL _userChangedHDRAfterFlash;
     BOOL _userInteractionLoggingEnabled;
     int _videoFlashMode;
     NSDictionary *_videoMetadata;
@@ -198,9 +199,10 @@
     int _windowEdgeClippingMask;
 }
 
-@property BOOL HDRIsOn;
 @property(readonly) CAMHDRBadge * _HDRBadge;
 @property(readonly) CAMHDRButton * _HDRButton;
+@property(getter=_isHDRSuggested,setter=_setHDRSuggested:) BOOL _HDRSuggested;
+@property(readonly) BOOL _HDRUsedForLastCapture;
 @property(readonly) CAMAvalancheIndicatorView * _avalancheIndicator;
 @property(getter=_isAvalancheIndicatorVisible,setter=_setAvalancheIndicatorVisible:) BOOL _avalancheIndicatorVisible;
 @property(readonly) CAMAvalancheSession * _avalancheSession;
@@ -219,6 +221,7 @@
 @property(readonly) CAMElapsedTimeView * _elapsedTimeView;
 @property(readonly) CAMFilterButton * _filterButton;
 @property(readonly) NSMutableSet * _filterNamesSelectedBeforeCapture;
+@property(readonly) CAMFlashBadge * _flashBadge;
 @property(readonly) CAMFlashButton * _flashButton;
 @property(readonly) CAMFlipButton * _flipButton;
 @property(getter=_isFlipping,setter=_setFlipping:) BOOL _flipping;
@@ -226,7 +229,9 @@
 @property(getter=_hasMaximumNumberOfInflightImageRequests,setter=_setHasMaximumNumberOfInflightImageRequests:) BOOL _hasMaximumNumberOfInflightImageRequests;
 @property(setter=_setHideFocusForFilterSelection:) BOOL _hideFocusForFilterSelection;
 @property(setter=_setHideGridViewForFilterSelection:) BOOL _hideGridViewForFilterSelection;
-@property(getter=_isHidingHDRBadgeForFilterUI,setter=_setHidingHDRBadgeForFilterUI:) BOOL _hidingHDRBadgeForFilterUI;
+@property(getter=_isHidingBadgesForFilterUI,setter=_setHidingBadgesForFilterUI:) BOOL _hidingBadgesForFilterUI;
+@property(setter=_setIgnoringAutomaticBadgeUpdatesDuringCapture:) BOOL _ignoringAutomaticBadgeUpdatesDuringCapture;
+@property(setter=_setIgnoringAutomaticBadgeUpdatesForAvalancheIndicator:) BOOL _ignoringAutomaticBadgeUpdatesForAvalancheIndicator;
 @property(readonly) BOOL _ignoringSubsequentTimedCaptureRequests;
 @property(readonly) CAMImageWell * _imageWell;
 @property(readonly) CAMModeDial * _modeDial;
@@ -237,6 +242,7 @@
 @property(readonly) int _numberOfInflightStillImageRequests;
 @property(setter=_setPendingModeIndex:) int _pendingModeIndex;
 @property(getter=_isPerformingFilterTransition,setter=_setPerformingFilterTransition:) BOOL _performingFilterTransition;
+@property(setter=_setPerformingTimedCapture:) BOOL _performingTimedCapture;
 @property(getter=_isPostprocessing,setter=_setPostprocessing:) BOOL _postprocessing;
 @property(getter=_isPreparingToRecord,setter=_setPreparingToRecord:) BOOL _preparingToRecord;
 @property(readonly) UIView * _previewCounterRotatingView;
@@ -267,27 +273,33 @@
 @property int flashMode;
 @property(getter=isGridVisible) BOOL gridVisible;
 @property(readonly) BOOL isCameraReady;
-@property int photoFlashMode;
-@property int photoFlashModeBeforeHDR;
+@property int lastSelectedHDRMode;
+@property int lastSelectedPhotoFlashMode;
 @property int previewViewAspectMode;
 @property int rotationStyle;
 @property int selectedModeIndex;
 @property(readonly) CAMCameraSpec * spec;
 @property(getter=isTallScreen) BOOL tallScreen;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unzoomedPreviewFrame;
+@property BOOL userChangedHDRAfterFlash;
 @property(getter=isUserInteractionLoggingEnabled) BOOL userInteractionLoggingEnabled;
 @property int videoFlashMode;
 @property(readonly) int windowEdgeClippingMask;
 
 + (BOOL)_shouldExtractDiagnostics;
 
-- (BOOL)HDRIsOn;
-- (void)HDRSettingDidChange:(BOOL)arg1;
+- (void)HDRButtonDidCollapse:(id)arg1;
+- (void)HDRButtonModeDidChange:(id)arg1;
+- (void)HDRButtonWasPressed:(id)arg1;
+- (void)HDRButtonWillExpand:(id)arg1;
 - (id)_HDRBadge;
 - (id)_HDRButton;
+- (int)_HDRMode;
+- (BOOL)_HDRUsedForLastCapture;
 - (void)_adjustPreviewViewSize;
 - (void)_adjustPreviewViewSizeForCameraMode:(int)arg1;
 - (struct __CFString { }*)_aggregateDictionaryKeyForCameraMode:(int)arg1 device:(int)arg2;
+- (struct __CFString { }*)_aggregateDictionaryKeyForFlashMode:(int)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidEnterBackground;
 - (void)_applicationDidResignActive:(id)arg1;
@@ -333,6 +345,7 @@
 - (void)_createDefaultControlsIfNecessary;
 - (void)_createElapsedTimeViewIfNecessary;
 - (void)_createFilterButtonIfNecessary;
+- (void)_createFlashBadgeIfNecessary;
 - (void)_createFlashButtonIfNecessary;
 - (void)_createFlipButtonIfNecessary;
 - (void)_createHDRBadgeIfNecessary;
@@ -377,6 +390,7 @@
 - (void)_finalizeExistingAvalancheSession;
 - (void)_finishCommonTapGesture;
 - (void)_finishTimedCapture;
+- (id)_flashBadge;
 - (id)_flashButton;
 - (BOOL)_flashButtonShouldBeHidden;
 - (id)_flipButton;
@@ -405,17 +419,21 @@
 - (void)_hideControlsForSuspensionAnimated:(BOOL)arg1;
 - (BOOL)_hideFocusForFilterSelection;
 - (BOOL)_hideGridViewForFilterSelection;
+- (BOOL)_ignoringAutomaticBadgeUpdatesDuringCapture;
+- (BOOL)_ignoringAutomaticBadgeUpdatesForAvalancheIndicator;
 - (BOOL)_ignoringSubsequentTimedCaptureRequests;
 - (id)_imageWell;
 - (void)_imageWellTapped:(id)arg1;
 - (void)_inCallStatusChanged:(id)arg1;
 - (void)_incrementInflightImageRequests;
+- (BOOL)_initialLayoutNeededForBadge:(id)arg1;
 - (BOOL)_isAvalancheIndicatorVisible;
 - (BOOL)_isCameraEnabled;
 - (BOOL)_isCapturing;
 - (BOOL)_isChangingModes;
 - (BOOL)_isFlipping;
-- (BOOL)_isHidingHDRBadgeForFilterUI;
+- (BOOL)_isHDRSuggested;
+- (BOOL)_isHidingBadgesForFilterUI;
 - (BOOL)_isPerformingFilterTransition;
 - (BOOL)_isPostprocessing;
 - (BOOL)_isPreparingToRecord;
@@ -429,6 +447,9 @@
 - (BOOL)_isVideoMode:(int)arg1;
 - (BOOL)_isViewingCameraRoll;
 - (BOOL)_isWaitingForStillImageCaptureToComplete;
+- (void)_layoutAutoBadge:(id)arg1 forOrientation:(int)arg2;
+- (void)_layoutFlashBadgeForOrientation:(int)arg1;
+- (void)_layoutHDRBadgeForOrientation:(int)arg1;
 - (void)_layoutHardwareLockIndicatorForOrientation:(int)arg1;
 - (void)_layoutTopBarForOrientation:(int)arg1;
 - (id)_modeDial;
@@ -438,14 +459,14 @@
 - (id)_nextModeGestureRecognizer;
 - (BOOL)_numFilterSelectionsBeforeCapture;
 - (int)_numberOfInflightStillImageRequests;
-- (id)_optionsButton;
-- (BOOL)_optionsButtonShouldBeHidden;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_overlayRectForPreview;
 - (int)_pendingModeIndex;
 - (void)_performCaptureAnimation;
 - (void)_performCaptureBlink;
 - (void)_performPanoramaCapture;
 - (void)_performVideoCapture;
+- (BOOL)_performingTimedCapture;
+- (int)_photoFlashMode;
 - (void)_pinchZoomWithScale:(float)arg1;
 - (BOOL)_pointIsOnPanoControls:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_pointIsWithinOverlayView:(struct CGPoint { float x1; float x2; })arg1 hitView:(id*)arg2;
@@ -456,7 +477,6 @@
 - (void)_prepareVideoThumbnailFromPreviewImage:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previewContainerViewFrameForCameraMode:(int)arg1;
 - (id)_previewCounterRotatingView;
-- (id)_previewImageWell;
 - (id)_previewMaskingView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previewMaskingViewFrameForCameraMode:(int)arg1;
 - (BOOL)_previewShouldFillScreenForCameraMode:(int)arg1;
@@ -481,6 +501,7 @@
 - (void)_rotateCameraControlsAndInterface;
 - (id)_scriptingInfo;
 - (void)_setAvalancheIndicatorVisible:(BOOL)arg1;
+- (void)_setBadgesNeedInitialLayout;
 - (void)_setBlurredFromSuspension:(BOOL)arg1;
 - (void)_setCameraEnabled:(BOOL)arg1;
 - (void)_setCapturing:(BOOL)arg1;
@@ -488,21 +509,27 @@
 - (void)_setDeferredModeIndex:(int)arg1;
 - (void)_setFlashMode:(int)arg1;
 - (void)_setFlipping:(BOOL)arg1;
+- (void)_setHDRMode:(int)arg1;
 - (void)_setHDRProgressHUDVisible:(BOOL)arg1;
+- (void)_setHDRSuggested:(BOOL)arg1;
 - (void)_setHasMaximumNumberOfInflightImageRequests:(BOOL)arg1;
 - (void)_setHideFocusForFilterSelection:(BOOL)arg1;
 - (void)_setHideGridViewForFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setHideGridViewForFilterSelection:(BOOL)arg1;
-- (void)_setHidingHDRBadgeForFilterUI:(BOOL)arg1;
+- (void)_setHidingBadgesForFilterUI:(BOOL)arg1;
+- (void)_setIgnoringAutomaticBadgeUpdatesDuringCapture:(BOOL)arg1;
+- (void)_setIgnoringAutomaticBadgeUpdatesForAvalancheIndicator:(BOOL)arg1;
 - (void)_setKeepAlive:(BOOL)arg1 forVideoCapture:(BOOL)arg2;
 - (void)_setNumFilterSelectionsBeforeCapture:(BOOL)arg1;
 - (void)_setPendingModeIndex:(int)arg1;
 - (void)_setPerformingFilterTransition:(BOOL)arg1;
+- (void)_setPerformingTimedCapture:(BOOL)arg1;
 - (void)_setPostprocessing:(BOOL)arg1;
 - (void)_setPreparingToRecord:(BOOL)arg1;
 - (void)_setPreviewPaused:(BOOL)arg1;
 - (void)_setPreviewViewAspectMode:(int)arg1;
 - (void)_setProcessingHDR:(BOOL)arg1;
+- (void)_setReviewingImagePickerCapture:(BOOL)arg1 updateUI:(BOOL)arg2;
 - (void)_setReviewingImagePickerCapture:(BOOL)arg1;
 - (void)_setShouldShowFocus:(BOOL)arg1;
 - (void)_setSwipeToModeSwitchEnabled:(BOOL)arg1;
@@ -527,6 +554,7 @@
 - (BOOL)_shouldEnableZoomSlider;
 - (BOOL)_shouldHideElapsedTimeViewForMode:(int)arg1;
 - (BOOL)_shouldHideFilterButtonForMode:(int)arg1;
+- (BOOL)_shouldHideFlashBadgeForMode:(int)arg1;
 - (BOOL)_shouldHideFlashButtonForMode:(int)arg1;
 - (BOOL)_shouldHideFlipButtonForMode:(int)arg1;
 - (BOOL)_shouldHideGridView;
@@ -556,6 +584,7 @@
 - (void)_snapshotAndAbsorbPreviewWithCompletionBlock:(id)arg1;
 - (void)_snapshotAndHideTopBarAnimated:(BOOL)arg1;
 - (id)_snapshotOfPreviewView;
+- (void)_snapshotView:(id)arg1 andLayoutForOrientation:(int)arg2 leaveHidden:(BOOL)arg3 withBlock:(id)arg4;
 - (void)_startFaceFadeOutTimerWithTimeInterval:(double)arg1;
 - (void)_startPreview:(id)arg1;
 - (void)_startZoomSliderTimer;
@@ -578,21 +607,22 @@
 - (int)_topBarBackgroundStyleForMode:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_topBarFrame;
 - (void)_unblurForSuspensionWithCompletionBlock:(id)arg1;
+- (void)_updateBadgeOrientationWithDeviceOrientation:(int)arg1;
 - (void)_updateCaptureAggregateDictionaries;
 - (void)_updateEnabledControlsWithReason:(id)arg1 forceLog:(BOOL)arg2;
 - (void)_updateEnabledControlsWithReason:(id)arg1;
 - (void)_updateFilterAggregateDictionaries;
 - (void)_updateFilterButtonOnState;
-- (void)_updateFlashMode:(int)arg1;
+- (void)_updateFlashAndHDR;
+- (void)_updateFlashBadge;
 - (void)_updateFlashModeIfNecessary;
 - (void)_updateFocus;
 - (void)_updateForStartTransitionToShowFilterSelection:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateGridVisibilityAnimated:(BOOL)arg1;
-- (void)_updateHDR:(BOOL)arg1;
-- (void)_updateHardwareLockIndicatorOrientationWithDeviceOrientation:(int)arg1;
+- (void)_updateHDRBadge;
+- (void)_updateHDRSuggested;
 - (void)_updateHardwareLockIndicatorVisibility;
 - (void)_updateImageEditability;
-- (void)_updateIsNonDefaultFlashMode:(int)arg1;
 - (void)_updateMaskingViewForCameraMode:(int)arg1 animated:(BOOL)arg2;
 - (void)_updateModeSwitchingAvailability;
 - (void)_updateModeSwitchingGestureRecognizersForCameraOrientation:(int)arg1;
@@ -602,6 +632,7 @@
 - (void)_updateToggleAspectModeAbility;
 - (void)_updateTopBarOrientationWithDeviceOrientation:(int)arg1;
 - (void)_updateTopBarStyleForDeviceOrientation:(int)arg1;
+- (BOOL)_useHDR;
 - (void)_windowDidRotate:(id)arg1;
 - (void)_windowWillAnimateRotation:(id)arg1;
 - (void)_windowWillAnimateRotationToOrientation:(int)arg1;
@@ -634,6 +665,7 @@
 - (void)cameraControllerDidStartPanoramaCapture:(id)arg1;
 - (void)cameraControllerDidStopVideoCapture:(id)arg1;
 - (void)cameraControllerDidTakePhoto:(id)arg1;
+- (void)cameraControllerFlashWillFireChanged:(id)arg1;
 - (void)cameraControllerFocusDidEnd:(id)arg1;
 - (void)cameraControllerFocusDidStart:(id)arg1;
 - (void)cameraControllerModeDidChange:(id)arg1;
@@ -644,6 +676,7 @@
 - (void)cameraControllerSessionDidStop:(id)arg1;
 - (void)cameraControllerSessionInterruptionEnded:(id)arg1;
 - (void)cameraControllerSessionWasInterrupted:(id)arg1;
+- (void)cameraControllerTorchActiveChanged:(id)arg1;
 - (void)cameraControllerTorchAvailabilityChanged:(id)arg1;
 - (void)cameraControllerVideoCaptureDidStart:(id)arg1;
 - (void)cameraControllerVideoCaptureDidStop:(id)arg1 withReason:(int)arg2 userInfo:(id)arg3;
@@ -692,6 +725,8 @@
 - (BOOL)isGridVisible;
 - (BOOL)isTallScreen;
 - (BOOL)isUserInteractionLoggingEnabled;
+- (int)lastSelectedHDRMode;
+- (int)lastSelectedPhotoFlashMode;
 - (void)layoutSubviews;
 - (void)lockFocus;
 - (id)modeDial:(id)arg1 titleForItemAtIndex:(unsigned int)arg2;
@@ -700,8 +735,6 @@
 - (id)overlayView;
 - (void)panoramaView:(id)arg1 didChangeDirection:(int)arg2;
 - (void)pausePreview;
-- (int)photoFlashMode;
-- (int)photoFlashModeBeforeHDR;
 - (int)photoSavingOptions;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (void)prepareForDefaultImageSnapshot;
@@ -724,14 +757,13 @@
 - (void)setEnabledGestures:(int)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setGridVisible:(BOOL)arg1;
-- (void)setHDRIsOn:(BOOL)arg1;
 - (void)setImagePickerOptions:(id)arg1;
 - (void)setImagePickerWantsImageData:(BOOL)arg1;
 - (void)setImagePickerWantsVolumeButtonEvents:(BOOL)arg1;
+- (void)setLastSelectedHDRMode:(int)arg1;
+- (void)setLastSelectedPhotoFlashMode:(int)arg1;
 - (void)setManipulatingCrop:(BOOL)arg1;
 - (void)setOverlayView:(id)arg1;
-- (void)setPhotoFlashMode:(int)arg1;
-- (void)setPhotoFlashModeBeforeHDR:(int)arg1;
 - (void)setPhotoSavingOptions:(int)arg1;
 - (void)setPreviewViewAspectMode:(int)arg1;
 - (void)setPreviewViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
@@ -740,6 +772,7 @@
 - (void)setShowsCropOverlay:(BOOL)arg1;
 - (void)setShowsCropRegion:(BOOL)arg1;
 - (void)setTallScreen:(BOOL)arg1;
+- (void)setUserChangedHDRAfterFlash:(BOOL)arg1;
 - (void)setUserInteractionLoggingEnabled:(BOOL)arg1;
 - (void)setVideoFlashMode:(int)arg1;
 - (void)showZoomSlider;
@@ -756,11 +789,14 @@
 - (void)swipedToNextCameraMode;
 - (void)swipedToPreviousCameraMode;
 - (void)timeLapseTimerFired;
-- (void)toggleHDR:(BOOL)arg1;
-- (void)toggleHDRMode:(id)arg1;
 - (void)togglePreviewViewAspectMode;
+- (BOOL)topBarShouldHideElapsedTimeView:(id)arg1;
+- (BOOL)topBarShouldHideFlashButton:(id)arg1;
+- (BOOL)topBarShouldHideFlipButton:(id)arg1;
+- (BOOL)topBarShouldHideHDRButton:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unzoomedPreviewFrame;
 - (void)updateImageWellImage:(id)arg1 uuid:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)userChangedHDRAfterFlash;
 - (void)verifyViewOrdering;
 - (int)videoFlashMode;
 - (id)videoPreviewView;

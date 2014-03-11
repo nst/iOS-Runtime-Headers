@@ -25,6 +25,7 @@
 - (id)animationsForTextureSet:(id)arg1 finalTextureSet:(id)arg2 duration:(double)arg3 attributes:(id)arg4 previousAttributes:(id)arg5;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
+- (void)p_addAnimationToLayer:(id)arg1 decay:(BOOL)arg2 bounceCount:(float)arg3 duration:(double)arg4 result:(id)arg5;
 - (id)p_bounceArrayWithLayer:(id)arg1 duration:(double)arg2 numberOfBounces:(unsigned int)arg3 decay:(BOOL)arg4;
 
 @end

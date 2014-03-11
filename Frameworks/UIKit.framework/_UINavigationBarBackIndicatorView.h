@@ -5,7 +5,4 @@
 @interface _UINavigationBarBackIndicatorView : UIImageView {
 }
 
-- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
-- (void)setAlpha:(float)arg1;
-
 @end

@@ -2,50 +2,46 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDate, NSDictionary, NSString;
+@class NSData, NSDate, NSDictionary, NSString;
 
-@interface RadioPlayEvent : NSObject {
+@interface RadioPlayEvent : NSObject <NSCopying, NSMutableCopying> {
     NSDate *_datePlayed;
     int _endReason;
     double _endTimeInTrack;
     NSString *_externalIdentifier;
     double _startTimeInTrack;
-    double _timeElapsedSincePlayed;
+    long long _storeID;
+    NSData *_timedMetadata;
     NSDictionary *_trackInfo;
-    long long _trackStoreID;
-    int _trackType;
+    int _type;
 }
 
-@property(retain) NSDate * datePlayed;
-@property int endReason;
-@property double endTimeInTrack;
-@property(copy) NSString * externalIdentifier;
-@property(readonly) NSDictionary * playEventDictionary;
-@property double startTimeInTrack;
-@property double timeElapsedSincePlayed;
+@property(readonly) NSDate * datePlayed;
+@property(readonly) int endReason;
+@property(readonly) double endTimeInTrack;
+@property(readonly) NSString * externalIdentifier;
+@property(readonly) double startTimeInTrack;
+@property(readonly) long long storeID;
+@property(readonly) NSData * timedMetadata;
 @property(readonly) NSDictionary * trackInfo;
-@property(readonly) long long trackStoreID;
-@property(readonly) int trackType;
+@property(readonly) int type;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)datePlayed;
 - (id)description;
 - (int)endReason;
 - (double)endTimeInTrack;
 - (id)externalIdentifier;
-- (id)initWithStoreID:(long long)arg1 trackType:(int)arg2 trackInfo:(id)arg3;
-- (id)initWithTrack:(id)arg1;
-- (id)playEventDictionary;
-- (void)setDatePlayed:(id)arg1;
-- (void)setEndReason:(int)arg1;
-- (void)setEndTimeInTrack:(double)arg1;
-- (void)setExternalIdentifier:(id)arg1;
-- (void)setStartTimeInTrack:(double)arg1;
-- (void)setTimeElapsedSincePlayed:(double)arg1;
+- (unsigned int)hash;
+- (id)initWithType:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)playDictionary;
 - (double)startTimeInTrack;
-- (double)timeElapsedSincePlayed;
+- (long long)storeID;
+- (id)timedMetadata;
 - (id)trackInfo;
-- (long long)trackStoreID;
-- (int)trackType;
+- (int)type;
 
 @end

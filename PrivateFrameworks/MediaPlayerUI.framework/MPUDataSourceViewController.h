@@ -21,9 +21,11 @@
 
 - (void).cxx_destruct;
 - (void)_MPUStandardViewController_dataSourceDidInvalidateNotification:(id)arg1;
+- (void)_MPUStandardViewController_dataSourceWillInvalidateNotification:(id)arg1;
 - (void)_setDataSource:(id)arg1 shouldReloadData:(BOOL)arg2;
 - (id)dataSource;
 - (void)dataSourceDidInvalidate;
+- (void)dataSourceWillInvalidate;
 - (void)dealloc;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithDataSource:(id)arg1;

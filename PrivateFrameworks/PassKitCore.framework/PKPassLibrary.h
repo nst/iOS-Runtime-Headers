@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class <PKPassLibraryDelegate>, NSXPCConnection, PKImageSetCache, PKPassLibraryExportedProxy;
+@class <PKPassLibraryDelegate>, NSXPCConnection, PKAsyncCache, PKPassLibraryExportedProxy;
 
 @interface PKPassLibrary : NSObject <PKPassLibraryExportedInterface> {
     NSXPCConnection *_connection;
     <PKPassLibraryDelegate> *_delegate;
     PKPassLibraryExportedProxy *_exportedProxy;
-    PKImageSetCache *_imageSetCache;
+    PKAsyncCache *_libraryCache;
 }
 
 @property <PKPassLibraryDelegate> * delegate;
@@ -43,7 +43,6 @@
 - (id)diffForBulletinRecordID:(id)arg1;
 - (void)fetchContentForUniqueID:(id)arg1 withCompletion:(id)arg2;
 - (void)fetchImageSet:(int)arg1 forUniqueID:(id)arg2 displayProfile:(id)arg3 withCompletion:(id)arg4;
-- (void)flushReferencedUniqueID:(id)arg1 forCachedImageSet:(int)arg2 withDisplayProfile:(id)arg3;
 - (void)getContainmentStatusAndSettingsForPass:(id)arg1 withHandler:(id)arg2;
 - (void)getPassesAndCatalog:(BOOL)arg1 withHandler:(id)arg2;
 - (void)getPassesAndCatalog:(BOOL)arg1 withRetries:(unsigned int)arg2 withHandler:(id)arg3;

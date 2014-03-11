@@ -12,8 +12,8 @@
 @property float halfWidth;
 @property(retain) NSAttributedString * string;
 
+- (void).cxx_destruct;
 - (id)actionForKey:(id)arg1;
-- (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (float)halfWidth;
 - (id)init;

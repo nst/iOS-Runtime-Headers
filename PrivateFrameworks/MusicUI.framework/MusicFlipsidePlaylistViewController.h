@@ -15,23 +15,25 @@
 @property BOOL showingRating;
 
 + (BOOL)_shouldDisplayActions;
++ (BOOL)_shouldShowActions;
++ (BOOL)shouldPushNowPlayingOnSelection;
 
 - (void).cxx_destruct;
 - (id)_createTableViewBackgroundView;
+- (void)_updateDownloadabilityStateWithCanReloadActionRows:(BOOL)arg1;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (float)maximumDurationWidth;
-- (int)numberOfPrefixActionRowsInTableView:(id)arg1;
 - (id)ratingDelegate;
 - (void)ratingDidChangeForRatingControl:(id)arg1;
 - (void)reloadData;
 - (void)setRatingDelegate:(id)arg1;
 - (void)setShowingRating:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowingRating:(BOOL)arg1;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (BOOL)showingRating;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (Class)tableView:(id)arg1 prefixActionCellConfigurationAtIndex:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)viewDidLoad;

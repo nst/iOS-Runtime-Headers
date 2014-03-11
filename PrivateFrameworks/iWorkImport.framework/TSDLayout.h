@@ -129,6 +129,7 @@
 - (struct CGSize { float x1; float x2; })maximumFrameSizeForChild:(id)arg1;
 - (struct CGSize { float x1; float x2; })maximumSizeForChildLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })minimumSize;
+- (id)newCommandToMoveByOffset:(struct CGPoint { float x1; float x2; })arg1 whenDistributingLayoutsByOffsets:(id)arg2;
 - (BOOL)orderedBefore:(id)arg1;
 - (id)originalGeometry;
 - (id)originalPureGeometry;
@@ -155,6 +156,7 @@
 - (BOOL)resizeMayChangeAspectRatio;
 - (void)resizeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 asChild:(BOOL)arg2;
 - (id)rootLayout;
+- (float)scaleForInlineClampingUnrotatedSize:(struct CGSize { float x1; float x2; })arg1 withGeometry:(id)arg2;
 - (id)searchTarget;
 - (void)setAdjustedInterimPositionX:(float)arg1;
 - (void)setAdjustedInterimPositionY:(float)arg1;

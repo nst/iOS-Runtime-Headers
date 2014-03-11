@@ -6,9 +6,11 @@
 
 @interface GEOETAResult : PBCodable <NSCopying> {
     struct { 
+        unsigned int distance : 1; 
         unsigned int historicTravelTime : 1; 
         unsigned int liveTravelTime : 1; 
         unsigned int status : 1; 
+    unsigned int _distance;
     } _has;
     unsigned int _historicTravelTime;
     unsigned int _liveTravelTime;
@@ -16,6 +18,8 @@
     int _status;
 }
 
+@property unsigned int distance;
+@property BOOL hasDistance;
 @property BOOL hasHistoricTravelTime;
 @property BOOL hasLiveTravelTime;
 @property(readonly) BOOL hasPlaceSearchResponse;
@@ -30,6 +34,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (unsigned int)distance;
+- (BOOL)hasDistance;
 - (BOOL)hasHistoricTravelTime;
 - (BOOL)hasLiveTravelTime;
 - (BOOL)hasPlaceSearchResponse;
@@ -40,6 +46,8 @@
 - (unsigned int)liveTravelTime;
 - (id)placeSearchResponse;
 - (BOOL)readFrom:(id)arg1;
+- (void)setDistance:(unsigned int)arg1;
+- (void)setHasDistance:(BOOL)arg1;
 - (void)setHasHistoricTravelTime:(BOOL)arg1;
 - (void)setHasLiveTravelTime:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;

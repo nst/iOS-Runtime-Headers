@@ -18,12 +18,14 @@
 @property(retain) NSDictionary * validTransitions;
 
 - (void)_performTransitionFromState:(id)arg1 toState:(id)arg2;
-- (BOOL)_validateTransitionFromState:(id)arg1 toState:(id)arg2;
+- (BOOL)_setCurrentState:(id)arg1;
+- (id)_validateTransitionFromState:(id)arg1 toState:(id)arg2;
+- (BOOL)applyState:(id)arg1;
 - (id)currentState;
 - (void)dealloc;
 - (id)delegate;
-- (void)illegalTransitionFromState:(id)arg1 toState:(id)arg2;
 - (id)init;
+- (id)missingTransitionFromState:(id)arg1 toState:(id)arg2;
 - (void)setCurrentState:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShouldLogStateTransitions:(BOOL)arg1;

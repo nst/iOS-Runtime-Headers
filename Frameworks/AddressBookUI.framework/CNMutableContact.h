@@ -9,6 +9,7 @@
 
 @property void* addressBook;
 @property(copy) NSDateComponents * birthday;
+@property int contactType;
 @property(copy) NSArray * dates;
 @property(copy) NSString * departmentName;
 @property(copy) NSArray * emailAddresses;
@@ -58,6 +59,7 @@
 - (BOOL)saveContact;
 - (BOOL)saveContactInAddressBook:(void*)arg1;
 - (void)setBirthday:(id)arg1;
+- (void)setContactType:(int)arg1;
 - (void)setDates:(id)arg1;
 - (void)setDepartmentName:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
@@ -85,5 +87,6 @@
 - (void)setTextTone:(id)arg1;
 - (void)setUrlAddresses:(id)arg1;
 - (BOOL)unlinkContact;
+- (void)updateContactType:(BOOL)arg1;
 
 @end

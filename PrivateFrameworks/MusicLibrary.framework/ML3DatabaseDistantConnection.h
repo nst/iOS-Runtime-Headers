@@ -20,7 +20,7 @@
 @property <ML3DatabaseDistantConnectionDelegate> * distantDelegate;
 
 - (void).cxx_destruct;
-- (int)_finalizeStatement:(id)arg1;
+- (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1 isRetry:(BOOL)arg2;
 - (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1;
 - (BOOL)_internalEndTransactionAndCommit:(BOOL)arg1;
 - (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
@@ -36,13 +36,11 @@
 - (id)initWithDatabasePath:(id)arg1;
 - (BOOL)isOpen;
 - (BOOL)isReadOnly;
-- (void*)moduleContextForModuleName:(id)arg1;
 - (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(long long)arg3 readOnly:(BOOL)arg4;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 block:(id)arg3;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)())arg3 userData:(void*)arg4;
-- (BOOL)registerModuleName:(id)arg1 moduleMethods:(const struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
+- (BOOL)registerModule:(id)arg1;
 - (void)setDistantDelegate:(id)arg1;
-- (void)setModuleContext:(void*)arg1 forModuleName:(id)arg2 contextReleaseBlock:(id)arg3;
 - (void)setProfilingLevel:(int)arg1;
 - (void)setReadOnly:(BOOL)arg1;
 - (BOOL)shouldCacheStatements;

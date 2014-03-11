@@ -100,13 +100,13 @@
 - (id)_geo_newXPCObject;
 - (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
 - (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
-- (id)_gkImageUrlForSize:(int)arg1 foundSize:(out unsigned int*)arg2;
-- (id)_gkImageUrlForSize:(int)arg1;
-- (id)_gkImageUrlWithFallbacksForSize:(int)arg1;
+- (id)_gkImageURLForSize:(int)arg1 foundSize:(out unsigned int*)arg2;
+- (id)_gkImageURLForSize:(int)arg1;
 - (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
 - (id)_gkSubDictionaryWithKeys:(id)arg1;
 - (BOOL)_mapkit_writeBinaryPlist:(id)arg1 atomically:(BOOL)arg2;
 - (id)_numberForKey:(id)arg1;
+- (id)_placeOrCurrentLocation:(BOOL*)arg1;
 - (id)_sa_mappedDictionaryWithBlock:(id)arg1;
 - (id)_stringForKey:(id)arg1;
 - (id)_stringToWrite;

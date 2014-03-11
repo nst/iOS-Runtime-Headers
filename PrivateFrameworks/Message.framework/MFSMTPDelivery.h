@@ -12,6 +12,5 @@
 - (void)dealloc;
 - (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (Class)deliveryClass;
-- (id)newMessageWriter;
 
 @end

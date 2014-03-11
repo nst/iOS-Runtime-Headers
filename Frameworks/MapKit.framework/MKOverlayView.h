@@ -15,7 +15,6 @@
             double height; 
         } size; 
     } _boundingMapRect;
-    id _canDrawCache;
     <MKOverlay> *_overlay;
     id _renderer;
 }
@@ -23,9 +22,8 @@
 @property(readonly) <MKOverlay> * overlay;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_boundingMapRect;
-- (BOOL)_cachingCanDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
-- (id)_canDrawCache;
 - (BOOL)_canDrawContent;
 - (id)_mk_overlayLayer;
 - (id)_mk_overlayView;

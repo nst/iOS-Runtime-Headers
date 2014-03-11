@@ -8,7 +8,6 @@
 + (id)databaseTable;
 + (BOOL)insertionChangesLibraryContents;
 + (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2;
-+ (int)revisionTrackingCode;
 
 - (void)enumerateOrphanedAssetsUsingBlock:(id)arg1;
 

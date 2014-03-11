@@ -6,8 +6,9 @@
 }
 
 - (void)acceptVisitor:(id)arg1;
+- (id)buildImageTitle;
 - (id)initWithKNPlaceholderInfo:(id)arg1;
 - (int)kind;
-- (id)titleForBuildChunk:(id)arg1;
+- (id)p_defaultBuildChunkTitle;
 
 @end

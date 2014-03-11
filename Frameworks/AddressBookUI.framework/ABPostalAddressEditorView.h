@@ -22,6 +22,9 @@
 @property(copy) NSMutableDictionary * textFields;
 @property(copy) NSDictionary * valueTextAttributes;
 
++ (void)preCacheCells;
++ (void)preCacheContent;
+
 - (id)_addressPlaceholderForKey:(id)arg1;
 - (id)_addressValueForKey:(id)arg1;
 - (id)_cellsLayoutForCountryCode:(id)arg1;

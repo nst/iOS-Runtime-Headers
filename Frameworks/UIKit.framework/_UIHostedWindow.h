@@ -17,6 +17,7 @@
 - (BOOL)_isClippedByScreenJail;
 - (BOOL)_isWindowServerHostingManaged;
 - (BOOL)_needsShakesWhenInactive;
+- (BOOL)_presentActionSheet:(id)arg1 inView:(id)arg2 fromYCoordinate:(float)arg3;
 - (void)_registerScrollToTopView:(id)arg1;
 - (void)_setHostTintAdjustmentMode:(int)arg1;
 - (void)_unregisterScrollToTopView:(id)arg1;

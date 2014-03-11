@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSNumberFormatter, UILabel, UIProgressView, UIView, _UIBackdropView;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSNumberFormatter, UIButton, UILabel, UIProgressView, UIView, _UIBackdropView;
 
 @interface PLProgressView : UIView {
     unsigned int _didLayout : 1;
@@ -11,10 +15,13 @@
     UIView *_backgroundTintedView;
     int _backgroundType;
     UIView *_backgroundView;
+    UIButton *_cancelButton;
+    id _cancelationHandler;
     UILabel *_labelView;
     float _percentComplete;
     NSNumberFormatter *_progressFormatter;
     UIProgressView *_progressView;
+    BOOL _showsCancelButton;
     UIView *_topDivider;
 }
 
@@ -22,9 +29,12 @@
 @property(retain) UIView * backgroundTintedView;
 @property int backgroundType;
 @property(retain) UIView * backgroundView;
+@property(copy) id cancelationHandler;
 @property(retain) UILabel * labelView;
 @property float percentComplete;
+@property BOOL showsCancelButton;
 
+- (void)_cancel:(id)arg1;
 - (void)_installBackgroundBlurredView;
 - (void)_installBackgroundTintedView;
 - (void)_installBackgroundView;
@@ -35,6 +45,7 @@
 - (id)backgroundTintedView;
 - (int)backgroundType;
 - (id)backgroundView;
+- (id)cancelationHandler;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)labelView;
@@ -44,10 +55,12 @@
 - (void)setBackgroundTintedView:(id)arg1;
 - (void)setBackgroundType:(int)arg1;
 - (void)setBackgroundView:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCancelationHandler:(id)arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setLabelView:(id)arg1;
 - (void)setPercentComplete:(float)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1;
+- (BOOL)showsCancelButton;
 - (void)updateUIForPublishingAgent:(id)arg1;
 
 @end

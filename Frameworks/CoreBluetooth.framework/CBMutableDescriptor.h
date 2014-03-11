@@ -12,6 +12,7 @@
 
 - (id)ID;
 - (void)dealloc;
+- (id)description;
 - (id)initWithCharacteristic:(id)arg1 dictionary:(id)arg2;
 - (id)initWithType:(id)arg1 value:(id)arg2;
 - (void)setID:(id)arg1;

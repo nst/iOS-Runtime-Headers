@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lineFrame;
+- (void)_updateTimeLabelColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })currentTimeFrame;
 - (id)currentTimeLabel;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -30,6 +31,7 @@
 - (void)setShowsThumb:(BOOL)arg1;
 - (BOOL)showsLine;
 - (BOOL)showsThumb;
+- (void)tintColorDidChange;
 - (void)updateTime;
 
 @end

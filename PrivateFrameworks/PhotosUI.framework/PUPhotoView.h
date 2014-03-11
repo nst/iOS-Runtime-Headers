@@ -2,90 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSNumber, NSString, PUBackgroundColorView, PUPhotoDecoration, UIImage, UIImageView, UILabel;
+@class PUPhotoViewContentHelper;
 
 @interface PUPhotoView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    UIImageView *__crossfadeImageView;
-    UIImage *_bannerImage;
-    UIImageView *_bannerImageView;
-    UILabel *_bannerLabel;
-    NSString *_bannerText;
-    UIImageView *_bannerView;
-    int _fillMode;
-    } _imageTransform;
-    BOOL _isVideoBannerVisible;
-    PUPhotoDecoration *_photoDecoration;
-    PUBackgroundColorView *_photoDecorationBorderView;
-    PUBackgroundColorView *_photoDecorationOverlayView;
-    UIImage *_photoImage;
-    UIImageView *_photoImageView;
-    } _photoSize;
-    BOOL _slalom;
-    NSNumber *_videoDuration;
+    PUPhotoViewContentHelper *_contentHelper;
 }
 
-@property(retain) UIImageView * _crossfadeImageView;
-@property(retain) UIImage * bannerImage;
-@property(copy) NSString * bannerText;
-@property int fillMode;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageContentFrame;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } imageTransform;
-@property(copy) PUPhotoDecoration * photoDecoration;
-@property(retain) UIImage * photoImage;
-@property(retain) UIImageView * photoImageView;
-@property struct CGSize { float x1; float x2; } photoSize;
-@property(getter=isSlalom,readonly) BOOL slalom;
-@property(getter=isVideoBannerVisible,readonly) BOOL videoBannerVisible;
-@property(readonly) NSNumber * videoDuration;
-
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageContentFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
-+ (BOOL)_showPhotoStreamBadges;
-+ (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
+@property(readonly) PUPhotoViewContentHelper * contentHelper;
 
 - (void).cxx_destruct;
-- (id)_crossfadeImageView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_photoDecorationBorderViewFrameForImageContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_updateBannerView;
-- (void)_updatePhotoDecoration;
-- (void)_updateSubviewOrdering;
-- (void)animateCrossfadeToImage:(id)arg1;
-- (id)bannerImage;
-- (id)bannerText;
-- (int)fillMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageContentFrame;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransform;
+- (id)contentHelper;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isSlalom;
-- (BOOL)isVideoBannerVisible;
 - (void)layoutSubviews;
-- (id)photoDecoration;
-- (id)photoImage;
-- (id)photoImageView;
-- (struct CGSize { float x1; float x2; })photoSize;
-- (void)setAvalancheBannerVisible:(BOOL)arg1;
-- (void)setBannerImage:(id)arg1;
-- (void)setBannerText:(id)arg1;
-- (void)setFillMode:(int)arg1;
-- (void)setImageTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setPhotoDecoration:(id)arg1;
-- (void)setPhotoImage:(id)arg1;
-- (void)setPhotoImageView:(id)arg1;
-- (void)setPhotoSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPhotoStreamBannerVisible:(BOOL)arg1;
-- (void)setTransitionAvalancheBannerVisible:(BOOL)arg1;
-- (void)setVideoBannerVisible:(BOOL)arg1 videoDuration:(id)arg2 isSlalom:(BOOL)arg3;
-- (void)set_crossfadeImageView:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)videoDuration;
 
 @end

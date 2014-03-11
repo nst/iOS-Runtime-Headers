@@ -2,39 +2,36 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPSlidingButtonDelegateProtocol>, TPButton;
+@class <TPSlidingButtonDelegateProtocol>, UIButton, UIImageView, _UIActionSlider;
 
-@interface TPSlidingButton : UIView <UIScrollViewDelegate> {
-    TPButton *_acceptButton;
+@interface TPSlidingButton : UIView <_UIActionSliderDelegate> {
+    _UIActionSlider *_acceptButton;
     <TPSlidingButtonDelegateProtocol> *_delegate;
-    TPButton *_endButton;
-    TPButton *_sideButtonLeft;
-    TPButton *_sideButtonRight;
+    UIImageView *_dialImageView;
+    UIButton *_sideButtonRight;
     int _type;
 }
 
-@property(retain) TPButton * acceptButton;
+@property(retain) _UIActionSlider * acceptButton;
 @property <TPSlidingButtonDelegateProtocol> * delegate;
-@property(retain) TPButton * endButton;
-@property(retain) TPButton * sideButtonLeft;
-@property(retain) TPButton * sideButtonRight;
+@property(retain) UIImageView * dialImageView;
+@property(retain) UIButton * sideButtonRight;
 @property int type;
 
+- (struct CGSize { float x1; float x2; })_knobSize;
 - (id)acceptButton;
+- (void)actionSliderDidCompleteSlide:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)endButton;
+- (id)dialImageView;
 - (id)initWithSlidingButtonType:(int)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (void)scrollViewDidScroll:(id)arg1;
 - (void)setAcceptButton:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEndButton:(id)arg1;
-- (void)setSideButtonLeft:(id)arg1;
+- (void)setDialImageView:(id)arg1;
 - (void)setSideButtonRight:(id)arg1;
 - (void)setType:(int)arg1;
-- (id)sideButtonLeft;
 - (id)sideButtonRight;
 - (int)type;
 

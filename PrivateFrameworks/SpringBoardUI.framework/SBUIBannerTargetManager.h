@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSArray, NSHashTable, NSMutableArray;
+@class NSArray, NSHashTable, NSMapTable;
 
 @interface SBUIBannerTargetManager : NSObject {
+    NSMapTable *_implementationToProxyMap;
     NSHashTable *_observers;
-    NSMutableArray *_targets;
+    NSHashTable *_proxies;
 }
 
 @property(readonly) NSArray * targets;
@@ -14,12 +15,13 @@
 + (id)sharedInstance;
 
 - (void)_notifyObservers:(id)arg1;
+- (id)_proxyForTargetImplementation:(id)arg1;
+- (void)_registerTargetImplementation:(id)arg1;
+- (void)_unregisterTargetImplementation:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)registerTarget:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)targets;
-- (void)unregisterTarget:(id)arg1;
 
 @end

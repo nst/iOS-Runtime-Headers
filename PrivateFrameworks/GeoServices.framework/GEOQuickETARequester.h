@@ -15,8 +15,9 @@
 
 - (void)_calculateRoutingETAWithHandler:(id)arg1;
 - (void)_calculateSimpleETAWithHandler:(id)arg1;
-- (void)calculateETALocalizedDescriptionFromOrigin:(id)arg1 toLOI:(id)arg2 handler:(id)arg3;
+- (void)calculateETALocalizedDescriptionFromOrigin:(id)arg1 toPLOI:(id)arg2 handler:(id)arg3;
 - (void)calculateETAWithHandler:(id)arg1;
+- (void)calculateETAWithResponseHandler:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;

@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAnimatedImage, NSArray, UIImageView;
+@class CKAnimatedImage, CKBalloonImageView, NSArray;
 
 @interface CKImageBalloonView : CKBalloonView <CKAnimationTimerObserver> {
     CKAnimatedImage *_animatedImage;
     NSArray *_frames;
-    UIImageView *_tailMask;
+    CKBalloonImageView *_tailMask;
 }
 
 @property(retain) CKAnimatedImage * animatedImage;
 @property(copy) NSArray * frames;
-@property(retain) UIImageView * tailMask;
+@property(retain) CKBalloonImageView * tailMask;
 
 - (id)animatedImage;
 - (void)animationTimerFired:(unsigned int)arg1;

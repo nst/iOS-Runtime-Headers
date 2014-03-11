@@ -18,9 +18,9 @@
     UITouch *_touch2;
 }
 
+- (void).cxx_destruct;
 - (id)_activeTouchesForEvent:(id)arg1;
 - (float)_distanceFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

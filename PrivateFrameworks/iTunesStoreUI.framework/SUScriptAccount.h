@@ -8,6 +8,7 @@
     SSAccount *_account;
 }
 
+@property(readonly) NSString * ITunesPassSerialNumber;
 @property(retain) SSAccount * account;
 @property(copy) NSString * credits;
 @property(retain) NSNumber * dsID;
@@ -22,6 +23,7 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
+- (id)ITunesPassSerialNumber;
 - (id)_className;
 - (void)_commitChanges;
 - (void)_setServiceType:(int)arg1 enabled:(id)arg2;

@@ -17,14 +17,19 @@
 @property(readonly) UIView * viewForPresentingTrackActions;
 
 + (id)_imageCache;
++ (unsigned long long)defaultVisibleParts;
 
 - (void).cxx_destruct;
+- (void)_avItemArtworkDidChangeNotification:(id)arg1;
+- (void)_avItemStoreIDDidChangeNotification:(id)arg1;
 - (float)_expectedInfoButtonAlpha;
 - (id)_imageCacheRequestForBaseItem:(id)arg1 offsetIndex:(int)arg2;
 - (void)_infoButtonAction:(id)arg1;
 - (void)_playbackContentsDidChangeNotification:(id)arg1;
 - (void)_prospectivePlaybackInformationDidChangeAnimated:(BOOL)arg1;
+- (void)_registerForAVItemNotifications;
 - (void)_requestStationVisiblityAction:(id)arg1;
+- (void)_unregisterForAVItemNotifications;
 - (void)_updateForItemChangeWithPreviousItem:(id)arg1 animated:(BOOL)arg2;
 - (id)buttonImageForPart:(unsigned long long)arg1;
 - (void)dealloc;
@@ -37,7 +42,6 @@
 - (void)setShowingCreateLoadingIndicator:(BOOL)arg1;
 - (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(int)arg3;
 - (void)stackView:(id)arg1 didCreateItem:(id)arg2;
-- (void)tintColorDidChange;
 - (id)tintColorForPart:(unsigned long long)arg1;
 - (void)trackDownloadViewWillTransition:(id)arg1;
 - (id)viewForPresentingStationActions;

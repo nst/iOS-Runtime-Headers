@@ -47,6 +47,7 @@
 - (id)fontName;
 - (float)fontSize;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (float)kerning;
 - (float)minFontSize;
 - (void)overlayWithStyle:(id)arg1;

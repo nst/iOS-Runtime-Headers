@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableArray, NSNumber, NSString;
+@class NSArray, NSMutableArray, NSNumber, NSString, SUScriptColor;
 
 @interface SUScriptDevice : SUScriptObject {
     NSMutableArray *_scriptFunctions;
@@ -11,6 +11,14 @@
 @property(readonly) NSString * UTIImage;
 @property(readonly) NSString * UTIMovie;
 @property(readonly) NSString * UTIText;
+@property(readonly) id accessibilityBoldTextEnabled;
+@property(readonly) id accessibilityButtonShapesEnabled;
+@property(readonly) id accessibilityDarkenSystemColors;
+@property(readonly) id accessibilityEnhanceBackgroundContrast;
+@property(readonly) id accessibilityReduceMotion;
+@property(readonly) SUScriptColor * accessibilitySingleColor;
+@property(readonly) id accessibilitySingleColorSelected;
+@property(readonly) id accessibilityUseDarkerKeyboard;
 @property(readonly) int activeNetworkType;
 @property(readonly) NSArray * automaticDownloadMediaTypes;
 @property(readonly) NSString * capabilityNameEmail;
@@ -51,6 +59,7 @@
 @property(readonly) int hardwareTypeUnknown;
 @property(readonly) int hardwareTypeWildcatK48;
 @property(readonly) NSNumber * mainScreenScale;
+@property(readonly) NSNumber * metricsPostFrequencyOverride;
 @property(readonly) int networkType2G;
 @property(readonly) int networkType3G;
 @property(readonly) int networkType4G;
@@ -96,11 +105,20 @@
 - (id)UTIImage;
 - (id)UTIMovie;
 - (id)UTIText;
+- (void)_accessibilitySettingsChangedNotification:(id)arg1;
 - (void)_addScriptFunction:(id)arg1;
 - (void)_autoDownloadKindsChangedNotification:(id)arg1;
 - (id)_className;
 - (int)_deviceCapabilityForString:(id)arg1;
 - (void)_removeScriptFunction:(id)arg1;
+- (id)accessibilityBoldTextEnabled;
+- (id)accessibilityButtonShapesEnabled;
+- (id)accessibilityDarkenSystemColors;
+- (id)accessibilityEnhanceBackgroundContrast;
+- (id)accessibilityReduceMotion;
+- (id)accessibilitySingleColor;
+- (id)accessibilitySingleColorSelected;
+- (id)accessibilityUseDarkerKeyboard;
 - (int)activeNetworkType;
 - (id)applicationsForUTI:(id)arg1;
 - (id)attributeKeys;
@@ -148,6 +166,7 @@
 - (id)hasCapability:(id)arg1;
 - (id)init;
 - (id)mainScreenScale;
+- (id)metricsPostFrequencyOverride;
 - (int)networkType2G;
 - (int)networkType3G;
 - (int)networkType4G;

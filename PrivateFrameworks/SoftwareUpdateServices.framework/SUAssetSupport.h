@@ -7,13 +7,14 @@
 
 + (void)_cleanupAllAssetsOfType:(id)arg1;
 + (id)assetDownloadOptionsForDocumentation;
-+ (id)assetDownloadOptionsFromMetadata:(id)arg1 priority:(int)arg2;
++ (id)assetDownloadOptionsFromMetadata:(id)arg1 descriptor:(id)arg2 priority:(int)arg3;
 + (void)cleanupAllSoftwareUpdateAndRelatedAssets;
 + (void)cleanupAllSoftwareUpdateAssets;
 + (id)defaultAssetDownloadOptionsWithPriority:(int)arg1;
 + (id)findAssetWithMatcher:(id)arg1 localSearch:(BOOL)arg2 error:(id*)arg3;
 + (id)getInstalledDocumentationAssetFromSoftwareUpdateAssetIfExists:(id)arg1;
 + (id)getLocalDefaultSoftwareUpdateAssetIfExists;
++ (void)purgeMSUUpdate:(id)arg1;
 + (id)tryCreateDescriptorFromSoftwareUpdateAsset:(id)arg1;
 + (id)tryCreateDocumentationFromDocumentationAsset:(id)arg1;
 

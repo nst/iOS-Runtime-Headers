@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDNetworkUsageInfo : PBCodable {
+@interface AWDNetworkUsageInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int cellIn : 1; 
         unsigned int cellOut : 1; 
@@ -32,6 +32,7 @@
 - (unsigned long long)cellIn;
 - (unsigned long long)cellOut;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -52,6 +52,7 @@
 - (id)chunksForBuild:(id)arg1;
 - (id)chunksForDrawable:(id)arg1 animationType:(int)arg2;
 - (id)chunksForDrawable:(id)arg1;
+- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)dealloc;
 - (id)defaultBodyPlaceholderWithContext:(id)arg1;
 - (id)defaultSlideNumberPlaceholderWithContext:(id)arg1;
@@ -88,8 +89,10 @@
 - (id)p_complementForBuild:(id)arg1;
 - (int)p_indexOfChunk:(id)arg1 inDeliveryGroup:(unsigned int)arg2;
 - (id)p_invalidBuildsOnDrawable:(id)arg1;
+- (BOOL)p_isValidToMoveChunk:(id)arg1 toIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_rangeForChunksInBuild:(id)arg1;
 - (void)p_splitBuildChunksIntoDeliveryGroups;
+- (void)p_updateBuildEffects;
 - (void)p_updateNumberOfBuildChunksImmediatelyWithoutUndoHistory;
 - (void)p_updateOverlappingBuildEventTriggers;
 - (BOOL)p_urlIsSlideSpecific:(id)arg1;

@@ -15,6 +15,12 @@
         float x; 
         float y; 
     } mAcumulatedDrag;
+    float mCachedFromOutset;
+    TSDBezierPath *mCachedFromOutsetWrapPath;
+    TSDBezierPath *mCachedFromWrapPath;
+    float mCachedToOutset;
+    TSDBezierPath *mCachedToOutsetWrapPath;
+    TSDBezierPath *mCachedToWrapPath;
     TSDBezierPath *mClippedBezierPath;
     TSDLayout *mConnectedFrom;
     TSDInfoGeometry *mConnectedInfoGeometry;
@@ -47,9 +53,11 @@
 - (id)additionalLayoutsForRepCreation;
 - (void)beginDynamicOperation;
 - (void)beginDynamicOutsetChange;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
 - (BOOL)canBeIntersected;
 - (BOOL)canEndpointsCoincide;
 - (BOOL)canFlip;
+- (BOOL)canResetTextAndObjectHandles;
 - (void)checkConnections;
 - (id)clipPath:(id)arg1 onLayout:(id)arg2 outset:(float)arg3 reversed:(BOOL)arg4 isValid:(BOOL*)arg5;
 - (id)connectedFrom;
@@ -80,6 +88,7 @@
 - (void)parentDidChange;
 - (id)path;
 - (BOOL)pathIsLineSegment;
+- (BOOL)pathIsOpen;
 - (id)pathSource;
 - (void)pauseDynamicTransformation;
 - (void)processChangedProperty:(int)arg1;

@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class AFBulletin, NSString, NSURL, SASPronunciationContext;
+@class AFBulletin, NSNumber, NSString, NSURL, SASPronunciationContext;
 
 @interface AFUIRequestOptions : NSObject <NSCopying, NSSecureCoding> {
     NSString *_appBundleIdentifier;
     NSString *_bluetoothDeviceAddress;
     AFBulletin *_bulletin;
+    int _directActionEvent;
+    NSURL *_directActionMessagesURL;
     double _expectedTimestamp;
+    NSNumber *_homeButtonUpFromBeep;
     BOOL _initialBringUp;
     SASPronunciationContext *_pronunciationContext;
     BOOL _pronunciationRequest;
@@ -17,21 +20,26 @@
     NSURL *_speechFileURL;
     NSString *_text;
     double _timestamp;
+    BOOL _useAutomaticEndpointing;
 }
 
 @property(copy) NSString * appBundleIdentifier;
 @property(copy) NSString * bluetoothDeviceAddress;
 @property(retain) AFBulletin * bulletin;
+@property int directActionEvent;
+@property(copy) NSURL * directActionMessagesURL;
 @property double expectedTimestamp;
 @property(getter=isForStark,readonly) BOOL forStark;
+@property(retain) NSNumber * homeButtonUpFromBeep;
 @property(getter=isInitialBringUp) BOOL initialBringUp;
 @property(retain) SASPronunciationContext * pronunciationContext;
 @property(getter=isPronunciationRequest) BOOL pronunciationRequest;
-@property(readonly) int requestSource;
+@property int requestSource;
 @property(copy) NSString * serverCommandId;
 @property(copy) NSURL * speechFileURL;
 @property(copy) NSString * text;
 @property double timestamp;
+@property BOOL useAutomaticEndpointing;
 
 + (BOOL)supportsSecureCoding;
 
@@ -41,8 +49,11 @@
 - (id)bulletin;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (int)directActionEvent;
+- (id)directActionMessagesURL;
 - (void)encodeWithCoder:(id)arg1;
 - (double)expectedTimestamp;
+- (id)homeButtonUpFromBeep;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRequestSource:(int)arg1;
@@ -55,16 +66,22 @@
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setBluetoothDeviceAddress:(id)arg1;
 - (void)setBulletin:(id)arg1;
+- (void)setDirectActionEvent:(int)arg1;
+- (void)setDirectActionMessagesURL:(id)arg1;
 - (void)setExpectedTimestamp:(double)arg1;
+- (void)setHomeButtonUpFromBeep:(id)arg1;
 - (void)setInitialBringUp:(BOOL)arg1;
 - (void)setPronunciationContext:(id)arg1;
 - (void)setPronunciationRequest:(BOOL)arg1;
+- (void)setRequestSource:(int)arg1;
 - (void)setServerCommandId:(id)arg1;
 - (void)setSpeechFileURL:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (void)setUseAutomaticEndpointing:(BOOL)arg1;
 - (id)speechFileURL;
 - (id)text;
 - (double)timestamp;
+- (BOOL)useAutomaticEndpointing;
 
 @end

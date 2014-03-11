@@ -33,6 +33,7 @@
 + (BOOL)loggerEnabledWithName:(id)arg1;
 + (short)loggerMode;
 + (short)loggerModeWithName:(id)arg1;
++ (id)loggerName;
 + (BOOL)loggerRunnableWithName:(id)arg1;
 + (void)setDefault:(id)arg1 forKey:(id)arg2 forLoggerNamed:(id)arg3;
 + (void)setDefault:(id)arg1 forKey:(id)arg2;

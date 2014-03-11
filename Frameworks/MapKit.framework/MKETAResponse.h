@@ -6,18 +6,21 @@
 
 @interface MKETAResponse : NSObject {
     MKMapItem *_destination;
+    double _distance;
     double _expectedTravelTime;
     MKMapItem *_source;
 }
 
 @property(readonly) MKMapItem * destination;
+@property(getter=_distance,readonly) double distance;
 @property(readonly) double expectedTravelTime;
 @property(readonly) MKMapItem * source;
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (double)_distance;
 - (id)destination;
 - (double)expectedTravelTime;
-- (id)initWithSource:(id)arg1 destination:(id)arg2 expectedTravelTime:(double)arg3;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 expectedTravelTime:(double)arg3 distance:(double)arg4;
 - (id)source;
 
 @end

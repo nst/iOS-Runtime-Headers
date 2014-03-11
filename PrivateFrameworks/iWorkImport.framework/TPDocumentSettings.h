@@ -6,7 +6,6 @@
 
 @interface TPDocumentSettings : TSPObject {
     BOOL _annotationsVisible;
-    BOOL _authoring;
     NSString *_bibliographyFormat;
     BOOL _changeBarsVisible;
     BOOL _copyAssets;
@@ -30,7 +29,9 @@
     BOOL _ligatures;
     BOOL _linksEnabled;
     NSString *_originalTemplate;
+    BOOL _placeholderAuthoring;
     BOOL _qlPreview;
+    BOOL _sectionAuthoring;
     BOOL _showCTDeletions;
     BOOL _showCTMarkup;
     BOOL _tocLinksEnabled;
@@ -61,6 +62,7 @@
 @property(copy) NSString * originalTemplate;
 @property BOOL placeholderAuthoring;
 @property BOOL quickLookPreview;
+@property BOOL sectionAuthoring;
 @property BOOL showCTDeletions;
 @property BOOL showCTMarkup;
 @property BOOL tocLinksEnabled;
@@ -96,6 +98,7 @@
 - (BOOL)quickLookPreview;
 - (void)resetForNewDocumentFromTemplate:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
+- (BOOL)sectionAuthoring;
 - (void)setAnnotationsVisible:(BOOL)arg1;
 - (void)setAutoHyphenation:(BOOL)arg1;
 - (void)setBibliographyFormat:(id)arg1;
@@ -122,6 +125,7 @@
 - (void)setOriginalTemplate:(id)arg1;
 - (void)setPlaceholderAuthoring:(BOOL)arg1;
 - (void)setQuickLookPreview:(BOOL)arg1;
+- (void)setSectionAuthoring:(BOOL)arg1;
 - (void)setShowCTDeletions:(BOOL)arg1;
 - (void)setShowCTMarkup:(BOOL)arg1;
 - (void)setTocLinksEnabled:(BOOL)arg1;

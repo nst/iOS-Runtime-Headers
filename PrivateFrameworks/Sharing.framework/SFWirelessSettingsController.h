@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFWirelessSettingsControllerDelegate>;
+@class <SFWirelessSettingsControllerDelegate>, NSObject<OS_dispatch_semaphore>;
 
 @interface SFWirelessSettingsController : NSObject {
     BOOL _bluetoothEnabled;
     <SFWirelessSettingsControllerDelegate> *_delegate;
     BOOL _deviceSupportsWAPI;
+    NSObject<OS_dispatch_semaphore> *_firstCallBackSemaphore;
+    BOOL _firstCallbackCompleted;
     struct __SFOperation { } *_information;
     BOOL _wifiEnabled;
 }

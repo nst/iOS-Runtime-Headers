@@ -14,6 +14,7 @@
 
 @property(getter=isCalculating,readonly) BOOL calculating;
 
+- (void).cxx_destruct;
 - (void)_calculateETAWithCompletionHandler:(id)arg1;
 - (void)_cleanupLocationOperation;
 - (void)_establishCurrentLocationAndThen:(id)arg1;

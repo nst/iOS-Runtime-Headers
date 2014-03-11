@@ -33,9 +33,12 @@
 @property BOOL showsDeviceMovementDisplay;
 
 + (unsigned int)availableAttitudeReferenceFrames;
++ (BOOL)configureM7Activity:(BOOL)arg1 stepCounting:(BOOL)arg2 activityForceCodeTransition:(BOOL)arg3 stepCountingForceCodeTransition:(BOOL)arg4 threshold:(BOOL)arg5 impulse:(BOOL)arg6 onBodyDetection:(BOOL)arg7;
 + (void)dummySelector:(id)arg1;
 + (void)initialize;
 + (void)setAllowInBackground:(BOOL)arg1;
++ (BOOL)startGyroMiniCalibration;
++ (BOOL)supportsGyroMiniCalibration;
 
 - (id)accelerometerData;
 - (double)accelerometerUpdateInterval;

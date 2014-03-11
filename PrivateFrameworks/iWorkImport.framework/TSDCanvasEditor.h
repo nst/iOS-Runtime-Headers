@@ -31,6 +31,7 @@
 @property(readonly) NSSet * selectedObjectsSupportingReflection;
 @property(readonly) NSSet * selectedObjectsSupportingResize;
 @property(readonly) NSSet * selectedObjectsSupportingShadow;
+@property(readonly) NSSet * selectedObjectsSupportingShrinkTextToFit;
 @property(readonly) NSSet * selectedObjectsSupportingSmartShapeAttributes;
 @property(readonly) NSSet * selectedObjectsSupportingStroke;
 @property(readonly) NSSet * selectedObjectsSupportingTextInset;
@@ -88,7 +89,6 @@
 - (id)commandForDeletingDrawables:(id)arg1;
 - (id)commandForInsertingDrawable:(id)arg1 withInsertionContext:(id)arg2;
 - (id)commandForInsertingDrawables:(id)arg1 below:(id)arg2;
-- (id)commandForReplacingImagePlaceholderInSelection:(id)arg1 withDrawables:(id)arg2 withSender:(id)arg3;
 - (void)connectWithConnectionLine:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)copyObject:(id)arg1;
@@ -166,6 +166,8 @@
 - (void)repWasCreated:(id)arg1;
 - (void)replaceRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withText:(id)arg2;
 - (int)returnKeyType;
+- (void)scrollToBeginningOfDocument:(id)arg1;
+- (void)scrollToEndOfDocument:(id)arg1;
 - (void)select:(id)arg1;
 - (void)selectAll:(id)arg1;
 - (id)selection;

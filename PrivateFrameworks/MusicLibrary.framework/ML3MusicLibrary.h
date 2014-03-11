@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3AccountCacheDatabase, ML3ArtworkUtility, ML3Container, ML3DatabaseConnection, ML3DatabaseConnectionPool, ML3DatabaseMetadata, ML3UbiquitousDatabase, NSArray, NSCountedSet, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, _LibraryNotification;
+@class ML3AccountCacheDatabase, ML3ArtworkUtility, ML3Container, ML3DatabaseConnectionPool, ML3DatabaseMetadata, NSArray, NSCountedSet, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SBCPlaybackPositionServiceProxy, _LibraryNotification;
 
 @interface ML3MusicLibrary : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate> {
     ML3AccountCacheDatabase *_accountCacheDatabase;
     ML3ArtworkUtility *_artworkUtility;
     NSObject<OS_dispatch_queue> *_atomicityQueue;
     ML3DatabaseConnectionPool *_connectionPool;
-    BOOL _currentThreadHasWriterConnectionCheckedOut;
     NSString *_databasePath;
     _LibraryNotification *_displayValuesNotify;
-    ML3DatabaseConnection *_geniusDatabase;
     BOOL _hasEverConnectedTo;
     _LibraryNotification *_invisiblePropertyNotify;
     BOOL _isHomeSharingLibrary;
@@ -27,13 +25,15 @@
     id _mcSettingsObserver;
     _LibraryNotification *_nonContentsNotify;
     NSCountedSet *_notifyNamesToIgnore;
+    NSMutableDictionary *_optimizedLibraryContainerFilterPredicatesByContainerClass;
+    NSMutableDictionary *_optimizedLibraryEntityFilterPredicatesByEntityClass;
     NSMutableDictionary *_pendingLocalNotificationsToPost;
     NSMutableArray *_pendingNotifyPostNames;
     BOOL _reloadForMediaServiceNeeded;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
     _LibraryNotification *_syncGenerationNotify;
     int _systemLanguageChangedToken;
-    ML3UbiquitousDatabase *_ubiquitousDatabase;
+    SBCPlaybackPositionServiceProxy *_uppService;
     int _willDeleteDatabaseNotifyToken;
 }
 
@@ -43,7 +43,6 @@
 @property(readonly) long long currentContentRevision;
 @property(readonly) ML3Container * currentDevicePurchasesPlaylist;
 @property(readonly) long long currentRevision;
-@property(readonly) BOOL currentThreadHasWriterConnectionCheckedOut;
 @property(readonly) ML3DatabaseMetadata * databaseInfo;
 @property(retain) NSString * databasePath;
 @property(readonly) BOOL hasEverConnectedToDatabase;
@@ -57,6 +56,7 @@
 @property(readonly) long long persistentID;
 @property(readonly) NSArray * preferredAudioTracks;
 @property(readonly) NSArray * preferredSubtitleTracks;
+@property(readonly) BOOL supportsUbiquitousPlaybackPositions;
 @property long long syncGenerationID;
 
 + (id)_purgeableTrackPredicateWithUrgency:(unsigned int)arg1;
@@ -64,8 +64,8 @@
 + (id)allSchemaSQL;
 + (id)allTables;
 + (id)allTriggersSQL;
-+ (void)buildDatabaseFromHomeSharingConnection:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3 progressHandler:(id)arg4;
-+ (void)buildDatabaseFromHomeSharingConnection:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3;
++ (void)buildDatabaseFromHomeSharingLibrary:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3 progressHandler:(id)arg4;
++ (void)buildDatabaseFromHomeSharingLibrary:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3;
 + (BOOL)buildDatabaseTablesUsingConnection:(id)arg1 popuplateDatabaseTablesOnConnectionBlock:(id)arg2;
 + (id)controlDirectoryPathWithBasePath:(id)arg1;
 + (BOOL)createIndexesUsingConnection:(id)arg1;
@@ -79,9 +79,8 @@
 + (void)disableSharedLibrary;
 + (BOOL)dropIndexesUsingConnection:(id)arg1 tableNames:(const char *)arg2;
 + (BOOL)dropIndexesUsingConnection:(id)arg1;
++ (void)enableAutomaticDatabaseValidation;
 + (void)enumerateSortMapTablesUsingBlock:(id)arg1;
-+ (id)fallbackGeniusDatabaseFilePath;
-+ (id)geniusDatabaseFilePath;
 + (BOOL)hasArtworkConversionManifestTasksRemainingUsingConnection:(id)arg1;
 + (BOOL)importationEnabled;
 + (BOOL)inTransactionUpdateSearchMapOnConnection:(id)arg1;
@@ -90,14 +89,13 @@
 + (void)initialize;
 + (id)itemIndexSchemaSQL;
 + (id)itemSchemaSQL;
-+ (id)localizedSectionDictionary;
 + (id)localizedSectionHeaderForSectionHeader:(id)arg1;
 + (id)localizedSectionIndexTitleForSectionHeader:(id)arg1;
-+ (id)localizedSortingDetailsDictionary;
 + (id)mediaFolderPath;
 + (id)mediaFolderRelativePath:(id)arg1;
 + (BOOL)migrateToCurrentUserVersionUsingConnection:(id)arg1 musicLibrary:(id)arg2;
 + (BOOL)orderingLanguageMatchesSystemUsingConnection:(id)arg1;
++ (id)pathForBaseLocationPath:(long long)arg1;
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 createParentFolderIfNecessary:(BOOL)arg4;
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(BOOL*)arg4;
 + (id)pathForResourceFileOrFolder:(int)arg1;
@@ -111,7 +109,6 @@
 + (id)sortMapNewSchemaSQL;
 + (id)sortMapSchemaSQL;
 + (id)storeLinkSchemaSQL;
-+ (id)systemCurrentLanguage;
 + (id)unitTestableLibraryForTest:(id)arg1 basePath:(id)arg2 setupSQLFilenames:(id)arg3;
 + (BOOL)updateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(BOOL)arg2;
 + (BOOL)updateSortMapOnConnection:(id)arg1;
@@ -135,6 +132,7 @@
 - (void)_postInvisiblePropertyChangeNotificationAndScheduleFlushLocalOnly:(BOOL)arg1;
 - (void)_postNonContentsChangeNotificationAndScheduleFlushLocalOnly:(BOOL)arg1;
 - (void)_teardownMediaLibraryDatabaseConnection:(id)arg1;
+- (void)_updateDatabaseConnectionsProfilingLevel;
 - (void)accessSortKeyBuilder:(id)arg1;
 - (id)accountCacheDatabase;
 - (long long)addStringToSortMap:(id)arg1;
@@ -151,7 +149,7 @@
 - (void)beginAutoConvertingArtworkFormats;
 - (void)beginConvertingArtworkFormatsWithCompletionHandler:(id)arg1;
 - (BOOL)buildDatabaseTables;
-- (void)checkForChangesOnConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)checkForChangesInHomeSharingLibrary:(id)arg1 completionHandler:(id)arg2;
 - (void)checkInDatabaseConnection:(id)arg1;
 - (id)checkoutReaderConnection;
 - (id)checkoutWriterConnection;
@@ -167,7 +165,6 @@
 - (long long)currentContentRevision;
 - (id)currentDevicePurchasesPlaylist;
 - (long long)currentRevision;
-- (BOOL)currentThreadHasWriterConnectionCheckedOut;
 - (void)databaseConnectionAllowingWrites:(BOOL)arg1 withBlock:(id)arg2;
 - (id)databaseInfo;
 - (id)databasePath;
@@ -185,13 +182,13 @@
 - (void)deletePresignedValidity;
 - (BOOL)dropItemIndexes;
 - (BOOL)emptyAllTables;
-- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned int)arg2 usingBlock:(id)arg3;
+- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned int)arg2 maximumRevisionType:(int)arg3 usingBlock:(id)arg4;
 - (void)enumeratePersistentIDsAfterRevision:(long long)arg1 usingBlock:(id)arg2;
 - (BOOL)executeUpdateSQL:(id)arg1;
-- (void)fillContainerForHomeSharingConnection:(id)arg1 containerID:(long long)arg2 completionHandler:(id)arg3;
-- (id)geniusDatabase;
+- (void)fillContainerForHomeSharingLibrary:(id)arg1 containerID:(long long)arg2 completionHandler:(id)arg3;
 - (id)genreForGenre:(id)arg1;
 - (void)getChangedPersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(int)arg2 usingBlock:(id)arg3;
+- (long long)getDatabaseFileFreeSpace;
 - (id)groupingKeyForString:(id)arg1;
 - (id)groupingKeysForStrings:(id)arg1;
 - (BOOL)handleDatabaseValidation;
@@ -213,6 +210,8 @@
 - (BOOL)keepPresignedValidyAfterVerification;
 - (id)libraryContainerFilterPredicates;
 - (id)libraryEntityFilterPredicates;
+- (id)libraryEntityFilterPredicatesForContainerClass:(Class)arg1;
+- (id)libraryEntityFilterPredicatesForEntityClass:(Class)arg1;
 - (id)libraryUID;
 - (void)loadArtworkForCacheID:(id)arg1 formatID:(unsigned int)arg2 completionHandler:(id)arg3;
 - (id)localizedSectionHeaderForSectionIndex:(unsigned int)arg1;
@@ -234,6 +233,7 @@
 - (id)preferredAudioTracks;
 - (id)preferredSubtitleTracks;
 - (BOOL)prepareUnitTestDatabaseWithSQLFromContentsOfFile:(id)arg1 error:(id*)arg2;
+- (void)purgeCloudAssets;
 - (void)reconnectToDatabase;
 - (void)removeJaliscoTrackData;
 - (BOOL)removeLocationsForItemsMissingAssets;
@@ -260,13 +260,16 @@
 - (void)setLibraryUID:(id)arg1;
 - (void)setSyncGenerationID:(long long)arg1;
 - (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
+- (BOOL)supportsUbiquitousPlaybackPositions;
 - (long long)syncGenerationID;
-- (id)ubiquitousDatabase;
 - (void)updateArtworkFormatsWithArtworkCreationDirective:(struct { BOOL x1; unsigned int x2; })arg1 forCacheID:(id)arg2;
+- (void)updateMusicLibraryByApplyingUbiquitousBookmarkMetadataToTrackWithPersistentID:(long long)arg1;
 - (void)updateOrderingLanguagesForCurrentLanguage;
 - (BOOL)updateSortMap;
 - (BOOL)updateSystemPlaylistNamesForCurrentLanguage;
 - (void)updateTrackIntegrity;
+- (void)updateUbiquitousDatabaseByRemovingUbiquitousMetadataFromTrackWithPersistentID:(long long)arg1;
+- (id)uppService;
 - (BOOL)validateDatabaseWithTimeout:(double)arg1;
 - (id)valueForDatabaseProperty:(id)arg1;
 - (BOOL)verifyPresignedValidity;

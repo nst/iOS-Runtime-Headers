@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchFieldDelegate>, ASSearchDisplayController, NSOperationQueue, NSString, SKUIClientContext, SKUICompletionList, SSVLoadURLOperation, UISearchBar, UIViewController;
+@class <SKUISearchFieldDelegate>, NSOperationQueue, NSString, SKUIClientContext, SKUICompletionList, SKUISearchDisplayController, SSVLoadURLOperation, UISearchBar, UIViewController;
 
 @interface SKUISearchFieldController : NSObject <UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
     NSString *_baseHintsURLString;
@@ -12,7 +12,7 @@
     SSVLoadURLOperation *_loadOperation;
     int _numberOfSearchResults;
     NSOperationQueue *_operationQueue;
-    ASSearchDisplayController *_searchDisplayController;
+    SKUISearchDisplayController *_searchDisplayController;
 }
 
 @property(retain) SKUIClientContext * clientContext;
@@ -22,11 +22,8 @@
 @property(readonly) UISearchBar * searchBar;
 
 - (void).cxx_destruct;
-- (id)URLForSearchTerm:(id)arg1;
-- (id)_escapedTermWithTerm:(id)arg1;
-- (void)_loadResultsForSearchTerm:(id)arg1;
-- (void)_loadResultsForURL:(id)arg1;
-- (void)_recordMetricsEvent:(id)arg1;
+- (void)_loadResultsForSearchTerm:(id)arg1 withMetricsEvent:(id)arg2;
+- (void)_loadResultsForURL:(id)arg1 withMetricsEvent:(id)arg2;
 - (void)_reloadData;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (id)clientContext;
@@ -38,8 +35,10 @@
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarSearchButtonClicked:(id)arg1;
-- (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (BOOL)searchBarShouldBeginTouches:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNumberOfSearchResults:(int)arg1;

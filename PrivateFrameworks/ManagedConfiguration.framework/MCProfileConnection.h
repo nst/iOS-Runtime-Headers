@@ -52,6 +52,10 @@
 - (void)_userInputTimerFired;
 - (id)acceptedFileExtensions;
 - (id)acceptedMIMETypes;
+- (id)activationLockBypassHash;
+- (id)activationLockBypassKey;
+- (id)activationLockBypassKeyCreateNewIfNeeded:(BOOL)arg1;
+- (BOOL)activationRecordIndicatesCloudConfigurationIsAvailable;
 - (void)addObserver:(id)arg1;
 - (void)addUserBookmark:(id)arg1;
 - (void)addWebContentFilterAutoPermittedURLString:(id)arg1;
@@ -85,6 +89,7 @@
 - (id)defaultValueForSetting:(id)arg1;
 - (id)defaultValuesForIntersectionSetting:(id)arg1;
 - (id)defaultValuesForUnionSetting:(id)arg1;
+- (void)deleteActivationLockBypassKey;
 - (id)doNotBackupAppIDs;
 - (id)doNotDocumentSyncAppIDs;
 - (int)effectiveBoolValueForSetting:(id)arg1;
@@ -101,6 +106,7 @@
 - (id)effectiveWhitelistedAppBundleIDs;
 - (id)effectiveWhitelistedAppsAndOptions;
 - (id)filteredMailSheetAccountsForBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
+- (void)flush;
 - (void)getPasscodeComplianceWarningLastLockDate:(id)arg1 completionBlock:(id)arg2;
 - (int)getPasscodeComplianceWarningLastLockDate:(id)arg1 outLocalizedTitle:(id*)arg2 outLocalizedMessage:(id*)arg3;
 - (unsigned int)gracePeriod;
@@ -119,6 +125,8 @@
 - (BOOL)isActivationLockAllowed;
 - (BOOL)isAdTrackingLimited;
 - (BOOL)isAirDropAllowed;
+- (BOOL)isAirPlayIncomingRequestsPairingPasswordRequired;
+- (BOOL)isAirPlayOutgoingRequestsPairingPasswordRequired;
 - (BOOL)isAppInstallationAllowed;
 - (BOOL)isAppManaged:(id)arg1;
 - (BOOL)isAppRatingLimitInEffect;
@@ -127,7 +135,6 @@
 - (BOOL)isAutomaticAppUpdatesModificationAllowed;
 - (BOOL)isBoolSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isChaperoned;
-- (BOOL)isCloudConfigurationAvailable;
 - (BOOL)isCloudKeychainSyncAllowed;
 - (BOOL)isContentProtectionInEffect;
 - (BOOL)isControlCenterAllowedInApps;
@@ -167,10 +174,14 @@
 - (BOOL)mayEnterPasscodeToAccessNonWhitelistedApps;
 - (BOOL)mayOpenFromManagedToUnmanaged;
 - (BOOL)mayOpenFromUnmanagedToManaged;
+- (BOOL)mayShareToMessagesOriginatingAccountIsManaged:(BOOL)arg1;
 - (id)messageCenter;
 - (void)migratePostDataMigrator;
+- (void)migrateWithContext:(int)arg1 passcodeWasSetInBackup:(BOOL)arg2;
 - (int)newPasscodeEntryScreenType;
 - (void)notifyClientsToRecomputeCompliance;
+- (void)notifyDeviceUnlocked;
+- (void)notifyKeybagUpdated;
 - (void)notifyUserHasSeenComplianceMessageWithLastLockDate:(id)arg1;
 - (id)objectForFeature:(id)arg1;
 - (id)objectRestrictionForFeature:(id)arg1;
@@ -210,6 +221,7 @@
 - (void)removeProfilesFromInstallationQueue;
 - (BOOL)removeProvisioningProfileWithUUID:(id)arg1 outError:(id*)arg2;
 - (void)removeValueSetting:(id)arg1;
+- (void)removeWebContentFilterUserBlacklistedURLString:(id)arg1;
 - (void)rereadManagedAppAttributes;
 - (void)resetAllSettingsToDefaults;
 - (void)respondToCurrentPasscodeRequestContinue:(BOOL)arg1 passcode:(id)arg2;
@@ -240,11 +252,15 @@
 - (void)setWebContentFilterAutoPermittedURLStrings:(id)arg1;
 - (void)setWebContentFilterUserBlacklistedURLStrings:(id)arg1;
 - (void)setupAssistantDidFinish;
+- (BOOL)shouldDestroyOldKeybag;
 - (BOOL)shouldInstallStoredProfileForPurpose:(int)arg1;
 - (BOOL)shouldShowCloudConfigurationUI;
+- (BOOL)shouldSkipSetupPanes;
 - (BOOL)showProfileErrorUIWithProfileIdentifier:(id)arg1 outError:(id*)arg2;
 - (void)shutDown;
 - (void)stashUserBookmarksWithLabel:(id)arg1 newUserBookmarks:(id)arg2;
+- (void)stashWebContentFilterAutoPermittedURLStrings;
+- (void)stashWebContentFilterUserBlacklistedURLStrings;
 - (void)storeCertificateData:(id)arg1 forHostIdentifier:(id)arg2;
 - (void)storeCloudConfigurationDetails:(id)arg1;
 - (void)storeProfileData:(id)arg1 configurationSource:(int)arg2 purpose:(int)arg3;
@@ -255,6 +271,8 @@
 - (BOOL)unlockDeviceWithPasscode:(id)arg1 outError:(id*)arg2;
 - (int)unlockScreenType;
 - (void)unstashUserBookmarksFromLabel:(id)arg1;
+- (void)unstashWebContentFilterAutoPermittedURLStrings;
+- (void)unstashWebContentFilterUserBlacklistedURLStrings;
 - (void)updateProfileWithIdentifier:(id)arg1 interactionDelegate:(id)arg2;
 - (id)updateProfileWithIdentifier:(id)arg1 outError:(id*)arg2;
 - (id)userBookmarks;

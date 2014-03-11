@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface VKPGenericShield : PBCodable {
+@interface VKPGenericShield : PBCodable <NSCopying> {
     int _style;
     NSMutableArray *_variants;
 }
@@ -15,6 +15,7 @@
 - (void)addVariant:(id)arg1;
 - (void)clearVariants;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

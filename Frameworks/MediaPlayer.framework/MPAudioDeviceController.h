@@ -20,8 +20,15 @@
 @property id delegate;
 @property BOOL routeDiscoveryEnabled;
 
++ (void)_internalPushRouteDiscoveryMode:(int)arg1;
++ (void)_internalSetSystemRouteDiscoveryMode:(int)arg1;
++ (id)_routeDiscoveryModeStack;
++ (void)pushRouteDiscoveryMode:(int)arg1;
++ (void)restoreRouteDiscoveryMode;
 + (BOOL)routeDiscoveryEnabled;
++ (int)routeDiscoveryMode;
 + (void)setRouteDiscoveryEnabled:(BOOL)arg1;
++ (void)setRouteDiscoveryMode:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChange:(id)arg1;

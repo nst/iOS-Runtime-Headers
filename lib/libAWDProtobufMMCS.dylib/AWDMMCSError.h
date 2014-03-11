@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface AWDMMCSError : PBCodable {
+@interface AWDMMCSError : PBCodable <NSCopying> {
     struct { 
         unsigned int code : 1; 
     int _code;
@@ -23,6 +23,7 @@
 - (void)clearUnderlyingErrors;
 - (int)code;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

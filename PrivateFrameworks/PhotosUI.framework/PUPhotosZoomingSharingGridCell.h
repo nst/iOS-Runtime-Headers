@@ -24,9 +24,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 exampleCell:(id)arg2 badgeView:(id)arg3 layoutAnchor:(unsigned int)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 badgeView:(id)arg2 layoutAnchor:(unsigned int)arg3;
 - (void)layoutSubviews;
-- (void)setZoomScale:(float)arg1 translation:(struct CGPoint { float x1; float x2; })arg2 rotation:(float)arg3 animated:(BOOL)arg4 completion:(id)arg5;
-- (void)setZoomingImage:(id)arg1;
 
 @end

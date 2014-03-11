@@ -11,7 +11,6 @@
 @interface GEOUsageManager : NSObject <PBRequesterDelegate> {
     id _backgroundTaskEnd;
     id _backgroundTaskStart;
-    BOOL _isAppActive;
     GEOUsageCollectionRequest *_request;
     NSLock *_requestLock;
     GEORequester *_requester;
@@ -25,7 +24,6 @@
 + (void)setUsePersistentConnection:(BOOL)arg1;
 + (id)sharedManager;
 
-- (void)_applicationActivating;
 - (void)_applicationDeactivating;
 - (void)_cleanupRequester;
 - (void)_cleanupTimer;
@@ -40,6 +38,7 @@
 - (id)backgroundTaskStart;
 - (void)captureDirectionsFeedbackCollection:(id)arg1;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
+- (void)captureSuggestionsFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;

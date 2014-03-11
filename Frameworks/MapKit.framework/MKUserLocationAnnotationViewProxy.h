@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKAnnotationView, VKAttributedRouteMatch;
+@class MKAnnotationView, NSHashTable, VKAttributedRouteMatch;
 
 @interface MKUserLocationAnnotationViewProxy : NSObject <VKPuckAnimatorTarget, VKTrackableAnnotationPresentation, VKRouteMatchedAnnotationPresentation> {
     MKAnnotationView *_annotationView;
+    NSHashTable *_presentationCoordinateObservers;
 }
 
 @property MKAnnotationView * annotationView;
@@ -14,10 +15,13 @@
 @property(retain) VKAttributedRouteMatch * routeMatch;
 @property(getter=isTracking) BOOL tracking;
 
+- (void).cxx_destruct;
+- (void)addPresentationCoordinateChangedObserver:(id)arg1;
 - (id)annotationView;
 - (BOOL)isTracking;
 - (struct { double x1; double x2; })presentationCoordinate;
 - (double)presentationCourse;
+- (void)removePresentationCoordinateChangedObserver:(id)arg1;
 - (id)routeMatch;
 - (void)setAnimatingToCoordinate:(BOOL)arg1;
 - (void)setAnnotationView:(id)arg1;

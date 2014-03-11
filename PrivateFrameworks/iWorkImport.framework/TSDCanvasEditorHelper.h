@@ -92,8 +92,8 @@
 - (void)p_copyUserDefinedGuides:(id)arg1;
 - (void)p_delete:(id)arg1;
 - (Class)p_editorClassForSelection:(id)arg1 shouldIgnoreLockedState:(BOOL)arg2;
-- (id)p_newCommandToMoveCenterOfLayout:(id)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (id)p_newCommandToMoveLayout:(id)arg1 edge:(int)arg2 toOffset:(float)arg3;
+- (struct CGPoint { float x1; float x2; })p_offsetToMoveCenterOfLayout:(id)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })p_offsetToMoveLayout:(id)arg1 edge:(int)arg2 toOffset:(float)arg3;
 - (void)p_setLockStatusOfSelectedDrawables:(BOOL)arg1;
 - (void)paste:(id)arg1;
 - (void)pasteAsPlainText:(id)arg1;

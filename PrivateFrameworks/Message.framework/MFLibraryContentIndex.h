@@ -6,6 +6,7 @@
 
 @interface MFLibraryContentIndex : NSObject {
     unsigned int _refreshing : 1;
+    unsigned int _shouldReopen : 1;
     unsigned int _processPendingChangesScheduled : 1;
     _MFContentIndexWrapper *_contentIndexWrapper;
     <MFLibraryContentIndexDataSource> *_dataSource;
@@ -44,6 +45,7 @@
 - (void)_transitionToNextStatePaused:(BOOL)arg1;
 - (void)dealloc;
 - (id)documentIdentifiersMatchingCriterion:(id)arg1 mailboxIDs:(id)arg2;
+- (void)forceReopen;
 - (void)indexItems:(id)arg1;
 - (id)initWithPath:(id)arg1 indexName:(id)arg2 dataSource:(id)arg3;
 - (void)invalidateAndWait;

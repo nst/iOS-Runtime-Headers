@@ -21,7 +21,6 @@
     UIView *_mediaSectionHeaderView;
     MPMusicPlayerController *_musicPlayer;
     BOOL _noneAtTop;
-    NSString *_noneIdentifier;
     NSString *_noneString;
     NSMutableArray *_regularToneSectionHeaderViews;
     NSMutableArray *_ringtoneGroupLists;
@@ -86,7 +85,7 @@
 - (void)_getTitle:(id*)arg1 customHeaderView:(id*)arg2 forHeaderInSection:(int)arg3;
 - (void)_goToStore;
 - (void)_handleItemPlaybackDidEndWithAVController:(id)arg1;
-- (id)_loadTonesFromPlistDictionary:(id)arg1;
+- (id)_loadTonesFromPlistNamed:(id)arg1;
 - (id)_mediaItemForIdentifier:(id)arg1;
 - (id)_mediaSectionHeaderView;
 - (void)_refreshMediaItems;

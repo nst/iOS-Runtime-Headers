@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoControllerProtocol>, MPAVController, MPAVItem, MPMovieAccessLog, MPMovieErrorLog, MPSystemNowPlayingController, MPTransitionController, MPVideoView, NSArray, NSDate, NSString, UIImage, UIMovieView, UINavigationController, UIView, UIViewController, _UIHostedWindow;
+@class <MPVideoControllerProtocol>, MPAVController, MPAVItem, MPMovieAccessLog, MPMovieErrorLog, MPNowPlayingObserver, MPTransitionController, MPVideoView, NSArray, NSDate, NSString, UIImage, UIMovieView, UINavigationController, UIView, UIViewController, _UIHostedWindow;
 
 @interface UIMoviePlayerController : NSObject {
     struct CGRect { 
@@ -56,7 +56,7 @@
     } _layoutRect;
     NSString *_moviePath;
     } _mpcBitfield;
-    MPSystemNowPlayingController *_nowPlayingController;
+    MPNowPlayingObserver *_nowPlayingController;
     int _pendingInterfaceOrientation;
     MPAVItem *_pendingItem;
     MPAVItem *_pendingItemWithDifferentType;

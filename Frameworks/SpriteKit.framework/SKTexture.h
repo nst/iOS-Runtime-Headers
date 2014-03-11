@@ -42,7 +42,6 @@
     BOOL _didGenerateMipmaps;
     BOOL _disableAlpha;
     CIFilter *_filter;
-    int _filteringMode;
     NSString *_imgName;
     BOOL _isCompressed;
     BOOL _isData;
@@ -58,7 +57,6 @@
     } _textRect;
     SKTextureCache *_textureCache;
     unsigned int _textureTarget;
-    int _wrapMode;
 }
 
 @property(readonly) unsigned int* alphaMap;

@@ -26,6 +26,7 @@
 @property(readonly) unsigned int displayId;
 @property float idealRefreshRate;
 @property BOOL invertsColors;
+@property float maximumBrightness;
 @property float maximumRefreshRate;
 @property float minimumRefreshRate;
 @property(getter=isMirroringEnabled) BOOL mirroringEnabled;
@@ -63,6 +64,7 @@
 - (BOOL)invertsColors;
 - (BOOL)isBlanked;
 - (BOOL)isMirroringEnabled;
+- (float)maximumBrightness;
 - (float)maximumRefreshRate;
 - (float)minimumRefreshRate;
 - (id)name;
@@ -78,6 +80,7 @@
 - (void)setContrast:(float)arg1;
 - (void)setIdealRefreshRate:(float)arg1;
 - (void)setInvertsColors:(BOOL)arg1;
+- (void)setMaximumBrightness:(float)arg1;
 - (void)setMaximumRefreshRate:(float)arg1;
 - (void)setMinimumRefreshRate:(float)arg1;
 - (void)setMirroringEnabled:(BOOL)arg1;

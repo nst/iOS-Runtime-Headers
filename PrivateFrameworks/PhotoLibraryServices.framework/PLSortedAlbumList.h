@@ -59,6 +59,8 @@
 - (BOOL)needsReordering;
 - (id)objectInSortedAlbumsAtIndex:(unsigned int)arg1;
 - (id)photoLibrary;
+- (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
+- (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)removeObjectFromSortedAlbumsAtIndex:(unsigned int)arg1;
 - (void)replaceObjectInSortedAlbumsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)setBackingAlbumList:(struct NSObject { Class x1; }*)arg1;

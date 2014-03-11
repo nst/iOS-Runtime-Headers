@@ -23,6 +23,7 @@
 - (void)_layoutCells;
 - (id)_targetNavigationController;
 - (void)_updateEditButton;
+- (BOOL)_viewControllerWasSelected;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (BOOL)allowsCustomizing;
 - (void)dealloc;

@@ -9,6 +9,8 @@
     BOOL _usingVerticalArrows;
 }
 
++ (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+
 - (void)_changePage:(id)arg1;
 - (void)_setRenderConfig:(id)arg1;
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufWifi.dylib
  */
 
-@interface AWDWiFiMetricRssiHistory : PBCodable {
+@interface AWDWiFiMetricRssiHistory : PBCodable <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -22,6 +22,7 @@
 - (void)addRssiHistory:(int)arg1;
 - (void)clearRssiHistorys;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -5,6 +5,7 @@
 @class <CKMessage>, NSAttributedString, NSDate, NSString;
 
 @interface CKTimestamp : NSObject <CKTranscriptDataRowObject> {
+    NSAttributedString *_attributedTranscriptText;
     NSDate *_date;
     <CKMessage> *_message;
 }
@@ -31,6 +32,7 @@
 - (BOOL)__ck_transcriptUsesTextAlignmentInsets;
 - (BOOL)__ck_wantsDrawerLayout;
 - (id)attributedTranscriptText;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;
@@ -41,6 +43,6 @@
 - (id)now;
 - (void)setDate:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (id)timestampCache;
+- (void)significantTimeChange:(id)arg1;
 
 @end

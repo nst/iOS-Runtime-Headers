@@ -34,6 +34,7 @@
         } size; 
     int _cellState;
     SFCircleProgressView *_circleProgressView;
+    BOOL _darkStyleOnLegacyApp;
     UILabel *_declinedLabel;
     NSObject<SFPersonCollectionViewCellDelegate> *_delegate;
     UILabel *_failedLabel;
@@ -58,6 +59,7 @@
 }
 
 @property int cellState;
+@property BOOL darkStyleOnLegacyApp;
 @property NSObject<SFPersonCollectionViewCellDelegate> * delegate;
 @property(retain) SFAirDropNode * person;
 @property(retain) NSProgress * progress;
@@ -70,6 +72,7 @@
 - (void)animateCellShow:(BOOL)arg1 delay:(double)arg2 completion:(id)arg3;
 - (int)cellState;
 - (id)createLabelWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)darkStyleOnLegacyApp;
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
@@ -87,6 +90,7 @@
 - (id)sessionID;
 - (void)setCellState:(int)arg1 animated:(BOOL)arg2;
 - (void)setCellState:(int)arg1;
+- (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setPerson:(id)arg1;

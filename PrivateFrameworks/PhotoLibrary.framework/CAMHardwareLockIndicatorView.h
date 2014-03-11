@@ -4,7 +4,7 @@
 
 @class NSDictionary;
 
-@interface CAMHardwareLockIndicatorView : UIView {
+@interface CAMHardwareLockIndicatorView : CAMBadgeTextView {
     NSDictionary *__indicatorTextAttributes;
     BOOL _exposureLocked;
     BOOL _focusLocked;
@@ -16,17 +16,19 @@
 
 - (void)_commonCAMHardwareLockIndicatorViewInitialization;
 - (id)_indicatorTextAttributes;
-- (struct CGSize { float x1; float x2; })_roundedSizeOfText:(id)arg1 withAttributes:(id)arg2;
+- (id)_text;
+- (id)_textAttributes;
 - (id)_textForCurrentHardwareState;
+- (float)_textHorizontalInset;
+- (float)_textHorizontalKerningOffset;
+- (float)_textVerticalInset;
 - (void)_updateFromHardwareChange;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isExposureLocked;
 - (BOOL)isFocusLocked;
 - (void)setExposureLocked:(BOOL)arg1;
 - (void)setFocusLocked:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

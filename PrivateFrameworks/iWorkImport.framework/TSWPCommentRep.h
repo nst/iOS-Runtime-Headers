@@ -2,37 +2,53 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDButtonKnob, TSWPTextPresetImager;
+@class CALayer, TSDFloatingCommentControlKnob, TSDFloatingCommentDeleteKnob;
 
 @interface TSWPCommentRep : TSWPShapeRep {
-    TSDButtonKnob *_deleteKnob;
+    CALayer *_authorLayer;
+    CALayer *_dateLayer;
+    TSDFloatingCommentDeleteKnob *_deleteKnob;
     BOOL _didNavigate;
-    TSWPTextPresetImager *_imager;
-    TSDButtonKnob *_nextKnob;
-    TSDButtonKnob *_previousKnob;
+    CALayer *_headerLayer;
+    BOOL _needsAuthorOrDateUpdate;
+    TSDFloatingCommentControlKnob *_nextKnob;
+    TSDFloatingCommentControlKnob *_previousKnob;
     BOOL _shouldShowNavigationKnobs;
 }
 
+- (void)addKnobsToArray:(id)arg1;
+- (id)additionalLayersOverLayer;
 - (BOOL)canBeUsedForImageMask;
 - (BOOL)canMakePathEditable;
 - (void)dealloc;
+- (void)didEndZooming;
+- (void)didUpdateLayer:(id)arg1;
 - (BOOL)directlyManagesVisibilityOfKnob:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)dynamicOperationDidBegin;
 - (unsigned long long)enabledKnobMask;
 - (BOOL)exclusivelyProvidesGuidesWhileAligning;
+- (BOOL)forcesPlacementOnTop;
+- (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (void)invalidateAnnotationColor;
 - (void)invalidateComments;
 - (id)newSelectionKnobForType:(int)arg1 tag:(unsigned int)arg2;
 - (id)newTrackerForKnob:(id)arg1;
 - (void)p_deleteComment;
+- (id)p_imageForString:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2 baselineOffsetFromBottom:(float)arg3 backgroundColor:(struct CGColor { }*)arg4 foregroundColor:(struct CGColor { }*)arg5 useSystemFontWeight:(BOOL)arg6;
 - (void)p_nextAnnotation;
 - (void)p_previousAnnotation;
 - (BOOL)p_shouldDraw;
 - (BOOL)providesGuidesWhileAligning;
 - (void)recursivelyDrawChildrenInContext:(struct CGContext { }*)arg1;
+- (void)screenScaleDidChange;
+- (float)selectionHighlightWidth;
+- (BOOL)shouldHideSelectionHighlightDueToRectangularPath;
 - (BOOL)shouldShowKnobs;
 - (BOOL)shouldShowSmartShapeKnobs;
 - (void)updatePositionsOfKnobs:(id)arg1;
+- (void)viewScaleDidChange;
+- (void)willBeginEditingContainedRep;
+- (void)willEndEditingContainedRep;
 
 @end

@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIAccountButtonsDelegate>, SKUIAccountButtonsView, SKUIClientContext, SKUIColorScheme, UIAlertView;
+@class <SKUIAccountButtonsDelegate>, SKUIAccountButtonsView, SKUIClientContext, SKUIColorScheme, SKUILink, UIAlertView;
 
 @interface SKUIAccountButtonsViewController : UIViewController <UIAlertViewDelegate> {
     UIAlertView *_alertView;
     SKUIAccountButtonsView *_buttonsView;
     SKUIClientContext *_clientContext;
     <SKUIAccountButtonsDelegate> *_delegate;
+    SKUILink *_ecommerceLink;
 }
 
+@property(retain) SKUILink * ECommerceLink;
 @property(retain) SKUIClientContext * clientContext;
 @property(copy) SKUIColorScheme * colorScheme;
 @property <SKUIAccountButtonsDelegate> * delegate;
@@ -18,8 +20,10 @@
 @property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
 
 - (void).cxx_destruct;
+- (id)ECommerceLink;
 - (void)_accountStoreChangedNotification:(id)arg1;
 - (id)_buttonsView;
+- (void)_ecommerceLinkAction:(id)arg1;
 - (void)_giftAction:(id)arg1;
 - (void)_openIForgot;
 - (void)_redeemButtonAction:(id)arg1;
@@ -44,6 +48,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setECommerceLink:(id)arg1;
 - (void)setGiftingHidden:(BOOL)arg1;
 - (void)setTermsAndConditionsHidden:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

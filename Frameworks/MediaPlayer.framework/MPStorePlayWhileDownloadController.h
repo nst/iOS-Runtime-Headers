@@ -18,7 +18,7 @@
 - (void)_closeSessionForAsset:(id)arg1;
 - (id)_downloadSessionWithID:(id)arg1;
 - (id)_init;
-- (id)_openSessionWithProperties:(id)arg1 options:(id)arg2;
+- (id)_openSessionWithProperties:(id)arg1 assetOptions:(id)arg2;
 - (id)_openSessionWithProperties:(id)arg1 style:(int*)arg2;
 - (BOOL)_showCellularRestrictedDialogForMediaItem:(id)arg1;
 - (BOOL)_showNoNetworkDialogForMediaItem:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
 - (id)init;
 - (BOOL)isSessionRequiredToPlayMediaItem:(id)arg1;
-- (id)openSessionWithMediaItem:(id)arg1 options:(id)arg2;
+- (id)openSessionWithMediaItem:(id)arg1 attributes:(id)arg2 assetOptions:(id)arg3;
 - (BOOL)showNetworkConstraintDialogForMediaItem:(id)arg1;
 
 @end

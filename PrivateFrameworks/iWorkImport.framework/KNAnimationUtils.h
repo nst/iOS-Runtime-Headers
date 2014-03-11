@@ -15,6 +15,9 @@
 + (BOOL)isDisplayLoggingEnabled;
 + (BOOL)isFPSGraphEnabled;
 + (BOOL)isFPSLoggingEnabled;
++ (BOOL)isMotionBlurCapableWithAnimationContext:(id)arg1;
++ (BOOL)isSOATSAnimationTestingEnabled;
++ (id)p_motionBlurMaximumDisplaySizeDictionary;
 + (unsigned int)randomDirection;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })recommendedLayerBoundsForPlaybackOfShow:(id)arg1 inContainerWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 contentsScale:(float)arg3 isExternalDisplay:(BOOL)arg4;
 + (BOOL)shouldForceDisplayPreferredMode;

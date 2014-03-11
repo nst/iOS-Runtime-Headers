@@ -7,14 +7,14 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSString;
+@class NSString;
 
 @interface CABackdropLayer : CALayer {
 }
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } backdropRect;
+@property BOOL disablesOccludedBackdropBlurs;
 @property(getter=isEnabled) BOOL enabled;
-@property(copy) NSArray * groupFilters;
 @property(copy) NSString * groupName;
 @property float marginWidth;
 @property float scale;
@@ -30,15 +30,15 @@
 - (unsigned int)_renderLayerPropertyAnimationFlags:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backdropRect;
 - (void)didChangeValueForKey:(id)arg1;
-- (id)groupFilters;
+- (BOOL)disablesOccludedBackdropBlurs;
 - (id)groupName;
 - (BOOL)isEnabled;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
 - (float)marginWidth;
 - (float)scale;
 - (void)setBackdropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDisablesOccludedBackdropBlurs:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setGroupFilters:(id)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setMarginWidth:(float)arg1;
 - (void)setScale:(float)arg1;

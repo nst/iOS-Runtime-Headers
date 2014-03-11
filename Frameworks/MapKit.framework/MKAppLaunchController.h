@@ -16,6 +16,7 @@
 + (void)launchAttributionURLs:(id)arg1 withAttributionApps:(id)arg2;
 + (id)sharedController;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)lookUpAppStoreURLForBundle:(id)arg1;
 - (void)setStoreRequest:(id)arg1;

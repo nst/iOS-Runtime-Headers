@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKGradientView, UIImageView, UIView<CKGradientReferenceView>;
+@class CKBalloonImageView, CKGradientView, UIView<CKGradientReferenceView>;
 
 @interface CKColoredBalloonView : CKBalloonView {
     BOOL _color;
     CKGradientView *_gradientView;
-    UIImageView *_mask;
+    CKBalloonImageView *_mask;
     BOOL _wantsGradient;
 }
 
 @property BOOL color;
 @property(retain) UIView<CKGradientReferenceView> * gradientReferenceView;
 @property(retain) CKGradientView * gradientView;
-@property(retain) UIImageView * mask;
+@property(retain) CKBalloonImageView * mask;
 @property BOOL wantsGradient;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (id)balloonImage;
 - (BOOL)color;
 - (void)configureForMessagePart:(id)arg1;
 - (void)dealloc;

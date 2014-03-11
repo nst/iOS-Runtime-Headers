@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSDate, NSDictionary, NSIndexPath, NSMutableSet, PLCloudSharedAlbum, PLCloudSharedComment, PLDateRangeFormatter, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedAssetContainerList, PUFeedSectionInfosManager, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUImageManager, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, UIBarButtonItem, UICollectionView, UIPopoverController, UITapGestureRecognizer, UIViewController, _UIContentUnavailableView;
+@class NSDictionary, NSIndexPath, NSMutableSet, PLCloudSharedAlbum, PLCloudSharedComment, PLDateRangeFormatter, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedAssetContainerList, PUFeedPreheatManager, PUFeedSectionInfosManager, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUImageManager, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, UIBarButtonItem, UICollectionView, UIPopoverController, UITapGestureRecognizer, UIViewController, _UIContentUnavailableView;
 
-@interface PUFeedViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedSectionInfosManagerDelegate, PUPhotoBrowserZoomTransitionDelegate, PUFeedImageCellDelegate, PUFeedTextCellDelegate, PUFeedInvitationCellDelegate, UIGestureRecognizerDelegate, PUAlbumStreamActivityDelegate, PLCloudFeedNavigating, PLNavigableCloudFeedViewController> {
+@interface PUFeedViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedSectionInfosManagerDelegate, PUPhotoBrowserZoomTransitionDelegate, PUFeedImageCellDelegate, PUFeedTextCellDelegate, PUFeedInvitationCellDelegate, UIGestureRecognizerDelegate, PUAlbumStreamActivityDelegate, _UISettingsKeyObserver, PUScrollViewSpeedometerDelegate, PLCloudFeedNavigating, PLNavigableCloudFeedViewController> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -14,12 +14,15 @@
     PUFeedAssetContainerList *__browsingAssetContainerList;
     PLManagedAsset *__browsingSelectedAsset;
     PLCloudSharedComment *__browsingSelectedComment;
+    BOOL __collectionViewScrolledToNewest;
+    PUScrollViewSpeedometer *__collectionViewSpeedometer;
     PLDateRangeFormatter *__dateRangeFormatter;
     _UIContentUnavailableView *__emptyPlaceholderView;
     PUFeedSectionInfosManager *__feedSectionInfosManager;
     BOOL __flowDirectionReversed;
     PUImageManager *__imageManager;
     NSIndexPath *__indexPathForImageHiddenDuringZoomTransition;
+    BOOL __interfaceBatchUpdateScheduled;
     UIBarButtonItem *__invitationsBarButtonItem;
     UIPopoverController *__invitationsPopoverController;
     BOOL __invitationsPopoverShowPending;
@@ -28,13 +31,11 @@
     } __lastPreheatedContentOffset;
     BOOL __libraryUpdatingPreviouslyExpired;
     int __loadedSectionInfosWindowSize;
-    NSDate *__mostRecentContentDate;
-    NSDate *__mostRecentContentDateViewed;
-    int __mostRecentContentViewed;
     PUPhotoPinchGestureRecognizer *__pinchGestureRecognizer;
     UICollectionView *__pinchedCollectionView;
     UICollectionView *__portraitCollectionView;
-    NSDictionary *__preheatedAssetsByFormat;
+    PUFeedPreheatManager *__preheatManager;
+    float __preheatingWindowSize;
     PUPhotosPickerViewController *__presentedPhotosPickerViewController;
     PLCloudSharedAlbum *__pushedAlbum;
     UIViewController *__pushedViewController;
@@ -44,12 +45,12 @@
     int __rotationTargetInterfaceOrientation;
     NSMutableSet *__sectionInfosWithCommentChanges;
     PLManagedAlbumList *__sharedAlbumList;
+    BOOL __shouldSuspendQualityImageFormats;
     UITapGestureRecognizer *__tapGestureRecognizer;
     NSMutableSet *__updatedAssets;
     BOOL __userDidDismissPlaceholder;
     BOOL __viewDidAppear;
     BOOL __viewsInSyncWithModel;
-    BOOL __visibleInterfaceUpdateScheduled;
     int _contentType;
     PUFeedViewControllerSpec *_spec;
 }
@@ -60,12 +61,15 @@
 @property(setter=_setBrowsingAssetContainerList:,retain) PUFeedAssetContainerList * _browsingAssetContainerList;
 @property(setter=_setBrowsingSelectedAsset:,retain) PLManagedAsset * _browsingSelectedAsset;
 @property(setter=_setBrowsingSelectedComment:,retain) PLCloudSharedComment * _browsingSelectedComment;
+@property(getter=_isCollectionViewScrolledToNewest,setter=_setCollectionViewScrolledToNewest:) BOOL _collectionViewScrolledToNewest;
+@property(setter=_setCollectionViewSpeedometer:,retain) PUScrollViewSpeedometer * _collectionViewSpeedometer;
 @property(readonly) PLDateRangeFormatter * _dateRangeFormatter;
 @property(setter=_setEmptyPlaceholderView:,retain) _UIContentUnavailableView * _emptyPlaceholderView;
 @property(readonly) PUFeedSectionInfosManager * _feedSectionInfosManager;
 @property(getter=_isFlowDirectionReversed,setter=_setFlowDirectionReversed:) BOOL _flowDirectionReversed;
 @property(readonly) PUImageManager * _imageManager;
 @property(setter=_setIndexPathForImageHiddenDuringZoomTransition:,copy) NSIndexPath * _indexPathForImageHiddenDuringZoomTransition;
+@property(getter=_isInterfaceBatchUpdateScheduled,setter=_setInterfaceBatchUpdateScheduled:) BOOL _interfaceBatchUpdateScheduled;
 @property(setter=_setInvitationsBarButtonItem:,retain) UIBarButtonItem * _invitationsBarButtonItem;
 @property(setter=_setInvitationsPopoverController:,retain) UIPopoverController * _invitationsPopoverController;
 @property(getter=_isInvitationsPopoverShowPending,setter=_setInvitationsPopoverShowPending:) BOOL _invitationsPopoverShowPending;
@@ -74,13 +78,11 @@
 @property(setter=_setLastPreheatedContentOffset:) struct CGPoint { float x1; float x2; } _lastPreheatedContentOffset;
 @property(getter=_isLibraryUpdatingPreviouslyExpired,setter=_setLibraryUpdatingPreviouslyExpired:) BOOL _libraryUpdatingPreviouslyExpired;
 @property(setter=_setLoadedSectionInfosWindowSize:) int _loadedSectionInfosWindowSize;
-@property(readonly) NSDate * _mostRecentContentDate;
-@property(setter=_setMostRecentContentDateViewed:,retain) NSDate * _mostRecentContentDateViewed;
-@property(setter=_setMostRecentContentViewed:) int _mostRecentContentViewed;
 @property(setter=_setPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _pinchGestureRecognizer;
 @property(setter=_setPinchedCollectionView:,retain) UICollectionView * _pinchedCollectionView;
 @property(setter=_setPortraitCollectionView:,retain) UICollectionView * _portraitCollectionView;
-@property(setter=_setPreheatedAssetsByFormat:,retain) NSDictionary * _preheatedAssetsByFormat;
+@property(readonly) PUFeedPreheatManager * _preheatManager;
+@property(setter=_setPreheatingWindowSize:) float _preheatingWindowSize;
 @property(setter=_setPresentedPhotosPickerViewController:,retain) PUPhotosPickerViewController * _presentedPhotosPickerViewController;
 @property(setter=_setPushedAlbum:,retain) PLCloudSharedAlbum * _pushedAlbum;
 @property(setter=_setPushedViewController:,retain) UIViewController * _pushedViewController;
@@ -90,12 +92,12 @@
 @property(setter=_setRotationTargetInterfaceOrientation:) int _rotationTargetInterfaceOrientation;
 @property(setter=_setSectionInfosWithCommentChanges:,retain) NSMutableSet * _sectionInfosWithCommentChanges;
 @property(readonly) PLManagedAlbumList * _sharedAlbumList;
+@property(setter=_setShouldSuspendQualityImageFormats:) BOOL _shouldSuspendQualityImageFormats;
 @property(setter=_setTapGestureRecognizer:,retain) UITapGestureRecognizer * _tapGestureRecognizer;
 @property(setter=_setUpdatedAssets:,retain) NSMutableSet * _updatedAssets;
 @property(setter=_setUserDidDismissPlaceholder:) BOOL _userDidDismissPlaceholder;
 @property(setter=_setViewDidAppear:) BOOL _viewDidAppear;
 @property(getter=_areViewsInSyncWithModel,setter=_setViewsInSyncWithModel:) BOOL _viewsInSyncWithModel;
-@property(getter=_isVisibleInterfaceUpdateScheduled,setter=_setVisibleInterfaceUpdateScheduled:) BOOL _visibleInterfaceUpdateScheduled;
 @property(readonly) int contentType;
 @property(readonly) PUFeedViewControllerSpec * spec;
 
@@ -108,6 +110,7 @@
 - (void)_appDidFinishEnteringForeground;
 - (BOOL)_appJustEnteredForeground;
 - (void)_appWillEnterForeground:(id)arg1;
+- (BOOL)_areSharedStreamsEnabled;
 - (BOOL)_areViewsInSyncWithModel;
 - (id)_assetForItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
 - (void)_autoHideBarsNow;
@@ -120,11 +123,13 @@
 - (void)_cancelBarsAutoHide;
 - (id)_collectionViewContainingView:(id)arg1;
 - (id)_collectionViewForInterfaceOrientation:(int)arg1;
+- (id)_collectionViewSpeedometer;
 - (id)_collectionViews;
 - (void)_configureCollectionView:(id)arg1;
 - (void)_configureImageCell:(id)arg1 forAssetAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureImageCell:(id)arg1 forThumbnailAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureInvitationCell:(id)arg1 forInvitationAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
+- (void)_configureSpeedometer:(id)arg1;
 - (void)_configureStackCell:(id)arg1 forThumbnailsAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureTextCell:(id)arg1 forCaptionAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureTextCell:(id)arg1 forCommentAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
@@ -140,6 +145,7 @@
 - (id)_dateForSectionWithInfo:(id)arg1;
 - (id)_dateRangeFormatter;
 - (void)_dateRangeFormatterChanged:(id)arg1;
+- (int)_defaultMaximumScrollRegimeForQualityImageFormats;
 - (void)_didTapSectionFooterFeedCell:(id)arg1;
 - (void)_didTapSectionHeaderFeedCell:(id)arg1;
 - (void)_didTapThumbnailOrOverlayPlayButtonInFeedCell:(id)arg1;
@@ -158,38 +164,36 @@
 - (id)_indexPathForImageHiddenDuringZoomTransition;
 - (id)_indexPathForItemWithAsset:(id)arg1 inCollectionView:(id)arg2;
 - (void)_invalidateLastPreheatedContentOffset;
-- (void)_invalidateMostRecentContentDate;
 - (id)_invitationsBarButtonItem;
 - (void)_invitationsButtonAction:(id)arg1;
 - (id)_invitationsPopoverController;
 - (BOOL)_isAnySharedAlbumAvailable;
 - (BOOL)_isCollectionViewEmptyForInterfaceOrientation:(int)arg1;
+- (BOOL)_isCollectionViewScrolledToNewest;
 - (BOOL)_isFlowDirectionReversed;
+- (BOOL)_isInterfaceBatchUpdateScheduled;
 - (BOOL)_isInvitationsPopoverShowPending;
 - (BOOL)_isLibraryUpdatingPreviouslyExpired;
 - (BOOL)_isLibraryUpdatingTimeoutExpired;
-- (BOOL)_isScrolling;
-- (BOOL)_isVisibleInterfaceUpdateScheduled;
 - (id)_justLikedSections;
 - (id)_landscapeCollectionView;
 - (struct CGPoint { float x1; float x2; })_lastPreheatedContentOffset;
 - (id)_loadedSectionInfoForCloudFeedEntry:(id)arg1;
 - (int)_loadedSectionInfosWindowSize;
-- (id)_mostRecentContentDate;
-- (id)_mostRecentContentDateViewed;
-- (int)_mostRecentContentViewed;
 - (void)_navigateToRevealAsset:(id)arg1 completion:(id)arg2;
 - (BOOL)_navigateToRevealComment:(id)arg1 completion:(id)arg2;
 - (void)_navigateToRevealPhoto:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
 - (void)_navigateToSectionInfo:(id)arg1 atItemIndex:(int)arg2 completion:(id)arg3;
 - (int)_numberOfSectionInfosForCollectionView:(id)arg1;
 - (void)_openiCloudSettings;
+- (void)_performInterfaceBatchUpdateNow;
 - (id)_pinchGestureRecognizer;
 - (id)_pinchedCollectionView;
-- (id)_pl_debugItems;
 - (int)_placeholderTypeForInterfaceOrientation:(int)arg1;
 - (id)_portraitCollectionView;
-- (id)_preheatedAssetsByFormat;
+- (id)_preheatManager;
+- (void)_preheatSectionInfosAtIndexes:(id)arg1;
+- (float)_preheatingWindowSize;
 - (id)_presentedPhotosPickerViewController;
 - (id)_pushedAlbum;
 - (id)_pushedViewController;
@@ -199,7 +203,7 @@
 - (int)_rotationState;
 - (int)_rotationTargetInterfaceOrientation;
 - (void)_scheduleBarsAutoHide;
-- (void)_scheduleVisibleInterfaceUpdateForSectionInfosWithCommentChanges:(id)arg1 updatedAssets:(id)arg2;
+- (void)_scheduleInterfaceUpdateForSectionInfosWithCommentChanges:(id)arg1 updatedAssets:(id)arg2;
 - (id)_sectionInfoForSection:(int)arg1 collectionView:(id)arg2;
 - (id)_sectionInfosForBrowsingFromSectionInfo:(id)arg1;
 - (id)_sectionInfosForSections:(id)arg1 collectionView:(id)arg2;
@@ -210,9 +214,12 @@
 - (void)_setBrowsingAssetContainerList:(id)arg1;
 - (void)_setBrowsingSelectedAsset:(id)arg1;
 - (void)_setBrowsingSelectedComment:(id)arg1;
+- (void)_setCollectionViewScrolledToNewest:(BOOL)arg1;
+- (void)_setCollectionViewSpeedometer:(id)arg1;
 - (void)_setEmptyPlaceholderView:(id)arg1;
 - (void)_setFlowDirectionReversed:(BOOL)arg1;
 - (void)_setIndexPathForImageHiddenDuringZoomTransition:(id)arg1;
+- (void)_setInterfaceBatchUpdateScheduled:(BOOL)arg1;
 - (void)_setInvitationsBarButtonItem:(id)arg1;
 - (void)_setInvitationsPopoverController:(id)arg1;
 - (void)_setInvitationsPopoverShowPending:(BOOL)arg1;
@@ -221,12 +228,10 @@
 - (void)_setLastPreheatedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setLibraryUpdatingPreviouslyExpired:(BOOL)arg1;
 - (void)_setLoadedSectionInfosWindowSize:(int)arg1;
-- (void)_setMostRecentContentDateViewed:(id)arg1;
-- (void)_setMostRecentContentViewed:(int)arg1;
 - (void)_setPinchGestureRecognizer:(id)arg1;
 - (void)_setPinchedCollectionView:(id)arg1;
 - (void)_setPortraitCollectionView:(id)arg1;
-- (void)_setPreheatedAssetsByFormat:(id)arg1;
+- (void)_setPreheatingWindowSize:(float)arg1;
 - (void)_setPresentedPhotosPickerViewController:(id)arg1;
 - (void)_setPushedAlbum:(id)arg1;
 - (void)_setPushedViewController:(id)arg1;
@@ -235,13 +240,13 @@
 - (void)_setRotationState:(int)arg1;
 - (void)_setRotationTargetInterfaceOrientation:(int)arg1;
 - (void)_setSectionInfosWithCommentChanges:(id)arg1;
+- (void)_setShouldSuspendQualityImageFormats:(BOOL)arg1;
 - (void)_setTapGestureRecognizer:(id)arg1;
 - (void)_setUpdatedAssets:(id)arg1;
 - (void)_setUserCloudSharedLiked:(BOOL)arg1 forItemsInSections:(id)arg2 inCollectionView:(id)arg3;
 - (void)_setUserDidDismissPlaceholder:(BOOL)arg1;
 - (void)_setViewDidAppear:(BOOL)arg1;
 - (void)_setViewsInSyncWithModel:(BOOL)arg1;
-- (void)_setVisibleInterfaceUpdateScheduled:(BOOL)arg1;
 - (void)_setupBrowsingFromAsset:(id)arg1 orComment:(id)arg2;
 - (BOOL)_setupBrowsingFromItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
 - (id)_sharedAlbumList;
@@ -251,6 +256,7 @@
 - (BOOL)_shouldJoinSectionInfo:(id)arg1 withSectionInfo:(id)arg2 collectionViewType:(int)arg3;
 - (BOOL)_shouldShowBarsForInterfaceOrientation:(int)arg1;
 - (BOOL)_shouldShowTransitionUI;
+- (BOOL)_shouldSuspendQualityImageFormats;
 - (void)_showInvitationsPopoverAnimated:(BOOL)arg1;
 - (void)_showOutOfNetworkInvitationMessageForSharedAlbum:(id)arg1 completionHandler:(id)arg2;
 - (id)_suppressionContexts;
@@ -267,8 +273,8 @@
 - (void)_updateNavigationItemAnimated:(BOOL)arg1;
 - (void)_updatePeripheralInterfaceAnimated:(BOOL)arg1;
 - (void)_updatePreheatedAssetsForCollectionView:(id)arg1;
+- (void)_updateSectionsWithCaptionChangesFromUpdatedAssets:(id)arg1;
 - (void)_updateSubviewsOrdering;
-- (void)_updateVisibleInterfaceUpdatesNow;
 - (void)_updateWindowOfLoadedSectionInfos;
 - (id)_updatedAssets;
 - (BOOL)_userDidDismissPlaceholder;
@@ -333,9 +339,14 @@
 - (BOOL)pu_wantsStatusBarVisible;
 - (BOOL)pu_wantsTabBarVisible;
 - (BOOL)pu_wantsToolbarVisible;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewDidScrollToTop:(id)arg1;
 - (BOOL)scrollViewShouldScrollToTop:(id)arg1;
+- (void)scrollViewSpeedometer:(id)arg1 regimeDidChange:(int)arg2 from:(int)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (BOOL)shouldAutorotate;
 - (id)spec;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -10,7 +10,6 @@
 @class KNBuild, KNSlide, NSArray, NSSet, NSString;
 
 @interface KNBuildChunk : TSPContainedObject <KNInspectableAnimation> {
-    BOOL _isComplementBoundaryChunk;
     BOOL mAutomatic;
     KNBuild *mBuild;
     double mDelay;
@@ -26,6 +25,7 @@
 @property(getter=isActive,readonly) BOOL active;
 @property(readonly) unsigned int activeIndexOnSlide;
 @property(getter=isAutomatic) BOOL automatic;
+@property(getter=isAutomaticWithPreviousChunk,readonly) BOOL automaticWithPreviousChunk;
 @property(readonly) NSArray * availableEventTriggers;
 @property(readonly) KNBuild * build;
 @property(readonly) BOOL canEditAnimations;
@@ -37,21 +37,21 @@
 @property(readonly) unsigned int indexInBuild;
 @property(readonly) unsigned int indexOnSlide;
 @property(readonly) NSSet * inspectableAttributes;
-@property BOOL isComplementBoundaryChunk;
 @property(readonly) BOOL isFirstInBuild;
 @property(readonly) BOOL isFirstOnSlide;
 @property BOOL ownsAutomatic;
 @property BOOL ownsDelay;
 @property BOOL ownsDuration;
 @property BOOL ownsReferent;
-@property(readonly) unsigned int p_referent;
 @property unsigned int referent;
 @property(readonly) KNSlide * slide;
+@property(readonly) BOOL supportsWithStart;
 @property(readonly) NSString * title;
 
 - (unsigned int)activeIndexOnSlide;
 - (id)availableEventTriggers;
 - (id)build;
+- (BOOL)canBuildWithChunk:(id)arg1;
 - (BOOL)canEditAnimations;
 - (void)dealloc;
 - (double)delay;
@@ -64,12 +64,12 @@
 - (unsigned int)indexOnSlide;
 - (id)initWithArchive:(const struct BuildChunkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; double x4; double x5; unsigned int x6; boolx7; boolx8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
 - (id)initWithIndex:(unsigned int)arg1 inBuild:(id)arg2 copyingAttributesFromChunk:(id)arg3;
+- (id)initWithIndex:(unsigned int)arg1 inBuild:(id)arg2 referent:(unsigned int)arg3 copyingRemainingAttributesFromChunk:(id)arg4;
 - (id)initWithIndex:(unsigned int)arg1 inBuild:(id)arg2;
 - (id)inspectableAttributes;
 - (BOOL)isActive;
 - (BOOL)isAutomatic;
-- (BOOL)isComplementBoundaryChunk;
-- (BOOL)isComplementOfChunk:(id)arg1;
+- (BOOL)isAutomaticWithPreviousChunk;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFirstInBuild;
 - (BOOL)isFirstOnSlide;
@@ -77,27 +77,25 @@
 - (BOOL)ownsDelay;
 - (BOOL)ownsDuration;
 - (BOOL)ownsReferent;
-- (BOOL)p_chunkSharesAnimationClassOrSubclassWithChunk:(id)arg1;
-- (id)p_chunkToConsiderForSupportsWith;
+- (BOOL)p_canBuildWithChunk:(id)arg1 checkOtherChunksBuildingWithThisChunk:(BOOL)arg2;
+- (id)p_chunksBuildingWithThisChunk;
+- (BOOL)p_chunksBuildingWithThisChunkCanBuildWithChunk:(id)arg1;
 - (void)p_invalidateSlideCaches;
-- (BOOL)p_previousChunkIsFromSameBuild;
-- (BOOL)p_previousGroupHasComplement;
-- (unsigned int)p_referent;
+- (id)p_previousChunkOnSlide;
 - (id)p_stringForReferent:(unsigned int)arg1;
-- (BOOL)p_supportsWithStart;
 - (unsigned int)referent;
 - (void)reset;
 - (void)saveToArchive:(struct BuildChunkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; double x4; double x5; unsigned int x6; boolx7; boolx8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
 - (void)setAutomatic:(BOOL)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setIsComplementBoundaryChunk:(BOOL)arg1;
 - (void)setOwnsAutomatic:(BOOL)arg1;
 - (void)setOwnsDelay:(BOOL)arg1;
 - (void)setOwnsDuration:(BOOL)arg1;
 - (void)setOwnsReferent:(BOOL)arg1;
 - (void)setReferent:(unsigned int)arg1;
 - (id)slide;
+- (BOOL)supportsWithStart;
 - (id)title;
 
 @end

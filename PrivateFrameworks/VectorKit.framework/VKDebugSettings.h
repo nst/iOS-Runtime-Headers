@@ -56,7 +56,6 @@
     BOOL _paintVertices;
     BOOL _readLandmarksFromDisk;
     BOOL _realisticWireframeEnabled;
-    BOOL _renderInSeparateThread;
     BOOL _roadFattening;
     float _tourAnimationAltitude;
     float _tourAnimationCameraOffset;
@@ -120,7 +119,6 @@
 @property BOOL paintVertices;
 @property BOOL readLandmarksFromDisk;
 @property BOOL realisticWireframeEnabled;
-@property BOOL renderInSeparateThread;
 @property BOOL roadFattening;
 @property float tourAnimationAltitude;
 @property float tourAnimationCameraOffset;
@@ -187,7 +185,6 @@
 - (BOOL)paintVertices;
 - (BOOL)readLandmarksFromDisk;
 - (BOOL)realisticWireframeEnabled;
-- (BOOL)renderInSeparateThread;
 - (BOOL)roadFattening;
 - (void)setAltitudeAnimationSpinTime:(float)arg1;
 - (void)setAltitudeForceGridTime:(float)arg1;
@@ -240,7 +237,6 @@
 - (void)setPaintVertices:(BOOL)arg1;
 - (void)setReadLandmarksFromDisk:(BOOL)arg1;
 - (void)setRealisticWireframeEnabled:(BOOL)arg1;
-- (void)setRenderInSeparateThread:(BOOL)arg1;
 - (void)setRoadFattening:(BOOL)arg1;
 - (void)setTourAnimationAltitude:(float)arg1;
 - (void)setTourAnimationCameraOffset:(float)arg1;

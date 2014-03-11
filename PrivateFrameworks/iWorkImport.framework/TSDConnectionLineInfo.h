@@ -24,10 +24,10 @@
 + (id)cleanupInfos:(id)arg1 duringCommand:(id)arg2 updateGeometries:(BOOL)arg3;
 
 - (void)acceptVisitor:(id)arg1;
-- (id)buildTitle;
 - (BOOL)canAnchor;
 - (id)commandForSettingConnectionLineType:(int)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeLayoutFullTransform;
+- (void)computeLayoutInfoGeometry:(id*)arg1 andPathSource:(id*)arg2;
 - (id)computeLayoutInfoGeometry;
 - (id)connectedFrom;
 - (id)connectedTo;
@@ -46,6 +46,7 @@
 - (void)saveToArchiver:(id)arg1;
 - (void)setConnectedFrom:(id)arg1;
 - (void)setConnectedTo:(id)arg1;
+- (id)titleForBuildChunk:(id)arg1;
 - (void)willCopyWithOtherDrawables:(id)arg1;
 
 @end

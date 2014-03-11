@@ -5,6 +5,7 @@
 @class NSNumber, NSString;
 
 @interface PLTelephonyLogger : PLTelephonyConnectedLogger {
+    NSString *_operatorName;
     BOOL changed;
     NSNumber *inDCH;
     NSNumber *inUTBF;
@@ -16,6 +17,7 @@
 @property(retain) NSNumber * inDCH;
 @property(retain) NSNumber * inUTBF;
 @property int lastReportedSignal;
+@property(retain) NSString * operatorName;
 @property(retain) NSString * simStatus;
 
 - (void)dealloc;
@@ -28,11 +30,14 @@
 - (int)lastReportedSignal;
 - (void)log;
 - (void)logMessage:(id)arg1 andState:(id)arg2;
+- (void)logOperatorName;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)operatorName;
 - (void)setChanged:(BOOL)arg1;
 - (void)setInDCH:(id)arg1;
 - (void)setInUTBF:(id)arg1;
 - (void)setLastReportedSignal:(int)arg1;
+- (void)setOperatorName:(id)arg1;
 - (void)setSimStatus:(id)arg1;
 - (id)simStatus;
 

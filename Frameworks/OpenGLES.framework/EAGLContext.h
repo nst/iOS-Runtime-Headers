@@ -16,6 +16,7 @@
 
 @property(readonly) unsigned int API;
 @property(copy) NSString * debugLabel;
+@property(getter=isMultiThreaded) BOOL multiThreaded;
 @property(readonly) EAGLSharegroup * sharegroup;
 
 + (id)currentContext;
@@ -32,11 +33,13 @@
 - (id)initWithAPI:(unsigned int)arg1 sharedWithCompute:(BOOL)arg2;
 - (id)initWithAPI:(unsigned int)arg1 sharegroup:(id)arg2;
 - (id)initWithAPI:(unsigned int)arg1;
+- (BOOL)isMultiThreaded;
 - (BOOL)presentRenderbuffer:(unsigned int)arg1;
 - (BOOL)renderbufferStorage:(unsigned int)arg1 fromDrawable:(id)arg2;
 - (void)sendNotification:(unsigned int)arg1 forTransaction:(unsigned int)arg2 onLayer:(unsigned int)arg3;
 - (BOOL)setBlockFence:(id)arg1 onQueue:(id)arg2;
 - (void)setDebugLabel:(id)arg1;
+- (void)setMultiThreaded:(BOOL)arg1;
 - (unsigned int)setParameter:(unsigned int)arg1 to:(int*)arg2;
 - (id)sharegroup;
 - (void)swapNotification:(struct __IOMobileFramebuffer { }*)arg1 forTransaction:(unsigned int)arg2 onLayer:(unsigned int)arg3;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAGradientLayer, CAShapeLayer, UIColor, UIImage, UIImageView, UIView;
+@class CAShapeLayer, NSArray, UIColor, UIImage, UIImageView, UIView;
 
 @interface UISlider : UIControl <NSCoding> {
     struct { 
@@ -15,20 +15,18 @@
         unsigned int thumbDisabled : 1; 
         unsigned int minTrackHidden : 1; 
     float _alpha;
+    BOOL _animatingWithDynamics;
     struct __CFDictionary { } *_contentLookup;
     float _hitOffset;
     UIImageView *_innerThumbView;
     BOOL _maxColorIsValid;
     UIColor *_maxTintColor;
     UIView *_maxTrackClipView;
-    CAGradientLayer *_maxTrackGradientLayer;
     UIImageView *_maxTrackView;
-    UIView *_maxTrackViewNeue;
     float _maxValue;
     UIImageView *_maxValueImageView;
     UIColor *_minTintColor;
     UIImageView *_minTrackView;
-    UIView *_minTrackViewNeue;
     float _minValue;
     UIImageView *_minValueImageView;
     } _sliderFlags;
@@ -37,9 +35,8 @@
     UIImageView *_thumbView;
     UIView *_thumbViewNeue;
     CAShapeLayer *_thumbViewNeueShape;
-    UIView *_trackContainerView;
+    NSArray *_trackColors;
     BOOL _trackIsArtworkBased;
-    CAShapeLayer *_trackMaskLayer;
     BOOL _useLookNeue;
     float _value;
 }
@@ -59,20 +56,17 @@
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_buildTrackArtwork;
-- (void)_buildTrackNeue;
 - (id)_contentForState:(unsigned int)arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
-- (void)_emptyTrackMaskAnimated:(BOOL)arg1;
-- (void)_fillTrackMaskAnimated:(BOOL)arg1;
+- (float)_cornerRadiusForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_initImages;
 - (void)_initSubviews;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isThumbEnabled;
 - (void)_layoutSubviewsForBoundsChange:(BOOL)arg1;
-- (struct CGPath { }*)_maskPathForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 edgeInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 andProgress:(float)arg3;
 - (id)_maxTrackView;
 - (id)_maxValueView;
 - (id)_maximumTrackImageForState:(unsigned int)arg1;
@@ -81,7 +75,6 @@
 - (id)_minimumTrackImageForState:(unsigned int)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rebuildControlThumb:(BOOL)arg1 track:(BOOL)arg2;
-- (id)_roundedCornersBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_scriptingInfo;
 - (void)_sendDelayedActions;
 - (void)_setContent:(id)arg1 forState:(unsigned int)arg2;
@@ -103,7 +96,6 @@
 - (void)_updateAppearanceForEnabled:(BOOL)arg1;
 - (void)_updateMaxTrackColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
@@ -115,7 +107,6 @@
 - (id)currentThumbImage;
 - (void)dealloc;
 - (id)description;
-- (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

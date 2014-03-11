@@ -21,7 +21,6 @@
         unsigned int wasFirstResponder : 1; 
     NSNumber *_currentSearchTaskID;
     <PLComposeRecipientViewControllerDelegate> *_delegate;
-    BOOL _drawsLetterpress;
     } _flags;
     } _keyboardFrame;
     unsigned int _maxExpandRows;
@@ -38,7 +37,6 @@
 }
 
 @property <PLComposeRecipientViewControllerDelegate> * delegate;
-@property BOOL drawsLetterpress;
 @property unsigned int maxExpandRows;
 @property(readonly) PLComposeRecipientView * recipientView;
 
@@ -75,7 +73,6 @@
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (BOOL)drawsLetterpress;
 - (void)endedNetworkActivity;
 - (void)finishedSearchingForType:(int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
@@ -92,7 +89,6 @@
 - (id)recipientView;
 - (id)recipients;
 - (void)setDelegate:(id)arg1;
-- (void)setDrawsLetterpress:(BOOL)arg1;
 - (void)setMaxExpandRows:(unsigned int)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldShowCardForPerson:(void*)arg1 peoplePicker:(id)arg2;

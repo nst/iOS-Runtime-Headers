@@ -12,6 +12,7 @@
     BOOL _isAirplaneModeActive;
     BOOL _isAutoDownloadOnCellularAllowed;
     BOOL _isCellularDataActive;
+    BOOL _isNetworkReachable;
     BOOL _isShowingAllMusic;
     BOOL _isShowingAllVideo;
     BOOL _isUpdateInProgress;
@@ -20,6 +21,7 @@
     int _preferencesChangedNotifyToken;
     BOOL _preferencesChangedNotifyTokenIsValid;
     RadiosPreferences *_radiosPreferences;
+    struct __SCNetworkReachability { } *reachabilityRef;
 }
 
 + (id)sharedController;
@@ -32,6 +34,7 @@
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(BOOL)arg1;
 - (void)_onQueue_updateCanShowCloudTracksWithNotification:(BOOL)arg1;
+- (void)_setNewIsNetworkReachable:(BOOL)arg1;
 - (BOOL)_uncachedIsAutoDownloadOnCellularAllowed;
 - (BOOL)_uncachedIsShowingAllMusic;
 - (BOOL)_uncachedIsShowingAllVideo;
@@ -44,6 +47,7 @@
 - (BOOL)hasProperNetworkConditionsToPlayMedia;
 - (id)init;
 - (BOOL)isCellularDataRestricted;
+- (BOOL)isNetworkReachable;
 - (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 
 @end

@@ -19,6 +19,7 @@
 
 @property(getter=isLoading,readonly) BOOL loading;
 
+- (void).cxx_destruct;
 - (void)_cancel;
 - (void)_cleanupSnapshotCreator;
 - (void)_enterBackground:(id)arg1;

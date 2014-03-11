@@ -4,22 +4,14 @@
 
 @class RadioTrack;
 
-@interface MPRadioTrackImageCacheRequest : MPImageCacheRequest {
+@interface MPRadioTrackImageCacheRequest : MPRadioArtworkImageCacheRequest {
     RadioTrack *_radioTrack;
-    long long _trackStoreID;
-    BOOL _usePlaceholderAsFallback;
 }
 
 @property(readonly) RadioTrack * radioTrack;
-@property BOOL usePlaceholderAsFallback;
 
 - (void).cxx_destruct;
-- (id)copyRawImageReturningError:(id*)arg1;
 - (id)initWithRadioTrack:(id)arg1;
-- (id)placeholderImage;
 - (id)radioTrack;
-- (void)setUsePlaceholderAsFallback:(BOOL)arg1;
-- (id)uniqueKey;
-- (BOOL)usePlaceholderAsFallback;
 
 @end

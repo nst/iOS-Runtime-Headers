@@ -22,16 +22,18 @@
     TSDGLDataBuffer *_dataBuffer;
     } _effectSize;
     TSDGLShader *_fboTransferShader;
+    BOOL _oldViewportRectInitialized;
+    int _oldViewportRect[4];
 }
 
 - (void)bindFramebuffer;
 - (void)dealloc;
-- (void)drawBloomEffectWithMVPMatrix:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 bloomAmount:(float)arg2;
+- (void)drawBloomEffectWithMVPMatrix:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 bloomAmount:(float)arg2 currentGLFramebuffer:(int)arg3;
 - (id)initWithEffectSize:(struct CGSize { float x1; float x2; })arg1 blurScale:(float)arg2;
-- (void)p_blurColorBuffer;
+- (void)p_blurColorBufferWithPreviousFramebuffer:(int)arg1;
 - (void)p_setupBuffers;
 - (void)p_setupShaders;
 - (void)teardown;
-- (void)unbindFramebuffer;
+- (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1;
 
 @end

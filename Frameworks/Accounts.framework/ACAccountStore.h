@@ -36,6 +36,7 @@
 - (id)aa_appleAccounts;
 - (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id)arg3;
 - (id)aa_primaryAppleAccount;
+- (id)aa_primaryAppleAccountWithPreloadedDataclasses;
 - (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id)arg2;
 - (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id)arg2;
 - (void)aa_updatePropertiesForAppleAccount:(id)arg1 completion:(id)arg2;
@@ -52,6 +53,8 @@
 - (id)accountsWithAccountType:(id)arg1 appleID:(id)arg2;
 - (void)accountsWithAccountType:(id)arg1 completion:(id)arg2;
 - (id)accountsWithAccountType:(id)arg1;
+- (void)accountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
+- (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id)arg3;
 - (BOOL)addClientToken:(id)arg1 forAccount:(id)arg2;
 - (id)allAccountTypes;
 - (id)allDataclasses;
@@ -122,5 +125,6 @@
 - (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
+- (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 
 @end

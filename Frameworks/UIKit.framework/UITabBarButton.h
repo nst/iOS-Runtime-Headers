@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSValue, UIColor, UIImage, UITabBarButtonLabel, UITabBarSelectionIndicatorView, UIView, _UIBadgeView;
+@class NSMutableDictionary, NSValue, UIColor, UIImage, UITabBarButtonLabel, UITabBarSelectionIndicatorView, UIView, _UIBadgeView;
 
 @interface UITabBarButton : UIControl {
     struct CGRect { 
@@ -29,7 +29,9 @@
     _UIBadgeView *_badge;
     BOOL _badgeAnimated;
     BOOL _barHeight;
+    NSMutableDictionary *_buttonTintColorsForState;
     BOOL _centerAllContents;
+    NSMutableDictionary *_contentTintColorsForState;
     UIImage *_customSelectedIndicatorImage;
     } _hitRect;
     UIView *_info;
@@ -38,61 +40,65 @@
     UITabBarButtonLabel *_label;
     NSValue *_labelOffsetValue;
     BOOL _selected;
-    BOOL _selectedImageColoringIsStale;
     UITabBarSelectionIndicatorView *_selectedIndicator;
     } _selectedInfoOffset;
-    float _templateImageWidth;
+    BOOL _showsHighlightedState;
     UIColor *_unselectedTintColor;
 }
 
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
 @property(setter=_setCenterAllContents:) BOOL _centerAllContents;
 @property(getter=_isSelected,setter=_setSelected:) BOOL _selected;
-@property(setter=_setSelectedImageColoringIsStale:) BOOL _selectedImageColoringIsStale;
-@property(setter=_setTemplateImageWidth:) float _templateImageWidth;
+@property(setter=_setShowsHighlightedState:) BOOL _showsHighlightedState;
 @property(retain) NSValue * labelOffsetValue;
 @property(readonly) UITabBarButtonLabel * tabBarButtonLabel;
 @property(getter=_unselectedTintColor,setter=_setUnselectedTintColor:,retain) UIColor * unselectedTintColor;
 
 + (id)_defaultLabelColor;
-+ (id)_defaultLabelFont;
 
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (Class)_appearanceGuideClass;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (id)_buttonTintColorForState:(unsigned int)arg1;
 - (BOOL)_centerAllContents;
+- (id)_contentTintColorForState:(unsigned int)arg1;
+- (void)_focusStateDidChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSelectedIndicator;
+- (BOOL)_isFocusableElement;
 - (BOOL)_isSelected;
 - (void)_positionBadge;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_responderSelectionRectForWindow:(id)arg1;
 - (id)_scriptingInfo;
-- (BOOL)_selectedImageColoringIsStale;
 - (id)_selectedIndicatorView;
 - (void)_setAppearanceGuideClass:(Class)arg1;
 - (void)_setBadgeAnimated:(BOOL)arg1;
 - (void)_setBadgeValue:(id)arg1;
 - (void)_setBarHeight:(float)arg1;
+- (void)_setButtonTintColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setCenterAllContents:(BOOL)arg1;
+- (void)_setContentTintColor:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setCustomSelectedIndicatorImage:(id)arg1;
 - (void)_setInfoOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_setLabelHidden:(BOOL)arg1;
 - (void)_setSelected:(BOOL)arg1;
-- (void)_setSelectedImageColoringIsStale:(BOOL)arg1;
 - (void)_setSelectedInfoOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)_setShowsHighlightedState:(BOOL)arg1;
 - (void)_setTabBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setTemplateImageWidth:(float)arg1;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setUnselectedTintColor:(id)arg1 forceLabelToConform:(BOOL)arg2;
 - (void)_setUnselectedTintColor:(id)arg1;
+- (void)_setUpSelectedIndicatorViewIfNeeded;
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
+- (BOOL)_showsHighlightedState;
 - (id)_swappableImageView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tabBarHitRect;
-- (float)_templateImageWidth;
 - (struct UIOffset { float x1; float x2; })_titlePositionAdjustment;
 - (id)_unselectedTintColor;
 - (void)_updateInfoFrame;
+- (void)_updateSelectedIndicatorView;
 - (void)_updateToMatchCurrentState;
 - (BOOL)_useBarHeight;
 - (void)dealloc;
@@ -103,10 +109,10 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLabelOffsetValue:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tabBarButtonLabel;
-- (void)tintColorDidChange;
 
 @end

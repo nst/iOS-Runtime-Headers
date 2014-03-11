@@ -13,6 +13,8 @@
     BOOL alwaysDiscardsLateVideoFrames;
     NSObject<OS_dispatch_queue> *clientQueue;
     <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
+    BOOL delegateRespondsToDidDropSBufCallback;
+    BOOL delegateRespondsToDidOutputSBufCallback;
     } deprecatedMinFrameDuration;
     NSDictionary *videoSettings;
 }

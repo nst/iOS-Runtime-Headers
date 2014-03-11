@@ -26,6 +26,7 @@
 - (int (*)())callback;
 - (void)addToKVStore:(id)arg1;
 - (void)asyncCircleStatusCheck;
+- (void)clearKVS;
 - (id)clientThread;
 - (void*)context;
 - (void)dealloc;
@@ -33,10 +34,12 @@
 - (id)getStoreValueForKey:(id)arg1;
 - (BOOL)iCloudSyncingEnabled;
 - (void)initWithCallback:(int (*)())arg1 callbackContext:(void*)arg2;
+- (void)isLastDeviceInCircleAsync;
 - (id)keyValueStore;
 - (void)printCompleteKVStore;
 - (id)readCompleteKVStore;
 - (void)relayCircleStatusCheck:(id)arg1;
+- (void)relayCloudCleanUpEvent;
 - (void)relayCloudEvent:(id)arg1;
 - (void)removeFromKVStore:(id)arg1;
 - (void)setCallback:(int (*)())arg1;
@@ -46,6 +49,6 @@
 - (void)setKeyValueStore:(id)arg1;
 - (void)subscribeKVStoreNotficationsForBundleId:(id)arg1;
 - (void)ubiquitousKeyValueStoreDidChange:(id)arg1;
-- (void)unSubscribeKVStoreNotfications;
+- (void)unSubscribeKVStoreNotfications:(id)arg1;
 
 @end

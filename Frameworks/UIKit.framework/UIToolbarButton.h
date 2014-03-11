@@ -48,6 +48,7 @@
 }
 
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
+@property(setter=_setCreatedByBarButtonItem:) BOOL _createdByBarButtonItem;
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
 @property(getter=isAnimatedTrashButton) BOOL animatedTrashButton;
 
@@ -76,12 +77,15 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_buttonBarHitRect;
 - (BOOL)_canGetPadding;
 - (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_createdByBarButtonItem;
+- (id)_customOrAccessibilityBackgroundImageForState:(unsigned int)arg1 style:(int)arg2 isMini:(BOOL)arg3;
 - (id)_defaultTitleColorForState:(unsigned int)arg1;
 - (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
 - (id)_info;
 - (BOOL)_infoIsButton;
 - (BOOL)_isBordered;
+- (BOOL)_isBorderedOtherThanAccessibility;
 - (BOOL)_isOn;
 - (id)_newButton;
 - (float)_paddingForLeft:(BOOL)arg1;
@@ -97,6 +101,7 @@
 - (void)_setBadgeValue:(id)arg1;
 - (void)_setBarHeight:(float)arg1;
 - (void)_setButtonBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setCreatedByBarButtonItem:(BOOL)arg1;
 - (void)_setInTopBar:(BOOL)arg1;
 - (void)_setInfoExtremityWidth:(float)arg1 isMin:(BOOL)arg2;
 - (void)_setInfoFlexibleWidth:(BOOL)arg1;
@@ -108,8 +113,11 @@
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setTouchHasHighlighted:(BOOL)arg1;
+- (void)_setWantsBlendModeForAccessibilityBackgrounds:(BOOL)arg1;
+- (void)_setWantsLetterpressContent;
 - (BOOL)_shouldApplyPadding;
 - (void)_showPressedIndicator:(BOOL)arg1;
+- (BOOL)_showsAccessibilityBackgroundWhenEnabled;
 - (void)_sizeView:(id)arg1 toPossibleTitles:(id)arg2 pressedTitle:(id)arg3;
 - (id)_tintColor;
 - (struct UIOffset { float x1; float x2; })_titlePositionAdjustmentForBarMetrics:(int)arg1;
@@ -118,6 +126,7 @@
 - (void)_updateShadowOffsetWithAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (BOOL)_useBarHeight;
 - (BOOL)_useSilverLook;
+- (BOOL)_wantsAccessibilityButtonShapes;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;

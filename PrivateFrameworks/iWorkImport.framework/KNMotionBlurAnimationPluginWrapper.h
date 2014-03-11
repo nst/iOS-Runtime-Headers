@@ -44,14 +44,12 @@
         float m42; 
         float m43; 
         float m44; 
+    NSDictionary *_animationCacheDict;
     NSDictionary *_animationDict;
     } _animationFrame;
     NSObject<KNAnimationPluginAnimationRendering> *_animationPlugin;
     } _drawableFrame;
     NSArray *_generatedTextures;
-    NSDictionary *_hasDoubleSidedAnimationDict;
-    NSDictionary *_hasHiddenAnimationDict;
-    NSDictionary *_hasOpacityAnimationDict;
     BOOL _isSetup;
     KNMotionBlurWrapper *_motionBlurWrapper;
     } _projectionTransform;
@@ -76,7 +74,7 @@
 - (id)motionBlurWrapper;
 - (id)p_generatedTexturesFromLayersInAnimationDict:(id)arg1 context:(id)arg2 animationContext:(id)arg3 textures:(id)arg4;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })p_projectionTransformWithType:(int)arg1 customProjectionTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2 context:(id)arg3 animationContext:(id)arg4;
-- (void)p_setupAnimationDictionariesWithAnimationDict:(id)arg1;
+- (void)p_setupAnimationDictionariesWithAnimationDict:(id)arg1 context:(id)arg2;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })projectionTransform;
 - (void)renderFrameWithContext:(id)arg1;
 - (void)setAnimationFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

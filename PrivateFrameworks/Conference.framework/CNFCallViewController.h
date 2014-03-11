@@ -40,13 +40,8 @@
 - (void)animateFromVoiceControlWithName:(id)arg1 andSubtitle:(id)arg2;
 - (void)animateOutWithAnimations:(id)arg1 completion:(id)arg2;
 - (void)animateShowUnlocked;
+- (id)audioDeviceController;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (id)audioDeviceView:(id)arg1 deviceAtIndex:(int)arg2 isActive:(BOOL*)arg3;
-- (void)audioDeviceView:(id)arg1 eventOccurred:(id)arg2;
-- (void)audioDeviceView:(id)arg1 selectedItem:(int)arg2;
-- (void)audioDeviceView:(id)arg1 selectedMute:(int)arg2;
-- (int)audioDeviceViewNumberOfDevices:(id)arg1;
-- (BOOL)audioIsMuted;
 - (void)audioPlayerDidStopPlaying:(id)arg1;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)auxiliaryAudioRoutesAvailable;
@@ -71,7 +66,6 @@
 - (BOOL)isShowingFaceTimeUI;
 - (BOOL)isShowingLock;
 - (void)loadView;
-- (BOOL)muteButtonEnabled;
 - (id)newDisplayController;
 - (id)originationURL;
 - (void)prepareForCallWaitingAnimated:(BOOL)arg1;
@@ -85,7 +79,6 @@
 - (void)setIsSendingVideo:(BOOL)arg1;
 - (void)setOriginationURL:(id)arg1;
 - (BOOL)shouldDisableEdgeClip;
-- (BOOL)shouldDisplayMuteOption;
 - (BOOL)shouldHideStatusBar;
 - (void)showAcceptCallBarsAnimated:(BOOL)arg1 callBarsOffscreen:(BOOL)arg2 wasLocked:(BOOL)arg3 wasCallWaiting:(BOOL)arg4;
 - (void)showCallBarsAnimated:(BOOL)arg1;

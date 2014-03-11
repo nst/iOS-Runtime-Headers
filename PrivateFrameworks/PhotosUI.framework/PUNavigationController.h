@@ -2,17 +2,23 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class PUAbstractNavigationBanner, _UINavigationControllerPalette;
 
 @interface PUNavigationController : UINavigationController {
     PUAbstractNavigationBanner *__banner;
     _UINavigationControllerPalette *__palette;
+    id _ppt_onDidShowViewControllerBlock;
     BOOL _pu_preventsAutorotation;
     unsigned int _pu_supportedInterfaceOrientations;
 }
 
 @property(setter=_setBanner:,retain) PUAbstractNavigationBanner * _banner;
 @property(setter=_setPalette:,retain) _UINavigationControllerPalette * _palette;
+@property(setter=ppt_setOnDidShowViewControllerBlock:,copy) id ppt_onDidShowViewControllerBlock;
 @property BOOL pu_preventsAutorotation;
 @property unsigned int pu_supportedInterfaceOrientations;
 
@@ -21,6 +27,9 @@
 - (id)_palette;
 - (void)_setBanner:(id)arg1;
 - (void)_setPalette:(id)arg1;
+- (id)ppt_onDidShowViewControllerBlock;
+- (void)ppt_setOnDidShowViewControllerBlock:(id)arg1;
+- (void)pu_didShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)pu_preventsAutorotation;
 - (void)pu_setPreventsAutorotation:(BOOL)arg1;
 - (void)pu_setSupportedInterfaceOrientations:(unsigned int)arg1;

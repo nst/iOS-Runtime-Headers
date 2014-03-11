@@ -7,6 +7,7 @@
 }
 
 - (void)clearBookmarkMatchesCaches;
+- (void)clearBookmarkMatchesCachesKeepingEmptyValues:(BOOL)arg1;
 - (void)clearMatchesCaches;
 - (void)dealloc;
 - (void)enumerateMatchDataForTypedStringHint:(id)arg1 withBlock:(id)arg2;

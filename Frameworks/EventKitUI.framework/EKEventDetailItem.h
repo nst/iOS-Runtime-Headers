@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventDetailItemDelegate>, EKEvent, EKEventStore, UIViewController, UIViewController<EKEditItemViewControllerProtocol>;
+@class <EKEventDetailItemDelegate>, EKEvent, EKEventStore, EKUIRecurrenceAlertController, UIViewController, UIViewController<EKEditItemViewControllerProtocol>;
 
 @interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
     BOOL _allowsEditing;
     int _cellPosition;
     <EKEventDetailItemDelegate> *_delegate;
     EKEvent *_event;
+    EKUIRecurrenceAlertController *_recurrenceAlertController;
     BOOL _shouldIndent;
     EKEventStore *_store;
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
@@ -31,6 +32,7 @@
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
+- (BOOL)editItemViewControllerShouldShowDetachAlert;
 - (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
 - (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
@@ -40,7 +42,6 @@
 - (unsigned int)numberOfSubitems;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (BOOL)saveEvent;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setCellPosition:(int)arg1;
 - (void)setDelegate:(id)arg1;

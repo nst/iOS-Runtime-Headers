@@ -45,7 +45,7 @@
 - (void)_performNextAction;
 - (void)_removePlaceholdersForPurchase:(id)arg1;
 - (void)_removePurchaseRequest:(id)arg1;
-- (void)_schedulePurchaseCallback:(id)arg1;
+- (void)_schedulePurchaseCallback:(id)arg1 forPurchases:(id)arg2;
 - (void)_showDialogsForErrors:(id)arg1;
 - (void)_startContinuations:(id)arg1;
 - (void)_startPurchases:(id)arg1;

@@ -4,6 +4,7 @@
 
 @interface CUIShapeEffectStack : NSObject {
     struct { 
+        unsigned int blendMode; 
         float fillRed; 
         float fillGreen; 
         float fillBlue; 
@@ -17,12 +18,14 @@
         float endBlue; 
         float gradientOpacity; 
     struct { 
+        unsigned int blendMode; 
         float glowRed; 
         float glowGreen; 
         float glowBlue; 
         float glowOpacity; 
         float glowSize; 
     struct { 
+        unsigned int blendMode; 
         float shadowRed; 
         float shadowGreen; 
         float shadowBlue; 
@@ -40,12 +43,14 @@
         float glowBlue; 
         float glowOpacity; 
         float glowSize; 
+        float glowSpread; 
     struct { 
         float engraveRed; 
         float engraveGreen; 
         float engraveBlue; 
         float engraveOpacity; 
         float engraveBlurSize; 
+        float engraveSpread; 
         float engraveOffsetAmount; 
         float engraveOffsetAngle; 
         struct CGPoint { 
@@ -58,6 +63,7 @@
         float engraveBlue; 
         float engraveOpacity; 
         float engraveBlurSize; 
+        float engraveSpread; 
         float engraveOffsetAmount; 
         float engraveOffsetAngle; 
         struct CGPoint { 
@@ -93,12 +99,15 @@
     } innerGradient;
     } insideShadow;
     } outerGlow;
+    float outputOpacity;
     int renderStrategy;
     float scalefactor;
+    float shapeOpacity;
 }
 
 + (id)adjustOpacity:(id)arg1 by:(float)arg2;
 + (id)bevelEmbossFrom:(id)arg1 withSize:(unsigned int)arg2 soften:(unsigned int)arg3 angle:(float)arg4 altitude:(float)arg5 highlightRed:(float)arg6 highlightGreen:(float)arg7 highlightBlue:(float)arg8 highlightOpacity:(float)arg9 shadowRed:(float)arg10 shadowGreen:(float)arg11 shadowBlue:(float)arg12 shadowOpacity:(float)arg13;
++ (id)blend:(id)arg1 over:(id)arg2 blendKind:(unsigned int)arg3;
 + (id)blur:(id)arg1 radius:(float)arg2;
 + (id)colorWithGray:(float)arg1 alpha:(float)arg2;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
@@ -113,8 +122,8 @@
 + (id)innerShadowFrom:(id)arg1 withOffset:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 red:(float)arg4 green:(float)arg5 blue:(float)arg6 opacity:(float)arg7;
 + (id)invert:(id)arg1;
 + (id)offset:(id)arg1 by:(struct CGPoint { float x1; float x2; })arg2;
-+ (id)outerGlowFrom:(id)arg1 withRadius:(float)arg2 red:(float)arg3 green:(float)arg4 blue:(float)arg5 opacity:(float)arg6;
-+ (id)outerShadowFrom:(id)arg1 withOffset:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 red:(float)arg4 green:(float)arg5 blue:(float)arg6 opacity:(float)arg7;
++ (id)outerGlowFrom:(id)arg1 withSize:(unsigned int)arg2 spread:(unsigned int)arg3 red:(float)arg4 green:(float)arg5 blue:(float)arg6 opacity:(float)arg7;
++ (id)outerShadowFrom:(id)arg1 withOffset:(struct CGPoint { float x1; float x2; })arg2 size:(unsigned int)arg3 spread:(unsigned int)arg4 red:(float)arg5 green:(float)arg6 blue:(float)arg7 opacity:(float)arg8;
 + (id)pixelZoomed:(id)arg1 scale:(int)arg2 about:(struct CGPoint { float x1; float x2; })arg3;
 + (id)preferredCIContextOptions;
 + (id)rectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRed:(float)arg2 green:(float)arg3 blue:(float)arg4 alpha:(float)arg5;
@@ -132,12 +141,16 @@
 - (void)_precompositeColorOverlayInnerGradient;
 - (void)_setColorFillFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_setInteriorGradientFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_setShapeOpacityFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_updateRenderStrategyFromEffect:(unsigned int)arg1;
+- (void)applyCustomForegroundColor:(struct CGColor { }*)arg1 tintEffectColors:(BOOL)arg2;
 - (void)applyCustomForegroundColor:(struct CGColor { }*)arg1;
 - (id)compositeEffectStackWithShapeImage:(id)arg1 withScale:(float)arg2;
 - (struct { float x1; float x2; float x3; float x4; })effectInsetsWithScale:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })effectPaddingWithScale:(float)arg1;
 - (id)effectPreset;
+- (id)imageWithAdjustedOutputOpacityOfImage:(id)arg1;
+- (id)imageWithAdjustedShapeOpacityOfImage:(id)arg1;
 - (id)imageWithBevelEmbossOfImage:(id)arg1;
 - (id)imageWithColorOverlayOfImage:(id)arg1;
 - (id)imageWithEngraveShadowOfImage:(id)arg1;

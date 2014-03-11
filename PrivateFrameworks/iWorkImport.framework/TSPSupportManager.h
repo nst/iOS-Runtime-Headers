@@ -18,7 +18,8 @@
 @property(copy) NSURL * presentedSupportURL;
 @property(readonly) NSURL * primaryPresentedItemURL;
 
-+ (BOOL)copyOrMoveSupportAtURL:(id)arg1 toURL:(id)arg2 isCopying:(BOOL)arg3 newDocumentProperties:(id)arg4 filePresenter:(id)arg5 error:(id*)arg6;
++ (BOOL)copyOrMoveSupportAtURL:(id)arg1 originalDocumentProperties:(id)arg2 toURL:(id)arg3 isCopying:(BOOL)arg4 newDocumentProperties:(id)arg5 filePresenter:(id)arg6 error:(id*)arg7;
++ (id)defaultSupportDirectoryURL;
 + (void)garbageCollectDocumentSupportWithKnownDocumentUUIDs:(id)arg1 delegate:(id)arg2;
 + (BOOL)isSupportAtURLValid:(id)arg1 documentUUID:(id)arg2 versionUUID:(id)arg3;
 + (id)supportBundleURLForUUID:(id)arg1 delegate:(id)arg2;
@@ -28,7 +29,7 @@
 - (void).cxx_destruct;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
 - (void)beginSaveWithDocumentUUID:(id)arg1 versionUUID:(id)arg2 originalURL:(id)arg3 updateType:(unsigned int)arg4;
-- (BOOL)didUpdateDocumentUUIDForNewDocumentProperties:(id)arg1 preserveOriginalDocumentSupport:(BOOL)arg2 originalURL:(id)arg3 newURL:(id*)arg4 error:(id*)arg5;
+- (BOOL)didUpdateDocumentUUIDWithOriginalDocumentProperties:(id)arg1 newDocumentProperties:(id)arg2 preserveOriginalDocumentSupport:(BOOL)arg3 originalURL:(id)arg4 newURL:(id*)arg5 error:(id*)arg6;
 - (BOOL)endSaveWithSuccess:(BOOL)arg1 newURL:(id*)arg2;
 - (id)init;
 - (id)initWithContext:(id)arg1;

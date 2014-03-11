@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIToolbarDelegate>, NSArray, UIColor, UIImageView, UIView, _UIBackdropView;
+@class <UIToolbarDelegate>, NSArray, NSString, UIColor, UIImageView, UIView, _UIBackdropView;
 
-@interface UIToolbar : UIView <_UIShadowedView, _UIBarPositioningInternal, UIBarPositioning> {
+@interface UIToolbar : UIView <_UIShadowedView, _UIBackdropViewGraphicsQualityChangeDelegate, _UIBarPositioningInternal, UIBarPositioning> {
     struct { 
         unsigned int barStyle : 3; 
         unsigned int mode : 2; 
@@ -16,6 +16,7 @@
         unsigned int hasCustomBackgroundView : 1; 
     _UIBackdropView *_adaptiveBackdrop;
     id _appearanceStorage;
+    NSString *_backdropViewLayerGroupName;
     UIImageView *_backgroundView;
     int _barPosition;
     UIColor *_barTintColor;
@@ -36,6 +37,7 @@
 @property(getter=_isLocked,setter=_setLocked:) BOOL _locked;
 @property(setter=_setShadowView:,retain) UIView * _shadowView;
 @property(setter=_setWantsLetterpressContent:) BOOL _wantsLetterpressContent;
+@property(getter=_backdropViewLayerGroupName,setter=_setBackdropViewLayerGroupName:,retain) NSString * backdropViewLayerGroupName;
 @property(readonly) int barPosition;
 @property int barStyle;
 @property(retain) UIColor * barTintColor;
@@ -52,9 +54,11 @@
 + (float)defaultSelectionModeHeight;
 + (Class)defaultTextButtonClass;
 
+- (id)_adaptiveBackdrop;
 - (void)_adjustButtonPressed:(id)arg1;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
+- (id)_backdropViewLayerGroupName;
 - (id)_backgroundView;
 - (int)_barPosition;
 - (void)_buttonBarFinishedAnimating;
@@ -95,6 +99,7 @@
 - (id)_repositionedItemsFromItems:(id)arg1 withBarButtonFrames:(id*)arg2 withHitRects:(id*)arg3 buttonIndexes:(id*)arg4 textButtonIndexes:(id*)arg5;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_setAdaptiveToolbarDisabled:(BOOL)arg1;
+- (void)_setBackdropViewLayerGroupName:(id)arg1;
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (void)_setBackgroundView:(id)arg1;
 - (void)_setBarPosition:(int)arg1;
@@ -117,11 +122,12 @@
 - (void)_updateItemsForNewFrame:(id)arg1;
 - (void)_updateOpacity;
 - (void)_updateScriptingInfo:(id)arg1 view:(id)arg2;
-- (void)_updateToolbarButtonsForInteractionTintColorChange;
 - (BOOL)_wantsLetterpressContent;
 - (void)addConstraint:(id)arg1;
 - (void)animateToolbarItemIndex:(unsigned int)arg1 duration:(double)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)animateWithDuration:(float)arg1 forButton:(int)arg2;
+- (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(int)arg2;
+- (id)backdropView:(id)arg1 willChangeToGraphicsQuality:(int)arg2;
 - (id)backgroundImageForToolbarPosition:(int)arg1 barMetrics:(int)arg2;
 - (int)barPosition;
 - (int)barStyle;
@@ -182,6 +188,5 @@
 - (void)showButtonGroup:(int)arg1 withDuration:(double)arg2;
 - (void)showButtons:(int*)arg1 withCount:(int)arg2 withDuration:(double)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)tintColorDidChange;
 
 @end

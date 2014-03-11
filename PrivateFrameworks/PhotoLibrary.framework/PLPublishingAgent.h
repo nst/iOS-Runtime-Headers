@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPublishingAgentDelegate>, NSData, NSMutableArray, NSString, PLVideoRemaker, UIViewController;
+@class <PLPublishingAgentDelegate>, NSData, NSMutableArray, NSString, PLVideoRemaker;
 
 @interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate, UIAlertViewDelegate> {
     unsigned int _remakingWasCancelled : 1;
@@ -29,7 +29,6 @@
     long long _normalizedCurrentValue;
     long long _normalizedMaxValue;
     BOOL _ownerIsCamera;
-    UIViewController *_parentNavigationController;
     float _percentComplete;
     float _progressMultiplier;
     PLVideoRemaker *_remaker;
@@ -100,7 +99,6 @@
 - (id)navigationController;
 - (BOOL)needsTrimming;
 - (BOOL)ownerIsCamera;
-- (id)parentNavigationController;
 - (float)percentComplete;
 - (void)presentModalSheetInViewController:(id)arg1;
 - (float)progressMultiplier;
@@ -140,5 +138,6 @@
 - (void)videoRemaker:(id)arg1 progressDidChange:(float)arg2;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
+- (void)willDismiss;
 
 @end

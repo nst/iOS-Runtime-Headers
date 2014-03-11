@@ -2,42 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAGradientLayer, UIColor, UIImage, UIImageView;
+@class NSArray, UIColor, UIImage, UIImageView;
 
 @interface UIProgressView : UIView <NSCoding> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     int _barStyle;
     BOOL _isAnimating;
-    } _previousBounds;
-    } _previousProgressBounds;
     float _progress;
-    CAGradientLayer *_progressGradientLayer;
+    NSArray *_progressColors;
     UIImage *_progressImage;
     UIColor *_progressTintColor;
     UIImageView *_progressView;
     int _progressViewStyle;
-    CAGradientLayer *_trackGradientLayer;
+    NSArray *_trackColors;
     UIImage *_trackImage;
     UIColor *_trackTintColor;
     UIImageView *_trackView;
-    BOOL _useArtwork;
 }
 
 @property float progress;
@@ -49,14 +28,19 @@
 
 + (int)_indexForStyle:(int)arg1 barStyle:(int)arg2;
 + (struct { id x1; id x2; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
++ (id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned int)arg3;
++ (id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
 - (id)_appropriateProgressImage;
 - (id)_appropriateTrackImage;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (id)_defaultTrackColorForCurrentStyle;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_progressColor;
+- (unsigned int)_roundedCornersForProgressForCurrentStyle;
+- (unsigned int)_roundedCornersForTrackForCurrentStyle;
 - (void)_setProgress:(float)arg1;
 - (void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned int)arg4;
 - (void)_setProgressColor:(id)arg1;
@@ -87,6 +71,7 @@
 - (void)setTrackImage:(id)arg1;
 - (void)setTrackTintColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)tintColorDidChange;
 - (id)trackImage;
 - (id)trackTintColor;
 

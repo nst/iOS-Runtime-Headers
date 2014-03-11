@@ -41,6 +41,7 @@
 - (BOOL)accessoryHasNMEASentencesAvailable;
 - (id)allPublicProtocolStrings;
 - (id)audioPorts;
+- (id)bonjourName;
 - (struct __CFAccessory { }*)cfAccessory;
 - (void*)cfAccessoryPortPropertyContext;
 - (int)classType;
@@ -58,8 +59,10 @@
 - (BOOL)getNMEASentence:(id*)arg1;
 - (id)getVehicleInfoData;
 - (id)hardwareRevision;
+- (BOOL)hasIPConnection;
 - (int)iPodOutOptionsMask;
 - (id)init;
+- (BOOL)isAvailableOverBonjour;
 - (BOOL)isConnected;
 - (int)locationSentenceTypesMask;
 - (id)macAddress;
@@ -73,14 +76,17 @@
 - (BOOL)sendEphemerisPointDataGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(unsigned short)arg5;
 - (BOOL)sendGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2;
 - (id)serialNumber;
+- (void)setBonjourName:(id)arg1;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
 - (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
 - (void)setCfAccessoryPortPropertyContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEqIndex:(unsigned int)arg1;
 - (void)setEqNames:(id)arg1;
+- (void)setHasIPConnection:(BOOL)arg1;
 - (void)setIAPTimeSyncParams:(id)arg1;
 - (void)setIPodOutOptionsMask:(int)arg1;
+- (void)setIsAvailableOverBonjour:(BOOL)arg1;
 - (void)setLocationSentenceTypesMask:(int)arg1;
 - (BOOL)setNMEASentencesToFilter:(id)arg1;
 - (void)setVehicleInfoSupportedTypes:(id)arg1;

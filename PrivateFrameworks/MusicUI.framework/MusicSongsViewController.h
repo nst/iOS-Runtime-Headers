@@ -6,9 +6,10 @@
     BOOL _hasShuffleActionRow;
 }
 
-- (int)numberOfPrefixActionRowsInTableView:(id)arg1;
-- (void)reloadData;
++ (id)actionCellConfigurationClasses;
++ (BOOL)shouldPushNowPlayingOnSelection;
+
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (Class)tableView:(id)arg1 prefixActionCellConfigurationAtIndex:(int)arg2;
 
 @end

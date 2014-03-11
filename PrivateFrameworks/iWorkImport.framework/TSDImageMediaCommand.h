@@ -11,6 +11,8 @@
     TSDImageInfo *mInfo;
     TSPData *mNewImageData;
     TSPData *mNewOriginalImageData;
+    TSPData *mOldAdjustedImageData;
+    TSPData *mOldEnhancedImageData;
     TSDImageAdjustments *mOldImageAdjustments;
     TSPData *mOldImageData;
     } mOldNaturalSize;

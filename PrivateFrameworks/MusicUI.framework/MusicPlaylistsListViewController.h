@@ -5,7 +5,8 @@
 @interface MusicPlaylistsListViewController : MusicPlaylistsViewController {
 }
 
-- (int)numberOfPrefixActionRowsInTableView:(id)arg1;
-- (Class)tableView:(id)arg1 prefixActionCellConfigurationAtIndex:(int)arg2;
++ (id)actionCellConfigurationClasses;
+
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 
 @end

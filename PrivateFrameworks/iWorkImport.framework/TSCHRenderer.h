@@ -28,8 +28,8 @@
 - (void)dealloc;
 - (struct CGColor { }*)debugColor;
 - (BOOL)debugLayout;
-- (void)drawErrorBarsInContext:(struct CGContext { }*)arg1 chartVertical:(BOOL)arg2;
-- (void)drawTrendLinesInContext:(struct CGContext { }*)arg1 chartVertical:(BOOL)arg2;
+- (void)drawErrorBarsInContext:(struct CGContext { }*)arg1 chartVertical:(BOOL)arg2 elementRenderClass:(Class)arg3;
+- (void)drawTrendLinesInContext:(struct CGContext { }*)arg1 chartVertical:(BOOL)arg2 elementRenderClass:(Class)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForEditingTextForSelectionPath:(id)arg1;
 - (id)initWithChartRep:(id)arg1 layoutItem:(id)arg2;
 - (BOOL)isCompositeRenderer;

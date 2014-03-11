@@ -10,6 +10,7 @@
         float left; 
         float bottom; 
         float right; 
+    NSString *_backButtonTitle;
     NSMutableArray *_childPages;
     UIView *_containerView;
     float _customMargin;
@@ -42,6 +43,7 @@
 }
 
 @property(readonly) NSArray * accessoryViews;
+@property(copy) NSString * backButtonTitle;
 @property(readonly) NSArray * buttons;
 @property(readonly) NSArray * childPages;
 @property(readonly) UIView * containerView;
@@ -91,6 +93,7 @@
 - (void)_updateToolbar;
 - (void)_updateWithCompletedChild:(id)arg1;
 - (id)accessoryViews;
+- (id)backButtonTitle;
 - (id)buttons;
 - (id)childPages;
 - (id)containerView;
@@ -122,6 +125,7 @@
 - (id)rightNavigationBarButton;
 - (id)rightToolbarButton;
 - (id)rightToolbarItem;
+- (void)setBackButtonTitle:(id)arg1;
 - (void)setButton:(id)arg1 enabled:(BOOL)arg2;
 - (void)setCustomMargin:(float)arg1;
 - (void)setHasToolbar;

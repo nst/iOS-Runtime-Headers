@@ -15,6 +15,7 @@
 @property(getter=isConfirmedDialogPhase,readonly) BOOL confirmedDialogPhase;
 @property(getter=isErrorDialogPhase,readonly) BOOL errorDialogPhase;
 @property(getter=isExpository,readonly) BOOL expository;
+@property(getter=isReflectionDialogPhase,readonly) BOOL reflectionDialogPhase;
 @property(getter=isTemporary,readonly) BOOL temporary;
 @property(getter=_type,readonly) int type;
 @property(getter=isUserRequestDialogPhase,readonly) BOOL userRequestDialogPhase;
@@ -49,6 +50,7 @@
 - (BOOL)isEqualToDialogPhase:(id)arg1;
 - (BOOL)isErrorDialogPhase;
 - (BOOL)isExpository;
+- (BOOL)isReflectionDialogPhase;
 - (BOOL)isTemporary;
 - (BOOL)isUserRequestDialogPhase;
 - (BOOL)replacesPreviousSnippetContents;

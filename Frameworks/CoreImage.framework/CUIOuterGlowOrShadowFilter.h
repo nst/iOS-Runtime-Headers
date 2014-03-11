@@ -10,6 +10,8 @@
     CIVector *inputOffset;
     NSNumber *inputRadius;
     NSNumber *inputRange;
+    NSNumber *inputSize;
+    NSNumber *inputSpread;
 }
 
 @property(retain) CIColor * inputColor;
@@ -17,6 +19,8 @@
 @property(retain) CIVector * inputOffset;
 @property(retain) NSNumber * inputRadius;
 @property(retain) NSNumber * inputRange;
+@property(retain) NSNumber * inputSize;
+@property(retain) NSNumber * inputSpread;
 
 + (id)customAttributes;
 
@@ -26,6 +30,8 @@
 - (id)inputOffset;
 - (id)inputRadius;
 - (id)inputRange;
+- (id)inputSize;
+- (id)inputSpread;
 - (id)outputImage;
 - (void)setDefaults;
 - (void)setInputColor:(id)arg1;
@@ -33,5 +39,7 @@
 - (void)setInputOffset:(id)arg1;
 - (void)setInputRadius:(id)arg1;
 - (void)setInputRange:(id)arg1;
+- (void)setInputSize:(id)arg1;
+- (void)setInputSpread:(id)arg1;
 
 @end

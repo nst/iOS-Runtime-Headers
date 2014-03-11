@@ -9,6 +9,7 @@
     UIImageView *_explicitImageView;
     BOOL _explicitTrack;
     BOOL _hideArtworkImage;
+    UILabel *_iAdLabel;
     MPImageCache *_imageCache;
     MPImageCacheRequest *_imageRequest;
     UIView *_separatorView;
@@ -24,6 +25,7 @@
 @property BOOL hideArtworkImage;
 @property(retain) MPImageCache * imageCache;
 @property(retain) MPImageCacheRequest * imageRequest;
+@property BOOL isAd;
 @property(copy) NSString * title;
 @property(readonly) RUTrackDownloadView * trackDownloadView;
 
@@ -36,6 +38,7 @@
 - (id)imageCache;
 - (id)imageRequest;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isAd;
 - (BOOL)isExplicitTrack;
 - (void)layoutSubviews;
 - (void)setArtist:(id)arg1;
@@ -44,6 +47,7 @@
 - (void)setHideArtworkImage:(BOOL)arg1;
 - (void)setImageCache:(id)arg1;
 - (void)setImageRequest:(id)arg1;
+- (void)setIsAd:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)trackDownloadView;

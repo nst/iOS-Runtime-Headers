@@ -53,6 +53,7 @@
 - (void)showPageWithLink:(id)arg1;
 - (void)showProductViewControllerWithItem:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
+- (void)willHideInContext:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

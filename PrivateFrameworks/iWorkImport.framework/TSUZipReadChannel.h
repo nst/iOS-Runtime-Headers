@@ -14,7 +14,7 @@
 - (void)close;
 - (void)handleFailureWithQueue:(id)arg1 handler:(id)arg2 error:(id)arg3;
 - (id)initWithEntry:(id)arg1 archiveReadChannel:(id)arg2;
-- (void)processData:(id)arg1 isDone:(BOOL)arg2 queue:(id)arg3 handler:(id)arg4;
+- (BOOL)processData:(id)arg1 CRC:(unsigned int*)arg2 isDone:(BOOL)arg3 queue:(id)arg4 handler:(id)arg5;
 - (BOOL)readFileHeaderFromData:(id)arg1 headerLength:(unsigned int*)arg2;
 - (void)readWithHeaderLength:(unsigned long)arg1 queue:(id)arg2 handler:(id)arg3;
 - (void)readWithQueue:(id)arg1 handler:(id)arg2;

@@ -142,6 +142,7 @@
 - (void)editorDidDeleteEvent:(id)arg1;
 - (void)editorDidSaveEvent:(id)arg1;
 - (void)endExternallyControlledScrolling;
+- (BOOL)eventEditorPopoverActiveWhileDraggingForEventGestureController:(id)arg1;
 - (void)eventGestureController:(id)arg1 addViewToScroller:(id)arg2 isAllDay:(BOOL)arg3;
 - (void)eventGestureController:(id)arg1 adjustDraggingViewForAllDay:(BOOL)arg2;
 - (double)eventGestureController:(id)arg1 dateAtPoint:(struct CGPoint { float x1; float x2; })arg2;

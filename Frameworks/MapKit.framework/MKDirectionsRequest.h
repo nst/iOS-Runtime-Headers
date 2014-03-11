@@ -9,6 +9,7 @@
     NSDate *_departureDate;
     MKMapItem *_destination;
     BOOL _includeBasicRoutePoints;
+    BOOL _includeDistanceInETA;
     BOOL _includeEntryPoints;
     BOOL _includeTrafficIncidents;
     BOOL _includeTravelTimes;
@@ -25,13 +26,16 @@
 @property(readonly) BOOL _includeTypicalRouteDuration;
 @property(readonly) BOOL _includeZilchRoutePoints;
 @property(retain) MKMapItem * destination;
+@property(getter=_includeDistanceInETA,setter=_setIncludeDistanceInETA:) BOOL includeDistanceInETA;
 @property(retain) MKMapItem * source;
 
 + (BOOL)isDirectionsRequestURL:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_arrivalDate;
 - (id)_departureDate;
 - (BOOL)_includeBasicRoutePoints;
+- (BOOL)_includeDistanceInETA;
 - (BOOL)_includeEntryPoints;
 - (BOOL)_includeTrafficIncidents;
 - (BOOL)_includeTravelTimes;
@@ -43,10 +47,10 @@
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 arrivalDate:(id)arg4;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 departureDate:(id)arg4 includeTravelTimes:(BOOL)arg5 includeTrafficIncidents:(BOOL)arg6 includeEntryPoints:(BOOL)arg7 includeRoutePoints:(BOOL)arg8;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 departureDate:(id)arg4;
+- (void)_setIncludeDistanceInETA:(BOOL)arg1;
 - (unsigned int)_transportType;
 - (id)arrivalDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)departureDate;
 - (id)description;
 - (id)destination;

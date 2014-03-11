@@ -33,7 +33,6 @@
 - (id)_dialTelephonyCall:(id)arg1 callID:(int)arg2;
 - (void)_handleCallControlFailure:(id)arg1;
 - (void)_handleCallEnded:(id)arg1 withReason:(unsigned int)arg2 error:(int)arg3;
-- (void)_invalidatePrivateSetting;
 - (BOOL)_onlySupportsCallModelForService:(int)arg1;
 - (void)_postConferenceParticipantsChanged;
 - (void)_postDisplayedCallsChanged;
@@ -64,6 +63,7 @@
 - (id)dialEmergency:(id)arg1;
 - (id)dialVoicemail;
 - (void)disconnectAllCalls;
+- (void)disconnectCall:(id)arg1 withReason:(int)arg2;
 - (void)disconnectCall:(id)arg1;
 - (void)disconnectCurrentCallAndActivateHeld;
 - (id)displayedCall;
@@ -102,6 +102,7 @@
 - (BOOL)isMuted;
 - (BOOL)isSwappable;
 - (BOOL)isTTY;
+- (BOOL)isTakingCallsPrivateAllowed;
 - (BOOL)justAnIncomingCallExists;
 - (void)notifyFaceTimeAudioCallDealloced;
 - (void)notifyTelephonyCallDealloced;

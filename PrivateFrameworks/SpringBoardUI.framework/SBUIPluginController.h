@@ -13,21 +13,25 @@
 @property(getter=isVisible) BOOL visible;
 
 - (void)cancelPendingActivationEvent:(int)arg1;
-- (BOOL)handleActivationEvent:(int)arg1 context:(void*)arg2;
+- (BOOL)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void*)arg3;
 - (void)handleBluetoothDismissal;
+- (void)handlePreheatCommand;
+- (BOOL)handledButtonDownEventFromSource:(int)arg1;
+- (BOOL)handledButtonTapFromSource:(int)arg1;
+- (BOOL)handledButtonUpEventFromSource:(int)arg1;
 - (BOOL)handledMenuButtonDownEvent;
 - (BOOL)handledMenuButtonTap;
+- (BOOL)handledMenuButtonUpEvent;
 - (BOOL)handledPasscodeUnlockWithCompletion:(id)arg1;
 - (BOOL)handledWiredMicButtonTap;
 - (id)host;
 - (BOOL)isVisible;
-- (void)noteInterruption;
-- (void)prepareForActivationEvent:(int)arg1 afterInterval:(double)arg2;
+- (void)prepareForActivationEvent:(int)arg1 eventSource:(int)arg2 afterInterval:(double)arg3;
 - (void)registeredWithHost;
 - (void)setHost:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (BOOL)supportedAndEnabled;
 - (id)viewControllerForActivationContext:(id)arg1;
-- (BOOL)wantsActivationEvent:(int)arg1 interval:(double*)arg2;
+- (BOOL)wantsActivationEvent:(int)arg1 eventSource:(int)arg2 interval:(double*)arg3;
 
 @end

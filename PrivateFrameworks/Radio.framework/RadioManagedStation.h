@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSData, NSDictionary, NSHashTable, NSString, NSURL;
+@class NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @interface RadioManagedStation : NSManagedObject {
 }
 
 @property(retain) NSData * adData;
 @property long long adamID;
-@property(copy) NSHashTable * additionalReferencedTrackIDs;
 @property(copy) NSURL * artworkURL;
 @property(copy) NSData * artworkURLData;
 @property(copy) NSString * coreSeedName;
-@property long long currentPlayingTrackID;
-@property double currentPlayingTrackTime;
 @property(copy) NSDictionary * debugDictionary;
 @property(readonly) NSDictionary * dictionaryRepresentation;
 @property BOOL editEnabled;
@@ -22,13 +19,13 @@
 @property(getter=isFeatured) BOOL featured;
 @property(getter=isGatewayVideoAdEnabled) BOOL gatewayVideoAdEnabled;
 @property unsigned int impressionThreshold;
+@property BOOL isExplicit;
 @property BOOL likesEnabled;
 @property(copy) NSString * name;
-@property(copy) NSArray * orderedTrackIDsForPlayback;
-@property(copy) NSArray * orderedTracksForPlayback;
 @property long long persistentID;
 @property(getter=isPremiumPlacement) BOOL premiumPlacement;
 @property(getter=isPreview,readonly) BOOL preview;
+@property(getter=isPreviewOnly) BOOL previewOnly;
 @property(retain) NSArray * seedTracks;
 @property(copy) NSString * shareToken;
 @property(getter=isShared) BOOL shared;
@@ -47,63 +44,52 @@
 @property(retain) NSURL * streamURL;
 @property(getter=isSubscribed) BOOL subscribed;
 @property int subscriberCount;
-@property(readonly) NSArray * trackIDsForPlayback;
-@property(copy) NSDictionary * trackIDsForPlaybackByExpirationDate;
-@property(readonly) NSArray * tracksForPlayback;
-@property(copy) NSDictionary * tracksForPlaybackByExpirationDate;
-@property BOOL tracksForPlaybackNeedRefresh;
+@property(copy) NSArray * trackPlaybackDescriptorQueue;
 @property BOOL virtualPlayEnabled;
 
 + (id)defaultPropertiesToFetch;
-+ (id)unexpiredTrackIDsForPlaybackByExpirationUsingBaseDictionary:(id)arg1 removingTrackID:(id)arg2;
-+ (id)unexpiredTrackIDsForPlaybackUsingOrderedTrackIDs:(id)arg1 trackIDsByExpirationDate:(id)arg2;
 
 - (id)adData;
 - (long long)adamID;
-- (id)additionalReferencedTrackIDs;
+- (id)additionalReferencedTrackDescriptors;
 - (id)artworkURL;
 - (id)artworkURLData;
 - (id)coreSeedName;
-- (long long)currentPlayingTrackID;
-- (double)currentPlayingTrackTime;
 - (id)debugDictionary;
 - (id)dictionaryRepresentation;
 - (BOOL)editEnabled;
 - (id)editableFields;
 - (id)feedbackDictionaryRepresentation;
 - (unsigned int)impressionThreshold;
+- (BOOL)isExplicit;
 - (BOOL)isFeatured;
 - (BOOL)isGatewayVideoAdEnabled;
 - (BOOL)isPremiumPlacement;
 - (BOOL)isPreview;
+- (BOOL)isPreviewOnly;
 - (BOOL)isShared;
 - (BOOL)isSharingEnabled;
 - (BOOL)isSponsored;
 - (BOOL)isSubscribed;
 - (BOOL)likesEnabled;
-- (id)orderedTrackIDsForPlayback;
-- (id)orderedTracksForPlayback;
 - (long long)persistentID;
 - (id)seedTracks;
 - (void)setAdData:(id)arg1;
 - (void)setAdamID:(long long)arg1;
-- (void)setAdditionalReferencedTrackIDs:(id)arg1;
 - (void)setArtworkURL:(id)arg1;
 - (void)setArtworkURLData:(id)arg1;
 - (void)setCoreSeedName:(id)arg1;
-- (void)setCurrentPlayingTrackID:(long long)arg1;
-- (void)setCurrentPlayingTrackTime:(double)arg1;
 - (void)setDebugDictionary:(id)arg1;
 - (void)setEditEnabled:(BOOL)arg1;
 - (void)setEditableFields:(id)arg1;
 - (void)setFeatured:(BOOL)arg1;
 - (void)setGatewayVideoAdEnabled:(BOOL)arg1;
 - (void)setImpressionThreshold:(unsigned int)arg1;
+- (void)setIsExplicit:(BOOL)arg1;
 - (void)setLikesEnabled:(BOOL)arg1;
-- (void)setOrderedTrackIDsForPlayback:(id)arg1;
-- (void)setOrderedTracksForPlayback:(id)arg1;
 - (void)setPersistentID:(long long)arg1;
 - (void)setPremiumPlacement:(BOOL)arg1;
+- (void)setPreviewOnly:(BOOL)arg1;
 - (void)setSeedTracks:(id)arg1;
 - (void)setShareToken:(id)arg1;
 - (void)setShared:(BOOL)arg1;
@@ -124,9 +110,7 @@
 - (void)setStreamURL:(id)arg1;
 - (void)setSubscribed:(BOOL)arg1;
 - (void)setSubscriberCount:(int)arg1;
-- (void)setTrackIDsForPlaybackByExpirationDate:(id)arg1;
-- (void)setTracksForPlaybackByExpirationDate:(id)arg1;
-- (void)setTracksForPlaybackNeedRefresh:(BOOL)arg1;
+- (void)setTrackPlaybackDescriptorQueue:(id)arg1;
 - (void)setVirtualPlayEnabled:(BOOL)arg1;
 - (id)shareToken;
 - (BOOL)skipEnabled;
@@ -143,11 +127,7 @@
 - (id)streamKeyURL;
 - (id)streamURL;
 - (int)subscriberCount;
-- (id)trackIDsForPlayback;
-- (id)trackIDsForPlaybackByExpirationDate;
-- (id)tracksForPlayback;
-- (id)tracksForPlaybackByExpirationDate;
-- (BOOL)tracksForPlaybackNeedRefresh;
+- (id)trackPlaybackDescriptorQueue;
 - (BOOL)virtualPlayEnabled;
 
 @end

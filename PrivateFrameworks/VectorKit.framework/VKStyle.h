@@ -8,8 +8,7 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    struct { unsigned int x1; int x2; int *x3; unsigned int x4; } *_attributes;
-    unsigned int _attributesCount;
+    NSArray *_attributes;
     VKBuildingDrawStyle *_buildingStyle;
     VKPStyleContents *_contents;
     NSData *_contentsData;
@@ -46,8 +45,7 @@
 - (void)_populateStyles:(unsigned int)arg1;
 - (void)_setupPropertiesForStyleMask:(unsigned int)arg1;
 - (void)applyStyle:(id)arg1 to:(id)arg2 inheritance:(id)arg3 zoom:(float)arg4;
-- (struct { unsigned int x1; int x2; int *x3; unsigned int x4; }*)attributes;
-- (unsigned int)attributesCount;
+- (id)attributes;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })basicRoadColor;
 - (float)blendingFactor;
 - (id)buildingStyle;
@@ -65,7 +63,6 @@
 - (unsigned int)inheritsCount;
 - (id)initWithStyle:(id)arg1 inheritance:(id)arg2 globals:(id)arg3 stylesheet:(id)arg4;
 - (BOOL)isDrawStyleVisibleAtLOD:(unsigned int)arg1;
-- (BOOL)isForMapDisplayStyle:(int)arg1 exclusively:(BOOL)arg2;
 - (id)labelStyle;
 - (id)lineStyle;
 - (id)name;
@@ -74,8 +71,7 @@
 - (id)puckStyle;
 - (id)roadStyle;
 - (id)routeStyle;
-- (unsigned int)scoreForAttributes:(id)arg1 vectorType:(int)arg2 mapDisplayStyle:(int)arg3 iconTappable:(BOOL)arg4 locale:(id)arg5;
-- (unsigned int)scoreForStyleAttributes:(struct { unsigned int x1; int x2; int *x3; unsigned int x4; }*)arg1 count:(int)arg2;
+- (unsigned int)scoreForStyleAttributes:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setStylesheet:(id)arg1;
 - (void)setVariant:(id)arg1;

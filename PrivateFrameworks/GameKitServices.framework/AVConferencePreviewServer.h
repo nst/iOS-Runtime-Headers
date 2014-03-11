@@ -34,7 +34,6 @@
     int encodedFrameCount;
     double falteredRenderingtimeStamp;
     BOOL firstPreviewFrame;
-    NSMutableArray *inactiveConferences;
     struct _CAImageQueue { } *localCAImageQueue;
     struct _CAImageQueue { } *localCAImageQueueBack;
     } localExpectedLandscapeAspectRatio;

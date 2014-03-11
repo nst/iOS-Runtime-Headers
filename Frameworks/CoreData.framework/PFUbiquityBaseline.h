@@ -2,15 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSDictionary, NSManagedObjectModel, NSMutableDictionary, NSPersistentStore, NSString, PFUbiquityBaselineMetadata, PFUbiquityLocation, _PFZipFileArchive;
 
 @interface PFUbiquityBaseline : PFUbiquitySafeSaveFile {
-     /* Encoded args for previous method: v16@0:4D8 */
-     /* Encoded args for previous method: D8@0:4 */
     _PFZipFileArchive *_baselineArchive;
     PFUbiquityLocation *_baselineStagingLocation;
     PFUbiquityBaselineMetadata *_metadata;
@@ -33,23 +27,16 @@
 @property(readonly) NSDictionary * storeFilenameToData;
 @property(readonly) NSString * storeName;
 
-+ (BOOL)canRollBaselineForStoreMetadata:(id)arg1 withStack:(id)arg2 andManagedObjectModel:(id)arg3 error:(id*)arg4;
 + (BOOL)checkPeerReceiptsUnderRootLocation:(id)arg1 forAgreementWithLocalPeerID:(id)arg2 storeName:(id)arg3 modelVersionHash:(id)arg4 error:(id*)arg5;
 + (id)createArchiveWithModel:(id)arg1 metadata:(id)arg2 storeFilenameToData:(id)arg3 storeFilename:(id)arg4 error:(id*)arg5;
-+ (id)createBaselineGCModelForStoreName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3;
-+ (id)createBaselineOptimizedModelForStoreName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3;
-+ (id)createModelFromBaselineModelWithModelVersionHash:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
++ (id)createBaselineGCModelForStoreName:(id)arg1 peerID:(id)arg2 modelVersionHash:(id)arg3 andUbiquityRootLocation:(id)arg4;
++ (id)createBaselineOptimizedModelForStoreName:(id)arg1 peerID:(id)arg2 modelVersionHash:(id)arg3 andUbiquityRootLocation:(id)arg4;
++ (id)createModelFromBaselineModelWithModelVersionHash:(id)arg1 peerID:(id)arg2 storeName:(id)arg3 andUbiquityRootLocation:(id)arg4;
 + (id)createStringOfContentsOfBaselineFile:(id)arg1;
-+ (BOOL)enoughTransactionsHavePassedToRollBaseline:(id)arg1 withLocalPeerID:(id)arg2 error:(id*)arg3;
 + (BOOL)isPeerReceiptTooOld:(id)arg1;
-+ (BOOL)logsConsumeEnoughDiskSpaceToRollBaseline:(id)arg1 withLocalPeerID:(id)arg2 andStoreURL:(id)arg3 error:(id*)arg4;
 + (id)metadataFromBaselineArchive:(id)arg1;
-+ (id)metadataFromCurrentBaselineForStoreWithName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3 withError:(id*)arg4;
-+ (unsigned int)numRequiredTransactionsForBaselineRoll;
++ (id)metadataFromCurrentBaselineForStoreWithName:(id)arg1 peerID:(id)arg2 modelVersionHash:(id)arg3 andUbiquityRootLocation:(id)arg4 withError:(id*)arg5;
 + (BOOL)removePeerSpecificIdentifiersFromStore:(id)arg1 withLocalPeerID:(id)arg2;
-+ (/* Warning: Unrecognized filer type: 'D' using 'void*' */ void*)requiredFractionOfDiskSpaceUsedForLogs;
-+ (void)setNumRequiredTransactionsForBaselineRoll:(unsigned int)arg1;
-+ (void)setRequiredFractionOfDiskSpaceUsedForLogs:(/* Warning: Unrecognized filer type: 'D' using 'void*' */ void*)arg1;
 
 - (id)_createPersistentStoreCoordinatorForCurrentBaseline:(BOOL)arg1 error:(id*)arg2;
 - (id)baselineArchive;

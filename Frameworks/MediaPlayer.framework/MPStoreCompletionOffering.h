@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, MPStoreCollectionCompletionOffering, MPStoreOfferMediaItemCollection, NSDictionary, NSURL;
+@class MPMediaQuery, MPStoreCollectionCompletionOffering, MPStoreCompletionOfferResponse, MPStoreOfferMediaItemCollection, NSURL;
 
 @interface MPStoreCompletionOffering : NSObject <NSCopying> {
     MPStoreCollectionCompletionOffering *_collectionWithCompletionItemsOffering;
     MPMediaQuery *_localItemsQuery;
     int _preferredStoreOfferVariant;
     int _presentationStyle;
-    NSDictionary *_responseCollectionDictionary;
+    MPStoreCompletionOfferResponse *_storeOfferResponse;
     NSURL *_storeURL;
 }
 
@@ -19,7 +19,7 @@
 @property(readonly) NSURL * storeURL;
 
 + (int)defaultOfferVariant;
-+ (id)offeringWithCollectionResponseDictionary:(id)arg1 localItemsQuery:(id)arg2;
++ (id)offeringWithResponse:(id)arg1 localItemsQuery:(id)arg2;
 + (void)setDefaultOfferVariant:(int)arg1;
 
 - (void).cxx_destruct;
@@ -27,7 +27,7 @@
 - (id)collectionWithCompletionItems;
 - (id)copyByInvalidatingCalculatedContent;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithCollectionResponseDictionary:(id)arg1 localItemsQuery:(id)arg2;
+- (id)initWithResponse:(id)arg1 localItemsQuery:(id)arg2;
 - (int)preferredStoreOfferVariant;
 - (int)presentationStyle;
 - (void)setPreferredStoreOfferVariant:(int)arg1;

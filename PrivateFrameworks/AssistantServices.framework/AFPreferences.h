@@ -36,10 +36,11 @@
 - (BOOL)disableAssistantWhilePasscodeLocked;
 - (BOOL)fileLoggingIsEnabled;
 - (int)handsFreeMode;
+- (BOOL)ignoreServerManualEndpointingThreshold;
 - (id)init;
 - (id)languageCode;
 - (id)languagesMissingBirthCertificates;
-- (BOOL)manualEndpointingEnabled;
+- (id)manualEndpointingThreshold;
 - (id)outputVoice;
 - (void)setAssistantIsEnabled:(BOOL)arg1;
 - (void)setBirthCertificateData:(id)arg1 forLanguageCode:(id)arg2;
@@ -49,13 +50,15 @@
 - (void)setDisableAssistantWhilePasscodeLocked:(BOOL)arg1;
 - (void)setFileLoggingIsEnabled:(BOOL)arg1;
 - (void)setHandsFreeMode:(int)arg1;
+- (void)setIgnoreServerManualEndpointingThreshold:(BOOL)arg1;
 - (void)setLanguageCode:(id)arg1;
-- (void)setManualEndpointingEnabled:(BOOL)arg1;
+- (void)setManualEndpointingThreshold:(id)arg1;
 - (void)setOutputVoice:(id)arg1;
 - (void)setShouldShowReadyForLanguageCode:(id)arg1;
 - (void)setValue:(id)arg1 forSessionContextKey:(id)arg2;
 - (BOOL)shouldShowReadyForLanguageCode:(id)arg1;
 - (void)synchronize;
+- (void)synchronizeVoiceServicesLanguageCode;
 - (id)valueForSessionContextPreferenceKey:(id)arg1;
 - (id)whitelistedLanguages;
 

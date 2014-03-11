@@ -90,10 +90,10 @@
 - (id)initWithAnimationContext:(id)arg1;
 - (void)p_drawParticleSystemsWithPercent:(float)arg1 sparkles:(BOOL)arg2 particleSystemOpacity:(float)arg3;
 - (void)p_setupBlurTexturesWithContext:(id)arg1;
-- (void)p_setupMVPMatrices;
+- (void)p_setupMVPMatricesWithContext:(id)arg1;
 - (void)p_setupParticleSystemWithImage:(id)arg1 build:(id)arg2;
 - (void)p_setupParticleTexture;
-- (void)p_setupShaders;
+- (void)p_setupShadersWithContext:(id)arg1;
 - (void)renderFrameWithContext:(id)arg1;
 - (void)teardown;
 

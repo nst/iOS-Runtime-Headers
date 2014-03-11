@@ -9,11 +9,9 @@
 @class KNMotionBlurWrapper, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, TSDGLDataBuffer, TSDGLShader, TSDMagicMoveTextureZOrderer;
 
 @interface KNMagicMoveImpliedMotionPath : KNAnimationEffect <KNMagicMoveTransitionAnimator, KNMagicMoveFrameAnimator, KNAnimationPluginObsoleteNames, KNAnimationPluginArchiving> {
+    NSDictionary *_animationCacheDict;
     NSMutableDictionary *_animationDict;
     TSDGLDataBuffer *_dataBuffer;
-    NSDictionary *_hasContentsAnimationDict;
-    NSDictionary *_hasHiddenAnimationDict;
-    NSDictionary *_hasOpacityAnimationDict;
     TSDGLShader *_magicMoveBlendShader;
     TSDGLShader *_magicMoveShader;
     TSDMagicMoveTextureZOrderer *_mmTextureZOrderer;
@@ -37,7 +35,6 @@
 + (BOOL)isCharacterAwareEffect;
 + (id)localizedMenuString:(int)arg1;
 + (id)obsoleteAnimationNames;
-+ (int)rendererTypeForCapabilities:(id)arg1;
 + (BOOL)requiresBullets;
 + (BOOL)requiresMagicMoveTextures;
 + (BOOL)requiresPerspectiveTransform;
@@ -51,8 +48,8 @@
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
 - (void)p_addDebugAnimationsToArray:(id)arg1 forType:(int)arg2 duration:(double)arg3;
+- (id)p_magicMoveShaderWithShouldBlendIncoming:(BOOL)arg1 enableDebugColors:(BOOL)arg2;
 - (void)p_setAnimationGroup:(id)arg1 forLayer:(id)arg2 inDictionary:(id)arg3;
-- (id)p_setupShaderWithShouldBlendIncoming:(BOOL)arg1 enableDebugColors:(BOOL)arg2;
 - (id)p_texturesBySortingArray:(id)arg1;
 - (void)renderFrameWithContext:(id)arg1;
 

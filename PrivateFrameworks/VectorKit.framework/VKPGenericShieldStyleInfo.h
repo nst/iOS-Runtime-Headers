@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPGenericShieldStyleInfo : PBCodable {
+@interface VKPGenericShieldStyleInfo : PBCodable <NSCopying> {
     struct { 
         float *list; 
         unsigned int count; 
@@ -52,6 +52,7 @@
 - (unsigned int)borderColor;
 - (void)clearTextDropShadowOffsets;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

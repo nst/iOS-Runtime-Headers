@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSConditionLock, NSDate, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, TSCENamedReferenceManager, TSKAccessController, TSKChangeGroup, TSKChangeNotifier;
+@class NSConditionLock, NSDate, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, TSCENamedReferenceManager, TSKAccessController, TSKChangeGroup, TSKChangeNotifier;
 
 @interface TSCECalculationEngine : TSPObject {
     struct hash_set<TSCECellReference, TSCECellReferenceHash, TSCECellReferenceEqual, std::__1::allocator<TSCECellReference> > { 
@@ -49,6 +49,7 @@
     unsigned int mNumberOfFormulas;
     TSKChangeGroup *mPendingChangesForAsyncNotification;
     } mPendingDirtyCells;
+    NSString *mPreviousLocaleIdentifier;
     NSObject<OS_dispatch_group> *mRecalcDispatchGroup;
     int mRecalcDispatchGroupSize;
     NSConditionLock *mRecalculationInProgressConditionLock;
@@ -94,12 +95,14 @@
 - (void)addFormula:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1 inOwner:(struct __CFUUID { }*)arg2 precedentIterator:(int (*)())arg3 userData:(void*)arg4 hasRandomVolatileFunctions:(BOOL*)arg5;
 - (id)allCellDependenciesAsString;
 - (BOOL)allCellsAreClean;
+- (void)allFunctionsAreDirty;
 - (id)allOwnerIDs;
 - (BOOL)allOwnersRegistered;
 - (id)allSpanningDependenciesAsString;
 - (id)allWholeOwnerDependenciesAsString;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
+- (void)assertAllDirtyCellsAreOnLeafStack;
 - (void)assertDirtyPrecedentsCountConsistency;
 - (void)beginBatchingDirtyCellMarking;
 - (void)beginSuppressingWillModifyCalls;
@@ -125,8 +128,8 @@
 - (id)documentRoot;
 - (void)endBatchingDirtyCellMarking;
 - (void)endSuppressingWillModifyCalls;
-- (id)escapedStringForRangeReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 isRangeWithFunction:(BOOL)arg4;
-- (id)escapedStringForRangeReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 hostTableID:(struct __CFUUID { }*)arg2 stickyBits:(unsigned char)arg3 isRangeWithFunction:(BOOL)arg4;
+- (id)escapedStringForRangeReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 isRangeWithFunction:(BOOL)arg4 forceEscaping:(BOOL)arg5;
+- (id)escapedStringForRangeReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 hostTableID:(struct __CFUUID { }*)arg2 stickyBits:(unsigned char)arg3 isRangeWithFunction:(BOOL)arg4 forceEscaping:(BOOL)arg5;
 - (void)evaluateNextFormula;
 - (void)executeBlockWhileCalculationEngineIsNotWriting:(id)arg1;
 - (int)forwardRegisterOwnerWithOwnerID:(struct __CFUUID { }*)arg1 legacyGlobalID:(id)arg2;
@@ -138,6 +141,7 @@
 - (id)initWithContext:(id)arg1;
 - (void)invalidateAfterRecalc;
 - (BOOL)isCellReferenceDirty:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; }*)arg1;
+- (void)localeVolatileFunctionsAreDirty;
 - (void)locationVolatileFunctionsAreDirty;
 - (id)namedReferenceManager;
 - (unsigned int)numberOfCellsWithFormulas;
@@ -149,15 +153,16 @@
 - (void)p_recalcOneCellHoldingReadLock:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1 formulaOwner:(id)arg2 hasExistingCalculatedPrecedents:(BOOL)arg3 isInACycle:(BOOL)arg4;
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })p_refillRecalcQueue;
 - (void)p_removeApplicationNotification;
-- (id)p_stringForRangeReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 hostTableID:(struct __CFUUID { }*)arg2 contextSheetName:(id)arg3 stickyBits:(unsigned char)arg4 isRangeWithFunction:(BOOL)arg5 quoteComponents:(BOOL)arg6;
+- (id)p_stringForRangeReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 hostTableID:(struct __CFUUID { }*)arg2 contextSheetName:(id)arg3 stickyBits:(unsigned char)arg4 isRangeWithFunction:(BOOL)arg5 quoteComponents:(BOOL)arg6 forceEscaping:(BOOL)arg7;
 - (id)packageLocator;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })parseStringAsGeometricReferenceComponent:(id)arg1 inResolver:(id)arg2 outStickyBits:(char *)arg3 gettingReferencesMatchingInputAsPrefix:(id*)arg4;
-- (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })parseStringAsReference:(id)arg1 contextResolver:(id)arg2 contextSheetName:(id)arg3 gettingSpecifiedSheetName:(id*)arg4 gettingSpecifiedTableName:(id*)arg5 gettingRest:(id*)arg6 gettingReferencesMatchingInputAsPrefix:(id*)arg7 gettingStickyBits:(char *)arg8 filterColons:(BOOL)arg9 referenceIsComplete:(BOOL)arg10 includeInitialDollarSignInName:(BOOL)arg11 forceNamedRangeMatchOnly:(BOOL)arg12;
-- (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })parseStringAsReference:(id)arg1 tableName:(id)arg2 rest:(id)arg3 contextResolver:(id)arg4 contextSheetName:(id)arg5 gettingReferencesMatchingInputAsPrefix:(id*)arg6 gettingStickyBits:(char *)arg7 filterColons:(BOOL)arg8 referenceIsComplete:(BOOL)arg9 includeInitialDollarSignInName:(BOOL)arg10 forceNamedRangeMatchOnly:(BOOL)arg11;
-- (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })parseStringAsReferenceComponentIntersection:(id)arg1 inResolver:(id)arg2 inTableNamed:(id)arg3 preferredGeometricResolver:(id)arg4 defaultResolver:(id)arg5 outStickyBits:(char *)arg6 gettingReferencesMatchingInputAsPrefix:(id*)arg7 requireFullMatches:(BOOL)arg8 filterColons:(BOOL)arg9 includeInitialDollarSignInName:(BOOL)arg10 forceNamedRangeMatchOnly:(BOOL)arg11;
+- (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })parseStringAsReference:(id)arg1 contextResolver:(id)arg2 contextSheetName:(id)arg3 gettingSpecifiedSheetName:(id*)arg4 gettingSpecifiedTableName:(id*)arg5 gettingRest:(id*)arg6 gettingReferencesMatchingInputAsPrefix:(id*)arg7 gettingStickyBits:(char *)arg8 filterColons:(BOOL)arg9 referenceIsComplete:(BOOL)arg10;
+- (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })parseStringAsReference:(id)arg1 tableName:(id)arg2 rest:(id)arg3 contextResolver:(id)arg4 contextSheetName:(id)arg5 gettingReferencesMatchingInputAsPrefix:(id*)arg6 gettingStickyBits:(char *)arg7 filterColons:(BOOL)arg8 referenceIsComplete:(BOOL)arg9;
+- (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })parseStringAsReferenceComponentIntersection:(id)arg1 inResolver:(id)arg2 inTableNamed:(id)arg3 preferredGeometricResolver:(id)arg4 defaultResolver:(id)arg5 outStickyBits:(char *)arg6 gettingReferencesMatchingInputAsPrefix:(id*)arg7 requireFullMatches:(BOOL)arg8 filterColons:(BOOL)arg9;
 - (void)pauseRecalculation;
 - (struct hash_set<TSCECReference, TSCECReferenceHash, TSCECReferenceEqual, std::__1::allocator<TSCECReference> > { struct __hash_table<TSCECReference, TSCECReferenceHash, TSCECReferenceEqual, std::__1::allocator<TSCECReference> > { struct unique_ptr<std::__1::__hash_node<TSCECReference, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<TSCECReference, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > > { struct __hash_node<TSCECReference, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCECReference, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCECReference, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCECReference, void *> *> { struct __hash_node<TSCECReference, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSCECReferenceHash> { unsigned long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, TSCECReferenceEqual> { float x_4_2_1; } x_1_1_4; } x1; })precedentsOfCell:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
 - (int)preferredDispatchQueueSize;
+- (id)previousLocaleIdentifier;
 - (void)randomVolatileFunctionsAreDirty;
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })rangeCoordForCellHandleRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 inTable:(struct __CFUUID { }*)arg2;
 - (BOOL)rangeIsWithinTable:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;

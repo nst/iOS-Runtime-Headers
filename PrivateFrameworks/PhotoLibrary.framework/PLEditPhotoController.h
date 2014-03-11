@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CIContext, CIFilter, EAGLContext, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSTimer, NSUndoManager, PLEffectSelectionViewController, PLImageAdjustmentView, PLManagedAsset, PLProgressHUD, UIActionSheet, UIAlertView, UIImage, UILabel, UINavigationBar, UIPopoverController, UIScrollView, UIToolbar, UIView;
+@class CIContext, CIFilter, EAGLContext, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSTimer, NSUndoManager, PLEditOverlayTextView, PLEffectSelectionViewController, PLImageAdjustmentView, PLManagedAsset, PLProgressHUD, UIActionSheet, UIAlertView, UIImage, UINavigationBar, UIPopoverController, UIScrollView, UIToolbar, UIView;
 
 @interface PLEditPhotoController : UIViewController <PLImageAdjustmentViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PLEffectSelectionViewControllerDelegate> {
     struct CGRect { 
@@ -45,6 +45,7 @@
     unsigned int _preloadedEffectFilters : 1;
     unsigned int _stopPreloadEffectFilters : 1;
     BOOL __toolbarHidden;
+    int __viewAnimationEnabledCount;
     id _actionCompletionBlock;
     UIActionSheet *_actionSheet;
     UIImage *_adjustedImage;
@@ -73,7 +74,7 @@
     int _initialOrientation;
     UIImage *_largeThumbnailImage;
     NSTimer *_messageTimer;
-    UILabel *_messageView;
+    PLEditOverlayTextView *_messageView;
     NSMutableArray *_navBarItems;
     UINavigationBar *_navigationBar;
     unsigned int _nextPreloadEffectFilterIndex;
@@ -101,6 +102,7 @@
 }
 
 @property(setter=_setToolbarHidden:) BOOL _toolbarHidden;
+@property(setter=_setViewAnimationEnabledCount:) int _viewAnimationEnabledCount;
 @property(copy) id actionCompletionBlock;
 @property BOOL autoAdjustmentEnabled;
 @property(retain) PLManagedAsset * editedPhoto;
@@ -178,6 +180,8 @@
 - (BOOL)_setRedEyeCorrections:(id)arg1 changedCorrections:(id*)arg2;
 - (void)_setToolbarHidden:(BOOL)arg1;
 - (void)_setUndoManager:(id)arg1;
+- (void)_setViewAnimationEnabledCount:(int)arg1;
+- (void)_setViewAnimationsEnabled:(BOOL)arg1;
 - (id)_smallThumbnailImage;
 - (void)_startEditingWithAsset:(id)arg1;
 - (id)_startToolbarItems;
@@ -192,9 +196,11 @@
 - (void)_updateEnhanceButton;
 - (void)_updateMessageOverlayFrame;
 - (void)_updateModeButtons;
+- (void)_updateSelectedEffect;
 - (void)_updateToolbar;
 - (void)_updateToolbarSetHiddenState:(BOOL)arg1;
 - (void)_verifyProgress:(id)arg1 completion:(id)arg2;
+- (int)_viewAnimationEnabledCount;
 - (id)actionCompletionBlock;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
@@ -218,6 +224,7 @@
 - (void)effectSelectionViewController:(id)arg1 didSelectEffect:(id)arg2;
 - (void)effectSelectionViewController:(id)arg1 requestsThumbnailWithEffect:(id)arg2 completionBlock:(id)arg3;
 - (void)enhancePhoto:(id)arg1;
+- (void)forceCompletion;
 - (BOOL)hasRedEyeCorrections;
 - (void)hideMessage:(id)arg1;
 - (BOOL)hidesBottomBarWhenPushed;
@@ -229,7 +236,7 @@
 - (id)navigationItem;
 - (id)newAdjustedImageWithoutGeometryUsingContext:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedCropRect;
-- (void)orderOut:(BOOL)arg1;
+- (void)orderOut:(BOOL)arg1 forceCompletion:(BOOL)arg2;
 - (id)pendingPhoto;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)redEyePoints;

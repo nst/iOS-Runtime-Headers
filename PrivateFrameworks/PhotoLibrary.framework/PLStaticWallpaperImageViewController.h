@@ -14,7 +14,7 @@
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 - (void)setColorSamplingEnabled:(BOOL)arg1;
-- (void)updateLegibility;
+- (void)setWallpaperForLocations:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)wallpaperImage;
 

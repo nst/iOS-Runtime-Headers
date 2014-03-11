@@ -76,6 +76,7 @@
 
 - (id)_activityItemValues;
 - (id)_availableActivities;
+- (id)_availableActivitiesForItems:(id)arg1;
 - (void)_cancel;
 - (void)_cleanupActivityWithSuccess:(BOOL)arg1;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
@@ -158,6 +159,7 @@
 - (BOOL)useBlackPopoverStyle;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

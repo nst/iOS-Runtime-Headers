@@ -44,7 +44,6 @@
 - (float)globalFooterHeight;
 - (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
-- (void)protoSettingsDidChange;
 - (BOOL)shouldPlaceDeleteInCenterToolbarPosition;
 - (unsigned int)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;

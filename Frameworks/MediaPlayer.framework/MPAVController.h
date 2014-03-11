@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVPlayerLayer, CALayer, MPAVControllerToAggregateDCommunicator, MPAVDestinationBrowser, MPAVErrorResolver, MPAVItem, MPAVPlaylistManager, MPAudioDeviceController, MPMediaItem, MPMediaQuery, MPQueueFeeder, MPQueuePlayer, MPVideoView, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableSet, NSNotification, NSObject<OS_dispatch_source>, NSString;
+@class AVPlayerLayer, CALayer, MPAVControllerToAggregateDCommunicator, MPAVErrorResolver, MPAVItem, MPAVPlaylistManager, MPAVRoute, MPAVRoutingController, MPMediaItem, MPMediaQuery, MPQueueFeeder, MPQueuePlayer, MPVideoView, NSArray, NSDate, NSMutableArray, NSMutableSet, NSNotification, NSObject<OS_dispatch_source>, NSString;
 
-@interface MPAVController : NSObject <AVAudioSessionDelegateMediaPlayerOnly, MPAudioDeviceControllerDelegate, MPAVErrorResolverDelegate, MPAVControllerProtocol> {
+@interface MPAVController : NSObject <AVAudioSessionDelegateMediaPlayerOnly, MPAVRoutingControllerDelegate, MPAVErrorResolverDelegate, MPAVControllerProtocol> {
     unsigned int _hasDelayedCurrentTimeToSet : 1;
     unsigned int _forceDelayedCurrentTimeToSet : 1;
     unsigned int _autoPlayWhenLikelyToKeepUp : 1;
@@ -24,9 +24,7 @@
     unsigned int _canPlayFastForward : 1;
     unsigned int _canPlayFastReverse : 1;
     MPAVControllerToAggregateDCommunicator *_aggregateDCommunicator;
-    MPAudioDeviceController *_audioDeviceController;
     NSString *_audioSessionModeOverride;
-    BOOL _autoReshufflingDisabled;
     MPAVPlaylistManager *_avPlaylistManager;
     unsigned int _boundaryTimeIndexLastPosted;
     id _boundaryTimeObserver;
@@ -38,7 +36,6 @@
     int _delayedCurrentTimeOptions;
     double _delayedCurrentTimeToSet;
     NSNotification *_delayedPlaybackStateNotification;
-    MPAVDestinationBrowser *_destinationBrowser;
     BOOL _didResolveError;
     BOOL _disableAirPlayMirroringDuringPlayback;
     BOOL _disallowsAMRAudio;
@@ -66,12 +63,13 @@
     double _maxSeekableFwd;
     double _maxSeekableRev;
     double _nextFadeOutDuration;
-    NSDictionary *_pickedRouteDescription;
+    MPAVRoute *_pickedRoute;
     int _playbackMode;
     NSMutableArray *_queueFeederStateStack;
     float _rateBeforeResignActive;
     float _rateBeforeSeek;
     int _resetRateAfterSeekingUpdateDisabled;
+    MPAVRoutingController *_routingController;
     int _scanDirection;
     unsigned int _scanLevel;
     double _secondsSinceUbiquitousCheckpoint;
@@ -98,14 +96,13 @@
 }
 
 @property int EQPreset;
+@property unsigned int RTCReportingFlags;
 @property(readonly) id _playerAVAudioSession;
 @property(readonly) unsigned int activeRepeatType;
 @property(readonly) unsigned int activeShuffleType;
 @property BOOL alwaysPlayWheneverPossible;
-@property(readonly) MPAudioDeviceController * audioDeviceController;
 @property(retain) NSString * audioSessionModeOverride;
 @property BOOL autoPlayWhenLikelyToKeepUp;
-@property BOOL autoReshufflingDisabled;
 @property(readonly) MPQueuePlayer * avPlayer;
 @property(readonly) unsigned int bufferingState;
 @property BOOL closedCaptioningEnabled;
@@ -115,7 +112,6 @@
 @property(readonly) MPMediaQuery * currentMediaQuery;
 @property(readonly) double currentMonotonousTime;
 @property double currentTime;
-@property(readonly) MPAVDestinationBrowser * destinationBrowser;
 @property(getter=destinationIsTVOut,setter=setDestinationIsTVOut:) BOOL destinationIsTVOut;
 @property BOOL disableAirPlayMirroringDuringPlayback;
 @property BOOL disallowsAMRAudio;
@@ -140,6 +136,7 @@
 @property unsigned int repeatType;
 @property(getter=isRewindHoldingAtStart,readonly) BOOL rewindHoldingAtStart;
 @property(readonly) NSString * routeNameForVolumeControl;
+@property(readonly) MPAVRoutingController * routingController;
 @property BOOL shouldEnforceHDCP;
 @property BOOL shouldSkipToNextTrackOnResumeFromInterruption;
 @property(readonly) BOOL showPlaybackStateOverlaysOnTVOut;
@@ -165,6 +162,7 @@
 
 - (void).cxx_destruct;
 - (int)EQPreset;
+- (unsigned int)RTCReportingFlags;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationSuspended:(id)arg1;
@@ -193,7 +191,9 @@
 - (void)_delayedUpdateTimeMarker;
 - (void)_disconnectAVPlaylistManagerWithReason:(int)arg1;
 - (unsigned int)_displayPlaybackState;
+- (void)_durationDidChange:(id)arg1;
 - (void)_endSeekAndChangeRate:(BOOL)arg1;
+- (id)_expectedAssetTypesForPlaybackMode:(int)arg1;
 - (id)_extractImageFromMetadata:(id)arg1;
 - (void)_firstVideoFrameDisplayed:(id)arg1;
 - (BOOL)_isChangingQueueContents;
@@ -206,7 +206,6 @@
 - (void)_itemDidChange:(id)arg1;
 - (void)_itemFailedToPlayToEnd:(id)arg1;
 - (void)_itemFailedToPlayToEndNotification:(id)arg1;
-- (void)_itemHeartbeatIsInvalidNotification:(id)arg1;
 - (BOOL)_itemIsRestricted:(id)arg1;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_itemReadyToPlay:(id)arg1;
@@ -217,7 +216,7 @@
 - (void)_pausePlaybackIfNecessary;
 - (void)_pausePlaybackIfNecessaryIgnoringVideoLayerAttachment:(BOOL)arg1;
 - (void)_pauseTickTimer;
-- (id)_pickedRouteDescription;
+- (id)_pickedRoute;
 - (void)_playbackFailedWithError:(id)arg1 canResolve:(BOOL)arg2;
 - (unsigned int)_playbackIndexForDelta:(int)arg1 fromIndex:(unsigned int)arg2 ignoreElapsedTime:(BOOL)arg3;
 - (id)_playerAVAudioSession;
@@ -265,7 +264,6 @@
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;
 - (void)_updateScanningRate;
 - (void)_updateSeekingIntervalsForStreaming;
-- (unsigned int)_updateSubsequenceFocus;
 - (void)_verifyDisplayProtection;
 - (void)_volumeDidChangeNotification:(id)arg1;
 - (unsigned int)activeRepeatType;
@@ -277,11 +275,8 @@
 - (void)applicationWillTerminate;
 - (void)applyRepeatSettings;
 - (void)applyShuffleSettings;
-- (id)audioDeviceController;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (id)audioSessionModeOverride;
 - (BOOL)autoPlayWhenLikelyToKeepUp;
-- (BOOL)autoReshufflingDisabled;
 - (void)autoclearDisplayOverride;
 - (id)avPlayer;
 - (void)beginInterruption;
@@ -292,8 +287,9 @@
 - (BOOL)canPlayFastReverse;
 - (BOOL)canSeekBackwards;
 - (BOOL)canSeekForwards;
-- (BOOL)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingAds:(BOOL)arg4 error:(id*)arg5;
-- (void)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingAds:(BOOL)arg4;
+- (BOOL)canSkipToSeekableEnd;
+- (BOOL)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingUnskippableContent:(BOOL)arg4 error:(id*)arg5;
+- (void)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingUnskippableContent:(BOOL)arg4;
 - (void)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3;
 - (void)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2;
 - (void)changePlaybackIndexBy:(int)arg1;
@@ -309,7 +305,6 @@
 - (double)currentTime;
 - (double)currentTimeForBookmarking;
 - (void)dealloc;
-- (id)destinationBrowser;
 - (BOOL)destinationIsTVOut;
 - (BOOL)disableAirPlayMirroringDuringPlayback;
 - (void)disableAutoplayForCurrentItem;
@@ -369,12 +364,13 @@
 - (unsigned int)repeatType;
 - (void)restorePreviousFeederState;
 - (id)routeNameForVolumeControl;
+- (id)routingController;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)saveCurrentFeederState;
 - (void)setActive:(BOOL)arg1;
 - (void)setAlwaysPlayWheneverPossible:(BOOL)arg1;
 - (void)setAudioSessionModeOverride:(id)arg1;
 - (void)setAutoPlayWhenLikelyToKeepUp:(BOOL)arg1;
-- (void)setAutoReshufflingDisabled:(BOOL)arg1;
 - (void)setAutoclearingDisplayOverridePlaybackState:(unsigned int)arg1;
 - (void)setClient:(id)arg1 wantsToAllowAirPlayVideo:(BOOL)arg2;
 - (void)setClosedCaptioningEnabled:(BOOL)arg1;
@@ -393,6 +389,7 @@
 - (void)setPlaybackIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)setPlaybackIndex:(int)arg1;
 - (void)setPlaybackMode:(int)arg1;
+- (void)setRTCReportingFlags:(unsigned int)arg1;
 - (BOOL)setRate:(float)arg1;
 - (void)setRateForScanning:(float)arg1;
 - (void)setRepeatType:(unsigned int)arg1;

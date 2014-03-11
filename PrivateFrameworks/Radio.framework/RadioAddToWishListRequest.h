@@ -14,6 +14,7 @@
 }
 
 @property int action;
+@property(readonly) long long trackStoreID;
 
 - (void).cxx_destruct;
 - (int)action;
@@ -23,5 +24,6 @@
 - (id)initWithTrackStoreID:(long long)arg1 stationID:(long long)arg2 stationHash:(id)arg3;
 - (void)setAction:(int)arg1;
 - (void)startWithCompletionHandler:(id)arg1;
+- (long long)trackStoreID;
 
 @end

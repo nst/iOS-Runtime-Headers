@@ -10,6 +10,7 @@
     void *_addressBook;
     double _analysisStartTime;
     BOOL _analyzingAllMoments;
+    NSString *_currentProviderId;
     unsigned int _currentRevGeoServerVersionNum;
     NSDateFormatter *_dayOfTheWeekDateFormatter;
     NSOrderedSet *_defaultDominantGeoOrderingForMegaMoment;
@@ -30,9 +31,11 @@
     NSDate *_lastGeoVersionFileFetchDate;
     unsigned int _lastGeoVersionFileVersion;
     double _lastNetworkForcedAbortTime;
+    double _lastRevGeoRequestTime;
     double _lastServerVersionInfoFetchAttemptTime;
     NSMutableSet *_megaMomentListIdsToProcess;
     unsigned int _mode;
+    BOOL _momentAnalysisPaused;
     BOOL _needToUpdateInvalidMomentsWhenPossible;
     BOOL _networkObservingReachability;
     BOOL _noResultErrorIsSuccess;
@@ -46,6 +49,7 @@
     NSString *_revGeoServerVersionInfoURL;
     NSDictionary *_serverVersionInfo;
     NSDateFormatter *_shortDateFormatter;
+    BOOL _skippedMomentsDuringAnalysis;
     double _timeToWaitBeforeNextRequest;
     int _triesAtCurrentBackoffLevel;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -68,6 +72,7 @@
 - (BOOL)_canProcessMoments;
 - (void)_checkForNewServerVersionInfoIfNeeded;
 - (id)_compactPlaceDescriptionForPlaceResult:(id)arg1;
+- (void)_countryCodeChanged:(id)arg1;
 - (id)_currentHomeAddressDictionary;
 - (id)_currentProviderId;
 - (id)_dictionaryFromLocation:(id)arg1;
@@ -89,8 +94,8 @@
 - (BOOL)_loadServerVersionInfo;
 - (id)_localizedNamesForNameInfoArray:(id)arg1 namesUsed:(id)arg2 includeHome:(BOOL)arg3 outAddedHome:(BOOL*)arg4;
 - (id)_locationFromDictionary:(id)arg1;
-- (BOOL)_markInvalidLowQualityAssetsInMoment:(id)arg1;
-- (BOOL)_markInvalidOutOfDateAssetsInMoment:(id)arg1 forCurrentCountryVersionMap:(id)arg2;
+- (BOOL)_markInvalidLowQualityAssetsInMoment:(id)arg1 withCurrentProviderId:(id)arg2;
+- (BOOL)_markInvalidOutOfDateAssetsInMoment:(id)arg1 forCurrentCountryVersionMap:(id)arg2 withCurrentProviderId:(id)arg3;
 - (id)_metadataPath;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (id)_photoLibrary;
@@ -108,6 +113,7 @@
 - (void)_resetErrorState;
 - (void)_reverseGeocodeMoment:(id)arg1 shouldFilterIfInProgress:(BOOL)arg2 invalidOnly:(BOOL)arg3;
 - (void)_runBlockOnWorkQueue:(id)arg1;
+- (void)_runOnWorkQueueAferSeconds:(double)arg1 block:(id)arg2;
 - (void)_saveDataIfNeededAfterTimeDiff:(double)arg1;
 - (void)_saveDataIfReachedObjectChangeThreshold;
 - (void)_saveGlobalMetadata;
@@ -115,6 +121,8 @@
 - (id)_serverVersionInfoFilePath;
 - (void)_setErrorState:(unsigned int)arg1;
 - (void)_setLocationDataValidForMomentId:(id)arg1;
+- (void)_setMomentAnalysisPaused:(BOOL)arg1;
+- (BOOL)_shouldProcessMoments:(id)arg1;
 - (unsigned int)_significantPlaceCountInMap:(id)arg1;
 - (id)_simpleNamesForNameInfoArray:(id)arg1;
 - (void)_startObservingReachabilityChanges;
@@ -123,6 +131,8 @@
 - (id)_suffixForGeoPlace:(id)arg1 afterOrderType:(unsigned int)arg2 homePlace:(id)arg3;
 - (id)_suffixForNameInfoArray:(id)arg1 afterOrderType:(unsigned int)arg2;
 - (void)_updateAllInfoInCompoundNameInfo:(id)arg1 andCompoundSecondaryNameInfo:(id)arg2 withRevGeoPlaces:(id)arg3 includeHome:(BOOL)arg4 primaryGeoOrderingSet:(id)arg5 secondaryGeoOrderingSet:(id)arg6;
+- (void)_updateCurrentProviderId;
+- (void)_updateCurrentProviderIdWithCountryCode:(id)arg1;
 - (void)_updateDateFormattersForLocale:(id)arg1;
 - (id)_updateDominantInfoInCompoundNameInfo:(id)arg1 withRevGeoPlaces:(id)arg2 defaultGeoOrderingSet:(id)arg3 includeAllPlaces:(BOOL)arg4 includeHome:(BOOL)arg5 homeAtEnd:(BOOL)arg6 outOtherNonDominantPlaces:(id)arg7 outOrdersCheckedOrUsed:(id)arg8 outOrderUsed:(unsigned int*)arg9 outUsedHome:(BOOL*)arg10;
 - (void)_updateErrorStateWithSuccess:(BOOL)arg1 errorType:(unsigned int)arg2;
@@ -140,12 +150,14 @@
 - (void)_waitForReachability;
 - (void)dealloc;
 - (id)init;
+- (void)pauseMomentAnalysis;
+- (void)resumeMomentAnalysis;
 - (void)updateInfoForAllMoments;
 - (void)updateInfoForInvalidMomentsIfNeeded;
-- (void)updateInfoForMegaMomentLists:(id)arg1;
-- (void)updateInfoForMomentListWithMomentListId:(id)arg1;
-- (void)updateInfoForMomentWithMomentId:(id)arg1 fromOnDemandRequest:(BOOL)arg2;
-- (void)updateInfoForMoments:(id)arg1 invalidOnly:(BOOL)arg2;
-- (void)updateInfoForYearMomentLists:(id)arg1;
+- (BOOL)updateInfoForMegaMomentLists:(id)arg1;
+- (BOOL)updateInfoForMomentListWithMomentListId:(id)arg1;
+- (BOOL)updateInfoForMomentWithMomentId:(id)arg1 fromOnDemandRequest:(BOOL)arg2;
+- (BOOL)updateInfoForMoments:(id)arg1 invalidOnly:(BOOL)arg2;
+- (BOOL)updateInfoForYearMomentLists:(id)arg1;
 
 @end

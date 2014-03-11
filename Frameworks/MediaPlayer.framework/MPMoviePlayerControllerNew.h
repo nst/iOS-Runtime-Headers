@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMoviePlayerControllerDelegate>, MPAVController, MPInlineVideoController, MPMovieAccessLog, MPMovieErrorLog, MPMoviePlayerController, MPMovieView, MPSystemNowPlayingController, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, UIWindow;
+@class <MPMoviePlayerControllerDelegate>, MPAVController, MPInlineVideoController, MPMovieAccessLog, MPMovieErrorLog, MPMoviePlayerController, MPMovieView, MPNowPlayingObserver, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, UIWindow;
 
 @interface MPMoviePlayerControllerNew : NSObject <MPMovieViewDelegate, MPMediaPlayback> {
     NSDictionary *_HTTPHeaderFields;
@@ -30,7 +30,7 @@
     MPMovieView *_movieView;
     NSArray *_movies;
     BOOL _moviesNeedReload;
-    MPSystemNowPlayingController *_nowPlayingController;
+    MPNowPlayingObserver *_nowPlayingObserver;
     BOOL _playWhenSourceTypeIsDetermined;
     NSError *_playbackError;
     MPAVController *_player;

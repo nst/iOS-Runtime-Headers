@@ -5,12 +5,12 @@
 @interface ACDTCCUtilities : NSObject {
 }
 
-+ (int)TCCStateForClient:(id)arg1 accountType:(id)arg2;
-+ (BOOL)TCCSupportedForAccountType:(id)arg1;
++ (int)TCCStateForClient:(id)arg1 accountTypeID:(id)arg2;
++ (BOOL)TCCSupportedForAccountTypeID:(id)arg1;
 + (struct __CFString { }*)_TCCServiceForAccountTypeID:(id)arg1;
-+ (id)allTCCStatesForAccountType:(id)arg1;
-+ (BOOL)clearAllTCCStatesForAccountType:(id)arg1;
-+ (BOOL)clearTCCStateForClient:(id)arg1 accountType:(id)arg2;
-+ (BOOL)setTCCStateForClient:(id)arg1 accountType:(id)arg2 toGranted:(BOOL)arg3;
++ (id)allTCCStatesForAccountTypeID:(id)arg1;
++ (BOOL)clearAllTCCStatesForAccountTypeID:(id)arg1;
++ (BOOL)clearTCCStateForClient:(id)arg1 accountTypeID:(id)arg2;
++ (BOOL)setTCCStateForClient:(id)arg1 accountTypeID:(id)arg2 toGranted:(BOOL)arg3;
 
 @end

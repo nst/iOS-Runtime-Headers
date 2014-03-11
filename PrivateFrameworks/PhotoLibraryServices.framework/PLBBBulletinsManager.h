@@ -55,7 +55,7 @@
 - (void)forceWriteUnsavedChanges;
 - (void)getThumbnailImageDataForBulletinWithRecordID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (id)init;
-- (void)noteDidChangePlaceholderKindForAsset:(id)arg1 fromOldKind:(int)arg2 forSharedAlbum:(id)arg3 mstreamdInfo:(id)arg4;
+- (void)noteDidChangePlaceholderKindForAsset:(id)arg1 fromOldKind:(short)arg2 forSharedAlbum:(id)arg3 mstreamdInfo:(id)arg4;
 - (void)noteDidDeleteSharedAlbum:(id)arg1;
 - (void)noteDidDeleteSharedAssetsWithUUIDs:(id)arg1;
 - (void)noteDidReceiveAsset:(id)arg1 atIndex:(unsigned int)arg2 forSharedAlbum:(id)arg3 mstreamdInfo:(id)arg4;

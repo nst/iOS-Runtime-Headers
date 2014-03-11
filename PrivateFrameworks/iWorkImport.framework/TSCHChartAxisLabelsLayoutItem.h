@@ -23,7 +23,9 @@
 - (id)mutationTuplesToApplyDuringResize;
 - (struct CGPath { }*)newDragAndDropHighlightPathForSelection:(id)arg1;
 - (unsigned int)numberOfLabelsForAxis:(id)arg1;
+- (id)p_axisFromLayoutItem;
 - (unsigned int)p_computeAutoStrideInLayoutArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)p_overrideLabelStringForHitTestingEmptyLabel;
 - (void)p_rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 andTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 inLayoutArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 forIndex:(unsigned int)arg4 paragraphStyle:(id)arg5;
 - (int)p_smallestSecondValueLabelIndex:(int)arg1 start:(int)arg2 end:(int)arg3 inLayoutArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 paragraphStyle:(id)arg5 isTop:(BOOL)arg6;
 - (int)p_smallestSecondValueLabelIndex:(int)arg1 start:(int)arg2 end:(int)arg3 inLayoutArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 paragraphStyle:(id)arg5;

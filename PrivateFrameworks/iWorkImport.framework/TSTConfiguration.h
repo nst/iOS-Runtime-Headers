@@ -4,7 +4,7 @@
 
 @interface TSTConfiguration : NSObject {
     BOOL _allowsFullyFilteredTables;
-    BOOL _cellEditorsCanScrollToTableSelection;
+    BOOL _cellEditorsCanScrollToNonLocalTableSelection;
     BOOL _disableImplicitNaming;
     BOOL _formulaCellEditorSupportsTextTokenEditor;
     BOOL _formulaEditorEvaluatesFormulas;
@@ -40,7 +40,7 @@
     BOOL mSelectsCellOnInitialTap;
     BOOL mShowsAddressBarAlways;
     BOOL mShowsAddressBarHighlights;
-    BOOL mShowsAddressBarLettering;
+    BOOL mShowsAddressBarLetteringAndNumbering;
     BOOL mShowsCellOverflowIndicator;
     BOOL mShowsHideUnhideUI;
     BOOL mSupportsAutoResizedTables;
@@ -76,7 +76,7 @@
 @property BOOL arrowKeysWrap;
 @property BOOL backTabWraps;
 @property BOOL beginEditingOnSingleTap;
-@property BOOL cellEditorsCanScrollToTableSelection;
+@property BOOL cellEditorsCanScrollToNonLocalTableSelection;
 @property BOOL cornersCanDragResize;
 @property BOOL createLargeDefaultTables;
 @property BOOL disableImplicitNaming;
@@ -101,7 +101,7 @@
 @property BOOL showReferenceHighlightsOnFormulaCellSelection;
 @property BOOL showsAddressBarAlways;
 @property BOOL showsAddressBarHighlights;
-@property BOOL showsAddressBarLettering;
+@property BOOL showsAddressBarLetteringAndNumbering;
 @property BOOL showsCellOverflowIndicator;
 @property BOOL showsHideUnhideUI;
 @property BOOL supportsAutoResizedTables;
@@ -142,7 +142,7 @@
 - (BOOL)arrowKeysWrap;
 - (BOOL)backTabWraps;
 - (BOOL)beginEditingOnSingleTap;
-- (BOOL)cellEditorsCanScrollToTableSelection;
+- (BOOL)cellEditorsCanScrollToNonLocalTableSelection;
 - (BOOL)cornersCanDragResize;
 - (BOOL)createLargeDefaultTables;
 - (BOOL)disableImplicitNaming;
@@ -174,7 +174,7 @@
 - (void)setArrowKeysWrap:(BOOL)arg1;
 - (void)setBackTabWraps:(BOOL)arg1;
 - (void)setBeginEditingOnSingleTap:(BOOL)arg1;
-- (void)setCellEditorsCanScrollToTableSelection:(BOOL)arg1;
+- (void)setCellEditorsCanScrollToNonLocalTableSelection:(BOOL)arg1;
 - (void)setCornersCanDragResize:(BOOL)arg1;
 - (void)setCreateLargeDefaultTables:(BOOL)arg1;
 - (void)setDisableImplicitNaming:(BOOL)arg1;
@@ -199,7 +199,7 @@
 - (void)setShowReferenceHighlightsOnFormulaCellSelection:(BOOL)arg1;
 - (void)setShowsAddressBarAlways:(BOOL)arg1;
 - (void)setShowsAddressBarHighlights:(BOOL)arg1;
-- (void)setShowsAddressBarLettering:(BOOL)arg1;
+- (void)setShowsAddressBarLetteringAndNumbering:(BOOL)arg1;
 - (void)setShowsCellOverflowIndicator:(BOOL)arg1;
 - (void)setShowsHideUnhideUI:(BOOL)arg1;
 - (void)setSupportsAutoResizedTables:(BOOL)arg1;
@@ -230,7 +230,7 @@
 - (BOOL)showReferenceHighlightsOnFormulaCellSelection;
 - (BOOL)showsAddressBarAlways;
 - (BOOL)showsAddressBarHighlights;
-- (BOOL)showsAddressBarLettering;
+- (BOOL)showsAddressBarLetteringAndNumbering;
 - (BOOL)showsCellOverflowIndicator;
 - (BOOL)showsHideUnhideUI;
 - (BOOL)supportsAutoResizedTables;

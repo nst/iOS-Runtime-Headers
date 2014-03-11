@@ -13,10 +13,12 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (int)confidenceScore;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setTokens:(id)arg1;
+- (id)text;
 - (id)tokens;
 
 @end

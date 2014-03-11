@@ -27,6 +27,7 @@
 - (BOOL)isValid;
 - (id)originalAsset;
 - (id)representationForUTI:(id)arg1;
+- (void)requestDefaultRepresentation;
 - (void)setExternalUsageIntent:(unsigned int)arg1;
 - (void)setImageData:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)setInternal:(id)arg1;

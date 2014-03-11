@@ -29,7 +29,6 @@
 - (id)SAMPCollectionRepresentation;
 - (id)SAMPCollectionRepresentationWithItems;
 - (id)SAMPMediaEntityRepresentation;
-- (int)_compareAlbumsByYear:(id)arg1;
 - (id)_init;
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;

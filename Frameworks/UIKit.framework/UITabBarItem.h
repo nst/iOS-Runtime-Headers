@@ -52,8 +52,8 @@
 + (id)_appearanceBlindViewClasses;
 
 - (int)_barMetrics;
-- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 idiom:(int)arg3;
-- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3 idiom:(int)arg4;
+- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3;
+- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2;
 - (int)_imageStyle;
 - (id)_internalTemplateImage;
 - (id)_internalTemplateImages;
@@ -71,8 +71,7 @@
 - (id)_updateImageWithTintColor:(id)arg1 isSelected:(BOOL)arg2 getImageOffset:(struct UIOffset { float x1; float x2; }*)arg3;
 - (void)_updateToMatchCurrentState;
 - (void)_updateView;
-- (void)_updateViewForIdiom:(int)arg1 positionItems:(BOOL)arg2;
-- (void)_updateViewForIdiom:(int)arg1;
+- (void)_updateViewAndPositionItems:(BOOL)arg1;
 - (SEL)action;
 - (BOOL)animatedBadge;
 - (id)badgeValue;

@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, NSString, NSURL, SKUIURL, SUMediaPlayerViewController, SUPlaceholderViewController, SUPreviewOverlayViewController, SUSectionsResponse, SUTabBarController, UINavigationController;
+@class ISOperation, NSString, NSURL, SKUIPassbookLoader, SKUIURL, SUMediaPlayerViewController, SUPlaceholderViewController, SUPreviewOverlayViewController, SUSectionsResponse, SUTabBarController, UINavigationController;
 
-@interface SUClientApplicationController : SUClientController <SUTabBarControllerDelegate> {
+@interface SUClientApplicationController : SUClientController <SKUIPassbookLoaderDelegate, SUTabBarControllerDelegate> {
     SUMediaPlayerViewController *_activeMediaPlayer;
     NSString *_exitStoreButtonTitle;
     SUPlaceholderViewController *_fetchSectionsPlaceholder;
@@ -14,6 +14,7 @@
     SKUIURL *_launchURL;
     ISOperation *_loadSectionsOperation;
     id _locationObserver;
+    SKUIPassbookLoader *_passbookLoader;
     NSString *_preMediaDefaultPNG;
     SUPreviewOverlayViewController *_previewOverlay;
     BOOL _reloadForStorefrontChangeAfterAccountSetup;
@@ -46,6 +47,7 @@
 - (void)_dialogDidFinishNotification:(id)arg1;
 - (BOOL)_displayClientURL:(id)arg1;
 - (void)_handleAccountURL:(id)arg1;
+- (void)_handleAddPassbookPassURL:(id)arg1;
 - (void)_handleDonationURL:(id)arg1;
 - (void)_handleFinishedBackgroundLoadSectionsOperation:(id)arg1;
 - (void)_handleFinishedLoadSectionsOperation:(id)arg1;
@@ -92,10 +94,12 @@
 - (id)launchURL;
 - (BOOL)openClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (id)overlayBackgroundViewController;
+- (void)passbookLoaderDidFinish:(id)arg1;
 - (void)prepareUserInterface;
 - (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)presentExternalURLViewController:(id)arg1;
 - (BOOL)presentOverlayBackgroundViewController:(id)arg1;
+- (id)presentationViewControllerForPassbookLoader:(id)arg1;
 - (id)previewOverlayForClientInterface:(id)arg1;
 - (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (void)resignActive;

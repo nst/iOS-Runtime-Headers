@@ -9,6 +9,7 @@
 }
 
 @property(readonly) <WBSURLCompletionMatchData> * data;
+@property(readonly) float weight;
 
 - (id)data;
 - (void)dealloc;
@@ -16,5 +17,6 @@
 - (id)originalURLString;
 - (id)title;
 - (id)userVisibleURLString;
+- (float)weight;
 
 @end

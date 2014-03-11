@@ -26,7 +26,6 @@
 }
 
 @property(retain) UIImage * artworkImage;
-@property float backgroundTransitionProgress;
 @property float cloudRightInset;
 @property(copy) NSString * copyrightText;
 @property(copy) id downloadActionBlock;

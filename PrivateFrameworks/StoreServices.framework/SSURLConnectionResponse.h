@@ -39,6 +39,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)metricsPageEvent;
 - (id)radio_decompressedBodyData;
+- (void)radio_mescalVerifyDataWithCompletionHandler:(id)arg1;
 - (void)setMetricsPageEvent:(id)arg1;
 - (int)statusCode;
 - (id)suggestedFilename;

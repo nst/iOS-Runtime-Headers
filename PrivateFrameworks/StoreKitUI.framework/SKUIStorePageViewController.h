@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIStorePageDataSource>, <SKUIStorePageDelegate>, NSArray, NSMapTable, NSMutableArray, NSOperationQueue, NSString, NSURLRequest, SKUIArtworkRequest, SKUIClientContext, SKUIColorScheme, SKUILayoutCache, SKUIMetricsController, SKUIProductPageOverlayController, SKUIResourceLoader, SKUIStorePage, SSMetricsPageEvent, SSVLoadURLOperation, UICollectionView, UIImage, UIRefreshControl, UIView;
+@class <SKUIStorePageDataSource>, <SKUIStorePageDelegate>, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSOperationQueue, NSString, NSURLRequest, SKUIArtworkRequest, SKUIClientContext, SKUIColorScheme, SKUILayoutCache, SKUIMetricsController, SKUIProductPageOverlayController, SKUIResourceLoader, SKUIStorePage, SSMetricsPageEvent, SSVLoadURLOperation, UICollectionView, UIImage, UIRefreshControl, UIView;
 
-@interface SKUIStorePageViewController : UIViewController <SKUIArtworkRequestDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUILayoutCacheDelegate, UICollectionViewDataSource, SKUIMetricsViewController, UIViewControllerRestoration> {
+@interface SKUIStorePageViewController : UIViewController <SKUIArtworkRequestDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUILayoutCacheDelegate, UICollectionViewDataSource, SKUIViewControllerTesting, SKUIMetricsViewController, UIViewControllerRestoration> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -29,6 +29,8 @@
     SKUIMetricsController *_metricsController;
     NSOperationQueue *_operationQueue;
     SKUIProductPageOverlayController *_overlayController;
+    NSString *_performanceTestName;
+    NSDictionary *_performanceTestOptions;
     UIView *_pinnedHeaderView;
     SKUIColorScheme *_placeholderColorScheme;
     UIRefreshControl *_refreshControl;
@@ -64,6 +66,9 @@
 - (void)_reloadCollectionView;
 - (void)_reloadStorePage;
 - (id)_resourceLoader;
+- (void)_runPerformanceTestAfterIdle;
+- (void)_runPerformanceTestAfterPageLoad;
+- (void)_runScrollTestWithName:(id)arg1 options:(id)arg2;
 - (id)_sectionWithPageComponent:(id)arg1;
 - (id)_sections;
 - (void)_setActiveProductPageOverlayController:(id)arg1;
@@ -77,7 +82,6 @@
 - (void)_updateSectionsForIndex:(int)arg1 menuSection:(id)arg2;
 - (id)_visibleMetricsImpressionsString;
 - (id)activeMetricsController;
-- (void)artworkLoaderDidIdle:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)cancelPageLoad;
 - (id)clientContext;
@@ -108,8 +112,10 @@
 - (void)loadView;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)operationQueue;
+- (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)refreshControl;
+- (void)resourceLoaderDidIdle:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setClientContext:(id)arg1;

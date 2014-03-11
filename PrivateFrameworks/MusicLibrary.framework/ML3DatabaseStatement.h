@@ -15,11 +15,10 @@
 @property BOOL clearBindingsAfterRunning;
 @property(readonly) ML3DatabaseConnection * connection;
 @property BOOL isExecuting;
-@property(setter=setSQL:,copy) NSString * sql;
-@property struct sqlite3_stmt { }* sqliteStatement;
+@property(readonly) NSString * sql;
+@property(readonly) struct sqlite3_stmt { }* sqliteStatement;
 
 - (void).cxx_destruct;
-- (int)_finalizeStatementAndRemoveFromCache:(BOOL)arg1;
 - (void)bindBytes:(const void*)arg1 length:(int)arg2 forParameterAtPosition:(int)arg3;
 - (void)bindBytesNoCopy:(const void*)arg1 length:(int)arg2 forParameterAtPosition:(int)arg3;
 - (void)bindDouble:(double)arg1 forParameterAtPosition:(int)arg2;
@@ -38,15 +37,13 @@
 - (void)dealloc;
 - (id)description;
 - (int)finalizeStatement;
-- (id)initWithSQLiteStatement:(struct sqlite3_stmt { }*)arg1 connection:(id)arg2;
+- (id)initWithSQLiteStatement:(struct sqlite3_stmt { }*)arg1 SQL:(id)arg2 connection:(id)arg3;
 - (BOOL)isBusy;
 - (BOOL)isExecuting;
 - (BOOL)isReadOnly;
 - (int)reset;
 - (void)setClearBindingsAfterRunning:(BOOL)arg1;
 - (void)setIsExecuting:(BOOL)arg1;
-- (void)setSQL:(id)arg1;
-- (void)setSqliteStatement:(struct sqlite3_stmt { }*)arg1;
 - (id)sql;
 - (struct sqlite3_stmt { }*)sqliteStatement;
 - (int)step;

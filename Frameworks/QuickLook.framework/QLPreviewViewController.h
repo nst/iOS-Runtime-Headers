@@ -20,6 +20,15 @@
                 float height; 
             } size; 
         } contentFrame; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     UIView *_accessoryContainerView;
     QLGenericView *_airPlayPasswordView;
     float _aspectRatio;
@@ -29,6 +38,7 @@
     <QLPreviewItemInteractionDelegate> *_displayBundleDelegate;
     UIDocumentPasswordView *_documentPasswordView;
     int _index;
+    } _initialFrame;
     BOOL _loadedWithPassword;
     NSString *_loadingTextForMissingFiles;
     float _navigationBarVerticalOffset;
@@ -43,6 +53,7 @@
     UIView *_scalingView;
     BOOL _shouldSwapDisplayBundles;
     BOOL _swiping;
+    BOOL _visible;
 }
 
 @property(readonly) int airPlayMode;
@@ -51,9 +62,11 @@
 @property(readonly) QLDisplayBundle * displayBundle;
 @property <QLPreviewItemInteractionDelegate> * displayBundleDelegate;
 @property int index;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialFrame;
 @property(retain) <QLPreviewItem> * previewItem;
 @property int previewMode;
 @property(readonly) UIView * snapshotView;
+@property BOOL visible;
 
 - (void)_adjustContentOffsetForKeyboardIfNeeded;
 - (void)_cancelScheduledShowProgressiveUI;
@@ -87,6 +100,7 @@
 - (void)endTrackingViewUpdates;
 - (int)index;
 - (id)init;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrame;
 - (void)loadView;
 - (void)overlayWasInteractedWithOnPreviewItem:(id)arg1;
 - (void)preloadIfNeeded;
@@ -107,17 +121,20 @@
 - (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (void)setDisplayBundleDelegate:(id)arg1;
 - (void)setIndex:(int)arg1;
+- (void)setInitialFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setNavigationBarVerticalOffset:(float)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewMode:(int)arg1;
+- (void)setVisible:(BOOL)arg1;
 - (void)setupAirPlayView;
 - (void)showContentsWasTappedForPreviewItem:(id)arg1;
 - (id)snapshotView;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
 - (void)viewDidUpdateForPreviewItem:(id)arg1;
 - (void)viewWasTappedOnPreviewItem:(id)arg1;
+- (BOOL)visible;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)willStartSwiping;
 

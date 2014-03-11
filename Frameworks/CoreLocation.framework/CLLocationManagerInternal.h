@@ -51,6 +51,8 @@
     NSMutableSet *fRangedRegions;
     BOOL fUpdatingHeading;
     BOOL fUpdatingLocation;
+    BOOL fUpdatingVehicleHeading;
+    BOOL fUpdatingVehicleSpeed;
 }
 
 @property(readonly) NSMutableSet * rangedRegions;

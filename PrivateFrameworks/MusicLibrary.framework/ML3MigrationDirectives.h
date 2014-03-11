@@ -6,6 +6,7 @@
     BOOL _needsAnalyze;
     BOOL _needsToRecreateIndexes;
     BOOL _needsToRecreateTriggers;
+    BOOL _needsToReloadContainerMediaTypes;
     BOOL _needsToReloadStoreBookmarkMetadataIdentifiers;
     BOOL _needsToRemoveLocationsForItemsMissingAssets;
     int _userVersion;
@@ -14,6 +15,7 @@
 @property BOOL needsAnalyze;
 @property BOOL needsToRecreateIndexes;
 @property BOOL needsToRecreateTriggers;
+@property BOOL needsToReloadContainerMediaTypes;
 @property BOOL needsToReloadStoreBookmarkMetadataIdentifiers;
 @property BOOL needsToRemoveLocationsForItemsMissingAssets;
 @property int userVersion;
@@ -21,11 +23,13 @@
 - (BOOL)needsAnalyze;
 - (BOOL)needsToRecreateIndexes;
 - (BOOL)needsToRecreateTriggers;
+- (BOOL)needsToReloadContainerMediaTypes;
 - (BOOL)needsToReloadStoreBookmarkMetadataIdentifiers;
 - (BOOL)needsToRemoveLocationsForItemsMissingAssets;
 - (void)setNeedsAnalyze:(BOOL)arg1;
 - (void)setNeedsToRecreateIndexes:(BOOL)arg1;
 - (void)setNeedsToRecreateTriggers:(BOOL)arg1;
+- (void)setNeedsToReloadContainerMediaTypes:(BOOL)arg1;
 - (void)setNeedsToReloadStoreBookmarkMetadataIdentifiers:(BOOL)arg1;
 - (void)setNeedsToRemoveLocationsForItemsMissingAssets:(BOOL)arg1;
 - (void)setUserVersion:(int)arg1;

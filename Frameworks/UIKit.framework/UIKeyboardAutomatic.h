@@ -28,6 +28,7 @@
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
 - (BOOL)receivedCandidatesInCurrentInputMode;
 - (void)setCaretBlinks:(BOOL)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setReceivedCandidatesInCurrentInputMode:(BOOL)arg1;
 - (void)setShowsCandidateBar:(BOOL)arg1;
 - (void)setShowsCandidateInline:(BOOL)arg1;

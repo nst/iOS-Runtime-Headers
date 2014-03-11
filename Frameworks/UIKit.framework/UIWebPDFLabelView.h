@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UILabel, _UIHighlightView;
+@class NSTimer, UILabel, _UIBackdropView;
 
 @interface UIWebPDFLabelView : UIView {
-    _UIHighlightView *_highlight;
+    _UIBackdropView *_backdropView;
     UILabel *_label;
     NSTimer *_timer;
     unsigned int currentPageIndex;
@@ -17,6 +17,7 @@
 - (void)_fadeOutAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (double)_fadeOutDelay;
 - (double)_fadeOutDuration;
+- (void)_makeRoundedCorners;
 - (void)clearTimer;
 - (unsigned int)currentPageIndex;
 - (void)dealloc;

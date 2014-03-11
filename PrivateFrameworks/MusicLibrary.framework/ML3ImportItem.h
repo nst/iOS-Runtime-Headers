@@ -15,8 +15,10 @@
 - (id)deduplicationPredicates;
 - (id)effectiveAlbumArtist;
 - (id)effectiveSortAlbumArtist;
+- (BOOL)hasSortEpisodeId;
 - (BOOL)hasValueForProperty:(unsigned int)arg1;
 - (long long)persistentIdentifier;
+- (unsigned long)sanitizedMediaType;
 - (id)sanitizedStringValueForProperty:(unsigned int)arg1;
 - (void)setPersistentIdentifier:(long long)arg1;
 - (void)setSourceType:(int)arg1;

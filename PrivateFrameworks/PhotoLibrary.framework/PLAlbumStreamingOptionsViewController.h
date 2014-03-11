@@ -5,6 +5,8 @@
 @class <PLAlbumStreamingOptionsViewControllerDelegate>, NSArray, NSString, PLCloudSharedAlbum, PLCloudSharedAlbumInvitationRecord, PLComposeRecipientViewController, UIBarButtonItem, UISwitch, UITableView;
 
 @interface PLAlbumStreamingOptionsViewController : UIViewController <PLComposeRecipientViewControllerDelegate, PLInvitationRecordsObserver, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
+    NSString *__lastMultiContributorsSectionFooterTitle;
+    NSString *__lastPublicURLSectionFooterTitle;
     PLCloudSharedAlbumInvitationRecord *__selectedSubscriberInvitationRecord;
     BOOL __shouldScrollToTopOnNextViewLayout;
     unsigned int _addSubscribersRow;
@@ -29,6 +31,8 @@
     UISwitch *_wantsPublicWebsiteSwitch;
 }
 
+@property(setter=_setLastMultiContributorsSectionFooterTitle:,copy) NSString * _lastMultiContributorsSectionFooterTitle;
+@property(setter=_setLastPublicURLSectionFooterTitle:,copy) NSString * _lastPublicURLSectionFooterTitle;
 @property(setter=_setSelectedSubscriberInvitationRecord:,retain) PLCloudSharedAlbumInvitationRecord * _selectedSubscriberInvitationRecord;
 @property(setter=_setShouldScrollToTopOnNextViewLayout:) BOOL _shouldScrollToTopOnNextViewLayout;
 @property(retain) PLCloudSharedAlbum * album;
@@ -54,6 +58,8 @@
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
+- (id)_lastMultiContributorsSectionFooterTitle;
+- (id)_lastPublicURLSectionFooterTitle;
 - (BOOL)_multipleContributorsEnabled;
 - (id)_newPersonViewControllerWithEmail:(id)arg1 phone:(id)arg2 firstName:(id)arg3 lastName:(id)arg4 canResendInvitation:(BOOL)arg5 canRemoveSubscriber:(BOOL)arg6;
 - (void*)_personMatchingEmail:(id)arg1 orPhone:(id)arg2 matchingProperty:(out int*)arg3 matchingValueIdentifier:(out int*)arg4;
@@ -61,6 +67,8 @@
 - (void)_removeSelectedSubscriber;
 - (void)_resendInvitationToSelectedSubscriber;
 - (id)_selectedSubscriberInvitationRecord;
+- (void)_setLastMultiContributorsSectionFooterTitle:(id)arg1;
+- (void)_setLastPublicURLSectionFooterTitle:(id)arg1;
 - (void)_setSelectedSubscriberInvitationRecord:(id)arg1;
 - (void)_setShouldScrollToTopOnNextViewLayout:(BOOL)arg1;
 - (void)_setShowingMultipleContributorSpinner:(BOOL)arg1;

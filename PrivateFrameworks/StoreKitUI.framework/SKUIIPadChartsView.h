@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, UIView;
+@class NSArray, UIView, _UIBackdropView;
 
 @interface SKUIIPadChartsView : UIView {
     struct UIEdgeInsets { 
@@ -12,6 +12,7 @@
         float right; 
     NSArray *_allViewControllers;
     int _animatingToNumberOfVisibleColumns;
+    _UIBackdropView *_backdropView;
     UIView *_borderView0;
     UIView *_borderView1;
     int _columnChangeAnimationCount;
@@ -22,6 +23,7 @@
     int _numberOfVisibleColumns;
 }
 
+@property(readonly) _UIBackdropView * backdropView;
 @property(copy) NSArray * chartTableViewControllers;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property int numberOfVisibleColumns;
@@ -30,6 +32,7 @@
 - (void)_headerViewAction:(id)arg1;
 - (id)_headerViewWithViewControllers:(id)arg1;
 - (void)_reloadColumnViews;
+- (id)backdropView;
 - (void)beginColumnChangeAnimationToNumberOfVisibleColumns:(int)arg1;
 - (id)chartTableViewControllers;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;

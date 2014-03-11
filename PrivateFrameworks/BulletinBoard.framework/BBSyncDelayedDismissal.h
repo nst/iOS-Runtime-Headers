@@ -13,6 +13,7 @@
 @property unsigned int feeds;
 
 - (id)bulletin;
+- (void)dealloc;
 - (unsigned int)feeds;
 - (void)setBulletin:(id)arg1;
 - (void)setFeeds:(unsigned int)arg1;

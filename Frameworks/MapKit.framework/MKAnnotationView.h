@@ -110,6 +110,7 @@
 + (id)currentLocationTitle;
 + (id)droppedPinTitle;
 
+- (void).cxx_destruct;
 - (id)_annotationContainer;
 - (id)_annotationManager;
 - (id)_calloutHitTest;
@@ -175,7 +176,7 @@
 - (id)detailCalloutAccessoryView;
 - (unsigned int)dragState;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 16; unsigned int x_4_1_7 : 2; } x4; }*)image;
+- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 16; unsigned int x_4_1_7 : 2; unsigned int x_4_1_8 : 1; } x4; }*)image;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDraggable;
@@ -201,7 +202,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setImage:(struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 16; unsigned int x_4_1_7 : 2; } x4; }*)arg1;
+- (void)setImage:(struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 16; unsigned int x_4_1_7 : 2; unsigned int x_4_1_8 : 1; } x4; }*)arg1;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
 - (void)setLeftCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;

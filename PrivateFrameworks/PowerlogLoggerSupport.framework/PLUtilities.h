@@ -33,6 +33,7 @@
 + (BOOL)isPLMav4;
 + (BOOL)isPLMav5;
 + (BOOL)isPLMav7;
++ (BOOL)isWiFiChipSet4324;
 + (BOOL)isWiFiChipSet43291;
 + (BOOL)isWiFiChipSet4329;
 + (BOOL)isWiFiChipSet4330;

@@ -42,6 +42,7 @@
 - (id)description;
 - (id)initWithColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 weight:(float)arg4;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
 - (struct CGSize { float x1; float x2; })offset;
 - (SEL)renderSelector;

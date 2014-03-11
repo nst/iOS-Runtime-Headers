@@ -5,6 +5,7 @@
 @class TSDMovieInfo;
 
 @interface TSDMovieSetValueCommand : TSKCommand <TSDPropagatableCommand> {
+    id mImportedAuxiliaryMediaValue;
     TSDMovieInfo *mMovie;
     int mProperty;
     id mValue;

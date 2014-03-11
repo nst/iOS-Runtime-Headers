@@ -29,7 +29,7 @@
 - (void)setPanoramaSpec:(id)arg1;
 - (void)setUserPanoAlbum:(id)arg1;
 - (void)updateLayoutMetrics;
-- (void)updatePhotoView:(id)arg1 withThumbnailImage:(id)arg2;
+- (void)updatePhotoViewContent:(id)arg1 withThumbnailImage:(id)arg2;
 - (id)userPanoAlbum;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)wantsGlobalFooter;

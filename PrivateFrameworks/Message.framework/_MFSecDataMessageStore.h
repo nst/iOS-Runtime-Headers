@@ -5,14 +5,10 @@
 @class NSString;
 
 @interface _MFSecDataMessageStore : MFDataMessageStore {
-    NSString *_storagePath;
 }
 
 @property(copy) NSString * storagePath;
 
 + (Class)classForMimePart;
-
-- (void)setStoragePath:(id)arg1;
-- (id)storagePath;
 
 @end

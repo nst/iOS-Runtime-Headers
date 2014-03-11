@@ -6,6 +6,7 @@
 }
 
 - (void)abortTransaction;
+- (void)completeTransaction;
 - (void)dealloc;
 
 @end

@@ -37,6 +37,7 @@
 - (id)dirtyProperties;
 - (id)eventStore;
 - (BOOL)existsInStore;
+- (void)faultPropertiesWithNames:(id)arg1;
 - (unsigned long)flags;
 - (BOOL)hasChanges;
 - (id)initWithPersistentObject:(id)arg1;

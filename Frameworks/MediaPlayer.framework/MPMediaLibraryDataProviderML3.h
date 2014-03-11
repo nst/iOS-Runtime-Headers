@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class ML3MusicLibrary, NSArray, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class ML3MusicLibrary, MPMediaEntityCache, NSArray, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface MPMediaLibraryDataProviderML3 : NSObject <MPMediaLibraryDataProviderPrivate> {
     unsigned int _backgroundTask;
     unsigned int _backgroundTaskCount;
     NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
+    MPMediaEntityCache *_entityCache;
     BOOL _hasScheduledEventPosting;
     ML3MusicLibrary *_library;
     int _refreshState;
@@ -15,6 +16,7 @@
 }
 
 @property(readonly) NSString * databasePath;
+@property(readonly) MPMediaEntityCache * entityCache;
 @property(readonly) BOOL isGeniusEnabled;
 @property(retain) ML3MusicLibrary * library;
 @property(readonly) NSArray * localizedSectionIndexTitles;
@@ -26,10 +28,34 @@
 @property(readonly) NSString * syncValidity;
 @property(readonly) NSString * uniqueIdentifier;
 
++ (id)_unadjustedValueForItemDateWithDefaultValue:(id)arg1;
++ (id)_unadjustedValueForItemPropertyRatingWithDefaultValue:(id)arg1;
++ (id)_unadjustedValueForItemPropertyVolumeAdjustmentWithDefaultValue:(id)arg1;
++ (id)_unadjustedValueForItemPropertyVolumeNormalizationWithDefaultValue:(id)arg1;
++ (id)_unadjustedValueForItemTimeWithDefaultValue:(id)arg1;
 + (id)_unadjustedValueForMPProperty:(id)arg1 withDefaultValue:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)ML3SystemFilterPredicatesWithGroupingType:(int)arg1 cloudTrackFilteringType:(int)arg2 additionalFilterPredicates:(id)arg3;
+- (id)_adjustedArtworkCacheIDPropertyOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemDateOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyAssetURLOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyChapterArtworkTimesOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyChaptersOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyContentRatingOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyEQPresetOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyEpisodeNumberOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyFilePathOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyMovieInfoOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyRatingOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertySeasonNameOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertySeasonNumberOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyVerifiedIntegrityOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyVolumeAdjustmentOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemPropertyVolumeNormalizationOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemTimeOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedPlaylistPropertySeedItemsOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedPropertyMediaTypeOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (void)_coalesceEvents;
 - (BOOL)_dataProviderSupportsEntityChangeTracking;
 - (void)_displayValuesDidChange:(id)arg1;
@@ -50,8 +76,9 @@
 - (unsigned long long)currentEntityRevision;
 - (id)databasePath;
 - (void)dealloc;
+- (id)entityCache;
 - (void)enumerateCollectionIdentifiersForQueryCriteria:(id)arg1 ordered:(BOOL)arg2 cancelBlock:(id)arg3 usingBlock:(id)arg4;
-- (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 itemBlock:(id)arg2 collectionBlock:(id)arg3;
+- (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 itemBlock:(id)arg3 collectionBlock:(id)arg4;
 - (void)enumerateItemIdentifiersForQueryCriteria:(id)arg1 ordered:(BOOL)arg2 cancelBlock:(id)arg3 usingBlock:(id)arg4;
 - (BOOL)hasGeniusMixes;
 - (BOOL)hasMediaOfType:(unsigned int)arg1;
@@ -91,6 +118,7 @@
 - (void)setLibrary:(id)arg1;
 - (void)setLibraryContainerFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(id)arg2;
 - (void)setLibraryEntityFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(id)arg2;
+- (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofCollectionWithIdentifier:(long long)arg3 groupingType:(int)arg4 completionBlock:(id)arg5;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofPlaylistWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
@@ -98,6 +126,7 @@
 - (id)syncValidity;
 - (id)systemFilterPredicatesWithGroupingType:(int)arg1 cloudTrackFilteringType:(int)arg2;
 - (id)uniqueIdentifier;
+- (id)valueForDatabaseProperty:(id)arg1;
 - (BOOL)writable;
 
 @end

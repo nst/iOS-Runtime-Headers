@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (id)_cachedDays;
-- (void)_setCachedDaysAndNotify:(id)arg1 withDateToScrollTo:(id)arg2;
+- (void)_setCachedDaysAndNotify:(id)arg1;
 - (int)countOfOccurrencesAtDayIndex:(int)arg1;
 - (void)dealloc;
 - (id)initWithEventStore:(id)arg1 calendars:(id)arg2;

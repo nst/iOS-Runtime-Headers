@@ -13,13 +13,11 @@
 
 + (unsigned short)providerID;
 + (id)providerURL;
-+ (void)resetProviderURL;
 + (void)setUsePersistentConnection:(BOOL)arg1;
 
 - (void)cancelProviderRequest;
 - (void)cleanupRequester;
 - (void)dealloc;
-- (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (id)requester;
 - (void)requesterDidCancel:(id)arg1;

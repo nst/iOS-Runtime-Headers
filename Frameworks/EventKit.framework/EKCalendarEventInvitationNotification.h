@@ -6,7 +6,6 @@
 
 @interface EKCalendarEventInvitationNotification : EKCalendarNotification {
     BOOL _allDay;
-    NSString *_calendarName;
     BOOL _dateChanged;
     NSDate *_endDate;
     BOOL _hasRecurrenceRules;
@@ -21,7 +20,6 @@
 }
 
 @property(getter=isAllDay) BOOL allDay;
-@property(retain) NSString * calendarName;
 @property BOOL dateChanged;
 @property(retain) NSDate * endDate;
 @property BOOL hasRecurrenceRules;
@@ -34,13 +32,12 @@
 @property int status;
 @property BOOL timeChanged;
 
-- (id)calendarName;
 - (BOOL)dateChanged;
 - (void)dealloc;
 - (id)endDate;
 - (id)eventFromEventStore:(id)arg1;
 - (BOOL)hasRecurrenceRules;
-- (id)initWithType:(int)arg1;
+- (id)initWithEvent:(id)arg1;
 - (BOOL)isAllDay;
 - (id)location;
 - (BOOL)locationChanged;
@@ -48,7 +45,6 @@
 - (int)participationStatus;
 - (id)participationStatusModifiedDate;
 - (void)setAllDay:(BOOL)arg1;
-- (void)setCalendarName:(id)arg1;
 - (void)setDateChanged:(BOOL)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setHasRecurrenceRules:(BOOL)arg1;

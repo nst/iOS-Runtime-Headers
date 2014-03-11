@@ -37,6 +37,7 @@
 + (id)defaultShadow;
 + (id)instanceWithArchive:(const struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; float x5; int x6; float x7; boolx8; int x9; struct DropShadowArchive {} *x10; struct ContactShadowArchive {} *x11; struct CurvedShadowArchive {} *x12; int x13; unsigned int x14[1]; }*)arg1 unarchiver:(id)arg2;
 + (id)keyPathsForValuesAffectingTSUColor;
++ (id)mixableObjectClasses;
 + (id)p_defaultShadowEnabled:(BOOL)arg1;
 + (id)presetKinds;
 + (id)shadowWithAngle:(float)arg1 offset:(float)arg2 radius:(float)arg3 opacity:(float)arg4 color:(struct CGColor { }*)arg5 enabled:(BOOL)arg6;
@@ -69,10 +70,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isThemeEquivalent:(id)arg1;
 - (SEL)mapThemeAssetSelector;
+- (id)mixedBaseObjectWithObject:(id)arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1;
 - (id)mutableCopy;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)newShadowClampedForSwatches;
 - (struct CGImage { }*)newShadowImageForRep:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 drawSelector:(SEL)arg3 unflipped:(BOOL)arg4;
 - (float)offset;
 - (struct CGPoint { float x1; float x2; })offsetDelta;

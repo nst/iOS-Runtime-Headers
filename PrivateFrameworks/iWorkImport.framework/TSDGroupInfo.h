@@ -34,7 +34,6 @@
 - (id)allNestedChildrenInfos;
 - (id)allNestedChildrenInfosIncludingGroups;
 - (BOOL)aspectRatioLocked;
-- (id)buildTitle;
 - (BOOL)canAspectRatioLockBeChangedByUser;
 - (id)childEnumerator;
 - (id)childInfos;
@@ -67,6 +66,7 @@
 - (void)setChildInfos:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (id)subclassInitFromUnarchiver:(id)arg1;
+- (id)titleForBuildChunk:(id)arg1;
 - (id)ungroupedGeometryForChildInfo:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

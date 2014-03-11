@@ -10,13 +10,20 @@
     NSObject<OS_dispatch_queue> *_refreshQueue;
 }
 
++ (void)initialize;
 + (void)invalidate;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)_accountForAccountIdentifier:(id)arg1;
+- (void)_accountStoreDidChange:(id)arg1;
+- (id)_displayAccountForAccountWithIdentifier:(id)arg1;
+- (void)_localeDidChange:(id)arg1;
+- (id)_localizedTitleForLocalSourceUsedAtBeginningOfSentence:(BOOL)arg1;
 - (id)accountStore;
 - (id)accountTypeTitleForSource:(id)arg1;
 - (id)accountTypeTitleForSourceWithExternalId:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (void)refreshListingForSource:(id)arg1 isUserRequested:(BOOL)arg2;
 - (int)sortOrderForSource:(id)arg1;

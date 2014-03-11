@@ -2,47 +2,33 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class UIColor;
+@class RCUIConfiguration;
 
 @interface RCAcousticAnnotationView : UIView {
-    BOOL _backgroundMaskingEnabled;
-    UIColor *_borderColor;
-    UIColor *_boundaryKeylinesColor;
-    UIColor *_centerKeylineColor;
+    RCUIConfiguration *_UIConfiguration;
     struct CGGradient { } *_decibelMarkerBackgroundGradient;
     float _maximumDecibelRange;
     float _minimumDecibelRange;
-    int _numberOfDecibelMarkers;
 }
 
-@property BOOL backgroundMaskingEnabled;
-@property(retain) UIColor * borderColor;
-@property(retain) UIColor * boundaryKeylinesColor;
-@property(retain) UIColor * centerKeylineColor;
+@property(copy) RCUIConfiguration * UIConfiguration;
 @property float maximumDecibelRange;
 @property float minimumDecibelRange;
-@property int numberOfDecibelMarkers;
+
++ (float)requiredWidth;
 
 - (void).cxx_destruct;
+- (id)UIConfiguration;
 - (id)_decibelMarkersAttributes;
 - (id)_zeroMarkerAttributes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotationBoundaryRect;
-- (BOOL)backgroundMaskingEnabled;
-- (id)borderColor;
-- (id)boundaryKeylinesColor;
-- (id)centerKeylineColor;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)maximumDecibelRange;
 - (float)minimumDecibelRange;
-- (int)numberOfDecibelMarkers;
-- (void)setBackgroundMaskingEnabled:(BOOL)arg1;
-- (void)setBorderColor:(id)arg1;
-- (void)setBoundaryKeylinesColor:(id)arg1;
-- (void)setCenterKeylineColor:(id)arg1;
 - (void)setMaximumDecibelRange:(float)arg1;
 - (void)setMinimumDecibelRange:(float)arg1;
-- (void)setNumberOfDecibelMarkers:(int)arg1;
+- (void)setUIConfiguration:(id)arg1;
 
 @end

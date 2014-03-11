@@ -6,6 +6,7 @@
 }
 
 + (BOOL)activeInterfaceMechanismIsHardware;
++ (BOOL)activeInterfaceMechanismIsTouchOnly;
 + (id)starkScreen;
 
 @end

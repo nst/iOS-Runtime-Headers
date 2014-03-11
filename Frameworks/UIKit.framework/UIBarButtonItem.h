@@ -26,6 +26,8 @@
         unsigned int selected : 1; 
         unsigned int imageHasEffects : 1; 
     UIBarButtonItem *__itemVariation;
+    BOOL __needsViewUpdateForLetterpressImage;
+    BOOL __viewWantsLetterpressImage;
     SEL _action;
     id _appearanceStorage;
     } _barButtonItemFlags;
@@ -36,7 +38,6 @@
     } _landscapeImagePhoneInsets;
     float _maximumWidth;
     float _minimumWidth;
-    BOOL _needsViewUpdateForLetterpressImage;
     NSSet *_possibleSystemItems;
     NSSet *_possibleTitles;
     NSDictionary *_stylesForSizingTitles;
@@ -45,7 +46,6 @@
     NSString *_title;
     float _toolbarCharge;
     UIView *_view;
-    BOOL _viewWantsLetterpressImage;
     float _width;
 }
 

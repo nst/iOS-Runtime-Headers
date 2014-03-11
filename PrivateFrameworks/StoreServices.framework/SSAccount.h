@@ -17,6 +17,7 @@
     BOOL _demo;
     BOOL _didFallbackToPassword;
     int _enabledServiceTypes;
+    NSString *_itunesPassSerialNumber;
     NSLock *_lock;
     BOOL _newCustomer;
     NSString *_secureToken;
@@ -24,6 +25,7 @@
     NSNumber *_uniqueIdentifier;
 }
 
+@property(copy) NSString * ITunesPassSerialNumber;
 @property int accountKind;
 @property(copy) NSString * accountName;
 @property int accountScope;
@@ -41,6 +43,7 @@
 @property(copy) NSString * storeFrontIdentifier;
 @property(retain) NSNumber * uniqueIdentifier;
 
+- (id)ITunesPassSerialNumber;
 - (void)_sendBlockingXPCMessage:(id)arg1;
 - (void)acceptTermsAndConditions:(id)arg1 withCompletionBlock:(id)arg2;
 - (int)accountKind;
@@ -59,6 +62,7 @@
 - (BOOL)didFallbackToPassword;
 - (int)enabledServiceTypes;
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
+- (void)getITunesMatchStatusWithCompletionBlock:(id)arg1;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
 - (void)getTermsAndConditionsWithBlock:(id)arg1;
 - (unsigned int)hash;
@@ -90,6 +94,7 @@
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)setDidFallbackToPassword:(BOOL)arg1;
 - (void)setEnabledServiceTypes:(int)arg1;
+- (void)setITunesPassSerialNumber:(id)arg1;
 - (void)setLockdownDictionary:(id)arg1;
 - (void)setNewCustomer:(BOOL)arg1;
 - (void)setSecureToken:(id)arg1;

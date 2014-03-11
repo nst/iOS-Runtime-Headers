@@ -10,6 +10,7 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)performAccessoryAction;
+- (void)prepareForReuse;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

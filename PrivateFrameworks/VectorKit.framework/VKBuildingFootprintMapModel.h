@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLRenderState, VKAnimation, VKMercatorTerrainHeightCache, VKSkyModel;
+@class VGLRenderState, VKAnimation, VKBuildingDrawStyle, VKMercatorTerrainHeightCache, VKSkyModel;
 
 @interface VKBuildingFootprintMapModel : VKVectorMapModel <VKMercatorTerrainHeightProvider, VKMapLayer> {
     struct _VGLColor { 
@@ -106,6 +106,8 @@
     } _flatColor;
     } _footprintStrokeColor;
     float _footprintStrokeWidth;
+    VKBuildingDrawStyle *_globalBuildingDrawStyle;
+    VKBuildingDrawStyle *_globalPointyBuildingDrawStyle;
     VKMercatorTerrainHeightCache *_heightCache;
     BOOL _initializedStyles;
     } _landmarkColor;
@@ -133,8 +135,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_clearOccluders;
-- (id)_globalBuildingDrawStyle;
-- (id)_globalPointyBuildingDrawStyle;
 - (void)_updateStyles;
 - (int)buildingMode;
 - (void)dealloc;

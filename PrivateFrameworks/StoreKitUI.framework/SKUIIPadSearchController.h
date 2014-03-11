@@ -15,8 +15,8 @@
 @property(readonly) SKUISearchFieldController * searchFieldController;
 
 - (void).cxx_destruct;
-- (id)URLForSearchTerm:(id)arg1;
 - (id)_existingSharedResultsViewController;
+- (void)_searchFieldController:(id)arg1 requestSearchWithURL:(id)arg2 orSearchTerm:(id)arg3 andMetricsEvent:(id)arg4;
 - (id)_searchFieldController;
 - (id)_sharedResultsViewController;
 - (void)_termDidChangeNotification:(id)arg1;
@@ -25,7 +25,9 @@
 - (id)initWithParentViewController:(id)arg1;
 - (id)newSearchFieldBarItem;
 - (id)parentViewController;
-- (void)searchFieldController:(id)arg1 requestSearchWithURL:(id)arg2;
+- (void)reloadSearchField;
+- (void)searchFieldController:(id)arg1 requestSearchWithSearchTerm:(id)arg2 metricsEvent:(id)arg3;
+- (void)searchFieldController:(id)arg1 requestSearchWithURL:(id)arg2 metricsEvent:(id)arg3;
 - (id)searchFieldController;
 - (BOOL)searchFieldControllerShouldBeginEditing:(id)arg1;
 - (void)setClientContext:(id)arg1;

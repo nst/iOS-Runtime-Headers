@@ -39,6 +39,7 @@
 - (void)didReceiveMemoryWarning;
 - (id)initWithSpec:(id)arg1 sessionInfo:(id)arg2;
 - (void)loadView;
+- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)setAlbumList:(struct NSObject { Class x1; }*)arg1;

@@ -4,74 +4,88 @@
 
 @class <SBUIControlCenterButtonDelegate>, UIImage;
 
-@interface SBUIControlCenterButton : UIButton <SBUIControlCenterControl> {
+@interface SBUIControlCenterButton : SBFButton <SBUIControlCenterControl> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
     } _bgCapInsets;
-    UIImage *_bgMaskImage;
     <SBUIControlCenterButtonDelegate> *_delegate;
-    UIImage *_glyphMaskImage;
+    BOOL _inverted;
+    BOOL _isCircleButton;
     float _naturalHeight;
-    UIImage *_selectedBGMaskImage;
-    UIImage *_selectedGlyphMaskImage;
+    UIImage *_normalBGImage;
+    UIImage *_normalGlyphImage;
+    UIImage *_selectedBGImage;
+    UIImage *_selectedGlyphImage;
+    UIImage *_sourceGlyphImage;
+    UIImage *_sourceSelectedGlyphImage;
 }
 
-@property(setter=setBGMaskImage:,retain) UIImage * bgMaskImage;
 @property <SBUIControlCenterButtonDelegate> * delegate;
-@property(retain) UIImage * glyphMaskImage;
+@property(getter=isInverted) BOOL inverted;
+@property BOOL isCircleButton;
 @property float naturalHeight;
-@property(setter=setSelectedBGMaskImage:,retain) UIImage * selectedBGMaskImage;
-@property(retain) UIImage * selectedGlyphMaskImage;
+@property(retain) UIImage * normalBGImage;
+@property(retain) UIImage * normalGlyphImage;
+@property(retain) UIImage * selectedBGImage;
+@property(retain) UIImage * selectedGlyphImage;
+@property(retain) UIImage * sourceGlyphImage;
+@property(retain) UIImage * sourceSelectedGlyphImage;
 
 + (id)_buttonWithBGImage:(id)arg1 selectedBGImage:(id)arg2 glyphImage:(id)arg3 naturalHeight:(float)arg4;
-+ (id)_circleBackgroundImage;
-+ (id)_roundRectBackgroundImage;
-+ (id)_roundRectSelectedBackgroundImage;
++ (id)_circleBackgroundImageForState:(int)arg1 inverted:(BOOL)arg2;
++ (id)_roundRectBackgroundImageForState:(int)arg1;
 + (id)circularButton;
 + (id)circularButtonWithGlyphImage:(id)arg1;
++ (void)controlAppearanceDidChangeForState:(int)arg1;
++ (void)initialize;
 + (id)roundRectButton;
 + (id)roundRectButtonWithGlyphImage:(id)arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })visibleContentInsets;
 
 - (int)_currentState;
-- (BOOL)_drawingAsSelected;
 - (void)_pressAction;
+- (void)_rebuildBackgroundImages;
+- (void)_rebuildGlyphImages;
+- (void)_rebuildNormalGlyph;
+- (void)_rebuildSelectedGlyph;
 - (void)_setBackgroundImage:(id)arg1 selectedBackgroundImage:(id)arg2 naturalHeight:(float)arg3;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (void)_updateDisabledImage;
 - (void)_updateForStateChange;
-- (void)_updateHighlightImage;
-- (void)_updateNormalImage;
-- (void)_updateSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
-- (id)bgMaskImage;
 - (void)controlAppearanceDidChangeForState:(int)arg1;
 - (void)controlConfigurationDidChangeForState:(int)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)glyphMaskImage;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundImage:(id)arg2 selectedBackgroundImage:(id)arg3 glyphImage:(id)arg4 naturalHeight:(float)arg5;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isCircleButton;
+- (BOOL)isInverted;
 - (float)naturalHeight;
-- (id)selectedBGMaskImage;
-- (id)selectedGlyphMaskImage;
-- (void)setBGMaskImage:(id)arg1;
+- (id)normalBGImage;
+- (id)normalGlyphImage;
+- (id)selectedBGImage;
+- (id)selectedGlyphImage;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setGlyphImage:(id)arg1 selectedGlyphImage:(id)arg2;
-- (void)setGlyphMaskImage:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setInverted:(BOOL)arg1;
+- (void)setIsCircleButton:(BOOL)arg1;
 - (void)setNaturalHeight:(float)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSelectedBGMaskImage:(id)arg1;
-- (void)setSelectedGlyphMaskImage:(id)arg1;
+- (void)setNormalBGImage:(id)arg1;
+- (void)setNormalGlyphImage:(id)arg1;
+- (void)setSelectedBGImage:(id)arg1;
+- (void)setSelectedGlyphImage:(id)arg1;
+- (void)setSourceGlyphImage:(id)arg1;
+- (void)setSourceSelectedGlyphImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)sourceGlyphImage;
+- (id)sourceSelectedGlyphImage;
 - (struct CGSize { float x1; float x2; })visibleContentSize;
 
 @end

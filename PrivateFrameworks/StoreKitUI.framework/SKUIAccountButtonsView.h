@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, SKUIColorScheme, SKUIRoundedRectButton, UIButton, UILabel;
+@class NSString, SKUIClientContext, SKUIColorScheme, SKUILinkButton, SKUIRoundedRectButton, UIButton, UIControl, UILabel;
 
 @interface SKUIAccountButtonsView : UIView {
     UILabel *_accountCreditsLabel;
     SKUIRoundedRectButton *_appleIDButton;
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
+    SKUILinkButton *_ecommerceButton;
     SKUIRoundedRectButton *_giftingButton;
     int _interfaceOrientation;
     UIButton *_redeemButton;
@@ -16,6 +17,8 @@
     SKUIRoundedRectButton *_usernameButton;
 }
 
+@property(readonly) UIControl * ECommerceButton;
+@property(copy) NSString * ECommerceLinkTitle;
 @property(copy) NSString * accountCredits;
 @property(readonly) UIButton * appleIDButton;
 @property(copy) SKUIColorScheme * colorScheme;
@@ -27,8 +30,11 @@
 @property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
 
 - (void).cxx_destruct;
+- (id)ECommerceButton;
+- (id)ECommerceLinkTitle;
 - (void)_layoutForIPad;
 - (void)_layoutForIPhone;
+- (id)_newLinkButtonWithTitle:(id)arg1;
 - (id)_termsChevronImage;
 - (id)accountCredits;
 - (id)appleIDButton;
@@ -42,6 +48,7 @@
 - (id)redeemButton;
 - (void)setAccountCredits:(id)arg1;
 - (void)setColorScheme:(id)arg1;
+- (void)setECommerceLinkTitle:(id)arg1;
 - (void)setGiftingHidden:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setTermsAndConditionsHidden:(BOOL)arg1;

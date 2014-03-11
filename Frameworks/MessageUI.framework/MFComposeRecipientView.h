@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFComposeRecipient, MFComposeTextField, MFCorecipientsIndicatorAtom, MFModernComposeRecipientAtom, NSArray, NSCountedSet, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIButton, UIFont, UITapGestureRecognizer, UITextField, UIView;
+@class <MFComposeRecipientViewDelegate>, MFComposeRecipient, MFComposeTextField, MFCorecipientsIndicatorAtom, MFModernComposeRecipientAtom, NSArray, NSCountedSet, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIButton, UIFont, UITapGestureRecognizer, UITextField, UIView;
 
 @interface MFComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, UIGestureRecognizerDelegate, MFComposeRecipientAtomDelegate, MFDragSource, MFDragDestination, MFCorecipientsIndicatorAtomDelegate> {
     UIButton *_addButton;
@@ -14,6 +14,7 @@
     MFCorecipientsIndicatorAtom *_corecipientsIndicatorAtom;
     unsigned int _defaultAtomPresentationOptions;
     NSTimer *_delayTimer;
+    <MFComposeRecipientViewDelegate> *_delegate;
     BOOL _deselectOnNextKeyboardInput;
     BOOL _didIgnoreFirstResponderResign;
     int _dragSourceOriginalIndex;
@@ -43,6 +44,7 @@
 @property(retain) UIFont * baseFont;
 @property(readonly) MFCorecipientsIndicatorAtom * corecipientsIndicator;
 @property unsigned int defaultAtomPresentationOptions;
+@property <MFComposeRecipientViewDelegate> * delegate;
 @property BOOL didIgnoreFirstResponderResign;
 @property BOOL editable;
 @property BOOL focused;
@@ -97,6 +99,7 @@
 - (id)corecipientsIndicator;
 - (void)dealloc;
 - (unsigned int)defaultAtomPresentationOptions;
+- (id)delegate;
 - (void)deselectComposeRecipientAtom:(id)arg1;
 - (BOOL)didIgnoreFirstResponderResign;
 - (void)didMoveToSuperview;
@@ -145,6 +148,7 @@
 - (void)setAllowsDragAndDrop:(BOOL)arg1;
 - (void)setBaseFont:(id)arg1;
 - (void)setDefaultAtomPresentationOptions:(unsigned int)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDidIgnoreFirstResponderResign:(BOOL)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setFocused:(BOOL)arg1;

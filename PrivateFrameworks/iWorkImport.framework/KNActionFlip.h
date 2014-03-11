@@ -20,5 +20,6 @@
 
 - (id)animationsForTextureSet:(id)arg1 context:(id)arg2;
 - (id)animationsForTextureSet:(id)arg1 finalTextureSet:(id)arg2 duration:(double)arg3 attributes:(id)arg4 previousAttributes:(id)arg5;
+- (void)p_addAnimationsForLayer:(id)arg1 duration:(double)arg2 endAngle:(float)arg3 result:(id)arg4;
 
 @end

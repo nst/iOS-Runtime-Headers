@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface VKPShieldPack : PBCodable {
+@interface VKPShieldPack : PBCodable <NSCopying> {
     NSMutableArray *_atlas;
     NSMutableArray *_shields;
 }
@@ -20,6 +20,7 @@
 - (void)clearAtlas;
 - (void)clearShields;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

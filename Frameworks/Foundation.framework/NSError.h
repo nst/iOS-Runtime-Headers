@@ -73,12 +73,16 @@
 + (id)errorWithStreamDomain:(long)arg1 code:(long)arg2 localizedDescription:(id)arg3;
 + (id)errorWithTSKWarning:(id)arg1;
 + (id)genericErrorWithFile:(const char *)arg1 function:(const char *)arg2 lineNumber:(int)arg3;
++ (id)hs_cloudErrorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)hs_homeSharingErrorWithCode:(int)arg1 userInfo:(id)arg2;
 + (id)serverErrorForCode:(int)arg1 withReason:(id)arg2;
 + (id)serverErrorForCode:(int)arg1 withUserInfo:(id)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)tsa_errorWithCode:(int)arg1;
 + (id)tsp_errorWithCode:(int)arg1 underlyingError:(id)arg2;
 + (id)tsp_errorWithCode:(int)arg1;
++ (id)tsp_recoverableErrorWithCode:(int)arg1;
++ (id)tsp_recoverableErrorWithError:(id)arg1;
 + (id)tsuErrorWithCode:(int)arg1;
 + (id)tsuErrorWithCode:(int)arg1;
 + (id)tsu_IOErrorWithCode:(int)arg1;

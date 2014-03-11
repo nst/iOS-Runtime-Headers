@@ -2,23 +2,24 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSLayoutConstraint, UIColor, UILabel, UIView;
+@class NSLayoutConstraint, TPStarkInCallButtonRing, UIColor, UILabel;
 
 @interface TPStarkInCallButton : UIButton {
     UILabel *_buttonLabel;
     NSLayoutConstraint *_horizontalPositioningConstraint;
     int _inCallButtonType;
+    TPStarkInCallButtonRing *_ringView;
+    int _specialLayoutType;
     BOOL _toggledOn;
-    UIView *_toggledOnView;
     UIColor *_unhighlightedBackgroundColor;
 }
 
 @property(retain) UILabel * buttonLabel;
 @property(retain) NSLayoutConstraint * horizontalPositioningConstraint;
 @property(readonly) int inCallButtonType;
-@property(readonly) int specialLayoutType;
+@property(retain) TPStarkInCallButtonRing * ringView;
+@property int specialLayoutType;
 @property BOOL toggledOn;
-@property(retain) UIView * toggledOnView;
 @property(retain) UIColor * unhighlightedBackgroundColor;
 
 - (id)buttonLabel;
@@ -27,17 +28,19 @@
 - (int)inCallButtonType;
 - (id)initForButtonType:(int)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)ringView;
 - (void)setButtonLabel:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setHasRingView:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHorizontalPositioningConstraint:(id)arg1;
+- (void)setRingView:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSpecialLayoutType:(int)arg1;
 - (void)setToggledOn:(BOOL)arg1;
-- (void)setToggledOnView:(id)arg1;
 - (void)setUnhighlightedBackgroundColor:(id)arg1;
 - (int)specialLayoutType;
 - (BOOL)toggledOn;
-- (id)toggledOnView;
 - (id)unhighlightedBackgroundColor;
 
 @end

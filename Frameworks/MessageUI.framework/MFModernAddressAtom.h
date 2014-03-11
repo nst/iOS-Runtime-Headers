@@ -4,7 +4,7 @@
 
 @class <MFModernAddressAtomDelegate>, MFModernAtomView, NSString, UIFont;
 
-@interface MFModernAddressAtom : UIControl {
+@interface MFModernAddressAtom : UIControl <MFModernAtomViewResembling> {
     unsigned int _addressIsPhoneNumber : 1;
     unsigned int _updatedABPerson : 1;
     unsigned int _isDisplayStringFromAddressBook : 1;
@@ -18,14 +18,16 @@
     void *_person;
 }
 
-@property(retain) UIFont * atomFont;
 @property(readonly) struct CGPoint { float x1; float x2; } baselinePoint;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property BOOL hidesVIPIndicator;
 @property BOOL isPrimaryAddressAtom;
 @property unsigned int presentationOptions;
 @property float scale;
+@property BOOL separatorHidden;
+@property BOOL separatorIsLeftAligned;
 @property int separatorStyle;
+@property(retain) UIFont * titleFont;
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void*)arg2 useAbbreviatedName:(BOOL)arg3;
 
@@ -36,33 +38,29 @@
 - (void)_updateABPerson;
 - (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
 - (void)addressBookDidChange:(id)arg1;
-- (id)atomFont;
 - (struct CGPoint { float x1; float x2; })baselinePoint;
 - (void)dealloc;
 - (id)displayString;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (id)emailAddress;
-- (BOOL)hidesVIPIndicator;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (int)identifier;
 - (id)initWithAddress:(id)arg1 presentationOptions:(unsigned int)arg2 isPhoneNumber:(BOOL)arg3 maxWidth:(float)arg4 addressBook:(void*)arg5;
 - (BOOL)isDisplayStringFromAddressBook;
-- (BOOL)isPrimaryAddressAtom;
 - (void)layoutSubviews;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)performBuildInAnimationFromTextColor:(id)arg1 withDuration:(double)arg2;
 - (unsigned int)presentationOptions;
-- (float)scale;
-- (int)separatorStyle;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setAtomFont:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHidesVIPIndicator:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsPrimaryAddressAtom:(BOOL)arg1;
 - (void)setMaxWidth:(unsigned int)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setPresentationOptions:(unsigned int)arg1;
 - (void)setScale:(float)arg1;
-- (void)setSeparatorStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)unmodifiedAddressString;
 

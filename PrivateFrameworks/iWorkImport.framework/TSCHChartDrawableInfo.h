@@ -4,7 +4,7 @@
 
 @class TSCHChartInfo, TSCHChunkManager, TSPObject<TSCHMediatorProvider>;
 
-@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSDReducableInfo, TSPCopying, TSKSearchable, TSKModel, TSSPresetSource, TSSThemedObject, TSCHStyleSwapSupporting, TSDMixing> {
+@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSDReducableInfo, TSPCopying, TSKSearchable, TSKModel, TSSPresetSource, TSSThemedObject, TSCHStyleSwapSupporting, TSDMixing, TSSStyleClient> {
     TSCHChartInfo *mChart;
     TSCHChunkManager *mChunkManager;
     TSPObject<TSCHMediatorProvider> *mMediatorPersistentObject;
@@ -23,7 +23,6 @@
 - (id)applyStyleSwapTuples:(id)arg1;
 - (BOOL)aspectRatioLocked;
 - (id)buildImageTitle;
-- (id)buildTitle;
 - (BOOL)canAspectRatioLockBeChangedByUser;
 - (BOOL)canSizeBeChangedIncrementally;
 - (id)chart;
@@ -66,9 +65,11 @@
 - (void)p_searchString:(id)arg1 atSelectionPath:(id)arg2 forString:(id)arg3 options:(unsigned int)arg4 hitBlock:(id)arg5;
 - (void)p_sendInvalidationWithKind:(int)arg1 details:(id)arg2;
 - (void)p_setDrawableGeometry:(id)arg1 clearObjectPlaceholderFlag:(BOOL)arg2;
+- (id)referencedStyles;
 - (BOOL)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (Class)repClass;
+- (void)replaceReferencedStylesUsingBlock:(id)arg1;
 - (BOOL)reverseChunkingIsSupported;
 - (void)saveToArchiver:(id)arg1;
 - (id)searchForSpellingErrors:(id)arg1 stop:(BOOL*)arg2;
@@ -83,6 +84,7 @@
 - (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
 - (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
+- (id)titleForBuildChunk:(id)arg1;
 - (void)tsaMoveToPosition:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)unregisterFromCalculationEngine:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsForPositioning;

@@ -13,6 +13,7 @@
     int _searchCategory;
     unsigned int _searchResultsOffset;
     NSString *_searchTerm;
+    BOOL _shouldProcessCategories;
 }
 
 @property BOOL excludeFeaturedStations;
@@ -22,9 +23,11 @@
 @property int searchCategory;
 @property unsigned int searchResultsOffset;
 @property(readonly) NSString * searchTerm;
+@property BOOL shouldProcessCategories;
 
 - (void).cxx_destruct;
 - (void)cancel;
+- (id)description;
 - (BOOL)excludeFeaturedStations;
 - (id)init;
 - (id)initWithSearchTerm:(id)arg1;
@@ -38,6 +41,8 @@
 - (void)setNumberOfSearchResults:(unsigned int)arg1;
 - (void)setSearchCategory:(int)arg1;
 - (void)setSearchResultsOffset:(unsigned int)arg1;
+- (void)setShouldProcessCategories:(BOOL)arg1;
+- (BOOL)shouldProcessCategories;
 - (void)startWithSearchCompletionHandler:(id)arg1;
 
 @end

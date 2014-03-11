@@ -16,6 +16,7 @@
 - (void)_removeTouchCaptureView;
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (void)_showPurchaseConfirmationForButton:(id)arg1;
+- (id)_tableCellForButton:(id)arg1;
 - (void)_touchCaptureAction:(id)arg1;
 - (void)dealloc;
 - (id)init;

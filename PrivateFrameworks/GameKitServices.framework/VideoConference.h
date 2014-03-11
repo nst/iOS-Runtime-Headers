@@ -150,7 +150,6 @@
 @property BOOL useViceroyBlobFormat;
 
 - (void)NATTypeDictionaryUpdated:(id)arg1;
-- (void)avConferencePreviewDidStopCapture;
 - (void)avConferencePreviewError:(id)arg1;
 - (void)calculateMixingArrays:(unsigned int*)arg1 talkingMask:(unsigned int)arg2;
 - (unsigned int)calculateTalkingMaskAtTimeStamp:(unsigned int)arg1 samples:(char *)arg2 numBytes:(int)arg3 numSamples:(int)arg4;

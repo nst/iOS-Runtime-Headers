@@ -2,22 +2,31 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
+@class NSString;
 
 @interface SSMetricsSearchEvent : SSMetricsBaseEvent {
 }
 
-@property(retain) NSNumber * hintIndex;
-@property(retain) NSString * hintText;
+@property(retain) id actionDetails;
+@property(retain) NSString * actionType;
 @property(retain) NSString * searchTerm;
+@property(retain) NSString * targetIdentifier;
+@property(retain) NSString * targetType;
+@property(retain) NSString * targetURL;
 
-- (id)description;
-- (id)hintIndex;
-- (id)hintText;
+- (id)actionDetails;
+- (id)actionType;
 - (id)init;
 - (id)searchTerm;
-- (void)setHintIndex:(id)arg1;
-- (void)setHintText:(id)arg1;
+- (void)setActionDetails:(id)arg1;
+- (void)setActionType:(id)arg1;
+- (void)setLocationWithEventLocations:(id)arg1;
 - (void)setSearchTerm:(id)arg1;
+- (void)setTargetIdentifier:(id)arg1;
+- (void)setTargetType:(id)arg1;
+- (void)setTargetURL:(id)arg1;
+- (id)targetIdentifier;
+- (id)targetType;
+- (id)targetURL;
 
 @end

@@ -2,11 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IDSCore.framework/IDSCore
  */
 
-@class FTMessageDelivery, IDSPushHandler, NSDate, NSMutableArray, NSNumber;
+@class FTMessageDelivery, IDSPushHandler, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber;
 
 @interface IDSAppleIDSRegistrationCenter : NSObject <IMSystemMonitorListener> {
     NSDate *_accountingHour;
     NSMutableArray *_currentAuthentications;
+    NSMutableDictionary *_currentGetDependentRegistrationBlocks;
+    NSMutableSet *_currentGetDependentRegistrations;
+    NSMutableDictionary *_currentGetHandlesBlocks;
+    NSMutableDictionary *_currentGetHandlesRegistrations;
     NSMutableArray *_currentRegistrations;
     NSDate *_dateLastRegistered;
     NSMutableArray *_handlers;
@@ -19,6 +23,7 @@
     NSMutableArray *_queuedRegistrations;
     unsigned int _registrations;
     BOOL _shouldUseAbsinthe;
+    NSMutableArray *_successfulRegistrations;
     NSDate *_validateContextDate;
     NSNumber *_validateContextTTL;
     struct NACContextOpaque_ { } *_validationContext;
@@ -33,6 +38,7 @@
 - (void)__failValidationQueue;
 - (void)__flushValidationQueue;
 - (void)__queueValidationMessage:(id)arg1;
+- (void)__reallySendAuthenticateRegistration;
 - (void)__reallySendDeregistration;
 - (void)__reallySendRegistration;
 - (BOOL)_checkOverRegistrations;
@@ -41,13 +47,14 @@
 - (BOOL)_hasOngoingAuthentications;
 - (BOOL)_hasRegistration:(id)arg1 inQueue:(id)arg2;
 - (void)_noteRegistration;
+- (void)_notifyAllSuccessfulRegistrations:(id)arg1;
 - (void)_notifyEmailQueryFailure:(id)arg1 error:(int)arg2 info:(id)arg3;
 - (void)_notifyEmailQuerySuccess:(id)arg1 emailInfo:(id)arg2;
 - (void)_notifyIDSAuthenticationSuccess:(id)arg1;
 - (void)_notifyProvisionFailure:(id)arg1 error:(int)arg2 fatal:(BOOL)arg3 info:(id)arg4;
 - (void)_notifyRegistrationFailure:(id)arg1 error:(int)arg2 info:(id)arg3;
 - (void)_notifyRegistrationSuccess:(id)arg1;
-- (void)_processGetHandlesMessage:(id)arg1 deliveredWithError:(id)arg2 resultCode:(int)arg3 resultDictionary:(id)arg4 allowPasswordPrompt:(BOOL)arg5;
+- (void)_processGetHandlesMessage:(id)arg1 registrations:(id)arg2 deliveredWithError:(id)arg3 resultCode:(int)arg4 resultDictionary:(id)arg5 allowPasswordPrompt:(BOOL)arg6;
 - (void)_processRegistrationMessage:(id)arg1 sentRegistrations:(id)arg2 descriptionString:(id)arg3 actionID:(id)arg4 actionString:(id)arg5 isDeregister:(BOOL)arg6 deliveredWithError:(id)arg7 resultCode:(int)arg8 resultDictionary:(id)arg9;
 - (BOOL)_queryValidatedEmailsForRegistration:(id)arg1 allowPasswordPrompt:(BOOL)arg2 completionBlock:(id)arg3;
 - (BOOL)_queueBuildingValidationDataIfNecessaryForMessage:(id)arg1;
@@ -70,6 +77,7 @@
 - (BOOL)queryValidatedEmailsForRegistration:(id)arg1 allowPasswordPrompt:(BOOL)arg2 completionBlock:(id)arg3;
 - (void)removeListener:(id)arg1;
 - (BOOL)sendDeregistration:(id)arg1;
+- (void)sendHardDeregisterCompletionBlock:(id)arg1;
 - (BOOL)sendRegistration:(id)arg1;
 - (BOOL)sendRequest:(id)arg1;
 

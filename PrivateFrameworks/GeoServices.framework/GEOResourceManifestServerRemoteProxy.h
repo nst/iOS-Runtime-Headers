@@ -7,7 +7,6 @@
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy> {
     NSHashTable *_cancellingConnections;
     NSLock *_cancellingConnectionsLock;
-    int _closedCount;
     NSObject<OS_xpc_object> *_conn;
     NSLock *_connLock;
     <GEOResourceManifestServerProxyDelegate> *_delegate;
@@ -27,7 +26,7 @@
 - (void)closeConnection;
 - (void)dealloc;
 - (id)delegate;
-- (oneway void)forceUpdate;
+- (void)forceUpdate:(id)arg1;
 - (void)getResourceManifestWithHandler:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (void)openConnection;

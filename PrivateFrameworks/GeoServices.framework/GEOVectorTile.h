@@ -123,10 +123,12 @@
 - (BOOL)_read3DBuildings:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_readCoastlines:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_readExtendedPointAttributes:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
-- (BOOL)_readHiResBuildings:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
+- (BOOL)_readHighResBuildings:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_readInfoChapter:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_readLabels:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_readLines:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
+- (BOOL)_readLowResBuildings:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
+- (BOOL)_readModernBuildings:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1 chapter:(unsigned short)arg2 vertexPool:(struct { /* ? */ }**)arg3 footprints:(struct { /* ? */ }**)arg4 count:(unsigned int*)arg5;
 - (BOOL)_readPois:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;
 - (BOOL)_readPolygons:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1 ofType:(unsigned short)arg2;
 - (BOOL)_readPolygons:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned short x3; unsigned int x4; char *x5; unsigned int x6; struct { unsigned int x_7_1_1; boolx_7_1_2; } x7; }*)arg1;

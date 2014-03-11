@@ -20,6 +20,7 @@
 - (BOOL)_rangeValidForContainer;
 - (void)_updateGenerationNumber;
 - (void)cleanup;
+- (void)dispatchContainerModificationBlock:(id)arg1;
 - (BOOL)doURLificationOnDocument;
 - (id)initWithContainer:(id)arg1;
 - (BOOL)needsToStartOver;

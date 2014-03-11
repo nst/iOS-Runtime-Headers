@@ -19,6 +19,7 @@
 - (BOOL)isCurrentlyPlayable;
 - (BOOL)isPurchasing;
 - (BOOL)isRestoreDownload;
+- (void)pauseDownload;
 - (double)rawDownloadProgress;
 - (double)rawDownloadTotal;
 

@@ -18,11 +18,13 @@
     UILabel *_statusField;
     UIView *_statusFieldBackground;
     UIView *_statusFieldToTopOrEmergencyCallBottomFiller;
+    UILabel *_statusSubtitleView;
     BOOL _triedToMinMaxWhileRotating;
     BOOL _wasMinimizedWhenAnimationStarted;
 }
 
 @property(retain) UILabel * statusField;
+@property(retain) UILabel * statusSubtitleView;
 
 - (void)_acceptOrCancelReturnKeyPress;
 - (BOOL)_canMinMaxKeyboard;
@@ -35,9 +37,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrameForInterfaceOrientation:(int)arg1;
 - (float)_keyboardToEntryFieldOffset;
 - (void)_layoutForMinimizationState:(BOOL)arg1;
+- (void)_luminanceBoostDidChange;
 - (void)_maximize;
 - (void)_minimize;
 - (id)_newStatusField;
+- (id)_newStatusSubtitleView;
 - (void)_notifyDelegatePasscodeCancelled;
 - (void)_notifyDelegatePasscodeEntered;
 - (void)_notifyDelegateThatEmergencyCallButtonWasPressed;
@@ -46,7 +50,7 @@
 - (float)_statusTitleWidth;
 - (void)_toggleForEmergencyCall;
 - (void)_toggleForStatusField;
-- (void)_updateStatusText:(id)arg1 animated:(BOOL)arg2;
+- (void)_updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
 - (float)backgroundAlpha;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;
@@ -63,6 +67,8 @@
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setStatusField:(id)arg1;
+- (void)setStatusSubtitleView:(id)arg1;
 - (id)statusField;
+- (id)statusSubtitleView;
 
 @end

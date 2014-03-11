@@ -9,6 +9,8 @@
 @property BOOL overlay;
 
 - (BOOL)overlay;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setOverlay:(BOOL)arg1;
+- (void)superSetHighlighted:(BOOL)arg1;
 
 @end

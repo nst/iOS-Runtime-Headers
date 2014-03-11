@@ -37,6 +37,7 @@
 - (void)handleRestoringState:(id)arg1;
 - (void)handleServiceAdded:(id)arg1;
 - (void)handleSetAttributeValues:(id)arg1;
+- (void)handleSolicitedServicesFound:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;

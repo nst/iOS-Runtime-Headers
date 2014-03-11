@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface AWDWifiMostUsedNetworks : PBCodable {
+@interface AWDWifiMostUsedNetworks : PBCodable <NSCopying> {
     struct { 
         unsigned int timeUsed : 1; 
         unsigned int apOUI : 1; 
@@ -32,6 +32,7 @@
 - (unsigned int)apOUI;
 - (id)apOui;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

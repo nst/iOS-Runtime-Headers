@@ -55,7 +55,7 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(unsigned int)arg1;
-- (long long)nowPlayingRadioTrackID;
+- (id)nowPlayingRadioTrack;
 - (unsigned int)numberOfItems;
 - (void)pause;
 - (void)pauseWithFadeoutDuration:(double)arg1;

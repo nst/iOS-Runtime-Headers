@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class HSLibrary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
+@class HSHomeSharingLibrary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
 
 @interface MPHomeSharingML3DataProvider : MPMediaLibraryDataProviderML3 {
-    unsigned int _updateCheckEnabled : 1;
     NSMutableDictionary *_blocksForLoadingContainerPIDs;
     NSObject<OS_dispatch_queue> *_containerFillQueue;
-    HSLibrary *_homeSharingLibrary;
+    HSHomeSharingLibrary *_homeSharingLibrary;
     NSMutableSet *_loadedContainerPIDs;
     NSMutableDictionary *_tokenDataForDSIDs;
+    BOOL _updateInProgress;
 }
 
-@property(readonly) HSLibrary * homeSharingLibrary;
+@property(readonly) HSHomeSharingLibrary * homeSharingLibrary;
 @property(readonly) BOOL isSupportedSharingVersion;
 
-+ (void)_determineHomeSharingGroupIDIfNecessary;
++ (void)_determineHomeSharingGroupIDWithCompletionHandler:(id)arg1;
 + (void)beginScanningForLibraries;
 + (void)endScanningForLibraries;
 + (id)homeSharingGroupID;
@@ -25,13 +25,12 @@
 
 - (void).cxx_destruct;
 - (id)_cachedImagePathHomeSharingID:(unsigned int)arg1 pixelSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_fetchTokensForAuthorizedDSIDs;
 - (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(id)arg2;
 - (void)_homeSharingGroupIDDidChangeNotification:(id)arg1;
-- (void)_scheduleUpdateCheck;
+- (void)_homeSharingLibraryDidBecomeUnavailable:(id)arg1;
+- (void)_homeSharingLibraryDidUpdateRevisionNumber:(id)arg1;
 - (id)_tokenDataForMediaItem:(id)arg1;
-- (void)_willEnterForegroundNotification:(id)arg1;
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2 progressHandler:(id)arg3;
 - (void)dealloc;
@@ -54,7 +53,7 @@
 - (BOOL)requiresAuthentication;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
-- (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
 - (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkFormat:(int)arg2 artworkCacheID:(id)arg3;
 - (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkSize:(struct CGSize { float x1; float x2; })arg2 artworkCacheID:(id)arg3;
 - (id)uniqueIdentifier;

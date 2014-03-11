@@ -5,13 +5,12 @@
 @interface PUPhotosSharingViewControllerPhoneSpec : PUPhotosSharingViewControllerSpec {
 }
 
-- (BOOL)allowsInterfaceRotation;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForOrientation:(int)arg1;
 - (BOOL)embedsActivityViewForOrientation:(int)arg1;
-- (int)fastImageFormat;
+- (int)fastImageFormatForOrientation:(int)arg1;
 - (float)interItemSpacing;
 - (BOOL)maximizeImageHeight;
-- (int)qualityImageFormat;
-- (int)zoomingImageFormat;
+- (int)qualityImageFormatForOrientation:(int)arg1;
+- (int)zoomingImageFormatForOrientation:(int)arg1;
 
 @end

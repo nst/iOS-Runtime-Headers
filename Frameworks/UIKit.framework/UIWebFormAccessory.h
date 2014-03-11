@@ -34,6 +34,7 @@
 - (void)_orientationDidChange:(id)arg1;
 - (void)_previousTapped:(id)arg1;
 - (void)_refreshAutofillPresentation;
+- (void)_setRenderConfig:(id)arg1;
 - (id)_tab;
 - (void)_tabSegmentedControlDidChange:(id)arg1;
 - (void)_updateFrame;

@@ -12,6 +12,8 @@
 @property BOOL ignoreRead;
 @property(retain) ALAssetRepresentationPrivate * internal;
 
++ (void)_enableImageDataUsesMap;
+
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1 format:(int)arg2 bakeInOrientation:(int)arg3;
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1;
 - (id)UTI;

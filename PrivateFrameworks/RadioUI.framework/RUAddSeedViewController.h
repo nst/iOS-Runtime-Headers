@@ -21,6 +21,7 @@
 - (id)delegate;
 - (id)metricsPageDescriptionForSearchViewController:(id)arg1;
 - (id)metricsPageTypeForSearchViewController:(id)arg1;
+- (void)removeAddingIndicator;
 - (void)searchViewController:(id)arg1 didSelectStation:(id)arg2;
 - (void)searchViewControllerDidEndSearching:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -23,6 +23,7 @@
 @property unsigned int invitationStatus;
 @property(readonly) BOOL isDefaultCalendarForSource;
 @property BOOL isFacebookBirthdayCalendar;
+@property BOOL isHolidaySubscribedCalendar;
 @property(copy) NSURL * ownerIdentityAddress;
 @property(copy) NSString * ownerIdentityDisplayName;
 @property(copy) NSString * ownerIdentityEmail;
@@ -63,6 +64,7 @@
 - (BOOL)canBeShared;
 - (id)colorString;
 - (id)description;
+- (id)digest;
 - (int)displayOrder;
 - (int)entityType;
 - (id)externalID;
@@ -73,6 +75,7 @@
 - (BOOL)isDefaultCalendarForSource;
 - (BOOL)isFacebookBirthdayCalendar;
 - (BOOL)isHidden;
+- (BOOL)isHolidaySubscribedCalendar;
 - (BOOL)isImmutable;
 - (BOOL)isPublished;
 - (BOOL)isSharingInvitation;
@@ -99,6 +102,7 @@
 - (void)setCanBeShared:(BOOL)arg1;
 - (void)setColorDisplayOnly:(BOOL)arg1;
 - (void)setColorString:(id)arg1;
+- (void)setDigest:(id)arg1;
 - (void)setDisplayOrder:(int)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setExternalModificationTag:(id)arg1;
@@ -106,6 +110,7 @@
 - (void)setImmutable:(BOOL)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
 - (void)setIsFacebookBirthdayCalendar:(BOOL)arg1;
+- (void)setIsHolidaySubscribedCalendar:(BOOL)arg1;
 - (void)setIsPublished:(BOOL)arg1;
 - (void)setOwnerIdentityAddress:(id)arg1;
 - (void)setOwnerIdentityDisplayName:(id)arg1;

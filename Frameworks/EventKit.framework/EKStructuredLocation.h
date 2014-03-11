@@ -7,6 +7,7 @@
 @interface EKStructuredLocation : EKObject <NSCopying> {
 }
 
+@property(retain) NSString * address;
 @property(copy) NSString * addressBookEntityID;
 @property(retain) CLLocation * geoLocation;
 @property(readonly) BOOL isStructured;
@@ -16,6 +17,7 @@
 + (id)locationWithTitle:(id)arg1;
 
 - (id)_persistentLocation;
+- (id)address;
 - (id)addressBookEntityID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -24,6 +26,7 @@
 - (id)init;
 - (BOOL)isStructured;
 - (double)radius;
+- (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setGeoLocation:(id)arg1;
 - (void)setRadius:(double)arg1;

@@ -58,6 +58,7 @@
 - (unsigned int)delayedArchivingPriority;
 - (unsigned int)descendantCount;
 - (void)didLoadChildObjectFromDocumentSupport:(id)arg1;
+- (void)enumerateCascadedStylesUsingBlock:(id)arg1;
 - (void)enumerateStylesUsingBlock:(id)arg1;
 - (id)firstRootlessStyleOfClass:(Class)arg1 withOverridePropertyMap:(id)arg2;
 - (id)firstStyleWithName:(id)arg1;
@@ -85,10 +86,10 @@
 - (id)p_newDefaultPresenterNotesParagraphStyleWithContext:(id)arg1;
 - (void)p_removeStyle:(id)arg1;
 - (void)p_removeStyleFromParentChildren:(id)arg1;
-- (id)p_removeUnneededOverrides:(id)arg1 characterStyle:(id)arg2 paragraphStyle:(id)arg3;
 - (void)p_setIdentifier:(id)arg1 ofStyle:(id)arg2;
 - (void)p_setParent:(id)arg1 ofStyle:(id)arg2;
 - (void)p_upgradeDefaultPresenterNotesStylesResetExisting:(BOOL)arg1;
+- (id)p_variationMapForVaryingCharacterStyle:(id)arg1 overParagraphStyle:(id)arg2 withPropertyMap:(id)arg3;
 - (id)packageLocator;
 - (id)parent;
 - (void)removeStyle:(id)arg1;
@@ -109,6 +110,7 @@
 - (id)stylesPassingTest:(id)arg1;
 - (id)stylesWithName:(id)arg1 ofClass:(Class)arg2;
 - (id)stylesWithName:(id)arg1;
+- (void)unlockStylesheetForDurationOfBlock:(id)arg1;
 - (id)unusedStyleIdentifierWithPackageString:(id)arg1 styleDescriptor:(id)arg2 contentTag:(id)arg3;
 - (void)upgradeDefaultPresenterNotesStyles;
 - (id)variationOfCharacterStyle:(id)arg1 paragraphStyle:(id)arg2 propertyMap:(id)arg3;

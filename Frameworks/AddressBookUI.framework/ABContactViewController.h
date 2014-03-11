@@ -126,6 +126,7 @@
 @property BOOL hideCardActions;
 @property(copy) id idQueryResultHandler;
 @property BOOL isMailVIP;
+@property(readonly) BOOL isPresentingModalViewController;
 @property(retain) ABPropertyLinkedCardsAction * linkedCardsAction;
 @property(retain) NSMutableArray * linkedContactsEdits;
 @property(retain) NSString * message;
@@ -141,6 +142,7 @@
 @property BOOL shouldShowLinkedContacts;
 @property(retain) ABSiriContactContextProvider * siriContextProvider;
 
++ (void)preCacheContent;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (id)_addCreateNewContactAction;
@@ -179,7 +181,7 @@
 - (void)_setLabelWidth:(float)arg1 forGroup:(id)arg2;
 - (void)_setupAddToAddressBookActions;
 - (void)_setupCardActions;
-- (void)_setupContactBlockingActions;
+- (void)_setupContactBlockingActionsWithUpdate:(BOOL)arg1;
 - (void)_setupEditingCardActions;
 - (void)_setupPrimaryPropertyActions;
 - (id)_shareContactAction;
@@ -273,6 +275,7 @@
 - (int)indexOfGroup:(id)arg1;
 - (id)initWithContact:(id)arg1;
 - (BOOL)isMailVIP;
+- (BOOL)isPresentingModalViewController;
 - (id)linkedCardsAction;
 - (id)linkedContactsEdits;
 - (void)loadView;
@@ -378,6 +381,7 @@
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
@@ -393,7 +397,6 @@
 - (struct { id x1; id x2; id x3; id x4; })transitionToEditing:(BOOL)arg1;
 - (void)updateEditNavigationItemsAnimated:(BOOL)arg1;
 - (void)updateWithNewContact:(id)arg1;
-- (void)viewDidLoad;
 - (id)viewForHeaderInTableView:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

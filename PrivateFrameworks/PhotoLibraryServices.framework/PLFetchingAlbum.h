@@ -4,7 +4,7 @@
 
 @class NSArray, NSFetchRequest, NSOrderedSet;
 
-@interface PLFetchingAlbum : _PLFetchingAlbum <PLAlbumProtocolDisplayCount> {
+@interface PLFetchingAlbum : _PLFetchingAlbum {
     NSArray *_cachedKeyAssets;
     unsigned int _countForDisplay;
     int _emptyState;
@@ -12,7 +12,6 @@
     unsigned int _videosCount;
 }
 
-@property(readonly) unsigned int countForDisplay;
 @property(retain) NSFetchRequest * fetchRequest;
 @property(retain) NSOrderedSet * fetchedAssets;
 @property(readonly) BOOL hasAssetsCache;
@@ -24,6 +23,7 @@
 
 - (id)_cachedKeyAssets;
 - (unsigned int)_fetchedCountForAssetsOfKind:(short)arg1;
+- (unsigned int)approximateCount;
 - (id)assets;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
@@ -32,7 +32,6 @@
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;
 - (unsigned int)countForAssetsOfKind:(short)arg1;
-- (unsigned int)countForDisplay;
 - (void)dealloc;
 - (void)didTurnIntoFault;
 - (id)fastPointerAccessSetForAssets:(id)arg1;

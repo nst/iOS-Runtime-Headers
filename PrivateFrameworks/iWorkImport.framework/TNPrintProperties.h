@@ -6,27 +6,18 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } mUnscaledContentRect;
-    } mUnscaledPageSize;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _printMargins;
+    } _unscaledPageSize;
 }
 
-@property(readonly) float bottomMargin;
-@property(readonly) float leftMargin;
 @property(readonly) float pageHeight;
 @property(readonly) float pageWidth;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } printMargins;
-@property(readonly) float rightMargin;
-@property(readonly) float topMargin;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unscaledContentRect;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } printMargins;
 @property struct CGSize { float x1; float x2; } unscaledPageSize;
 
 + (id)a4SizePrintProperties;
@@ -37,13 +28,12 @@
 + (float)pageGutter;
 + (float)viewScaleFudgeFactor;
 
-- (float)bottomMargin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForContentScale:(float)arg1 portraitOrientation:(BOOL)arg2;
 - (float)contentScaleForIntegralWidthWithContentScale:(float)arg1 portraitOrientation:(BOOL)arg2;
 - (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 edgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (float)leftMargin;
+- (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 printMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForContentScale:(float)arg1 portraitOrientation:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_unscaledContentRectForOrientation:(BOOL)arg1;
 - (float)pageHeight;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageNumberRectForContentScale:(float)arg1 portraitOrientation:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageNumberRectForPortraitOrientation:(BOOL)arg1;
@@ -51,11 +41,8 @@
 - (struct CGSize { float x1; float x2; })pageSizeWithGutterForContentScale:(float)arg1 portraitOrientation:(BOOL)arg2;
 - (float)pageWidth;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })printMargins;
-- (float)rightMargin;
-- (void)setUnscaledContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPrintMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setUnscaledPageSize:(struct CGSize { float x1; float x2; })arg1;
-- (float)topMargin;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledContentRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledPageRectForDisplayForPortraitOrientation:(BOOL)arg1 atPageCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (struct CGSize { float x1; float x2; })unscaledPageSize;
 

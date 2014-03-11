@@ -31,6 +31,7 @@
 @property(retain) NSString * title;
 @property(getter=isUpdating) BOOL updating;
 
+- (void).cxx_destruct;
 - (id)annotation;
 - (double)course;
 - (id)fixedLocation;

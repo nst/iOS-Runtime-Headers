@@ -4,7 +4,7 @@
 
 @class NSMutableArray, VKPStyleProperties;
 
-@interface VKPStyleContents : PBCodable {
+@interface VKPStyleContents : PBCodable <NSCopying> {
     VKPStyleProperties *_properties;
     NSMutableArray *_zooms;
 }
@@ -16,6 +16,7 @@
 - (void)addZooms:(id)arg1;
 - (void)clearZooms;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

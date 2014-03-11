@@ -27,7 +27,7 @@
 - (void)makePathSharp:(id)arg1;
 - (void)makePathSmooth:(id)arg1;
 - (id)newApplyPresetCommandFromShape:(id)arg1 preset:(id)arg2 applyTextStyle:(BOOL)arg3;
-- (BOOL)p_containsClosedPaths;
+- (BOOL)p_containsOpenPaths;
 - (BOOL)p_leftLineEndIsHeadForInfo:(id)arg1;
 - (void)performBooleanOperationOnPaths:(unsigned int)arg1;
 - (void)resetTextAndObjectHandles:(id)arg1;
@@ -52,8 +52,9 @@
 - (id)strokeColorPickerTitle;
 - (id)strokeSwatches;
 - (void)stylePresetInspector:(id)arg1 applyPresetAfterRedefine:(id)arg2 toObject:(id)arg3;
+- (void)stylePresetInspector:(id)arg1 didSelectPreset:(id)arg2 useAlternateApplicationBehavior:(BOOL)arg3;
 - (void)stylePresetInspector:(id)arg1 didSelectPreset:(id)arg2;
-- (id)stylePresetsForInspector:(id)arg1;
+- (id)stylePresetKindForInspector;
 - (BOOL)suppressesFillInspector;
 - (BOOL)suppressesPresetInspector;
 - (BOOL)suppressesStyleInspector;

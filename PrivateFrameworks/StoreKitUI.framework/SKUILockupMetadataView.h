@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, UIImageView, UILabel;
+@class NSString, SKUIClientContext, UIColor, UIImageView, UILabel;
 
 @interface SKUILockupMetadataView : UIView {
     UILabel *_artistNameLabel;
     UILabel *_categoryLabel;
+    SKUIClientContext *_clientContext;
+    UILabel *_itemCountLabel;
+    UILabel *_itemOfferLabel;
     int _numberOfUserRatings;
     UILabel *_releaseDateLabel;
     UIColor *_textColor;
@@ -20,6 +23,9 @@
 
 @property(copy) NSString * artistName;
 @property(copy) NSString * categoryString;
+@property(retain) SKUIClientContext * clientContext;
+@property(copy) NSString * itemCountString;
+@property(copy) NSString * itemOfferString;
 @property int numberOfUserRatings;
 @property(copy) NSString * releaseDateString;
 @property(copy) NSString * title;
@@ -34,13 +40,20 @@
 - (void)_reloadUserRatingViews;
 - (id)artistName;
 - (id)categoryString;
-- (void)layoutSubviews;
+- (id)clientContext;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)itemCountString;
+- (id)itemOfferString;
 - (int)numberOfUserRatings;
 - (id)releaseDateString;
 - (void)setArtistName:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCategoryString:(id)arg1;
+- (void)setClientContext:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
+- (void)setItemCountString:(id)arg1;
+- (void)setItemOfferString:(id)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setReleaseDateString:(id)arg1;
 - (void)setTitle:(id)arg1;

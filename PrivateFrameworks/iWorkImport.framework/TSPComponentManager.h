@@ -37,6 +37,7 @@
 - (id)context;
 - (void)dealloc;
 - (void)didModifyFlushedComponent:(id)arg1 forObject:(id)arg2;
+- (void)dirtyAllComponentsForDocumentUpgradeInPackage:(unsigned char)arg1;
 - (void)discardOrphanedComponents;
 - (id)documentComponent;
 - (id)documentComponentImpl;

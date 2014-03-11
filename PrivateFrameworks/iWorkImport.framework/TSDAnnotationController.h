@@ -14,6 +14,7 @@
 - (id)annotationNavigationString;
 - (id)annotationNavigationTypeStringUsedForNavigating:(BOOL)arg1;
 - (void)commitCommentText:(id)arg1 forAnnotation:(id)arg2;
+- (void)didShowAnnotation:(id)arg1;
 - (BOOL)hasAnnotations;
 - (void)nextAnnotation:(id)arg1;
 - (void)previousAnnotation:(id)arg1;

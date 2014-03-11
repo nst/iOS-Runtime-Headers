@@ -18,9 +18,9 @@
 @property(readonly) NSArray * steps;
 @property(readonly) unsigned int transportType;
 
+- (void).cxx_destruct;
 - (id)_initWithGEORoute:(id)arg1;
 - (id)advisoryNotices;
-- (void)dealloc;
 - (double)distance;
 - (double)expectedTravelTime;
 - (id)name;

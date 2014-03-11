@@ -47,8 +47,11 @@
 @property(readonly) AVPlayer * player;
 @property(readonly) PLMoviePlayerView * view;
 
++ (void)_cacheMoviePlayerView:(id)arg1;
 + (BOOL)_isNetworkSupportedPath:(id)arg1;
 + (BOOL)_isStreamableAsset:(id)arg1;
++ (id)_newOrCachedMoviePlayerView;
++ (id)assetForMovieWithPath:(id)arg1 options:(id)arg2;
 
 - (BOOL)TVOutEnabled;
 - (BOOL)_allowsExternalPlayback;
@@ -96,7 +99,6 @@
 - (void)_willResignNotification:(id)arg1;
 - (void)_willSuspendNotification:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)assetForMovieWithPath:(id)arg1 options:(id)arg2;
 - (id)audioTimePitchAlgorithm;
 - (unsigned int)bufferingState;
 - (double)currentTime;
@@ -104,6 +106,7 @@
 - (id)delegate;
 - (void)didBecomeActiveController;
 - (double)duration;
+- (int)externalPlaybackType;
 - (BOOL)forceDisableTVOut;
 - (id)init;
 - (BOOL)isActiveController;

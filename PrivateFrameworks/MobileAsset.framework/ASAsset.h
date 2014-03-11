@@ -33,6 +33,7 @@
 - (int)_formatVersion;
 - (id)_getLocalAttribute:(id)arg1;
 - (void)adjustDownloadOptions:(id)arg1 completion:(id)arg2;
+- (int)assetStateForStateString:(id)arg1;
 - (id)assetType;
 - (id)attributes;
 - (void)beginDownloadWithOptions:(id)arg1;
@@ -63,6 +64,7 @@
 - (void)purge:(id)arg1;
 - (BOOL)purgeAndReturnError:(id*)arg1;
 - (BOOL)requiredDiskSpaceIsAvailable:(long long*)arg1 error:(id*)arg2;
+- (BOOL)requiredDiskSpaceIsAvailableForDownloadOptions:(id)arg1 requiredBytes:(long long*)arg2 error:(id*)arg3;
 - (void)resumeDownload:(id)arg1;
 - (BOOL)resumeDownloadAndReturnError:(id*)arg1;
 - (void)setClientName:(id)arg1;

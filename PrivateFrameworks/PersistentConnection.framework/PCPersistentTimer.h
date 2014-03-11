@@ -23,6 +23,7 @@
 @property(readonly) NSString * loggingIdentifier;
 @property double minimumEarlyFireProportion;
 
++ (struct dispatch_queue_s { }*)_backgroundUpdateQueue;
 + (double)_currentGuidanceTime;
 + (void)_updateTime:(double)arg1 forGuidancePriority:(unsigned int)arg2;
 + (double)currentMachTimeInterval;

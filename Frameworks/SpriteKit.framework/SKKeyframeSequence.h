@@ -2,15 +2,10 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class NSMutableArray;
 
 @interface SKKeyframeSequence : NSObject <NSCoding, NSCopying> {
-    struct SKCKeyframeSequence { int (**x1)(); int x2; int x3; int x4; int x5; float *x6; float *x7; } *_cKeyframeSequence;
+    struct SKCKeyframeSequence { int x1; int x2; int x3; int x4; float *x5; float *x6; } *_cKeyframeSequence;
     unsigned int _count;
     int _interpolationMode;
     int _repeatMode;
@@ -21,8 +16,8 @@
 @property int interpolationMode;
 @property int repeatMode;
 
-- (struct SKCKeyframeSequence { int (**x1)(); int x2; int x3; int x4; int x5; float *x6; float *x7; }*)_createSKCKeyframeSequence;
 - (void).cxx_destruct;
+- (struct SKCKeyframeSequence { int x1; int x2; int x3; int x4; float *x5; float *x6; }*)_createSKCKeyframeSequence;
 - (void)_dirtySKCKeyframeSequence;
 - (Class)_valueClass;
 - (void)addKeyframeValue:(id)arg1 time:(float)arg2;

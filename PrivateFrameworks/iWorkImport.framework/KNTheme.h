@@ -21,7 +21,7 @@
 }
 
 @property(retain) NSString * UUID;
-@property(readonly) NSArray * classicThemeRecords;
+@property(retain) NSArray * classicThemeRecords;
 @property(readonly) float cornerRadius;
 @property(retain) KNSlideNode * defaultMasterSlideNode;
 @property(retain) NSArray * masters;
@@ -64,12 +64,14 @@
 - (void)p_cacheSlideNodes;
 - (void)p_selectSecondMasterAsDefault;
 - (void)p_setDefaultMasterSlideNode:(id)arg1;
+- (void)removeAllClassicThemeRecords;
 - (void)removeAllMasters;
 - (void)removeMasterSlideNode:(id)arg1;
 - (void)resolveDefaultMaster;
 - (void)saveToArchive:(struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)selectSecondMasterAsDefault;
+- (void)setClassicThemeRecords:(id)arg1;
 - (void)setDefaultMasterSlideNode:(id)arg1;
 - (void)setMasters:(id)arg1;
 - (void)setUUID:(id)arg1;

@@ -24,7 +24,7 @@
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;
-- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
+- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
 - (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;

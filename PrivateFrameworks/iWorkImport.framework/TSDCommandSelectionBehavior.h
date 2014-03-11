@@ -15,6 +15,7 @@
     NSObject<TSDCanvasEditor> *mCanvasEditor;
     TSKDocumentRoot *mDocumentRootForSelection;
     TSPObject<TSKModel> *mModelForSelection;
+    unsigned int mSelectionFlags;
     int mType;
 }
 
@@ -25,6 +26,7 @@
 - (void)dealloc;
 - (id)destructiveSelectionChangeForSelection:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithCanvasEditor:(id)arg1 type:(int)arg2 canvasSelection:(id)arg3 selectionFlags:(unsigned int)arg4;
 - (id)initWithCanvasEditor:(id)arg1 type:(int)arg2 canvasSelection:(id)arg3;
 - (id)initWithCanvasEditor:(id)arg1 type:(int)arg2 constructedInfos:(id)arg3;
 - (id)initWithCanvasEditor:(id)arg1 type:(int)arg2;

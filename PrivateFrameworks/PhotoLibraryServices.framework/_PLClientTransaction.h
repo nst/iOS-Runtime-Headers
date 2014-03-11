@@ -2,25 +2,33 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
+@class NSObject<OS_dispatch_semaphore>, NSString;
 
 @interface _PLClientTransaction : PLClientServerTransaction {
+    NSObject<OS_dispatch_semaphore> *_fdResourceSemaphore;
     int _fileDescriptor;
     NSString *_path;
     id _processAssertion;
 }
 
+@property NSObject<OS_dispatch_semaphore> * fdResourceSemaphore;
 @property int fileDescriptor;
 @property(retain) NSString * path;
 @property(retain) id processAssertion;
 
++ (id)_fdIsolationQueue;
++ (id)_fdResourceSemaphore;
+
 - (void)abortTransaction;
+- (void)completeTransaction;
 - (void)dealloc;
 - (id)description;
+- (id)fdResourceSemaphore;
 - (int)fileDescriptor;
 - (id)init;
 - (id)path;
 - (id)processAssertion;
+- (void)setFdResourceSemaphore:(id)arg1;
 - (void)setFileDescriptor:(int)arg1;
 - (void)setPath:(id)arg1;
 - (void)setProcessAssertion:(id)arg1;

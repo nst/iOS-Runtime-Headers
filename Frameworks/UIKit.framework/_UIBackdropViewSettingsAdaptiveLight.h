@@ -5,7 +5,6 @@
 @interface _UIBackdropViewSettingsAdaptiveLight : _UIBackdropViewSettingsLight {
 }
 
-- (void)applyDarkeningTintWithSettings:(id)arg1;
 - (void)setDefaultValues;
 
 @end

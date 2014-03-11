@@ -16,7 +16,7 @@
 @property float backdropAlpha;
 @property(retain) SKUIColorScheme * colorScheme;
 @property(readonly) UIControl * sectionControl;
-@property(readonly) int selectedSectionIndex;
+@property int selectedSectionIndex;
 
 - (void).cxx_destruct;
 - (void)_reloadBackdropView;
@@ -28,6 +28,7 @@
 - (int)selectedSectionIndex;
 - (void)setBackdropAlpha:(float)arg1;
 - (void)setColorScheme:(id)arg1;
+- (void)setSelectedSectionIndex:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -5,30 +5,23 @@
 @class NSCache, UIAlertView, UITextField;
 
 @interface MusicPlaylistsViewController : MusicTableViewController <MusicPickerOverlayDelegate, UITextFieldDelegate> {
-    int _addPlaylistActionIndex;
-    int _geniusPlaylistActionIndex;
     UITextField *_newPlaylistAlertTextField;
     id _newPlaylistAlertTextFieldChangeObserver;
     UIAlertView *_newPlaylistAlertView;
     NSCache *_playlistMetadataCache;
 }
 
-@property(readonly) int addPlaylistActionIndex;
-@property(readonly) int geniusPlaylistActionIndex;
 @property(retain) NSCache * playlistMetadataCache;
 
 - (void).cxx_destruct;
 - (BOOL)MPH_supportsCoverFlow;
-- (void)_addPlaylistAction;
-- (void)_geniusPlaylistAction;
 - (BOOL)_isSaveButtonEnabled;
 - (id)_playlistTitle;
-- (void)_updateActionCellIndexes;
 - (void)_updateCloudPlaylist:(id)arg1;
 - (void)_updateSaveButtonEnabledState;
-- (int)addPlaylistActionIndex;
+- (void)addPlaylistAction;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (int)geniusPlaylistActionIndex;
+- (void)createGeniusPlaylistAction;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (BOOL)music_hasContent;
 - (void)pickerOverlayDidFinish:(id)arg1;

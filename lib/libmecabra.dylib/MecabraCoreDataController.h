@@ -59,6 +59,7 @@
 - (id)localURL;
 - (id)managedObjectContext;
 - (id)managedObjectModel;
+- (void)migrateiCloudToLocal;
 - (id)newPersistentStoreWithURL:(id)arg1 ubiquityContainerIdentifier:(id)arg2 managedObjectModel:(id)arg3;
 - (id)persistentStoreCoordinator;
 - (void)prepareURLForDatabaseFile:(id)arg1;

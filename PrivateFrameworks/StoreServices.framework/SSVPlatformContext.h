@@ -9,6 +9,7 @@
     <SSVSAPContext> *_sapContext;
     NSArray *_signedHeaders;
     NSArray *_signedQueryParameters;
+    NSString *_unpersonalizedLookupURLString;
 }
 
 @property(retain) <SSVSAPContext> * SAPContext;
@@ -16,6 +17,7 @@
 @property(readonly) NSString * lookupURLString;
 @property(readonly) NSArray * signedHeaders;
 @property(readonly) NSArray * signedQueryParameters;
+@property(readonly) NSString * unpersonalizedLookupURLString;
 
 - (void).cxx_destruct;
 - (id)SAPContext;
@@ -26,5 +28,6 @@
 - (void)setSAPContext:(id)arg1;
 - (id)signedHeaders;
 - (id)signedQueryParameters;
+- (id)unpersonalizedLookupURLString;
 
 @end

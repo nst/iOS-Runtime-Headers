@@ -5,6 +5,4 @@
 @interface UIStatusBarExternalTranslucentForegroundStyleAttributes : UIStatusBarExternalForegroundStyleAttributes {
 }
 
-- (id)homeImageName;
-
 @end

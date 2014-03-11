@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class PSPasscodeField, RUIObjectModel, UILabel, UIView;
+@class RUIObjectModel, RUIPasscodeField, UILabel, UIView;
 
-@interface RUIPasscodeView : RUIElement <PSPasscodeFieldDelegate> {
+@interface RUIPasscodeView : RUIElement <RUIPasscodeFieldDelegate> {
     UIView *_footer;
     UILabel *_label;
     RUIObjectModel *_objectModel;
-    PSPasscodeField *_passcodeField;
+    RUIPasscodeField *_passcodeField;
     UIView *_view;
 }
 
 @property RUIObjectModel * objectModel;
-@property(readonly) PSPasscodeField * passcodeField;
+@property(readonly) RUIPasscodeField * passcodeField;
 
 - (void)dealloc;
 - (id)objectModel;

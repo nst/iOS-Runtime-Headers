@@ -9,6 +9,7 @@
     NSMutableData *_bodyData;
     <MFMessageDataConsumerFactory> *_consumerFactory;
     <MFCollectingDataConsumer> *_dataConsumer;
+    BOOL _didBeginStreaming;
     int _requestedFormat;
     BOOL _succeeded;
     double _timeOfLastActivity;
@@ -30,6 +31,7 @@
 - (id)dataConsumer;
 - (id)dataConsumerForPart:(id)arg1;
 - (void)dealloc;
+- (BOOL)didBeginStreaming;
 - (void)didEndStreamingForMailMessage:(id)arg1;
 - (int)requestedFormat;
 - (void)setAlternatePartConsumer:(id)arg1;

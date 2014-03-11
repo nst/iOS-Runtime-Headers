@@ -24,6 +24,8 @@
     struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; id x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; } *viewRef;
 }
 
+@property BOOL isMediaPlugInProxyView;
+
 + (void)_setInterpolationQuality:(int)arg1;
 + (id)_wrapperForViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; id x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; }*)arg1;
 + (id)focusView;
@@ -73,6 +75,7 @@
 - (void)invalidateGState;
 - (BOOL)isDescendantOf:(id)arg1;
 - (BOOL)isHiddenOrHasHiddenAncestor;
+- (BOOL)isMediaPlugInProxyView;
 - (id)lastScrollableAncestor;
 - (void)layout;
 - (void)layoutIfNeeded;
@@ -97,6 +100,7 @@
 - (void)setFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
+- (void)setIsMediaPlugInProxyView:(BOOL)arg1;
 - (void)setNeedsDisplay:(BOOL)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout:(BOOL)arg1;

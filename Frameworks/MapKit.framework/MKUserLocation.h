@@ -30,6 +30,7 @@
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)title;
 
+- (void).cxx_destruct;
 - (void)_updateCoordinate;
 - (double)accuracy;
 - (id)annotation;

@@ -24,8 +24,11 @@
             float height; 
         } size; 
     BOOL mAboveIntercept;
+    BOOL mAtIntercept;
     } mChartBodyFrameInRepElementSpace;
     BOOL mCrossesIntercept;
+    BOOL mCurrentAboveIntercept;
+    BOOL mCurrentAtIntercept;
     float mDuration;
     BOOL mElementUndefined;
     BOOL mHorizontalChart;
@@ -37,8 +40,11 @@
 }
 
 @property BOOL aboveIntercept;
+@property BOOL atIntercept;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartBodyFrameInRepElementSpace;
 @property BOOL crossesIntercept;
+@property BOOL currentAboveIntercept;
+@property BOOL currentAtIntercept;
 @property float duration;
 @property BOOL elementUndefined;
 @property BOOL horizontalChart;
@@ -52,11 +58,15 @@
 
 - (id).cxx_construct;
 - (BOOL)aboveIntercept;
+- (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
-- (void)addImageContentsAnimationForLayer:(id)arg1 fromImage:(id)arg2 toImage:(id)arg3;
+- (void)addImageContentsAnimationForLayer:(id)arg1 fromImage:(id)arg2 toImage:(id)arg3 keyTimes:(id)arg4;
+- (BOOL)atIntercept;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chartBodyFrameInRepElementSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)crossesIntercept;
+- (BOOL)currentAboveIntercept;
+- (BOOL)currentAtIntercept;
 - (void)dealloc;
 - (float)duration;
 - (BOOL)elementUndefined;
@@ -66,8 +76,11 @@
 - (id)keyTimes;
 - (id)layerAnimationValues;
 - (void)setAboveIntercept:(BOOL)arg1;
+- (void)setAtIntercept:(BOOL)arg1;
 - (void)setChartBodyFrameInRepElementSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCrossesIntercept:(BOOL)arg1;
+- (void)setCurrentAboveIntercept:(BOOL)arg1;
+- (void)setCurrentAtIntercept:(BOOL)arg1;
 - (void)setDuration:(float)arg1;
 - (void)setElementUndefined:(BOOL)arg1;
 - (void)setHorizontalChart:(BOOL)arg1;

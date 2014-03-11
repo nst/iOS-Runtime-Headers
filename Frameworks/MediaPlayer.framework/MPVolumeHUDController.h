@@ -14,7 +14,6 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_sliderIsVisible:(id)arg1;
 - (void)_updateVisibility;
 - (id)init;
 - (id)mainContext;

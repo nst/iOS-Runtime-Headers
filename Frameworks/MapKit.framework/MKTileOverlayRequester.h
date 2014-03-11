@@ -15,6 +15,7 @@
 + (unsigned char)tileProviderIdentifier;
 + (void)unregisterOverlay:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_doWorkOrFinish;
 - (void)_operationFailed:(id)arg1 error:(id)arg2;

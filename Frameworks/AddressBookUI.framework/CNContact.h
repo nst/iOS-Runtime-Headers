@@ -7,6 +7,7 @@
 @interface CNContact : NSObject <NSCopying, NSMutableCopying> {
     void *_addressBook;
     CNContactIdentifier *_identifier;
+    int _isFacebook;
     NSArray *_linkedContacts;
     void *_originalRecord;
     void *_record;

@@ -34,5 +34,6 @@
 - (void)setImageHeight:(unsigned int)arg1;
 - (void)setImageWidth:(unsigned int)arg1;
 - (void)setPhotoUUID:(id)arg1;
+- (BOOL)uuidIsEqual:(id)arg1;
 
 @end

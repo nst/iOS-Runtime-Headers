@@ -14,6 +14,7 @@
 @property(copy) NSURL * URL;
 @property(readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property(retain) TSPObjectContext * context;
+@property(readonly) NSString * defaultDraftName;
 @property(readonly) NSString * documentCachePath;
 @property(readonly) TSADocumentRoot * documentRoot;
 @property(readonly) <NSFilePresenter> * filePresenter;

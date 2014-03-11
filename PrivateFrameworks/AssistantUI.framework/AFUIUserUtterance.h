@@ -2,28 +2,25 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class NSArray, NSDictionary, NSMutableArray;
+@class NSArray, NSDictionary, NSMutableArray, NSString;
 
 @interface AFUIUserUtterance : NSObject {
     NSDictionary *_correctionIdentifier;
-    NSMutableArray *_dictationResult;
-    BOOL _openToInterpretation;
     NSMutableArray *_phrases;
+    NSString *_text;
+    NSMutableArray *_tokens;
 }
 
 @property(readonly) NSDictionary * correctionIdentifier;
 @property(readonly) NSArray * dictationResult;
 
 - (void).cxx_destruct;
+- (id)bestTextInterpretation;
 - (id)correctionIdentifier;
 - (id)description;
 - (id)dictationResult;
-- (id)init;
 - (id)initWithPhrases:(id)arg1 correctionIdentifier:(id)arg2;
 - (id)initWithString:(id)arg1 correctionIdentifier:(id)arg2;
-- (BOOL)openToInterpretation;
-- (id)phrases;
-- (id)recursiveDescription;
-- (id)text;
+- (id)initWithTokens:(id)arg1 correctionIdentifier:(id)arg2;
 
 @end

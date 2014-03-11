@@ -26,6 +26,7 @@
 @property struct CGPath { }* path;
 @property(retain) UIColor * strokeColor;
 
+- (void).cxx_destruct;
 - (void)applyFillPropertiesToContext:(struct CGContext { }*)arg1 atZoomScale:(float)arg2;
 - (void)applyStrokePropertiesToContext:(struct CGContext { }*)arg1 atZoomScale:(float)arg2;
 - (void)createPath;

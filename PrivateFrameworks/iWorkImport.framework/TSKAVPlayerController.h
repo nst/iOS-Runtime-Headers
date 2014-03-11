@@ -6,9 +6,11 @@
 
 @interface TSKAVPlayerController : NSObject {
     double _absoluteCurrentTime;
+    BOOL mCanPlay;
     <TSKAVPlayerControllerDelegate> *mDelegate;
     BOOL mFastForwarding;
     BOOL mFastReversing;
+    BOOL mIsObservingStatus;
     AVPlayer *mPlayer;
     BOOL mPlaying;
     float mRateBeforeScrubbing;
@@ -19,6 +21,7 @@
 
 @property double absoluteCurrentTime;
 @property(readonly) double absoluteDuration;
+@property(readonly) BOOL canPlay;
 @property(readonly) double currentTime;
 @property(readonly) <TSKAVPlayerControllerDelegate> * delegate;
 @property(readonly) double duration;
@@ -43,6 +46,7 @@
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;
 - (void)beginScrubbing;
+- (BOOL)canPlay;
 - (double)currentTime;
 - (void)dealloc;
 - (id)delegate;

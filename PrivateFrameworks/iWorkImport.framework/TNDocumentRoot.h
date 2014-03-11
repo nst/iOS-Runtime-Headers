@@ -39,7 +39,6 @@
 - (id).cxx_construct;
 - (id)activeSheet;
 - (void)addSheet:(id)arg1 dolcContext:(id)arg2;
-- (id)additionalDocumentPropertiesForWrite;
 - (unsigned int)applicationType;
 - (id)childEnumerator;
 - (void)dealloc;
@@ -50,7 +49,7 @@
 - (void)initializeForImport;
 - (void)initializeHardCodedBlankDocument;
 - (void)insertSheet:(id)arg1 sheetIndex:(unsigned int)arg2 context:(id)arg3;
-- (BOOL)isMultiPage;
+- (BOOL)isMultiPageForQuickLook;
 - (BOOL)isPrintingAllSheets;
 - (void)moveSheet:(id)arg1 toIndex:(unsigned int)arg2;
 - (id)nameForResolverContainer:(id)arg1;
@@ -69,6 +68,7 @@
 - (id)paperID;
 - (void)performDeferredUpgradeImportOperationsOnNewThreadForCharts:(id)arg1;
 - (void)performDeferredUpgradeImportOperationsRequiringCalcEngine;
+- (void)prepareNewDocumentWithTemplateBundle:(id)arg1;
 - (id)previewImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)printerID;
 - (void)removeAllSheets;

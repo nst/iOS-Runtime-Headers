@@ -16,6 +16,7 @@
     BOOL _itemImageHidden;
     } _itemImageInsets;
     UIImageView *_itemImageView;
+    UIImageView *_overlayImageView;
     UIColor *_titleColor;
     UILabel *_titleLabel;
 }
@@ -30,6 +31,8 @@
 @property(copy) NSString * title;
 
 - (void).cxx_destruct;
+- (void)_reloadHighlight;
+- (void)_removeOverlay;
 - (id)accessibilityLabel;
 - (id)clientContext;
 - (id)countdown;
@@ -43,9 +46,11 @@
 - (void)setClientContext:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
 - (void)setCountdown:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setItemImage:(id)arg1;
 - (void)setItemImageHidden:(BOOL)arg1;
 - (void)setItemImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setSelected:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

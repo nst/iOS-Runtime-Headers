@@ -34,13 +34,11 @@
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (int)_countOfSettingsSections;
 - (void)_didSelectLikeBanStation:(id)arg1;
-- (void)_handleResponseForLikeRequest:(id)arg1 withStation:(id)arg2 responseDictionary:(id)arg3 requestError:(id)arg4;
 - (BOOL)_isDeletableRowAtIndexPath:(id)arg1;
 - (id)_newPageEvent;
 - (id)_newSectionHeaderWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2;
 - (id)_newShadowViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_newTextField;
-- (void)_populateLikeBanItems:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)_presentAddSeedController;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (int)_settingsSectionForTableViewSection:(int)arg1;
@@ -72,6 +70,7 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

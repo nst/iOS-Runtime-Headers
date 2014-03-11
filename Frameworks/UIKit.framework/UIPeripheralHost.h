@@ -147,6 +147,7 @@
     int _shadowStyle;
     BOOL _showCorners;
     BOOL _splitLockState;
+    BOOL _springBoardLockStateIsLocked;
     BOOL _suppresingNotifications;
     int _targetRotatedOrientation;
     NSMutableArray *_targetStateStack;
@@ -215,6 +216,7 @@
 - (id)_inputViews;
 - (id)_inputViewsForResponder:(id)arg1 withAutomaticKeyboard:(BOOL)arg2;
 - (id)_inputViewsForResponder:(id)arg1;
+- (BOOL)_isAccessoryViewChangedOnly;
 - (BOOL)_isCoordinatingWithSystemGestures;
 - (BOOL)_isIgnoringReloadInputViews;
 - (BOOL)_isPinningInputViewsOnBehalfOfResponder:(id)arg1;
@@ -230,6 +232,7 @@
 - (id)_screenForFirstResponder:(id)arg1;
 - (void)_setIgnoresPinning:(BOOL)arg1 allowImmediateReload:(BOOL)arg2;
 - (void)_setReloadInputViewsForcedIsAllowed:(BOOL)arg1;
+- (BOOL)_shouldDelayRotationForWindow:(id)arg1;
 - (BOOL)_somePartOfKeyboardIsOnScreen:(id)arg1;
 - (void)_stopPinningInputViewsOnBehalfOfResponder:(id)arg1;
 - (void)_trackInputModeIfNecessary:(id)arg1;
@@ -277,6 +280,7 @@
 - (void)dock;
 - (id)dropShadowViews;
 - (void)enableKeyboardTyping;
+- (void)endClippingForTransition:(id)arg1;
 - (void)executeTransition:(id)arg1;
 - (void)extendKeyboardBackdropHeight:(float)arg1 withDuration:(float)arg2;
 - (void)fadeInInputViews:(BOOL)arg1;
@@ -410,12 +414,13 @@
 - (void)showDropShadows:(BOOL)arg1;
 - (void)showInputViewsIfNeeded;
 - (struct CGSize { float x1; float x2; })sizeOfInputViewForInputViewSet:(id)arg1 withInterfaceOrientation:(int)arg2;
+- (BOOL)skipTransitionForInputViews:(id)arg1;
+- (void)springBoardLockStateChanged:(id)arg1;
 - (void)syncToExistingAnimations;
 - (id)targetState;
 - (void)textEffectsWindowDidRotate:(id)arg1;
 - (struct CGSize { float x1; float x2; })totalPeripheralSizeForOrientation:(int)arg1;
 - (void)transitionDidFinish:(BOOL)arg1;
-- (void)transitionDidFinish;
 - (void)translateDetected:(id)arg1;
 - (void)undock;
 - (id)undockedInfoFromDefaultInfo:(id)arg1 forNotification:(id)arg2;
@@ -423,10 +428,8 @@
 - (void)updateBackdrop;
 - (void)updateDropShadow;
 - (void)updateExtraViewsForStart:(BOOL)arg1 onTransition:(id)arg2;
-- (void)updateFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withDuration:(float)arg2 splitHeightDelta:(float)arg3;
-- (void)updateFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withProgress:(float)arg2 withDuration:(float)arg3 splitHeightDelta:(float)arg4;
-- (void)updateFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withProgress:(float)arg2 withDuration:(float)arg3;
 - (void)updateInputAccessoryViewVisibility:(BOOL)arg1 withDuration:(float)arg2;
+- (void)updateProgress:(float)arg1 mergedHeight:(float)arg2 splitHeight:(float)arg3;
 - (void)updateScrollViewContentInsetBottom:(float)arg1;
 - (BOOL)userInfoContainsActualGeometryChange:(id)arg1;
 - (id)userInfoFromGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1 duration:(double)arg2 forWill:(BOOL)arg3 forShow:(BOOL)arg4;

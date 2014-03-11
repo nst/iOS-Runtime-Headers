@@ -22,6 +22,7 @@
 @property(copy) NSString * indexNumberString;
 @property(getter=isLargeSpacing) BOOL largeSpacing;
 @property int numberOfUserRatings;
+@property(copy) NSString * subtitle;
 @property(copy) NSString * title;
 @property float userRating;
 
@@ -47,8 +48,10 @@
 - (void)setIndexNumberString:(id)arg1;
 - (void)setLargeSpacing:(BOOL)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;
+- (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserRating:(float)arg1;
+- (id)subtitle;
 - (id)title;
 - (float)userRating;
 

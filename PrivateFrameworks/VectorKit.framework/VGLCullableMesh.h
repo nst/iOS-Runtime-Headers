@@ -3,9 +3,10 @@
  */
 
 @interface VGLCullableMesh : VGLMesh {
-    struct shared_ptr<VGLMeshNode> { 
-        struct VGLMeshNode {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<VGLMeshNode, std::__1::default_delete<VGLMeshNode> > { 
+        struct __compressed_pair<VGLMeshNode *, std::__1::default_delete<VGLMeshNode> > { 
+            struct VGLMeshNode {} *__first_; 
+        } __ptr_; 
     struct vector<VGLMeshLeafNode, vk_allocator<VGLMeshLeafNode> > { 
         struct VGLMeshLeafNode {} *__begin_; 
         struct VGLMeshLeafNode {} *__end_; 

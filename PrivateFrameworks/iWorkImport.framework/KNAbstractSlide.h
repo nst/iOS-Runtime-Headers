@@ -15,7 +15,6 @@
     NSArray *mChildInfos;
     BOOL mInDocument;
     KNObjectPlaceholderInfo *mObjectPlaceholder;
-    BOOL mObjectPlaceholderVisibleForExport;
     NSMutableDictionary *mPlaceholdersForTags;
     KNSlideNode *mSlideNode;
     KNSlideNumberPlaceholderInfo *mSlideNumberPlaceholder;
@@ -43,7 +42,6 @@
 @property(getter=isInlineWithText,readonly) BOOL inlineWithText;
 @property BOOL matchesObjectPlaceholderGeometry;
 @property(retain) KNObjectPlaceholderInfo * objectPlaceholder;
-@property BOOL objectPlaceholderVisibleForExport;
 @property(getter=isObjectVisible,readonly) BOOL objectVisible;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
@@ -120,7 +118,6 @@
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
 - (id)objectForProperty:(int)arg1;
 - (id)objectPlaceholder;
-- (BOOL)objectPlaceholderVisibleForExport;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (void)p_updateBuildsReplacingPlaceholder:(id)arg1 withPlaceholder:(id)arg2;
@@ -146,7 +143,6 @@
 - (void)setGeometry:(id)arg1;
 - (void)setInfo:(id)arg1 forSageTag:(id)arg2;
 - (void)setObjectPlaceholder:(id)arg1;
-- (void)setObjectPlaceholderVisibleForExport:(BOOL)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
 - (void)setPlaceholdersForTags:(id)arg1;

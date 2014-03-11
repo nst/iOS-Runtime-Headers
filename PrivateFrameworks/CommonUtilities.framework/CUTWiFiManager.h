@@ -17,7 +17,6 @@
 
 @property void* currentNetwork;
 @property(readonly) NSString * currentSSID;
-@property(readonly) NSDictionary * currentWiFiNetworkPowerUsage;
 @property(retain) NSMapTable * delegateMap;
 @property void* dynamicStore;
 @property(readonly) BOOL isHostingWiFiHotSpot;
@@ -40,6 +39,7 @@
 - (void)_handleDeviceAttachedCallback;
 - (void)_handlePotentialDeviceChange:(struct __WiFiDeviceClient { }*)arg1;
 - (BOOL)_isPrimaryCellular;
+- (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2 async:(BOOL)arg3;
 - (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2;
 - (void)_performCurrentNetworkBlock:(id)arg1;
 - (void)_performDeviceBlock:(id)arg1 useCache:(BOOL)arg2;
@@ -51,7 +51,7 @@
 - (void)addDelegate:(id)arg1;
 - (void*)currentNetwork;
 - (id)currentSSID;
-- (id)currentWiFiNetworkPowerUsage;
+- (void)currentWiFiNetworkPowerUsageWithCompletion:(id)arg1;
 - (void)dealloc;
 - (id)delegateMap;
 - (void*)dynamicStore;

@@ -26,7 +26,7 @@
 - (void)setStyleValue:(id)arg1 forStyleProperty:(int)arg2;
 - (id)stroke;
 - (void)stylePresetInspector:(id)arg1 didSelectPreset:(id)arg2;
-- (id)stylePresetsForInspector:(id)arg1;
+- (id)stylePresetKindForInspector;
 - (id)swatchRenderingOperationForPreset:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 imageScale:(float)arg3 swatchFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 view:(id)arg5;
 - (id)topLevelInspectorAutosaveName;
 - (id)topLevelInspectorViewControllers;

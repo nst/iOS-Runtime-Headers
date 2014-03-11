@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKToneClassicsTableViewControllerDelegate>, NSArray, NSIndexPath, TKToneTableController, UIImage;
+@class <TKToneClassicsTableViewControllerDelegate>, <TKTonePickerStyleProvider>, NSArray, NSIndexPath, TKToneTableController, UIImage;
 
 @interface TKToneClassicsTableViewController : UITableViewController {
+    <TKTonePickerStyleProvider> *_styleProvider;
     UIImage *checkmarkImage;
     <TKToneClassicsTableViewControllerDelegate> *delegate;
     NSIndexPath *selectedIndexPath;
@@ -15,10 +16,12 @@
 @property(retain) UIImage * checkmarkImage;
 @property <TKToneClassicsTableViewControllerDelegate> * delegate;
 @property(retain) NSIndexPath * selectedIndexPath;
+@property(retain) <TKTonePickerStyleProvider> * styleProvider;
 @property(retain) NSArray * toneIdentifiers;
 @property(retain) TKToneTableController * toneTableController;
 
 - (id)checkmarkImage;
+- (void)dealloc;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1 toneTableController:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -26,8 +29,10 @@
 - (void)setCheckmarkImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
 - (void)setToneIdentifiers:(id)arg1;
 - (void)setToneTableController:(id)arg1;
+- (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

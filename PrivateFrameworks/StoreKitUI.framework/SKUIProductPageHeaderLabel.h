@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, UIImage;
+@class NSArray, NSString, UIColor, UIImage;
 
 @interface SKUIProductPageHeaderLabel : UIView {
     NSString *_contentRating;
     UIImage *_contentRatingImage;
     BOOL _isPad;
     UIColor *_ratingColor;
+    NSArray *_secondaryContentRatingImages;
     NSString *_text;
     UIColor *_textColor;
 }
@@ -16,6 +17,7 @@
 @property(retain) NSString * contentRating;
 @property BOOL isPad;
 @property(retain) UIColor * ratingColor;
+@property(retain) NSArray * secondaryContentRatingImages;
 @property(copy) NSString * text;
 @property(retain) UIColor * textColor;
 
@@ -28,9 +30,12 @@
 - (BOOL)isPad;
 - (void)layoutSubviews;
 - (id)ratingColor;
+- (id)secondaryContentRatingImages;
+- (float)secondaryImageWidth;
 - (void)setContentRating:(id)arg1;
 - (void)setIsPad:(BOOL)arg1;
 - (void)setRatingColor:(id)arg1;
+- (void)setSecondaryContentRatingImages:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

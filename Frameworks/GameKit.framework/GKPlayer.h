@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKGame, GKPlayerInternal, NSArray, NSDate, NSString;
+@class GKGame, GKPlayerInternal, NSArray, NSAttributedString, NSDate, NSString;
 
 @interface GKPlayer : NSObject <NSCoding, NSSecureCoding> {
     NSArray *_friends;
     GKPlayerInternal *_internal;
-    GKGame *_lastPlayedGame;
+    NSAttributedString *_whenString;
 }
 
 @property(copy) NSString * alias;
@@ -38,6 +38,7 @@
 @property int source;
 @property(readonly) struct { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; int x9; } stats;
 @property(copy) NSString * status;
+@property(retain) NSAttributedString * whenString;
 
 + (void)acceptFriendRequestsFromPlayerIDs:(id)arg1 withHandles:(id)arg2 handler:(id)arg3;
 + (id)anonymousPlayer;
@@ -95,8 +96,10 @@
 - (void)setFriends:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)setWhenString:(id)arg1;
 - (id)sortName;
 - (struct { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; int x9; })stats;
 - (id)valueForUndefinedKey:(id)arg1;
+- (id)whenString;
 
 @end

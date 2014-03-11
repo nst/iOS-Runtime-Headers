@@ -11,35 +11,43 @@
     struct CGSize { 
         float width; 
         float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
     SKUIItemArtworkContext *_artworkContext;
     UICollectionView *_collectionView;
     BOOL _delegateWantsWillDisplay;
     BOOL _didInitialReload;
+    } _expectedImageSize;
     NSMutableIndexSet *_hiddenIconIndexSet;
-    NSArray *_items;
+    NSArray *_lockups;
     } _maxCellSize;
     } _maxImageSize;
     BOOL _seeAllHidden;
+    int _seeAllStyle;
     NSString *_seeAllTitle;
     NSURL *_seeAllURL;
     int _swooshType;
     SKUISwooshView *_swooshView;
-    unsigned int _visibleLockupFields;
 }
 
 @property(readonly) SKUIItemArtworkContext * artworkContext;
 @property(readonly) NSArray * items;
+@property(copy) NSArray * lockups;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
 @property(getter=isSeeAllHidden) BOOL seeAllHidden;
 @property(readonly) NSURL * seeAllURL;
 @property int swooshType;
 
-+ (int)_swooshTypeForItems:(id)arg1;
++ (int)_swooshTypeForLockups:(id)arg1;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_maximumCellSizeForImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_newArtworkContextForSwooshType:(int)arg1;
+- (id)_newLockupComponentWithItem:(id)arg1 defaultStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
+- (void)_reloadSizes;
 - (void)_seeAllAction:(id)arg1;
+- (void)_setExpectedImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)artworkContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
@@ -47,6 +55,7 @@
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)dealloc;
+- (void)deselectAllItems;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithItemList:(id)arg1;
@@ -54,6 +63,7 @@
 - (BOOL)isSeeAllHidden;
 - (id)items;
 - (void)loadView;
+- (id)lockups;
 - (id)popImageViewForItemAtIndex:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })seeAllButtonFrame;
 - (id)seeAllURL;
@@ -62,6 +72,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)setItemsWithLockups:(id)arg1;
+- (void)setLockups:(id)arg1;
 - (void)setSeeAllHidden:(BOOL)arg1;
 - (void)setSwooshType:(int)arg1;
 - (int)swooshType;

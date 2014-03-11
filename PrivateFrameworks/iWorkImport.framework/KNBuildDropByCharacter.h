@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBuildDropByCharacter : KNBuildDrop {
+@interface KNBuildDropByCharacter : KNBuildDrop <KNAnimationPluginArchiving> {
 }
 
 + (id)animationFilter;

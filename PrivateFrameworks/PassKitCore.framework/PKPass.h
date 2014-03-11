@@ -71,7 +71,7 @@
 @property int shareCount;
 @property(readonly) NSArray * storeIdentifiers;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } stripRect;
-@property(readonly) int style;
+@property(readonly) unsigned int style;
 @property(copy) NSString * teamID;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailRect;
 @property(readonly) int transitType;
@@ -171,7 +171,7 @@
 - (int)shareCount;
 - (id)storeIdentifiers;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })stripRect;
-- (int)style;
+- (unsigned int)style;
 - (id)teamID;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailRect;
 - (int)transitType;

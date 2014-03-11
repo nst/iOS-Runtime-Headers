@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADSSession_RPC>, NSMutableSet, NSXPCConnection;
+@class <ADSSession_RPC>, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSXPCConnection;
 
 @interface ADAdSheetProxy : NSObject {
     unsigned int _adSheetBootstrapAttempts;
@@ -12,6 +12,8 @@
     NSMutableSet *_connectionAssertions;
     double _lastBootstrap;
     double _lastTermination;
+    NSMutableArray *_performWhenConnectedBlocks;
+    NSObject<OS_dispatch_queue> *_proxyQueue;
     BOOL _serviceLaunchThrottled;
 }
 
@@ -23,6 +25,8 @@
 @property(readonly) BOOL connectionAvailable;
 @property double lastBootstrap;
 @property double lastTermination;
+@property(retain) NSMutableArray * performWhenConnectedBlocks;
+@property(readonly) NSObject<OS_dispatch_queue> * proxyQueue;
 @property(readonly) <ADSSession_RPC> * rpcProxy;
 @property BOOL serviceLaunchThrottled;
 
@@ -40,6 +44,9 @@
 - (id)init;
 - (double)lastBootstrap;
 - (double)lastTermination;
+- (void)performWhenConnected:(id)arg1;
+- (id)performWhenConnectedBlocks;
+- (id)proxyQueue;
 - (void)releaseConnectionAssertion:(id)arg1;
 - (void)resetAdSheetThrottle;
 - (id)rpcProxy;
@@ -51,6 +58,7 @@
 - (void)setConnectionAssertions:(id)arg1;
 - (void)setLastBootstrap:(double)arg1;
 - (void)setLastTermination:(double)arg1;
+- (void)setPerformWhenConnectedBlocks:(id)arg1;
 - (void)setServiceLaunchThrottled:(BOOL)arg1;
 - (void)takeConnectionAssertion:(id)arg1;
 

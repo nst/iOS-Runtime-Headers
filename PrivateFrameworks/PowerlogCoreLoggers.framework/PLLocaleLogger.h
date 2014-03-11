@@ -2,11 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCoreLoggers.framework/PowerlogCoreLoggers
  */
 
+@class NSTimer;
+
 @interface PLLocaleLogger : PLLogger {
+    NSTimer *_daylightSavingsTimer;
 }
 
+@property(retain) NSTimer * daylightSavingsTimer;
+
+- (id)daylightSavingsTimer;
+- (void)daylightSavingsTimerArm;
+- (void)daylightSavingsTimerFire:(id)arg1;
 - (void)dealloc;
+- (void)handleWake:(id)arg1;
 - (id)init;
 - (void)log;
+- (void)setDaylightSavingsTimer:(id)arg1;
 
 @end

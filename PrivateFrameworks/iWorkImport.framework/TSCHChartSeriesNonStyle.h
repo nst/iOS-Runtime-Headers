@@ -17,6 +17,7 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
 - (void)p_upgradeMixedChartProperties:(id)arg1;
+- (void)p_upgradeSeparateVisibilityProperties:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 
 @end

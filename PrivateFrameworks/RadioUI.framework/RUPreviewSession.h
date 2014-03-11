@@ -2,54 +2,43 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, RadioTrack;
+@class MPAVController, MPAVItem, NSArray, NSHashTable;
 
 @interface RUPreviewSession : NSObject {
-    RadioTrack *_currentTrack;
     double _customTrackPreviewDuration;
-    int _indexOfCurrentTrack;
-    double _interstitialTrackDuration;
-    NSMutableDictionary *_radioTracksByAsset;
-    NSMutableArray *_sessionObservers;
-    id _timeObserver;
-    NSArray *_tracks;
+    NSArray *_items;
+    MPAVController *_player;
+    NSHashTable *_sessionObservers;
 }
 
+@property(readonly) MPAVItem * currentItem;
+@property(readonly) double currentItemDuration;
 @property(readonly) double currentTime;
-@property(readonly) RadioTrack * currentTrack;
 @property double customTrackPreviewDuration;
-@property(readonly) int indexOfCurrentTrack;
-@property double interstitialTrackDuration;
+@property(readonly) NSArray * items;
 @property(getter=isPlaying,readonly) BOOL playing;
-@property(readonly) NSArray * tracks;
-
-+ (id)currentSession;
 
 - (void).cxx_destruct;
-- (void)_advanceToNextTrack;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
-- (void)_didBeginWithTrack:(id)arg1;
-- (void)_didChangeFromTrack:(id)arg1 toTrack:(id)arg2;
-- (void)_didStopWithOptions:(int)arg1 didFinalTrackPlayToCompletion:(BOOL)arg2;
+- (void)_didChangeFromItem:(id)arg1 toItem:(id)arg2;
+- (void)_didStopWithOptions:(int)arg1 finalItem:(id)arg2 didFinalItemPlayToCompletion:(BOOL)arg3;
 - (void)_isExplicitTracksEnabledDidChangeNotification:(id)arg1;
-- (id)_newPlayerItemForAsset:(id)arg1;
+- (void)_itemWillChangeNotification:(id)arg1;
+- (void)_playbackStateChangedNotification:(id)arg1;
+- (void)_registerForPlayerNotifications;
+- (void)_unregisterForPlayerNotifications;
 - (void)addSessionObserver:(id)arg1;
+- (id)currentItem;
+- (double)currentItemDuration;
 - (double)currentTime;
-- (id)currentTrack;
 - (double)customTrackPreviewDuration;
 - (void)dealloc;
-- (void)getCurrentDurationWithCompletionHandler:(id)arg1;
-- (int)indexOfCurrentTrack;
-- (id)initWithTracks:(id)arg1;
-- (double)interstitialTrackDuration;
+- (id)initWithItems:(id)arg1;
 - (BOOL)isPlaying;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)items;
 - (void)removeSessionObserver:(id)arg1;
 - (void)setCustomTrackPreviewDuration:(double)arg1;
-- (void)setInterstitialTrackDuration:(double)arg1;
 - (void)start;
 - (void)stopWithOptions:(int)arg1 fadeoutDuration:(double)arg2;
-- (void)stopWithOptions:(int)arg1;
-- (id)tracks;
 
 @end

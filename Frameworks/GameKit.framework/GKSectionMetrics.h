@@ -19,6 +19,7 @@
     float _lineSpacing;
     unsigned int _maximumVisibleItemCount;
     } _padding;
+    BOOL _shouldAlwaysIncludeShowMore;
 }
 
 @property unsigned int alignment;
@@ -34,6 +35,7 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
 @property float sectionHeaderHeight;
 @property BOOL sectionHeadersShouldPin;
+@property BOOL shouldAlwaysIncludeShowMore;
 @property float showMoreHeight;
 
 + (id)metricsForIdiom:(int)arg1;
@@ -69,7 +71,9 @@
 - (void)setPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSectionHeaderHeight:(float)arg1;
 - (void)setSectionHeadersShouldPin:(BOOL)arg1;
+- (void)setShouldAlwaysIncludeShowMore:(BOOL)arg1;
 - (void)setShowMoreHeight:(float)arg1;
+- (BOOL)shouldAlwaysIncludeShowMore;
 - (float)showMoreHeight;
 
 @end

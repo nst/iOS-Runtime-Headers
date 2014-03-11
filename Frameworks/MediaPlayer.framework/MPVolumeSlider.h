@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPAudioDeviceController, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UIView;
+@class MPAVController, MPAVRoutingController, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UIView;
 
 @interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate> {
-    MPAudioDeviceController *_audioDeviceController;
     NSTimer *_commitTimer;
+    BOOL _forcingOffscreenVisibility;
     BOOL _isOffScreen;
     UILabel *_routeNameLabel;
+    MPAVRoutingController *_routingController;
     int _style;
     UIImageView *_thumbImageView;
     BOOL _thumbIsDefault;

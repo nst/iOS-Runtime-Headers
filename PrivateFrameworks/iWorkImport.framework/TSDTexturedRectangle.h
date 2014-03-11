@@ -76,7 +76,7 @@
 @property int textureType;
 @property(readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } transformFromAttributes;
 
-- (void)adjustAnchorRelativeToParentsCenterOfRotation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)adjustAnchorRelativeToParentsCenterOfRotation:(struct CGPoint { float x1; float x2; })arg1 isMagicMove:(BOOL)arg2;
 - (id)attributes;
 - (void)bakeLayerWithAngle:(float)arg1 scale:(float)arg2;
 - (struct CGColorSpace { }*)colorSpace;
@@ -101,6 +101,7 @@
 - (void)renderIntoContext:(struct CGContext { }*)arg1;
 - (void)renderLayerContentsIfNeeded;
 - (void)resetAnchorPoint;
+- (void)resetToSourceImage;
 - (void)setAttributes:(id)arg1;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 - (void)setContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

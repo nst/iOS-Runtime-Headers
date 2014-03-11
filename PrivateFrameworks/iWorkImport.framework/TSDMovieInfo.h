@@ -16,6 +16,7 @@
     BOOL mAudioOnly;
     TSPData *mAudioOnlyImageData;
     double mEndTime;
+    TSPData *mImportedAuxiliaryMovieData;
     unsigned int mLoopOption;
     TSPData *mMovieData;
     NSURL *mMovieRemoteURL;
@@ -31,6 +32,7 @@
 @property(getter=isAudioOnly) BOOL audioOnly;
 @property(retain) TSPData * audioOnlyImageData;
 @property double endTime;
+@property(retain) TSPData * importedAuxiliaryMovieData;
 @property unsigned int loopOption;
 @property(retain) TSPData * movieData;
 @property(retain) NSURL * movieRemoteURL;
@@ -46,7 +48,6 @@
 - (void)acceptVisitor:(id)arg1;
 - (id)animationFilters;
 - (id)audioOnlyImageData;
-- (id)buildTitle;
 - (BOOL)canChangeWrapType;
 - (BOOL)containsProperty:(int)arg1;
 - (id)copyWithContext:(id)arg1;
@@ -56,6 +57,7 @@
 - (double)endTime;
 - (float)floatValueForProperty:(int)arg1;
 - (id)generateEmptyPosterImageForContext:(id)arg1;
+- (id)importedAuxiliaryMovieData;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 movieData:(id)arg4 loadedAsset:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 movieRemoteURL:(id)arg4 loadedAsset:(id)arg5;
@@ -65,7 +67,7 @@
 - (BOOL)isAudioOnly;
 - (BOOL)isStreaming;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; float x6; float x7; float x8; unsigned int x9; float x10; boolx11; boolx12; boolx13; struct DataReference {} *x14; struct DataReference {} *x15; unsigned int x16; unsigned int x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Size {} *x22; struct Size {} *x23; int x24; unsigned int x25[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct DataReference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; float x9; unsigned int x10; float x11; boolx12; boolx13; boolx14; struct DataReference {} *x15; struct DataReference {} *x16; unsigned int x17; unsigned int x18; struct Reference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Size {} *x23; struct Size {} *x24; int x25; unsigned int x26[1]; }*)arg1 unarchiver:(id)arg2;
 - (unsigned int)loopOption;
 - (id)makeAVAsset;
 - (id)makeAVAssetWithOptions:(id)arg1;
@@ -83,11 +85,12 @@
 - (id)presetKind;
 - (struct CGSize { float x1; float x2; })rawDataSize;
 - (Class)repClass;
-- (void)saveToArchive:(struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; float x6; float x7; float x8; unsigned int x9; float x10; boolx11; boolx12; boolx13; struct DataReference {} *x14; struct DataReference {} *x15; unsigned int x16; unsigned int x17; struct Reference {} *x18; struct Reference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Size {} *x22; struct Size {} *x23; int x24; unsigned int x25[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct MovieArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct DataReference {} *x4; struct DataReference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; float x9; unsigned int x10; float x11; boolx12; boolx13; boolx14; struct DataReference {} *x15; struct DataReference {} *x16; unsigned int x17; unsigned int x18; struct Reference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Size {} *x23; struct Size {} *x24; int x25; unsigned int x26[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAudioOnly:(BOOL)arg1;
 - (void)setAudioOnlyImageData:(id)arg1;
 - (void)setEndTime:(double)arg1;
+- (void)setImportedAuxiliaryMovieData:(id)arg1;
 - (void)setLoopOption:(unsigned int)arg1;
 - (void)setMovieData:(id)arg1;
 - (void)setMovieRemoteURL:(id)arg1;
@@ -104,6 +107,7 @@
 - (BOOL)supportsAttachedComments;
 - (BOOL)supportsHyperlinks;
 - (id)synchronouslyGenerateDefaultPosterImageForContext:(id)arg1;
+- (id)titleForBuildChunk:(id)arg1;
 - (float)volume;
 
 @end

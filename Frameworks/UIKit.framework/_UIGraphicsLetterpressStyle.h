@@ -45,7 +45,6 @@
 
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;
-+ (id)pl_alternateLetterpressStyle;
 
 - (id)bottomGradientColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

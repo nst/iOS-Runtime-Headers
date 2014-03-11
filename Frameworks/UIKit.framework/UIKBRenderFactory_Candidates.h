@@ -5,6 +5,8 @@
 @interface UIKBRenderFactory_Candidates : UIKBRenderFactory {
 }
 
+- (id)controlKeyBackgroundColorName;
+- (id)defaultKeyBackgroundColorName;
 - (id)initWithRenderConfig:(id)arg1;
 - (id)traitsForCellSize:(struct CGSize { float x1; float x2; })arg1 highlighted:(BOOL)arg2 edges:(BOOL)arg3;
 - (id)traitsForEdgeGradientWithSize:(struct CGSize { float x1; float x2; })arg1;

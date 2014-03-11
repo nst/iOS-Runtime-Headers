@@ -24,6 +24,7 @@
 + (void)countOfAssetsInMstreamdSharingDownloadQueueWithCompletionBlock:(id)arg1;
 + (BOOL)debugAlwaysStreamSharedVideos;
 + (BOOL)debugAutoAcceptInvitation;
++ (BOOL)debugDownloadAllDerivatives;
 + (BOOL)debugDownloadMetadataOnly;
 + (BOOL)debugDownloadThumbnailsOnly;
 + (void)declinePendingInvitationForAlbum:(id)arg1;
@@ -38,7 +39,7 @@
 + (struct CGSize { float x1; float x2; })dimensionsOfVideoAtURL:(id)arg1;
 + (id)directoryPathForDownloadActivityForAlbumGUID:(id)arg1 create:(BOOL)arg2;
 + (id)directoryPathForUploadActivityForAlbumGUID:(id)arg1 create:(BOOL)arg2;
-+ (void)downloadAsset:(id)arg1 requestThumbnail:(BOOL)arg2 shouldPrioritize:(BOOL)arg3;
++ (void)downloadAsset:(id)arg1 requestThumbnail:(BOOL)arg2 shouldPrioritize:(BOOL)arg3 shouldExtendTimer:(BOOL)arg4;
 + (void)enqueueCloudSharedAssetsForPublishToServer:(id)arg1 inSharedAlbum:(id)arg2;
 + (void)forgetSharingPersonID:(id)arg1;
 + (void)handlePhoneInvitationFailuresWithCompletionBlock:(id)arg1;
@@ -70,6 +71,7 @@
 + (unsigned long long)purgeSpace:(unsigned long long)arg1;
 + (unsigned long long)purgeableSpace;
 + (void)refreshSubscriberListForAlbumGUID:(id)arg1;
++ (unsigned int)registerIdleStateChangeObserverWithToken:(int*)arg1 handler:(id)arg2;
 + (BOOL)removeCloudSharingDirectories:(id*)arg1;
 + (void)removeSubscribers:(id)arg1 fromOwnedAlbum:(id)arg2;
 + (void)requestVideoPlaybackURLForAsset:(id)arg1 completion:(id)arg2;
@@ -91,11 +93,12 @@
 + (id)temporaryVideoPathForCollectionGUID:(id)arg1;
 + (id)temporaryVideoPosterFramePathForCollectionGUID:(id)arg1;
 + (void)trackUploadBatchSize:(unsigned int)arg1;
++ (unsigned int)unregisterIdleStateChangeObserverWithToken:(int)arg1;
 + (void)unsubscribeFromAlbum:(id)arg1;
 + (void)updateCloudSharedAlbumMetadataOnServer:(id)arg1;
 + (void)updateCloudSharedAlbumMultipleContributorsStateOnServer:(id)arg1;
 + (void)updateCloudSharedAlbumPublicURLStateOnServer:(id)arg1;
-+ (void)updateLocalAlbumMetadataForMSASAlbum:(id)arg1;
++ (void)updateLocalAlbumMetadataForMSASAlbum:(id)arg1 info:(id)arg2;
 + (void)updateSharedAlbumsCachedServerConfigurationLimits;
 + (id)videoDerivativesForAssetCollection:(id)arg1 withSpecifications:(id)arg2;
 + (struct CGSize { float x1; float x2; })videoPosterFrameDimension;

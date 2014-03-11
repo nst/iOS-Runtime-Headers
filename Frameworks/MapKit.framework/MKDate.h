@@ -14,8 +14,8 @@
 
 + (id)dateWithNSDate:(id)arg1;
 
+- (void).cxx_destruct;
 - (int)dayOfCommonEra;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
 - (id)initWithNSDate:(id)arg1;

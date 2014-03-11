@@ -14,6 +14,7 @@
 @property(readonly) unsigned int deleteCount;
 @property(getter=isEmojiCandidate,readonly) BOOL emojiCandidate;
 @property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
+@property(getter=isFullwidthCandidate,readonly) BOOL fullwidthCandidate;
 @property(getter=isInlineCompletionCandidate,readonly) BOOL inlineCompletionCandidate;
 @property(readonly) NSString * input;
 @property(readonly) BOOL isAutocorrection;
@@ -42,6 +43,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isForShortcutConversion;
+- (BOOL)isFullwidthCandidate;
 - (BOOL)isInlineCompletionCandidate;
 - (id)label;
 - (void)setAlternativeText:(id)arg1;

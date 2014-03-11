@@ -13,6 +13,7 @@
     NSMutableSet *_topicsCache;
 }
 
+@property(readonly) BOOL isConnected;
 @property(readonly) NSData * pushToken;
 
 + (id)sharedInstance;
@@ -28,6 +29,7 @@
 - (void)connectionDidReconnect:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isConnected;
 - (id)pushToken;
 - (void)removeListener:(id)arg1;
 - (void)requestKeepAlive;

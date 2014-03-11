@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDictionary, NSString, SASiriSupport, SAStarkSupport;
+@class NSArray, NSDictionary, NSNumber, NSString, SASiriSupport, SAStarkSupport;
 
 @interface SAAppInfo : SADomainObject {
 }
@@ -11,9 +11,9 @@
 @property(copy) NSString * appName;
 @property(copy) NSDictionary * appNameMap;
 @property(copy) NSString * appVersion;
-@property(copy) NSString * authToken;
 @property(copy) NSString * displayAppName;
 @property(copy) NSDictionary * displayAppNameMap;
+@property(copy) NSNumber * nowPlayingAppWithBrowsableContent;
 @property(copy) NSString * providerName;
 @property(retain) SASiriSupport * siriSupport;
 @property(copy) NSString * spotlightName;
@@ -29,19 +29,19 @@
 - (id)appName;
 - (id)appNameMap;
 - (id)appVersion;
-- (id)authToken;
 - (id)displayAppName;
 - (id)displayAppNameMap;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)nowPlayingAppWithBrowsableContent;
 - (id)providerName;
 - (void)setAppId:(id)arg1;
 - (void)setAppName:(id)arg1;
 - (void)setAppNameMap:(id)arg1;
 - (void)setAppVersion:(id)arg1;
-- (void)setAuthToken:(id)arg1;
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
+- (void)setNowPlayingAppWithBrowsableContent:(id)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setSiriSupport:(id)arg1;
 - (void)setSpotlightName:(id)arg1;

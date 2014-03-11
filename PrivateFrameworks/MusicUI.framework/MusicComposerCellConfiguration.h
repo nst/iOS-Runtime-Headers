@@ -8,8 +8,8 @@
 + (id)artistArtworkCacheIDProperty;
 + (id)artworkCacheIDProperty;
 + (id)itemPersistentIDProperty;
++ (id)mediaEntityPropertiesToFetch;
 + (id)persistentIDProperty;
-+ (id)propertiesToFetch;
 + (id)representativeItemPersistentIDProperty;
 + (id)representativeItemTitleProperty;
 + (id)titleProperty;

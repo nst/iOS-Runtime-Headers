@@ -107,6 +107,7 @@
 + (void)_synchronizeDrawingAcrossProcessesOverPort:(unsigned int)arg1;
 + (unsigned int)_synchronizeDrawingAcrossProcessesWithPreCommitHandler:(id)arg1;
 + (id)_topVisibleWindowPassingTest:(id)arg1;
++ (void)adjustForAccessibilityIfNeeded:(id)arg1;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 forScreen:(id)arg3;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -117,6 +118,7 @@
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 usePurpleGfx:(BOOL)arg4 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg5;
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (void*)createScreenIOSurface;
++ (void)initialize;
 + (id)keyWindow;
 + (Class)layerClass;
 + (void)setAllWindowsKeepContextInBackground:(BOOL)arg1;
@@ -127,6 +129,7 @@
 - (id)_appearanceContainer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_axConvertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
 - (BOOL)_becomeFirstResponderWhenPossible;
+- (void)_beginKeyWindowDeferral;
 - (void)_beginModalSession;
 - (BOOL)_canActAsKeyWindowForScreen:(id)arg1;
 - (BOOL)_canAffectStatusBarAppearance;
@@ -151,6 +154,7 @@
 - (void)_createSystemGestureGateGestureRecognizerIfNeeded;
 - (id)_currentTintView;
 - (id)_deepestUnambiguousResponder;
+- (id)_deferralPropertiesWithContextID:(unsigned int)arg1;
 - (id)_deferredLaunchBlock;
 - (id)_descendantWithAmbiguousLayout;
 - (void)_destroyContext;
@@ -159,6 +163,7 @@
 - (BOOL)_disableGroupOpacity;
 - (BOOL)_disableViewScaling;
 - (id)_effectiveScreen;
+- (void)_endKeyWindowDeferral;
 - (void)_endModalSession;
 - (id)_exclusiveTouchView;
 - (unsigned int)_expectedWindowInternalConstraintsCount;
@@ -182,6 +187,7 @@
 - (BOOL)_isHostedInAnotherProcess;
 - (BOOL)_isInAWindow;
 - (BOOL)_isLoweringAnchoringConstraints;
+- (BOOL)_isPoint:(struct CGPoint { float x1; float x2; })arg1 relativeToPoint:(struct CGPoint { float x1; float x2; })arg2 inDirection:(int)arg3;
 - (BOOL)_isScrollingEnabledForView:(id)arg1;
 - (BOOL)_isSettingFirstResponder;
 - (BOOL)_isStatusBarWindow;
@@ -194,7 +200,10 @@
 - (void)_makeExternalKeyWindow;
 - (void)_makeKeyWindowIgnoringOldKeyWindow:(BOOL)arg1;
 - (void)_matchDeviceBounds;
+- (void)_moveResponderSelectionInDirection:(int)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_moveWithEvent:(id)arg1;
 - (BOOL)_needsShakesWhenInactive;
+- (id)_normalInheritedTintColor;
 - (void)_orderContextToFront;
 - (void)_orderFrontWithoutMakingKey;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(int)arg3;
@@ -216,6 +225,8 @@
 - (id)_rotationCompleteBlock;
 - (id)_rotationViewControllers;
 - (id)_screen;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_screenBounds;
+- (void)_scrollResponderToVisible:(id)arg1;
 - (void)_scrollToTopViewsUnderScreenPointIfNecessary:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id)arg2;
 - (void)_sendButtonGesturesForEvent:(id)arg1;
 - (void)_sendButtonsForEvent:(id)arg1;
@@ -326,13 +337,17 @@
 - (BOOL)isRotating;
 - (BOOL)isUsingOnePartRotationAnimation;
 - (BOOL)keepContextInBackground;
+- (void)keyboardDidHide;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (float)level;
+- (void)loadFirstResponderScrollViewContentInDirection:(struct CGSize { float x1; float x2; })arg1;
 - (void)makeKey:(id)arg1;
 - (void)makeKeyAndOrderFront:(id)arg1;
 - (void)makeKeyAndVisible;
 - (void)makeKeyWindow;
+- (void)matchDeviceOrientation:(id)arg1;
 - (void)matchDeviceOrientation;
+- (void)moveToNextResponderInDirection:(int)arg1;
 - (id)nextResponder;
 - (void)orderFront:(id)arg1;
 - (void)orderOut:(id)arg1;

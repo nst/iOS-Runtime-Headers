@@ -15,13 +15,12 @@
 }
 
 @property <SKUIIPadSearchHeaderViewDelegate> * delegate;
-@property(copy) NSDictionary * facetSelections;
-@property(copy) NSArray * searchFacets;
+@property(readonly) NSDictionary * facetSelections;
+@property(readonly) NSArray * searchFacets;
 
 - (void).cxx_destruct;
 - (void)_destroyFacetPopover;
 - (void)_facetButtonAction:(id)arg1;
-- (id)_newPopoverControllerWithFacet:(id)arg1 checkedIndex:(int)arg2;
 - (int)_selectedIndexForFacet:(id)arg1;
 - (id)_titleForFacet:(id)arg1;
 - (void)dealloc;
@@ -33,9 +32,7 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)searchFacets;
 - (void)setDelegate:(id)arg1;
-- (void)setFacetSelections:(id)arg1;
 - (void)setSearchFacets:(id)arg1 selections:(id)arg2;
-- (void)setSearchFacets:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -25,6 +25,7 @@
 - (id)itemAtIndexPath:(id)arg1;
 - (id)itemsForSection:(int)arg1;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)refreshAdditionalInfoForDataType:(unsigned int)arg1 updateNotifier:(id)arg2;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)removeAllSections;
 - (void)removeItemAtIndexPath:(id)arg1;
@@ -39,5 +40,6 @@
 - (void)setUnderlyingDataSource:(id)arg1;
 - (id)titleForSection:(int)arg1;
 - (id)underlyingDataSource;
+- (void)willUpdateSectionsWithItems:(id)arg1;
 
 @end

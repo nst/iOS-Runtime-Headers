@@ -59,6 +59,7 @@
 - (BOOL)_allowsUserInteraction;
 - (BOOL)_allowsUserInteractionToCutOffEndOfAnimation;
 - (id)_defaultAnimationForKey:(id)arg1;
+- (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1 disableTrackingIfNeeded:(BOOL)arg2;
 - (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1;
 - (void)_runAlongsideAnimations;
 - (void)_setAlongsideAnimations:(id)arg1;

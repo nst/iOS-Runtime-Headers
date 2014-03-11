@@ -27,6 +27,7 @@
 + (Class)p_classForURL:(id)arg1;
 + (id)p_registeredSubclasses;
 + (id)supportedFileTypes;
++ (id)supportedImageFileTypes;
 + (id)supportedRemoteURLSchemes;
 
 - (id)URL;

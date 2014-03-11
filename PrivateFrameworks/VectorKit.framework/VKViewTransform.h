@@ -54,7 +54,7 @@
 - (const struct { double x1[4][4]; }*)scaledViewProjectionMatrix;
 - (struct CGSize { float x1; float x2; })screenSizeInPixels;
 - (struct CGSize { float x1; float x2; })screenSizeInPoints;
-- (void)setCoordinateSpace:(int)arg1 screenSizeInPixels:(struct CGSize { float x1; float x2; })arg2 contentScale:(float)arg3 frustum:(struct { BOOL x1; double x2; double x3; double x4; double x5; })arg4 position:(struct VKPoint { double x1; double x2; double x3; })arg5 orientation:(const struct { double x1[4][4]; }*)arg6;
+- (void)setCoordinateSpace:(int)arg1 screenSizeInPixels:(struct CGSize { float x1; float x2; })arg2 contentScale:(float)arg3 frustum:(struct { BOOL x1; double x2; double x3; double x4; double x5; })arg4 position:(struct VKPoint { double x1; double x2; double x3; })arg5 orientation:(const struct { double x1[4][4]; }*)arg6 horizontalOffset:(float)arg7;
 - (void)setScaledViewProjectionMatrix:(const struct { double x1[4][4]; }*)arg1;
 - (struct VKPoint { double x1; double x2; double x3; })translation;
 - (struct VKPoint { double x1; double x2; double x3; })translationInMercator;

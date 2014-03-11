@@ -88,7 +88,6 @@
 - (BOOL)isSandboxed;
 - (BOOL)isStoreItemUnexpired;
 - (void)loadGameRatingWithCompletionHandler:(id)arg1;
-- (void)loadIconForSize:(struct CGSize { float x1; float x2; })arg1 completionHandler:(id)arg2;
 - (id)loadIconForStyle:(int)arg1 withCompletionHandler:(id)arg2;
 - (void)loadTellAFriendMessageWithCompletionHandler:(id)arg1;
 - (id)macBrushForIconStyle:(int)arg1;

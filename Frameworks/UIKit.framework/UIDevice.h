@@ -49,6 +49,7 @@
 - (int)_graphicsQuality;
 - (BOOL)_hasGraphicsQualityOverride;
 - (BOOL)_isTTYEnabled;
+- (int)_keyboardGraphicsQuality;
 - (void)_playSystemSound:(unsigned long)arg1;
 - (void)_registerForSystemSounds:(id)arg1;
 - (void)_setActiveUserInterfaceIdiom:(int)arg1;

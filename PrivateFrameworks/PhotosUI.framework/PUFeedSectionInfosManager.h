@@ -33,6 +33,7 @@
 - (int)indexOfSectionInfo:(id)arg1;
 - (int)indexOfSectionInfoForCloudFeedEntry:(id)arg1;
 - (id)indexesOfInvitationsReceivedSectionInfos;
+- (id)indexesOfUnloadedSectionInfosAtIndexes:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (void)loadSectionInfosAtIndexes:(id)arg1;
 - (int)numberOfInvitationsReceived;

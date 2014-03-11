@@ -10,6 +10,7 @@
     <TSPPackage> *_documentPackage;
     TSPDocumentProperties *_documentProperties;
     NSUUID *_documentUUID;
+    NSURL *_relativeURLForExternalData;
     BOOL _shouldLeavePendingEndSave;
     TSPObject *_supportObject;
     <TSPPackage> *_supportPackage;
@@ -20,6 +21,7 @@
 @property(retain) <TSPPackage> * documentPackage;
 @property(retain) TSPDocumentProperties * documentProperties;
 @property(copy) NSUUID * documentUUID;
+@property(copy) NSURL * relativeURLForExternalData;
 @property BOOL shouldLeavePendingEndSave;
 @property(retain) TSPObject * supportObject;
 @property(retain) <TSPPackage> * supportPackage;
@@ -32,10 +34,12 @@
 - (id)documentUUID;
 - (id)init;
 - (id)initWithURL:(id)arg1 updateType:(unsigned int)arg2;
+- (id)relativeURLForExternalData;
 - (void)setDocumentObject:(id)arg1;
 - (void)setDocumentPackage:(id)arg1;
 - (void)setDocumentProperties:(id)arg1;
 - (void)setDocumentUUID:(id)arg1;
+- (void)setRelativeURLForExternalData:(id)arg1;
 - (void)setShouldLeavePendingEndSave:(BOOL)arg1;
 - (void)setSupportObject:(id)arg1;
 - (void)setSupportPackage:(id)arg1;

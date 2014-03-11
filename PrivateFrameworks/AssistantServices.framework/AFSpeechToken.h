@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface AFSpeechToken : NSObject <NSSecureCoding> {
-    int _confidence;
+    int _confidenceScore;
     double _endTime;
     BOOL _removeSpaceAfter;
     BOOL _removeSpaceBefore;

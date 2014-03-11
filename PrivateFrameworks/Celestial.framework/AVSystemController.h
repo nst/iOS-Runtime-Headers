@@ -38,6 +38,7 @@
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)setActiveCategoryVolumeTo:(float)arg1;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (BOOL)setBTHFPRoute:(id)arg1 availableForVoicePrompts:(BOOL)arg2;
 - (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
 - (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
 - (BOOL)toggleActiveCategoryMuted;

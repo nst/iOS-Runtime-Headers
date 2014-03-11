@@ -64,6 +64,7 @@
 @property unsigned int textureDeliveryStyle;
 @property unsigned int textureStage;
 
+- (void)addActionGhostKnobToArrayIfNecessary:(id)arg1;
 - (void)addBitmapsToRenderingQualityInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)addCommentKnobToArray:(id)arg1;
 - (void)addHyperlinkKnobToArray:(id)arg1;
@@ -124,6 +125,7 @@
 - (BOOL)demandsExclusiveSelection;
 - (id)description;
 - (void)didDrawInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
+- (void)didEndDrawingTilingLayerInBackground:(id)arg1 withToken:(id)arg2;
 - (void)didUpdateLayer:(id)arg1;
 - (BOOL)directlyManagesLayerContent;
 - (BOOL)directlyManagesVisibilityOfKnob:(id)arg1;
@@ -147,6 +149,7 @@
 - (BOOL)exclusivelyProvidesGuidesWhileAligning;
 - (void)fadeKnobsIn;
 - (void)fadeKnobsOut;
+- (BOOL)forcesPlacementOnTop;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInScreenSpace;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvas;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvasIncludingChrome;
@@ -219,21 +222,19 @@
 - (float)opacity;
 - (id)overlayLayers;
 - (void)p_actionGhostKnobHit;
-- (void)p_addActionGhostKnobToArrayIfNecessary:(id)arg1;
-- (id)p_addLayersForKnobsToArray:(id)arg1 withDelegate:(id)arg2;
+- (id)p_addLayersForKnobsToArray:(id)arg1 withDelegate:(id)arg2 isOverlay:(BOOL)arg3;
 - (void)p_dynamicDragDidBegin;
 - (void)p_dynamicOperationDidBegin;
 - (void)p_dynamicOperationDidEnd;
 - (void)p_dynamicRotateDidBegin;
 - (void)p_dynamicRotateDidEnd;
+- (struct CGPoint { float x1; float x2; })p_positionOfActionGhostKnobForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)p_setMagicMoveTextureAttributes:(id)arg1;
 - (void)p_toggleCommentVisibility;
 - (void)p_toggleHyperlinkUIVisibility;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_trackingBoundsForStandardKnobs;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })parentLayerInverseTransformInRootForZeroAnchor;
 - (id)parentRep;
 - (id)parentRepToPerformSelecting;
-- (void)performDrawBlock:(id)arg1;
 - (id)popoutLayers;
 - (struct CGPoint { float x1; float x2; })positionOfActionGhostKnob;
 - (struct CGPoint { float x1; float x2; })positionOfHyperlinkKnob;
@@ -241,6 +242,7 @@
 - (void)processChangedProperty:(int)arg1;
 - (void)processChanges:(id)arg1;
 - (BOOL)providesGuidesWhileAligning;
+- (id)queueForDrawingTilingLayerInBackground:(id)arg1;
 - (void)recursivelyDrawChildrenInContext:(struct CGContext { }*)arg1;
 - (void)recursivelyDrawInContext:(struct CGContext { }*)arg1;
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
@@ -277,6 +279,7 @@
 - (void)setTextureStage:(unsigned int)arg1;
 - (void)setupForDrawingInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
 - (float)shortestDistanceToPoint:(struct CGPoint { float x1; float x2; })arg1 countAsHit:(BOOL*)arg2;
+- (BOOL)shouldBeginDrawingTilingLayerInBackground:(id)arg1 returningToken:(id*)arg2 andQueue:(id*)arg3;
 - (BOOL)shouldCreateCommentKnob;
 - (BOOL)shouldCreateKnobs;
 - (BOOL)shouldCreateLockedKnobs;
@@ -287,6 +290,7 @@
 - (BOOL)shouldIgnoreSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 withRecognizer:(id)arg2;
 - (BOOL)shouldLayoutTilingLayer:(id)arg1;
 - (BOOL)shouldShowCommentHighlight;
+- (BOOL)shouldShowCommentUIDirectlyOverRep;
 - (BOOL)shouldShowDragHUD;
 - (BOOL)shouldShowKnobs;
 - (BOOL)shouldShowSelectionHighlight;
@@ -305,6 +309,7 @@
 - (id)textureForContext:(id)arg1;
 - (unsigned int)textureStage;
 - (int)tilingMode;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackingBoundsForStandardKnobs;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForHighlightLayer;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToConvertNaturalFromLayerRelative;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToConvertNaturalToLayerRelative;
@@ -318,6 +323,7 @@
 - (void)viewScaleDidChange;
 - (void)viewScrollDidChange;
 - (void)viewScrollingEnded;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsForTilingLayer:(id)arg1;
 - (BOOL)wantsEditMenuForTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 onKnob:(id)arg2;
 - (BOOL)wantsGuidesWhileResizing;
 - (BOOL)wantsToDistortWithImagerContext;

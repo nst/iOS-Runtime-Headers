@@ -4,13 +4,15 @@
 
 @interface MFAddressBookManager : NSObject {
     void *_addressBook;
-    struct __CFArray { } *_clients;
+    struct __CFDictionary { } *_clients;
+    int _lock;
 }
 
 + (BOOL)isAuthorizedToUseAddressBook;
 + (id)sharedManager;
 
 - (void)_applicationResumed:(id)arg1;
+- (id)_clientWeakReferences;
 - (void)_handleAddressBookChangeNotification;
 - (void)_handleAddressBookPrefsChangeNotification;
 - (void)addClient:(id)arg1;

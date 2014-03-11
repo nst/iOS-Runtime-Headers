@@ -49,7 +49,9 @@
 @property(retain) id userInfo;
 @property(retain) NSArray * values;
 
-+ (id)_dataclassToBundleId;
++ (id)_bundle;
++ (id)_dataclassIconCache;
++ (id)_iconForDataclass:(id)arg1;
 + (id)acui_linkListCellSpecifierForDataclass:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5;
 + (id)acui_specifierForAppWithBundleID:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4;
 + (id)acui_specifierForDataclass:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4;

@@ -65,6 +65,7 @@
 + (id)scaleXTo:(float)arg1 y:(float)arg2 duration:(double)arg3;
 + (id)scaleYTo:(float)arg1 duration:(double)arg2;
 + (id)sequence:(id)arg1;
++ (id)setTexture:(id)arg1 resize:(BOOL)arg2;
 + (id)setTexture:(id)arg1;
 + (id)speedBy:(float)arg1 duration:(double)arg2;
 + (id)speedTo:(float)arg1 duration:(double)arg2;

@@ -4,7 +4,7 @@
 
 @class IDSBatchIDQueryController, MFComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableSet, NSNumber, UIPopoverController, UIScrollView, UITableView;
 
-@interface PUPhotoStreamRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UIPopoverControllerDelegate, IDSBatchIDQueryControllerDelegate> {
+@interface PUPhotoStreamRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UIPopoverControllerDelegate, MFComposeRecipientViewDelegate, IDSBatchIDQueryControllerDelegate> {
     struct CGSize { 
         float width; 
         float height; 

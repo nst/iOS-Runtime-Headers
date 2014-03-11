@@ -2,35 +2,38 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKRecipientSearchListControllerDelegate>, IMAccount, IMBatchIDStatusQueryController, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSNumber, NSString;
+@class <CKRecipientSearchListControllerDelegate>, IDSBatchIDQueryController, IMAccount, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSDate, NSMutableDictionary, NSNumber, NSString;
 
-@interface CKRecipientSearchListController : UITableViewController <MFContactsSearchConsumer> {
+@interface CKRecipientSearchListController : UITableViewController <IDSBatchIDQueryControllerDelegate, MFContactsSearchConsumer> {
     NSNumber *_currentSearchTaskID;
     IMAccount *_defaultiMessageAccount;
     <CKRecipientSearchListControllerDelegate> *_delegate;
     NSArray *_enteredRecipients;
+    NSDate *_idsQueryStartTime;
     int _pendingSearchTypes;
+    NSMutableDictionary *_searchIDSStatuses;
     MFContactsSearchManager *_searchManager;
     NSArray *_searchResults;
     MFContactsSearchResultsModel *_searchResultsModel;
     NSString *_searchText;
     BOOL _shouldDisplayGroupSuggestionCells;
-    IMBatchIDStatusQueryController *_statusQueryController;
+    IDSBatchIDQueryController *_statusQueryController;
 }
 
 @property(retain) NSNumber * currentSearchTaskID;
 @property(retain) IMAccount * defaultiMessageAccount;
 @property <CKRecipientSearchListControllerDelegate> * delegate;
 @property(retain) NSArray * enteredRecipients;
+@property(retain) NSDate * idsQueryStartTime;
 @property int pendingSearchTypes;
+@property(retain) NSMutableDictionary * searchIDSStatuses;
 @property(retain) MFContactsSearchManager * searchManager;
 @property(retain) NSArray * searchResults;
 @property(retain) MFContactsSearchResultsModel * searchResultsModel;
 @property(retain) NSString * searchText;
 @property BOOL shouldDisplayGroupSuggestionCells;
-@property(retain) IMBatchIDStatusQueryController * statusQueryController;
+@property(retain) IDSBatchIDQueryController * statusQueryController;
 
-- (void)_imHandleIDStatusChanged:(id)arg1;
 - (void)_performSearchWithBlock:(id)arg1;
 - (BOOL)_serviceColorForRecipients:(id)arg1;
 - (id)_statusQueryController;
@@ -45,6 +48,9 @@
 - (id)enteredRecipients;
 - (void)finishedSearchingForType:(int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
+- (BOOL)hasSearchResults;
+- (void)idStatusUpdatedForDestinations:(id)arg1;
+- (id)idsQueryStartTime;
 - (id)initWithStyle:(int)arg1;
 - (void)invalidateOutstandingIDStatusRequests;
 - (BOOL)isSearchResultsHidden;
@@ -54,6 +60,7 @@
 - (void)removeRecipientFromSearchResults:(id)arg1;
 - (BOOL)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (id)searchIDSStatuses;
 - (id)searchManager;
 - (id)searchResults;
 - (id)searchResultsModel;
@@ -63,7 +70,9 @@
 - (void)setDefaultiMessageAccount:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnteredRecipients:(id)arg1;
+- (void)setIdsQueryStartTime:(id)arg1;
 - (void)setPendingSearchTypes:(int)arg1;
+- (void)setSearchIDSStatuses:(id)arg1;
 - (void)setSearchManager:(id)arg1;
 - (void)setSearchResults:(id)arg1;
 - (void)setSearchResultsModel:(id)arg1;

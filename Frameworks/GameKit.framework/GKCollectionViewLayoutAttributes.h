@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class <UICollectionViewDataSource>, GKSectionMetrics, GKSupplementaryViewMetrics, UICollectionView;
+@class <UICollectionViewDataSource>, GKSectionMetrics, GKSupplementaryViewMetrics;
 
 @interface GKCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
     BOOL _allSectionItemsVisible;
-    UICollectionView *_collectionView;
     unsigned int _currentTotalItemCount;
     unsigned int _currentVisibleItemCount;
     <UICollectionViewDataSource> *_dataSource;
@@ -22,7 +21,6 @@
 }
 
 @property BOOL allSectionItemsVisible;
-@property(retain) UICollectionView * collectionView;
 @property unsigned int currentTotalItemCount;
 @property unsigned int currentVisibleItemCount;
 @property(retain) <UICollectionViewDataSource> * dataSource;
@@ -37,7 +35,6 @@
 @property float unpinnedY;
 
 - (BOOL)allSectionItemsVisible;
-- (id)collectionView;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)currentTotalItemCount;
 - (unsigned int)currentVisibleItemCount;
@@ -55,7 +52,6 @@
 - (unsigned int)maxTotalItemCount;
 - (id)sectionMetrics;
 - (void)setAllSectionItemsVisible:(BOOL)arg1;
-- (void)setCollectionView:(id)arg1;
 - (void)setCurrentTotalItemCount:(unsigned int)arg1;
 - (void)setCurrentVisibleItemCount:(unsigned int)arg1;
 - (void)setDataSource:(id)arg1;

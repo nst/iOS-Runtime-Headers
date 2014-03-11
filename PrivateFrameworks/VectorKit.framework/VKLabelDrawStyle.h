@@ -715,6 +715,24 @@
             int *extra; 
         } u; 
         unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
     struct VKProfileSparseRamp<VKPStyleProperties_GenericShieldStyle> { 
         union _u { 
             struct VKProfileSparseRampValue { 
@@ -887,6 +905,42 @@
             float *extra; 
         } u; 
         unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
     struct VKProfileSparseRamp<int> { 
         union _u { 
             struct VKProfileSparseRampValue { 
@@ -966,6 +1020,15 @@
                 unsigned char hi; 
             } v[2]; 
             char *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
         } u; 
         unsigned char count; 
     struct _VGLColor { 
@@ -1026,11 +1089,13 @@
     } heightXLarge;
     } heightXXLarge;
     NSMutableArray *icon;
+    } iconAlpha;
     } iconBadgeColor;
     } iconBadgeLightBlendMode;
     } iconBadgeLightColor;
     } iconBevelAmount;
     } iconBrightness;
+    } iconContentScale;
     } iconCornerRadius;
     } iconDropShadowColor;
     } iconDropShadowOffset;
@@ -1044,6 +1109,7 @@
     } iconGradientTopColor;
     } iconHaloColor;
     } iconHaloSize;
+    } iconSaturation;
     } iconSourceStyleAttribute;
     } iconStyle;
     } iconVisibleWhenPOIsDisabled;
@@ -1063,6 +1129,10 @@
     } offsetXLarge;
     } offsetXXLarge;
     } onlyShowIfTappable;
+    } paddingBottom;
+    } paddingLeft;
+    } paddingRight;
+    } paddingTop;
     } raisedInitial;
     } roadRank;
     } roadWidth;
@@ -1083,6 +1153,7 @@
     } textVisibility;
     } textVisibleWhenPOIsDisabled;
     float tiltLimit;
+    float trafficIncidentBrightness;
     } upcase;
     } visibility;
     } yieldsToOnscreenLabels;
@@ -1101,7 +1172,7 @@
 - (unsigned char)dedupeRank;
 - (id)genericShieldStyle;
 - (void)getFontOptions:(struct FontOptions { struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_1_1_1)(); struct __CFString {} *x_1_1_2; struct _retain_cf<const __CFString *> { } x_1_1_3; struct _release_cf { } x_1_1_4; } x1; boolx2; float x3; boolx4; float x5; float x6; }*)arg1 atZoom:(float)arg2 contentScale:(float)arg3 scaleFactor:(int)arg4;
-- (void)getLabelStyle:(struct VKLabelStyle { BOOL x1; unsigned int x2; float x3; BOOL x4; struct _VGLColor { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; unsigned int x7; float x8; float x9; struct { int x_10_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_10_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_10_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_10_1_4; int x_10_1_5; struct _VGLColor { float x_6_2_1; float x_6_2_2; float x_6_2_3; float x_6_2_4; } x_10_1_6; int x_10_1_7; int x_10_1_8; float x_10_1_9; struct _VGLColor { float x_10_2_1; float x_10_2_2; float x_10_2_3; float x_10_2_4; } x_10_1_10; struct CGSize { float x_11_2_1; float x_11_2_2; } x_10_1_11; float x_10_1_12; struct _VGLColor { float x_13_2_1; float x_13_2_2; float x_13_2_3; float x_13_2_4; } x_10_1_13; float x_10_1_14; float x_10_1_15; float x_10_1_16; unsigned int x_10_1_17; } x10; int x11; BOOL x12; float x13; float x14; struct _VGLColor { float x_15_1_1; float x_15_1_2; float x_15_1_3; float x_15_1_4; } x15; struct _VGLColor { float x_16_1_1; float x_16_1_2; float x_16_1_3; float x_16_1_4; } x16; int x17; int x18; int x19; BOOL x20; BOOL x21; BOOL x22; float x23; int x24; float x25; float x26; float x27; float x28; float x29; float x30; BOOL x31; int x32; float x33; BOOL x34; BOOL x35; int x36; int x37; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_38_1_1)(); struct __CFString {} *x_38_1_2; struct _retain_cf<const __CFString *> { } x_38_1_3; struct _release_cf { } x_38_1_4; } x38; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_39_1_1)(); struct __CFString {} *x_39_1_2; struct _retain_cf<const __CFString *> { } x_39_1_3; struct _release_cf { } x_39_1_4; } x39; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_40_1_1)(); struct __CFString {} *x_40_1_2; struct _retain_cf<const __CFString *> { } x_40_1_3; struct _release_cf { } x_40_1_4; } x40; struct FontOptions { struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_1_2_1)(); struct __CFString {} *x_1_2_2; struct _retain_cf<const __CFString *> { } x_1_2_3; struct _release_cf { } x_1_2_4; } x_41_1_1; boolx_41_1_2; float x_41_1_3; boolx_41_1_4; float x_41_1_5; float x_41_1_6; } x41; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getLabelStyle:(struct VKLabelStyle { BOOL x1; unsigned int x2; float x3; BOOL x4; struct _VGLColor { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; unsigned int x7; float x8; float x9; struct { int x_10_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_10_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_10_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_10_1_4; int x_10_1_5; struct _VGLColor { float x_6_2_1; float x_6_2_2; float x_6_2_3; float x_6_2_4; } x_10_1_6; int x_10_1_7; int x_10_1_8; float x_10_1_9; struct _VGLColor { float x_10_2_1; float x_10_2_2; float x_10_2_3; float x_10_2_4; } x_10_1_10; struct CGSize { float x_11_2_1; float x_11_2_2; } x_10_1_11; float x_10_1_12; struct _VGLColor { float x_13_2_1; float x_13_2_2; float x_13_2_3; float x_13_2_4; } x_10_1_13; float x_10_1_14; float x_10_1_15; float x_10_1_16; unsigned int x_10_1_17; } x10; int x11; BOOL x12; float x13; float x14; struct _VGLColor { float x_15_1_1; float x_15_1_2; float x_15_1_3; float x_15_1_4; } x15; struct _VGLColor { float x_16_1_1; float x_16_1_2; float x_16_1_3; float x_16_1_4; } x16; int x17; int x18; int x19; BOOL x20; BOOL x21; BOOL x22; float x23; int x24; float x25; float x26; float x27; float x28; float x29; float x30; float x31; float x32; float x33; float x34; BOOL x35; int x36; float x37; float x38; float x39; BOOL x40; BOOL x41; float x42; int x43; int x44; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_45_1_1)(); struct __CFString {} *x_45_1_2; struct _retain_cf<const __CFString *> { } x_45_1_3; struct _release_cf { } x_45_1_4; } x45; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_46_1_1)(); struct __CFString {} *x_46_1_2; struct _retain_cf<const __CFString *> { } x_46_1_3; struct _release_cf { } x_46_1_4; } x46; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_47_1_1)(); struct __CFString {} *x_47_1_2; struct _retain_cf<const __CFString *> { } x_47_1_3; struct _release_cf { } x_47_1_4; } x47; struct FontOptions { struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_1_2_1)(); struct __CFString {} *x_1_2_2; struct _retain_cf<const __CFString *> { } x_1_2_3; struct _release_cf { } x_1_2_4; } x_48_1_1; boolx_48_1_2; float x_48_1_3; boolx_48_1_4; float x_48_1_5; float x_48_1_6; } x48; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
 - (void)getNavShieldStyle:(struct { BOOL x1; float x2; float x3; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
 - (void)getRoadSignStyle:(struct { BOOL x1; float x2; float x3; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
 - (id)initWithStyle:(id)arg1;

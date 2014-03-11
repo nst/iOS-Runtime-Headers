@@ -22,10 +22,8 @@
 - (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
 - (id)marginAdjustRep;
 - (void)p_createHeaderFooterBorderLayerIfNecessaryForType:(int)arg1;
-- (BOOL)p_footersAreVisibleAndInteractive;
 - (float)p_headerFooterBorderWidth;
-- (BOOL)p_headersAreVisibleAndInteractive;
-- (BOOL)p_headersFooterAreVisibleAndInteractive;
+- (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
 - (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)p_pageRequiresSeparator;
 - (id)p_topmostEditingInfo;

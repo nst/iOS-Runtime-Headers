@@ -47,6 +47,7 @@
 + (id)_accessibilityStringForDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 + (id)_accessibilityStringForDayOfWeek:(int)arg1;
 + (id)_accessibilityTextChecker;
++ (id)_alternateUISwitchableSelectorPairs;
 + (id)_copyDescription;
 + (id)_createMutableArrayValueGetterWithContainerClassID:(id)arg1 key:(id)arg2;
 + (id)_createMutableOrderedSetValueGetterWithContainerClassID:(id)arg1 key:(id)arg2;
@@ -262,16 +263,19 @@
 - (float)_accessibilityDistanceFromEndOfRoad:(struct CGPoint { float x1; float x2; })arg1 forAngle:(float)arg2;
 - (BOOL)_accessibilityElementShouldBeInvalid;
 - (id)_accessibilityElementStoredUserLabel;
+- (BOOL)_accessibilityElementVisibilityAffectsLayout;
 - (id)_accessibilityElementsForSearchParameter:(id)arg1;
 - (void)_accessibilityEnumerateAllCustomRotorTitlesWithAccumulator:(id*)arg1 usingBlock:(id)arg2;
 - (id)_accessibilityEquivalenceTag;
 - (void)_accessibilityFinalize;
+- (id)_accessibilityFindAXDescendants:(id)arg1 byAddingElements:(id)arg2;
 - (id)_accessibilityFindAncestor:(id)arg1 startWithSelf:(BOOL)arg2;
 - (id)_accessibilityFindAnyAXDescendant:(id)arg1 byAddingElements:(id)arg2;
 - (id)_accessibilityFindDescendant:(id)arg1;
 - (id)_accessibilityFindElementInDirection:(int)arg1 searchTraits:(unsigned long long)arg2 allowOutOfBoundsChild:(BOOL)arg3;
 - (void)_accessibilityFindSearchResult:(BOOL)arg1 withString:(id)arg2;
 - (id)_accessibilityFindSubviewDescendant:(id)arg1;
+- (id)_accessibilityFindSubviewDescendantsPassingTest:(id)arg1;
 - (id)_accessibilityFirstElementForFocus;
 - (id)_accessibilityFirstOpaqueElement;
 - (id)_accessibilityFirstVisibleItem;
@@ -376,6 +380,7 @@
 - (BOOL)_accessibilityOnlyComparesByXAxis;
 - (id)_accessibilityOpaqueElementParent;
 - (BOOL)_accessibilityOpaqueElementProvider;
+- (void)_accessibilityOpaqueElementScrollToDirection:(int)arg1;
 - (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
 - (id)_accessibilityOpaqueElementsFrom:(id)arg1 direction:(int)arg2 searchTraits:(unsigned long long)arg3;
 - (BOOL)_accessibilityOverridesInstructionsHint;
@@ -539,6 +544,7 @@
 - (struct CGPoint { float x1; float x2; })_accessibilityVisibleScrollArea:(BOOL)arg1;
 - (BOOL)_accessibilityWantsOpaqueElementProviders;
 - (BOOL)_accessibilityWebSearchResultsActive;
+- (id)_accessibilityWindow;
 - (BOOL)_accessibilityWindowVisible;
 - (id)_accessibiltyAvailableKeyplanes;
 - (void)_addObserver:(id)arg1 forProperty:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
@@ -639,6 +645,7 @@
 - (id)accessibilityFlowToElements;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrameForLineNumber:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrameForScrolling;
 - (id)accessibilityHeaderElements;
 - (id)accessibilityHint;
 - (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
@@ -792,6 +799,7 @@
 - (BOOL)mf_tryLockWithPriority;
 - (void)mf_unlock;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (id)ml_stringValueForSQL;
 - (id)mutableArrayValueForKey:(id)arg1;
 - (id)mutableArrayValueForKeyPath:(id)arg1;
 - (id)mutableCopy;

@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/DuetPLLConfigLogger.framework/DuetPLLConfigLogger
  */
 
-@class NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, fetchDenyEntry, fetchFilterEntry;
 
 @interface AppLaunchStatsAggD : NSObject {
     int BGReportToken;
     NSObject<OS_dispatch_queue> *aggDQueue;
+    id appisFetchable;
     long long avgDownloadsize;
     long long avgPWConsumed;
+    unsigned long blameReasons[28];
     boolbuildLaunchStats;
     NSDate *cycleStart;
+    int fetchAppFiltered[6];
     int fetchAttempt;
     int fetchDataCount;
     long long fetchDataTotal;
     int fetchDenied;
-    int fetchDeniedNoData;
-    int fetchDeniedNoPW;
-    int fetchDeniedPoorCell;
+    int fetchDeniedWithReasons[10];
     int fetchFailedCount;
     int fetchGiven;
     int fetchPWTotal;
@@ -26,16 +31,19 @@
     int forceRelease;
     int hasStats;
     NSMutableDictionary *launchDict;
+    fetchDenyEntry *mostRecentDeny;
+    fetchFilterEntry *mostRecentFilter;
     NSMutableArray *pastCycle;
+    NSMutableDictionary *previousPrewarmDict;
     NSMutableDictionary *prewarmDict;
+    int prewarmEligibleZone[9];
     int prewarmHits;
     int prewarmMiss;
     int prewarmZoneCounts[9];
     int pushAttempt;
     int pushDenied;
-    int pushDeniedNoData;
-    int pushDeniedNoPW;
-    int pushDeniedPoorCell;
+    int pushDeniedReasons[11];
+    int topNZoneCounts[9];
     int totalBGDownloads;
     long long totalNonDiscDownload;
     long long totalNonDiscEnergy;
@@ -48,34 +56,40 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)accountPredatePrewarm:(id)arg1 launch:(int)arg2 launchvalue:(int)arg3 prewarmvalue:(int)arg4 diff:(int)arg5;
+- (void)accountPredatePrewarm:(id)arg1 prevDay:(id)arg2 launch:(int)arg3 launchvalue:(int)arg4 prewarmvalue:(int)arg5 diff:(int)arg6 result:(int*)arg7;
+- (bool)accountYesterday:(id)arg1 atzone:(int)arg2 launchVal:(int)arg3 result:(int*)arg4;
 - (void)appFGLaunch:(id)arg1;
-- (void)appPrewarm:(id)arg1;
+- (void)appPrewarm:(id)arg1 type:(int)arg2;
 - (void)backgroundSucceeds:(long long)arg1 withPW:(long long)arg2;
 - (void)calculatePrewarmHitMiss:(id)arg1 launch:(id)arg2;
 - (id)cycleStart;
 - (void)dealloc;
-- (int)distanceToLastPrewarm:(id)arg1 currentSlot:(int)arg2 currentoffset:(int)arg3;
+- (int)distanceToLastPrewarm:(id)arg1 prevDay:(id)arg2 currentSlot:(int)arg3 currentoffset:(int)arg4;
 - (void)fetchAttemptIncrement;
 - (void)fetchCountUpdate:(int)arg1;
 - (void)fetchDataCount:(int)arg1;
-- (void)fetchDenied;
-- (void)fetchDeniedBecause:(bool)arg1 withPWBudget:(bool)arg2 inwifi:(bool)arg3 incell:(bool)arg4 ignorePoorCell:(bool)arg5;
+- (void)fetchDenied:(int)arg1;
+- (void)fetchDeniedBecause:(bool)arg1 withPWBudget:(bool)arg2 inwifi:(bool)arg3 incell:(bool)arg4 ignorePoorCell:(bool)arg5 incall:(bool)arg6 thermal:(bool)arg7 hascell:(bool)arg8 haswifi:(bool)arg9;
 - (void)fetchFailedUpdate;
+- (void)fetchFiltered:(int)arg1;
 - (void)fetchPWCount:(int)arg1;
 - (void)fetchTimeUpdate:(long long)arg1;
 - (void)forceReleaseCount;
 - (id)init;
+- (void)mostRecentDenyResult:(int)arg1;
+- (void)mostRecentFilterResult:(id)arg1;
 - (void)newCycleWithApps:(id)arg1;
 - (void)nonDiscretionaryAdd:(unsigned long long)arg1 withPW:(unsigned long long)arg2;
 - (id)pastCycle;
-- (void)populatePredictZones:(id)arg1;
-- (void)populatePrewarmZones:(id)arg1;
-- (void)pushAttemptIncrement;
-- (void)pushDenied;
+- (void)populatePredictZones:(int)arg1 filter:(bool)arg2 callback:(id)arg3;
+- (void)populatePrewarmZones:(int)arg1 callback:(id)arg2;
+- (void)pushAttemptIncrement:(int)arg1;
+- (void)pushDenied:(int)arg1;
 - (void)pushDeniedBecause:(bool)arg1 withPWBudget:(bool)arg2 inwifi:(bool)arg3 incell:(bool)arg4 ignorePoorCell:(bool)arg5;
 - (void)replacePredictionAtZone:(id)arg1 zoneid:(int)arg2;
+- (void)searchBlame:(id)arg1 inzone:(int)arg2 inminute:(int)arg3;
 - (void)setCollectLaunchStats;
+- (void)setFetchCapableCheck:(id)arg1;
 - (void)setPastCycle:(id)arg1;
 - (void)uploadData;
 

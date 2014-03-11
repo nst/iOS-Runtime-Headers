@@ -18,6 +18,7 @@
 - (id)_CreateSecureBackupConnection:(id)arg1;
 - (void)_backupWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)_cachePassphraseWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
+- (void)_cachePassphraseWithInfoAsync:(id)arg1 completionQueue:(id)arg2;
 - (void)_changeSMSTargetWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)_disableWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)_enableWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
@@ -25,6 +26,7 @@
 - (void)_recoverWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)_startSMSChallengeWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)_uncachePassphraseWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
+- (void)_uncachePassphraseWithInfoAsync:(id)arg1 completionQueue:(id)arg2;
 - (void)backupWithInfo:(id)arg1 completionBlock:(id)arg2;
 - (id)backupWithInfo:(id)arg1;
 - (void)cachePassphraseWithInfo:(id)arg1 completionBlock:(id)arg2;

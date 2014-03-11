@@ -35,7 +35,6 @@
 - (int)labelScaleFactor;
 - (BOOL)localizeLabels;
 - (void)mapModel:(id)arg1 annotationMarker:(id)arg2 didChangeDragState:(int)arg3 fromOldState:(int)arg4;
-- (void)mapModel:(id)arg1 didAddAnnotationMarkers:(id)arg2;
 - (void)mapModel:(id)arg1 didAnimateInAnnotationMarkers:(id)arg2;
 - (void)mapModel:(id)arg1 didFinishAddingAnnotationMarkers:(id)arg2;
 - (id)mapModel:(id)arg1 markerForAnnotation:(id)arg2;

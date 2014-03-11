@@ -2,24 +2,28 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUSystemMediaControlsDelegate>, MPAudioDeviceController, MPUNowPlayingController, NSDictionary, NSString, NSTimer, RUTrackActionsModalItem, UIImageView, UIPopoverController, UIView, _MPUSystemMediaControlsView;
+@class <MPUSystemMediaControlsDelegate>, MPAVRoutingController, MPUNowPlayingController, NSArray, NSDictionary, NSString, NSTimer, RUTrackActionsModalItem, RUTrackActionsViewController, UIImageView, UIPopoverController, UIView, _MPUSystemMediaControlsView;
 
-@interface MPUSystemMediaControlsViewController : UIViewController <MPUNowPlayingDelegate, MPUTransportControlsViewDelegate, MPURemoteViewControllerPresentation, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPAudioDeviceControllerDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverControllerDelegate> {
+@interface MPUSystemMediaControlsViewController : UIViewController <MPUNowPlayingDelegate, MPUTransportControlsViewDelegate, MPURemoteViewControllerPresentation, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPAVRoutingControllerDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverControllerDelegate> {
     UIImageView *_artworkImageView;
     NSString *_audioCategoryForDisabledHUD;
-    MPAudioDeviceController *_audioDeviceController;
+    NSArray *_currentlySupportedCommands;
     <MPUSystemMediaControlsDelegate> *_delegate;
     double _lastDurationFromUpdate;
+    BOOL _lockscreenDisabledForScreenTurnOff;
     _MPUSystemMediaControlsView *_mediaControlsView;
     MPUNowPlayingController *_nowPlayingController;
     NSDictionary *_nowPlayingInfoForPresentedTrackActions;
+    BOOL _nowPlayingInfoIsOverridingSupportedCommands;
     BOOL _persistentUpdatesEnabled;
+    MPAVRoutingController *_routingController;
     unsigned int _runningLongPressCommand;
     double _scrubbedTimeDestination;
     NSTimer *_scrubberCommitTimer;
     int _style;
     RUTrackActionsModalItem *_trackActionsModalItem;
     UIPopoverController *_trackActionsPopoverController;
+    RUTrackActionsViewController *_trackActionsViewController;
     BOOL _wantsToLaunchNowPlayingApp;
 }
 
@@ -29,15 +33,20 @@
 @property(readonly) int style;
 
 - (void).cxx_destruct;
+- (void)_applyNowPlayingInformation:(id)arg1 toTrackActioningController:(id)arg2;
+- (void)_backlightLevelChangedNotification:(id)arg1;
 - (void)_beginScrubberCommitTimer;
 - (void)_cancelRunningLongPressCommand;
 - (void)_commitCurrentScrubberValue;
 - (void)_infoButtonTapped:(id)arg1;
 - (void)_launchCurrentNowPlayingApp;
 - (void)_likeBanButtonTapped:(id)arg1;
+- (void)_setupNotifications;
 - (void)_stopScrubberCommitTimer;
+- (void)_supportedCommandsDidChangeNotification:(id)arg1;
+- (void)_tearDownNotifications;
+- (void)_updateSupportedCommands;
 - (id)artworkView;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -54,10 +63,12 @@
 - (void)progressViewDidBeginScrubbing:(id)arg1;
 - (void)progressViewDidEndScrubbing:(id)arg1;
 - (void)remoteViewControllerDidFinish;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPersistentUpdatesEnabled:(BOOL)arg1;
 - (int)style;
 - (void)trackActioningObject:(id)arg1 didSelectAction:(int)arg2 atIndex:(int)arg3;
+- (id)trackActioningObject:(id)arg1 localizedTitleForAction:(int)arg2;
 - (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(int)arg2;
 - (void)transportControlsView:(id)arg1 longPressEndOnControlType:(int)arg2;
 - (void)transportControlsView:(id)arg1 tapOnAccessoryButtonType:(int)arg2;

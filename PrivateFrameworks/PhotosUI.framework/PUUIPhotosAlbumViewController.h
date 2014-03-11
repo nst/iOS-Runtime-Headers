@@ -18,6 +18,8 @@
 - (id)_imagePickerMediaTypes;
 - (void)_setAlbum:(struct NSObject { Class x1; }*)arg1 mediaTypes:(id)arg2;
 - (void)_setImagePickerMediaTypes:(id)arg1;
+- (BOOL)canBeginStackCollapseTransition;
+- (BOOL)canNavigateToPhotoInteractively:(BOOL)arg1;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out BOOL*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (void)handleNavigateToAsset:(id)arg1 inContainer:(id)arg2;
 - (id)init;

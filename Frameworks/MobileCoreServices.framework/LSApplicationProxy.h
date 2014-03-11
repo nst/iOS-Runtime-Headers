@@ -23,6 +23,7 @@
     BOOL _isNewsstandApp;
     BOOL _isPlaceholder;
     BOOL _isRestricted;
+    NSString *_itemName;
     NSArray *_machOUUIDs;
     NSArray *_privateDocumentIconNames;
     LSApplicationProxy *_privateDocumentTypeOwner;
@@ -55,11 +56,13 @@
 @property(readonly) BOOL isNewsstandApp;
 @property(readonly) BOOL isPlaceholder;
 @property(readonly) BOOL isRestricted;
+@property(readonly) NSString * itemName;
 @property(readonly) NSArray * machOUUIDs;
 @property(readonly) BOOL profileValidated;
 @property(readonly) NSString * roleIdentifier;
 @property(readonly) NSString * shortVersionString;
 @property(readonly) NSString * signerIdentity;
+@property(readonly) BOOL supportsExternallyPlayableContent;
 @property(readonly) NSString * vendorID;
 @property(readonly) NSString * vendorName;
 
@@ -116,6 +119,7 @@
 - (BOOL)isNewsstandApp;
 - (BOOL)isPlaceholder;
 - (BOOL)isRestricted;
+- (id)itemName;
 - (id)localizedName;
 - (id)machOUUIDs;
 - (BOOL)privateDocumentIconAllowOverride;
@@ -129,6 +133,7 @@
 - (void)setPrivateDocumentTypeOwner:(id)arg1;
 - (id)shortVersionString;
 - (id)signerIdentity;
+- (BOOL)supportsExternallyPlayableContent;
 - (id)vendorID;
 - (id)vendorName;
 

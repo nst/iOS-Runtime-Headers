@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIColorScheme, UIButton, UIImageView, UILabel;
+@class NSString, SKUIColorScheme, UIImageView, UILabel;
 
 @interface SKUITextBoxView : UIControl {
     struct UIEdgeInsets { 
@@ -17,7 +17,7 @@
         float right; 
     SKUIColorScheme *_colorScheme;
     } _contentInsets;
-    UIButton *_moreButton;
+    UILabel *_moreButtonLabel;
     int _numberOfVisibleLines;
     float _rating;
     UIImageView *_ratingImageView;
@@ -43,7 +43,7 @@
 @property int truncationStyle;
 
 - (void).cxx_destruct;
-- (id)_moreButton;
+- (id)_moreButtonLabel;
 - (struct __CTFrame { }*)_textFrame;
 - (struct CGSize { float x1; float x2; })_textSizeToFitSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)colorScheme;

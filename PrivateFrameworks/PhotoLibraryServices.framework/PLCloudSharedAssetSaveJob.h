@@ -48,9 +48,9 @@
 - (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
 - (BOOL)_parseISO6709String:(id)arg1 outLatitude:(double*)arg2 outLongitude:(double*)arg3;
 - (void)_processInFlightCommentsForAsset:(id)arg1 inAlbum:(id)arg2 inPhotoLibrary:(id)arg3;
-- (BOOL)_processSaveAssetWithPlaceholderKind:(int)arg1 withAssetDataFilePath:(id)arg2;
+- (BOOL)_processSaveAssetWithPlaceholderKind:(short)arg1 withAssetDataFilePath:(id)arg2;
 - (id)assetCollectionInfos;
-- (int)attemptLightweightReimportAssetData;
+- (short)attemptLightweightReimportAssetData;
 - (id)cloudAlbumGUID;
 - (id)cloudAssetGUIDsToDelete;
 - (id)cloudPersonID;
@@ -73,10 +73,10 @@
 - (BOOL)isVideo;
 - (long long)jobType;
 - (id)mstreamdInfoDictionary;
-- (int)placeHolderKindFromAssetMetadataType:(unsigned int)arg1;
+- (short)placeHolderKindFromAssetMetadataType:(unsigned int)arg1;
 - (void)run;
 - (void)runDaemonSide;
-- (void)saveJobAssetWithPlaceholderKind:(int)arg1;
+- (void)saveJobAssetWithPlaceholderKind:(short)arg1;
 - (void)setAssetCollectionInfos:(id)arg1;
 - (void)setCloudAlbumGUID:(id)arg1;
 - (void)setCloudAssetGUIDsToDelete:(id)arg1;

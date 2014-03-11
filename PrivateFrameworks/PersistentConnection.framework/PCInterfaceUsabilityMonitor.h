@@ -33,6 +33,7 @@
 @property(readonly) BOOL isRadioHot;
 @property(readonly) int linkQuality;
 @property(readonly) NSString * linkQualityString;
+@property(readonly) struct __CFString { }* wwanInterfaceName;
 
 + (BOOL)isPoorLinkQuality:(int)arg1;
 + (id)stringForLinkQuality:(int)arg1;

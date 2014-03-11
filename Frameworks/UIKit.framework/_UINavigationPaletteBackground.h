@@ -4,11 +4,11 @@
 
 @class UIColor, UIImageView, UINavigationBar, UIView, _UIBackdropView, _UINavigationControllerPalette;
 
-@interface _UINavigationPaletteBackground : UIView {
+@interface _UINavigationPaletteBackground : UIView <_UIBackdropViewGraphicsQualityChangeDelegate> {
     struct { 
         unsigned int barTranslucence : 3; 
         unsigned int barStyle : 3; 
-        unsigned int barWantsAdaptiveBackdrop : 1; 
+        unsigned int paletteWantsAdaptiveBackdrop : 1; 
     _UIBackdropView *_adaptiveBackdrop;
     UINavigationBar *_bar;
     UIColor *_barTintColor;
@@ -19,26 +19,29 @@
 
 @property int barStyle;
 @property(retain) UIColor * barTintColor;
-@property BOOL barWantsAdaptiveBackdrop;
+@property BOOL paletteWantsAdaptiveBackdrop;
 @property(getter=_shadowView,setter=_setShadowView:,retain) UIView * shadowView;
 @property(getter=isTranslucent) BOOL translucent;
 
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(BOOL)arg2;
 - (void)_setShadowView:(id)arg1;
 - (id)_shadowView;
 - (void)_syncWithBarStyles;
+- (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(int)arg2;
+- (id)backdropView:(id)arg1 willChangeToGraphicsQuality:(int)arg2;
 - (int)barStyle;
 - (id)barTintColor;
-- (BOOL)barWantsAdaptiveBackdrop;
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (id)initWithNavigationBar:(id)arg1 forPalette:(id)arg2;
 - (BOOL)isTranslucent;
+- (BOOL)paletteWantsAdaptiveBackdrop;
 - (void)setBarStyle:(int)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBarWantsAdaptiveBackdrop:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPaletteWantsAdaptiveBackdrop:(BOOL)arg1;
 - (void)setTranslucent:(BOOL)arg1;
 - (void)updateBackgroundView;
 

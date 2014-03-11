@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MLMediaLibraryService, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class ML3DatabaseConnection, MLMediaLibraryService, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface MLMediaLibraryServiceStatementAccumulator : NSObject {
+    ML3DatabaseConnection *_connection;
     NSString *_databasePath;
     NSUUID *_existingTransactionIdentifier;
     unsigned int _priorityLevel;
@@ -14,6 +15,7 @@
     MLMediaLibraryService *_xpcService;
 }
 
+@property(readonly) ML3DatabaseConnection * connection;
 @property(readonly) NSString * databasePath;
 @property(retain) NSUUID * existingTransactionIdentifier;
 @property unsigned int priorityLevel;
@@ -22,13 +24,14 @@
 
 - (void).cxx_destruct;
 - (BOOL)_onQueueFlushAndWait:(BOOL)arg1;
+- (id)connection;
 - (id)databasePath;
 - (void)dealloc;
 - (BOOL)enqueueStatement:(id)arg1;
 - (id)existingTransactionIdentifier;
 - (BOOL)flushAndWait:(BOOL)arg1;
 - (id)init;
-- (id)initWithDatabasePath:(id)arg1;
+- (id)initWithConnection:(id)arg1;
 - (unsigned int)priorityLevel;
 - (void)setExistingTransactionIdentifier:(id)arg1;
 - (void)setPriorityLevel:(unsigned int)arg1;

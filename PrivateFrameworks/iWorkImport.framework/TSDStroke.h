@@ -37,6 +37,7 @@
 @property(retain) TSDStrokePattern * pattern;
 @property(readonly) BOOL shouldRender;
 @property(readonly) BOOL solid;
+@property(readonly) float suggestedMinimumLineWidth;
 @property(readonly) BOOL supportsColor;
 @property(readonly) BOOL supportsLineOptions;
 @property(readonly) BOOL supportsPattern;
@@ -46,6 +47,7 @@
 + (BOOL)canMixWithNilObjects;
 + (id)emptyStroke;
 + (id)instanceWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; int x5; int x6; float x7; struct StrokePatternArchive {} *x8; struct SmartStrokeArchive {} *x9; struct FrameArchive {} *x10; struct PatternedStrokeArchive {} *x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
++ (Class)mutableClass;
 + (id)p_newEmptyStroke;
 + (id)p_newStroke;
 + (id)stroke;
@@ -124,6 +126,7 @@
 - (BOOL)solid;
 - (id)strokeByTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)strokeLineEnd:(id)arg1;
+- (float)suggestedMinimumLineWidth;
 - (BOOL)supportsColor;
 - (BOOL)supportsLineOptions;
 - (BOOL)supportsPattern;

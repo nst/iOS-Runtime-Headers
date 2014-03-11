@@ -6,13 +6,15 @@
    See Warning(s) below.
  */
 
-@class NSCache, SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol>;
+@class NSCache, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol>;
 
 @interface SLWeiboSession : NSObject <SLWeiboClientSessionProtocol, SLMicroBlogSheetDelegate> {
     id _connectionResetBlock;
     id _locationInformationChangedBlock;
     NSCache *_profileImageCache;
     SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol> *_remoteSession;
+    NSObject<OS_dispatch_queue> *_remoteSessionQueue;
+    NSObject<OS_dispatch_semaphore> *_remoteSessionQueueSemaphore;
 }
 
 @property(copy) id connectionResetBlock;
@@ -21,11 +23,13 @@
 + (id)_remoteInterface;
 
 - (void).cxx_destruct;
+- (id)_createOrGetRemoteSession;
 - (void)acceptLocationUpdate:(id)arg1;
 - (id)cachedProfileImageDataForScreenName:(id)arg1;
 - (int)characterCountForText:(id)arg1 shortenedURLCost:(int)arg2;
 - (id)connectionResetBlock;
 - (BOOL)countMediaAttachmentsTowardCharacterCount;
+- (void)deferExpensiveOperations;
 - (void)ensureUserRecordStore;
 - (void)fetchCurrentImageLimits:(id)arg1;
 - (void)fetchCurrentUrlLimits:(id)arg1;
@@ -49,6 +53,7 @@
 - (void)setLocationInformationChangedBlock:(id)arg1;
 - (void)setOverrideGeotagInfo:(id)arg1;
 - (void)showSettingsIfNeeded;
+- (void)stopDeferringExpensiveOperations;
 - (void)tearDownConnectionToRemoteSession;
 
 @end

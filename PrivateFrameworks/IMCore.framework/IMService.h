@@ -11,6 +11,7 @@
 + (id)callService;
 + (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
 + (id)facetimeService;
++ (void)flushAttributedTranscriptText;
 + (void)forgetStatusImageAppearance;
 + (id)iMessageService;
 + (id)imageNameForStatus:(unsigned int)arg1;

@@ -17,13 +17,19 @@
 - (void)oneFingerTapInUneditable:(id)arg1;
 - (void)oneFingerTapSelectsAll:(id)arg1;
 - (void)oneFingerTripleTap:(id)arg1;
+- (void)rangeSelectionEnded:(struct CGPoint { float x1; float x2; })arg1;
+- (void)rangeSelectionMoved:(struct CGPoint { float x1; float x2; })arg1 withTouchPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)rangeSelectionStarted:(struct CGPoint { float x1; float x2; })arg1;
 - (void)scrollSelectionToVisible;
 - (void)selectAll:(id)arg1;
 - (void)selectWord;
 - (void)selectionChangedWithGestureAt:(struct CGPoint { float x1; float x2; })arg1 withGesture:(int)arg2 withState:(int)arg3;
+- (void)selectionChangedWithTouchAt:(struct CGPoint { float x1; float x2; })arg1 withSelectionTouch:(int)arg2;
 - (void)tapAndAHalf:(id)arg1;
 - (BOOL)tapOnLinkWithGesture:(id)arg1;
 - (void)twoFingerRangedSelectGesture:(id)arg1;
 - (void)twoFingerSingleTap:(id)arg1;
+- (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updateWithMagnifierTerminalPoint:(BOOL)arg1;
 
 @end

@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, UIActivityGroupCancelButton, UIActivityGroupView, UIControl, UIView, _UIBackdropView;
+@class NSLayoutConstraint, UIActivityGroupCancelButton, UIActivityGroupView, UIControl, UIScrollView, UIView, _UIBackdropView;
 
 @interface UIActivityGroupListViewController : UIViewController {
     _UIBackdropView *_backdropView;
     UIActivityGroupCancelButton *_cancelButton;
     UIView *_contentView;
     int _currentStatusBarStyle;
+    BOOL _darkStyleOnLegacyApp;
     UIControl *_dimView;
     BOOL _embedded;
     UIActivityGroupView *_groupView;
     BOOL _modal;
+    UIScrollView *_scrollView;
     NSLayoutConstraint *_statusBlurHeight;
     UIView *_statusBlurView;
 }
@@ -21,10 +23,12 @@
 @property(retain) UIActivityGroupCancelButton * cancelButton;
 @property(retain) UIView * contentView;
 @property int currentStatusBarStyle;
+@property BOOL darkStyleOnLegacyApp;
 @property(retain) UIControl * dimView;
 @property BOOL embedded;
 @property(retain) UIActivityGroupView * groupView;
 @property BOOL modal;
+@property(retain) UIScrollView * scrollView;
 @property(retain) NSLayoutConstraint * statusBlurHeight;
 @property(retain) UIView * statusBlurView;
 
@@ -33,6 +37,7 @@
 - (id)cancelButton;
 - (id)contentView;
 - (int)currentStatusBarStyle;
+- (BOOL)darkStyleOnLegacyApp;
 - (void)dealloc;
 - (id)dimView;
 - (float)displayHeight;
@@ -42,15 +47,18 @@
 - (id)initWithActivityGroupViewControllers:(id)arg1 embedded:(BOOL)arg2 modal:(BOOL)arg3;
 - (BOOL)modal;
 - (int)preferredStatusBarStyle;
+- (id)scrollView;
 - (void)setActivityGroupViewControllers:(id)arg1;
 - (void)setBackdropView:(id)arg1;
 - (void)setCancelButton:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setCurrentStatusBarStyle:(int)arg1;
+- (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
 - (void)setDimView:(id)arg1;
 - (void)setEmbedded:(BOOL)arg1;
 - (void)setGroupView:(id)arg1;
 - (void)setModal:(BOOL)arg1;
+- (void)setScrollView:(id)arg1;
 - (void)setStatusBlurHeight:(id)arg1;
 - (void)setStatusBlurView:(id)arg1;
 - (void)showDone;

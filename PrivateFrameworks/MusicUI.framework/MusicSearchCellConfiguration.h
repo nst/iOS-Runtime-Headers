@@ -10,7 +10,6 @@
 + (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
 + (id)imageCacheRequestForMediaEntity:(id)arg1 valuesForProperties:(id)arg2 shouldLoadAsynchronously:(BOOL*)arg3;
 + (BOOL)isMediaEntityExplicit:(id)arg1 valuesForProperties:(id)arg2;
-+ (id)propertiesToFetch;
 + (id)subtitleForMediaEntity:(id)arg1 valuesForProperties:(id)arg2;
 + (id)tableViewBackgroundColor;
 + (id)tableViewCellBackgroundColor;

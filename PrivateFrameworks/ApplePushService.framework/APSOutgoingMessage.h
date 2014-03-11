@@ -17,7 +17,6 @@
 - (unsigned int)payloadFormat;
 - (unsigned int)payloadLength;
 - (int)priority;
-- (id)rawTimeoutTime;
 - (int)sendInterface;
 - (id)sendTimeoutTime;
 - (void)setCancelled:(BOOL)arg1;

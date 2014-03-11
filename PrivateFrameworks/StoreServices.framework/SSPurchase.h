@@ -22,6 +22,7 @@
     SSItemOffer *_itemOffer;
     SSNetworkConstraints *_networkConstraints;
     long long _placeholderDownloadIdentifier;
+    BOOL _preauthenticated;
     SSURLRequestProperties *_requestProperties;
     id _requiredDeviceCapabilities;
     long long _uniqueIdentifier;
@@ -43,6 +44,7 @@
 @property BOOL ignoresForcedPasswordRestriction;
 @property(copy) SSNetworkConstraints * networkConstraints;
 @property long long placeholderDownloadIdentifier;
+@property(getter=isPreauthenticated) BOOL preauthenticated;
 @property(copy) SSURLRequestProperties * requestProperties;
 @property(copy) id requiredDeviceCapabilities;
 @property long long uniqueIdentifier;
@@ -81,6 +83,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBackgroundPurchase;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isPreauthenticated;
 - (id)item;
 - (id)itemOffer;
 - (id)networkConstraints;
@@ -103,6 +106,7 @@
 - (void)setIgnoresForcedPasswordRestriction:(BOOL)arg1;
 - (void)setNetworkConstraints:(id)arg1;
 - (void)setPlaceholderDownloadIdentifier:(long long)arg1;
+- (void)setPreauthenticated:(BOOL)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
 - (void)setUniqueIdentifier:(long long)arg1;

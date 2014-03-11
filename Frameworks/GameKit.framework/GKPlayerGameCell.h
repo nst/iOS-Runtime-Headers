@@ -12,8 +12,6 @@
 @property(retain) UILabel * dateLabel;
 @property(retain) UILabel * statsLabel;
 
-+ (id)_gkStandardConstraintMetrics;
-
 - (id)achievementsStringWithGameRecord:(id)arg1;
 - (BOOL)canRemoveItem;
 - (id)dateLabel;

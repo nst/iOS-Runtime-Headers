@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)_updatePreparingToPlay;
+- (void)initializeOutputRouteCategory;
 - (void)pause;
 - (void)playOrRestart;
 - (void)playWithTimeRange:(struct { double x1; double x2; })arg1 startTime:(double)arg2;
@@ -29,5 +30,6 @@
 - (void)setCurrentTime:(double)arg1;
 - (void)setSavedRecording:(id)arg1;
 - (void)stop;
+- (void)switchBackToOutputRouteCategory;
 
 @end

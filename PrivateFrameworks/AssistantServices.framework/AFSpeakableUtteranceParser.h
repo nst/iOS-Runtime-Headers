@@ -14,8 +14,8 @@
 @property BOOL handlesFunctions;
 
 + (BOOL)_shouldAutomaticallyProvideFunctions;
++ (id)afui_speakableUtteranceParserForCurrentLanguage;
 + (id)parseUserGeneratedMessage:(id)arg1;
-+ (id)speakableUtteranceParserForCurrentLanguage;
 
 - (void).cxx_destruct;
 - (id)_handleControlCodeAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4 hadEmpties:(BOOL*)arg5;

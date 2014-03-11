@@ -2,29 +2,57 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABContactAddFavoriteActionDelegate;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface ABContactAddFavoriteAction : ABPropertyAction {
-    ABContactAddFavoriteActionDelegate *_addFavoriteDelegate;
+@class NSArray;
+
+@interface ABContactAddFavoriteAction : ABPropertyAction <IDSIDQueryControllerDelegate> {
     BOOL _allowFaceTimeAudioFavorites;
     BOOL _allowFaceTimeFavorites;
     BOOL _allowPhoneFavorites;
+    NSArray *_faceTimeableItems;
+    NSArray *_filteredPhoneItems;
+    BOOL _hasFaceTimeAudioFavorite;
+    BOOL _hasFaceTimeFavorite;
+    id _idQueryResultHandler;
 }
 
 @property BOOL allowFaceTimeAudioFavorites;
 @property BOOL allowFaceTimeFavorites;
 @property BOOL allowPhoneFavorites;
+@property(retain) NSArray * faceTimeableItems;
+@property(retain) NSArray * filteredPhoneItems;
+@property BOOL hasFaceTimeAudioFavorite;
+@property BOOL hasFaceTimeFavorite;
+@property(copy) id idQueryResultHandler;
 
-- (id)_filterFavoritedPropertyItems:(id)arg1;
+- (id)_bestFaceTimeProperty;
+- (void)_filterFavoritedItems;
+- (void)_queryFaceTimeStatus;
+- (void)_saveFavorite:(id)arg1 withType:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowFaceTimeAudioFavorites;
 - (BOOL)allowFaceTimeFavorites;
 - (BOOL)allowPhoneFavorites;
 - (BOOL)canPerformAction;
 - (void)dealloc;
-- (void)performActionForItem:(id)arg1 sender:(id)arg2;
+- (id)faceTimeableItems;
+- (id)filteredPhoneItems;
+- (BOOL)hasFaceTimeAudioFavorite;
+- (BOOL)hasFaceTimeFavorite;
+- (id)idQueryResultHandler;
+- (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
+- (id)initWithContact:(id)arg1 propertyItems:(id)arg2;
 - (void)performActionWithSender:(id)arg1;
 - (void)setAllowFaceTimeAudioFavorites:(BOOL)arg1;
 - (void)setAllowFaceTimeFavorites:(BOOL)arg1;
 - (void)setAllowPhoneFavorites:(BOOL)arg1;
+- (void)setFaceTimeableItems:(id)arg1;
+- (void)setFilteredPhoneItems:(id)arg1;
+- (void)setHasFaceTimeAudioFavorite:(BOOL)arg1;
+- (void)setHasFaceTimeFavorite:(BOOL)arg1;
+- (void)setIdQueryResultHandler:(id)arg1;
 
 @end

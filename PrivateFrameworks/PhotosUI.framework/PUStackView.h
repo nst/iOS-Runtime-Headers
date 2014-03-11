@@ -2,26 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSPointerArray, PUPhotoDecoration, UIImage;
+@class NSArray, NSPointerArray, PUPhotoDecoration, UIImage, UIImageView;
 
 @interface PUStackView : UIView {
-    struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct CGSize { 
         float width; 
         float height; 
@@ -43,6 +33,8 @@
     int __numberOfViews;
     NSArray *__photoDecorationVariants;
     NSArray *__photoViews;
+    UIImageView *_combinedPhotoDecorationImageView;
+    BOOL _combinesPhotoDecorations;
     UIImage *_emptyPlaceholderImage;
     BOOL _imageHidden[3];
     BOOL _needsDynamicLayout;
@@ -61,6 +53,7 @@
 @property(readonly) int _numberOfViews;
 @property(setter=_setPhotoDecorationVariants:,copy) NSArray * _photoDecorationVariants;
 @property(readonly) NSArray * _photoViews;
+@property BOOL combinesPhotoDecorations;
 @property(retain) UIImage * emptyPlaceholderImage;
 @property int numberOfVisibleItems;
 @property(retain) PUPhotoDecoration * photoDecoration;
@@ -76,6 +69,7 @@
 + (int)maximumNumberOfVisibleItemsForStyle:(unsigned int)arg1;
 
 - (void).cxx_destruct;
+- (id)_combinedPhotoDecorationsImage;
 - (void)_getCenter:(struct CGPoint { float x1; float x2; }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forPhotoViewAtIndex:(int)arg3;
 - (id)_imageSizes;
 - (int)_numberOfViews;
@@ -85,7 +79,7 @@
 - (void)_setNeedsDynamicLayout;
 - (void)_setPhotoDecorationVariants:(id)arg1;
 - (void)_updateDynamicLayout;
-- (void)_updateVisibleDecorationVariants;
+- (BOOL)combinesPhotoDecorations;
 - (id)emptyPlaceholderImage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfFrontStackItemRelativeToView:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -96,6 +90,7 @@
 - (int)numberOfVisibleItems;
 - (id)photoDecoration;
 - (void)setAlpha:(float)arg1 forItemAtIndex:(int)arg2;
+- (void)setCombinesPhotoDecorations:(BOOL)arg1;
 - (void)setEmptyPlaceholderImage:(id)arg1;
 - (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)setImageHidden:(BOOL)arg1 forItemAtIndex:(int)arg2;
@@ -108,7 +103,7 @@
 - (void)setStackPerspectiveOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setStackSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStyle:(unsigned int)arg1;
-- (void)setVideoBannerVisible:(BOOL)arg1 duration:(id)arg2 isSlalom:(BOOL)arg3 forItemAtIndex:(int)arg4;
+- (void)setVideoBannerVisible:(BOOL)arg1 duration:(double)arg2 isSlalom:(BOOL)arg3 forItemAtIndex:(int)arg4;
 - (id)stackItemViews;
 - (struct UIOffset { float x1; float x2; })stackOffset;
 - (struct CGPoint { float x1; float x2; })stackPerspectiveFactor;

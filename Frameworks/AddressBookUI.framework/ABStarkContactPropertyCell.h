@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABStarkContactPropertyCell : ABPropertyCell {
+@interface ABStarkContactPropertyCell : ABPropertyPhoneNumberCell {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -17,5 +17,7 @@
 - (id)contentViewConstraints;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)transportButtonClicked:(id)arg1;
+- (void)updateTransportButtons;
 
 @end

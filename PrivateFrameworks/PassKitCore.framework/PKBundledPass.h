@@ -10,7 +10,7 @@
 
 @property(retain) NSString * imageBase;
 
-+ (id)passWithBundledStyle:(int)arg1;
++ (id)passWithBundledStyle:(unsigned int)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)contentIsLoaded;
@@ -18,7 +18,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)fetchImageSet:(int)arg1 withCompletion:(id)arg2;
 - (id)imageBase;
-- (id)initWithBundledStyle:(int)arg1;
+- (id)initWithBundledStyle:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setImageBase:(id)arg1;
 

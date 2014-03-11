@@ -3,14 +3,15 @@
  */
 
 @interface HSUpdateRequest : HSRequest {
+    int _connectionType;
 }
 
-+ (id)requestWithDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2;
-+ (id)requestWithDatabaseRevision:(unsigned int)arg1;
++ (id)requestWithDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2 connectionType:(int)arg3;
 
 - (id)_bodyDataForDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2;
 - (id)canonicalResponseForResponse:(id)arg1;
-- (id)initWithDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2;
-- (id)initWithDatabaseRevision:(unsigned int)arg1;
+- (id)initWithDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2 connectionType:(int)arg3;
+- (BOOL)isConcurrent;
+- (double)timeoutInterval;
 
 @end

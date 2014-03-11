@@ -13,8 +13,8 @@
 @property(readonly) NSAttributedString * string;
 @property(readonly) NSURL * url;
 
+- (void).cxx_destruct;
 - (id)attributedStringWithImage:(id)arg1;
-- (void)dealloc;
 - (id)disclosureArrow;
 - (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 globalAttributions:(id)arg3;
 - (id)string;

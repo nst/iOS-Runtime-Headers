@@ -4,7 +4,7 @@
 
 @class <VKOverlayContainerDelegate>, <VKRouteMatchedAnnotationPresentation>, NSMapTable, NSMutableArray, NSMutableSet, NSSet, VKSkyModel, VKStylesheet;
 
-@interface VKOverlayContainerModel : VKMapTileModel <VKMapLayer, VKStylesheetObserver> {
+@interface VKOverlayContainerModel : VKMapTileModel <VKRouteMatchedAnnotationPresentationObserver, VKMapLayer, VKStylesheetObserver> {
     struct { 
         struct VKPoint { 
             double x; 
@@ -14,6 +14,7 @@
         double course; 
         BOOL onRoute; 
     <VKOverlayContainerDelegate> *_delegate;
+    BOOL _isShowingRouteInStandardMode;
     NSMutableArray *_overlayPainters;
     NSMutableSet *_overlaysToAdd;
     NSMapTable *_overlaysToPainters;
@@ -31,6 +32,7 @@
 
 @property <VKOverlayContainerDelegate> * delegate;
 @property(getter=isInRealisticMode,readonly) BOOL inRealisticMode;
+@property(readonly) BOOL isShowingRouteInStandardMode;
 @property(readonly) NSSet * persistentOverlays;
 @property(readonly) struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; } puckPosition;
 @property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
@@ -45,11 +47,13 @@
 - (id).cxx_construct;
 - (void)_updatePainterOrdering;
 - (void)addPersistentOverlay:(id)arg1;
+- (void)annotationPresentationDidChangePresentationCoordinate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (id)init;
 - (BOOL)isInRealisticMode;
+- (BOOL)isShowingRouteInStandardMode;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
 - (id)persistentOverlays;

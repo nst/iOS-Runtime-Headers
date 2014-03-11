@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufWifi.dylib
  */
 
-@interface AWDWiFiMetricCustomNetworkSetting : PBCodable {
+@interface AWDWiFiMetricCustomNetworkSetting : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int autoProxySetCount : 1; 
@@ -43,8 +43,8 @@
 - (unsigned int)autoProxySetCount;
 - (unsigned int)bootpSetCount;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)customNetworkCount;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)dhcpSetCount;
 - (id)dictionaryRepresentation;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEditItemViewControllerDelegate>, <EKStyleProvider>;
+@class <EKEditItemViewControllerDelegate>, <EKStyleProvider>, EKUIRecurrenceAlertController;
 
 @interface EKEditItemViewController : UIViewController <EKEditItemViewControllerProtocol> {
     struct CGRect { 
@@ -17,6 +17,7 @@
     <EKEditItemViewControllerDelegate> *_editDelegate;
     } _initialFrame;
     BOOL _modal;
+    EKUIRecurrenceAlertController *_recurrenceAlertController;
     BOOL _showsDoneButton;
     <EKStyleProvider> *_styleProvider;
     int _subitem;

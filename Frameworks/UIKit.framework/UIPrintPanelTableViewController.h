@@ -5,7 +5,6 @@
 @class UIPrintPanelViewController;
 
 @interface UIPrintPanelTableViewController : UITableViewController {
-    BOOL _canPrint;
     BOOL _contactingPrinter;
     int _copiesRow;
     int _duplexRow;

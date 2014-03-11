@@ -5,6 +5,7 @@
 @class <MPUChronologicalProgressViewDelegate>, MPDetailScrubController, NSString, UILabel, UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding>;
 
 @interface MPUChronologicalProgressView : UIView <MPDetailScrubControllerDelegate> {
+    BOOL _alwaysLive;
     double _currentTime;
     UILabel *_currentTimeLabel;
     <MPUChronologicalProgressViewDelegate> *_delegate;
@@ -20,6 +21,7 @@
     double _totalDuration;
 }
 
+@property(getter=isAlwaysLive) BOOL alwaysLive;
 @property double currentTime;
 @property <MPUChronologicalProgressViewDelegate> * delegate;
 @property BOOL scrubbingEnabled;
@@ -32,6 +34,7 @@
 - (id)_createTimeLabelWithStyle:(int)arg1;
 - (void)_internalSetCurrentTime:(double)arg1;
 - (float)_sliderNormalizedValueForTime:(double)arg1;
+- (id)_stringForTime:(double)arg1 isTimeRemaining:(BOOL)arg2;
 - (id)_styledImageName:(id)arg1;
 - (id)_thumbImage;
 - (id)_timeLabelFont;
@@ -44,8 +47,10 @@
 - (void)detailScrubControllerDidEndScrubbing:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
+- (BOOL)isAlwaysLive;
 - (void)layoutSubviews;
 - (BOOL)scrubbingEnabled;
+- (void)setAlwaysLive:(BOOL)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setScrubbingEnabled:(BOOL)arg1;

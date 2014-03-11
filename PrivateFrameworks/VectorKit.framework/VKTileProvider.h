@@ -16,6 +16,7 @@
         } orientation; 
         float aspectRatio; 
         float verticalFieldOfView; 
+        double horizontalOffset; 
     struct CGSize { 
         float width; 
         float height; 

@@ -4,7 +4,7 @@
 
 @class MFModernAtomBackgroundView, MFModernAtomIconView, NSString, UIActivityIndicatorView, UIColor, UIFont, UILabel, UIView;
 
-@interface MFModernAtomView : UIDefaultKeyboardInput {
+@interface MFModernAtomView : UIDefaultKeyboardInput <MFModernAtomViewResembling> {
     MFModernAtomIconView *_accessoryIconView;
     UIActivityIndicatorView *_activityIndicator;
     MFModernAtomBackgroundView *_background;
@@ -19,6 +19,7 @@
     float _scalingFactor;
     BOOL _selected;
     BOOL _separatorHidden;
+    BOOL _separatorIsLeftAligned;
     UIFont *_titleFont;
     UIView *_titleLabelFillView;
 }
@@ -28,13 +29,17 @@
 @property(readonly) MFModernAtomBackgroundView * backgroundView;
 @property(readonly) MFModernAtomIconView * badgeIconView;
 @property(readonly) struct CGPoint { float x1; float x2; } baselinePoint;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property(readonly) unsigned int effectivePresentationOptions;
 @property(readonly) UIColor * effectiveTintColor;
 @property BOOL hidesVIPIndicator;
 @property BOOL isPrimaryAddressAtom;
 @property unsigned int presentationOptions;
+@property float scale;
 @property(getter=isSelected) BOOL selected;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
 @property BOOL separatorHidden;
+@property BOOL separatorIsLeftAligned;
 @property int separatorStyle;
 @property(copy) NSString * title;
 @property(retain) UIFont * titleFont;
@@ -80,19 +85,24 @@
 - (BOOL)isPrimaryAddressAtom;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
+- (void)performBuildInAnimationFromTextColor:(id)arg1 withDuration:(double)arg2;
 - (float)preferredWidth;
 - (float)preferredWidthWithSizeConstraints:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)presentationOptions;
-- (float)scalingFactor;
+- (float)scale;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
 - (BOOL)separatorHidden;
+- (BOOL)separatorIsLeftAligned;
 - (int)separatorStyle;
 - (void)setHidesVIPIndicator:(BOOL)arg1;
 - (void)setIsPrimaryAddressAtom:(BOOL)arg1;
 - (void)setPresentationOptions:(unsigned int)arg1;
-- (void)setScalingFactor:(float)arg1;
+- (void)setScale:(float)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 style:(unsigned int)arg3;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSeparatorHidden:(BOOL)arg1;
+- (void)setSeparatorIsLeftAligned:(BOOL)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleFont:(id)arg1;

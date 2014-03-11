@@ -4,18 +4,14 @@
 
 @interface CKEditableCollectionView : UICollectionView {
     BOOL _editing;
-    float _transcriptDrawerWidth;
 }
 
 @property(getter=isEditing) BOOL editing;
-@property float transcriptDrawerWidth;
 
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
 - (BOOL)isEditing;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
-- (void)setTranscriptDrawerWidth:(float)arg1;
-- (float)transcriptDrawerWidth;
 
 @end

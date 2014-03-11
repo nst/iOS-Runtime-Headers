@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 info:(id)arg2 comment:(id)arg3;
-- (void)p_do;
+- (void)p_doWithBeginEditing:(BOOL)arg1;
 - (BOOL)process;
 - (void)redo;
 - (void)saveToArchiver:(id)arg1;

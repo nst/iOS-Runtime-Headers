@@ -33,7 +33,9 @@
 - (void)_dequeuePendingQueryIfPossible;
 - (id)_disasterModeTokenForURI:(id)arg1;
 - (id)_existingPeerMapFromURI:(id)arg1 service:(id)arg2;
+- (void)_flushTokensForURI:(id)arg1 fromURI:(id)arg2 service:(id)arg3;
 - (id)_peerMapFromURI:(id)arg1 service:(id)arg2;
+- (id)_peerTokensForURI:(id)arg1 fromURI:(id)arg2 service:(id)arg3 ignoreExpiration:(BOOL)arg4;
 - (id)_peerTokensForURI:(id)arg1 fromURI:(id)arg2 service:(id)arg3;
 - (void)_purgeMapFromURI:(id)arg1 service:(id)arg2;
 - (void)_removeCompletionBlocksForURIs:(id)arg1 fromURI:(id)arg2 fromService:(id)arg3;

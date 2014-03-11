@@ -34,7 +34,9 @@
     NSString *_printerID;
     float _rightMargin;
     TPDocumentSettings *_settings;
+    BOOL _shouldUniquifyTableNames;
     TSSStylesheet *_stylesheet;
+    NSMutableDictionary *_tableInfosWithUniqueNames;
     unsigned int _tableNameCounter;
     TPTheme *_theme;
     TSDThumbnailController *_thumbnailController;
@@ -89,7 +91,6 @@
 
 - (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;
-- (id)additionalDocumentPropertiesForWrite;
 - (unsigned int)applicationType;
 - (BOOL)autoListRecognition;
 - (BOOL)autoListTermination;
@@ -129,7 +130,7 @@
 - (void)invalidateThumbnailForPageIndex:(unsigned int)arg1;
 - (BOOL)isChangeTrackingEnabled;
 - (BOOL)isChangeTrackingPaused;
-- (BOOL)isMultiPage;
+- (BOOL)isMultiPageForQuickLook;
 - (BOOL)isNewDocument;
 - (BOOL)isSectionModel:(id)arg1;
 - (BOOL)isTrackingChanges;
@@ -238,6 +239,7 @@
 - (id)tocStyles;
 - (float)topMargin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledClipRectForIdentifier:(id)arg1;
+- (void)updateWritingDirection:(unsigned int)arg1;
 - (void)upgradeFromOldSectionWithPageSize:(struct CGSize { float x1; float x2; })arg1 leftMargin:(float)arg2 rightMargin:(float)arg3 topMargin:(float)arg4 bottomMargin:(float)arg5 headerMargin:(float)arg6 footerMargin:(float)arg7;
 - (BOOL)useLigatures;
 - (BOOL)usesSingleHeaderFooter;

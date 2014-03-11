@@ -2,41 +2,37 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABStyleProvider, ABUIPerson, UILabel;
+@class ABStyleProvider, ABUIPerson, UITableViewCell;
 
 @interface ABMemberNameView : UIView {
+    UITableViewCell *_cell;
     BOOL _highlighted;
     BOOL _isMeCard;
-    UILabel *_meLabel;
-    UILabel *_nameLabel;
     ABUIPerson *_person;
     ABStyleProvider *_styleProvider;
 }
 
+@property UITableViewCell * cell;
 @property BOOL highlighted;
 @property BOOL isMeCard;
-@property(readonly) UILabel * meLabel;
-@property(readonly) UILabel * nameLabel;
 @property(retain) ABUIPerson * person;
 @property(retain) ABStyleProvider * styleProvider;
 
-- (id)_attributedNameWithNameComponents:(id)arg1 delimiter:(id)arg2 highlightedIndex:(int)arg3;
+- (id)_attributedNameWithNameComponents:(id)arg1 delimiter:(id)arg2 highlightedIndex:(int)arg3 romanName:(BOOL)arg4;
 - (id)_cachedBoldTextAttributes;
-- (id)_cachedMemberNameBoldFont;
-- (id)_cachedMemberNamePlaceholderFont;
+- (id)_cachedDisabledBoldTextAttributes;
+- (id)_cachedDisabledRegularTextAttributes;
 - (id)_cachedMemberNameRegularFont;
-- (float)_cachedNameLabelBaselineOffsetFromBottom;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cachedNameLabelFrame;
+- (id)_cachedPlaceholderTextAttributes;
 - (id)_cachedRegularTextAttributes;
-- (bool)_hasCachedNameLabelFrame;
+- (id)cell;
 - (void)dealloc;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)highlighted;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithCell:(id)arg1 styleProvider:(id)arg2;
 - (BOOL)isMeCard;
-- (void)layoutSubviews;
-- (id)meLabel;
-- (id)nameLabel;
 - (id)person;
+- (void)setCell:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsMeCard:(BOOL)arg1;
 - (void)setPerson:(id)arg1;

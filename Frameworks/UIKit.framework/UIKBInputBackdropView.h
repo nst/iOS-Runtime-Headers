@@ -5,11 +5,33 @@
 @class UIKBBackdropView;
 
 @interface UIKBInputBackdropView : UIView {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    BOOL _hasEndRect;
+    BOOL _hasStartRect;
     unsigned int _innerCorners;
     UIKBBackdropView *_inputBackdropFullView;
     UIKBBackdropView *_inputBackdropLeftView;
     UIKBBackdropView *_inputBackdropRightView;
     BOOL _isTransitioning;
+    } _savedEndRect;
+    } _savedStartRect;
     float _transitionGap;
     float _transitionLeftOffset;
 }
@@ -20,9 +42,11 @@
 
 - (void)_beginSplitTransitionIfNeeded:(float)arg1 gapWidth:(float)arg2;
 - (void)_endSplitTransitionIfNeeded:(BOOL)arg1;
-- (void)_setLeftOffset:(float)arg1 gapWidth:(float)arg2 progress:(float)arg3 innerCorners:(unsigned int)arg4;
-- (void)_setLeftOffset:(float)arg1 gapWidth:(float)arg2 progress:(float)arg3;
-- (void)_setProgress:(float)arg1 boundedBy:(float)arg2;
+- (BOOL)_isTransitioning;
+- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 leftOffset:(float)arg2 gapWidth:(float)arg3 progress:(float)arg4 innerCorners:(unsigned int)arg5;
+- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 leftOffset:(float)arg2 gapWidth:(float)arg3 progress:(float)arg4;
+- (void)_setInitialProgressWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setProgress:(float)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 primaryBackdrop:(BOOL)arg2;
 - (id)inputBackdropFullView;

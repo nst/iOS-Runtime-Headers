@@ -5,6 +5,7 @@
 @class NSArray, NSDictionary, NSString, NSURL, SKUIArtworkList, UIImage;
 
 @interface SKUIRedeem : NSObject {
+    double _ITunesPassLearnMoreAlertInterval;
     NSString *_balance;
     NSString *_credit;
     SKUIArtworkList *_headerArtworkList;
@@ -19,6 +20,7 @@
     NSString *_title;
 }
 
+@property double ITunesPassLearnMoreAlertInterval;
 @property(copy) NSString * balance;
 @property(copy) NSString * credit;
 @property(retain) SKUIArtworkList * headerArtworkList;
@@ -33,12 +35,14 @@
 @property(copy) NSString * title;
 
 - (void).cxx_destruct;
+- (double)ITunesPassLearnMoreAlertInterval;
 - (id)balance;
 - (id)credit;
 - (id)headerArtworkList;
 - (id)headerImage;
 - (BOOL)hideItemView;
 - (id)inAppPurchase;
+- (id)init;
 - (id)items;
 - (id)links;
 - (id)message;
@@ -48,6 +52,7 @@
 - (void)setHeaderArtworkList:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
 - (void)setHideItemView:(BOOL)arg1;
+- (void)setITunesPassLearnMoreAlertInterval:(double)arg1;
 - (void)setInAppPurchase:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)setLinks:(id)arg1;

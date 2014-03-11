@@ -7,10 +7,12 @@
 @interface GEOClientCapabilities : PBCodable <NSCopying> {
     struct { 
         unsigned int maxManeuverTypeSupported : 1; 
+        unsigned int internalInstall : 1; 
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
     NSString *_hardwareModel;
     } _has;
+    BOOL _internalInstall;
     int _maxManeuverTypeSupported;
 }
 
@@ -20,7 +22,9 @@
 @property(readonly) BOOL hasAppMajorVersion;
 @property(readonly) BOOL hasAppMinorVersion;
 @property(readonly) BOOL hasHardwareModel;
+@property BOOL hasInternalInstall;
 @property BOOL hasMaxManeuverTypeSupported;
+@property BOOL internalInstall;
 @property int maxManeuverTypeSupported;
 
 - (id)appMajorVersion;
@@ -34,15 +38,19 @@
 - (BOOL)hasAppMajorVersion;
 - (BOOL)hasAppMinorVersion;
 - (BOOL)hasHardwareModel;
+- (BOOL)hasInternalInstall;
 - (BOOL)hasMaxManeuverTypeSupported;
 - (unsigned int)hash;
+- (BOOL)internalInstall;
 - (BOOL)isEqual:(id)arg1;
 - (int)maxManeuverTypeSupported;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setAppMinorVersion:(id)arg1;
 - (void)setHardwareModel:(id)arg1;
+- (void)setHasInternalInstall:(BOOL)arg1;
 - (void)setHasMaxManeuverTypeSupported:(BOOL)arg1;
+- (void)setInternalInstall:(BOOL)arg1;
 - (void)setMaxManeuverTypeSupported:(int)arg1;
 - (void)writeTo:(id)arg1;
 

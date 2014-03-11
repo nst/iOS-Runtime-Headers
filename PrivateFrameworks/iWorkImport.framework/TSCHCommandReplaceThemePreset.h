@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class TSCHChartStylePreset, TSSTheme, TSUNoCopyDictionary;
 
 @interface TSCHCommandReplaceThemePreset : TSKCommand <TSDPropagatableCommand> {
+    id mGenerator;
     unsigned int mIndex;
     TSCHChartStylePreset *mNewPreset;
     TSCHChartStylePreset *mOldPreset;
@@ -21,9 +26,10 @@
 - (void)dealloc;
 - (unsigned int)index;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithTheme:(id)arg1 oldPreset:(id)arg2 newPreset:(id)arg3 context:(id)arg4;
+- (id)initWithTheme:(id)arg1 oldPreset:(id)arg2 newPresetGenerator:(id)arg3 context:(id)arg4;
 - (BOOL)modifiesAnyObjectPassingTest:(id)arg1;
 - (void)p_doWorkForOld:(id)arg1 andNew:(id)arg2;
+- (void)p_materializeNewPreset;
 - (void)populateChangePropagationMapAfterCommit:(id)arg1;
 - (id)presetNew;
 - (id)presetOld;

@@ -22,6 +22,8 @@
 + (double)defaultDAVProbeTimeout;
 + (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
 + (BOOL)earlyPingEnabled;
++ (double)holidayCalendarRefreshInterval;
++ (id)holidayCalendarURL;
 + (BOOL)ignoreBadLDAPCerts;
 + (BOOL)ignoreSupportedCommands;
 + (void)initialize;

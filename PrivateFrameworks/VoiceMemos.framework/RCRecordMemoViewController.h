@@ -19,11 +19,13 @@
 - (void)_setPlaying:(BOOL)arg1 updateAudioInputState:(BOOL)arg2;
 - (id)audioInputDevice;
 - (void)audioInputDeviceRecordingDidEndNotification:(id)arg1;
+- (void)audioInputDeviceRecordingDidFailNotification:(id)arg1;
 - (void)audioInputDeviceRecordingStateDidChange:(id)arg1;
 - (void)commitEditing;
 - (void)dealloc;
 - (int)defaultControlsConfiguration;
 - (id)initWithAudioInputDevice:(id)arg1;
+- (id)recording;
 - (void)setDuration:(double)arg1;
 - (void)setPlaying:(BOOL)arg1;
 

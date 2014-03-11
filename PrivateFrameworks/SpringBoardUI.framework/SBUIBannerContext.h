@@ -5,6 +5,7 @@
 @class <SBUIBannerSource>, <SBUIBannerTarget>, SBUIBannerItem;
 
 @interface SBUIBannerContext : NSObject {
+    BOOL _isValid;
     SBUIBannerItem *_item;
     <SBUIBannerSource> *_source;
     <SBUIBannerTarget> *_target;
@@ -13,10 +14,13 @@
 @property(readonly) SBUIBannerItem * item;
 @property(readonly) <SBUIBannerSource> * source;
 @property(readonly) <SBUIBannerTarget> * target;
+@property(getter=isValid,readonly) BOOL valid;
 
 - (void)dealloc;
 - (id)description;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3;
+- (void)invalidate;
+- (BOOL)isValid;
 - (id)item;
 - (id)source;
 - (id)target;

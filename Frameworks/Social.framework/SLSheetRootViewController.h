@@ -4,7 +4,7 @@
 
 @class NSArray, SLComposeServiceViewController, SLSheetTitleView, UIImage, UINavigationItem, UITableView, UITableViewController, UIView, UIViewController;
 
-@interface SLSheetRootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface SLSheetRootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, SLSheetActionChangeObserving> {
     UIViewController *_autoCompletionViewController;
     UIView *_contentView;
     SLComposeServiceViewController *_delegate;
@@ -32,7 +32,6 @@
 - (id)navigationItem;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)observeSheetActions:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)presentAutoCompletionViewController:(id)arg1 apparentContentHeight:(float)arg2 contentViewChangeBlock:(id)arg3;
 - (void)resetSheetActions;
 - (id)serviceIconImage;
@@ -42,6 +41,7 @@
 - (void)setServiceIconImage:(id)arg1;
 - (void)setSheetActions:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)sheetActionDidChange:(id)arg1;
 - (id)sheetActions;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCoreLoggers.framework/PowerlogCoreLoggers
  */
 
-@class NSDate, PLBasebandLogChannel;
+@class NSDate, NSString, PLBasebandLogChannel;
 
 @interface PLEurekaBasebandLogger : PLBasebandLogger <PLBasebandLogChannelDelegate> {
     BOOL _currentlyCalibrating;
     NSDate *_lastBBActivityTimestamp;
+    NSString *_lastBBActivityType;
     NSDate *_lastTimeCalibration;
     double _timeCalibration;
     PLBasebandLogChannel *cachedChannel;
@@ -15,6 +16,7 @@
 
 @property BOOL currentlyCalibrating;
 @property(retain) NSDate * lastBBActivityTimestamp;
+@property(retain) NSString * lastBBActivityType;
 @property(retain) NSDate * lastTimeCalibration;
 @property double timeCalibration;
 
@@ -36,6 +38,7 @@
 - (BOOL)inCall;
 - (id)initWithConnection:(id)arg1;
 - (id)lastBBActivityTimestamp;
+- (id)lastBBActivityType;
 - (id)lastTimeCalibration;
 - (id)localDate:(id)arg1;
 - (void)log;
@@ -48,6 +51,7 @@
 - (void)setCurrentlyCalibrating:(BOOL)arg1;
 - (void)setHWLoggingLevel:(unsigned int)arg1;
 - (void)setLastBBActivityTimestamp:(id)arg1;
+- (void)setLastBBActivityType:(id)arg1;
 - (void)setLastTimeCalibration:(id)arg1;
 - (void)setTimeCalibration:(double)arg1;
 - (BOOL)setupChannel:(id)arg1 withLogCodes:(id)arg2 andEvents:(id)arg3;

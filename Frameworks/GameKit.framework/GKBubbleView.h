@@ -85,6 +85,5 @@
 - (void)touchBegan;
 - (void)touchEnded;
 - (void)update:(double)arg1;
-- (void)willMoveToWindow:(id)arg1;
 
 @end

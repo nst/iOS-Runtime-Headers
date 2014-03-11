@@ -3,9 +3,9 @@
  */
 
 @interface TSDCapabilities : NSObject {
-    int mDevice;
-    int mPlatform;
-    int mRenderer;
+    int _device;
+    int _platform;
+    int _renderer;
 }
 
 @property(readonly) int device;

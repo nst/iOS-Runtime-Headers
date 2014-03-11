@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarEventAlarmTable, NSArray;
+@class NSArray;
 
 @interface EKEventAlarmDetailItem : EKEventDetailItem {
-    CalendarEventAlarmTable *_alarmTable;
     NSArray *_alarms;
     unsigned int _disclosedSubitem;
 }
@@ -18,7 +17,7 @@
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
-- (id)init;
+- (BOOL)editItemViewControllerShouldShowDetachAlert;
 - (unsigned int)numberOfSubitems;
 - (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;

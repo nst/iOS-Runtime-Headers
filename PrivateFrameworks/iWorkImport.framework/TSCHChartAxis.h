@@ -7,6 +7,7 @@
 @interface TSCHChartAxis : NSObject <TSCHUnretainedParent, TSCHStyleOwning> {
     TSUFastReadInvalidatingCache *mAnalysisCache;
     TSCHChartAxisID *mAxisID;
+    TSUFastReadInvalidatingCache *mAxisNumberFormatCache;
     TSCHChartModel *mChartModel;
     <TSCHStyleActAlike> *mNonStyle;
     unsigned int mNonStyleIndex;
@@ -72,6 +73,7 @@
 - (id)numberFormatForSeries:(id)arg1 index:(unsigned int)arg2;
 - (id)objectValueForProperty:(int)arg1;
 - (id)p_axisAnalysisFromCurrentModel;
+- (id)p_axisNumberFormatFromCurrentModel;
 - (unsigned int)p_count;
 - (id)p_genericToDefaultPropertyMap;
 - (unsigned int)p_rangeCount;

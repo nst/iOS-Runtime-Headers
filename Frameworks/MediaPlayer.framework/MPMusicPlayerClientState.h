@@ -6,7 +6,6 @@
 
 @interface MPMusicPlayerClientState : NSObject {
     BOOL _allowsBackgroundVideo;
-    BOOL _autoReshufflingDisabled;
     int _backgroundPlaybackAccess;
     MPMediaItem *_firstItem;
     MPMediaPlaylist *_geniusMixPlaylist;
@@ -21,7 +20,6 @@
 }
 
 @property BOOL allowsBackgroundVideo;
-@property BOOL autoReshufflingDisabled;
 @property int backgroundPlaybackAccess;
 @property(retain) MPMediaItem * firstItem;
 @property(retain) MPMediaPlaylist * geniusMixPlaylist;
@@ -36,7 +34,6 @@
 
 - (void).cxx_destruct;
 - (BOOL)allowsBackgroundVideo;
-- (BOOL)autoReshufflingDisabled;
 - (int)backgroundPlaybackAccess;
 - (id)firstItem;
 - (id)geniusMixPlaylist;
@@ -46,7 +43,6 @@
 - (int)repeatMode;
 - (BOOL)seeking;
 - (void)setAllowsBackgroundVideo:(BOOL)arg1;
-- (void)setAutoReshufflingDisabled:(BOOL)arg1;
 - (void)setBackgroundPlaybackAccess:(int)arg1;
 - (void)setFirstItem:(id)arg1;
 - (void)setGeniusMixPlaylist:(id)arg1;

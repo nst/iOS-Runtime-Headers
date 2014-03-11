@@ -6,9 +6,11 @@
 
 @interface UIKBRenderTraits : NSObject <NSCopying> {
     UIKBGradient *_backgroundGradient;
+    int _blendForm;
     BOOL _controlOpacities;
     UIKBTextStyle *_fallbackSymbolStyle;
     float _forceOpacity;
+    NSMutableArray *_foregroundRenderEffects;
     UIKBRenderGeometry *_geometry;
     NSString *_hashString;
     UIKBRenderTraits *_highlightedVariantTraits;
@@ -23,9 +25,11 @@
 }
 
 @property(retain) UIKBGradient * backgroundGradient;
+@property int blendForm;
 @property BOOL controlOpacities;
 @property(retain) UIKBTextStyle * fallbackSymbolStyle;
 @property float forceOpacity;
+@property(readonly) NSArray * foregroundRenderEffects;
 @property(retain) UIKBRenderGeometry * geometry;
 @property(retain) NSString * hashString;
 @property(retain) UIKBRenderTraits * highlightedVariantTraits;
@@ -41,17 +45,21 @@
 + (id)traitsWithGeometry:(id)arg1;
 + (id)traitsWithSymbolStyle:(id)arg1;
 
+- (void)addForegroundRenderEffect:(id)arg1;
 - (void)addRenderEffect:(id)arg1;
 - (id)backgroundGradient;
+- (int)blendForm;
 - (BOOL)controlOpacities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)fallbackSymbolStyle;
 - (float)forceOpacity;
+- (id)foregroundRenderEffects;
 - (id)geometry;
 - (id)hashString;
 - (id)highlightedVariantTraits;
+- (BOOL)isEqual:(id)arg1;
 - (id)layeredBackgroundGradient;
 - (id)layeredForegroundGradient;
 - (void)modifyForMasking;
@@ -60,6 +68,7 @@
 - (id)renderEffects;
 - (id)secondarySymbolStyle;
 - (void)setBackgroundGradient:(id)arg1;
+- (void)setBlendForm:(int)arg1;
 - (void)setControlOpacities:(BOOL)arg1;
 - (void)setFallbackSymbolStyle:(id)arg1;
 - (void)setForceOpacity:(float)arg1;

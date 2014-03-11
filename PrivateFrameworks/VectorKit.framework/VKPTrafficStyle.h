@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPTrafficStyle : PBCodable {
+@interface VKPTrafficStyle : PBCodable <NSCopying> {
     struct { 
         unsigned int fadingOffset : 1; 
         unsigned int fadingSlope : 1; 
@@ -45,7 +45,7 @@
 @property float widthFraction;
 
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (float)fadingOffset;

@@ -8,6 +8,7 @@
 }
 
 @property(copy) NSArray * phrases;
+@property int sentenceConfidence;
 
 + (id)recognition;
 + (id)recognitionWithDictionary:(id)arg1 context:(id)arg2;
@@ -16,6 +17,8 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)phrases;
+- (int)sentenceConfidence;
 - (void)setPhrases:(id)arg1;
+- (void)setSentenceConfidence:(int)arg1;
 
 @end

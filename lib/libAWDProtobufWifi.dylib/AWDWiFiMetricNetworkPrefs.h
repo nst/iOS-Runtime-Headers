@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface AWDWiFiMetricNetworkPrefs : PBCodable {
+@interface AWDWiFiMetricNetworkPrefs : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int adhocNetsCount : 1; 
@@ -81,6 +81,7 @@
 - (unsigned int)captiveNetsCount;
 - (void)clearMostUsedNetworks;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

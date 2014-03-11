@@ -21,6 +21,7 @@
 - (id)UUID;
 - (id)characteristic;
 - (void)dealloc;
+- (id)description;
 - (id)handle;
 - (id)handleValueUpdated:(id)arg1;
 - (id)handleValueWritten:(id)arg1;

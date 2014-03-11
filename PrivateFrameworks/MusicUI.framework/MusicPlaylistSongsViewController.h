@@ -8,12 +8,10 @@
     MusicPlaylistActionsView *_actionsView;
     UIActionSheet *_clearActionSheet;
     UIActionSheet *_deleteActionSheet;
-    int _downloadAllActionRow;
     NSOperationQueue *_downloadabilityOperationQueue;
     int _downloadableSongCount;
     BOOL _isDownloading;
     BOOL _isTransitioning;
-    int _shuffleActionRow;
 }
 
 @property(readonly) int downloadableSongCount;
@@ -22,13 +20,13 @@
 + (BOOL)_shouldDisplayActions;
 + (BOOL)_shouldPopWhenEmpty;
 + (BOOL)_supportsSearch;
++ (id)actionCellConfigurationClasses;
 
 - (void).cxx_destruct;
 - (void)_addItemsAction:(id)arg1;
 - (BOOL)_allowsAddingSongs;
 - (BOOL)_allowsEditing;
 - (BOOL)_allowsIndividualTrackDeletion;
-- (void)_calculateActionRowIndices;
 - (void)_clearAction:(id)arg1;
 - (void)_deleteAction:(id)arg1;
 - (void)_doneEditingAction:(id)arg1;
@@ -42,24 +40,20 @@
 - (id)_seedItem;
 - (void)_updateActionsView;
 - (void)_updateCloudPlaylist;
-- (void)_updateDownloadabilityState;
+- (void)_updateDownloadabilityStateWithCanReloadActionRows:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
 - (int)downloadableSongCount;
 - (BOOL)isDownloading;
-- (int)numberOfPrefixActionRowsInTableView:(id)arg1;
 - (void)pickerOverlayDidFinish:(id)arg1;
 - (void)pickerOverlayRequestsFinish:(id)arg1;
 - (void)reloadData;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
-- (Class)tableView:(id)arg1 prefixActionCellConfigurationAtIndex:(int)arg2;
-- (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

@@ -7,6 +7,8 @@
 @interface TRDeviceSetupServer : NSObject <TRTransferServerDelegate> {
     BOOL _cancelledSetupInProgress;
     <TRDeviceSetupServerDelegate> *_delegate;
+    int _notifyToken;
+    BOOL _notifyTokenIsValid;
     BOOL _setupInProgress;
     BOOL _started;
     TRTransferServer *_transferServer;

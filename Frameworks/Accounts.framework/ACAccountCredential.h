@@ -19,6 +19,7 @@
 @property(getter=isEmpty) BOOL empty;
 @property(retain) NSDate * expiryDate;
 @property(copy) NSString * findMyiPhoneToken;
+@property(copy) NSString * hsaToken;
 @property(copy) NSString * mapsToken;
 @property(copy) NSString * oauthRefreshToken;
 @property(copy) NSString * oauthToken;
@@ -44,6 +45,7 @@
 - (id)expiryDate;
 - (id)findMyiPhoneToken;
 - (unsigned int)hash;
+- (id)hsaToken;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOAuth2Token:(id)arg1 refreshToken:(id)arg2 expiryDate:(id)arg3;
@@ -64,6 +66,7 @@
 - (void)setEmpty:(BOOL)arg1;
 - (void)setExpiryDate:(id)arg1;
 - (void)setFindMyiPhoneToken:(id)arg1;
+- (void)setHsaToken:(id)arg1;
 - (void)setMapsToken:(id)arg1;
 - (void)setOauthRefreshToken:(id)arg1;
 - (void)setOauthToken:(id)arg1;

@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class ATXPCConnection, NSDictionary, NSString;
+@class ATXPCConnection, NSDictionary, NSObject<OS_xpc_object>, NSString;
 
 @interface ATXPCMessage : NSObject {
     NSDictionary *_info;
     NSString *_name;
     ATXPCConnection *_receivingConnection;
-    void *_x_reply;
-    struct _xpc_connection_s { } *_x_reply_connection;
+    NSObject<OS_xpc_object> *_x_reply;
+    NSObject<OS_xpc_object> *_x_reply_connection;
 }
 
 @property(copy) NSDictionary * info;
 @property(readonly) NSString * name;
 
-- (void*)_createXPCMessage;
-- (id)_initWithXPCMessage:(void*)arg1 onConnection:(id)arg2;
+- (id)_createXPCMessage;
+- (id)_initWithXPCMessage:(id)arg1 onConnection:(id)arg2;
 - (void)dealloc;
 - (id)info;
 - (id)initWithName:(id)arg1;

@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSManagedObject, NSManagedObjectContext, NSString;
+@class NSArray, NSManagedObject, NSString, RadioModel;
 
 @interface RadioSkipHistory : NSObject <RadioManagedObjectWrapperProtocol> {
-    NSManagedObjectContext *_context;
+    BOOL _databaseBacked;
     NSManagedObject *_managedObject;
+    RadioModel *_model;
+    NSString *_skipIdentifier;
+    NSArray *_skipTimestamps;
+    NSString *_stationHash;
+    long long _stationID;
 }
 
-@property(readonly) NSManagedObjectContext * context;
+@property(getter=isDatabaseBacked,readonly) BOOL databaseBacked;
 @property(readonly) NSManagedObject * managedObject;
+@property(readonly) RadioModel * model;
 @property(copy) NSString * skipIdentifier;
 @property(copy) NSArray * skipTimestamps;
 @property(copy) NSString * stationHash;
@@ -18,12 +24,13 @@
 
 - (void).cxx_destruct;
 - (void)_radioModelWasDeletedNotification:(id)arg1;
-- (id)context;
 - (void)dealloc;
 - (unsigned int)hash;
-- (id)initWithManagedObject:(id)arg1 context:(id)arg2;
+- (id)initWithModel:(id)arg1 managedObject:(id)arg2;
+- (BOOL)isDatabaseBacked;
 - (BOOL)isEqual:(id)arg1;
 - (id)managedObject;
+- (id)model;
 - (void)setSkipIdentifier:(id)arg1;
 - (void)setSkipTimestamps:(id)arg1;
 - (void)setStationHash:(id)arg1;

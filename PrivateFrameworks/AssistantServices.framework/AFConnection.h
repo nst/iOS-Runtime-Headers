@@ -84,11 +84,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)endSession;
+- (void)forceAudioSessionActive;
 - (id)init;
 - (BOOL)isRecording;
 - (float)peakPower;
 - (void)preheat;
-- (void)redoRequest;
+- (void)prepareForPhoneCall;
 - (void)rollbackClearContext;
 - (void)rollbackRequest;
 - (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id)arg2;
@@ -99,6 +100,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setIsStark:(BOOL)arg1;
 - (void)setLockState:(BOOL)arg1 screenLocked:(BOOL)arg2;
+- (void)setOverriddenApplicationContext:(id)arg1 includeSmsInContext:(id)arg2;
 - (void)setSpeechDelegate:(id)arg1;
 - (void)setVoiceOverIsActive:(BOOL)arg1;
 - (BOOL)shouldSpeak;
@@ -112,7 +114,8 @@
 - (void)startSpeechRequestWithSpeechFileAtURL:(id)arg1;
 - (void)stopSpeech;
 - (void)stopSpeechWithOptions:(id)arg1;
-- (void)undoRequest;
+- (void)telephonyRequestCompleted;
 - (void)updateSpeechOptions:(id)arg1;
+- (void)usefulUserResultWillPresent;
 
 @end

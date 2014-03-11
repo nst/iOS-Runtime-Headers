@@ -21,6 +21,7 @@
 - (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
 - (void)dealloc;
 - (id)init;
+- (void)initializeIfNecessary;
 - (BOOL)isCellConnection;
 - (BOOL)isNetworkReachable;
 - (void)removeNetworkReachableObserver:(id)arg1;

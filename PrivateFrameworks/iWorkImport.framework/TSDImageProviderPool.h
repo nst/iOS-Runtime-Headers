@@ -5,6 +5,7 @@
 @class TSUPointerKeyDictionary;
 
 @interface TSDImageProviderPool : NSObject <TSPDataCullingListener> {
+    BOOL mHaveRaisedFileDescriptorLimit;
     TSUPointerKeyDictionary *mImageDataToImageProviderMap;
     unsigned int mOpenFileDescriptorLimit;
 }
@@ -22,7 +23,10 @@
 - (void)flushImageProviders;
 - (id)init;
 - (void)p_didReceiveMemoryWarning:(id)arg1;
+- (void)p_freeFileDescriptorsWithProviderCount:(unsigned int)arg1;
 - (id)p_providerForData:(id)arg1 temporary:(BOOL)arg2 shouldValidate:(BOOL)arg3;
+- (unsigned int)p_providerLimitForFileDescriptorLimit:(unsigned int)arg1;
+- (unsigned int)p_removeProvidersWithZeroInterest;
 - (void)p_updateFileDescriptorLimit;
 - (id)providerForData:(id)arg1 shouldValidate:(BOOL)arg2;
 - (oneway void)release;

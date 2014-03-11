@@ -76,6 +76,8 @@
 - (BOOL)isEmpty;
 - (BOOL)isRegisteredForChanges;
 - (BOOL)needsReordering;
+- (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
+- (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)registerDerivedAlbumList:(struct NSObject { Class x1; }*)arg1;
 - (void)registerForChanges;
 - (void)setAlbumListType:(int)arg1;

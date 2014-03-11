@@ -2,78 +2,47 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAirPlaySessionDataSource>, AirPlayRemoteSlideshow, MediaControlClient, NSDictionary, NSMutableArray, NSString;
+@class <PLAirPlaySessionDataSource>, AirPlayRemoteSlideshow, MediaControlClient, NSDictionary, NSMutableArray;
 
 @interface PLAirPlaySession : NSObject {
     <PLAirPlaySessionDataSource> *_dataSource;
-    unsigned int _features;
     MediaControlClient *_mediaControlClient;
-    NSString *_password;
-    BOOL _passwordIsAPin;
     NSDictionary *_pickedRoute;
     AirPlayRemoteSlideshow *_remoteSlideshow;
-    NSDictionary *_remoteSlideshowAvailableFeatures;
-    BOOL _routeRequiresPassword;
     BOOL _sentPhoto;
-    BOOL _showingPasswordAlert;
     NSMutableArray *_streamedPhotoUuids;
     BOOL _streamingLocalSlideShow;
     BOOL _streamingPhotos;
     BOOL _streamingRemoteSlideshow;
-    BOOL _validPassword;
-    BOOL _validated;
+    BOOL _supportsPhotoCaching;
 }
 
 @property <PLAirPlaySessionDataSource> * dataSource;
-@property unsigned int features;
-@property(retain) NSString * password;
-@property(retain) AirPlayRemoteSlideshow * remoteSlideshow;
-@property(retain) NSDictionary * remoteSlideshowAvailableFeatures;
-@property(readonly) BOOL routeRequiresPassword;
 @property BOOL streamingLocalSlideShow;
-@property BOOL validPassword;
 
 + (void)beginNetworkAssertion;
 + (BOOL)canDisplayMedia:(id)arg1;
 + (void)endNetworkAssertion;
 
 - (id)_fixLegacyEvent:(id)arg1;
-- (void*)_keychainAccessibility;
 - (void)_reallySendPhotoData:(id)arg1 forPhotoWithUUID:(id)arg2 withTransition:(id)arg3 andAction:(id)arg4;
 - (BOOL)_shouldCachePhotos;
 - (void)_streamPhoto:(id)arg1 withTransition:(id)arg2 andAction:(id)arg3;
 - (void)_streamPhotosAdjacentToPhoto:(id)arg1 withTransition:(id)arg2;
 - (BOOL)_streaming;
-- (BOOL)_supportsPhotoCaching;
-- (void)_validateForBadPassword:(BOOL)arg1 completionBlock:(id)arg2;
 - (id)dataSource;
 - (void)dealloc;
-- (unsigned int)features;
-- (void)getRemoteFeaturesWithCompletionHandler:(id)arg1;
-- (id)initWithPickedRoute:(id)arg1;
+- (id)initWithPickedRoute:(id)arg1 mediaControlClient:(id)arg2 airplayRemoteSlideshow:(id)arg3;
 - (void)invalidatePhotoCache;
-- (id)password;
 - (id)pickedRouteID;
 - (id)pickedRouteName;
-- (id)remoteLocalizationForSlideshowThemeKey:(id)arg1;
-- (id)remoteSlideshow;
-- (id)remoteSlideshowAvailableFeatures;
-- (BOOL)routeRequiresPassword;
 - (void)setDataSource:(id)arg1;
-- (void)setFeatures:(unsigned int)arg1;
-- (void)setPassword:(id)arg1;
-- (void)setRemoteSlideshow:(id)arg1;
-- (void)setRemoteSlideshowAvailableFeatures:(id)arg1;
 - (void)setStreamingLocalSlideShow:(BOOL)arg1;
-- (void)setValidPassword:(BOOL)arg1;
 - (void)startRemoteSlideshowWithTheme:(id)arg1 remoteSlideshowDelegate:(id)arg2;
 - (void)stopRemoteSlideshow;
 - (void)stopStreaming;
 - (void)streamPhoto:(id)arg1 withTransition:(id)arg2;
 - (BOOL)streamingLocalSlideShow;
-- (id)supportedRemoteSlideshowThemes;
 - (BOOL)supportsRemoteSlideshow;
-- (BOOL)validPassword;
-- (void)validate;
 
 @end

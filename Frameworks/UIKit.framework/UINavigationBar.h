@@ -51,6 +51,7 @@
     BOOL _needsUpdateBackIndicatorImage;
     UISwipeGestureRecognizer *_popSwipeGestureRecognizer;
     UIView *_prompt;
+    float _requestedMaxBackButtonWidth;
     float _rightMargin;
     NSArray *_rightViews;
     NSMutableArray *_slideTransitionClippingViews;
@@ -67,6 +68,8 @@
 @property(setter=_setBackgroundView:,retain) UIView * _backgroundView;
 @property(readonly) int _barTranslucence;
 @property(setter=_setNeedsUpdateBackIndicatorImage:) BOOL _needsUpdateBackIndicatorImage;
+@property(setter=_setRequestedMaxBackButtonWidth:) float _requestedMaxBackButtonWidth;
+@property(setter=_setRequestedMaxBackButtonWidth:) float _requestedMaxBackButtonWidth;
 @property(setter=_setWantsLetterpressContent:) BOOL _wantsLetterpressContent;
 @property(retain) UIImage * backIndicatorImage;
 @property(retain) UIImage * backIndicatorTransitionMaskImage;
@@ -96,6 +99,8 @@
 + (void)setDefaultAnimationDuration:(double)arg1;
 
 - (int)RUInterfaceStyle;
+- (void)_accessibilityButtonShapesDidChangeNotification:(id)arg1;
+- (void)_accessibilityButtonShapesParametersDidChange;
 - (int)_activeBarMetrics;
 - (id)_allViews;
 - (void)_animateOldBackButtonView:(id)arg1 toNewBackButtonView:(id)arg2 duration:(float)arg3 initialFrameForIncomingView:(id)arg4 destinationFrameForOutgoingView:(id)arg5 animationCleanup:(id)arg6;
@@ -113,10 +118,13 @@
 - (void)_backgroundFadeDidFinish:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)_backgroundView;
 - (id)_backgroundViewForPalette:(id)arg1;
+- (BOOL)_backgroundViewSuppressesAdaptiveBackdrop;
 - (int)_barPosition;
 - (void)_barSizeDidChangeAndSoDidHeight:(BOOL)arg1;
 - (int)_barStyle:(BOOL)arg1;
+- (BOOL)_barStyleSuppressesAdaptiveBackdrop;
 - (int)_barTranslucence;
+- (BOOL)_barTranslucenceSuppressesAdaptiveBackdrop;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForPrompt:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 barStyle:(int)arg4;
 - (BOOL)_canDrawContent;
@@ -131,6 +139,8 @@
 - (int)_currentBarStyle;
 - (id)_currentLeftViews;
 - (id)_currentRightViews;
+- (BOOL)_customBackgroundImageSuppressesAdaptiveBackdrop;
+- (BOOL)_customBackgroundImageSuppressesAdaptiveBackdropForPalette;
 - (void)_customViewChangedForButtonItem:(id)arg1;
 - (void)_decrementAnimationCountIfNecessary;
 - (int)_defaultBarMetrics;
@@ -138,6 +148,7 @@
 - (id)_defaultTitleFontFittingHeight:(float)arg1 withScaleAdjustment:(float)arg2;
 - (id)_defaultTitleFontWithScaleAdjustment:(float)arg1;
 - (BOOL)_deferShadowToSearchBar;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (BOOL)_didVisibleItemsChangeWithNewItems:(id)arg1 oldItems:(id)arg2;
 - (id)_effectiveBackIndicatorImage;
@@ -162,6 +173,7 @@
 - (void)_handlePopSwipe:(id)arg1;
 - (BOOL)_hasBackButton;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;
+- (BOOL)_hasInvisibleCustomBackgroundImage;
 - (void)_hideButtonsAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (BOOL)_hidesShadow;
 - (void)_incrementAnimationCountIfNecessary;
@@ -185,6 +197,7 @@
 - (void)_reenableUserInteractionWhenReadyWithContext:(id)arg1;
 - (void)_removeAccessoryView;
 - (void)_removeItemsFromSuperview:(id)arg1;
+- (float)_requestedMaxBackButtonWidth;
 - (void)_resetBackgroundImageAsNecessary;
 - (void)_setActiveBarMetrics:(int)arg1;
 - (void)_setAnimationIds:(id)arg1;
@@ -211,6 +224,7 @@
 - (void)_setLeftViews:(id)arg1 rightViews:(id)arg2;
 - (void)_setNeedsUpdateBackIndicatorImage:(BOOL)arg1;
 - (void)_setPressedButtonItemTextColor:(id)arg1 shadowColor:(id)arg2;
+- (void)_setRequestedMaxBackButtonWidth:(float)arg1;
 - (void)_setReversesButtonTextShadowOffsetWhenPressed:(BOOL)arg1;
 - (void)_setVisualAltitude:(float)arg1;
 - (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
@@ -229,6 +243,7 @@
 - (BOOL)_subclassImplementsDrawBackgroundInRect;
 - (BOOL)_subclassImplementsDrawRect;
 - (unsigned int)_subviewIndexAboveBackground;
+- (BOOL)_suppressBackIndicator;
 - (id)_timingFunctionForAnimationInView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_tintViewAppearanceDidChange;
 - (id)_titleTextColor;
@@ -246,8 +261,10 @@
 - (void)_updatePaletteBackgroundIfNecessary;
 - (void)_updateTitleView;
 - (BOOL)_wantsAdaptiveBackdrop;
+- (BOOL)_wantsAdaptiveBackdropForPalette;
+- (BOOL)_wantsAdaptiveBackdropWhenNotHidden;
 - (BOOL)_wantsLetterpressContent;
-- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
+- (void)_willMoveToWindow:(id)arg1;
 - (void)_wrapView:(id)arg1 inClippingViewWithLeftBoundary:(float)arg2 rightBoundary:(float)arg3 leftMaskImage:(id)arg4 leftMaskIsChevron:(BOOL)arg5 rightMaskImage:(id)arg6;
 - (void)addConstraint:(id)arg1;
 - (unsigned int)animationDisabledCount;

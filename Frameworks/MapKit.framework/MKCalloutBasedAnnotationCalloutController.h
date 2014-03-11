@@ -9,6 +9,7 @@
     Class _calloutViewClass;
 }
 
+- (void).cxx_destruct;
 - (void)_addCallout:(id)arg1 forAnnotationView:(id)arg2 anchorPoint:(struct CGPoint { float x1; float x2; })arg3 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 animated:(BOOL)arg5;
 - (BOOL)_isShowingCallout;
 - (void)_setDetailAccessoryView:(id)arg1 animated:(BOOL)arg2;
@@ -21,7 +22,6 @@
 - (void)calloutView:(id)arg1 didMoveToAnchorPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
 - (void)calloutView:(id)arg1 willMoveToAnchorPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
 - (Class)calloutViewClass;
-- (void)dealloc;
 - (float)defaultCalloutHeight;
 - (void)hideCalloutAnimated:(BOOL)arg1;
 - (id)init;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
+@class NSArray, NSMutableArray;
 
 @interface SKUIGridComponent : SKUIPageComponent {
     struct SKUIEditorialStyle { 
@@ -17,7 +17,7 @@
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    NSArray *_children;
+    NSMutableArray *_children;
     } _editorialStyle;
     int _gridType;
     } _lockupStyle;
@@ -32,7 +32,9 @@
 @property(readonly) BOOL showsIndexNumbers;
 
 - (void).cxx_destruct;
+- (id)_newLockupComponentWithItem:(id)arg1 defaultStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
 - (void)_reloadMissingItemCount;
+- (id)_updateWithInvalidItemIdentifiers:(id)arg1;
 - (id)_updateWithMissingItems:(id)arg1;
 - (id)children;
 - (int)componentType;

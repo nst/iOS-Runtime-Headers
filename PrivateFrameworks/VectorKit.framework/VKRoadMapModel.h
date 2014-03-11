@@ -8,6 +8,7 @@
     BOOL _drawRoads;
     unsigned int _mapLayerPosition;
     VKRoadPainter *_roadPainter;
+    float _styleZAdjust;
     unsigned int _supportedRenderPasses;
 }
 
@@ -21,6 +22,7 @@
 - (BOOL)drawRoads;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (id)init;
+- (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
 - (void)setDrawRoads:(BOOL)arg1;
 - (void)setMapLayerPosition:(unsigned int)arg1;

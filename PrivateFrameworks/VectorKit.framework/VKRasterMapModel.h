@@ -19,6 +19,7 @@
 
 + (BOOL)reloadOnStylesheetChange;
 
+- (id)_rasterProgram:(id)arg1;
 - (void)dealloc;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (id)init;

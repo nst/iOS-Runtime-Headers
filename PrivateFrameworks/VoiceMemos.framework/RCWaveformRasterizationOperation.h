@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSObject<OS_dispatch_semaphore>, RCAudioFileWaveformDataSource, RCGLWaveformRenderer, RCSavedRecording, UIColor, UIImage;
+@class NSObject<OS_dispatch_semaphore>, RCAudioFileWaveformDataSource, RCGLWaveformRenderer, RCSavedRecording, RCUIConfiguration, UIImage;
 
 @interface RCWaveformRasterizationOperation : NSOperation {
     struct CGSize { 
@@ -17,21 +17,18 @@
     RCGLWaveformRenderer *_renderer;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property(retain) UIColor * foregroundColor;
+@property(copy) RCUIConfiguration * UIConfiguration;
 @property(readonly) struct CGSize { float x1; float x2; } outputImageSize;
 @property(readonly) UIImage * rasterizedImage;
 @property(readonly) RCSavedRecording * recording;
 
 - (void).cxx_destruct;
-- (id)backgroundColor;
-- (id)foregroundColor;
+- (id)UIConfiguration;
 - (id)initWithRecording:(id)arg1 outputImageSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)main;
 - (struct CGSize { float x1; float x2; })outputImageSize;
 - (id)rasterizedImage;
 - (id)recording;
-- (void)setBackgroundColor:(id)arg1;
-- (void)setForegroundColor:(id)arg1;
+- (void)setUIConfiguration:(id)arg1;
 
 @end

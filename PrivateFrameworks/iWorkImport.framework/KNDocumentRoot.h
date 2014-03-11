@@ -24,7 +24,6 @@
 + (void)localizeModelObject:(id)arg1 withTemplateBundle:(id)arg2;
 
 - (id)UIStateForChart:(id)arg1;
-- (id)additionalDocumentPropertiesForWrite;
 - (unsigned int)applicationType;
 - (void)changeShowSizeTo:(struct CGSize { float x1; float x2; })arg1;
 - (id)childEnumerator;
@@ -34,7 +33,7 @@
 - (void)documentDidLoad;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isMultiPage;
+- (BOOL)isMultiPageForQuickLook;
 - (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)nameForResolverContainer:(id)arg1;
 - (void)p_applicationDidBecomeActive:(id)arg1;
@@ -62,6 +61,7 @@
 - (id)stylesheet;
 - (id)theme;
 - (void)upgradeTextStylesForUnity;
+- (void)willClose;
 - (void)willCommitChartCommand:(id)arg1;
 - (void)withRootSearchTargetAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;
 

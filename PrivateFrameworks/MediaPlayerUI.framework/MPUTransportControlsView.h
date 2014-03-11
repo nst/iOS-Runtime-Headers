@@ -10,8 +10,11 @@
         float left; 
         float bottom; 
         float right; 
+    BOOL _alwaysLive;
     int _availableControls;
     <MPUTransportControlsViewDelegate> *_delegate;
+    double _displayedSkipBackwardInterval;
+    double _displayedSkipForwardInterval;
     int _highlightedControls;
     } _insetsForExpandingButtons;
     UIButton *_leftButton;
@@ -24,17 +27,23 @@
     UIButton *_shuffleButton;
     unsigned int _shuffleType;
     int _style;
+    int _substyle;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _insetsForExpandingButtons;
+@property(getter=isAlwaysLive) BOOL alwaysLive;
 @property int availableControls;
 @property <MPUTransportControlsViewDelegate> * delegate;
+@property double displayedSkipBackwardInterval;
+@property double displayedSkipForwardInterval;
 @property int highlightedControls;
 @property unsigned int repeatType;
 @property BOOL showAccessoryButtons;
 @property BOOL showIsPlaying;
 @property unsigned int shuffleType;
 @property(readonly) int style;
+
++ (id)_skipIntervalButtonImageForInterval:(double)arg1 baseImage:(id)arg2 font:(id)arg3 scale:(float)arg4;
++ (id)_stringForDisplayedSkipInterval:(double)arg1;
 
 - (void).cxx_destruct;
 - (id)_accessoryButtonEmphasizedTextAttributes;
@@ -53,30 +62,39 @@
 - (id)_repeatButton;
 - (id)_rightButton;
 - (void)_setImage:(id)arg1 forButton:(id)arg2;
+- (void)_setInsetsForExpandingButtons:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setSubstyle:(int)arg1;
 - (id)_shuffleButton;
-- (id)_styledImageName:(id)arg1;
+- (id)_skipIntervalButtonImageForInterval:(double)arg1;
+- (int)_substyle;
 - (void)_transportControlActivate:(id)arg1;
 - (void)_transportControlDeactivate:(id)arg1;
 - (void)_transportControlLongPressBegin:(id)arg1;
 - (void)_transportControlLongPressEnd:(id)arg1;
 - (void)_transportControlTap:(id)arg1;
+- (void)_updateMiddleButtonProperties;
 - (void)_updateTransportControlButtons;
 - (void)_updateTransportControlHighlightedStates;
 - (int)availableControls;
 - (id)delegate;
+- (double)displayedSkipBackwardInterval;
+- (double)displayedSkipForwardInterval;
 - (int)highlightedControls;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
+- (BOOL)isAlwaysLive;
 - (void)layoutSubviews;
 - (unsigned int)repeatType;
+- (void)setAlwaysLive:(BOOL)arg1;
 - (void)setAvailableControls:(int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisplayedSkipBackwardInterval:(double)arg1;
+- (void)setDisplayedSkipForwardInterval:(double)arg1;
 - (void)setHighlightedControls:(int)arg1;
 - (void)setRepeatType:(unsigned int)arg1;
 - (void)setShowAccessoryButtons:(BOOL)arg1;
 - (void)setShowIsPlaying:(BOOL)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
-- (void)set_insetsForExpandingButtons:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)showAccessoryButtons;
 - (BOOL)showIsPlaying;
 - (unsigned int)shuffleType;

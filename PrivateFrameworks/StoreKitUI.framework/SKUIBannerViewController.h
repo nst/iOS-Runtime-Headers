@@ -31,6 +31,7 @@
 - (id)_itemArtworkContext;
 - (id)_itemState;
 - (void)_launchApp;
+- (void)_launchURL:(id)arg1 withBundleIdentifier:(id)arg2;
 - (void)_loadImages;
 - (void)_reloadBannerView;
 - (id)_screenshotConsumerWithSize:(struct CGSize { float x1; float x2; })arg1;

@@ -9,7 +9,7 @@
 }
 
 - (void)dealloc;
-- (void)drawRoadTiles:(id)arg1 context:(id)arg2 layer:(unsigned int)arg3 withModel:(id)arg4 scene:(id)arg5 stencilOffset:(int)arg6 needsTileStencil:(BOOL)arg7 atopTransparent:(BOOL)arg8 includeBorders:(int)arg9;
+- (void)drawRoadTiles:(id)arg1 context:(id)arg2 layer:(unsigned int)arg3 withModel:(id)arg4 scene:(id)arg5 stencilOffset:(int)arg6 needsTileStencil:(BOOL)arg7 atopTransparent:(BOOL)arg8 includeBorders:(int)arg9 styleZAdjust:(float)arg10;
 - (id)init;
 
 @end

@@ -22,6 +22,8 @@
     BOOL _usePlainFillColor;
 }
 
+@property(readonly) BOOL shouldEverShowVegetation;
+
 + (BOOL)reloadOnActiveTileGroupChange;
 + (BOOL)reloadOnStylesheetChange;
 
@@ -35,6 +37,7 @@
 - (unsigned int)mapLayerPosition;
 - (void)reset;
 - (void)setActive:(BOOL)arg1;
+- (BOOL)shouldEverShowVegetation;
 - (void)stylesheetDidChange;
 - (void)stylesheetWillChange;
 - (unsigned int)supportedRenderPasses;

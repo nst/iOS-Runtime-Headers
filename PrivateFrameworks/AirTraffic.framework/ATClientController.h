@@ -16,7 +16,7 @@
 - (id)allClients;
 - (id)clientForDataclass:(id)arg1;
 - (void)dealloc;
-- (struct dispatch_queue_s { }*)queueForClient:(id)arg1;
+- (id)queueForClient:(id)arg1;
 - (void)resetQueues;
 - (void)waitToDrain;
 

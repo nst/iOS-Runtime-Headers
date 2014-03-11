@@ -35,5 +35,6 @@
 - (void)teardown;
 - (BOOL)textRepsShouldTileAggressively;
 - (void)willEndEditingText;
+- (void)withLayoutForModel:(id)arg1 withSelection:(id)arg2 performBlock:(id)arg3;
 
 @end

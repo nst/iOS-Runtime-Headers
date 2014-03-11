@@ -11,6 +11,7 @@
 
 @property(readonly) PUAvalancheReviewControllerSpec * avalancheReviewControllerSpec;
 @property(readonly) BOOL isInCamera;
+@property(readonly) int photoThumbnailFormat;
 @property(readonly) PUPhotosSharingViewControllerSpec * photosSharingViewControllerSpec;
 @property(readonly) BOOL shouldShowAirplayItem;
 @property(readonly) BOOL shouldShowDeleteItem;
@@ -26,6 +27,7 @@
 - (BOOL)isInCamera;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 inAssetContainerList:(id)arg2;
 - (id)newPhotoBrowserZoomTransition;
+- (int)photoThumbnailFormat;
 - (id)photosSharingViewControllerSpec;
 - (BOOL)shouldShowAirplayItem;
 - (BOOL)shouldShowDeleteItem;

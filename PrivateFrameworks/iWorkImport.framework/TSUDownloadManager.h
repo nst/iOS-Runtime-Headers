@@ -7,7 +7,6 @@
 @interface TSUDownloadManager : NSObject <NSURLSessionDownloadDelegate> {
     NSMutableDictionary *_activeTasks;
     NSObject<OS_dispatch_queue> *_activeTasksQueue;
-    NSURLSession *_backgroundURLSession;
     NSMutableArray *_completionHandlers;
     NSURLSession *_defaultURLSession;
     NSHashTable *_downloadSessions;

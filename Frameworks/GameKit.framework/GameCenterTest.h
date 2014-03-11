@@ -25,6 +25,8 @@
 - (void)PPTest_games_scrolling:(id)arg1;
 - (void)PPTest_login:(id)arg1;
 - (void)PPTest_logout:(id)arg1;
+- (void)PPTest_me_scrolling:(id)arg1;
+- (void)_performScrollTest:(id)arg1 onView:(id)arg2;
 - (void)_test:(id)arg1 switchToTab:(id)arg2 collectionViewController:(id)arg3;
 - (id)actionsPerTest;
 - (void)completeIfPPTesting:(id)arg1;

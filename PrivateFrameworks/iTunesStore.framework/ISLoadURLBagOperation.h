@@ -22,7 +22,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithBagContext:(id)arg1;
-- (BOOL)operation:(id)arg1 shouldSetStoreFrontID:(id)arg2;
 - (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)run;
 - (id)uniqueKey;

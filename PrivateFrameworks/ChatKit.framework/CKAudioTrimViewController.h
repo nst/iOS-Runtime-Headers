@@ -4,7 +4,7 @@
 
 @class <CKTrimControllerDelegate>, CKMediaObject;
 
-@interface CKAudioTrimViewController : UIViewController <RCTrimControllerDelegate> {
+@interface CKAudioTrimViewController : UIViewController <RCAudioTrimmingModalItemDelegate> {
     <CKTrimControllerDelegate> *_delegate;
     double _maxDuration;
     CKMediaObject *_originalMediaObject;
@@ -25,9 +25,6 @@
 - (void)setMaxDuration:(double)arg1;
 - (void)setOriginalMediaObject:(id)arg1;
 - (void)setTrimmedMediaObject:(id)arg1;
-- (void)trimController:(id)arg1 didFinishTrimmingToFile:(id)arg2 trimDuration:(double)arg3;
-- (void)trimControllerDidCancel:(id)arg1;
-- (void)trimControllerDidConfirm:(id)arg1;
 - (id)trimmedMediaObject;
 - (void)viewDidAppear:(BOOL)arg1;
 

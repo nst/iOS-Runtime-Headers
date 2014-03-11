@@ -6,6 +6,11 @@
    See Warning(s) below.
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class <NSObject>, NSArray, NSMutableArray, PKPhysicsWorld, SKNode;
 
 @interface PKPhysicsBody : NSObject <NSCopying, NSCoding> {
@@ -25,6 +30,7 @@
             float y; 
         } linearVelocity; 
         float angularVelocity; 
+        float charge; 
         float linearDamping; 
         float angularDamping; 
         boolallowSleep; 
@@ -34,18 +40,12 @@
         boolactive; 
         void *userData; 
         float gravityScale; 
-    struct b2FixtureDef { 
-        struct b2Shape {} *shape; 
-        void *userData; 
-        float friction; 
-        float restitution; 
-        float density; 
-        boolisSensor; 
-        struct b2Filter { 
-            unsigned int categoryBits; 
-            unsigned int maskBits; 
-            unsigned int groupIndex; 
-        } filter; 
+    struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *> > { 
+        struct PKPhysicsShape {} **__begin_; 
+        struct PKPhysicsShape {} **__end_; 
+        struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *> > { 
+            struct PKPhysicsShape {} **__first_; 
+        } __end_cap_; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -55,11 +55,13 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; void *x29; } *_body;
+    struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; void *x30; } *_body;
     } _bodyDef;
+    float _canonicalXScale;
+    float _canonicalYScale;
     int _dynamicType;
-    struct b2Fixture { float x1; struct b2Fixture {} *x2; struct b2Body {} *x3; struct b2Shape {} *x4; float x5; float x6; struct b2FixtureProxy {} *x7; int x8; struct b2Filter { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; } x9; boolx10; void *x11; } *_fixture;
-    } _fixtureDef;
+    float _edgeRadius;
+    struct b2PKField { int (**x1)(); struct b2Vec2 { float x_2_1_1; float x_2_1_2; } x2; struct b2Vec2 { float x_3_1_1; float x_3_1_2; } x3; struct b2Vec2 { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; boolx7; boolx8; boolx9; boolx10; boolx11; } *_field;
     BOOL _inUse;
     NSMutableArray *_joints;
     struct CGImage { } *_mask;
@@ -70,13 +72,15 @@
     float _radius;
     <NSObject> *_representedObject;
     int _shapeType;
+    } _shapes;
     } _size;
     PKPhysicsWorld *_world;
 }
 
-@property struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; void *x29; }* _body;
-@property struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct b2Vec2 { float x_6_1_1; float x_6_1_2; } x6; float x7; struct b2Vec2 { float x_8_1_1; float x_8_1_2; } x8; float x9; float x10; float x11; boolx12; boolx13; boolx14; boolx15; boolx16; void *x17; float x18; } _bodyDef;
-@property struct b2Fixture { float x1; struct b2Fixture {} *x2; struct b2Body {} *x3; struct b2Shape {} *x4; float x5; float x6; struct b2FixtureProxy {} *x7; int x8; struct b2Filter { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; } x9; boolx10; void *x11; }* _fixture;
+@property(readonly) struct * _shapes; /* unknown property attribute:  std::__1::allocator<PKPhysicsShape *> >=^^{PKPhysicsShape}}} */
+@property struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; void *x30; }* _body;
+@property struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct b2Vec2 { float x_6_1_1; float x_6_1_2; } x6; float x7; struct b2Vec2 { float x_8_1_1; float x_8_1_2; } x8; float x9; float x10; float x11; float x12; boolx13; boolx14; boolx15; boolx16; boolx17; void *x18; float x19; } _bodyDef;
+@property struct b2Fixture { int (**x1)(); float x2; struct b2Fixture {} *x3; struct b2Body {} *x4; struct b2Shape {} *x5; float x6; float x7; struct b2FixtureProxy {} *x8; int x9; struct b2Filter { unsigned int x_10_1_1; unsigned int x_10_1_2; unsigned int x_10_1_3; } x10; boolx11; void *x12; }* _fixture;
 @property struct b2FixtureDef { struct b2Shape {} *x1; void *x2; float x3; float x4; float x5; boolx6; struct b2Filter { unsigned int x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; } _fixtureDef;
 @property BOOL affectedByGravity;
 @property BOOL allowsRotation;
@@ -84,6 +88,7 @@
 @property float angularVelocity;
 @property(readonly) float area;
 @property unsigned int categoryBitMask;
+@property float charge;
 @property unsigned int collisionBitMask;
 @property unsigned int contactTestBitMask;
 @property float density;
@@ -95,6 +100,7 @@
 @property(readonly) SKNode * node;
 @property struct CGPoint { float x1; float x2; } position;
 @property(copy) id postStepBlock;
+@property float radius;
 @property <NSObject> * representedObject;
 @property(getter=isResting) BOOL resting;
 @property float restitution;
@@ -102,25 +108,31 @@
 @property BOOL usesPreciseCollisionDetection;
 @property struct CGVector { float x1; float x2; } velocity;
 
++ (id)bodyWithBodies:(id)arg1;
++ (id)bodyWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithCircleOfRadius:(float)arg1;
 + (id)bodyWithEdgeChainFromPath:(struct CGPath { }*)arg1;
 + (id)bodyWithEdgeFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithEdgeLoopFromPath:(struct CGPath { }*)arg1;
 + (id)bodyWithPolygonFromPath:(struct CGPath { }*)arg1;
++ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2 edgeRadius:(float)arg3;
++ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
++ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 edgeRadius:(float)arg2;
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
 
+- (struct b2Fixture { int (**x1)(); float x2; struct b2Fixture {} *x3; struct b2Body {} *x4; struct b2Shape {} *x5; float x6; float x7; struct b2FixtureProxy {} *x8; int x9; struct b2Filter { unsigned int x_10_1_1; unsigned int x_10_1_2; unsigned int x_10_1_3; } x10; boolx11; void *x12; }*)_fixture;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_allowSleep;
-- (struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; void *x29; }*)_body;
-- (struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct b2Vec2 { float x_6_1_1; float x_6_1_2; } x6; float x7; struct b2Vec2 { float x_8_1_1; float x_8_1_2; } x8; float x9; float x10; float x11; boolx12; boolx13; boolx14; boolx15; boolx16; void *x17; float x18; })_bodyDef;
+- (struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; void *x30; }*)_body;
+- (struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct b2Vec2 { float x_6_1_1; float x_6_1_2; } x6; float x7; struct b2Vec2 { float x_8_1_1; float x_8_1_2; } x8; float x9; float x10; float x11; float x12; boolx13; boolx14; boolx15; boolx16; boolx17; void *x18; float x19; })_bodyDef;
 - (id)_descriptionClassName;
 - (id)_descriptionClassName;
 - (id)_descriptionFormat;
-- (struct b2Fixture { float x1; struct b2Fixture {} *x2; struct b2Body {} *x3; struct b2Shape {} *x4; float x5; float x6; struct b2FixtureProxy {} *x7; int x8; struct b2Filter { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; } x9; boolx10; void *x11; }*)_fixture;
 - (struct b2FixtureDef { struct b2Shape {} *x1; void *x2; float x3; float x4; float x5; boolx6; struct b2Filter { unsigned int x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; })_fixtureDef;
 - (BOOL)_inUse;
 - (id)_joints;
+- (struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *> > { struct PKPhysicsShape {} **x1; struct PKPhysicsShape {} **x2; struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *> > { struct PKPhysicsShape {} **x_3_1_1; } x3; }*)_shapes;
 - (id)_world;
 - (BOOL)active;
 - (BOOL)affectedByGravity;
@@ -140,9 +152,9 @@
 - (void)applyUnscaledImpulse:(struct CGVector { float x1; float x2; })arg1;
 - (float)area;
 - (unsigned int)categoryBitMask;
+- (float)charge;
 - (unsigned int)collisionBitMask;
 - (unsigned int)contactTestBitMask;
-- (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (float)density;
@@ -150,12 +162,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)friction;
 - (id)init;
+- (id)initWithBodies:(id)arg1;
+- (id)initWithCircleOfRadius:(float)arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithCircleOfRadius:(float)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEdgeChainFromPath:(struct CGPath { }*)arg1;
 - (id)initWithEdgeFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithEdgeLoopFromPath:(struct CGPath { }*)arg1;
 - (id)initWithPolygonFromPath:(struct CGPath { }*)arg1;
+- (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2 edgeRadius:(float)arg3;
+- (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isDynamic;
 - (BOOL)isResting;
@@ -166,6 +182,8 @@
 - (id)node;
 - (struct CGPoint { float x1; float x2; })position;
 - (id)postStepBlock;
+- (float)radius;
+- (void)reapplyScale:(float)arg1 yScale:(float)arg2;
 - (id)representedObject;
 - (float)restitution;
 - (float)rotation;
@@ -174,7 +192,9 @@
 - (void)setAllowsRotation:(BOOL)arg1;
 - (void)setAngularDamping:(float)arg1;
 - (void)setAngularVelocity:(float)arg1;
+- (void)setCanonicalScale:(float)arg1 yScale:(float)arg2;
 - (void)setCategoryBitMask:(unsigned int)arg1;
+- (void)setCharge:(float)arg1;
 - (void)setCollisionBitMask:(unsigned int)arg1;
 - (void)setContactTestBitMask:(unsigned int)arg1;
 - (void)setDensity:(float)arg1;
@@ -185,6 +205,7 @@
 - (void)setMass:(float)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPostStepBlock:(id)arg1;
+- (void)setRadius:(float)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)setResting:(BOOL)arg1;
 - (void)setRestitution:(float)arg1;
@@ -192,9 +213,9 @@
 - (void)setUsesPreciseCollisionDetection:(BOOL)arg1;
 - (void)setVelocity:(struct CGVector { float x1; float x2; })arg1;
 - (void)set_allowSleep:(BOOL)arg1;
-- (void)set_body:(struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; void *x29; }*)arg1;
-- (void)set_bodyDef:(struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct b2Vec2 { float x_6_1_1; float x_6_1_2; } x6; float x7; struct b2Vec2 { float x_8_1_1; float x_8_1_2; } x8; float x9; float x10; float x11; boolx12; boolx13; boolx14; boolx15; boolx16; void *x17; float x18; })arg1;
-- (void)set_fixture:(struct b2Fixture { float x1; struct b2Fixture {} *x2; struct b2Body {} *x3; struct b2Shape {} *x4; float x5; float x6; struct b2FixtureProxy {} *x7; int x8; struct b2Filter { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; } x9; boolx10; void *x11; }*)arg1;
+- (void)set_body:(struct b2Body { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; unsigned short x6; int x7; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Vec2 { float x_2_2_1; float x_2_2_2; } x_9_1_2; struct b2Vec2 { float x_3_2_1; float x_3_2_2; } x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; struct b2Vec2 { float x_10_1_1; float x_10_1_2; } x10; float x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2World {} *x14; struct b2Body {} *x15; struct b2Body {} *x16; struct b2Fixture {} *x17; int x18; struct b2JointEdge {} *x19; struct b2ContactEdge {} *x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; void *x30; }*)arg1;
+- (void)set_bodyDef:(struct b2BodyDef { boolx1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; struct b2Vec2 { float x_6_1_1; float x_6_1_2; } x6; float x7; struct b2Vec2 { float x_8_1_1; float x_8_1_2; } x8; float x9; float x10; float x11; float x12; boolx13; boolx14; boolx15; boolx16; boolx17; void *x18; float x19; })arg1;
+- (void)set_fixture:(struct b2Fixture { int (**x1)(); float x2; struct b2Fixture {} *x3; struct b2Body {} *x4; struct b2Shape {} *x5; float x6; float x7; struct b2FixtureProxy {} *x8; int x9; struct b2Filter { unsigned int x_10_1_1; unsigned int x_10_1_2; unsigned int x_10_1_3; } x10; boolx11; void *x12; }*)arg1;
 - (void)set_fixtureDef:(struct b2FixtureDef { struct b2Shape {} *x1; void *x2; float x3; float x4; float x5; boolx6; struct b2Filter { unsigned int x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; })arg1;
 - (void)set_inUse:(BOOL)arg1;
 - (void)set_joints:(id)arg1;

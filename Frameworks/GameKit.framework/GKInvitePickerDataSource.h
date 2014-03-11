@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKFriendsSplittingDataSource, GKGameRecentPlayersDataSource, GKNearbyPlayersDataSource, NSMutableArray, NSSet;
+@class GKFriendsSplittingDataSource, GKGameRecentPlayersDataSource, GKNearbyPlayersDataSource, NSSet;
 
 @interface GKInvitePickerDataSource : GKSegmentedSectionDataSource {
-    NSMutableArray *_currentSelectedPlayerIDs;
     GKFriendsSplittingDataSource *_friendsSplittingDataSource;
     NSSet *_hiddenPlayers;
     GKNearbyPlayersDataSource *_nearbyPlayersDataSource;
     GKGameRecentPlayersDataSource *_recentPlayersDataSource;
 }
 
-@property(retain) NSMutableArray * currentSelectedPlayerIDs;
 @property(retain) GKFriendsSplittingDataSource * friendsSplittingDataSource;
 @property(retain) NSSet * hiddenPlayers;
 @property(retain) GKNearbyPlayersDataSource * nearbyPlayersDataSource;
@@ -21,7 +19,6 @@
 - (BOOL)canSelectIndexPath:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionViewWillBecomeActive:(id)arg1;
-- (id)currentSelectedPlayerIDs;
 - (void)dealloc;
 - (id)friendsSplittingDataSource;
 - (BOOL)hasPlayer:(id)arg1;
@@ -33,7 +30,6 @@
 - (void)notifyPickerItemsChanged:(id)arg1;
 - (id)recentPlayersDataSource;
 - (void)refreshSelectionState;
-- (void)setCurrentSelectedPlayerIDs:(id)arg1;
 - (void)setFriendsSplittingDataSource:(id)arg1;
 - (void)setHiddenPlayers:(id)arg1;
 - (void)setNearbyPlayersDataSource:(id)arg1;

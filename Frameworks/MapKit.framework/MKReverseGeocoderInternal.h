@@ -15,4 +15,6 @@
     MKPlacemark *storedPlacemark;
 }
 
+- (void).cxx_destruct;
+
 @end

@@ -23,6 +23,9 @@
 
 - (void).cxx_destruct;
 - (void)_addStationFromItem:(id)arg1 usingArtist:(BOOL)arg2;
+- (void)_applyAttributesForItem:(id)arg1 toTrackActioningObject:(id)arg2;
+- (void)_avItemStoreIDDidChangeNotification:(id)arg1;
+- (void)_avItemTitlesDidChangeNotification:(id)arg1;
 - (void)_completeAdditionOfStation:(id)arg1 fromItem:(id)arg2 usingArtist:(BOOL)arg3 canShowAlert:(BOOL)arg4;
 - (id)_currentProspectivePlaybackInformation;
 - (void)_handleAction:(int)arg1 withObject:(id)arg2;

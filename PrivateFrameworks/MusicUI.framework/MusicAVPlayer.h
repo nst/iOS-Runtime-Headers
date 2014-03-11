@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class RadioStation;
+@class NSObject<OS_dispatch_queue>, RadioStation;
 
 @interface MusicAVPlayer : MPAVController {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _checkedDefaultsForLastPlayedStation;
     RadioStation *_lastPlayedStation;
+    NSObject<OS_dispatch_queue> *_lastPlayedStationSaveQueue;
 }
 
 @property(readonly) RadioStation * currentStation;
@@ -15,23 +17,24 @@
 + (id)sharedAVPlayer;
 
 - (void).cxx_destruct;
+- (void)_currentStationDidChangeNotification:(id)arg1;
 - (void)_downloadCancelledNotification:(id)arg1;
 - (void)_endPlaybackIfNeededForCurrentNetwork;
-- (void)_itemWillChangeNotification:(id)arg1;
+- (id)_expectedAssetTypesForPlaybackMode:(int)arg1;
 - (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
 - (void)_musicPlayer_defaultsDidChangeNotification;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_previewSessionDidStopNotification:(id)arg1;
-- (void)_radioStationDidChangeNotification:(id)arg1;
-- (void)_seedsDidChangeNotification:(id)arg1;
-- (void)_songMixDidChangeNotification:(id)arg1;
+- (void)_reloadLastPlayedStation;
 - (void)beginOrTogglePlayback;
 - (void)beginPlayback;
 - (id)currentStation;
 - (void)dealloc;
 - (id)init;
 - (id)lastPlayedStation;
-- (void)reloadWithPlaybackContext:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
+- (void)reloadWithPlaybackContext:(id)arg1;
+- (void)seekAlbum:(int)arg1;
+- (void)seekPlaylist:(int)arg1;
 - (void)setLastPlayedStation:(id)arg1;
 
 @end

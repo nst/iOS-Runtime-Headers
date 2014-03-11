@@ -177,7 +177,7 @@
 - (void)unlock;
 - (int)validate:(id)arg1;
 - (void)validateCachedFrames;
-- (int)validateCoordinateCache;
+- (int)validateCoordinateCache:(id)arg1;
 - (int)validateTableOffset:(id)arg1;
 - (float)viewScale;
 

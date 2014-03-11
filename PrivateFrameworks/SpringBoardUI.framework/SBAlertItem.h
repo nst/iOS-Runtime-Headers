@@ -6,8 +6,9 @@
 
 @interface SBAlertItem : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertSheet;
+    BOOL _allowInCar;
     BOOL _allowInSetup;
-    BOOL _allowInStark;
+    BOOL _allowMessageInCar;
     NSArray *_allowedBundleIDs;
     BOOL _didEverActivate;
     BOOL _didPlayPresentationSound;
@@ -18,8 +19,9 @@
     BOOL _preventLockOver;
 }
 
+@property BOOL allowInCar;
 @property BOOL allowInSetup;
-@property BOOL allowInStark;
+@property BOOL allowMessageInCar;
 @property(retain) NSArray * allowedBundleIDs;
 @property BOOL ignoreIfAlreadyDisplaying;
 @property BOOL pendInSetupIfNotAllowed;
@@ -38,9 +40,10 @@
 - (Class)alertSheetClass;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowAutoUnlock;
+- (BOOL)allowInCar;
 - (BOOL)allowInSetup;
-- (BOOL)allowInStark;
 - (BOOL)allowMenuButtonDismissal;
+- (BOOL)allowMessageInCar;
 - (id)allowedBundleIDs;
 - (double)autoDismissInterval;
 - (BOOL)behavesSuperModally;
@@ -74,8 +77,9 @@
 - (BOOL)reappearsAfterLock;
 - (BOOL)reappearsAfterUnlock;
 - (void)screenWillUndim;
+- (void)setAllowInCar:(BOOL)arg1;
 - (void)setAllowInSetup:(BOOL)arg1;
-- (void)setAllowInStark:(BOOL)arg1;
+- (void)setAllowMessageInCar:(BOOL)arg1;
 - (void)setAllowedBundleIDs:(id)arg1;
 - (void)setIgnoreIfAlreadyDisplaying:(BOOL)arg1;
 - (void)setOrderOverSBAlert:(BOOL)arg1;

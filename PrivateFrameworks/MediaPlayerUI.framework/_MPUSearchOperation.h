@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPMediaQuery, MPUSearchDataSource;
+@class MPMediaQuery, MPUSearchDataSource, NSString;
 
 @interface _MPUSearchOperation : NSOperation {
     MPUSearchDataSource *_dataSource;
     int _entityType;
     MPMediaQuery *_query;
+    NSString *_searchString;
 }
 
 @property(readonly) MPUSearchDataSource * dataSource;
+@property(readonly) NSString * searchString;
 
 - (void).cxx_destruct;
 - (id)dataSource;
 - (id)description;
 - (void)executeSearch;
-- (id)initWithSearchDataSource:(id)arg1;
+- (id)initWithSearchDataSource:(id)arg1 searchString:(id)arg2;
 - (void)main;
+- (id)searchString;
 
 @end

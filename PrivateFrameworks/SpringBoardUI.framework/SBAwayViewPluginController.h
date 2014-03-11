@@ -6,12 +6,13 @@
    See Warning(s) below.
  */
 
-@class UIView;
+@class NSString, UIView;
 
 @interface SBAwayViewPluginController : NSObject {
     BOOL _alwaysFullscreen;
     id _disableTransitionBlock;
     unsigned int _effectivePresentationStyle;
+    NSString *_enablingApplicationBundleIdentifier;
     BOOL _fullscreen;
     int _orientation;
     UIView *_view;
@@ -20,6 +21,7 @@
 
 @property(getter=isAlwaysFullscreen) BOOL alwaysFullscreen;
 @property(getter=_effectivePresentationStyle,setter=_setEffectivePresentationStyle:) unsigned int effectivePresentationStyle;
+@property(copy) NSString * enablingApplicationBundleIdentifier;
 @property int orientation;
 @property(retain) UIView * view;
 @property BOOL viewCanBeDisplayed;
@@ -36,6 +38,7 @@
 - (void)_setEffectivePresentationStyle:(unsigned int)arg1;
 - (BOOL)allowsControlCenter;
 - (BOOL)allowsLockScreenCamera;
+- (BOOL)allowsLockScreenHint;
 - (BOOL)allowsLockScreenMediaControls;
 - (BOOL)allowsNotificationCenter;
 - (BOOL)allowsPhotoSlideshow;
@@ -56,6 +59,7 @@
 - (void)disableWithTransitionBlock:(id)arg1;
 - (BOOL)disablesAwayItemsCompletely;
 - (id)enableTransitionBlock;
+- (id)enablingApplicationBundleIdentifier;
 - (BOOL)handleGesture:(int)arg1 fingerCount:(unsigned int)arg2;
 - (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
 - (BOOL)handleLockButtonPressed;
@@ -80,6 +84,7 @@
 - (void)setActivationContext:(id)arg1;
 - (void)setAlwaysFullscreen:(BOOL)arg1;
 - (void)setDeactivationContext:(id)arg1;
+- (void)setEnablingApplicationBundleIdentifier:(id)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
 - (void)setOrientation:(int)arg1;
@@ -90,6 +95,7 @@
 - (BOOL)shouldDisableOnUnlock;
 - (BOOL)shouldShowLockStatusBarTime;
 - (BOOL)showAwayItems;
+- (BOOL)showBatteryChargingText;
 - (BOOL)showDate;
 - (BOOL)showDateView;
 - (BOOL)showHeaderView;

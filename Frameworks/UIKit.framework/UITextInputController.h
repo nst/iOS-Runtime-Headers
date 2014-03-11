@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInputControllerDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, NSArray, NSDictionary, NSHashTable, NSLayoutManager, UITextChecker, UITextInputTraits, UITextPosition, UITextRange, UIView, UIView<UITextInput>, _UIDictationAttachment, _UITextInputControllerTokenizer, _UITextServiceSession, _UITextUndoManager, _UITextUndoOperationTyping;
+@class <UITextInputControllerDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, NSArray, NSDictionary, NSHashTable, NSLayoutManager, UITextChecker, UITextInputTraits, UITextPosition, UITextRange, UIView, UIView<UITextInput>, _UIDictationAttachment, _UITextInputControllerTokenizer, _UITextKitTextRange, _UITextServiceSession, _UITextUndoManager, _UITextUndoOperationTyping;
 
 @interface UITextInputController : NSObject <UITextInput, UITextInputAdditions> {
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -46,7 +43,7 @@
     } _markedTextSelection;
     NSHashTable *_observedScrollViews;
     } _previousSelectedRange;
-    } _selectedRange;
+    _UITextKitTextRange *_selectedTextRange;
     UITextChecker *_textChecker;
     UITextInputTraits *_textInputTraits;
     } _tiFlags;
@@ -91,8 +88,7 @@
 - (BOOL)_canHandleResponderAction:(SEL)arg1;
 - (void)_cancelDictationIfNecessaryForChangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRectForOffset:(int)arg1 caretAfterOffset:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRectForOffset:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRectForOffset:(unsigned int)arg1;
 - (id)_characterPositionForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_clearSelectionUI;
 - (void)_commonInitWithLayoutManager:(id)arg1;
@@ -105,7 +101,7 @@
 - (void)_ensureSelectionVisible;
 - (id)_filteredAttributedTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)_firstTextView;
-- (id)_fixupOriginalFontAttributeForAttributes:(id)arg1;
+- (id)_fixupTypingAttributeForAttributes:(id)arg1;
 - (void)_forceUnmarkTextDueToEditing;
 - (BOOL)_hasDictationPlaceholder;
 - (void)_insertAttributedText:(id)arg1 fromKeyboard:(BOOL)arg2;
@@ -124,12 +120,12 @@
 - (void)_promptForReplace:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeForBackwardsDelete;
 - (id)_rectsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)_rectsForUITextRange:(id)arg1;
 - (void)_registerUndoOperationForReplacementWithActionName:(id)arg1 replacementText:(id)arg2;
 - (void)_removeDefinitionController;
 - (void)_removeShortcutController;
 - (void)_resetShowingTextStyle:(id)arg1;
 - (id)_selectedAttributedText;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedRange;
 - (id)_selectedText;
 - (void)_selectionDidScroll:(id)arg1;
 - (void)_selectionGeometryChanged;
@@ -137,6 +133,8 @@
 - (void)_sendDelegateWillChangeNotificationsForText:(BOOL)arg1 selection:(BOOL)arg2;
 - (void)_setEmptyStringAttributes:(id)arg1;
 - (void)_setGestureRecognizers;
+- (void)_setSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_setSelectedTextRange:(id)arg1;
 - (void)_setUndoRedoInProgress:(BOOL)arg1;
 - (void)_setupTextContainerView:(id)arg1;
 - (BOOL)_shouldConsiderTextViewForGeometry:(id)arg1;
@@ -150,7 +148,8 @@
 - (void)_undoManagerWillUndo:(id)arg1;
 - (BOOL)_undoRedoInProgress;
 - (void)_updateFirstTextView;
-- (id)_validCaretPositionFromCharacterIndex:(unsigned int)arg1 downstream:(BOOL)arg2;
+- (unsigned int)_validCaretPositionFromCharacterIndex:(unsigned int)arg1 downstream:(BOOL)arg2;
+- (id)_whitelistedTypingAttributes;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)allowsEditingTextAttributes;
 - (int)atomStyle;
@@ -174,6 +173,7 @@
 - (void)dealloc;
 - (void)decreaseSize:(id)arg1;
 - (id)delegate;
+- (void)delegateWillChangeAttributedText:(id)arg1;
 - (void)deleteBackward;
 - (void)didEndEditing;
 - (BOOL)drawsAsAtom;
@@ -226,6 +226,7 @@
 - (void)selectAll;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRange;
 - (id)selectedTextRange;
+- (int)selectionAffinity;
 - (id)selectionRectsForRange:(id)arg1;
 - (id)selectionView;
 - (void)setAllowsEditingTextAttributes:(BOOL)arg1;

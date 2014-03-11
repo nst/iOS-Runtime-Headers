@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDSMSReceivedMessage : PBCodable {
+@interface AWDSMSReceivedMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int ctError : 1; 
@@ -42,6 +42,7 @@
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)ctError;
 - (void)dealloc;
 - (id)description;

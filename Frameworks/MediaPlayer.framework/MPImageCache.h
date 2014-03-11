@@ -9,6 +9,7 @@
 @class <MPImageCacheDelegate>, CPLRUDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface MPImageCache : NSObject <MPImageRequestDelegate> {
+    unsigned int _backgroundCacheSize;
     unsigned int _cacheSize;
     CPLRUDictionary *_cachedImages;
     NSObject<OS_dispatch_queue> *_cachedImagesQueue;
@@ -17,9 +18,9 @@
     id _libraryDisplayValueChangeObserver;
     NSOperationQueue *_operationQueue;
     int _resumeToForegroundCacheSize;
-    int _suspendToBackgroundCacheSize;
 }
 
+@property unsigned int backgroundCacheSize;
 @property unsigned int cacheSize;
 @property <MPImageCacheDelegate> * delegate;
 @property(copy) id idleEventHandler;
@@ -38,6 +39,7 @@
 - (void)_willEnterForegroundNotification:(id)arg1;
 - (void)_zapCache;
 - (void)_zapCachedPlaceholders;
+- (unsigned int)backgroundCacheSize;
 - (unsigned int)cacheSize;
 - (id)cachedImageForRequest:(id)arg1;
 - (void)cancelAllImageRequests;
@@ -54,6 +56,7 @@
 - (id)libraryDisplayValueChangeObserver;
 - (void)loadImageForRequest:(id)arg1 asynchronously:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setBackgroundCacheSize:(unsigned int)arg1;
 - (void)setCacheSize:(unsigned int)arg1 preserveExisting:(BOOL)arg2;
 - (void)setCacheSize:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;

@@ -12,12 +12,14 @@
 @property(copy) NSDictionary * HTTPHeaders;
 @property(copy) NSString * HTTPMethod;
 @property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
+@property int KBSyncType;
 @property(retain) NSURL * URL;
 @property(copy) NSString * URLBagKey;
 @property int URLBagType;
 @property(copy) id URLBagURLBlock;
 @property(copy) NSArray * URLs;
 @property int allowedRetryCount;
+@property BOOL allowsBootstrapCellularData;
 @property unsigned int cachePolicy;
 @property(copy) NSString * clientAuditBundleIdentifier;
 @property(copy) NSData * clientAuditTokenData;
@@ -27,6 +29,7 @@
 @property unsigned int networkServiceType;
 @property(copy) NSDictionary * requestParameters;
 @property BOOL requiresExtendedValidationCertificates;
+@property BOOL requiresHTTPS;
 @property BOOL shouldAddKBSyncData;
 @property BOOL shouldDecodeResponse;
 @property BOOL shouldDisableCellular;
@@ -40,8 +43,9 @@
 + (id)newForRadioRequestURL:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)radio_mescalSignWithRequestContext:(id)arg1;
+- (void)radio_mescalSignWithCompletionHandler:(id)arg1;
 - (void)setAllowedRetryCount:(int)arg1;
+- (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setClientAuditBundleIdentifier:(id)arg1;
 - (void)setClientAuditTokenData:(id)arg1;
@@ -52,11 +56,13 @@
 - (void)setHTTPHeaders:(id)arg1;
 - (void)setHTTPMethod:(id)arg1;
 - (void)setITunesStoreRequest:(BOOL)arg1;
+- (void)setKBSyncType:(int)arg1;
 - (void)setLargeDownload:(BOOL)arg1;
 - (void)setMultiPartFormDataWithDictionary:(id)arg1;
 - (void)setNetworkServiceType:(unsigned int)arg1;
 - (void)setRequestParameters:(id)arg1;
 - (void)setRequiresExtendedValidationCertificates:(BOOL)arg1;
+- (void)setRequiresHTTPS:(BOOL)arg1;
 - (void)setShouldAddKBSyncData:(BOOL)arg1;
 - (void)setShouldDecodeResponse:(BOOL)arg1;
 - (void)setShouldDisableCellular:(BOOL)arg1;

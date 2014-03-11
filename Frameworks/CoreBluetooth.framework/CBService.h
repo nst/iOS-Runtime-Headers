@@ -25,6 +25,7 @@
 - (id)UUID;
 - (id)characteristics;
 - (void)dealloc;
+- (id)description;
 - (id)endHandle;
 - (id)handleCharacteristicsDiscovered:(id)arg1;
 - (id)handleIncludedServicesDiscovered:(id)arg1;

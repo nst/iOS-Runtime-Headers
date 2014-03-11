@@ -32,6 +32,7 @@
         unsigned int trackingHeading : 1; 
         unsigned int hasPendingHeadingChange : 1; 
         unsigned int isInitialRegionChange : 1; 
+        unsigned int isJumpingToAnnotation : 1; 
         unsigned int annotationImplementsAccuracy : 1; 
         unsigned int annotationImplementsHeading : 1; 
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 

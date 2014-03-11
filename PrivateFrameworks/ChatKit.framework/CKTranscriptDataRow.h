@@ -36,7 +36,6 @@
 - (Class)cellClass;
 - (id)cellIdentifier;
 - (id)contactImage;
-- (BOOL)containsHyperlink;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentAlignmentInsets;
 - (void)dealloc;
 - (id)description;

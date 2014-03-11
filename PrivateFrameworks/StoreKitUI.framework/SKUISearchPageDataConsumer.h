@@ -14,7 +14,9 @@
 + (id)consumerWithClientContext:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_ageBandFacetWithAgeBands:(id)arg1;
 - (id)_categoriesFacetWithCategories:(id)arg1;
+- (id)_deviceFacet;
 - (id)_newSearchResultGroupWithBubbleDictionary:(id)arg1 platformDictionary:(id)arg2 editorialDictionary:(id)arg3;
 - (id)_priceFacet;
 - (id)_sortFacetWithSorts:(id)arg1;

@@ -52,6 +52,8 @@
 - (BOOL)isNowPlaying;
 - (void)layoutSubviews;
 - (int)numberOfItemsInStackView:(id)arg1;
+- (void)performCompressionAnimationWithCompletionHandler:(id)arg1;
+- (void)performInsertionAnimationWithCompletionHandler:(id)arg1;
 - (id)regularTextAttributes;
 - (void)setAdjustsArtworkImageWhenHighlighted:(BOOL)arg1;
 - (void)setArtworkImage:(id)arg1;

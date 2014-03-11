@@ -85,6 +85,7 @@
 + (id)mediaFilesDirectoryURL;
 + (id)migrationIndicatorFilePath;
 + (id)momentAnalysisNeededFilePath;
++ (id)opportunisticTaskIsolationQueue;
 + (id)pathToAssetsToAlbumsMapping;
 + (id)persistedAlbumDataDirectoryURL;
 + (id)photoCloudSharingCacheDataDirectory;
@@ -142,8 +143,8 @@
 - (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performBlock:(id)arg3 completionHandler:(id)arg4;
 - (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performTransaction:(id)arg3 completionHandler:(id)arg4;
 - (void)addCompletionHandlerToCurrentTransaction:(id)arg1;
-- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(id)arg7 thumbnailImage:(id)arg8 savedAssetType:(int)arg9 replacementUUID:(id)arg10 extendedInfo:(id)arg11 thumbnailsData:(struct __CFDictionary { }*)arg12 withUUID:(id)arg13;
-- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(id)arg7 thumbnailImage:(id)arg8 savedAssetType:(int)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 thumbnailsData:(struct __CFDictionary { }*)arg13 withUUID:(id)arg14;
+- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(id)arg7 thumbnailImage:(id)arg8 savedAssetType:(short)arg9 replacementUUID:(id)arg10 extendedInfo:(id)arg11 thumbnailsData:(struct __CFDictionary { }*)arg12 withUUID:(id)arg13;
+- (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(id)arg7 thumbnailImage:(id)arg8 savedAssetType:(short)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 thumbnailsData:(struct __CFDictionary { }*)arg13 withUUID:(id)arg14;
 - (void)addInflightAsset:(id)arg1;
 - (void)addToKnownPhotoStreamAlbums:(id)arg1;
 - (struct NSObject { Class x1; }*)albumFromGroupURL:(id)arg1;
@@ -172,6 +173,7 @@
 - (unsigned int)countOfLocalAlbumsContainingAssets:(id)arg1 assetsInSomeAlbumCount:(int*)arg2;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (void)dealloc;
+- (BOOL)deleteAllDiagnosticFiles:(id*)arg1;
 - (void)deleteAllImages;
 - (void)deleteImages:(id)arg1;
 - (id)duplicatePhotoStreamPhotosForPhotos:(id)arg1;
@@ -217,6 +219,7 @@
 - (id)librarySizes;
 - (void)loadDatabase;
 - (id)managedObjectContext;
+- (id)managedObjectContextStoreUUID;
 - (id)managedObjectWithObjectID:(id)arg1;
 - (id)masterFilenameFromSidecarFileInfo:(id)arg1;
 - (id)masterURLFromSidecarURLs:(id)arg1;

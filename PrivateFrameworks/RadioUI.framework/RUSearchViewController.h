@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUSearchViewControllerDelegate>, MPImageCache, NSArray, NSError, NSMutableArray, NSString, RUMetricsController, RUSearchDataSource, SKUICircleProgressIndicator, SSMetricsPageEvent, UILabel, UITableView;
+@class <RUSearchViewControllerDelegate>, MPImageCache, NSError, NSMutableArray, NSString, RUMetricsController, RUSearchDataSource, RadioSearchStationResult, SKUICircleProgressIndicator, SSMetricsPageEvent, UILabel, UITableView, UIView;
 
 @interface RUSearchViewController : UIViewController <RUSearchDataSourceDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     struct CGRect { 
@@ -15,7 +15,7 @@
             float height; 
         } size; 
     SKUICircleProgressIndicator *_activityIndicatorView;
-    unsigned int _addingIndex;
+    RadioSearchStationResult *_addingStationResult;
     RUSearchDataSource *_dataSource;
     <RUSearchViewControllerDelegate> *_delegate;
     BOOL _displaysCoreSeedName;
@@ -28,35 +28,38 @@
     RUMetricsController *_metricsController;
     UILabel *_noResultsLabel;
     NSMutableArray *_queuedMetricsOperations;
-    NSArray *_searchResultCategories;
+    NSMutableArray *_resultCategories;
     NSString *_searchTerm;
+    int _seeingMoreCategoryType;
+    BOOL _showsAddingIndicator;
     UITableView *_tableView;
+    UIView *_tableViewBackgroundView;
 }
 
 @property <RUSearchViewControllerDelegate> * delegate;
 @property BOOL displaysCoreSeedName;
 @property BOOL excludeFeaturedStations;
+@property BOOL showsAddingIndicator;
 @property(readonly) UITableView * tableView;
+@property(retain) UIView * tableViewBackgroundView;
 
 - (void).cxx_destruct;
 - (void)_addMetricsControllerOperationBlock:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applyHighlightRanges:(id)arg1 toAttributedString:(id)arg2 withEmphasizedTextAttributes:(id)arg3;
 - (void)_clearButtonAction:(id)arg1;
-- (int)_countOfStationsForSection:(unsigned int)arg1;
+- (void)_configureSectionHeader:(id)arg1 forResultCategory:(id)arg2;
+- (void)_configureSeeMoreCell:(id)arg1 forResultCategory:(id)arg2;
 - (id)_createPageEventForCurrentState;
 - (id)_currentVisibleStationDictionaries;
 - (id)_firstValueForKeyInImpressionsMap:(id)arg1 withStationDictionary:(id)arg2;
-- (id)_highlightRangesDictionaryForIndexPath:(id)arg1;
 - (id)_impressionsWithStationDictionaries:(id)arg1 fieldsMap:(id)arg2;
 - (void)_keyboardWillChangeFrameNotification:(id)arg1;
 - (void)_layoutSearchSubviews;
-- (id)_newSectionHeaderWithAttributedText:(id)arg1;
 - (id)_parentPageDescription;
 - (id)_parentPageType;
 - (void)_reloadForSearchTerm:(id)arg1 canUpdateDataSourceResults:(BOOL)arg2;
 - (void)_setShowingLoading:(BOOL)arg1;
-- (id)_stationDictionaryForIndexPath:(id)arg1 usingResultsDictionary:(BOOL*)arg2;
 - (void)_updateVisibleHeadersState;
 - (id)contentScrollView;
 - (void)dealloc;
@@ -69,8 +72,8 @@
 - (void)removeAddingIndicator;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)searchBarCancelButtonClicked:(id)arg1;
-- (void)searchDataSource:(id)arg1 didFinishUpdatingResults:(id)arg2 forSearchTerm:(id)arg3 withError:(id)arg4 metricsConfiguration:(id)arg5 metricsPageEvent:(id)arg6;
-- (void)searchDataSource:(id)arg1 willStartSearchRequestForSearchTerm:(id)arg2;
+- (void)searchDataSource:(id)arg1 didFinishUpdatingResult:(id)arg2 forRequest:(id)arg3 withError:(id)arg4;
+- (void)searchDataSource:(id)arg1 willStartSearchRequest:(id)arg2;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
@@ -83,6 +86,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDisplaysCoreSeedName:(BOOL)arg1;
 - (void)setExcludeFeaturedStations:(BOOL)arg1;
+- (void)setShowsAddingIndicator:(BOOL)arg1;
+- (void)setTableViewBackgroundView:(id)arg1;
+- (BOOL)showsAddingIndicator;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -93,6 +99,7 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
 - (id)tableView;
+- (id)tableViewBackgroundView;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)updateResultsForSearchTerm:(id)arg1;
 - (void)viewDidLoad;

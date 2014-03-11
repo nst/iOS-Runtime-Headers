@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
+@class NSString, UILabel;
 
 @interface KeychainSyncSecurityCodeCell : PSEditableTableCell {
+    UILabel *_bulletTextLabel;
     NSString *_firstPasscodeEntry;
     int _mode;
     int _securityCodeType;
@@ -16,8 +17,10 @@
 
 - (void)dealloc;
 - (id)firstPasscodeEntry;
+- (void)layoutSubviews;
 - (int)mode;
 - (int)securityCodeType;
+- (void)setBulletText:(id)arg1;
 - (void)setFirstPasscodeEntry:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setSecurityCodeType:(int)arg1;

@@ -11,7 +11,7 @@
 @property(readonly) SKUIItemBrowseCellLayout * layout;
 
 - (void).cxx_destruct;
-- (void)configureForItem:(id)arg1 rowIndex:(int)arg2;
+- (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(int)arg3;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)layout;
 

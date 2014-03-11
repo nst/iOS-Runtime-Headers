@@ -15,7 +15,6 @@
 - (void).cxx_destruct;
 - (id)_notesTitleView;
 - (id)_notesView;
-- (struct CGSize { float x1; float x2; })_truncatedNotesViewSize:(float)arg1;
 - (BOOL)isTruncatingNotes;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (BOOL)update;

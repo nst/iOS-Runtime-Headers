@@ -7,6 +7,7 @@
 
 + (unsigned int)arrayHash:(id)arg1;
 + (unsigned int)boolHash:(BOOL)arg1;
++ (unsigned int)doubleHash:(double)arg1;
 + (unsigned int)hashWithBlocks:(id)arg1;
 + (unsigned int)integerHash:(int)arg1;
 + (unsigned int)objectHash:(id)arg1;

@@ -29,7 +29,6 @@
         unsigned int isRotatingWithPopover : 1; 
         unsigned int cancelButtonManagementDisabled : 1; 
         unsigned int allowDisablingNavigationBarHiding : 1; 
-        unsigned int adjustsSearchBarContentInsetForIndexBar : 1; 
         unsigned int showsResultsForEmptyField : 1; 
         unsigned int searchBarCanBeHoisted : 1; 
         unsigned int animatingSearchResultsDisappearance : 1; 
@@ -95,7 +94,6 @@
 - (float)_activationGapHeight;
 - (float)_additionalNonCollapsingHeightAboveSearchBar;
 - (void)_adjustTableViewContentInsetsAndOffsetsIgnoringCurrent:(BOOL)arg1;
-- (BOOL)_adjustsSearchBarContentInsetForIndexBar;
 - (BOOL)_allowDisablingNavigationBarHiding;
 - (void)_animateNavigationBarSearchBarAppearance:(id)arg1;
 - (BOOL)_areSearchContentsSplitViewMaster;
@@ -105,6 +103,7 @@
 - (void)_configureContainerView;
 - (void)_configureNewSearchBar;
 - (void)_configureSearchBarForTableView;
+- (BOOL)_containedInPopover;
 - (id)_containerView;
 - (id)_containingTableView;
 - (id)_containingViewOfClass:(Class)arg1;
@@ -135,7 +134,6 @@
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarSuperviewWillChange;
 - (void)_sendDelegateDidBeginDidEndSearch;
-- (void)_setAdjustsSearchBarContentInsetForIndexBar:(BOOL)arg1;
 - (void)_setAllowDisablingNavigationBarHiding:(BOOL)arg1;
 - (void)_setCancelButtonManagementDisabled:(BOOL)arg1;
 - (void)_setDimmingOverlayColor:(id)arg1;
@@ -151,7 +149,6 @@
 - (float)_updateNavigationPalette;
 - (void)_updateNoSearchResultsMessageVisiblity;
 - (void)_updatePinnedSearchBar;
-- (void)_updateSearchBarForTableViewIndexBar:(id)arg1;
 - (void)_updateSearchBarMaskIfNecessary;
 - (void)_updateTableHeaderBackgroundViewInTableView:(id)arg1 amountScrolledUnder:(float)arg2;
 - (void)_watchContainingTableViewForScrolling:(BOOL)arg1;

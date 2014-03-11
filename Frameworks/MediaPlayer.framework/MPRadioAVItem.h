@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, RadioStation, RadioTrack, UIImage;
+@class NSArray, NSString, RadioStation, RadioTrack;
 
 @interface MPRadioAVItem : MPAVItem {
-    UIImage *_cachedArtworkImage;
+    NSArray *_buyOffers;
+    BOOL _heartbeatInvalid;
     BOOL _isBanned;
-    BOOL _isHeartbeatInvalid;
     BOOL _isInWishList;
     BOOL _isLiked;
     RadioTrack *_radioTrack;
@@ -17,8 +17,8 @@
     NSString *_stationName;
 }
 
+@property(getter=isHeartbeatInvalid) BOOL heartbeatInvalid;
 @property BOOL isBanned;
-@property(readonly) BOOL isHeartbeatInvalid;
 @property BOOL isInWishList;
 @property BOOL isLiked;
 @property(retain) RadioStation * station;
@@ -28,25 +28,23 @@
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfoForVolumeNormalization;
-- (id)_cachedArtworkImage;
 - (void)_internalIsBannedDidChangeNotification:(id)arg1;
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
 - (void)_internalIsLikedDidChangeNotification:(id)arg1;
-- (void)_sendLikeOrBanRequestWithStatus:(int)arg1;
+- (void)_radioRequestDidFinishNotification:(id)arg1;
 - (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (id)album;
+- (long long)albumStoreID;
 - (id)artist;
-- (id)artworkImageData;
-- (id)artworkMIMEType;
 - (id)artworkTimeMarkers;
+- (id)buyOffers;
 - (id)chapterTimeMarkerForTime:(double)arg1;
 - (id)chapterTimeMarkers;
+- (id)copyrightText;
 - (unsigned int)countForQueueFeeder;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasDataForItemArtwork;
 - (unsigned int)hash;
-- (id)imageCache;
 - (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
 - (id)initWithRadioTrack:(id)arg1;
 - (BOOL)isBanned;
@@ -57,7 +55,7 @@
 - (BOOL)isLiked;
 - (BOOL)isRadioItem;
 - (BOOL)isStreamable;
-- (void)loadAssetAndPlayerItem;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)localizedAttributedPositionInPlaylistStringWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
 - (id)localizedPositionInPlaylistString;
 - (id)mainTitle;
@@ -65,6 +63,7 @@
 - (unsigned long long)persistentID;
 - (id)radioTrack;
 - (void)reevaluateType;
+- (void)setHeartbeatInvalid:(BOOL)arg1;
 - (void)setIsBanned:(BOOL)arg1;
 - (void)setIsInWishList:(BOOL)arg1;
 - (void)setIsLiked:(BOOL)arg1;
@@ -73,11 +72,7 @@
 - (id)stationHash;
 - (long long)stationID;
 - (id)stationName;
-- (BOOL)supportsAddStation;
-- (BOOL)supportsHistory;
-- (BOOL)supportsLikeOrBan;
-- (BOOL)supportsShare;
-- (BOOL)supportsTrackInfo;
+- (long long)storeID;
 - (id)title;
 - (id)titlesForTime:(double)arg1;
 - (unsigned int)type;

@@ -24,7 +24,7 @@
 @property BOOL isSourceChangeInProgress;
 @property(readonly) Class itemClass;
 @property(readonly) unsigned int itemCount;
-@property(readonly) unsigned int nonRepeatingItemCount;
+@property(readonly) int playbackMode;
 @property(readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
 @property(readonly) NSDictionary * preferredLanguages;
 @property(readonly) unsigned int realRepeatType;
@@ -56,7 +56,7 @@
 - (void)contentInvalidated;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)controller:(id)arg1 willChangePlaybackIndexBy:(int)arg2 deltaType:(int)arg3 ignoreElapsedTime:(BOOL)arg4 allowSkippingAds:(BOOL)arg5;
+- (void)controller:(id)arg1 willChangePlaybackIndexBy:(int)arg2 deltaType:(int)arg3 ignoreElapsedTime:(BOOL)arg4 allowSkippingUnskippableContent:(BOOL)arg5;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)errorResolverForItem:(id)arg1;
@@ -65,6 +65,7 @@
 - (BOOL)hasValidItemAtIndex:(unsigned int)arg1;
 - (unsigned int)initialPlaybackQueueDepth;
 - (void)invalidateQueueCaches;
+- (BOOL)isRadioQueueFeeder;
 - (BOOL)isSourceChangeInProgress;
 - (Class)itemClass;
 - (unsigned int)itemCount;
@@ -72,9 +73,9 @@
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
-- (unsigned int)nonRepeatingItemCount;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)playbackInfoAtIndex:(unsigned int)arg1;
+- (int)playbackMode;
 - (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (id)preferredLanguages;
 - (unsigned int)realRepeatType;
@@ -92,7 +93,6 @@
 - (void)setRepeatType:(unsigned int)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
-- (void)setSubsequenceFocused:(BOOL)arg1 currentItemIndex:(unsigned int)arg2;
 - (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
 - (BOOL)shouldReloadForChangeFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;

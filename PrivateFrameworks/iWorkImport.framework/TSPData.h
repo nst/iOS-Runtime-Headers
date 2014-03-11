@@ -22,6 +22,7 @@
 }
 
 @property(readonly) TSPObjectContext * context;
+@property(readonly) NSString * documentResourceLocator;
 @property(readonly) unsigned long long encodedLength;
 @property(readonly) NSString * filename;
 @property(readonly) long long identifier;
@@ -66,6 +67,7 @@
 - (void)dealloc;
 - (id)description;
 - (const struct array<unsigned char, 20> { unsigned char x1[20]; }*)digest;
+- (id)documentResourceLocator;
 - (unsigned long long)encodedLength;
 - (id)filename;
 - (BOOL)gilligan_isRemote;

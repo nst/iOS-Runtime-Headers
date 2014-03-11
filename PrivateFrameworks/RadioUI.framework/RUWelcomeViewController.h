@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUWelcomeViewControllerDelegate>, CADisplayLink, RUSignInViewController, RUTermsViewController, SKUICircleProgressIndicator, UIButton, UICollectionView, UILabel, _RUWelcomeTicker;
+@class <RUWelcomeViewControllerDelegate>, CADisplayLink, NSDate, NSMutableArray, RUSignInViewController, RUTermsViewController, SKUICircleProgressIndicator, UIAlertView, UIButton, UICollectionView, UILabel, _RUWelcomeTicker;
 
-@interface RUWelcomeViewController : UIViewController <RUSignInViewControllerDelegate, RUTermsViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface RUWelcomeViewController : UIViewController <RUSignInViewControllerDelegate, RUTermsViewControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicatorView;
+    NSDate *_autoRetryMinimumDate;
     <RUWelcomeViewControllerDelegate> *_delegate;
     CADisplayLink *_displayLink;
     BOOL _displayingLoading;
+    UIAlertView *_failedAlertView;
+    BOOL _isOptingIn;
     double _lastTimestamp;
     UIButton *_learnMoreButton;
     UILabel *_loadingLabel;
+    NSMutableArray *_optInCompletionHandlers;
     UICollectionView *_scrollingStackCollectionView;
     UIButton *_signInButton;
     RUSignInViewController *_signInViewController;
@@ -25,9 +29,11 @@
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;
-- (void)_attemptOptInAndAllowAuthentication:(BOOL)arg1;
+- (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)_attemptOptForReason:(int)arg1 allowAuthentication:(BOOL)arg2;
+- (BOOL)_canAutomaticallyOptIn;
 - (void)_checkAcceptedTermsWithCompletionHandler:(id)arg1;
-- (void)_completeWithStatus:(int)arg1 didOptIn:(BOOL)arg2;
+- (void)_completeWithStatus:(int)arg1 didOptIn:(BOOL)arg2 retryInterval:(double)arg3;
 - (void)_createEndScrollingAnimation;
 - (void)_displayLinkAction:(id)arg1;
 - (void)_endScrollingIfNecessary;
@@ -41,6 +47,8 @@
 - (id)_sortCollectionCells:(id)arg1 byDistanceFromCenter:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_stackImageNames;
 - (void)_updateSignInButtonTitle;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)attemptOptInWithCompletionHandler:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)dealloc;

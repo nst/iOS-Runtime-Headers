@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AWDVPNSession : PBCodable {
+@interface AWDVPNSession : PBCodable <NSCopying> {
     struct { 
         unsigned int inBytes : 1; 
         unsigned int outBytes : 1; 
@@ -76,6 +76,7 @@
 - (BOOL)appVpnUsed;
 - (BOOL)connectFailed;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

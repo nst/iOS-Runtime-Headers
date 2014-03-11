@@ -16,7 +16,9 @@
 - (void).cxx_destruct;
 - (void)_acceptAction:(id)arg1;
 - (void)_cancelAction:(id)arg1;
+- (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (unsigned long long)currentTermsVersion;
+- (void)dealloc;
 - (id)delegate;
 - (id)initWithCurrentTermsVersion:(unsigned long long)arg1 terms:(id)arg2;
 - (void)loadView;

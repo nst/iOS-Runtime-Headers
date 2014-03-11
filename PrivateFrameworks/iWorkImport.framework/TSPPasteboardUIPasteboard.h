@@ -20,6 +20,7 @@
 - (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)dataForPasteboardType:(id)arg1;
 - (void)endTransaction;
+- (id)importablePlainTextTypes;
 - (id)initWithGeneralPasteboard;
 - (id)initWithNativePasteboard:(id)arg1;
 - (id)initWithPasteboardName:(id)arg1 create:(BOOL)arg2;

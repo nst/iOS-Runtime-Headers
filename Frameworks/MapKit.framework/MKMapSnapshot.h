@@ -11,9 +11,9 @@
 
 @property(readonly) UIImage * image;
 
+- (void).cxx_destruct;
 - (struct { double x1; double x2; })_coordinateForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_initWithSnapshot:(id)arg1;
-- (void)dealloc;
 - (id)image;
 - (struct CGPoint { float x1; float x2; })pointForCoordinate:(struct { double x1; double x2; })arg1;
 

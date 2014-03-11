@@ -14,15 +14,13 @@
 - (id)boldTextAttributesForStyleProvider:(id)arg1;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
-- (bool)hasNameLabelFrameForStyleProvider:(id)arg1;
+- (id)disabledBoldTextAttributesForStyleProvider:(id)arg1;
+- (id)disabledRegularTextAttributesForStyleProvider:(id)arg1;
 - (id)init;
 - (id)memberNameBoldFontForStyleProvider:(id)arg1;
 - (id)memberNamePlaceholderFontForStyleProvider:(id)arg1;
 - (id)memberNameRegularFontForStyleProvider:(id)arg1;
-- (float)nameLabelBaselineOffsetFromBottomForStyleProvider:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nameLabelFrameForStyleProvider:(id)arg1;
+- (id)placeholderTextAttributesForStyleProvider:(id)arg1;
 - (id)regularTextAttributesForStyleProvider:(id)arg1;
-- (void)setNameLabelBaselineOffsetFromBottom:(float)arg1 forStyleProvider:(id)arg2;
-- (void)setNameLabelFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forStyleProvider:(id)arg2;
 
 @end

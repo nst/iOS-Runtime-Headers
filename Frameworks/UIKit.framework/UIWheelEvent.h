@@ -2,10 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSMutableArray;
+
 @interface UIWheelEvent : UIInternalEvent {
+    NSMutableArray *_recentScrollTimestamps;
 }
 
+- (BOOL)_canHaveVelocity;
 - (void)_sendEventToResponder:(id)arg1;
+- (void)_setHIDEvent:(struct __IOHIDEvent { }*)arg1;
+- (float)_wheelVelocity;
+- (void)dealloc;
 - (int)subtype;
 - (int)type;
 

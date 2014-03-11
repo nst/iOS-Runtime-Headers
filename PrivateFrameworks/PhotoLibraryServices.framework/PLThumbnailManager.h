@@ -42,15 +42,18 @@
 + (BOOL)hasRebuildThumbnailsRequest;
 + (BOOL)isMissingThumbnailTables;
 + (BOOL)isRebuildingThumbnails;
++ (int)largestNonJPEGThumbnailFormat;
 + (void)rebuildAllMissingThumbnails;
 + (void)removeObsoleteMetadata;
 + (void)removeRebuildThumbnailsRequest:(const char *)arg1;
 + (void)resetThumbnails;
 + (void)saveCameraPreviewWellImage:(struct CGImage { }*)arg1 uuid:(id)arg2;
 + (void)saveCameraPreviewWellImageForAsset:(id)arg1;
++ (BOOL)shouldUseLargerNonJPEGThumbnailFormat;
 + (id)supportedThumbnailFormats;
 + (int)thumbnailFormat;
 + (int)thumbnailVersion;
++ (int)thumbnailVersionCurrent;
 + (BOOL)useImageTableForFormat:(int)arg1;
 
 - (id)_anyImageTable;
@@ -61,12 +64,14 @@
 - (id)_tableDescriptions;
 - (id)_thumbManagerForFormat:(int*)arg1;
 - (void)_unicorn_setThumbnailsForPhoto:(id)arg1 withImage:(id)arg2;
+- (id)beginThumbnailSafePropertyUpdatesOnAsset:(id)arg1;
 - (void)clearPhotoLibrary;
 - (id)compactImageTables;
 - (BOOL)copyThumbnailsFromAsset:(id)arg1 toAsset:(id)arg2;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 allowPlaceholder:(BOOL)arg9;
 - (void)dealloc;
 - (void)deleteThumbnailsWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 uuid:(id)arg3;
+- (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
 - (id)initWithWeakPhotoLibrary:(id)arg1;
 - (id)newImageForPhoto:(id)arg1 withFormat:(int)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3 allowPlaceholder:(BOOL)arg4;
 - (id)observerToken;

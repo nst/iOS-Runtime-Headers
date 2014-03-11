@@ -5,6 +5,7 @@
 @class NSString, TSSStyle<TSSPreset>, TSSTheme;
 
 @interface TSSThemeAddStylePresetCommand : TSKCommand {
+    BOOL mAddPresetToStylesheet;
     NSString *mIdentifier;
     TSSStyle<TSSPreset> *mPreset;
     NSString *mPresetKind;

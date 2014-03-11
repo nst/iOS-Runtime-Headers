@@ -2,32 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAirPlayControllerDelegate>, MPAudioDeviceController, NSMutableArray;
-
-@interface PLAirPlayController : NSObject <MPAudioDeviceControllerDelegate> {
-    MPAudioDeviceController *_audioDeviceController;
-    <PLAirPlayControllerDelegate> *_delegate;
-    NSMutableArray *_pickableRoutes;
+@interface PLAirPlayController : NSObject {
 }
-
-@property <PLAirPlayControllerDelegate> * delegate;
 
 + (id)routeIDForAirplayRoute:(id)arg1;
 + (id)routeNameForAirplayRoute:(id)arg1;
-
-- (BOOL)airplayRouteIsAvailable;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (void)audioDeviceControllerMediaServerDied:(id)arg1;
-- (void)dealloc;
-- (id)delegate;
-- (unsigned int)indexOfPickedRoute;
-- (id)init;
-- (BOOL)isDeviceCurrentlyMirroring;
-- (id)pickableAirplayRoutes;
-- (id)pickedAirplayRoute;
-- (void)setDelegate:(id)arg1;
-- (void)setRouteDiscoveryEnabled:(BOOL)arg1;
-- (id)systemPickedRouteSupportingAirPlayOrMirroring;
-- (void)userPickedRoute:(id)arg1;
 
 @end

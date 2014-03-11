@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCCaptureAudioFileOutputRecordingDelegate>, AVAssetWriter, AVCaptureAudioDataOutput, AVCaptureSession, NSMutableArray, NSObject<OS_dispatch_queue>, NSURL, NSUUID;
+@class <RCCaptureAudioFileOutputRecordingDelegate>, AVAssetWriter, AVCaptureAudioDataOutput, AVCaptureSession, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSURL, NSUUID;
 
 @interface RCCaptureAudioFileOutput : NSObject <AVCaptureAudioDataOutputSampleBufferDelegate> {
     AVAssetWriter *_assetWriter;
     AVCaptureSession *_captureSession;
+    BOOL _captureSessionFailedToStart;
+    int _captureSessionStartupState;
+    BOOL _captureTerminatedAbnormally;
     NSMutableArray *_delegateBlocks;
+    double _finalizedAssetDuration;
+    BOOL _finalizedAssetEncounteredError;
     BOOL _manageSessionRunState;
     double _maxRecordedDuration;
     unsigned int _maxRecordedFileSize;
     NSURL *_outputFileURL;
     BOOL _processingSamples;
     NSObject<OS_dispatch_queue> *_queue;
+    NSDate *_recordingCreationDate;
     <RCCaptureAudioFileOutputRecordingDelegate> *_recordingDelegate;
     NSUUID *_recordingSessionID;
     NSURL *_recordingURL;
@@ -21,16 +27,21 @@
     NSObject<OS_dispatch_queue> *_sampleBufferQueue;
     unsigned int _sampleBuffersWritten;
     int _state;
+    BOOL _waitingForCaptureSessionDidStart;
 }
 
 @property(retain) AVAssetWriter * assetWriter;
+@property(readonly) double assetWritingCheckpointInterval;
 @property(readonly) AVCaptureSession * captureSession;
+@property(readonly) double finalizedAssetDuration;
+@property(readonly) BOOL finalizedAssetEncounteredError;
 @property(readonly) BOOL manageSessionRunState;
 @property double maxRecordedDuration;
 @property unsigned int maxRecordedFileSize;
 @property(copy) NSURL * outputFileURL;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) <RCCaptureAudioFileOutputRecordingDelegate> * recordingDelegate;
+@property(retain) NSDate * recordingCreationDate;
+@property <RCCaptureAudioFileOutputRecordingDelegate> * recordingDelegate;
 @property(copy) NSUUID * recordingSessionID;
 @property(readonly) NSURL * recordingURL;
 @property(retain) AVCaptureAudioDataOutput * sampleBufferDataOutput;
@@ -41,17 +52,27 @@
 - (void)_checkIfRecordingSessionEverStarted:(id)arg1;
 - (void)_clearSampleDataOutput;
 - (void)_finalizeAssetWriting;
+- (BOOL)_handleNotificationAsSessionStartFailure;
+- (void)_interruptionDidBegin:(id)arg1;
+- (void)_registerForCatpureSessionNotifications;
 - (void)_scheduleMainThreadDelegateBlock:(id)arg1;
+- (void)_sessionDidStartRunning:(id)arg1;
+- (void)_sessionDidStopRunning:(id)arg1;
+- (void)_sessionErrored:(id)arg1;
 - (void)_setState:(int)arg1;
 - (BOOL)_setupAssetWriter:(id*)arg1 sampleBufferRef:(struct opaqueCMSampleBuffer { }*)arg2;
 - (void)_setupSampleBufferDataOutput;
 - (int)_state;
+- (void)_unregisterForCatpureSessionNotifications;
 - (id)assetWriter;
+- (double)assetWritingCheckpointInterval;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (id)captureSession;
 - (id)connectionWithMediaType:(id)arg1;
 - (void)dealloc;
 - (void)endRecording;
+- (double)finalizedAssetDuration;
+- (BOOL)finalizedAssetEncounteredError;
 - (id)initWithCaptureSession:(id)arg1 manageSessionRunState:(BOOL)arg2;
 - (BOOL)isRecording;
 - (BOOL)isRecordingPaused;
@@ -61,6 +82,7 @@
 - (id)outputFileURL;
 - (void)pauseRecording;
 - (id)queue;
+- (id)recordingCreationDate;
 - (id)recordingDelegate;
 - (id)recordingSessionID;
 - (id)recordingURL;
@@ -72,11 +94,15 @@
 - (void)setMaxRecordedFileSize:(unsigned int)arg1;
 - (void)setOutputFileURL:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setRecordingCreationDate:(id)arg1;
+- (void)setRecordingDelegate:(id)arg1;
 - (void)setRecordingSessionID:(id)arg1;
 - (void)setSampleBufferDataOutput:(id)arg1;
 - (void)setSampleBufferQueue:(id)arg1;
 - (void)setState:(int)arg1;
-- (BOOL)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
+- (BOOL)startCaptureSession;
+- (BOOL)startRecordingToOutputFileURL:(id)arg1 creationDate:(id)arg2 recordingDelegate:(id)arg3;
 - (int)state;
+- (void)stopCaptureSession;
 
 @end

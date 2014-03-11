@@ -34,9 +34,11 @@
 - (id)_debugDescription;
 - (void)_writeData:(id)arg1 forThumbIdentifier:(id)arg2;
 - (void)_writeImage:(id)arg1 forThumbIdentifier:(id)arg2;
+- (id)beginThumbnailSafePropertyUpdatesOnAsset:(id)arg1;
 - (BOOL)copyEntryFromOriginalAsset:(id)arg1 toAsset:(id)arg2;
 - (void)dealloc;
 - (id)description;
+- (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
 - (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 dataOffset:(int*)arg8;
 - (int)imageFormat;
 - (int)imageHeight;

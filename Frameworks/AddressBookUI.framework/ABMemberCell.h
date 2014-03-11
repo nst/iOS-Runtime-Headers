@@ -7,6 +7,7 @@
 @interface ABMemberCell : UITableViewCell {
     ABMemberNameView *_contactNameView;
     BOOL _isMeCard;
+    BOOL _layoutComplete;
     ABUIPerson *_person;
     ABStyleProvider *_styleProvider;
 }
@@ -28,6 +29,7 @@
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsMeCard:(BOOL)arg1;
+- (void)setNeedsLayout;
 - (void)setPerson:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUserInteractionEnabled:(BOOL)arg1;

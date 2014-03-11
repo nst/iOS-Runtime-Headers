@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSData;
+@class NSData, NSString;
 
 @interface CBUUID : NSObject <NSCopying> {
     struct _NSRange { 
@@ -12,13 +12,16 @@
     } _range;
 }
 
+@property(readonly) NSString * UUIDString;
 @property(readonly) NSData * data;
 
 + (id)UUIDWithCFUUID:(struct __CFUUID { }*)arg1;
 + (id)UUIDWithData:(id)arg1;
 + (id)UUIDWithNSUUID:(id)arg1;
 + (id)UUIDWithString:(id)arg1;
++ (void)initialize;
 
+- (id)UUIDString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (void)dealloc;

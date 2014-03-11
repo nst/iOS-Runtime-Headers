@@ -16,6 +16,8 @@
 
 - (void).cxx_destruct;
 - (void)_addEntity:(id)arg1 withIdentifier:(id)arg2 type:(int)arg3;
+- (void)_removeEntitiesAtIndexes:(id)arg1;
+- (void)_setEntity:(id)arg1 atIndex:(int)arg2;
 - (void)_setGroupKind:(id)arg1;
 - (id)availableEntities;
 - (id)entityAtIndex:(int)arg1;

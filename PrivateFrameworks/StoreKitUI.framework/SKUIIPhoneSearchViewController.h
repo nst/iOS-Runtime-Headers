@@ -66,12 +66,14 @@
 - (void)searchRelatedView:(id)arg1 didSelectRelatedQueryAtIndex:(int)arg2;
 - (void)searchRelatedViewDidSelectBackButton:(id)arg1;
 - (void)searchResultGroupController:(id)arg1 didLoadArtworkAtIndex:(unsigned int)arg2;
-- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndexes:(id)arg2;
+- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndexes:(id)arg2 removedEntityAtIndexes:(id)arg3;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMetricsController:(id)arg1;
 - (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
 - (BOOL)shouldCacheAheadWhenIdleForItemCollectionController:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })visibleItemRangeForItemCollectionController:(id)arg1;
 

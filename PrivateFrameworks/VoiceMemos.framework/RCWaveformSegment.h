@@ -16,12 +16,16 @@
 @property(readonly) int averagePowerLevelsCount;
 @property(readonly) struct { double x1; double x2; } timeRange;
 
++ (id)_mergedSegmentByFastMergingWithMergeableSegments:(id)arg1 mergedLevelsDuration:(double)arg2;
++ (id)_mergedSegmentByResamplingWithMergeableSegments:(id)arg1 mergedLevelsDuration:(double)arg2;
++ (id)_segmentByMergingMergableSegments:(id)arg1;
 + (void)initialize;
++ (id)segmentsByMergingSegments:(id)arg1 preferredSegmentDuration:(double)arg2;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_segmentWithValuesInContainedTimeRange:(struct { double x1; double x2; })arg1;
-- (id)_segmentsByMergingIfNecessaryGreaterSegment:(id)arg1;
+- (id)_segmentsByJoiningIfNecessaryGreaterSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned int)arg2;
 - (const float*)averagePowerLevels;
 - (int)averagePowerLevelsCount;
 - (id)copyWithTimeRangeOffsetByTimeOffset:(double)arg1;
@@ -30,8 +34,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelData:(id)arg2 copyData:(BOOL)arg3;
 - (id)initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2;
+- (BOOL)isWaveformDataEqualToDataInSegment:(id)arg1;
 - (id)segmentByClippingToTimeRange:(struct { double x1; double x2; })arg1;
-- (id)segmentsByMergingWithSegment:(id)arg1;
+- (id)segmentsByJoiningIfSmallSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned int)arg2;
+- (id)segmentsByJoiningIfSmallSegment:(id)arg1;
+- (id)simpleDescription;
 - (struct { double x1; double x2; })timeRange;
+- (id)verboseDescription;
 
 @end

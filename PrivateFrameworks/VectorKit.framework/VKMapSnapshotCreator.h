@@ -37,7 +37,6 @@
 - (BOOL)localizeLabels;
 - (void)lookAtX:(unsigned int)arg1 y:(unsigned int)arg2 z:(unsigned int)arg3;
 - (void)mapModel:(id)arg1 annotationMarker:(id)arg2 didChangeDragState:(int)arg3 fromOldState:(int)arg4;
-- (void)mapModel:(id)arg1 didAddAnnotationMarkers:(id)arg2;
 - (void)mapModel:(id)arg1 didAnimateInAnnotationMarkers:(id)arg2;
 - (void)mapModel:(id)arg1 didFinishAddingAnnotationMarkers:(id)arg2;
 - (id)mapModel:(id)arg1 markerForAnnotation:(id)arg2;

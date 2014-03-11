@@ -26,18 +26,17 @@
 
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (float)addContentOverlap:(float)arg1;
+- (float)adjustFrameToNewSize:(float)arg1;
 - (BOOL)allowsUpdates;
 - (BOOL)animatesDataChange;
 - (void)beginDisablingRasterization;
 - (void)beginImageContextWithMinimumWidth:(float)arg1;
-- (BOOL)cachesImage;
 - (id)contentsImage;
 - (float)currentLeftOverlap;
 - (float)currentOverlap;
 - (float)currentRightOverlap;
 - (void)dealloc;
 - (id)description;
-- (void)drawText:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4 textSize:(struct CGSize { float x1; float x2; })arg5;
 - (void)endDisablingRasterization;
 - (void)endImageContext;
 - (float)extraLeftPadding;

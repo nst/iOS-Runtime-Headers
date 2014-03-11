@@ -40,6 +40,7 @@
 - (void)createDefaultParagraphStyleIfNeeded;
 - (void)dealloc;
 - (id)defaultCharacterStyle;
+- (id)defaultColumnStyle;
 - (id)defaultListStyle;
 - (id)defaultParagraphStyle;
 - (void)disablePresetValidation;

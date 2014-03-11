@@ -6,6 +6,9 @@
 }
 
 + (id)cachedObjectWithKey:(id)arg1 block:(id)arg2;
++ (id)explicitGlyphLargeImage;
++ (id)explicitGlyphMediumImage;
++ (id)explicitGlyphSmallImage;
 + (id)themeAssetCache;
 
 @end

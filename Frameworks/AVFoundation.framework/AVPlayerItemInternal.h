@@ -34,8 +34,10 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    unsigned int RTCReportingFlags;
     NSURL *URL;
     BOOL allowProgressiveSwitchUp;
+    BOOL allowsExtendedReadAhead;
     AVAsset *asset;
     AVAsset *assetWithFigPlaybackItem;
     NSDictionary *audibleDRMInfo;

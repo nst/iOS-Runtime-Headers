@@ -11,6 +11,7 @@
 @interface SUWebViewController : SUViewController <SUWebViewManagerDelegate, SUWebViewDelegate> {
     SSMutableAuthenticationContext *_authenticationContext;
     SUDelayedNavigationItem *_delayedNavigationItem;
+    NSURL *_displayedURL;
     BOOL _hasEverAppeared;
     int _lastKnownOrientation;
     id _loadBlock;
@@ -66,6 +67,7 @@
 - (id)copyObjectForScriptFromPoolWithClass:(Class)arg1;
 - (id)copyScriptProperties;
 - (void)dealloc;
+- (id)displayedURL;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
 - (void)invalidate;
 - (void)keyboardDidHideWithInfo:(id)arg1;

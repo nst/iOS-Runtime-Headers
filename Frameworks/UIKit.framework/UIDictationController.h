@@ -4,7 +4,7 @@
 
 @class AFDictationConnection, AFDictationOptions, AFPreferences, NSArray, NSString, NSTimer, UIAlertView, UIDictationTestOps;
 
-@interface UIDictationController : NSObject {
+@interface UIDictationController : NSObject <_UITouchPhaseChangeDelegate> {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -21,6 +21,7 @@
     BOOL _hasPreheated;
     NSString *_inputModeThatInvokedDictation;
     } _insertionRange;
+    BOOL _isInDebuggingModes;
     NSString *_language;
     AFDictationOptions *_options;
     BOOL _performTestOperationForEditing;
@@ -40,6 +41,7 @@
 @property BOOL performTestOperationForEditing;
 @property(copy) NSString * previousHypothesis;
 
++ (id)activeConnection;
 + (id)activeInstance;
 + (void)applicationDidBecomeActive;
 + (void)applicationDidChangeStatusBarFrame;
@@ -62,12 +64,15 @@
 + (void)logCorrectionStatisticsForDelegate:(id)arg1;
 + (void)logDictationString:(id)arg1;
 + (id)metadataDictionaryForCorrectionIdentifier:(id)arg1;
++ (id)myTranslationForPhrases:(id)arg1;
 + (BOOL)openAssistantFrameworkIfNecessary;
 + (void)poppedLastDebuggingOp;
 + (id)serializedDictationPhrases:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
 + (id)serializedDictationPhrases:(id)arg1;
 + (id)serializedDictationPhrasesFromTokenMatrix:(id)arg1 fromKeyboard:(BOOL)arg2 transform:(struct __CFString { }*)arg3;
-+ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2;
++ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 fromKeyboard:(BOOL)arg3 interpretationIndex:(unsigned int)arg4;
++ (id)serializedInterpretationFromTokens:(id)arg1 transform:(struct __CFString { }*)arg2 ranges:(id*)arg3;
++ (float)serverManualEndpointingThreshold;
 + (BOOL)setupForOpeningConnections;
 + (BOOL)setupForPhraseSerialization;
 + (id)sharedInstance;
@@ -79,18 +84,20 @@
 + (id)singleLineResultForResult:(id)arg1;
 + (void)siriPreferencesChanged;
 + (BOOL)starkScreenExists;
-+ (id)streamingHypothesisForPhrases:(id)arg1;
 + (id)stringForState:(int)arg1;
 + (id)stringForViewMode:(int)arg1;
 + (BOOL)takesPhysicalButtonsBegan:(id)arg1 forTextView:(id)arg2;
 + (BOOL)takesPhysicalButtonsEnded:(id)arg1 forTextView:(id)arg2;
 + (void)updateLandingView;
++ (BOOL)usingServerManualEndpointingThreshold;
 + (BOOL)usingTypeAndTalk;
 + (int)viewMode;
 
+- (id)_connection;
 - (void)_restartDictation;
 - (BOOL)_shouldDeleteBackwardInInputDelegate:(id)arg1;
 - (BOOL)_shouldInsertText:(id)arg1 inInputDelegate:(id)arg2;
+- (void)_touchPhaseChangedForTouch:(id)arg1;
 - (id)assistantCompatibleLanguageCodeForInputMode:(id)arg1;
 - (float)audioLevel;
 - (void)cancelDictation;
@@ -102,6 +109,7 @@
 - (void)delayedTelephonyCheckingSetup;
 - (void)dictationConnection:(id)arg1 didHypothesizePhrases:(id)arg2 languageModel:(id)arg3;
 - (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
+- (void)dictationConnection:(id)arg1 didRecognizeTokens:(id)arg2 languageModel:(id)arg3;
 - (void)dictationConnection:(id)arg1 speechRecognitionDidFail:(id)arg2;
 - (void)dictationConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
 - (void)dictationConnectionSpeechRecordingDidBegin:(id)arg1;
@@ -156,8 +164,8 @@
 - (void)setPreviousHypothesis:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setupConnectionOptions;
+- (void)setupForDebuggingDictationStart;
 - (void)setupForDictationStartForReason:(int)arg1;
-- (void)setupForStreamingDictationStart;
 - (void)setupToInsertResultForNewHypothesis:(id)arg1;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)startConnectionForReason:(int)arg1;
@@ -165,12 +173,14 @@
 - (void)startDictationForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)startDictationForReason:(int)arg1;
 - (void)startDictationForStark;
+- (int)startOfPreviousHypothesis;
 - (void)startRecordingLimitTimer;
 - (int)state;
 - (void)stopDictation;
 - (id)supportedDictationLanguages:(id)arg1;
 - (BOOL)supportsInputMode:(id)arg1 error:(id*)arg2;
 - (void)switchToDictationInputMode;
+- (void)switchToDictationInputModeWithTouch:(id)arg1;
 - (BOOL)wasDisabledDueToTelephonyActivity;
 
 @end

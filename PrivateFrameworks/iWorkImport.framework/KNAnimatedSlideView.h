@@ -63,11 +63,13 @@
 + (void)initialize;
 + (void)registerUserDefaults;
 
+- (void)addAnimatedBuild:(id)arg1;
 - (id)animatingBuildRenderers;
 - (void)beginRenderingEvent:(unsigned int)arg1 onBaseLayer:(id)arg2 shouldPrepareBuildAnimation:(BOOL)arg3 completionHandler:(id)arg4;
 - (void)buildHasFinishedAnimating:(id)arg1;
 - (void)cancelRendering;
 - (id)canvas;
+- (void)clearAnimatedBuilds;
 - (struct CGImage { }*)copyImageOfCurrentEvent;
 - (void)dealloc;
 - (id)documentRoot;
@@ -77,10 +79,9 @@
 - (id)eventIndexesToAnimate;
 - (BOOL)hasBuilds;
 - (BOOL)hasTransitionAtEventIndex:(int)arg1;
-- (BOOL)infoIsVisible:(id)arg1 incoming:(BOOL)arg2;
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (id)infosCurrentlyVisible;
-- (id)infosVisibleAtEvent:(unsigned int)arg1;
+- (id)infosVisibleAtEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2;
 - (id)initForSlideNode:(id)arg1 session:(id)arg2;
 - (void)interruptAndReset;
 - (BOOL)isAnimating;
@@ -120,6 +121,7 @@
 - (void)registerForEventStartCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForMovieEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForMovieStartCallback:(SEL)arg1 target:(id)arg2;
+- (void)removeAnimatedBuild:(id)arg1;
 - (void)renderCurrentEvent;
 - (void)renderCurrentEventPreparingNextEvent:(BOOL)arg1;
 - (void)renderEvent:(unsigned int)arg1 intoContext:(struct CGContext { }*)arg2 ignoreBuildVisibility:(BOOL)arg3;

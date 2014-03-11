@@ -71,6 +71,11 @@
         unsigned int backdropOverlayMode : 2; 
         unsigned int tintAdjustmentMode : 2; 
         unsigned int isReferenceView : 1; 
+        unsigned int focusState : 2; 
+        unsigned int hasUserInterfaceIdiom : 1; 
+        unsigned int userInterfaceIdiom : 3; 
+        unsigned int ancestorDefinesTintColor : 1; 
+        unsigned int ancestorDefinesTintAdjustmentMode : 1; 
     NSString *_backgroundColorSystemColorName;
     NSISVariable *_boundsHeightVariable;
     NSISVariable *_boundsWidthVariable;
@@ -94,6 +99,8 @@
     } _viewFlags;
 }
 
+@property(getter=_ancestorDefinesTintAdjustmentMode,setter=_setAncestorDefinesTintAdjustmentMode:) BOOL _ancestorDefinesTintAdjustmentMode;
+@property(getter=_ancestorDefinesTintColor,setter=_setAncestorDefinesTintColor:) BOOL _ancestorDefinesTintColor;
 @property(readonly) UIView * _backdropMaskViewForColorTint;
 @property(readonly) UIView * _backdropMaskViewForFilters;
 @property(readonly) UIView * _backdropMaskViewForGrayscaleTint;
@@ -101,6 +108,7 @@
 @property(readonly) NSISVariable * _boundsHeightVariable;
 @property(readonly) NSISVariable * _boundsWidthVariable;
 @property(readonly) NSArray * _constraintsExceptingSubviewAutoresizingConstraints;
+@property unsigned int _countOfMotionEffectsInSubtree;
 @property(readonly) UIKBRenderConfig * _inheritedRenderConfig;
 @property(setter=_setInteractionTintColor:,retain) UIColor * _interactionTintColor;
 @property(setter=_setInternalConstraints:,retain) NSMutableArray * _internalConstraints;
@@ -113,6 +121,7 @@
 @property(readonly) NSISVariable * _minXVariable;
 @property(readonly) NSISVariable * _minYVariable;
 @property(setter=_setShouldArchiveUIAppearanceTags:) BOOL _shouldArchiveUIAppearanceTags;
+@property(getter=_userInterfaceIdiom,setter=_setUserInterfaceIdiom:) int _userInterfaceIdiom;
 @property(getter=_backgroundColorSystemColorName,setter=_setBackgroundColorSystemColorName:,retain) NSString * backgroundColorSystemColorName;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property struct CGPoint { float x1; float x2; } center;
@@ -133,6 +142,7 @@
 @property BOOL viewTraversalMark;
 
 + (BOOL)_addCompletion:(id)arg1;
++ (void)_addHierarchyTrackingVisitor:(id)arg1;
 + (id)_alongsideAnimations;
 + (void)_animateUsingDefaultDampedSpringWithDelay:(double)arg1 initialSpringVelocity:(float)arg2 options:(unsigned int)arg3 animations:(id)arg4 completion:(id)arg5;
 + (void)_animateUsingDefaultDampedSpringWithDelay:(double)arg1 initialSpringVelocity:(float)arg2 options:(unsigned int)arg3 animations:(id)arg4 start:(id)arg5 completion:(id)arg6;
@@ -151,6 +161,7 @@
 + (id)_currentAnimationAttributes;
 + (int)_currentAnimationCurve;
 + (float)_currentAnimationDuration;
++ (id)_defaultInteractionTintColorForIdiom:(int)arg1;
 + (id)_defaultUIViewActionForLayer:(id)arg1 forKey:(id)arg2 forView:(id)arg3;
 + (id)_defaultUIViewActionForLayer:(id)arg1 forKey:(id)arg2;
 + (int)_degreesToRotateFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
@@ -165,9 +176,9 @@
 + (void)_finalizeStoppedAnimationWithUUID:(id)arg1 reverseAnimation:(BOOL)arg2;
 + (void)_finishAnimationTracking;
 + (id)_gkStandardBackdropView;
++ (BOOL)_hasActiveAnimationContext;
 + (void)_inheritAnimationParameters;
 + (void)_initializeForIdiom:(int)arg1;
-+ (void)_initializeForIdiomIfNecessary:(int)arg1;
 + (BOOL)_invalidatesViewUponCreation;
 + (BOOL)_isAddingResponderToTree;
 + (BOOL)_isAnimationTracking;
@@ -179,11 +190,13 @@
 + (BOOL)_motionEffectsEnabled;
 + (BOOL)_motionEffectsSupported;
 + (void)_performCustomizableAppearanceModifications:(id)arg1;
++ (void)_performInitializationForIdiomIfNeccessary:(int)arg1;
 + (id)_performWithAnimationTracking:(id)arg1;
 + (void)_performWithoutAnimation:(id)arg1;
 + (BOOL)_preventsAppearanceProxyCustomization;
 + (void)_recenterMotionEffects;
-+ (BOOL)_requiresInitializationForIdiom:(int)arg1;
++ (void)_registerClassForIdiomInitializationIfNeccessary;
++ (void)_removeHierarchyTrackingVisitor:(id)arg1;
 + (void)_reverseAnimationWithUUID:(id)arg1 duration:(double)arg2 curve:(int)arg3;
 + (void)_setAlongsideAnimations:(id)arg1;
 + (void)_setAnimationAttributes:(id)arg1 skipDelegateAssignment:(BOOL)arg2;
@@ -194,6 +207,7 @@
 + (void)_setIsResponderAncestorOfFirstResponder:(BOOL)arg1 startingAtFirstResponder:(id)arg2;
 + (void)_setLeavePositionAloneDuringIntegralization;
 + (void)_setShouldEnableUIKitParallaxEffects:(BOOL)arg1;
++ (void)_setTintColorUpdating:(BOOL)arg1;
 + (void)_setViewCollectionAffectedByUITextFieldBaselineChange:(id)arg1;
 + (void)_setupAnimationWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned int)arg4 animations:(id)arg5 start:(id)arg6 completion:(id)arg7;
 + (void)_setupAnimationWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned int)arg4 factory:(id)arg5 animations:(id)arg6 start:(id)arg7 animationStateGenerator:(id)arg8 completion:(id)arg9;
@@ -201,6 +215,7 @@
 + (id)_startAnimationTracking;
 + (void)_stopAnimationWithUUID:(id)arg1;
 + (id)_tintColorForStyle:(int)arg1;
++ (BOOL)_tintColorUpdating;
 + (id)_topMostView:(id)arg1 reverse:(BOOL)arg2;
 + (void)_transitionFromView:(id)arg1 toView:(id)arg2 duration:(double)arg3 options:(unsigned int)arg4 animations:(id)arg5 completion:(id)arg6;
 + (id)_viewCollectionAffectedByUITextFieldBaselineChange;
@@ -227,6 +242,7 @@
 + (void)performSystemAnimation:(unsigned int)arg1 onViews:(id)arg2 options:(unsigned int)arg3 animations:(id)arg4 completion:(id)arg5;
 + (void)performWithoutAnimation:(id)arg1;
 + (double)pl_setHiddenAnimationDuration;
++ (id)pl_videoOverlayButtonWithStyle:(int)arg1;
 + (void)pu_animateWithDuration:(double)arg1 animations:(id)arg2 completion:(id)arg3;
 + (void)pu_animateWithDuration:(double)arg1 animations:(id)arg2;
 + (void)pu_animateWithDuration:(double)arg1 delay:(double)arg2 options:(unsigned int)arg3 animations:(id)arg4 completion:(id)arg5;
@@ -260,6 +276,7 @@
 - (struct CGSize { float x1; float x2; })__ck_alignmentRectSizeForFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)__ck_containsFirstResponder;
 - (struct CGSize { float x1; float x2; })__ck_frameSizeForAlignmentRectSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)__darkSystemColorForColor:(id)arg1;
 - (void)_accumulateViewConstraintsIntoArray:(id)arg1;
 - (void)_addCenterExpressionToExpression:(id)arg1 isVertical:(BOOL)arg2;
 - (void)_addConstraint:(id)arg1;
@@ -273,6 +290,8 @@
 - (BOOL)_allowsArchivingAsSubview;
 - (BOOL)_alwaysHandleInteractionEvents;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
+- (BOOL)_ancestorDefinesTintAdjustmentMode;
+- (BOOL)_ancestorDefinesTintColor;
 - (void)_animateToScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_animateZoomFailureToWindowPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3;
 - (BOOL)_animationIsPaused;
@@ -287,6 +306,7 @@
 - (void)_applyISEngineLayoutToSubviewsSkippingSubview:(id)arg1;
 - (void)_applyISEngineLayoutValues;
 - (void)_applyScreenScaleToContentScaleFactorIfNotSpecifiedByDeveloper;
+- (BOOL)_areAccessibilityButtonShapesEnabled;
 - (BOOL)_associatedViewControllerForwardsAppearanceCallbacks:(id)arg1 performHierarchyCheck:(BOOL)arg2 isRoot:(BOOL)arg3;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
@@ -376,6 +396,7 @@
 - (id)_descriptionForLayout;
 - (void)_didAddDependentConstraint:(id)arg1;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
+- (void)_didChangeFromIdiomOnScreen:(id)arg1 traverseHierarchy:(BOOL)arg2;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_didRemoveDependentConstraint:(id)arg1;
 - (void)_didRemoveSubview:(id)arg1;
@@ -384,6 +405,8 @@
 - (void)_disableLayoutFlushing;
 - (id)_disabledColor;
 - (void)_discardLayoutEngine:(id)arg1;
+- (void)_dispatchMotionEffectsVisitorWithDelta:(int)arg1;
+- (void)_dispatchTintColorVisitorWithReasons:(unsigned int)arg1;
 - (BOOL)_drawViewHierarchyInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_drawsAsBackdropOverlay;
 - (id)_edgeExpressionInContainer:(id)arg1 vertical:(BOOL)arg2 max:(BOOL)arg3;
@@ -404,6 +427,8 @@
 - (void)_finishTemporaryInternalConstraints:(id)arg1 withEngine:(id)arg2;
 - (id)_firstDescendantOfKind:(Class)arg1;
 - (id)_firstResponder;
+- (int)_focusState;
+- (void)_focusStateDidChange;
 - (id)_generateBackdropMaskImage;
 - (id)_generateBackdropMaskViewForFlag:(int)arg1;
 - (id)_generateContentSizeConstraints;
@@ -430,6 +455,7 @@
 - (id)_gkRecursiveDescriptionForValue:(id)arg1 forKey:(id)arg2;
 - (void)_gkRecursivelyApplyBlock:(id)arg1 depth:(int)arg2;
 - (void)_gkSetDrawsAsKnockout:(BOOL)arg1 inBackdrop:(id)arg2;
+- (void)_gkSetNeedsRender;
 - (BOOL)_gkSuperviewHasPerspectiveTransform;
 - (void)_gkUseAsModalSheetBackgroundWithGroupName:(id)arg1;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;
@@ -467,11 +493,13 @@
 - (BOOL)_isAncestorOfFirstResponder;
 - (BOOL)_isChargeEnabled;
 - (BOOL)_isDeallocating;
+- (BOOL)_isFocusableElement;
 - (BOOL)_isHiddenForReuse;
 - (BOOL)_isInAWindow;
 - (BOOL)_isInExclusiveTouchSubviewTree;
 - (BOOL)_isInTransitionBlock;
 - (BOOL)_isInVisibleHierarchy;
+- (BOOL)_isInteractiveElement;
 - (BOOL)_isRootForKeyResponderCycle;
 - (BOOL)_isRubberBanding;
 - (BOOL)_isScrollingEnabled;
@@ -502,7 +530,6 @@
 - (id)_minXVariable;
 - (id)_minYVariable;
 - (float)_minimumZoomScaleDelta;
-- (void)_modifyMotionEffectCountOfSelfAndAncestorsBy:(int)arg1;
 - (BOOL)_monitorsSubtree;
 - (id)_motionEffects;
 - (BOOL)_motionEffectsAreSuspended;
@@ -525,6 +552,7 @@
 - (void)_overrideInputViewNextResponderWithResponder:(id)arg1;
 - (id)_parallaxMotionEffect;
 - (void)_parentalLayoutEngineDidChangeTo:(id)arg1;
+- (void)_performUpdatesForPossibleChangesOfIdiom:(int)arg1 orScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_populateEngineWithConstraintsForViewSubtree:(id)arg1 forComputingFittingSizeOfView:(id)arg2;
 - (void)_postMovedFromSuperview:(id)arg1;
@@ -536,19 +564,19 @@
 - (id)_previousKeyResponder;
 - (id)_primitiveContentCompressionResistancePrioritiesValue;
 - (id)_primitiveContentHuggingPrioritiesValue;
+- (int)_primitiveTintAdjustmentMode;
 - (Class)_printFormatterClass;
 - (void)_promoteSelfOrDescendantToFirstResponderIfNecessary;
 - (void)_rebuildLayoutFromScratch;
+- (void)_receiveVisitor:(id)arg1;
 - (id)_recursiveAutolayoutTraceAtLevel:(int)arg1;
 - (id)_recursiveConstraintsTraceAtLevel:(int)arg1;
 - (void)_recursiveMakeTemporaryInternalConstraintsWithEngine:(id)arg1 ignoreAutoresizingMaskConstraints:(BOOL)arg2 returningConstraintsForViewsNeedingSecondPass:(id*)arg3;
-- (void)_recursiveNotifyInteractionTintColorDidChangeForReasons:(unsigned int)arg1;
 - (void)_recursivelyConsiderResumingMotionEffects;
 - (void)_recursivelyNameLayerTree;
 - (void)_recursivelyReconsiderMotionEffectSuspension;
 - (void)_recursivelySetHiddenForBackdropMaskViews:(BOOL)arg1;
 - (void)_recursivelySuspendMotionEffects;
-- (void)_recursivelyUpdateBackdropMaskFrames;
 - (void)_reestablishConstraintsForTransformChange;
 - (void)_registerAsReferenceView;
 - (id)_relevantLayoutVariables;
@@ -579,6 +607,8 @@
 - (id)_scrollViewWantingUpdateInConstraint:(id)arg1;
 - (id)_scroller;
 - (struct CGSize { float x1; float x2; })_scrollerContentSize;
+- (void)_setAncestorDefinesTintAdjustmentMode:(BOOL)arg1;
+- (void)_setAncestorDefinesTintColor:(BOOL)arg1;
 - (void)_setAppearanceIsInvalid:(BOOL)arg1;
 - (void)_setAutoresizingConstraints:(id)arg1;
 - (void)_setBackdropMaskView:(id)arg1 forFlag:(int)arg2;
@@ -604,6 +634,7 @@
 - (void)_setDelaysTouchesForSystemGestures:(BOOL)arg1;
 - (void)_setDrawsAsBackdropOverlay:(BOOL)arg1;
 - (void)_setDrawsAsBackdropOverlayWithBlendMode:(int)arg1;
+- (void)_setFocusState:(int)arg1;
 - (void)_setFrameForBackdropMaskViews:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 convertFrame:(BOOL)arg2;
 - (void)_setFrameForBackdropMaskViews:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setGestureInfoZoomScale:(float)arg1;
@@ -631,6 +662,7 @@
 - (void)_setSubviewWantsAutolayout;
 - (void)_setTransformForBackdropMaskViews:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
+- (void)_setUserInterfaceIdiom:(int)arg1;
 - (void)_setViewDelegate:(id)arg1;
 - (void)_setVisualAltitude:(float)arg1;
 - (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
@@ -685,6 +717,7 @@
 - (void)_updateNeedsDisplayOnBoundsChange;
 - (void)_updateParallaxEffectWithAltitude:(float)arg1 bias:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)_useContentDimensionVariablesForConstraintLowering;
+- (int)_userInterfaceIdiom;
 - (BOOL)_usesAutoresizingConstraints;
 - (BOOL)_usesLayoutEngineHostingConstraints;
 - (id)_viewControllerForAncestor;
@@ -693,6 +726,7 @@
 - (id)_viewForBaselineLayout;
 - (void)_viewHierarchyUnpreparedForConstraint:(id)arg1;
 - (id)_viewIndexPath;
+- (int)_viewOrderRelativeToView:(id)arg1;
 - (float)_visualAltitude;
 - (struct CGSize { float x1; float x2; })_visualAltitudeBias;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visualAltitudeSensitiveBoundsWithInfiniteEdges:(unsigned int)arg1;
@@ -704,6 +738,7 @@
 - (void)_webCustomViewWillBeRemovedFromSuperview;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
+- (void)_willChangeToIdiomOnScreen:(id)arg1 traverseHierarchy:(BOOL)arg2;
 - (void)_willMoveToWindow:(id)arg1 withAncestorView:(id)arg2;
 - (void)_willMoveToWindow:(id)arg1;
 - (void)_willRemoveSubviewWantingAutolayout:(id)arg1;
@@ -775,6 +810,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)bringSubviewToFront:(id)arg1;
 - (void)cam_rotateWithDeviceOrientation:(int)arg1 animated:(BOOL)arg2;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)canHandleGestures;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
@@ -1010,6 +1046,7 @@
 - (void)setValue:(id)arg1 forGestureAttribute:(int)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setViewTraversalMark:(BOOL)arg1;
+- (void)set_countOfMotionEffectsInSubtree:(unsigned int)arg1;
 - (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (id)siblingViewsAbove;
 - (id)siblingViewsUnder;

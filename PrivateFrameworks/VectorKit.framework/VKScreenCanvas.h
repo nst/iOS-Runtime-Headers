@@ -60,6 +60,7 @@
 @property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } labelEdgeInsets;
 @property BOOL rendersInBackground;
 @property int targetDisplay;
+@property BOOL useTimerDisplayLink;
 @property(readonly) VKWorld * world;
 
 + (Class)contextClass;
@@ -71,15 +72,18 @@
 - (void)addCameraController:(id)arg1;
 - (void)adoptAnimation:(id)arg1;
 - (void)animateWithTimestamp:(double)arg1;
+- (void)animationDidResume:(id)arg1;
 - (void)animationDidStop:(id)arg1;
 - (id)camera;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
+- (void)cameraController:(id)arg1 canZoomInDidChange:(BOOL)arg2;
+- (void)cameraController:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
+- (void)cameraController:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
 - (void)cameraController:(id)arg1 requestsDisplayRate:(int)arg2;
+- (void)cameraController:(id)arg1 willChangeRegionAnimated:(BOOL)arg2;
 - (void)cameraControllerDidChangeCameraState:(id)arg1;
-- (void)cameraControllerDidStopRegionAnimation:(id)arg1 completed:(BOOL)arg2;
-- (void)cameraControllerWillStartRegionAnimation:(id)arg1;
 - (id)cameraControllers;
 - (void)cameraDidChange:(id)arg1;
 - (BOOL)canRender;
@@ -125,11 +129,13 @@
 - (void)setNeedsLayout;
 - (void)setRendersInBackground:(BOOL)arg1;
 - (void)setTargetDisplay:(int)arg1;
+- (void)setUseTimerDisplayLink:(BOOL)arg1;
 - (void)takeSnapshotIfNeeded;
 - (int)targetDisplay;
 - (void)transferAnimationsTo:(id)arg1;
 - (void)updateCameraForFrameResize;
 - (BOOL)updateDisplayLinkStatus;
+- (BOOL)useTimerDisplayLink;
 - (BOOL)wantsRender;
 - (BOOL)wantsTimerTick;
 - (void)willEnterForeground;

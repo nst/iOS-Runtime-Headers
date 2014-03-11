@@ -14,6 +14,7 @@
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;
+- (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (float)skinnyKeyThreshold;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;

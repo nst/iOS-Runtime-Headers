@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSDictionary, NSString;
+@class NSDate, NSDictionary, NSString;
 
 @interface AFAccount : NSObject {
     NSString *_aceHost;
     NSString *_assistantIdentifier;
+    NSDictionary *_connectionPolicy;
+    NSDate *_connectionPolicyDate;
+    NSString *_connectionPolicyHostname;
     NSString *_group;
     NSString *_hostname;
     NSString *_identifier;
@@ -20,6 +23,9 @@
 
 @property(copy) NSString * aceHost;
 @property(copy) NSString * assistantIdentifier;
+@property(copy) NSDictionary * connectionPolicy;
+@property(copy) NSDate * connectionPolicyDate;
+@property(copy) NSString * connectionPolicyHostname;
 @property(copy) NSString * group;
 @property(copy) NSString * hostname;
 @property(copy) NSString * identifier;
@@ -33,6 +39,9 @@
 - (void).cxx_destruct;
 - (id)aceHost;
 - (id)assistantIdentifier;
+- (id)connectionPolicy;
+- (id)connectionPolicyDate;
+- (id)connectionPolicyHostname;
 - (id)description;
 - (id)group;
 - (id)hostname;
@@ -46,6 +55,9 @@
 - (id)predefinedServer;
 - (void)setAceHost:(id)arg1;
 - (void)setAssistantIdentifier:(id)arg1;
+- (void)setConnectionPolicy:(id)arg1;
+- (void)setConnectionPolicyDate:(id)arg1;
+- (void)setConnectionPolicyHostname:(id)arg1;
 - (void)setGroup:(id)arg1;
 - (void)setHostname:(id)arg1;
 - (void)setIdentifier:(id)arg1;

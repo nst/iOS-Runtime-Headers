@@ -7,14 +7,17 @@
 @interface UINavigationItemButtonView : UINavigationItemView {
     unsigned int _abbreviatedTitleIndex;
     _UIBarButtonItemAppearanceStorage *_appearanceStorage;
+    UIImageView *_backgroundImageView;
     BOOL _customBackgroundImageChangedToOrFromNil;
     UIImageView *_imageView;
     BOOL _pressed;
     int _style;
+    BOOL _wantsBlendModeForAccessibilityBackgrounds;
 }
 
 @property(setter=_setAbbreviatedTitleIndex:) unsigned int _abbreviatedTitleIndex;
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
+@property(setter=_setWantsBlendModeForAccessibilityBackgrounds:) BOOL _wantsBlendModeForAccessibilityBackgrounds;
 
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
@@ -26,6 +29,8 @@
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (unsigned int)_abbreviatedTitleIndex;
+- (void)_accessibilityButtonShapesDidChangeNotification:(id)arg1;
+- (void)_accessibilityButtonShapesParametersDidChange;
 - (Class)_appearanceGuideClass;
 - (id)_appearanceStorage;
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
@@ -39,8 +44,8 @@
 - (id)_currentTextShadowColorForBarStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })_currentTextShadowOffsetForBarStyle:(int)arg1;
 - (id)_defaultFont;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_drawBackground;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (id)_scriptingInfo;
 - (void)_setAbbreviatedTitleIndex:(unsigned int)arg1;
 - (void)_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
@@ -52,13 +57,19 @@
 - (void)_setTintColor:(id)arg1;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setWantsBlendModeForAccessibilityBackgrounds:(BOOL)arg1;
+- (BOOL)_showsAccessibilityBackgroundWhenEnabled;
 - (void)_styleAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (BOOL)_suppressesBackIndicatorView;
 - (id)_tintColor;
 - (id)_titleTextAttributesForState:(unsigned int)arg1;
 - (float)_titleYAdjustmentCustomization;
 - (BOOL)_useSilverLookForBarStyle:(int)arg1;
+- (BOOL)_wantsAccessibilityButtonShapes;
+- (BOOL)_wantsBlendModeForAccessibilityBackgrounds;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)backIndicatorViewHasRespondedToCustomBackgroundImageChange;
+- (id)backgroundImageView;
 - (BOOL)customBackgroundImageChangedToOrFromNil;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

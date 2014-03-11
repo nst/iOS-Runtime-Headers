@@ -7,14 +7,12 @@
 @interface SKUIItemState : NSObject <NSCopying> {
     NSString *_downloadPhase;
     float _downloadProgress;
-    long long _installedVersionIdentifier;
     NSNumber *_itemIdentifier;
     unsigned int _state;
 }
 
 @property(copy) NSString * downloadPhase;
 @property float downloadProgress;
-@property long long installedVersionIdentifier;
 @property(copy) NSNumber * itemIdentifier;
 @property unsigned int state;
 
@@ -23,11 +21,9 @@
 - (id)description;
 - (id)downloadPhase;
 - (float)downloadProgress;
-- (long long)installedVersionIdentifier;
 - (id)itemIdentifier;
 - (void)setDownloadPhase:(id)arg1;
 - (void)setDownloadProgress:(float)arg1;
-- (void)setInstalledVersionIdentifier:(long long)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;

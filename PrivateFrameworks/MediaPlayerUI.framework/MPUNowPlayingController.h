@@ -6,11 +6,10 @@
 
 @interface MPUNowPlayingController : NSObject {
     BOOL _cachedArtworkDirty;
-    NSString *_cachedNowPlayingAppDisplayID;
     UIImage *_cachedNowPlayingArtwork;
     double _currentDuration;
     double _currentElapsed;
-    int _currentNowPlayingAppPID;
+    NSString *_currentNowPlayingAppDisplayID;
     NSDictionary *_currentNowPlayingInfo;
     <MPUNowPlayingDelegate> *_delegate;
     int _isPlaying;
@@ -38,7 +37,7 @@
 - (void)_stopUpdatingTimeInformation;
 - (void)_unregisterForNotifications;
 - (void)_updateCurrentNowPlaying;
-- (void)_updateNowPlayingApp;
+- (void)_updateNowPlayingAppDisplayID;
 - (void)_updatePlaybackState;
 - (void)_updateTimeInformation;
 - (double)currentDuration;

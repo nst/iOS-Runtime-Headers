@@ -10,6 +10,7 @@
 + (id)sharegroupPool;
 
 - (BOOL)canBeCreatedFromOtherThread;
+- (BOOL)hasInterestForDiscreteGraphics;
 - (BOOL)isOneShot;
 - (BOOL)mustRunOnMainThread;
 - (BOOL)shouldClearCurrentContextOnOwnerChange;

@@ -16,7 +16,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })endPointForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })endPointForPath:(id)arg1 andBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)evenlyDistributeStops;
 - (float)gradientAngle;
 - (float)gradientAngleInDegrees;
@@ -50,7 +50,7 @@
 - (void)setGradientType:(unsigned int)arg1;
 - (void)setInflectionOfStopAtIndex:(unsigned int)arg1 toInflection:(float)arg2;
 - (void)setLastColor:(id)arg1;
-- (struct CGPoint { float x1; float x2; })startPointForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })startPointForPath:(id)arg1 andBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)swapStopAtIndex:(unsigned int)arg1 withStopAtIndex:(unsigned int)arg2;
 
 @end

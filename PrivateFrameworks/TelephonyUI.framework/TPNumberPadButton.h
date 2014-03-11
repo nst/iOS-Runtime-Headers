@@ -33,6 +33,7 @@
 + (float)unhighlightCrossfadeHighlightFadeDuration;
 + (float)unhighlightCrossfadeNormalBeginTime;
 + (float)unhighlightCrossfadeNormalFadeDuration;
++ (BOOL)usesBoldAssets;
 + (BOOL)usesTelephonyGlyphsWhereAvailable;
 + (float)verticalPadding;
 
@@ -52,6 +53,7 @@
 - (void)setGlyphLayer:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightedGlyphLayer:(id)arg1;
+- (void)setUsesColorBurnBlending;
 - (void)setUsesColorDodgeBlending;
 - (void)touchCancelled;
 - (void)touchDown;

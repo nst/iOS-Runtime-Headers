@@ -38,9 +38,11 @@
 - (void).cxx_destruct;
 - (float)_allDayAreaHeightForEventCount:(int)arg1;
 - (float)_borderLineWidth;
+- (void)_configureOccurrenceViewMarginAndPadding:(id)arg1;
 - (float)_height;
 - (void)addViewToScroller:(id)arg1;
 - (BOOL)allowsOccurrenceSelection;
+- (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (BOOL)containsEvent:(id)arg1;
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)delegate;

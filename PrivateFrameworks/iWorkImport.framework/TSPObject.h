@@ -6,7 +6,6 @@
 
 @interface TSPObject : NSObject {
     TSPComponent *_component;
-    long long _creationModifyObjectToken;
     <TSPObjectDelegate> *_delegate;
     long long _identifier;
     long long _modifyObjectToken;
@@ -27,7 +26,6 @@
 @property(readonly) BOOL shouldDelayArchiving;
 @property(readonly) BOOL storeOutsideObjectArchive;
 @property TSPComponent * tsp_component;
-@property(readonly) long long tsp_creationModifyObjectToken;
 @property <TSPObjectDelegate> * tsp_delegate;
 @property long long tsp_identifier;
 @property long long tsp_modifyObjectToken;
@@ -63,7 +61,6 @@
 - (BOOL)shouldDelayArchiving;
 - (BOOL)storeOutsideObjectArchive;
 - (id)tsp_component;
-- (long long)tsp_creationModifyObjectToken;
 - (id)tsp_delegate;
 - (long long)tsp_identifier;
 - (long long)tsp_modifyObjectToken;

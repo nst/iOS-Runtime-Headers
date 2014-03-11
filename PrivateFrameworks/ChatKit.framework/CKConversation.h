@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKMessage>, CKComposition, CKEntity, CKIMMessage, IMChat, IMMessage, IMService, NSArray, NSMutableArray, NSString, UIImage;
+@class <CKMessage>, CKComposition, CKEntity, CKIMMessage, IMChat, IMMessage, IMService, NSArray, NSMutableArray, NSMutableSet, NSString, UIImage;
 
 @interface CKConversation : NSObject {
     struct { 
@@ -16,6 +16,7 @@
         unsigned int moreMessagesToLoad : 1; 
         unsigned int blockingForHistoryQuery : 1; 
         unsigned int forceMMS : 1; 
+    unsigned int _backgroundSendTaskIdentifier;
     int _bulkMessageAddStack;
     IMService *_cachedPreferredService;
     BOOL _cachedPreferredServiceError;
@@ -26,6 +27,7 @@
     IMMessage *_incomingTypingMessage;
     unsigned int _limitToLoad;
     NSMutableArray *_messages;
+    NSMutableSet *_messagesWaitingToSend;
     NSString *_name;
     NSArray *_pendingHandles;
     NSMutableArray *_pendingMessages;
@@ -34,6 +36,7 @@
     UIImage *_thumbnailImage;
 }
 
+@property unsigned int backgroundSendTaskIdentifier;
 @property(readonly) BOOL buttonColor;
 @property(retain) IMChat * chat;
 @property(readonly) unsigned int disclosureAtomStyle;
@@ -50,6 +53,7 @@
 @property(readonly) BOOL isEmpty;
 @property unsigned int limitToLoad;
 @property(readonly) NSArray * messages;
+@property(retain) NSMutableSet * messagesWaitingToSend;
 @property(readonly) BOOL moreMessagesToLoad;
 @property(readonly) NSString * name;
 @property(getter=isPending,readonly) BOOL pending;
@@ -102,6 +106,7 @@
 - (BOOL)_accountIsOperational:(id)arg1 forService:(id)arg2;
 - (id)_addCKMessageFromIMMessage:(id)arg1;
 - (void)_beginBatchUpdates;
+- (void)_beginMessageSendBackgroundTaskIfNeededForMessage:(id)arg1;
 - (void)_calculateDowngradeState;
 - (void)_calculateDowngradeStateTimerFired;
 - (BOOL)_chatHasValidAccount:(id)arg1 forService:(id)arg2;
@@ -136,13 +141,16 @@
 - (BOOL)_sms_canSendToRecipients:(id)arg1 withAttachments:(id)arg2 alertIfUnable:(BOOL)arg3;
 - (BOOL)_sms_supportsCharacterCountForAddresses:(id)arg1;
 - (BOOL)_sms_willSendMMSByDefaultForAddresses:(id)arg1;
+- (void)_stopMessageSendBackgroundTaskIfNeeded;
 - (void)_targetChat:(id)arg1 toService:(id)arg2 newComposition:(BOOL)arg3;
 - (void)_targetChatToPreferredService:(id)arg1 newComposition:(BOOL)arg2;
+- (void)_timeoutMessageSendBackgroundTask;
 - (void)_updateDowngradeState:(BOOL)arg1 checkAgainInterval:(double)arg2;
 - (void)_updateTypingIndicatorForComposition:(id)arg1;
 - (void)acceptTransfer:(id)arg1;
 - (void)addMessage:(id)arg1;
 - (void)addPlaceholderMessageIfNeededWithDate:(id)arg1;
+- (unsigned int)backgroundSendTaskIdentifier;
 - (void)beginBulkMessageAdd;
 - (BOOL)buttonColor;
 - (BOOL)canAcceptMediaObject:(id)arg1 givenMediaObjects:(id)arg2;
@@ -196,6 +204,7 @@
 - (void)markAsStale;
 - (double)maxTrimDurationForMediaType:(int)arg1;
 - (id)messages;
+- (id)messagesWaitingToSend;
 - (BOOL)moreMessagesToLoad;
 - (id)name;
 - (void)newMessageContentChangedWithComposition:(id)arg1;
@@ -230,6 +239,7 @@
 - (void)sendMessage:(id)arg1 newComposition:(BOOL)arg2;
 - (void)sendMessage:(id)arg1 onService:(id)arg2 newComposition:(BOOL)arg3;
 - (id)serviceDisplayName;
+- (void)setBackgroundSendTaskIdentifier:(unsigned int)arg1;
 - (void)setChat:(id)arg1;
 - (void)setForceMMS:(BOOL)arg1;
 - (void)setIgnoringTypingUpdates:(BOOL)arg1;
@@ -237,6 +247,7 @@
 - (void)setLimitToLoad:(unsigned int)arg1;
 - (void)setLoadedMessageCount:(unsigned int)arg1 completion:(id)arg2;
 - (void)setLoadedMessages:(id)arg1;
+- (void)setMessagesWaitingToSend:(id)arg1;
 - (void)setPendingComposeRecipients:(id)arg1;
 - (void)setPendingHandles:(id)arg1;
 - (void)setRecipients:(id)arg1;

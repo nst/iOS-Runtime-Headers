@@ -14,6 +14,7 @@
     BOOL _ignoresTouches;
     BOOL _inPassthroughHitTest;
     NSArray *_passthroughViews;
+    BOOL _suppressesBackdrops;
 }
 
 @property id delegate;
@@ -22,9 +23,11 @@
 @property(retain) UIBarButtonItem * highlightedBarButtonItem;
 @property BOOL ignoresTouches;
 @property(retain) NSArray * passthroughViews;
+@property BOOL suppressesBackdrops;
 
 + (id)defaultDimmingColor;
 
+- (id)_backdropViewsToAnimate;
 - (void)_simulateTap;
 - (void)dealloc;
 - (id)delegate;
@@ -45,6 +48,8 @@
 - (void)setHighlightedBarButtonItem:(id)arg1;
 - (void)setIgnoresTouches:(BOOL)arg1;
 - (void)setPassthroughViews:(id)arg1;
+- (void)setSuppressesBackdrops:(BOOL)arg1;
+- (BOOL)suppressesBackdrops;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

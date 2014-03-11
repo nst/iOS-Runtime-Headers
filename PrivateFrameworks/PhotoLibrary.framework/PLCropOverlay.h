@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAMBottomBar, PLContactPhotoOverlay, PLCropOverlayBottomBar, PLCropOverlayCropView, PLCropOverlayWallpaperBottomBar, PLProgressHUD, TPBottomDoubleButtonBar, TPButton, TPCameraButton, UIButton, UIImageView, UILabel, UIToolbar, UIView;
+@class CAMBottomBar, PLContactPhotoOverlay, PLCropOverlayBottomBar, PLCropOverlayCropView, PLCropOverlayWallpaperBottomBar, PLProgressHUD, UIButton, UIImageView, UILabel, UIToolbar, UIView;
 
 @interface PLCropOverlay : UIView {
     struct CGRect { 
@@ -25,17 +25,17 @@
     UIButton *__cameraCancelButton;
     UIImageView *_bottomShineView;
     UIButton *_cancelButton;
-    TPButton *_cancelPushButton;
     PLContactPhotoOverlay *_contactPhotoOverlay;
     } _cropRect;
     PLCropOverlayCropView *_cropView;
     UIToolbar *_customToolbar;
     id _delegate;
     PLProgressHUD *_hud;
+    BOOL _isEditingHomeScreen;
+    BOOL _isEditingLockScreen;
     int _mode;
+    BOOL _motionToggleIsOn;
     UIButton *_okButton;
-    TPCameraButton *_okPushButton;
-    TPBottomDoubleButtonBar *_oldBottomBar;
     UIView *_overlayContainerView;
     UIImageView *_shadowView;
     float _statusBarHeight;
@@ -49,6 +49,10 @@
 @property(readonly) UIButton * _cameraCancelButton;
 @property(retain) CAMBottomBar * cameraBottomBar;
 @property(readonly) PLContactPhotoOverlay * contactPhotoOverlay;
+@property BOOL isEditingHomeScreen;
+@property BOOL isEditingLockScreen;
+@property BOOL motionToggleHidden;
+@property BOOL motionToggleIsOn;
 @property BOOL previewMode;
 @property(readonly) PLCropOverlayWallpaperBottomBar * wallpaperBottomBar;
 
@@ -65,13 +69,16 @@
 - (void)_setMode:(int)arg1;
 - (void)_tappedBottomBarCancelButton:(id)arg1;
 - (void)_tappedBottomBarDoneButton:(id)arg1;
+- (void)_tappedBottomBarMotionToggle;
 - (void)_tappedBottomBarPlaybackButton:(id)arg1;
 - (void)_tappedBottomBarSetBothButton;
 - (void)_tappedBottomBarSetHomeButton;
 - (void)_tappedBottomBarSetLockButton;
 - (void)_updateCropRectInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updateMotionToggle;
 - (void)_updateTitle;
 - (void)_updateToolbarItems:(BOOL)arg1;
+- (void)_updateWallpaperBottomBarSettingButtons;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
 - (id)bottomBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bottomBarFrame;
@@ -89,14 +96,18 @@
 - (void)didPlayVideo;
 - (void)dismiss;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3 isDisplayedInPopover:(BOOL)arg4 buttonBarStyle:(int)arg5;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3 isDisplayedInPopover:(BOOL)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertIrisView:(id)arg1;
+- (BOOL)isEditingHomeScreen;
+- (BOOL)isEditingLockScreen;
 - (BOOL)isTelephonyUIMode:(int)arg1;
+- (BOOL)isWallpaperUIMode:(int)arg1;
 - (void)layoutSubviews;
 - (int)mode;
-- (void)okButtonClicked:(id)arg1;
+- (BOOL)motionToggleHidden;
+- (BOOL)motionToggleIsOn;
 - (id)overlayContainerView;
 - (BOOL)previewMode;
 - (void)removeProgress;
@@ -107,7 +118,10 @@
 - (void)setCropRectVisible:(BOOL)arg1 duration:(float)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setOKButtonColor:(int)arg1;
+- (void)setIsEditingHomeScreen:(BOOL)arg1;
+- (void)setIsEditingLockScreen:(BOOL)arg1;
+- (void)setMotionToggleHidden:(BOOL)arg1;
+- (void)setMotionToggleIsOn:(BOOL)arg1;
 - (void)setOKButtonShowsCamera:(BOOL)arg1;
 - (void)setOKButtonTitle:(id)arg1;
 - (void)setOverlayContainerView:(id)arg1;
@@ -119,8 +133,6 @@
 - (void)setTitle:(id)arg1;
 - (void)setTitleHidden:(BOOL)arg1 animationDuration:(float)arg2;
 - (void)statusBarHeightDidChange:(id)arg1;
-- (id)telephonyUIBottomBar;
-- (id)telephonyUIShutterButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (id)wallpaperBottomBar;
 

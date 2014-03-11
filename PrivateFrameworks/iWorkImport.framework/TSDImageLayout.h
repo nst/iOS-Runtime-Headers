@@ -121,6 +121,7 @@
 - (void)resizeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 asChild:(BOOL)arg2;
 - (BOOL)shouldDisplayGuides;
 - (BOOL)shouldRenderFrameStroke;
+- (BOOL)shouldSnapWhileResizing;
 - (struct CGSize { float x1; float x2; })sizeOfFrameRectIncludingCoverage;
 - (id)smartPathSource;
 - (BOOL)supportsRotation;

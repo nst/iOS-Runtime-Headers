@@ -29,6 +29,7 @@
 @property(readonly) NSString * title;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)URLForTilePath:(struct { int x1; int x2; int x3; float x4; })arg1;
 - (id)URLTemplate;
 - (void)_assignProviderID;

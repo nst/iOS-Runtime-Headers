@@ -29,14 +29,19 @@
 + (id)treeOfType:(int)arg1;
 + (id)uniqueName;
 
+- (void)_addKeylayoutKeys:(id)arg1;
 - (id)_cacheRootNameForKey:(id)arg1;
+- (int)_keyCountOnNamedRow:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyplaneFrame;
 - (BOOL)_needsScaling;
 - (BOOL)_renderAsStringKey;
 - (int)_variantType;
+- (id)activeGeometriesList;
+- (id)activeShapesFromOutputShapes:(id)arg1 inputShapes:(id)arg2;
 - (id)alternateKeyplaneName;
 - (id)attributeSet:(BOOL)arg1;
 - (id)autolocalizedKeyCacheIterator;
+- (BOOL)avoidAutoDeactivation;
 - (BOOL)avoidsLanguageIndicator;
 - (BOOL)behavesAsShiftKey;
 - (BOOL)boolForProperty:(id)arg1;
@@ -58,6 +63,7 @@
 - (int)displayTypeHint;
 - (int)dragThreshold;
 - (BOOL)dynamicDisplayTypeHint;
+- (void)elaborateLayoutWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (float)fadeOutDuration;
 - (id)findLeftMoreKey;
 - (id)firstCachedKeyWithName:(id)arg1;
@@ -67,6 +73,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (id)fullRepresentedString;
 - (id)geometries;
+- (id)geometriesList;
 - (id)geometriesOrderedByPosition;
 - (id)geometry;
 - (id)geometrySet:(BOOL)arg1;
@@ -100,6 +107,7 @@
 - (id)keysWithString:(id)arg1;
 - (id)layoutName;
 - (id)layoutTag;
+- (id)listShapes;
 - (id)localizationKey;
 - (BOOL)looksLike:(id)arg1;
 - (BOOL)looksLikeShiftAlternate;
@@ -118,6 +126,7 @@
 - (BOOL)renderKeyInKeyplane:(id)arg1;
 - (int)rendering;
 - (id)representedString;
+- (void)setActiveGeometriesList:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setCache:(id)arg1;
 - (void)setClipCorners:(int)arg1;
@@ -130,6 +139,7 @@
 - (void)setForceMultitap:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrameOnly:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGeometriesList:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setGhost:(BOOL)arg1;
 - (void)setHighlightedVariantIndex:(int)arg1;

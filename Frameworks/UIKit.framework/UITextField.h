@@ -52,7 +52,6 @@
     UIButton *_clearButton;
     int _clearButtonMode;
     } _clearButtonOffset;
-    NSDictionary *_defaultTextAttributes;
     BOOL _deferringBecomeFirstResponder;
     id _delegate;
     UIImage *_disabledBackground;
@@ -186,6 +185,7 @@
 - (void)_clearSelectionUI;
 - (id)_copyFont:(id)arg1 newSize:(float)arg2 maxSize:(float)arg3;
 - (void)_createBaselineLayoutLabelIfNecessary;
+- (void)_createInteractionAssistant;
 - (int)_currentTextAlignment;
 - (void)_define:(id)arg1;
 - (id)_dictationInterpretations;
@@ -217,6 +217,7 @@
 - (BOOL)_partsShouldBeMini;
 - (float)_passcodeStyleAlpha;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (id)_placeholderColor;
 - (id)_placeholderLabel;
@@ -273,6 +274,7 @@
 - (id)_text;
 - (id)_textInputViewForAddingGestureRecognizers;
 - (id)_textLabelView;
+- (BOOL)_textNeedsSanitizing:(id)arg1;
 - (struct CGSize { float x1; float x2; })_textSize;
 - (struct CGSize { float x1; float x2; })_textSizeUsingFullFontSize:(BOOL)arg1;
 - (void)_updateAtomBackground;
@@ -463,7 +465,6 @@
 - (void)setClearsPlaceholderOnBeginEditing:(BOOL)arg1;
 - (void)setContentVerticalAlignment:(int)arg1;
 - (void)setContinuousSpellCheckingEnabled:(BOOL)arg1;
-- (void)setDefaultAttributes:(id)arg1;
 - (void)setDefaultTextAttributes:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisabledBackground:(id)arg1;
@@ -541,5 +542,6 @@
 - (id)webView;
 - (void)willAttachFieldEditor:(id)arg1;
 - (void)willDetachFieldEditor:(id)arg1;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

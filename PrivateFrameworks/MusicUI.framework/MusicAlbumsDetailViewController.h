@@ -5,7 +5,6 @@
 @class MPImageCache, MPUCompletionQueryDataSource, NSOperationQueue;
 
 @interface MusicAlbumsDetailViewController : MusicTableViewController <MPUCompletionQueryDataSourceDelegate, MPUCompletionFooterViewDelegate> {
-    int _downloadAllActionRow;
     NSOperationQueue *_downloadabilityOperationQueue;
     int _downloadableSongCount;
     BOOL _hasEverReceivedWillAppear;
@@ -13,7 +12,6 @@
     BOOL _isDownloading;
     BOOL _isTransitioning;
     float _maximumDurationWidth;
-    int _shuffleActionRow;
     BOOL _useDownloadAllArtistCellConfig;
 }
 
@@ -22,17 +20,19 @@
 @property(readonly) BOOL isDownloading;
 @property(readonly) float maximumDurationWidth;
 
++ (id)actionCellConfigurationClasses;
++ (BOOL)shouldPushNowPlayingOnSelection;
++ (BOOL)shouldShowCMC;
+
 - (void).cxx_destruct;
 - (void)_MPHAlbumsDetailViewController_canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
 - (void)_MPHAlbumsDetailViewController_defaultsDidChangeNotification:(id)arg1;
 - (void)_applyCloudDownloadStateForHeaderView:(id)arg1 withAlbum:(id)arg2;
-- (void)_calculateActionRowIndices;
 - (void)_configureFooterView:(id)arg1 forSection:(int)arg2 offer:(id)arg3;
 - (id)_createTableView;
 - (void)_downloadAllButtonAction:(id)arg1;
 - (int)_footerStyleForSection:(int)arg1;
-- (void)_updateDownloadabilityState;
-- (void)_updateTableViewMinimumHeightAdditions;
+- (void)_updateDownloadabilityStateWithCanReloadActionRows:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateTitle;
 - (void)_updateVisibleHeadersCloudDownloadStates;
 - (void)_updateVisibleHeadersCloudRightInset;
@@ -49,13 +49,12 @@
 - (id)initWithDataSource:(id)arg1;
 - (BOOL)isDownloading;
 - (float)maximumDurationWidth;
-- (int)numberOfPrefixActionRowsInTableView:(id)arg1;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (Class)tableView:(id)arg1 prefixActionCellConfigurationAtIndex:(int)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -35,6 +35,7 @@
         } orientation; 
         float aspectRatio; 
         float verticalFieldOfView; 
+        double horizontalOffset; 
     union { 
         struct { 
             float m00; 

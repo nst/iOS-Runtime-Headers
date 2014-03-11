@@ -56,6 +56,7 @@
 - (id)_namedTextEffectPartDefinition;
 - (void)_normalizeRenditionKeySpec:(id)arg1 forSchemaRendition:(id)arg2;
 - (id)_predicateForRenditionKeySpec:(id)arg1;
+- (void)_synchronousSave;
 - (id)_themeBitSource:(id*)arg1;
 - (id)_themeBitSourceForReferencedFilesAtURLs:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2 referenceFiles:(BOOL)arg3 bitSource:(id)arg4 customInfos:(id)arg5;

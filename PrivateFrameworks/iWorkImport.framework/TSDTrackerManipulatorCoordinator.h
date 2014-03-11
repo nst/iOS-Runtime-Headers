@@ -19,6 +19,7 @@
 - (BOOL)hasRegisteredTrackerManipulator:(id)arg1;
 - (id)init;
 - (void)operationDidEnd;
+- (void)operationWillEnd;
 - (void)p_notifyControlChange;
 - (void)registerTrackerManipulator:(id)arg1;
 - (BOOL)relinquishTrackerManipulatorControl:(id)arg1;

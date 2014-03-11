@@ -7,4 +7,6 @@
 
 + (id)cellForRecipient:(id)arg1;
 
+- (void)setServiceColor:(BOOL)arg1 animated:(BOOL)arg2;
+
 @end

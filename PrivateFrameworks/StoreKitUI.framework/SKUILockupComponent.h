@@ -15,12 +15,14 @@
     } _lockupStyle;
 }
 
+@property(readonly) BOOL _needsItemData;
 @property(readonly) SKUIEditorialComponent * editorial;
 @property(readonly) SKUIItem * item;
 @property(readonly) long long itemIdentifier;
 @property(readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
 
 - (void).cxx_destruct;
+- (BOOL)_needsItemData;
 - (void)_setItem:(id)arg1;
 - (void)_setLockupStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg1;
 - (int)componentType;

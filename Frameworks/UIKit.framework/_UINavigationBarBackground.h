@@ -4,7 +4,7 @@
 
 @class UIColor, UIImageView, UIView, _UIBackdropView, _UINavigationBarAppearanceStorage;
 
-@interface _UINavigationBarBackground : _UIBarBackgroundImageView {
+@interface _UINavigationBarBackground : _UIBarBackgroundImageView <_UIBackdropViewGraphicsQualityChangeDelegate> {
     struct { 
         unsigned int barTranslucence : 3; 
         unsigned int barStyle : 3; 
@@ -25,6 +25,7 @@
 @property BOOL barWantsAdaptiveBackdrop;
 @property(getter=isTranslucent) BOOL translucent;
 
+- (id)_adaptiveBackdrop;
 - (id)_currentCustomBackground;
 - (id)_currentCustomBackgroundDedicatedToBarMetrics:(int*)arg1 barPosition:(int*)arg2;
 - (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
@@ -35,6 +36,8 @@
 - (void)_setShadowView:(id)arg1;
 - (id)_shadowView;
 - (id)appearanceStorage;
+- (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(int)arg2;
+- (id)backdropView:(id)arg1 willChangeToGraphicsQuality:(int)arg2;
 - (int)barStyle;
 - (id)barTintColor;
 - (BOOL)barWantsAdaptiveBackdrop;

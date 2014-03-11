@@ -8,6 +8,9 @@
     NSMutableDictionary *mCache;
 }
 
++ (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })IOSLayoutSettings;
++ (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })desktopLayoutSettings;
++ (void)populateDesktopInsertionIconsIntoDictionary:(id)arg1;
 + (void)populateIPadInsertionIconsIntoDictionary:(id)arg1;
 + (void)populateIPadInspectorIconsIntoDictionary:(id)arg1;
 + (void)populateIPhoneInsertionIconsIntoDictionary:(id)arg1;
@@ -18,6 +21,6 @@
 
 - (void)dealloc;
 - (id)initWithCache:(id)arg1;
-- (id)layoutCacheForChartType:(id)arg1 iPhone:(BOOL)arg2 inspector:(BOOL)arg3 landscape:(BOOL)arg4;
+- (id)layoutCacheForChartType:(id)arg1 cacheType:(struct TSCH3DPrecalculatedLayoutCacheType { int x1; int x2; BOOL x3; })arg2;
 
 @end

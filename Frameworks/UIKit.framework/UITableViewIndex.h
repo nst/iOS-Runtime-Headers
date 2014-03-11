@@ -39,6 +39,8 @@
 
 - (void)_cacheAndMeasureTitles;
 - (id)_displayTitles;
+- (id)_dotImage;
+- (id)_externalDotImage;
 - (id)_fontForIdiom:(int)arg1;
 - (int)_idiom;
 - (float)_minLineSpacingForIdiom:(int)arg1;
@@ -59,7 +61,6 @@
 - (unsigned int)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
 - (BOOL)pastBottom;
 - (BOOL)pastTop;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)selectedSection;
 - (id)selectedSectionTitle;
 - (void)setFont:(id)arg1;

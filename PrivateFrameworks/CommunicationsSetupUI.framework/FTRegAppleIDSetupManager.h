@@ -41,6 +41,7 @@
 - (void)dealloc;
 - (id)handler;
 - (id)init;
+- (id)phoneNumberDisplayString;
 - (id)selectedAliases;
 - (id)selectionSummaryText;
 - (void)setCandidateAliases:(id)arg1;
@@ -50,5 +51,6 @@
 - (void)setSetupOperations:(id)arg1;
 - (id)setupOperations;
 - (BOOL)shouldShowAliasSelectionUI;
+- (BOOL)showsPhoneNumberDisplayString;
 
 @end

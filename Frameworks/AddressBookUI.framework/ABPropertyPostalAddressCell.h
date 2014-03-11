@@ -10,6 +10,8 @@
 
 @property(retain) ABPostalAddressEditorView * addressEditor;
 
++ (void)initialize;
+
 - (id)addressEditor;
 - (id)contentViewEditingConstraints;
 - (void)dealloc;

@@ -12,6 +12,7 @@
 @property(retain) CPBitmapStore * store;
 
 + (void)cacheImageIfNecessary:(id)arg1;
++ (id)cachedImageNamed:(id)arg1 completion:(id)arg2;
 + (id)conditionImageNamed:(id)arg1;
 + (id)conditionImageWithConditionIndex:(int)arg1;
 + (void)preCacheMiniIcons;

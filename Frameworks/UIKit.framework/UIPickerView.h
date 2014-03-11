@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPickerViewDataSource>, <UIPickerViewDelegate>, CALayer, NSMutableArray, UIColor, UIImageView, UIView;
+@class <UIPickerViewDataSource>, <UIPickerViewDelegate>, CALayer, NSMutableArray, UIColor, UIImageView, UIView, _UIPickerViewTestParameters;
 
-@interface UIPickerView : UIView <UIPickerTableViewContainerDelegate, UITableViewDelegate, NSCoding, UITableViewDataSource> {
+@interface UIPickerView : UIView <UIPickerTableViewContainerDelegate, UITableViewDelegate, UIPickerViewScrollTesting, NSCoding, UITableViewDataSource> {
     struct { 
         unsigned int needsLayout : 1; 
         unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; 
@@ -24,6 +24,7 @@
     UIView *_backgroundView;
     UIImageView *_bottomGradient;
     UIView *_bottomLineView;
+    _UIPickerViewTestParameters *_currentTestParameters;
     <UIPickerViewDataSource> *_dataSource;
     <UIPickerViewDelegate> *_delegate;
     NSMutableArray *_dividers;
@@ -61,6 +62,7 @@
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forInterfaceOrientation:(int)arg2;
 
 - (void)_addMagnifierLinesForRowHeight:(float)arg1;
+- (void)_completeCurrentTest;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (id)_contentView;
@@ -79,8 +81,11 @@
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isInLayoutSubviews;
 - (BOOL)_isLandscapeOrientation;
+- (void)_iterateOnCurrentTest;
 - (BOOL)_magnifierEnabled;
+- (void)_noteScrollingFinishedForComponent:(int)arg1;
 - (id)_orientationImageSuffix;
+- (void)_performScrollTest:(id)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_perspectiveTransform;
 - (id)_popoverSuffix;
 - (void)_populateArchivedSubviews:(id)arg1;
@@ -89,8 +94,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionBarRectForHeight:(float)arg1;
 - (id)_selectionBarSuffix;
 - (void)_sendCheckedRow:(int)arg1 inTableView:(id)arg2 checked:(BOOL)arg3;
-- (void)_sendSelectionChangedForComponent:(int)arg1;
-- (void)_sendSelectionChangedFromTable:(id)arg1;
+- (void)_sendSelectionChangedForComponent:(int)arg1 notify:(BOOL)arg2;
+- (void)_sendSelectionChangedFromTable:(id)arg1 notify:(BOOL)arg2;
 - (void)_setDrawsBackground:(BOOL)arg1;
 - (void)_setHighlightColor:(id)arg1;
 - (void)_setInLayoutSubviews:(BOOL)arg1;
@@ -105,6 +110,7 @@
 - (float)_tableRowHeight;
 - (id)_textColor;
 - (id)_textShadowColor;
+- (void)_updateSelectedRows;
 - (void)_updateSound;
 - (void)_updateWithOldSize:(struct CGSize { float x1; float x2; })arg1 newSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)_usesCheckSelection;

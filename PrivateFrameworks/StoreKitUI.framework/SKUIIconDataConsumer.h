@@ -35,6 +35,7 @@
 + (id)headerIconConsumer;
 + (id)listIconConsumer;
 + (id)lockupIconConsumerWithSize:(int)arg1;
++ (id)parentBundleConsumer;
 + (id)purchasedIconConsumer;
 + (id)roomIconConsumer;
 + (id)shareSheetIconConsumer;

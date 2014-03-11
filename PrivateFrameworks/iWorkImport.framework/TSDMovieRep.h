@@ -8,6 +8,7 @@
     struct CGImage { } *mAlternatePosterImage;
     AVAsset *mAssetForPlayability;
     BOOL mCurrentlyObservingPlayerLayer;
+    BOOL mDidCancelUpdatingPlayButtonVisibility;
     BOOL mDidCheckPlayability;
     float mDynamicVolume;
     BOOL mInReadMode;
@@ -17,6 +18,7 @@
     CALayer *mLayerToStroke;
     CALayer *mMovieReflectionLayer;
     CALayer *mMovieReflectionMaskLayer;
+    BOOL mNeedsTeardownPlayerController;
     TSDButtonKnob *mPlayButtonKnob;
     BOOL mPlayButtonKnobVisible;
     TSKAVPlayerController *mPlayerController;
@@ -34,6 +36,7 @@
 @property(readonly) TSDMovieInfo * movieInfo;
 @property(readonly) BOOL p_playButtonFitsInFrame;
 @property(readonly) TSDButtonKnob * p_playButtonKnob;
+@property(getter=isPlayable,readonly) BOOL playable;
 @property(getter=isPlaying,readonly) BOOL playing;
 @property(readonly) BOOL shouldSingleTapPlay;
 @property(readonly) double visibleTime;
@@ -71,6 +74,7 @@
 - (void)i_updateFrameRep;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (BOOL)isDraggable;
+- (BOOL)isPlayable;
 - (BOOL)isPlaying;
 - (id)movieInfo;
 - (id)movieLayout;
@@ -97,6 +101,7 @@
 - (BOOL)p_playButtonFitsInFrame;
 - (id)p_playButtonKnob;
 - (void)p_playForKnob;
+- (void)p_setNeedsTeardownPlayerControllerOnUpdateLayer;
 - (void)p_setPositionAndBoundsIfDifferent:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)p_setupPlayerControllerIfNecessary;
 - (void)p_setupPlayerLayerIfNecessary;
@@ -112,8 +117,10 @@
 - (BOOL)p_shouldPlayerControllerExistThroughoutSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_strokeFrameForLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)p_teardownPlayerController;
+- (void)p_teardownPlayerControllerIfNeeded;
 - (id)p_tilingLayerForPlayerStroke;
 - (id)p_tilingLayerForReflectionStroke;
+- (void)p_togglePlaying;
 - (void)p_updateEndTime;
 - (void)p_updateMovieReflectionMaskLayer;
 - (void)p_updatePlayButtonVisibility;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, SSAuthenticationContext, SUClientInterface, SUScriptAccount, SUScriptAccountManager, SUScriptAppleAccountStore, SUScriptApplication, SUScriptDevice, SUScriptFairPlayContext, SUScriptKeyValueStore, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptPreviewOverlay, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, WebFrame;
+@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, SSAuthenticationContext, SUClientInterface, SUScriptAccount, SUScriptAccountManager, SUScriptAppleAccountStore, SUScriptApplication, SUScriptDevice, SUScriptFairPlayContext, SUScriptKeyValueStore, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptPassbookLibrary, SUScriptPreviewOverlay, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, WebFrame;
 
 @interface SUScriptInterface : SUScriptObject {
     SUScriptAccountManager *_accountManager;
@@ -44,11 +44,13 @@
 @property(readonly) SUScriptMediaLibrary * mediaLibrary;
 @property(readonly) SUScriptNavigationBar * navigationBar;
 @property(readonly) NSNumber * orientation;
+@property(readonly) SUScriptPassbookLibrary * passbookLibrary;
 @property(readonly) SUScriptPreviewOverlay * previewOverlay;
 @property(retain) SUScriptAccount * primaryAccount;
 @property(retain) SUScriptAccount * primaryLockerAccount;
 @property(readonly) SUScriptProtocol * protocol;
 @property(readonly) SUScriptPurchaseManager * purchaseManager;
+@property(readonly) NSString * referringUserAgent;
 @property(readonly) id screenReaderRunning;
 @property(retain) SUScriptWindowContext * scriptWindowContext;
 @property(readonly) SUScriptSectionsController * sectionsController;
@@ -185,6 +187,7 @@
 - (void)openURL:(id)arg1;
 - (id)orientation;
 - (id)parentViewController;
+- (id)passbookLibrary;
 - (void)perfLog:(id)arg1;
 - (void)performPurchaseAnimationForIdentifier:(id)arg1 style:(id)arg2;
 - (void)pingURL:(id)arg1;
@@ -194,6 +197,7 @@
 - (id)protocol;
 - (id)purchaseManager;
 - (void)redeemCode:(id)arg1;
+- (id)referringUserAgent;
 - (void)registerNavBarButtonWithTitle:(id)arg1 side:(id)arg2 function:(id)arg3;
 - (void)reloadFooterSection:(id)arg1 withURL:(id)arg2;
 - (void)reportAProblemForIdentifier:(id)arg1;
@@ -220,6 +224,7 @@
 - (void)setOrientation:(id)arg1;
 - (void)setPrimaryAccount:(id)arg1;
 - (void)setPrimaryLockerAccount:(id)arg1;
+- (void)setReferringUserAgent:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (void)setWindow:(id)arg1;

@@ -34,6 +34,7 @@
     BOOL _scrollingToOccurrence;
     BOOL _settingDate;
     BOOL _shouldEverShowTimeIndicators;
+    BOOL _showsTimeLabel;
     NSTimer *_timeMarkerTimer;
     EKDayTimeView *_timeView;
     UIImageView *_topVerticalGridExtension;
@@ -68,6 +69,7 @@
 @property(readonly) float scrollOffset;
 @property BOOL shouldEverShowTimeIndicators;
 @property BOOL showsLeftBorder;
+@property BOOL showsTimeLabel;
 @property BOOL showsTimeLine;
 @property BOOL showsTimeMarker;
 @property(retain) UIColor * timeViewTextColor;
@@ -90,6 +92,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollerRect;
 - (int)_secondAtPosition:(float)arg1;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_selectedDate;
+- (BOOL)_showingAllDaySection;
 - (void)_startMarkerTimer;
 - (void)_stopScrolling;
 - (void)_timeViewTapped:(id)arg1;
@@ -106,6 +109,7 @@
 - (BOOL)allowsScrolling;
 - (void)bringEventToFront:(id)arg1;
 - (id)calendar;
+- (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })currentTimeRectInView:(id)arg1;
 - (id)dataSource;
 - (double)dateAtPoint:(struct CGPoint { float x1; float x2; })arg1 isAllDay:(BOOL*)arg2 requireAllDayRegionInsistence:(BOOL)arg3;
@@ -188,6 +192,7 @@
 - (void)setScrollerYInset:(float)arg1 keepingYPointVisible:(float)arg2;
 - (void)setShouldEverShowTimeIndicators:(BOOL)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
+- (void)setShowsTimeLabel:(BOOL)arg1;
 - (void)setShowsTimeLine:(BOOL)arg1;
 - (void)setShowsTimeMarker:(BOOL)arg1;
 - (void)setTimeViewTextColor:(id)arg1;
@@ -195,6 +200,7 @@
 - (void)setUsesVibrantGridDrawing:(BOOL)arg1;
 - (BOOL)shouldEverShowTimeIndicators;
 - (BOOL)showsLeftBorder;
+- (BOOL)showsTimeLabel;
 - (BOOL)showsTimeLine;
 - (BOOL)showsTimeMarker;
 - (id)timeViewTextColor;

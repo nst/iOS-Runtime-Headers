@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUTrackDownloadViewDelegate>, MPMediaDownloadObserver, MPMediaItem, NSString, RadioTrack, SKUIItemOfferButton, UIViewController;
+@class <RUTrackDownloadViewDelegate>, MPAVItem, MPMediaDownloadObserver, MPMediaItem, NSArray, NSString, RadioTrack, SKUIItemOfferButton, UIViewController;
 
-@interface RUTrackDownloadView : UIView <MCProfileConnectionObserver, MPStoreDownloadManagerObserver, SKStoreProductViewControllerDelegate, SKUIItemOfferButtonDelegate> {
+@interface RUTrackDownloadView : UIView <MPStoreDownloadManagerObserver, SKStoreProductViewControllerDelegate, SKUIItemOfferButtonDelegate> {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     struct CGSize { 
         float width; 
         float height; 
+    } _alignmentRectInsets;
+    MPAVItem *_avItem;
     NSString *_baseOriginator;
     int _buyButtonTitleStyle;
+    NSArray *_buyOffers;
     <RUTrackDownloadViewDelegate> *_delegate;
     MPMediaDownloadObserver *_downloadObserver;
-    BOOL _isInAppPurchaseAllowed;
-    BOOL _isProfileInAppPurchaseAllowed;
-    BOOL _isProfileiTunesAllowed;
+    BOOL _isPurchaseAllowed;
     SKUIItemOfferButton *_itemOfferButton;
     MPMediaItem *_mediaItem;
     } _overrideSize;
@@ -25,9 +31,12 @@
     int _state;
     NSString *_stationHash;
     long long _stationID;
+    BOOL _supportsAlbumOnly;
     UIViewController *_viewControllerForPresenting;
 }
 
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
+@property(setter=setAVItem:,retain) MPAVItem * avItem;
 @property(copy) NSString * baseOriginator;
 @property int buyButtonTitleStyle;
 @property <RUTrackDownloadViewDelegate> * delegate;
@@ -38,20 +47,36 @@
 @property(readonly) int state;
 @property(copy) NSString * stationHash;
 @property long long stationID;
+@property BOOL supportsAlbumOnly;
 @property UIViewController * viewControllerForPresenting;
 
 - (void).cxx_destruct;
+- (long long)_albumStoreID;
+- (void)_avItemBuyOffersDidChangeNotification:(id)arg1;
+- (void)_avItemStoreIDDidChangeNotification:(id)arg1;
+- (id)_bestItemOffer;
+- (id)_buyOffers;
 - (long long)_downloadStoreID;
-- (BOOL)_isAlbumOnlyRadioTrack:(id)arg1;
+- (id)_effectiveRadioTrack;
+- (BOOL)_isAlbumOnlyOffer:(id)arg1;
+- (BOOL)_isExplicit;
 - (void)_isExplicitTracksEnabledDidChangeNotification:(id)arg1;
 - (void)_itemOfferButtonAction:(id)arg1;
 - (void)_itemOfferCancelConfirmationAction:(id)arg1;
 - (void)_itemOfferShowConfirmationAction:(id)arg1;
-- (void)_radioModelDidChangeNotification:(id)arg1;
+- (void)_radioPurchaseAllowedDidChangeNotification:(id)arg1;
+- (void)_radioTrackDidChangeNotification:(id)arg1;
+- (void)_registerForAVItemNotifications;
+- (void)_registerForRadioTrackNotifications;
 - (void)_sizeToFitAndNotifyDelegate;
-- (void)_updateIsInAppPurchaseAllowedForProfileConnection:(id)arg1 updateState:(BOOL)arg2;
+- (id)_title;
+- (void)_unregisterForAVItemNotifications;
+- (void)_unregisterForRadioTrackNotifications;
+- (void)_updateIsPurchasedAllowedAndUpdateState:(BOOL)arg1;
 - (void)_updateStateAndInternalViewsAnimated:(BOOL)arg1;
 - (void)_updateStateAndInternalViewsIfNeededForDownloads:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (id)avItem;
 - (id)baseOriginator;
 - (int)buyButtonTitleStyle;
 - (void)dealloc;
@@ -65,9 +90,9 @@
 - (int)overrideState;
 - (id)overrideTitleText;
 - (void)productViewControllerDidFinish:(id)arg1;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)radioTrack;
+- (void)setAVItem:(id)arg1;
+- (void)setAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setBaseOriginator:(id)arg1;
 - (void)setBuyButtonTitleStyle:(int)arg1;
 - (void)setDelegate:(id)arg1;
@@ -77,11 +102,13 @@
 - (void)setRadioTrack:(id)arg1;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
+- (void)setSupportsAlbumOnly:(BOOL)arg1;
 - (void)setViewControllerForPresenting:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)state;
 - (id)stationHash;
 - (long long)stationID;
+- (BOOL)supportsAlbumOnly;
 - (id)viewControllerForPresenting;
 
 @end

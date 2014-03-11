@@ -4,7 +4,7 @@
 
 @class <MFMailComposeViewControllerDelegate>, <NSCoding>, ABPeoplePickerNavigationController, ABPersonViewController, ABUnknownPersonViewController, MFAddressPickerReformatter, MFComposeBodyField, MFComposeImageSizeView, MFComposeSubjectView, MFComposeTextContentView, MFGenericAttachmentStore, MFLock, MFMailAccountProxyGenerator, MFMailComposeRecipientView, MFMailPopoverManager, MFMailboxUid, MFModernComposeRecipientAtom, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, NSArray, NSDictionary, NSString, UIActionSheet, UIAlertView, UIBarButtonItem, UIImagePickerController, UIKeyCommand, UIView, _MFMailCompositionContext;
 
-@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, MFMailPopoverManagerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate, MFGroupDetailViewControllerDelegate> {
+@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, MFMailPopoverManagerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate, MFGroupDetailViewControllerDelegate> {
     unsigned int _isDirty : 1;
     unsigned int _bodyTextChanged : 1;
     unsigned int _shouldAutosaveWithSuspendInfo : 1;
@@ -102,15 +102,10 @@
 @property int sourceAccountManagement;
 @property(retain) ABUnknownPersonViewController * unknownPersonViewController;
 
-+ (id)defaultSignature;
 + (void)initialize;
 + (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1 originatingBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
 + (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1;
 + (id)preferenceForKey:(id)arg1;
-+ (id)signature;
-+ (id)signatureForSendingEmailAddress:(id)arg1;
-+ (id)signatureMarkupForSendingEmailAddress:(id)arg1;
-+ (BOOL)useAccountSignatures;
 
 - (void)_accountsChanged:(id)arg1;
 - (void)_addSignature:(BOOL)arg1 includeMarkup:(BOOL)arg2;
@@ -199,7 +194,7 @@
 - (void)_showMissingIdentityAlert;
 - (void)_showPersonCardForRecent:(id)arg1 showDeleteButton:(BOOL)arg2;
 - (void)_showPhotoPickerWithSourceType:(int)arg1;
-- (id)_stripSignatureMarkup:(id)arg1;
+- (id)_signatureString;
 - (void)_textChanged:(id)arg1;
 - (void)_tryAddSenderToBccRecipients;
 - (void)_unscaleImages;
@@ -330,6 +325,7 @@
 - (id)popoverManager;
 - (id)popoverManagerCreateIfNeeded:(BOOL)arg1;
 - (BOOL)presentSearchResultsForComposeRecipientView:(id)arg1;
+- (unsigned int)presentationOptionsForRecipient:(id)arg1;
 - (id)recentRecipientPresentingCard;
 - (void)recipientViewDidBecomeFirstResponder:(id)arg1;
 - (void)recipientViewDidResignFirstResponder:(id)arg1;

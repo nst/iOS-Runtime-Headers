@@ -6,12 +6,12 @@
    See Warning(s) below.
  */
 
-@class MPAVController, MPMediaItem, MusicAVPlayer, MusicNowPlayingObserver;
+@class MPAVController, MPMediaItem, MPNowPlayingObserver, MusicAVPlayer;
 
 @interface MusicPlayerServerDelegate : NSObject <MPMusicPlayerControllerServerDelegate> {
     MusicAVPlayer *_applicationPlayer;
     MPMediaItem *_firstItem;
-    MusicNowPlayingObserver *_nowPlayingObserver;
+    MPNowPlayingObserver *_nowPlayingObserver;
     int _playbackShuffleMode;
     id _repeatChangeHandler;
     MPAVController *_repeatChangeHandlerPlayer;

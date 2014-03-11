@@ -19,6 +19,7 @@
 }
 
 + (id)stringForTSCHStyleSwapType:(int)arg1;
++ (id)swapTargetFromTuple:(id)arg1;
 
 - (const struct ChartCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; struct Reference {} *x4; boolx5; int x6; unsigned int x7[1]; }*)chartCommandArchiveFromUnarchiver:(id)arg1;
 - (BOOL)canCoalesceWithCommand:(id)arg1;

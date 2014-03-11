@@ -7,11 +7,13 @@
 @interface SKUIRedeemItem : SKUIItem {
     SKUIArtworkList *artworks;
     long long itemIdentifier;
+    int itemKind;
     NSString *title;
 }
 
 @property(retain) SKUIArtworkList * artworks;
 @property long long itemIdentifier;
+@property int itemKind;
 @property(retain) NSString * title;
 
 - (void).cxx_destruct;
@@ -23,6 +25,7 @@
 - (id)largestArtworkURL;
 - (void)setArtworks:(id)arg1;
 - (void)setItemIdentifier:(long long)arg1;
+- (void)setItemKind:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

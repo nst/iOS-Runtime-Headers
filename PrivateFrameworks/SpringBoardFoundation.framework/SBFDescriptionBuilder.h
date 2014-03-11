@@ -18,6 +18,7 @@
 - (id)appendKey:(id)arg1;
 - (id)appendKeys:(id)arg1;
 - (id)appendName:(id)arg1 boolValue:(BOOL)arg2;
+- (id)appendName:(id)arg1 cgFloatValue:(float)arg2;
 - (id)appendName:(id)arg1 doubleValue:(double)arg2;
 - (id)appendName:(id)arg1 intValue:(int)arg2;
 - (id)appendName:(id)arg1 integerValue:(int)arg2;

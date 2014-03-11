@@ -2,81 +2,109 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPAudioDeviceController, NSDictionary, NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, RadioStation;
+@class ISDialogOperation, MPAVController, MPAVRoute, MPAVRoutingController, MPJingleTiltReportingController, MPRTCReportingController, MPReportingController, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface MPRadioAdObserver : NSObject <ADBannerViewDelegate> {
+@interface MPRadioAdObserver : NSObject <ADBannerViewDelegate, ISDialogOperationDelegate, MPAVRoutingControllerDelegate> {
+    MPRTCReportingController *_RTCReportingController;
     NSObject<OS_dispatch_queue> *_accessQueue;
-    MPAudioDeviceController *_audioDeviceController;
     int _blankedStateNotifyToken;
     BOOL _blankedStateNotifyTokenIsValid;
-    MPAVItem *_currentItem;
+    MPReportingController *_globalReportingController;
+    BOOL _isSlotAcquisitionInProgress;
+    MPJingleTiltReportingController *_jingleTiltReportingController;
     int _lockStateNotifyToken;
     BOOL _lockStateNotifyTokenIsValid;
     double _minDurationToCountAsPlayed;
     unsigned int _numberOfSkippedTracks;
-    NSDictionary *_pickedRoute;
-    NSObject<OS_dispatch_source> *_playEventFlushTimerSource;
+    MPAVRoute *_pickedRoute;
+    NSString *_playbackSessionID;
+    MPAVController *_player;
     int _policyEngineEnabledCount;
     NSMutableArray *_queuedAds;
-    NSMapTable *_skipEventsByStationInfo;
+    MPAVRoutingController *_routingController;
+    NSDate *_sapSessionLoadBeginDate;
+    double _skipThreshold;
+    ISDialogOperation *_slotAcquisitionDialogOperation;
     double _startTimeForCurrentItem;
-    RadioStation *_station;
     int _visualEngagementCount;
     BOOL _visuallyEngaged;
 }
 
+@property(retain) MPRTCReportingController * RTCReportingController;
+@property(retain) MPReportingController * globalReportingController;
+@property(retain) MPJingleTiltReportingController * jingleTiltReportingController;
 @property(readonly) unsigned int numberOfSkippedTracks;
-@property(retain) RadioStation * station;
+@property(retain) MPAVController * player;
 @property(getter=isVisuallyEngaged,readonly) BOOL visuallyEngaged;
 
 + (id)sharedAdObserver;
 
 - (void).cxx_destruct;
+- (id)RTCReportingController;
 - (id)_adPolicyEngine;
-- (void)_addPlayEvents:(id)arg1 withStationInfo:(id)arg2;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
-- (void)_cancelPlayEventFlushTimer;
+- (void)_attemptSlotAcquisitionWithAdditionalBodyParameters:(id)arg1;
+- (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (void)_clearAssetCacheForItem:(id)arg1;
 - (void)_deviceOrientationDidChangeNotification:(id)arg1;
-- (void)_disablePolicyEngine;
-- (void)_enablePolicyEngine;
-- (void)_handleSkipForChangedItem:(id)arg1;
+- (void)_getCurrentTime:(double*)arg1 duration:(double*)arg2 wasSkipped:(BOOL*)arg3 didAssetFailToLoad:(BOOL*)arg4 forItem:(id)arg5;
+- (void)_handleSkipForChangedItem:(id)arg1 didChangeStation:(BOOL)arg2;
 - (void)_heartbeatChangedNotification:(id)arg1;
 - (void)_hideAdViewNotification:(id)arg1;
 - (BOOL)_isPolicyEngineEnabled;
 - (void)_itemAssetLoadedDidChangeNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
-- (double)_itemTimeForItem:(id)arg1 wasSkipped:(BOOL*)arg2 didAssetFailToLoad:(BOOL*)arg3;
+- (void)_itemDidFinishLoadingNotification:(id)arg1;
+- (void)_itemNewAccessLogEntryNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_loadMinDurationToCountAsPlayedFromURLBag;
-- (id)_playEventForItem:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)_radioConfigurationDidChangeNotification:(id)arg1;
-- (void)_reportPlaybackEndedForTimeout;
-- (void)_schedulePlayEventFlushTimer;
-- (void)_sendPlayAndSkipEvents;
-- (void)_songBeganResponseNotification:(id)arg1;
+- (void)_radioFairPlayControllerSAPSessionDidFinishLoadingNotification:(id)arg1;
+- (void)_radioFairPlayControllerSAPSessionWillBeginLoadingNotification:(id)arg1;
+- (void)_radioStreamTrackAVItemDidReceiveTimedMetadataPingsNotification:(id)arg1;
+- (void)_recordReportingEvents:(id)arg1;
+- (void)_registerForPlayerNotifications;
+- (void)_reportPlaybackEndedForTimeoutWithItem:(id)arg1;
+- (id)_reportingPlaybackEndEventForItem:(id)arg1;
+- (id)_reportingRadioStationMetadataForItem:(id)arg1;
+- (id)_reportingTrackMetadataForItem:(id)arg1;
 - (void)_stationEntryResponseNotification:(id)arg1;
-- (id)_stationInfoForItem:(id)arg1;
+- (void)_storeBagDidLoadNotification:(id)arg1;
+- (void)_unregisterForPlayerNotifications;
 - (void)_updateVisualEngagementWithApplicationState:(int)arg1;
-- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
+- (void)_updateWithStoreBag:(id)arg1;
+- (void)attemptSlotAcquisition;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
 - (BOOL)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
 - (void)bannerViewStoryboardPresentationInDidComplete:(id)arg1;
+- (void)beginEnablingPolicyEngine;
 - (void)beginVisualEngagement;
 - (void)cancelQueuedAds;
 - (void)dealloc;
 - (void)didHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
 - (void)didScheduleAd:(id)arg1;
+- (void)endEnablingPolicyEngine;
 - (void)endVisualEngagement;
+- (void)getHistoryWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (void)getTracksWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (id)globalReportingController;
+- (id)heartbeatTokenReturningError:(id*)arg1;
 - (id)init;
+- (BOOL)isGatewayVideoAdEnabledForStation:(id)arg1;
 - (BOOL)isVisuallyEngaged;
+- (id)jingleTiltReportingController;
+- (void)noteStationDidChange:(id)arg1 withCompletionHandler:(id)arg2;
 - (unsigned int)numberOfSkippedTracks;
+- (void)operation:(id)arg1 selectedButton:(id)arg2;
 - (void)optimalTransmissionWindowDidOpen;
-- (void)setStation:(id)arg1;
-- (id)station;
+- (id)player;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)setGlobalReportingController:(id)arg1;
+- (void)setJingleTiltReportingController:(id)arg1;
+- (void)setPlayer:(id)arg1;
+- (void)setRTCReportingController:(id)arg1;
 - (void)willHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
 
 @end

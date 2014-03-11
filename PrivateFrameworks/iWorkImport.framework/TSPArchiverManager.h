@@ -6,6 +6,7 @@
 
 @interface TSPArchiverManager : NSObject {
     struct { 
+        unsigned int isStopped : 1; 
         unsigned int delegateRespondsToDidCreateArchiver : 1; 
         unsigned int delegateRespondsToShouldDelayArchivingObject : 1; 
     NSObject<OS_dispatch_queue> *_archiveCompletionQueue;
@@ -27,8 +28,10 @@
 - (void)archiveWithArchiver:(id)arg1 queue:(id)arg2 archiveCompletion:(id)arg3;
 - (id)archiverForObject:(id)arg1 archiveQueue:(id)arg2 archiveCompletion:(id)arg3;
 - (void)archiverForObject:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)dealloc;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 archiverClass:(Class)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (void)stop;
 
 @end

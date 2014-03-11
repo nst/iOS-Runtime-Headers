@@ -3,20 +3,24 @@
  */
 
 @interface CUIStyleEffectConfiguration : NSObject <NSCopying> {
+    BOOL _foregroundColorShouldTintEffects;
     int _presentationState;
     int _state;
     BOOL _useSimplifiedEffect;
     int _value;
 }
 
+@property BOOL foregroundColorShouldTintEffects;
 @property int presentationState;
 @property int state;
 @property BOOL useSimplifiedEffect;
 @property int value;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)foregroundColorShouldTintEffects;
 - (id)init;
 - (int)presentationState;
+- (void)setForegroundColorShouldTintEffects:(BOOL)arg1;
 - (void)setPresentationState:(int)arg1;
 - (void)setState:(int)arg1;
 - (void)setUseSimplifiedEffect:(BOOL)arg1;

@@ -8,7 +8,7 @@
 + (void)drawGenericImageIntoContext:(struct CGContext { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2 preset:(id)arg3 usingRepresentativeSpecificSeriesFillProperties:(id)arg4;
 + (id)presetImagerForChartType:(id)arg1;
 
-- (id)imageWithPreset:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 imageScale:(float)arg3 swatchFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 documentRoot:(id)arg5;
+- (id)imageWithPreset:(id)arg1 target:(int)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 imageScale:(float)arg4 swatchFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 documentRoot:(id)arg6;
 - (id)init;
 - (id)initWithChartType:(id)arg1;
 - (id)p_chartType;

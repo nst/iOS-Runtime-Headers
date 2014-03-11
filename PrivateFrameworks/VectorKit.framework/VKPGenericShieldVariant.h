@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface VKPGenericShieldVariant : PBCodable {
+@interface VKPGenericShieldVariant : PBCodable <NSCopying> {
     struct { 
         unsigned int fontSize : 1; 
         unsigned int leftCapWidth : 1; 
@@ -54,6 +54,7 @@
 - (void)addLayer:(struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })arg1;
 - (void)clearLayers;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

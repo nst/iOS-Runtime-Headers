@@ -26,6 +26,7 @@
     BOOL _secondaryCandidatesViewIsCurrent;
     BOOL _showHiddenCandidatesOnly;
     BOOL _showsExtensionCandidates;
+    BOOL _singleLineMode;
     BOOL _supportsNumberKeySelection;
     } _visualStyling;
 }
@@ -48,6 +49,7 @@
 @property BOOL secondaryCandidatesViewIsCurrent;
 @property BOOL showHiddenCandidatesOnly;
 @property BOOL showsExtensionCandidates;
+@property BOOL singleLineMode;
 @property BOOL supportsNumberKeySelection;
 @property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
@@ -129,6 +131,7 @@
 - (void)setSecondaryCandidatesViewIsCurrent:(BOOL)arg1;
 - (void)setShowHiddenCandidatesOnly:(BOOL)arg1;
 - (void)setShowsExtensionCandidates:(BOOL)arg1;
+- (void)setSingleLineMode:(BOOL)arg1;
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
@@ -142,6 +145,7 @@
 - (void)showPreviousPage;
 - (void)showPreviousRow;
 - (BOOL)showsExtensionCandidates;
+- (BOOL)singleLineMode;
 - (id)statisticsIdentifier;
 - (void)stepOneLine:(BOOL)arg1;
 - (BOOL)supportsNumberKeySelection;

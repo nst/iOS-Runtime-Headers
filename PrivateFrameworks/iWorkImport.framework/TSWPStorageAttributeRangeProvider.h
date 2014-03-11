@@ -3,7 +3,7 @@
  */
 
 @interface TSWPStorageAttributeRangeProvider : TSWPStorageRangeProvider {
-    struct TSWPAttributeEnumerator { id x1; unsigned int x2; struct TSWPAttributeArray {} *x3; BOOL x4; unsigned int x5; } *_enumerator;
+    struct TSWPAttributeEnumerator { id x1; unsigned int x2; unsigned int x3; struct TSWPAttributeArray {} *x4; BOOL x5; unsigned int x6; } *_enumerator;
 }
 
 - (void)dealloc;

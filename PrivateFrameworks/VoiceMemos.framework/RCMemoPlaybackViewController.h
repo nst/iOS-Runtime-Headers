@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCMemoPlaybackViewControllerDelegate>, <RCWaveformDataSource>, NSString, RCControlsView, RCGLWaveformViewController, UIBarButtonItem, UIColor, UIFont, UILabel;
+@class <RCMemoPlaybackViewControllerDelegate>, <RCWaveformDataSource>, CADisplayLink, NSString, RCControlsView, RCGLWaveformViewController, RCSavedRecording, RCUIConfiguration, UIBarButtonItem, UIFont, UILabel, _RCMemoAlertContext;
 
-@interface RCMemoPlaybackViewController : UIViewController <RCWaveformGeneratorSegmentOutputObserver, RCControlsViewDelegate, RCWaveformViewDelegate> {
+@interface RCMemoPlaybackViewController : UIViewController <RCWaveformGeneratorSegmentOutputObserver, RCControlsViewDelegate, UITextFieldDelegate, RCGLWaveformViewDelegate> {
+    RCUIConfiguration *_UIConfiguration;
     BOOL _animateNextLayout;
-    UIColor *_backgroundColor;
     int _controlsConfiguration;
     RCControlsView *_controlsView;
     double _currentTime;
     unsigned int _dismissOptions;
+    CADisplayLink *_displayLink;
     double _duration;
     BOOL _initWithNibNameOK;
     UIBarButtonItem *_leftNavigationButtonItem;
     <RCMemoPlaybackViewControllerDelegate> *_memoControllerDelegate;
     BOOL _playing;
     float _preferredTimeWidth;
+    _RCMemoAlertContext *_presentedAlertContext;
+    RCSavedRecording *_recording;
     UILabel *_recordingDateLabel;
     UIFont *_recordingDateLabelFont;
     UILabel *_recordingNameLabel;
@@ -30,7 +33,7 @@
     RCGLWaveformViewController *_waveformViewController;
 }
 
-@property(retain) UIColor * backgroundColor;
+@property(copy) RCUIConfiguration * UIConfiguration;
 @property int controlsConfiguration;
 @property BOOL controlsHidden;
 @property(readonly) RCControlsView * controlsView;
@@ -41,6 +44,7 @@
 @property(retain) UIBarButtonItem * leftNavigationButtonItem;
 @property <RCMemoPlaybackViewControllerDelegate> * memoControllerDelegate;
 @property BOOL playing;
+@property(readonly) RCSavedRecording * recording;
 @property(retain) UILabel * recordingDateLabel;
 @property(retain) NSString * recordingDateText;
 @property(retain) UILabel * recordingNameLabel;
@@ -53,13 +57,19 @@
 @property(readonly) RCGLWaveformViewController * waveformViewController;
 
 - (void).cxx_destruct;
+- (id)UIConfiguration;
+- (void)_applyUIConfiguration;
+- (void)_displayLinkDidUpdate:(id)arg1;
+- (void)_handleDismissedPresentedAlertWithClickedButton:(int)arg1;
 - (void)_layoutViews;
 - (void)_recordingNameLabelAction:(id)arg1;
 - (void)_setWaveformDataSource:(id)arg1 currentTime:(double)arg2;
 - (void)_updateTimeViews;
+- (void)_updateTimeViewsNow;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)applicationWillEnterForegroundNotification:(id)arg1;
-- (id)backgroundColor;
+- (void)cancelEditNameAlert;
 - (void)cancelEditing;
 - (void)commitEditing;
 - (int)controlsConfiguration;
@@ -71,25 +81,28 @@
 - (void)controlsViewDidChooseStartPlaying:(id)arg1;
 - (void)controlsViewDidChooseStartRecording:(id)arg1;
 - (double)currentTime;
+- (void)dealloc;
 - (int)defaultControlsConfiguration;
 - (void)didFinishLoadingWaveform;
 - (void)didUpdateWaveform;
 - (void)dismiss;
 - (unsigned int)dismissOptions;
 - (double)duration;
+- (void)editRecordingNameWithAlertTitle:(id)arg1 message:(id)arg2 confirmationTitle:(id)arg3 cancelTitle:(id)arg4 completionBlock:(id)arg5;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithWaveformDataSource:(id)arg1;
 - (id)leftNavigationButtonItem;
 - (id)memoControllerDelegate;
 - (id)navigationItem;
 - (BOOL)playing;
+- (id)recording;
 - (id)recordingDateLabel;
 - (id)recordingDateText;
 - (id)recordingNameLabel;
 - (id)recordingNameText;
 - (id)rightNavigationButtonItem;
+- (void)savedRecordingsModelDidChangeNotification:(id)arg1;
 - (BOOL)screenUpdatesDisabled;
-- (void)setBackgroundColor:(id)arg1;
 - (void)setControlsConfiguration:(int)arg1 animate:(BOOL)arg2;
 - (void)setControlsConfiguration:(int)arg1;
 - (void)setControlsHidden:(BOOL)arg1;
@@ -107,6 +120,9 @@
 - (void)setScreenUpdatesDisabled:(BOOL)arg1;
 - (void)setTimeDisplayLabel:(id)arg1;
 - (void)setTimeDisplayType:(int)arg1;
+- (void)setUIConfiguration:(id)arg1;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (BOOL)textFieldShouldReturn:(id)arg1;
 - (id)timeDisplayLabel;
 - (int)timeDisplayType;
 - (void)updateNavigationItem;

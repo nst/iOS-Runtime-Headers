@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class CPExclusiveLock, NSManagedObjectContext, NSManagedObjectModel, NSMutableDictionary, NSNumber, NSPersistentStoreCoordinator, NSPredicate, NSString, NoteAccountObject, NoteStoreObject;
+@class AccountUtilities, CPExclusiveLock, NSManagedObjectContext, NSManagedObjectModel, NSMutableDictionary, NSNumber, NSPersistentStoreCoordinator, NSPredicate, NSString, NoteAccountObject, NoteStoreObject;
 
 @interface NoteContext : NSObject {
     struct __CXIndex { } *__SharedNoteStoreSearchIndex;
     int __SharedNoteStoreSearchIndexCount;
     CPExclusiveLock *__SharedNoteStoreSearchIndexLock;
+    AccountUtilities *_accountUtilities;
     BOOL _hasPriorityInSaveConflicts;
     BOOL _inMigrator;
     BOOL _indexInBatches;
@@ -29,6 +30,7 @@
     NSString *_testingFilePrefix;
 }
 
+@property(retain) AccountUtilities * accountUtilities;
 @property(readonly) BOOL isIndexing;
 @property(readonly) NSManagedObjectContext * managedObjectContext;
 
@@ -39,7 +41,9 @@
 - (void)_createLocalAccount:(id*)arg1 andStore:(id*)arg2;
 - (id)_notePropertyObjectForKey:(id)arg1;
 - (id)accountForAccountId:(id)arg1;
+- (id)accountUtilities;
 - (id)allAccounts;
+- (id)allAccountsAsFaults:(BOOL)arg1 prefechedRelationshipKeyPaths:(id)arg2;
 - (id)allNotes;
 - (id)allNotesInCollection:(id)arg1;
 - (id)allNotesMatchingPredicate:(id)arg1;
@@ -52,6 +56,7 @@
 - (void)clearCaches;
 - (id)collectionForInfo:(id)arg1;
 - (id)collectionForObjectID:(id)arg1;
+- (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (id)copyNotesForSearch:(void*)arg1 complete:(char *)arg2;
 - (id)copyNotesForSearch:(void*)arg1 predicate:(id)arg2 complete:(char *)arg3;
 - (unsigned int)countOfNotes;
@@ -71,6 +76,7 @@
 - (BOOL)deleteStore:(id)arg1;
 - (void)destroySearchIndex;
 - (void)enableChangeLogging:(BOOL)arg1;
+- (id)faultedInStoresForAccounts:(id)arg1;
 - (id)findNotesWithText:(id)arg1 betweenDate:(id)arg2 andDate:(id)arg3;
 - (BOOL)forceDeleteAccount:(id)arg1;
 - (void)forceSetUpUniqueObjects;
@@ -81,6 +87,7 @@
 - (void)indexNotes:(id)arg1;
 - (id)init;
 - (id)initForMigrator;
+- (id)initWithTestingFilePrefix:(id)arg1 atPath:(id)arg2 inMigrator:(BOOL)arg3 accountUtilities:(id)arg4;
 - (id)initWithTestingFilePrefix:(id)arg1 atPath:(id)arg2 inMigrator:(BOOL)arg3;
 - (id)initWithTestingFilePrefix:(id)arg1 inMigrator:(BOOL)arg2;
 - (id)initWithTestingFilePrefix:(id)arg1;
@@ -90,6 +97,7 @@
 - (id)localAccount;
 - (id)localStore;
 - (id)managedObjectContext;
+- (void)managedObjectContextWillSaveNotification:(id)arg1;
 - (id)managedObjectModel;
 - (id)newFRCForCollection:(id)arg1 delegate:(id)arg2;
 - (id)newFetchRequestForNotes;
@@ -118,6 +126,7 @@
 - (BOOL)saveOutsideApp:(id*)arg1;
 - (BOOL)saveSilently:(id*)arg1;
 - (struct __CXIndex { }*)searchIndex:(char *)arg1;
+- (void)setAccountUtilities:(id)arg1;
 - (void)setHasPriorityInSaveConflicts:(BOOL)arg1;
 - (void)setPropertyValue:(id)arg1 forKey:(id)arg2;
 - (void)setUpCoreDataStack;
@@ -125,6 +134,7 @@
 - (BOOL)setUpLocalAccountAndStore;
 - (void)setUpUniqueObjects;
 - (BOOL)shouldDisableLocalStore;
+- (BOOL)shouldObserveDarwinNotifications;
 - (BOOL)shouldResumeIndexing;
 - (void)sortNotes:(id)arg1;
 - (id)storeForObjectID:(id)arg1;

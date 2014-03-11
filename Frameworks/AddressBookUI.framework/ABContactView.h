@@ -4,7 +4,7 @@
 
 @class <ABContactViewDataSource>, <ABContactViewDelegate>, ABContactHeaderView, CNContact, NSDictionary, UIColor, UIView;
 
-@interface ABContactView : UITableView {
+@interface ABContactView : ABCachingTableView {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -22,7 +22,7 @@
 
 @property(copy) NSDictionary * actionTextAttributes;
 @property(retain) UIColor * backgroundColor;
-@property(readonly) CNContact * contact;
+@property(retain) CNContact * contact;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
 @property(retain) UIView * customHeaderView;
 @property <ABContactViewDataSource> * dataSource;
@@ -44,10 +44,14 @@
 + (id)cellIdentifierForPropertyPlaceholder;
 + (id)cellIdentifierForSplitActions;
 + (id)defaultCardProperties;
++ (id)headerFooterIdentifierForGroupHeaderFooter;
 + (BOOL)isFixedValueProperty:(id)arg1;
 + (BOOL)isMultiValueProperty:(id)arg1;
 + (id)nameProperties;
 + (id)optionalCardProperties;
++ (void)preCacheContent;
++ (void)preCacheDisplayCells;
++ (void)preCacheEditCells;
 + (id)requiredNameProperties;
 
 - (id)actionTextAttributes;
@@ -66,6 +70,7 @@
 - (void)setActionTextAttributes:(id)arg1;
 - (void)setAttributesFromContactView:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setContact:(id)arg1;
 - (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCustomHeaderView:(id)arg1;
 - (void)setLabelTextAttributes:(id)arg1;

@@ -34,6 +34,7 @@
 - (id)stroke;
 - (id)style;
 - (Class)styleClass;
+- (id)styleIdentifierTemplateForNewPreset;
 - (id)stylesForCopyStyle;
 
 @end

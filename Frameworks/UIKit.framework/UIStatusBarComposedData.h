@@ -34,7 +34,7 @@
         unsigned int quietModeInactive : 1; 
         unsigned int tetheringConnectionCount; 
     NSString *_doubleHeightStatus;
-    BOOL _itemEnabled[32];
+    BOOL _itemEnabled[30];
     } _rawData;
 }
 

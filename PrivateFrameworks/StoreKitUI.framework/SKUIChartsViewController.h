@@ -4,7 +4,7 @@
 
 @class NSURL, SKUICategoryController, SKUIStorePageViewController;
 
-@interface SKUIChartsViewController : SKUIViewController <SKUICategoryControllerDelegate, SKUIMetricsViewController> {
+@interface SKUIChartsViewController : SKUIViewController <SKUICategoryControllerDelegate, SKUIMetricsViewController, SKUIViewControllerTesting> {
     SKUICategoryController *_categoryController;
     BOOL _hasCategoryButton;
     SKUIStorePageViewController *_storePageViewController;
@@ -27,6 +27,7 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
+- (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
 - (void)reloadData;
 - (void)setClientContext:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;

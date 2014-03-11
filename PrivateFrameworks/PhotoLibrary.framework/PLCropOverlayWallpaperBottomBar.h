@@ -11,7 +11,12 @@
     PLWallpaperButton *_doSetButton;
     PLWallpaperButton *_doSetHomeScreenButton;
     PLWallpaperButton *_doSetLockScreenButton;
+    float _maxToggleWidth;
+    PLWallpaperButton *_motionToggle;
+    BOOL _motionToggleHidden;
     UIView *_separatorLine;
+    BOOL _shouldOnlyShowHomeScreenButton;
+    BOOL _shouldOnlyShowLockScreenButton;
     _UILegibilityLabel *_titleLabel;
 }
 
@@ -21,7 +26,12 @@
 @property(readonly) PLWallpaperButton * doSetButton;
 @property(readonly) PLWallpaperButton * doSetHomeScreenButton;
 @property(readonly) PLWallpaperButton * doSetLockScreenButton;
+@property float maxToggleWidth;
+@property(readonly) PLWallpaperButton * motionToggle;
+@property BOOL motionToggleHidden;
 @property(retain) UIView * separatorLine;
+@property BOOL shouldOnlyShowHomeScreenButton;
+@property BOOL shouldOnlyShowLockScreenButton;
 @property(retain) _UILegibilityLabel * titleLabel;
 
 - (void)_commonPLCropOverlayWallpaperBottomBarInitialization;
@@ -40,13 +50,23 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (float)maxToggleWidth;
+- (id)motionToggle;
+- (BOOL)motionToggleHidden;
 - (id)separatorLine;
 - (void)setBackdropView:(id)arg1;
+- (void)setMaxToggleWidth:(float)arg1;
+- (void)setMotionToggleHidden:(BOOL)arg1;
 - (void)setSeparatorLine:(id)arg1;
+- (void)setShouldOnlyShowHomeScreenButton:(BOOL)arg1;
+- (void)setShouldOnlyShowLockScreenButton:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (BOOL)shouldOnlyShowHomeScreenButton;
+- (BOOL)shouldOnlyShowLockScreenButton;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)titleLabel;
 - (void)updateForChangedSettings:(id)arg1;
+- (float)widthForToggleText;
 
 @end

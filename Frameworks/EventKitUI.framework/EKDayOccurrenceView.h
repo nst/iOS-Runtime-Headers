@@ -2,10 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EKDayOccurrenceContentView, EKEvent, NSString, UIColor, UIImageView, UIView;
 
 @interface EKDayOccurrenceView : UIView <NSCopying> {
@@ -33,7 +29,6 @@
     BOOL _dragging;
     BOOL _drawsResizeHandles;
     UIView *_endResizeHandle;
-    id _endSelectionStateCallback;
     BOOL _hideColorBar;
     BOOL _hideText;
     } _margin;
@@ -66,7 +61,6 @@
 @property BOOL dimmed;
 @property BOOL dragging;
 @property BOOL drawsResizeHandles;
-@property(copy) id endSelectionStateCallback;
 @property(getter=isFacebook) BOOL facebook;
 @property BOOL hideColorBar;
 @property BOOL hideText;
@@ -110,7 +104,6 @@
 - (void).cxx_destruct;
 - (id)_backgroundColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computeContentRect;
-- (float)_fadedInContentViewHorizontalAdjustment;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameMutatedForProximityToHourLine:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_invalidateContentBounds;
 - (id)_newResizeHandleView;
@@ -135,9 +128,8 @@
 - (int)dragTypeFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)dragging;
 - (BOOL)drawsResizeHandles;
-- (id)endSelectionStateCallback;
 - (float)enoughHeightForOneLine;
-- (void)fadeInContentViewAt:(float)arg1 leftScreenEdge:(float)arg2 minWidth:(float)arg3 animated:(BOOL)arg4;
+- (void)fadeInContentViewAt:(float)arg1 minWidth:(float)arg2 animated:(BOOL)arg3;
 - (BOOL)hasIcon;
 - (BOOL)hideColorBar;
 - (BOOL)hideText;
@@ -173,7 +165,6 @@
 - (void)setDimmed:(BOOL)arg1;
 - (void)setDragging:(BOOL)arg1;
 - (void)setDrawsResizeHandles:(BOOL)arg1;
-- (void)setEndSelectionStateCallback:(id)arg1;
 - (void)setFacebook:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;

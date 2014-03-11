@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIRedeemTextField, UIBarButtonItem, UIImageView;
+@class NSString, SKUIRedeemITunesPassLockup, SKUIRedeemTextField, UIBarButtonItem, UIImageView;
 
 @interface SKUIRedeemInputViewController : SKUIRedeemStepViewController <UITextFieldDelegate> {
     int _category;
     SKUIRedeemTextField *_field;
     UIImageView *_imageView;
     NSString *_initialCode;
+    SKUIRedeemITunesPassLockup *_passbookLockup;
     UIBarButtonItem *_redeemButton;
 }
 
@@ -18,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;
 - (id)_newTextFieldWithClientContext:(id)arg1;
+- (void)_passbookLockupAction:(id)arg1;
 - (void)_redeemAction:(id)arg1;
 - (void)_redeemConfigurationImagesDidLoad:(id)arg1;
 - (void)_termsButtonAction:(id)arg1;

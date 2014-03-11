@@ -12,21 +12,23 @@
     SBUIPasscodeLockNumberPad *_numberPad;
     UIView *_rightToNumberPadFiller;
     UIView *_statusBackgroundView;
+    UILabel *_statusSubtitleView;
     UILabel *_statusTitleView;
     UIView *_topToStatusFieldOrEntryFieldFiller;
     BOOL _undoInputOnTouchCancellation;
 }
 
 @property(retain) NSString * lastCharacterBeforeBackspace;
+@property(retain) UILabel * statusSubtitleView;
 @property(retain) UILabel * statusTitleView;
 @property(getter=_undoInputOnTouchCancellation,setter=_setUndoInputOnTouchCancellation:) BOOL undoInputOnTouchCancellation;
 
 - (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (BOOL)_includesStatusView;
-- (void)_layoutStatusView:(id)arg1;
 - (void)_layoutStatusView;
 - (void)_luminanceBoostDidChange;
 - (id)_newEntryField;
+- (id)_newStatusSubtitleView;
 - (id)_newStatusTitleView;
 - (void)_noteBackspaceHit;
 - (void)_noteKeyUp:(id)arg1;
@@ -39,13 +41,15 @@
 - (void)_setHasInput:(BOOL)arg1;
 - (void)_setUndoInputOnTouchCancellation:(BOOL)arg1;
 - (id)_statusBackgroundView;
+- (id)_statusSubtitleView;
+- (id)_statusSubtitleViewTitleFont;
 - (id)_statusTitleView;
 - (float)_statusTitleViewHeight;
 - (id)_statusTitleViewTitleFont;
 - (float)_statusTitleWidth;
 - (void)_toggleForStatusField;
 - (BOOL)_undoInputOnTouchCancellation;
-- (void)_updateStatusText:(id)arg1 animated:(BOOL)arg2;
+- (void)_updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
 - (float)backgroundAlpha;
 - (void)dealloc;
 - (id)init;
@@ -69,7 +73,9 @@
 - (void)setLastCharacterBeforeBackspace:(id)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;
+- (void)setStatusSubtitleView:(id)arg1;
 - (void)setStatusTitleView:(id)arg1;
+- (id)statusSubtitleView;
 - (id)statusTitleView;
 
 @end

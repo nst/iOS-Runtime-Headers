@@ -16,7 +16,7 @@
     unsigned int _lastCount;
     BOOL _loadRecentlyRepliedNotifications;
     NSDate *_nextFireTime;
-    NSMutableArray *_notifications;
+    NSArray *_notificationReferences;
     BOOL _pendingChanges;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_recentlyRepliedNotifications;
@@ -29,16 +29,13 @@
 }
 
 @property(readonly) unsigned int notificationCount;
-@property(readonly) NSArray * notifications;
-@property(readonly) NSArray * recentlyRepliedNotifications;
+@property(readonly) NSArray * notificationReferences;
 
 - (unsigned int)_checkForNotifications:(id)arg1;
-- (unsigned int)_checkForRecentlyRepliedNotifications:(id)arg1;
-- (void)_checkForUpdates;
 - (void)_databaseChanged;
 - (id)_eventStore;
 - (void)_killSyncTimer;
-- (id)_notificationFromEvent:(id)arg1;
+- (void)_notificationCountChangedExternally;
 - (void)_notifyForUnalertedNotifications:(id)arg1;
 - (void)_resetSyncTimer;
 - (void)_resetTimer;
@@ -47,14 +44,14 @@
 - (void)_syncTimerFired:(id)arg1;
 - (void)_timerFired;
 - (void)adjust;
+- (void)attemptReload;
 - (void)dealloc;
 - (id)init;
 - (id)initForBulletinBoardWithEventStoreGetter:(id)arg1;
 - (id)initWithEventStore:(id)arg1;
 - (void)killTimer;
 - (unsigned int)notificationCount;
-- (id)notifications;
-- (id)recentlyRepliedNotifications;
+- (id)notificationReferences;
 - (void)start;
 - (void)stop;
 

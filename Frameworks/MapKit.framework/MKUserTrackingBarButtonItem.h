@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKUserTrackingView>, MKMapView, UIButton, UIImage, UINavigationBar, UIToolbar, UIView, _MKUserTrackingButtonController;
+@class <MKUserTrackingView>, MKMapView, UIButton, UIImage, UINavigationBar, UIToolbar, UIView, _MKUserTrackingButton, _MKUserTrackingButtonController;
 
 @interface MKUserTrackingBarButtonItem : UIBarButtonItem <MKUserTrackingButtonTarget> {
     UIView *_associatedView;
@@ -16,6 +16,7 @@
     UIImage *_trackingFollowImage;
     UIImage *_trackingFollowWithHeadingImage;
     UIImage *_trackingNoneImage;
+    _MKUserTrackingButton *_userTrackingButton;
     <MKUserTrackingView> *_userTrackingView;
 }
 
@@ -25,17 +26,26 @@
 @property(retain) UIToolbar * _toolbar;
 @property(setter=_setUserTrackingView:,retain) <MKUserTrackingView> * _userTrackingView;
 @property(retain) MKMapView * mapView;
+@property(getter=_selectsWhenTracking,setter=_setSelectsWhenTracking:) BOOL selectsWhenTracking;
 
 + (Class)_activityIndicatorClass;
 
+- (void).cxx_destruct;
 - (int)_activityIndicatorStyle;
 - (id)_associatedView;
 - (void)_goToNextMode:(id)arg1;
+- (id)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
+- (id)_imageForUserTrackingMode:(int)arg1;
 - (id)_initWithUserTrackingView:(id)arg1;
 - (BOOL)_isHighlightedForState:(int)arg1;
 - (BOOL)_isInMiniBar;
+- (id)_landscapeImagePhoneForUserTrackingMode:(int)arg1;
 - (id)_navigationBar;
 - (void)_repositionViews;
+- (BOOL)_selectsWhenTracking;
+- (void)_setImage:(id)arg1 forUserTrackingMode:(int)arg2;
+- (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(int)arg2;
+- (void)_setSelectsWhenTracking:(BOOL)arg1;
 - (void)_setState:(int)arg1;
 - (void)_setUserTrackingView:(id)arg1;
 - (int)_state;
@@ -51,8 +61,6 @@
 - (id)createViewForToolbar:(id)arg1;
 - (void)dealloc;
 - (id)initWithMapView:(id)arg1;
-- (id)initWithWorldView:(id)arg1 forceSilverStyle:(BOOL)arg2;
-- (id)initWithWorldView:(id)arg1;
 - (id)mapView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setEnabled:(BOOL)arg1;

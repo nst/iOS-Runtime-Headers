@@ -31,6 +31,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1 forItemAtIndex:(int)arg2 orientation:(int)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

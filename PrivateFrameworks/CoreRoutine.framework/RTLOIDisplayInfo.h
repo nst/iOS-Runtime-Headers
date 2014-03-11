@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSDate, NSString;
+@class GEOPlace, NSDate, NSString;
 
 @interface RTLOIDisplayInfo : NSObject {
     NSDate *_arrival;
@@ -11,8 +11,7 @@
     int _style;
     int _type;
     NSString *_unknownTypeName;
-    NSString *_urlDestinationAddress;
-    NSString *_urlName;
+    GEOPlace *_urlPlace;
 }
 
 @property(readonly) NSDate * arrival;
@@ -21,24 +20,22 @@
 @property(readonly) int style;
 @property(readonly) int type;
 @property(readonly) NSString * unknownTypeName;
-@property(readonly) NSString * urlDestinationAddress;
-@property(readonly) NSString * urlName;
+@property(readonly) GEOPlace * urlPlace;
 
 - (void).cxx_destruct;
 - (id)arrival;
 - (id)deparature;
 - (id)description;
 - (double)eta;
-- (id)initWithArrivalStyle:(int)arg1 type:(int)arg2 urlDestinationAddress:(id)arg3 urlName:(id)arg4 unknownTypeName:(id)arg5 arrival:(id)arg6 departure:(id)arg7;
-- (id)initWithDurationStyle:(int)arg1 type:(int)arg2 urlDestinationAddress:(id)arg3 urlName:(id)arg4 unknownTypeName:(id)arg5 eta:(double)arg6;
-- (id)initWithStyle:(int)arg1 type:(int)arg2 urlDestinationAddress:(id)arg3 urlName:(id)arg4 unknownTypeName:(id)arg5 eta:(double)arg6 arrival:(id)arg7 departure:(id)arg8;
+- (id)initWithArrivalStyle:(int)arg1 type:(int)arg2 urlPlace:(id)arg3 unknownTypeName:(id)arg4 arrival:(id)arg5 departure:(id)arg6;
+- (id)initWithDurationStyle:(int)arg1 type:(int)arg2 urlPlace:(id)arg3 unknownTypeName:(id)arg4 eta:(double)arg5;
+- (id)initWithStyle:(int)arg1 type:(int)arg2 urlPlace:(id)arg3 unknownTypeName:(id)arg4 eta:(double)arg5 arrival:(id)arg6 departure:(id)arg7;
 - (BOOL)isEquivalentToDisplayInfo:(id)arg1;
 - (id)localizedDescription;
 - (id)mapsURL;
 - (int)style;
 - (int)type;
 - (id)unknownTypeName;
-- (id)urlDestinationAddress;
-- (id)urlName;
+- (id)urlPlace;
 
 @end

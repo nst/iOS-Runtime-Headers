@@ -71,6 +71,7 @@
 - (BOOL)accountsExistWithAccountTypeIdentifier:(id)arg1;
 - (void)accountsWithAccountType:(id)arg1 handler:(id)arg2;
 - (id)accountsWithAccountTypeIdentifier:(id)arg1;
+- (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id)arg3;
 - (void)accountsWithHandler:(id)arg1;
 - (void)addAccountNoSave:(id)arg1 error:(id*)arg2;
 - (void)addClientToken:(id)arg1 forAccountIdentifier:(id)arg2 completion:(id)arg3;
@@ -137,5 +138,6 @@
 - (void)updateAccountNoSave:(id)arg1 error:(id*)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
+- (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 
 @end

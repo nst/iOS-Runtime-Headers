@@ -5,30 +5,30 @@
 @class SKUICellImageView, UILabel;
 
 @interface _SKUIItemBrowseCellContentView : UIView {
-    UILabel *_categoryLabel;
     UILabel *_indexNumberLabel;
+    UILabel *_subtitleLabel;
     UILabel *_titleLabel;
     SKUICellImageView *_userRatingImageView;
     UILabel *_userRatingLabel;
 }
 
-@property(retain) UILabel * categoryLabel;
 @property(retain) UILabel * indexNumberLabel;
+@property(retain) UILabel * subtitleLabel;
 @property(retain) UILabel * titleLabel;
 @property(retain) SKUICellImageView * userRatingImageView;
 @property(retain) UILabel * userRatingLabel;
 
 - (void).cxx_destruct;
-- (id)categoryLabel;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)indexNumberLabel;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setCategoryLabel:(id)arg1;
 - (void)setIndexNumberLabel:(id)arg1;
+- (void)setSubtitleLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setUserRatingImageView:(id)arg1;
 - (void)setUserRatingLabel:(id)arg1;
+- (id)subtitleLabel;
 - (id)titleLabel;
 - (id)userRatingImageView;
 - (id)userRatingLabel;

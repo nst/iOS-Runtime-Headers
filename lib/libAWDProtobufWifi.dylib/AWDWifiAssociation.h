@@ -4,7 +4,7 @@
 
 @class NSData, NSString;
 
-@interface AWDWifiAssociation : PBCodable {
+@interface AWDWifiAssociation : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int channel : 1; 
@@ -42,6 +42,7 @@
 - (id)bssidOui;
 - (int)channel;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)deauthReason;
 - (id)deauthSourceOui;

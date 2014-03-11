@@ -103,7 +103,6 @@
 - (id)_accountForAlias:(id)arg1 accounts:(id)arg2;
 - (BOOL)_accountHasValidatedLocale:(id)arg1;
 - (BOOL)_accountIsAuthenticated:(id)arg1;
-- (BOOL)_accountIsSignedOut:(id)arg1;
 - (id)_accountsPassingTests:(id)arg1 message:(id)arg2;
 - (BOOL)_addAliases:(id)arg1 toAccount:(id)arg2 validate:(BOOL)arg3;
 - (id)_aliasComparator;

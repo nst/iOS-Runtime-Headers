@@ -22,6 +22,7 @@
     ALAssetsLibrary *_assetsLibrary;
     UIViewController<SLFacebookAudienceViewController> *_audienceViewController;
     id _completionHandler;
+    BOOL _didFetchPrivilegedAccount;
     BOOL _hasAccessToAccount;
     BOOL _hasCheckedAccess;
     BOOL _hasShowedLocationDeniedAlert;
@@ -31,6 +32,7 @@
     SLFacebookPost *_post;
     SLFacebookPostPrivacyManager *_postPrivacyManager;
     SLSheetAction *_privacySheetAction;
+    ACAccount *_privilegedAccount;
     SLVideoQualityOption *_selectedVideoQualityOption;
     SLFacebookSession *_session;
     SLSheetAction *_videoOptionsAction;
@@ -49,6 +51,7 @@
 - (void)_handlePostPrivacyResultWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (BOOL)_isLocationAuthorizationDenied;
 - (id)_placeSheetAction;
+- (id)_postPrivacyManager;
 - (void)_presentAlbumViewController;
 - (void)_presentAudienceViewController;
 - (void)_presentFacebookDisabledAlert;
@@ -58,7 +61,8 @@
 - (id)_privacySheetAction;
 - (void)_setPlace:(id)arg1;
 - (void)_setVideoSizeOptionIdentifier:(id)arg1;
-- (void)_updateAudienceButtonForPrivacySettingType:(int)arg1 name:(id)arg2;
+- (void)_updateAlbumSheetActionWithDefaultAlbum;
+- (void)_updatePrivacySheetActionWithDefaultPrivacySetting;
 - (id)_videoOptionIdentifer;
 - (id)_videoOptionsAction;
 - (id)_videoQualityOption;
@@ -69,7 +73,6 @@
 - (void)callCompletionHandlerWithResult:(int)arg1;
 - (BOOL)canPost;
 - (id)completionHandler;
-- (void)createPreviewIfNeeded;
 - (void)didReceiveMemoryWarning;
 - (void)handleImagePostWithURL;
 - (BOOL)hasAccountAccess;

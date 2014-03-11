@@ -12,7 +12,7 @@
     BOOL _inUseByOperation;
     double _lastUsedTime;
     BOOL _startedByOperation;
-    unsigned int _transactionTerminationRule;
+    BOOL _terminable;
     NSXPCConnection *_xpcConnection;
 }
 
@@ -21,11 +21,10 @@
 @property BOOL inUseByOperation;
 @property double lastUsedTime;
 @property BOOL startedByOperation;
+@property BOOL terminable;
 @property(retain) NSXPCConnection * xpcConnection;
 
 - (void).cxx_destruct;
-- (void)_setTransactionTerminationRule:(unsigned int)arg1;
-- (unsigned int)_transactionTerminationRule;
 - (void)checkInTransactionConnection:(id)arg1;
 - (id)checkoutTransactionConnection;
 - (BOOL)connectionInUse;
@@ -40,8 +39,10 @@
 - (void)setInUseByOperation:(BOOL)arg1;
 - (void)setLastUsedTime:(double)arg1;
 - (void)setStartedByOperation:(BOOL)arg1;
+- (void)setTerminable:(BOOL)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (BOOL)startedByOperation;
+- (BOOL)terminable;
 - (void)updateLastUsed;
 - (void)useConnectionWithBlock:(id)arg1;
 - (id)xpcConnection;

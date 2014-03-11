@@ -5,6 +5,11 @@
 @interface UITableViewCellLayoutManager : NSObject {
 }
 
++ (id)_alternateExternalDetailTextColor;
++ (id)_alternateExternalTextColor;
++ (id)_alternateUISwitchableSelectorPairs;
++ (id)_externalDetailTextColor;
++ (id)_externalTextColor;
 + (id)layoutManagerForTableViewCellStyle:(int)arg1;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessoryRectForCell:(id)arg1 offscreen:(BOOL)arg2;

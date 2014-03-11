@@ -14,7 +14,9 @@
 - (id)computeLayoutGeometry;
 - (void)dealloc;
 - (id)initWithPageLayout:(id)arg1;
+- (unsigned int)pageCount;
 - (id)pageLayout;
+- (unsigned int)pageNumber;
 - (Class)repClassOverride;
 - (void)setPageLayout:(id)arg1;
 - (void)validate;

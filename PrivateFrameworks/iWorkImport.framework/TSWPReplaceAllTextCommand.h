@@ -22,7 +22,6 @@
 - (void)loadFromArchive:(const struct ReplaceAllTextCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ReplaceAllChildCommandArchive {} *x3; struct Reference {} *x4; struct UndoTransaction {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
 - (void)p_invalidateRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)p_invalidateSelection:(id)arg1;
-- (void)p_setSelectionToRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 isVisual:(BOOL)arg2 leadingEdge:(BOOL)arg3;
 - (BOOL)process;
 - (void)redo;
 - (void)saveToArchive:(struct ReplaceAllTextCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ReplaceAllChildCommandArchive {} *x3; struct Reference {} *x4; struct UndoTransaction {} *x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;

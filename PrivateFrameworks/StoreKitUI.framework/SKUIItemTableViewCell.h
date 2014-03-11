@@ -10,6 +10,7 @@
 
 @property(readonly) SKUIItemCellLayout * layout;
 
+- (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(int)arg3;
 - (void)configureForItem:(id)arg1 rowIndex:(int)arg2;
 - (id)layout;
 - (void)layoutSubviews;

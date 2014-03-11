@@ -5,17 +5,18 @@
 @class CALayer, KNAnimatedSlideView, KNDocumentRoot, KNPlaybackSession, KNSlideNode, NSMutableSet, NSSet;
 
 @interface KNAnimatedOffscreenPlaybackController : NSObject <TSDCanvasDelegate> {
+    NSMutableSet *mActiveBuildRenderers;
     KNAnimatedSlideView *mAnimator;
     CALayer *mConcealingLayer;
     int mConcealingStyle;
     double mCurrentEventAnimationsDelay;
     double mCurrentEventAnimationsNonDelayedEndTime;
+    double mCurrentEventAnimationsStartTime;
     double mCurrentEventPauseStartTime;
     KNDocumentRoot *mDocumentRoot;
     BOOL mIsAnimating;
     BOOL mIsPaused;
-    NSMutableSet *mManagedMovieRenderers;
-    BOOL mManagesMovieRenderers;
+    NSMutableSet *mMovieRenderers;
     KNPlaybackSession *mSession;
 }
 
@@ -25,8 +26,7 @@
 @property(readonly) KNDocumentRoot * documentRoot;
 @property(readonly) KNSlideNode * firstSlideNode;
 @property(readonly) CALayer * layer;
-@property(readonly) NSSet * managedMovieRenderers;
-@property BOOL managesMovieRenderers;
+@property(readonly) NSSet * movieRenderers;
 @property(readonly) KNSlideNode * nextSlideNode;
 
 - (void)beginCurrentEventAnimationsAtLayerTime:(double)arg1;
@@ -37,16 +37,15 @@
 - (void)dealloc;
 - (id)documentRoot;
 - (void)endCurrentEventAnimations;
-- (void)enumerateMovieRenderersAtCurrentEventUsingBlock:(id)arg1;
 - (id)firstSlideNode;
 - (void)gotoSlideNode:(id)arg1 eventIndex:(unsigned int)arg2 resetBuildTextures:(BOOL)arg3;
 - (id)init;
 - (id)initWithDocumentRoot:(id)arg1 layerSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)invalidate;
 - (id)layer;
-- (id)managedMovieRenderers;
-- (BOOL)managesMovieRenderers;
+- (id)movieRenderers;
 - (id)nextSlideNode;
+- (void)p_addAnimationsForBuildRenderer:(id)arg1 atBuildStartTime:(double)arg2 relativeToTime:(double)arg3;
 - (void)p_animateConcealingLayerToOpacity:(float)arg1 fromDefaultOpacity:(float)arg2 atTime:(double)arg3;
 - (void)p_invalidateAnimator;
 - (BOOL)p_isCurrentEventTransition;
@@ -55,8 +54,7 @@
 - (void)pauseCurrentEventAnimationsAtLayerTime:(double)arg1;
 - (void)pauseCurrentEventAnimationsWithConcealingStyle:(int)arg1 atLayerTime:(double)arg2;
 - (void)resumeCurrentEventAnimationsAtLayerTime:(double)arg1;
-- (void)setManagesMovieRenderers:(BOOL)arg1;
 - (void)updateCurrentEventAnimationsForLayerTime:(double)arg1;
-- (void)updateManagedMovieRenderersForLayerTime:(double)arg1;
+- (void)updateMovieRenderersForLayerTime:(double)arg1;
 
 @end

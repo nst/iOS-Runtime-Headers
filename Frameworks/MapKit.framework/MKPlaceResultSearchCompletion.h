@@ -11,8 +11,8 @@
     GEOPlaceResult *_result;
 }
 
+- (void).cxx_destruct;
 - (void)applyToPlaceSearchRequest:(id)arg1;
-- (void)dealloc;
 - (id)displayLines;
 - (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
 - (unsigned int)hash;

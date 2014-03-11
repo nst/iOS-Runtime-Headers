@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface VKPGenericShieldStylePack : PBCodable {
+@interface VKPGenericShieldStylePack : PBCodable <NSCopying> {
     NSMutableArray *_genericShields;
     NSMutableArray *_textureAtlas;
 }
@@ -17,6 +17,7 @@
 - (void)clearGenericShields;
 - (void)clearTextureAtlas;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

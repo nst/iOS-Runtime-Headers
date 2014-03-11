@@ -11,7 +11,7 @@
     BOOL _isBroadcasted;
     BOOL _isNotifying;
     CBPeripheral *_peripheral;
-    int _properties;
+    unsigned int _properties;
     CBService *_service;
     NSData *_value;
     NSNumber *_valueHandle;
@@ -23,13 +23,14 @@
 @property(readonly) BOOL isBroadcasted;
 @property BOOL isNotifying;
 @property(readonly) CBPeripheral * peripheral;
-@property(readonly) int properties;
+@property(readonly) unsigned int properties;
 @property CBService * service;
 @property(retain) NSData * value;
 @property(readonly) NSNumber * valueHandle;
 
 - (id)UUID;
 - (void)dealloc;
+- (id)description;
 - (id)descriptors;
 - (id)handle;
 - (id)handleDescriptorsDiscovered:(id)arg1;
@@ -42,7 +43,7 @@
 - (BOOL)isBroadcasted;
 - (BOOL)isNotifying;
 - (id)peripheral;
-- (int)properties;
+- (unsigned int)properties;
 - (id)service;
 - (void)setDescriptors:(id)arg1;
 - (void)setIsNotifying:(BOOL)arg1;

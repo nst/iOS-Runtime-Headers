@@ -188,6 +188,7 @@
 - (id)mf_subdataToIndex:(unsigned int)arg1;
 - (id)mf_subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (id)ml_stringValueForSQL;
 - (struct CDXTicket { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; struct { unsigned char x_5_1_1[6]; unsigned short x_5_1_2; } x5; unsigned int x6; unsigned char x7[0]; }*)mutableCDXTicket;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)pl_adviceDoNotNeed;
@@ -196,7 +197,6 @@
 - (id)propertyListForRadioResponseReturningError:(id*)arg1 unparsedResponseDictionary:(id*)arg2;
 - (id)propertyListForRadioResponseReturningError:(id*)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)sha1Digest;

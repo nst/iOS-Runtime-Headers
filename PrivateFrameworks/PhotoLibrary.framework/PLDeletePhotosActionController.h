@@ -15,9 +15,9 @@
     NSArray *_assets;
     id _completionHandler;
     <PLDeletePhotosActionControllerDelegate> *_delegate;
-    id _deleteCompletionHandler;
     BOOL _deleteDuplicates;
     PLPhotoLibrary *_photoLibrary;
+    id _willDeleteHandler;
 }
 
 @property int actionSheetStyle;
@@ -35,6 +35,7 @@
 - (void)_setupActionSheet;
 - (id)_usedElsewhereWarningTextForAssets:(id)arg1 additionalPhotoStreamAssets:(id)arg2 actualDeletionCount:(int)arg3;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (int)actionSheetStyle;
 - (id)assets;
 - (void)dealloc;
@@ -46,7 +47,7 @@
 - (void)redisplayFromObject:(id)arg1 animated:(BOOL)arg2;
 - (void)setActionSheetStyle:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)showFromObject:(id)arg1 animated:(BOOL)arg2 deleteCompletionHandler:(id)arg3 completionHandler:(id)arg4;
-- (void)showInView:(id)arg1 deleteCompletionHandler:(id)arg2 completionHandler:(id)arg3;
+- (void)showFromObject:(id)arg1 animated:(BOOL)arg2 willDeleteHandler:(id)arg3 completionHandler:(id)arg4;
+- (void)showInView:(id)arg1 willDeleteHandler:(id)arg2 completionHandler:(id)arg3;
 
 @end

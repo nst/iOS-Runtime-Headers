@@ -7,6 +7,7 @@
 @interface GEOPlaceResult : PBCodable <NSCopying> {
     struct { 
         unsigned int confidence : 1; 
+        unsigned int travelDistance : 1; 
         unsigned int travelTime : 1; 
     NSMutableArray *_additionalPlaces;
     double _confidence;
@@ -18,6 +19,7 @@
     GEOPlaceSearchRequest *_revgeoRequestTemplate;
     NSString *_suggestedQuery;
     GEOAddress *_tokenEntity;
+    unsigned int _travelDistance;
     unsigned int _travelTime;
     NSMutableArray *_unmatchedStrings;
 }
@@ -29,6 +31,7 @@
 @property(readonly) BOOL hasRevgeoRequestTemplate;
 @property(readonly) BOOL hasSuggestedQuery;
 @property(readonly) BOOL hasTokenEntity;
+@property BOOL hasTravelDistance;
 @property BOOL hasTravelTime;
 @property(retain) NSMutableArray * matchedTokens;
 @property(retain) NSMutableArray * namedFeatures;
@@ -37,6 +40,7 @@
 @property(retain) GEOPlaceSearchRequest * revgeoRequestTemplate;
 @property(retain) NSString * suggestedQuery;
 @property(retain) GEOAddress * tokenEntity;
+@property unsigned int travelDistance;
 @property unsigned int travelTime;
 @property(retain) NSMutableArray * unmatchedStrings;
 
@@ -62,6 +66,7 @@
 - (BOOL)hasRevgeoRequestTemplate;
 - (BOOL)hasSuggestedQuery;
 - (BOOL)hasTokenEntity;
+- (BOOL)hasTravelDistance;
 - (BOOL)hasTravelTime;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -79,6 +84,7 @@
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setConfidence:(double)arg1;
 - (void)setHasConfidence:(BOOL)arg1;
+- (void)setHasTravelDistance:(BOOL)arg1;
 - (void)setHasTravelTime:(BOOL)arg1;
 - (void)setMatchedTokens:(id)arg1;
 - (void)setNamedFeatures:(id)arg1;
@@ -87,10 +93,12 @@
 - (void)setRevgeoRequestTemplate:(id)arg1;
 - (void)setSuggestedQuery:(id)arg1;
 - (void)setTokenEntity:(id)arg1;
+- (void)setTravelDistance:(unsigned int)arg1;
 - (void)setTravelTime:(unsigned int)arg1;
 - (void)setUnmatchedStrings:(id)arg1;
 - (id)suggestedQuery;
 - (id)tokenEntity;
+- (unsigned int)travelDistance;
 - (unsigned int)travelTime;
 - (id)unmatchedStringAtIndex:(unsigned int)arg1;
 - (id)unmatchedStrings;

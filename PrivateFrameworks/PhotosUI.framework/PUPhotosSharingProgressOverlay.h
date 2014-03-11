@@ -5,21 +5,24 @@
 @class UIView;
 
 @interface PUPhotosSharingProgressOverlay : UIView {
+    BOOL _isShowing;
     UIView *_progressView;
 }
 
 @property(retain) UIView * progressView;
 
 - (void).cxx_destruct;
-- (void)addProgressView:(id)arg1 atScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)grayScaleImageFromImage:(id)arg1;
-- (id)initOverlay;
+- (id)_grayScaleImageFromImage:(id)arg1;
+- (void)_installInStatusBarWindow;
+- (id)_screenshotImage;
+- (void)_setupOverlayAnimated:(BOOL)arg1;
+- (id)_statusBarWindow;
+- (void)_tearDownOverlayAnimated:(BOOL)arg1;
+- (void)addProgressView:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)progressView;
-- (id)screenshotImage;
 - (void)setProgressView:(id)arg1;
-- (void)setupOverlay;
-- (id)statusBarWindow;
-- (void)tearDownOverlay;
+- (void)setShowing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)willRemoveSubview:(id)arg1;
 
 @end

@@ -54,7 +54,7 @@
 - (BOOL)isRingerMuted;
 - (BOOL)isScreenLockedWithPasscode:(BOOL*)arg1;
 - (BOOL)isSideSwitchUsedForOrientation;
-- (BOOL)isSiriListening;
+- (BOOL)isSiriTalkingOrListening;
 - (BOOL)isSiriVisible;
 - (BOOL)isSpringboardFrontmost;
 - (BOOL)isSyncingRestoringResettingOrUpdating;
@@ -76,7 +76,7 @@
 - (void)setCancelGestureActivation:(unsigned int)arg1 cancelEnabled:(BOOL)arg2;
 - (void)setCurrentAlertHandler:(id)arg1;
 - (void)setGestureOverrides:(id)arg1;
-- (void)setSiriListening:(BOOL)arg1;
+- (void)setSiriIsTalking:(BOOL)arg1;
 - (void)setSystemGesturesEnabled:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (void)showAlert:(int)arg1 withHandler:(id)arg2 withData:(id)arg3;

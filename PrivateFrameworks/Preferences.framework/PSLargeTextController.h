@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, UILabel;
+@class NSArray, PSSpecifier, UILabel;
 
 @interface PSLargeTextController : PSListController {
     UILabel *_bodyExampleLabel;
@@ -10,6 +10,7 @@
     UILabel *_headlineExampleLabel;
     int _selectedCategoryIndex;
     BOOL _showsExtendedRangeSwitch;
+    PSSpecifier *_sliderGroupSpecifier;
     BOOL _usesExtendedRange;
 }
 
@@ -18,7 +19,6 @@
 - (void)dealloc;
 - (id)getDynamicTypeValueForSpecifier:(id)arg1;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setDynamicTypeValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)setShowsExtendedRangeSwitch:(BOOL)arg1;
 - (void)setUsesExtendedRange:(id)arg1 forSpecifier:(id)arg2;
@@ -27,7 +27,6 @@
 - (id)specifiers;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)updateExampleFonts;
 - (id)usesExtendedRangeForSpecifier:(id)arg1;
 - (void)viewDidLayoutSubviews;
 

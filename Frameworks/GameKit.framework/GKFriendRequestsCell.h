@@ -47,7 +47,6 @@
 - (void)setTitleLabel:(id)arg1;
 - (id)subtitleLabel;
 - (id)titleLabel;
-- (void)updateConstraints;
 - (void)updateLineLayoutConstraints;
 
 @end

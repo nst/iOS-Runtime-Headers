@@ -12,6 +12,7 @@
 @property(getter=isAccountNameEditable) BOOL accountNameEditable;
 @property int accountScope;
 @property BOOL allowsBioAuthentication;
+@property BOOL allowsBootstrapCellularData;
 @property BOOL allowsRetry;
 @property BOOL canCreateNewAccount;
 @property BOOL canSetActiveAccount;
@@ -22,6 +23,7 @@
 @property BOOL persistsPasswordFallback;
 @property(copy) NSString * preferredITunesStoreClient;
 @property int promptStyle;
+@property(copy) NSString * reasonDescription;
 @property(copy) NSDictionary * requestParameters;
 @property(retain) NSNumber * requiredUniqueIdentifier;
 @property BOOL shouldCreateNewSession;
@@ -38,6 +40,7 @@
 - (void)setAccountNameEditable:(BOOL)arg1;
 - (void)setAccountScope:(int)arg1;
 - (void)setAllowsBioAuthentication:(BOOL)arg1;
+- (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setAllowsRetry:(BOOL)arg1;
 - (void)setCanCreateNewAccount:(BOOL)arg1;
 - (void)setCanSetActiveAccount:(BOOL)arg1;
@@ -49,6 +52,7 @@
 - (void)setPersistsPasswordFallback:(BOOL)arg1;
 - (void)setPreferredITunesStoreClient:(id)arg1;
 - (void)setPromptStyle:(int)arg1;
+- (void)setReasonDescription:(id)arg1;
 - (void)setRequestParameters:(id)arg1;
 - (void)setRequiredUniqueIdentifier:(id)arg1;
 - (void)setShouldCreateNewSession:(BOOL)arg1;

@@ -9,6 +9,9 @@
 @class GEORequester;
 
 @interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
+    id _notificationAvailabilityErrorHandler;
+    id _notificationAvailabilityFinishedHandler;
+    GEORequester *_notificationAvailabilityRequester;
     id _statusErrorHandler;
     id _statusFinishedHandler;
     GEORequester *_statusRequester;
@@ -17,16 +20,15 @@
     GEORequester *_submissionRequester;
 }
 
-+ (void)_resetURLs;
 + (unsigned short)providerID;
 + (void)setUsePersistentConnection:(BOOL)arg1;
 
 - (void)cancelRequest;
 - (void)dealloc;
-- (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
+- (void)startNotificationAvailabilityRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 

@@ -4,7 +4,7 @@
 
 @class NSData, NSMutableArray, NSString, VKPStyleProperties;
 
-@interface VKPStyle : PBCodable {
+@interface VKPStyle : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
         unsigned int count; 
@@ -39,6 +39,7 @@
 - (void)clearZooms;
 - (id)contents;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

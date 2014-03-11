@@ -30,6 +30,7 @@
 }
 
 @property(readonly) BOOL areNewExternalReferencesToDataAllowed;
+@property(readonly) NSString * defaultDraftName;
 @property <TSAImportDelegate> * delegate;
 @property(readonly) NSString * documentCachePath;
 @property(readonly) TSPObjectContext * documentContext;
@@ -66,6 +67,7 @@
 - (void)beginImportAsync;
 - (void)cancelImport;
 - (void)dealloc;
+- (id)defaultDraftName;
 - (id)delegate;
 - (void)didBeginImportToTemporaryURL:(id)arg1;
 - (void)didSaveImportedDocumentWithPassphrase:(id)arg1;
@@ -100,6 +102,7 @@
 - (void)setProgressContext:(id)arg1;
 - (void)showProgressIfNeededForURL:(id)arg1;
 - (id)sourcePath;
+- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned int)arg2;
 - (id)templateInfoWithName:(id)arg1;
 - (id)temporaryURL;
 - (id)warnings;

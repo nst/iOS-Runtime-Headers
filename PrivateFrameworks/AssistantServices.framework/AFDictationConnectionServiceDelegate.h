@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (id)initWithDictationConnection:(id)arg1;
 - (oneway void)speechDidRecognizePhrases:(id)arg1 usingSpeechModel:(id)arg2 correctionContext:(id)arg3;
+- (oneway void)speechDidRecognizeTokens:(id)arg1 usingSpeechModel:(id)arg2;
 - (oneway void)speechRecognitionDidFail:(id)arg1;
 - (oneway void)speechRecordingDidBegin;
 - (oneway void)speechRecordingDidCancel;

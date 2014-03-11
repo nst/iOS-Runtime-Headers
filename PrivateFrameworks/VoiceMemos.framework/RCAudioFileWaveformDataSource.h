@@ -6,15 +6,14 @@
 
 @interface RCAudioFileWaveformDataSource : NSObject <RCWaveformGeneratorSegmentOutputObserver, RCWaveformDataSource> {
     double _cachedDuration;
-    NSURL *_cachedWaveformsDirectoryPath;
     NSURL *_savedRecordingURL;
+    BOOL _savesGeneratedWaveform;
     BOOL _wasSaved;
     RCMutableWaveform *_waveform;
     RCWaveformGenerator *_waveformGenerator;
-    NSURL *_waveformURL;
 }
 
-@property(retain) NSURL * cachedWaveformsDirectoryPath;
+@property BOOL savesGeneratedWaveform;
 @property(readonly) RCWaveform * waveform;
 
 - (void).cxx_destruct;
@@ -23,14 +22,16 @@
 - (id)_waveformURL;
 - (void)beginLoading;
 - (void)beginLoadingForRecordingOutputURL:(id)arg1;
-- (id)cachedWaveformsDirectoryPath;
 - (id)dataSourceByReloading;
 - (void)dealloc;
 - (double)duration;
 - (void)finishLoadingBeforeDate:(id)arg1 loadingFinishedBlock:(id)arg2;
 - (id)initWithFileURL:(id)arg1;
 - (void)reload;
-- (void)setCachedWaveformsDirectoryPath:(id)arg1;
+- (id)savedAudioURL;
+- (BOOL)savesGeneratedWaveform;
+- (BOOL)setPaused:(BOOL)arg1;
+- (void)setSavesGeneratedWaveform:(BOOL)arg1;
 - (void)terminateLoadingImmediately;
 - (id)waveform;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;

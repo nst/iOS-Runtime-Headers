@@ -19,6 +19,7 @@
     BOOL _thumbnailRequested;
     unsigned int _thumbnailSuspendCount;
     BOOL _thumbnailerEnabled;
+    BOOL _tornDown;
 }
 
 @property struct CGColor { }* backgroundColor;
@@ -56,6 +57,7 @@
 - (void)setProducer:(id)arg1;
 - (BOOL)shouldCallCommit;
 - (void)suspendThumbnailing;
+- (void)teardown;
 - (id)thumbnail:(id)arg1 waitIfNecessary:(BOOL)arg2;
 - (void)thumbnailCountDidChange;
 - (void)updateThumbnail:(id)arg1 identifier:(id)arg2 continueThumbnailing:(BOOL)arg3;

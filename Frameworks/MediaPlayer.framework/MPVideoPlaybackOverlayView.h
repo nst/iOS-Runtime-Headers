@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoControllerProtocol>, <MPVideoOverlayDelegate>, MPAVController, MPAVItem, MPAudioAndSubtitlesController, MPAudioVideoRoutingPopoverController, MPDetailSlider, MPVolumeSlider, UIActivityIndicatorView, UIButton, UILabel, UINavigationBar, UIStatusBar, _UIBackdropView;
+@class <MPVideoControllerProtocol>, <MPVideoOverlayDelegate>, MPAVController, MPAVItem, MPAVRoutingController, MPAudioAndSubtitlesController, MPAudioVideoRoutingPopoverController, MPDetailSlider, MPVolumeSlider, UIActivityIndicatorView, UIButton, UILabel, UINavigationBar, UIPopoverController, UIStatusBar, _UIBackdropView;
 
-@interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, UIPopoverControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate> {
+@interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, MPAVRoutingControllerDelegate, UIPopoverControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate> {
     UIButton *_airplayButton;
+    MPAVRoutingController *_airplayController;
     MPAudioVideoRoutingPopoverController *_airplayPopover;
     BOOL _allowsWirelessPlayback;
     UIButton *_audioAndSubtitlesButton;
     MPAudioAndSubtitlesController *_audioAndSubtitlesController;
+    UIPopoverController *_audioAndSubtitlesPopover;
     BOOL _automaticallyHandleTransportControls;
     float _auxButtonsLeftEdge;
     _UIBackdropView *_bottomBarBackdropView;
@@ -63,8 +65,9 @@
 - (void)_activeAudioRouteDidChange:(id)arg1;
 - (void)_airplayButtonTapped:(id)arg1;
 - (void)_alternateTracksAvailable:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_audioAndSubtitlesButtonTapped:(id)arg1;
-- (void)_availableRoutesChanged:(id)arg1;
 - (void)_buttonInteractionBegan:(id)arg1;
 - (void)_buttonInteractionCanceled:(id)arg1;
 - (void)_buttonInteractionEnded:(id)arg1;
@@ -130,6 +133,7 @@
 - (id)player;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAutomaticallyHandleTransportControls:(BOOL)arg1;

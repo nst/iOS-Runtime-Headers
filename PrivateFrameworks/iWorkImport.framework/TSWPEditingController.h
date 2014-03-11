@@ -20,6 +20,7 @@
     struct CGPoint { 
         float x; 
         float y; 
+    BOOL _annotationWasShowingAtStartOfGesture;
     NSMutableDictionary *_autocorrectedEntries;
     TSDAutoscroll *_autoscroll;
     } _autoscrollPoint;
@@ -35,6 +36,7 @@
     BOOL _gestureBeganWhenEditingBegan;
     <TSDEditor> *_hostEditor;
     BOOL _ignoreFutureImmediatePresses;
+    unsigned int _initialStorageChangeCount;
     UIView *_inputViewForHidingKeyboard;
     TSWPCharacterStyle *_insertionStyle;
     TSWPInteractiveCanvasController *_interactiveCanvasController;

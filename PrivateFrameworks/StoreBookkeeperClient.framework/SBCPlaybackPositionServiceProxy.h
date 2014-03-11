@@ -2,25 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@class NSString;
-
-@interface SBCPlaybackPositionServiceProxy : SBCXPCServiceProxy <SBCPlaybackPositionServiceProtocol> {
-    NSString *_databasePath;
+@interface SBCPlaybackPositionServiceProxy : SBCPlaybackPositionService {
 }
-
-@property(readonly) NSString * databasePath;
-
-+ (id)bookkeeperForDatabasePath:(id)arg1;
-
-- (void).cxx_destruct;
-- (oneway void)beginUsingPlaybackPositions;
-- (id)databasePath;
-- (void)didConnectToServiceProxy;
-- (oneway void)endUsingPlaybackPositions;
-- (id)initWithServiceInterfaceClass:(Class)arg1 databasePath:(id)arg2;
-- (oneway void)noteChangedNowPlayingTrackPersistentID:(long long)arg1;
-- (oneway void)noteChangedPlaybackPositionMetadataForTrackPersistentID:(long long)arg1 isCheckpoint:(BOOL)arg2;
-- (oneway void)synchronizeImmediately;
-- (oneway void)synchronizeLocalChangesSoon;
 
 @end

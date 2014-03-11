@@ -31,7 +31,6 @@
 
 - (void).cxx_destruct;
 - (void)cancelSend;
-- (struct CGImage { }*)createRotatedCGImageFromUIImage:(id)arg1;
 - (id)description;
 - (id)displayIcon;
 - (id)displayName;

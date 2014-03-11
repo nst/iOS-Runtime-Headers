@@ -7,14 +7,19 @@
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
     NSURL *_URL;
     BOOL _gilligan_isRemote;
+    BOOL _isMissingData;
 }
+
+@property BOOL isMissingData;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)gilligan_isRemote;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isMissingData;
 - (void)performReadWithAccessor:(id)arg1;
 - (void)setGilligan_isRemote:(BOOL)arg1;
+- (void)setIsMissingData:(BOOL)arg1;
 - (BOOL)writeToBundleWriter:(id)arg1 preferredFilename:(id)arg2 filename:(id*)arg3 didCopyDataToBundle:(BOOL*)arg4;
 
 @end

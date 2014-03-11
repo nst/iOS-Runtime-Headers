@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEODirectionsResponse, MKMapItem, NSArray;
+@class GEODirectionsResponse, GEORoute, MKMapItem, NSArray, NSString, NSURL;
 
 @interface MKDirectionsResponse : NSObject {
     MKMapItem *_destination;
@@ -13,12 +13,19 @@
     MKMapItem *_source;
 }
 
+@property(readonly) GEODirectionsResponse * _geoResponse;
+@property(readonly) NSString * _incidentDescription;
+@property(readonly) struct CGImage { }* _incidentImage;
+@property(readonly) NSURL * _mapsURL;
+@property(readonly) GEORoute * _route;
+@property(readonly) double _typicalTrafficRatio;
 @property(readonly) MKMapItem * destination;
 @property(readonly) NSArray * routes;
 @property(readonly) MKMapItem * source;
 
 + (id)_responseWithGEOResponse:(id)arg1 request:(id)arg2 error:(id*)arg3;
 
+- (void).cxx_destruct;
 - (id)_completeRoutesFrom:(id)arg1;
 - (id)_geoResponse;
 - (id)_incidentDescription;

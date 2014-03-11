@@ -152,6 +152,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })computedEditingCellContentFrame;
 - (id)containedTextEditingLayout;
 - (void)dealloc;
+- (id)dependentLayouts;
 - (id)dependentsOfTextLayout:(id)arg1;
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })editingSpillingTextRange;
 - (id)editingState;
@@ -227,7 +228,6 @@
 - (BOOL)textIsVertical;
 - (void)updateChildrenFromInfo;
 - (void)validate;
-- (void)validateStrokesInEditingSpillingTextRange;
 - (void)validateTableNameVisibility;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
 - (float)widthForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;

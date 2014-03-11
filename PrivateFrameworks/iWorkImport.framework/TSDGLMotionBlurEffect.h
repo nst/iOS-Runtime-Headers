@@ -39,10 +39,10 @@
 - (void)dealloc;
 - (int)debugDrawMode;
 - (float)dilationDistanceInSlidePercent;
-- (void)drawResult;
+- (void)drawResultWithCurrentGLFramebuffer:(int)arg1;
 - (id)initWithFramebufferSize:(struct CGSize { float x1; float x2; })arg1 slideSize:(struct CGSize { float x1; float x2; })arg2;
 - (float)motionBlurStrength;
-- (void)p_dilateVelocityBuffer;
+- (void)p_dilateVelocityBufferWithCurrentGLFramebuffer:(int)arg1;
 - (void)p_setupBlurShaders;
 - (void)p_setupGLTextureParameters;
 - (void)p_setupVelocityFramebufferIfNecessary;
@@ -53,7 +53,7 @@
 - (void)setDilationDistanceInSlidePercent:(float)arg1;
 - (void)setMotionBlurStrength:(float)arg1;
 - (void)setupMotionBlurEffectIfNecessary;
-- (void)unbindFramebuffer;
+- (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1;
 - (void)updateVelocityScaleInShader:(id)arg1;
 - (struct CGSize { float x1; float x2; })velocityScale;
 

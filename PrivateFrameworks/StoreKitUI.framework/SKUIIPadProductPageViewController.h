@@ -7,6 +7,7 @@
 @interface SKUIIPadProductPageViewController : UIViewController <SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate> {
     ACAccountStore *_accountStore;
     SKUIClientContext *_clientContext;
+    int _defaultSelectedSectionIndex;
     <SKUIIPadProductPageDelegate> *_delegate;
     SKUIProductPageDetailsViewController *_detailsViewController;
     BOOL _didSendCannotOpen;
@@ -49,6 +50,7 @@
 - (id)_reviewsViewController;
 - (void)_selectSectionIndex:(int)arg1;
 - (void)_sendCannotOpen;
+- (void)_setDefaultSectionIndexWithFragment:(int)arg1;
 - (void)_setFacebookLikeStatus:(id)arg1;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setProductPage:(id)arg1 error:(id)arg2;

@@ -6,6 +6,9 @@
 
 @interface GEOETARequest : PBRequest <NSCopying> {
     struct { 
+        unsigned long long _high; 
+        unsigned long long _low; 
+    struct { 
         double _time; 
         int _type; 
         struct { 
@@ -13,30 +16,42 @@
             unsigned int type : 1; 
         } _has; 
     struct { 
+        unsigned int sessionID : 1; 
         unsigned int timepoint : 1; 
+        unsigned int distanceLimitMeters : 1; 
         unsigned int transportType : 1; 
         unsigned int allowPartialResults : 1; 
+        unsigned int includeDistance : 1; 
         unsigned int includeHistoricTravelTime : 1; 
     BOOL _allowPartialResults;
     NSMutableArray *_destinations;
+    unsigned int _distanceLimitMeters;
     } _has;
+    BOOL _includeDistance;
     BOOL _includeHistoricTravelTime;
     GEOWaypoint *_origin;
     NSMutableArray *_serviceTags;
+    } _sessionID;
     } _timepoint;
     int _transportType;
 }
 
 @property BOOL allowPartialResults;
 @property(retain) NSMutableArray * destinations;
+@property unsigned int distanceLimitMeters;
 @property BOOL hasAllowPartialResults;
+@property BOOL hasDistanceLimitMeters;
+@property BOOL hasIncludeDistance;
 @property BOOL hasIncludeHistoricTravelTime;
 @property(readonly) BOOL hasOrigin;
+@property BOOL hasSessionID;
 @property BOOL hasTimepoint;
 @property BOOL hasTransportType;
+@property BOOL includeDistance;
 @property BOOL includeHistoricTravelTime;
 @property(retain) GEOWaypoint * origin;
 @property(retain) NSMutableArray * serviceTags;
+@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } timepoint;
 @property int transportType;
 
@@ -53,12 +68,17 @@
 - (id)destinations;
 - (unsigned int)destinationsCount;
 - (id)dictionaryRepresentation;
+- (unsigned int)distanceLimitMeters;
 - (BOOL)hasAllowPartialResults;
+- (BOOL)hasDistanceLimitMeters;
+- (BOOL)hasIncludeDistance;
 - (BOOL)hasIncludeHistoricTravelTime;
 - (BOOL)hasOrigin;
+- (BOOL)hasSessionID;
 - (BOOL)hasTimepoint;
 - (BOOL)hasTransportType;
 - (unsigned int)hash;
+- (BOOL)includeDistance;
 - (BOOL)includeHistoricTravelTime;
 - (BOOL)isEqual:(id)arg1;
 - (id)origin;
@@ -68,15 +88,22 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
+- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)setAllowPartialResults:(BOOL)arg1;
 - (void)setDestinations:(id)arg1;
+- (void)setDistanceLimitMeters:(unsigned int)arg1;
 - (void)setHasAllowPartialResults:(BOOL)arg1;
+- (void)setHasDistanceLimitMeters:(BOOL)arg1;
+- (void)setHasIncludeDistance:(BOOL)arg1;
 - (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasTimepoint:(BOOL)arg1;
 - (void)setHasTransportType:(BOOL)arg1;
+- (void)setIncludeDistance:(BOOL)arg1;
 - (void)setIncludeHistoricTravelTime:(BOOL)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setServiceTags:(id)arg1;
+- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTimepoint:(struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)setTransportType:(int)arg1;
 - (struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timepoint;

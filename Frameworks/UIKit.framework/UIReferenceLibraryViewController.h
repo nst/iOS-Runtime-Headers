@@ -31,6 +31,7 @@
 + (id)_localizedDictionaryTitleAttributes;
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (id)_pressedButtonImage;
++ (BOOL)_shouldShowDefineForTerm:(id)arg1;
 + (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 

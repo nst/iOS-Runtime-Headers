@@ -102,7 +102,7 @@
 - (long long)newObjectIdentifier;
 - (struct ObjectInfo { struct queue<TSP::ReferenceCompletionInfo, std::__1::deque<TSP::ReferenceCompletionInfo, std::__1::allocator<TSP::ReferenceCompletionInfo> > > { struct deque<TSP::ReferenceCompletionInfo, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct __split_buffer<TSP::ReferenceCompletionInfo *, std::__1::allocator<TSP::ReferenceCompletionInfo *> > { struct ReferenceCompletionInfo {} **x_1_3_1; struct ReferenceCompletionInfo {} **x_1_3_2; struct ReferenceCompletionInfo {} **x_1_3_3; struct __compressed_pair<TSP::ReferenceCompletionInfo **, std::__1::allocator<TSP::ReferenceCompletionInfo *> > { struct ReferenceCompletionInfo {} **x_4_4_1; } x_1_3_4; } x_1_2_1; unsigned int x_1_2_2; struct __compressed_pair<unsigned long, std::__1::allocator<TSP::ReferenceCompletionInfo> > { unsigned long x_3_3_1; } x_1_2_3; } x_1_1_1; } x1; }*)objectInfoForIdentifier:(long long)arg1;
 - (void)processObjectsToModify;
-- (void)readWithCompletionQueue:(id)arg1 ioCompletion:(id)arg2 completion:(id)arg3;
+- (void)readWithIOCompletionQueue:(id)arg1 ioCompletion:(id)arg2 completionQueue:(id)arg3 completion:(id)arg4;
 - (void)runReferenceCompletions;
 - (void)setError:(id)arg1;
 - (void)setObjectDelegatesToContextObjectDelegate;

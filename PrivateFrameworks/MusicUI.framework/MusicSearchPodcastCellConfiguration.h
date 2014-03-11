@@ -5,7 +5,7 @@
 @interface MusicSearchPodcastCellConfiguration : MusicSearchCellConfiguration {
 }
 
-+ (id)propertiesToFetch;
++ (id)mediaEntityPropertiesToFetch;
 + (id)titleForMediaEntity:(id)arg1 valuesForProperties:(id)arg2;
 
 @end

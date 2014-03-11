@@ -98,7 +98,7 @@
 - (void)p_hackSetCalcEngineLegacyGlobalID;
 - (BOOL)p_isScatterOrBubble;
 - (BOOL)p_labelsAreStaticInMap:(id)arg1 ofType:(int)arg2;
-- (id)p_newStaticNameForCategoryAvoidingExistingNames:(id)arg1;
+- (id)p_newStaticNameForCategoryAvoidingExistingNames:(id)arg1 runningCount:(unsigned int*)arg2;
 - (void)p_registerAreaFormulaForMap:(id)arg1 withCalcEngine:(id)arg2;
 - (void)p_registerFormulaeWithCalcEngine:(id)arg1;
 - (void)p_registerHubFormulaWithCalcEngine:(id)arg1;

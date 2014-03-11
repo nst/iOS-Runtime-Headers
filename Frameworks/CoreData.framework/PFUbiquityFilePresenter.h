@@ -13,6 +13,7 @@
     NSURL *_presentedItemURL;
     NSObject<OS_dispatch_queue> *_processingQueue;
     BOOL _scheduledProcessingBlock;
+    NSString *_storeName;
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
@@ -29,11 +30,12 @@
 + (id)sharedPrivateOperationQueue;
 + (void)startDownloadForItems:(id)arg1 onQueue:(id)arg2 withBlock:(id)arg3;
 
+- (id)copyStatusDictionary;
 - (void)dealloc;
 - (id)description;
 - (void)exporterDidMoveLog:(id)arg1;
 - (id)init;
-- (id)initWithUbiquityRootLocation:(id)arg1 localPeerID:(id)arg2 processingQueue:(id)arg3;
+- (id)initWithUbiquityRootLocation:(id)arg1 localPeerID:(id)arg2 storeName:(id)arg3 processingQueue:(id)arg4;
 - (id)localPeerID;
 - (id)locationToSafeSaveFile;
 - (id)locationToStatus;

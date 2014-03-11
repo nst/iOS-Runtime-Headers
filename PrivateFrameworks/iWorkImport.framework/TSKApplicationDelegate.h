@@ -52,6 +52,7 @@
 - (BOOL)shouldRenderContactShadow;
 - (BOOL)shouldRenderCurvedShadow;
 - (BOOL)supportsRTL;
+- (BOOL)supportsScrollingInPhoneCommentUI;
 - (BOOL)tableCellInspectorShowsNaturalAlignment;
 - (BOOL)tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
 - (BOOL)tableHeaderInspectorShowsFreezeHeaderRowsSwitch;

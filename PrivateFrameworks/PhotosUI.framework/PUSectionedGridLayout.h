@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <PUCollectionViewLayoutTransitioningDelegate>, <PUSectionedGridLayoutDelegate>, NSArray, NSDictionary, NSIndexPath, NSIndexSet, NSPointerArray, NSSet, NSString, PULayoutAnimationsHelper, PULayoutSampledSectioning, UICollectionViewLayout, UICollectionViewLayoutAttributes;
+@class <PUCollectionViewLayoutTransitioningDelegate>, <PUSectionedGridLayoutDelegate>, NSArray, NSDictionary, NSIndexPath, NSIndexSet, NSPointerArray, NSSet, NSString, PULayoutAnimationsHelper, PULayoutSampledSectioning, PUSectionedGridLayoutInvalidationContext, UICollectionViewLayout, UICollectionViewLayoutAttributes;
 
 @interface PUSectionedGridLayout : UICollectionViewLayout <PUReorderableLayout, PUPhotosGridTransitioningLayout, PUCollectionViewLayoutDelegating, PUGridLayoutProtocol> {
     struct CGSize { 
@@ -41,6 +41,8 @@
         float left; 
         float bottom; 
         float right; 
+    PUSectionedGridLayoutInvalidationContext *_cachedFloatingHeaderInvalidationContext;
+    int _cachedFloatingHeaderInvalidationContextNewVisualSection;
     } _cachedLayoutAttributesLastKnownRect;
     NSArray *_cachedNonHeaderLayoutAttributesInRect;
     int _columnsPerRow;
@@ -61,6 +63,7 @@
     UICollectionViewLayoutAttributes *_globalFooterAttributes;
     float _globalFooterHeight;
     float _globalTopPadding;
+    BOOL _hasFloatingHeaders;
     NSSet *_hiddenItemIndexPaths;
     } _interItemSpacing;
     BOOL _isRotating;
@@ -176,7 +179,6 @@
 - (struct PUSimpleIndexPath { int x1; int x2; })_itemVisualIndexPathAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_layoutAttributesForItemAtVisualIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1 realIndexPath:(id)arg2 isMainRealItem:(BOOL)arg3;
 - (id)_layoutAttributesForSupplementaryViewOfKind:(id)arg1 forVisualSection:(int)arg2 supplementaryViewIndex:(int)arg3;
-- (id)_pl_debugItems;
 - (void)_prepareFloatingHeadersLayoutIfNeeded;
 - (void)_prepareForTransitionFromStackedLayout:(id)arg1;
 - (void)_prepareForTransitionToOrFromGridLayout:(id)arg1 isAppearing:(BOOL)arg2;
@@ -194,6 +196,7 @@
 - (struct CGPoint { float x1; float x2; })_targetContentOffsetWithAnchorItemIndexPath:(id)arg1 isRotation:(BOOL)arg2 orTransitionFromLayout:(id)arg3 keepAnchorStable:(BOOL)arg4;
 - (struct PUGridCoordinates { int x1; int x2; })_targetTransitionGridCoordsForGridCoords:(struct PUGridCoordinates { int x1; int x2; })arg1 atVisualSection:(int)arg2 transitionSectionInfo:(id)arg3;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_transformToConvertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 intoRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 referenceCenter:(struct CGPoint { float x1; float x2; })arg3;
+- (void)_updateHasFloatingHeaders;
 - (struct CGPoint { float x1; float x2; })_visibleRectOriginForScrollOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct PUSimpleIndexPath { int x1; int x2; })_visualIndexPathForTransitionCoordinates:(struct PUGridCoordinates { int x1; int x2; })arg1 inTransitionSection:(int)arg2;
 - (struct PUSimpleIndexPath { int x1; int x2; })_visualRowPathForTransitionRowIndex:(int)arg1 transitionSectionInfo:(id)arg2;
@@ -271,6 +274,7 @@
 - (void)prepareForTransitionFromLayout:(id)arg1;
 - (void)prepareForTransitionToLayout:(id)arg1;
 - (void)prepareLayout;
+- (id)pu_debugRows;
 - (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 passingTest:(id)arg3;
 - (id)realSectionsForVisualSection:(int)arg1 forSectioning:(id)arg2;
 - (id)renderedStripsElementKind;

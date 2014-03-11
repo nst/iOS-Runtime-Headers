@@ -7,6 +7,7 @@
 @interface TSPBundle : NSObject <TSPPackage> {
     SFUCryptoKey *_decryptionKey;
     <TSPFileCoordinatorDelegate> *_fileCoordinatorDelegate;
+    BOOL _isClosed;
     TSUZipFileArchive *_objectArchive;
     NSHashTable *_packageDatas;
     unsigned char _packageIdentifier;
@@ -14,6 +15,7 @@
 
 @property(readonly) SFUCryptoKey * decryptionKey;
 @property(readonly) <TSPFileCoordinatorDelegate> * fileCoordinatorDelegate;
+@property(readonly) BOOL isClosed;
 @property(readonly) unsigned char packageIdentifier;
 
 + (id)componentFileURLForPackageURL:(id)arg1 packageLocator:(id)arg2;
@@ -25,16 +27,19 @@
 - (BOOL)containsData:(id)arg1;
 - (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 completion:(id)arg6;
 - (id)decryptionKey;
+- (void)didCloseDocument;
 - (void)didReferenceData:(id)arg1;
 - (void)enumerateDatasUsingBlock:(id)arg1;
 - (id)fileCoordinatorDelegate;
 - (id)init;
 - (id)initWithPackageIdentifier:(unsigned char)arg1 fileCoordinatorDelegate:(id)arg2;
 - (id)initWithURL:(id)arg1 packageIdentifier:(unsigned char)arg2 decryptionKey:(id)arg3 fileCoordinatorDelegate:(id)arg4;
+- (BOOL)isClosed;
 - (id)newDataStorageForFilename:(id)arg1 decryptionKey:(id)arg2;
 - (id)newDataStorageForFilename:(id)arg1;
 - (id)newReadChannelForComponent:(id)arg1;
 - (unsigned char)packageIdentifier;
+- (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;
 - (void)setObjectArchive:(id)arg1 decryptionKey:(id)arg2;
 
 @end

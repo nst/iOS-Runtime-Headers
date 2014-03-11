@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, SSAppPurchaseHistoryDatabase, SSDownloadManager;
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, SSAppPurchaseHistoryDatabase, SSDownloadManager, SSSoftwareUpdatesStore;
 
 @interface SKUIItemStateCenter : NSObject <SSDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _appInstallRestricted;
+    SSSoftwareUpdatesStore *_appUpdatesStore;
+    BOOL _canAccessAppUpdates;
     BOOL _canAccessPurchaseHistory;
     SSDownloadManager *_downloadManager;
     NSMutableArray *_finishLoadBlocks;
@@ -20,6 +22,7 @@
     BOOL _runningInStoreDemoMode;
 }
 
+@property(readonly) SSSoftwareUpdatesStore * appUpdatesStore;
 @property(getter=isApplicationInstallRestricted,readonly) BOOL applicationInstallRestricted;
 @property(getter=isGratisEligible,readonly) BOOL gratisEligible;
 @property(readonly) int parentalControlsRank;
@@ -29,14 +32,19 @@
 
 - (void).cxx_destruct;
 - (id)_addState:(unsigned int)arg1 forItemIdentifier:(id)arg2;
+- (id)_appUpdatesStore;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_fireFinishLoadBlocksIfNecessary;
+- (id)_newPurchaseWithItem:(id)arg1 offer:(id)arg2;
+- (id)_newPurchasesWithBundleItem:(id)arg1 bundleOffer:(id)arg2;
 - (id)_newPurchasesWithItems:(id)arg1;
 - (void)_notifyObserversOfPurchasesResponses:(id)arg1;
 - (void)_notifyObserversOfRestrictionsChange;
 - (void)_notifyObserversOfStateChange:(id)arg1;
 - (void)_notifyObserversOfStateChanges:(id)arg1;
+- (void)_performPurchases:(id)arg1 withClientContext:(id)arg2 completionBlock:(id)arg3;
 - (id)_purchaseHistoryDatabase;
+- (void)_reloadAppUpdatesStore;
 - (void)_reloadDownloadManager;
 - (void)_reloadPurchaseHistory;
 - (void)_reloadSoftwareLibrary;
@@ -44,17 +52,21 @@
 - (id)_removeState:(unsigned int)arg1 forItemIdentifier:(id)arg2;
 - (void)_replacePurchasingItem:(id)arg1 withDownloadIDs:(id)arg2;
 - (void)_restrictionsChangedNotification:(id)arg1;
+- (void)_setAvailableUpdatesWithUpdates:(id)arg1;
 - (void)_setDownloads:(id)arg1;
 - (void)_setGratisIdentifiers:(id)arg1 error:(id)arg2;
 - (void)_setInstalledItems:(id)arg1;
 - (void)_setPurchaseHistoryItemsWithIdentifiers:(id)arg1;
 - (void)_setStateFlag:(unsigned int)arg1 forOnlyItemsWithIdentifiers:(id)arg2;
+- (void)_updatesStoreChangeNotification:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)appUpdatesStore;
 - (void)cancelDownloadForItemWithIdentifier:(long long)arg1;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)finishLoadingWithCompletionBlock:(id)arg1;
+- (void)getUpdatesWithCompletionBlock:(id)arg1;
 - (id)init;
 - (BOOL)isApplicationInstallRestricted;
 - (BOOL)isGratisEligible;
@@ -62,10 +74,14 @@
 - (BOOL)isRunningInStoreDemoMode;
 - (id)metricsActionTypeForItem:(id)arg1;
 - (int)parentalControlsRank;
+- (id)performActionForItem:(id)arg1 clientContext:(id)arg2 completionBlock:(id)arg3;
+- (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id)arg4;
 - (id)performActionForItem:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)purchaseItem:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)purchaseItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id)arg4;
+- (void)purchaseItems:(id)arg1 withClientContext:(id)arg2 completionBlock:(id)arg3;
 - (void)purchaseItems:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)reloadFromServer;
+- (void)reloadFromServerWithCompletionBlock:(id)arg1;
 - (void)reloadGratisEligibilityWithBundleIdentifiers:(id)arg1 clientContext:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (id)stateForItemWithIdentifier:(long long)arg1;

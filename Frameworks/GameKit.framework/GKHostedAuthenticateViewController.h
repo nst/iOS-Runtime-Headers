@@ -15,6 +15,7 @@
     id _dismissCompletionHandler;
     NSError *_error;
     int _mode;
+    BOOL _rotationLocked;
 }
 
 @property(retain) UIAlertView * alert;
@@ -23,6 +24,7 @@
 @property(copy) id dismissCompletionHandler;
 @property(retain) NSError * error;
 @property int mode;
+@property(getter=isRotationLocked) BOOL rotationLocked;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 
@@ -37,6 +39,7 @@
 - (void)finishAuthenticationWithError:(id)arg1;
 - (id)hostSideViewControllerClassName;
 - (id)initWithMode:(int)arg1;
+- (BOOL)isRotationLocked;
 - (int)mode;
 - (id)serviceSideViewControllerClassName;
 - (void)setAlert:(id)arg1;
@@ -45,8 +48,10 @@
 - (void)setDismissCompletionHandler:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setMode:(int)arg1;
+- (void)setRotationLocked:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (BOOL)shouldAutorotate;
 - (void)showPasswordChangeAlertWithURL:(id)arg1;
 
 @end

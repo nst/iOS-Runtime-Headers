@@ -7,6 +7,7 @@
 @interface MPMediaQueryQueueFeeder : MPQueueFeeder {
     unsigned int _itemsChanged : 1;
     unsigned int _hasPendingLibraryChanges : 1;
+    MPMediaItem *_cloudDialogAllowedMediaItem;
     MPMediaLibraryConnectionAssertion *_connectionAssertion;
     MPMediaItem *_focusedItem;
     int _ignoreShuffleTypeChangesCount;
@@ -16,22 +17,23 @@
     BOOL _useAirPlayMusicMode;
 }
 
+@property(retain) MPMediaItem * cloudDialogAllowedMediaItem;
 @property(retain) MPMediaItem * focusedItem;
 @property(retain) NSArray * prefixMediaItems;
 @property(copy) MPMediaQuery * query;
 @property BOOL useAirPlayMusicMode;
-
-+ (id)imageCache;
 
 - (void).cxx_destruct;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applyAirPlayMusicMode;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryDidChange;
+- (void)_itemWillChangeNotification:(id)arg1;
 - (void)_libraryDidChangeNotification:(id)arg1;
 - (void)_performWhileIgnoringShuffleChanges:(id)arg1;
 - (unsigned int)_shuffleItemsInFeederQueryWithShuffleType:(unsigned int)arg1 initialIndex:(unsigned int)arg2;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
+- (id)cloudDialogAllowedMediaItem;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)focusedItem;
@@ -42,7 +44,6 @@
 - (unsigned int)itemCount;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
-- (unsigned int)nonRepeatingItemCount;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)playbackInfoAtIndex:(unsigned int)arg1;
 - (id)preferredLanguages;
@@ -50,12 +51,11 @@
 - (id)query;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (void)setAVController:(id)arg1;
+- (void)setCloudDialogAllowedMediaItem:(id)arg1;
 - (void)setFocusedItem:(id)arg1;
 - (void)setPrefixMediaItems:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setSubsequenceFocused:(BOOL)arg1 currentItemIndex:(unsigned int)arg2;
 - (void)setUseAirPlayMusicMode:(BOOL)arg1;
-- (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
 - (BOOL)trackChangesCanEndPlayback;
 - (unsigned int)unshuffledIndexOfAVItem:(id)arg1;

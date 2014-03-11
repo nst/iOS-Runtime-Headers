@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarItemEditorDelegate>, EKCalendarItem, EKCalendarItemEditItem, EKEventStore, NSArray, NSMutableSet, UIActionSheet, UIAlertView, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
+@class <EKCalendarItemEditorDelegate>, EKCalendarItem, EKCalendarItemEditItem, EKEventStore, EKUIRecurrenceAlertController, NSArray, NSMutableSet, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
 
 @interface EKCalendarItemEditor : UITableViewController <EKCalendarItemEditItemDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     _UIAccessDeniedView *_accessDeniedView;
-    UIActionSheet *_alertSheet;
-    UIAlertView *_alertView;
     EKCalendarItem *_calendarItem;
     BOOL _canHideDoneAndCancelButtons;
     UIBarButtonItem *_cancelButton;
@@ -25,6 +23,7 @@
     float _leftButtonSpace;
     UIBarButtonItem *_leftButtonSpacer;
     BOOL _needsCellHeightChange;
+    EKUIRecurrenceAlertController *_recurrenceAlertController;
     UIResponder *_responderToRestoreOnAppearence;
     id _revertState;
     float _rightButtonSpace;
@@ -49,16 +48,11 @@
 @property int visibleSectionToRestoreOnAppearence;
 
 - (void).cxx_destruct;
-- (void)_alertButtonClickedWithTag:(int)arg1 buttonIndex:(int)arg2;
 - (BOOL)_canDetachSingleOccurrence;
 - (BOOL)_canEnableDoneButton;
-- (void)_cancelSheetButtonPressed:(int)arg1;
 - (void)_completeWithAction:(int)arg1 animated:(BOOL)arg2 notify:(BOOL)arg3;
 - (void)_configureVisibleItems;
 - (void)_copyEventForPossibleRevert;
-- (void)_deleteRecurringSheetButtonPressed:(int)arg1;
-- (void)_deleteSheetButtonPressed:(int)arg1;
-- (void)_detachSheetButtonPressed:(int)arg1;
 - (id)_editItems;
 - (void)_getEditItem:(id*)arg1 andSubsection:(int*)arg2 forSection:(int)arg3;
 - (void)_keyboardWillChangeFrame:(id)arg1;
@@ -68,7 +62,6 @@
 - (void)_performDelete:(int)arg1;
 - (BOOL)_performSave:(int)arg1 animated:(BOOL)arg2;
 - (void)_pinKeyboard:(BOOL)arg1;
-- (void)_presentAlertWithTag:(int)arg1;
 - (void)_presentDetachSheet;
 - (void)_reallyHandleCellHeightChange;
 - (void)_revertEvent;
@@ -81,8 +74,6 @@
 - (void)_updateCurrentEditItemsFromVisibility:(int)arg1 toVisibility:(int)arg2 animated:(BOOL)arg3;
 - (id)_viewForSheet;
 - (id)accessDeniedView;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowsDeletingFutureOccurrences;
 - (void)applicationDidResume;
 - (id)calendarItem;

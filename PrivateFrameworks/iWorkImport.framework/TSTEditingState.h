@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSKCommandController, TSTCell, TSTSearchReference, TSTTableInfo, TSTTableModel, TSTTableSelection, TSUPointerKeyDictionary, TSWPStorage;
+@class TSKCommandController, TSTCell, TSTSearchReference, TSTTableInfo, TSTTableModel, TSTTableSelection, TSTTextStatisticsTracker, TSUPointerKeyDictionary, TSWPStorage;
 
 @interface TSTEditingState : TSPObject <TSWPStorageObserver> {
     struct { 
@@ -28,8 +28,8 @@
     TSTSearchReference *mSearchReference;
     TSTTableSelection *mSelection;
     TSTTableSelection *mSelectionReflectingEditingState;
-    TSTTableSelection *mSummarySelection;
     TSTTableInfo *mTableInfo;
+    TSTTextStatisticsTracker *mTracker;
 }
 
 @property BOOL cellWasEditedInCurrentSession;
@@ -46,9 +46,9 @@
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } lastEditingCellID;
 @property(retain) TSTSearchReference * searchReference;
 @property(copy) TSTTableSelection * selection;
-@property(copy) TSTTableSelection * summarySelection;
 @property TSTTableInfo * tableInfo;
 @property(readonly) TSTTableModel * tableModel;
+@property TSTTextStatisticsTracker * tracker;
 
 - (id).cxx_construct;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
@@ -91,13 +91,13 @@
 - (void)setLastEditingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setSearchReference:(id)arg1;
 - (void)setSelection:(id)arg1;
-- (void)setSummarySelection:(id)arg1;
 - (void)setTableInfo:(id)arg1;
+- (void)setTracker:(id)arg1;
 - (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
 - (id)storageForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (id)summarySelection;
 - (id)tableInfo;
 - (id)tableModel;
+- (id)tracker;
 - (void)willEndEditingDueToCancelOperation;
 
 @end

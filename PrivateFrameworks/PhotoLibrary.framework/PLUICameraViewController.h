@@ -46,6 +46,9 @@
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
+- (int)preferredStatusBarStyle;
+- (int)preferredStatusBarUpdateAnimation;
+- (BOOL)prefersStatusBarHidden;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setWantsImageData:(BOOL)arg1;
 - (BOOL)shouldAutorotate;

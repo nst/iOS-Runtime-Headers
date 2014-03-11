@@ -77,7 +77,6 @@
     TSDGLTextureInfo *_particleTextureInfo;
     float _previousPercent;
     BOOL _shouldApplyBloomEffect;
-    BOOL _shouldForceDrawingForPreWarming;
 }
 
 + (int)animationCategory;
@@ -99,7 +98,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfEffectWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (id)initWithAnimationContext:(id)arg1;
 - (void)p_drawObject:(id)arg1 withContext:(id)arg2;
-- (void)p_drawParticleSystemsWithPercent:(float)arg1 sparkles:(BOOL)arg2 particleSystemOpacity:(float)arg3;
+- (void)p_drawParticleSystemsWithPercent:(float)arg1 sparkles:(BOOL)arg2 particleSystemOpacity:(float)arg3 context:(id)arg4;
 - (id)p_fireworksSystemsForTR:(id)arg1 build:(id)arg2 context:(id)arg3;
 - (void)p_setupFBOWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)p_setupParticleTexture;

@@ -5,29 +5,32 @@
 @class NSArray, RURadioDataSource;
 
 @interface MusicRadioDataSource : MPUDataSource <RURadioDataSourceDelegate> {
+    NSArray *_featuredStations;
     RURadioDataSource *_radioDataSource;
     NSArray *_stations;
+    NSArray *_userStations;
 }
 
-@property(readonly) NSArray * stations;
+@property(readonly) NSArray * featuredStations;
+@property(getter=isOptedInToRadio,readonly) BOOL optedInToRadio;
+@property(readonly) NSArray * userStations;
 
 - (void).cxx_destruct;
-- (void)_prefetchStationArtwork;
+- (void)_invalidateCalculatedEntities;
 - (void)checkAcceptedTermsWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (void)deauthenticateIfNecessary;
 - (int)editingTypeForEntityAtIndex:(unsigned int)arg1;
 - (id)entities;
 - (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
+- (id)featuredStations;
 - (id)initWithEntityType:(int)arg1;
-- (void)invalidateWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3;
-- (void)optInWithActiveAccountWithCompletionHandler:(id)arg1;
+- (BOOL)isOptedInToRadio;
 - (id)playbackContextForIndex:(unsigned int)arg1;
 - (void)radioDataSourceDidDeauthenticate:(id)arg1;
 - (void)radioDataSourceDidInvalidate:(id)arg1;
-- (void)radioDataSourceShouldPrefetchStationArtwork:(id)arg1;
 - (void)refreshFeaturedStations;
-- (id)stations;
 - (void)synchronizeStationsAsAutomaticUpdate:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (id)userStations;
 
 @end

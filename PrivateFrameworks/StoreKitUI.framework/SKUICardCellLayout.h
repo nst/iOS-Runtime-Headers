@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
+@class NSString, SKUISearchAppBundleView, UIImage, UIImageView, UILabel;
 
 @interface SKUICardCellLayout : SKUIItemCellLayout {
+    BOOL _appBundle;
+    SKUISearchAppBundleView *_appBundleView;
     UILabel *_artistLabel;
+    BOOL _hasInAppPurchases;
+    UILabel *_hasInAppPurchasesLabel;
     int _numberOfUserRatings;
     UIImageView *_screenshotImageView;
     UILabel *_titleLabel;
@@ -14,22 +18,30 @@
     UILabel *_userRatingLabel;
 }
 
+@property BOOL appBundle;
+@property(readonly) SKUISearchAppBundleView * appBundleView;
 @property(copy) NSString * artistName;
+@property BOOL hasInAppPurchases;
 @property int numberOfUserRatings;
 @property(retain) UIImage * screenshotImage;
 @property(copy) NSString * title;
 @property float userRating;
 
 - (void).cxx_destruct;
+- (BOOL)appBundle;
+- (id)appBundleView;
 - (id)artistName;
+- (BOOL)hasInAppPurchases;
 - (void)layoutForItemOfferChange;
 - (void)layoutSubviews;
 - (int)numberOfUserRatings;
 - (void)prepareForReuse;
 - (void)resetLayout;
 - (id)screenshotImage;
+- (void)setAppBundle:(BOOL)arg1;
 - (void)setArtistName:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setHasInAppPurchases:(BOOL)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setScreenshotImage:(id)arg1;
 - (void)setTitle:(id)arg1;

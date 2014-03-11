@@ -26,6 +26,7 @@
 + (id)indexPathWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
 + (id)pu_indexPathsForItems:(id)arg1 inSection:(int)arg2;
 
+- (id)__ck_indexPathShiftedForInsertedIndexes:(id)arg1 deletedIndexes:(id)arg2;
 - (BOOL)_gkIsGlobal;
 - (int)ab_group;
 - (int)ab_item;

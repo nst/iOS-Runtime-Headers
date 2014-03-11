@@ -46,8 +46,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (Class)entityClass;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 cancelBlock:(id)arg3 usingBlock:(id)arg4;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 sectionProperty:(id)arg3 cancelBlock:(id)arg4 usingBlock:(id)arg5;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 usingBlock:(id)arg3;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
+- (void)enumeratePersistentIDsAndSectionsWithProperty:(id)arg1 usingBlock:(id)arg2;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (void)enumerateSectionsUsingBlock:(id)arg1;
 - (id)enumerationDatabaseResultForSQL:(id)arg1 onConnection:(id)arg2 withParameters:(id)arg3;
@@ -72,6 +74,7 @@
 - (id)sectionProperty;
 - (id)sections;
 - (id)sectionsParameters;
+- (BOOL)sectionsPersistentIDColumnIsDistinct;
 - (id)selectCountSQL;
 - (id)selectPersistentIDsSQL;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2 distinct:(BOOL)arg3;

@@ -26,6 +26,8 @@
 - (id)init;
 - (id)initWithAudioInputDevice:(id)arg1;
 - (void)reload;
+- (id)savedAudioURL;
+- (BOOL)setPaused:(BOOL)arg1;
 - (id)waveform;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (id)waveformGenerator;

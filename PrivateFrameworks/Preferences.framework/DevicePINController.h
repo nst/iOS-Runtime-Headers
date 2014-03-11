@@ -24,6 +24,7 @@
 
 + (BOOL)settingEnabled;
 
+- (BOOL)_asyncSetPinCompatible;
 - (void)_clearBlockedState;
 - (void)_dismiss;
 - (int)_getScreenType;
@@ -49,6 +50,7 @@
 - (id)init;
 - (BOOL)isBlocked;
 - (void)loadView;
+- (int)mode;
 - (int)numberOfFailedAttempts;
 - (struct CGSize { float x1; float x2; })overallContentSizeForViewInPopover;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paneFrame;
@@ -67,10 +69,12 @@
 - (void)setLastEntry:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setOldPassword:(id)arg1;
+- (void)setPIN:(id)arg1 completion:(id)arg2;
 - (void)setPIN:(id)arg1;
 - (void)setPane:(id)arg1;
 - (void)setPinDelegate:(id)arg1;
 - (void)setSpecifier:(id)arg1;
+- (void)setSuccess:(BOOL)arg1;
 - (BOOL)simplePIN;
 - (id)stringsBundle;
 - (id)stringsTable;

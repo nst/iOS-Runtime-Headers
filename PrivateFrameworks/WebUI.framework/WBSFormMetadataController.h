@@ -29,6 +29,7 @@
 - (id)formAutoFillNodeForField:(id)arg1 form:(double)arg2 inFrame:(id)arg3;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue { }*)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (BOOL)formClassificationShouldIgnoreAutocompleteAttribute;
+- (id)formElementWithFormID:(double)arg1 inFrame:(id)arg2;
 - (void)getMetadataForAllFormsInPageWithMainFrame:(id)arg1 requestType:(unsigned int)arg2 frames:(id*)arg3 formMetadata:(id*)arg4;
 - (void)getMetadataForTextField:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id*)arg3 formMetadata:(id*)arg4 canAutoComplete:(BOOL*)arg5;
 - (id)init;

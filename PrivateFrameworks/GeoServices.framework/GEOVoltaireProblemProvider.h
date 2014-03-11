@@ -14,13 +14,11 @@
     GEORequester *_requester;
 }
 
-+ (void)_resetURL;
 + (unsigned short)providerID;
 + (void)setUsePersistentConnection:(BOOL)arg1;
 
 - (void)cancelRequest;
 - (void)dealloc;
-- (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;

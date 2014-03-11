@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKBalloonView, NSAttributedString, UILabel, UIView<CKGradientReferenceView>;
+@class CKBalloonView, NSAttributedString, UILabel;
 
 @interface CKTranscriptBalloonCell : CKTranscriptMessageCell {
     CKBalloonView *_balloonView;
+    NSAttributedString *_drawerAttributedText;
     UILabel *_drawerLabel;
-    float _drawerPercentRevealed;
-    float _transcriptDrawerWidth;
+    BOOL _drawerTextChanged;
+    BOOL _drawerWasVisible;
 }
 
 @property(retain) CKBalloonView * balloonView;
 @property(copy) NSAttributedString * drawerAttributedText;
 @property(retain) UILabel * drawerLabel;
-@property float drawerPercentRevealed;
-@property(retain) UIView<CKGradientReferenceView> * gradientReferenceView;
-@property float transcriptDrawerWidth;
+@property BOOL drawerTextChanged;
+@property BOOL drawerWasVisible;
 
 - (id)balloonView;
 - (void)configureForRow:(id)arg1;
@@ -24,16 +24,15 @@
 - (void)dealloc;
 - (id)drawerAttributedText;
 - (id)drawerLabel;
-- (float)drawerPercentRevealed;
-- (id)gradientReferenceView;
+- (BOOL)drawerTextChanged;
+- (BOOL)drawerWasVisible;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
+- (void)layoutSubviewsForContents;
+- (void)layoutSubviewsForDrawer;
 - (void)setBalloonView:(id)arg1;
 - (void)setDrawerAttributedText:(id)arg1;
 - (void)setDrawerLabel:(id)arg1;
-- (void)setDrawerPercentRevealed:(float)arg1;
-- (void)setGradientReferenceView:(id)arg1;
-- (void)setTranscriptDrawerWidth:(float)arg1;
-- (float)transcriptDrawerWidth;
+- (void)setDrawerTextChanged:(BOOL)arg1;
+- (void)setDrawerWasVisible:(BOOL)arg1;
 
 @end

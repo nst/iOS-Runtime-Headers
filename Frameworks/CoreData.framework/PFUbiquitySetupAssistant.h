@@ -123,7 +123,7 @@
 - (void)coordinatorWillRemoveStore:(id)arg1;
 - (id)createSetOfLocalLogLocations:(id*)arg1;
 - (void)dealloc;
-- (BOOL)detectAndFixForkedContainer:(id*)arg1;
+- (BOOL)detectAndFixForkedContainer:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)doPostValidationInit:(id*)arg1;
 - (void)exportedLog:(id)arg1;
 - (BOOL)failSetup;

@@ -69,6 +69,7 @@
 - (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)componentRootObject;
 - (void)constrainShadowForSwatchGeneration;
+- (id)constrainShapeStyleForContext:(id)arg1;
 - (void)constrainStrokeForSwatchGeneration;
 - (BOOL)containsProperty:(int)arg1;
 - (id)copyFlattenedWithContext:(id)arg1;

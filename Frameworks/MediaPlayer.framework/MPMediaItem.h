@@ -19,6 +19,7 @@
 @property(readonly) NSArray * chapters;
 @property(readonly) NSString * composer;
 @property(copy) NSDate * dateAccessed;
+@property(readonly) unsigned int discNumber;
 @property(readonly) NSString * effectiveAlbumArtist;
 @property(readonly) double effectiveStopTime;
 @property(readonly) NSString * genre;
@@ -45,6 +46,7 @@
 @property(readonly) NSString * titleWithFallback;
 @property(readonly) unsigned int year;
 
++ (id)MPSD_mediaItemPropertiesForDownloadability;
 + (void)_createFilterableDictionary;
 + (BOOL)_isValidItemProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
@@ -88,6 +90,7 @@
 - (id)dateAccessed;
 - (void)didReceiveMemoryWarning;
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
+- (unsigned int)discNumber;
 - (id)effectiveAlbumArtist;
 - (double)effectiveStopTime;
 - (void)encodeWithCoder:(id)arg1;

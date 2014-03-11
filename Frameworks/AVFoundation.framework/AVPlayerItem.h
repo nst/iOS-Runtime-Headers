@@ -75,6 +75,7 @@
 + (id)playerItemWithURL:(id)arg1;
 
 - (id)MPAVItem;
+- (unsigned int)RTCReportingFlags;
 - (int)_CreateSeekID;
 - (id)_URL;
 - (void)_addFAListeners;
@@ -155,6 +156,7 @@
 - (struct CGSize { float x1; float x2; })_presentationSize;
 - (id)_previousItem;
 - (id)_propertyStorage;
+- (void)_quietlySetAllowsExtendedReadAhead:(BOOL)arg1;
 - (void)_quietlySetAlwaysMonitorsPlayability:(BOOL)arg1;
 - (void)_quietlySetBufferingTargetMaximum:(double)arg1;
 - (void)_quietlySetBufferingTargetMinimum:(double)arg1;
@@ -168,6 +170,7 @@
 - (void)_quietlySetNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
 - (void)_quietlySetPlaybackLikelyToKeepUpTrigger:(int)arg1;
 - (void)_quietlySetPlaybackProperties:(id)arg1;
+- (void)_quietlySetRTCReportingFlags:(unsigned int)arg1;
 - (void)_quietlySetRestrictions:(unsigned int)arg1;
 - (void)_quietlySetReversePlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_quietlySetServiceIdentifier:(id)arg1;
@@ -223,6 +226,7 @@
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
 - (void)addOutput:(id)arg1;
 - (BOOL)allowProgressiveSwitchUp;
+- (BOOL)allowsExtendedReadAhead;
 - (BOOL)alwaysMonitorsPlayability;
 - (id)asset;
 - (id)audioMix;
@@ -302,6 +306,7 @@
 - (id)selectedMediaOptionInMediaSelectionGroup:(id)arg1;
 - (id)serviceIdentifier;
 - (void)setAllowProgressiveSwitchUp:(BOOL)arg1;
+- (void)setAllowsExtendedReadAhead:(BOOL)arg1;
 - (void)setAlwaysMonitorsPlayability:(BOOL)arg1;
 - (void)setAudioMix:(id)arg1;
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
@@ -323,6 +328,7 @@
 - (void)setNetworkUsuallyExceedsMaxBitRate:(BOOL)arg1;
 - (void)setNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
 - (void)setPlaybackLikelyToKeepUpTrigger:(int)arg1;
+- (void)setRTCReportingFlags:(unsigned int)arg1;
 - (void)setRequiresAccessLog:(BOOL)arg1;
 - (void)setRestrictions:(unsigned int)arg1;
 - (void)setReversePlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

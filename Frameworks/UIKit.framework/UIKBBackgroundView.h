@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSObject, NSString, UIKBRenderConfig, UIKBTree;
+@class NSObject, NSString, UIKBRenderConfig, UIKBTree, UITextInputTraits;
 
 @interface UIKBBackgroundView : UIKBSplitImageView <UIKBCacheableView> {
     struct CGRect { 
@@ -44,6 +44,7 @@
     BOOL _centerFilled;
     NSObject *_geometryCacheKey;
     BOOL _hasCandidateKeys;
+    UITextInputTraits *_inputTraits;
     BOOL _isSplit;
     UIKBTree *_keyplane;
     UIKBRenderConfig *_renderConfig;
@@ -73,7 +74,8 @@
 - (id)geometryCacheKey;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)keepNonPersistent;
-- (void)refreshStyleForKeyplane:(id)arg1;
+- (void)layoutSubviews;
+- (void)refreshStyleForKeyplane:(id)arg1 inputTraits:(id)arg2;
 - (id)renderConfig;
 - (void)setGeometryCacheKey:(id)arg1;
 - (void)setRenderConfig:(id)arg1;

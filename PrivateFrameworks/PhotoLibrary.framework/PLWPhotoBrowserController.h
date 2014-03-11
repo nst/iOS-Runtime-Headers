@@ -13,7 +13,6 @@
 - (void)loadView;
 - (void)setAssetContainerList:(id)arg1 currentImageIndexPath:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (BOOL)wantsPhotoBrowserStyleStatusBar;

@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, SKUIColorScheme, SKUIItemOffer, SKUIItemOfferButton, SKUIItemState, SKUIProductPageHeaderLabel, UIButton, UIControl, UIImage, UIImageView, UILabel;
+@class NSString, SKUIClientContext, SKUIColorScheme, SKUIContentRatingArtworkResourceLoader, SKUIItemContentRating, SKUIItemOffer, SKUIItemOfferButton, SKUIItemState, SKUIProductPageHeaderLabel, UIButton, UIControl, UIImage, UIImageView, UILabel;
 
-@interface SKUIProductPageHeaderView : UIView <SKUIItemOfferButtonDelegate> {
+@interface SKUIProductPageHeaderView : UIView <SKUIItemOfferButtonDelegate, SKUIContentRatingArtworkLoaderObserver> {
     UILabel *_ageBandLabel;
     UIButton *_artistButton;
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
-    NSString *_contentRatingName;
+    SKUIItemContentRating *_contentRating;
+    SKUIContentRatingArtworkResourceLoader *_contentRatingArtworkLoader;
     UILabel *_facebookFriendsLabel;
     UIImageView *_facebookLogoImageView;
     float _headerImageHeight;
@@ -18,9 +19,13 @@
     UILabel *_inAppPurchasesLabel;
     SKUIItemOffer *_itemOffer;
     SKUIItemOfferButton *_itemOfferButton;
+    UILabel *_itemOfferExplanationLabel;
+    UILabel *_itemOfferExplanationTitleLabel;
     SKUIItemState *_itemState;
+    BOOL _needsLayoutAfterButtonAnimation;
     int _numberOfUserRatings;
     BOOL _restricted;
+    SKUIItemContentRating *_secondaryContentRating;
     UIButton *_shareButton;
     SKUIProductPageHeaderLabel *_titleLabel;
     float _userRating;
@@ -32,7 +37,8 @@
 @property(readonly) UIControl * artistButton;
 @property(copy) NSString * artistName;
 @property(retain) SKUIColorScheme * colorScheme;
-@property(copy) NSString * contentRatingName;
+@property(retain) SKUIItemContentRating * contentRating;
+@property(retain) SKUIContentRatingArtworkResourceLoader * contentRatingArtworkLoader;
 @property(copy) NSString * facebookFriendsString;
 @property(retain) UIImage * headerImage;
 @property float headerImageHeight;
@@ -40,21 +46,28 @@
 @property(copy) NSString * inAppPurchasesString;
 @property(retain) SKUIItemOffer * itemOffer;
 @property(readonly) SKUIItemOfferButton * itemOfferButton;
+@property(copy) NSString * itemOfferExplanationText;
+@property(copy) NSString * itemOfferExplanationTitle;
 @property(copy) SKUIItemState * itemState;
 @property int numberOfUserRatings;
 @property(getter=isRestricted) BOOL restricted;
+@property(retain) SKUIItemContentRating * secondaryContentRating;
 @property(readonly) UIControl * shareButton;
 @property(copy) NSString * title;
 @property float userRating;
 
 - (void).cxx_destruct;
 - (void)_cancelConfirmationAction:(id)arg1;
+- (void)_finishButtonAnimation;
 - (void)_reloadItemOfferButton:(BOOL)arg1;
 - (void)_showConfirmationAction:(id)arg1;
 - (id)ageBandString;
 - (id)artistButton;
 - (id)artistName;
 - (id)colorScheme;
+- (id)contentRating;
+- (void)contentRatingArtworkLoader:(id)arg1 didLoadImage:(id)arg2 forContentRating:(id)arg3;
+- (id)contentRatingArtworkLoader;
 - (id)contentRatingName;
 - (void)dealloc;
 - (id)facebookFriendsString;
@@ -66,25 +79,33 @@
 - (BOOL)isRestricted;
 - (id)itemOffer;
 - (id)itemOfferButton;
+- (void)itemOfferButtonDidAnimateTransition:(id)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
+- (id)itemOfferExplanationText;
+- (id)itemOfferExplanationTitle;
 - (id)itemState;
 - (void)layoutSubviews;
 - (int)numberOfUserRatings;
+- (id)secondaryContentRating;
 - (void)setAgeBandString:(id)arg1;
 - (void)setArtistName:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setContentRatingName:(id)arg1;
+- (void)setContentRating:(id)arg1;
+- (void)setContentRatingArtworkLoader:(id)arg1;
 - (void)setFacebookFriendsString:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
 - (void)setHeaderImageHeight:(float)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setInAppPurchasesString:(id)arg1;
 - (void)setItemOffer:(id)arg1;
+- (void)setItemOfferExplanationText:(id)arg1;
+- (void)setItemOfferExplanationTitle:(id)arg1;
 - (void)setItemState:(id)arg1 animated:(BOOL)arg2;
 - (void)setItemState:(id)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;
 - (void)setRestricted:(BOOL)arg1;
+- (void)setSecondaryContentRating:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserRating:(float)arg1;
 - (id)shareButton;

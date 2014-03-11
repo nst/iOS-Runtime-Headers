@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface AWDEasyConfigCompleted : PBCodable {
+@interface AWDEasyConfigCompleted : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int channelOfDestinationAP : 1; 
@@ -137,6 +137,7 @@
 - (unsigned int)channelOfSWAP;
 - (void)clearEaProtocolStrings;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)destinationNetworkPSKInKeychain;

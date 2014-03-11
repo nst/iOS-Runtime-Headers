@@ -74,13 +74,14 @@
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (void)mediaView:(id)arg1 playbackStateDidChange:(int)arg2;
-- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2;
+- (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
+- (void)willHideInContext:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

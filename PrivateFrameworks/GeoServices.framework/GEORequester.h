@@ -26,6 +26,9 @@
 - (void)_applicationWantsToReplayRequests:(id)arg1;
 - (void)_handleResumeOnThread;
 - (void)_handleSuspendOnThread;
+- (void)_logErrorIfNecessary:(id)arg1;
+- (void)_logRequestsIfNecessary:(id)arg1;
+- (void)_logResponsesIfNecessary:(id)arg1;
 - (void)dealloc;
 - (id)debugRequestName;
 - (BOOL)disableReplay;
@@ -41,5 +44,6 @@
 - (void)setDebugRequestName:(id)arg1;
 - (void)setDisableReplay:(BOOL)arg1;
 - (void)start;
+- (void)startWithConnectionProperties:(id)arg1;
 
 @end

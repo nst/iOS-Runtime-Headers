@@ -20,6 +20,7 @@
     BOOL mIsCurrentEventNonAutomatic;
     BOOL mIsHyperlinkInProgress;
     BOOL mIsPaused;
+    BOOL mIsUsingDiscreteGPU;
     KNMovieRenderer *mMovieRendererWithVisibleHUD;
     int mPlayMode;
     struct CGColorSpace { } *mPlaybackColorSpace;
@@ -124,8 +125,10 @@
 - (void)p_movieEnded:(id)arg1;
 - (void)p_movieStarted:(id)arg1;
 - (BOOL)p_processHyperlinkURL:(id)arg1;
+- (void)p_releaseDiscreteGPUIfRetained;
 - (void)p_resetAnimatorAndSetGoToFirstEvent:(BOOL)arg1;
 - (void)p_resetAnimatorAtEventIndex:(unsigned int)arg1;
+- (void)p_retainDiscreteGPUIfNeeded;
 - (void)p_setAnimator:(id)arg1;
 - (id)p_topLevelRepsForHitTesting;
 - (void)pauseAnimations;

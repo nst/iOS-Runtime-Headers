@@ -22,6 +22,10 @@
         unsigned int count; 
         unsigned int size; 
     struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    struct { 
         unsigned int arrivalStepID : 1; 
         unsigned int departureStepID : 1; 
         unsigned int distance : 1; 
@@ -42,6 +46,7 @@
     unsigned int _expectedTime;
     } _has;
     unsigned int _historicTravelTime;
+    } _incidentEndOffsetsInRoutes;
     } _incidentIndices;
     NSString *_name;
     NSString *_phoneticName;
@@ -84,6 +89,8 @@
 @property(readonly) BOOL hasUnpackedLatLngVertices;
 @property(readonly) BOOL hasZilchPoints;
 @property unsigned int historicTravelTime;
+@property(readonly) unsigned int* incidentEndOffsetsInRoutes;
+@property(readonly) unsigned int incidentEndOffsetsInRoutesCount;
 @property(readonly) unsigned int* incidentIndices;
 @property(readonly) unsigned int incidentIndicesCount;
 @property(retain) NSString * name;
@@ -104,6 +111,7 @@
 - (struct CGImage { }*)_mapKitImage;
 - (void)addAdvisory:(int)arg1;
 - (void)addAdvisoryNotice:(id)arg1;
+- (void)addIncidentEndOffsetsInRoute:(unsigned int)arg1;
 - (void)addIncidentIndices:(unsigned int)arg1;
 - (void)addRouteName:(id)arg1;
 - (void)addStep:(id)arg1;
@@ -120,6 +128,7 @@
 - (id)basicPoints;
 - (void)clearAdvisoryNotices;
 - (void)clearAdvisorys;
+- (void)clearIncidentEndOffsetsInRoutes;
 - (void)clearIncidentIndices;
 - (void)clearRouteNames;
 - (void)clearSteps;
@@ -163,6 +172,9 @@
 - (BOOL)hasZilchPoints;
 - (unsigned int)hash;
 - (unsigned int)historicTravelTime;
+- (unsigned int)incidentEndOffsetsInRouteAtIndex:(unsigned int)arg1;
+- (unsigned int*)incidentEndOffsetsInRoutes;
+- (unsigned int)incidentEndOffsetsInRoutesCount;
 - (unsigned int*)incidentIndices;
 - (unsigned int)incidentIndicesAtIndex:(unsigned int)arg1;
 - (unsigned int)incidentIndicesCount;
@@ -201,6 +213,7 @@
 - (void)setHasRouteType:(BOOL)arg1;
 - (void)setHasTransportType:(BOOL)arg1;
 - (void)setHistoricTravelTime:(unsigned int)arg1;
+- (void)setIncidentEndOffsetsInRoutes:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setIncidentIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setName:(id)arg1;
 - (void)setPhoneticName:(id)arg1;

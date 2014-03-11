@@ -5,11 +5,12 @@
 @class <VGLCanvas>, <VKCameraControllerDelegate>, VKCamera;
 
 @interface VKCameraController : NSObject {
-    int _animating;
     VKCamera *_camera;
     <VGLCanvas> *_canvas;
     <VKCameraControllerDelegate> *_delegate;
     BOOL _gesturing;
+    BOOL _inProgressRegionChangeIsAnimated;
+    unsigned int _regionChangeCount;
 }
 
 @property(getter=isAnimating,readonly) BOOL animating;
@@ -18,14 +19,14 @@
 @property <VKCameraControllerDelegate> * delegate;
 @property(getter=isGesturing) BOOL gesturing;
 
-- (void)beginAnimating;
+- (void)beginRegionChange:(BOOL)arg1;
 - (id)camera;
 - (id)canvas;
 - (void)canvasDidLayout;
 - (void)dealloc;
 - (id)delegate;
 - (id)detailedDescription;
-- (void)endAnimating:(BOOL)arg1;
+- (void)endRegionChange;
 - (BOOL)isAnimating;
 - (BOOL)isGesturing;
 - (void)setCamera:(id)arg1;

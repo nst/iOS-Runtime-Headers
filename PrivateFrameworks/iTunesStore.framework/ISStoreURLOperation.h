@@ -37,14 +37,16 @@
 
 - (id)_account;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
-- (BOOL)_authenticateReturningError:(id*)arg1 promptAlways:(BOOL)arg2;
+- (BOOL)_authenticateWithContext:(id)arg1 error:(id*)arg2;
 - (BOOL)_canSendTokenToURL:(id)arg1;
 - (id)_copyAuthenticationContext;
+- (id)_copyAuthenticationContextForAttemptNumber:(int)arg1;
 - (id)_copyURLBagContext;
 - (BOOL)_isErrorTokenError:(id)arg1;
 - (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (void)_runURLOperation;
 - (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
+- (id)_urlBagForContext:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
 - (BOOL)canSendGUIDParameter;

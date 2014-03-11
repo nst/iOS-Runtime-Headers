@@ -24,6 +24,7 @@
 @property(readonly) struct CGSize { float x1; float x2; } rawDataSize;
 @property BOOL wasMediaReplaced;
 
+- (struct CGPoint { float x1; float x2; })centerForReplacingWithNewMedia;
 - (id)copyWithContext:(id)arg1;
 - (struct CGSize { float x1; float x2; })defaultOriginalSize;
 - (unsigned int)flags;

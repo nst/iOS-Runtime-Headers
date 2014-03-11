@@ -17,6 +17,7 @@
 + (BOOL)supportsHighResolutionSnapshots;
 + (BOOL)supportsSharingThumbnails;
 
+- (void).cxx_destruct;
 - (id)_newSnapshotWithView:(id)arg1;
 - (void)_processRequest;
 - (void)_respondWithSnapshot;

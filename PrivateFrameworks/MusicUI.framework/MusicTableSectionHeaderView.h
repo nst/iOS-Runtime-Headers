@@ -18,7 +18,6 @@
 - (float)backgroundTransitionWeighting;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
-- (void)setBackgroundTransitionProgress:(float)arg1;
 - (void)setBackgroundTransitionWeighting:(float)arg1;
 - (void)setTableViewStyle:(int)arg1;
 - (id)titleLabel;

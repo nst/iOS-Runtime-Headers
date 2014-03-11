@@ -23,6 +23,8 @@
     int _blurHardEdges;
     BOOL _blurRadiusSetOnce;
     BOOL _blursBackground;
+    UIImage *_colorBurnTintMaskImage;
+    UIView *_colorBurnTintView;
     UIColor *_colorMatrixColorTint;
     float _colorMatrixColorTintAlpha;
     float _colorMatrixGrayscaleTintAlpha;
@@ -38,6 +40,8 @@
     UIView *_contentView;
     BOOL _contentViewAccessed;
     BOOL _contentViewAccessorGuard;
+    UIImage *_darkeningTintMaskImage;
+    UIView *_darkeningTintView;
     UIImage *_filterMaskImage;
     UIView *_filterMaskViewContainer;
     NSMutableDictionary *_filterMaskViewMap;
@@ -86,6 +90,8 @@
 @property int blurHardEdges;
 @property BOOL blurRadiusSetOnce;
 @property BOOL blursBackground;
+@property(retain) UIImage * colorBurnTintMaskImage;
+@property(retain) UIView * colorBurnTintView;
 @property(retain) UIColor * colorMatrixColorTint;
 @property float colorMatrixColorTintAlpha;
 @property float colorMatrixGrayscaleTintAlpha;
@@ -101,6 +107,8 @@
 @property(retain) UIView * contentView;
 @property BOOL contentViewAccessed;
 @property BOOL contentViewAccessorGuard;
+@property(retain) UIImage * darkeningTintMaskImage;
+@property(retain) UIView * darkeningTintView;
 @property(readonly) UIView * effectView;
 @property(retain) UIImage * filterMaskImage;
 @property(retain) UIView * filterMaskViewContainer;
@@ -152,8 +160,10 @@
 - (void)_updateInputBounds;
 - (BOOL)_zoomsBack;
 - (void)addBackdropEffectViewIfNeededForSettings:(id)arg1;
+- (void)addColorBurnTintViewIfNeededForSettings:(id)arg1;
 - (void)addColorTintViewIfNeededForSettings:(id)arg1;
 - (void)addContentViewIfNeededForSettings:(id)arg1;
+- (void)addDarkeningTintViewIfNeededForSettings:(id)arg1;
 - (void)addGrayscaleTintViewIfNeededForSettings:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)adjustTintImplementationIfNeeded:(id)arg1;
@@ -180,6 +190,8 @@
 - (BOOL)blursBackground;
 - (BOOL)blursWithHardEdges;
 - (void)clearUpdateInputBoundsRunLoopObserver;
+- (id)colorBurnTintMaskImage;
+- (id)colorBurnTintView;
 - (id)colorMatrixColorTint;
 - (float)colorMatrixColorTintAlpha;
 - (float)colorMatrixGrayscaleTintAlpha;
@@ -197,10 +209,13 @@
 - (id)contentView;
 - (BOOL)contentViewAccessed;
 - (BOOL)contentViewAccessorGuard;
+- (id)darkeningTintMaskImage;
+- (id)darkeningTintView;
 - (void)dealloc;
 - (void)delayedComputeAndApplySettings;
 - (void)didCallRenderInContextOnBackdropViewLayer;
 - (void)didMoveToSuperview;
+- (BOOL)disablesOccludedBackdropBlurs;
 - (id)effectView;
 - (void)ensureProperSubviewOrdering;
 - (id)filterMaskImage;
@@ -263,6 +278,8 @@
 - (void)setBlursBackground:(BOOL)arg1;
 - (void)setBlursWithHardEdges:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setColorBurnTintMaskImage:(id)arg1;
+- (void)setColorBurnTintView:(id)arg1;
 - (void)setColorMatrixColorTint:(id)arg1;
 - (void)setColorMatrixColorTintAlpha:(float)arg1;
 - (void)setColorMatrixGrayscaleTintAlpha:(float)arg1;
@@ -278,6 +295,9 @@
 - (void)setContentView:(id)arg1;
 - (void)setContentViewAccessed:(BOOL)arg1;
 - (void)setContentViewAccessorGuard:(BOOL)arg1;
+- (void)setDarkeningTintMaskImage:(id)arg1;
+- (void)setDarkeningTintView:(id)arg1;
+- (void)setDisablesOccludedBackdropBlurs:(BOOL)arg1;
 - (void)setFilterMaskImage:(id)arg1;
 - (void)setFilterMaskViewContainer:(id)arg1;
 - (void)setFilterMaskViewMap:(id)arg1;

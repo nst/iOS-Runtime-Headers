@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchChildViewControllerDelegate>, NSArray, NSDictionary, NSMutableDictionary, NSString, SKUIClientContext, SKUIIPadSearchHeaderView, SKUIItemCollectionController, SKUIMetricsController, SKUIProductPageOverlayController, SKUISearchPage, SKUISearchRelatedView, SKUISearchResultGroupController, UICollectionView;
+@class <SKUISearchChildViewControllerDelegate>, NSArray, NSDictionary, NSMutableDictionary, NSString, SKUIClientContext, SKUIIPadSearchHeaderView, SKUIItemCollectionController, SKUIMetricsController, SKUISearchPage, SKUISearchRelatedView, SKUISearchResultGroupController, UICollectionView;
 
-@interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIMetricsViewController, SKUIProductPageOverlayDelegate, UICollectionViewDataSource, UICollectionViewDelegate, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UIViewControllerRestoration> {
+@interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIMetricsViewController, UICollectionViewDataSource, UICollectionViewDelegate, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UIViewControllerRestoration> {
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
     <SKUISearchChildViewControllerDelegate> *_delegate;
@@ -14,7 +14,6 @@
     SKUIItemCollectionController *_itemCollectionController;
     NSMutableDictionary *_itemIndexesByIndex;
     SKUIMetricsController *_metricsController;
-    SKUIProductPageOverlayController *_overlayController;
     SKUISearchPage *_page;
     NSString *_previousRelatedSearchTerm;
     SKUISearchRelatedView *_relatedView;
@@ -68,18 +67,17 @@
 - (void)loadView;
 - (id)metricsController;
 - (id)previousRelatedSearchTerm;
-- (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)scrollToTop;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)searchFacets;
-- (void)searchHeaderViewDidUpdateFacetSelections:(id)arg1;
+- (void)searchHeaderViewDidUpdateFacetSelections:(id)arg1 facetIndex:(int)arg2 listIndex:(int)arg3;
 - (id)searchPage;
 - (void)searchRelatedView:(id)arg1 didSelectRelatedQueryAtIndex:(int)arg2;
 - (void)searchRelatedViewDidSelectBackButton:(id)arg1;
 - (void)searchResultGroupController:(id)arg1 didLoadArtworkAtIndex:(unsigned int)arg2;
-- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndexes:(id)arg2;
+- (void)searchResultGroupController:(id)arg1 didLoadEntityAtIndexes:(id)arg2 removedEntityAtIndexes:(id)arg3;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFacetSelections:(id)arg1;
@@ -87,6 +85,7 @@
 - (void)setSearchFacets:(id)arg1;
 - (void)setSearchPage:(id)arg1 previousRelatedSearchTerm:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })visibleItemRangeForItemCollectionController:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

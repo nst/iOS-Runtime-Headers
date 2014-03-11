@@ -27,8 +27,6 @@
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1;
 + (id)_mapkitBundle;
-+ (id)_rivenBundle;
-+ (id)_rivenFactory;
 + (id)_typologyBundle;
 + (id)accessibilityBundleWithLastPathComponent:(id)arg1;
 + (id)afui_assistantUIFrameworkBundle;
@@ -116,6 +114,7 @@
 - (id)accessibilityBundlePath;
 - (id)appStoreReceiptURL;
 - (id)assistantUILocalizedStringForKey:(id)arg1 table:(id)arg2;
+- (id)assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)builtInPlugInsPath;
 - (id)builtInPlugInsURL;
 - (id)bundleIdentifier;
@@ -169,6 +168,7 @@
 - (id)sharedSupportPath;
 - (id)sharedSupportURL;
 - (id)siriUILocalizedStringForKey:(id)arg1 table:(id)arg2;
+- (id)siriUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)siriUILocalizedStringForKey:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;

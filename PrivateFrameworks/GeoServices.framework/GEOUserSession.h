@@ -2,6 +2,8 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
+@class NSString;
+
 @interface GEOUserSession : NSObject {
     struct { 
         unsigned long long _high; 
@@ -11,23 +13,29 @@
         unsigned long long _low; 
     double _sessionCreationTime;
     } _sessionID;
+    NSString *_sessionIDString;
     } _usageCollectionSessionID;
     double _usageSessionIDGenerationTime;
 }
 
 @property(readonly) double sessionCreationTime;
 @property(readonly) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property(readonly) NSString * sessionIDString;
 @property(readonly) struct { unsigned long long x1; unsigned long long x2; } usageCollectionSessionID;
 
-+ (void)disable;
++ (void)setIsGeod;
 + (id)sharedInstance;
 
+- (id)_defaultForKey:(id)arg1;
 - (void)_renewUsageCollectionSessionID;
+- (void)_setDefault:(id)arg1 forKey:(id)arg2;
+- (void)_updateSessionID;
 - (void)_updateWithNewUUIDForSessionID:(struct { unsigned long long x1; unsigned long long x2; }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (double)sessionCreationTime;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (id)sessionIDString;
 - (struct { unsigned long long x1; unsigned long long x2; })usageCollectionSessionID;
 
 @end

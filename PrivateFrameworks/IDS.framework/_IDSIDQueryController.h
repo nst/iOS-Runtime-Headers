@@ -40,7 +40,6 @@
 - (void)_requestCachedStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 completionBlock:(id)arg4;
 - (void)_requestStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 completionBlock:(id)arg4;
 - (id)_reroutedPrototypeService:(id)arg1;
-- (id)_squishFromURIFromIDStatusCache:(id)arg1 service:(id)arg2;
 - (void)_updateCacheWithDictionary:(id)arg1 service:(id)arg2;
 - (BOOL)_warmupQueryCacheForService:(id)arg1;
 - (void)addDelegate:(id)arg1 forService:(id)arg2 listenerID:(id)arg3 queue:(id)arg4;

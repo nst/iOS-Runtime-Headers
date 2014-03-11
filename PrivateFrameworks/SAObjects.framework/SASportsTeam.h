@@ -11,6 +11,9 @@
 @property BOOL alwaysUseAthleteFullName;
 @property(copy) NSArray * athletes;
 @property(copy) NSString * awayLosses;
+@property(copy) NSString * awayOvertimeLosses;
+@property(copy) NSString * awayPoints;
+@property(copy) NSString * awayTies;
 @property(copy) NSString * awayWins;
 @property(copy) NSNumber * clinchedQualificationPosition;
 @property(copy) NSNumber * conferencePosition;
@@ -20,6 +23,9 @@
 @property(copy) NSNumber * groupPosition;
 @property(copy) NSString * groupPositionDescription;
 @property(copy) NSString * homeLosses;
+@property(copy) NSString * homeOvertimeLosses;
+@property(copy) NSString * homePoints;
+@property(copy) NSString * homeTies;
 @property(copy) NSString * homeWins;
 @property(copy) NSString * location;
 @property(copy) NSString * losses;
@@ -48,6 +54,9 @@
 - (BOOL)alwaysUseAthleteFullName;
 - (id)athletes;
 - (id)awayLosses;
+- (id)awayOvertimeLosses;
+- (id)awayPoints;
+- (id)awayTies;
 - (id)awayWins;
 - (id)clinchedQualificationPosition;
 - (id)conferencePosition;
@@ -59,6 +68,9 @@
 - (id)groupPosition;
 - (id)groupPositionDescription;
 - (id)homeLosses;
+- (id)homeOvertimeLosses;
+- (id)homePoints;
+- (id)homeTies;
 - (id)homeWins;
 - (id)location;
 - (id)losses;
@@ -75,6 +87,9 @@
 - (void)setAlwaysUseAthleteFullName:(BOOL)arg1;
 - (void)setAthletes:(id)arg1;
 - (void)setAwayLosses:(id)arg1;
+- (void)setAwayOvertimeLosses:(id)arg1;
+- (void)setAwayPoints:(id)arg1;
+- (void)setAwayTies:(id)arg1;
 - (void)setAwayWins:(id)arg1;
 - (void)setClinchedQualificationPosition:(id)arg1;
 - (void)setConferencePosition:(id)arg1;
@@ -84,6 +99,9 @@
 - (void)setGroupPosition:(id)arg1;
 - (void)setGroupPositionDescription:(id)arg1;
 - (void)setHomeLosses:(id)arg1;
+- (void)setHomeOvertimeLosses:(id)arg1;
+- (void)setHomePoints:(id)arg1;
+- (void)setHomeTies:(id)arg1;
 - (void)setHomeWins:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLosses:(id)arg1;

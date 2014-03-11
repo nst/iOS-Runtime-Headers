@@ -12,12 +12,12 @@
 
 @property(readonly) NSURL * bundledDocumentContainerURL;
 @property(readonly) NSURL * documentContainerURL;
-@property(copy) NSString * documentVariant;
+@property(readonly) NSString * documentVariant;
 @property(readonly) int downloadState;
 @property(readonly) NSURL * downloadedDocumentContainerURL;
-@property(copy) NSString * name;
+@property(readonly) NSString * name;
 @property(readonly) NSBundle * previewBundle;
-@property(copy) NSString * previewVariant;
+@property(readonly) NSString * previewVariant;
 @property(readonly) NSURL * templateZipURL;
 
 + (id)bundledDocumentContainerDirectoryURL;
@@ -36,9 +36,10 @@
 - (id)documentVariant;
 - (int)downloadState;
 - (id)downloadedDocumentContainerURL;
+- (id)initHeadlessWithName:(id)arg1 variant:(unsigned int)arg2;
 - (id)initHeadlessWithName:(id)arg1;
-- (id)initWithDisplayName:(id)arg1 name:(id)arg2;
-- (id)initWithPropertyList:(id)arg1;
+- (id)initWithDisplayName:(id)arg1 name:(id)arg2 documentVariant:(id)arg3 previewVariant:(id)arg4;
+- (id)initWithPropertyList:(id)arg1 documentVariant:(id)arg2 previewVariant:(id)arg3;
 - (BOOL)isAvailable;
 - (id)localizationBundle;
 - (id)makeIdentifier;
@@ -46,9 +47,6 @@
 - (id)previewBundle;
 - (id)previewImageURL;
 - (id)previewVariant;
-- (void)setDocumentVariant:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setPreviewVariant:(id)arg1;
 - (id)templateZipURL;
 
 @end

@@ -2,19 +2,20 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, MPReshuffledArrayIndexMap, NSArray, NSMutableArray;
+@class MPMediaQuery, NSArray, NSMutableArray;
 
 @interface MPMediaQueryShuffledItems : NSObject <NSSecureCoding, NSCopying> {
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
     unsigned int _activeShuffleType;
-    BOOL _autoReshufflingDisabled;
     BOOL _dirty;
-    MPReshuffledArrayIndexMap *_indexMap;
+    } _focusedRange;
     NSMutableArray *_orderedArray;
     MPMediaQuery *_sourceMediaQuery;
     NSArray *_sourceMediaQueryItems;
 }
 
-@property BOOL autoReshufflingDisabled;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } focusedRange;
 @property(readonly) NSArray * items;
 @property(readonly) unsigned int realShuffleType;
@@ -23,7 +24,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_getFixedItemCount:(unsigned int*)arg1;
 - (id)_includeInShuffleItemsForQuery:(id)arg1;
 - (void)_rebuildCaches;
 - (void)_rebuildCachesWithInitialSourceIndex:(unsigned int)arg1;
@@ -31,7 +31,6 @@
 - (void)_rebuildItemCachesWithInitialSourceItemIndex:(unsigned int)arg1;
 - (void)_resetCaches;
 - (void)_shuffleMutableOrderedArrayWithInitialIndex:(unsigned int)arg1;
-- (BOOL)autoReshufflingDisabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
@@ -41,15 +40,12 @@
 - (unsigned int)indexOfObject:(id)arg1 greaterThanOrEqualToIndex:(unsigned int)arg2;
 - (unsigned int)indexOfObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 indexMap:(id)arg3 shuffleType:(unsigned int)arg4;
+- (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 shuffleType:(unsigned int)arg3;
 - (id)initWithSourceMediaQuery:(id)arg1;
 - (void)invalidateSourceMediaQueryAndLoadItems;
 - (id)items;
-- (unsigned int)nonGrowingCount;
-- (unsigned int)nonRepeatingCount;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (unsigned int)realShuffleType;
-- (void)setAutoReshufflingDisabled:(BOOL)arg1;
 - (void)setFocusedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)shuffleAlbumsWithInitialIndex:(unsigned int)arg1;
 - (void)shuffleItemsWithInitialIndex:(unsigned int)arg1;

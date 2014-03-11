@@ -19,6 +19,7 @@
         float bottom; 
         float right; 
     NSSet *mAllReps;
+    BOOL mAllowsFontSubpixelQuantization;
     struct CGColor { } *mBackgroundColor;
     TSDInteractiveCanvasController *mCanvasController;
     BOOL mClipToCanvas;
@@ -38,6 +39,7 @@
 }
 
 @property(readonly) TSKAccessController * accessController;
+@property BOOL allowsFontSubpixelQuantization;
 @property struct CGColor { }* backgroundColor;
 @property(readonly) TSDInteractiveCanvasController * canvasController;
 @property(readonly) TSKChangeNotifier * changeNotifier;
@@ -56,6 +58,7 @@
 - (id)accessController;
 - (void)addBitmapsToRenderingQualityInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)allReps;
+- (BOOL)allowsFontSubpixelQuantization;
 - (struct CGColor { }*)backgroundColor;
 - (id)canvasController;
 - (id)changeNotifier;
@@ -114,6 +117,7 @@
 - (BOOL)p_updateRepsFromLayouts;
 - (void)recreateAllLayoutsAndReps;
 - (id)repForLayout:(id)arg1;
+- (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;

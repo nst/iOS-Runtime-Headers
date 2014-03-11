@@ -25,5 +25,6 @@
 @property(retain) NSSet * provisionedDataclasses;
 @property(retain) NSNumber * supportsAuthentication;
 @property(retain) NSString * username;
+@property(retain) NSNumber * visible;
 
 @end

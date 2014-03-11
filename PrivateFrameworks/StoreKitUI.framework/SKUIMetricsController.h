@@ -9,6 +9,7 @@
     SKUIMetricsImpressionSession *_activeImpressionsSession;
     NSString *_applicationIdentifier;
     SSMetricsController *_controller;
+    BOOL _flushesImmediately;
     SSMetricsConfiguration *_globalConfiguration;
     BOOL _impressionsEnabled;
     NSObject<OS_dispatch_source> *_impressionsTimer;
@@ -36,6 +37,7 @@
 + (void)flushImmediately;
 
 - (void).cxx_destruct;
+- (void)_insertEvent:(id)arg1;
 - (void)_recordActiveImpressions;
 - (void)_waitUntilRecordingComplete;
 - (id)accountIdentifier;
@@ -56,9 +58,12 @@
 - (id)pageConfiguration;
 - (id)pageContext;
 - (id)pageURL;
+- (id)performActionForItem:(id)arg1 clientContext:(id)arg2;
+- (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3;
 - (id)performActionForItem:(id)arg1;
 - (void)pingURLs:(id)arg1 withClientContext:(id)arg2;
 - (void)pingURLs:(id)arg1;
+- (void)recordBuyConfirmedEventsForItems:(id)arg1 purchaseResponses:(id)arg2;
 - (void)recordEvent:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setApplicationIdentifier:(id)arg1;

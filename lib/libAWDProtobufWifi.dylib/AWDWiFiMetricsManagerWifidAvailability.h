@@ -2,7 +2,7 @@
    Image: /usr/lib/libAWDProtobufWifi.dylib
  */
 
-@interface AWDWiFiMetricsManagerWifidAvailability : PBCodable {
+@interface AWDWiFiMetricsManagerWifidAvailability : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int wifidBootTimeDiff : 1; 
@@ -21,7 +21,7 @@
 @property double wifidBootTimeDiff;
 
 - (void)copyTo:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasPid;

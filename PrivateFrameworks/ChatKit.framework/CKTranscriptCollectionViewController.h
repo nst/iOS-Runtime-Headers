@@ -17,6 +17,7 @@
     CKConversation *_conversation;
     <CKTranscriptCollectionViewControllerDelegate> *_delegate;
     UIView<CKGradientReferenceView> *_gradientReferenceView;
+    BOOL _hasHiddenItems;
     NSIndexSet *_hiddenItems;
     BOOL _initialLoad;
     UITapGestureRecognizer *_loggingTapGestureRecognizer;
@@ -24,7 +25,6 @@
     BOOL _peeking;
     CKTranscriptData *_transcriptData;
     CKDispatchQueue *_transcriptDispatchQueue;
-    float _transcriptDrawerWidth;
     NSObject<OS_dispatch_group> *_updateAnimationGroup;
     BOOL _updatesAnimatingContentOffset;
 }
@@ -34,6 +34,7 @@
 @property(retain) CKConversation * conversation;
 @property <CKTranscriptCollectionViewControllerDelegate> * delegate;
 @property(retain) UIView<CKGradientReferenceView> * gradientReferenceView;
+@property BOOL hasHiddenItems;
 @property(copy) NSIndexSet * hiddenItems;
 @property(getter=isInitialLoad) BOOL initialLoad;
 @property(retain) UITapGestureRecognizer * loggingTapGestureRecognizer;
@@ -41,7 +42,6 @@
 @property(getter=isPeeking) BOOL peeking;
 @property(retain) CKTranscriptData * transcriptData;
 @property(readonly) CKDispatchQueue * transcriptDispatchQueue;
-@property float transcriptDrawerWidth;
 @property(retain) NSObject<OS_dispatch_group> * updateAnimationGroup;
 @property BOOL updatesAnimatingContentOffset;
 
@@ -62,6 +62,8 @@
 - (void)addressBookChanged:(id)arg1;
 - (id)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)applyTranscriptUpdate:(id)arg1 animated:(BOOL)arg2 anchorIndex:(unsigned int)arg3 completion:(id)arg4;
+- (void)applyTranscriptUpdate:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (BOOL)balloonView:(id)arg1 canPerformAction:(SEL)arg2 withSender:(id)arg3;
 - (void)balloonView:(id)arg1 copy:(id)arg2;
 - (void)balloonView:(id)arg1 more:(id)arg2;
@@ -78,9 +80,7 @@
 - (BOOL)collectionView:(id)arg1 isEditableItemAtIndexPath:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })collectionView:(id)arg1 layout:(id)arg2 frameForItemAtIndexPath:(id)arg3;
 - (BOOL)collectionView:(id)arg1 layout:(id)arg2 orientationForItemAtIndexPath:(id)arg3;
-- (BOOL)collectionView:(id)arg1 layout:(id)arg2 wantsDrawerLayoutForItemAtIndexPath:(id)arg3;
 - (float)collectionView:(id)arg1 layoutBottomSpace:(id)arg2;
-- (BOOL)collectionView:(id)arg1 layoutHasContactPhotos:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView;
@@ -100,6 +100,7 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)flushTranscriptDispatchQueue;
 - (id)gradientReferenceView;
+- (BOOL)hasHiddenItems;
 - (id)hiddenItems;
 - (id)indexPathForBalloonView:(id)arg1;
 - (id)initWithConversation:(id)arg1;
@@ -126,6 +127,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setGradientReferenceView:(id)arg1;
+- (void)setHasHiddenItems:(BOOL)arg1;
 - (void)setHiddenItems:(id)arg1;
 - (void)setInitialLoad:(BOOL)arg1;
 - (void)setLoggingTapGestureRecognizer:(id)arg1;
@@ -133,22 +135,17 @@
 - (void)setPeeking:(BOOL)arg1;
 - (void)setScrollAnchor:(float)arg1;
 - (void)setTranscriptData:(id)arg1;
-- (void)setTranscriptDrawerWidth:(float)arg1;
 - (void)setUpdateAnimationGroup:(id)arg1;
 - (void)setUpdatesAnimatingContentOffset:(BOOL)arg1;
-- (void)significantTimeChange;
 - (void)touchUpInsideHeaderCellLoadMoreButton:(id)arg1;
 - (void)touchUpInsideMessageCellFailureButton:(id)arg1;
 - (id)transcriptData;
-- (void)transcriptDataDidUpdate:(id)arg1 inserted:(id)arg2 deleted:(id)arg3 reloaded:(id)arg4 frames:(id)arg5 tailed:(id)arg6;
+- (void)transcriptDataNeedsUpdate:(id)arg1;
 - (id)transcriptDispatchQueue;
-- (float)transcriptDrawerWidth;
 - (id)transcriptObjectForBalloonView:(id)arg1;
 - (void)transferRestored:(id)arg1;
 - (void)transferUpdated:(id)arg1;
 - (id)updateAnimationGroup;
-- (void)updateTranscriptWithInsertedIndexes:(id)arg1 deletedIndexes:(id)arg2 reloadedIndexes:(id)arg3 frameIndexes:(id)arg4 tailedIndexes:(id)arg5 anchorIndex:(unsigned int)arg6 animated:(BOOL)arg7 completion:(id)arg8;
-- (void)updateTranscriptWithInsertedIndexes:(id)arg1 deletedIndexes:(id)arg2 reloadedIndexes:(id)arg3 frameIndexes:(id)arg4 tailedIndexes:(id)arg5 animated:(BOOL)arg6 completion:(id)arg7;
 - (BOOL)updatesAnimatingContentOffset;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidAppearDeferredSetup;

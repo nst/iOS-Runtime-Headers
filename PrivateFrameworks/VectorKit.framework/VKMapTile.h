@@ -31,6 +31,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_setTile:(id)arg1 state:(unsigned int)arg2 metadata:(id)arg3 forLayer:(unsigned int)arg4 timestamp:(double)arg5;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

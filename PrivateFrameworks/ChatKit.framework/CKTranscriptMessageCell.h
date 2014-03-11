@@ -7,7 +7,6 @@
 @interface CKTranscriptMessageCell : CKTranscriptCell {
     UIImageView *_contactImageView;
     UIButton *_failureButton;
-    BOOL _orientation;
     BOOL _wantsContactImageLayout;
 }
 
@@ -15,24 +14,20 @@
 @property(retain) UIImageView * contactImageView;
 @property BOOL failed;
 @property(retain) UIButton * failureButton;
-@property BOOL orientation;
 @property BOOL wantsContactImageLayout;
 
 - (void)configureForRow:(id)arg1;
-- (void)configureForRowObject:(id)arg1;
 - (id)contactImage;
 - (id)contactImageView;
 - (void)dealloc;
 - (id)description;
 - (BOOL)failed;
 - (id)failureButton;
-- (void)layoutSubviews;
-- (BOOL)orientation;
+- (void)layoutSubviewsForContents;
 - (void)setContactImage:(id)arg1;
 - (void)setContactImageView:(id)arg1;
 - (void)setFailed:(BOOL)arg1;
 - (void)setFailureButton:(id)arg1;
-- (void)setOrientation:(BOOL)arg1;
 - (void)setWantsContactImageLayout:(BOOL)arg1;
 - (BOOL)wantsContactImageLayout;
 

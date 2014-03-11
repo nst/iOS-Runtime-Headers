@@ -4,12 +4,13 @@
 
 @class UIImage;
 
-@interface SBUIControlCenterSlider : UISlider <SBUIControlCenterControl> {
+@interface SBUIControlCenterSlider : _UIDynamicSlider <SBUIControlCenterControl> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    BOOL _customTrackImage;
     BOOL _highlightMinimumTrackImage;
     UIImage *_maxValueMaskImage;
     UIImage *_minValueMaskImage;
@@ -24,7 +25,17 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } trackCapInsets;
 @property(retain) UIImage * trackMaskImage;
 
++ (id)_createTrackImageForState:(int)arg1;
++ (id)_knobImage;
++ (id)_maxTrackImage;
++ (id)_minTrackImageForState:(int)arg1;
++ (id)_trackImage;
++ (void)controlAppearanceDidChangeForState:(int)arg1;
++ (void)initialize;
+
+- (void)_configureControlStates;
 - (float)_naturalTrackWidth;
+- (void)_setTrackImage:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_trackInsetsWithShadow:(BOOL)arg1;
 - (void)_updateMaximumTrackImage;
 - (void)_updateMaximumValueImage;

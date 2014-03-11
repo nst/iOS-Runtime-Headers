@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/GameKit.framework/Frameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKFriendsDataSource, GKGame, NSArray, NSMutableArray, NSMutableDictionary, NSSet, NSString;
+@class GKFriendsDataSource, GKGame, NSArray, NSMutableDictionary, NSSet, NSString;
 
 @interface GKFriendsSplittingDataSource : GKSplittingDataSource {
     NSString *_achievementID;
-    NSMutableArray *_currentSelectedPlayerIDs;
     GKGame *_game;
     NSSet *_hiddenPlayers;
     NSString *_leaderboardID;
@@ -15,7 +14,6 @@
 }
 
 @property(retain) NSString * achievementID;
-@property(retain) NSMutableArray * currentSelectedPlayerIDs;
 @property(retain) GKFriendsDataSource * friendsDataSource;
 @property(retain) GKGame * game;
 @property(retain) NSSet * hiddenPlayers;
@@ -25,6 +23,7 @@
 @property(retain) NSArray * selectedPlayerIDs;
 @property(readonly) NSArray * selectedPlayers;
 
+- (BOOL)_changePickerInfo:(id)arg1 selected:(BOOL)arg2;
 - (id)achievementID;
 - (id)allPickerInfos;
 - (BOOL)canSelectIndexPath:(id)arg1;
@@ -34,7 +33,6 @@
 - (void)collectionViewWillBecomeActive:(id)arg1;
 - (void)configureCollectionView:(id)arg1;
 - (void)configureDataSource;
-- (id)currentSelectedPlayerIDs;
 - (void)dealloc;
 - (id)friendsDataSource;
 - (id)game;
@@ -49,18 +47,17 @@
 - (void)notifyPickerItemsChanged:(id)arg1;
 - (id)pickerInfos;
 - (id)playerInfoForPlayerID:(id)arg1;
-- (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
-- (void)refreshSelectionState;
+- (void)refreshAdditionalInfoForDataType:(unsigned int)arg1 updateNotifier:(id)arg2;
 - (id)selectedPlayerIDs;
 - (id)selectedPlayers;
 - (void)setAchievementID:(id)arg1;
-- (void)setCurrentSelectedPlayerIDs:(id)arg1;
 - (void)setFriendsDataSource:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setHiddenPlayers:(id)arg1;
 - (void)setLeaderboardID:(id)arg1;
 - (void)setMaxSelectable:(int)arg1;
 - (void)setPickerInfos:(id)arg1;
+- (void)setPlayerIDs:(id)arg1 selected:(BOOL)arg2 deselectOthers:(BOOL)arg3;
 - (void)setSelectedPlayerIDs:(id)arg1;
 - (void)toggleSelectionAtIndexPath:(id)arg1;
 - (void)toggleSelectionForPlayerID:(id)arg1;

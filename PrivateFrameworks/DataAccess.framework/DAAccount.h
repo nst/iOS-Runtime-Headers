@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class ACAccount, DAStatusReport, DATaskManager, NSArray, NSData, NSMutableDictionary, NSString, NSURL;
+@class ACAccount, DAStatusReport, DATaskManager, NSArray, NSData, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL;
 
 @interface DAAccount : NSObject {
     NSArray *_appIdsForPasswordPrompt;
@@ -13,6 +13,9 @@
     BOOL _hasInitted;
     NSMutableDictionary *_haveWarnedAboutCertDict;
     BOOL _isValidating;
+    unsigned long long _lastQueryStartedTime;
+    NSMutableArray *_pendingQueries;
+    NSObject<OS_dispatch_queue> *_pendingQueryQueue;
     BOOL _shouldFailAllTasks;
     BOOL _shouldPromptForPassword;
     BOOL _shouldUseOpportunisticSockets;
@@ -44,6 +47,8 @@
 @property(copy) NSURL * principalURL;
 @property(readonly) NSString * scheduleIdentifier;
 @property(readonly) NSString * scheme;
+@property(readonly) NSSet * serverComplianceClasses;
+@property(readonly) NSString * serverRoot;
 @property(readonly) BOOL shouldAutodiscoverAccountProperties;
 @property BOOL shouldDoInitialAutodiscovery;
 @property(readonly) BOOL shouldFailAllTasks;
@@ -54,6 +59,7 @@
 @property(readonly) DATaskManager * taskManager;
 @property BOOL useSSL;
 @property(copy) NSString * user;
+@property(readonly) NSString * userAgentHeader;
 @property(copy) NSString * username;
 @property BOOL wasUserInitiated;
 
@@ -63,8 +69,13 @@
 + (void)reacquireClientRestrictions:(id)arg1;
 
 - (int)_actionForTrust:(struct __SecTrust { }*)arg1 host:(id)arg2 service:(id)arg3;
+- (void)_dequeueQuery;
 - (id)_exceptionsDict;
 - (BOOL)_isIdentityManagedByProfile;
+- (void)_reallyCancelAllSearchQueries;
+- (void)_reallyCancelSearchQuery:(id)arg1;
+- (void)_reallyPerformSearchQuery:(id)arg1;
+- (BOOL)_reallySearchQueriesRunning;
 - (id)_serverSuffixesToAlwaysFail;
 - (void)_setPersistentUUID:(id)arg1;
 - (void)_webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id)arg3;
@@ -119,6 +130,7 @@
 - (id)eventsFolders;
 - (struct __CFData { }*)exceptionsForDigest:(id)arg1;
 - (void)getRootFolderWithConsumer:(id)arg1;
+- (BOOL)handleCertificateError:(id)arg1;
 - (void)handleTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2 withCompletionBlock:(id)arg3;
 - (BOOL)handleTrustChallenge:(id)arg1;
 - (void)handleValidationError:(id)arg1 completion:(id)arg2;
@@ -154,6 +166,7 @@
 - (id)onBehalfOfBundleIdentifier;
 - (id)password;
 - (id)passwordWithExpected:(BOOL)arg1;
+- (id)pendingQueryQueue;
 - (void)performSearchQuery:(id)arg1;
 - (id)persistentUUID;
 - (int)port;
@@ -179,6 +192,8 @@
 - (BOOL)searchQueriesRunning;
 - (BOOL)sendEmailsForCalEvents:(id)arg1 consumer:(id)arg2;
 - (id)sentItemsFolder;
+- (id)serverComplianceClasses;
+- (id)serverRoot;
 - (void)setAccountBoolProperty:(BOOL)arg1 forKey:(id)arg2;
 - (void)setAccountDescription:(id)arg1;
 - (void)setAccountIntProperty:(int)arg1 forKey:(id)arg2;
@@ -243,6 +258,7 @@
 - (BOOL)useSSL;
 - (BOOL)useSSLFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)user;
+- (id)userAgentHeader;
 - (id)username;
 - (id)usernameWithoutDomain;
 - (BOOL)wasUserInitiated;

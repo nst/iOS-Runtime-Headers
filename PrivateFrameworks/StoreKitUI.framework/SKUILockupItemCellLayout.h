@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUILockupMetadataView;
+@class NSString, SKUILockupMetadataView, UILabel;
 
 @interface SKUILockupItemCellLayout : SKUIItemCellLayout {
     struct UIEdgeInsets { 
@@ -15,6 +15,8 @@
         float height; 
     } _contentInsets;
     } _imageBoundingSize;
+    int _itemOfferStyle;
+    UILabel *_itemOfferTextLabel;
     int _layoutStyle;
     int _lockupSize;
     SKUILockupMetadataView *_metadataView;
@@ -25,6 +27,8 @@
 @property(copy) NSString * categoryString;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property struct CGSize { float x1; float x2; } imageBoundingSize;
+@property(copy) NSString * itemCountString;
+@property int itemOfferStyle;
 @property int layoutStyle;
 @property int lockupSize;
 @property int numberOfUserRatings;
@@ -39,7 +43,8 @@
 
 - (void).cxx_destruct;
 - (void)_initSKUILockupItemCellLayout;
-- (BOOL)_isItemOfferButtonHidden;
+- (BOOL)_isItemOfferHidden;
+- (id)_itemOfferTextLabel;
 - (void)_layoutHorizontal;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_layoutIconImageView;
 - (void)_layoutVertical;
@@ -50,6 +55,8 @@
 - (id)initWithCollectionViewCell:(id)arg1;
 - (id)initWithParentView:(id)arg1;
 - (id)initWithTableViewCell:(id)arg1;
+- (id)itemCountString;
+- (int)itemOfferStyle;
 - (void)layoutForItemOfferChange;
 - (int)layoutStyle;
 - (void)layoutSubviews;
@@ -59,10 +66,13 @@
 - (void)setArtistName:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCategoryString:(id)arg1;
+- (void)setClientContext:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setItemCountString:(id)arg1;
+- (void)setItemOfferStyle:(int)arg1;
 - (void)setLayoutStyle:(int)arg1;
 - (void)setLockupSize:(int)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;

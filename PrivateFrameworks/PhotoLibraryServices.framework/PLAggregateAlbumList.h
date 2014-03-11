@@ -43,6 +43,8 @@
 - (id)managedObjectContext;
 - (BOOL)needsReordering;
 - (id)photoLibrary;
+- (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
+- (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)setFilter:(int)arg1;
 - (void)setNeedsReordering;
 - (unsigned int)unreadAlbumsCount;

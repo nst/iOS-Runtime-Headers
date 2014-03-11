@@ -18,11 +18,11 @@
     PSSpecifier *_recoverySwitch;
     BOOL _secureBackupEnabled;
     NSString *_securityCode;
-    BOOL _usesSimpleSecurityCode;
+    int _securityCodeType;
 }
 
 @property(retain) NSString * securityCode;
-@property BOOL usesSimpleSecurityCode;
+@property int securityCodeType;
 
 - (void)_setShowsDoneButton:(BOOL)arg1;
 - (void)_showSecurityCodeChangeSheetOnSpecifier:(id)arg1;
@@ -31,6 +31,7 @@
 - (void)changeSecurityCode:(id)arg1;
 - (void)dealloc;
 - (void)disableRecovery;
+- (void)handleBurnedRecord;
 - (id)init;
 - (void)keychainSyncController:(id)arg1 didFinishWithResult:(id)arg2 error:(id)arg3;
 - (void)navCancelPressed;
@@ -40,13 +41,13 @@
 - (void)reloadSpecifiers;
 - (void)saveSMSTargetChanges;
 - (id)securityCode;
+- (int)securityCodeType;
 - (void)setSecurityCode:(id)arg1;
+- (void)setSecurityCodeType:(int)arg1;
 - (void)setUseRecovery:(id)arg1 specifier:(id)arg2;
-- (void)setUsesSimpleSecurityCode:(BOOL)arg1;
 - (id)specifiers;
 - (id)useRecoveryForSepecifier:(id)arg1;
-- (id)useSimpleSecurityCodeForSpecifier:(id)arg1;
-- (BOOL)usesSimpleSecurityCode;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

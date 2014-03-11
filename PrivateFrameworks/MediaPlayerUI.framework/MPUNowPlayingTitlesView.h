@@ -14,6 +14,7 @@
     UIImage *_explicitImage;
     UIImageView *_explicitImageView;
     BOOL _needsLabelUpdate;
+    NSString *_stationNameText;
     int _style;
     float _textMargin;
     UILabel *_titleLabel;
@@ -28,6 +29,7 @@
 @property(getter=isExplicit) BOOL explicit;
 @property(retain) UIImage * explicitImage;
 @property(getter=isMarqueeEnabled) BOOL marqueeEnabled;
+@property(copy) NSString * stationNameText;
 @property(readonly) int style;
 @property float textMargin;
 @property(readonly) float titleBaselineOffsetFromBottom;
@@ -57,10 +59,12 @@
 - (void)setExplicitImage:(id)arg1;
 - (void)setMarqueeEnabled:(BOOL)arg1 allowCurrentMarqueeToFinish:(BOOL)arg2;
 - (void)setMarqueeEnabled:(BOOL)arg1;
+- (void)setStationNameText:(id)arg1;
 - (void)setTextMargin:(float)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setTitleTextAttributes:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)stationNameText;
 - (int)style;
 - (float)textMargin;
 - (float)titleBaselineOffsetFromBottom;

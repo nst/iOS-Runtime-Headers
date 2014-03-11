@@ -6,9 +6,11 @@
 
 @interface MusicTableViewCell : UITableViewCell {
     MusicTableViewCellContentView *_cellContentView;
+    float _maximumContentViewHeight;
 }
 
 @property(retain) MusicTableViewCellContentView * cellContentView;
+@property float maximumContentViewHeight;
 
 + (Class)contentViewClass;
 
@@ -16,6 +18,8 @@
 - (id)cellContentView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (float)maximumContentViewHeight;
 - (void)setCellContentView:(id)arg1;
+- (void)setMaximumContentViewHeight:(float)arg1;
 
 @end

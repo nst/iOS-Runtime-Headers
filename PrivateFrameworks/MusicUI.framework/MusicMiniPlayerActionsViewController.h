@@ -19,6 +19,9 @@
 + (BOOL)hasActionsForItem:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_avItemStoreIDDidChangeNotification:(id)arg1;
+- (void)_updateActions;
+- (void)dealloc;
 - (id)delegate;
 - (id)initWithItem:(id)arg1;
 - (id)item;

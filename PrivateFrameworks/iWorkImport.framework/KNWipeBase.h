@@ -14,6 +14,16 @@
             float width; 
             float height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _drawableFrame;
     } _frameRect;
     BOOL _isBuildOut;
     KNAnimParameterGroup *_parameterGroup;

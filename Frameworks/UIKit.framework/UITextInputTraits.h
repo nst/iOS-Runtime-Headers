@@ -72,6 +72,7 @@
 @property struct __CFCharacterSet { }* textTrimmingSet;
 @property BOOL useInterfaceLanguageForLocalization;
 
++ (int)accessibleAppearanceForAppearance:(int)arg1;
 + (id)defaultTextInputTraits;
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
 + (id)traitsByAdoptingTraits:(id)arg1;

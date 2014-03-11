@@ -13,6 +13,7 @@
             unsigned int suppressingCandidateSelection : 1; 
             unsigned int needsCandidateMetadata : 1; 
             unsigned int keyboardEventsLagging : 1; 
+            unsigned int secureTextEntry : 1; 
             unsigned int hardwareKeyboardMode : 1; 
             unsigned int splitKeyboardMode : 1; 
             unsigned int wordLearningEnabled : 1; 
@@ -47,6 +48,7 @@
 @property(copy) TIKeyboardLayoutState * layoutState;
 @property BOOL needsCandidateMetadata;
 @property(copy) NSString * searchStringForMarkedText;
+@property BOOL secureTextEntry;
 @property BOOL shortcutConversionEnabled;
 @property BOOL shouldSkipCandidateSelection;
 @property BOOL splitKeyboardMode;
@@ -76,6 +78,7 @@
 - (id)layoutState;
 - (BOOL)needsCandidateMetadata;
 - (id)searchStringForMarkedText;
+- (BOOL)secureTextEntry;
 - (void)setAutocapitalizationEnabled:(BOOL)arg1;
 - (void)setAutocapitalizationType:(unsigned int)arg1;
 - (void)setAutocorrectionEnabled:(BOOL)arg1;
@@ -90,6 +93,7 @@
 - (void)setLayoutState:(id)arg1;
 - (void)setNeedsCandidateMetadata:(BOOL)arg1;
 - (void)setSearchStringForMarkedText:(id)arg1;
+- (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setShortcutConversionEnabled:(BOOL)arg1;
 - (void)setShouldSkipCandidateSelection:(BOOL)arg1;
 - (void)setSplitKeyboardMode:(BOOL)arg1;

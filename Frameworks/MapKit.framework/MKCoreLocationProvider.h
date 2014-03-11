@@ -2,20 +2,29 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKLocationProviderDelegate>, CLLocationManager, NSBundle, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface MKCoreLocationProvider : NSObject <CLLocationManagerDelegate, MKLocationProvider> {
+@class <MKLocationProviderDelegate>, CLLocationManager, NSBundle, NSLock, NSString;
+
+@interface MKCoreLocationProvider : NSObject <CLLocationManagerDelegate, CLLocationManagerVehicleDelegate, MKLocationProvider> {
+    NSLock *_authorizationLock;
+    id _authorizationRequestBlock;
     int _authorizationStatus;
     CLLocationManager *_clLocationManager;
     <MKLocationProviderDelegate> *_delegate;
     NSBundle *_effectiveBundle;
     NSString *_effectiveBundleIdentifier;
+    BOOL _hasQueriedAuthorization;
     BOOL _locationServicesPreferencesDialogEnabled;
+    BOOL _waitingForAuthorization;
 }
 
 @property(readonly) CLLocationManager * _clLocationManager;
 @property int activityType;
 @property(readonly) BOOL airplaneModeBlocksLocation;
+@property(copy) id authorizationRequestBlock;
 @property(readonly) int authorizationStatus;
 @property <MKLocationProviderDelegate> * delegate;
 @property double desiredAccuracy;
@@ -28,12 +37,14 @@
 @property(getter=isMonitoringRegionsAvailable,readonly) BOOL monitoringRegionsAvailable;
 @property(readonly) BOOL usesCLMapCorrection;
 
+- (void).cxx_destruct;
 - (id)_clLocationManager;
 - (void)_createCLLocationManager;
 - (void)_resetForNewEffectiveBundle;
 - (void)_updateAuthorizationStatus;
 - (int)activityType;
 - (BOOL)airplaneModeBlocksLocation;
+- (id)authorizationRequestBlock;
 - (int)authorizationStatus;
 - (void)dealloc;
 - (id)delegate;
@@ -53,11 +64,14 @@
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateVehicleHeading:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(id)arg2;
 - (void)locationManager:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
 - (void)setActivityType:(int)arg1;
+- (void)setAuthorizationRequestBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
@@ -68,9 +82,13 @@
 - (void)startMonitoringRegion:(id)arg1;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
+- (void)startUpdatingVehicleHeading;
+- (void)startUpdatingVehicleSpeed;
 - (void)stopMonitoringRegion:(id)arg1;
 - (void)stopUpdatingHeading;
 - (void)stopUpdatingLocation;
+- (void)stopUpdatingVehicleHeading;
+- (void)stopUpdatingVehicleSpeed;
 - (BOOL)usesCLMapCorrection;
 
 @end

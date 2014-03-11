@@ -26,6 +26,7 @@
 - (BOOL)createTempDirectory:(unsigned int)arg1;
 - (void)dealloc;
 - (id)deviceInfoDictionary;
+- (id)getMaxMinAvgCapacityOfPowerLog:(id)arg1;
 - (id)logData;
 - (id)logFileName;
 - (void)setDeviceInfoDictionary:(id)arg1;

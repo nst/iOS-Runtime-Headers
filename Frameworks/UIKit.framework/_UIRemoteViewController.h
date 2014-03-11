@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSError, NSObject<OS_dispatch_semaphore>, NSString, UIActionSheet, UIDimmingView, UIView, _UIAsyncInvocation, _UIRemoteView, _UISizeTrackingView, _UITextEffectsRemoteView, _UITextServiceSession, _UIViewServiceInterface;
+@class NSArray, NSError, NSMutableArray, NSString, UIActionSheet, UIDimmingView, UIView, _UIAsyncInvocation, _UIRemoteView, _UISizeTrackingView, _UITextEffectsRemoteView, _UITextServiceSession, _UIViewServiceInterface;
 
 @interface _UIRemoteViewController : UIViewController <XPCProxyTarget, _UIRemoteViewController_ViewControllerOperatorInterface, _UIRemoteViewController_TextEffectsOperatorInterface, UIActionSheetDelegate> {
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
-    NSObject<OS_dispatch_semaphore> *_fenceBarrier;
+    unsigned int _deferredContextID;
+    NSString *_deferredDisplayUUID;
     BOOL _fencingCurrentTransaction;
     _UITextEffectsRemoteView *_fullScreenTextEffectsRemoteView;
     UIView *_fullScreenTextEffectsSnapshotView;
     UIActionSheet *_hostedActionSheet;
     UIDimmingView *_hostedDimmingView;
+    BOOL _isFocusDeferred;
+    NSMutableArray *_preFencedCommitActions;
+    int _preFencedCommitActionsLock;
     int _preferredStatusBarStyle;
     BOOL _prefersStatusBarHidden;
     unsigned int _serviceAccessibilityServerPort;
@@ -64,6 +68,7 @@
 - (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2 fenceSendRight:(id)arg3 withReplyHandler:(id)arg4;
 - (void)__viewServicePopoverDidSetUseToolbarShine:(BOOL)arg1;
 - (void)__willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
+- (void)_addPreFencedCommitAction:(id)arg1;
 - (void)_appearanceInvocationsDidChange:(id)arg1;
 - (id)_appearanceSource;
 - (void)_applicationDidBecomeActive:(id)arg1;
@@ -72,10 +77,12 @@
 - (void)_applicationWillDeactivate:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_awakeWithConnectionInfo:(id)arg1;
+- (id)_clientDeferralProperties;
 - (BOOL)_customizesForPresentationInPopover;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_didRotateFromInterfaceOrientation:(int)arg1 forwardToChildControllers:(BOOL)arg2 skipSelf:(BOOL)arg3;
 - (void)_firstResponderDidChange:(id)arg1;
+- (id)_hostDeferralProperties;
 - (void)_hostDidEnterBackground:(id)arg1;
 - (void)_hostWillEnterForeground:(id)arg1;
 - (BOOL)_ignoreAppSupportedOrientations;
@@ -85,6 +92,7 @@
 - (void)_restoreTextEffectsRemoteView;
 - (void)_scrollToTopFromTouchAtViewLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id)arg2;
 - (BOOL)_serviceHasScrollToTopView;
+- (void)_setDeferred:(BOOL)arg1 forDisplayUUID:(id)arg2;
 - (void)_snapshotAndRemoveTextEffectsRemoteView;
 - (void)_statusBarHeightDidChange:(id)arg1;
 - (void)_statusBarOrientationDidChange:(id)arg1;

@@ -6,9 +6,10 @@
    See Warning(s) below.
  */
 
-@class IMService, NSMutableDictionary, UIActionSheet, UIResponder;
+@class CKScheduledUpdater, IMService, NSMutableDictionary, UIActionSheet, UIResponder;
 
 @interface CKComposeRecipientView : MFComposeRecipientView <CKOverlayViewProtocol, ABPeoplePickerNavigationControllerDelegate> {
+    CKScheduledUpdater *_IDSQueryUpdater;
     UIActionSheet *_actionSheet;
     BOOL _alreadyShowedAlertForTooManyRecipientsError;
     BOOL _atomizedForAutoSend;
@@ -23,6 +24,7 @@
     BOOL _serviceError;
 }
 
+@property(retain) CKScheduledUpdater * IDSQueryUpdater;
 @property(retain) UIActionSheet * actionSheet;
 @property BOOL canSend;
 @property BOOL forceMMS;
@@ -33,6 +35,7 @@
 + (float)separatorHeight;
 + (float)shadowHeight;
 
+- (id)IDSQueryUpdater;
 - (BOOL)_addable;
 - (id)_alternateAddressesForMFComposeRecipient:(id)arg1 onlyIMessageAble:(BOOL)arg2;
 - (void)_autoSendIfReady;
@@ -57,6 +60,7 @@
 - (unsigned int)atomPresentationOptionsForRecipient:(id)arg1;
 - (id)atomViewForRecipient:(id)arg1;
 - (void)atomizeAndInvokeBlock:(id)arg1;
+- (void)batchAddRecipients:(id)arg1;
 - (BOOL)canInsertMoreRecipients;
 - (BOOL)canSend;
 - (id)customOverlayContainer;
@@ -85,6 +89,7 @@
 - (void)setActionSheet:(id)arg1;
 - (void)setCanSend:(BOOL)arg1;
 - (void)setForceMMS:(BOOL)arg1;
+- (void)setIDSQueryUpdater:(id)arg1;
 - (void)setNextResponder:(id)arg1;
 - (void)setPreferredService:(id)arg1;
 - (void)setServiceError:(BOOL)arg1;
@@ -94,6 +99,7 @@
 - (void)stopCheckingRecipientAvailabilityAndRemoveAllTimers;
 - (void)textFieldDidBecomeFirstResponder:(id)arg1;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
+- (void)updateForPreferredServiceChange;
 - (void)updatePreferredServiceForRecipients:(id)arg1;
 - (void)updateRecipientLimit;
 - (void)windowDidResignKey:(id)arg1;

@@ -12,47 +12,10 @@
 @interface TSPArchiverBase : NSObject {
     struct auto_ptr<google::protobuf::Message> { 
         struct Message {} *__ptr_; 
-    struct hash_map<const TSP::FieldPath, TSP::FieldInfo_Rule, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { 
-        struct __hash_table<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathEqualTo, true>, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > > { 
-                    struct __hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > { 
-                            unsigned long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> { 
-                    struct __hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathHash, true> > { 
-                unsigned long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathEqualTo, true> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
-    struct FieldPath { 
-        int (**_vptr$MessageLite)(); 
-        struct UnknownFieldSet { 
-            struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *fields_; 
-        } _unknown_fields_; 
-        struct RepeatedField<unsigned int> { 
-            unsigned int *elements_; 
-            int current_size_; 
-            int total_size_; 
-        } path_; 
-        int _path_cached_byte_size_; 
-        int _cached_size_; 
-        unsigned int _has_bits_[1]; 
     NSHashTable *_commandToModelReferences;
-    } _currentFieldPath;
+    struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; int x5; unsigned int x6[1]; } *_currentFieldPath;
     NSHashTable *_dataReferences;
-    } _fieldRules;
+    struct hash_map<const TSP::FieldPath, TSP::FieldInfo_Rule, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { struct __hash_table<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathEqualTo, true>, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { struct unique_ptr<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > > { struct __hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> { struct __hash_node<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathHash, true> > { unsigned long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathEqualTo, true> > { float x_4_2_1; } x_1_1_4; } x1; } *_fieldRules;
     NSHashTable *_lazyReferences;
     } _message;
     unsigned long long _messageVersion;
@@ -77,6 +40,7 @@
 - (void)cleanup;
 - (id)commandToModelReferences;
 - (id)dataReferences;
+- (void)dealloc;
 - (void)enumerateRulesUsingBlock:(id)arg1;
 - (BOOL)forPasteboard;
 - (id)init;

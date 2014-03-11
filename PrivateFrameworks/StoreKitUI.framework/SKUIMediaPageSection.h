@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIEmbeddedMediaView, SKUIMediaComponent;
+@class SKUIArtwork, SKUIEmbeddedMediaView, SKUIMediaComponent;
 
 @interface SKUIMediaPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate> {
     struct CGSize { 
         float width; 
         float height; 
+    SKUIArtwork *_artwork;
     unsigned int _artworkRequestID;
     } _imageSize;
     SKUIEmbeddedMediaView *_mediaView;

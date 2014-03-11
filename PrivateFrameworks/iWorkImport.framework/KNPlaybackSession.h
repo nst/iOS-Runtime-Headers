@@ -26,6 +26,7 @@
     BOOL mShouldAutomaticallyPlayMovies;
     BOOL mShouldForceTextureGeneration;
     BOOL mShouldPreferCARenderer;
+    BOOL mShouldShowVideoReflectionsAndMasks;
     BOOL mShouldUseContentlessLayers;
     KNShow *mShow;
     BOOL mSkipBuilds;
@@ -48,6 +49,7 @@
 @property BOOL shouldForceTextureGeneration;
 @property BOOL shouldPreferCARenderer;
 @property(readonly) BOOL shouldShowInstructionalText;
+@property BOOL shouldShowVideoReflectionsAndMasks;
 @property BOOL shouldUseContentlessLayers;
 @property(readonly) KNShow * show;
 @property BOOL skipBuilds;
@@ -110,6 +112,7 @@
 - (void)setShouldAutomaticallyPlayMovies:(BOOL)arg1;
 - (void)setShouldForceTextureGeneration:(BOOL)arg1;
 - (void)setShouldPreferCARenderer:(BOOL)arg1;
+- (void)setShouldShowVideoReflectionsAndMasks:(BOOL)arg1;
 - (void)setShouldUseContentlessLayers:(BOOL)arg1;
 - (void)setSkipBuilds:(BOOL)arg1;
 - (void)setSkipSlides:(BOOL)arg1;
@@ -120,6 +123,7 @@
 - (BOOL)shouldForceTextureGeneration;
 - (BOOL)shouldPreferCARenderer;
 - (BOOL)shouldShowInstructionalText;
+- (BOOL)shouldShowVideoReflectionsAndMasks;
 - (BOOL)shouldUseContentlessLayers;
 - (id)show;
 - (float)showScale;

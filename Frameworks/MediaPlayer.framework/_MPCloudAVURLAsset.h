@@ -2,9 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class AVAssetDownloadSession;
+
 @interface _MPCloudAVURLAsset : AVURLAsset {
+    AVAssetDownloadSession *_downloadSession;
 }
 
+@property AVAssetDownloadSession * _downloadSession;
+
+- (void).cxx_destruct;
+- (id)_downloadSession;
 - (void)dealloc;
+- (void)set_downloadSession:(id)arg1;
 
 @end

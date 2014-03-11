@@ -2,16 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <NSCoding>, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, PLDebugViewController, PLLibraryImageDataProvider, PLUIController, UIViewController, UIWindow;
+@class <NSCoding>, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, PLLibraryImageDataProvider, PLUIController, UIViewController, UIWindow;
 
-@interface PLPhotosApplication : UIApplication <PLDebugViewControllerDelegate, UIApplicationDelegate, PLPublishingAgentDelegate, MFMailComposeViewControllerDelegate> {
+@interface PLPhotosApplication : UIApplication <UIApplicationDelegate, PLPublishingAgentDelegate, MFMailComposeViewControllerDelegate> {
     unsigned int _backgroundTaskIdentifier;
     BOOL _cameraCancelledRemaking;
     UIViewController *_composeParentViewController;
     BOOL _composeSheetIsReady;
     NSString *_currentTestName;
     NSDictionary *_currentTestOptions;
-    PLDebugViewController *_debugViewController;
     int _delaySuspendCount;
     int _enableNetworkingFlagsCount;
     PLLibraryImageDataProvider *_imageDataProvider;
@@ -20,7 +19,6 @@
     BOOL _isReachable;
     BOOL _isRemaking;
     int _observeForRechabilityChanges;
-    int _observeForiMessageAvailability;
     int _photoStreamActivityToken;
     BOOL _photoStreamIsBusy;
     NSMutableSet *_publishingAgents;
@@ -66,10 +64,8 @@
 - (void)_setImageOptions;
 - (void)_showAlertForInterruptionDuringRemaking;
 - (void)_showMailComposeSheetForAutosavedMessageWithIdentifier:(id)arg1;
-- (void)_startObservingForiMessageAvailability;
 - (void)_startObservingReachabilityChanges;
 - (void)_statusBarDoubleTap:(id)arg1;
-- (void)_stopObservingForiMessageAvailability;
 - (void)_stopObservingReachabilityChanges;
 - (void)_unregisterForPhotoStreamActivityNotifications;
 - (void)_updateNetworkActivityIndicatorAsync;
@@ -90,12 +86,8 @@
 - (id)currentTestOptions;
 - (id)currentUIConfiguration;
 - (void)dealloc;
-- (void)debugViewControllerDidDismiss:(id)arg1;
 - (void)disableNetworkObservation;
-- (void)disableObservingForiMessageAvailability;
-- (void)dismissPublishingViewControllers;
 - (void)enableNetworkObservation;
-- (void)enableObservingForiMessageAvailability;
 - (void*)getSharedAddressBook;
 - (id)imageDataProvider;
 - (BOOL)isCameraApp;
@@ -103,12 +95,12 @@
 - (BOOL)isComposingEmail;
 - (BOOL)isOnWifi;
 - (BOOL)isReachable;
-- (BOOL)isiMessageEnabed;
 - (void)mailComposeController:(id)arg1 bodyFinishedLoadingWithResult:(BOOL)arg2 error:(id)arg3;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)mainWindow;
 - (id)newMailComposeViewControllerWithPhotoData:(id)arg1 attachmentName:(id)arg2 withMimeType:(id)arg3 extension:(id)arg4 identifier:(id*)arg5;
 - (void)photosPreferencesChanged;
+- (void)presentInternalSettingsController;
 - (void)presentMailComposeController:(id)arg1 parentViewController:(id)arg2;
 - (void)publishingAgentCancelButtonClicked:(id)arg1;
 - (void)publishingAgentDidBeginPublishing:(id)arg1;

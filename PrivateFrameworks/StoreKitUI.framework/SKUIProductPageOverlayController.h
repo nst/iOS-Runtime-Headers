@@ -22,7 +22,8 @@
 - (void).cxx_destruct;
 - (id)URLs;
 - (void)_backstopViewAction:(id)arg1;
-- (void)_finishDismissAndNotifyDelegate:(BOOL)arg1;
+- (void)_finishDismissAndNotifyDelegate:(BOOL)arg1 withViewController:(id)arg2;
+- (void)_removeOverlayViewController;
 - (void)_showOverlayViewController;
 - (void)_showWithInitialViewController:(id)arg1;
 - (id)clientContext;

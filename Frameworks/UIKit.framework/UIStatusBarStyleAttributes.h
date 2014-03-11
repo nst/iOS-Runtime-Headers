@@ -31,5 +31,7 @@
 - (BOOL)shouldUseVisualAltitude;
 - (int)style;
 - (BOOL)supportsRasterization;
+- (int)tapButtonType;
+- (BOOL)usesVerticalLayout;
 
 @end

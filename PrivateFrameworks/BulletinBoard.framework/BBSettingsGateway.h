@@ -13,6 +13,7 @@
     BBServerConnection *_connection;
     id _overrideStateChangeHandler;
     id _overrideStatusChangeHandler;
+    id _overridesChangedHandler;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
@@ -21,6 +22,7 @@
 - (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1;
 - (void)behaviorOverrideStateChanged:(unsigned int)arg1;
 - (void)behaviorOverrideStatusChanged:(int)arg1;
+- (void)behaviorOverridesChanged:(id)arg1;
 - (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
 - (void)dealloc;
 - (void)getBehaviorOverridesEffectiveWhileUnlockedWithCompletion:(id)arg1;
@@ -40,6 +42,7 @@
 - (void)setBehaviorOverrideStatus:(int)arg1;
 - (void)setBehaviorOverrideStatusChangeHandler:(id)arg1;
 - (void)setBehaviorOverrides:(id)arg1;
+- (void)setBehaviorOverridesChangeHandler:(id)arg1;
 - (void)setBehaviorOverridesEffectiveWhileUnlocked:(BOOL)arg1;
 - (void)setBehaviorOverridesEnabled:(BOOL)arg1;
 - (void)setOrderedSectionIDs:(id)arg1 forCategory:(int)arg2;

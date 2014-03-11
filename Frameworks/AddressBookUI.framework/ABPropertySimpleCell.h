@@ -28,8 +28,8 @@
 @property(retain) UITextField * textField;
 @property(retain) ABPropertyAction * transportAction1;
 @property(retain) ABPropertyAction * transportAction2;
-@property(readonly) ABTransportButton * transportIcon1;
-@property(readonly) ABTransportButton * transportIcon2;
+@property(retain) ABTransportButton * transportIcon1;
+@property(retain) ABTransportButton * transportIcon2;
 @property(retain) UIView * vseparator;
 
 - (id)_constraintsToOverlapView:(id)arg1 onView:(id)arg2;
@@ -48,6 +48,7 @@
 - (float)labelValueSpacing;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
+- (void)prepareForReuse;
 - (void)setActionsColor:(id)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setChevron:(id)arg1;
@@ -58,6 +59,8 @@
 - (void)setTextField:(id)arg1;
 - (void)setTransportAction1:(id)arg1;
 - (void)setTransportAction2:(id)arg1;
+- (void)setTransportIcon1:(id)arg1;
+- (void)setTransportIcon2:(id)arg1;
 - (void)setValueTextAttributes:(id)arg1;
 - (void)setVseparator:(id)arg1;
 - (id)star;

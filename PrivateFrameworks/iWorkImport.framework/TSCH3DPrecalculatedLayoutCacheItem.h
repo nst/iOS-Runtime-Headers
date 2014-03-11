@@ -5,19 +5,21 @@
 @class TSCHChartType;
 
 @interface TSCH3DPrecalculatedLayoutCacheItem : NSObject <NSCopying> {
+    struct TSCH3DPrecalculatedLayoutCacheType { 
+        int platform; 
+        int target; 
+        BOOL isLandscape; 
+    } mCacheType;
     TSCHChartType *mChartType;
-    BOOL mIsIPhone;
-    BOOL mIsInspector;
-    BOOL mIsLandscape;
 }
 
-+ (id)cacheItemForChartType:(id)arg1 iPhone:(BOOL)arg2 inspector:(BOOL)arg3 landscape:(BOOL)arg4;
-+ (id)cacheItemForChartType:(id)arg1 iPhone:(BOOL)arg2 inspector:(BOOL)arg3;
++ (id)cacheItemForChartType:(id)arg1 cacheType:(struct TSCH3DPrecalculatedLayoutCacheType { int x1; int x2; BOOL x3; })arg2;
 
+- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)hash;
-- (id)initForChartType:(id)arg1 iPhone:(BOOL)arg2 inspector:(BOOL)arg3 landscape:(BOOL)arg4;
+- (id)initForChartType:(id)arg1 cacheType:(struct TSCH3DPrecalculatedLayoutCacheType { int x1; int x2; BOOL x3; })arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

@@ -2,27 +2,34 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray, NSString, PLWallpaperNavigationItem, SBFWallpaperPreviewViewController, UIActionSheet;
+@class NSArray, NSString, PLWallpaperNavigationItem, SBSUIWallpaperPreviewViewController, UIActionSheet;
 
 @interface PLWallpaperImageViewController : PLUIEditImageViewController <SBFLegibilitySettingsProviderDelegate, UIActionSheetDelegate> {
     unsigned int _didSetImageMode : 1;
+    BOOL _isWallpaperEdit;
     PLWallpaperNavigationItem *_navItem;
     NSArray *_navigationToolbarItems;
+    int _previewType;
+    int _previewVariant;
     BOOL _saveWallpaperData;
     int _wallpaperMode;
     UIActionSheet *_wallpaperOptionsSheet;
-    SBFWallpaperPreviewViewController *_wallpaperPreviewViewController;
+    SBSUIWallpaperPreviewViewController *_wallpaperPreviewViewController;
     NSString *_wallpaperTitle;
 }
 
+@property BOOL isWallpaperEdit;
+@property int previewType;
+@property int previewVariant;
 @property BOOL saveWallpaperData;
-@property(retain) SBFWallpaperPreviewViewController * wallpaperPreviewViewController;
+@property(retain) SBSUIWallpaperPreviewViewController * wallpaperPreviewViewController;
 @property(copy) NSString * wallpaperTitle;
 
 - (void)_adjustScrollViewGeometry;
 - (void)_backgroundCropWallpaper;
 - (unsigned int)_contentAutoresizingMask;
 - (void)_cropWallpaperFinished:(id)arg1;
+- (void)_displayWallpaperOptionsSheet;
 - (void)_savePhoto;
 - (unsigned int)_tileAutoresizingMask;
 - (void)_updatePreviewFrame:(id)arg1;
@@ -34,20 +41,33 @@
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)dealloc;
+- (int)desiredStatusBarAnimation;
 - (int)imageFormat;
 - (id)init;
 - (id)initWithUIImage:(id)arg1;
+- (id)initWithWallpaperVariant:(int)arg1;
+- (BOOL)isWallpaperEdit;
 - (void)loadView;
+- (void)motionToggledManually:(BOOL)arg1;
 - (id)navigationItem;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
+- (void)prepareForBackground:(id)arg1;
+- (void)prepareForForeground:(id)arg1;
+- (int)previewType;
+- (int)previewVariant;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 - (BOOL)saveWallpaperData;
 - (void)setImageAsHomeScreenAndLockScreenClicked:(id)arg1;
 - (void)setImageAsHomeScreenClicked:(id)arg1;
 - (void)setImageAsLockScreenClicked:(id)arg1;
+- (void)setIsWallpaperEdit:(BOOL)arg1;
+- (void)setPreviewType:(int)arg1;
+- (void)setPreviewVariant:(int)arg1;
 - (void)setSaveWallpaperData:(BOOL)arg1;
 - (void)setWallpaperFromArgs:(id)arg1;
 - (void)setWallpaperPreviewViewController:(id)arg1;
+- (void)setWallpaperSynchronouslyFromArgs:(id)arg1;
 - (void)setWallpaperTitle:(id)arg1;
 - (void)setupNavigationItem;
 - (void)setupWallpaperPreview;
@@ -55,7 +75,9 @@
 - (BOOL)uiipc_useTelephonyUI;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (id)wallpaperPreviewViewController;
 - (id)wallpaperTitle;
+- (BOOL)wantsStatusBarVisible;
 
 @end

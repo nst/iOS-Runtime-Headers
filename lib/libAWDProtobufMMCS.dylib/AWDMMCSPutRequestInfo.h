@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface AWDMMCSPutRequestInfo : PBCodable {
+@interface AWDMMCSPutRequestInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int duration : 1; 
         unsigned int startTime : 1; 
@@ -103,6 +103,7 @@
 - (id)containerHttpInfosAtIndex:(unsigned int)arg1;
 - (unsigned int)containerHttpInfosCount;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

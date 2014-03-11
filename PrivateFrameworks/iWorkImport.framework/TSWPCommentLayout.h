@@ -7,6 +7,7 @@
 
 - (BOOL)allowsConnections;
 - (BOOL)canBeIntersected;
+- (BOOL)canResetTextAndObjectHandles;
 - (id)commentInfo;
 - (id)fill;
 - (void)layoutSearchForAnnotationWithHitBlock:(id)arg1;

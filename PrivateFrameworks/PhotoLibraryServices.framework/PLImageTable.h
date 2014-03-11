@@ -57,11 +57,13 @@
 - (void)_setEntryCount:(int)arg1;
 - (void)_updateSegmentCount;
 - (void)_verifyThumbnailDataForIndex:(unsigned int)arg1 uuid:(id)arg2;
+- (id)beginThumbnailSafePropertyUpdatesOnAsset:(id)arg1;
 - (void)compactWithOccupiedIndexes:(id)arg1;
 - (BOOL)copyEntryFromOriginalAsset:(id)arg1 toAsset:(id)arg2;
 - (id)dataForEntryAtIndex:(unsigned int)arg1 createIfNeeded:(BOOL)arg2;
 - (void)dealloc;
 - (void)deleteEntryWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 uuid:(id)arg3;
+- (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
 - (int)entryCount;
 - (void)finishUnicornEntryAtIndex:(unsigned int)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 asset:(id)arg4;
 - (id)imageDataAtIndex:(unsigned int)arg1 width:(int*)arg2 height:(int*)arg3 bytesPerRow:(int*)arg4 dataWidth:(int*)arg5 dataHeight:(int*)arg6 dataOffset:(int*)arg7;

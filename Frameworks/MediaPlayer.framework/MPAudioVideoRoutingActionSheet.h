@@ -6,15 +6,15 @@
    See Warning(s) below.
  */
 
-@class MPAudioDeviceController, NSArray, UIViewController, UIWindow;
+@class MPAVRoutingController, NSArray, UIViewController, UIWindow;
 
 @interface MPAudioVideoRoutingActionSheet : UIActionSheet <UIActionSheetDelegate> {
     int _airPlayPasswordAlertDidAppearToken;
     BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    MPAudioDeviceController *_audioDeviceController;
     unsigned int _avItemType;
     id _completionHandler;
     NSArray *_displayedRoutes;
+    MPAVRoutingController *_routingController;
     BOOL _shouldPauseAfterDismissing;
     UIViewController *_viewControllerForActionSheet;
     UIWindow *_windowForActionSheet;

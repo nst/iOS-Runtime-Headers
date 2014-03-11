@@ -50,7 +50,9 @@
         unsigned int drawsSeparatorAtTopOfSection : 1; 
         unsigned int drawsSeparatorAtBottomOfSection : 1; 
         unsigned int separatorBackdropOverlayBlendMode : 3; 
+        unsigned int separatorDrawsInVibrantLightMode : 1; 
         unsigned int separatorHidden : 1; 
+        unsigned int hidingSeparatorsForSelection : 1; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -82,6 +84,7 @@
     UIControl *_editingAccessoryView;
     id _editingData;
     UIView *_floatingSeparatorView;
+    BOOL _focusable;
     id _highlightingSupport;
     UIImageView *_imageView;
     int _indentationLevel;
@@ -151,6 +154,7 @@
 @property(readonly) UILabel * textLabel;
 
 + (id)_defaultTopShadowColor;
++ (void)_initializeForIdiom:(int)arg1;
 + (void)initialize;
 
 - (SEL)_accessoryAction;
@@ -167,7 +171,6 @@
 - (id)_badge;
 - (id)_badgeText;
 - (void)_beginSwiping;
-- (BOOL)_canDoSeparatorLayout;
 - (BOOL)_canDrawContent;
 - (void)_cancelInternalPerformRequests;
 - (id)_checkmarkImage:(BOOL)arg1;
@@ -206,6 +209,7 @@
 - (id)_encodableSubviews;
 - (void)_endSwiping:(BOOL)arg1;
 - (void)_finishedFadingGrabber:(id)arg1 finished:(BOOL)arg2;
+- (void)_focusStateDidChange;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_grabberBeganReorder:(id)arg1;
 - (void)_grabberDragged:(id)arg1 yDelta:(float)arg2;
@@ -222,8 +226,11 @@
 - (BOOL)_isAnimating;
 - (BOOL)_isCurrentlyConsideredHighlighted;
 - (BOOL)_isDeleteAnimationInProgress;
+- (BOOL)_isFocusable;
+- (BOOL)_isFocusableElement;
 - (BOOL)_isHighlighted;
 - (BOOL)_isInModalViewController;
+- (BOOL)_isMultiselecting;
 - (BOOL)_isPigglyWigglyCell;
 - (BOOL)_isReorderable;
 - (BOOL)_isUsingOldStyleMultiselection;
@@ -254,7 +261,9 @@
 - (float)_sectionBorderWidth;
 - (id)_selectedBackgroundView:(BOOL)arg1;
 - (int)_separatorBackdropOverlayBlendMode;
+- (BOOL)_separatorDrawsInVibrantLightMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (float)_separatorHeight;
 - (BOOL)_separatorHidden;
 - (void)_setAccessoryAction:(SEL)arg1;
 - (void)_setAccessoryTintColor:(id)arg1;
@@ -268,6 +277,7 @@
 - (void)_setDrawsTopSeparatorDuringReordering:(BOOL)arg1;
 - (void)_setDrawsTopShadow:(BOOL)arg1;
 - (void)_setEditingStyle:(int)arg1;
+- (void)_setFocusable:(BOOL)arg1;
 - (void)_setFont:(id)arg1 layout:(BOOL)arg2;
 - (void)_setGrabberHidden:(BOOL)arg1;
 - (void)_setHiddenForReuse:(BOOL)arg1;
@@ -284,6 +294,8 @@
 - (void)_setSectionBorderWidth:(float)arg1;
 - (void)_setSelectionStyle:(int)arg1 selectionTintColor:(id)arg2;
 - (void)_setSeparatorBackdropOverlayBlendMode:(int)arg1;
+- (void)_setSeparatorDrawsInVibrantLightMode:(BOOL)arg1;
+- (void)_setSeparatorDrawsInVibrantLightModeUIAppearance:(id)arg1;
 - (void)_setSeparatorHidden:(BOOL)arg1;
 - (void)_setShouldHaveFullLengthBottomSeparator:(BOOL)arg1;
 - (void)_setShouldHaveFullLengthTopSeparator:(BOOL)arg1;

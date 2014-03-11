@@ -16,7 +16,6 @@
     id _spellingSuggestion;
 }
 
-+ (void)_resetURL;
 + (id)_searchURLForRequest:(id)arg1;
 + (int)defaultLocalSearchProviderID;
 + (int)localSearchProviderID;
@@ -26,7 +25,6 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;

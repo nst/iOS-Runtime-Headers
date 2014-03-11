@@ -44,7 +44,6 @@
 
 + (id)movieInfoForMovieTimelineMovieIdentifier:(id)arg1;
 + (id)movieTimelineMovieIdentifierForMovieInfo:(id)arg1;
-+ (id)textureContextWithSession:(id)arg1;
 
 - (BOOL)addAnimationsAtLayerTime:(double)arg1;
 - (void)animateAfterDelay:(double)arg1;

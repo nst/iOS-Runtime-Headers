@@ -25,6 +25,7 @@
 - (id)animationsForTextureSet:(id)arg1 finalTextureSet:(id)arg2 duration:(double)arg3 attributes:(id)arg4 previousAttributes:(id)arg5;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
+- (void)p_addAnimationsToLayer:(id)arg1 angleLarge:(float)arg2 angleSmall:(float)arg3 xOffsetLarge:(float)arg4 xOffsetSmall:(float)arg5 duration:(double)arg6 jiggleCount:(float)arg7 result:(id)arg8;
 - (float)p_jiggleCountFromEffectAttributes:(id)arg1;
 
 @end

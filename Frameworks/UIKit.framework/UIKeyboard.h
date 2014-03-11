@@ -23,6 +23,8 @@
 
 + (void)_clearActiveKeyboard;
 + (id)activeKeyboard;
++ (id)activeKeyboardForScreen:(id)arg1;
++ (void)clearActiveForScreen:(id)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrameForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
@@ -30,6 +32,7 @@
 + (BOOL)isInHardwareKeyboardMode;
 + (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
++ (void)makeKeyboardActive:(id)arg1 forScreen:(id)arg2;
 + (void)removeAllDynamicDictionaries;
 + (BOOL)respondsToProxGesture;
 + (BOOL)shouldMinimizeForHardwareKeyboard;
@@ -48,24 +51,37 @@
 - (BOOL)_isAutomaticKeyboard;
 - (id)_keyplaneForKey:(id)arg1;
 - (id)_keyplaneNamed:(id)arg1;
+- (void)_moveWithEvent:(id)arg1;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (int)_positionInCandidateList:(id)arg1;
 - (void)_setAutocorrects:(BOOL)arg1;
 - (void)_setInputMode:(id)arg1;
+- (void)_setPasscodeOutlineAlpha:(float)arg1;
 - (void)_setRenderConfig:(id)arg1;
+- (void)_setSplit:(BOOL)arg1;
+- (void)_setUndocked:(BOOL)arg1;
 - (id)_touchPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_typeCharacter:(id)arg1 withError:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
+- (void)_wheelChangedWithEvent:(id)arg1;
 - (void)acceptAutocorrection;
 - (void)activate;
 - (void)autoAdjustOrientation;
 - (void)autoAdjustOrientationForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)canDismiss;
+- (BOOL)canHandleEvent:(id)arg1;
 - (BOOL)caretBlinks;
 - (BOOL)caretVisible;
+- (void)clearActivePerScreenIfNeeded;
 - (void)clearSnapshot;
+- (int)cursorLocation;
 - (void)deactivate;
 - (void)dealloc;
 - (id)defaultTextInputTraits;
 - (id)delegate;
+- (void)didMoveToWindow;
+- (BOOL)disableInteraction;
 - (void)displayLayer:(id)arg1;
 - (void)geometryChangeDone:(BOOL)arg1;
 - (struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })geometryForImplHeightDelta:(float)arg1;
@@ -77,6 +93,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)interfaceOrientation;
 - (BOOL)isActive;
+- (BOOL)isActivePerScreen;
 - (BOOL)isMinimized;
 - (int)keyboardIdiom;
 - (void)keyboardMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -91,6 +108,7 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForGeometryChange;
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)removeAutocorrectPrompt;
 - (void)removeFromSuperview;
 - (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
@@ -98,7 +116,9 @@
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setCaretVisible:(BOOL)arg1;
 - (void)setCorrectionLearningAllowed:(BOOL)arg1;
+- (void)setCursorLocation:(int)arg1;
 - (void)setDefaultTextInputTraits:(id)arg1;
+- (void)setDisableInteraction:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setKeyboardIdiom:(int)arg1;
 - (void)setMinimized:(BOOL)arg1;
@@ -118,5 +138,6 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)typingEnabled;
 - (void)updateLayout;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

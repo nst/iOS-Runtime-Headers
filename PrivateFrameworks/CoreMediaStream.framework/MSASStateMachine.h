@@ -135,7 +135,7 @@
 - (void)checkForAssetCollectionUpdates:(id)arg1 inAlbum:(id)arg2 info:(id)arg3;
 - (void)checkForChangesInfo:(id)arg1;
 - (void)checkForChangesResetSync:(BOOL)arg1 info:(id)arg2;
-- (void)checkForCommentChangesInAssetCollection:(id)arg1 inAlbum:(id)arg2 lastCommentID:(id)arg3 info:(id)arg4;
+- (void)checkForCommentChanges:(id)arg1 inAlbumWithGUID:(id)arg2;
 - (void)checkForUpdatesInAlbums:(id)arg1 resetSync:(BOOL)arg2 info:(id)arg3;
 - (void)continueAddingAssetCollections:(id)arg1 skipAssetCollections:(id)arg2 toAlbum:(id)arg3 info:(id)arg4;
 - (void)createAlbum:(id)arg1 info:(id)arg2;

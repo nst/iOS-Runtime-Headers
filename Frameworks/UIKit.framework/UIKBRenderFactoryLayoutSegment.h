@@ -19,12 +19,14 @@
     unsigned int _edges[3];
     int _rectCount;
     } _rects[3];
+    BOOL _requireAllMatches;
     int _states;
     UIKBRenderTraits *_traits;
     int _triangleCorners[3];
 }
 
 @property int keyStates;
+@property BOOL requireAllMatches;
 @property(readonly) UIKBRenderTraits * traits;
 
 + (id)segmentWithTraits:(id)arg1;
@@ -35,7 +37,9 @@
 - (void)dealloc;
 - (id)initWithTraits:(id)arg1;
 - (int)keyStates;
+- (BOOL)requireAllMatches;
 - (void)setKeyStates:(int)arg1;
+- (void)setRequireAllMatches:(BOOL)arg1;
 - (id)traits;
 
 @end

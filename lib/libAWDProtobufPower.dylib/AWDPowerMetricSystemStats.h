@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface AWDPowerMetricSystemStats : PBCodable {
+@interface AWDPowerMetricSystemStats : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
         unsigned int allAppsCount : 1; 
@@ -81,6 +81,7 @@
 - (void)clearCpuLoads;
 - (void)clearDataUsageInfos;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cpuLoadAtIndex:(unsigned int)arg1;
 - (id)cpuLoads;
 - (unsigned int)cpuLoadsCount;

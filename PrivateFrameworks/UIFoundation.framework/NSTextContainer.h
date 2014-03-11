@@ -25,6 +25,7 @@
     int _layoutOrientation;
     float _lineFragmentPadding;
     unsigned int _maximumLines;
+    float _minimumWidth;
     } _size;
     } _tcFlags;
     id _textView;
@@ -65,6 +66,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atIndex:(unsigned int)arg2 writingDirection:(int)arg3 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
 - (unsigned int)maximumNumberOfLines;
+- (float)minimumLineFragmentWidth;
 - (void)replaceLayoutManager:(id)arg1;
 - (void)setAttributesForExtraLineFragment:(id)arg1;
 - (void)setContainerSize:(struct CGSize { float x1; float x2; })arg1;
@@ -75,6 +77,7 @@
 - (void)setLineBreakMode:(int)arg1;
 - (void)setLineFragmentPadding:(float)arg1;
 - (void)setMaximumNumberOfLines:(unsigned int)arg1;
+- (void)setMinimumLineFragmentWidth:(float)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTextView:(id)arg1;
 - (void)setWidthTracksTextView:(BOOL)arg1;

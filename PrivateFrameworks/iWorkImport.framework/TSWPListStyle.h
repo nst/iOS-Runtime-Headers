@@ -42,6 +42,7 @@
 + (id)propertyMapForListNumberType:(int)arg1;
 + (id)stickyOverrideProperties;
 
+- (id)baseStyleForTopicNumbers;
 - (int)effectiveTypeForLevel:(unsigned int)arg1;
 - (int)firstLabelType;
 - (id)initFromUnarchiver:(id)arg1;

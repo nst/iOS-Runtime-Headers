@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMovieTVHUDView, MPVideoView, NPTVOutBackgroundView;
+@class MPMovieTVHUDView, MPVideoView;
 
 @interface MPTVOutWindow : UIWindow {
-    NPTVOutBackgroundView *_backgroundView;
     MPMovieTVHUDView *_hudView;
     MPVideoView *_videoView;
 }
 
 - (void).cxx_destruct;
 - (void)_playbackStateChanged:(id)arg1;
+- (void)_screenModeDidChange:(id)arg1;
 - (BOOL)_setupTargetScreen:(id)arg1;
 - (void)dealloc;
 - (id)init;

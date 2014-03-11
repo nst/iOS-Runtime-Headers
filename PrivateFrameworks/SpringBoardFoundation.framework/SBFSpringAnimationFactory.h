@@ -22,6 +22,7 @@
 - (id)_initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;
 - (id)_springAnimation;
 - (float)damping;
+- (id)description;
 - (float)epsilon;
 - (float)mass;
 - (float)stiffness;

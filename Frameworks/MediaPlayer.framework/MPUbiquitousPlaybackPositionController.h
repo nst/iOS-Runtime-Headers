@@ -11,6 +11,7 @@
     BOOL _externallyActive;
     BOOL _isServiceActive;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_serviceQueue;
     SBCPlaybackPositionServiceProxy *_uppServiceProxy;
 }
 
@@ -20,6 +21,7 @@
 @property BOOL externallyActive;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
 @property(getter=isServiceActive) BOOL serviceActive;
+@property(readonly) NSObject<OS_dispatch_queue> * serviceQueue;
 @property(retain) SBCPlaybackPositionServiceProxy * uppServiceProxy;
 
 + (id)sharedUbiquitousPlaybackPositionController;
@@ -29,15 +31,15 @@
 - (void)_applicationDidEnterForegroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (BOOL)_isEnabled;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (void)_onQueue_becomeActiveService;
-- (id)_onQueue_connectedUPPServiceProxy;
-- (void)_onQueue_resignActiveService;
-- (void)_onQueue_setDatabaseHasBookmarkableContents:(BOOL)arg1;
+- (BOOL)_onQueue_isEnabled;
 - (BOOL)_onQueue_shouldBeActive;
-- (void)_onQueue_updateActiveServiceIfNeeded;
-- (void)_onQueue_updateBoomkarkabilityState;
+- (void)_onServiceQueue_becomeActiveService;
+- (id)_onServiceQueue_connectedUPPServiceProxy;
+- (void)_onServiceQueue_resignActiveService;
+- (void)_onServiceQueue_setDatabaseHasBookmarkableContents:(BOOL)arg1;
+- (void)_onServiceQueue_updateActiveServiceIfNeeded;
+- (void)_onServiceQueue_updateBoomkarkabilityState;
 - (BOOL)applicationBecomingActive;
 - (void)beginUsingPlaybackPositionMetadata;
 - (BOOL)databaseHasBookmarkableContents;
@@ -48,6 +50,7 @@
 - (BOOL)isServiceActive;
 - (void)noteChangedPlaybackPositionMetadataForTrackPersistentID:(long long)arg1 isCheckpoint:(BOOL)arg2;
 - (id)queue;
+- (id)serviceQueue;
 - (void)setBeganUsingPlaybackPositionMetadata:(BOOL)arg1;
 - (void)setDatabaseHasBookmarkableContents:(BOOL)arg1;
 - (void)setExternallyActive:(BOOL)arg1;

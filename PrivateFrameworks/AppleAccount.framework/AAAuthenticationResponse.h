@@ -13,6 +13,7 @@
 @property(readonly) NSString * HSAData;
 @property(readonly) NSString * authToken;
 @property(readonly) NSString * fmipToken;
+@property(readonly) NSString * hsaToken;
 @property(readonly) NSString * mapsToken;
 @property(readonly) NSString * personID;
 
@@ -21,6 +22,7 @@
 - (id)HSAData;
 - (id)authToken;
 - (id)fmipToken;
+- (id)hsaToken;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)mapsToken;
 - (id)personID;

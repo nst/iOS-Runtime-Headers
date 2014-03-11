@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)registerProvider:(Class)arg1;
+- (void)startNotificationAvailabilityRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 - (void)startStatusRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 - (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 

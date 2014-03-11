@@ -25,7 +25,7 @@
 @property BOOL takesTaskCompletionAssertions;
 
 + (void)_setTakesTaskCompletionAssertions:(BOOL)arg1;
-+ (void)_stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 didFinish:(BOOL*)arg3;
++ (void)_stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 didFinish:(BOOL*)arg3 isCorrupt:(BOOL*)arg4;
 + (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 
@@ -57,6 +57,8 @@
 - (BOOL)setUserVersion:(int)arg1 forDatabase:(id)arg2;
 - (BOOL)setUserVersion:(int)arg1;
 - (id)setupBlock;
+- (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
+- (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 - (BOOL)takesTaskCompletionAssertions;
 - (int)userVersion;
 - (int)userVersionForDatabase:(id)arg1;

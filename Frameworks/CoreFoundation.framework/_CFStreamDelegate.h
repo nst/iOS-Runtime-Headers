@@ -7,9 +7,11 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface _CFStreamDelegate : NSObject <NSStreamDelegate> {
     struct { 
-        int version; 
+        long long version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
@@ -21,11 +23,16 @@
         void *genericPointer; 
     } _cb;
     } _client;
-    unsigned long _flags;
+    unsigned long long _flags;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
-- (id)initWithStreamEvents:(unsigned long)arg1 callback:(void*)arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (id)initWithStreamEvents:(unsigned long long)arg1 callback:(void*)arg2 context:(struct { long long x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 
 @end

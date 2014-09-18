@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputHelper, AVWeakReference, NSObject<OS_dispatch_queue>;
+@class AVAssetWriterInputHelper, AVAssetWriterInputPassDescriptionResponder, AVWeakReference, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetWriterInputInternal : NSObject {
     NSObject<OS_dispatch_queue> *appendFailureReadWriteQueue;
-    BOOL attachedToPixelBufferAdaptor;
+    boolattachedToMetadataAdaptor;
+    boolattachedToPixelBufferAdaptor;
     AVAssetWriterInputHelper *helper;
     NSObject<OS_dispatch_queue> *helperQueue;
-    int numberOfAppendFailures;
+    long long numberOfAppendFailures;
+    AVAssetWriterInputPassDescriptionResponder *passDescriptionResponder;
     AVWeakReference *weakReference;
     AVWeakReference *weakReferenceToAssetWriter;
 }

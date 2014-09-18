@@ -5,21 +5,21 @@
 @class <MPUNowPlayingDelegate>, NSDictionary, NSObject<OS_dispatch_source>, NSString, UIImage;
 
 @interface MPUNowPlayingController : NSObject {
-    BOOL _cachedArtworkDirty;
     UIImage *_cachedNowPlayingArtwork;
     double _currentDuration;
     double _currentElapsed;
     NSString *_currentNowPlayingAppDisplayID;
     NSDictionary *_currentNowPlayingInfo;
     <MPUNowPlayingDelegate> *_delegate;
-    int _isPlaying;
-    BOOL _isRegisteredForNowPlayingNotifications;
-    BOOL _isUpdatingNowPlayingApp;
-    BOOL _isUpdatingNowPlayingInfo;
-    BOOL _isUpdatingPlaybackState;
-    int _nowPlayingPIDForCachedDisplayID;
+    long long _isPlaying;
     NSObject<OS_dispatch_source> *_timeInformationTimer;
     double _timeInformationUpdateInterval;
+    bool_cachedArtworkDirty;
+    bool_currentNowPlayingAppIsRunning;
+    bool_isRegisteredForNowPlayingNotifications;
+    bool_isUpdatingNowPlayingApp;
+    bool_isUpdatingNowPlayingInfo;
+    bool_isUpdatingPlaybackState;
 }
 
 @property(readonly) double currentDuration;
@@ -27,7 +27,7 @@
 @property(readonly) UIImage * currentNowPlayingArtwork;
 @property(readonly) NSDictionary * currentNowPlayingInfo;
 @property <MPUNowPlayingDelegate> * delegate;
-@property(readonly) BOOL isPlaying;
+@property(readonly) bool isPlaying;
 @property(readonly) NSString * nowPlayingAppDisplayID;
 @property double timeInformationUpdateInterval;
 
@@ -47,7 +47,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)nowPlayingAppDisplayID;
 - (void)setDelegate:(id)arg1;
 - (void)setTimeInformationUpdateInterval:(double)arg1;

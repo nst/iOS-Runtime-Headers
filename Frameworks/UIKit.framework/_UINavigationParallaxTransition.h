@@ -2,68 +2,79 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIViewControllerContextTransitioning>, UIView, _UINavigationInteractiveTransitionBase, _UIParallaxDimmingView;
+@class <UIViewControllerContextTransitioning>, NSString, UIView, _UINavigationInteractiveTransitionBase, _UIParallaxDimmingView;
 
 @interface _UINavigationParallaxTransition : NSObject <_UIBasicAnimationFactory, UIViewControllerAnimatedTransitioningEx> {
     _UIParallaxDimmingView *_borderDimmingView;
     UIView *_clipUnderView;
-    BOOL _clipUnderlapWhileTransitioning;
     UIView *_containerFromView;
     UIView *_containerToView;
     _UIParallaxDimmingView *_contentDimmingView;
-    BOOL _interactionAborted;
     _UINavigationInteractiveTransitionBase *_interactionController;
-    int _operation;
+    long long _operation;
     <UIViewControllerContextTransitioning> *_transitionContext;
-    float _transitionGap;
-    int _transitionStyle;
+    double _transitionGap;
+    long long _transitionStyle;
+    bool_clipUnderlapWhileTransitioning;
+    bool_interactionAborted;
 }
 
 @property(retain) _UIParallaxDimmingView * borderDimmingView;
 @property(retain) UIView * clipUnderView;
-@property BOOL clipUnderlapWhileTransitioning;
+@property bool clipUnderlapWhileTransitioning;
 @property(retain) UIView * containerFromView;
 @property(retain) UIView * containerToView;
 @property(retain) _UIParallaxDimmingView * contentDimmingView;
-@property BOOL interactionAborted;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool interactionAborted;
 @property _UINavigationInteractiveTransitionBase * interactionController;
-@property int operation;
+@property long long operation;
+@property(readonly) Class superclass;
 @property(retain) <UIViewControllerContextTransitioning> * transitionContext;
-@property float transitionGap;
-@property int transitionStyle;
+@property double transitionGap;
+@property long long transitionStyle;
 
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_timingFunctionForAnimation;
+- (void)animateKeyboard:(id)arg1;
 - (void)animateTransition:(id)arg1;
-- (void)animationEnded:(BOOL)arg1;
+- (void)animationEnded:(bool)arg1;
 - (id)borderDimmingView;
 - (id)clipUnderView;
-- (BOOL)clipUnderlapWhileTransitioning;
+- (bool)clipUnderlapWhileTransitioning;
+- (void)completeKeyboard:(id)arg1;
 - (id)containerFromView;
 - (id)containerToView;
 - (id)contentDimmingView;
 - (void)dealloc;
-- (id)initWithCurrentOperation:(int)arg1;
-- (BOOL)interactionAborted;
+- (double)gapBetweenViews;
+- (id)initWithCurrentOperation:(long long)arg1;
+- (bool)interactionAborted;
 - (id)interactionController;
-- (int)operation;
+- (long long)operation;
+- (double)parallaxOffset;
+- (void)prepareToAnimateKeyboard:(id)arg1;
+- (void)resizeShadow:(id)arg1;
 - (id)resizedFromContainerView;
 - (id)resizedToContainerView;
 - (void)setBorderDimmingView:(id)arg1;
 - (void)setClipUnderView:(id)arg1;
-- (void)setClipUnderlapWhileTransitioning:(BOOL)arg1;
+- (void)setClipUnderlapWhileTransitioning:(bool)arg1;
 - (void)setContainerFromView:(id)arg1;
 - (void)setContainerToView:(id)arg1;
 - (void)setContentDimmingView:(id)arg1;
-- (void)setInteractionAborted:(BOOL)arg1;
+- (void)setInteractionAborted:(bool)arg1;
 - (void)setInteractionController:(id)arg1;
-- (void)setOperation:(int)arg1;
+- (void)setOperation:(long long)arg1;
 - (void)setTransitionContext:(id)arg1;
-- (void)setTransitionGap:(float)arg1;
-- (void)setTransitionStyle:(int)arg1;
+- (void)setTransitionGap:(double)arg1;
+- (void)setTransitionStyle:(long long)arg1;
+- (id)shadowContainerForKeyboardTransition:(id)arg1;
 - (id)transitionContext;
 - (double)transitionDuration:(id)arg1;
-- (float)transitionGap;
-- (int)transitionStyle;
+- (double)transitionGap;
+- (long long)transitionStyle;
 
 @end

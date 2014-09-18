@@ -2,31 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class TIKeyboardCandidate;
+@class TIAutocorrectionList, TIKeyboardCandidate;
 
 @interface UIKeyboardAutocorrectionController : NSObject {
-    TIKeyboardCandidate *_autocorrection;
-    BOOL _deferredAutocorrection;
-    BOOL _needsAutocorrection;
-    BOOL _requestedAutocorrection;
+    TIAutocorrectionList *_autocorrectionList;
+    bool_deferredAutocorrection;
+    bool_needsAutocorrection;
+    bool_requestedAutocorrection;
 }
 
-@property(copy) TIKeyboardCandidate * autocorrection;
-@property BOOL deferredAutocorrection;
-@property BOOL needsAutocorrection;
-@property BOOL requestedAutocorrection;
+@property(readonly) TIKeyboardCandidate * autocorrection;
+@property(retain) TIAutocorrectionList * autocorrectionList;
+@property bool deferredAutocorrection;
+@property bool needsAutocorrection;
+@property bool requestedAutocorrection;
 
 - (id)autocorrection;
+- (id)autocorrectionList;
+- (void)clearAutocorrection;
 - (void)dealloc;
-- (BOOL)deferredAutocorrection;
-- (BOOL)hasAutocorrection;
-- (BOOL)needsAutocorrection;
+- (bool)deferredAutocorrection;
+- (bool)hasAutocorrection;
+- (bool)needsAutocorrection;
 - (void)requestAutocorrectionWithExecutionContext:(id)arg1;
-- (BOOL)requestedAutocorrection;
-- (void)setAutocorrection:(id)arg1;
-- (void)setDeferredAutocorrection:(BOOL)arg1;
-- (void)setNeedsAutocorrection:(BOOL)arg1;
+- (bool)requestedAutocorrection;
+- (void)setAutocorrectionList:(id)arg1;
+- (void)setDeferredAutocorrection:(bool)arg1;
+- (void)setNeedsAutocorrection:(bool)arg1;
 - (void)setNeedsAutocorrection;
-- (void)setRequestedAutocorrection:(BOOL)arg1;
+- (void)setRequestedAutocorrection:(bool)arg1;
+- (void)updateSuggestionViews;
 
 @end

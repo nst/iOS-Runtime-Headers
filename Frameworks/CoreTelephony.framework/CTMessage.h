@@ -22,7 +22,7 @@
 }
 
 @property(copy) NSString * contentType;
-@property(readonly) NSString * countryCode;
+@property(copy,readonly) NSString * countryCode;
 @property(readonly) NSDate * date;
 @property(readonly) NSArray * items;
 @property unsigned int messageId;
@@ -56,7 +56,7 @@
 - (int)messageType;
 - (id)rawHeaders;
 - (id)recipients;
-- (void)removePartAtIndex:(unsigned int)arg1;
+- (void)removePartAtIndex:(unsigned long long)arg1;
 - (void)removeRecipient:(id)arg1;
 - (void)removeRecipientsInArray:(id)arg1;
 - (unsigned int)replaceMessage;

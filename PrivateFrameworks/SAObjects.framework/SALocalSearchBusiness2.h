@@ -11,8 +11,11 @@
 @property(copy) NSURL * businessUrl;
 @property(copy) NSArray * categories;
 @property(copy) NSString * currencySymbol;
-@property(copy) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(copy) NSString * descriptionText;
 @property(copy) NSString * extSessionGuid;
+@property(readonly) unsigned long long hash;
 @property(copy) NSDictionary * identifierMap;
 @property(copy) NSString * name;
 @property(copy) NSArray * offerLists;
@@ -21,6 +24,7 @@
 @property(copy) NSArray * photoList;
 @property(copy) NSString * priceRange;
 @property(copy) NSArray * reviewList;
+@property(readonly) Class superclass;
 
 + (id)afui_mapsURLForLocalSearchBusiness2s:(id)arg1;
 + (id)business2;
@@ -33,7 +37,7 @@
 - (id)businessUrl;
 - (id)categories;
 - (id)currencySymbol;
-- (id)description;
+- (id)descriptionText;
 - (id)encodedClassName;
 - (id)extSessionGuid;
 - (id)groupIdentifier;
@@ -49,7 +53,7 @@
 - (void)setBusinessUrl:(id)arg1;
 - (void)setCategories:(id)arg1;
 - (void)setCurrencySymbol:(id)arg1;
-- (void)setDescription:(id)arg1;
+- (void)setDescriptionText:(id)arg1;
 - (void)setExtSessionGuid:(id)arg1;
 - (void)setIdentifierMap:(id)arg1;
 - (void)setName:(id)arg1;

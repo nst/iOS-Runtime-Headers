@@ -12,13 +12,12 @@
 @interface TSWPColumnStyle : TSSStyle <TSWPColumnMetrics> {
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } adjustedInsets;
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
+@property(readonly) bool alwaysStartsNewTarget;
+@property(readonly) unsigned long long columnCount;
+@property(readonly) bool columnsAreLeftToRight;
 @property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) float textScaleFactor;
+@property(readonly) bool shrinkTextToFit;
+@property(readonly) double textScaleFactor;
 
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;
@@ -27,19 +26,19 @@
 + (id)properties;
 + (id)propertiesAllowingNSNull;
 
-- (struct CGSize { float x1; float x2; })adjustedInsets;
-- (BOOL)alwaysStartsNewTarget;
-- (unsigned int)columnCount;
-- (BOOL)columnsAreLeftToRight;
-- (BOOL)equalWidth;
-- (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
+- (bool)alwaysStartsNewTarget;
+- (unsigned long long)columnCount;
+- (bool)columnsAreLeftToRight;
+- (bool)equalWidth;
+- (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)layoutMargins;
 - (void)loadFromArchive:(const struct ColumnStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct ColumnStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
-- (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 outWidth:(float*)arg3 outGap:(float*)arg4;
+- (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 target:(id)arg3 outWidth:(double*)arg4 outGap:(double*)arg5;
 - (void)saveToArchive:(struct ColumnStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct ColumnStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)shrinkTextToFit;
-- (float)widthForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (bool)shrinkTextToFit;
+- (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 
 @end

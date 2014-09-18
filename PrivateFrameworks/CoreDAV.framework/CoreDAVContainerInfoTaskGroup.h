@@ -15,7 +15,11 @@
 
 @property int containerInfoDepth;
 @property(readonly) NSSet * containerURLs;
+@property(copy,readonly) NSString * debugDescription;
 @property <CoreDAVContainerInfoTaskGroupDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)_copyContainerParserMappings;
 - (id)_copyContainerWithURL:(id)arg1 andProperties:(id)arg2;

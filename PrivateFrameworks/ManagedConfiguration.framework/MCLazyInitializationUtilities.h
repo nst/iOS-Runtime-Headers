@@ -5,8 +5,8 @@
 @interface MCLazyInitializationUtilities : NSObject {
 }
 
-+ (BOOL)hasLibMIS;
 + (void)initAddressBook;
++ (void)initAppleKeyStore;
 + (void)initCoreGraphics;
 + (void)initCoreText;
 + (void)initImageIO;

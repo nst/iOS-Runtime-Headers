@@ -6,11 +6,11 @@
 }
 
 @property int width;
-@property BOOL wrap;
+@property bool wrap;
 
 - (void)setWidth:(int)arg1;
-- (void)setWrap:(BOOL)arg1;
+- (void)setWrap:(bool)arg1;
 - (int)width;
-- (BOOL)wrap;
+- (bool)wrap;
 
 @end

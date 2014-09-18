@@ -11,7 +11,7 @@
     int _lock;
 }
 
-@property(readonly) NSString * countryCode;
+@property(copy,readonly) NSString * countryCode;
 
 + (id)sharedConfiguration;
 

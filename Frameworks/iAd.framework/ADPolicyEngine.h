@@ -2,53 +2,53 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADBannerView, ADInterstitialAd, NSArray, NSData, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class ADBannerView, ADInterstitialAd, NSData, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface ADPolicyEngine : NSObject <ADBannerViewInternalDelegate, ADInterstitialAdDelegate> {
     NSData *_currentSongData;
-    NSArray *_currentSponsoredStationIDs;
     NSData *_currentStationData;
-    BOOL _enabled;
-    NSArray *_gatewayEnabledStationIDs;
     NSData *_heartbeatToken;
     NSError *_heartbeatTokenError;
     double _heartbeatTokenExpiration;
-    double _lastPrerollPlaybackTime;
     NSError *_lastSharedMediaPlayerVideoAdError;
-    double _lastStoryboardDismissalTime;
+    double _nextInterstitialPresentationTime;
+    double _nextPrerollPlaybackTime;
     NSObject<OS_dispatch_queue> *_policyEngineQueue;
     NSMutableArray *_queuedCommands;
     ADInterstitialAd *_sharedInterstitialAd;
-    BOOL _sharedInterstitialAdIsInUse;
     NSString *_sharedInterstitialAuthenticationUserName;
     NSString *_sharedInterstitialSection;
     NSURL *_sharedInterstitialServerURL;
     ADBannerView *_sharedMediaPlayerVideoAd;
-    BOOL _sharedMediaPlayerVideoAdClaimed;
-    BOOL _visuallyEngaged;
+    bool_enabled;
+    bool_sharedInterstitialAdIsInUse;
+    bool_sharedMediaPlayerVideoAdClaimed;
+    bool_visuallyEngaged;
 }
 
 @property(retain) NSData * currentSongData;
-@property(retain) NSArray * currentSponsoredStationIDs;
 @property(retain) NSData * currentStationData;
-@property BOOL enabled;
-@property(readonly) NSArray * gatewayEnabledStationIDs;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool enabled;
+@property(readonly) unsigned long long hash;
 @property(retain) NSData * heartbeatToken;
 @property(retain) NSError * heartbeatTokenError;
 @property double heartbeatTokenExpiration;
-@property double lastPrerollPlaybackTime;
 @property(retain) NSError * lastSharedMediaPlayerVideoAdError;
-@property double lastStoryboardDismissalTime;
+@property double nextInterstitialPresentationTime;
+@property double nextPrerollPlaybackTime;
 @property(retain) NSObject<OS_dispatch_queue> * policyEngineQueue;
 @property(readonly) NSMutableArray * queuedCommands;
 @property(retain) ADInterstitialAd * sharedInterstitialAd;
-@property BOOL sharedInterstitialAdIsInUse;
+@property bool sharedInterstitialAdIsInUse;
 @property(copy) NSString * sharedInterstitialAuthenticationUserName;
 @property(copy) NSString * sharedInterstitialSection;
 @property(copy) NSURL * sharedInterstitialServerURL;
 @property(retain) ADBannerView * sharedMediaPlayerVideoAd;
-@property BOOL sharedMediaPlayerVideoAdClaimed;
-@property BOOL visuallyEngaged;
+@property bool sharedMediaPlayerVideoAdClaimed;
+@property(readonly) Class superclass;
+@property bool visuallyEngaged;
 
 + (id)sharedEngine;
 
@@ -56,22 +56,23 @@
 - (void)_enablePolicyEngineWithReason:(id)arg1;
 - (void)_performWhenAdSheetConnectionEstablished:(id)arg1;
 - (void)acquireMatchSlotWithBodyParameters:(id)arg1 completionHandler:(id)arg2;
-- (void)acquireMatchSlotWithUserConfirmation:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)acquireMatchSlotWithUserConfirmation:(bool)arg1 completionHandler:(id)arg2;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
-- (BOOL)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
+- (bool)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(bool)arg2;
 - (void)bannerViewDidLoadAd:(id)arg1;
 - (void)bannerViewWillLoadAd:(id)arg1;
-- (BOOL)canPresentSharedInterstitialAdWithResultMessage:(id*)arg1;
-- (BOOL)claimSharedMediaPlayerVideoAdWithError:(id*)arg1;
+- (bool)canPresentSharedInterstitialAdWithResultMessage:(id*)arg1;
+- (bool)claimSharedMediaPlayerVideoAdWithError:(id*)arg1;
 - (id)currentSongData;
-- (id)currentSponsoredStationIDs;
 - (id)currentStationData;
+- (void)didBeginPlaybackOnStation:(id)arg1 song:(id)arg2;
+- (void)didEnterStation:(id)arg1;
+- (void)didStopPlaybackOnStation:(id)arg1;
 - (void)disablePolicyEngine;
 - (void)enablePolicyEngine;
-- (BOOL)enabled;
+- (bool)enabled;
 - (void)finishedPresentingSharedInterstitialAd;
-- (id)gatewayEnabledStationIDs;
 - (id)heartbeatToken:(id*)arg1;
 - (id)heartbeatToken;
 - (id)heartbeatTokenError;
@@ -80,9 +81,9 @@
 - (void)interstitialAd:(id)arg1 didFailWithError:(id)arg2;
 - (void)interstitialAdDidLoad:(id)arg1;
 - (void)interstitialAdDidUnload:(id)arg1;
-- (double)lastPrerollPlaybackTime;
 - (id)lastSharedMediaPlayerVideoAdError;
-- (double)lastStoryboardDismissalTime;
+- (double)nextInterstitialPresentationTime;
+- (double)nextPrerollPlaybackTime;
 - (void)optimalTransmissionWindowDidOpen;
 - (id)policyEngineQueue;
 - (id)queuedCommands;
@@ -91,37 +92,35 @@
 - (void)reportClientEvent:(id)arg1;
 - (void)reportListeningPresenceEvent:(int)arg1;
 - (void)reportStationTileImpression:(id)arg1;
+- (void)requestAdsForSlot:(id)arg1 completionHandler:(id)arg2;
 - (void)setCurrentSongData:(id)arg1;
-- (void)setCurrentSponsoredStationIDs:(id)arg1;
 - (void)setCurrentStationData:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setGatewayEnabledStationIDs:(id)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHeartbeatToken:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
 - (void)setHeartbeatToken:(id)arg1;
 - (void)setHeartbeatTokenError:(id)arg1;
 - (void)setHeartbeatTokenExpiration:(double)arg1;
-- (void)setLastPrerollPlaybackTime:(double)arg1;
 - (void)setLastSharedMediaPlayerVideoAdError:(id)arg1;
-- (void)setLastStoryboardDismissalTime:(double)arg1;
+- (void)setNextInterstitialPresentationTime:(double)arg1;
+- (void)setNextPrerollPlaybackTime:(double)arg1;
 - (void)setPolicyEngineQueue:(id)arg1;
 - (void)setSharedInterstitialAd:(id)arg1;
-- (void)setSharedInterstitialAdIsInUse:(BOOL)arg1;
+- (void)setSharedInterstitialAdIsInUse:(bool)arg1;
 - (void)setSharedInterstitialAuthenticationUserName:(id)arg1;
 - (void)setSharedInterstitialSection:(id)arg1;
 - (void)setSharedInterstitialServerURL:(id)arg1;
 - (void)setSharedMediaPlayerVideoAd:(id)arg1;
-- (void)setSharedMediaPlayerVideoAdClaimed:(BOOL)arg1;
-- (void)setSponsoredStationIDs:(id)arg1;
+- (void)setSharedMediaPlayerVideoAdClaimed:(bool)arg1;
 - (void)setStationData:(id)arg1 withInitialTrackBlobs:(id)arg2;
-- (void)setVisuallyEngaged:(BOOL)arg1;
+- (void)setVisuallyEngaged:(bool)arg1;
 - (id)sharedInterstitialAd;
-- (BOOL)sharedInterstitialAdIsInUse;
+- (bool)sharedInterstitialAdIsInUse;
 - (id)sharedInterstitialAuthenticationUserName;
 - (id)sharedInterstitialSection;
 - (id)sharedInterstitialServerURL;
 - (id)sharedMediaPlayerVideoAd;
 - (void)sharedMediaPlayerVideoAdActionDidFinish;
-- (BOOL)sharedMediaPlayerVideoAdClaimed;
+- (bool)sharedMediaPlayerVideoAdClaimed;
 - (void)sharedMediaPlayerVideoAdDidFailToReceiveAdWithError:(id)arg1;
 - (void)sharedMediaPlayerVideoAdDidLoad;
 - (void)sharedMediaPlayerVideoAdWillLoad;
@@ -130,6 +129,6 @@
 - (void)songSkipped;
 - (void)songStopped;
 - (void)stationChanged:(id)arg1 completionHandler:(id)arg2;
-- (BOOL)visuallyEngaged;
+- (bool)visuallyEngaged;
 
 @end

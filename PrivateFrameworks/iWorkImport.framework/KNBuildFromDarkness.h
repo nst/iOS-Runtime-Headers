@@ -2,44 +2,44 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimParameterGroup, TSDGLDataBuffer, TSDGLShader;
+@class KNAnimParameterGroup, NSString, TSDGLDataBuffer, TSDGLShader;
 
 @interface KNBuildFromDarkness : KNAnimationEffect <KNFrameBuildAnimator, KNAnimationPluginArchiving> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
     } _baseTransform;
     TSDGLDataBuffer *_dataBuffer;
     } _drawableFrame;
@@ -49,23 +49,28 @@
     TSDGLShader *_shader;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
-+ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
-+ (BOOL)requiresSingleTexturePerStage;
++ (bool)requiresSingleTexturePerStage;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
-+ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (void)animationDidEndForTextures:(id)arg1 forBuild:(id)arg2;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfEffectWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfEffectWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (id)initWithAnimationContext:(id)arg1;
 - (void)renderFrameWithContext:(id)arg1;
 

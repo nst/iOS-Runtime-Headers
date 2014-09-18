@@ -2,40 +2,44 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIColor, UILabel;
+@class NSString, UIColor, UILabel;
 
 @interface MFRecipientTableViewCellDetailView : UIView <MFTinting> {
     UILabel *_detailLabel;
-    BOOL _highlighted;
-    BOOL _labelIsHidden;
     UILabel *_labelLabel;
-    BOOL _shouldDim;
     UIColor *_tintColor;
+    bool_highlighted;
+    bool_labelIsHidden;
+    bool_shouldDim;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) UILabel * detailLabel;
-@property BOOL highlighted;
+@property(readonly) unsigned long long hash;
+@property bool highlighted;
 @property(readonly) UILabel * labelLabel;
-@property BOOL shouldDim;
+@property bool shouldDim;
+@property(readonly) Class superclass;
 
 + (id)defaultStringAttributes;
 + (id)groupStringAttributes;
 + (id)highlightedStringAttributes;
 + (id)labelStringAttributes;
-+ (float)lineHeight;
++ (double)lineHeight;
 
 - (void)_recalculateLabelColors;
 - (void)dealloc;
 - (id)detailLabel;
-- (BOOL)highlighted;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)highlighted;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)labelLabel;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setShouldDim:(BOOL)arg1;
-- (void)setTintColor:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldDim;
+- (void)setHighlighted:(bool)arg1;
+- (void)setShouldDim:(bool)arg1;
+- (void)setTintColor:(id)arg1 animated:(bool)arg2;
+- (bool)shouldDim;
 - (id)tintColor;
 
 @end

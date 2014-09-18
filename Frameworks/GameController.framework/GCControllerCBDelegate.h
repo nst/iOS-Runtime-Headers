@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CBCentralManager, NSMutableArray;
+@class CBCentralManager, NSMutableArray, NSString;
 
 @interface GCControllerCBDelegate : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
     CBCentralManager *_centralManager;
@@ -17,6 +17,10 @@
 
 @property(retain) CBCentralManager * centralManager;
 @property(copy) id completionHandler;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
@@ -37,6 +41,7 @@
 - (void)peripheral:(id)arg1 didUpdateValueForDescriptor:(id)arg2 error:(id)arg3;
 - (void)setCentralManager:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
+- (void)startScan;
 - (void)startScanWithTimeout:(double)arg1;
 - (void)stopScan;
 

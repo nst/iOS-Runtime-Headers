@@ -11,17 +11,18 @@
     struct tagHANDLE { int x1; } *_handle;
 }
 
-- (long)copyColorInfo:(const struct __CFDictionary {}**)arg1;
+- (int)copyColorInfo:(const struct __CFDictionary {}**)arg1;
 - (void)dealloc;
-- (long)getCameraType:(int*)arg1;
-- (long)getPreviewFrameCount:(int*)arg1 captureFrameCount:(int*)arg2 reset:(BOOL)arg3;
+- (int)frameBecameAvailableCount:(int*)arg1 figBufferQueueEmptyCount:(int*)arg2 figBufferQueueErrorCount:(int*)arg3;
+- (int)getCameraType:(int*)arg1;
+- (int)getPreviewFrameCount:(int*)arg1 captureFrameCount:(int*)arg2 reset:(bool)arg3;
 - (id)initWithOptions:(void*)arg1 callback:(int (*)())arg2 width:(int)arg3 height:(int)arg4 frameRate:(int)arg5 cameraType:(int)arg6 withError:(int*)arg7;
-- (BOOL)isPreviewRunning;
-- (long)setCameraType:(int)arg1;
-- (long)setFrameRatePercentage:(double)arg1 newFramerate:(int*)arg2;
-- (long)setWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
-- (long)startCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
-- (long)startPreview;
-- (long)stop:(bool)arg1;
+- (bool)isPreviewRunning;
+- (int)setCameraType:(int)arg1;
+- (int)setFrameRatePercentage:(double)arg1 newFramerate:(int*)arg2;
+- (int)setWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
+- (int)startCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
+- (int)startPreview;
+- (int)stop:(bool)arg1;
 
 @end

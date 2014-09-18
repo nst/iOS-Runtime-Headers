@@ -2,22 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIWishlistDelegate>, SKUIItemListTableViewController, SKUISyncWishlistOperation, SKUIWishlist, UIBarButtonItem, _UIBackdropView, _UIContentUnavailableView;
+@class <SKUIWishlistDelegate>, NSString, SKUIItemListTableViewController, SKUISyncWishlistOperation, SKUIWishlist, UIBarButtonItem, _UIBackdropView, _UIContentUnavailableView;
 
 @interface SKUIWishlistViewController : SKUIViewController <SKUIItemListTableDelegate> {
     _UIBackdropView *_backdropView;
     <SKUIWishlistDelegate> *_delegate;
     UIBarButtonItem *_deleteButton;
-    BOOL _editing;
     _UIContentUnavailableView *_emptyWishlistView;
     SKUIItemListTableViewController *_itemListViewController;
-    BOOL _reloadOnNextAppear;
     SKUISyncWishlistOperation *_syncOperation;
     SKUIWishlist *_wishlist;
-    int _wishlistState;
+    long long _wishlistState;
+    bool_editing;
+    bool_reloadOnNextAppear;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIWishlistDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)wishlistBarButtonItemWithClientContext:(id)arg1;
 
@@ -28,21 +32,21 @@
 - (void)_doneAction:(id)arg1;
 - (id)_emptyWishlistView;
 - (void)_finishSignInWithResponse:(id)arg1 error:(id)arg2;
-- (void)_finishSyncWithResult:(BOOL)arg1 didChange:(BOOL)arg2 error:(id)arg3;
-- (BOOL)_isEditingEnabled;
+- (void)_finishSyncWithResult:(bool)arg1 didChange:(bool)arg2 error:(id)arg3;
+- (bool)_isEditingEnabled;
 - (id)_itemListViewController;
 - (void)_reloadChildView;
 - (void)_reloadForAccountsChanged;
-- (void)_reloadNavigationBarAnimated:(BOOL)arg1;
+- (void)_reloadNavigationBarAnimated:(bool)arg1;
 - (void)_reloadWishlist;
-- (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)_signInAction:(id)arg1;
 - (void)_syncWishlist;
 - (void)_toggleEditAction:(id)arg1;
 - (void)_updateDeleteButton;
 - (id)_wishlist;
 - (void)_wishlistDidChangeNotification:(id)arg1;
-- (int)_wishlistState;
+- (long long)_wishlistState;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
@@ -54,6 +58,6 @@
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -19,8 +19,8 @@
 - (void)dealloc;
 - (id)identifierToStyleMap;
 - (id)initFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ClassicStylesheetRecordArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct ClassicStylesheetRecordArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
+- (void)loadFromArchive:(const struct ClassicStylesheetRecordArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)saveToArchive:(struct ClassicStylesheetRecordArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setIdentifierToStyleMap:(id)arg1;
 

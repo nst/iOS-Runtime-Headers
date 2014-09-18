@@ -6,25 +6,25 @@
 
 @interface OADPath : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
+    boolmStroked;
     NSMutableArray *mElements;
     int mFillMode;
     } mSize;
-    BOOL mStroked;
 }
 
 - (id).cxx_construct;
 - (void)addElement:(id)arg1;
 - (void)dealloc;
-- (id)elementAtIndex:(unsigned int)arg1;
-- (unsigned int)elementCount;
+- (id)elementAtIndex:(unsigned long long)arg1;
+- (unsigned long long)elementCount;
 - (int)fillMode;
 - (id)init;
 - (void)setFillMode:(int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setStroked:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (BOOL)stroked;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setStroked:(bool)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)stroked;
 
 @end

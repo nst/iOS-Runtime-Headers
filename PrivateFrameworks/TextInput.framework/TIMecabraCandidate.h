@@ -6,16 +6,16 @@
 
 @interface TIMecabraCandidate : TIKeyboardCandidate {
     NSString *_candidate;
-    BOOL _emojiCandidate;
-    BOOL _extensionCandidate;
     NSString *_input;
-    BOOL _isForShortcutConversion;
     NSNumber *_mecabraCandidatePointerValue;
+    bool_emojiCandidate;
+    bool_extensionCandidate;
+    bool_isForShortcutConversion;
 }
 
 @property(retain) NSNumber * mecabraCandidatePointerValue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)candidate;
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(BOOL)arg4 isEmoji:(BOOL)arg5 isShortcut:(BOOL)arg6;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(bool)arg4 isEmoji:(bool)arg5 isShortcut:(bool)arg6;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSurface:(id)arg1 input:(id)arg2 mecabraCandidatePointerValue:(id)arg3;
 - (id)input;
-- (BOOL)isEmojiCandidate;
-- (BOOL)isExtensionCandidate;
-- (BOOL)isForShortcutConversion;
-- (BOOL)isFullwidthCandidate;
+- (bool)isEmojiCandidate;
+- (bool)isExtensionCandidate;
+- (bool)isForShortcutConversion;
+- (bool)isFullwidthCandidate;
 - (id)mecabraCandidatePointerValue;
 - (void)setMecabraCandidatePointerValue:(id)arg1;
 

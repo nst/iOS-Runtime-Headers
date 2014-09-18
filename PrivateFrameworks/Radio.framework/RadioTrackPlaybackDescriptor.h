@@ -5,33 +5,33 @@
 @class NSDate, NSDictionary;
 
 @interface RadioTrackPlaybackDescriptor : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    BOOL _current;
     NSDate *_expirationDate;
     double _pauseTime;
     NSDate *_skipDate;
     long long _storeID;
     NSDictionary *_trackInfo;
+    bool_current;
 }
 
-@property(getter=isCurrent,readonly) BOOL current;
+@property(getter=isCurrent,readonly) bool current;
 @property(readonly) NSDate * expirationDate;
 @property(readonly) double pauseTime;
 @property(readonly) NSDate * skipDate;
 @property(readonly) long long storeID;
-@property(readonly) NSDictionary * trackInfo;
+@property(copy,readonly) NSDictionary * trackInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTrack:(id)arg1;
-- (BOOL)isCurrent;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCurrent;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (double)pauseTime;
 - (id)queueTrackDictionary;

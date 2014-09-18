@@ -12,15 +12,15 @@
 }
 
 @property(retain) NSString * displayName;
-@property(readonly) BOOL hasDisplayName;
-@property(readonly) BOOL hasLanguage;
+@property(readonly) bool hasDisplayName;
+@property(readonly) bool hasLanguage;
 @property(retain) NSString * language;
 @property(retain) NSMutableArray * logoURLs;
 @property(retain) NSMutableArray * snippetLogoURLs;
 
 - (void)addLogoURLs:(id)arg1;
 - (void)addSnippetLogoURLs:(id)arg1;
-- (id)bestURLForLogos:(id)arg1 hiDPI:(BOOL)arg2;
+- (id)bestURLForLogos:(id)arg1 scale:(double)arg2;
 - (void)clearLogoURLs;
 - (void)clearSnippetLogoURLs;
 - (void)copyTo:(id)arg1;
@@ -29,22 +29,23 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (BOOL)hasDisplayName;
-- (BOOL)hasLanguage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayName;
+- (bool)hasLanguage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)language;
 - (id)logoURLs;
-- (id)logoURLsAtIndex:(unsigned int)arg1;
-- (unsigned int)logoURLsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)logoURLsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)logoURLsCount;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setLogoURLs:(id)arg1;
 - (void)setSnippetLogoURLs:(id)arg1;
 - (id)snippetLogoURLs;
-- (id)snippetLogoURLsAtIndex:(unsigned int)arg1;
-- (unsigned int)snippetLogoURLsCount;
+- (id)snippetLogoURLsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)snippetLogoURLsCount;
 - (void)writeTo:(id)arg1;
 
 @end

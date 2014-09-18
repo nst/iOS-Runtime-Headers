@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSURL;
+@class NSData, NSString, NSURL;
 
 @interface SAUIImageResource : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSData * imageData;
 @property double pointHeight;
 @property double pointWidth;
 @property(copy) NSURL * resourceUrl;
 @property double scaleFactor;
+@property(readonly) Class superclass;
 
 + (id)imageResource;
 + (id)imageResourceWithDictionary:(id)arg1 context:(id)arg2;

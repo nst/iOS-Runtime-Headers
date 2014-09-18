@@ -23,7 +23,7 @@
 - (void)_reconnectForDaemonLaunch;
 - (id)_requestConnection;
 - (id)_responseConnection;
-- (BOOL)_resultForReply:(id)arg1 error:(id*)arg2;
+- (bool)_resultForReply:(id)arg1 error:(id*)arg2;
 - (void)_sendCompletionBlock:(id)arg1 forGetPurchasesReply:(id)arg2;
 - (void)_sendCompletionBlock:(id)arg1 forStandardReply:(id)arg2;
 - (void)_sendMessage:(long long)arg1 withPurchaseIdentifiers:(id)arg2 afterPurchase:(id)arg3 completionBlock:(id)arg4;

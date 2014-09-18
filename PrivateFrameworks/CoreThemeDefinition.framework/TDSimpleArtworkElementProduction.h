@@ -2,31 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSString;
+@class TDTemplateRenderingMode;
 
 @interface TDSimpleArtworkElementProduction : TDElementProduction {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _alignmentRect;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
-@property(retain) NSString * alignmentRectString;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } primitiveAlignmentRect;
+@property(retain) TDTemplateRenderingMode * templateRenderingMode;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
-- (void)awakeFromFetch;
-- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })primitiveAlignmentRect;
-- (void)setAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPrimitiveAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(bool)arg2;
 
 @end

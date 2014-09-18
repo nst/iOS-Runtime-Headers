@@ -11,7 +11,7 @@
 @property(retain) ASAsset * updateAsset;
 
 - (void)adjustOptions:(id)arg1 completion:(id)arg2;
-- (BOOL)cancel:(id*)arg1;
+- (bool)cancel:(id*)arg1;
 - (void)dealloc;
 - (id)initWithUpdateAsset:(id)arg1;
 - (void)loadUpdateBrainWithOptions:(id)arg1 progressHandler:(id)arg2;

@@ -13,7 +13,7 @@
 
 - (void)_fakeLinkingFailure;
 - (void)_fakeLinkingSuccess;
-- (void)_fakeNextPacketWithPayload:(id)arg1 timestamp:(unsigned long)arg2;
+- (void)_fakeNextPacketWithPayload:(id)arg1 timestamp:(unsigned long long)arg2;
 - (void)_fakeSearchSuccess;
 - (void)beginLinking;
 - (void)beginSearching;
@@ -22,6 +22,6 @@
 - (void)deactivate;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)remainingBatteryLifetimeInHours;
+- (unsigned long long)remainingBatteryLifetimeInHours;
 
 @end

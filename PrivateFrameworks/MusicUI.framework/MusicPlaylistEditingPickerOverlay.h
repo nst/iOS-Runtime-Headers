@@ -13,7 +13,7 @@
 @property(readonly) MPMediaPlaylist * playlist;
 
 - (void).cxx_destruct;
-- (BOOL)allowsMultipleSelections;
+- (bool)allowsMultipleSelections;
 - (void)finish;
 - (id)init;
 - (id)initWithPlaylist:(id)arg1;
@@ -21,8 +21,8 @@
 - (id)newAccessoryView;
 - (id)pickedEntities;
 - (id)playlist;
-- (BOOL)shouldDisplayAddAllAsDisabledFromDataSource:(id)arg1;
-- (BOOL)shouldDisplayEntityAsDisabled:(id)arg1;
+- (bool)shouldDisplayAddAllAsDisabledFromDataSource:(id)arg1;
+- (bool)shouldDisplayEntityAsDisabled:(id)arg1;
 - (id)title;
 - (void)viewController:(id)arg1 didPickAllEntitiesFromDataSource:(id)arg2;
 - (void)viewController:(id)arg1 didPickEntity:(id)arg2;

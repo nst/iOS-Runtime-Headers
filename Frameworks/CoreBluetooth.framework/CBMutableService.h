@@ -12,13 +12,14 @@
 @property(retain) CBUUID * UUID;
 @property(retain) NSArray * characteristics;
 @property(retain) NSArray * includedServices;
-@property BOOL isPrimary;
+@property bool isPrimary;
 
 - (id)ID;
 - (void)dealloc;
 - (id)description;
+- (void)handlePowerNotOn;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithType:(id)arg1 primary:(BOOL)arg2;
+- (id)initWithType:(id)arg1 primary:(bool)arg2;
 - (void)setCharacteristics:(id)arg1;
 - (void)setID:(id)arg1;
 

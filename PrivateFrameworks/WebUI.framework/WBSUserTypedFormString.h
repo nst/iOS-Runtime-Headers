@@ -10,8 +10,8 @@
 
 @property(readonly) NSString * userTypedString;
 
+- (void).cxx_destruct;
 - (id)completion;
-- (void)dealloc;
 - (id)initWithUserTypedString:(id)arg1;
 - (id)userTypedString;
 

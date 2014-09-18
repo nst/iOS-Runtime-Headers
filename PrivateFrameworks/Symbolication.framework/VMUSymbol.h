@@ -2,41 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString, VMUSymbolOwner;
+@class NSString, VMUSourceInfo;
 
-@interface VMUSymbol : VMUAddressRange <NSCopying> {
-    unsigned int _flags;
-    NSString *_mangledName;
+@interface VMUSymbol : NSObject {
     NSString *_name;
-    VMUSymbolOwner *_owner;
+    VMUSourceInfo *_sourceInfo;
 }
 
-+ (id)symbolWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
-
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
-- (int)compare:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)description;
-- (unsigned int)flags;
-- (id)initWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
-- (BOOL)isArm;
-- (BOOL)isDwarf;
-- (BOOL)isDyldStub;
-- (BOOL)isEqualToSymbol:(id)arg1;
-- (BOOL)isExternal;
-- (BOOL)isFunction;
-- (BOOL)isJavaMethod;
-- (BOOL)isObjcMethod;
-- (BOOL)isStab;
-- (BOOL)isThumb;
-- (id)mangledName;
+- (id)initWithSymbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 address:(unsigned long long)arg2;
 - (id)name;
-- (id)owner;
-- (void)setOwner:(id)arg1;
 - (id)sourceInfoForAddress:(unsigned long long)arg1;
-- (id)sourceInfos;
-- (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)text;
 
 @end

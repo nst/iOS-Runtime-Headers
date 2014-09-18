@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUICountdownComponent, SKUIResourceLoader;
+@class NSString, SKUIClientContext, SKUICountdownComponent, SKUIResourceLoader;
 
 @interface SKUICountdownViewController : UIViewController <SKUIArtworkRequestDelegate> {
     SKUIResourceLoader *_artworkLoader;
@@ -13,6 +13,10 @@
 @property(readonly) SKUIResourceLoader * artworkLoader;
 @property(retain) SKUIClientContext * clientContext;
 @property(readonly) SKUICountdownComponent * countdownComponent;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)artworkLoader;
@@ -22,7 +26,7 @@
 - (id)initWithCountdownComponent:(id)arg1 artworkLoader:(id)arg2;
 - (void)loadView;
 - (void)setClientContext:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

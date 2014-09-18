@@ -9,7 +9,7 @@
 }
 
 @property(readonly) long long currentOffset;
-@property(readonly) int requestedLength;
+@property(readonly) long long requestedLength;
 @property(readonly) long long requestedOffset;
 
 - (id)_loadingRequest;
@@ -17,8 +17,9 @@
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
-- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(int)arg3 canSupplyIncrementalDataImmediately:(BOOL)arg4;
-- (int)requestedLength;
+- (id)init;
+- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(long long)arg3 canSupplyIncrementalDataImmediately:(bool)arg4;
+- (long long)requestedLength;
 - (long long)requestedOffset;
 - (void)respondWithData:(id)arg1;
 

@@ -6,34 +6,34 @@
 }
 
 + (id)URLIfFileExists:(id)arg1;
-+ (id)addToDate:(id)arg1 numberOfDays:(int)arg2;
-+ (void)assignError:(id*)arg1 withCode:(int)arg2;
-+ (void)assignError:(id*)arg1 withError:(id)arg2 translate:(BOOL)arg3;
-+ (BOOL)cellularDataIsEnabled;
-+ (BOOL)createInstallationKeybag:(id)arg1;
++ (id)addToDate:(id)arg1 numberOfDays:(long long)arg2;
++ (void)assignError:(id*)arg1 withCode:(long long)arg2;
++ (void)assignError:(id*)arg1 withError:(id)arg2 translate:(bool)arg3;
++ (bool)cellularDataIsEnabled;
++ (bool)createInstallationKeybag:(id)arg1;
 + (id)currentProductBuild;
 + (id)currentProductCategory;
 + (id)currentProductType;
 + (id)currentProductVersion;
 + (id)currentReleaseType;
-+ (id)errorWithCode:(int)arg1 originalError:(id)arg2;
-+ (id)errorWithCode:(int)arg1;
++ (id)errorWithCode:(long long)arg1 originalError:(id)arg2;
++ (id)errorWithCode:(long long)arg1;
 + (id)gregorianCalendar;
-+ (BOOL)hasCellularRadio;
-+ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1;
++ (bool)hasCellularRadio;
++ (bool)hasEnoughDiskSpace:(unsigned long long)arg1;
 + (int)installationKeybagState;
-+ (BOOL)isCellularDataCapable;
-+ (BOOL)isDaemon;
-+ (BOOL)isPasscodeLocked;
-+ (BOOL)isPasswordProtected;
-+ (BOOL)isRestoringFromCloud;
-+ (BOOL)isWiFiCapable;
++ (bool)isCellularDataCapable;
++ (bool)isDaemon;
++ (bool)isPasscodeLocked;
++ (bool)isPasswordProtected;
++ (bool)isRestoringFromCloud;
++ (bool)isWiFiCapable;
 + (id)prettyPrintDate:(id)arg1;
 + (id)serialNumber;
-+ (void)setIsDaemon:(BOOL)arg1;
++ (void)setIsDaemon:(bool)arg1;
 + (id)taskQueue;
 + (id)translateError:(id)arg1 withAddedUserInfo:(id)arg2;
 + (id)translateError:(id)arg1;
-+ (int)translateErrorCodeFromError:(id)arg1;
++ (long long)translateErrorCodeFromError:(id)arg1;
 
 @end

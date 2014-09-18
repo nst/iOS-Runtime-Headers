@@ -9,7 +9,7 @@
     CALayer *_target;
 }
 
-@property(readonly) NSString * keyPath;
+@property(copy,readonly) NSString * keyPath;
 @property(retain) CAStateElement * source;
 @property CALayer * target;
 
@@ -25,7 +25,7 @@
 - (void)foreachLayer:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (id)save;
 - (void)setSource:(id)arg1;
 - (void)setTarget:(id)arg1;

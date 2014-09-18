@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SKUIPassbookLoader;
+@class NSString, SKUIPassbookLoader;
 
 @interface SUScriptViewControllerNativeObject : SUScriptNativeObject <SKUIPassbookLoaderDelegate> {
     SKUIPassbookLoader *_passbookLoader;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_loadPassbookPassWithURL:(id)arg1;
 - (void)_parentViewControllerChangeNotification:(id)arg1;

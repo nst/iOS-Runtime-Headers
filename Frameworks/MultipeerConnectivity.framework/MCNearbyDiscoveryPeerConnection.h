@@ -9,7 +9,6 @@
 @class NSInputStream, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
 
 @interface MCNearbyDiscoveryPeerConnection : NSObject <NSStreamDelegate> {
-    BOOL _connected;
     id _connectedHandler;
     unsigned int _currentSequenceNumber;
     NSMutableData *_dataReceived;
@@ -20,27 +19,32 @@
     NSMutableArray *_messageReceiptHandlerHoldingQueue;
     NSMutableArray *_messageReceiptHandlerList;
     NSOutputStream *_outputStream;
-    BOOL _readyToWrite;
     id _receiveDataHandler;
     NSMutableArray *_receivedDataHoldingQueue;
     NSString *_remoteServiceName;
-    BOOL _shouldSendHello;
     NSObject<OS_dispatch_queue> *_syncQueue;
     NSObject<OS_dispatch_queue> *_targetQueue;
+    bool_connected;
+    bool_readyToWrite;
+    bool_shouldSendHello;
 }
 
 @property(copy) id connectedHandler;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSInputStream * inputStream;
 @property(copy) NSString * localServiceName;
 @property(retain) NSOutputStream * outputStream;
 @property(copy) id receiveDataHandler;
 @property(copy) NSString * remoteServiceName;
+@property(readonly) Class superclass;
 @property NSObject<OS_dispatch_queue> * syncQueue;
 @property NSObject<OS_dispatch_queue> * targetQueue;
 
 + (void)checkConstants;
-+ (unsigned int)receiveDataLimit;
-+ (unsigned int)sendDataLimit;
++ (unsigned long long)receiveDataLimit;
++ (unsigned long long)sendDataLimit;
 
 - (void)attachInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)connectToNetService:(id)arg1;
@@ -63,14 +67,14 @@
 - (void)setSyncQueue:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (void)setupInputStream:(id)arg1 outputStream:(id)arg2;
-- (BOOL)shouldDecideAboutConnection;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
-- (id)stringForStreamEventCode:(unsigned int)arg1;
+- (bool)shouldDecideAboutConnection;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (id)stringForStreamEventCode:(unsigned long long)arg1;
 - (void)syncAcceptedConnection;
 - (void)syncAppendDataToSend:(id)arg1;
 - (void)syncCloseConnectionNow;
-- (void)syncHandleInputStreamEvent:(unsigned int)arg1;
-- (void)syncHandleOutputStreamEvent:(unsigned int)arg1;
+- (void)syncHandleInputStreamEvent:(unsigned long long)arg1;
+- (void)syncHandleOutputStreamEvent:(unsigned long long)arg1;
 - (void)syncProcessMessage:(int)arg1 data:(id)arg2 sequenceNumber:(unsigned int)arg3;
 - (id)syncQueue;
 - (void)syncReadFromInputStream;

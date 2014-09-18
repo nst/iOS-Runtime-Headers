@@ -9,29 +9,33 @@
     FlickrPhotoSetManager *_manager;
     long long _photoSetID;
     NSString *_photoSetTitle;
-    int _selectedIndexRow;
+    long long _selectedIndexRow;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <FlickrComposeOptionViewDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) FlickrPhotoSetManager * manager;
 @property(readonly) long long photoSetID;
 @property(readonly) NSString * photoSetTitle;
-@property int selectedIndexRow;
+@property long long selectedIndexRow;
+@property(readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)delegate;
 - (id)initWithPhotoSetManager:(id)arg1;
 - (id)manager;
 - (long long)photoSetID;
 - (id)photoSetTitle;
 - (void)reloadData;
-- (int)selectedIndexRow;
+- (long long)selectedIndexRow;
 - (void)setDelegate:(id)arg1;
 - (void)setManager:(id)arg1;
-- (void)setSelectedIndexRow:(int)arg1;
+- (void)setSelectedIndexRow:(long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

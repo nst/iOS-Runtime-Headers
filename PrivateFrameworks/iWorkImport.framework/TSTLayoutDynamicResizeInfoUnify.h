@@ -3,21 +3,21 @@
  */
 
 @interface TSTLayoutDynamicResizeInfoUnify : TSTLayoutDynamicResizeInfo {
-    float mTargetHeight;
-    float mTargetWidth;
+    double mTargetHeight;
+    double mTargetWidth;
 }
 
-@property(readonly) float targetHeight;
-@property(readonly) float targetWidth;
+@property(readonly) double targetHeight;
+@property(readonly) double targetWidth;
 
-- (void)applyFixedHeight:(float)arg1;
-- (void)applyFixedWidth:(float)arg1;
-- (float)applyResizeHeightFactor:(float)arg1;
-- (float)applyResizeWidthFactor:(float)arg1;
+- (void)applyFixedHeight:(double)arg1;
+- (void)applyFixedWidth:(double)arg1;
+- (double)applyResizeHeightFactor:(double)arg1;
+- (double)applyResizeWidthFactor:(double)arg1;
 - (void)captureNewMinimumRowHeights:(id)arg1;
-- (void)p_applyUnifyFixedSize:(float)arg1 region:(id)arg2 direction:(int)arg3 count:(unsigned short)arg4 currentArray:(float*)arg5 minimumArray:(float*)arg6;
-- (float)p_applyUnifyResizeFactor:(float)arg1 region:(id)arg2 direction:(int)arg3 totalOfCaptured:(float)arg4 count:(unsigned short)arg5 capturedArray:(float*)arg6 currentArray:(float*)arg7 minimumArray:(float*)arg8;
-- (float)targetHeight;
-- (float)targetWidth;
+- (void)p_applyUnifyFixedSize:(double)arg1 region:(id)arg2 direction:(int)arg3 count:(unsigned short)arg4 currentArray:(double*)arg5 minimumArray:(double*)arg6;
+- (double)p_applyUnifyResizeFactor:(double)arg1 region:(id)arg2 direction:(int)arg3 totalOfCaptured:(double)arg4 count:(unsigned short)arg5 capturedArray:(double*)arg6 currentArray:(double*)arg7 minimumArray:(double*)arg8;
+- (double)targetHeight;
+- (double)targetWidth;
 
 @end

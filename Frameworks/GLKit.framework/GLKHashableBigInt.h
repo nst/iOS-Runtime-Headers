@@ -10,8 +10,8 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithBigInt:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUColor;
+@class OITSUColor;
 
 @interface MFPhoneSolidBrush : MFPhoneBrush {
-    TSUColor *m_colour;
+    OITSUColor *m_colour;
 }
 
 + (id)solidBrushWithColour:(id)arg1;

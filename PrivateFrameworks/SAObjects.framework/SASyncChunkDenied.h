@@ -11,20 +11,24 @@
 @property(copy) NSString * appId;
 @property(copy) NSArray * callbacks;
 @property(retain) SASyncAnchor * current;
-@property int errorCode;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property long long errorCode;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 
 + (id)chunkDenied;
 + (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)chunkDeniedWithErrorCode:(int)arg1;
++ (id)chunkDeniedWithErrorCode:(long long)arg1;
 
 - (id)current;
 - (id)encodedClassName;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)groupIdentifier;
-- (id)initWithErrorCode:(int)arg1;
-- (BOOL)requiresResponse;
+- (id)initWithErrorCode:(long long)arg1;
+- (bool)requiresResponse;
 - (void)setCurrent:(id)arg1;
-- (void)setErrorCode:(int)arg1;
+- (void)setErrorCode:(long long)arg1;
 
 @end

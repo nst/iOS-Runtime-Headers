@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVWeakReference;
+@class AVAsset, AVWeakReference, NSDictionary, NSString;
 
 @interface AVPlayerItemTrackInternal : NSObject {
     AVAsset *asset;
+    boolenabled;
+    boolenabledWasSet;
+    boolfigPlaybackItemIsReadyForInspection;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
-    struct __CFNumber { } *mediaTypeRef;
+    NSDictionary *loudnessInfo;
     int trackID;
+    NSString *videoFieldMode;
     AVWeakReference *weakReferenceToPlayerItem;
 }
 

@@ -3,15 +3,15 @@
  */
 
 @interface CNFRegAliasTableCell : PSTableCell {
-    BOOL _hidesDisclosureButton;
+    bool_hidesDisclosureButton;
 }
 
 - (void)_updateIcon;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setChecked:(BOOL)arg1;
-- (void)setHidesDisclosureButton:(BOOL)arg1;
-- (BOOL)usesStandardBackgroundImage;
+- (void)setChecked:(bool)arg1;
+- (void)setHidesDisclosureButton:(bool)arg1;
+- (bool)usesStandardBackgroundImage;
 
 @end

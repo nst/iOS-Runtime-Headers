@@ -19,7 +19,7 @@
             long long epoch; 
         } duration; 
     struct CGColor { } *backgroundColor;
-    BOOL enablePostProcessing;
+    boolenablePostProcessing;
     NSArray *layerInstructions;
     } timeRange;
 }

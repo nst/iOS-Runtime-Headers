@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateList>, <UIKeyboardCandidateListDelegate>, NSArray, TIKeyboardCandidateResultSet, UIKBCandidateCollectionView, UIKeyboardCandidateLogButton, UIKeyboardCandidatePocketShadow;
+@class <UIKeyboardCandidateList>, <UIKeyboardCandidateListDelegate>, NSArray, NSString, TIKeyboardCandidateResultSet, UIKBCandidateCollectionView, UIKeyboardCandidateLogButton, UIKeyboardCandidatePocketShadow;
 
 @interface UIKBHandwritingCandidateView : UIKBKeyView <UIKeyboardCandidateList, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     struct { 
@@ -14,65 +14,77 @@
     TIKeyboardCandidateResultSet *_candidateResultSet;
     UIKBCandidateCollectionView *_candidatesCollectionView;
     <UIKeyboardCandidateListDelegate> *_delegate;
+    unsigned long long _dummyCellCount;
+    double _dummyCellWidth;
     UIKeyboardCandidateLogButton *_logButton;
     UIKeyboardCandidatePocketShadow *_pocketShadow;
-    BOOL _usesCandidateSelection;
     } _visualStyling;
+    bool_usesCandidateSelection;
 }
 
 @property(readonly) <UIKeyboardCandidateList> * candidateList;
 @property(retain) TIKeyboardCandidateResultSet * candidateResultSet;
 @property(readonly) NSArray * candidates;
 @property(retain) UIKBCandidateCollectionView * candidatesCollectionView;
+@property(copy,readonly) NSString * debugDescription;
 @property <UIKeyboardCandidateListDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property unsigned long long dummyCellCount;
+@property double dummyCellWidth;
+@property(readonly) unsigned long long hash;
 @property(retain) UIKeyboardCandidateLogButton * logButton;
 @property(retain) UIKeyboardCandidatePocketShadow * pocketShadow;
-@property BOOL usesCandidateSelection;
+@property(readonly) Class superclass;
+@property bool usesCandidateSelection;
 @property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 - (id)_inheritedRenderConfig;
 - (void)_setRenderConfig:(id)arg1;
-- (void)candidateAcceptedAtIndex:(unsigned int)arg1;
+- (void)calculateDummyCellAttributes;
+- (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
 - (id)candidateList;
 - (id)candidateResultSet;
 - (id)candidates;
 - (id)candidatesCollectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)currentCandidate;
-- (unsigned int)currentIndex;
+- (unsigned long long)currentIndex;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)dummyCellsCount;
-- (BOOL)hasCandidates;
-- (BOOL)hasNextPage;
-- (BOOL)hasPreviousPage;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
-- (BOOL)isExtendedList;
-- (BOOL)isHiddenCandidatesList;
+- (unsigned long long)dummyCellCount;
+- (double)dummyCellWidth;
+- (bool)hasCandidates;
+- (bool)hasNextPage;
+- (bool)hasPreviousPage;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (bool)isExtendedList;
+- (bool)isHiddenCandidatesList;
 - (void)jumpToCompositions;
 - (id)keyboardBehaviors;
 - (id)logButton;
 - (id)pocketShadow;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)reloadDataByAppendingAtEnd:(BOOL)arg1;
-- (void)selectAndScrollToCandidateAtIndexPath:(id)arg1 animated:(BOOL)arg2;
-- (unsigned int)selectedSortIndex;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)reloadDataByAppendingAtEnd:(bool)arg1;
+- (void)selectAndScrollToCandidateAtIndexPath:(id)arg1 animated:(bool)arg2;
+- (unsigned long long)selectedSortIndex;
 - (void)setCandidateResultSet:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(double)arg4 layout:(bool)arg5;
 - (void)setCandidatesCollectionView:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDummyCellCount:(unsigned long long)arg1;
+- (void)setDummyCellWidth:(double)arg1;
 - (void)setLogButton:(id)arg1;
 - (void)setPocketShadow:(id)arg1;
 - (void)setRenderConfig:(id)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
-- (void)setUsesCandidateSelection:(BOOL)arg1;
+- (void)setUsesCandidateSelection:(bool)arg1;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
-- (void)showCandidate:(id)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
+- (bool)showCandidate:(id)arg1;
+- (void)showCandidateAtIndex:(unsigned long long)arg1;
 - (void)showNextCandidate;
 - (void)showNextPage;
 - (void)showNextRow;
@@ -82,7 +94,7 @@
 - (id)statisticsIdentifier;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
 - (void)updatePocketShadowForKeyplane:(id)arg1;
-- (BOOL)usesCandidateSelection;
+- (bool)usesCandidateSelection;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
 
 @end

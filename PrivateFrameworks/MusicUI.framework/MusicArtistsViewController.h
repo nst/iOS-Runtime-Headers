@@ -3,23 +3,27 @@
  */
 
 @interface MusicArtistsViewController : MusicTableViewController {
-    BOOL _allowsActions;
+    bool_allowsActions;
 }
 
-@property BOOL allowsActions;
+@property bool allowsActions;
 
 + (id)actionCellConfigurationClasses;
-+ (int)groupingType;
++ (long long)containerItemType;
++ (long long)groupingType;
 + (id)itemPersistentIDProperty;
 + (id)persistentIDProperty;
 
 - (void)_appDefaultsDidChangeNotification:(id)arg1;
-- (BOOL)allowsActions;
+- (id)_viewControllerForSelectedMediaEntity:(id)arg1;
+- (bool)allowsActions;
 - (void)dealloc;
 - (void)defaultsDidChange;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
-- (void)setAllowsActions:(BOOL)arg1;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (void)setAllowsActions:(bool)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

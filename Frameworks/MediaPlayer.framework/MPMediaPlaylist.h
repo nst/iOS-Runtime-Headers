@@ -2,37 +2,49 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, NSString;
+@class MPMediaItem, MPMediaQuery, NSArray, NSString;
 
 @interface MPMediaPlaylist : MPMediaItemCollection {
+    NSArray *_representativeArtists;
+    MPMediaQuery *_seedTracksQuery;
 }
 
 @property(getter=music_seedItem,readonly) MPMediaItem * music_seedItem;
 @property(readonly) NSString * name;
 @property(readonly) unsigned long long persistentID;
-@property(readonly) int playlistAttributes;
+@property(readonly) unsigned long long playlistAttributes;
+@property(readonly) NSArray * seedItems;
 
 + (void)_createFilterableDictionary;
-+ (BOOL)_isValidPlaylistProperty:(id)arg1;
++ (bool)_isValidPlaylistProperty:(id)arg1;
 + (id)activeGeniusPlaylist;
-+ (BOOL)canFilterByProperty:(id)arg1;
++ (bool)canFilterByProperty:(id)arg1;
 
-- (int)_sortPlaylistByName:(id)arg1;
-- (unsigned int)count;
+- (void).cxx_destruct;
+- (long long)_sortPlaylistByName:(id)arg1;
+- (id)artworkCatalogsWithMaximumCount:(unsigned long long)arg1;
+- (bool)canPlayUsingNetworkType:(long long)arg1;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)existsInLibrary;
-- (unsigned int)hash;
+- (bool)existsInLibrary;
+- (void)generateGeniusArtworkWithImageSize:(struct CGSize { double x1; double x2; })arg1 completionHandler:(id)arg2 queue:(id)arg3;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithMultiverseIdentifier:(id)arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCloudMix;
+- (bool)isEqual:(id)arg1;
 - (id)items;
-- (id)loadGeniusMixArtworkWithTileLength:(float)arg1 completionBlock:(id)arg2;
-- (unsigned int)mediaTypes;
+- (unsigned long long)mediaTypes;
+- (id)multiverseIdentifier;
 - (id)music_seedItem;
 - (id)name;
 - (unsigned long long)persistentID;
-- (int)playlistAttributes;
+- (unsigned long long)playlistAttributes;
+- (id)representativeArtists;
 - (id)representativeItem;
+- (id)seedItems;
+- (id)seedTracksQuery;
 - (id)valueForProperty:(id)arg1;
 
 @end

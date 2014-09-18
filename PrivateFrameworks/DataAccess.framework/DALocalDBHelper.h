@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NoteContext;
+@class NSString, NoteContext;
 
 @interface DALocalDBHelper : NSObject {
     int _abConnectionCount;
@@ -16,9 +16,21 @@
     int _calConnectionCount;
     struct CalDatabase { } *_calDB;
     id _calUnitTestCallbackBlock;
+    NSString *_clientIdentifier;
     int _noteConnectionCount;
     NoteContext *_noteDB;
 }
+
+@property int abConnectionCount;
+@property void* abDB;
+@property int bookmarkConnectionCount;
+@property void* bookmarkDB;
+@property int calConnectionCount;
+@property struct CalDatabase { }* calDB;
+@property(copy) id calUnitTestCallbackBlock;
+@property(retain) NSString * clientIdentifier;
+@property int noteConnectionCount;
+@property(retain) NoteContext * noteDB;
 
 + (void)abSetTestABDBDir:(id)arg1;
 + (id)abTestABDBDir;
@@ -26,31 +38,50 @@
 + (id)calTestCalDBDir;
 + (id)sharedInstanceForAccountType:(id)arg1 creatingClass:(Class)arg2;
 
+- (void).cxx_destruct;
+- (bool)_calOpenDBWithClientIdentifier:(id)arg1;
 - (void)_registerForAddressBookYieldNotifications;
 - (void)_registerForCalendarYieldNotifications;
-- (BOOL)abCloseDBAndSave:(BOOL)arg1;
+- (bool)abCloseDBAndSave:(bool)arg1;
+- (int)abConnectionCount;
 - (id)abConstraintPlistPath;
 - (void*)abDB;
+- (void*)abDBThrowOnNil:(bool)arg1;
 - (void)abOpenDB;
 - (void)abProcessAddedImages;
 - (void)abProcessAddedRecords;
-- (BOOL)abSaveDB;
-- (void)bookmarkCloseDBAndSave:(BOOL)arg1;
+- (bool)abSaveDB;
+- (void)bookmarkCloseDBAndSave:(bool)arg1;
+- (int)bookmarkConnectionCount;
 - (void*)bookmarkDB;
-- (BOOL)bookmarkOpenDB;
+- (bool)bookmarkOpenDB;
 - (void)bookmarkSaveDB;
-- (BOOL)calCloseDBAndSave:(BOOL)arg1;
+- (void)calClearSuperfluousChanges;
+- (bool)calCloseDBAndSave:(bool)arg1;
 - (int)calConnectionCount;
 - (struct CalDatabase { }*)calDB;
-- (void)calOpenDB;
-- (void)calOpenDBWithChangeLogging;
-- (BOOL)calSaveDB;
-- (BOOL)calSaveDBAndFlushCaches;
+- (void)calOpenDBAsGenericClient;
+- (void)calOpenDBWithClientIdentifier:(id)arg1;
+- (bool)calSaveDB;
+- (bool)calSaveDBAndFlushCaches;
+- (id)calUnitTestCallbackBlock;
 - (void)calUnitTestsSetCallbackBlockForSave:(id)arg1;
-- (BOOL)noteCloseDBAndSave:(BOOL)arg1;
+- (id)changeTrackingID;
+- (id)clientIdentifier;
+- (bool)noteCloseDBAndSave:(bool)arg1;
 - (int)noteConnectionCount;
 - (id)noteDB;
 - (void)noteOpenDB;
-- (BOOL)noteSaveDB;
+- (bool)noteSaveDB;
+- (void)setAbConnectionCount:(int)arg1;
+- (void)setAbDB:(void*)arg1;
+- (void)setBookmarkConnectionCount:(int)arg1;
+- (void)setBookmarkDB:(void*)arg1;
+- (void)setCalConnectionCount:(int)arg1;
+- (void)setCalDB:(struct CalDatabase { }*)arg1;
+- (void)setCalUnitTestCallbackBlock:(id)arg1;
+- (void)setClientIdentifier:(id)arg1;
+- (void)setNoteConnectionCount:(int)arg1;
+- (void)setNoteDB:(id)arg1;
 
 @end

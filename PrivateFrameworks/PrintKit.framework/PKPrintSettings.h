@@ -17,6 +17,7 @@
 + (id)printSettingsForPrinter:(id)arg1;
 
 - (void)dealloc;
+- (id)description;
 - (id)dict;
 - (id)init;
 - (id)objectForKey:(id)arg1;

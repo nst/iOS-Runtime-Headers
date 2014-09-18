@@ -2,36 +2,55 @@
    Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/SymptomAnalytics
  */
 
-@class <ServiceInterface>, NSManagedObjectContext, NSManagedObjectModel, NSPersistentStoreCoordinator, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface AnalyticsWorkspace : NSObject {
+@class <ServiceInterface>, NSManagedObjectContext, NSManagedObjectModel, NSPersistentStoreCoordinator, NSString, NSXPCConnection;
+
+@interface AnalyticsWorkspace : NSObject <NSCopying> {
+    NSXPCConnection *__connection;
     NSManagedObjectContext *__mainObjectContext;
     NSManagedObjectModel *__objectModel;
     NSPersistentStoreCoordinator *__persistentStoreCoordinator;
+    id __resetCompletionBlock;
     <ServiceInterface> *__service;
     NSString *backingStore;
-    BOOL pathKnownToFail;
-    BOOL readOnly;
-    BOOL share;
+    boolpathKnownToFail;
+    boolreadOnly;
+    NSString *revision;
+    NSString *storeKind;
+    NSString *storeProt;
 }
 
-@property(readonly) NSManagedObjectContext * mainObjectContext;
-@property(readonly) NSManagedObjectModel * objectModel;
-@property(readonly) NSPersistentStoreCoordinator * persistentStoreCoordinator;
-@property(readonly) <ServiceInterface> * service;
+@property(retain) NSXPCConnection * connection;
+@property(retain,readonly) NSManagedObjectContext * mainObjectContext;
+@property(retain,readonly) NSManagedObjectModel * objectModel;
+@property(retain,readonly) NSPersistentStoreCoordinator * persistentStoreCoordinator;
+@property(copy) id resetCompletionBlock;
+@property(retain,readonly) <ServiceInterface> * service;
 
 + (id)defaultWorkspace;
-+ (id)workspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
++ (id)workspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(bool)arg3;
 
 - (void).cxx_destruct;
-- (id)_initWithName:(id)arg1 useReadOnly:(BOOL)arg2;
-- (BOOL)_primePath:(id)arg1;
-- (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
+- (void)_analyticsErrorHandler;
+- (id)_initWithName:(id)arg1 useReadOnly:(bool)arg2;
+- (bool)_primePath:(id)arg1;
+- (id)connection;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)createNewContext;
+- (void)dealloc;
+- (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(bool)arg3;
 - (id)initWorkspaceWithService:(id)arg1;
 - (id)mainObjectContext;
 - (id)objectModel;
 - (id)persistentStoreCoordinator;
-- (BOOL)save;
+- (void)reset;
+- (id)resetCompletionBlock;
+- (bool)save;
 - (id)service;
+- (void)setConnection:(id)arg1;
+- (void)setResetCompletionBlock:(id)arg1;
 
 @end

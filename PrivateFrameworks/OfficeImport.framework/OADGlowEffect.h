@@ -12,9 +12,10 @@
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (id)description;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (float)radius;
 - (void)setColor:(id)arg1;
 - (void)setRadius:(float)arg1;

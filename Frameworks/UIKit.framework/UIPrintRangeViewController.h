@@ -2,37 +2,42 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPickerView, UIPrintPanelViewController, UITableView;
+@class NSString, UIPickerView, UIPrintPanelViewController, UITableView;
 
 @interface UIPrintRangeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     UIPickerView *_fromPicker;
-    int _pageCount;
+    long long _pageCount;
     } _pageRange;
-    float _pickerWidth;
+    double _pickerWidth;
     UIPrintPanelViewController *_printPanelViewController;
     UITableView *_tableView;
     UIPickerView *_toPicker;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
 - (id)initWithPrintPanelViewController:(id)arg1;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (double)pickerView:(id)arg1 widthForComponent:(long long)arg2;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

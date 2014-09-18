@@ -6,22 +6,22 @@
 }
 
 - (id)customBackgroundColor;
-- (int)keyboardAppearance;
-- (int)modalPresentationStyle;
-- (int)navigationBarActivityIndicatorStyle;
+- (long long)keyboardAppearance;
+- (long long)modalPresentationStyle;
+- (long long)navigationBarActivityIndicatorStyle;
 - (id)navigationBarBackgroundImage;
-- (int)navigationBarStyle;
+- (long long)navigationBarStyle;
 - (id)navigationBarTintColor;
-- (BOOL)navigationBarTranslucent;
+- (bool)navigationBarTranslucent;
 - (id)splashEntryFieldLabelTextColor;
 - (id)splashEntryFieldTextColor;
 - (id)splashEntryPlaceholderTextColor;
-- (BOOL)splashScreenShowsIcon;
+- (bool)splashScreenShowsIcon;
 - (id)splashSignInFieldsBackgroundColor;
 - (id)splashSignInFieldsBorderColor;
-- (int)splashSignInProgressIndicatorColor;
+- (long long)splashSignInProgressIndicatorColor;
 - (id)splashTitleLabelTextColor;
-- (BOOL)styleUsesCustomTableStyle;
+- (bool)styleUsesCustomTableStyle;
 - (id)tableBackgroundColor;
 - (id)tableCellBackgroundColor;
 - (id)tableCellCheckmarkImageDisabled;
@@ -34,7 +34,7 @@
 - (id)tableFooterTextColor;
 - (id)tableHeaderTextColor;
 - (id)tableSeparatorColor;
-- (int)tableSeparatorStyle;
+- (long long)tableSeparatorStyle;
 - (id)userInteractionColor;
 
 @end

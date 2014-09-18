@@ -40,8 +40,8 @@
 - (void)enableWifiChargerQueue:(id)arg1;
 - (id)init;
 - (int)launchObject:(id)arg1;
-- (void)logAll:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
-- (void)logLight:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
+- (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
+- (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (bool)refillWifiChargerQueue;
 - (void)releaseReservationStation:(id)arg1 seqNum:(long long)arg2;
 - (int)reservationStationsFree;

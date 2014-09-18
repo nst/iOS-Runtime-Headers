@@ -8,18 +8,18 @@
 }
 
 @property(copy) NSURL * articleURL;
-@property(copy) NSString * description;
+@property(copy) NSString * descriptionText;
 @property(copy) NSString * title;
 
 + (id)microblogSearchResultNews;
 + (id)microblogSearchResultNewsWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)articleURL;
-- (id)description;
+- (id)descriptionText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (void)setArticleURL:(id)arg1;
-- (void)setDescription:(id)arg1;
+- (void)setDescriptionText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;

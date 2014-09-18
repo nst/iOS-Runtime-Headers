@@ -7,17 +7,19 @@
 @interface UIStatusBarNewUIStyleAttributes : UIStatusBarStyleAttributes {
     UIColor *_backgroundColor;
     UIColor *_foregroundColor;
+    bool_hasBusyBackground;
 }
 
 - (id)backgroundColorWithTintColor:(id)arg1;
 - (void)dealloc;
 - (Class)foregroundStyleClass;
+- (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3 hasBusyBackground:(bool)arg4;
 - (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)isTranslucent;
-- (BOOL)isTransparent;
-- (int)legibilityStyle;
-- (id)newForegroundStyleWithHeight:(float)arg1;
-- (BOOL)shouldUseVisualAltitude;
+- (bool)isTranslucent;
+- (bool)isTransparent;
+- (long long)legibilityStyle;
+- (id)newForegroundStyleWithHeight:(double)arg1;
+- (bool)shouldUseVisualAltitude;
 
 @end

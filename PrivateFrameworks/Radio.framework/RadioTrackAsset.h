@@ -8,11 +8,11 @@
     NSDictionary *_responseDictionary;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSString * downloadKey;
-@property(readonly) NSString * flavor;
-@property(readonly) NSDictionary * responseDictionary;
-@property(readonly) NSArray * sinfs;
+@property(retain,readonly) NSURL * URL;
+@property(copy,readonly) NSString * downloadKey;
+@property(copy,readonly) NSString * flavor;
+@property(copy,readonly) NSDictionary * responseDictionary;
+@property(copy,readonly) NSArray * sinfs;
 
 - (void).cxx_destruct;
 - (id)URL;

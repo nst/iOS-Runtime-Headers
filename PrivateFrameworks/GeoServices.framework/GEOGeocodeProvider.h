@@ -16,7 +16,6 @@
 @property(copy) id errorHandler;
 @property(copy) id successHandler;
 
-+ (unsigned short)provider;
 + (id)providerName;
 
 - (void)batchReverseGeocode:(id)arg1 success:(id)arg2 error:(id)arg3;

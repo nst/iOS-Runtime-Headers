@@ -6,42 +6,46 @@
    See Warning(s) below.
  */
 
-@class AARequest, AAResponse, NSHTTPURLResponse, NSMutableData, NSURLConnection;
+@class AARequest, AAResponse, NSHTTPURLResponse, NSMutableData, NSObject<OS_dispatch_queue>, NSURLConnection;
 
 @interface AARequester : NSOperation {
-    BOOL _canceled;
     NSMutableData *_data;
     id _handler;
+    NSObject<OS_dispatch_queue> *_handlerQueue;
     NSHTTPURLResponse *_httpResponse;
-    BOOL _isCanceled;
-    BOOL _isExecuting;
-    BOOL _isFinished;
     AARequest *_request;
     AAResponse *_response;
     Class _responseClass;
     NSURLConnection *_urlConnection;
+    bool_canceled;
+    bool_isCanceled;
+    bool_isExecuting;
+    bool_isFinished;
 }
 
-@property(getter=isCanceled) BOOL canceled;
-@property(getter=isExecuting) BOOL executing;
-@property(getter=isFinished) BOOL finished;
+@property(getter=isCanceled) bool canceled;
+@property(getter=isFinished) bool finished;
+@property(retain) NSObject<OS_dispatch_queue> * handlerQueue;
+@property(getter=isExecuting) bool isExecuting;
 
 - (void).cxx_destruct;
 - (void)_callHandler;
 - (void)cancel;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
+- (id)handlerQueue;
 - (id)initWithRequest:(id)arg1 handler:(id)arg2;
-- (BOOL)isCanceled;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (void)setCanceled:(BOOL)arg1;
-- (void)setExecuting:(BOOL)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (bool)isCanceled;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (void)setCanceled:(bool)arg1;
+- (void)setFinished:(bool)arg1;
+- (void)setHandlerQueue:(id)arg1;
+- (void)setIsExecuting:(bool)arg1;
 - (void)start;
 
 @end

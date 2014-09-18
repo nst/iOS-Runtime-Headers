@@ -2,56 +2,74 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicTableViewControllerDelegate>, MusicSearchViewController, UISearchBar, UISearchDisplayController;
+@class <MusicTableViewControllerDelegate>, MusicSearchViewController, NSMapTable, NSString, UISearchBar, UISearchDisplayController, UITraitCollection;
 
-@interface MusicTableViewController : MPUTableViewController <MPHSearchViewControllerDelegate> {
+@interface MusicTableViewController : MPUTableViewController <MPUMiniPlayerParticipant, MusicSearchViewControllerDelegate, MusicTableViewDelegate> {
+    NSMapTable *_calculatedHeightByTableViewRelatedClass;
     <MusicTableViewControllerDelegate> *_delegate;
-    BOOL _isVisible;
+    UITraitCollection *_previousTraitCollection;
     UISearchBar *_searchBar;
     UISearchDisplayController *_searchDisplayController;
     MusicSearchViewController *_searchViewController;
+    bool_isVisible;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } contentSize;
+@property(readonly) struct CGSize { double x1; double x2; } contentSize;
+@property(copy,readonly) NSString * debugDescription;
 @property <MusicTableViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (BOOL)_shouldPopWhenEmpty;
-+ (BOOL)_supportsSearch;
++ (bool)_shouldPopWhenEmpty;
++ (bool)_supportsSearch;
 + (Class)_tableViewClass;
 
 - (void).cxx_destruct;
+- (bool)MPU_beginPlaybackForVisibleContent;
 - (id)_createTableView;
 - (id)_createTableViewBackgroundView;
+- (double)_heightForCellConfigurationClass:(Class)arg1 inTableView:(id)arg2;
+- (id)_heightForTableRelatedClass:(Class)arg1;
+- (void)_invalidateCalculatedHeights;
+- (void)_registerHeight:(id)arg1 forTableRelatedClass:(Class)arg2;
 - (id)_searchBar;
 - (id)_searchDisplayController;
+- (void)_tableViewController_cloudControllerCanShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
+- (void)_tableViewController_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_tableViewController_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_tableViewController_itemDidChangeNotification:(id)arg1;
 - (void)_updateNavigationPrompt;
 - (void)_updateTableViewMinimumHeightAdditions;
 - (void)_updateVisibleCellsPlaybackState;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
+- (void)contentSizeCategoryDidChange;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
-- (BOOL)music_beginPlaybackForVisibleContent;
-- (BOOL)music_hasContent;
-- (void)reloadActionRowsAnimated:(BOOL)arg1;
+- (void)musicTableView:(id)arg1 traitCollectionDidChange:(id)arg2;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (bool)music_hasContent;
+- (void)reloadActionRowsAnimated:(bool)arg1;
 - (void)reloadData;
 - (void)searchViewControllerWillBeginSearch:(id)arg1;
 - (void)searchViewControllerWillEndSearch:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)view;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -16,7 +16,7 @@
 + (id)defaultOutputDevice;
 + (void)initializeAudioSessionQ;
 + (void)setAudioSessionProperties:(id)arg1;
-+ (BOOL)setInputDevice:(id)arg1;
++ (bool)setInputDevice:(id)arg1;
 + (void)startAudioSession;
 + (void)stopAudioSession;
 

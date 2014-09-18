@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSError, NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSObject<_PFUbiquityRecordImportOperationDelegate>, NSPersistentStoreCoordinator, PFUbiquityImportContext, PFUbiquityKnowledgeVector, PFUbiquitySwitchboardEntry, PFUbiquityTransactionLog;
+@class NSError, NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSObject<_PFUbiquityRecordImportOperationDelegate>, NSPersistentStoreCoordinator, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector, PFUbiquitySwitchboardEntry, PFUbiquityTransactionLog;
 
 @interface _PFUbiquityRecordImportOperation : PFUbiquityImportOperation <NSManagedObjectContextFaultingDelegate> {
     NSMutableSet *_deletedObjectIDs;
@@ -11,74 +11,78 @@
     int _inMemorySequenceNumber;
     PFUbiquityKnowledgeVector *_initialStoreKnowledgeVector;
     NSMutableSet *_insertedObjectIDs;
-    BOOL _lockedExistingCoord;
     PFUbiquityKnowledgeVector *_logScore;
     NSManagedObjectContext *_moc;
     NSError *_operationError;
     NSPersistentStoreCoordinator *_psc;
     NSMutableDictionary *_relationshipsToObjectIDsToCheck;
     NSMutableDictionary *_resolvedConflicts;
-    BOOL _success;
-    BOOL _transactionDidRollback;
     PFUbiquityTransactionLog *_transactionLog;
     NSMutableSet *_updatedObjectIDs;
     PFUbiquityKnowledgeVector *_updatedStoreKnowledgeVector;
-    BOOL _wroteKV;
+    bool_lockedExistingCoord;
+    bool_success;
+    bool_transactionDidRollback;
+    bool_wroteKV;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property NSObject<_PFUbiquityRecordImportOperationDelegate> * delegate;
 @property(readonly) NSMutableSet * deletedObjectIDs;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) PFUbiquityImportContext * importContext;
 @property(readonly) PFUbiquityKnowledgeVector * initialStoreKnowledgeVector;
 @property(readonly) NSMutableSet * insertedObjectIDs;
-@property BOOL lockedExistingCoord;
+@property bool lockedExistingCoord;
 @property(retain) PFUbiquityKnowledgeVector * logScore;
 @property(readonly) NSManagedObjectContext * moc;
 @property(readonly) NSError * operationError;
 @property(readonly) NSPersistentStoreCoordinator * psc;
 @property(readonly) NSMutableDictionary * resolvedConflicts;
-@property(readonly) BOOL success;
-@property(readonly) BOOL transactionDidRollBack;
+@property(readonly) bool success;
+@property(readonly) Class superclass;
+@property(readonly) bool transactionDidRollBack;
 @property(readonly) PFUbiquityTransactionLog * transactionLog;
 @property(readonly) NSMutableSet * updatedObjectIDs;
 @property(retain) PFUbiquityKnowledgeVector * updatedStoreKnowledgeVector;
-@property(readonly) BOOL wroteKV;
+@property(readonly) bool wroteKV;
 
-- (BOOL)applyChangesFromStoreSaveSnapshot:(id)arg1 withImportContext:(id)arg2 withError:(id*)arg3;
+- (bool)applyChangesFromStoreSaveSnapshot:(id)arg1 withImportContext:(id)arg2 withError:(id*)arg3;
 - (void)cancel;
-- (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
+- (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (id)copy;
 - (void)dealloc;
 - (id)delegate;
 - (id)deletedObjectIDs;
 - (id)description;
-- (BOOL)fillManagedObject:(id)arg1 withGlobalID:(id)arg2 fromUbiquityDictionary:(id)arg3 missingObjects:(id)arg4 importContext:(id)arg5 withError:(id*)arg6;
+- (bool)fillManagedObject:(id)arg1 withGlobalID:(id)arg2 fromUbiquityDictionary:(id)arg3 missingObjects:(id)arg4 importContext:(id)arg5 withError:(id*)arg6;
 - (id)importContext;
 - (id)init;
 - (id)initWithTransactionLog:(id)arg1 persistentStore:(id)arg2 andLocalPeerID:(id)arg3;
 - (id)initialStoreKnowledgeVector;
 - (id)insertedObjectIDs;
-- (BOOL)lockedExistingCoord;
+- (bool)lockedExistingCoord;
 - (id)logScore;
 - (void)main;
 - (id)moc;
 - (void)notifyDelegateOfError:(id)arg1;
 - (id)operationError;
-- (BOOL)processObjects:(id)arg1 withState:(int)arg2 andImportContext:(id)arg3 outError:(id*)arg4;
+- (bool)processObjects:(id)arg1 withState:(int)arg2 andImportContext:(id)arg3 outError:(id*)arg4;
 - (id)psc;
 - (id)resolvedConflicts;
 - (void)respondToStoreTransactionStateChangeNotification:(id)arg1;
 - (id)retainedDelegate;
 - (void)setDelegate:(id)arg1;
 - (void)setImportContext:(id)arg1;
-- (void)setLockedExistingCoord:(BOOL)arg1;
+- (void)setLockedExistingCoord:(bool)arg1;
 - (void)setLogScore:(id)arg1;
 - (void)setUpdatedStoreKnowledgeVector:(id)arg1;
-- (BOOL)success;
-- (BOOL)transactionDidRollBack;
+- (bool)success;
+- (bool)transactionDidRollBack;
 - (id)transactionLog;
 - (id)updatedObjectIDs;
 - (id)updatedStoreKnowledgeVector;
-- (BOOL)wroteKV;
+- (bool)wroteKV;
 
 @end

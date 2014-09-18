@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AirPlayReceiver.framework/AirPlayReceiver
  */
 
-@class AVAudioPlayer;
+@class AVAudioPlayer, NSString;
 
 @interface MediaControlAudioPlayer : NSObject <AVAudioPlayerDelegate> {
     AVAudioPlayer *_audioPlayer;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)audioPlayerBeginInterruption:(id)arg1;
 - (void)audioPlayerDecodeErrorDidOccur:(id)arg1 error:(id)arg2;
-- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
+- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
 - (void)dealloc;
 - (int)playPath:(id)arg1;
 

@@ -34,9 +34,11 @@
         int rssiOfDestinationAP; 
         unsigned int snrOfDestinationAP; 
         unsigned int channelOfDestinationAP; 
-     /* Encoded args for previous method: v12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*I*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CC*III[32000C]*[2{iovec=^vI}]^{iovec}iQi^v^v^v^v^v^v^?@?}8 */
-     /* Encoded args for previous method: v12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*I*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CC*III[32000C]*[2{iovec=^vI}]^{iovec}iQi^v^v^v^v^v^v^?@?}8 */
-     /* Encoded args for previous method: l12@0:4^{HTTPMessagePrivate={__CFRuntimeBase=I[4C]}^{HTTPMessagePrivate}{?=[8192c]I*I*I*I{?=*I*I*I*I*I*I*I**}*Ii*ICQCi}CC*III[32000C]*[2{iovec=^vI}]^{iovec}iQi^v^v^v^v^v^v^?@?}8 */
+     /* Encoded args for previous method: v24@0:8^{HTTPMessagePrivate={__CFRuntimeBase=Q[4C]I}^{HTTPMessagePrivate}{?=[8192c]Q*Q*Qi*Q{?=*Q*Q*Q*Q*Q*Q*Q**}*Qi*QCQCi}CiC*QQQ[32000C]*[2{iovec=^vQ}]^{iovec}iQiii^v^v^v^v^v^v^?@?}16 */
+     /* Encoded args for previous method: v24@0:8^{HTTPMessagePrivate={__CFRuntimeBase=Q[4C]I}^{HTTPMessagePrivate}{?=[8192c]Q*Q*Qi*Q{?=*Q*Q*Q*Q*Q*Q*Q**}*Qi*QCQCi}CiC*QQQ[32000C]*[2{iovec=^vQ}]^{iovec}iQiii^v^v^v^v^v^v^?@?}16 */
+     /* Encoded args for previous method: i24@0:8^{HTTPMessagePrivate={__CFRuntimeBase=Q[4C]I}^{HTTPMessagePrivate}{?=[8192c]Q*Q*Qi*Q{?=*Q*Q*Q*Q*Q*Q*Q**}*Qi*QCQCi}CiC*QQQ[32000C]*[2{iovec=^vQ}]^{iovec}iQiii^v^v^v^v^v^v^?@?}16 */
+     /* Encoded args for previous method: i24@0:8^{HTTPMessagePrivate={__CFRuntimeBase=Q[4C]I}^{HTTPMessagePrivate}{?=[8192c]Q*Q*Qi*Q{?=*Q*Q*Q*Q*Q*Q*Q**}*Qi*QCQCi}CiC*QQQ[32000C]*[2{iovec=^vQ}]^{iovec}iQiii^v^v^v^v^v^v^?@?}16 */
+     /* Encoded args for previous method: i24@0:8^{HTTPMessagePrivate={__CFRuntimeBase=Q[4C]I}^{HTTPMessagePrivate}{?=[8192c]Q*Q*Qi*Q{?=*Q*Q*Q*Q*Q*Q*Q**}*Qi*QCQCi}CiC*QQQ[32000C]*[2{iovec=^vQ}]^{iovec}iQiii^v^v^v^v^v^v^?@?}16 */
     NSDictionary *_airplayBonjourInfo;
     struct BonjourBrowser { } *_airplayBrowser;
     double _applyConfigFinishTime;
@@ -51,65 +53,76 @@
     double _findPostConfigStartTime;
     double _findPreConfigFoundTime;
     double _findPreConfigStartTime;
-    long _firstErr;
+    int _firstErr;
+    NSDictionary *_hapBonjourInfo;
+    struct BonjourBrowser { } *_hapBrowser;
     struct HTTPClientPrivate { } *_httpClient;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSDictionary *_mfiConfigBonjourInfo;
     struct BonjourBrowser { } *_mfiConfigBrowser;
     struct MFiSAP { } *_mfiSAP;
-    double _mfiSAPFinishTime;
-    double _mfiSAPStartTime;
     NSString *_model;
     NSString *_name;
-    BOOL _pausesAfterApply;
+    struct PairingSessionPrivate { } *_pairingSession;
     double _postConfigCheckFinishTime;
     double _postConfigCheckStartTime;
     } _postConfigMetrics;
-    BOOL _postConfigMetricsSet;
     } _preConfigMetrics;
-    BOOL _preConfigMetricsSet;
+    id _promptForSetupCodeBlock;
     NSDictionary *_raopBonjourInfo;
     struct BonjourBrowser { } *_raopBrowser;
     NSDictionary *_scanRecord;
-    BOOL _started;
+    double _securityFinishTime;
+    double _securityStartTime;
     int _state;
-    BOOL _supportsTLV;
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSObject<OS_dispatch_queue> *_userQueue;
+    bool_pausesAfterApply;
+    bool_postConfigMetricsSet;
+    bool_preConfigMetricsSet;
+    bool_started;
+    bool_supportsHAP;
+    bool_supportsMFi;
+    bool_supportsTLV;
 }
 
 @property(copy) NSDictionary * configuration;
 @property unsigned long long deviceIdentifier;
-@property NSObject<OS_dispatch_queue> * dispatchQueue;
+@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
 @property unsigned long long features;
 @property(copy) NSString * model;
 @property(copy) NSString * name;
-@property BOOL pausesAfterApply;
+@property bool pausesAfterApply;
 
 + (id)deviceWithScanRecord:(id)arg1;
-+ (BOOL)supportedScanRecord:(id)arg1;
++ (bool)supportedScanRecord:(id)arg1;
 
-- (void)_applyConfigCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; char *x_3_1_7; unsigned int x_3_1_8; struct { char *x_9_2_1; unsigned int x_9_2_2; char *x_9_2_3; unsigned int x_9_2_4; char *x_9_2_5; unsigned int x_9_2_6; char *x_9_2_7; unsigned int x_9_2_8; char *x_9_2_9; unsigned int x_9_2_10; char *x_9_2_11; unsigned int x_9_2_12; char *x_9_2_13; unsigned int x_9_2_14; char *x_9_2_15; char *x_9_2_16; } x_3_1_9; char *x_3_1_10; unsigned int x_3_1_11; int x_3_1_12; char *x_3_1_13; unsigned int x_3_1_14; unsigned char x_3_1_15; unsigned long long x_3_1_16; unsigned char x_3_1_17; int x_3_1_18; } x3; unsigned char x4; unsigned char x5; char *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10[32000]; char *x11; struct iovec { void *x_12_1_1; unsigned int x_12_1_2; } x12[2]; struct iovec {} *x13; int x14; unsigned long long x15; int x16; void *x17; void *x18; void *x19; void *x20; void *x21; void *x22; int (*x23)(); id x24; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x25; }*)arg1;
-- (long)_applyConfigStart;
-- (long)_configureStart:(id)arg1;
+- (void)_applyConfigCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned long long x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+- (int)_applyConfigStart;
+- (int)_configureStart:(id)arg1;
 - (void)_findDevicePostConfigEvent:(unsigned int)arg1 info:(id)arg2;
-- (long)_findDevicePostConfigStart;
+- (int)_findDevicePostConfigStart;
 - (void)_findDevicePreConfigEvent:(unsigned int)arg1 info:(id)arg2;
-- (long)_findDevicePreConfigStart;
-- (void)_handleError:(long)arg1;
+- (int)_findDevicePreConfigStart;
+- (void)_handleError:(int)arg1;
 - (void)_logEnded;
-- (long)_mfiSAPNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; char *x_3_1_7; unsigned int x_3_1_8; struct { char *x_9_2_1; unsigned int x_9_2_2; char *x_9_2_3; unsigned int x_9_2_4; char *x_9_2_5; unsigned int x_9_2_6; char *x_9_2_7; unsigned int x_9_2_8; char *x_9_2_9; unsigned int x_9_2_10; char *x_9_2_11; unsigned int x_9_2_12; char *x_9_2_13; unsigned int x_9_2_14; char *x_9_2_15; char *x_9_2_16; } x_3_1_9; char *x_3_1_10; unsigned int x_3_1_11; int x_3_1_12; char *x_3_1_13; unsigned int x_3_1_14; unsigned char x_3_1_15; unsigned long long x_3_1_16; unsigned char x_3_1_17; int x_3_1_18; } x3; unsigned char x4; unsigned char x5; char *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10[32000]; char *x11; struct iovec { void *x_12_1_1; unsigned int x_12_1_2; } x12[2]; struct iovec {} *x13; int x14; unsigned long long x15; int x16; void *x17; void *x18; void *x19; void *x20; void *x21; void *x22; int (*x23)(); id x24; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x25; }*)arg1;
-- (long)_mfiSAPStart;
-- (void)_postConfigCheckCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; char *x_3_1_7; unsigned int x_3_1_8; struct { char *x_9_2_1; unsigned int x_9_2_2; char *x_9_2_3; unsigned int x_9_2_4; char *x_9_2_5; unsigned int x_9_2_6; char *x_9_2_7; unsigned int x_9_2_8; char *x_9_2_9; unsigned int x_9_2_10; char *x_9_2_11; unsigned int x_9_2_12; char *x_9_2_13; unsigned int x_9_2_14; char *x_9_2_15; char *x_9_2_16; } x_3_1_9; char *x_3_1_10; unsigned int x_3_1_11; int x_3_1_12; char *x_3_1_13; unsigned int x_3_1_14; unsigned char x_3_1_15; unsigned long long x_3_1_16; unsigned char x_3_1_17; int x_3_1_18; } x3; unsigned char x4; unsigned char x5; char *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10[32000]; char *x11; struct iovec { void *x_12_1_1; unsigned int x_12_1_2; } x12[2]; struct iovec {} *x13; int x14; unsigned long long x15; int x16; void *x17; void *x18; void *x19; void *x20; void *x21; void *x22; int (*x23)(); id x24; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x25; }*)arg1;
+- (int)_mfiSAPNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned long long x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+- (int)_mfiSAPStart;
+- (int)_pairSetupNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned long long x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+- (int)_pairSetupStart;
+- (int)_pairVerifyNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned long long x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
+- (int)_pairVerifyStart;
+- (void)_postConfigCheckCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[32000]; char *x12; struct iovec { void *x_13_1_1; unsigned long long x_13_1_2; } x13[2]; struct iovec {} *x14; int x15; unsigned long long x16; int x17; int x18; int x19; void *x20; void *x21; void *x22; void *x23; void *x24; void *x25; int (*x26)(); id x27; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x28; }*)arg1;
 - (void)_postConfigCheckStart:(id)arg1;
 - (void)_postNote:(id)arg1 info:(id)arg2;
 - (void)_postProgress:(int)arg1 withResponse:(id)arg2;
 - (void)_postProgress:(int)arg1;
-- (long)_setupClient:(id)arg1;
+- (int)_setupClient:(id)arg1;
 - (void)_start;
-- (long)_startBonjourWithTimeout:(int)arg1 handler:(id)arg2;
-- (void)_stop:(long)arg1;
-- (long)_timeoutTimerStart:(unsigned int)arg1 block:(id)arg2;
+- (int)_startBonjourWithTimeout:(int)arg1 handler:(id)arg2;
+- (void)_stop:(int)arg1;
+- (int)_timeoutTimerStart:(unsigned int)arg1 block:(id)arg2;
+- (void)_trySetupCode:(id)arg1;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -119,8 +132,8 @@
 - (id)init;
 - (id)model;
 - (id)name;
-- (BOOL)pausesAfterApply;
-- (BOOL)removed:(id)arg1;
+- (bool)pausesAfterApply;
+- (bool)removed:(id)arg1;
 - (void)resumePostConfig;
 - (void)setConfiguration:(id)arg1;
 - (void)setDeviceIdentifier:(unsigned long long)arg1;
@@ -128,11 +141,13 @@
 - (void)setFeatures:(unsigned long long)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPausesAfterApply:(BOOL)arg1;
+- (void)setPausesAfterApply:(bool)arg1;
 - (void)setPostConfigMetrics:(const struct { double x1; int x2; unsigned char x3; unsigned char x4; int x5; unsigned int x6; unsigned int x7; }*)arg1;
 - (void)setPreConfigMetrics:(const struct { double x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; double x6; int x7; unsigned char x8; int x9; unsigned int x10; unsigned int x11; }*)arg1;
+- (void)setPromptForSetupCodeHandler:(id)arg1;
 - (void)start;
 - (void)stop;
-- (BOOL)updated:(id)arg1;
+- (void)trySetupCode:(id)arg1;
+- (bool)updated:(id)arg1;
 
 @end

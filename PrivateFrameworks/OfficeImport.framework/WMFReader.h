@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WMFPlayer;
+@class NSString, WMFPlayer;
 
 @interface WMFReader : NSObject <MFReader> {
     unsigned int m_cursor;
@@ -11,6 +11,11 @@
     WMFPlayer *m_player;
     int m_recordsRead;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (int)checkBytesAvailable:(unsigned int)arg1;
 - (void)dealloc;

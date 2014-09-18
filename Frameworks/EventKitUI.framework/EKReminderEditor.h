@@ -14,35 +14,36 @@
 @property(retain) <EKStyleProvider> * styleProvider;
 
 - (void).cxx_destruct;
-- (BOOL)_canDetachSingleOccurrence;
+- (bool)_canDetachSingleOccurrence;
 - (void)_copyEventForPossibleRevert;
 - (id)_editItems;
 - (id)_nameForDeleteButton;
 - (void)_revertEvent;
 - (id)_viewForSheet;
-- (BOOL)allowsDeletingFutureOccurrences;
+- (bool)allowsDeletingFutureOccurrences;
 - (void)customizeActionSheet:(id)arg1;
 - (id)defaultAlertTitle;
 - (id)defaultTitleForCalendarItem;
-- (void)editItem:(id)arg1 didCommitFromDetailViewController:(BOOL)arg2;
-- (void)editItem:(id)arg1 didEndDatePickingAnimated:(BOOL)arg2;
-- (void)editItem:(id)arg1 willBeginDatePickingWithDate:(id)arg2 action:(SEL)arg3 animated:(BOOL)arg4 forSubitem:(unsigned int)arg5 inSubsection:(unsigned int)arg6;
+- (void)editItem:(id)arg1 didCommitFromDetailViewController:(bool)arg2;
+- (void)editItem:(id)arg1 didEndDatePickingAnimated:(bool)arg2;
+- (void)editItem:(id)arg1 willBeginDatePickingWithDate:(id)arg2 action:(SEL)arg3 animated:(bool)arg4 forSubitem:(unsigned long long)arg5;
 - (void)editItemTextChanged:(id)arg1;
-- (unsigned int)entityType;
+- (unsigned long long)entityType;
 - (void)loadView;
-- (float)marginForTableView:(id)arg1;
+- (double)marginForTableView:(id)arg1;
 - (id)notificationNamesForLocaleChange;
 - (id)preferredTitle;
 - (void)prepareEditItems;
 - (id)reminder;
 - (id)reminderEditorDelegate;
-- (BOOL)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
+- (bool)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)setReminder:(id)arg1;
 - (void)setReminderEditorDelegate:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setupDeleteButton;
-- (BOOL)shouldDisplayEditItem:(id)arg1 withVisibility:(int)arg2;
+- (bool)shouldDisplayEditItem:(id)arg1 withVisibility:(int)arg2;
 - (id)styleProvider;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 
 @end

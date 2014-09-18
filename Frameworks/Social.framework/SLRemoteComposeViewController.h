@@ -2,40 +2,17 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLComposeViewControllerServiceProtocol>, <SLSheetViewHostProtocol>;
+@class <SLRemoteComposeViewControllerDelegateProtocol>;
 
-@interface SLRemoteComposeViewController : _UIRemoteViewController <SLSheetViewHostProtocol> {
-    int _controllerResult;
-    BOOL _hasAppeared;
-    <SLSheetViewHostProtocol> *_hostDelegate;
-    <SLComposeViewControllerServiceProtocol> *_serviceProxy;
+@interface SLRemoteComposeViewController : _UIRemoteViewController {
+    <SLRemoteComposeViewControllerDelegateProtocol> *_delegate;
 }
 
-@property BOOL hasAppeared;
-@property <SLSheetViewHostProtocol> * hostDelegate;
-
-+ (id)exportedInterface;
-+ (id)serviceViewControllerInterface;
+@property <SLRemoteComposeViewControllerDelegateProtocol> * delegate;
 
 - (void).cxx_destruct;
-- (void)addAttachment:(id)arg1;
-- (BOOL)hasAppeared;
-- (id)hostDelegate;
-- (void)removeAllImages;
-- (void)removeAllURLs;
-- (void)setHasAppeared:(BOOL)arg1;
-- (void)setHostDelegate:(id)arg1;
-- (void)setInitialText:(id)arg1;
-- (void)setupRemoteViewController;
-- (void)sheetDidSendWithSucess:(id)arg1 error:(id)arg2;
-- (void)sheetFailedWithError:(id)arg1;
-- (void)sheetWillDismissWithUserResult:(id)arg1;
-- (void)shouldShowNetworkActivityIndicator:(id)arg1;
-- (void)updateAttachment:(id)arg1;
-- (void)userDidCancel;
-- (void)userDidPost;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (id)delegate;
+- (void)setDelegate:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

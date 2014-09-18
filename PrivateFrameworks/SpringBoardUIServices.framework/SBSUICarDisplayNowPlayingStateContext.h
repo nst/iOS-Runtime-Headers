@@ -15,7 +15,7 @@
 @property(copy) NSString * stateName;
 
 + (id)contextWithState:(id)arg1 animationName:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)animationName;
 - (id)associatedBundleID;

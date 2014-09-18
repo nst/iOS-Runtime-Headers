@@ -2,29 +2,30 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyGroupItem, UIResponder, UITextField;
+@class <ABPropertyCellDelegate>, ABPropertyGroupItem, UIResponder, UITextField;
 
 @interface ABPropertyNameCell : ABContactCell {
+    <ABPropertyCellDelegate> *_delegate;
     UIResponder *_firstResponderItem;
     UITextField *_textField;
 }
 
+@property <ABPropertyCellDelegate> * delegate;
 @property(readonly) UIResponder * firstResponderItem;
 @property(retain) ABPropertyGroupItem * propertyItem;
 @property(readonly) UITextField * textField;
 
-+ (BOOL)requiresConstraintBasedLayout;
-
+- (id)constantConstraints;
 - (void)dealloc;
+- (id)delegate;
 - (id)firstResponderItem;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)propertyItem;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCardGroupItem:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setPropertyItem:(id)arg1;
 - (id)textField;
 - (void)textFieldChanged:(id)arg1;
-- (void)updateConstraints;
 
 @end

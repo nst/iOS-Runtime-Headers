@@ -5,16 +5,16 @@
 @class ML3DatabaseConnection, NSString;
 
 @interface ML3DatabaseStatement : NSObject {
-    BOOL _clearBindingsAfterRunning;
     ML3DatabaseConnection *_connection;
-    BOOL _isExecuting;
     NSString *_sql;
     struct sqlite3_stmt { } *_sqliteStatement;
+    bool_clearBindingsAfterRunning;
+    bool_isExecuting;
 }
 
-@property BOOL clearBindingsAfterRunning;
+@property bool clearBindingsAfterRunning;
 @property(readonly) ML3DatabaseConnection * connection;
-@property BOOL isExecuting;
+@property bool isExecuting;
 @property(readonly) NSString * sql;
 @property(readonly) struct sqlite3_stmt { }* sqliteStatement;
 
@@ -32,18 +32,18 @@
 - (void)bindValuesForParameterNames:(id)arg1;
 - (void)bindValuesInArray:(id)arg1;
 - (int)clearBindings;
-- (BOOL)clearBindingsAfterRunning;
+- (bool)clearBindingsAfterRunning;
 - (id)connection;
 - (void)dealloc;
 - (id)description;
 - (int)finalizeStatement;
 - (id)initWithSQLiteStatement:(struct sqlite3_stmt { }*)arg1 SQL:(id)arg2 connection:(id)arg3;
-- (BOOL)isBusy;
-- (BOOL)isExecuting;
-- (BOOL)isReadOnly;
+- (bool)isBusy;
+- (bool)isExecuting;
+- (bool)isReadOnly;
 - (int)reset;
-- (void)setClearBindingsAfterRunning:(BOOL)arg1;
-- (void)setIsExecuting:(BOOL)arg1;
+- (void)setClearBindingsAfterRunning:(bool)arg1;
+- (void)setIsExecuting:(bool)arg1;
 - (id)sql;
 - (struct sqlite3_stmt { }*)sqliteStatement;
 - (int)step;

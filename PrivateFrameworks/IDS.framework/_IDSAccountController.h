@@ -5,7 +5,6 @@
 @class NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
 @interface _IDSAccountController : NSObject <IDSDaemonListenerProtocol> {
-    BOOL _accountsLoaded;
     NSMutableSet *_cachedAccounts;
     id _delegateContext;
     NSMapTable *_delegateToInfo;
@@ -13,12 +12,19 @@
     NSString *_service;
     NSString *_serviceToken;
     NSMutableDictionary *_transactionIDToHandlersMap;
+    bool_accountsLoaded;
+    bool_isLocalAccountVisible;
 }
 
-@property(readonly) NSSet * accounts;
-@property(readonly) NSSet * enabledAccounts;
-@property(readonly) NSString * serviceName;
+@property(retain,readonly) NSSet * accounts;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(retain,readonly) NSSet * enabledAccounts;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) NSString * serviceName;
+@property(readonly) Class superclass;
 
+- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (void)_connect;
 - (void)_loadCachedAccounts;
@@ -26,6 +32,8 @@
 - (void)_removeAccount:(id)arg1;
 - (void)_removeAndDeregisterAccount:(id)arg1;
 - (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 authToken:(id)arg3 password:(id)arg4 completionHandler:(id)arg5;
+- (void)_updateDelegatesWithOldAccounts:(id)arg1 newAccounts:(id)arg2;
+- (void)_updateLocalAccountVisibility;
 - (void)accountAdded:(id)arg1;
 - (void)accountDisabled:(id)arg1 onService:(id)arg2;
 - (void)accountEnabled:(id)arg1 onService:(id)arg2;
@@ -37,11 +45,13 @@
 - (void)accountsChanged:(id)arg1 forTopic:(id)arg2;
 - (void)addAccount:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (void)daemonDisconnected;
 - (void)dealloc;
 - (void)disableAccount:(id)arg1;
 - (void)enableAccount:(id)arg1;
 - (id)enabledAccounts;
 - (id)initWithService:(id)arg1 delegateContext:(id)arg2;
+- (id)internalAccounts;
 - (void)removeDelegate:(id)arg1;
 - (id)serviceName;
 - (void)setupAccountWithLoginID:(id)arg1 aliases:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;

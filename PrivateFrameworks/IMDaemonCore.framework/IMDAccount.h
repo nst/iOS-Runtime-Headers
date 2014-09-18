@@ -7,32 +7,32 @@
 @interface IMDAccount : NSObject <IMSystemMonitorListener> {
     NSString *_account;
     NSMutableDictionary *_accountDefaults;
-    BOOL _isLoading;
-    BOOL _isManaged;
     NSDictionary *_lastPostedStatus;
     NSMutableDictionary *_myStatus;
     IMDService *_service;
     IMDServiceSession *_session;
+    bool_isLoading;
+    bool_isManaged;
 }
 
-@property(readonly) NSDictionary * accountDefaults;
-@property(readonly) NSString * accountID;
-@property(readonly) NSDictionary * accountInfoToPost;
-@property(readonly) BOOL isActive;
-@property(readonly) BOOL isDisabled;
-@property BOOL isLoading;
-@property BOOL isManaged;
-@property(readonly) NSString * loginID;
-@property(readonly) NSDictionary * registrationAlertInfo;
+@property(retain,readonly) NSDictionary * accountDefaults;
+@property(retain,readonly) NSString * accountID;
+@property(retain,readonly) NSDictionary * accountInfoToPost;
+@property(readonly) bool isActive;
+@property(readonly) bool isDisabled;
+@property bool isLoading;
+@property bool isManaged;
+@property(retain,readonly) NSString * loginID;
+@property(retain,readonly) NSDictionary * registrationAlertInfo;
 @property(readonly) int registrationError;
 @property(readonly) int registrationStatus;
-@property(readonly) IMDService * service;
-@property(readonly) IMDServiceSession * session;
-@property(readonly) BOOL shouldPublishNowPlaying;
-@property(readonly) NSDictionary * status;
-@property(readonly) NSDictionary * statusToPost;
-@property(readonly) NSDictionary * statusToSave;
-@property BOOL wasDisabledAutomatically;
+@property(retain,readonly) IMDService * service;
+@property(retain,readonly) IMDServiceSession * session;
+@property(readonly) bool shouldPublishNowPlaying;
+@property(retain,readonly) NSDictionary * status;
+@property(retain,readonly) NSDictionary * statusToPost;
+@property(retain,readonly) NSDictionary * statusToSave;
+@property bool wasDisabledAutomatically;
 
 - (id)_registrationInfo;
 - (void)_updateIdle;
@@ -43,10 +43,10 @@
 - (void)createSessionIfNecessary;
 - (void)dealloc;
 - (id)initWithAccountID:(id)arg1 defaults:(id)arg2 service:(id)arg3;
-- (BOOL)isActive;
-- (BOOL)isDisabled;
-- (BOOL)isLoading;
-- (BOOL)isManaged;
+- (bool)isActive;
+- (bool)isDisabled;
+- (bool)isLoading;
+- (bool)isManaged;
 - (id)loginID;
 - (void)postAccountCapabilities;
 - (void)postAccountCapabilitiesToListener:(id)arg1;
@@ -56,18 +56,18 @@
 - (void)releaseSession;
 - (id)service;
 - (id)session;
-- (void)setIsLoading:(BOOL)arg1;
-- (void)setIsManaged:(BOOL)arg1;
+- (void)setIsLoading:(bool)arg1;
+- (void)setIsManaged:(bool)arg1;
 - (void)setRegistrationStatus:(int)arg1 error:(int)arg2 alertInfo:(id)arg3;
-- (void)setWasDisabledAutomatically:(BOOL)arg1;
-- (BOOL)shouldPublishNowPlaying;
+- (void)setWasDisabledAutomatically:(bool)arg1;
+- (bool)shouldPublishNowPlaying;
 - (id)status;
 - (id)statusToPost;
 - (id)statusToSave;
 - (void)systemDidBecomeIdle;
 - (void)systemDidBecomeUnidle;
 - (void)tunesController:(id)arg1 playerInfoChanged:(id)arg2;
-- (BOOL)wasDisabledAutomatically;
+- (bool)wasDisabledAutomatically;
 - (void)writeAccountDefaults:(id)arg1;
 
 @end

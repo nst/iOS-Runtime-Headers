@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSURL, TSPObjectContext, TSUPathSet;
+@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, TSPObjectContext, TSUPathSet, TSUTemporaryDirectory;
 
 @interface TSPDataManager : NSObject {
     struct hash_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
@@ -17,7 +17,7 @@
                     struct __hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -28,7 +28,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true> > { 
                 float __first_; 
@@ -41,7 +41,7 @@
                     struct __hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -52,7 +52,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestEqualTo, true> > { 
                 float __first_; 
@@ -62,66 +62,63 @@
     NSObject<OS_dispatch_queue> *_datasQueue;
     } _digestToDataMap;
     NSObject<OS_dispatch_group> *_externalReferenceRemovalGroup;
-    BOOL _hasExternalReferences;
+    NSObject<OS_dispatch_queue> *_externalReferenceRemovalQueue;
     } _identifierToDataMap;
-    NSURL *_lastDocumentURL;
     long long _nextNewIdentifier;
+    TSUTemporaryDirectory *_temporaryDirectory;
+    TSUPathSet *_temporaryDirectoryPathSet;
     NSObject<OS_dispatch_queue> *_temporaryDirectoryQueue;
-    NSURL *_temporaryDirectoryURL;
-    TSUPathSet *_temporaryPathSet;
+    bool_hasExternalReferences;
 }
 
 @property(readonly) TSPObjectContext * context;
 
 + (void)readWithChannel:(id)arg1 handler:(id)arg2;
-+ (BOOL)requestDocumentResourcesUsingDataProvider:(id)arg1 packageMetadata:(id)arg2;
++ (bool)requestDocumentResourcesUsingDataProvider:(id)arg1 packageMetadata:(id)arg2;
 + (id)stringForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addData:(id)arg1;
-- (void)addDataFromPackage:(id)arg1 documentResourceDataProvider:(id)arg2 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; int x10; unsigned int x11[1]; }*)arg3 areExternalReferencesAllowed:(BOOL)arg4;
+- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; int x10; unsigned int x11[1]; }*)arg4 areExternalReferencesAllowed:(bool)arg5;
 - (id)addNewDataForStorage:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3;
 - (id)checkForPersistenceWarningsWithPackageURL:(id)arg1;
 - (id)context;
 - (void)coordinateReadingNewFileURL:(id)arg1 byAccessor:(id)arg2;
 - (id)copyData:(id)arg1;
-- (id)createTemporaryDirectoryForPackageURL:(id)arg1;
 - (void)dataForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)dataForDigest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1;
 - (id)dataForDigestImpl:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 accessorBlock:(id)arg2;
-- (id)dataForDigestImpl:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id)arg3;
+- (id)dataForDigestImpl:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 skipDocumentResourcesLookup:(bool)arg2 accessorBlock:(id)arg3;
 - (id)dataForExistingData:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 temporaryPath:(id)arg4;
 - (id)dataForIdentifier:(long long)arg1;
 - (id)dataForIdentifierImpl:(long long)arg1;
 - (void)dataFromAssetsLibraryURL:(id)arg1 completion:(id)arg2;
 - (id)dataFromAssetsLibraryURL:(id)arg1;
-- (id)dataFromExternalReferenceURL:(id)arg1;
-- (id)dataFromFileURL:(id)arg1;
+- (id)dataFromExternalReferenceURL:(id)arg1 useFileCoordination:(bool)arg2;
+- (id)dataFromFileURL:(id)arg1 useFileCoordination:(bool)arg2;
 - (id)dataFromNSData:(id)arg1 filename:(id)arg2;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 linkURLOrNil:(id)arg3;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 temporaryPath:(id)arg3;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2;
-- (id)dataFromURL:(id)arg1;
+- (id)dataFromURL:(id)arg1 useFileCoordination:(bool)arg2;
 - (id)dataOrNilForIdentifier:(long long)arg1;
-- (id)dataWithStorage:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id)arg5;
+- (id)dataWithStorage:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(bool)arg4 accessorBlock:(id)arg5;
 - (id)dataWithTemporaryPath:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3;
-- (void)dealloc;
+- (void)didCloseDocument;
 - (void)didSaveWithSaveOperationState:(id)arg1;
 - (id)documentResourceDataWithStorage:(id)arg1 digestString:(id)arg2 filename:(id)arg3;
 - (void)enumerateDatasUsingBlock:(id)arg1;
 - (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 readHandler:(id)arg3 completion:(id)arg4;
-- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 temporaryPath:(id)arg3 shouldWriteIfFound:(BOOL)arg4 completion:(id)arg5;
+- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 temporaryPath:(id)arg3 shouldWriteIfFound:(bool)arg4 completion:(id)arg5;
 - (id)initWithContext:(id)arg1;
-- (BOOL)linkTemporaryPath:(id)arg1 fromURL:(id)arg2;
-- (void)loadFromPackage:(id)arg1 documentResourceDataProvider:(id)arg2 packageMetadata:(id)arg3 areExternalReferencesAllowed:(BOOL)arg4;
+- (bool)linkTemporaryPath:(id)arg1 fromURL:(id)arg2;
+- (void)loadFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 packageMetadata:(id)arg4 areExternalReferencesAllowed:(bool)arg5;
 - (int)openTemporaryPath:(id)arg1;
-- (BOOL)prepareSaveWithOldPackage:(id)arg1 saveOperationState:(id)arg2;
+- (bool)prepareSaveWithOldPackage:(id)arg1 saveOperationState:(id)arg2;
 - (void)removeExternalReferenceForData:(id)arg1 storage:(id)arg2;
 - (void)removeExternalReferences;
 - (void)removeFileAtPath:(id)arg1;
-- (void)removeTemporaryDirectory;
-- (void)setDocumentURL:(id)arg1;
 - (id)temporaryPathForFilename:(id)arg1;
 - (void)waitForRemoveExternalReferencesToComplete;
 

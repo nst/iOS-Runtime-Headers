@@ -20,10 +20,10 @@
 + (void)clearSharedIdentifierUpdater;
 + (id)sharedWeatherIdentifierUpdater;
 
-- (void)_failed:(unsigned int)arg1;
+- (void)_failed:(unsigned long long)arg1;
 - (id)aggregateDictionaryDomain;
 - (void)dealloc;
-- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned int)arg2;
+- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned long long)arg2;
 - (id)parsedCities;
 - (id)requestedCities;
 - (void)setParsedCities:(id)arg1;

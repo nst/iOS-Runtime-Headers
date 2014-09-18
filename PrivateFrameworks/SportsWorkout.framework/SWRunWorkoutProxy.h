@@ -12,13 +12,13 @@
 @property(readonly) NSString * currentSongName;
 @property(readonly) float goal;
 @property(readonly) NSString * goalType;
-@property(readonly) BOOL hasEverStarted;
-@property(readonly) BOOL hasPowerSong;
-@property(readonly) int musicSelection;
+@property(readonly) bool hasEverStarted;
+@property(readonly) bool hasPowerSong;
+@property(readonly) long long musicSelection;
 @property(readonly) NSString * powerSongName;
 @property(readonly) NSString * presetGoal;
 @property(readonly) NSString * sensorSearchState;
-@property(readonly) BOOL shouldControlMusic;
+@property(readonly) bool shouldControlMusic;
 @property(readonly) NSDictionary * workoutData;
 @property(readonly) NSString * workoutState;
 

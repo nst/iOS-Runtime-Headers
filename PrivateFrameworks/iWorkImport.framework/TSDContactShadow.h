@@ -8,33 +8,33 @@
  */
 
 @interface TSDContactShadow : TSDShadow {
-    float mHeight;
+    double mHeight;
 }
 
-@property(readonly) float height;
-@property(readonly) float perspective;
+@property(readonly) double height;
+@property(readonly) double perspective;
 
-+ (id)contactShadowWithOffset:(float)arg1 height:(float)arg2 radius:(float)arg3 opacity:(float)arg4 color:(struct CGColor { }*)arg5 enabled:(BOOL)arg6;
++ (id)contactShadowWithOffset:(double)arg1 height:(double)arg2 radius:(double)arg3 opacity:(double)arg4 color:(struct CGColor { }*)arg5 enabled:(bool)arg6;
 + (id)instanceWithArchive:(const struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; float x5; int x6; float x7; boolx8; int x9; struct DropShadowArchive {} *x10; struct ContactShadowArchive {} *x11; struct CurvedShadowArchive {} *x12; int x13; unsigned int x14[1]; }*)arg1 unarchiver:(id)arg2;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForRep:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInNaturalSpaceForRep:(id)arg1;
-- (float)clampOffset:(float)arg1;
-- (float)clampRadius:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForRep:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsInNaturalSpaceForRep:(id)arg1;
+- (double)clampOffset:(double)arg1;
+- (double)clampRadius:(double)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)height;
+- (double)height;
 - (id)initWithArchive:(const struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; float x5; int x6; float x7; boolx8; int x9; struct DropShadowArchive {} *x10; struct ContactShadowArchive {} *x11; struct CurvedShadowArchive {} *x12; int x13; unsigned int x14[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithOffset:(float)arg1 height:(float)arg2 radius:(float)arg3 opacity:(float)arg4 color:(struct CGColor { }*)arg5 enabled:(BOOL)arg6;
-- (BOOL)isEqual:(id)arg1;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (id)initWithOffset:(double)arg1 height:(double)arg2 radius:(double)arg3 opacity:(double)arg4 color:(struct CGColor { }*)arg5 enabled:(bool)arg6;
+- (bool)isEqual:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newShadowClampedForSwatches;
-- (struct CGImage { }*)newShadowImageForRep:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 drawSelector:(SEL)arg3 unflipped:(BOOL)arg4;
-- (struct CGImage { }*)newShadowImageFromContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 unflipped:(BOOL)arg4;
-- (float)perspective;
+- (struct CGImage { }*)newShadowImageForRep:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 drawSelector:(SEL)arg3 unflipped:(bool)arg4;
+- (struct CGImage { }*)newShadowImageFromContext:(struct CGContext { }*)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 unflipped:(bool)arg4;
+- (double)perspective;
 - (void)saveToArchive:(struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; float x5; int x6; float x7; boolx8; int x9; struct DropShadowArchive {} *x10; struct ContactShadowArchive {} *x11; struct CurvedShadowArchive {} *x12; int x13; unsigned int x14[1]; }*)arg1 archiver:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shadowBoundsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 additionalTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
-- (unsigned int)shadowType;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shadowBoundsForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 additionalTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
+- (unsigned long long)shadowType;
 
 @end

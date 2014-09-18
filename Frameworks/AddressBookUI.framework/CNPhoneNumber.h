@@ -8,10 +8,10 @@
     NSString *_stringValue;
 }
 
-@property(readonly) NSString * countryCode;
-@property(readonly) NSString * formattedStringValue;
-@property(readonly) NSString * normalizedStringValue;
-@property(readonly) NSString * stringValue;
+@property(copy,readonly) NSString * countryCode;
+@property(copy,readonly) NSString * formattedStringValue;
+@property(copy,readonly) NSString * normalizedStringValue;
+@property(copy,readonly) NSString * stringValue;
 
 + (id)phoneNumberWithStringValue:(id)arg1;
 
@@ -21,7 +21,7 @@
 - (id)description;
 - (id)formattedStringValue;
 - (id)initWithStringValue:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)normalizedStringValue;
 - (id)stringValue;
 

@@ -7,13 +7,13 @@
 @interface CIBurstImageStat : NSObject {
     struct FastRegistration_Signatures { 
         float *piRow; 
-        unsigned int nPiRow; 
+        unsigned long long nPiRow; 
         struct Projections_meanStdTable { 
             float *sumTable; 
             float *sumSqTable; 
         } piRowTable; 
         float *piCol; 
-        unsigned int nPiCol; 
+        unsigned long long nPiCol; 
         struct Projections_meanStdTable { 
             float *sumTable; 
             float *sumSqTable; 
@@ -30,34 +30,38 @@
         int endY; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     int AEAverage;
-    BOOL AEStable;
     int AETarget;
-    BOOL AFStable;
+    int _AEDelta;
+    struct __IOSurface { } *_fullsizeJpegData;
+    int _fullsizeJpegSize;
+    int _version;
     float actionClusteringScore;
     float actionScore;
     unsigned short aeMatrix[256];
     float avgHorzDiffY;
     float blurExtent;
+    boolAEStable;
+    boolAFStable;
     booldoLimitedSharpnessAndBlur;
     boolemotionallyRejected;
+    boolexclude;
+    boolhasRegistrationData;
     boolisGarbage;
     float colorHistogram[1024];
     int dissimilarity;
-    BOOL exclude;
     NSMutableArray *faceStatArray;
     } facesRoiRect;
     int gridHeight;
     } gridROI;
     int gridWidth;
-    BOOL hasRegistrationData;
     NSString *imageId;
     float imageScore;
     float maxSkewness;
@@ -82,19 +86,22 @@
 }
 
 @property int AEAverage;
-@property BOOL AEStable;
+@property int AEDelta;
+@property bool AEStable;
 @property int AETarget;
-@property BOOL AFStable;
+@property bool AFStable;
 @property float actionClusteringScore;
 @property float actionScore;
 @property float avgHorzDiffY;
 @property float blurExtent;
 @property bool doLimitedSharpnessAndBlur;
 @property bool emotionallyRejected;
-@property BOOL exclude;
+@property bool exclude;
 @property NSMutableArray * faceStatArray;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } facesRoiRect;
-@property BOOL hasRegistrationData;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } facesRoiRect;
+@property struct __IOSurface { }* fullsizeJpegData;
+@property int fullsizeJpegSize;
+@property bool hasRegistrationData;
 @property NSString * imageId;
 @property float imageScore;
 @property bool isGarbage;
@@ -110,11 +117,13 @@
 @property double timestamp;
 @property float tx;
 @property float ty;
+@property int version;
 
 - (int)AEAverage;
-- (BOOL)AEStable;
+- (int)AEDelta;
+- (bool)AEStable;
 - (int)AETarget;
-- (BOOL)AFStable;
+- (bool)AFStable;
 - (float)actionClusteringScore;
 - (float)actionScore;
 - (unsigned short*)aeMatrix;
@@ -125,8 +134,8 @@
 - (int)canRegister;
 - (void)collapseSharpnessGrid;
 - (float*)colorHistogram;
-- (int)compareImageOrder:(id)arg1;
-- (int)compareImageStats:(id)arg1;
+- (long long)compareImageOrder:(id)arg1;
+- (long long)compareImageStats:(id)arg1;
 - (void)computeAEMatrix:(id)arg1;
 - (float)computeAEMatrixDifference:(id)arg1;
 - (void)computeBlurStatsOnGrid:(id)arg1;
@@ -143,12 +152,14 @@
 - (void)dealloc;
 - (bool)doLimitedSharpnessAndBlur;
 - (bool)emotionallyRejected;
-- (BOOL)exclude;
+- (bool)exclude;
 - (id)faceStatArray;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })facesRoiRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })facesRoiRect;
 - (void)flagAsGarbage;
+- (struct __IOSurface { }*)fullsizeJpegData;
+- (int)fullsizeJpegSize;
 - (struct GridROI_t { int x1; int x2; int x3; int x4; })getSharpnessAndBlurLimits;
-- (BOOL)hasRegistrationData;
+- (bool)hasRegistrationData;
 - (id)imageId;
 - (float)imageScore;
 - (id)initWithIdentifier:(id)arg1;
@@ -162,20 +173,23 @@
 - (float)registrationErrorY;
 - (float)roiSize;
 - (void)setAEAverage:(int)arg1;
+- (void)setAEDelta:(int)arg1;
 - (int)setAEMatrix:(id)arg1;
-- (void)setAEStable:(BOOL)arg1;
+- (void)setAEStable:(bool)arg1;
 - (void)setAETarget:(int)arg1;
-- (void)setAFStable:(BOOL)arg1;
+- (void)setAFStable:(bool)arg1;
 - (void)setActionClusteringScore:(float)arg1;
 - (void)setActionScore:(float)arg1;
 - (void)setAvgHorzDiffY:(float)arg1;
 - (void)setBlurExtent:(float)arg1;
 - (void)setDoLimitedSharpnessAndBlur:(bool)arg1;
 - (void)setEmotionallyRejected:(bool)arg1;
-- (void)setExclude:(BOOL)arg1;
+- (void)setExclude:(bool)arg1;
 - (void)setFaceStatArray:(id)arg1;
-- (void)setFacesRoiRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHasRegistrationData:(BOOL)arg1;
+- (void)setFacesRoiRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFullsizeJpegData:(struct __IOSurface { }*)arg1;
+- (void)setFullsizeJpegSize:(int)arg1;
+- (void)setHasRegistrationData:(bool)arg1;
 - (void)setImageId:(id)arg1;
 - (void)setImageScore:(float)arg1;
 - (void)setIsGarbage:(bool)arg1;
@@ -191,12 +205,14 @@
 - (void)setTimestamp:(double)arg1;
 - (void)setTx:(float)arg1;
 - (void)setTy:(float)arg1;
+- (void)setVersion:(int)arg1;
 - (int)temporalOrder;
 - (double)timeReceived;
 - (double)timestamp;
 - (float)tx;
 - (float)ty;
 - (void)updateROI:(struct GridROI_t { int x1; int x2; int x3; int x4; })arg1;
+- (int)version;
 - (void)writeGridROI:(id)arg1;
 
 @end

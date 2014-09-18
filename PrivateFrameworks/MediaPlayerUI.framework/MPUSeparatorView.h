@@ -5,27 +5,27 @@
 @class UIColor;
 
 @interface MPUSeparatorView : UIView {
-    float _leftMarginWidth;
+    double _leftMarginWidth;
     UIColor *_marginColor;
-    float _rightMarginWidth;
+    double _rightMarginWidth;
     UIColor *_separatorColor;
 }
 
-@property float leftMarginWidth;
+@property double leftMarginWidth;
 @property(retain) UIColor * marginColor;
-@property float rightMarginWidth;
+@property double rightMarginWidth;
 @property(retain) UIColor * separatorColor;
 
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)leftMarginWidth;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)leftMarginWidth;
 - (id)marginColor;
-- (float)rightMarginWidth;
+- (double)rightMarginWidth;
 - (id)separatorColor;
-- (void)setLeftMarginWidth:(float)arg1;
+- (void)setLeftMarginWidth:(double)arg1;
 - (void)setMarginColor:(id)arg1;
-- (void)setRightMarginWidth:(float)arg1;
+- (void)setRightMarginWidth:(double)arg1;
 - (void)setSeparatorColor:(id)arg1;
 
 @end

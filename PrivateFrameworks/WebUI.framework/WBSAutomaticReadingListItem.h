@@ -5,11 +5,10 @@
 @class NSDate, NSString, NSURL, UIImage, WBSAutomaticReadingListSocialSource;
 
 @interface WBSAutomaticReadingListItem : NSObject {
-    BOOL _fetchingProfileImage;
+    UIImage *_fallbackProfileImage;
     NSString *_originatorDisplayName;
     id _originatorID;
     UIImage *_originatorProfileImage;
-    BOOL _repostedByAuthenticatedUser;
     NSString *_reposterDisplayName;
     NSString *_reposterScreenName;
     NSString *_socialSourceAccountIdentifier;
@@ -18,45 +17,55 @@
     NSString *_sourceRecordText;
     NSString *_uniqueIdentifier;
     NSString *_urlString;
+    bool_fetchingProfileImage;
+    bool_repostedByAuthenticatedUser;
 }
 
 @property(readonly) NSURL * biggerOriginatorProfileImageURL;
+@property(readonly) NSString * continuousBannerDisplayString;
+@property(readonly) NSString * continuousBannerTitle;
 @property(readonly) NSString * displayString;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } displayURLRange;
+@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } displayURLRange;
 @property(readonly) NSString * domainString;
-@property BOOL fetchingProfileImage;
-@property(readonly) NSString * originatorDisplayName;
-@property(readonly) id originatorID;
+@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } emphasizedTextRange;
+@property bool fetchingProfileImage;
+@property(copy,readonly) NSString * originatorDisplayName;
+@property(copy,readonly) id originatorID;
 @property(retain) UIImage * originatorProfileImage;
 @property(readonly) NSURL * originatorProfileImageURL;
 @property(readonly) NSURL * originatorProfileURL;
-@property(getter=isRepostedByAuthenticatedUser) BOOL repostedByAuthenticatedUser;
+@property(getter=isRepostedByAuthenticatedUser) bool repostedByAuthenticatedUser;
 @property(readonly) NSString * reposterDisplayName;
 @property(readonly) NSString * reposterScreenName;
 @property(readonly) WBSAutomaticReadingListSocialSource * socialSource;
-@property(readonly) NSString * socialSourceAccountIdentifier;
-@property(readonly) NSDate * sourceRecordCreationDate;
-@property(readonly) id sourceRecordID;
-@property(readonly) NSString * sourceRecordText;
+@property(copy,readonly) NSString * socialSourceAccountIdentifier;
+@property(copy,readonly) NSDate * sourceRecordCreationDate;
+@property(copy,readonly) id sourceRecordID;
+@property(copy,readonly) NSString * sourceRecordText;
 @property(readonly) NSURL * sourceRecordURL;
 @property(copy) NSString * uniqueIdentifier;
-@property(readonly) NSString * urlString;
+@property(copy,readonly) NSString * urlString;
 
 + (id)keyPathsForValuesAffectingDomainString;
 
-- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)bestOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void).cxx_destruct;
+- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_getFallbackImage;
+- (id)bestOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)biggerOriginatorProfileImageURL;
-- (void)dealloc;
+- (id)continuousBannerDisplayString;
+- (id)continuousBannerTitle;
 - (id)description;
 - (id)displayString;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })displayURLRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })displayURLRange;
 - (id)domainString;
-- (BOOL)fetchingProfileImage;
-- (unsigned int)hash;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })emphasizedTextRange;
+- (bool)fetchingProfileImage;
+- (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1 socialSourceAccountIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isRepostedByAuthenticatedUser;
+- (bool)isAcceptableOriginatorProfileImage:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isRepostedByAuthenticatedUser;
 - (id)originatorDisplayName;
 - (id)originatorID;
 - (id)originatorProfileImage;
@@ -64,9 +73,9 @@
 - (id)originatorProfileURL;
 - (id)reposterDisplayName;
 - (id)reposterScreenName;
-- (void)setFetchingProfileImage:(BOOL)arg1;
+- (void)setFetchingProfileImage:(bool)arg1;
 - (void)setOriginatorProfileImage:(id)arg1;
-- (void)setRepostedByAuthenticatedUser:(BOOL)arg1;
+- (void)setRepostedByAuthenticatedUser:(bool)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)socialSource;
 - (id)socialSourceAccountIdentifier;
@@ -75,6 +84,7 @@
 - (id)sourceRecordText;
 - (id)sourceRecordURL;
 - (id)uniqueIdentifier;
+- (void)updateFallbackImageIfNecessary;
 - (id)urlString;
 
 @end

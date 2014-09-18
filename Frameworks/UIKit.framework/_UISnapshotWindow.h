@@ -5,8 +5,10 @@
 @interface _UISnapshotWindow : UIWindow {
 }
 
-- (BOOL)_canBecomeKeyWindow;
-- (BOOL)_isSettingFirstResponder;
++ (bool)_isSystemWindow;
+
+- (bool)_canBecomeKeyWindow;
+- (bool)_isSettingFirstResponder;
 - (void)_setFirstResponder:(id)arg1;
 
 @end

@@ -16,6 +16,7 @@
 
 - (id)colorScheme;
 - (void)dealloc;
+- (id)description;
 - (id)fontScheme;
 - (void)setColorScheme:(id)arg1;
 - (void)setFontScheme:(id)arg1;

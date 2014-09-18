@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSString;
+
 @interface SUScriptMediaPickerNativeObject : SUScriptViewControllerNativeObject <MPMediaPickerControllerDelegate> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)destroyNativeObject;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;

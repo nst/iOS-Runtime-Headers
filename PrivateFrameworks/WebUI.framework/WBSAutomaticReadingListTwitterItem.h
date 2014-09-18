@@ -18,12 +18,12 @@
 @property(copy) NSString * originatorScreenName;
 @property(copy) NSDate * retweetCreationDate;
 
+- (void).cxx_destruct;
 - (id)_profileImageURLStringWithSuffix:(id)arg1;
 - (id)biggerOriginatorProfileImageURL;
-- (void)dealloc;
 - (id)description;
 - (id)displayString;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })displayURLRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })displayURLRange;
 - (id)displayURLString;
 - (id)domainString;
 - (id)expandedURLString;

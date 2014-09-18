@@ -2,16 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicAlbumCellConfiguration : MusicCellConfiguration {
+@interface MusicAlbumCellConfiguration : MusicStandardMediaCellConfiguration {
 }
 
-+ (id)_albumImageCache;
-+ (id)collectionPropertiesToFetch;
-+ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
-+ (id)tableViewBackgroundColor;
-+ (id)tableViewCellBackgroundColor;
-+ (Class)tableViewCellClass;
-+ (float)tableViewCellHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tableViewSeparatorInset;
++ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned long long)arg4 animated:(bool)arg5;
++ (bool)mediaCellConfigurationUsesSubtitle;
++ (id)mediaEntityPropertiesToFetch;
++ (id)reuseIdentifier;
 
 @end

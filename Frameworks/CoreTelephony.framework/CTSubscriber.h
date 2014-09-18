@@ -10,10 +10,10 @@
 
 @interface CTSubscriber : NSObject {
     struct vector<dispatch::block<void (^)(NSDictionary *)>, std::__1::allocator<dispatch::block<void (^)(NSDictionary *)> > >="__begin_"^{block<void (^)(NSDictionary *)> {} _authCallbacks;
-    struct __CTServerConnection { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned int x5; struct _xpc_connection_s {} *x6; } *_server;
+    struct __CTServerConnection { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned int x5; struct _xpc_connection_s {} *x6; } *_server;
 }
 
-@property(readonly) NSData * carrierToken;
+@property(retain,readonly) NSData * carrierToken;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -22,6 +22,6 @@
 - (void)dealloc;
 - (void)handleAuthCallback:(id)arg1;
 - (id)init;
-- (BOOL)refreshCarrierToken;
+- (bool)refreshCarrierToken;
 
 @end

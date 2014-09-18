@@ -20,8 +20,8 @@
         float polygonOffsetFactor; 
         float polygonOffsetUnits; 
         struct EnableClipDistances { 
-            struct array<signed char, 8> { 
-                BOOL __elems_[8]; 
+            struct array<bool, 8> { 
+                bool__elems_[8]; 
             } states; 
         } enableClipDistances; 
     struct tmat4x4<float> { 
@@ -93,6 +93,7 @@
             float a; 
             float q; 
         } ; 
+    boolmWipeTarget;
     NSArray *mEffects;
     } mRenderState;
     } mTargetViewport;
@@ -101,10 +102,9 @@
     id mUpdateShaderEffectsStatesBlock;
     TSCH3DResource *mVertices;
     } mWipeColor;
-    BOOL mWipeTarget;
 }
 
-@property struct  renderState; /* unknown property attribute:  8>=[8c]}}} */
+@property struct  renderState; /* unknown property attribute:  8>=[8B]}}} */
 @property(copy) NSArray * effects;
 @property struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; } targetViewport;
 @property(retain) TSCH3DResource * texcoords;
@@ -112,22 +112,22 @@
 @property(copy) id updateShaderEffectsStatesBlock;
 @property(retain) TSCH3DResource * vertices;
 @property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } wipeColor;
-@property BOOL wipeTarget;
+@property bool wipeTarget;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)effects;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2;
-- (struct RenderState { boolx1; int x2; boolx3; boolx4; boolx5; boolx6; boolx7; float x8; float x9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_2_1[8]; } x_10_1_1; } x10; })renderState;
+- (struct RenderState { boolx1; int x2; boolx3; boolx4; boolx5; boolx6; boolx7; float x8; float x9; struct EnableClipDistances { struct array<bool, 8> { boolx_1_2_1[8]; } x_10_1_1; } x10; })renderState;
 - (void)setEffects:(id)arg1;
-- (void)setRenderState:(struct RenderState { boolx1; int x2; boolx3; boolx4; boolx5; boolx6; boolx7; float x8; float x9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_2_1[8]; } x_10_1_1; } x10; })arg1;
+- (void)setRenderState:(struct RenderState { boolx1; int x2; boolx3; boolx4; boolx5; boolx6; boolx7; float x8; float x9; struct EnableClipDistances { struct array<bool, 8> { boolx_1_2_1[8]; } x_10_1_1; } x10; })arg1;
 - (void)setTargetViewport:(struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; })arg1;
 - (void)setTexcoords:(id)arg1;
 - (void)setTransform:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })arg1;
 - (void)setUpdateShaderEffectsStatesBlock:(id)arg1;
 - (void)setVertices:(id)arg1;
 - (void)setWipeColor:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
-- (void)setWipeTarget:(BOOL)arg1;
+- (void)setWipeTarget:(bool)arg1;
 - (struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; })targetViewport;
 - (id)texcoords;
 - (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })transform;
@@ -136,6 +136,6 @@
 - (id)updateShaderEffectsStatesBlock;
 - (id)vertices;
 - (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })wipeColor;
-- (BOOL)wipeTarget;
+- (bool)wipeTarget;
 
 @end

@@ -14,12 +14,13 @@
 
 + (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2;
 + (id)candidateWithUnchangedInput:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2;

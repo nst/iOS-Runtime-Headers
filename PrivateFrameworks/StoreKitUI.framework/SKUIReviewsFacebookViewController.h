@@ -16,7 +16,7 @@
 @property(copy) SKUIFacebookLikeStatus * facebookLikeStatus;
 
 - (void).cxx_destruct;
-- (void)_changeStatusToUserLiked:(BOOL)arg1;
+- (void)_changeStatusToUserLiked:(bool)arg1;
 - (void)_reloadFacebookView;
 - (void)_toggleLike:(id)arg1;
 - (id)clientContext;

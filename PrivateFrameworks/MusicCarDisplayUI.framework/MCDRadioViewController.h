@@ -2,26 +2,30 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSArray, NSMutableDictionary, NSString, RURadioDataSource;
+@class NSArray, NSString, RURadioDataSource;
 
 @interface MCDRadioViewController : MCD_OLD_TableViewController <RURadioDataSourceDelegate> {
     RURadioDataSource *_dataSource;
     NSString *_featuredStationNamesBrief;
     NSArray *_featuredStations;
     NSArray *_myStations;
-    NSMutableDictionary *_stationArtworkRequests;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void).cxx_destruct;
+- (void)_categorizeStations;
 - (void)_radioDataSourceDidInvalidate:(id)arg1;
-- (void)categorizeStations;
+- (id)_stationFromIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2;
 - (void)radioDataSourceDidInvalidate:(id)arg1;
-- (id)stationFromIndexPath:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
 
 @end

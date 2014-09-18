@@ -2,82 +2,84 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray, NSString, PLWallpaperNavigationItem, SBSUIWallpaperPreviewViewController, UIActionSheet;
+@class NSArray, NSString, PLWallpaperNavigationItem, SBSUIWallpaperPreviewViewController;
 
 @interface PLWallpaperImageViewController : PLUIEditImageViewController <SBFLegibilitySettingsProviderDelegate, UIActionSheetDelegate> {
     unsigned int _didSetImageMode : 1;
-    BOOL _isWallpaperEdit;
     PLWallpaperNavigationItem *_navItem;
     NSArray *_navigationToolbarItems;
-    int _previewType;
-    int _previewVariant;
-    BOOL _saveWallpaperData;
+    long long _previewType;
+    long long _previewVariant;
     int _wallpaperMode;
-    UIActionSheet *_wallpaperOptionsSheet;
     SBSUIWallpaperPreviewViewController *_wallpaperPreviewViewController;
     NSString *_wallpaperTitle;
+    bool_isWallpaperEdit;
+    bool_saveWallpaperData;
 }
 
-@property BOOL isWallpaperEdit;
-@property int previewType;
-@property int previewVariant;
-@property BOOL saveWallpaperData;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool isWallpaperEdit;
+@property long long previewType;
+@property long long previewVariant;
+@property bool saveWallpaperData;
+@property(readonly) Class superclass;
 @property(retain) SBSUIWallpaperPreviewViewController * wallpaperPreviewViewController;
 @property(copy) NSString * wallpaperTitle;
 
 - (void)_adjustScrollViewGeometry;
 - (void)_backgroundCropWallpaper;
-- (unsigned int)_contentAutoresizingMask;
+- (unsigned long long)_contentAutoresizingMask;
 - (void)_cropWallpaperFinished:(id)arg1;
 - (void)_displayWallpaperOptionsSheet;
 - (void)_savePhoto;
-- (unsigned int)_tileAutoresizingMask;
+- (unsigned long long)_tileAutoresizingMask;
 - (void)_updatePreviewFrame:(id)arg1;
 - (void)_updateTitles;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (BOOL)clientIsWallpaper;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewFrame;
+- (bool)clientIsWallpaper;
 - (int)cropOverlayMode;
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)dealloc;
-- (int)desiredStatusBarAnimation;
+- (long long)desiredStatusBarAnimation;
 - (int)imageFormat;
 - (id)init;
 - (id)initWithUIImage:(id)arg1;
-- (id)initWithWallpaperVariant:(int)arg1;
-- (BOOL)isWallpaperEdit;
+- (id)initWithWallpaperVariant:(long long)arg1;
+- (bool)isWallpaperEdit;
 - (void)loadView;
-- (void)motionToggledManually:(BOOL)arg1;
+- (void)motionToggledManually:(bool)arg1;
 - (id)navigationItem;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
 - (void)prepareForBackground:(id)arg1;
 - (void)prepareForForeground:(id)arg1;
-- (int)previewType;
-- (int)previewVariant;
+- (long long)previewType;
+- (long long)previewVariant;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
-- (BOOL)saveWallpaperData;
+- (bool)saveWallpaperData;
 - (void)setImageAsHomeScreenAndLockScreenClicked:(id)arg1;
 - (void)setImageAsHomeScreenClicked:(id)arg1;
 - (void)setImageAsLockScreenClicked:(id)arg1;
-- (void)setIsWallpaperEdit:(BOOL)arg1;
-- (void)setPreviewType:(int)arg1;
-- (void)setPreviewVariant:(int)arg1;
-- (void)setSaveWallpaperData:(BOOL)arg1;
+- (void)setIsWallpaperEdit:(bool)arg1;
+- (void)setPreviewType:(long long)arg1;
+- (void)setPreviewVariant:(long long)arg1;
+- (void)setSaveWallpaperData:(bool)arg1;
 - (void)setWallpaperFromArgs:(id)arg1;
 - (void)setWallpaperPreviewViewController:(id)arg1;
 - (void)setWallpaperSynchronouslyFromArgs:(id)arg1;
 - (void)setWallpaperTitle:(id)arg1;
 - (void)setupNavigationItem;
 - (void)setupWallpaperPreview;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)uiipc_useTelephonyUI;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)uiipc_useTelephonyUI;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)wallpaperPreviewViewController;
 - (id)wallpaperTitle;
-- (BOOL)wantsStatusBarVisible;
+- (bool)wantsStatusBarVisible;
 
 @end

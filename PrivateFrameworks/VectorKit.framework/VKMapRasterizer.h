@@ -2,7 +2,16 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableSet, VGLTextureCanvas, VGLTexturePool, VKCamera, VKLayoutContext, VKMapModel, VKModelObject, VKScene, VKTileProvider;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class MDTextureCanvas, NSMutableSet, VKCamera, VKLayoutContext, VKMapModel, VKMapRasterizerRoot, VKScene, VKTileProvider;
 
 @interface VKMapRasterizer : VKModelObject {
     struct VKTileKey { 
@@ -10,49 +19,80 @@
         int x; 
         int y; 
         unsigned int pointSize; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
+    struct Matrix<float, 4, 1> { 
+        float _e[4]; 
+    struct unique_ptr<ggl::TextureBuffer, std::__1::default_delete<ggl::TextureBuffer> > { 
+        struct __compressed_pair<ggl::TextureBuffer *, std::__1::default_delete<ggl::TextureBuffer> > { 
+            struct TextureBuffer {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
+        struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
+            struct RenderBuffer {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget> > { 
+        struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
+            struct RenderTarget {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
+        struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
+            struct RenderQueue {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::TexturePool, std::__1::default_delete<ggl::TexturePool> > { 
+        struct __compressed_pair<ggl::TexturePool *, std::__1::default_delete<ggl::TexturePool> > { 
+            struct TexturePool {} *__first_; 
+        } __ptr_; 
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     } _backgroundColor;
+    unsigned int _canvasPointSize;
+    } _depthStencilBuffer;
     } _keyToRasterize;
     VKMapModel *_mapModel;
-    VGLTexturePool *_pool;
     VKCamera *_rasterizeCamera;
-    VGLTextureCanvas *_rasterizeCanvas;
+    MDTextureCanvas *_rasterizeCanvas;
     VKLayoutContext *_rasterizeLayoutContext;
     VKScene *_rasterizeScene;
     NSMutableSet *_rasterizeTilesToRender;
-    unsigned int _rasterizingScaleFactor;
-    VKModelObject *_root;
+    unsigned long long _rasterizingScaleFactor;
+    } _renderTexture;
+    } _renderToTextureTarget;
+    VKMapRasterizerRoot *_root;
+    } _rttQueue;
+    } _textureBuffer;
+    } _texturePool;
     VKTileProvider *_tileProvider;
 }
 
-@property struct _VGLColor { float x1; float x2; float x3; float x4; } backgroundColor;
+@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }* keyToRasterize;
 @property VKMapModel * mapModel;
-@property unsigned int rasterizingScaleFactor;
+@property unsigned long long rasterizingScaleFactor;
 @property VKTileProvider * tileProvider;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)addSubmodel:(id)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })backgroundColor;
+- (struct Matrix<float, 4, 1> { float x1[4]; })backgroundColor;
+- (void)createRasterizationLayoutContext:(id)arg1 canvasPointSize:(unsigned int)arg2;
 - (void)dealloc;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (void)flushTextureCache;
+- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (void)gglLayoutSceneIfNeeded:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3 dispatchQueue:(id)arg4;
 - (id)init;
+- (bool)isBusy;
 - (const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)keyToRasterize;
-- (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (id)mapModel;
+- (void)prepRenderTargetWithTexture:(const struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)rasterizeKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 scene:(id)arg2;
-- (unsigned int)rasterizingScaleFactor;
-- (void)recursiveDrawScene:(id)arg1 withContext:(id)arg2 pass:(unsigned int)arg3;
-- (void)setBackgroundColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (unsigned long long)rasterizingScaleFactor;
+- (void)reset;
+- (void)setBackgroundColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (void)setMapModel:(id)arg1;
-- (void)setRasterizingScaleFactor:(unsigned int)arg1;
+- (void)setRasterizingScaleFactor:(unsigned long long)arg1;
 - (void)setTileProvider:(id)arg1;
-- (unsigned int)supportedRenderPasses;
+- (void)stylesheetDidChange;
 - (id)tileProvider;
+- (void)updateCameraFromKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 
 @end

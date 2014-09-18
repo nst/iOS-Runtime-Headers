@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObjectID, NSDate, NSString, NSTimeZone;
+@class EKObjectID, NSDate, NSString, NSTimeZone, NSURL;
 
 @interface EKAlarmOccurrence : NSObject {
     NSDate *_acknowledgedDate;
@@ -12,6 +12,7 @@
     NSDate *_ownerDate;
     EKObjectID *_ownerID;
     NSTimeZone *_ownerTimeZone;
+    NSURL *_ownerURI;
 }
 
 @property(readonly) NSDate * acknowledgedDate;
@@ -21,8 +22,9 @@
 @property(readonly) NSDate * ownerDate;
 @property(readonly) EKObjectID * ownerID;
 @property(readonly) NSTimeZone * ownerTimeZone;
+@property(readonly) NSURL * ownerURI;
 
-+ (id)alarmOccurrenceWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 fireDate:(id)arg5 externalID:(id)arg6 acknowledgedDate:(id)arg7;
++ (id)alarmOccurrenceWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 ownerURI:(id)arg5 fireDate:(id)arg6 externalID:(id)arg7 acknowledgedDate:(id)arg8;
 
 - (id)acknowledgedDate;
 - (id)alarmID;
@@ -31,11 +33,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalID;
 - (id)fireDate;
-- (id)initWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 fireDate:(id)arg5 externalID:(id)arg6 acknowledgedDate:(id)arg7;
+- (id)initWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 ownerURI:(id)arg5 fireDate:(id)arg6 externalID:(id)arg7 acknowledgedDate:(id)arg8;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)ownerDate;
 - (id)ownerID;
 - (id)ownerTimeZone;
+- (id)ownerURI;
 
 @end

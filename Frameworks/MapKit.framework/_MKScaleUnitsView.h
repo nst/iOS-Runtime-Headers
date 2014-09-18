@@ -6,7 +6,7 @@
 
 @interface _MKScaleUnitsView : UIView {
     NSNumberFormatter *_floatNumberFormatter;
-    float _justUnitsWidth;
+    double _justUnitsWidth;
     NSDictionary *_legendAttributes;
     NSString *_legendBaseString;
     NSMutableDictionary *_legendStringForDistanceStringCache;
@@ -14,25 +14,25 @@
     double _segmentLengthInPixels;
     NSMutableArray *_strings;
     NSString *_unitsString;
-    float _unitsWidth;
+    double _unitsWidth;
     NSString *_unpaddedUnitsString;
-    BOOL _useLightText;
+    bool_useLightText;
 }
 
 @property(retain) NSNumberFormatter * floatNumberFormatter;
 @property(retain) NSString * legendBaseString;
 @property double segmentLengthInPixels;
 @property(retain) NSString * unitsString;
-@property(readonly) float unitsWidth;
+@property(readonly) double unitsWidth;
 @property(copy) NSString * unpaddedUnitsString;
-@property BOOL useLightText;
+@property bool useLightText;
 
 - (void).cxx_destruct;
-- (void)_calculateLegend:(BOOL)arg1;
-- (id)_legendStringForDistanceString:(id)arg1 appendUnits:(BOOL)arg2 index:(int)arg3;
+- (void)_calculateLegend:(bool)arg1;
+- (id)_legendStringForDistanceString:(id)arg1 appendUnits:(bool)arg2 index:(int)arg3;
 - (id)_uncachedLegendStringsForDistanceString:(id)arg1;
-- (float)_widthForString:(id)arg1 attributes:(id)arg2;
-- (BOOL)canDisplaySegment:(int)arg1;
+- (double)_widthForString:(id)arg1 attributes:(id)arg2;
+- (bool)canDisplaySegment:(unsigned long long)arg1;
 - (void)clearCaches:(id)arg1;
 - (id)floatNumberFormatter;
 - (id)init;
@@ -43,10 +43,10 @@
 - (void)setUnits:(id)arg1;
 - (void)setUnitsString:(id)arg1;
 - (void)setUnpaddedUnitsString:(id)arg1;
-- (void)setUseLightText:(BOOL)arg1;
+- (void)setUseLightText:(bool)arg1;
 - (id)unitsString;
-- (float)unitsWidth;
+- (double)unitsWidth;
 - (id)unpaddedUnitsString;
-- (BOOL)useLightText;
+- (bool)useLightText;
 
 @end

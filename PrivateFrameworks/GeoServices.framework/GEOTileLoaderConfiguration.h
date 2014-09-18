@@ -2,34 +2,42 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
+@class GEOResourceManifestConfiguration, NSLocale, NSString;
 
 @interface GEOTileLoaderConfiguration : NSObject <NSCopying> {
     NSString *_diskCacheLocation;
-    unsigned int _memoryCacheCostLimit;
-    unsigned int _memoryCacheCountLimit;
-    BOOL _trackUsage;
-    BOOL _useRemoteLoader;
+    NSLocale *_locale;
+    GEOResourceManifestConfiguration *_manifestConfiguration;
+    unsigned long long _memoryCacheCostLimit;
+    unsigned long long _memoryCacheCountLimit;
+    Class _serverProxyClass;
+    bool_trackUsage;
 }
 
 @property(copy) NSString * diskCacheLocation;
-@property unsigned int memoryCacheCostLimit;
-@property unsigned int memoryCacheCountLimit;
-@property BOOL trackUsage;
-@property BOOL useRemoteLoader;
+@property(retain) NSLocale * locale;
+@property(retain) GEOResourceManifestConfiguration * manifestConfiguration;
+@property unsigned long long memoryCacheCostLimit;
+@property unsigned long long memoryCacheCountLimit;
+@property Class serverProxyClass;
+@property bool trackUsage;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)diskCacheLocation;
 - (id)init;
-- (unsigned int)memoryCacheCostLimit;
-- (unsigned int)memoryCacheCountLimit;
+- (id)locale;
+- (id)manifestConfiguration;
+- (unsigned long long)memoryCacheCostLimit;
+- (unsigned long long)memoryCacheCountLimit;
+- (Class)serverProxyClass;
 - (void)setDiskCacheLocation:(id)arg1;
-- (void)setMemoryCacheCostLimit:(unsigned int)arg1;
-- (void)setMemoryCacheCountLimit:(unsigned int)arg1;
-- (void)setTrackUsage:(BOOL)arg1;
-- (void)setUseRemoteLoader:(BOOL)arg1;
-- (BOOL)trackUsage;
-- (BOOL)useRemoteLoader;
+- (void)setLocale:(id)arg1;
+- (void)setManifestConfiguration:(id)arg1;
+- (void)setMemoryCacheCostLimit:(unsigned long long)arg1;
+- (void)setMemoryCacheCountLimit:(unsigned long long)arg1;
+- (void)setServerProxyClass:(Class)arg1;
+- (void)setTrackUsage:(bool)arg1;
+- (bool)trackUsage;
 
 @end

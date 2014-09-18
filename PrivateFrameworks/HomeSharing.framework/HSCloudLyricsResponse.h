@@ -10,7 +10,7 @@
 
 @property(copy) NSString * lyrics;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)lyrics;
 - (void)setLyrics:(id)arg1;
 

@@ -12,28 +12,34 @@
     NSMutableArray *_pendingDismissalDictionaries;
     NSMutableArray *_pendingDismissalIDs;
     NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _queuedFeed;
+    unsigned long long _queuedFeed;
     NSString *_queuedSectionID;
+    NSString *_queuedUniversalSectionID;
     IDSService *_service;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <BBSyncServiceDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (void)_addDeferredDismissalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
+- (void)_addDeferredDismissalForBulletin:(id)arg1 feeds:(unsigned long long)arg2;
 - (void)_clearDeferredTimer;
 - (void)_deferredTimerFired:(id)arg1;
 - (void)_deviceLocked;
 - (id)_dismissalDictionaryForBulletin:(id)arg1;
-- (void)_reallyEnqueueBulletin:(id)arg1 feeds:(unsigned int)arg2;
+- (void)_reallyEnqueueBulletin:(id)arg1 feeds:(unsigned long long)arg2;
 - (void)_sendDeferredDismissals;
 - (void)_sendSyncMessage:(id)arg1;
 - (id)_syncAccount;
 - (void)dealloc;
 - (id)delegate;
-- (void)enqueueSyncedRemovalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
+- (id)dismissalSectionIdentifierForIncomingMessage:(id)arg1;
+- (void)enqueueSyncedRemovalForBulletin:(id)arg1 feeds:(unsigned long long)arg2;
 - (id)initWithQueue:(id)arg1;
 - (void)sendPendingSyncedRemovals;
-- (void)sendSyncedRemovalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
+- (void)sendSyncedRemovalForBulletin:(id)arg1 feeds:(unsigned long long)arg2;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)setDelegate:(id)arg1;

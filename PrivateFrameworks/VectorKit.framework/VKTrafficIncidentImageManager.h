@@ -2,20 +2,28 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSCache, NSMapTable;
+@class NSCache, NSMapTable, NSString, VKResourceManager;
 
-@interface VKTrafficIncidentImageManager : NSObject {
+@interface VKTrafficIncidentImageManager : NSObject <GEOResourceManifestTileGroupObserver> {
     NSCache *_imageCache;
+    VKResourceManager *_resourceManager;
     NSMapTable *_targetDisplayToProvider;
+    unsigned int _tileGroupIdentifier;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)sharedManager;
 
 - (void)dealloc;
-- (id)iconForIncidentType:(int)arg1 contentScale:(float)arg2 targetDisplay:(int)arg3;
-- (id)iconForIncidentType:(int)arg1 contentScale:(float)arg2;
-- (id)imageForIncidentType:(int)arg1 contentScale:(float)arg2 targetDisplay:(int)arg3;
-- (id)imageForIncidentType:(int)arg1 contentScale:(float)arg2;
-- (void)setIncidentIconProvider:(id)arg1 forTargetDisplay:(int)arg2;
+- (id)imageForIncidentType:(long long)arg1 contentScale:(double)arg2 targetDisplay:(long long)arg3;
+- (id)imageForIncidentType:(long long)arg1 contentScale:(double)arg2;
+- (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
+- (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
+- (void)setIncidentIconProvider:(id)arg1 forTargetDisplay:(long long)arg2;
 
 @end

@@ -8,10 +8,12 @@
 }
 
 @property(readonly) NSDictionary * cleanApertureDictionary;
-@property(readonly) BOOL dimensionsAreBoundingBox;
+@property(readonly) bool dimensionsAreBoundingBox;
 @property(readonly) int height;
 @property(readonly) NSDictionary * pixelAspectRatioDictionary;
 @property(readonly) NSDictionary * pixelTransferProperties;
+@property(readonly) NSDictionary * videoCompositionProcessorProperties;
+@property(readonly) NSDictionary * videoScalingProperties;
 @property(readonly) NSDictionary * videoSettingsDictionary;
 @property(readonly) int width;
 
@@ -25,12 +27,14 @@
 
 - (id)cleanApertureDictionary;
 - (id)compatibleMediaTypes;
-- (BOOL)dimensionsAreBoundingBox;
+- (bool)dimensionsAreBoundingBox;
 - (int)height;
 - (id)initWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (id)pixelAspectRatioDictionary;
 - (id)pixelTransferProperties;
-- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
+- (bool)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
+- (id)videoCompositionProcessorProperties;
+- (id)videoScalingProperties;
 - (id)videoSettingsDictionary;
 - (int)width;
 

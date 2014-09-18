@@ -2,6 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface TSTCellRegionColMajorIterator : NSObject <TSTCellRegionIterating> {
     struct set<TSUColumnRowRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUColumnRowRect> > { 
         struct __tree<TSUColumnRowRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUColumnRowRect> > { 
@@ -12,7 +14,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, TSTCellRangeColumnMajorLess> { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     struct { 
@@ -33,6 +35,11 @@
     } mCellID;
     } mCellRangeSet;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

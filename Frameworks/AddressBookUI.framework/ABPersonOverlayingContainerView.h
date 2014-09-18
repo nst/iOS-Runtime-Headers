@@ -2,24 +2,28 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTabsLayoutManager>, UIView;
+@class <ABPersonTabsLayoutManager>, NSString, UIView;
 
 @interface ABPersonOverlayingContainerView : UIScrollView <ABPersonTabsScrollView> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     UIView *_abContentView;
     UIView *_backgroundView;
-    float _minimumBottomInset;
+    double _minimumBottomInset;
     } _savedContentInset;
     <ABPersonTabsLayoutManager> *_tabsLayoutManager;
 }
 
 @property(retain) UIView * backgroundView;
 @property(retain) UIView * contentView;
-@property float minimumBottomInset;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property double minimumBottomInset;
+@property(readonly) Class superclass;
 @property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
 
 - (void)_updateContentFrameAndSize;
@@ -27,13 +31,13 @@
 - (id)contentView;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (float)minimumBottomInset;
+- (double)minimumBottomInset;
 - (void)setBackgroundView:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setContentView:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setMinimumBottomInset:(float)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setMinimumBottomInset:(double)arg1;
 - (void)setTabsLayoutManager:(id)arg1;
 - (id)tabsLayoutManager;
 

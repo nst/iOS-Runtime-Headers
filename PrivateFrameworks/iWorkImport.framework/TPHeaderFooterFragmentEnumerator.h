@@ -19,6 +19,8 @@
 - (int)headerFooterType;
 - (id)initWithPageMaster:(id)arg1;
 - (id)nextObject;
+- (void)p_incrementFragmentIndex;
+- (void)p_incrementHeaderFooterType;
 - (id)pageMaster;
 - (void)setFragmentIndex:(int)arg1;
 - (void)setHeaderFooterType:(int)arg1;

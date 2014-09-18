@@ -15,6 +15,12 @@
 @property(readonly) NSObject<OS_dispatch_queue> * renderQueue;
 
 + (id)defaultDispatch;
++ (id)iconRenderQueue;
++ (id)preemptiveLoadQueue;
++ (id)stylesheetLoadQueue;
++ (id)textureManagerRootQueue;
++ (id)tileDecodeQueue;
++ (id)tileDecodeStylingQueue;
 
 - (id)_initWithHomeQueue:(id)arg1 layoutQueue:(id)arg2 renderQueue:(id)arg3;
 - (id)_newLayoutQueue:(const char *)arg1;

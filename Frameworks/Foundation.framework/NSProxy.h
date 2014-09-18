@@ -7,21 +7,28 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface NSProxy <NSObject> {
     Class isa;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (int (*)())instanceMethodForSelector:(SEL)arg1;
 + (int (*)())methodForSelector:(SEL)arg1;
 + (id)_copyDescription;
-+ (BOOL)_isDeallocating;
-+ (BOOL)_tryRetain;
++ (bool)_isDeallocating;
++ (bool)_tryRetain;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)allowsWeakReference;
++ (bool)allowsWeakReference;
 + (id)autorelease;
 + (Class)class;
-+ (BOOL)conformsToProtocol:(id)arg1;
++ (bool)conformsToProtocol:(id)arg1;
 + (id)copy;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 + (void)dealloc;
@@ -31,18 +38,18 @@
 + (void)finalize;
 + (void)forwardInvocation:(id)arg1;
 + (id)forwardingTargetForSelector:(SEL)arg1;
-+ (unsigned int)hash;
++ (unsigned long long)hash;
 + (id)init;
 + (void)initialize;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
-+ (BOOL)isAncestorOfObject:(id)arg1;
-+ (BOOL)isEqual:(id)arg1;
-+ (BOOL)isFault;
-+ (BOOL)isKindOfClass:(Class)arg1;
-+ (BOOL)isMemberOfClass:(Class)arg1;
-+ (BOOL)isProxy;
-+ (BOOL)isSubclassOfClass:(Class)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
++ (bool)isAncestorOfObject:(id)arg1;
++ (bool)isEqual:(id)arg1;
++ (bool)isFault;
++ (bool)isKindOfClass:(Class)arg1;
++ (bool)isMemberOfClass:(Class)arg1;
++ (bool)isProxy;
++ (bool)isSubclassOfClass:(Class)arg1;
 + (id)methodSignatureForSelector:(SEL)arg1;
 + (id)mutableCopy;
 + (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -50,22 +57,22 @@
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 + (id)performSelector:(SEL)arg1;
 + (oneway void)release;
-+ (BOOL)respondsToSelector:(SEL)arg1;
++ (bool)respondsToSelector:(SEL)arg1;
 + (id)retain;
-+ (unsigned int)retainCount;
-+ (BOOL)retainWeakReference;
++ (unsigned long long)retainCount;
++ (bool)retainWeakReference;
 + (id)self;
 + (Class)superclass;
 + (struct _NSZone { }*)zone;
 
-- (BOOL)_allowsDirectEncoding;
+- (bool)_allowsDirectEncoding;
 - (id)_copyDescription;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (BOOL)allowsWeakReference;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (bool)allowsWeakReference;
 - (id)autorelease;
 - (Class)class;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
@@ -73,21 +80,21 @@
 - (void)finalize;
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFault;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isMemberOfClass:(Class)arg1;
-- (BOOL)isProxy;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isFault;
+- (bool)isKindOfClass:(Class)arg1;
+- (bool)isMemberOfClass:(Class)arg1;
+- (bool)isProxy;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)performSelector:(SEL)arg1;
 - (oneway void)release;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;

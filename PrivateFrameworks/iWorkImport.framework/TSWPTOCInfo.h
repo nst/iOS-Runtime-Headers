@@ -23,10 +23,12 @@
 @property(setter=setTOCEntries:,retain) NSArray * tocEntries;
 @property(setter=setTOCSettings:,retain) TSWPTOCSettings * tocSettings;
 
-+ (BOOL)canPartition;
++ (bool)canPartition;
 
 - (void)acceptVisitor:(id)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+- (id)containedStorageFormattedUsingParagraphStyle:(id)arg1;
+- (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (void)loadTOCInfoMessage:(const struct TOCInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeInfoArchive {} *x3; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Range> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
@@ -41,7 +43,7 @@
 - (void)setTOCEntries:(id)arg1;
 - (void)setTOCSettings:(id)arg1;
 - (void)setTocController:(id)arg1;
-- (BOOL)supportsAttachedComments;
+- (bool)supportsAttachedComments;
 - (id)tocController;
 - (id)tocEntries;
 - (id)tocSettings;

@@ -7,23 +7,24 @@
 @interface SALocalSearchRating : AceObject <SAAceSerializable> {
 }
 
-@property int count;
-@property(copy) NSString * description;
+@property long long count;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property double maxValue;
 @property(copy) NSString * providerId;
+@property(readonly) Class superclass;
 @property double value;
 
 + (id)rating;
 + (id)ratingWithDictionary:(id)arg1 context:(id)arg2;
 
-- (int)count;
-- (id)description;
+- (long long)count;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (double)maxValue;
 - (id)providerId;
-- (void)setCount:(int)arg1;
-- (void)setDescription:(id)arg1;
+- (void)setCount:(long long)arg1;
 - (void)setMaxValue:(double)arg1;
 - (void)setProviderId:(id)arg1;
 - (void)setValue:(double)arg1;

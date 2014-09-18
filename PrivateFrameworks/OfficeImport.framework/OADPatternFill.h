@@ -5,11 +5,11 @@
 @class OADColor, OADPattern;
 
 @interface OADPatternFill : OADFill {
+    boolmIsBgColorOverridden;
+    boolmIsFgColorOverridden;
+    boolmIsPatternOverridden;
     OADColor *mBgColor;
     OADColor *mFgColor;
-    BOOL mIsBgColorOverridden;
-    BOOL mIsFgColorOverridden;
-    BOOL mIsPatternOverridden;
     OADPattern *mPattern;
 }
 
@@ -19,12 +19,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fgColor;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isBgColorOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFgColorOverridden;
-- (BOOL)isPatternOverridden;
+- (bool)isBgColorOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isFgColorOverridden;
+- (bool)isPatternOverridden;
 - (id)namedImageDataWithBlipCollection:(id)arg1;
 - (id)pattern;
 - (void)setBgColor:(id)arg1;

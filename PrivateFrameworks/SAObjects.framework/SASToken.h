@@ -8,10 +8,16 @@
 }
 
 @property(copy) NSNumber * confidenceScore;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSNumber * endTime;
-@property BOOL removeSpaceAfter;
-@property BOOL removeSpaceBefore;
+@property(readonly) unsigned long long hash;
+@property(copy) NSString * originalText;
+@property(copy) NSString * recognitionStability;
+@property bool removeSpaceAfter;
+@property bool removeSpaceBefore;
 @property(copy) NSNumber * startTime;
+@property(readonly) Class superclass;
 @property(copy) NSString * text;
 
 + (id)token;
@@ -22,12 +28,16 @@
 - (id)encodedClassName;
 - (id)endTime;
 - (id)groupIdentifier;
-- (BOOL)removeSpaceAfter;
-- (BOOL)removeSpaceBefore;
+- (id)originalText;
+- (id)recognitionStability;
+- (bool)removeSpaceAfter;
+- (bool)removeSpaceBefore;
 - (void)setConfidenceScore:(id)arg1;
 - (void)setEndTime:(id)arg1;
-- (void)setRemoveSpaceAfter:(BOOL)arg1;
-- (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setOriginalText:(id)arg1;
+- (void)setRecognitionStability:(id)arg1;
+- (void)setRemoveSpaceAfter:(bool)arg1;
+- (void)setRemoveSpaceBefore:(bool)arg1;
 - (void)setStartTime:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)startTime;

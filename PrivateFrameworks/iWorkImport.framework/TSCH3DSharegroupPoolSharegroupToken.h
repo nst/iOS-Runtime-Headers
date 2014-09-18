@@ -14,12 +14,12 @@
 - (void)deleteTokenSharegroup;
 - (void)didRemoveAllInterests;
 - (void)flushTokenSharegroup;
-- (BOOL)isOneShot;
+- (bool)isOneShot;
 - (oneway void)release;
 - (void)releaseSharegroup:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)shouldGarbageCollect;
+- (unsigned long long)retainCount;
+- (bool)shouldGarbageCollect;
 - (id)tokenSharegroup;
 
 @end

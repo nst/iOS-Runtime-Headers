@@ -7,25 +7,25 @@
 @interface MCMDMPayload : MCPayload {
     int _accessRights;
     NSString *_checkInURLString;
-    BOOL _checkOutWhenRemoved;
     NSData *_identityPersistentID;
     NSString *_identityUUID;
     NSString *_serverURLString;
-    BOOL _signMessage;
     NSString *_topic;
-    BOOL _useDevelopmentAPNS;
+    bool_checkOutWhenRemoved;
+    bool_signMessage;
+    bool_useDevelopmentAPNS;
 }
 
 @property(readonly) int accessRights;
-@property(readonly) NSString * checkInURLString;
-@property(readonly) BOOL checkOutWhenRemoved;
+@property(retain,readonly) NSString * checkInURLString;
+@property(readonly) bool checkOutWhenRemoved;
 @property(retain) NSData * identityPersistentID;
-@property(readonly) NSString * identityUUID;
-@property(readonly) NSArray * localizedAccessRightDescriptions;
-@property(readonly) NSString * serverURLString;
-@property(readonly) BOOL signMessage;
-@property(readonly) NSString * topic;
-@property(readonly) BOOL useDevelopmentAPNS;
+@property(retain,readonly) NSString * identityUUID;
+@property(retain,readonly) NSArray * localizedAccessRightDescriptions;
+@property(retain,readonly) NSString * serverURLString;
+@property(readonly) bool signMessage;
+@property(retain,readonly) NSString * topic;
+@property(readonly) bool useDevelopmentAPNS;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -37,23 +37,22 @@
 - (id)_nonHTTPSURLErrorForField:(id)arg1;
 - (int)accessRights;
 - (id)checkInURLString;
-- (BOOL)checkOutWhenRemoved;
+- (bool)checkOutWhenRemoved;
 - (id)description;
 - (id)identityPersistentID;
 - (id)identityUUID;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;
 - (id)localizedAccessRightDescriptions;
+- (id)payloadDescriptionKeyValueSections;
 - (id)serverURLString;
 - (void)setIdentityPersistentID:(id)arg1;
-- (BOOL)signMessage;
+- (bool)signMessage;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
-- (id)subtitle2Description;
-- (id)subtitle2Label;
 - (id)title;
 - (id)topic;
-- (BOOL)useDevelopmentAPNS;
+- (bool)useDevelopmentAPNS;
 
 @end

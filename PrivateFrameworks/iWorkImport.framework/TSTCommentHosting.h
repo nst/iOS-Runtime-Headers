@@ -4,12 +4,12 @@
 
 @class <TSKModel>, NSDate, NSString, TSDCommentStorage, TSKAnnotationAuthor, TSTTableInfo;
 
-@interface TSTCommentHosting : NSObject <TSDAnnotationHosting> {
+@interface TSTCommentHosting : NSObject <TSDAnnotationHosting, TSDCommentStorageDelegate> {
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    BOOL _forRollover;
+    bool_forRollover;
     } mCellID;
     TSDCommentStorage *mStorage;
     TSTTableInfo *mTableInfo;
@@ -17,13 +17,19 @@
 
 @property(readonly) int annotationDisplayStringType;
 @property(readonly) int annotationType;
-@property(retain) TSKAnnotationAuthor * author;
+@property(readonly) TSKAnnotationAuthor * author;
 @property(readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cellID;
-@property(readonly) NSString * changeTrackingString;
+@property(readonly) NSString * changeTrackingContentFormatString;
+@property(readonly) NSString * changeTrackingContentString;
+@property(readonly) NSString * changeTrackingTitleString;
 @property(readonly) NSDate * date;
-@property(getter=isForRollover,readonly) BOOL forRollover;
-@property <TSKModel> * model;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(getter=isForRollover,readonly) bool forRollover;
+@property(readonly) unsigned long long hash;
+@property <TSKModel> * hostingModel;
 @property(copy) TSDCommentStorage * storage;
+@property(readonly) Class superclass;
 @property(readonly) TSTTableInfo * tableInfo;
 
 - (int)annotationDisplayStringType;
@@ -31,19 +37,20 @@
 - (id)author;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellID;
 - (id)commandForDeletingComment;
+- (void)commentStorageTextDidChange:(id)arg1;
 - (void)commitText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;
 - (Class)editorClass;
-- (unsigned int)hash;
+- (unsigned long long)hash;
+- (id)hostingModel;
 - (id)initWithStorage:(id)arg1 forTableInfo:(id)arg2 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isForRollover;
-- (id)model;
+- (bool)isEqual:(id)arg1;
+- (bool)isForRollover;
 - (void)setAuthor:(id)arg1;
-- (void)setModel:(id)arg1;
+- (void)setHostingModel:(id)arg1;
 - (void)setStorage:(id)arg1;
 - (id)storage;
 - (id)tableInfo;

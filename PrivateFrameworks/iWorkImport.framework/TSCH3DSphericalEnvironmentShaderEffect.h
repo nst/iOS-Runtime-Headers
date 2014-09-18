@@ -13,11 +13,11 @@
 + (Class)stateClass;
 
 - (void)addVariables:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)initWithMaterials:(id)arg1 pool:(id)arg2;
 - (void)inject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (const struct array<<anonymous>::TextureVariables, 2> { struct TextureVariables { id x_1_1_1; id x_1_1_2; id x_1_1_3; } x1[2]; }*)textureVariablesArray;
 - (void)updateState:(id)arg1 effectsStates:(id)arg2;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;

@@ -2,30 +2,45 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBRemoteDataProviderConnectionDelegate>, BBXPCIncomingConnection, NSMutableSet, NSString;
+@class <BBRemoteDataProviderStoreDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BBRemoteDataProviderConnection : NSObject <BBXPCConnectionDelegate, XPCProxyTarget, BBRemoteDataProviderRegistration> {
-    NSString *_appBundleID;
-    BOOL _connected;
-    BBXPCIncomingConnection *_connection;
-    <BBRemoteDataProviderConnectionDelegate> *_delegate;
-    NSMutableSet *_pendingProviders;
-    BOOL _registered;
+@interface BBRemoteDataProviderConnection : NSObject <BBRemoteDataProviderDelegate, BBDataProviderConnectionServerProxy, BBDataProviderStore> {
+    NSString *_bundleID;
+    NSMutableDictionary *_dataProvidersBySectionID;
+    NSMutableDictionary *_dataProvidersByUniversalSectionID;
+    <BBRemoteDataProviderStoreDelegate> *_delegate;
+    NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
+    bool_clientReady;
+    bool_connected;
 }
 
-- (void)_noteConnectionStateChanged;
-- (void)addDataProviderWithSectionID:(id)arg1;
-- (id)appBundleID;
-- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
+@property(readonly) NSString * bundleID;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isConnected;
+@property(readonly) NSString * serviceName;
+@property(readonly) Class superclass;
+
+- (void)_queue_removeDataProvider:(id)arg1;
+- (void)addDataProviderWithSectionID:(id)arg1 clientProxy:(id)arg2 identity:(id)arg3 completion:(id)arg4;
+- (void)addParentSectionFactory:(id)arg1;
+- (id)bundleID;
+- (void)clientIsReady:(id)arg1;
+- (id)dataProviderForSectionID:(id)arg1;
+- (id)dataProviderForUniversalSectionID:(id)arg1;
 - (void)dealloc;
-- (id)initWithConnection:(id)arg1 onQueue:(id)arg2 delegate:(id)arg3;
-- (void)invalidate;
-- (void)ping:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)registerServiceName:(id)arg1 appBundleID:(id)arg2;
+- (id)debugDescription;
+- (id)debugDescriptionWithChildren:(unsigned long long)arg1;
+- (id)initWithServiceName:(id)arg1 bundleID:(id)arg2 delegate:(id)arg3;
+- (bool)isConnected;
+- (void)loadAllDataProviders;
+- (void)performBlockOnDataProviders:(id)arg1;
+- (void)remoteDataProviderNeedsToWakeClient:(id)arg1;
+- (void)removeDataProvider:(id)arg1;
 - (void)removeDataProviderWithSectionID:(id)arg1;
-- (void)resume;
 - (id)serviceName;
+- (void)setConnected:(bool)arg1 completion:(id)arg2;
 
 @end

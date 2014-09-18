@@ -13,32 +13,35 @@
         double endTime; 
     RCUIConfiguration *_UIConfiguration;
     UIColor *_backgroundDebugColor;
+    double _majorTickMinimumSpacing;
     double _majorTickTimeUnit;
     } _markerClippingRange;
-    unsigned int _maximumMajorUnitsInVisibleDuration;
+    unsigned long long _maximumMajorUnitsInVisibleDuration;
     } _visibleTimeRange;
 }
 
 @property(copy) RCUIConfiguration * UIConfiguration;
 @property(retain) UIColor * backgroundDebugColor;
 @property struct { double x1; double x2; } markerClippingRange;
-@property unsigned int maximumMajorUnitsInVisibleDuration;
+@property unsigned long long maximumMajorUnitsInVisibleDuration;
 @property struct { double x1; double x2; } visibleTimeRange;
 
 - (void).cxx_destruct;
 - (id)UIConfiguration;
+- (void)_loadMajorTickMinimumSpacing;
 - (id)_timeLabelAttributes;
 - (void)_updateMajorTickTimeUnit;
 - (id)backgroundDebugColor;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })labelsSize;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })labelsSize;
 - (struct { double x1; double x2; })markerClippingRange;
-- (unsigned int)maximumMajorUnitsInVisibleDuration;
+- (unsigned long long)maximumMajorUnitsInVisibleDuration;
 - (void)setBackgroundDebugColor:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMarkerClippingRange:(struct { double x1; double x2; })arg1;
-- (void)setMaximumMajorUnitsInVisibleDuration:(unsigned int)arg1;
+- (void)setMaximumMajorUnitsInVisibleDuration:(unsigned long long)arg1;
 - (void)setUIConfiguration:(id)arg1;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })visibleTimeRange;

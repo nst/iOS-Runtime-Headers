@@ -6,18 +6,18 @@
 
 @interface TPLegacyLockKnobView : UIImageView {
     UIAlphaAnimation *_animation;
-    float _centerDelta;
+    double _centerDelta;
     TPLegacyBottomLockBar *_track;
-    BOOL _tracking;
+    bool_tracking;
 }
 
 - (void)beginTracking:(id)arg1;
 - (void)dealloc;
 - (id)initWithImage:(id)arg1;
-- (BOOL)isTracking;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)isTracking;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setLockView:(id)arg1;
-- (BOOL)shouldBeginTracking:(id)arg1;
+- (bool)shouldBeginTracking:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -6,21 +6,23 @@
 
 @interface _GCControllerAxisButtonInput : _GCControllerButtonInput {
     _GCControllerAxisInput *_axis;
-    BOOL _positive;
+    bool_positive;
 }
 
 @property _GCControllerAxisInput * axis;
-@property(getter=isPositive,readonly) BOOL positive;
+@property(getter=isPositive,readonly) bool positive;
 
 - (void).cxx_destruct;
+- (bool)_setValue:(float)arg1;
+- (bool)_setValueFromAxisButton:(float)arg1;
 - (id)axis;
 - (id)collection;
 - (id)description;
-- (id)initWithAxis:(id)arg1 positive:(BOOL)arg2;
-- (BOOL)isAnalog;
-- (BOOL)isPositive;
+- (id)initWithAxis:(id)arg1 positive:(bool)arg2;
+- (bool)isAnalog;
+- (bool)isPositive;
 - (void)setAxis:(id)arg1;
-- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
 - (float)value;
 
 @end

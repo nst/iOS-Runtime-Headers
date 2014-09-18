@@ -2,30 +2,36 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class NSObject<MSSearchDelegate>, NSObject<OS_dispatch_queue>;
+@class <MSSearchDelegate>, MSXPCConnection, NSString;
 
-@interface MSSearch : MSMailDefaultService {
-    NSObject<MSSearchDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_resultsQueue;
+@interface MSSearch : NSObject <MSDSearchResultsProtocol> {
+    MSXPCConnection *_connection;
+    <MSSearchDelegate> *_delegate;
 }
 
-@property NSObject<MSSearchDelegate> * delegate;
+@property(copy,readonly) NSString * debugDescription;
+@property <MSSearchDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 delegate:(id)arg5;
-+ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5 delegate:(id)arg6;
++ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned long long)arg3 delegate:(id)arg4;
++ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(bool)arg3 onServer:(bool)arg4 delegate:(id)arg5;
++ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(bool)arg3 onServer:(bool)arg4 onlyInboxes:(bool)arg5 delegate:(id)arg6;
 + (void)setUnitTestingResultsArray:(id)arg1;
 
 - (void)_delegateDidFindResults:(id)arg1;
 - (void)_delegateDidFinishWithError:(id)arg1;
-- (void)_findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5;
+- (void)_findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned long long)arg3;
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;
 - (id)_initWithDelegate:(id)arg1;
-- (BOOL)_unitTestsAreEnabled;
+- (id)_remoteObjectProxyWithErrorHandler:(id)arg1;
+- (bool)_unitTestsAreEnabled;
+- (void)cancel;
 - (void)dealloc;
 - (id)delegate;
-- (void)responseConnection:(id)arg1 handleError:(id)arg2;
-- (void)responseConnection:(id)arg1 handleResponse:(id)arg2;
+- (void)foundResults:(id)arg1 error:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

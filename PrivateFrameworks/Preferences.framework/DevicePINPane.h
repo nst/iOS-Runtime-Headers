@@ -2,91 +2,83 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIKeyboard, UITransitionView, UIView<PINEntryView>;
+@class NSString, UIKeyboard, UITransitionView, UIView<PINEntryView>;
 
-@interface DevicePINPane : PSEditingPane <UIKeyInput> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    int _autocapitalizationType;
-    int _autocorrectionType;
-    BOOL _isBlocked;
-    int _keyboardAppearance;
-    int _keyboardType;
+@interface DevicePINPane : PSEditingPane <UIKeyInput, UITextInputTraits, PSPINEntryViewDelegate> {
+    long long _autocapitalizationType;
+    long long _autocorrectionType;
+    long long _keyboardAppearance;
+    long long _keyboardType;
     UIKeyboard *_keypad;
-    BOOL _keypadActive;
-    } _keypadFrame;
     UIView<PINEntryView> *_pinView;
-    } _pinViewFrame;
-    BOOL _playSound;
-    BOOL _simplePIN;
     UITransitionView *_transitionView;
-    BOOL _transitioning;
+    bool_isBlocked;
+    bool_keypadActive;
+    bool_playSound;
+    bool_simplePIN;
+    bool_transitioning;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property BOOL enablesReturnKeyAutomatically;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
+@property long long autocapitalizationType;
+@property long long autocorrectionType;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool enablesReturnKeyAutomatically;
+@property(readonly) unsigned long long hash;
+@property long long keyboardAppearance;
+@property long long keyboardType;
+@property(retain) UIView<PINEntryView> * pinView;
+@property long long returnKeyType;
+@property(getter=isSecureTextEntry) bool secureTextEntry;
+@property long long spellCheckingType;
+@property(readonly) Class superclass;
 
-- (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setPlaysKeyboardClicks:(BOOL)arg1;
+- (void)_setKeypadState:(bool)arg1 animated:(bool)arg2;
+- (void)_setPlaysKeyboardClicks:(bool)arg1;
 - (void)activateKeypadView;
-- (void)adjustButtonsNow;
-- (int)autocapitalizationType;
-- (int)autocorrectionType;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
+- (long long)autocapitalizationType;
+- (long long)autocorrectionType;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (void)clearPassword;
 - (void)deactivateKeypadView;
 - (void)dealloc;
+- (void)delayForTextEntryAnimationsWithCompletion:(id)arg1;
 - (void)deleteBackward;
 - (void)dismissKeypad;
-- (BOOL)hasText;
+- (bool)hasText;
 - (void)hideError;
 - (void)hideFailedAttempts;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertText:(id)arg1;
-- (BOOL)isSecureTextEntry;
-- (int)keyboardAppearance;
-- (int)keyboardType;
+- (bool)isSecureTextEntry;
+- (long long)keyboardAppearance;
+- (long long)keyboardType;
 - (void)layoutSubviews;
 - (void)okButtonPressed;
 - (id)password;
 - (void)pinView:(id)arg1 pinEntered:(id)arg2;
-- (BOOL)requiresKeyboard;
-- (BOOL)resignFirstResponder;
-- (void)setAutocapitalizationType:(int)arg1;
-- (void)setAutocorrectionType:(int)arg1;
-- (void)setKeyboardAppearance:(int)arg1;
-- (void)setKeyboardType:(int)arg1;
-- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
-- (void)setSimplePIN:(BOOL)arg1 requiresKeyboard:(BOOL)arg2;
+- (void)pinView:(id)arg1 pinValueChanged:(id)arg2;
+- (id)pinView;
+- (bool)requiresKeyboard;
+- (bool)resignFirstResponder;
+- (void)setAutocapitalizationType:(long long)arg1;
+- (void)setAutocorrectionType:(long long)arg1;
+- (void)setKeyboardAppearance:(long long)arg1;
+- (void)setKeyboardIsNumeric:(bool)arg1;
+- (void)setKeyboardType:(long long)arg1;
+- (void)setKeyboardUserInteractionEnabled:(bool)arg1;
+- (void)setPINPolicyString:(id)arg1 visible:(bool)arg2;
+- (void)setPinView:(id)arg1;
+- (void)setSimplePIN:(bool)arg1 requiresKeyboard:(bool)arg2 numericOnly:(bool)arg3;
+- (void)setSimplePIN:(bool)arg1 requiresKeyboard:(bool)arg2;
 - (void)setText:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)showError:(id)arg1 error:(id)arg2 isBlocked:(BOOL)arg3 animate:(BOOL)arg4;
-- (void)showFailedAttempts:(int)arg1;
-- (BOOL)simplePIN;
-- (void)slideToNewPasscodeField:(BOOL)arg1 withKeyboard:(BOOL)arg2;
+- (void)showError:(id)arg1 error:(id)arg2 isBlocked:(bool)arg3 animate:(bool)arg4;
+- (void)showFailedAttempts:(long long)arg1;
+- (bool)simplePIN;
+- (void)slideToNewPasscodeField:(bool)arg1 requiresKeyboard:(bool)arg2 numericOnly:(bool)arg3;
+- (void)slideToNewPasscodeField:(bool)arg1 withKeyboard:(bool)arg2;
 - (id)specifierLabel;
 - (id)text;
 - (void)transitionViewDidComplete:(id)arg1;

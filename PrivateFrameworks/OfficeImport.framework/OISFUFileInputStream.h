@@ -2,15 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString;
+
 @interface OISFUFileInputStream : NSObject <SFUInputStream> {
+    boolmIsCachingDisabled;
     long long mCurrentOffset;
     long long mEndOffset;
     int mFd;
-    BOOL mIsCachingDisabled;
     long long mStartOffset;
 }
 
-- (BOOL)canSeek;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (bool)canSeek;
 - (void)close;
 - (id)closeLocalStream;
 - (void)dealloc;
@@ -20,7 +27,7 @@
 - (id)initWithPath:(id)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2;
 - (long long)offset;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
+- (unsigned long long)readToBuffer:(char *)arg1 size:(unsigned long long)arg2;
 - (void)seekToOffset:(long long)arg1;
 
 @end

@@ -6,50 +6,48 @@
    See Warning(s) below.
  */
 
-@class RCActionSheet, UIResponder, UIViewController, _RCModalItem;
+@class NSArray, NSString, RCActionSheetAlertController, UIResponder, UIViewController;
 
-@interface RCActionSheetController : NSObject <UIActionSheetDelegate, UIModalItemDelegate> {
+@interface RCActionSheetController : NSObject <UIActionSheetDelegate> {
     UIViewController *_accessoryViewController;
+    NSArray *_actionButtonTitles;
     id _actionHandlerBlock;
-    RCActionSheet *_actionSheet;
-    unsigned int _cancelButtonIndex;
-    BOOL _dismissDisabled;
-    BOOL _enabled;
-    BOOL _forceDismiss;
-    _RCModalItem *_modalItem;
+    RCActionSheetAlertController *_alertController;
+    NSString *_alertMessage;
+    NSString *_alertTitle;
+    NSString *_cancelButtonTitle;
     UIViewController *_modalItemPresentationViewController;
     UIResponder *_originalFirstResponder;
-    BOOL _showing;
+    bool_autoDismissDisabled;
+    bool_dismissWhenDismissIsEnabled;
+    bool_enabled;
+    bool_showing;
 }
 
 @property(readonly) UIViewController * accessoryViewController;
-@property(readonly) id actionHandlerBlock;
-@property BOOL dismissDisabled;
-@property BOOL enabled;
+@property(copy,readonly) id actionHandlerBlock;
+@property bool autoDismissDisabled;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool enabled;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)_actionIndexForButtonIndex:(unsigned int)arg1;
-- (unsigned int)_buttonIndexForActionIndex:(unsigned int)arg1;
+- (void)_invokeActionHandlerWithActionIndex:(long long)arg1;
+- (void)_willDismiss;
 - (id)accessoryViewController;
 - (id)actionHandlerBlock;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (bool)autoDismissDisabled;
 - (void)cancel;
 - (void)dealloc;
-- (void)didPresentActionSheet:(id)arg1;
-- (void)didPresentModalItem:(id)arg1;
-- (BOOL)dismissDisabled;
-- (void)dismissWithActionIndex:(int)arg1;
-- (BOOL)enabled;
+- (void)dismissWithActionIndex:(long long)arg1 invokeActionHandler:(bool)arg2;
+- (void)dismissWithActionIndex:(long long)arg1;
+- (bool)enabled;
 - (id)initWithTitle:(id)arg1 cancelTitle:(id)arg2 actionTitles:(id)arg3 accessoryViewController:(id)arg4;
-- (void)modalItem:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (BOOL)modalItem:(id)arg1 shouldDismissForButtonAtIndex:(int)arg2;
-- (void)modalItem:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (void)setDismissDisabled:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setAutoDismissDisabled:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)showInView:(id)arg1 actionHandlerBlock:(id)arg2;
-- (void)willPresentActionSheet:(id)arg1;
-- (void)willPresentModalItem:(id)arg1;
+- (void)showInViewController:(id)arg1 actionHandlerBlock:(id)arg2;
 
 @end

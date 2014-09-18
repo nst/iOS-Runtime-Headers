@@ -12,18 +12,18 @@
  */
 
 @interface SKRotate : SKAction {
-    struct SKCRotate { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; BOOL x29; BOOL x30; BOOL x31; BOOL x32; BOOL x33; BOOL x34; } *_mycaction;
+    struct SKCRotate { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; float x31; boolx32; boolx33; boolx34; boolx35; boolx36; boolx37; } *_mycaction;
 }
 
-+ (id)rotateByAngle:(float)arg1 duration:(double)arg2;
-+ (id)rotateByX:(float)arg1 duration:(double)arg2;
-+ (id)rotateByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
-+ (id)rotateByY:(float)arg1 duration:(double)arg2;
-+ (id)rotateToAngle:(float)arg1 duration:(double)arg2 shortestUnitArc:(BOOL)arg3;
-+ (id)rotateToAngle:(float)arg1 duration:(double)arg2;
-+ (id)rotateToX:(float)arg1 duration:(double)arg2;
-+ (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
-+ (id)rotateToY:(float)arg1 duration:(double)arg2;
++ (id)rotateByAngle:(double)arg1 duration:(double)arg2;
++ (id)rotateByX:(double)arg1 duration:(double)arg2;
++ (id)rotateByX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4;
++ (id)rotateByY:(double)arg1 duration:(double)arg2;
++ (id)rotateToAngle:(double)arg1 duration:(double)arg2 shortestUnitArc:(bool)arg3;
++ (id)rotateToAngle:(double)arg1 duration:(double)arg2;
++ (id)rotateToX:(double)arg1 duration:(double)arg2;
++ (id)rotateToX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4;
++ (id)rotateToY:(double)arg1 duration:(double)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

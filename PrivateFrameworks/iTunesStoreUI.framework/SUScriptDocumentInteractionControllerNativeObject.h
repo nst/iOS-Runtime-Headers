@@ -6,14 +6,21 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface SUScriptDocumentInteractionControllerNativeObject : SUScriptNativeObject <UIDocumentInteractionControllerDelegate> {
-    BOOL _didPickApplication;
-    BOOL _isVisible;
     id _presentationBlock;
-    BOOL _redisplayAfterRotation;
+    bool_didPickApplication;
+    bool_isVisible;
+    bool_redisplayAfterRotation;
 }
 
-- (BOOL)_isAffectedByWindowNotification:(id)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (bool)_isAffectedByWindowNotification:(id)arg1;
 - (void)_windowDidRotateNotification:(id)arg1;
 - (void)_windowWillRotateNotification:(id)arg1;
 - (void)dealloc;

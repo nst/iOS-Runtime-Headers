@@ -2,50 +2,58 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsFilter, ALAssetsLibrary, NSMutableDictionary, NSObject<PLAlbumProtocol>, PLPhotoLibrary;
+@class ALAssetsFilter, ALAssetsLibrary, NSMutableDictionary, NSObject<PLAlbumProtocol>, NSString, PLPhotoLibrary;
 
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
     struct NSObject { Class x1; } *_album;
     ALAssetsFilter *_assetsFilter;
-    unsigned int _groupType;
-    BOOL _isCloudSharedGroup;
-    BOOL _isValid;
+    unsigned long long _groupType;
     ALAssetsLibrary *_library;
-    BOOL _loadedAssets;
     PLPhotoLibrary *_photoLibrary;
     NSMutableDictionary *_propertyValues;
+    bool_applyHyperionFilter;
+    bool_isCloudSharedGroup;
+    bool_isValid;
+    bool_loadedAssets;
 }
 
 @property(retain) PLPhotoLibrary * _photoLibrary;
 @property(retain) NSObject<PLAlbumProtocol> * album;
+@property bool applyHyperionFilter;
 @property(retain) ALAssetsFilter * assetsFilter;
-@property unsigned int groupType;
-@property BOOL isCloudSharedGroup;
-@property BOOL isValid;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property unsigned long long groupType;
+@property(readonly) unsigned long long hash;
+@property bool isCloudSharedGroup;
+@property bool isValid;
 @property ALAssetsLibrary * library;
 @property(retain) NSMutableDictionary * propertyValues;
+@property(readonly) Class superclass;
 
 - (void)_performBlockAndWait:(id)arg1;
 - (id)_photoLibrary;
 - (struct NSObject { Class x1; }*)album;
 - (int)albumFilter;
+- (bool)applyHyperionFilter;
 - (id)assetsFilter;
 - (void)dealloc;
-- (unsigned int)groupType;
-- (BOOL)hasFilter;
+- (unsigned long long)groupType;
+- (bool)hasFilter;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2;
-- (BOOL)isCloudSharedGroup;
-- (BOOL)isValid;
+- (bool)isCloudSharedGroup;
+- (bool)isValid;
 - (id)library;
 - (void)libraryDidChange;
 - (void)populateAssets;
 - (id)propertyValues;
 - (void)resetAssets;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)setApplyHyperionFilter:(bool)arg1;
 - (void)setAssetsFilter:(id)arg1;
-- (void)setGroupType:(unsigned int)arg1;
-- (void)setIsCloudSharedGroup:(BOOL)arg1;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setGroupType:(unsigned long long)arg1;
+- (void)setIsCloudSharedGroup:(bool)arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPropertyValues:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;

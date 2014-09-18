@@ -2,46 +2,52 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
+@class BSAnimationSettings;
+
 @interface SBFAnimationSettings : SBFAnimationCurveSettings {
-    int _animationType;
+    long long _animationType;
     double _calculatedDuration;
-    float _damping;
+    double _damping;
     double _delay;
     double _duration;
-    float _epsilon;
-    float _mass;
-    float _stiffness;
+    double _epsilon;
+    BSAnimationSettings *_exportedSettings;
+    double _mass;
+    double _stiffness;
 }
 
-@property int animationType;
+@property long long animationType;
 @property double calculatedDuration;
-@property float damping;
+@property double damping;
 @property double delay;
 @property double duration;
-@property float epsilon;
-@property float mass;
-@property float stiffness;
+@property double epsilon;
+@property double mass;
+@property double stiffness;
 
-+ (id)_moduleWithSectionTitle:(id)arg1 delay:(BOOL)arg2;
++ (id)_moduleWithSectionTitle:(id)arg1 delay:(bool)arg2;
 + (id)_moduleWithSectionTitle:(id)arg1;
 + (id)settingsControllerModule;
 
-- (int)animationType;
+- (id)BSAnimationSettings;
+- (void)_invalidate;
+- (long long)animationType;
 - (double)calculatedDuration;
-- (float)damping;
+- (double)damping;
+- (void)dealloc;
 - (double)delay;
 - (double)duration;
-- (float)epsilon;
-- (float)mass;
-- (void)setAnimationType:(int)arg1;
+- (double)epsilon;
+- (double)mass;
+- (void)setAnimationType:(long long)arg1;
 - (void)setCalculatedDuration:(double)arg1;
-- (void)setDamping:(float)arg1;
+- (void)setDamping:(double)arg1;
 - (void)setDefaultValues;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setEpsilon:(float)arg1;
-- (void)setMass:(float)arg1;
-- (void)setStiffness:(float)arg1;
-- (float)stiffness;
+- (void)setEpsilon:(double)arg1;
+- (void)setMass:(double)arg1;
+- (void)setStiffness:(double)arg1;
+- (double)stiffness;
 
 @end

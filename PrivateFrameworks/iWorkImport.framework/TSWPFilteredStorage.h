@@ -2,51 +2,56 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPDeletionRangeMap, TSWPStorage;
+@class NSString, TSWPDeletionRangeMap, TSWPStorage;
 
 @interface TSWPFilteredStorage : NSObject <TSWPTextSource> {
-    unsigned int _length;
+    unsigned long long _length;
     TSWPDeletionRangeMap *_rangeMap;
     TSWPStorage *_storage;
-    unsigned int _storageLength;
+    unsigned long long _storageLength;
 }
 
-- (BOOL)adjustRangesByDelta:(int)arg1;
-- (id)attachmentAtCharIndex:(unsigned int)arg1;
-- (id)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
-- (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL[19])arg2 attributesTable:(id[19])arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
-- (unsigned int)charIndexMappedFromStorage:(unsigned int)arg1;
-- (unsigned int)charIndexMappedToStorage:(unsigned int)arg1;
-- (unsigned int)charIndexRemappedFromStorage:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedFromStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedToStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (id)characterStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (bool)adjustRangesByDelta:(long long)arg1;
+- (id)attachmentAtCharIndex:(unsigned long long)arg1;
+- (id)attachmentOrFootnoteAtCharIndex:(unsigned long long)arg1;
+- (void)attributesAtCharIndex:(unsigned long long)arg1 attributesOfInterest:(bool[19])arg2 attributesTable:(id[19])arg3 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4;
+- (unsigned long long)charIndexMappedFromStorage:(unsigned long long)arg1;
+- (unsigned long long)charIndexMappedToStorage:(unsigned long long)arg1;
+- (unsigned long long)charIndexRemappedFromStorage:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })charRangeMappedFromStorage:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })charRangeMappedToStorage:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (id)characterStyleAtCharIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
 - (void)dealloc;
-- (void)enumerateSmartFieldsWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
-- (id)footnoteReferenceAtCharIndex:(unsigned int)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)hasColumnBreakAtCharIndex:(unsigned int)arg1;
-- (BOOL)hasColumnStyleForParagraphBreakAtCharIndex:(unsigned int)arg1;
-- (BOOL)hasSmartFieldsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (long)hyphenationLocationBeforeIndex:(long)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 locale:(struct __CFLocale { }*)arg3 hyphenChar:(unsigned int*)arg4;
-- (id)initWithStorage:(id)arg1 subRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 removeRanges:(id)arg3;
-- (id)initWithStorage:(id)arg1 subRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)isWritingDirectionRightToLeftForParagraphAtCharIndex:(unsigned int)arg1;
-- (unsigned int)length;
-- (unsigned int)nextCharacterIndex:(unsigned int)arg1;
-- (id)objectAtLocationPriorToMappedCharIndex:(unsigned int)arg1 forAttributeKind:(int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (id)paragraphStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (unsigned int)previousCharacterIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForSelectionAtCharIndex:(unsigned int)arg1 caretIndex:(unsigned int)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })scanBackwardForWordAtCharIndex:(unsigned int)arg1;
-- (id)smartFieldAtCharIndex:(unsigned int)arg1 attributeKind:(int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (id)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)storageLength;
+- (void)enumerateSmartFieldsWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 usingBlock:(id)arg3;
+- (void)enumerateWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 usingBlock:(id)arg3;
+- (id)footnoteReferenceAtCharIndex:(unsigned long long)arg1;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)hasColumnBreakAtCharIndex:(unsigned long long)arg1;
+- (bool)hasColumnStyleForParagraphBreakAtCharIndex:(unsigned long long)arg1;
+- (bool)hasSmartFieldsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (long long)hyphenationLocationBeforeIndex:(long long)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 locale:(struct __CFLocale { }*)arg3 hyphenChar:(unsigned int*)arg4;
+- (id)initWithStorage:(id)arg1 subRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 removeRanges:(id)arg3;
+- (id)initWithStorage:(id)arg1 subRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)isWritingDirectionRightToLeftForParagraphAtCharIndex:(unsigned long long)arg1;
+- (unsigned long long)length;
+- (unsigned long long)nextCharacterIndex:(unsigned long long)arg1;
+- (id)objectAtLocationPriorToMappedCharIndex:(unsigned long long)arg1 forAttributeKind:(int)arg2 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
+- (id)paragraphStyleAtCharIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
+- (unsigned long long)previousCharacterIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeForSelectionAtCharIndex:(unsigned long long)arg1 caretIndex:(unsigned long long)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })scanBackwardForWordAtCharIndex:(unsigned long long)arg1;
+- (id)smartFieldAtCharIndex:(unsigned long long)arg1 attributeKind:(int)arg2 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
+- (id)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)storageLength;
 - (id)string;
-- (id)substringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })whiteSpaceRangeAtCharIndex:(unsigned int)arg1 includingBreaks:(BOOL)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })wordAtCharIndex:(unsigned int)arg1 includePreviousWord:(BOOL)arg2;
+- (id)substringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })whiteSpaceRangeAtCharIndex:(unsigned long long)arg1 includingBreaks:(bool)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })wordAtCharIndex:(unsigned long long)arg1 includePreviousWord:(bool)arg2;
 
 @end

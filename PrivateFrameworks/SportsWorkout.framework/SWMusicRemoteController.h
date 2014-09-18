@@ -9,23 +9,23 @@
     MPMediaItem *_interruptedItem;
     double _interruptedPlaybackTime;
     MPMediaQuery *_interruptedQueueAsQuery;
-    int _interruptedRepeatMode;
+    long long _interruptedRepeatMode;
     NSString *_latestSelectedPlaylistName;
-    int _musicSelection;
+    long long _musicSelection;
     NSString *_nowPlayingAlbum;
     NSString *_nowPlayingArtist;
-    BOOL _nowPlayingIsPlaying;
     NSString *_nowPlayingTitle;
     NSMutableArray *_playlists;
     MPMediaItem *_powersongItem;
     NSTimer *_volumeAdjustTimer;
     NSMutableArray *_workoutMixes;
+    bool_nowPlayingIsPlaying;
 }
 
 @property(copy) NSString * latestSelectedPlaylistName;
-@property int musicSelection;
-@property(readonly) BOOL powersongIsNowPlayingItem;
-@property(readonly) BOOL shouldControlMusic;
+@property long long musicSelection;
+@property(readonly) bool powersongIsNowPlayingItem;
+@property(readonly) bool shouldControlMusic;
 
 + (void)clearCachedDatabaseData;
 + (id)sharedMusicController;
@@ -38,10 +38,10 @@
 - (void)_mediaLibraryChanged:(id)arg1;
 - (void)_mediaRemoteNowPlayingInfoChanged:(id)arg1;
 - (void)_mediaRemoteNowPlayingIsPlayingChanged:(id)arg1;
-- (unsigned long long)_persistentUIDForPlaylistIndex:(unsigned int)arg1 isWorkoutMix:(BOOL)arg2;
+- (unsigned long long)_persistentUIDForPlaylistIndex:(unsigned long long)arg1 isWorkoutMix:(bool)arg2;
 - (void)_releaseRemoteCachedData;
 - (void)_resumeInterruptedQueue;
-- (void)_startPlaylistAtIndex:(unsigned int)arg1 isWorkoutMix:(BOOL)arg2;
+- (void)_startPlaylistAtIndex:(unsigned long long)arg1 isWorkoutMix:(bool)arg2;
 - (void)_startPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (void)beginAdjustingVolume:(int)arg1;
 - (void)beginSeekingBackward;
@@ -55,24 +55,24 @@
 - (void)goToNowPlaying;
 - (id)init;
 - (void)interruptPlaybackForTrackUID:(id)arg1;
-- (BOOL)isNowPlaying;
+- (bool)isNowPlaying;
 - (id)latestSelectedPlaylistName;
-- (int)musicSelection;
+- (long long)musicSelection;
 - (void)pause;
-- (unsigned long long)persistentUIDForPlaylistIndex:(unsigned int)arg1;
-- (unsigned long long)persistentUIDForWorkoutMixIndex:(unsigned int)arg1;
+- (unsigned long long)persistentUIDForPlaylistIndex:(unsigned long long)arg1;
+- (unsigned long long)persistentUIDForWorkoutMixIndex:(unsigned long long)arg1;
 - (void)play;
 - (id)playlists;
-- (BOOL)powersongIsNowPlayingItem;
+- (bool)powersongIsNowPlayingItem;
 - (void)selectNextSong;
 - (void)selectPreviousSong;
 - (void)setLatestSelectedPlaylistName:(id)arg1;
-- (void)setMusicSelection:(int)arg1;
-- (BOOL)shouldControlMusic;
-- (void)startPlaylistAtIndex:(unsigned int)arg1;
+- (void)setMusicSelection:(long long)arg1;
+- (bool)shouldControlMusic;
+- (void)startPlaylistAtIndex:(unsigned long long)arg1;
 - (void)startPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (void)startShuffleSongs;
-- (void)startWorkoutMixAtIndex:(unsigned int)arg1;
+- (void)startWorkoutMixAtIndex:(unsigned long long)arg1;
 - (void)startWorkoutMixWithPersistentUID:(unsigned long long)arg1;
 - (id)workoutMixes;
 

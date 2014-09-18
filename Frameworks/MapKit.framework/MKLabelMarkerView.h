@@ -5,7 +5,7 @@
 @interface MKLabelMarkerView : MKAnnotationView {
 }
 
-+ (BOOL)_followsTerrain;
++ (bool)_followsTerrain;
 
 - (void)_deregisterObserver;
 - (void)_registerObserver;

@@ -6,11 +6,11 @@
 
 @interface CannedAudioInjector : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
+        long long __sig; 
+        BOOL __opaque[40]; 
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -22,32 +22,32 @@
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
     NSString *_cannedMoviePath;
-    BOOL _fromBeginning;
     } _internalFormat;
     int _position;
     NSMutableData *_samples;
     } _samplesConditional;
     } _samplesMutex;
+    bool_fromBeginning;
 }
 
 @property(retain) NSString * cannedMoviePath;
-@property BOOL fromBeginning;
+@property bool fromBeginning;
 @property int position;
 @property(retain) NSMutableData * samples;
 
-+ (BOOL)isAudioAvailable:(id)arg1;
++ (bool)isAudioAvailable:(id)arg1;
 
 - (id)cannedMoviePath;
 - (void)dealloc;
-- (long)decodeAudio;
-- (BOOL)fromBeginning;
-- (id)initWithPath:(id)arg1 withDescription:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg2 fromBeginning:(BOOL)arg3;
-- (void)injectToBuffer:(char *)arg1 size:(int)arg2 time:(double)arg3 muted:(BOOL)arg4;
+- (int)decodeAudio;
+- (bool)fromBeginning;
+- (id)initWithPath:(id)arg1 withDescription:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg2 fromBeginning:(bool)arg3;
+- (void)injectToBuffer:(char *)arg1 size:(int)arg2 time:(double)arg3 muted:(bool)arg4;
 - (int)position;
-- (long)readRawAudioSamples;
+- (int)readRawAudioSamples;
 - (id)samples;
 - (void)setCannedMoviePath:(id)arg1;
-- (void)setFromBeginning:(BOOL)arg1;
+- (void)setFromBeginning:(bool)arg1;
 - (void)setPosition:(int)arg1;
 - (void)setSamples:(id)arg1;
 

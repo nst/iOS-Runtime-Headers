@@ -2,26 +2,38 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
+@class GEOAlmanacRiseTransitSet, NSDate;
+
 @interface GEOAlmanac : NSObject {
-    struct { 
-        double latitude; 
-        double longitude; 
-    } _coordinate;
-    double _nextSunrise;
-    double _nextSunset;
-    double _sunrise;
-    double _sunset;
+    GEOAlmanacRiseTransitSet *_currentRiseTransitSet;
+    GEOAlmanacRiseTransitSet *_nextRiseTransitSet;
+    GEOAlmanacRiseTransitSet *_previousRiseTransitSet;
 }
 
-@property(readonly) BOOL isDayLight;
+@property(readonly) bool isDayLight;
+@property(readonly) NSDate * nextSunrise;
+@property(readonly) NSDate * nextSunset;
+@property(readonly) NSDate * previousSunrise;
+@property(readonly) NSDate * previousSunset;
+@property(readonly) NSDate * sunrise;
+@property(readonly) NSDate * sunset;
 
-- (id).cxx_construct;
+- (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 altitudeInDegrees:(double)arg2;
+- (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 date:(id)arg2 altitudeInDegrees:(double)arg3;
+- (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 time:(double)arg2 altitudeInDegrees:(double)arg3;
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 time:(double)arg2;
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1;
 - (void)calculateGeocentricDirectionForSunX:(double*)arg1 Y:(double*)arg2 Z:(double*)arg3;
-- (double)intervalForNextAstronomicalChange;
-- (double)intervalForNextAstronomicalChangeFromTime:(double)arg1;
-- (BOOL)isDayLight;
-- (BOOL)isDayLightForTime:(double)arg1;
+- (void)dealloc;
+- (bool)isDayLight;
+- (bool)isDayLightForDate:(id)arg1;
+- (bool)isDayLightForTime:(double)arg1;
+- (id)nextSunrise;
+- (id)nextSunset;
+- (id)previousSunrise;
+- (id)previousSunset;
+- (id)sortedTimesForDate:(id)arg1;
+- (id)sunrise;
+- (id)sunset;
 
 @end

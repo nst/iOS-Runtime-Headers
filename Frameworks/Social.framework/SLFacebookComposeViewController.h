@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class ACAccount, ACAccountStore, ALAssetsLibrary, SLFacebookAlbumChooserViewController, SLFacebookAlbumManager, SLFacebookPlaceManager, SLFacebookPost, SLFacebookPostPrivacyManager, SLFacebookSession, SLFacebookVideoOptionsViewController, SLSheetAction, SLSheetPlaceViewController, SLVideoQualityOption, UIViewController<SLFacebookAudienceViewController>;
+@class ACAccount, ACAccountStore, ALAssetsLibrary, CLInUseAssertion, NSString, SLComposeSheetConfigurationItem, SLFacebookAlbumChooserViewController, SLFacebookAlbumManager, SLFacebookPlaceManager, SLFacebookPost, SLFacebookPostPrivacyManager, SLFacebookSession, SLFacebookVideoOptionsViewController, SLSheetPlaceViewController, SLVideoQualityOption, UIViewController<SLFacebookAudienceViewController>;
 
-@interface SLFacebookComposeViewController : SLComposeServiceViewController <SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate, SLFacebookAudienceViewControllerDelegate, SLFacebookAlbumChooserViewControllerDelegate, SLFacebookVideoOptionsDelegate> {
+@interface SLFacebookComposeViewController : SLComposeServiceViewController <SLFacebookAudienceViewControllerDelegate, SLFacebookAlbumChooserViewControllerDelegate, SLFacebookVideoOptionsDelegate, SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate> {
     struct { 
         unsigned int showAlbumAction : 1; 
         unsigned int showPrivacyAction : 1; 
@@ -17,40 +17,46 @@
     ACAccountStore *_accountStore;
     } _actionFlags;
     SLFacebookAlbumChooserViewController *_albumChooserViewController;
+    SLComposeSheetConfigurationItem *_albumConfigurationItem;
     SLFacebookAlbumManager *_albumManager;
-    SLSheetAction *_albumSheetAction;
     ALAssetsLibrary *_assetsLibrary;
     UIViewController<SLFacebookAudienceViewController> *_audienceViewController;
     id _completionHandler;
-    BOOL _didFetchPrivilegedAccount;
-    BOOL _hasAccessToAccount;
-    BOOL _hasCheckedAccess;
-    BOOL _hasShowedLocationDeniedAlert;
+    CLInUseAssertion *_locationInUseAssertion;
+    SLComposeSheetConfigurationItem *_placeConfigurationItem;
     SLFacebookPlaceManager *_placeManager;
-    SLSheetAction *_placeSheetAction;
     SLSheetPlaceViewController *_placeViewController;
     SLFacebookPost *_post;
     SLFacebookPostPrivacyManager *_postPrivacyManager;
-    SLSheetAction *_privacySheetAction;
+    SLComposeSheetConfigurationItem *_privacyConfigurationItem;
     ACAccount *_privilegedAccount;
     SLVideoQualityOption *_selectedVideoQualityOption;
     SLFacebookSession *_session;
-    SLSheetAction *_videoOptionsAction;
+    SLComposeSheetConfigurationItem *_videoOptionsConfigurationItem;
     SLFacebookVideoOptionsViewController *_videoOptionsViewController;
-    BOOL _wasPresented;
+    bool_didFetchPrivilegedAccount;
+    bool_hasAccessToAccount;
+    bool_hasCheckedAccess;
+    bool_hasShowedLocationDeniedAlert;
 }
 
 @property(retain) ACAccountStore * accountStore;
 @property(copy) id completionHandler;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) ACAccount * privilegedAccount;
+@property(readonly) Class superclass;
 
 + (id)serviceBundle;
 
 - (void).cxx_destruct;
-- (id)_albumSheetAction;
-- (void)_handlePostPrivacyResultWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (BOOL)_isLocationAuthorizationDenied;
-- (id)_placeSheetAction;
+- (id)_albumConfigurationItem;
+- (void)_handlePostPrivacyResultWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)_hostApplicationDidEnterBackground;
+- (void)_hostApplicationWillEnterForeground;
+- (bool)_isLocationAuthorizationDenied;
+- (id)_placeConfigurationItem;
 - (id)_postPrivacyManager;
 - (void)_presentAlbumViewController;
 - (void)_presentAudienceViewController;
@@ -58,42 +64,39 @@
 - (void)_presentNoAccountsAlert;
 - (void)_presentPlaceViewController;
 - (void)_presentVideoOptionsViewController;
-- (id)_privacySheetAction;
+- (id)_privacyConfigurationItem;
 - (void)_setPlace:(id)arg1;
 - (void)_setVideoSizeOptionIdentifier:(id)arg1;
-- (void)_updateAlbumSheetActionWithDefaultAlbum;
-- (void)_updatePrivacySheetActionWithDefaultPrivacySetting;
+- (void)_updateAlbumConfigurationItemWithDefaultAlbum;
+- (void)_updatePrivacyConfigurationItemWithDefaultPrivacySetting;
 - (id)_videoOptionIdentifer;
-- (id)_videoOptionsAction;
+- (id)_videoOptionsConfigurationItem;
 - (id)_videoQualityOption;
 - (id)accountStore;
 - (void)albumChooserViewController:(id)arg1 didSelectAlbum:(id)arg2;
 - (id)albumManager;
 - (void)audienceViewController:(id)arg1 didSelectPostPrivacySetting:(id)arg2;
-- (void)callCompletionHandlerWithResult:(int)arg1;
-- (BOOL)canPost;
+- (void)callCompletionHandlerWithResult:(long long)arg1;
 - (id)completionHandler;
+- (id)configurationItems;
 - (void)didReceiveMemoryWarning;
+- (void)didSelectPost;
 - (void)handleImagePostWithURL;
-- (BOOL)hasAccountAccess;
+- (bool)hasAccountAccess;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)loadView;
+- (bool)isContentValid;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeViewController:(id)arg1 didSelectPlace:(id)arg2;
+- (void)presentationAnimationDidFinish;
 - (id)privilegedAccount;
-- (void)send;
 - (void)setAccountStore:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setupCommonUI;
-- (id)sheetActions;
-- (void)sheetPresentationAnimationDidFinish;
-- (BOOL)validateText:(id)arg1;
 - (void)videoOptionsViewController:(id)arg1 didSelectVideoQualityOption:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidUnload;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

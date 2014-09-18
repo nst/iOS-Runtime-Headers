@@ -8,17 +8,17 @@
     NSArray *mImages;
 }
 
-- (BOOL)allocateFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg1;
-- (void)allocateTileFramebufferWithTileAllocationInfo:(const struct TileFramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg1;
+- (bool)allocateFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; }*)arg1;
+- (void)allocateTileFramebufferWithTileAllocationInfo:(const struct TileFramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; }*)arg1;
 - (void)dealloc;
 - (id)initWithRenderCycleInfo:(const struct RenderCycleInfo { id x1; id x2; id x3; }*)arg1;
 - (Class)layerClass;
-- (void)p_setupPipelineWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3 antialiasing:(BOOL)arg4;
-- (void)presentRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; BOOL x5; }*)arg1;
+- (void)p_setupPipelineWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3 antialiasing:(bool)arg4;
+- (void)presentRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; boolx5; }*)arg1;
 - (void)restoreDefaultRenderPresenter;
-- (BOOL)runPipeline:(id)arg1;
-- (void)setupTextureSizeHintForAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg1;
-- (BOOL)shouldRenderLegendIntoSeparateLayer;
+- (bool)runPipeline:(id)arg1;
+- (void)setupTextureSizeHintForAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; }*)arg1;
+- (bool)shouldRenderLegendIntoSeparateLayer;
 - (void)switchToRenderPresenter:(id)arg1;
 - (id)tileFBOResource;
 

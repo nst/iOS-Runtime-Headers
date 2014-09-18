@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUStationActionsViewControllerDelegate>, MPAVItem, NSArray, NSMutableArray, RUInnerShadowHeaderFooterView, RUStationTuningView, RadioStation, UILabel, UISwitch, UITableView, UITableViewCell, _RUStationTrackInfoView;
+@class <RUStationActionsViewControllerDelegate>, MPAVItem, NSArray, NSMutableArray, NSString, RUInnerShadowHeaderFooterView, RUStationTrackInfoView, RUStationTuningView, RadioStation, UILabel, UISwitch, UITableView, UITableViewCell;
 
-@interface RUStationActionsViewController : UIViewController <_RUStationTrackInfoViewDelegate, MCProfileConnectionObserver, SKStoreProductViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface RUStationActionsViewController : UIViewController <RUStationTrackInfoViewDelegate, MCProfileConnectionObserver, SKStoreProductViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UILabel *_copyrightLabel;
-    int _currentAction;
+    long long _currentAction;
     <RUStationActionsViewControllerDelegate> *_delegate;
-    BOOL _isProfileExplicitContentRestricted;
     MPAVItem *_item;
     UILabel *_navigationTitleLabel;
     UISwitch *_playExplicitTracksSwitch;
@@ -19,29 +18,44 @@
     RUStationTuningView *_stationTuningView;
     UITableView *_tableView;
     RUInnerShadowHeaderFooterView *_topShadowView;
-    _RUStationTrackInfoView *_trackInfoView;
+    RUStationTrackInfoView *_trackInfoView;
+    bool_bagShowsExplicitToggle;
+    bool_isProfileExplicitContentRestricted;
+    bool_needsTrackInfoViewHeightReset;
+    bool_showsDoneButton;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <RUStationActionsViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) MPAVItem * item;
+@property bool showsDoneButton;
 @property(readonly) RadioStation * station;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addDerivedStationUsingArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)_addDerivedStationUsingArtist:(bool)arg1 withCompletionHandler:(id)arg2;
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1;
-- (id)_indexPathForStationAction:(int)arg1;
+- (id)_indexPathForStationAction:(long long)arg1;
 - (void)_layoutTopShadowView;
-- (id)_newSectionHeaderWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2;
-- (id)_newShadowViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_playExplicitSwitchAction:(id)arg1;
+- (id)_newSectionHeaderWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 title:(id)arg2;
+- (id)_newShadowViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_playExplicitToggleAction:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
+- (double)_sectionHeaderHeight;
+- (id)_sectionHeaderTitleLabelFont;
 - (void)_showStoreSheetAction:(id)arg1;
-- (int)_stationActionForIndexPath:(id)arg1;
+- (long long)_stationActionForIndexPath:(id)arg1;
+- (void)_storeBagDidLoadNotification:(id)arg1;
 - (void)_updateAvailableActions;
+- (void)_updateForLoadedStoreBag:(id)arg1;
 - (void)_updateIsProfileExplicitContentRestrictedForProfileConnection:(id)arg1;
 - (void)_updateTableFooterView;
+- (void)_updateViewForHorizontalSizeClassChangeAllowingTableReload:(bool)arg1;
 - (void)_userDefaultExplicitTracksEnabledDidChangeNotification:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
@@ -50,27 +64,31 @@
 - (id)initWithStation:(id)arg1 item:(id)arg2 playbackQueue:(id)arg3;
 - (id)item;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setShowsDoneButton:(bool)arg1;
+- (bool)showsDoneButton;
 - (id)station;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)trackInfoViewDidTapArtwork:(id)arg1;
+- (void)trackInfoViewDidTapStoreButton:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

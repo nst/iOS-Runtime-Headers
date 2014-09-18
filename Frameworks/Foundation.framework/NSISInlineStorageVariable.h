@@ -6,25 +6,29 @@
 
 @interface NSISInlineStorageVariable : NSISVariable <NSISVariableDelegate> {
     NSString *_name;
-    BOOL _shouldBeMinimized;
     int _valueRestriction;
+    bool_shouldBeMinimized;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * name;
-@property BOOL shouldBeMinimized;
+@property bool shouldBeMinimized;
+@property(readonly) Class superclass;
 @property int valueRestriction;
 
 - (oneway void)dealloc;
 - (id)markedConstraint;
 - (id)name;
 - (id)nsis_descriptionOfVariable:(id)arg1;
-- (BOOL)nsis_shouldIntegralizeVariable:(id)arg1;
+- (bool)nsis_shouldIntegralizeVariable:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
-- (BOOL)nsis_valueOfVariableIsUserObservable:(id)arg1;
+- (bool)nsis_valueOfVariableIsUserObservable:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setShouldBeMinimized:(BOOL)arg1;
+- (void)setShouldBeMinimized:(bool)arg1;
 - (void)setValueRestriction:(int)arg1;
-- (BOOL)shouldBeMinimized;
+- (bool)shouldBeMinimized;
 - (int)valueRestriction;
 
 @end

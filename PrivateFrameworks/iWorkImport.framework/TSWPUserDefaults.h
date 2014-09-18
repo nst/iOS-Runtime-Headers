@@ -5,17 +5,17 @@
 @interface TSWPUserDefaults : NSObject {
 }
 
-+ (BOOL)automaticallyDetectLinks;
-+ (BOOL)automaticallyDetectLists;
++ (bool)automaticallyDetectLinks;
++ (bool)automaticallyDetectLists;
 + (id)invisiblesColor;
-+ (BOOL)p_UserDefaultSet:(id)arg1 force:(BOOL)arg2;
-+ (void)registerUserDefaults:(BOOL)arg1;
-+ (void)setAutomaticallyDetectLinks:(BOOL)arg1;
-+ (void)setAutomaticallyDetectLists:(BOOL)arg1;
++ (bool)p_UserDefaultSet:(id)arg1 force:(bool)arg2;
++ (void)registerUserDefaults:(bool)arg1;
++ (void)setAutomaticallyDetectLinks:(bool)arg1;
++ (void)setAutomaticallyDetectLists:(bool)arg1;
 + (void)setInvisiblesColor:(id)arg1;
-+ (void)setSpellCheckingEnabled:(BOOL)arg1;
-+ (void)setSuperscriptNumericalSuffixes:(BOOL)arg1;
-+ (BOOL)spellCheckingEnabled;
-+ (BOOL)superscriptNumericalSuffixes;
++ (void)setSpellCheckingEnabled:(bool)arg1;
++ (void)setSuperscriptNumericalSuffixes:(bool)arg1;
++ (bool)spellCheckingEnabled;
++ (bool)superscriptNumericalSuffixes;
 
 @end

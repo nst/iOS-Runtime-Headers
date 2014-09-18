@@ -11,18 +11,18 @@
     NSMutableArray *_notifyTokens;
 }
 
-@property(readonly) NSArray * accounts;
+@property(copy,readonly) NSArray * accounts;
 @property(readonly) SSAccount * activeAccount;
 @property(readonly) SSAccount * activeLockerAccount;
-@property(getter=isAuthenticationActive,readonly) BOOL authenticationActive;
-@property(getter=isExpired,readonly) BOOL expired;
+@property(getter=isAuthenticationActive,readonly) bool authenticationActive;
+@property(getter=isExpired,readonly) bool expired;
 
 + (id)defaultStore;
 + (id)existingDefaultStore;
-+ (BOOL)isExpired;
-+ (BOOL)isExpiredForTokenType:(int)arg1;
++ (bool)isExpired;
++ (bool)isExpiredForTokenType:(long long)arg1;
 + (void)resetExpiration;
-+ (void)resetExpirationForTokenType:(int)arg1;
++ (void)resetExpirationForTokenType:(long long)arg1;
 + (void)setDefaultStore:(id)arg1;
 + (double)tokenExpirationInterval;
 
@@ -30,7 +30,8 @@
 - (void)_dispatchSync:(id)arg1;
 - (id)_keyValueStore;
 - (void)_postAccountStoreChangeNotification;
-- (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
+- (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(bool)arg2;
+- (id)accountWithUniqueIdentifier:(id)arg1 scope:(long long)arg2;
 - (id)accountWithUniqueIdentifier:(id)arg1;
 - (id)accounts;
 - (id)activeAccount;
@@ -39,12 +40,12 @@
 - (void)dealloc;
 - (void)getDefaultAccountNameUsingBlock:(id)arg1;
 - (id)init;
-- (BOOL)isAuthenticationActive;
-- (BOOL)isExpired;
-- (BOOL)isExpiredForTokenType:(int)arg1;
+- (bool)isAuthenticationActive;
+- (bool)isExpired;
+- (bool)isExpiredForTokenType:(long long)arg1;
 - (void)reloadAccounts;
 - (void)resetExpiration;
-- (void)resetExpirationForTokenType:(int)arg1;
+- (void)resetExpirationForTokenType:(long long)arg1;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
 - (id)setActiveAccount:(id)arg1;
 - (id)setActiveLockerAccount:(id)arg1;

@@ -8,11 +8,11 @@
 }
 
 @property(readonly) NSUUID * advertisingIdentifier;
-@property(getter=isAdvertisingTrackingEnabled,readonly) BOOL advertisingTrackingEnabled;
+@property(getter=isAdvertisingTrackingEnabled,readonly) bool advertisingTrackingEnabled;
 
 + (id)sharedManager;
 
 - (id)advertisingIdentifier;
-- (BOOL)isAdvertisingTrackingEnabled;
+- (bool)isAdvertisingTrackingEnabled;
 
 @end

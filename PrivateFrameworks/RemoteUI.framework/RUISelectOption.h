@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface RUISelectOption : NSObject {
-    NSString *label;
-    NSString *value;
+    NSString *_label;
+    NSString *_value;
 }
 
 @property(retain) NSString * label;
 @property(retain) NSString * value;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)label;
 - (void)setLabel:(id)arg1;
 - (void)setValue:(id)arg1;

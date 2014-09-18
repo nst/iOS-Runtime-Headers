@@ -6,28 +6,31 @@
 
 @interface SCROBrailleKey : NSObject <NSCoding> {
     id _appToken;
-    long _displayToken;
-    BOOL _hasRouterInfo;
+    int _displayMode;
+    int _displayToken;
     NSString *_identifier;
     NSMutableArray *_maskArray;
-    long _routerIndex;
-    long _routerLocation;
-    int _routerToken;
+    long long _routerIndex;
+    long long _routerLocation;
+    long long _routerToken;
+    bool_hasRouterInfo;
 }
 
-- (void)addKeyMask:(unsigned long)arg1;
+- (void)addKeyMask:(unsigned int)arg1;
 - (void)addModifierMask:(unsigned int)arg1;
 - (void)addSpacebarKeyMask;
 - (void)dealloc;
 - (id)description;
-- (long)displayToken;
+- (int)displayMode;
+- (int)displayToken;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)getRouterIndex:(int*)arg1 token:(int*)arg2 location:(int*)arg3 appToken:(id*)arg4;
+- (bool)getRouterIndex:(long long*)arg1 token:(long long*)arg2 location:(long long*)arg3 appToken:(id*)arg4;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)keyMasks;
-- (void)setDisplayToken:(long)arg1;
-- (void)setRouterIndex:(long)arg1 token:(int)arg2 location:(long)arg3 appToken:(id)arg4;
+- (void)setDisplayMode:(int)arg1;
+- (void)setDisplayToken:(int)arg1;
+- (void)setRouterIndex:(long long)arg1 token:(long long)arg2 location:(long long)arg3 appToken:(id)arg4;
 
 @end

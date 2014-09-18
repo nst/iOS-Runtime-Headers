@@ -6,22 +6,22 @@
 
 @interface _UIBackdropEffectView : UIView {
     CABackdropLayer *_backdropLayer;
-    float _zoom;
+    double _zoom;
 }
 
 @property(retain) CABackdropLayer * backdropLayer;
-@property float zoom;
+@property double zoom;
 
 + (Class)layerClass;
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)backdropLayer;
 - (void)backdropLayerStatisticsDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setBackdropLayer:(id)arg1;
-- (void)setZoom:(float)arg1;
+- (void)setZoom:(double)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
-- (float)zoom;
+- (double)zoom;
 
 @end

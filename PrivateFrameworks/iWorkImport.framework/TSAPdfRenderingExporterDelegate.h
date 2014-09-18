@@ -5,13 +5,14 @@
 @class NSString, TSARenderingExporter;
 
 @interface TSAPdfRenderingExporterDelegate : NSObject <TSARenderingExporterDelegate> {
+    boolmRequireCopyPassword;
+    boolmRequireOpenPassword;
+    boolmRequirePrintPassword;
+    double mMaxPixels;
     NSString *mPassphraseOpen;
     NSString *mPassphrasePrintCopy;
     TSARenderingExporter *mRenderingExporter;
     int mRenderingQuality;
-    BOOL mRequireCopyPassword;
-    BOOL mRequireOpenPassword;
-    BOOL mRequirePrintPassword;
 }
 
 - (void)dealloc;
@@ -20,13 +21,14 @@
 - (void)releaseCGContext:(struct CGContext { }*)arg1;
 - (int)renderingQuality;
 - (void)setCopyPassphrase:(id)arg1 hint:(id)arg2;
+- (void)setMaxPixels:(double)arg1;
 - (void)setPassphrase:(id)arg1 hint:(id)arg2;
 - (void)setPrintPassphrase:(id)arg1 hint:(id)arg2;
 - (void)setRenderingQuality:(int)arg1;
 - (void)setup;
-- (BOOL)supportsPaging;
-- (BOOL)supportsRenderingQuality;
+- (bool)supportsPaging;
+- (bool)supportsRenderingQuality;
 - (void)teardown;
-- (float)viewScale;
+- (double)viewScale;
 
 @end

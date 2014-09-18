@@ -37,7 +37,7 @@
 - (id)additionalMessageHeaders;
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)certDataArray;
-- (int)command;
+- (long long)command;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (struct __SecKey { }*)identityPrivateKey;
@@ -49,7 +49,7 @@
 - (struct __SecKey { }*)pushPrivateKey;
 - (struct __SecKey { }*)pushPublicKey;
 - (id)pushToken;
-- (int)responseCommand;
+- (long long)responseCommand;
 - (id)selfURI;
 - (void)setCertDataArray:(id)arg1;
 - (void)setIDCertificate:(id)arg1;
@@ -64,11 +64,12 @@
 - (void)setSelfURI:(id)arg1;
 - (void)setUserIDArray:(id)arg1;
 - (id)userIDArray;
-- (BOOL)wantsBagKey;
-- (BOOL)wantsBinaryPush;
-- (BOOL)wantsBodySignature;
-- (BOOL)wantsCompressedBody;
-- (BOOL)wantsHTTPHeaders;
-- (BOOL)wantsSignature;
+- (bool)wantsBagKey;
+- (bool)wantsBinaryPush;
+- (bool)wantsBodySignature;
+- (bool)wantsCompressedBody;
+- (bool)wantsHTTPHeaders;
+- (bool)wantsIDSServer;
+- (bool)wantsSignature;
 
 @end

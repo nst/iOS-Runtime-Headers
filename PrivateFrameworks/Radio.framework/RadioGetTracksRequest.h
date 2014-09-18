@@ -2,47 +2,51 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSData, RadioPlayEventCollection, RadioPlaybackContext, RadioStation, SSURLConnectionRequest;
+@class NSData, NSDictionary, RadioPlayEventCollection, RadioPlaybackContext, RadioStation, SSURLConnectionRequest;
 
 @interface RadioGetTracksRequest : RadioRequest {
+    NSDictionary *_additionalRequestParameters;
     unsigned long long _globalVersion;
     NSData *_heartbeatTokenData;
-    BOOL _includeCleanTracksOnly;
-    unsigned int _numberOfTracks;
+    unsigned long long _numberOfTracks;
     RadioPlayEventCollection *_playEventCollection;
     RadioPlaybackContext *_playbackContext;
-    int _reasonType;
+    long long _reasonType;
     SSURLConnectionRequest *_request;
-    BOOL _shouldIncludeAsset;
     RadioStation *_station;
+    bool_includeCleanTracksOnly;
+    bool_shouldIncludeAsset;
 }
 
+@property(copy) NSDictionary * additionalRequestParameters;
 @property(copy) NSData * heartbeatTokenData;
-@property BOOL includeCleanTracksOnly;
-@property unsigned int numberOfTracks;
+@property bool includeCleanTracksOnly;
+@property unsigned long long numberOfTracks;
 @property(copy) RadioPlayEventCollection * playEventCollection;
 @property(copy) RadioPlaybackContext * playbackContext;
-@property int reasonType;
-@property BOOL shouldIncludeAsset;
+@property long long reasonType;
+@property bool shouldIncludeAsset;
 
 - (void).cxx_destruct;
+- (id)additionalRequestParameters;
 - (void)cancel;
 - (id)heartbeatTokenData;
-- (BOOL)includeCleanTracksOnly;
+- (bool)includeCleanTracksOnly;
 - (id)init;
 - (id)initWithStation:(id)arg1 globalVersion:(unsigned long long)arg2;
-- (unsigned int)numberOfTracks;
+- (unsigned long long)numberOfTracks;
 - (id)playEventCollection;
 - (id)playbackContext;
-- (int)reasonType;
+- (long long)reasonType;
+- (void)setAdditionalRequestParameters:(id)arg1;
 - (void)setHeartbeatTokenData:(id)arg1;
-- (void)setIncludeCleanTracksOnly:(BOOL)arg1;
-- (void)setNumberOfTracks:(unsigned int)arg1;
+- (void)setIncludeCleanTracksOnly:(bool)arg1;
+- (void)setNumberOfTracks:(unsigned long long)arg1;
 - (void)setPlayEventCollection:(id)arg1;
 - (void)setPlaybackContext:(id)arg1;
-- (void)setReasonType:(int)arg1;
-- (void)setShouldIncludeAsset:(BOOL)arg1;
-- (BOOL)shouldIncludeAsset;
+- (void)setReasonType:(long long)arg1;
+- (void)setShouldIncludeAsset:(bool)arg1;
+- (bool)shouldIncludeAsset;
 - (void)startWithCompletionHandler:(id)arg1;
 
 @end

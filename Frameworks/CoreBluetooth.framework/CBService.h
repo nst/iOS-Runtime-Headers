@@ -2,27 +2,24 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBPeripheral, CBUUID, NSArray, NSNumber;
+@class CBPeripheral, NSArray, NSNumber;
 
-@interface CBService : NSObject {
-    CBUUID *_UUID;
+@interface CBService : CBAttribute {
     NSArray *_characteristics;
     NSNumber *_endHandle;
     NSArray *_includedServices;
-    BOOL _isPrimary;
     CBPeripheral *_peripheral;
     NSNumber *_startHandle;
+    bool_isPrimary;
 }
 
-@property(readonly) CBUUID * UUID;
 @property(retain) NSArray * characteristics;
 @property(readonly) NSNumber * endHandle;
 @property(retain) NSArray * includedServices;
-@property(readonly) BOOL isPrimary;
+@property bool isPrimary;
 @property(readonly) CBPeripheral * peripheral;
 @property(readonly) NSNumber * startHandle;
 
-- (id)UUID;
 - (id)characteristics;
 - (void)dealloc;
 - (id)description;
@@ -32,10 +29,11 @@
 - (id)includedServices;
 - (id)initWithPeripheral:(id)arg1 dictionary:(id)arg2;
 - (void)invalidate;
-- (BOOL)isPrimary;
+- (bool)isPrimary;
 - (id)peripheral;
 - (void)setCharacteristics:(id)arg1;
 - (void)setIncludedServices:(id)arg1;
+- (void)setIsPrimary:(bool)arg1;
 - (id)startHandle;
 
 @end

@@ -7,36 +7,36 @@
 @interface AlarmManager : NSObject {
     NSMutableArray *_alarms;
     NSString *_defaultSound;
-    int _defaultSoundType;
-    BOOL _dirty;
-    BOOL invalidAlarmsDetected;
+    long long _defaultSoundType;
+    bool_dirty;
+    boolinvalidAlarmsDetected;
     NSDate *lastModified;
     NSMutableArray *logMessageList;
 }
 
-@property(readonly) NSArray * alarms;
+@property(retain,readonly) NSArray * alarms;
 @property(readonly) NSString * defaultSound;
-@property(readonly) int defaultSoundType;
-@property BOOL invalidAlarmsDetected;
+@property(readonly) long long defaultSoundType;
+@property bool invalidAlarmsDetected;
 @property(retain) NSDate * lastModified;
 @property(retain) NSMutableArray * logMessageList;
 
 + (id)copyReadAlarmsFromPreferences;
-+ (BOOL)discardOldVersion;
-+ (BOOL)isAlarmNotification:(id)arg1;
++ (bool)discardOldVersion;
++ (bool)isAlarmNotification:(id)arg1;
 + (id)sharedManager;
-+ (BOOL)upgrade;
++ (bool)upgrade;
 + (void)writeAlarmsToPreferences:(id)arg1;
 
-- (void)addAlarm:(id)arg1 active:(BOOL)arg2;
+- (void)addAlarm:(id)arg1 active:(bool)arg2;
 - (id)alarmWithId:(id)arg1;
 - (id)alarmWithIdUrl:(id)arg1;
 - (id)alarms;
-- (BOOL)checkIfAlarmsModified;
+- (bool)checkIfAlarmsModified;
 - (void)countAlarmsInAggregateDictionary;
 - (void)dealloc;
 - (id)defaultSound;
-- (int)defaultSoundType;
+- (long long)defaultSoundType;
 - (void)handleAlarm:(id)arg1 startedUsingSong:(id)arg2;
 - (void)handleAlarm:(id)arg1 stoppedUsingSong:(id)arg2;
 - (void)handleAnyNotificationChanges;
@@ -44,24 +44,24 @@
 - (void)handleNotificationFired:(id)arg1;
 - (void)handleNotificationSnoozed:(id)arg1;
 - (id)init;
-- (BOOL)invalidAlarmsDetected;
+- (bool)invalidAlarmsDetected;
 - (id)lastModified;
 - (void)loadAlarms;
 - (void)loadDefaultSoundAndType;
 - (void)loadScheduledNotifications;
-- (void)loadScheduledNotificationsWithCancelUnused:(BOOL)arg1;
+- (void)loadScheduledNotificationsWithCancelUnused:(bool)arg1;
 - (id)logMessageList;
-- (id)nextAlarmForDate:(id)arg1 activeOnly:(BOOL)arg2 allowRepeating:(BOOL)arg3;
+- (id)nextAlarmForDate:(id)arg1 activeOnly:(bool)arg2 allowRepeating:(bool)arg3;
 - (void)reloadScheduledNotifications;
-- (void)reloadScheduledNotificationsWithRefreshActive:(BOOL)arg1 cancelUnused:(BOOL)arg2;
+- (void)reloadScheduledNotificationsWithRefreshActive:(bool)arg1 cancelUnused:(bool)arg2;
 - (void)removeAlarm:(id)arg1;
 - (void)saveAlarms;
-- (void)setAlarm:(id)arg1 active:(BOOL)arg2;
-- (void)setDefaultSound:(id)arg1 ofType:(int)arg2;
-- (void)setInvalidAlarmsDetected:(BOOL)arg1;
+- (void)setAlarm:(id)arg1 active:(bool)arg2;
+- (void)setDefaultSound:(id)arg1 ofType:(long long)arg2;
+- (void)setInvalidAlarmsDetected:(bool)arg1;
 - (void)setLastModified:(id)arg1;
 - (void)setLogMessageList:(id)arg1;
 - (void)unloadAlarms;
-- (void)updateAlarm:(id)arg1 active:(BOOL)arg2;
+- (void)updateAlarm:(id)arg1 active:(bool)arg2;
 
 @end

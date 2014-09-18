@@ -12,7 +12,7 @@
 
 @property <MPAudioVideoRoutingViewControllerDelegate> * delegate;
 
-+ (BOOL)hasWirelessDisplayRoutes;
++ (bool)hasWirelessDisplayRoutes;
 
 - (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFEmailSearchOperation : MFContactsSearchOperation {
+@interface MFEmailSearchOperation : _MFAddressBookPropertySearchOperation {
 }
 
-+ (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4 properties:(id)arg5;
++ (int)property;
 
-- (void)main;
+- (struct __CFArray { }*)copyArrayOfUIDsMatchingText:(id)arg1 addresses:(const struct __CFArray {}**)arg2 identifiers:(const struct __CFArray {}**)arg3;
 
 @end

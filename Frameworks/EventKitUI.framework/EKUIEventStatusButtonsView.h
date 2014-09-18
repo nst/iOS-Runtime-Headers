@@ -2,49 +2,66 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKUIEventStatusButtonsViewDelegate>, NSArray, UIButton;
+@class <EKUIEventStatusButtonsViewDelegate>, NSArray, UIButton, UIFont;
 
 @interface EKUIEventStatusButtonsView : UIView {
-    NSArray *_buttonTitleStrings;
+    NSArray *_actions;
+    double _baselineFromBoundsTop;
     NSArray *_buttons;
-    float _buttonsCharge;
-    float _cachedFittingFontSize;
+    double _buttonsCharge;
     <EKUIEventStatusButtonsViewDelegate> *_delegate;
-    int _selectedButtonIndex;
-    int _textSizeMode;
+    UIFont *_font;
+    long long _selectedAction;
+    long long _textSizeMode;
+    bool_disableButtonHighlights;
+    bool_forcesSingleButtonToCenter;
 }
 
-@property(retain) NSArray * buttonTitleStrings;
-@property float buttonsCharge;
+@property(retain) NSArray * actions;
+@property double baselineFromBoundsTop;
+@property double buttonsCharge;
 @property(readonly) UIButton * centerButton;
 @property <EKUIEventStatusButtonsViewDelegate> * delegate;
-@property int selectedButtonIndex;
-@property int textSizeMode;
-
-+ (BOOL)requiresConstraintBasedLayout;
+@property bool disableButtonHighlights;
+@property(readonly) UIFont * font;
+@property bool forcesSingleButtonToCenter;
+@property long long selectedAction;
+@property long long textSizeMode;
 
 - (void).cxx_destruct;
-- (float)_defaultFontSizeForButtons;
-- (id)_fontForButton:(id)arg1 withSize:(float)arg2;
-- (float)_minimumFontSize;
+- (long long)_actionForButton:(id)arg1;
+- (id)_buttonForAction:(long long)arg1;
+- (long long)_buttonIndexForAction:(long long)arg1;
+- (id)_buttonTitleForAction:(long long)arg1;
+- (double)_defaultFontSizeForButtons;
+- (id)_fontWithSize:(double)arg1 selected:(bool)arg2;
+- (double)_minimumFontSize;
+- (id)_newToolbarButton;
 - (void)_setupButtons;
-- (id)_toolbarButtonWithTitle:(id)arg1;
-- (void)_updateButtonFontsWithSize:(float)arg1;
+- (bool)_shouldCenterButton;
+- (void)_updateButtonFontsWithSize:(double)arg1;
 - (void)_updateSelectionToButton:(id)arg1;
+- (id)actions;
+- (double)baselineFromBoundsTop;
 - (void)buttonTapped:(id)arg1;
-- (id)buttonTitleStrings;
-- (float)buttonsCharge;
+- (double)buttonsCharge;
 - (id)centerButton;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 buttonTitleStrings:(id)arg2 delegate:(id)arg3;
+- (bool)disableButtonHighlights;
+- (id)font;
+- (bool)forcesSingleButtonToCenter;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 actions:(id)arg2 delegate:(id)arg3;
 - (void)layoutSubviews;
-- (int)selectedButtonIndex;
-- (void)setButtonTitleStrings:(id)arg1;
-- (void)setButtonsCharge:(float)arg1;
+- (long long)selectedAction;
+- (void)setActions:(id)arg1;
+- (void)setBaselineFromBoundsTop:(double)arg1;
+- (void)setButtonsCharge:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSelectedButtonIndex:(int)arg1;
-- (void)setTextSizeMode:(int)arg1;
-- (int)textSizeMode;
-- (void)updateForMiniBarState:(BOOL)arg1;
+- (void)setDisableButtonHighlights:(bool)arg1;
+- (void)setForcesSingleButtonToCenter:(bool)arg1;
+- (void)setSelectedAction:(long long)arg1;
+- (void)setTextSizeMode:(long long)arg1;
+- (long long)textSizeMode;
+- (void)updateForMiniBarState:(bool)arg1;
 
 @end

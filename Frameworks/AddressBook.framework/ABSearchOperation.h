@@ -11,6 +11,8 @@
 @interface ABSearchOperation : NSOperation {
     void *_addressBook;
     void *_context;
+    NSArray *_copiedRecords;
+    NSArray *_copiedSuggestions;
     <ABSearchOperationDelegate> *_delegate;
     void *_internalSearchAddressBook;
     NSPredicate *_predicate;
@@ -37,11 +39,11 @@
 + (id)personPredicateWithNameLike:(id)arg1 inGroup:(void*)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithNameLike:(id)arg1 inGroups:(id)arg2 sources:(id)arg3 addressBook:(void*)arg4;
 + (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 addressBook:(void*)arg3;
-+ (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 includeSourceInResults:(BOOL)arg3 addressBook:(void*)arg4;
-+ (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 includeSourceInResults:(BOOL)arg3 includePhotosInResults:(BOOL)arg4 addressBook:(void*)arg5;
++ (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 includeSourceInResults:(bool)arg3 addressBook:(void*)arg4;
++ (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 includeSourceInResults:(bool)arg3 includePhotosInResults:(bool)arg4 addressBook:(void*)arg5;
 + (id)personPredicateWithNameOnly:(id)arg1 inAccount:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithPhoneLike:(id)arg1 countryHint:(id)arg2 addressBook:(void*)arg3;
-+ (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(int)arg3 addressBook:(void*)arg4;
++ (id)personPredicateWithValue:(id)arg1 comparison:(long long)arg2 forProperty:(int)arg3 addressBook:(void*)arg4;
 
 - (void)_mainThread_tellDelegateSearchFoundMatch:(void*)arg1;
 - (void*)addressBook;
@@ -50,11 +52,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (void*)internalSearchAddressBook;
-- (BOOL)isConcurrent;
+- (bool)isConcurrent;
 - (void)main;
 - (id)predicate;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
-- (BOOL)predicateShouldContinue:(id)arg1;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 moreComing:(bool)arg3;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
+- (bool)predicateShouldContinue:(id)arg1;
 - (id)prefetchProperties;
 - (id)progressBlock;
 - (void)setAddressBook:(void*)arg1;

@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface SUScriptModalDialogResponse : NSObject {
-    int _buttonIndex;
+    long long _buttonIndex;
     NSString *_textFieldValue;
 }
 
-@property int buttonIndex;
+@property long long buttonIndex;
 @property(retain) NSString * textFieldValue;
 
-- (int)buttonIndex;
+- (long long)buttonIndex;
 - (void)dealloc;
-- (void)setButtonIndex:(int)arg1;
+- (void)setButtonIndex:(long long)arg1;
 - (void)setTextFieldValue:(id)arg1;
 - (id)textFieldValue;
 

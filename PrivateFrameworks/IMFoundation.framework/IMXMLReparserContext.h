@@ -12,7 +12,7 @@
     NSString *_outContent;
 }
 
-@property(readonly) NSString * _inContent;
+@property(retain,readonly) NSString * _inContent;
 @property(readonly) NSDictionary * attributesToMerge;
 @property(readonly) NSArray * attributesToPreserve;
 @property(readonly) NSError * error;

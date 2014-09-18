@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AppLaunchStatsSaveAndRestore, LSApplicationWorkspace, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class AppLaunchStatsSaveAndRestore, LSApplicationWorkspace, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AppLaunchStatsAppWorkSpace : NSObject <LSApplicationWorkspaceObserverProtocol, DuetLoggerProtocol, DuetSaveAndRestore> {
     LSApplicationWorkspace *appWorkSpace;
@@ -16,14 +16,19 @@
     NSObject<OS_dispatch_queue> *wsQueue;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void).cxx_destruct;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)deleteExpiredApps;
 - (id)init:(id)arg1;
 - (bool)isInUninstalledList:(id)arg1;
-- (void)logAll:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
-- (void)logLight:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
+- (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
+- (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)restore:(id)arg1;
 - (void)save:(id)arg1;
 - (void)saveContext:(id)arg1;

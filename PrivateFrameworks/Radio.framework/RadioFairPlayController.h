@@ -22,10 +22,10 @@
 - (id)_loadCertificateDataWithCertificateURL:(id)arg1 error:(id*)arg2;
 - (void)_loadSAPContextWithBag:(id)arg1 completionHandler:(id)arg2;
 - (id)_performSetupWithURL:(id)arg1 inputData:(id)arg2 error:(id*)arg3;
-- (id)_popDPInfoKeyBagSyncDataWithCount:(int)arg1 returningAccountIdentifier:(unsigned long long*)arg2 error:(id*)arg3;
+- (id)_popDPInfoKeyBagSyncDataWithCount:(long long)arg1 returningAccountIdentifier:(unsigned long long*)arg2 error:(id*)arg3;
 - (void)_pushDPInfoKeyBagSyncData:(id)arg1 forAccountIdentifier:(unsigned long long)arg2;
 - (void)_removeCachedSAPContext;
-- (id)_setupMescalSessionWithBag:(id)arg1 canUseCachedCertificateData:(BOOL)arg2 error:(id*)arg3;
+- (id)_setupMescalSessionWithBag:(id)arg1 canUseCachedCertificateData:(bool)arg2 error:(id*)arg3;
 - (void)_verifyWithURL:(id)arg1 data:(id)arg2 headerFields:(id)arg3 completionHandler:(id)arg4;
 - (void)dealloc;
 - (id)init;

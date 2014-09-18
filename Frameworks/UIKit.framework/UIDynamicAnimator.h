@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <UIDynamicAnimatorDelegate>, <_UIDynamicReferenceSystem>, CADisplayLink, CALayer, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, PKExtendedPhysicsWorld, UIView;
+@class <UIDynamicAnimatorDelegate>, <_UIDynamicReferenceSystem>, CADisplayLink, CALayer, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, PKExtendedPhysicsWorld, UIDynamicAnimatorTicker, UIView;
 
 @interface UIDynamicAnimator : NSObject {
     struct { 
@@ -14,14 +14,14 @@
         unsigned int delegateImplementsDynamicAnimatorWillResume : 1; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    float _accuracy;
+    double _accuracy;
     id _action;
     NSMutableArray *_beginContacts;
     NSMutableSet *_behaviorsToAdd;
@@ -30,35 +30,37 @@
     int _debugInterval;
     CALayer *_debugLayer;
     <UIDynamicAnimatorDelegate> *_delegate;
-    BOOL _disableDisplayLink;
     CADisplayLink *_displaylink;
     double _elapsedTime;
     NSMutableArray *_endContacts;
-    unsigned int _integralization;
-    BOOL _isInWorldStepMethod;
+    unsigned long long _integralization;
     double _lastInterval;
     double _lastUpdateTime;
-    BOOL _needsLocalBehaviorReevaluation;
     NSMutableArray *_postSolverActions;
     double _realElapsedTime;
     <_UIDynamicReferenceSystem> *_referenceSystem;
     } _referenceSystemBounds;
-    unsigned int _referenceSystemType;
+    unsigned long long _referenceSystemType;
     NSMutableSet *_registeredBehaviors;
     int _registeredCollisionGroups;
     int _registeredImplicitBounds;
-    float _speed;
+    double _speed;
     } _stateFlags;
-    BOOL _stopping;
+    UIDynamicAnimatorTicker *_ticker;
     long long _ticks;
     NSMutableArray *_topLevelBehaviors;
     PKExtendedPhysicsWorld *_world;
+    bool_disableDisplayLink;
+    bool_isInWorldStepMethod;
+    bool_needsLocalBehaviorReevaluation;
+    bool_stopping;
 }
 
-@property(readonly) NSArray * behaviors;
+@property(copy,readonly) NSArray * behaviors;
 @property <UIDynamicAnimatorDelegate> * delegate;
 @property(readonly) UIView * referenceView;
-@property(getter=isRunning,readonly) BOOL running;
+@property(getter=isRunning,readonly) bool running;
+@property(retain) UIDynamicAnimatorTicker * ticker;
 
 + (id)_allDynamicAnimators;
 + (void)_clearReferenceViewFromAnimators:(id)arg1;
@@ -67,30 +69,30 @@
 + (void)_unregisterAnimator:(id)arg1;
 + (void)initialize;
 
-- (BOOL)_alwaysDisableDisplayLink;
-- (unsigned int)_animatorIntegralization;
+- (bool)_alwaysDisableDisplayLink;
+- (unsigned long long)_animatorIntegralization;
 - (double)_animatorInterval;
-- (BOOL)_animatorStep:(double)arg1;
+- (bool)_animatorStep:(double)arg1;
 - (id)_bodyForItem:(id)arg1;
 - (void)_checkBehavior:(id)arg1;
 - (void)_clearReferenceView;
 - (int)_debugInterval;
-- (void)_defaultMapper:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 angle:(float)arg3 itemType:(unsigned int)arg4;
+- (void)_defaultMapper:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2 angle:(double)arg3 itemType:(unsigned long long)arg4;
 - (id)_delegate;
 - (void)_displayLinkTick:(id)arg1;
 - (void)_evaluateLocalBehaviors;
-- (BOOL)_isWorldActive;
+- (bool)_isWorldActive;
 - (id)_keyForItem:(id)arg1;
 - (void)_postSolverStep;
 - (void)_preSolverStep;
-- (float)_ptmRatio;
+- (double)_ptmRatio;
 - (double)_realElapsedTime;
 - (void)_reevaluateImplicitBounds;
 - (id)_referenceSystem;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_referenceSystemBounds;
-- (unsigned int)_referenceSystemType;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_referenceSystemBounds;
+- (unsigned long long)_referenceSystemType;
 - (void)_registerBehavior:(id)arg1;
-- (id)_registerBodyForItem:(id)arg1 shape:(unsigned int)arg2;
+- (id)_registerBodyForItem:(id)arg1 shape:(unsigned long long)arg2;
 - (id)_registerBodyForItem:(id)arg1;
 - (int)_registerCollisionGroup;
 - (void)_registerImplicitBounds;
@@ -98,16 +100,16 @@
 - (void)_reportEndContacts;
 - (void)_runBlockPostSolverIfNeeded:(id)arg1;
 - (void)_setAction:(id)arg1;
-- (void)_setAlwaysDisableDisplayLink:(BOOL)arg1;
-- (void)_setAnimatorIntegralization:(unsigned int)arg1;
+- (void)_setAlwaysDisableDisplayLink:(bool)arg1;
+- (void)_setAnimatorIntegralization:(unsigned long long)arg1;
 - (void)_setDebugInterval:(int)arg1;
 - (void)_setDelegate:(id)arg1;
 - (void)_setReferenceSystem:(id)arg1;
-- (void)_setRunning:(BOOL)arg1;
-- (void)_setSpeed:(float)arg1;
+- (void)_setRunning:(bool)arg1;
+- (void)_setSpeed:(double)arg1;
 - (void)_setupWorld;
 - (void)_shouldReevaluateLocalBehaviors;
-- (float)_speed;
+- (double)_speed;
 - (void)_start;
 - (void)_stop;
 - (void)_tickle;
@@ -130,8 +132,8 @@
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (id)initWithReferenceSystem:(id)arg1;
 - (id)initWithReferenceView:(id)arg1;
-- (BOOL)isRunning;
-- (id)itemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)isRunning;
+- (id)itemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForCellAtIndexPath:(id)arg1;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
@@ -141,6 +143,8 @@
 - (void)removeBehavior:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setReferenceView:(id)arg1;
+- (void)setTicker:(id)arg1;
+- (id)ticker;
 - (void)updateItemFromCurrentState:(id)arg1;
 - (void)updateItemUsingCurrentState:(id)arg1;
 

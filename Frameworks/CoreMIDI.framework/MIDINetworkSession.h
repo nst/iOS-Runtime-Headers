@@ -5,39 +5,39 @@
 @class NSString;
 
 @interface MIDINetworkSession : NSObject {
-    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; id x5; struct ContactOrConnectionSet { boolx_6_1_1; id x_6_1_2; } x6; } *_impl;
+    struct _MIDINetworkSessionImpl { unsigned int x1; unsigned int x2; unsigned int x3; id x4; id x5; struct ContactOrConnectionSet { boolx_6_1_1; id x_6_1_2; } x6; } *_impl;
 }
 
-@property unsigned int connectionPolicy;
-@property(getter=isEnabled) BOOL enabled;
+@property unsigned long long connectionPolicy;
+@property(getter=isEnabled) bool enabled;
 @property(readonly) NSString * localName;
 @property(readonly) NSString * networkName;
-@property(readonly) unsigned int networkPort;
+@property(readonly) unsigned long long networkPort;
 
 + (id)defaultSession;
 
-- (BOOL)addConnection:(id)arg1;
-- (BOOL)addContact:(id)arg1;
-- (BOOL)addOrRemoveConnection:(id)arg1 add:(BOOL)arg2;
-- (unsigned int)connectionPolicy;
+- (bool)addConnection:(id)arg1;
+- (bool)addContact:(id)arg1;
+- (bool)addOrRemoveConnection:(id)arg1 add:(bool)arg2;
+- (unsigned long long)connectionPolicy;
 - (id)connections;
 - (id)contacts;
 - (void)contactsChanged;
 - (void)dealloc;
-- (struct OpaqueMIDIEndpoint { }*)destinationEndpoint;
+- (unsigned int)destinationEndpoint;
 - (id)init;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)localName;
 - (id)networkName;
-- (unsigned int)networkPort;
+- (unsigned long long)networkPort;
 - (void)refreshBonjourName;
-- (BOOL)removeConnection:(id)arg1;
-- (BOOL)removeContact:(id)arg1;
+- (bool)removeConnection:(id)arg1;
+- (bool)removeContact:(id)arg1;
 - (void)sessionChanged;
-- (void)setConnectionPolicy:(unsigned int)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setConnectionPolicy:(unsigned long long)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setStateToEntity;
-- (struct OpaqueMIDIEndpoint { }*)sourceEndpoint;
+- (unsigned int)sourceEndpoint;
 - (void)updateFromEntity;
 
 @end

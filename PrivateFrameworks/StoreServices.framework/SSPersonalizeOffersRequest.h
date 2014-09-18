@@ -2,21 +2,25 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSPersonalizeOffersDelegate>, NSArray;
+@class <SSPersonalizeOffersDelegate>, NSArray, NSString;
 
 @interface SSPersonalizeOffersRequest : SSRequest <SSXPCCoding> {
     NSArray *_items;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SSPersonalizeOffersDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * items;
+@property(readonly) Class superclass;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)items;
-- (BOOL)start;
+- (bool)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithPersonalizedResponseBlock:(id)arg1;
 

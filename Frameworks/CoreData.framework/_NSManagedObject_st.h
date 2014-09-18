@@ -6,8 +6,8 @@
 
 @interface _NSManagedObject_st : NSObject {
     id _cd_entity;
-    unsigned long _cd_extraFlags;
-    unsigned long _cd_lockingInfo;
+    unsigned long long _cd_extraFlags;
+    unsigned long long _cd_lockingInfo;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
     id _cd_observationInfo;
@@ -15,7 +15,7 @@
     id _cd_rawData;
     int _cd_rc;
     id *_cd_snapshots;
-    unsigned long _cd_stateFlags;
+    unsigned long long _cd_stateFlags;
 }
 
 @end

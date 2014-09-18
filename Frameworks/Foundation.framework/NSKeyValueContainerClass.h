@@ -10,9 +10,9 @@
 @interface NSKeyValueContainerClass : NSObject {
     int (*_cachedObservationInfoImplementation)();
     int (*_cachedSetObservationInfoImplementation)();
-    BOOL _cachedSetObservationInfoTakesAnObject;
     struct { Class x1; Class x2; struct __CFSet {} *x3; struct __CFDictionary {} *x4; } *_notifyingInfo;
     Class _originalClass;
+    bool_cachedSetObservationInfoTakesAnObject;
 }
 
 - (id)description;

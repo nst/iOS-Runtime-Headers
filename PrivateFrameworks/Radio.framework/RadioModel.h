@@ -8,30 +8,32 @@
     NSObject<OS_dispatch_queue> *_accessSerialQueue;
     NSOperationQueue *_backgroundCleanupQueue;
     BKSProcessAssertion *_backgroundProcessAssertion;
-    int _backgroundTaskCount;
+    long long _backgroundTaskCount;
     NSObject<OS_dispatch_source> *_backgroundTaskInvalidateTimerSource;
     NSManagedObjectContext *_context;
-    BOOL _isBackgroundModel;
     NSManagedObjectModel *_model;
     int _modelChangedToken;
-    BOOL _modelChangedTokenIsValid;
     int _modelDeletedToken;
-    BOOL _modelDeletedTokenIsValid;
     NSFetchRequest *_stationFetchRequest;
     NSFetchedResultsController *_stationFetchedResultsController;
     NSMapTable *_stationToSkipControllerMapTable;
     NSPersistentStoreCoordinator *_storeCoordinator;
-    int _transactionCount;
+    long long _transactionCount;
+    bool_isBackgroundModel;
+    bool_modelChangedTokenIsValid;
+    bool_modelDeletedTokenIsValid;
 }
 
+@property(readonly) NSArray * allStations;
 @property unsigned long long authenticatedAccountIdentifier;
 @property(readonly) NSArray * featuredStations;
 @property(copy) NSString * globalHash;
 @property unsigned long long globalVersion;
 @property(readonly) NSArray * previewStations;
-@property(readonly) NSArray * reportProblemIssueTypes;
+@property(copy,readonly) NSArray * reportProblemIssueTypes;
 @property(copy) NSArray * stationSortOrdering;
 @property(readonly) NSArray * stations;
+@property(readonly) NSArray * userStations;
 
 + (void)_postAccountDidDeauthenticateNotification;
 + (id)_radioDatabasePath;
@@ -52,15 +54,15 @@
 - (void)_endBackgroundTaskAssertion;
 - (id)_init;
 - (id)_initBackgroundModelWithPersistentStoreCoordinator:(id)arg1;
-- (void)_insertRevisionWithStationID:(long long)arg1 revisionType:(int)arg2;
+- (void)_insertRevisionWithStationID:(long long)arg1 revisionType:(long long)arg2;
 - (id)_managedSkipHistoryWithSkipIdentifier:(id)arg1;
 - (id)_managedSkipHistoryWithStationHash:(id)arg1;
 - (id)_managedSkipHistoryWithStationID:(long long)arg1;
 - (id)_newManagedSkipHistoryWithSkipIdentifier:(id)arg1;
 - (id)_newManagedSkipHistoryWithStationHash:(id)arg1;
 - (id)_newManagedSkipHistoryWithStationID:(long long)arg1;
-- (unsigned int)_numberOfSkipsUsedWithSkipTimestamps:(id)arg1 currentTimestamp:(double)arg2 skipInterval:(double)arg3 returningEarliestSkipTimestamp:(double*)arg4;
-- (void)_performTransactionAndSave:(BOOL)arg1 withBlock:(id)arg2;
+- (unsigned long long)_numberOfSkipsUsedWithSkipTimestamps:(id)arg1 currentTimestamp:(double)arg2 skipInterval:(double)arg3 returningEarliestSkipTimestamp:(double*)arg4;
+- (void)_performTransactionAndSave:(bool)arg1 withBlock:(id)arg2;
 - (void)_postContextDidChangeNotification:(id)arg1;
 - (void)_prepareModel;
 - (void)_registerStationSkipController:(id)arg1;
@@ -68,10 +70,11 @@
 - (id)_setByReplacingManagedObjectsInSet:(id)arg1;
 - (void)_setDatabasePropertyValue:(id)arg1 forKey:(id)arg2;
 - (void)_unregisterStationSkipController:(id)arg1;
+- (id)allStations;
 - (unsigned long long)authenticatedAccountIdentifier;
-- (BOOL)canSkipTracksForStation:(id)arg1;
+- (bool)canSkipTracksForStation:(id)arg1;
 - (id)context;
-- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
+- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(id)arg5;
 - (void)controllerDidChangeContent:(id)arg1;
 - (id)convertObject:(id)arg1;
 - (id)convertObjects:(id)arg1;
@@ -93,8 +96,8 @@
 - (id)newStationWithDictionary:(id)arg1;
 - (void)noteTrackWasSkippedForStation:(id)arg1 onDate:(id)arg2;
 - (void)noteTrackWasSkippedForStation:(id)arg1;
-- (unsigned int)numberOfTracksSkippedForStation:(id)arg1 returningEarliestSkipDate:(id*)arg2;
-- (unsigned int)numberOfTracksSkippedForStation:(id)arg1;
+- (unsigned long long)numberOfTracksSkippedForStation:(id)arg1 returningEarliestSkipDate:(id*)arg2;
+- (unsigned long long)numberOfTracksSkippedForStation:(id)arg1;
 - (void)performTransactionWithBlock:(id)arg1;
 - (void)performWriteTransactionWithBlock:(id)arg1;
 - (id)previewStations;
@@ -114,5 +117,6 @@
 - (id)stationWithID:(long long)arg1;
 - (id)stationWithPersistentID:(long long)arg1;
 - (id)stations;
+- (id)userStations;
 
 @end

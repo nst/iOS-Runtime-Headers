@@ -6,23 +6,28 @@
    See Warning(s) below.
  */
 
-@class EKEventStore, NSPredicate;
+@class EKEventStore, NSPredicate, NSString;
 
-@interface EKPredicateSearch : NSObject {
+@interface EKPredicateSearch : NSObject <EKCancellableRemoteOperation> {
     id _callback;
+    id _cancellationToken;
     Class _entityClass;
-    BOOL _finished;
     NSPredicate *_predicate;
-    unsigned int _previous;
     EKEventStore *_store;
+    bool_finished;
+    bool_isCancelled;
 }
 
-+ (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3 callback:(id)arg4;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (BOOL)_receivedData:(struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; }[50])arg1 count:(int)arg2;
++ (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
+
+- (void)cancel;
 - (void)dealloc;
-- (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3 callback:(id)arg4;
-- (void)run;
+- (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 - (id)startWithCompletion:(id)arg1;
 - (void)terminate;
 

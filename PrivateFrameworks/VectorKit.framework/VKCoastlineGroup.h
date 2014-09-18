@@ -2,60 +2,45 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLMeshVendor, VKStyle;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface VKCoastlineGroup : NSObject {
-    struct { 
-        float x; 
-        float y; 
-        float z; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    } _antialiasingBrushColor;
-    float _antialiasingBrushWidth;
-    VGLMeshVendor *_coastlineVendor;
-    } _offsetDirection;
-    } _shadowColor;
-    float _shadowWidth;
-    VKStyle *_style;
+    struct shared_ptr<md::StyleQuery> { 
+        struct StyleQuery {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh> > > { 
+        struct __compressed_pair<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PolygonMesh::MeshMesh> > > { 
+            struct MeshVendor<ggl::PolygonMesh::MeshMesh> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::MeshVendor<ggl::Glow::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+        struct __compressed_pair<ggl::MeshVendor<ggl::Glow::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+            struct MeshVendor<ggl::Glow::MeshMesh> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::MeshVendor<ggl::Glow::MeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+        struct __compressed_pair<ggl::MeshVendor<ggl::Glow::MeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Glow::MeshMesh> > > { 
+            struct MeshVendor<ggl::Glow::MeshMesh> {} *__first_; 
+        } __ptr_; 
+    } _coastlineMeshVendor;
+    } _innerGlowMeshVendor;
+    } _outerGlowMeshVendor;
+    } _styleQuery;
     unsigned int _tilePointSize;
-    BOOL _visible;
 }
 
-@property struct _VGLColor { float x1; float x2; float x3; float x4; } antialiasingBrushColor;
-@property float antialiasingBrushWidth;
-@property(readonly) VGLMeshVendor * coastlineVendor;
-@property struct { float x1; float x2; float x3; } offsetDirection;
-@property struct _VGLColor { float x1; float x2; float x3; float x4; } shadowColor;
-@property float shadowWidth;
-@property(readonly) VKStyle * style;
-@property BOOL visible;
+@property(readonly) const /* Warning: unhandled struct encoding: '{MeshVendor<ggl::PolygonMesh::MeshMesh>={vector<ggl::PolygonMesh::MeshMesh *' */ struct * coastlineMeshVendor; /* unknown property attribute:  std::__1::allocator<ggl::PolygonMesh::MeshMesh *> >=^^{MeshMesh}}}^{MeshMesh}} */
+@property(readonly) const struct * innerGlowMeshVendor; /* unknown property attribute:  std::__1::allocator<ggl::Glow::MeshMesh *> >=^^{MeshMesh}}}^{MeshMesh}} */
+@property(readonly) const struct * outerGlowMeshVendor; /* unknown property attribute:  std::__1::allocator<ggl::Glow::MeshMesh *> >=^^{MeshMesh}}}^{MeshMesh}} */
+@property(readonly) struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; } styleQuery;
 
 - (id).cxx_construct;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })antialiasingBrushColor;
-- (float)antialiasingBrushWidth;
-- (id)coastlineVendor;
-- (void)dealloc;
-- (id)initWithStyle:(id)arg1 tilePointSize:(unsigned int)arg2;
-- (struct { float x1; float x2; float x3; })offsetDirection;
-- (void)setAntialiasingBrushColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (void)setAntialiasingBrushWidth:(float)arg1;
-- (void)setOffsetDirection:(struct { float x1; float x2; float x3; })arg1;
-- (void)setShadowColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (void)setShadowWidth:(float)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })shadowColor;
-- (float)shadowWidth;
-- (id)style;
-- (unsigned int)triangleCount;
-- (BOOL)visible;
+- (void).cxx_destruct;
+- (void)addCoastlineFeature:(struct { struct { id x_1_1_1; char *x_1_1_2; unsigned long long x_1_1_3; unsigned long long x_1_1_4; unsigned long long x_1_1_5; unsigned long long x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; boolx_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; unsigned long long x2; unsigned long long x3; int x4; int x5; int x6; unsigned long long x7; unsigned long long x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)arg1;
+- (const struct MeshVendor<ggl::PolygonMesh::MeshMesh> { struct vector<ggl::PolygonMesh::MeshMesh *, std::__1::allocator<ggl::PolygonMesh::MeshMesh *> > { struct MeshMesh {} **x_1_1_1; struct MeshMesh {} **x_1_1_2; struct __compressed_pair<ggl::PolygonMesh::MeshMesh **, std::__1::allocator<ggl::PolygonMesh::MeshMesh *> > { struct MeshMesh {} **x_3_2_1; } x_1_1_3; } x1; struct MeshMesh {} *x2; }*)coastlineMeshVendor;
+- (id)initWithStyleQuery:(struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })arg1 tilePointSize:(unsigned int)arg2;
+- (const struct MeshVendor<ggl::Glow::MeshMesh> { struct vector<ggl::Glow::MeshMesh *, std::__1::allocator<ggl::Glow::MeshMesh *> > { struct MeshMesh {} **x_1_1_1; struct MeshMesh {} **x_1_1_2; struct __compressed_pair<ggl::Glow::MeshMesh **, std::__1::allocator<ggl::Glow::MeshMesh *> > { struct MeshMesh {} **x_3_2_1; } x_1_1_3; } x1; struct MeshMesh {} *x2; }*)innerGlowMeshVendor;
+- (const struct MeshVendor<ggl::Glow::MeshMesh> { struct vector<ggl::Glow::MeshMesh *, std::__1::allocator<ggl::Glow::MeshMesh *> > { struct MeshMesh {} **x_1_1_1; struct MeshMesh {} **x_1_1_2; struct __compressed_pair<ggl::Glow::MeshMesh **, std::__1::allocator<ggl::Glow::MeshMesh *> > { struct MeshMesh {} **x_3_2_1; } x_1_1_3; } x1; struct MeshMesh {} *x2; }*)outerGlowMeshVendor;
+- (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQuery;
 
 @end

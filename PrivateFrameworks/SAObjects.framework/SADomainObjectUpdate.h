@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SADomainObject;
+@class NSString, SADomainObject;
 
 @interface SADomainObjectUpdate : SABaseClientBoundCommand <SADomainObjectCommand> {
 }
 
 @property(retain) SADomainObject * addFields;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SADomainObject * identifier;
 @property(retain) SADomainObject * removeFields;
 @property(retain) SADomainObject * setFields;
+@property(readonly) Class superclass;
 
 + (id)domainObjectUpdate;
 + (id)domainObjectUpdateWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,7 +24,7 @@
 - (id)groupIdentifier;
 - (id)identifier;
 - (id)removeFields;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAddFields:(id)arg1;
 - (id)setFields;
 - (void)setIdentifier:(id)arg1;

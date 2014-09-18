@@ -11,17 +11,21 @@
     double _interval;
     NSLock *_lock;
     int _orientationCheckToken;
-    BOOL _orientationEventsEnabled;
     NSThread *_orientationEventsThread;
     int _orientationNotificationsToken;
+    unsigned int _orientationPort;
+    double _updateInterval;
     float _xThreshold;
     float _yThreshold;
     float _zThreshold;
+    bool_orientationEventsEnabled;
+    bool_passiveOrientationEvents;
 }
 
-@property BOOL accelerometerEventsEnabled;
+@property bool accelerometerEventsEnabled;
 @property <BKSAccelerometerDelegate> * delegate;
-@property BOOL orientationEventsEnabled;
+@property bool orientationEventsEnabled;
+@property bool passiveOrientationEvents;
 @property double updateInterval;
 @property float xThreshold;
 @property float yThreshold;
@@ -32,15 +36,18 @@
 - (void)_orientationDidChange;
 - (id)_orientationEventsThread;
 - (void)_serverWasRestarted;
-- (BOOL)accelerometerEventsEnabled;
+- (void)_updateOrientationServer;
+- (bool)accelerometerEventsEnabled;
 - (int)currentDeviceOrientation;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)orientationEventsEnabled;
-- (void)setAccelerometerEventsEnabled:(BOOL)arg1;
+- (bool)orientationEventsEnabled;
+- (bool)passiveOrientationEvents;
+- (void)setAccelerometerEventsEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setOrientationEventsEnabled:(BOOL)arg1;
+- (void)setOrientationEventsEnabled:(bool)arg1;
+- (void)setPassiveOrientationEvents:(bool)arg1;
 - (void)setUpdateInterval:(double)arg1;
 - (void)setXThreshold:(float)arg1;
 - (void)setYThreshold:(float)arg1;

@@ -22,6 +22,7 @@
 - (id)description;
 - (id)destinationsWithPasswords;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)payloadDescriptionKeyValueSections;
 - (void)setDestinationsWithPasswords:(id)arg1;
 - (void)setTitlesAndDescriptions:(id)arg1;
 - (void)setWhitelistDestinations:(id)arg1;

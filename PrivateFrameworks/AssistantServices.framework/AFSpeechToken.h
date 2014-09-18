@@ -5,35 +5,35 @@
 @class NSString;
 
 @interface AFSpeechToken : NSObject <NSSecureCoding> {
-    int _confidenceScore;
+    long long _confidenceScore;
     double _endTime;
-    BOOL _removeSpaceAfter;
-    BOOL _removeSpaceBefore;
     double _startTime;
     NSString *_text;
+    bool_removeSpaceAfter;
+    bool_removeSpaceBefore;
 }
 
-@property int confidenceScore;
+@property long long confidenceScore;
 @property double endTime;
-@property BOOL removeSpaceAfter;
-@property BOOL removeSpaceBefore;
+@property bool removeSpaceAfter;
+@property bool removeSpaceBefore;
 @property double startTime;
 @property(copy) NSString * text;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)confidenceScore;
+- (long long)confidenceScore;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)endTime;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)removeSpaceAfter;
-- (BOOL)removeSpaceBefore;
-- (void)setConfidenceScore:(int)arg1;
+- (bool)removeSpaceAfter;
+- (bool)removeSpaceBefore;
+- (void)setConfidenceScore:(long long)arg1;
 - (void)setEndTime:(double)arg1;
-- (void)setRemoveSpaceAfter:(BOOL)arg1;
-- (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setRemoveSpaceAfter:(bool)arg1;
+- (void)setRemoveSpaceBefore:(bool)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setText:(id)arg1;
 - (double)startTime;

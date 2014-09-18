@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface SKUIStoreDialogController : NSObject <UIAlertViewDelegate> {
     NSMutableArray *_alerts;
     NSMutableArray *_dialogs;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void).cxx_destruct;
-- (void)_performActionForDialog:(id)arg1 buttonIndex:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)_performActionForDialog:(id)arg1 buttonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (id)init;
 - (void)presentDialog:(id)arg1;

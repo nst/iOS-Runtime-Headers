@@ -3,15 +3,14 @@
  */
 
 @interface CHRecognitionResult : NSObject {
+    double _score;
 }
 
-@property(readonly) double score;
+@property double score;
 
 - (id)description;
-- (BOOL)rare;
+- (id)initWithScore:(double)arg1;
 - (double)score;
-- (id)string;
-- (id)wordID;
-- (id)wordRanges;
+- (void)setScore:(double)arg1;
 
 @end

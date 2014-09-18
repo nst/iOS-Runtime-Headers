@@ -5,6 +5,6 @@
 @interface GQUCommon : NSObject {
 }
 
-+ (BOOL)fileExistsAtUrl:(struct __CFURL { }*)arg1;
++ (bool)fileExistsAtUrl:(struct __CFURL { }*)arg1;
 
 @end

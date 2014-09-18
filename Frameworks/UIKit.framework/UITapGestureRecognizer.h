@@ -6,57 +6,53 @@
 
 @interface UITapGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
-    int _buttonType;
+        double x; 
+        double y; 
+    long long _buttonType;
     unsigned int _delaysRecognitionForGreaterTapCounts;
     id _imp;
     } _locationInView;
 }
 
-@property(setter=_setButtonType:) int _buttonType;
-@property(readonly) struct CGPoint { float x1; float x2; } centroid;
-@property(readonly) struct CGPoint { float x1; float x2; } location;
-@property unsigned int numberOfTapsRequired;
-@property unsigned int numberOfTouchesRequired;
+@property(setter=_setButtonType:) long long _buttonType;
+@property(readonly) struct CGPoint { double x1; double x2; } centroid;
+@property(readonly) struct CGPoint { double x1; double x2; } location;
+@property unsigned long long numberOfTapsRequired;
+@property unsigned long long numberOfTouchesRequired;
 @property(readonly) NSArray * touches;
 
-+ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(unsigned int)arg4 touchCount:(unsigned int)arg5;
-+ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 tapCount:(unsigned int)arg4;
-+ (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
-
 - (void)_appendSubclassDescription:(id)arg1;
-- (int)_buttonType;
-- (BOOL)_delaysRecognitionForGreaterTapCounts;
+- (long long)_buttonType;
+- (bool)_delaysRecognitionForGreaterTapCounts;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_resetGestureRecognizer;
-- (void)_setButtonType:(int)arg1;
-- (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
-- (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
-- (float)_touchSloppinessFactor;
-- (float)allowableMovement;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
-- (struct CGPoint { float x1; float x2; })centroid;
+- (void)_setButtonType:(long long)arg1;
+- (void)_setDelaysRecognitionForGreaterTapCounts:(bool)arg1;
+- (bool)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
+- (double)_touchSloppinessFactor;
+- (double)allowableMovement;
+- (bool)canPreventGestureRecognizer:(id)arg1;
+- (struct CGPoint { double x1; double x2; })centroid;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { float x1; float x2; })location;
-- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
+- (struct CGPoint { double x1; double x2; })location;
+- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (double)maximumSingleTapDuration;
-- (unsigned int)numberOfTapsRequired;
-- (unsigned int)numberOfTouches;
-- (unsigned int)numberOfTouchesRequired;
-- (void)setAllowableMovement:(float)arg1;
+- (unsigned long long)numberOfTapsRequired;
+- (unsigned long long)numberOfTouches;
+- (unsigned long long)numberOfTouchesRequired;
+- (void)setAllowableMovement:(double)arg1;
 - (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
 - (void)setMaximumSingleTapDuration:(double)arg1;
-- (void)setNumberOfTapsRequired:(unsigned int)arg1;
-- (void)setNumberOfTouchesRequired:(unsigned int)arg1;
-- (BOOL)tapIsPossibleForTapRecognizer:(id)arg1;
+- (void)setNumberOfTapsRequired:(unsigned long long)arg1;
+- (void)setNumberOfTouchesRequired:(unsigned long long)arg1;
+- (bool)tapIsPossibleForTapRecognizer:(id)arg1;
 - (void)tapRecognizerFailedToRecognizeTap:(id)arg1;
 - (void)tapRecognizerRecognizedTap:(id)arg1;
 - (id)touches;

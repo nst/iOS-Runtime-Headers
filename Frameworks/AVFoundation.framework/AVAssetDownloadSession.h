@@ -14,8 +14,8 @@
 @property(readonly) unsigned long long downloadToken;
 @property(readonly) NSError * error;
 @property(readonly) unsigned long long fileSize;
-@property(readonly) int priority;
-@property(readonly) int status;
+@property(readonly) long long priority;
+@property(readonly) long long status;
 
 + (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
@@ -28,13 +28,13 @@
 - (id)_figAssetNotificationNames;
 - (id)_figPlaybackItemNotificationNames;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (long)_primeCache;
+- (int)_primeCache;
 - (void)_primeCacheOnDispatchQueue;
-- (long)_readyForInspection;
+- (int)_readyForInspection;
 - (void)_removeFigAssetListeners;
 - (void)_removeFigPlaybackItemListeners;
-- (BOOL)_setFigAsset:(struct OpaqueFigAsset { }*)arg1;
-- (void)_transitionToTerminalStatus:(int)arg1 error:(id)arg2;
+- (bool)_setFigAsset:(struct OpaqueFigAsset { }*)arg1;
+- (void)_transitionToTerminalStatus:(long long)arg1 error:(id)arg2;
 - (id)_weakReference;
 - (unsigned long long)availableFileSize;
 - (void)dealloc;
@@ -47,9 +47,9 @@
 - (id)initWithDownloadToken:(unsigned long long)arg1;
 - (id)initWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (void)pause;
-- (int)priority;
+- (long long)priority;
 - (void)start;
-- (int)status;
+- (long long)status;
 - (void)stop;
 
 @end

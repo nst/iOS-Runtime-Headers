@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPPackage>, NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, TSPPackage;
 
 @interface TSPSupportPackageReadCoordinator : TSPPackageReadCoordinator {
     NSObject<OS_dispatch_queue> *_documentComponentReadQueue;
-    <TSPPackage> *_documentPackage;
+    TSPPackage *_documentPackage;
 }
 
 - (void).cxx_destruct;
-- (void)componentForRootObjectIdentifier:(long long)arg1 isWeakReference:(BOOL)arg2 queue:(id)arg3 completion:(id)arg4;
-- (BOOL)endReading;
-- (id)initWithContext:(id)arg1 package:(id)arg2 finalizeHandlerQueue:(id)arg3 documentResourceDataProvider:(id)arg4 areExternalDataReferencesAllowed:(BOOL)arg5 documentPackage:(id)arg6;
-- (id)initWithContext:(id)arg1 package:(id)arg2 finalizeHandlerQueue:(id)arg3 documentResourceDataProvider:(id)arg4 areExternalDataReferencesAllowed:(BOOL)arg5;
+- (bool)endReading;
+- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(bool)arg6 documentPackage:(id)arg7;
+- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(bool)arg6;
+- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(bool)arg3 queue:(id)arg4 completion:(id)arg5;
 
 @end

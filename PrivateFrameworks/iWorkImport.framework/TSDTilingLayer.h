@@ -6,8 +6,8 @@
 
 @interface TSDTilingLayer : CALayer {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct { 
         unsigned int tiled : 1; 
         unsigned int hasCustomContents : 1; 
@@ -17,19 +17,19 @@
         unsigned int needsSelfDisplay : 1; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
+    boolmHasEverHadTileLayout;
     NSMutableArray *mDirtyTiles;
     } mFlags;
-    BOOL mHasEverHadTileLayout;
     } mLastBoundsSize;
     } mLastVisibleBounds;
     CALayer *mProviderContentLayer;
@@ -37,36 +37,37 @@
     int mTilingMode;
 }
 
-@property BOOL drawsInBackground;
+@property bool drawsInBackground;
 @property int tilingMode;
 
 + (struct CGImage { }*)p_newCheckerboardImage;
 + (struct CGImage { }*)p_newGeneratedCheckerboardImage;
 
+- (void)cancelLayoutForTilingLayers;
 - (void)dealloc;
 - (void)display;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (BOOL)drawsInBackground;
-- (void)i_drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 inBackground:(BOOL)arg3;
+- (bool)drawsInBackground;
+- (void)i_drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 inBackground:(bool)arg3;
 - (void)i_drawTile:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)i_drawTileInBackground:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)i_drawTileInBackground:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)i_setNeedsTileDisplayForTile:(id)arg1;
 - (id)init;
 - (void)layoutSublayers;
 - (id)p_nonTileAndContentLayers;
 - (id)p_tileAndContentLayers;
 - (id)p_tileLayers;
-- (BOOL)p_updateTileSizeWithLayerSize:(struct CGSize { float x1; float x2; })arg1;
+- (bool)p_updateTileSizeWithLayerSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setContents:(id)arg1;
-- (void)setContentsScale:(float)arg1;
-- (void)setDrawsInBackground:(BOOL)arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentsScale:(double)arg1;
+- (void)setDrawsInBackground:(bool)arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout;
 - (void)setNeedsLayoutForTilingLayers;
 - (void)setTileContents:(id)arg1;
 - (void)setTilingMode:(int)arg1;
 - (int)tilingMode;
-- (BOOL)tilingSafeHasContents;
+- (bool)tilingSafeHasContents;
 - (void)tilingSafeSetSublayers:(id)arg1;
 
 @end

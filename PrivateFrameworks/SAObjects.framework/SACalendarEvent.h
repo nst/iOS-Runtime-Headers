@@ -8,15 +8,14 @@
 }
 
 @property(copy) NSArray * alerts;
-@property BOOL allDay;
+@property bool allDay;
 @property(copy) NSArray * attendees;
 @property(copy) NSURL * calendarId;
 @property(copy) NSDate * endDate;
-@property(retain) NSNumber * includeRecurrences;
+@property(copy) NSNumber * includeRecurrences;
 @property(copy) NSString * location;
 @property(copy) NSString * notes;
-@property(copy) NSArray * participants;
-@property(retain) NSNumber * readOnly;
+@property(copy) NSNumber * readOnly;
 @property(copy) NSArray * recurrences;
 @property(copy) NSDate * startDate;
 @property(copy) NSString * timeZoneId;
@@ -26,7 +25,7 @@
 + (id)eventWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)alerts;
-- (BOOL)allDay;
+- (bool)allDay;
 - (id)attendees;
 - (id)calendarId;
 - (id)encodedClassName;
@@ -35,18 +34,16 @@
 - (id)includeRecurrences;
 - (id)location;
 - (id)notes;
-- (id)participants;
 - (id)readOnly;
 - (id)recurrences;
 - (void)setAlerts:(id)arg1;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAllDay:(bool)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)setCalendarId:(id)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setIncludeRecurrences:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
-- (void)setParticipants:(id)arg1;
 - (void)setReadOnly:(id)arg1;
 - (void)setRecurrences:(id)arg1;
 - (void)setStartDate:(id)arg1;

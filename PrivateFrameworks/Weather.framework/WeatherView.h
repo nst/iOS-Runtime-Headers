@@ -2,37 +2,28 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class City, UIImage, UIView;
+@class City, UIView;
 
 @interface WeatherView : UIView <CityUpdaterDelegate> {
-    UIImage *_bigIcon;
-    unsigned int _bigIconIndex;
     City *_city;
-    UIImage *_secondaryBigIcon;
-    BOOL _showWind;
-    BOOL _showingDay;
     UIView *_windView;
+    bool_showWind;
+    bool_showingDay;
 }
 
 @property(setter=showCity:,retain) City * city;
 
-- (id)_bigIcon;
-- (id)_secondaryBigIcon;
-- (BOOL)_setCity:(id)arg1 associateAsDelegate:(BOOL)arg2;
-- (id)bigImageBundle;
+- (bool)_setCity:(id)arg1 associateAsDelegate:(bool)arg2;
 - (id)bundle;
 - (id)city;
 - (void)cityDidFinishWeatherUpdate:(id)arg1;
 - (void)cityDidStartWeatherUpdate:(id)arg1;
 - (void)cleanupWindView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)refreshLocalization;
 - (void)resetLocale:(id)arg1;
-- (void)setBigIcon:(unsigned int)arg1 dayNightChanged:(BOOL)arg2;
-- (void)setupBigIconOffset:(unsigned int)arg1;
-- (void)setupSecondaryBigIconOffset:(unsigned int)arg1;
 - (void)showCity:(id)arg1;
-- (BOOL)updateWeatherDisplayForCity:(id)arg1;
+- (bool)updateWeatherDisplayForCity:(id)arg1;
 
 @end

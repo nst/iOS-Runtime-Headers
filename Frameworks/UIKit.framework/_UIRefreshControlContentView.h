@@ -10,24 +10,24 @@
 }
 
 @property(retain) NSAttributedString * attributedTitle;
-@property(readonly) float maximumSnappingHeight;
-@property(readonly) float minimumSnappingHeight;
+@property(readonly) double maximumSnappingHeight;
+@property(readonly) double minimumSnappingHeight;
 @property UIRefreshControl * refreshControl;
-@property(readonly) int style;
+@property(readonly) long long style;
 @property(retain) UIColor * tintColor;
 
-- (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
+- (double)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
 - (id)attributedTitle;
 - (void)dealloc;
 - (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
-- (float)maximumSnappingHeight;
-- (float)minimumSnappingHeight;
+- (double)maximumSnappingHeight;
+- (double)minimumSnappingHeight;
 - (id)refreshControl;
 - (void)refreshControlInvalidatedSnappingHeight;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setRefreshControl:(id)arg1;
 - (void)setTintColor:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)tintColor;
 - (void)willTransitionFromState:(int)arg1 toState:(int)arg2;
 

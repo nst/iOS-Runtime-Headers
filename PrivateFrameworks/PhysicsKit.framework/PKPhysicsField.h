@@ -2,77 +2,76 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
-@class <NSObject>;
+@class <NSObject>, PKRegion;
 
-@interface PKPhysicsField : NSObject <NSCopying, NSCoding> {
-    struct CGVector { 
-        float dx; 
-        float dy; 
-    struct CGVector { 
-        float dx; 
-        float dy; 
-    BOOL _active;
-    BOOL _exclusive;
-    struct b2PKField { int (**x1)(); struct b2Vec2 { float x_2_1_1; float x_2_1_2; } x2; struct b2Vec2 { float x_3_1_1; float x_3_1_2; } x3; struct b2Vec2 { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; boolx7; boolx8; boolx9; boolx10; boolx11; } *_field;
-    } _halfExtent;
-    BOOL _inUse;
-    BOOL _override;
-    <NSObject> *_representedObject;
-    } _scale;
+@interface PKPhysicsField : NSObject {
+    struct shared_ptr<PKCField> { 
+        struct PKCField {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+     /* Encoded args for previous method: 16@0:8 */
+     /* Encoded args for previous method: v32@0:816 */
+     /* Encoded args for previous method: 16@0:8 */
+     /* Encoded args for previous method: v32@0:816 */
+     /* Encoded args for previous method: v32@0:816 */
+     /* Encoded args for previous method: 16@0:8 */
+    } _field;
+    PKRegion *_region;
+    float _rotation;
+    bool_override;
+    /* Warning: Unrecognized filer type: '' using 'void*' */ void*_position;
+    /* Warning: Unrecognized filer type: '' using 'void*' */ void*_scale;
 }
 
-@property BOOL _inUse;
-@property(getter=isActive) BOOL active;
-@property(getter=isExclusive) BOOL exclusive;
-@property struct CGVector { float x1; float x2; } halfExtent;
-@property(getter=isOverride) BOOL override;
-@property struct CGPoint { float x1; float x2; } position;
+@property unsigned int categoryBitMask;
+@property /* Warning: Unrecognized filer type: '' using 'void*' */ void* direction;
+@property(getter=isEnabled) bool enabled;
+@property float falloff;
+@property float minimumRadius;
+@property(getter=isOverride) bool override;
+@property void* position;
+@property(retain) id region;
 @property <NSObject> * representedObject;
 @property float rotation;
-@property(getter=isRound) BOOL round;
-@property struct CGVector { float x1; float x2; } scale;
+@property void* scale;
 @property float strength;
 
-- (struct b2PKField { int (**x1)(); struct b2Vec2 { float x_2_1_1; float x_2_1_2; } x2; struct b2Vec2 { float x_3_1_1; float x_3_1_2; } x3; struct b2Vec2 { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; boolx7; boolx8; boolx9; boolx10; boolx11; }*)_field;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)_inUse;
-- (BOOL)active;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (BOOL)exclusive;
-- (struct CGVector { float x1; float x2; })halfExtent;
+- (struct shared_ptr<PKCField> { struct PKCField {} *x1; struct __shared_weak_count {} *x2; })_field;
+- (unsigned int)categoryBitMask;
+- (void)dealloc;
+- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)direction;
+- (float)falloff;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isExclusive;
-- (BOOL)isOverride;
-- (BOOL)isRound;
-- (BOOL)override;
-- (struct CGPoint { float x1; float x2; })position;
+- (bool)isActive;
+- (bool)isEnabled;
+- (bool)isOverride;
+- (float)minimumRadius;
+- (bool)override;
+- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)position;
+- (id)region;
 - (id)representedObject;
 - (float)rotation;
-- (struct CGVector { float x1; float x2; })scale;
-- (void)setActive:(BOOL)arg1;
-- (void)setExclusive:(BOOL)arg1;
-- (void)setHalfExtent:(struct CGVector { float x1; float x2; })arg1;
-- (void)setIsActive:(BOOL)arg1;
-- (void)setIsExclusive:(BOOL)arg1;
-- (void)setIsOverride:(BOOL)arg1;
-- (void)setOverride:(BOOL)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)scale;
+- (void)setActive:(bool)arg1;
+- (void)setCategoryBitMask:(unsigned int)arg1;
+- (void)setDirection:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setFalloff:(float)arg1;
+- (void)setIsOverride:(bool)arg1;
+- (void)setMinimumRadius:(float)arg1;
+- (void)setOverride:(bool)arg1;
+- (void)setPosition:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+- (void)setRegion:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)setRotation:(float)arg1;
-- (void)setRound:(BOOL)arg1;
-- (void)setScale:(struct CGVector { float x1; float x2; })arg1;
+- (void)setScale:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
 - (void)setStrength:(float)arg1;
-- (void)set_field:(struct b2PKField { int (**x1)(); struct b2Vec2 { float x_2_1_1; float x_2_1_2; } x2; struct b2Vec2 { float x_3_1_1; float x_3_1_2; } x3; struct b2Vec2 { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; boolx7; boolx8; boolx9; boolx10; boolx11; }*)arg1;
-- (void)set_inUse:(BOOL)arg1;
+- (void)set_field:(struct shared_ptr<PKCField> { struct PKCField {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (float)strength;
 
 @end

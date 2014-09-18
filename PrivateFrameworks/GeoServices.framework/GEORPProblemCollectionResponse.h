@@ -8,13 +8,13 @@
     struct { 
         unsigned int statusCode : 1; 
     } _has;
-    NSString *_problemID;
+    NSString *_problemId;
     int _statusCode;
 }
 
-@property(readonly) BOOL hasProblemID;
-@property BOOL hasStatusCode;
-@property(retain) NSString * problemID;
+@property(readonly) bool hasProblemId;
+@property bool hasStatusCode;
+@property(retain) NSString * problemId;
 @property int statusCode;
 
 - (void)copyTo:(id)arg1;
@@ -22,14 +22,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasProblemID;
-- (BOOL)hasStatusCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)problemID;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
-- (void)setProblemID:(id)arg1;
+- (bool)hasProblemId;
+- (bool)hasStatusCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)problemId;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatusCode:(bool)arg1;
+- (void)setProblemId:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
 - (void)writeTo:(id)arg1;

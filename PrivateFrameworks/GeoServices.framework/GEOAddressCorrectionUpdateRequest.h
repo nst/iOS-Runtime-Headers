@@ -15,8 +15,8 @@
 
 @property(retain) NSString * addressID;
 @property int correctionStatus;
-@property(readonly) BOOL hasAddressID;
-@property BOOL hasCorrectionStatus;
+@property(readonly) bool hasAddressID;
+@property bool hasCorrectionStatus;
 @property(retain) NSMutableArray * significantLocations;
 
 - (void)addSignificantLocation:(id)arg1;
@@ -28,20 +28,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddressID;
-- (BOOL)hasCorrectionStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasAddressID;
+- (bool)hasCorrectionStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAddressID:(id)arg1;
 - (void)setCorrectionStatus:(int)arg1;
-- (void)setHasCorrectionStatus:(BOOL)arg1;
+- (void)setHasCorrectionStatus:(bool)arg1;
 - (void)setSignificantLocations:(id)arg1;
-- (id)significantLocationAtIndex:(unsigned int)arg1;
+- (id)significantLocationAtIndex:(unsigned long long)arg1;
 - (id)significantLocations;
-- (unsigned int)significantLocationsCount;
+- (unsigned long long)significantLocationsCount;
 - (void)writeTo:(id)arg1;
 
 @end

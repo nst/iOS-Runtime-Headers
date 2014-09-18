@@ -10,8 +10,8 @@
 }
 
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithRequestType:(unsigned int)arg1 serverURL:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

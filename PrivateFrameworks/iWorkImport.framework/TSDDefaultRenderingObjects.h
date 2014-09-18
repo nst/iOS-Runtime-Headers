@@ -5,15 +5,15 @@
 @interface TSDDefaultRenderingObjects : NSObject {
 }
 
-+ (float)defaultAssetScaleForFrame:(id)arg1;
++ (double)defaultAssetScaleForFrame:(id)arg1;
 + (id)defaultBasicStrokes;
-+ (id)defaultColorAndGrayscaleFillsForTheme:(id)arg1 withNoFillButton:(BOOL)arg2;
++ (id)defaultColorAndGrayscaleFillsForTheme:(id)arg1 withNoFillButton:(bool)arg2;
 + (id)defaultColorAndGrayscaleFillsForTheme:(id)arg1;
 + (id)defaultColorFillsForTheme:(id)arg1;
 + (id)defaultEndpoints;
 + (id)defaultFrames;
 + (id)defaultGradientFillsForTheme:(id)arg1;
-+ (id)defaultGrayscaleFillsWithNoFillButton:(BOOL)arg1 forTheme:(id)arg2;
++ (id)defaultGrayscaleFillsWithNoFillButton:(bool)arg1 forTheme:(id)arg2;
 + (id)defaultGrayscaleTextColorsForTheme:(id)arg1;
 + (id)defaultImageFillsForTheme:(id)arg1;
 + (id)defaultLines;

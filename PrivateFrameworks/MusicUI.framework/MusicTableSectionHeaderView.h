@@ -2,24 +2,33 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class UILabel;
+@class MPUEmphasizedText, NSDictionary, UILabel;
 
 @interface MusicTableSectionHeaderView : UITableViewHeaderFooterView {
-    float _backgroundTransitionWeighting;
+    double _backgroundTransitionWeighting;
+    MPUEmphasizedText *_titleEmphasizedText;
+    NSDictionary *_titleEmphasizedTextAttributes;
     UILabel *_titleLabel;
+    NSDictionary *_titleRegularTextAttributes;
+    bool_needsTitleLabelUpdate;
 }
 
-@property float backgroundTransitionWeighting;
-@property(readonly) UILabel * titleLabel;
-
-+ (float)defaultHeight;
+@property double backgroundTransitionWeighting;
+@property(copy) MPUEmphasizedText * titleEmphasizedText;
 
 - (void).cxx_destruct;
-- (float)backgroundTransitionWeighting;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (double)backgroundTransitionWeighting;
+- (void)contentSizeCategoryDidChange;
+- (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
-- (void)setBackgroundTransitionWeighting:(float)arg1;
-- (void)setTableViewStyle:(int)arg1;
-- (id)titleLabel;
+- (void)setBackgroundTransitionWeighting:(double)arg1;
+- (void)setTableViewStyle:(long long)arg1;
+- (void)setTitleEmphasizedText:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)titleEmphasizedText;
+- (id)titleEmphasizedTextAttributes;
+- (id)titleRegularTextAttributes;
 
 @end

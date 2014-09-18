@@ -4,26 +4,26 @@
 
 @interface SBFColorBoxes : NSObject {
     struct { /* ? */ } **_colorBoxes;
-    unsigned int _columnCount;
-    float _contrast;
-    unsigned int _rowCount;
-    unsigned int _size;
+    unsigned long long _columnCount;
+    double _contrast;
+    unsigned long long _rowCount;
+    unsigned long long _size;
 }
 
 @property(readonly) struct { /* ? */ }** colorBoxes;
-@property(readonly) unsigned int columnCount;
-@property(readonly) float contrast;
-@property(readonly) unsigned int rowCount;
-@property(readonly) unsigned int size;
+@property(readonly) unsigned long long columnCount;
+@property(readonly) double contrast;
+@property(readonly) unsigned long long rowCount;
+@property(readonly) unsigned long long size;
 
 - (void)_freeColorBoxes;
 - (struct { /* ? */ }**)colorBoxes;
-- (unsigned int)columnCount;
-- (float)contrast;
+- (unsigned long long)columnCount;
+- (double)contrast;
 - (void)dealloc;
 - (id)description;
-- (id)initWithColorBoxes:(struct { /* ? */ }**)arg1 size:(unsigned int)arg2 rowCount:(unsigned int)arg3 columnCount:(unsigned int)arg4 contrast:(float)arg5;
-- (unsigned int)rowCount;
-- (unsigned int)size;
+- (id)initWithColorBoxes:(struct { /* ? */ }**)arg1 size:(unsigned long long)arg2 rowCount:(unsigned long long)arg3 columnCount:(unsigned long long)arg4 contrast:(double)arg5;
+- (unsigned long long)rowCount;
+- (unsigned long long)size;
 
 @end

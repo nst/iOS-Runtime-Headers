@@ -7,48 +7,55 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class WBSFormMetadataControllerPrivate;
-
 @interface WBSFormMetadataController : NSObject {
-    WBSFormMetadataControllerPrivate *_private;
+    struct HashMap<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata>, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashTraits<OpaqueFormAutoFillFrame *>, WTF::HashTraits<WTF::OwnPtr<FrameMetadata> > > { 
+        struct HashTable<OpaqueFormAutoFillFrame *, WTF::KeyValuePair<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata> > >, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashMap<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata>, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashTraits<OpaqueFormAutoFillFrame *>, WTF::HashTraits<WTF::OwnPtr<FrameMetadata> > >::KeyValuePairTraits, WTF::HashTraits<OpaqueFormAutoFillFrame *> > { 
+            struct KeyValuePair<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata> > {} *m_table; 
+            int m_tableSize; 
+            int m_tableSizeMask; 
+            int m_keyCount; 
+            int m_deletedCount; 
+        } m_impl; 
+    } _framesToMetadataMap;
 }
 
-- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; struct RetainPtr<id<WBSFormAutoFillFrame> > { id x_6_1_1; } x6; id x7; }*)metadataForFrame:(id)arg1 requestType:(unsigned int)arg2;
-- (void)autoFillForm:(double)arg1 inFrame:(id)arg2 withValues:(id)arg3 fillSynchronously:(BOOL)arg4 selectFieldWithNameAfterFilling:(id)arg5;
-- (void)autoFillForm:(double)arg1 inFrame:(id)arg2 withValues:(id)arg3;
-- (void)autoFillFormAsynchronously:(double)arg1 inFrame:(id)arg2 withValues:(id)arg3 selectFieldWithNameAfterFilling:(id)arg4;
-- (void)autoFillFormSynchronously:(double)arg1 inFrame:(id)arg2 withValues:(id)arg3;
+- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; id x7; }*)metadataForFrame:(id)arg1 requestType:(unsigned long long)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 selectFieldAfterFilling:(id)arg3;
+- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(bool)arg3 selectFieldAfterFilling:(id)arg4;
+- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2;
+- (void)autoFillFormSynchronouslyInFrame:(id)arg1 withValues:(id)arg2;
 - (void)clearMetadataForFrame:(id)arg1;
 - (void)clearScriptWorld;
-- (void)countUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned int*)arg2 textAreas:(unsigned int*)arg3;
+- (void)countUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned long long*)arg2 textAreas:(unsigned long long*)arg3;
 - (void)creditCardFieldBlurredInFrame:(id)arg1;
 - (void)creditCardFieldFocused:(id)arg1 inFrame:(id)arg2;
-- (void)dealloc;
 - (void)fillForm:(double)arg1 inFrame:(id)arg2 withPassword:(id)arg3;
-- (void)focusField:(id)arg1 inForm:(double)arg2 inFrame:(id)arg3;
-- (id)formAutoFillNodeForField:(id)arg1 form:(double)arg2 inFrame:(id)arg3;
+- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
+- (void)focusField:(id)arg1 inFrame:(id)arg2;
+- (id)formAutoFillNodeForField:(id)arg1 inFrame:(id)arg2;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue { }*)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
-- (BOOL)formClassificationShouldIgnoreAutocompleteAttribute;
 - (id)formElementWithFormID:(double)arg1 inFrame:(id)arg2;
-- (void)getMetadataForAllFormsInPageWithMainFrame:(id)arg1 requestType:(unsigned int)arg2 frames:(id*)arg3 formMetadata:(id*)arg4;
-- (void)getMetadataForTextField:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id*)arg3 formMetadata:(id*)arg4 canAutoComplete:(BOOL*)arg5;
+- (id)formSubmissionURLStringForSearchTextField:(id)arg1 inFrame:(id)arg2 useStrictDetection:(bool)arg3;
+- (void)getMetadataForAllFormsInPageWithMainFrame:(id)arg1 requestType:(unsigned long long)arg2 frames:(id*)arg3 formMetadata:(id*)arg4;
+- (void)getMetadataForTextField:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id*)arg3 formMetadata:(id*)arg4;
 - (id)init;
-- (id)metadataForForm:(id)arg1 inFrame:(id)arg2 requestType:(unsigned int)arg3;
-- (id)metadataForTextField:(id)arg1 form:(double)arg2 inFrame:(id)arg3 afterReplacingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 withString:(id)arg5 andSelectingTailStartingAt:(unsigned int)arg6;
-- (BOOL)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
+- (id)metadataForForm:(id)arg1 inFrame:(id)arg2 requestType:(unsigned long long)arg3;
+- (bool)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
 - (void)passwordFieldBlurredInFrame:(id)arg1;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;
-- (void)passwordFieldTextDidChange:(id)arg1 inFrame:(id)arg2;
 - (void)recursivelyClearMetadataForFrames:(id)arg1;
-- (void)recursivelyCollectMetadataInFrame:(id)arg1 requestType:(unsigned int)arg2 frames:(id)arg3 formMetadata:(id)arg4;
-- (void)recursivelyCountUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned int*)arg2 textAreas:(unsigned int*)arg3;
-- (void)removeAutoFillHighlightFromField:(id)arg1 form:(double)arg2 inFrame:(id)arg3;
-- (void)selectRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inField:(id)arg2 form:(double)arg3 inFrame:(id)arg4;
+- (void)recursivelyCollectMetadataInFrame:(id)arg1 requestType:(unsigned long long)arg2 frames:(id)arg3 formMetadata:(id)arg4;
+- (void)recursivelyCountUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned long long*)arg2 textAreas:(unsigned long long*)arg3;
+- (void)replaceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inField:(id)arg2 inFrame:(id)arg3 withString:(id)arg4 andSelectTailStartingAt:(unsigned long long)arg5;
+- (void)selectRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inField:(id)arg2 inFrame:(id)arg3;
 - (void)textFieldBlurred:(id)arg1 inFrame:(id)arg2;
 - (void)textFieldFocused:(id)arg1 inFrame:(id)arg2;
-- (void)textFieldTextDidChange:(id)arg1 inFrame:(id)arg2;
-- (unsigned int)userEditedTextControlCountInArray:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 expectTextFieldsRatherThanTextAreas:(BOOL)arg3;
+- (id)uniqueIDForTextField:(id)arg1 inFrame:(id)arg2;
+- (unsigned long long)userEditedTextControlCountInArray:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 expectTextFieldsRatherThanTextAreas:(bool)arg3;
 - (void)usernameFieldBlurredInFrame:(id)arg1;
 - (void)usernameFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3;
+- (id)visibleNonEmptyTextFieldsInForm:(id)arg1 inFrame:(id)arg2;
 
 @end

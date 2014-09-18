@@ -11,81 +11,85 @@
 @interface KNMotionBlurAnimationPluginWrapper : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
     NSDictionary *_animationCacheDict;
     NSDictionary *_animationDict;
     } _animationFrame;
     NSObject<KNAnimationPluginAnimationRendering> *_animationPlugin;
     } _drawableFrame;
     NSArray *_generatedTextures;
-    BOOL _isSetup;
     KNMotionBlurWrapper *_motionBlurWrapper;
     } _projectionTransform;
-    BOOL _shouldGenerateNewTexturesFromLayers;
     id _textureDrawOptionsBlock;
+    bool_isSetup;
+    bool_shouldDrawMotionBlur;
+    bool_shouldGenerateNewTexturesFromLayers;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } animationFrame;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } animationFrame;
 @property NSObject<KNAnimationPluginAnimationRendering> * animationPlugin;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawableFrame;
-@property BOOL isSetup;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } drawableFrame;
+@property bool isSetup;
 @property(readonly) KNMotionBlurWrapper * motionBlurWrapper;
-@property struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } projectionTransform;
-@property BOOL shouldGenerateNewTexturesFromLayers;
+@property struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } projectionTransform;
+@property bool shouldDrawMotionBlur;
+@property bool shouldGenerateNewTexturesFromLayers;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })animationFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })animationFrame;
 - (id)animationPlugin;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawableFrame;
-- (id)initWithAnimationPlugin:(id)arg1 drawableFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animationFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (BOOL)isSetup;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawableFrame;
+- (id)initWithAnimationPlugin:(id)arg1 drawableFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (bool)isSetup;
 - (id)motionBlurWrapper;
 - (id)p_generatedTexturesFromLayersInAnimationDict:(id)arg1 context:(id)arg2 animationContext:(id)arg3 textures:(id)arg4;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })p_projectionTransformWithType:(int)arg1 customProjectionTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2 context:(id)arg3 animationContext:(id)arg4;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })p_projectionTransformWithType:(long long)arg1 customProjectionTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg2 context:(id)arg3 animationContext:(id)arg4;
 - (void)p_setupAnimationDictionariesWithAnimationDict:(id)arg1 context:(id)arg2;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })projectionTransform;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })projectionTransform;
 - (void)renderFrameWithContext:(id)arg1;
-- (void)setAnimationFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAnimationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAnimationPlugin:(id)arg1;
-- (void)setDrawableFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIsSetup:(BOOL)arg1;
-- (void)setProjectionTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
-- (void)setShouldGenerateNewTexturesFromLayers:(BOOL)arg1;
-- (void)setupWithContext:(id)arg1 animationContext:(id)arg2 animationDict:(id)arg3 textures:(id)arg4 projectionTransformType:(int)arg5 customProjectionTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg6;
-- (void)setupWithContext:(id)arg1 animationContext:(id)arg2 orthographicProjection:(BOOL)arg3;
-- (BOOL)shouldGenerateNewTexturesFromLayers;
+- (void)setDrawableFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setIsSetup:(bool)arg1;
+- (void)setProjectionTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1;
+- (void)setShouldDrawMotionBlur:(bool)arg1;
+- (void)setShouldGenerateNewTexturesFromLayers:(bool)arg1;
+- (void)setupWithContext:(id)arg1 animationContext:(id)arg2 animationDict:(id)arg3 textures:(id)arg4 projectionTransformType:(long long)arg5 customProjectionTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg6;
+- (void)setupWithContext:(id)arg1 animationContext:(id)arg2 orthographicProjection:(bool)arg3;
+- (bool)shouldDrawMotionBlur;
+- (bool)shouldGenerateNewTexturesFromLayers;
 - (void)teardown;
 
 @end

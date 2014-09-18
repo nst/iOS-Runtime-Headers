@@ -11,22 +11,22 @@
 @interface ACDAuthenticationDialogRequest : NSObject {
     ACAccount *_account;
     id _completion;
-    BOOL _confirmationRequired;
     NSURL *_url;
+    bool_confirmationRequired;
 }
 
 @property(retain) ACAccount * account;
 @property(copy) id completion;
-@property BOOL confirmationRequired;
+@property bool confirmationRequired;
 @property(copy) NSURL * url;
 
 - (void).cxx_destruct;
 - (id)account;
 - (id)completion;
-- (BOOL)confirmationRequired;
+- (bool)confirmationRequired;
 - (void)setAccount:(id)arg1;
 - (void)setCompletion:(id)arg1;
-- (void)setConfirmationRequired:(BOOL)arg1;
+- (void)setConfirmationRequired:(bool)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

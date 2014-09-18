@@ -2,24 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSData, NSObject<OS_dispatch_semaphore>, _UIAsyncInvocation;
+@class NSData, NSObject<OS_dispatch_semaphore>;
 
 @interface _UIDecompressionInfo : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL decompressionComplete;
+        double width; 
+        double height; 
+    booldecompressionComplete;
+    boolmetadataComplete;
     NSData *imageData;
-    unsigned long jpegDecodeRequestID;
+    unsigned long long jpegDecodeRequestID;
     } maxSize;
-    BOOL metadataComplete;
     NSObject<OS_dispatch_semaphore> *metadataSemaphore;
     int renderingIntent;
     NSObject<OS_dispatch_semaphore> *syncSemaphore;
-    _UIAsyncInvocation *terminationInvocation;
 }
 
 - (void)dealloc;
-- (id)initWithData:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 renderingIntent:(int)arg3;
+- (id)initWithData:(id)arg1 maxSize:(struct CGSize { double x1; double x2; })arg2 renderingIntent:(int)arg3;
 
 @end

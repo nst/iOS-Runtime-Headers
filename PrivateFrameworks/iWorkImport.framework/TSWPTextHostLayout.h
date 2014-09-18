@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPShapeInfo, TSWPShapeLayout;
+@class NSString, TSWPShapeInfo, TSWPShapeLayout;
 
 @interface TSWPTextHostLayout : TSDDrawableLayout <TSWPTextEditingHostLayout> {
     TSWPShapeInfo *_editingShapeInfo;
     TSWPShapeLayout *_editingShapeLayout;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) TSWPShapeInfo * editingShape;
 @property(readonly) TSWPShapeLayout * editingShapeLayout;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)editingShape;

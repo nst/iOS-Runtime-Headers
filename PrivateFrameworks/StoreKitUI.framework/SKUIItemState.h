@@ -5,27 +5,47 @@
 @class NSNumber, NSString;
 
 @interface SKUIItemState : NSObject <NSCopying> {
+    unsigned long long _downloadContentFlags;
     NSString *_downloadPhase;
     float _downloadProgress;
     NSNumber *_itemIdentifier;
-    unsigned int _state;
+    unsigned long long _libraryContentFlags;
+    long long _mediaCategory;
+    unsigned long long _state;
+    NSString *_variantIdentifier;
 }
 
+@property(readonly) bool activeStateIsPreview;
+@property(readonly) unsigned long long allContentFlags;
+@property unsigned long long downloadContentFlags;
 @property(copy) NSString * downloadPhase;
 @property float downloadProgress;
 @property(copy) NSNumber * itemIdentifier;
-@property unsigned int state;
+@property unsigned long long libraryContentFlags;
+@property long long mediaCategory;
+@property unsigned long long state;
+@property(copy) NSString * variantIdentifier;
 
 - (void).cxx_destruct;
+- (bool)activeStateIsPreview;
+- (unsigned long long)allContentFlags;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (unsigned long long)downloadContentFlags;
 - (id)downloadPhase;
 - (float)downloadProgress;
 - (id)itemIdentifier;
+- (unsigned long long)libraryContentFlags;
+- (long long)mediaCategory;
+- (void)setDownloadContentFlags:(unsigned long long)arg1;
 - (void)setDownloadPhase:(id)arg1;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setItemIdentifier:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (void)setLibraryContentFlags:(unsigned long long)arg1;
+- (void)setMediaCategory:(long long)arg1;
+- (void)setState:(unsigned long long)arg1;
+- (void)setVariantIdentifier:(id)arg1;
+- (unsigned long long)state;
+- (id)variantIdentifier;
 
 @end

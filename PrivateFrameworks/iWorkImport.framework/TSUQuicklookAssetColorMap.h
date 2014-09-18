@@ -12,9 +12,8 @@
 @property(retain) NSString * appAssetPath;
 @property(retain) NSMutableDictionary * assetMap;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)colorForResource:(id)arg1;
-+ (BOOL)hasAppAssets;
++ (bool)hasAppAssets;
 + (id)quicklookAssetMap;
 
 - (id)appAssetPath;
@@ -23,7 +22,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setAppAssetPath:(id)arg1;
 - (void)setAssetMap:(id)arg1;
 

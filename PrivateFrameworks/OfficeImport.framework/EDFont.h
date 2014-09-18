@@ -28,10 +28,12 @@
     unsigned int mWeight;
 }
 
-+ (id)filterFontName:(id)arg1;
-+ (id)fontNameWithFamilyName:(id)arg1 bold:(bool)arg2 italic:(bool)arg3;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)fontWithResources:(id)arg1;
-+ (id)lassoNameForFontName:(id)arg1 bold:(bool)arg2 italic:(bool)arg3;
 
 - (int)charSet;
 - (id)color;
@@ -39,13 +41,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)family;
-- (id)filteredName;
 - (double)height;
 - (id)initWithResources:(id)arg1;
 - (bool)isBold;
 - (bool)isBoldOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToFont:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToFont:(id)arg1;
 - (bool)isHeightOverridden;
 - (bool)isItalic;
 - (bool)isItalicOverridden;
@@ -55,7 +56,6 @@
 - (bool)isStrikeOverridden;
 - (bool)isUnderlineOverridden;
 - (bool)isWeightOverridden;
-- (id)lassoName;
 - (id)name;
 - (int)script;
 - (void)setBold:(bool)arg1;

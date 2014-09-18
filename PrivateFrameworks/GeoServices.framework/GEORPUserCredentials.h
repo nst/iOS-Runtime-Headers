@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface GEORPUserCredentials : PBCodable <NSCopying> {
-    NSString *_iCloudUserMapsAuthToken;
-    NSString *_iCloudUserPersonID;
+    NSString *_icloudUserMapsAuthToken;
+    NSString *_icloudUserPersonId;
 }
 
-@property(readonly) BOOL hasICloudUserMapsAuthToken;
-@property(readonly) BOOL hasICloudUserPersonID;
-@property(retain) NSString * iCloudUserMapsAuthToken;
-@property(retain) NSString * iCloudUserPersonID;
+@property(readonly) bool hasIcloudUserMapsAuthToken;
+@property(readonly) bool hasIcloudUserPersonId;
+@property(retain) NSString * icloudUserMapsAuthToken;
+@property(retain) NSString * icloudUserPersonId;
 
 + (id)_credentialsForPrimaryICloudAccount;
 
@@ -21,15 +21,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasICloudUserMapsAuthToken;
-- (BOOL)hasICloudUserPersonID;
-- (unsigned int)hash;
-- (id)iCloudUserMapsAuthToken;
-- (id)iCloudUserPersonID;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setICloudUserMapsAuthToken:(id)arg1;
-- (void)setICloudUserPersonID:(id)arg1;
+- (bool)hasIcloudUserMapsAuthToken;
+- (bool)hasIcloudUserPersonId;
+- (unsigned long long)hash;
+- (id)icloudUserMapsAuthToken;
+- (id)icloudUserPersonId;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setIcloudUserMapsAuthToken:(id)arg1;
+- (void)setIcloudUserPersonId:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

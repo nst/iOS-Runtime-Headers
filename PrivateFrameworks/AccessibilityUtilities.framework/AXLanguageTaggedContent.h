@@ -6,28 +6,30 @@
 
 @interface AXLanguageTaggedContent : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     } _currentChunk;
     NSArray *_currentDialects;
     NSLinguisticTagger *_linguisticTagger;
-    BOOL _predictedByTagger;
-    BOOL _tagged;
     NSMutableArray *_tags;
     NSMutableOrderedSet *_unpredictedAmbiguousLangMaps;
     NSString *_userPreferredLangID;
+    bool_predictedByTagger;
+    bool_splitContentOnNewlines;
+    bool_tagged;
 }
 
 @property(readonly) NSString * content;
 @property(retain) NSArray * currentDialects;
 @property(retain) NSLinguisticTagger * linguisticTagger;
-@property(getter=isTagged) BOOL tagged;
+@property bool splitContentOnNewlines;
+@property(getter=isTagged) bool tagged;
 @property(retain) NSMutableArray * tags;
 @property(retain) NSMutableOrderedSet * unpredictedAmbiguousLangMaps;
 @property(copy) NSString * userPreferredLangID;
 
 - (void)_addTag;
-- (void)_manuallyProcessContentWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_manuallyProcessContentWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)ambiguousLangMaps;
 - (id)content;
 - (id)currentDialects;
@@ -35,22 +37,24 @@
 - (id)description;
 - (void)enumeratePredictedTags:(id)arg1;
 - (void)enumerateUnpredictedTags:(id)arg1;
-- (BOOL)hasOnlyNonWesternLangMaps;
-- (BOOL)hasOnlyWesternLangMaps;
+- (bool)hasOnlyNonWesternLangMaps;
+- (bool)hasOnlyWesternLangMaps;
 - (id)initWithContent:(id)arg1;
-- (BOOL)isTagged;
-- (BOOL)langMapIsSignificant:(id)arg1;
+- (bool)isTagged;
+- (bool)langMapIsSignificant:(id)arg1;
 - (id)linguisticTagger;
 - (id)primaryAmbiguousDialect;
 - (id)primaryUnambiguousDialect;
 - (void)setCurrentDialects:(id)arg1;
 - (void)setLinguisticTagger:(id)arg1;
-- (void)setTagged:(BOOL)arg1;
+- (void)setSplitContentOnNewlines:(bool)arg1;
+- (void)setTagged:(bool)arg1;
 - (void)setTags:(id)arg1;
 - (void)setUnpredictedAmbiguousLangMaps:(id)arg1;
 - (void)setUserPreferredLangID:(id)arg1;
 - (id)significantAmbiguousLangMaps;
 - (id)significantAmbiguousLangMapsForUserKeyboards;
+- (bool)splitContentOnNewlines;
 - (void)tagContent;
 - (id)tags;
 - (id)unambiguousLangMaps;

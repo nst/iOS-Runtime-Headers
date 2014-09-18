@@ -2,29 +2,32 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation;
+@class GEOLocation, NSMutableArray;
 
 @interface GEOQuickETAResponse : NSObject {
+    unsigned int _baselineETASeconds;
     GEOLocation *_destinationLocation;
-    unsigned int _distance;
-    unsigned int _historicalETASeconds;
-    unsigned int _liveETASeconds;
+    double _distance;
+    unsigned int _responseETASeconds;
+    NSMutableArray *_sortedETAs;
     GEOLocation *_sourceLocation;
 }
 
+@property(readonly) unsigned int baselineETASeconds;
 @property(readonly) GEOLocation * destinationLocation;
-@property(readonly) unsigned int distance;
-@property(readonly) unsigned int historicalETASeconds;
-@property(readonly) unsigned int liveETASeconds;
+@property(readonly) double distance;
+@property(readonly) unsigned int responseETASeconds;
+@property(readonly) NSMutableArray * sortedETAs;
 @property(readonly) GEOLocation * sourceLocation;
 
+- (unsigned int)baselineETASeconds;
 - (void)dealloc;
 - (id)destinationLocation;
-- (unsigned int)distance;
-- (unsigned int)historicalETASeconds;
+- (double)distance;
 - (id)initWithDirectionsResponse:(id)arg1 fromRequest:(id)arg2;
 - (id)initWithETAResult:(id)arg1 fromRequest:(id)arg2;
-- (unsigned int)liveETASeconds;
+- (unsigned int)responseETASeconds;
+- (id)sortedETAs;
 - (id)sourceLocation;
 
 @end

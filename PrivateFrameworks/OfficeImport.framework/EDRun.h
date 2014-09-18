@@ -2,29 +2,35 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources;
+@class EDResources, NSString;
 
 @interface EDRun : NSObject <EDKeyedObject> {
-    unsigned int mCharIndex;
-    unsigned int mFontIndex;
+    unsigned long long mCharIndex;
+    unsigned long long mFontIndex;
     EDResources *mResources;
 }
 
-+ (id)runWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
-+ (id)runWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (id)runWithCharIndex:(unsigned long long)arg1 font:(id)arg2 resources:(id)arg3;
++ (id)runWithCharIndex:(unsigned long long)arg1 fontIndex:(unsigned long long)arg2 resources:(id)arg3;
 + (id)runWithResources:(id)arg1;
 
-- (unsigned int)charIndex;
+- (void)adjustIndex:(unsigned long long)arg1;
+- (unsigned long long)charIndex;
 - (id)font;
-- (unsigned int)fontIndex;
-- (id)initWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
-- (id)initWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;
+- (unsigned long long)fontIndex;
+- (id)initWithCharIndex:(unsigned long long)arg1 font:(id)arg2 resources:(id)arg3;
+- (id)initWithCharIndex:(unsigned long long)arg1 fontIndex:(unsigned long long)arg2 resources:(id)arg3;
 - (id)initWithResources:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRun:(id)arg1;
-- (int)key;
-- (void)setCharIndex:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRun:(id)arg1;
+- (long long)key;
+- (void)setCharIndex:(unsigned long long)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
+- (void)setFontIndex:(unsigned long long)arg1;
 
 @end

@@ -2,9 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface _UIViewServiceViewControllerOperator_XPCInterface : NSObject <_UIViewServiceDeputyXPCInterface> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (id)connectionInvocation;
 - (id)connectionProtocol;
 - (SEL)connectionSelector;
 - (id)exportedInterface;

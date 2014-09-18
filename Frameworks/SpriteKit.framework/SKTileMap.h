@@ -9,13 +9,10 @@
     int _imgHeight;
     NSString *_imgName;
     int _imgWidth;
-    BOOL _isometric;
     int _layerHeight;
     NSString *_layerName;
     NSMutableArray *_layerTiles;
     int _layerWidth;
-    BOOL _loaded;
-    BOOL _loading;
     int _mapHeight;
     NSString *_mapName;
     int _mapTileHeight;
@@ -23,16 +20,23 @@
     int _mapWidth;
     int _margin;
     NSXMLParser *_parser;
-    BOOL _skipSprites;
     int _spacing;
     int _tileHeight;
     int _tileIndex;
     int _tileWidth;
     NSString *_tilesetName;
+    bool_isometric;
+    bool_loaded;
+    bool_loading;
+    bool_skipSprites;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } mapSize;
-@property(readonly) struct CGSize { float x1; float x2; } tileSize;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) struct CGSize { double x1; double x2; } mapSize;
+@property(readonly) Class superclass;
+@property(readonly) struct CGSize { double x1; double x2; } tileSize;
 
 + (id)tileMapWithName:(id)arg1;
 
@@ -41,7 +45,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)loadMap;
-- (struct CGSize { float x1; float x2; })mapSize;
+- (struct CGSize { double x1; double x2; })mapSize;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
@@ -50,6 +54,6 @@
 - (void)parserDidStartDocument:(id)arg1;
 - (id)textureForGid:(unsigned int)arg1;
 - (id)tileAtGridLocationX:(unsigned int)arg1 y:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })tileSize;
+- (struct CGSize { double x1; double x2; })tileSize;
 
 @end

@@ -5,14 +5,13 @@
 @class NSString;
 
 @interface DAMailboxDeleteMessageRequest : DAMailboxRequest {
-    NSString *_messageID;
 }
 
-- (void)dealloc;
+@property(copy) NSString * messageID;
+
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initRequestWithMessageID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)messageID;
+- (bool)isEqual:(id)arg1;
 
 @end

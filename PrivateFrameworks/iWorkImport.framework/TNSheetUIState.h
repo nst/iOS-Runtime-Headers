@@ -10,27 +10,27 @@
 @interface TNSheetUIState : NSObject <NSCopying> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    boolmHasPreviousVisibleRect;
+    boolmHasVisibleRect;
     int mDeviceIdiom;
     unsigned char mFormFocusedFieldIndex;
     unsigned short mFormFocusedRecordIndex;
-    BOOL mHasPreviousVisibleRect;
-    BOOL mHasVisibleRect;
     float mPreviousViewScale;
     } mPreviousVisibleRect;
     float mViewScale;
@@ -38,50 +38,49 @@
 }
 
 @property int archivedDeviceIdiom;
-@property(readonly) int currentDeviceIdiom;
 @property unsigned char formFocusedFieldIndex;
 @property unsigned short formFocusedRecordIndex;
-@property BOOL hasPreviousVisibleRect;
-@property BOOL hasVisibleRect;
-@property(readonly) struct CGPoint { float x1; float x2; } previousScrollPosition;
+@property bool hasPreviousVisibleRect;
+@property bool hasVisibleRect;
+@property(readonly) struct CGPoint { double x1; double x2; } previousScrollPosition;
 @property float previousViewScale;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousVisibleRect;
-@property(readonly) struct CGPoint { float x1; float x2; } scrollPosition;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previousVisibleRect;
+@property(readonly) struct CGPoint { double x1; double x2; } scrollPosition;
 @property float viewScale;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
 
-+ (id)sheetUIStateWithPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (id)sheetUIStateWithVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (int)currentDeviceIdiom;
++ (id)sheetUIStateWithPreviousVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)sheetUIStateWithVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 - (id).cxx_construct;
 - (int)archivedDeviceIdiom;
 - (void)clearPreviousVisibleRect;
 - (void)clearVisibleRect;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)currentDeviceIdiom;
 - (unsigned char)formFocusedFieldIndex;
 - (unsigned short)formFocusedRecordIndex;
-- (BOOL)hasPreviousVisibleRect;
-- (BOOL)hasVisibleRect;
+- (bool)hasPreviousVisibleRect;
+- (bool)hasVisibleRect;
 - (id)init;
 - (id)initWithArchive:(const struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; float x4; float x5; struct Point {} *x6; boolx7; boolx8; boolx9; unsigned int x10; struct Size {} *x11; struct Size {} *x12; unsigned int x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isDefault;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGPoint { float x1; float x2; })previousScrollPosition;
+- (bool)isDefault;
+- (bool)isEqual:(id)arg1;
+- (struct CGPoint { double x1; double x2; })previousScrollPosition;
 - (float)previousViewScale;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousVisibleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousVisibleRect;
 - (void)saveToArchive:(struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Point {} *x3; float x4; float x5; struct Point {} *x6; boolx7; boolx8; boolx9; unsigned int x10; struct Size {} *x11; struct Size {} *x12; unsigned int x13; unsigned int x14; int x15; unsigned int x16[1]; }*)arg1 archiver:(id)arg2;
-- (struct CGPoint { float x1; float x2; })scrollPosition;
+- (struct CGPoint { double x1; double x2; })scrollPosition;
 - (void)setArchivedDeviceIdiom:(int)arg1;
 - (void)setFormFocusedFieldIndex:(unsigned char)arg1;
 - (void)setFormFocusedRecordIndex:(unsigned short)arg1;
-- (void)setHasPreviousVisibleRect:(BOOL)arg1;
-- (void)setHasVisibleRect:(BOOL)arg1;
+- (void)setHasPreviousVisibleRect:(bool)arg1;
+- (void)setHasVisibleRect:(bool)arg1;
 - (void)setPreviousViewScale:(float)arg1;
-- (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setViewScale:(float)arg1;
-- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (float)viewScale;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 
 @end

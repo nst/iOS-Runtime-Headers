@@ -6,8 +6,8 @@
 
 @interface SCRCPhotoEvaluatorResultPeople : SCRCPhotoEvaluatorResult {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     } _imageSize;
     NSArray *_people;
 }
@@ -16,7 +16,7 @@
 
 - (void)dealloc;
 - (id)humanReadableResult;
-- (id)initWithPeople:(id)arg1 inImageOfSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithPeople:(id)arg1 inImageOfSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)people;
 
 @end

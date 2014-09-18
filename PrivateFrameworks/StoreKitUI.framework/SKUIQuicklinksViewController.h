@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIQuicklinksViewControllerDelegate>, NSArray, SKUIColorScheme, SKUIQuicklinksView, UICollectionView;
+@class <SKUIQuicklinksViewControllerDelegate>, NSArray, NSString, SKUIColorScheme, SKUIQuicklinksView, UICollectionView;
 
 @interface SKUIQuicklinksViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_collectionView;
@@ -12,19 +12,22 @@
     SKUIQuicklinksView *_quicklinksView;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIQuicklinksViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * indexPathsForVisibleItems;
 @property(copy) NSArray * links;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_numberOfRows;
-- (void)_reloadForInterfaceOrientation:(int)arg1;
+- (long long)_numberOfRows;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLinkAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForLinkAtIndex:(long long)arg1;
 - (id)indexPathsForVisibleItems;
 - (id)links;
 - (void)loadView;
@@ -32,7 +35,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLinks:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

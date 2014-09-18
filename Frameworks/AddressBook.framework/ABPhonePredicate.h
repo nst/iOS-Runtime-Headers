@@ -19,11 +19,11 @@
 - (id)dbCountry;
 - (void)dealloc;
 - (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(void*)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;
-- (BOOL)hasCallback;
-- (BOOL)isValid;
+- (bool)hasCallback;
+- (bool)isValid;
 - (id)phoneNumber;
 - (id)predicateFormat;
-- (id)queryJoinsInCompound:(BOOL)arg1;
+- (id)queryJoinsInCompound:(bool)arg1;
 - (id)queryWhereString;
 - (void)setCountry:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;

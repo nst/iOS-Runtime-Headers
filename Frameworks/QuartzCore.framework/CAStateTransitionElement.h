@@ -6,15 +6,15 @@
 
 @interface CAStateTransitionElement : NSObject <NSCopying, NSCoding> {
     CAAnimation *_animation;
-    BOOL _enabled;
     NSString *_key;
     CALayer *_target;
+    bool_enabled;
 }
 
 @property(retain) CAAnimation * animation;
 @property double beginTime;
 @property double duration;
-@property(getter=isEnabled) BOOL enabled;
+@property(getter=isEnabled) bool enabled;
 @property(copy) NSString * key;
 @property CALayer * target;
 
@@ -32,12 +32,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)key;
 - (void)setAnimation:(id)arg1;
 - (void)setBeginTime:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setKey:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;

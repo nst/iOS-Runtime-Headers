@@ -10,9 +10,9 @@
 }
 
 @property(retain) MPMediaItemArtwork * artwork;
-@property(getter=isContainer) BOOL container;
-@property(readonly) NSString * identifier;
-@property(getter=isPlayable) BOOL playable;
+@property(getter=isContainer) bool container;
+@property(copy,readonly) NSString * identifier;
+@property(getter=isPlayable) bool playable;
 @property float playbackProgress;
 @property(copy) NSString * subtitle;
 @property(copy) NSString * title;
@@ -26,12 +26,12 @@
 - (id)description;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isContainer;
-- (BOOL)isPlayable;
+- (bool)isContainer;
+- (bool)isPlayable;
 - (float)playbackProgress;
 - (void)setArtwork:(id)arg1;
-- (void)setContainer:(BOOL)arg1;
-- (void)setPlayable:(BOOL)arg1;
+- (void)setContainer:(bool)arg1;
+- (void)setPlayable:(bool)arg1;
 - (void)setPlaybackProgress:(float)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSCache, NSHashTable, NSMapTable, NSObject<OS_dispatch_queue>, TSPComponent, TSPObjectContext;
+@class NSCache, NSHashTable, NSMapTable, NSObject<OS_dispatch_queue>, NSString, TSPComponent, TSPObjectContext;
 
 @interface TSPComponentManager : NSObject <TSPComponentDelegate, TSPObjectModifyDelegate> {
     NSCache *_componentCache;
@@ -14,21 +14,26 @@
     TSPComponent *_packageMetadataComponent;
     NSObject<OS_dispatch_queue> *_readFlushedComponentQueue;
     TSPComponent *_viewStateComponent;
+    bool_isTornDown;
 }
 
 @property(readonly) TSPObjectContext * context;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) TSPComponent * documentComponent;
 @property(readonly) TSPComponent * documentObjectContainerComponent;
-@property(readonly) BOOL isDocumentComponentTreeModified;
-@property(readonly) BOOL isSupportComponentTreeModified;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isDocumentComponentTreeModified;
+@property(readonly) bool isSupportComponentTreeModified;
 @property(readonly) TSPComponent * packageMetadataComponent;
+@property(readonly) Class superclass;
 @property(readonly) TSPComponent * supportComponent;
 @property(readonly) TSPComponent * supportObjectContainerComponent;
 @property(retain) TSPComponent * viewStateComponent;
 
 - (void).cxx_destruct;
 - (void)beginIgnoringCachedObjectEviction;
-- (void)cacheComponent:(id)arg1;
+- (void)cacheComponent:(id)arg1 isDiscardingContent:(bool)arg2;
 - (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)componentForRootObjectIdentifier:(long long)arg1;
 - (void)componentForRootObjectOfLazyReference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
@@ -45,26 +50,28 @@
 - (void)endIgnoringCachedObjectEviction;
 - (void)enumerateComponents:(id)arg1;
 - (void)evictAllCachedObjects;
+- (void)flushComponent:(id)arg1 isDiscardingContent:(bool)arg2;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isDocumentComponentTreeModified;
-- (BOOL)isSupportComponentTreeModified;
-- (void)loadFromPackageMetadata:(id)arg1 packageIdentifier:(unsigned char)arg2;
+- (bool)isActive;
+- (bool)isDocumentComponentTreeModified;
+- (bool)isSupportComponentTreeModified;
+- (void)loadFromPackage:(id)arg1 metadata:(id)arg2;
 - (id)objectForIdentifier:(long long)arg1;
 - (id)packageMetadataComponent;
-- (void)removeComponentFromCacheWithIdentifier:(long long)arg1;
 - (void)resumeLoadingModifiedFlushedComponents;
 - (void)retrieveOrCreateComponentForRootObject:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)rootComponentForPackageIdentifier:(unsigned char)arg1;
 - (id)rootComponentWithIdentifierImpl:(long long)arg1 locator:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)setViewStateComponent:(id)arg1;
-- (BOOL)shouldKeepAllCachedObjectsInMemory;
+- (bool)shouldKeepAllCachedObjectsInMemory;
 - (id)supportComponent;
 - (id)supportComponentImpl;
 - (id)supportObjectContainerComponent;
 - (void)suspendLoadingModifiedFlushedComponentsAndWait;
+- (void)tearDown;
 - (void)traverseComponentTreeFromRoot:(id)arg1 accessor:(id)arg2;
 - (id)viewStateComponent;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(bool)arg2;
 
 @end

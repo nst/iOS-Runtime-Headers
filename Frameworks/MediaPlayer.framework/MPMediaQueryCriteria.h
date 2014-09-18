@@ -6,49 +6,47 @@
 
 @interface MPMediaQueryCriteria : NSObject <NSCopying> {
     NSSet *_collectionPropertiesToFetch;
-    unsigned int _entityOrder;
+    unsigned long long _entityOrder;
     NSMutableSet *_filterPredicates;
-    int _groupingType;
-    BOOL _ignoreSystemFilterPredicates;
+    long long _groupingType;
     NSSet *_itemPropertiesToFetch;
     NSDictionary *_orderingDirectionMappings;
     NSArray *_orderingProperties;
-    BOOL _useSections;
+    bool_ignoreSystemFilterPredicates;
+    bool_useSections;
 }
 
 @property(copy) NSSet * collectionPropertiesToFetch;
-@property unsigned int entityOrder;
-@property(readonly) BOOL excludesEntitiesWithBlankNames;
+@property unsigned long long entityOrder;
+@property(readonly) bool excludesEntitiesWithBlankNames;
 @property(copy) NSSet * filterPredicates;
-@property int groupingType;
-@property BOOL ignoreSystemFilterPredicates;
+@property long long groupingType;
+@property bool ignoreSystemFilterPredicates;
 @property(copy) NSSet * itemPropertiesToFetch;
 @property(copy) NSDictionary * orderingDirectionMappings;
 @property(copy) NSArray * orderingProperties;
-@property(readonly) BOOL specifiesPlaylistItems;
+@property(readonly) bool specifiesPlaylistItems;
 
 - (void).cxx_destruct;
 - (id)ML3CollectionsQueryInLibrary:(id)arg1;
-- (id)ML3ItemsQueryInLibrary:(id)arg1 orderingProperties:(id)arg2 nameBlankProperty:(id)arg3;
-- (id)ML3ItemsQueryInLibrary:(id)arg1 orderingProperties:(id)arg2 orderingDirectionMappings:(id)arg3 nameBlankProperty:(id)arg4;
+- (id)ML3ItemsQueryInLibrary:(id)arg1 orderingTerms:(id)arg2 nameBlankProperty:(id)arg3;
 - (id)ML3ItemsQueryInLibrary:(id)arg1;
-- (id)ML3OrderingDirectionMappingsForMPDirectionMappings:(id)arg1;
-- (id)ML3OrderingPropertiesForGroupingType:(int)arg1;
-- (id)ML3OrderingPropertiesForMPOrderingProperties:(id)arg1;
-- (id)ML3OrderingPropertyForMPOrderingProperty:(id)arg1;
+- (id)ML3OrderingTermForMPOrderingProperty:(id)arg1;
+- (id)ML3OrderingTermsForGroupingType:(long long)arg1;
+- (id)ML3OrderingTermsForMPOrderingProperties:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
 - (void)addFilterPredicates:(id)arg1;
 - (id)collectionPropertiesToFetch;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)entityOrder;
-- (BOOL)excludesEntitiesWithBlankNames;
+- (unsigned long long)entityOrder;
+- (bool)excludesEntitiesWithBlankNames;
 - (id)filterPredicates;
-- (int)groupingType;
-- (unsigned int)hash;
-- (BOOL)ignoreSystemFilterPredicates;
+- (long long)groupingType;
+- (unsigned long long)hash;
+- (bool)ignoreSystemFilterPredicates;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)itemPropertiesToFetch;
 - (id)orderingDirectionMappings;
 - (id)orderingProperties;
@@ -56,13 +54,13 @@
 - (void)removeFilterPredicate:(id)arg1;
 - (void)removePredicatesForProperty:(id)arg1;
 - (void)setCollectionPropertiesToFetch:(id)arg1;
-- (void)setEntityOrder:(unsigned int)arg1;
+- (void)setEntityOrder:(unsigned long long)arg1;
 - (void)setFilterPredicates:(id)arg1;
-- (void)setGroupingType:(int)arg1;
-- (void)setIgnoreSystemFilterPredicates:(BOOL)arg1;
+- (void)setGroupingType:(long long)arg1;
+- (void)setIgnoreSystemFilterPredicates:(bool)arg1;
 - (void)setItemPropertiesToFetch:(id)arg1;
 - (void)setOrderingDirectionMappings:(id)arg1;
 - (void)setOrderingProperties:(id)arg1;
-- (BOOL)specifiesPlaylistItems;
+- (bool)specifiesPlaylistItems;
 
 @end

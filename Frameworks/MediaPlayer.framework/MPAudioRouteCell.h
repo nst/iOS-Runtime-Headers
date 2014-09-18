@@ -9,8 +9,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithRouteName:(id)arg1 isPicked:(BOOL)arg2;
+- (id)initWithRouteName:(id)arg1 isPicked:(bool)arg2;
 - (void)layoutSubviews;
-- (void)setPicked:(BOOL)arg1;
+- (void)setPicked:(bool)arg1;
 
 @end

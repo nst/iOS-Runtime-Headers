@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDBezierPath, TSDEditableBezierPathSource, TSDFill, TSDInfoGeometry, TSDMutableStroke, TSDPathSource, TSDPathSource<TSDSmartPathSource>;
+@class TSDBezierPath, TSDEditableBezierPathSource, TSDFill, TSDInfoGeometry, TSDMutableStroke, TSDPathSource;
 
-@interface TSDShapeLayout : TSDStyledLayout <TSDShapeControlLayout> {
+@interface TSDShapeLayout : TSDStyledLayout {
     struct { 
         unsigned int path : 1; 
         unsigned int pathBounds : 1; 
@@ -12,63 +12,82 @@
         unsigned int pathIsOpen : 1; 
         unsigned int pathIsLineSegment : 1; 
         unsigned int alignmentFrame : 1; 
+        unsigned int alignmentFrameInRoot : 1; 
         unsigned int headAndTail : 1; 
         unsigned int headLineEnd : 1; 
         unsigned int tailLineEnd : 1; 
         unsigned int clippedPath : 1; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
+    boolmCachedPathIsLineSegment;
+    boolmCachedPathIsOpen;
     } mCachedAlignmentFrame;
+    } mCachedAlignmentFrameInRoot;
+    } mCachedAlignmentFrameInRootTransformInRoot;
     TSDBezierPath *mCachedClippedPath;
     TSDEditableBezierPathSource *mCachedEditableBezierPathSource;
     TSDBezierPath *mCachedPath;
     } mCachedPathBounds;
     } mCachedPathBoundsWithoutStroke;
-    BOOL mCachedPathIsLineSegment;
-    BOOL mCachedPathIsOpen;
     TSDPathSource *mCachedPathSource;
     TSDFill *mDynamicFill;
     TSDMutableStroke *mDynamicStroke;
-    int mHeadCutSegment;
-    float mHeadCutT;
-    float mHeadLineEndAngle;
+    long long mHeadCutSegment;
+    double mHeadCutT;
+    double mHeadLineEndAngle;
     } mHeadLineEndPoint;
     } mHeadPoint;
     TSDInfoGeometry *mInitialInfoGeometry;
@@ -76,109 +95,103 @@
     TSDPathSource *mResizePathSource;
     } mShapeInvalidFlags;
     TSDPathSource *mShrunkenPathSource;
-    int mTailCutSegment;
-    float mTailCutT;
-    float mTailLineEndAngle;
+    long long mTailCutSegment;
+    double mTailCutT;
+    double mTailLineEndAngle;
     } mTailLineEndPoint;
     } mTailPoint;
 }
 
 @property(retain) TSDFill * dynamicFill;
 @property(readonly) TSDFill * fill;
-@property(readonly) TSDPathSource<TSDSmartPathSource> * smartPathSource;
 
-- (void)aliasPathForScale:(float)arg1 adjustedStroke:(id*)arg2 adjustedPath:(id*)arg3 startDelta:(struct CGPoint { float x1; float x2; }*)arg4 endDelta:(struct CGPoint { float x1; float x2; }*)arg5;
-- (void)aliasPathForScale:(float)arg1 originalStroke:(id)arg2 adjustedStroke:(id*)arg3 adjustedPath:(id*)arg4 startDelta:(struct CGPoint { float x1; float x2; }*)arg5 endDelta:(struct CGPoint { float x1; float x2; }*)arg6;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })aliasedAlignmentFrameForScale:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrameInRoot;
+- (void)aliasPathForScale:(double)arg1 adjustedStroke:(id*)arg2 adjustedPath:(id*)arg3 startDelta:(struct CGPoint { double x1; double x2; }*)arg4 endDelta:(struct CGPoint { double x1; double x2; }*)arg5;
+- (void)aliasPathForScale:(double)arg1 originalStroke:(id)arg2 adjustedStroke:(id*)arg3 adjustedPath:(id*)arg4 startDelta:(struct CGPoint { double x1; double x2; }*)arg5 endDelta:(struct CGPoint { double x1; double x2; }*)arg6;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })aliasedAlignmentFrameForScale:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrameInRoot;
 - (void)beginDynamicOperation;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (BOOL)canBeIntersected;
-- (BOOL)canResetTextAndObjectHandles;
-- (struct CGPoint { float x1; float x2; })centerForConnecting;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (bool)canBeIntersected;
+- (bool)canResetTextAndObjectHandles;
+- (struct CGPoint { double x1; double x2; })centerForConnecting;
 - (id)clippedPathForLineEnds;
 - (id)computeLayoutGeometry;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeLayoutTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })computeLayoutTransform;
 - (void)dealloc;
 - (id)dynamicFill;
-- (void)dynamicMovePathKnobDidBegin;
-- (void)dynamicMovePathKnobDidEnd;
-- (void)dynamicMoveSmartShapeKnobDidBegin;
 - (void)dynamicStrokeWidthChangeDidBegin;
 - (void)dynamicStrokeWidthChangeDidEnd;
-- (void)dynamicStrokeWidthUpdateToValue:(float)arg1;
-- (void)dynamicallyMovedPathKnobTo:(struct CGPoint { float x1; float x2; })arg1 withTracker:(id)arg2;
-- (void)dynamicallyMovedSmartShapeKnobTo:(struct CGPoint { float x1; float x2; })arg1 withTracker:(id)arg2;
+- (void)dynamicStrokeWidthUpdateToValue:(double)arg1;
 - (void)dynamicallyMovingLineSegmentWithTracker:(id)arg1;
 - (id)editablePathSource;
 - (void)endDynamicOperation;
 - (void)endResize;
 - (id)fill;
-- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
-- (float)headLineEndAngle;
-- (struct CGPoint { float x1; float x2; })headLineEndPoint;
-- (struct CGPoint { float x1; float x2; })headPoint;
+- (struct CGPoint { double x1; double x2; })getControlKnobPosition:(unsigned long long)arg1;
+- (double)headLineEndAngle;
+- (struct CGPoint { double x1; double x2; })headLineEndPoint;
+- (struct CGPoint { double x1; double x2; })headPoint;
 - (id)i_computeWrapPath;
-- (id)i_computeWrapPathClosed:(BOOL)arg1;
+- (id)i_computeWrapPathClosed:(bool)arg1;
 - (id)initWithInfo:(id)arg1;
 - (id)initialInfoGeometry;
 - (void)invalidateFrame;
 - (void)invalidatePath;
 - (void)invalidatePathBounds;
-- (BOOL)isBeingManipulated;
-- (BOOL)isInvisible;
-- (BOOL)isInvisibleAutosizingShape;
-- (BOOL)isStrokeBeingManipulated;
-- (BOOL)isTailEndOnLeft;
+- (bool)isBeingManipulated;
+- (bool)isInvisible;
+- (bool)isInvisibleAutosizingShape;
+- (bool)isStrokeBeingManipulated;
+- (bool)isTailEndOnLeft;
 - (id)layoutGeometryFromInfo;
 - (id)layoutInfoGeometry;
-- (float)lineEndScale;
-- (struct CGSize { float x1; float x2; })minimumSize;
-- (unsigned int)numberOfControlKnobs;
-- (void)offsetGeometryBy:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_boundsOfLineEndForHead:(BOOL)arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (double)lineEndScale;
+- (struct CGSize { double x1; double x2; })minimumSize;
+- (unsigned long long)numberOfControlKnobs;
+- (void)offsetGeometryBy:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_boundsOfLineEndForHead:(bool)arg1 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (id)p_cachedPath;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_cachedPathBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_cachedPathBoundsWithoutStroke;
-- (BOOL)p_cachedPathIsLineSegment;
-- (BOOL)p_cachedPathIsOpen;
-- (void)p_computeAngle:(float*)arg1 point:(struct CGPoint { float x1; float x2; }*)arg2 cutSegment:(int*)arg3 cutT:(float*)arg4 forLineEndAtHead:(BOOL)arg5;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_cachedPathBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_cachedPathBoundsWithoutStroke;
+- (bool)p_cachedPathIsLineSegment;
+- (bool)p_cachedPathIsOpen;
+- (void)p_computeAngle:(double*)arg1 point:(struct CGPoint { double x1; double x2; }*)arg2 cutSegment:(long long*)arg3 cutT:(double*)arg4 forLineEndAtHead:(bool)arg5;
 - (id)p_createClippedPath;
 - (void)p_invalidateClippedPath;
 - (void)p_invalidateHead;
 - (void)p_invalidateTail;
-- (id)p_unitePath:(id)arg1 withLineEndForHead:(BOOL)arg2 stroke:(id)arg3;
+- (id)p_unitePath:(id)arg1 withLineEndForHead:(bool)arg2 stroke:(id)arg3;
 - (void)p_updateResizeInfoGeometryFromResizePathSource;
 - (void)p_validateHeadAndTail;
 - (void)p_validateHeadLineEnd;
 - (void)p_validateTailLineEnd;
 - (id)path;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pathBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pathBoundsWithoutStroke;
-- (BOOL)pathIsLineSegment;
-- (BOOL)pathIsOpen;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pathBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pathBoundsWithoutStroke;
+- (bool)pathIsLineSegment;
+- (bool)pathIsOpen;
 - (id)pathSource;
 - (void)processChangedProperty:(int)arg1;
-- (void)setControlKnobPosition:(unsigned int)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)setControlKnobPosition:(unsigned long long)arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)setDynamicFill:(id)arg1;
 - (void)setGeometry:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shapeFrameWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shapeFrameWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (id)shapeInfo;
-- (BOOL)shouldBeDisplayedInShowMode;
+- (bool)shouldBeDisplayedInShowMode;
 - (id)smartPathSource;
 - (id)stroke;
 - (id)strokeHeadLineEnd;
 - (id)strokeTailLineEnd;
-- (BOOL)supportsResize;
-- (BOOL)supportsRotation;
-- (float)tailLineEndAngle;
-- (struct CGPoint { float x1; float x2; })tailLineEndPoint;
-- (struct CGPoint { float x1; float x2; })tailPoint;
+- (bool)supportsResize;
+- (bool)supportsRotation;
+- (double)tailLineEndAngle;
+- (struct CGPoint { double x1; double x2; })tailLineEndPoint;
+- (struct CGPoint { double x1; double x2; })tailPoint;
 - (void)takeRotationFromTracker:(id)arg1;
 - (void)takeSizeFromTracker:(id)arg1;
 - (id)textWrapperForExteriorWrap;
-- (struct CGPoint { float x1; float x2; })unclippedHeadPoint;
-- (struct CGPoint { float x1; float x2; })unclippedTailPoint;
+- (struct CGPoint { double x1; double x2; })unclippedHeadPoint;
+- (struct CGPoint { double x1; double x2; })unclippedTailPoint;
 
 @end

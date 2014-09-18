@@ -21,19 +21,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)locationAtIndex:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)locationAtIndex:(unsigned long long)arg1;
 - (id)locations;
-- (unsigned int)locationsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)locationsCount;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setLocations:(id)arg1;
 - (void)setWaypoints:(id)arg1;
-- (id)waypointAtIndex:(unsigned int)arg1;
+- (id)waypointAtIndex:(unsigned long long)arg1;
 - (id)waypoints;
-- (unsigned int)waypointsCount;
+- (unsigned long long)waypointsCount;
 - (void)writeTo:(id)arg1;
 
 @end

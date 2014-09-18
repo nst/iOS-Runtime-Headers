@@ -30,7 +30,7 @@
                 float t; 
             } ; 
         } mMax; 
-    BOOL mPreprocessed;
+    boolmPreprocessed;
     TSCH3DPrefilteredLineRenderer *mRenderer;
     TSCH3DSceneRenderPipeline *mRenderingPipeline;
     } mTexturePortion;

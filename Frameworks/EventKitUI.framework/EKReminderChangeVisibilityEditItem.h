@@ -8,12 +8,12 @@
 
 @property(readonly) int visibilityToCommit;
 
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
-- (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (BOOL)editor:(id)arg1 shouldClearSelectionFromSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (BOOL)shouldAppearWithVisibility:(int)arg1;
-- (BOOL)usesDetailViewControllerForSubitem:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (void)editor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (bool)editor:(id)arg1 shouldClearSelectionFromSubitem:(unsigned long long)arg2;
+- (bool)shouldAppearWithVisibility:(int)arg1;
+- (bool)usesDetailViewControllerForSubitem:(unsigned long long)arg1;
 - (int)visibilityToCommit;
 
 @end

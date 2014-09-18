@@ -12,7 +12,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
+- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
 - (void)_applyToLayoutAttributes:(id)arg1 toView:(id)arg2;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;

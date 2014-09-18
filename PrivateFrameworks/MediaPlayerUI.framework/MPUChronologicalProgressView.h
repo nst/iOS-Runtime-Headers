@@ -2,40 +2,49 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUChronologicalProgressViewDelegate>, MPDetailScrubController, NSString, UILabel, UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding>;
+@class <MPUChronologicalProgressViewDelegate>, MPDetailScrubController, MPUNowPlayingIndicatorView, NSString, UILabel, UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding>;
 
-@interface MPUChronologicalProgressView : UIView <MPDetailScrubControllerDelegate> {
-    BOOL _alwaysLive;
+@interface MPUChronologicalProgressView : UIView <MPDetailScrubControllerDelegate, MPUContentSizeCategoryChanging> {
     double _currentTime;
     UILabel *_currentTimeLabel;
     <MPUChronologicalProgressViewDelegate> *_delegate;
+    MPUNowPlayingIndicatorView *_indicatorView;
     NSString *_lastCurrentTimeString;
     double _lastDisplayedDuration;
     NSString *_lastRemainingTimeString;
     UILabel *_remainingTimeLabel;
     MPDetailScrubController *_scrubController;
-    BOOL _scrubbingEnabled;
-    BOOL _showTimeLabels;
     UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding> *_slider;
-    int _style;
+    long long _style;
+    long long _substyle;
     double _totalDuration;
+    bool_alwaysLive;
+    bool_scrubbingEnabled;
+    bool_showIsPlaying;
+    bool_showTimeLabels;
 }
 
-@property(getter=isAlwaysLive) BOOL alwaysLive;
+@property(getter=isAlwaysLive) bool alwaysLive;
 @property double currentTime;
+@property(copy,readonly) NSString * debugDescription;
 @property <MPUChronologicalProgressViewDelegate> * delegate;
-@property BOOL scrubbingEnabled;
-@property BOOL showTimeLabels;
-@property(readonly) int style;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool scrubbingEnabled;
+@property bool showIsPlaying;
+@property bool showTimeLabels;
+@property(readonly) long long style;
+@property long long substyle;
+@property(readonly) Class superclass;
 @property double totalDuration;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackRect;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } trackRect;
 
 - (void).cxx_destruct;
-- (id)_createTimeLabelWithStyle:(int)arg1;
+- (id)_createIndicatorViewWithStyle:(long long)arg1;
+- (id)_createTimeLabelWithStyle:(long long)arg1;
 - (void)_internalSetCurrentTime:(double)arg1;
 - (float)_sliderNormalizedValueForTime:(double)arg1;
-- (id)_stringForTime:(double)arg1 isTimeRemaining:(BOOL)arg2;
-- (id)_styledImageName:(id)arg1;
+- (id)_stringForTime:(double)arg1 isTimeRemaining:(bool)arg2;
 - (id)_thumbImage;
 - (id)_timeLabelFont;
 - (id)_trackImage;
@@ -45,21 +54,26 @@
 - (void)detailScrubController:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailScrubControllerDidBeginScrubbing:(id)arg1;
 - (void)detailScrubControllerDidEndScrubbing:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(int)arg1;
-- (BOOL)isAlwaysLive;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
+- (bool)isAlwaysLive;
 - (void)layoutSubviews;
-- (BOOL)scrubbingEnabled;
-- (void)setAlwaysLive:(BOOL)arg1;
+- (bool)scrubbingEnabled;
+- (void)setAlwaysLive:(bool)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setScrubbingEnabled:(BOOL)arg1;
-- (void)setShowTimeLabels:(BOOL)arg1;
+- (void)setScrubbingEnabled:(bool)arg1;
+- (void)setShowIsPlaying:(bool)arg1;
+- (void)setShowTimeLabels:(bool)arg1;
+- (void)setSubstyle:(long long)arg1;
 - (void)setTotalDuration:(double)arg1;
-- (BOOL)showTimeLabels;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
+- (bool)showIsPlaying;
+- (bool)showTimeLabels;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)style;
+- (long long)substyle;
 - (double)totalDuration;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRect;
+- (void)updateTextForContentSizeCategory:(id)arg1;
 
 @end

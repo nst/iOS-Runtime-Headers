@@ -11,7 +11,7 @@
 - (void)dealloc;
 - (Class)layerDelegateClass;
 - (id)layerFBOResource;
-- (void)presentLayerWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; BOOL x5; }*)arg1;
+- (void)presentLayerWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; boolx5; }*)arg1;
 - (void)willDestroyFramebuffer:(id)arg1 session:(id)arg2;
 
 @end

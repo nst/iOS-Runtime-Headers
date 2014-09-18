@@ -12,6 +12,8 @@
     TSUBasicProgress *mProgress;
 }
 
++ (bool)i_canImportFileAtURL:(id)arg1 type:(id)arg2;
++ (bool)i_canImportFileWithData:(id)arg1 type:(id)arg2;
 + (id)i_supportedFileTypesForSubclass;
 
 - (void)cancel;
@@ -20,7 +22,7 @@
 - (void)importInfoWithCompletionHandler:(id)arg1;
 - (id)info;
 - (id)initWithContext:(id)arg1 URL:(id)arg2 theme:(id)arg3;
-- (id)initWithContext:(id)arg1 imageData:(id)arg2 theme:(id)arg3;
+- (id)initWithContext:(id)arg1 data:(id)arg2 theme:(id)arg3;
 - (id)p_emptyImageStyle;
 - (void)p_finishImportingWithInfo:(id)arg1 error:(id)arg2 completionHandler:(id)arg3;
 - (id)progress;

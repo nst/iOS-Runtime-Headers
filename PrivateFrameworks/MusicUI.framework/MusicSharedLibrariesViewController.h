@@ -22,10 +22,10 @@
 - (void)_updateNavigationPrompt;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)music_shouldPresentModallyInMoreList;
+- (bool)music_shouldPresentModallyInMoreList;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

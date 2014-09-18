@@ -6,22 +6,24 @@
 
 @interface TSDInfoImporter : NSObject {
     TSPObjectContext *mContext;
+    TSPData *mData;
     <TSDInfoImporterDelegate> *mDelegate;
-    TSPData *mImageData;
     TSSTheme *mTheme;
     NSURL *mURL;
 }
 
 @property(readonly) NSURL * URL;
 @property(readonly) TSPObjectContext * context;
+@property(readonly) TSPData * data;
 @property <TSDInfoImporterDelegate> * delegate;
 @property(readonly) NSError * error;
-@property(readonly) TSPData * imageData;
 @property(readonly) TSDDrawableInfo * info;
 @property(readonly) TSUProgress * progress;
 @property(readonly) TSSTheme * theme;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (bool)i_canImportFileAtURL:(id)arg1 type:(id)arg2;
++ (bool)i_canImportFileWithData:(id)arg1 type:(id)arg2;
 + (id)i_supportedFileTypesForSubclass;
 + (Class)p_classForTSPData:(id)arg1;
 + (Class)p_classForURL:(id)arg1;
@@ -33,15 +35,15 @@
 - (id)URL;
 - (void)cancel;
 - (id)context;
+- (id)data;
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
-- (id)imageData;
 - (void)importInfoWithCompletionHandler:(id)arg1;
 - (id)info;
 - (id)init;
 - (id)initWithContext:(id)arg1 URL:(id)arg2 theme:(id)arg3;
-- (id)initWithContext:(id)arg1 imageData:(id)arg2 theme:(id)arg3;
+- (id)initWithContext:(id)arg1 data:(id)arg2 theme:(id)arg3;
 - (id)progress;
 - (void)setDelegate:(id)arg1;
 - (id)theme;

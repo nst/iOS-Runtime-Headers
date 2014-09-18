@@ -32,11 +32,13 @@
 - (id)getSpaceContainingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)initWithLayout:(id)arg1;
 - (void)invalidateCoordinates;
+- (void)invalidateCoordinatesAfterColumn:(unsigned char)arg1;
+- (void)invalidateCoordinatesAfterRow:(unsigned short)arg1;
 - (void)invalidateTableOffsets;
 - (id)layout;
 - (void)performActionOnEachLayoutSpace:(id)arg1;
-- (BOOL)performActionOnFrozenLayoutSpaces:(id)arg1;
-- (BOOL)performActionOnRepeatLayoutSpaces:(id)arg1;
+- (bool)performActionOnFrozenLayoutSpaces:(id)arg1;
+- (bool)performActionOnRepeatLayoutSpaces:(id)arg1;
 - (id)repeatHeaderColumnsSpace;
 - (id)repeatHeaderCornerSpace;
 - (id)repeatHeaderRowsSpace;

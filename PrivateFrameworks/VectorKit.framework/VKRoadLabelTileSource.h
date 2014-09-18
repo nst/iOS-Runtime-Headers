@@ -5,6 +5,6 @@
 @interface VKRoadLabelTileSource : VKLabelTileSource {
 }
 
-- (int)_labelTileType;
+- (unsigned char)_labelTileType;
 
 @end

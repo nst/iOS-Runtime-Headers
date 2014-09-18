@@ -14,8 +14,8 @@
 }
 
 @property(retain) NSString * artworkIdentifier;
-@property(readonly) BOOL hasArtworkIdentifier;
-@property BOOL hasShieldType;
+@property(readonly) bool hasArtworkIdentifier;
+@property bool hasShieldType;
 @property(retain) NSMutableArray * shieldTexts;
 @property int shieldType;
 
@@ -27,18 +27,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArtworkIdentifier;
-- (BOOL)hasShieldType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasArtworkIdentifier;
+- (bool)hasShieldType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArtworkIdentifier:(id)arg1;
-- (void)setHasShieldType:(BOOL)arg1;
+- (void)setHasShieldType:(bool)arg1;
 - (void)setShieldTexts:(id)arg1;
 - (void)setShieldType:(int)arg1;
-- (id)shieldTextAtIndex:(unsigned int)arg1;
+- (id)shieldTextAtIndex:(unsigned long long)arg1;
 - (id)shieldTexts;
-- (unsigned int)shieldTextsCount;
+- (unsigned long long)shieldTextsCount;
 - (int)shieldType;
 - (void)writeTo:(id)arg1;
 

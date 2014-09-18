@@ -9,13 +9,16 @@
 }
 
 @property(readonly) CMAttitude * attitude;
+@property(readonly) bool doingBiasEstimation;
+@property(readonly) bool doingYawCorrection;
 @property(readonly) struct { double x1; double x2; double x3; } gravity;
 @property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; int x2; } magneticField;
+@property(readonly) int magneticFieldCalibrationLevel;
 @property(readonly) struct { double x1; double x2; double x3; } rotationRate;
 @property(readonly) struct { double x1; double x2; double x3; } userAcceleration;
 
 - (id)attitude;
-- (BOOL)calibrationRequired;
+- (bool)calibrationRequired;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

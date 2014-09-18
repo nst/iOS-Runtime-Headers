@@ -13,6 +13,6 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithRep:(id)arg1 scene:(id)arg2 finalTexture:(BOOL)arg3 renderCycle:(id)arg4;
+- (id)initWithRep:(id)arg1 scene:(id)arg2 finalTexture:(bool)arg3 renderCycle:(id)arg4;
 
 @end

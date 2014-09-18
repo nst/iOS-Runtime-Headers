@@ -12,6 +12,7 @@
 @property(copy) NSNumber * latitude;
 @property(copy) NSNumber * longitude;
 @property(copy) NSNumber * radius;
+@property(copy) NSString * routing;
 @property(copy) NSString * title;
 
 + (id)defaultPropertiesToLoad;
@@ -28,6 +29,7 @@
 - (id)latitude;
 - (id)longitude;
 - (id)radius;
+- (id)routing;
 - (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setAlarmOwner:(id)arg1;
@@ -35,6 +37,7 @@
 - (void)setLatitude:(id)arg1;
 - (void)setLongitude:(id)arg1;
 - (void)setRadius:(id)arg1;
+- (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

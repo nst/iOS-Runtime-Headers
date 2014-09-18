@@ -10,17 +10,23 @@
 @property(copy) NSString * aceId;
 @property(copy) NSData * activationToken;
 @property(copy) NSString * assistantId;
+@property(copy) NSString * connectionMode;
 @property(copy) NSString * connectionType;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * language;
 @property(copy) NSString * refId;
 @property(copy) NSData * sessionValidationData;
 @property(copy) NSString * speechId;
+@property(readonly) Class superclass;
 
 + (id)loadAssistant;
 + (id)loadAssistantWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)activationToken;
 - (id)assistantId;
+- (id)connectionMode;
 - (id)connectionType;
 - (id)encodedClassName;
 - (id)groupIdentifier;
@@ -28,6 +34,7 @@
 - (id)sessionValidationData;
 - (void)setActivationToken:(id)arg1;
 - (void)setAssistantId:(id)arg1;
+- (void)setConnectionMode:(id)arg1;
 - (void)setConnectionType:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setSessionValidationData:(id)arg1;

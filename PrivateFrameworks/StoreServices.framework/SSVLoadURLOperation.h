@@ -6,36 +6,45 @@
    See Warning(s) below.
  */
 
-@class NSCachedURLResponse, NSHTTPURLResponse, NSMutableData, NSMutableSet, NSObject<OS_dispatch_queue>, NSRunLoop, NSString, NSURL, NSURLRequest, SSMetricsPageEvent, SSVURLDataConsumer;
+@class NSCachedURLResponse, NSData, NSHTTPURLResponse, NSMutableData, NSMutableSet, NSObject<OS_dispatch_queue>, NSRunLoop, NSString, NSURL, NSURLRequest, SSMetricsPageEvent, SSVURLDataConsumer;
 
 @interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate> {
     NSMutableData *_dataBuffer;
     SSVURLDataConsumer *_dataConsumer;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     id _expiredOutputBlock;
-    BOOL _iTunesStoreRequest;
+    NSData *_inputData;
     SSMetricsPageEvent *_metricsPageEvent;
     id _outputBlock;
     NSMutableSet *_protocolRedirectURLs;
-    BOOL _recordsMetrics;
     NSURL *_redirectURL;
+    NSString *_referrerApplicationName;
+    NSString *_referrerURLString;
     NSHTTPURLResponse *_response;
     NSRunLoop *_runLoop;
-    BOOL _stopped;
     NSString *_storeFrontSuffix;
     NSURLRequest *_urlRequest;
+    bool_iTunesStoreRequest;
+    bool_recordsMetrics;
+    bool_stopped;
 }
 
-@property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
+@property(getter=isITunesStoreRequest) bool ITunesStoreRequest;
 @property(readonly) NSURL * URL;
 @property(readonly) NSURLRequest * URLRequest;
 @property(readonly) NSCachedURLResponse * cachedURLResponse;
 @property(retain) SSVURLDataConsumer * dataConsumer;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) id expiredOutputBlock;
+@property(readonly) unsigned long long hash;
 @property(readonly) SSMetricsPageEvent * metricsPageEvent;
 @property(copy) id outputBlock;
-@property BOOL recordsMetrics;
+@property bool recordsMetrics;
+@property(copy) NSString * referrerApplicationName;
+@property(copy) NSString * referrerURLString;
 @property(copy) NSString * storeFrontSuffix;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -48,10 +57,9 @@
 - (void)_keepAliveTimer:(id)arg1;
 - (id)_newURLRequestWithRedirectURL:(id)arg1;
 - (id)_outputForData:(id)arg1 error:(id*)arg2;
-- (id)_redirectURLForStoreResponse:(id)arg1 data:(id)arg2;
 - (void)_releaseOutputBlocks;
 - (void)_runOnce;
-- (long)_runRunLoopUntilStopped;
+- (int)_runRunLoopUntilStopped;
 - (void)_stopIfCancelled;
 - (void)_stopRunLoop;
 - (id)cachedURLResponse;
@@ -66,19 +74,24 @@
 - (void)dispatchSync:(id)arg1;
 - (id)expiredOutputBlock;
 - (id)init;
+- (id)initWithData:(id)arg1 fromOperation:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
 - (id)initWithURLRequestProperties:(id)arg1;
-- (BOOL)isITunesStoreRequest;
+- (bool)isITunesStoreRequest;
 - (void)main;
 - (id)metricsPageEvent;
 - (id)outputBlock;
-- (BOOL)recordsMetrics;
+- (bool)recordsMetrics;
+- (id)referrerApplicationName;
+- (id)referrerURLString;
 - (void)setDataConsumer:(id)arg1;
 - (void)setExpiredOutputBlock:(id)arg1;
-- (void)setITunesStoreRequest:(BOOL)arg1;
+- (void)setITunesStoreRequest:(bool)arg1;
 - (void)setOutputBlock:(id)arg1;
-- (void)setRecordsMetrics:(BOOL)arg1;
+- (void)setRecordsMetrics:(bool)arg1;
+- (void)setReferrerApplicationName:(id)arg1;
+- (void)setReferrerURLString:(id)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (id)storeFrontSuffix;
 

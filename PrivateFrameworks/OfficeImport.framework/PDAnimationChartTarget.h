@@ -10,9 +10,9 @@
 
 - (int)buildStep;
 - (int)catagoryIndex;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)seriesIndex;
 - (void)setBuildStep:(int)arg1;
 - (void)setCatagoryIndex:(int)arg1;

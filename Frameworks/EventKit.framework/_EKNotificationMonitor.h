@@ -6,32 +6,40 @@
    See Warning(s) below.
  */
 
-@class EKEventStore, NSArray, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSTimer, PCPersistentTimer;
+@class EKEventStore, NSArray, NSDate, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSTimer, PCPersistentTimer;
 
 @interface _EKNotificationMonitor : NSObject {
+    NSMutableSet *_alertedNotificationsThatFailedToMarkAlerted;
     NSMutableArray *_culledRecentlyRepliedNotifications;
+    NSArray *_eventNotificationReferences;
     EKEventStore *_eventStore;
     id _eventStoreGetter;
-    BOOL _initialCheck;
-    unsigned int _lastCount;
-    BOOL _loadRecentlyRepliedNotifications;
+    unsigned long long _lastEventCount;
+    unsigned long long _lastReminderCount;
     NSDate *_nextFireTime;
-    NSArray *_notificationReferences;
-    BOOL _pendingChanges;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_recentlyRepliedNotifications;
-    BOOL _running;
-    BOOL _shouldInstallPersistentTimer;
+    NSArray *_reminderNotificationReferences;
     NSTimer *_syncTimer;
     PCPersistentTimer *_timer;
     NSObject<OS_dispatch_queue> *_timerQueue;
-    BOOL _useSyncIdleTimer;
+    bool_initialCheck;
+    bool_loadRecentlyRepliedNotifications;
+    bool_pendingChanges;
+    bool_running;
+    bool_shouldInstallPersistentTimer;
+    bool_useSyncIdleTimer;
 }
 
-@property(readonly) unsigned int notificationCount;
+@property(readonly) unsigned long long eventNotificationCount;
+@property(readonly) NSArray * eventNotificationReferences;
+@property(readonly) unsigned long long notificationCount;
 @property(readonly) NSArray * notificationReferences;
+@property(readonly) NSArray * reminderNotificationReferences;
 
-- (unsigned int)_checkForNotifications:(id)arg1;
+- (void)_alertPrefChanged;
+- (unsigned long long)_checkForEventNotifications:(id)arg1;
+- (unsigned long long)_checkForReminderNotifications:(id)arg1;
 - (void)_databaseChanged;
 - (id)_eventStore;
 - (void)_killSyncTimer;
@@ -46,12 +54,15 @@
 - (void)adjust;
 - (void)attemptReload;
 - (void)dealloc;
+- (unsigned long long)eventNotificationCount;
+- (id)eventNotificationReferences;
 - (id)init;
 - (id)initForBulletinBoardWithEventStoreGetter:(id)arg1;
 - (id)initWithEventStore:(id)arg1;
 - (void)killTimer;
-- (unsigned int)notificationCount;
+- (unsigned long long)notificationCount;
 - (id)notificationReferences;
+- (id)reminderNotificationReferences;
 - (void)start;
 - (void)stop;
 

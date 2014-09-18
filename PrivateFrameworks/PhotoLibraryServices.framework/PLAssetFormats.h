@@ -5,16 +5,17 @@
 @interface PLAssetFormats : NSObject {
 }
 
-+ (unsigned int)desiredLongSideForFullSizeFormat:(int)arg1;
-+ (BOOL)formatIsBadgedForVideo:(int)arg1;
-+ (BOOL)formatIsCropped:(int)arg1;
-+ (BOOL)formatIsFullscreen:(int)arg1;
-+ (BOOL)formatSizeIsShortSide:(int)arg1;
-+ (BOOL)isAlbumVideoPath:(id)arg1;
-+ (unsigned int)maxLongSideForFullSizeFormat:(int)arg1;
-+ (unsigned int)minShortSideForFullSizeFormat:(int)arg1;
-+ (struct CGSize { float x1; float x2; })scaledSizeForSize:(struct CGSize { float x1; float x2; })arg1 format:(int)arg2 capLength:(BOOL)arg3;
-+ (struct CGSize { float x1; float x2; })sizeForFormat:(int)arg1;
-+ (BOOL)transformForImage:(struct CGImage { }*)arg1 captureOrientation:(int)arg2 format:(int)arg3 sizeInOut:(struct CGSize { float x1; float x2; }*)arg4 contextSizeOut:(struct CGSize { float x1; float x2; }*)arg5 transformOut:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg6;
++ (id)descriptionForFormat:(int)arg1;
++ (unsigned long long)desiredLongSideForFullSizeFormat:(int)arg1;
++ (bool)formatIsBadgedForVideo:(int)arg1;
++ (bool)formatIsCropped:(int)arg1;
++ (bool)formatIsFullscreen:(int)arg1;
++ (bool)formatSizeIsShortSide:(int)arg1;
++ (bool)isAlbumVideoPath:(id)arg1;
++ (unsigned long long)maxLongSideForFullSizeFormat:(int)arg1;
++ (unsigned long long)minShortSideForFullSizeFormat:(int)arg1;
++ (struct CGSize { double x1; double x2; })scaledSizeForSize:(struct CGSize { double x1; double x2; })arg1 format:(int)arg2 capLength:(bool)arg3;
++ (struct CGSize { double x1; double x2; })sizeForFormat:(int)arg1;
++ (bool)transformForImage:(struct CGImage { }*)arg1 captureOrientation:(int)arg2 format:(int)arg3 sizeInOut:(struct CGSize { double x1; double x2; }*)arg4 contextSizeOut:(struct CGSize { double x1; double x2; }*)arg5 transformOut:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg6;
 
 @end

@@ -7,8 +7,8 @@
 @interface NSOrthography : NSObject <NSCopying, NSCoding> {
 }
 
-@property(readonly) NSString * dominantScript;
-@property(readonly) NSDictionary * languageMap;
+@property(copy,readonly) NSString * dominantScript;
+@property(copy,readonly) NSDictionary * languageMap;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
@@ -23,10 +23,10 @@
 - (id)dominantLanguageForScript:(id)arg1;
 - (id)dominantScript;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDominantScript:(id)arg1 languageMap:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)languageMap;
 - (id)languagesForScript:(id)arg1;
 - (unsigned int)orthographyFlags;

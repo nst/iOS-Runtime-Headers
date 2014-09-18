@@ -8,11 +8,11 @@
     void *_paceModelValue;
 }
 
-@property(readonly) BOOL canBeUsedForRunCalibration;
-@property(readonly) BOOL canBeUsedForWalkCalibration;
+@property(readonly) bool canBeUsedForRunCalibration;
+@property(readonly) bool canBeUsedForWalkCalibration;
 @property(readonly) float distanceInMiles;
-@property(readonly) BOOL isWalk;
-@property(readonly) unsigned int lifetimeBatteryHoursUsed;
+@property(readonly) bool isWalk;
+@property(readonly) unsigned long long lifetimeBatteryHoursUsed;
 @property(readonly) float lifetimeCalibratedRunningMiles;
 @property(readonly) float lifetimeCalibratedWalkingMiles;
 @property(readonly) float lifetimeUncalibratedRunningMiles;
@@ -21,22 +21,22 @@
 @property(readonly) float minimumValidCalibrationMiles;
 @property(readonly) float paceInSecondsPerMile;
 @property(copy) NSData * parameters;
-@property(readonly) unsigned int remainingBatteryLifetimeInHours;
-@property(readonly) unsigned int runningStepCount;
-@property(readonly) unsigned int walkingStepCount;
+@property(readonly) unsigned long long remainingBatteryLifetimeInHours;
+@property(readonly) unsigned long long runningStepCount;
+@property(readonly) unsigned long long walkingStepCount;
 
-- (id)FGSNForRadioId:(unsigned int)arg1;
-- (struct PaceModel { float x1; boolx2; unsigned char x3; unsigned short x4; boolx5; unsigned char x6; unsigned long x7; boolx8; unsigned long x9; unsigned long x10; unsigned long x11; unsigned long x12; unsigned long x13; unsigned char x14; unsigned short x15; unsigned long x16; unsigned long x17; float x18; short x19; float x20; short x21; float x22; float x23; float x24; short x25; float x26; short x27; float x28; float x29; unsigned char x30; unsigned char x31[3]; unsigned short x32[7]; unsigned char x33; boolx34; unsigned short x35; unsigned short x36; unsigned short x37; boolx38; boolx39; unsigned long x40; unsigned long x41; unsigned long x42; unsigned long x43; unsigned long x44; unsigned short x45; boolx46; unsigned char x47[3]; float x48; short x49; float x50; short x51; float x52; short x53; float x54; short x55; unsigned char x56; unsigned short x57; unsigned char x58; }*)_paceModel;
-- (BOOL)calibrateWithDistanceMiles:(float)arg1 forWalk:(BOOL)arg2;
+- (id)FGSNForRadioId:(unsigned long long)arg1;
+- (struct PaceModel { float x1; boolx2; unsigned char x3; unsigned short x4; boolx5; unsigned char x6; unsigned long long x7; boolx8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned char x14; unsigned short x15; unsigned long long x16; unsigned long long x17; float x18; short x19; float x20; short x21; float x22; float x23; float x24; short x25; float x26; short x27; float x28; float x29; unsigned char x30; unsigned char x31[3]; unsigned short x32[7]; unsigned char x33; boolx34; unsigned short x35; unsigned short x36; unsigned short x37; boolx38; boolx39; unsigned long long x40; unsigned long long x41; unsigned long long x42; unsigned long long x43; unsigned long long x44; unsigned short x45; boolx46; unsigned char x47[3]; float x48; short x49; float x50; short x51; float x52; short x53; float x54; short x55; unsigned char x56; unsigned short x57; unsigned char x58; }*)_paceModel;
+- (bool)calibrateWithDistanceMiles:(float)arg1 forWalk:(bool)arg2;
 - (float)caloriesForWeight:(float)arg1;
-- (BOOL)canBeUsedForRunCalibration;
-- (BOOL)canBeUsedForWalkCalibration;
+- (bool)canBeUsedForRunCalibration;
+- (bool)canBeUsedForWalkCalibration;
 - (void)dealloc;
 - (float)distanceInMiles;
-- (BOOL)feedPacketPayload:(const char *)arg1 timestamp:(unsigned long)arg2;
+- (bool)feedPacketPayload:(const char *)arg1 timestamp:(unsigned long long)arg2;
 - (id)init;
-- (BOOL)isWalk;
-- (unsigned int)lifetimeBatteryHoursUsed;
+- (bool)isWalk;
+- (unsigned long long)lifetimeBatteryHoursUsed;
 - (float)lifetimeCalibratedRunningMiles;
 - (float)lifetimeCalibratedWalkingMiles;
 - (float)lifetimeUncalibratedRunningMiles;
@@ -45,15 +45,15 @@
 - (float)minimumValidCalibrationMiles;
 - (float)paceInSecondsPerMile;
 - (id)parameters;
-- (unsigned int)radioIdForFGSN:(id)arg1;
-- (BOOL)recalibrateWithAdjustedDistanceMiles:(float)arg1;
-- (unsigned int)remainingBatteryLifetimeInHours;
+- (unsigned long long)radioIdForFGSN:(id)arg1;
+- (bool)recalibrateWithAdjustedDistanceMiles:(float)arg1;
+- (unsigned long long)remainingBatteryLifetimeInHours;
 - (void)resetCalibration;
 - (void)resumeEvent;
-- (unsigned int)runningStepCount;
+- (unsigned long long)runningStepCount;
 - (void)setParameters:(id)arg1;
-- (void)startEventWithInitialMiles:(float)arg1 isCalibration:(BOOL)arg2;
+- (void)startEventWithInitialMiles:(float)arg1 isCalibration:(bool)arg2;
 - (void)stopEvent;
-- (unsigned int)walkingStepCount;
+- (unsigned long long)walkingStepCount;
 
 @end

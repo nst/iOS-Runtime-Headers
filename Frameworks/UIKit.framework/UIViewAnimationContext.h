@@ -2,24 +2,28 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
+@class NSArray, UITableViewCell;
 
 @interface UIViewAnimationContext : NSObject {
-    int _animationCount;
+    long long _animationCount;
     id _completionHandler;
+    UITableViewCell *_swipeToDeleteCell;
     NSArray *_viewAnimations;
 }
 
-@property int animationCount;
+@property long long animationCount;
 @property(readonly) id completionHandler;
+@property(retain) UITableViewCell * swipeToDeleteCell;
 @property(retain) NSArray * viewAnimations;
 
-- (int)animationCount;
+- (long long)animationCount;
 - (id)completionHandler;
 - (void)dealloc;
 - (id)initWithCompletionHandler:(id)arg1;
-- (void)setAnimationCount:(int)arg1;
+- (void)setAnimationCount:(long long)arg1;
+- (void)setSwipeToDeleteCell:(id)arg1;
 - (void)setViewAnimations:(id)arg1;
+- (id)swipeToDeleteCell;
 - (id)viewAnimations;
 
 @end

@@ -2,17 +2,23 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSLock, NSString;
+@class <NSObject>, NSObject<OS_voucher>, NSString;
 
 @interface _NSActivityAssertion : NSObject {
-    BOOL _ended;
-    NSLock *_lock;
+    long long _ended;
     unsigned long long _options;
+    NSObject<OS_voucher> *_previousVoucher;
     NSString *_reason;
+    unsigned int _systemSleepAssertionID;
+    NSObject<OS_voucher> *_voucher;
+    <NSObject> *_xpcBoost;
 }
+
++ (void)_performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id)arg3;
 
 - (void)_end;
 - (id)_initWithActivityOptions:(unsigned long long)arg1 reason:(id)arg2;
+- (void)_reactivate;
 - (void)dealloc;
 - (id)debugDescription;
 

@@ -6,9 +6,6 @@
 
 @interface TSTLayoutSpace : NSObject {
     struct { 
-        BOOL coordinates; 
-        BOOL tableOffset; 
-    struct { 
         struct { 
             unsigned int column; 
             unsigned int row; 
@@ -18,75 +15,81 @@
             unsigned int row; 
         } bottomRight; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
+    boolmDrawBlackAndWhite;
+    boolmDrawPreventAntialias;
+    boolmHeaderColumnsRepeat;
+    boolmHeaderRowsRepeat;
+    boolmInvalidTableOffset;
+    boolmLayoutDirectionIsLeftToRight;
     TSTCoordinateArray *mBodyColumnCoordinates;
     TSTCoordinateArray *mBodyRowCoordinates;
     TSTLayoutSpaceBundle *mBundle;
@@ -94,15 +97,11 @@
     } mCachedAlignedStrokeFrame;
     } mCachedFrame;
     } mCachedStrokeFrame;
-    BOOL mDrawBlackAndWhite;
-    BOOL mDrawPreventAntialias;
     } mGridRange;
     TSTCoordinateArray *mHeaderColumnRowCoordinates;
-    BOOL mHeaderColumnsRepeat;
     TSTCoordinateArray *mHeaderRowColumnCoordinates;
-    BOOL mHeaderRowsRepeat;
-    } mInvalidFlags;
-    BOOL mLayoutDirectionIsLeftToRight;
+    unsigned char mInvalidColumnIndex;
+    unsigned short mInvalidRowIndex;
     int mLayoutSpaceType;
     } mLock;
     } mTableOffset;
@@ -110,75 +109,80 @@
     } mTransformFromDevice;
     } mTransformToCanvas;
     } mTransformToDevice;
-    float mViewScale;
+    double mViewScale;
 }
 
 @property(readonly) TSTLayoutSpaceBundle * bundle;
-@property BOOL drawBlackAndWhite;
-@property BOOL drawPreventAntialias;
-@property BOOL headerColumnsRepeat;
-@property BOOL headerRowsRepeat;
-@property(readonly) BOOL isColumns;
-@property(readonly) BOOL isCorner;
-@property(readonly) BOOL isFrozen;
-@property(readonly) BOOL isMain;
-@property(readonly) BOOL isRepeat;
-@property(readonly) BOOL isRows;
+@property bool drawBlackAndWhite;
+@property bool drawPreventAntialias;
+@property bool headerColumnsRepeat;
+@property bool headerRowsRepeat;
+@property(readonly) bool isColumns;
+@property(readonly) bool isCorner;
+@property(readonly) bool isFrozen;
+@property(readonly) bool isMain;
+@property(readonly) bool isRepeat;
+@property(readonly) bool isRows;
 @property(readonly) TSTLayout * layout;
-@property(readonly) BOOL layoutDirectionIsLeftToRight;
+@property(readonly) bool layoutDirectionIsLeftToRight;
 @property(readonly) int layoutSpaceType;
 @property(readonly) TSTMasterLayout * masterLayout;
-@property struct CGPoint { float x1; float x2; } tableOffset;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromCanvas;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromDevice;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToCanvas;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToDevice;
-@property float viewScale;
+@property struct CGPoint { double x1; double x2; } tableOffset;
+@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transformFromCanvas;
+@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transformFromDevice;
+@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transformToCanvas;
+@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transformToDevice;
+@property double viewScale;
 
 - (id).cxx_construct;
 - (id)bundle;
 - (void)dealloc;
 - (id)description;
-- (BOOL)drawBlackAndWhite;
-- (BOOL)drawPreventAntialias;
-- (BOOL)headerColumnsRepeat;
-- (BOOL)headerRowsRepeat;
+- (bool)drawBlackAndWhite;
+- (bool)drawPreventAntialias;
+- (void)drawStrokesInGridRange:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1 clearStrokes:(bool)arg2 context:(struct CGContext { }*)arg3;
+- (bool)headerColumnsRepeat;
+- (bool)headerRowsRepeat;
 - (id)initWithLayoutSpaceBundle:(id)arg1 type:(int)arg2;
 - (void)invalidateCoordinates;
+- (void)invalidateCoordinatesAfterColumn:(unsigned char)arg1;
+- (void)invalidateCoordinatesAfterRow:(unsigned short)arg1;
 - (void)invalidateTableOffset;
-- (BOOL)isColumns;
-- (BOOL)isCorner;
-- (BOOL)isFrozen;
-- (BOOL)isMain;
-- (BOOL)isRepeat;
-- (BOOL)isRows;
+- (bool)isColumns;
+- (bool)isCorner;
+- (bool)isFrozen;
+- (bool)isMain;
+- (bool)isRepeat;
+- (bool)isRows;
 - (id)layout;
-- (BOOL)layoutDirectionIsLeftToRight;
+- (bool)layoutDirectionIsLeftToRight;
 - (int)layoutSpaceType;
 - (void)lockForRead;
 - (void)lockForWrite;
 - (id)masterLayout;
-- (BOOL)p_getLayoutDirectionLeftToRight;
-- (void)setDrawBlackAndWhite:(BOOL)arg1;
-- (void)setDrawPreventAntialias:(BOOL)arg1;
-- (void)setHeaderColumnsRepeat:(BOOL)arg1;
-- (void)setHeaderRowsRepeat:(BOOL)arg1;
-- (void)setTableOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTransformFromCanvas:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setTransformFromDevice:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setTransformToCanvas:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setTransformToDevice:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setViewScale:(float)arg1;
-- (struct CGPoint { float x1; float x2; })tableOffset;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformFromCanvas;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformFromDevice;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToCanvas;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToDevice;
+- (void)p_drawStrokeForGridColumn:(unsigned int)arg1 strokeRect:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg2 clearStroke:(bool)arg3 shadowType:(int)arg4 context:(struct CGContext { }*)arg5;
+- (void)p_drawStrokeForGridRow:(unsigned int)arg1 strokeRect:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg2 clearStroke:(bool)arg3 shadowType:(int)arg4 context:(struct CGContext { }*)arg5;
+- (bool)p_getLayoutDirectionLeftToRight;
+- (void)setDrawBlackAndWhite:(bool)arg1;
+- (void)setDrawPreventAntialias:(bool)arg1;
+- (void)setHeaderColumnsRepeat:(bool)arg1;
+- (void)setHeaderRowsRepeat:(bool)arg1;
+- (void)setTableOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTransformFromCanvas:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTransformFromDevice:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTransformToCanvas:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTransformToDevice:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setViewScale:(double)arg1;
+- (struct CGPoint { double x1; double x2; })tableOffset;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformFromCanvas;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformFromDevice;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformToCanvas;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformToDevice;
 - (void)unlock;
 - (int)validate:(id)arg1;
 - (void)validateCachedFrames;
 - (int)validateCoordinateCache:(id)arg1;
 - (int)validateTableOffset:(id)arg1;
-- (float)viewScale;
+- (double)viewScale;
 
 @end

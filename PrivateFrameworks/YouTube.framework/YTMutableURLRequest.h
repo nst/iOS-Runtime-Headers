@@ -5,7 +5,7 @@
 @interface YTMutableURLRequest : NSMutableURLRequest {
 }
 
-- (id)initWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
+- (id)initWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 - (id)initWithURL:(id)arg1;
 
 @end

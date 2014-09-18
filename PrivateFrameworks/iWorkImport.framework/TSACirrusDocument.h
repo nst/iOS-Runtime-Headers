@@ -2,25 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFilePresenter>, NSString, NSURL, TSADocumentRoot, TSPObjectContext, TSUTemporaryDirectory;
+@class <NSFilePresenter>, NSString, NSURL, NSUUID, TSADocumentRoot, TSPObjectContext, TSUTemporaryDirectory;
 
 @interface TSACirrusDocument : NSObject <TSADocumentRootDelegate, TSPObjectContextDelegate> {
     NSURL *_URL;
     TSPObjectContext *_context;
-    BOOL _isClosed;
+    NSString *_documentPasswordHint;
     TSUTemporaryDirectory *_tempDirForSupport;
+    bool_isClosed;
 }
 
 @property(copy) NSURL * URL;
-@property(readonly) BOOL areNewExternalReferencesToDataAllowed;
+@property(readonly) bool areNewExternalReferencesToDataAllowed;
+@property(readonly) NSUUID * baseUUIDForObjectUUID;
+@property(readonly) bool canUpgradeDocumentSupport;
 @property(retain) TSPObjectContext * context;
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * defaultDraftName;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSString * documentCachePath;
+@property(readonly) NSString * documentPasswordHint;
 @property(readonly) TSADocumentRoot * documentRoot;
 @property(readonly) <NSFilePresenter> * filePresenter;
-@property(readonly) BOOL ignoreDocumentSupport;
-@property(readonly) BOOL isDocumentSupportTemporary;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool ignoreDocumentSupport;
+@property(readonly) bool isDocumentSupportTemporary;
 @property(readonly) NSString * name;
+@property(readonly) bool preserveDocumentRevisionIdentifierForSequenceZero;
+@property(readonly) Class superclass;
 
 - (id)URL;
 - (void)close;
@@ -28,6 +37,8 @@
 - (void)dealloc;
 - (id)documentCachePath;
 - (void)documentDidLoad;
+- (id)documentPasswordHint;
+- (id)documentPasswordHintForWrite;
 - (id)documentRoot;
 - (id)initWithURL:(id)arg1 error:(id*)arg2 passphrase:(id)arg3;
 - (id)initWithURL:(id)arg1 error:(id*)arg2;

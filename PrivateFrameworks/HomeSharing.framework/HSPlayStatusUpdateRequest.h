@@ -13,7 +13,7 @@
 - (id)canonicalResponseForResponse:(id)arg1;
 - (id)initWithInterfaceID:(unsigned int)arg1 revisionID:(unsigned int)arg2;
 - (unsigned int)interfaceID;
-- (BOOL)isConcurrent;
+- (bool)isConcurrent;
 - (unsigned int)revisionID;
 - (double)timeoutInterval;
 

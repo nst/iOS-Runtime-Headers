@@ -11,8 +11,12 @@
     NSString *_personID;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) struct __MMCSEngine { }* engine;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * personID;
+@property(readonly) Class superclass;
 
 + (id)computeItemIDForAsset:(id)arg1;
 
@@ -24,7 +28,7 @@
 - (void)_requestCompleted;
 - (void)abort;
 - (void)deactivate;
-- (void)deactivateRemoveAllFiles:(BOOL)arg1;
+- (void)deactivateRemoveAllFiles:(bool)arg1;
 - (void)dealloc;
 - (void)didFinishUsingAssets:(id)arg1;
 - (struct __MMCSEngine { }*)engine;

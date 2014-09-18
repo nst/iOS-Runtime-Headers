@@ -11,7 +11,7 @@
 + (void)archiveSet:(id)arg1;
 + (id)sharedStore;
 + (id)sliceSetForID:(id)arg1;
-+ (id)sliceSetIDForKeyplaneName:(id)arg1 type:(int)arg2 orientation:(int)arg3;
++ (id)sliceSetIDForKeyplaneName:(id)arg1 type:(long long)arg2 orientation:(long long)arg3;
 
 - (void)addSet:(id)arg1;
 - (void)dealloc;

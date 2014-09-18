@@ -12,51 +12,53 @@
         float a; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     SKBitmapFont *_bmf;
     } _fontColor;
     NSString *_fontName;
     float _fontSize;
-    int _horizontalAlignmentMode;
-    int _labelBlendMode;
+    long long _horizontalAlignmentMode;
+    long long _labelBlendMode;
     UIColor *_labelColor;
     float _labelColorBlend;
     NSString *_text;
     } _textRect;
     SKSpriteNode *_textSprite;
     NSMutableArray *_textSprites;
-    int _verticalAlignmentMode;
+    long long _verticalAlignmentMode;
 }
 
-@property int blendMode;
+@property long long blendMode;
 @property(retain) UIColor * color;
-@property float colorBlendFactor;
+@property double colorBlendFactor;
 @property(retain) UIColor * fontColor;
 @property(copy) NSString * fontName;
-@property float fontSize;
-@property int horizontalAlignmentMode;
+@property double fontSize;
+@property long long horizontalAlignmentMode;
 @property(copy) NSString * text;
-@property int verticalAlignmentMode;
+@property long long verticalAlignmentMode;
 
 + (id)_labelNodeWithFontNamed:(id)arg1;
 + (id)_labelNodeWithFontTexture:(id)arg1 fontDataString:(id)arg2;
 + (id)labelNodeWithFontNamed:(id)arg1;
++ (id)labelNodeWithText:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_flippedChangedFrom:(BOOL)arg1 to:(BOOL)arg2;
+- (void)_flippedChangedFrom:(bool)arg1 to:(bool)arg2;
+- (id)_getTextSprites;
 - (void)_initialize;
 - (void)_scaleFactorChangedFrom:(float)arg1 to:(float)arg2;
-- (int)blendMode;
-- (id)childrenInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)blendMode;
+- (id)childrenInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)color;
-- (float)colorBlendFactor;
+- (double)colorBlendFactor;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)createBitmapSpritesForText;
@@ -65,24 +67,26 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fontColor;
 - (id)fontName;
-- (float)fontSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (int)horizontalAlignmentMode;
+- (double)fontSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (unsigned long long)hash;
+- (long long)horizontalAlignmentMode;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFontNamed:(id)arg1;
-- (id)nodeAtPoint:(struct CGPoint { float x1; float x2; })arg1 recursive:(BOOL)arg2;
-- (id)nodeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBlendMode:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)nodeAtPoint:(struct CGPoint { double x1; double x2; })arg1 recursive:(bool)arg2;
+- (id)nodesAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBlendMode:(long long)arg1;
 - (void)setColor:(id)arg1;
-- (void)setColorBlendFactor:(float)arg1;
+- (void)setColorBlendFactor:(double)arg1;
 - (void)setFontColor:(id)arg1;
 - (void)setFontName:(id)arg1;
-- (void)setFontSize:(float)arg1;
-- (void)setHorizontalAlignmentMode:(int)arg1;
+- (void)setFontSize:(double)arg1;
+- (void)setHorizontalAlignmentMode:(long long)arg1;
 - (void)setText:(id)arg1;
-- (void)setVerticalAlignmentMode:(int)arg1;
+- (void)setVerticalAlignmentMode:(long long)arg1;
 - (id)text;
-- (int)verticalAlignmentMode;
+- (long long)verticalAlignmentMode;
 
 @end

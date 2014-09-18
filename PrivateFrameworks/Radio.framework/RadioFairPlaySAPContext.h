@@ -9,6 +9,6 @@
 - (id)_initWithFPSAPContext:(void*)arg1;
 - (void)dealloc;
 - (id)signatureWithData:(id)arg1 error:(id*)arg2;
-- (BOOL)verifyData:(id)arg1 withSignature:(id)arg2 error:(id*)arg3;
+- (bool)verifyData:(id)arg1 withSignature:(id)arg2 error:(id*)arg3;
 
 @end

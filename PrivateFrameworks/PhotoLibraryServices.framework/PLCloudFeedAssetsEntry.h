@@ -13,6 +13,6 @@
 + (id)entityName;
 
 - (id)mutableEntryAssets;
-- (BOOL)shouldBeRemovedFromPhotoLibrary:(id)arg1;
+- (bool)shouldBeRemovedFromPhotoLibrary:(id)arg1;
 
 @end

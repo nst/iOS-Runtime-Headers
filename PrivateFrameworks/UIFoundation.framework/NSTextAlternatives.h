@@ -13,7 +13,7 @@
 @property(readonly) NSArray * alternativeStrings;
 @property(readonly) NSString * primaryString;
 
-- (id)alternativeAtIndex:(unsigned int)arg1;
+- (id)alternativeAtIndex:(unsigned long long)arg1;
 - (id)alternativeStrings;
 - (id)alternatives;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -27,7 +27,7 @@
 - (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2 identifier:(id)arg3;
 - (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2;
 - (void)noteSelectedAlternativeString:(id)arg1;
-- (unsigned int)numberOfAlternatives;
+- (unsigned long long)numberOfAlternatives;
 - (id)originalText;
 - (id)primaryString;
 

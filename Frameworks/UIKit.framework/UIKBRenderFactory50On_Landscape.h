@@ -5,10 +5,10 @@
 @interface UIKBRenderFactory50On_Landscape : UIKBRenderFactory50On_Portrait {
 }
 
-- (float)deleteKeyFontSize;
-- (float)keyCornerRadius;
-- (float)keyplaneSwitchKeyFontSize;
-- (float)returnKeyFontSize;
-- (float)spaceKeyFontSize;
+- (double)deleteKeyFontSize;
+- (double)keyCornerRadius;
+- (double)keyplaneSwitchKeyFontSize;
+- (double)returnKeyFontSize;
+- (double)spaceKeyFontSize;
 
 @end

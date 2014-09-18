@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKSkyDrawStyle : VKDrawStyle {
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    } _fillColor;
-    } _horizonColor;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@interface VKSkyDrawStyle : VKRenderStyle {
 }
 
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } fillColor;
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } horizonColor;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
+@property(readonly) struct  horizonColor; /* unknown property attribute:  1>=[4f]} */
 
-- (id).cxx_construct;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })fillColor;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })horizonColor;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
-- (void)takeFromZoomInvariantProperties:(id)arg1;
-- (id)variant;
++ (int)renderStyleID;
+
+- (struct Matrix<float, 4, 1> { float x1[4]; })fillColor;
+- (struct Matrix<float, 4, 1> { float x1[4]; })horizonColor;
 
 @end

@@ -2,22 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class SBKSyncTransaction;
-
 @interface SBKSyncRequest : SBKRequest {
-    SBKSyncTransaction *_transaction;
 }
 
-@property(retain) SBKSyncTransaction * transaction;
-
-+ (int)bodyContentEncodingType;
-+ (int)bodyContentType;
 + (id)requestForTransaction:(id)arg1;
 
-- (void).cxx_destruct;
 - (id)canonicalResponseForResponse:(id)arg1;
-- (id)newURLOperation;
-- (void)setTransaction:(id)arg1;
-- (id)transaction;
 
 @end

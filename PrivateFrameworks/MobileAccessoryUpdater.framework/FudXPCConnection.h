@@ -9,21 +9,26 @@
 @class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
 
 @interface FudXPCConnection : NSObject <FudConnection> {
+    booldidStop;
     NSString *clientIdentifier;
     NSObject<OS_xpc_object> *connection;
     NSObject<OS_dispatch_queue> *connectionQueue;
-    BOOL didStop;
     id messageHandler;
     int notifyToken;
     NSObject<OS_dispatch_queue> *replyQueue;
     NSObject<OS_dispatch_queue> *sessionQueue;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)createConnection;
-- (BOOL)createSession;
+- (bool)createSession;
 - (void)dealloc;
 - (id)initWithClientName:(id)arg1 replyHandlerQueue:(id)arg2 messageHandler:(id)arg3;
-- (BOOL)registerForBSDNotifications;
+- (bool)registerForBSDNotifications;
 - (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
 - (void)sendMessageToFud:(id)arg1;
 - (void)stop;

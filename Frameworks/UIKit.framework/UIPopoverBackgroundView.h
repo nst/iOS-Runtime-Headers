@@ -2,38 +2,38 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPopoverBackgroundView : UIView {
+@interface UIPopoverBackgroundView : UIView <UIPopoverBackgroundViewMethods> {
 }
 
-@property unsigned int arrowDirection;
-@property float arrowOffset;
+@property unsigned long long arrowDirection;
+@property double arrowOffset;
 
-+ (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
-+ (float)arrowBase;
-+ (float)arrowHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
-+ (float)cornerRadius;
-+ (BOOL)wantsDefaultContentAppearance;
++ (double)_contentViewCornerRadiusForArrowDirection:(unsigned long long)arg1;
++ (double)arrowBase;
++ (double)arrowHeight;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
++ (double)cornerRadius;
++ (bool)wantsDefaultContentAppearance;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundContentViewFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentViewFrame;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewInsetsForArrowDirection:(unsigned int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_shadowInsets;
-- (struct CGSize { float x1; float x2; })_shadowOffset;
-- (float)_shadowOpacity;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundContentViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentViewFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentViewInsetsForArrowDirection:(unsigned long long)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_shadowInsets;
+- (struct CGSize { double x1; double x2; })_shadowOffset;
+- (double)_shadowOpacity;
 - (id)_shadowPath;
-- (id)_shadowPathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(unsigned int)arg2;
-- (float)_shadowRadius;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (id)_shadowPathForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 arrowDirection:(unsigned long long)arg2;
+- (double)_shadowRadius;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateShadow;
-- (BOOL)_wantsDefaultContentAppearance;
+- (bool)_wantsDefaultContentAppearance;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (unsigned int)arrowDirection;
-- (float)arrowOffset;
-- (int)backgroundStyle;
+- (unsigned long long)arrowDirection;
+- (double)arrowOffset;
+- (long long)backgroundStyle;
 - (void)layoutSubviews;
-- (void)setArrowDirection:(unsigned int)arg1;
-- (void)setArrowOffset:(float)arg1;
+- (void)setArrowDirection:(unsigned long long)arg1;
+- (void)setArrowOffset:(double)arg1;
 
 @end

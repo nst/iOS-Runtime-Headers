@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface GQHLasso : NSObject <GQLassoGenerator> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)beginDocument:(id)arg1 state:(id)arg2;
 + (int)beginWorkspace:(const char *)arg1 state:(id)arg2;

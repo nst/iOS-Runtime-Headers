@@ -3,22 +3,22 @@
  */
 
 @interface NSComparisonPredicateOperator : NSPredicateOperator {
-    unsigned int _options;
-    unsigned int _variant;
+    unsigned long long _options;
+    unsigned long long _variant;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 options:(unsigned int)arg4;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithOperatorType:(unsigned long long)arg1 modifier:(unsigned long long)arg2 variant:(unsigned long long)arg3 options:(unsigned long long)arg4;
+- (id)initWithOperatorType:(unsigned long long)arg1 modifier:(unsigned long long)arg2 variant:(unsigned long long)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)minimalFormInContext:(id)arg1 ofPredicate:(id)arg2;
-- (unsigned int)options;
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (unsigned long long)options;
+- (bool)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)predicateFormat;
-- (unsigned int)variant;
+- (unsigned long long)variant;
 
 @end

@@ -2,73 +2,68 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, NSString, VKGenericShieldDrawStyle, VKPGlobalProperties;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, VKPGlobalProperties, VKStylesheetVendor;
 
 @interface VKStylesheet : NSObject {
-    float _blendingFactor;
-    BOOL _canSelectIcons;
-    VKGenericShieldDrawStyle *_defaultGenericShieldStyle;
-    NSMutableArray *_flatStyles;
+    struct vector<md::StyleMatchingTree *, std::__1::allocator<md::StyleMatchingTree *> > { 
+        struct StyleMatchingTree {} **__begin_; 
+        struct StyleMatchingTree {} **__end_; 
+        struct __compressed_pair<md::StyleMatchingTree **, std::__1::allocator<md::StyleMatchingTree *> > { 
+            struct StyleMatchingTree {} **__first_; 
+        } __end_cap_; 
+    NSObject<OS_dispatch_semaphore> *_everythingLoadingSemaphore;
+    NSObject<OS_dispatch_semaphore> *_globalResourcesLoadingSemaphore;
     NSMutableArray *_inheritance;
-    int _mapDisplayStyle;
-    int _mapDisplayStyleVariant;
-    BOOL _nightStyleVariantsInitialized;
+    int _loadedEverything;
+    int _loadedGlobalResources;
+    NSObject<OS_dispatch_queue> *_loadingQueue;
+    struct StyleMatchingTree { int x1; struct unordered_map<unsigned long long, md::StyleMatchingTree *, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, md::StyleMatchingTree *> > > { struct __hash_table<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *> > > { struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> *> > > { struct __hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> *> { struct __hash_node<std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, std::__1::hash<unsigned long long>, true> > { unsigned long long x_3_3_1; } x_1_2_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, md::StyleMatchingTree *>, std::__1::equal_to<unsigned long long>, true> > { float x_4_3_1; } x_1_2_4; } x_2_1_1; } x2; struct _retain_ptr<VKCartoStyle *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; struct _retain_objc { } x_3_1_3; struct _release_objc { } x_3_1_4; } x3; unsigned int x4; } *_matchingTree;
+    unsigned long long _matchingTreeCount;
+    unsigned long long _matchingTreeSpareBufferSize;
+    } _matchingTreeSpareMemory;
     float _ppi;
-    int _rasterPolygonChangeoverZ;
+    long long _rasterPolygonChangeoverZ;
+    NSMutableDictionary *_resultCache;
+    NSObject<OS_dispatch_queue> *_resultCacheQueue;
     float _scale;
     NSString *_sheetName;
     VKPGlobalProperties *_styleGlobalProperties;
-    BOOL _supportsNightMode;
-    int _targetDisplay;
-    unsigned int _updateStamp;
+    VKStylesheetVendor *_stylesheetVendor;
+    long long _targetDisplay;
+    bool_isDevResource;
+    bool_supportsNightMode;
+    bool_supportsRouteMode;
 }
 
-@property(readonly) int activeMapDisplayStyle;
-@property float blendingFactor;
-@property BOOL canSelectIcons;
-@property(readonly) VKGenericShieldDrawStyle * defaultGenericShieldStyle;
-@property(readonly) int mapDisplayStyle;
-@property int mapDisplayStyleVariant;
+@property(readonly) bool isDevResource;
+@property(readonly) long long rasterPolygonChangeoverZ;
+@property(readonly) NSString * sheetName;
 @property(readonly) VKPGlobalProperties * styleGlobalProperties;
-@property(readonly) BOOL supportsNightMode;
-@property(readonly) int targetDisplay;
-@property(readonly) unsigned int updateStamp;
+@property(readonly) bool supportsNightMode;
 
-+ (void)_activeTileGroupWillChange;
-+ (id)installedStylesheets;
-+ (id)stylesheetWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(int)arg4;
-
-- (float)_nightShieldBrightnessForVectorType:(int)arg1;
-- (id)_styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3 mapDisplayStyle:(int)arg4 mapDisplayStyleVariant:(int)arg5;
-- (id)_styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3;
-- (int)activeMapDisplayStyle;
-- (float)blendingFactor;
-- (BOOL)canSelectIcons;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (struct unordered_map<unsigned int, unsigned long long, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, unsigned long long> > > { struct __hash_table<std::__1::__hash_value_type<unsigned int, unsigned long long>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned long long>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned long long>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, unsigned long long> > > { struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> *> > > { struct __hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> *> { struct __hash_node<std::__1::__hash_value_type<unsigned int, unsigned long long>, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned long long>, std::__1::hash<unsigned int>, true> > { unsigned long long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned long long>, std::__1::equal_to<unsigned int>, true> > { float x_4_2_1; } x_1_1_4; } x1; })_attributeMapForAttributes:(id)arg1 clientAttributes:(struct { long long x1; int x2; int x3; boolx4; id x5; boolx6; unsigned int x7; }*)arg2;
+- (id)_styleMatchingAttributes:(id)arg1 clientAttributes:(struct { long long x1; int x2; int x3; boolx4; id x5; boolx6; unsigned int x7; }*)arg2;
+- (id)_stylesMatchingAttributes:(id)arg1 clientAttributes:(struct { long long x1; int x2; int x3; boolx4; id x5; boolx6; unsigned int x7; }*)arg2;
+- (void)clearCaches;
 - (void)dealloc;
-- (id)defaultGenericShieldStyle;
 - (id)init;
-- (id)initWithData:(id)arg1 forName:(id)arg2 scale:(float)arg3 ppi:(float)arg4 targetDisplay:(int)arg5;
-- (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(int)arg4;
-- (id)initWithScale:(float)arg1 ppi:(float)arg2;
-- (int)mapDisplayStyle;
-- (int)mapDisplayStyleVariant;
-- (void)prepareStyleVariantsForMapDisplayStyle:(int)arg1;
-- (int)rasterPolygonChangeoverZ;
-- (oneway void)release;
-- (void)setBlendingFactor:(float)arg1;
-- (void)setCanSelectIcons:(BOOL)arg1;
-- (void)setMapDisplayStyleVariant:(int)arg1;
+- (id)initWithData:(id)arg1 miniData:(id)arg2 forName:(id)arg3 scale:(float)arg4 ppi:(float)arg5 vendor:(id)arg6 targetDisplay:(long long)arg7 isDevResource:(bool)arg8;
+- (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(long long)arg4 vendor:(id)arg5 resourceManager:(id)arg6;
+- (bool)isDevResource;
+- (long long)rasterPolygonChangeoverZ;
 - (id)sheetName;
-- (float)shieldBrightnessForDisplayStyle:(int)arg1;
-- (float)shieldBrightnessForVectorType:(int)arg1;
-- (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2 locale:(id)arg3;
-- (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2 mapDisplayStyle:(int)arg3;
-- (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2;
+- (int)styleAttributeValueForLocalization:(id)arg1;
+- (id)styleForFeatureAttributes:(id)arg1 clientAttributes:(struct { long long x1; int x2; int x3; boolx4; id x5; boolx6; unsigned int x7; }*)arg2;
 - (id)styleGlobalProperties;
-- (BOOL)supportsMapDisplayStyle:(int)arg1;
-- (BOOL)supportsNightMode;
-- (int)targetDisplay;
-- (unsigned int)updateStamp;
-- (id)variantForStyle:(id)arg1;
+- (id)styleMatchingAttributes:(id)arg1 vectorType:(long long)arg2 locale:(id)arg3 mapDisplayStyle:(unsigned long long)arg4 mapDisplayStyleVariant:(unsigned long long)arg5 canSelectIcons:(bool)arg6 selected:(bool)arg7;
+- (id)styleMatchingAttributes:(id)arg1 vectorType:(long long)arg2 locale:(id)arg3 mapDisplayStyle:(unsigned long long)arg4 mapDisplayStyleVariant:(unsigned long long)arg5;
+- (bool)supportsNightMode;
 
 @end

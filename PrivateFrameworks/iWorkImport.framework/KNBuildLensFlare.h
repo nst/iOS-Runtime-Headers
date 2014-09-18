@@ -2,29 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface KNBuildLensFlare : KNAnimationEffect <KNChunkableBuildAnimator> {
-    float mGlobalDuration;
-    float mGlobalScale;
+    double mGlobalDuration;
+    double mGlobalScale;
     NSMutableArray *mLayerToOldParentArray;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
 
-- (void)addLayerWithImageRef:(struct CGImage { }*)arg1 toResultDictionary:(id)arg2 withLayer:(id)arg3 minScale:(float)arg4 maxScale:(float)arg5 opacity:(float)arg6 translation:(float)arg7 rotation:(float)arg8 direction:(unsigned int)arg9;
+- (void)addLayerWithImageRef:(struct CGImage { }*)arg1 toResultDictionary:(id)arg2 withLayer:(id)arg3 minScale:(double)arg4 maxScale:(double)arg5 opacity:(double)arg6 translation:(double)arg7 rotation:(double)arg8 direction:(unsigned long long)arg9;
 - (void)animationDidEndWithContext:(id)arg1;
 - (id)animationsWithContext:(id)arg1;
 - (void)dealloc;
-- (id)p_layerWithImage:(struct CGImage { }*)arg1 scale:(float)arg2 centeredAt:(struct CGPoint { float x1; float x2; })arg3;
-- (float)stretchPercent:(float)arg1 toFill:(float)arg2;
+- (id)p_layerWithImage:(struct CGImage { }*)arg1 scale:(double)arg2 centeredAt:(struct CGPoint { double x1; double x2; })arg3;
+- (double)stretchPercent:(double)arg1 toFill:(double)arg2;
 
 @end

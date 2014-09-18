@@ -7,7 +7,7 @@
 @interface EKPersistentInviteReplyNotification : EKPersistentObject {
 }
 
-@property(readonly) BOOL alerted;
+@property(readonly) bool alerted;
 @property(readonly) EKPersistentCalendar * calendar;
 @property(readonly) NSString * calendarName;
 @property(readonly) NSDate * creationDate;
@@ -20,7 +20,7 @@
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarName;
 - (id)creationDate;

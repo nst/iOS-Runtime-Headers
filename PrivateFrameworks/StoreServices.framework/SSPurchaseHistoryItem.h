@@ -2,19 +2,24 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @interface SSPurchaseHistoryItem : NSObject <SSXPCCoding, NSCopying> {
     NSMutableDictionary *_properties;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 

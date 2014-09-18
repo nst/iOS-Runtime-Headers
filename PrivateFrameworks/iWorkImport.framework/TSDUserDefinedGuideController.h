@@ -2,35 +2,41 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSDInteractiveCanvasController;
+@class NSArray, NSString, TSDInteractiveCanvasController;
 
 @interface TSDUserDefinedGuideController : NSObject <TSDDecorator, TSKChangeSourceObserver> {
     NSArray *_currentGuides;
-    BOOL _editingGuides;
     TSDInteractiveCanvasController *_icc;
-    BOOL _tornDown;
+    bool_editingGuides;
+    bool_tornDown;
 }
 
 @property(readonly) NSArray * currentGuides;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) TSDInteractiveCanvasController * interactiveCanvasController;
+@property(readonly) Class superclass;
 
 - (void)asyncProcessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)beginEditingGuides;
-- (void)changeOrientationOfGuide:(id)arg1 toType:(int)arg2 withGuideAtPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)changeOrientationOfGuide:(id)arg1 toType:(int)arg2 atUnscaledPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (id)currentGuides;
+- (id)currentGuidesForHitTestingAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (id)decoratorOverlayLayers;
-- (void)deleteGuide:(id)arg1;
+- (void)deleteGuide:(id)arg1 atUnscaledPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)endEditingGuides;
-- (id)guideClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 distance:(float*)arg2 requiresSpecifiedType:(BOOL)arg3 desiredType:(int)arg4;
-- (id)guideStorage;
+- (id)guideClosestToPoint:(struct CGPoint { double x1; double x2; })arg1 distance:(double*)arg2 requiresSpecifiedType:(bool)arg3 desiredType:(int)arg4;
+- (id)guideStorageAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)hideGuides;
 - (id)initWithInteractiveCanvasController:(id)arg1;
 - (id)interactiveCanvasController;
 - (void)p_hideUserDefinedGuides;
 - (void)p_showUserDefinedGuides;
-- (void)replaceGuide:(id)arg1 withGuideAtPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)shouldShowUserDefinedGuides;
+- (double)positionForGuideType:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 inStorage:(id)arg3;
+- (void)replaceGuide:(id)arg1 fromStorage:(id)arg2 atUnscaledPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (bool)shouldShowUserDefinedGuides;
 - (void)showGuides;
 - (void)teardown;
 - (void)updateCurrentGuides;

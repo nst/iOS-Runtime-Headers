@@ -2,35 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSArray, RURadioDataSource;
-
-@interface MusicRadioDataSource : MPUDataSource <RURadioDataSourceDelegate> {
-    NSArray *_featuredStations;
-    RURadioDataSource *_radioDataSource;
-    NSArray *_stations;
-    NSArray *_userStations;
+@interface MusicRadioDataSource : RURadioDataSource {
 }
 
-@property(readonly) NSArray * featuredStations;
-@property(getter=isOptedInToRadio,readonly) BOOL optedInToRadio;
-@property(readonly) NSArray * userStations;
-
-- (void).cxx_destruct;
-- (void)_invalidateCalculatedEntities;
-- (void)checkAcceptedTermsWithCompletionHandler:(id)arg1;
-- (void)dealloc;
-- (void)deauthenticateIfNecessary;
-- (int)editingTypeForEntityAtIndex:(unsigned int)arg1;
-- (id)entities;
-- (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
-- (id)featuredStations;
-- (id)initWithEntityType:(int)arg1;
-- (BOOL)isOptedInToRadio;
-- (id)playbackContextForIndex:(unsigned int)arg1;
-- (void)radioDataSourceDidDeauthenticate:(id)arg1;
-- (void)radioDataSourceDidInvalidate:(id)arg1;
-- (void)refreshFeaturedStations;
-- (void)synchronizeStationsAsAutomaticUpdate:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (id)userStations;
+- (id)initWithEntityType:(long long)arg1;
 
 @end

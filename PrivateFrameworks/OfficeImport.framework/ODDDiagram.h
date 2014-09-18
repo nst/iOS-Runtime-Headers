@@ -12,6 +12,7 @@
 
 - (id)colorTransform;
 - (void)dealloc;
+- (id)description;
 - (id)documentPoint;
 - (id)init;
 - (void)setDocumentPoint:(id)arg1;

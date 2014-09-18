@@ -5,13 +5,13 @@
 @class NSArray;
 
 @interface NSParagraphStyleExtraData : NSObject {
-    int _headerLevel;
-    float _hyphenationFactor;
-    float _lineHeightMultiple;
-    float _paragraphSpacingBefore;
+    long long _headerLevel;
+    double _hyphenationFactor;
+    double _lineHeightMultiple;
+    double _paragraphSpacingBefore;
     NSArray *_textBlocks;
     NSArray *_textLists;
-    float _tighteningFactor;
+    double _tighteningFactor;
 }
 
 @end

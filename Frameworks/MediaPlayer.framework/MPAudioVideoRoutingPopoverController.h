@@ -2,17 +2,24 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSString;
+
 @interface MPAudioVideoRoutingPopoverController : UIPopoverController <MPAVRoutingViewControllerDelegate> {
     int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    BOOL _mirroringIncluded;
+    bool_airPlayPasswordAlertDidAppearTokenIsValid;
+    bool_mirroringIncluded;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)_tableViewController;
 - (void)dealloc;
 - (id)initWithContentViewController:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 includeMirroring:(BOOL)arg2;
-- (id)initWithType:(unsigned int)arg1;
+- (id)initWithType:(unsigned long long)arg1 includeMirroring:(bool)arg2;
+- (id)initWithType:(unsigned long long)arg1;
 - (id)routingController;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
 

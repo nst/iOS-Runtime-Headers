@@ -6,28 +6,33 @@
 
 @interface PLThumbFileManager : NSObject <PLThumbPersistenceManager> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     int _entryLength;
     NSString *_filename;
     int _format;
     int _imageLength;
     int _imageRowBytes;
     NSString *_path;
-    BOOL _readOnly;
     } _thumbnailSize;
+    bool_readOnly;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) int imageFormat;
 @property(readonly) int imageHeight;
 @property(readonly) int imageLength;
 @property(readonly) int imageRowBytes;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
+@property(readonly) struct CGSize { double x1; double x2; } imageSize;
 @property(readonly) int imageWidth;
-@property(readonly) BOOL isReadOnly;
+@property(readonly) bool isReadOnly;
 @property(readonly) NSString * path;
+@property(readonly) Class superclass;
 
-+ (BOOL)_deviceShouldUseBGRAThumbs;
++ (bool)_deviceShouldUseLowPerformancePixelFormat;
++ (id)baseSessionOptions;
 + (struct __CFDictionary { }*)decodeSessionOptions;
 + (void)deleteAllEntriesWithIdentifier:(id)arg1 basePath:(id)arg2;
 
@@ -35,27 +40,28 @@
 - (void)_writeData:(id)arg1 forThumbIdentifier:(id)arg2;
 - (void)_writeImage:(id)arg1 forThumbIdentifier:(id)arg2;
 - (id)beginThumbnailSafePropertyUpdatesOnAsset:(id)arg1;
-- (BOOL)copyEntryFromOriginalAsset:(id)arg1 toAsset:(id)arg2;
+- (bool)copyEntryFromOriginalAsset:(id)arg1 toAsset:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
-- (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 dataOffset:(int*)arg8;
+- (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 dataOffset:(int*)arg8;
 - (int)imageFormat;
 - (int)imageHeight;
 - (int)imageLength;
 - (int)imageRowBytes;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (int)imageWidth;
 - (id)imageWithIdentifier:(id)arg1;
-- (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
+- (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(bool)arg3;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2;
-- (BOOL)isReadOnly;
+- (bool)isReadOnly;
+- (id)originalPreheatItemForAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg2 options:(unsigned int)arg3;
 - (id)path;
-- (id)preheatItemForAsset:(id)arg1 options:(unsigned int)arg2;
-- (void)setImageDataForEntry:(const void*)arg1 withIdentifier:(id)arg2 orIndex:(unsigned int)arg3 asset:(id)arg4;
-- (void)setImageForEntry:(id)arg1 withIdentifier:(id)arg2 orIndex:(unsigned int)arg3 videoDuration:(id)arg4 photoUUID:(id)arg5;
+- (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4;
+- (void)setImageDataForEntry:(const void*)arg1 withIdentifier:(id)arg2 orIndex:(unsigned long long)arg3 asset:(id)arg4;
+- (void)setImageForEntry:(id)arg1 withIdentifier:(id)arg2 orIndex:(unsigned long long)arg3 videoDuration:(id)arg4 photoUUID:(id)arg5;
 - (id)thumbnailForImage:(id)arg1 videoDuration:(id)arg2;
 - (id)thumbnailPathForThumbIdentifier:(id)arg1;
-- (BOOL)usesThumbIdentifiers;
+- (bool)usesThumbIdentifiers;
 
 @end

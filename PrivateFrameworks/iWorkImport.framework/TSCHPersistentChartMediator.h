@@ -7,13 +7,17 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class TSCHChartMediator;
+@class NSString, TSCHChartMediator;
 
-@interface TSCHPersistentChartMediator : TSPObject <TSCHNotifyOnModify, TSCHMediatorProvider> {
+@interface TSCHPersistentChartMediator : TSPObject <TSCHMediatorProvider, TSCHNotifyOnModify> {
     TSCHChartMediator *mMediator;
 }
 
-@property(readonly) TSCHChartMediator * mediator;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) TSCHChartMediator * mediator;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 andMediator:(id)arg2;

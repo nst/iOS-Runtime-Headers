@@ -17,11 +17,11 @@
 - (id)_init;
 - (void)_removeAllCachedImages;
 - (id)_requestForRadioArtwork:(id)arg1;
-- (id)cachedImageDataForRadioArtwork:(id)arg1;
-- (id)cachedImageDataForStation:(id)arg1 withExactSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)cachedImageDataForRadioArtwork:(id)arg1 MIMEType:(id*)arg2;
+- (id)cachedImageDataForStation:(id)arg1 withExactSize:(struct CGSize { double x1; double x2; })arg2 MIMEType:(id*)arg3;
 - (void)dealloc;
 - (id)init;
 - (void)loadImageForRadioArtwork:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)loadImageForStation:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 completionHandler:(id)arg3;
+- (void)loadImageForStation:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 completionHandler:(id)arg3;
 
 @end

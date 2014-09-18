@@ -6,32 +6,32 @@
 
 @interface PLExpandableImageView : PLExpandableView {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct { 
         unsigned int isRotating : 1; 
         unsigned int didTrack : 1; 
@@ -45,27 +45,27 @@
     float _currentAngle;
     } _exImageFlags;
     int _imageID;
-    float _imageRotationAngle;
+    double _imageRotationAngle;
     PLImageView *_imageView;
     } _initialExpandingFrame;
-    float _originalAngle;
+    double _originalAngle;
     } _originalBounds;
     } _originalSize;
-    float _originalWidth;
+    double _originalWidth;
     PLManagedAsset *_photo;
-    float _pinchAngle;
-    float _pinchScale;
-    float _pinchWidth;
+    double _pinchAngle;
+    double _pinchScale;
+    double _pinchWidth;
 }
 
-@property(getter=isBorderAndAccessoriesVisible) BOOL borderAndAccessoriesVisible;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
+@property(getter=isBorderAndAccessoriesVisible) bool borderAndAccessoriesVisible;
+@property(readonly) struct CGSize { double x1; double x2; } imageSize;
 @property(copy) NSString * name;
 @property(retain) PLManagedAsset * photo;
-@property(readonly) BOOL showsPlaceholder;
+@property(readonly) bool showsPlaceholder;
 @property(retain) PLVideoView * videoView;
 
-+ (float)imageBorderWidth;
++ (double)imageBorderWidth;
 
 - (float)_borderAlphaForExpansionFraction:(float)arg1;
 - (void)_bounceBack:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -74,50 +74,51 @@
 - (float)_currentScale;
 - (float)_expandedScale;
 - (float)_expansionFraction;
-- (struct CGSize { float x1; float x2; })_newSizeFromSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setOriginalSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snappedExpandedFrame;
+- (struct CGSize { double x1; double x2; })_newSizeFromSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setOriginalSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_snappedExpandedFrame;
 - (void)_updateBorderAndAccessoriesAlpha;
-- (void)_updatePinchWidthAndScaleWithLeftPoint:(struct CGPoint { float x1; float x2; })arg1 rightPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_updatePinchWidthAndScaleWithLeftPoint:(struct CGPoint { double x1; double x2; })arg1 rightPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)beginTrackingPinch:(id)arg1;
 - (float)completeTrackingPinch:(id)arg1 toState:(int)arg2 duration:(double)arg3;
 - (float)continueTrackingPinch:(id)arg1;
 - (void)dealloc;
 - (void)finishTransition;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfImage;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfImage;
 - (id)image;
-- (float)imageRotationAngle;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (double)imageRotationAngle;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 frameStyle:(int)arg2 withBorder:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 frameStyle:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isBeingManipulated;
-- (BOOL)isBorderAndAccessoriesVisible;
-- (BOOL)isShadowEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 frameStyle:(int)arg2 withBorder:(bool)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 frameStyle:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isBeingManipulated;
+- (bool)isBorderAndAccessoriesVisible;
+- (bool)isShadowEnabled;
 - (void)layoutSubviews;
 - (id)name;
 - (id)photo;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)renderSnapshotInContext:(struct CGContext { }*)arg1;
-- (void)setBorderAndAccessoriesVisible:(BOOL)arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setImage:(id)arg1 isFullscreen:(BOOL)arg2;
+- (void)setBorderAndAccessoriesVisible:(bool)arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFullSizeImageJPEGData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 orientation:(long long)arg3;
+- (void)setImage:(id)arg1 isFullscreen:(bool)arg2;
 - (void)setImage:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoto:(id)arg1;
-- (void)setPosterImage:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)setShadowEnabled:(BOOL)arg1;
-- (void)setShowsPlaceholder:(BOOL)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1 angle:(float)arg2;
+- (void)setPosterImage:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setShadowEnabled:(bool)arg1;
+- (void)setShowsPlaceholder:(bool)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1 angle:(float)arg2;
 - (void)setTextBadgeString:(id)arg1;
-- (void)setTransformAndCenterForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTransitionProgress:(float)arg1;
+- (void)setTransformAndCenterForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTransitionProgress:(double)arg1;
 - (void)setVideoView:(id)arg1;
-- (BOOL)showsPlaceholder;
+- (bool)showsPlaceholder;
 - (void)stateDidChangeFrom:(int)arg1;
-- (float)transitionProgress;
+- (double)transitionProgress;
 - (id)videoView;
 
 @end

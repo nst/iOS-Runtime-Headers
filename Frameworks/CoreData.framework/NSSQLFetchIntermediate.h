@@ -2,23 +2,17 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableDictionary, NSSQLEntity, NSSQLGroupByIntermediate, NSSQLHavingIntermediate, NSSQLLimitIntermediate, NSSQLOffsetIntermediate, NSSQLOrderIntermediate, NSSQLSelectIntermediate, NSSQLWhereIntermediate, NSString;
+@class NSMutableArray, NSMutableDictionary, NSSQLGroupByIntermediate, NSSQLHavingIntermediate, NSSQLOffsetIntermediate, NSSQLSelectIntermediate;
 
-@interface NSSQLFetchIntermediate : NSSQLIntermediate {
-    NSString *_correlationToken;
-    NSString *_governingAlias;
-    NSSQLEntity *_governingEntity;
+@interface NSSQLFetchIntermediate : NSSQLStatementIntermediate {
     NSSQLGroupByIntermediate *_groupByClause;
     NSMutableArray *_groupByKeypaths;
     NSSQLHavingIntermediate *_havingClause;
-    BOOL _isDictionaryCountFetch;
     NSMutableArray *_joinIntermediates;
     NSMutableDictionary *_joinKeypaths;
-    NSSQLLimitIntermediate *_limitClause;
     NSSQLOffsetIntermediate *_offsetClause;
-    NSSQLOrderIntermediate *_orderIntermediate;
     NSSQLSelectIntermediate *_selectClause;
-    NSSQLWhereIntermediate *_whereClause;
+    bool_isDictionaryCountFetch;
 }
 
 - (id)_generateJoinSQLStringInContext:(id)arg1;
@@ -29,34 +23,21 @@
 - (id)fetchIntermediateForKeypathExpression:(id)arg1;
 - (id)finalJoinForKeypathWithComponents:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
-- (id)governingAlias;
-- (id)governingAliasForKeypathExpression:(id)arg1;
-- (id)governingEntity;
-- (id)governingEntityForKeypathExpression:(id)arg1;
-- (BOOL)groupByClauseContainsKeypath:(id)arg1;
+- (bool)groupByClauseContainsKeypath:(id)arg1;
 - (id)groupByIntermediate;
 - (id)havingIntermediate;
-- (id)initWithEntity:(id)arg1 alias:(id)arg2 inScope:(id)arg3;
 - (id)initWithScope:(id)arg1;
-- (BOOL)isDictionaryCountFetch;
-- (BOOL)isFunctionScoped;
+- (bool)isDictionaryCountFetch;
+- (bool)isFunctionScoped;
 - (id)joinIntermediates;
-- (BOOL)keypathExpressionIsSafeLHSForIn:(id)arg1;
-- (id)limitIntermediate;
 - (void)promoteToOuterJoinAtKeypathWithComponents:(id)arg1;
 - (void)promoteToOuterJoinsAlongKeypathWithComponents:(id)arg1;
 - (void)selectDistinct;
 - (id)selectIntermediate;
-- (void)setCorrelationToken:(id)arg1;
-- (void)setDictionaryCountFetch:(BOOL)arg1;
-- (void)setGoverningAlias:(id)arg1;
-- (void)setGoverningEntity:(id)arg1;
+- (void)setDictionaryCountFetch:(bool)arg1;
 - (void)setGroupByIntermediate:(id)arg1;
 - (void)setHavingIntermediate:(id)arg1;
-- (void)setLimitIntermediate:(id)arg1;
 - (void)setOffsetIntermediate:(id)arg1;
-- (void)setOrderIntermediate:(id)arg1;
 - (void)setSelectIntermediate:(id)arg1;
-- (void)setWhereIntermediate:(id)arg1;
 
 @end

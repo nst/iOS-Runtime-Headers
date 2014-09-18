@@ -8,16 +8,16 @@
  */
 
 @interface WebCoreTextTrackRepresentationIOSHelper : NSObject {
-    struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { struct CALayer { Class x_1_2_1; struct _CALayerIvars { int x_2_3_1; unsigned int x_2_3_2; void *x_2_3_3; void *x_2_3_4[8]; } x_1_2_2; } *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { struct WebCoreTextTrackRepresentationIOSHelper { Class x_1_2_1; struct TextTrackRepresentationIOS {} *x_1_2_2; } *x_4_1_1; } x4; } *_parent;
+    struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; } *_parent;
 }
 
-@property struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { struct CALayer { Class x_1_2_1; struct _CALayerIvars { int x_2_3_1; unsigned int x_2_3_2; void *x_2_3_3; void *x_2_3_4[8]; } x_1_2_2; } *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { struct WebCoreTextTrackRepresentationIOSHelper { Class x_1_2_1; struct TextTrackRepresentationIOS {} *x_1_2_2; } *x_4_1_1; } x4; }* parent;
+@property struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; }* parent;
 
-- (struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { struct CALayer { Class x_1_2_1; struct _CALayerIvars { int x_2_3_1; unsigned int x_2_3_2; void *x_2_3_3; void *x_2_3_4[8]; } x_1_2_2; } *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { struct WebCoreTextTrackRepresentationIOSHelper { Class x_1_2_1; struct TextTrackRepresentationIOS {} *x_1_2_2; } *x_4_1_1; } x4; }*)parent;
+- (struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; }*)parent;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
-- (id)initWithParent:(struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { struct CALayer { Class x_1_2_1; struct _CALayerIvars { int x_2_3_1; unsigned int x_2_3_2; void *x_2_3_3; void *x_2_3_4[8]; } x_1_2_2; } *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { struct WebCoreTextTrackRepresentationIOSHelper { Class x_1_2_1; struct TextTrackRepresentationIOS {} *x_1_2_2; } *x_4_1_1; } x4; }*)arg1;
+- (id)initWithParent:(struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; }*)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setParent:(struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { struct CALayer { Class x_1_2_1; struct _CALayerIvars { int x_2_3_1; unsigned int x_2_3_2; void *x_2_3_3; void *x_2_3_4[8]; } x_1_2_2; } *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { struct WebCoreTextTrackRepresentationIOSHelper { Class x_1_2_1; struct TextTrackRepresentationIOS {} *x_1_2_2; } *x_4_1_1; } x4; }*)arg1;
+- (void)setParent:(struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; }*)arg1;
 
 @end

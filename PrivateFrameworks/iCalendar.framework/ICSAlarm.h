@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDateTimeUTCValue, ICSStructuredLocation, ICSTrigger, NSArray, NSString;
+@class ICSDateTimeUTCValue, ICSStructuredLocation, ICSTrigger, NSArray, NSData, NSString;
 
 @interface ICSAlarm : ICSComponent {
 }
@@ -11,15 +11,17 @@
 @property int action;
 @property(retain) NSArray * attach;
 @property(retain) NSArray * attendee;
+@property(retain) NSData * bookmark;
 @property(retain) NSString * description;
 @property(retain) NSString * relatedTo;
 @property(retain) NSString * summary;
 @property(retain) ICSTrigger * trigger;
 @property(retain) NSString * uid;
-@property BOOL x_apple_default_alarm;
-@property BOOL x_apple_local_default_alarm;
+@property bool x_apple_default_alarm;
+@property bool x_apple_local_default_alarm;
 @property(retain) NSString * x_apple_proximity;
 @property(retain) ICSStructuredLocation * x_apple_structured_location;
+@property bool x_apple_travel_default_alarm;
 @property(retain) NSString * x_wr_alarmuid;
 
 + (id)ICSStringFromAction:(int)arg1;
@@ -30,19 +32,23 @@
 
 - (id)acknowledged;
 - (int)action;
+- (id)bookmark;
 - (void)fixAlarm;
-- (BOOL)isNoneAlarm;
+- (bool)isNoneAlarm;
 - (id)relatedTo;
 - (void)setAcknowledged:(id)arg1;
 - (void)setAction:(int)arg1;
+- (void)setBookmark:(id)arg1;
 - (void)setRelatedTo:(id)arg1;
-- (void)setX_apple_default_alarm:(BOOL)arg1;
-- (void)setX_apple_local_default_alarm:(BOOL)arg1;
+- (void)setX_apple_default_alarm:(bool)arg1;
+- (void)setX_apple_local_default_alarm:(bool)arg1;
 - (void)setX_apple_proximity:(id)arg1;
+- (void)setX_apple_travel_default_alarm:(bool)arg1;
 - (void)setX_wr_alarmuid:(id)arg1;
-- (BOOL)x_apple_default_alarm;
-- (BOOL)x_apple_local_default_alarm;
+- (bool)x_apple_default_alarm;
+- (bool)x_apple_local_default_alarm;
 - (id)x_apple_proximity;
+- (bool)x_apple_travel_default_alarm;
 - (id)x_wr_alarmuid;
 
 @end

@@ -10,8 +10,8 @@
 
 @interface AVInternalDeviceList : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     id changeListener;
     NSMutableArray *deviceList;
     } listLock;
@@ -19,7 +19,7 @@
 
 @property(copy) id changeListener;
 
-+ (id)defaultDeviceOfType:(unsigned long)arg1;
++ (id)defaultDeviceOfType:(unsigned int)arg1;
 + (id)newDeviceList;
 
 - (id)changeListener;

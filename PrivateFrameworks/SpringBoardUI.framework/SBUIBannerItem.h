@@ -2,21 +2,32 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
+@class NSString;
+
 @interface SBUIBannerItem : NSObject <SBUIQuietModePlayability> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (id)action;
-- (BOOL)canShowInAssistant;
-- (BOOL)canShowWhileLocked;
-- (BOOL)inertWhenLocked;
-- (BOOL)isCritical;
-- (BOOL)isSticky;
-- (BOOL)overridesQuietMode;
-- (unsigned int)priority;
+- (id)actionWithIdentifier:(id)arg1;
+- (bool)canShowInAssistant;
+- (bool)canShowWhileLocked;
+- (id)defaultActionWithContext:(id)arg1;
+- (bool)hasSubActions;
+- (bool)inertWhenLocked;
+- (bool)isCritical;
+- (bool)isSticky;
+- (id)lockScreenActionContextWithContext:(id)arg1;
+- (bool)overridesQuietMode;
+- (unsigned long long)priority;
 - (id)pullDownNotification;
 - (id)sortDate;
 - (id)sound;
 - (id)subActionLabels;
-- (id)subActionWithIndex:(unsigned int)arg1;
+- (id)subActions;
 
 @end

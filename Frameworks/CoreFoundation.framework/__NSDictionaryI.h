@@ -3,21 +3,23 @@
  */
 
 @interface __NSDictionaryI : NSDictionary {
-    unsigned int _used : 26;
+    unsigned int _used : 58;
     unsigned int _szidx : 6;
 }
 
-+ (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3 :(BOOL)arg4 :(BOOL)arg5;
++ (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned long long)arg3 :(bool)arg4 :(bool)arg5;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (double)_clumpingFactor;
+- (double)_clumpingInterestingThreshold;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
-- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateKeysAndObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id)arg2;
 - (void)finalize;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned long long)arg3;
 - (id)keyEnumerator;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectForKey:(id)arg1;

@@ -40,15 +40,15 @@
 
 + (void)__INode_Changed_AllThatIsLeftToUsIsHonor__;
 + (const char *)_databaseOpenURLStringForURL:(id)arg1;
-+ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
-+ (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
++ (bool)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (bool)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (void)_setDebugFlags:(int)arg1;
 + (void)initialize;
 + (int)openAtPath:(const char *)arg1 handle:(struct sqlite3 {}**)arg2 flags:(int)arg3 module:(const char *)arg4;
 + (int)readMagicWordFromPath:(const char *)arg1;
 
 - (id)_adapter;
-- (id)_beginPowerAssertionWithAssert:(unsigned int*)arg1;
+- (id)_beginPowerAssertionWithAssert:(unsigned long long*)arg1;
 - (void)_bindVariablesWithDeletedRow:(id)arg1;
 - (void)_bindVariablesWithInsertedRow:(id)arg1;
 - (void)_bindVariablesWithUpdatedRow:(id)arg1 andOriginalRow:(id)arg2 forDeltasMask:(struct __CFBitVector { }*)arg3;
@@ -61,10 +61,10 @@
 - (void)_configureAutoVacuum;
 - (void)_configureIntegrityCheck;
 - (void)_configurePageSize;
-- (void)_configurePragmaOptions:(int)arg1 createdSchema:(BOOL)arg2;
+- (void)_configurePragmaOptions:(int)arg1 createdSchema:(bool)arg2;
 - (void)_configureSynchronousMode;
 - (void)_configureUbiquityMetadataTable;
-- (void)_endPowerAssertionWithAssert:(unsigned int)arg1 andApp:(id)arg2;
+- (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
 - (void)_ensureDatabaseOpen;
 - (void)_ensureNoFetchInProgress;
 - (void)_ensureNoStatementPrepared;
@@ -74,7 +74,7 @@
 - (void)_finalizeStatement;
 - (void)_forceDisconnectOnError;
 - (long long)_getCurrentAutoVacuumValue;
-- (BOOL)_hasTableWithName:(id)arg1;
+- (bool)_hasTableWithName:(id)arg1;
 - (id)_newValueForColumn:(id)arg1 atIndex:(unsigned int)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
 - (void)_performPostSaveTasks;
 - (void)_registerExtraFunctions;
@@ -89,13 +89,13 @@
 - (void)cacheCurrentDBStatementOn:(id)arg1;
 - (void)cacheUpdateStatement:(id)arg1 forEntity:(id)arg2 andDeltasMask:(struct __CFBitVector { }*)arg3;
 - (id)cachedUpdateStatementForEntity:(id)arg1 andDeltasMask:(struct __CFBitVector { }*)arg2;
-- (BOOL)canConnect;
+- (bool)canConnect;
 - (void)commitTransaction;
 - (void)connect;
 - (id)createMapOfEntityNameToPKMaxForEntities:(id)arg1;
 - (id)createMapOfEntityNameToPKMaxForEntitiesFromPKTable:(id)arg1;
 - (id)createMapOfEntityNameToPKMaxForEntitiesFromUBRangeTable:(id)arg1;
-- (BOOL)databaseIsEmpty;
+- (bool)databaseIsEmpty;
 - (void)dealloc;
 - (void)deleteCorrelation:(id)arg1;
 - (void)deleteRow:(id)arg1;
@@ -106,6 +106,7 @@
 - (void)endFetch;
 - (void)endPrimaryKeyGeneration;
 - (void)execute;
+- (void)executeCorrelationChangesForValue1:(unsigned long long)arg1 value2:(unsigned long long)arg2 value3:(unsigned long long)arg3 value4:(unsigned long long)arg4;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
 - (id)fetchTableCreationSQL;
@@ -114,24 +115,24 @@
 - (void)finalize;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (void)handleCorruptedDB:(id)arg1;
-- (BOOL)hasMetadataTable;
-- (BOOL)hasPrimaryKeyTable;
+- (bool)hasMetadataTable;
+- (bool)hasPrimaryKeyTable;
 - (id)initWithAdapter:(id)arg1;
 - (void)insertCorrelation:(id)arg1;
 - (void)insertRow:(id)arg1;
-- (BOOL)isFetchInProgress;
-- (BOOL)isLocalFS;
-- (BOOL)isOpen;
+- (bool)isFetchInProgress;
+- (bool)isLocalFS;
+- (bool)isOpen;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (id)newFetchedArray;
-- (BOOL)performIntegrityCheck;
+- (bool)performIntegrityCheck;
 - (void)prepareForPrimaryKeyGeneration;
 - (void)prepareSQLStatement:(id)arg1;
 - (struct __CFArray { }*)rawIntegerRowsForSQL:(id)arg1;
 - (void)releaseSQLStatement;
 - (void)resetSQLStatement;
 - (void)rollbackTransaction;
-- (void)setExclusiveLockingMode:(BOOL)arg1;
+- (void)setExclusiveLockingMode:(bool)arg1;
 - (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;
@@ -140,5 +141,10 @@
 - (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (void)updateUbiquityKnowledgeVector:(id)arg1;
 - (void)willCreateSchema;
+- (void)writeCorrelationChangesFromTracker:(id)arg1;
+- (void)writeCorrelationDeletesFromTracker:(id)arg1;
+- (void)writeCorrelationInsertsFromTracker:(id)arg1;
+- (void)writeCorrelationMasterReordersFromTracker:(id)arg1;
+- (void)writeCorrelationReordersFromTracker:(id)arg1;
 
 @end

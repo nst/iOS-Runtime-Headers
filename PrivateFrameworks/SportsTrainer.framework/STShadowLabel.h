@@ -5,19 +5,19 @@
 @class STShadowBlurRadiusAnimation, UIColor;
 
 @interface STShadowLabel : UILabel {
-    float _animatedAuxiliaryShadowBlurRadius;
-    BOOL _animating;
-    float _auxiliaryShadowBlurRadius;
+    double _animatedAuxiliaryShadowBlurRadius;
+    double _auxiliaryShadowBlurRadius;
     UIColor *_auxiliaryShadowColor;
-    BOOL _phase;
     STShadowBlurRadiusAnimation *_pulseAnimation;
+    bool_animating;
+    bool_phase;
 }
 
 - (void)_updateShadowBlurRadiusWithProgress:(float)arg1;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (void)dealloc;
-- (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setAuxiliaryShadowBlurRadius:(float)arg1;
+- (void)drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAuxiliaryShadowBlurRadius:(double)arg1;
 - (void)setAuxiliaryShadowColor:(id)arg1;
 - (void)startPulse;
 - (void)stopPulse;

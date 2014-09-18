@@ -10,10 +10,10 @@
 
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)init;
-- (BOOL)isValid;
+- (bool)isValid;
 - (int)property;
 - (id)queryGroupByProperties;
-- (id)queryJoinsInCompound:(BOOL)arg1;
+- (id)queryJoinsInCompound:(bool)arg1;
 - (id)queryWhereString;
 - (void)setProperty:(int)arg1;
 

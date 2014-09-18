@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSDictionary;
+@class NSDictionary, NSString;
 
 @interface RUMetricsDictionaryEventFieldProvider : NSObject <SSMetricsEventFieldProvider> {
     NSDictionary *_dictionary;
 }
 
-@property(readonly) NSDictionary * dictionary;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) NSDictionary * dictionary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)dictionary;

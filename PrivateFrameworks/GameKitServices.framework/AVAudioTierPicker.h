@@ -6,22 +6,24 @@
 
 @interface AVAudioTierPicker : NSObject {
     NSMutableArray *audioTiers;
+    boolisUsingCellular;
     AVAudioTier *defaultTier;
     AVAudioTier *fallbackTier;
-    BOOL isUsingCellular;
     int mode;
 }
 
 @property(readonly) AVAudioTier * defaultTier;
 @property(readonly) AVAudioTier * fallbackTier;
 
-- (id)AudioTier:(unsigned long)arg1;
-- (unsigned int)LargestCapTier:(unsigned long)arg1;
-- (id)createTierForPayload:(id)arg1 bitrate:(unsigned long)arg2 sampleRate:(unsigned long)arg3 packetsPerBundle:(unsigned long)arg4 headerSize:(unsigned long)arg5;
++ (bool)shouldFilterTierForPayload:(id)arg1 bitRate:(unsigned int)arg2 packetsPerBundle:(unsigned int)arg3 cellular:(bool)arg4 operatingMode:(int)arg5;
+
+- (id)AudioTier:(unsigned int)arg1;
+- (unsigned long long)LargestCapTier:(unsigned int)arg1;
+- (id)createTierForPayload:(id)arg1 bitrate:(unsigned int)arg2 sampleRate:(unsigned int)arg3 packetsPerBundle:(unsigned int)arg4 headerSize:(unsigned int)arg5;
 - (void)dealloc;
 - (id)defaultTier;
 - (id)fallbackTier;
-- (id)initWithOperatingMode:(int)arg1 payloads:(id)arg2 sampleRate:(unsigned long)arg3 packetsPerBundle:(id)arg4 headerSize:(unsigned long)arg5 usingCellular:(BOOL)arg6 defaultMaxCap:(unsigned long)arg7;
-- (id)tierForNetworkBitrate:(unsigned long)arg1 duplication:(unsigned long)arg2;
+- (id)initWithOperatingMode:(int)arg1 payloads:(id)arg2 sampleRate:(unsigned int)arg3 packetsPerBundle:(id)arg4 headerSize:(unsigned int)arg5 usingCellular:(bool)arg6 defaultMaxCap:(unsigned int)arg7;
+- (id)tierForNetworkBitrate:(unsigned int)arg1 duplication:(unsigned int)arg2;
 
 @end

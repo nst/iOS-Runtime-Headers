@@ -12,12 +12,12 @@
     AssetCollectionInfo *_currentAssetCollectionInfo;
     MSASAssetCollection *_currentCloudAssetCollection;
     NSString *_currentCloudAssetGUID;
-    unsigned int _currentCloudAssetMediaAssetType;
+    unsigned long long _currentCloudAssetMediaAssetType;
     NSString *_currentFilePath;
-    BOOL _isVideo;
     long long _jobType;
     NSDictionary *_mstreamdInfoDictionary;
-    BOOL _replacingOriginalWithDerivative;
+    bool_isVideo;
+    bool_replacingOriginalWithDerivative;
 }
 
 @property(retain) NSArray * assetCollectionInfos;
@@ -26,29 +26,29 @@
 @property(retain) NSString * cloudPersonID;
 @property(retain) MSASAssetCollection * currentCloudAssetCollection;
 @property(retain) NSString * currentCloudAssetGUID;
-@property unsigned int currentCloudAssetMediaAssetType;
+@property unsigned long long currentCloudAssetMediaAssetType;
 @property(retain) NSString * currentFilePath;
-@property BOOL isVideo;
+@property bool isVideo;
 @property long long jobType;
 @property(retain) NSDictionary * mstreamdInfoDictionary;
 
 + (id)_dcimDirectoryForFileURL:(id)arg1;
-+ (BOOL)_lightweightReimportCacheDirectoryExists;
++ (bool)_lightweightReimportCacheDirectoryExists;
 + (id)_lightweightReimportPhotoCloudSharingAlbumInfoForAlbumWithCloudGUID:(id)arg1 cloudPersonID:(id)arg2;
 + (void)deleteCloudSharedAssetsWithCloudGUIDs:(id)arg1 info:(id)arg2;
 + (void)downloadPendingAssetsForPersonID:(id)arg1 info:(id)arg2;
 + (id)nextDCIMSaveFileURLForCloudPersonID:(id)arg1 cloudAlbumGUID:(id)arg2 fileExtension:(id)arg3;
-+ (id)pathForInFlightAssetCollectionWithGUID:(id)arg1 mediaAssetType:(unsigned int)arg2;
++ (id)pathForInFlightAssetCollectionWithGUID:(id)arg1 mediaAssetType:(unsigned long long)arg2;
 + (id)placeholderImageProperties;
 + (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
 + (void)replaceRecentlyUploadedOriginalWithDerivativeForCollection:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3;
-+ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollectionWithGUID:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(BOOL)arg7;
++ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollectionWithGUID:(id)arg2 mediaAssetType:(unsigned long long)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(bool)arg7;
 
-- (BOOL)_createPlaceHolderInSharedAlbum:(id)arg1;
-- (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
-- (BOOL)_parseISO6709String:(id)arg1 outLatitude:(double*)arg2 outLongitude:(double*)arg3;
+- (bool)_createPlaceHolderInSharedAlbum:(id)arg1;
+- (unsigned long long)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
+- (bool)_parseISO6709String:(id)arg1 outLatitude:(double*)arg2 outLongitude:(double*)arg3;
 - (void)_processInFlightCommentsForAsset:(id)arg1 inAlbum:(id)arg2 inPhotoLibrary:(id)arg3;
-- (BOOL)_processSaveAssetWithPlaceholderKind:(short)arg1 withAssetDataFilePath:(id)arg2;
+- (bool)_processSaveAssetWithPlaceholderKind:(short)arg1 withAssetDataFilePath:(id)arg2;
 - (id)assetCollectionInfos;
 - (short)attemptLightweightReimportAssetData;
 - (id)cloudAlbumGUID;
@@ -56,7 +56,7 @@
 - (id)cloudPersonID;
 - (id)currentCloudAssetCollection;
 - (id)currentCloudAssetGUID;
-- (unsigned int)currentCloudAssetMediaAssetType;
+- (unsigned long long)currentCloudAssetMediaAssetType;
 - (id)currentFilePath;
 - (long long)daemonOperation;
 - (void)dealloc;
@@ -68,12 +68,12 @@
 - (void)executeDaemonOperationSaveAssetJobType;
 - (void)executeDaemonOperationSaveAssetMetadataForCollectionsJobType;
 - (id)init;
-- (id)initFromXPCObject:(id)arg1;
-- (BOOL)isProcessingThumbnail;
-- (BOOL)isVideo;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (bool)isProcessingThumbnail;
+- (bool)isVideo;
 - (long long)jobType;
 - (id)mstreamdInfoDictionary;
-- (short)placeHolderKindFromAssetMetadataType:(unsigned int)arg1;
+- (short)placeHolderKindFromAssetMetadataType:(unsigned long long)arg1;
 - (void)run;
 - (void)runDaemonSide;
 - (void)saveJobAssetWithPlaceholderKind:(short)arg1;
@@ -83,9 +83,9 @@
 - (void)setCloudPersonID:(id)arg1;
 - (void)setCurrentCloudAssetCollection:(id)arg1;
 - (void)setCurrentCloudAssetGUID:(id)arg1;
-- (void)setCurrentCloudAssetMediaAssetType:(unsigned int)arg1;
+- (void)setCurrentCloudAssetMediaAssetType:(unsigned long long)arg1;
 - (void)setCurrentFilePath:(id)arg1;
-- (void)setIsVideo:(BOOL)arg1;
+- (void)setIsVideo:(bool)arg1;
 - (void)setJobType:(long long)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;
 

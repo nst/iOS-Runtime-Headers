@@ -2,47 +2,44 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDate, NSDictionary, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
-@interface MBApp : NSObject <NSCopying> {
-    NSMutableDictionary *_plist;
+@interface MBApp : MBContainer {
+    NSDictionary *_entitlements;
+    NSArray *_groups;
+    NSArray *_plugins;
 }
 
+@property(retain) NSString * bundleDir;
 @property(readonly) NSString * bundleID;
 @property(readonly) NSString * bundleVersion;
-@property(retain) NSString * containerDir;
-@property(retain) NSDate * datePlacedInSafeHarbor;
-@property(readonly) NSDictionary * infoPlist;
-@property(readonly) BOOL isPlaceholder;
-@property(readonly) BOOL isSystemApp;
-@property(getter=isSafeHarbor,readonly) BOOL safeHarbor;
-@property(readonly) NSString * safeHarborDir;
+@property(readonly) NSArray * containers;
+@property(retain) NSDictionary * entitlements;
+@property(retain) NSArray * groups;
+@property(readonly) bool isPlaceholder;
+@property(readonly) bool isSystemApp;
+@property(retain) NSArray * plugins;
 
 + (id)appWithBundleID:(id)arg1;
 + (id)appWithPropertyList:(id)arg1;
 + (id)safeHarborWithPath:(id)arg1;
 
 - (id)_placeholderRelativePathsToBackupAndRestoreWithCache:(id)arg1;
+- (id)_resourceRelativePathsToBackupAndRestoreForRootDir:(id)arg1 relativePath:(id)arg2;
+- (id)bundleDir;
 - (id)bundleID;
 - (id)bundleVersion;
-- (id)containerDir;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)datePlacedInSafeHarbor;
-- (void)dealloc;
+- (id)containers;
 - (id)domain;
-- (unsigned int)hash;
-- (id)infoPlist;
-- (id)initWithPropertyList:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToApp:(id)arg1;
-- (BOOL)isPlaceholder;
-- (BOOL)isSafeHarbor;
-- (BOOL)isSystemApp;
+- (id)entitlements;
+- (id)groups;
+- (bool)isPlaceholder;
+- (bool)isSystemApp;
 - (id)placeholderDomainWithCache:(id)arg1;
-- (id)propertyListForBackupProperties;
-- (id)propertyListForSafeHarborInfo;
-- (id)safeHarborDir;
-- (void)setContainerDir:(id)arg1;
-- (void)setDatePlacedInSafeHarbor:(id)arg1;
+- (id)plugins;
+- (void)setBundleDir:(id)arg1;
+- (void)setEntitlements:(id)arg1;
+- (void)setGroups:(id)arg1;
+- (void)setPlugins:(id)arg1;
 
 @end

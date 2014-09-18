@@ -2,37 +2,42 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIChartsComponent, SKUIIPadChartsViewController, SKUIIPhoneChartsViewController, SKUIProductPageOverlayController;
+@class NSString, SKUIChartsComponent, SKUIIPadChartsViewController, SKUIIPhoneChartsViewController, SKUIProductPageOverlayController;
 
 @interface SKUIChartsPageSection : SKUIStorePageSection <SKUIChartsViewControllerDelegate, SKUIProductPageOverlayDelegate> {
     SKUIIPadChartsViewController *_ipadViewController;
     SKUIIPhoneChartsViewController *_iphoneViewController;
     SKUIProductPageOverlayController *_overlayController;
-    int _selectedChartIndex;
-    int _selectedItemIndex;
+    long long _selectedChartIndex;
+    long long _selectedItemIndex;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) SKUIChartsComponent * pageComponent;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_chartsViewController;
-- (void)_recordClickEvent:(id)arg1 withItem:(id)arg2 itemIndex:(int)arg3 chartIndex:(int)arg4;
+- (void)_recordClickEvent:(id)arg1 withItem:(id)arg2 itemIndex:(long long)arg3 chartIndex:(long long)arg4;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
-- (id)chartsViewController:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
-- (void)chartsViewController:(id)arg1 didSelectItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
-- (void)chartsViewController:(id)arg1 willDisplayItem:(id)arg2 atIndex:(int)arg3 chartIndex:(int)arg4;
-- (BOOL)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
-- (BOOL)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (id)chartsViewController:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndex:(long long)arg3 chartIndex:(long long)arg4;
+- (void)chartsViewController:(id)arg1 didSelectItem:(id)arg2 atIndex:(long long)arg3 chartIndex:(long long)arg4;
+- (void)chartsViewController:(id)arg1 willDisplayItem:(id)arg2 atIndex:(long long)arg3 chartIndex:(long long)arg4;
+- (bool)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
+- (bool)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (void)dealloc;
-- (BOOL)fitsToHeight;
+- (bool)fitsToHeight;
 - (id)initWithPageComponent:(id)arg1;
-- (int)numberOfCells;
-- (void)prefetchResourcesWithReason:(int)arg1;
+- (long long)numberOfCells;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
+- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

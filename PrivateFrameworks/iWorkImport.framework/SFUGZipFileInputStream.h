@@ -2,14 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface SFUGZipFileInputStream : NSObject <SFUInputStream> {
     int _fd;
     void *_file;
-    BOOL _isCachingDisabled;
     long long _offset;
+    bool_isCachingDisabled;
 }
 
-- (BOOL)canSeek;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (bool)canSeek;
 - (void)close;
 - (id)closeLocalStream;
 - (void)dealloc;
@@ -17,7 +24,7 @@
 - (void)enableSystemCaching;
 - (id)initWithPath:(id)arg1;
 - (long long)offset;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
+- (unsigned long long)readToBuffer:(char *)arg1 size:(unsigned long long)arg2;
 - (void)seekToOffset:(long long)arg1;
 
 @end

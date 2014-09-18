@@ -2,24 +2,27 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
  */
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
+@class NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, VCImageAttributeRules;
 
 @interface SDPMini : NSObject {
     NSMutableDictionary *_audioParameters;
     NSString *_sdpUsername;
     NSMutableArray *_videoAttributes;
     NSNumber *aacBlockSize;
-    BOOL allowAudioRecording;
-    BOOL allowRTCPFB;
-    BOOL allowsContentsChangeWithAspectPreservation;
-    BOOL allowsDynamicMaxBitrate;
     NSNumber *answerBandwidth;
     NSMutableArray *audioPayloads;
     NSNumber *audioRTCPPort;
     NSNumber *audioRTPID;
     NSNumber *audioRTPPort;
     NSNumber *audioUnitModel;
+    NSNumber *basebandCodecSampleRate;
+    NSString *basebandCodecType;
+    boolallowAudioRecording;
+    boolallowRTCPFB;
+    boolallowsContentsChangeWithAspectPreservation;
+    boolallowsDynamicMaxBitrate;
     NSDictionary *featuresListDict;
+    VCImageAttributeRules *imageAttributeRules;
     NSNumber *maxBandwidth;
     NSString *origin;
     NSMutableArray *secondaryAudioPayloads;
@@ -31,10 +34,10 @@
 }
 
 @property(retain) NSNumber * aacBlockSize;
-@property BOOL allowAudioRecording;
-@property BOOL allowRTCPFB;
-@property BOOL allowsContentsChangeWithAspectPreservation;
-@property BOOL allowsDynamicMaxBitrate;
+@property bool allowAudioRecording;
+@property bool allowRTCPFB;
+@property bool allowsContentsChangeWithAspectPreservation;
+@property bool allowsDynamicMaxBitrate;
 @property(retain) NSNumber * answerBandwidth;
 @property(readonly) NSMutableArray * audioPayloads;
 @property(retain) NSNumber * audioRTCPPort;
@@ -42,6 +45,7 @@
 @property(retain) NSNumber * audioRTPPort;
 @property(retain) NSNumber * audioUnitModel;
 @property(retain) NSDictionary * featuresListDict;
+@property(retain) VCImageAttributeRules * imageAttributeRules;
 @property(retain) NSNumber * maxBandwidth;
 @property(retain) NSString * origin;
 @property(readonly) NSMutableArray * secondaryAudioPayloads;
@@ -54,10 +58,10 @@
 - (id)SDPUsername;
 - (id)aacBlockSize;
 - (void)addVideoImageAttr:(id)arg1 ForPayload:(int)arg2;
-- (BOOL)allowAudioRecording;
-- (BOOL)allowRTCPFB;
-- (BOOL)allowsContentsChangeWithAspectPreservation;
-- (BOOL)allowsDynamicMaxBitrate;
+- (bool)allowAudioRecording;
+- (bool)allowRTCPFB;
+- (bool)allowsContentsChangeWithAspectPreservation;
+- (bool)allowsDynamicMaxBitrate;
 - (id)answerBandwidth;
 - (id)audioPayloads;
 - (id)audioRTCPPort;
@@ -70,15 +74,18 @@
 - (id)composeFLSString;
 - (id)composeSessionString;
 - (id)composeVideoString;
-- (void)createVideoImageAttr:(int)arg1 direction:(int)arg2 dimensions:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; }*)arg3 count:(int)arg4;
+- (void)createVideoImageAttr:(int)arg1 direction:(int)arg2 dimensions:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; int x9; }*)arg3 count:(int)arg4;
 - (void)dealloc;
 - (id)featuresListDict;
-- (void)fillImageArray:(id)arg1 imageArray:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; }*)arg2;
-- (void)fillImageStruct:(id)arg1 imageStruct:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; }*)arg2;
-- (void)getNegotiatedResolutionForPayload:(int)arg1 withRule:(id)arg2 direction:(int)arg3 result:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; }*)arg4 remoteSupportsHD:(BOOL)arg5;
-- (BOOL)getUseSbr:(BOOL*)arg1 blockSize:(int*)arg2 forAACFormat:(int)arg3;
+- (void)fillImageArray:(id)arg1 imageArray:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; int x9; }*)arg2;
+- (void)fillImageStruct:(id)arg1 imageStruct:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; int x9; }*)arg2;
+- (void)fillImageStructWithDictionary:(id)arg1 forInterface:(int)arg2 imageStruct:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; int x9; }*)arg3;
+- (bool)getBasebandCodecType:(id*)arg1 sampleRate:(id*)arg2;
+- (void)getNegotiatedResolutionForPayload:(int)arg1 forInterface:(int)arg2 withRule:(id)arg3 direction:(int)arg4 result:(struct imageTag { int x1; int x2; int x3; int x4; int x5; int x6; int x7; float x8; int x9; }*)arg5 remoteSupportsHD:(bool)arg6;
+- (bool)getUseSbr:(bool*)arg1 blockSize:(int*)arg2 forAACFormat:(int)arg3;
 - (id)getVideoRecvImages:(id)arg1;
 - (id)getVideoSendImages:(id)arg1;
+- (id)imageAttributeRules;
 - (id)init;
 - (id)initWithString:(id)arg1;
 - (id)maxBandwidth;
@@ -87,6 +94,7 @@
 - (void)parseAudioMediaAttributes:(id)arg1;
 - (void)parseBandwidth:(id)arg1;
 - (id)parseIP:(id)arg1;
+- (void)parseImageAttributeRules:(id)arg1;
 - (void)parseMedia:(id)arg1;
 - (id)parseRTCPPort:(id)arg1;
 - (id)parseRTPID:(id)arg1;
@@ -98,28 +106,30 @@
 - (id)secondaryAudioPayloads;
 - (id)sessionIP;
 - (void)setAacBlockSize:(id)arg1;
-- (void)setAllowAudioRecording:(BOOL)arg1;
-- (void)setAllowRTCPFB:(BOOL)arg1;
-- (void)setAllowsContentsChangeWithAspectPreservation:(BOOL)arg1;
-- (void)setAllowsDynamicMaxBitrate:(BOOL)arg1;
+- (void)setAllowAudioRecording:(bool)arg1;
+- (void)setAllowRTCPFB:(bool)arg1;
+- (void)setAllowsContentsChangeWithAspectPreservation:(bool)arg1;
+- (void)setAllowsDynamicMaxBitrate:(bool)arg1;
 - (void)setAnswerBandwidth:(id)arg1;
 - (void)setAudioRTCPPort:(id)arg1;
 - (void)setAudioRTPID:(id)arg1;
 - (void)setAudioRTPPort:(id)arg1;
 - (void)setAudioUnitModel:(id)arg1;
+- (void)setBasebandCodecType:(id)arg1 sampleRate:(id)arg2;
 - (void)setFeaturesListDict:(id)arg1;
+- (void)setImageAttributeRules:(id)arg1;
 - (void)setMaxBandwidth:(id)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setSessionIP:(id)arg1;
-- (void)setUseSbr:(BOOL)arg1 blockSize:(int)arg2 forAACFormat:(int)arg3;
-- (BOOL)setVideoPayloads:(int*)arg1 count:(int)arg2;
-- (void)setVideoRTCPFB:(BOOL)arg1 useNACK:(BOOL)arg2;
+- (void)setUseSbr:(bool)arg1 blockSize:(int)arg2 forAACFormat:(int)arg3;
+- (bool)setVideoPayloads:(int*)arg1 count:(int)arg2;
+- (void)setVideoRTCPFB:(bool)arg1 useNACK:(bool)arg2;
 - (void)setVideoRTCPPort:(id)arg1;
 - (void)setVideoRTPID:(id)arg1;
 - (void)setVideoRTPPort:(id)arg1;
-- (BOOL)supportImage:(id)arg1 width:(int)arg2 height:(int)arg3 rate:(int)arg4;
-- (id)toStringWithVideoEnabled:(BOOL)arg1;
-- (BOOL)videoDisplayAttribute:(int*)arg1 withHeight:(int*)arg2;
+- (bool)supportImage:(id)arg1 width:(int)arg2 height:(int)arg3 rate:(int)arg4;
+- (id)toStringWithVideoEnabled:(bool)arg1;
+- (bool)videoDisplayAttribute:(int*)arg1 withHeight:(int*)arg2;
 - (id)videoImageAttributes:(int)arg1;
 - (id)videoPayloads;
 - (id)videoRTCPPort;

@@ -19,6 +19,7 @@
     CoreDAVItemWithNoChildren *_uid;
     CoreDAVItemWithNoChildren *_validAddressData;
     CoreDAVItemWithNoChildren *_validSyncToken;
+    CoreDAVItemWithNoChildren *_validTimezone;
 }
 
 @property(retain) CoreDAVItemWithNoChildren * ctagOkay;
@@ -35,6 +36,7 @@
 @property(retain) CoreDAVItemWithNoChildren * uid;
 @property(retain) CoreDAVItemWithNoChildren * validAddressData;
 @property(retain) CoreDAVItemWithNoChildren * validSyncToken;
+@property(retain) CoreDAVItemWithNoChildren * validTimezone;
 
 + (id)copyParseRules;
 
@@ -65,9 +67,11 @@
 - (void)setUid:(id)arg1;
 - (void)setValidAddressData:(id)arg1;
 - (void)setValidSyncToken:(id)arg1;
+- (void)setValidTimezone:(id)arg1;
 - (id)status;
 - (id)uid;
 - (id)validAddressData;
 - (id)validSyncToken;
+- (id)validTimezone;
 
 @end

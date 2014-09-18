@@ -3,17 +3,19 @@
  */
 
 @interface RCGLKView : GLKView {
-    BOOL _isCreatingSnapshot;
+    bool_isCreatingSnapshot;
 }
 
-@property(readonly) BOOL isCreatingSnapshot;
-@property(readonly) BOOL isRenderingContextValid;
+@property(readonly) bool isCreatingSnapshot;
+@property(readonly) bool isRenderingContextValid;
+
++ (Class)layerClass;
 
 - (void)_renderVisibleTimeRange;
 - (void)didMoveToWindow;
-- (BOOL)isCreatingSnapshot;
-- (BOOL)isRenderingContextValid;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)isCreatingSnapshot;
+- (bool)isRenderingContextValid;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)snapshot;
 
 @end

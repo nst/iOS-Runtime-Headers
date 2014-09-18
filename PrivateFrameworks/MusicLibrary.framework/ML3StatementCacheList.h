@@ -9,18 +9,19 @@
     ML3StatementCacheNode *_lastNode;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
 @property(readonly) ML3StatementCacheNode * firstNode;
 @property(readonly) ML3StatementCacheNode * lastNode;
 
 - (void).cxx_destruct;
 - (void)appendNode:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)deleteAllNodes;
-- (id)deleteOldestNode;
+- (void)deleteOldestNode;
 - (id)description;
 - (id)firstNode;
 - (id)lastNode;
+- (id)oldestNode;
 - (void)promoteNodeWithDictionaryKey:(id)arg1;
 
 @end

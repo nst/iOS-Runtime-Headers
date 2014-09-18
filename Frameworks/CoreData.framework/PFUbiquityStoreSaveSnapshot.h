@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, PFUbiquityGlobalObjectIDCache, PFUbiquityKnowledgeVector;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString, PFUbiquityGlobalObjectIDCache, PFUbiquityKnowledgeVector;
 
 @interface PFUbiquityStoreSaveSnapshot : NSObject {
     NSMutableDictionary *_deletedObjects;
@@ -23,6 +23,7 @@
     NSMutableDictionary *_peerStates;
     NSMutableDictionary *_primaryKeyToIndex;
     NSMutableArray *_primaryKeys;
+    NSObject<OS_dispatch_queue> *_queue;
     PFUbiquityKnowledgeVector *_storeKV;
     NSDictionary *_storeOptions;
     NSNumber *_transactionNumber;
@@ -51,6 +52,7 @@
 
 - (void)_setFilesDeletedInTransaction:(id)arg1;
 - (id)addManagedObject:(id)arg1 withTransactionType:(int)arg2 andStoreExportContext:(id)arg3 withError:(id*)arg4;
+- (id)checkIndecies:(id)arg1;
 - (id)checkIndex:(id)arg1 forValue:(id)arg2 fromArrayOfValues:(id)arg3;
 - (id)compressedGlobalObjectIDFromGlobalObjectID:(id)arg1;
 - (id)createKnowledgeVectorFromPeerStates;
@@ -77,6 +79,7 @@
 - (id)insertedObjects;
 - (id)localPeerID;
 - (id)managedObjectIDToGlobalObjectID;
+- (id)noSyncCheckIndex:(id)arg1 forValue:(id)arg2 fromArrayOfValues:(id)arg3;
 - (id)peerIDToIndex;
 - (id)peerIDs;
 - (id)peerStates;
@@ -84,7 +87,6 @@
 - (id)primaryKeyToIndex;
 - (id)primaryKeys;
 - (void)replaceGlobalObjectID:(id)arg1 withGlobalObjectID:(id)arg2;
-- (void)replaceGlobalObjectIDsAtIndexes:(id)arg1 withGlobalObjectIDs:(id)arg2;
 - (void)reserveTransactionNumberWithStoreExportContext:(id)arg1;
 - (void)resetFromOptimisticLockingException;
 - (void)setDeletedObjects:(id)arg1;

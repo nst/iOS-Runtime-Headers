@@ -6,6 +6,7 @@
 
 @interface AAAccountManager : NSObject {
     ACAccountStore *_accountStore;
+    id _accountStoreDidChangeObserver;
     NSMutableArray *_accounts;
     NSMutableArray *_originalAccounts;
 }

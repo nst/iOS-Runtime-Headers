@@ -5,9 +5,6 @@
 @interface RUTableViewCell : UITableViewCell {
 }
 
-+ (id)topSeparatorColor;
-
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
 
 @end

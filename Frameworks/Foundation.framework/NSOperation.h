@@ -2,41 +2,64 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSArray, NSString;
+
 @interface NSOperation : NSObject {
     int _private1;
+    int _private1b;
     id _private;
 }
 
-@property unsigned int tag;
+@property(getter=isAsynchronous,readonly) bool asynchronous;
+@property(getter=isCancelled,readonly) bool cancelled;
+@property(copy) id completionBlock;
+@property(getter=isConcurrent,readonly) bool concurrent;
+@property(copy,readonly) NSArray * dependencies;
+@property(getter=isExecuting,readonly) bool executing;
+@property(getter=isFinished,readonly) bool finished;
+@property(copy) NSString * name;
+@property long long qualityOfService;
+@property long long queuePriority;
+@property(getter=isReady,readonly) bool ready;
+@property unsigned long long tag;
+@property double threadPriority;
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)currentOperation;
 
 - (id)__;
+- (id)_activity;
+- (long long)_effQoS;
 - (id)_implicitObservationInfo;
 - (void)addDependency:(id)arg1;
 - (void)cancel;
 - (id)completionBlock;
 - (void)dealloc;
 - (id)dependencies;
+- (id)description;
 - (void)finalize;
 - (id)init;
-- (BOOL)isAsynchronous;
-- (BOOL)isCancelled;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (BOOL)isReady;
+- (bool)isAsynchronous;
+- (bool)isCancelled;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (bool)isReady;
 - (void)main;
+- (id)name;
 - (void*)observationInfo;
-- (int)queuePriority;
+- (long long)qualityOfService;
+- (long long)queuePriority;
 - (void)removeDependency:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setObservationInfo:(void*)arg1;
-- (void)setQueuePriority:(int)arg1;
-- (void)setTag:(unsigned int)arg1;
+- (void)setQualityOfService:(long long)arg1;
+- (void)setQueuePriority:(long long)arg1;
+- (void)setTag:(unsigned long long)arg1;
 - (void)setThreadPriority:(double)arg1;
 - (void)start;
-- (unsigned int)tag;
+- (unsigned long long)tag;
 - (double)threadPriority;
 - (void)waitUntilFinished;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;

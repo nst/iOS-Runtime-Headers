@@ -7,17 +7,21 @@
 @interface SAWebWebResult : AceObject <SAAceSerializable> {
 }
 
-@property(copy) NSString * description;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(copy) NSString * descriptionText;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSString * title;
 @property(copy) NSURL * url;
 
 + (id)webResult;
 + (id)webResultWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)description;
+- (id)descriptionText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setDescription:(id)arg1;
+- (void)setDescriptionText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)title;

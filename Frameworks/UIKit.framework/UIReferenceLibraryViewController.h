@@ -14,13 +14,17 @@
     id _dismissCompletionHandler;
     UIViewController *_longDefViewController;
     UITableViewController *_multiDefViewController;
-    int _oldPopoverStyle;
+    long long _oldPopoverStyle;
     UIWindow *_rotationDecider;
     NSString *_term;
 }
 
 @property(setter=_setRotationDecider:,retain) UIWindow * _rotationDecider;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) id dismissCompletionHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)_backgroundColor;
 + (id)_colorAttributes;
@@ -31,9 +35,9 @@
 + (id)_localizedDictionaryTitleAttributes;
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (id)_pressedButtonImage;
-+ (BOOL)_shouldShowDefineForTerm:(id)arg1;
-+ (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
-+ (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
++ (bool)_shouldShowDefineForTerm:(id)arg1;
++ (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned long long)arg2;
++ (bool)dictionaryHasDefinitionForTerm:(id)arg1;
 
 - (id)_backgroundColor;
 - (id)_colorAttributes;
@@ -55,16 +59,16 @@
 - (id)dismissCompletionHandler;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTerm:(id)arg1;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)pushDownloadManager:(id)arg1;
 - (void)setDismissCompletionHandler:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)viewDidLoad;
 

@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMAbstractView, DOMDocument, NSString;
+@class DOMAbstractView, DOMDocument, NSString, WebFrame;
 
 @interface DOMHTMLIFrameElement : DOMHTMLElement {
 }
 
 @property(copy) NSString * align;
 @property(readonly) DOMDocument * contentDocument;
+@property(readonly) WebFrame * contentFrame;
 @property(readonly) DOMAbstractView * contentWindow;
 @property(copy) NSString * frameBorder;
 @property(copy) NSString * height;
@@ -32,7 +33,6 @@
 - (id)name;
 - (id)sandbox;
 - (id)scrolling;
-- (BOOL)seamless;
 - (void)setAlign:(id)arg1;
 - (void)setFrameBorder:(id)arg1;
 - (void)setHeight:(id)arg1;
@@ -42,7 +42,6 @@
 - (void)setName:(id)arg1;
 - (void)setSandbox:(id)arg1;
 - (void)setScrolling:(id)arg1;
-- (void)setSeamless:(BOOL)arg1;
 - (void)setSrc:(id)arg1;
 - (void)setSrcdoc:(id)arg1;
 - (void)setWidth:(id)arg1;

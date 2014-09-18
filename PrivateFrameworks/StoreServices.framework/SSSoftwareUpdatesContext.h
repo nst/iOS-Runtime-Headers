@@ -6,20 +6,24 @@
 
 @interface SSSoftwareUpdatesContext : NSObject <SSXPCCoding, NSCopying, NSMutableCopying> {
     NSString *_clientIdentifierHeader;
-    BOOL _forced;
     NSArray *_softwareTypes;
+    bool_forced;
 }
 
-@property(readonly) NSString * clientIdentifierHeader;
-@property(getter=isForced,readonly) BOOL forced;
-@property(readonly) NSArray * softwareTypes;
+@property(copy,readonly) NSString * clientIdentifierHeader;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(getter=isForced,readonly) bool forced;
+@property(readonly) unsigned long long hash;
+@property(copy,readonly) NSArray * softwareTypes;
+@property(readonly) Class superclass;
 
 - (id)clientIdentifierHeader;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isForced;
+- (bool)isForced;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)softwareTypes;
 

@@ -8,12 +8,12 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
-@property BOOL showActive;
+@property bool showActive;
 
 - (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
-- (void)setShowActive:(BOOL)arg1;
-- (BOOL)showActive;
+- (void)setShowActive:(bool)arg1;
+- (bool)showActive;
 
 @end

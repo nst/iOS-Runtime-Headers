@@ -5,19 +5,19 @@
 @class NSString;
 
 @interface PFUBLogEventID : NSObject {
-    int _eventType;
-    int _hash;
+    long long _eventType;
+    long long _hash;
     NSString *_idString;
 }
 
-@property(readonly) int eventType;
-@property(readonly) int hash;
+@property(readonly) long long eventType;
+@property(readonly) long long hash;
 @property(readonly) NSString * idString;
 
 + (void)initialize;
 
-- (int)eventType;
-- (int)hash;
+- (long long)eventType;
+- (long long)hash;
 - (id)idString;
 - (id)initWithCustomKey:(id)arg1;
 - (id)initWithEventType:(int)arg1;

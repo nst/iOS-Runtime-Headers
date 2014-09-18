@@ -2,23 +2,37 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMapTable, _VKLocalIconAtlas;
+@class NSArray, NSMapTable, NSMutableDictionary, NSString, VKResourceManager, _VKLocalIconAtlas;
 
 @interface VKIconManager : NSObject <GEOResourceManifestTileGroupObserver> {
-    NSMapTable *_defaultAtlases;
+    NSMapTable *_atlases;
     _VKLocalIconAtlas *_localAtlas;
-    NSMapTable *_regionalAtlases;
+    NSMutableDictionary *_nameToStyleManager;
+    NSArray *_nonRegionalResourceNames;
+    VKResourceManager *_resourceManager;
+    unsigned int _tileGroupIdentifier;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)sharedManager;
 
+- (id)_allResourceNames;
 - (id)_atlasForName:(id)arg1;
-- (id)_defaultAtlasForScale:(float)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
-- (id)artworkForFeatureID:(unsigned long long)arg1 withResourceNames:(id)arg2 style:(struct { int x1; struct _VGLColor { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct _VGLColor { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3[2]; struct _VGLColor { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; int x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; int x7; int x8; float x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; float x12; struct _VGLColor { float x_13_1_1; float x_13_1_2; float x_13_1_3; float x_13_1_4; } x13; float x14; float x15; float x16; unsigned int x17; }*)arg3 contentScale:(float)arg4;
-- (id)artworkForName:(id)arg1 withResourceNames:(id)arg2 style:(struct { int x1; struct _VGLColor { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct _VGLColor { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3[2]; struct _VGLColor { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; int x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; int x7; int x8; float x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; float x12; struct _VGLColor { float x_13_1_1; float x_13_1_2; float x_13_1_3; float x_13_1_4; } x13; float x14; float x15; float x16; unsigned int x17; }*)arg3 contentScale:(float)arg4 styleAttributes:(id)arg5;
+- (id)_forEachIconPackWithContentScale:(double)arg1 iconSize:(long long)arg2 resourceNames:(id)arg3 visitUntilMatch:(id)arg4;
+- (id)_nonRegionalPacks;
+- (id)artworkForFeatureID:(unsigned long long)arg1 withResourceNames:(id)arg2 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg3 contentScale:(double)arg4 size:(long long)arg5;
+- (id)artworkForName:(id)arg1 withResourceNames:(id)arg2 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg3 contentScale:(double)arg4 size:(long long)arg5;
+- (id)artworkForStyleAttributeKey:(unsigned int)arg1 attributeValue:(unsigned int)arg2 withResourceNames:(id)arg3 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg4 contentScale:(double)arg5 size:(long long)arg6;
+- (id)artworkForStyleAttributeKey:(unsigned int)arg1 longAttributeValue:(unsigned long long)arg2 withResourceNames:(id)arg3 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg4 contentScale:(double)arg5 size:(long long)arg6;
 - (void)dealloc;
-- (id)init;
+- (id)imageForName:(id)arg1 contentScale:(double)arg2;
+- (id)imageForStyleAttributes:(id)arg1 withStylesheetName:(id)arg2 contentScale:(double)arg3 size:(long long)arg4 customIconID:(unsigned long long)arg5;
+- (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;
 - (void)purge;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

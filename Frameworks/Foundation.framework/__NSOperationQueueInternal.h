@@ -5,22 +5,25 @@
 @class NSObject<OS_dispatch_queue>, NSOperation;
 
 @interface __NSOperationQueueInternal : NSObject {
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
     int __actualMaxNumOps;
-    NSObject<OS_dispatch_queue> *__dispatchQueue;
+    NSObject<OS_dispatch_queue> *__dispatch_queue;
     NSOperation *__firstOperation;
     NSOperation *__firstPriOperation[5];
     NSOperation *__lastOperation;
     NSOperation *__lastPriOperation[5];
     unsigned char __mainQ;
-    int __maxNumOps;
+    long long __maxNumOps;
     BOOL __nameBuffer[160];
     int __numExecOps;
     unsigned char __overcommit;
-    unsigned char __pad1[1];
     NSOperation *__pendingFirstOperation;
     NSOperation *__pendingLastOperation;
     NSObject<OS_dispatch_queue> *__pending_barrier;
-    int __queueLock;
+    BOOL __propertyQOS;
+    } __queueLock;
     unsigned char __suspended;
     unsigned int __unused2;
 }

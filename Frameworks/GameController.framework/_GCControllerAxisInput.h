@@ -10,24 +10,24 @@
 
 @interface _GCControllerAxisInput : GCControllerAxisInput {
     GCControllerElement *_collection;
-    BOOL _digital;
-    BOOL _flipped;
     GCControllerButtonInput *_negative;
     GCControllerButtonInput *_positive;
     float _value;
     id _valueChangedHandler;
+    bool_digital;
+    bool_flipped;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_setValue:(float)arg1;
+- (bool)_setValue:(float)arg1;
 - (id)collection;
-- (id)initWithCollection:(id)arg1 flipped:(BOOL)arg2 digital:(BOOL)arg3;
-- (BOOL)isAnalog;
-- (BOOL)isDigital;
-- (BOOL)isFlipped;
+- (id)initWithCollection:(id)arg1 flipped:(bool)arg2 digital:(bool)arg3;
+- (bool)isAnalog;
+- (bool)isDigital;
+- (bool)isFlipped;
 - (id)negative;
 - (id)positive;
-- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (float)value;
 - (id)valueChangedHandler;

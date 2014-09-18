@@ -6,10 +6,10 @@
 
 @interface UICollisionBehavior : UIDynamicBehavior {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct { 
         unsigned int delegateBeganWithItem : 1; 
         unsigned int delegateEndedWithItem : 1; 
@@ -19,19 +19,19 @@
     NSMutableDictionary *_boundaryPaths;
     } _collisionBehaviorFlags;
     <UICollisionBehaviorDelegate> *_collisionDelegate;
-    unsigned int _collisionMode;
+    unsigned long long _collisionMode;
     unsigned int _groupBID;
     unsigned int _groupVID;
     PKExtendedPhysicsBody *_implicitBoundsBody;
     } _implicitBoundsInsets;
-    BOOL _usesImplicitBounds;
+    bool_usesImplicitBounds;
 }
 
-@property(readonly) NSArray * boundaryIdentifiers;
+@property(copy,readonly) NSArray * boundaryIdentifiers;
 @property <UICollisionBehaviorDelegate> * collisionDelegate;
-@property unsigned int collisionMode;
-@property(readonly) NSArray * items;
-@property BOOL translatesReferenceBoundsIntoBoundary;
+@property unsigned long long collisionMode;
+@property(copy,readonly) NSArray * items;
+@property bool translatesReferenceBoundsIntoBoundary;
 
 - (void)_addItem:(id)arg1;
 - (void)_applySettings;
@@ -39,20 +39,20 @@
 - (void)_didBeginContact:(id)arg1;
 - (void)_didEndContact:(id)arg1;
 - (void)_dissociate;
-- (void)_reevaluate:(unsigned int)arg1;
+- (void)_reevaluate:(unsigned long long)arg1;
 - (void)_removeExplicitBoundaries;
 - (void)_removeImplicitBoundaries;
-- (void)_setCollisions:(BOOL)arg1 forBody:(id)arg2 isEdge:(BOOL)arg3;
-- (void)_setTranslatesReferenceItemBounds:(BOOL)arg1 intoBoundaryWithInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)_setCollisions:(bool)arg1 forBody:(id)arg2 isEdge:(bool)arg3;
+- (void)_setTranslatesReferenceItemBounds:(bool)arg1 intoBoundaryWithInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)_setupExplicitBoundaries;
 - (void)_setupImplicitBoundaries;
 - (void)addBoundaryWithIdentifier:(id)arg1 forPath:(id)arg2;
-- (void)addBoundaryWithIdentifier:(id)arg1 fromPoint:(struct CGPoint { float x1; float x2; })arg2 toPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)addBoundaryWithIdentifier:(id)arg1 fromPoint:(struct CGPoint { double x1; double x2; })arg2 toPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (void)addItem:(id)arg1;
 - (id)boundaryIdentifiers;
 - (id)boundaryWithIdentifier:(id)arg1;
 - (id)collisionDelegate;
-- (unsigned int)collisionMode;
+- (unsigned long long)collisionMode;
 - (void)dealloc;
 - (id)description;
 - (id)init;
@@ -62,9 +62,9 @@
 - (void)removeBoundaryWithIdentifier:(id)arg1;
 - (void)removeItem:(id)arg1;
 - (void)setCollisionDelegate:(id)arg1;
-- (void)setCollisionMode:(unsigned int)arg1;
-- (void)setTranslatesReferenceBoundsIntoBoundary:(BOOL)arg1;
-- (void)setTranslatesReferenceBoundsIntoBoundaryWithInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (BOOL)translatesReferenceBoundsIntoBoundary;
+- (void)setCollisionMode:(unsigned long long)arg1;
+- (void)setTranslatesReferenceBoundsIntoBoundary:(bool)arg1;
+- (void)setTranslatesReferenceBoundsIntoBoundaryWithInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)translatesReferenceBoundsIntoBoundary;
 
 @end

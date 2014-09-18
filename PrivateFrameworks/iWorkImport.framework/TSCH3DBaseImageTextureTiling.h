@@ -30,9 +30,9 @@
 
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArchive:(const struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DVectorArchive {} *x3; float x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)restoreDefault;
 - (float)rotation;
 - (void)saveToArchive:(struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DVectorArchive {} *x3; float x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;

@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NoteContext;
+@class NSMapTable, NoteContext;
 
 @interface DALocalDBWatcher : NSObject {
     void *_abWatcher;
     struct CalDatabase { } *_calWatcher;
-    struct __CFDictionary { } *_concernedABPartyToBlockMap;
-    struct __CFDictionary { } *_concernedBookmarkPartyToBlockMap;
-    struct __CFDictionary { } *_concernedCalPartyToBlockMap;
-    struct __CFDictionary { } *_concernedNotePartyToBlockMap;
+    NSMapTable *_concernedABPartyToBlockMap;
+    NSMapTable *_concernedBookmarkPartyToBlockMap;
+    NSMapTable *_concernedCalPartyToBlockMap;
+    NSMapTable *_concernedNotePartyToBlockMap;
     int _lastSavedABSequenceNumber;
     int _lastSavedCalSequenceNumber;
     NoteContext *_noteWatcher;
-    BOOL _watchingBookmarks;
+    bool_watchingBookmarks;
 }
 
 @property int lastSavedABSequenceNumber;
@@ -22,6 +22,7 @@
 
 + (id)sharedDBWatcher;
 
+- (void).cxx_destruct;
 - (void)_handleABChangeNotificationWithInfo:(id)arg1;
 - (void)_handleBookmarkChangeNotification;
 - (void)_handleCalChangeNotification;

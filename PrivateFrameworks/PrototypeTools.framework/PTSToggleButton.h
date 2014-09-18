@@ -12,8 +12,12 @@
 }
 
 @property int alignment;
-@property BOOL enabled;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool enabled;
+@property(readonly) unsigned long long hash;
 @property _UISettings * settings;
+@property(readonly) Class superclass;
 @property(copy) NSString * titleForOffState;
 @property(copy) NSString * titleForOnState;
 @property(copy) id valueForOffState;

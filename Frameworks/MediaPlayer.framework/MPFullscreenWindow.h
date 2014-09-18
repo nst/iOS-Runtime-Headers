@@ -5,6 +5,6 @@
 @interface MPFullscreenWindow : UIWindow {
 }
 
-- (BOOL)_canAffectStatusBarAppearance;
+- (bool)_canAffectStatusBarAppearance;
 
 @end

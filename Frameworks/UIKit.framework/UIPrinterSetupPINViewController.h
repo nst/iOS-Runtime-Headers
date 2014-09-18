@@ -18,7 +18,7 @@
 
 - (id)PINView;
 - (void)connectToPrinter;
-- (void)connected:(BOOL)arg1;
+- (void)connected:(bool)arg1;
 - (id)connectingView;
 - (void)dealloc;
 - (id)initWithPrinter:(id)arg1;
@@ -29,11 +29,11 @@
 - (void)setPINView:(id)arg1;
 - (void)setPrinter:(id)arg1;
 - (void)setScrollView:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)showFailure;
 - (void)showSetup;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

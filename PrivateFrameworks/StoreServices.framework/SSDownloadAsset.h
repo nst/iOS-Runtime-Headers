@@ -5,15 +5,15 @@
 @class NSArray, NSString, NSURLRequest, SSURLRequestProperties;
 
 @interface SSDownloadAsset : SSEntity {
-    int _assetType;
+    long long _assetType;
     SSURLRequestProperties *_localProperties;
 }
 
-@property(readonly) NSURLRequest * URLRequest;
+@property(retain,readonly) NSURLRequest * URLRequest;
 @property(readonly) SSURLRequestProperties * URLRequestProperties;
 @property(readonly) NSString * downloadFileName;
 @property(readonly) NSString * downloadPath;
-@property(getter=isExternal,readonly) BOOL external;
+@property(getter=isExternal,readonly) bool external;
 @property(readonly) long long fileSize;
 @property(readonly) NSString * finalizedPath;
 @property(readonly) NSArray * sinfs;
@@ -22,14 +22,14 @@
 + (long long)_getExternalValuesMessage;
 + (long long)_getValueMessage;
 + (long long)_setValuesMessage;
-+ (id)assetWithURL:(id)arg1 type:(int)arg2;
++ (id)assetWithURL:(id)arg1 type:(long long)arg2;
 
 - (id)URLRequest;
 - (id)URLRequestProperties;
 - (id)_copyURLRequestProperties;
-- (int)_legacyAssetType;
+- (long long)_legacyAssetType;
 - (void)_resetLocalIVars;
-- (int)assetType;
+- (long long)assetType;
 - (long long)bytesDownloaded;
 - (long long)bytesUploadTotal;
 - (long long)bytesUploaded;
@@ -39,10 +39,10 @@
 - (id)downloadPath;
 - (long long)fileSize;
 - (id)finalizedPath;
-- (id)initWithURLRequest:(id)arg1 type:(int)arg2;
+- (id)initWithURLRequest:(id)arg1 type:(long long)arg2;
 - (id)initWithURLRequest:(id)arg1;
 - (id)initWithURLRequestProperties:(id)arg1;
-- (BOOL)isExternal;
+- (bool)isExternal;
 - (id)sinfs;
 
 @end

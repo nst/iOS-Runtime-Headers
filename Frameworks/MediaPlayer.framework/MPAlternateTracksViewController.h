@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UINavigationBar, UIProgressIndicator, UITableView, UITextLabel, UIView;
+@class NSString, UINavigationBar, UIProgressIndicator, UITableView, UITextLabel, UIView;
 
 @interface MPAlternateTracksViewController : MPAbstractAlternateTracksViewController <UITableViewDataSource, UITableViewDelegate> {
     UIView *_backgroundView;
@@ -12,25 +12,30 @@
     UITableView *_table;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_doneButtonAction:(id)arg1;
-- (void)_exitAnimated:(BOOL)arg1;
-- (void)_setCell:(id)arg1 isChecked:(BOOL)arg2;
+- (void)_exitAnimated:(bool)arg1;
+- (void)_setCell:(id)arg1 isChecked:(bool)arg2;
 - (void)addLoadingUI;
 - (void)dealloc;
-- (void)didChangeToInterfaceOrientation:(int)arg1;
+- (void)didChangeToInterfaceOrientation:(long long)arg1;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadData;
 - (void)removeLoadingUI;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willChangeToInterfaceOrientation:(int)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willChangeToInterfaceOrientation:(long long)arg1;
 
 @end

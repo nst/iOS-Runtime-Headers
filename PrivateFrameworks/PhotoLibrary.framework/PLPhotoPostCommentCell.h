@@ -10,16 +10,16 @@
     UIView *_styledSeparatorView;
 }
 
-@property(readonly) UIButton * addCommentButton;
-@property(readonly) UILabel * contentLabel;
-@property(readonly) UIView * styledSeparatorView;
+@property(retain,readonly) UIButton * addCommentButton;
+@property(retain,readonly) UILabel * contentLabel;
+@property(retain,readonly) UIView * styledSeparatorView;
 
-+ (float)heightForWidth:(float)arg1;
++ (double)heightForWidth:(double)arg1;
 
 - (id)addCommentButton;
 - (id)contentLabel;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setupContent;
 - (id)styledSeparatorView;

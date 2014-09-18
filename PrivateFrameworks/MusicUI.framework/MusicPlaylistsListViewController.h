@@ -7,6 +7,9 @@
 
 + (id)actionCellConfigurationClasses;
 
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (void)_cloudControllerIsJaliscoGeniusEnabledDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)initWithDataSource:(id)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 
 @end

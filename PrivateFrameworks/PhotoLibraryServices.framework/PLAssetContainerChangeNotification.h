@@ -5,29 +5,30 @@
 @class <PLAssetContainer>, NSDictionary, NSObject<PLAlbumProtocol>;
 
 @interface PLAssetContainerChangeNotification : PLContainerChangeNotification {
-    BOOL _keyAssetDidChange;
-    BOOL _titleDidChange;
     NSDictionary *_userInfo;
+    bool_keyAssetDidChange;
+    bool_titleDidChange;
 }
 
-@property(readonly) NSObject<PLAlbumProtocol> * album;
-@property(readonly) <PLAssetContainer> * container;
-@property(readonly) BOOL keyAssetDidChange;
-@property(readonly) BOOL titleDidChange;
+@property(retain,readonly) NSObject<PLAlbumProtocol> * album;
+@property(retain,readonly) <PLAssetContainer> * container;
+@property(readonly) bool keyAssetDidChange;
+@property(readonly) bool titleDidChange;
 
 + (id)notificationWithContainer:(id)arg1 snapshot:(id)arg2 changedAssets:(id)arg3;
 
 - (void)_calculateDiffs;
 - (id)_contentRelationshipName;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (struct NSObject { Class x1; }*)album;
 - (id)assetContainer;
 - (id)container;
 - (void)dealloc;
 - (id)description;
-- (BOOL)keyAssetDidChange;
+- (bool)hasDeletes;
+- (bool)keyAssetDidChange;
 - (id)name;
-- (BOOL)titleDidChange;
+- (bool)titleDidChange;
 - (id)userInfo;
 
 @end

@@ -15,28 +15,35 @@
     NSNumber *_falseMoreAvailableCount;
     int _numHBIDataPoints;
     NSString *_persistentUUID;
+    NSString *_protocolVersion;
     NSNumber *_successfulRequests;
-    BOOL _syncingAllowed;
     NSNumber *_timeInNetworking;
     NSNumber *_timeSpan;
+    NSNumber *_uploadedElements;
+    bool_syncingAllowed;
 }
 
 @property(retain) NSString * accountType;
 @property(retain) NSNumber * averageHBI;
+@property(retain) NSDate * creationDate;
 @property(retain) NSString * displayName;
 @property(retain) NSNumber * downloadedElements;
 @property(retain) NSNumber * failedNetworkRequests;
 @property(retain) NSNumber * failedProtocolRequests;
 @property(retain) NSNumber * falseMoreAvailableCount;
+@property int numHBIDataPoints;
 @property(retain) NSString * persistentUUID;
+@property(retain) NSString * protocolVersion;
 @property(retain) NSNumber * successfulRequests;
-@property BOOL syncingAllowed;
+@property bool syncingAllowed;
 @property(retain) NSNumber * timeInNetworking;
 @property(retain) NSNumber * timeSpan;
+@property(retain) NSNumber * uploadedElements;
 
+- (void).cxx_destruct;
 - (id)accountType;
 - (id)averageHBI;
-- (void)dealloc;
+- (id)creationDate;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
@@ -51,24 +58,32 @@
 - (void)noteFailedProtocolRequest;
 - (void)noteFalseMoreAvailableResponse;
 - (void)noteNewHBIDataPoint:(int)arg1;
+- (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1 numUploadedElements:(int)arg2;
 - (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1;
 - (void)noteTimeSpentInNetworking:(double)arg1;
+- (int)numHBIDataPoints;
 - (id)persistentUUID;
+- (id)protocolVersion;
 - (void)setAccountType:(id)arg1;
 - (void)setAverageHBI:(id)arg1;
+- (void)setCreationDate:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDownloadedElements:(id)arg1;
 - (void)setFailedNetworkRequests:(id)arg1;
 - (void)setFailedProtocolRequests:(id)arg1;
 - (void)setFalseMoreAvailableCount:(id)arg1;
+- (void)setNumHBIDataPoints:(int)arg1;
 - (void)setPersistentUUID:(id)arg1;
+- (void)setProtocolVersion:(id)arg1;
 - (void)setSuccessfulRequests:(id)arg1;
-- (void)setSyncingAllowed:(BOOL)arg1;
+- (void)setSyncingAllowed:(bool)arg1;
 - (void)setTimeInNetworking:(id)arg1;
 - (void)setTimeSpan:(id)arg1;
+- (void)setUploadedElements:(id)arg1;
 - (id)successfulRequests;
-- (BOOL)syncingAllowed;
+- (bool)syncingAllowed;
 - (id)timeInNetworking;
 - (id)timeSpan;
+- (id)uploadedElements;
 
 @end

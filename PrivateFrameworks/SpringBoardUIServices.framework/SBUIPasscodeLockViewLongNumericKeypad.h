@@ -5,14 +5,13 @@
 @interface SBUIPasscodeLockViewLongNumericKeypad : SBUIPasscodeLockViewWithKeypad {
 }
 
-- (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
-- (BOOL)_includesStatusView;
+- (double)_entryFieldBottomYDistanceFromNumberPadTopButton;
+- (bool)_includesStatusView;
 - (id)_longNumericEntryField;
 - (id)_newEntryField;
-- (void)_setHasInput:(BOOL)arg1;
-- (BOOL)_showsPromptLabelOnEntryField;
-- (float)_statusTitleViewHeight;
-- (void)_updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
-- (id)init;
+- (void)_setHasInput:(bool)arg1;
+- (bool)_showsPromptLabelOnEntryField;
+- (id)initWithLightStyle:(bool)arg1;
+- (void)updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(bool)arg3;
 
 @end

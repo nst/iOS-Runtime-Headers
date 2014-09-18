@@ -2,52 +2,71 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CLLocation, NSArray, NSDate, NSManagedObjectID, NSMutableArray, NSMutableSet, NSString;
+@class CLLocation, NSArray, NSCountedSet, NSDate, NSMutableArray, NSMutableSet, NSObject<NSCopying>, NSString;
 
 @interface PLMomentCluster : NSObject {
     CLLocation *__approximateLocation;
     NSDate *__endingDate;
+    NSCountedSet *__mergeTags;
     NSMutableArray *__mutableNodes;
     NSMutableSet *__nodesWithLocation;
-    NSManagedObjectID *__objectID;
+    NSObject<NSCopying> *__objectID;
+    NSCountedSet *__splitTags;
     NSDate *__startingDate;
     NSString *__title;
     short _generationType;
 }
 
+@property(setter=_setMergeTags:,retain) NSCountedSet * _mergeTags;
 @property(setter=_setNodes:,copy) NSMutableArray * _mutableNodes;
 @property(readonly) NSMutableSet * _nodesWithLocation;
+@property(setter=_setSplitTags:,retain) NSCountedSet * _splitTags;
 @property(readonly) CLLocation * approximateLocation;
 @property(retain) NSDate * endingDate;
 @property short generationType;
-@property(readonly) NSArray * nodes;
-@property(readonly) NSManagedObjectID * objectID;
+@property(copy,readonly) NSArray * nodes;
+@property(readonly) NSObject<NSCopying> * objectID;
 @property(retain) NSDate * startingDate;
 @property(retain) NSString * title;
 
++ (double)nameOccurrenceCutoff;
+
+- (void)_correctStartAndEndDates;
+- (id)_mergeTags;
 - (id)_mutableNodes;
 - (id)_nodesWithLocation;
 - (void)_setEndingDate:(id)arg1;
+- (void)_setMergeTags:(id)arg1;
 - (void)_setNodes:(id)arg1;
+- (void)_setSplitTags:(id)arg1;
 - (void)_setStartingDate:(id)arg1;
+- (id)_splitTags;
 - (void)addNode:(id)arg1;
+- (void)addNodes:(id)arg1;
 - (void)addNodesFromCluster:(id)arg1;
 - (id)approximateLocation;
 - (void)commonPLMomentClusterInitialization;
 - (void)dealloc;
 - (id)description;
 - (id)endingDate;
-- (unsigned int)expandFromNode:(id)arg1 withNeighbors:(id)arg2 inClustering:(id)arg3 minimumNumberOfPoints:(unsigned int)arg4;
+- (unsigned long long)expandFromNode:(id)arg1 withNeighbors:(id)arg2 inClustering:(id)arg3 minimumNumberOfPoints:(unsigned long long)arg4;
 - (short)generationType;
+- (bool)hasMerges;
+- (bool)hasSplits;
 - (id)init;
 - (id)initWithMoment:(id)arg1;
 - (id)initWithObjectID:(id)arg1;
+- (bool)isTagged;
+- (id)mergeTagAboveCutoff:(double)arg1;
+- (id)mergeTags;
 - (id)nodes;
 - (id)objectID;
-- (void)removeNode:(id)arg1;
+- (void)removeNode:(id)arg1 nilCluster:(bool)arg2;
+- (void)removeNodes:(id)arg1;
 - (void)removeNodesFromCluster:(id)arg1;
 - (void)setGenerationType:(short)arg1;
 - (void)setTitle:(id)arg1;
+- (id)splitTags;
 - (id)startingDate;
 - (id)title;
 

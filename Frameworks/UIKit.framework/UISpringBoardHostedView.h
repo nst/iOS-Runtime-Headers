@@ -6,14 +6,14 @@
 
 @interface UISpringBoardHostedView : UIView {
     NSString *_remoteViewIdentifier;
-    BOOL _remoteViewOpaque;
     UIWindow *_remoteWindow;
+    bool_remoteViewOpaque;
 }
 
 - (void)dealloc;
-- (void)registerWithIdentifier:(id)arg1;
+- (void)registerWithIdentifier:(id)arg1 andController:(id)arg2;
 - (id)remoteViewIdentifier;
-- (void)setRemoteViewOpaque:(BOOL)arg1;
+- (void)setRemoteViewOpaque:(bool)arg1;
 - (void)unregister;
 
 @end

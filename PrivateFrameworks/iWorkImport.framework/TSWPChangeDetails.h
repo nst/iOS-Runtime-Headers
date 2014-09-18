@@ -6,34 +6,45 @@
 
 @interface TSWPChangeDetails : NSObject <TSDAnnotationHosting> {
     TSWPChange *_change;
-    NSString *mChangeString;
-    <TSKModel> *model;
+    NSString *mChangeTrackingContentString;
+    NSString *mChangeTrackingTitleString;
 }
 
 @property(readonly) int annotationDisplayStringType;
 @property(readonly) int annotationType;
-@property(retain) TSKAnnotationAuthor * author;
+@property(readonly) TSKAnnotationAuthor * author;
 @property(retain) TSWPChange * change;
-@property(readonly) NSString * changeTrackingString;
+@property(readonly) NSString * changeTrackingContentFormatString;
+@property(readonly) NSString * changeTrackingContentString;
+@property(readonly) NSString * changeTrackingTitleString;
 @property(readonly) NSDate * date;
-@property <TSKModel> * model;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property <TSKModel> * hostingModel;
 @property(copy) TSDCommentStorage * storage;
+@property(readonly) Class superclass;
 
 - (int)annotationDisplayStringType;
 - (int)annotationType;
 - (id)author;
 - (id)change;
-- (id)changeTrackingString;
+- (id)changeTrackingContentFormatString;
+- (id)changeTrackingContentString;
+- (id)changeTrackingTitleString;
 - (void)commitText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
-- (id)initWithChange:(id)arg1 changeString:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChangeDetails:(id)arg1;
-- (id)model;
+- (id)description;
+- (unsigned long long)hash;
+- (id)hostingModel;
+- (id)initWithChange:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChangeDetails:(id)arg1;
+- (void)p_updateChangeStrings;
 - (void)setAuthor:(id)arg1;
 - (void)setChange:(id)arg1;
-- (void)setModel:(id)arg1;
+- (void)setHostingModel:(id)arg1;
 
 @end

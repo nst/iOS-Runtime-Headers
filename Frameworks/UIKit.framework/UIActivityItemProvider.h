@@ -13,10 +13,14 @@
 }
 
 @property(readonly) NSString * activityType;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) id placeholderItem;
 @property float progress;
 @property(retain) id providedItem;
 @property(copy) NSString * status;
+@property(readonly) Class superclass;
 
 - (void)_setActivityType:(id)arg1;
 - (id)activityType;

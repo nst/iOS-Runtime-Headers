@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, SACalendar, SAUIAppPunchOut;
+@class NSNumber, NSString, SACalendar, SAUIAppPunchOut;
 
 @interface SAMovieShowtime : AceObject <SAAceSerializable> {
 }
 
 @property(retain) SAUIAppPunchOut * buyTicketsPunchout;
 @property(copy) NSNumber * childTicketQuantity;
-@property BOOL is3d;
-@property BOOL isImax;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool is3d;
+@property bool isImax;
 @property(copy) NSNumber * regularTicketQuantity;
 @property(copy) NSNumber * seniorTicketQuantity;
 @property(retain) SACalendar * showtime;
+@property(readonly) Class superclass;
 
 + (id)showtime;
 + (id)showtimeWithDictionary:(id)arg1 context:(id)arg2;
@@ -22,14 +26,14 @@
 - (id)childTicketQuantity;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)is3d;
-- (BOOL)isImax;
+- (bool)is3d;
+- (bool)isImax;
 - (id)regularTicketQuantity;
 - (id)seniorTicketQuantity;
 - (void)setBuyTicketsPunchout:(id)arg1;
 - (void)setChildTicketQuantity:(id)arg1;
-- (void)setIs3d:(BOOL)arg1;
-- (void)setIsImax:(BOOL)arg1;
+- (void)setIs3d:(bool)arg1;
+- (void)setIsImax:(bool)arg1;
 - (void)setRegularTicketQuantity:(id)arg1;
 - (void)setSeniorTicketQuantity:(id)arg1;
 - (void)setShowtime:(id)arg1;

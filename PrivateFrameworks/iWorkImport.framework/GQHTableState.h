@@ -13,7 +13,7 @@
     double mOriginalTableHeight;
     int mPrevColumnIndex;
     int mPrevRowIndex;
-    long mSplitTableIndex;
+    long long mSplitTableIndex;
     GQDTTable *mTable;
 }
 
@@ -24,7 +24,7 @@
 - (int)groupLevel;
 - (id)init;
 - (double)lastAttachmentPosition;
-- (long)nextSplitTableIndex;
+- (long long)nextSplitTableIndex;
 - (double)originalTableHeight;
 - (int)prevColumnIndex;
 - (int)prevRowIndex;
@@ -33,7 +33,7 @@
 - (void)setOriginalTableHeight:(double)arg1;
 - (void)setPrevRowIndex:(int)arg1 columnIndex:(int)arg2;
 - (void)setSplitTable:(bool)arg1;
-- (void)setSplitTableIndex:(long)arg1;
+- (void)setSplitTableIndex:(long long)arg1;
 - (void)setTable:(id)arg1;
 - (bool)splitTable;
 - (id)table;

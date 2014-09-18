@@ -11,7 +11,7 @@
 @property UIScrollView * targetScrollView;
 
 - (void).cxx_destruct;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTargetScrollView:(id)arg1;
 - (id)targetScrollView;
 

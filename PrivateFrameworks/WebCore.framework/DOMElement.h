@@ -14,11 +14,11 @@
 @property(readonly) int clientTop;
 @property(readonly) int clientWidth;
 @property(readonly) DOMElement * firstElementChild;
-@property(readonly) NSString * innerText;
+@property(copy,readonly) NSString * innerText;
 @property(readonly) DOMElement * lastElementChild;
 @property(readonly) DOMElement * mf_containingQuoteBlockElement;
-@property(readonly) BOOL mf_isContainedInQuoteBlock;
-@property(readonly) BOOL mf_isContainedInTable;
+@property(readonly) bool mf_isContainedInQuoteBlock;
+@property(readonly) bool mf_isContainedInTable;
 @property(readonly) DOMElement * nextElementSibling;
 @property(readonly) int offsetHeight;
 @property(readonly) int offsetLeft;
@@ -31,10 +31,10 @@
 @property int scrollTop;
 @property(readonly) int scrollWidth;
 @property(readonly) DOMCSSStyleDeclaration * style;
-@property(readonly) NSString * tagName;
+@property(copy,readonly) NSString * tagName;
 
 + (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
-+ (BOOL)isRichTextStyle:(id)arg1;
++ (bool)isRichTextStyle:(id)arg1;
 
 - (struct __CTFont { }*)_font;
 - (id)_getURLAttribute:(id)arg1;
@@ -46,7 +46,7 @@
 - (int)clientLeft;
 - (int)clientTop;
 - (int)clientWidth;
-- (BOOL)exceedsStructuralComplexity:(int)arg1;
+- (bool)exceedsStructuralComplexity:(int)arg1;
 - (id)firstElementChild;
 - (void)focus;
 - (id)getAttribute:(id)arg1;
@@ -59,25 +59,26 @@
 - (id)getElementsByTagName:(id)arg1;
 - (id)getElementsByTagNameNS:(id)arg1 :(id)arg2;
 - (id)getElementsByTagNameNS:(id)arg1 localName:(id)arg2;
-- (void)getTextWritingDirection:(int*)arg1 override:(BOOL*)arg2;
-- (BOOL)hasAttribute:(id)arg1;
-- (BOOL)hasAttributeNS:(id)arg1 :(id)arg2;
-- (BOOL)hasAttributeNS:(id)arg1 localName:(id)arg2;
-- (BOOL)hasCustomLineHeight;
-- (BOOL)hasMarginsOfZero;
-- (BOOL)inDocument;
+- (void)getTextWritingDirection:(long long*)arg1 override:(bool*)arg2;
+- (bool)hasAttribute:(id)arg1;
+- (bool)hasAttributeNS:(id)arg1 :(id)arg2;
+- (bool)hasAttributeNS:(id)arg1 localName:(id)arg2;
+- (bool)hasCustomLineHeight;
+- (bool)hasMarginsOfZero;
+- (bool)inDocument;
 - (id)innerText;
-- (BOOL)isFocused;
-- (BOOL)isHidden;
-- (BOOL)isRichTextElement;
-- (BOOL)isRichTextElementType;
+- (bool)isFocused;
+- (bool)isHidden;
+- (bool)isRichTextElement;
+- (bool)isRichTextElementType;
 - (id)lastElementChild;
+- (bool)matches:(id)arg1;
 - (id)mf_computedBackgroundColor;
 - (id)mf_containingQuoteBlockElement;
-- (BOOL)mf_hasBackgroundColorOrImage;
-- (BOOL)mf_isContainedInAnyElementInSet:(id)arg1;
-- (BOOL)mf_isContainedInQuoteBlock;
-- (BOOL)mf_isContainedInTable;
+- (bool)mf_hasBackgroundColorOrImage;
+- (bool)mf_isContainedInAnyElementInSet:(id)arg1;
+- (bool)mf_isContainedInQuoteBlock;
+- (bool)mf_isContainedInTable;
 - (int)mf_quoteLevelDelta;
 - (void)mf_stripCSSStyle;
 - (id)nextElementSibling;
@@ -98,12 +99,12 @@
 - (void)scrollByLines:(int)arg1;
 - (void)scrollByPages:(int)arg1;
 - (int)scrollHeight;
-- (void)scrollIntoView:(BOOL)arg1;
-- (void)scrollIntoViewIfNeeded:(BOOL)arg1;
+- (void)scrollIntoView:(bool)arg1;
+- (void)scrollIntoViewIfNeeded:(bool)arg1;
 - (int)scrollLeft;
 - (int)scrollTop;
 - (int)scrollWidth;
-- (BOOL)selectable;
+- (bool)selectable;
 - (void)setAttribute:(id)arg1 :(id)arg2;
 - (void)setAttribute:(id)arg1 value:(id)arg2;
 - (void)setAttributeNS:(id)arg1 :(id)arg2 :(id)arg3;
@@ -117,8 +118,8 @@
 - (id)style;
 - (id)tagName;
 - (id)tapHighlightColor;
-- (BOOL)touchCalloutEnabled;
-- (BOOL)webkitMatchesSelector:(id)arg1;
+- (bool)touchCalloutEnabled;
+- (bool)webkitMatchesSelector:(id)arg1;
 - (id)webkitRegionOverset;
 
 @end

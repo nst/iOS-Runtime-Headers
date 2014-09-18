@@ -9,8 +9,8 @@
     NSArray *_columnsToFetch;
     NSArray *_metadataColumns;
     NSSQLStatement *_sqlStatement;
-    BOOL _transactionIsOpen;
-    BOOL _useSyntaxColoredLogging;
+    bool_transactionIsOpen;
+    bool_useSyntaxColoredLogging;
 }
 
 + (void)initialize;
@@ -25,7 +25,7 @@
 - (void)awake;
 - (void)beginTransaction;
 - (void)bindTempTableForBindIntarray:(id)arg1;
-- (BOOL)canConnect;
+- (bool)canConnect;
 - (id)columnsToFetch;
 - (void)commitTransaction;
 - (void)connect;
@@ -35,13 +35,12 @@
 - (id)createMapOfEntityNameToPKMaxForEntitiesFromPKTable:(id)arg1;
 - (id)createMapOfEntityNameToPKMaxForEntitiesFromUBRangeTable:(id)arg1;
 - (void)createMetadata;
-- (void)createPrimaryKeyTableForModel:(id)arg1 knownEmpty:(BOOL)arg2;
+- (void)createPrimaryKeyTableForModel:(id)arg1 knownEmpty:(bool)arg2;
 - (void)createSchema;
 - (void)createTableForEntity:(id)arg1;
 - (void)createTablesForEntities:(id)arg1;
-- (BOOL)databaseIsEmpty;
+- (bool)databaseIsEmpty;
 - (void)dealloc;
-- (void)deleteCorrelation:(id)arg1;
 - (void)deleteRow:(id)arg1;
 - (id)describeResults;
 - (void)didCreateSchema;
@@ -59,19 +58,16 @@
 - (void)finalize;
 - (void)forceTransactionClosed;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
-- (BOOL)hasMetadataTable;
-- (BOOL)hasOpenTransaction;
-- (BOOL)hasPrimaryKeyTable;
+- (bool)hasMetadataTable;
+- (bool)hasOpenTransaction;
+- (bool)hasPrimaryKeyTable;
 - (id)initWithAdapter:(id)arg1;
-- (void)insertCorrelation:(id)arg1;
 - (void)insertRow:(id)arg1;
-- (BOOL)isFetchInProgress;
-- (BOOL)isOpen;
+- (bool)isFetchInProgress;
+- (bool)isOpen;
 - (id)metadataColumns;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (id)newFetchedArray;
-- (void)performAdapterOperation:(id)arg1;
-- (void)performAdapterOperations:(id)arg1;
 - (void)prepareAndExecuteSQLStatement:(id)arg1;
 - (void)prepareForPrimaryKeyGeneration;
 - (void)prepareSQLStatement:(id)arg1;
@@ -80,9 +76,9 @@
 - (void)resetSQLStatement;
 - (void)rollbackTransaction;
 - (void)saveMetadata:(id)arg1;
-- (void)selectAttributes:(id)arg1 fetchRequest:(id)arg2 lock:(BOOL)arg3 entity:(id)arg4;
+- (void)selectAttributes:(id)arg1 fetchRequest:(id)arg2 lock:(bool)arg3 entity:(id)arg4;
 - (void)setColumnsToFetch:(id)arg1;
-- (void)setExclusiveLockingMode:(BOOL)arg1;
+- (void)setExclusiveLockingMode:(bool)arg1;
 - (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
 - (void)sleep;
 - (id)sqlStatement;
@@ -91,10 +87,10 @@
 - (void)transactionDidRollback;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;
-- (void)updateCorrelation:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (void)updateUbiquityKnowledgeVector:(id)arg1;
 - (void)willCreateSchema;
+- (void)writeCorrelationChangesFromTracker:(id)arg1;
 
 @end

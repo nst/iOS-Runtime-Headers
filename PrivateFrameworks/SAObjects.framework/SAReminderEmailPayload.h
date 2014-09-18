@@ -7,8 +7,12 @@
 @interface SAReminderEmailPayload : AceObject <SAReminderPayload> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * recipientsTo;
 @property(copy) NSString * subject;
+@property(readonly) Class superclass;
 
 + (id)emailPayload;
 + (id)emailPayloadWithDictionary:(id)arg1 context:(id)arg2;

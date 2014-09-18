@@ -16,21 +16,21 @@
 
 @property(copy) NSAttributedString * attributedSubtitle;
 @property <QLGenericViewDelegate> * delegate;
-@property BOOL showArchiveButton;
+@property bool showArchiveButton;
 @property(copy) NSString * subtitle;
 @property(copy) NSString * title;
 
-- (void)_updateContainerFrameForOrientation:(int)arg1;
+- (void)_updateContainerFrameForTraitCollection:(id)arg1;
 - (id)attributedSubtitle;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAttributedSubtitle:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShowArchiveButton:(BOOL)arg1;
+- (void)setShowArchiveButton:(bool)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (BOOL)showArchiveButton;
+- (bool)showArchiveButton;
 - (void)showArchiveContents:(id)arg1;
 - (id)subtitle;
 - (id)title;

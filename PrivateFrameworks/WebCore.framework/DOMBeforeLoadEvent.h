@@ -7,7 +7,7 @@
 @interface DOMBeforeLoadEvent : DOMEvent {
 }
 
-@property(readonly) NSString * url;
+@property(copy,readonly) NSString * url;
 
 - (id)url;
 

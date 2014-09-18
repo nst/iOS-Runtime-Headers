@@ -6,20 +6,19 @@
 
 @interface EKAlarm : EKObject <NSCopying> {
     EKObjectToOneRelation *_locationRelation;
-    EKCalendarItem *_owner;
 }
 
 @property(readonly) NSString * UUID;
 @property(copy) NSDate * absoluteDate;
 @property(copy) NSDate * acknowledgedDate;
-@property(getter=isDefaultAlarm) BOOL defaultAlarm;
+@property(getter=isDefaultAlarm) bool defaultAlarm;
 @property(readonly) NSString * externalID;
-@property(readonly) BOOL isAbsolute;
-@property(readonly) BOOL isSnoozedAlarm;
+@property(readonly) bool isAbsolute;
+@property(readonly) bool isSnoozedAlarm;
 @property(retain) EKObjectToOneRelation * locationRelation;
 @property(retain) EKAlarm * originalAlarm;
 @property(retain) EKCalendarItem * owner;
-@property int proximity;
+@property long long proximity;
 @property double relativeOffset;
 @property(copy) NSArray * snoozedAlarms;
 @property(copy) EKStructuredLocation * structuredLocation;
@@ -27,13 +26,14 @@
 + (int)_currentAuthorizationStatus;
 + (id)alarmWithAbsoluteDate:(id)arg1;
 + (id)alarmWithRelativeOffset:(double)arg1;
-+ (BOOL)areLocationsAllowed;
-+ (BOOL)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
-+ (BOOL)areLocationsAvailable;
-+ (BOOL)areLocationsCurrentlyEnabled;
++ (bool)areLocationsAllowed;
++ (bool)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
++ (bool)areLocationsAvailable;
++ (bool)areLocationsCurrentlyEnabled;
++ (double)defaultGeofencedReminderRadius;
 
 - (id)UUID;
-- (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
+- (id)_localizedDescription:(bool)arg1 forEvent:(bool)arg2 isAllDay:(bool)arg3;
 - (id)_locationRelation;
 - (id)_originalAlarmRelation;
 - (id)_snoozedAlarmsRelation;
@@ -47,9 +47,9 @@
 - (id)init;
 - (id)initWithAbsoluteDate:(id)arg1;
 - (id)initWithRelativeOffset:(double)arg1;
-- (BOOL)isAbsolute;
-- (BOOL)isDefaultAlarm;
-- (BOOL)isSnoozedAlarm;
+- (bool)isAbsolute;
+- (bool)isDefaultAlarm;
+- (bool)isSnoozedAlarm;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)localizedAllDayDescription;
 - (id)localizedDescription;
@@ -60,22 +60,21 @@
 - (id)originalAlarm;
 - (id)owner;
 - (id)ownerUUID;
-- (int)proximity;
-- (BOOL)rebase;
+- (long long)proximity;
+- (bool)rebase;
 - (double)relativeOffset;
 - (void)removeSnoozedAlarm:(id)arg1;
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
-- (void)setDefaultAlarm:(BOOL)arg1;
+- (void)setDefaultAlarm:(bool)arg1;
 - (void)setLocationRelation:(id)arg1;
 - (void)setOriginalAlarm:(id)arg1;
-- (void)setOwner:(id)arg1;
-- (void)setProximity:(int)arg1;
+- (void)setProximity:(long long)arg1;
 - (void)setRelativeOffset:(double)arg1;
 - (void)setSnoozedAlarms:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;
 - (id)snoozedAlarms;
 - (id)structuredLocation;
-- (BOOL)validate:(id*)arg1;
+- (bool)validate:(id*)arg1;
 
 @end

@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OCCancelDelegate>, <OCDReaderDelegate>, CPImportTracing, NSData, NSError, NSString;
+@class <OCDReaderDelegate>, <TCCancelDelegate>, NSData, NSError, NSString, TCImportTracing;
 
 @interface OCDReader : NSObject {
-    <OCCancelDelegate> *mCancelDelegate;
+    boolmIsThumbnail;
+    <TCCancelDelegate> *mCancelDelegate;
     NSData *mData;
     <OCDReaderDelegate> *mDelegate;
     NSString *mFileName;
-    BOOL mIsThumbnail;
     NSError *mStartError;
-    CPImportTracing *mTracing;
+    TCImportTracing *mTracing;
 }
 
-@property(retain) <OCCancelDelegate> * cancelDelegate;
+@property(retain) <TCCancelDelegate> * cancelDelegate;
 @property(retain) NSData * data;
 @property <OCDReaderDelegate> * delegate;
 @property(retain) NSString * fileName;
-@property BOOL isThumbnail;
+@property bool isThumbnail;
 @property(retain) NSError * startError;
-@property(retain) CPImportTracing * tracing;
+@property(retain) TCImportTracing * tracing;
 
 - (id)cancelDelegate;
 - (id)data;
@@ -29,19 +29,19 @@
 - (id)fileName;
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
 - (bool)isBinaryReader;
-- (BOOL)isThumbnail;
+- (bool)isThumbnail;
 - (id)read;
 - (void)setCancelDelegate:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFileName:(id)arg1;
-- (void)setIsThumbnail:(BOOL)arg1;
+- (void)setIsThumbnail:(bool)arg1;
 - (void)setStartError:(id)arg1;
 - (void)setStartErrorMessageFromException:(id)arg1;
 - (void)setTracing:(id)arg1;
-- (BOOL)start;
+- (bool)start;
 - (id)startError;
 - (id)tracing;
-- (BOOL)verifyFileFormat;
+- (bool)verifyFileFormat;
 
 @end

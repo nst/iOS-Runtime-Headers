@@ -12,12 +12,14 @@
     id _action;
     id _actionWithText;
     NSObject<OS_dispatch_semaphore> *_buttonChosenSemaphore;
-    int _chosenButtonIndex;
+    long long _chosenButtonIndex;
 }
 
+@property(readonly) long long chosenButtonIndex;
+
 - (void).cxx_destruct;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (int)chosenButtonIndex;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (long long)chosenButtonIndex;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 buttonTitle:(id)arg3 action:(id)arg4;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 buttonTitle:(id)arg3 otherButtonTitle:(id)arg4 action:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 buttonTitle:(id)arg3 otherButtonTitle:(id)arg4 textFieldTitle:(id)arg5 action:(id)arg6;

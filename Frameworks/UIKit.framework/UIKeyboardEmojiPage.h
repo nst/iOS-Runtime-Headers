@@ -6,22 +6,22 @@
 
 @interface UIKeyboardEmojiPage : UIView {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     UITouch *_activeTouch;
     NSArray *_emoji;
@@ -31,8 +31,6 @@
     UIKeyboardEmojiInputController *_inputController;
     } _keyActivationRect;
     } _margin;
-    BOOL _needsEmojiRendering;
-    BOOL _needsLayout;
     int _numCols;
     int _numPages;
     int _numRows;
@@ -40,15 +38,17 @@
     UIKeyboardEmojiView *_pendingDisplay;
     UIKBRenderConfig *_renderConfig;
     UIKeyboardEmojiView *_touched;
+    bool_needsEmojiRendering;
+    bool_needsLayout;
 }
 
 @property(retain) UITouch * activeTouch;
 @property(retain) NSArray * emoji;
 @property(retain) NSDictionary * emojiAttributes;
-@property(readonly) int emojiCountPerPage;
+@property(readonly) long long emojiCountPerPage;
 @property UIKeyboardEmojiInputController * inputController;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyActivationRect;
-@property BOOL needsEmojiRendering;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } keyActivationRect;
+@property bool needsEmojiRendering;
 @property(retain) UIKeyboardEmojiView * onDisplay;
 @property(retain) UIKeyboardEmojiView * pendingDisplay;
 @property(retain) UIKBRenderConfig * renderConfig;
@@ -57,33 +57,33 @@
 - (id)activeTouch;
 - (void)cancelPendingPopupChanges;
 - (void)checkForStalePopup:(id)arg1;
-- (id)closestForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)closestForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)deactivatePopUps;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)emoji;
 - (id)emojiAttributes;
-- (int)emojiCountPerPage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })emojiRectForPoint:(struct CGPoint { float x1; float x2; })arg1 index:(unsigned int*)arg2;
+- (long long)emojiCountPerPage;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })emojiRectForPoint:(struct CGPoint { double x1; double x2; })arg1 index:(unsigned long long*)arg2;
 - (void)generateSubviews;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inputController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keyActivationRect;
-- (BOOL)needsEmojiRendering;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })keyActivationRect;
+- (bool)needsEmojiRendering;
 - (id)onDisplay;
 - (id)pendingDisplay;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRow:(int)arg1 Col:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForRow:(int)arg1 Col:(int)arg2;
 - (void)removeDisplayedPopup:(id)arg1;
 - (void)removeFromSuperview;
 - (id)renderConfig;
 - (void)setActiveTouch:(id)arg1;
 - (void)setEmoji:(id)arg1;
 - (void)setEmojiAttributes:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setInputController:(id)arg1;
-- (void)setKeyActivationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNeedsEmojiRendering:(BOOL)arg1;
+- (void)setKeyActivationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNeedsEmojiRendering:(bool)arg1;
 - (void)setOnDisplay:(id)arg1;
 - (void)setPendingDisplay:(id)arg1;
 - (void)setRenderConfig:(id)arg1;

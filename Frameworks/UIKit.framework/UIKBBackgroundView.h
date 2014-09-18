@@ -7,45 +7,42 @@
 @interface UIKBBackgroundView : UIKBSplitImageView <UIKBCacheableView> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL _centerFilled;
     NSObject *_geometryCacheKey;
-    BOOL _hasCandidateKeys;
     UITextInputTraits *_inputTraits;
-    BOOL _isSplit;
     UIKBTree *_keyplane;
     UIKBRenderConfig *_renderConfig;
     } _splitLeftCacheRect;
@@ -54,26 +51,33 @@
     } _splitRightRect;
     int _topCorners;
     int _visualStyle;
+    bool_centerFilled;
+    bool_hasCandidateKeys;
+    bool_isSplit;
 }
 
-@property(readonly) BOOL cacheDeferable;
+@property(readonly) bool cacheDeferable;
 @property(readonly) NSString * cacheKey;
-@property(readonly) float cachedWidth;
+@property(readonly) double cachedWidth;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) NSObject * geometryCacheKey;
-@property(readonly) BOOL keepNonPersistent;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool keepNonPersistent;
 @property(retain) UIKBRenderConfig * renderConfig;
+@property(readonly) Class superclass;
 
-- (BOOL)cacheDeferable;
+- (bool)cacheDeferable;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
-- (float)cachedWidth;
+- (double)cachedWidth;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;
 - (void)drawContentsOfRenderers:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)geometryCacheKey;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)keepNonPersistent;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)keepNonPersistent;
 - (void)layoutSubviews;
 - (void)refreshStyleForKeyplane:(id)arg1 inputTraits:(id)arg2;
 - (id)renderConfig;

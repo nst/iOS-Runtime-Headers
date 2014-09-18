@@ -17,7 +17,7 @@
 - (id)groupIdentifier;
 - (id)provider;
 - (id)query;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setProvider:(id)arg1;
 - (void)setQuery:(id)arg1;
 

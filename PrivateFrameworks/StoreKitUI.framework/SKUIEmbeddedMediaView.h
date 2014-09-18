@@ -4,48 +4,53 @@
 
 @class <SKUIEmbeddedMediaViewDelegate>, MPMoviePlayerController, NSString, UIImage, UIImageView;
 
-@interface SKUIEmbeddedMediaView : UIView {
+@interface SKUIEmbeddedMediaView : UIControl {
     <SKUIEmbeddedMediaViewDelegate> *_delegate;
-    int _mediaType;
+    long long _mediaType;
     NSString *_mediaURLString;
     MPMoviePlayerController *_moviePlayer;
     UIImageView *_playerDecorationView;
     UIImageView *_thumbnailReflectionView;
     UIImageView *_thumbnailView;
+    bool_usingInlinePlayback;
 }
 
 @property <SKUIEmbeddedMediaViewDelegate> * delegate;
-@property int mediaType;
+@property long long mediaType;
 @property(copy) NSString * mediaURLString;
-@property(readonly) int playbackState;
-@property BOOL showsThumbnailReflection;
-@property int thumbnailContentMode;
+@property(readonly) long long playbackState;
+@property bool showsThumbnailReflection;
+@property long long thumbnailContentMode;
 @property(retain) UIImage * thumbnailImage;
 
 - (void).cxx_destruct;
 - (void)_didExitFullscreen:(id)arg1;
 - (void)_didFinishPlayback:(id)arg1;
+- (id)_newMoviePlayerControllerWithURL:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)_sendPlaybackStateChanged;
-- (struct CGSize { float x1; float x2; })_sizeToFitImageSize:(struct CGSize { float x1; float x2; })arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGSize { double x1; double x2; })_sizeToFitImageSize:(struct CGSize { double x1; double x2; })arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_tearDownMoviePlayer;
 - (id)_thumbnailView;
-- (void)beginPlaybackAnimated:(BOOL)arg1;
+- (void)beginInlinePlaybackWithURL:(id)arg1;
+- (void)beginPlaybackAnimated:(bool)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)didMoveToWindow;
+- (void)endPlaybackAnimated:(bool)arg1;
 - (void)layoutSubviews;
-- (int)mediaType;
+- (long long)mediaType;
 - (id)mediaURLString;
-- (int)playbackState;
+- (long long)playbackState;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMediaType:(int)arg1;
+- (void)setMediaType:(long long)arg1;
 - (void)setMediaURLString:(id)arg1;
-- (void)setShowsThumbnailReflection:(BOOL)arg1;
-- (void)setThumbnailContentMode:(int)arg1;
+- (void)setShowsThumbnailReflection:(bool)arg1;
+- (void)setThumbnailContentMode:(long long)arg1;
 - (void)setThumbnailImage:(id)arg1;
-- (BOOL)showsThumbnailReflection;
-- (int)thumbnailContentMode;
+- (bool)showsThumbnailReflection;
+- (long long)thumbnailContentMode;
 - (id)thumbnailImage;
 
 @end

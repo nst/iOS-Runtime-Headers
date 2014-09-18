@@ -2,35 +2,23 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSString;
 
-@interface VKGridDrawStyle : VKDrawStyle {
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    } _fillColor;
-    } _lineColor;
-    NSString *_texture;
+@interface VKGridDrawStyle : VKRenderStyle {
 }
 
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } fillColor;
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } lineColor;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
+@property(readonly) struct  lineColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) NSString * texture;
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })fillColor;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })lineColor;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
-- (void)takeFromZoomInvariantProperties:(id)arg1;
++ (int)renderStyleID;
+
+- (struct Matrix<float, 4, 1> { float x1[4]; })fillColor;
+- (struct Matrix<float, 4, 1> { float x1[4]; })lineColor;
 - (id)texture;
-- (id)variant;
 
 @end

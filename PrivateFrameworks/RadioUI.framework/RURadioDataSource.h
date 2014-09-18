@@ -2,20 +2,28 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RURadioDataSourceDelegate>, NSArray, NSMutableSet, RadioPushNotificationController;
+@class <RURadioDataSourceDelegate>, NSArray, NSString, RURadioPlaybackCoordinator, RadioPushNotificationController;
 
-@interface RURadioDataSource : NSObject <RadioPushNotificationControllerDelegate> {
+@interface RURadioDataSource : MPUDataSource <RadioPushNotificationControllerDelegate> {
     <RURadioDataSourceDelegate> *_delegate;
+    NSArray *_featuredStations;
     BOOL _optedInToRadio;
+    RURadioPlaybackCoordinator *_playbackCoordinator;
     RadioPushNotificationController *_pushNotificationController;
-    int _stationCountToRefresh;
     NSArray *_stations;
-    NSMutableSet *_stationsBeingRefreshed;
+    NSArray *_userStations;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <RURadioDataSourceDelegate> * delegate;
-@property(getter=isOptedInToRadio,readonly) BOOL optedInToRadio;
+@property(copy,readonly) NSString * description;
+@property(readonly) NSArray * featuredStations;
+@property(readonly) unsigned long long hash;
+@property(getter=isOptedInToRadio,readonly) bool optedInToRadio;
+@property(retain) RURadioPlaybackCoordinator * playbackCoordinator;
 @property(readonly) NSArray * stations;
+@property(readonly) Class superclass;
+@property(readonly) NSArray * userStations;
 
 + (void)_accountStoreDidChangeNotification:(id)arg1;
 + (void)_networkReachabilityDidChangeNotification:(id)arg1;
@@ -23,12 +31,13 @@
 + (void)_storeBagDidLoadNotification:(id)arg1;
 + (void)_updateRadioAvailabilityWithStoreBag:(id)arg1 error:(id)arg2;
 + (void)initialize;
-+ (BOOL)isOptedInToRadio;
-+ (BOOL)isRadioAvailable;
++ (bool)isOptedInToRadio;
++ (bool)isRadioAvailable;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;
 - (void)_deauthenticate;
+- (void)_invalidateCalculatedEntities;
 - (void)_notifyAssistantOfStationChanges;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
@@ -37,13 +46,24 @@
 - (void)dealloc;
 - (void)deauthenticateIfNecessary;
 - (id)delegate;
+- (long long)editingTypeForEntityAtIndex:(unsigned long long)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)entities;
+- (bool)entityIsNowPlayingAtIndex:(unsigned long long)arg1;
 - (id)featuredStations;
-- (id)init;
-- (BOOL)isOptedInToRadio;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithEntityType:(long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isOptedInToRadio;
+- (id)playbackContextForIndex:(unsigned long long)arg1;
+- (id)playbackCoordinator;
 - (void)pushNotificationControllerDidReceiveSyncRequest:(id)arg1 toGlobalVersion:(unsigned long long)arg2;
 - (void)refreshFeaturedStations;
 - (void)setDelegate:(id)arg1;
+- (void)setPlaybackCoordinator:(id)arg1;
 - (id)stations;
-- (void)synchronizeStationsAsAutomaticUpdate:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)synchronizeStationsAsAutomaticUpdate:(bool)arg1 withCompletionHandler:(id)arg2;
+- (id)userStations;
 
 @end

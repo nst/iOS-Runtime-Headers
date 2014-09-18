@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSString;
+@class ACAccount, NSDictionary;
 
 @interface AALoginDelegatesRequest : AARequest {
-    NSDictionary *_accountParameters;
-    NSString *_password;
-    NSString *_username;
+    ACAccount *_account;
+    NSDictionary *_loginParameters;
 }
 
 + (Class)responseClass;
 
 - (void).cxx_destruct;
-- (id)initWithUsername:(id)arg1 password:(id)arg2 parameters:(id)arg3;
+- (id)initWithAccount:(id)arg1 parameters:(id)arg2;
 - (id)urlRequest;
 - (id)urlString;
 

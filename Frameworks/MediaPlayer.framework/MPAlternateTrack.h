@@ -8,10 +8,14 @@
     NSString *_canonicalLanguageIdentifier;
     NSString *_displayName;
     AVMediaSelectionOption *_option;
+    bool_isDVS;
+    bool_isMainProgram;
 }
 
 @property(readonly) NSString * canonicalLanguageIdentifier;
 @property(retain) NSString * displayName;
+@property(readonly) bool isDVS;
+@property(readonly) bool isMainProgram;
 @property(readonly) AVMediaSelectionOption * option;
 
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
@@ -19,10 +23,12 @@
 - (void).cxx_destruct;
 - (void)_setDisplayNameFromOption:(id)arg1;
 - (id)canonicalLanguageIdentifier;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)description;
 - (id)displayName;
 - (id)initWithOption:(id)arg1;
+- (bool)isDVS;
+- (bool)isMainProgram;
 - (id)option;
 - (void)setDisplayName:(id)arg1;
 

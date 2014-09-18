@@ -5,32 +5,32 @@
 @class UIEvent, UITouch;
 
 @interface UIGestureDelayedTouch : NSObject <NSCopying> {
-    BOOL _cloneForSecondDelivery;
-    int _delayCount;
+    long long _delayCount;
     UIEvent *_event;
     UITouch *_stateWhenDelayed;
     UITouch *_stateWhenDelivered;
     UITouch *_touch;
+    bool_cloneForSecondDelivery;
 }
 
-@property BOOL cloneForSecondDelivery;
+@property bool cloneForSecondDelivery;
 @property(retain) UIEvent * event;
 @property(retain) UITouch * stateWhenDelayed;
 @property(retain) UITouch * stateWhenDelivered;
 @property(retain) UITouch * touch;
 
-- (BOOL)cloneForSecondDelivery;
+- (bool)cloneForSecondDelivery;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)decrementDelayCount;
-- (int)delayCount;
+- (long long)decrementDelayCount;
+- (long long)delayCount;
 - (id)description;
 - (id)event;
 - (void)incrementDelayCount;
 - (id)init;
-- (int)phaseForDelivery;
+- (long long)phaseForDelivery;
 - (void)saveCurrentTouchState;
-- (void)setCloneForSecondDelivery:(BOOL)arg1;
+- (void)setCloneForSecondDelivery:(bool)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setStateWhenDelayed:(id)arg1;
 - (void)setStateWhenDelivered:(id)arg1;

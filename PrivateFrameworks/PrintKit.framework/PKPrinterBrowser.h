@@ -30,10 +30,10 @@
 + (id)browserWithDelegate:(id)arg1;
 
 - (void)addBlockToPendingList:(id)arg1;
-- (void)addLimboPrinter:(id)arg1 local:(BOOL)arg2;
+- (void)addLimboPrinter:(id)arg1 local:(bool)arg2;
 - (void)addQueryResult:(id)arg1 toPrinter:(id)arg2;
-- (void)addWithPrinterURI:(id)arg1 andBonjourURI:(id)arg2 andDisplayName:(id)arg3 isMCProfile:(BOOL)arg4;
-- (void)addWithPrinterURI:(id)arg1 andDisplayName:(id)arg2 isMCProfile:(BOOL)arg3;
+- (void)addWithPrinterURI:(id)arg1 andBonjourURI:(id)arg2 andDisplayName:(id)arg3 isMCProfile:(bool)arg4;
+- (void)addWithPrinterURI:(id)arg1 andDisplayName:(id)arg2 isMCProfile:(bool)arg3;
 - (void)browseCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
 - (void)browseLocalCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
 - (void)dealloc;

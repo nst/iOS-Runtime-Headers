@@ -7,28 +7,28 @@
 @interface PLInFlightAssetsAlbumChangeNotification : PLAssetContainerChangeNotification {
     PLInFlightAssetsAlbum *_album;
     PLAssetContainerChangeNotification *_backingNotification;
-    BOOL _keyAssetDidChange;
     NSOrderedSet *_oldOIDs;
     NSMutableSet *_uniquedOIDs;
+    bool_keyAssetDidChange;
 }
 
-@property(readonly) PLInFlightAssetsAlbum * album;
-@property(readonly) PLAssetContainerChangeNotification * backingNotification;
-@property(readonly) NSOrderedSet * oldOIDs;
+@property(retain,readonly) PLInFlightAssetsAlbum * album;
+@property(retain,readonly) PLAssetContainerChangeNotification * backingNotification;
+@property(retain,readonly) NSOrderedSet * oldOIDs;
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 
 - (id)_changedObjects;
 - (id)_diffDescription;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)album;
 - (id)backingNotification;
 - (void)dealloc;
 - (id)description;
 - (id)initWithInFlightAssetsAlbum:(id)arg1 priorChangeState:(id)arg2 albumChangeNotification:(id)arg3;
-- (BOOL)keyAssetDidChange;
+- (bool)keyAssetDidChange;
 - (id)object;
 - (id)oldOIDs;
-- (BOOL)titleDidChange;
+- (bool)titleDidChange;
 
 @end

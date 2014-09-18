@@ -2,47 +2,51 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIBarButtonItem, UIMoreListCellLayoutManager, UITableView;
+@class NSArray, NSString, UIBarButtonItem, UIMoreListCellLayoutManager, UITableView;
 
 @interface UIMoreListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    BOOL _allowsCustomizing;
-    BOOL _disableCustomizing;
-    BOOL _hideNavigationBar;
     UIMoreListCellLayoutManager *_layoutManager;
     UIBarButtonItem *_moreEditButtonItem;
     NSArray *_moreViewControllers;
-    BOOL _moreViewControllersChanged;
     UITableView *_table;
+    bool_allowsCustomizing;
+    bool_disableCustomizing;
+    bool_hideNavigationBar;
+    bool_moreViewControllersChanged;
 }
 
-@property BOOL allowsCustomizing;
+@property bool allowsCustomizing;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSArray * moreViewControllers;
-@property BOOL moreViewControllersChanged;
+@property bool moreViewControllersChanged;
+@property(readonly) Class superclass;
 
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (bool)_isSupportedInterfaceOrientation:(long long)arg1;
 - (void)_layoutCells;
 - (id)_targetNavigationController;
 - (void)_updateEditButton;
-- (BOOL)_viewControllerWasSelected;
-- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
-- (BOOL)allowsCustomizing;
+- (bool)_viewControllerWasSelected;
+- (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
+- (bool)allowsCustomizing;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)init;
 - (void)loadView;
 - (id)moreViewControllers;
-- (BOOL)moreViewControllersChanged;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)setAllowsCustomizing:(BOOL)arg1;
+- (bool)moreViewControllersChanged;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)setAllowsCustomizing:(bool)arg1;
 - (void)setMoreViewControllers:(id)arg1;
-- (void)setMoreViewControllersChanged:(BOOL)arg1;
+- (void)setMoreViewControllersChanged:(bool)arg1;
 - (id)tabBarItem;
 - (id)table;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

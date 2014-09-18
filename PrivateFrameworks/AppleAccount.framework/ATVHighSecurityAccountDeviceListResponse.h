@@ -8,13 +8,13 @@
 }
 
 @property(readonly) NSArray * devices;
-@property(readonly) int errorCode;
+@property(readonly) long long errorCode;
 @property(readonly) NSString * errorMessage;
 @property(readonly) NSString * errorTitle;
 @property(readonly) NSDictionary * userDisplayStrings;
 
 - (id)devices;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)errorMessage;
 - (id)errorTitle;
 - (id)userDisplayStrings;

@@ -2,43 +2,52 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSXPCConnection;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSXPCConnection, SBCClientConfiguration, SBCXPCServiceInterface;
 
 @interface SBCXPCService : NSObject {
-    NSDictionary *_clientConfiguration;
-    BOOL _isConnecting;
-    NSMutableDictionary *_pendingServiceCompletionHandlers;
+    SBCXPCServiceInterface *_XPCServiceInterface;
+    id _applicationWillTerminateObserver;
+    SBCClientConfiguration *_clientConfiguration;
+    NSMutableDictionary *_pendingReplyBlockCompletionHandlers;
     NSObject<OS_dispatch_queue> *_queue;
-    Class _serviceInterfaceClass;
     id _serviceProxy;
     NSXPCConnection *_xpcConnection;
+    bool_isConnecting;
 }
 
-@property(readonly) NSDictionary * clientConfiguration;
-@property(readonly) BOOL isConnecting;
-@property(readonly) NSMutableDictionary * pendingServiceCompletionHandlers;
+@property(readonly) SBCXPCServiceInterface * XPCServiceInterface;
+@property(readonly) id applicationWillTerminateObserver;
+@property(readonly) SBCClientConfiguration * clientConfiguration;
+@property(readonly) bool isConnecting;
+@property(readonly) NSMutableDictionary * pendingReplyBlockCompletionHandlers;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class serviceInterfaceClass;
 @property(readonly) id serviceProxy;
 @property(readonly) NSXPCConnection * xpcConnection;
 
++ (id)XPCInterfaceDebugDescription;
++ (Class)XPCServiceInterfaceClass;
++ (id)newListener;
+
 - (void).cxx_destruct;
-- (void)_dequeueRequestWithEnqueuedToken:(id)arg1;
-- (id)_enqueueMessage:(SEL)arg1 withClientCompletionHandler:(id)arg2;
+- (id)XPCServiceInterface;
+- (void)_dequeueReplyBlockMessageWithEnqueuedToken:(id)arg1;
+- (id)_enqueueReplyBlockMessageWithSelector:(SEL)arg1 withClientCompletionHandler:(id)arg2;
 - (void)_invalidateOutstandingRequests:(id)arg1;
 - (void)_onQueueCloseServiceConnection;
 - (void)_onQueueInvalidateOutstandingRequests:(id)arg1;
 - (void)_openServiceConnection;
+- (id)_serviceProxy;
+- (id)applicationWillTerminateObserver;
 - (id)clientConfiguration;
 - (void)closeServiceConnection;
 - (void)dealloc;
 - (void)didConnectToService;
-- (id)initWithServiceInterfaceClass:(Class)arg1 clientConfiguration:(id)arg2;
-- (BOOL)isConnecting;
-- (id)pendingServiceCompletionHandlers;
+- (id)initWithClientConfiguration:(id)arg1;
+- (bool)isConnecting;
+- (id)newServiceConnection;
+- (id)pendingReplyBlockCompletionHandlers;
 - (id)queue;
 - (void)sendMessage:(SEL)arg1 withClientCompletionHandler:(id)arg2 messageBlock:(id)arg3;
-- (Class)serviceInterfaceClass;
 - (id)serviceProxy;
 - (oneway void)setClientConfiguration:(id)arg1;
 - (id)xpcConnection;

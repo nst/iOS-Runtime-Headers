@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class <WebBookmarksXPCConnectionDelegate>, NSMutableArray, NSMutableDictionary, NSObject<OS_xpc_object>;
+@class <WebBookmarksXPCConnectionDelegate>, NSMutableArray, NSMutableDictionary, NSObject<OS_xpc_object>, NSString;
 
 @interface WebBookmarksXPCListener : NSObject <WebBookmarksXPCConnectionDelegate> {
     NSMutableArray *_clientConnections;
@@ -10,6 +10,11 @@
     NSObject<OS_xpc_object> *_listenerConnection;
     NSMutableDictionary *_messageHandlers;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_handleIncomingConnection:(id)arg1;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;

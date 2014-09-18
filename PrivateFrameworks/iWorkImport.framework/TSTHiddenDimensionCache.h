@@ -7,35 +7,36 @@
 @interface TSTHiddenDimensionCache : NSObject <NSCopying> {
     NSMutableIndexSet *mCachedUserVisible;
     NSMutableIndexSet *mCachedVisible;
-    unsigned int mCount;
+    unsigned long long mCount;
     NSMutableIndexSet *mInvalidRanges;
-    unsigned int mMarkIndex;
+    unsigned long long mMarkIndex;
 }
 
 @property(readonly) NSIndexSet * visibleIndices;
 
-- (BOOL)anyHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)anyUserHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)anyHiddenIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)anyUserHiddenIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)deleteRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)deleteRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)description;
-- (unsigned int)findNextVisibleIndex:(unsigned int)arg1;
-- (unsigned int)findNthPreviousVisibleIndex:(unsigned int)arg1 fromIndex:(unsigned int)arg2;
-- (unsigned int)findPreviousVisibleIndex:(unsigned int)arg1;
-- (id)initWithUserHiddenInformation:(BOOL)arg1;
-- (void)insertRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)invalidate:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)isIndexHidden:(unsigned int)arg1;
-- (BOOL)isIndexUserHidden:(unsigned int)arg1;
-- (void)moveRangeFrom:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned int)arg2;
-- (unsigned int)numberHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned short)numberOfVisibleIndicesToMarkIndexFrom:(unsigned int)arg1;
-- (unsigned int)numberUserHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned long long)findNextVisibleIndex:(unsigned long long)arg1;
+- (unsigned long long)findNthNextVisibleIndex:(unsigned long long)arg1 fromIndex:(unsigned long long)arg2;
+- (unsigned long long)findNthPreviousVisibleIndex:(unsigned long long)arg1 fromIndex:(unsigned long long)arg2;
+- (unsigned long long)findPreviousVisibleIndex:(unsigned long long)arg1;
+- (id)initWithUserHiddenInformation:(bool)arg1;
+- (void)insertRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)invalidate:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)isIndexHidden:(unsigned long long)arg1;
+- (bool)isIndexUserHidden:(unsigned long long)arg1;
+- (void)moveRangeFrom:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toIndex:(unsigned long long)arg2;
+- (unsigned long long)numberHiddenIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned short)numberOfVisibleIndicesToMarkIndexFrom:(unsigned long long)arg1;
+- (unsigned long long)numberUserHiddenIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setAllInvalidValuesUsingBlock:(id)arg1;
 - (void)setAllValuesToZero;
-- (void)setCount:(unsigned int)arg1;
-- (void)setMarkIndex:(unsigned int)arg1;
+- (void)setCount:(unsigned long long)arg1;
+- (void)setMarkIndex:(unsigned long long)arg1;
 - (id)visibleIndices;
 
 @end

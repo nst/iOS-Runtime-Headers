@@ -20,12 +20,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (float)maxZ;
+- (void)mergeFrom:(id)arg1;
 - (float)minZ;
 - (id)properties;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMaxZ:(float)arg1;
 - (void)setMinZ:(float)arg1;
 - (void)setProperties:(id)arg1;

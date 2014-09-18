@@ -8,21 +8,22 @@
     _IDSConnection *_internal;
 }
 
-@property(readonly) _IDSConnection * _internal;
-@property(readonly) IDSAccount * account;
-@property(readonly) BOOL isActive;
+@property(retain,readonly) _IDSConnection * _internal;
+@property(retain,readonly) IDSAccount * account;
+@property(readonly) bool isActive;
 
-- (id)_initWithAccount:(id)arg1 commands:(id)arg2;
+- (id)_initWithAccount:(id)arg1 commands:(id)arg2 indirectDelegateCallouts:(bool)arg3;
 - (id)_internal;
 - (id)account;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1 commands:(id)arg2;
 - (id)initWithAccount:(id)arg1;
-- (BOOL)isActive;
+- (bool)isActive;
 - (void)removeDelegate:(id)arg1;
-- (void)requestKeepAlive;
-- (BOOL)sendMessage:(id)arg1 toDestinations:(id)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
-- (BOOL)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(int)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (bool)sendData:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
+- (bool)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (bool)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 
 @end

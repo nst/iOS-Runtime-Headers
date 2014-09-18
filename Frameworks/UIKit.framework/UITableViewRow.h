@@ -6,23 +6,23 @@
 
 @interface UITableViewRow : NSObject <NSCoding> {
     UITableViewCell *_cell;
-    float _height;
-    int _indentationLevel;
+    double _height;
+    long long _indentationLevel;
 }
 
 @property(retain) UITableViewCell * cell;
-@property float height;
+@property double height;
 
 + (id)row;
 
 - (id)cell;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (float)height;
-- (int)indentationLevel;
+- (double)height;
+- (long long)indentationLevel;
 - (id)initWithCoder:(id)arg1;
 - (void)setCell:(id)arg1;
-- (void)setHeight:(float)arg1;
-- (void)setIndentationLevel:(int)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setIndentationLevel:(long long)arg1;
 
 @end

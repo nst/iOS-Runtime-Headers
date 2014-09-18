@@ -12,7 +12,7 @@
 @property(copy) NSArray * genres;
 @property(copy) NSURL * hiResTrailerUri;
 @property(copy) NSURL * iTunesUri;
-@property BOOL is3d;
+@property bool is3d;
 @property(copy) NSNumber * isAvailableOnItunesForPurchase;
 @property(copy) NSNumber * isAvailableOnItunesForRent;
 @property(copy) NSURL * lowResTrailerUri;
@@ -23,7 +23,7 @@
 @property(copy) NSString * rating;
 @property(retain) SALocalSearchReviewList * reviews;
 @property(copy) NSURL * rottenTomatoesUri;
-@property int runtimeInMinutes;
+@property long long runtimeInMinutes;
 @property(copy) NSArray * studios;
 @property(copy) NSString * synopsis;
 @property(copy) NSString * theaterShowtimeSearchRegionDescription;
@@ -40,7 +40,7 @@
 - (id)groupIdentifier;
 - (id)hiResTrailerUri;
 - (id)iTunesUri;
-- (BOOL)is3d;
+- (bool)is3d;
 - (id)isAvailableOnItunesForPurchase;
 - (id)isAvailableOnItunesForRent;
 - (id)lowResTrailerUri;
@@ -51,13 +51,13 @@
 - (id)rating;
 - (id)reviews;
 - (id)rottenTomatoesUri;
-- (int)runtimeInMinutes;
+- (long long)runtimeInMinutes;
 - (void)setActors:(id)arg1;
 - (void)setDirectors:(id)arg1;
 - (void)setGenres:(id)arg1;
 - (void)setHiResTrailerUri:(id)arg1;
 - (void)setITunesUri:(id)arg1;
-- (void)setIs3d:(BOOL)arg1;
+- (void)setIs3d:(bool)arg1;
 - (void)setIsAvailableOnItunesForPurchase:(id)arg1;
 - (void)setIsAvailableOnItunesForRent:(id)arg1;
 - (void)setLowResTrailerUri:(id)arg1;
@@ -68,7 +68,7 @@
 - (void)setRating:(id)arg1;
 - (void)setReviews:(id)arg1;
 - (void)setRottenTomatoesUri:(id)arg1;
-- (void)setRuntimeInMinutes:(int)arg1;
+- (void)setRuntimeInMinutes:(long long)arg1;
 - (void)setStudios:(id)arg1;
 - (void)setSynopsis:(id)arg1;
 - (void)setTheaterShowtimeSearchRegionDescription:(id)arg1;

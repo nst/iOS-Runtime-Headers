@@ -5,14 +5,14 @@
 @interface KNBuildSparkleSystem : TSDGLParticleSystem {
 }
 
-+ (BOOL)useVisibilities;
-+ (BOOL)willOverrideStartingPoints;
++ (bool)useVisibilities;
++ (bool)willOverrideStartingPoints;
 
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)p_globalScale;
-- (float)scaleAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
-- (struct CGPoint { float x1; float x2; })startingPointAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)p_globalScale;
+- (double)scaleAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
+- (struct CGPoint { double x1; double x2; })startingPointAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

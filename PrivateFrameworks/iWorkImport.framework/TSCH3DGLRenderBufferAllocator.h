@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DRenderBufferStorage;
+@class NSString, TSCH3DRenderBufferStorage;
 
 @interface TSCH3DGLRenderBufferAllocator : NSObject <TSCH3DRenderBufferAllocator> {
     TSCH3DRenderBufferStorage *mStorage;
 }
 
-@property(readonly) BOOL isTexturable;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isTexturable;
+@property(readonly) Class superclass;
 
 + (id)allocator;
 + (id)allocatorWithStorage:(id)arg1;
@@ -18,7 +22,7 @@
 - (void)dealloc;
 - (id)depthbufferWithAllocatorInfo:(const struct RenderbufferAllocatorInfo { struct FramebufferAttributes {} *x1; struct tvec2<int> {} *x2; id x3; }*)arg1;
 - (id)initWithStorage:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTexturable;
+- (bool)isEqual:(id)arg1;
+- (bool)isTexturable;
 
 @end

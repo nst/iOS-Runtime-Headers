@@ -5,34 +5,34 @@
 @class NSString, SKUIClientContext, UIButton, UIControl, UIImageView, UILabel;
 
 @interface SKUISearchSpellCorrectedCell : UICollectionViewCell {
-    BOOL _autoCorrected;
     SKUIClientContext *_clientContext;
     UIImageView *_imageView;
     UILabel *_label;
-    int _preAutoCorrectCount;
+    long long _preAutoCorrectCount;
     NSString *_searchTerm;
     NSString *_spellCorrectedTerm;
     UIButton *_spellCorrectionButton;
+    bool_autoCorrected;
 }
 
-@property BOOL autoCorrected;
+@property bool autoCorrected;
 @property(retain) SKUIClientContext * clientContext;
-@property int preAutoCorrectCount;
+@property long long preAutoCorrectCount;
 @property(copy) NSString * searchTerm;
 @property(copy) NSString * spellCorrectedTerm;
 @property(readonly) UIControl * spellCorrectionButton;
 
 - (void).cxx_destruct;
 - (void)_reloadLabel;
-- (BOOL)autoCorrected;
+- (bool)autoCorrected;
 - (id)clientContext;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)preAutoCorrectCount;
+- (long long)preAutoCorrectCount;
 - (id)searchTerm;
-- (void)setAutoCorrected:(BOOL)arg1;
+- (void)setAutoCorrected:(bool)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setPreAutoCorrectCount:(int)arg1;
+- (void)setPreAutoCorrectCount:(long long)arg1;
 - (void)setSearchTerm:(id)arg1;
 - (void)setSpellCorrectedTerm:(id)arg1;
 - (id)spellCorrectedTerm;

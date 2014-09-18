@@ -26,13 +26,13 @@
 - (id)basePhoneNumber;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isLeafNode;
+- (bool)isLeafNode;
 - (id)isoCode;
 - (id)label;
 - (id)parentRegion;
 - (id)regionID;
 - (id)regionWithID:(id)arg1;
-- (BOOL)search:(id)arg1 withResults:(id)arg2;
+- (bool)search:(id)arg1 withResults:(id)arg2;
 - (void)set_dictionary:(id)arg1;
 - (void)set_parentRegion:(id)arg1;
 - (id)subRegions;

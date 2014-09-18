@@ -5,28 +5,28 @@
 @class MFActivityMonitor, MFProgressFilterDataConsumer;
 
 @interface _MFDAMessageFetchAttachmentConsumer : MFDAMailAccountConsumer <DAMessageFetchAttachmentConsumer> {
-    unsigned int _accumulatedLength;
-    BOOL _dataWasBase64;
-    unsigned int _expectedLength;
-    BOOL _fetchSucceeded;
+    unsigned long long _accumulatedLength;
+    unsigned long long _expectedLength;
     MFActivityMonitor *_monitor;
     MFProgressFilterDataConsumer *_progressFilter;
+    bool_dataWasBase64;
+    bool_fetchSucceeded;
 }
 
-@property(readonly) BOOL dataWasBase64;
-@property unsigned int expectedLength;
-@property(readonly) BOOL fetchSucceeded;
+@property(readonly) bool dataWasBase64;
+@property unsigned long long expectedLength;
+@property(readonly) bool fetchSucceeded;
 @property(retain) MFProgressFilterDataConsumer * progressFilter;
 
-- (void)attachmentFetchCompletedWithStatus:(int)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3 dataWasBase64:(BOOL)arg4;
+- (void)attachmentFetchCompletedWithStatus:(long long)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3 dataWasBase64:(bool)arg4 sentBytesCount:(unsigned long long)arg5 receivedBytesCount:(unsigned long long)arg6;
 - (void)consumeData:(id)arg1 ofContentType:(id)arg2 forAttachmentNamed:(id)arg3 ofMessageWithServerID:(id)arg4;
-- (BOOL)dataWasBase64;
+- (bool)dataWasBase64;
 - (void)dealloc;
-- (unsigned int)expectedLength;
-- (BOOL)fetchSucceeded;
+- (unsigned long long)expectedLength;
+- (bool)fetchSucceeded;
 - (id)initWithActivityMonitor:(id)arg1;
 - (id)progressFilter;
-- (void)setExpectedLength:(unsigned int)arg1;
+- (void)setExpectedLength:(unsigned long long)arg1;
 - (void)setProgressFilter:(id)arg1;
 
 @end

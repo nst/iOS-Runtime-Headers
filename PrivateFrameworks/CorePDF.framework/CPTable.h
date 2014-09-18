@@ -5,48 +5,48 @@
 @interface CPTable : CPChunk <CPDisposable, CPGraphicUser> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGColor { } *backgroundColor;
     unsigned int backgroundGraphicCount;
     id *backgroundGraphics;
+    booldisposed;
     unsigned int columnCount;
-    float *columnX;
-    BOOL disposed;
+    double *columnX;
     unsigned int rowCount;
-    float *rowY;
+    double *rowY;
     } tableBounds;
     unsigned int usedGraphicCount;
 }
 
 @property(readonly) unsigned int backgroundGraphicCount;
 @property unsigned int columnCount;
-@property(readonly) float* columnX;
+@property(readonly) double* columnX;
 @property unsigned int rowCount;
-@property(readonly) float* rowY;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tableBounds;
+@property(readonly) double* rowY;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } tableBounds;
 
 - (struct CGColor { }*)backgroundColor;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;
 - (unsigned int)backgroundGraphicCount;
 - (unsigned int)columnCount;
-- (float*)columnX;
+- (double*)columnX;
 - (void)dealloc;
 - (void)dispose;
 - (void)finalize;
 - (void)incrementUsedGraphicCount;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (unsigned int)rowCount;
-- (float*)rowY;
+- (double*)rowY;
 - (void)setBackgroundGraphics:(id)arg1;
 - (void)setColumnCount:(unsigned int)arg1;
 - (void)setRowCount:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })tableBounds;
 - (unsigned int)usedGraphicCount;
 
 @end

@@ -7,7 +7,7 @@
 @interface MFCorecipientsIndicatorAtom : MFModernAtomView {
     <MFCorecipientsIndicatorAtomDelegate> *_delegate;
     NSArray *_recipients;
-    BOOL _touchesWereCancelled;
+    bool_touchesWereCancelled;
 }
 
 @property <MFCorecipientsIndicatorAtomDelegate> * delegate;

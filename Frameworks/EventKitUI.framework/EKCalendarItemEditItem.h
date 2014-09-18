@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarItemEditItemDelegate>, <EKStyleProvider>, EKCalendarItem, EKEventStore, UIResponder, UIViewController<EKEditItemViewControllerProtocol>;
+@class <EKCalendarItemEditItemDelegate>, <EKStyleProvider>, EKCalendarItem, EKEventStore, NSString, UIResponder, UIViewController<EKEditItemViewControllerProtocol>;
 
 @interface EKCalendarItemEditItem : NSObject <EKEditItemViewControllerDelegate> {
     EKCalendarItem *_calendarItem;
@@ -13,55 +13,66 @@
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <EKCalendarItemEditItemDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) UIResponder * selectedResponder;
 @property(retain) <EKStyleProvider> * styleProvider;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
+- (void)_showViewController:(id)arg1 editor:(id)arg2 animated:(bool)arg3;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (void)applicationDidResume;
 - (id)calendarItem;
-- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
-- (BOOL)configureForCalendarConstraints:(id)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2 forWidth:(float)arg3;
+- (bool)canBeConfiguredForCalendarConstraints:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (bool)configureForCalendarConstraints:(id)arg1;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (BOOL)editItemViewControllerCommit:(id)arg1;
-- (BOOL)editItemViewControllerShouldShowDetachAlert;
-- (void)editItemViewControllerWantsKeyboardPinned:(BOOL)arg1;
-- (BOOL)editor:(id)arg1 canSelectSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (void)editor:(id)arg1 didDeselectSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
+- (bool)editItemViewControllerCommit:(id)arg1;
+- (bool)editItemViewControllerShouldShowDetachAlert;
+- (void)editItemViewControllerWantsKeyboardPinned:(bool)arg1;
+- (bool)editor:(id)arg1 canSelectSubitem:(unsigned long long)arg2;
+- (void)editor:(id)arg1 didDeselectSubitem:(unsigned long long)arg2;
+- (void)editor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
 - (void)editor:(id)arg1 didStartEditingItem:(id)arg2;
-- (BOOL)editor:(id)arg1 shouldClearSelectionFromSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
+- (void)editor:(id)arg1 requestsInjectableViewControllerToBeShownForSubitem:(unsigned long long)arg2;
+- (bool)editor:(id)arg1 shouldClearSelectionFromSubitem:(unsigned long long)arg2;
 - (void)editorDidScroll:(id)arg1;
 - (void)endInlineEditing;
-- (float)footerHeightForWidth:(float)arg1;
+- (double)footerHeightForWidth:(double)arg1;
+- (id)footerTitle;
 - (id)footerView;
-- (BOOL)isInline;
+- (bool)forceRefreshInviteesItemOnCommit;
+- (bool)forceRefreshLocationItemOnCommit;
+- (bool)forceRefreshStartAndEndDatesOnCommit;
+- (bool)forceTableReloadOnCommit;
+- (id)injectableViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)isInline;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
 - (void)notifyRequiresHeightChange;
-- (void)notifySubitemDidCommit:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
+- (void)notifySubitemDidCommit:(unsigned long long)arg1;
 - (void)notifyTextChanged;
-- (unsigned int)numberOfSubitemsInSubsection:(unsigned int)arg1;
-- (unsigned int)numberOfSubsections;
+- (unsigned long long)numberOfSubitems;
 - (void)refreshFromCalendarItemAndStore;
-- (BOOL)requiresReconfigurationOnCommit;
+- (bool)requiresReconfigurationOnCommit;
 - (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 - (id)selectedResponder;
 - (void)setCalendarItem:(id)arg1 store:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setSelectedResponder:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (BOOL)shouldAppearWithVisibility:(int)arg1;
-- (BOOL)shouldPinKeyboard;
+- (bool)shouldAppearWithVisibility:(int)arg1;
+- (bool)shouldPinKeyboard;
 - (id)styleProvider;
 - (id)titleForHeader;
-- (BOOL)usesDetailViewControllerForSubitem:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
+- (bool)usesDetailViewControllerForSubitem:(unsigned long long)arg1;
 - (id)viewForActionSheet;
 
 @end

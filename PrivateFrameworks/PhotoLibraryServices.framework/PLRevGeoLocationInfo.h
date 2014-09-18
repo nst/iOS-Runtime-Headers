@@ -2,50 +2,52 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class GEOPlaceResult, NSString, PLRevGeoCompoundNameInfo;
+@class <GEOMapItemPrivate>, NSString, PLRevGeoCompoundNameInfo;
 
 @interface PLRevGeoLocationInfo : NSObject {
     PLRevGeoCompoundNameInfo *_compoundNameInfo;
     PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
-    GEOPlaceResult *_geoPlaceResult;
-    BOOL _isHome;
-    BOOL _isValid;
+    <GEOMapItemPrivate> *_geoMapItem;
     NSString *_providerId;
-    unsigned int _providerVersion;
+    unsigned long long _providerVersion;
+    bool_isHome;
+    bool_isValid;
 }
 
 @property(retain) PLRevGeoCompoundNameInfo * compoundNameInfo;
 @property(retain) PLRevGeoCompoundNameInfo * compoundSecondaryNameInfo;
-@property(readonly) NSString * countryCode;
-@property(retain) GEOPlaceResult * geoPlaceResult;
-@property BOOL isHome;
-@property(readonly) BOOL isValid;
+@property(copy,readonly) NSString * countryCode;
+@property(retain) <GEOMapItemPrivate> * geoMapItem;
+@property bool isHome;
+@property(readonly) bool isValid;
 @property(retain) NSString * providerId;
-@property unsigned int providerVersion;
+@property unsigned long long providerVersion;
 
-+ (unsigned int)currentVersion;
-+ (unsigned int)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
-+ (id)sortedNameInfoComparatorWithHomeAtEnd:(BOOL)arg1;
++ (id)_namingOrderForAssetReverseGeoDescription;
++ (unsigned long long)currentVersion;
++ (unsigned long long)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
++ (id)sortedNameInfoComparatorWithHomeAtEnd:(bool)arg1;
 
-- (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(int*)arg3;
+- (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(long long*)arg3;
 - (id)compoundNameInfo;
 - (id)compoundSecondaryNameInfo;
 - (id)countryCode;
 - (id)dataForInfo;
 - (void)dealloc;
 - (id)description;
-- (id)geoPlaceResult;
+- (id)geoMapItem;
 - (id)init;
 - (id)initWithData:(id)arg1;
-- (BOOL)isHome;
-- (BOOL)isValid;
+- (bool)isHome;
+- (bool)isValid;
+- (id)localizedDescription;
 - (id)providerId;
-- (unsigned int)providerVersion;
+- (unsigned long long)providerVersion;
 - (void)setCompoundNameInfo:(id)arg1;
 - (void)setCompoundSecondaryNameInfo:(id)arg1;
-- (void)setGeoPlaceResult:(id)arg1;
-- (void)setIsHome:(BOOL)arg1;
+- (void)setGeoMapItem:(id)arg1;
+- (void)setIsHome:(bool)arg1;
 - (void)setProviderId:(id)arg1;
-- (void)setProviderVersion:(unsigned int)arg1;
+- (void)setProviderVersion:(unsigned long long)arg1;
 
 @end

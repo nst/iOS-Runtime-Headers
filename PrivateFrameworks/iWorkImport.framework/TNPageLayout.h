@@ -2,50 +2,87 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNPageContentLayout, TNPageController, TSDLayoutGeometry;
+@class TNPageContentLayout, TNPageController, TNSheet, TSWPPadding;
 
-@interface TNPageLayout : TSDLayout {
+@interface TNPageLayout : TSWPPageLayout <TSWPLayoutParent, TSWPColumnMetrics, TSWPStorageObserver> {
     struct { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    TSDLayoutGeometry *mCachedGeometry;
+    boolmIsChildLayoutsValid;
+    boolmIsPlaceholder;
     TNPageContentLayout *mContentLayout;
-    BOOL mIsChildLayoutsValid;
-    BOOL mIsPlaceholder;
     TNPageController *mPageController;
     } mPageCoordinate;
+    TNSheet *mSheet;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property(readonly) bool alwaysStartsNewTarget;
+@property(readonly) unsigned long long columnCount;
+@property(readonly) bool columnsAreLeftToRight;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentFrame;
 @property(retain) TNPageContentLayout * contentLayout;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pageBounds;
+@property(readonly) TSWPPadding * layoutMargins;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } pageBounds;
 @property TNPageController * pageController;
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } pageCoordinate;
-@property(getter=isPlaceholder) BOOL placeholder;
+@property(getter=isPlaceholder) bool placeholder;
+@property(retain) TNSheet * sheet;
+@property(readonly) bool shrinkTextToFit;
+@property(readonly) double textScaleFactor;
 
 + (id)pageLayoutWithPageController:(id)arg1 pageCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 
 - (void)addChild:(id)arg1;
-- (void)addPageNumber:(id)arg1;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
+- (bool)alwaysStartsNewTarget;
+- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bodyRect;
+- (unsigned long long)columnCount;
+- (bool)columnsAreLeftToRight;
 - (id)computeLayoutGeometry;
-- (BOOL)containsLayoutForInfo:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
+- (bool)containsLayoutForInfo:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrame;
 - (id)contentLayout;
 - (void)dealloc;
+- (id)dependentLayouts;
+- (id)dependentsOfTextLayout:(id)arg1;
 - (id)description;
+- (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
+- (id)headerFooterProvider;
 - (id)initWithPageController:(id)arg1 pageCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (BOOL)isPlaceholder;
+- (void)invalidateForAutosizingTextLayout:(id)arg1;
+- (void)invalidateSize;
+- (bool)isPlaceholder;
+- (id)layoutMargins;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
 - (id)p_pageInfo;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pageBounds;
 - (id)pageController;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinate;
+- (unsigned long long)pageCount;
+- (unsigned long long)pageNumber;
 - (void)parentDidChange;
+- (void)performBlockForEachHeaderFooterLayout:(id)arg1;
+- (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 target:(id)arg3 outWidth:(double*)arg4 outGap:(double*)arg5;
+- (Class)repClassForTextLayout:(id)arg1;
 - (Class)repClassOverride;
 - (void)setChildren:(id)arg1;
 - (void)setContentLayout:(id)arg1;
 - (void)setPageController:(id)arg1;
 - (void)setPageCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)setPlaceholder:(BOOL)arg1;
+- (void)setPlaceholder:(bool)arg1;
+- (void)setSheet:(id)arg1;
+- (id)sheet;
+- (bool)shrinkTextToFit;
+- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 delta:(long long)arg3 broadcastKind:(int)arg4;
+- (bool)textIsVertical;
+- (double)textScaleFactor;
+- (void)updateChildrenFromInfo;
+- (int)verticalAlignmentForTextLayout:(id)arg1;
+- (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
+- (void)willBeAddedToLayoutController:(id)arg1;
+- (void)willBeRemovedFromLayoutController:(id)arg1;
 
 @end

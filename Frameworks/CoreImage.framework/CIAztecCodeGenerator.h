@@ -2,19 +2,27 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSDictionary;
+@class NSNumber;
 
 @interface CIAztecCodeGenerator : CICodeGenerator {
-    NSDictionary *inputOptions;
+    NSNumber *inputCompactStyle;
+    NSNumber *inputCorrectionLevel;
+    NSNumber *inputLayers;
 }
 
-@property(copy) NSDictionary * inputOptions;
+@property(copy) NSNumber * inputCompactStyle;
+@property(copy) NSNumber * inputCorrectionLevel;
+@property(copy) NSNumber * inputLayers;
 
 + (id)customAttributes;
 
-- (id)inputOptions;
+- (id)inputCompactStyle;
+- (id)inputCorrectionLevel;
+- (id)inputLayers;
 - (struct CGImage { }*)outputCGImage;
-- (void)setDefaults;
-- (void)setInputOptions:(id)arg1;
+- (void)setInputCompactStyle:(id)arg1;
+- (void)setInputCorrectionLevel:(id)arg1;
+- (void)setInputLayers:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 @end

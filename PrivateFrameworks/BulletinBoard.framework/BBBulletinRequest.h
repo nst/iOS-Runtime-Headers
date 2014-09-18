@@ -2,73 +2,79 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBAction, BBContent, BBSound, NSArray, NSDate, NSSet, NSString, NSTimeZone;
+@class BBAccessoryIcon, BBAction, BBContent, BBSound, NSArray, NSDate, NSSet, NSString, NSTimeZone;
 
 @interface BBBulletinRequest : BBBulletin {
-    unsigned int _expirationEvents;
+    unsigned long long _expirationEvents;
 }
 
-@property unsigned int accessoryStyle;
+@property(retain) BBAccessoryIcon * accessoryIconMask;
 @property(copy) BBAction * acknowledgeAction;
-@property int addressBookRecordID;
+@property long long addressBookRecordID;
 @property(copy) NSSet * alertSuppressionContexts;
 @property(copy) BBAction * alternateAction;
 @property(copy) NSString * bulletinID;
 @property(copy) NSArray * buttons;
-@property BOOL clearable;
+@property bool clearable;
 @property(retain) NSDate * date;
-@property int dateFormatStyle;
-@property BOOL dateIsAllDay;
+@property long long dateFormatStyle;
+@property bool dateIsAllDay;
 @property(copy) BBAction * defaultAction;
+@property(copy) BBAction * dismissAction;
 @property(copy) NSString * dismissalID;
 @property(retain) NSDate * endDate;
 @property(retain) NSDate * expirationDate;
-@property unsigned int expirationEvents;
+@property unsigned long long expirationEvents;
 @property(copy) BBAction * expireAction;
-@property BOOL expiresOnPublisherDeath;
-@property BOOL hasEventDate;
+@property bool expiresOnPublisherDeath;
+@property bool hasEventDate;
 @property(copy) NSString * message;
 @property(retain) BBContent * modalAlertContent;
-@property int primaryAttachmentType;
+@property long long primaryAttachmentType;
 @property(copy) NSString * publisherBulletinID;
-@property unsigned int realertCount;
+@property(copy) BBAction * raiseAction;
+@property unsigned long long realertCount;
 @property(retain) NSDate * recencyDate;
 @property(copy) NSString * recordID;
 @property(copy) NSString * section;
 @property(copy) NSString * sectionID;
-@property int sectionSubtype;
-@property BOOL showsUnreadIndicator;
+@property long long sectionSubtype;
+@property bool showsUnreadIndicator;
 @property(copy) BBAction * snoozeAction;
 @property(retain) BBSound * sound;
 @property(retain) BBContent * starkBannerContent;
 @property(copy) NSSet * subsectionIDs;
 @property(copy) NSString * subtitle;
-@property BOOL tentative;
+@property(copy) NSArray * supplementaryActions;
+@property bool tentative;
 @property(retain) NSTimeZone * timeZone;
 @property(copy) NSString * title;
-@property BOOL usesExternalSync;
-@property BOOL wantsFullscreenPresentation;
+@property bool usesExternalSync;
+@property bool wantsFullscreenPresentation;
 
+- (void)_updateSupplementaryAction:(id)arg1;
 - (void)addAlertSuppressionAppID:(id)arg1;
-- (void)addAttachmentOfType:(int)arg1;
+- (void)addAttachmentOfType:(long long)arg1;
 - (void)addButton:(id)arg1;
-- (unsigned int)expirationEvents;
+- (unsigned long long)expirationEvents;
 - (void)generateBulletinID;
 - (void)generateNewBulletinID;
-- (BOOL)hasContentModificationsRelativeTo:(id)arg1;
-- (void)publish:(BOOL)arg1;
+- (bool)hasContentModificationsRelativeTo:(id)arg1;
+- (void)publish:(bool)arg1;
 - (void)publish;
 - (id)publisherMatchID;
-- (unsigned int)realertCount;
+- (unsigned long long)realertCount;
 - (void)setContextValue:(id)arg1 forKey:(id)arg2;
-- (void)setExpirationEvents:(unsigned int)arg1;
-- (void)setPrimaryAttachmentType:(int)arg1;
-- (void)setRealertCount:(unsigned int)arg1;
-- (void)setShowsUnreadIndicator:(BOOL)arg1;
-- (void)setTentative:(BOOL)arg1;
+- (void)setExpirationEvents:(unsigned long long)arg1;
+- (void)setPrimaryAttachmentType:(long long)arg1;
+- (void)setRealertCount:(unsigned long long)arg1;
+- (void)setShowsUnreadIndicator:(bool)arg1;
+- (void)setSupplementaryActions:(id)arg1 forLayout:(long long)arg2;
+- (void)setSupplementaryActions:(id)arg1;
+- (void)setTentative:(bool)arg1;
 - (void)setUnlockActionLabel:(id)arg1;
-- (BOOL)showsUnreadIndicator;
-- (BOOL)tentative;
+- (bool)showsUnreadIndicator;
+- (bool)tentative;
 - (void)withdraw;
 
 @end

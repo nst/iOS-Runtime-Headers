@@ -6,6 +6,6 @@
 }
 
 - (void)main;
-- (int)type;
+- (unsigned long long)type;
 
 @end

@@ -2,28 +2,34 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+@class NSEntityDescription, NSPersistentStore;
+
 @interface NSManagedObjectID : NSObject <NSCopying> {
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
+@property(readonly) NSEntityDescription * entity;
+@property(readonly) NSPersistentStore * persistentStore;
+@property(getter=isTemporaryID,readonly) bool temporaryID;
+
++ (bool)accessInstanceVariablesDirectly;
 + (void)initialize;
-+ (int)version;
++ (long long)version;
 
 - (id)URIRepresentation;
-- (BOOL)_isDeallocating;
-- (BOOL)_isPersistentStoreAlive;
+- (bool)_isDeallocating;
+- (bool)_isPersistentStoreAlive;
 - (long long)_referenceData64;
 - (id)_referenceData;
 - (id)_retainedURIString;
 - (id)_storeIdentifier;
 - (id)_storeInfo1;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isTemporaryID;
+- (bool)isTemporaryID;
 - (id)persistentStore;
 - (id)pl_shortURI;
 

@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface SANPCommandInfo : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * registeredCommands;
+@property(readonly) Class superclass;
 
 + (id)commandInfo;
 + (id)commandInfoWithDictionary:(id)arg1 context:(id)arg2;

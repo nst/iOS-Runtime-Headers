@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
+@class MPMediaPlaylist;
+
 @interface MusicQueryQueueFeeder : MPMediaQueryQueueFeeder {
 }
 
-- (BOOL)_reloadWithPlaybackContext:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
+@property(retain) MPMediaPlaylist * mixPlaylist;
+
 - (id)errorResolverForItem:(id)arg1;
-- (id)init;
 - (Class)itemClass;
-- (id)mix;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
-- (unsigned int)realRepeatType;
-- (unsigned int)realShuffleType;
-- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
-- (void)setMix:(id)arg1;
+- (id)mixPlaylist;
+- (id)playbackInfoAtIndex:(unsigned long long)arg1;
+- (unsigned long long)realRepeatType;
+- (unsigned long long)realShuffleType;
+- (void)setMixPlaylist:(id)arg1;
 
 @end

@@ -20,7 +20,7 @@
             boolmIsImplicitFormat; 
             union { 
                 struct { 
-                    NSString *mCurrencyCode; 
+                    unsigned int mCurrencyCodeIndex : 16; 
                     unsigned int mDecimalPlaces : 8; 
                     unsigned int mNegativeStyle : 3; 
                     unsigned int mShowThousandsSeparator : 1; 
@@ -65,23 +65,27 @@
             } mData; 
             struct TSUCustomFormat {} *mCustomFormat; 
         } mFormat; 
-        BOOL mIsUnitlessZero; 
+        boolmIsUnitlessZero; 
     NSDate *mDate;
     TSCERegexMatcher *mMatcher;
     int mOperation;
     NSString *mString;
     } mValue;
+    struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; } *mWarningReportingContext;
 }
 
-+ (id)logicalTestWithCriterion:(struct TSCEValue { unsigned int x1[68]; int x2; })arg1 functionSpec:(id)arg2 warningReportingContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg3;
++ (id)logicalTestWithCriterion:(struct TSCEValue { unsigned long long x1[88]; int x2; })arg1 functionSpec:(id)arg2 warningReportingContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg3;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)compare:(struct TSCEValue { unsigned int x1[68]; int x2; })arg1;
+- (bool)compare:(struct TSCEValue { unsigned long long x1[88]; int x2; })arg1 withContext:(struct TSCEEvaluationContext { id x1; struct TSCEEvaluationStack { struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_1_2_1; struct TSCEValue {} *x_1_2_2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_3_1; } x_1_2_3; } x_2_1_1; int x_2_1_2; } x2; boolx3; boolx4; struct TSCEWarningReportingContext { boolx_5_1_1; boolx_5_1_2; struct ObjcSharedPtr<NSMutableSet> { id x_3_2_1; } x_5_1_3; } x5; struct __CFUUID {} *x6; struct { unsigned short x_7_1_1; unsigned char x_7_1_2; unsigned char x_7_1_3; } x7; struct hash_set<TSCECReference, TSCECReferenceHash, TSCECReferenceEqual, std::__1::allocator<TSCECReference> > {} *x8; id x9; }*)arg2;
+- (bool)compare:(struct TSCEValue { unsigned long long x1[88]; int x2; })arg1;
+- (unsigned long long)cost;
 - (int)criteriaParser:(id)arg1;
 - (void)dealloc;
-- (id)initWithCriterion:(struct TSCEValue { unsigned int x1[68]; int x2; })arg1 functionSpec:(id)arg2 warningReportingContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)description;
+- (id)initWithCriterion:(struct TSCEValue { unsigned long long x1[88]; int x2; })arg1 functionSpec:(id)arg2 warningReportingContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg3;
+- (bool)isEqual:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setRegexMatcher:(id)arg1;
 - (void)setString:(id)arg1;

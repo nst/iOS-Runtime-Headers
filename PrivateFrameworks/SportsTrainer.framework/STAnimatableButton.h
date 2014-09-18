@@ -2,50 +2,54 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class STAnimatableButtonSlice, STShadowLabel, UIColor, UIImage;
+@class NSString, STAnimatableButtonSlice, STShadowLabel, UIColor, UIImage;
 
 @interface STAnimatableButton : UIView <STAnimatableButtonSliceDelegate> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     SEL _action;
     UIImage *_highlightedImage;
     } _hitRectEdgeInsets;
     UIImage *_image;
-    BOOL _isLandscape;
     STAnimatableButtonSlice *_leftSlice;
     STAnimatableButtonSlice *_middleSlice;
     UIImage *_normalImage;
     STAnimatableButtonSlice *_rightSlice;
-    float _shadowBlurRadius;
+    double _shadowBlurRadius;
     UIColor *_shadowColor;
-    BOOL _slicesNeedDisplay;
     STShadowLabel *_subtitleLabel;
     id _target;
     STShadowLabel *_titleLabel;
-    BOOL _touchInside;
+    bool_isLandscape;
+    bool_slicesNeedDisplay;
+    bool_touchInside;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitRectEdgeInsets;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitRectEdgeInsets;
+@property(readonly) Class superclass;
 
 - (id)_buttonWellImage;
 - (id)_buttonWellLandscapeImage;
 - (void)dealloc;
 - (void)drawImageForSlice;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectEdgeInsets;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitRectEdgeInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(bool)arg2;
 - (void)setHighlightedBackgroundImage:(id)arg1;
-- (void)setHitRectEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHitRectEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setImage:(id)arg1;
-- (void)setLandscape:(BOOL)arg1;
+- (void)setLandscape:(bool)arg1;
 - (void)setNormalBackgroundImage:(id)arg1;
-- (void)setShadowColor:(id)arg1 blurRadius:(float)arg2;
+- (void)setShadowColor:(id)arg1 blurRadius:(double)arg2;
 - (void)setSubtitle:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)setTitle:(id)arg1;

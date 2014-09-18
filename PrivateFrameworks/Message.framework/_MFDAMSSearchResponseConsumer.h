@@ -13,10 +13,10 @@
 }
 
 @property(retain) NSDate * latestDateToAdd;
-@property(readonly) NSArray * matchingRemoteIDs;
+@property(retain,readonly) NSArray * matchingRemoteIDs;
 
 - (void)dealloc;
-- (BOOL)handleItems:(id)arg1;
+- (bool)handleItems:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)latestDateToAdd;
 - (id)matchingRemoteIDs;
@@ -26,6 +26,6 @@
 - (void)searchQuery:(id)arg1 returnedTotalCount:(id)arg2;
 - (void)setLatestDateToAdd:(id)arg1;
 - (void)waitUntilDone;
-- (BOOL)waitUntilDoneBeforeDate:(id)arg1;
+- (bool)waitUntilDoneBeforeDate:(id)arg1;
 
 @end

@@ -2,24 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL;
+@class NSURL, SFUCryptoKey;
 
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
     NSURL *_URL;
-    BOOL _gilligan_isRemote;
-    BOOL _isMissingData;
+    SFUCryptoKey *_decryptionKey;
+    bool_gilligan_isRemote;
+    bool_isMissingData;
+    bool_isMissingOriginalData;
 }
 
-@property BOOL isMissingData;
+@property bool isMissingData;
+@property bool isMissingOriginalData;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (BOOL)gilligan_isRemote;
+- (id)decryptionKey;
+- (bool)gilligan_isRemote;
+- (id)initWithURL:(id)arg1 decryptionKey:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isMissingData;
+- (bool)isMissingData;
+- (bool)isMissingOriginalData;
+- (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
-- (void)setGilligan_isRemote:(BOOL)arg1;
-- (void)setIsMissingData:(BOOL)arg1;
-- (BOOL)writeToBundleWriter:(id)arg1 preferredFilename:(id)arg2 filename:(id*)arg3 didCopyDataToBundle:(BOOL*)arg4;
+- (void)setGilligan_isRemote:(bool)arg1;
+- (void)setIsMissingData:(bool)arg1;
+- (void)setIsMissingOriginalData:(bool)arg1;
+- (bool)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(bool*)arg5 isMissingData:(bool*)arg6;
 
 @end

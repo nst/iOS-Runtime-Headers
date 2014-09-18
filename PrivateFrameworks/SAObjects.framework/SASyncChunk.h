@@ -8,10 +8,14 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * key;
 @property(copy) NSString * postGen;
 @property(copy) NSString * preGen;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 @property(copy) NSArray * toAdd;
 @property(copy) NSArray * toRemove;
 @property(copy) NSString * validity;

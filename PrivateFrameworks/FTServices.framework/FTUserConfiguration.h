@@ -5,17 +5,17 @@
 @interface FTUserConfiguration : NSObject {
 }
 
-@property(readonly) BOOL _nonWifiFaceTimeEntitled;
-@property BOOL allowAnyNetwork;
-@property BOOL cellularFaceTimeEnabled;
+@property(readonly) bool _nonWifiFaceTimeEntitled;
+@property bool allowAnyNetwork;
+@property bool cellularFaceTimeEnabled;
 
 + (id)sharedInstance;
 
-- (BOOL)_adequateInternalOrCarrierInstall;
-- (BOOL)_nonWifiFaceTimeEntitled;
-- (BOOL)allowAnyNetwork;
-- (BOOL)cellularFaceTimeEnabled;
-- (void)setAllowAnyNetwork:(BOOL)arg1;
-- (void)setCellularFaceTimeEnabled:(BOOL)arg1;
+- (bool)_adequateInternalOrCarrierInstall;
+- (bool)_nonWifiFaceTimeEntitled;
+- (bool)allowAnyNetwork;
+- (bool)cellularFaceTimeEnabled;
+- (void)setAllowAnyNetwork:(bool)arg1;
+- (void)setCellularFaceTimeEnabled:(bool)arg1;
 
 @end

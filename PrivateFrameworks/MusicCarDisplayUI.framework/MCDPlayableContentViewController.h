@@ -10,7 +10,7 @@
     UINavigationController *_navigationController;
 }
 
-@property(readonly) NSString * bundleID;
+@property(copy,readonly) NSString * bundleID;
 
 - (void).cxx_destruct;
 - (void)_embedAppropriateViewController;
@@ -19,5 +19,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)refreshNavigationStack;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

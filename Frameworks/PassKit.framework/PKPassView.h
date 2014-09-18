@@ -2,72 +2,92 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class <WLCardViewDelegate>, NSString, PKPass, PKPassBackFaceView, PKPassColorProfile, PKPassFaceView, PKPassFrontFaceView;
 
 @interface PKPassView : UIView <PKPassFaceDelegate> {
     PKPassBackFaceView *_backFace;
-    BOOL _backFaceIsTall;
     PKPassColorProfile *_colorProfile;
-    int _contentMode;
+    long long _contentMode;
+    id _delayedContentModeCanceller;
     <WLCardViewDelegate> *_delegate;
+    double _flipLayoutOvershoot;
+    double _flipOvershoot;
     PKPassFrontFaceView *_frontFace;
     PKPassFaceView *_otherFace;
     PKPass *_pass;
-    int _suppressedContent;
+    long long _priorContentMode;
+    unsigned long long _suppressedContent;
     PKPassFaceView *_visibleFace;
+    bool_backFaceIsTall;
+    bool_isFrontmostPassView;
 }
 
-@property BOOL backFaceIsTall;
-@property int contentMode;
+@property bool backFaceIsTall;
+@property long long contentMode;
+@property(copy,readonly) NSString * debugDescription;
 @property <WLCardViewDelegate> * delegate;
-@property(readonly) BOOL frontFaceBodyContentCreated;
-@property(readonly) PKPass * pass;
-@property(readonly) BOOL showingFront;
-@property int suppressedContent;
+@property(copy,readonly) NSString * description;
+@property(readonly) bool frontFaceBodyContentCreated;
+@property(readonly) unsigned long long hash;
+@property bool isFrontmostPassView;
+@property(retain,readonly) PKPass * pass;
+@property(readonly) bool showingFront;
+@property(readonly) Class superclass;
+@property unsigned long long suppressedContent;
 @property(readonly) NSString * uniqueID;
 
-- (void)_applyContentMode;
-- (void)_flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
-- (int)_frontFaceBackgroundModeForContentMode;
-- (int)_regionsForCurrentModes;
+- (void)_applyContentMode:(bool)arg1;
+- (void)_flipPass:(bool)arg1 fromLeft:(bool)arg2 notify:(bool)arg3;
+- (long long)_frontFaceBackgroundModeForContentMode;
+- (unsigned long long)_regionsForCurrentModes;
 - (void)_updateBackFaceSuppressedContent;
 - (void)_updateFrontFaceSuppressedContent;
-- (BOOL)_visibleFaceShouldClipForCurrentViewMode:(float*)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (bool)_visibleFaceShouldClipForCurrentViewMode:(double*)arg1;
+- (void)aidUpdated:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
-- (BOOL)backFaceIsTall;
-- (int)contentMode;
+- (bool)backFaceIsTall;
+- (bool)canFlip;
+- (long long)contentMode;
 - (void)createBackFaceIfNecessary;
 - (void)dealloc;
 - (id)delegate;
-- (void)flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfVisibleFace;
-- (BOOL)frontFaceBodyContentCreated;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithPass:(id)arg1 content:(int)arg2;
+- (void)flipPass:(bool)arg1 fromLeft:(bool)arg2 notify:(bool)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfVisibleFace;
+- (bool)frontFaceBodyContentCreated;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithPass:(id)arg1 content:(long long)arg2;
 - (id)initWithPass:(id)arg1;
+- (bool)isFrontmostPassView;
 - (id)item;
 - (void)layoutSubviews;
 - (id)pass;
-- (BOOL)passFaceDeleteButtonEnabled;
+- (bool)passFaceDeleteButtonEnabled;
 - (void)passFaceDeleteButtonPressed:(id)arg1;
 - (void)passFaceFlipButtonPressed:(id)arg1;
 - (void)passFaceShareButtonPressed:(id)arg1;
 - (void)prepareForFlip;
 - (void)presentDiff:(id)arg1 completion:(id)arg2;
 - (void)registerForEnterBackgroundNotification;
-- (void)setBackFaceIsTall:(BOOL)arg1;
-- (void)setContentMode:(int)arg1 withDuration:(double)arg2;
-- (void)setContentMode:(int)arg1;
+- (void)setBackFaceIsTall:(bool)arg1;
+- (void)setContentMode:(long long)arg1 animated:(bool)arg2 withDelay:(double)arg3;
+- (void)setContentMode:(long long)arg1 animated:(bool)arg2;
+- (void)setContentMode:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
-- (void)setSuppressedContent:(int)arg1;
-- (BOOL)showingFront;
-- (struct CGSize { float x1; float x2; })sizeOfBackFace;
-- (struct CGSize { float x1; float x2; })sizeOfFrontFace;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDimmer:(double)arg1 animated:(bool)arg2;
+- (void)setIsFrontmostPassView:(bool)arg1;
+- (void)setSuppressedContent:(unsigned long long)arg1;
+- (bool)showingFront;
+- (struct CGSize { double x1; double x2; })sizeOfBackFace;
+- (struct CGSize { double x1; double x2; })sizeOfFront;
+- (struct CGSize { double x1; double x2; })sizeOfFrontFace;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)snapshotOfFrontFace;
-- (int)suppressedContent;
+- (id)snapshotViewOfVisibleFaceAfterScreenUpdates:(bool)arg1;
+- (unsigned long long)suppressedContent;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

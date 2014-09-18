@@ -4,30 +4,31 @@
 
 @interface TSDTilingTileLayer : TSDNoDefaultImplicitActionLayer {
     struct { 
-        unsigned int x; 
-        unsigned int y; 
-    unsigned int mIndex;
+        unsigned long long x; 
+        unsigned long long y; 
+    boolmNeedsTileDisplay;
+    unsigned long long mIndex;
     } mLocation;
-    BOOL mNeedsTileDisplay;
 }
 
-@property unsigned int index;
-@property struct { unsigned int x1; unsigned int x2; } location;
-@property BOOL needsTileDisplay;
+@property unsigned long long index;
+@property struct { unsigned long long x1; unsigned long long x2; } location;
+@property bool needsTileDisplay;
 
+- (void)cancelLayoutForTilingLayers;
 - (void)display;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
-- (unsigned int)index;
-- (struct { unsigned int x1; unsigned int x2; })location;
-- (BOOL)needsTileDisplay;
-- (void)setIndex:(unsigned int)arg1;
-- (void)setLocation:(struct { unsigned int x1; unsigned int x2; })arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNeedsDisplayInRectIgnoringBackground:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1;
+- (unsigned long long)index;
+- (struct { unsigned long long x1; unsigned long long x2; })location;
+- (bool)needsTileDisplay;
+- (void)setIndex:(unsigned long long)arg1;
+- (void)setLocation:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplayInRectIgnoringBackground:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayoutForTilingLayers;
-- (void)setNeedsTileDisplay:(BOOL)arg1;
+- (void)setNeedsTileDisplay:(bool)arg1;
 - (id)tileContentsLayer;
-- (void)updateFrameWithTileSize:(struct CGSize { float x1; float x2; })arg1 tilesWide:(unsigned int)arg2 tilesHigh:(unsigned int)arg3;
+- (void)updateFrameWithTileSize:(struct CGSize { double x1; double x2; })arg1 tilesWide:(unsigned long long)arg2 tilesHigh:(unsigned long long)arg3;
 
 @end

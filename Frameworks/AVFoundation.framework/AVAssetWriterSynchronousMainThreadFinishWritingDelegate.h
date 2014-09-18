@@ -2,12 +2,19 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSString;
+
 @interface AVAssetWriterSynchronousMainThreadFinishWritingDelegate : NSObject <AVAssetWriterFinishWritingHelperDelegate> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)finishWritingHelper:(id)arg1 didInitiateFinishWritingForFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg2;
 - (void)finishWritingHelperDidCancelFinishWriting:(id)arg1;
 - (void)finishWritingHelperDidFail:(id)arg1;
-- (BOOL)shouldHelperPrepareInputs;
+- (bool)shouldHelperPrepareInputs;
 
 @end

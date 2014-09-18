@@ -7,25 +7,25 @@
 @interface SSLogFileOptions : NSObject <NSCopying> {
     NSString *_directoryPath;
     NSString *_fileName;
-    int _maxNumberOfLogFiles;
-    unsigned long _maxSizeInBytes;
+    long long _maxNumberOfLogFiles;
+    unsigned long long _maxSizeInBytes;
 }
 
 @property(copy) NSString * logDirectoryPath;
 @property(copy) NSString * logFileBaseName;
-@property unsigned long maxLogFileSize;
-@property int maxNumberOfLogFiles;
+@property unsigned long long maxLogFileSize;
+@property long long maxNumberOfLogFiles;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)logDirectoryPath;
 - (id)logFileBaseName;
-- (unsigned long)maxLogFileSize;
-- (int)maxNumberOfLogFiles;
+- (unsigned long long)maxLogFileSize;
+- (long long)maxNumberOfLogFiles;
 - (void)setLogDirectoryPath:(id)arg1;
 - (void)setLogFileBaseName:(id)arg1;
-- (void)setMaxLogFileSize:(unsigned long)arg1;
-- (void)setMaxNumberOfLogFiles:(int)arg1;
+- (void)setMaxLogFileSize:(unsigned long long)arg1;
+- (void)setMaxNumberOfLogFiles:(long long)arg1;
 
 @end

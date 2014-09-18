@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPHomeSharingML3DataProvider, NSData, NSError, NSURL, SSAuthorizationRequest;
+@class MPHomeSharingML3DataProvider, NSData, NSError, NSString, NSURL, SSAuthorizationRequest;
 
 @interface MPHomeSharingErrorResolver : MPAVErrorResolver <SSAuthorizationRequestDelegate> {
     unsigned long long _accountID;
@@ -14,9 +14,13 @@
 }
 
 @property(retain) MPHomeSharingML3DataProvider * dataProvider;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_errorIsFairPlayError:(id)arg1;
+- (bool)_errorIsFairPlayError:(id)arg1;
 - (void)authorizationRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)dataProvider;
 - (void)dealloc;

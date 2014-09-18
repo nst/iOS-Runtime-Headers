@@ -12,6 +12,7 @@
 @property(readonly) NSString * accountDescription;
 @property(readonly) SUScriptAppleAccountType * accountType;
 @property(readonly) SUScriptAppleAccountCredential * credential;
+@property(readonly) NSString * dsID;
 @property(readonly) NSString * identifier;
 @property(readonly) ACAccount * nativeAccount;
 @property(readonly) ACAccountStore * nativeAccountStore;
@@ -27,6 +28,7 @@
 - (id)attributeKeys;
 - (id)credential;
 - (void)dealloc;
+- (id)dsID;
 - (id)identifier;
 - (id)initWithACAccount:(id)arg1 accountStore:(id)arg2;
 - (id)nativeAccount;

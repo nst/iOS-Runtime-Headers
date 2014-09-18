@@ -9,6 +9,10 @@
 
 @property(copy) NSString * author;
 @property(copy) NSDate * date;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSString * text;
 
 + (id)socialComment;

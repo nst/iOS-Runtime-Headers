@@ -7,10 +7,14 @@
 @interface SASPronunciationContext : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSURL * domainObjectIdentifier;
 @property(copy) NSString * domainObjectPropertyIdentifier;
 @property(copy) NSString * fullName;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * orthography;
+@property(readonly) Class superclass;
 @property(copy) NSNumber * tokenOffset;
 
 + (id)pronunciationContext;

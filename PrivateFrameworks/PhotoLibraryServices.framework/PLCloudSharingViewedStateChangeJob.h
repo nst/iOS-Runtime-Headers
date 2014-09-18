@@ -6,24 +6,24 @@
 
 @interface PLCloudSharingViewedStateChangeJob : PLCloudSharingJob {
     NSString *_albumGUID;
-    BOOL _albumHasUnseenContent;
     long long _albumUnviewedAssetCount;
     NSString *_assetCollectionGUID;
-    BOOL _assetCollectionHasUnreadComments;
     NSDate *_assetCollectionLastViewedCommentDate;
     long long _jobType;
+    bool_albumHasUnseenContent;
+    bool_assetCollectionHasUnreadComments;
 }
 
 @property(retain) NSString * albumGUID;
-@property BOOL albumHasUnseenContent;
+@property bool albumHasUnseenContent;
 @property long long albumUnviewedAssetCount;
 @property(retain) NSString * assetCollectionGUID;
-@property BOOL assetCollectionHasUnreadComments;
+@property bool assetCollectionHasUnreadComments;
 @property(retain) NSDate * assetCollectionLastViewedCommentDate;
 @property long long jobType;
 
-+ (void)markAlbum:(id)arg1 asHavingUnseenContent:(BOOL)arg2;
-+ (void)markAssetCollection:(id)arg1 asHavingUnreadComments:(BOOL)arg2 inAlbum:(id)arg3;
++ (void)markAlbum:(id)arg1 asHavingUnseenContent:(bool)arg2;
++ (void)markAssetCollection:(id)arg1 asHavingUnreadComments:(bool)arg2 inAlbum:(id)arg3;
 + (void)setLastViewedCommentDate:(id)arg1 forAssetCollection:(id)arg2 inAlbum:(id)arg3;
 + (void)updateUnviewedAssetCollectionCount:(int)arg1 forAlbum:(id)arg2;
 
@@ -32,24 +32,24 @@
 - (void)_executeAssetCommentsReadStateChangedWithGroup;
 - (void)_executeAssetLastViewedCommentDateChangedWithGroup;
 - (id)albumGUID;
-- (BOOL)albumHasUnseenContent;
+- (bool)albumHasUnseenContent;
 - (long long)albumUnviewedAssetCount;
 - (id)assetCollectionGUID;
-- (BOOL)assetCollectionHasUnreadComments;
+- (bool)assetCollectionHasUnreadComments;
 - (id)assetCollectionLastViewedCommentDate;
 - (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
-- (id)initFromXPCObject:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (long long)jobType;
 - (void)run;
 - (void)runDaemonSide;
 - (void)setAlbumGUID:(id)arg1;
-- (void)setAlbumHasUnseenContent:(BOOL)arg1;
+- (void)setAlbumHasUnseenContent:(bool)arg1;
 - (void)setAlbumUnviewedAssetCount:(long long)arg1;
 - (void)setAssetCollectionGUID:(id)arg1;
-- (void)setAssetCollectionHasUnreadComments:(BOOL)arg1;
+- (void)setAssetCollectionHasUnreadComments:(bool)arg1;
 - (void)setAssetCollectionLastViewedCommentDate:(id)arg1;
 - (void)setJobType:(long long)arg1;
 

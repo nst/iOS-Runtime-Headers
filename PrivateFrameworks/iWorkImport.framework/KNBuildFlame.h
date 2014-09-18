@@ -2,43 +2,43 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNBuildFlameSystem, TSDGLDataBuffer, TSDGLShader, TSDGLTextureInfo;
+@class KNBuildFlameSystem, NSString, TSDGLDataBuffer, TSDGLShader, TSDGLTextureInfo;
 
 @interface KNBuildFlame : KNAnimationEffect <KNFrameBuildAnimator> {
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } mBaseTransform;
     } mDrawableFrame;
@@ -54,24 +54,29 @@
     TSDGLShader *mObjectShader;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
-+ (BOOL)requiresSingleTexturePerStage;
++ (bool)requiresSingleTexturePerStage;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
 
 - (void)animationDidEndForTextures:(id)arg1 forBuild:(id)arg2;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfEffectWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfEffectWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (id)p_flameSystemForTR:(id)arg1 build:(id)arg2;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })p_orthoTransformWithScale:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
-- (void)p_setupFBOWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })p_orthoTransformWithScale:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (void)p_setupFBOWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)renderFrameWithContext:(id)arg1;
 
 @end

@@ -12,8 +12,8 @@
 @property(retain) NSData * data;
 @property(retain) NSString * name;
 
+- (void).cxx_destruct;
 - (id)data;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (id)name;
 - (void)setData:(id)arg1;

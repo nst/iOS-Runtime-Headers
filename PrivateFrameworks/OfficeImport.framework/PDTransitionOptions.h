@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface PDTransitionOptions : NSObject {
-    BOOL mHasSound;
-    BOOL mIsStartSoundAction;
+    boolmHasSound;
+    boolmIsStartSoundAction;
     NSString *mSoundFile;
 }
 

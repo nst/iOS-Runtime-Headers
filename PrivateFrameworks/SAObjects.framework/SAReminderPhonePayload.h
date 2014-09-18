@@ -7,7 +7,11 @@
 @interface SAReminderPhonePayload : AceObject <SAReminderPayload> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * recipient;
+@property(readonly) Class superclass;
 
 + (id)phonePayload;
 + (id)phonePayloadWithDictionary:(id)arg1 context:(id)arg2;

@@ -7,16 +7,16 @@
 @interface _UIBarBackgroundImageView : UIImageView {
     UIImageView *_customImageContainer;
     UIView *_topStripView;
-    BOOL _translucent;
+    bool_translucent;
 }
 
-@property(getter=isTranslucent) BOOL translucent;
+@property(getter=isTranslucent) bool translucent;
 
 - (id)image;
-- (BOOL)isTranslucent;
+- (bool)isTranslucent;
 - (void)removeTopStripView;
 - (void)setImage:(id)arg1;
-- (void)setTranslucent:(BOOL)arg1;
+- (void)setTranslucent:(bool)arg1;
 - (id)topStripView;
 - (void)updateTopStripViewCreateIfNecessary;
 

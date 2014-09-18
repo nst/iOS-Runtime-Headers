@@ -2,28 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIBarButtonItem, UIColor, UIImageView;
+@class NSArray, NSString, UIBarButtonItem, UIColor, UIImageView, UITapGestureRecognizer;
 
-@interface UIDimmingView : UIView {
+@interface UIDimmingView : UIView <UIGestureRecognizerDelegate> {
     UIImageView *_backgroundGlow;
     id _delegate;
     UIColor *_dimmingColor;
-    BOOL _displayed;
     UIBarButtonItem *_highlightedBarButtonItem;
     UIImageView *_highlightedImageView;
-    BOOL _ignoresTouches;
-    BOOL _inPassthroughHitTest;
     NSArray *_passthroughViews;
-    BOOL _suppressesBackdrops;
+    UITapGestureRecognizer *_singleFingerTapRecognizer;
+    bool_displayed;
+    bool_ignoresTouches;
+    bool_inPassthroughHitTest;
+    bool_suppressesBackdrops;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property id delegate;
+@property(copy,readonly) NSString * description;
 @property(retain) UIColor * dimmingColor;
-@property BOOL displayed;
+@property bool displayed;
+@property(readonly) unsigned long long hash;
 @property(retain) UIBarButtonItem * highlightedBarButtonItem;
-@property BOOL ignoresTouches;
+@property bool ignoresTouches;
 @property(retain) NSArray * passthroughViews;
-@property BOOL suppressesBackdrops;
+@property(readonly) Class superclass;
+@property bool suppressesBackdrops;
 
 + (id)defaultDimmingColor;
 
@@ -33,23 +38,26 @@
 - (id)delegate;
 - (id)dimmingColor;
 - (void)dimmingRemovalAnimationDidStop;
-- (void)display:(BOOL)arg1 withAnimationDuration:(float)arg2 afterDelay:(float)arg3;
-- (BOOL)displayed;
+- (void)display:(bool)arg1 withAnimationDuration:(double)arg2 afterDelay:(double)arg3;
+- (void)display:(bool)arg1;
+- (bool)displayed;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (void)handleSingleTap:(id)arg1;
 - (id)highlightedBarButtonItem;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)ignoresTouches;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (bool)ignoresTouches;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (id)passthroughViews;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmingColor:(id)arg1;
-- (void)setDisplayed:(BOOL)arg1;
+- (void)setDisplayed:(bool)arg1;
 - (void)setHighlightedBarButtonItem:(id)arg1;
-- (void)setIgnoresTouches:(BOOL)arg1;
+- (void)setIgnoresTouches:(bool)arg1;
 - (void)setPassthroughViews:(id)arg1;
-- (void)setSuppressesBackdrops:(BOOL)arg1;
-- (BOOL)suppressesBackdrops;
+- (void)setSuppressesBackdrops:(bool)arg1;
+- (bool)suppressesBackdrops;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

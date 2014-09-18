@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSString;
+
 @interface NSISLinearExpression : NSObject <NSISRowBody, NSFastEnumeration> {
     union { 
         struct { 
             id stored_extern_marker; 
             struct { /* ? */ } *slab; 
-            unsigned int capacity; 
+            unsigned long long capacity; 
         } extern_data; 
         struct { 
-            unsigned long aligner; 
+            unsigned long long aligner; 
         } inline_slab; 
-        unsigned char padding[36]; 
+        unsigned char padding[48]; 
         void *_workaround13455311; 
     double constant;
     } data;
@@ -21,9 +23,13 @@
 }
 
 @property double constant;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (id)acquireFromPoolForUseCase:(int)arg1;
-+ (id)newExpressionWithCapacity:(unsigned int)arg1;
++ (id)acquireFromPoolForUseCase:(long long)arg1;
++ (id)newExpressionWithCapacity:(unsigned long long)arg1;
 
 - (void)addExpression:(id)arg1 times:(double)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
 - (void)addExpression:(id)arg1 times:(double)arg2;
@@ -33,16 +39,16 @@
 - (double)constant;
 - (id)copyContentsAndReturnToPool;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)enumerateVariables:(id)arg1;
 - (void)enumerateVariablesAndCoefficients:(id)arg1;
-- (BOOL)enumerateVariablesAndCoefficientsUntil:(id)arg1;
+- (bool)enumerateVariablesAndCoefficientsUntil:(id)arg1;
 - (double)incrementConstant:(double)arg1;
 - (id)init;
-- (id)initWithInlineCapacity:(unsigned int)arg1;
-- (BOOL)isConstant;
+- (id)initWithInlineCapacity:(unsigned long long)arg1;
+- (bool)isConstant;
 - (void)removeVariable:(id)arg1;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
 - (void)replaceVariable:(id)arg1 withVariable:(id)arg2 coefficient:(double)arg3;
@@ -52,7 +58,7 @@
 - (void)scaleBy:(double)arg1;
 - (void)setCoefficient:(double)arg1 forVariable:(id)arg2;
 - (void)setConstant:(double)arg1;
-- (unsigned int)variableCount;
+- (unsigned long long)variableCount;
 - (id)variablesArray;
 - (void)verifyInternalIntegrity;
 

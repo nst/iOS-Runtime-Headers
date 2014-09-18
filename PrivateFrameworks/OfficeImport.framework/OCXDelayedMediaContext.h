@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSURL, OCPPackage;
+@class NSString, NSURL, OCPPackage;
 
 @interface OCXDelayedMediaContext : NSObject <OCDDelayedMediaContext> {
     OCPPackage *mPackage;
     NSURL *mTargetLocation;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (id)dataRep;
 - (void)dealloc;
+- (id)description;
 - (id)initWithTargetLocation:(id)arg1 package:(id)arg2;
 - (bool)loadDelayedNode:(id)arg1;
 - (bool)saveDelayedMedia:(id)arg1 toFile:(id)arg2;

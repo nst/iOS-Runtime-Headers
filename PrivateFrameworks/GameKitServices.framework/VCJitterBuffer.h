@@ -4,8 +4,8 @@
 
 @interface VCJitterBuffer : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     void *pRTPContext;
     double prevReceivedAudioTime;
     struct tagHANDLE { int x1; } *rtpHandle;
@@ -15,6 +15,6 @@
 - (void)dealloc;
 - (id)initWithRTPHandle:(struct tagHANDLE { int x1; }*)arg1;
 - (void)invalidateHandle;
-- (BOOL)pullAudioSamples:(char *)arg1 timestamp:(unsigned int*)arg2 byteCount:(int*)arg3 sampleCount:(int*)arg4 sampleRate:(int*)arg5 receivedBytes:(int*)arg6 lastReceivedAudioTime:(double*)arg7 padding:(char *)arg8 paddingLength:(char *)arg9 silence:(int*)arg10;
+- (bool)pullAudioSamples:(char *)arg1 timestamp:(unsigned int*)arg2 byteCount:(int*)arg3 sampleCount:(int*)arg4 sampleRate:(int*)arg5 receivedBytes:(int*)arg6 lastReceivedAudioTime:(double*)arg7 padding:(char *)arg8 paddingLength:(char *)arg9 silence:(int*)arg10;
 
 @end

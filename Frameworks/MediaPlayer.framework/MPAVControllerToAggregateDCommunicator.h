@@ -6,9 +6,9 @@
 
 @interface MPAVControllerToAggregateDCommunicator : NSObject {
     MPAVItem *_item;
-    unsigned int _lastMediaType;
+    unsigned long long _lastMediaType;
     double _playbackStartTime;
-    BOOL _playbackStartTimeIsValid;
+    bool_playbackStartTimeIsValid;
 }
 
 - (void).cxx_destruct;

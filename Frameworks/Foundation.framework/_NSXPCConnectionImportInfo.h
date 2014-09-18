@@ -10,7 +10,7 @@
 }
 
 - (void)dealloc;
-- (BOOL)decrement:(unsigned long long)arg1;
+- (bool)decrement:(unsigned long long)arg1;
 - (void)finalize;
 - (void)increment:(unsigned long long)arg1;
 - (id)init;

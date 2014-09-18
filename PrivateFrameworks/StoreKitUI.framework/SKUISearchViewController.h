@@ -22,27 +22,34 @@
     NSURLRequest *_urlRequest;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SKUISearchFieldController * searchFieldController;
+@property(readonly) Class superclass;
+
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_metricsEnterEventNotification:(id)arg1;
 - (void)_reloadChildViewController;
-- (void)_reloadOrientation:(int)arg1;
+- (void)_reloadOrientation:(long long)arg1;
 - (void)_reloadView;
-- (void)_searchWithSearchTerm:(id)arg1 persistRelated:(BOOL)arg2 metricsEvent:(id)arg3;
-- (void)_searchWithURLRequest:(id)arg1 persistRelated:(BOOL)arg2 metricsEvent:(id)arg3;
+- (void)_searchWithSearchTerm:(id)arg1 persistRelated:(bool)arg2 metricsEvent:(id)arg3 baseRequest:(id)arg4;
+- (void)_searchWithURLRequest:(id)arg1 persistRelated:(bool)arg2 metricsEvent:(id)arg3;
+- (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id)arg2;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (id)activeMetricsController;
 - (id)contentScrollView;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
+- (bool)performTestWithName:(id)arg1 options:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)reloadData;
 - (void)scrollToTop;
@@ -60,8 +67,9 @@
 - (void)searchWithURL:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setSearchFieldController:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)showError:(id)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

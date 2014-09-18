@@ -7,8 +7,12 @@
 @interface SASportsNewsItem : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSURL * link;
 @property(copy) NSString * summary;
+@property(readonly) Class superclass;
 @property(copy) NSString * title;
 
 + (id)newsItem;

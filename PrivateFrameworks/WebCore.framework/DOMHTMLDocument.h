@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMElement, DOMHTMLCollection, NSString;
+@class DOMHTMLCollection, NSString;
 
 @interface DOMHTMLDocument : DOMDocument {
 }
 
-@property(readonly) DOMElement * activeElement;
 @property(copy) NSString * alinkColor;
 @property(copy) NSString * bgColor;
-@property(readonly) NSString * compatMode;
+@property(copy,readonly) NSString * compatMode;
 @property(copy) NSString * designMode;
 @property(copy) NSString * dir;
 @property(readonly) DOMHTMLCollection * embeds;
@@ -26,7 +25,6 @@
 
 - (id)_createDocumentFragmentWithMarkupString:(id)arg1 baseURLString:(id)arg2;
 - (id)_createDocumentFragmentWithText:(id)arg1;
-- (id)activeElement;
 - (id)alinkColor;
 - (id)bgColor;
 - (void)captureEvents;
@@ -39,7 +37,6 @@
 - (id)dir;
 - (id)embeds;
 - (id)fgColor;
-- (BOOL)hasFocus;
 - (int)height;
 - (id)linkColor;
 - (id)mf_createMessageQuoteElement;

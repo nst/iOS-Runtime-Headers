@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSTimer;
+@class NSString, NSTimer;
 
 @interface SWBasicFakeRunSensorDelegate : NSObject <SWFakeRunSensorDelegate> {
     struct SDARunState { 
@@ -14,11 +14,16 @@
         unsigned int sdaRunTstcCntDelta; 
         unsigned int sdaRunContactTimeMin256X; 
         unsigned int sdaRunContactTimeMax256X; 
-    BOOL _firstPacketDelivered;
     NSTimer *_packetTimer;
     unsigned char _payload[28];
     } _runState;
+    bool_firstPacketDelivered;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_fakeNextPacketForTimer:(id)arg1;
 - (void)_schedulePacketTimerForFakeSensor:(id)arg1;
@@ -29,6 +34,6 @@
 - (void)cancelSearchingForFakeSensor:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)remainingBatteryLifetimeInHoursForFakeSensor:(id)arg1;
+- (unsigned long long)remainingBatteryLifetimeInHoursForFakeSensor:(id)arg1;
 
 @end

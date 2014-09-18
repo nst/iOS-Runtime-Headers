@@ -8,7 +8,6 @@
     FigCaptionLayerPrivate *_priv;
 }
 
-- (void)_renderer:(struct OpaqueFigCFCaptionRenderer { }*)arg1 didChangeRows:(struct { int x1; int x2; })arg2;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)finalize;
@@ -17,5 +16,6 @@
 - (void)processCaptionCommand:(unsigned int)arg1 data:(id)arg2;
 - (void)resetCaptions;
 - (void)setFontName:(const char *)arg1;
+- (void)updateDisplay:(struct OpaqueFigCFCaptionRenderer { }*)arg1;
 
 @end

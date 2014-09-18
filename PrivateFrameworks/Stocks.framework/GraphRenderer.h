@@ -5,8 +5,8 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface GraphRenderer : NSObject {
-    BOOL _cancelled;
     NSObject<OS_dispatch_queue> *_queue;
+    bool_cancelled;
 }
 
 + (void)clearSharedRenderer;

@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSOperationQueue;
+@class NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface CMMotionManagerInternal : NSObject {
     struct Sample { 
@@ -21,6 +21,12 @@
             float y; 
             float z; 
         } acceleration; 
+    struct Sample { 
+        double timestamp; 
+        struct { 
+            float pressure; 
+            float temperature; 
+        } pressureData; 
     struct Sample { 
         double timestamp; 
         struct { 
@@ -80,8 +86,15 @@
             float y; 
             float z; 
         } magneticField; 
+    struct unique_ptr<CLIspDataVisitor, std::__1::default_delete<CLIspDataVisitor> > { 
+        struct __compressed_pair<CLIspDataVisitor *, std::__1::default_delete<CLIspDataVisitor> > { 
+            struct CLIspDataVisitor {} *__first_; 
+        } __ptr_; 
     int (*fPrivateAccelerometerDataCallback)();
     int (*fPrivateDeviceMotionCallback)();
+    int (*fPrivateDeviceMotionCompassAlignmentCallback)();
+    int (*fPrivateDeviceMotionCompassDataCallback)();
+    int (*fPrivateGyroBiasAndVarianceCallback)();
     int (*fPrivateGyroDataCallback)();
     int (*fPrivateNotificationCallback)();
     boolfCompassCalibrationHud;
@@ -93,11 +106,20 @@
     boolfPrivateWantsPowerConservativeDeviceMotion;
     boolfShowCompassCalibrationHudOnResume;
     boolfShowsDeviceMovementDisplay;
+    boolfSidebandSensorFusionEnabled;
+    boolfSidebandSensorFusionLatency;
+    boolfSidebandSensorFusionSnoop;
     struct Dispatcher { int (**x1)(); id x2; } *fAccelerometerDispatcher;
     id fAccelerometerHandler;
     NSOperationQueue *fAccelerometerQueue;
     double fAccelerometerUpdateInterval;
+    struct Dispatcher { int (**x1)(); id x2; } *fAmbientPressureDispatcher;
+    id fAmbientPressureHandler;
+    NSOperationQueue *fAmbientPressureQueue;
+    double fAmbientPressureUpdateInterval;
     int fAttitudeReferenceFrame;
+    struct CLConnectionClient { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; id x2; id x3; id x4; struct CLConnection {} *x5; struct CLNameValuePair { int (**x_6_1_1)(); struct __CFDictionary {} *x_6_1_2; } x6; struct CLNameValuePair { int (**x_7_1_1)(); struct __CFDictionary {} *x_7_1_2; } x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; id x9; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x10; id x11; void*x12; struct map<std::__1::basic_string<char>, void (^)(CLConnectionMessage *), std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, void (^)(CLConnectionMessage *)> > >={__tree<std::__1::__value_type<std::__1::basic_string<char>, void (^)(CLConnectionMessage *)>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, void (^)(CLConnectionMessage *)>, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, void (^)(CLConnectionMessage *)> > >=^{__tree_node<std::__1::__value_type<std::__1::basic_string<char>, void (^)(CLConnectionMessage *)>, void *> {} x13; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, void (^)(CLConnectionMessage *)>, void *> > >={__tree_end_node<std::__1::__tree_node_base<void *> *>=^{__tree_node_base<void *> {} x14; } *fConnection;
+    NSObject<OS_dispatch_queue> *fConnectionQueue;
     struct Dispatcher { int (**x1)(); id x2; } *fDeviceMotionDispatcher;
     id fDeviceMotionHandler;
     NSOperationQueue *fDeviceMotionQueue;
@@ -110,10 +132,12 @@
     NSOperationQueue *fGyroQueue;
     double fGyroUpdateInterval;
     double fLastAccelerometerNotificationTimestamp;
+    double fLastAmbientPressureNotificationTimestamp;
     double fLastDeviceMotionNotificationTimestamp;
     double fLastGyroNotificationTimestamp;
     double fLastMagnetometerNotificationTimestamp;
     } fLatestAccelerometerSample;
+    } fLatestAmbientPressureSample;
     } fLatestDeviceMotionSample;
     } fLatestGyroSample;
     } fLatestMagnetometerSample;
@@ -125,17 +149,26 @@
     struct Dispatcher { int (**x1)(); id x2; } *fPrivateAccelerometerDataDispatcher;
     struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionAlgorithmDidResetDispatcher;
     void *fPrivateDeviceMotionCallbackInfo;
+    void *fPrivateDeviceMotionCompassAlignmentCallbackInfo;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionCompassAlignmentDispatcher;
+    void *fPrivateDeviceMotionCompassDataCallbackInfo;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionCompassDataDispatcher;
     struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionDispatcher;
     struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionSensorStatusDispatcher;
+    void *fPrivateGyroBiasAndVarianceCallbackInfo;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateGyroBiasAndVarianceDispatcher;
     void *fPrivateGyroDataCallbackInfo;
     struct Dispatcher { int (**x1)(); id x2; } *fPrivateGyroDataDispatcher;
     void *fPrivateNotificationCallbackInfo;
     int fSampleLock;
+    } fSidebandVisitor;
+    struct __CFRunLoopTimer { } *fWatchdogTimer;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithInfo:(id)arg1;
+- (id)init;
+- (void)teardownPrivate;
 
 @end

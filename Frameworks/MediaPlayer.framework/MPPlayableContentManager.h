@@ -6,12 +6,12 @@
 
 @interface MPPlayableContentManager : NSObject {
     NSOperationQueue *_artworkUpdateQueue;
-    BOOL _coalescingUpdates;
     NSMutableSet *_contentItemIdentifiersSentToMediaRemote;
     <MPPlayableContentDataSource> *_dataSource;
     <MPPlayableContentDelegate> *_delegate;
     NSMutableSet *_mutatedContentItems;
     NSObject<OS_dispatch_queue> *_serialQueue;
+    bool_coalescingUpdates;
 }
 
 @property <MPPlayableContentDataSource> * dataSource;
@@ -21,13 +21,13 @@
 
 - (void).cxx_destruct;
 - (void)_contentItemChangedNotification:(id)arg1;
-- (BOOL)_contentItemWasSentToMediaRemote:(id)arg1;
+- (bool)_contentItemWasSentToMediaRemote:(id)arg1;
 - (void)_enqueueArtworkUpdate:(id)arg1 forContentItem:(id)arg2 withCompletion:(id)arg3;
 - (void)_handleBeginLoadingCompletedAtIndexPath:(id)arg1 withError:(id)arg2;
 - (void)_handlePlaybackInitializationCompletedWithContext:(id)arg1 error:(id)arg2;
 - (id)_init;
 - (void)_markContentItemsAsSentToMediaRemote:(id)arg1;
-- (BOOL)_onQueueContentItemWasSentToMediaRemote:(id)arg1;
+- (bool)_onQueueContentItemWasSentToMediaRemote:(id)arg1;
 - (void)_pushContentItemsUpdate;
 - (void)_setupMediaRemoteEndpoint;
 - (void)_setupNotifications;

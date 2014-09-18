@@ -5,30 +5,33 @@
 @class NSArray, NSMutableArray;
 
 @interface RCWaveform : NSObject <NSMutableCopying, NSCopying, NSCoding> {
-    unsigned int _decodedVersion;
+    unsigned long long _decodedVersion;
     NSMutableArray *_segments;
 }
 
-@property(readonly) unsigned int averagePowerLevelsRate;
+@property(readonly) unsigned long long averagePowerLevelsRate;
 @property(readonly) NSArray * segments;
 
 + (void)initialize;
-+ (id)waveformPathForSavedRecordingPath:(id)arg1;
-+ (id)waveformWithContentsOfURL:(id)arg1 minimumRequiredVersion:(unsigned int)arg2;
++ (id)waveformURLForAVURL:(id)arg1;
++ (id)waveformWithContentsOfURL:(id)arg1 minimumRequiredVersion:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
-- (unsigned int)averagePowerLevelsRate;
+- (void)_mergeBoundarySegmentsInArray:(id)arg1;
+- (id)_mutableSegmentsByClippingToTimeRange:(struct { double x1; double x2; })arg1;
+- (id)_mutableSegmentsIntersectingTimeRange:(struct { double x1; double x2; })arg1 intersectionRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
+- (unsigned long long)averagePowerLevelsRate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasUniformPowerLevel:(float)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSegments:(id)arg1;
-- (BOOL)isWaveformDataEqualToDataInWaveform:(id)arg1;
+- (bool)isWaveformDataEqualToDataInWaveform:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSegmentsInTimeRange:(struct { double x1; double x2; })arg1;
-- (BOOL)saveContentsToURL:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfSegmentsIntersectingTimeRange:(struct { double x1; double x2; })arg1;
+- (bool)saveContentsToURL:(id)arg1;
 - (id)segments;
-- (id)segmentsFromTime:(double)arg1;
-- (id)segmentsInTimeRange:(struct { double x1; double x2; })arg1;
+- (id)segmentsByClippingToTimeRange:(struct { double x1; double x2; })arg1;
 
 @end

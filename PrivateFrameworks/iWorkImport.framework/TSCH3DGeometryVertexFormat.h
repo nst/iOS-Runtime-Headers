@@ -5,28 +5,28 @@
 @class NSArray, NSMutableArray;
 
 @interface TSCH3DGeometryVertexFormat : NSObject {
-    BOOL mCompiled;
+    boolmCompiled;
     NSMutableArray *mElements;
-    unsigned int mStride;
-    unsigned int mTotalComponents;
-    int mVertexCount;
+    unsigned long long mStride;
+    unsigned long long mTotalComponents;
+    long long mVertexCount;
 }
 
-@property(readonly) BOOL compiled;
+@property(readonly) bool compiled;
 @property(readonly) NSArray * elements;
-@property(readonly) unsigned int stride;
-@property(readonly) unsigned int totalComponents;
+@property(readonly) unsigned long long stride;
+@property(readonly) unsigned long long totalComponents;
 
 - (void)compile;
-- (BOOL)compiled;
+- (bool)compiled;
 - (void)dealloc;
 - (id)description;
-- (id)elementForName:(id)arg1 bufferInfo:(const struct DataBufferInfo { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg2;
+- (id)elementForName:(id)arg1 bufferInfo:(const struct DataBufferInfo { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; }*)arg2;
 - (id)elements;
 - (void)enumerateElementsUsingBlock:(id)arg1;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)stride;
-- (unsigned int)totalComponents;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)stride;
+- (unsigned long long)totalComponents;
 
 @end

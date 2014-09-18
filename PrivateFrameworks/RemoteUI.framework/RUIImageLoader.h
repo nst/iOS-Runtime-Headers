@@ -6,11 +6,11 @@
 
 @interface RUIImageLoader : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
+        long long __sig; 
+        BOOL __opaque[40]; 
     NSLock *_cacheLock;
     NSMutableDictionary *_imageCache;
     NSMutableArray *_imageCacheLRU;
@@ -27,20 +27,21 @@
 
 + (id)sharedImageLoader;
 
+- (void).cxx_destruct;
 - (void)_imageLoadFinished:(id)arg1;
 - (void)_loadImageURL:(id)arg1;
 - (void)_loadingStatusChanged;
-- (BOOL)_locked_URLIsLoading:(id)arg1;
+- (bool)_locked_URLIsLoading:(id)arg1;
 - (void)_locked_imageLoadStarted:(id)arg1;
 - (void)_locked_loadImageForURL:(id)arg1;
 - (void)_mainThread_postLoadingStatusChanged;
 - (void)_postImageLoadedNotification:(id)arg1;
 - (void)_postLoadingStatusChanged;
-- (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(BOOL)arg3;
+- (void)_setImageData:(id)arg1 forURL:(id)arg2 cacheLocked:(bool)arg3;
 - (void)_startLoader;
-- (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(BOOL)arg2;
+- (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(bool)arg2;
 - (id)init;
-- (BOOL)isLoadingImages;
+- (bool)isLoadingImages;
 - (id)notificationCenter;
 
 @end

@@ -9,7 +9,7 @@
     NSMutableArray *_zooms;
 }
 
-@property(readonly) BOOL hasProperties;
+@property(readonly) bool hasProperties;
 @property(retain) VKPStyleProperties * properties;
 @property(retain) NSMutableArray * zooms;
 
@@ -20,16 +20,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasProperties;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasProperties;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)properties;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setZooms:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)zooms;
-- (id)zoomsAtIndex:(unsigned int)arg1;
-- (unsigned int)zoomsCount;
+- (id)zoomsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)zoomsCount;
 
 @end

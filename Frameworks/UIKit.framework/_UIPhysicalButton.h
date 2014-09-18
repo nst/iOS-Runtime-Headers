@@ -2,51 +2,55 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIResponder, UIWindow;
+@class NSArray, NSMutableArray, NSString, UIResponder, UIWindow;
 
 @interface _UIPhysicalButton : NSObject <_UIResponderForwardable> {
-    BOOL _abandonForwardingRecord;
     NSMutableArray *_forwardingRecord;
     NSMutableArray *_gestureRecognizers;
-    int _phase;
+    long long _phase;
     UIResponder *_responder;
     double _timestamp;
-    int _type;
+    long long _type;
     UIWindow *_window;
+    bool_abandonForwardingRecord;
 }
 
-@property(setter=_setForwardablePhase:) int _forwardablePhase;
+@property(setter=_setForwardablePhase:) long long _forwardablePhase;
 @property(setter=_setResponder:,retain) UIResponder * _responder;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSArray * gestureRecognizers;
-@property int phase;
+@property(readonly) unsigned long long hash;
+@property long long phase;
 @property(retain) UIResponder * responder;
+@property(readonly) Class superclass;
 @property double timestamp;
-@property int type;
+@property long long type;
 @property(retain) UIWindow * window;
 
 - (void)_abandonForwardingRecord;
-- (int)_forwardablePhase;
+- (long long)_forwardablePhase;
 - (id)_forwardingRecord;
-- (BOOL)_isAbandoningForwardingRecord;
+- (bool)_isAbandoningForwardingRecord;
 - (id)_mutableForwardingRecord;
 - (void)_removeGestureRecognizer:(id)arg1;
 - (id)_responder;
-- (SEL)_responderSelectorForPhase:(int)arg1;
-- (void)_setForwardablePhase:(int)arg1;
+- (SEL)_responderSelectorForPhase:(long long)arg1;
+- (void)_setForwardablePhase:(long long)arg1;
 - (void)_setResponder:(id)arg1;
-- (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
+- (bool)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
 - (void)dealloc;
 - (id)gestureRecognizers;
-- (int)phase;
+- (long long)phase;
 - (id)responder;
 - (void)setGestureRecognizers:(id)arg1;
-- (void)setPhase:(int)arg1;
+- (void)setPhase:(long long)arg1;
 - (void)setResponder:(id)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setWindow:(id)arg1;
 - (double)timestamp;
-- (int)type;
+- (long long)type;
 - (id)window;
 
 @end

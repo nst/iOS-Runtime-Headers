@@ -2,23 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSLayoutManager, NSTextContainer, NSTextStorage;
+@class NSDictionary, NSLayoutManager, NSString, NSTextContainer, NSTextStorage;
 
 @interface _UITextContainerView : UIView <NSUITextViewCommonMethods> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct { 
         unsigned int textContainerOriginInvalid : 1; 
         unsigned int verticalLayout : 2; 
@@ -33,64 +33,68 @@
     } _textContainerOrigin;
 }
 
-@property(getter=isHorizontallyResizable) BOOL horizontallyResizable;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(getter=isHorizontallyResizable) bool horizontallyResizable;
 @property(readonly) NSLayoutManager * layoutManager;
-@property int layoutOrientation;
+@property long long layoutOrientation;
 @property(copy) NSDictionary * linkTextAttributes;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } markedRange;
-@property struct CGSize { float x1; float x2; } maxSize;
-@property struct CGSize { float x1; float x2; } minSize;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } markedRange;
+@property struct CGSize { double x1; double x2; } maxSize;
+@property struct CGSize { double x1; double x2; } minSize;
+@property(readonly) Class superclass;
 @property NSTextContainer * textContainer;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textContainerInset;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textContainerInset;
 @property(readonly) NSTextStorage * textStorage;
-@property BOOL usesTiledViews;
-@property(getter=isVerticallyResizable) BOOL verticallyResizable;
+@property bool usesTiledViews;
+@property(getter=isVerticallyResizable) bool verticallyResizable;
 
 + (Class)layerClass;
 
 - (void)_didScroll;
-- (BOOL)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withExtension:(BOOL)arg2;
-- (BOOL)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withExtensionFactor:(float)arg2 minimumExtensionDistance:(float)arg3 repetitions:(unsigned int)arg4;
-- (void)_ensureLayoutCompleteToEndOfCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withExtension:(bool)arg2;
+- (bool)_ensureLayoutCompleteForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withExtensionFactor:(double)arg2 minimumExtensionDistance:(double)arg3 repetitions:(unsigned long long)arg4;
+- (void)_ensureLayoutCompleteToEndOfCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)_ensureMinAndMaxSizesConsistentWithBounds;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_extendedGlyphRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 maxGlyphIndex:(unsigned int)arg2 drawingToScreen:(BOOL)arg3;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_extendedGlyphRangeForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 maxGlyphIndex:(unsigned long long)arg2 drawingToScreen:(bool)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidateTextContainerOrigin;
-- (BOOL)isHorizontallyResizable;
-- (BOOL)isVerticallyResizable;
+- (bool)isHorizontallyResizable;
+- (bool)isVerticallyResizable;
 - (id)layoutManager;
-- (int)layoutOrientation;
+- (long long)layoutOrientation;
 - (id)linkTextAttributes;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
-- (struct CGSize { float x1; float x2; })maxSize;
-- (struct CGSize { float x1; float x2; })minSize;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })markedRange;
+- (struct CGSize { double x1; double x2; })maxSize;
+- (struct CGSize { double x1; double x2; })minSize;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setConstrainedFrameSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHorizontallyResizable:(BOOL)arg1;
-- (void)setLayoutOrientation:(int)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHorizontallyResizable:(bool)arg1;
+- (void)setLayoutOrientation:(long long)arg1;
 - (void)setLinkTextAttributes:(id)arg1;
-- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setMinSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
+- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMinSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(bool)arg2;
 - (void)setTextContainer:(id)arg1;
-- (void)setTextContainerInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setUsesTiledViews:(BOOL)arg1;
-- (void)setVerticallyResizable:(BOOL)arg1;
+- (void)setTextContainerInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setUsesTiledViews:(bool)arg1;
+- (void)setVerticallyResizable:(bool)arg1;
 - (void)sizeToFit;
 - (id)textContainer;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textContainerInset;
-- (struct CGPoint { float x1; float x2; })textContainerOrigin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textContainerInset;
+- (struct CGPoint { double x1; double x2; })textContainerOrigin;
 - (id)textStorage;
 - (void)tintColorDidChange;
-- (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
-- (BOOL)usesTiledViews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (void)updateInsertionPointStateAndRestartTimer:(bool)arg1;
+- (bool)usesTiledViews;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 
 @end

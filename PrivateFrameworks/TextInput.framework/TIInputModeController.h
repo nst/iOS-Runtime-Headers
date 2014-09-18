@@ -6,6 +6,7 @@
 
 @interface TIInputModeController : NSObject {
     NSArray *_supportedInputModeIdentifiers;
+    NSArray *_supportedInputModeLanguageAndRegions;
     NSString *currentLanguage;
     NSString *currentLocale;
     NSArray *defaultInputModes;
@@ -18,6 +19,7 @@
 @property(readonly) NSArray * enabledInputModeIdentifiers;
 @property(copy) NSArray * enabledInputModes;
 @property(readonly) NSArray * supportedInputModeIdentifiers;
+@property(readonly) NSArray * supportedInputModeLanguageAndRegions;
 
 + (id)_inputModesForLocale:(id)arg1 language:(id)arg2 modeFetcher:(id)arg3;
 + (id)sharedInputModeController;
@@ -34,5 +36,6 @@
 - (void)setDefaultInputModes:(id)arg1;
 - (void)setEnabledInputModes:(id)arg1;
 - (id)supportedInputModeIdentifiers;
+- (id)supportedInputModeLanguageAndRegions;
 
 @end

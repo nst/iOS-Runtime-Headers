@@ -14,12 +14,12 @@
 @property(readonly) NSString * label;
 @property(readonly) NSString * property;
 
+- (void).cxx_destruct;
 - (id)component;
-- (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithProperty:(id)arg1 component:(id)arg2 label:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (id)property;
 

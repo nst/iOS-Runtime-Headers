@@ -8,7 +8,7 @@
     struct _MIDINetworkConnectionImpl { id x1; } *_impl;
 }
 
-@property(readonly) MIDINetworkHost * host;
+@property(retain,readonly) MIDINetworkHost * host;
 
 + (id)connectionWithHost:(id)arg1;
 

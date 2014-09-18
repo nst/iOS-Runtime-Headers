@@ -2,35 +2,32 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSValue, UIColor, UIImage, UITabBarButtonLabel, UITabBarSelectionIndicatorView, UIView, _UIBadgeView;
+@class NSMutableDictionary, NSValue, UIColor, UIImage, UITabBarButtonLabel, UITabBarSelectionIndicatorView, UIView, UIVisualEffectView, _UIBadgeView;
 
 @interface UITabBarButton : UIControl {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     Class _appearanceGuideClass;
     _UIBadgeView *_badge;
-    BOOL _badgeAnimated;
-    BOOL _barHeight;
     NSMutableDictionary *_buttonTintColorsForState;
-    BOOL _centerAllContents;
     NSMutableDictionary *_contentTintColorsForState;
     UIImage *_customSelectedIndicatorImage;
     } _hitRect;
@@ -39,80 +36,84 @@
     } _infoOffset;
     UITabBarButtonLabel *_label;
     NSValue *_labelOffsetValue;
-    BOOL _selected;
     UITabBarSelectionIndicatorView *_selectedIndicator;
     } _selectedInfoOffset;
-    BOOL _showsHighlightedState;
     UIColor *_unselectedTintColor;
+    UIVisualEffectView *_vibrancyEffectView;
+    bool_badgeAnimated;
+    bool_barHeight;
+    bool_centerAllContents;
+    bool_selected;
+    bool_showsHighlightedState;
 }
 
 @property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
-@property(setter=_setCenterAllContents:) BOOL _centerAllContents;
-@property(getter=_isSelected,setter=_setSelected:) BOOL _selected;
-@property(setter=_setShowsHighlightedState:) BOOL _showsHighlightedState;
+@property(setter=_setCenterAllContents:) bool _centerAllContents;
+@property(getter=_isSelected,setter=_setSelected:) bool _selected;
+@property(setter=_setShowsHighlightedState:) bool _showsHighlightedState;
 @property(retain) NSValue * labelOffsetValue;
 @property(readonly) UITabBarButtonLabel * tabBarButtonLabel;
 @property(getter=_unselectedTintColor,setter=_setUnselectedTintColor:,retain) UIColor * unselectedTintColor;
 
 + (id)_defaultLabelColor;
 
-- (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
-- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1;
+- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (Class)_appearanceGuideClass;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (id)_buttonTintColorForState:(unsigned int)arg1;
-- (BOOL)_centerAllContents;
-- (id)_contentTintColorForState:(unsigned int)arg1;
+- (id)_buttonTintColorForState:(unsigned long long)arg1;
+- (bool)_centerAllContents;
+- (id)_contentTintColorForState:(unsigned long long)arg1;
 - (void)_focusStateDidChange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSelectedIndicator;
-- (BOOL)_isFocusableElement;
-- (BOOL)_isSelected;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForSelectedIndicator;
+- (bool)_isFocusableElement;
+- (bool)_isSelected;
 - (void)_positionBadge;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_responderSelectionRectForWindow:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_responderSelectionRectForWindow:(id)arg1;
 - (id)_scriptingInfo;
 - (id)_selectedIndicatorView;
 - (void)_setAppearanceGuideClass:(Class)arg1;
-- (void)_setBadgeAnimated:(BOOL)arg1;
+- (void)_setBadgeAnimated:(bool)arg1;
 - (void)_setBadgeValue:(id)arg1;
 - (void)_setBarHeight:(float)arg1;
-- (void)_setButtonTintColor:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setCenterAllContents:(BOOL)arg1;
-- (void)_setContentTintColor:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setButtonTintColor:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_setCenterAllContents:(bool)arg1;
+- (void)_setContentTintColor:(id)arg1 forState:(unsigned long long)arg2;
 - (void)_setCustomSelectedIndicatorImage:(id)arg1;
-- (void)_setInfoOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (void)_setLabelHidden:(BOOL)arg1;
-- (void)_setSelected:(BOOL)arg1;
-- (void)_setSelectedInfoOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (void)_setShowsHighlightedState:(BOOL)arg1;
-- (void)_setTabBarHitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
-- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setUnselectedTintColor:(id)arg1 forceLabelToConform:(BOOL)arg2;
+- (void)_setInfoOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)_setLabelHidden:(bool)arg1;
+- (void)_setSelected:(bool)arg1;
+- (void)_setSelectedInfoOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)_setShowsHighlightedState:(bool)arg1;
+- (void)_setTabBarHitRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1;
+- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_setUnselectedTintColor:(id)arg1 forceLabelToConform:(bool)arg2;
 - (void)_setUnselectedTintColor:(id)arg1;
 - (void)_setUpSelectedIndicatorViewIfNeeded;
-- (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
-- (BOOL)_showsHighlightedState;
+- (void)_showSelectedIndicator:(bool)arg1 changeSelection:(bool)arg2;
+- (bool)_showsHighlightedState;
 - (id)_swappableImageView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tabBarHitRect;
-- (struct UIOffset { float x1; float x2; })_titlePositionAdjustment;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_tabBarHitRect;
+- (struct UIOffset { double x1; double x2; })_titlePositionAdjustment;
 - (id)_unselectedTintColor;
 - (void)_updateInfoFrame;
 - (void)_updateSelectedIndicatorView;
 - (void)_updateToMatchCurrentState;
-- (BOOL)_useBarHeight;
+- (bool)_useBarHeight;
 - (void)dealloc;
-- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
+- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
 - (id)labelOffsetValue;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setEnabled:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLabelOffsetValue:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)tabBarButtonLabel;
 
 @end

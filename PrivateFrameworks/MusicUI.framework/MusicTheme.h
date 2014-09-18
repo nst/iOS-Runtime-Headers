@@ -8,19 +8,20 @@
 + (id)addAccessoryImage;
 + (id)addPlaylistImage;
 + (id)disabledAddAccessoryImage;
-+ (id)disabledPlaybackControlColor;
-+ (id)gradientMaskImageWithGradientDistance:(float)arg1;
++ (id)gradientMaskImageWithGradientDistance:(double)arg1;
 + (id)grayColorGeniusPlaylistImage;
++ (id)keepLocalErrorStatusImage;
++ (id)keepLocalImageWithEnabledState:(bool)arg1;
++ (id)keepLocalMixedStatusImage;
 + (id)miniPlayerEmptyAlbumPlaceholderImage;
-+ (id)miniPlayerEmptyStationPlaceholderImage;
 + (id)newAddAccessoryButton;
-+ (id)newBackgroundViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)newBackgroundViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)shuffleImage;
 + (id)tableViewCellSeparatorColor;
-+ (float)tableViewContentLeftInset;
++ (double)tableViewContentLeftInset;
 + (id)tintColor;
 + (id)tintColorGeniusPlaylistImage;
-+ (id)unplayedIndicatorImageWithStyle:(int)arg1 selected:(BOOL)arg2;
-+ (int)unplayedIndicatorStyleForMediaItem:(id)arg1;
++ (id)unplayedIndicatorImageWithStyle:(long long)arg1 selected:(bool)arg2;
++ (long long)unplayedIndicatorStyleForMediaItem:(id)arg1;
 
 @end

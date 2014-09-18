@@ -10,7 +10,7 @@
     MPMediaEntity *_entity;
 }
 
-@property(readonly) NSString * anchor;
+@property(copy,readonly) NSString * anchor;
 @property(readonly) int deletionType;
 @property(readonly) MPMediaEntity * entity;
 

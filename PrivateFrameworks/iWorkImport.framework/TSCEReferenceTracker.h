@@ -2,18 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCEReferenceTrackerDelegate>, NSMutableArray, TSCECalculationEngine;
+@class <TSCEReferenceTrackerDelegate>, NSMutableArray, NSString, TSCECalculationEngine;
 
 @interface TSCEReferenceTracker : TSPObject <TSCEFormulaOwning> {
+    boolmIsRegisteredWithCalculationEngine;
     TSCECalculationEngine *mCalculationEngine;
     <TSCEReferenceTrackerDelegate> *mDelegate;
     NSMutableArray *mFormulaIDsToRewrite;
-    BOOL mIsRegisteredWithCalculationEngine;
-    unsigned int mNextEmptyTrackedReferencesIndex;
-    unsigned int mNumberOfTrackedReferences;
+    unsigned long long mNextEmptyTrackedReferencesIndex;
+    unsigned long long mNumberOfTrackedReferences;
     NSMutableArray *mTrackedReferences;
     struct __CFUUID { } *mUUID;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)allTrackedReferences;
 - (id)allTrackedReferencesIntersectingReference:(struct { int x1; union { struct { struct { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct { struct { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct { struct { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; int x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; } x2; })arg1;
@@ -29,19 +34,21 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 delegate:(id)arg3;
 - (void)invalidateForCalculationEngine:(id)arg1;
-- (unsigned int)numberOfTrackedReferences;
+- (unsigned long long)numberOfTrackedReferences;
 - (id)objectToArchiveInDependencyTracker;
-- (struct { BOOL x1; BOOL x2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
-- (void)registerWithCalculationEngine:(BOOL)arg1;
+- (struct { boolx1; boolx2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
+- (void)registerWithCalculationEngine:(bool)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
 - (void)retainForCalculationEngine:(id)arg1;
 - (void)rewriteForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 rewriteSpec:(id)arg3;
 - (void)saveToArchiver:(id)arg1;
+- (bool)serializeCalculations;
 - (void)setCalculationEngine:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFormulaOwnerID:(struct __CFUUID { }*)arg1;
 - (id)trackedReferenceAtID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1;
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
-- (BOOL)trackedReferencesExistForTable:(struct __CFUUID { }*)arg1;
+- (bool)trackedReferencesExistForTable:(struct __CFUUID { }*)arg1;
 - (void)unregisterFromCalculationEngine;
 - (void)writeResultsForCalculationEngine:(id)arg1;
 

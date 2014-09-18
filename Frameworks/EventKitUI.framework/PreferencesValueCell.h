@@ -4,7 +4,7 @@
 
 @class <EKCellShortener>;
 
-@interface PreferencesValueCell : UITableViewCell {
+@interface PreferencesValueCell : EKUIConstrainedFontsTableViewCell {
     <EKCellShortener> *_shortener;
 }
 

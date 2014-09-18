@@ -13,21 +13,22 @@
 @property(retain) PKPass * pass;
 
 + (id)UTITypes;
++ (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
-+ (BOOL)isPreviewable;
++ (bool)isPreviewable;
 
 - (void)dealloc;
-- (id)generateThumbnail;
-- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)icon;
 - (int)mediaType;
 - (id)pass;
 - (id)passView;
 - (void)setIcon:(id)arg1;
 - (void)setPass:(id)arg1;
-- (BOOL)shouldBeQuickLooked;
-- (BOOL)shouldShowDisclosure;
-- (BOOL)shouldShowViewer;
+- (bool)shouldBeQuickLooked;
+- (bool)shouldShowDisclosure;
+- (bool)shouldShowViewer;
 - (id)subtitle;
 - (id)title;
 

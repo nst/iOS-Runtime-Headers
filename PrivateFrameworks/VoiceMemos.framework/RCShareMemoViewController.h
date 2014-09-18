@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCSavedRecording;
+@class RCCompositionController;
 
 @interface RCShareMemoViewController : UIActivityViewController {
-    RCSavedRecording *_recording;
+    RCCompositionController *_compositionController;
 }
 
-@property(readonly) RCSavedRecording * recording;
+@property(readonly) RCCompositionController * compositionController;
 
++ (id)_newPresentedPrepareAlertControllerForComposition:(id)arg1 dismissHandler:(id)arg2;
++ (id)_newPresentedPrepareFailureAlertControllerForComposition:(id)arg1;
++ (void)prepareToShareComposition:(id)arg1 ignoringInteraction:(bool)arg2 shouldContinuePreparingBlock:(id)arg3 preparedHandler:(id)arg4;
++ (void)presentInViewController:(id)arg1 composition:(id)arg2 ignoringInteraction:(bool)arg3 shouldContinuePreparingBlock:(id)arg4 preparedToPresentBlock:(id)arg5;
 + (id)unsupportedActivityTypes;
 
 - (void).cxx_destruct;
-- (id)initWithRecording:(id)arg1;
-- (id)recording;
-- (unsigned int)supportedInterfaceOrientations;
+- (id)compositionController;
+- (id)initWithCompositionController:(id)arg1;
+- (bool)prefersStatusBarHidden;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

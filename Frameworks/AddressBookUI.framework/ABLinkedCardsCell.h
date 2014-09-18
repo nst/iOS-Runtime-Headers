@@ -2,54 +2,29 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyCellDelegate>, NSDictionary, UIImageView, UILabel;
+@class <ABPropertyCellDelegate>, UILabel;
 
-@interface ABLinkedCardsCell : ABContactCell {
-    UIImageView *_chevron;
+@interface ABLinkedCardsCell : ABLabeledCell {
     <ABPropertyCellDelegate> *_delegate;
-    BOOL _displayConstraintsActive;
-    BOOL _editingConstraintsActive;
     UILabel *_nameLabel;
-    NSDictionary *_nameTextAttributes;
     UILabel *_sourceLabel;
-    NSDictionary *_sourceTextAttributes;
 }
 
-@property(retain) UIImageView * chevron;
 @property <ABPropertyCellDelegate> * delegate;
-@property BOOL displayConstraintsActive;
-@property BOOL editingConstraintsActive;
 @property(readonly) UILabel * nameLabel;
-@property(copy) NSDictionary * nameTextAttributes;
 @property(readonly) UILabel * sourceLabel;
-@property(copy) NSDictionary * sourceTextAttributes;
 
-+ (float)cellHeightForEditing:(BOOL)arg1;
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)wantsChevron;
 
-- (id)chevron;
-- (id)contentViewConstraints;
-- (id)contentViewEditingConstraints;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)displayConstraintsActive;
-- (BOOL)editingConstraintsActive;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)labelView;
 - (id)nameLabel;
-- (id)nameTextAttributes;
 - (void)performDefaultAction;
-- (void)setBackgroundColor:(id)arg1;
 - (void)setCardGroupItem:(id)arg1;
-- (void)setChevron:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayConstraintsActive:(BOOL)arg1;
-- (void)setEditingConstraintsActive:(BOOL)arg1;
-- (void)setNameTextAttributes:(id)arg1;
-- (void)setNeedsUpdateDisplayConstraints;
-- (void)setSourceTextAttributes:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 - (id)sourceLabel;
-- (id)sourceTextAttributes;
-- (void)updateConstraints;
+- (id)valueView;
 
 @end

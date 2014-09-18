@@ -7,16 +7,16 @@
 @interface TSDMediaRep : TSDStyledRep {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    boolmIsZooming;
     CALayer *mFrameMaskLayer;
     TSDFrameRep *mFrameRep;
-    BOOL mIsZooming;
     } mLastPictureFrameLayerRect;
     CAShapeLayer *mMaskLayer;
     CAShapeLayer *mStrokeLayer;
@@ -25,38 +25,33 @@
 
 @property(readonly) TSDMediaInfo * mediaInfo;
 @property(readonly) TSDMediaLayout * mediaLayout;
-@property(readonly) BOOL shouldShowMediaReplaceUI;
+@property(readonly) bool shouldShowMediaReplaceUI;
 
-- (void)addKnobsToArray:(id)arg1;
 - (id)additionalLayersOverLayer;
-- (BOOL)canResetMediaSize;
+- (bool)canResetMediaSize;
 - (id)commandToResetMediaToInsertedSize;
 - (id)commandToResetMediaToRawPixelSize;
-- (id)commandToResetToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)commandToResetToSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)currentReplaceButtonHighlightedImage;
 - (id)currentReplaceButtonImage;
 - (void)dealloc;
 - (void)didEndZooming;
-- (BOOL)i_shouldRenderStroke:(id)arg1;
+- (bool)i_shouldRenderStroke:(id)arg1;
 - (void)i_updateFrameRep;
-- (BOOL)isPlaceholder;
+- (bool)isPlaceholder;
 - (id)mediaInfo;
 - (id)mediaLayout;
-- (id)newTrackerForKnob:(id)arg1;
 - (id)overlayLayers;
 - (void)p_addLayerForReplaceButtonToArray:(id)arg1;
-- (struct CGSize { float x1; float x2; })p_replaceButtonSize;
-- (struct CGPoint { float x1; float x2; })p_scaledPositionOfImageReplaceKnob;
+- (struct CGSize { double x1; double x2; })p_replaceButtonSize;
+- (struct CGPoint { double x1; double x2; })p_scaledPositionOfImageReplaceKnob;
 - (id)p_tapToReplaceLayer;
 - (void)p_updateTapToReplaceLayerPosition;
-- (struct CGPoint { float x1; float x2; })positionOfHyperlinkKnob;
 - (void)processChangedProperty:(int)arg1;
-- (BOOL)replaceButtonContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)shouldAllowReplacementFromDrop;
-- (BOOL)shouldAllowReplacementFromPaste;
-- (BOOL)shouldCreateKnobs;
-- (BOOL)shouldShowMediaReplaceUI;
-- (void)updatePositionsOfKnobs:(id)arg1;
+- (bool)replaceButtonContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)shouldAllowReplacementFromDrop;
+- (bool)shouldAllowReplacementFromPaste;
+- (bool)shouldShowMediaReplaceUI;
 - (id)visibleMediaReplaceButtonLayer;
 - (void)willBeginZooming;
 

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableData, NSURLConnection, NSURLResponse;
+@class NSMutableData, NSString, NSURLConnection, NSURLResponse;
 
 @interface _GEONSURLConnectionWaiter : NSObject <NSURLConnectionDelegate> {
     id _callback;
@@ -17,6 +17,10 @@
 
 @property(copy) id callback;
 @property(retain) NSURLConnection * conn;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)callback;
 - (id)conn;

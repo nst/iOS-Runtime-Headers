@@ -10,16 +10,16 @@
     NSString *_hostname;
     NSString *_password;
     NSArray *_searchSettings;
-    BOOL _useSSL;
     NSString *_username;
+    bool_useSSL;
 }
 
-@property(readonly) NSString * accountDescription;
+@property(retain,readonly) NSString * accountDescription;
 @property(copy) NSString * accountPersistentUUID;
-@property(readonly) NSString * hostname;
+@property(retain,readonly) NSString * hostname;
 @property(retain) NSString * password;
-@property(readonly) NSArray * searchSettings;
-@property(readonly) BOOL useSSL;
+@property(retain,readonly) NSArray * searchSettings;
+@property(readonly) bool useSSL;
 @property(retain) NSString * username;
 
 + (id)localizedPluralForm;
@@ -33,6 +33,7 @@
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)password;
+- (id)payloadDescriptionKeyValueSections;
 - (id)searchSettings;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (void)setPassword:(id)arg1;
@@ -43,7 +44,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)title;
-- (BOOL)useSSL;
+- (bool)useSSL;
 - (id)username;
 
 @end

@@ -11,29 +11,29 @@
 }
 
 @property <NSISVariableDelegate> * delegate;
-@property(readonly) BOOL shouldBeMinimized;
+@property(readonly) bool shouldBeMinimized;
 @property(readonly) int valueRestriction;
 
-+ (id)variableMarkingConstraint:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
-+ (id)variableWithDelegate:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
-+ (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
++ (id)variableMarkingConstraint:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(bool)arg3;
++ (id)variableWithDelegate:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(bool)arg3;
++ (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(bool)arg3;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (float)allowedMagnitudeForIntegralizationAdjustmentOfMarkedConstraint;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (double)allowedMagnitudeForIntegralizationAdjustmentOfMarkedConstraint;
 - (id)delegate;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)markedConstraint;
-- (BOOL)markedConstraintIsEligibleForIntegralizationAdjustment;
+- (bool)markedConstraintIsEligibleForIntegralizationAdjustment;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldBeIntegral;
-- (BOOL)shouldBeMinimized;
-- (BOOL)valueIsUserVisible;
+- (bool)shouldBeIntegral;
+- (bool)shouldBeMinimized;
+- (bool)valueIsUserVisible;
 - (int)valueRestriction;
 
 @end

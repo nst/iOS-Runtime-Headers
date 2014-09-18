@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSMapTable, NSObject<OS_dispatch_queue>;
+@class NSMapTable, NSObject<OS_dispatch_queue>, NSString;
 
 @interface TRDConnectionManager : NSObject <TRTCPConnectionDelegate> {
     NSMapTable *_XPCConnectionToConnectionToPacketEventClasses;
@@ -12,6 +12,11 @@
     NSMapTable *_serviceToConnection;
     NSMapTable *_serviceToConnectionCompletionHandlers;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)sharedManager;
 

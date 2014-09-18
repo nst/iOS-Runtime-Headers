@@ -10,9 +10,9 @@
     ML3Predicate *_thenPredicate;
 }
 
-@property(readonly) ML3Predicate * conditionPredicate;
-@property(readonly) ML3Predicate * elsePredicate;
-@property(readonly) ML3Predicate * thenPredicate;
+@property(copy,readonly) ML3Predicate * conditionPredicate;
+@property(copy,readonly) ML3Predicate * elsePredicate;
+@property(copy,readonly) ML3Predicate * thenPredicate;
 
 + (id)predicateWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
 
@@ -24,11 +24,11 @@
 - (id)description;
 - (id)elsePredicate;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
-- (BOOL)isDynamicForEntityClass:(Class)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDynamicForEntityClass:(Class)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (id)spotlightPredicate;
 - (id)thenPredicate;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSDictionary, NSString;
+@class FigCaptureSourceFormat, NSArray;
 
 @interface AVCaptureDeviceFormatInternal : NSObject {
     struct { 
@@ -17,10 +17,7 @@
         long long epoch; 
     } defaultActiveMaxFrameDuration;
     } defaultActiveMinFrameDuration;
-    NSDictionary *deviceProperties;
-    struct opaqueCMFormatDescription { } *formatDescription;
-    NSDictionary *formatDictionary;
-    NSString *mediaType;
+    FigCaptureSourceFormat *sourceFormat;
     NSArray *videoSupportedFrameRateRanges;
 }
 

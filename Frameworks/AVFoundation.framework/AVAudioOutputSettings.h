@@ -20,6 +20,6 @@
 - (id)audioSettingsDictionary;
 - (id)compatibleMediaTypes;
 - (id)initWithAudioSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
-- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
+- (bool)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 
 @end

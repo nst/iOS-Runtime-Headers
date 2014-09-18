@@ -6,28 +6,27 @@
    See Warning(s) below.
  */
 
-@class GEORequester;
+@class GEORequester, NSString;
 
 @interface GEOVoltaireSearchProvider : GEOSearchProvider <PBRequesterDelegate> {
-    BOOL _cancelled;
     id _finished;
     id _refinement;
     GEORequester *_requester;
-    id _spellingSuggestion;
+    bool_cancelled;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)_searchURLForRequest:(id)arg1;
-+ (int)defaultLocalSearchProviderID;
-+ (int)localSearchProviderID;
-+ (unsigned short)provider;
-+ (id)searchProviderURL;
-+ (void)setUsePersistentConnection:(BOOL)arg1;
 
 - (void)cancel;
 - (void)dealloc;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 spellingSuggestion:(id)arg5 refinement:(id)arg6 error:(id)arg7 isCompletions:(BOOL)arg8;
+- (void)search:(id)arg1 timeout:(long long)arg2 useBackgroundConnection:(bool)arg3 finished:(id)arg4 refinement:(id)arg5 error:(id)arg6 isCompletions:(bool)arg7;
 
 @end

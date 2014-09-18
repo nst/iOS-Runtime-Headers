@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMapTable, SKUIIconDataConsumer, SKUIMissingItemLoader, SKUIProductPageTableHeaderView, SKUIProductPageTableSeparatorView, SKUIResourceLoader, UIImage;
+@class NSArray, NSMapTable, NSString, SKUIMissingItemLoader, SKUIProductPageTableHeaderView, SKUIProductPageTableSeparatorView, SKUIResourceLoader, SKUIStyledImageDataConsumer, UIImage;
 
 @interface SKUIProductPageTableLockupsSection : SKUIProductPageTableSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate> {
     NSMapTable *_artworkRequests;
@@ -11,11 +11,15 @@
     NSArray *_lockups;
     SKUIMissingItemLoader *_missingItemLoader;
     UIImage *_placeholderImage;
-    SKUIIconDataConsumer *_productImageDataConsumer;
+    SKUIStyledImageDataConsumer *_productImageDataConsumer;
     SKUIResourceLoader *_resourceLoader;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SKUIResourceLoader * resourceLoader;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_missingItemLoader;
@@ -24,10 +28,10 @@
 - (void)dealloc;
 - (id)footerViewForTableView:(id)arg1;
 - (id)headerViewForTableView:(id)arg1;
-- (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
+- (double)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
 - (id)initWithLockups:(id)arg1 title:(id)arg2;
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
-- (int)numberOfRowsInSection;
+- (long long)numberOfRowsInSection;
 - (id)resourceLoader;
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)setResourceLoader:(id)arg1;

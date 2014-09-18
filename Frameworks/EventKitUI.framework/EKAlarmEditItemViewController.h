@@ -2,39 +2,59 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarEventAlarmTable, EKAlarm;
+@class CalendarEventAlarmTable, EKCalendar, EKUIAlarm, NSString;
 
 @interface EKAlarmEditItemViewController : EKEditItemViewController <CalendarEventAlarmTableDelegate> {
-    EKAlarm *_alarm;
-    int _alarmIndex;
-    BOOL _allDay;
-    BOOL _immediateAlarmCreation;
-    BOOL _shouldAllowAlarmsTriggeringAfterStartDate;
+    EKUIAlarm *_alarm;
+    unsigned long long _alarmIndex;
+    EKCalendar *_calendar;
     CalendarEventAlarmTable *_table;
+    bool_allDay;
+    bool_eventHasTravelTime;
+    bool_immediateAlarmCreation;
+    bool_shouldAllowAlarmsTriggeringAfterStartDate;
+    bool_shouldShowLeaveNowOption;
 }
 
-@property(retain) EKAlarm * alarm;
-@property int alarmIndex;
-@property BOOL allDay;
-@property int presetIdentifier;
-@property BOOL shouldAllowAlarmsTriggeringAfterStartDate;
+@property(retain) EKUIAlarm * alarm;
+@property unsigned long long alarmIndex;
+@property bool allDay;
+@property(retain) EKCalendar * calendar;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool eventHasTravelTime;
+@property(readonly) unsigned long long hash;
+@property long long presetIdentifier;
+@property bool shouldAllowAlarmsTriggeringAfterStartDate;
+@property bool shouldShowLeaveNowOption;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_storeChanged:(id)arg1;
 - (id)alarm;
-- (int)alarmIndex;
+- (unsigned long long)alarmIndex;
 - (void)alarmTableDidChangeAlarm:(id)arg1;
-- (BOOL)allDay;
-- (BOOL)customSelected;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (bool)allDay;
+- (id)calendar;
+- (bool)customSelected;
+- (bool)eventHasTravelTime;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (void)loadView;
-- (int)presetIdentifier;
+- (long long)presetIdentifier;
 - (void)setAlarm:(id)arg1;
-- (void)setAlarmIndex:(int)arg1;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAlarmIndex:(unsigned long long)arg1;
+- (void)setAllDay:(bool)arg1;
+- (void)setCalendar:(id)arg1;
 - (void)setCustomString:(id)arg1;
-- (void)setPresetIdentifier:(int)arg1;
-- (void)setShouldAllowAlarmsTriggeringAfterStartDate:(BOOL)arg1;
-- (BOOL)shouldAllowAlarmsTriggeringAfterStartDate;
+- (void)setEventHasTravelTime:(bool)arg1;
+- (void)setPresetIdentifier:(long long)arg1;
+- (void)setShouldAllowAlarmsTriggeringAfterStartDate:(bool)arg1;
+- (void)setShouldShowLeaveNowOption:(bool)arg1;
+- (bool)shouldAllowAlarmsTriggeringAfterStartDate;
+- (bool)shouldShowLeaveNowOption;
+- (id)tableHeaderView;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

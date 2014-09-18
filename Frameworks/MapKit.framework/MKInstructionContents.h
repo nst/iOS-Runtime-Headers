@@ -11,31 +11,31 @@
     NSString *_intersectionName;
     int _junctionAngle;
     int _maneuverType;
-    BOOL _toFreeway;
     NSArray *_towardNames;
     int _transportType;
+    bool_toFreeway;
 }
 
 @property(retain) NSArray * branchNames;
 @property(retain) NSString * destinationName;
 @property(retain) NSString * exitNumber;
-@property(readonly) BOOL hasName;
+@property(readonly) bool hasName;
 @property(retain) NSString * intersectionName;
-@property(readonly) BOOL isExitManeuver;
+@property(readonly) bool isExitManeuver;
 @property int junctionAngle;
 @property int maneuverType;
 @property(readonly) NSString * primaryName;
 @property(retain) NSString * roadName;
-@property BOOL toFreeway;
+@property bool toFreeway;
 @property(retain) NSArray * towardNames;
 @property int transportType;
-@property(readonly) BOOL useDestinationName;
-@property(readonly) BOOL useIntersectionName;
-@property(readonly) BOOL useRoadName;
-@property(readonly) BOOL useTowardNames;
+@property(readonly) bool useDestinationName;
+@property(readonly) bool useIntersectionName;
+@property(readonly) bool useRoadName;
+@property(readonly) bool useTowardNames;
 
 + (id)contentsWithManeuverType:(int)arg1 transportType:(int)arg2;
-+ (id)contentsWithRoute:(id)arg1 step:(id)arg2;
++ (id)contentsWithStep:(id)arg1 transportType:(int)arg2;
 + (id)contentsWithSubstep:(id)arg1 transportType:(int)arg2;
 
 - (void).cxx_destruct;
@@ -63,11 +63,11 @@
 - (id)description;
 - (id)destinationName;
 - (id)exitNumber;
-- (BOOL)hasName;
+- (bool)hasName;
 - (id)init;
 - (id)instruction;
 - (id)intersectionName;
-- (BOOL)isExitManeuver;
+- (bool)isExitManeuver;
 - (int)junctionAngle;
 - (int)maneuverType;
 - (id)primaryName;
@@ -80,15 +80,15 @@
 - (void)setManeuverType:(int)arg1;
 - (void)setName:(id)arg1 signposts:(id)arg2;
 - (void)setRoadName:(id)arg1;
-- (void)setToFreeway:(BOOL)arg1;
+- (void)setToFreeway:(bool)arg1;
 - (void)setTowardNames:(id)arg1;
 - (void)setTransportType:(int)arg1;
-- (BOOL)toFreeway;
+- (bool)toFreeway;
 - (id)towardNames;
 - (int)transportType;
-- (BOOL)useDestinationName;
-- (BOOL)useIntersectionName;
-- (BOOL)useRoadName;
-- (BOOL)useTowardNames;
+- (bool)useDestinationName;
+- (bool)useIntersectionName;
+- (bool)useRoadName;
+- (bool)useTowardNames;
 
 @end

@@ -5,11 +5,11 @@
 @interface MFMessageWebProtocol : NSURLProtocol {
 }
 
-+ (BOOL)canInitWithRequest:(id)arg1;
++ (bool)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (void)initialize;
 + (void)registerFragments:(id)arg1 forUUID:(id)arg2;
-+ (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
++ (bool)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 + (void)unregisterFragmentsForUUID:(id)arg1;
 
 - (void)dealloc;

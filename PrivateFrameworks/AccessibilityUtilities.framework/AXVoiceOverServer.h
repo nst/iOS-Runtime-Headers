@@ -7,7 +7,7 @@
 
 + (id)server;
 
-- (BOOL)_connectIfNecessary;
+- (bool)_connectIfNecessary;
 - (id)_serviceName;
 - (void)triggerCommand:(int)arg1;
 

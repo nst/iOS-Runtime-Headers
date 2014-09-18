@@ -6,21 +6,26 @@
    See Warning(s) below.
  */
 
-@class BBServerConnection;
+@class NSString, NSXPCConnection;
 
-@interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol, XPCProxyTarget, BBXPCConnectionDelegate> {
+@interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol> {
     id _activeBehaviorOverridesChangeHandler;
-    BBServerConnection *_connection;
+    NSXPCConnection *_connection;
     id _filteringStateChangeHandler;
 }
 
-- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1;
-- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (id)clientInterface;
+
+- (void)activeBehaviorOverrideTypesChanged:(unsigned long long)arg1 source:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (void)notificationPresentationFilteringChangedToEnabled:(BOOL)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)notificationPresentationFilteringChangedToEnabled:(bool)arg1;
 - (void)setActiveBehaviorOverridesChangeHandler:(id)arg1;
 - (void)setFilteringStateChangeHandler:(id)arg1;
 - (void)shouldPresentNotificationOfType:(int)arg1 fromSender:(id)arg2 withHandler:(id)arg3;

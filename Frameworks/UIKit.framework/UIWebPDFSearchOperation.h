@@ -5,54 +5,54 @@
 @class NSMutableArray, NSObject<UIWebPDFSearchOperationDelegate>, NSString, UIPDFDocument;
 
 @interface UIWebPDFSearchOperation : NSOperation {
-    BOOL _complete;
-    unsigned int _currentPageResultCount;
-    unsigned int _numberOfResultsToSkip;
-    unsigned int _pageIndex;
+    unsigned long long _currentPageResultCount;
+    unsigned long long _numberOfResultsToSkip;
+    unsigned long long _pageIndex;
     NSMutableArray *_results;
-    unsigned int _totalResultsCount;
-    float documentScale;
+    unsigned long long _totalResultsCount;
+    bool_complete;
+    double documentScale;
     UIPDFDocument *documentToSearch;
-    unsigned int resultLimit;
+    unsigned long long resultLimit;
     NSObject<UIWebPDFSearchOperationDelegate> *searchDelegate;
     NSString *searchString;
-    unsigned int startingPageIndex;
+    unsigned long long startingPageIndex;
 }
 
-@property(readonly) unsigned int currentPageIndex;
-@property(readonly) unsigned int currentPageResultCount;
-@property float documentScale;
+@property(readonly) unsigned long long currentPageIndex;
+@property(readonly) unsigned long long currentPageResultCount;
+@property double documentScale;
 @property(retain) UIPDFDocument * documentToSearch;
-@property unsigned int numberOfResultsToSkip;
-@property unsigned int resultLimit;
+@property unsigned long long numberOfResultsToSkip;
+@property unsigned long long resultLimit;
 @property NSObject<UIWebPDFSearchOperationDelegate> * searchDelegate;
 @property(retain) NSString * searchString;
-@property unsigned int startingPageIndex;
+@property unsigned long long startingPageIndex;
 
-- (struct __CTFont { }*)_fontWithPDFFont:(struct CGPDFFont { }*)arg1 size:(float)arg2;
-- (BOOL)_hitSearchLimit;
+- (struct __CTFont { }*)_fontWithPDFFont:(struct CGPDFFont { }*)arg1 size:(double)arg2;
+- (bool)_hitSearchLimit;
 - (void)_notifyDelegateOfStatus;
 - (void)_search;
 - (void)cancel;
-- (unsigned int)currentPageIndex;
-- (unsigned int)currentPageResultCount;
+- (unsigned long long)currentPageIndex;
+- (unsigned long long)currentPageResultCount;
 - (void)dealloc;
-- (float)documentScale;
+- (double)documentScale;
 - (id)documentToSearch;
 - (id)init;
 - (void)main;
-- (unsigned int)numberOfResultsToSkip;
-- (unsigned int)resultLimit;
+- (unsigned long long)numberOfResultsToSkip;
+- (unsigned long long)resultLimit;
 - (id)sanitizedAttributedStringForAttributedString:(id)arg1;
 - (id)searchDelegate;
 - (id)searchString;
-- (void)setDocumentScale:(float)arg1;
+- (void)setDocumentScale:(double)arg1;
 - (void)setDocumentToSearch:(id)arg1;
-- (void)setNumberOfResultsToSkip:(unsigned int)arg1;
-- (void)setResultLimit:(unsigned int)arg1;
+- (void)setNumberOfResultsToSkip:(unsigned long long)arg1;
+- (void)setResultLimit:(unsigned long long)arg1;
 - (void)setSearchDelegate:(id)arg1;
 - (void)setSearchString:(id)arg1;
-- (void)setStartingPageIndex:(unsigned int)arg1;
-- (unsigned int)startingPageIndex;
+- (void)setStartingPageIndex:(unsigned long long)arg1;
+- (unsigned long long)startingPageIndex;
 
 @end

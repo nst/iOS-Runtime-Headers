@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLRenderState, VGLTexture, VGLTextureCanvas;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
 
 @interface VKHybridRoadMapModel : VKRoadMapModel {
-    VGLTextureCanvas *_offscreenCanvas;
-    VGLTexture *_offscreenTexture;
-    VGLRenderState *_renderState;
+    struct unique_ptr<md::OffscreenQueue, std::__1::default_delete<md::OffscreenQueue> > { 
+        struct __compressed_pair<md::OffscreenQueue *, std::__1::default_delete<md::OffscreenQueue> > { 
+            struct OffscreenQueue {} *__first_; 
+        } __ptr_; 
+    } _offscreenQueue;
     float _roadAlpha;
 }
 
-- (void)_cleanupOffscreen;
-- (void)_createOffscreenWithContext:(id)arg1;
-- (void)_offscreenDrawScene:(id)arg1 withContext:(id)arg2;
-- (void)_onscreenDrawScene:(id)arg1 withContext:(id)arg2;
-- (void)dealloc;
-- (void)drawScene:(id)arg1 withContext:(id)arg2 pass:(unsigned int)arg3;
-- (id)init;
-- (void)layoutScene:(id)arg1 withContext:(id)arg2;
-- (unsigned int)supportedRenderPasses;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (void)gglLayoutSceneIfNeeded:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3 dispatchQueue:(id)arg4;
+- (void)lockCommandBuffers:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
+- (void)unLockCommandBuffers:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
 
 @end

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableSet, NSXPCListener;
+@class NSMutableSet, NSString, NSXPCListener;
 
 @interface PKUsageNotificationClient : NSObject <NSXPCListenerDelegate, PKUsageNotificationClientInterface> {
     NSMutableSet *_connections;
@@ -14,10 +14,15 @@
     NSXPCListener *_listener;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)passUsedFromSource:(int)arg1 withTypeIdentifier:(id)arg2 info:(id)arg3;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)passUsedFromSource:(long long)arg1 withTypeIdentifier:(id)arg2 info:(id)arg3;
 - (void)setPassUsageHandler:(id)arg1;
 
 @end

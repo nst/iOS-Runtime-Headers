@@ -5,44 +5,44 @@
 @class NSMutableArray, UIColor, UIImageView, UIView, _MKCalloutBackgroundMaskView;
 
 @interface MKCalloutBackgroundView : UIPopoverBackgroundView {
-    unsigned int _arrowDirection;
-    float _arrowOffset;
+    unsigned long long _arrowDirection;
+    double _arrowOffset;
     UIView *_baseBorderView;
     UIView *_containerView;
     UIImageView *_currentArrowShadow;
     _MKCalloutBackgroundMaskView *_mainMaskView;
-    int _mapDisplayStyle;
+    unsigned long long _mapDisplayStyle;
     NSMutableArray *_vendedMaskViews;
 }
 
 @property(readonly) UIColor * calloutBackgroundColor;
-@property int mapDisplayStyle;
+@property unsigned long long mapDisplayStyle;
 
-+ (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
-+ (float)arrowBase;
-+ (float)arrowHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
++ (double)_contentViewCornerRadiusForArrowDirection:(unsigned long long)arg1;
++ (double)arrowBase;
++ (double)arrowHeight;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
 + (void)setBeingCreatedForSmallCalloutController:(id)arg1;
-+ (BOOL)wantsDefaultContentAppearance;
++ (bool)wantsDefaultContentAppearance;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentViewInsets;
 - (void)_extendLeftRightArrow;
 - (void)_hideArrow;
-- (void)_layoutMaskView:(id)arg1 withArrowShadow:(BOOL)arg2;
+- (void)_layoutMaskView:(id)arg1 withArrowShadow:(bool)arg2;
 - (void)_retractUpDownArrow;
 - (void)_setupViews;
 - (id)_shadowPath;
 - (void)_showArrow;
-- (unsigned int)arrowDirection;
-- (float)arrowOffset;
+- (unsigned long long)arrowDirection;
+- (double)arrowOffset;
 - (id)calloutBackgroundColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)mapDisplayStyle;
+- (unsigned long long)mapDisplayStyle;
 - (id)newMaskLayer;
-- (void)setArrowDirection:(unsigned int)arg1;
-- (void)setArrowOffset:(float)arg1;
-- (void)setMapDisplayStyle:(int)arg1;
+- (void)setArrowDirection:(unsigned long long)arg1;
+- (void)setArrowOffset:(double)arg1;
+- (void)setMapDisplayStyle:(unsigned long long)arg1;
 
 @end

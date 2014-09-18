@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, TSCECalculationEngine, TSTTableFilterSet, TSTTableInfo;
+@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, TSCECalculationEngine, TSTTableFilterSet, TSTTableInfo;
 
 @interface TSTHiddenStateFormulaOwner : TSPObject <TSCEFormulaOwning> {
     struct vector<std::__1::pair<unsigned short, bool>, std::__1::allocator<std::__1::pair<unsigned short, bool> > > { 
@@ -23,10 +23,10 @@
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
             unsigned short *__first_; 
         } __end_cap_; 
+    boolmNeedsToUpdateFilterSetForImport;
     TSCECalculationEngine *mCalculationEngine;
     } mCellRangesToInvalidate;
     } mHiddenRowIndices;
-    BOOL mNeedsToUpdateFilterSetForImport;
     struct __CFUUID { } *mOwnerID;
     } mPendingComputedShowRowResults;
     NSObject<OS_dispatch_queue> *mPendingComputedShowRowResultsQueue;
@@ -34,6 +34,11 @@
     TSTTableInfo *mTableInfo;
     NSMutableArray *mThresholdCellValues;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -52,12 +57,13 @@
 - (void)p_registerAllFormulaToCalculationEngine;
 - (void)p_removeAllFormulaFromCalculationEngine;
 - (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeReferenceFromIndex:(unsigned short)arg1 toIndex:(unsigned short)arg2;
-- (struct { BOOL x1; BOOL x2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
+- (struct { boolx1; boolx2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
 - (int)registerWithCalculationEngineChoosingUniqueID:(id)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
 - (void)retainForCalculationEngine:(id)arg1;
 - (void)rewriteForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 rewriteSpec:(id)arg3;
 - (void)saveToArchiver:(id)arg1;
+- (bool)serializeCalculations;
 - (void)setOwnerID:(struct __CFUUID { }*)arg1;
 - (void)setTableInfo:(id)arg1;
 - (id)tableInfo;

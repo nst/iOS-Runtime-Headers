@@ -10,13 +10,13 @@
 - (id)animationDeliveryStylesForFilter:(id)arg1;
 - (id)animationFiltersWithDefaultFilters:(id)arg1;
 - (id)genericToSpecificPropertyMap;
-- (BOOL)isMultiData;
+- (bool)isMultiData;
 - (id)p_genericToSpecificPropertyMap;
 - (Class)repClass;
-- (BOOL)supportsConnectingLines;
-- (BOOL)supportsErrorBars;
-- (BOOL)supportsGroupedShadows;
-- (BOOL)supportsSeriesShadow;
-- (BOOL)supportsTrendLines;
+- (bool)supportsConnectingLines;
+- (bool)supportsErrorBars;
+- (bool)supportsGroupedShadows;
+- (bool)supportsSeriesShadow;
+- (bool)supportsTrendLines;
 
 @end

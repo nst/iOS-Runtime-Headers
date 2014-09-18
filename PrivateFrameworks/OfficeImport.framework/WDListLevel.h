@@ -2,58 +2,64 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableString, WDCharacterProperties, WDOfficeArt, WDParagraphProperties;
+@class NSMutableString, WDCharacterProperties, WDDocument, WDOfficeArt, WDParagraphProperties;
 
 @interface WDListLevel : NSObject {
+    boolmLegacy;
+    boolmLegal;
+    boolmRestartNumbering;
     WDCharacterProperties *mCharacterProperties;
+    WDDocument *mDocument;
     WDOfficeArt *mImage;
     int mJustification;
-    BOOL mLegacy;
-    long mLegacyIndent;
-    long mLegacySpace;
-    BOOL mLegal;
+    long long mLegacyIndent;
+    long long mLegacySpace;
     int mNumberFormat;
     WDParagraphProperties *mParagraphProperties;
-    BOOL mRestartNumbering;
-    long mStartNumber;
+    long long mRestartLevel;
+    long long mStartNumber;
     int mSuffix;
     NSMutableString *mText;
 }
 
 - (id)characterProperties;
 - (void)dealloc;
+- (id)description;
 - (id)image;
-- (BOOL)imageBullet;
-- (BOOL)imageBulletOverridden;
+- (bool)imageBullet;
+- (bool)imageBulletOverridden;
 - (id)initWithDocument:(id)arg1;
 - (int)justification;
-- (BOOL)justificationOverridden;
-- (BOOL)legacy;
-- (long)legacyIndent;
-- (long)legacySpace;
-- (BOOL)legal;
-- (BOOL)legalOverridden;
+- (bool)justificationOverridden;
+- (bool)legacy;
+- (long long)legacyIndent;
+- (long long)legacySpace;
+- (bool)legal;
+- (bool)legalOverridden;
 - (int)numberFormat;
-- (BOOL)numberFormatOverridden;
+- (bool)numberFormatOverridden;
 - (id)paragraphProperties;
-- (BOOL)restartNumbering;
-- (BOOL)restartNumberingOverridden;
+- (long long)restartLevel;
+- (bool)restartLevelOverridden;
+- (bool)restartNumbering;
+- (bool)restartNumberingOverridden;
 - (void)setImage:(id)arg1;
 - (void)setJustification:(int)arg1;
-- (void)setLegacy:(BOOL)arg1;
-- (void)setLegacyIndent:(long)arg1;
-- (void)setLegacySpace:(long)arg1;
-- (void)setLegal:(BOOL)arg1;
+- (void)setLegacy:(bool)arg1;
+- (void)setLegacyIndent:(long long)arg1;
+- (void)setLegacySpace:(long long)arg1;
+- (void)setLegal:(bool)arg1;
 - (void)setNumberFormat:(int)arg1;
-- (void)setRestartNumbering:(BOOL)arg1;
-- (void)setStartNumber:(long)arg1;
+- (void)setRestartLevel:(long long)arg1;
+- (void)setRestartNumbering:(bool)arg1;
+- (void)setStartNumber:(long long)arg1;
 - (void)setSuffix:(int)arg1;
 - (void)setText:(id)arg1;
-- (long)startNumber;
-- (BOOL)startNumberOverridden;
+- (long long)startNumber;
+- (bool)startNumberOverridden;
 - (int)suffix;
-- (BOOL)suffixOverridden;
+- (bool)suffixOverridden;
 - (id)text;
-- (BOOL)textOverridden;
+- (bool)textOverridden;
 
 @end

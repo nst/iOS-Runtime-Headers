@@ -11,24 +11,32 @@
     NSArray *_preferredMediaCharacteristics;
     NSArray *_preferredMediaSubTypes;
     NSArray *_requiredMediaCharacteristics;
+    bool_precludeMultichannelAudio;
+    bool_preferMultichannelAudio;
 }
 
+@property bool precludeMultichannelAudio;
 @property(retain) NSArray * precludedMediaCharacteristics;
 @property(retain) NSArray * precludedMediaSubTypes;
+@property bool preferMultichannelAudio;
 @property(retain) NSArray * preferredLanguages;
 @property(retain) NSArray * preferredMediaCharacteristics;
 @property(retain) NSArray * preferredMediaSubTypes;
 @property(retain) NSArray * requiredMediaCharacteristics;
 
 - (void)dealloc;
+- (bool)precludeMultichannelAudio;
 - (id)precludedMediaCharacteristics;
 - (id)precludedMediaSubTypes;
+- (bool)preferMultichannelAudio;
 - (id)preferredLanguages;
 - (id)preferredMediaCharacteristics;
 - (id)preferredMediaSubTypes;
 - (id)requiredMediaCharacteristics;
+- (void)setPrecludeMultichannelAudio:(bool)arg1;
 - (void)setPrecludedMediaCharacteristics:(id)arg1;
 - (void)setPrecludedMediaSubTypes:(id)arg1;
+- (void)setPreferMultichannelAudio:(bool)arg1;
 - (void)setPreferredLanguages:(id)arg1;
 - (void)setPreferredMediaCharacteristics:(id)arg1;
 - (void)setPreferredMediaSubTypes:(id)arg1;

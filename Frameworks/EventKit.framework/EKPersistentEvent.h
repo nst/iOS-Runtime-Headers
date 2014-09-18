@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSArray, NSDate, NSString, NSURL;
+@class NSArray, NSDate, NSNumber, NSString, NSURL;
 
 @interface EKPersistentEvent : EKPersistentCalendarItem {
     struct { 
@@ -17,27 +17,29 @@
 
 @property(copy) NSURL * URL;
 @property(copy) NSArray * actions;
-@property(readonly) BOOL allowsParticipationStatusModifications;
+@property(readonly) bool allowsParticipationStatusModifications;
 @property int availability;
 @property(readonly) int birthdayID;
 @property(readonly) double duration;
 @property(readonly) struct { int x1; int x2; int x3; int x4; int x5; double x6; } durationUnits;
-@property(getter=isEditable,readonly) BOOL editable;
+@property(getter=isEditable,readonly) bool editable;
 @property(copy) NSDate * endDate;
 @property(readonly) NSString * eventIdentifier;
-@property(getter=isFloating,readonly) BOOL floating;
-@property(getter=isInvitation,readonly) BOOL invitation;
+@property(getter=isFloating,readonly) bool floating;
+@property(getter=isInvitation,readonly) bool invitation;
 @property(readonly) unsigned int invitationChangedProperties;
-@property unsigned int invitationStatus;
-@property(getter=isMeeting,readonly) BOOL meeting;
+@property unsigned long long invitationStatus;
+@property(getter=isMeeting,readonly) bool meeting;
 @property unsigned int modifiedProperties;
-@property BOOL needsOccurrenceCacheUpdate;
+@property bool needsOccurrenceCacheUpdate;
 @property(copy) NSDate * originalStartDate;
 @property int participationStatus;
 @property(readonly) int pendingParticipationStatus;
-@property unsigned int privacyLevel;
+@property long long privacyLevel;
 @property(copy) NSString * responseComment;
 @property int status;
+@property long long travelAdvisoryBehavior;
+@property(copy) NSNumber * travelTime;
 
 + (id)defaultPropertiesToLoad;
 + (id)generateUniqueIDWithEvent:(id)arg1 originalEvent:(id)arg2 calendar:(id)arg3;
@@ -45,22 +47,22 @@
 
 - (id)URL;
 - (void)_adjustForNewCalendar;
-- (BOOL)_areDurationUnitsCached;
-- (BOOL)_hasExternalIDOrDeliverySource;
+- (bool)_areDurationUnitsCached;
+- (bool)_hasExternalIDOrDeliverySource;
 - (void)_invalidateCachedDurationUnits;
 - (id)actions;
 - (void)addAction:(id)arg1;
-- (BOOL)allowsParticipationStatusModifications;
+- (bool)allowsParticipationStatusModifications;
 - (int)availability;
 - (int)birthdayID;
-- (int)birthdayId;
+- (long long)birthdayId;
 - (void)clearExceptionDatesAndUpdateDetachedOriginalDates;
 - (id)committedStartDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)deleteFromOccurrenceDateOnward:(id)arg1;
 - (id)description;
-- (id)detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
+- (id)detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(bool)arg3;
 - (double)duration;
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })durationUnits;
 - (id)endDate;
@@ -68,39 +70,43 @@
 - (id)eventIdentifier;
 - (id)exportToICS;
 - (void)filterExceptionDates;
-- (BOOL)hasValidEventAction;
+- (bool)hasValidEventAction;
 - (id)initCommon;
 - (unsigned int)invitationChangedProperties;
-- (unsigned int)invitationStatus;
-- (BOOL)isEditable;
-- (BOOL)isFloating;
-- (BOOL)isInvitation;
-- (BOOL)isMeeting;
+- (unsigned long long)invitationStatus;
+- (bool)isEditable;
+- (bool)isFloating;
+- (bool)isInvitation;
+- (bool)isMeeting;
 - (unsigned int)modifiedProperties;
-- (BOOL)needsOccurrenceCacheUpdate;
+- (bool)needsOccurrenceCacheUpdate;
 - (id)organizer;
 - (id)originalStartDate;
 - (int)participationStatus;
 - (int)pendingParticipationStatus;
 - (void)primitiveValueChangedForKey:(id)arg1;
-- (unsigned int)privacyLevel;
-- (BOOL)refresh;
+- (long long)privacyLevel;
+- (bool)refresh;
 - (void)removeAction:(id)arg1;
 - (id)responseComment;
-- (BOOL)responseMustApplyToAll;
+- (bool)responseMustApplyToAll;
 - (void)setActions:(id)arg1;
 - (void)setAvailability:(int)arg1;
 - (void)setEndDate:(id)arg1;
-- (void)setInvitationStatus:(unsigned int)arg1;
+- (void)setInvitationStatus:(unsigned long long)arg1;
 - (void)setModifiedProperties:(unsigned int)arg1;
-- (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
+- (void)setNeedsOccurrenceCacheUpdate:(bool)arg1;
 - (void)setOriginalStartDate:(id)arg1;
 - (void)setParticipationStatus:(int)arg1;
-- (void)setPrivacyLevel:(unsigned int)arg1;
+- (void)setPrivacyLevel:(long long)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStatus:(int)arg1;
+- (void)setTravelAdvisoryBehavior:(long long)arg1;
+- (void)setTravelTime:(id)arg1;
 - (void)setURL:(id)arg1;
 - (int)status;
-- (BOOL)validate:(id*)arg1;
+- (long long)travelAdvisoryBehavior;
+- (id)travelTime;
+- (bool)validate:(id*)arg1;
 
 @end

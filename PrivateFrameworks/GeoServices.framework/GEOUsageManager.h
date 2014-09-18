@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GEORequester, GEOUsageCollectionRequest, NSLock, NSMapTable, NSTimer;
+@class GEORequester, GEOUsageCollectionRequest, NSLock, NSMapTable, NSMutableDictionary, NSString, NSTimer;
 
 @interface GEOUsageManager : NSObject <PBRequesterDelegate> {
     id _backgroundTaskEnd;
@@ -15,13 +15,18 @@
     NSLock *_requestLock;
     GEORequester *_requester;
     NSMapTable *_requesterToBackgroundTask;
+    NSMutableDictionary *_stateData;
+    NSMutableDictionary *_stateTimingData;
     NSTimer *_updateTimer;
 }
 
 @property(copy) id backgroundTaskEnd;
 @property(copy) id backgroundTaskStart;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (void)setUsePersistentConnection:(BOOL)arg1;
 + (id)sharedManager;
 
 - (void)_applicationDeactivating;
@@ -37,11 +42,20 @@
 - (id)backgroundTaskEnd;
 - (id)backgroundTaskStart;
 - (void)captureDirectionsFeedbackCollection:(id)arg1;
+- (void)captureLeaveNowFeedbackCollection:(id)arg1;
+- (void)captureMapsLaunchURLScheme:(id)arg1 sourceApplication:(id)arg2;
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
+- (void)captureRequestsForPlaceDataCache:(id)arg1 appIdentifier:(id)arg2;
+- (void)captureStateTimingFeedbackCollection:(id)arg1;
+- (void)captureStateTransition:(id)arg1 force:(bool)arg2;
 - (void)captureSuggestionsFeedbackCollection:(id)arg1;
+- (void)captureTrafficRerouteFeedbackCollection:(id)arg1;
+- (void)captureTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
+- (void)captureTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;
+- (void)clearStateTimingData;
 - (void)dealloc;
 - (id)init;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
@@ -49,6 +63,6 @@
 - (void)requesterDidFinish:(id)arg1;
 - (void)setBackgroundTaskEnd:(id)arg1;
 - (void)setBackgroundTaskStart:(id)arg1;
-- (BOOL)shouldIgnoreCollectionForCountry;
+- (bool)shouldIgnoreCollectionForCountry;
 
 @end

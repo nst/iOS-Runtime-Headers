@@ -20,11 +20,13 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 pathSource:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct MaskArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct PathSourceArchive {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
+- (id)objectForProperty:(int)arg1;
 - (id)pathSource;
 - (Class)repClass;
 - (void)saveToArchive:(struct MaskArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct PathSourceArchive {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;

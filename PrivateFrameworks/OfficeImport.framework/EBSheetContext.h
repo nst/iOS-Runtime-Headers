@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EBReaderSheetState;
+@class EBReaderSheetState, NSString;
 
 @interface EBSheetContext : NSObject <OCDDelayedNodeContext> {
     unsigned int mSheetIndex;
     EBReaderSheetState *mSheetState;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithSheetIndex:(unsigned int)arg1 state:(id)arg2;

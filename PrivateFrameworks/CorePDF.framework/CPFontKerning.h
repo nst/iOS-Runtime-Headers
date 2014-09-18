@@ -3,13 +3,13 @@
  */
 
 @interface CPFontKerning : NSObject <CPDisposable> {
+    booloverride;
+    boolvalid;
     const char *dataPtr;
     struct __CFDictionary { } *kernDictionary;
     struct __CFData { } *kernTable;
     unsigned int kernTableLength;
     unsigned int offset;
-    BOOL override;
-    BOOL valid;
 }
 
 - (struct __CFDictionary { }*)createKernTable;

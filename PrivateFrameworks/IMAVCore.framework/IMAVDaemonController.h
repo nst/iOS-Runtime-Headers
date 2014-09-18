@@ -5,10 +5,8 @@
 @class IMAVDaemonListener, IMLocalObject, IMRemoteObject<IMAVDaemonProtocol>, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSProtocolChecker, NSString;
 
 @interface IMAVDaemonController : NSObject {
-    BOOL _acquiringDaemonConnection;
     NSLock *_connectionLock;
     IMAVDaemonListener *_daemonListener;
-    BOOL _hasCheckedForDaemon;
     NSString *_listenerID;
     NSObject<OS_dispatch_queue> *_listenerLockQueue;
     NSMutableArray *_listeners;
@@ -19,6 +17,8 @@
     NSObject<OS_dispatch_queue> *_remoteMessageQueue;
     IMRemoteObject<IMAVDaemonProtocol> *_remoteObject;
     struct __CFRunLoopSource { } *_runLoopSource;
+    bool_acquiringDaemonConnection;
+    bool_hasCheckedForDaemon;
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * _remoteMessageQueue;
@@ -26,32 +26,32 @@
 
 + (id)sharedInstance;
 
-- (BOOL)__isLocalObjectValidOnQueue:(id)arg1;
-- (BOOL)__isRemoteObjectValidOnQueue:(id)arg1;
+- (bool)__isLocalObjectValidOnQueue:(id)arg1;
+- (bool)__isRemoteObjectValidOnQueue:(id)arg1;
 - (void)_cleanUpConnection;
 - (void)_connectToDaemon;
 - (void)_disconnectFromDaemon;
 - (void)_listenerSetUpdated;
 - (void)_localObjectCleanup;
 - (void)_localObjectDiedNotification:(id)arg1;
-- (BOOL)_makeConnectionWithCompletionBlock:(id)arg1;
+- (bool)_makeConnectionWithCompletionBlock:(id)arg1;
 - (void)_noteSetupComplete;
 - (id)_remoteMessageQueue;
 - (void)_remoteObjectCleanup;
 - (void)_remoteObjectDiedNotification:(id)arg1;
-- (BOOL)addListenerID:(id)arg1;
+- (bool)addListenerID:(id)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
-- (BOOL)hasListenerForID:(id)arg1;
+- (bool)hasListenerForID:(id)arg1;
 - (id)init;
-- (BOOL)isConnected;
-- (BOOL)isConnecting;
+- (bool)isConnected;
+- (bool)isConnecting;
 - (id)listener;
 - (void)localObjectDiedNotification:(id)arg1;
-- (BOOL)localObjectExists;
+- (bool)localObjectExists;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)remoteObjectDiedNotification:(id)arg1;
-- (BOOL)remoteObjectExists;
-- (BOOL)removeListenerID:(id)arg1;
+- (bool)remoteObjectExists;
+- (bool)removeListenerID:(id)arg1;
 
 @end

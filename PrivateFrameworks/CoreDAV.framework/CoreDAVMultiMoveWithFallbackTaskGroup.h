@@ -14,7 +14,7 @@
     NSDictionary *_sourceEntityDataPayloads;
     NSDictionary *_sourceEntityETags;
     NSSet *_sourceURLs;
-    BOOL _useFallback;
+    bool_useFallback;
 }
 
 @property(readonly) NSMutableDictionary * destinationEntityETags;
@@ -26,7 +26,7 @@
 @property(readonly) NSDictionary * sourceEntityDataPayloads;
 @property(readonly) NSDictionary * sourceEntityETags;
 @property(readonly) NSSet * sourceURLs;
-@property(readonly) BOOL useFallback;
+@property(readonly) bool useFallback;
 
 - (void)_completedMoveTask:(id)arg1 sourceURL:(id)arg2;
 - (void)_completedPutTask:(id)arg1 sourceURL:(id)arg2;
@@ -39,7 +39,7 @@
 - (id)destinationURLs;
 - (id)filenameFromURL:(id)arg1;
 - (id)fullDestinationURLFromSourceURL:(id)arg1;
-- (id)initWithSourceURLs:(id)arg1 destinationURL:(id)arg2 overwrite:(BOOL)arg3 useFallback:(BOOL)arg4 sourceEntityDataPayloads:(id)arg5 sourceEntityDataContentTypes:(id)arg6 sourceEntityETags:(id)arg7 accountInfoProvider:(id)arg8 taskManager:(id)arg9;
+- (id)initWithSourceURLs:(id)arg1 destinationURL:(id)arg2 overwrite:(bool)arg3 useFallback:(bool)arg4 sourceEntityDataPayloads:(id)arg5 sourceEntityDataContentTypes:(id)arg6 sourceEntityETags:(id)arg7 accountInfoProvider:(id)arg8 taskManager:(id)arg9;
 - (id)outstandingSourceURLsToMove;
 - (int)overwrite;
 - (void)processOutstandingTasks;
@@ -49,6 +49,6 @@
 - (id)sourceEntityETags;
 - (id)sourceURLs;
 - (void)startTaskGroup;
-- (BOOL)useFallback;
+- (bool)useFallback;
 
 @end

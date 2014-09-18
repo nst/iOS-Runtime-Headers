@@ -7,14 +7,14 @@
 @interface DOMHTMLStyleElement : DOMHTMLElement {
 }
 
-@property BOOL disabled;
+@property bool disabled;
 @property(copy) NSString * media;
 @property(readonly) DOMStyleSheet * sheet;
 @property(copy) NSString * type;
 
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)media;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setMedia:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)sheet;

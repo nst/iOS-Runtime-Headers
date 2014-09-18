@@ -6,7 +6,8 @@
 }
 
 @property int downloadFeeAgreementStatus;
-@property BOOL enforceWifiOnlyOverride;
+@property bool enforceWifiOnlyOverride;
+@property int termsAndConditionsAgreementStatus;
 
 - (void)applyDownloadPolicy:(id)arg1;
 - (id)initWithMetadata:(id)arg1;

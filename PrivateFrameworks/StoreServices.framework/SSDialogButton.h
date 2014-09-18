@@ -12,7 +12,7 @@
 @property(readonly) NSString * URLTarget;
 @property(readonly) id actionParameter;
 @property(readonly) NSString * buttonAction;
-@property(readonly) NSString * buttonTitle;
+@property(copy,readonly) NSString * buttonTitle;
 
 + (id)buttonWithTitle:(id)arg1;
 

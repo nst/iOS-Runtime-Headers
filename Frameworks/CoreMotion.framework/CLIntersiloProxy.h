@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CLIntersiloInterface, CLIntersiloInterfaceSelectorInfo, CLIntersiloProxy, CLSilo;
+@class <CLIntersiloProxyDelegateProtocol>, CLIntersiloInterface, CLIntersiloInterfaceSelectorInfo, CLIntersiloProxy, CLSilo;
 
 @interface CLIntersiloProxy : NSProxy <CLIntersiloServiceProtocol> {
     CLIntersiloProxy *_asymStrongPeer;
-    id _delegate;
+    <CLIntersiloProxyDelegateProtocol> *_delegate;
     CLIntersiloInterface *_delegateInterface;
     CLSilo *_delegateSilo;
     CLIntersiloInterfaceSelectorInfo *_last;
@@ -14,16 +14,17 @@
     CLIntersiloInterface *_proxiedInterface;
 }
 
-@property(readonly) id delegate;
-@property(readonly) CLIntersiloInterface * delegateInterface;
+@property(readonly) <CLIntersiloProxyDelegateProtocol> * delegate;
+@property(copy,readonly) CLIntersiloInterface * delegateInterface;
 @property(readonly) CLSilo * delegateSilo;
-@property(readonly) CLIntersiloInterface * proxiedInterface;
+@property(copy,readonly) CLIntersiloInterface * proxiedInterface;
+@property bool valid;
 
 + (id)getSilo;
 + (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 withInboundInterface:(id)arg3 andOutboundInterface:(id)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)delegate;
 - (id)delegateInterface;
 - (id)delegateSilo;

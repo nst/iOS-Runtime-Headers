@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class <HSControlConnectionDelegate>, NSOutputStream;
+@class <HSControlConnectionDelegate>, NSOutputStream, NSString;
 
 @interface HSControlConnection : NSObject <NSStreamDelegate> {
     <HSControlConnectionDelegate> *_delegate;
@@ -12,27 +12,32 @@
     double _timestamp;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <HSControlConnectionDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property unsigned int protocolVersion;
+@property(readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_newDataForControlEventMessage:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;
 - (id)_newDataForControlExtendedMessage:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1 withData:(id)arg2;
 - (id)_newDataForControlTouchEventMessage_v1:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int *x8; })arg1;
 - (id)_newDataForControlTouchEventMessage_v1_1:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; float x8; float x9; unsigned int *x10; })arg1;
-- (void)_sendTouchEvent:(int)arg1 locations:(const unsigned int*)arg2 count:(unsigned int)arg3 velocity:(struct { float x1; float x2; })arg4;
+- (void)_sendTouchEvent:(long long)arg1 locations:(const unsigned int*)arg2 count:(unsigned long long)arg3 velocity:(struct { float x1; float x2; })arg4;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithHost:(id)arg1 port:(unsigned int)arg2 key:(unsigned int)arg3;
 - (void)open;
 - (unsigned int)protocolVersion;
-- (void)sendEvent:(int)arg1 value:(unsigned int)arg2;
+- (void)sendEvent:(long long)arg1 value:(unsigned int)arg2;
 - (void)sendShowItemDetailWithDictionary:(id)arg1;
-- (void)sendTouchesBegan:(const unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)sendTouchesEnded:(const unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)sendTouchesMoved:(const unsigned int*)arg1 count:(unsigned int)arg2 velocity:(struct { float x1; float x2; })arg3;
+- (void)sendTouchesBegan:(const unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)sendTouchesEnded:(const unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)sendTouchesMoved:(const unsigned int*)arg1 count:(unsigned long long)arg2 velocity:(struct { float x1; float x2; })arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setProtocolVersion:(unsigned int)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 
 @end

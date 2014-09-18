@@ -2,53 +2,34 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEOLocationShiftFunctionRequest, GEOLocationShiftFunctionResponse;
+@class GEOLocationShiftFunctionRequest, GEOLocationShiftFunctionResponse, NSLock, NSMutableArray;
 
 @interface GEOLocationShifter : NSObject {
-    struct { 
-        double latitude; 
-        double longitude; 
-    double _coordinateAccuracy;
-    } _coordinateToShift;
-    BOOL _hasCheckedLocationShiftEnabled;
-    BOOL _isRequestingShiftFunction;
-    BOOL _locationShiftEnabled;
+    NSMutableArray *_locationsToShift;
+    NSLock *_lock;
     GEOLocationShiftFunctionResponse *_shiftFunction;
-    int _shiftProviderID;
     GEOLocationShiftFunctionRequest *_shiftRequest;
-    id _successHandler;
+    bool_isRequestingShiftFunction;
 }
 
-@property double coordinateAccuracy;
-@property struct { double x1; double x2; } coordinateToShift;
-@property BOOL locationShiftEnabled;
+@property(readonly) bool locationShiftEnabled;
 @property(retain) GEOLocationShiftFunctionResponse * shiftFunction;
 @property(retain) GEOLocationShiftFunctionRequest * shiftRequest;
-@property(copy) id successHandler;
 
-- (void)_applyLocationShift:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
 - (void)_countryProvidersDidChange:(id)arg1;
 - (void)_requestShiftFunctionForLocation:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
-- (void)_shiftAndReturnCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
-- (void)_updateLocationShiftEnabled;
-- (double)coordinateAccuracy;
-- (struct { double x1; double x2; })coordinateToShift;
+- (void)_sendErrorForLocations:(id)arg1;
+- (void)_shiftAndReturnLocations;
+- (bool)_shiftLocation:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)locationShiftEnabled;
-- (void)setCoordinateAccuracy:(double)arg1;
-- (void)setCoordinateToShift:(struct { double x1; double x2; })arg1;
-- (void)setLocationShiftEnabled:(BOOL)arg1;
+- (bool)locationShiftEnabled;
 - (void)setShiftFunction:(id)arg1;
 - (void)setShiftRequest:(id)arg1;
-- (void)setSuccessHandler:(id)arg1;
+- (bool)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 shiftedCoordinate:(struct { double x1; double x2; }*)arg3 shiftedAccuracy:(double*)arg4;
+- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3 mustGoToNetworkCallback:(id)arg4 errorHandler:(id)arg5 callbackQueue:(id)arg6;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3;
 - (id)shiftFunction;
 - (id)shiftRequest;
-- (id)successHandler;
 
 @end

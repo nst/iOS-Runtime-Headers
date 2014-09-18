@@ -7,7 +7,7 @@
 
 + (id)allProperties;
 + (id)databaseTable;
-+ (id)defaultOrderingProperties;
++ (id)defaultOrderingTerms;
 + (void)initialize;
 + (id)predisambiguatedProperties;
 

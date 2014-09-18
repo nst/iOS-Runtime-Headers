@@ -6,13 +6,18 @@
    See Warning(s) below.
  */
 
-@class GEORequester;
+@class GEORequester, NSString;
 
 @interface GEOVoltairePolyLocationShiftProvider : GEOLocationShiftProvider <PBRequesterDelegate> {
     id _errorHandler;
     id _finishedHandler;
     GEORequester *_requester;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (unsigned short)providerID;
 

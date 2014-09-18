@@ -2,54 +2,38 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSString, NSURL, PKBarcode, PKImage;
+@class NSArray, NSString, PKImage;
 
-@interface PKPassContent : NSObject <NSCoding, NSSecureCoding> {
-    NSURL *_appLaunchURL;
+@interface PKPassContent : PKContent <NSSecureCoding> {
     NSArray *_backFieldBuckets;
-    PKBarcode *_barcode;
     PKImage *_footerImage;
     NSArray *_frontFieldBuckets;
-    NSString *_localizedDescription;
     NSString *_logoText;
-    NSArray *_storeIdentifiers;
-    int _transitType;
+    long long _transitType;
 }
 
-@property(copy) NSURL * appLaunchURL;
 @property(copy) NSArray * backFieldBuckets;
-@property(retain) PKBarcode * barcode;
 @property(retain) PKImage * footerImage;
 @property(copy) NSArray * frontFieldBuckets;
-@property(copy) NSString * localizedDescription;
 @property(copy) NSString * logoText;
-@property(copy) NSArray * storeIdentifiers;
-@property int transitType;
+@property long long transitType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)appLaunchURL;
 - (id)backFieldBuckets;
-- (id)barcode;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
 - (id)footerImage;
 - (id)frontFieldBuckets;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPassURL:(id)arg1;
-- (id)localizedDescription;
+- (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)logoText;
-- (void)setAppLaunchURL:(id)arg1;
 - (void)setBackFieldBuckets:(id)arg1;
-- (void)setBarcode:(id)arg1;
 - (void)setFooterImage:(id)arg1;
 - (void)setFrontFieldBuckets:(id)arg1;
-- (void)setLocalizedDescription:(id)arg1;
 - (void)setLogoText:(id)arg1;
-- (void)setStoreIdentifiers:(id)arg1;
-- (void)setTransitType:(int)arg1;
-- (id)storeIdentifiers;
-- (int)transitType;
+- (void)setTransitType:(long long)arg1;
+- (long long)transitType;
 
 @end

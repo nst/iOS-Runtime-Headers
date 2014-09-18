@@ -9,15 +9,18 @@
 
 @property(retain) SAWeatherBarometricPressure * barometricPressure;
 @property(retain) SAWeatherCondition * condition;
-@property(retain) NSNumber * dayOfWeek;
+@property(copy) NSNumber * dayOfWeek;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * dewPoint;
-@property(copy) NSString * feelsLike;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * heatIndex;
 @property(copy) NSString * moonPhase;
 @property(copy) NSString * percentHumidity;
-@property(retain) NSNumber * percentOfMoonFaceVisible;
+@property(copy) NSNumber * percentOfMoonFaceVisible;
 @property(copy) NSString * sunrise;
 @property(copy) NSString * sunset;
+@property(readonly) Class superclass;
 @property(copy) NSString * temperature;
 @property(copy) NSString * timeOfObservation;
 @property(copy) NSString * timeZone;
@@ -33,7 +36,6 @@
 - (id)dayOfWeek;
 - (id)dewPoint;
 - (id)encodedClassName;
-- (id)feelsLike;
 - (id)groupIdentifier;
 - (id)heatIndex;
 - (id)moonPhase;
@@ -43,7 +45,6 @@
 - (void)setCondition:(id)arg1;
 - (void)setDayOfWeek:(id)arg1;
 - (void)setDewPoint:(id)arg1;
-- (void)setFeelsLike:(id)arg1;
 - (void)setHeatIndex:(id)arg1;
 - (void)setMoonPhase:(id)arg1;
 - (void)setPercentHumidity:(id)arg1;

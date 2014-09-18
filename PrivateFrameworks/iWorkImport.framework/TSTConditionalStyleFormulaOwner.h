@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCECalculationEngine, TSCECellCoordinateVector, TSTTableInfo;
+@class NSString, TSCECalculationEngine, TSCECellCoordinateVector, TSTTableInfo;
 
 @interface TSTConditionalStyleFormulaOwner : NSObject <TSCEFormulaOwning> {
     TSCECalculationEngine *mCalculationEngine;
@@ -12,23 +12,29 @@
     TSTTableInfo *mTableInfo;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)addFormulaForConditionalStyle:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
 - (void)changedConditionForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)checkConditionForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 withConditionalStyle:(id)arg2 withIndex:(unsigned int*)arg3;
+- (bool)checkConditionForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 withConditionalStyle:(id)arg2 withIndex:(unsigned long long*)arg3;
 - (void)dealloc;
 - (id)endRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
 - (id)initWithTableInfo:(id)arg1 ownerID:(struct __CFUUID { }*)arg2;
 - (id)initWithTableInfo:(id)arg1;
 - (void)invalidateForCalculationEngine:(id)arg1;
 - (struct __CFUUID { }*)ownerID;
-- (struct { BOOL x1; BOOL x2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
+- (struct { boolx1; boolx2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
 - (int)registerWithCalculationEngineChoosingUniqueID:(id)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
 - (void)removeFormulaAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)replaceFormulaForConditionalStyle:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)retainForCalculationEngine:(id)arg1;
 - (void)rewriteForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 rewriteSpec:(id)arg3;
+- (bool)serializeCalculations;
 - (void)setOwnerID:(struct __CFUUID { }*)arg1;
 - (void)setTableInfo:(id)arg1;
 - (id)tableInfo;

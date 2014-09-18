@@ -2,21 +2,28 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString;
+
 @interface EDColorsCollection : EDCollection <OADColorPalette> {
-    unsigned int mDefaultColorsCount;
+    unsigned long long mDefaultColorsCount;
 }
 
-+ (bool)isSystemColorId:(unsigned int)arg1;
-+ (int)oadSchemeColorIdFromThemeIndex:(int)arg1;
-+ (int)systemColorIdFromIndex:(unsigned int)arg1;
-+ (unsigned int)xlColorIndexFromCPSystemColorIDEnum:(int)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (void)addColors:(const unsigned int*)arg1 count:(unsigned long)arg2 defaultColors:(const unsigned int*)arg3 defaultCount:(unsigned int)arg4;
++ (bool)isSystemColorId:(unsigned long long)arg1;
++ (int)oadSchemeColorIdFromThemeIndex:(int)arg1;
++ (int)systemColorIdFromIndex:(unsigned long long)arg1;
++ (unsigned int)xlColorIndexFromTCSystemColorIDEnum:(int)arg1;
+
+- (void)addColors:(const unsigned int*)arg1 count:(unsigned int)arg2 defaultColors:(const unsigned int*)arg3 defaultCount:(unsigned int)arg4;
 - (void)addDefaultPalette;
-- (unsigned int)addOrEquivalentColorExcludingDefaults:(id)arg1;
-- (void)addPalette:(const unsigned int*)arg1 paletteSize:(unsigned long)arg2 paletteX:(const unsigned int*)arg3 paletteXSize:(unsigned int)arg4;
-- (id)colorWithIndex:(unsigned int)arg1;
-- (unsigned int)defaultColorsCount;
+- (unsigned long long)addOrEquivalentColorExcludingDefaults:(id)arg1;
+- (void)addPalette:(const unsigned int*)arg1 paletteSize:(unsigned int)arg2 paletteX:(const unsigned int*)arg3 paletteXSize:(unsigned int)arg4;
+- (id)colorWithIndex:(unsigned long long)arg1;
+- (unsigned long long)defaultColorsCount;
 - (const unsigned int*)defaultPalette;
 - (id)initWithDefaultSetup:(bool)arg1;
 - (void)setupDefaults;

@@ -6,33 +6,38 @@
 
 @interface PLLocationController : NSObject <CLLocationManagerDelegate> {
     NSDictionary *_exifDictionary;
-    BOOL _isEnabled;
-    BOOL _isHeadingEnabled;
-    BOOL _isUpdating;
     CLLocationManager *_locationManager;
     NSMutableArray *_locationPendingAssets;
     NSString *_locationStr;
+    bool_isEnabled;
+    bool_isHeadingEnabled;
+    bool_isUpdating;
 }
 
-+ (void)setUsesEffectiveBundleIdentifier:(BOOL)arg1;
-+ (id)sharedInstance;
-+ (BOOL)usesEffectiveBundleIdentifier;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (BOOL)_addLocationToAsset:(id)arg1;
++ (void)setUsesEffectiveBundleIdentifier:(bool)arg1;
++ (id)sharedInstance;
++ (bool)usesEffectiveBundleIdentifier;
+
+- (bool)_addLocationToAsset:(id)arg1;
 - (void)_applicationStateChanged:(id)arg1;
 - (void)_assetContainerChanged:(id)arg1;
 - (void)_startUpdating;
 - (void)_stopUpdating;
 - (void)_updateLocationRunState;
 - (void)_updatePendingAssets;
-- (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(BOOL)arg3;
+- (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(bool)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)location;
-- (id)locationDictionaryForImageWithDeviceOrientation:(int)arg1 rearFacingCamera:(BOOL)arg2;
+- (id)locationDictionaryForImageWithDeviceOrientation:(int)arg1 rearFacingCamera:(bool)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)locationString;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHeadingEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHeadingEnabled:(bool)arg1;
 
 @end

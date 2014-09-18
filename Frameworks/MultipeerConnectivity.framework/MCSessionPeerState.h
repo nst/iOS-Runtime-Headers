@@ -2,42 +2,50 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class MCPeerID, NSMutableDictionary;
+@class MCPeerID, NSData, NSMutableDictionary;
 
 @interface MCSessionPeerState : NSObject {
-    int _certificateDecision;
+    long long _certificateDecision;
     NSMutableDictionary *_incomingStreams;
+    NSData *_nearbyConnectionData;
     unsigned int _newStreamID;
     unsigned int _newStreamOpenRequestID;
     NSMutableDictionary *_outgoingStreamRequests;
     NSMutableDictionary *_outgoingStreams;
     MCPeerID *_peerID;
-    int _state;
+    long long _state;
+    bool_connectPeerCalled;
 }
 
-@property int certificateDecision;
+@property long long certificateDecision;
+@property bool connectPeerCalled;
 @property(retain) NSMutableDictionary * incomingStreams;
+@property(copy) NSData * nearbyConnectionData;
 @property(readonly) unsigned int newStreamID;
 @property(readonly) unsigned int newStreamOpenRequestID;
 @property(retain) NSMutableDictionary * outgoingStreamRequests;
 @property(retain) NSMutableDictionary * outgoingStreams;
-@property(readonly) MCPeerID * peerID;
-@property int state;
+@property(copy,readonly) MCPeerID * peerID;
+@property long long state;
 
-- (int)certificateDecision;
+- (long long)certificateDecision;
+- (bool)connectPeerCalled;
 - (void)dealloc;
 - (id)incomingStreams;
 - (id)initWithPeer:(id)arg1;
+- (id)nearbyConnectionData;
 - (unsigned int)newStreamID;
 - (unsigned int)newStreamOpenRequestID;
 - (id)outgoingStreamRequests;
 - (id)outgoingStreams;
 - (id)peerID;
-- (void)setCertificateDecision:(int)arg1;
+- (void)setCertificateDecision:(long long)arg1;
+- (void)setConnectPeerCalled:(bool)arg1;
 - (void)setIncomingStreams:(id)arg1;
+- (void)setNearbyConnectionData:(id)arg1;
 - (void)setOutgoingStreamRequests:(id)arg1;
 - (void)setOutgoingStreams:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

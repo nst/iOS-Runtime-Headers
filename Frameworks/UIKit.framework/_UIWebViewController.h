@@ -7,48 +7,48 @@
 @interface _UIWebViewController : UIViewController {
     NSString *_URLString;
     UIBarButtonItem *_backBarButtonItem;
-    BOOL _canGoBack;
-    BOOL _canGoForward;
     _UIAsyncInvocation *_cancelViewServiceRequest;
     <_UIWebViewControllerDelegate> *_delegate;
     float _estimatedProgress;
     UIBarButtonItem *_forwardBarButtonItem;
-    BOOL _hasCalledBeginAppearanceTransition;
-    BOOL _hasCalledEndAppearanceTransition;
-    BOOL _loading;
     NSString *_pageTitle;
     _UIRemoteWebViewController *_remoteViewController;
     _UIQueueingServiceWebViewControllerProxy *_serviceProxy;
+    bool_canGoBack;
+    bool_canGoForward;
+    bool_hasCalledBeginAppearanceTransition;
+    bool_hasCalledEndAppearanceTransition;
+    bool_loading;
 }
 
 @property(copy) NSString * URLString;
-@property(readonly) UIBarButtonItem * backBarButtonItem;
-@property(readonly) BOOL canGoBack;
-@property(readonly) BOOL canGoForward;
+@property(retain,readonly) UIBarButtonItem * backBarButtonItem;
+@property(readonly) bool canGoBack;
+@property(readonly) bool canGoForward;
 @property <_UIWebViewControllerDelegate> * delegate;
 @property(readonly) float estimatedProgress;
-@property(readonly) UIBarButtonItem * forwardBarButtonItem;
-@property(getter=isLoading,readonly) BOOL loading;
-@property(readonly) NSString * pageTitle;
+@property(retain,readonly) UIBarButtonItem * forwardBarButtonItem;
+@property(getter=isLoading,readonly) bool loading;
+@property(copy,readonly) NSString * pageTitle;
 
 - (id)URLString;
 - (void)_addRemoteView;
 - (void)_connectToService;
-- (void)_decidePolicyForEncodedRequest:(id)arg1 inMainFrame:(BOOL)arg2 navigationType:(id)arg3 replyHandler:(id)arg4;
+- (void)_decidePolicyForEncodedRequest:(id)arg1 inMainFrame:(bool)arg2 navigationType:(id)arg3 replyHandler:(id)arg4;
 - (void)_dispatchDidDismissViewController;
 - (void)_dispatchWillPresentViewControllerWithCompletionHandler:(id)arg1;
-- (void)_sendBeginAppearanceTransitionIfReadyAnimated:(BOOL)arg1;
+- (void)_sendBeginAppearanceTransitionIfReadyAnimated:(bool)arg1;
 - (void)_sendEndAppearanceTransitionIfReady;
-- (void)_setCanGoBack:(BOOL)arg1 canGoForward:(BOOL)arg2;
+- (void)_setCanGoBack:(bool)arg1 canGoForward:(bool)arg2;
 - (void)_setEstimatedProgress:(float)arg1;
-- (void)_setLoading:(BOOL)arg1 error:(id)arg2;
+- (void)_setLoading:(bool)arg1 error:(id)arg2;
 - (void)_setTitle:(id)arg1;
 - (void)_setURLString:(id)arg1;
 - (void)_updateBarButtonItems;
 - (void)_webContentSizeWithReplyHandler:(id)arg1;
 - (id)backBarButtonItem;
-- (BOOL)canGoBack;
-- (BOOL)canGoForward;
+- (bool)canGoBack;
+- (bool)canGoForward;
 - (void)configureWithSettings:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -57,7 +57,7 @@
 - (void)goBack;
 - (void)goForward;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadRequest:(id)arg1;
 - (void)loadView;
@@ -66,13 +66,13 @@
 - (void)reload;
 - (void)setDelegate:(id)arg1;
 - (void)setURLString:(id)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)stopLoading;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -16,9 +16,10 @@
 - (id)camera;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (id)description;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lightRig;
 - (void)setBackdrop:(id)arg1;
 - (void)setCamera:(id)arg1;

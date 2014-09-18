@@ -20,11 +20,11 @@
     int _suggestionsEntryListIndex;
 }
 
-@property BOOL hasSessionID;
-@property BOOL hasSuggestionEntryIndex;
-@property(readonly) BOOL hasSuggestionEntryMetadata;
-@property(readonly) BOOL hasSuggestionMetadata;
-@property BOOL hasSuggestionsEntryListIndex;
+@property bool hasSessionID;
+@property bool hasSuggestionEntryIndex;
+@property(readonly) bool hasSuggestionEntryMetadata;
+@property(readonly) bool hasSuggestionMetadata;
+@property bool hasSuggestionsEntryListIndex;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property int suggestionEntryIndex;
 @property(retain) NSData * suggestionEntryMetadata;
@@ -36,18 +36,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSessionID;
-- (BOOL)hasSuggestionEntryIndex;
-- (BOOL)hasSuggestionEntryMetadata;
-- (BOOL)hasSuggestionMetadata;
-- (BOOL)hasSuggestionsEntryListIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasSessionID;
+- (bool)hasSuggestionEntryIndex;
+- (bool)hasSuggestionEntryMetadata;
+- (bool)hasSuggestionMetadata;
+- (bool)hasSuggestionsEntryListIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
-- (void)setHasSessionID:(BOOL)arg1;
-- (void)setHasSuggestionEntryIndex:(BOOL)arg1;
-- (void)setHasSuggestionsEntryListIndex:(BOOL)arg1;
+- (void)setHasSessionID:(bool)arg1;
+- (void)setHasSuggestionEntryIndex:(bool)arg1;
+- (void)setHasSuggestionsEntryListIndex:(bool)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSuggestionEntryIndex:(int)arg1;
 - (void)setSuggestionEntryMetadata:(id)arg1;

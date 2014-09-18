@@ -8,9 +8,13 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) SAFmfGeoFence * geoFence;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
 @property(copy) NSURL * searchContext;
+@property(readonly) Class superclass;
 
 + (id)geoFenceSetCompleted;
 + (id)geoFenceSetCompletedWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +22,7 @@
 - (id)encodedClassName;
 - (id)geoFence;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)searchContext;
 - (void)setGeoFence:(id)arg1;
 - (void)setSearchContext:(id)arg1;

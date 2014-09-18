@@ -8,8 +8,12 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * error;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 @property(copy) NSURL * weatherLocationId;
 
 + (id)locationAddCompleted;

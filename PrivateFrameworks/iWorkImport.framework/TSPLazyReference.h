@@ -5,25 +5,26 @@
 @class <TSPLazyReferenceDelegate>, TSPComponent, TSPObject;
 
 @interface TSPLazyReference : NSObject <NSCopying> {
-    BOOL _allowUnknownObject;
     TSPComponent *_component;
     <TSPLazyReferenceDelegate> *_delegate;
     long long _identifier;
-    BOOL _isWeak;
     TSPObject *_strongObject;
     TSPObject *_weakObject;
+    bool_allowUnknownObject;
+    bool_isWeak;
 }
 
 @property TSPComponent * component;
 @property <TSPLazyReferenceDelegate> * delegate;
 @property(readonly) long long identifier;
-@property(readonly) BOOL isWeak;
+@property(readonly) bool isWeak;
 @property(readonly) id object;
 @property(readonly) id objectIfLoaded;
 @property(retain) TSPObject * strongObject;
 @property(readonly) TSPObject * weakObject;
 
 + (id)referenceForObject:(id)arg1;
++ (id)weakReferenceForObject:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2;
@@ -31,18 +32,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)delegate;
-- (BOOL)discardStrongObjectIfPossible;
-- (unsigned int)hash;
+- (bool)discardStrongObjectIfPossible;
+- (unsigned long long)hash;
 - (long long)identifier;
 - (id)init;
-- (id)initWithDelegate:(id)arg1 identifier:(long long)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4;
+- (id)initWeakReferenceWithObject:(id)arg1;
+- (id)initWithDelegate:(id)arg1 identifier:(long long)arg2 isWeak:(bool)arg3 allowUnknownObject:(bool)arg4;
+- (id)initWithObject:(id)arg1 isWeak:(bool)arg2;
 - (id)initWithObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLazyReference:(id)arg1;
-- (BOOL)isWeak;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLazyReference:(id)arg1;
+- (bool)isWeak;
 - (id)object;
 - (id)objectIfLoaded;
-- (BOOL)referencesObject:(id)arg1;
+- (bool)referencesObject:(id)arg1;
 - (void)resetIdentifier;
 - (void)setComponent:(id)arg1;
 - (void)setDelegate:(id)arg1;

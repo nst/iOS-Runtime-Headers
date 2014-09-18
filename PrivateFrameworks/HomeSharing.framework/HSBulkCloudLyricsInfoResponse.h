@@ -10,6 +10,7 @@
 
 @property(copy) NSArray * lyricsInfoDictionaries;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)lyricsInfoDictionaries;
 - (void)setLyricsInfoDictionaries:(id)arg1;

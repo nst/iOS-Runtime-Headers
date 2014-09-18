@@ -15,12 +15,12 @@
 
 @property(readonly) NSURL * dataStorageURL;
 @property(readonly) NSURL * documentStorageURL;
-@property(readonly) BOOL usesUbiquitousStorage;
+@property(readonly) bool usesUbiquitousStorage;
 
 + (void)requestSharedManager:(id)arg1;
 
 - (void)_appActivated:(id)arg1;
-- (void)_finishSetupWithDecision:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)_finishSetupWithDecision:(bool)arg1 completionHandler:(id)arg2;
 - (id)_identifierToURLMap;
 - (id)_initWithCompletionHandler:(id)arg1;
 - (void)_initialGatherFinished;
@@ -30,7 +30,7 @@
 - (void)_queryUpdated;
 - (void)_resetQuery;
 - (void)_setStorage:(id)arg1;
-- (void)_storeUserICloudChoice:(BOOL)arg1 forIdentityToken:(id)arg2;
+- (void)_storeUserICloudChoice:(bool)arg1 forIdentityToken:(id)arg2;
 - (void)_ubiquityIdentityTokenChanged;
 - (void)_updateObservers;
 - (id)_userICloudChoiceArray;
@@ -43,7 +43,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)runSetupProcessWithCompletionHandler:(id)arg1;
 - (void)updateObserver:(id)arg1 withSortDescriptors:(id)arg2;
-- (BOOL)usesUbiquitousStorage;
+- (bool)usesUbiquitousStorage;
 - (void)willAddURL:(id)arg1;
 - (void)willMoveURL:(id)arg1 toURL:(id)arg2;
 - (void)willRemoveURL:(id)arg1;

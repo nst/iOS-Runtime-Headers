@@ -2,26 +2,30 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPGeniusMix, MPMediaItem, MPMediaQueryShuffledItems;
+@class MPMediaItem, MPMediaPlaylist, MPMediaQueryShuffledItems, NSString;
 
 @interface MusicCloudGeniusMixPlaybackContext : MusicQueryPlaybackContext <MusicGeniusMixQueueFeederDataSource> {
     MPMediaQueryShuffledItems *_items;
-    MPGeniusMix *_mix;
+    MPMediaPlaylist *_mixPlaylist;
     MPMediaItem *_requiredInitialMediaItem;
 }
 
-@property(readonly) MPGeniusMix * mix;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) MPMediaPlaylist * mixPlaylist;
 @property(retain) MPMediaItem * requiredInitialMediaItem;
+@property(readonly) Class superclass;
 
 + (Class)queueFeederClass;
 
 - (void).cxx_destruct;
-- (unsigned int)geniusMixQueueFeeder:(id)arg1 indexOfMediaItem:(id)arg2;
-- (id)geniusMixQueueFeeder:(id)arg1 mediaItemAtIndex:(unsigned int)arg2;
-- (id)geniusMixQueueFeeder:(id)arg1 queryForMediaItemAtIndex:(unsigned int)arg2;
-- (unsigned int)geniusMixQueueFeederMediaItemCount:(id)arg1;
-- (id)initWithGeniusMix:(id)arg1 requiredInitialMediaItem:(id)arg2 error:(id*)arg3;
-- (id)mix;
+- (unsigned long long)geniusMixQueueFeeder:(id)arg1 indexOfMediaItem:(id)arg2;
+- (id)geniusMixQueueFeeder:(id)arg1 mediaItemAtIndex:(unsigned long long)arg2;
+- (id)geniusMixQueueFeeder:(id)arg1 queryForMediaItemAtIndex:(unsigned long long)arg2;
+- (unsigned long long)geniusMixQueueFeederMediaItemCount:(id)arg1;
+- (id)initWithGeniusMixPlaylist:(id)arg1 requiredInitialMediaItem:(id)arg2 error:(id*)arg3;
+- (id)mixPlaylist;
 - (id)requiredInitialMediaItem;
 - (void)setRequiredInitialMediaItem:(id)arg1;
 

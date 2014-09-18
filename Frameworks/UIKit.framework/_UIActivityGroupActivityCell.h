@@ -2,29 +2,30 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, _UIActivityFunctionImageView;
+@class UIImageView, UILabel;
 
 @interface _UIActivityGroupActivityCell : UICollectionViewCell {
-    _UIActivityFunctionImageView *_activityImageView;
-    UILabel *_activityLabel;
-    BOOL _darkStyleOnLegacyApp;
+    UIImageView *_highlightedImageView;
+    UIImageView *_imageView;
+    UILabel *_titleLabel;
 }
 
-@property(retain) _UIActivityFunctionImageView * activityImageView;
-@property(retain) UILabel * activityLabel;
-@property BOOL darkStyleOnLegacyApp;
+@property(retain) UIImageView * highlightedImageView;
+@property(retain) UIImageView * imageView;
+@property(retain) UILabel * titleLabel;
 
-- (id)activityImageView;
-- (id)activityLabel;
-- (BOOL)darkStyleOnLegacyApp;
 - (void)dealloc;
-- (void)layoutSubviews;
+- (id)draggingView;
+- (id)highlightedImageView;
+- (id)imageView;
+- (void)initHighlightedImageViewIfNeeded;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)prepareForReuse;
-- (void)reloadImage:(id)arg1;
-- (void)setActivity:(id)arg1 withCustomTitle:(id)arg2;
-- (void)setActivityImageView:(id)arg1;
-- (void)setActivityLabel:(id)arg1;
-- (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setHighlightedImageView:(id)arg1;
+- (void)setImageView:(id)arg1;
+- (void)setTitleLabel:(id)arg1;
+- (id)titleLabel;
+- (void)updateHighlightedImageViewIfNeeded;
 
 @end

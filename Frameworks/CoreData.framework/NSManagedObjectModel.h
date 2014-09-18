@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSSet;
+@class NSArray, NSDictionary, NSMutableDictionary, NSSet;
 
 @interface NSManagedObjectModel : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
     struct __managedObjectModelFlags { 
@@ -20,6 +20,14 @@
     NSSet *_versionIdentifiers;
 }
 
+@property(readonly) NSArray * configurations;
+@property(retain) NSArray * entities;
+@property(copy,readonly) NSDictionary * entitiesByName;
+@property(copy,readonly) NSDictionary * entityVersionHashesByName;
+@property(copy,readonly) NSDictionary * fetchRequestTemplatesByName;
+@property(retain) NSDictionary * localizationDictionary;
+@property(copy) NSSet * versionIdentifiers;
+
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
 + (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id*)arg2;
@@ -36,12 +44,12 @@
 - (void)_createCachesAndOptimizeState;
 - (id)_entitiesByVersionHash;
 - (id)_entityForName:(id)arg1;
-- (id)_entityVersionHashesByNameInStyle:(unsigned int)arg1;
+- (id)_entityVersionHashesByNameInStyle:(unsigned long long)arg1;
 - (void)_flattenProperties;
-- (BOOL)_hasPrecomputedKeyOrder;
+- (bool)_hasPrecomputedKeyOrder;
 - (id)_initWithEntities:(id)arg1;
-- (BOOL)_isConfiguration:(id)arg1 inStyle:(unsigned int)arg2 compatibleWithStoreMetadata:(id)arg3;
-- (BOOL)_isOptimizedForEncoding;
+- (bool)_isConfiguration:(id)arg1 inStyle:(unsigned long long)arg2 compatibleWithStoreMetadata:(id)arg3;
+- (bool)_isOptimizedForEncoding;
 - (id)_localizationPolicy;
 - (id)_modelForVersionHashes:(id)arg1;
 - (id)_optimizedEncoding:(id*)arg1;
@@ -50,8 +58,8 @@
 - (void)_removeEntity:(id)arg1;
 - (void)_removeEntityNamed:(id)arg1;
 - (void)_restoreValidation;
-- (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(unsigned int)arg2;
-- (void)_setIsEditable:(BOOL)arg1;
+- (void)_setIsEditable:(bool)arg1 optimizationStyle:(unsigned long long)arg2;
+- (void)_setIsEditable:(bool)arg1;
 - (void)_setLocalizationPolicy:(id)arg1;
 - (id)_sortedEntitiesForConfiguration:(id)arg1;
 - (void)_stripForMigration;
@@ -59,7 +67,7 @@
 - (id)_versionIdentifiersAsArray;
 - (id)configurations;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -70,15 +78,15 @@
 - (id)fetchRequestFromTemplateWithName:(id)arg1 substitutionVariables:(id)arg2;
 - (id)fetchRequestTemplateForName:(id)arg1;
 - (id)fetchRequestTemplatesByName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfOptimizedURL:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1 forStoreMetadata:(id)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
-- (BOOL)isConfiguration:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
-- (BOOL)isEditable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isConfiguration:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
+- (bool)isEditable;
+- (bool)isEqual:(id)arg1;
 - (id)localizationDictionary;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setEntities:(id)arg1 forConfiguration:(id)arg2;

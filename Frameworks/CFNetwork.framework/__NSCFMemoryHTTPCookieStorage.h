@@ -2,20 +2,19 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSCFMemoryHTTPCookieStorage : NSObject {
-    id _internal;
+@interface __NSCFMemoryHTTPCookieStorage : NSHTTPCookieStorage {
 }
 
 + (void)initialize;
 
-- (unsigned int)cookieAcceptPolicy;
+- (unsigned long long)cookieAcceptPolicy;
 - (id)cookies;
 - (id)cookiesForURL:(id)arg1;
 - (void)deleteCookie:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)setCookie:(id)arg1;
-- (void)setCookieAcceptPolicy:(unsigned int)arg1;
+- (void)setCookieAcceptPolicy:(unsigned long long)arg1;
 - (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
 - (id)sortedCookiesUsingDescriptors:(id)arg1;
 

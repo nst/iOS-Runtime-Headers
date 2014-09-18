@@ -2,22 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSTimer;
+
 @interface _UISystemGestureGateGestureRecognizer : UIGestureRecognizer {
     unsigned int _systemGesturesRecognitionPossible : 1;
     unsigned int _waitingForSystemGestureStateNotification : 1;
+    NSTimer *_delayTimeoutTimer;
     double _lastTouchTime;
 }
 
 - (int)_gateGestureType;
 - (id)_gateGestureTypeString;
 - (void)_resetGestureRecognizer;
-- (BOOL)_shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
+- (bool)_shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (void)_systemGestureStateChanged:(id)arg1;
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (void)_timeOut;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)canPreventGestureRecognizer:(id)arg1;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (void)setEnabled:(BOOL)arg1;
+- (id)initWithWindow:(id)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

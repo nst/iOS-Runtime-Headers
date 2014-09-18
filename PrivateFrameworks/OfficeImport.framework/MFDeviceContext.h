@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFBrush, MFFont, MFPalette, MFPath, MFPen, MFTransform, NSObject<MFDeviceDriver>, TSUColor;
+@class MFBrush, MFFont, MFPalette, MFPath, MFPen, MFTransform, NSObject<MFDeviceDriver>, OITSUColor;
 
 @interface MFDeviceContext : NSObject <NSCopying> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     boolm_textUpdateCP;
     int m_arcDirection;
-    TSUColor *m_bkColour;
+    OITSUColor *m_bkColour;
     int m_bkMode;
     MFBrush *m_brush;
     } m_brushOrg;
@@ -30,7 +30,7 @@
     int m_textBreakCount;
     int m_textBreakExtra;
     int m_textCharExtra;
-    TSUColor *m_textColour;
+    OITSUColor *m_textColour;
     int m_textDirection;
     int m_textHorizontalAlign;
     int m_textVerticalAlign;
@@ -46,13 +46,13 @@
 - (id)getBkColour;
 - (int)getBkMode;
 - (id)getBrush;
-- (struct CGPoint { float x1; float x2; })getBrushOrg;
+- (struct CGPoint { double x1; double x2; })getBrushOrg;
 - (id)getCurrentTransform;
 - (id)getFont;
 - (double)getMiterLimit;
 - (id)getPath;
 - (id)getPen;
-- (struct CGPoint { float x1; float x2; })getPenPosition;
+- (struct CGPoint { double x1; double x2; })getPenPosition;
 - (int)getPolyFillMode;
 - (int)getRop2;
 - (id)getSelectedPalette;
@@ -70,13 +70,13 @@
 - (void)setBkColour:(id)arg1;
 - (void)setBkMode:(int)arg1;
 - (void)setBrush:(id)arg1;
-- (void)setBrushOrg:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setBrushOrg:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setCurrentTransform:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setMiterLimit:(double)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPen:(id)arg1;
-- (void)setPenPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPenPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPolyFillMode:(int)arg1;
 - (void)setRop2:(int)arg1;
 - (void)setSelectedPalette:(id)arg1;

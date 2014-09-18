@@ -2,27 +2,34 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
+@class <MusicTableViewDelegate>, UITraitCollection;
+
 @interface MusicTableView : UITableView {
-    float _footerBackgroundTransitionWeighting;
-    float _headerBackgroundTransitionWeighting;
-    float _minimumContentSizeHeightAdditions;
+    double _footerBackgroundTransitionWeighting;
+    double _headerBackgroundTransitionWeighting;
+    double _minimumContentSizeHeightAdditions;
+    UITraitCollection *_previousTraitCollection;
 }
 
-@property float footerBackgroundTransitionWeighting;
-@property float headerBackgroundTransitionWeighting;
-@property float minimumContentSizeHeightAdditions;
+@property <MusicTableViewDelegate> * delegate;
+@property double footerBackgroundTransitionWeighting;
+@property double headerBackgroundTransitionWeighting;
+@property double minimumContentSizeHeightAdditions;
 
-- (float)footerBackgroundTransitionWeighting;
-- (float)headerBackgroundTransitionWeighting;
+- (void).cxx_destruct;
+- (double)footerBackgroundTransitionWeighting;
+- (double)headerBackgroundTransitionWeighting;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (void)layoutSubviews;
-- (float)minimumContentSizeHeightAdditions;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setFooterBackgroundTransitionWeighting:(float)arg1;
-- (void)setHeaderBackgroundTransitionWeighting:(float)arg1;
-- (void)setMinimumContentSizeHeightAdditions:(float)arg1;
+- (double)minimumContentSizeHeightAdditions;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setFooterBackgroundTransitionWeighting:(double)arg1;
+- (void)setHeaderBackgroundTransitionWeighting:(double)arg1;
+- (void)setMinimumContentSizeHeightAdditions:(double)arg1;
 - (void)setTableHeaderBackgroundColor:(id)arg1;
-- (void)updateStateForFooterView:(id)arg1 inSection:(int)arg2;
-- (void)updateStateForHeaderView:(id)arg1 inSection:(int)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateStateForFooterView:(id)arg1 inSection:(long long)arg2;
+- (void)updateStateForHeaderView:(id)arg1 inSection:(long long)arg2;
 - (void)updateVisibleHeaderFooterState;
 
 @end

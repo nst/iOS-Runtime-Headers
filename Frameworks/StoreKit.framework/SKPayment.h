@@ -8,13 +8,13 @@
     id _internal;
 }
 
-@property(readonly) NSString * applicationUsername;
-@property(readonly) NSString * partnerIdentifier;
-@property(readonly) NSString * partnerTransactionIdentifier;
-@property(readonly) NSString * productIdentifier;
-@property(readonly) int quantity;
-@property(readonly) NSData * requestData;
-@property(readonly) NSDictionary * requestParameters;
+@property(copy,readonly) NSString * applicationUsername;
+@property(copy,readonly) NSString * partnerIdentifier;
+@property(copy,readonly) NSString * partnerTransactionIdentifier;
+@property(copy,readonly) NSString * productIdentifier;
+@property(readonly) long long quantity;
+@property(copy,readonly) NSData * requestData;
+@property(copy,readonly) NSDictionary * requestParameters;
 
 + (id)paymentWithProduct:(id)arg1;
 + (id)paymentWithProductIdentifier:(id)arg1;
@@ -22,14 +22,14 @@
 - (id)applicationUsername;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)partnerIdentifier;
 - (id)partnerTransactionIdentifier;
 - (id)productIdentifier;
-- (int)quantity;
+- (long long)quantity;
 - (id)requestData;
 - (id)requestParameters;
 

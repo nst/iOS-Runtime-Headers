@@ -5,15 +5,15 @@
 @class SUDOMElement, UIBarButtonItem;
 
 @interface SUScriptPopOverNativeObject : SUScriptNativeObject {
-    BOOL _redisplayAfterRotation;
     UIBarButtonItem *_sourceButtonItem;
     SUDOMElement *_sourceDOMElement;
+    bool_redisplayAfterRotation;
 }
 
 @property(retain) UIBarButtonItem * sourceButtonItem;
 @property(retain) SUDOMElement * sourceDOMElement;
 
-- (BOOL)_isAffectedByWindowNotification:(id)arg1;
+- (bool)_isAffectedByWindowNotification:(id)arg1;
 - (void)_windowDidRotateNotification:(id)arg1;
 - (void)_windowWillRotateNotification:(id)arg1;
 - (void)dealloc;

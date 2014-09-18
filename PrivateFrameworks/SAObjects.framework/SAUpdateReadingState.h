@@ -8,10 +8,14 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * readingStateId;
 @property(copy) NSString * refId;
-@property int updatedGroupIndex;
-@property int updatedItemIndex;
+@property(readonly) Class superclass;
+@property long long updatedGroupIndex;
+@property long long updatedItemIndex;
 
 + (id)updateReadingState;
 + (id)updateReadingStateWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,9 +24,9 @@
 - (id)groupIdentifier;
 - (id)readingStateId;
 - (void)setReadingStateId:(id)arg1;
-- (void)setUpdatedGroupIndex:(int)arg1;
-- (void)setUpdatedItemIndex:(int)arg1;
-- (int)updatedGroupIndex;
-- (int)updatedItemIndex;
+- (void)setUpdatedGroupIndex:(long long)arg1;
+- (void)setUpdatedItemIndex:(long long)arg1;
+- (long long)updatedGroupIndex;
+- (long long)updatedItemIndex;
 
 @end

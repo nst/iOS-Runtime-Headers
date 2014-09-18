@@ -8,7 +8,7 @@
     AVAssetCacheInternal *_priv;
 }
 
-@property(readonly) NSURL * URL;
+@property(copy,readonly) NSURL * URL;
 @property(readonly) long long currentSize;
 @property long long maxEntrySize;
 @property long long maxSize;
@@ -21,6 +21,7 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithURL:(id)arg1;
+- (id)lastModifiedDateOfEntryForKey:(id)arg1;
 - (long long)maxEntrySize;
 - (long long)maxSize;
 - (void)removeEntryForKey:(id)arg1;

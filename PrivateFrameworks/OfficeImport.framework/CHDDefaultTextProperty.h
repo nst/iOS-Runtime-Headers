@@ -2,37 +2,45 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources, EDRunsCollection;
+@class EDResources, EDRunsCollection, NSString;
 
 @interface CHDDefaultTextProperty : NSObject <EDKeyedObject> {
+    boolmShowBubbleSizeLabel;
     boolmShowCategoryLabel;
     boolmShowPercentageLabel;
     boolmShowSeriesLabel;
     boolmShowValueLabel;
-    unsigned int mContentFormatId;
+    unsigned long long mContentFormatId;
     int mDefaultTextType;
     int mLabelPosition;
     EDResources *mResources;
     EDRunsCollection *mRuns;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)defaultTextPropertyWithResources:(id)arg1;
 
 - (id)contentFormat;
-- (unsigned int)contentFormatId;
+- (unsigned long long)contentFormatId;
 - (void)dealloc;
 - (int)defaultTextType;
 - (id)initWithResources:(id)arg1;
+- (bool)isShowBubbleSizeLabel;
 - (bool)isShowCategoryLabel;
 - (bool)isShowPercentageLabel;
 - (bool)isShowSeriesLabel;
 - (bool)isShowValueLabel;
-- (int)key;
+- (long long)key;
 - (int)labelPosition;
 - (id)runs;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setContentFormatId:(unsigned long long)arg1;
 - (void)setDefaultTextType:(int)arg1;
+- (void)setIsShowBubbleSizeLabel:(bool)arg1;
 - (void)setIsShowCategoryLabel:(bool)arg1;
 - (void)setIsShowPercentageLabel:(bool)arg1;
 - (void)setIsShowSeriesLabel:(bool)arg1;

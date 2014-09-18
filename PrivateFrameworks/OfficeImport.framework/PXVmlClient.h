@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PXVmlClient : NSObject <OAVClient> {
+@interface PXVmlClient : NSObject <OAVReadClient> {
 }
 
 + (id)colorWithRecolorInfoColorString:(id)arg1;

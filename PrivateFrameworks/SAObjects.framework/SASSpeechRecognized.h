@@ -13,13 +13,13 @@
 + (id)speechRecognized;
 + (id)speechRecognizedWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)af_bestTextInterpretation;
 - (id)af_correctionContext;
-- (id)afui_bestTextInterpretation;
-- (id)afui_userUtteranceValue;
+- (id)af_userUtteranceValue;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)recognition;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)sessionId;
 - (void)setRecognition:(id)arg1;
 - (void)setSessionId:(id)arg1;

@@ -6,24 +6,24 @@
 
 @interface TKDisplayLinkManager : NSObject {
     NSMutableSet *_activeTargetActions;
-    BOOL _handlingDisplayRefresh;
-    BOOL _hasUpdatedTargetActions;
     CADisplayLink *_storedDisplayLink;
     NSMutableSet *_updatedTargetActions;
-    unsigned int _warmUpModeRequirementsCount;
+    unsigned long long _warmUpModeRequirementsCount;
+    bool_handlingDisplayRefresh;
+    bool_hasUpdatedTargetActions;
 }
 
 @property(setter=_setActiveTargetActions:,retain) NSMutableSet * _activeTargetActions;
 @property(setter=_setDisplayLink:,retain) CADisplayLink * _displayLink;
-@property(getter=_isHandlingDisplayRefresh,setter=_setHandlingDisplayRefresh:) BOOL _handlingDisplayRefresh;
-@property(setter=_setHasUpdatedTargetActions:) BOOL _hasUpdatedTargetActions;
+@property(getter=_isHandlingDisplayRefresh,setter=_setHandlingDisplayRefresh:) bool _handlingDisplayRefresh;
+@property(setter=_setHasUpdatedTargetActions:) bool _hasUpdatedTargetActions;
 @property(setter=_setStoredDisplayLink:,retain) CADisplayLink * _storedDisplayLink;
 @property(setter=_setUpdatedTargetActions:,retain) NSMutableSet * _updatedTargetActions;
-@property(getter=_isWarmUpModeEnabled,readonly) BOOL _warmUpModeEnabled;
-@property(setter=_setWarmUpModeRequirementsCount:) unsigned int _warmUpModeRequirementsCount;
+@property(getter=_isWarmUpModeEnabled,readonly) bool _warmUpModeEnabled;
+@property(setter=_setWarmUpModeRequirementsCount:) unsigned long long _warmUpModeRequirementsCount;
 @property(readonly) double duration;
-@property(readonly) unsigned int frameInterval;
-@property(getter=isPaused,readonly) BOOL paused;
+@property(readonly) unsigned long long frameInterval;
+@property(getter=isPaused,readonly) bool paused;
 @property(readonly) double timestamp;
 
 + (void)_releaseCurrentDisplayLinkManager;
@@ -34,29 +34,29 @@
 - (void)_didRemoveLastTargetAction;
 - (void)_displayDidRefresh:(id)arg1;
 - (id)_displayLink;
-- (BOOL)_hasUpdatedTargetActions;
-- (BOOL)_isHandlingDisplayRefresh;
-- (BOOL)_isWarmUpModeEnabled;
+- (bool)_hasUpdatedTargetActions;
+- (bool)_isHandlingDisplayRefresh;
+- (bool)_isWarmUpModeEnabled;
 - (id)_prepareUpdatedTargetActionsForModification;
 - (void)_setActiveTargetActions:(id)arg1;
 - (void)_setDisplayLink:(id)arg1;
-- (void)_setHandlingDisplayRefresh:(BOOL)arg1;
-- (void)_setHasUpdatedTargetActions:(BOOL)arg1;
+- (void)_setHandlingDisplayRefresh:(bool)arg1;
+- (void)_setHasUpdatedTargetActions:(bool)arg1;
 - (void)_setStoredDisplayLink:(id)arg1;
 - (void)_setUpdatedTargetActions:(id)arg1;
-- (void)_setWarmUpModeRequirementsCount:(unsigned int)arg1;
+- (void)_setWarmUpModeRequirementsCount:(unsigned long long)arg1;
 - (id)_storedDisplayLink;
 - (id)_updatedTargetActions;
-- (unsigned int)_warmUpModeRequirementsCount;
-- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned int)arg3;
+- (unsigned long long)_warmUpModeRequirementsCount;
+- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned long long)arg3;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2;
 - (void)beginRequiringWarmUpMode;
 - (void)dealloc;
 - (double)duration;
 - (void)endRequiringWarmUpMode;
-- (unsigned int)frameInterval;
+- (unsigned long long)frameInterval;
 - (id)init;
-- (BOOL)isPaused;
+- (bool)isPaused;
 - (void)removeTarget:(id)arg1 selector:(SEL)arg2;
 - (double)timestamp;
 

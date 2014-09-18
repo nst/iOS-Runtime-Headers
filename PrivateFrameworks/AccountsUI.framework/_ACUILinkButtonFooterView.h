@@ -5,12 +5,13 @@
 @class ACUILinkButton;
 
 @interface _ACUILinkButtonFooterView : UIView <PSHeaderFooterView> {
+    long long _desiredTextAlignment;
     ACUILinkButton *_linkButton;
 }
 
 - (void).cxx_destruct;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
-- (float)preferredHeightForWidth:(float)arg1;
+- (double)preferredHeightForWidth:(double)arg1;
 
 @end

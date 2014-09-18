@@ -5,10 +5,11 @@
 @class AVWeakReference;
 
 @interface AVFlashlightInternal : NSObject {
-    BOOL available;
+    boolavailable;
+    booloverheated;
+    struct OpaqueFigFlashlight { } *flashlight;
     float flashlightLevel;
-    BOOL overheated;
-    struct OpaqueFigRecorder { } *recorder;
+    struct OpaqueFigSimpleMutex { } *lock;
     AVWeakReference *weakReference;
 }
 

@@ -4,22 +4,29 @@
 
 @interface TNPageCoordinateDictionary : NSObject {
     struct map<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject>, std::__1::less<TSUColumnRowCoordinate>, std::__1::allocator<std::__1::pair<const TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> > > > { 
-        struct __tree<std::__1::pair<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::__map_value_compare<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject>, std::__1::less<TSUColumnRowCoordinate>, true>, std::__1::allocator<std::__1::pair<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> > > > { 
-            struct __tree_node<std::__1::pair<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, void *> > > { 
+        struct __tree<std::__1::__value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::__map_value_compare<TSUColumnRowCoordinate, std::__1::__value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<TSUColumnRowCoordinate>, true>, std::__1::allocator<std::__1::__value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> > > > { 
+            struct __tree_node<std::__1::__value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject>, std::__1::less<TSUColumnRowCoordinate>, true> > { 
-                unsigned long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUColumnRowCoordinate, std::__1::__value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<TSUColumnRowCoordinate>, true> > { 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
+    struct _opaque_pthread_rwlock_t { 
+        long long __sig; 
+        BOOL __opaque[192]; 
     } _pageCoordinateDictionary;
+    } _rwlock;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)allObjects;
+- (void)dealloc;
+- (id)init;
 - (id)objectForPageCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)removeAllObjects;
 - (void)setObject:(id)arg1 forPageCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;

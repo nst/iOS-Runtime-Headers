@@ -11,10 +11,10 @@
     NSString *_password;
 }
 
-@property(readonly) NSData * certificateData;
-@property(readonly) NSString * certificateFileName;
+@property(retain,readonly) NSData * certificateData;
+@property(retain,readonly) NSString * certificateFileName;
 @property(readonly) int dataEncoding;
-@property(readonly) NSString * password;
+@property(retain,readonly) NSString * password;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -28,8 +28,8 @@
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;
-- (BOOL)isIdentity;
-- (BOOL)isSigned;
+- (bool)isIdentity;
+- (bool)isSigned;
 - (id)password;
 - (id)persistentResourceID;
 

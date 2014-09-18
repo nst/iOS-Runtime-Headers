@@ -15,16 +15,21 @@
     UILabel *_statusSubtitleView;
     UILabel *_statusTitleView;
     UIView *_topToStatusFieldOrEntryFieldFiller;
-    BOOL _undoInputOnTouchCancellation;
+    bool_undoInputOnTouchCancellation;
+    bool_useLightStyle;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * lastCharacterBeforeBackspace;
 @property(retain) UILabel * statusSubtitleView;
 @property(retain) UILabel * statusTitleView;
-@property(getter=_undoInputOnTouchCancellation,setter=_setUndoInputOnTouchCancellation:) BOOL undoInputOnTouchCancellation;
+@property(readonly) Class superclass;
+@property(getter=_undoInputOnTouchCancellation,setter=_setUndoInputOnTouchCancellation:) bool undoInputOnTouchCancellation;
 
-- (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
-- (BOOL)_includesStatusView;
+- (double)_entryFieldBottomYDistanceFromNumberPadTopButton;
+- (bool)_includesStatusView;
 - (void)_layoutStatusView;
 - (void)_luminanceBoostDidChange;
 - (id)_newEntryField;
@@ -32,31 +37,31 @@
 - (id)_newStatusTitleView;
 - (void)_noteBackspaceHit;
 - (void)_noteKeyUp:(id)arg1;
-- (void)_noteStringEntered:(id)arg1 eligibleForPlayingSounds:(BOOL)arg2;
+- (void)_noteStringEntered:(id)arg1 eligibleForPlayingSounds:(bool)arg2;
 - (void)_notifyDelegatePasscodeCancelled;
 - (void)_notifyDelegatePasscodeEntered;
 - (id)_numberPad;
-- (float)_numberPadOffsetFromTopOfScreen;
+- (double)_numberPadOffsetFromTopOfScreen;
 - (id)_numericEntryFieldIfExists;
-- (void)_setHasInput:(BOOL)arg1;
-- (void)_setUndoInputOnTouchCancellation:(BOOL)arg1;
+- (void)_setHasInput:(bool)arg1;
+- (void)_setUndoInputOnTouchCancellation:(bool)arg1;
 - (id)_statusBackgroundView;
 - (id)_statusSubtitleView;
 - (id)_statusSubtitleViewTitleFont;
 - (id)_statusTitleView;
-- (float)_statusTitleViewHeight;
 - (id)_statusTitleViewTitleFont;
-- (float)_statusTitleWidth;
+- (double)_statusTitleWidth;
 - (void)_toggleForStatusField;
-- (BOOL)_undoInputOnTouchCancellation;
-- (void)_updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
-- (float)backgroundAlpha;
+- (bool)_undoInputOnTouchCancellation;
+- (bool)_usesLightStyle;
+- (double)backgroundAlpha;
 - (void)dealloc;
 - (id)init;
+- (id)initWithLightStyle:(bool)arg1;
 - (id)lastCharacterBeforeBackspace;
 - (void)layoutSubviews;
 - (id)passcode;
-- (BOOL)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
+- (bool)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
 - (void)passcodeEntryFieldDidAcceptEntry:(id)arg1;
 - (void)passcodeEntryFieldDidCancelEntry:(id)arg1;
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
@@ -68,14 +73,15 @@
 - (void)passcodeLockNumberPadEmergencyCallButtonHit:(id)arg1;
 - (void)reset;
 - (void)resetForFailedPasscode;
-- (void)setBackgroundAlpha:(float)arg1;
+- (void)setBackgroundAlpha:(double)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setLastCharacterBeforeBackspace:(id)arg1;
-- (void)setShowsEmergencyCallButton:(BOOL)arg1;
-- (void)setShowsStatusField:(BOOL)arg1;
+- (void)setShowsEmergencyCallButton:(bool)arg1;
+- (void)setShowsStatusField:(bool)arg1;
 - (void)setStatusSubtitleView:(id)arg1;
 - (void)setStatusTitleView:(id)arg1;
 - (id)statusSubtitleView;
 - (id)statusTitleView;
+- (void)updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(bool)arg3;
 
 @end

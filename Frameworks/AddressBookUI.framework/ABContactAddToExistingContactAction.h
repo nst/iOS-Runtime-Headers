@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPeoplePickerNavigationController, CNContact;
+@class ABPeoplePickerNavigationController, CNContact, NSString;
 
 @interface ABContactAddToExistingContactAction : ABContactAction <ABPeoplePickerNavigationControllerDelegate, ABNewPersonViewControllerDelegate> {
     CNContact *_chosenContact;
@@ -10,14 +10,18 @@
 }
 
 @property(retain) CNContact * chosenContact;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) ABPeoplePickerNavigationController * peoplePicker;
+@property(readonly) Class superclass;
 
 - (id)chosenContact;
 - (void)dealloc;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (id)peoplePicker;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)performActionWithSender:(id)arg1;
 - (void)setChosenContact:(id)arg1;

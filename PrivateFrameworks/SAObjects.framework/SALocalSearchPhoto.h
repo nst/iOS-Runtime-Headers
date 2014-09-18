@@ -7,9 +7,15 @@
 @interface SALocalSearchPhoto : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSURL * fullsize;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * identifier;
+@property(copy) NSURL * largeSize;
+@property(copy) NSURL * maximumSize;
 @property(retain) SAUIAppPunchOut * photoPunchOut;
+@property(readonly) Class superclass;
 @property(copy) NSURL * thumbnail;
 
 + (id)photo;
@@ -19,9 +25,13 @@
 - (id)fullsize;
 - (id)groupIdentifier;
 - (id)identifier;
+- (id)largeSize;
+- (id)maximumSize;
 - (id)photoPunchOut;
 - (void)setFullsize:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setLargeSize:(id)arg1;
+- (void)setMaximumSize:(id)arg1;
 - (void)setPhotoPunchOut:(id)arg1;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;

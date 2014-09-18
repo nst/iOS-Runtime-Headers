@@ -3,16 +3,17 @@
  */
 
 @interface WMParagraphStyle : WMStyle {
-    BOOL mIsInTextFrame;
+    boolmIsInTextFrame;
 }
 
-+ (BOOL)isShadingNull:(id)arg1;
++ (bool)isShadingNull:(id)arg1;
 
-- (void)addListProperties:(id)arg1;
-- (void)addParagraphProperties:(id)arg1;
+- (void)addParagraphProperties:(id)arg1 fromListLevelProperties:(bool)arg2;
 - (void)addParagraphStyleCharacterProperties:(id)arg1;
-- (id)initWithWDParagraphProperties:(id)arg1 isInTextFrame:(BOOL)arg2;
-- (id)initWithWDStyle:(id)arg1 isInTextFrame:(BOOL)arg2;
+- (id)initWithWDParagraphProperties:(id)arg1 isInTextFrame:(bool)arg2;
+- (id)initWithWDStyle:(id)arg1 isInTextFrame:(bool)arg2;
+- (bool)isRTLWithOverridesFromProperties:(id)arg1;
+- (id)leadingMarginPropertyNameWithOverridesFromProperties:(id)arg1;
 - (void)mapBorders:(id)arg1;
 
 @end

@@ -5,6 +5,7 @@
 @interface NSKeyPathExpression : NSFunctionExpression {
 }
 
+- (id)CKExpressionValue;
 - (void)dealloc;
 - (id)initWithKeyPath:(id)arg1;
 - (id)initWithOperand:(id)arg1 andKeyPath:(id)arg2;

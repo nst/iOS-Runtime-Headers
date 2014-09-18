@@ -9,6 +9,6 @@
 + (id)newWithSublayerCount:(unsigned int)arg1 indexSet:(id)arg2;
 
 - (unsigned int)numberOfSublayers;
-- (unsigned int)sublayerAtIndex:(unsigned int)arg1 isValid:(BOOL*)arg2;
+- (unsigned int)sublayerAtIndex:(unsigned int)arg1 isValid:(bool*)arg2;
 
 @end

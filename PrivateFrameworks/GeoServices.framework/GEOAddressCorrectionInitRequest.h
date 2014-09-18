@@ -9,8 +9,8 @@
     NSString *_token;
 }
 
-@property(readonly) BOOL hasPersonID;
-@property(readonly) BOOL hasToken;
+@property(readonly) bool hasPersonID;
+@property(readonly) bool hasToken;
 @property(retain) NSString * personID;
 @property(retain) NSString * token;
 
@@ -19,12 +19,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPersonID;
-- (BOOL)hasToken;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPersonID;
+- (bool)hasToken;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)personID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setPersonID:(id)arg1;

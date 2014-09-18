@@ -9,8 +9,8 @@
     UILabel *_textLabel3;
 }
 
-@property(readonly) UILabel * detailLabel3;
-@property(readonly) UILabel * textLabel3;
+@property(retain,readonly) UILabel * detailLabel3;
+@property(retain,readonly) UILabel * textLabel3;
 
 - (void).cxx_destruct;
 - (void)_layoutSubviewsCore;

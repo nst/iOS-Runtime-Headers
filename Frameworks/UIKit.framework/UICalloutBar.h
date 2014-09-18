@@ -2,62 +2,69 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSString, UICalloutBarBackground, UICalloutBarButton, UIResponder;
+@class NSArray, NSDictionary, NSMutableArray, NSString, UICalloutBarBackground, UICalloutBarButton, UIResponder;
 
 @interface UICalloutBar : UIView {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    boolm_didPromptForReplace;
+    boolm_fadeAfterCommand;
+    boolm_ignoreFade;
+    boolm_ignoringEvents;
+    boolm_recalcVisibleItems;
+    boolm_shouldAppear;
+    boolm_showAllReplacements;
+    boolm_supressesHorizontalMovement;
+    boolm_targetHorizontal;
     int m_arrowDirection;
     } m_controlFrame;
+    NSDictionary *m_currentAppearOrFadeContext;
     int m_currentPage;
+    NSMutableArray *m_currentSystemButtons;
     id m_delegate;
-    BOOL m_didPromptForReplace;
     NSMutableArray *m_extraButtons;
     NSArray *m_extraItems;
-    BOOL m_fadeAfterCommand;
     double m_fadedTime;
-    BOOL m_ignoreFade;
-    BOOL m_ignoringEvents;
     UICalloutBarButton *m_nextButton;
     UICalloutBarBackground *m_overlay;
     int m_pageCount;
@@ -66,42 +73,38 @@
     } m_pointLeftOfControls;
     } m_pointRightOfControls;
     UICalloutBarButton *m_previousButton;
-    BOOL m_recalcVisibleItems;
     NSMutableArray *m_rectsToEvade;
     NSArray *m_replacements;
     id m_responderTarget;
-    BOOL m_shouldAppear;
-    BOOL m_showAllReplacements;
-    float m_supressedHorizontalMovementX;
-    BOOL m_supressesHorizontalMovement;
+    double m_supressedHorizontalMovementX;
     } m_supressesHorizontalMovementFrame;
-    NSMutableArray *m_systemButtons;
+    NSArray *m_systemButtonDescriptions;
     int m_targetDirection;
-    BOOL m_targetHorizontal;
     } m_targetPoint;
     } m_targetRect;
     NSString *m_untruncatedString;
 }
 
 @property int arrowDirection;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } controlFrame;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } controlFrame;
+@property(retain) NSDictionary * currentAppearOrFadeContext;
 @property id delegate;
 @property(copy) NSArray * extraItems;
-@property struct CGPoint { float x1; float x2; } pointAboveControls;
-@property struct CGPoint { float x1; float x2; } pointBelowControls;
-@property struct CGPoint { float x1; float x2; } pointLeftOfControls;
-@property struct CGPoint { float x1; float x2; } pointRightOfControls;
+@property struct CGPoint { double x1; double x2; } pointAboveControls;
+@property struct CGPoint { double x1; double x2; } pointBelowControls;
+@property struct CGPoint { double x1; double x2; } pointLeftOfControls;
+@property struct CGPoint { double x1; double x2; } pointRightOfControls;
 @property(readonly) NSArray * rectsToEvade;
 @property(copy) NSArray * replacements;
 @property UIResponder * responderTarget;
-@property BOOL showAllReplacements;
-@property BOOL supressesHorizontalMovement;
+@property bool showAllReplacements;
+@property bool supressesHorizontalMovement;
 @property int targetDirection;
-@property BOOL targetHorizontal;
-@property struct CGPoint { float x1; float x2; } targetPoint;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
+@property bool targetHorizontal;
+@property struct CGPoint { double x1; double x2; } targetPoint;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } targetRect;
 @property(copy) NSString * untruncatedString;
-@property(readonly) BOOL visible;
+@property(readonly) bool visible;
 
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;
@@ -109,86 +112,89 @@
 + (void)fadeSharedCalloutBarIfNeededForTouchInView:(id)arg1 window:(id)arg2;
 + (void)hideSharedCalloutBar;
 + (id)sharedCalloutBar;
-+ (BOOL)sharedCalloutBarIsVisible;
++ (bool)sharedCalloutBarIsVisible;
 
+- (void)_endOngoingAppearOrFadeAnimations;
 - (void)_fadeAfterCommand:(SEL)arg1;
 - (void)_showNextItems:(id)arg1;
 - (void)_showPreviousItems:(id)arg1;
-- (BOOL)_updateVisibleItemsAnimated:(BOOL)arg1;
-- (void)addRectToEvade:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)_updateVisibleItemsAnimated:(bool)arg1;
+- (void)addRectToEvade:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)appear;
 - (void)appearAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (int)arrowDirection;
-- (void)buttonHighlighted:(id)arg1 highlighted:(BOOL)arg2;
+- (void)buttonHighlighted:(id)arg1 highlighted:(bool)arg2;
 - (void)buttonPressed:(id)arg1;
-- (BOOL)calculateControlFrameForCalloutSize:(struct CGSize { float x1; float x2; })arg1 below:(BOOL)arg2;
-- (BOOL)calculateControlFrameForCalloutSize:(struct CGSize { float x1; float x2; })arg1 right:(BOOL)arg2;
-- (BOOL)calculateControlFrameInsideTargetRect:(struct CGSize { float x1; float x2; })arg1;
+- (bool)calculateControlFrameForCalloutSize:(struct CGSize { double x1; double x2; })arg1 below:(bool)arg2;
+- (bool)calculateControlFrameForCalloutSize:(struct CGSize { double x1; double x2; })arg1 right:(bool)arg2;
+- (bool)calculateControlFrameInsideTargetRect:(struct CGSize { double x1; double x2; })arg1;
 - (void)clearEvadeRects;
 - (void)clearReplacements;
 - (void)clearSupressesHorizontalMovementFrame;
-- (void)configureButtons:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })controlFrame;
+- (void)configureButtons:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })controlFrame;
+- (id)currentAppearOrFadeContext;
 - (void)dealloc;
 - (id)delegate;
 - (void)expandAfterAlertOrBecomeActive:(id)arg1;
 - (id)extraItems;
 - (void)fade;
+- (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)flattenForAlertOrResignActive:(id)arg1;
-- (BOOL)hasReplacements;
+- (bool)hasReplacements;
 - (void)hide;
-- (void)hideAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })pointAboveControls;
-- (struct CGPoint { float x1; float x2; })pointBelowControls;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (struct CGPoint { float x1; float x2; })pointLeftOfControls;
-- (struct CGPoint { float x1; float x2; })pointRightOfControls;
-- (BOOL)recentlyFaded;
-- (BOOL)rectClear:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })pointAboveControls;
+- (struct CGPoint { double x1; double x2; })pointBelowControls;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (struct CGPoint { double x1; double x2; })pointLeftOfControls;
+- (struct CGPoint { double x1; double x2; })pointRightOfControls;
+- (bool)recentlyFaded;
+- (bool)rectClear:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)rectsToEvade;
 - (void)removeFromSuperview;
 - (id)replacements;
 - (void)resetPage;
 - (id)responderTarget;
 - (void)setArrowDirection:(int)arg1;
-- (void)setControlFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setControlFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCurrentAppearOrFadeContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExtraItems:(id)arg1;
-- (BOOL)setFrameForSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPointAboveControls:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPointBelowControls:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPointLeftOfControls:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPointRightOfControls:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)setFrameForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPointAboveControls:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPointBelowControls:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPointLeftOfControls:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPointRightOfControls:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setReplacements:(id)arg1;
 - (void)setResponderTarget:(id)arg1;
-- (void)setShowAllReplacements:(BOOL)arg1;
-- (void)setSupressesHorizontalMovement:(BOOL)arg1;
+- (void)setShowAllReplacements:(bool)arg1;
+- (void)setSupressesHorizontalMovement:(bool)arg1;
 - (void)setTargetDirection:(int)arg1;
-- (void)setTargetHorizontal:(BOOL)arg1;
-- (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(int)arg2;
-- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pointBelowControls:(struct CGPoint { float x1; float x2; })arg2 pointAboveControls:(struct CGPoint { float x1; float x2; })arg3;
-- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pointLeftOfControls:(struct CGPoint { float x1; float x2; })arg2 pointRightOfControls:(struct CGPoint { float x1; float x2; })arg3;
-- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTargetHorizontal:(bool)arg1;
+- (void)setTargetPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 arrowDirection:(int)arg2;
+- (void)setTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 pointBelowControls:(struct CGPoint { double x1; double x2; })arg2 pointAboveControls:(struct CGPoint { double x1; double x2; })arg3;
+- (void)setTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 pointLeftOfControls:(struct CGPoint { double x1; double x2; })arg2 pointRightOfControls:(struct CGPoint { double x1; double x2; })arg3;
+- (void)setTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setUntruncatedString:(id)arg1;
 - (void)show;
-- (BOOL)showAllReplacements;
-- (float)supressHorizontalXMovementIfNeededForPoint:(struct CGPoint { float x1; float x2; })arg1 proposedX:(float)arg2;
-- (BOOL)supressesHorizontalMovement;
+- (bool)showAllReplacements;
+- (double)supressHorizontalXMovementIfNeededForPoint:(struct CGPoint { double x1; double x2; })arg1 proposedX:(double)arg2;
+- (bool)supressesHorizontalMovement;
 - (int)targetDirection;
 - (id)targetForAction:(SEL)arg1;
-- (BOOL)targetHorizontal;
-- (struct CGPoint { float x1; float x2; })targetPoint;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetRect;
+- (bool)targetHorizontal;
+- (struct CGPoint { double x1; double x2; })targetPoint;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetRect;
 - (int)textEffectsVisibilityLevel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textEffectsWindowBoundsWithoutStatusBar;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textEffectsWindowBoundsWithoutStatusBar;
 - (id)untruncatedString;
 - (void)update;
-- (void)updateAnimated:(BOOL)arg1;
+- (void)updateAnimated:(bool)arg1;
 - (void)updateAvailableButtons;
 - (void)updateForCurrentPage;
-- (BOOL)visible;
+- (bool)visible;
 
 @end

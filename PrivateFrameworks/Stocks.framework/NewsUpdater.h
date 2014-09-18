@@ -6,16 +6,15 @@
    See Warning(s) below.
  */
 
-@class <NewsUpdaterDelegate>, NewsParserData, Stock, StockNewsItemCollection;
+@class <NewsUpdaterDelegate>, Stock, StockNewsItemCollection;
 
-@interface NewsUpdater : XMLHTTPRequest {
+@interface NewsUpdater : YQLRequest {
     <NewsUpdaterDelegate> *_delegate;
-    BOOL _firstLoad;
     StockNewsItemCollection *_lastNewsItemCollection;
     double _lastResponseTimestamp;
-    NewsParserData *_newsParserData;
     Stock *_stock;
     id _updateCompletionHandler;
+    bool_firstLoad;
 }
 
 @property <NewsUpdaterDelegate> * delegate;
@@ -25,19 +24,18 @@
 
 - (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
-- (void)cancel;
 - (void)clearNewsCacheOnDisk;
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (void)fetchNewsForStock:(id)arg1 withCompletion:(id)arg2;
-- (BOOL)fetchNewsForStock:(id)arg1;
+- (void)fetchNewsForStock:(id)arg1;
 - (id)init;
 - (void)loadNewsCacheFromDiskForSymbol:(id)arg1;
-- (int)parseData:(id)arg1;
+- (void)parseData:(id)arg1;
 - (void)resetLocale;
 - (void)saveLastResponse;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldReloadOnResume;
+- (bool)shouldReloadOnResume;
 
 @end

@@ -4,13 +4,13 @@
 
 @class UIWebPaginationInfo;
 
-@interface QLWordProcessorPrintPageRenderer : QLRemotePrintPageHelper {
+@interface QLWordProcessorPrintPageRenderer : QLWebViewPrintPageHelper {
     UIWebPaginationInfo *_paginationInfo;
 }
 
 - (id)_paginationInfo;
 - (void)dealloc;
-- (int)numberOfPages;
-- (id)pdfDataForPageAtIndex:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 printingDone:(BOOL*)arg3;
+- (long long)numberOfPages;
+- (id)pdfDataForPageAtIndex:(long long)arg1 printingDone:(bool*)arg2;
 
 @end

@@ -2,19 +2,68 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSString;
+
 @interface VKDebugModel : VKModelObject <VKMapLayer> {
+    struct unique_ptr<ggl::FragmentedPool<ggl::Debug::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::Debug::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::Debug::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::DebugPoints::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::DebugPoints::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct shared_ptr<ggl::Debug::BaseMesh> { 
+        struct BaseMesh {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _debugLinesRenderState;
+    } _debugPointsRenderState;
+    } _debugPointsShaderSetupPool;
+    } _debugRenderItemPool;
+    } _debugShaderSetupPool;
     float _fontSize;
-    BOOL _geocentric;
+    } _unitRectMesh;
+    bool_geocentric;
+    bool_needsReset;
 }
 
-@property BOOL geocentric;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool geocentric;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (void)_paintTile:(id)arg1 fromLayer:(unsigned int)arg2 withContext:(id)arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)appendDebugTileCommandsToBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 forMapTile:(id)arg2 fromLayer:(unsigned long long)arg3 withContext:(id)arg4 withConsole:(struct DebugConsole { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; struct Matrix<float, 2, 1> { float x_3_1_1[2]; } x3; struct Matrix<float, 2, 1> { float x_4_1_1[2]; } x4; unsigned long long x5; struct RenderItem {} *x6; struct unique_ptr<ggl::DataWrite<ggl::ColoredText::MyVertexElement>, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::MyVertexElement> > > { struct __compressed_pair<ggl::DataWrite<ggl::ColoredText::MyVertexElement> *, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::MyVertexElement> > > { struct DataWrite<ggl::ColoredText::MyVertexElement> {} *x_1_2_1; } x_7_1_1; } x7; unsigned long long x8; struct Matrix<float, 2, 1> {} *x9; struct Matrix<unsigned char, 4, 1> { unsigned char x_10_1_1[4]; } x10; struct Matrix<unsigned char, 4, 1> { unsigned char x_11_1_1[4]; } x11; float x12; }*)arg5;
 - (void)dealloc;
-- (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
-- (BOOL)geocentric;
-- (unsigned int)mapLayerPosition;
-- (void)setGeocentric:(BOOL)arg1;
-- (unsigned int)supportedRenderPasses;
+- (void)didReceiveMemoryWarning;
+- (void)flushPools;
+- (bool)geocentric;
+- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (id)init;
+- (unsigned long long)mapLayerPosition;
+- (void)reset;
+- (void)resetPools:(id)arg1;
+- (void)setGeocentric:(bool)arg1;
+- (bool)shouldLayoutWithoutStyleManager;
+- (struct shared_ptr<ggl::Debug::BaseMesh> { struct BaseMesh {} *x1; struct __shared_weak_count {} *x2; })unitRectMesh;
 
 @end

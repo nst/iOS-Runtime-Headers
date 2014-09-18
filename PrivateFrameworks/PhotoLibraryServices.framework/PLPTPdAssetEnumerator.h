@@ -13,10 +13,10 @@
 
 + (id)enumeratorWithAssetObjectIDs:(id)arg1 albumObjectIDs:(id)arg2 managedObjectContext:(id)arg3;
 
-- (id)assetsFromOffset:(unsigned int)arg1 count:(unsigned int)arg2;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)assetsFromOffset:(unsigned long long)arg1 count:(unsigned long long)arg2;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
-- (unsigned int)getPTPdInfo:(id*)arg1 count:(unsigned int)arg2 fetchOffset:(unsigned int)arg3;
+- (unsigned long long)getPTPdInfo:(id*)arg1 count:(unsigned long long)arg2 fetchOffset:(unsigned long long)arg3;
 - (id)init;
 
 @end

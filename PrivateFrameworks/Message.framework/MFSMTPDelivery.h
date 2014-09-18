@@ -12,5 +12,6 @@
 - (void)dealloc;
 - (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (Class)deliveryClass;
+- (void)setAccount:(id)arg1;
 
 @end

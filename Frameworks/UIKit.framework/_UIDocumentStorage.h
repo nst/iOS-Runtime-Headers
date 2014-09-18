@@ -10,11 +10,11 @@
 }
 
 @property(readonly) NSURL * rootURL;
-@property(getter=isUbiquitous,readonly) BOOL ubiquitous;
+@property(getter=isUbiquitous,readonly) bool ubiquitous;
 
 - (void)dealloc;
 - (id)initWithSearchScope:(id)arg1 rootURL:(id)arg2;
-- (BOOL)isUbiquitous;
+- (bool)isUbiquitous;
 - (id)rootURL;
 
 @end

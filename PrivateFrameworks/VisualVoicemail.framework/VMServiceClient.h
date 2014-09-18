@@ -29,6 +29,6 @@
 - (void)removeObserver:(id)arg1;
 - (void)setBehaviorFlags:(long long)arg1;
 - (id)sharedAccount;
-- (BOOL)sharedServiceIsSubscribed;
+- (bool)sharedServiceIsSubscribed;
 
 @end

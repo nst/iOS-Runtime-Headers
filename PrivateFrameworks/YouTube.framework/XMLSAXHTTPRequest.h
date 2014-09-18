@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSMutableData, NSURLConnection, NSURLRequest;
+@class NSMutableData, NSString, NSURLConnection, NSURLRequest;
 
 @interface XMLSAXHTTPRequest : NSObject <NSURLConnectionDelegate> {
     struct _xmlSAXHandler { 
@@ -44,13 +44,18 @@
         int (*endElementNs)(); 
         int (*serror)(); 
     NSURLConnection *_connection;
-    BOOL _invalidResponse;
     NSMutableData *_rawData;
     NSURLRequest *_request;
     } _saxHandler;
+    bool_invalidResponse;
 }
 
-+ (BOOL)anyRequestLoading;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (bool)anyRequestLoading;
 + (id)serviceUnavailableError;
 + (unsigned int)uniqueQueryID;
 
@@ -65,11 +70,11 @@
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (id)init;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadRequest:(id)arg1;
 - (void)loadStatusChanged;
 - (int)parseData:(id)arg1;
-- (BOOL)receivedValidResponse:(id)arg1;
+- (bool)receivedValidResponse:(id)arg1;
 - (id)request;
 - (void)willParseData;
 

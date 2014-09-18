@@ -2,29 +2,37 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class MCDProgressView, UIImageView, UILabel;
+@class MCDProgressView, MPUGradientView, UIImageView, UILabel;
 
 @interface MCDNowPlayingView : UIView {
     UILabel *_albumLabel;
     UILabel *_artistLabel;
     UIImageView *_artworkView;
+    UIImageView *_explicitImageView;
+    MPUGradientView *_gradientView;
     MCDProgressView *_progressView;
     UILabel *_titleLabel;
+    bool_explicitTrack;
 }
 
 @property(readonly) UILabel * albumLabel;
 @property(readonly) UILabel * artistLabel;
 @property(readonly) UIImageView * artworkView;
+@property(getter=isExplicitTrack) bool explicitTrack;
 @property(readonly) MCDProgressView * progressView;
 @property(readonly) UILabel * titleLabel;
 
 - (void).cxx_destruct;
-- (id)_addLabelWithFont:(id)arg1 baseLineFromTop:(float)arg2 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)_addLabelWithFont:(id)arg1;
+- (void)_layoutLabel:(id)arg1 baseLineFromTop:(double)arg2 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)albumLabel;
 - (id)artistLabel;
 - (id)artworkView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isExplicitTrack;
+- (void)layoutSubviews;
 - (id)progressView;
+- (void)setExplicitTrack:(bool)arg1;
 - (id)titleLabel;
 
 @end

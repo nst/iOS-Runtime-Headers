@@ -7,4 +7,9 @@
 
 + (void)getDefaultRadioMetricsControllerWithCompletionHandler:(id)arg1;
 
+- (void)_statusBarOrientationDidChange:(id)arg1;
+- (void)_updateWindowOrientation;
+- (void)dealloc;
+- (id)init;
+
 @end

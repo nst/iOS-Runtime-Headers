@@ -7,22 +7,28 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface TSWPPlaceholderSmartField : TSWPSmartField {
-    BOOL _localizable;
+    NSString *_scriptTag;
+    bool_localizable;
 }
 
-@property BOOL isLocalizable;
+@property bool isLocalizable;
+@property(copy) NSString * scriptTag;
 
-- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
+- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; boolx5; int x6; unsigned int x7[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (int)elementKind;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isLocalizable;
-- (void)loadFromArchive:(const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
+- (bool)isLocalizable;
+- (void)loadFromArchive:(const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; boolx5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
+- (void)saveToArchive:(struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; boolx5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setIsLocalizable:(BOOL)arg1;
+- (id)scriptTag;
+- (void)setIsLocalizable:(bool)arg1;
+- (void)setScriptTag:(id)arg1;
+- (int)smartFieldKind;
 
 @end

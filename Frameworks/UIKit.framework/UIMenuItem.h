@@ -6,22 +6,20 @@
 
 @interface UIMenuItem : NSObject {
     SEL _action;
-    BOOL _dontDismiss;
     NSString *_title;
+    bool_dontDismiss;
 }
 
 @property SEL action;
-@property BOOL dontDismiss;
+@property bool dontDismiss;
 @property(copy) NSString * title;
-
-+ (id)menuItemWithTitle:(id)arg1 action:(SEL)arg2;
 
 - (SEL)action;
 - (void)dealloc;
-- (BOOL)dontDismiss;
+- (bool)dontDismiss;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2;
 - (void)setAction:(SEL)arg1;
-- (void)setDontDismiss:(BOOL)arg1;
+- (void)setDontDismiss:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

@@ -6,26 +6,27 @@
 
 @interface UIMessageActivity : UIActivity {
     MFMessageComposeViewController *_messageComposeViewController;
-    BOOL _sourceIsManaged;
+    bool_sourceIsManaged;
 }
 
 @property(retain) MFMessageComposeViewController * messageComposeViewController;
-@property BOOL sourceIsManaged;
+@property bool sourceIsManaged;
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (id)_activityImage;
+- (id)_activitySettingsImage;
 - (void)_cleanup;
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (id)messageComposeViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setMessageComposeViewController:(id)arg1;
-- (void)setSourceIsManaged:(BOOL)arg1;
-- (BOOL)sourceIsManaged;
+- (void)setSourceIsManaged:(bool)arg1;
+- (bool)sourceIsManaged;
 
 @end

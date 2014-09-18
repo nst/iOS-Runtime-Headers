@@ -5,35 +5,36 @@
 @class <NSObject>, NSArray, NSObject;
 
 @interface ABValuePredicate : ABPredicate {
-    long _comparison;
-    BOOL _dictionaryValue;
+    long long _comparison;
     NSArray *_orderedKeys;
     int _property;
     <NSObject> *_value;
+    bool_dictionaryValue;
 }
 
-@property long comparison;
+@property long long comparison;
 @property int property;
 @property(copy) NSObject * value;
 
-+ (id)stringForComparison:(id)arg1 withComparision:(long)arg2;
++ (id)stringForComparison:(id)arg1 withComparision:(long long)arg2;
 
+- (bool)_allowsLaxCheckingForFTS;
 - (id)_ftsAllQueryStrings;
 - (id)_ftsTermStringForString:(id)arg1;
 - (id)_ftsTokenizedTermStringForString:(id)arg1;
-- (BOOL)_shouldConsultIndexForKey:(id)arg1;
-- (BOOL)_supportsFTSSearch;
+- (bool)_shouldConsultIndexForKey:(id)arg1;
+- (bool)_supportsFTSSearch;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
-- (long)comparison;
+- (long long)comparison;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)predicateFormat;
 - (int)property;
-- (id)queryJoinsInCompound:(BOOL)arg1;
+- (id)queryJoinsInCompound:(bool)arg1;
 - (id)querySelectProperties;
 - (id)queryWhereString;
-- (void)setComparison:(long)arg1;
+- (void)setComparison:(long long)arg1;
 - (void)setProperty:(int)arg1;
 - (void)setValue:(id)arg1;
 - (id)stringForComparison:(id)arg1;

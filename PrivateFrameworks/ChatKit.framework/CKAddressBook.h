@@ -7,9 +7,11 @@
 
 + (void*)addressBook;
 + (id)contactImageCache;
-+ (id)contactImageOfDiameter:(float)arg1 forRecordID:(int)arg2 monogramStyle:(int)arg3;
-+ (id)monogrammerWithDiameter:(float)arg1 style:(int)arg2;
-+ (id)placeholderContactImageOfDiameter:(float)arg1 monogramStyle:(int)arg2;
-+ (id)transcriptContactImageOfDiameter:(float)arg1 forRecordID:(int)arg2;
++ (id)contactImageOfDiameter:(double)arg1 forRecordID:(int)arg2 monogramStyle:(long long)arg3 tintMonogramText:(bool)arg4 customFont:(id)arg5;
++ (id)contactImageOfDiameter:(double)arg1 forRecordID:(int)arg2 monogramStyle:(long long)arg3 tintMonogramText:(bool)arg4;
++ (id)locationSharingContactImageOfDiameter:(double)arg1 forRecordID:(int)arg2 useCustomFont:(bool)arg3;
++ (id)monogrammerWithDiameter:(double)arg1 style:(long long)arg2 useAppTintColor:(bool)arg3 customFont:(id)arg4;
++ (id)placeholderContactImageOfDiameter:(double)arg1 monogramStyle:(long long)arg2 tintMonogramText:(bool)arg3;
++ (id)transcriptContactImageOfDiameter:(double)arg1 forRecordID:(int)arg2;
 
 @end

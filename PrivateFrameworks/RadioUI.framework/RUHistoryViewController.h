@@ -2,74 +2,86 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUHistoryViewControllerDelegate>, MPAVItem, NSArray, NSMutableArray, RUHistoryDataSource, RUPreviewSession, RUWishlistDataSource, RadioHistoryCategory, SKUICircleProgressIndicator, UIActionSheet, UILabel, UITableView;
+@class <RUHistoryViewControllerDelegate>, MPAVItem, MPMoviePlayerController, NSArray, NSMutableArray, NSString, RUHistoryDataSource, RUPreviewSession, RURadioAdTrack, RUWishlistDataSource, RadioHistoryCategory, SKUICircleProgressIndicator, UIActionSheet, UILabel, UITableView;
 
-@interface RUHistoryViewController : UIViewController <RUAudioPreviewViewDelegate, RUHistoryDataSourceDelegate, RUWishlistDataSourceDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface RUHistoryViewController : UIViewController <RUAudioPreviewViewDelegate, RUHistoryDataSourceDelegate, RUPreviewSessionObserver, RUWishlistDataSourceDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicator;
     UIActionSheet *_confirmationActionSheet;
     <RUHistoryViewControllerDelegate> *_delegate;
     NSArray *_historyCategories;
     RUHistoryDataSource *_historyDataSource;
-    int _historyType;
-    BOOL _isVisible;
+    long long _historyType;
     UILabel *_loadingLabel;
     UILabel *_noHistoryLabel;
     RUPreviewSession *_previewSession;
     MPAVItem *_previewingAVItem;
     RadioHistoryCategory *_previewingHistoryCategory;
     UITableView *_tableView;
+    MPMoviePlayerController *_videoAdPreviewMoviePlayerController;
+    RURadioAdTrack *_videoAdTrack;
     RUWishlistDataSource *_wishlistDataSource;
     NSMutableArray *_wishlistedTracks;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <RUHistoryViewControllerDelegate> * delegate;
-@property(readonly) int historyType;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long historyType;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_clearAction:(id)arg1;
 - (void)_configureCell:(id)arg1 forAdTrack:(id)arg2;
 - (void)_configureCell:(id)arg1 forRadioTrack:(id)arg2;
-- (unsigned int)_count;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (unsigned long long)_count;
 - (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1;
-- (void)_endPreviewPlaybackWithOptions:(int)arg1 fadeoutDuration:(double)arg2;
+- (void)_endPreviewPlaybackWithOptions:(long long)arg1 fadeoutDuration:(double)arg2;
 - (id)_indexPathForPreviewingItem;
-- (BOOL)_isHistoryItem:(id)arg1 effectivelyPlayingWithAVItem:(id)arg2;
-- (BOOL)_isLoading;
-- (id)_newSectionFooterForType:(int)arg1 inSection:(int)arg2;
-- (id)_newSectionHeaderForType:(int)arg1 withAttributedText:(id)arg2 detailAttributedText:(id)arg3;
+- (bool)_isHistoryItem:(id)arg1 effectivelyPlayingWithAVItem:(id)arg2;
+- (bool)_isLoading;
 - (id)_newSegmentedControl;
 - (void)_refreshHistoryTracks;
 - (void)_refreshWishlistedTracks;
+- (void)_reportVideoAdPreviewDidFinishIfNeeded;
 - (void)_selectedSegmentIndexDidChangeAction:(id)arg1;
+- (void)_updateTableViewRowHeight;
 - (void)_updateViewForHistoryChange;
+- (void)_updateViewForHorizontalSizeClassChange;
+- (void)_updateViewForTraitCollectionChange;
+- (void)_videoAdPreviewMoviePlaybackDidFinishNotification:(id)arg1;
 - (id)_wishlistedTrackAtIndexPath:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)audioPreviewViewDidCancel:(id)arg1 forReason:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)audioPreviewViewDidCancel:(id)arg1 forReason:(long long)arg2;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
 - (id)historyDataSource:(id)arg1 viewControllerForPresentingAdTrack:(id)arg2;
 - (void)historyDataSourceDidUpdateHistoryCategories:(id)arg1;
-- (int)historyType;
+- (long long)historyType;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)previewSession:(id)arg1 didChangeFromItem:(id)arg2 toItem:(id)arg3;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)wishlistDataSourceDidInvalidate:(id)arg1;
 
 @end

@@ -9,10 +9,8 @@
     NSObject<OS_dispatch_group> *_completionGroup;
     <TSUDownloadSessionDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _didFinishInitialization;
     NSError *_error;
     NSObject<OS_dispatch_group> *_initializationGroup;
-    BOOL _isCancelled;
     double _lastProgressValue;
     TSUDownloadManager *_manager;
     TSUBasicProgress *_progress;
@@ -21,10 +19,12 @@
     NSMutableDictionary *_taskProgress;
     long long _totalBytesDownloaded;
     long long _totalBytesExpectedToBeDownloaded;
+    bool_didFinishInitialization;
+    bool_isCancelled;
 }
 
-@property(readonly) BOOL isActive;
-@property(readonly) BOOL isCancelled;
+@property(readonly) bool isActive;
+@property(readonly) bool isCancelled;
 @property(readonly) TSUProgress * progress;
 @property(readonly) NSString * sessionDescription;
 @property(readonly) long long totalBytesDownloaded;
@@ -32,16 +32,16 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (void)cancelRemainingTasksNotifyingDelegate:(BOOL)arg1;
+- (void)cancelRemainingTasksNotifyingDelegate:(bool)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)didFinishInitialization;
-- (BOOL)hasActiveTaskWithDescription:(id)arg1;
+- (bool)hasActiveTaskWithDescription:(id)arg1;
 - (void)headRequestForDownloadItem:(id)arg1 taskProgress:(id)arg2;
 - (id)init;
-- (id)initWithManager:(id)arg1 downloadItems:(id)arg2 description:(id)arg3 willRequestDownload:(BOOL)arg4 delegate:(id)arg5;
-- (BOOL)isActive;
-- (BOOL)isCancelled;
+- (id)initWithManager:(id)arg1 downloadItems:(id)arg2 description:(id)arg3 willRequestDownload:(bool)arg4 delegate:(id)arg5;
+- (bool)isActive;
+- (bool)isCancelled;
 - (void)notifyCompletionWithQueue:(id)arg1 completionHandler:(id)arg2;
 - (id)progress;
 - (id)sessionDescription;

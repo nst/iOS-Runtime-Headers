@@ -2,83 +2,91 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray, NSDictionary, TIKeyboardCandidate;
+@class NSArray, NSDictionary, TIKeyboardCandidate, TIKeyboardIntermediateText;
 
 @interface TIKeyboardCandidateResultSet : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _batchCandidateLocation;
+    TIKeyboardCandidate *_acceptedCandidate;
+    unsigned long long _batchCandidateLocation;
     NSArray *_candidates;
     TIKeyboardCandidate *_defaultCandidate;
-    BOOL _excludedExtensionCandidates;
-    unsigned int _generatedCandidateCount;
+    unsigned long long _generatedCandidateCount;
     NSDictionary *_indexTitles;
-    unsigned int _initialSelectedIndex;
+    unsigned long long _initialSelectedIndex;
     NSArray *_initiallyHiddenCandidates;
-    unsigned int _selectedHiddenCandidateIndex;
+    unsigned long long _selectedHiddenCandidateIndex;
     NSDictionary *_showExtensionCandidates;
     NSDictionary *_sortMethodGroups;
     NSArray *_sortMethods;
+    TIKeyboardIntermediateText *_uncommittedText;
+    bool_excludedExtensionCandidates;
 }
 
-@property unsigned int batchCandidateLocation;
+@property(retain) TIKeyboardCandidate * acceptedCandidate;
+@property unsigned long long batchCandidateLocation;
 @property(retain) NSArray * candidates;
 @property(copy) TIKeyboardCandidate * defaultCandidate;
-@property BOOL excludedExtensionCandidates;
+@property bool excludedExtensionCandidates;
 @property(readonly) TIKeyboardCandidate * firstCandidate;
-@property unsigned int generatedCandidateCount;
-@property(readonly) BOOL hasCandidates;
-@property(readonly) BOOL hasMetadata;
+@property unsigned long long generatedCandidateCount;
+@property(readonly) bool hasCandidates;
+@property(readonly) bool hasMetadata;
 @property(retain) NSDictionary * indexTitles;
-@property unsigned int initialSelectedIndex;
+@property unsigned long long initialSelectedIndex;
 @property(retain) NSArray * initiallyHiddenCandidates;
-@property(readonly) BOOL isDummySet;
-@property unsigned int selectedHiddenCandidateIndex;
+@property(readonly) bool isDummySet;
+@property unsigned long long selectedHiddenCandidateIndex;
 @property(retain) NSDictionary * showExtensionCandidates;
 @property(retain) NSDictionary * sortMethodGroups;
 @property(retain) NSArray * sortMethods;
+@property(retain) TIKeyboardIntermediateText * uncommittedText;
 
 + (id)dummySet;
-+ (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 excludedExtensionCandidates:(BOOL)arg10;
++ (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned long long)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned long long)arg9 excludedExtensionCandidates:(bool)arg10;
 + (id)setWithCandidates:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)batchCandidateLocation;
-- (id)candidateGroupsForSortIndex:(int)arg1;
+- (id)acceptedCandidate;
+- (unsigned long long)batchCandidateLocation;
+- (id)candidateGroupsForSortIndex:(long long)arg1;
 - (id)candidates;
-- (BOOL)candidatesForSortIndexShowAlternativeText:(int)arg1;
+- (bool)candidatesForSortIndexShowAlternativeText:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)defaultCandidate;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)excludedExtensionCandidates;
+- (bool)excludedExtensionCandidates;
 - (id)firstCandidate;
-- (unsigned int)generatedCandidateCount;
-- (BOOL)hasCandidates;
-- (BOOL)hasMetadata;
+- (unsigned long long)generatedCandidateCount;
+- (bool)hasCandidates;
+- (bool)hasMetadata;
 - (id)indexTitles;
-- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 excludedExtensionCandidates:(BOOL)arg10;
+- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned long long)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned long long)arg9 excludedExtensionCandidates:(bool)arg10;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)initialSelectedIndex;
+- (unsigned long long)initialSelectedIndex;
 - (id)initiallyHiddenCandidates;
-- (BOOL)isDummySet;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSubsetOf:(id)arg1;
-- (unsigned int)positionInCandidateList:(id)arg1;
-- (unsigned int)selectedHiddenCandidateIndex;
-- (void)setBatchCandidateLocation:(unsigned int)arg1;
+- (bool)isDummySet;
+- (bool)isEqual:(id)arg1;
+- (bool)isSubsetOf:(id)arg1;
+- (unsigned long long)positionInCandidateList:(id)arg1;
+- (unsigned long long)selectedHiddenCandidateIndex;
+- (void)setAcceptedCandidate:(id)arg1;
+- (void)setBatchCandidateLocation:(unsigned long long)arg1;
 - (id)setByAppendingSet:(id)arg1;
 - (void)setCandidates:(id)arg1;
 - (void)setDefaultCandidate:(id)arg1;
-- (void)setExcludedExtensionCandidates:(BOOL)arg1;
-- (void)setGeneratedCandidateCount:(unsigned int)arg1;
+- (void)setExcludedExtensionCandidates:(bool)arg1;
+- (void)setGeneratedCandidateCount:(unsigned long long)arg1;
 - (void)setIndexTitles:(id)arg1;
-- (void)setInitialSelectedIndex:(unsigned int)arg1;
+- (void)setInitialSelectedIndex:(unsigned long long)arg1;
 - (void)setInitiallyHiddenCandidates:(id)arg1;
-- (void)setSelectedHiddenCandidateIndex:(unsigned int)arg1;
+- (void)setSelectedHiddenCandidateIndex:(unsigned long long)arg1;
 - (void)setShowExtensionCandidates:(id)arg1;
 - (void)setSortMethodGroups:(id)arg1;
 - (void)setSortMethods:(id)arg1;
+- (void)setUncommittedText:(id)arg1;
 - (id)showExtensionCandidates;
 - (id)sortMethodGroups;
 - (id)sortMethods;
+- (id)uncommittedText;
 
 @end

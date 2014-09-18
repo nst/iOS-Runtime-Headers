@@ -6,28 +6,34 @@
    See Warning(s) below.
  */
 
-@class <CoreDAVAccountInfoProvider>, <CoreDAVTaskGroupDelegate>, <CoreDAVTaskManager>, NSError, NSMutableSet;
+@class <CoreDAVAccountInfoProvider>, <CoreDAVTaskGroupDelegate>, <CoreDAVTaskManager>, NSError, NSMutableSet, NSString;
 
 @interface CoreDAVTaskGroup : NSObject <CoreDAVSubmittable> {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
     id _completionBlock;
+    id _context;
     <CoreDAVTaskGroupDelegate> *_delegate;
     NSError *_error;
-    BOOL _isCancelling;
-    BOOL _isFinished;
-    BOOL _isTearingDown;
     NSMutableSet *_outstandingTasks;
     id _progressBlock;
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
+    bool_isCancelling;
+    bool_isFinished;
+    bool_isTearingDown;
 }
 
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;
 @property(copy) id completionBlock;
+@property(retain) id context;
+@property(copy,readonly) NSString * debugDescription;
 @property <CoreDAVTaskGroupDelegate> * delegate;
+@property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSMutableSet * outstandingTasks;
 @property(copy) id progressBlock;
+@property(readonly) Class superclass;
 @property <CoreDAVTaskManager> * taskManager;
 @property double timeoutInterval;
 
@@ -36,9 +42,11 @@
 - (void)bailWithError:(id)arg1;
 - (void)cancelTaskGroup;
 - (id)completionBlock;
+- (id)context;
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
+- (void)finishCoreDAVTaskGroupWithError:(id)arg1 delegateCallbackBlock:(id)arg2;
 - (void)finishCoreDAVTaskGroupWithError:(id)arg1;
 - (void)finishEarlyWithError:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
@@ -46,6 +54,7 @@
 - (id)progressBlock;
 - (void)setAccountInfoProvider:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setProgressBlock:(id)arg1;

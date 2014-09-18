@@ -5,19 +5,19 @@
 @class NSLock, NSString, PFUbiquityGlobalObjectIDCache, PFUbiquityKnowledgeVector, PFUbiquityLocation, PFUbiquityPeerRangeCache, PFUbiquityPeerReceipt, PFUbiquityTransactionHistoryCache, PFUbiquityTransactionLogCache;
 
 @interface PFUbiquitySwitchboardCacheWrapper : NSObject {
-    BOOL _allowSchedulingOfReceiptFileWrites;
     PFUbiquityKnowledgeVector *_baselineKV;
     PFUbiquityGlobalObjectIDCache *_globalIDCache;
     PFUbiquityKnowledgeVector *_kv;
     NSString *_localPeerID;
     PFUbiquityPeerRangeCache *_peerRangeCache;
     PFUbiquityPeerReceipt *_peerReceipt;
-    BOOL _pendingReceiptWrite;
     NSLock *_receiptFileLock;
     NSString *_storeName;
     PFUbiquityTransactionHistoryCache *_transactionHistoryCache;
     PFUbiquityTransactionLogCache *_transactionLogCache;
     PFUbiquityLocation *_ubiquityRootLocation;
+    bool_allowSchedulingOfReceiptFileWrites;
+    bool_pendingReceiptWrite;
 }
 
 @property(retain) PFUbiquityKnowledgeVector * baselineKV;
@@ -50,6 +50,6 @@
 - (id)transactionHistoryCache;
 - (id)transactionLogCache;
 - (id)ubiquityRootLocation;
-- (BOOL)writeReceiptFile:(BOOL)arg1 error:(id*)arg2;
+- (bool)writeReceiptFile:(bool)arg1 error:(id*)arg2;
 
 @end

@@ -6,7 +6,7 @@
     id _internal;
 }
 
-@property int nameStyle;
+@property long long nameStyle;
 
 + (id)sharedInstance;
 
@@ -14,30 +14,23 @@
 - (void)_accountsChanged:(id)arg1;
 - (void)_addressBookChanged;
 - (void)_buildSiblingsForIMHandle:(id)arg1;
-- (BOOL)_buildingChatSiblings;
+- (bool)_buildingChatSiblings;
 - (id)_chatSiblingsForHandle:(id)arg1;
 - (void)_clearAccountSiblingsForGUID:(id)arg1 handle:(id)arg2;
 - (void)_clearChatSiblingsForGUID:(id)arg1 handle:(id)arg2;
-- (void)_clearSiblingsCacheForIMHandle:(id)arg1 rebuildAfter:(BOOL)arg2;
+- (void)_clearSiblingsCacheForIMHandle:(id)arg1 rebuildAfter:(bool)arg2;
 - (void)_dumpOutAllIMHandles;
 - (void)_dumpOutAllIMHandlesForAccount:(id)arg1;
 - (void)_emptySiblingCacheForIMHandleGUID:(id)arg1;
 - (id)_existingAccountSiblingsForHandle:(id)arg1;
 - (id)_existingChatSiblingsForHandle:(id)arg1;
-- (void)_rebuildUniqueNameMapWithStyleChange:(BOOL)arg1;
 - (id)allIMHandles;
-- (id)candidateUniqueNamesForIMHandle:(id)arg1;
-- (void)clearNameReservationsForObject:(id)arg1;
 - (void)clearSiblingCacheForIMHandle:(id)arg1;
 - (void)dealloc;
-- (void)imHandleInfoChanged:(id)arg1;
 - (id)init;
-- (int)nameStyle;
-- (void)reassessIMHandleForUniqueName:(id)arg1 rebuild:(BOOL)arg2;
-- (void)reassessIMHandleForUniqueName:(id)arg1;
-- (void)rebuildUniqueNameMap;
+- (long long)nameStyle;
 - (void)registerIMHandle:(id)arg1;
-- (void)setNameStyle:(int)arg1;
+- (void)setNameStyle:(long long)arg1;
 - (id)siblingsForIMHandle:(id)arg1;
 - (void)unregisterIMHandle:(id)arg1;
 

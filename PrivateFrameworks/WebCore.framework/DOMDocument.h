@@ -2,43 +2,46 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMAbstractView, DOMDocumentType, DOMElement, DOMHTMLCollection, DOMHTMLElement, DOMImplementation, DOMStyleSheetList, NSString;
+@class DOMAbstractView, DOMDocumentType, DOMElement, DOMHTMLCollection, DOMHTMLElement, DOMImplementation, DOMStyleSheetList, NSString, WebFrame;
 
 @interface DOMDocument : DOMNode {
 }
 
-@property(readonly) NSString * URL;
+@property(copy,readonly) NSString * URL;
+@property(readonly) DOMElement * activeElement;
 @property(readonly) DOMHTMLCollection * anchors;
 @property(readonly) DOMHTMLCollection * applets;
 @property(retain) DOMHTMLElement * body;
-@property(readonly) NSString * characterSet;
+@property(copy,readonly) NSString * characterSet;
 @property(copy) NSString * charset;
 @property(copy) NSString * cookie;
-@property(readonly) NSString * defaultCharset;
+@property(copy,readonly) NSString * defaultCharset;
 @property(readonly) DOMAbstractView * defaultView;
 @property(readonly) DOMDocumentType * doctype;
 @property(readonly) DOMElement * documentElement;
 @property(copy) NSString * documentURI;
-@property(readonly) NSString * domain;
+@property(copy,readonly) NSString * domain;
 @property(readonly) DOMHTMLCollection * forms;
 @property(readonly) DOMHTMLCollection * images;
 @property(readonly) DOMImplementation * implementation;
-@property(readonly) NSString * inputEncoding;
-@property(readonly) NSString * lastModified;
+@property(copy,readonly) NSString * inputEncoding;
+@property(copy,readonly) NSString * lastModified;
 @property(readonly) DOMHTMLCollection * links;
-@property(readonly) NSString * preferredStylesheetSet;
-@property(readonly) NSString * readyState;
-@property(readonly) NSString * referrer;
+@property(copy,readonly) NSString * preferredStylesheetSet;
+@property(copy,readonly) NSString * readyState;
+@property(copy,readonly) NSString * referrer;
 @property(copy) NSString * selectedStylesheetSet;
 @property(readonly) DOMStyleSheetList * styleSheets;
 @property(copy) NSString * title;
-@property(readonly) NSString * xmlEncoding;
-@property BOOL xmlStandalone;
+@property(readonly) WebFrame * webFrame;
+@property(copy,readonly) NSString * xmlEncoding;
+@property bool xmlStandalone;
 @property(copy) NSString * xmlVersion;
 
 - (id)URL;
 - (id)URLWithAttributeString:(id)arg1;
 - (id)_documentRange;
+- (id)activeElement;
 - (id)adoptNode:(id)arg1;
 - (id)anchors;
 - (id)applets;
@@ -64,16 +67,17 @@
 - (id)createExpression:(id)arg1 :(id)arg2;
 - (id)createExpression:(id)arg1 resolver:(id)arg2;
 - (id)createNSResolver:(id)arg1;
-- (id)createNodeIterator:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
-- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)createNodeIterator:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(bool)arg4;
+- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(bool)arg4;
 - (id)createProcessingInstruction:(id)arg1 :(id)arg2;
 - (id)createProcessingInstruction:(id)arg1 data:(id)arg2;
 - (id)createRange;
 - (id)createTextNode:(id)arg1;
 - (id)createTouch:(id)arg1 target:(id)arg2 identifier:(int)arg3 pageX:(int)arg4 pageY:(int)arg5 screenX:(int)arg6 screenY:(int)arg7;
 - (id)createTouchList;
-- (id)createTreeWalker:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
-- (id)createTreeWalker:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)createTreeWalker:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(bool)arg4;
+- (id)createTreeWalker:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(bool)arg4;
+- (id)currentScript;
 - (void)dd_resetResults;
 - (id)defaultCharset;
 - (id)defaultView;
@@ -84,9 +88,9 @@
 - (id)elementFromPoint:(int)arg1 y:(int)arg2;
 - (id)evaluate:(id)arg1 :(id)arg2 :(id)arg3 :(unsigned short)arg4 :(id)arg5;
 - (id)evaluate:(id)arg1 contextNode:(id)arg2 resolver:(id)arg3 type:(unsigned short)arg4 inResult:(id)arg5;
-- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2 value:(id)arg3;
-- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2;
-- (BOOL)execCommand:(id)arg1;
+- (bool)execCommand:(id)arg1 userInterface:(bool)arg2 value:(id)arg3;
+- (bool)execCommand:(id)arg1 userInterface:(bool)arg2;
+- (bool)execCommand:(id)arg1;
 - (id)forms;
 - (id)getComputedStyle:(id)arg1 :(id)arg2;
 - (id)getComputedStyle:(id)arg1 pseudoElement:(id)arg2;
@@ -96,24 +100,26 @@
 - (id)getElementsByTagName:(id)arg1;
 - (id)getElementsByTagNameNS:(id)arg1 :(id)arg2;
 - (id)getElementsByTagNameNS:(id)arg1 localName:(id)arg2;
-- (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2 authorOnly:(BOOL)arg3;
+- (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2 authorOnly:(bool)arg3;
 - (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2;
 - (id)getOverrideStyle:(id)arg1 :(id)arg2;
 - (id)getOverrideStyle:(id)arg1 pseudoElement:(id)arg2;
+- (bool)hasFocus;
 - (id)head;
-- (BOOL)hidden;
+- (bool)hidden;
 - (id)images;
 - (id)implementation;
-- (id)importNode:(id)arg1 :(BOOL)arg2;
-- (id)importNode:(id)arg1 deep:(BOOL)arg2;
+- (id)importNode:(id)arg1 :(bool)arg2;
+- (id)importNode:(id)arg1 deep:(bool)arg2;
 - (id)inputEncoding;
 - (id)lastModified;
 - (id)links;
+- (id)origin;
 - (id)preferredStylesheetSet;
-- (BOOL)queryCommandEnabled:(id)arg1;
-- (BOOL)queryCommandIndeterm:(id)arg1;
-- (BOOL)queryCommandState:(id)arg1;
-- (BOOL)queryCommandSupported:(id)arg1;
+- (bool)queryCommandEnabled:(id)arg1;
+- (bool)queryCommandIndeterm:(id)arg1;
+- (bool)queryCommandState:(id)arg1;
+- (bool)queryCommandSupported:(id)arg1;
 - (id)queryCommandValue:(id)arg1;
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
@@ -126,7 +132,7 @@
 - (void)setDocumentURI:(id)arg1;
 - (void)setSelectedStylesheetSet:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setXmlStandalone:(BOOL)arg1;
+- (void)setXmlStandalone:(bool)arg1;
 - (void)setXmlVersion:(id)arg1;
 - (id)styleSheets;
 - (id)title;
@@ -134,7 +140,7 @@
 - (id)webFrame;
 - (id)webkitGetNamedFlows;
 - (id)xmlEncoding;
-- (BOOL)xmlStandalone;
+- (bool)xmlStandalone;
 - (id)xmlVersion;
 
 @end

@@ -14,16 +14,17 @@
 - (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)account;
-- (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 isPartial:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (id)bodyDataForMessage:(id)arg1 isComplete:(bool*)arg2 isPartial:(bool*)arg3 downloadIfNecessary:(bool)arg4;
+- (bool)bodyFetchRequiresNetworkActivity;
 - (void)dealloc;
-- (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
+- (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(bool)arg2;
 - (id)initWithData:(id)arg1;
 - (id)mailboxUid;
 - (id)message;
 - (void)setMessageClass:(Class)arg1;
 - (void)setStoragePath:(id)arg1;
 - (id)storagePath;
-- (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(BOOL)arg3;
+- (id)storeData:(id)arg1 forMimePart:(id)arg2 isComplete:(bool)arg3;
 - (id)storePath;
 - (void)writeUpdatedMessageDataToDisk;
 

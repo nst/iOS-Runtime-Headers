@@ -5,6 +5,7 @@
 @interface MusicComposersViewController : MusicArtistsViewController {
 }
 
++ (long long)containerItemType;
 + (id)itemPersistentIDProperty;
 + (id)persistentIDProperty;
 

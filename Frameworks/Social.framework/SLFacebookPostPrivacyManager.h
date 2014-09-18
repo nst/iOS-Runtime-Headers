@@ -11,8 +11,6 @@
 
 @property(retain) SLFacebookPostPrivacySetting * privacySetting;
 
-+ (id)baseAudienceButtonImageNameForPrivacySettingType:(int)arg1;
-
 - (void).cxx_destruct;
 - (void)_handlePrivacySettingsUpdateResponseWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3 handler:(id)arg4;
 - (id)_privacySettingsFromPrivacyOptionDictionaries:(id)arg1;

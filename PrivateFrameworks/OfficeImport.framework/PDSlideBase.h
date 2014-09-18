@@ -7,10 +7,10 @@
 @interface PDSlideBase : NSObject {
     unsigned int mIsHidden : 1;
     unsigned int mIsDoneWithContent : 1;
+    boolmCachedSlideNumberPlaceholder;
+    boolmCachedSlideNumberShape;
     PDAnimation *mAnimation;
     OADBackground *mBackground;
-    BOOL mCachedSlideNumberPlaceholder;
-    BOOL mCachedSlideNumberShape;
     OADTableStyle *mDefaultTableStyle;
     NSArray *mDrawables;
     NSString *mName;
@@ -19,7 +19,7 @@
     PDTransition *mTransition;
 }
 
-@property(readonly) BOOL hasMappableSlideNumberShape;
+@property(readonly) bool hasMappableSlideNumberShape;
 @property(readonly) OADShape * slideNumberPlaceholder;
 @property(readonly) OADShape * slideNumberShape;
 
@@ -33,33 +33,34 @@
 - (void)dealloc;
 - (id)defaultTableStyle;
 - (id)defaultTheme;
+- (id)description;
 - (void)doneWithContent;
 - (id)drawables;
 - (id)drawingTheme;
 - (id)fontScheme;
 - (void)generatePpt9Animations:(id)arg1;
-- (BOOL)hasMappableSlideNumberShape;
-- (BOOL)hasPpt10Animations;
-- (BOOL)hasPpt9Animations;
+- (bool)hasMappableSlideNumberShape;
+- (bool)hasPpt10Animations;
+- (bool)hasPpt9Animations;
 - (id)init;
-- (BOOL)isHidden;
-- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (bool)isHidden;
+- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
 - (id)name;
-- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
+- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
+- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(bool)arg4;
 - (id)parentTextStyleForTables;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 useBaseTypeMatch:(BOOL)arg3 overrideIndex:(BOOL)arg4;
+- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
+- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 useBaseTypeMatch:(bool)arg3 overrideIndex:(bool)arg4;
 - (id)placeholders;
 - (void)setBackground:(id)arg1;
 - (void)setDefaultTableStyle:(id)arg1;
 - (void)setDrawables:(id)arg1 defaultTextListStyle:(id)arg2;
 - (void)setInheritedTextStyle:(id)arg1 placeholderType:(int)arg2 defaultTextListStyle:(id)arg3;
-- (void)setIsHidden:(BOOL)arg1;
+- (void)setIsHidden:(bool)arg1;
 - (void)setName:(id)arg1;
-- (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2;
+- (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2 state:(id)arg3;
 - (void)setTransition:(id)arg1;
 - (id)slideNumberPlaceholder;
 - (id)slideNumberShape;

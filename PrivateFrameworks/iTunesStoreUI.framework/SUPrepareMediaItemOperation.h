@@ -8,9 +8,9 @@
     SUMediaPlayerItem *_mediaItem;
 }
 
-@property(readonly) SUMediaPlayerItem * mediaPlayerItem;
+@property(copy,readonly) SUMediaPlayerItem * mediaPlayerItem;
 
-- (BOOL)_runHEADRequest:(id*)arg1;
+- (bool)_runHEADRequest:(id*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithMediaPlayerItem:(id)arg1;

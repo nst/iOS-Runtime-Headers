@@ -9,8 +9,8 @@
     TwoPartTextLabel *_twoPartLabel2;
 }
 
-@property(readonly) UILabel * textLabel2;
-@property(readonly) TwoPartTextLabel * twoPartTextLabel2;
+@property(retain,readonly) UILabel * textLabel2;
+@property(retain,readonly) TwoPartTextLabel * twoPartTextLabel2;
 
 - (void).cxx_destruct;
 - (void)_layoutSubviewsCore;

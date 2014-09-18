@@ -2,68 +2,55 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class <EAAccessoryDelegate>, NSArray, NSDictionary, NSMutableArray, NSString;
 
 @interface EAAccessoryInternal : NSObject {
-    int (*_cfAccessoryPortPropertyCallback)();
     NSDictionary *_audioPorts;
     NSString *_bonjourName;
     unsigned int _capabilities;
-    struct __CFAccessory { } *_cfAccessory;
-    void *_cfAccessoryPortPropertyContext;
     int _classType;
-    BOOL _connected;
     unsigned int _connectionID;
     <EAAccessoryDelegate> *_delegate;
     unsigned int _eqIndex;
     NSArray *_eqNames;
     NSString *_firmwareRevision;
     NSString *_hardwareRevision;
-    BOOL _hasIPConnection;
-    int _iPodOutOptionsMask;
-    BOOL _isAvailableOverBonjour;
     int _locationSentenceTypesMask;
     NSString *_macAddress;
     NSString *_manufacturer;
     NSString *_modelNumber;
     NSString *_name;
-    BOOL _notPresentInIAPAccessoriesArray;
     NSString *_preferredApp;
     NSDictionary *_protocols;
     NSString *_serialNumber;
     NSMutableArray *_sessionsList;
     NSDictionary *_vehicleInfoInitialData;
     NSDictionary *_vehicleInfoSupportedTypes;
+    bool_connected;
+    bool_hasIPConnection;
+    bool_isAvailableOverBonjour;
+    bool_notPresentInIAPAccessoriesArray;
 }
 
 @property(retain) NSDictionary * audioPorts;
 @property(copy) NSString * bonjourName;
 @property unsigned int capabilities;
-@property struct __CFAccessory { }* cfAccessory;
-@property int (* cfAccessoryPortPropertyCallback;
-@property void* cfAccessoryPortPropertyContext;
 @property int classType;
-@property BOOL connected;
+@property bool connected;
 @property unsigned int connectionID;
 @property <EAAccessoryDelegate> * delegate;
 @property unsigned int eqIndex;
 @property(retain) NSArray * eqNames;
 @property(copy) NSString * firmwareRevision;
 @property(copy) NSString * hardwareRevision;
-@property BOOL hasIPConnection;
-@property int iPodOutOptionsMask;
-@property BOOL isAvailableOverBonjour;
+@property bool hasIPConnection;
+@property bool isAvailableOverBonjour;
 @property int locationSentenceTypesMask;
 @property(copy) NSString * macAddress;
 @property(copy) NSString * manufacturer;
 @property(copy) NSString * modelNumber;
 @property(copy) NSString * name;
-@property BOOL notPresentInIAPAccessoriesArray;
+@property bool notPresentInIAPAccessoriesArray;
 @property(copy) NSString * preferredApp;
 @property(retain) NSDictionary * protocols;
 @property(copy) NSString * serialNumber;
@@ -71,15 +58,12 @@
 @property(retain) NSDictionary * vehicleInfoInitialData;
 @property(retain) NSDictionary * vehicleInfoSupportedTypes;
 
-- (int (*)())cfAccessoryPortPropertyCallback;
 - (void)addSession:(id)arg1;
 - (id)audioPorts;
 - (id)bonjourName;
 - (unsigned int)capabilities;
-- (struct __CFAccessory { }*)cfAccessory;
-- (void*)cfAccessoryPortPropertyContext;
 - (int)classType;
-- (BOOL)connected;
+- (bool)connected;
 - (unsigned int)connectionID;
 - (void)dealloc;
 - (id)delegate;
@@ -87,16 +71,15 @@
 - (id)eqNames;
 - (id)firmwareRevision;
 - (id)hardwareRevision;
-- (BOOL)hasIPConnection;
-- (int)iPodOutOptionsMask;
+- (bool)hasIPConnection;
 - (id)init;
-- (BOOL)isAvailableOverBonjour;
+- (bool)isAvailableOverBonjour;
 - (int)locationSentenceTypesMask;
 - (id)macAddress;
 - (id)manufacturer;
 - (id)modelNumber;
 - (id)name;
-- (BOOL)notPresentInIAPAccessoriesArray;
+- (bool)notPresentInIAPAccessoriesArray;
 - (id)preferredApp;
 - (id)protocols;
 - (void)removeSession:(id)arg1;
@@ -105,26 +88,22 @@
 - (void)setAudioPorts:(id)arg1;
 - (void)setBonjourName:(id)arg1;
 - (void)setCapabilities:(unsigned int)arg1;
-- (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
-- (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
-- (void)setCfAccessoryPortPropertyContext:(void*)arg1;
 - (void)setClassType:(int)arg1;
-- (void)setConnected:(BOOL)arg1;
+- (void)setConnected:(bool)arg1;
 - (void)setConnectionID:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEqIndex:(unsigned int)arg1;
 - (void)setEqNames:(id)arg1;
 - (void)setFirmwareRevision:(id)arg1;
 - (void)setHardwareRevision:(id)arg1;
-- (void)setHasIPConnection:(BOOL)arg1;
-- (void)setIPodOutOptionsMask:(int)arg1;
-- (void)setIsAvailableOverBonjour:(BOOL)arg1;
+- (void)setHasIPConnection:(bool)arg1;
+- (void)setIsAvailableOverBonjour:(bool)arg1;
 - (void)setLocationSentenceTypesMask:(int)arg1;
 - (void)setMacAddress:(id)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModelNumber:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setNotPresentInIAPAccessoriesArray:(BOOL)arg1;
+- (void)setNotPresentInIAPAccessoriesArray:(bool)arg1;
 - (void)setPreferredApp:(id)arg1;
 - (void)setProtocols:(id)arg1;
 - (void)setSerialNumber:(id)arg1;

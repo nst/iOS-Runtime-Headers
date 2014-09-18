@@ -6,19 +6,19 @@
 
 @interface CPMemoryPool : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     NSMutableArray *_files;
     char *_label;
     } _lock;
-    unsigned long _slotLength;
+    unsigned long long _slotLength;
 }
 
-@property(readonly) unsigned long slotLength;
+@property(readonly) unsigned long long slotLength;
 
 - (void)dealloc;
-- (id)initWithLabel:(const char *)arg1 slotLength:(unsigned long)arg2;
-- (id)nextSlotWithBytes:(const void*)arg1 length:(unsigned long)arg2;
-- (unsigned long)slotLength;
+- (id)initWithLabel:(const char *)arg1 slotLength:(unsigned long long)arg2;
+- (id)nextSlotWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
+- (unsigned long long)slotLength;
 
 @end

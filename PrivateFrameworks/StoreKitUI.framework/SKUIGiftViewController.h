@@ -15,16 +15,16 @@
 }
 
 @property(retain) SKUIClientContext * clientContext;
-@property(readonly) SKUIGift * gift;
+@property(copy,readonly) SKUIGift * gift;
 @property <SKUIGiftViewControllerDelegate> * giftDelegate;
 @property(retain) NSOperationQueue * operationQueue;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_clientContextDidLoadWithContext:(id)arg1 error:(id)arg2;
-- (void)_configurationDidLoadWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_configurationDidLoadWithResult:(bool)arg1 error:(id)arg2;
 - (void)_finishAuthenticateWithResponse:(id)arg1 error:(id)arg2;
-- (void)_finishGiftingWithResult:(BOOL)arg1;
+- (void)_finishGiftingWithResult:(bool)arg1;
 - (void)_loadGiftConfiguration;
 - (id)_localizedString:(id)arg1;
 - (id)clientContext;
@@ -35,6 +35,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setGiftDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

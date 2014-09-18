@@ -14,15 +14,13 @@
     struct { 
         double latitude; 
         double longitude; 
-    struct vector<GEOLocationCoordinate2D, vk_allocator<GEOLocationCoordinate2D> > { 
+    struct vector<GEOLocationCoordinate2D, std::__1::allocator<GEOLocationCoordinate2D> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
-        struct __compressed_pair<GEOLocationCoordinate2D *, vk_allocator<GEOLocationCoordinate2D> > { 
+        struct __compressed_pair<GEOLocationCoordinate2D *, std::__1::allocator<GEOLocationCoordinate2D> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    BOOL _animated;
-    BOOL _applied;
-    int _courseSource;
+    long long _courseSource;
     } _courseTargetLocation;
     int _focusStyle;
     double _heading;
@@ -33,11 +31,15 @@
     } _pois;
     int _style;
     double _verticalGroundspanScale;
+    bool_allowVerticalPanning;
+    bool_animated;
+    bool_applied;
 }
 
-@property(readonly) BOOL animated;
-@property BOOL applied;
-@property int courseSource;
+@property(readonly) bool allowVerticalPanning;
+@property(readonly) bool animated;
+@property bool applied;
+@property long long courseSource;
 @property struct { double x1; double x2; } courseTargetLocation;
 @property int focusStyle;
 @property(readonly) double heading;
@@ -48,12 +50,13 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_setPointOfReference:(struct { double x1; double x2; })arg1 heading:(double)arg2 routeMatch:(id)arg3 onRoute:(BOOL)arg4;
+- (void)_setPointOfReference:(struct { double x1; double x2; })arg1 heading:(double)arg2 routeMatch:(id)arg3 onRoute:(bool)arg4;
 - (void)addPointOfInterest:(struct { double x1; double x2; })arg1;
-- (BOOL)animated;
-- (BOOL)applied;
+- (bool)allowVerticalPanning;
+- (bool)animated;
+- (bool)applied;
 - (void)clearPointsOfInterest;
-- (int)courseSource;
+- (long long)courseSource;
 - (struct { double x1; double x2; })courseTargetLocation;
 - (void)dealloc;
 - (id)description;
@@ -63,13 +66,13 @@
 - (id)init;
 - (struct { double x1; double x2; })pointOfFocus;
 - (struct { double x1; double x2; })pointOfReference;
-- (void)setApplied:(BOOL)arg1;
-- (void)setCourseSource:(int)arg1;
+- (void)setApplied:(bool)arg1;
+- (void)setCourseSource:(long long)arg1;
 - (void)setCourseTargetLocation:(struct { double x1; double x2; })arg1;
 - (void)setFocusStyle:(int)arg1;
 - (void)setStyle:(int)arg1;
 - (int)style;
-- (void)updateForLocation:(id)arg1 routeMatch:(id)arg2 isRouteMatch:(BOOL)arg3 speedMultiplier:(double)arg4 onRoute:(BOOL)arg5 animated:(BOOL)arg6;
+- (void)updateForLocation:(id)arg1 routeMatch:(id)arg2 isRouteMatch:(bool)arg3 speedMultiplier:(double)arg4 onRoute:(bool)arg5 animated:(bool)arg6;
 - (double)verticalGroundspanScale;
 
 @end

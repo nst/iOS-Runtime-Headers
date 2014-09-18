@@ -7,15 +7,15 @@
 @interface AASigningSession : NSObject {
     NSString *_certURL;
     struct NACContextOpaque_ { } *_context;
-    long _error;
+    int _error;
     NSString *_sessionURL;
 }
 
-@property(readonly) long error;
+@property(readonly) int error;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (long)error;
+- (int)error;
 - (void)establishSession;
 - (id)initWithCertURL:(id)arg1 sessionURL:(id)arg2;
 - (id)signatureForData:(id)arg1;

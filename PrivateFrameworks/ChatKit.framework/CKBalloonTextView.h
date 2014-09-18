@@ -2,30 +2,36 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString;
+@class NSAttributedString, NSString;
 
 @interface CKBalloonTextView : UITextView <NSLayoutManagerDelegate> {
     NSAttributedString *_attributedText;
-    float _capOffsetFromBoundsTop;
-    float _lastLineBaselineOffsetFromBoundsTop;
-    BOOL _singleLine;
+    double _capOffsetFromBoundsTop;
+    double _lastLineBaselineOffsetFromBoundsTop;
+    bool_singleLine;
 }
 
 @property(copy) NSAttributedString * attributedText;
-@property float capOffsetFromBoundsTop;
-@property float lastLineBaselineOffsetFromBoundsTop;
-@property(getter=isSingleLine) BOOL singleLine;
+@property double capOffsetFromBoundsTop;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property double lastLineBaselineOffsetFromBoundsTop;
+@property(getter=isSingleLine) bool singleLine;
+@property(readonly) Class superclass;
 
 - (id)attributedText;
-- (float)capOffsetFromBoundsTop;
+- (bool)canBecomeFirstResponder;
+- (double)capOffsetFromBoundsTop;
+- (void)dealloc;
 - (void)didMoveToWindow;
-- (id)initReadonlyAndUnselectableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
-- (BOOL)isSingleLine;
-- (float)lastLineBaselineOffsetFromBoundsTop;
+- (id)initReadonlyAndUnselectableWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (bool)isSingleLine;
+- (double)lastLineBaselineOffsetFromBoundsTop;
 - (void)setAttributedText:(id)arg1;
-- (void)setCapOffsetFromBoundsTop:(float)arg1;
-- (void)setLastLineBaselineOffsetFromBoundsTop:(float)arg1;
-- (void)setSingleLine:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 isSingleLine:(BOOL*)arg3;
+- (void)setCapOffsetFromBoundsTop:(double)arg1;
+- (void)setLastLineBaselineOffsetFromBoundsTop:(double)arg1;
+- (void)setSingleLine:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 isSingleLine:(bool*)arg3;
 
 @end

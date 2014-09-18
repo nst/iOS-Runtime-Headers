@@ -6,38 +6,52 @@
    See Warning(s) below.
  */
 
-@class NSCache, NSDictionary, NSMutableDictionary, NSString, VKObjectPool, VKPShieldVariant;
+@class NSCache, NSDictionary, NSMutableDictionary;
 
-@interface VKShieldArtwork : NSObject <VKObjectPoolObject> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+@interface VKShieldArtwork : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
+    struct CGPoint { 
+        double x; 
+        double y; 
+    struct { 
+        double leftCapWidth; 
+        double rightCapWidth; 
+        double leftPadding; 
+        double rightPadding; 
+    struct CGImage { } *_backgroundImage;
     } _center;
-    float _extraScale;
     NSCache *_imageCache;
-    } _imageSize;
+    double _lineHeight;
+    double _lineSpacing;
     id _newContext;
     struct __CTFont { } *_nonDigitFont;
-    VKObjectPool *_pool;
-    NSString *_poolKey;
-    float _scale;
+    } _resizableInfo;
+    double _scale;
     struct CGColor { } *_shadowColor;
+    } _shadowOffset;
+    double _shadowRadius;
     NSDictionary *_stringAttributes;
     struct CGContext { } *_templateContext;
+    double _textBaseline;
+    double _textCenterOffsetX;
     NSMutableDictionary *_textSpecificArtworks;
-    VKPShieldVariant *_variantData;
+    bool_resizable;
 }
 
+@property(readonly) double scale;
+
 - (id).cxx_construct;
+- (id)_initWithBackgroundImage:(struct CGImage { }*)arg1 contentScale:(double)arg2 resizableInfo:(struct { double x1; double x2; double x3; double x4; }*)arg3 font:(struct __CTFont { }*)arg4 nonDigitFont:(struct __CTFont { }*)arg5 textColor:(struct CGColor { }*)arg6 textCenterOffsetX:(double)arg7 textBaseline:(double)arg8 textStrokeWidth:(double)arg9 textStrokeColor:(struct CGColor { }*)arg10 textShadowOffset:(struct CGSize { double x1; double x2; })arg11 textShadowRadius:(double)arg12 textShadowColor:(struct CGColor { }*)arg13 lineSpacing:(double)arg14;
 - (void)dealloc;
-- (id)imageWithShieldText:(id)arg1 allowMultiline:(BOOL)arg2;
+- (id)imageWithShieldText:(id)arg1 allowMultiline:(bool)arg2;
 - (id)imageWithShieldText:(id)arg1;
-- (id)initWithPackedVariant:(id)arg1 imageAtlas:(id)arg2 quadSize:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4 extraScale:(float)arg5;
-- (struct CGImage { }*)newImageWithShieldText:(id)arg1 allowMultiline:(BOOL)arg2 centerPoint:(struct CGPoint { float x1; float x2; }*)arg3;
-- (void)setPool:(id)arg1 withKey:(id)arg2;
+- (id)initWithBackgroundImage:(struct CGImage { }*)arg1 contentScale:(double)arg2 font:(struct __CTFont { }*)arg3 nonDigitFont:(struct __CTFont { }*)arg4 textColor:(struct CGColor { }*)arg5 textCenterOffsetX:(double)arg6 textBaseline:(double)arg7 textStrokeWidth:(double)arg8 textStrokeColor:(struct CGColor { }*)arg9 textShadowOffset:(struct CGSize { double x1; double x2; })arg10 textShadowRadius:(double)arg11 textShadowColor:(struct CGColor { }*)arg12;
+- (id)initWithPackedVariant:(id)arg1 backgroundImage:(struct CGImage { }*)arg2 scale:(double)arg3 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg4;
+- (id)initWithResizableBackgroundImage:(struct CGImage { }*)arg1 resizableInfo:(struct { double x1; double x2; double x3; double x4; }*)arg2 contentScale:(double)arg3 font:(struct __CTFont { }*)arg4 nonDigitFont:(struct __CTFont { }*)arg5 textColor:(struct CGColor { }*)arg6 textCenterOffsetX:(double)arg7 textBaseline:(double)arg8 textStrokeWidth:(double)arg9 textStrokeColor:(struct CGColor { }*)arg10 textShadowOffset:(struct CGSize { double x1; double x2; })arg11 textShadowRadius:(double)arg12 textShadowColor:(struct CGColor { }*)arg13 lineSpacing:(double)arg14;
+- (struct CGImage { }*)newImageWithShieldText:(id)arg1 allowMultiline:(bool)arg2 centerPoint:(struct CGPoint { double x1; double x2; }*)arg3;
+- (double)scale;
 - (void)setTextSpecificArtwork:(id)arg1 forStrings:(id)arg2;
 
 @end

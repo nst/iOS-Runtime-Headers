@@ -9,14 +9,16 @@
 
 @interface NSAffineTransform : NSObject <NSCopying, NSCoding> {
     struct { 
-        float m11; 
-        float m12; 
-        float m21; 
-        float m22; 
-        float tX; 
-        float tY; 
+        double m11; 
+        double m12; 
+        double m21; 
+        double m22; 
+        double tX; 
+        double tY; 
     } _transformStruct;
 }
+
+@property struct { double x1; double x2; double x3; double x4; double x5; double x6; } transformStruct;
 
 + (id)transform;
 
@@ -26,35 +28,33 @@
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (float)angle;
 - (void)appendTransform:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfTransformedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })cgAffineTransform;
-- (void)concatInContext:(struct CGContext { }*)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsOfTransformedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })cgAffineTransform;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)differOnlyByTranslation:(id)arg1;
-- (BOOL)differsFrom:(id)arg1;
+- (bool)differOnlyByTranslation:(id)arg1;
+- (bool)differsFrom:(id)arg1;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (id)initWithCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTransform:(id)arg1;
 - (void)invert;
-- (BOOL)isAxisAligned;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isAxisAligned;
+- (bool)isEqual:(id)arg1;
 - (void)prependTransform:(id)arg1;
-- (void)rotateByDegrees:(float)arg1;
-- (void)rotateByRadians:(float)arg1;
-- (void)scaleBy:(float)arg1;
-- (void)scaleXBy:(float)arg1 yBy:(float)arg2;
-- (void)setTransformStruct:(struct { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)rotateByDegrees:(double)arg1;
+- (void)rotateByRadians:(double)arg1;
+- (void)scaleBy:(double)arg1;
+- (void)scaleXBy:(double)arg1 yBy:(double)arg2;
+- (void)setTransformStruct:(struct { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)shearXBy:(float)arg1 yBy:(float)arg2;
-- (id)transformBezierPath:(id)arg1;
-- (struct CGPoint { float x1; float x2; })transformPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)transformRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 upperLeft:(struct CGPoint { float x1; float x2; }*)arg2 lowerLeft:(struct CGPoint { float x1; float x2; }*)arg3 lowerRight:(struct CGPoint { float x1; float x2; }*)arg4 upperRight:(struct CGPoint { float x1; float x2; }*)arg5;
-- (struct CGSize { float x1; float x2; })transformSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct { float x1; float x2; float x3; float x4; float x5; float x6; })transformStruct;
-- (void)translateXBy:(float)arg1 yBy:(float)arg2;
+- (struct CGPoint { double x1; double x2; })transformPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)transformRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 upperLeft:(struct CGPoint { double x1; double x2; }*)arg2 lowerLeft:(struct CGPoint { double x1; double x2; }*)arg3 lowerRight:(struct CGPoint { double x1; double x2; }*)arg4 upperRight:(struct CGPoint { double x1; double x2; }*)arg5;
+- (struct CGSize { double x1; double x2; })transformSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; })transformStruct;
+- (void)translateXBy:(double)arg1 yBy:(double)arg2;
 
 @end

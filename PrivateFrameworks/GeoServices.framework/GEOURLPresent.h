@@ -9,7 +9,7 @@
     GEOURLOptions *_options;
 }
 
-@property(readonly) BOOL hasOptions;
+@property(readonly) bool hasOptions;
 @property(retain) NSMutableArray * items;
 @property(retain) GEOURLOptions * options;
 
@@ -20,16 +20,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOptions;
-- (unsigned int)hash;
+- (bool)hasOptions;
+- (unsigned long long)hash;
 - (id)initWithDirectionsOptions:(id)arg1;
 - (id)initWithOptions:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)itemAtIndex:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)itemAtIndex:(unsigned long long)arg1;
 - (id)items;
-- (unsigned int)itemsCount;
+- (unsigned long long)itemsCount;
+- (void)mergeFrom:(id)arg1;
 - (id)options;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)setOptions:(id)arg1;
 - (void)writeTo:(id)arg1;

@@ -8,7 +8,7 @@
     CRRecentContact *_recentContact;
 }
 
-@property(readonly) CRRecentContact * recentContact;
+@property(retain,readonly) CRRecentContact * recentContact;
 
 - (void)dealloc;
 - (id)initWithChildren:(id)arg1 displayString:(id)arg2 recentContact:(id)arg3;

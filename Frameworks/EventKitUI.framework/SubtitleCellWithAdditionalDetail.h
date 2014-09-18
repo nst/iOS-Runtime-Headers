@@ -4,11 +4,11 @@
 
 @class UILabel;
 
-@interface SubtitleCellWithAdditionalDetail : UITableViewCell {
+@interface SubtitleCellWithAdditionalDetail : EKUIConstrainedFontsTableViewCell {
     UILabel *_additionalDetailLabel;
 }
 
-@property(readonly) UILabel * additionalDetailLabel;
+@property(retain,readonly) UILabel * additionalDetailLabel;
 
 - (void).cxx_destruct;
 - (id)additionalDetailLabel;

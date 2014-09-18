@@ -6,46 +6,46 @@
 
 @interface SUItemContentRating : NSObject <NSCopying> {
     NSDictionary *_dictionary;
-    int _rank;
+    long long _rank;
     NSString *_ratingDescription;
     NSString *_ratingLabel;
-    int _ratingSystem;
+    long long _ratingSystem;
     SSItemArtworkImage *_ratingSystemLogo;
-    BOOL _shouldHideWhenRestricted;
+    bool_shouldHideWhenRestricted;
 }
 
-@property(getter=isExplicitContent,readonly) BOOL explicitContent;
-@property int rank;
+@property(getter=isExplicitContent,readonly) bool explicitContent;
+@property long long rank;
 @property(copy) NSString * ratingDescription;
 @property(copy) NSString * ratingLabel;
-@property int ratingSystem;
+@property long long ratingSystem;
 @property(copy) SSItemArtworkImage * ratingSystemLogo;
-@property(getter=isRestricted,readonly) BOOL restricted;
-@property BOOL shouldHideWhenRestricted;
+@property(getter=isRestricted,readonly) bool restricted;
+@property bool shouldHideWhenRestricted;
 
-+ (int)ratingSystemFromString:(id)arg1;
++ (long long)ratingSystemFromString:(id)arg1;
 
-- (BOOL)_isRatingSystemForApps:(int)arg1;
-- (BOOL)_isRatingSystemForMovies:(int)arg1;
-- (BOOL)_isRatingSystemForMusic:(int)arg1;
-- (BOOL)_isRatingSystemForTV:(int)arg1;
+- (bool)_isRatingSystemForApps:(long long)arg1;
+- (bool)_isRatingSystemForMovies:(long long)arg1;
+- (bool)_isRatingSystemForMusic:(long long)arg1;
+- (bool)_isRatingSystemForTV:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isExplicitContent;
-- (BOOL)isRestricted;
-- (int)rank;
+- (bool)isExplicitContent;
+- (bool)isRestricted;
+- (long long)rank;
 - (id)ratingDescription;
 - (id)ratingLabel;
-- (int)ratingSystem;
+- (long long)ratingSystem;
 - (id)ratingSystemLogo;
-- (void)setRank:(int)arg1;
+- (void)setRank:(long long)arg1;
 - (void)setRatingDescription:(id)arg1;
 - (void)setRatingLabel:(id)arg1;
-- (void)setRatingSystem:(int)arg1;
+- (void)setRatingSystem:(long long)arg1;
 - (void)setRatingSystemLogo:(id)arg1;
-- (void)setShouldHideWhenRestricted:(BOOL)arg1;
-- (BOOL)shouldHideWhenRestricted;
+- (void)setShouldHideWhenRestricted:(bool)arg1;
+- (bool)shouldHideWhenRestricted;
 - (id)valueForProperty:(id)arg1;
 
 @end

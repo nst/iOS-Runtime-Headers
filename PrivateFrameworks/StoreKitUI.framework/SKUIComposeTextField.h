@@ -6,37 +6,42 @@
 
 @interface SKUIComposeTextField : UIView <UITextFieldDelegate> {
     SKUIComposeTextFieldConfiguration *_configuration;
-    int _currentTextLength;
+    long long _currentTextLength;
     id _delegate;
     UILabel *_label;
-    int _style;
+    long long _style;
     UITextField *_textField;
 }
 
-@property(readonly) int composeReviewStyle;
+@property(readonly) long long composeReviewStyle;
 @property(readonly) SKUIComposeTextFieldConfiguration * configuration;
+@property(copy,readonly) NSString * debugDescription;
 @property id delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSString * text;
 @property(readonly) UITextField * textField;
-@property(getter=isValid,readonly) BOOL valid;
+@property(getter=isValid,readonly) bool valid;
 
-+ (id)labelColorForStyle:(int)arg1;
-+ (id)labelFontForStyle:(int)arg1;
++ (id)labelColorForStyle:(long long)arg1;
++ (id)labelFontForStyle:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_textChanged:(id)arg1;
-- (int)composeReviewStyle;
+- (long long)composeReviewStyle;
 - (id)configuration;
 - (void)dealloc;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithConfiguration:(id)arg1 style:(int)arg2;
-- (BOOL)isValid;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithConfiguration:(id)arg1 style:(long long)arg2;
+- (bool)isValid;
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
-- (BOOL)textField:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (bool)textField:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (id)textField;
 
 @end

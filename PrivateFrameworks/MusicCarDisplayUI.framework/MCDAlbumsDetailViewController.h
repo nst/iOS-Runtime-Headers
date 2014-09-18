@@ -6,22 +6,22 @@
 
 @interface MCDAlbumsDetailViewController : MCDTableViewController {
     MPImageCache *_imageCache;
-    float _maximumDurationWidth;
+    double _maximumDurationWidth;
 }
 
-@property(readonly) float maximumDurationWidth;
+@property(readonly) double maximumDurationWidth;
 
 + (id)actionCellConfigurationClasses;
 
 - (void).cxx_destruct;
 - (void)_updateTitle;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
-- (float)maximumDurationWidth;
+- (double)maximumDurationWidth;
 - (void)reloadData;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

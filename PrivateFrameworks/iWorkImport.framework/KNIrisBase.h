@@ -2,57 +2,62 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLDataBuffer, TSDGLShader;
+@class NSString, TSDGLDataBuffer, TSDGLShader;
 
 @interface KNIrisBase : KNAnimationEffect <KNAnimationPluginArchiving> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } _drawableFrame;
     } _frameRect;
-    BOOL _isBuildOut;
+    bool_isBuildOut;
     TSDGLDataBuffer *mFadeDataBuffer;
     TSDGLShader *mFadeShader;
-    unsigned int mNumDivisionsPerQuadrant;
+    unsigned long long mNumDivisionsPerQuadrant;
     TSDGLDataBuffer *mOpaqueDataBuffer;
     TSDGLShader *mOpaqueShader;
     TSDGLDataBuffer *mQuadDataBuffer;
     TSDGLShader *mQuadShader;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
-+ (unsigned int)directionType;
-+ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (BOOL)isTransition;
++ (bool)isTransition;
 + (id)localizedMenuString:(int)arg1;
 + (id)thumbnailImageNameForType:(int)arg1;
-+ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (void)animationDidEndWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
-- (float)p_angleFromQuadrant:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (float)p_largestDividedAngleInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)p_setupDataBuffersWithFrameRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 openFromCenter:(BOOL)arg2;
+- (double)p_angleFromQuadrant:(unsigned long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (double)p_largestDividedAngleInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)p_setupDataBuffersWithFrameRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 openFromCenter:(bool)arg2;
 - (void)p_setupShaders;
 - (void)p_teardown;
 - (void)renderFrameWithContext:(id)arg1;

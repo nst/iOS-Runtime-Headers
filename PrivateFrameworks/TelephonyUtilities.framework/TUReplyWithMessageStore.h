@@ -5,19 +5,17 @@
 @interface TUReplyWithMessageStore : NSObject {
 }
 
+- (id)_cannedRepliesForSending:(bool)arg1;
+- (id)_defaultRepliesForSending:(bool)arg1;
 - (void)_handleMessagesStoreChanged;
+- (id)cannedReplies;
 - (id)cannedRepliesForSending;
-- (id)cannedRepliesWithCapitalization:(BOOL)arg1;
 - (id)cannedReplyActionSheetOptions;
-- (id)cannedReplyActionSheetPrefix;
-- (id)cannedReplyPrefix;
-- (id)cannedReplyPrefixForSending;
-- (id)cannedReplySettingsPrefix;
 - (int)count;
 - (id)customReplies;
 - (void)dealloc;
-- (id)defaultRepliesWithCapitalization:(BOOL)arg1;
+- (id)defaultReplies;
 - (id)init;
-- (void)setCustomReply:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setCustomReply:(id)arg1 atIndex:(unsigned long long)arg2;
 
 @end

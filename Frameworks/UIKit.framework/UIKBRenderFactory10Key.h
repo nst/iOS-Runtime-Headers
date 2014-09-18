@@ -5,26 +5,28 @@
 @interface UIKBRenderFactory10Key : UIKBRenderFactory {
 }
 
++ (bool)_isActiveKeyplaneSwitchKey:(id)arg1;
+
 - (id)_preferredScriptFontForRendering:(int)arg1;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (struct CGPoint { float x1; float x2; })abcKeyTextOffset;
+- (struct CGPoint { double x1; double x2; })abcKeyTextOffset;
 - (id)activeControlKeyTraits;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (id)controlKeyBackgroundColorName;
 - (id)controlKeyTraits;
 - (id)defaultKeyBackgroundColorName;
-- (struct CGPoint { float x1; float x2; })dictationKeyTextOffset;
+- (struct CGPoint { double x1; double x2; })dictationKeyTextOffset;
 - (id)displayContentsForKey:(id)arg1;
-- (unsigned int)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
-- (struct CGPoint { float x1; float x2; })globeKeyTextOffset;
-- (float)interkeyGapsCenterXOfKeyplaneFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)numberPadKeyPrimarySymbolSize;
-- (struct CGPoint { float x1; float x2; })numberPadKeyPrimaryTextOffset;
-- (struct CGPoint { float x1; float x2; })numberPadKeySecondaryTextOffset;
-- (struct CGPoint { float x1; float x2; })numberPadVBarSecondaryTextOffset;
-- (void)setupColumnLayoutSegmentsWithControlWidth:(float)arg1;
+- (unsigned long long)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
+- (struct CGPoint { double x1; double x2; })globeKeyTextOffset;
+- (double)interkeyGapsCenterXOfKeyplaneFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)numberPadKeyPrimarySymbolSize;
+- (struct CGPoint { double x1; double x2; })numberPadKeyPrimaryTextOffset;
+- (struct CGPoint { double x1; double x2; })numberPadKeySecondaryTextOffset;
+- (struct CGPoint { double x1; double x2; })numberPadVBarSecondaryTextOffset;
+- (void)setupColumnLayoutSegmentsWithControlWidth:(double)arg1;
 - (id)shiftedControlKeyTraits;
 - (id)shiftedWhiteControlKeyTraits;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })topEdgeAdjustmentInsets;
 
 @end

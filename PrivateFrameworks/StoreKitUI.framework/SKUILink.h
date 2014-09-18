@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSNumber, NSString, NSURL, SKUICountdown, SKUIItem;
+@class NSDictionary, NSNumber, NSString, NSURL, SKUICountdown, SKUIItem;
 
 @interface SKUILink : NSObject <SSMetricsEventFieldProvider> {
     SKUICountdown *_countdown;
@@ -14,9 +14,14 @@
 }
 
 @property(readonly) NSURL * URL;
-@property(getter=isActionable,readonly) BOOL actionable;
+@property(getter=isActionable,readonly) bool actionable;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) SKUIItem * item;
 @property(readonly) NSNumber * itemIdentifier;
+@property(readonly) NSDictionary * linkDictionary;
+@property(readonly) Class superclass;
 @property(readonly) NSString * targetString;
 @property(readonly) NSString * title;
 
@@ -25,10 +30,12 @@
 - (void)_setItem:(id)arg1;
 - (id)initWithComponentContext:(id)arg1;
 - (id)initWithLinkDictionary:(id)arg1;
+- (id)initWithURL:(id)arg1 title:(id)arg2 targetString:(id)arg3;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isActionable;
+- (bool)isActionable;
 - (id)item;
 - (id)itemIdentifier;
+- (id)linkDictionary;
 - (id)targetString;
 - (id)title;
 - (id)valueForMetricsField:(id)arg1;

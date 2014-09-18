@@ -14,11 +14,12 @@
 + (id)unlockDevice;
 + (id)unlockDeviceWithDictionary:(id)arg1 context:(id)arg2;
 
+- (bool)_afui_isUsefulUserResultCommand;
 - (id)cancellationCommands;
 - (id)encodedClassName;
 - (id)failureCommands;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setCancellationCommands:(id)arg1;
 - (void)setFailureCommands:(id)arg1;
 - (void)setSuccessCommands:(id)arg1;

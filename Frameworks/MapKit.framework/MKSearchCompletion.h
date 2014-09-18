@@ -2,27 +2,32 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapItem, NSArray, NSString;
+@class <GEOCompletionItem>, MKMapItem, NSArray, NSString;
 
 @interface MKSearchCompletion : NSObject {
+    <GEOCompletionItem> *_item;
     NSString *_localizedSectionHeader;
     NSString *_sourceID;
 }
 
 @property(readonly) NSArray * displayLines;
+@property(readonly) <GEOCompletionItem> * geoCompletionItem;
 @property(copy) NSString * localizedSectionHeader;
 @property(readonly) MKMapItem * mapItem;
 @property(copy) NSString * sourceID;
 
 - (void).cxx_destruct;
-- (void)applyToLocalSearchRequest:(id)arg1;
-- (void)applyToPlaceSearchRequest:(id)arg1;
+- (void)applyToLegacySearch:(id)arg1;
 - (id)calloutTitle;
 - (id)description;
 - (id)displayLines;
-- (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
-- (id)highlightsForLine:(unsigned int)arg1;
-- (id)iconWithScale:(float)arg1;
+- (id)geoCompletionItem;
+- (bool)getCoordinate:(struct { double x1; double x2; }*)arg1;
+- (unsigned long long)hash;
+- (id)highlightsForLine:(unsigned long long)arg1;
+- (id)iconWithScale:(double)arg1;
+- (id)initWithGeoCompletionItem:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedSectionHeader;
 - (id)mapItem;
 - (id)queryLine;

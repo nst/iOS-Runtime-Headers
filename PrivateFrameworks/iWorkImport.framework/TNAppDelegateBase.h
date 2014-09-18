@@ -10,8 +10,9 @@
 @property(readonly) NSArray * excelDocumentTypes;
 
 - (id)appChartPropertyOverrides;
+- (void)applicationDidFinishLaunching:(id)arg1;
 - (id)applicationName;
-- (id)applicationTemplateVariants;
+- (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
 - (void)configureSharedCode;
 - (id)createCompatibilityDelegate;
 - (id)defaultAppStoreURLString;
@@ -24,10 +25,12 @@
 - (id)init;
 - (id)nativeDocumentType;
 - (id)nativeSFFDocumentType;
+- (void)p_inputMethodsChanged:(id)arg1;
 - (id)previewImageNameForDocumentType:(id)arg1;
 - (id)previewImageNameForEncryptedNativeDocument;
 - (id)previewImageNameForNativeDocument;
 - (void)registerClassTypeMappings;
+- (bool)supportsRTL;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;

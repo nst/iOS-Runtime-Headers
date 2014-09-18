@@ -6,32 +6,34 @@
 
 @interface SBUIPluginController : NSObject <SBPluginBundleController> {
     <SBUIPluginControllerHost> *_host;
-    BOOL _isVisible;
+    bool_isVisible;
 }
 
 @property <SBUIPluginControllerHost> * host;
-@property(getter=isVisible) BOOL visible;
+@property(getter=isVisible) bool visible;
 
 - (void)cancelPendingActivationEvent:(int)arg1;
-- (BOOL)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void*)arg3;
+- (bool)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void*)arg3;
 - (void)handleBluetoothDismissal;
 - (void)handlePreheatCommand;
-- (BOOL)handledButtonDownEventFromSource:(int)arg1;
-- (BOOL)handledButtonTapFromSource:(int)arg1;
-- (BOOL)handledButtonUpEventFromSource:(int)arg1;
-- (BOOL)handledMenuButtonDownEvent;
-- (BOOL)handledMenuButtonTap;
-- (BOOL)handledMenuButtonUpEvent;
-- (BOOL)handledPasscodeUnlockWithCompletion:(id)arg1;
-- (BOOL)handledWiredMicButtonTap;
+- (void)handleViewFullyRevealed;
+- (bool)handledButtonDownEventFromSource:(int)arg1;
+- (bool)handledButtonTapFromSource:(int)arg1;
+- (bool)handledButtonUpEventFromSource:(int)arg1;
+- (bool)handledMenuButtonDownEvent;
+- (bool)handledMenuButtonTap;
+- (bool)handledMenuButtonUpEvent;
+- (bool)handledPasscodeUnlockWithCompletion:(id)arg1;
+- (bool)handledWiredMicButtonTap;
 - (id)host;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (void)prepareForActivationEvent:(int)arg1 eventSource:(int)arg2 afterInterval:(double)arg3;
 - (void)registeredWithHost;
 - (void)setHost:(id)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)supportedAndEnabled;
+- (void)setVisible:(bool)arg1;
+- (bool)supportedAndEnabled;
 - (id)viewControllerForActivationContext:(id)arg1;
-- (BOOL)wantsActivationEvent:(int)arg1 eventSource:(int)arg2 interval:(double*)arg3;
+- (void)viewPartiallyRevealedWithPercentRevealed:(double)arg1;
+- (bool)wantsActivationEvent:(int)arg1 eventSource:(int)arg2 interval:(double*)arg3;
 
 @end

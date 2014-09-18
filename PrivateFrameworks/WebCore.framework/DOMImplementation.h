@@ -14,7 +14,7 @@
 - (id)createHTMLDocument:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (BOOL)hasFeature:(id)arg1 :(id)arg2;
-- (BOOL)hasFeature:(id)arg1 version:(id)arg2;
+- (bool)hasFeature:(id)arg1 :(id)arg2;
+- (bool)hasFeature:(id)arg1 version:(id)arg2;
 
 @end

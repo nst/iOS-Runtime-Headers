@@ -12,7 +12,7 @@
 
 + (bool)allowOverlap:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;
 + (bool)behindText:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;
-+ (BOOL)escherIsFullySupported;
++ (bool)escherIsFullySupported;
 + (int)horizontalPosition:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;
 + (void)readClientDataFromGroup:(id)arg1 toGroup:(id)arg2 state:(id)arg3;
 + (void)readClientDataFromShape:(id)arg1 toGraphic:(id)arg2 state:(id)arg3;
@@ -20,7 +20,7 @@
 + (void)readFrom:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1 to:(id)arg2;
 + (int)relativeHorizontalPosition:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;
 + (int)relativeVerticalPosition:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;
-+ (BOOL)tablesAreAllowed;
++ (bool)tablesAreAllowed;
 + (int)verticalPosition:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;
 + (double)wrapDistanceBottom:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;
 + (double)wrapDistanceLeft:(struct EshContentProperties { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1;

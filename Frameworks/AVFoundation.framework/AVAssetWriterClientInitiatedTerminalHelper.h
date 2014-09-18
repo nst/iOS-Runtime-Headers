@@ -3,11 +3,11 @@
  */
 
 @interface AVAssetWriterClientInitiatedTerminalHelper : AVAssetWriterTerminalHelper {
-    int _terminalStatus;
+    long long _terminalStatus;
 }
 
-- (id)initWithConfigurationState:(id)arg1 terminalStatus:(int)arg2;
+- (id)initWithConfigurationState:(id)arg1 terminalStatus:(long long)arg2;
 - (id)initWithConfigurationState:(id)arg1;
-- (int)status;
+- (long long)status;
 
 @end

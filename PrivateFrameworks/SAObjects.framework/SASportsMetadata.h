@@ -8,9 +8,13 @@
 }
 
 @property(copy) NSNumber * average;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * identifier;
 @property(copy) NSString * name;
 @property(copy) NSNumber * selected;
+@property(readonly) Class superclass;
 @property(copy) NSString * value;
 
 + (id)metadata;

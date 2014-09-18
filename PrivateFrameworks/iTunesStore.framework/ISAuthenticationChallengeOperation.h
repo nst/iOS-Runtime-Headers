@@ -15,7 +15,7 @@
 - (id)_copyCredentialForSignInResponseDictionary:(id)arg1;
 - (id)challenge;
 - (void)dealloc;
-- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
+- (void)handleButtonSelected:(long long)arg1 withResponseDictionary:(id)arg2;
 - (void)run;
 - (void)setChallenge:(id)arg1;
 

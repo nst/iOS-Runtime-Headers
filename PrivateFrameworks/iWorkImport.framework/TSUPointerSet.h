@@ -11,11 +11,11 @@
 
 - (id)allObjects;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (void)getObjects:(id*)arg1;
 - (id)initWithCFSet:(struct __CFSet { }*)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
 - (id)member:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;

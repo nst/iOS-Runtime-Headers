@@ -4,42 +4,32 @@
 
 @class <_SBUIWidgetHost>, NSString;
 
-@interface _SBUIWidgetViewController : UIViewController <_SBUIWidgetHost, _SBUIWidgetViewController_Remote_IPC> {
+@interface _SBUIWidgetViewController : UIViewController <_SBUIWidgetHost> {
     <_SBUIWidgetHost> *_widgetHost;
     NSString *_widgetIdentifier;
-    int _widgetIdiom;
-    NSString *_widgetidentifier;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } preferredViewSize;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) struct CGSize { double x1; double x2; } preferredViewSize;
+@property(readonly) Class superclass;
 @property <_SBUIWidgetHost> * widgetHost;
 @property(copy) NSString * widgetIdentifier;
-@property int widgetIdiom;
 
-+ (id)_exportedInterface;
-+ (id)_remoteViewControllerInterface;
-
-- (void)__hostDidDismiss;
-- (void)__hostDidPresent;
-- (void)__hostWillDismiss;
-- (void)__hostWillPresent;
-- (void)__requestPreferredViewSizeWithReplyHandler:(id)arg1;
-- (void)__setWidgetIdentifier:(id)arg1;
-- (void)__setWidgetIdiom:(int)arg1;
 - (void)dealloc;
 - (void)hostDidDismiss;
 - (void)hostDidPresent;
 - (void)hostWillDismiss;
 - (void)hostWillPresent;
 - (void)invalidatePreferredViewSize;
-- (struct CGSize { float x1; float x2; })preferredViewSize;
+- (struct CGSize { double x1; double x2; })preferredViewSize;
 - (void)requestLaunchOfURL:(id)arg1;
-- (void)requestPresentationOfViewController:(id)arg1 presentationStyle:(int)arg2 context:(id)arg3 completion:(id)arg4;
+- (void)requestPresentationOfViewController:(id)arg1 presentationStyle:(long long)arg2 context:(id)arg3 completion:(id)arg4;
+- (void)setVisibleWidgetsIDs:(id)arg1;
 - (void)setWidgetHost:(id)arg1;
 - (void)setWidgetIdentifier:(id)arg1;
-- (void)setWidgetIdiom:(int)arg1;
 - (id)widgetHost;
 - (id)widgetIdentifier;
-- (int)widgetIdiom;
 
 @end

@@ -10,44 +10,50 @@
     int _filter;
 }
 
-@property(readonly) NSString * _prettyDescription;
-@property(readonly) NSString * _typeDescription;
-@property(readonly) unsigned int albumsCount;
-@property(readonly) id albumsSortingComparator;
-@property(readonly) unsigned int containersCount;
+@property(retain,readonly) NSString * _prettyDescription;
+@property(retain,readonly) NSString * _typeDescription;
+@property(readonly) unsigned long long albumsCount;
+@property(copy,readonly) id albumsSortingComparator;
+@property(readonly) unsigned long long containersCount;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property int filter;
-@property(readonly) unsigned int unreadAlbumsCount;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isFolder;
+@property(readonly) Class superclass;
+@property(readonly) unsigned long long unreadAlbumsCount;
 
 + (struct NSObject { Class x1; }*)albumListWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 
 - (void)_invalidateAllAlbums;
 - (id)_prettyDescription;
 - (id)_typeDescription;
-- (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
-- (int)albumListType;
+- (bool)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
+- (short)albumListType;
 - (id)albums;
-- (unsigned int)albumsCount;
+- (unsigned long long)albumsCount;
 - (id)albumsSortingComparator;
 - (void)assetContainerListDidChange:(id)arg1;
-- (BOOL)canEditAlbums;
-- (BOOL)canEditContainers;
+- (bool)canEditAlbums;
+- (bool)canEditContainers;
 - (id)containers;
-- (unsigned int)containersCount;
+- (unsigned long long)containersCount;
 - (id)containersRelationshipName;
 - (void)dealloc;
 - (int)filter;
-- (BOOL)hasAtLeastOneAlbum;
+- (bool)hasAtLeastOneAlbum;
 - (id)identifier;
 - (id)initWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
+- (bool)isFolder;
 - (id)managedObjectContext;
-- (BOOL)needsReordering;
+- (bool)needsReordering;
 - (id)photoLibrary;
 - (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
 - (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)setFilter:(int)arg1;
 - (void)setNeedsReordering;
-- (unsigned int)unreadAlbumsCount;
+- (unsigned long long)unreadAlbumsCount;
 - (void)updateAlbumsOrderIfNeeded;
 
 @end

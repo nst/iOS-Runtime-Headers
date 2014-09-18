@@ -22,6 +22,7 @@
 - (id)apnName;
 - (id)defaultsRepresentation;
 - (id)description;
+- (id)installationWarnings;
 - (id)password;
 - (id)proxy;
 - (id)proxyPort;

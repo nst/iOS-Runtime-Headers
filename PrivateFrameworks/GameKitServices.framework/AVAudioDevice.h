@@ -7,29 +7,29 @@
 @interface AVAudioDevice : NSObject {
     NSNumber *_deviceID;
     NSString *_deviceName;
-    BOOL _inputAvailable;
-    BOOL _isLineIn;
-    BOOL _outputAvailable;
+    bool_inputAvailable;
+    bool_isLineIn;
+    bool_outputAvailable;
 }
 
 @property(readonly) NSNumber * deviceID;
 @property(readonly) NSString * deviceName;
-@property(readonly) BOOL inputAvailable;
-@property(readonly) BOOL outputAvailable;
+@property(readonly) bool inputAvailable;
+@property(readonly) bool outputAvailable;
 
 - (void)createName;
-- (void)createNameForScope:(unsigned long)arg1;
+- (void)createNameForScope:(unsigned int)arg1;
 - (void)dealloc;
 - (id)deviceID;
 - (id)deviceName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDeviceID:(id)arg1;
-- (BOOL)inputAvailable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSomethingConnectedToJack;
-- (BOOL)isStreamAvailableForScope:(unsigned long)arg1;
-- (BOOL)isValidDevice;
-- (BOOL)isValidInputDevice;
-- (BOOL)outputAvailable;
+- (bool)inputAvailable;
+- (bool)isEqual:(id)arg1;
+- (bool)isSomethingConnectedToJack;
+- (bool)isStreamAvailableForScope:(unsigned int)arg1;
+- (bool)isValidDevice;
+- (bool)isValidInputDevice;
+- (bool)outputAvailable;
 
 @end

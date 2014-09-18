@@ -6,18 +6,19 @@
 
 @interface BBBulletinTransaction : NSObject {
     NSString *_bulletinID;
-    unsigned int _transactionID;
+    unsigned long long _transactionID;
 }
 
-@property(readonly) NSString * bulletinID;
-@property(readonly) unsigned int transactionID;
+@property(copy,readonly) NSString * bulletinID;
+@property(readonly) unsigned long long transactionID;
 
 + (id)transactionWithBulletinID:(id)arg1;
 
 - (id)bulletinID;
 - (void)dealloc;
-- (unsigned int)incrementTransactionID;
+- (id)description;
+- (unsigned long long)incrementTransactionID;
 - (id)initWithBulletinID:(id)arg1;
-- (unsigned int)transactionID;
+- (unsigned long long)transactionID;
 
 @end

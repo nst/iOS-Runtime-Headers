@@ -12,23 +12,28 @@
     id _destinationViewController;
     NSString *_identifier;
     id _performHandler;
+    id _sender;
     id _sourceViewController;
 }
 
 @property(readonly) id destinationViewController;
 @property(readonly) NSString * identifier;
 @property(copy) id performHandler;
+@property(retain) id sender;
 @property(readonly) id sourceViewController;
 
 + (id)segueWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3 performHandler:(id)arg4;
 
+- (void)_prepare;
 - (void)dealloc;
 - (id)destinationViewController;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3;
 - (void)perform;
 - (id)performHandler;
+- (id)sender;
 - (void)setPerformHandler:(id)arg1;
+- (void)setSender:(id)arg1;
 - (id)sourceViewController;
 
 @end

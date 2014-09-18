@@ -13,23 +13,27 @@
     struct array<unsigned char, 20> { 
         unsigned char __elems_[20]; 
     NSObject<OS_dispatch_queue> *_accessQueue;
+    int _didCull;
     } _digest;
     NSString *_filename;
     long long _identifier;
-    BOOL _isCulling;
     TSPDataManager *_manager;
     <TSPDataStorage> *_storage;
+    bool_isDeallocating;
 }
 
 @property(readonly) TSPObjectContext * context;
 @property(readonly) NSString * documentResourceLocator;
 @property(readonly) unsigned long long encodedLength;
+@property(readonly) unsigned long long encodedLengthIfLocal;
 @property(readonly) NSString * filename;
+@property(readonly) bool gilligan_isRemote;
 @property(readonly) long long identifier;
-@property(readonly) BOOL isApplicationData;
-@property(readonly) BOOL isExternalData;
-@property(readonly) BOOL isReadable;
-@property(readonly) BOOL needsDownload;
+@property(readonly) bool isApplicationData;
+@property(readonly) bool isEncrypted;
+@property(readonly) bool isExternalData;
+@property(readonly) bool isReadable;
+@property(readonly) bool needsDownload;
 @property(readonly) unsigned char packageIdentifier;
 @property(readonly) NSString * packageLocator;
 @property(retain) <TSPDataStorage> * storage;
@@ -44,14 +48,16 @@
 + (id)dataFromNSData:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromURL:(id)arg1 context:(id)arg2;
-+ (id)dataFromURL:(id)arg1 useExternalReferenceIfAllowed:(BOOL)arg2 context:(id)arg3;
++ (id)dataFromURL:(id)arg1 useExternalReferenceIfAllowed:(bool)arg2 context:(id)arg3;
++ (id)dataFromURL:(id)arg1 useExternalReferenceIfAllowed:(bool)arg2 useFileCoordination:(bool)arg3 context:(id)arg4;
 + (id)null;
 + (id)pasteboardTypeForIdentifier:(long long)arg1;
 + (id)readOnlyDataFromNSData:(id)arg1 filename:(id)arg2;
 + (id)readOnlyDataFromURL:(id)arg1;
 + (void)removeCullingListener:(id)arg1;
 + (id)requiredAVAssetOptions;
-+ (BOOL)updateDigest:(struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 withProtobufString:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_4_1; unsigned int x_1_4_2; char *x_1_4_3; } x_1_3_1; struct __short { union { unsigned char x_1_5_1; BOOL x_1_5_2; } x_2_4_1; BOOL x_2_4_2[11]; } x_1_3_2; struct __raw { unsigned long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg2;
++ (bool)updateDigest:(struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg1 withProtobufString:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg2;
++ (bool)writeStorage:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -62,6 +68,7 @@
 - (void)addDownloadObserver:(id)arg1 completionHandler:(id)arg2;
 - (void)archiveInfoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; int x10; unsigned int x11[1]; }*)arg1 archiver:(id)arg2;
 - (id)bookmarkData;
+- (bool)bookmarkDataNeedsWrite;
 - (id)context;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -69,18 +76,20 @@
 - (const struct array<unsigned char, 20> { unsigned char x1[20]; }*)digest;
 - (id)documentResourceLocator;
 - (unsigned long long)encodedLength;
+- (unsigned long long)encodedLengthIfLocal;
 - (id)filename;
-- (BOOL)gilligan_isRemote;
-- (unsigned int)hash;
+- (bool)gilligan_isRemote;
+- (unsigned long long)hash;
 - (long long)identifier;
 - (id)initWithIdentifier:(long long)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 storage:(id)arg4 manager:(id)arg5;
-- (BOOL)isApplicationData;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExternalData;
-- (BOOL)isLengthLikelyToBeGreaterThan:(unsigned long long)arg1;
-- (BOOL)isReadable;
-- (BOOL)isStorageInPackage:(id)arg1;
-- (BOOL)needsDownload;
+- (bool)isApplicationData;
+- (bool)isEncrypted;
+- (bool)isEqual:(id)arg1;
+- (bool)isExternalData;
+- (bool)isLengthLikelyToBeGreaterThan:(unsigned long long)arg1;
+- (bool)isReadable;
+- (bool)isStorageInPackage:(id)arg1;
+- (bool)needsDownload;
 - (struct CGDataProvider { }*)newCGDataProvider;
 - (struct CGImage { }*)newCGImage;
 - (struct CGImageSource { }*)newCGImageSource;
@@ -92,10 +101,11 @@
 - (id)preferredFilename;
 - (void)setFilename:(id)arg1 storage:(id)arg2;
 - (void)setStorage:(id)arg1;
-- (void)splitDataWithMaxSize:(unsigned long)arg1 subdataHandlerBlock:(id)arg2;
 - (id)storage;
+- (void)tsp_splitDataWithMaxSize:(unsigned long long)arg1 subdataHandlerBlock:(id)arg2;
 - (id)type;
 - (id)uniqueName;
-- (BOOL)writeToURL:(id)arg1 error:(id*)arg2;
+- (void)willCull;
+- (bool)writeToURL:(id)arg1 error:(id*)arg2;
 
 @end

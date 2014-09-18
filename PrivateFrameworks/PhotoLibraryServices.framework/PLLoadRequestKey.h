@@ -5,7 +5,7 @@
 @class NSManagedObjectID;
 
 @interface PLLoadRequestKey : NSObject <NSCopying> {
-    unsigned int _hash;
+    unsigned long long _hash;
     NSManagedObjectID *_objectID;
     unsigned short _sourceID;
 }
@@ -15,7 +15,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 
 @end

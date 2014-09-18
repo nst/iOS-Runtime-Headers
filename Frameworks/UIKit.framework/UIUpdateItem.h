@@ -6,39 +6,39 @@
 
 @interface UIUpdateItem : NSObject {
     int _action;
-    int _animation;
+    long long _animation;
     UITableViewUpdateGap *_gap;
-    BOOL _headerFooterOnly;
     NSIndexPath *_indexPath;
-    float _offset;
-    BOOL _skipAnimation;
+    double _offset;
+    bool_headerFooterOnly;
+    bool_skipAnimation;
 }
 
 @property(readonly) int action;
-@property int animation;
+@property long long animation;
 @property UITableViewUpdateGap * gap;
-@property BOOL headerFooterOnly;
+@property bool headerFooterOnly;
 @property(readonly) NSIndexPath * indexPath;
-@property float offset;
-@property BOOL skipAnimation;
+@property double offset;
+@property bool skipAnimation;
 
 - (id)_actionDescription;
 - (int)action;
-- (int)animation;
-- (int)compareIndexPaths:(id)arg1;
+- (long long)animation;
+- (long long)compareIndexPaths:(id)arg1;
 - (void)dealloc;
 - (id)gap;
-- (BOOL)headerFooterOnly;
+- (bool)headerFooterOnly;
 - (id)indexPath;
-- (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(int)arg3;
-- (int)inverseCompareIndexPaths:(id)arg1;
-- (BOOL)isSectionOperation;
-- (float)offset;
-- (void)setAnimation:(int)arg1;
+- (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(long long)arg3;
+- (long long)inverseCompareIndexPaths:(id)arg1;
+- (bool)isSectionOperation;
+- (double)offset;
+- (void)setAnimation:(long long)arg1;
 - (void)setGap:(id)arg1;
-- (void)setHeaderFooterOnly:(BOOL)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setSkipAnimation:(BOOL)arg1;
-- (BOOL)skipAnimation;
+- (void)setHeaderFooterOnly:(bool)arg1;
+- (void)setOffset:(double)arg1;
+- (void)setSkipAnimation:(bool)arg1;
+- (bool)skipAnimation;
 
 @end

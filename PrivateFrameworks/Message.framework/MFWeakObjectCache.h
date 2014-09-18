@@ -16,7 +16,7 @@
 
 - (void)dealloc;
 - (id)initWithBlock:(id)arg1;
-- (id)objectForKey:(id)arg1 wasCached:(BOOL*)arg2;
+- (id)objectForKey:(id)arg1 wasCached:(bool*)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
 

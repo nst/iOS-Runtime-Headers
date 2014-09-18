@@ -6,6 +6,9 @@
 
 @interface TSDFPSCounter : NSObject {
     NSMutableArray *_dateArray;
+    double _endTimeInterval;
+    unsigned long long _frameCount;
+    double _startTimeInterval;
 }
 
 - (void)addFrame;
@@ -15,9 +18,9 @@
 - (id)fpsGraphString;
 - (id)fpsSummaryString;
 - (id)init;
-- (id)p_fpsSummaryStringIncludingGraph:(BOOL)arg1;
-- (id)p_getFPSInfo:(BOOL)arg1;
+- (id)p_fpsSummaryStringIncludingGraph:(bool)arg1;
+- (id)p_getFPSInfo:(bool)arg1;
 - (void)reset;
-- (void)writeFPSInfoToLog:(id)arg1 identifier:(id)arg2 type:(id)arg3 direction:(id)arg4 duration:(double)arg5 graphing:(BOOL)arg6 slide:(int)arg7;
+- (void)writeFPSInfoToLog:(id)arg1 identifier:(id)arg2 type:(id)arg3 direction:(id)arg4 duration:(double)arg5 graphing:(bool)arg6 slide:(long long)arg7;
 
 @end

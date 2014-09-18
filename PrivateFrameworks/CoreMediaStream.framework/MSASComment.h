@@ -12,14 +12,14 @@
     NSString *_email;
     NSString *_firstName;
     NSString *_fullName;
-    BOOL _isBatchComment;
-    BOOL _isCaption;
-    BOOL _isDeletable;
-    BOOL _isLike;
-    BOOL _isMine;
     NSString *_lastName;
     NSString *_personID;
     NSDate *_timestamp;
+    bool_isBatchComment;
+    bool_isCaption;
+    bool_isDeletable;
+    bool_isLike;
+    bool_isMine;
 }
 
 @property(retain) NSString * GUID;
@@ -29,18 +29,18 @@
 @property(retain) NSString * email;
 @property(retain) NSString * firstName;
 @property(retain) NSString * fullName;
-@property BOOL isBatchComment;
-@property BOOL isCaption;
-@property BOOL isDeletable;
-@property BOOL isLike;
-@property BOOL isMine;
+@property bool isBatchComment;
+@property bool isCaption;
+@property bool isDeletable;
+@property bool isLike;
+@property bool isMine;
 @property(retain) NSString * lastName;
 @property(retain) NSString * personID;
 @property(retain) NSDate * timestamp;
 
 + (id)MSASPCommentFromProtocolDictionary:(id)arg1;
 + (id)comment;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)GUID;
@@ -52,15 +52,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstName;
 - (id)fullName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isBatchComment;
-- (BOOL)isCaption;
-- (BOOL)isDeletable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLike;
-- (BOOL)isMine;
+- (bool)isBatchComment;
+- (bool)isCaption;
+- (bool)isDeletable;
+- (bool)isEqual:(id)arg1;
+- (bool)isLike;
+- (bool)isMine;
 - (id)lastName;
 - (id)personID;
 - (void)setClientTimestamp:(id)arg1;
@@ -70,11 +70,11 @@
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
 - (void)setID:(int)arg1;
-- (void)setIsBatchComment:(BOOL)arg1;
-- (void)setIsCaption:(BOOL)arg1;
-- (void)setIsDeletable:(BOOL)arg1;
-- (void)setIsLike:(BOOL)arg1;
-- (void)setIsMine:(BOOL)arg1;
+- (void)setIsBatchComment:(bool)arg1;
+- (void)setIsCaption:(bool)arg1;
+- (void)setIsDeletable:(bool)arg1;
+- (void)setIsLike:(bool)arg1;
+- (void)setIsMine:(bool)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setPersonID:(id)arg1;
 - (void)setTimestamp:(id)arg1;

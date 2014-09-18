@@ -2,29 +2,28 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class HSHomeSharingLibrary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
+@class <MPArtworkDataSource>, HSHomeSharingLibrary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
 
 @interface MPHomeSharingML3DataProvider : MPMediaLibraryDataProviderML3 {
+    <MPArtworkDataSource> *_artworkDataSource;
     NSMutableDictionary *_blocksForLoadingContainerPIDs;
     NSObject<OS_dispatch_queue> *_containerFillQueue;
     HSHomeSharingLibrary *_homeSharingLibrary;
     NSMutableSet *_loadedContainerPIDs;
     NSMutableDictionary *_tokenDataForDSIDs;
-    BOOL _updateInProgress;
 }
 
 @property(readonly) HSHomeSharingLibrary * homeSharingLibrary;
-@property(readonly) BOOL isSupportedSharingVersion;
+@property(readonly) bool isSupportedSharingVersion;
 
 + (void)_determineHomeSharingGroupIDWithCompletionHandler:(id)arg1;
 + (void)beginScanningForLibraries;
 + (void)endScanningForLibraries;
 + (id)homeSharingGroupID;
-+ (BOOL)isConnecting;
-+ (BOOL)isScanningForLibraries;
++ (bool)isConnecting;
++ (bool)isScanningForLibraries;
 
 - (void).cxx_destruct;
-- (id)_cachedImagePathHomeSharingID:(unsigned int)arg1 pixelSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_fetchTokensForAuthorizedDSIDs;
 - (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(id)arg2;
 - (void)_homeSharingGroupIDDidChangeNotification:(id)arg1;
@@ -32,30 +31,27 @@
 - (void)_homeSharingLibraryDidUpdateRevisionNumber:(id)arg1;
 - (id)_tokenDataForMediaItem:(id)arg1;
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
+- (id)artworkDataSource;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2 progressHandler:(id)arg3;
 - (void)dealloc;
 - (void)disconnect;
 - (id)errorResolverForMediaItem:(id)arg1;
-- (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
-- (BOOL)hasGeniusMixes;
+- (bool)hasArtworkImageForItemWithIdentifier:(long long)arg1;
+- (bool)hasGeniusMixes;
 - (id)homeSharingLibrary;
 - (id)initWithHomeSharingLibrary:(id)arg1;
-- (BOOL)isSupportedSharingVersion;
+- (bool)isSupportedSharingVersion;
 - (id)itemResultSetForQueryCriteria:(id)arg1;
-- (void)loadArtworkImageForFormat:(int)arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
-- (void)loadBestArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 atPlaybackTime:(double)arg3 completionBlock:(id)arg4;
 - (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (id)name;
 - (id)protectedContentSupportStorageURL;
-- (BOOL)requiresAuthentication;
+- (bool)requiresAuthentication;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
-- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkFormat:(int)arg2 artworkCacheID:(id)arg3;
-- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkSize:(struct CGSize { float x1; float x2; })arg2 artworkCacheID:(id)arg3;
 - (id)uniqueIdentifier;
 
 @end

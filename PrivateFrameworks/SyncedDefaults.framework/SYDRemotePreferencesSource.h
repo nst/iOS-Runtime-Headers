@@ -9,12 +9,12 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, SYDClient;
 
 @interface SYDRemotePreferencesSource : NSObject {
-    BOOL _forceNextSynchronization;
-    long _generationCount;
+    long long _generationCount;
     double _lastAccess;
-    long _lastGenerationFromDisk;
+    long long _lastGenerationFromDisk;
     NSObject<OS_dispatch_source> *_memoryWarningSource;
     NSObject<OS_dispatch_queue> *_protectionQueue;
+    bool_forceNextSynchronization;
     struct __CFDictionary { } *cache;
     SYDClient *client;
     struct __CFDictionary { } *configurationDictionary;
@@ -43,7 +43,7 @@
 - (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
 - (unsigned char)_synchronizeForced:(unsigned char)arg1;
 - (id)_warningSource;
-- (long)configurationValueForKey:(struct __CFString { }*)arg1;
+- (long long)configurationValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)copyConfigurationDictionary;
 - (struct __CFDictionary { }*)copyDictionary;
 - (id)copyExternalChangesWithChangeCount:(long long*)arg1;
@@ -51,17 +51,17 @@
 - (void)dealloc;
 - (void)discardExternalChangesForChangeCount:(long long)arg1;
 - (void)finalize;
-- (long)generationCount;
+- (long long)generationCount;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (unsigned char)hasExternalChanges;
-- (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(BOOL)arg2;
-- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
-- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(bool)arg2;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(bool)arg3 additionalSource:(bool)arg4;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(bool)arg3;
 - (unsigned char)isInitialSync;
-- (long)maximumDataLengthPerKey;
-- (long)maximumKeyCount;
-- (long)maximumKeyLength;
-- (long)maximumTotalDataLength;
+- (long long)maximumDataLengthPerKey;
+- (long long)maximumKeyCount;
+- (long long)maximumKeyLength;
+- (long long)maximumTotalDataLength;
 - (void)registerForSynchronizedDefaults;
 - (void)scheduleRemoteSynchronization;
 - (id)serverSideDebugDescription;

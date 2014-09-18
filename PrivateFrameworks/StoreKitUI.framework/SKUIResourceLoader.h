@@ -2,38 +2,40 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIResourceLoaderDelegate>, NSMutableDictionary, NSOperationQueue, SKUIClientContext;
+@class <SKUIResourceLoaderDelegate>, NSMapTable, NSMutableDictionary, NSOperationQueue, SKUIClientContext;
 
 @interface SKUIResourceLoader : NSObject {
     SKUIClientContext *_clientContext;
     <SKUIResourceLoaderDelegate> *_delegate;
     NSOperationQueue *_operationQueue;
     NSMutableDictionary *_operationsByRequestID;
+    NSMapTable *_requestsByCacheKey;
     NSMutableDictionary *_resourcesByRequestID;
 }
 
 @property(readonly) SKUIClientContext * clientContext;
 @property <SKUIResourceLoaderDelegate> * delegate;
-@property(getter=isIdle,readonly) BOOL idle;
+@property(getter=isIdle,readonly) bool idle;
 @property(readonly) NSOperationQueue * operationQueue;
 
 - (void).cxx_destruct;
 - (void)_finishLoadForRequest:(id)arg1 withResource:(id)arg2;
 - (void)_sendDidIdleIfNecessary;
-- (void)addResource:(id)arg1 forRequestIdentifier:(unsigned int)arg2;
-- (id)cachedResourceForRequestIdentifier:(unsigned int)arg1;
+- (void)addResource:(id)arg1 forRequestIdentifier:(unsigned long long)arg2;
+- (id)cachedResourceForRequestIdentifier:(unsigned long long)arg1;
 - (void)cancelAllRequests;
-- (void)cancelRequestWithIdentifier:(unsigned int)arg1;
+- (void)cancelRequestWithIdentifier:(unsigned long long)arg1;
 - (id)clientContext;
 - (id)delegate;
 - (id)init;
 - (id)initWithOperationQueue:(id)arg1 clientContext:(id)arg2;
 - (id)initWithOperationQueue:(id)arg1;
-- (BOOL)isIdle;
-- (BOOL)loadResourceWithRequest:(id)arg1 reason:(int)arg2;
+- (bool)isIdle;
+- (bool)loadResourceWithRequest:(id)arg1 reason:(long long)arg2;
 - (id)operationQueue;
 - (void)removeAllCachedResources;
+- (id)requestIdentifierForCacheKey:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setReason:(int)arg1 forRequestWithIdentifier:(unsigned int)arg2;
+- (void)setReason:(long long)arg1 forRequestWithIdentifier:(unsigned long long)arg2;
 
 @end

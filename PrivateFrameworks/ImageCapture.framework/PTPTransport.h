@@ -6,32 +6,32 @@
 
 @interface PTPTransport : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
-    BOOL _busy;
+        long long __sig; 
+        BOOL __opaque[40]; 
     struct __CFRunLoopSource { } *_callbackDummyMachPortRLSrc;
-    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[596]; } *_callbackThread;
+    struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } *_callbackThread;
     } _callbackThreadCondition;
-    BOOL _callbackThreadConditionSignaled;
     } _callbackThreadMutex;
     struct __CFRunLoop { } *_callbackThreadRunLoop;
-    unsigned long _canceledTransactionID;
+    unsigned int _canceledTransactionID;
     int _connectionStatus;
     PTPWrappedBytes *_dataForTransaction;
     id _delegate;
-    BOOL _delegateNeedsResponse;
     unsigned long long _excessReceivedDataSize;
-    BOOL _headerBufferFound;
     unsigned char _headerBuffer[12];
     PTPOperationResponsePacket *_response;
-    BOOL _responseReceived;
     int _role;
-    BOOL _timedOut;
-    unsigned long _totalBytesFilled;
+    unsigned int _totalBytesFilled;
     unsigned short _type;
+    bool_busy;
+    bool_callbackThreadConditionSignaled;
+    bool_delegateNeedsResponse;
+    bool_headerBufferFound;
+    bool_responseReceived;
+    bool_timedOut;
 }
 
 - (void)abortPendingIO;
@@ -39,7 +39,7 @@
 - (struct __CFRunLoop { }*)callbackThreadRunLoop;
 - (void)cancelTransaction:(id)arg1;
 - (void)cleanupCallbackThread;
-- (BOOL)connected;
+- (bool)connected;
 - (int)connectionStatus;
 - (void)dealloc;
 - (void)deviceReset;
@@ -49,25 +49,25 @@
 - (id)init;
 - (int)lockCallbackThreadMutex;
 - (id)response;
-- (BOOL)responseReceived;
+- (bool)responseReceived;
 - (int)role;
 - (void)sendData:(id)arg1;
-- (BOOL)sendEvent:(id)arg1;
-- (id)sendRequest:(id)arg1 receiveData:(id)arg2 timeout:(unsigned long)arg3;
-- (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned long)arg3;
-- (BOOL)sendResponse:(id)arg1;
+- (bool)sendEvent:(id)arg1;
+- (id)sendRequest:(id)arg1 receiveData:(id)arg2 timeout:(unsigned int)arg3;
+- (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned int)arg3;
+- (bool)sendResponse:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setResponse:(id)arg1;
-- (void)setResponseReceived:(BOOL)arg1;
-- (void)setTimedOut:(BOOL)arg1;
+- (void)setResponseReceived:(bool)arg1;
+- (void)setTimedOut:(bool)arg1;
 - (int)signalCallbackThreadCondition;
-- (BOOL)startCallbackThread;
-- (BOOL)startInitiator;
-- (BOOL)startResponder;
+- (bool)startCallbackThread;
+- (bool)startInitiator;
+- (bool)startResponder;
 - (void)stop;
-- (BOOL)timedOut;
+- (bool)timedOut;
 - (unsigned short)type;
 - (int)unlockCallbackThreadMutex;
-- (int)waitForCallbackThreadConditionSignalWithTimeout:(long)arg1;
+- (int)waitForCallbackThreadConditionSignalWithTimeout:(long long)arg1;
 
 @end

@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * abbreviatedName;
-@property BOOL alwaysUseAthleteFullName;
+@property bool alwaysUseAthleteFullName;
 @property(copy) NSArray * athletes;
 @property(copy) NSString * awayLosses;
 @property(copy) NSString * awayOvertimeLosses;
@@ -51,7 +51,7 @@
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)abbreviatedName;
-- (BOOL)alwaysUseAthleteFullName;
+- (bool)alwaysUseAthleteFullName;
 - (id)athletes;
 - (id)awayLosses;
 - (id)awayOvertimeLosses;
@@ -84,7 +84,7 @@
 - (id)rankings;
 - (id)secondaryColor;
 - (void)setAbbreviatedName:(id)arg1;
-- (void)setAlwaysUseAthleteFullName:(BOOL)arg1;
+- (void)setAlwaysUseAthleteFullName:(bool)arg1;
 - (void)setAthletes:(id)arg1;
 - (void)setAwayLosses:(id)arg1;
 - (void)setAwayOvertimeLosses:(id)arg1;

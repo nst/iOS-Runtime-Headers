@@ -6,13 +6,18 @@
    See Warning(s) below.
  */
 
-@class NSError, NSObject<OS_dispatch_queue>;
+@class NSError, NSObject<OS_dispatch_queue>, NSString;
 
 @interface TSPIOHandlerWriteChannelAdapter : NSObject <TSPComponentWriteChannel> {
     NSError *_error;
     id _handler;
     NSObject<OS_dispatch_queue> *_queue;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;

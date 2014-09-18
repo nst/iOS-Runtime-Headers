@@ -5,15 +5,18 @@
 @interface ABStarkStyleProvider : ABStyleProvider {
 }
 
-+ (float)memberRowHeight;
++ (double)memberRowHeight;
 
 - (id)memberNameBoldFont;
 - (id)memberNameDisabledTextColor;
-- (float)memberNameFontSize;
+- (double)memberNameFontSize;
 - (id)memberNamePlaceholderFont;
 - (id)memberNameRegularFont;
 - (id)memberNameTextColor;
 - (id)membersBackgroundColor;
-- (unsigned int)membersCountToShowIndex;
+- (unsigned long long)membersCountToShowIndex;
+- (id)membersSearchBackgroundColor;
+- (id)membersSearchCellBackgroundColor;
+- (id)personLabelHighlightedColor;
 
 @end

@@ -2,70 +2,74 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFLockScreenDateFormatter>, NSDate, UIColor, UILabel, _UILegibilityLabel, _UILegibilitySettings;
+@class <SBFLockScreenDateFormatter>, NSDate, NSString, UIColor, UILabel, _UILegibilityLabel, _UILegibilitySettings;
 
 @interface SBFLockScreenDateView : UIView {
+    UIColor *_customSubtitleColor;
+    NSString *_customSubtitleText;
     NSDate *_date;
-    float _dateAlpha;
-    float _dateAlphaPercentage;
+    double _dateAlpha;
+    double _dateAlphaPercentage;
     UILabel *_dateLabel;
-    float _dateStrength;
+    double _dateStrength;
     <SBFLockScreenDateFormatter> *_formatter;
     _UILegibilityLabel *_legibilityDateLabel;
     _UILegibilitySettings *_legibilitySettings;
     _UILegibilityLabel *_legibilityTimeLabel;
     UIColor *_textColor;
-    float _timeAlpha;
+    double _timeAlpha;
     UILabel *_timeLabel;
-    float _timeStrength;
-    BOOL _useLegibilityLabels;
+    double _timeStrength;
+    bool_useLegibilityLabels;
 }
 
 @property(retain) NSDate * date;
-@property float dateAlphaPercentage;
-@property(getter=isDateHidden) BOOL dateHidden;
-@property float dateStrength;
+@property double dateAlphaPercentage;
+@property(getter=isDateHidden) bool dateHidden;
+@property double dateStrength;
 @property(retain) <SBFLockScreenDateFormatter> * formatter;
 @property(retain) _UILegibilitySettings * legibilitySettings;
 @property(retain) UIColor * textColor;
-@property float timeStrength;
+@property double timeStrength;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 
 - (void)_addLabels;
-- (float)_dateBaselineOffsetFromTime;
+- (id)_dateColor;
 - (id)_dateFont;
-- (float)_effectiveDateAlpha;
+- (id)_dateText;
+- (double)_effectiveDateAlpha;
 - (void)_layoutDateLabel;
 - (void)_layoutTimeLabel;
-- (void)_setDateAlpha:(float)arg1;
+- (void)_setDateAlpha:(double)arg1;
 - (id)_timeFont;
 - (void)_updateLabelAlpha;
 - (void)_updateLabels;
-- (void)_updateLegibilityLabels;
-- (void)_useLegibilityLabels:(BOOL)arg1;
+- (void)_updateLegibilityLabelsWithUpdatedDateString:(bool)arg1;
+- (void)_useLegibilityLabels:(bool)arg1;
 - (id)date;
-- (float)dateAlphaPercentage;
-- (float)dateBaselineOffsetFromOrigin;
-- (float)dateStrength;
+- (double)dateAlphaPercentage;
+- (double)dateBaselineOffsetFromOrigin;
+- (double)dateStrength;
 - (void)dealloc;
 - (id)formatter;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDateHidden;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDateHidden;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
-- (void)setContentAlpha:(float)arg1 withDateVisible:(BOOL)arg2;
+- (void)setContentAlpha:(double)arg1 withDateVisible:(bool)arg2;
+- (void)setCustomSubtitleText:(id)arg1 withColor:(id)arg2;
 - (void)setDate:(id)arg1;
-- (void)setDateAlphaPercentage:(float)arg1;
-- (void)setDateHidden:(BOOL)arg1;
-- (void)setDateStrength:(float)arg1;
+- (void)setDateAlphaPercentage:(double)arg1;
+- (void)setDateHidden:(bool)arg1;
+- (void)setDateStrength:(double)arg1;
 - (void)setFormatter:(id)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTimeStrength:(float)arg1;
+- (void)setTimeStrength:(double)arg1;
 - (id)textColor;
-- (float)timeBaselineOffsetFromOrigin;
-- (float)timeStrength;
+- (double)timeBaselineOffsetFromOrigin;
+- (double)timeStrength;
 - (void)updateFormat;
 
 @end

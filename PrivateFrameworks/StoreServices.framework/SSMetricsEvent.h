@@ -6,10 +6,12 @@
 }
 
 - (id)_dictionaryRepresentationOfBody;
+- (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1 externalValues:(id)arg2;
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1;
 - (void)appendPropertiesToBody:(id)arg1;
-- (BOOL)isBlacklistedByConfiguration:(id)arg1;
-- (BOOL)isFieldBlacklistEnabled;
+- (id)decorateReportingURL:(id)arg1;
+- (bool)isBlacklistedByConfiguration:(id)arg1;
+- (bool)isFieldBlacklistEnabled;
 - (id)millisecondsFromTimeInterval:(double)arg1;
 - (double)timeIntervalFromMilliseconds:(id)arg1;
 

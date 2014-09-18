@@ -2,40 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
-@interface TSPFileDataStorage : NSObject <TSPDataStorage> {
+@interface TSPFileDataStorage : TSPStreamDataStorage {
 }
 
-@property(readonly) NSString * documentResourceLocator;
-@property(readonly) unsigned long long encodedLength;
-@property BOOL gilligan_isRemote;
-@property(readonly) BOOL needsDownload;
-@property(readonly) unsigned char packageIdentifier;
-@property(readonly) NSString * packageLocator;
-@property(readonly) BOOL readOnly;
-
 - (id)AVAssetWithOptions:(id)arg1 contentTypeUTI:(id)arg2;
-- (id)AVAssetWithOptions:(id)arg1 usingResourceLoaderWithContentTypeUTI:(id)arg2;
-- (id)NSDataWithOptions:(unsigned int)arg1;
-- (void)archiveInfoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; int x10; unsigned int x11[1]; }*)arg1 archiver:(id)arg2;
-- (id)bookmarkDataWithOptions:(unsigned int)arg1;
-- (id)documentResourceLocator;
+- (id)bookmarkDataWithOptions:(unsigned long long)arg1;
 - (unsigned long long)encodedLength;
-- (id)filenameForPreferredFilename:(id)arg1;
-- (BOOL)isInPackage:(id)arg1;
-- (struct CGDataProvider { }*)newCGDataProvider;
-- (struct CGImageSource { }*)newCGImageSource;
-- (unsigned char)packageIdentifier;
-- (id)packageLocator;
+- (bool)isReadable;
 - (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
-- (BOOL)readOnly;
-- (BOOL)writeToBundleWriter:(id)arg1 preferredFilename:(id)arg2 filename:(id*)arg3 didCopyDataToBundle:(BOOL*)arg4;
 
 @end

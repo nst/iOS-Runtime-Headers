@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class AVPlayer, AVPlayerItem, AVURLAsset, NSMutableDictionary, NSURL, SUPlayerStatus;
+@class AVPlayer, AVPlayerItem, AVURLAsset, NSMutableDictionary, NSString, NSURL, SUPlayerStatus;
 
 @interface SUAudioPlayer : NSObject <AVAssetResourceLoaderDelegate> {
     AVURLAsset *_asset;
@@ -12,14 +12,21 @@
     AVPlayer *_player;
     AVPlayerItem *_playerItem;
     SUPlayerStatus *_status;
+    long long _storeItemIdentifier;
     id _timeObserver;
     NSURL *_url;
+    bool_didPostForPreviewHistory;
 }
 
 @property(readonly) NSURL * URL;
 @property(retain) NSURL * certificateURL;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSURL * keyURL;
 @property(readonly) SUPlayerStatus * playerStatus;
+@property long long storeItemIdentifier;
+@property(readonly) Class superclass;
 
 - (id)URL;
 - (void)_applyNowPlayingInfo;
@@ -31,7 +38,7 @@
 - (void)_itemPlayedToEndNotification:(id)arg1;
 - (id)_newFadeInAudioMixForAsset:(id)arg1;
 - (void)_postStatusChangeNotification;
-- (void)_setPlayerState:(int)arg1;
+- (void)_setPlayerState:(long long)arg1;
 - (void)_updateForPeriodicTickWithTime:(double)arg1;
 - (id)certificateURL;
 - (void)dealloc;
@@ -41,12 +48,14 @@
 - (void)pause;
 - (void)play;
 - (id)playerStatus;
-- (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
+- (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)seekToTime:(double)arg1;
 - (void)setCertificateURL:(id)arg1;
 - (void)setKeyURL:(id)arg1;
+- (void)setStoreItemIdentifier:(long long)arg1;
 - (void)setValue:(id)arg1 forNowPlayingKey:(id)arg2;
 - (void)stop;
+- (long long)storeItemIdentifier;
 - (id)valueForNowPlayingKey:(id)arg1;
 
 @end

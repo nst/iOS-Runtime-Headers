@@ -5,7 +5,6 @@
 @class CIImage, CIVector, NSNumber;
 
 @interface CITriangleKaleidoscope : CIFilter {
-    CIImage *_decayImage;
     NSNumber *inputDecay;
     CIImage *inputImage;
     CIVector *inputPoint;
@@ -23,7 +22,6 @@
 
 - (id)_colorKernel;
 - (id)_geomKernel;
-- (void)dealloc;
 - (id)inputDecay;
 - (id)inputImage;
 - (id)inputPoint;

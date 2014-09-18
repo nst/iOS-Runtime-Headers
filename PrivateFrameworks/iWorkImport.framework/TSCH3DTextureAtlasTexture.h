@@ -22,9 +22,9 @@
         struct __compressed_pair<glm::detail::tvec2<int> *, std::__1::allocator<glm::detail::tvec2<int> > > { 
             struct tvec2<int> {} *__first_; 
         } __end_cap_; 
-    int mCurrentheight;
-    int mCurrentxpos;
-    int mCurrentypos;
+    long long mCurrentheight;
+    long long mCurrentxpos;
+    long long mCurrentypos;
     NSMutableArray *mLabels;
     } mPositions;
     TSCH3DTextureAtlasTextureResource *mResource;

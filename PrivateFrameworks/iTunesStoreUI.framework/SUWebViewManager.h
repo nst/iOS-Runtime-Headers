@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUWebViewManagerDelegate>, ISURLRequestPerformance, NSLock, NSMapTable, NSSet, SSAuthenticationContext, SUClientInterface, SUScriptWindowContext, UIWebView;
+@class <SUWebViewManagerDelegate>, ISURLRequestPerformance, NSLock, NSMapTable, NSSet, NSString, SSAuthenticationContext, SUClientInterface, SUScriptWindowContext, UIWebView;
 
 @interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, UIWebViewDelegate> {
     SSAuthenticationContext *_authenticationContext;
@@ -10,7 +10,7 @@
     <SUWebViewManagerDelegate> *_delegate;
     ISURLRequestPerformance *_initialRequestPerformance;
     NSLock *_lock;
-    int _modalAlertClickedIndex;
+    long long _modalAlertClickedIndex;
     id _originalFrameLoadDelegate;
     id _originalPolicyDelegate;
     id _originalResourceLoadDelegate;
@@ -18,19 +18,23 @@
     NSMapTable *_scriptInterfaces;
     SUScriptWindowContext *_scriptWindowContext;
     NSSet *_suppressCookiesHosts;
-    int _usingNetworkCount;
+    long long _usingNetworkCount;
     struct __CFSet { } *_webFramesPendingInitialRequest;
     UIWebView *_webView;
 }
 
 @property(copy) SSAuthenticationContext * authenticationContext;
+@property(copy,readonly) NSString * debugDescription;
 @property <SUWebViewManagerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) ISURLRequestPerformance * initialRequestPerformance;
 @property(retain) id originalFrameLoadDelegate;
 @property(retain) id originalPolicyDelegate;
 @property(retain) id originalResourceLoadDelegate;
 @property(retain) id originalUIDelegate;
 @property(retain) SUScriptWindowContext * scriptWindowContext;
+@property(readonly) Class superclass;
 @property(readonly) UIWebView * webView;
 
 + (id)defaultLocalStoragePath;
@@ -43,13 +47,13 @@
 - (void)_enumerateScriptInterfacesWithBlock:(id)arg1;
 - (id)_newAlertWithMessage:(id)arg1;
 - (id)_userIdentifier;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)authenticationContext;
 - (void)connectToWebView:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnectFromWebView;
-- (void)dispatchEvent:(id)arg1 forName:(id)arg2 synchronously:(BOOL)arg3;
+- (void)dispatchEvent:(id)arg1 forName:(id)arg2 synchronously:(bool)arg3;
 - (void)dispatchEvent:(id)arg1 forName:(id)arg2;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
@@ -62,7 +66,7 @@
 - (id)originalUIDelegate;
 - (id)parentViewControllerForScriptInterface:(id)arg1;
 - (id)performanceMetricsForScriptInterface:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)scriptWindowContext;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -81,15 +85,15 @@
 - (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
-- (void)webView:(id)arg1 didParseSource:(id)arg2 fromURL:(id)arg3 sourceId:(long)arg4 forWebFrame:(id)arg5;
+- (void)webView:(id)arg1 didParseSource:(id)arg2 fromURL:(id)arg3 sourceId:(long long)arg4 forWebFrame:(id)arg5;
 - (void)webView:(id)arg1 didReceiveTitle:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
-- (void)webView:(id)arg1 documentViewDidSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)webView:(id)arg1 exceptionWasRaised:(id)arg2 sourceId:(long)arg3 line:(int)arg4 forWebFrame:(id)arg5;
-- (void)webView:(id)arg1 failedToParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 withError:(id)arg5 forWebFrame:(id)arg6;
+- (void)webView:(id)arg1 documentViewDidSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)webView:(id)arg1 exceptionWasRaised:(id)arg2 sourceId:(long long)arg3 line:(int)arg4 forWebFrame:(id)arg5;
+- (void)webView:(id)arg1 failedToParseSource:(id)arg2 baseLineNumber:(unsigned long long)arg3 fromURL:(id)arg4 withError:(id)arg5 forWebFrame:(id)arg6;
 - (void)webView:(id)arg1 resource:(id)arg2 didReceiveResponse:(id)arg3 fromDataSource:(id)arg4;
 - (void)webView:(id)arg1 runJavaScriptAlertPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
-- (BOOL)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
+- (bool)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3;
 - (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;

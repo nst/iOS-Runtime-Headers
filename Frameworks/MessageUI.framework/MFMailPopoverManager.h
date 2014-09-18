@@ -2,101 +2,107 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFPopoverController, NSArray, NSMutableArray, UIActionSheet, UIBarButtonItem, UIView;
+@class MFPopoverController, NSArray, NSMutableArray, NSString, UIActionSheet, UIBarButtonItem, UIView;
 
-@interface MFMailPopoverManager : NSObject <UIActionSheetDelegate> {
+@interface MFMailPopoverManager : NSObject <UIPopoverPresentationControllerDelegate, UIActionSheetDelegate> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     UIActionSheet *_actionSheet;
     id _actionSheetDelegate;
-    unsigned int _currentArrowDirections;
+    unsigned long long _currentArrowDirections;
     UIBarButtonItem *_currentBarButtonItem;
     } _currentRect;
     UIView *_currentView;
     id _delegate;
     NSArray *_explicitPassthroughViews;
-    BOOL _isHandlingActionSheetClick;
     NSMutableArray *_passThroughContexts;
-    BOOL _popoverBeingHiddenDuringRotation;
     MFPopoverController *_popoverController;
     double _popoverDismissalEnd;
-    BOOL _popoverDismissalIsDelayed;
-    BOOL _popoverDismissalShouldBeAnimated;
+    bool_isHandlingActionSheetClick;
+    bool_popoverBeingHiddenDuringRotation;
+    bool_popoverDismissalIsDelayed;
+    bool_popoverDismissalShouldBeAnimated;
 }
 
 @property(retain) UIActionSheet * actionSheet;
-@property unsigned int currentArrowDirections;
+@property unsigned long long currentArrowDirections;
 @property(retain) UIBarButtonItem * currentBarButtonItem;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } currentRect;
 @property(retain) UIView * currentView;
-@property BOOL popoverBeingHiddenDuringRotation;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool popoverBeingHiddenDuringRotation;
 @property(retain) MFPopoverController * popoverController;
-@property BOOL rasterizePopoverLayer;
+@property bool rasterizePopoverLayer;
+@property(readonly) Class superclass;
 
-+ (void)dismissPopover:(id)arg1 animated:(BOOL)arg2;
++ (void)dismissPopover:(id)arg1 animated:(bool)arg2;
 + (void)enumerateManagersUsingBlock:(id)arg1;
-+ (id)managerForWindow:(id)arg1 createIfNeeded:(BOOL)arg2;
++ (id)managerForWindow:(id)arg1 createIfNeeded:(bool)arg2;
 
 - (id)_allPassthroughViewsIncludingViews:(id)arg1 excludingViews:(id)arg2;
 - (void)_cleanupCurrentPopover;
+- (void)_configureDelegate:(id)arg1 forPopoverController:(id)arg2;
 - (id)_currentPassthroughProviders;
-- (BOOL)_delegateSupportsRotation;
+- (bool)_delegateSupportsRotation;
 - (void)_dismissPopoverNow;
 - (id)_init;
-- (BOOL)_isEquivalentToCurrentPopover:(id)arg1;
+- (bool)_isEquivalentToCurrentPopover:(id)arg1;
 - (void)_popoverDismissalDidFinish;
 - (void)_willPresentPopover:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
 - (id)actionSheet;
 - (void)actionSheetCancel:(id)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)addPassthroughView:(id)arg1;
 - (void)addPassthroughViewProvider:(id)arg1;
 - (void)beginModalPassthroughContext;
-- (unsigned int)currentArrowDirections;
+- (unsigned long long)currentArrowDirections;
 - (id)currentBarButtonItem;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })currentRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentRect;
 - (id)currentView;
 - (void)dealloc;
 - (double)delayUntilPopoverFinishesDismissing;
 - (void)didPresentActionSheet:(id)arg1;
 - (void)didRotate;
-- (void)dismissPopoverAfterDelay:(double)arg1 animated:(BOOL)arg2;
-- (void)dismissPopoverAnimated:(BOOL)arg1;
+- (void)dismissPopoverAfterDelay:(double)arg1 animated:(bool)arg2;
+- (void)dismissPopoverAnimated:(bool)arg1;
 - (void)endModalPassthroughContext;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)popover;
-- (BOOL)popoverBeingHiddenDuringRotation;
+- (bool)popoverBeingHiddenDuringRotation;
 - (id)popoverController;
-- (void)popoverControllerDidDismissPopover:(id)arg1 isUserAction:(BOOL)arg2;
-- (BOOL)popoverDismissalIsDelayed;
-- (BOOL)popoverShowing;
-- (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 animated:(BOOL)arg3;
-- (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 withDelegate:(id)arg3 animated:(BOOL)arg4;
-- (void)presentPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 withDelegate:(id)arg6 animated:(BOOL)arg7;
-- (void)presentPopover:(id)arg1 fromView:(id)arg2 animated:(BOOL)arg3;
-- (BOOL)rasterizePopoverLayer;
+- (void)popoverControllerDidDismissPopover:(id)arg1 isUserAction:(bool)arg2;
+- (bool)popoverDismissalIsDelayed;
+- (bool)popoverShowing;
+- (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 animated:(bool)arg3;
+- (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 withDelegate:(id)arg3 animated:(bool)arg4;
+- (void)presentPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned long long)arg4 allowInteractionWithViews:(id)arg5 withDelegate:(id)arg6 animated:(bool)arg7;
+- (void)presentPopover:(id)arg1 fromView:(id)arg2 animated:(bool)arg3;
+- (bool)rasterizePopoverLayer;
 - (void)removePassthroughView:(id)arg1;
 - (void)removePassthroughViewProvider:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setActionSheet:(id)arg1;
-- (void)setCurrentArrowDirections:(unsigned int)arg1;
+- (void)setCurrentArrowDirections:(unsigned long long)arg1;
 - (void)setCurrentBarButtonItem:(id)arg1;
-- (void)setCurrentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCurrentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCurrentView:(id)arg1;
-- (void)setPopoverBeingHiddenDuringRotation:(BOOL)arg1;
+- (void)setPopoverBeingHiddenDuringRotation:(bool)arg1;
 - (void)setPopoverController:(id)arg1;
-- (void)setRasterizePopoverLayer:(BOOL)arg1;
+- (void)setRasterizePopoverLayer:(bool)arg1;
 - (void)willPresentActionSheet:(id)arg1;
 - (void)willRotate;
 

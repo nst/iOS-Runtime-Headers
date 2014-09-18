@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, UIPasscodeField, UITextField;
+@class NSString, UIImageView, UILabel, UIPasscodeField, UITextField;
 
 @interface UIPrinterSetupPINView : UIControl <UITextFieldDelegate> {
     UILabel *_enterLabel;
-    int _failedAttemptCount;
+    long long _failedAttemptCount;
     UIImageView *_failedBackground;
     UILabel *_failedLabel;
     UIPasscodeField *_passcodeField;
@@ -14,32 +14,36 @@
     UILabel *_titleLabel;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) UILabel * enterLabel;
-@property int failedAttemptCount;
+@property long long failedAttemptCount;
 @property(retain) UIImageView * failedBackground;
 @property(retain) UILabel * failedLabel;
+@property(readonly) unsigned long long hash;
 @property(retain) UIPasscodeField * passcodeField;
+@property(readonly) Class superclass;
 @property(retain) UITextField * textEntryField;
 @property(retain) UILabel * titleLabel;
 
 - (id)PIN;
 - (void)dealloc;
 - (id)enterLabel;
-- (int)failedAttemptCount;
+- (long long)failedAttemptCount;
 - (id)failedBackground;
 - (id)failedLabel;
 - (id)initWithPrinterName:(id)arg1;
 - (void)layoutSubviews;
 - (id)passcodeField;
 - (void)setEnterLabel:(id)arg1;
-- (void)setFailedAttemptCount:(int)arg1;
+- (void)setFailedAttemptCount:(long long)arg1;
 - (void)setFailedBackground:(id)arg1;
 - (void)setFailedLabel:(id)arg1;
 - (void)setPasscodeField:(id)arg1;
 - (void)setTextEntryField:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (void)showSuccess:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)showSuccess:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)startPINInput;
 - (void)stopPINInput;
 - (void)textDidChange:(id)arg1;

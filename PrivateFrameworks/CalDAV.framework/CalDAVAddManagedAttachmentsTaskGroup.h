@@ -8,7 +8,6 @@
     NSDictionary *_attachments;
     NSDictionary *_contentTypes;
     NSMutableDictionary *_filenamesToServerLocation;
-    BOOL _hadPreconditionFailure;
     NSDictionary *_postFailureSizes;
     NSURL *_postURLWithQuery;
     NSString *_previousETag;
@@ -18,12 +17,13 @@
     NSString *_updatedETag;
     NSData *_updatedResourcePayload;
     NSString *_updatedScheduleTag;
+    bool_hadPreconditionFailure;
 }
 
 @property(retain) NSDictionary * attachments;
 @property(retain) NSDictionary * contentTypes;
 @property(retain) NSMutableDictionary * filenamesToServerLocation;
-@property BOOL hadPreconditionFailure;
+@property bool hadPreconditionFailure;
 @property(retain) NSDictionary * postFailureSizes;
 @property(retain) NSString * previousETag;
 @property(retain) NSString * previousScheduleTag;
@@ -36,13 +36,13 @@
 - (void)_fetchUpdatedContent;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)_handlePostResponse:(id)arg1;
-- (BOOL)_postedLastAttachment;
+- (bool)_postedLastAttachment;
 - (void)_sendAttachments;
 - (id)attachments;
 - (id)contentTypes;
 - (void)dealloc;
 - (id)filenamesToServerLocation;
-- (BOOL)hadPreconditionFailure;
+- (bool)hadPreconditionFailure;
 - (id)initWithAccountInfoProvider:(id)arg1 resourceURL:(id)arg2 attachments:(id)arg3 contentTypes:(id)arg4 taskManager:(id)arg5;
 - (id)postFailureSizes;
 - (id)previousETag;
@@ -51,7 +51,7 @@
 - (void)setAttachments:(id)arg1;
 - (void)setContentTypes:(id)arg1;
 - (void)setFilenamesToServerLocation:(id)arg1;
-- (void)setHadPreconditionFailure:(BOOL)arg1;
+- (void)setHadPreconditionFailure:(bool)arg1;
 - (void)setPostFailureSizes:(id)arg1;
 - (void)setPreviousETag:(id)arg1;
 - (void)setPreviousScheduleTag:(id)arg1;

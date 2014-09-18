@@ -5,34 +5,34 @@
 @class NSArray, UIColor;
 
 @interface SUPageSectionGroup : NSObject <NSCopying> {
-    int _defaultSectionIndex;
+    long long _defaultSectionIndex;
     NSArray *_sections;
-    int _style;
+    long long _style;
     UIColor *_tintColor;
-    int _tintStyle;
+    long long _tintStyle;
 }
 
-@property int defaultSectionIndex;
+@property long long defaultSectionIndex;
 @property(retain) NSArray * sections;
-@property int style;
+@property long long style;
 @property(retain) UIColor * tintColor;
-@property int tintStyle;
+@property long long tintStyle;
 
-- (int)_sectionStyleForString:(id)arg1;
+- (long long)_sectionStyleForString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)defaultSectionIndex;
+- (long long)defaultSectionIndex;
 - (id)initWithSectionsDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)loadFromDictionary:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)loadFromDictionary:(id)arg1;
 - (id)sections;
-- (void)setDefaultSectionIndex:(int)arg1;
+- (void)setDefaultSectionIndex:(long long)arg1;
 - (void)setSections:(id)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setTintColor:(id)arg1;
-- (void)setTintStyle:(int)arg1;
-- (int)style;
+- (void)setTintStyle:(long long)arg1;
+- (long long)style;
 - (id)tintColor;
-- (int)tintStyle;
+- (long long)tintStyle;
 
 @end

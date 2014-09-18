@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SUCellConfiguration, UIBezierPath, UIView;
+@class NSMutableArray, NSString, SUCellConfiguration, UIBezierPath, UIView;
 
 @interface SUTableCellContentView : UIView <SUCellConfigurationView> {
     unsigned int _drawAsDisabled : 1;
@@ -18,15 +18,19 @@
 
 @property int clipCorners;
 @property(retain) SUCellConfiguration * configuration;
-@property(getter=isDeleteConfirmationVisible) BOOL deleteConfirmationVisisble;
-@property BOOL drawAsDisabled;
-@property(getter=isHighlighted) BOOL highlighted;
-@property BOOL highlightsOnlyContentView;
-@property BOOL usesSubviews;
+@property(copy,readonly) NSString * debugDescription;
+@property(getter=isDeleteConfirmationVisible) bool deleteConfirmationVisisble;
+@property(copy,readonly) NSString * description;
+@property bool drawAsDisabled;
+@property(readonly) unsigned long long hash;
+@property(getter=isHighlighted) bool highlighted;
+@property bool highlightsOnlyContentView;
+@property(readonly) Class superclass;
+@property bool usesSubviews;
 
 - (id)_clipPath;
 - (id)_clippedImageForImage:(id)arg1;
-- (void)_reloadSubviewAlphasAnimated:(BOOL)arg1;
+- (void)_reloadSubviewAlphasAnimated:(bool)arg1;
 - (void)_reloadSubviewsForConfiguration;
 - (void)_removeSubviewsForConfiguration;
 - (id)_scriptingInfo;
@@ -36,22 +40,22 @@
 - (int)clipCorners;
 - (id)configuration;
 - (void)dealloc;
-- (BOOL)drawAsDisabled;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)highlightsOnlyContentView;
-- (BOOL)isDeleteConfirmationVisible;
-- (BOOL)isHighlighted;
+- (bool)drawAsDisabled;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)highlightsOnlyContentView;
+- (bool)isDeleteConfirmationVisible;
+- (bool)isHighlighted;
 - (void)layoutSubviews;
 - (void)reloadView;
 - (void)setClipCorners:(int)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setDeleteConfirmationVisisble:(BOOL)arg1;
-- (void)setDrawAsDisabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setHighlightsOnlyContentView:(BOOL)arg1;
-- (void)setUsesSubviews:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setUsesSubviews:(BOOL)arg1;
-- (BOOL)usesSubviews;
+- (void)setDeleteConfirmationVisisble:(bool)arg1;
+- (void)setDrawAsDisabled:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setHighlightsOnlyContentView:(bool)arg1;
+- (void)setUsesSubviews:(bool)arg1 animated:(bool)arg2;
+- (void)setUsesSubviews:(bool)arg1;
+- (bool)usesSubviews;
 
 @end

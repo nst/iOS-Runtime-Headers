@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
+@class NSString;
+
 @interface DDTextMessageAction : DDTelephoneNumberAction <MFMessageComposeViewControllerDelegate> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (int)interactionType;
 - (id)localizedName;

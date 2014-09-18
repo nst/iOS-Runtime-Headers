@@ -9,10 +9,11 @@
     unsigned long long _next;
     struct __CFDictionary { } *_objectToProxyNumber;
     struct __CFDictionary { } *_proxyNumberToObject;
-    BOOL _valid;
+    bool_valid;
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)exportedObjectForProxyNumber:(unsigned long long)arg1;
 - (void)finalize;
 - (id)init;

@@ -14,7 +14,7 @@
 @property(retain) HSControlPrompt * prompt;
 @property(copy) NSDictionary * promptDictionary;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (unsigned int)nextPromptID;
 - (id)prompt;
 - (id)promptDictionary;

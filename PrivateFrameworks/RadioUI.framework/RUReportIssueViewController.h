@@ -6,28 +6,32 @@
 
 @interface RUReportIssueViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     RadioTrack *_currentTrack;
-    BOOL _isLowBitrate;
     UIPickerView *_issuePicker;
     NSArray *_issueTypes;
     NSArray *_playbackQueue;
     UITextView *_reportIssueTextField;
     RadioStation *_station;
+    bool_isLowBitrate;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * issueText;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_descriptionForIssueType:(int)arg1;
+- (id)_descriptionForIssueType:(long long)arg1;
 - (void)_dismissPopoverOrSheet;
 - (void)_reportIssueCancelAction:(id)arg1;
 - (void)_reportIssueDoneAction:(id)arg1;
 - (void)dealloc;
 - (id)initWithStation:(id)arg1 currentItem:(id)arg2 playbackQueue:(id)arg3;
 - (id)issueText;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (void)viewDidAppear:(BOOL)arg1;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

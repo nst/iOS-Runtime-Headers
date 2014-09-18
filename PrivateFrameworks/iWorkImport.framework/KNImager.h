@@ -2,25 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAbstractSlide;
+@class KNAbstractSlide, NSString;
 
 @interface KNImager : TSDImager <TSDConnectedInfoReplacing> {
-    BOOL mShouldShowInstructionalText;
+    boolmShouldShowInstructionalText;
     KNAbstractSlide *mSlide;
-    unsigned int mSlideNumber;
+    unsigned long long mSlideNumber;
 }
 
-@property BOOL shouldShowInstructionalText;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool shouldShowInstructionalText;
 @property KNAbstractSlide * slide;
-@property unsigned int slideNumber;
+@property unsigned long long slideNumber;
+@property(readonly) Class superclass;
 
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1;
-- (void)setShouldShowInstructionalText:(BOOL)arg1;
+- (void)setShouldShowInstructionalText:(bool)arg1;
 - (void)setSlide:(id)arg1;
-- (void)setSlideNumber:(unsigned int)arg1;
-- (BOOL)shouldShowInstructionalText;
+- (void)setSlideNumber:(unsigned long long)arg1;
+- (bool)shouldShowInstructionalText;
 - (id)slide;
-- (unsigned int)slideNumber;
+- (unsigned long long)slideNumber;
 
 @end

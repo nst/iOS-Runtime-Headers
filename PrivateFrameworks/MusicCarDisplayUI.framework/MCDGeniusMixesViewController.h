@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
+@class NSMutableDictionary;
+
 @interface MCDGeniusMixesViewController : MCD_OLD_TableViewController {
+    NSMutableDictionary *_geniusImages;
 }
 
+- (void).cxx_destruct;
 - (id)_playlistAtIndexPath:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 
 @end

@@ -12,8 +12,8 @@
 
 @property(retain) PLManagedAlbum * album;
 @property(copy) NSArray * assets;
-@property(readonly) NSPersistentStoreCoordinator * coordinator;
-@property(readonly) PLManagedObjectContext * managedObjectContext;
+@property(retain,readonly) NSPersistentStoreCoordinator * coordinator;
+@property(retain,readonly) PLManagedObjectContext * managedObjectContext;
 @property(retain) PLPhotoLibrary * photoLibrary;
 
 + (void)replaceAssets:(id)arg1 withCameraRollCopiesInAlbum:(id)arg2;
@@ -25,7 +25,7 @@
 - (long long)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
-- (id)initFromXPCObject:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (id)managedObjectContext;
 - (id)photoLibrary;
 - (void)run;

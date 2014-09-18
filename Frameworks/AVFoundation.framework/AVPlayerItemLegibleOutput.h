@@ -14,15 +14,12 @@
 
 + (void)initialize;
 
-- (void)_attachToPlayerItem:(id)arg1;
+- (bool)_attachToPlayerItem:(id)arg1;
 - (void)_collectUncollectables;
-- (void)_dataSourceProvidedAttributedStrings:(id)arg1 andSampleBuffers:(id)arg2 atItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
-- (void)_dataSourceSignaledFlush;
 - (void)_detachFromPlayerItem;
-- (id)_figLegibleOutputsDictionaryKey;
 - (id)_figLegibleOutputsDictionaryOptions;
-- (id)_hostOrNil;
-- (BOOL)_isAttachedToHost;
+- (void)_pushAttributedStrings:(id)arg1 andSampleBuffers:(id)arg2 atItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)_signalFlush;
 - (double)advanceIntervalForDelegateInvocation;
 - (void)dealloc;
 - (id)delegate;
@@ -33,9 +30,9 @@
 - (id)initWithMediaSubtypesForNativeRepresentation:(id)arg1;
 - (void)setAdvanceIntervalForDelegateInvocation:(double)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (void)setSuppressesPlayerRendering:(BOOL)arg1;
+- (void)setSuppressesPlayerRendering:(bool)arg1;
 - (void)setTextStylingResolution:(id)arg1;
-- (BOOL)suppressesPlayerRendering;
+- (bool)suppressesPlayerRendering;
 - (id)textStylingResolution;
 
 @end

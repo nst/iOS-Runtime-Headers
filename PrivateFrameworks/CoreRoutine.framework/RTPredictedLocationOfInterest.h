@@ -2,31 +2,38 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSDate, RTLocationOfInterest, RTRoute;
+@class NSDate, RTLocationOfInterest, RTRoute, RTSource;
 
 @interface RTPredictedLocationOfInterest : NSObject <NSSecureCoding> {
     double _confidence;
     RTLocationOfInterest *_locationOfInterest;
+    long long _modeOfTransportation;
     NSDate *_nextEntryTime;
     RTRoute *_route;
+    RTSource *_source;
 }
 
 @property(readonly) double confidence;
 @property(readonly) RTLocationOfInterest * locationOfInterest;
+@property long long modeOfTransportation;
 @property(readonly) NSDate * nextEntryTime;
 @property(readonly) RTRoute * route;
+@property(readonly) RTSource * source;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)confidence;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLocationOfInterest:(id)arg1 confidence:(double)arg2 nextEntryTime:(id)arg3 route:(id)arg4;
+- (id)initWithLocationOfInterest:(id)arg1 confidence:(double)arg2 nextEntryTime:(id)arg3 route:(id)arg4 modeOfTransportation:(long long)arg5 source:(id)arg6;
 - (id)locationOfInterest;
+- (long long)modeOfTransportation;
 - (id)nextEntryTime;
 - (id)route;
 - (void)setConfidence:(double)arg1;
+- (void)setModeOfTransportation:(long long)arg1;
+- (id)source;
 
 @end

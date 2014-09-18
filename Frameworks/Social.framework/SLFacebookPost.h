@@ -32,7 +32,7 @@
 @property(retain) NSArray * videoData;
 @property(retain) NSString * videoExportPreset;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_encodableObjectProperties;

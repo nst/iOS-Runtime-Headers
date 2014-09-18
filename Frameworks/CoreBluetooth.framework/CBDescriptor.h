@@ -2,23 +2,20 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBCharacteristic, CBPeripheral, CBUUID, NSNumber;
+@class CBCharacteristic, CBPeripheral, NSNumber;
 
-@interface CBDescriptor : NSObject {
-    CBUUID *_UUID;
+@interface CBDescriptor : CBAttribute {
     CBCharacteristic *_characteristic;
     NSNumber *_handle;
     CBPeripheral *_peripheral;
     id _value;
 }
 
-@property(readonly) CBUUID * UUID;
 @property CBCharacteristic * characteristic;
 @property(readonly) NSNumber * handle;
 @property(readonly) CBPeripheral * peripheral;
 @property(retain) id value;
 
-- (id)UUID;
 - (id)characteristic;
 - (void)dealloc;
 - (id)description;

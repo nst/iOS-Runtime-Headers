@@ -2,39 +2,45 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMHandle, NSArray, NSDate, NSDictionary, NSString;
+@class IMHandle, NSArray, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface IMAVChatProxy : NSObject {
     NSDictionary *_info;
 }
 
-@property(readonly) NSString * GUID;
-@property(readonly) int callID;
-@property(readonly) NSString * conferenceID;
+@property(retain,readonly) NSString * GUID;
+@property(readonly) long long callID;
+@property(retain,readonly) NSString * conferenceID;
 @property double connectionTimeoutTime;
-@property(readonly) NSDate * dateConnected;
-@property(readonly) NSDate * dateEnded;
+@property(retain,readonly) NSNumber * dataDownloaded;
+@property(retain,readonly) NSNumber * dataUploaded;
+@property(retain,readonly) NSDate * dateConnected;
+@property(retain,readonly) NSDate * dateEnded;
 @property(readonly) int endedError;
 @property(readonly) unsigned int endedReason;
-@property(readonly) IMHandle * initiatorIMHandle;
+@property(retain,readonly) IMHandle * initiatorIMHandle;
 @property double invitationTimeoutTime;
-@property(readonly) BOOL isActive;
-@property(readonly) BOOL isCaller;
-@property(readonly) BOOL isStateFinal;
-@property(readonly) BOOL isVideo;
-@property(readonly) IMHandle * otherIMHandle;
-@property(readonly) NSArray * remoteParticipants;
+@property(readonly) bool isActive;
+@property(readonly) bool isCaller;
+@property(setter=setMute:) bool isMute;
+@property(readonly) bool isSendingAudio;
+@property(readonly) bool isStateFinal;
+@property(readonly) bool isVideo;
+@property(retain,readonly) IMHandle * otherIMHandle;
+@property(retain,readonly) NSArray * remoteParticipants;
 @property(readonly) unsigned int sessionID;
 @property(readonly) unsigned int state;
 
 - (id)GUID;
-- (BOOL)_isProxy;
+- (bool)_isProxy;
 - (void)acceptInvitation;
 - (id)account;
-- (int)callID;
+- (long long)callID;
 - (void)cancelInvitation;
 - (id)conferenceID;
 - (double)connectionTimeoutTime;
+- (id)dataDownloaded;
+- (id)dataUploaded;
 - (id)dateConnected;
 - (id)dateEnded;
 - (void)dealloc;
@@ -49,16 +55,19 @@
 - (double)invitationTimeoutTime;
 - (void)invite:(id)arg1 additionalPeers:(id)arg2;
 - (void)inviteAll;
-- (BOOL)isActive;
-- (BOOL)isCaller;
-- (BOOL)isStateFinal;
-- (BOOL)isVideo;
+- (bool)isActive;
+- (bool)isCaller;
+- (bool)isMute;
+- (bool)isSendingAudio;
+- (bool)isStateFinal;
+- (bool)isVideo;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)otherIMHandle;
 - (id)remoteParticipants;
 - (unsigned int)sessionID;
 - (void)setConnectionTimeoutTime:(double)arg1;
 - (void)setInvitationTimeoutTime:(double)arg1;
+- (void)setMute:(bool)arg1;
 - (unsigned int)state;
 - (void)updateWithInfo:(id)arg1;
 

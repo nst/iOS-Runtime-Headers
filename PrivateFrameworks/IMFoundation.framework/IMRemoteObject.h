@@ -9,7 +9,7 @@
 }
 
 @property(readonly) NSObject<OS_xpc_object> * connection;
-@property(readonly) BOOL isValid;
+@property(readonly) bool isValid;
 @property int pid;
 @property(readonly) NSString * portName;
 
@@ -18,8 +18,8 @@
 + (void)_unregisterIMRemoteObject:(id)arg1;
 + (void)initialize;
 
-- (void)_cleanupMachBitsCanPost:(BOOL)arg1;
-- (id)_initWithConnection:(id)arg1 portName:(id)arg2 protocol:(id)arg3 alreadyConfigured:(BOOL)arg4;
+- (void)_cleanupMachBitsCanPost:(bool)arg1;
+- (id)_initWithConnection:(id)arg1 portName:(id)arg2 protocol:(id)arg3 alreadyConfigured:(bool)arg4;
 - (void)_portDidBecomeInvalid;
 - (id)_queue;
 - (void)_systemShutdown:(id)arg1;
@@ -28,12 +28,12 @@
 - (id)description;
 - (void)finalize;
 - (void)forwardInvocation:(id)arg1;
-- (unsigned int)forwardXPCObject:(id)arg1 messageContext:(id)arg2;
-- (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(BOOL)arg3;
+- (unsigned long long)forwardXPCObject:(id)arg1 messageContext:(id)arg2;
+- (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(bool)arg3;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2;
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (int)pid;
 - (id)portName;

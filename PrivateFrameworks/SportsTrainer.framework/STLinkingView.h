@@ -5,9 +5,6 @@
 @class <STLinkingViewDelegate>, NSString, UIButton, UILabel, UIView;
 
 @interface STLinkingView : UIView {
-    BOOL _animateLayout;
-    BOOL _animating;
-    BOOL _bordered;
     UIButton *_cancelButton;
     <STLinkingViewDelegate> *_delegate;
     UIButton *_doneButton;
@@ -15,19 +12,22 @@
     NSString *_fgsnSerialNumber;
     UILabel *_instructionLabel;
     UIButton *_linkNewButton;
-    int _linkingType;
+    long long _linkingType;
     UIView *_pulseView;
     UIButton *_rescanButton;
     UIButton *_unlinkButton;
+    bool_animateLayout;
+    bool_animating;
+    bool_bordered;
 }
 
-@property BOOL bordered;
+@property bool bordered;
 @property <STLinkingViewDelegate> * delegate;
-@property int linkingType;
+@property long long linkingType;
 @property(copy) NSString * serialNumber;
 
 - (void)_done;
-- (id)_haloImageOfSize:(struct CGSize { float x1; float x2; })arg1 color:(id)arg2 strokeWidth:(float)arg3;
+- (id)_haloImageOfSize:(struct CGSize { double x1; double x2; })arg1 color:(id)arg2 strokeWidth:(double)arg3;
 - (void)_linkNewEmped;
 - (void)_linkNewRemote;
 - (id)_newButton;
@@ -39,17 +39,17 @@
 - (void)_startAnimation;
 - (void)_stopAnimation;
 - (void)_unlinkRemote;
-- (BOOL)bordered;
+- (bool)bordered;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)linkingType;
+- (long long)linkingType;
 - (id)serialNumber;
-- (void)setBordered:(BOOL)arg1;
+- (void)setBordered:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLinkingType:(int)arg1 animated:(BOOL)arg2;
-- (void)setLinkingType:(int)arg1;
+- (void)setLinkingType:(long long)arg1 animated:(bool)arg2;
+- (void)setLinkingType:(long long)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 

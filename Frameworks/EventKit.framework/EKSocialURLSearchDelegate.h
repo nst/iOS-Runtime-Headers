@@ -6,13 +6,20 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface EKSocialURLSearchDelegate : NSObject <ABSearchOperationDelegate> {
     id _searchCompleteHandler;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)_completeWithRecord:(void*)arg1;
 - (void)dealloc;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(bool)arg3;
 - (void)setCompletionHandler:(id)arg1;
 
 @end

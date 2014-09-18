@@ -2,34 +2,61 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray;
+@class NSArray, NSDictionary, NSString;
 
 @interface MCWebContentFilterPayload : MCPayload {
-    BOOL _autoFilterEnabled;
     NSArray *_blacklistedURLStrings;
+    NSString *_filterType;
+    NSString *_name;
     NSArray *_permittedURLStrings;
+    NSString *_pluginBundleID;
+    NSDictionary *_pluginConfiguration;
     NSArray *_whitelistedBookmarks;
+    bool_autoFilterEnabled;
+    bool_filterBrowsers;
+    bool_filterSockets;
 }
 
-@property BOOL autoFilterEnabled;
+@property bool autoFilterEnabled;
 @property(retain) NSArray * blacklistedURLStrings;
+@property bool filterBrowsers;
+@property bool filterSockets;
+@property(copy) NSString * filterType;
+@property(copy) NSString * name;
 @property(retain) NSArray * permittedURLStrings;
+@property(copy) NSString * pluginBundleID;
+@property(retain) NSDictionary * pluginConfiguration;
 @property(retain) NSArray * whitelistedBookmarks;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
++ (id)pluginFilterKeysAndClasses;
 + (id)typeStrings;
 
 - (void).cxx_destruct;
-- (BOOL)autoFilterEnabled;
+- (bool)autoFilterEnabled;
 - (id)blacklistedURLStrings;
 - (id)description;
+- (bool)filterBrowsers;
+- (bool)filterSockets;
+- (id)filterType;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)installationWarnings;
+- (id)name;
+- (id)payloadDescriptionKeyValueSections;
 - (id)permittedURLStrings;
+- (id)pluginBundleID;
+- (id)pluginConfiguration;
 - (id)restrictions;
-- (void)setAutoFilterEnabled:(BOOL)arg1;
+- (void)setAutoFilterEnabled:(bool)arg1;
 - (void)setBlacklistedURLStrings:(id)arg1;
+- (void)setFilterBrowsers:(bool)arg1;
+- (void)setFilterSockets:(bool)arg1;
+- (void)setFilterType:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setPermittedURLStrings:(id)arg1;
+- (void)setPluginBundleID:(id)arg1;
+- (void)setPluginConfiguration:(id)arg1;
 - (void)setWhitelistedBookmarks:(id)arg1;
 - (id)stubDictionary;
 - (id)subtitle1Description;

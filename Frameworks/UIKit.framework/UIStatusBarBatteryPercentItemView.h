@@ -8,12 +8,12 @@
     NSString *_percentString;
 }
 
-- (BOOL)animatesDataChange;
+- (bool)animatesDataChange;
 - (id)contentsImage;
 - (void)dealloc;
-- (float)extraRightPadding;
-- (int)textAlignment;
-- (int)textStyle;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)extraRightPadding;
+- (long long)textAlignment;
+- (long long)textStyle;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

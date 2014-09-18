@@ -10,7 +10,7 @@
 
 - (id)contentsImage;
 - (void)dealloc;
-- (int)textStyle;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (long long)textStyle;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

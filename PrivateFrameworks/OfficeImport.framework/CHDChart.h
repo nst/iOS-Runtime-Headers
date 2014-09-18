@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDDefaultTextProperties, CHDLegend, CHDPlotArea, CHDTitle, CHDView3D, EDSheet, EDWorkbook, NSMutableArray, OADGraphicProperties;
+@class CHDDefaultTextProperties, CHDLegend, CHDPlotArea, CHDTitle, CHDView3D, EDSheet, EDWorkbook, NSMutableArray, NSString, OADGraphicProperties;
 
 @interface CHDChart : OADGraphic <OADDrawableContainer> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     boolmAutoTitleDeleted;
     boolmDirectionChanged;
+    boolmHasSharedXValues;
+    boolmHasVisibleSeriesNames;
     boolmMSGraph;
     boolmPlotVisibleCellsOnly;
     OADGraphicProperties *mBackWallGraphicProperties;
@@ -36,21 +38,26 @@
     CHDView3D *mView3D;
 }
 
-+ (id)binaryEffects:(BOOL)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (id)binaryEffects:(bool)arg1;
 
 - (id).cxx_construct;
 - (void)addChild:(id)arg1;
 - (void)addChildren:(id)arg1;
 - (id)backWallGraphicProperties;
-- (unsigned int)categoryCount;
+- (unsigned long long)categoryCount;
 - (id)chartAreaGraphicProperties;
-- (id)childAtIndex:(unsigned int)arg1;
-- (unsigned int)childCount;
+- (id)childAtIndex:(unsigned long long)arg1;
+- (unsigned long long)childCount;
 - (id)children;
 - (void)dealloc;
 - (id)defaultContentFormat;
 - (id)defaultDataLabelFont;
-- (unsigned int)defaultFontIndex;
+- (unsigned long long)defaultFontIndex;
 - (id)defaultFontWithResources:(id)arg1;
 - (int)defaultLabelPosition;
 - (id)defaultSeriesTitleFont;
@@ -61,6 +68,8 @@
 - (int)displayBlankAs;
 - (id)externalData;
 - (id)floorGraphicProperties;
+- (bool)hasSharedXValues;
+- (bool)hasVisibleSeriesNames;
 - (id)init;
 - (bool)is3D;
 - (bool)isAutoTitleDeleted;
@@ -69,13 +78,14 @@
 - (bool)isMSGraph;
 - (bool)isPie;
 - (bool)isPlotVisibleCellsOnly;
+- (bool)isScatterOrBubble;
 - (id)legend;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })logicalBounds;
 - (id)mainType;
 - (id)plotArea;
 - (id)processors;
 - (void)replaceChild:(id)arg1 with:(id)arg2;
-- (unsigned int)seriesCount;
+- (unsigned long long)seriesCount;
 - (void)setAutoTitleDeleted:(bool)arg1;
 - (void)setBackWallGraphicProperties:(id)arg1;
 - (void)setChartAreaGraphicProperties:(id)arg1;
@@ -85,8 +95,9 @@
 - (void)setDisplayBlankAs:(int)arg1;
 - (void)setExternalData:(id)arg1;
 - (void)setFloorGraphicProperties:(id)arg1;
+- (void)setHasSharedXValues:(bool)arg1;
 - (void)setLegend:(id)arg1;
-- (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLogicalBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMSGraph:(bool)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (void)setPlotArea:(id)arg1;
@@ -96,6 +107,7 @@
 - (void)setStyleId:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setView3D:(id)arg1;
+- (void)setVisibleSeriesNames:(bool)arg1;
 - (id)sheet;
 - (id)sideWallGraphicProperties;
 - (int)styleId;

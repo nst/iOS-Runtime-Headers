@@ -4,64 +4,66 @@
 
 @class BBSectionIcon, BBSectionSubtypeParameters, NSLock, NSMutableDictionary, NSString;
 
-@interface BBSectionParameters : NSObject <NSSecureCoding> {
+@interface BBSectionParameters : NSObject <BBUniquableObject, NSSecureCoding> {
     NSMutableDictionary *_allSubtypeParameters;
     BBSectionSubtypeParameters *_defaultSubtypeParameters;
     NSString *_displayName;
-    BOOL _displaysCriticalBulletins;
     BBSectionIcon *_icon;
     NSLock *_lock;
-    unsigned int _messageNumberOfLines;
-    BOOL _orderSectionUsingRecencyDate;
-    BOOL _showsDateInFloatingLockScreenAlert;
-    BOOL _showsSubtitle;
+    unsigned long long _messageNumberOfLines;
     NSString *_uniqueIdentifier;
-    BOOL _usesVariableLayout;
+    bool_displaysCriticalBulletins;
+    bool_orderSectionUsingRecencyDate;
+    bool_showsDateInFloatingLockScreenAlert;
+    bool_showsSubtitle;
+    bool_usesVariableLayout;
 }
 
 @property(retain) NSMutableDictionary * allSubtypeParameters;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) BBSectionSubtypeParameters * defaultSubtypeParameters;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * displayName;
-@property BOOL displaysCriticalBulletins;
+@property bool displaysCriticalBulletins;
+@property(readonly) unsigned long long hash;
 @property(retain) BBSectionIcon * icon;
-@property unsigned int messageNumberOfLines;
-@property BOOL orderSectionUsingRecencyDate;
-@property BOOL showsDateInFloatingLockScreenAlert;
-@property BOOL showsSubtitle;
-@property(retain) NSString * uniqueIdentifier;
-@property BOOL usesVariableLayout;
+@property unsigned long long messageNumberOfLines;
+@property bool orderSectionUsingRecencyDate;
+@property bool showsDateInFloatingLockScreenAlert;
+@property bool showsSubtitle;
+@property(readonly) Class superclass;
+@property bool usesVariableLayout;
 
-+ (void)addSectionParametersToCache:(id)arg1;
++ (id)addSectionParametersToCache:(id)arg1;
 + (id)copyCachedSectionParametersWithIdentifier:(id)arg1;
 + (void)removeSectionParametersFromCache:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)allSubtypeParameters;
 - (void)dealloc;
 - (id)defaultSubtypeParameters;
 - (id)displayName;
-- (BOOL)displaysCriticalBulletins;
+- (bool)displaysCriticalBulletins;
 - (void)encodeWithCoder:(id)arg1;
 - (id)icon;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)messageNumberOfLines;
-- (BOOL)orderSectionUsingRecencyDate;
-- (id)parametersForSubtype:(int)arg1;
+- (unsigned long long)messageNumberOfLines;
+- (bool)orderSectionUsingRecencyDate;
+- (id)parametersForSubtype:(long long)arg1;
 - (void)setAllSubtypeParameters:(id)arg1;
 - (void)setDefaultSubtypeParameters:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setDisplaysCriticalBulletins:(BOOL)arg1;
+- (void)setDisplaysCriticalBulletins:(bool)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setMessageNumberOfLines:(unsigned int)arg1;
-- (void)setOrderSectionUsingRecencyDate:(BOOL)arg1;
-- (void)setShowsDateInFloatingLockScreenAlert:(BOOL)arg1;
-- (void)setShowsSubtitle:(BOOL)arg1;
-- (void)setUniqueIdentifier:(id)arg1;
-- (void)setUsesVariableLayout:(BOOL)arg1;
-- (BOOL)showsDateInFloatingLockScreenAlert;
-- (BOOL)showsSubtitle;
+- (void)setMessageNumberOfLines:(unsigned long long)arg1;
+- (void)setOrderSectionUsingRecencyDate:(bool)arg1;
+- (void)setShowsDateInFloatingLockScreenAlert:(bool)arg1;
+- (void)setShowsSubtitle:(bool)arg1;
+- (void)setUsesVariableLayout:(bool)arg1;
+- (bool)showsDateInFloatingLockScreenAlert;
+- (bool)showsSubtitle;
 - (id)uniqueIdentifier;
-- (BOOL)usesVariableLayout;
+- (bool)usesVariableLayout;
 
 @end

@@ -7,11 +7,15 @@
     int fResult;
 }
 
-@property(readonly) int confidence;
-@property(readonly) int result;
+@property(readonly) long long confidence;
+@property(readonly) long long result;
 
-- (int)confidence;
+- (long long)confidence;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithOnBodyResult:(int)arg1 confidence:(int)arg2 timestamp:(double)arg3;
-- (int)result;
+- (long long)result;
 
 @end

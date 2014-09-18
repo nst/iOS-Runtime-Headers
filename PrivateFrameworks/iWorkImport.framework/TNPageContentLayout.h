@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNPageLayout, TSDLayoutGeometry;
+@class TNPageLayout;
 
 @interface TNPageContentLayout : TSDLayout {
-    TSDLayoutGeometry *mCachedGeometry;
     TNPageLayout *mPageLayout;
+    unsigned long long mPageNumber;
 }
 
 @property TNPageLayout * pageLayout;
+@property(readonly) unsigned long long pageNumber;
 
 - (id)computeLayoutGeometry;
-- (void)dealloc;
 - (id)initWithPageLayout:(id)arg1;
-- (unsigned int)pageCount;
+- (unsigned long long)pageCount;
 - (id)pageLayout;
-- (unsigned int)pageNumber;
+- (unsigned long long)pageNumber;
 - (Class)repClassOverride;
 - (void)setPageLayout:(id)arg1;
 - (void)validate;

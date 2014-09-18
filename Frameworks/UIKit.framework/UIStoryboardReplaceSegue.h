@@ -3,17 +3,17 @@
  */
 
 @interface UIStoryboardReplaceSegue : UIStoryboardSegue {
-    int _destinationContainmentContext;
-    int _splitViewControllerIndex;
+    long long _destinationContainmentContext;
+    long long _splitViewControllerIndex;
 }
 
-@property int destinationContainmentContext;
-@property int splitViewControllerIndex;
+@property long long destinationContainmentContext;
+@property long long splitViewControllerIndex;
 
-- (int)destinationContainmentContext;
+- (long long)destinationContainmentContext;
 - (void)perform;
-- (void)setDestinationContainmentContext:(int)arg1;
-- (void)setSplitViewControllerIndex:(int)arg1;
-- (int)splitViewControllerIndex;
+- (void)setDestinationContainmentContext:(long long)arg1;
+- (void)setSplitViewControllerIndex:(long long)arg1;
+- (long long)splitViewControllerIndex;
 
 @end

@@ -17,7 +17,7 @@
 - (id)episodePlaybackOrder;
 - (id)groupIdentifier;
 - (id)podcast;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setEpisodePlaybackOrder:(id)arg1;
 - (void)setPodcast:(id)arg1;
 

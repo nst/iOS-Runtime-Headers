@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray, XPCProxy<CKSMSCompose>;
+@class <CKSMSCompose>, NSMutableArray;
 
 @interface CKSMSComposeQueuingRemoteViewControllerProxy : NSObject {
     NSMutableArray *_queuedInvocations;
-    XPCProxy<CKSMSCompose> *_serviceViewControllerProxy;
+    <CKSMSCompose> *_serviceViewControllerProxy;
 }
 
 @property(retain) NSMutableArray * queuedInvocations;
-@property(retain) XPCProxy<CKSMSCompose> * serviceViewControllerProxy;
+@property(retain) <CKSMSCompose> * serviceViewControllerProxy;
 
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;

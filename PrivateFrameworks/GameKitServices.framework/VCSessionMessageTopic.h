@@ -10,32 +10,33 @@
 
 @interface VCSessionMessageTopic : NSObject {
     NSArray *associatedStrings;
+    boolallowConcurrent;
+    boolisSendingEnabled;
+    boolshouldEncodeTopicKeyInMessage;
     struct tagHANDLE { int x1; } *handle;
     NSObject<OS_dispatch_queue> *inMessageQueue;
-    BOOL isSendingEnabled;
     NSString *lastMessage;
-    int latestOutgoingMessageIndex;
-    int latestReceivedTopicMessageNumber;
+    long long latestOutgoingMessageIndex;
+    long long latestReceivedTopicMessageNumber;
     NSObject<OS_dispatch_queue> *outMessageQueue;
-    unsigned long p2pID;
+    unsigned int p2pID;
     id receiveBlock;
-    BOOL shouldEncodeTopicKeyInMessage;
     NSString *topicKey;
     NSString *topicPrefix;
 }
 
-@property(setter=setIsSendingEnabled:) BOOL isSendingEnabled;
+@property(setter=setIsSendingEnabled:) bool isSendingEnabled;
 @property(readonly) NSString * topicKey;
 
 - (void)dealloc;
-- (id)initWithTopicKey:(id)arg1 strings:(id)arg2 receiveHandler:(id)arg3;
-- (BOOL)isSendingEnabled;
-- (BOOL)isStringAssociated:(id)arg1;
+- (id)initWithTopicKey:(id)arg1 strings:(id)arg2 allowConcurrent:(bool)arg3 receiveHandler:(id)arg4;
+- (bool)isSendingEnabled;
+- (bool)isStringAssociated:(id)arg1;
 - (void)passMessage:(id)arg1 sequence:(int)arg2;
-- (void)sendMessage:(id)arg1 withSequence:(int)arg2 numRetries:(int)arg3;
+- (void)sendMessage:(id)arg1 withSequence:(long long)arg2 numRetries:(long long)arg3;
 - (void)sendMessage:(id)arg1;
-- (void)setIsSendingEnabled:(BOOL)arg1;
-- (void)setP2PID:(unsigned long)arg1;
+- (void)setIsSendingEnabled:(bool)arg1;
+- (void)setP2PID:(unsigned int)arg1;
 - (id)topicKey;
 
 @end

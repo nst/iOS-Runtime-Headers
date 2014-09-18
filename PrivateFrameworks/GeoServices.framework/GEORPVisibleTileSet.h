@@ -10,16 +10,16 @@
     unsigned int _identifier;
     int _style;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_tileKeys;
-    unsigned int _tileKeysCount;
-    unsigned int _tileKeysSpace;
+    unsigned long long _tileKeysCount;
+    unsigned long long _tileKeysSpace;
 }
 
-@property BOOL hasIdentifier;
-@property BOOL hasStyle;
+@property bool hasIdentifier;
+@property bool hasStyle;
 @property unsigned int identifier;
 @property int style;
 @property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* tileKeys;
-@property(readonly) unsigned int tileKeysCount;
+@property(readonly) unsigned long long tileKeysCount;
 
 - (void)addTileKey:(struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
 - (void)clearTileKeys;
@@ -28,21 +28,22 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasStyle;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasStyle;
+- (unsigned long long)hash;
 - (unsigned int)identifier;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIdentifier:(BOOL)arg1;
-- (void)setHasStyle:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIdentifier:(bool)arg1;
+- (void)setHasStyle:(bool)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (void)setStyle:(int)arg1;
-- (void)setTileKeys:(struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
+- (void)setTileKeys:(struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned long long)arg2;
 - (int)style;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })tileKeyAtIndex:(unsigned int)arg1;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })tileKeyAtIndex:(unsigned long long)arg1;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)tileKeys;
-- (unsigned int)tileKeysCount;
+- (unsigned long long)tileKeysCount;
 - (void)writeTo:(id)arg1;
 
 @end

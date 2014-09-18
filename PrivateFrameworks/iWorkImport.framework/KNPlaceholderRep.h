@@ -5,11 +5,10 @@
 @interface KNPlaceholderRep : TSWPShapeRep {
 }
 
-@property(readonly) BOOL shouldBeginEditingOnSingleClick;
++ (id)mixableObjectClasses;
 
-- (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;
-- (BOOL)isPlaceholder;
-- (BOOL)shouldBeginEditingOnSingleClick;
+- (bool)canBeginEditingChildRepOnDoubleTap:(id)arg1;
+- (bool)isPlaceholder;
 - (id)textureForContext:(id)arg1;
 
 @end

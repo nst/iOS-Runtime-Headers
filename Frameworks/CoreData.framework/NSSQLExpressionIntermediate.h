@@ -5,10 +5,10 @@
 @class NSExpression;
 
 @interface NSSQLExpressionIntermediate : NSSQLIntermediate {
-    BOOL _allowToMany;
     NSExpression *_expression;
+    bool_allowToMany;
 }
 
-- (id)initWithExpression:(id)arg1 allowToMany:(BOOL)arg2 inScope:(id)arg3;
+- (id)initWithExpression:(id)arg1 allowToMany:(bool)arg2 inScope:(id)arg3;
 
 @end

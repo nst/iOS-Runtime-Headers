@@ -10,7 +10,7 @@
 @property(readonly) NSArray * batchResponseParameters;
 
 - (id)batchResponseParameters;
-- (int)batchedResponsesCount;
-- (id)responseAtBatchIndex:(int)arg1;
+- (long long)batchedResponsesCount;
+- (id)responseAtBatchIndex:(long long)arg1;
 
 @end

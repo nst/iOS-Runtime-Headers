@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKReverseGeocoderDelegate>, GEOGeocodeRequest, MKPlacemark;
+@class <MKMapServiceTicket>, <MKReverseGeocoderDelegate>, MKMapItem;
 
 @interface MKReverseGeocoderInternal : NSObject {
     struct { 
         double latitude; 
         double longitude; 
+    boolquerying;
     } coordinate;
     <MKReverseGeocoderDelegate> *delegate;
-    BOOL querying;
-    GEOGeocodeRequest *request;
-    MKPlacemark *storedPlacemark;
+    MKMapItem *mapItem;
+    <MKMapServiceTicket> *ticket;
 }
 
 - (void).cxx_destruct;

@@ -6,36 +6,36 @@
 
 @interface TSDFrameSpec : NSObject <NSCopying> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
+    boolmDisplayInPicker;
+    boolmHasAdornment;
+    boolmHasImages;
+    boolmHasMask;
+    boolmLoadedImageMetrics;
     } mAdornmentPosition;
     } mAdornmentSize;
-    float mBottomHeight;
-    float mBottomInset;
+    double mBottomHeight;
+    double mBottomInset;
     NSBundle *mBundle;
-    BOOL mDisplayInPicker;
     NSString *mFrameName;
-    BOOL mHasAdornment;
-    BOOL mHasImages;
-    BOOL mHasMask;
     int mInterest;
-    float mLeftInset;
-    float mLeftWidth;
-    BOOL mLoadedImageMetrics;
-    float mMinimumAssetScale;
+    double mLeftInset;
+    double mLeftWidth;
+    double mMinimumAssetScale;
     NSMutableDictionary *mProvidersByKey;
-    float mRightInset;
-    float mRightWidth;
+    double mRightInset;
+    double mRightWidth;
     int mTilingMode;
-    float mTopHeight;
-    float mTopInset;
+    double mTopHeight;
+    double mTopInset;
 }
 
-@property(readonly) BOOL displayInPicker;
-@property(readonly) NSString * frameName;
+@property(readonly) bool displayInPicker;
+@property(copy,readonly) NSString * frameName;
 
 + (id)frameSpecWithName:(id)arg1;
 + (id)frameSpecs;
@@ -43,26 +43,26 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)displayInPicker;
+- (bool)displayInPicker;
 - (id)frameName;
 - (void)i_addInterestInProviders;
-- (struct CGPoint { float x1; float x2; })i_adornmentPosition;
-- (struct CGSize { float x1; float x2; })i_adornmentSize;
-- (float)i_bottomHeight;
-- (float)i_bottomInset;
-- (BOOL)i_hasAdornment;
-- (BOOL)i_hasImages;
-- (BOOL)i_hasMask;
-- (float)i_leftInset;
-- (float)i_leftWidth;
-- (float)i_minimumAssetScale;
-- (id)i_providerForIndex:(int)arg1 mask:(BOOL)arg2;
+- (struct CGPoint { double x1; double x2; })i_adornmentPosition;
+- (struct CGSize { double x1; double x2; })i_adornmentSize;
+- (double)i_bottomHeight;
+- (double)i_bottomInset;
+- (bool)i_hasAdornment;
+- (bool)i_hasImages;
+- (bool)i_hasMask;
+- (double)i_leftInset;
+- (double)i_leftWidth;
+- (double)i_minimumAssetScale;
+- (id)i_providerForIndex:(int)arg1 mask:(bool)arg2;
 - (void)i_removeInterestInProviders;
-- (float)i_rightInset;
-- (float)i_rightWidth;
+- (double)i_rightInset;
+- (double)i_rightWidth;
 - (int)i_tilingMode;
-- (float)i_topHeight;
-- (float)i_topInset;
+- (double)i_topHeight;
+- (double)i_topInset;
 - (id)initWithBundle:(id)arg1;
 - (id)p_imageDataForKey:(id)arg1;
 - (id)p_infoDictionary;

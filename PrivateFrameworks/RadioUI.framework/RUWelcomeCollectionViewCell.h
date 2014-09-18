@@ -2,38 +2,47 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUStackView, UIImage, UIView;
+@class MPUBorderConfiguration, MPUBorderDrawingCache, MPUStackView, NSString, UIImage, UIView;
 
 @interface RUWelcomeCollectionViewCell : UICollectionViewCell <MPUStackViewDataSource> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UIImage *_artworkImage;
     } _artworkSize;
+    MPUBorderConfiguration *_stackItemBorderConfiguration;
+    MPUBorderDrawingCache *_stackItemBorderDrawingCache;
     MPUStackView *_stackView;
 }
 
 @property(retain) UIImage * artworkImage;
-@property struct CGSize { float x1; float x2; } artworkSize;
+@property struct CGSize { double x1; double x2; } artworkSize;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) UIView * perspectiveTargetView;
-@property struct CGPoint { float x1; float x2; } vanishingPoint;
+@property(retain) MPUBorderDrawingCache * stackItemBorderDrawingCache;
+@property(readonly) Class superclass;
+@property struct CGPoint { double x1; double x2; } vanishingPoint;
 
-+ (struct CGSize { float x1; float x2; })artworkSizeForOrientation:(int)arg1;
++ (struct CGSize { double x1; double x2; })artworkSizeForOrientation:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)artworkImage;
-- (struct CGSize { float x1; float x2; })artworkSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })artworkSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)numberOfItemsInStackView:(id)arg1;
+- (long long)numberOfItemsInStackView:(id)arg1;
 - (id)perspectiveTargetView;
 - (void)setArtworkImage:(id)arg1;
-- (void)setArtworkSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setArtworkSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
-- (void)setVanishingPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(int)arg3;
+- (void)setStackItemBorderDrawingCache:(id)arg1;
+- (void)setVanishingPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)stackItemBorderDrawingCache;
+- (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(long long)arg3;
 - (void)stackView:(id)arg1 didCreateItem:(id)arg2;
 - (void)updateForChangedDistanceFromVanishingPoint;
-- (struct CGPoint { float x1; float x2; })vanishingPoint;
+- (struct CGPoint { double x1; double x2; })vanishingPoint;
 
 @end

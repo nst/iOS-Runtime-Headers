@@ -6,6 +6,7 @@
 }
 
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)music_hasContent;
+- (bool)music_hasContent;
+- (id)view;
 
 @end

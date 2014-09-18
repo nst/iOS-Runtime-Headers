@@ -22,7 +22,7 @@
 - (id)description;
 - (id)initFromPlist:(id)arg1;
 - (id)initWithCell:(id)arg1;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (id)overlayedOn:(id)arg1;
 - (id)reversed;
 - (void)setCell:(id)arg1;

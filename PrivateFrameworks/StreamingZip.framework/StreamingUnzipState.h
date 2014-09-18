@@ -13,18 +13,18 @@
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
-        unsigned int total_in; 
+        unsigned long long total_in; 
         char *next_out; 
         unsigned int avail_out; 
-        unsigned int total_out; 
+        unsigned long long total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
         int data_type; 
-        unsigned int adler; 
-        unsigned int reserved; 
+        unsigned long long adler; 
+        unsigned long long reserved; 
     struct { 
         int hashType; 
         union { 
@@ -87,17 +87,17 @@
             } sha512; 
         } context; 
     unsigned long long _bytesHashedInChunk;
-    unsigned long _currentCRC32;
-    BOOL _currentLFIsStreamMetadata;
+    unsigned long long _currentCRC32;
     unsigned short _currentLFMode;
     struct { unsigned char x1[4]; struct { unsigned short x_2_1_1; } x2; struct { unsigned short x_3_1_1; } x3; struct { unsigned short x_4_1_1; } x4; union { struct { struct { unsigned short x_1_3_1; } x_1_2_1; struct { unsigned short x_2_3_1; } x_1_2_2; } x_5_1_1; struct { unsigned int x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; } x6; struct { unsigned int x_7_1_1; } x7; struct { unsigned int x_8_1_1; } x8; struct { unsigned short x_9_1_1; } x9; struct { unsigned short x_10_1_1; } x10; unsigned char x11[0]; } *_currentLFRecord;
-    unsigned long _currentLFRecordAllocationSize;
+    unsigned long long _currentLFRecordAllocationSize;
     unsigned long long _currentOffset;
     int _currentOutputFD;
+    struct { unsigned char x1[4]; union { struct { struct { unsigned int x_1_3_1; } x_1_2_1; struct { unsigned long long x_2_3_1; } x_1_2_2; struct { unsigned long long x_3_3_1; } x_1_2_3; } x_2_1_1; struct { struct { unsigned int x_1_3_1; } x_2_2_1; struct { unsigned int x_2_3_1; } x_2_2_2; struct { unsigned int x_3_3_1; } x_2_2_3; } x_2_1_2; } x2; } *_dataDescriptor;
     } _hashContext;
     unsigned long long _hashedChunkSize;
     NSArray *_hashes;
-    NSMutableData *_incompleteData;
+    NSMutableData *_inMemoryFileData;
     unsigned char _lastBlockEndLastByte;
     unsigned char _lastBlockEndNumUnusedBits;
     NSString *_lastChunkPartialHash;
@@ -113,21 +113,25 @@
     NSMutableData *_unsureData;
     NSString *_unzipPath;
     } _zlibState;
+    bool_currentLFRequiresDataDescriptor;
+    bool_storeCurrentFileInMemory;
 }
 
 @property(readonly) unsigned long long bytesHashedInChunk;
-@property unsigned long currentCRC32;
-@property BOOL currentLFIsStreamMetadata;
+@property unsigned long long currentCRC32;
 @property unsigned short currentLFMode;
 @property struct { unsigned char x1[4]; struct { unsigned short x_2_1_1; } x2; struct { unsigned short x_3_1_1; } x3; struct { unsigned short x_4_1_1; } x4; union { struct { struct { unsigned short x_1_3_1; } x_1_2_1; struct { unsigned short x_2_3_1; } x_1_2_2; } x_5_1_1; struct { unsigned int x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; } x6; struct { unsigned int x_7_1_1; } x7; struct { unsigned int x_8_1_1; } x8; struct { unsigned short x_9_1_1; } x9; struct { unsigned short x_10_1_1; } x10; unsigned char x11[0]; }* currentLFRecord;
-@property unsigned long currentLFRecordAllocationSize;
+@property unsigned long long currentLFRecordAllocationSize;
+@property bool currentLFRequiresDataDescriptor;
 @property unsigned long long currentOffset;
 @property int currentOutputFD;
+@property struct { unsigned char x1[4]; union { struct { struct { unsigned int x_1_3_1; } x_1_2_1; struct { unsigned long long x_2_3_1; } x_1_2_2; struct { unsigned long long x_3_3_1; } x_1_2_3; } x_2_1_1; struct { struct { unsigned int x_1_3_1; } x_2_2_1; struct { unsigned int x_2_3_1; } x_2_2_2; struct { unsigned int x_3_3_1; } x_2_2_3; } x_2_1_2; } x2; }* dataDescriptor;
 @property(readonly) struct { int x1; union { struct CC_MD5state_st { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7[16]; int x_1_2_8; } x_2_1_1; struct CC_SHA1state_st { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; unsigned int x_2_2_4; unsigned int x_2_2_5; unsigned int x_2_2_6; unsigned int x_2_2_7; unsigned int x_2_2_8[16]; int x_2_2_9; } x_2_1_2; struct CC_MD2state_st { int x_3_2_1; unsigned char x_3_2_2[16]; unsigned int x_3_2_3[16]; unsigned int x_3_2_4[16]; } x_2_1_3; struct CC_MD4state_st { unsigned int x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; unsigned int x_4_2_4; unsigned int x_4_2_5; unsigned int x_4_2_6; unsigned int x_4_2_7[16]; unsigned int x_4_2_8; } x_2_1_4; struct CC_SHA256state_st { unsigned int x_5_2_1[2]; unsigned int x_5_2_2[8]; unsigned int x_5_2_3[16]; } x_2_1_5; struct CC_SHA256state_st { unsigned int x_6_2_1[2]; unsigned int x_6_2_2[8]; unsigned int x_6_2_3[16]; } x_2_1_6; struct CC_SHA512state_st { unsigned long long x_7_2_1[2]; unsigned long long x_7_2_2[8]; unsigned long long x_7_2_3[16]; } x_2_1_7; struct CC_SHA512state_st { unsigned long long x_8_2_1[2]; unsigned long long x_8_2_2[8]; unsigned long long x_8_2_3[16]; } x_2_1_8; } x2; } hashContext;
 @property(readonly) unsigned long long hashedChunkSize;
-@property(retain) NSMutableData * incompleteData;
+@property(retain) NSMutableData * inMemoryFileData;
 @property(retain) NSString * lastChunkPartialHash;
 @property unsigned long long recordsProcessed;
+@property bool storeCurrentFileInMemory;
 @property(retain) NSDictionary * streamInfoDict;
 @property unsigned char streamState;
 @property unsigned long long thisStageBytesComplete;
@@ -136,29 +140,30 @@
 @property(retain) NSMutableData * unfinishedCompressedData;
 @property(retain) NSMutableData * unsureData;
 @property(readonly) NSString * unzipPath;
-@property(readonly) struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; }* zlibState;
+@property(readonly) struct z_stream_s { char *x1; unsigned int x2; unsigned long long x3; char *x4; unsigned int x5; unsigned long long x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned long long x13; unsigned long long x14; }* zlibState;
 
 + (id)unzipStateWithPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 
-- (struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; }*)zlibState;
+- (struct z_stream_s { char *x1; unsigned int x2; unsigned long long x3; char *x4; unsigned int x5; unsigned long long x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned long long x13; unsigned long long x14; }*)zlibState;
 - (void).cxx_destruct;
 - (id)_checkHashForOffset:(unsigned long long)arg1;
 - (void)_internalSetStreamState:(unsigned char)arg1;
 - (unsigned long long)bytesHashedInChunk;
 - (id)checkLastChunkPartialHash;
 - (void)clearSavedState;
-- (unsigned long)currentCRC32;
-- (BOOL)currentLFIsStreamMetadata;
+- (unsigned long long)currentCRC32;
 - (unsigned short)currentLFMode;
 - (struct { unsigned char x1[4]; struct { unsigned short x_2_1_1; } x2; struct { unsigned short x_3_1_1; } x3; struct { unsigned short x_4_1_1; } x4; union { struct { struct { unsigned short x_1_3_1; } x_1_2_1; struct { unsigned short x_2_3_1; } x_1_2_2; } x_5_1_1; struct { unsigned int x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; } x6; struct { unsigned int x_7_1_1; } x7; struct { unsigned int x_8_1_1; } x8; struct { unsigned short x_9_1_1; } x9; struct { unsigned short x_10_1_1; } x10; unsigned char x11[0]; }*)currentLFRecord;
-- (unsigned long)currentLFRecordAllocationSize;
+- (unsigned long long)currentLFRecordAllocationSize;
+- (bool)currentLFRequiresDataDescriptor;
 - (unsigned long long)currentOffset;
 - (int)currentOutputFD;
+- (struct { unsigned char x1[4]; union { struct { struct { unsigned int x_1_3_1; } x_1_2_1; struct { unsigned long long x_2_3_1; } x_1_2_2; struct { unsigned long long x_3_3_1; } x_1_2_3; } x_2_1_1; struct { struct { unsigned int x_1_3_1; } x_2_2_1; struct { unsigned int x_2_3_1; } x_2_2_2; struct { unsigned int x_3_3_1; } x_2_2_3; } x_2_1_2; } x2; }*)dataDescriptor;
 - (void)dealloc;
 - (id)finishStream;
 - (struct { int x1; union { struct CC_MD5state_st { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7[16]; int x_1_2_8; } x_2_1_1; struct CC_SHA1state_st { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; unsigned int x_2_2_4; unsigned int x_2_2_5; unsigned int x_2_2_6; unsigned int x_2_2_7; unsigned int x_2_2_8[16]; int x_2_2_9; } x_2_1_2; struct CC_MD2state_st { int x_3_2_1; unsigned char x_3_2_2[16]; unsigned int x_3_2_3[16]; unsigned int x_3_2_4[16]; } x_2_1_3; struct CC_MD4state_st { unsigned int x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; unsigned int x_4_2_4; unsigned int x_4_2_5; unsigned int x_4_2_6; unsigned int x_4_2_7[16]; unsigned int x_4_2_8; } x_2_1_4; struct CC_SHA256state_st { unsigned int x_5_2_1[2]; unsigned int x_5_2_2[8]; unsigned int x_5_2_3[16]; } x_2_1_5; struct CC_SHA256state_st { unsigned int x_6_2_1[2]; unsigned int x_6_2_2[8]; unsigned int x_6_2_3[16]; } x_2_1_6; struct CC_SHA512state_st { unsigned long long x_7_2_1[2]; unsigned long long x_7_2_2[8]; unsigned long long x_7_2_3[16]; } x_2_1_7; struct CC_SHA512state_st { unsigned long long x_8_2_1[2]; unsigned long long x_8_2_2[8]; unsigned long long x_8_2_3[16]; } x_2_1_8; } x2; })hashContext;
 - (unsigned long long)hashedChunkSize;
-- (id)incompleteData;
+- (id)inMemoryFileData;
 - (id)init;
 - (id)initWithPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)lastChunkPartialHash;
@@ -166,16 +171,18 @@
 - (void)markResumptionPointWithLastCompressedByte:(unsigned char)arg1;
 - (unsigned long long)recordsProcessed;
 - (id)serializeState;
-- (void)setCurrentCRC32:(unsigned long)arg1;
-- (void)setCurrentLFIsStreamMetadata:(BOOL)arg1;
+- (void)setCurrentCRC32:(unsigned long long)arg1;
 - (void)setCurrentLFMode:(unsigned short)arg1;
 - (void)setCurrentLFRecord:(struct { unsigned char x1[4]; struct { unsigned short x_2_1_1; } x2; struct { unsigned short x_3_1_1; } x3; struct { unsigned short x_4_1_1; } x4; union { struct { struct { unsigned short x_1_3_1; } x_1_2_1; struct { unsigned short x_2_3_1; } x_1_2_2; } x_5_1_1; struct { unsigned int x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; } x6; struct { unsigned int x_7_1_1; } x7; struct { unsigned int x_8_1_1; } x8; struct { unsigned short x_9_1_1; } x9; struct { unsigned short x_10_1_1; } x10; unsigned char x11[0]; }*)arg1;
-- (void)setCurrentLFRecordAllocationSize:(unsigned long)arg1;
+- (void)setCurrentLFRecordAllocationSize:(unsigned long long)arg1;
+- (void)setCurrentLFRequiresDataDescriptor:(bool)arg1;
 - (void)setCurrentOffset:(unsigned long long)arg1;
 - (void)setCurrentOutputFD:(int)arg1;
-- (void)setIncompleteData:(id)arg1;
+- (void)setDataDescriptor:(struct { unsigned char x1[4]; union { struct { struct { unsigned int x_1_3_1; } x_1_2_1; struct { unsigned long long x_2_3_1; } x_1_2_2; struct { unsigned long long x_3_3_1; } x_1_2_3; } x_2_1_1; struct { struct { unsigned int x_1_3_1; } x_2_2_1; struct { unsigned int x_2_3_1; } x_2_2_2; struct { unsigned int x_3_3_1; } x_2_2_3; } x_2_1_2; } x2; }*)arg1;
+- (void)setInMemoryFileData:(id)arg1;
 - (void)setLastChunkPartialHash:(id)arg1;
 - (void)setRecordsProcessed:(unsigned long long)arg1;
+- (void)setStoreCurrentFileInMemory:(bool)arg1;
 - (void)setStreamInfoDict:(id)arg1;
 - (void)setStreamState:(unsigned char)arg1;
 - (void)setThisStageBytesComplete:(unsigned long long)arg1;
@@ -183,6 +190,7 @@
 - (void)setUncompressedBytesOutput:(unsigned long long)arg1;
 - (void)setUnfinishedCompressedData:(id)arg1;
 - (void)setUnsureData:(id)arg1;
+- (bool)storeCurrentFileInMemory;
 - (id)streamInfoDict;
 - (unsigned char)streamState;
 - (unsigned long long)thisStageBytesComplete;
@@ -191,7 +199,7 @@
 - (id)unfinishedCompressedData;
 - (id)unsureData;
 - (id)unzipPath;
-- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3 onlyFinishCurrentChunk:(BOOL)arg4;
-- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long)arg3;
+- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long long)arg3 onlyFinishCurrentChunk:(bool)arg4;
+- (id)updateHashFromOffset:(unsigned long long)arg1 withBytes:(const void*)arg2 length:(unsigned long long)arg3;
 
 @end

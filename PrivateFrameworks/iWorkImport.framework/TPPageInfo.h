@@ -2,46 +2,51 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TPPageLayoutInfoProvider>, NSObject<TSDContainerInfo>, TPBodyInfo, TPDocumentRoot, TSDInfoGeometry, TSPObject<TSDOwningAttachment>;
+@class <TPPageLayoutInfoProvider>, NSObject<TSDContainerInfo>, NSString, TPBodyInfo, TPDocumentRoot, TSDInfoGeometry, TSPObject<TSDOwningAttachment>;
 
 @interface TPPageInfo : NSObject <TSDContainerInfo> {
     TPBodyInfo *_bodyInfo;
     TPDocumentRoot *_documentRoot;
     <TPPageLayoutInfoProvider> *_layoutInfoProvider;
-    unsigned int _pageIndex;
+    unsigned long long _pageIndex;
 }
 
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property(readonly) TPBodyInfo * bodyInfo;
+@property(getter=isAnchoredToText,readonly) bool anchoredToText;
+@property(getter=isAttachedToBodyText,readonly) bool attachedToBodyText;
+@property(retain,readonly) TPBodyInfo * bodyInfo;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) TPDocumentRoot * documentRoot;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
+@property(getter=isFloatingAboveText,readonly) bool floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
+@property(readonly) unsigned long long hash;
+@property(getter=isInlineWithText,readonly) bool inlineWithText;
 @property(readonly) <TPPageLayoutInfoProvider> * layoutInfoProvider;
-@property BOOL matchesObjectPlaceholderGeometry;
+@property bool matchesObjectPlaceholderGeometry;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
-@property(readonly) unsigned int pageIndex;
+@property(readonly) unsigned long long pageIndex;
 @property NSObject<TSDContainerInfo> * parentInfo;
+@property(readonly) Class superclass;
 
 - (id)bodyInfo;
 - (id)childInfos;
+- (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)documentRoot;
 - (id)geometry;
-- (id)initWithPageIndex:(unsigned int)arg1 documentRoot:(id)arg2 layoutInfoProvider:(id)arg3;
-- (BOOL)isAnchoredToText;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isFloatingAboveText;
-- (BOOL)isInlineWithText;
-- (BOOL)isThemeContent;
+- (id)initWithPageIndex:(unsigned long long)arg1 documentRoot:(id)arg2 layoutInfoProvider:(id)arg3;
+- (bool)isAnchoredToText;
+- (bool)isAttachedToBodyText;
+- (bool)isFloatingAboveText;
+- (bool)isInlineWithText;
+- (bool)isThemeContent;
 - (Class)layoutClass;
 - (id)layoutInfoProvider;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
-- (unsigned int)pageIndex;
+- (unsigned long long)pageIndex;
 - (id)parentInfo;
 - (Class)repClass;
 - (void)setGeometry:(id)arg1;

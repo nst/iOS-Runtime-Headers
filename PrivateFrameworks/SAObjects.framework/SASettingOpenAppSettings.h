@@ -11,8 +11,12 @@
 @property(copy) NSString * appId;
 @property(copy) NSString * appWithSettingsId;
 @property(copy) NSArray * callbacks;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * location;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 
 + (id)openAppSettings;
 + (id)openAppSettingsWithDictionary:(id)arg1 context:(id)arg2;
@@ -21,7 +25,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)location;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAppWithSettingsId:(id)arg1;
 - (void)setLocation:(id)arg1;
 

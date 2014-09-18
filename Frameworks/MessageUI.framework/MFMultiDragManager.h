@@ -2,30 +2,29 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMultiDragDestination>, MFGobblerGestureRecognizer, NSArray, NSMutableArray, NSMutableDictionary, NSTimer, UIGestureRecognizer, UIView, UIWindow;
+@class <MFMultiDragDestination>, MFGobblerGestureRecognizer, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UIView, UIWindow;
 
 @interface MFMultiDragManager : NSObject <UIGestureRecognizerDelegate> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     <MFMultiDragDestination> *_currentDestination;
     UIGestureRecognizer *_currentGestureBeingProcessed;
     NSMutableArray *_dragContextValues;
     NSMutableArray *_dragDestinations;
     NSMutableArray *_dragSources;
-    BOOL _dragWasSuccessful;
     UIWindow *_dragWindow;
     } _draggedItemOriginalFrame;
     NSArray *_draggedItems;
@@ -36,16 +35,22 @@
     } _offsetCenterOfDraggedView;
     } _previousGestureLocation;
     NSTimer *_scrollTimer;
-    BOOL _scrollingForDrag;
     NSMutableDictionary *_sourceForGestureRecognizer;
     double _timeOfLastBigUpdate;
+    bool_dragWasSuccessful;
+    bool_scrollingForDrag;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void)_beginGobblingAllDisruptiveEventsForWindow:(id)arg1;
 - (void)_cleanUpAfterDragCompleted;
-- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_handleLongPress:(id)arg1;
 - (void)_longPressGestureBegan:(id)arg1;
 - (void)_longPressGestureEnded:(id)arg1;
@@ -58,7 +63,7 @@
 - (void)cancelCurrentDragOperation;
 - (void)dealloc;
 - (void)enumerateDragContextsUsingBlock:(id)arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (void)removeDragContext:(id)arg1;
 - (void)removeDragDestination:(id)arg1;

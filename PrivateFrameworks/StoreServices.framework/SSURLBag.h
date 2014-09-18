@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, SSURLBagContext, SSXPCConnection;
+@class NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, SSURLBagContext, SSXPCConnection;
 
 @interface SSURLBag : NSObject {
     SSXPCConnection *_connection;
@@ -11,11 +11,14 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     double _expirationTime;
     NSMutableArray *_pendingLookups;
+    NSString *_storeFrontIdentifier;
+    bool_ignoreCacheForNextLookup;
 }
 
 @property(readonly) SSURLBagContext * URLBagContext;
 
 + (id)URLBagForContext:(id)arg1;
++ (void)setURLBag:(id)arg1 forContext:(id)arg2;
 
 - (id)URLBagContext;
 - (id)_connection;
@@ -23,6 +26,8 @@
 - (void)_loadURLBag;
 - (void)_loadWithCompletionBlock:(id)arg1;
 - (void)dealloc;
+- (void)dispatchAsync:(id)arg1;
+- (void)dispatchSync:(id)arg1;
 - (id)existingBagDictionary;
 - (void)getTrustForURL:(id)arg1 completionBlock:(id)arg2;
 - (id)init;

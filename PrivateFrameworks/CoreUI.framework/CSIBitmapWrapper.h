@@ -5,16 +5,34 @@
 @class NSData;
 
 @interface CSIBitmapWrapper : NSObject {
-    struct CGContext { } *_bitmap;
+    struct CGContext { } *_bitmapContext;
+    unsigned int _height;
+    unsigned int _imageAlpha;
     NSData *_pixelData;
+    unsigned int _pixelFormat;
+    NSData *_rawData;
+    unsigned long long _rowbytes;
+    unsigned int _width;
+    bool_allowsMultiPassEncoding;
 }
 
+@property bool allowsMultiPassEncoding;
+@property unsigned int pixelFormat;
+
+- (bool)allowsMultiPassEncoding;
 - (struct CGContext { }*)bitmapContext;
-- (id)compressedData;
+- (id)compressedData:(bool)arg1 usedEncoding:(int*)arg2 andRowChunkSize:(unsigned int*)arg3;
 - (void)dealloc;
 - (void)finalize;
-- (BOOL)getCompressedData:(id*)arg1 usedEncoding:(int*)arg2;
+- (unsigned int)height;
 - (id)initWithPixelWidth:(unsigned int)arg1 pixelHeight:(unsigned int)arg2;
 - (id)pixelData;
+- (unsigned int)pixelFormat;
+- (void)setAllowsMultiPassEncoding:(bool)arg1;
+- (void)setPixelData:(id)arg1;
+- (void)setPixelFormat:(unsigned int)arg1;
+- (void)setSourceAlphaInfo:(unsigned int)arg1;
+- (unsigned int)sourceImageAlpha;
+- (unsigned int)width;
 
 @end

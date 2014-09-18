@@ -7,25 +7,29 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class TSCHChartInfo;
+@class NSString, TSCHChartInfo;
 
-@interface TSCHLegendModel : NSObject <TSCHUnretainedParent, TSCHStyleOwning, NSCopying> {
+@interface TSCHLegendModel : NSObject <TSCHUnretainedParent, TSCHStyleOwning, TSDMixing, NSCopying> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     TSCHChartInfo *mChartInfo;
     } mLegendFrame;
 }
 
 @property TSCHChartInfo * chartInfo;
-@property struct CGPoint { float x1; float x2; } legendOffset;
-@property struct CGSize { float x1; float x2; } legendSize;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property struct CGPoint { double x1; double x2; } legendOffset;
+@property struct CGSize { double x1; double x2; } legendSize;
+@property(readonly) Class superclass;
 
 - (id)chartInfo;
 - (void)clearParent;
@@ -36,24 +40,27 @@
 - (int)defaultPropertyForGeneric:(int)arg1;
 - (float)floatValueForProperty:(int)arg1 defaultValue:(float)arg2;
 - (id)g_genericToDefaultPropertyMap;
-- (BOOL)hasFloatValueForProperty:(int)arg1 value:(float*)arg2;
-- (BOOL)hasIntValueForProperty:(int)arg1 value:(int*)arg2;
-- (BOOL)hasObjectValueForProperty:(int)arg1 value:(id*)arg2;
+- (bool)hasFloatValueForProperty:(int)arg1 value:(float*)arg2;
+- (bool)hasIntValueForProperty:(int)arg1 value:(int*)arg2;
+- (bool)hasObjectValueForProperty:(int)arg1 value:(id*)arg2;
 - (id)init;
 - (int)intValueForProperty:(int)arg1 defaultValue:(int)arg2;
-- (struct CGPoint { float x1; float x2; })legendOffset;
-- (struct CGSize { float x1; float x2; })legendSize;
+- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (struct CGPoint { double x1; double x2; })legendOffset;
+- (struct CGSize { double x1; double x2; })legendSize;
 - (void)loadFromPreUFFArchive:(const struct LegendModelArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RectArchive {} *x4; struct Reference {} *x5; struct Reference {} *x6; int x7; unsigned int x8[1]; }*)arg1;
-- (void)loadFromUnityArchive:(const struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, true>, std::__1::allocator<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; int x4; int x5; struct RectArchive {} *x6; struct Reference {} *x7; struct ChartGridArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; int x12; boolx13; boolx14; struct Reference {} *x15; struct Reference {} *x16; struct RepeatedPtrField<TSP::Reference> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct SparseReferenceArrayArchive {} *x22; struct SparseReferenceArrayArchive {} *x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; unsigned int x25; int x26; unsigned int x27[1]; }*)arg1;
+- (void)loadFromUnityArchive:(const struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; int x4; int x5; struct RectArchive {} *x6; struct Reference {} *x7; struct ChartGridArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; int x12; boolx13; boolx14; struct Reference {} *x15; struct Reference {} *x16; struct RepeatedPtrField<TSP::Reference> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct SparseReferenceArrayArchive {} *x22; struct SparseReferenceArrayArchive {} *x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; unsigned int x25; int x26; unsigned int x27[1]; }*)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (id)model;
 - (id)nonstyle;
 - (id)objectValueForProperty:(int)arg1;
 - (id)p_genericToDefaultPropertyMap;
-- (id)p_swapTuplesForMutations:(id)arg1 forImport:(BOOL)arg2;
-- (void)saveToUnityArchive:(struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, true>, std::__1::allocator<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; int x4; int x5; struct RectArchive {} *x6; struct Reference {} *x7; struct ChartGridArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; int x12; boolx13; boolx14; struct Reference {} *x15; struct Reference {} *x16; struct RepeatedPtrField<TSP::Reference> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct SparseReferenceArrayArchive {} *x22; struct SparseReferenceArrayArchive {} *x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; unsigned int x25; int x26; unsigned int x27[1]; }*)arg1;
+- (id)p_swapTuplesForMutations:(id)arg1 forImport:(bool)arg2;
+- (void)saveToUnityArchive:(struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; int x4; int x5; struct RectArchive {} *x6; struct Reference {} *x7; struct ChartGridArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; int x12; boolx13; boolx14; struct Reference {} *x15; struct Reference {} *x16; struct RepeatedPtrField<TSP::Reference> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; struct RepeatedPtrField<TSP::Reference> { void **x_19_1_1; int x_19_1_2; int x_19_1_3; int x_19_1_4; } x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; struct RepeatedPtrField<TSP::Reference> { void **x_21_1_1; int x_21_1_2; int x_21_1_3; int x_21_1_4; } x21; struct SparseReferenceArrayArchive {} *x22; struct SparseReferenceArrayArchive {} *x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; unsigned int x25; int x26; unsigned int x27[1]; }*)arg1;
 - (void)setChartInfo:(id)arg1;
-- (void)setLegendOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setLegendSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLegendOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLegendSize:(struct CGSize { double x1; double x2; })arg1;
 - (int)specificPropertyForGeneric:(int)arg1;
 - (id)style;
 - (id)swapTuplesForMutations:(id)arg1;

@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMessage, MFMessageLibrary;
+@class MFMessage, MFMessageLibrary, NSString;
 
 @interface _MFDALibraryConsumerFactory : NSObject <MFMessageDataConsumerFactory> {
     MFMessageLibrary *_library;
     MFMessage *_message;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) MFMessageLibrary * library;
 @property(retain) MFMessage * message;
+@property(readonly) Class superclass;
 
 - (id)dataConsumerForPart:(id)arg1;
 - (void)dealloc;

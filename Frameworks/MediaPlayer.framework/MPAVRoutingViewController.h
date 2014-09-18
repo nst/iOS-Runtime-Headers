@@ -2,60 +2,75 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAVRoutingViewControllerDelegate>, MPAVRoutingController, NSArray, UITableView;
+@class <MPAVRoutingViewControllerDelegate>, MPAVRoutingController, MPWeakTimer, NSArray, NSString, UIColor, UITableView;
 
 @interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate> {
     int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
     int _airPlayPasswordAlertDidCancelToken;
-    BOOL _allowMirroring;
-    unsigned int _avItemType;
+    unsigned long long _avItemType;
     NSArray *_cachedRoutes;
     <MPAVRoutingViewControllerDelegate> *_delegate;
     MPAVRoutingController *_routingController;
-    BOOL _shouldShowDebugButton;
-    unsigned int _style;
+    unsigned long long _style;
+    UIColor *_tableCellsBackgroundColor;
     UITableView *_tableView;
+    MPWeakTimer *_updateTimer;
+    bool_airPlayPasswordAlertDidAppearTokenIsValid;
+    bool_allowMirroring;
+    bool_cachedShowAirPlayDebugButton;
+    bool_hasCachedAirPlayDebugButtonStatus;
+    bool_needsDisplayedRoutesUpdate;
 }
 
-@property BOOL allowMirroring;
-@property(setter=setAVItemType:) unsigned int avItemType;
+@property bool allowMirroring;
+@property(setter=setAVItemType:) unsigned long long avItemType;
+@property(copy,readonly) NSString * debugDescription;
 @property <MPAVRoutingViewControllerDelegate> * delegate;
-@property(readonly) unsigned int style;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long style;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_availableRoutes;
-- (unsigned int)_debugButtonTableViewIndex;
+- (unsigned long long)_debugButtonTableViewIndex;
 - (id)_displayedRoutes;
+- (double)_expandedCellHeight;
+- (double)_normalCellHeight;
 - (void)_pickRoute:(id)arg1;
-- (unsigned int)_routeIndexForTableViewIndex:(unsigned int)arg1;
+- (unsigned long long)_routeIndexForTableViewIndex:(unsigned long long)arg1;
 - (id)_routesWhereMirroringIsPreferred;
-- (BOOL)_shouldShowMirroringCellForRoute:(id)arg1;
+- (void)_serviceWillPresentAuthenticationPromptNotification:(id)arg1;
+- (void)_setNeedsDisplayedRoutesUpdate;
+- (void)_setTableCellsBackgroundColor:(id)arg1;
+- (void)_setupUpdateTimerIfNecessary;
+- (bool)_shouldShowAirPlayDebugButton;
+- (bool)_shouldShowMirroringCellForRoute:(id)arg1;
 - (void)_showAirPlayDebug;
+- (id)_tableCellsBackgroundColor;
 - (id)_tableView;
-- (float)_tableViewHeightAccordingToDataSource;
-- (unsigned int)_tableViewIndexForRouteIndex:(unsigned int)arg1;
+- (double)_tableViewHeightAccordingToDataSource;
+- (unsigned long long)_tableViewIndexForRouteIndex:(unsigned long long)arg1;
 - (void)_updateDisplayedRoutes;
-- (BOOL)allowMirroring;
-- (unsigned int)avItemType;
+- (bool)allowMirroring;
+- (unsigned long long)avItemType;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithStyle:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
-- (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(BOOL)arg2;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(bool)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
-- (void)setAVItemType:(unsigned int)arg1;
-- (void)setAllowMirroring:(BOOL)arg1;
+- (void)setAVItemType:(unsigned long long)arg1;
+- (void)setAllowMirroring:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)style;
+- (unsigned long long)style;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 

@@ -2,17 +2,28 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class EDString;
+
 @interface EDComment : NSObject {
-    boolmVisible;
-    int mColumnIndex;
-    int mRowIndex;
+    EDString *_author;
+    int _columnIndex;
+    int _rowIndex;
+    bool_visible;
 }
 
+@property(retain) EDString * author;
+@property int columnIndex;
+@property int rowIndex;
+@property bool visible;
+
+- (id)author;
 - (int)columnIndex;
-- (bool)isVisible;
+- (void)dealloc;
 - (int)rowIndex;
+- (void)setAuthor:(id)arg1;
 - (void)setColumnIndex:(int)arg1;
 - (void)setRowIndex:(int)arg1;
 - (void)setVisible:(bool)arg1;
+- (bool)visible;
 
 @end

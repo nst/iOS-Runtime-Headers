@@ -5,9 +5,9 @@
 @interface TIKeyEventMapTraditionalZhuyin : TIKeyEventMapChineseMecabra {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)isZhuyinCharacterBeforeInsertionPointOfKeyboardState:(id)arg1;
-- (id)remapKeyWithString:(id)arg1 stringWithoutModifiers:(id)arg2 modifierFlags:(unsigned int)arg3 keyboardState:(id)arg4;
+- (bool)isZhuyinCharacterBeforeInsertionPointOfKeyboardState:(id)arg1;
+- (id)remapKeyWithString:(id)arg1 stringWithoutModifiers:(id)arg2 modifierFlags:(unsigned long long)arg3 keyboardState:(id)arg4;
 
 @end

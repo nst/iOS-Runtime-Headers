@@ -26,13 +26,13 @@
 @property(retain) NSString * storefrontID;
 @property(retain) NSNumber * versionID;
 
+- (void).cxx_destruct;
 - (id)DSID;
 - (id)XID;
 - (id)adamID;
 - (id)appleID;
 - (id)assetDictionary;
 - (id)collectionID;
-- (void)dealloc;
 - (id)dimensions;
 - (id)downloadDictionary;
 - (id)drmFree;

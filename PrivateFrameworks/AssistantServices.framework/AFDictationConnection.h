@@ -6,37 +6,43 @@
 
 @interface AFDictationConnection : NSObject {
     unsigned int _stateInSync : 1;
-    NSXPCConnection *_assistantConnection;
     unsigned int _audioSessionID;
     float _averagePower;
+    NSXPCConnection *_connection;
     <AFDictationDelegate> *_delegate;
-    BOOL _hasActiveRequest;
-    BOOL _isCapturingSpeech;
     NSString *_lastUsedLanguage;
     float _peakPower;
+    bool_hasActiveRequest;
+    bool_isCapturingSpeech;
 }
 
-@property(readonly) BOOL currentlyUsingLocalDication;
+@property(readonly) bool currentlyUsingLocalDication;
 @property <AFDictationDelegate> * delegate;
 
-+ (BOOL)dictationIsEnabled;
-+ (BOOL)dictationIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
++ (bool)dictationIsEnabled;
++ (bool)dictationIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
 + (void)fetchSupportedLanguageCodes:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_assistantConnection;
-- (id)_assistantDictationService;
 - (void)_availabilityChanged:(id)arg1;
-- (void)_checkAndSetIsCapturingSpeech:(BOOL)arg1;
+- (void)_cancelRequestTimeout;
+- (void)_checkAndSetIsCapturingSpeech:(bool)arg1;
 - (void)_clearConnections;
+- (id)_connection;
 - (void)_connectionInterrupted;
+- (id)_dictationService;
+- (void)_extendRequestTimeout;
+- (void)_invokeRequestTimeout;
 - (void)_registerInvalidationHandlerForXPCConnection:(id)arg1;
+- (void)_scheduleRequestTimeout;
 - (void)_setAudioSessionID:(unsigned int)arg1;
 - (void)_speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
 - (void)_tellDelegateAudioSessionIDChanged:(unsigned int)arg1;
+- (void)_tellSpeechDelegateAudioFileFinished:(id)arg1 error:(id)arg2;
 - (void)_tellSpeechDelegateDidHypothesizeSpeechPhrases:(id)arg1 languageModel:(id)arg2;
 - (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 languageModel:(id)arg2 correctionIdentifier:(id)arg3;
 - (void)_tellSpeechDelegateDidRecognizeSpeechTokens:(id)arg1 languageModel:(id)arg2;
+- (void)_tellSpeechDelegateDidRecognizeTranscriptionObjects:(id)arg1 languageModel:(id)arg2;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidBegin;
 - (void)_tellSpeechDelegateRecordingDidCancel;
@@ -53,10 +59,10 @@
 - (void)beginAvailabilityMonitoring;
 - (void)cancelAvailabilityMonitoring;
 - (void)cancelSpeech;
-- (BOOL)currentlyUsingLocalDication;
+- (bool)currentlyUsingLocalDication;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)dictationIsAvailableForLanguage:(id)arg1;
+- (bool)dictationIsAvailableForLanguage:(id)arg1;
 - (void)endSession;
 - (id)init;
 - (float)peakPower;
@@ -66,7 +72,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2;
-- (void)startDictationWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2 options:(id)arg3 forLanguage:(id)arg4;
+- (void)startDictationWithSpeechFileAtURL:(id)arg1 isNarrowBand:(bool)arg2 options:(id)arg3 forLanguage:(id)arg4;
 - (void)startDictationWithSpeechFileAtURL:(id)arg1 options:(id)arg2 forLanguage:(id)arg3;
 - (void)stopSpeech;
 - (void)stopSpeechWithOptions:(id)arg1;

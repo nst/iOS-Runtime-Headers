@@ -7,26 +7,28 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface TSTCellStyle : TSSStyle {
+@interface TSTCellStyle : TSSStyle <TSDMixing> {
 }
 
-+ (void)initDefaultPropertyMap:(id)arg1 forTableArea:(int)arg2 presetIndex:(unsigned int)arg3 colors:(id)arg4 alternate:(int)arg5;
++ (void)initDefaultPropertyMap:(id)arg1 forTableArea:(int)arg2 presetID:(unsigned long long)arg3 colors:(id)arg4 alternate:(int)arg5;
 + (id)nonEmphasisCellProperties;
-+ (void)p_initBodyRegionPropertyMap:(id)arg1 presetIndex:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
-+ (void)p_initFooterRowRegionPropertyMap:(id)arg1 presetIndex:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
-+ (void)p_initHeaderColumnRegionPropertyMap:(id)arg1 presetIndex:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
-+ (void)p_initHeaderRowRegionPropertyMap:(id)arg1 presetIndex:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
++ (void)p_initBodyRegionPropertyMap:(id)arg1 presetID:(unsigned long long)arg2 colors:(id)arg3 alternate:(int)arg4;
++ (void)p_initFooterRowRegionPropertyMap:(id)arg1 presetID:(unsigned long long)arg2 colors:(id)arg3 alternate:(int)arg4;
++ (void)p_initHeaderColumnRegionPropertyMap:(id)arg1 presetID:(unsigned long long)arg2 colors:(id)arg3 alternate:(int)arg4;
++ (void)p_initHeaderRowRegionPropertyMap:(id)arg1 presetID:(unsigned long long)arg2 colors:(id)arg3 alternate:(int)arg4;
 + (id)properties;
 + (id)propertiesAllowingNSNull;
 + (id)regionStringForTableArea:(int)arg1;
-+ (id)styleIDForPreset:(unsigned int)arg1 andTableArea:(int)arg2;
-+ (id)textStyleIDForPreset:(unsigned int)arg1 andTableArea:(int)arg2;
++ (id)styleIDForPreset:(unsigned long long)arg1 andTableArea:(int)arg2;
++ (id)textStyleIDForPreset:(unsigned long long)arg1 andTableArea:(int)arg2;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (void)loadCellStyleFromArchive:(const struct CellStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CellStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
 - (void)loadCellStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct CellStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FillArchive {} *x3; struct Deprecated_TableStrokeArchive {} *x4; struct Deprecated_TableStrokeArchive {} *x5; boolx6; int x7; struct Deprecated_TableStrokeArchive {} *x8; struct Deprecated_TableStrokeArchive {} *x9; struct PaddingArchive {} *x10; struct StrokeArchive {} *x11; struct StrokeArchive {} *x12; struct StrokeArchive {} *x13; struct StrokeArchive {} *x14; int x15; unsigned int x16[1]; }*)arg2 unarchiver:(id)arg3;
 - (SEL)mapThemePropertyMapSelector;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (void)saveCellStylePropertiesToArchive:(struct CellStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FillArchive {} *x3; struct Deprecated_TableStrokeArchive {} *x4; struct Deprecated_TableStrokeArchive {} *x5; boolx6; int x7; struct Deprecated_TableStrokeArchive {} *x8; struct Deprecated_TableStrokeArchive {} *x9; struct PaddingArchive {} *x10; struct StrokeArchive {} *x11; struct StrokeArchive {} *x12; struct StrokeArchive {} *x13; struct StrokeArchive {} *x14; int x15; unsigned int x16[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveCellStyleToArchive:(struct CellStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CellStylePropertiesArchive {} *x4; unsigned int x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

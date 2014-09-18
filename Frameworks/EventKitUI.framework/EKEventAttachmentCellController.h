@@ -2,22 +2,26 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventAttachmentCellControllerDelegate>, EKAttachment, EKEventAttachmentCell;
+@class <EKEventAttachmentCellControllerDelegate>, EKAttachment, EKEventAttachmentCell, NSString;
 
 @interface EKEventAttachmentCellController : NSObject <UIDocumentInteractionControllerDelegate> {
     EKAttachment *_attachment;
     EKEventAttachmentCell *_cell;
     <EKEventAttachmentCellControllerDelegate> *_delegate;
     id _downloadID;
-    BOOL _sourceIsManaged;
+    bool_sourceIsManaged;
 }
 
 @property(retain) EKAttachment * attachment;
 @property(readonly) EKEventAttachmentCell * cell;
+@property(copy,readonly) NSString * debugDescription;
 @property <EKEventAttachmentCellControllerDelegate> * delegate;
-@property BOOL sourceIsManaged;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool sourceIsManaged;
+@property(readonly) Class superclass;
 
-+ (BOOL)_attachmentIsViewable:(id)arg1;
++ (bool)_attachmentIsViewable:(id)arg1;
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2;
 
 - (void).cxx_destruct;
@@ -35,8 +39,8 @@
 - (id)initWithAttachment:(id)arg1;
 - (void)setAttachment:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSourceIsManaged:(BOOL)arg1;
-- (BOOL)sourceIsManaged;
+- (void)setSourceIsManaged:(bool)arg1;
+- (bool)sourceIsManaged;
 - (void)tearDown;
 
 @end

@@ -6,17 +6,17 @@
 
 @interface PKPassFieldView : UIView {
     struct CGSize { 
-        float width; 
-        float height; 
-    int _background;
+        double width; 
+        double height; 
+    long long _background;
     } _cachedSize;
     PKPassColorProfile *_colorProfile;
     PKDiffView *_diffView;
     PKPassField *_field;
     PKPassFieldTemplate *_fieldTemplate;
     UILabel *_labelLabel;
-    BOOL _needsRecalculation;
     UILabel *_valueLabel;
+    bool_needsRecalculation;
 }
 
 @property(retain) PKPassColorProfile * colorProfile;
@@ -28,10 +28,10 @@
 
 + (id)newViewForField:(id)arg1 fieldTemplate:(id)arg2;
 
-- (id)_labelAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
-- (struct CGSize { float x1; float x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)_shouldDisplayLabel;
-- (id)_valueAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
+- (id)_labelAttributedStringForColorProfile:(id)arg1 background:(long long)arg2;
+- (struct CGSize { double x1; double x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)_shouldDisplayLabel;
+- (id)_valueAttributedStringForColorProfile:(id)arg1 background:(long long)arg2;
 - (id)colorProfile;
 - (void)dealloc;
 - (id)description;
@@ -43,12 +43,12 @@
 - (id)labelLabel;
 - (void)layoutSubviews;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;
-- (void)setColorProfile:(id)arg1 background:(int)arg2;
+- (void)setColorProfile:(id)arg1 background:(long long)arg2;
 - (void)setColorProfile:(id)arg1;
 - (void)setDiffView:(id)arg1;
 - (void)setField:(id)arg1;
 - (void)setFieldTemplate:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)valueLabel;
 
 @end

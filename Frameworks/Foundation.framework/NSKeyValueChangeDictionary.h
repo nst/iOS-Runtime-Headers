@@ -6,24 +6,24 @@
 
 @interface NSKeyValueChangeDictionary : NSDictionary {
     struct { 
-        unsigned int kind; 
+        unsigned long long kind; 
         NSObject *oldValue; 
         NSObject *newValue; 
         NSIndexSet *indexes; 
         id extraData; 
     } _details;
-    BOOL _isPriorNotification;
-    BOOL _isRetainingObjects;
     NSObject *_originalObservable;
+    bool_isPriorNotification;
+    bool_isRetainingObjects;
 }
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (id)initWithDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
+- (id)initWithDetailsNoCopy:(struct { unsigned long long x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2 isPriorNotification:(bool)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (void)retainObjects;
-- (void)setDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2;
+- (void)setDetailsNoCopy:(struct { unsigned long long x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2;
 - (void)setOriginalObservable:(id)arg1;
 
 @end

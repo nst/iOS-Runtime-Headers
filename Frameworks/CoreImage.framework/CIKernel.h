@@ -6,11 +6,20 @@
     void *_priv;
 }
 
++ (id)_getDictForSourceString:(id)arg1 dimensionality:(int*)arg2;
++ (id)kernelWithString:(id)arg1;
++ (id)kernelsWithString:(id)arg1;
+
 - (int)_argumentTypeAtIndex:(int)arg1;
 - (id)_initWithInternalRepresentation:(void*)arg1;
 - (void*)_internalRepresentation;
-- (BOOL)_validOptions:(id)arg1;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 roiCallback:(id)arg2 andArguments:(id)arg3;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 roiCallback:(id)arg2 arguments:(id)arg3;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 roiCallback:(id)arg2 cpuCallback:(id)arg3 colorManagement:(bool)arg4 andArguments:(id)arg5;
 - (id)description;
 - (id)init;
+- (id)initWithDict:(id)arg1;
+- (id)initWithString:(id)arg1;
+- (id)name;
 
 @end

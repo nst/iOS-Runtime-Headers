@@ -15,6 +15,7 @@
 @property(copy) NSDictionary * firstNameAPGs;
 @property(copy) NSString * firstNamePhonetic;
 @property(copy) NSString * fullName;
+@property(copy) NSString * internalGUID;
 @property(copy) NSNumber * isBlocked;
 @property(copy) NSString * lastName;
 @property(copy) NSDictionary * lastNameAPGs;
@@ -26,6 +27,7 @@
 @property(copy) NSString * phonemeData;
 @property(copy) NSArray * phones;
 @property(copy) NSString * prefix;
+@property(copy) NSNumber * pseudo;
 @property(copy) NSArray * relatedNames;
 @property(copy) NSArray * socialProfiles;
 @property(copy) NSString * suffix;
@@ -43,6 +45,7 @@
 - (id)firstNamePhonetic;
 - (id)fullName;
 - (id)groupIdentifier;
+- (id)internalGUID;
 - (id)isBlocked;
 - (id)lastName;
 - (id)lastNameAPGs;
@@ -54,6 +57,7 @@
 - (id)phonemeData;
 - (id)phones;
 - (id)prefix;
+- (id)pseudo;
 - (id)relatedNames;
 - (void)setAddresses:(id)arg1;
 - (void)setBirthday:(id)arg1;
@@ -63,6 +67,7 @@
 - (void)setFirstNameAPGs:(id)arg1;
 - (void)setFirstNamePhonetic:(id)arg1;
 - (void)setFullName:(id)arg1;
+- (void)setInternalGUID:(id)arg1;
 - (void)setIsBlocked:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLastNameAPGs:(id)arg1;
@@ -74,6 +79,7 @@
 - (void)setPhonemeData:(id)arg1;
 - (void)setPhones:(id)arg1;
 - (void)setPrefix:(id)arg1;
+- (void)setPseudo:(id)arg1;
 - (void)setRelatedNames:(id)arg1;
 - (void)setSocialProfiles:(id)arg1;
 - (void)setSuffix:(id)arg1;

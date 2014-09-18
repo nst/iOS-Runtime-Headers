@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GEORequester;
+@class GEORequester, NSString;
 
 @interface GEOVoltaireAddressCorrectionProvider : NSObject <PBRequesterDelegate> {
     id _errorHandler;
@@ -15,11 +15,14 @@
     id _updateFinishedHandler;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) GEORequester * requester;
+@property(readonly) Class superclass;
 
 + (id)acInitUrl;
 + (id)acUpdateURL;
-+ (void)setUsePersistentConnection:(BOOL)arg1;
 
 - (void)cancelRequest;
 - (void)dealloc;

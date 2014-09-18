@@ -11,12 +11,14 @@
 @property(retain) NSData * data;
 
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithOtherImage:(id)arg1;
+- (void)_configureImage:(id)arg1;
 - (void)_preheatBitmapData;
 - (id)data;
 - (void)dealloc;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setData:(id)arg1;
 
 @end

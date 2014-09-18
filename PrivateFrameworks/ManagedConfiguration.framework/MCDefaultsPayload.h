@@ -17,8 +17,8 @@
 - (id)description;
 - (id)domains;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)isAllowedToWriteDefaults;
+- (bool)isAllowedToWriteDefaults;
 - (id)stubDictionary;
-- (id)subtitle1Description;
+- (id)title;
 
 @end

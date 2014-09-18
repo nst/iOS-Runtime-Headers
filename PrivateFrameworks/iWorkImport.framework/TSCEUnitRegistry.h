@@ -15,7 +15,7 @@
 + (int)unitForCurrencyCode:(id)arg1;
 + (int)unitForCurrentLocaleCurrencyCode;
 + (int)unitForString:(id)arg1;
-+ (BOOL)unitIsMetric:(int)arg1;
++ (bool)unitIsMetric:(int)arg1;
 + (int)unitPrefixForCharacter:(unsigned short)arg1;
 
 @end

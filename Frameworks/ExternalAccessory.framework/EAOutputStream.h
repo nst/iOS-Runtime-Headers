@@ -8,10 +8,6 @@
     EAAccessory *_accessory;
     struct __CFSocket { } *_cfSocket;
     id _delegate;
-    BOOL _hasSpaceAvailable;
-    BOOL _hasSpaceAvailableEventSent;
-    BOOL _isAtEndEventSent;
-    BOOL _isOpenCompletedEventSent;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSRecursiveLock *_runloopLock;
@@ -19,7 +15,11 @@
     int _sock;
     struct __CFRunLoopSource { } *_socketRunLoopSource;
     NSRecursiveLock *_statusLock;
-    unsigned int _streamStatus;
+    unsigned long long _streamStatus;
+    bool_hasSpaceAvailable;
+    bool_hasSpaceAvailableEventSent;
+    bool_isAtEndEventSent;
+    bool_isOpenCompletedEventSent;
 }
 
 - (void)_accessoryDidDisconnect:(id)arg1;
@@ -31,7 +31,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)endStream;
-- (BOOL)hasSpaceAvailable;
+- (bool)hasSpaceAvailable;
 - (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
 - (void)open;
 - (void)openCompleted;
@@ -39,9 +39,9 @@
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (unsigned int)streamStatus;
-- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (unsigned long long)streamStatus;
+- (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
 
 @end

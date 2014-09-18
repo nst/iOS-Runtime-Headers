@@ -2,36 +2,33 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNPageNumberLayer;
-
-@interface TNPageRep : TSDContainerRep {
+@interface TNPageRep : TSWPPageRep {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGPath { } *_shadowPath;
     } _shadowPathRect;
-    TNPageNumberLayer *mPageNumberLayer;
-    struct __CTLine { } *mPageNumberLine;
-    struct __CTLine { } *mPageNumberLineForDevice;
 }
-
-@property(readonly) TNPageNumberLayer * pageNumberLayer;
 
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (void)dealloc;
 - (void)didUpdateLayer:(id)arg1;
-- (BOOL)directlyManagesLayerContent;
+- (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)drawPageNumberInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 isDeviceSpace:(BOOL)arg3;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (BOOL)isOpaque;
-- (struct __CTLine { }*)p_pageNumberLineForDeviceSpace:(BOOL)arg1;
-- (id)pageNumberLayer;
+- (bool)isOpaque;
+- (id)p_childRepForInfo:(id)arg1;
+- (bool)p_headerFooterIsVisibleAndInteractive:(int)arg1;
+- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (id)p_rasterizeHeaderRep:(id)arg1 type:(int)arg2 fragment:(int)arg3;
+- (id)p_repForHeaderLayout:(id)arg1;
+- (void)p_willBeginDynamicContentScaleChange:(id)arg1;
+- (void)willUpdateLayer:(id)arg1;
 
 @end

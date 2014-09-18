@@ -5,29 +5,29 @@
 @class NSString;
 
 @interface _EditScriptIndexedAtom : NSObject {
-    int _editOperation;
-    unsigned int _indexInArrayB;
-    unsigned int _indexToEdit;
+    long long _editOperation;
+    unsigned long long _indexInArrayB;
+    unsigned long long _indexToEdit;
     NSString *_replacementText;
 }
 
-@property int editOperation;
-@property unsigned int indexInArrayB;
-@property unsigned int indexToEdit;
+@property long long editOperation;
+@property unsigned long long indexInArrayB;
+@property unsigned long long indexToEdit;
 @property(retain) NSString * replacementText;
 
-+ (id)atomWithEditOperation:(int)arg1 indexToEdit:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
++ (id)atomWithEditOperation:(long long)arg1 indexToEdit:(unsigned long long)arg2 newText:(id)arg3 indexInArrayB:(unsigned long long)arg4;
 
 - (void)dealloc;
 - (id)description;
-- (int)editOperation;
-- (unsigned int)indexInArrayB;
-- (unsigned int)indexToEdit;
-- (id)initWithEditOperation:(int)arg1 indexToEdit:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
+- (long long)editOperation;
+- (unsigned long long)indexInArrayB;
+- (unsigned long long)indexToEdit;
+- (id)initWithEditOperation:(long long)arg1 indexToEdit:(unsigned long long)arg2 newText:(id)arg3 indexInArrayB:(unsigned long long)arg4;
 - (id)replacementText;
-- (void)setEditOperation:(int)arg1;
-- (void)setIndexInArrayB:(unsigned int)arg1;
-- (void)setIndexToEdit:(unsigned int)arg1;
+- (void)setEditOperation:(long long)arg1;
+- (void)setIndexInArrayB:(unsigned long long)arg1;
+- (void)setIndexToEdit:(unsigned long long)arg1;
 - (void)setReplacementText:(id)arg1;
 
 @end

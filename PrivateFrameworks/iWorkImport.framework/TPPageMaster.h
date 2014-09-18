@@ -2,69 +2,71 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, TPDocumentRoot, TPSection, TSWPStorage;
+@class NSArray, NSMutableArray, NSString, TPDocumentRoot, TPSection, TSWPStorage;
 
-@interface TPPageMaster : TSPObject <TPHeaderFooterProvider, TPMasterDrawableProvider, TSKDocumentObject, TSKModel, TSPCopying> {
+@interface TPPageMaster : TSPObject <TSWPHeaderFooterProvider, TPMasterDrawableProvider, TSKDocumentObject, TSKModel, TSPCopying> {
     TPDocumentRoot *_documentRoot;
     TSWPStorage *_headerFooters[2][3];
     NSMutableArray *_masterDrawables;
     TPSection *_section;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * masterDrawables;
 @property TPSection * section;
+@property(readonly) Class superclass;
 
-- (void)addMasterDrawable:(id)arg1 atIndex:(unsigned int)arg2 insertContext:(id)arg3 suppressDOLC:(BOOL)arg4;
-- (void)addMasterDrawables:(id)arg1 atIndex:(unsigned int)arg2 insertContext:(id)arg3 suppressDOLC:(BOOL)arg4;
+- (void)addMasterDrawable:(id)arg1 atIndex:(unsigned long long)arg2 insertContext:(id)arg3 suppressDOLC:(bool)arg4;
+- (void)addMasterDrawables:(id)arg1 atIndex:(unsigned long long)arg2 insertContext:(id)arg3 suppressDOLC:(bool)arg4;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+- (double)bodyWidth;
 - (id)childEnumerator;
 - (id)copyWithContext:(id)arg1;
-- (unsigned int)countOfMasterDrawables;
+- (unsigned long long)countOfMasterDrawables;
 - (void)dealloc;
 - (id)description;
-- (float)footerHeight;
-- (id)getMergedHeaderFooter:(int)arg1;
+- (id)documentRoot;
+- (double)footerHeight;
 - (id)headerFooter:(int)arg1 fragmentAtIndex:(int)arg2;
 - (id)headerFooterFragmentEnumerator;
 - (int)headerFooterTypeForModel:(id)arg1;
 - (int)headerFragmentIndexForModel:(id)arg1;
-- (float)headerHeight;
+- (double)headerHeight;
 - (void)i_addMasterDrawable:(id)arg1;
 - (void)i_copyHeadersAndFootersFrom:(id)arg1 dolcContext:(id)arg2;
-- (void)i_createHeadersFooters:(int)arg1 stylesheet:(id)arg2 paragraphStyle:(id)arg3 context:(id)arg4 mayAlreadyExist:(BOOL)arg5;
+- (void)i_createHeadersFooters:(int)arg1 stylesheet:(id)arg2 paragraphStyle:(id)arg3 context:(id)arg4 mayAlreadyExist:(bool)arg5;
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1 paragraphStyle:(id)arg2 context:(id)arg3;
-- (void)i_importHeaderFooter:(id)arg1 headerType:(int)arg2 dolcContext:(id)arg3 splitHeaders:(BOOL)arg4;
+- (void)i_importHeaderFooter:(id)arg1 headerType:(int)arg2 dolcContext:(id)arg3 splitHeaders:(bool)arg4;
 - (void)i_setDocumentRoot:(id)arg1;
 - (void)i_setHeaderFooter:(int)arg1 storage:(id)arg2 fragmentIndex:(int)arg3;
-- (void)i_splitHeaderFooter:(id)arg1 storages:(id*)arg2 dolcContext:(id)arg3 bodyWidth:(float)arg4;
-- (unsigned int)indexOfMasterDrawable:(id)arg1;
+- (void)i_splitHeaderFooter:(id)arg1 storages:(id*)arg2 dolcContext:(id)arg3 bodyWidth:(double)arg4;
+- (unsigned long long)indexOfMasterDrawable:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithSection:(id)arg1;
-- (BOOL)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
-- (BOOL)isHeaderFooterEmpty:(int)arg1;
+- (bool)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
+- (bool)isHeaderFooterEmpty:(int)arg1;
 - (id)masterDrawables;
 - (id)masterDrawablesSortedByZOrder:(id)arg1;
-- (BOOL)ownsModelObject:(id)arg1;
-- (BOOL)pAppendHeaderFooterFragment:(id)arg1 paragraph:(unsigned int)arg2 toCompositHeaderFooter:(id)arg3 segment:(unsigned int)arg4 lastSegmentInserted:(unsigned int)arg5 themeParStyle:(id)arg6 otherHFStyles:(id)arg7;
-- (void)pApplyParagraphStyle:(id)arg1 toHFFragment:(id)arg2;
-- (id)pHFParagraphStyleWithPropertiesFromStyle:(id)arg1 baseStyle:(id)arg2 otherHFStyles:(id)arg3;
-- (float)pHeightOfHeaderFooter:(int)arg1;
-- (void)p_filterParagraphStylesOnHeaderFooterStorage:(id)arg1 index:(int)arg2 stylesheet:(id)arg3;
+- (bool)ownsModelObject:(id)arg1;
+- (double)pHeightOfHeaderFooter:(int)arg1;
+- (void)p_filterParagraphStylesOnHeaderFooterStorage:(id)arg1 stylesheet:(id)arg2;
 - (id)p_headerAndFooterStorages;
-- (int)p_headerFragmentIndexForTabIndex:(unsigned int)arg1 paragraphStyle:(id)arg2 bodyWidth:(float)arg3;
+- (int)p_headerFragmentIndexForTabIndex:(unsigned int)arg1 paragraphStyle:(id)arg2 bodyWidth:(double)arg3;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 documentRoot:(id)arg2 context:(id)arg3;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 documentRoot:(id)arg2;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 withStylesheet:(id)arg2 withMapper:(id)arg3;
 - (void)p_makeMasterDrawablesPerformSelector:(SEL)arg1 documentRoot:(id)arg2 context:(id)arg3;
 - (void)p_makeMasterDrawablesPerformSelector:(SEL)arg1 documentRoot:(id)arg2;
 - (void)p_makeMasterDrawablesPerformSelector:(SEL)arg1 withStylesheet:(id)arg2 withMapper:(id)arg3;
-- (void)p_splitHeaderFooterByTabs:(id)arg1 storages:(id*)arg2 dolcContext:(id)arg3 bodyWidth:(float)arg4;
-- (void)removeMasterDrawable:(id)arg1 suppressDOLC:(BOOL)arg2;
+- (void)p_splitHeaderFooterByTabs:(id)arg1 storages:(id*)arg2 dolcContext:(id)arg3 bodyWidth:(double)arg4;
+- (void)removeMasterDrawable:(id)arg1 suppressDOLC:(bool)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (id)section;
 - (void)setParentStorage:(id)arg1;
 - (void)setSection:(id)arg1;
-- (BOOL)usesSingleHeaderFooter;
+- (bool)usesSingleHeaderFooter;
 - (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;

@@ -6,38 +6,46 @@
    See Warning(s) below.
  */
 
-@class <TSUReadChannel>, <TSUStreamReadChannel>, NSError, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
+@class <TSUReadChannel>, <TSUStreamReadChannel>, NSError, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString;
 
 @interface TSUBufferedReadChannel : NSObject <TSUReadChannel> {
     NSObject<OS_dispatch_data> *_currentStreamOutputData;
-    BOOL _isStreamOutputDone;
     NSObject<OS_dispatch_semaphore> *_readSemaphore;
     long long _sourceOffset;
-    unsigned long _sourceReadBufferSize;
+    unsigned long long _sourceReadBufferSize;
     <TSUReadChannel> *_sourceReadChannel;
     NSError *_sourceReadChannelError;
     NSObject<OS_dispatch_queue> *_sourceReadQueue;
-    unsigned long _streamOutputLength;
+    unsigned long long _streamOutputLength;
     long long _streamOutputOffset;
     <TSUStreamReadChannel> *_streamReadChannel;
     id _streamReadChannelBlock;
     NSObject<OS_dispatch_queue> *_streamReadChannelOutputQueue;
     id _streamReadChannelSourceHandler;
     NSObject<OS_dispatch_queue> *_streamReadChannelSourceQueue;
+    bool_isStreamOutputDone;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isValid;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_closeStreamReadChannel;
-- (id)_currentDataIntersectionWithOffset:(long long)arg1 length:(unsigned long)arg2 isReadDone:(BOOL*)arg3;
-- (void)_readFromOffset:(long long)arg1 length:(unsigned long)arg2 queue:(id)arg3 handler:(id)arg4;
+- (id)_currentDataIntersectionWithOffset:(long long)arg1 length:(unsigned long long)arg2 isReadDone:(bool*)arg3;
+- (void)_readFromOffset:(long long)arg1 length:(unsigned long long)arg2 queue:(id)arg3 handler:(id)arg4;
 - (void)_resetStreamReadChannel;
 - (void)addBarrier:(id)arg1;
 - (void)close;
 - (void)dealloc;
-- (id)initWithReadChannel:(id)arg1 sourceReadBufferSize:(unsigned long)arg2 streamReadChannelBlock:(id)arg3;
+- (id)initWithReadChannel:(id)arg1 sourceReadBufferSize:(unsigned long long)arg2 streamReadChannelBlock:(id)arg3;
 - (id)initWithReadChannel:(id)arg1 streamReadChannelBlock:(id)arg2;
-- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 queue:(id)arg3 handler:(id)arg4;
-- (void)setLowWater:(unsigned long)arg1;
+- (bool)isValid;
+- (void)readFromOffset:(long long)arg1 length:(unsigned long long)arg2 queue:(id)arg3 handler:(id)arg4;
+- (void)readWithQueue:(id)arg1 handler:(id)arg2;
+- (void)setLowWater:(unsigned long long)arg1;
 - (void)setStreamReadChannelSourceQueue:(id)arg1 handler:(id)arg2;
 
 @end

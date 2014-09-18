@@ -2,18 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface OABFill : NSObject {
 }
 
-+ (void)addStopsFromArray:(const struct OABGradientStop { id x1; float x2; }*)arg1 stopCount:(int)arg2 inverted:(BOOL)arg3 startPos:(float)arg4 endPos:(float)arg5 toGradientFill:(id)arg6 fillPropertiesManager:(id)arg7;
++ (void)addStopsFromArray:(const struct OABGradientStop { id x1; float x2; }*)arg1 stopCount:(int)arg2 inverted:(bool)arg3 startPos:(float)arg4 endPos:(float)arg5 toGradientFill:(id)arg6 fillPropertiesManager:(id)arg7;
 + (id)readFillFromFillPropertiesManager:(id)arg1 colorPalette:(id)arg2;
 + (void)readGradientFill:(id)arg1 fromFillPropertiesManager:(id)arg2 colorPalette:(id)arg3;
 + (void)readImageFill:(id)arg1 fromFillPropertiesManager:(id)arg2 colorPalette:(id)arg3;
-+ (void)writeFill:(id)arg1 toFill:(struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg2 state:(id)arg3;
 
 @end

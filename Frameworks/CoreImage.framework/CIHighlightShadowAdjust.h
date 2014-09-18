@@ -19,13 +19,16 @@
 + (id)customAttributes;
 
 - (id)_initFromProperties:(id)arg1;
-- (BOOL)_isIdentity;
-- (id)_kernelS;
-- (id)_kernelSH;
+- (bool)_isIdentity;
+- (id)_kernelSH_v0;
 - (id)_kernelSH_v1;
+- (id)_kernelSH_v2;
+- (id)_kernelSHnoB_v0;
 - (id)_kernelSHnoB_v1;
-- (id)_kernelSnoB;
+- (id)_kernelSHnoB_v2;
+- (id)_kernelSnoB_v0;
 - (id)_outputProperties;
+- (int)bestVersion;
 - (id)inputHighlightAmount;
 - (id)inputImage;
 - (id)inputRadius;

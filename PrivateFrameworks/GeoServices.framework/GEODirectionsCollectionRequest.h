@@ -17,12 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestElements;
-- (id)requestElementsAtIndex:(unsigned int)arg1;
-- (unsigned int)requestElementsCount;
+- (id)requestElementsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)requestElementsCount;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setRequestElements:(id)arg1;

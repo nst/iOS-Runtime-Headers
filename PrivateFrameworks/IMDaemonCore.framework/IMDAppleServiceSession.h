@@ -9,21 +9,21 @@
     NSString *_serviceName;
 }
 
-@property(readonly) NSString * GUID;
-@property(readonly) NSArray * aliases;
-@property(readonly) NSString * callerID;
-@property(readonly) NSString * callerURI;
-@property(readonly) IDSAccount * idsAccount;
+@property(retain,readonly) NSString * GUID;
+@property(retain,readonly) NSArray * aliases;
+@property(retain,readonly) NSString * callerID;
+@property(retain,readonly) NSString * callerURI;
+@property(retain,readonly) IDSAccount * idsAccount;
 @property(readonly) NSArray * registeredURIs;
 @property(readonly) NSString * serviceType;
-@property(readonly) NSArray * vettedAliases;
+@property(retain,readonly) NSArray * vettedAliases;
 
 - (id)GUID;
 - (id)_aliasStrings;
 - (id)_aliases;
-- (BOOL)_isDeviceRegistered;
-- (void)_updateAccountStatusToUnregistered:(BOOL)arg1;
-- (int)_validationStatusForAlias:(id)arg1;
+- (bool)_isDeviceRegistered;
+- (void)_updateAccountStatusToUnregistered:(bool)arg1;
+- (long long)_validationStatusForAlias:(id)arg1;
 - (void)activeDevicesUpdated;
 - (void)addAliases:(id)arg1;
 - (id)aliases;
@@ -53,7 +53,7 @@
 - (void)updateAuthorizationCredentials:(id)arg1 token:(id)arg2;
 - (void)validateAliases:(id)arg1;
 - (void)validateProfile;
-- (int)validationStatusForAlias:(id)arg1;
+- (long long)validationStatusForAlias:(id)arg1;
 - (id)vettedAliases;
 
 @end

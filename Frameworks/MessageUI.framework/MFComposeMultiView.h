@@ -5,28 +5,32 @@
 @class MFHeaderLabelView, UILabel;
 
 @interface MFComposeMultiView : MFComposeHeaderView {
-    BOOL _accountAutoselected;
     UILabel *_accountLabel;
     MFHeaderLabelView *_imageSizeHeaderLabelView;
     UILabel *_imageSizeLabel;
-    BOOL _imageSizeShown;
     UILabel *_placeholderImageSizeLabel;
+    bool_accountAutoselected;
+    bool_accountHasUnsafeDomain;
+    bool_imageSizeShown;
 }
 
-@property(getter=isAccountAutoselected) BOOL accountAutoselected;
+@property(getter=isAccountAutoselected) bool accountAutoselected;
+@property bool accountHasUnsafeDomain;
 
+- (bool)accountHasUnsafeDomain;
 - (id)accountLabel;
 - (void)dealloc;
 - (id)imageSizeHeaderLabelView;
 - (id)imageSizeLabel;
-- (BOOL)isAccountAutoselected;
-- (struct CGColor { }*)labelColor;
+- (bool)isAccountAutoselected;
+- (id)labelColor;
 - (void)layoutSubviews;
 - (id)placeholderImageSizeLabel;
 - (void)refreshPreferredContentSize;
-- (void)setAccountAutoselected:(BOOL)arg1;
+- (void)setAccountAutoselected:(bool)arg1;
 - (void)setAccountDescription:(id)arg1;
+- (void)setAccountHasUnsafeDomain:(bool)arg1;
 - (void)setImageSizeDescription:(id)arg1;
-- (void)setShowsImageSize:(BOOL)arg1;
+- (void)setShowsImageSize:(bool)arg1;
 
 @end

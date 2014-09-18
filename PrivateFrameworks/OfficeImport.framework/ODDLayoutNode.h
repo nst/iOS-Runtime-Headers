@@ -9,6 +9,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (void)setVariableList:(id)arg1;
 - (id)variableList;
 

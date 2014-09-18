@@ -5,32 +5,25 @@
 @class UIImageView, UILabel;
 
 @interface PLContactPhotoOverlay : UIView {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
     UIImageView *__avatarPreview;
-    } _overlayEdgeInsets;
     UILabel *_titleLabel;
 }
 
 @property(readonly) UIImageView * _avatarPreview;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } overlayEdgeInsets;
+@property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } overlayEdgeInsets;
 @property(readonly) UILabel * titleLabel;
 
 - (id)_avatarPreview;
 - (void)_commonPLContactPhotoOverlayInitialization;
 - (void)beginAvatarTrackingFromImageView:(id)arg1;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)endAvatarTracking;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inscribingBounds;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inscribingBounds;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })overlayEdgeInsets;
-- (void)setOverlayEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })overlayEdgeInsets;
 - (id)titleLabel;
 
 @end

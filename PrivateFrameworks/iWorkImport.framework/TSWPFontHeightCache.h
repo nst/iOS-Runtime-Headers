@@ -9,23 +9,23 @@
             struct __list_node<unsigned long, void *> {} *__next_; 
         } __end_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<unsigned long, void *> > > { 
-            unsigned long __first_; 
+            unsigned long long __first_; 
         } __size_alloc_; 
     struct map<unsigned long, TSWPFontHeightCacheEntry, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSWPFontHeightCacheEntry> > > { 
-        struct __tree<std::__1::pair<unsigned long, TSWPFontHeightCacheEntry>, std::__1::__map_value_compare<unsigned long, TSWPFontHeightCacheEntry, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::pair<unsigned long, TSWPFontHeightCacheEntry> > > { 
-            struct __tree_node<std::__1::pair<unsigned long, TSWPFontHeightCacheEntry>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<unsigned long, TSWPFontHeightCacheEntry>, void *> > > { 
+        struct __tree<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry> > > { 
+            struct __tree_node<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, TSWPFontHeightCacheEntry, std::__1::less<unsigned long>, true> > { 
-                unsigned long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::less<unsigned long>, true> > { 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     unsigned int _cacheSize;
     } _fontHashList;
     } _fontHashToInfoMap;
@@ -42,12 +42,12 @@
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; })fontHeightInfoForFont:(struct __CTFont { }*)arg1;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; })fontHeightInfoForFont:(struct __CTFont { }*)arg1;
 - (id)init;
-- (void)p_addEntryForFont:(struct __CTFont { }*)arg1 heightInfo:(const struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg2;
-- (BOOL)p_findEntryForFont:(struct __CTFont { }*)arg1 outHeightInfo:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg2 collision:(BOOL*)arg3;
+- (void)p_addEntryForFont:(struct __CTFont { }*)arg1 heightInfo:(const struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; }*)arg2;
+- (bool)p_findEntryForFont:(struct __CTFont { }*)arg1 outHeightInfo:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; }*)arg2 collision:(bool*)arg3;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

@@ -9,8 +9,8 @@
     NSArray *_albumAssets;
     <PLSlideshowPluginDelegate> *_delegate;
     double _secondsPerSlide;
-    BOOL _shouldRepeat;
-    BOOL _shuffleAlbum;
+    bool_shouldRepeat;
+    bool_shuffleAlbum;
 }
 
 @property(retain) NSObject<PLAlbumProtocol> * album;
@@ -19,8 +19,8 @@
 @property <PLSlideshowPluginDelegate> * delegate;
 @property(readonly) NSArray * displayedPhotos;
 @property double secondsPerSlide;
-@property BOOL shouldRepeat;
-@property BOOL shuffleAlbum;
+@property bool shouldRepeat;
+@property bool shuffleAlbum;
 
 - (struct NSObject { Class x1; }*)album;
 - (id)albumAssets;
@@ -36,10 +36,10 @@
 - (void)setAlbumAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSecondsPerSlide:(double)arg1;
-- (void)setShouldRepeat:(BOOL)arg1;
-- (void)setShuffleAlbum:(BOOL)arg1;
-- (BOOL)shouldRepeat;
-- (BOOL)shuffleAlbum;
+- (void)setShouldRepeat:(bool)arg1;
+- (void)setShuffleAlbum:(bool)arg1;
+- (bool)shouldRepeat;
+- (bool)shuffleAlbum;
 - (void)slideshowViewDidAppear;
 - (void)slideshowViewDidDisappear;
 - (void)slideshowViewWillAppear;

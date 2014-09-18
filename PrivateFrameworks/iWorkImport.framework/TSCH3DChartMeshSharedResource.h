@@ -14,7 +14,7 @@
 - (void)flushMemory;
 - (id)get;
 - (id)mesh;
-- (void)setChildRegenerated:(BOOL)arg1;
+- (void)setChildRegenerated:(bool)arg1;
 - (void)setMesh:(id)arg1;
 
 @end

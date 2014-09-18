@@ -5,15 +5,16 @@
 @class AVAssetCache, AVAssetResourceLoader, AVURLAssetInternal, NSString, NSURL;
 
 @interface AVURLAsset : AVAsset {
-    AVURLAssetInternal *_asset;
+    AVURLAssetInternal *_URLAsset;
 }
 
-@property(readonly) NSURL * URL;
+@property(copy,readonly) NSURL * URL;
 @property(readonly) AVAssetCache * assetCache;
 @property(readonly) NSString * cacheKey;
+@property(readonly) double rc_durationInSeconds;
 @property(readonly) AVAssetResourceLoader * resourceLoader;
-@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+@property(readonly) bool shouldMatchDataInCacheByURLPathComponentOnly;
+@property(readonly) bool shouldMatchDataInCacheByURLWithoutQueryComponent;
 
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 + (id)_UTTypes;
@@ -26,32 +27,31 @@
 + (id)_streamingUTTypes;
 + (id)audiovisualMIMETypes;
 + (id)audiovisualTypes;
-+ (BOOL)isPlayableExtendedMIMEType:(id)arg1;
++ (bool)isPlayableExtendedMIMEType:(id)arg1;
++ (id)rc_preciseTimingAssetWithURL:(id)arg1;
 
 - (id)SHA1Digest;
 - (id)URL;
 - (id)_absoluteURL;
-- (unsigned int)_addChapterMetadataItem:(id)arg1 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 toChapters:(id)arg3 fromIndex:(unsigned int)arg4;
 - (void)_addFigAssetNotifications;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
-- (id)_chapterGroupInfo;
+- (Class)_classForTrackInspectors;
 - (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
 - (void)_finishLoadingCustomURLProviderRequestWithResponseProperties:(id)arg1 context:(id)arg2;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
+- (id)_handleURLAssetInitializationOptionsReturningFigAssetCreationOptions:(id)arg1 selector:(SEL)arg2;
 - (void)_handleURLRequest:(id)arg1;
-- (BOOL)_hasResourceLoaderDelegate;
+- (bool)_hasResourceLoaderDelegate;
+- (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_removeFigAssetNotifications;
 - (void)_setAssetInspectorLoader:(id)arg1;
-- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
+- (bool)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)_tracks;
 - (void)_tracksDidChange;
 - (id)assetCache;
-- (id)availableChapterLocales;
 - (id)cacheKey;
 - (void)cancelLoading;
-- (id)chapterMetadataGroupsBestMatchingPreferredLanguages:(id)arg1;
-- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)downloadDestinationURL;
@@ -60,10 +60,12 @@
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)lyrics;
+- (double)rc_durationInSeconds;
+- (unsigned long long)referenceRestrictions;
 - (id)resolvedURL;
 - (id)resourceLoader;
-- (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
-- (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
+- (bool)shouldMatchDataInCacheByURLPathComponentOnly;
+- (bool)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (id)tracks;
 
 @end

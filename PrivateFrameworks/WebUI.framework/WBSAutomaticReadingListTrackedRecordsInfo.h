@@ -12,7 +12,7 @@
 @property(copy) NSArray * items;
 @property(copy) WBSAutomaticReadingListRecordRange * rangeOfTrackedRecords;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)items;
 - (id)rangeOfTrackedRecords;
 - (void)setItems:(id)arg1;

@@ -2,27 +2,26 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPImageCache, NSString, RadioStation;
+@class NSString, RadioStation;
 
-@interface MPRadioStation : NSObject <NSSecureCoding, NSCopying> {
-    MPImageCache *_imageCache;
+@interface MPRadioStation : NSObject <NSCopying> {
     RadioStation *_station;
 }
 
+@property(getter=_station,readonly) RadioStation * _station;
 @property(readonly) NSString * localizedDescription;
 @property(readonly) NSString * localizedName;
 @property(readonly) long long uniqueIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_station;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)fetchArtworkWithCompletionBlock:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (id)localizedName;
 - (long long)uniqueIdentifier;

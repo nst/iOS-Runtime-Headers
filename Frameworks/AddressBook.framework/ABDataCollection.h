@@ -37,7 +37,7 @@
 @property int totalContactsWithYearOnBirthday;
 @property int totalGroups;
 
-+ (BOOL)isEnabled;
++ (bool)isEnabled;
 + (void)logContactCreation:(long long)arg1;
 + (void)logContactUpdate:(long long)arg1;
 + (void)logPropertyAdded:(int)arg1 forContact:(void*)arg2;

@@ -6,9 +6,9 @@
 
 @interface TSCH3DGeometryVertexElement : NSObject {
     struct AttributeSpecs { 
-        unsigned int stride; 
-        unsigned int offset; 
-        unsigned int components; 
+        unsigned long long stride; 
+        unsigned long long offset; 
+        unsigned long long components; 
     TSCH3DShaderVariable *mName;
     } mSpecs;
 }
@@ -16,15 +16,15 @@
 @property(readonly) TSCH3DShaderVariable * name;
 
 + (id)elementForName:(id)arg1 inArray:(id)arg2;
-+ (id)elementWithName:(id)arg1 specs:(const struct AttributeSpecs { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg2;
++ (id)elementWithName:(id)arg1 specs:(const struct AttributeSpecs { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithName:(id)arg1 specs:(const struct AttributeSpecs { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithName:(id)arg1 specs:(const struct AttributeSpecs { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)name;
-- (struct AttributeSpecs { unsigned int x1; unsigned int x2; unsigned int x3; }*)specs;
+- (struct AttributeSpecs { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)specs;
 
 @end

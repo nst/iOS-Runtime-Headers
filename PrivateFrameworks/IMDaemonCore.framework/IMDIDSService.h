@@ -2,17 +2,21 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class IDSAccountController, NSArray;
+@class IDSAccountController, NSArray, NSString;
 
 @interface IMDIDSService : IMDService <IDSAccountControllerDelegate, IDSAccountRegistrationDelegate> {
     IDSAccountController *_accountController;
-    BOOL _activatingAccount;
-    BOOL _deactivatingAccount;
+    bool_activatingAccount;
+    bool_deactivatingAccount;
 }
 
-@property(readonly) NSArray * accountsLoadedFromIdentityServices;
+@property(retain,readonly) NSArray * accountsLoadedFromIdentityServices;
 @property(readonly) NSArray * activeAccountsFromIdentityServices;
-@property(readonly) IDSAccountController * idsAccountController;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) IDSAccountController * idsAccountController;
+@property(readonly) Class superclass;
 
 - (void)_loadIDSAccountController;
 - (id)_serviceDomain;

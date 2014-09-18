@@ -9,7 +9,7 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableDictionary *_connectionPendingPeerEvents;
     <MCSessionDelegate> *_delegate;
-    int _encryptionPreference;
+    long long _encryptionPreference;
     unsigned int _gckPID;
     struct OpaqueGCKSession { } *_gckSession;
     MCPeerID *_myPeerID;
@@ -25,7 +25,7 @@
 @property(readonly) NSArray * connectedPeers;
 @property(retain) NSMutableDictionary * connectionPendingPeerEvents;
 @property <MCSessionDelegate> * delegate;
-@property(readonly) int encryptionPreference;
+@property(readonly) long long encryptionPreference;
 @property unsigned int gckPID;
 @property struct OpaqueGCKSession { }* gckSession;
 @property(readonly) MCPeerID * myPeerID;
@@ -36,15 +36,14 @@
 @property(readonly) NSArray * securityIdentity;
 @property(retain) NSObject<OS_dispatch_queue> * syncQueue;
 
-+ (id)stringForMCSessionSendDataMode:(int)arg1;
-+ (id)stringForSessionState:(int)arg1;
++ (id)stringForMCSessionSendDataMode:(long long)arg1;
++ (id)stringForSessionState:(long long)arg1;
 
 - (struct OpaqueAGPSession { }*)agpSession;
 - (id)callbackQueue;
 - (void)cancelConnectPeer:(id)arg1;
-- (void)closeIncomingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 reason:(int)arg5 removeObserver:(BOOL)arg6;
-- (void)closeOutgoingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 removeObserver:(BOOL)arg5;
-- (void)closeStreamsForPeer:(id)arg1 state:(id)arg2;
+- (void)cancelIncomingStream:(id)arg1 fromPeer:(id)arg2;
+- (void)cancelOutgoingStream:(id)arg1 toPeer:(id)arg2;
 - (void)connectPeer:(id)arg1 withNearbyConnectionData:(id)arg2;
 - (id)connectedPeers;
 - (id)connectionPendingPeerEvents;
@@ -52,12 +51,12 @@
 - (id)delegate;
 - (id)description;
 - (void)disconnect;
-- (int)encryptionPreference;
+- (long long)encryptionPreference;
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
-- (id)initWithPeer:(id)arg1 securityIdentity:(id)arg2 encryptionPreference:(int)arg3;
+- (id)initWithPeer:(id)arg1 securityIdentity:(id)arg2 encryptionPreference:(long long)arg3;
 - (id)initWithPeer:(id)arg1;
-- (BOOL)isEncryptionPreferenceCompatible:(int)arg1;
+- (bool)isEncryptionPreferenceCompatible:(long long)arg1;
 - (id)myPeerID;
 - (void)nearbyConnectionDataForPeer:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)peerDidDeclineInvitation:(id)arg1;
@@ -65,7 +64,7 @@
 - (id)peerStates;
 - (id)privateDelegate;
 - (id)securityIdentity;
-- (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withMode:(int)arg3 error:(id*)arg4;
+- (bool)sendData:(id)arg1 toPeers:(id)arg2 withMode:(long long)arg3 error:(id*)arg4;
 - (id)sendResourceAtURL:(id)arg1 withName:(id)arg2 toPeer:(id)arg3 withCompletionHandler:(id)arg4;
 - (void)setAgpSession:(struct OpaqueAGPSession { }*)arg1;
 - (void)setCallbackQueue:(id)arg1;
@@ -79,18 +78,24 @@
 - (void)setSyncQueue:(id)arg1;
 - (void)startConnectionWithIndirectPID:(unsigned int)arg1;
 - (id)startStreamWithName:(id)arg1 toPeer:(id)arg2 error:(id*)arg3;
-- (id)stringForEncryptionPreference:(int)arg1;
+- (id)stringForEncryptionPreference:(long long)arg1;
+- (void)syncCancelIncomingStream:(id)arg1 fromPeer:(id)arg2;
+- (void)syncCancelOutgoingStream:(id)arg1 toPeer:(id)arg2;
+- (void)syncCloseIncomingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 reason:(int)arg5 removeObserver:(bool)arg6;
+- (void)syncCloseOutgoingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 removeObserver:(bool)arg5;
+- (void)syncCloseStreamsForPeer:(id)arg1;
 - (void)syncConnectPeer:(id)arg1 withConnectionData:(id)arg2;
-- (void)syncGetConnectionDataForPID:(unsigned int)arg1 completionHandlerCopy:(id)arg2;
-- (void)syncHandleNetworkEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 pid:(unsigned int)arg2 freeEventWhenDone:(BOOL*)arg3;
+- (void)syncGetConnectionDataForPeerState:(id)arg1 completionHandler:(id)arg2;
+- (void)syncHandleNetworkEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 pid:(unsigned int)arg2 freeEventWhenDone:(bool*)arg3;
 - (void)syncHandleXDataDataPacket:(char *)arg1 packetSize:(int)arg2 forPeer:(id)arg3 state:(id)arg4;
+- (void)syncPeer:(id)arg1 changeStateTo:(long long)arg2 shouldForceCallback:(bool)arg3;
 - (id)syncQueue;
-- (void)syncSendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3;
+- (void)syncSendData:(id)arg1 toPeers:(id)arg2 withDataMode:(long long)arg3;
 - (void)syncSendXDataConnectionBlobPushToPID:(unsigned int)arg1 connectionBlob:(id)arg2;
 - (void)syncSendXDataPeerIDPushToPID:(unsigned int)arg1;
 - (void)syncSendXDataStreamCloseFromReceiverToPID:(unsigned int)arg1 streamID:(unsigned int)arg2 closeReason:(unsigned short)arg3;
 - (void)syncSendXDataStreamCloseFromSenderToPID:(unsigned int)arg1 streamID:(unsigned int)arg2 closeReason:(unsigned short)arg3;
 - (void)syncSendXDataStreamOpenResponseToPID:(unsigned int)arg1 withRequestID:(unsigned int)arg2 streamID:(unsigned int)arg3;
-- (void)syncStartStreamWithName:(id)arg1 toPeer:(id)arg2 mcFD:(int)arg3 isResource:(BOOL)arg4;
+- (void)syncStartStreamWithName:(id)arg1 toPeer:(id)arg2 mcFD:(int)arg3 isResource:(bool)arg4;
 
 @end

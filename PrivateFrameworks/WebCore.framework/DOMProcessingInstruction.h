@@ -4,15 +4,12 @@
 
 @class DOMStyleSheet, NSString;
 
-@interface DOMProcessingInstruction : DOMNode {
+@interface DOMProcessingInstruction : DOMCharacterData {
 }
 
-@property(copy) NSString * data;
 @property(readonly) DOMStyleSheet * sheet;
-@property(readonly) NSString * target;
+@property(copy,readonly) NSString * target;
 
-- (id)data;
-- (void)setData:(id)arg1;
 - (id)sheet;
 - (id)target;
 

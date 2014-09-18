@@ -4,26 +4,27 @@
 
 @interface PDAnimateScaleBehavior : PDAnimateBehavior {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     } mBy;
     } mFrom;
     } mTo;
 }
 
 - (id).cxx_construct;
-- (struct CGPoint { float x1; float x2; })by;
-- (struct CGPoint { float x1; float x2; })from;
+- (struct CGPoint { double x1; double x2; })by;
+- (struct CGPoint { double x1; double x2; })from;
 - (id)init;
-- (void)setBy:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTo:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })to;
+- (bool)isEqual:(id)arg1;
+- (void)setBy:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setFrom:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTo:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })to;
 
 @end

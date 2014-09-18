@@ -2,21 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableString, UIPDFAnnotation;
+@class NSMutableString, NSString, UIPDFAnnotation;
 
 @interface UIPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate> {
     UIPDFAnnotation *_annotation;
     NSMutableString *_characters;
-    BOOL _parseError;
+    bool_parseError;
 }
 
 @property(retain) UIPDFAnnotation * annotation;
-@property(readonly) BOOL parseError;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool parseError;
+@property(readonly) Class superclass;
 
 - (id)annotation;
 - (void)dealloc;
 - (id)init;
-- (BOOL)parseError;
+- (bool)parseError;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;

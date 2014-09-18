@@ -5,6 +5,6 @@
 @interface MFPlaceholderFileWrapper : MFMessageFileWrapper {
 }
 
-- (BOOL)isPlaceholder;
+- (bool)isPlaceholder;
 
 @end

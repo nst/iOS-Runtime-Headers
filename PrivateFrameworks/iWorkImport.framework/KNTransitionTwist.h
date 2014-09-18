@@ -2,47 +2,49 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
+@class NSArray, NSString, TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
 
-@interface KNTransitionTwist : KNAnimationEffect <KNFrameAnimator> {
-    NSArray *_colorBufferAttributes;
-    TSDGLDataBuffer *_colorDataBuffer;
-    unsigned int _colorNormalAttributeIndex;
-    unsigned int _colorPositionAttributeIndex;
-    TSDGLShader *_colorShader;
-    unsigned int _colorTexCoordAttributeIndex;
+@interface KNTransitionTwist : KNAnimationEffect <KNFrameAnimator, KNAnimationPluginArchiving> {
+    NSArray *_bufferAttributes;
+    TSDGLDataBuffer *_dataBuffer;
     TSDGLMotionBlurEffect *_motionBlurEffect;
-    int _numPoints;
-    BOOL _shouldDrawMotionBlur;
-    float _twistyness;
-    NSArray *_velocityBufferAttributes;
-    TSDGLDataBuffer *_velocityDataBuffer;
-    unsigned int _velocityPositionAttributeIndex;
-    unsigned int _velocityPrevPositionAttributeIndex;
-    TSDGLShader *_velocityShader;
+    unsigned long long _normalAttributeIndex;
+    long long _numPoints;
+    unsigned long long _positionAttributeIndex;
+    unsigned long long _prevPositionAttributeIndex;
+    TSDGLShader *_shader;
+    unsigned long long _texCoordAttributeIndex;
+    double _twistyness;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)customAttributes;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (void)animationDidEndWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
-- (void)createArrays:(id)arg1;
+- (void)createArrays:(id)arg1 context:(id)arg2;
 - (void)dealloc;
 - (void)drawGrid:(id)arg1;
-- (float)fx:(float)arg1 withPercent:(float)arg2;
+- (double)fx:(double)arg1 withPercent:(double)arg2;
 - (id)initWithAnimationContext:(id)arg1;
-- (void)p_drawTwistWithVelocity:(BOOL)arg1 percent:(float)arg2 texture:(id)arg3 oldTexture:(id)arg4;
+- (void)p_drawTwistWithPercent:(double)arg1 texture:(id)arg2 oldTexture:(id)arg3;
 - (void)p_teardown;
 - (void)renderFrameWithContext:(id)arg1;
-- (void)update:(id)arg1 withPercent:(float)arg2 direction:(unsigned int)arg3;
+- (void)update:(id)arg1 withContext:(id)arg2;
 
 @end

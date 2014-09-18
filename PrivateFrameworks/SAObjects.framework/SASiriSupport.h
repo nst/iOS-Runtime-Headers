@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface SASiriSupport : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSArray * endpoints;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)siriSupport;
 + (id)siriSupportWithDictionary:(id)arg1 context:(id)arg2;

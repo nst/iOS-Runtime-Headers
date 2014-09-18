@@ -5,38 +5,39 @@
 @class GEORPUserCredentials, NSMutableArray, NSString;
 
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying> {
-    NSMutableArray *_problemIDs;
-    NSString *_statusNotificationID;
+    NSMutableArray *_problemIds;
+    NSString *_statusNotificationId;
     GEORPUserCredentials *_userCredentials;
 }
 
-@property(readonly) BOOL hasStatusNotificationID;
-@property(readonly) BOOL hasUserCredentials;
-@property(retain) NSMutableArray * problemIDs;
-@property(retain) NSString * statusNotificationID;
+@property(readonly) bool hasStatusNotificationId;
+@property(readonly) bool hasUserCredentials;
+@property(retain) NSMutableArray * problemIds;
+@property(retain) NSString * statusNotificationId;
 @property(retain) GEORPUserCredentials * userCredentials;
 
-- (void)addProblemID:(id)arg1;
-- (void)clearProblemIDs;
+- (void)addProblemId:(id)arg1;
+- (void)clearProblemIds;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatusNotificationID;
-- (BOOL)hasUserCredentials;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)problemIDAtIndex:(unsigned int)arg1;
-- (id)problemIDs;
-- (unsigned int)problemIDsCount;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasStatusNotificationId;
+- (bool)hasUserCredentials;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)problemIdAtIndex:(unsigned long long)arg1;
+- (id)problemIds;
+- (unsigned long long)problemIdsCount;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setProblemIDs:(id)arg1;
-- (void)setStatusNotificationID:(id)arg1;
+- (void)setProblemIds:(id)arg1;
+- (void)setStatusNotificationId:(id)arg1;
 - (void)setUserCredentials:(id)arg1;
-- (id)statusNotificationID;
+- (id)statusNotificationId;
 - (id)userCredentials;
 - (void)writeTo:(id)arg1;
 

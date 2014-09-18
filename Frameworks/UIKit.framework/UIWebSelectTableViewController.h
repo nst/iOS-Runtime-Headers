@@ -2,56 +2,59 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLSelectElement, NSArray, UIWebSelectPopover;
+@class DOMHTMLSelectElement, NSArray, NSString, UIWebSelectPopover;
 
 @interface UIWebSelectTableViewController : UITableViewController <UIKeyInput> {
-    BOOL _allowsMultipleSelection;
     NSArray *_cachedItems;
-    float _fontSize;
+    double _fontSize;
     NSArray *_groupsAndOptions;
-    float _maximumTextWidth;
+    double _maximumTextWidth;
     UIWebSelectPopover *_popover;
     DOMHTMLSelectElement *_selectionNode;
-    unsigned int _singleSelectionIndex;
-    unsigned int _singleSelectionSection;
-    int _textAlignment;
+    unsigned long long _singleSelectionIndex;
+    unsigned long long _singleSelectionSection;
+    long long _textAlignment;
+    bool_allowsMultipleSelection;
 }
 
 @property(retain) NSArray * _cachedItems;
 @property(retain) NSArray * _groupsAndOptions;
 @property UIWebSelectPopover * _popover;
 @property(retain) DOMHTMLSelectElement * _selectionNode;
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property BOOL enablesReturnKeyAutomatically;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
+@property long long autocapitalizationType;
+@property long long autocorrectionType;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool enablesReturnKeyAutomatically;
+@property(readonly) unsigned long long hash;
+@property long long keyboardAppearance;
+@property long long keyboardType;
+@property long long returnKeyType;
+@property(getter=isSecureTextEntry) bool secureTextEntry;
+@property long long spellCheckingType;
+@property(readonly) Class superclass;
 
 - (id)_cachedItems;
 - (id)_groupsAndOptions;
-- (BOOL)_isEmpty;
-- (id)_optionsForSection:(int)arg1;
+- (bool)_isEmpty;
+- (id)_optionsForSection:(long long)arg1;
 - (id)_popover;
 - (id)_selectionNode;
 - (void)_setupGroupsAndOptions;
 - (void)dealloc;
 - (void)deleteBackward;
-- (BOOL)hasText;
-- (float)heightForItems;
-- (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(unsigned int)arg3 multipleSelection:(BOOL)arg4;
+- (bool)hasText;
+- (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(unsigned long long)arg3 multipleSelection:(bool)arg4;
 - (void)insertText:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)set_cachedItems:(id)arg1;
 - (void)set_groupsAndOptions:(id)arg1;
 - (void)set_popover:(id)arg1;
 - (void)set_selectionNode:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

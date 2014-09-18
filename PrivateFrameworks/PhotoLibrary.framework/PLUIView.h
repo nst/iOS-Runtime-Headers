@@ -3,13 +3,13 @@
  */
 
 @interface PLUIView : UIView {
-    BOOL _disableViewInPopoverRule;
+    bool_disableViewInPopoverRule;
 }
 
-@property BOOL disableViewInPopoverRule;
+@property bool disableViewInPopoverRule;
 
 - (void)didMoveToWindow;
-- (BOOL)disableViewInPopoverRule;
-- (void)setDisableViewInPopoverRule:(BOOL)arg1;
+- (bool)disableViewInPopoverRule;
+- (void)setDisableViewInPopoverRule:(bool)arg1;
 
 @end

@@ -2,14 +2,23 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
+@class ABPropertyBestFaceTimeQuery;
+
 @interface ABPropertyFaceTimeAction : ABPropertyAction {
-    int _type;
+    ABPropertyBestFaceTimeQuery *_bestFaceTimeQuery;
+    long long _type;
 }
 
-@property int type;
+@property(retain) ABPropertyBestFaceTimeQuery * bestFaceTimeQuery;
+@property long long type;
 
+- (void)_queryFaceTimeStatus;
+- (id)bestFaceTimeQuery;
+- (void)dealloc;
+- (id)initWithContact:(id)arg1 propertyItems:(id)arg2;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setBestFaceTimeQuery:(id)arg1;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

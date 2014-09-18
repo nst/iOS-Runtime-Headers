@@ -23,6 +23,6 @@
 - (void)genericSetUpFromPlist:(id)arg1;
 - (id)name;
 - (int)order;
-- (int)orderComparedTo:(id)arg1;
+- (long long)orderComparedTo:(id)arg1;
 
 @end

@@ -6,23 +6,25 @@
 
 @interface ABMonogrammer : NSObject {
     UIColor *_backgroundColor;
-    float _diameter;
+    double _diameter;
     UIFont *_font;
-    float _innerBorderWidth;
+    double _innerBorderWidth;
     UIImage *_knockoutMaskMonogram;
-    int _monogrammerStyle;
+    long long _monogrammerStyle;
     UIImage *_questionMarkMonogram;
+    double _scale;
     NSString *_silhouetteImageName;
     UIImage *_silhouetteMonogram;
     UIColor *_textColor;
-    BOOL _textKnockout;
+    UIColor *_tintColor;
+    bool_textKnockout;
 }
 
 @property(retain) UIColor * backgroundColor;
-@property float diameter;
+@property double diameter;
 @property(retain) UIFont * font;
 @property(retain) UIColor * textColor;
-@property BOOL textKnockout;
+@property bool textKnockout;
 
 - (void)_clearMonogramCache;
 - (id)_copyMonogramWithImageData:(struct __CFData { }*)arg1;
@@ -34,28 +36,30 @@
 - (id)backgroundColor;
 - (void)dealloc;
 - (id)defaultMonogram;
-- (float)diameter;
+- (double)diameter;
 - (id)font;
-- (BOOL)hasImageOrInitialsForPerson:(void*)arg1;
-- (BOOL)hasMonogramForPerson:(void*)arg1;
+- (bool)hasImageOrInitialsForPerson:(void*)arg1;
+- (bool)hasMonogramForPerson:(void*)arg1;
 - (id)init;
-- (id)initWithStyle:(int)arg1 diameter:(float)arg2;
-- (float)innerBorderWidth;
+- (id)initWithStyle:(long long)arg1 diameter:(double)arg2;
+- (double)innerBorderWidth;
 - (id)knockoutMaskMonogram;
 - (id)maskForMonogram;
-- (id)monogramForPerson:(void*)arg1 isPersonImage:(BOOL*)arg2;
+- (id)monogramForPerson:(void*)arg1 isPersonImage:(bool*)arg2;
 - (id)monogramForPerson:(void*)arg1;
 - (id)monogramForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (void)monogramsAsFlatImages;
+- (void)monogramsForStark;
+- (void)monogramsWithTint:(id)arg1;
 - (id)questionMarkMonogram;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setDiameter:(float)arg1;
+- (void)setDiameter:(double)arg1;
 - (void)setFont:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTextKnockout:(BOOL)arg1;
+- (void)setTextKnockout:(bool)arg1;
 - (id)silhouetteImageName;
 - (id)silhouetteMonogram;
 - (id)textColor;
-- (BOOL)textKnockout;
+- (bool)textKnockout;
 
 @end

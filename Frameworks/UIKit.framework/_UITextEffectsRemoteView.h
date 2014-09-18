@@ -10,6 +10,8 @@
 
 @property _UIRemoteViewController * remoteViewController;
 
++ (bool)_requiresWindowTouches;
+
 - (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;
 - (int)textEffectsVisibilityLevel;

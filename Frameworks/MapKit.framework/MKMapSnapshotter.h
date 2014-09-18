@@ -12,12 +12,12 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     id _completionHandler;
     int _loadingFlag;
-    BOOL _needsResume;
     MKMapSnapshotOptions *_options;
     VKMapSnapshotCreator *_snapshotCreator;
+    bool_needsResume;
 }
 
-@property(getter=isLoading,readonly) BOOL loading;
+@property(getter=isLoading,readonly) bool loading;
 
 - (void).cxx_destruct;
 - (void)_cancel;
@@ -31,7 +31,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithOptions:(id)arg1;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)startWithCompletionHandler:(id)arg1;
 - (void)startWithQueue:(id)arg1 completionHandler:(id)arg2;
 

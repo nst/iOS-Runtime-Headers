@@ -5,10 +5,10 @@
 @interface RCTelephonyController : NSObject {
 }
 
-@property(readonly) BOOL isCallPresent;
+@property(readonly) bool isCallPresent;
 
 + (id)sharedTelephonyController;
 
-- (BOOL)isCallPresent;
+- (bool)isCallPresent;
 
 @end

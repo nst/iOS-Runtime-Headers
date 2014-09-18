@@ -30,6 +30,7 @@
 - (id)_unmappedRelationshipForFormerlyVirtualToOne:(id)arg1 migrationContext:(struct _NSSQLMigrationContext { id x1; })arg2;
 - (id)addedManyToManys;
 - (void)dealloc;
+- (id)description;
 - (id)destinationEntity;
 - (id)entityMapping;
 - (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;

@@ -8,10 +8,10 @@
  */
 
 @interface TSTTableTileRowInfo : TSPContainedObject {
+    boolmMaxTileColumnIndexValid;
     unsigned short mBufferSize;
     unsigned short mCellCount;
     unsigned char mMaxTileColumnIndex;
-    BOOL mMaxTileColumnIndexValid;
     struct __CFData { } *mStorageBuffer;
     unsigned short mStorageOffsets[255];
     unsigned char mStorageVersion;

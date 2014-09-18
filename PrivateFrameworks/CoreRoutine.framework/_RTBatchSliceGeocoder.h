@@ -2,36 +2,36 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class GEOBatchReverseGeocodeRequest, NSMutableArray, NSObject<OS_dispatch_semaphore>;
+@class <GEOMapServiceTicket>, NSArray, NSObject<OS_dispatch_semaphore>;
 
 @interface _RTBatchSliceGeocoder : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    GEOBatchReverseGeocodeRequest *_batchRequest;
-    NSMutableArray *_placeResults;
+        unsigned long long location; 
+        unsigned long long length; 
+    NSArray *_geoMapItems;
     } _range;
     NSObject<OS_dispatch_semaphore> *_semaphore;
+    <GEOMapServiceTicket> *_ticket;
 }
 
-@property(retain) GEOBatchReverseGeocodeRequest * batchRequest;
-@property(retain) NSMutableArray * placeResults;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property(retain) NSArray * geoMapItems;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property(retain) NSObject<OS_dispatch_semaphore> * semaphore;
+@property(retain) <GEOMapServiceTicket> * ticket;
 
 - (void).cxx_destruct;
-- (void)_cancelRequest:(id)arg1;
-- (id)batchRequest;
+- (void)_cancelTicket:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
+- (id)geoMapItems;
 - (void)geocodeLocations:(id)arg1;
 - (id)init;
-- (id)placeResults;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (id)semaphore;
-- (void)setBatchRequest:(id)arg1;
-- (void)setPlaceResults:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setGeoMapItems:(id)arg1;
+- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSemaphore:(id)arg1;
+- (void)setTicket:(id)arg1;
+- (id)ticket;
 
 @end

@@ -9,14 +9,18 @@
     NSString *_title;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * links;
+@property(readonly) Class superclass;
 @property(readonly) NSString * title;
 
 - (void).cxx_destruct;
 - (void)_setLinksWithLinksArray:(id)arg1 context:(id)arg2;
-- (int)componentType;
+- (long long)componentType;
 - (id)initWithCustomPageContext:(id)arg1;
-- (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
+- (id)initWithFeaturedContentContext:(id)arg1 kind:(long long)arg2;
 - (id)links;
 - (id)metricsElementName;
 - (id)title;

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPObjectDelegate>, NSString, TSPComponent, TSPObject, TSPObjectContext, TSPUnknownContent;
+@class <TSPObjectDelegate>, NSString, NSUUID, TSPComponent, TSPObject, TSPObjectContext, TSPUnknownContent, TSUUUIDPath;
 
 @interface TSPObject : NSObject {
+    NSUUID *_UUID;
     TSPComponent *_component;
     <TSPObjectDelegate> *_delegate;
     long long _identifier;
@@ -13,59 +14,71 @@
     TSPUnknownContent *_unknownContent;
 }
 
-@property(readonly) BOOL allowsDuplicatesOutsideOfDocumentPackage;
-@property(readonly) BOOL allowsImplicitComponentOwnership;
+@property(readonly) bool allowsImplicitComponentOwnership;
 @property(readonly) TSPObject * componentRootObject;
 @property(readonly) TSPObjectContext * context;
 @property(readonly) unsigned int delayedArchivingPriority;
-@property(readonly) BOOL dirtiesDocumentPackage;
-@property(readonly) BOOL isCommandObject;
-@property(readonly) BOOL isComponentRoot;
-@property(readonly) BOOL needsArchiving;
+@property(readonly) bool isCommandObject;
+@property(readonly) bool isComponentRoot;
+@property(readonly) bool needsArchiving;
+@property(copy) NSUUID * objectUUID;
+@property(readonly) TSUUUIDPath * objectUUIDPath;
 @property(readonly) NSString * packageLocator;
-@property(readonly) BOOL shouldDelayArchiving;
-@property(readonly) BOOL storeOutsideObjectArchive;
+@property(readonly) bool shouldDelayArchiving;
+@property(readonly) bool storeOutsideObjectArchive;
 @property TSPComponent * tsp_component;
 @property <TSPObjectDelegate> * tsp_delegate;
+@property(readonly) NSString * tsp_description;
 @property long long tsp_identifier;
 @property long long tsp_modifyObjectToken;
 @property(readonly) long long tsp_unarchiverIdentifier;
 @property(readonly) TSPUnknownContent * tsp_unknownContent;
 
++ (bool)needsObjectUUID;
 + (id)newObjectForUnarchiver:(id)arg1;
-+ (BOOL)tsp_isTransientObjectIdentifier:(long long)arg1;
++ (bool)tsp_isTransientObjectIdentifier:(long long)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)allowsDuplicatesOutsideOfDocumentPackage;
-- (BOOL)allowsImplicitComponentOwnership;
+- (bool)allowsImplicitComponentOwnership;
 - (id)componentRootObject;
 - (id)context;
 - (unsigned int)delayedArchivingPriority;
 - (void)didFinishUnarchiving;
 - (void)didLoadChildObjectFromDocumentSupport:(id)arg1;
-- (BOOL)dirtiesDocumentPackage;
 - (id)documentRoot;
 - (id)init;
 - (id)initDocumentObjectWithContext:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isCommandObject;
-- (BOOL)isComponentRoot;
-- (BOOL)needsArchiving;
+- (bool)isCommandObject;
+- (bool)isComponentRoot;
+- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (bool)needsArchiving;
+- (id)objectUUID;
+- (id)objectUUIDPath;
+- (id)owningDocument;
 - (id)packageLocator;
 - (void)saveToArchiver:(id)arg1;
+- (void)setObjectUUID:(id)arg1;
 - (void)setTsp_component:(id)arg1;
 - (void)setTsp_delegate:(id)arg1;
 - (void)setTsp_identifier:(long long)arg1;
 - (void)setTsp_modifyObjectToken:(long long)arg1;
-- (BOOL)shouldDelayArchiving;
-- (BOOL)storeOutsideObjectArchive;
+- (bool)shouldDelayArchiving;
+- (bool)storeOutsideObjectArchive;
 - (id)tsp_component;
 - (id)tsp_delegate;
+- (id)tsp_description;
+- (id)tsp_descriptionWithDepth:(unsigned long long)arg1;
 - (long long)tsp_identifier;
 - (long long)tsp_modifyObjectToken;
 - (long long)tsp_unarchiverIdentifier;
 - (id)tsp_unknownContent;
+- (void)wasAddedToDocument;
+- (void)wasAddedToDocumentDuringImport;
+- (void)wasAddedToDocumentDuringUnarchive;
+- (void)wasAddedToDocumentWithOptions:(unsigned long long)arg1;
+- (void)willBeRemovedFromDocument;
 - (void)willModify;
 - (void)willModifyForUpgrade;
 

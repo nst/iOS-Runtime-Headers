@@ -7,18 +7,18 @@
 @interface RadioGetStationsRequest : RadioRequest {
     SSMetricsConfiguration *_metricsConfiguration;
     SSMetricsPageEvent *_metricsPageEvent;
-    int _nodeType;
-    int _numberOfResults;
+    long long _nodeType;
+    long long _numberOfResults;
     long long _parentNodeID;
     SSURLConnectionRequest *_request;
-    int _resultsOffset;
+    long long _resultsOffset;
 }
 
 @property(readonly) SSMetricsConfiguration * metricsConfiguration;
-@property(readonly) SSMetricsPageEvent * metricsPageEvent;
-@property int numberOfResults;
+@property(copy,readonly) SSMetricsPageEvent * metricsPageEvent;
+@property long long numberOfResults;
 @property(readonly) long long parentNodeID;
-@property int resultsOffset;
+@property long long resultsOffset;
 
 - (void).cxx_destruct;
 - (id)_rootTreeNodeByApplyingResponse:(id)arg1 returningError:(id*)arg2;
@@ -27,11 +27,11 @@
 - (id)initWithParentNodeID:(long long)arg1;
 - (id)metricsConfiguration;
 - (id)metricsPageEvent;
-- (int)numberOfResults;
+- (long long)numberOfResults;
 - (long long)parentNodeID;
-- (int)resultsOffset;
-- (void)setNumberOfResults:(int)arg1;
-- (void)setResultsOffset:(int)arg1;
+- (long long)resultsOffset;
+- (void)setNumberOfResults:(long long)arg1;
+- (void)setResultsOffset:(long long)arg1;
 - (void)startWithCompletionHandler:(id)arg1;
 
 @end

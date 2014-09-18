@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABImagePickerController, ABPersonTableViewDataSource, ABPersonViewControllerHelper, ABStyleProvider;
+@class ABImagePickerController, ABPersonTableViewDataSource, ABPersonViewControllerHelper, ABStyleProvider, NSString;
 
 @interface ABPersonPickersDelegate : NSObject <ABPickerViewControllerDelegate, ABImagePickerControllerDelegate> {
     ABPersonTableViewDataSource *_dataSource;
@@ -12,10 +12,14 @@
 }
 
 @property ABPersonTableViewDataSource * dataSource;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property ABPersonViewControllerHelper * helper;
 @property(readonly) ABImagePickerController * imagePicker;
-@property BOOL popoverSizeUpdatesDisabled;
+@property bool popoverSizeUpdatesDisabled;
 @property(retain) ABStyleProvider * styleProvider;
+@property(readonly) Class superclass;
 
 - (id)_contentViewForPicker:(id)arg1;
 - (void)_dismissCountryPicker:(id)arg1 afterSelectingItem:(id)arg2;
@@ -36,16 +40,16 @@
 - (void)imagePickerWillBeRemoved:(id)arg1;
 - (void)imagePickerWillBeShown:(id)arg1;
 - (void)labelPickerViewController:(id)arg1 didDeleteLabel:(id)arg2;
-- (BOOL)labelPickerViewController:(id)arg1 shouldDismissAfterSelectingLabel:(id)arg2;
+- (bool)labelPickerViewController:(id)arg1 shouldDismissAfterSelectingLabel:(id)arg2;
 - (id)personImageView;
-- (BOOL)pickerViewController:(id)arg1 shouldDismissAfterSelectingItem:(id)arg2;
-- (BOOL)pickerViewControllerShouldDismissKeyboard:(id)arg1;
-- (BOOL)popoverSizeUpdatesDisabled;
+- (bool)pickerViewController:(id)arg1 shouldDismissAfterSelectingItem:(id)arg2;
+- (bool)pickerViewControllerShouldDismissKeyboard:(id)arg1;
+- (bool)popoverSizeUpdatesDisabled;
 - (void)removeImagePickerControllerFromUI;
 - (id)selectedPeople;
 - (void)setDataSource:(id)arg1;
 - (void)setHelper:(id)arg1;
-- (void)setPopoverSizeUpdatesDisabled:(BOOL)arg1;
+- (void)setPopoverSizeUpdatesDisabled:(bool)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)showImageMenuForHelper:(id)arg1;
 - (id)styleProvider;

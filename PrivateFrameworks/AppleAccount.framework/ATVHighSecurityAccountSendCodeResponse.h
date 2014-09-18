@@ -7,16 +7,16 @@
 @interface ATVHighSecurityAccountSendCodeResponse : AAResponse {
 }
 
-@property(readonly) int errorCode;
+@property(readonly) long long errorCode;
 @property(readonly) NSString * errorMessage;
 @property(readonly) NSString * errorTitle;
-@property(readonly) BOOL success;
+@property(readonly) bool success;
 @property(readonly) NSDictionary * userDisplayStrings;
 
-- (int)errorCode;
+- (long long)errorCode;
 - (id)errorMessage;
 - (id)errorTitle;
-- (BOOL)success;
+- (bool)success;
 - (id)userDisplayStrings;
 
 @end

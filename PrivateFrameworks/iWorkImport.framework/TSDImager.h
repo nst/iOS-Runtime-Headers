@@ -6,78 +6,82 @@
    See Warning(s) below.
  */
 
-@class NSArray, TSDCanvas, TSKDocumentRoot;
+@class NSArray, NSString, TSDCanvas, TSKDocumentRoot;
 
 @interface TSDImager : NSObject <TSDCanvasDelegate> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
+    boolmDistortedToMatch;
+    boolmDrawingIntoPDF;
+    boolmImageMustHaveEvenDimensions;
+    boolmIsPrinting;
+    boolmReusableShouldUseSRGBColorSpace;
+    boolmShouldReuseBitmapContext;
+    boolmShouldUseSRGBColorSpace;
+    boolmUseScaledImageSize;
     } mActualScaledClipRect;
     struct CGColor { } *mBackgroundColor;
     TSDCanvas *mCanvas;
     } mContentInset;
-    BOOL mDistortedToMatch;
     TSKDocumentRoot *mDocumentRoot;
-    BOOL mDrawingIntoPDF;
-    BOOL mImageMustHaveEvenDimensions;
     NSArray *mInfos;
-    BOOL mIsPrinting;
     } mMaximumScaledImageSize;
     id mPostRenderAction;
     } mReusableActualScaledClipRect;
@@ -86,60 +90,64 @@
     } mReusableIntegralBounds;
     } mReusableScaledImageSize;
     } mScaledImageSize;
-    BOOL mShouldReuseBitmapContext;
     } mUnscaledClipRect;
-    BOOL mUseScaledImageSize;
-    float mViewScale;
+    double mViewScale;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } actualScaledClipRect;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } actualScaledClipRect;
 @property struct CGColor { }* backgroundColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property BOOL distortedToMatch;
-@property BOOL imageMustHaveEvenDimensions;
+@property(retain,readonly) TSDCanvas * canvas;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool distortedToMatch;
+@property(readonly) unsigned long long hash;
+@property bool imageMustHaveEvenDimensions;
 @property(retain) NSArray * infos;
-@property BOOL isPrinting;
-@property struct CGSize { float x1; float x2; } maximumScaledImageSize;
-@property struct CGSize { float x1; float x2; } scaledImageSize;
-@property BOOL shouldReuseBitmapContext;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unscaledClipRect;
-@property float viewScale;
+@property bool isPrinting;
+@property struct CGSize { double x1; double x2; } maximumScaledImageSize;
+@property struct CGSize { double x1; double x2; } scaledImageSize;
+@property bool shouldReuseBitmapContext;
+@property(readonly) Class superclass;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unscaledClipRect;
+@property double viewScale;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })actualScaledClipRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })actualScaledClipRect;
 - (struct CGColor { }*)backgroundColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (id)canvas;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (void)dealloc;
-- (BOOL)distortedToMatch;
+- (bool)distortedToMatch;
 - (id)documentRoot;
-- (BOOL)drawPageInContext:(struct CGContext { }*)arg1 createPage:(BOOL)arg2;
-- (BOOL)imageMustHaveEvenDimensions;
+- (bool)drawPageInContext:(struct CGContext { }*)arg1 createPage:(bool)arg2;
+- (bool)imageMustHaveEvenDimensions;
 - (id)infos;
 - (id)initWithDocumentRoot:(id)arg1;
-- (BOOL)isCanvasDrawingIntoPDF:(id)arg1;
-- (BOOL)isPrinting;
-- (BOOL)isPrintingCanvas;
-- (struct CGSize { float x1; float x2; })maximumScaledImageSize;
+- (bool)isCanvasDrawingIntoPDF:(id)arg1;
+- (bool)isPrinting;
+- (bool)isPrintingCanvas;
+- (struct CGSize { double x1; double x2; })maximumScaledImageSize;
 - (struct CGImage { }*)newImage;
-- (BOOL)p_configureCanvas;
-- (void)p_drawPageInContext:(struct CGContext { }*)arg1 createPage:(BOOL)arg2;
+- (bool)p_configureCanvas;
+- (void)p_drawPageInContext:(struct CGContext { }*)arg1 createPage:(bool)arg2;
 - (struct CGImage { }*)p_newImageInReusableContext;
 - (id)pdfData;
-- (struct CGSize { float x1; float x2; })scaledImageSize;
+- (struct CGSize { double x1; double x2; })scaledImageSize;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setDistortedToMatch:(BOOL)arg1;
-- (void)setImageMustHaveEvenDimensions:(BOOL)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDistortedToMatch:(bool)arg1;
+- (void)setImageMustHaveEvenDimensions:(bool)arg1;
 - (void)setInfos:(id)arg1;
-- (void)setIsPrinting:(BOOL)arg1;
-- (void)setMaximumScaledImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setIsPrinting:(bool)arg1;
+- (void)setMaximumScaledImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPostRenderAction:(id)arg1;
-- (void)setScaledImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShouldReuseBitmapContext:(BOOL)arg1;
-- (void)setUnscaledClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setViewScale:(float)arg1;
-- (BOOL)shouldReuseBitmapContext;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledClipRect;
-- (float)viewScale;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleScaledBoundsForClippingRepsOnCanvas:(id)arg1;
+- (void)setScaledImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShouldReuseBitmapContext:(bool)arg1;
+- (void)setUnscaledClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setViewScale:(double)arg1;
+- (bool)shouldReuseBitmapContext;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledClipRect;
+- (double)viewScale;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleScaledBoundsForClippingRepsOnCanvas:(id)arg1;
 
 @end

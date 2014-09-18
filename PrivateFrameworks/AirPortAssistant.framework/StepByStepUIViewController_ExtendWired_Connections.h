@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface StepByStepUIViewController_ExtendWired_Connections : InternetViewController <TableViewManagerDelegate> {
-    int _curStep;
+@interface StepByStepUIViewController_ExtendWired_Connections : InternetViewController {
 }
 
-- (void)addAPOrRouterWANPluginUI;
-- (void)presentAPOrRouterWANPluginUI;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)loadView;
 
 @end

@@ -2,24 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNBuildChunk, KNSlide;
+@class KNAbstractSlide, KNBuildChunk;
 
 @interface KNCommandSlideInsertBuildChunk : TSKCommand {
     KNBuildChunk *mBuildChunk;
-    unsigned int mIndex;
-    KNSlide *mSlide;
+    unsigned long long mIndex;
+    KNAbstractSlide *mSlide;
 }
 
 @property(readonly) KNBuildChunk * buildChunk;
-@property(readonly) unsigned int index;
-@property(readonly) KNSlide * slide;
+@property(readonly) unsigned long long index;
+@property(readonly) KNAbstractSlide * slide;
 
 - (id)buildChunk;
 - (void)commit;
 - (void)dealloc;
-- (unsigned int)index;
-- (id)initWithSlide:(id)arg1 buildChunk:(id)arg2 atIndex:(unsigned int)arg3;
-- (BOOL)process;
+- (id)description;
+- (unsigned long long)index;
+- (id)initWithSlide:(id)arg1 buildChunk:(id)arg2 atIndex:(unsigned long long)arg3;
+- (bool)process;
 - (void)redo;
 - (id)slide;
 - (void)undo;

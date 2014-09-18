@@ -2,48 +2,58 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISlideshowViewControllerDataSource>, NSMutableArray, NSMutableDictionary, NSOperationQueue, SKUIClientContext, SKUIGiftThemeCollectionView, SKUIScreenshotDataConsumer, UIPageControl;
+@class <SKUISlideshowViewControllerDataSource>, <SKUISlideshowViewControllerDelegate>, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, SKUIGiftThemeCollectionView, SKUIScreenshotDataConsumer, UIPageControl;
 
 @interface SKUIIPhoneSlideshowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
     SKUIGiftThemeCollectionView *_collectionView;
     <SKUISlideshowViewControllerDataSource> *_dataSource;
+    <SKUISlideshowViewControllerDelegate> *_delegate;
     NSMutableArray *_images;
-    int _indexToScrollToOnLoadView;
+    long long _indexToScrollToOnLoadView;
     NSOperationQueue *_operationQueue;
     UIPageControl *_pageControl;
     NSMutableDictionary *_placeholderImages;
     NSOperationQueue *_placeholderQueue;
-    BOOL _respondsToCount;
-    BOOL _respondsToImage;
-    BOOL _respondsToURL;
     SKUIScreenshotDataConsumer *_screenshotConsumer;
+    bool_respondsToCount;
+    bool_respondsToImage;
+    bool_respondsToURL;
 }
 
 @property(retain) SKUIClientContext * clientContext;
-@property int currentIndex;
+@property long long currentIndex;
 @property <SKUISlideshowViewControllerDataSource> * dataSource;
+@property(copy,readonly) NSString * debugDescription;
+@property <SKUISlideshowViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;
-- (id)_imageAtIndex:(int)arg1;
-- (id)_placeholderImageAtIndex:(int)arg1;
+- (id)_imageAtIndex:(long long)arg1;
+- (id)_placeholderImageAtIndex:(long long)arg1;
 - (void)_reloadPageControl;
-- (void)_setImage:(id)arg1 atIndex:(int)arg2;
-- (void)_setLowResImage:(id)arg1 atIndex:(int)arg2;
+- (void)_reloadSize;
+- (void)_setImage:(id)arg1 atIndex:(long long)arg2;
+- (void)_setLowResImage:(id)arg1 atIndex:(long long)arg2;
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (int)currentIndex;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (long long)currentIndex;
 - (id)dataSource;
 - (void)dealloc;
+- (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (void)reloadData;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setCurrentIndex:(int)arg1;
+- (void)setCurrentIndex:(long long)arg1;
 - (void)setDataSource:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setDelegate:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidLayoutSubviews;
 
 @end

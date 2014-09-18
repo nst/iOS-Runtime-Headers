@@ -15,8 +15,8 @@
 - (id)init;
 - (void)renewPurchaseTokenWithAuthToken:(id)arg1 completionBlock:(id)arg2;
 - (void)resetWithCompletionBlock:(id)arg1;
-- (void)setAllowed:(BOOL)arg1 completionBlock:(id)arg2;
-- (void)setEnabled:(BOOL)arg1 withAuthToken:(id)arg2 completionBlock:(id)arg3;
-- (void)setEnabled:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (void)setAllowed:(bool)arg1 completionBlock:(id)arg2;
+- (void)setEnabled:(bool)arg1 withAuthToken:(id)arg2 completionBlock:(id)arg3;
+- (void)setEnabled:(bool)arg1 withCompletionBlock:(id)arg2;
 
 @end

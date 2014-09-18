@@ -8,7 +8,11 @@
 }
 
 @property(copy) NSString * category;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * socialQuestions;
+@property(readonly) Class superclass;
 
 + (id)socialStructuredAnswer;
 + (id)socialStructuredAnswerWithDictionary:(id)arg1 context:(id)arg2;

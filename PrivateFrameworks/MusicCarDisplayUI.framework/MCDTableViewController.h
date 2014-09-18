@@ -6,28 +6,29 @@
 
 @interface MCDTableViewController : MPUTableViewController {
     NSIndexPath *_previouslySelectedIndexPath;
-    BOOL _shouldHideIndexTitles;
+    bool_shouldHideIndexTitles;
 }
 
-@property BOOL shouldHideIndexTitles;
+@property bool shouldHideIndexTitles;
 
 + (Class)_tableViewClass;
 
 - (void).cxx_destruct;
+- (id)MPU_createNowPlayingButton;
+- (void)_MCD_nowPlayingButtonAction:(id)arg1;
 - (id)_createTableView;
-- (BOOL)_viewControllerWasSelected;
+- (bool)_viewControllerWasSelected;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
-- (id)music_createNowPlayingButton;
 - (void)reloadData;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
-- (void)setShouldHideIndexTitles:(BOOL)arg1;
-- (BOOL)shouldHideIndexTitles;
-- (BOOL)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
+- (void)setShouldHideIndexTitles:(bool)arg1;
+- (bool)shouldHideIndexTitles;
+- (bool)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

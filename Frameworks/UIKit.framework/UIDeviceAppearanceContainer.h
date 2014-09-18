@@ -2,10 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIDeviceAppearanceContainer : NSObject <_UIAppearanceContainer> {
 }
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (bool)_preventsAppearanceProxyCustomization;
 
 - (id)_appearanceContainer;
 - (id)_appearanceGuideClass;

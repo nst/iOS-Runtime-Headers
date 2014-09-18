@@ -5,32 +5,34 @@
 @class NSArray, NSString, UIKBKeyDisplayContents;
 
 @interface UIKBKeyDisplayContents : NSObject {
-    int _displayPathType;
+    long long _displayPathType;
     NSString *_displayString;
     NSString *_displayStringImage;
     UIKBKeyDisplayContents *_fallbackContents;
-    BOOL _fillPath;
-    BOOL _force1xImages;
-    int _highlightedVariantIndex;
-    BOOL _isCustomGlyph;
+    long long _highlightedVariantIndex;
     NSString *_secondaryDisplayString;
     NSString *_secondaryDisplayStringImage;
-    BOOL _secondaryIsCustomGlyph;
     NSArray *_variantDisplayImages;
     NSArray *_variantDisplayStrings;
+    bool_fillPath;
+    bool_force1xImages;
+    bool_isCustomGlyph;
+    bool_secondaryIsCustomGlyph;
+    bool_stringKeycapOverImage;
 }
 
-@property int displayPathType;
+@property long long displayPathType;
 @property(retain) NSString * displayString;
 @property(retain) NSString * displayStringImage;
 @property(retain) UIKBKeyDisplayContents * fallbackContents;
-@property BOOL fillPath;
-@property BOOL force1xImages;
-@property int highlightedVariantIndex;
-@property BOOL isCustomGlyph;
+@property bool fillPath;
+@property bool force1xImages;
+@property long long highlightedVariantIndex;
+@property bool isCustomGlyph;
 @property(retain) NSString * secondaryDisplayString;
 @property(retain) NSString * secondaryDisplayStringImage;
-@property BOOL secondaryIsCustomGlyph;
+@property bool secondaryIsCustomGlyph;
+@property bool stringKeycapOverImage;
 @property(retain) NSArray * variantDisplayImages;
 @property(retain) NSArray * variantDisplayStrings;
 
@@ -38,30 +40,32 @@
 
 - (void)dealloc;
 - (id)description;
-- (int)displayPathType;
+- (long long)displayPathType;
 - (id)displayString;
 - (id)displayStringImage;
 - (id)fallbackContents;
-- (BOOL)fillPath;
-- (BOOL)force1xImages;
-- (int)highlightedVariantIndex;
-- (BOOL)isCustomGlyph;
+- (bool)fillPath;
+- (bool)force1xImages;
+- (long long)highlightedVariantIndex;
+- (bool)isCustomGlyph;
 - (id)secondaryDisplayString;
 - (id)secondaryDisplayStringImage;
-- (BOOL)secondaryIsCustomGlyph;
-- (void)setDisplayPathType:(int)arg1;
+- (bool)secondaryIsCustomGlyph;
+- (void)setDisplayPathType:(long long)arg1;
 - (void)setDisplayString:(id)arg1;
 - (void)setDisplayStringImage:(id)arg1;
 - (void)setFallbackContents:(id)arg1;
-- (void)setFillPath:(BOOL)arg1;
-- (void)setForce1xImages:(BOOL)arg1;
-- (void)setHighlightedVariantIndex:(int)arg1;
-- (void)setIsCustomGlyph:(BOOL)arg1;
+- (void)setFillPath:(bool)arg1;
+- (void)setForce1xImages:(bool)arg1;
+- (void)setHighlightedVariantIndex:(long long)arg1;
+- (void)setIsCustomGlyph:(bool)arg1;
 - (void)setSecondaryDisplayString:(id)arg1;
 - (void)setSecondaryDisplayStringImage:(id)arg1;
-- (void)setSecondaryIsCustomGlyph:(BOOL)arg1;
+- (void)setSecondaryIsCustomGlyph:(bool)arg1;
+- (void)setStringKeycapOverImage:(bool)arg1;
 - (void)setVariantDisplayImages:(id)arg1;
 - (void)setVariantDisplayStrings:(id)arg1;
+- (bool)stringKeycapOverImage;
 - (id)variantDisplayImages;
 - (id)variantDisplayStrings;
 

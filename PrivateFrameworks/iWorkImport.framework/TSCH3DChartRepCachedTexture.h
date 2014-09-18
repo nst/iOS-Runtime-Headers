@@ -7,24 +7,26 @@
 @interface TSCH3DChartRepCachedTexture : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    unsigned int mDeliveryStyle;
-    int mEffectiveTextureStage;
+    boolmIsSingleImage;
+    boolmIsTorndown;
+    unsigned long long mDeliveryStyle;
+    long long mEffectiveTextureStage;
     TSDTextureSet *mFinalTexture;
     TSDTexturedRectangle *mLegend;
     } mTextureBoundingRect;
@@ -33,31 +35,35 @@
     TSDTextureSet *mVisibleTexture;
 }
 
-@property unsigned int deliveryStyle;
-@property int effectiveTextureStage;
+@property unsigned long long deliveryStyle;
+@property long long effectiveTextureStage;
+@property bool isSingleImage;
 @property(retain) TSDTexturedRectangle * legend;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } textureBoundingRect;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } textureSetBoundingRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } textureBoundingRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } textureSetBoundingRect;
 
 + (id)cachedTexture;
 
 - (id).cxx_construct;
 - (void)addTexture:(id)arg1;
 - (void)dealloc;
-- (unsigned int)deliveryStyle;
-- (int)effectiveTextureStage;
-- (BOOL)hasCacheForEffectiveStage:(int)arg1 deliveryStyle:(unsigned int)arg2;
+- (unsigned long long)deliveryStyle;
+- (long long)effectiveTextureStage;
+- (bool)hasCacheForEffectiveStage:(long long)arg1 deliveryStyle:(unsigned long long)arg2 isSingleImage:(bool)arg3;
 - (id)init;
+- (bool)isSingleImage;
 - (id)legend;
-- (void)p_addTexture:(id)arg1 toTextureSet:(id)arg2 forFinalElements:(BOOL)arg3;
-- (id)p_assembleTextureSetForFinalElements:(BOOL)arg1;
-- (void)setDeliveryStyle:(unsigned int)arg1;
-- (void)setEffectiveTextureStage:(int)arg1;
+- (void)p_addTexture:(id)arg1 toTextureSet:(id)arg2 forFinalElements:(bool)arg3;
+- (id)p_assembleTextureSetForFinalElements:(bool)arg1;
+- (void)setDeliveryStyle:(unsigned long long)arg1;
+- (void)setEffectiveTextureStage:(long long)arg1;
+- (void)setIsSingleImage:(bool)arg1;
 - (void)setLegend:(id)arg1;
-- (void)setTextureBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTextureSetBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textureBoundingRect;
-- (id)textureForFinalElements:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textureSetBoundingRect;
+- (void)setTextureBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTextureSetBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)teardown;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textureBoundingRect;
+- (id)textureForFinalElements:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textureSetBoundingRect;
 
 @end

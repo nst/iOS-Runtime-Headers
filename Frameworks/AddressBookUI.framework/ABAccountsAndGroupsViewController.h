@@ -2,29 +2,32 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABAccountsAndGroupDataSource, ABPeoplePickerNavigationController, UIRefreshControl;
+@class ABAccountsAndGroupDataSource, ABPeoplePickerNavigationController, NSString, UIRefreshControl;
 
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
     ABAccountsAndGroupDataSource *_dataSource;
-    BOOL _needsReload;
     ABPeoplePickerNavigationController *_peoplePickerNavigationController;
     UIRefreshControl *_refreshControl;
-    BOOL _showsRefreshButton;
-    BOOL _tableViewNeedsReloadAfterResume;
+    bool_needsReload;
+    bool_showsRefreshButton;
+    bool_tableViewNeedsReloadAfterResume;
 }
 
 @property(readonly) ABAccountsAndGroupDataSource * dataSource;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property ABPeoplePickerNavigationController * peoplePickerNavigationController;
+@property(readonly) Class superclass;
 
 - (void)_updateDisplayedContactsFilterFromSelection;
 - (int)abViewControllerType;
-- (id)allGroupWrapperIndexPaths;
 - (void)applicationDidResume;
 - (id)dataSource;
 - (void)dealloc;
 - (void)done:(id)arg1;
-- (BOOL)hidesGlobalGroupWrapper;
-- (BOOL)hidesSearchableSources;
+- (bool)hidesGlobalGroupWrapper;
+- (bool)hidesSearchableSources;
 - (id)initWithModel:(id)arg1;
 - (void)loadView;
 - (id)model;
@@ -32,17 +35,17 @@
 - (id)peoplePickerNavigationController;
 - (void)refreshEverythingNow;
 - (void)reloadData;
-- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
-- (void)setHidesSearchableSources:(BOOL)arg1;
+- (void)setHidesGlobalGroupWrapper:(bool)arg1;
+- (void)setHidesSearchableSources:(bool)arg1;
 - (void)setModel:(id)arg1;
 - (void)setPeoplePickerNavigationController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)updateRefreshButton;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

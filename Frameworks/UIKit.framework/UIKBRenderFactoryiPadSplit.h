@@ -10,23 +10,24 @@
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
-- (float)defaultPathWeight;
+- (double)defaultPathWeight;
 - (id)deleteKeyImageName;
-- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
+- (struct CGPoint { double x1; double x2; })deleteKeyOffset;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
-- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
-- (float)keyCornerRadius;
-- (float)keyInsetBottom;
+- (double)keyCornerRadius;
+- (double)keyInsetBottom;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;
-- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
+- (struct CGPoint { double x1; double x2; })shiftKeyOffset;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
-- (float)skinnyKeyThreshold;
-- (float)symbolFrameInset;
-- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2;
+- (double)skinnyKeyThreshold;
+- (double)symbolFrameInset;
+- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned long long)arg2;
 
 @end

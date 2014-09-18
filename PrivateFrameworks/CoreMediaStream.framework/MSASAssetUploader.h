@@ -9,10 +9,10 @@
     NSMutableDictionary *_assetCollectionsToItemInFlightMap;
     NSMutableSet *_assetCollectionsWithAuthorizationError;
     NSMutableDictionary *_assetToAssetCollectionMap;
-    BOOL _didEncounterNetworkConditionError;
     NSMutableArray *_finishedAssetCollections;
     NSMutableArray *_itemsInFlight;
     int _state;
+    bool_didEncounterNetworkConditionError;
 }
 
 @property(retain) NSMutableDictionary * assetCollectionGUIDToRequestorContext;
@@ -20,7 +20,7 @@
 @property(retain) NSMutableSet * assetCollectionsWithAuthorizationError;
 @property(retain) NSMutableDictionary * assetToAssetCollectionMap;
 @property <MSASAssetUploaderDelegate> * delegate;
-@property BOOL didEncounterNetworkConditionError;
+@property bool didEncounterNetworkConditionError;
 @property(retain) NSMutableArray * finishedAssetCollections;
 @property(retain) NSMutableArray * itemsInFlight;
 @property int state;
@@ -39,7 +39,7 @@
 - (id)assetCollectionsWithAuthorizationError;
 - (id)assetToAssetCollectionMap;
 - (void)cancelAssetCollections:(id)arg1;
-- (BOOL)didEncounterNetworkConditionError;
+- (bool)didEncounterNetworkConditionError;
 - (void)didFinishGettingAllAssets;
 - (void)didFinishPuttingAllAssets;
 - (id)finishedAssetCollections;
@@ -49,7 +49,7 @@
 - (void)setAssetCollectionsToItemInFlightMap:(id)arg1;
 - (void)setAssetCollectionsWithAuthorizationError:(id)arg1;
 - (void)setAssetToAssetCollectionMap:(id)arg1;
-- (void)setDidEncounterNetworkConditionError:(BOOL)arg1;
+- (void)setDidEncounterNetworkConditionError:(bool)arg1;
 - (void)setFinishedAssetCollections:(id)arg1;
 - (void)setItemsInFlight:(id)arg1;
 - (void)setState:(int)arg1;
@@ -60,8 +60,8 @@
 - (void)workQueueCancelAssetCollections:(id)arg1;
 - (void)workQueueDidFinishWithItem:(id)arg1 error:(id)arg2;
 - (void)workQueueGoIdle;
-- (void)workQueueRegisterAssetCollections:(id)arg1 index:(unsigned int)arg2 results:(id)arg3 completionBlock:(id)arg4;
-- (void)workQueueRegisterAssets:(id)arg1 index:(unsigned int)arg2 completionBlock:(id)arg3;
+- (void)workQueueRegisterAssetCollections:(id)arg1 index:(unsigned long long)arg2 results:(id)arg3 completionBlock:(id)arg4;
+- (void)workQueueRegisterAssets:(id)arg1 index:(unsigned long long)arg2 completionBlock:(id)arg3;
 - (void)workQueueRetryOutstandingActivities;
 - (void)workQueueShutDownCompletionBlock:(id)arg1;
 - (void)workQueueStop;

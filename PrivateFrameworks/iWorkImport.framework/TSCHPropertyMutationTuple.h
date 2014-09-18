@@ -19,6 +19,6 @@
 - (id)initWithStyleOwner:(id)arg1 mutations:(id)arg2;
 - (id)mutations;
 - (id)styleOwner;
-- (struct { int x1; unsigned int x2; })styleOwnerRef;
+- (id)styleOwnerRef;
 
 @end

@@ -7,25 +7,25 @@
 @interface UITableViewControllerKeyboardSupport : NSObject {
     unsigned int _viewIsDisappearing : 1;
     unsigned int _registeredForNotifications : 1;
-    float _adjustmentForKeyboard;
+    double _adjustmentForKeyboard;
     UITableViewController *_tableViewController;
 }
 
-@property float adjustmentForKeyboard;
-@property BOOL registeredForNotifications;
-@property BOOL viewIsDisappearing;
+@property double adjustmentForKeyboard;
+@property bool registeredForNotifications;
+@property bool viewIsDisappearing;
 
 - (void)_keyboardDidChangeFrame:(id)arg1;
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (float)adjustmentForKeyboard;
+- (double)adjustmentForKeyboard;
 - (id)initWithTableViewController:(id)arg1;
-- (BOOL)registeredForNotifications;
-- (void)setAdjustmentForKeyboard:(float)arg1;
-- (void)setRegisteredForNotifications:(BOOL)arg1;
-- (void)setViewIsDisappearing:(BOOL)arg1;
-- (BOOL)viewIsDisappearing;
+- (bool)registeredForNotifications;
+- (void)setAdjustmentForKeyboard:(double)arg1;
+- (void)setRegisteredForNotifications:(bool)arg1;
+- (void)setViewIsDisappearing:(bool)arg1;
+- (bool)viewIsDisappearing;
 
 @end

@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, SALocalSearchBusiness2;
+@class NSArray, NSString, SALocalSearchBusiness2;
 
 @interface SAMovieMovieTheaterShowtimes : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * movieShowtimes;
 @property(copy) NSArray * showtimes;
+@property(readonly) Class superclass;
 @property(retain) SALocalSearchBusiness2 * theater;
 
 + (id)movieTheaterShowtimes;

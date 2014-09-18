@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFLegibilitySettingsProviderDelegate>, _UIBackdropView, _UILegibilitySettings;
+@class <SBFLegibilitySettingsProviderDelegate>, NSString, _UIBackdropView, _UILegibilitySettings;
 
 @interface SBFBackdropLegibilitySettingsProvider : NSObject <_UIBackdropViewObserver, SBFLegibilitySettingsProvider> {
     _UIBackdropView *_backdropView;
@@ -10,8 +10,12 @@
     _UILegibilitySettings *_legibilitySettings;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SBFLegibilitySettingsProviderDelegate> * delegate;
-@property(readonly) _UILegibilitySettings * legibilitySettings;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) _UILegibilitySettings * legibilitySettings;
+@property(readonly) Class superclass;
 
 - (void)backdropViewDidChange:(id)arg1;
 - (void)dealloc;

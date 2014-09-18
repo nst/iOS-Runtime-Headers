@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUImage;
+@class OITSUImage;
 
 @interface MFPhoneBitmap : MFBitmap {
-    TSUImage *m_image;
+    OITSUImage *m_image;
 }
 
 - (void)dealloc;

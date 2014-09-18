@@ -9,42 +9,42 @@
     NSMutableSet *_busyConnections;
     NSObject<OS_dispatch_queue> *_checkinQueue;
     NSObject<OS_dispatch_queue> *_checkoutQueue;
-    unsigned int _connectionsJournalingMode;
+    unsigned long long _connectionsJournalingMode;
     int _connectionsProfilingLevel;
     NSString *_databasePath;
     int _homeSharingCachesClearedNotifyToken;
-    unsigned int _maxConcurrentConnections;
+    unsigned long long _maxConcurrentConnections;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    BOOL _useDistantConnections;
-    BOOL _useReadOnlyConnections;
     NSObject<OS_dispatch_semaphore> *_waitingSemaphore;
     int _willDeleteDatabaseNotifyToken;
+    bool_useDistantConnections;
+    bool_useReadOnlyConnections;
 }
 
-@property unsigned int connectionsJournalingMode;
+@property unsigned long long connectionsJournalingMode;
 @property int connectionsProfilingLevel;
 @property(readonly) NSString * databasePath;
-@property(readonly) unsigned int maxConcurrentConnections;
-@property BOOL useDistantConnections;
-@property BOOL useReadOnlyConnections;
+@property(readonly) unsigned long long maxConcurrentConnections;
+@property bool useDistantConnections;
+@property bool useReadOnlyConnections;
 
 - (void).cxx_destruct;
 - (void)_handleDatabaseDeletion;
 - (void)checkInConnection:(id)arg1;
-- (id)checkoutConnection:(BOOL*)arg1;
-- (void)closeConnections;
-- (unsigned int)connectionsJournalingMode;
+- (id)checkoutConnection:(bool*)arg1;
+- (void)closeConnectionsAndWaitForBusyConnections:(bool)arg1;
+- (unsigned long long)connectionsJournalingMode;
 - (int)connectionsProfilingLevel;
 - (id)databasePath;
 - (void)dealloc;
 - (id)init;
-- (id)initWithDatabasePath:(id)arg1 maxConcurrentConnections:(unsigned int)arg2;
-- (unsigned int)maxConcurrentConnections;
-- (void)setConnectionsJournalingMode:(unsigned int)arg1;
+- (id)initWithDatabasePath:(id)arg1 maxConcurrentConnections:(unsigned long long)arg2;
+- (unsigned long long)maxConcurrentConnections;
+- (void)setConnectionsJournalingMode:(unsigned long long)arg1;
 - (void)setConnectionsProfilingLevel:(int)arg1;
-- (void)setUseDistantConnections:(BOOL)arg1;
-- (void)setUseReadOnlyConnections:(BOOL)arg1;
-- (BOOL)useDistantConnections;
-- (BOOL)useReadOnlyConnections;
+- (void)setUseDistantConnections:(bool)arg1;
+- (void)setUseReadOnlyConnections:(bool)arg1;
+- (bool)useDistantConnections;
+- (bool)useReadOnlyConnections;
 
 @end

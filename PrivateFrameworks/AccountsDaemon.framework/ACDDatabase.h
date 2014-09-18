@@ -14,11 +14,11 @@
 
 @property(readonly) NSManagedObjectContext * managedObjectContext;
 @property(readonly) NSString * path;
-@property int version;
+@property long long version;
 
-+ (BOOL)_addPersistentStoreWithURL:(id)arg1 toStoreCoordinator:(id)arg2 withOptions:(id)arg3 error:(id*)arg4;
++ (bool)_addPersistentStoreWithURL:(id)arg1 toStoreCoordinator:(id)arg2 withOptions:(id)arg3 error:(id*)arg4;
 + (struct __CFString { }*)_copyRootPath;
-+ (BOOL)_isUnrecoverableDatabaseError:(id)arg1;
++ (bool)_isUnrecoverableDatabaseError:(id)arg1;
 + (id)_managedObjectModel;
 + (id)_optionsForOpeningPersistentStore;
 + (void)_removePersistentStoreAtURL:(id)arg1 forStoreCoordinator:(id)arg2;
@@ -29,11 +29,11 @@
 
 - (void).cxx_destruct;
 - (id)_accountPropertyWithKey:(id)arg1 owner:(id)arg2;
-- (BOOL)_databaseFileExists;
+- (bool)_databaseFileExists;
 - (void)_handleManagedObjectContextDidSaveNotification:(id)arg1;
 - (void)_setupManagedObjectContext;
 - (id)_store;
-- (unsigned int)countOfEntityNamed:(id)arg1 withPredicate:(id)arg2;
+- (unsigned long long)countOfEntityNamed:(id)arg1 withPredicate:(id)arg2;
 - (void)dealloc;
 - (void)deleteAccountPropertyWithKey:(id)arg1 owner:(id)arg2;
 - (id)existingObjectWithURI:(id)arg1;
@@ -46,8 +46,10 @@
 - (id)managedObjectIDForURI:(id)arg1;
 - (id)objectForObjectURI:(id)arg1;
 - (id)path;
+- (bool)saveWithError:(id*)arg1 rollbackOnFailure:(bool)arg2;
+- (bool)saveWithError:(id*)arg1;
 - (void)setAccountPropertyWithKey:(id)arg1 value:(id)arg2 owner:(id)arg3;
-- (void)setVersion:(int)arg1;
-- (int)version;
+- (void)setVersion:(long long)arg1;
+- (long long)version;
 
 @end

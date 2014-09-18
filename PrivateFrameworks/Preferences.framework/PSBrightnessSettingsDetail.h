@@ -2,21 +2,28 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
+@class NSString;
+
 @interface PSBrightnessSettingsDetail : NSObject <PSSettingsDetail> {
 }
 
-+ (BOOL)autoBrightnessEnabled;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (bool)autoBrightnessEnabled;
 + (void)beginBrightnessAdjustmentTransaction;
 + (void)beginObservingExternalBrightnessChanges:(id)arg1 changedAction:(id)arg2;
-+ (float)currentValue;
-+ (BOOL)deviceSupportsAutoBrightness;
++ (double)currentValue;
++ (bool)deviceSupportsAutoBrightness;
 + (void)endBrightnessAdjustmentTransaction;
 + (void)endObservingExternalBrightnessChanges;
 + (id)iconImage;
-+ (void)incrementBrightnessValue:(float)arg1;
-+ (float)incrementedBrightnessValue:(float)arg1;
++ (void)incrementBrightnessValue:(double)arg1;
++ (double)incrementedBrightnessValue:(double)arg1;
 + (id)preferencesURL;
-+ (void)setAutoBrightnessEnabled:(BOOL)arg1;
-+ (void)setValue:(float)arg1;
++ (void)setAutoBrightnessEnabled:(bool)arg1;
++ (void)setValue:(double)arg1;
 
 @end

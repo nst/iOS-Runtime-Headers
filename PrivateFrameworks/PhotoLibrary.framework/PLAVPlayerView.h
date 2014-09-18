@@ -5,20 +5,20 @@
 @class AVPlayer, AVPlayerLayer;
 
 @interface PLAVPlayerView : UIView {
-    unsigned int _scaleMode;
+    unsigned long long _scaleMode;
 }
 
-@property(readonly) AVPlayerLayer * layer;
+@property(retain,readonly) AVPlayerLayer * layer;
 @property(retain) AVPlayer * player;
-@property unsigned int scaleMode;
+@property unsigned long long scaleMode;
 
 + (Class)layerClass;
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)player;
-- (unsigned int)scaleMode;
+- (unsigned long long)scaleMode;
 - (void)setPlayer:(id)arg1;
-- (void)setScaleMode:(unsigned int)arg1 duration:(double)arg2;
-- (void)setScaleMode:(unsigned int)arg1;
+- (void)setScaleMode:(unsigned long long)arg1 duration:(double)arg2;
+- (void)setScaleMode:(unsigned long long)arg1;
 
 @end

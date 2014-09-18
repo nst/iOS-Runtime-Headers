@@ -5,13 +5,13 @@
 @class CALayer<TSCHMultiDataElementShapeLayer>, TSCHMultiDataAnimatingFrameLayer;
 
 @interface TSCHMultiDataChartRepElement : NSObject {
+    boolmElementUndefined;
     CALayer<TSCHMultiDataElementShapeLayer> *mElementLayer;
-    BOOL mElementUndefined;
     TSCHMultiDataAnimatingFrameLayer *mLabelLayer;
 }
 
 @property(readonly) CALayer<TSCHMultiDataElementShapeLayer> * elementLayer;
-@property BOOL elementUndefined;
+@property bool elementUndefined;
 @property(readonly) TSCHMultiDataAnimatingFrameLayer * labelLayer;
 
 + (id)elementWithElementLayer:(id)arg1;
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)elementLayer;
-- (BOOL)elementUndefined;
+- (bool)elementUndefined;
 - (id)init;
 - (id)initWithElementLayer:(id)arg1;
 - (id)initWithLayer:(id)arg1;
 - (id)labelLayer;
-- (void)setContentsScale:(float)arg1;
+- (void)setContentsScale:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setElementUndefined:(BOOL)arg1;
-- (void)setOpacity:(float)arg1;
+- (void)setElementUndefined:(bool)arg1;
+- (void)setOpacity:(double)arg1;
 
 @end

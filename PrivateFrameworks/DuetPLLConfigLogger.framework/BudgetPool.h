@@ -18,8 +18,8 @@
 - (bool)hasBudgetAvailable:(id)arg1;
 - (bool)hasGlobalPoolReachedLimit;
 - (id)init:(long long)arg1 andItemLimit:(long long)arg2 withBudgetMode:(int)arg3;
-- (void)logAll:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
-- (void)logLight:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
+- (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
+- (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)resetAllDiff;
 - (void)resetAllPoolLimits;
 - (long long)totalBudget;

@@ -5,14 +5,15 @@
 @interface _NSXPCConnectionIncomingReplyBlockTable : NSObject {
     struct __CFDictionary { } *_replyTable;
     int _replyTableLock;
-    unsigned long _sequence;
+    unsigned long long _sequence;
 }
 
 - (void)cleanupIncomingReplyBlocks;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (BOOL)removeIncomingReplyBlockForSequence:(unsigned long)arg1;
-- (unsigned long)sequenceForIncomingReplyBlockWithCleanupBlock:(id)arg1;
+- (id)progressForSequence:(unsigned long long)arg1;
+- (bool)removeIncomingReplyBlockForSequence:(unsigned long long)arg1;
+- (unsigned long long)sequenceForIncomingReplyBlockWithProgress:(id)arg1 cleanupBlock:(id)arg2;
 
 @end

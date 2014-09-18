@@ -2,29 +2,37 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaPersistentIDsPredicate : MPMediaPredicate {
-    unsigned int _count;
+@class NSString;
+
+@interface MPMediaPersistentIDsPredicate : MPMediaPredicate <MPPProtobufferCoding> {
+    unsigned long long _count;
     long long *_persistentIDs;
-    BOOL _shouldContain;
+    bool_shouldContain;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) const long long* persistentIDs;
-@property(readonly) BOOL shouldContain;
+@property(readonly) bool shouldContain;
+@property(readonly) Class superclass;
 
-+ (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
++ (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned long long)arg2 shouldContain:(bool)arg3;
 
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithProtobufferDecodableObject:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (const long long*)persistentIDs;
-- (BOOL)shouldContain;
+- (id)protobufferEncodableObject;
+- (bool)shouldContain;
 
 @end

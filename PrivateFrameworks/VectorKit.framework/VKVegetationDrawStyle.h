@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKVegetationDrawStyle : VKDimmableDrawStyle {
-    BOOL visible;
+@interface VKVegetationDrawStyle : VKRenderStyle {
 }
 
-@property(readonly) BOOL visible;
+@property(readonly) float brightness;
+@property(readonly) bool visible;
 
-- (void)takeFromZoomInvariantProperties:(id)arg1;
-- (id)variant;
-- (BOOL)visible;
++ (int)renderStyleID;
+
+- (float)brightness;
+- (bool)visible;
 
 @end

@@ -2,33 +2,39 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, NSString, NSURL;
+@class NSDictionary, NSMutableDictionary, NSString, NSURL;
 
 @interface SKUIArtwork : NSObject <SKUICacheCoding> {
-    int _height;
+    long long _height;
     NSURL *_url;
     NSString *_urlString;
-    int _width;
+    long long _width;
 }
 
 @property(readonly) NSURL * URL;
+@property(getter=_lookupDictionary,readonly) NSDictionary * _lookupDictionary;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(readonly) int height;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) int width;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long height;
+@property(readonly) struct CGSize { double x1; double x2; } size;
+@property(readonly) Class superclass;
+@property(readonly) long long width;
 
 - (void).cxx_destruct;
 - (id)URL;
+- (id)_lookupDictionary;
 - (id)cacheRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (int)height;
+- (unsigned long long)hash;
+- (long long)height;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (id)initWithCacheRepresentation:(id)arg1;
-- (id)initWithURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (int)width;
+- (id)initWithURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (long long)width;
 
 @end

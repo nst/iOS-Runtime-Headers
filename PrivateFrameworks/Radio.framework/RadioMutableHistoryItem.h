@@ -10,12 +10,12 @@
 @property(retain) NSDate * datePlayed;
 @property(copy) NSString * externalIdentifier;
 @property(retain) RadioTrack * track;
-@property int type;
+@property long long type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setDatePlayed:(id)arg1;
 - (void)setExternalIdentifier:(id)arg1;
 - (void)setTrack:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 
 @end

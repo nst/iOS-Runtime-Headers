@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CNFRegWizardControllerDelegate>, CNFRegController, _UIBackdropView;
+@class <CNFRegWizardControllerDelegate>, CNFRegController, NSString, _UIBackdropView;
 
 @interface CNFRegWizardController : PSSetupController <CNFRegFirstRunDelegate> {
     struct { 
@@ -17,7 +17,7 @@
         unsigned int canShowDisabledScreen : 1; 
         unsigned int hideLearnMoreButton : 1; 
         unsigned int showSplashOnSignin : 1; 
-        unsigned int reloadOnViewWillAppear : 1; 
+        unsigned int skipReloadOnNextViewWillAppear : 1; 
         unsigned int allowCancel : 1; 
         unsigned int allowSMS : 1; 
         unsigned int shouldTerminateInBackground : 1; 
@@ -27,27 +27,30 @@
     CNFRegController *_regController;
     id _resignListener;
     id _resumeListener;
-    int _serviceType;
+    long long _serviceType;
     } _wizardFlags;
 }
 
 @property(copy) id alertHandler;
-@property BOOL allowCancel;
-@property BOOL allowSMS;
+@property bool allowCancel;
+@property bool allowSMS;
 @property(retain) _UIBackdropView * backdropView;
-@property BOOL canShowDisabledScreen;
-@property BOOL canShowSplashScreen;
-@property BOOL canStartNested;
+@property bool canShowDisabledScreen;
+@property bool canShowSplashScreen;
+@property bool canStartNested;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property <CNFRegWizardControllerDelegate> * firstRunDelegate;
-@property BOOL hideLearnMoreButton;
+@property(readonly) unsigned long long hash;
+@property bool hideLearnMoreButton;
 @property(retain) CNFRegController * regController;
-@property BOOL reloadOnViewWillAppear;
-@property BOOL shouldListenForSuspension;
-@property BOOL shouldTerminateInBackground;
-@property BOOL showSplashOnSignin;
+@property bool shouldListenForSuspension;
+@property bool shouldTerminateInBackground;
+@property bool showSplashOnSignin;
+@property(readonly) Class superclass;
 
-+ (void)setGlobalAppearanceStyle:(int)arg1;
-+ (void)setSupportsAutoRotation:(BOOL)arg1;
++ (void)setGlobalAppearanceStyle:(long long)arg1;
++ (void)setSupportsAutoRotation:(bool)arg1;
 
 - (void)_applicationDidEnterBackground;
 - (void)_applicationDidFinishLaunching;
@@ -62,58 +65,58 @@
 - (void)_updateNavigationBarHiddenForPush;
 - (void)_updateNavigationBarTitle;
 - (id)alertHandler;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (BOOL)allowCancel;
-- (BOOL)allowSMS;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (bool)allowCancel;
+- (bool)allowSMS;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (id)backdropView;
-- (BOOL)canShowDisabledScreen;
-- (BOOL)canShowSplashScreen;
-- (BOOL)canStartNested;
-- (id)controllerClassesToShow:(BOOL)arg1;
-- (id)controllersToShow:(BOOL)arg1;
+- (bool)canShowDisabledScreen;
+- (bool)canShowSplashScreen;
+- (bool)canStartNested;
+- (id)controllerClassesToShow:(bool)arg1;
+- (id)controllersToShow:(bool)arg1;
 - (id)controllersToShow;
 - (void)dealloc;
-- (void)dismissFinished:(BOOL)arg1;
-- (void)dismissWithState:(unsigned int)arg1;
-- (void)firstRunController:(id)arg1 finishedWithState:(unsigned int)arg2;
+- (void)dismissFinished:(bool)arg1;
+- (void)dismissWithState:(unsigned long long)arg1;
+- (void)firstRunController:(id)arg1 finishedWithState:(unsigned long long)arg2;
 - (id)firstRunDelegate;
-- (BOOL)hideLearnMoreButton;
+- (bool)hideLearnMoreButton;
 - (id)init;
 - (id)initWithRegController:(id)arg1;
-- (id)initWithServiceTypes:(int)arg1;
-- (id)popViewControllerAnimated:(BOOL)arg1;
+- (id)initWithServiceTypes:(long long)arg1;
+- (id)popViewControllerAnimated:(bool)arg1;
 - (id)popViewControllerWithTransition:(int)arg1;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)pushViewController:(id)arg1 animated:(bool)arg2;
 - (void)pushViewController:(id)arg1 transition:(int)arg2;
 - (id)regController;
-- (BOOL)reloadOnViewWillAppear;
 - (void)setAlertHandler:(id)arg1;
-- (void)setAllowCancel:(BOOL)arg1;
-- (void)setAllowSMS:(BOOL)arg1;
+- (void)setAllowCancel:(bool)arg1;
+- (void)setAllowSMS:(bool)arg1;
 - (void)setBackdropView:(id)arg1;
-- (void)setCanShowDisabledScreen:(BOOL)arg1;
-- (void)setCanShowSplashScreen:(BOOL)arg1;
-- (void)setCanStartNested:(BOOL)arg1;
+- (void)setCanShowDisabledScreen:(bool)arg1;
+- (void)setCanShowSplashScreen:(bool)arg1;
+- (void)setCanStartNested:(bool)arg1;
 - (void)setFirstRunDelegate:(id)arg1;
-- (void)setHideLearnMoreButton:(BOOL)arg1;
+- (void)setHideLearnMoreButton:(bool)arg1;
 - (void)setRegController:(id)arg1;
-- (void)setReloadOnViewWillAppear:(BOOL)arg1;
-- (void)setShouldListenForSuspension:(BOOL)arg1;
-- (void)setShouldTerminateInBackground:(BOOL)arg1;
-- (void)setShowSplashOnSignin:(BOOL)arg1;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (void)setShouldListenForSuspension:(bool)arg1;
+- (void)setShouldTerminateInBackground:(bool)arg1;
+- (void)setShowSplashOnSignin:(bool)arg1;
+- (void)setSkipReloadOnNextViewWillAppear:(bool)arg1;
+- (void)setViewControllers:(id)arg1 animated:(bool)arg2;
 - (void)setupController;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)shouldListenForSuspension;
-- (BOOL)shouldShowFirstRunController;
-- (BOOL)shouldTerminateInBackground;
-- (BOOL)showSplashOnSignin;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)shouldListenForSuspension;
+- (bool)shouldShowFirstRunController;
+- (bool)shouldTerminateInBackground;
+- (bool)showSplashOnSignin;
+- (bool)skipReloadOnNextViewWillAppear;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

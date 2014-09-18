@@ -5,17 +5,17 @@
 @class VKModelObject;
 
 @interface VKModelObject_DrawPass : NSObject {
-    unsigned int _pass;
+    unsigned char _pass;
     VKModelObject *_submodel;
 }
 
-@property unsigned int pass;
+@property unsigned char pass;
 @property(retain) VKModelObject * submodel;
 
 - (void)dealloc;
 - (id)description;
-- (unsigned int)pass;
-- (void)setPass:(unsigned int)arg1;
+- (unsigned char)pass;
+- (void)setPass:(unsigned char)arg1;
 - (void)setSubmodel:(id)arg1;
 - (id)submodel;
 

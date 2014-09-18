@@ -7,17 +7,19 @@
 
 + (id)sharedInstance;
 
-- (BOOL)isHiDPI;
-- (BOOL)isInternalInstall;
-- (BOOL)isWifiEnabled;
-- (BOOL)openURL:(id)arg1;
-- (BOOL)overrideBlurStyle;
-- (float)screenScale;
-- (struct CGSize { float x1; float x2; })screenSize;
-- (BOOL)shouldRateLimitSearchCompletions;
-- (BOOL)supports3DImagery;
-- (BOOL)supports3DMaps;
-- (BOOL)supportsPitchAPI;
+- (bool)isDevicePluggedIn;
+- (bool)isHiDPI;
+- (bool)isInternalInstall;
+- (bool)isWifiEnabled;
+- (bool)openURL:(id)arg1 bundleIdentifier:(id)arg2;
+- (bool)openURL:(id)arg1;
+- (bool)overrideBlurStyle;
+- (double)screenScale;
+- (struct CGSize { double x1; double x2; })screenSize;
+- (bool)shouldRateLimitSearchCompletions;
+- (bool)supports3DImagery;
+- (bool)supports3DMaps;
+- (bool)supportsPitchAPI;
 - (int)userInterfaceIdiom;
 
 @end

@@ -16,12 +16,11 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)inputBias;
 - (id)inputImage;
 - (id)inputWeights;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputBias:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputWeights:(id)arg1;

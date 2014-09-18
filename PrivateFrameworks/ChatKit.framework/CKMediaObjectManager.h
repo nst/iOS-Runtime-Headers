@@ -27,12 +27,10 @@
 - (void)dealloc;
 - (id)dynTypes;
 - (id)fileManager;
-- (id)imageDataWithData:(id)arg1;
 - (id)init;
 - (id)mediaObjectWithData:(id)arg1 UTIType:(id)arg2 filename:(id)arg3 transcoderUserInfo:(id)arg4;
 - (id)mediaObjectWithFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
-- (id)mediaObjectWithPasteboard:(id)arg1 itemAtIndex:(unsigned int)arg2;
-- (id)mediaObjectWithTransferGUID:(id)arg1 message:(id)arg2;
+- (id)mediaObjectWithTransferGUID:(id)arg1 imMessage:(id)arg2;
 - (void)setClasses:(id)arg1;
 - (void)setDynTypes:(id)arg1;
 - (void)setTransfers:(id)arg1;
@@ -40,7 +38,7 @@
 - (Class)transferClass;
 - (void)transferRemoved:(id)arg1;
 - (id)transferWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2;
-- (id)transferWithTransferGUID:(id)arg1 message:(id)arg2;
+- (id)transferWithTransferGUID:(id)arg1 imMessage:(id)arg2;
 - (id)transfers;
 
 @end

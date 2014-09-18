@@ -2,29 +2,62 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UITableViewCell;
+@class EKParticipant, EKRequestAvailabilityOperation, EKUILocationEditItemCell, NSArray, NSString, UITableViewCell, UIView;
 
-@interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <UITextFieldDelegate> {
-    unsigned int _showsLocation : 1;
-    UITableViewCell *_locationCell;
-    BOOL _locationModified;
+@interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <UITextFieldDelegate, EKEditItemViewControllerDelegate, EKCalendarItemInlineEditItem> {
+    EKRequestAvailabilityOperation *_availabilityRequest;
+    NSArray *_availabilitySpansForLocation;
+    UIView *_clearButtonView;
+    EKUILocationEditItemCell *_conferenceLocationCell;
+    EKParticipant *_conferenceRoom;
+    long long _conferenceRoomAvailabilityType;
+    UITableViewCell *_mapCell;
+    long long _mostRecentStringLengthDelta;
+    UITableViewCell *_nonConferenceLocationCell;
     UITableViewCell *_titleCell;
+    bool_showsLocation;
+    bool_sourceSupportsAvailabilityRequests;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void).cxx_destruct;
-- (id)_makeCell:(unsigned int)arg1;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2 forWidth:(float)arg3;
+- (void)_clearButtonTapped;
+- (id)_clearButtonView;
+- (void)_contentSizeCategoryChanged:(id)arg1;
+- (id)_makeCell:(unsigned long long)arg1;
+- (void)_refreshConferenceRoomCell;
+- (void)_setNewStructuredLocation:(id)arg1;
+- (bool)_showConferenceLocationCell;
+- (bool)_showsMap;
+- (void)_updateAvailabilityInformation;
+- (void)_updateLocationWithConferenceRoom:(id)arg1;
+- (void)_updateLocationWithStructuredLocation:(id)arg1;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (void)dealloc;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerCommit:(id)arg1;
+- (bool)forceRefreshStartAndEndDatesOnCommit;
 - (id)init;
-- (id)initWithLocation:(BOOL)arg1;
-- (BOOL)isInline;
-- (unsigned int)numberOfSubitemsInSubsection:(unsigned int)arg1;
+- (id)initWithLocation:(bool)arg1;
+- (bool)isInline;
+- (bool)isSaveable;
+- (bool)isSubitemAtIndexSaveable:(unsigned long long)arg1;
+- (unsigned long long)numberOfSubitems;
+- (void)refreshFromCalendarItemAndStore;
 - (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (bool)saveAndDismissWithForce:(bool)arg1;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1;
+- (void)textFieldDidChange:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldClear:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (bool)usesDetailViewControllerForSubitem:(unsigned long long)arg1;
 
 @end

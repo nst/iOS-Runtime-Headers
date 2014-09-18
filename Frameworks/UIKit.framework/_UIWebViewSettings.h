@@ -5,39 +5,39 @@
 @class NSString;
 
 @interface _UIWebViewSettings : NSObject <NSCopying> {
-    BOOL _allowsInlineMediaPlayback;
     NSString *_customUserAgent;
-    unsigned int _dataDetectorTypes;
-    BOOL _mediaPlaybackAllowsAirPlay;
-    BOOL _mediaPlaybackRequiresUserAction;
-    BOOL _suppressesIncrementalRendering;
+    unsigned long long _dataDetectorTypes;
+    bool_allowsInlineMediaPlayback;
+    bool_mediaPlaybackAllowsAirPlay;
+    bool_mediaPlaybackRequiresUserAction;
+    bool_suppressesIncrementalRendering;
 }
 
-@property BOOL allowsInlineMediaPlayback;
+@property bool allowsInlineMediaPlayback;
 @property(copy) NSString * customUserAgent;
-@property unsigned int dataDetectorTypes;
-@property BOOL mediaPlaybackAllowsAirPlay;
-@property BOOL mediaPlaybackRequiresUserAction;
-@property BOOL suppressesIncrementalRendering;
+@property unsigned long long dataDetectorTypes;
+@property bool mediaPlaybackAllowsAirPlay;
+@property bool mediaPlaybackRequiresUserAction;
+@property bool suppressesIncrementalRendering;
 
 + (id)defaultSettings;
 
 - (id)_encodeAsDictionary;
 - (id)_initWithDictionary:(id)arg1;
-- (BOOL)allowsInlineMediaPlayback;
+- (bool)allowsInlineMediaPlayback;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customUserAgent;
-- (unsigned int)dataDetectorTypes;
+- (unsigned long long)dataDetectorTypes;
 - (void)dealloc;
 - (id)init;
-- (BOOL)mediaPlaybackAllowsAirPlay;
-- (BOOL)mediaPlaybackRequiresUserAction;
-- (void)setAllowsInlineMediaPlayback:(BOOL)arg1;
+- (bool)mediaPlaybackAllowsAirPlay;
+- (bool)mediaPlaybackRequiresUserAction;
+- (void)setAllowsInlineMediaPlayback:(bool)arg1;
 - (void)setCustomUserAgent:(id)arg1;
-- (void)setDataDetectorTypes:(unsigned int)arg1;
-- (void)setMediaPlaybackAllowsAirPlay:(BOOL)arg1;
-- (void)setMediaPlaybackRequiresUserAction:(BOOL)arg1;
-- (void)setSuppressesIncrementalRendering:(BOOL)arg1;
-- (BOOL)suppressesIncrementalRendering;
+- (void)setDataDetectorTypes:(unsigned long long)arg1;
+- (void)setMediaPlaybackAllowsAirPlay:(bool)arg1;
+- (void)setMediaPlaybackRequiresUserAction:(bool)arg1;
+- (void)setSuppressesIncrementalRendering:(bool)arg1;
+- (bool)suppressesIncrementalRendering;
 
 @end

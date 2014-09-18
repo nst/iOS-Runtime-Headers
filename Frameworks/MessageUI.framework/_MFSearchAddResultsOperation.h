@@ -7,10 +7,10 @@
 @interface _MFSearchAddResultsOperation : NSOperation {
     <_MFSearchResultsConsumer> *_consumer;
     NSArray *_results;
-    int _type;
+    unsigned long long _type;
 }
 
-+ (id)operationWithResults:(id)arg1 ofType:(int)arg2 consumer:(id)arg3;
++ (id)operationWithResults:(id)arg1 ofType:(unsigned long long)arg2 consumer:(id)arg3;
 
 - (void)dealloc;
 - (void)main;

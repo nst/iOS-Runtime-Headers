@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUIProductPageItem;
+@class NSString, SKUIClientContext, SKUIProductPageItem;
 
 @interface SKUIGiftActivity : UIActivity <SKUIGiftViewControllerDelegate> {
     SKUIClientContext *_clientContext;
     SKUIProductPageItem *_item;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_beforeActivity;
@@ -15,8 +20,8 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
-- (void)giftViewController:(id)arg1 didFinishWithResult:(BOOL)arg2;
+- (bool)canPerformWithActivityItems:(id)arg1;
+- (void)giftViewController:(id)arg1 didFinishWithResult:(bool)arg2;
 - (id)initWithItem:(id)arg1 clientContext:(id)arg2;
 
 @end

@@ -5,7 +5,7 @@
 @interface SBReadonlyTableViewCell : PTSRowTableViewCell {
 }
 
-+ (int)cellStyleForRow:(id)arg1;
++ (long long)cellStyleForRow:(id)arg1;
 
 - (void)updateDisplayedValue;
 

@@ -8,12 +8,16 @@
 }
 
 @property(copy) NSString * cname;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * host;
 @property(copy) NSNumber * mptcp;
-@property int priority;
+@property long long priority;
 @property(copy) NSString * resolver;
 @property(copy) NSString * resolverProtocol;
 @property(copy) NSString * routeId;
+@property(readonly) Class superclass;
 @property(copy) NSNumber * timeout;
 @property(copy) NSString * type;
 
@@ -25,14 +29,14 @@
 - (id)groupIdentifier;
 - (id)host;
 - (id)mptcp;
-- (int)priority;
+- (long long)priority;
 - (id)resolver;
 - (id)resolverProtocol;
 - (id)routeId;
 - (void)setCname:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setMptcp:(id)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setPriority:(long long)arg1;
 - (void)setResolver:(id)arg1;
 - (void)setResolverProtocol:(id)arg1;
 - (void)setRouteId:(id)arg1;

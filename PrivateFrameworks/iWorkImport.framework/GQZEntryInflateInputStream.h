@@ -7,38 +7,43 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <GQZArchiveInputStream>;
+@class <GQZArchiveInputStream>, NSString;
 
 @interface GQZEntryInflateInputStream : NSObject <GQZEntryInputStream> {
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
-        unsigned int total_in; 
+        unsigned long long total_in; 
         char *next_out; 
         unsigned int avail_out; 
-        unsigned int total_out; 
+        unsigned long long total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
         int data_type; 
-        unsigned int adler; 
-        unsigned int reserved; 
-    unsigned long mCalculatedCrc;
-    unsigned long mCheckCrc;
+        unsigned long long adler; 
+        unsigned long long reserved; 
+    unsigned long long mCalculatedCrc;
+    unsigned long long mCheckCrc;
     long long mEnd;
     <GQZArchiveInputStream> *mInput;
     long long mOffset;
     char *mOutBuffer;
-    unsigned long mOutBufferSize;
+    unsigned long long mOutBufferSize;
     } mStream;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (id).cxx_construct;
 - (void)dealloc;
-- (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 input:(id)arg5;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)readToOwnBuffer:(const char **)arg1 size:(unsigned int*)arg2;
+- (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long long)arg4 input:(id)arg5;
+- (unsigned long long)readToBuffer:(char *)arg1 size:(unsigned long long)arg2;
+- (void)readToOwnBuffer:(const char **)arg1 size:(unsigned long long*)arg2;
 
 @end

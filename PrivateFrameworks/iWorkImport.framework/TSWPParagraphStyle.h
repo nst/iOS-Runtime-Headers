@@ -9,7 +9,7 @@
 
 @class NSString;
 
-@interface TSWPParagraphStyle : TSSStyle <TSSPreset> {
+@interface TSWPParagraphStyle : TSSStyle <TSSPreset, TSDMixing> {
     void *_coreTextParagraphStyle;
     struct __CFDictionary { } *_scalePercentStyleCaches;
     struct __CFDictionary { } *_styleCache;
@@ -30,35 +30,36 @@
 + (id)paragraphProperties;
 + (id)paragraphPropertiesAllowingNSNull;
 + (id)presetStyleDescriptor;
-+ (id)presetStyleDescriptorForOrdinal:(unsigned int)arg1;
++ (id)presetStyleDescriptorForOrdinal:(unsigned long long)arg1;
 + (id)properties;
 + (id)propertiesAllowingNSNull;
 + (id)styleSummaryForPropertyMap:(id)arg1;
 
 - (const struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CharacterStylePropertiesArchive {} *x4; struct ParagraphStylePropertiesArchive {} *x5; unsigned int x6; int x7; unsigned int x8[1]; }*)paragraphStyleArchiveFromUnarchiver:(id)arg1;
-- (float)ascent;
+- (double)ascent;
 - (void)clearStyleCaches;
-- (id)contentTag;
 - (void)dealloc;
-- (struct __CTFont { }*)findCachedFontForCharacterStyle:(id)arg1 scalePercent:(unsigned int)arg2;
+- (struct __CTFont { }*)findCachedFontForCharacterStyle:(id)arg1 scalePercent:(unsigned long long)arg2;
 - (id)followingParagraphStyle;
 - (id)fullPropertyMap;
-- (struct __CFDictionary { }*)getTypesetterAttributes:(id)arg1 scalePercent:(unsigned int)arg2 isRightToLeft:(BOOL)arg3;
+- (struct __CFDictionary { }*)getTypesetterAttributes:(id)arg1 scalePercent:(unsigned long long)arg2 isRightToLeft:(bool)arg3;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initialListStyle;
 - (void)loadFromArchive:(const struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CharacterStylePropertiesArchive {} *x4; struct ParagraphStylePropertiesArchive {} *x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
-- (void)localizeForBidi:(BOOL)arg1;
+- (void)localizeForBidi:(bool)arg1;
 - (void)localizeForRightToLeft;
 - (SEL)mapThemePropertyMapSelector;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (BOOL)p_coreTextWritingDirectionFromWPWritingDirection:(int)arg1;
 - (struct __CTParagraphStyle { }*)p_createCoreTextParagraphStyleWithCharacterStyle:(id)arg1 writingDirection:(int)arg2;
-- (struct __CFDictionary { }*)p_newCoreTextCharacterStyle:(id)arg1 allowLigatures:(BOOL)arg2 scalePercent:(unsigned int)arg3;
+- (struct __CFDictionary { }*)p_newCoreTextCharacterStyle:(id)arg1 allowLigatures:(bool)arg2 scalePercent:(unsigned long long)arg3;
 - (id)presetKind;
 - (void)saveToArchive:(struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct StyleArchive {} *x3; struct CharacterStylePropertiesArchive {} *x4; struct ParagraphStylePropertiesArchive {} *x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setInitialListStyle:(id)arg1;
 - (void)setOverridePropertyMap:(id)arg1;
 - (id)styleSummary;
-- (BOOL)transformsFontSizes;
+- (bool)transformsFontSizes;
 
 @end

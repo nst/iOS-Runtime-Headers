@@ -25,6 +25,7 @@
 - (id)getString:(id)arg1;
 - (bool)hasSavedData;
 - (id)init;
+- (void)quickSaveAppStatistics:(id)arg1 forKey:(id)arg2;
 - (void)quickSaveBlackList:(id)arg1 forKey:(id)arg2;
 - (void)quickSaveDelayTime:(id)arg1 forKey:(id)arg2;
 - (void)quickSaveInstallApps:(id)arg1 forKey:(id)arg2;

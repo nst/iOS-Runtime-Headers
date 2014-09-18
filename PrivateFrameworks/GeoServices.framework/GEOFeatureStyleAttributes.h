@@ -2,30 +2,41 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
+@class GEOFeatureStyleAttributes;
+
 @interface GEOFeatureStyleAttributes : NSObject <NSCopying> {
-    struct { 
-        unsigned int key; 
-        int value; 
-    } v[16];
+    GEOFeatureStyleAttributes *_sharedAttributes;
+    unsigned char countAttrs;
+    unsigned char countExtAttrs;
+    struct { unsigned int x1; unsigned long long x2; } *extAttrs;
+    BOOL featureType;
+    struct { unsigned int x1; int x2; } *v;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (int)drivingSide;
-- (BOOL)hasDrivingSide;
-- (unsigned int)hash;
+- (BOOL)featureType;
+- (bool)hasDrivingSide;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithAttributes:(unsigned int)arg1;
-- (BOOL)isDrivable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFreeway;
-- (BOOL)isRailway;
-- (BOOL)isRamp;
-- (BOOL)isTunnel;
-- (BOOL)isWalkable;
+- (id)initWithPlaceDataStyleAttributes:(id)arg1;
+- (id)initWithSharedStyleAttributes:(id)arg1 extAttributes:(struct { unsigned int x1; unsigned long long x2; }*)arg2 extAttributeCount:(unsigned char)arg3;
+- (id)initWithStyleAttributes:(id)arg1;
+- (bool)isDrivable;
+- (bool)isEqual:(id)arg1;
+- (bool)isFreeway;
+- (bool)isRailway;
+- (bool)isRamp;
+- (bool)isTunnel;
+- (bool)isWalkable;
 - (int)rampDirection;
 - (int)rampType;
-- (BOOL)shouldSuppress3DBuildingStrokes;
+- (void)replaceAttributes:(struct { unsigned int x1; int x2; }*)arg1 count:(unsigned int)arg2;
+- (void)setExtAttributes:(struct { unsigned int x1; unsigned long long x2; }*)arg1 count:(unsigned int)arg2;
+- (bool)shouldSuppress3DBuildingStrokes;
 - (void)sort;
 
 @end

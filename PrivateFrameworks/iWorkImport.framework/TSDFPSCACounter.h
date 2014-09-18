@@ -5,12 +5,19 @@
 @class NSTimer;
 
 @interface TSDFPSCACounter : TSDFPSCounter {
+    bool_shouldRunTimer;
     unsigned int mCAFrameCount;
+    unsigned long long mMaxFrameDelta;
     NSTimer *mTimer;
 }
 
+@property bool shouldRunTimer;
+
+- (id)init;
 - (void)p_updateFrameCount;
 - (void)reset;
+- (void)setShouldRunTimer:(bool)arg1;
+- (bool)shouldRunTimer;
 - (void)startLoggingFPS;
 - (void)stopLoggingFPS;
 

@@ -7,4 +7,6 @@
 
 + (id)customAttributes;
 
+- (void)setDefaults;
+
 @end

@@ -6,28 +6,36 @@
    See Warning(s) below.
  */
 
-@class AXThreadTimerTask, NSThread;
+@class AXThreadTimerTask, NSString, NSThread;
 
 @interface AXThreadTimer : NSObject <AXTimer> {
     id _cancelBlock;
     AXThreadTimerTask *_task;
     NSThread *_thread;
+    bool_automaticallyCancelPendingBlockUponSchedulingNewBlock;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property(getter=isPending,readonly) BOOL pending;
+@property(getter=isActive,readonly) bool active;
+@property bool automaticallyCancelPendingBlockUponSchedulingNewBlock;
+@property(getter=isCancelled,readonly) bool cancelled;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(getter=isPending,readonly) bool pending;
+@property(readonly) Class superclass;
 @property(retain) AXThreadTimerTask * task;
 
 - (void)_runAfterDelay:(id)arg1;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
 - (void)afterDelay:(double)arg1 processBlock:(id)arg2;
+- (bool)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithThread:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isCancelled;
-- (BOOL)isPending;
+- (bool)isActive;
+- (bool)isCancelled;
+- (bool)isPending;
+- (void)setAutomaticallyCancelPendingBlockUponSchedulingNewBlock:(bool)arg1;
 - (void)setTask:(id)arg1;
 - (id)task;
 

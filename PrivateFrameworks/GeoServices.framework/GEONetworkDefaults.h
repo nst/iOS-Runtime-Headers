@@ -7,9 +7,9 @@
 @interface GEONetworkDefaults : NSObject {
     NSString *_cacheFilePath;
     NSMutableArray *_completionHandlers;
-    BOOL _isRegistering;
     NSDictionary *_networkDefaults;
     NSLock *_networkDefaultsLock;
+    bool_isRegistering;
 }
 
 + (id)sharedNetworkDefaults;
@@ -17,7 +17,7 @@
 - (void)_registrationComplete;
 - (void)dealloc;
 - (id)init;
-- (BOOL)needsUpdate;
+- (bool)needsUpdate;
 - (void)refreshNetworkDefaults;
 - (void)registerNetworkDefaults:(id)arg1;
 - (id)valueForKey:(id)arg1;

@@ -7,8 +7,8 @@
 @interface CalDAVMergeUploadTaskGroup : CoreDAVTaskGroup {
     <CalDAVCalendar> *_calendar;
     <CalDAVPrincipal> *_principal;
-    BOOL _shouldTrySyncTokenForBulkUpload;
     CalDAVBulkUploadTaskGroup *_uploadTaskGroup;
+    bool_shouldTrySyncTokenForBulkUpload;
 }
 
 - (void)_performBulkUpload;

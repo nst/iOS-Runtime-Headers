@@ -2,94 +2,60 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableDictionary, NSString;
+@class <NEProfilePayloadBaseDelegate>, NSMutableDictionary, NSString;
 
 @interface MCVPNPayloadBase : MCPayload {
-    NSMutableDictionary *_atom;
-    NSString *_certificateUUID;
-    NSString *_password;
+    NSMutableDictionary *_configurationDictionary;
+    <NEProfilePayloadBaseDelegate> *_nePayloadBase;
     NSString *_passwordKey;
-    BOOL _passwordRequired;
-    NSString *_pin;
     NSString *_pinKey;
-    BOOL _pinRequired;
-    NSString *_proxyPassword;
     NSString *_proxyPasswordKey;
-    BOOL _proxyPasswordRequired;
-    NSString *_proxyUserName;
     NSString *_proxyUserNameKey;
-    BOOL _proxyUserNameRequired;
-    NSString *_sharedSecret;
+    NSString *_serviceName;
     NSString *_sharedSecretKey;
-    BOOL _sharedSecretRequired;
-    NSString *_userName;
     NSString *_userNameKey;
-    BOOL _userNameRequired;
+    NSString *_vpnType;
 }
 
-@property(retain) NSMutableDictionary * atom;
-@property(retain) NSString * certificateUUID;
-@property(copy) NSString * password;
+@property(retain) NSMutableDictionary * configurationDictionary;
+@property(retain) <NEProfilePayloadBaseDelegate> * nePayloadBase;
 @property(retain) NSString * passwordKey;
-@property BOOL passwordRequired;
-@property(copy) NSString * pin;
 @property(retain) NSString * pinKey;
-@property BOOL pinRequired;
-@property(copy) NSString * proxyPassword;
 @property(retain) NSString * proxyPasswordKey;
-@property BOOL proxyPasswordRequired;
-@property(copy) NSString * proxyUserName;
 @property(retain) NSString * proxyUserNameKey;
-@property BOOL proxyUserNameRequired;
-@property(copy) NSString * sharedSecret;
+@property(copy) NSString * serviceName;
 @property(retain) NSString * sharedSecretKey;
-@property BOOL sharedSecretRequired;
-@property(copy) NSString * userName;
 @property(retain) NSString * userNameKey;
-@property BOOL userNameRequired;
+@property(copy) NSString * vpnType;
+
++ (id)NEAlwaysOnVPNPayloadBaseDelegateWithConfigurationDict:(id)arg1;
++ (id)NEVPNPayloadBaseDelegateWithConfigurationDict:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_validateVPNPayload:(id)arg1;
-- (id)atom;
-- (id)certificateUUID;
+- (id)configurationDictionary;
+- (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (id)password;
+- (id)installationWarnings;
+- (id)nePayloadBase;
 - (id)passwordKey;
-- (BOOL)passwordRequired;
-- (id)pin;
+- (id)payloadDescriptionKeyValueSections;
 - (id)pinKey;
-- (BOOL)pinRequired;
-- (id)proxyPassword;
 - (id)proxyPasswordKey;
-- (BOOL)proxyPasswordRequired;
-- (id)proxyUserName;
 - (id)proxyUserNameKey;
-- (BOOL)proxyUserNameRequired;
-- (void)setAtom:(id)arg1;
-- (void)setCertificateUUID:(id)arg1;
-- (void)setPassword:(id)arg1;
+- (id)serviceName;
+- (void)setConfigurationDictionary:(id)arg1;
+- (void)setNePayloadBase:(id)arg1;
 - (void)setPasswordKey:(id)arg1;
-- (void)setPasswordRequired:(BOOL)arg1;
-- (void)setPin:(id)arg1;
 - (void)setPinKey:(id)arg1;
-- (void)setPinRequired:(BOOL)arg1;
-- (void)setProxyPassword:(id)arg1;
 - (void)setProxyPasswordKey:(id)arg1;
-- (void)setProxyPasswordRequired:(BOOL)arg1;
-- (void)setProxyUserName:(id)arg1;
 - (void)setProxyUserNameKey:(id)arg1;
-- (void)setProxyUserNameRequired:(BOOL)arg1;
-- (void)setSharedSecret:(id)arg1;
+- (void)setServiceName:(id)arg1;
 - (void)setSharedSecretKey:(id)arg1;
-- (void)setSharedSecretRequired:(BOOL)arg1;
-- (void)setUserName:(id)arg1;
 - (void)setUserNameKey:(id)arg1;
-- (void)setUserNameRequired:(BOOL)arg1;
-- (id)sharedSecret;
+- (void)setVpnType:(id)arg1;
 - (id)sharedSecretKey;
-- (BOOL)sharedSecretRequired;
-- (id)userName;
+- (id)stubDictionary;
 - (id)userNameKey;
-- (BOOL)userNameRequired;
+- (id)vpnType;
 
 @end

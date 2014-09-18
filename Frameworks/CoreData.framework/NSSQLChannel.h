@@ -21,11 +21,11 @@
 - (id)currentContext;
 - (void)dealloc;
 - (void)endFetch;
-- (void)endFetchAndRecycleStatement:(BOOL)arg1;
+- (void)endFetchAndRecycleStatement:(bool)arg1;
 - (void)finalize;
 - (id)initWithSQLCore:(id)arg1;
-- (BOOL)isFetchInProgress;
-- (BOOL)selectCountWithFetchRequest:(id)arg1;
+- (bool)isFetchInProgress;
+- (bool)selectCountWithFetchRequest:(id)arg1;
 - (void)selectRowsWithCachedStatement:(id)arg1;
 - (void)selectRowsWithFetchRequest:(id)arg1;
 - (void)selectRowsWithStatement:(id)arg1;

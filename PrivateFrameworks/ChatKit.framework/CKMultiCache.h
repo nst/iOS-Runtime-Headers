@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMultiCache : CKMultiDict {
-    unsigned int _limit;
+@interface CKMultiCache : IMMultiDict {
+    unsigned long long _limit;
 }
 
-@property unsigned int limit;
+@property unsigned long long limit;
 
 - (void)dealloc;
 - (id)init;
-- (unsigned int)limit;
+- (unsigned long long)limit;
 - (void)pushObject:(id)arg1 forKey:(id)arg2;
-- (void)setLimit:(unsigned int)arg1;
+- (void)setLimit:(unsigned long long)arg1;
 
 @end

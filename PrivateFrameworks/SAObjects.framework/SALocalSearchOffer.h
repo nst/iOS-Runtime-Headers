@@ -7,8 +7,12 @@
 @interface SALocalSearchOffer : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * identifier;
 @property(retain) SAUIAppPunchOut * offerPunchOut;
+@property(readonly) Class superclass;
 @property(copy) NSString * title;
 
 + (id)offer;

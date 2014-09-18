@@ -21,11 +21,11 @@
 @property(readonly) SSNetworkConstraints * networkConstraints;
 @property(readonly) NSString * offerIdentifier;
 @property(readonly) SSItemMedia * offerMedia;
-@property(getter=isOneTapOffer,readonly) BOOL oneTapOffer;
-@property(getter=isPreorder,readonly) BOOL preorder;
+@property(getter=isOneTapOffer,readonly) bool oneTapOffer;
+@property(getter=isPreorder,readonly) bool preorder;
 @property(readonly) NSString * priceDisplay;
 @property(readonly) id requiredSoftwareCapabilities;
-@property(readonly) BOOL shouldShowPlusIcon;
+@property(readonly) bool shouldShowPlusIcon;
 @property(readonly) SSDialog * successDialog;
 @property(readonly) NSArray * supportedDevices;
 
@@ -48,8 +48,8 @@
 - (long long)estimatedDiskSpaceNeeded;
 - (id)init;
 - (id)initWithOfferIdentifier:(id)arg1 dictionary:(id)arg2;
-- (BOOL)isOneTapOffer;
-- (BOOL)isPreorder;
+- (bool)isOneTapOffer;
+- (bool)isPreorder;
 - (id)networkConstraints;
 - (id)offerIdentifier;
 - (id)offerMedia;
@@ -58,9 +58,9 @@
 - (id)requiredSoftwareCapabilities;
 - (void)setActionDisplayName:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
-- (void)setOneTapOffer:(BOOL)arg1;
+- (void)setOneTapOffer:(bool)arg1;
 - (void)setPriceDisplay:(id)arg1;
-- (BOOL)shouldShowPlusIcon;
+- (bool)shouldShowPlusIcon;
 - (id)successDialog;
 - (id)supportedDevices;
 - (id)valueForProperty:(id)arg1;

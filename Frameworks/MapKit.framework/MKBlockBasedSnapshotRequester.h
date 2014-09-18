@@ -6,11 +6,17 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface MKBlockBasedSnapshotRequester : NSObject <MKMapSnapshotCreatorRequester> {
     id handler;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) id handler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)snapshotRequesterWitHandler:(id)arg1;
 

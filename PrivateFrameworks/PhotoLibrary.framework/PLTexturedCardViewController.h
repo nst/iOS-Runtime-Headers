@@ -12,17 +12,17 @@
     UIView *_wrapperView;
 }
 
-- (void)_updateNavigationBarToOrientation:(int)arg1;
-- (void)_updateWrapperViewToOrientation:(int)arg1;
+- (void)_updateNavigationBarToOrientation:(long long)arg1;
+- (void)_updateWrapperViewToOrientation:(long long)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)popViewControllerAnimated:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })preferredOffsetInParentViewController;
-- (struct CGSize { float x1; float x2; })preferredSizeInParentViewController;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)popViewControllerAnimated:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })preferredOffsetInParentViewController;
+- (struct CGSize { double x1; double x2; })preferredSizeInParentViewController;
+- (void)pushViewController:(id)arg1 animated:(bool)arg2;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

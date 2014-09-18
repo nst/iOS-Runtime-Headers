@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface PKPhysicsFieldLinearGravity : PKPhysicsField {
+     /* Encoded args for previous method: 16@0:8 */
+     /* Encoded args for previous method: v32@0:816 */
 }
 
-@property struct CGVector { float x1; float x2; } gravity;
++ (id)field;
 
-+ (id)fieldWithLinearGravity:(struct CGVector { float x1; float x2; })arg1;
-
-- (struct CGVector { float x1; float x2; })gravity;
-- (id)initWithLinearGravity:(struct CGVector { float x1; float x2; })arg1;
-- (void)setGravity:(struct CGVector { float x1; float x2; })arg1;
+- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)direction;
+- (id)init;
+- (void)setDirection:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
 
 @end

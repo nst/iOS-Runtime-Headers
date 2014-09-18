@@ -4,29 +4,30 @@
 
 @interface SBFAnimationCurveSettings : _UISettings {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     } _controlPoint1;
     } _controlPoint2;
-    unsigned int _curve;
+    unsigned long long _curve;
 }
 
-@property struct CGPoint { float x1; float x2; } controlPoint1;
-@property struct CGPoint { float x1; float x2; } controlPoint2;
-@property unsigned int curve;
+@property struct CGPoint { double x1; double x2; } controlPoint1;
+@property struct CGPoint { double x1; double x2; } controlPoint2;
+@property unsigned long long curve;
 
 + (id)_rowsRelativeToKeyPath:(id)arg1;
 + (id)settingsControllerModule;
 
-- (struct CGPoint { float x1; float x2; })controlPoint1;
-- (struct CGPoint { float x1; float x2; })controlPoint2;
-- (unsigned int)curve;
-- (void)setControlPoint1:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setControlPoint2:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setCurve:(unsigned int)arg1;
+- (void)_invalidate;
+- (struct CGPoint { double x1; double x2; })controlPoint1;
+- (struct CGPoint { double x1; double x2; })controlPoint2;
+- (unsigned long long)curve;
+- (void)setControlPoint1:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setControlPoint2:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCurve:(unsigned long long)arg1;
 - (void)setDefaultValues;
 
 @end

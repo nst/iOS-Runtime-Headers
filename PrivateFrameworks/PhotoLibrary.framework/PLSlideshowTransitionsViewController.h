@@ -14,12 +14,16 @@
 }
 
 @property(retain) NSArray * alternateLocalizations;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * selectedTransition;
+@property(readonly) Class superclass;
 @property(retain) NSArray * transitionKeys;
 
 - (void)_configureTableCells;
 - (id)alternateLocalizations;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (id)initWithTransitions:(id)arg1 alternateTransitionLocalizations:(id)arg2;
 - (void)loadView;
@@ -30,7 +34,7 @@
 - (void)setTransitionKeys:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)transitionKeys;
 - (void)viewDidUnload;
 

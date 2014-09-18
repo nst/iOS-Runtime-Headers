@@ -2,34 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSSPropertyMap;
+@class NSString, TSSPropertyMap;
 
 @interface TSCHConfiguration : NSObject {
-    BOOL mDisableHighQualityRenderingIfNecessary;
-    BOOL mExportsUsingSageKeynoteChartNonStyleDefaultsOverride;
+    boolmDisableHighQualityRenderingIfNecessary;
+    boolmExportsUsingSageKeynoteChartNonStyleDefaultsOverride;
+    boolmShouldForceDiscreteGraphicsFor3D;
+    boolmShowMessageOnSelection;
+    boolmSupports3DFillDataEmbeddingRecovery;
+    boolmSupportsChartDataEditor;
+    boolmSupportsChartRangeEditingMode;
+    boolmSupportsNumberFormatSameAsSource;
+    boolmSupportsTextBackground;
+    boolmSupportsTextWrapping;
+    boolmUse3DFillFor3DChartFallback;
     Class mMultiDataChartOptionsControllerBuildSupportClass;
-    BOOL mShouldForceDiscreteGraphicsFor3D;
-    BOOL mShowMessageOnSelection;
-    BOOL mSupports3DFillDataEmbeddingRecovery;
-    BOOL mSupportsChartDataEditor;
-    BOOL mSupportsChartRangeEditingMode;
-    BOOL mSupportsNumberFormatSameAsSource;
-    BOOL mSupportsTextBackground;
-    BOOL mUse3DFillFor3DChartFallback;
+    NSString *mSaveChartStyleHelpKey;
 }
 
 @property(readonly) TSSPropertyMap * appSpecificPropertyOverrides;
-@property BOOL disableHighQualityRenderingIfNecessary;
-@property BOOL exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
+@property bool disableHighQualityRenderingIfNecessary;
+@property bool exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
 @property Class multiDataChartOptionsControllerBuildSupportClass;
-@property BOOL shouldForceDiscreteGraphicsFor3D;
-@property BOOL showMessageOnSelection;
-@property BOOL supports3DFillDataEmbeddingRecovery;
-@property BOOL supportsChartDataEditor;
-@property BOOL supportsChartRangeEditingMode;
-@property BOOL supportsNumberFormatSameAsSource;
-@property BOOL supportsTextBackground;
-@property BOOL use3DFillFor3DChartFallback;
+@property(copy) NSString * saveChartStyleHelpKey;
+@property bool shouldForceDiscreteGraphicsFor3D;
+@property bool showMessageOnSelection;
+@property bool supports3DFillDataEmbeddingRecovery;
+@property bool supportsChartDataEditor;
+@property bool supportsChartRangeEditingMode;
+@property bool supportsNumberFormatSameAsSource;
+@property bool supportsTextBackground;
+@property bool supportsTextWrapping;
+@property bool use3DFillFor3DChartFallback;
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -39,31 +43,35 @@
 - (id)appSpecificPropertyOverrides;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)disableHighQualityRenderingIfNecessary;
-- (BOOL)exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
+- (bool)disableHighQualityRenderingIfNecessary;
+- (bool)exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
 - (id)init;
 - (Class)multiDataChartOptionsControllerBuildSupportClass;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (void)setDisableHighQualityRenderingIfNecessary:(BOOL)arg1;
-- (void)setExportsUsingSageKeynoteChartNonStyleDefaultsOverride:(BOOL)arg1;
+- (unsigned long long)retainCount;
+- (id)saveChartStyleHelpKey;
+- (void)setDisableHighQualityRenderingIfNecessary:(bool)arg1;
+- (void)setExportsUsingSageKeynoteChartNonStyleDefaultsOverride:(bool)arg1;
 - (void)setMultiDataChartOptionsControllerBuildSupportClass:(Class)arg1;
-- (void)setShouldForceDiscreteGraphicsFor3D:(BOOL)arg1;
-- (void)setShowMessageOnSelection:(BOOL)arg1;
-- (void)setSupports3DFillDataEmbeddingRecovery:(BOOL)arg1;
-- (void)setSupportsChartDataEditor:(BOOL)arg1;
-- (void)setSupportsChartRangeEditingMode:(BOOL)arg1;
-- (void)setSupportsNumberFormatSameAsSource:(BOOL)arg1;
-- (void)setSupportsTextBackground:(BOOL)arg1;
-- (void)setUse3DFillFor3DChartFallback:(BOOL)arg1;
-- (BOOL)shouldForceDiscreteGraphicsFor3D;
-- (BOOL)showMessageOnSelection;
-- (BOOL)supports3DFillDataEmbeddingRecovery;
-- (BOOL)supportsChartDataEditor;
-- (BOOL)supportsChartRangeEditingMode;
-- (BOOL)supportsNumberFormatSameAsSource;
-- (BOOL)supportsTextBackground;
-- (BOOL)use3DFillFor3DChartFallback;
+- (void)setSaveChartStyleHelpKey:(id)arg1;
+- (void)setShouldForceDiscreteGraphicsFor3D:(bool)arg1;
+- (void)setShowMessageOnSelection:(bool)arg1;
+- (void)setSupports3DFillDataEmbeddingRecovery:(bool)arg1;
+- (void)setSupportsChartDataEditor:(bool)arg1;
+- (void)setSupportsChartRangeEditingMode:(bool)arg1;
+- (void)setSupportsNumberFormatSameAsSource:(bool)arg1;
+- (void)setSupportsTextBackground:(bool)arg1;
+- (void)setSupportsTextWrapping:(bool)arg1;
+- (void)setUse3DFillFor3DChartFallback:(bool)arg1;
+- (bool)shouldForceDiscreteGraphicsFor3D;
+- (bool)showMessageOnSelection;
+- (bool)supports3DFillDataEmbeddingRecovery;
+- (bool)supportsChartDataEditor;
+- (bool)supportsChartRangeEditingMode;
+- (bool)supportsNumberFormatSameAsSource;
+- (bool)supportsTextBackground;
+- (bool)supportsTextWrapping;
+- (bool)use3DFillFor3DChartFallback;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface AFAggregator : NSObject {
-    BOOL _hasActiveRequest;
-    BOOL _retryPrefersWWAN;
-    BOOL _sessionIsRetrying;
     double _startTime;
-    unsigned int _type;
+    unsigned long long _type;
+    bool_hasActiveRequest;
+    bool_retryPrefersWWAN;
+    bool_sessionIsRetrying;
 }
 
-@property unsigned int connectionType;
-@property BOOL hasActiveRequest;
+@property unsigned long long connectionType;
+@property bool hasActiveRequest;
 
 + (id)_fullAggDKeyWithPrefix:(id)arg1 error:(id)arg2;
-+ (id)_stringForGatekeeperType:(unsigned int)arg1;
++ (id)_stringForGatekeeperType:(unsigned long long)arg1;
 + (void)logDictationCancelled;
 + (void)logDictationFailedWithError:(id)arg1;
 + (void)logDictationStarted;
@@ -28,22 +28,22 @@
 + (void)logSiriRequestFailedWithError:(id)arg1;
 + (void)logSiriRequestSucceeded;
 + (void)logSiriSpeechRequestStarted;
-+ (void)logStarkGatekeeperAppearedForType:(unsigned int)arg1;
-+ (void)logStarkGatekeeperDismissedManuallyForType:(unsigned int)arg1;
++ (void)logStarkGatekeeperAppearedForType:(unsigned long long)arg1;
++ (void)logStarkGatekeeperDismissedManuallyForType:(unsigned long long)arg1;
 + (void)logTimeToBeepWithDuration:(double)arg1;
 + (void)missedAlertContextForRequest;
 + (void)missedAppContextForRequest;
 
-- (void)beginSessionRetryPreferringWWAN:(BOOL)arg1;
+- (void)beginSessionRetryPreferringWWAN:(bool)arg1;
 - (void)connectionDidDrop;
 - (void)connectionDidFail;
-- (unsigned int)connectionType;
-- (BOOL)hasActiveRequest;
-- (void)recordFailure:(int)arg1 forConnectionType:(unsigned int)arg2;
+- (unsigned long long)connectionType;
+- (bool)hasActiveRequest;
+- (void)recordFailure:(int)arg1 forConnectionType:(unsigned long long)arg2;
 - (void)recordSessionRetrySuccess;
-- (void)recordSuccessForConnectionType:(unsigned int)arg1 isWarm:(BOOL)arg2 forTimeInterval:(double)arg3;
-- (void)setConnectionType:(unsigned int)arg1;
-- (void)setHasActiveRequest:(BOOL)arg1;
+- (void)recordSuccessForConnectionType:(unsigned long long)arg1 isWarm:(bool)arg2 forTimeInterval:(double)arg3;
+- (void)setConnectionType:(unsigned long long)arg1;
+- (void)setHasActiveRequest:(bool)arg1;
 - (void)speechResponseFailure;
 - (void)speechResponseReceived;
 - (void)startWaitingForSpeechResponse;

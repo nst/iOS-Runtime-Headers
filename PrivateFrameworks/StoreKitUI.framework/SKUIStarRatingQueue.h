@@ -14,10 +14,10 @@
 @property UIWindow * window;
 
 - (void).cxx_destruct;
-- (void)_setRating:(int)arg1 forItem:(id)arg2 account:(id)arg3 completionBlock:(id)arg4;
+- (void)_setRating:(long long)arg1 forItem:(id)arg2 account:(id)arg3 completionBlock:(id)arg4;
 - (id)init;
 - (id)initWithClientContext:(id)arg1 reviewConfiguration:(id)arg2;
-- (void)setRating:(int)arg1 forItem:(id)arg2 completionBlock:(id)arg3;
+- (void)setRating:(long long)arg1 forItem:(id)arg2 completionBlock:(id)arg3;
 - (void)setWindow:(id)arg1;
 - (id)window;
 

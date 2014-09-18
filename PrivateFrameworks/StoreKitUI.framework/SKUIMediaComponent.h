@@ -6,54 +6,58 @@
 
 @interface SKUIMediaComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
     NSString *_accessibilityLabel;
-    int _alignment;
+    long long _alignment;
     double _duration;
     SKUILink *_link;
-    int _mediaAppearance;
+    long long _mediaAppearance;
     long long _mediaIdentifier;
-    int _mediaType;
+    long long _mediaType;
     NSString *_mediaURLString;
     SKUIArtworkList *_thumbnailArtworkList;
     NSString *_title;
     float _titleFontSize;
-    int _titleFontWeight;
+    long long _titleFontWeight;
 }
 
 @property(readonly) NSString * accessibilityLabel;
-@property(readonly) int alignment;
+@property(readonly) long long alignment;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) double duration;
+@property(readonly) unsigned long long hash;
 @property(readonly) SKUILink * link;
-@property(readonly) int mediaAppearance;
+@property(readonly) long long mediaAppearance;
 @property(readonly) long long mediaIdentifier;
-@property(readonly) int mediaType;
+@property(readonly) long long mediaType;
 @property(readonly) NSString * mediaURLString;
+@property(readonly) Class superclass;
 @property(readonly) SKUIArtworkList * thumbnailArtworkList;
 @property(readonly) NSString * title;
 @property(readonly) float titleFontSize;
-@property(readonly) int titleFontWeight;
+@property(readonly) long long titleFontWeight;
 
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
-- (int)alignment;
+- (long long)alignment;
 - (id)bestThumbnailArtwork;
-- (id)bestThumbnailForWidth:(float)arg1;
-- (int)componentType;
+- (id)bestThumbnailForWidth:(double)arg1;
+- (long long)componentType;
 - (double)duration;
 - (id)initWithArtwork:(id)arg1;
-- (id)initWithArtworkList:(id)arg1 appearance:(int)arg2;
+- (id)initWithArtworkList:(id)arg1 appearance:(long long)arg2;
 - (id)initWithArtworkList:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
-- (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
+- (id)initWithFeaturedContentContext:(id)arg1 kind:(long long)arg2;
 - (id)link;
-- (int)mediaAppearance;
+- (long long)mediaAppearance;
 - (long long)mediaIdentifier;
-- (int)mediaType;
+- (long long)mediaType;
 - (id)mediaURLString;
 - (id)metricsElementName;
 - (id)thumbnailArtworkList;
 - (id)title;
 - (float)titleFontSize;
-- (int)titleFontWeight;
+- (long long)titleFontWeight;
 - (id)valueForMetricsField:(id)arg1;
 
 @end

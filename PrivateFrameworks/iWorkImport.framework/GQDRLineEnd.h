@@ -7,24 +7,29 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class GQDBezierPath;
+@class GQDBezierPath, NSString;
 
 @interface GQDRLineEnd : NSObject <GQDNameMappable> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
+    boolmIsFilled;
     } mEndPoint;
-    BOOL mIsFilled;
     GQDBezierPath *mPath;
     double mScale;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (struct CGPoint { float x1; float x2; })endPoint;
-- (BOOL)isFilled;
+- (struct CGPoint { double x1; double x2; })endPoint;
+- (bool)isFilled;
 - (struct CGPath { }*)path;
 - (char *)pathStr;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;

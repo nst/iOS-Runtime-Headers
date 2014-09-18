@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSData, NSMutableArray, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter, QLScrubView, UIView, UIWebView;
+@class NSData, NSMutableArray, NSString, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter, QLScrubView, UIView, UIWebView;
 
 @interface QLWebViewDisplayBundle : QLDisplayBundle <UIWebViewDelegate, UIScrollViewDelegate, QLScrubViewDataSource, UIWebPDFViewHandlerDelegate> {
     unsigned int _isLoadedDuringZoom : 1;
@@ -15,56 +15,61 @@
     unsigned int _isCSVContent : 1;
     unsigned int _loadStarted : 1;
     UIView *_accessoryView;
-    float _defaultZoom;
+    double _defaultZoom;
     QLPDFHanderDelegateForwarder *_forwarder;
     NSMutableArray *_htmlSlideNodes;
-    BOOL _inScroll;
-    int _lastPage;
-    float _navigationBarVerticalOffset;
+    long long _lastPage;
+    double _navigationBarVerticalOffset;
     NSData *_pdfPreviewData;
     QLPreviewConverter *_previewConverter;
     NSURLRequest *_previewRequest;
     QLScrubView *_scrubView;
     UIWebView *_webView;
-    BOOL _webViewReadyForThumbnailing;
+    bool_inScroll;
+    bool_webViewReadyForThumbnailing;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)_copyPreviewConverterForPreviewItem:(id)arg1;
 - (struct CGPDFDocument { }*)_getCGPDFDocumentRef;
-- (id)_getWebView:(BOOL)arg1;
+- (id)_getWebView:(bool)arg1;
 - (void)_hideOverlayDidEnd:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_hideScrubberIfNeeded:(double)arg1;
 - (id)_htmlPageXPath;
 - (id)_htmlSlideNodes;
-- (id)_scrubView:(BOOL)arg1;
+- (id)_scrubView:(bool)arg1;
 - (void)_showScrubberIfNeeded:(double)arg1;
 - (void)_tearDownWebView;
-- (void)_updateContentOffsetAnimated:(BOOL)arg1;
-- (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
+- (void)_updateContentOffsetAnimated:(bool)arg1;
+- (bool)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (int)airPlayMode;
 - (id)alertViewForUIWebPDFViewHandler:(id)arg1;
 - (void)cancelLoad;
-- (unsigned int)currentPageNumber;
+- (unsigned long long)currentPageNumber;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (id)gestureRecognizersForFullScreenDisplay;
 - (void)loadWithHints:(id)arg1;
-- (int)numberOfPagesInScrubView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
-- (int)pageCount;
-- (struct CGSize { float x1; float x2; })pageSizeAtIndex:(int)arg1;
+- (long long)numberOfPagesInScrubView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { double x1; double x2; })arg2;
+- (long long)pageCount;
+- (struct CGSize { double x1; double x2; })pageSizeAtIndex:(long long)arg1;
 - (id)pdfPreviewData;
 - (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;
 - (id)previewConverter;
 - (id)printPageHelper;
-- (void)scrollToPage:(unsigned int)arg1;
+- (void)scrollToPage:(unsigned long long)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned int)arg2;
-- (id)scrubView:(id)arg1 thumbnailOperationForPageAtIndex:(unsigned int)arg2;
-- (void)setNavigationBarVerticalOffset:(float)arg1;
-- (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
+- (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned long long)arg2;
+- (id)scrubView:(id)arg1 thumbnailOperationForPageAtIndex:(unsigned long long)arg2;
+- (void)setNavigationBarVerticalOffset:(double)arg1;
+- (void)setOverlayHidden:(bool)arg1 duration:(double)arg2;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewMode:(int)arg1;
 - (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
@@ -75,9 +80,9 @@
 - (void)userInteractedWithScrubView:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (void)viewWillAppear:(bool)arg1;
+- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

@@ -20,10 +20,10 @@
 - (void)goToNowPlaying;
 - (float)goal;
 - (id)goalType;
-- (BOOL)hasEverStarted;
-- (BOOL)hasPowerSong;
+- (bool)hasEverStarted;
+- (bool)hasPowerSong;
 - (id)init;
-- (int)musicSelection;
+- (long long)musicSelection;
 - (void)pauseMusic;
 - (void)pauseWorkout;
 - (void)playMusic;
@@ -35,7 +35,7 @@
 - (void)selectNextSong;
 - (void)selectPreviousSong;
 - (id)sensorSearchState;
-- (BOOL)shouldControlMusic;
+- (bool)shouldControlMusic;
 - (id)workoutData;
 - (id)workoutState;
 

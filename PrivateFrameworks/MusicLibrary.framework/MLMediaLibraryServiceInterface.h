@@ -6,7 +6,6 @@
 }
 
 + (id)clientInterface;
-+ (id)newServiceConnection;
 + (id)serviceInterface;
 
 @end

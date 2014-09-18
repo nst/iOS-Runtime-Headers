@@ -2,71 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPAVRoute, MPAVRoutingController, MPReportingController, NSDate, NSObject<OS_dispatch_source>, RUPlaybackTimeoutInfoController, RadioStation;
-
-@interface MusicRadioPlaybackCoordinator : NSObject <MPAVRoutingControllerDelegate> {
-    RadioStation *_currentStation;
-    BOOL _deviceIsDocked;
-    BOOL _deviceIsLocked;
-    BOOL _didPresentNotificationForCurrentItem;
-    int _lockStateNotifyToken;
-    BOOL _lockStateNotifyTokenIsValid;
-    void *_mediaRemoteCommandObserver;
-    NSObject<OS_dispatch_source> *_pauseTimeoutTimerSource;
-    MPAVRoute *_pickedRoute;
-    BOOL _playbackIsPaused;
-    RadioStation *_playbackNotificationStation;
-    NSDate *_playbackTimeoutBeginDate;
-    double _playbackTimeoutDuration;
-    RUPlaybackTimeoutInfoController *_playbackTimeoutInfoController;
-    struct __CFUserNotification { } *_playbackTimeoutNotification;
-    BOOL _playbackTimeoutNotificationDidExpire;
-    NSObject<OS_dispatch_source> *_playbackTimeoutNotificationExpirationTimerSource;
-    struct __CFRunLoopSource { } *_playbackTimeoutNotificationRunLoopSource;
-    NSObject<OS_dispatch_source> *_presentPlaybackTimeoutTimerSource;
-    MPReportingController *_reportingController;
-    MPAVRoutingController *_routingController;
-    BOOL _wasUsingBackgroundNetwork;
+@interface MusicRadioPlaybackCoordinator : RURadioPlaybackCoordinator {
 }
-
-@property(retain) RadioStation * currentStation;
-@property(retain) MPReportingController * reportingController;
 
 + (id)sharedCoordinator;
 
-- (void).cxx_destruct;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_cancelPauseTimeoutTimer;
-- (void)_cancelPlaybackTimeoutNotification;
-- (void)_cancelPlaybackTimeoutNotificationExpirationTimer;
-- (void)_cancelPresentPlaybackTimeoutTimer;
-- (void)_dismissExpiredPlaybackTimeoutNotificationForced:(BOOL)arg1;
-- (void)_effectiveVolumeDidChangeNotification:(id)arg1;
-- (void)_fullMuteDidChangeNotification:(id)arg1;
 - (id)_init;
-- (BOOL)_isPauseTimeoutActive;
-- (BOOL)_isRadioRelevantItem:(id)arg1;
-- (void)_itemDurationDidBecomeAvailableNotification:(id)arg1;
-- (void)_itemIsBannedDidChangeNotification:(id)arg1;
-- (void)_itemIsInWishListDidChangeNotification:(id)arg1;
-- (void)_itemIsLikedDidChangeNotification:(id)arg1;
-- (void)_itemWillChangeNotification:(id)arg1;
-- (void)_playbackContentsDidChangeNotification:(id)arg1;
-- (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)_presentPlaybackTimeoutNotificationForCurrentItemIfNeeded;
-- (void)_radioModelDidChangeNotification:(id)arg1;
-- (void)_receivedUserNotificationResponseForUserNotification:(struct __CFUserNotification { }*)arg1 withResponseFlags:(unsigned long)arg2;
-- (void)_resetPlaybackTimeoutInformation;
-- (void)_schedulePlaybackTimeoutNotificationExpirationTimerIfNeeded;
-- (void)_setupPlayerWithRadioPlaybackContext:(id)arg1;
-- (void)_updatePlaybackTimerForDeviceStateChange;
-- (id)currentStation;
-- (void)dealloc;
 - (id)init;
-- (id)reportingController;
-- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
-- (void)setCurrentStation:(id)arg1;
-- (void)setReportingController:(id)arg1;
-- (void)setupPlaybackQueueWithPlaybackContext:(id)arg1 completionHandler:(id)arg2;
+- (id)initWithPlayer:(id)arg1;
 
 @end

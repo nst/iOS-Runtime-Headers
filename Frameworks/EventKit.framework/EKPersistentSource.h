@@ -11,13 +11,17 @@
 @property NSString * UUID;
 @property(readonly) EKSourceConstraints * constraints;
 @property(copy) NSNumber * defaultAlarmOffset;
-@property(getter=isEnabled) BOOL enabled;
+@property(getter=isEnabled) bool enabled;
 @property(copy) NSString * externalID;
 @property(copy) NSString * externalModificationTag;
-@property BOOL onlyCreatorCanModify;
+@property bool onlyCreatorCanModify;
+@property long long preferredEventPrivateValue;
 @property int sourceType;
+@property long long strictestEventPrivateValue;
 @property(copy) NSString * title;
 
++ (long long)_calEventPrivacyLevelToEKPrivacyLevel:(int)arg1;
++ (int)_ekPrivacyLevelToCalEventPrivacyLevel:(long long)arg1;
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
@@ -30,19 +34,23 @@
 - (id)externalID;
 - (id)externalModificationTag;
 - (id)init;
-- (BOOL)isEnabled;
-- (BOOL)onlyCreatorCanModify;
-- (BOOL)refresh;
+- (bool)isEnabled;
+- (bool)onlyCreatorCanModify;
+- (long long)preferredEventPrivateValue;
+- (bool)refresh;
 - (void)reset;
 - (void)setDefaultAlarmOffset:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setExternalModificationTag:(id)arg1;
-- (void)setOnlyCreatorCanModify:(BOOL)arg1;
+- (void)setOnlyCreatorCanModify:(bool)arg1;
+- (void)setPreferredEventPrivateValue:(long long)arg1;
 - (void)setSourceType:(int)arg1;
+- (void)setStrictestEventPrivateValue:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (int)sourceType;
+- (long long)strictestEventPrivateValue;
 - (id)title;
 
 @end

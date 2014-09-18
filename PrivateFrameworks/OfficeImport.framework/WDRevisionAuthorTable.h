@@ -10,9 +10,9 @@
 }
 
 - (void)addAuthor:(id)arg1;
-- (unsigned int)authorAddLookup:(id)arg1;
-- (id)authorAt:(unsigned int)arg1;
-- (unsigned int)authorCount;
+- (unsigned long long)authorAddLookup:(id)arg1;
+- (id)authorAt:(unsigned long long)arg1;
+- (unsigned long long)authorCount;
 - (id)authors;
 - (void)dealloc;
 - (id)initWithDocument:(id)arg1;

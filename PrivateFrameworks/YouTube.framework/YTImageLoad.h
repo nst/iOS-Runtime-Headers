@@ -11,6 +11,11 @@
     NSString *_videoID;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)_createImage;
 - (void)_loadFinished;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

@@ -5,15 +5,15 @@
 @class SKUIBrickSwooshViewController;
 
 @interface SKUIBrickSwooshArtworkLoader : SKUISwooshArtworkLoader {
-    int _artworkSize;
+    long long _artworkSize;
 }
 
 @property(readonly) SKUIBrickSwooshViewController * swooshViewController;
 
 - (id)cachedImageForBrick:(id)arg1;
 - (id)initWithArtworkLoader:(id)arg1 swoosh:(id)arg2;
-- (BOOL)loadImageForBrick:(id)arg1 reason:(int)arg2;
-- (void)loadImagesForNextPageWithReason:(int)arg1;
+- (bool)loadImageForBrick:(id)arg1 reason:(long long)arg2;
+- (void)loadImagesForNextPageWithReason:(long long)arg1;
 - (void)setImage:(id)arg1 forRequest:(id)arg2;
 
 @end

@@ -2,35 +2,40 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUIClientContext, SKUIIPadSearchController, SKUINetworkErrorViewController, SKUIPopoverObserver, SKUIProductPageOverlayController, SKUIWishlistViewController, UIBarButtonItem;
+@class NSOperationQueue, NSString, SKUIClientContext, SKUIIPadSearchController, SKUINetworkErrorViewController, SKUIPopoverObserver, SKUIProductPageOverlayController, SKUIWishlistViewController, UIBarButtonItem;
 
-@interface SKUIViewController : UIViewController <SKUINetworkErrorDelegate, SKUIProductPageOverlayDelegate, SKUIWishlistDelegate, UIPopoverControllerDelegate> {
+@interface SKUIViewController : UIViewController <SKUINetworkErrorDelegate, SKUIProductPageOverlayDelegate, SKUIWishlistDelegate, UIPopoverControllerDelegate, SKUITabBarItemRootViewController> {
     SKUIClientContext *_clientContext;
     SKUINetworkErrorViewController *_networkErrorViewController;
     NSOperationQueue *_operationQueue;
     SKUIProductPageOverlayController *_productPageOverlayController;
     SKUIIPadSearchController *_searchController;
-    BOOL _wishlistButtonHidden;
     UIBarButtonItem *_wishlistButtonItem;
     SKUIPopoverObserver *_wishlistPopoverObserver;
     SKUIWishlistViewController *_wishlistViewController;
+    bool_wishlistButtonHidden;
 }
 
 @property(readonly) SKUIIPadSearchController * IPadSearchController;
 @property(readonly) UIBarButtonItem * _wishlistButtonItem;
 @property(retain) SKUIClientContext * clientContext;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSOperationQueue * operationQueue;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)IPadSearchController;
-- (void)_reloadForOrientation:(int)arg1;
-- (void)_setWishlistButtonHidden:(BOOL)arg1;
+- (void)_reloadForOrientation:(long long)arg1;
+- (void)_setWishlistButtonHidden:(bool)arg1;
 - (void)_showDialogWithError:(id)arg1;
 - (void)_wishlistAction:(id)arg1;
 - (id)_wishlistButtonItem;
 - (void)_wishlistPopoverDidDismiss;
 - (id)clientContext;
 - (void)dealloc;
+- (id)initWithTabBarItem:(id)arg1;
 - (void)networkErrorViewControllerInvalidated:(id)arg1;
 - (id)operationQueue;
 - (void)productPageOverlayDidDismiss:(id)arg1;
@@ -39,8 +44,11 @@
 - (void)setOperationQueue:(id)arg1;
 - (void)showDefaultNavigationItems;
 - (void)showError:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (bool)showingError;
+- (void)skui_viewWillAppear:(bool)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)wishlist:(id)arg1 didSelectItem:(id)arg2 atIndexPath:(id)arg3;
 
 @end

@@ -18,15 +18,10 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (void)_checkOutAfterVisibilityChange;
 - (id)_className;
-- (void)_userInfoDidChange:(id)arg1;
 - (id)attributeKeys;
-- (void)dealloc;
-- (void)finalizeForWebScript;
 - (id)height;
 - (void)hide:(id)arg1;
-- (id)init;
 - (id)isVisible;
 - (void)loadURLRequest:(id)arg1;
 - (id)right;

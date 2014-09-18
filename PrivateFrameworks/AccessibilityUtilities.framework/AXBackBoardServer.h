@@ -6,52 +6,48 @@
 
 @interface AXBackBoardServer : AXServer {
     NSMutableArray *_eventListeners;
-    BOOL _overrideGestureRecognition;
-    NSMutableArray *_zoomListeners;
+    bool_overrideGestureRecognition;
 }
 
-@property BOOL invertColorsEnabled;
+@property bool inPreboardMode;
+@property bool invertColorsEnabled;
 
 + (id)server;
 
 - (void)_didConnectToServer;
 - (id)_handleEventListener:(id)arg1;
-- (id)_handleZoomListener:(id)arg1;
 - (id)_serviceName;
+- (bool)_shouldDispatchLocally;
 - (id)_springboardParametersForGuidedAccessAvailability;
 - (void)_willClearServer;
 - (void)adjustSystemZoom:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forContextId:(unsigned int)arg2;
+- (id)backboardServiceInstance;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forContextId:(unsigned int)arg2;
 - (void)dealloc;
-- (unsigned int)guidedAccessAvailability;
+- (unsigned long long)guidedAccessAvailability;
+- (bool)inPreboardMode;
 - (id)init;
-- (BOOL)invertColorsEnabled;
-- (BOOL)isGuidedAccessSelfLockedToApp:(id)arg1;
+- (bool)invertColorsEnabled;
+- (bool)isGuidedAccessActive;
+- (bool)isGuidedAccessSelfLockedToApp:(id)arg1;
 - (void)jetsamThirdPartyApps;
 - (void)postEvent:(id)arg1 afterNamedTap:(id)arg2 includeTaps:(id)arg3;
-- (void)postEvent:(id)arg1 systemEvent:(BOOL)arg2;
+- (void)postEvent:(id)arg1 systemEvent:(bool)arg2;
 - (void)registerAccessibilityUIServicePID:(int)arg1;
 - (void)registerAssistiveTouchPID:(int)arg1;
 - (void)registerEventListener:(id)arg1 withIdentifierCallback:(id)arg2;
 - (void)registerGestureConflictWithZoom:(id)arg1;
 - (void)registerSiriViewServicePID:(int)arg1;
-- (id)registerZoomLevelChangeHandler:(id)arg1;
 - (void)removeEventListener:(id)arg1;
-- (void)removeZoomLevelHandler:(id)arg1;
-- (BOOL)requestGuidedAccessSession:(BOOL)arg1 appID:(id)arg2;
-- (void)setHearingAidControlIsVisible:(BOOL)arg1;
-- (void)setInvertColorsEnabled:(BOOL)arg1;
-- (void)setLockScreenDimTimerEnabled:(BOOL)arg1;
-- (void)setVoiceOverItemChooserVisible:(BOOL)arg1;
+- (bool)requestGuidedAccessSession:(bool)arg1 appID:(id)arg2;
+- (void)setAccessibilityPreferenceAsMobile:(id)arg1 value:(id)arg2 notification:(id)arg3;
+- (void)setHearingAidControlIsVisible:(bool)arg1;
+- (void)setInPreboardMode:(bool)arg1;
+- (void)setInvertColorsEnabled:(bool)arg1;
+- (void)setLockScreenDimTimerEnabled:(bool)arg1;
+- (void)setVoiceOverItemChooserVisible:(bool)arg1;
 - (void)toggleGuidedAccess;
 - (void)userEventOccurred;
 - (void)wakeUpDeviceIfNecessary;
-- (double)zoomActivationAnimationStartDelay;
-- (void)zoomActivationAnimationWillBegin;
-- (float)zoomAppSwitcherRevealAnimationDelay;
-- (double)zoomDeactivationAnimationStartDelay;
-- (void)zoomDeactivationAnimationWillBegin;
-- (void)zoomFocusChanged:(id)arg1;
-- (void)zoomWillBeginAppSwitcherReveal;
 
 @end

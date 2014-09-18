@@ -2,34 +2,31 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEOSearchRequest, NSArray, NSTimer;
+@class <GEOMapServiceCompletionTicket>, NSArray, NSTimer;
 
 @interface MKLocalSearchCompleter : MKSearchCompleter {
-    BOOL _dirty;
     double _lastRequestTime;
-    GEOSearchRequest *_request;
     NSArray *_results;
     int _source;
+    <GEOMapServiceCompletionTicket> *_ticket;
     NSTimer *_timer;
+    bool_dirty;
 }
 
-+ (void)initialize;
-
 - (void).cxx_destruct;
-- (void)_cancelRequest;
 - (void)_cancelTimer;
 - (void)_fireRequest;
-- (void)_handleError:(id)arg1 forRequest:(id)arg2;
-- (void)_handleResponse:(id)arg1 forRequest:(id)arg2;
+- (void)_handleCompletion:(id)arg1 forTicket:(id)arg2;
+- (void)_handleError:(id)arg1 forTicket:(id)arg2;
 - (void)_markDirty;
 - (void)_schedulePendingRequest;
 - (void)_scheduleRequest;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isSearching;
+- (bool)isSearching;
 - (id)results;
-- (BOOL)resultsAreCurrent;
+- (bool)resultsAreCurrent;
 - (void)retry;
 - (void)setBoundingRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFragment:(id)arg1;

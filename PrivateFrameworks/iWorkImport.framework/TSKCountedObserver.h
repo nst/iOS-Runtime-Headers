@@ -5,13 +5,13 @@
 @class TSUWeakReference;
 
 @interface TSKCountedObserver : NSObject {
-    unsigned int mCount;
+    unsigned long long mCount;
     TSUWeakReference *mWeakObserver;
 }
 
 - (void)dealloc;
-- (unsigned int)decrementCount;
-- (unsigned int)incrementCount;
+- (unsigned long long)decrementCount;
+- (unsigned long long)incrementCount;
 - (id)initWithObserver:(id)arg1;
 - (id)observer;
 

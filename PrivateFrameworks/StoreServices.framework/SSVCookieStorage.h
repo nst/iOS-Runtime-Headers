@@ -12,18 +12,21 @@
 
 @property(readonly) NSURL * storageLocation;
 
-+ (BOOL)_setupCookieDatabase:(id)arg1;
++ (bool)_setupCookieDatabase:(id)arg1;
 + (id)sharedInstance;
 + (id)sharedStorage;
 
 - (id)_allUserIdentifiers;
 - (void)_bindInsertStatement:(struct sqlite3_stmt { }*)arg1 forCookie:(id)arg2 userIdentifier:(id)arg3;
-- (BOOL)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
+- (bool)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
 - (id)_columnNameForCookieProperty:(id)arg1;
+- (id)_copyCookieDictionaryForURL:(id)arg1 userIdentifier:(id)arg2;
 - (id)_copyCookiesWithUserIdentifier:(id)arg1;
 - (id)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)_insertCookies:(id)arg1 forUserIdentifier:(id)arg2;
+- (id)allCookiesForUserIdentifier:(id)arg1;
 - (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
+- (id)cookiesForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithStorageLocation:(id)arg1;

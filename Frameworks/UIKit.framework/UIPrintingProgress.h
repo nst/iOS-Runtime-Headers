@@ -12,24 +12,25 @@
     UIAlertView *_alert;
     id _cancelHandler;
     double _displayTime;
-    BOOL _donePrinting;
     NSString *_printerName;
     double _startTime;
     UIPrintingProgressViewController *_viewController;
+    bool_donePrinting;
+    bool_forceDisplayAsAlert;
 }
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)dealloc;
 - (void)didPresentAlertView:(id)arg1;
 - (void)endProgress;
-- (void)hideProgressAnimated:(BOOL)arg1;
-- (id)initWithPrinterName:(id)arg1 cancelHandler:(id)arg2;
+- (void)hideProgressAnimated:(bool)arg1;
+- (id)initWithPrinterName:(id)arg1 forceDisplayAsAlert:(bool)arg2 cancelHandler:(id)arg3;
 - (double)nextPrintDelay;
 - (void)progressCancel;
-- (BOOL)progressVisible;
-- (void)setPage:(int)arg1 ofPage:(int)arg2;
+- (bool)progressVisible;
+- (void)setPage:(long long)arg1 ofPage:(long long)arg2;
 - (void)setPrintInfoState:(int)arg1;
-- (void)showProgress:(id)arg1 immediately:(BOOL)arg2;
+- (void)showProgress:(id)arg1 immediately:(bool)arg2;
 
 @end

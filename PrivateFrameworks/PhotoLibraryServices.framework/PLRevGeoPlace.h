@@ -5,32 +5,28 @@
 @class NSMutableDictionary;
 
 @interface PLRevGeoPlace : NSObject {
-    BOOL _isHome;
     NSMutableDictionary *_placeTypeInfoMap;
+    bool_isHome;
 }
 
-@property BOOL isHome;
+@property bool isHome;
 @property(readonly) NSMutableDictionary * placeTypeInfoMap;
 
-+ (id)sortedAdditionalPlaceComparator;
++ (id)sortedAdditionalPlaceInfoComparator;
 
-- (unsigned int)_dominantOrderTypeForPlaceType:(int)arg1 lastOrderType:(unsigned int)arg2;
-- (void)addPlaceName:(id)arg1 area:(double)arg2 forOrderType:(unsigned int)arg3 updateExisting:(BOOL)arg4;
-- (id)bestPlaceInfoForOrderType:(unsigned int)arg1;
+- (unsigned long long)_dominantOrderTypeForPlaceType:(int)arg1 lastOrderType:(unsigned long long)arg2;
+- (void)addPlaceName:(id)arg1 placeInfo:(id)arg2 forOrderType:(unsigned long long)arg3 updateExisting:(bool)arg4;
+- (id)bestPlaceInfoForOrderType:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithGEOPlace:(id)arg1;
-- (id)initWithGEOPlaceResult:(id)arg1;
-- (id)initWithPlace:(id)arg1;
-- (BOOL)isHome;
-- (void)mergeCommonDataForGEOPlace:(id)arg1 updateExisting:(BOOL)arg2;
-- (void)mergeGEOPlace:(id)arg1 updateExisting:(BOOL)arg2;
-- (void)mergeGEOPlaceResult:(id)arg1 updateExisting:(BOOL)arg2;
-- (void)mergePlace:(id)arg1 updateExisting:(BOOL)arg2;
-- (id)placeInfoSetForOrderType:(unsigned int)arg1;
+- (id)initWithGEOMapItem:(id)arg1;
+- (bool)isHome;
+- (void)mergeCommonDataForGEOMapItem:(id)arg1 updateExisting:(bool)arg2;
+- (void)mergeGEOMapItem:(id)arg1 updateExisting:(bool)arg2;
+- (id)placeInfoSetForOrderType:(unsigned long long)arg1;
 - (id)placeTypeInfoMap;
-- (void)removePlacesInPlaceInfoSet:(id)arg1 fromOrderType:(unsigned int)arg2;
-- (void)setIsHome:(BOOL)arg1;
+- (void)removePlacesInPlaceInfoSet:(id)arg1 fromOrderType:(unsigned long long)arg2;
+- (void)setIsHome:(bool)arg1;
 
 @end

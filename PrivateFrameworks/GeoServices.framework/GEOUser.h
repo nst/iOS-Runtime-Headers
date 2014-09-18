@@ -9,23 +9,27 @@
     NSString *_name;
 }
 
-@property(readonly) BOOL hasImage;
-@property(readonly) BOOL hasName;
+@property(readonly) bool hasImage;
+@property(readonly) bool hasName;
 @property(retain) GEOPhoto * image;
 @property(retain) NSString * name;
+
++ (id)userWithYelpJSON:(id)arg1;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasImage;
-- (BOOL)hasName;
-- (unsigned int)hash;
+- (bool)hasImage;
+- (bool)hasName;
+- (unsigned long long)hash;
 - (id)image;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithPlaceDataUser:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)writeTo:(id)arg1;

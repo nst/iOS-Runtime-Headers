@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRoadDrawStyle : VKDrawStyle {
+@interface VKRoadDrawStyle : VKRenderStyle {
     struct VKProfileSparseRamp<float> { 
         union _u { 
             struct VKProfileSparseRampValue { 
@@ -67,13 +67,13 @@
             struct _VGLColor {} *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<int> { 
@@ -94,22 +94,22 @@
             int *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
@@ -144,13 +144,13 @@
             float *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
     } alternateFillColor;
@@ -160,30 +160,22 @@
     } labelHeight;
     } patternScaler;
     } patternScalerQuantizationFactor;
-    int railroadPattern;
+    unsigned char railroadPattern;
     } renderEndCaps;
     } simpleLine;
     } strokeColor;
     } strokeColorInterpolate;
     } strokeWidth;
-    float trafficIncidentAccidentMinZ;
-    float trafficIncidentConstructionMinZ;
-    float trafficIncidentEventMinZ;
-    float trafficIncidentHazardMinZ;
-    float trafficIncidentLaneClosureMinZ;
-    float trafficIncidentRampClosureMinZ;
-    float trafficIncidentRoadClosureMinZ;
-    float trafficIncidentUnknownMinZ;
     } width;
     } widthDropoff;
     } zIndices;
 }
 
++ (int)renderStyleID;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (int)railroadPattern;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
-- (void)takeFromZoomInvariantProperties:(id)arg1;
-- (id)variant;
+- (unsigned char)railroadPattern;
+- (bool)visibleAtZoom:(float)arg1;
 
 @end

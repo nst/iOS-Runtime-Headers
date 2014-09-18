@@ -11,8 +11,9 @@
     NSURL *_url;
 }
 
+@property(readonly) NSString * URLBagKey;
 @property(readonly) NSString * actionString;
-@property(readonly) NSDictionary * queryStringDictionary;
+@property(copy,readonly) NSDictionary * queryStringDictionary;
 @property(readonly) NSString * redeemCode;
 @property(copy) NSString * referrerApplicationName;
 @property(copy) NSString * referrerURLString;
@@ -20,10 +21,19 @@
 @property(readonly) NSURL * underlyingURL;
 
 - (void).cxx_destruct;
+- (id)URLBagKey;
 - (id)_queryDictionary;
+- (id)_searchGroupForSearchKind:(id)arg1;
+- (id)_searchURLBagKey;
 - (id)actionString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (unsigned long long)hash;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURLBagKey:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)newURLRequest;
+- (id)newURLRequestWithBaseURL:(id)arg1;
 - (id)queryStringDictionary;
 - (id)redeemCode;
 - (id)referrerApplicationName;

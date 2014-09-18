@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, NSString, VGLIcon, VKObjectPool;
+@class NSMutableArray, VKImage;
 
-@interface VKIconArtwork : NSObject <VKObjectPoolObject> {
+@interface VKIconArtwork : NSObject {
     NSMutableArray *_completionHandlers;
-    BOOL _hasIcon;
-    VGLIcon *_icon;
-    VKObjectPool *_pool;
-    NSString *_poolKey;
+    double _contentScale;
+    VKImage *_image;
+    bool_hasIcon;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) double contentScale;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 
 - (void)_cleanUpAfterDrawing;
-- (id)_newIcon;
+- (id)_newImage;
+- (double)contentScale;
 - (void)dealloc;
-- (void)getIcon:(id)arg1;
-- (id)icon;
-- (id)initWithImage:(struct CGImage { }*)arg1 contentScale:(float)arg2;
-- (void)setPool:(id)arg1 withKey:(id)arg2;
-- (struct CGSize { float x1; float x2; })size;
+- (void)getImage:(id)arg1;
+- (id)image;
+- (id)initWithImage:(struct CGImage { }*)arg1 contentScale:(double)arg2;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

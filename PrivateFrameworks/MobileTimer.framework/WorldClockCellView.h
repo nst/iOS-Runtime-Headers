@@ -9,12 +9,12 @@
     UILabel *_combinedLabel;
     <WorldClockCellViewDelegate> *_delegate;
     DigitalClockLabel *_digitalClock;
-    BOOL _editing;
     UILabel *_nameLabel;
-    int _nowInMinutes;
-    BOOL _started;
-    int _style;
+    long long _nowInMinutes;
+    long long _style;
     NSTimeZone *_timeZone;
+    bool_editing;
+    bool_started;
 }
 
 @property(readonly) AnalogClockView * analogClock;
@@ -23,10 +23,11 @@
 @property(readonly) DigitalClockLabel * digitalClock;
 @property(readonly) UILabel * nameLabel;
 @property(readonly) int runMode;
-@property(readonly) BOOL started;
-@property int style;
+@property(readonly) bool started;
+@property long long style;
 
-+ (id)combinedStringFromDate:(id)arg1 withTimezoneOffset:(int)arg2 dayText:(id*)arg3 hourText:(id*)arg4 usesSeparateLines:(BOOL)arg5;
++ (id)combinedStringFromDate:(id)arg1 withTimezoneOffset:(long long)arg2 dayText:(id*)arg3 hourText:(id*)arg4 usesSeparateLines:(bool)arg5;
++ (double)defaultCellHeight;
 
 - (id)analogClock;
 - (double)coarseUpdateInterval;
@@ -34,24 +35,24 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)digitalClock;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)localeChange:(id)arg1;
 - (id)nameLabel;
 - (int)runMode;
 - (void)setDelegate:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setStyle:(int)arg1 animated:(BOOL)arg2;
-- (void)setStyle:(int)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setStyle:(long long)arg1 animated:(bool)arg2;
+- (void)setStyle:(long long)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)significantTimeChange:(id)arg1;
 - (void)start;
-- (BOOL)started;
+- (bool)started;
 - (void)stop;
-- (id)stringFromDate:(id)arg1 withTimezoneOffset:(int)arg2;
-- (int)style;
+- (id)stringFromDate:(id)arg1 withTimezoneOffset:(long long)arg2;
+- (long long)style;
 - (double)updateInterval;
 - (void)updateTime;
-- (void)updateTimeContinuously:(int)arg1;
+- (void)updateTimeContinuously:(long long)arg1;
 
 @end

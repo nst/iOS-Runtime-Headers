@@ -13,31 +13,31 @@
         double latitude; 
         double longitude; 
     } _coordinate;
-    BOOL _ignoreUnnamedFeatures;
     id _pointHandler;
     id _polygonHandler;
     id _roadHandler;
     GEOMapTileFinder *_tileFinder;
+    bool_ignoreUnnamedFeatures;
 }
 
-@property BOOL ignoreUnnamedFeatures;
+@property bool ignoreUnnamedFeatures;
 @property(readonly) GEOMapAccess * map;
 @property(copy) id pointHandler;
 @property(copy) id polygonHandler;
 @property(copy) id roadHandler;
 
 - (id).cxx_construct;
-- (void)_pickRoadInTile:(id)arg1 tileRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 localPoint:(const struct Vec2Imp<float> { float x1; float x2; }*)arg3;
+- (void)_pickRoadInTile:(id)arg1 tileRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 localPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg3;
 - (void)cancel;
 - (void)dealloc;
 - (void)findFeatures:(id)arg1 pointHandler:(id)arg2 polygonHandler:(id)arg3 completionHandler:(id)arg4;
-- (BOOL)ignoreUnnamedFeatures;
+- (bool)ignoreUnnamedFeatures;
 - (id)initWithMap:(id)arg1 center:(struct { double x1; double x2; })arg2;
 - (id)map;
 - (id)pointHandler;
 - (id)polygonHandler;
 - (id)roadHandler;
-- (void)setIgnoreUnnamedFeatures:(BOOL)arg1;
+- (void)setIgnoreUnnamedFeatures:(bool)arg1;
 - (void)setPointHandler:(id)arg1;
 - (void)setPolygonHandler:(id)arg1;
 - (void)setRoadHandler:(id)arg1;

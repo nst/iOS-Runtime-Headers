@@ -16,6 +16,7 @@
 @property(copy) NSString * label;
 @property(copy) NSNumber * localSearchProviderId;
 @property(retain) SALocation * location;
+@property(copy) NSData * placeData2;
 @property(copy) NSData * placeData;
 @property(copy) NSNumber * placeId;
 @property(copy) NSString * spokenAddress;
@@ -35,6 +36,7 @@
 - (id)label;
 - (id)localSearchProviderId;
 - (id)location;
+- (id)placeData2;
 - (id)placeData;
 - (id)placeId;
 - (void)setAttributions:(id)arg1;
@@ -46,6 +48,7 @@
 - (void)setLabel:(id)arg1;
 - (void)setLocalSearchProviderId:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setPlaceData2:(id)arg1;
 - (void)setPlaceData:(id)arg1;
 - (void)setPlaceId:(id)arg1;
 - (void)setSpokenAddress:(id)arg1;

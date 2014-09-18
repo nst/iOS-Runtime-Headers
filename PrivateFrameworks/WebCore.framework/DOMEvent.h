@@ -7,31 +7,31 @@
 @interface DOMEvent : DOMObject {
 }
 
-@property(readonly) BOOL bubbles;
-@property BOOL cancelBubble;
-@property(readonly) BOOL cancelable;
+@property(readonly) bool bubbles;
+@property bool cancelBubble;
+@property(readonly) bool cancelable;
 @property(readonly) <DOMEventTarget> * currentTarget;
 @property(readonly) unsigned short eventPhase;
-@property BOOL returnValue;
+@property bool returnValue;
 @property(readonly) <DOMEventTarget> * srcElement;
 @property(readonly) <DOMEventTarget> * target;
 @property(readonly) unsigned long long timeStamp;
-@property(readonly) NSString * type;
+@property(copy,readonly) NSString * type;
 
-- (BOOL)bubbles;
-- (BOOL)cancelBubble;
-- (BOOL)cancelable;
+- (bool)bubbles;
+- (bool)cancelBubble;
+- (bool)cancelable;
 - (id)currentTarget;
 - (void)dealloc;
-- (BOOL)defaultPrevented;
+- (bool)defaultPrevented;
 - (unsigned short)eventPhase;
 - (void)finalize;
-- (void)initEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3;
-- (void)initEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3;
+- (void)initEvent:(id)arg1 :(bool)arg2 :(bool)arg3;
+- (void)initEvent:(id)arg1 canBubbleArg:(bool)arg2 cancelableArg:(bool)arg3;
 - (void)preventDefault;
-- (BOOL)returnValue;
-- (void)setCancelBubble:(BOOL)arg1;
-- (void)setReturnValue:(BOOL)arg1;
+- (bool)returnValue;
+- (void)setCancelBubble:(bool)arg1;
+- (void)setReturnValue:(bool)arg1;
 - (id)srcElement;
 - (void)stopImmediatePropagation;
 - (void)stopPropagation;

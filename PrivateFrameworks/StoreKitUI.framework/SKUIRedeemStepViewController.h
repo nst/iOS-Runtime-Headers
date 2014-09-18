@@ -13,7 +13,7 @@
 @property(retain) SKUIClientContext * clientContext;
 @property(retain) SKUIRedeemConfiguration * configuration;
 @property(retain) NSOperationQueue * operationQueue;
-@property(readonly) BOOL shouldShowPassbookLearnMore;
+@property(readonly) bool shouldShowPassbookLearnMore;
 
 - (void).cxx_destruct;
 - (id)clientContext;
@@ -22,6 +22,6 @@
 - (void)setClientContext:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (BOOL)shouldShowPassbookLearnMore;
+- (bool)shouldShowPassbookLearnMore;
 
 @end

@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@interface SBCPlaybackPositionServiceInterface : NSObject {
+@interface SBCPlaybackPositionServiceInterface : SBCXPCServiceInterface {
 }
 
-+ (id)newPushNotificationController;
-+ (id)newServiceConnection;
 + (id)serviceClientInterface;
 + (id)serviceInterface;
++ (id)serviceName;
 
 @end

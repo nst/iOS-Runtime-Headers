@@ -3,13 +3,13 @@
  */
 
 @interface SWRemote : SWAccessory {
-    BOOL _isListeningToRemote;
+    bool_isListeningToRemote;
 }
 
-@property(readonly) BOOL isListeningToRemote;
+@property(readonly) bool isListeningToRemote;
 
 - (void)beginListeningToRemoteCommands;
-- (BOOL)isListeningToRemote;
+- (bool)isListeningToRemote;
 - (void)stopListeningToRemoteCommands;
 
 @end

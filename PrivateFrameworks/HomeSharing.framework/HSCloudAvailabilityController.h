@@ -2,52 +2,58 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSObject<OS_dispatch_queue>, RadiosPreferences;
+@class NSObject<OS_dispatch_queue>, NSString, RadiosPreferences;
 
 @interface HSCloudAvailabilityController : NSObject <RadiosPreferencesDelegate, HSCloudAvailability> {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _canShowCloudDownloadButtons;
-    BOOL _canShowCloudMusic;
-    BOOL _canShowCloudVideo;
-    BOOL _isAirplaneModeActive;
-    BOOL _isAutoDownloadOnCellularAllowed;
-    BOOL _isCellularDataActive;
-    BOOL _isNetworkReachable;
-    BOOL _isShowingAllMusic;
-    BOOL _isShowingAllVideo;
-    BOOL _isUpdateInProgress;
-    BOOL _isWiFiEnabled;
-    int _networkType;
+    long long _networkType;
     int _preferencesChangedNotifyToken;
-    BOOL _preferencesChangedNotifyTokenIsValid;
     RadiosPreferences *_radiosPreferences;
+    bool_canShowCloudDownloadButtons;
+    bool_canShowCloudMusic;
+    bool_canShowCloudVideo;
+    bool_isAirplaneModeActive;
+    bool_isAutoDownloadOnCellularAllowed;
+    bool_isCellularDataActive;
+    bool_isNetworkReachable;
+    bool_isShowingAllMusic;
+    bool_isShowingAllVideo;
+    bool_isUpdateInProgress;
+    bool_isWiFiEnabled;
+    bool_preferencesChangedNotifyTokenIsValid;
     struct __SCNetworkReachability { } *reachabilityRef;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)sharedController;
 
+- (void).cxx_destruct;
 - (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
 - (void)_handleTelephonyNotificationWithName:(id)arg1 userInfo:(id)arg2;
-- (BOOL)_hasCellularCapability;
-- (BOOL)_hasWiFiCapability;
-- (BOOL)_isAutoDownloadOnCellularAllowed;
+- (bool)_hasCellularCapability;
+- (bool)_hasWiFiCapability;
+- (bool)_isAutoDownloadOnCellularAllowed;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(BOOL)arg1;
-- (void)_onQueue_updateCanShowCloudTracksWithNotification:(BOOL)arg1;
-- (void)_setNewIsNetworkReachable:(BOOL)arg1;
-- (BOOL)_uncachedIsAutoDownloadOnCellularAllowed;
-- (BOOL)_uncachedIsShowingAllMusic;
-- (BOOL)_uncachedIsShowingAllVideo;
+- (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(bool)arg1;
+- (void)_onQueue_updateCanShowCloudTracksWithNotification:(bool)arg1;
+- (void)_setNewIsNetworkReachable:(bool)arg1;
+- (bool)_uncachedIsAutoDownloadOnCellularAllowed;
+- (bool)_uncachedIsShowingAllMusic;
+- (bool)_uncachedIsShowingAllVideo;
 - (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (void)airplaneModeChanged;
-- (BOOL)canShowCloudDownloadButtons;
-- (BOOL)canShowCloudMusic;
-- (BOOL)canShowCloudVideo;
+- (bool)canShowCloudDownloadButtons;
+- (bool)canShowCloudMusic;
+- (bool)canShowCloudVideo;
 - (void)dealloc;
-- (BOOL)hasProperNetworkConditionsToPlayMedia;
+- (bool)hasProperNetworkConditionsToPlayMedia;
 - (id)init;
-- (BOOL)isCellularDataRestricted;
-- (BOOL)isNetworkReachable;
-- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
+- (bool)isCellularDataRestricted;
+- (bool)isNetworkReachable;
+- (bool)shouldProhibitActionsForCurrentNetworkConditions;
 
 @end

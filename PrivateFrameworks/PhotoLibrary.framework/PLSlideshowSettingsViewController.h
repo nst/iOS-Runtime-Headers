@@ -11,21 +11,25 @@
     <PLSlideshowSettingsViewControllerDelegate> *_delegate;
     MPMediaPickerController *_mediaPicker;
     UITableViewCell *_playMusicSwitchCell;
-    unsigned int _selectedAirplayRouteIndex;
+    unsigned long long _selectedAirplayRouteIndex;
     UITableViewCell *_selectedMusicCell;
     NSString *_selectedTransition;
     MPMediaItemCollection *_slideshowMusicCollection;
-    BOOL _slideshowShouldPlayMusic;
     UITableView *_table;
     UITableViewCell *_transitionCell;
     NSArray *_transitionKeys;
     PLSlideshowTransitionsViewController *_transitionsController;
+    bool_slideshowShouldPlayMusic;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <PLSlideshowSettingsViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * selectedTransition;
 @property(retain) MPMediaItemCollection * slideshowMusicCollection;
-@property BOOL slideshowShouldPlayMusic;
+@property bool slideshowShouldPlayMusic;
+@property(readonly) Class superclass;
 
 + (id)AppleTVPushTransitions;
 + (id)TVOutTransitions;
@@ -33,10 +37,10 @@
 + (id)iPadTransitions;
 + (id)iPhoneTransitions;
 
-- (int)_airPlaySection;
-- (int)_buttonSection;
-- (BOOL)_includeAirPlaySection;
-- (int)_mainSection;
+- (long long)_airPlaySection;
+- (long long)_buttonSection;
+- (bool)_includeAirPlaySection;
+- (long long)_mainSection;
 - (void)_playButtonWasPressed:(id)arg1;
 - (void)_playMusicSwitchValueDidChange:(id)arg1;
 - (void)_preheatMediaPicker;
@@ -44,27 +48,27 @@
 - (id)_selectedMusic;
 - (void)_updateSettingsInfo;
 - (void)applySlideshowSettings:(id)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithAirplayRoutes:(id)arg1 selectedRouteIndex:(unsigned int)arg2;
+- (id)initWithAirplayRoutes:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
 - (void)loadView;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)mediaPickerDidCancel:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)selectedTransition;
 - (void)setDelegate:(id)arg1;
 - (void)setSelectedTransition:(id)arg1;
 - (void)setSlideshowMusicCollection:(id)arg1;
-- (void)setSlideshowShouldPlayMusic:(BOOL)arg1;
+- (void)setSlideshowShouldPlayMusic:(bool)arg1;
 - (id)slideshowMusicCollection;
 - (id)slideshowSettings;
-- (BOOL)slideshowShouldPlayMusic;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)slideshowShouldPlayMusic;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)updateTransitionKeys:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

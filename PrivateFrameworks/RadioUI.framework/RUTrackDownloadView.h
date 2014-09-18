@@ -2,52 +2,56 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUTrackDownloadViewDelegate>, MPAVItem, MPMediaDownloadObserver, MPMediaItem, NSArray, NSString, RadioTrack, SKUIItemOfferButton, UIViewController;
+@class <RUTrackDownloadViewDelegate>, MPAVItem, MPMediaItem, MPUMediaDownloadObserver, NSArray, NSString, RadioTrack, SKUIItemOfferButton, UIViewController;
 
 @interface RUTrackDownloadView : UIView <MPStoreDownloadManagerObserver, SKStoreProductViewControllerDelegate, SKUIItemOfferButtonDelegate> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     } _alignmentRectInsets;
     MPAVItem *_avItem;
     NSString *_baseOriginator;
-    int _buyButtonTitleStyle;
+    long long _buyButtonTitleStyle;
     NSArray *_buyOffers;
     <RUTrackDownloadViewDelegate> *_delegate;
-    MPMediaDownloadObserver *_downloadObserver;
-    BOOL _isPurchaseAllowed;
+    MPUMediaDownloadObserver *_downloadObserver;
     SKUIItemOfferButton *_itemOfferButton;
     MPMediaItem *_mediaItem;
     } _overrideSize;
-    int _overrideState;
+    long long _overrideState;
     NSString *_overrideTitleText;
     RadioTrack *_radioTrack;
-    BOOL _showingConfirmation;
-    int _state;
+    long long _state;
     NSString *_stationHash;
     long long _stationID;
-    BOOL _supportsAlbumOnly;
     UIViewController *_viewControllerForPresenting;
+    bool_isPurchaseAllowed;
+    bool_showingConfirmation;
+    bool_supportsAlbumOnly;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentRectInsets;
 @property(setter=setAVItem:,retain) MPAVItem * avItem;
 @property(copy) NSString * baseOriginator;
-@property int buyButtonTitleStyle;
+@property long long buyButtonTitleStyle;
+@property(copy,readonly) NSString * debugDescription;
 @property <RUTrackDownloadViewDelegate> * delegate;
-@property struct CGSize { float x1; float x2; } overrideSize;
-@property int overrideState;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property struct CGSize { double x1; double x2; } overrideSize;
+@property long long overrideState;
 @property(copy) NSString * overrideTitleText;
 @property(retain) RadioTrack * radioTrack;
-@property(readonly) int state;
+@property(readonly) long long state;
 @property(copy) NSString * stationHash;
 @property long long stationID;
-@property BOOL supportsAlbumOnly;
+@property(readonly) Class superclass;
+@property bool supportsAlbumOnly;
 @property UIViewController * viewControllerForPresenting;
 
 - (void).cxx_destruct;
@@ -58,8 +62,8 @@
 - (id)_buyOffers;
 - (long long)_downloadStoreID;
 - (id)_effectiveRadioTrack;
-- (BOOL)_isAlbumOnlyOffer:(id)arg1;
-- (BOOL)_isExplicit;
+- (bool)_isAlbumOnlyOffer:(id)arg1;
+- (bool)_isExplicit;
 - (void)_isExplicitTracksEnabledDidChangeNotification:(id)arg1;
 - (void)_itemOfferButtonAction:(id)arg1;
 - (void)_itemOfferCancelConfirmationAction:(id)arg1;
@@ -72,43 +76,43 @@
 - (id)_title;
 - (void)_unregisterForAVItemNotifications;
 - (void)_unregisterForRadioTrackNotifications;
-- (void)_updateIsPurchasedAllowedAndUpdateState:(BOOL)arg1;
-- (void)_updateStateAndInternalViewsAnimated:(BOOL)arg1;
+- (void)_updateIsPurchasedAllowedAndUpdateState:(bool)arg1;
+- (void)_updateStateAndInternalViewsAnimated:(bool)arg1;
 - (void)_updateStateAndInternalViewsIfNeededForDownloads:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)avItem;
 - (id)baseOriginator;
-- (int)buyButtonTitleStyle;
+- (long long)buyButtonTitleStyle;
 - (void)dealloc;
 - (id)delegate;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
 - (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
-- (struct CGSize { float x1; float x2; })overrideSize;
-- (int)overrideState;
+- (struct CGSize { double x1; double x2; })overrideSize;
+- (long long)overrideState;
 - (id)overrideTitleText;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (id)radioTrack;
 - (void)setAVItem:(id)arg1;
-- (void)setAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setAlignmentRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setBaseOriginator:(id)arg1;
-- (void)setBuyButtonTitleStyle:(int)arg1;
+- (void)setBuyButtonTitleStyle:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setOverrideSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setOverrideState:(int)arg1;
+- (void)setOverrideSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setOverrideState:(long long)arg1;
 - (void)setOverrideTitleText:(id)arg1;
 - (void)setRadioTrack:(id)arg1;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
-- (void)setSupportsAlbumOnly:(BOOL)arg1;
+- (void)setSupportsAlbumOnly:(bool)arg1;
 - (void)setViewControllerForPresenting:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)state;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)state;
 - (id)stationHash;
 - (long long)stationID;
-- (BOOL)supportsAlbumOnly;
+- (bool)supportsAlbumOnly;
 - (id)viewControllerForPresenting;
 
 @end

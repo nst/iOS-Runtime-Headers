@@ -6,7 +6,7 @@
 }
 
 + (id)configChangeLogFiles;
-+ (id)configChangeLogFilesIncludingAllKeys:(BOOL)arg1 orSpecificKeys:(id)arg2;
-+ (long)writeConfigChangeLog:(struct _BaseStation { }*)arg1;
++ (id)configChangeLogFilesIncludingAllKeys:(bool)arg1 orSpecificKeys:(id)arg2;
++ (int)writeConfigChangeLog:(struct _BaseStation { }*)arg1;
 
 @end

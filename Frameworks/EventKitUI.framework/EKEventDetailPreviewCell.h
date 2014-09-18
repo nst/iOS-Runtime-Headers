@@ -3,14 +3,14 @@
  */
 
 @interface EKEventDetailPreviewCell : EKEventDetailCell {
-    BOOL _alwaysVisible;
+    bool_alwaysVisible;
 }
 
-@property BOOL alwaysVisible;
+@property bool alwaysVisible;
 
-- (BOOL)alwaysVisible;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (void)setAlwaysVisible:(BOOL)arg1;
-- (BOOL)update;
+- (bool)alwaysVisible;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2;
+- (void)setAlwaysVisible:(bool)arg1;
+- (bool)update;
 
 @end

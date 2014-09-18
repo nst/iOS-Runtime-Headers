@@ -2,40 +2,41 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCAudioTrimmingModalItemDelegate>, AVAssetExportSession, AVItem, NSString, RCActionSheetController, RCAudioTrimmingModalItemViewController, RCSavedRecording, UIButton;
+@class <RCAudioTrimmingModalItemDelegate>, AVAssetExportSession, NSOperationQueue, NSString, RCActionSheetController, RCAudioTrimmingModalItemViewController, RCSavedRecording, RCTrimTimeRangeOperation;
 
 @interface RCAudioTrimmingModalItem : NSObject {
     <RCAudioTrimmingModalItemDelegate> *_delegate;
-    BOOL _deletesDestinationPathWhenDone;
     NSString *_destinationPath;
     AVAssetExportSession *_exportSession;
-    BOOL _isBeingDismissed;
     double _maximumTrimmedDuration;
-    UIButton *_playButton;
-    BOOL _playing;
     RCActionSheetController *_presentedActionSheetController;
     RCSavedRecording *_recording;
-    AVItem *_recordingItem;
     NSString *_sourcePath;
+    RCTrimTimeRangeOperation *_trimOperation;
+    NSOperationQueue *_trimOperationQueue;
     RCAudioTrimmingModalItemViewController *_trimmingViewController;
+    bool_cancelTrimRequested;
+    bool_deletesDestinationPathWhenDone;
+    bool_isBeingDismissed;
+    bool_playing;
 }
 
 @property <RCAudioTrimmingModalItemDelegate> * delegate;
-@property BOOL deletesDestinationPathWhenDone;
-@property(readonly) NSString * destinationPath;
+@property bool deletesDestinationPathWhenDone;
+@property(copy,readonly) NSString * destinationPath;
 @property double maximumTrimmedDuration;
 @property(readonly) RCSavedRecording * recording;
-@property(readonly) NSString * sourcePath;
+@property(copy,readonly) NSString * sourcePath;
 
 + (id)exportableAudioFormatPathExtensionWithSourceURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_applicationWillResignActive:(id)arg1;
-- (void)_dismissAnimated:(BOOL)arg1;
-- (void)_handleTrimSheetActionWithClickedButtonIndex:(unsigned int)arg1 completionBlock:(id)arg2;
+- (void)_dismissAnimated:(bool)arg1;
+- (void)_handleTrimSheetActionWithClickedButtonIndex:(unsigned long long)arg1 completionBlock:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)deletesDestinationPathWhenDone;
+- (bool)deletesDestinationPathWhenDone;
 - (id)destinationPath;
 - (void)dismiss;
 - (id)init;
@@ -43,7 +44,7 @@
 - (double)maximumTrimmedDuration;
 - (id)recording;
 - (void)setDelegate:(id)arg1;
-- (void)setDeletesDestinationPathWhenDone:(BOOL)arg1;
+- (void)setDeletesDestinationPathWhenDone:(bool)arg1;
 - (void)setMaximumTrimmedDuration:(double)arg1;
 - (void)showWithPresentationViewController:(id)arg1 message:(id)arg2 trimButtonTitle:(id)arg3 completionBlock:(id)arg4;
 - (id)sourcePath;

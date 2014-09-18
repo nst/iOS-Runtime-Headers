@@ -6,8 +6,8 @@
 
 @interface UIKBCacheToken_Keyplane : UIKBCacheToken {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     union { 
         struct { 
             unsigned int idiom : 6; 
@@ -27,6 +27,6 @@
 
 - (id)_initWithKeyplane:(id)arg1 keylayout:(id)arg2;
 - (void)dealloc;
-- (id)stringForSplitState:(BOOL)arg1;
+- (id)stringForSplitState:(bool)arg1;
 
 @end

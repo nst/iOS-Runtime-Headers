@@ -2,17 +2,18 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
+@class ABPropertyGroupItem;
 
 @interface ABLabelPickerController : ABPickerController {
-    NSString *_property;
+    ABPropertyGroupItem *_item;
 }
 
-@property(readonly) NSString * property;
+@property(readonly) ABPropertyGroupItem * item;
 
 - (void)dealloc;
-- (id)initForContact:(id)arg1 property:(id)arg2;
-- (id)property;
-- (void)viewWillAppear:(BOOL)arg1;
+- (id)initForPropertyItem:(id)arg1;
+- (id)item;
+- (void)removeCustomItem:(id)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

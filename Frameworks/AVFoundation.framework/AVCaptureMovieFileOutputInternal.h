@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSMutableArray;
+@class AVWeakReference, NSArray, NSMutableArray;
 
 @interface AVCaptureMovieFileOutputInternal : NSObject {
     struct { 
@@ -10,10 +10,13 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    boolpaused;
+    boolrecording;
+    boolsendLastVideoPreviewFrame;
     NSArray *metadata;
     } movieFragmentInterval;
     NSMutableArray *recordingDelegatesArray;
-    BOOL sendLastVideoPreviewFrame;
+    AVWeakReference *weakReference;
 }
 
 - (void)dealloc;

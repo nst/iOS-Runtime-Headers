@@ -6,8 +6,8 @@
 }
 
 + (int)__eventTypeForUserInteractionSnapshotEvent:(id)arg1;
-+ (id)__formatPace:(unsigned int)arg1;
-+ (id)__formatTimeInterval:(unsigned int)arg1;
++ (id)__formatPace:(unsigned long long)arg1;
++ (id)__formatTimeInterval:(unsigned long long)arg1;
 + (id)__gregorianCalendar;
 + (void)__serializeWorkoutDict:(id)arg1 toURL:(id)arg2;
 + (id)__snapshotDictArrayForSnapshotVector:(struct vector<ISL::IPodSportsWorkout_Run::Snapshot, std::__1::allocator<ISL::IPodSportsWorkout_Run::Snapshot> > { struct Snapshot {} *x1; struct Snapshot {} *x2; struct __compressed_pair<ISL::IPodSportsWorkout_Run::Snapshot *, std::__1::allocator<ISL::IPodSportsWorkout_Run::Snapshot> > { struct Snapshot {} *x_3_1_1; } x3; })arg1;

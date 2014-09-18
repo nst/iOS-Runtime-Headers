@@ -34,8 +34,8 @@
         float shadowOffsetAmount; 
         float shadowOffsetAngle; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } shadowOffset; 
     struct { 
         float glowRed; 
@@ -54,8 +54,8 @@
         float engraveOffsetAmount; 
         float engraveOffsetAngle; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } engraveOffset; 
     struct { 
         float engraveRed; 
@@ -67,8 +67,8 @@
         float engraveOffsetAmount; 
         float engraveOffsetAngle; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } engraveOffset; 
     struct { 
         float embossSize; 
@@ -115,20 +115,20 @@
 + (id)composite:(id)arg1 into:(id)arg2;
 + (id)composite:(id)arg1 outOf:(id)arg2;
 + (id)composite:(id)arg1 over:(id)arg2;
-+ (id)gradientWithParameters:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)gradientWithParameters:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (id)image:(id)arg1 withOpacity:(float)arg2;
 + (id)imageFromBlendWithMask:(id)arg1 foreground:(id)arg2 background:(id)arg3;
 + (id)innerGlowFrom:(id)arg1 withRadius:(float)arg2 red:(float)arg3 green:(float)arg4 blue:(float)arg5 opacity:(float)arg6;
-+ (id)innerShadowFrom:(id)arg1 withOffset:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 red:(float)arg4 green:(float)arg5 blue:(float)arg6 opacity:(float)arg7;
++ (id)innerShadowFrom:(id)arg1 withOffset:(struct CGPoint { double x1; double x2; })arg2 radius:(float)arg3 red:(float)arg4 green:(float)arg5 blue:(float)arg6 opacity:(float)arg7;
 + (id)invert:(id)arg1;
-+ (id)offset:(id)arg1 by:(struct CGPoint { float x1; float x2; })arg2;
++ (id)offset:(id)arg1 by:(struct CGPoint { double x1; double x2; })arg2;
 + (id)outerGlowFrom:(id)arg1 withSize:(unsigned int)arg2 spread:(unsigned int)arg3 red:(float)arg4 green:(float)arg5 blue:(float)arg6 opacity:(float)arg7;
-+ (id)outerShadowFrom:(id)arg1 withOffset:(struct CGPoint { float x1; float x2; })arg2 size:(unsigned int)arg3 spread:(unsigned int)arg4 red:(float)arg5 green:(float)arg6 blue:(float)arg7 opacity:(float)arg8;
-+ (id)pixelZoomed:(id)arg1 scale:(int)arg2 about:(struct CGPoint { float x1; float x2; })arg3;
++ (id)outerShadowFrom:(id)arg1 withOffset:(struct CGPoint { double x1; double x2; })arg2 size:(unsigned int)arg3 spread:(unsigned int)arg4 red:(float)arg5 green:(float)arg6 blue:(float)arg7 opacity:(float)arg8;
++ (id)pixelZoomed:(id)arg1 scale:(int)arg2 about:(struct CGPoint { double x1; double x2; })arg3;
 + (id)preferredCIContextOptions;
-+ (id)rectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRed:(float)arg2 green:(float)arg3 blue:(float)arg4 alpha:(float)arg5;
++ (id)rectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withRed:(float)arg2 green:(float)arg3 blue:(float)arg4 alpha:(float)arg5;
 + (id)shadowFrom:(id)arg1 red:(float)arg2 green:(float)arg3 blue:(float)arg4 opacity:(float)arg5;
-+ (id)shapeEffectSingleBlurFrom:(id)arg1 withInteriorFill:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 blurSize:(float)arg4 innerGlowRed:(float)arg5 innerGlowGreen:(float)arg6 innerGlowBlue:(float)arg7 innerGlowOpacity:(float)arg8 innerShadowRed:(float)arg9 innerShadowGreen:(float)arg10 innerShadowBlue:(float)arg11 innerShadowOpacity:(float)arg12 outerGlowRed:(float)arg13 outerGlowGreen:(float)arg14 outerGlowBlue:(float)arg15 outerGlowOpacity:(float)arg16 outerShadowRed:(float)arg17 outerShadowGreen:(float)arg18 outerShadowBlue:(float)arg19 outerShadowOpacity:(float)arg20 hasInsideShadowBlur:(BOOL)arg21 hasOutsideShadowBlur:(BOOL)arg22;
++ (id)shapeEffectSingleBlurFrom:(id)arg1 withInteriorFill:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 blurSize:(float)arg4 innerGlowRed:(float)arg5 innerGlowGreen:(float)arg6 innerGlowBlue:(float)arg7 innerGlowOpacity:(float)arg8 innerShadowRed:(float)arg9 innerShadowGreen:(float)arg10 innerShadowBlue:(float)arg11 innerShadowOpacity:(float)arg12 outerGlowRed:(float)arg13 outerGlowGreen:(float)arg14 outerGlowBlue:(float)arg15 outerGlowOpacity:(float)arg16 outerShadowRed:(float)arg17 outerShadowGreen:(float)arg18 outerShadowBlue:(float)arg19 outerShadowOpacity:(float)arg20 hasInsideShadowBlur:(bool)arg21 hasOutsideShadowBlur:(bool)arg22;
 + (id)sharedCIContext;
 + (id)unsharpMask:(id)arg1 radius:(float)arg2 intensity:(float)arg3;
 
@@ -141,13 +141,14 @@
 - (void)_precompositeColorOverlayInnerGradient;
 - (void)_setColorFillFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_setInteriorGradientFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_setOutputOpacityFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_setShapeOpacityFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_updateRenderStrategyFromEffect:(unsigned int)arg1;
-- (void)applyCustomForegroundColor:(struct CGColor { }*)arg1 tintEffectColors:(BOOL)arg2;
+- (void)applyCustomForegroundColor:(struct CGColor { }*)arg1 tintEffectColors:(bool)arg2;
 - (void)applyCustomForegroundColor:(struct CGColor { }*)arg1;
-- (id)compositeEffectStackWithShapeImage:(id)arg1 withScale:(float)arg2;
-- (struct { float x1; float x2; float x3; float x4; })effectInsetsWithScale:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })effectPaddingWithScale:(float)arg1;
+- (id)compositeEffectStackWithShapeImage:(id)arg1 withScale:(double)arg2;
+- (struct { double x1; double x2; double x3; double x4; })effectInsetsWithScale:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })effectPaddingWithScale:(double)arg1;
 - (id)effectPreset;
 - (id)imageWithAdjustedOutputOpacityOfImage:(id)arg1;
 - (id)imageWithAdjustedShapeOpacityOfImage:(id)arg1;
@@ -161,14 +162,14 @@
 - (id)imageWithOuterGlowOfImage:(id)arg1;
 - (id)imageWithSingleBlurShapeEffectOfImage:(id)arg1 withInteriorFill:(id)arg2;
 - (id)initWithEffectPreset:(id)arg1;
-- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2 ciContext:(id)arg3;
-- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(float)arg2;
+- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(double)arg2 ciContext:(id)arg3;
+- (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1 withScale:(double)arg2;
 - (struct CGImage { }*)newFlattenedImageFromShapeCGImage:(struct CGImage { }*)arg1;
 - (id)optimizedSingleBlurEffectCompositeWithShapeImage:(id)arg1;
-- (id)processedImageFromShapeImage:(id)arg1 withScale:(float)arg2;
+- (id)processedImageFromShapeImage:(id)arg1 withScale:(double)arg2;
 - (id)processedImageFromShapeImage:(id)arg1;
-- (id)processedImageFromShapePath:(struct CGPath { }*)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)scaleEffectParametersBy:(float)arg1;
+- (id)processedImageFromShapePath:(struct CGPath { }*)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)scaleEffectParametersBy:(double)arg1;
 - (id)standardEffectCompositeWithShapeImage:(id)arg1;
 
 @end

@@ -9,8 +9,9 @@
     struct __CFReadStream { } *_readStream;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 isConcurrent:(BOOL)arg2 timeoutInterval:(double)arg3 withResponseHandler:(id)arg4;
+- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 isConcurrent:(bool)arg2 timeoutInterval:(double)arg3 withResponseHandler:(id)arg4;
 
 @end

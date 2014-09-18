@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class <PTSRowTableViewCellDelegate>, PTSRow;
+@class <PTSRowTableViewCellDelegate>, NSString, PTSRow;
 
 @interface PTSRowTableViewCell : UITableViewCell <PTSRowObserver> {
     <PTSRowTableViewCellDelegate> *_delegate;
     PTSRow *_row;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <PTSRowTableViewCellDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) PTSRow * row;
+@property(readonly) Class superclass;
 
-+ (float)cellHeightForRow:(id)arg1;
-+ (int)cellStyleForRow:(id)arg1;
++ (double)cellHeightForRow:(id)arg1;
++ (long long)cellStyleForRow:(id)arg1;
 + (id)reuseIdentifierForRow:(id)arg1;
 
 - (void).cxx_destruct;
@@ -25,7 +29,7 @@
 - (void)rowDidChangeTitle:(id)arg1;
 - (void)rowDidChangeValue:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setRow:(id)arg1;
 - (void)updateCellCharacteristics;
 - (void)updateDisplayedContent;

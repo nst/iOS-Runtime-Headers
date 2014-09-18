@@ -6,63 +6,63 @@
 
 @interface ABDateField : ABUILabelWithPlaceholder {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UIButton *_clearButton;
     NSDate *_date;
     UIDatePicker *_datePicker;
     } _datePickerSize;
     <ABDateFieldDelegate> *_delegate;
-    BOOL _editable;
-    BOOL _inBecomeFirstResponder;
-    BOOL _isClearButtonEnabled;
-    BOOL _isFirstResponder;
     <ABDatePickerPresentationDelegate> *_presentationDelegate;
-    BOOL _usesDatePickerAsInputView;
+    bool_editable;
+    bool_inBecomeFirstResponder;
+    bool_isClearButtonEnabled;
+    bool_isFirstResponder;
+    bool_usesDatePickerAsInputView;
 }
 
 @property(retain) NSDate * date;
-@property struct CGSize { float x1; float x2; } datePickerSize;
+@property struct CGSize { double x1; double x2; } datePickerSize;
 @property <ABDateFieldDelegate> * delegate;
-@property(getter=isEditable) BOOL editable;
+@property(getter=isEditable) bool editable;
 @property <ABDatePickerPresentationDelegate> * presentationDelegate;
 
 - (void)_attachToDatePicker:(id)arg1;
 - (id)_clearButton;
 - (void)_clearButtonPressed:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clearButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })_clearButtonSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isClearButtonPresent:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_clearButtonRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })_clearButtonSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 isClearButtonPresent:(bool)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_dettachFromDatePicker:(id)arg1;
-- (float)_extraWidthForClearButton;
-- (void)_setClearButtonEnabled:(BOOL)arg1;
-- (void)_setDate:(id)arg1 andInformDelegate:(BOOL)arg2;
-- (BOOL)_shouldEnableClearButton;
+- (double)_extraWidthForClearButton;
+- (void)_setClearButtonEnabled:(bool)arg1;
+- (void)_setDate:(id)arg1 andInformDelegate:(bool)arg2;
+- (bool)_shouldEnableClearButton;
 - (void)_updateClearButton;
 - (void)_updateLabelText;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canResignFirstResponder;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
+- (bool)canResignFirstResponder;
 - (id)date;
 - (void)datePickerDateDidChange:(id)arg1;
-- (struct CGSize { float x1; float x2; })datePickerSize;
+- (struct CGSize { double x1; double x2; })datePickerSize;
 - (void)dealloc;
 - (id)delegate;
 - (void)endEditing;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inputView;
-- (BOOL)isEditable;
+- (bool)isEditable;
 - (void)layoutSubviews;
 - (id)presentationDelegate;
-- (BOOL)resignFirstResponder;
+- (bool)resignFirstResponder;
 - (void)setDate:(id)arg1;
-- (void)setDatePickerSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDatePickerSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditable:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setEditable:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPresentationDelegate:(id)arg1;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

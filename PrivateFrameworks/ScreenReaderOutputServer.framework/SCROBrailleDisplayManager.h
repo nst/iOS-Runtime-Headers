@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class <SCROSBrailleDisplayManagerDelegate>, NSAttributedString, NSData, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, SCROBrailleDisplay, SCROBrailleDisplayHistory, SCROBrailleDisplayManagedQueue, SCROBrailleEventDispatcher, SCROBrailleFormatter, SCRODBluetoothBrailleDisplay;
+@class <SCROSBrailleDisplayManagerDelegate>, NSAttributedString, NSData, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SCROBrailleDisplay, SCROBrailleDisplayHistory, SCROBrailleDisplayManagedQueue, SCROBrailleEventDispatcher, SCROBrailleFormatter, SCRODBluetoothBrailleDisplay;
 
 @interface SCROBrailleDisplayManager : NSObject <SCROBrailleDisplayDelegate> {
     struct { 
         NSData *aggregatedData; 
         int virtualAlignment; 
-        int masterStatusCellIndex; 
-        BOOL currentAnnouncementUnread; 
-        BOOL anyUnreadAnnouncements; 
+        long long masterStatusCellIndex; 
+        boolcurrentAnnouncementUnread; 
+        boolanyUnreadAnnouncements; 
     int _alertPriority;
     double _alertTimeout;
     struct __CFRunLoopTimer { } *_alertTimer;
-    BOOL _automaticBrailleTranslation;
     NSAttributedString *_blankUIString;
     SCRODBluetoothBrailleDisplay *_bluetoothBrailleDisplay;
     NSLock *_contentLock;
@@ -27,20 +26,30 @@
     SCROBrailleEventDispatcher *_eventDispatcher;
     SCROBrailleDisplayHistory *_history;
     int _inputAccessMode;
-    BOOL _isValid;
-    BOOL _lineDescriptorDisplayCallbackEnabled;
+    int _inputContractionMode;
     NSAttributedString *_lineString;
     NSMutableSet *_loadedIOElements;
     NSAttributedString *_mainString;
     SCROBrailleDisplayManagedQueue *_managedDisplayQueue;
     struct __CFRunLoop { } *_runLoop;
-    BOOL _shouldBatchUpdates;
-    BOOL _showDotsSevenAndEight;
-    BOOL _showEightDot;
     } _status;
     NSAttributedString *_statusString;
     SCROBrailleDisplay *_stealthBrailleDisplay;
+    bool_automaticBrailleTranslation;
+    bool_inputEightDot;
+    bool_isValid;
+    bool_lineDescriptorDisplayCallbackEnabled;
+    bool_shouldBatchUpdates;
+    bool_showDotsSevenAndEight;
+    bool_showEightDot;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property int inputContractionMode;
+@property bool inputEightDotBraille;
+@property(readonly) Class superclass;
 
 + (void)initialize;
 
@@ -56,6 +65,7 @@
 - (id)_displayWithIOElement:(id)arg1 driverIdentifier:(id)arg2 delegate:(id)arg3;
 - (void)_enableAutoDetect;
 - (void)_exitCurrentDisplayMode;
+- (void)_inputEightDotHandler:(id)arg1;
 - (void)_loadNextDriverForIOElement:(id)arg1;
 - (void)_loadStealthDisplay;
 - (void)_mainDisplayHandler:(id)arg1;
@@ -81,19 +91,20 @@
 - (void)_stopAlertTimer;
 - (void)_unloadStealthDisplay;
 - (id)aggregatedStatus;
-- (BOOL)alwaysUsesNemethCodeForTechnicalText;
-- (BOOL)automaticBrailleTranslation;
+- (bool)alwaysUsesNemethCodeForTechnicalText;
+- (bool)automaticBrailleTranslation;
 - (void)automaticBrailleTranslationHandler:(id)arg1;
 - (void)beginUpdates;
 - (void)brailleDisplay:(id)arg1 didDisplay:(id)arg2;
 - (void)brailleDisplay:(id)arg1 didPanLeft:(id)arg2 elementToken:(id)arg3 appToken:(id)arg4;
 - (void)brailleDisplay:(id)arg1 didPanRight:(id)arg2 elementToken:(id)arg3 appToken:(id)arg4;
-- (void)brailleDisplay:(id)arg1 driverDidLoad:(BOOL)arg2;
-- (void)brailleDisplay:(id)arg1 isSleeping:(BOOL)arg2;
+- (void)brailleDisplay:(id)arg1 driverDidLoad:(bool)arg2;
+- (void)brailleDisplay:(id)arg1 isSleeping:(bool)arg2;
 - (void)brailleDisplay:(id)arg1 memorizedKey:(id)arg2;
 - (void)brailleDisplay:(id)arg1 pressedKeys:(id)arg2;
 - (void)brailleDisplay:(id)arg1 willMemorizeKey:(id)arg2;
 - (void)brailleDriverDisconnected:(id)arg1;
+- (id)brailleInputManager;
 - (void)configurationChangedForBrailleDisplay:(id)arg1;
 - (void)configureTableWithIdentifier:(id)arg1;
 - (int)contractionMode;
@@ -105,42 +116,50 @@
 - (void)endUpdates;
 - (void)exitCurrentDisplayMode;
 - (void)handleEvent:(id)arg1;
-- (BOOL)hasActiveDisplays;
+- (bool)hasActiveDisplays;
 - (id)init;
+- (int)inputContractionMode;
+- (void)inputContractionModeHandler:(id)arg1;
+- (bool)inputEightDotBraille;
 - (void)invalidate;
-- (BOOL)isConfigured;
-- (BOOL)isValid;
-- (BOOL)lineDescriptorDisplayCallbackEnabled;
+- (bool)isConfigured;
+- (bool)isValid;
+- (bool)lineDescriptorDisplayCallbackEnabled;
 - (void)loadBluetoothDriverWithAddress:(id)arg1;
 - (id)mainAttributedString;
-- (long)masterStatusCellIndex;
-- (void)panDisplayLeft:(long)arg1;
-- (void)panDisplayRight:(long)arg1;
+- (long long)masterStatusCellIndex;
+- (id)newBrailleDisplayCommandDispatcher;
+- (void)panDisplayLeft:(int)arg1;
+- (void)panDisplayRight:(int)arg1;
+- (void)playBorderHitSoundForBrailleDisplay:(id)arg1;
+- (void)playCommandNotSupportedSoundForBrailleDisplay:(id)arg1;
 - (void)removeBluetoothDriverWithAddress:(id)arg1;
 - (void)setAggregatedStatus:(id)arg1;
-- (void)setAlwaysUsesNemethCodeForTechnicalText:(BOOL)arg1;
+- (void)setAlwaysUsesNemethCodeForTechnicalText:(bool)arg1;
 - (void)setAnnouncementsDisplayMode;
-- (void)setAutomaticBrailleTranslationEnabled:(BOOL)arg1;
+- (void)setAutomaticBrailleTranslationEnabled:(bool)arg1;
 - (void)setContractionMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayInputAccessMode:(int)arg1;
-- (void)setLineDescriptorDisplayCallbackEnabled:(BOOL)arg1;
-- (void)setMainAttributedString:(id)arg1 forceUpdate:(BOOL)arg2;
+- (void)setInputContractionMode:(int)arg1;
+- (void)setInputEightDotBraille:(bool)arg1;
+- (void)setLineDescriptorDisplayCallbackEnabled:(bool)arg1;
+- (void)setMainAttributedString:(id)arg1 forceUpdate:(bool)arg2;
 - (void)setMainAttributedString:(id)arg1;
-- (void)setMasterStatusCellIndex:(long)arg1;
-- (void)setPrepareToMemorizeNextKey:(BOOL)arg1 immediate:(BOOL)arg2 forDisplayWithToken:(long)arg3;
-- (void)setPrimaryBrailleDisplay:(long)arg1;
-- (void)setShowDotsSevenAndEight:(BOOL)arg1;
-- (void)setShowEightDotBraille:(BOOL)arg1;
+- (void)setMasterStatusCellIndex:(long long)arg1;
+- (void)setPrepareToMemorizeNextKey:(bool)arg1 immediate:(bool)arg2 forDisplayWithToken:(int)arg3;
+- (void)setPrimaryBrailleDisplay:(int)arg1;
+- (void)setShowDotsSevenAndEight:(bool)arg1;
+- (void)setShowEightDotBraille:(bool)arg1;
 - (void)setUIDisplayMode;
 - (void)setVirtualStatusAlignment:(int)arg1;
-- (BOOL)showDotsSevenAndEight;
-- (BOOL)showEightDotBraille;
+- (bool)showDotsSevenAndEight;
+- (bool)showEightDotBraille;
 - (void)showNextAnnouncement;
 - (void)showPreviousAnnouncement;
 - (void)simulateKeypress:(id)arg1;
 - (id)tableIdentifier;
-- (int)tokenForRouterIndex:(int)arg1 location:(int*)arg2 appToken:(id*)arg3 forDisplayWithToken:(long)arg4;
+- (long long)tokenForRouterIndex:(long long)arg1 location:(long long*)arg2 appToken:(id*)arg3 forDisplayWithToken:(int)arg4;
 - (int)virtualStatusAlignment;
 
 @end

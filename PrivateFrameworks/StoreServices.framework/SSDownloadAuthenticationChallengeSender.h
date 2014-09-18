@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, SSDownloadAuthenticationSession;
+@class NSObject<OS_dispatch_queue>, NSString, SSDownloadAuthenticationSession;
 
 @interface SSDownloadAuthenticationChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -10,6 +10,10 @@
 }
 
 @property(readonly) SSDownloadAuthenticationSession * authenticationSession;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)authenticationSession;
 - (void)cancelAuthenticationChallenge:(id)arg1;

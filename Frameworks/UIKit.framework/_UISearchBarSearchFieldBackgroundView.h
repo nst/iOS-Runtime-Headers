@@ -3,25 +3,25 @@
  */
 
 @interface _UISearchBarSearchFieldBackgroundView : _UITextFieldRoundedRectBackgroundViewNeue {
-    BOOL _backgroundContainer;
-    int _barStyle;
-    unsigned int _searchBarStyle;
+    long long _barStyle;
+    unsigned long long _searchBarStyle;
+    bool_backgroundContainer;
 }
 
-@property BOOL backgroundContainer;
-@property int barStyle;
-@property unsigned int searchBarStyle;
+@property bool backgroundContainer;
+@property long long barStyle;
+@property unsigned long long searchBarStyle;
 
-- (id)_fillColor:(BOOL)arg1;
-- (id)_strokeColor:(BOOL)arg1;
-- (BOOL)backgroundContainer;
-- (int)barStyle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2 updateView:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2;
-- (unsigned int)searchBarStyle;
-- (void)setBackgroundContainer:(BOOL)arg1;
-- (void)setBarStyle:(int)arg1;
-- (void)setSearchBarStyle:(unsigned int)arg1;
+- (id)_fillColor:(bool)arg1;
+- (id)_strokeColor:(bool)arg1;
+- (bool)backgroundContainer;
+- (long long)barStyle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 active:(bool)arg2 updateView:(bool)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 active:(bool)arg2;
+- (unsigned long long)searchBarStyle;
+- (void)setBackgroundContainer:(bool)arg1;
+- (void)setBarStyle:(long long)arg1;
+- (void)setSearchBarStyle:(unsigned long long)arg1;
 - (void)updateView;
 
 @end

@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface GQHPagesFloatingDrawable : NSObject <GQDrawablesGenerator> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)beginDrawables:(id)arg1;
 + (Class)beginTable:(id)arg1;

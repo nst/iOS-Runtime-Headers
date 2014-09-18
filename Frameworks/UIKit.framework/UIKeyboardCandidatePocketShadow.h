@@ -3,24 +3,24 @@
  */
 
 @interface UIKeyboardCandidatePocketShadow : UIView {
-    BOOL _drawsShadow;
-    BOOL _shadowFadesToBottom;
-    float _shadowHeightGrowthFactor;
+    double _shadowHeightGrowthFactor;
+    bool_drawsShadow;
+    bool_shadowFadesToBottom;
 }
 
-@property BOOL drawsShadow;
-@property BOOL shadowFadesToBottom;
-@property float shadowHeightGrowthFactor;
+@property bool drawsShadow;
+@property bool shadowFadesToBottom;
+@property double shadowHeightGrowthFactor;
 
-+ (float)width;
++ (double)width;
 
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)drawsShadow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setDrawsShadow:(BOOL)arg1;
-- (void)setShadowFadesToBottom:(BOOL)arg1;
-- (void)setShadowHeightGrowthFactor:(float)arg1;
-- (BOOL)shadowFadesToBottom;
-- (float)shadowHeightGrowthFactor;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)drawsShadow;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDrawsShadow:(bool)arg1;
+- (void)setShadowFadesToBottom:(bool)arg1;
+- (void)setShadowHeightGrowthFactor:(double)arg1;
+- (bool)shadowFadesToBottom;
+- (double)shadowHeightGrowthFactor;
 
 @end

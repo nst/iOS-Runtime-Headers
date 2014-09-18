@@ -9,7 +9,7 @@
     SSURLConnectionRequest *_request;
 }
 
-@property(readonly) RadioPlayEventCollection * playEventCollection;
+@property(copy,readonly) RadioPlayEventCollection * playEventCollection;
 
 - (void).cxx_destruct;
 - (id)deviceName;

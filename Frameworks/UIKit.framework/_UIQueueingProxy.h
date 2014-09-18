@@ -8,11 +8,11 @@
 
 @class NSMutableArray;
 
-@interface _UIQueueingProxy : _UITargetedProxy <XPCProxyTarget> {
+@interface _UIQueueingProxy : _UITargetedProxy {
     int _lock;
     NSMutableArray *_queuedInvocations;
     id _shouldSuspendInvocationBlock;
-    unsigned int _suspensionCount;
+    unsigned long long _suspensionCount;
 }
 
 + (id)proxyWithTarget:(id)arg1 shouldSuspendInvocationBlock:(id)arg2;
@@ -22,9 +22,8 @@
 - (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)removeAllEnqueuedInvocations;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)resume;
 - (void)suspend;
 

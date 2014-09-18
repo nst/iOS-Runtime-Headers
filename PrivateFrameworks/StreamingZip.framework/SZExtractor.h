@@ -5,11 +5,13 @@
 @class NSObject<OS_dispatch_queue>, NSXPCConnection, StreamingUnzipper;
 
 @interface SZExtractor : NSObject {
-    BOOL _errorOccurred;
     NSObject<OS_dispatch_queue> *_inProcessUnzipQueue;
     StreamingUnzipper *_inProcessUnzipper;
     NSXPCConnection *_unzipServiceConnection;
+    bool_errorOccurred;
 }
+
++ (void)enableDebugLogging;
 
 - (void).cxx_destruct;
 - (void)_errorOccurred;

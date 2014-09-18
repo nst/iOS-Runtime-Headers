@@ -6,16 +6,21 @@
    See Warning(s) below.
  */
 
-@class SKStarRatingAlertView;
+@class NSString, SKStarRatingAlertView;
 
 @interface SKStarRatingAlertViewDelegate : NSObject <UIAlertViewDelegate> {
     SKStarRatingAlertView *_alertView;
     id _completionBlock;
 }
 
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
 - (void)alertViewCancel:(id)arg1;
-- (BOOL)alertViewShouldEnableFirstOtherButton:(id)arg1;
+- (bool)alertViewShouldEnableFirstOtherButton:(id)arg1;
 - (void)dealloc;
 - (void)showAlertView:(id)arg1 withCompletionBlock:(id)arg2;
 

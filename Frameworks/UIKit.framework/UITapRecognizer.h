@@ -6,61 +6,61 @@
 
 @interface UITapRecognizer : NSObject <NSCoding> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     unsigned int _timerOn : 1;
     unsigned int _noNewTouches : 1;
     NSMutableSet *_activeTouches;
-    float _allowableMovement;
+    double _allowableMovement;
     int _currentNumberOfTaps;
     int _currentNumberOfTouches;
     id _delegate;
     } _location;
     double _maximumIntervalBetweenSuccessiveTaps;
     double _maximumSingleTapDuration;
-    unsigned int _numberOfTapsRequired;
-    unsigned int _numberOfTouchesRequired;
+    unsigned long long _numberOfTapsRequired;
+    unsigned long long _numberOfTouchesRequired;
     } _startPoint;
     NSMutableArray *_touches;
 }
 
-@property float allowableMovement;
+@property double allowableMovement;
 @property <UITapRecognizerDelegate> * delegate;
 @property double maximumIntervalBetweenSuccessiveTaps;
 @property double maximumSingleTapDuration;
-@property unsigned int numberOfTapsRequired;
-@property unsigned int numberOfTouchesRequired;
+@property unsigned long long numberOfTapsRequired;
+@property unsigned long long numberOfTouchesRequired;
 @property(readonly) NSArray * touches;
 
 - (void)_beginInteraction;
-- (float)_effectiveAllowableMovement;
-- (void)_interactionEndedTouch:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })_locationOnScreen;
+- (double)_effectiveAllowableMovement;
+- (void)_interactionEndedTouch:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })_locationInSceneReferenceSpace;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_reset;
-- (float)allowableMovement;
+- (double)allowableMovement;
 - (void)clearTapTimer;
 - (void)dealloc;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (double)maximumSingleTapDuration;
-- (unsigned int)numberOfTapsRequired;
-- (unsigned int)numberOfTouchesRequired;
-- (void)setAllowableMovement:(float)arg1;
+- (unsigned long long)numberOfTapsRequired;
+- (unsigned long long)numberOfTouchesRequired;
+- (void)setAllowableMovement:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
 - (void)setMaximumSingleTapDuration:(double)arg1;
-- (void)setNumberOfTapsRequired:(unsigned int)arg1;
-- (void)setNumberOfTouchesRequired:(unsigned int)arg1;
+- (void)setNumberOfTapsRequired:(unsigned long long)arg1;
+- (void)setNumberOfTouchesRequired:(unsigned long long)arg1;
 - (void)startTapTimer:(double)arg1;
 - (void)tooSlow:(id)arg1;
 - (id)touches;

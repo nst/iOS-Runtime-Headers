@@ -2,10 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
+@class NSString;
+
 @interface CKLRUCache : CPLRUDictionary <CKCache> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
-- (id)initWithMaximumCapacity:(unsigned int)arg1;
+- (id)initWithMaximumCapacity:(unsigned long long)arg1;
 
 @end

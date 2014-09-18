@@ -6,9 +6,9 @@
 }
 
 + (id)axisForInfo:(id)arg1;
-+ (BOOL)isFixedPositionForScene:(id)arg1;
-+ (void)setIsFixedPosition:(BOOL)arg1 forScene:(id)arg2;
-+ (float)textRotationForChartInfo:(id)arg1;
++ (bool)isFixedPositionForScene:(id)arg1;
++ (void)setIsFixedPosition:(bool)arg1 forScene:(id)arg2;
++ (double)textRotationForChartInfo:(id)arg1;
 
 - (int)labelType;
 

@@ -24,8 +24,8 @@
 - (void)_applyCustomizations;
 - (id)_classNameToRecord;
 - (id)_containerClassNames;
-- (void)_importCustomizations:(id)arg1 withArchiveVersion:(int)arg2;
-- (void)_recordInvocation:(id)arg1 withClassName:(id)arg2 containerClassNames:(id)arg3 selectorString:(id)arg4 forRemoteProcess:(BOOL)arg5;
+- (void)_importCustomizations:(id)arg1 withArchiveVersion:(long long)arg2;
+- (void)_recordInvocation:(id)arg1 withClassName:(id)arg2 containerClassNames:(id)arg3 selectorString:(id)arg4 forRemoteProcess:(bool)arg5;
 - (id)_serializedRepresentation;
 - (void)_setClassNameToRecord:(id)arg1;
 - (void)_setContainerClassNames:(id)arg1;

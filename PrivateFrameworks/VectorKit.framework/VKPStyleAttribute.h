@@ -5,41 +5,55 @@
 @interface VKPStyleAttribute : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
+    struct { 
+        unsigned long long *list; 
+        unsigned long long count; 
+        unsigned long long size; 
     struct { 
         unsigned int score : 1; 
     } _has;
     } _intValues;
     int _key;
+    } _longIntValues;
     int _score;
 }
 
-@property BOOL hasScore;
+@property bool hasScore;
 @property(readonly) int* intValues;
-@property(readonly) unsigned int intValuesCount;
+@property(readonly) unsigned long long intValuesCount;
 @property int key;
+@property(readonly) unsigned long long* longIntValues;
+@property(readonly) unsigned long long longIntValuesCount;
 @property int score;
 
 - (void)addIntValue:(int)arg1;
+- (void)addLongIntValue:(unsigned long long)arg1;
 - (void)clearIntValues;
+- (void)clearLongIntValues;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasScore;
-- (unsigned int)hash;
-- (int)intValueAtIndex:(unsigned int)arg1;
+- (bool)hasScore;
+- (unsigned long long)hash;
+- (int)intValueAtIndex:(unsigned long long)arg1;
 - (int*)intValues;
-- (unsigned int)intValuesCount;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)intValuesCount;
+- (bool)isEqual:(id)arg1;
 - (int)key;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)longIntValueAtIndex:(unsigned long long)arg1;
+- (unsigned long long*)longIntValues;
+- (unsigned long long)longIntValuesCount;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)score;
-- (void)setHasScore:(BOOL)arg1;
-- (void)setIntValues:(int*)arg1 count:(unsigned int)arg2;
+- (void)setHasScore:(bool)arg1;
+- (void)setIntValues:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setKey:(int)arg1;
+- (void)setLongIntValues:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 - (void)setScore:(int)arg1;
 - (void)writeTo:(id)arg1;
 

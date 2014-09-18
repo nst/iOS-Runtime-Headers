@@ -18,6 +18,7 @@
             unsigned int flags; 
             long long epoch; 
         } duration; 
+    struct opaqueCMSampleBuffer { } *backingSBuf;
     NSArray *items;
     } timeRange;
 }

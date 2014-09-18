@@ -5,17 +5,17 @@
 @class NSArray;
 
 @interface RadioPlaybackContext : NSObject <NSCopying, NSMutableCopying> {
-    int _numberOfSkipsUsed;
+    long long _numberOfSkipsUsed;
     NSArray *_trackPlaybackDescriptorQueue;
 }
 
-@property(readonly) int numberOfSkipsUsed;
-@property(readonly) NSArray * trackPlaybackDescriptorQueue;
+@property(readonly) long long numberOfSkipsUsed;
+@property(copy,readonly) NSArray * trackPlaybackDescriptorQueue;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (int)numberOfSkipsUsed;
+- (long long)numberOfSkipsUsed;
 - (id)playbackContextDictionary;
 - (id)trackPlaybackDescriptorQueue;
 

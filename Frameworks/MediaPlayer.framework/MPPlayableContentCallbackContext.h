@@ -6,16 +6,16 @@
 
 @interface MPPlayableContentCallbackContext : NSObject {
     NSIndexPath *_indexPath;
-    BOOL _serviced;
+    bool_serviced;
 }
 
 @property(readonly) NSIndexPath * indexPath;
-@property BOOL serviced;
+@property bool serviced;
 
 - (void).cxx_destruct;
 - (id)indexPath;
 - (id)initWithIndexPath:(id)arg1;
-- (BOOL)serviced;
-- (void)setServiced:(BOOL)arg1;
+- (bool)serviced;
+- (void)setServiced:(bool)arg1;
 
 @end

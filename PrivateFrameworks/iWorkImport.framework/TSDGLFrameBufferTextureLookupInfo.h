@@ -2,21 +2,36 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface TSDGLFrameBufferTextureLookupInfo : NSObject {
+    struct CGSize { 
+        double width; 
+        double height; 
     unsigned int _attachment;
-    int _index;
-    unsigned int _name;
+    long long _indexOnAttachment;
+    NSString *_name;
+    unsigned int _textureName;
+    } _textureSize;
 }
 
-@property(readonly) unsigned int attachment;
-@property(readonly) int index;
-@property(readonly) unsigned int name;
+@property unsigned int attachment;
+@property long long indexOnAttachment;
+@property(readonly) NSString * name;
+@property(readonly) unsigned int textureName;
+@property(readonly) struct CGSize { double x1; double x2; } textureSize;
 
-+ (id)textureLookupInfoWithAttachment:(unsigned int)arg1 index:(int)arg2 name:(unsigned int)arg3;
++ (id)textureLookupInfoWithAttachment:(unsigned int)arg1 indexOnAttachment:(long long)arg2 textureName:(unsigned int)arg3 textureSize:(struct CGSize { double x1; double x2; })arg4 name:(id)arg5;
 
 - (unsigned int)attachment;
-- (int)index;
-- (id)initWithAttachment:(unsigned int)arg1 index:(int)arg2 name:(unsigned int)arg3;
-- (unsigned int)name;
+- (void)dealloc;
+- (id)description;
+- (long long)indexOnAttachment;
+- (id)initWithAttachment:(unsigned int)arg1 indexOnAttachment:(long long)arg2 textureName:(unsigned int)arg3 textureSize:(struct CGSize { double x1; double x2; })arg4 name:(id)arg5;
+- (id)name;
+- (void)setAttachment:(unsigned int)arg1;
+- (void)setIndexOnAttachment:(long long)arg1;
+- (unsigned int)textureName;
+- (struct CGSize { double x1; double x2; })textureSize;
 
 @end

@@ -21,10 +21,10 @@
     GKSimpleTimer *_resolveTimer;
     NSMutableArray *_sendDataBuffer;
     NSString *_serviceName;
-    BOOL _shouldSignalDiscovery;
     int _state;
     NSObject<OS_dispatch_queue> *_syncQueue;
     GKDiscoveryPeerConnection *_trialConnection;
+    bool_shouldSignalDiscovery;
 }
 
 @property(retain) NSMutableArray * attemptedInterfaces;
@@ -39,7 +39,7 @@
 @property(retain) GKSimpleTimer * resolveTimer;
 @property(retain) NSMutableArray * sendDataBuffer;
 @property(copy) NSString * serviceName;
-@property BOOL shouldSignalDiscovery;
+@property bool shouldSignalDiscovery;
 @property int state;
 @property(readonly) NSObject<OS_dispatch_queue> * syncQueue;
 @property(retain) GKDiscoveryPeerConnection * trialConnection;
@@ -59,7 +59,7 @@
 - (void)invalidate;
 - (id)nextInterfaceIndex;
 - (id)orderedInterfaces;
-- (BOOL)parseServiceNameForInit:(id)arg1;
+- (bool)parseServiceNameForInit:(id)arg1;
 - (id)playerID;
 - (id)resolveTimeoutHandler;
 - (id)resolveTimer;
@@ -78,10 +78,10 @@
 - (void)setResolveTimer:(id)arg1;
 - (void)setSendDataBuffer:(id)arg1;
 - (void)setServiceName:(id)arg1;
-- (void)setShouldSignalDiscovery:(BOOL)arg1;
+- (void)setShouldSignalDiscovery:(bool)arg1;
 - (void)setState:(int)arg1;
 - (void)setTrialConnection:(id)arg1;
-- (BOOL)shouldSignalDiscovery;
+- (bool)shouldSignalDiscovery;
 - (void)startResolveTimerWithHandler:(id)arg1;
 - (int)state;
 - (void)stopResolveTimer;

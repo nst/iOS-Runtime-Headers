@@ -5,13 +5,16 @@
 @class NSManagedObjectID, NSMutableDictionary;
 
 @interface NSAtomicStoreCacheNode : NSObject {
-    unsigned long __versionNumber;
+    unsigned long long __versionNumber;
     NSManagedObjectID *_objectID;
     NSMutableDictionary *_propertyCache;
     void *_reserved1;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
+@property(readonly) NSManagedObjectID * objectID;
+@property(retain) NSMutableDictionary * propertyCache;
+
++ (bool)accessInstanceVariablesDirectly;
 + (void)initialize;
 
 - (void)_setVersionNumber:(unsigned int)arg1;
@@ -20,7 +23,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithObjectID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (const id*)knownKeyValuesPointer;
 - (id)objectID;
 - (id)propertyCache;

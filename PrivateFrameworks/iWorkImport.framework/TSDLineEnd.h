@@ -9,22 +9,22 @@
 
 @class NSString;
 
-@interface TSDLineEnd : NSObject <NSCopying> {
+@interface TSDLineEnd : NSObject <NSCopying, TSDMixing> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
+    boolmIsFilled;
     } mEndPoint;
     NSString *mIdentifier;
-    BOOL mIsFilled;
     int mLineJoin;
     struct CGPath { } *mPath;
     struct CGPath { } *mWrapPath;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } endPoint;
+@property(readonly) struct CGPoint { double x1; double x2; } endPoint;
 @property(readonly) NSString * identifier;
-@property(readonly) BOOL isFilled;
-@property(readonly) BOOL isNone;
+@property(readonly) bool isFilled;
+@property(readonly) bool isNone;
 @property(readonly) int lineJoin;
 @property(readonly) struct CGPath { }* path;
 @property(readonly) struct CGPath { }* wrapPath;
@@ -37,8 +37,8 @@
 + (id)invertedArrow;
 + (id)line;
 + (id)lineEndWithIdentifier:(id)arg1;
-+ (id)lineEndWithPath:(struct CGPath { }*)arg1 endPoint:(struct CGPoint { float x1; float x2; })arg2 isFilled:(BOOL)arg3 identifier:(id)arg4;
-+ (id)lineEndWithPath:(struct CGPath { }*)arg1 wrapPath:(struct CGPath { }*)arg2 endPoint:(struct CGPoint { float x1; float x2; })arg3 isFilled:(BOOL)arg4 identifier:(id)arg5;
++ (id)lineEndWithPath:(struct CGPath { }*)arg1 endPoint:(struct CGPoint { double x1; double x2; })arg2 isFilled:(bool)arg3 identifier:(id)arg4;
++ (id)lineEndWithPath:(struct CGPath { }*)arg1 wrapPath:(struct CGPath { }*)arg2 endPoint:(struct CGPoint { double x1; double x2; })arg3 isFilled:(bool)arg4 identifier:(id)arg5;
 + (id)lineEndWithType:(int)arg1;
 + (id)none;
 + (id)openArrow;
@@ -49,17 +49,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })endPoint;
-- (unsigned int)hash;
+- (struct CGPoint { double x1; double x2; })endPoint;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithArchive:(const struct LineEndArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Path {} *x3; struct Point {} *x4; int x5; boolx6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithPath:(struct CGPath { }*)arg1 endPoint:(struct CGPoint { float x1; float x2; })arg2 isFilled:(BOOL)arg3 identifier:(id)arg4;
-- (id)initWithPath:(struct CGPath { }*)arg1 wrapPath:(struct CGPath { }*)arg2 endPoint:(struct CGPoint { float x1; float x2; })arg3 isFilled:(BOOL)arg4 identifier:(id)arg5 lineJoin:(int)arg6;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFilled;
-- (BOOL)isNone;
+- (id)initWithPath:(struct CGPath { }*)arg1 endPoint:(struct CGPoint { double x1; double x2; })arg2 isFilled:(bool)arg3 identifier:(id)arg4;
+- (id)initWithPath:(struct CGPath { }*)arg1 wrapPath:(struct CGPath { }*)arg2 endPoint:(struct CGPoint { double x1; double x2; })arg3 isFilled:(bool)arg4 identifier:(id)arg5 lineJoin:(int)arg6;
+- (bool)isEqual:(id)arg1;
+- (bool)isFilled;
+- (bool)isNone;
 - (int)lineJoin;
-- (struct CGImage { }*)newLineEndImageOnRight:(BOOL)arg1 forContentsScale:(float)arg2 withSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
+- (struct CGImage { }*)newLineEndImageOnRight:(bool)arg1 forContentsScale:(double)arg2 withSize:(struct CGSize { double x1; double x2; })arg3;
 - (struct CGPath { }*)path;
 - (void)saveToArchive:(struct LineEndArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Path {} *x3; struct Point {} *x4; int x5; boolx6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
 - (struct CGPath { }*)wrapPath;

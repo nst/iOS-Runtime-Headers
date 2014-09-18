@@ -8,14 +8,11 @@
     CoreDAVAction *_backingAction;
 }
 
-@property(retain) CoreDAVAction * action;
 @property(retain) CoreDAVAction * backingAction;
 
-- (id)action;
 - (id)backingAction;
 - (void)dealloc;
 - (id)description;
-- (void)setAction:(id)arg1;
 - (void)setBackingAction:(id)arg1;
 
 @end

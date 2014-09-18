@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIDocumentInteractionController;
+@class NSString, UIDocumentInteractionController;
 
 @interface SUDocumentInteractionSession : NSObject <UIDocumentInteractionControllerDelegate> {
     id _completionHandler;
@@ -14,6 +14,10 @@
 }
 
 @property(copy) id completionHandler;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)cancel;
 - (id)completionHandler;

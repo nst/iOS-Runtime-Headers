@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class <MFGuaranteedCollectingDataConsumer>, NSData;
+@class <MFGuaranteedCollectingDataConsumer>, NSData, NSString;
 
 @interface MFPartialNetworkDataConsumer : NSObject <MFDataConsumer> {
     unsigned int _seenNetworkLineEndings : 1;
-    unsigned int _length;
+    unsigned long long _length;
     <MFGuaranteedCollectingDataConsumer> *_rawDataConsumer;
     NSData *_strippedData;
 }
 
-- (int)appendData:(id)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (long long)appendData:(id)arg1;
 - (id)copyDataWithUnixLineEndings;
 - (id)data;
 - (void)dealloc;
 - (void)done;
 - (id)init;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (void)purge;
 
 @end

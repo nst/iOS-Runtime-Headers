@@ -11,7 +11,7 @@
 }
 
 @property(retain) IMAVMicrophone * currentMicrophone;
-@property(readonly) NSArray * microphones;
+@property(retain,readonly) NSArray * microphones;
 
 + (id)sharedInstance;
 

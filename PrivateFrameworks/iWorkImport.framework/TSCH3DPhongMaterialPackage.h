@@ -30,10 +30,11 @@
 - (void)dealloc;
 - (id)diffuse;
 - (id)emissive;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithArchive:(const struct Chart3DPhongMaterialPackageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DEmissiveMaterialArchive {} *x3; struct Chart3DDiffuseMaterialArchive {} *x4; struct Chart3DModulateMaterialArchive {} *x5; struct Chart3DSpecularMaterialArchive {} *x6; struct Chart3DShininessMaterialArchive {} *x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)materialEnumerator;
 - (id)modulate;
 - (void)saveToArchive:(struct Chart3DPhongMaterialPackageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DEmissiveMaterialArchive {} *x3; struct Chart3DDiffuseMaterialArchive {} *x4; struct Chart3DModulateMaterialArchive {} *x5; struct Chart3DSpecularMaterialArchive {} *x6; struct Chart3DShininessMaterialArchive {} *x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;

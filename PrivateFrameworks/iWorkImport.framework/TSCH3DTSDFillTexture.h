@@ -12,8 +12,9 @@
 
 - (id)databufferForDataCache:(id)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)initWithTSDFill:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

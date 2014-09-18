@@ -2,49 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@class NSObject<OS_dispatch_queue>, TSPDirectoryPackageDataWriter;
 
-@class <TSPComponentWriteChannel>, <TSPPackage>, NSError, NSObject<OS_dispatch_queue>, NSURL, SFUCryptoKey, TSPBundle, TSUPathSet, TSUZipFileWriter;
-
-@interface TSPBundleWriter : NSObject <TSPPackageWriter> {
-    NSURL *_URL;
-    <TSPComponentWriteChannel> *_componentWriteChannel;
-    TSUPathSet *_dataPathSet;
-    NSURL *_documentTargetURL;
-    SFUCryptoKey *_encryptionKey;
-    NSError *_error;
-    NSObject<OS_dispatch_queue> *_errorQueue;
-    BOOL _isClosed;
-    TSUZipFileWriter *_objectArchiveWriter;
-    BOOL _obscureAssetFilenames;
-    <TSPPackage> *_originalDocumentPackage;
-    <TSPPackage> *_originalSupportPackage;
-    NSURL *_relativeURLForExternalData;
-    TSPBundle *_writtenBundle;
+@interface TSPBundleWriter : TSPPackageWriter {
+    NSObject<OS_dispatch_queue> *_componentFileIOQueue;
+    TSPDirectoryPackageDataWriter *_dataWriter;
 }
 
-@property(readonly) NSURL * documentTargetURL;
-@property BOOL obscureAssetFilenames;
-@property(readonly) NSURL * relativeURLForExternalData;
++ (bool)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(bool)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)addData:(id)arg1 infoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned long long x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; int x10; unsigned int x11[1]; }*)arg2 saveOperationState:(id)arg3;
-- (void)closeWithQueue:(id)arg1 completion:(id)arg2;
-- (void)copyComponent:(id)arg1 locator:(id)arg2 completion:(id)arg3;
-- (BOOL)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(BOOL)arg2;
-- (id)dataFilenameForPreferredFilename:(id)arg1;
-- (void)dealloc;
-- (id)documentTargetURL;
-- (id)initWithURL:(id)arg1 documentTargetURL:(id)arg2 relativeURLForExternalData:(id)arg3 packageIdentifier:(unsigned char)arg4 encryptionKey:(id)arg5 originalDocumentPackage:(id)arg6 originalSuppportPackage:(id)arg7 fileCoordinatorDelegate:(id)arg8 error:(id*)arg9;
-- (id)linkOrCopyDataFromURL:(id)arg1 decryptionKey:(id)arg2 preferredFilename:(id)arg3;
-- (id)newComponentWriteChannelWithPackageLocator:(id)arg1 storeOutsideObjectArchive:(BOOL)arg2;
-- (BOOL)obscureAssetFilenames;
-- (id)relativeURLForExternalData;
-- (void)setObscureAssetFilenames:(BOOL)arg1;
-- (BOOL)writeData:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
-- (id)writtenPackage;
+- (unsigned long long)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
+- (id)initWithURL:(id)arg1 documentTargetURL:(id)arg2 relativeURLForExternalData:(id)arg3 packageIdentifier:(unsigned char)arg4 documentProperties:(id)arg5 fileFormatVersion:(unsigned long long)arg6 updateType:(long long)arg7 encryptionKey:(id)arg8 originalDocumentPackage:(id)arg9 originalSuppportPackage:(id)arg10 fileCoordinatorDelegate:(id)arg11 progress:(id)arg12 error:(id*)arg13;
+- (id)linkOrCopyData:(id)arg1 fromURL:(id)arg2 decryptionKey:(id)arg3 preferredFilename:(id)arg4 error:(id*)arg5;
+- (struct CGDataConsumer { }*)newCGDataConsumerAtRelativePath:(id)arg1;
+- (id)newPackageWithPackageIdentifier:(unsigned char)arg1 documentProperties:(id)arg2 fileFormatVersion:(unsigned long long)arg3 decryptionKey:(id)arg4 fileCoordinatorDelegate:(id)arg5;
+- (id)newRawComponentWriteChannelWithPackageLocator:(id)arg1 storeOutsideObjectArchive:(bool)arg2;
+- (id)newRawDataWriteChannelForRelativePath:(id)arg1 originalSize:(unsigned long long)arg2 originalCRC:(unsigned int)arg3;
+- (id)targetDataURLForPath:(id)arg1;
+- (bool)writeData:(id)arg1 toRelativePath:(id)arg2 allowEncryption:(bool)arg3 error:(id*)arg4;
 
 @end

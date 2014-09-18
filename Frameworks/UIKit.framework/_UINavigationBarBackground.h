@@ -20,38 +20,38 @@
 
 @property(setter=_setShadowView:,retain) UIView * _shadowView;
 @property(retain) _UINavigationBarAppearanceStorage * appearanceStorage;
-@property int barStyle;
+@property long long barStyle;
 @property(retain) UIColor * barTintColor;
-@property BOOL barWantsAdaptiveBackdrop;
-@property(getter=isTranslucent) BOOL translucent;
+@property bool barWantsAdaptiveBackdrop;
+@property(getter=isTranslucent) bool translucent;
 
 - (id)_adaptiveBackdrop;
 - (id)_currentCustomBackground;
-- (id)_currentCustomBackgroundDedicatedToBarMetrics:(int*)arg1 barPosition:(int*)arg2;
-- (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
+- (id)_currentCustomBackgroundDedicatedToBarMetrics:(long long*)arg1 barPosition:(long long*)arg2;
+- (id)_currentCustomBackgroundRespectOversize_legacy:(bool*)arg1;
 - (id)_customShadowImageForSearchBar;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(BOOL)arg2;
-- (void)_setIsContainedInPopover:(BOOL)arg1;
+- (void)_setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(bool)arg2;
+- (void)_setIsContainedInPopover:(bool)arg1;
 - (void)_setShadowView:(id)arg1;
 - (id)_shadowView;
 - (id)appearanceStorage;
-- (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(int)arg2;
-- (id)backdropView:(id)arg1 willChangeToGraphicsQuality:(int)arg2;
-- (int)barStyle;
+- (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(long long)arg2;
+- (id)backdropView:(id)arg1 willChangeToGraphicsQuality:(long long)arg2;
+- (long long)barStyle;
 - (id)barTintColor;
-- (BOOL)barWantsAdaptiveBackdrop;
+- (bool)barWantsAdaptiveBackdrop;
 - (void)dealloc;
 - (void)didMoveToSuperview;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 barStyle:(int)arg2 barTintColor:(id)arg3 appearance:(id)arg4 barTranslucence:(int)arg5;
-- (BOOL)isTranslucent;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 barStyle:(long long)arg2 barTintColor:(id)arg3 appearance:(id)arg4 barTranslucence:(long long)arg5;
+- (bool)isTranslucent;
 - (void)setAppearanceStorage:(id)arg1;
-- (void)setBarStyle:(int)arg1;
+- (void)setBarStyle:(long long)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBarWantsAdaptiveBackdrop:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTranslucent:(BOOL)arg1;
+- (void)setBarWantsAdaptiveBackdrop:(bool)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTranslucent:(bool)arg1;
 - (void)updateBackgroundImage;
 
 @end

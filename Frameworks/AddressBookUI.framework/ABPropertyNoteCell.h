@@ -2,31 +2,30 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UITextView;
+@class UILabel, UITextView;
 
 @interface ABPropertyNoteCell : ABPropertyCell {
+    UILabel *_labelLabel;
     UITextView *_textView;
 }
 
+@property(readonly) UILabel * labelLabel;
 @property(retain) UITextView * textView;
 
-- (void)_updateDisplayAndEditingControls;
-- (id)contentViewConstraints;
-- (id)contentViewEditingConstraints;
+- (double)bottomBaselineConstant;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)labelLabel;
+- (id)labelView;
 - (void)performDefaultAction;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (void)setBackgroundColor:(id)arg1;
+- (void)setAllowsEditing:(bool)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (void)setValueTextAttributes:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (bool)shouldPerformDefaultAction;
 - (id)textView;
 - (void)textViewChanged:(id)arg1;
 - (void)textViewEditingDidEnd:(id)arg1;
-- (void)tintColorDidChange;
-- (void)updateWithPropertyItem:(id)arg1;
+- (id)valueView;
 
 @end

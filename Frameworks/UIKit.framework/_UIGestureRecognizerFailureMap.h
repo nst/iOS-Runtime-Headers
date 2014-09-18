@@ -11,21 +11,22 @@
     int _unmetFailureRequirementCount;
 }
 
-@property(readonly) BOOL hasUnmetFailureRequirementsOrDependents;
+@property(readonly) bool hasUnmetFailureRequirementsOrDependents;
 
 + (void)buildFailureMapForGestureRecognizer:(id)arg1;
 + (void)buildFailureMapForGestureRecognizers:(id)arg1;
 
 - (void)_gestureRecognizerFinished:(id)arg1 withEvent:(id)arg2;
 - (void)_queueRecognizersForResetIfFinished;
+- (void)_rebuildFailureMapDefferingRelease;
 - (void)dealloc;
 - (id)description;
 - (void)gestureRecognizerBecameDirty:(id)arg1;
 - (void)gestureRecognizerDeallocated:(id)arg1;
 - (void)gestureRecognizerFinished:(id)arg1 withEvent:(id)arg2;
-- (BOOL)hasUnmetFailureRequirementsOrDependents;
+- (bool)hasUnmetFailureRequirementsOrDependents;
 - (id)initWithRelatedGestures:(id)arg1;
-- (BOOL)isGestureRecognizerWaitingForGestureRecognizersToFail:(id)arg1;
+- (bool)isGestureRecognizerWaitingForGestureRecognizersToFail:(id)arg1;
 - (void)rebuildFailureMap;
 - (void)reloadFailureMap;
 

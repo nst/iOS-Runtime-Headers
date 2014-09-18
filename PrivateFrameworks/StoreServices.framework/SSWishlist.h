@@ -12,11 +12,11 @@
 @property(readonly) long long accountIdentifier;
 @property(copy) NSNumber * lastSyncTime;
 
-+ (BOOL)existsForAccountIdentifier:(long long)arg1;
++ (bool)existsForAccountIdentifier:(long long)arg1;
 
 - (long long)accountIdentifier;
 - (void)dealloc;
-- (BOOL)deleteBackingStore;
+- (bool)deleteBackingStore;
 - (id)initWithAccountIdentifier:(long long)arg1;
 - (id)lastSyncTime;
 - (void)performTransactionWithBlock:(id)arg1;

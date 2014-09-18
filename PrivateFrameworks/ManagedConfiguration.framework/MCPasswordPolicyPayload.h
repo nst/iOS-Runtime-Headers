@@ -18,17 +18,17 @@
     NSNumber *_passcodeHistoryCount;
 }
 
-@property(readonly) NSNumber * isAlphanumericPasscodeRequired;
-@property(readonly) NSNumber * isManualFetchingWhenRoaming;
-@property(readonly) NSNumber * isPasscodeRequired;
-@property(readonly) NSNumber * isSimplePasscodeAllowed;
-@property(readonly) NSNumber * maxFailedAttempts;
-@property(readonly) NSNumber * maxGracePeriodMinutes;
-@property(readonly) NSNumber * maxInactivityMinutes;
-@property(readonly) NSNumber * maxPasscodeAgeDays;
-@property(readonly) NSNumber * minComplexCharacters;
-@property(readonly) NSNumber * minLength;
-@property(readonly) NSNumber * passcodeHistoryCount;
+@property(retain,readonly) NSNumber * isAlphanumericPasscodeRequired;
+@property(retain,readonly) NSNumber * isManualFetchingWhenRoaming;
+@property(retain,readonly) NSNumber * isPasscodeRequired;
+@property(retain,readonly) NSNumber * isSimplePasscodeAllowed;
+@property(retain,readonly) NSNumber * maxFailedAttempts;
+@property(retain,readonly) NSNumber * maxGracePeriodMinutes;
+@property(retain,readonly) NSNumber * maxInactivityMinutes;
+@property(retain,readonly) NSNumber * maxPasscodeAgeDays;
+@property(retain,readonly) NSNumber * minComplexCharacters;
+@property(retain,readonly) NSNumber * minLength;
+@property(retain,readonly) NSNumber * passcodeHistoryCount;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -48,6 +48,7 @@
 - (id)minComplexCharacters;
 - (id)minLength;
 - (id)passcodeHistoryCount;
+- (id)payloadDescriptionKeyValueSections;
 - (id)restrictions;
 - (id)stubDictionary;
 - (id)subtitle1Description;

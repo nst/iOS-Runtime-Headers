@@ -7,6 +7,8 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSMethodSignature;
+
 @interface NSInvocation : NSObject {
     id _container;
     void *_frame;
@@ -16,9 +18,14 @@
     id _signature;
 }
 
+@property(readonly) bool argumentsRetained;
+@property(retain,readonly) NSMethodSignature * methodSignature;
+@property SEL selector;
+@property id target;
+
 + (id)_gkInvocationWithBlock:(id)arg1;
 + (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
-+ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
++ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(char *)arg3;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (void)executeBlock:(id)arg1;
 + (void)executeBlock:(id)arg1;
@@ -29,26 +36,26 @@
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 
-- (void)__gkPrepareForFakeCallbackWithNoData:(BOOL)arg1 orError:(id)arg2;
+- (void)__gkPrepareForFakeCallbackWithNoData:(bool)arg1 orError:(id)arg2;
 - (void)_addAttachedObject:(id)arg1;
-- (int)_firstXPCProxyReplyHandlerArgumentIndex;
 - (void)_gkCallbackWithError:(id)arg1 queue:(id)arg2;
-- (void)_gkClearArgumentAtIndex:(unsigned int)arg1;
+- (void)_gkClearArgumentAtIndex:(unsigned long long)arg1;
 - (void)_gkClearCopiedArguments;
 - (void)_gkClearTarget;
 - (void)_gkCopyArguments;
-- (BOOL)_gkHasReplyBlock;
+- (bool)_gkHasReplyBlock;
 - (void)_gkInvokeOnce;
 - (void)_gkInvokeOnceWithTarget:(id)arg1;
 - (void)_gkPrepareForCallWithError:(id)arg1;
 - (void)_gkPrintBlockSignature;
 - (id)_gkReplyHandlerInvocation;
+- (bool)_hasBlockArgument;
 - (void)_webkit_invokeAndHandleException:(id)arg1;
-- (BOOL)argumentsRetained;
+- (bool)argumentsRetained;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
-- (void)getArgument:(void*)arg1 atIndex:(int)arg2;
+- (void)getArgument:(void*)arg1 atIndex:(long long)arg2;
 - (void)getReturnValue:(void*)arg1;
 - (id)init;
 - (void)invoke;
@@ -56,16 +63,16 @@
 - (void)invokeUsingIMP:(int (*)())arg1;
 - (void)invokeWithTarget:(id)arg1;
 - (id)methodSignature;
-- (BOOL)mf_shouldLogInvocation;
+- (bool)mf_shouldLogInvocation;
 - (void)retainArguments;
 - (SEL)selector;
-- (void)setArgument:(void*)arg1 atIndex:(int)arg2;
+- (void)setArgument:(void*)arg1 atIndex:(long long)arg2;
 - (void)setReturnValue:(void*)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)target;
 - (id)userInfo;
-- (BOOL)wantsReturnValue;
+- (bool)wantsReturnValue;
 
 @end

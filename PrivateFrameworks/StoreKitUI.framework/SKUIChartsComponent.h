@@ -11,8 +11,9 @@
 @property(readonly) NSArray * charts;
 
 - (void).cxx_destruct;
+- (id)_ineligibleGratisIdentifiersForChartDictionary:(id)arg1;
 - (id)charts;
-- (int)componentType;
+- (long long)componentType;
 - (id)description;
 - (id)initWithChartPageContext:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;

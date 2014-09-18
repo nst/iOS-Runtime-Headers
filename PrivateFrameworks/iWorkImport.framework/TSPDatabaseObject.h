@@ -13,8 +13,8 @@
 @property(readonly) long long dataState;
 @property(readonly) NSString * fileState;
 @property(readonly) NSURL * fileURL;
-@property(readonly) BOOL hasDataState;
-@property(readonly) BOOL hasFileState;
+@property(readonly) bool hasDataState;
+@property(readonly) bool hasFileState;
 @property(readonly) long long identifier;
 
 + (id)databaseObjectWithIdentifier:(long long)arg1 classType:(int)arg2 dataState:(long long)arg3;
@@ -24,8 +24,8 @@
 - (long long)dataState;
 - (id)fileState;
 - (id)fileURL;
-- (BOOL)hasDataState;
-- (BOOL)hasFileState;
+- (bool)hasDataState;
+- (bool)hasFileState;
 - (long long)identifier;
 - (id)init;
 - (id)initWithIdentifier:(long long)arg1 classType:(int)arg2;

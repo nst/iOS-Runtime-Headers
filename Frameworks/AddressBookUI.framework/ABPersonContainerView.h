@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonOverlayingContainerView, ABPersonTableView, ABPersonTableViewDataSource, UIImageView, UIScrollView<ABPersonTabsScrollView>, UISegmentedControl, UIView;
+@class ABPersonOverlayingContainerView, ABPersonTableView, ABPersonTableViewDataSource, NSString, UIImageView, UIScrollView<ABPersonTabsScrollView>, UISegmentedControl, UIView;
 
 @interface ABPersonContainerView : UIView <ABPersonTabsLayoutManager> {
     UISegmentedControl *_contentSwitchingTabs;
     UIImageView *_contentSwitchingTabsBorder;
     UIImageView *_contentSwitchingTabsPocketShadow;
     ABPersonTableViewDataSource *_dataSource;
-    BOOL _hidesContentSwitchingTabs;
     UIView *_nonScrollableHeaderView;
     ABPersonOverlayingContainerView *_overlayingContainerView;
     ABPersonTableView *_tableView;
+    bool_hidesContentSwitchingTabs;
 }
 
 @property(retain) UISegmentedControl * contentSwitchingTabs;
@@ -20,9 +20,13 @@
 @property(retain) UIImageView * contentSwitchingTabsPocketShadow;
 @property(readonly) UIScrollView<ABPersonTabsScrollView> * currentScrollView;
 @property ABPersonTableViewDataSource * dataSource;
-@property BOOL hidesContentSwitchingTabs;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool hidesContentSwitchingTabs;
 @property(retain) UIView * nonScrollableHeaderView;
 @property(retain) ABPersonOverlayingContainerView * overlayingContainerView;
+@property(readonly) Class superclass;
 @property(retain) ABPersonTableView * tableView;
 
 - (id)contentSwitchingTabs;
@@ -31,10 +35,10 @@
 - (id)currentScrollView;
 - (id)dataSource;
 - (void)dealloc;
-- (void)didChangeContentOffset:(struct CGPoint { float x1; float x2; })arg1 inScrollView:(id)arg2;
-- (float)heightForHeaderAndContentSwitchingTabs;
-- (float)heightNeededForContentSwitchingTabs;
-- (BOOL)hidesContentSwitchingTabs;
+- (void)didChangeContentOffset:(struct CGPoint { double x1; double x2; })arg1 inScrollView:(id)arg2;
+- (double)heightForHeaderAndContentSwitchingTabs;
+- (double)heightNeededForContentSwitchingTabs;
+- (bool)hidesContentSwitchingTabs;
 - (void)layoutSubviews;
 - (void)moveContentSwitchingTabsAboveView:(id)arg1 inScrollView:(id)arg2;
 - (id)nonScrollableHeaderView;
@@ -46,8 +50,8 @@
 - (void)setContentSwitchingTabsBorder:(id)arg1;
 - (void)setContentSwitchingTabsPocketShadow:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHidesContentSwitchingTabs:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHidesContentSwitchingTabs:(bool)arg1;
 - (void)setNonScrollableHeaderView:(id)arg1;
 - (void)setOverlayingContainerView:(id)arg1;
 - (void)setTableView:(id)arg1;

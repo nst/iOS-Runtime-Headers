@@ -2,23 +2,32 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingDataRequest, AVAssetResourceLoadingRequestInternal, NSURLRequest, NSURLResponse;
+@class AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingDataRequest, AVAssetResourceLoadingRequestInternal, NSString, NSURLRequest, NSURLResponse;
 
-@interface AVAssetResourceLoadingRequest : NSObject {
+@interface AVAssetResourceLoadingRequest : NSObject <AVAssetResourceLoaderRequest> {
     AVAssetResourceLoadingRequestInternal *_loadingRequest;
 }
 
-@property(getter=isCancelled,readonly) BOOL cancelled;
+@property(getter=isCancelled,readonly) bool cancelled;
 @property(readonly) AVAssetResourceLoadingContentInformationRequest * contentInformationRequest;
 @property(readonly) AVAssetResourceLoadingDataRequest * dataRequest;
-@property(getter=isFinished,readonly) BOOL finished;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(getter=isFinished,readonly) bool finished;
+@property(readonly) unsigned long long hash;
 @property(copy) NSURLRequest * redirect;
 @property(readonly) NSURLRequest * request;
 @property(copy) NSURLResponse * response;
+@property(readonly) Class superclass;
 
++ (SEL)_selectorForInformingDelegateOfCancellationByFig;
+
+- (void)_addFigAssetImageGeneratorListeners;
 - (void)_addFigPlaybackItemListeners;
 - (void)_appendToCachedData:(id)arg1;
 - (id)_getAndClearCachedData;
+- (void)_performCancellationByClient;
+- (void)_removeFigAssetImageGeneratorListeners;
 - (void)_removeFigPlaybackItemListeners;
 - (id)_requestDictionary;
 - (id)_resourceLoader;
@@ -26,7 +35,8 @@
 - (void)_sendDictionaryForURLRequest:(id)arg1 context:(id)arg2;
 - (void)_setContentInformationRequest:(id)arg1;
 - (void)_setDataRequest:(id)arg1;
-- (BOOL)_tryToMarkAsCancelled;
+- (bool)_shouldInformDelegateOfFigCancellation;
+- (bool)_tryToMarkAsCancelled;
 - (id)_weakReference;
 - (id)contentInformationRequest;
 - (id)dataRequest;
@@ -36,11 +46,12 @@
 - (void)finishLoading;
 - (void)finishLoadingWithError:(id)arg1;
 - (void)finishLoadingWithResponse:(id)arg1 data:(id)arg2 redirect:(id)arg3;
-- (BOOL)finished;
+- (bool)finished;
 - (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
+- (id)init;
 - (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
+- (bool)isCancelled;
+- (bool)isFinished;
 - (id)redirect;
 - (id)request;
 - (id)response;

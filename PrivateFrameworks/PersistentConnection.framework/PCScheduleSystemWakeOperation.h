@@ -5,14 +5,14 @@
 @class NSDate, NSString;
 
 @interface PCScheduleSystemWakeOperation : NSOperation {
-    BOOL _scheduleOrCancel;
     NSString *_serviceIdentifier;
     void *_unqiueIdentifier;
     NSDate *_wakeDate;
+    bool_scheduleOrCancel;
 }
 
 - (void)dealloc;
-- (id)initForScheduledWake:(BOOL)arg1 wakeDate:(id)arg2 serviceIdentifier:(id)arg3 uniqueIdentifier:(void*)arg4;
+- (id)initForScheduledWake:(bool)arg1 wakeDate:(id)arg2 serviceIdentifier:(id)arg3 uniqueIdentifier:(void*)arg4;
 - (void)main;
 
 @end

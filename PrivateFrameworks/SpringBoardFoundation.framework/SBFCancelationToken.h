@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface SBFCancelationToken : NSObject <SBFCancelable> {
     NSMutableArray *_cancelationBlocks;
-    BOOL _isCanceled;
+    bool_isCanceled;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)tokenWithCancelationBlock:(id)arg1;
 + (id)tokenWrappingCancelable:(id)arg1;
@@ -17,7 +22,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCanceled;
+- (bool)isCanceled;
 - (id)nts_cancel;
 
 @end

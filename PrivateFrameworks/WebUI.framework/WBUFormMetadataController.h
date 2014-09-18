@@ -12,10 +12,9 @@
 
 + (id)sharedFormMetadataController;
 
+- (void).cxx_destruct;
 - (void)clearScriptWorld;
-- (void)dealloc;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue { }*)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
-- (BOOL)formClassificationShouldIgnoreAutocompleteAttribute;
 - (id)scriptWorld;
 
 @end

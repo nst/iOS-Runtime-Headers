@@ -8,7 +8,7 @@
     NSDictionary *_userInfo;
 }
 
-@property(readonly) PLManagedAsset * asset;
+@property(retain,readonly) PLManagedAsset * asset;
 
 + (id)notificationWithAsset:(id)arg1 snapshot:(id)arg2;
 

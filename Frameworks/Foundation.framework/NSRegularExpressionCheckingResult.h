@@ -14,10 +14,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRangeArray:(id)arg1 regularExpression:(id)arg2;
-- (id)initWithRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 count:(unsigned int)arg2 regularExpression:(id)arg3;
+- (id)initWithRanges:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 count:(unsigned long long)arg2 regularExpression:(id)arg3;
 - (id)rangeArray;
 - (id)regularExpression;
-- (id)resultByAdjustingRangesWithOffset:(int)arg1;
+- (id)resultByAdjustingRangesWithOffset:(long long)arg1;
 - (unsigned long long)resultType;
 
 @end

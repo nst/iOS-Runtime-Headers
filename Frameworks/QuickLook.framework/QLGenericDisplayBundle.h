@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSError, QLGenericView;
+@class NSError, NSString, QLGenericView;
 
 @interface QLGenericDisplayBundle : QLDisplayBundle <QLGenericViewDelegate> {
     QLGenericView *_airplayView;
     NSError *_error;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_loadPreviewItemInfos;
 - (id)airplayView;
@@ -21,6 +25,7 @@
 - (void)loadWithHints:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setupAirPlayView;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (id)subtitleWithDescription:(id)arg1 fileSize:(unsigned long long)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

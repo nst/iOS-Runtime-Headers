@@ -23,7 +23,7 @@
 @property(copy) NSArray * to;
 
 - (id)cc;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)content;
 - (void)dealloc;
 - (unsigned int)documentIdentifier;

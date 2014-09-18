@@ -5,19 +5,19 @@
 @class EKAlarm, EKObjectID, NSDate, NSDateComponents, NSURL;
 
 @interface EKReminder : EKCalendarItem {
-    BOOL hadRecurrences;
+    boolhadRecurrences;
 }
 
 @property(copy) NSURL * action;
 @property(readonly) EKAlarm * bestDisplayAlarm;
-@property(getter=isCompleted) BOOL completed;
+@property(getter=isCompleted) bool completed;
 @property(copy) NSDate * completionDate;
-@property unsigned int displayOrder;
+@property unsigned long long displayOrder;
 @property(readonly) NSDate * dueDate;
 @property(copy) NSDateComponents * dueDateComponents;
-@property BOOL hadRecurrences;
+@property bool hadRecurrences;
 @property(readonly) EKObjectID * parentID;
-@property int priority;
+@property long long priority;
 @property(copy) NSDateComponents * startDateComponents;
 
 + (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
@@ -27,30 +27,31 @@
 - (void)_sendModifiedNote;
 - (id)bestDisplayAlarm;
 - (void)clearParentID;
-- (BOOL)commit:(id*)arg1;
+- (bool)commit:(id*)arg1;
 - (id)completionDate;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)displayOrder;
+- (unsigned long long)displayOrder;
 - (id)dueDate;
 - (id)dueDateComponents;
 - (id)externalURI;
-- (BOOL)hadRecurrences;
+- (bool)hadRecurrences;
 - (id)initWithPersistentObject:(id)arg1;
-- (BOOL)isCompleted;
+- (bool)isCompleted;
 - (id)parentID;
-- (int)priority;
+- (long long)priority;
 - (id)reminderIdentifier;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setCompletionDate:(id)arg1;
-- (void)setDisplayOrder:(unsigned int)arg1;
+- (void)setDisplayOrder:(unsigned long long)arg1;
 - (void)setDueDateComponents:(id)arg1;
-- (void)setHadRecurrences:(BOOL)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setHadRecurrences:(bool)arg1;
+- (void)setPriority:(long long)arg1;
 - (void)setStartDateComponents:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)startDateComponents;
-- (BOOL)validate:(id*)arg1;
+- (id)startDateForRecurrence;
+- (bool)validate:(id*)arg1;
 
 @end

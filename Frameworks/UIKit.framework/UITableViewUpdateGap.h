@@ -16,11 +16,11 @@
 
 @property(readonly) NSArray * deleteItems;
 @property(retain) UIUpdateItem * firstUpdateItem;
-@property(readonly) BOOL hasAutomaticAnimationItems;
-@property(readonly) BOOL hasInserts;
+@property(readonly) bool hasAutomaticAnimationItems;
+@property(readonly) bool hasInserts;
 @property(readonly) NSArray * insertItems;
-@property(readonly) BOOL isDeleteBasedGap;
-@property(readonly) BOOL isSectionBasedGap;
+@property(readonly) bool isDeleteBasedGap;
+@property(readonly) bool isSectionBasedGap;
 @property(retain) UIUpdateItem * lastUpdateItem;
 @property(readonly) NSArray * updateItems;
 
@@ -31,12 +31,12 @@
 - (id)deleteItems;
 - (id)description;
 - (id)firstUpdateItem;
-- (BOOL)hasAutomaticAnimationItems;
-- (BOOL)hasInserts;
+- (bool)hasAutomaticAnimationItems;
+- (bool)hasInserts;
 - (id)init;
 - (id)insertItems;
-- (BOOL)isDeleteBasedGap;
-- (BOOL)isSectionBasedGap;
+- (bool)isDeleteBasedGap;
+- (bool)isSectionBasedGap;
 - (id)lastUpdateItem;
 - (void)setFirstUpdateItem:(id)arg1;
 - (void)setLastUpdateItem:(id)arg1;

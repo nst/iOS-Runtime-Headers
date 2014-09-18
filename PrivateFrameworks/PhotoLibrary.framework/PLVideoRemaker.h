@@ -2,22 +2,29 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVAsset, AVAssetExportSession, AVAudioMix, NSString, NSTimer, PLProgressView;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class AVAssetExportSession, NSString, NSTimer, PFVideoAVObjectBuilder, PLProgressView;
 
 @interface PLVideoRemaker : NSObject {
-    AVAsset *_asset;
-    AVAudioMix *_audioMix;
+    PFVideoAVObjectBuilder *__videoAVObjectBuilder;
     id _delegate;
     double _duration;
     AVAssetExportSession *_exportSession;
     int _mode;
     float _percentComplete;
+    id _progressHandler;
     NSTimer *_progressTimer;
     PLProgressView *_progressView;
     double _trimEndTime;
     double _trimStartTime;
     NSString *_trimmedPath;
 }
+
+@property(retain,readonly) PFVideoAVObjectBuilder * _videoAVObjectBuilder;
+@property(copy) id progressHandler;
 
 + (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
 + (long long)fileLengthLimitForRemakerMode:(int)arg1;
@@ -26,24 +33,27 @@
 + (double)maximumDurationForTrimMode:(int)arg1;
 
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
-- (void)_exportCompletedWithSuccess:(BOOL)arg1;
+- (void)_exportCompletedWithSuccess:(bool)arg1;
 - (id)_fileFormatForURL:(id)arg1;
 - (void)_removeProgressTimer;
 - (void)_resetProgressTimer;
 - (void)_updateProgress;
+- (id)_videoAVObjectBuilder;
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;
 - (double)duration;
 - (id)initWithAVAsset:(id)arg1;
-- (id)initWithManagedAsset:(id)arg1 applySlalomRegions:(BOOL)arg2;
+- (id)initWithManagedAsset:(id)arg1 applyVideoAdjustments:(bool)arg2;
 - (id)messageForRemakingProgress;
 - (int)mode;
+- (id)progressHandler;
 - (id)progressView;
 - (void)remake;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setMode:(int)arg1;
+- (void)setProgressHandler:(id)arg1;
 - (void)setTrimEndTime:(double)arg1;
 - (void)setTrimStartTime:(double)arg1;
 - (double)trimEndTime;

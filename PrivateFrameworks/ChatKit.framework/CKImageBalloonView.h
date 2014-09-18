@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAnimatedImage, CKBalloonImageView, NSArray;
+@class CKAnimatedImage, CKBalloonImageView, NSArray, NSString;
 
 @interface CKImageBalloonView : CKBalloonView <CKAnimationTimerObserver> {
     CKAnimatedImage *_animatedImage;
@@ -11,27 +11,32 @@
 }
 
 @property(retain) CKAnimatedImage * animatedImage;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSArray * frames;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(retain) CKBalloonImageView * tailMask;
 
 - (id)animatedImage;
-- (void)animationTimerFired:(unsigned int)arg1;
+- (void)animationTimerFired:(unsigned long long)arg1;
+- (void)configureForMediaObject:(id)arg1 previewWidth:(double)arg2 orientation:(BOOL)arg3;
 - (void)configureForMessagePart:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)didMoveToWindow;
 - (id)frames;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)overlayColor;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
 - (void)setAnimatedImage:(id)arg1;
-- (void)setCanUseOpaqueMask:(BOOL)arg1;
+- (void)setCanUseOpaqueMask:(bool)arg1;
 - (void)setFrames:(id)arg1;
-- (void)setHasTail:(BOOL)arg1;
+- (void)setHasTail:(bool)arg1;
 - (void)setTailMask:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (id)tailMask;
 - (void)updateAnimationTimerObserving;
 

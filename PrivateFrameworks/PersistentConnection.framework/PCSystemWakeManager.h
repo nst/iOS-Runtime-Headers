@@ -5,6 +5,6 @@
 @interface PCSystemWakeManager : NSObject {
 }
 
-+ (void)scheduleWake:(BOOL)arg1 wakeDate:(id)arg2 serviceIdentifier:(id)arg3 uniqueIdentifier:(void*)arg4;
++ (void)scheduleWake:(bool)arg1 wakeDate:(id)arg2 serviceIdentifier:(id)arg3 uniqueIdentifier:(void*)arg4;
 
 @end

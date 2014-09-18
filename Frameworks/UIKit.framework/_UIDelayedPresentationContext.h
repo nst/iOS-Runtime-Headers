@@ -10,28 +10,28 @@
 
 @interface _UIDelayedPresentationContext : NSObject {
     id _cancellationHandler;
-    BOOL _enableUserInteraction;
     NSInvocation *_presentInvocation;
-    int _reqcnt;
+    long long _reqcnt;
     double _timeout;
     NSObject<OS_dispatch_source> *_timerSource;
+    bool_enableUserInteraction;
 }
 
 @property(copy) id cancellationHandler;
 @property(retain) NSInvocation * presentInvocation;
 
 - (void)beginDelayedPresentation;
-- (void)cancelDelayedPresentation:(BOOL)arg1;
+- (void)cancelDelayedPresentation:(bool)arg1;
 - (id)cancellationHandler;
 - (void)dealloc;
-- (int)decrementRequestCount;
+- (long long)decrementRequestCount;
 - (id)delayingController;
 - (void)finishDelayedPresentation:(id)arg1;
-- (int)incrementRequestCount;
+- (long long)incrementRequestCount;
 - (id)initWithTimeout:(double)arg1 cancellationHandler:(id)arg2;
 - (id)invocationTarget;
 - (id)presentInvocation;
-- (int)requestCount;
+- (long long)requestCount;
 - (void)setCancellationHandler:(id)arg1;
 - (void)setPresentInvocation:(id)arg1;
 

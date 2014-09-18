@@ -6,7 +6,7 @@
 }
 
 - (Class)foregroundStyleClass;
-- (float)heightForMetrics:(int)arg1;
-- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
+- (double)heightForMetrics:(long long)arg1;
+- (bool)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 
 @end

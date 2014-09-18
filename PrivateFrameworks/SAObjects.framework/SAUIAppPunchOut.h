@@ -8,11 +8,11 @@
 }
 
 @property(retain) SAUIAddViews * alternativePunchOut;
-@property BOOL appAvailableInStorefront;
+@property bool appAvailableInStorefront;
 @property(copy) NSString * appDisplayName;
 @property(retain) SAUIImageResource * appIcon;
 @property(copy) NSDictionary * appIconMap;
-@property BOOL appInstalled;
+@property bool appInstalled;
 @property(copy) NSURL * appStoreUri;
 @property(copy) NSString * bundleId;
 @property(copy) NSString * providerId;
@@ -22,15 +22,16 @@
 + (id)appPunchOut;
 + (id)appPunchOutWithDictionary:(id)arg1 context:(id)arg2;
 
+- (bool)_afui_isUsefulUserResultCommand;
 - (void)afui_getInstallAppPunchoutWithCompletion:(id)arg1;
 - (id)afui_punchOutAppNotAvailableViews;
 - (id)afui_punchOutFailureViews;
 - (id)alternativePunchOut;
-- (BOOL)appAvailableInStorefront;
+- (bool)appAvailableInStorefront;
 - (id)appDisplayName;
 - (id)appIcon;
 - (id)appIconMap;
-- (BOOL)appInstalled;
+- (bool)appInstalled;
 - (id)appStoreUri;
 - (id)bundleId;
 - (id)encodedClassName;
@@ -38,13 +39,13 @@
 - (id)providerId;
 - (id)punchOutName;
 - (id)punchOutUri;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAlternativePunchOut:(id)arg1;
-- (void)setAppAvailableInStorefront:(BOOL)arg1;
+- (void)setAppAvailableInStorefront:(bool)arg1;
 - (void)setAppDisplayName:(id)arg1;
 - (void)setAppIcon:(id)arg1;
 - (void)setAppIconMap:(id)arg1;
-- (void)setAppInstalled:(BOOL)arg1;
+- (void)setAppInstalled:(bool)arg1;
 - (void)setAppStoreUri:(id)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setProviderId:(id)arg1;

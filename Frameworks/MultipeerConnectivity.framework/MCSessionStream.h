@@ -16,12 +16,12 @@
     MCResourceProgressObserver *_observer;
     MCPeerID *_peerID;
     NSProgress *_progress;
-    BOOL _progressUnbounded;
     NSObject<OS_dispatch_source> *_source;
-    BOOL _sourceSuspended;
     unsigned int _streamID;
     NSURL *_url;
     MCResourceDownloader *_urlDownloader;
+    bool_progressUnbounded;
+    bool_sourceSuspended;
     int state;
 }
 
@@ -32,9 +32,9 @@
 @property(retain) MCResourceProgressObserver * observer;
 @property MCPeerID * peerID;
 @property(retain) NSProgress * progress;
-@property BOOL progressUnbounded;
+@property bool progressUnbounded;
 @property NSObject<OS_dispatch_source> * source;
-@property BOOL sourceSuspended;
+@property bool sourceSuspended;
 @property int state;
 @property unsigned int streamID;
 @property(copy) NSURL * url;
@@ -48,7 +48,7 @@
 - (id)observer;
 - (id)peerID;
 - (id)progress;
-- (BOOL)progressUnbounded;
+- (bool)progressUnbounded;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setFd:(int)arg1;
 - (void)setIncomingBuffer:(id)arg1;
@@ -56,15 +56,15 @@
 - (void)setObserver:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (void)setProgress:(id)arg1;
-- (void)setProgressUnbounded:(BOOL)arg1;
+- (void)setProgressUnbounded:(bool)arg1;
 - (void)setSource:(id)arg1;
-- (void)setSourceSuspended:(BOOL)arg1;
+- (void)setSourceSuspended:(bool)arg1;
 - (void)setState:(int)arg1;
 - (void)setStreamID:(unsigned int)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUrlDownloader:(id)arg1;
 - (id)source;
-- (BOOL)sourceSuspended;
+- (bool)sourceSuspended;
 - (int)state;
 - (unsigned int)streamID;
 - (id)url;

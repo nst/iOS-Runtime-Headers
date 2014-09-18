@@ -12,14 +12,14 @@
 }
 
 @property(copy) PLCloudSharedComment * comment;
-@property(readonly) UILabel * commentBylineLabel;
-@property(readonly) UILabel * commentContentLabel;
-@property(readonly) UIView * styledSeparatorView;
+@property(retain,readonly) UILabel * commentBylineLabel;
+@property(retain,readonly) UILabel * commentContentLabel;
+@property(retain,readonly) UIView * styledSeparatorView;
 
 + (id)_attributionStringForComment:(id)arg1;
 + (id)_commentStringForComment:(id)arg1;
-+ (id)_synthesizedAttributedString:(id)arg1 withWordWrapping:(BOOL)arg2;
-+ (float)heightForComment:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
++ (id)_synthesizedAttributedString:(id)arg1 withWordWrapping:(bool)arg2;
++ (double)heightForComment:(id)arg1 forWidth:(double)arg2 forInterfaceOrientation:(long long)arg3;
 + (Class)layerClass;
 
 - (void)_updateContent;
@@ -28,7 +28,7 @@
 - (id)commentContentLabel;
 - (void)dealloc;
 - (void)delete:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setComment:(id)arg1;

@@ -8,7 +8,6 @@
     NSURL *_addMemberURL;
     NSDictionary *_bulkRequests;
     NSString *_containerTitle;
-    BOOL _isUnauthenticated;
     NSURL *_owner;
     NSSet *_privileges;
     NSString *_pushKey;
@@ -20,17 +19,19 @@
     CoreDAVSupportedReportSetItem *_supportedReportSetItem;
     NSString *_syncToken;
     NSURL *_url;
+    bool_isUnauthenticated;
 }
 
 @property(retain) NSURL * addMemberURL;
 @property(retain) NSDictionary * bulkRequests;
 @property(retain) NSString * containerTitle;
-@property(readonly) BOOL hasBindPrivileges;
-@property(readonly) BOOL hasReadPrivileges;
-@property(readonly) BOOL hasWriteContentPrivileges;
-@property(readonly) BOOL hasWritePropertiesPrivileges;
-@property(readonly) BOOL isPrincipal;
-@property BOOL isUnauthenticated;
+@property(readonly) bool hasBindPrivileges;
+@property(readonly) bool hasReadPrivileges;
+@property(readonly) bool hasUnbindPrivileges;
+@property(readonly) bool hasWriteContentPrivileges;
+@property(readonly) bool hasWritePropertiesPrivileges;
+@property(readonly) bool isPrincipal;
+@property bool isUnauthenticated;
 @property(retain) NSURL * owner;
 @property(retain) NSSet * privileges;
 @property(readonly) NSSet * privilegesAsStringSet;
@@ -44,28 +45,29 @@
 @property(retain) CoreDAVSupportedReportSetItem * supportedReportSetItem;
 @property(readonly) NSSet * supportedReports;
 @property(readonly) NSSet * supportedReportsAsStringSet;
-@property(readonly) BOOL supportsPrincipalPropertySearchReport;
-@property(readonly) BOOL supportsSyncCollectionReport;
+@property(readonly) bool supportsPrincipalPropertySearchReport;
+@property(readonly) bool supportsSyncCollectionReport;
 @property(retain) NSString * syncToken;
 @property(retain) NSURL * url;
 
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
 + (id)copyPropertyMappingsForParser;
 
-- (BOOL)_anyPrivilegesMatches:(id)arg1;
+- (bool)_anyPrivilegesMatches:(id)arg1;
 - (id)addMemberURL;
 - (void)applyParsedProperties:(id)arg1;
 - (id)bulkRequests;
 - (id)containerTitle;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasBindPrivileges;
-- (BOOL)hasReadPrivileges;
-- (BOOL)hasWriteContentPrivileges;
-- (BOOL)hasWritePropertiesPrivileges;
+- (bool)hasBindPrivileges;
+- (bool)hasReadPrivileges;
+- (bool)hasUnbindPrivileges;
+- (bool)hasWriteContentPrivileges;
+- (bool)hasWritePropertiesPrivileges;
 - (id)initWithURL:(id)arg1 andProperties:(id)arg2;
-- (BOOL)isPrincipal;
-- (BOOL)isUnauthenticated;
+- (bool)isPrincipal;
+- (bool)isUnauthenticated;
 - (id)owner;
 - (id)privileges;
 - (id)privilegesAsStringSet;
@@ -79,7 +81,7 @@
 - (void)setAddMemberURL:(id)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setContainerTitle:(id)arg1;
-- (void)setIsUnauthenticated:(BOOL)arg1;
+- (void)setIsUnauthenticated:(bool)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setPrivileges:(id)arg1;
 - (void)setPushKey:(id)arg1;
@@ -94,8 +96,8 @@
 - (id)supportedReportSetItem;
 - (id)supportedReports;
 - (id)supportedReportsAsStringSet;
-- (BOOL)supportsPrincipalPropertySearchReport;
-- (BOOL)supportsSyncCollectionReport;
+- (bool)supportsPrincipalPropertySearchReport;
+- (bool)supportsSyncCollectionReport;
 - (id)syncToken;
 - (id)url;
 

@@ -7,16 +7,21 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class GQDWPLayoutFrame;
+@class GQDWPLayoutFrame, NSString;
 
 @interface GQDBGTitlePlaceholder : GQDBGPlaceholder <GQDNameMappable> {
     GQDWPLayoutFrame *mFrame;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
 - (void)dealloc;
-- (BOOL)isBlank;
+- (bool)isBlank;
 - (id)layoutFrame;
 
 @end

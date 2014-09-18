@@ -5,19 +5,19 @@
 @class UIView, UIViewController;
 
 @interface _UIQueuingScrollViewState : _UITransitionState {
-    BOOL _manual;
     UIView *_view;
     UIViewController *_viewController;
+    bool_manual;
 }
 
-@property(getter=isManual,readonly) BOOL manual;
+@property(getter=isManual,readonly) bool manual;
 @property(readonly) UIView * view;
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithTransitionDirection:(int)arg1 view:(id)arg2 manual:(BOOL)arg3 completion:(id)arg4;
-- (BOOL)isCompatibleWithTransitionInDirection:(int)arg1;
-- (BOOL)isManual;
+- (id)initWithTransitionDirection:(long long)arg1 view:(id)arg2 manual:(bool)arg3 completion:(id)arg4;
+- (bool)isCompatibleWithTransitionInDirection:(long long)arg1;
+- (bool)isManual;
 - (id)view;
 
 @end

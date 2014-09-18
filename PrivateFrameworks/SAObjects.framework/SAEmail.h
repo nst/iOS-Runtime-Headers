@@ -7,10 +7,14 @@
 @interface SAEmail : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * emailAddress;
 @property(copy) NSNumber * favoriteFacetime;
 @property(copy) NSNumber * favoriteFacetimeAudio;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
+@property(readonly) Class superclass;
 
 + (id)email;
 + (id)emailWithDictionary:(id)arg1 context:(id)arg2;

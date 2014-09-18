@@ -2,66 +2,77 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, PKPrinter, UINavigationController, UIPopoverController, UIPrintInteractionController, UIPrintPanelTableViewController, UIPrintPaper, UIViewController, UIWindow;
+@class NSArray, NSString, PKPrinter, UINavigationController, UIPopoverController, UIPrintInfo, UIPrintInteractionController, UIPrintPanelTableViewController, UIPrintPaper, UIViewController, UIWindow;
 
-@interface UIPrintPanelViewController : NSObject {
-    BOOL _animated;
-    BOOL _dismissed;
+@interface UIPrintPanelViewController : NSObject <UIPrinterBrowserOwner> {
     UINavigationController *_navigationController;
-    BOOL _observingRotation;
+    UIPrintInfo *_observedPrintInfo;
     UIViewController *_parentController;
-    BOOL _parentHasNoPopover;
     UIPopoverController *_poverController;
     UIPrintInteractionController *_printInteractionController;
     PKPrinter *_printer;
     UIPrintPanelTableViewController *_tableViewController;
     UIWindow *_window;
+    bool_animated;
+    bool_dismissed;
+    bool_observingRotation;
+    bool_parentHasNoPopover;
 }
 
-@property int copies;
-@property BOOL duplex;
-@property(readonly) int pageCount;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } pageRange;
+@property long long copies;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool duplex;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long pageCount;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } pageRange;
 @property(retain) UIPrintPaper * paper;
 @property(readonly) NSArray * paperList;
 @property(retain) PKPrinter * printer;
-@property(readonly) BOOL showCopies;
-@property(readonly) BOOL showDuplex;
-@property(readonly) BOOL showPageRange;
-@property(readonly) BOOL showPaper;
+@property(readonly) bool showCopies;
+@property(readonly) bool showDuplex;
+@property(readonly) bool showPageRange;
+@property(readonly) bool showPaper;
+@property(readonly) bool showPaperSelection;
+@property(readonly) bool showPrinterWarning;
+@property(readonly) Class superclass;
 
 - (void)_keyWindowWillRotate:(id)arg1;
-- (void)_presentInParentAnimated:(BOOL)arg1;
+- (void)_presentInParentAnimated:(bool)arg1;
 - (void)_presentWindow;
 - (id)_removeRollsFrom:(id)arg1;
 - (void)cancelPrinting;
 - (void)controllerDidDisappear;
-- (int)copies;
+- (long long)copies;
 - (void)dealloc;
-- (void)dismissAnimated:(BOOL)arg1;
-- (void)dismissPrintPanel:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)duplex;
+- (void)dismissAnimated:(bool)arg1;
+- (void)dismissPrintPanel:(bool)arg1 animated:(bool)arg2;
+- (bool)duplex;
+- (bool)filtersPrinters;
 - (id)initWithPrintInterationController:(id)arg1 inParentController:(id)arg2;
-- (int)pageCount;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })pageRange;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (long long)pageCount;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })pageRange;
 - (id)paper;
 - (id)paperList;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)presentPrintPanelAnimated:(BOOL)arg1;
-- (void)presentPrintPanelFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)presentPrintPanelFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (void)presentPrintPanelAnimated:(bool)arg1;
+- (void)presentPrintPanelFromBarButtonItem:(id)arg1 animated:(bool)arg2;
+- (void)presentPrintPanelFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(bool)arg3;
 - (id)printer;
-- (void)setCopies:(int)arg1;
-- (void)setDuplex:(BOOL)arg1;
-- (void)setPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setCopies:(long long)arg1;
+- (void)setDuplex:(bool)arg1;
+- (void)setPageRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setPaper:(id)arg1;
 - (void)setPrinter:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)showCopies;
-- (BOOL)showDuplex;
-- (BOOL)showPageRange;
-- (BOOL)showPaper;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)showCopies;
+- (bool)showDuplex;
+- (bool)showPageRange;
+- (bool)showPaper;
+- (bool)showPaperSelection;
+- (bool)showPrinterWarning;
 - (void)startPrinting;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

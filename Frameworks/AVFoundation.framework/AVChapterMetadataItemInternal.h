@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSLocale, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class <NSObject><NSCopying>, AVWeakReference, NSLocale, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVChapterMetadataItemInternal : NSObject {
     struct { 
@@ -15,8 +15,9 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    long chapterGroupIndex;
-    long chapterIndex;
+    NSString *chapterDataType;
+    long long chapterGroupIndex;
+    long long chapterIndex;
     NSString *chapterType;
     NSMutableArray *completions;
     } duration;
@@ -24,9 +25,9 @@
     NSLocale *locale;
     NSObject<OS_dispatch_queue> *readWriteQueue;
     } time;
-    id value;
-    long valueErrorCode;
-    int valueStatus;
+    <NSObject><NSCopying> *value;
+    int valueErrorCode;
+    long long valueStatus;
     AVWeakReference *weakReference;
 }
 

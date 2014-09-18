@@ -6,14 +6,14 @@
 
 @interface MCDTableViewCell : UITableViewCell {
     UIImageView *_artworkImageView;
-    float _originalLeftInset;
+    double _originalLeftInset;
 }
 
 @property(retain) UIImage * artworkImage;
 
 - (void).cxx_destruct;
 - (id)artworkImage;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setArtworkImage:(id)arg1;
 

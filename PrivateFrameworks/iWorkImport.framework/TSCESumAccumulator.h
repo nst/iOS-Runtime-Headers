@@ -20,7 +20,7 @@
             boolmIsImplicitFormat; 
             union { 
                 struct { 
-                    NSString *mCurrencyCode; 
+                    unsigned int mCurrencyCodeIndex : 16; 
                     unsigned int mDecimalPlaces : 8; 
                     unsigned int mNegativeStyle : 3; 
                     unsigned int mShowThousandsSeparator : 1; 
@@ -65,18 +65,18 @@
             } mData; 
             struct TSUCustomFormat {} *mCustomFormat; 
         } mFormat; 
-        BOOL mIsUnitlessZero; 
+        boolmIsUnitlessZero; 
+    boolmFoundANumber;
+    boolmMixedDurationsAndNumbers;
     NSDate *mDateAccumulator;
-    BOOL mFoundANumber;
-    BOOL mMixedDurationsAndNumbers;
     } mNumberAccumulator;
     double mSecondsToAdd;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addValue:(struct TSCEValue { unsigned int x1[68]; int x2; })arg1 function:(id)arg2 warningReportingContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg3;
+- (void)addValue:(struct TSCEValue { unsigned long long x1[88]; int x2; })arg1 function:(id)arg2 warningReportingContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg3;
 - (id)init;
-- (struct TSCEValue { unsigned int x1[68]; int x2; })resultForFunction:(id)arg1;
+- (struct TSCEValue { unsigned long long x1[88]; int x2; })resultForFunction:(id)arg1;
 
 @end

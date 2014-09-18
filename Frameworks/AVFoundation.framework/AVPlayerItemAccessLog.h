@@ -9,6 +9,7 @@
 }
 
 @property(readonly) NSArray * events;
+@property(readonly) unsigned long long extendedLogDataStringEncoding;
 
 - (id)_accessLogArray;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -16,7 +17,7 @@
 - (id)description;
 - (id)events;
 - (id)extendedLogData;
-- (unsigned int)extendedLogDataStringEncoding;
+- (unsigned long long)extendedLogDataStringEncoding;
 - (void)finalize;
 - (id)init;
 - (id)initWithLogArray:(id)arg1;

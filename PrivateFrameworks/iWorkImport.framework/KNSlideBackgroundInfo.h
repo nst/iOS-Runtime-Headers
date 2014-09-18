@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAbstractSlide, NSObject<TSDContainerInfo>, TSDFill, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails, TSSStylesheet;
+@class KNAbstractSlide, NSObject<TSDContainerInfo>, NSString, TSDFill, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails, TSSStylesheet;
 
-@interface KNSlideBackgroundInfo : NSObject <TSDChangeableInfo, TSKTransformableObject> {
+@interface KNSlideBackgroundInfo : NSObject <TSDChangeableInfo, TSKDocumentObject, TSKTransformableObject> {
     TSSPropertySetChangeDetails *mChanges;
     TSDInfoGeometry *mGeometry;
     NSObject<TSDContainerInfo> *mParentInfo;
@@ -12,38 +12,43 @@
     TSSStylesheet *mStylesheet;
 }
 
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
+@property(getter=isAnchoredToText,readonly) bool anchoredToText;
+@property(getter=isAttachedToBodyText,readonly) bool attachedToBodyText;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) Class editorClass;
 @property(readonly) TSDFill * fill;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
+@property(getter=isFloatingAboveText,readonly) bool floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property(readonly) BOOL isUserModifiable;
-@property BOOL matchesObjectPlaceholderGeometry;
+@property(readonly) unsigned long long hash;
+@property(getter=isInlineWithText,readonly) bool inlineWithText;
+@property(readonly) bool isUserModifiable;
+@property bool matchesObjectPlaceholderGeometry;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
 @property NSObject<TSDContainerInfo> * parentInfo;
 @property(readonly) KNAbstractSlide * slide;
+@property(readonly) Class superclass;
 
 + (id)backgroundWithSlide:(id)arg1 andGeometry:(id)arg2;
 
 - (void)beginCollectingChanges;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
+- (id)commandForTransformingByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)endCollectingChanges;
 - (id)fill;
 - (id)geometry;
 - (id)initWithSlide:(id)arg1 andGeometry:(id)arg2;
-- (BOOL)isAnchoredToText;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isFloatingAboveText;
-- (BOOL)isInlineWithText;
-- (BOOL)isThemeContent;
-- (BOOL)isUserModifiable;
+- (bool)isAnchoredToText;
+- (bool)isAttachedToBodyText;
+- (bool)isFloatingAboveText;
+- (bool)isInlineWithText;
+- (bool)isThemeContent;
+- (bool)isUserModifiable;
 - (Class)layoutClass;
-- (struct CGSize { float x1; float x2; })minimumSize;
+- (struct CGSize { double x1; double x2; })minimumSize;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (id)parentInfo;
@@ -52,6 +57,10 @@
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;
 - (id)slide;
+- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasRemovedFromDocumentRoot:(id)arg1;
+- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)willChangeProperty:(int)arg1;
 
 @end

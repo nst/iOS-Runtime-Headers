@@ -15,8 +15,8 @@
 }
 
 @property(retain) GEOMapRegion * displayRegion;
-@property(readonly) BOOL hasDisplayRegion;
-@property BOOL hasResolutionDate;
+@property(readonly) bool hasDisplayRegion;
+@property bool hasResolutionDate;
 @property(retain) NSMutableArray * localizedChangeLists;
 @property double resolutionDate;
 @property(retain) NSMutableArray * updatedPlaces;
@@ -31,23 +31,24 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayRegion;
-- (BOOL)hasDisplayRegion;
-- (BOOL)hasResolutionDate;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)localizedChangeListAtIndex:(unsigned int)arg1;
+- (bool)hasDisplayRegion;
+- (bool)hasResolutionDate;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)localizedChangeListAtIndex:(unsigned long long)arg1;
 - (id)localizedChangeLists;
-- (unsigned int)localizedChangeListsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)localizedChangeListsCount;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)resolutionDate;
 - (void)setDisplayRegion:(id)arg1;
-- (void)setHasResolutionDate:(BOOL)arg1;
+- (void)setHasResolutionDate:(bool)arg1;
 - (void)setLocalizedChangeLists:(id)arg1;
 - (void)setResolutionDate:(double)arg1;
 - (void)setUpdatedPlaces:(id)arg1;
-- (id)updatedPlaceAtIndex:(unsigned int)arg1;
+- (id)updatedPlaceAtIndex:(unsigned long long)arg1;
 - (id)updatedPlaces;
-- (unsigned int)updatedPlacesCount;
+- (unsigned long long)updatedPlacesCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,28 +11,28 @@
     unsigned int _cachedPlaybackStateIsValid : 1;
     unsigned int _allowsBackgroundVideo : 1;
     unsigned int _clientPort;
-    int _inBlockHandlingPlaybackStateChangedMessageFromServer;
+    long long _inBlockHandlingPlaybackStateChangedMessageFromServer;
     MPMediaItemCollection *_itemCollection;
     MPMusicPlayerController *_musicPlayerController;
-    int _playbackNotificationObservers;
-    int _playbackState;
-    BOOL _preparedToPlay;
+    long long _playbackNotificationObservers;
+    long long _playbackState;
     struct SBSProcessAssertion { } *_processAssertion;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
+    bool_preparedToPlay;
 }
 
-@property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;
+@property bool inBlockHandlingPlaybackStateChangedMessageFromServer;
 
 - (void).cxx_destruct;
 - (id)_bundleIdentifier;
 - (void)acquireProcessAssertion;
 - (void)dealloc;
 - (void)didPrepareForRemoteSelectorInvocation;
-- (BOOL)inBlockHandlingPlaybackStateChangedMessageFromServer;
+- (bool)inBlockHandlingPlaybackStateChangedMessageFromServer;
 - (id)initWithMusicPlayerController:(id)arg1;
-- (BOOL)prepareForRemoteSelectorInvocation;
+- (bool)prepareForRemoteSelectorInvocation;
 - (void)serverConnectionDied;
-- (void)setInBlockHandlingPlaybackStateChangedMessageFromServer:(BOOL)arg1;
+- (void)setInBlockHandlingPlaybackStateChangedMessageFromServer:(bool)arg1;
 
 @end

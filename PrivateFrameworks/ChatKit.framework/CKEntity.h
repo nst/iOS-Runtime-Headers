@@ -2,54 +2,45 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMHandle, NSAttributedString, NSString, UIImage;
+@class IMHandle, NSString, UIImage;
 
-@interface CKEntity : NSObject <CKTranscriptDataRowObject> {
-    NSAttributedString *_attributedTranscriptText;
+@interface CKEntity : NSObject {
     IMHandle *_handle;
 }
 
+@property(copy,readonly) NSString * IDSCanonicalAddress;
 @property(readonly) void* abRecord;
-@property(readonly) NSAttributedString * attributedTranscriptText;
-@property(readonly) IMHandle * defaultIMHandle;
-@property(readonly) NSString * fullName;
+@property(retain,readonly) IMHandle * defaultIMHandle;
+@property(copy,readonly) NSString * fullName;
 @property(retain) IMHandle * handle;
 @property(readonly) int identifier;
-@property(readonly) NSString * name;
-@property(readonly) NSString * originalAddress;
+@property(retain,readonly) UIImage * locationMapViewContactImage;
+@property(retain,readonly) UIImage * locationShareBalloonContactImage;
+@property(copy,readonly) NSString * name;
+@property(copy,readonly) NSString * originalAddress;
 @property(readonly) int propertyType;
-@property(readonly) NSString * rawAddress;
-@property(readonly) NSString * textToneIdentifier;
-@property(readonly) NSString * textVibrationIdentifier;
-@property(readonly) UIImage * transcriptContactImage;
+@property(copy,readonly) NSString * rawAddress;
+@property(copy,readonly) NSString * textToneIdentifier;
+@property(copy,readonly) NSString * textVibrationIdentifier;
+@property(retain,readonly) UIImage * transcriptContactImage;
+@property(retain,readonly) UIImage * transcriptDrawerContactImage;
 
 + (id)_copyEntityForAddressString:(id)arg1 onAccount:(id)arg2;
 + (id)copyEntityForAddressString:(id)arg1;
 
-- (Class)__ck_displayCellClass;
-- (id)__ck_displayCellIdentifier;
-- (id)__ck_displayContactImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })__ck_displayContentAlignmentInsets;
-- (BOOL)__ck_displayDuringSend;
-- (id)__ck_displayGUIDWithMessage:(id)arg1;
-- (struct CGSize { float x1; float x2; })__ck_displaySize:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1;
-- (BOOL)__ck_displayTranscriptOrientation;
-- (void)__ck_prewarmForDisplay;
-- (BOOL)__ck_transcriptUsesTextAlignmentInsets;
-- (BOOL)__ck_wantsDrawerLayout;
+- (id)IDSCanonicalAddress;
 - (void*)abRecord;
-- (void)addressBookChanged:(id)arg1;
-- (id)attributedTranscriptText;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
 - (id)defaultIMHandle;
 - (id)description;
 - (id)fullName;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)identifier;
 - (id)initWithIMHandle:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)locationMapViewContactImage;
+- (id)locationShareBalloonContactImage;
 - (id)name;
 - (id)originalAddress;
 - (id)personViewControllerWithDelegate:(id)arg1;
@@ -59,5 +50,6 @@
 - (id)textToneIdentifier;
 - (id)textVibrationIdentifier;
 - (id)transcriptContactImage;
+- (id)transcriptDrawerContactImage;
 
 @end

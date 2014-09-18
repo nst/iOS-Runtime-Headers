@@ -2,36 +2,40 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUMenuViewControllerDelegate>, UITableView;
+@class <SUMenuViewControllerDelegate>, NSString, UITableView;
 
 @interface SUMenuViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
     <SUMenuViewControllerDelegate> *_delegate;
-    int _selectedIndex;
+    long long _selectedIndex;
     UITableView *_tableView;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SUMenuViewControllerDelegate> * delegate;
-@property int selectedIndex;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property long long selectedIndex;
+@property(readonly) Class superclass;
 
-- (BOOL)_sendDidCancel;
+- (bool)_sendDidCancel;
 - (id)_tableView;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
+- (bool)isMenuItemEnabledAtIndex:(long long)arg1;
 - (void)loadView;
-- (struct CGSize { float x1; float x2; })maximumViewSize;
-- (struct CGSize { float x1; float x2; })minimumViewSize;
-- (int)numberOfMenuItems;
-- (void)performActionForMenuItemAtIndex:(int)arg1;
+- (struct CGSize { double x1; double x2; })maximumViewSize;
+- (struct CGSize { double x1; double x2; })minimumViewSize;
+- (long long)numberOfMenuItems;
+- (void)performActionForMenuItemAtIndex:(long long)arg1;
 - (void)reload;
-- (int)selectedIndex;
+- (long long)selectedIndex;
 - (void)setDelegate:(id)arg1;
-- (void)setSelectedIndex:(int)arg1;
+- (void)setSelectedIndex:(long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)titleOfMenuItemAtIndex:(int)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)titleOfMenuItemAtIndex:(long long)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL;
+@class NSString, NSURL;
 
 @interface CardDAVUpdateMeCardTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
     NSURL *_cardURL;
@@ -10,7 +10,11 @@
 }
 
 @property(readonly) NSURL * cardURL;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSURL * homeURL;
+@property(readonly) Class superclass;
 
 - (id)_newPropPatchTask;
 - (id)cardURL;

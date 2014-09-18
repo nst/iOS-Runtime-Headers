@@ -8,18 +8,18 @@
     struct TSCH3DPrecalculatedLayoutCacheType { 
         int platform; 
         int target; 
-        BOOL isLandscape; 
+        boolisLandscape; 
     } mCacheType;
     TSCHChartType *mChartType;
 }
 
-+ (id)cacheItemForChartType:(id)arg1 cacheType:(struct TSCH3DPrecalculatedLayoutCacheType { int x1; int x2; BOOL x3; })arg2;
++ (id)cacheItemForChartType:(id)arg1 cacheType:(struct TSCH3DPrecalculatedLayoutCacheType { int x1; int x2; boolx3; })arg2;
 
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
-- (id)initForChartType:(id)arg1 cacheType:(struct TSCH3DPrecalculatedLayoutCacheType { int x1; int x2; BOOL x3; })arg2;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initForChartType:(id)arg1 cacheType:(struct TSCH3DPrecalculatedLayoutCacheType { int x1; int x2; boolx3; })arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

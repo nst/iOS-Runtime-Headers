@@ -7,19 +7,19 @@
 @interface MPRadioLibrary : NSObject {
 }
 
-@property(readonly) BOOL isEnabled;
-@property(readonly) unsigned int stationCount;
+@property(readonly) bool isEnabled;
+@property(readonly) unsigned long long stationCount;
 @property(readonly) NSArray * stations;
 
 + (id)defaultRadioLibrary;
 
 - (id)_radioModel;
-- (void)_radioModelDidChange:(id)arg1;
+- (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)addStationBasedOnTrackIDs:(id)arg1 completion:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEnabled;
-- (unsigned int)stationCount;
+- (bool)isEnabled;
+- (unsigned long long)stationCount;
 - (id)stationWithIdentifier:(long long)arg1;
 - (id)stations;
 

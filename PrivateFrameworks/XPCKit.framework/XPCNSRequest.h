@@ -10,9 +10,9 @@
     XPCRequest *_request;
 }
 
-@property(readonly) NSData * data;
-@property(readonly) <NSCoding> * message;
-@property(readonly) XPCRequest * request;
+@property(retain,readonly) NSData * data;
+@property(retain,readonly) <NSCoding> * message;
+@property(retain,readonly) XPCRequest * request;
 
 - (void).cxx_destruct;
 - (id)data;

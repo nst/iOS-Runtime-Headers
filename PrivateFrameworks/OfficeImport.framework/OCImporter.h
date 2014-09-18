@@ -2,36 +2,41 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CPImportTracing, NSData, NSURL, OCDReader, TSUProgressContext;
+@class NSData, NSString, NSURL, OCDReader, OITSUProgressContext, TCImportTracing;
 
 @interface OCImporter : OCMapper {
+    NSString *_docPassphrase;
+    boolmTryAlternateReader;
     NSData *mData;
-    TSUProgressContext *mProgressContext;
+    OITSUProgressContext *mProgressContext;
     OCDReader *mReader;
-    CPImportTracing *mTracing;
-    BOOL mTryAlternateReader;
+    TCImportTracing *mTracing;
     NSURL *mURL;
 }
 
-@property(retain) TSUProgressContext * progressContext;
-@property(readonly) CPImportTracing * tracing;
+@property(retain) NSString * docPassphrase;
+@property(retain) OITSUProgressContext * progressContext;
+@property(readonly) TCImportTracing * tracing;
 
 + (void)initialize;
 
 - (void)dealloc;
 - (id)displayName;
+- (id)docPassphrase;
 - (id)filename;
+- (void)finalizeBackgroundTasksWithDocumentState:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isDocumentEncryptedUnsupportedVersion:(BOOL*)arg1 errorMessage:(id*)arg2;
-- (BOOL)isDocumentEncryptedUnsupportedVersionHelper:(BOOL*)arg1 errorMessage:(id*)arg2 readError:(BOOL*)arg3;
-- (BOOL)isXML;
+- (bool)isDocumentEncryptedUnsupportedVersion:(bool*)arg1 errorMessage:(id*)arg2;
+- (bool)isDocumentEncryptedUnsupportedVersionHelper:(bool*)arg1 errorMessage:(id*)arg2 readError:(bool*)arg3;
+- (bool)isXML;
 - (id)progressContext;
-- (BOOL)setPassphrase:(id)arg1;
+- (void)setDocPassphrase:(id)arg1;
+- (bool)setPassphrase:(id)arg1;
 - (void)setProgressContext:(id)arg1;
 - (void)setURL:(id)arg1;
-- (BOOL)start;
+- (bool)start;
 - (id)tracing;
-- (BOOL)tryAlternateReader;
+- (bool)tryAlternateReader;
 
 @end

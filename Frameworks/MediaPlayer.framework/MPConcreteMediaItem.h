@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPConcreteMediaEntityPropertiesCache, MPMediaLibrary;
+@class MPConcreteMediaEntityPropertiesCache, MPMediaLibrary, NSString;
 
 @interface MPConcreteMediaItem : MPMediaItem <NSCoding, NSCopying, MPMediaItemArrayPIDEncodableItem, MPCacheableConcreteMediaEntity> {
     MPMediaLibrary *_library;
@@ -10,26 +10,31 @@
     MPConcreteMediaEntityPropertiesCache *_propertiesCache;
 }
 
-@property(readonly) MPConcreteMediaEntityPropertiesCache * cachedPropertyValues;
+@property(retain,readonly) MPConcreteMediaEntityPropertiesCache * cachedPropertyValues;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithPersistentID:(unsigned long long)arg1 library:(id)arg2 propertiesCache:(id)arg3;
-- (id)_nonBatchableOrCachedValueForProperty:(id)arg1 needsFetch:(BOOL*)arg2;
+- (id)_nonBatchableOrCachedValueForProperty:(id)arg1 needsFetch:(bool*)arg2;
 - (id)cachedPropertyValues;
+- (id)cachedValueForProperty:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)didSkipWithPlayedToTime:(double)arg1;
+- (bool)didSkipWithPlayedToTime:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
-- (BOOL)existsInLibrary;
+- (bool)existsInLibrary;
 - (void)incrementPlayCountForPlayingToEnd;
-- (BOOL)incrementPlayCountForStopTime:(double)arg1;
+- (bool)incrementPlayCountForStopTime:(double)arg1;
 - (void)incrementSkipCount;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -40,11 +45,11 @@
 - (void)markNominalAmountHasBeenPlayed;
 - (id)mediaLibrary;
 - (double)nominalHasBeenPlayedThreshold;
-- (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
+- (void)noteWasPlayedToTime:(double)arg1 skipped:(bool)arg2;
 - (unsigned long long)persistentID;
 - (void)reallyIncrementPlayCount;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
-- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (bool)setValue:(id)arg1 forProperty:(id)arg2;
 - (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;

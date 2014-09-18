@@ -7,35 +7,61 @@
 @interface CUINamedImage : NSObject {
     CUIRenditionKey *_key;
     NSString *_name;
-    unsigned int _storageRef;
+    unsigned long long _storageRef;
 }
 
+@property(readonly) struct { double x1; double x2; double x3; double x4; } alignmentEdgeInsets;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alignmentRect;
 @property(readonly) int blendMode;
-@property(readonly) struct { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(readonly) BOOL hasSliceInformation;
+@property(readonly) struct { double x1; double x2; double x3; double x4; } edgeInsets;
+@property(readonly) int exifOrientation;
+@property(readonly) bool hasSliceInformation;
 @property(readonly) struct CGImage { }* image;
+@property(readonly) long long imageType;
+@property(readonly) bool isStructured;
+@property(readonly) bool isTemplate;
+@property(readonly) bool isVectorBased;
 @property(copy) NSString * name;
-@property(readonly) float opacity;
-@property(readonly) int resizingMode;
-@property(readonly) float scale;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) double opacity;
+@property(readonly) long long resizingMode;
+@property(readonly) double scale;
+@property(readonly) struct CGSize { double x1; double x2; } size;
+@property(readonly) long long templateRenderingMode;
 
+- (id)UIImage;
 - (id)_rendition;
 - (id)_renditionForSpecificKey:(id)arg1;
 - (id)_themeStore;
+- (struct { double x1; double x2; double x3; double x4; })alignmentEdgeInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
+- (id)baseKey;
 - (int)blendMode;
 - (void)dealloc;
 - (id)description;
-- (struct { float x1; float x2; float x3; float x4; })edgeInsets;
-- (BOOL)hasSliceInformation;
+- (struct { double x1; double x2; double x3; double x4; })edgeInsets;
+- (int)exifOrientation;
+- (long long)graphicsClass;
+- (bool)hasSliceInformation;
+- (long long)idiom;
 - (struct CGImage { }*)image;
-- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned int)arg3;
+- (long long)imageType;
+- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned long long)arg3;
+- (bool)isStructured;
+- (bool)isTemplate;
+- (bool)isVectorBased;
+- (long long)memoryClass;
 - (id)name;
-- (float)opacity;
-- (float)positionOfSliceBoundary:(int)arg1;
-- (int)resizingMode;
-- (float)scale;
+- (double)opacity;
+- (double)positionOfSliceBoundary:(unsigned int)arg1;
+- (id)renditionKey;
+- (long long)resizingMode;
+- (double)scale;
 - (void)setName:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
+- (long long)sizeClassHorizontal;
+- (long long)sizeClassVertical;
+- (unsigned long long)subtype;
+- (long long)templateRenderingMode;
+- (id)traitCollection;
 
 @end

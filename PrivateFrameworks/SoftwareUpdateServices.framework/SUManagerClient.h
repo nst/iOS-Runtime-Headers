@@ -6,28 +6,30 @@
 
 @interface SUManagerClient : NSObject <SUManagerClientInterface> {
     int _clientType;
-    BOOL _connected;
     <SUManagerClientDelegate> *_delegate;
     SUDescriptor *_installDescriptor;
-    BOOL _installing;
     NSXPCConnection *_serverConnection;
-    BOOL _serverIsExiting;
+    bool_connected;
+    bool_installing;
+    bool_serverIsExiting;
 }
 
 @property int clientType;
 @property <SUManagerClientDelegate> * delegate;
 @property(retain) SUDescriptor * installDescriptor;
 
++ (bool)_shouldDisallowAvailabilityNotifications;
+
 - (void)_invalidateConnection;
 - (id)_remoteInterface;
-- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
+- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(bool)arg2;
 - (id)_remoteInterfaceWithErrorHandler:(id)arg1;
 - (void)_setClientType;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
 - (void)cancelDownload:(id)arg1;
 - (int)clientType;
 - (void)connectToServerIfNecessary;
-- (BOOL)createInstallationKeybag:(id)arg1;
+- (bool)createInstallationKeybag:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)download:(id)arg1;
@@ -46,7 +48,7 @@
 - (void)installUpdate:(id)arg1;
 - (void)invalidate;
 - (void)isDownloading:(id)arg1;
-- (BOOL)isInstallationKeybagRequired;
+- (bool)isInstallationKeybagRequired;
 - (void)isScanning:(id)arg1;
 - (void)isUpdateReadyForInstallation:(id)arg1;
 - (void)noteConnectionDropped;

@@ -2,43 +2,48 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSMutableArray, NSString, UIButton, UIImage, UILabel;
+@class NSLayoutConstraint, NSMutableArray, NSString, UIButton, UILabel;
 
 @interface _MusicGeniusMixCollectionViewCell : UICollectionViewCell {
     UILabel *_artistsLabel;
+    NSLayoutConstraint *_artistsLabelBaselineConstraint;
     UILabel *_basedOnLabel;
-    UIImage *_combinedArtworkImage;
+    NSLayoutConstraint *_basedOnLabelBaselineConstraint;
     NSMutableArray *_coverViews;
-    BOOL _offline;
     UIButton *_playButton;
-    BOOL _playing;
     UILabel *_titleLabel;
+    NSLayoutConstraint *_titleLabelBaselineConstraint;
+    bool_offline;
+    bool_playing;
 }
 
 @property(copy) NSString * artistsText;
-@property(retain) UIImage * combinedArtworkImage;
-@property(getter=isOffline) BOOL offline;
+@property(getter=isOffline) bool offline;
 @property(readonly) UIButton * playButton;
-@property(getter=isPlaying) BOOL playing;
+@property(getter=isPlaying) bool playing;
 @property(copy) NSString * title;
 
++ (long long)numberOfArtworkImages;
+
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)_pressedPlayButtonImage;
 - (void)_updateCoverViewsAlpha;
 - (void)_updatePlayButtonAlpha;
 - (id)artistsText;
-- (id)combinedArtworkImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isOffline;
-- (BOOL)isPlaying;
-- (void)layoutSubviews;
+- (id)artworkImageDestinationAtIndex:(long long)arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isOffline;
+- (bool)isPlaying;
 - (id)playButton;
 - (void)setArtistsText:(id)arg1;
-- (void)setCombinedArtworkImage:(id)arg1;
-- (void)setOffline:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPlaying:(BOOL)arg1;
+- (void)setArtworkImage:(id)arg1 atIndex:(long long)arg2;
+- (void)setOffline:(bool)arg1;
+- (void)setPlaying:(bool)arg1 animated:(bool)arg2;
+- (void)setPlaying:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (void)updateConstraints;
 
 @end

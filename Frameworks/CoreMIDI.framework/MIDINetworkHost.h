@@ -5,17 +5,17 @@
 @class NSString;
 
 @interface MIDINetworkHost : NSObject {
-    struct _MIDINetworkHostImpl { id x1; id x2; unsigned int x3; id x4; id x5; } *_impl;
+    struct _MIDINetworkHostImpl { id x1; id x2; unsigned long long x3; id x4; id x5; } *_impl;
 }
 
-@property(readonly) NSString * address;
-@property(readonly) NSString * name;
-@property(readonly) NSString * netServiceDomain;
-@property(readonly) NSString * netServiceName;
-@property(readonly) unsigned int port;
+@property(retain,readonly) NSString * address;
+@property(retain,readonly) NSString * name;
+@property(retain,readonly) NSString * netServiceDomain;
+@property(retain,readonly) NSString * netServiceName;
+@property(readonly) unsigned long long port;
 
 + (id)fromAddressAsText:(id)arg1 withName:(id)arg2;
-+ (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned int)arg3;
++ (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned long long)arg3;
 + (id)hostWithName:(id)arg1 netService:(id)arg2;
 + (id)hostWithName:(id)arg1 netServiceName:(id)arg2 netServiceDomain:(id)arg3;
 
@@ -24,13 +24,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (BOOL)hasSameAddressAs:(id)arg1;
+- (bool)hasSameAddressAs:(id)arg1;
 - (id)host;
 - (id)init;
 - (id)name;
 - (id)netServiceDomain;
 - (id)netServiceName;
-- (unsigned int)port;
+- (unsigned long long)port;
 - (void)setName:(id)arg1;
 
 @end

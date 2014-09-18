@@ -10,15 +10,15 @@
     UIView *_styledSeparatorView;
 }
 
-@property(readonly) UILabel * ownerContentLabel;
+@property(retain,readonly) UILabel * ownerContentLabel;
 @property(copy) NSAttributedString * ownerString;
-@property(readonly) UIView * styledSeparatorView;
+@property(retain,readonly) UIView * styledSeparatorView;
 
 + (id)_ownerStringForAsset:(id)arg1;
-+ (float)heightOfOwnerCellWithAsset:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
++ (double)heightOfOwnerCellWithAsset:(id)arg1 forWidth:(double)arg2 forInterfaceOrientation:(long long)arg3;
 
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)ownerContentLabel;
 - (id)ownerString;

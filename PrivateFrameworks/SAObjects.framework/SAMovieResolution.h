@@ -2,20 +2,26 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
+@class NSString;
+
 @interface SAMovieResolution : AceObject <SAAceSerializable> {
 }
 
-@property int height;
-@property int width;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property long long height;
+@property(readonly) Class superclass;
+@property long long width;
 
 + (id)resolution;
 + (id)resolutionWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)height;
-- (void)setHeight:(int)arg1;
-- (void)setWidth:(int)arg1;
-- (int)width;
+- (long long)height;
+- (void)setHeight:(long long)arg1;
+- (void)setWidth:(long long)arg1;
+- (long long)width;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSCalendar, NSDate, NSDictionary, NSString, NSTimeZone;
+@class CLRegion, NSCalendar, NSDate, NSDictionary, NSString, NSTimeZone;
 
 @interface UILocalNotification : NSObject <NSCopying, NSCoding> {
 }
@@ -10,21 +10,24 @@
 @property(copy) NSString * alertAction;
 @property(copy) NSString * alertBody;
 @property(copy) NSString * alertLaunchImage;
-@property BOOL allowSnooze;
-@property int applicationIconBadgeNumber;
+@property bool allowSnooze;
+@property long long applicationIconBadgeNumber;
+@property(copy) NSString * category;
 @property(copy) NSString * customLockSliderLabel;
 @property(copy) NSDate * fireDate;
-@property BOOL fireNotificationsWhenAppRunning;
+@property bool fireNotificationsWhenAppRunning;
 @property(copy) NSString * firedNotificationName;
-@property BOOL hasAction;
-@property BOOL hideAlertTitle;
-@property BOOL interruptAudioAndLockDevice;
-@property BOOL isSystemAlert;
+@property bool hasAction;
+@property bool hideAlertTitle;
+@property bool interruptAudioAndLockDevice;
+@property bool isTransient;
+@property(copy) CLRegion * region;
+@property bool regionTriggersOnce;
 @property int remainingRepeatCount;
 @property(copy) NSCalendar * repeatCalendar;
-@property unsigned int repeatInterval;
-@property BOOL resumeApplicationInBackground;
-@property BOOL showAlarmStatusBarItem;
+@property unsigned long long repeatInterval;
+@property bool resumeApplicationInBackground;
+@property bool showAlarmStatusBarItem;
 @property(copy) NSString * snoozedNotificationName;
 @property(copy) NSString * soundName;
 @property int soundType;
@@ -36,13 +39,16 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)clearNonSystemProperties;
-- (int)compareFireDates:(id)arg1;
+- (long long)compareFireDates:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isValid;
+- (bool)isTriggeredByDate;
+- (bool)isTriggeredByRegion;
+- (bool)isValid;
 - (id)nextFireDateAfterDate:(id)arg1 localTimeZone:(id)arg2;
 - (id)nextFireDateForLastFireDate:(id)arg1;
+- (void)validate;
 
 @end

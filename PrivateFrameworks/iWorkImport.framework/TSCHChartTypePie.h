@@ -7,10 +7,11 @@
 
 - (id)animationDeliveryStylesForFilter:(id)arg1;
 - (Class)chartLayoutItemClass;
-- (id)defaultSeriesType:(unsigned int)arg1;
-- (BOOL)explosionAffectsChartBodyBounds;
+- (id)defaultSeriesType:(unsigned long long)arg1;
+- (bool)explosionAffectsChartBodyBounds;
 - (id)init;
-- (struct CGSize { float x1; float x2; })mungeBodySize:(struct CGSize { float x1; float x2; })arg1;
+- (bool)layoutFrameShouldEncloseInfoGeometry;
+- (struct CGSize { double x1; double x2; })mungeBodySize:(struct CGSize { double x1; double x2; })arg1;
 - (Class)repClass;
 - (id)userInterfaceName;
 

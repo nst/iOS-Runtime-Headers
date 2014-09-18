@@ -12,12 +12,11 @@
 @property(retain) ABModel * model;
 @property(retain) <ABStyleProvider> * styleProvider;
 
-- (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (bool)_allowsAutorotation;
+- (void)_getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1;
 - (int)behavior;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)model;
@@ -27,8 +26,7 @@
 - (void)setParentViewController:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (BOOL)supportedInterfaceOrientation:(int)arg1;
+- (bool)supportedInterfaceOrientation:(long long)arg1;
 - (void)updateNavigationButtons;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

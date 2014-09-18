@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, OADFill;
+@class NSArray, NSString, OADFill;
 
 @interface OADTableBackground : NSObject <OADEffectsParent> {
     NSArray *mEffects;
     OADFill *mFill;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
 - (id)effects;
 - (id)fill;
-- (BOOL)hasEffects;
+- (bool)hasEffects;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 

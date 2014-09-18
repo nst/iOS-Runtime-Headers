@@ -17,11 +17,13 @@
 - (id)findFirstTextRunOfClass:(Class)arg1;
 - (void)flattenProperties;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
+- (unsigned long long)nonEmptyParagraphCount;
 - (id)overrideTextListStyle;
-- (id)paragraphAtIndex:(unsigned int)arg1;
-- (unsigned int)paragraphCount;
+- (id)paragraphAtIndex:(unsigned long long)arg1;
+- (unsigned long long)paragraphCount;
 - (id)plainText;
+- (void)propagateActualTextStyleToTextListStyle;
 - (id)properties;
 - (void)removeAllParagraphs;
 - (void)removeLeadingNewlines;

@@ -8,27 +8,29 @@
     CLPlacemarkInternal *_internal;
 }
 
-@property(readonly) NSString * ISOcountryCode;
-@property(readonly) NSDictionary * addressDictionary;
-@property(readonly) NSString * administrativeArea;
-@property(readonly) NSArray * areasOfInterest;
-@property(readonly) NSString * country;
-@property(readonly) NSString * inlandWater;
-@property(readonly) NSString * locality;
-@property(readonly) CLLocation * location;
-@property(readonly) NSString * name;
-@property(readonly) NSString * ocean;
-@property(readonly) NSString * postalCode;
-@property(readonly) CLRegion * region;
-@property(readonly) NSString * subAdministrativeArea;
-@property(readonly) NSString * subLocality;
-@property(readonly) NSString * subThoroughfare;
-@property(readonly) NSString * thoroughfare;
+@property(copy,readonly) NSString * ISOcountryCode;
+@property(copy,readonly) NSDictionary * addressDictionary;
+@property(copy,readonly) NSString * administrativeArea;
+@property(copy,readonly) NSArray * areasOfInterest;
+@property(copy,readonly) NSString * country;
+@property(copy,readonly) NSString * inlandWater;
+@property(copy,readonly) NSString * locality;
+@property(copy,readonly) CLLocation * location;
+@property(copy,readonly) NSString * name;
+@property(copy,readonly) NSString * ocean;
+@property(copy,readonly) NSString * postalCode;
+@property(copy,readonly) CLRegion * region;
+@property(copy,readonly) NSString * subAdministrativeArea;
+@property(copy,readonly) NSString * subLocality;
+@property(copy,readonly) NSString * subThoroughfare;
+@property(copy,readonly) NSString * thoroughfare;
 
-+ (id)placemarkWithPlace:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)placemarkWithGEOMapItem:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)ISOcountryCode;
+- (id)_geoMapItem;
+- (id)_initWithGeoMapItem:(id)arg1;
 - (id)addressDictionary;
 - (id)administrativeArea;
 - (id)areasOfInterest;

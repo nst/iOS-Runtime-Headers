@@ -28,14 +28,16 @@
 - (void)getAllVoiceAssets:(id)arg1;
 - (void)getAutoDownloadedVoiceAssets:(id)arg1;
 - (void)getLocalVoiceAssets:(id)arg1;
-- (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(int)arg2 gender:(int)arg3 custom:(BOOL)arg4 reply:(id)arg5;
-- (BOOL)isSystemSpeaking;
-- (BOOL)isSystemSpeakingOnBehalfOfCurrentConnection;
-- (void)pauseCurrentSpeechRequestAtMark:(int)arg1;
+- (void)getLogToFile:(id)arg1;
+- (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(long long)arg2 gender:(long long)arg3 custom:(bool)arg4 reply:(id)arg5;
+- (bool)isSystemSpeaking;
+- (bool)isSystemSpeakingOnBehalfOfCurrentConnection;
+- (void)pauseCurrentSpeechRequestAtMark:(long long)arg1;
 - (id)request;
 - (void)setAutoDownloadedVoiceAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLogToFile:(bool)arg1;
 - (void)startSpeechRequest:(id)arg1;
-- (void)stopCurrentSpeechRequestAtMark:(int)arg1;
+- (void)stopCurrentSpeechRequestAtMark:(long long)arg1;
 
 @end

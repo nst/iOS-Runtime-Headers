@@ -2,25 +2,32 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CLLocation, NSDate, NSManagedObjectID, PLMomentCluster;
+@class CLLocation, NSDate, NSNumber, NSObject<NSCopying>, NSString, PLMomentCluster;
 
 @interface PLMomentNode : NSObject {
     PLMomentCluster *__cluster;
     NSDate *__creationDate;
     CLLocation *__location;
-    NSManagedObjectID *__objectID;
-    BOOL _marked;
-    BOOL _visited;
+    NSObject<NSCopying> *__objectID;
+    NSString *__userTag;
+    unsigned long long __userTagType;
+    NSNumber *_cacheInsertionIndex;
+    bool_marked;
+    bool_visited;
 }
 
+@property(retain) NSNumber * cacheInsertionIndex;
 @property PLMomentCluster * cluster;
 @property(readonly) struct { double x1; double x2; } coordinate;
-@property(readonly) NSDate * creationDate;
+@property(retain,readonly) NSDate * creationDate;
 @property(readonly) CLLocation * location;
-@property(getter=isMarked) BOOL marked;
-@property(readonly) NSManagedObjectID * objectID;
-@property(getter=isVisited) BOOL visited;
+@property(getter=isMarked) bool marked;
+@property(retain,readonly) NSObject<NSCopying> * objectID;
+@property(readonly) NSString * userTag;
+@property(readonly) unsigned long long userTagType;
+@property(getter=isVisited) bool visited;
 
+- (id)cacheInsertionIndex;
 - (id)cluster;
 - (struct { double x1; double x2; })coordinate;
 - (id)creationDate;
@@ -28,12 +35,16 @@
 - (id)description;
 - (id)initWithManagedAsset:(id)arg1;
 - (id)initWithPartialFetchDictionary:(id)arg1;
-- (BOOL)isMarked;
-- (BOOL)isVisited;
+- (bool)isMarked;
+- (bool)isTagged;
+- (bool)isVisited;
 - (id)location;
 - (id)objectID;
+- (void)setCacheInsertionIndex:(id)arg1;
 - (void)setCluster:(id)arg1;
-- (void)setMarked:(BOOL)arg1;
-- (void)setVisited:(BOOL)arg1;
+- (void)setMarked:(bool)arg1;
+- (void)setVisited:(bool)arg1;
+- (id)userTag;
+- (unsigned long long)userTagType;
 
 @end

@@ -2,38 +2,43 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UICollectionView, UICollectionViewLayout;
+@class NSString, UICollectionView;
 
-@interface MPUCollectionViewController : MPUDataSourceViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    Class _cellConfigurationClass;
+@interface MPUCollectionViewController : MPUDataSourceViewController <MPStoreDownloadManagerObserver, UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_collectionView;
-    UICollectionViewLayout *_collectionViewLayout;
 }
 
-@property(readonly) Class cellClass;
-@property(readonly) Class cellConfigurationClass;
 @property(readonly) UICollectionView * collectionView;
-@property(readonly) UICollectionViewLayout * collectionViewLayout;
-@property(readonly) Class collectionViewLayoutClass;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
++ (Class)invalidationContextClass;
 
 - (void).cxx_destruct;
 - (id)_createCollectionView;
 - (id)_createCollectionViewLayout;
-- (Class)cellClass;
-- (Class)cellConfigurationClass;
+- (void)_updateVisibleCellsForDownloads:(id)arg1 updateAllCells:(bool)arg2;
+- (bool)collectionView:(id)arg1 canEditItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
-- (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 editingStyleForItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView;
-- (id)collectionViewLayout;
-- (Class)collectionViewLayoutClass;
+- (void)configureCell:(id)arg1 atIndexPath:(id)arg2 withEntity:(id)arg3 invalidationContext:(id)arg4;
+- (id)contentScrollView;
 - (void)dealloc;
-- (void)encodeRestorableStateWithCoder:(id)arg1;
-- (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
+- (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
+- (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;
+- (id)initWithDataSource:(id)arg1;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)reloadData;
+- (id)reuseIdentifierForCellAtIndexPath:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -2,34 +2,33 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCSavedRecording;
+@class RCCompositionController;
 
-@interface RCSavedRecordingPreviewController : RCAVPreviewController {
+@interface RCSavedRecordingPreviewController : RCPreviewController {
     struct { 
         double beginTime; 
         double endTime; 
-    BOOL _postPrepareShouldPlay;
+    RCCompositionController *_compositionController;
     double _postPrepareStartTime;
     } _postPrepareTimeRange;
-    BOOL _preparing;
-    BOOL _preparingToPlay;
-    RCSavedRecording *_savedRecording;
+    bool_postPrepareShouldPlay;
 }
 
-@property(retain) RCSavedRecording * savedRecording;
+@property(retain) RCCompositionController * compositionController;
 
 + (id)sharedRecordingPreviewController;
 
 - (void).cxx_destruct;
-- (void)_updatePreparingToPlay;
-- (void)initializeOutputRouteCategory;
+- (id)compositionController;
+- (double)currentTime;
 - (void)pause;
 - (void)playOrRestart;
 - (void)playWithTimeRange:(struct { double x1; double x2; })arg1 startTime:(double)arg2;
-- (id)savedRecording;
+- (struct { double x1; double x2; })playableTimeRange;
+- (void)playerCurrentRateDidChange:(id)arg1;
+- (void)setCompositionController:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
-- (void)setSavedRecording:(id)arg1;
+- (void)setPlayableTimeRange:(struct { double x1; double x2; })arg1;
 - (void)stop;
-- (void)switchBackToOutputRouteCategory;
 
 @end

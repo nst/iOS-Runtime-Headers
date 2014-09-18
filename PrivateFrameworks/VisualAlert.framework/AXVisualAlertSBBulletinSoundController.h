@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface AXVisualAlertSBBulletinSoundController : AXVisualAlertSBBulletinSoundController_super {
+@interface AXVisualAlertSBBulletinSoundController : __AXVisualAlertSBBulletinSoundController_super {
 }
 
-+ (id)_accessibilityTargetClassName;
-+ (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (id)_installSafeCategoryValidationMethod;
++ (Class)safeCategoryTargetClass;
++ (id)safeCategoryTargetClassName;
 
-- (BOOL)playSoundForBulletin:(id)arg1;
+- (bool)_playSoundForBulletin:(id)arg1 playedInternally:(bool)arg2;
+- (void)killSoundForBulletin:(id)arg1;
 
 @end

@@ -5,17 +5,17 @@
 @class PLImageTable;
 
 @interface PLImageTableSegment : NSObject {
-    BOOL _dying;
     PLImageTable *_imageTable;
-    unsigned long _index;
-    unsigned long _length;
+    unsigned long long _index;
+    unsigned long long _length;
     void *_ptr;
+    bool_dying;
 }
 
 - (void*)bytes;
 - (void)dealloc;
-- (id)initWithImageTable:(id)arg1 index:(unsigned long)arg2 length:(unsigned long)arg3 idealAddress:(void*)arg4;
-- (id)initWithImageTable:(id)arg1 offset:(long long)arg2 length:(unsigned long)arg3;
+- (id)initWithImageTable:(id)arg1 index:(unsigned long long)arg2 length:(unsigned long long)arg3 idealAddress:(void*)arg4;
+- (id)initWithImageTable:(id)arg1 offset:(long long)arg2 length:(unsigned long long)arg3;
 - (oneway void)release;
 
 @end

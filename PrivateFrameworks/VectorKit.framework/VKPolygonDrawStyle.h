@@ -2,206 +2,58 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface VKPolygonDrawStyle : VKDrawStyle {
-    struct VKProfileSparseRamp<signed char> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                BOOL value; 
-                unsigned char hi; 
-            } v[2]; 
-            char *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    struct VKProfileSparseRamp<int> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                int value; 
-                unsigned char hi; 
-            } v[2]; 
-            int *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                BOOL value; 
-                unsigned char hi; 
-            } v[2]; 
-            char *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                BOOL value; 
-                unsigned char hi; 
-            } v[2]; 
-            char *extra; 
-        } u; 
-        unsigned char count; 
-    unsigned int hasFillColor : 1;
-    unsigned int hasFillTexture : 1;
-    unsigned int hasStrokeColor : 1;
-    } _casingColor;
+@class NSString;
+
+@interface VKPolygonDrawStyle : VKRenderStyle {
     NSString *_name;
-    float _variation;
-    } casingsVisible;
-    NSString *descriptionKey;
-    } fancyCasingsVisible;
-    } fillColor;
-    } outerStrokeColor;
-    } outerStrokeWidth;
-    int polygonType;
-    int secondTextureBlendMode;
-    } secondTextureOpacity;
-    NSMutableArray *secondTextures;
-    } strokeColor;
-    } strokeWidth;
-    int textureBlendMode;
-    } textureOpacity;
-    NSMutableArray *textures;
-    int thirdTextureBlendMode;
-    } thirdTextureOpacity;
-    NSMutableArray *thirdTextures;
-    } visibility;
-    } zIndices;
 }
 
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } casingColor;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  casingColor; /* unknown property attribute:  1>=[4f]} */
 @property(retain) NSString * name;
-@property float variation;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })casingColor;
-- (BOOL)casingsVisibleAtZoom:(float)arg1;
++ (int)renderStyleID;
+
+- (struct Matrix<float, 4, 1> { float x1[4]; })casingColor;
+- (bool)casingsVisibleAtZoom:(float)arg1;
 - (void)dealloc;
-- (id)descriptionAtZoom:(float)arg1;
-- (BOOL)fancyCasingsVisibleAtZoom:(float)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })fillColorAtZoom:(float)arg1;
-- (BOOL)hasFillColor;
-- (BOOL)hasFillTexture;
-- (id)initWithStyle:(id)arg1;
-- (BOOL)isNotDrawn;
+- (bool)fancyCasingsVisibleAtZoom:(float)arg1;
+- (struct Matrix<float, 4, 1> { float x1[4]; })fillColorAtZoom:(float)arg1;
+- (bool)hasFillColor;
+- (bool)hasFillColorVariant;
+- (bool)hasFillTexture;
+- (bool)hasFillTextureVariant;
+- (bool)hasStrokeColor;
+- (bool)isNotDrawn;
+- (bool)isSourceNotDrawn;
+- (bool)isTargetNotDrawn;
 - (id)name;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })nonAnimatedFillColorAtZoom:(float)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })outerStrokeColorAtZoom:(float)arg1;
+- (struct Matrix<float, 4, 1> { float x1[4]; })outerStrokeColorAtZoom:(float)arg1;
 - (float)outerStrokeWidthAtZoom:(float)arg1;
 - (int)polygonType;
-- (id)preferredTextureNameAtZoom:(float)arg1;
+- (id)preferredSourceTextureNameAtZoom:(float)arg1;
+- (id)preferredTargetTextureNameAtZoom:(float)arg1;
 - (id)secondTextureAtZoom:(float)arg1;
-- (int)secondTextureBlendMode;
+- (int)secondTextureBlendModeAtZoom:(float)arg1;
 - (float)secondTextureOpacityAtZoom:(float)arg1;
+- (id)secondTextureVariantAtZoom:(float)arg1;
 - (void)setName:(id)arg1;
-- (void)setVariation:(float)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })strokeColorAtZoom:(float)arg1;
+- (struct Matrix<float, 4, 1> { float x1[4]; })sourceFillColorAtZoom:(float)arg1;
+- (id)sourceTextureAtZoom:(float)arg1;
+- (struct Matrix<float, 4, 1> { float x1[4]; })strokeColorAtZoom:(float)arg1;
 - (float)strokeWidthAtZoom:(float)arg1;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
-- (void)takeFromZoomInvariantProperties:(id)arg1;
-- (id)textureAtZoom:(float)arg1;
-- (int)textureBlendMode;
+- (struct Matrix<float, 4, 1> { float x1[4]; })targetFillColorAtZoom:(float)arg1;
+- (id)targetTextureAtZoom:(float)arg1;
+- (int)textureBlendModeAtZoom:(float)arg1;
 - (float)textureOpacityAtZoom:(float)arg1;
-- (id)textureVariantAtZoom:(float)arg1;
 - (id)thirdTextureAtZoom:(float)arg1;
-- (int)thirdTextureBlendMode;
+- (int)thirdTextureBlendModeAtZoom:(float)arg1;
 - (float)thirdTextureOpacityAtZoom:(float)arg1;
-- (id)variant;
-- (float)variation;
-- (BOOL)visibleAtZoom:(float)arg1;
+- (id)thirdTextureVariantAtZoom:(float)arg1;
+- (bool)visibleAtZoom:(float)arg1;
 - (unsigned int)zIndexAtZoom:(float)arg1;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface TSCH3DCacheTrackingLayerLogic : TSCH3DLayerCacheLogic {
-    BOOL mHighQuality;
-    BOOL mValid;
+    boolmHighQuality;
+    boolmValid;
 }
 
-- (BOOL)contentsIsHighQuality;
-- (BOOL)contentsIsValid;
+- (bool)contentsIsHighQuality;
+- (bool)contentsIsValid;
 - (id)description;
 - (id)initWithParent:(id)arg1;
-- (void)setContentsIsValid:(BOOL)arg1 highQuality:(BOOL)arg2;
+- (void)setContentsIsValid:(bool)arg1 highQuality:(bool)arg2;
 
 @end

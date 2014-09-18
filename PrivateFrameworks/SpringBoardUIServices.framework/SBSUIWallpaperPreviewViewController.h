@@ -2,58 +2,64 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class <SBFLegibilitySettingsProviderDelegate>, NSDictionary, NSTimer, SBFLockScreenSimpleDateFormatter, UIImage, _UILegibilitySettings;
+@class <SBFLegibilitySettingsProviderDelegate>, NSDictionary, NSString, NSTimer, SBFLockScreenSimpleDateFormatter, UIImage, _UILegibilitySettings;
 
 @interface SBSUIWallpaperPreviewViewController : UIViewController <SBFWallpaperViewLegibilityObserver, SBFLegibilitySettingsProvider> {
-    BOOL _allowScrolling;
-    BOOL _colorSamplingEnabled;
     SBFLockScreenSimpleDateFormatter *_dateFormatter;
     NSTimer *_dateTimer;
     <SBFLegibilitySettingsProviderDelegate> *_delegate;
-    BOOL _motionEnabled;
+    NSString *_name;
     NSDictionary *_proceduralWallpaper;
     NSDictionary *_proceduralWallpaperOptions;
-    int _variant;
+    long long _variant;
     UIImage *_wallpaperImage;
+    bool_allowScrolling;
+    bool_colorSamplingEnabled;
+    bool_motionEnabled;
 }
 
-@property BOOL colorSamplingEnabled;
+@property bool colorSamplingEnabled;
+@property(copy,readonly) NSString * debugDescription;
 @property <SBFLegibilitySettingsProviderDelegate> * delegate;
-@property(readonly) _UILegibilitySettings * legibilitySettings;
-@property BOOL motionEnabled;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) _UILegibilitySettings * legibilitySettings;
+@property bool motionEnabled;
+@property(readonly) Class superclass;
 @property(readonly) UIImage * wallpaperImage;
 
 - (id)_backdropWallpaperView;
 - (id)_dateView;
-- (float)_parallaxFactor;
+- (double)_parallaxFactor;
 - (id)_previewView;
-- (id)_proceduralWallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2;
+- (id)_proceduralWallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 variant:(long long)arg2;
 - (void)_startDateTimer;
 - (void)_stopDateTimer;
 - (void)_updateDateView;
 - (id)_wallpaperView;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 supportsCropping:(BOOL)arg3;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2 options:(id)arg3;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)colorSamplingEnabled;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 image:(id)arg2 supportsCropping:(bool)arg3;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 variant:(long long)arg2 options:(id)arg3;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)colorSamplingEnabled;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithColorSamplingEnabled:(BOOL)arg1;
+- (id)initWithColorSamplingEnabled:(bool)arg1;
+- (id)initWithImage:(id)arg1 name:(id)arg2;
 - (id)initWithImage:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithProceduralWallpaper:(id)arg1 options:(id)arg2;
 - (id)initWithScrollableImage:(id)arg1;
-- (id)initWithWallpaperVariant:(int)arg1;
+- (id)initWithWallpaperVariant:(long long)arg1;
 - (id)legibilitySettings;
 - (void)loadView;
-- (BOOL)motionEnabled;
+- (bool)motionEnabled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setColorSamplingEnabled:(BOOL)arg1;
+- (void)setColorSamplingEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMotionEnabled:(BOOL)arg1;
-- (void)setWallpaperForLocations:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setMotionEnabled:(bool)arg1;
+- (void)setWallpaperForLocations:(long long)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)wallpaperImage;
 - (void)wallpaperView:(id)arg1 legibilitySettingsDidChange:(id)arg2;
 

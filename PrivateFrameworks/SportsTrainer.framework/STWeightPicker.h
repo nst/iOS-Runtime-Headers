@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class <STWeightPickerDelegate>;
+@class <STWeightPickerDelegate>, NSString;
 
 @interface STWeightPicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate> {
     float _actualWeight;
@@ -10,7 +10,11 @@
     id _weightPickerDelegate;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) int selectedWeightUnit;
+@property(readonly) Class superclass;
 @property(readonly) float weightInKg;
 @property float weightInLbs;
 @property <STWeightPickerDelegate> * weightPickerDelegate;
@@ -19,17 +23,17 @@
 + (float)lbsForKg:(float)arg1;
 + (id)weightFormatter;
 
-- (float)_weightForRow:(int)arg1;
-- (float)_weightFractionForRow:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)numberOfComponentsInPickerView:(id)arg1;
+- (float)_weightForRow:(long long)arg1;
+- (float)_weightFractionForRow:(long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
 - (id)pickerImageNamePrefix;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 viewForRow:(long long)arg2 forComponent:(long long)arg3 reusingView:(id)arg4;
 - (void)saveCurrentWeight;
 - (int)selectedWeightUnit;
-- (void)setWeightInLbs:(float)arg1 animated:(BOOL)arg2;
+- (void)setWeightInLbs:(float)arg1 animated:(bool)arg2;
 - (void)setWeightInLbs:(float)arg1;
 - (void)setWeightPickerDelegate:(id)arg1;
 - (float)weightInKg;

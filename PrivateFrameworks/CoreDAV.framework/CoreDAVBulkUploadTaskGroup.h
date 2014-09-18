@@ -5,50 +5,51 @@
 @class NSDictionary, NSMutableDictionary, NSString, NSURL;
 
 @interface CoreDAVBulkUploadTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
-    void *_context;
     NSURL *_folderURL;
     NSMutableDictionary *_hrefToETag;
     NSMutableDictionary *_hrefToErrorItems;
     NSMutableDictionary *_hrefToStatus;
     NSString *_lastKnownCTag;
-    unsigned int _multiPutBatchMaxNumResources;
-    unsigned int _multiPutBatchMaxSize;
+    unsigned long long _multiPutBatchMaxNumResources;
+    unsigned long long _multiPutBatchMaxSize;
     NSMutableDictionary *_remainingHREFsToModDeleteActions;
     NSMutableDictionary *_remainingUUIDsToAddActions;
     NSMutableDictionary *_uuidToErrorItems;
     NSMutableDictionary *_uuidToHREF;
     NSMutableDictionary *_uuidToStatus;
-    BOOL _validCTag;
+    bool_validCTag;
 }
 
-@property(readonly) void* context;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSURL * folderURL;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSDictionary * hrefToETag;
 @property(readonly) NSDictionary * hrefToErrorItems;
 @property(readonly) NSDictionary * hrefToStatus;
-@property unsigned int multiPutBatchMaxNumResources;
-@property unsigned int multiPutBatchMaxSize;
+@property unsigned long long multiPutBatchMaxNumResources;
+@property unsigned long long multiPutBatchMaxSize;
 @property(retain) NSString * nextCTag;
+@property(readonly) Class superclass;
 @property(readonly) NSDictionary * uuidToErrorItems;
 @property(readonly) NSDictionary * uuidToHREF;
 @property(readonly) NSDictionary * uuidToStatus;
-@property(readonly) BOOL validCTag;
+@property(readonly) bool validCTag;
 
 - (void)_sendNextBatch;
-- (void*)context;
 - (void)dealloc;
 - (id)description;
 - (id)folderURL;
 - (id)hrefToETag;
 - (id)hrefToErrorItems;
 - (id)hrefToStatus;
-- (id)initWithFolderURL:(id)arg1 checkCTag:(id)arg2 uuidsToAddActions:(id)arg3 hrefsToModDeleteActions:(id)arg4 context:(void*)arg5 accountInfoProvider:(id)arg6 taskManager:(id)arg7;
-- (unsigned int)multiPutBatchMaxNumResources;
-- (unsigned int)multiPutBatchMaxSize;
+- (id)initWithFolderURL:(id)arg1 checkCTag:(id)arg2 uuidsToAddActions:(id)arg3 hrefsToModDeleteActions:(id)arg4 context:(id)arg5 accountInfoProvider:(id)arg6 taskManager:(id)arg7;
+- (unsigned long long)multiPutBatchMaxNumResources;
+- (unsigned long long)multiPutBatchMaxSize;
 - (Class)multiPutTaskClass;
 - (id)nextCTag;
-- (void)setMultiPutBatchMaxNumResources:(unsigned int)arg1;
-- (void)setMultiPutBatchMaxSize:(unsigned int)arg1;
+- (void)setMultiPutBatchMaxNumResources:(unsigned long long)arg1;
+- (void)setMultiPutBatchMaxSize:(unsigned long long)arg1;
 - (void)setNextCTag:(id)arg1;
 - (void)startTaskGroup;
 - (void)syncAway;
@@ -56,6 +57,6 @@
 - (id)uuidToErrorItems;
 - (id)uuidToHREF;
 - (id)uuidToStatus;
-- (BOOL)validCTag;
+- (bool)validCTag;
 
 @end

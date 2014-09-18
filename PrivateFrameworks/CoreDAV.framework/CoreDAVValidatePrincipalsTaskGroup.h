@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableSet, NSSet, NSURL;
+@class NSMutableSet, NSSet, NSString, NSURL;
 
 @interface CoreDAVValidatePrincipalsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
-    BOOL _authError;
     NSMutableSet *_principalURLs;
     NSURL *_urlBeingExamined;
     NSMutableSet *_urlsToExamine;
+    bool_authError;
 }
 
-@property(readonly) BOOL didReceiveAuthenticationError;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) bool didReceiveAuthenticationError;
+@property(readonly) unsigned long long hash;
 @property(retain) NSMutableSet * principalURLs;
 @property(readonly) NSSet * resultPrincipalURLs;
+@property(readonly) Class superclass;
 @property(retain) NSURL * urlBeingExamined;
 @property(retain) NSMutableSet * urlsToExamine;
 
@@ -21,7 +25,7 @@
 - (void)_finishWithError:(id)arg1;
 - (void)cancelTaskGroup;
 - (void)dealloc;
-- (BOOL)didReceiveAuthenticationError;
+- (bool)didReceiveAuthenticationError;
 - (id)initWithAccountInfoProvider:(id)arg1 urls:(id)arg2 taskManager:(id)arg3;
 - (id)principalURLs;
 - (id)resultPrincipalURLs;

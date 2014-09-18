@@ -2,39 +2,42 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKTimeZoneViewControllerDelegate>, NSArray, NSTimeZone, UISearchDisplayController, UITableView;
+@class <EKTimeZoneViewControllerDelegate>, NSArray, NSString, NSTimeZone, UISearchController;
 
-@interface EKTimeZoneViewController : UIViewController <UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface EKTimeZoneViewController : UITableViewController <UISearchControllerDelegate> {
+    int _chooserStyle;
     NSArray *_cities;
     <EKTimeZoneViewControllerDelegate> *_delegate;
-    UISearchDisplayController *_searchController;
+    UISearchController *_searchController;
     int _style;
-    UITableView *_tableView;
     NSTimeZone *_timeZone;
 }
 
 @property(readonly) int chooserStyle;
+@property(retain) NSArray * cities;
+@property(copy,readonly) NSString * debugDescription;
 @property <EKTimeZoneViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSTimeZone * timeZone;
 
 - (void).cxx_destruct;
 - (int)chooserStyle;
+- (id)cities;
 - (id)delegate;
 - (id)initWithChooserStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
-- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
-- (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
-- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
-- (void)searchDisplayControllerDidEndSearch:(id)arg1;
-- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
-- (void)searchDisplayControllerWillEndSearch:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)setCities:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)timeZone;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)willDismissSearchController:(id)arg1;
 
 @end

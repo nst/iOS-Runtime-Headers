@@ -6,25 +6,25 @@
 
 @interface RadioArtwork : NSObject <NSCopying> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSURL *_URL;
     } _pixelSize;
 }
 
 @property(readonly) NSURL * URL;
-@property(readonly) struct CGSize { float x1; float x2; } pixelSize;
-@property(readonly) struct CGSize { float x1; float x2; } pointSize;
+@property(readonly) struct CGSize { double x1; double x2; } pixelSize;
+@property(readonly) struct CGSize { double x1; double x2; } pointSize;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArtworkDictionary:(id)arg1;
-- (id)initWithArtworkURL:(id)arg1 pixelSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })pixelSize;
-- (struct CGSize { float x1; float x2; })pointSize;
+- (id)initWithArtworkURL:(id)arg1 pixelSize:(struct CGSize { double x1; double x2; })arg2;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })pixelSize;
+- (struct CGSize { double x1; double x2; })pointSize;
 
 @end

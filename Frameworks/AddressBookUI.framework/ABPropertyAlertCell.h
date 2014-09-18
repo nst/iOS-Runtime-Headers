@@ -2,34 +2,23 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyGroupAlertItem, NSLayoutConstraint, UIImageView;
+@class ABPropertyGroupAlertItem, NSString;
 
-@interface ABPropertyAlertCell : ABPropertyCell <ABPickerControllerDelegate> {
-    UIImageView *_chevron;
-    float _labelWidth;
-    NSLayoutConstraint *_labelWidthConstraint;
+@interface ABPropertyAlertCell : ABPropertySimpleCell <ABPickerControllerDelegate> {
 }
 
 @property(readonly) ABPropertyGroupAlertItem * alertItem;
-@property(retain) UIImageView * chevron;
-@property(retain) NSLayoutConstraint * labelWidthConstraint;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (id)_toneManger;
-- (id)_vibrationManager;
++ (bool)wantsChevron;
+
 - (id)alertItem;
-- (id)chevron;
-- (id)contentViewConstraints;
-- (id)contentViewEditingConstraints;
-- (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (float)labelWidth;
-- (id)labelWidthConstraint;
 - (void)performDefaultAction;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
-- (void)setChevron:(id)arg1;
-- (void)setLabelWidth:(float)arg1;
-- (void)setLabelWidthConstraint:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 
 @end

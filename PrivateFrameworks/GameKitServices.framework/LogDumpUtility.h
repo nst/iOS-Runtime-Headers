@@ -6,7 +6,7 @@
 }
 
 + (void)AddFileToMarco:(id)arg1 logCategory:(int)arg2;
-+ (BOOL)createDirectoy:(id)arg1;
++ (bool)createDirectoy:(id)arg1;
 + (id)createLogFilename:(int)arg1 logNameType:(int)arg2 prefix:(id)arg3 suffix:(id)arg4 marcoLog:(int)arg5;
 + (id)getDefaultLogDumpPath;
 + (id)getHomeDirPath;

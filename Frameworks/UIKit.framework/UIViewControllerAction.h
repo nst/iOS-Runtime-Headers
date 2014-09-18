@@ -10,22 +10,22 @@
 
 @interface UIViewControllerAction : NSObject {
     id _completion;
-    float _curlUpRevealedHeight;
+    double _curlUpRevealedHeight;
     NSString *_name;
     int _transition;
     UIViewController *_viewController;
 }
 
-@property(setter=_setCurlUpRevealedHeight:) float _curlUpRevealedHeight;
-@property(readonly) BOOL animated;
+@property(setter=_setCurlUpRevealedHeight:) double _curlUpRevealedHeight;
+@property(readonly) bool animated;
 @property(copy) id completion;
 @property(retain) NSString * name;
 @property int transition;
 @property UIViewController * viewController;
 
-- (float)_curlUpRevealedHeight;
-- (void)_setCurlUpRevealedHeight:(float)arg1;
-- (BOOL)animated;
+- (double)_curlUpRevealedHeight;
+- (void)_setCurlUpRevealedHeight:(double)arg1;
+- (bool)animated;
 - (id)completion;
 - (void)dealloc;
 - (id)initWithViewController:(id)arg1 name:(id)arg2 transition:(int)arg3;

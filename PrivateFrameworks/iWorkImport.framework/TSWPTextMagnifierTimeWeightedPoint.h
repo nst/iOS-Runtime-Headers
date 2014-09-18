@@ -5,24 +5,24 @@
 @interface TSWPTextMagnifierTimeWeightedPoint : NSObject {
     struct { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } point; 
         double time; 
-    int m_index;
+    long long m_index;
     } m_points[16];
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } weightedPoint;
+@property(readonly) struct CGPoint { double x1; double x2; } weightedPoint;
 
 - (id).cxx_construct;
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)clearHistory;
-- (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1 priorTo:(double)arg2;
-- (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1;
-- (float)distanceCoveredInInterval:(double)arg1 priorTo:(double)arg2;
-- (float)distanceCoveredInInterval:(double)arg1;
-- (BOOL)historyCovers:(double)arg1;
-- (struct CGPoint { float x1; float x2; })weightedPoint;
+- (struct CGSize { double x1; double x2; })displacementInInterval:(double)arg1 priorTo:(double)arg2;
+- (struct CGSize { double x1; double x2; })displacementInInterval:(double)arg1;
+- (double)distanceCoveredInInterval:(double)arg1 priorTo:(double)arg2;
+- (double)distanceCoveredInInterval:(double)arg1;
+- (bool)historyCovers:(double)arg1;
+- (struct CGPoint { double x1; double x2; })weightedPoint;
 
 @end

@@ -7,12 +7,12 @@
 @interface TSDSpacingGuide : TSDAlignmentGuide {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } mGeneratingObjectRect;
     TSDSpacing *mParentSpacing;
@@ -22,11 +22,11 @@
 
 @property TSDSpacing * parentSpacing;
 
-- (BOOL)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (int)compare:(id)arg1;
+- (bool)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (long long)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initForEdge:(int)arg1 ofGeneratingObjectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andParentSpacing:(id)arg3;
+- (id)initForEdge:(int)arg1 ofGeneratingObjectRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andParentSpacing:(id)arg3;
 - (id)layerWithICC:(id)arg1;
 - (id)parentSpacing;
 - (void)setParentSpacing:(id)arg1;

@@ -11,12 +11,12 @@
     NSArray *_emails;
     NSString *_firstName;
     NSString *_fullName;
-    BOOL _isMine;
     NSString *_lastName;
     NSString *_personID;
     NSArray *_phones;
     int _state;
     NSDate *_subscriptionDate;
+    bool_isMine;
 }
 
 @property(retain) NSString * GUID;
@@ -25,7 +25,7 @@
 @property(retain) NSArray * emails;
 @property(retain) NSString * firstName;
 @property(retain) NSString * fullName;
-@property BOOL isMine;
+@property bool isMine;
 @property(retain) NSString * lastName;
 @property(retain) NSString * personID;
 @property(retain) NSArray * phones;
@@ -33,7 +33,7 @@
 @property(retain) NSDate * subscriptionDate;
 
 + (id)MSASPSharingRelationshipFromProtocolDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)GUID;
@@ -46,12 +46,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstName;
 - (id)fullName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSharingRelationship:(id)arg1;
-- (BOOL)isMine;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSharingRelationship:(id)arg1;
+- (bool)isMine;
 - (id)lastName;
 - (id)personID;
 - (id)phones;
@@ -61,7 +61,7 @@
 - (void)setFirstName:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
-- (void)setIsMine:(BOOL)arg1;
+- (void)setIsMine:(bool)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setPersonID:(id)arg1;
 - (void)setPhones:(id)arg1;

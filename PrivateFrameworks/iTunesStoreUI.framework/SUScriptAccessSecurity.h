@@ -7,9 +7,9 @@
 
 - (id)_accessDictionaryForType:(id)arg1;
 - (id)_copyResourceURLsForWebFrame:(id)arg1;
-- (BOOL)_url:(id)arg1 matchesExpressions:(id)arg2;
-- (BOOL)_urls:(id)arg1 matchPatternStrings:(id)arg2;
-- (BOOL)canAccessFacebookInFrame:(id)arg1 error:(id*)arg2;
-- (BOOL)canAccessFacebookWithURL:(id)arg1 inFrame:(id)arg2 error:(id*)arg3;
+- (bool)_url:(id)arg1 matchesExpressions:(id)arg2;
+- (bool)_urls:(id)arg1 matchPatternStrings:(id)arg2;
+- (bool)canAccessFacebookInFrame:(id)arg1 error:(id*)arg2;
+- (bool)canAccessFacebookWithURL:(id)arg1 inFrame:(id)arg2 error:(id*)arg3;
 
 @end

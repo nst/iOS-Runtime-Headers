@@ -6,51 +6,48 @@
    See Warning(s) below.
  */
 
-@class KNMotionBlurWrapper, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, TSDGLDataBuffer, TSDGLShader, TSDMagicMoveTextureZOrderer;
+@class KNMagicMoveWrapper, KNMotionBlurWrapper, NSString;
 
 @interface KNMagicMoveImpliedMotionPath : KNAnimationEffect <KNMagicMoveTransitionAnimator, KNMagicMoveFrameAnimator, KNAnimationPluginObsoleteNames, KNAnimationPluginArchiving> {
-    NSDictionary *_animationCacheDict;
-    NSMutableDictionary *_animationDict;
-    TSDGLDataBuffer *_dataBuffer;
-    TSDGLShader *_magicMoveBlendShader;
-    TSDGLShader *_magicMoveShader;
-    TSDMagicMoveTextureZOrderer *_mmTextureZOrderer;
+    KNMagicMoveWrapper *_magicMoveWrapper;
     KNMotionBlurWrapper *_motionBlurWrapper;
     id _motionBlurWrapperSetupShaderBlock;
     id _motionBlurWrapperTextureDrawOptionsBlock;
-    NSMapTable *_textureToMorphEffectDict;
-    NSMapTable *_textureToShaderMapTable;
-    NSMutableArray *_texturesOrderingArray;
+    bool_isTextMorphEnabled;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)customAttributes;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
-+ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (void)initialize;
-+ (BOOL)isCharacterAwareEffect;
++ (bool)isCharacterAwareEffect;
 + (id)localizedMenuString:(int)arg1;
 + (id)obsoleteAnimationNames;
-+ (BOOL)requiresBullets;
-+ (BOOL)requiresMagicMoveTextures;
-+ (BOOL)requiresPerspectiveTransform;
++ (int)rendererTypeForCapabilities:(id)arg1;
++ (bool)requiresBullets;
++ (bool)requiresPerspectiveTransform;
 + (id)supportedTypes;
++ (bool)supportsMorphTextures;
 + (id)thumbnailImageNameForType:(int)arg1;
-+ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (void)animationDidEndWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (id)animationsWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
-- (void)p_addDebugAnimationsToArray:(id)arg1 forType:(int)arg2 duration:(double)arg3;
-- (id)p_magicMoveShaderWithShouldBlendIncoming:(BOOL)arg1 enableDebugColors:(BOOL)arg2;
-- (void)p_setAnimationGroup:(id)arg1 forLayer:(id)arg2 inDictionary:(id)arg3;
-- (id)p_texturesBySortingArray:(id)arg1;
+- (bool)p_isTextMorphWithTR:(id)arg1 match:(id)arg2;
+- (void)p_setupMagicMoveWrapperWithContext:(id)arg1;
 - (void)renderFrameWithContext:(id)arg1;
+- (void)teardown;
 
 @end

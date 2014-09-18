@@ -5,12 +5,12 @@
 @class NSData;
 
 @interface MCChaperonePayload : MCPayload {
-    BOOL _nonChaperonePairingAllowed;
     NSData *_pairingCertificateData;
+    bool_nonChaperonePairingAllowed;
 }
 
-@property(readonly) BOOL nonChaperonePairingAllowed;
-@property(readonly) NSData * pairingCertificateData;
+@property(readonly) bool nonChaperonePairingAllowed;
+@property(retain,readonly) NSData * pairingCertificateData;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -19,8 +19,9 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)nonChaperonePairingAllowed;
+- (bool)nonChaperonePairingAllowed;
 - (id)pairingCertificateData;
+- (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;

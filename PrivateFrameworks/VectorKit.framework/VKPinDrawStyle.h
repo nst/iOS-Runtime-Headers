@@ -2,9 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPinDrawStyle : VKDimmableDrawStyle {
+@interface VKPinDrawStyle : VKRenderStyle {
 }
 
-- (id)variant;
+@property(readonly) float brightness;
+
++ (int)renderStyleID;
+
+- (float)brightness;
 
 @end

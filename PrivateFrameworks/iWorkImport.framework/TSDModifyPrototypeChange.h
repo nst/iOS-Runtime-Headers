@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSSPropertySource>, TSDPropertySourceForModifyPrototypeChange, TSSMutablePropertySet, TSSPropertyMap;
+@class <TSSPropertySource>, NSString, TSDPropertySourceForModifyPrototypeChange, TSSMutablePropertySet, TSSPropertyMap;
 
 @interface TSDModifyPrototypeChange : NSObject <TSDPrototypeChange> {
     TSSPropertyMap *mChangedPropertyMapAfterChange;
@@ -14,17 +14,21 @@
     id mPrototype;
 }
 
-@property(readonly) TSSPropertyMap * changedPropertyMapAfterChange;
-@property(readonly) TSSPropertyMap * changedPropertyMapBeforeChange;
-@property(readonly) TSSMutablePropertySet * changedPropertySet;
-@property(readonly) TSSMutablePropertySet * i_propertiesWithOldValuesRecordedButNotNewValues;
-@property(readonly) <TSSPropertySource> * propertiesAfterChange;
-@property(readonly) <TSSPropertySource> * propertiesBeforeChange;
-@property(readonly) id prototype;
-@property(readonly) BOOL prototypeIsBeingDeleted;
-@property(readonly) BOOL prototypeIsBeingModified;
-@property(readonly) BOOL prototypeIsBeingReplaced;
-@property(readonly) id replacement;
+@property(retain,readonly) TSSPropertyMap * changedPropertyMapAfterChange;
+@property(retain,readonly) TSSPropertyMap * changedPropertyMapBeforeChange;
+@property(retain,readonly) TSSMutablePropertySet * changedPropertySet;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) TSSMutablePropertySet * i_propertiesWithOldValuesRecordedButNotNewValues;
+@property(retain,readonly) <TSSPropertySource> * propertiesAfterChange;
+@property(retain,readonly) <TSSPropertySource> * propertiesBeforeChange;
+@property(retain,readonly) id prototype;
+@property(readonly) bool prototypeIsBeingDeleted;
+@property(readonly) bool prototypeIsBeingModified;
+@property(readonly) bool prototypeIsBeingReplaced;
+@property(retain,readonly) id replacement;
+@property(readonly) Class superclass;
 
 - (id)changedPropertyMapAfterChange;
 - (id)changedPropertyMapBeforeChange;
@@ -34,13 +38,13 @@
 - (id)i_propertiesWithOldValuesRecordedButNotNewValues;
 - (id)initModifyPrototypeChangeForPrototype:(id)arg1;
 - (id)propertiesAfterChange;
-- (BOOL)propertiesAreChanging:(id)arg1;
+- (bool)propertiesAreChanging:(id)arg1;
 - (id)propertiesBeforeChange;
-- (BOOL)propertyIsChanging:(int)arg1;
+- (bool)propertyIsChanging:(int)arg1;
 - (id)prototype;
-- (BOOL)prototypeIsBeingDeleted;
-- (BOOL)prototypeIsBeingModified;
-- (BOOL)prototypeIsBeingReplaced;
+- (bool)prototypeIsBeingDeleted;
+- (bool)prototypeIsBeingModified;
+- (bool)prototypeIsBeingReplaced;
 - (id)replacement;
 
 @end

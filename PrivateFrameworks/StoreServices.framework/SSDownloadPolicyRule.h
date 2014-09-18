@@ -2,59 +2,63 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSSet;
+@class NSSet, NSString;
 
 @interface SSDownloadPolicyRule : NSObject <NSCoding, SSXPCCoding, NSCopying> {
     NSSet *_applicationStates;
     float _batteryLevel;
-    int _cellularDataStates;
+    long long _cellularDataStates;
     long long _downloadSizeLimit;
     NSSet *_networkTypes;
-    int _powerStates;
-    int _registrationStates;
-    int _timeLimitStates;
+    long long _powerStates;
+    long long _registrationStates;
+    long long _timeLimitStates;
 }
 
 @property(copy) NSSet * applicationStates;
 @property float batteryLevel;
-@property(getter=isCellularAllowed,readonly) BOOL cellularAllowed;
-@property int cellularDataStates;
+@property(getter=isCellularAllowed,readonly) bool cellularAllowed;
+@property long long cellularDataStates;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property long long downloadSizeLimit;
+@property(readonly) unsigned long long hash;
 @property(copy) NSSet * networkTypes;
-@property int powerStates;
-@property int registrationStates;
-@property int timeLimitStates;
-@property(getter=isWiFiAllowed,readonly) BOOL wiFiAllowed;
+@property long long powerStates;
+@property long long registrationStates;
+@property(readonly) Class superclass;
+@property long long timeLimitStates;
+@property(getter=isWiFiAllowed,readonly) bool wiFiAllowed;
 
 - (void)addApplicationState:(id)arg1;
-- (void)addNetworkType:(int)arg1;
+- (void)addNetworkType:(long long)arg1;
 - (id)applicationStates;
 - (float)batteryLevel;
-- (int)cellularDataStates;
+- (long long)cellularDataStates;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (long long)downloadSizeLimit;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isCellularAllowed;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isWiFiAllowed;
+- (bool)isCellularAllowed;
+- (bool)isEqual:(id)arg1;
+- (bool)isWiFiAllowed;
 - (id)networkTypes;
-- (int)powerStates;
-- (int)registrationStates;
+- (long long)powerStates;
+- (long long)registrationStates;
 - (void)setApplicationStates:(id)arg1;
 - (void)setBatteryLevel:(float)arg1;
-- (void)setCellularDataStates:(int)arg1;
+- (void)setCellularDataStates:(long long)arg1;
 - (void)setDownloadSizeLimit:(long long)arg1;
 - (void)setNetworkTypes:(id)arg1;
-- (void)setPowerStates:(int)arg1;
-- (void)setRegistrationStates:(int)arg1;
-- (void)setTimeLimitStates:(int)arg1;
-- (int)timeLimitStates;
+- (void)setPowerStates:(long long)arg1;
+- (void)setRegistrationStates:(long long)arg1;
+- (void)setTimeLimitStates:(long long)arg1;
+- (long long)timeLimitStates;
 - (void)unionPolicyRule:(id)arg1;
 
 @end

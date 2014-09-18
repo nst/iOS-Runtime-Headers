@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKSearchCompleterDelegate>, NSArray, NSString;
+@class <MKSearchCompleterDelegate>, CLLocation, NSArray, NSString;
 
 @interface MKSearchCompleter : NSObject {
     struct { 
@@ -17,20 +17,22 @@
     } _boundingRegion;
     id _context;
     <MKSearchCompleterDelegate> *_delegate;
-    int _entriesType;
+    CLLocation *_deviceLocation;
+    long long _entriesType;
     NSString *_fragment;
     NSString *_identifier;
-    int _listType;
+    long long _listType;
     double _timeSinceLastInBoundingRegion;
 }
 
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingRegion;
 @property id context;
 @property <MKSearchCompleterDelegate> * delegate;
-@property int entriesType;
+@property(retain) CLLocation * deviceLocation;
+@property long long entriesType;
 @property(copy) NSString * fragment;
 @property(copy) NSString * identifier;
-@property int listType;
+@property long long listType;
 @property(readonly) NSArray * results;
 @property double timeSinceLastInBoundingRegion;
 
@@ -41,22 +43,24 @@
 - (void)cancel;
 - (id)context;
 - (id)delegate;
-- (int)entriesType;
+- (id)deviceLocation;
+- (long long)entriesType;
 - (id)fragment;
 - (id)identifier;
 - (id)init;
-- (BOOL)isSearching;
-- (int)listType;
+- (bool)isSearching;
+- (long long)listType;
 - (id)results;
-- (BOOL)resultsAreCurrent;
+- (bool)resultsAreCurrent;
 - (void)retry;
 - (void)setBoundingRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEntriesType:(int)arg1;
+- (void)setDeviceLocation:(id)arg1;
+- (void)setEntriesType:(long long)arg1;
 - (void)setFragment:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setListType:(int)arg1;
+- (void)setListType:(long long)arg1;
 - (void)setTimeSinceLastInBoundingRegion:(double)arg1;
 - (double)timeSinceLastInBoundingRegion;
 

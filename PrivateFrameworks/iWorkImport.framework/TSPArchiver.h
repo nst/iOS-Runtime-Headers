@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSHashTable, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_group>;
+@class NSArray, NSHashTable, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_group>, NSUUID;
 
 @interface TSPArchiver : TSPArchiverBase {
     NSHashTable *_aggregatedCommandToModelReferences;
@@ -20,6 +20,7 @@
     unsigned long long _documentReadVersion;
     unsigned long long _documentWriteVersion;
     BOOL _flags;
+    NSUUID *_objectUUID;
     NSObject<OS_dispatch_group> *_serializeGroup;
     NSObject<OS_dispatch_data> *_serializedData;
     NSArray *_unknownMessages;
@@ -30,20 +31,22 @@
 @property(readonly) NSHashTable * aggregatedLazyReferences;
 @property(readonly) NSHashTable * aggregatedStrongReferences;
 @property(readonly) NSHashTable * aggregatedWeakReferences;
+@property(readonly) NSHashTable * alternates;
 @property(readonly) NSObject<OS_dispatch_group> * archiveGroup;
 @property(readonly) unsigned long long documentReadVersion;
 @property(readonly) unsigned long long documentWriteVersion;
 @property unsigned long long messageVersion;
-@property(readonly) BOOL needsArchive;
+@property(readonly) bool needsArchive;
+@property(readonly) NSUUID * objectUUID;
 @property(readonly) NSObject<OS_dispatch_group> * serializeGroup;
 @property(readonly) NSObject<OS_dispatch_data> * serializedData;
-@property(readonly) BOOL shouldSaveAlternates;
-@property(readonly) BOOL success;
+@property(readonly) bool shouldSaveAlternates;
+@property(readonly) bool success;
 
 - (void).cxx_destruct;
 - (id)addAlternateForMessageVersion:(unsigned long long)arg1;
 - (void)addOwnedSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2;
-- (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2 owned:(BOOL)arg3;
+- (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2 owned:(bool)arg3;
 - (void)addSparseReferenceArray:(id)arg1 toArchive:(struct SparseReferenceArrayArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::SparseReferenceArrayArchive_Entry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; unsigned int x4; int x5; unsigned int x6[1]; }*)arg2;
 - (void)aggregateReferencesFromArchiver:(id)arg1;
 - (id)aggregatedCommandToModelReferences;
@@ -51,23 +54,25 @@
 - (id)aggregatedLazyReferences;
 - (id)aggregatedStrongReferences;
 - (id)aggregatedWeakReferences;
+- (id)alternates;
 - (void)archive;
 - (id)archiveGroup;
-- (BOOL)beginArchive;
-- (BOOL)beginWrite;
+- (bool)beginArchive;
+- (bool)beginWrite;
 - (void)cleanup;
 - (unsigned long long)documentReadVersion;
 - (unsigned long long)documentWriteVersion;
 - (void)fail;
 - (id)initWithObject:(id)arg1;
-- (BOOL)needsArchive;
+- (bool)needsArchive;
+- (id)objectUUID;
 - (void)requiresDocumentReadVersion:(unsigned long long)arg1 writeVersion:(unsigned long long)arg2;
 - (void)requiresDocumentVersion:(unsigned long long)arg1;
 - (void)serialize;
 - (id)serializeGroup;
 - (id)serializedData;
-- (BOOL)shouldSaveAlternates;
-- (BOOL)success;
-- (BOOL)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)arg1 withArchiver:(id)arg2;
+- (bool)shouldSaveAlternates;
+- (bool)success;
+- (bool)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedField<unsigned int> { unsigned int *x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSP::FieldInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned long long> { unsigned long long *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; int x12; unsigned int x13[1]; }*)arg1 withArchiver:(id)arg2;
 
 @end

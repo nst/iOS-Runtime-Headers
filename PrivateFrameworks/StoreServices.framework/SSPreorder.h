@@ -18,6 +18,9 @@
 }
 
 @property(readonly) NSString * artistName;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) SSItemImageCollection * imageCollection;
 @property(readonly) NSString * itemKind;
 @property(readonly) long long persistentIdentifier;
@@ -26,6 +29,7 @@
 @property(readonly) NSNumber * storeAccountIdentifier;
 @property(readonly) unsigned long long storeItemIdentifier;
 @property(readonly) unsigned long long storePreorderIdentifier;
+@property(readonly) Class superclass;
 @property(readonly) NSString * title;
 
 - (id)_initWithPersistentIdentifier:(long long)arg1;
@@ -39,14 +43,14 @@
 - (void)_setStorePreorderIdentifier:(long long)arg1;
 - (void)_setTitle:(id)arg1;
 - (id)artistName;
-- (id)copyReleaseDateStringWithStyle:(long)arg1;
+- (id)copyReleaseDateStringWithStyle:(long long)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageCollection;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)itemKind;
 - (long long)persistentIdentifier;
 - (id)releaseDate;

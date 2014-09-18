@@ -6,36 +6,36 @@
 
 @interface SKUITableViewCell : UITableViewCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    float _borderPaddingLeft;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    double _borderPaddingLeft;
     SKUIBorderView *_bottomBorderView;
     } _textLabelInsets;
-    float _titlePaddingLeft;
+    double _titlePaddingLeft;
     SKUIBorderView *_topBorderView;
 }
 
-@property float borderPaddingLeft;
+@property double borderPaddingLeft;
 @property(copy) UIColor * bottomBorderColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textLabelInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textLabelInsets;
 @property(copy) UIColor * topBorderColor;
 
 - (void).cxx_destruct;
 - (void)_reloadBorderVisibility;
-- (float)borderPaddingLeft;
+- (double)borderPaddingLeft;
 - (id)bottomBorderColor;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
-- (void)setBorderPaddingLeft:(float)arg1;
+- (void)setBorderPaddingLeft:(double)arg1;
 - (void)setBottomBorderColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setTextLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setTextLabelInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setTopBorderColor:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textLabelInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textLabelInsets;
 - (id)topBorderColor;
 
 @end

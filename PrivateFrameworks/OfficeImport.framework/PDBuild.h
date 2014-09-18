@@ -5,15 +5,16 @@
 @class OADDrawable;
 
 @interface PDBuild : NSObject {
+    boolmIsAnimateBackground;
     OADDrawable *mDrawable;
-    BOOL mIsAnimateBackground;
 }
 
 - (void)dealloc;
 - (id)drawable;
 - (id)init;
-- (BOOL)isAnimateBackground;
+- (bool)isAnimateBackground;
+- (bool)isEqual:(id)arg1;
 - (void)setDrawable:(id)arg1;
-- (void)setIsAnimateBackground:(BOOL)arg1;
+- (void)setIsAnimateBackground:(bool)arg1;
 
 @end

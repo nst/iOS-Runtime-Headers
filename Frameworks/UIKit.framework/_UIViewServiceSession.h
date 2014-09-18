@@ -6,44 +6,38 @@
    See Warning(s) below.
  */
 
-@class NSLock, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSXPCConnection, _UIAsyncInvocation;
+@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, _UIAsyncInvocation, _UIViewServiceDeputyManager;
 
-@interface _UIViewServiceSession : NSObject <_UIViewServiceDeputyDelegate, NSXPCConnectionDelegate, _UIViewServiceViewControllerOperatorDelegate, _UIViewServiceSession_HostInterface> {
-     /* Encoded args for previous method: v20@0:4#8R@12@?16 */
-    BOOL __automatic_invalidation_invalidated;
+@interface _UIViewServiceSession : NSObject <NSXPCConnectionDelegate, _UIViewServiceDeputyManagerDelegate, _UIViewServiceViewControllerOperatorDelegate> {
     int __automatic_invalidation_retainCount;
     NSXPCConnection *_connection;
-    NSMutableDictionary *_connectionHandlers;
-    NSLock *_connectionHandlersLock;
-    NSMutableSet *_deputies;
+    _UIViewServiceDeputyManager *_deputyManager;
     _UIAsyncInvocation *_invalidationInvocation;
     NSObject<OS_dispatch_queue> *_queue;
     id _terminationHandler;
+    bool__automatic_invalidation_invalidated;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) id terminationHandler;
 
-+ (id)exportedInterfaceSupportingDeputyInterfaces:(id)arg1;
 + (id)sessionWithConnection:(id)arg1;
 
 - (int)__automatic_invalidation_logic;
-- (void)__prototype_requestConnectionToDeputyFromHostObject:(id)arg1 replyHandler:(id)arg2;
-- (void)__requestConnectionToDeputyOfClass:(Class)arg1 fromHostObject:(/* Warning: Unrecognized filer type: 'R' using 'void*' */ void*)arg2 replyHandler:(id)arg3;
-- (void)__requestConnectionToDeputyOfType:(id)arg1 withReplyHandler:(id)arg2;
-- (Class)_deputyClassForConnectionSelector:(SEL)arg1;
 - (void)_invalidateUnconditionallyThen:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)checkDeputyForRotation:(id)arg1;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)dealloc;
 - (void)deputy:(id)arg1 didFailWithError:(id)arg2;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)deputyManager:(id)arg1 didUpdateExportedInterface:(id)arg2;
 - (void)registerDeputyClass:(Class)arg1 withConnectionHandler:(id)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setTerminationHandler:(id)arg1;
 - (id)terminationHandler;
 - (void)unregisterDeputyClass:(Class)arg1;

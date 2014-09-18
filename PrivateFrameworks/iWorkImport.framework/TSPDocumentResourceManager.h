@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSURL, TSPDocumentResourceCache, TSUDownloadManager;
+@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL, TSPDocumentResourceCache, TSUDownloadManager;
 
 @interface TSPDocumentResourceManager : NSObject {
     NSURL *_appDocumentResourcesMetadataURL;
@@ -10,8 +10,10 @@
     TSPDocumentResourceCache *_cache;
     NSDictionary *_documentResourcesConfiguration;
     NSObject<OS_dispatch_queue> *_documentResourcesConfigurationQueue;
-    long _documentResourcesConfigurationToken;
+    long long _documentResourcesConfigurationToken;
     TSUDownloadManager *_downloadManager;
+    NSMutableDictionary *_sageDocumentResourcesConfiguration;
+    long long _sageDocumentResourcesConfigurationToken;
 }
 
 @property(readonly) TSPDocumentResourceCache * cache;
@@ -21,14 +23,15 @@
 + (id)appDocumentResourcesURL;
 + (void)setAppDocumentResourcesMetadataURL:(id)arg1;
 + (void)setAppDocumentResourcesURL:(id)arg1;
++ (void)setSageAppDocumentResourcesURL:(id)arg1;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
 - (id)URLForAppDocumentResourceWithDigestString:(id)arg1 extension:(id)arg2;
 - (id)URLForCachedDocumentResourceWithDigestString:(id)arg1;
-- (id)applicationDataStorageForInfo:(id)arg1 isValidated:(BOOL)arg2;
+- (id)applicationDataStorageForInfo:(id)arg1 isValidated:(bool)arg2;
 - (id)cache;
-- (id)cachedDocumentResourceDataStorageForInfo:(id)arg1 isValidated:(BOOL)arg2;
+- (id)cachedDocumentResourceDataStorageForInfo:(id)arg1 isValidated:(bool)arg2;
 - (void)clearCache;
 - (id)dataStorageForDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3 infoToDownload:(id*)arg4;
 - (id)documentResourcesConfiguration;
@@ -37,5 +40,7 @@
 - (id)init;
 - (id)initWithAppDocumentResourcesURL:(id)arg1 appDocumentResourcesMetadataURL:(id)arg2 cache:(id)arg3 downloadManager:(id)arg4;
 - (id)newDataProviderForContext:(id)arg1;
+- (id)sageAssetURLForLocator:(id)arg1;
+- (id)sageDocumentResourcesConfiguration;
 
 @end

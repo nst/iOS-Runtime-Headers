@@ -5,7 +5,7 @@
 @interface NSTokenMatchingPredicateOperator : NSStringPredicateOperator {
 }
 
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (bool)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (SEL)selector;
 - (id)symbol;
 

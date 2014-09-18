@@ -4,30 +4,30 @@
 
 @interface UITextMagnifierCaret : UITextMagnifier {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     } _offset;
     float _yOffset;
 }
 
-@property struct CGPoint { float x1; float x2; } offset;
+@property struct CGPoint { double x1; double x2; } offset;
 @property float yOffset;
 
 + (id)sharedCaretMagnifier;
 
-- (struct CGPoint { float x1; float x2; })animationPoint;
-- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
+- (struct CGPoint { double x1; double x2; })animationPoint;
+- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { double x1; double x2; })arg3 offset:(struct CGPoint { double x1; double x2; })arg4 animated:(bool)arg5;
 - (void)dealloc;
 - (id)initWithFrame;
-- (struct CGPoint { float x1; float x2; })offset;
+- (struct CGPoint { double x1; double x2; })offset;
 - (void)remove;
-- (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setAnimationPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setAutoscrollDirections:(int)arg1;
-- (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setMagnificationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setYOffset:(float)arg1;
-- (void)stopMagnifying:(BOOL)arg1;
-- (BOOL)terminalPointPlacedCarefully;
+- (void)stopMagnifying:(bool)arg1;
+- (bool)terminalPointPlacedCarefully;
 - (void)updateFrameAndOffset;
 - (float)yOffset;
 - (void)zoomDownAnimation;

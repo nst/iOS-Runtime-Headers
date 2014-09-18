@@ -18,7 +18,7 @@
 
 @property TSCHChartInfo * chartInfo;
 @property(readonly) int direction;
-@property(readonly) BOOL isPhantom;
+@property(readonly) bool isPhantom;
 @property <TSCHNotifyOnModify> * objectToNotify;
 
 + (id)propertiesThatInvalidateMediator;
@@ -26,37 +26,38 @@
 - (id)categoryLabelFormulas;
 - (id)chartInfo;
 - (void)clearParent;
-- (id)commandSetCategoryName:(id)arg1 forCategoryIndex:(unsigned int)arg2;
-- (id)commandSetSeriesName:(id)arg1 forSeriesIndex:(unsigned int)arg2;
+- (id)commandSetCategoryName:(id)arg1 forCategoryIndex:(unsigned long long)arg2;
+- (id)commandSetSeriesName:(id)arg1 forSeriesIndex:(unsigned long long)arg2;
 - (id)commandToChangeCategoryLabelFormulas:(id)arg1;
 - (id)commandToSetChartGridDirection:(int)arg1 documentRoot:(id)arg2;
-- (id)commandToSetErrorBarCustomFormula:(id)arg1 seriesIndex:(unsigned int)arg2 dataType:(int)arg3;
+- (id)commandToSetErrorBarCustomFormula:(id)arg1 seriesIndex:(unsigned long long)arg2 dataType:(int)arg3;
+- (id)commandToSetNewSeriesIndex:(unsigned long long)arg1 forSeriesIndex:(unsigned long long)arg2;
 - (id)commandToSetSeriesDataFormula:(id)arg1 seriesDimension:(id)arg2;
-- (id)commandToSetSeriesNameFormula:(id)arg1 seriesIndex:(unsigned int)arg2;
+- (id)commandToSetSeriesNameFormula:(id)arg1 seriesIndex:(unsigned long long)arg2;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dataFormatterForAxis:(id)arg1 documentRoot:(id)arg2;
+- (id)dataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
 - (void)dealloc;
 - (int)direction;
-- (id)errorBarCustomFormulaForSeriesIndex:(unsigned int)arg1 dataType:(int)arg2;
+- (id)errorBarCustomFormulaForSeriesIndex:(unsigned long long)arg1 dataType:(int)arg2;
 - (id)init;
 - (id)initWithChartInfo:(id)arg1;
 - (void)invalidateAndSynchronizeMediator;
-- (BOOL)isEditing;
-- (BOOL)isPhantom;
+- (bool)isEditing;
+- (bool)isPhantom;
 - (void)loadFromArchive:(const struct ChartMediatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedField<unsigned int> { unsigned int *x_4_1_1; int x_4_1_2; int x_4_1_3; } x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; unsigned int x7[1]; }*)arg1;
-- (id)numberFormatForAxis:(id)arg1;
-- (id)numberFormatForSeries:(id)arg1 index:(unsigned int)arg2 axisType:(int)arg3;
 - (id)objectToNotify;
-- (id)p_errorBarDataForSeries:(unsigned int)arg1 withSpec:(struct { unsigned int x1; int (*x2)(); void *x3; })arg2 updateType:(int)arg3;
-- (unsigned int)p_gridSeriesIndexForRemoteSeriesIndex:(unsigned int)arg1;
-- (unsigned int)p_remoteSeriesIndexForGridSeriesIndex:(unsigned int)arg1;
-- (BOOL)preferSeriesToValues;
+- (id)p_errorBarDataForSeries:(unsigned long long)arg1 withSpec:(struct { unsigned long long x1; int (*x2)(); void *x3; })arg2 updateType:(int)arg3;
+- (unsigned long long)p_gridSeriesIndexForRemoteSeriesIndex:(unsigned long long)arg1;
+- (unsigned long long)p_remoteSeriesIndexForGridSeriesIndex:(unsigned long long)arg1;
+- (bool)preferSeriesToValues;
 - (void)saveToArchive:(struct ChartMediatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedField<unsigned int> { unsigned int *x_4_1_1; int x_4_1_2; int x_4_1_3; } x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; unsigned int x7[1]; }*)arg1;
 - (id)seriesDataFormulaForSeriesDimension:(id)arg1;
-- (id)seriesNameFormulaForSeriesIndex:(unsigned int)arg1;
+- (id)seriesNameFormulaForSeriesIndex:(unsigned long long)arg1;
 - (void)setChartInfo:(id)arg1;
 - (void)setObjectToNotify:(id)arg1;
-- (void)updateGridWithSpec:(struct { unsigned int x1; int (*x2)(); void *x3; })arg1;
+- (void)updateGridWithSpec:(struct { unsigned long long x1; int (*x2)(); void *x3; })arg1;
 - (void)willModify;
 
 @end

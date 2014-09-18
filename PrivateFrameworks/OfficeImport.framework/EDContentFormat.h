@@ -2,31 +2,36 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDString;
+@class EDString, NSString;
 
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying> {
     boolmBuiltIn;
     boolmReferenced;
-    unsigned int mFormatId;
+    unsigned long long mFormatId;
     EDString *mFormatString;
 }
 
-+ (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned int)arg2;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned long long)arg2;
 + (id)contentFormatWithFormatString:(id)arg1;
-+ (id)contentFormatWithNSString:(id)arg1 formatId:(unsigned int)arg2 builtIn:(bool)arg3;
++ (id)contentFormatWithNSString:(id)arg1 formatId:(unsigned long long)arg2 builtIn:(bool)arg3;
 
 - (bool)builtIn;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)formatId;
+- (unsigned long long)formatId;
 - (id)formatString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToContentFormat:(id)arg1;
-- (int)key;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToContentFormat:(id)arg1;
+- (long long)key;
 - (bool)referenced;
-- (void)setFormatId:(unsigned int)arg1;
+- (void)setFormatId:(unsigned long long)arg1;
 - (void)setReferenced:(bool)arg1;
 
 @end

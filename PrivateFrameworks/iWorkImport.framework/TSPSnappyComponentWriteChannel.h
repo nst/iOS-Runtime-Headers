@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPComponentWriteChannel>;
+@class <TSPComponentWriteChannel>, NSString;
 
 @interface TSPSnappyComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
     char *_uncompressedBuffer;
-    unsigned long _uncompressedLength;
+    unsigned long long _uncompressedLength;
     <TSPComponentWriteChannel> *_writeChannel;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;

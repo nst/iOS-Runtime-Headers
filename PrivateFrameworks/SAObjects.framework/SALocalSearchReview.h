@@ -9,10 +9,14 @@
 
 @property(copy) NSString * author;
 @property(copy) NSString * comment;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SACalendar * lastUpdated;
 @property(copy) NSString * publication;
 @property(retain) SAUIAppPunchOut * reviewPunchOut;
 @property(retain) SALocalSearchRating * reviewRating;
+@property(readonly) Class superclass;
 
 + (id)review;
 + (id)reviewWithDictionary:(id)arg1 context:(id)arg2;

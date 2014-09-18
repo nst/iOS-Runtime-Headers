@@ -8,7 +8,11 @@
 }
 
 @property(copy) NSString * answer;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SAGKSpeakableAnswer * speakableAnswer;
+@property(readonly) Class superclass;
 
 + (id)directAnswer;
 + (id)directAnswerWithDictionary:(id)arg1 context:(id)arg2;

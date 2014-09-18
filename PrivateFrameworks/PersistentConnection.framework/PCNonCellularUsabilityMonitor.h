@@ -2,32 +2,37 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class <PCInterfaceUsabilityMonitorDelegate>, CUTWeakReference, NSMutableArray, NSString;
+@class <PCInterfaceUsabilityMonitorDelegate>, CUTWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PCNonCellularUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol, PCInterfaceUsabilityMonitorDelegate> {
-    struct dispatch_queue_s { } *_delegateQueue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
     CUTWeakReference *_delegateReference;
     NSString *_demoOverrideInterface;
     NSMutableArray *_interfaceMonitors;
-    struct dispatch_queue_s { } *_ivarQueue;
-    struct dispatch_queue_s { } *_monitorDelegateQueue;
+    NSObject<OS_dispatch_queue> *_ivarQueue;
+    NSObject<OS_dispatch_queue> *_monitorDelegateQueue;
     int _previousLinkQuality;
-    unsigned int _thresholdOffTransitionCount;
-    BOOL _trackUsability;
+    unsigned long long _thresholdOffTransitionCount;
     double _trackedTimeInterval;
+    bool_trackUsability;
 }
 
 @property(readonly) struct __CFString { }* currentRAT;
+@property(copy,readonly) NSString * debugDescription;
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
-@property(readonly) int interfaceIdentifier;
-@property(readonly) BOOL isInterfaceHistoricallyUsable;
-@property(readonly) BOOL isInterfaceUsable;
-@property(readonly) BOOL isInternetReachable;
-@property(readonly) BOOL isLTEWithCDRX;
-@property(readonly) BOOL isPoorLinkQuality;
-@property(readonly) BOOL isRadioHot;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long interfaceIdentifier;
+@property(readonly) bool isBadLinkQuality;
+@property(readonly) bool isInterfaceHistoricallyUsable;
+@property(readonly) bool isInterfaceUsable;
+@property(readonly) bool isInternetReachable;
+@property(readonly) bool isLTEWithCDRX;
+@property(readonly) bool isPoorLinkQuality;
+@property(readonly) bool isRadioHot;
 @property(readonly) int linkQuality;
-@property(readonly) NSString * linkQualityString;
+@property(retain,readonly) NSString * linkQualityString;
+@property(readonly) Class superclass;
 @property(readonly) struct __CFString { }* wwanInterfaceName;
 
 - (void)_addMonitorWithInterfaceName:(id)arg1;
@@ -36,20 +41,21 @@
 - (int)_linkQualityOnIvarQueue;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithDelegateQueue:(struct dispatch_queue_s { }*)arg1;
-- (int)interfaceIdentifier;
+- (id)initWithDelegateQueue:(id)arg1;
+- (long long)interfaceIdentifier;
 - (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
 - (void)interfaceReachabilityChanged:(id)arg1;
-- (BOOL)isInterfaceHistoricallyUsable;
-- (BOOL)isInterfaceUsable;
-- (BOOL)isInternetReachable;
-- (BOOL)isPoorLinkQuality;
-- (BOOL)isRadioHot;
+- (bool)isBadLinkQuality;
+- (bool)isInterfaceHistoricallyUsable;
+- (bool)isInterfaceUsable;
+- (bool)isInternetReachable;
+- (bool)isPoorLinkQuality;
+- (bool)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
 - (void)setDelegate:(id)arg1;
-- (void)setThresholdOffTransitionCount:(unsigned int)arg1;
-- (void)setTrackUsability:(BOOL)arg1;
+- (void)setThresholdOffTransitionCount:(unsigned long long)arg1;
+- (void)setTrackUsability:(bool)arg1;
 - (void)setTrackedTimeInterval:(double)arg1;
 
 @end

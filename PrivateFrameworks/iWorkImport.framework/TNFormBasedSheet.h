@@ -14,11 +14,11 @@
 @property(readonly) TSTTableInfo * tableInfo;
 
 - (void)clearTableInfoCache;
-- (float)contentScale;
+- (double)contentScale;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 importedTargetName:(id)arg2;
-- (BOOL)isForm;
+- (bool)isForm;
 - (void)resolveImportedTargetNameInDocumentRoot:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setTableID:(struct __CFUUID { }*)arg1;

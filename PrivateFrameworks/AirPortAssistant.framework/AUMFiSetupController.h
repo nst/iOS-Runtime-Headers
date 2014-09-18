@@ -29,28 +29,28 @@
     NSObject<OS_dispatch_semaphore> *_askUserForPasswordSemaphore;
     NSDictionary *_autoGuessRecommendationDict;
     NSString *_destinationNetworkPassword;
-    BOOL _destinationNetworkPasswordAccepted;
     NSString *_destinationNetworkSSID;
     NSDictionary *_destinationNetworkScanRecord;
     NSObject<OS_dispatch_semaphore> *_easyConfigConfigurationCompleteSemaphore;
     EasyConfigDevice *_easyConfigDevice;
     } _easyConfigPostConfigMetrics;
     } _easyConfigPreConfigMetrics;
-    int _lastHeardEasyConfigProgressNotification;
+    long long _lastHeardEasyConfigProgressNotification;
     NSTimer *_linkUpOnDestinationNetworkTimer;
     NSObject<OS_dispatch_semaphore> *_linkUpOnTargetSWAPSemaphore;
     NSMutableSet *_mfiSetupDelegates;
     NSString *_postConfigTargetDeviceFriendlyName;
-    BOOL _postediAPAccessoryConfiguredNotification;
-    BOOL _promptedUserForDestinationWiFiPSK;
-    BOOL _setupEnded;
     NSDictionary *_setupOptionsDict;
-    BOOL _successfullyEstablishedLinkOnDestinationAP;
-    BOOL _successfullyEstablishedLinkOnTargetDeviceSWAP;
     NSDictionary *_targetMFiDeviceScanRecord;
     double _timeDestinationAPJoinStarted;
     double _timeSWAPJoinStarted;
     int _waitingForLinkState;
+    bool_destinationNetworkPasswordAccepted;
+    bool_postediAPAccessoryConfiguredNotification;
+    bool_promptedUserForDestinationWiFiPSK;
+    bool_setupEnded;
+    bool_successfullyEstablishedLinkOnDestinationAP;
+    bool_successfullyEstablishedLinkOnTargetDeviceSWAP;
 }
 
 @property(copy) NSString * destinationNetworkPassword;
@@ -59,13 +59,18 @@
 
 + (id)setupController;
 
+- (void)_startEasyConfigWhenReady;
 - (void)acquireDestinationNetworkPassword;
 - (void)askUserForNetworkPassword:(id)arg1;
-- (void)callbackAskUserForPasswordResult:(long)arg1 password:(id)arg2 remember:(int)arg3;
+- (void)askUserForSetupCodeWithRetryStatus:(bool)arg1;
+- (void)askUserForUncertified;
+- (void)callbackAskUserForPasswordResult:(int)arg1 password:(id)arg2 remember:(int)arg3;
+- (void)callbackAskUserForSetupCodeResult:(int)arg1 password:(id)arg2;
+- (void)callbackAskUserForUncertifiedResult:(int)arg1;
 - (void)createEasyConfigDeviceConfiguration;
 - (void)dealloc;
 - (id)destinationNetworkPassword;
-- (long)endSetup:(long)arg1;
+- (int)endSetup:(int)arg1;
 - (void)handleEasyConfigProgress:(id)arg1;
 - (void)handleEasyConfigProgressAppliedConfigurationToDevice:(id)arg1;
 - (void)handleEasyConfigProgressSearchingForPostConfigDevice:(id)arg1;
@@ -75,24 +80,24 @@
 - (void)joinDestinationAPDone:(id)arg1;
 - (void)joinDestinationNetworkTimeoutFired:(id)arg1;
 - (void)joinSWAPDone:(id)arg1;
-- (long)joinTargetSWAP;
+- (int)joinTargetSWAP;
 - (void)linkChangeNotification:(id)arg1;
 - (void)linkUpOnDestinationAP:(id)arg1;
 - (id)linkUpOnDestinationNetworkTimer;
 - (void)linkUpOnSWAP:(id)arg1;
-- (void)logCompletionStatus:(long)arg1;
-- (long)sendProgressToUI:(int)arg1 withParamDict:(id)arg2;
-- (long)sendSetupCompleteToUIWithResult:(long)arg1;
-- (long)sendiAPOverWiFiDeviceConfiguredXPCMessage;
+- (void)logCompletionStatus:(int)arg1;
+- (int)sendProgressToUI:(int)arg1 withParamDict:(id)arg2;
+- (int)sendSetupCompleteToUIWithResult:(int)arg1;
+- (int)sendiAPOverWiFiDeviceConfiguredXPCMessage;
 - (void)setDestinationNetworkPassword:(id)arg1;
 - (void)setLinkUpOnDestinationNetworkTimer:(id)arg1;
 - (id)setupDelegates;
-- (long)setupFromAutoguessRecommendation:(id)arg1 withOptions:(id)arg2;
+- (int)setupFromAutoguessRecommendation:(id)arg1 withOptions:(id)arg2;
 - (void)startEasyConfigWhenReady;
 - (void)startListeningForEasyConfigDeviceStatusNotifications;
 - (void)stopListeningToAllNotifications;
 - (void)stopListeningToEasyConfigDeviceStatusNotifications;
 - (id)targetBaseInfoDict;
-- (long)updateSettingsAsync;
+- (int)updateSettingsAsync;
 
 @end

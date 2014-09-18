@@ -7,25 +7,25 @@
 @interface SFAirDropNode : NSObject {
     UIImage *_displayIcon;
     NSString *_displayName;
-    BOOL _monogram;
     id _node;
     NSString *_realName;
     NSString *_secondaryName;
     struct __SFOperation { } *_sender;
-    BOOL _supportsMixedTypes;
-    BOOL _supportsPasses;
-    BOOL _unknown;
+    bool_monogram;
+    bool_supportsMixedTypes;
+    bool_supportsPasses;
+    bool_unknown;
 }
 
 @property(retain) UIImage * displayIcon;
 @property(retain) NSString * displayName;
-@property(getter=isMonogram) BOOL monogram;
+@property(getter=isMonogram) bool monogram;
 @property(retain) id node;
 @property(retain) NSString * realName;
 @property(retain) NSString * secondaryName;
-@property(readonly) BOOL supportsMixedTypes;
-@property(readonly) BOOL supportsPasses;
-@property(getter=isUnknown) BOOL unknown;
+@property(readonly) bool supportsMixedTypes;
+@property(readonly) bool supportsPasses;
+@property(getter=isUnknown) bool unknown;
 
 + (id)nodeWithSFNode:(struct __SFNode { }*)arg1;
 
@@ -34,25 +34,25 @@
 - (id)description;
 - (id)displayIcon;
 - (id)displayName;
-- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
-- (unsigned int)hash;
+- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMonogram;
-- (BOOL)isUnknown;
+- (bool)isEqual:(id)arg1;
+- (bool)isMonogram;
+- (bool)isUnknown;
 - (id)node;
 - (id)realName;
 - (id)secondaryName;
 - (void)setDisplayIcon:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setMonogram:(BOOL)arg1;
+- (void)setMonogram:(bool)arg1;
 - (void)setNode:(id)arg1;
 - (void)setRealName:(id)arg1;
 - (void)setSecondaryName:(id)arg1;
-- (void)setUnknown:(BOOL)arg1;
+- (void)setUnknown:(bool)arg1;
 - (void)startSendWithSessionID:(id)arg1 items:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
-- (BOOL)supportsMixedTypes;
-- (BOOL)supportsPasses;
+- (bool)supportsMixedTypes;
+- (bool)supportsPasses;
 - (void)updateWithSFNode:(struct __SFNode { }*)arg1;
 
 @end

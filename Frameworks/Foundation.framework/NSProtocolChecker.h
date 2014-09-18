@@ -2,15 +2,20 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSObject, Protocol;
+
 @interface NSProtocolChecker : NSProxy {
 }
+
+@property(readonly) Protocol * protocol;
+@property(retain,readonly) NSObject * target;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)protocolCheckerWithTarget:(id)arg1 protocol:(id)arg2;
 
 - (id)_imMethodSignatureForSelector:(SEL)arg1;
 - (const char *)_localClassNameForClass;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (void)doesNotRecognizeSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
@@ -18,7 +23,7 @@
 - (struct objc_method_description { SEL x1; char *x2; }*)methodDescriptionForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)protocol;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)target;
 
 @end

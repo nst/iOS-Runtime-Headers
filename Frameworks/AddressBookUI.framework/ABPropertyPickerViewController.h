@@ -16,8 +16,8 @@
 @property(retain) NSArray * policies;
 @property struct __CFArray { }* properties;
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
+- (void)_getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1;
+- (double)ab_heightToFitForViewInPopoverView;
 - (void*)addressBook;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -32,6 +32,6 @@
 - (void)setPerson:(id)arg1;
 - (void)setPolicies:(id)arg1;
 - (void)setProperties:(struct __CFArray { }*)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

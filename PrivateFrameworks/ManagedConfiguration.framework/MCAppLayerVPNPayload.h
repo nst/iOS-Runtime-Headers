@@ -21,6 +21,7 @@
 - (id)VPNUUID;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)payloadDescriptionKeyValueSections;
 - (void)setSafariDomains:(id)arg1;
 - (void)setVPNUUID:(id)arg1;
 - (id)stubDictionary;

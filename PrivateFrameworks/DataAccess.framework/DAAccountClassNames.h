@@ -16,11 +16,11 @@
 @property(retain) NSString * clientAccountClassName;
 @property(retain) NSString * daemonAccountClassName;
 
+- (void).cxx_destruct;
 - (id)accountClassName;
 - (id)agentClassName;
 - (id)clientAccountClassName;
 - (id)daemonAccountClassName;
-- (void)dealloc;
 - (id)description;
 - (void)setAccountClassName:(id)arg1;
 - (void)setAgentClassName:(id)arg1;

@@ -8,12 +8,16 @@
 }
 
 @property(copy) NSString * applicationIdentifier;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SAMPMediaItem * listeningToItem;
 @property(retain) SANPCommandInfo * nowPlayingCommandInfo;
 @property(retain) SAMPNowPlayingQueuePosition * playbackQueuePosition;
 @property(copy) NSNumber * playbackRate;
 @property(copy) NSString * source;
 @property int state;
+@property(readonly) Class superclass;
 
 + (id)queueState;
 + (id)queueStateWithDictionary:(id)arg1 context:(id)arg2;

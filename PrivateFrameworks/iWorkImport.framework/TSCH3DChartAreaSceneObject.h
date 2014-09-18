@@ -6,11 +6,11 @@
 }
 
 + (float)chartSeriesDepth;
-+ (float)chartSeriesDepthOffsetFactor;
 + (id)chartSeriesType;
 + (struct MeshData { id x1; id x2; })createMeshForSeries:(id)arg1;
++ (bool)supportsChartSeriesDepthOffset;
 
-- (BOOL)alwaysRenderForElementBlendAnimationClip;
+- (bool)alwaysRenderForElementBlendAnimationClip;
 - (id)areaClipPlaneEffect;
 - (void)postAddDataToGeometryResourceAnimationData:(id)arg1;
 

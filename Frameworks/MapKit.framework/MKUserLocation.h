@@ -12,19 +12,22 @@
 
 @property(readonly) double accuracy;
 @property struct { double x1; double x2; } coordinate;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property double expectedCoordinateUpdateInterval;
 @property double expectedHeadingUpdateInterval;
 @property(retain) CLLocation * fixedLocation;
+@property(readonly) unsigned long long hash;
 @property(retain) CLHeading * heading;
 @property(readonly) double headingDegrees;
 @property(retain) CLLocation * location;
 @property(retain) CLLocation * predictedLocation;
 @property(readonly) NSString * shortDescription;
-@property int source;
 @property(copy) NSString * subtitle;
+@property(readonly) Class superclass;
 @property double timestamp;
 @property(copy) NSString * title;
-@property(getter=isUpdating) BOOL updating;
+@property(getter=isUpdating) bool updating;
 
 + (void)_setAnnotationClass:(Class)arg1;
 + (id)keyPathsForValuesAffectingSubtitle;
@@ -43,8 +46,8 @@
 - (id)heading;
 - (double)headingDegrees;
 - (id)init;
-- (BOOL)isEqualToLocation:(id)arg1;
-- (BOOL)isUpdating;
+- (bool)isEqualToLocation:(id)arg1;
+- (bool)isUpdating;
 - (id)location;
 - (id)predictedLocation;
 - (void)reset;
@@ -56,13 +59,11 @@
 - (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPredictedLocation:(id)arg1;
-- (void)setSource:(int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUpdating:(BOOL)arg1;
+- (void)setUpdating:(bool)arg1;
 - (id)shortDescription;
-- (int)source;
 - (id)subtitle;
 - (double)timestamp;
 - (id)title;

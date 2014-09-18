@@ -11,24 +11,24 @@
 @property(retain) NSString * entryAlbumGUID;
 @property(retain) NSDate * entryDate;
 @property(retain) NSString * entryInvitationRecordGUID;
-@property(readonly) int entryPriority;
+@property(readonly) long long entryPriority;
 @property(retain) NSNumber * entryPriorityNumber;
-@property(readonly) int entryType;
+@property(readonly) long long entryType;
 @property(retain) NSNumber * entryTypeNumber;
 
 + (id)allEntriesInLibrary:(id)arg1;
 + (id)allEntriesInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)entriesSortDescriptorsAscending:(BOOL)arg1;
++ (id)entriesSortDescriptorsAscending:(bool)arg1;
 + (id)entryWithURIRepresentation:(id)arg1 inLibrary:(id)arg2;
-+ (id)firstEntryWithType:(int)arg1 albumGUID:(id)arg2 inLibrary:(id)arg3;
-+ (id)recentAssetsEntriesInLibrary:(id)arg1 limit:(int)arg2;
-+ (id)recentEntriesInLibrary:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 limit:(int)arg4;
++ (id)firstEntryWithType:(long long)arg1 albumGUID:(id)arg2 inLibrary:(id)arg3;
++ (id)recentAssetsEntriesInLibrary:(id)arg1 limit:(long long)arg2;
++ (id)recentEntriesInLibrary:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 limit:(long long)arg4;
 
 - (id)URIRepresentation;
-- (int)entryPriority;
-- (int)entryType;
-- (BOOL)shouldBeRemovedFromPhotoLibrary:(id)arg1;
+- (long long)entryPriority;
+- (long long)entryType;
+- (bool)shouldBeRemovedFromPhotoLibrary:(id)arg1;
 
 @end

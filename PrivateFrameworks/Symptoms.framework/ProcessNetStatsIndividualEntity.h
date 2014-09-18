@@ -2,59 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/SymptomPresentationFeed
  */
 
-@class NSString;
-
 @interface ProcessNetStatsIndividualEntity : NSObject {
-    struct NStatCounts { 
-        unsigned long long nstat_rxpackets; 
-        unsigned long long nstat_rxbytes; 
-        unsigned long long nstat_txpackets; 
-        unsigned long long nstat_txbytes; 
-        unsigned int nstat_rxduplicatebytes; 
-        unsigned int nstat_rxoutoforderbytes; 
-        unsigned int nstat_txretransmit; 
-        unsigned int nstat_connectattempts; 
-        unsigned int nstat_connectsuccesses; 
-        double nstat_min_rtt; 
-        double nstat_avg_rtt; 
-        double nstat_var_rtt; 
-        unsigned long long nstat_cell_rxbytes; 
-        unsigned long long nstat_cell_txbytes; 
-        unsigned long long nstat_wifi_rxbytes; 
-        unsigned long long nstat_wifi_txbytes; 
-    NSString *_bundleName;
-    int _iface;
-    BOOL _isRelevant;
-    int _pid;
-    NSString *_procName;
-    } _sc;
-    BOOL inProgress;
-    struct __NStatSource { } *source;
 }
 
-@property(readonly) NSString * bundleName;
-@property(readonly) int iface;
-@property(readonly) BOOL isRelevant;
-@property(readonly) int pid;
-@property(readonly) NSString * procName;
-@property(readonly) struct NStatCounts { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; double x10; double x11; double x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; } sc;
-
-+ (int)compareCounts:(id)arg1 with:(id)arg2;
-+ (id)prettyPrintCounts:(id)arg1 forType:(id)arg2 isInBound:(BOOL)arg3;
 + (bool)rawCounts:(id)arg1 forType:(id)arg2 txBytes:(unsigned long long*)arg3 rxBytes:(unsigned long long*)arg4;
-+ (id)succinctlyPrintAllCounts:(id)arg1;
-
-- (void).cxx_destruct;
-- (BOOL)_isEntryRelevant;
-- (id)adjustCountsFor:(id)arg1 underKey:(id)arg2 notKey:(id)arg3;
-- (id)bundleName;
-- (id)description;
-- (int)iface;
-- (id)initWithProcname:(id)arg1 bundleName:(id)arg2 ifindex:(int)arg3 bytesIN:(unsigned long long)arg4 bytesOUT:(unsigned long long)arg5;
-- (id)initWithSource:(struct __NStatSource { }*)arg1;
-- (BOOL)isRelevant;
-- (int)pid;
-- (id)procName;
-- (struct NStatCounts { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; double x10; double x11; double x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; })sc;
 
 @end

@@ -10,28 +10,28 @@
 
 @interface _CKDispatchQueueBlock : NSObject {
     id _block;
-    unsigned int _fifo;
+    unsigned long long _fifo;
     NSString *_key;
-    int _priority;
+    long long _priority;
 }
 
 @property(copy) id block;
-@property unsigned int fifo;
+@property unsigned long long fifo;
 @property(copy) NSString * key;
-@property int priority;
+@property long long priority;
 
 - (id)block;
 - (void)cancel;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)fifo;
-- (id)initWithBlock:(id)arg1 key:(id)arg2 priority:(int)arg3 fifo:(unsigned int)arg4;
+- (unsigned long long)fifo;
+- (id)initWithBlock:(id)arg1 key:(id)arg2 priority:(long long)arg3 fifo:(unsigned long long)arg4;
 - (id)key;
-- (int)priority;
+- (long long)priority;
 - (void)setBlock:(id)arg1;
-- (void)setFIFO:(unsigned int)arg1;
+- (void)setFIFO:(unsigned long long)arg1;
 - (void)setKey:(id)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setPriority:(long long)arg1;
 
 @end

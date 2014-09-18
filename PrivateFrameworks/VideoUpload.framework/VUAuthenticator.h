@@ -5,22 +5,27 @@
 @class JSONHTTPRequest, NSString;
 
 @interface VUAuthenticator : NSObject <JSONHTTPRequestDelegate> {
-    NSString *_account;
+    NSString *_accountName;
     JSONHTTPRequest *_authenticationRequest;
-    int _authenticatorState;
+    long long _authenticatorState;
 }
 
-@property(readonly) NSString * account;
-@property(readonly) int authenticatorState;
+@property(readonly) NSString * accountName;
+@property(readonly) long long authenticatorState;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)sharedAuthenticator;
 
+- (void).cxx_destruct;
 - (void)_notifyFailure;
 - (void)_notifyStateChange;
-- (id)account;
+- (id)accountName;
 - (void)authenticateWithUsername:(id)arg1 password:(id)arg2;
 - (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;
-- (int)authenticatorState;
+- (long long)authenticatorState;
 - (void)invalidateAuthentication;
 - (void)loadCredentials;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;

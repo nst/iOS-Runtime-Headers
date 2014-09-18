@@ -2,30 +2,38 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBServerConnection, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
+@class <BBDataProviderConnectionServerProxy>, BBDataProviderConnectionResolver, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BBDataProviderConnection : NSObject <XPCProxyTarget, BBXPCConnectionDelegate> {
+@interface BBDataProviderConnection : NSObject <NSXPCListenerDelegate> {
     NSString *_bundleID;
-    NSObject<OS_dispatch_queue> *_clientQueue;
+    NSObject<OS_dispatch_queue> *_clientCalloutQueue;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
+    BBDataProviderConnectionResolver *_connectionResolver;
     NSMutableDictionary *_dataProvidersBySectionID;
-    NSMutableDictionary *_pendingConnectionsBySectionID;
+    NSMutableDictionary *_parentFactoriesBySectionID;
     NSObject<OS_dispatch_queue> *_queue;
-    BBServerConnection *_serverConnection;
-    NSObject<OS_xpc_object> *_serviceConnection;
+    <BBDataProviderConnectionServerProxy> *_serverProxy;
     NSString *_serviceName;
+    bool_connected;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (void)initialize;
 
-- (void)_resolveIncomingConnection:(id)arg1;
+- (void)_invalidate;
 - (id)addDataProvider:(id)arg1;
-- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
+- (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
+- (id)bundleID;
 - (void)dealloc;
-- (id)description;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (void)invalidate;
 - (void)ping:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)removeDataProviderWithSectionID:(id)arg1;
+- (id)serviceName;
+- (void)setServerProxy:(id)arg1;
 
 @end

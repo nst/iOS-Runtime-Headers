@@ -13,6 +13,6 @@
 - (void)executeBidirectionalOperation:(id)arg1;
 - (id)init;
 - (void)setOrientationDependentValueForKey:(id)arg1 withStandardValue:(id)arg2 andSwappedValue:(id)arg3;
-- (id)valueForKey:(id)arg1 swapped:(BOOL)arg2;
+- (id)valueForKey:(id)arg1 swapped:(bool)arg2;
 
 @end

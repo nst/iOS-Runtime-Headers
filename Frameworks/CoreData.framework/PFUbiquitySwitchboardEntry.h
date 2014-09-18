@@ -5,13 +5,10 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PFUbiquityContainerMonitor, PFUbiquityFilePresenter, PFUbiquityLocation, PFUbiquitySetupAssistant, PFUbiquitySwitchboardEntryMetadata;
 
 @interface PFUbiquitySwitchboardEntry : NSObject {
-    unsigned int _activeStoreCount;
+    unsigned long long _activeStoreCount;
     int _finishLock;
-    BOOL _finishedInitializingForStore;
-    BOOL _finishedSetupForStore;
     PFUbiquitySetupAssistant *_finishingSetupAssistant;
     PFUbiquityFilePresenter *_fp;
-    BOOL _hasScheduledFinishBlock;
     PFUbiquityFilePresenter *_localFP;
     NSString *_localPeerID;
     PFUbiquityLocation *_localRootLocation;
@@ -21,9 +18,12 @@
     NSMutableDictionary *_registeredCoordinators;
     NSString *_storeName;
     PFUbiquityLocation *_ubiquityRootLocation;
+    bool_finishedInitializingForStore;
+    bool_finishedSetupForStore;
+    bool_hasScheduledFinishBlock;
 }
 
-@property unsigned int activeStoreCount;
+@property unsigned long long activeStoreCount;
 @property(readonly) PFUbiquityFilePresenter * filePresenter;
 @property(readonly) PFUbiquitySetupAssistant * finishingSetupAssistant;
 @property(readonly) PFUbiquityFilePresenter * localFilePresenter;
@@ -34,7 +34,7 @@
 @property(readonly) NSString * storeName;
 @property(retain) PFUbiquityLocation * ubiquityRootLocation;
 
-- (unsigned int)activeStoreCount;
+- (unsigned long long)activeStoreCount;
 - (void)afterDelay:(double)arg1 executeBlockOnGlobalConcurrentQueue:(id)arg2;
 - (void)afterDelay:(double)arg1 executeBlockOnPrivateQueue:(id)arg2;
 - (id)cacheWrapperForStoreName:(id)arg1;
@@ -49,7 +49,7 @@
 - (id)filePresenter;
 - (void)filePresenterNoticedBaselineFileChange:(id)arg1;
 - (void)filePresenterWasNotifiedTransactionLogs:(id)arg1;
-- (BOOL)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(BOOL)arg3 error:(id*)arg4 finishBlock:(id)arg5;
+- (bool)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(bool)arg3 error:(id*)arg4 finishBlock:(id)arg5;
 - (id)finishingSetupAssistant;
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 ubiquityRootLocation:(id)arg3 andLocalRootLocation:(id)arg4;
@@ -61,11 +61,12 @@
 - (id)monitor;
 - (void)monitorStateChanged:(id)arg1;
 - (void)registerPersistentStore:(id)arg1 withStoreName:(id)arg2;
-- (void)setActiveStoreCount:(unsigned int)arg1;
+- (void)setActiveStoreCount:(unsigned long long)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setUbiquityRootLocation:(id)arg1;
 - (void)setupFinished;
 - (id)storeName;
+- (void)synchronouslyExecuteBlockOnPrivateQueue:(id)arg1;
 - (id)ubiquityRootLocation;
 - (void)unregisterPersistentStore:(id)arg1;
 - (void)unregisterPersistentStoreCoordinator:(id)arg1;

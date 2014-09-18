@@ -98,7 +98,7 @@
             } ; 
         } value[4]; 
     struct bitset<5> { 
-        unsigned int __first_; 
+        unsigned long long __first_; 
     struct ChartScenePropertyAccessor { id x1; id x2; } *mAccessor;
     TSCH3DCamera *mCamera;
     } mProjector;

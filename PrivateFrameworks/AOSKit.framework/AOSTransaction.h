@@ -11,14 +11,14 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSConditionLock;
+@class NSConditionLock, NSObject<OS_dispatch_queue>;
 
 @interface AOSTransaction : NSObject <NSCoding> {
     int (*callbackFunction)();
     int (*contextRelease)();
     int (*contextRetain)();
     id callbackBlock;
-    struct dispatch_queue_s { } *callbackQueue;
+    NSObject<OS_dispatch_queue> *callbackQueue;
     void *context;
     unsigned char didFinish;
     unsigned char didSucceed;
@@ -33,7 +33,7 @@
 - (void)finalize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isSuccessful;
+- (bool)isSuccessful;
 - (id)result;
 
 @end

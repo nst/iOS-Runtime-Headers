@@ -7,7 +7,11 @@
 @interface SALocalSearchProtobufAttribute : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * name;
+@property(readonly) Class superclass;
 @property(copy) NSString * value;
 
 + (id)protobufAttribute;

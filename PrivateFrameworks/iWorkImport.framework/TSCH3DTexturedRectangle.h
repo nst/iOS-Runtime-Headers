@@ -5,4 +5,6 @@
 @interface TSCH3DTexturedRectangle : TSDTexturedRectangle {
 }
 
+- (void)setColorSpace:(struct CGColorSpace { }*)arg1;
+
 @end

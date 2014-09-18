@@ -15,13 +15,14 @@
 
 @property(copy) NSString * href;
 
-- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
-- (BOOL)allowsPasteAsSmartField;
+- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; boolx5; int x6; unsigned int x7[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
+- (bool)allowsPasteAsSmartField;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)href;
 - (id)initFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setHref:(id)arg1;
+- (int)smartFieldKind;
 
 @end

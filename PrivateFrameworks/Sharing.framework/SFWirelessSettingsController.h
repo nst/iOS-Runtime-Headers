@@ -5,31 +5,30 @@
 @class <SFWirelessSettingsControllerDelegate>, NSObject<OS_dispatch_semaphore>;
 
 @interface SFWirelessSettingsController : NSObject {
-    BOOL _bluetoothEnabled;
-    <SFWirelessSettingsControllerDelegate> *_delegate;
-    BOOL _deviceSupportsWAPI;
+    id _delegate;
     NSObject<OS_dispatch_semaphore> *_firstCallBackSemaphore;
-    BOOL _firstCallbackCompleted;
     struct __SFOperation { } *_information;
-    BOOL _wifiEnabled;
+    bool_bluetoothEnabled;
+    bool_deviceSupportsWAPI;
+    bool_firstCallbackCompleted;
+    bool_wifiEnabled;
 }
 
-@property(getter=isBluetoothEnabled) BOOL bluetoothEnabled;
+@property(getter=isBluetoothEnabled) bool bluetoothEnabled;
 @property <SFWirelessSettingsControllerDelegate> * delegate;
-@property(readonly) BOOL deviceSupportsWAPI;
-@property(getter=isWifiEnabled) BOOL wifiEnabled;
+@property(readonly) bool deviceSupportsWAPI;
+@property(getter=isWifiEnabled) bool wifiEnabled;
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)deviceSupportsWAPI;
-- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
+- (bool)deviceSupportsWAPI;
+- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
 - (id)init;
-- (BOOL)isBluetoothEnabled;
-- (BOOL)isWifiEnabled;
+- (bool)isBluetoothEnabled;
+- (bool)isWifiEnabled;
 - (void)repairAppleID;
-- (void)setBluetoothEnabled:(BOOL)arg1;
+- (void)setBluetoothEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setWifiEnabled:(BOOL)arg1;
+- (void)setWifiEnabled:(bool)arg1;
 
 @end

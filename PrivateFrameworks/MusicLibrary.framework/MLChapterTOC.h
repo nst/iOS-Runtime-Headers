@@ -5,9 +5,6 @@
 @interface MLChapterTOC : NSObject {
 }
 
-- (id)artworkCacheIDForChapterIndex:(unsigned int)arg1;
-- (id)artworkCacheIDForTimeInMS:(unsigned int)arg1;
-- (id)bestImageDataForSize:(struct CGSize { float x1; float x2; })arg1 chapterIndex:(unsigned int)arg2 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; BOOL x_1_1_7; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg3;
 - (struct ChapterData { }*)chapterDataRef;
 - (unsigned int)chapterIndexAtTimeLocationInMS:(unsigned int)arg1;
 - (unsigned int)chapterIndexForGroupIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
@@ -16,8 +13,7 @@
 - (unsigned int)durationInMSOfGroupAtIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
 - (unsigned int)groupIndexAtTimeLocationInMS:(unsigned int)arg1 groupingProperty:(int)arg2;
 - (unsigned int)groupIndexForChapterIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
-- (BOOL)hasDataForProperty:(int)arg1;
-- (id)imageDataForArtworkFormatID:(unsigned int)arg1 chapterIndex:(unsigned int)arg2 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; BOOL x_1_1_7; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg3;
+- (bool)hasDataForProperty:(int)arg1;
 - (unsigned int)timeLocationInMSOfChapterAtIndex:(unsigned int)arg1;
 - (unsigned int)timeLocationInMSOfGroupAtIndex:(unsigned int)arg1 groupingProperty:(int)arg2;
 - (id)titlePropertyOfChapterAtIndex:(unsigned int)arg1;

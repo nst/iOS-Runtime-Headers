@@ -5,28 +5,28 @@
 @interface DOMValidityState : DOMObject {
 }
 
-@property(readonly) BOOL badInput;
-@property(readonly) BOOL customError;
-@property(readonly) BOOL patternMismatch;
-@property(readonly) BOOL rangeOverflow;
-@property(readonly) BOOL rangeUnderflow;
-@property(readonly) BOOL stepMismatch;
-@property(readonly) BOOL tooLong;
-@property(readonly) BOOL typeMismatch;
-@property(readonly) BOOL valid;
-@property(readonly) BOOL valueMissing;
+@property(readonly) bool badInput;
+@property(readonly) bool customError;
+@property(readonly) bool patternMismatch;
+@property(readonly) bool rangeOverflow;
+@property(readonly) bool rangeUnderflow;
+@property(readonly) bool stepMismatch;
+@property(readonly) bool tooLong;
+@property(readonly) bool typeMismatch;
+@property(readonly) bool valid;
+@property(readonly) bool valueMissing;
 
-- (BOOL)badInput;
-- (BOOL)customError;
+- (bool)badInput;
+- (bool)customError;
 - (void)dealloc;
 - (void)finalize;
-- (BOOL)patternMismatch;
-- (BOOL)rangeOverflow;
-- (BOOL)rangeUnderflow;
-- (BOOL)stepMismatch;
-- (BOOL)tooLong;
-- (BOOL)typeMismatch;
-- (BOOL)valid;
-- (BOOL)valueMissing;
+- (bool)patternMismatch;
+- (bool)rangeOverflow;
+- (bool)rangeUnderflow;
+- (bool)stepMismatch;
+- (bool)tooLong;
+- (bool)typeMismatch;
+- (bool)valid;
+- (bool)valueMissing;
 
 @end

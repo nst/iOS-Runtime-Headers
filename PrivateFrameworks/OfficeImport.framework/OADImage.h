@@ -13,6 +13,7 @@
 - (id)createImageFill;
 - (void)createPictureFramePresetGeometry;
 - (void)dealloc;
+- (id)description;
 - (id)geometry;
 - (id)imageProperties;
 - (id)init;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @interface AVRecorderAudioQueueImpl : NSObject <AVRecorderImpl> {
     struct AudioStreamBasicDescription { 
@@ -16,50 +16,55 @@
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
     NSMutableDictionary *_attributes;
-    unsigned long _audioCodec;
+    unsigned int _audioCodec;
     struct OpaqueAudioFileID { } *_audioFile;
     struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevels;
     struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevelsDB;
     struct OpaqueAudioQueue { } *_audioQueue;
-    BOOL _bufferUsed[3];
     struct AudioQueueBuffer {} *_buffers[3];
-    unsigned long _fileType;
-    BOOL _haveRecordedMaxPCMFrames;
-    BOOL _isActive;
-    BOOL _isRecording;
-    BOOL _isWriting;
+    unsigned int _fileType;
     long long _maxPCMFramesToRecord;
-    unsigned long _numDeviceChannels;
+    unsigned int _numDeviceChannels;
     } _recordingFormat;
-    unsigned long _totalBytesRecorded;
-    unsigned long _totalFramesRecorded;
-    unsigned long _totalPacketsRecorded;
+    unsigned long long _totalBytesRecorded;
+    unsigned long long _totalFramesRecorded;
+    unsigned long long _totalPacketsRecorded;
+    bool_bufferUsed[3];
+    bool_haveRecordedMaxPCMFrames;
+    bool_isActive;
+    bool_isRecording;
+    bool_isWriting;
 }
 
-- (BOOL)activate:(id*)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (bool)activate:(id*)arg1;
 - (id)attributeForKey:(id)arg1;
-- (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
-- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2 useDB:(BOOL)arg3;
-- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
-- (unsigned int)audioNumDeviceChannels;
-- (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
+- (bool)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2 useDB:(bool)arg3;
+- (bool)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
+- (unsigned long long)audioNumDeviceChannels;
+- (bool)autoFocusAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)copyEncoderCookieToFile;
 - (void)deactivate;
 - (void)dealloc;
 - (id)filePath;
-- (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned int x_5_1_4; unsigned int x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned int x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned long)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg4;
+- (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned int x_5_1_4; unsigned int x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned int x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned int)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg4;
 - (id)init;
 - (id)initWithAttributes:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isRecording;
+- (bool)isActive;
+- (bool)isRecording;
 - (float)micVolume;
 - (double)recordedDuration;
 - (long long)recordedFileSizeInBytes;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setFilePath:(id)arg1;
 - (void)setMicVolume:(float)arg1;
-- (BOOL)start;
+- (bool)start;
 - (void)stop;
-- (BOOL)takePhoto;
+- (bool)takePhoto;
 
 @end

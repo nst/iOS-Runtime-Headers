@@ -2,69 +2,86 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class UIImage;
+@class NSString, UIImage, UIVisualEffectView;
 
-@interface SBUIControlCenterSlider : _UIDynamicSlider <SBUIControlCenterControl> {
+@interface SBUIControlCenterSlider : _UIDynamicSlider <_UISettingsKeyObserver, SBUIControlCenterControl> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    BOOL _customTrackImage;
-    BOOL _highlightMinimumTrackImage;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    UIVisualEffectView *_highlightEffectView;
     UIImage *_maxValueMaskImage;
     UIImage *_minValueMaskImage;
     } _trackCapInsets;
     UIImage *_trackMaskImage;
-    float _valueImagePadding;
+    double _valueImagePadding;
+    bool_adjusting;
+    bool_customTrackImage;
+    bool_highlightMinimumTrackImage;
+    bool_shouldHighlightValueImagesWhileAdjusting;
 }
 
-@property BOOL highlightMinimumTrackImage;
+@property(getter=isAdjusting) bool adjusting;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool highlightMinimumTrackImage;
 @property(retain) UIImage * maxValueMaskImage;
 @property(retain) UIImage * minValueMaskImage;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } trackCapInsets;
+@property bool shouldHighlightValueImagesWhileAdjusting;
+@property(readonly) Class superclass;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } trackCapInsets;
 @property(retain) UIImage * trackMaskImage;
 
-+ (id)_createTrackImageForState:(int)arg1;
++ (id)_createTrackImageForState:(long long)arg1;
 + (id)_knobImage;
 + (id)_maxTrackImage;
-+ (id)_minTrackImageForState:(int)arg1;
++ (id)_minTrackImageForState:(long long)arg1;
 + (id)_trackImage;
-+ (void)controlAppearanceDidChangeForState:(int)arg1;
++ (void)controlAppearanceDidChangeForState:(long long)arg1;
 + (void)initialize;
 
 - (void)_configureControlStates;
-- (float)_naturalTrackWidth;
+- (double)_naturalTrackWidth;
 - (void)_setTrackImage:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_trackInsetsWithShadow:(BOOL)arg1;
+- (void)_updateEffects;
 - (void)_updateMaximumTrackImage;
 - (void)_updateMaximumValueImage;
 - (void)_updateMinimumTrackImage;
 - (void)_updateMinimumValueImage;
-- (float)_valueImageCenterTrackOffset;
-- (id)_valueImageForImage:(id)arg1;
-- (float)_valueImagePadding;
-- (void)controlAppearanceDidChangeForState:(int)arg1;
-- (void)controlConfigurationDidChangeForState:(int)arg1;
+- (void)_updateValueImageView:(id)arg1 fadeToImage:(id)arg2;
+- (double)_valueImageCenterTrackOffset;
+- (id)_valueImageForImage:(id)arg1 state:(long long)arg2;
+- (double)_valueImagePadding;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)controlAppearanceDidChangeForState:(long long)arg1;
+- (void)controlConfigurationDidChangeForState:(long long)arg1;
 - (void)dealloc;
-- (BOOL)highlightMinimumTrackImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)highlightMinimumTrackImage;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAdjusting;
 - (void)layoutSubviews;
 - (id)maxValueMaskImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)minValueMaskImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlightMinimumTrackImage:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAdjusting:(bool)arg1;
+- (void)setHighlightMinimumTrackImage:(bool)arg1;
 - (void)setMaxValueMaskImage:(id)arg1;
 - (void)setMaximumValueImage:(id)arg1;
 - (void)setMinValueMaskImage:(id)arg1;
 - (void)setMinimumValueImage:(id)arg1;
-- (void)setTrackCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setShouldHighlightValueImagesWhileAdjusting:(bool)arg1;
+- (void)setTrackCapInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setTrackImage:(id)arg1;
 - (void)setTrackMaskImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })trackCapInsets;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (bool)shouldHighlightValueImagesWhileAdjusting;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })trackCapInsets;
 - (id)trackMaskImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SADistance, SADuration;
+@class NSString, SADistance, SADuration;
 
 @interface SALocalSearchAceNavigationEta : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) SADistance * distanceEta;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(retain) SADuration * timeEta;
 
 + (id)aceNavigationEta;

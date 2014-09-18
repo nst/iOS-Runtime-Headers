@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class <CoreDAVTaskGroupDelegate>, ICSDocument, NSURL;
+@class <CoreDAVTaskGroupDelegate>, ICSDocument, NSString, NSURL;
 
 @interface CalDAVSetOfficeHoursTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
     ICSDocument *_calendarAvailability;
@@ -10,8 +10,12 @@
 }
 
 @property(retain) ICSDocument * calendarAvailability;
+@property(copy,readonly) NSString * debugDescription;
 @property <CoreDAVTaskGroupDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSURL * inboxURL;
+@property(readonly) Class superclass;
 
 - (id)calendarAvailability;
 - (void)dealloc;

@@ -6,17 +6,17 @@
 
 @interface EKEventAvailabilityEditItem : EKEventEditItem {
     int _availability;
-    unsigned int _availabilityIndexInChoices;
+    unsigned long long _availabilityIndexInChoices;
     NSArray *_choices;
-    unsigned int _supportedAvailabilities;
+    unsigned long long _supportedAvailabilities;
 }
 
 - (void).cxx_destruct;
-- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (BOOL)editItemViewControllerCommit:(id)arg1;
+- (bool)canBeConfiguredForCalendarConstraints:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerCommit:(id)arg1;
 - (void)refreshFromCalendarItemAndStore;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 
 @end

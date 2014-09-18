@@ -10,15 +10,15 @@
 }
 
 - (void)dealloc;
-- (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
+- (void)dimKeyCaps:(double)arg1 duration:(double)arg2;
 - (void)displayLayer:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawFrame;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawFrame;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
 - (id)key;
 - (id)keyplane;
 - (id)renderConfig;
-- (BOOL)requiresSublayers;
-- (void)setDrawFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)requiresSublayers;
+- (void)setDrawFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNeedsDisplay;
 - (void)setRenderConfig:(id)arg1;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;

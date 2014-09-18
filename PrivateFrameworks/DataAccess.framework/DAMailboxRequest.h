@@ -2,12 +2,26 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class NSString;
+
 @interface DAMailboxRequest : NSObject {
-    int _type;
+    int _bodyFormat;
+    NSString *_messageID;
+    int _requestType;
 }
 
+@property int bodyFormat;
+@property(copy) NSString * messageID;
+@property int requestType;
+
+- (void).cxx_destruct;
 - (int)bodyFormat;
-- (BOOL)mf_alwaysReportFailures;
+- (id)init;
+- (id)messageID;
+- (bool)mf_alwaysReportFailures;
 - (int)requestType;
+- (void)setBodyFormat:(int)arg1;
+- (void)setMessageID:(id)arg1;
+- (void)setRequestType:(int)arg1;
 
 @end

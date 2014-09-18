@@ -12,6 +12,7 @@
 + (id)defaultProperties;
 
 - (void)dealloc;
+- (id)description;
 - (id)from;
 - (id)init;
 - (id)initWithDefaults;

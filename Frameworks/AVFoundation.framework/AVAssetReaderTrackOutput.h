@@ -8,6 +8,8 @@
     AVAssetReaderTrackOutputInternal *_trackOutputInternal;
 }
 
+@property bool appliesPreferredTrackTransform;
+@property(getter=_isAttachedToMetadataAdaptor,readonly) bool attachedToMetadataAdaptor;
 @property(copy) NSString * audioTimePitchAlgorithm;
 @property(readonly) NSDictionary * outputSettings;
 @property(readonly) AVAssetTrack * track;
@@ -15,10 +17,15 @@
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
 
 - (id)_asset;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (void)_attachToMetadataAdaptor:(id)arg1;
+- (struct opaqueCMSampleBuffer { }*)_copyNextSampleBufferForMetadataAdaptor;
+- (bool)_enableTrackExtractionReturningError:(id*)arg1;
 - (id)_figAssetReaderExtractionOptions;
-- (BOOL)_trimsSampleDurations;
+- (bool)_isAttachedToMetadataAdaptor;
+- (bool)_trimsSampleDurations;
+- (bool)appliesPreferredTrackTransform;
 - (id)audioTimePitchAlgorithm;
+- (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
@@ -26,6 +33,7 @@
 - (id)initWithTrack:(id)arg1 outputSettings:(id)arg2;
 - (id)mediaType;
 - (id)outputSettings;
+- (void)setAppliesPreferredTrackTransform:(bool)arg1;
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)track;
 

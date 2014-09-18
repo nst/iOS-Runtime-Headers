@@ -10,7 +10,6 @@
     NSString *_credit;
     SKUIArtworkList *_headerArtworkList;
     UIImage *_headerImage;
-    BOOL _hideItemView;
     NSString *_inAppPurchase;
     NSArray *_items;
     NSArray *_links;
@@ -18,6 +17,7 @@
     NSURL *_redirectURL;
     NSDictionary *_thankYouDictionary;
     NSString *_title;
+    bool_hideItemView;
 }
 
 @property double ITunesPassLearnMoreAlertInterval;
@@ -25,7 +25,7 @@
 @property(copy) NSString * credit;
 @property(retain) SKUIArtworkList * headerArtworkList;
 @property(retain) UIImage * headerImage;
-@property BOOL hideItemView;
+@property bool hideItemView;
 @property(retain) NSString * inAppPurchase;
 @property(retain) NSArray * items;
 @property(retain) NSArray * links;
@@ -40,7 +40,7 @@
 - (id)credit;
 - (id)headerArtworkList;
 - (id)headerImage;
-- (BOOL)hideItemView;
+- (bool)hideItemView;
 - (id)inAppPurchase;
 - (id)init;
 - (id)items;
@@ -51,7 +51,7 @@
 - (void)setCredit:(id)arg1;
 - (void)setHeaderArtworkList:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
-- (void)setHideItemView:(BOOL)arg1;
+- (void)setHideItemView:(bool)arg1;
 - (void)setITunesPassLearnMoreAlertInterval:(double)arg1;
 - (void)setInAppPurchase:(id)arg1;
 - (void)setItems:(id)arg1;

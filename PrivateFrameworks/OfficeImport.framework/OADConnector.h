@@ -6,6 +6,7 @@
 }
 
 - (id)connectorProperties;
+- (id)description;
 - (id)init;
 
 @end

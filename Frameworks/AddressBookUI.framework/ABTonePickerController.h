@@ -2,21 +2,20 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPickerControllerDelegate>, UIView;
+@class <ABPickerControllerDelegate>, TKTonePickerViewController;
 
 @interface ABTonePickerController : UINavigationController {
-    UIView *_tonePicker;
+    TKTonePickerViewController *_tonePicker;
 }
 
 @property <ABPickerControllerDelegate> * delegate;
-@property(retain) UIView * tonePicker;
+@property(retain) TKTonePickerViewController * tonePicker;
 
 - (void)cancelButton:(id)arg1;
 - (void)dealloc;
 - (void)doneButton:(id)arg1;
-- (id)initWithAlertType:(int)arg1 selectedAlert:(id)arg2;
+- (id)initWithAlertType:(int)arg1 selectedToneIdentifier:(id)arg2 selectedVibrationIdentifier:(id)arg3;
 - (void)setTonePicker:(id)arg1;
 - (id)tonePicker;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

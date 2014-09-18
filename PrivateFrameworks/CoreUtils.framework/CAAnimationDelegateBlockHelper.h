@@ -16,7 +16,7 @@
 
 - (void)animationDidStart:(id)arg1;
 - (id)animationDidStartBlock;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)animationDidStopBlock;
 - (void)dealloc;
 - (void)setAnimationDidStartBlock:(id)arg1;

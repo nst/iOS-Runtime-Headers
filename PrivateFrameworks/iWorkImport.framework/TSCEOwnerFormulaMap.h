@@ -27,9 +27,9 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addFormula:(struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)arg1 atCellCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (unsigned int)count;
-- (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)formulaAtIndex:(unsigned int)arg1 outCellCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg2;
+- (unsigned long long)count;
+- (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)formulaAtIndex:(unsigned long long)arg1 outCellCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg2;
 - (id)initWithArchive:(const struct OwnerFormulaMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCE::CellCoordinateFormulaPairArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
-- (void)saveToArchive:(struct OwnerFormulaMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCE::CellCoordinateFormulaPairArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
+- (void)saveToArchive:(struct OwnerFormulaMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCE::CellCoordinateFormulaPairArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
 
 @end

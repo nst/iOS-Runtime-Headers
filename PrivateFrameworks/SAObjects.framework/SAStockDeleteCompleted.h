@@ -8,9 +8,13 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
 @property(copy) NSArray * results;
 @property(copy) NSArray * stocks;
+@property(readonly) Class superclass;
 
 + (id)deleteCompleted;
 + (id)deleteCompletedWithDictionary:(id)arg1 context:(id)arg2;

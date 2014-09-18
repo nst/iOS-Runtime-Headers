@@ -2,53 +2,100 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimatedBuild, NSArray, NSDictionary;
+@class KNAnimatedBuild, NSArray, NSDictionary, NSString, TSDGLState, TSDRep;
 
 @interface KNAnimationPluginContext : NSObject <KNAnimationPluginContext> {
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    TSDGLState *_GLState;
     KNAnimatedBuild *_animatedBuild;
-    unsigned int _direction;
+    } _boundingRect;
+    } _boundingRectOnCanvas;
+    unsigned long long _direction;
     double _duration;
-    BOOL _isWarmingUp;
     NSArray *_magicMoveMatches;
     double _percent;
-    int _rendererType;
+    long long _rendererType;
+    TSDRep *_rep;
     NSArray *_textures;
     NSDictionary *_transitionAttributes;
+    bool_isMotionBlurred;
+    bool_isPreview;
+    bool_isWarmingUp;
 }
 
+@property(retain) TSDGLState * GLState;
 @property KNAnimatedBuild * animatedBuild;
-@property unsigned int direction;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRectOnCanvas;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property unsigned long long direction;
 @property double duration;
-@property(readonly) BOOL isBuild;
-@property(readonly) BOOL isFrameRenderer;
-@property(readonly) BOOL isMagicMove;
-@property(readonly) BOOL isTransition;
-@property BOOL isWarmingUp;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isBuild;
+@property(readonly) bool isFrameRenderer;
+@property(readonly) bool isMagicMove;
+@property bool isMotionBlurred;
+@property bool isPreview;
+@property(readonly) bool isTransition;
+@property bool isWarmingUp;
 @property NSArray * magicMoveMatches;
 @property double percent;
-@property int rendererType;
-@property NSArray * textures;
+@property long long rendererType;
+@property TSDRep * rep;
+@property(readonly) Class superclass;
+@property(retain) NSArray * textures;
 @property NSDictionary * transitionAttributes;
 
+- (id)GLState;
 - (id)animatedBuild;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectOnCanvas;
+- (void)dealloc;
 - (id)description;
-- (unsigned int)direction;
+- (unsigned long long)direction;
 - (double)duration;
-- (BOOL)isBuild;
-- (BOOL)isFrameRenderer;
-- (BOOL)isMagicMove;
-- (BOOL)isTransition;
-- (BOOL)isWarmingUp;
+- (bool)isBuild;
+- (bool)isFrameRenderer;
+- (bool)isMagicMove;
+- (bool)isMotionBlurred;
+- (bool)isPreview;
+- (bool)isTransition;
+- (bool)isWarmingUp;
 - (id)magicMoveMatches;
 - (double)percent;
-- (int)rendererType;
+- (long long)rendererType;
+- (id)rep;
 - (void)setAnimatedBuild:(id)arg1;
-- (void)setDirection:(unsigned int)arg1;
+- (void)setBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBoundingRectOnCanvas:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDirection:(unsigned long long)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setIsWarmingUp:(BOOL)arg1;
+- (void)setGLState:(id)arg1;
+- (void)setIsMotionBlurred:(bool)arg1;
+- (void)setIsPreview:(bool)arg1;
+- (void)setIsWarmingUp:(bool)arg1;
 - (void)setMagicMoveMatches:(id)arg1;
 - (void)setPercent:(double)arg1;
-- (void)setRendererType:(int)arg1;
+- (void)setRendererType:(long long)arg1;
+- (void)setRep:(id)arg1;
 - (void)setTextures:(id)arg1;
 - (void)setTransitionAttributes:(id)arg1;
 - (id)textures;

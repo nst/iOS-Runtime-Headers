@@ -9,11 +9,16 @@
     NSString *_string;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
-- (int)delta;
+- (long long)delta;
 - (id)initWithSelection:(id)arg1 string:(id)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })insertedRange;
-- (void)performWithStorage:(id)arg1 delta:(int)arg2 undoTransaction:(struct TSWPStorageTransaction { }*)arg3 replaceBlock:(id)arg4;
-- (unsigned int)targetCharIndex;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })insertedRange;
+- (void)performWithStorage:(id)arg1 delta:(long long)arg2 undoTransaction:(struct TSWPStorageTransaction { }*)arg3 replaceBlock:(id)arg4;
+- (unsigned long long)targetCharIndex;
 
 @end

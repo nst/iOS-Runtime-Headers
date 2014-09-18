@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXTimer, CBCentralManager, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class AXHATimer, CBCentralManager, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
-@interface AXHearingAidDeviceController : NSObject <CBCentralManagerDelegate> {
-    AXTimer *_advertisingTimeoutTimer;
+@interface AXHearingAidDeviceController : NSObject <CBCentralManagerDelegate, AXHADeviceControllerProtocol> {
+    AXHATimer *_advertisingTimeoutTimer;
     NSMutableDictionary *_advertisingTimestamps;
     NSMutableArray *_availablePeripherals;
     NSMutableArray *_availableSearchBlocks;
@@ -15,11 +15,11 @@
     NSMutableArray *_connectedDevices;
     NSMutableArray *_connectedSearchBlocks;
     NSMutableDictionary *_deviceUpdatesDescription;
-    AXTimer *_deviceUpdatesTimer;
-    BOOL _isScanning;
+    AXHATimer *_deviceUpdatesTimer;
     NSMutableArray *_loadedDevices;
     NSMutableArray *_persistentDevices;
     NSMutableArray *_updateDeviceBlocks;
+    bool_isScanning;
     NSMutableArray *centralRequestBlocks;
 }
 
@@ -28,8 +28,12 @@
 @property(retain) NSMutableArray * centralRequestBlocks;
 @property(retain) NSMutableArray * connectedDevices;
 @property(retain) NSMutableArray * connectedSearchBlocks;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSMutableArray * loadedDevices;
 @property(retain) NSMutableArray * persistentDevices;
+@property(readonly) Class superclass;
 @property(retain) NSMutableArray * updateDeviceBlocks;
 
 + (id)sharedController;
@@ -39,6 +43,7 @@
 - (void)addLoadedDevice:(id)arg1;
 - (id)availablePeripherals;
 - (id)availableSearchBlocks;
+- (void)cancelPendingConnections;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
@@ -55,18 +60,25 @@
 - (id)connectedDevices;
 - (id)connectedSearchBlocks;
 - (void)dealloc;
-- (void)device:(id)arg1 didSubsumeSlave:(id)arg2;
-- (void)device:(id)arg1 didUpdateProperty:(int)arg2;
+- (void)device:(id)arg1 didUpdateProperty:(long long)arg2;
 - (void)deviceDidFinishLoading:(id)arg1;
 - (void)disconnectFromPeripheral:(id)arg1;
+- (void)forgetDevice:(id)arg1;
+- (id)hearingAidForDeviceID:(id)arg1;
 - (id)hearingAidForPeripheral:(id)arg1;
 - (id)hearingAidsForUUID:(id)arg1;
 - (id)init;
-- (BOOL)isBluetoothAvailable;
-- (BOOL)isScanning;
+- (bool)isBluetoothAvailable;
+- (bool)isConnected;
+- (bool)isScanning;
 - (id)loadedDevices;
 - (void)loadedDevicesDidChange;
+- (void)mergeDevice:(id)arg1 withDevice:(id)arg2;
 - (void)pairedHearingAidsDidChange;
+- (void)pairingAgent:(id)arg1 peerDidCompletePairing:(id)arg2;
+- (void)pairingAgent:(id)arg1 peerDidFailToCompletePairing:(id)arg2 error:(id)arg3;
+- (void)pairingAgent:(id)arg1 peerDidUnpair:(id)arg2;
+- (bool)peripheralIsPaired:(id)arg1;
 - (id)persistentDevices;
 - (void)registerForPropertyUpdates:(id)arg1;
 - (void)removeAvailableDevice:(id)arg1;
@@ -87,6 +99,9 @@
 - (void)setUpdateDeviceBlocks:(id)arg1;
 - (void)stopPropertyUpdates;
 - (void)stopSearching;
+- (void)unpairPeripheral:(id)arg1;
 - (id)updateDeviceBlocks;
+- (void)updateProperty:(long long)arg1 forDeviceID:(id)arg2;
+- (void)writeValue:(id)arg1 forProperty:(long long)arg2 forDeviceID:(id)arg3;
 
 @end

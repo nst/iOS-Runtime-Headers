@@ -11,17 +11,20 @@
     int _status;
 }
 
-@property(readonly) NSString * destID;
+@property(copy) NSString * destID;
 @property(retain) DAMessageMoveRequest * origRequest;
-@property(readonly) NSString * sourceID;
-@property(readonly) int status;
+@property(copy) NSString * sourceID;
+@property int status;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)destID;
 - (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
 - (id)origRequest;
+- (void)setDestID:(id)arg1;
 - (void)setOrigRequest:(id)arg1;
+- (void)setSourceID:(id)arg1;
+- (void)setStatus:(int)arg1;
 - (id)sourceID;
 - (int)status;
 

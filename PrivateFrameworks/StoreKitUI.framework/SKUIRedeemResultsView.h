@@ -2,34 +2,38 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIRedeemResultsViewDelegate>, NSArray;
+@class <SKUIRedeemResultsViewDelegate>, NSArray, NSString;
 
 @interface SKUIRedeemResultsView : UITableView <UITableViewDelegate, UITableViewDataSource> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     } _contentInsetAdjustments;
     <SKUIRedeemResultsViewDelegate> *_resultsDelegate;
     NSArray *_sections;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property <SKUIRedeemResultsViewDelegate> * resultsDelegate;
 @property(retain) NSArray * sections;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)init;
 - (void)layoutSubviews;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)resultsDelegate;
 - (id)sections;
 - (void)setResultsDelegate:(id)arg1;
 - (void)setSections:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

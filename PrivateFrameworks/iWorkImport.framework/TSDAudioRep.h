@@ -2,55 +2,61 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDAudioHUDController>, CALayer, TSDMovieInfo, TSKAVPlayerController;
+@class <TSDAudioHUDController>, CALayer, NSString, TSDMovieInfo, TSKAVPlayerController;
 
-@interface TSDAudioRep : TSDMediaRep <TSKAVPlayerControllerDelegate, TSDAudioHUDControllerDelegate> {
+@interface TSDAudioRep : TSDMediaRep <TSKMediaPlayerControllerDelegate, TSDAudioHUDControllerDelegate> {
+    boolmIsChangingDynamicVolume;
     <TSDAudioHUDController> *mAudioHUDController;
     CALayer *mAudioImageLayer;
     float mDynamicVolume;
-    BOOL mIsChangingDynamicVolume;
     CALayer *mPlayPauseButtonLayer;
     TSKAVPlayerController *mPlayerController;
 }
 
 @property(readonly) <TSDAudioHUDController> * audioHUDController;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) TSDMovieInfo * movieInfo;
 @property(readonly) TSKAVPlayerController * playerController;
+@property(readonly) bool shouldBecomeSelectedWhenPlaying;
+@property(readonly) Class superclass;
 @property(readonly) float volume;
+
++ (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2;
 
 - (void)addKnobsToArray:(id)arg1;
 - (id)audioHUDController;
 - (void)becameNotSelected;
 - (void)becameSelected;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (BOOL)canResetMediaSize;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (bool)canResetMediaSize;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (void)didEndZooming;
-- (BOOL)directlyManagesLayerContent;
+- (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 withStroke:(BOOL)arg3 withOpacity:(BOOL)arg4 forAlphaOnly:(BOOL)arg5 drawChildren:(BOOL)arg6;
+- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(bool)arg2 withStroke:(bool)arg3 withOpacity:(bool)arg4 forAlphaOnly:(bool)arg5 drawChildren:(bool)arg6;
 - (void)dynamicVolumeChangeDidBegin;
 - (void)dynamicVolumeChangeDidEnd;
 - (void)dynamicVolumeUpdateToValue:(float)arg1;
-- (BOOL)exclusivelyProvidesGuidesWhileAligning;
-- (BOOL)hitPlayPauseButtonWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)exclusivelyProvidesGuidesWhileAligning;
+- (bool)hitPlayPauseButtonWithPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitRepChrome:(struct CGPoint { double x1; double x2; })arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (BOOL)isDraggable;
+- (bool)isDraggable;
 - (Class)layerClass;
 - (id)movieInfo;
 - (id)newTrackerForKnob:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)p_isEditingAnimations;
-- (BOOL)p_isPlaying;
+- (bool)p_isEditingAnimations;
+- (bool)p_isPlaying;
 - (void)p_setupPlayerControllerIfNecessary;
-- (BOOL)p_shouldPlayerControllerExistThroughoutSelection;
-- (BOOL)p_shouldShowPlayPauseLayers;
+- (bool)p_shouldPlayerControllerExistThroughoutSelection;
+- (bool)p_shouldShowPlayPauseLayers;
 - (void)p_teardownAudioHUD;
 - (void)p_teardownPlayerController;
-- (void)p_updateAudioHUDWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)p_updateButtonForPlaying:(BOOL)arg1 pressed:(BOOL)arg2;
+- (void)p_updateAudioHUDWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)p_updateButtonForPlaying:(bool)arg1 pressed:(bool)arg2;
 - (void)p_updateEndTime;
 - (void)p_updateRepeatMode;
 - (void)p_updateStartTime;
@@ -59,19 +65,20 @@
 - (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (id)playerController;
 - (void)processChangedProperty:(int)arg1;
-- (BOOL)providesGuidesWhileAligning;
+- (bool)providesGuidesWhileAligning;
 - (void)setupPlayerControllerForAudioHUDController:(id)arg1;
-- (BOOL)shouldAllowReplacementFromDrop;
-- (BOOL)shouldAllowReplacementFromPaste;
-- (BOOL)shouldCreateSelectionKnobs;
-- (BOOL)shouldShowDragHUD;
-- (BOOL)shouldShowKnobs;
-- (BOOL)shouldShowMediaReplaceUI;
-- (BOOL)shouldShowSelectionHighlight;
-- (BOOL)shouldShowSizesInRulers;
+- (bool)shouldAllowReplacementFromDrop;
+- (bool)shouldAllowReplacementFromPaste;
+- (bool)shouldBecomeSelectedWhenPlaying;
+- (bool)shouldCreateSelectionKnobs;
+- (bool)shouldShowDragHUD;
+- (bool)shouldShowKnobs;
+- (bool)shouldShowMediaReplaceUI;
+- (bool)shouldShowSelectionHighlight;
+- (bool)shouldShowSizesInRulers;
 - (id)textureWithContext:(id)arg1;
 - (void)updateLayerGeometryFromLayout:(id)arg1;
-- (void)updatePlayButtonForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updatePlayButtonForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)updatePositionsOfKnobs:(id)arg1;
 - (float)volume;
 - (void)willBeRemoved;

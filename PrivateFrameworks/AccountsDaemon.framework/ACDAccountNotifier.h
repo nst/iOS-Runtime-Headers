@@ -14,11 +14,12 @@
 
 - (void).cxx_destruct;
 - (void)_faultInNotificationPlugins;
-- (BOOL)canSaveAccount:(id)arg1 inStore:(id)arg2;
+- (bool)canRemoveAccount:(id)arg1 inStore:(id)arg2;
+- (bool)canSaveAccount:(id)arg1 inStore:(id)arg2;
 - (id)notificationPlugins;
 - (void)postDidChangeNotificationForType:(int)arg1 inStore:(id)arg2 newAccount:(id)arg3 oldAccount:(id)arg4;
 - (void)postDidPerformDataclassActionsOnAccount:(id)arg1 forDataclasses:(id)arg2;
-- (BOOL)postWillChangeNotificationForType:(int)arg1 inStore:(id)arg2 newAccount:(id)arg3 oldAccount:(id)arg4;
+- (bool)postWillChangeNotificationForType:(int)arg1 inStore:(id)arg2 newAccount:(id)arg3 oldAccount:(id)arg4;
 - (void)postWillPerformDataclassActionsOnAccount:(id)arg1 forDataclasses:(id)arg2;
 
 @end

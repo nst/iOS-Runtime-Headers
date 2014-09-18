@@ -16,44 +16,44 @@
             int g; 
             int t; 
         } ; 
-    BOOL mDisableDestroyAssertion;
+    boolmDisableDestroyAssertion;
     TSCH3DGLHandle *mHandle;
     } mSize;
     unsigned int mType;
 }
 
-@property BOOL disableDestroyAssertion;
+@property bool disableDestroyAssertion;
 @property unsigned int framebufferHandle;
 @property struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } size;
 @property unsigned int type;
 
-+ (id)currentlyBoundFramebufferWithContext:(id)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 attributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg3;
++ (id)currentlyBoundFramebufferWithContext:(id)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 attributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; boolx6; boolx7; }*)arg3;
 
 - (id).cxx_construct;
 - (id)GLHandleForSession:(id)arg1;
-- (BOOL)activateInsideSession:(id)arg1;
+- (bool)activateInsideSession:(id)arg1;
 - (void)bindColorbufferInSession:(id)arg1;
-- (BOOL)bindInSession:(id)arg1;
+- (bool)bindInSession:(id)arg1;
 - (void)dealloc;
 - (void)destroyResourcesInSession:(id)arg1;
-- (BOOL)disableDestroyAssertion;
+- (bool)disableDestroyAssertion;
 - (void)disableSamplingInSession:(id)arg1;
 - (void)discardBuffers;
 - (void)discardColorBuffer;
 - (void)discardDepthBuffer;
-- (unsigned int)estimatedMemroyInBytes;
+- (unsigned long long)estimatedMemroyInBytes;
 - (unsigned int)framebufferHandle;
-- (id)initWithContext:(id)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 attributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg3;
-- (BOOL)isProtectedInSession:(id)arg1;
+- (id)initWithContext:(id)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 attributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; boolx6; boolx7; }*)arg3;
+- (bool)isProtectedInSession:(id)arg1;
 - (void)p_bindFramebuffer;
-- (void)protectInSession:(id)arg1 unprotectOnFail:(BOOL)arg2;
-- (void)setDisableDestroyAssertion:(BOOL)arg1;
+- (void)protectInSession:(id)arg1 unprotectOnFail:(bool)arg2;
+- (void)setDisableDestroyAssertion:(bool)arg1;
 - (void)setFramebufferHandle:(unsigned int)arg1;
 - (void)setSize:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })arg1;
 - (void)setType:(unsigned int)arg1;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })size;
 - (unsigned int)type;
-- (void)unprotectInSession:(id)arg1 clearOnFailProtection:(BOOL)arg2;
-- (BOOL)validForSession:(id)arg1;
+- (void)unprotectInSession:(id)arg1 clearOnFailProtection:(bool)arg2;
+- (bool)validForSession:(id)arg1;
 
 @end

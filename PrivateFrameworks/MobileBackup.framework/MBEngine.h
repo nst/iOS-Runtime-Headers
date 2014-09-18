@@ -10,26 +10,28 @@
     MBDomainManager *_domainManager;
     MBProperties *_properties;
     MBSettingsContext *_settingsContext;
+    bool_encrypted;
 }
 
 @property(readonly) MBAppManager * appManager;
-@property(getter=isBackgroundRestore,readonly) BOOL backgroundRestore;
-@property(getter=isBackupEngine,readonly) BOOL backupEngine;
-@property(getter=shouldCommitIfPossible,readonly) BOOL commitIfPossible;
+@property(getter=isBackgroundRestore,readonly) bool backgroundRestore;
+@property(getter=isBackupEngine,readonly) bool backupEngine;
+@property(getter=shouldCommitIfPossible,readonly) bool commitIfPossible;
 @property(readonly) MBDebugContext * debugContext;
 @property(readonly) MBDomainManager * domainManager;
-@property(getter=isDriveEngine,readonly) BOOL driveEngine;
+@property(getter=isDriveEngine,readonly) bool driveEngine;
+@property(getter=isEncrypted) bool encrypted;
 @property(readonly) int engineMode;
 @property(readonly) NSString * engineModeString;
 @property(readonly) int engineType;
 @property(readonly) NSString * engineTypeString;
-@property(getter=isForegroundRestore,readonly) BOOL foregroundRestore;
-@property(getter=isMigrate,readonly) BOOL migrate;
+@property(getter=isForegroundRestore,readonly) bool foregroundRestore;
+@property(getter=isMigrate,readonly) bool migrate;
 @property(readonly) MBProperties * properties;
-@property(getter=isRestoreEngine,readonly) BOOL restoreEngine;
+@property(getter=isRestoreEngine,readonly) bool restoreEngine;
 @property(readonly) int restoreType;
 @property(readonly) NSString * restoreTypeString;
-@property(getter=isServiceEngine,readonly) BOOL serviceEngine;
+@property(getter=isServiceEngine,readonly) bool serviceEngine;
 @property(readonly) MBSettingsContext * settingsContext;
 
 + (id)stringForEngineMode:(int)arg1;
@@ -46,19 +48,21 @@
 - (int)engineType;
 - (id)engineTypeString;
 - (id)initWithSettingsContext:(id)arg1 debugContext:(id)arg2 domainManager:(id)arg3;
-- (BOOL)isBackgroundRestore;
-- (BOOL)isBackupEngine;
-- (BOOL)isDriveEngine;
-- (BOOL)isForegroundRestore;
-- (BOOL)isMigrate;
-- (BOOL)isRestoreEngine;
-- (BOOL)isServiceEngine;
+- (bool)isBackgroundRestore;
+- (bool)isBackupEngine;
+- (bool)isDriveEngine;
+- (bool)isEncrypted;
+- (bool)isForegroundRestore;
+- (bool)isMigrate;
+- (bool)isRestoreEngine;
+- (bool)isServiceEngine;
 - (id)properties;
 - (void)pushAggregateDictionaryTotalFileCount:(long long)arg1 totalFileSize:(long long)arg2 duration:(double)arg3;
 - (int)restoreType;
 - (id)restoreTypeString;
+- (void)setEncrypted:(bool)arg1;
 - (id)settingsContext;
-- (BOOL)shouldCommitIfPossible;
+- (bool)shouldCommitIfPossible;
 - (id)validateFile:(id)arg1;
 - (id)validateRestoreDomain:(id)arg1 relativePath:(id)arg2;
 

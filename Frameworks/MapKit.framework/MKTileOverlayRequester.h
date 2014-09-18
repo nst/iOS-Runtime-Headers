@@ -5,10 +5,10 @@
 @class NSMutableArray, NSMutableSet;
 
 @interface MKTileOverlayRequester : GEOTileRequester {
-    BOOL _cancelled;
     NSMutableArray *_errors;
     NSMutableSet *_running;
     NSMutableArray *_waiting;
+    bool_cancelled;
 }
 
 + (unsigned int)registerOverlay:(id)arg1;
@@ -22,7 +22,7 @@
 - (void)_operationFinished:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (BOOL)isRunning;
+- (bool)isRunning;
 - (void)start;
 
 @end

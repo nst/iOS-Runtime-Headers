@@ -5,7 +5,7 @@
 @interface VKRealisticLabelTileSource : VKLabelTileSource {
 }
 
-- (int)_labelTileType;
-- (int)minimumZoomLevel;
+- (unsigned char)_labelTileType;
+- (long long)minimumZoomLevel;
 
 @end

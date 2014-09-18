@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class ABPeoplePickerNavigationController, UIImage, UIImagePickerController;
+@class ABPeoplePickerNavigationController, NSString, UIImage, UIImagePickerController;
 
 @interface UIAssignToContactActivity : UIActivity <ABPeoplePickerNavigationControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     UIImage *_image;
@@ -11,10 +11,14 @@
     void *_person;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) UIImage * image;
 @property(retain) UIImagePickerController * imagePickerController;
 @property(retain) ABPeoplePickerNavigationController * peoplePicker;
 @property void* person;
+@property(readonly) Class superclass;
 
 - (id)_activityImage;
 - (void)_cleanup;
@@ -23,15 +27,15 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)image;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (id)imagePickerController;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)peoplePicker;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void*)person;
 - (void)prepareWithActivityItems:(id)arg1;

@@ -9,30 +9,6 @@
 @class GEOMapAccess, GEOMapTileFinder, NSMutableSet;
 
 @interface GEOMapEdgeFinder : GEOMapRequest {
-    struct unordered_set<GEORoadEdge, std::__1::hash<GEORoadEdge>, std::__1::equal_to<GEORoadEdge>, std::__1::allocator<GEORoadEdge> > { 
-        struct __hash_table<GEORoadEdge, std::__1::hash<GEORoadEdge>, std::__1::equal_to<GEORoadEdge>, std::__1::allocator<GEORoadEdge> > { 
-            struct unique_ptr<std::__1::__hash_node<GEORoadEdge, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<GEORoadEdge, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > > { 
-                    struct __hash_node<GEORoadEdge, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > { 
-                            unsigned long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *>, std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> { 
-                    struct __hash_node<GEORoadEdge, void *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::hash<GEORoadEdge> > { 
-                unsigned long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, std::__1::equal_to<GEORoadEdge> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
     struct { 
         double x; 
         double y; 
@@ -40,7 +16,6 @@
     NSMutableSet *_edgeBuilders;
     id _edgeHandler;
     double _mapRadius;
-    } _roadsConsidered;
     GEOMapTileFinder *_tileFinder;
 }
 
@@ -48,7 +23,8 @@
 @property(readonly) GEOMapAccess * map;
 
 - (id).cxx_construct;
-- (void).cxx_destruct;
+- (void)_buildersInTile:(id)arg1 localPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 localRadiusSqr:(float)arg3 localSearch:(const struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; }*)arg4 handler:(id)arg5;
+- (bool)_checkEdgeForDuplicates:(const struct shared_ptr<geo::MapEdge> { struct MapEdge {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)edgeHandler;

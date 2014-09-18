@@ -19,13 +19,16 @@
 - (id)allRichTextPayloadStorages;
 - (id)data;
 - (void)dealloc;
-- (unsigned long)flushableSize;
+- (void)enumerateCustomFormatObjectsUsingBlock:(id)arg1;
+- (void)enumerateCustomFormatsUsingBlock:(id)arg1;
+- (unsigned long long)flushableSize;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithType:(int)arg1 context:(id)arg2;
 - (unsigned int)nextID;
+- (void)p_customFormatList_setNextID:(unsigned int)arg1;
 - (void)p_setupWithType:(int)arg1 nextKeyID:(unsigned int)arg2;
 - (id)packageLocator;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)supportsIDMapForType:(int)arg1;
+- (bool)supportsIDMapForType:(int)arg1;
 
 @end

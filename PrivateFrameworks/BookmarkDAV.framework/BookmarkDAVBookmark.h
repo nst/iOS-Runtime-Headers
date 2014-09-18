@@ -16,13 +16,17 @@
     NSString *_syncKey;
 }
 
-@property(readonly) NSDictionary * appleAttributes;
-@property(readonly) NSURL * bookmarkURL;
+@property(retain,readonly) NSDictionary * appleAttributes;
+@property(retain,readonly) NSURL * bookmarkURL;
 @property(retain) CoreDAVErrorItem * bulkUploadErrorItem;
 @property(readonly) NSArray * childrenOrder;
 @property(readonly) NSData * dataPayload;
-@property(readonly) NSString * name;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) NSString * name;
 @property(retain) NSURL * serverID;
+@property(readonly) Class superclass;
 @property(readonly) NSString * syncKey;
 
 - (id)appleAttributes;

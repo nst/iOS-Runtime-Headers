@@ -8,10 +8,10 @@
     NSObject *_delegate;
     NSLock *_delegateLock;
     NSString *_localPeerID;
-    BOOL _lockedDelegateLock;
     NSPersistentStore *_store;
     NSString *_storeName;
     PFUbiquityLocation *_ubiquityRootLocation;
+    bool_lockedDelegateLock;
 }
 
 @property NSObject * delegate;

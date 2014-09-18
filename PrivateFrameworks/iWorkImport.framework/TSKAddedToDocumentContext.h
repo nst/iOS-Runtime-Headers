@@ -12,6 +12,7 @@
 + (id)importingContextWithImporterID:(id)arg1;
 + (id)importingMasterTemplateContextWithImporterID:(id)arg1;
 + (id)insertingPrototypeContext;
++ (id)moveSectionContext;
 + (id)movingContext;
 + (id)pastingContext;
 + (id)pastingMatchStyleContext;
@@ -19,25 +20,27 @@
 + (id)undoDeleteContext;
 + (id)unhidingContext;
 
-- (BOOL)autoUpdateSmartFields;
-- (BOOL)changeTrackingSubstorage;
-- (BOOL)exportingFootnotes;
+- (void)addDrawable:(id)arg1;
+- (id)addedDrawables;
+- (bool)autoUpdateSmartFields;
+- (bool)changeTrackingSubstorage;
 - (id)importerID;
-- (BOOL)invokeDOLC;
-- (BOOL)matchStyle;
+- (bool)invokeDOLC;
+- (bool)matchStyle;
+- (bool)preserveChangeTracking;
 - (void)setTableIDMap:(struct __CFDictionary { }*)arg1;
-- (BOOL)syncChanges;
+- (bool)syncChanges;
 - (struct __CFDictionary { }*)tableIDMap;
 - (id)undoContext;
-- (BOOL)uniqueBookmarks;
-- (BOOL)wasDragMoved;
-- (BOOL)wasDragOperation;
-- (BOOL)wasImported;
-- (BOOL)wasImportedFromMasterTemplate;
-- (BOOL)wasMoved;
-- (BOOL)wasPasted;
-- (BOOL)wasUnarchived;
-- (BOOL)wasUndoDelete;
-- (BOOL)wasUnhidden;
+- (bool)uniqueBookmarks;
+- (bool)wasDragMoved;
+- (bool)wasDragOperation;
+- (bool)wasImported;
+- (bool)wasImportedFromMasterTemplate;
+- (bool)wasMoved;
+- (bool)wasPasted;
+- (bool)wasUnarchived;
+- (bool)wasUndoDelete;
+- (bool)wasUnhidden;
 
 @end

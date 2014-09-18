@@ -11,7 +11,7 @@
 }
 
 @property(retain) VKPGenericShieldStyleInfo * genericShieldStyleInfo;
-@property(readonly) BOOL hasGenericShieldStyleInfo;
+@property(readonly) bool hasGenericShieldStyleInfo;
 @property(retain) NSString * identifier;
 @property(retain) NSMutableArray * variants;
 
@@ -23,17 +23,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)genericShieldStyleInfo;
-- (BOOL)hasGenericShieldStyleInfo;
-- (unsigned int)hash;
+- (bool)hasGenericShieldStyleInfo;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setGenericShieldStyleInfo:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setVariants:(id)arg1;
 - (id)variants;
-- (id)variantsAtIndex:(unsigned int)arg1;
-- (unsigned int)variantsCount;
+- (id)variantsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)variantsCount;
 - (void)writeTo:(id)arg1;
 
 @end

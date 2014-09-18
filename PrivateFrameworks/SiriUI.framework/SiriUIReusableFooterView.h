@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SiriUISnippetViewController;
+@class NSString, SiriUISnippetViewController;
 
 @interface SiriUIReusableFooterView : UICollectionReusableView <SiriUIReusableView> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property SiriUISnippetViewController * snippetViewController;
+@property(readonly) Class superclass;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 + (id)elementKind;
 + (id)reuseIdentifier;
+
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 
 @end

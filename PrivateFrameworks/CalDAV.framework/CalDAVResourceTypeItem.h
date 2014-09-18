@@ -6,6 +6,7 @@
 
 @interface CalDAVResourceTypeItem : CoreDAVResourceTypeItem {
     CoreDAVItemWithNoChildren *_calendar;
+    CoreDAVItemWithNoChildren *_isFamilyCalendar;
     CoreDAVItemWithNoChildren *_notification;
     CoreDAVItemWithNoChildren *_scheduleInbox;
     CoreDAVItemWithNoChildren *_scheduleOutbox;
@@ -14,6 +15,7 @@
 }
 
 @property(retain) CoreDAVItemWithNoChildren * calendar;
+@property(retain) CoreDAVItemWithNoChildren * isFamilyCalendar;
 @property(retain) CoreDAVItemWithNoChildren * notification;
 @property(retain) CoreDAVItemWithNoChildren * scheduleInbox;
 @property(retain) CoreDAVItemWithNoChildren * scheduleOutbox;
@@ -25,10 +27,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)isFamilyCalendar;
 - (id)notification;
 - (id)scheduleInbox;
 - (id)scheduleOutbox;
 - (void)setCalendar:(id)arg1;
+- (void)setIsFamilyCalendar:(id)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setScheduleInbox:(id)arg1;
 - (void)setScheduleOutbox:(id)arg1;

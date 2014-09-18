@@ -5,7 +5,7 @@
 @interface ABContactShareContactAction : ABContactAction {
 }
 
-- (BOOL)canPerformAction;
+- (bool)canPerformAction;
 - (void)performActionWithSender:(id)arg1;
 
 @end

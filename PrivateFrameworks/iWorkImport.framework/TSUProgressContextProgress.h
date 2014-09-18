@@ -5,7 +5,7 @@
 @class NSObject<OS_dispatch_queue>, TSUProgressContext;
 
 @interface TSUProgressContextProgress : TSUProgress {
-    BOOL hasAddedProgressContextObserver;
+    boolhasAddedProgressContextObserver;
     TSUProgressContext *mProgressContext;
     NSObject<OS_dispatch_queue> *mProgressContextObserverQueue;
 }
@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithProgressContext:(id)arg1;
-- (BOOL)isIndeterminate;
+- (bool)isIndeterminate;
 - (double)maxValue;
 - (void)p_progressDidChange:(id)arg1;
 - (void)p_updateProgressContextObserver;

@@ -7,20 +7,20 @@
 @interface CUIPSDLayer : NSObject {
     int _blendMode;
     NSString *_name;
-    float _opacity;
+    double _opacity;
 }
 
 @property int blendMode;
 @property(retain) NSString * name;
-@property float opacity;
+@property double opacity;
 
 - (int)blendMode;
 - (void)dealloc;
 - (id)init;
 - (id)name;
-- (float)opacity;
+- (double)opacity;
 - (void)setBlendMode:(int)arg1;
 - (void)setName:(id)arg1;
-- (void)setOpacity:(float)arg1;
+- (void)setOpacity:(double)arg1;
 
 @end

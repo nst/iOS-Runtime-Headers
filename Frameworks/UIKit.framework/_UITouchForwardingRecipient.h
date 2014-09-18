@@ -5,26 +5,26 @@
 @class UIResponder;
 
 @interface _UITouchForwardingRecipient : NSObject {
-    int autocompletedPhase;
+    long long autocompletedPhase;
     UIResponder *fromResponder;
-    int recordedPhase;
+    long long recordedPhase;
     UIResponder *responder;
 }
 
-@property int autocompletedPhase;
+@property long long autocompletedPhase;
 @property UIResponder * fromResponder;
-@property int recordedPhase;
+@property long long recordedPhase;
 @property UIResponder * responder;
 
-- (int)autocompletedPhase;
+- (long long)autocompletedPhase;
 - (id)description;
 - (id)fromResponder;
 - (id)initWithResponder:(id)arg1 fromResponder:(id)arg2;
-- (int)recordedPhase;
+- (long long)recordedPhase;
 - (id)responder;
-- (void)setAutocompletedPhase:(int)arg1;
+- (void)setAutocompletedPhase:(long long)arg1;
 - (void)setFromResponder:(id)arg1;
-- (void)setRecordedPhase:(int)arg1;
+- (void)setRecordedPhase:(long long)arg1;
 - (void)setResponder:(id)arg1;
 
 @end

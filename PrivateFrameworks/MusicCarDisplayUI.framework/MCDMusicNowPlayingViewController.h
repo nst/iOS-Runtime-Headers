@@ -2,29 +2,33 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDCarDisplayServiceProvider>, MCDActionSheetController, MCDButton, MCDNowPlayingViewController, MPAVController, MPMediaQuery, NSArray, NSString, NSURL, UIImage, UILabel;
+@class <MCDCarDisplayServiceProvider>, MCDButton, MCDNowPlayingViewController, MPAVController, MPMediaQuery, NSArray, NSString, UIAlertController, UIImage, UILabel;
 
 @interface MCDMusicNowPlayingViewController : UIViewController <AFContextProvider, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate> {
-    MCDActionSheetController *_actionSheetController;
+    UIAlertController *_actionSheetAlertController;
     MPMediaQuery *_albumQuery;
     NSArray *_controlPages;
-    unsigned int _currentPageIndex;
-    BOOL _isLive;
+    unsigned long long _currentPageIndex;
     NSString *_nowPlayingAlbum;
     UIImage *_nowPlayingAlbumArt;
     NSString *_nowPlayingArtist;
     NSString *_nowPlayingTitle;
     MCDNowPlayingViewController *_nowPlayingViewController;
     MPAVController *_player;
-    NSURL *_retrievalURL;
     UILabel *_rightTitleLabel;
     <MCDCarDisplayServiceProvider> *_serviceProvider;
     int _viewMode;
     MCDButton *_wishlistButton;
+    bool_isExplicitTrack;
+    bool_isLive;
 }
 
 @property(retain) NSArray * controlPages;
-@property unsigned int currentPageIndex;
+@property unsigned long long currentPageIndex;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property int viewMode;
 
 - (void).cxx_destruct;
@@ -36,52 +40,52 @@
 - (void)_playerTick:(id)arg1;
 - (void)_presentNowPlayingInfo;
 - (void)_registerForNotifications;
-- (void)_setAlbumArtWithURL:(id)arg1;
-- (void)_setPlayerRepeatType:(unsigned int)arg1;
+- (void)_setPlayerRepeatType:(unsigned long long)arg1;
 - (void)_unregisterForNotifications;
 - (void)_updatePlaymodesForRadio;
 - (void)_updateWishlistString;
 - (void)_wishlistPressed:(id)arg1;
 - (id)albumTextForNowPlayingController:(id)arg1;
-- (BOOL)allowContextProvider:(id)arg1;
+- (bool)allowContextProvider:(id)arg1;
 - (id)artistTextForNowPlayingController:(id)arg1;
 - (id)backgroundArtForNowPlayingController:(id)arg1;
 - (id)controlPages;
-- (unsigned int)currentPageIndex;
+- (unsigned long long)currentPageIndex;
 - (void)dealloc;
 - (id)getCurrentContext;
 - (id)initWithGeniusMixPlaylist:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2 startPlay:(BOOL)arg3;
-- (id)initWithQuery:(id)arg1 startingAtIndex:(unsigned int)arg2 player:(id)arg3 serviceProvider:(id)arg4;
+- (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2 startPlay:(bool)arg3;
+- (id)initWithQuery:(id)arg1 startingAtIndex:(unsigned long long)arg2 player:(id)arg3 serviceProvider:(id)arg4;
 - (id)initWithQueryToShuffle:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
 - (id)initWithRadioStation:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
 - (id)newPresentationNavigationController;
-- (void)nowPlayingViewController:(id)arg1 didSendAction:(int)arg2 state:(int)arg3;
-- (BOOL)nowPlayingViewController:(id)arg1 shouldDisplayButton:(int)arg2 withImage:(out id*)arg3 tinted:(out BOOL*)arg4;
-- (BOOL)nowPlayingViewController:(id)arg1 shouldEnableButton:(int)arg2;
-- (BOOL)nowPlayingViewControllerCanCreate:(id)arg1;
-- (BOOL)nowPlayingViewControllerCanRepeat:(id)arg1;
-- (BOOL)nowPlayingViewControllerCanShuffle:(id)arg1;
+- (void)nowPlayingViewController:(id)arg1 didSendAction:(long long)arg2 state:(long long)arg3;
+- (bool)nowPlayingViewController:(id)arg1 shouldDisplayButton:(long long)arg2 withImage:(out id*)arg3 tinted:(out bool*)arg4;
+- (bool)nowPlayingViewController:(id)arg1 shouldEnableButton:(long long)arg2;
+- (bool)nowPlayingViewControllerCanCreate:(id)arg1;
+- (bool)nowPlayingViewControllerCanRepeat:(id)arg1;
+- (bool)nowPlayingViewControllerCanShuffle:(id)arg1;
 - (void)nowPlayingViewControllerCreate:(id)arg1;
-- (BOOL)nowPlayingViewControllerIsPlaying:(id)arg1;
-- (BOOL)nowPlayingViewControllerShouldUseWishlist:(id)arg1;
+- (bool)nowPlayingViewControllerIsPlaying:(id)arg1;
+- (bool)nowPlayingViewControllerIsShowingExplicitTrack:(id)arg1;
+- (bool)nowPlayingViewControllerShouldUseWishlist:(id)arg1;
 - (void)nowPlayingViewControllerToggleRepeat:(id)arg1;
 - (void)nowPlayingViewControllerToggleShuffle:(id)arg1;
 - (double)playbackDurationForNowPlayingViewController:(id)arg1 withElapsedTime:(out double*)arg2;
 - (id)repeatStringForNowPlayingViewController:(id)arg1;
-- (unsigned int)repeatTypeForNowPlayingViewController:(id)arg1;
+- (unsigned long long)repeatTypeForNowPlayingViewController:(id)arg1;
 - (void)setControlPages:(id)arg1;
-- (void)setCurrentPageIndex:(unsigned int)arg1;
+- (void)setCurrentPageIndex:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setViewMode:(int)arg1;
 - (id)shuffleStringForNowPlayingViewController:(id)arg1;
-- (unsigned int)shuffleTypeForNowPlayingViewController:(id)arg1;
+- (unsigned long long)shuffleTypeForNowPlayingViewController:(id)arg1;
 - (id)titleForNowPlayingController:(id)arg1;
 - (void)updateTrackInformation;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (int)viewMode;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

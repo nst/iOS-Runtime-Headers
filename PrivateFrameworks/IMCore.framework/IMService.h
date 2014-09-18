@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@interface IMService : NSObject <CKTranscriptDataRowObject> {
+@interface IMService : NSObject {
 }
 
 + (id)aimService;
@@ -11,39 +11,26 @@
 + (id)callService;
 + (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
 + (id)facetimeService;
-+ (void)flushAttributedTranscriptText;
 + (void)forgetStatusImageAppearance;
 + (id)iMessageService;
-+ (id)imageNameForStatus:(unsigned int)arg1;
-+ (id)imageURLForStatus:(unsigned int)arg1;
-+ (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;
++ (id)imageNameForStatus:(unsigned long long)arg1;
++ (id)imageURLForStatus:(unsigned long long)arg1;
++ (bool)isEmailAddress:(id)arg1 inDomains:(id)arg2;
 + (id)jabberService;
 + (id)myIdleTime;
-+ (unsigned int)myStatus;
++ (unsigned long long)myStatus;
 + (id)notificationCenter;
 + (id)serviceWithName:(id)arg1;
 + (id)smsService;
-+ (unsigned int)statusForABPerson:(id)arg1;
-+ (unsigned int)statusForIMPerson:(id)arg1;
++ (unsigned long long)statusForABPerson:(id)arg1;
++ (unsigned long long)statusForIMPerson:(id)arg1;
 + (id)subnetService;
 
-- (Class)__ck_displayCellClass;
-- (id)__ck_displayCellIdentifier;
 - (BOOL)__ck_displayColor;
-- (id)__ck_displayContactImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })__ck_displayContentAlignmentInsets;
-- (BOOL)__ck_displayDuringSend;
-- (id)__ck_displayGUIDWithMessage:(id)arg1;
 - (id)__ck_displayName;
-- (struct CGSize { float x1; float x2; })__ck_displaySize:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1;
-- (BOOL)__ck_displayTranscriptOrientation;
-- (BOOL)__ck_isSMS;
-- (BOOL)__ck_isiMessage;
-- (int)__ck_maxRecipientCount;
-- (void)__ck_prewarmForDisplay;
-- (BOOL)__ck_transcriptUsesTextAlignmentInsets;
-- (BOOL)__ck_wantsDrawerLayout;
-- (id)attributedTranscriptText;
+- (bool)__ck_isSMS;
+- (bool)__ck_isiMessage;
+- (long long)__ck_maxRecipientCount;
 - (id)canonicalFormOfID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)infoForAllPeople;
@@ -52,8 +39,8 @@
 - (id)infoForPerson:(id)arg1;
 - (id)infoForPreferredScreenNames;
 - (id)infoForScreenName:(id)arg1;
-- (BOOL)initialSyncPerformed;
-- (BOOL)isEnabled;
+- (bool)initialSyncPerformed;
+- (bool)isEnabled;
 - (id)localizedName;
 - (id)localizedShortName;
 - (void)login;
@@ -62,6 +49,6 @@
 - (id)name;
 - (id)peopleWithScreenName:(id)arg1;
 - (id)screenNamesForPerson:(id)arg1;
-- (unsigned int)status;
+- (unsigned long long)status;
 
 @end

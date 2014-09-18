@@ -9,11 +9,15 @@
 
 @property(copy) NSString * aceId;
 @property(retain) SAStockObject * aceStock;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSURL * identifier;
 @property(copy) NSString * refId;
 @property(copy) NSArray * results;
 @property(copy) NSArray * stockReferences;
 @property(copy) NSArray * stocks;
+@property(readonly) Class superclass;
 
 + (id)addCompleted;
 + (id)addCompletedWithDictionary:(id)arg1 context:(id)arg2;

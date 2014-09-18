@@ -9,8 +9,8 @@
 @property(setter=_setCurlUpDY:) float _curlUpDY;
 
 - (float)_curlUpDY;
-- (BOOL)_delegateShouldReceiveTouch:(id)arg1;
+- (bool)_delegateShouldReceiveTouch:(id)arg1;
 - (void)_setCurlUpDY:(float)arg1;
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
 
 @end

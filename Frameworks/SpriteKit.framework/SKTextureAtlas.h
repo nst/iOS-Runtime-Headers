@@ -12,11 +12,14 @@
 @property(readonly) NSArray * textureNames;
 
 + (id)atlasNamed:(id)arg1;
++ (id)atlasWithDictionary:(id)arg1;
++ (bool)canUseObjectForAtlas:(id)arg1;
 + (id)findTextureNamed:(id)arg1;
 + (id)getSupportedPostfixes;
 + (void)preloadTextureAtlases:(id)arg1 withCompletionHandler:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)_copyImageData;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -24,6 +27,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)loadTextures;
+- (void)parseAtlasPropertyList:(id)arg1 withPath:(id)arg2;
 - (void)preload;
 - (void)preloadWithCompletionHandler:(id)arg1;
 - (id)textureNamed:(id)arg1;

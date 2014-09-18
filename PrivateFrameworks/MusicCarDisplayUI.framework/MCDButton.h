@@ -7,25 +7,25 @@
 @interface MCDButton : UIButton {
     CALayer *_focusColorLayer;
     NSString *_labelTemplateString;
-    BOOL _showBezelInTouch;
+    bool_showBezelInTouch;
 }
 
 @property(copy) NSString * labelTemplateString;
-@property(getter=isSelected) BOOL selected;
-@property BOOL showBezelInTouch;
+@property(getter=isSelected) bool selected;
+@property bool showBezelInTouch;
 
-+ (id)buttonWithType:(int)arg1;
++ (id)buttonWithType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_focusStateDidChange;
-- (BOOL)_isFocusableElement;
+- (bool)_isFocusableElement;
 - (void)_updateButtonStyle;
 - (id)labelTemplateString;
 - (void)layoutSubviews;
 - (void)setLabelTemplateString:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setShowBezelInTouch:(BOOL)arg1;
-- (BOOL)showBezelInTouch;
+- (void)setSelected:(bool)arg1;
+- (void)setShowBezelInTouch:(bool)arg1;
+- (bool)showBezelInTouch;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

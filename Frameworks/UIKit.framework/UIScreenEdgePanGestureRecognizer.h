@@ -2,24 +2,28 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIScreenEdgePanRecognizer;
+@class NSString, _UIScreenEdgePanRecognizer;
 
 @interface UIScreenEdgePanGestureRecognizer : UIPanGestureRecognizer <_UIScreenEdgePanRecognizerDelegate> {
-    unsigned int _edges;
+    unsigned long long _edges;
     _UIScreenEdgePanRecognizer *_recognizer;
 }
 
-@property unsigned int edges;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property unsigned long long edges;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (float)_edgeRegionSize;
-- (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (double)_edgeRegionSize;
+- (bool)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)dealloc;
-- (unsigned int)edges;
+- (unsigned long long)edges;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)isRequiringLongPress;
+- (bool)isRequiringLongPress;
 - (void)reset;
 - (void)screenEdgePanRecognizerStateDidChange:(id)arg1;
-- (void)setEdges:(unsigned int)arg1;
+- (void)setEdges:(unsigned long long)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 

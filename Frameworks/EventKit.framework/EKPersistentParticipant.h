@@ -24,7 +24,7 @@
 - (id)displayName;
 - (id)emailAddress;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)lastName;
 - (id)owner;

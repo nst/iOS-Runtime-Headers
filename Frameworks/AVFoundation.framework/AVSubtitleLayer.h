@@ -8,30 +8,30 @@
     AVSubtitleLayerInternal *_subtitleLayer;
 }
 
-@property(getter=isOverscanSubtitleSupportEnabled) BOOL overscanSubtitleSupportEnabled;
+@property(getter=isOverscanSubtitleSupportEnabled) bool overscanSubtitleSupportEnabled;
 @property(retain) AVPlayer * player;
 @property(readonly) CADisplay * subtitleLayerDisplay;
 
 + (id)subtitleLayerWithPlayer:(id)arg1;
 
-- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
+- (void)_setHasPlayerToObserve:(long long)arg1 andShouldObserveIt:(long long)arg2;
 - (void)_setSubtitleSample:(id)arg1;
-- (void)_updateNonForcedSubtitleDisplayEnabled:(BOOL)arg1;
+- (void)_updateNonForcedSubtitleDisplayEnabled:(bool)arg1;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)finalize;
-- (long)getLayout:(struct SubtitleLayoutParameters { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGAffineTransform { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; float x_3_1_5; float x_3_1_6; } x3; unsigned char x4; float x5; int x6; })arg1 suggestLayout:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 shouldUpdateCachedSubtitleSample:(BOOL)arg3;
+- (int)getLayout:(struct SubtitleLayoutParameters { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGAffineTransform { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; double x_3_1_5; double x_3_1_6; } x3; unsigned char x4; double x5; int x6; })arg1 suggestLayout:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 shouldUpdateCachedSubtitleSample:(bool)arg3;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
-- (BOOL)isOverscanSubtitleSupportEnabled;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (bool)isOverscanSubtitleSupportEnabled;
+- (void)layerDidBecomeVisible:(bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
 - (void)setDelegate:(id)arg1;
-- (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
+- (void)setOverscanSubtitleSupportEnabled:(bool)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)subtitleLayerDisplay;
 - (void)subtitleRenderingNeedsLayout;
-- (long)updateSubtitle:(id)arg1 forcedSubtitleSample:(BOOL)arg2 shouldBeHidden:(BOOL*)arg3;
+- (int)updateSubtitle:(id)arg1 forcedSubtitleSample:(bool)arg2 shouldBeHidden:(bool*)arg3;
 
 @end

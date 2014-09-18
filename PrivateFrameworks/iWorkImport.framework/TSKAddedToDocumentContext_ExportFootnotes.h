@@ -6,6 +6,6 @@
 }
 
 - (id)description;
-- (BOOL)exportingFootnotes;
+- (bool)preserveChangeTracking;
 
 @end

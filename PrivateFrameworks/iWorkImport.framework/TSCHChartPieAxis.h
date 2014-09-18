@@ -7,7 +7,8 @@
 
 - (id)computeMajorGridlinesFromMinMaxInAnalysis:(id)arg1;
 - (id)computeMinorGridlinesFromMajorGridlinesInAnalysis:(id)arg1;
-- (id)formattedStringForSeries:(id)arg1 index:(unsigned int)arg2;
-- (BOOL)supportsFormattedStringForInvalidValue;
+- (id)formattedStringForSeries:(id)arg1 index:(unsigned long long)arg2;
+- (bool)supportsAxisValueLabels;
+- (bool)supportsFormattedStringForInvalidValue;
 
 @end

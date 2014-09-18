@@ -7,9 +7,13 @@
 @interface SAAnswerDefinitionGroup : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSArray * definitionEntries;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * origin;
 @property(copy) NSString * partOfSpeech;
+@property(readonly) Class superclass;
 @property(copy) NSArray * synonyms;
 
 + (id)definitionGroup;

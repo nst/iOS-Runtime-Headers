@@ -5,18 +5,18 @@
 @class NSError, NSMutableArray, YTSearchRequest;
 
 @interface YTVideoDataSource : NSObject {
-    BOOL _hasLoaded;
     NSError *_lastError;
     YTSearchRequest *_searchRequest;
     unsigned int _startIndex;
     NSMutableArray *_videos;
     unsigned int _videosRemaining;
+    bool_hasLoaded;
 }
 
 + (void)saveDataSources;
 + (void)setShouldRemoveOldDefaults;
 + (id)sharedDataSource;
-+ (BOOL)shouldRemoveOldDefaults;
++ (bool)shouldRemoveOldDefaults;
 
 - (void)_clearVideos;
 - (id)_deprecatedVideosDefaultsKey;
@@ -25,11 +25,11 @@
 - (void)_searchRequestLoadingStatusDidChange;
 - (void)_setLastError:(id)arg1;
 - (void)_setVideos:(id)arg1;
-- (void)addVideos:(id)arg1 toTop:(BOOL)arg2;
+- (void)addVideos:(id)arg1 toTop:(bool)arg2;
 - (void)dealloc;
-- (BOOL)hasLoaded;
+- (bool)hasLoaded;
 - (id)init;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (id)lastError;
 - (void)loadFromDefaults;
 - (void)loadMore;

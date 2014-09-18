@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIComposeReviewFormDelegate>, SKUIComposeReviewView, SKUIReviewMetadata;
+@class <SKUIComposeReviewFormDelegate>, NSString, SKUIComposeReviewView, SKUIReviewMetadata;
 
 @interface SKUIComposeReviewFormViewController : SUViewController <SKUIComposeReviewViewDelegate> {
     SKUIComposeReviewView *_composeView;
@@ -10,8 +10,12 @@
     SKUIReviewMetadata *_review;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIComposeReviewFormDelegate> * delegate;
-@property(readonly) SKUIReviewMetadata * editedReviewMetadata;
+@property(copy,readonly) NSString * description;
+@property(copy,readonly) SKUIReviewMetadata * editedReviewMetadata;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancel;
@@ -24,6 +28,6 @@
 - (void)loadView;
 - (void)setDelegate:(id)arg1;
 - (void)setRating:(float)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

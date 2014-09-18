@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSString;
 
 @interface CKCache : NSObject <CKCache> {
     NSMutableDictionary *_dictionary;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) NSMutableDictionary * dictionary;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)dictionary;

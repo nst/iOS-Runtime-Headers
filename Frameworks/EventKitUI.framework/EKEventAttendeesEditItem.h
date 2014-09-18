@@ -2,19 +2,30 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKParticipant, NSString;
+@class EKParticipant, NSOperationQueue, NSString;
 
 @interface EKEventAttendeesEditItem : EKEventEditItem {
+    NSOperationQueue *_availabilityQueue;
+    long long _numberOfConflicts;
     NSString *_searchAccountID;
     EKParticipant *_selfOrganizer;
 }
 
 - (void).cxx_destruct;
-- (id)attendeesWithoutSelfOrganizer;
-- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
-- (BOOL)configureForCalendarConstraints:(id)arg1;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (BOOL)editItemViewControllerCommit:(id)arg1;
+- (id)attendeesWithoutSelfOrganizerAndLocations;
+- (bool)canBeConfiguredForCalendarConstraints:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (bool)configureForCalendarConstraints:(id)arg1;
+- (void)dealloc;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerCommit:(id)arg1;
+- (bool)forceRefreshInviteesItemOnCommit;
+- (bool)forceRefreshStartAndEndDatesOnCommit;
+- (bool)forceTableReloadOnCommit;
+- (id)init;
+- (id)injectableViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (void)refreshFromCalendarItemAndStore;
+- (bool)requiresReconfigurationOnCommit;
+- (bool)shouldAppearWithVisibility:(int)arg1;
 
 @end

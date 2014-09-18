@@ -6,19 +6,19 @@
 
 @interface _MFSQLiteConnectionWrapper : NSObject {
     MFSQLiteConnection *_connection;
-    unsigned int _generation;
-    unsigned int _type;
+    unsigned long long _generation;
+    unsigned long long _type;
 }
 
 @property(readonly) MFSQLiteConnection * connection;
-@property(readonly) unsigned int generation;
-@property unsigned int type;
+@property(readonly) unsigned long long generation;
+@property unsigned long long type;
 
 - (id)connection;
 - (void)dealloc;
-- (unsigned int)generation;
-- (id)initWithConnection:(id)arg1 generation:(unsigned int)arg2;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (unsigned long long)generation;
+- (id)initWithConnection:(id)arg1 generation:(unsigned long long)arg2;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

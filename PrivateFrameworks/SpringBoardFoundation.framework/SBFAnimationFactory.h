@@ -2,43 +2,51 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class CAMediaTimingFunction;
+@class BSAnimationSettings, NSString;
 
-@interface SBFAnimationFactory : NSObject <_UIBasicAnimationFactory> {
-    double _delay;
-    double _duration;
-    double _frameInterval;
-    CAMediaTimingFunction *_timingFunction;
+@interface SBFAnimationFactory : NSObject <NSCopying, _UIBasicAnimationFactory> {
+    BSAnimationSettings *_settings;
 }
 
-@property double delay;
-@property double duration;
-@property double frameInterval;
-@property(retain) CAMediaTimingFunction * timingFunction;
+@property(copy,readonly) NSString * debugDescription;
+@property(readonly) double delay;
+@property(copy,readonly) NSString * description;
+@property(readonly) double duration;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (void)animateWithFactory:(id)arg1 animations:(id)arg2 completion:(id)arg3;
-+ (void)animateWithFactory:(id)arg1 animations:(id)arg2;
-+ (void)animateWithSettings:(id)arg1 animations:(id)arg2 completion:(id)arg3;
-+ (void)animateWithSettings:(id)arg1 delay:(double)arg2 animations:(id)arg3 completion:(id)arg4;
-+ (void)animateWithSettings:(id)arg1 delay:(double)arg2 options:(unsigned int)arg3 animations:(id)arg4 completion:(id)arg5;
-+ (void)animateWithSettings:(id)arg1 options:(unsigned int)arg2 animations:(id)arg3 completion:(id)arg4;
++ (void)animateWithFactory:(id)arg1 actions:(id)arg2 completion:(id)arg3;
++ (void)animateWithFactory:(id)arg1 actions:(id)arg2;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3 completion:(id)arg4;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned long long)arg3 actions:(id)arg4 completion:(id)arg5;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned long long)arg3 actions:(id)arg4;
++ (void)animateWithFactory:(id)arg1 options:(unsigned long long)arg2 actions:(id)arg3 completion:(id)arg4;
++ (void)animateWithFactory:(id)arg1 options:(unsigned long long)arg2 actions:(id)arg3;
 + (id)factoryWithAnimationAttributes:(id)arg1;
++ (id)factoryWithDuration:(double)arg1 delay:(double)arg2 timingFunction:(id)arg3;
++ (id)factoryWithDuration:(double)arg1 delay:(double)arg2;
++ (id)factoryWithDuration:(double)arg1 timingFunction:(id)arg2;
++ (id)factoryWithDuration:(double)arg1;
++ (id)factoryWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 epsilon:(double)arg4 timingFunction:(id)arg5;
++ (id)factoryWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 epsilon:(double)arg4;
++ (id)factoryWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 timingFunction:(id)arg4;
++ (id)factoryWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3;
++ (id)factoryWithSettings:(id)arg1 timingFunction:(id)arg2;
 + (id)factoryWithSettings:(id)arg1;
 
-- (id)_animation;
+- (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned long long)arg2 actions:(id)arg3 completion:(id)arg4;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
+- (id)_initWithSettings:(id)arg1;
 - (id)_timingFunctionForAnimation;
-- (void)animateWithDelay:(double)arg1 animations:(id)arg2 completion:(id)arg3;
-- (void)animateWithDelay:(double)arg1 options:(unsigned int)arg2 animations:(id)arg3 completion:(id)arg4;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (double)delay;
+- (id)description;
 - (double)duration;
-- (double)frameInterval;
-- (void)setDelay:(double)arg1;
-- (void)setDuration:(double)arg1;
-- (void)setFrameInterval:(double)arg1;
-- (void)setTimingFunction:(id)arg1;
-- (void)setTimingFunctionFromSettings:(id)arg1;
-- (id)timingFunction;
+- (id)factoryWithTimingFunction:(id)arg1;
+- (unsigned long long)hash;
+- (id)init;
+- (bool)isEqual:(id)arg1;
 
 @end

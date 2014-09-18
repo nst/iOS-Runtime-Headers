@@ -10,6 +10,7 @@
 
 @property(copy) NSArray * items;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)items;
 - (void)setItems:(id)arg1;

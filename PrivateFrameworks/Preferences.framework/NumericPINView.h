@@ -4,15 +4,21 @@
 
 @class PSPasscodeField;
 
-@interface NumericPINView : PINView {
+@interface NumericPINView : PINView <PSPasscodeFieldDelegate> {
     PSPasscodeField *_passcodeField;
 }
 
 - (void)appendString:(id)arg1;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
+- (void)dealloc;
 - (void)deleteLastCharacter;
-- (void)hidePasscodeField:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)hidePasscodeField:(bool)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isFirstResponder;
 - (void)layoutSubviews;
+- (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
+- (bool)resignFirstResponder;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 

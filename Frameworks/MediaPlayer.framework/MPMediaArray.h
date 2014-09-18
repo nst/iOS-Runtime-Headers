@@ -7,6 +7,6 @@
 @interface MPMediaArray : NSArray {
 }
 
-@property(readonly) MPMediaQuerySectionInfo * sectionInfo;
+@property(copy,readonly) MPMediaQuerySectionInfo * sectionInfo;
 
 @end

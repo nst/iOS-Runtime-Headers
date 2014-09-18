@@ -3,18 +3,18 @@
  */
 
 @interface GKRingBuffer : NSObject {
-    unsigned long bytesPerFrame;
-    unsigned long capacity;
-    unsigned long endTime;
+    unsigned int bytesPerFrame;
+    unsigned int capacity;
+    unsigned int endTime;
     void *ringBufRef;
 }
 
 - (void)dealloc;
-- (long)fetch:(char *)arg1 numSamples:(unsigned long)arg2 timestamp:(unsigned long)arg3;
-- (void)increaseCapacity:(unsigned long)arg1;
+- (int)fetch:(char *)arg1 numSamples:(unsigned int)arg2 timestamp:(unsigned int)arg3;
+- (void)increaseCapacity:(unsigned int)arg1;
 - (id)init;
-- (id)initWithCapacity:(unsigned long)arg1 bytesPerFrame:(unsigned long)arg2;
-- (long)needsNewNumSamples:(unsigned long)arg1 timestamp:(unsigned long)arg2;
-- (BOOL)store:(char *)arg1 numSamples:(unsigned long)arg2 timestamp:(unsigned long)arg3;
+- (id)initWithCapacity:(unsigned int)arg1 bytesPerFrame:(unsigned int)arg2;
+- (int)needsNewNumSamples:(unsigned int)arg1 timestamp:(unsigned int)arg2;
+- (bool)store:(char *)arg1 numSamples:(unsigned int)arg2 timestamp:(unsigned int)arg3;
 
 @end

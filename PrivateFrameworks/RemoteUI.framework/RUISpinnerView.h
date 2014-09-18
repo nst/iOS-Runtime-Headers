@@ -12,12 +12,12 @@
 
 @property RUIObjectModel * objectModel;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)objectModel;
 - (void)setObjectModel:(id)arg1;
 - (id)spinnerView;
 - (void)viewDidLayout;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

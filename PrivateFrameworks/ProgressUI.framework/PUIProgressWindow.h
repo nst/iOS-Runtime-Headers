@@ -2,40 +2,61 @@
    Image: /System/Library/PrivateFrameworks/ProgressUI.framework/ProgressUI
  */
 
-@class CAContext, CALayer;
+@class CAContext, CALayer, NSString;
 
 @interface PUIProgressWindow : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGImage { } *_appleLogo;
     CAContext *_context;
     float _currentProgress;
     float _displayOrientation;
     float _displayScale;
     } _displaySize;
-    BOOL _forceInverted;
-    BOOL _inverted;
-    float _level;
+    CALayer *_layer;
+    NSString *_pluginName;
+    CALayer *_pluginNameLayer;
     CALayer *_progressLayer;
-    float _progressWidth;
-    float _progressXDelta;
-    float _progressYDelta;
-    BOOL _showsProgressBar;
+    double _progressWidth;
+    double _progressXDelta;
+    double _progressYDelta;
+    bool_forceInverted;
+    bool_showPluginName;
+    bool_showsProgressBar;
+    bool_sideways;
+    bool_weCreatedTheContext;
+    bool_white;
 }
 
+@property(readonly) CALayer * layer;
+
++ (bool)_usesPreBoardAppearance;
++ (void)setUsesPreBoardAppearance;
+
 - (void).cxx_destruct;
+- (const char *)_appleTVProductSuffix;
+- (void)_collectDisplayInfo;
 - (void)_createContext;
-- (struct CGImage { }*)_createImageWithName:(const char *)arg1 scale:(int)arg2;
+- (struct CGImage { }*)_createImageWithName:(const char *)arg1 scale:(int)arg2 displayHeight:(int)arg3;
+- (void)_createLayer;
+- (void)_drawPluginNameLayerInContext:(struct CGContext { }*)arg1;
+- (void)_drawProgressLayerInContext:(struct CGContext { }*)arg1;
 - (void)_layoutScreen;
 - (const char *)_productSuffix;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)init;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2 forceInverted:(BOOL)arg3;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2;
-- (id)initWithProgressBarVisibility:(BOOL)arg1;
+- (id)initWithForceInverted:(bool)arg1;
+- (id)initWithOptions:(unsigned long long)arg1 contextLevel:(float)arg2 appearance:(long long)arg3;
+- (id)initWithProgressBarVisibility:(bool)arg1 context:(id)arg2;
+- (id)initWithProgressBarVisibility:(bool)arg1 createContext:(bool)arg2 contextLevel:(float)arg3 appearance:(long long)arg4;
+- (id)initWithProgressBarVisibility:(bool)arg1 level:(float)arg2 forceInverted:(bool)arg3;
+- (id)initWithProgressBarVisibility:(bool)arg1 level:(float)arg2;
+- (id)initWithProgressBarVisibility:(bool)arg1;
+- (id)layer;
+- (void)setPluginName:(id)arg1;
 - (void)setProgressValue:(float)arg1;
-- (void)setVisible:(BOOL)arg1;
+- (void)setVisible:(bool)arg1;
 
 @end

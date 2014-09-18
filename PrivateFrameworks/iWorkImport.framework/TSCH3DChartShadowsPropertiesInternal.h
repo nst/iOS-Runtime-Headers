@@ -40,8 +40,8 @@
                 float p; 
             } ; 
         } mMax; 
+    boolmEnabled;
     TSCH3DCamera *mCamera;
-    BOOL mEnabled;
     TSCH3DDataBufferResource *mFadecoords;
     TSCH3DDataBufferResource *mQuad;
     NSObject<TSCH3DShadowsRenderer> *mRenderer;
@@ -50,29 +50,29 @@
 }
 
 @property(retain) TSCH3DCamera * camera;
-@property BOOL enabled;
+@property bool enabled;
 @property(retain) TSCH3DDataBufferResource * fadecoords;
 @property(retain) TSCH3DDataBufferResource * quad;
 @property(readonly) NSObject<TSCH3DShadowsRenderer> * renderer;
-@property(readonly) BOOL shadowPlaneValid;
+@property(readonly) bool shadowPlaneValid;
 @property(retain) TSCH3DDataBufferResource * texcoords;
 
 - (id).cxx_construct;
 - (id)camera;
 - (void)dealloc;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)fadecoords;
 - (id)initWithCamera:(id)arg1 renderer:(id)arg2;
 - (void)invalidate;
 - (id)quad;
 - (id)renderer;
 - (void)setCamera:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setFadecoords:(id)arg1;
 - (void)setQuad:(id)arg1;
 - (void)setTexcoords:(id)arg1;
 - (void)setupResources;
-- (BOOL)shadowPlaneValid;
+- (bool)shadowPlaneValid;
 - (id)texcoords;
 
 @end

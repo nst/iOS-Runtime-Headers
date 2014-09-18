@@ -2,49 +2,53 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSKAnnotation>, NSArray, TSCHChartDrawableInfo, TSCHSearchSelection;
+@class <TSKAnnotation>, NSArray, NSString, TSCHChartDrawableInfo, TSCHSearchSelection;
 
 @interface TSCHSearchReference : NSObject <TSKSearchReference> {
     struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL _autohideHighlight;
+        double x; 
+        double y; 
     NSArray *_findHighlights;
-    BOOL _pulseHighlight;
     <TSKAnnotation> *annotation;
+    bool_autohideHighlight;
+    bool_pulseHighlight;
     TSCHSearchSelection *mSelection;
     } searchReferencePoint;
 }
 
 @property(retain) <TSKAnnotation> * annotation;
-@property BOOL autohideHighlight;
+@property bool autohideHighlight;
 @property(readonly) TSCHChartDrawableInfo * chartInfo;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) NSArray * findHighlights;
-@property BOOL pulseHighlight;
-@property struct CGPoint { float x1; float x2; } searchReferencePoint;
+@property(readonly) unsigned long long hash;
+@property bool pulseHighlight;
+@property struct CGPoint { double x1; double x2; } searchReferencePoint;
 @property(readonly) TSCHSearchSelection * selection;
+@property(readonly) Class superclass;
 
 - (id)annotation;
-- (BOOL)autohideHighlight;
+- (bool)autohideHighlight;
 - (id)chartInfo;
-- (id)commandForReplacingWithString:(id)arg1 options:(unsigned int)arg2;
+- (id)commandForReplacingWithString:(id)arg1 options:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)findHighlights;
 - (id)initWithSelection:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isReplaceable;
+- (bool)isEqual:(id)arg1;
+- (bool)isReplaceable;
 - (id)model;
-- (BOOL)pulseHighlight;
+- (bool)pulseHighlight;
 - (id)searchReferenceEnd;
-- (id)searchReferenceForReplacingWithString:(id)arg1 options:(unsigned int)arg2 authorCreatedWithCommand:(id*)arg3;
-- (struct CGPoint { float x1; float x2; })searchReferencePoint;
+- (id)searchReferenceForReplacingWithString:(id)arg1 options:(unsigned long long)arg2 authorCreatedWithCommand:(id*)arg3;
+- (struct CGPoint { double x1; double x2; })searchReferencePoint;
 - (id)searchReferenceStart;
 - (id)selection;
 - (void)setAnnotation:(id)arg1;
-- (void)setAutohideHighlight:(BOOL)arg1;
+- (void)setAutohideHighlight:(bool)arg1;
 - (void)setFindHighlights:(id)arg1;
-- (void)setPulseHighlight:(BOOL)arg1;
-- (void)setSearchReferencePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPulseHighlight:(bool)arg1;
+- (void)setSearchReferencePoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

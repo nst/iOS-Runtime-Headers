@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChart;
+@class CHDChart, OADDrawingTheme;
 
 @interface CHAutoStyling : NSObject {
     CHDChart *mChart;
+    OADDrawingTheme *mDrawingTheme;
 }
 
-+ (id)autoStylingWithChart:(id)arg1;
++ (id)autoStylingWithChart:(id)arg1 drawingTheme:(id)arg2;
 
 - (void)dealloc;
-- (int)defaultMarkerStyleForSeriesIndex:(unsigned int)arg1;
-- (id)initWithChart:(id)arg1;
+- (int)defaultMarkerStyleForSeriesIndex:(unsigned long long)arg1;
+- (id)drawingTheme;
+- (id)initWithChart:(id)arg1 drawingTheme:(id)arg2;
 - (void)replaceStrokeAndFillInEmptyMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2;
 
 @end

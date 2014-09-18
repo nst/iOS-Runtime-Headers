@@ -5,53 +5,53 @@
 @class CALayer, TSDUserDefinedGuide;
 
 @interface TSDAlignmentGuide : TSDAbstractGuide {
-    BOOL mDynamic;
-    float mEnd;
-    BOOL mInfinite;
+    boolmDynamic;
+    boolmInfinite;
+    boolmSnapsToMax;
+    boolmSnapsToMid;
+    boolmSnapsToMin;
+    double mEnd;
     CALayer *mLayer;
     TSDUserDefinedGuide *mModelGuide;
-    BOOL mSnapsToMax;
-    BOOL mSnapsToMid;
-    BOOL mSnapsToMin;
-    float mStart;
+    double mStart;
     int mType;
 }
 
-@property BOOL dynamic;
-@property float end;
+@property bool dynamic;
+@property double end;
 @property int guideType;
-@property BOOL infinite;
+@property bool infinite;
 @property(retain) TSDUserDefinedGuide * modelGuide;
-@property BOOL snapsToMax;
-@property BOOL snapsToMid;
-@property BOOL snapsToMin;
-@property float start;
+@property bool snapsToMax;
+@property bool snapsToMid;
+@property bool snapsToMin;
+@property double start;
 
-- (BOOL)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (bool)canBeSnappedToByEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)dealloc;
-- (float)distanceToPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)dynamic;
-- (float)end;
+- (double)distanceToPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)dynamic;
+- (double)end;
 - (int)guideType;
-- (BOOL)infinite;
+- (bool)infinite;
 - (id)init;
-- (id)initWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 edge:(int)arg2;
-- (id)initWithType:(int)arg1 offset:(float)arg2;
+- (id)initWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 edge:(int)arg2;
+- (id)initWithType:(int)arg1 offset:(double)arg2;
 - (id)layerWithICC:(id)arg1;
 - (id)modelGuide;
-- (void)setDynamic:(BOOL)arg1;
-- (void)setEnd:(float)arg1;
+- (void)setDynamic:(bool)arg1;
+- (void)setEnd:(double)arg1;
 - (void)setGuideType:(int)arg1;
-- (void)setInfinite:(BOOL)arg1;
+- (void)setInfinite:(bool)arg1;
 - (void)setModelGuide:(id)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setSnapsToMax:(BOOL)arg1;
-- (void)setSnapsToMid:(BOOL)arg1;
-- (void)setSnapsToMin:(BOOL)arg1;
-- (void)setStart:(float)arg1;
-- (BOOL)snapsToMax;
-- (BOOL)snapsToMid;
-- (BOOL)snapsToMin;
-- (float)start;
+- (void)setOffset:(double)arg1;
+- (void)setSnapsToMax:(bool)arg1;
+- (void)setSnapsToMid:(bool)arg1;
+- (void)setSnapsToMin:(bool)arg1;
+- (void)setStart:(double)arg1;
+- (bool)snapsToMax;
+- (bool)snapsToMid;
+- (bool)snapsToMin;
+- (double)start;
 
 @end

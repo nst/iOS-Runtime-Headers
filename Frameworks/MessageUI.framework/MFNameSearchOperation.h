@@ -2,9 +2,25 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFNameSearchOperation : MFContactsSearchOperation {
+@class MFComposeRecipientOriginContext, NSMutableArray, NSString;
+
+@interface MFNameSearchOperation : MFContactsSearchOperation <ABPredicateDelegate> {
+    MFComposeRecipientOriginContext *_originContext;
+    NSMutableArray *_results;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) MFComposeRecipientOriginContext * originContext;
+@property(readonly) Class superclass;
+
++ (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4 properties:(id)arg5;
+
+- (void)dealloc;
 - (void)main;
+- (id)originContext;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
+- (bool)predicateShouldContinue:(id)arg1;
 
 @end

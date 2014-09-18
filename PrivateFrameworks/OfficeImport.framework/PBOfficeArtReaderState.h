@@ -8,6 +8,7 @@
     PBPresentationReaderState *mPresentationState;
 }
 
+- (id)drawableOnTgtSlideForShapeId:(int)arg1;
 - (id)initWithPresentationState:(id)arg1;
 - (id)presentationState;
 

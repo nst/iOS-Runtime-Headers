@@ -14,9 +14,13 @@
     SKUIRedeemTextField *_textField;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIRedeemCameraViewDelegate> * delegate;
-@property BOOL enabled;
+@property(copy,readonly) NSString * description;
+@property bool enabled;
+@property(readonly) unsigned long long hash;
 @property(retain) UIImage * image;
+@property(readonly) Class superclass;
 @property(copy) NSString * text;
 
 - (void).cxx_destruct;
@@ -26,20 +30,20 @@
 - (void)_termsButtonAction:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)image;
 - (id)initWithClientContext:(id)arg1;
 - (void)keyboardDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)showKeyboard;
 - (void)start;
 - (id)text;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
 
 @end

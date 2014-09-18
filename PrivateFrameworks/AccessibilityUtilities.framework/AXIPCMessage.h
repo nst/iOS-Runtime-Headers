@@ -20,7 +20,7 @@
 @property(readonly) NSString * senderBundleId;
 
 + (id)archivedMessageFromData:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct { unsigned int x1[8]; })auditToken;
 - (unsigned int)clientPort;

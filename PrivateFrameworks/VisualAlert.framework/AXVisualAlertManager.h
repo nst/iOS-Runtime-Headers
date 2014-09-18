@@ -2,46 +2,47 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@class <AXCameraTorchManager>, AXNotificationHandler, AXTimer, NSArray, NSDictionary;
+@class <AXCameraTorchManager>, AXNotificationHandler, AXTimer, NSArray, NSDictionary, NSMutableArray;
 
 @interface AXVisualAlertManager : NSObject {
     NSDictionary *_activePattern;
-    unsigned int _activePatternCursor;
-    unsigned int _alertTypes;
+    unsigned long long _activePatternCursor;
+    unsigned long long _alertTypes;
+    NSMutableArray *_bulletins;
     <AXCameraTorchManager> *_cameraTorchManager;
-    BOOL _captureSessionRunning;
     AXNotificationHandler *_deviceLockStateChangedNotificationHandler;
-    BOOL _isDeviceLocked;
-    BOOL _isQuietModeEnabled;
-    BOOL _isTorchEnabledInControlCenter;
     NSArray *_notificationHandlers;
     NSDictionary *_patternToUseForVisualAlertAfterCaptureSessionStopsRunning;
     NSDictionary *_patterns;
-    BOOL _shouldRepeatPattern;
-    BOOL _skipAutomaticStopOnUserInteraction;
     AXTimer *_timer;
-    BOOL _torchDeviceOn;
-    BOOL _torchDeviceOpen;
     AXTimer *_torchForceShutdownTimer;
     AXNotificationHandler *_torchInControlCenterWasEnabledNotificationHandler;
-    unsigned int _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
-    BOOL _videoConferenceCallRinging;
+    unsigned long long _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
+    bool_captureSessionRunning;
+    bool_isDeviceLocked;
+    bool_isQuietModeEnabled;
+    bool_isTorchEnabledInControlCenter;
+    bool_shouldRepeatPattern;
+    bool_skipAutomaticStopOnUserInteraction;
+    bool_torchDeviceOn;
+    bool_torchDeviceOpen;
+    bool_videoConferenceCallRinging;
 }
 
 @property(setter=_setActivePattern:,retain) NSDictionary * _activePattern;
-@property(readonly) NSDictionary * _patterns;
-@property(getter=_isTorchDeviceOn,setter=_setTorchDeviceOn:) BOOL _torchDeviceOn;
-@property(getter=_isTorchDeviceOpen,setter=_setTorchDeviceOpen:) BOOL _torchDeviceOpen;
-@property(setter=_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:) unsigned int _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
+@property(retain,readonly) NSDictionary * _patterns;
+@property(getter=_isTorchDeviceOn,setter=_setTorchDeviceOn:) bool _torchDeviceOn;
+@property(getter=_isTorchDeviceOpen,setter=_setTorchDeviceOpen:) bool _torchDeviceOpen;
+@property(setter=_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:) unsigned long long _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
 
 + (void)initialize;
 + (id)sharedVisualAlertManager;
 
 - (id)_activePattern;
-- (void)_beginVisualAlertForType:(unsigned int)arg1 repeat:(BOOL)arg2 skipAutomaticStopOnUserInteraction:(BOOL)arg3;
-- (void)_beginVisualAlertForType:(unsigned int)arg1 repeat:(BOOL)arg2;
+- (void)_beginVisualAlertForType:(unsigned long long)arg1 repeat:(bool)arg2 skipAutomaticStopOnUserInteraction:(bool)arg3;
+- (void)_beginVisualAlertForType:(unsigned long long)arg1 repeat:(bool)arg2;
 - (void)_endVisualAlert;
-- (void)_handleBeginVisualAlertForAlarmWithSound:(BOOL)arg1;
+- (void)_handleBeginVisualAlertForAlarmWithSound:(bool)arg1;
 - (void)_handleBeginVisualAlertForIncomingCall;
 - (void)_handleBeginVisualAlertForIncomingVideoConferenceCall;
 - (void)_handleCaptureSessionDidStartRunning;
@@ -62,27 +63,30 @@
 - (void)_handleVisualAlertForIncomingMessage;
 - (void)_handleVisualAlertForRegularNotification;
 - (void)_handleVolumeChanged;
-- (BOOL)_hasVideoConferenceCameraTorchManager;
+- (bool)_hasVideoConferenceCameraTorchManager;
 - (void)_insertCustomLogicForSystemWideServer;
-- (BOOL)_isTorchDeviceOn;
-- (BOOL)_isTorchDeviceOpen;
-- (BOOL)_isTorchEnabledInControlCenter;
+- (bool)_isTorchDeviceOn;
+- (bool)_isTorchDeviceOpen;
+- (bool)_isTorchEnabledInControlCenter;
 - (id)_normalizedStrobePatternForOriginalPattern:(id)arg1;
 - (id)_patterns;
 - (void)_processNextVisualAlertComponent;
 - (void)_setActivePattern:(id)arg1;
-- (void)_setTorchDeviceOn:(BOOL)arg1;
-- (void)_setTorchDeviceOpen:(BOOL)arg1;
-- (void)_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:(unsigned int)arg1;
-- (BOOL)_shouldHandleVisualAlertsForVideoConferenceCallsInConferenceFramework;
-- (void)_startForAlertTypes:(unsigned int)arg1 cameraTorchManager:(id)arg2;
+- (void)_setTorchDeviceOn:(bool)arg1;
+- (void)_setTorchDeviceOpen:(bool)arg1;
+- (void)_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:(unsigned long long)arg1;
+- (bool)_shouldHandleVisualAlertsForVideoConferenceCallsInConferenceFramework;
+- (void)_startForAlertTypes:(unsigned long long)arg1 cameraTorchManager:(id)arg2;
 - (void)_stop;
-- (BOOL)_supportsVisualAlertsForVideoConferenceCalls;
-- (unsigned int)_typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
+- (bool)_supportsVisualAlertsForVideoConferenceCalls;
+- (unsigned long long)_typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
+- (void)addBulletin:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)existingBulletinForBulletin:(id)arg1;
 - (id)init;
-- (void)startForAlertTypes:(unsigned int)arg1 cameraTorchManager:(id)arg2;
+- (void)removeBulletin:(id)arg1;
+- (void)startForAlertTypes:(unsigned long long)arg1 cameraTorchManager:(id)arg2;
 - (void)stop;
 
 @end

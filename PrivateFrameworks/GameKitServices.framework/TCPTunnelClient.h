@@ -27,8 +27,8 @@
     int _connectState;
     int _connectedFD;
     unsigned short _currentMsgType;
-    int _currentPadding;
-    int _currentlyReadingDataGoalLength;
+    long long _currentPadding;
+    long long _currentlyReadingDataGoalLength;
     NSMutableData *_currentlyReadingMessage;
     id _destroyHandler;
     float _fTimeout;
@@ -60,13 +60,13 @@
 - (id)bindingResponseHandler;
 - (void)closeTunnelSocket;
 - (unsigned int)connectionType;
-- (void)createDispatchTimer:(float)arg1 withDetailedError:(int)arg2;
+- (void)createDispatchTimer:(float)arg1 withDetailedError:(long long)arg2;
 - (void)dealloc;
 - (void)destroyDispatchTimer;
 - (id)destroyHandler;
 - (void)finalize;
-- (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(unsigned long)arg2 relayType:(unsigned char)arg3 errorCode:(int*)arg4;
-- (BOOL)isTunnelSocketClosed;
+- (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(unsigned int)arg2 relayType:(unsigned char)arg3 errorCode:(int*)arg4;
+- (bool)isTunnelSocketClosed;
 - (id)participantID;
 - (void)processSocketRead;
 - (void)processSocketReadSSL;
@@ -74,11 +74,11 @@
 - (id)receiveHandler;
 - (void)receivedControlData:(id)arg1;
 - (void)receivedSSLConnectionData:(id)arg1 recordType:(unsigned short)arg2;
-- (void)reportErrorAndTerminate:(int)arg1 detail:(int)arg2 returnCode:(int)arg3 description:(id)arg4 reason:(id)arg5;
+- (void)reportErrorAndTerminate:(long long)arg1 detail:(long long)arg2 returnCode:(long long)arg3 description:(id)arg4 reason:(id)arg5;
 - (void)resetConnection;
-- (BOOL)sendAllocateMsg:(id*)arg1;
-- (BOOL)sendChannelBindingMsgWithDict:(id)arg1 error:(id*)arg2;
-- (BOOL)sendRefreshMsg:(unsigned int)arg1 error:(id*)arg2;
+- (bool)sendAllocateMsg:(id*)arg1;
+- (bool)sendChannelBindingMsgWithDict:(id)arg1 error:(id*)arg2;
+- (bool)sendRefreshMsg:(unsigned int)arg1 error:(id*)arg2;
 - (void)sendTCPData:(const void*)arg1 bufSize:(int)arg2;
 - (void)setAllocationResponseHandler:(id)arg1;
 - (void)setBindingResponseHandler:(id)arg1;
@@ -88,7 +88,7 @@
 - (void)setTerminationHandler:(id)arg1;
 - (id)terminationHandler;
 - (void)unbindChannel;
-- (void)vcArg:(id)arg1 sendControlData:(id)arg2 isTypeSSL:(BOOL)arg3 withTimeout:(float)arg4 withDetail:(int)arg5;
+- (void)vcArg:(id)arg1 sendControlData:(id)arg2 isTypeSSL:(bool)arg3 withTimeout:(float)arg4 withDetail:(long long)arg5;
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
 
 @end

@@ -2,20 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSSet, NSString;
 
 @interface SKUIItemList : NSObject <SKUICacheCoding, NSCopying> {
     NSMutableArray *_items;
     NSString *_seeAllTitle;
     NSString *_seeAllURLString;
     NSString *_title;
+    NSSet *_unavailableItemIdentifiers;
 }
 
 @property(readonly) NSMutableDictionary * cacheRepresentation;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * items;
 @property(copy) NSString * seeAllTitle;
 @property(copy) NSString * seeAllURLString;
+@property(readonly) Class superclass;
 @property(copy) NSString * title;
+@property(copy) NSSet * unavailableItemIdentifiers;
 
 - (void).cxx_destruct;
 - (void)addItem:(id)arg1;
@@ -23,6 +29,7 @@
 - (id)cacheRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCacheRepresentation:(id)arg1;
+- (bool)isUnavailableItemIdentifier:(id)arg1;
 - (id)items;
 - (void)removeItemsAtIndexes:(id)arg1;
 - (id)seeAllTitle;
@@ -31,6 +38,8 @@
 - (void)setSeeAllTitle:(id)arg1;
 - (void)setSeeAllURLString:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setUnavailableItemIdentifiers:(id)arg1;
 - (id)title;
+- (id)unavailableItemIdentifiers;
 
 @end

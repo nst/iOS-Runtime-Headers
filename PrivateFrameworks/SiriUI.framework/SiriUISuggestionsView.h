@@ -2,72 +2,75 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUISuggestionsViewDelegate>, NSArray, NSMutableOrderedSet, NSString, NSTimer, UIColor, UILabel;
+@class <SiriUISuggestionsViewDelegate>, NSArray, NSMutableOrderedSet, NSString, NSTimer, SiriUIAcousticIDSpinner, UIColor, UILabel;
 
 @interface SiriUISuggestionsView : UIView {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
+    SiriUIAcousticIDSpinner *_acousticIDSpinner;
     } _contentOffset;
     <SiriUISuggestionsViewDelegate> *_delegate;
-    BOOL _firstSuggestionPresentation;
     UILabel *_headerLabel;
     NSString *_headerText;
     UILabel *_oldHeaderLabel;
     NSArray *_oldSuggestionLabels;
-    int _orientation;
+    long long _orientation;
     NSMutableOrderedSet *_pendedSuggestions;
-    UILabel *_subHeaderLabel;
-    NSString *_subHeaderText;
+    UILabel *_subheaderLabel;
+    NSString *_subheaderText;
     NSArray *_suggestionLabels;
     UIColor *_textColor;
     NSTimer *_updateSuggestionsTimer;
+    bool_firstSuggestionPresentation;
 }
 
-@property struct CGPoint { float x1; float x2; } contentOffset;
+@property struct CGPoint { double x1; double x2; } contentOffset;
 @property <SiriUISuggestionsViewDelegate> * delegate;
 @property(copy) NSString * headerText;
-@property int orientation;
-@property(copy) NSString * subHeaderText;
+@property long long orientation;
+@property(copy) NSString * subheaderText;
 @property(copy) UIColor * textColor;
 
 - (void).cxx_destruct;
 - (void)_animateHeaderIn;
 - (void)_animateHeaderOut;
-- (void)_animateInSuggestionAtIndex:(unsigned int)arg1;
-- (void)_animateOutSuggestionAtIndex:(unsigned int)arg1;
-- (float)_headerFontSize;
-- (float)_headerLabelDistanceToTop;
-- (float)_headerLineHeight;
-- (float)_headerToSubHeaderOffset;
-- (BOOL)_isPortrait;
-- (void)_loadSubHeaderViewIfNeeded;
+- (void)_animateInSuggestionAtIndex:(unsigned long long)arg1;
+- (void)_animateOutSuggestionAtIndex:(unsigned long long)arg1;
+- (double)_headerFontSize;
+- (double)_headerToSubheaderOffset;
+- (int)_heightType;
+- (bool)_isPortrait;
+- (void)_loadSubheaderViewIfNeeded;
 - (void)_loadSuggestionsViewsIfNeeded;
+- (unsigned long long)_numberOfSuggestionsToDisplay;
+- (void)_reallyShowAcousticIDSpinner;
 - (void)_setSuggestionTexts:(id)arg1;
-- (float)_subHeaderFontSize;
-- (float)_suggestionFontSize;
-- (float)_suggestionLabelDistanceToTop;
-- (float)_suggestionLineHeight;
-- (float)_suggestionSpacing;
+- (double)_subheaderFontSize;
+- (double)_suggestionFontSize;
+- (double)_suggestionSpacing;
 - (void)_updateSuggestions;
+- (double)_updateSuggestionsDelay;
+- (void)acousticIDSpinnerDidHide:(id)arg1;
 - (void)animateOutWithCompletion:(id)arg1;
 - (void)clearCurrentSuggestions;
-- (struct CGPoint { float x1; float x2; })contentOffset;
+- (struct CGPoint { double x1; double x2; })contentOffset;
 - (id)delegate;
 - (id)headerText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)hideAcousticIDSpinner;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned int)maxSuggestions;
-- (int)orientation;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (long long)orientation;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderText:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setSubHeaderText:(id)arg1;
+- (void)setOrientation:(long long)arg1;
+- (void)setSubheaderText:(id)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)showAcousticIDSpinner;
 - (void)startSuggesting;
 - (void)stopSuggesting;
-- (id)subHeaderText;
+- (id)subheaderText;
 - (id)textColor;
 
 @end

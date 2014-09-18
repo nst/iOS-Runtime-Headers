@@ -6,43 +6,47 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
+@class NSObject<OS_dispatch_queue>, NSString, NSTimer;
 
 @interface TLAlert : NSObject {
+    NSTimer *_completionFallbackTimer;
     id _completionHandler;
-    BOOL _shouldOverrideMasterSwitches;
     NSObject<OS_dispatch_queue> *_targetQueue;
     NSString *_toneIdentifier;
     int _type;
     NSString *_vibrationIdentifier;
+    bool_shouldOverrideMasterSwitches;
 }
 
+@property(setter=_setCompletionFallbackTimer:,retain) NSTimer * _completionFallbackTimer;
 @property(setter=_setCompletionHandler:,copy) id _completionHandler;
-@property(setter=_setShouldOverrideMasterSwitches:) BOOL _shouldOverrideMasterSwitches;
-@property(setter=_setTargetQueue:,retain) NSObject<OS_dispatch_queue> * _targetQueue;
+@property(setter=_setShouldOverrideMasterSwitches:) bool _shouldOverrideMasterSwitches;
+@property(setter=_setTargetQueue:) NSObject<OS_dispatch_queue> * _targetQueue;
 @property(copy) NSString * toneIdentifier;
 @property int type;
 @property(copy) NSString * vibrationIdentifier;
 
-+ (void)_playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 shouldOverrideMasterSwitches:(BOOL)arg4;
++ (void)_playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 shouldOverrideMasterSwitches:(bool)arg4;
 + (void)playToneAndVibrationForType:(int)arg1 accountIdentifier:(id)arg2;
 + (void)playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 + (void)playToneAndVibrationForType:(int)arg1;
 
+- (id)_completionFallbackTimer;
 - (id)_completionHandler;
+- (void)_setCompletionFallbackTimer:(id)arg1;
 - (void)_setCompletionHandler:(id)arg1;
-- (void)_setShouldOverrideMasterSwitches:(BOOL)arg1;
+- (void)_setShouldOverrideMasterSwitches:(bool)arg1;
 - (void)_setTargetQueue:(id)arg1;
 - (void)_setToneIdentifier:(id)arg1;
 - (void)_setType:(int)arg1;
 - (void)_setVibrationIdentifier:(id)arg1;
-- (BOOL)_shouldOverrideMasterSwitches;
+- (bool)_shouldOverrideMasterSwitches;
 - (id)_targetQueue;
 - (void)dealloc;
 - (id)initWithType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)initWithType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (id)initWithType:(int)arg1;
-- (BOOL)playWithCompletionHandler:(id)arg1 targetQueue:(id)arg2;
+- (bool)playWithCompletionHandler:(id)arg1 targetQueue:(id)arg2;
 - (void)stop;
 - (id)toneIdentifier;
 - (int)type;

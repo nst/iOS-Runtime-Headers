@@ -6,20 +6,20 @@
 
 @interface UIWebPlugInView : WAKView {
     CALayer *_hostingLayer;
-    BOOL _isFullScreen;
-    BOOL _isMapViewPlugIn;
-    BOOL _isQuickTimePlugIn;
-    BOOL _isiAdPlugIn;
     struct __CFRunLoopObserver { } *_mainRunLoopDrawObserver;
-    BOOL _parentedInLayer;
     UIView *_uiView;
     UIWebDocumentView *_webView;
+    bool_isFullScreen;
+    bool_isMapViewPlugIn;
+    bool_isQuickTimePlugIn;
+    bool_isiAdPlugIn;
+    bool_parentedInLayer;
 }
 
-@property BOOL isMapViewPlugIn;
-@property BOOL isQuickTimePlugIn;
-@property BOOL isiAdPlugIn;
-@property(getter=isParentedInLayer) BOOL parentedInLayer;
+@property bool isMapViewPlugIn;
+@property bool isQuickTimePlugIn;
+@property bool isiAdPlugIn;
+@property(getter=isParentedInLayer) bool parentedInLayer;
 
 - (void)_attachPluginLayerOnMainThread;
 - (void)_connectPluginLayers;
@@ -30,15 +30,15 @@
 - (void)attachPluginLayer;
 - (void)dealloc;
 - (void)detachPluginLayer;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithWebView:(id)arg1 plugInView:(id)arg2;
 - (void)invalidateGState;
-- (BOOL)isMapViewPlugIn;
-- (BOOL)isParented;
-- (BOOL)isParentedInLayer;
-- (BOOL)isQuickTimePlugIn;
-- (BOOL)isiAdPlugIn;
+- (bool)isMapViewPlugIn;
+- (bool)isParented;
+- (bool)isParentedInLayer;
+- (bool)isQuickTimePlugIn;
+- (bool)isiAdPlugIn;
 - (void)layout;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)mouseDown:(id)arg1;
@@ -47,19 +47,19 @@
 - (id)plugInView;
 - (id)pluginLayer;
 - (void)reshape;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setIsMapViewPlugIn:(BOOL)arg1;
-- (void)setIsQuickTimePlugIn:(BOOL)arg1;
-- (void)setIsiAdPlugIn:(BOOL)arg1;
-- (void)setParentedInLayer:(BOOL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setIsMapViewPlugIn:(bool)arg1;
+- (void)setIsQuickTimePlugIn:(bool)arg1;
+- (void)setIsiAdPlugIn:(bool)arg1;
+- (void)setParentedInLayer:(bool)arg1;
 - (void)setWebView:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)webPlugInDestroy;
 - (void)webPlugInInitialize;
 - (void)webPlugInStart;
 - (void)webPlugInStop;
-- (BOOL)willProvidePluginLayer;
+- (bool)willProvidePluginLayer;
 
 @end

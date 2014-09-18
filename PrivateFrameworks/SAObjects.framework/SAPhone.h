@@ -7,11 +7,15 @@
 @interface SAPhone : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSNumber * favoriteFacetime;
 @property(copy) NSNumber * favoriteFacetimeAudio;
 @property(copy) NSNumber * favoriteVoice;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
 @property(copy) NSString * number;
+@property(readonly) Class superclass;
 
 + (id)phone;
 + (id)phoneWithDictionary:(id)arg1 context:(id)arg2;

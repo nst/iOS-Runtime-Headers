@@ -2,26 +2,26 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIBarButtonItem;
+@class TKVibrationPickerViewController, UIBarButtonItem;
 
 @interface ABVibrationPickerViewController : ABPickerViewController {
-    BOOL _canEnterEditingMode;
     UIBarButtonItem *_saveButton;
-    id _vibrationPickerViewController;
+    TKVibrationPickerViewController *_vibrationPickerViewController;
+    bool_canEnterEditingMode;
 }
 
 @property(setter=_setSaveButton:,retain) UIBarButtonItem * _saveButton;
-@property(readonly) id vibrationPickerViewController;
+@property(retain,readonly) TKVibrationPickerViewController * vibrationPickerViewController;
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1;
 - (id)_saveButton;
 - (void)_setSaveButton:(id)arg1;
 - (void)_vibrationSaveButtonClicked:(id)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
+- (double)ab_heightToFitForViewInPopoverView;
 - (void)dealloc;
 - (id)initWithAlertType:(int)arg1;
 - (void)loadView;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (id)vibrationPickerViewController;
 

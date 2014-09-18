@@ -10,15 +10,15 @@
 - (int)deprecated3DShadowSpecificProperty;
 - (id)genericToSpecificPropertyMap;
 - (int)labelOrientation;
-- (float)maxDepthRatio;
+- (double)maxDepthRatio;
 - (Class)presetImagerClass;
-- (float)sageMaxDepthRatio;
+- (double)sageMaxDepthRatio;
 - (Class)stageClass;
 - (id)supportedAxisScales;
-- (BOOL)supportsConnectingLines;
-- (BOOL)supportsElementChunking;
-- (BOOL)supportsInterSetDepthGap;
-- (BOOL)supportsSymbolOverhang;
+- (bool)supportsConnectingLines;
+- (bool)supportsElementChunking;
+- (bool)supportsInterSetDepthGap;
+- (bool)supportsSymbolOverhang;
 - (id)userInterfaceName;
 - (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
 

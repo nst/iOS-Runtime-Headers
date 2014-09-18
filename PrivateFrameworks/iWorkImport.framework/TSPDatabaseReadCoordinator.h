@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL, TSPDatabase, TSPDocumentResourceDataProvider, TSPFinalizeHandlerQueue, TSPObjectContext;
+@class NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, NSUUID, TSPDatabase, TSPDocumentResourceDataProvider, TSPFinalizeHandlerQueue, TSPObjectContext;
 
 @interface TSPDatabaseReadCoordinator : TSPReadCoordinatorBase <TSPDatabaseReaderDelegate, TSPReadCoordinator> {
     NSMutableDictionary *_appRelativeDataDictionary;
     NSObject<OS_dispatch_queue> *_appRelativeDataQueue;
+    NSUUID *_baseObjectUUID;
     TSPObjectContext *_context;
     NSMapTable *_dataDictionary;
     NSObject<OS_dispatch_queue> *_dataQueue;
@@ -18,12 +19,19 @@
     NSURL *_packageURL;
 }
 
-@property(readonly) BOOL isCrossAppPaste;
-@property(readonly) BOOL isCrossDocumentPaste;
-@property(readonly) BOOL isFromPasteboard;
-@property(readonly) BOOL isReadingFromDocument;
+@property(readonly) NSUUID * baseObjectUUID;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long fileFormatVersion;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isCrossAppPaste;
+@property(readonly) bool isCrossDocumentPaste;
+@property(readonly) bool isFromPasteboard;
+@property(readonly) bool isReadingFromDocument;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)baseObjectUUID;
 - (id)context;
 - (id)createUpgradedOldAppBundleResourcePath:(id)arg1;
 - (id)dataForAppRelativePath:(id)arg1 filename:(id)arg2;
@@ -35,16 +43,18 @@
 - (void)didReferenceExternalObject:(id)arg1 withIdentifier:(long long)arg2;
 - (void)didUpdateLazyReferenceDelegate:(id)arg1;
 - (id)documentResourceEntryForAppRelativePath:(id)arg1;
-- (BOOL)endReading;
-- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(BOOL)arg3;
+- (bool)endReading;
+- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(bool)arg3;
+- (unsigned long long)fileFormatVersion;
 - (id)init;
 - (id)initWithContext:(id)arg1 packageURL:(id)arg2 finalizeHandlerQueue:(id)arg3 documentResourceDataProvider:(id)arg4 error:(id*)arg5;
-- (BOOL)isReadingFromDocument;
+- (bool)isReadingFromDocument;
 - (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
 - (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id)arg2;
-- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
-- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
+- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(bool)arg4 allowUnknownObject:(bool)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
+- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(bool)arg3 allowUnknownObject:(bool)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
+- (void)reader:(id)arg1 didUnarchiveObject:(id)arg2;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
-- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(BOOL)arg2;
+- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(bool)arg2;
 
 @end

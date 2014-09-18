@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, SAWeatherCondition;
+@class NSNumber, NSString, SAWeatherCondition;
 
 @interface SAWeatherForecast : AceObject <SAAceSerializable> {
 }
 
 @property(copy) NSNumber * chanceOfPrecipitation;
 @property(retain) SAWeatherCondition * condition;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSNumber * isUserRequested;
+@property(readonly) Class superclass;
 @property(copy) NSNumber * timeIndex;
 
 + (id)forecast;

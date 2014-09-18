@@ -7,24 +7,28 @@
 @interface PTSPicker : UIView <UITableViewDelegate, UITableViewDataSource, PTSHUDControl, _UISettingsKeyPathObserver> {
     int _alignment;
     NSArray *_choices;
-    BOOL _enabled;
     _UISettings *_settings;
     NSArray *_subviewConstraints;
     UITableView *_tableView;
     UILabel *_titleLabel;
     NSString *_valueKeyPath;
+    bool_enabled;
 }
 
 @property int alignment;
 @property(copy) NSArray * choices;
-@property BOOL enabled;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool enabled;
+@property(readonly) unsigned long long hash;
 @property _UISettings * settings;
 @property(retain) NSArray * subviewConstraints;
+@property(readonly) Class superclass;
 @property(retain) UITableView * tableView;
 @property(retain) UILabel * titleLabel;
 @property(copy) NSString * valueKeyPath;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultFrame;
 + (id)picker;
 + (id)pickerForSettings:(id)arg1 valueKeyPath:(id)arg2 title:(id)arg3 choices:(id)arg4;
 
@@ -32,16 +36,16 @@
 - (int)alignment;
 - (id)choices;
 - (void)dealloc;
-- (BOOL)enabled;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (bool)enabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)makeTableView;
 - (id)makeTitleLabel;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setAlignment:(int)arg1;
 - (void)setChoices:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setSelection:(id)arg1;
 - (void)setSettings:(id)arg1 valueKeyPath:(id)arg2;
 - (void)setSettings:(id)arg1;
@@ -54,8 +58,8 @@
 - (id)subviewConstraints;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
 - (id)titleLabel;

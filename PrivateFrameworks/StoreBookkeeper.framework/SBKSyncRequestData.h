@@ -4,22 +4,17 @@
 
 @class SBKSyncTransaction;
 
-@interface SBKSyncRequestData : NSObject {
-    SBKSyncTransaction *_transaction;
+@interface SBKSyncRequestData : SBKRequestData {
 }
 
 @property(readonly) SBKSyncTransaction * transaction;
 
-+ (id)serializablePropertyListPayloadWithTransaction:(id)arg1;
-
-- (void).cxx_destruct;
-- (BOOL)_needsConflictDetection;
+- (bool)_needsConflictDetection;
 - (id)_serializableConflictDetectionOrdinalForKey:(id)arg1;
 - (id)_serializableConflictDetectionValue;
 - (id)_serializableDeleteItemPayloadDictionaryForKey:(id)arg1;
 - (id)_serializableUpdateItemPayloadDictionaryForKey:(id)arg1;
-- (id)initWithTransaction:(id)arg1;
 - (id)serializableRequestBodyPropertyList;
-- (id)transaction;
+- (id)syncTransaction;
 
 @end

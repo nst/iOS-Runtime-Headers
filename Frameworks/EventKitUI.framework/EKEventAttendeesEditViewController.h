@@ -2,24 +2,35 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEventAttendeePicker, NSArray;
+@class EKEvent, EKEventAttendeePicker, NSArray;
 
 @interface EKEventAttendeesEditViewController : EKEditItemViewController {
+    EKEvent *_event;
     EKEventAttendeePicker *_picker;
+    bool_cancelTapped;
+    bool_disableShowingButtons;
 }
 
 @property(copy) NSArray * attendees;
+@property bool disableShowingButtons;
+
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (id)_attendeeFromRecipient:(id)arg1;
+- (void)_cancelTapped:(id)arg1;
+- (void)_doneTapped:(id)arg1;
 - (id)_firstInvalidRecipientAddress;
 - (id)_recipientFromAttendee:(id)arg1;
 - (id)attendees;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)disableShowingButtons;
+- (bool)editItemShouldBeAskedForInjectableViewController;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;
+- (bool)presentModally;
 - (void)setAttendees:(id)arg1;
+- (void)setDisableShowingButtons:(bool)arg1;
 - (void)setSearchAccountID:(id)arg1;
-- (BOOL)validateAllowingAlert:(BOOL)arg1;
+- (bool)validateAllowingAlert:(bool)arg1;
 - (void)viewDidLoad;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

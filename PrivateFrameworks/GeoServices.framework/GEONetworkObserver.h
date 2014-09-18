@@ -6,11 +6,11 @@
 
 @interface GEONetworkObserver : NSObject {
     NSLock *_lock;
-    BOOL _networkNotified;
     struct __CFDictionary { } *_networkObservers;
     struct __SCNetworkReachability { } *_networkReach;
     unsigned int _networkReachability;
-    BOOL _networkReachable;
+    bool_networkNotified;
+    bool_networkReachable;
 }
 
 + (id)sharedNetworkObserver;
@@ -22,8 +22,8 @@
 - (void)dealloc;
 - (id)init;
 - (void)initializeIfNecessary;
-- (BOOL)isCellConnection;
-- (BOOL)isNetworkReachable;
+- (bool)isCellConnection;
+- (bool)isNetworkReachable;
 - (void)removeNetworkReachableObserver:(id)arg1;
 
 @end

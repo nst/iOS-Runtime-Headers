@@ -2,35 +2,40 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUIAceObjectViewControllerDelegate>, AceObject;
+@class <SiriUIAceObjectViewControllerDelegate>, AceObject, NSString;
 
 @interface SiriUIAceObjectViewController : UIViewController <SiriUIViewController> {
     AceObject *_aceObject;
     <SiriUIAceObjectViewControllerDelegate> *_delegate;
-    BOOL _virgin;
+    bool_virgin;
 }
 
 @property(retain) AceObject * aceObject;
+@property(copy,readonly) NSString * debugDescription;
 @property <SiriUIAceObjectViewControllerDelegate> * delegate;
-@property(getter=isVirgin,readonly) BOOL virgin;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(getter=isVirgin,readonly) bool virgin;
 
 - (void).cxx_destruct;
-- (float)_insertionAnimatedZPosition;
-- (int)_insertionAnimation;
-- (int)_pinAnimationType;
+- (void)_aceObjectViewControllerWillBeRemoved;
+- (double)_insertionAnimatedZPosition;
+- (long long)_insertionAnimation;
+- (long long)_pinAnimationType;
 - (id)_privateDelegate;
-- (int)_replacementAnimation;
-- (void)_setVirgin:(BOOL)arg1;
+- (long long)_replacementAnimation;
+- (void)_setVirgin:(bool)arg1;
 - (id)aceObject;
 - (id)delegate;
-- (float)desiredHeight;
+- (double)desiredHeight;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isVirgin;
-- (BOOL)removedAfterDialogProgresses;
+- (bool)isVirgin;
+- (bool)removedAfterDialogProgresses;
 - (void)setAceObject:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)siriWillActivateFromSource:(int)arg1;
-- (void)viewDidPresent;
+- (void)siriDidDeactivate;
+- (void)siriWillActivateFromSource:(long long)arg1;
 - (void)wasAddedToTranscript;
 
 @end

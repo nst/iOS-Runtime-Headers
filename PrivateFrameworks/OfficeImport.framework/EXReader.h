@@ -11,6 +11,7 @@
 @property(retain) NSString * temporaryDirectory;
 
 - (void)dealloc;
+- (id)defaultPassphrase;
 - (id)read;
 - (void)setTemporaryDirectory:(id)arg1;
 - (id)temporaryDirectory;

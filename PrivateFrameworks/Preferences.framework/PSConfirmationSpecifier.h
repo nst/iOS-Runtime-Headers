@@ -16,11 +16,13 @@
 @property(retain) NSString * prompt;
 @property(retain) NSString * title;
 
-+ (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
++ (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(long long)arg6 edit:(Class)arg7;
++ (id)specifierWithSpecifier:(id)arg1;
 
 - (id)cancelButton;
 - (void)dealloc;
-- (BOOL)isDestructive;
+- (bool)isDestructive;
+- (bool)isEqualToSpecifier:(id)arg1;
 - (id)okButton;
 - (id)prompt;
 - (void)setCancelButton:(id)arg1;

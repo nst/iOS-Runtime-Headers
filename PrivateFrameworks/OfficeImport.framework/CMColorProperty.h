@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUColor;
+@class OITSUColor;
 
 @interface CMColorProperty : CMProperty {
-    TSUColor *wdValue;
+    OITSUColor *wdValue;
 }
 
 + (struct CGColor { }*)copyCGColorFromOADColor:(id)arg1 state:(id)arg2;
@@ -25,7 +25,7 @@
 - (id)cssString;
 - (id)cssStringForName:(id)arg1;
 - (id)initWithColor:(id)arg1;
-- (BOOL)isEqualTo:(id)arg1;
+- (bool)isEqualTo:(id)arg1;
 - (id)value;
 
 @end

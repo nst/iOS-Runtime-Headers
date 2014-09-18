@@ -6,21 +6,21 @@
 
 @interface _UIDocumentActivityViewController : UIActivityViewController {
     UIDocumentInteractionController *_documentInteractionController;
-    BOOL _hideSystemActivities;
-    BOOL hideSystemActivities;
+    bool_hideSystemActivities;
+    boolhideSystemActivities;
 }
 
 @property UIDocumentInteractionController * documentInteractionController;
-@property BOOL hideSystemActivities;
+@property bool hideSystemActivities;
 
 - (void)_performActivity:(id)arg1;
 - (void)_prepareActivity:(id)arg1;
-- (BOOL)_shouldShowSystemActivity:(id)arg1;
+- (bool)_shouldShowSystemActivity:(id)arg1;
 - (id)documentInteractionController;
-- (BOOL)hideSystemActivities;
+- (bool)hideSystemActivities;
 - (void)setDocumentInteractionController:(id)arg1;
-- (void)setHideSystemActivities:(BOOL)arg1;
-- (BOOL)sourceIsManaged;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)setHideSystemActivities:(bool)arg1;
+- (bool)sourceIsManaged;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

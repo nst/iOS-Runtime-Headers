@@ -2,58 +2,62 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemCollectionDelegate>, NSArray, NSMutableDictionary, SKUIClientContext, SKUIIconDataConsumer, SKUIItemArtworkContext, SKUIResourceLoader, SKUIScreenshotDataConsumer, UIImage;
+@class <SKUIItemCollectionDelegate>, NSArray, NSMutableDictionary, NSString, SKUIClientContext, SKUIItemArtworkContext, SKUIResourceLoader, SKUIScreenshotDataConsumer, SKUIStyledImageDataConsumer, UIImage;
 
 @interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIResourceLoaderDelegate> {
     SKUIItemArtworkContext *_artworkContext;
     SKUIResourceLoader *_artworkLoader;
     SKUIClientContext *_clientContext;
     <SKUIItemCollectionDelegate> *_delegate;
-    BOOL _delegateProvidesScreenshots;
     NSMutableDictionary *_iconArtworkRequestIDs;
-    SKUIIconDataConsumer *_iconDataConsumer;
+    SKUIStyledImageDataConsumer *_iconDataConsumer;
     NSArray *_items;
     SKUIScreenshotDataConsumer *_landscapeScreenshotDataConsumer;
     UIImage *_landscapeScreenshotPlaceholderImage;
-    int _numberOfItemsPerPage;
-    float _numberOfPagesToCacheAhead;
+    long long _numberOfItemsPerPage;
+    double _numberOfPagesToCacheAhead;
     UIImage *_placeholderImage;
     SKUIScreenshotDataConsumer *_portraitScreenshotDataConsumer;
     UIImage *_portraitScreenshotPlaceholderImage;
     NSMutableDictionary *_screenshotArtworkRequestIDs;
+    bool_delegateProvidesScreenshots;
 }
 
 @property(retain) SKUIItemArtworkContext * artworkContext;
 @property(retain) SKUIResourceLoader * artworkLoader;
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIItemCollectionDelegate> * delegate;
-@property(retain) SKUIIconDataConsumer * iconDataConsumer;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain) SKUIStyledImageDataConsumer * iconDataConsumer;
 @property(copy) NSArray * items;
 @property(retain) SKUIScreenshotDataConsumer * landscapeScreenshotDataConsumer;
-@property int numberOfItemsPerPage;
-@property float numberOfPagesToCacheAhead;
+@property long long numberOfItemsPerPage;
+@property double numberOfPagesToCacheAhead;
 @property(retain) SKUIScreenshotDataConsumer * portraitScreenshotDataConsumer;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_artworkLoader;
 - (void)_enumerateVisibleCellLayoutsWithBlock:(id)arg1;
 - (id)_iconArtworkRequestWithItem:(id)arg1;
 - (id)_initSKUIItemCollectionController;
-- (BOOL)_loadArtworkForItem:(id)arg1 reason:(int)arg2;
+- (bool)_loadArtworkForItem:(id)arg1 reason:(long long)arg2;
 - (void)_memoryWarningNotification:(id)arg1;
 - (id)_placeholderImageForItem:(id)arg1;
 - (id)_placeholderImageForScreenshot:(id)arg1;
 - (void)_reloadForItemStateChange:(id)arg1;
 - (void)_reloadForRestrictionsChange;
-- (void)_reloadScreenshotForCellLayout:(id)arg1 item:(id)arg2 isRestricted:(BOOL)arg3;
+- (void)_reloadScreenshotForCellLayout:(id)arg1 item:(id)arg2 isRestricted:(bool)arg3;
 - (id)_screenshotArtworkRequestWithItem:(id)arg1;
 - (id)_screenshotForItem:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleItemRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_visibleItemRange;
 - (id)artworkContext;
 - (id)artworkLoader;
 - (void)artworkLoaderDidIdle:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
-- (void)cancelArtworkLoadForItemIndex:(int)arg1;
-- (void)configureCellLayout:(id)arg1 forIndex:(int)arg2;
+- (void)cancelArtworkLoadForItemIndex:(long long)arg1;
+- (void)configureCellLayout:(id)arg1 forIndex:(long long)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)iconDataConsumer;
@@ -63,24 +67,24 @@
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (id)items;
 - (id)landscapeScreenshotDataConsumer;
-- (void)loadNextPageOfArtworkWithReason:(int)arg1;
-- (int)numberOfItemsPerPage;
-- (float)numberOfPagesToCacheAhead;
-- (id)performActionForItemAtIndex:(int)arg1;
+- (void)loadNextPageOfArtworkWithReason:(long long)arg1;
+- (long long)numberOfItemsPerPage;
+- (double)numberOfPagesToCacheAhead;
+- (id)performActionForItemAtIndex:(long long)arg1;
 - (id)portraitScreenshotDataConsumer;
-- (void)precacheNextPageArtworkForOffset:(struct CGPoint { float x1; float x2; })arg1 direction:(float)arg2;
+- (void)precacheNextPageArtworkForOffset:(struct CGPoint { double x1; double x2; })arg1 direction:(double)arg2;
 - (void)removeAllCachedResources;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setArtworkContext:(id)arg1;
 - (void)setArtworkLoader:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIconDataConsumer:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)setLandscapeScreenshotDataConsumer:(id)arg1;
-- (void)setNumberOfItemsPerPage:(int)arg1;
-- (void)setNumberOfPagesToCacheAhead:(float)arg1;
+- (void)setNumberOfItemsPerPage:(long long)arg1;
+- (void)setNumberOfPagesToCacheAhead:(double)arg1;
 - (void)setPortraitScreenshotDataConsumer:(id)arg1;
 
 @end

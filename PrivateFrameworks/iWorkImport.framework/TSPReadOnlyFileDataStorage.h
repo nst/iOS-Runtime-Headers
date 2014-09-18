@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id)initWithURL:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
-- (BOOL)readOnly;
-- (BOOL)writeToBundleWriter:(id)arg1 preferredFilename:(id)arg2 filename:(id*)arg3 didCopyDataToBundle:(BOOL*)arg4;
+- (bool)readOnly;
+- (bool)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(bool*)arg5 isMissingData:(bool*)arg6;
 
 @end

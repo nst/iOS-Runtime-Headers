@@ -6,40 +6,58 @@
    See Warning(s) below.
  */
 
-@class BBAssertion, NSArray, NSString;
+@class BBAssertion, NSArray, NSDictionary, NSString;
 
-@interface BBResponse : NSObject <NSCoding> {
-    int _actionType;
+@interface BBResponse : NSObject <NSSecureCoding> {
+    NSString *_actionID;
+    long long _actionType;
     NSString *_bulletinID;
     NSString *_buttonID;
+    NSDictionary *_context;
     BBAssertion *_lifeAssertion;
     NSArray *_lifeAssertions;
+    NSString *_originID;
     NSString *_replyText;
     id _sendBlock;
-    BOOL _sent;
+    bool_activated;
+    bool_sent;
 }
 
-@property int actionType;
+@property(copy) NSString * actionID;
+@property long long actionType;
+@property bool activated;
 @property(retain) NSString * bulletinID;
 @property(copy) NSString * buttonID;
+@property(copy) NSDictionary * context;
 @property(copy) NSArray * lifeAssertions;
+@property(copy) NSString * originID;
 @property(copy) NSString * replyText;
 @property(copy) id sendBlock;
 
-- (int)actionType;
++ (bool)supportsSecureCoding;
+
+- (id)actionID;
+- (long long)actionType;
+- (bool)activated;
 - (id)bulletinID;
 - (id)buttonID;
+- (id)context;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)lifeAssertions;
+- (id)originID;
 - (id)replyText;
 - (void)send;
 - (id)sendBlock;
-- (void)setActionType:(int)arg1;
+- (void)setActionID:(id)arg1;
+- (void)setActionType:(long long)arg1;
+- (void)setActivated:(bool)arg1;
 - (void)setBulletinID:(id)arg1;
 - (void)setButtonID:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setLifeAssertions:(id)arg1;
+- (void)setOriginID:(id)arg1;
 - (void)setReplyText:(id)arg1;
 - (void)setSendBlock:(id)arg1;
 

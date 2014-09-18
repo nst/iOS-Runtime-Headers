@@ -9,59 +9,59 @@
 @class NSArray, TSCEFunctionSpec;
 
 @interface TSCEFunctionArgumentSpec : NSObject {
+    boolmDisallowCurrency;
+    boolmDisallowDuration;
+    boolmForceArrayMode;
+    boolmIsInteger;
+    boolmMaxInclusive;
+    boolmMinInclusive;
+    boolmReferenceForGeometryOnly;
     int mAccessorMode;
     int mArgumentContext;
     int mArgumentType;
     short mDefaultModeIndex;
-    BOOL mDisallowCurrency;
-    BOOL mDisallowDuration;
     NSArray *mDisallowedTypes;
-    BOOL mForceArrayMode;
     TSCEFunctionSpec *mFunctionSpec;
     short mIndex;
-    BOOL mIsInteger;
-    BOOL mMaxInclusive;
     double mMaxValue;
-    BOOL mMinInclusive;
     double mMinValue;
     struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; } *mModeValues;
     int mRangeContext;
-    BOOL mReferenceForGeometryOnly;
 }
 
 @property(readonly) /* Warning: unhandled struct encoding: '{vector<TSCEValue' */ struct * modeValues; /* unknown property attribute:  std::__1::allocator<TSCEValue> >=^{TSCEValue}}} */
 @property(readonly) short defaultModeIndex;
 @property TSCEFunctionSpec * functionSpec;
 
-+ (id)argumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(int)arg6 minValue:(double)arg7 minInclusive:(BOOL)arg8 maxValue:(double)arg9 maxInclusive:(BOOL)arg10 isInteger:(BOOL)arg11 disallowDuration:(BOOL)arg12 disallowCurrency:(BOOL)arg13 modeValues:(struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(BOOL)arg16 forceArrayMode:(BOOL)arg17;
++ (id)argumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(int)arg6 minValue:(double)arg7 minInclusive:(bool)arg8 maxValue:(double)arg9 maxInclusive:(bool)arg10 isInteger:(bool)arg11 disallowDuration:(bool)arg12 disallowCurrency:(bool)arg13 modeValues:(struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(bool)arg16 forceArrayMode:(bool)arg17;
 
 - (int)accessorMode;
 - (int)argumentContext;
 - (void)dealloc;
 - (short)defaultModeIndex;
-- (BOOL)disallowCurrency;
-- (BOOL)disallowDuration;
+- (bool)disallowCurrency;
+- (bool)disallowDuration;
 - (id)disallowedTypes;
-- (BOOL)forceArrayMode;
+- (bool)forceArrayMode;
 - (id)functionSpec;
 - (short)index;
-- (int)indexForModeBool:(BOOL)arg1;
-- (int)indexForModeNumber:(double)arg1;
-- (int)indexForModeString:(id)arg1;
-- (int)indexForModeValue:(struct TSCEValue { unsigned int x1[68]; int x2; }*)arg1;
-- (id)initArgumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(int)arg6 minValue:(double)arg7 minInclusive:(BOOL)arg8 maxValue:(double)arg9 maxInclusive:(BOOL)arg10 isInteger:(BOOL)arg11 disallowDuration:(BOOL)arg12 disallowCurrency:(BOOL)arg13 modeValues:(struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(BOOL)arg16 forceArrayMode:(BOOL)arg17;
-- (BOOL)isInteger;
-- (BOOL)isMode;
-- (BOOL)isOptional;
+- (long long)indexForModeBool:(bool)arg1;
+- (long long)indexForModeNumber:(double)arg1;
+- (long long)indexForModeString:(id)arg1;
+- (long long)indexForModeValue:(struct TSCEValue { unsigned long long x1[88]; int x2; }*)arg1;
+- (id)initArgumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(int)arg6 minValue:(double)arg7 minInclusive:(bool)arg8 maxValue:(double)arg9 maxInclusive:(bool)arg10 isInteger:(bool)arg11 disallowDuration:(bool)arg12 disallowCurrency:(bool)arg13 modeValues:(struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(bool)arg16 forceArrayMode:(bool)arg17;
+- (bool)isInteger;
+- (bool)isMode;
+- (bool)isOptional;
 - (id)localizedArgumentName;
 - (id)localizedFunctionName;
 - (id)localizedModeMenuItemStringForModeIndex:(short)arg1;
 - (id)localizedModeNameForModeIndex:(short)arg1;
 - (id)localizedModeToolTipStringForModeIndex:(short)arg1;
 - (id)localizedToolTipString;
-- (BOOL)maxInclusive;
+- (bool)maxInclusive;
 - (double)maxValue;
-- (BOOL)minInclusive;
+- (bool)minInclusive;
 - (double)minValue;
 - (struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)modeValues;
 - (id)nativeSyntaxString;
@@ -69,9 +69,9 @@
 - (short)numModes;
 - (int)preferredType;
 - (int)rangeContext;
-- (BOOL)referenceForGeometryOnly;
+- (bool)referenceForGeometryOnly;
 - (void)setFunctionSpec:(id)arg1;
-- (BOOL)typeIsDisallowed:(int)arg1 value:(struct TSCEValue { unsigned int x1[68]; int x2; }*)arg2;
-- (struct TSCEValue { unsigned int x1[68]; int x2; })valueForModeIndex:(short)arg1;
+- (bool)typeIsDisallowed:(int)arg1 value:(struct TSCEValue { unsigned long long x1[88]; int x2; }*)arg2;
+- (struct TSCEValue { unsigned long long x1[88]; int x2; })valueForModeIndex:(short)arg1;
 
 @end

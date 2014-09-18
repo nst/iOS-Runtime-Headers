@@ -21,7 +21,7 @@
 - (id)p_niceString:(unsigned long long)arg1 withPrefix:(id)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setup;
 - (void)teardown;
 

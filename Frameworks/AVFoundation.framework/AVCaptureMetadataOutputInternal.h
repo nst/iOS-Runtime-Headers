@@ -2,24 +2,28 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureMetadataOutputObjectsDelegate>, NSArray, NSObject<OS_dispatch_queue>;
+@class AVWeakReference, AVWeakReferencingDelegateStorage, NSArray, NSObject<OS_dispatch_queue>;
 
 @interface AVCaptureMetadataOutputInternal : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    NSObject<OS_dispatch_queue> *clientQueue;
-    <AVCaptureMetadataOutputObjectsDelegate> *delegate;
+    AVWeakReferencingDelegateStorage *delegateStorage;
     NSArray *metadataObjectTypes;
+    NSObject<OS_dispatch_queue> *objectQueue;
     } rectOfInterest;
+    struct OpaqueFigSimpleMutex { } *remoteQueueMutex;
+    struct remoteQueueReceiverOpaque { } *remoteReceiverQueue;
+    AVWeakReference *weakReference;
 }
 
 - (void)dealloc;
+- (id)init;
 
 @end

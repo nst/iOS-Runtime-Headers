@@ -8,27 +8,28 @@
     NSMutableDictionary *_addressDictionary;
 }
 
-@property(readonly) NSString * ISOCountryCode;
+@property(copy,readonly) NSString * ISOCountryCode;
 @property(retain) NSMutableDictionary * addressDictionary;
-@property(readonly) NSString * city;
-@property(readonly) NSString * country;
+@property(copy,readonly) NSString * city;
+@property(copy,readonly) NSString * country;
 @property(readonly) NSString * formattedAddress;
-@property(readonly) NSString * formattedAddressSinleLine;
-@property(readonly) NSString * postalCode;
-@property(readonly) NSString * state;
-@property(readonly) NSString * street;
-@property(readonly) NSString * subAdministrativeArea;
-@property(readonly) NSString * subLocality;
+@property(readonly) NSString * formattedAddressSingleLine;
+@property(copy,readonly) NSString * postalCode;
+@property(copy,readonly) NSString * state;
+@property(copy,readonly) NSString * street;
+@property(copy,readonly) NSString * subAdministrativeArea;
+@property(copy,readonly) NSString * subLocality;
 
 + (id)addressFormatsDictionary;
 + (id)defaultCountryCode;
 + (id)localizedAddressFormatDictionaryForCountryCode:(id)arg1;
 + (id)localizedCountryNameForCountryCode:(id)arg1;
++ (id)pkPostalAddressWithDictionary:(id)arg1;
 + (id)postalAddress;
 + (id)postalAddressWithDictionary:(id)arg1;
 
 - (id)ISOCountryCode;
-- (BOOL)_isAddressFieldEqual:(id)arg1 toField:(id)arg2;
+- (bool)_isAddressFieldEqual:(id)arg1 toField:(id)arg2;
 - (id)addressDictionary;
 - (id)city;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,12 +37,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)formattedAddress;
-- (id)formattedAddressSinleLine;
+- (id)formattedAddressSingleLine;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)keyboardSettingsForAddressPart:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)pkAddressDictionary;
+- (id)pkFormattedAddressSingleLine;
 - (id)postalCode;
 - (void)setAddressDictionary:(id)arg1;
 - (id)state;

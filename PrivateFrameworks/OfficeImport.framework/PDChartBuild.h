@@ -7,6 +7,7 @@
 }
 
 - (id)initWithBuildType:(int)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 

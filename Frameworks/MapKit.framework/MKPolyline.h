@@ -9,15 +9,19 @@
 
 @property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
 @property(readonly) struct { double x1; double x2; } coordinate;
-@property(readonly) NSString * subtitle;
-@property(readonly) NSString * title;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(copy,readonly) NSString * subtitle;
+@property(readonly) Class superclass;
+@property(copy,readonly) NSString * title;
 
-+ (id)polylineWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-+ (id)polylineWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
++ (id)polylineWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
++ (id)polylineWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
 
 - (void)_calculateBounds;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
 - (struct { double x1; double x2; })coordinate;
-- (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

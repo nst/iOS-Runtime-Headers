@@ -7,25 +7,25 @@
         struct LabelManager {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _labelManager;
-    int _labelScaleFactor;
-    BOOL _localizeLabels;
+    long long _labelScaleFactor;
+    bool_localizeLabels;
 }
 
-@property int labelScaleFactor;
-@property BOOL localizeLabels;
+@property long long labelScaleFactor;
+@property bool localizeLabels;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (int)_labelTileType;
+- (unsigned char)_labelTileType;
 - (void)dealloc;
-- (int)defaultMaximumZoomLevel;
-- (id)initWithTileSet:(id)arg1 labelManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
-- (int)labelScaleFactor;
-- (BOOL)localizeLabels;
-- (BOOL)maximumZoomLevelBoundsCamera;
-- (BOOL)minimumZoomLevelBoundsCamera;
-- (void)setLabelScaleFactor:(int)arg1;
-- (void)setLocalizeLabels:(BOOL)arg1;
+- (long long)defaultMaximumZoomLevel;
+- (id)initWithTileSet:(id)arg1 tileGroupIdentifier:(unsigned int)arg2 locale:(id)arg3 labelManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg4;
+- (long long)labelScaleFactor;
+- (bool)localizeLabels;
+- (bool)maximumZoomLevelBoundsCamera;
+- (bool)minimumZoomLevelBoundsCamera;
+- (void)setLabelScaleFactor:(long long)arg1;
+- (void)setLocalizeLabels:(bool)arg1;
 - (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
 
 @end

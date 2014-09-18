@@ -5,22 +5,30 @@
 @class NSString, NSURL, NSUUID;
 
 @interface QLPreviewItemProxy : NSObject <NSSecureCoding, QLPreviewItem> {
+    double _autoPlaybackPosition;
     NSString *_contentType;
-    int _fileExtensionHandle;
+    long long _fileExtensionHandle;
     NSString *_fileExtensionToken;
-    int _index;
+    long long _index;
     NSString *_password;
     NSString *_title;
     NSURL *_url;
     NSURL *_urlForDisplay;
     NSUUID *_uuid;
+    bool_isPromisedItem;
 }
 
+@property double autoPlaybackPosition;
 @property(retain) NSString * contentType;
-@property int index;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property long long index;
+@property bool isPromisedItem;
 @property(retain) NSString * password;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSURL * previewItemURL;
+@property(readonly) Class superclass;
 @property(retain) NSString * title;
 @property(retain) NSURL * url;
 @property(retain) NSURL * urlForDisplay;
@@ -28,25 +36,29 @@
 
 + (id)encodedClasses;
 + (id)proxyWithPreviewItem:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (double)autoPlaybackPosition;
 - (void)consumeFileExtension;
 - (id)contentType;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)index;
+- (long long)index;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPreviewItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isPromisedItem;
 - (void)issueFileExtension;
 - (id)password;
 - (id)previewItemContentType;
 - (id)previewItemTitle;
 - (id)previewItemURL;
 - (id)previewItemURLForDisplay;
+- (void)setAutoPlaybackPosition:(double)arg1;
 - (void)setContentType:(id)arg1;
-- (void)setIndex:(int)arg1;
+- (void)setIndex:(long long)arg1;
+- (void)setIsPromisedItem:(bool)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;

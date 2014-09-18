@@ -10,21 +10,21 @@
 
 @interface VMUObjectIdentifier : NSObject {
     struct _CSTypeRef { 
-        unsigned int _opaque_1; 
-        unsigned int _opaque_2; 
+        unsigned long long _opaque_1; 
+        unsigned long long _opaque_2; 
     VMUClassInfoMap *_cfTypeIDtoClassInfo;
-    unsigned long _coreFoundationCFTypeIsa;
-    unsigned long _foundationCFTypeIsa;
+    unsigned long long _coreFoundationCFTypeIsa;
+    unsigned long long _foundationCFTypeIsa;
     VMUClassInfoMap *_isaToClassInfo;
     NSMapTable *_isaToObjectLabelHandlerMap;
     id _isaTranslator;
     NSMapTable *_itemCountToLabelStringUniquingMap;
     id _memoryReader;
-    unsigned int *_nonPointerIndexMapping;
+    unsigned long long *_nonPointerIndexMapping;
     NSMapTable *_numberToLabelStringUniquingMap;
     NSHashTable *_objcRuntimeMallocBlocksHash;
     void *_remoteObjectBuffer;
-    unsigned long _remoteObjectBufferSize;
+    unsigned long long _remoteObjectBufferSize;
     struct VMULabelUniquingDataForStringType { id x1; id x2; } *_stringToLabelStringUniquingData;
     } _symbolicator;
     VMUNonOverlappingRangeArray *_targetProcessVMranges;
@@ -32,13 +32,13 @@
     VMUClassInfoMap *_unrealizedClassInfos;
 }
 
-- (unsigned int)CFTypeCount;
-- (unsigned int)ObjCclassCount;
-- (id)_faultClass:(unsigned long)arg1 ofType:(int)arg2;
+- (unsigned long long)CFTypeCount;
+- (unsigned long long)ObjCclassCount;
+- (id)_faultClass:(unsigned long long)arg1 ofType:(int)arg2;
 - (void)buildIsaToObjectLabelHandlerMap;
-- (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
-- (id)classInfoForIsaPointer:(unsigned int)arg1;
-- (id)classInfoForMemory:(void*)arg1 length:(unsigned int)arg2;
+- (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned long long x1; unsigned char x2[4]; unsigned int x3; }*)arg1;
+- (id)classInfoForIsaPointer:(unsigned long long)arg1;
+- (id)classInfoForMemory:(void*)arg1 length:(unsigned long long)arg2;
 - (id)classInfoForObject:(unsigned long long)arg1;
 - (id)classInfoForObjectWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)dealloc;
@@ -46,11 +46,11 @@
 - (void)enumerateRealizedClassInfosWithBlock:(id)arg1;
 - (void)findCFTypes;
 - (void)findObjCclasses;
-- (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithTask:(unsigned int)arg1;
-- (id)labelForItemCount:(long)arg1;
+- (id)labelForItemCount:(long long)arg1;
 - (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2;
+- (id)labelForMemory:(void*)arg1 length:(unsigned long long)arg2;
 - (id)labelForNSArray:(id)arg1;
 - (id)labelForNSCFStringAtRemoteAddress:(unsigned long long)arg1;
 - (id)labelForNSConcreteAttributedString:(id)arg1;
@@ -63,7 +63,7 @@
 - (id)labelForNSString:(id)arg1;
 - (id)nullClassInfo;
 - (id)objcRuntimeMallocBlocksHash;
-- (id)objectLabelHandlerForRemoteIsa:(Class)arg1;
+- (id)objectLabelHandlerForRemoteIsa:(unsigned long long)arg1;
 - (id)osMajorMinorVersionString;
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;

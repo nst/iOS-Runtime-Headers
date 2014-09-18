@@ -9,7 +9,7 @@
 - (id)elementBuilder;
 - (unsigned int)filterChartLabelPosition:(unsigned int)arg1 forSeries:(id)arg2;
 - (unsigned int)filterChartLabelPosition:(unsigned int)arg1;
-- (BOOL)floatValueForLabelExplosion:(float*)arg1 series:(id)arg2;
+- (bool)floatValueForLabelExplosion:(float*)arg1 series:(id)arg2;
 - (id)g_genericToSpecificPropertyMapPie;
 - (id)genericToSpecificPropertyMap;
 - (id)init;
@@ -18,8 +18,8 @@
 - (id)legalChartLabelPositions;
 - (int)legendBadgeType;
 - (id)supportedValueLabelsAxisCombinations;
-- (BOOL)supportsValueLabelsSeriesName;
+- (bool)supportsValueLabelsSeriesName;
 - (id)userInterfaceNameForLabelPosition:(id)arg1;
-- (unsigned int)valueDimensions;
+- (unsigned long long)valueDimensions;
 
 @end

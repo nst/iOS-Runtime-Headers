@@ -10,6 +10,7 @@
 
 - (void)dealloc;
 - (id)init;
+- (bool)isEqual:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
 

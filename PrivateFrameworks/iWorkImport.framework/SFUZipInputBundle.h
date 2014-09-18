@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class SFUZipArchive;
+@class NSString, SFUZipArchive;
 
 @interface SFUZipInputBundle : NSObject <SFUInputBundle> {
     SFUZipArchive *_zipArchive;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (id)bufferedInputStreamForEntry:(id)arg1;
 - (void)copyEntry:(id)arg1 toFile:(id)arg2;
 - (unsigned int)crc32ForEntry:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasEntryWithName:(id)arg1;
+- (bool)hasEntryWithName:(id)arg1;
 - (id)initWithZipArchive:(id)arg1;
 - (id)inputStreamForEntry:(id)arg1;
 - (long long)lengthOfEntry:(id)arg1;

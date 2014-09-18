@@ -2,19 +2,45 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class <NSMetadataQueryDelegate>, NSArray, NSDictionary, NSOperationQueue, NSPredicate;
+
 @interface NSMetadataQuery : NSObject {
-    unsigned int _flags;
+    unsigned long long _flags;
     double _interval;
     id _private[11];
     void *_reserved;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property <NSMetadataQueryDelegate> * delegate;
+@property(getter=isGathering,readonly) bool gathering;
+@property(copy,readonly) NSArray * groupedResults;
+@property(copy) NSArray * groupingAttributes;
+@property double notificationBatchingInterval;
+@property(retain) NSOperationQueue * operationQueue;
+@property(copy) NSPredicate * predicate;
+@property(readonly) unsigned long long resultCount;
+@property(copy,readonly) NSArray * results;
+@property(copy) NSArray * searchItems;
+@property(copy) NSArray * searchScopes;
+@property(copy) NSArray * sortDescriptors;
+@property(getter=isStarted,readonly) bool started;
+@property(getter=isStopped,readonly) bool stopped;
+@property(copy) NSArray * valueListAttributes;
+@property(copy,readonly) NSDictionary * valueLists;
+
++ (Class)_stitchingClass;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)didEndPossibleFileOperation:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
++ (id)willBeginPossibleCreationOfItemAtURL:(id)arg1;
++ (id)willBeginPossibleDeletionOfItemAtURL:(id)arg1;
++ (id)willBeginPossibleMoveOfItemAtURL:(id)arg1 toURL:(id)arg2;
 
 - (id)_allAttributes;
 - (void)_disableAutoUpdates;
 - (void)_enableAutoUpdates;
+- (id)_externalDocumentsBundleIdentifier;
+- (void)_inOriginalContextInvokeBlock:(id)arg1;
 - (void)_noteNote1:(id)arg1;
 - (void)_noteNote2:(id)arg1;
 - (void)_noteNote3:(id)arg1;
@@ -25,28 +51,33 @@
 - (void)_recreateQuery;
 - (void)_resetQueryState;
 - (void)_setBatchingParams;
+- (void)_setExternalDocumentsBundleIdentifier:(id)arg1;
 - (id)_sortingAttributes;
 - (void)_update;
+- (void)_validateInvocationContext;
+- (void)_validatePredicate:(id)arg1 withScopes:(id)arg2;
 - (void)_zapResultArrayIfIdenticalTo:(id)arg1;
+- (void)br_setupForMonitoringChildrenOfFolderAtURL:(id)arg1;
+- (bool)br_setupForMonitoringChildrenOfItemAtURL:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)disableUpdates;
 - (void)enableUpdates;
 - (void)enumerateResultsUsingBlock:(id)arg1;
-- (void)enumerateResultsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateResultsWithOptions:(unsigned long long)arg1 usingBlock:(id)arg2;
 - (void)finalize;
 - (id)groupedResults;
 - (id)groupingAttributes;
-- (unsigned int)indexOfResult:(id)arg1;
+- (unsigned long long)indexOfResult:(id)arg1;
 - (id)init;
-- (BOOL)isGathering;
-- (BOOL)isStarted;
-- (BOOL)isStopped;
+- (bool)isGathering;
+- (bool)isStarted;
+- (bool)isStopped;
 - (double)notificationBatchingInterval;
 - (id)operationQueue;
 - (id)predicate;
-- (id)resultAtIndex:(unsigned int)arg1;
-- (unsigned int)resultCount;
+- (id)resultAtIndex:(unsigned long long)arg1;
+- (unsigned long long)resultCount;
 - (id)results;
 - (id)searchItemURLs;
 - (id)searchItems;
@@ -62,10 +93,10 @@
 - (void)setSortDescriptors:(id)arg1;
 - (void)setValueListAttributes:(id)arg1;
 - (id)sortDescriptors;
-- (BOOL)startQuery;
+- (bool)startQuery;
 - (void)stopQuery;
 - (id)valueListAttributes;
 - (id)valueLists;
-- (id)valueOfAttribute:(id)arg1 forResultAtIndex:(unsigned int)arg2;
+- (id)valueOfAttribute:(id)arg1 forResultAtIndex:(unsigned long long)arg2;
 
 @end

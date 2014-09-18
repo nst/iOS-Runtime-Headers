@@ -7,6 +7,6 @@
 
 - (id)p_singleTileWithSetup:(id)arg1;
 - (id)p_tilesWithSetup:(id)arg1;
-- (BOOL)run;
+- (bool)run;
 
 @end

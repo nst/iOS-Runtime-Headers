@@ -2,23 +2,36 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, PrefsUILinkLabel;
+@class NSArray, PSSpecifier, PrefsUILinkLabel;
 
 @interface ProblemReportingController : PSListController {
     PrefsUILinkLabel *_aboutDiagnosticsLinkLabel;
+    NSArray *_appActivitySpecifiers;
     PSSpecifier *_diagnosticDataGroupSpecifier;
+    PSSpecifier *_filesystemMetadataSnapshotSpecifier;
+    PSSpecifier *_spinnerSpecifier;
 }
 
-+ (BOOL)isProblemReportingEnabled;
+@property(readonly) NSArray * appActivitySpecifiers;
+@property(readonly) PSSpecifier * filesystemMetadataSnapshotSpecifier;
+@property(readonly) PSSpecifier * spinnerSpecifier;
 
++ (bool)isProblemReportingEnabled;
+
+- (id)appActivitySpecifiers;
 - (void)dealloc;
-- (void)diagnosticsDonePressed:(id)arg1;
-- (void)setProblemReportingEnabled:(BOOL)arg1;
-- (BOOL)shouldEnableProblemReportingForCheckedSpecifier;
-- (void)showAboutDiagnosticsSheet:(id)arg1;
+- (void)dismissAboutSheet:(id)arg1;
+- (id)filesystemMetadataSnapshotSpecifier;
+- (void)setProblemReportingEnabled:(bool)arg1;
+- (void)setShouldShareAppActivityWithAppDevelopers:(id)arg1 specifier:(id)arg2;
+- (bool)shouldEnableProblemReportingForCheckedSpecifier;
+- (id)shouldShareAppActivityWithAppDevelopers;
+- (void)showAboutAppAnalyticsSheet;
+- (void)showAboutDiagnosticsSheet;
+- (void)snapshot:(id)arg1;
 - (id)specifiers;
+- (id)spinnerSpecifier;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (Class)tableViewClass;
-- (void)viewDidLoad;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 
 @end

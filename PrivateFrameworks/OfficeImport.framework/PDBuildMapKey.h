@@ -13,10 +13,10 @@
 - (void)dealloc;
 - (id)drawable;
 - (id)groupId;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setDrawable:(id)arg1;
 - (void)setGroupId:(id)arg1;
 

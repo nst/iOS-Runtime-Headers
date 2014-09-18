@@ -11,7 +11,7 @@
 @property(copy) NSString * partnerIdentifier;
 @property(copy) NSString * partnerTransactionIdentifier;
 @property(copy) NSString * productIdentifier;
-@property int quantity;
+@property long long quantity;
 @property(copy) NSData * requestData;
 @property(copy) NSDictionary * requestParameters;
 
@@ -19,7 +19,7 @@
 - (void)setPartnerIdentifier:(id)arg1;
 - (void)setPartnerTransactionIdentifier:(id)arg1;
 - (void)setProductIdentifier:(id)arg1;
-- (void)setQuantity:(int)arg1;
+- (void)setQuantity:(long long)arg1;
 - (void)setRequestData:(id)arg1;
 - (void)setRequestParameters:(id)arg1;
 

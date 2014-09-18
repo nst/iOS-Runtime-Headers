@@ -11,12 +11,12 @@
     UIImage *_fullStarImage;
     UIImage *_halfStarHighlightedImage;
     UIImage *_halfStarImage;
-    BOOL _highlighted;
-    int _numLevels;
-    int _numReviews;
-    float _padding;
-    float _rating;
+    long long _numLevels;
+    long long _numReviews;
+    double _padding;
+    double _rating;
     NSMutableArray *_ratingViews;
+    bool_highlighted;
 }
 
 @property(retain) UIImage * emptyStarHighlightedImage;
@@ -25,32 +25,39 @@
 @property(retain) UIImage * fullStarImage;
 @property(retain) UIImage * halfStarHighlightedImage;
 @property(retain) UIImage * halfStarImage;
-@property(getter=isHighlighted) BOOL highlighted;
-@property int numberOfRatingLevels;
-@property float rating;
+@property(getter=isHighlighted) bool highlighted;
+@property long long numberOfRatingLevels;
+@property double rating;
 
 - (void).cxx_destruct;
+- (void)_layoutStarViewsCreatingIfNeeded:(bool)arg1;
+- (void)_setStarStyle:(long long)arg1;
+- (void)commonInit;
+- (void)didMoveToWindow;
 - (id)emptyStarHighlightedImage;
 - (id)emptyStarImage;
 - (id)fullStarHighlightedImage;
 - (id)fullStarImage;
 - (id)halfStarHighlightedImage;
 - (id)halfStarImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isHighlighted;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isHighlighted;
 - (void)layoutSubviews;
-- (int)numberOfRatingLevels;
-- (float)rating;
+- (long long)numberOfRatingLevels;
+- (double)rating;
 - (void)setEmptyStarHighlightedImage:(id)arg1;
 - (void)setEmptyStarImage:(id)arg1;
 - (void)setFullStarHighlightedImage:(id)arg1;
 - (void)setFullStarImage:(id)arg1;
 - (void)setHalfStarHighlightedImage:(id)arg1;
 - (void)setHalfStarImage:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setNumberOfRatingLevels:(int)arg1;
-- (void)setPadding:(float)arg1;
-- (void)setRating:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setNumberOfRatingLevels:(long long)arg1;
+- (void)setPadding:(double)arg1;
+- (void)setRating:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

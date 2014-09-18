@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSString;
 
 @interface _ADPolicyEngineEvent : NSObject <ADBannerViewInternalDelegate> {
     NSMutableArray *_banners;
@@ -18,6 +18,10 @@
 @property(retain) NSMutableArray * banners;
 @property(copy) id bannersLoadedHandler;
 @property(retain) NSMutableArray * bannersWaitingOnLoad;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_considerCallingLoadedHandler;
 - (void)addBannerForCreativeType:(int)arg1;

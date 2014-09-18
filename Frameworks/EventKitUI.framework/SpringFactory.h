@@ -2,8 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
+@class NSString;
+
 @interface SpringFactory : NSObject <_UIBasicAnimationFactory> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)sharedFactory;
 

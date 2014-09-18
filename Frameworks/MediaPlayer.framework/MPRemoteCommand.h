@@ -2,32 +2,33 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface MPRemoteCommand : NSObject {
-    BOOL _enabled;
     unsigned int _mediaRemoteCommandType;
+    NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableArray *_targetInvocations;
+    bool_enabled;
 }
 
-@property(getter=isEnabled) BOOL enabled;
+@property(getter=isEnabled) bool enabled;
 
 - (void).cxx_destruct;
-- (void)_addTarget:(id)arg1 action:(SEL)arg2 retainTarget:(BOOL)arg3;
+- (void)_addTarget:(id)arg1 action:(SEL)arg2 retainTarget:(bool)arg3;
 - (id)_mediaRemoteCommandInfoOptions;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (id)addTargetWithHandler:(id)arg1;
-- (struct _MRMediaRemoteCommandInfo { }*)commandInfoRepresentation;
-- (BOOL)hasTargets;
+- (struct _MRMediaRemoteCommandInfo { }*)createCommandInfoRepresentation;
+- (bool)hasTargets;
 - (id)init;
 - (id)initWithMediaRemoteCommandType:(unsigned int)arg1;
-- (id)invokeCommandWithEvent:(id)arg1;
-- (BOOL)isEnabled;
-- (BOOL)isSupported;
+- (void)invokeCommandWithEvent:(id)arg1 completion:(id)arg2;
+- (bool)isEnabled;
+- (bool)isSupported;
 - (id)keyPathsForValuesTriggeringCommandsChanged;
 - (unsigned int)mediaRemoteCommandType;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)removeTarget:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

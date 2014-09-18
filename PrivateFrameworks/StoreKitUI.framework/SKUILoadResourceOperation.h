@@ -17,7 +17,7 @@
 
 @property(retain) SKUIClientContext * clientContext;
 @property(copy) id outputBlock;
-@property(readonly) SKUIResourceRequest * resourceRequest;
+@property(copy,readonly) SKUIResourceRequest * resourceRequest;
 
 - (void).cxx_destruct;
 - (id)_initSKUILoadResourceOperation;

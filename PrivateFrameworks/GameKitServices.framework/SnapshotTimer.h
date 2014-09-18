@@ -3,17 +3,17 @@
  */
 
 @interface SnapshotTimer : NSObject {
-    BOOL taskIsComplete;
+    booltaskIsComplete;
 }
 
-@property BOOL taskIsComplete;
+@property bool taskIsComplete;
 
 + (void)takeSnapshotForTask:(id)arg1;
 
 - (void)checkinWithTimeout:(double)arg1 forTask:(id)arg2;
 - (void)checkout;
 - (id)init;
-- (void)setTaskIsComplete:(BOOL)arg1;
-- (BOOL)taskIsComplete;
+- (void)setTaskIsComplete:(bool)arg1;
+- (bool)taskIsComplete;
 
 @end

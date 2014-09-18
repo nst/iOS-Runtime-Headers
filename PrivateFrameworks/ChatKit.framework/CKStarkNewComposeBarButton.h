@@ -6,6 +6,6 @@
 }
 
 - (void)_focusStateDidChange;
-- (BOOL)_isFocusableElement;
+- (bool)_isFocusableElement;
 
 @end

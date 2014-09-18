@@ -2,81 +2,80 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class GraphRenderOperation, LineGraphView, NSArray, NSMutableArray, StockChartData, UIView<StockGraphViewContainer>, VolumeGraphView;
+@class GraphRenderOperation, LineGraphView, NSArray, NSMutableArray, StockChartData, StockChartDisplayMode, UIView<StockGraphViewContainer>, VolumeGraphView;
 
 @interface StockGraphView : UIView <GraphRenderOperationDelegate> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     StockChartData *_chartData;
     UIView<StockGraphViewContainer> *_chartViewDelegate;
     unsigned int _dataCount;
     unsigned int _dataSize;
-    BOOL _detailedMode;
+    StockChartDisplayMode *_displayMode;
     NSArray *_dottedLinePositions;
+    NSArray *_dottedLinePositionsForStyleOnly;
     } _graphInsets;
-    BOOL _isRendered;
     NSMutableArray *_linePointCounts;
     LineGraphView *_lineView;
-    float _lineWidth;
     unsigned long long _maxVolume;
-    struct CGPoint { float x1; float x2; } *_points;
+    struct CGPoint { double x1; double x2; } *_points;
     GraphRenderOperation *_renderOperation;
     int _valueCount;
     int _valueIndex;
-    struct CGPoint { float x1; float x2; } *_values;
-    float _volumeBarWidth;
-    struct { float x1; unsigned long long x2; } *_volumeBars;
+    struct CGPoint { double x1; double x2; } *_values;
+    double _volumeBarWidth;
+    struct { double x1; unsigned long long x2; } *_volumeBars;
     unsigned int _volumeCount;
     unsigned int _volumeSize;
     VolumeGraphView *_volumeView;
+    bool_isRendered;
 }
 
 @property UIView<StockGraphViewContainer> * chartViewDelegate;
-@property BOOL detailedMode;
-@property(setter=setDottedLinePositionsWithLabelInfo:,retain) NSArray * dottedLinePositions;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } graphInsets;
-@property(readonly) BOOL isRendered;
-@property(readonly) BOOL isRendering;
+@property(retain) StockChartDisplayMode * displayMode;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } graphInsets;
+@property(readonly) bool isRendered;
+@property(readonly) bool isRendering;
 
 - (void).cxx_destruct;
 - (void)_finishCurrentLine;
 - (void)_layoutSubviews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lineViewFrameForBoundsSize:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned long long)_normalizedAccumulatedVolumeInDataRange:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_lineViewFrameForBoundsSize:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)_normalizedAccumulatedVolumeInDataRange:(struct CGPoint { double x1; double x2; })arg1;
 - (float)_priceAtTime:(double)arg1 dataPosition:(double*)arg2;
-- (void)_processGraphDataForWidth:(float)arg1;
+- (void)_processGraphDataForWidth:(double)arg1;
 - (double)_timeAtPosition:(double)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_trueGraphPointsRegion;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_volumeViewFrameForBoundsSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_trueGraphPointsRegion;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_volumeViewFrameForBoundsSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)cancelRenderOperation;
 - (id)chartViewDelegate;
 - (void)clearData;
 - (void)clearPaths;
 - (void)dealloc;
-- (BOOL)detailedMode;
-- (id)dottedLinePositions;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })graphInsets;
+- (id)displayMode;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })graphInsets;
 - (void)graphRenderOperationDidFinish:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isRendered;
-- (BOOL)isRendering;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isRendered;
+- (bool)isRendering;
 - (void)loadStockChartData:(id)arg1;
-- (struct { double x1; double x2; unsigned long long x3; })plottedPointNearestToPoint:(struct CGPoint { float x1; float x2; }*)arg1;
+- (struct { double x1; double x2; unsigned long long x3; })plottedPointNearestToPoint:(struct CGPoint { double x1; double x2; }*)arg1;
 - (void)readyForDisplayFromChartData;
-- (void)recomputePathsAndRenderIfNeededForSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)resizeSelectedLineClipViewWithLeftX:(float)arg1 rightX:(float)arg2;
-- (void)resizeSelectedVolumeClipViewWithLeftX:(float)arg1 rightX:(float)arg2;
-- (struct CGPoint { float x1; float x2; })rightmostPlottedPoint;
+- (void)recomputePathsAndRenderIfNeededForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)resizeSelectedLineClipViewWithLeftX:(double)arg1 rightX:(double)arg2;
+- (void)resizeSelectedVolumeClipViewWithLeftX:(double)arg1 rightX:(double)arg2;
+- (struct CGPoint { double x1; double x2; })rightmostPlottedPoint;
 - (void)setChartViewDelegate:(id)arg1;
-- (void)setDetailedMode:(BOOL)arg1;
+- (void)setDisplayMode:(id)arg1;
 - (void)setDottedLinePositionsWithLabelInfo:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setGraphInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setShowingSelectedLine:(BOOL)arg1;
-- (void)setShowingSelectedVolumeRegion:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })volumeBarRectNearestToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setEvenlySpacedDottedLinePositionsWithCount:(unsigned long long)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setGraphInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setShowingSelectedLine:(bool)arg1;
+- (void)setShowingSelectedVolumeRegion:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })volumeBarRectNearestToPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

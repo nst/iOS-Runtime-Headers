@@ -13,27 +13,29 @@
 @property(readonly) NSArray * fromEmailAddresses;
 @property(readonly) NSArray * fromEmailAddressesIncludingDisabled;
 @property(readonly) NSString * fullUserName;
-@property(readonly) BOOL isDefaultDeliveryAccount;
+@property(readonly) bool isDefaultDeliveryAccount;
 @property(readonly) id mailAccount;
-@property(readonly) BOOL restrictsRepliesAndForwards;
-@property(readonly) BOOL supportsSoftBankCodePoints;
+@property(readonly) bool restrictsRepliesAndForwards;
+@property(readonly) bool supportsSoftBankCodePoints;
+@property(readonly) bool supportsThreadNotifications;
 @property(readonly) NSString * uniqueID;
 @property(readonly) NSString * username;
 
 - (id)_emailAddressesAndAliases;
 - (id)_initWithProperties:(id)arg1;
-- (BOOL)_isActive;
-- (BOOL)_isRestricted;
+- (bool)_isActive;
+- (bool)_isRestricted;
 - (void)dealloc;
 - (id)emailAddresses;
 - (id)firstEmailAddress;
 - (id)fromEmailAddresses;
 - (id)fromEmailAddressesIncludingDisabled;
 - (id)fullUserName;
-- (BOOL)isDefaultDeliveryAccount;
+- (bool)isDefaultDeliveryAccount;
 - (id)mailAccount;
-- (BOOL)restrictsRepliesAndForwards;
-- (BOOL)supportsSoftBankCodePoints;
+- (bool)restrictsRepliesAndForwards;
+- (bool)supportsSoftBankCodePoints;
+- (bool)supportsThreadNotifications;
 - (id)uniqueID;
 - (id)username;
 

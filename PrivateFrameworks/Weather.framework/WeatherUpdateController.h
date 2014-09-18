@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CLLocationManager;
+@class CLLocationManager, NSString;
 
 @interface WeatherUpdateController : NSObject <CLLocationManagerDelegate, WeatherValidatorDelegate> {
     CLLocationManager *_locationManager;
@@ -17,8 +17,12 @@
 }
 
 @property(copy) id currentLocationCompletion;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) CLLocationManager * locationManager;
 @property(copy) id searchCompletion;
+@property(readonly) Class superclass;
 @property(copy) id weatherInfoCompletion;
 
 + (id)sharedWeatherUpdateController;
@@ -41,8 +45,9 @@
 - (void)setSearchCompletion:(id)arg1;
 - (void)setWeatherInfoCompletion:(id)arg1;
 - (id)weatherInfoCompletion;
+- (void)weatherInformationForCities:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)weatherInformationForIDs:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)weatherInformationForLocation:(id)arg1 withCompletionHandler:(id)arg2;
-- (BOOL)weatherListContainsCity:(id)arg1;
+- (bool)weatherListContainsCity:(id)arg1;
 
 @end

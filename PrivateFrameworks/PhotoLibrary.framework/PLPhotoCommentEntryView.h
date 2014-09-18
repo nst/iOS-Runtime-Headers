@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPhotoCommentEntryViewDelegate>, UIButton, UILabel, UITextView;
+@class <PLPhotoCommentEntryViewDelegate>, NSString, UIButton, UILabel, UITextView;
 
 @interface PLPhotoCommentEntryView : UIView <UITextViewDelegate> {
     <PLPhotoCommentEntryViewDelegate> *_delegate;
@@ -12,19 +12,23 @@
     UILabel *placeholderLabel;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <PLPhotoCommentEntryViewDelegate> * delegate;
-@property(readonly) UILabel * placeholderLabel;
-@property(readonly) UIButton * postButton;
-@property(readonly) UITextView * textView;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) UILabel * placeholderLabel;
+@property(retain,readonly) UIButton * postButton;
+@property(readonly) Class superclass;
+@property(retain,readonly) UITextView * textView;
 
 - (void)clearText;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)placeholderLabel;
 - (id)postButton;
-- (float)preferredHeight;
+- (double)preferredHeight;
 - (void)setDelegate:(id)arg1;
 - (id)textView;
 - (void)textViewDidChange:(id)arg1;

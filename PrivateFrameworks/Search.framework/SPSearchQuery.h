@@ -6,32 +6,36 @@
 
 @interface SPSearchQuery : NSObject <NSCopying> {
     double _cancellationTime;
-    BOOL _cancelled;
     double _creationTime;
-    BOOL _finished;
     int _nextDomainIndex;
-    unsigned int _queryID;
+    unsigned long long _queryID;
     NSArray *_searchDomains;
     NSString *_searchString;
+    bool_cancelled;
+    bool_extendedTime;
+    bool_finished;
 }
 
 @property(readonly) double cancellationTime;
-@property(readonly) BOOL cancelled;
+@property(readonly) bool cancelled;
 @property(readonly) double creationTime;
+@property bool extendedTime;
 @property(readonly) NSArray * searchDomains;
 @property(readonly) NSString * searchString;
 
 - (void)cancel;
 - (double)cancellationTime;
-- (BOOL)cancelled;
+- (bool)cancelled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)creationTime;
 - (void)dealloc;
-- (unsigned int)hash;
+- (bool)extendedTime;
+- (unsigned long long)hash;
 - (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
 - (id)initWithSearchString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)searchDomains;
 - (id)searchString;
+- (void)setExtendedTime:(bool)arg1;
 
 @end

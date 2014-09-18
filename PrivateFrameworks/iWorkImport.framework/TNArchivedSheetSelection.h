@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNSheetSelection;
+@class NSString, TNSheetSelection;
 
 @interface TNArchivedSheetSelection : TSPObject <TSKArchivedSelection> {
     TNSheetSelection *mSelection;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) TNSheetSelection * selection;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

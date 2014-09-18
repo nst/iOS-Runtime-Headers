@@ -4,7 +4,7 @@
 
 @class NSSQLFetchIntermediate;
 
-@interface NSSQLFetchDictionaryCountIntermediate : NSSQLIntermediate {
+@interface NSSQLFetchDictionaryCountIntermediate : NSSQLStatementIntermediate {
     NSSQLFetchIntermediate *_realFetch;
 }
 

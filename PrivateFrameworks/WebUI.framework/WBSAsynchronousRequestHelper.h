@@ -6,16 +6,23 @@
    See Warning(s) below.
  */
 
-@class NSMutableData, NSOperationQueue, NSURLConnection, NSURLResponse;
+@class NSMutableData, NSOperationQueue, NSString, NSURLConnection, NSURLResponse;
 
 @interface WBSAsynchronousRequestHelper : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *_connection;
     NSMutableData *_data;
     id _handler;
+    id _lifetimeExtender;
     NSOperationQueue *_queue;
     NSURLResponse *_response;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (void).cxx_destruct;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;

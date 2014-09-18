@@ -8,8 +8,12 @@
 }
 
 @property(copy) NSString * data;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * displayText;
+@property(readonly) unsigned long long hash;
 @property(retain) SAPerson * object;
+@property(readonly) Class superclass;
 @property(retain) <SAAceSerializable> * typedData;
 
 + (id)personAttribute;

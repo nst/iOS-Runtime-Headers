@@ -9,8 +9,8 @@
     <AirPlayRemoteSlideshowDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_internalQueue;
     double _startTime;
-    BOOL _started;
     NSObject<OS_dispatch_queue> *_userQueue;
+    bool_started;
 }
 
 @property <AirPlayRemoteSlideshowDelegate> * delegate;

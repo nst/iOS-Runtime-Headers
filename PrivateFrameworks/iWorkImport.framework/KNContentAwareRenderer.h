@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSMapTable;
+
 @interface KNContentAwareRenderer : KNTransitionRenderer {
+    NSMapTable *_layerToOldHiddenValueMap;
 }
 
-- (BOOL)addAnimationsAtTime:(double)arg1 relativeToCurrentMediaTime:(BOOL)arg2;
+- (bool)addAnimationsAtTime:(double)arg1 relativeToCurrentMediaTime:(bool)arg2;
 - (void)dealloc;
-- (id)initWithEffectClass:(Class)arg1 direction:(unsigned int)arg2 duration:(double)arg3 session:(id)arg4 attributes:(id)arg5 animatedSlideView:(id)arg6;
-- (void)removeAnimationsAndFinish:(BOOL)arg1;
+- (id)initWithEffectClass:(Class)arg1 direction:(unsigned long long)arg2 duration:(double)arg3 session:(id)arg4 attributes:(id)arg5 animatedSlideView:(id)arg6;
+- (void)removeAnimationsAndFinish:(bool)arg1;
 - (void)renderOutgoingSlideAndPrecacheIncomingSlide;
 - (void)resetLayerTreeAfterAnimation;
 - (void)setupPluginContext;
 - (void)stopAnimations;
-- (void)teardown;
+- (void)teardownTransitionIsExitingShow:(bool)arg1;
 
 @end

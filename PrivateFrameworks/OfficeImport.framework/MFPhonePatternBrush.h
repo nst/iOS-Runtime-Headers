@@ -5,14 +5,14 @@
 @class MFPhoneBitmap;
 
 @interface MFPhonePatternBrush : MFPhoneBrush {
+    boolm_usePaletteForBilevel;
     MFPhoneBitmap *m_pattern;
-    BOOL m_usePaletteForBilevel;
 }
 
-+ (id)patternBrushWithBitmap:(id)arg1 usePaletteForBilevel:(BOOL)arg2;
++ (id)patternBrushWithBitmap:(id)arg1 usePaletteForBilevel:(bool)arg2;
 
 - (void)dealloc;
 - (void)fillPath:(id)arg1 :(id)arg2;
-- (id)initWithBitmap:(id)arg1 usePaletteForBilevel:(BOOL)arg2;
+- (id)initWithBitmap:(id)arg1 usePaletteForBilevel:(bool)arg2;
 
 @end

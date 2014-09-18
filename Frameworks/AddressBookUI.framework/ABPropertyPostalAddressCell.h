@@ -2,29 +2,9 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPostalAddressEditorView;
-
-@interface ABPropertyPostalAddressCell : ABPropertySimpleCell {
-    ABPostalAddressEditorView *_addressEditor;
+@interface ABPropertyPostalAddressCell : ABPropertySimpleTransportCell {
 }
 
-@property(retain) ABPostalAddressEditorView * addressEditor;
-
-+ (void)initialize;
-
-- (id)addressEditor;
-- (id)contentViewEditingConstraints;
-- (void)dealloc;
-- (id)firstResponderItem;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutChanged:(id)arg1;
-- (void)setAddressEditor:(id)arg1;
-- (void)setBackgroundColor:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPresentingDelegate:(id)arg1;
-- (void)setValueTextAttributes:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)updateWithPropertyItem:(id)arg1;
-- (void)valueChanged:(id)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

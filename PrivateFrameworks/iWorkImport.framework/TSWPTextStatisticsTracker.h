@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPStatisticsControlling>, NSMutableArray, TSWPStorage, TSWPTextStatistics;
+@class <TSWPStatisticsControlling>, NSMutableArray, NSString, TSWPStorage, TSWPTextStatistics;
 
 @interface TSWPTextStatisticsTracker : NSObject <TSWPStorageObserver, TSWPTextStatisticsTracking> {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    int _modifiedDelta;
+        unsigned long long location; 
+        unsigned long long length; 
+    long long _modifiedDelta;
     } _modifiedRange;
     NSMutableArray *_paragraphStatistics;
     <TSWPStatisticsControlling> *_statisticsController;
@@ -16,20 +16,24 @@
     TSWPTextStatistics *_storageStatistics;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) TSWPTextStatistics * statistics;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (void)incrementallyUpdateStatisticsUntil:(id)arg1;
 - (id)initWithController:(id)arg1 andObject:(id)arg2;
-- (void)p_applyTextRangeOffset:(int)arg1 startingAtParagraphIndex:(unsigned int)arg2;
-- (unsigned int)p_indexOfRangedStatisticForLocation:(unsigned int)arg1;
-- (void)p_insertTrackers:(unsigned int)arg1 atIndex:(unsigned int)arg2;
-- (void)p_invalidateTrackersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)p_applyTextRangeOffset:(long long)arg1 startingAtParagraphIndex:(unsigned long long)arg2;
+- (unsigned long long)p_indexOfRangedStatisticForLocation:(unsigned long long)arg1;
+- (void)p_insertTrackers:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
+- (void)p_invalidateTrackersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)p_processStorageChanges;
-- (void)p_removeTrackersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)p_removeTrackersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)p_updateStatisticsInRangedStatistic:(id)arg1;
 - (id)statistics;
-- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
+- (void)storage:(id)arg1 didChangeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 delta:(long long)arg3 broadcastKind:(int)arg4;
 - (void)tearDown;
 
 @end

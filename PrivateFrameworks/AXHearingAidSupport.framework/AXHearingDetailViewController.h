@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXRemoteHearingAidDevice, NSString;
+@class AXRemoteHearingAidDevice;
 
 @interface AXHearingDetailViewController : PSListController {
     AXRemoteHearingAidDevice *_device;
-    NSString *_liveListenerUUID;
+    bool_isLiveListening;
 }
 
 @property(retain) AXRemoteHearingAidDevice * device;
@@ -17,14 +17,15 @@
 - (id)device;
 - (id)deviceSpecifiers;
 - (id)disconnectedSpecifiers;
+- (id)init;
 - (void)liveListenToggle:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })programsRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })programsRange;
 - (void)setDevice:(id)arg1;
 - (id)specifierForKey:(id)arg1;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateLiveListenCell:(id)arg1;
 - (void)updateView;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

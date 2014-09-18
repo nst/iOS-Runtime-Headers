@@ -9,31 +9,35 @@
     NSURL *_presentedItemURL;
     NSString *_storeName;
     PFUbiquityLocation *_ubiquityRootLocation;
-    BOOL _usedExistingUUIDFile;
     PFUbiquityLocation *_uuidFileLocation;
     NSString *_uuidString;
+    bool_usedExistingUUIDFile;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSURL * presentedItemURL;
-@property(readonly) NSURL * primaryPresentedItemURL;
-@property(readonly) BOOL usedExistingUUIDFile;
+@property(copy,readonly) NSURL * primaryPresentedItemURL;
+@property(readonly) Class superclass;
+@property(readonly) bool usedExistingUUIDFile;
 @property(readonly) PFUbiquityLocation * uuidFileLocation;
 @property(readonly) NSString * uuidString;
 
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)identifyContainer:(id*)arg1;
+- (bool)identifyContainer:(id*)arg1;
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
-- (BOOL)replaceIdentifierWithUUID:(id)arg1 error:(id*)arg2;
+- (bool)replaceIdentifierWithUUID:(id)arg1 error:(id*)arg2;
 - (void)setUUIDStringFromLocation:(id)arg1;
-- (BOOL)usedExistingUUIDFile;
+- (bool)usedExistingUUIDFile;
 - (id)uuidFileLocation;
 - (id)uuidString;
-- (BOOL)writeToDisk:(id*)arg1;
+- (bool)writeToDisk:(id*)arg1;
 
 @end

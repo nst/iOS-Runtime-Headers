@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUColor;
+@class OITSUColor;
 
 @interface MFPen : NSObject <MFObject> {
-    TSUColor *m_colour;
+    OITSUColor *m_colour;
     int m_penStyle;
     int m_penWidth;
     double *m_userStyleArray;

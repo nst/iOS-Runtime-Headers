@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABContactDeleteContactAction : ABContactAction <UIActionSheetDelegate> {
+@interface ABContactDeleteContactAction : ABContactAction {
 }
 
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)performActionWithSender:(id)arg1;
+- (void)showDeleteFailureAlert;
 
 @end

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIClientContext, SKUIColorScheme, UIButton, UIControl, UILabel, UIPopoverController, UIView;
+@class NSArray, NSString, SKUIClientContext, SKUIColorScheme, UIButton, UIControl, UILabel, UIPopoverController, UIView;
 
 @interface SKUIIPadCustomerReviewsHeaderView : UIControl <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     UIButton *_appSupportButton;
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
-    int _selectedSortIndex;
+    long long _selectedSortIndex;
     UIView *_separatorView;
     UIButton *_sortButton;
     UILabel *_sortLabel;
@@ -20,8 +20,12 @@
 
 @property(readonly) UIControl * appSupportButton;
 @property(retain) SKUIColorScheme * colorScheme;
-@property int selectedSortIndex;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property long long selectedSortIndex;
 @property(copy) NSArray * sortTitles;
+@property(readonly) Class superclass;
 @property(readonly) UIControl * writeAReviewButton;
 
 - (void).cxx_destruct;
@@ -31,17 +35,17 @@
 - (id)appSupportButton;
 - (id)colorScheme;
 - (void)dealloc;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithClientContext:(id)arg1;
 - (void)layoutSubviews;
-- (void)menuViewController:(id)arg1 didSelectItemAtIndex:(int)arg2;
+- (void)menuViewController:(id)arg1 didSelectItemAtIndex:(long long)arg2;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (int)selectedSortIndex;
+- (long long)selectedSortIndex;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setSelectedSortIndex:(int)arg1;
+- (void)setSelectedSortIndex:(long long)arg1;
 - (void)setSortTitles:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)sortTitles;
 - (id)writeAReviewButton;
 

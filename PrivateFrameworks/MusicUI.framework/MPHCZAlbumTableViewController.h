@@ -2,20 +2,23 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaItemCollection, MPTransportControls, MPUCoverZoomViewController, UIColor, UIPinchGestureRecognizer, UIView;
+@class MPTransportControls, MPUCoverZoomViewController, NSString, UIPinchGestureRecognizer, UIView;
 
-@interface MPHCZAlbumTableViewController : MusicTableViewController <MPTransportControlsTarget, UIGestureRecognizerDelegate, MPUCoverZoomDetailViewControllerProtocol> {
-    MPMediaItemCollection *_album;
+@interface MPHCZAlbumTableViewController : MusicAlbumsDetailViewController <MPTransportControlsTarget, UIGestureRecognizerDelegate> {
     MPUCoverZoomViewController *_coverZoomViewController;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    UIColor *_primaryTextColor;
     UIView *_tapView;
     MPTransportControls *_transportControlsView;
 }
 
 @property MPUCoverZoomViewController * coverZoomViewController;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (BOOL)_supportsSearch;
++ (Class)_albumsDetailTableHeaderViewClass;
++ (bool)_supportsSearch;
 
 - (void).cxx_destruct;
 - (id)_createTableView;
@@ -23,19 +26,19 @@
 - (void)_itemDidChangeNotification:(id)arg1;
 - (void)_pinchAction:(id)arg1;
 - (void)_tapAction:(id)arg1;
-- (void)_updateHeaderViewForAlbum;
 - (id)coverZoomViewController;
 - (void)dealloc;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)initWithDataSource:(id)arg1;
 - (id)initWithEntity:(id)arg1;
 - (void)loadView;
 - (void)reloadData;
 - (void)setCoverZoomViewController:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
+- (bool)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableSet, NSSet, VKMapModel, VKStylesheet;
+@class NSMutableSet, NSSet, NSString, VKMapModel, VKStyleManager;
 
-@interface VKMapTileModel : VKModelObject <VKMapLayer, VKStylesheetObserver> {
+@interface VKMapTileModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     VKMapModel *_mapModel;
     unsigned char _maximumZ;
     unsigned char _minimumZ;
@@ -16,12 +16,19 @@
     NSMutableSet *_tilesWillExitScene;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property VKMapModel * mapModel;
-@property(readonly) VKStylesheet * stylesheet;
+@property(readonly) unsigned char maximumZ;
+@property(readonly) unsigned char minimumZ;
+@property(readonly) VKStyleManager * styleManager;
+@property(readonly) Class superclass;
 @property(readonly) NSSet * tilesInScene;
+@property(readonly) NSSet * tilesInScenePlusExitingTiles;
 
-+ (BOOL)reloadOnActiveTileGroupChange;
-+ (BOOL)reloadOnStylesheetChange;
++ (bool)reloadOnActiveTileGroupChange;
++ (bool)reloadOnStylesheetChange;
 
 - (void)activeTileGroupChanged;
 - (void)clearCollections;
@@ -30,18 +37,22 @@
 - (void)dealloc;
 - (void)didMoveToSupermodel;
 - (id)init;
-- (unsigned int)mapLayerPosition;
+- (unsigned long long)mapLayerPosition;
 - (id)mapModel;
-- (BOOL)maximumZoomLevelBoundsCamera;
-- (BOOL)minimumZoomLevelBoundsCamera;
+- (unsigned char)maximumZ;
+- (bool)maximumZoomLevelBoundsCamera;
+- (unsigned char)minimumZ;
+- (bool)minimumZoomLevelBoundsCamera;
 - (void)removePersistingExitingTiles:(id)arg1;
 - (void)reset;
 - (void)setMapModel:(id)arg1;
-- (id)stylesheet;
+- (bool)shouldLayoutWithoutStyleManager;
+- (id)styleManager;
 - (void)stylesheetDidChange;
 - (void)stylesheetWillChange;
 - (id)tilesInScene;
-- (void)updateTilesInScene:(id)arg1 withContext:(id)arg2 categorize:(BOOL)arg3;
+- (id)tilesInScenePlusExitingTiles;
+- (void)updateTilesInScene:(id)arg1 withContext:(id)arg2 categorize:(bool)arg3;
 - (void)willStartDrawingTiles:(id)arg1;
 - (void)willStopDrawingTiles:(id)arg1;
 

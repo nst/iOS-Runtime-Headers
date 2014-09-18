@@ -10,7 +10,7 @@
     NSSet *_propPatchRemoveElements;
     NSSet *_propPatchSetElements;
     CoreDAVResponseItem *_responseItem;
-    BOOL _sendOrder;
+    bool_sendOrder;
 }
 
 @property int absoluteOrder;

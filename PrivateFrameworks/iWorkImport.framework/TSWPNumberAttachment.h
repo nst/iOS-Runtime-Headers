@@ -31,6 +31,6 @@
 - (id)stringEquivalent;
 - (id)stringEquivalentWithLayoutParent:(id)arg1;
 - (id)stringValue;
-- (id)stringWithNumber:(unsigned int)arg1;
+- (id)stringWithNumber:(unsigned long long)arg1;
 
 @end

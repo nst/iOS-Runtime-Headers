@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@class NSNumber, NSString;
 
 @interface SAEntryPoint : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSNumber * latitude;
 @property(copy) NSNumber * longitude;
+@property(readonly) Class superclass;
 
 + (id)entryPoint;
 + (id)entryPointWithDictionary:(id)arg1 context:(id)arg2;

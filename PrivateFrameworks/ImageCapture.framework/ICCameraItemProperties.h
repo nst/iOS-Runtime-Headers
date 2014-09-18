@@ -8,17 +8,17 @@
     NSString *_UTI;
     NSDate *_creationDate;
     ICCameraDevice *_device;
-    BOOL _locked;
     NSDate *_modificationDate;
     NSString *_name;
     ICCameraFolder *_parentFolder;
     NSMutableDictionary *_userData;
+    bool_locked;
 }
 
 @property(retain) NSString * UTI;
 @property(retain) NSDate * creationDate;
 @property ICCameraDevice * device;
-@property BOOL locked;
+@property bool locked;
 @property(retain) NSDate * modificationDate;
 @property(retain) NSString * name;
 @property ICCameraFolder * parentFolder;
@@ -29,13 +29,13 @@
 - (void)dealloc;
 - (id)device;
 - (void)finalize;
-- (BOOL)locked;
+- (bool)locked;
 - (id)modificationDate;
 - (id)name;
 - (id)parentFolder;
 - (void)setCreationDate:(id)arg1;
 - (void)setDevice:(id)arg1;
-- (void)setLocked:(BOOL)arg1;
+- (void)setLocked:(bool)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setParentFolder:(id)arg1;

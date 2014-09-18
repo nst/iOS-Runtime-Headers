@@ -8,25 +8,28 @@
     AVCompositionInternal *_priv;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property(readonly) struct CGSize { double x1; double x2; } naturalSize;
 @property(readonly) NSArray * tracks;
 
 + (void)initialize;
 
 - (id)_assetInspector;
-- (long)_createEmptyMutableCompositionIfNeeded;
+- (id)_assetInspectorLoader;
+- (Class)_classForTrackInspectors;
+- (int)_createEmptyMutableCompositionIfNeeded;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)_initWithComposition:(id)arg1;
+- (void)_loadAssetInspectorAndLoaderOnce;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (id)_mutableTracks;
-- (id)_newTrackForIndex:(long)arg1;
-- (void)_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_newTrackForIndex:(long long)arg1;
+- (void)_setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
 - (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (id)tracks;
 
 @end

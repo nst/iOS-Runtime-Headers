@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSDateFormatter;
+@class NSDateFormatter, NSString;
 
 @interface AFSUPFunctionProvider : AFSpeakableUtteranceParser <AFSpeakableNamespaceProvider> {
     NSDateFormatter *_dateFormatter;
     NSDateFormatter *_timeFormatter;
-    BOOL _useSpeechMode;
+    bool_useSpeechMode;
 }
 
-+ (BOOL)_shouldAutomaticallyProvideFunctions;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (bool)_shouldAutomaticallyProvideFunctions;
 
 - (void).cxx_destruct;
 - (id)_callFunction:(id)arg1 withArguments:(id)arg2;
@@ -25,6 +30,6 @@
 - (id)init;
 - (id)initWithLocale:(id)arg1;
 - (id)stringForExpression:(id)arg1;
-- (void)useSpeechMode:(BOOL)arg1;
+- (void)useSpeechMode:(bool)arg1;
 
 @end

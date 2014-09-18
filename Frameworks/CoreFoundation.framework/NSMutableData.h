@@ -5,31 +5,36 @@
 @interface NSMutableData : NSData {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)dataWithCapacity:(unsigned int)arg1;
-+ (id)dataWithLength:(unsigned int)arg1;
+@property unsigned long long length;
+@property(readonly) void* mutableBytes;
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)dataWithCapacity:(unsigned long long)arg1;
++ (id)dataWithLength:(unsigned long long)arg1;
+
+- (bool)_isCompact;
 - (void)abAppendString:(id)arg1;
-- (void)appendBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (void)appendBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (void)appendData:(id)arg1;
-- (void)appendLELong:(long)arg1;
+- (void)appendLELong:(int)arg1;
 - (void)appendLEShort:(short)arg1;
-- (void)appendString:(id)arg1 encoding:(unsigned int)arg2;
+- (void)appendString:(id)arg1 encoding:(unsigned long long)arg2;
 - (Class)classForCoder;
-- (void)increaseLengthBy:(unsigned int)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithLength:(unsigned int)arg1;
+- (void)increaseLengthBy:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithLength:(unsigned long long)arg1;
 - (void)mf_appendCString:(const char *)arg1;
 - (void)mf_appendRFC2231CompliantValue:(id)arg1 forKey:(id)arg2;
 - (void)mf_convertNetworkLineEndingsToUnix;
-- (void)mf_convertNetworkLineEndingsToUnixInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)mf_convertNetworkLineEndingsToUnixInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)mf_makeImmutable;
 - (void*)mutableBytes;
-- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2 length:(unsigned int)arg3;
-- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;
-- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withLELong:(long)arg2;
-- (void)resetBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withBytes:(const void*)arg2 length:(unsigned long long)arg3;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withBytes:(const void*)arg2;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withLELong:(int)arg2;
+- (void)resetBytesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setData:(id)arg1;
-- (void)setLength:(unsigned int)arg1;
+- (void)setLength:(unsigned long long)arg1;
+- (void)tsp_appendDispatchData:(id)arg1;
 
 @end

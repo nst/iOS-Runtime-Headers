@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface KNTransitionIris : KNIrisBase <KNFrameAnimator> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)defaultAttributes;
-+ (BOOL)isTransition;
++ (bool)isTransition;
 + (id)supportedTypes;
 
 - (void)animationWillBeginWithContext:(id)arg1;

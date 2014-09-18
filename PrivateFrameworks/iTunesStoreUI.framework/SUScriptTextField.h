@@ -11,11 +11,15 @@
 
 @property(retain) NSString * autocapitalizationType;
 @property(retain) NSString * autocorrectionType;
-@property(readonly) BOOL canBecomeFirstResponder;
+@property(readonly) bool canBecomeFirstResponder;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * keyboardType;
 @property(retain) NSString * placeholder;
 @property(retain) WebScriptObject * shouldFocusFunction;
 @property(readonly) NSString * style;
+@property(readonly) Class superclass;
 @property(retain) NSString * value;
 @property(retain) NSNumber * width;
 
@@ -29,18 +33,18 @@
 - (id)_className;
 - (id)_copyPlaceholder;
 - (id)_copyValue;
-- (float)_defaultWidth;
+- (double)_defaultWidth;
 - (id)_keyboardType;
 - (id)_newTextField;
-- (BOOL)_styleIsValid:(id)arg1;
+- (bool)_styleIsValid:(id)arg1;
 - (id)attributeKeys;
 - (id)autocapitalizationType;
 - (id)autocorrectionType;
-- (BOOL)blur;
+- (bool)blur;
 - (id)buttonItem;
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (void)dealloc;
-- (BOOL)focus;
+- (bool)focus;
 - (id)init;
 - (id)initWithTextFieldStyle:(id)arg1;
 - (id)keyboardType;

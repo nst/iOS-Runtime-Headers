@@ -2,28 +2,36 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSMutableSet;
+@class NSMutableArray, NSMutableSet, NSString;
 
 @interface GEOSimpleTileRequester : GEOTileRequester <NSURLConnectionDelegate> {
-    BOOL _cancelled;
     NSMutableArray *_errors;
     NSMutableSet *_running;
-    BOOL _subclassImplementsTileEdition;
     NSMutableArray *_waiting;
+    bool_cancelled;
+    bool_subclassImplementsTileEdition;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (long long)eTagType;
 
 - (void)_cleanup;
 - (void)_doWorkOrFinish;
 - (void)_operationFailed:(id)arg1 error:(id)arg2;
 - (void)_operationFinished:(id)arg1;
-- (BOOL)allowsCookies;
+- (bool)allowsCookies;
 - (void)cancel;
 - (void)dealloc;
 - (id)editionHeader;
-- (id)initWithKeyList:(id)arg1;
-- (BOOL)isRunning;
+- (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3 cachedEtags:(id)arg4 cachedData:(id)arg5;
+- (bool)isRunning;
 - (id)localizationURLForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)mergeBaseTile:(id)arg1 withLocalizationTile:(id)arg2;
+- (id)mergeBaseTileEtag:(id)arg1 withLocalizationTileEtag:(id)arg2;
 - (void)start;
 - (unsigned int)tileEditionForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)urlForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;

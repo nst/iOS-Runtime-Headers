@@ -5,12 +5,12 @@
 @interface NSMergePolicy : NSObject {
     void *_reserved2;
     void *_reserved3;
-    unsigned int _type;
+    unsigned long long _type;
 }
 
-@property(readonly) unsigned int mergeType;
+@property(readonly) unsigned long long mergeType;
 
-+ (BOOL)accessInstanceVariablesDirectly;
++ (bool)accessInstanceVariablesDirectly;
 + (void)load;
 
 - (void)_mergeChangesObjectUpdatesTrumpForObject:(id)arg1 withRecord:(id)arg2;
@@ -20,13 +20,13 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMergeType:(unsigned int)arg1;
-- (id)initWithType:(unsigned int)arg1;
-- (void)mergeToManyRelationshipForSourceObject:(id)arg1 withOldSnapshot:(id)arg2 newSnapshot:(id)arg3 andAncestor:(id)arg4 andLegacyPath:(BOOL)arg5;
-- (unsigned int)mergeType;
+- (id)initWithMergeType:(unsigned long long)arg1;
+- (id)initWithType:(unsigned long long)arg1;
+- (void)mergeToManyRelationshipForSourceObject:(id)arg1 withOldSnapshot:(id)arg2 newSnapshot:(id)arg3 andAncestor:(id)arg4 andLegacyPath:(bool)arg5;
+- (unsigned long long)mergeType;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)resolveConflict:(id)arg1;
-- (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
-- (unsigned int)type;
+- (bool)resolveConflict:(id)arg1;
+- (bool)resolveConflicts:(id)arg1 error:(id*)arg2;
+- (unsigned long long)type;
 
 @end

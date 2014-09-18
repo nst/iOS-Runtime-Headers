@@ -28,9 +28,10 @@
 - (void)dealloc;
 - (id)diffuseTextureTiling;
 - (id)environment;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)initWithArchive:(const struct Chart3DLightingModelArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DPhongLightingModelArchive {} *x3; struct Chart3DFixedFunctionLightingModelArchive {} *x4; struct Chart3DEnvironmentPackageArchive {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lightingModelWithLightings:(id)arg1;
 - (id)lightings;
 - (id)materials;

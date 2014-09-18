@@ -6,7 +6,6 @@
 
 @interface TRTCPConnection : NSObject <TRTCPConnectionStreamDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _closed;
     TRTCPConnectionStream *_connectionStream;
     <TRTCPConnectionDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
@@ -14,10 +13,15 @@
     NSObject<OS_dispatch_source> *_keepAliveTimer;
     NSArray *_relevantPacketEventClasses;
     int _uniqueID;
+    bool_closed;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) <TRTCPConnectionDelegate> * delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(readonly) int uniqueID;
 
 - (void).cxx_destruct;

@@ -12,19 +12,23 @@
     UITextField *_accountTextField;
     id _completionHandler;
     UITextField *_passwordTextField;
-    int _style;
+    long long _style;
 }
 
 @property(copy) NSString * accountTextFieldPlaceholder;
-@property(readonly) int style;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long style;
+@property(readonly) Class superclass;
 
 - (id)accountTextFieldPlaceholder;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 title:(id)arg2 message:(id)arg3 completionHandler:(id)arg4;
+- (id)initWithStyle:(long long)arg1 title:(id)arg2 message:(id)arg3 completionHandler:(id)arg4;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (void)setAccountTextFieldPlaceholder:(id)arg1;
-- (int)style;
+- (long long)style;
 
 @end

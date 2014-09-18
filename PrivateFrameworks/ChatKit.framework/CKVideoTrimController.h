@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKTrimControllerDelegate>, CKMediaObject, UIVideoEditorController;
+@class <CKTrimControllerDelegate>, CKMediaObject, NSString, UIVideoEditorController;
 
 @interface CKVideoTrimController : NSObject <UIVideoEditorControllerDelegatePrivate, UINavigationControllerDelegate> {
     <CKTrimControllerDelegate> *_delegate;
@@ -11,9 +11,13 @@
     CKMediaObject *_trimmedMediaObject;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <CKTrimControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
 @property(retain) UIVideoEditorController * editVideoVC;
+@property(readonly) unsigned long long hash;
 @property(retain) CKMediaObject * originalMediaObject;
+@property(readonly) Class superclass;
 @property(retain) CKMediaObject * trimmedMediaObject;
 
 - (void)dealloc;

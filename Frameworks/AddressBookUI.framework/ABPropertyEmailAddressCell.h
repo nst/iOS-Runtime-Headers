@@ -2,17 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyEmailAddressCell : ABPropertySimpleCell {
-    BOOL _VIP;
+@interface ABPropertyEmailAddressCell : ABPropertySimpleTransportCell {
+    bool_VIP;
 }
 
-@property(getter=isVIP) BOOL VIP;
+@property(getter=isVIP) bool VIP;
 
-- (void)_updateStar;
-- (BOOL)isVIP;
-- (void)setVIP:(BOOL)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)isVIP;
+- (void)setVIP:(bool)arg1;
+- (bool)shouldPerformDefaultAction;
+- (bool)shouldShowStar;
 - (void)updateTransportButtons;
-- (void)updateWithPropertyItem:(id)arg1;
 
 @end

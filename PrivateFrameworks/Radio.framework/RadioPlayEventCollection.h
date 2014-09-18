@@ -9,15 +9,15 @@
     NSMapTable *_stationInformationToPlayEvents;
 }
 
-@property(readonly) NSString * deviceName;
+@property(copy,readonly) NSString * deviceName;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDeviceName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playInfoDictionary;
 

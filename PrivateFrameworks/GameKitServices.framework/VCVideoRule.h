@@ -16,8 +16,8 @@
 @property int iPayload;
 @property int iWidth;
 
-- (int)compare:(id)arg1;
-- (int)compareByPref:(id)arg1;
+- (long long)compare:(id)arg1;
+- (long long)compareByPref:(id)arg1;
 - (id)description;
 - (float)fPref;
 - (float)fRate;

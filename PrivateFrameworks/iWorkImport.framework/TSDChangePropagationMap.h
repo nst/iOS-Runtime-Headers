@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, TSUNoCopyDictionary;
+@class NSMutableSet, NSString, TSUNoCopyDictionary;
 
 @interface TSDChangePropagationMap : NSObject <TSDChangePropagationMap> {
     NSMutableSet *mClassesOfChangedPrototypes;
     TSUNoCopyDictionary *mDictionary;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
-- (BOOL)hasAnyChangesForPrototypesOfClasses:(id)arg1;
+- (bool)hasAnyChangesForPrototypesOfClasses:(id)arg1;
 - (id)init;
 - (void)p_addClassesForPrototype:(id)arg1;
 - (id)prototypeChangeForPrototype:(id)arg1;

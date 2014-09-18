@@ -10,17 +10,18 @@
 
 @property(readonly) NSArray * ports;
 
-- (void)_applyOverridesToCaptureOptions:(id)arg1;
++ (void)initialize;
+
+- (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
+- (void)attachToFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
-- (void)didStartForSession:(id)arg1;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
-- (void)handleNotification:(id)arg1 payload:(id)arg2;
+- (void)detachFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
+- (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)init;
-- (id)notReadyError;
+- (void)performFigCaptureSessionOperationSafelyUsingBlock:(id)arg1;
 - (id)ports;
 - (id)session;
 - (void)setSession:(id)arg1;
-- (void)willStartForSession:(id)arg1;
 
 @end

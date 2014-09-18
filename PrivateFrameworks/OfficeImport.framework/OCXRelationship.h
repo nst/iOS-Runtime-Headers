@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface OCXRelationship : NSObject {
-    BOOL mExternal;
+    boolmExternal;
     NSString *mIdString;
     NSString *mTarget;
     NSString *mType;
@@ -17,8 +17,9 @@
 
 - (void)dealloc;
 - (id)idString;
-- (id)initWithId:(unsigned int)arg1 type:(id)arg2 target:(id)arg3 external:(BOOL)arg4;
+- (id)initWithId:(unsigned long long)arg1 type:(id)arg2 target:(id)arg3 external:(bool)arg4;
 - (id)target;
 - (id)type;
+- (void)writeToStreamWriter:(id)arg1;
 
 @end

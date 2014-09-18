@@ -5,19 +5,19 @@
 @class NSLock;
 
 @interface SCRCTargetSelectorTimer : SCRCTargetSelector {
-    BOOL _createdTimer;
-    BOOL _isCancelled;
-    BOOL _isPending;
     id _key;
     NSLock *_lock;
     id _object;
     struct __CFRunLoopTimer { } *_timer;
+    bool_createdTimer;
+    bool_isCanceled;
+    bool_isPending;
 }
 
 + (void)_runThread;
 + (void)initialize;
 
-- (BOOL)_createdTimer;
+- (bool)_createdTimer;
 - (void)_dispatch;
 - (void)_dispatchMainThread;
 - (void)_dispatchSCRCThread;
@@ -28,8 +28,9 @@
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 threadKey:(id)arg3;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (void)invalidate;
-- (BOOL)isCancelled;
-- (BOOL)isPending;
+- (bool)isCanceled;
+- (bool)isCancelled;
+- (bool)isPending;
 - (oneway void)release;
 - (id)threadKey;
 

@@ -3,7 +3,7 @@
  */
 
 @interface AVItem : NSObject {
-    struct AVItemPrivate { id x1; id x2; double x3; float x4; float x5; float x6; unsigned int x7; BOOL x8; BOOL x9; id x10; int x11; long long x12; long long x13; BOOL x14; id x15; id x16; BOOL x17; BOOL x18; id x19; id x20; struct OpaqueMD5CheckProgress {} *x21; struct OpaqueFigThread {} *x22; struct OpaqueCMByteStream {} *x23; int x24; id x25; id x26; } *_priv;
+    struct AVItemPrivate { id x1; id x2; double x3; float x4; float x5; float x6; unsigned long long x7; boolx8; boolx9; id x10; long long x11; long long x12; long long x13; boolx14; id x15; id x16; boolx17; boolx18; id x19; id x20; struct OpaqueMD5CheckProgress {} *x21; struct OpaqueFigThread {} *x22; struct OpaqueCMByteStream {} *x23; int x24; id x25; id x26; } *_priv;
 }
 
 + (id)avItem;
@@ -12,27 +12,27 @@
 - (int)_instantiateItem;
 - (id)accessLog;
 - (id)attributeForKey:(id)arg1;
-- (long)beginDownloading;
+- (int)beginDownloading;
 - (void)cancelDownload;
-- (id)chapterImageForImageID:(int)arg1;
+- (id)chapterImageForImageID:(long long)arg1;
 - (void)dealloc;
 - (float)downloadProgress;
-- (long)downloadStatus;
+- (int)downloadStatus;
 - (void*)downloadThread;
 - (double)duration;
-- (int)eqPreset;
+- (long long)eqPreset;
 - (id)errorLog;
-- (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(int)arg3;
+- (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(long long)arg3;
 - (id)formatDetailsForTracks;
 - (id)init;
 - (id)initWithError:(id*)arg1;
 - (id)initWithPath:(id)arg1 error:(id*)arg2;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(int)arg4;
+- (struct CGSize { double x1; double x2; })naturalSize;
+- (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(bool)arg3 maxCount:(long long)arg4;
 - (id)path;
-- (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-- (void)setEQPreset:(int)arg1;
-- (BOOL)setPath:(id)arg1 error:(id*)arg2;
+- (bool)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (void)setEQPreset:(long long)arg1;
+- (bool)setPath:(id)arg1 error:(id*)arg2;
 - (void)setVolume:(float)arg1;
 - (void)stopDownload;
 - (id)url;

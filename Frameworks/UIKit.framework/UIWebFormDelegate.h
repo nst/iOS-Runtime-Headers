@@ -2,28 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebBrowserView, _UIWebFormDelegateEditedFormsMap;
+@class NSString, UIWebBrowserView, _UIWebFormDelegateEditedFormsMap;
 
 @interface UIWebFormDelegate : NSObject <WebFormDelegate> {
     _UIWebFormDelegateEditedFormsMap *_editedForms;
     UIWebBrowserView *_webBrowserView;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)_clearEditedFormsInFrame:(id)arg1;
 - (void)_didEditFormElement:(id)arg1 inFrame:(id)arg2;
-- (BOOL)_shouldIgnoreFormTextChangesInFrame:(id)arg1;
+- (bool)_shouldIgnoreFormTextChangesInFrame:(id)arg1;
 - (void)acceptedAutoFillWord:(id)arg1;
 - (void)dataSourceHasChangedForFrame:(id)arg1;
 - (void)dealloc;
 - (void)didFocusTextField:(id)arg1 inFrame:(id)arg2;
-- (BOOL)formWasEdited;
+- (bool)formWasEdited;
 - (void)frame:(id)arg1 sourceFrame:(id)arg2 willSubmitForm:(id)arg3 withValues:(id)arg4 submissionListener:(id)arg5;
-- (BOOL)hasCurrentSuggestions;
+- (bool)hasCurrentSuggestions;
 - (id)initWithWebBrowserView:(id)arg1;
-- (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
+- (struct { id x1; unsigned long long x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (void)textDidChangeInTextArea:(id)arg1 inFrame:(id)arg2;
 - (void)textDidChangeInTextField:(id)arg1 inFrame:(id)arg2;
-- (BOOL)textField:(id)arg1 doCommandBySelector:(SEL)arg2 inFrame:(id)arg3;
+- (bool)textField:(id)arg1 doCommandBySelector:(SEL)arg2 inFrame:(id)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1 inFrame:(id)arg2;
 - (void)textFieldDidEndEditing:(id)arg1 inFrame:(id)arg2;
 - (void)willSendSubmitEventToForm:(id)arg1 inFrame:(id)arg2 withValues:(id)arg3;

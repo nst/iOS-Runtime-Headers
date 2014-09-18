@@ -2,59 +2,66 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, KNAnimatedSlideView, KNDocumentRoot, KNPlaybackSession, KNSlideNode, NSMutableSet, NSSet;
+@class CALayer, KNAnimatedSlideView, KNDocumentRoot, KNPlaybackSession, KNSlideNode, NSMutableSet, NSSet, NSString, TSUMutableRetainedPointerSet;
 
 @interface KNAnimatedOffscreenPlaybackController : NSObject <TSDCanvasDelegate> {
+    boolmIsAnimating;
+    boolmIsPaused;
     NSMutableSet *mActiveBuildRenderers;
     KNAnimatedSlideView *mAnimator;
+    TSUMutableRetainedPointerSet *mBuildRenderersToAnimateAtEndOfFinishedBuilds;
     CALayer *mConcealingLayer;
-    int mConcealingStyle;
+    long long mConcealingStyle;
     double mCurrentEventAnimationsDelay;
     double mCurrentEventAnimationsNonDelayedEndTime;
     double mCurrentEventAnimationsStartTime;
     double mCurrentEventPauseStartTime;
     KNDocumentRoot *mDocumentRoot;
-    BOOL mIsAnimating;
-    BOOL mIsPaused;
     NSMutableSet *mMovieRenderers;
     KNPlaybackSession *mSession;
 }
 
-@property(readonly) unsigned int currentEventIndex;
+@property(readonly) unsigned long long currentEventIndex;
 @property(readonly) KNSlideNode * currentSlideNode;
-@property(readonly) unsigned int currentSlideNodeEventCount;
+@property(readonly) unsigned long long currentSlideNodeEventCount;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) KNDocumentRoot * documentRoot;
+@property(getter=isFirstBuildEventAutomatic,readonly) bool firstBuildEventAutomatic;
 @property(readonly) KNSlideNode * firstSlideNode;
+@property(readonly) unsigned long long hash;
 @property(readonly) CALayer * layer;
 @property(readonly) NSSet * movieRenderers;
 @property(readonly) KNSlideNode * nextSlideNode;
+@property(readonly) Class superclass;
 
-- (void)beginCurrentEventAnimationsAtLayerTime:(double)arg1;
+- (void)beginCurrentEventAnimationsAtLayerTime:(double)arg1 ignoreBuildDelays:(bool)arg2;
 - (double)currentEventAnimationsRemainingTimeAfterLayerTime:(double)arg1;
-- (unsigned int)currentEventIndex;
+- (unsigned long long)currentEventIndex;
 - (id)currentSlideNode;
-- (unsigned int)currentSlideNodeEventCount;
+- (unsigned long long)currentSlideNodeEventCount;
 - (void)dealloc;
 - (id)documentRoot;
 - (void)endCurrentEventAnimations;
 - (id)firstSlideNode;
-- (void)gotoSlideNode:(id)arg1 eventIndex:(unsigned int)arg2 resetBuildTextures:(BOOL)arg3;
+- (void)gotoSlideNode:(id)arg1 eventIndex:(unsigned long long)arg2 resetBuildTextures:(bool)arg3;
 - (id)init;
-- (id)initWithDocumentRoot:(id)arg1 layerSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithDocumentRoot:(id)arg1 layerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)invalidate;
+- (bool)isFirstBuildEventAutomatic;
 - (id)layer;
 - (id)movieRenderers;
 - (id)nextSlideNode;
 - (void)p_addAnimationsForBuildRenderer:(id)arg1 atBuildStartTime:(double)arg2 relativeToTime:(double)arg3;
 - (void)p_animateConcealingLayerToOpacity:(float)arg1 fromDefaultOpacity:(float)arg2 atTime:(double)arg3;
 - (void)p_invalidateAnimator;
-- (BOOL)p_isCurrentEventTransition;
+- (bool)p_isCurrentEventTransition;
 - (void)p_renderCurrentEvent;
-- (void)p_updateConcealingStyle:(int)arg1 atTime:(double)arg2;
+- (void)p_updateConcealingStyle:(long long)arg1 atTime:(double)arg2;
 - (void)pauseCurrentEventAnimationsAtLayerTime:(double)arg1;
-- (void)pauseCurrentEventAnimationsWithConcealingStyle:(int)arg1 atLayerTime:(double)arg2;
+- (void)pauseCurrentEventAnimationsWithConcealingStyle:(long long)arg1 atLayerTime:(double)arg2;
 - (void)resumeCurrentEventAnimationsAtLayerTime:(double)arg1;
-- (void)updateCurrentEventAnimationsForLayerTime:(double)arg1;
+- (void)updateCurrentEventAnimationsForLayerTime:(double)arg1 ignoreBuildDelays:(bool)arg2;
 - (void)updateMovieRenderersForLayerTime:(double)arg1;
 
 @end

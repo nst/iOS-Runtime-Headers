@@ -7,26 +7,26 @@
 @interface SLSheetMasklayer : CALayer {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     UIColor *_backgroundColor;
     CALayer *_bottomLayer;
     UIColor *_clipBackgroundColor;
-    float _clipCornerRadius;
+    double _clipCornerRadius;
     } _lastBounds;
     } _lastMaskRect;
     CALayer *_leftLayer;
@@ -37,17 +37,18 @@
 }
 
 @property(retain) UIColor * clipBackgroundColor;
-@property float clipCornerRadius;
+@property double clipCornerRadius;
 
 - (void).cxx_destruct;
-- (void)animateSheetMaskFromOldSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (void)animateSheetMaskFromOldSheetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toSheetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (id)clipBackgroundColor;
-- (float)clipCornerRadius;
-- (id)initWithBackgroundColor:(id)arg1 cornerRadius:(float)arg2;
+- (double)clipCornerRadius;
+- (id)initWithBackgroundColor:(id)arg1 cornerRadius:(double)arg2;
+- (void)removeAllAnimations;
 - (void)removeSheetCutout;
 - (void)restoreSheetCutout;
 - (void)setClipBackgroundColor:(id)arg1;
-- (void)setClipCornerRadius:(float)arg1;
-- (void)updateMaskWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maskRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)setClipCornerRadius:(double)arg1;
+- (void)updateMaskWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 maskRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
 @end

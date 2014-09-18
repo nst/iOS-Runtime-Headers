@@ -7,68 +7,84 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class KNSlideNode, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, TSUPointerKeyDictionary;
+@class KNSlideNode, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, TSUPointerKeyDictionary, TSUWeakReference;
 
-@interface KNTheme : TSATheme <TSSPresetSource, TSKTransformableObject> {
+@interface KNTheme : TSATheme <TSSPresetSource, TSKTransformableObject, TSKDocumentObject> {
+    boolmDefaultMasterSlideNodeIsOurBestGuess;
     NSMutableArray *mClassicThemeRecords;
-    KNSlideNode *mDefaultMasterSlideNode;
     NSObject<OS_dispatch_queue> *mDefaultMasterSlideNodeQueue;
+    TSUWeakReference *mDefaultMasterSlideNodeReference;
     TSUPointerKeyDictionary *mFormulaReferenceNamesForSlideNodesCache;
     NSArray *mMasters;
     NSMutableDictionary *mSlideNodesForFormulaReferenceNamesCache;
-    int mSlideStyleIndex;
+    long long mSlideStyleIndex;
     NSString *mUUID;
 }
 
 @property(retain) NSString * UUID;
 @property(retain) NSArray * classicThemeRecords;
-@property(readonly) float cornerRadius;
+@property(readonly) double cornerRadius;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) KNSlideNode * defaultMasterSlideNode;
+@property(readonly) bool defaultMasterSlideNodeIsOurBestGuess;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSArray * masters;
-@property(readonly) struct CGSize { float x1; float x2; } thumbnailSize;
+@property(readonly) Class superclass;
+@property(readonly) struct CGSize { double x1; double x2; } thumbnailSize;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
++ (id)classicThemeNameFromTheme:(id)arg1;
 + (id)generateUUID;
 + (void)initialize;
++ (id)nativeThemeNameFromTheme:(id)arg1;
 + (id)presetKinds;
 + (void)registerPresetSourceClasses;
++ (id)themeNameForCustomOrUnknownTheme;
 
 - (id)UUID;
 - (void)addClassicThemeRecord:(id)arg1;
 - (void)addDefaultPresenterNotesStylesIfAbsent;
 - (void)addMasterSlideNode:(id)arg1 dolcContext:(id)arg2;
 - (void)addMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 dolcContext:(id)arg3;
-- (void)bootstrapBlackThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)bootstrapGradientThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)bootstrapThemeOfSize:(struct CGSize { float x1; float x2; })arg1 alternate:(int)arg2;
-- (void)bootstrapWhiteThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)bootstrapBlackThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)bootstrapGradientThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)bootstrapThemeOfSize:(struct CGSize { double x1; double x2; })arg1 alternate:(int)arg2;
+- (void)bootstrapWhiteThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)childEnumerator;
 - (id)classicThemeRecords;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (BOOL)containsMasterWithName:(id)arg1;
-- (float)cornerRadius;
+- (id)commandForTransformingByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (bool)containsMasterWithName:(id)arg1;
+- (double)cornerRadius;
 - (void)dealloc;
 - (id)defaultMasterSlideNode;
+- (bool)defaultMasterSlideNodeIsOurBestGuess;
 - (id)formulaReferenceNameForSlideNode:(id)arg1;
+- (id)i_findDefaultMaster;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (void)insertMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 atIndex:(unsigned int)arg3 dolcContext:(id)arg4;
+- (void)insertMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 atIndex:(unsigned long long)arg3 dolcContext:(id)arg4;
 - (void)invalidateSlideNameCache;
-- (void)loadFromArchive:(const struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)mappedMasterForMaster:(id)arg1;
-- (id)mappedMasterForSlide:(id)arg1;
+- (void)loadFromArchive:(const struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct Reference {} *x8; boolx9; int x10; unsigned int x11[1]; }*)arg1 unarchiver:(id)arg2;
+- (id)mappedMasterForPasteForMaster:(id)arg1;
+- (id)mappedMasterForPasteForSlide:(id)arg1;
+- (id)mappedMasterForThemeChangeForMaster:(id)arg1;
 - (id)masterWithName:(id)arg1;
 - (id)masters;
 - (id)modelPathComponentForChild:(id)arg1;
 - (id)nameForMasterCopyWithName:(id)arg1;
 - (void)p_cacheSlideNodes;
+- (id)p_findDefaultMaster;
+- (id)p_findSecondMaster;
+- (id)p_mappedMasterForMaster:(id)arg1 scoringHeuristic:(id)arg2;
+- (int)p_matchScoreForMaster:(id)arg1 toMaster:(id)arg2;
 - (void)p_selectSecondMasterAsDefault;
 - (void)p_setDefaultMasterSlideNode:(id)arg1;
 - (void)removeAllClassicThemeRecords;
 - (void)removeAllMasters;
 - (void)removeMasterSlideNode:(id)arg1;
 - (void)resolveDefaultMaster;
-- (void)saveToArchive:(struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ThemeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ThemeArchive {} *x3; struct RepeatedPtrField<TSP::Reference> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; struct Reference {} *x8; boolx9; int x10; unsigned int x11[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)selectSecondMasterAsDefault;
 - (void)setClassicThemeRecords:(id)arg1;
@@ -76,7 +92,12 @@
 - (void)setMasters:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (id)slideNamesMatchingPrefix:(id)arg1;
-- (id)slideNodeForFormulaReferenceName:(id)arg1 caseSensitive:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })thumbnailSize;
+- (id)slideNodeForFormulaReferenceName:(id)arg1 caseSensitive:(bool)arg2;
+- (struct CGSize { double x1; double x2; })thumbnailSize;
+- (id)undeletableStyles;
+- (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)wasRemovedFromDocumentRoot:(id)arg1;
+- (void)willBeAddedToDocumentRoot:(id)arg1 context:(id)arg2;
+- (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

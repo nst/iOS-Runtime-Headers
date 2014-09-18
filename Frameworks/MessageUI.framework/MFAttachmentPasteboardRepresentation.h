@@ -13,7 +13,7 @@
 @property(retain) NSData * data;
 @property(retain) NSString * mimeType;
 @property(retain) NSString * name;
-@property(getter=isValid,readonly) BOOL valid;
+@property(getter=isValid,readonly) bool valid;
 
 - (id)data;
 - (void)dealloc;
@@ -21,7 +21,7 @@
 - (id)initWithAttachment:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMFAttachment:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)mimeType;
 - (id)name;
 - (void)setData:(id)arg1;

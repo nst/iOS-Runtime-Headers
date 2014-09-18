@@ -9,11 +9,12 @@
 
 @property(readonly) CNPostalAddress * address;
 
-- (BOOL)_isMinimalAddress:(id)arg1;
+- (bool)_isMinimalAddress:(id)arg1;
 - (id)address;
+- (id)bestValue:(id)arg1;
 - (id)defaultActionURL;
 - (id)displayStringForValue:(id)arg1;
-- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
+- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
 - (id)normalizedValue;
 
 @end

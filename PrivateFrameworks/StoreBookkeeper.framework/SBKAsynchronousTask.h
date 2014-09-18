@@ -19,14 +19,13 @@
     NSObject<OS_dispatch_queue> *_queue;
     id _result;
     SBKTaskAssertion *_taskAssertion;
-    BOOL _taskInvalidationDisabled;
     double _timeout;
     NSObject<OS_dispatch_source> *_timeoutTimer;
+    bool_taskInvalidationDisabled;
 }
 
 @property int cancelType;
 @property(retain) NSMutableArray * completions;
-@property(copy) NSString * debugDescription;
 @property(retain) NSError * error;
 @property(copy) id expirationHandler;
 @property(copy) id finishedHandler;
@@ -34,7 +33,7 @@
 @property(retain) SBKTaskAssertion * taskAssertion;
 
 - (void).cxx_destruct;
-- (void)_invalidateAssertion:(BOOL)arg1;
+- (void)_invalidateAssertion:(bool)arg1;
 - (void)_invalidateTimer;
 - (void)_onQueueFireExpirationHandlerIfNecesary;
 - (void)addTaskCompletionBlock:(id)arg1;
@@ -55,7 +54,6 @@
 - (id)result;
 - (void)setCancelType:(int)arg1;
 - (void)setCompletions:(id)arg1;
-- (void)setDebugDescription:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setExpirationHandler:(id)arg1;
 - (void)setFinishedHandler:(id)arg1;

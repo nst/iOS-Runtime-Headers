@@ -14,15 +14,16 @@
 @property(copy) NSString * cardName;
 @property(copy) NSString * cardNumber;
 @property(copy) NSString * cardholderName;
-@property(readonly) NSDate * expirationDate;
+@property(copy,readonly) NSDate * expirationDate;
 
+- (void).cxx_destruct;
 - (id)cardName;
 - (id)cardNumber;
 - (id)cardholderName;
 - (id)creditCardDataByMergingCardholderNameAndExpirationDateFromCard:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)expirationDate;
+- (id)initWithCameraReaderOutput:(id)arg1;
 - (id)initWithCardName:(id)arg1 number:(id)arg2 cardholderName:(id)arg3 expirationDate:(id)arg4;
 - (id)initWithKeychainRepresentation:(id)arg1;
 - (id)keychainRepresentation;

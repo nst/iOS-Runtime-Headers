@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ACAccountStore, NSString;
+@class ACAccountStore, NSString, SUScriptAppleAccount;
 
 @interface SUScriptAppleAccountStore : SUScriptObject {
     ACAccountStore *_accountStore;
@@ -16,15 +16,17 @@
 @property(readonly) NSString * accountTypeIdentifierSinaWeibo;
 @property(readonly) NSString * accountTypeIdentifierTwitter;
 @property(readonly) NSString * effectiveBundleID;
-@property(readonly) int renewResultFailed;
-@property(readonly) int renewResultRejected;
-@property(readonly) int renewResultRenewed;
+@property(readonly) SUScriptAppleAccount * primaryAppleAccount;
+@property(readonly) long long renewResultFailed;
+@property(readonly) long long renewResultRejected;
+@property(readonly) long long renewResultRenewed;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_accountStore;
+- (void)_accountStoreChangeNotification:(id)arg1;
 - (id)_className;
 - (id)accessPurposeRead;
 - (id)accessPurposeReadWrite;
@@ -37,11 +39,13 @@
 - (id)attributeKeys;
 - (void)dealloc;
 - (id)effectiveBundleID;
+- (id)init;
 - (id)makeClientAccessInfoWithAccountType:(id)arg1;
+- (id)primaryAppleAccount;
 - (void)renewCredentialsForAccount:(id)arg1 completionHandler:(id)arg2;
-- (int)renewResultFailed;
-- (int)renewResultRejected;
-- (int)renewResultRenewed;
+- (long long)renewResultFailed;
+- (long long)renewResultRejected;
+- (long long)renewResultRenewed;
 - (void)requestAccessWithInfo:(id)arg1 completionHandler:(id)arg2;
 - (id)scriptAttributeKeys;
 - (void)setEffectiveBundleID:(id)arg1;

@@ -2,15 +2,14 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABContactToggleBlockCallerAction : ABContactAction <UIActionSheetDelegate> {
+@interface ABContactToggleBlockCallerAction : ABContactAction {
 }
 
-@property(readonly) BOOL isBlocked;
+@property(readonly) bool isBlocked;
 
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)allNumbersAndEmails;
 - (void)block;
-- (BOOL)isBlocked;
+- (bool)isBlocked;
 - (void)performActionWithSender:(id)arg1;
 - (void)unblock;
 

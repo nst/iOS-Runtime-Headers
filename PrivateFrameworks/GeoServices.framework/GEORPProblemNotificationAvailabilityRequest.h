@@ -7,16 +7,16 @@
 @interface GEORPProblemNotificationAvailabilityRequest : PBRequest <NSCopying> {
     struct { 
         unsigned long long *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     struct { 
         unsigned int pinType : 1; 
         unsigned int placeType : 1; 
-    } _businessIDs;
+    } _businessIds;
     GEOClientCapabilities *_clientCapabilities;
     NSString *_countryCode;
     NSData *_devicePushToken;
@@ -26,27 +26,27 @@
     } _problemTypes;
 }
 
-@property(readonly) unsigned long long* businessIDs;
-@property(readonly) unsigned int businessIDsCount;
+@property(readonly) unsigned long long* businessIds;
+@property(readonly) unsigned long long businessIdsCount;
 @property(retain) GEOClientCapabilities * clientCapabilities;
 @property(retain) NSString * countryCode;
 @property(retain) NSData * devicePushToken;
-@property(readonly) BOOL hasClientCapabilities;
-@property(readonly) BOOL hasCountryCode;
-@property(readonly) BOOL hasDevicePushToken;
-@property BOOL hasPinType;
-@property BOOL hasPlaceType;
+@property(readonly) bool hasClientCapabilities;
+@property(readonly) bool hasCountryCode;
+@property(readonly) bool hasDevicePushToken;
+@property bool hasPinType;
+@property bool hasPlaceType;
 @property int pinType;
 @property int placeType;
 @property(readonly) int* problemTypes;
-@property(readonly) unsigned int problemTypesCount;
+@property(readonly) unsigned long long problemTypesCount;
 
-- (void)addBusinessIDs:(unsigned long long)arg1;
-- (void)addProblemTypes:(int)arg1;
-- (unsigned long long*)businessIDs;
-- (unsigned long long)businessIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)businessIDsCount;
-- (void)clearBusinessIDs;
+- (void)addBusinessId:(unsigned long long)arg1;
+- (void)addProblemType:(int)arg1;
+- (unsigned long long)businessIdAtIndex:(unsigned long long)arg1;
+- (unsigned long long*)businessIds;
+- (unsigned long long)businessIdsCount;
+- (void)clearBusinessIds;
 - (void)clearProblemTypes;
 - (id)clientCapabilities;
 - (void)copyTo:(id)arg1;
@@ -56,30 +56,31 @@
 - (id)description;
 - (id)devicePushToken;
 - (id)dictionaryRepresentation;
-- (BOOL)hasClientCapabilities;
-- (BOOL)hasCountryCode;
-- (BOOL)hasDevicePushToken;
-- (BOOL)hasPinType;
-- (BOOL)hasPlaceType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasClientCapabilities;
+- (bool)hasCountryCode;
+- (bool)hasDevicePushToken;
+- (bool)hasPinType;
+- (bool)hasPlaceType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (int)pinType;
 - (int)placeType;
+- (int)problemTypeAtIndex:(unsigned long long)arg1;
 - (int*)problemTypes;
-- (int)problemTypesAtIndex:(unsigned int)arg1;
-- (unsigned int)problemTypesCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)problemTypesCount;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setBusinessIDs:(unsigned long long*)arg1 count:(unsigned int)arg2;
+- (void)setBusinessIds:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setDevicePushToken:(id)arg1;
-- (void)setHasPinType:(BOOL)arg1;
-- (void)setHasPlaceType:(BOOL)arg1;
+- (void)setHasPinType:(bool)arg1;
+- (void)setHasPlaceType:(bool)arg1;
 - (void)setPinType:(int)arg1;
 - (void)setPlaceType:(int)arg1;
-- (void)setProblemTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setProblemTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

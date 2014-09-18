@@ -6,7 +6,7 @@
 }
 
 + (id)chartSeriesType;
-+ (BOOL)isHorizontalChart;
-+ (BOOL)isStacked;
++ (bool)isHorizontalChart;
++ (bool)isStacked;
 
 @end

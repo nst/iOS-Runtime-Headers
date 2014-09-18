@@ -11,7 +11,6 @@
     NSMutableString *_blockText;
     GLKShaderBlockNode *_children;
     unsigned int _index;
-    BOOL _indexedMask;
     NSString *_label;
     NSString *_loopVar;
     } _mask;
@@ -20,18 +19,23 @@
     int _propertyClass;
     int _type;
     int _unrollCt;
+    bool_indexedMask;
 }
 
 @property(retain) NSMutableString * blockText;
 @property GLKShaderBlockNode * children;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property unsigned int index;
-@property BOOL indexedMask;
+@property bool indexedMask;
 @property(copy) NSString * label;
 @property(copy) NSString * loopVar;
 @property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } mask;
 @property GLKShaderBlockNode * next;
 @property GLKShaderBlockNode * parent;
 @property int propertyClass;
+@property(readonly) Class superclass;
 @property int type;
 @property int unrollCt;
 
@@ -52,7 +56,7 @@
 - (void)dealloc;
 - (id)description;
 - (unsigned int)index;
-- (BOOL)indexedMask;
+- (bool)indexedMask;
 - (id)init;
 - (id)label;
 - (id)loopVar;
@@ -66,7 +70,7 @@
 - (void)setBlockText:(id)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
-- (void)setIndexedMask:(BOOL)arg1;
+- (void)setIndexedMask:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLoopVar:(id)arg1;
 - (void)setMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;

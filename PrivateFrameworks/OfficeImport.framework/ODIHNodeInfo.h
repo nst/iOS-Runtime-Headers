@@ -6,7 +6,7 @@
     struct ODIHRange { 
         float mMid; 
         float mLength; 
-    BOOL mConnectToVerticalSide;
+    boolmConnectToVerticalSide;
     int mExtraRowsBetweenParentAndSelf;
     int mRow;
     int mTreeDepth;
@@ -17,12 +17,12 @@
 
 - (id).cxx_construct;
 - (void)addToXOffsetRelativeToParent:(float)arg1;
-- (BOOL)connectToVerticalSide;
+- (bool)connectToVerticalSide;
 - (void)dealloc;
 - (int)extraRowsBetweenParentAndSelf;
 - (id)init;
 - (int)row;
-- (void)setConnectToVerticalSide:(BOOL)arg1;
+- (void)setConnectToVerticalSide:(bool)arg1;
 - (void)setExtraRowsBetweenParentAndSelf:(int)arg1;
 - (void)setRow:(int)arg1;
 - (void)setTreeDepth:(int)arg1;

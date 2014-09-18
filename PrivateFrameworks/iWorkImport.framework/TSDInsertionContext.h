@@ -5,30 +5,28 @@
 @interface TSDInsertionContext : NSObject {
 }
 
-@property(readonly) BOOL fromDragToInsertController;
-@property(readonly) BOOL hasPreferredCenter;
-@property(readonly) BOOL insertFloating;
-@property(readonly) BOOL insertFromDrag;
-@property(readonly) BOOL insertWillBeDiscarded;
-@property(getter=isInteractive,readonly) BOOL interactive;
-@property(readonly) struct CGPoint { float x1; float x2; } preferredCenter;
-@property(getter=isPreferredCenterRequired,readonly) BOOL preferredCenterRequired;
-@property(readonly) BOOL shouldEndEditing;
+@property(readonly) bool fromDragToInsertController;
+@property(readonly) bool hasPreferredCenter;
+@property(readonly) bool insertFloating;
+@property(readonly) bool insertFromDrag;
+@property(getter=isInteractive,readonly) bool interactive;
+@property(readonly) struct CGPoint { double x1; double x2; } preferredCenter;
+@property(getter=isPreferredCenterRequired,readonly) bool preferredCenterRequired;
+@property(readonly) bool shouldEndEditing;
 
-+ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { float x1; float x2; })arg1 required:(BOOL)arg2 fromDragToInsertController:(BOOL)arg3 insertWillBeDiscarded:(BOOL)arg4;
-+ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { float x1; float x2; })arg1 required:(BOOL)arg2 shouldEndEditing:(BOOL)arg3 fromDragToInsertController:(BOOL)arg4 insertWillBeDiscarded:(BOOL)arg5;
++ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { double x1; double x2; })arg1 required:(bool)arg2 fromDragToInsertController:(bool)arg3 insertFloating:(bool)arg4;
++ (id)dragInsertionContextWithPreferredCenter:(struct CGPoint { double x1; double x2; })arg1 required:(bool)arg2 shouldEndEditing:(bool)arg3 fromDragToInsertController:(bool)arg4 insertFloating:(bool)arg5;
 + (id)nonInteractiveFloatingInsertionContext;
 + (id)nonInteractiveInsertionContext;
 
-- (BOOL)fromDragToInsertController;
-- (BOOL)hasPreferredCenter;
+- (bool)fromDragToInsertController;
+- (bool)hasPreferredCenter;
 - (id)init;
-- (BOOL)insertFloating;
-- (BOOL)insertFromDrag;
-- (BOOL)insertWillBeDiscarded;
-- (BOOL)isInteractive;
-- (BOOL)isPreferredCenterRequired;
-- (struct CGPoint { float x1; float x2; })preferredCenter;
-- (BOOL)shouldEndEditing;
+- (bool)insertFloating;
+- (bool)insertFromDrag;
+- (bool)isInteractive;
+- (bool)isPreferredCenterRequired;
+- (struct CGPoint { double x1; double x2; })preferredCenter;
+- (bool)shouldEndEditing;
 
 @end

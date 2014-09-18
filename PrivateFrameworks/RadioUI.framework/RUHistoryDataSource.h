@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUHistoryDataSourceDelegate>, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_source>, RadioGetHistoryRequest;
+@class <RUHistoryDataSourceDelegate>, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, RadioGetHistoryRequest;
 
 @interface RUHistoryDataSource : NSObject <ADBannerViewDelegate> {
     NSMutableDictionary *_adIdentifierToAdTrack;
@@ -16,9 +16,13 @@
     NSArray *_pendingHistoryCategories;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <RUHistoryDataSourceDelegate> * delegate;
-@property(readonly) NSArray * historyCategories;
-@property(getter=isRefreshing,readonly) BOOL refreshing;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(copy,readonly) NSArray * historyCategories;
+@property(getter=isRefreshing,readonly) bool refreshing;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_adIdentifierForHistoryItem:(id)arg1;
@@ -36,7 +40,7 @@
 - (id)delegate;
 - (id)historyCategories;
 - (id)init;
-- (BOOL)isRefreshing;
+- (bool)isRefreshing;
 - (void)refreshHistory;
 - (void)setDelegate:(id)arg1;
 - (id)viewControllerForStoryboardPresentationFromBannerView:(id)arg1;

@@ -14,14 +14,14 @@
 }
 
 @property(setter=p_setPersistentUndoRedoState:,retain) <TSKPersistentUndoRedoState> * p_persistentUndoRedoState;
-@property(readonly) <TSKUndoRedoState> * undoRedoState;
+@property(retain,readonly) <TSKUndoRedoState> * undoRedoState;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 initialUndoRedoState:(id)arg2;
 - (id)initWithContext:(id)arg1;
 - (void)loadFromArchive:(const struct UndoRedoStateCommandSelectionBehaviorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)modifiesUndoRedoState;
+- (bool)modifiesUndoRedoState;
 - (id)p_persistentUndoRedoState;
 - (void)p_setPersistentUndoRedoState:(id)arg1;
 - (void)p_swapUndoRedoStateWithDocument;

@@ -2,18 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSCondition, NSMutableArray, TSCH3DSharegroupDelayChecker;
+@class NSCondition, NSMutableArray, NSString, TSCH3DSharegroupDelayChecker;
 
 @interface TSCH3DSharegroupPool : NSObject <TSCH3DSharegroupDelayCheckerParent, TSUFlushable> {
-    BOOL mBusy;
-    BOOL mCanUseOpenGL;
+    boolmBusy;
+    boolmCanUseOpenGL;
     TSCH3DSharegroupDelayChecker *mChecker;
     NSCondition *mCondition;
-    int mDisableLevel;
-    int mNumAlive;
+    long long mDisableLevel;
+    long long mNumAlive;
     NSMutableArray *mSharegroups;
-    int mSize;
+    long long mSize;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -22,7 +27,7 @@
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;
 - (id)autorelease;
-- (BOOL)canUseOpenGL;
+- (bool)canUseOpenGL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)disable;
@@ -37,7 +42,7 @@
 - (oneway void)release;
 - (void)releaseSharegroup:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)scheduleCheckCondition;
 - (void)waitForBackgroundThreadsWithTimeout:(double)arg1;
 - (void)willCheckCondition;

@@ -11,14 +11,18 @@
 @property(copy) NSDictionary * businessIds;
 @property(copy) NSURL * businessUrl;
 @property(copy) NSArray * categories;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * extSessionGuid;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * name;
 @property(copy) NSString * openingHours;
 @property(copy) NSArray * phoneNumbers;
 @property(copy) NSURL * photo;
 @property(retain) SALocalSearchRating * rating;
 @property(copy) NSArray * reviews;
-@property int totalNumberOfReviews;
+@property(readonly) Class superclass;
+@property long long totalNumberOfReviews;
 
 + (id)business;
 + (id)businessWithDictionary:(id)arg1 context:(id)arg2;
@@ -47,7 +51,7 @@
 - (void)setPhoto:(id)arg1;
 - (void)setRating:(id)arg1;
 - (void)setReviews:(id)arg1;
-- (void)setTotalNumberOfReviews:(int)arg1;
-- (int)totalNumberOfReviews;
+- (void)setTotalNumberOfReviews:(long long)arg1;
+- (long long)totalNumberOfReviews;
 
 @end

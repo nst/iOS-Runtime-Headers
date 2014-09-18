@@ -5,10 +5,10 @@
 @class NSDictionary, NSError, NSHashTable, NSURL;
 
 @interface NSFileWrapperMoreIVars : NSObject {
-    BOOL attributesMustBeWrittenSoNoHardLinking;
+    boolattributesMustBeWrittenSoNoHardLinking;
+    boolcontentsMustBeReadWithoutMapping;
     NSDictionary *cachedDirectoryChildrenAsDictionary;
     NSError *contentsLazyReadingError;
-    BOOL contentsMustBeReadWithoutMapping;
     NSURL *contentsURL;
     NSHashTable *parents;
 }

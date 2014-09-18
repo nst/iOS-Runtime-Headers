@@ -6,23 +6,23 @@
 
 @interface SSDownloadManagerOptions : NSObject <NSCopying> {
     NSArray *_downloadKinds;
-    BOOL _filterExternalOriginatedDownloads;
     NSString *_persistenceIdentifier;
     NSArray *_prefetchedDownloadExternalProperties;
     NSArray *_prefetchedDownloadProperties;
+    bool_filterExternalOriginatedDownloads;
 }
 
 @property(copy) NSArray * downloadKinds;
 @property(copy) NSString * persistenceIdentifier;
 @property(copy) NSArray * prefetchedDownloadExternalProperties;
 @property(copy) NSArray * prefetchedDownloadProperties;
-@property BOOL shouldFilterExternalOriginatedDownloads;
+@property bool shouldFilterExternalOriginatedDownloads;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)downloadKinds;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)persistenceIdentifier;
 - (id)prefetchedDownloadExternalProperties;
 - (id)prefetchedDownloadProperties;
@@ -30,7 +30,7 @@
 - (void)setPersistenceIdentifier:(id)arg1;
 - (void)setPrefetchedDownloadExternalProperties:(id)arg1;
 - (void)setPrefetchedDownloadProperties:(id)arg1;
-- (void)setShouldFilterExternalOriginatedDownloads:(BOOL)arg1;
-- (BOOL)shouldFilterExternalOriginatedDownloads;
+- (void)setShouldFilterExternalOriginatedDownloads:(bool)arg1;
+- (bool)shouldFilterExternalOriginatedDownloads;
 
 @end

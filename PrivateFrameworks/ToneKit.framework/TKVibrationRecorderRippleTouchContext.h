@@ -4,23 +4,23 @@
 
 @interface TKVibrationRecorderRippleTouchContext : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     double _creationTimestamp;
     } _location;
 }
 
 @property(setter=_setCreationTimestamp:) double _creationTimestamp;
-@property(setter=_setLocation:) struct CGPoint { float x1; float x2; } _location;
-@property(readonly) struct CGPoint { float x1; float x2; } location;
+@property(setter=_setLocation:) struct CGPoint { double x1; double x2; } _location;
+@property(readonly) struct CGPoint { double x1; double x2; } location;
 
 - (double)_creationTimestamp;
-- (struct CGPoint { float x1; float x2; })_location;
+- (struct CGPoint { double x1; double x2; })_location;
 - (void)_setCreationTimestamp:(double)arg1;
-- (void)_setLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)configureWithTimeIntervalSinceCreation:(double)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_setLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)configureWithTimeIntervalSinceCreation:(double)arg1 location:(struct CGPoint { double x1; double x2; })arg2;
 - (id)init;
-- (struct CGPoint { float x1; float x2; })location;
+- (struct CGPoint { double x1; double x2; })location;
 - (void)reset;
 - (double)timeIntervalSinceCreation;
 

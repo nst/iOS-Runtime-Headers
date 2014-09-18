@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UINavigationBar, UIView;
+@class NSString, UINavigationBar, UIView;
 
 @interface PLInteractiveNavigationControllerView : UIView <UINavigationBarDelegate> {
     struct { 
@@ -15,43 +15,47 @@
     UIView *_header;
     UIView *_interactive;
     UINavigationBar *_navBar;
-    int _orientation;
+    long long _orientation;
     UIView *_overlay;
     UIView *_top;
 }
 
 @property(retain) UIView * bottomView;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) UIView * footerView;
-@property(getter=footerViewIsHidden) BOOL footerViewHidden;
+@property(getter=footerViewIsHidden) bool footerViewHidden;
+@property(readonly) unsigned long long hash;
 @property(retain) UIView * headerView;
-@property(getter=headerViewIsHidden) BOOL headerViewHidden;
+@property(getter=headerViewIsHidden) bool headerViewHidden;
 @property(readonly) UINavigationBar * navigationBar;
+@property(readonly) Class superclass;
 @property(retain) UIView * topView;
 
 - (void)_adjustViewFrame:(id)arg1;
 - (id)bottomView;
 - (void)dealloc;
 - (id)footerView;
-- (BOOL)footerViewIsHidden;
+- (bool)footerViewIsHidden;
 - (id)headerView;
-- (BOOL)headerViewIsHidden;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)headerViewIsHidden;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)interactiveView;
 - (void)layoutSubviews;
 - (id)navigationBar;
 - (void)setBottomView:(id)arg1;
 - (void)setFooterView:(id)arg1;
-- (void)setFooterViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setFooterViewHidden:(BOOL)arg1;
+- (void)setFooterViewHidden:(bool)arg1 animated:(bool)arg2;
+- (void)setFooterViewHidden:(bool)arg1;
 - (void)setHeaderView:(id)arg1;
-- (void)setHeaderViewHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHeaderViewHidden:(BOOL)arg1;
-- (void)setInteractiveView:(id)arg1 removePrevious:(BOOL)arg2;
+- (void)setHeaderViewHidden:(bool)arg1 animated:(bool)arg2;
+- (void)setHeaderViewHidden:(bool)arg1;
+- (void)setInteractiveView:(id)arg1 removePrevious:(bool)arg2;
 - (void)setInteractiveView:(id)arg1;
-- (void)setInterfaceOrientation:(int)arg1;
+- (void)setInterfaceOrientation:(long long)arg1;
 - (void)setOverlayView:(id)arg1;
 - (void)setTopView:(id)arg1;
-- (void)setTopViewAlpha:(float)arg1;
+- (void)setTopViewAlpha:(double)arg1;
 - (id)topView;
 - (void)transitionDidEnd;
 - (void)transitionWillBegin;

@@ -5,29 +5,29 @@
 @class DOMHTMLElement, UIColor, UIDelayedAction, UIFont, UITextInteractionAssistant, UIView, UIWebDocumentView, WebFrame;
 
 @interface _UICompatibilityTextViewData : NSObject {
-    BOOL m_allowsEditingTextAttributes;
-    BOOL m_becomesEditableWithGestures;
+    boolm_allowsEditingTextAttributes;
+    boolm_becomesEditableWithGestures;
+    boolm_clearsOnInsertion;
+    boolm_editable;
+    boolm_editing;
+    boolm_hasExplicitLineHeight;
+    boolm_hasExplicitTextAlignment;
+    boolm_readyForScroll;
+    boolm_reentrancyGuard;
+    boolm_skipScrollContainingView;
+    boolm_usesAttributedText;
     DOMHTMLElement *m_body;
-    BOOL m_clearsOnInsertion;
-    BOOL m_editable;
-    BOOL m_editing;
     UIFont *m_font;
     WebFrame *m_frame;
-    BOOL m_hasExplicitLineHeight;
-    BOOL m_hasExplicitTextAlignment;
     UIView *m_inputAccessoryView;
     UIView *m_inputView;
     UITextInteractionAssistant *m_interactionAssistant;
-    float m_lineHeight;
+    double m_lineHeight;
     UIDelayedAction *m_longPressAction;
     int m_marginTop;
-    BOOL m_readyForScroll;
-    BOOL m_reentrancyGuard;
     UIDelayedAction *m_selectionTimer;
-    BOOL m_skipScrollContainingView;
-    int m_textAlignment;
+    long long m_textAlignment;
     UIColor *m_textColor;
-    BOOL m_usesAttributedText;
     UIWebDocumentView *m_webView;
 }
 

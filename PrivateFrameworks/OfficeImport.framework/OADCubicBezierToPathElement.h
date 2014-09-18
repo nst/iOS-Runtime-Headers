@@ -5,43 +5,43 @@
 @interface OADCubicBezierToPathElement : OADPathElement {
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } x; 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } y; 
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } x; 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } y; 
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } x; 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } y; 
+    boolmRelative;
     } mControlPoint1;
     } mControlPoint2;
-    BOOL mRelative;
     } mToPoint;
 }
 
 - (id).cxx_construct;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })controlPoint1;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })controlPoint2;
-- (id)initWithControlPoint1:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg1 controlPoint2:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg2 toPoint:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg3;
-- (BOOL)relative;
-- (void)setRelative:(BOOL)arg1;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })toPoint;
+- (struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })controlPoint1;
+- (struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })controlPoint2;
+- (id)initWithControlPoint1:(struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })arg1 controlPoint2:(struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })arg2 toPoint:(struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })arg3;
+- (bool)relative;
+- (void)setRelative:(bool)arg1;
+- (struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })toPoint;
 
 @end

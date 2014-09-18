@@ -8,15 +8,15 @@
     NSString *_URLString;
     NSArray *_bogusPayloads;
     id _challenge;
-    BOOL _confirmInstallation;
     NSArray *_deviceAttributes;
     NSData *_enrollmentIdentityPersistentID;
+    bool_confirmInstallation;
 }
 
 @property(retain) NSString * URLString;
-@property(readonly) id challenge;
-@property(readonly) BOOL confirmInstallation;
-@property(readonly) NSArray * deviceAttributes;
+@property(retain,readonly) id challenge;
+@property(readonly) bool confirmInstallation;
+@property(retain,readonly) NSArray * deviceAttributes;
 @property(retain) NSData * enrollmentIdentityPersistentID;
 
 - (void).cxx_destruct;
@@ -24,12 +24,14 @@
 - (id)_badDataTypeErrorWithFieldName:(id)arg1;
 - (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
 - (id)challenge;
-- (BOOL)confirmInstallation;
+- (bool)confirmInstallation;
 - (id)description;
 - (id)deviceAttributes;
 - (id)enrollmentIdentityPersistentID;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
+- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
+- (id)localizedManagedPayloadSummaryByType;
 - (id)localizedPayloadSummaryByType;
+- (id)managedPayloads;
 - (id)payloads;
 - (void)setEnrollmentIdentityPersistentID:(id)arg1;
 - (void)setURLString:(id)arg1;

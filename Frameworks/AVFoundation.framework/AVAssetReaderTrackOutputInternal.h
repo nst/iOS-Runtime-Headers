@@ -6,6 +6,8 @@
 
 @interface AVAssetReaderTrackOutputInternal : NSObject {
     NSString *audioTimePitchAlgorithm;
+    boolappliesPreferredTrackTransform;
+    boolisAttachedToMetadataAdaptor;
     AVOutputSettings *outputSettings;
     AVAssetTrack *track;
 }

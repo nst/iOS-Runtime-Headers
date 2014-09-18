@@ -16,7 +16,7 @@
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setWebViewController:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)webViewController;
 

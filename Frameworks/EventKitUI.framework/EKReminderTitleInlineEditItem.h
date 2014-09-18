@@ -5,10 +5,10 @@
 @interface EKReminderTitleInlineEditItem : EKReminderInlineEditItem {
 }
 
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
-- (int)cellStyle;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (long long)cellStyle;
 - (id)newCell;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 - (id)textFromReminder;
 
 @end

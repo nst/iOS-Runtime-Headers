@@ -19,26 +19,26 @@
 + (id)rootObjectForEncoding:(id)arg1 allowedClasses:(id)arg2;
 + (id)rootObjectForEncoding:(id)arg1;
 
-- (BOOL)_classIsAllowed:(Class)arg1;
+- (bool)_classIsAllowed:(Class)arg1;
 - (void)_verifyCurrentObject;
-- (BOOL)allowsKeyedCoding;
-- (BOOL)containsValueForKey:(id)arg1;
+- (bool)allowsKeyedCoding;
+- (bool)containsValueForKey:(id)arg1;
 - (void)dealloc;
-- (BOOL)decodeBoolForKey:(id)arg1;
-- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
+- (bool)decodeBoolForKey:(id)arg1;
+- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned long long*)arg2;
 - (double)decodeDoubleForKey:(id)arg1;
 - (id)decodeEndpointForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
 - (long long)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
-- (int)decodeIntegerForKey:(id)arg1;
+- (long long)decodeIntegerForKey:(id)arg1;
 - (unsigned int)decodeMachSendRightForKey:(id)arg1;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;
 - (id)errorDescription;
 - (id)initWithEncoding:(id)arg1;
 - (void)setErrorDescription:(id)arg1;
-- (int)versionForClassName:(id)arg1;
+- (long long)versionForClassName:(id)arg1;
 
 @end

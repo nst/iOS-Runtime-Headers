@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSSet, TSDDrawableInfo<TSDContainerInfo>;
+@class NSSet, NSString, TSDDrawableInfo<TSDContainerInfo>;
 
 @interface TSDCanvasSelection : TSKSelection <TSDCanvasSelection, NSCopying> {
     TSDDrawableInfo<TSDContainerInfo> *mContainer;
@@ -15,32 +15,37 @@
 }
 
 @property(readonly) TSDDrawableInfo<TSDContainerInfo> * container;
-@property(readonly) unsigned int infoCount;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long infoCount;
 @property(readonly) NSSet * infos;
-@property(readonly) BOOL isEmpty;
-@property(readonly) unsigned int unlockedInfoCount;
+@property(readonly) bool isEmpty;
+@property(readonly) Class superclass;
+@property(readonly) unsigned long long unlockedInfoCount;
 @property(readonly) NSSet * unlockedInfos;
 
 + (Class)archivedSelectionClass;
 + (id)emptySelection;
 
 - (id)container;
-- (BOOL)containsKindOfClass:(Class)arg1;
-- (BOOL)containsUnlockedKindOfClass:(Class)arg1;
+- (bool)containsKindOfClass:(Class)arg1;
+- (bool)containsUnlockedKindOfClass:(Class)arg1;
 - (id)copyExcludingInfo:(id)arg1;
 - (id)copyIncludingInfo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)infoCount;
+- (id)description;
+- (unsigned long long)infoCount;
 - (id)infos;
 - (id)infosOfClass:(Class)arg1;
 - (id)initWithArchive:(const struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithInfos:(id)arg1 andContainer:(id)arg2;
 - (id)initWithInfos:(id)arg1;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (void)saveToArchive:(struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; struct Reference {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
-- (unsigned int)unlockedInfoCount;
+- (unsigned long long)unlockedInfoCount;
 - (id)unlockedInfos;
 
 @end

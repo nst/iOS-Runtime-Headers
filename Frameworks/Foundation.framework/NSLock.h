@@ -2,9 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSString;
+
 @interface NSLock : NSObject <NSLocking> {
     void *_priv;
 }
+
+@property(copy) NSString * name;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
@@ -13,11 +17,11 @@
 - (void)finalize;
 - (id)init;
 - (void)lock;
-- (BOOL)lockBeforeDate:(id)arg1;
+- (bool)lockBeforeDate:(id)arg1;
 - (void)mf_waitForLock;
 - (id)name;
 - (void)setName:(id)arg1;
-- (BOOL)tryLock;
+- (bool)tryLock;
 - (void)unlock;
 
 @end

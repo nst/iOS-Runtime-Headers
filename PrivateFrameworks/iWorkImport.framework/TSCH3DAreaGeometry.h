@@ -15,19 +15,19 @@
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
+    boolmStacked;
     } mBottomLine;
     int mCapCount;
     unsigned int mCapOffset;
     float mMaxZ;
     float mMinZ;
-    BOOL mStacked;
     } mTopLine;
     float mZeroValue;
 }
 
 @property float maxZ;
 @property float minZ;
-@property BOOL stacked;
+@property bool stacked;
 @property float zeroValue;
 
 - (id).cxx_construct;
@@ -44,10 +44,10 @@
 - (id)selectionKnobPositions;
 - (void)setMaxZ:(float)arg1;
 - (void)setMinZ:(float)arg1;
-- (void)setStacked:(BOOL)arg1;
+- (void)setStacked:(bool)arg1;
 - (void)setTopLine:(const struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg1 bottomLine:(const struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg2 zeroValue:(float)arg3;
 - (void)setZeroValue:(float)arg1;
-- (BOOL)stacked;
+- (bool)stacked;
 - (const struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)topLine;
 - (float)zeroValue;
 

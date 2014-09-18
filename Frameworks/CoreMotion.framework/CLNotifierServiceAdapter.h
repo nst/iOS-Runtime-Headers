@@ -13,25 +13,26 @@
 
 @interface CLNotifierServiceAdapter : CLIntersiloService <CLNotifierServiceProtocol> {
     struct map<unsigned long, int, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, int> > > { 
-        struct __tree<std::__1::pair<unsigned long, int>, std::__1::__map_value_compare<unsigned long, int, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::pair<unsigned long, int> > > { 
-            struct __tree_node<std::__1::pair<unsigned long, int>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<unsigned long, int>, void *> > > { 
+        struct __tree<std::__1::__value_type<unsigned long, int>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, int>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, int> > > { 
+            struct __tree_node<std::__1::__value_type<unsigned long, int>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, int>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, int, std::__1::less<unsigned long>, true> > { 
-                unsigned long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, int>, std::__1::less<unsigned long>, true> > { 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
-     /* Encoded args for previous method: v12@0:4R@8 */
-     /* Encoded args for previous method: v16@0:4R@8i12 */
-     /* Encoded args for previous method: v20@0:4R@8i12@16 */
+     /* Encoded args for previous method: v24@0:8R@16 */
+     /* Encoded args for previous method: v28@0:8R@16i24 */
+     /* Encoded args for previous method: v36@0:8R@16i24@28 */
     } _clients;
     struct CLNotifierBase { int (**x1)(); } *_notifier;
 }
 
 @property(readonly) struct CLNotifierBase { int (**x1)(); }* notifier;
+@property bool valid;
 
 - (struct CLNotifierBase { int (**x1)(); }*)notifier;
 - (id).cxx_construct;

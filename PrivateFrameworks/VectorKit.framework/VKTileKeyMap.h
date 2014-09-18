@@ -4,15 +4,15 @@
 
 @interface VKTileKeyMap : NSObject {
     void *_map;
-    int _type;
+    long long _type;
 }
 
 - (id)contentsDescription;
-- (int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
-- (id)initWithMapType:(int)arg1;
+- (id)initWithMapType:(long long)arg1;
 - (id)objectForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

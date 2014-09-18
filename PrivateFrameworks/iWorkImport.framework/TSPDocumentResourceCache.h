@@ -18,8 +18,8 @@
 
 - (void).cxx_destruct;
 - (id)URLForDocumentResourceDigestString:(id)arg1;
-- (BOOL)beginDocumentResourceAccessForDigestString:(id)arg1;
-- (BOOL)cacheDocumentResourceDigestString:(id)arg1 extension:(id)arg2 sourceURL:(id)arg3 fileSize:(long long)arg4 wasDownloaded:(BOOL)arg5;
+- (bool)beginDocumentResourceAccessForDigestString:(id)arg1;
+- (bool)cacheDocumentResourceDigestString:(id)arg1 extension:(id)arg2 sourceURL:(id)arg3 fileSize:(long long)arg4 wasDownloaded:(bool)arg5;
 - (void)clearCache;
 - (void)endDocumentResourceAccessForDigestString:(id)arg1;
 - (id)entryForDigestString:(id)arg1;

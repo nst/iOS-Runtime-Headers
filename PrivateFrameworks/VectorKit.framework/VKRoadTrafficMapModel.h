@@ -2,29 +2,38 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKRoadMapModel, VKTrafficDrawStyle, VKTrafficPainter;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class VKRoadMapModel, VKTrafficDrawStyle;
 
 @interface VKRoadTrafficMapModel : VKVectorMapModel {
-    BOOL _enabled;
+    struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager> > { 
+        struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
+            struct TrafficManager {} *__first_; 
+        } __ptr_; 
     VKRoadMapModel *_roadModel;
-    float _styleZAdjust;
     VKTrafficDrawStyle *_trafficDrawStyle;
-    VKTrafficPainter *_trafficPainter;
+    } _trafficManager;
+    bool_enabled;
 }
 
-@property BOOL enabled;
+@property bool enabled;
 @property(retain) VKRoadMapModel * roadModel;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)dealloc;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
-- (BOOL)enabled;
+- (void)didReceiveMemoryWarning;
+- (bool)enabled;
+- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
-- (void)layoutScene:(id)arg1 withContext:(id)arg2;
-- (unsigned int)mapLayerPosition;
+- (unsigned long long)mapLayerPosition;
 - (id)roadModel;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setRoadModel:(id)arg1;
 - (void)stylesheetDidChange;
-- (unsigned int)supportedRenderPasses;
 
 @end

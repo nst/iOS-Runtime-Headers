@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceFormat, NSMutableDictionary, NSString;
+@class AVCaptureDeviceFormat_FigRecorder, NSMutableDictionary, NSString;
 
 @interface AVResolvedCaptureOptions : NSObject {
     struct { 
@@ -26,29 +26,29 @@
         unsigned int flags; 
         long long epoch; 
     NSMutableDictionary *baseCaptureOptions;
-    BOOL captureSessionPresetChanging;
+    boolcaptureSessionPresetChanging;
+    boolfaceDetectionNotificationsEnabled;
+    boolhasStillImageOutput;
+    boolresetsVideoZoomFactorToDefaultValue;
+    boolresolvesFrameRatesUsingDefaultValues;
+    boolusePreviewSizedCaptureBuffers;
+    booluseStabilizationIfAvailable;
     NSString *faceDetectionMode;
-    BOOL faceDetectionNotificationsEnabled;
-    BOOL hasStillImageOutput;
     NSMutableDictionary *optionsOverrides;
     struct __CFDictionary { } *outputSettingsOverrides;
-    BOOL resetsVideoZoomFactorToDefaultValue;
     NSMutableDictionary *resolvedCaptureOptions;
     NSMutableDictionary *resolvedVideoCompressionProperties;
-    AVCaptureDeviceFormat *resolvedVideoDeviceFormat;
+    AVCaptureDeviceFormat_FigRecorder *resolvedVideoDeviceFormat;
     } resolvedVideoMaxFrameDuration;
     } resolvedVideoMinFrameDuration;
-    BOOL resolvesFrameRatesUsingDefaultValues;
     NSString *sessionPreset;
-    BOOL usePreviewSizedCaptureBuffers;
-    BOOL useStabilizationIfAvailable;
     } videoConnectionMaxFrameDuration;
     } videoConnectionMinFrameDuration;
 }
 
-@property BOOL hasStillImageOutput;
-@property BOOL resetsVideoZoomFactorToDefaultValue;
-@property BOOL resolvesFrameRatesUsingDefaultValues;
+@property bool hasStillImageOutput;
+@property bool resetsVideoZoomFactorToDefaultValue;
+@property bool resolvesFrameRatesUsingDefaultValues;
 @property(readonly) NSString * sessionPreset;
 
 + (void)initialize;
@@ -64,14 +64,14 @@
 - (void)dealloc;
 - (id)deviceFormatForCamera:(id)arg1 captureOptions:(id)arg2;
 - (void)enableFaceDetectionNotificationsForConnection:(id)arg1;
-- (BOOL)hasHeightOverrideInResolvedOptions:(id)arg1;
-- (BOOL)hasOverridesAffectingCaptureFormatInResolvedOptions:(id)arg1 withScalingMode:(id)arg2;
-- (BOOL)hasOverridesAffectingPreviewFormatInResolvedOptions:(id)arg1 withScalingMode:(id)arg2;
-- (BOOL)hasStillImageOutput;
-- (BOOL)hasWidthOverrideInResolvedOptions:(id)arg1;
+- (bool)hasHeightOverrideInResolvedOptions:(id)arg1;
+- (bool)hasOverridesAffectingCaptureFormatInResolvedOptions:(id)arg1 withScalingMode:(id)arg2;
+- (bool)hasOverridesAffectingPreviewFormatInResolvedOptions:(id)arg1 withScalingMode:(id)arg2;
+- (bool)hasStillImageOutput;
+- (bool)hasWidthOverrideInResolvedOptions:(id)arg1;
 - (id)initWithSessionPreset:(id)arg1 captureOptionsDictionary:(id)arg2;
 - (int)rankForFaceDetectionMode:(id)arg1;
-- (BOOL)resetsVideoZoomFactorToDefaultValue;
+- (bool)resetsVideoZoomFactorToDefaultValue;
 - (void)resolveFrameRatesToCaptureOptions:(id)arg1 withCamera:(id)arg2 activeFormat:(id)arg3;
 - (void)resolveOutputSettingsToCaptureOptions:(id)arg1 resolvedScalingMode:(id*)arg2;
 - (id)resolvedCaptureOptionsDictionary;
@@ -81,14 +81,14 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })resolvedVideoMinFrameDuration;
 - (id)resolvedVideoSettingsForAssetWriter;
 - (id)resolvedVideoSettingsForMovieFileOutput;
-- (id)resolvedVideoSettingsWithScalingAllowed:(BOOL)arg1;
-- (BOOL)resolvesFrameRatesUsingDefaultValues;
+- (id)resolvedVideoSettingsWithScalingAllowed:(bool)arg1;
+- (bool)resolvesFrameRatesUsingDefaultValues;
 - (id)sessionPreset;
 - (void)setBestCaptureResolutionForAVScalingMode:(id)arg1 captureOptions:(id)arg2;
 - (void)setBestPreviewResolutionForCaptureOptions:(id)arg1;
-- (void)setHasStillImageOutput:(BOOL)arg1;
-- (void)setResetsVideoZoomFactorToDefaultValue:(BOOL)arg1;
-- (void)setResolvesFrameRatesUsingDefaultValues:(BOOL)arg1;
+- (void)setHasStillImageOutput:(bool)arg1;
+- (void)setResetsVideoZoomFactorToDefaultValue:(bool)arg1;
+- (void)setResolvesFrameRatesUsingDefaultValues:(bool)arg1;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)usePreviewSizedCaptureBuffersForConnection:(id)arg1;
 - (void)useStabilizationIfAvailableForConnection:(id)arg1;

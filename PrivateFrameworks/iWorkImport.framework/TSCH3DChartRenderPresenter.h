@@ -7,10 +7,10 @@
 
 + (id)presenter;
 
-- (id)TSUImageFromPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; BOOL x5; }*)arg1 flipped:(BOOL)arg2;
-- (BOOL)bindColorbufferForPipeline:(id)arg1;
+- (id)TSUImageFromPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; boolx5; }*)arg1 flipped:(bool)arg2;
+- (bool)bindColorbufferForPipeline:(id)arg1;
 - (Class)layerCacheLogicClass;
 - (Class)layerClass;
-- (BOOL)shouldRenderLegendIntoSeparateLayer;
+- (bool)shouldRenderLegendIntoSeparateLayer;
 
 @end

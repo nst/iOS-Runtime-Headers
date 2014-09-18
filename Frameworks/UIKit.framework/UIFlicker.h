@@ -6,11 +6,11 @@
 
 @interface UIFlicker : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     float _delay;
     id _delegate;
     int _mouseDraggedCount;
@@ -22,13 +22,13 @@
 }
 
 - (id)init;
-- (struct CGPoint { float x1; float x2; })offset;
+- (struct CGPoint { double x1; double x2; })offset;
 - (void)run;
 - (void)setDelay:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIterations:(int)arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setStartLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setTarget:(id)arg1;
 
 @end

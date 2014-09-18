@@ -2,58 +2,39 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPuckDrawStyle : VKDrawStyle {
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    float arrowBrightness;
-    } arrowColor;
-    } arrowColorStale;
-    float circleBrightness;
-    BOOL hasArrowBrightness;
-    BOOL hasArrowColor;
-    BOOL hasArrowColorStale;
-    BOOL hasCircleBrightness;
-    BOOL hasOffset;
-    BOOL hasSize;
-    float offset;
-    float size;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@interface VKPuckDrawStyle : VKRenderStyle {
 }
 
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  arrowColor; /* unknown property attribute:  1>=[4f]} */
+@property(readonly) struct  arrowColorStale; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) float arrowBrightness;
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } arrowColor;
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } arrowColorStale;
 @property(readonly) float circleBrightness;
-@property(readonly) BOOL hasArrowBrightness;
-@property(readonly) BOOL hasArrowColor;
-@property(readonly) BOOL hasArrowColorStale;
-@property(readonly) BOOL hasCircleBrightness;
-@property(readonly) BOOL hasOffset;
-@property(readonly) BOOL hasSize;
+@property(readonly) bool hasArrowBrightness;
+@property(readonly) bool hasArrowColor;
+@property(readonly) bool hasArrowColorStale;
+@property(readonly) bool hasCircleBrightness;
+@property(readonly) bool hasOffset;
+@property(readonly) bool hasSize;
 @property(readonly) float offset;
 @property(readonly) float size;
 
-- (id).cxx_construct;
++ (int)renderStyleID;
+
 - (float)arrowBrightness;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })arrowColor;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })arrowColorStale;
+- (struct Matrix<float, 4, 1> { float x1[4]; })arrowColor;
+- (struct Matrix<float, 4, 1> { float x1[4]; })arrowColorStale;
 - (float)circleBrightness;
-- (BOOL)hasArrowBrightness;
-- (BOOL)hasArrowColor;
-- (BOOL)hasArrowColorStale;
-- (BOOL)hasCircleBrightness;
-- (BOOL)hasOffset;
-- (BOOL)hasSize;
+- (bool)hasArrowBrightness;
+- (bool)hasArrowColor;
+- (bool)hasArrowColorStale;
+- (bool)hasCircleBrightness;
+- (bool)hasOffset;
+- (bool)hasSize;
 - (float)offset;
 - (float)size;
-- (void)takeFromZoomInvariantProperties:(id)arg1;
-- (id)variant;
 
 @end

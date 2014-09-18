@@ -2,109 +2,194 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEORoute, NSSet, NSString, VGLRenderState, VGLTexture, VKAnimation, VKPolylineOverlay, VKRouteLine, VKTileKeyList, VKTrafficDrawStyle;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSSet, NSString, VKAnimation, VKPolylineOverlay, VKRouteLine, VKStyleManager, VKTileKeyList;
 
 @interface VKPolylineOverlayPainter : VKOverlayPainter <VKPolylineObserver> {
-    struct RouteLineStyle { 
-        float strokeWidthRegularPoints; 
-        double halfWidthRegularPoints; 
-        double halfWidthRegularUnselectedScale; 
-        double halfWidthRealistic; 
-        struct _VGLColor { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } travelledRegularRouteLineColor; 
-        struct _VGLColor { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } inverseBaseColorSelected; 
-        struct _VGLColor { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } inverseBaseColorUnselected; 
-        NSString *selectedTextureNameRealistic; 
-        NSString *obscuredTextureNameRealistic; 
-        NSString *travelledTextureNameRealistic; 
-        double widthEnlargementStartZoom; 
-        double widthEnlargementScale; 
-        double maxEnlargement; 
-        float arrowMinZoom; 
-        float selectedArrowMinZoom; 
-        float brightnessRealistic; 
+    struct unordered_map<GEOTransportType, vk::TransportTypeInfo, std::__1::hash<GEOTransportType>, std::__1::equal_to<GEOTransportType>, std::__1::allocator<std::__1::pair<const GEOTransportType, vk::TransportTypeInfo> > > { 
+        struct __hash_table<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, std::__1::__unordered_map_hasher<GEOTransportType, std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, std::__1::hash<GEOTransportType>, true>, std::__1::__unordered_map_equal<GEOTransportType, std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, std::__1::equal_to<GEOTransportType>, true>, std::__1::allocator<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> *> > { 
+                            unsigned long long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<GEOTransportType, std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, std::__1::hash<GEOTransportType>, true> > { 
+                unsigned long long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<GEOTransportType, std::__1::__hash_value_type<GEOTransportType, vk::TransportTypeInfo>, std::__1::equal_to<GEOTransportType>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    struct shared_ptr<ggl::Tile::ViewUniformData> { 
+        struct ViewUniformData {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager> > { 
+        struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
+            struct TrafficManager {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<vk::TrafficLayer, std::__1::default_delete<vk::TrafficLayer> > { 
+        struct __compressed_pair<vk::TrafficLayer *, std::__1::default_delete<vk::TrafficLayer> > { 
+            struct TrafficLayer {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<vk::RouteLineArrowManager, std::__1::default_delete<vk::RouteLineArrowManager> > { 
+        struct __compressed_pair<vk::RouteLineArrowManager *, std::__1::default_delete<vk::RouteLineArrowManager> > { 
+            struct RouteLineArrowManager {} *__first_; 
+        } __ptr_; 
+    struct vector<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> >, std::__1::allocator<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > > > { 
+        struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > {} *__begin_; 
+        struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > {} *__end_; 
+        struct __compressed_pair<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > *, std::__1::allocator<std::__1::unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > > > { 
+            struct unique_ptr<vk::RouteLineArrowLayer, std::__1::default_delete<vk::RouteLineArrowLayer> > {} *__first_; 
+        } __end_cap_; 
+    struct unique_ptr<vk::RouteLineManager, std::__1::default_delete<vk::RouteLineManager> > { 
+        struct __compressed_pair<vk::RouteLineManager *, std::__1::default_delete<vk::RouteLineManager> > { 
+            struct RouteLineManager {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<vk::RouteLineLayer, std::__1::default_delete<vk::RouteLineLayer> > { 
+        struct __compressed_pair<vk::RouteLineLayer *, std::__1::default_delete<vk::RouteLineLayer> > { 
+            struct RouteLineLayer {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::Debug::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::Debug::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::Debug::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::Debug::BaseMesh>, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::BaseMesh> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::Debug::BaseMesh> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Debug::BaseMesh> > > { 
+            struct FragmentedPool<ggl::Debug::BaseMesh> {} *__first_; 
+        } __ptr_; 
+    struct unordered_set<GEOComposedRouteSection *, std::__1::hash<GEOComposedRouteSection *>, std::__1::equal_to<GEOComposedRouteSection *>, std::__1::allocator<GEOComposedRouteSection *> > { 
+        struct __hash_table<GEOComposedRouteSection *, std::__1::hash<GEOComposedRouteSection *>, std::__1::equal_to<GEOComposedRouteSection *>, std::__1::allocator<GEOComposedRouteSection *> > { 
+            struct unique_ptr<std::__1::__hash_node<GEOComposedRouteSection *, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<GEOComposedRouteSection *, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > > { 
+                    struct __hash_node<GEOComposedRouteSection *, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > { 
+                            unsigned long long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *>, std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> { 
+                    struct __hash_node<GEOComposedRouteSection *, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::hash<GEOComposedRouteSection *> > { 
+                unsigned long long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::equal_to<GEOComposedRouteSection *> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
     struct { 
         double v[4][4]; 
-    struct { 
-        double v[4][4]; 
+    struct shared_ptr<md::StyleQuery> { 
+        struct StyleQuery {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
     float _alphaScale;
     float _arrowAlphaScale;
     VKAnimation *_arrowCrossFadeAnimation;
     VKAnimation *_arrowFadeAnimation;
-    float _contentScale;
+    } _arrowLayers;
+    } _arrowManager;
+    double _contentScale;
     float _crossfadingDisplayStep;
+    } _debugLineRenderState;
+    } _debugRenderItems;
+    } _debugRenderState;
+    } _debugShaderSetups;
+    } _debugUnmatchedRouteLineMeshes;
     VKAnimation *_fadeAnimation;
-    BOOL _forceRoutelineUpdate;
-    } _inverseMatrix;
+    VKStyleManager *_lastQueriedStyleManager;
     } _matrix;
-    VGLTexture *_obscuredTextureRealistic;
     VKTileKeyList *_previousKeysInView;
     NSSet *_previousTilesInView;
-    VGLRenderState *_renderState;
-    GEORoute *_route;
+    double _previousViewUnitsPerPoint;
     VKRouteLine *_routeLine;
     double _routeLineHalfWidthRealistic;
-    double _routeLineHalfWidthRegular;
-    BOOL _selected;
-    VGLTexture *_selectedTextureRealistic;
-    BOOL _showArrows;
-    BOOL _showTraffic;
+    } _routeLineLayer;
+    } _routeLineManager;
+    double _routeLineWidthScaleRegular;
+    VKPolylineOverlay *_routeOverlay;
+    } _selectedSections;
     double _simplificationEpsilon;
     int _stencilValue;
-    } _style;
-    unsigned int _targetDisplayStep;
-    VKTrafficDrawStyle *_trafficDrawStyle;
-    VGLTexture *_travelledTextureRealistic;
-    BOOL _wasInRealisticMode;
+    int _styleZ;
+    unsigned long long _targetDisplayStep;
+    } _trafficLayer;
+    } _trafficManager;
+    } _trafficStyle;
+    } _transportTypeMap;
+    } _viewUniforms;
+    bool_forceRoutelineUpdate;
+    bool_selected;
+    bool_showArrows;
+    bool_showTraffic;
+    bool_wasInRealisticMode;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) VKPolylineOverlay * polyline;
-@property(retain) GEORoute * route;
-@property BOOL selected;
-@property BOOL showTraffic;
+@property(retain) VKPolylineOverlay * routeOverlay;
+@property bool selected;
+@property bool showTraffic;
+@property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_didReceiveMemoryWarning;
-- (void)_drawRealisticWithContext:(id)arg1;
-- (void)_drawRegularWithContext:(id)arg1;
-- (void)_populateRenderBuffer:(id)arg1 matrix:(const union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; }*)arg2 halfWidth:(float)arg3 context:(id)arg4;
-- (void)_releaseTextures;
-- (BOOL)_shouldShowTraffic;
+- (bool)_shouldShowTraffic;
+- (void)_updateZoomDependentStyleProperties;
+- (float)automobileRouteLineWidthForCamera:(id)arg1 canvasSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)dealloc;
-- (void)drawArrowsWithContext:(id)arg1;
-- (void)drawDebug:(id)arg1 tiles:(id)arg2;
-- (void)drawWithContext:(id)arg1 tiles:(id)arg2 prepare:(BOOL)arg3 updateStencil:(BOOL)arg4;
-- (void)drawWithContext:(id)arg1 tiles:(id)arg2;
+- (void)flushPools;
+- (void)gglLayoutWithContext:(id)arg1 commandBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg2 tiles:(id)arg3 layer:(unsigned char)arg4;
+- (void)gglLayoutWithContext:(id)arg1 commandBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg2 tiles:(id)arg3;
 - (id)initWithOverlay:(id)arg1;
+- (void)layoutDebugUnmatchedRouteLine:(id)arg1 commandBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg2;
 - (void)layoutWithContext:(id)arg1 tiles:(id)arg2 keysInView:(id)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)polyline:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
 - (id)polyline;
-- (void)prepareToDrawWithContext:(id)arg1;
-- (id)route;
-- (float)routeLineWidthForCamera:(id)arg1 canvasSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)selected;
+- (void)prepareDebugLines;
+- (void)prepareToDrawWithCanvas:(id)arg1;
+- (id)routeOverlay;
+- (bool)selected;
 - (void)setContainerModel:(id)arg1;
 - (void)setNeedsLayoutForPolyline:(id)arg1;
-- (void)setRoute:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setShowTraffic:(BOOL)arg1;
-- (BOOL)showTraffic;
-- (id)stylesheet;
+- (void)setRouteOverlay:(id)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setShowTraffic:(bool)arg1;
+- (bool)showTraffic;
+- (id)styleManager;
 - (void)stylesheetDidChange;
 - (void)updateRouteLineStencilValue:(int)arg1;
 

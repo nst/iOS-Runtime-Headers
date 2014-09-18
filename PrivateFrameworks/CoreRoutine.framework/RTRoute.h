@@ -14,7 +14,7 @@
 @property(readonly) NSArray * waypoints;
 @property(readonly) NSData * zilchPoints;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

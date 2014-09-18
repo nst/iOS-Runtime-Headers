@@ -2,35 +2,40 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimParameterGroup, KNMotionBlurAnimationPluginWrapper;
+@class KNAnimParameterGroup, KNMotionBlurAnimationPluginWrapper, NSString;
 
 @interface KNTransitionCube : KNAnimationEffect <KNTransitionAnimator, KNFrameAnimator, KNAnimationPluginArchiving> {
     KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
     KNAnimParameterGroup *_parameterGroup;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)customAttributes;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
-+ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
-+ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (void)animationDidEndWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (id)animationsWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
-- (id)p_animationsForStartAngle:(float)arg1 endAngle:(float)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 duration:(double)arg4 direction:(unsigned int)arg5 hasBounce:(BOOL)arg6;
-- (id)p_interpolatedAnimationsWithStartAngle:(float)arg1 endAngle:(float)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 duration:(double)arg4 direction:(unsigned int)arg5 beginTime:(double)arg6;
-- (id)p_pullbackAnimationFromRotateAnimation:(id)arg1 startPullbackPercent:(float)arg2 endPullbackPercent:(float)arg3 cubeCenter:(float)arg4 pullbackAmount:(float)arg5 duration:(double)arg6;
-- (float)p_pullbackPercentFromRotateAnimation:(id)arg1 atPercent:(float)arg2;
+- (id)p_animationsForStartAngle:(double)arg1 endAngle:(double)arg2 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 duration:(double)arg4 direction:(unsigned long long)arg5 hasBounce:(bool)arg6;
+- (id)p_interpolatedAnimationsWithStartAngle:(double)arg1 endAngle:(double)arg2 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 duration:(double)arg4 direction:(unsigned long long)arg5 beginTime:(double)arg6;
+- (id)p_pullbackAnimationFromRotateAnimation:(id)arg1 startPullbackPercent:(double)arg2 endPullbackPercent:(double)arg3 cubeCenter:(double)arg4 pullbackAmount:(double)arg5 duration:(double)arg6;
+- (double)p_pullbackPercentFromRotateAnimation:(id)arg1 atPercent:(double)arg2;
 - (void)renderFrameWithContext:(id)arg1;
 
 @end

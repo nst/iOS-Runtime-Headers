@@ -5,30 +5,30 @@
 @class <MusicGeniusMixQueueFeederDataSource>;
 
 @interface MusicGeniusMixQueueFeeder : MusicQueryQueueFeeder {
-    unsigned int _currentPlaylistOffset;
+    unsigned long long _currentPlaylistOffset;
     <MusicGeniusMixQueueFeederDataSource> *_dataSource;
 }
 
 @property(retain) <MusicGeniusMixQueueFeederDataSource> * dataSource;
 
 - (void).cxx_destruct;
-- (BOOL)_configureWithMix:(id)arg1 playbackContext:(id)arg2 startPlayback:(BOOL)arg3;
+- (bool)_configureWithMixPlaylist:(id)arg1 playbackContext:(id)arg2 startPlayback:(bool)arg3;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (id)dataSource;
-- (unsigned int)indexOfMediaItem:(id)arg1;
-- (unsigned int)itemCount;
+- (unsigned long long)indexOfMediaItem:(id)arg1;
+- (unsigned long long)itemCount;
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
-- (id)mediaItemAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfPaths;
-- (id)pathAtIndex:(unsigned int)arg1;
+- (id)mediaItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfPaths;
+- (id)pathAtIndex:(unsigned long long)arg1;
 - (id)query;
-- (unsigned int)realRepeatType;
-- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
+- (unsigned long long)realRepeatType;
+- (bool)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(bool)arg2;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (void)setDataSource:(id)arg1;
-- (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
-- (unsigned int)shuffleType;
-- (BOOL)userCanChangeShuffleAndRepeatType;
+- (void)shuffleItemsWithAnchor:(unsigned long long*)arg1;
+- (unsigned long long)shuffleType;
+- (bool)userCanChangeShuffleAndRepeatType;
 
 @end

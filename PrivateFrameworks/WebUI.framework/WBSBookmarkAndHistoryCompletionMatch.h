@@ -5,16 +5,20 @@
 @class <WBSURLCompletionMatchData>;
 
 @interface WBSBookmarkAndHistoryCompletionMatch : WBSURLCompletionMatch {
-    void *_private;
+    struct RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch> { 
+        struct BookmarkAndHistoryCompletionMatch {} *m_ptr; 
+    } _match;
 }
 
 @property(readonly) <WBSURLCompletionMatchData> * data;
 @property(readonly) float weight;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)data;
-- (void)dealloc;
 - (id)initWithBookmarkAndHistoryCompletionMatch:(struct PassRefPtr<SafariShared::BookmarkAndHistoryCompletionMatch> { struct BookmarkAndHistoryCompletionMatch {} *x1; })arg1;
 - (id)originalURLString;
+- (id)parsecDomainIdentifier;
 - (id)title;
 - (id)userVisibleURLString;
 - (float)weight;

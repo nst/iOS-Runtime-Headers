@@ -6,10 +6,10 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_queue>;
+@class <AVMediaDataRequesterConsumer>, NSObject<OS_dispatch_queue>;
 
 @interface AVMediaDataRequester : NSObject {
-    id _mediaDataConsumer;
+    <AVMediaDataRequesterConsumer> *_mediaDataConsumer;
     id _requestBlock;
     NSObject<OS_dispatch_queue> *_requestQueue;
 }

@@ -7,14 +7,14 @@
 }
 
 - (void)dealloc;
-- (void)flushToQueue:(id)arg1 block:(id)arg2;
+- (void)flushToQueue:(struct dispatch_queue_s { }*)arg1 block:(id)arg2;
 - (unsigned long long)getAWDTimestamp;
-- (id)initWithComponentId:(unsigned long)arg1 andBlockOnConfiguration:(BOOL)arg2;
-- (id)initWithComponentId:(unsigned long)arg1;
-- (id)newMetricContainerWithIdentifier:(unsigned long)arg1;
-- (BOOL)registerConfigChangeCallback:(id)arg1;
-- (BOOL)registerQueriableMetricCallback:(id)arg1 forIdentifier:(unsigned long)arg2;
-- (BOOL)registerQueriableMetricCallbackForLogging:(id)arg1;
-- (BOOL)submitMetric:(id)arg1;
+- (id)initWithComponentId:(unsigned int)arg1 andBlockOnConfiguration:(bool)arg2;
+- (id)initWithComponentId:(unsigned int)arg1;
+- (id)newMetricContainerWithIdentifier:(unsigned int)arg1;
+- (bool)registerConfigChangeCallback:(id)arg1;
+- (bool)registerQueriableMetric:(unsigned int)arg1 callback:(id)arg2;
+- (bool)registerQueriableMetricCallback:(id)arg1 forIdentifier:(unsigned int)arg2;
+- (bool)submitMetric:(id)arg1;
 
 @end

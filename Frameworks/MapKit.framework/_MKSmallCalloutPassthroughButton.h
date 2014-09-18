@@ -2,24 +2,24 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIButton, UIView;
+@class UIControl, UIView;
 
 @interface _MKSmallCalloutPassthroughButton : UIControl {
     UIView *_highlightView;
-    float _leftHighlightInset;
-    UIButton *_targetButton;
+    double _leftHighlightInset;
+    UIControl *_targetControl;
 }
 
-@property float leftHighlightInset;
-@property(retain) UIButton * targetButton;
+@property double leftHighlightInset;
+@property(retain) UIControl * targetControl;
 
 - (void).cxx_destruct;
 - (void)handleTap:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)leftHighlightInset;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setLeftHighlightInset:(float)arg1;
-- (void)setTargetButton:(id)arg1;
-- (id)targetButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)leftHighlightInset;
+- (void)setHighlighted:(bool)arg1;
+- (void)setLeftHighlightInset:(double)arg1;
+- (void)setTargetControl:(id)arg1;
+- (id)targetControl;
 
 @end

@@ -5,11 +5,11 @@
 @interface PKExtendedPhysicsWorld : PKPhysicsWorld {
 }
 
-@property BOOL debugEnabled;
+@property bool debugEnabled;
 
-- (BOOL)debugEnabled;
+- (bool)debugEnabled;
 - (id)debugPaths;
-- (void)setDebugEnabled:(BOOL)arg1;
-- (BOOL)supportsDebug;
+- (void)setDebugEnabled:(bool)arg1;
+- (bool)supportsDebug;
 
 @end

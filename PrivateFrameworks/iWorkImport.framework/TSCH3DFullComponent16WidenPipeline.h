@@ -3,13 +3,13 @@
  */
 
 @interface TSCH3DFullComponent16WidenPipeline : TSCH3DFramebufferCombinePipeline {
-    BOOL mSelection;
+    boolmSelection;
 }
 
-@property BOOL selection;
+@property bool selection;
 
-- (BOOL)selection;
-- (void)setSelection:(BOOL)arg1;
+- (bool)selection;
+- (void)setSelection:(bool)arg1;
 - (void)updateShaderEffectsStates;
 
 @end

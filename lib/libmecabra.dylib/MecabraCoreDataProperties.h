@@ -12,7 +12,7 @@
 
 @property(retain) NSMutableDictionary * descriptionDictionary;
 @property(retain) NSString * identifier;
-@property(readonly) NSString * type;
+@property(retain,readonly) NSString * type;
 @property(readonly) NSString * ubiquityContainerIdentifier;
 
 + (id)defaultDescriptionPath;
@@ -20,7 +20,7 @@
 + (id)sharedInstanceForType:(id)arg1;
 + (id)ubiquityContainerURL;
 
-- (BOOL)databaseSyncs;
+- (bool)databaseSyncs;
 - (void)dealloc;
 - (id)descriptionDictionary;
 - (id)entityDescriptionURL;

@@ -5,6 +5,6 @@
 @interface GQDTCheckboxCell : GQDTNumberCell {
 }
 
-- (BOOL)boolValue;
+- (bool)boolValue;
 
 @end

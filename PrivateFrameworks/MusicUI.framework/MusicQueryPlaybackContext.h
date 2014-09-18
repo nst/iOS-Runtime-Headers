@@ -2,26 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaQuery, NSArray;
-
-@interface MusicQueryPlaybackContext : MusicPlaybackContext {
-    NSArray *_prefixMediaItems;
-    MPMediaQuery *_query;
-    unsigned int _startIndex;
+@interface MusicQueryPlaybackContext : MPQueryPlaybackContext {
 }
 
-@property(copy) NSArray * prefixMediaItems;
-@property(readonly) MPMediaQuery * query;
-@property unsigned int startIndex;
-
 + (Class)queueFeederClass;
-
-- (void).cxx_destruct;
-- (id)initWithQuery:(id)arg1;
-- (id)prefixMediaItems;
-- (id)query;
-- (void)setPrefixMediaItems:(id)arg1;
-- (void)setStartIndex:(unsigned int)arg1;
-- (unsigned int)startIndex;
 
 @end

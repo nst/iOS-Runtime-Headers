@@ -2,7 +2,16 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, VGLMesh, VKRealisticPolygonMaker, VKStyle;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class VKRealisticPolygonMaker;
 
 @interface VKRealisticRoadGroup : NSObject {
     struct VKTileKey { 
@@ -10,69 +19,107 @@
         int x; 
         int y; 
         unsigned int pointSize; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    VGLMesh *_casingFacades;
+    struct Matrix<float, 2, 1> { 
+        float _e[2]; 
+    struct Matrix<float, 2, 1> { 
+        float _e[2]; 
+    struct shared_ptr<md::StyleQuery> { 
+        struct StyleQuery {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    struct map<std::__1::basic_string<char>, unsigned long, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned long> > > { 
+        struct __tree<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, unsigned long> > > { 
+            struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, void *> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                    struct __tree_node_base<void *> {} *__left_; 
+                } __first_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, unsigned long>, std::__1::less<std::__1::basic_string<char> >, true> > { 
+                unsigned long long __first_; 
+            } __pair3_; 
+        } __tree_; 
+    struct vector<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> >, std::__1::allocator<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > > > { 
+        struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *__begin_; 
+        struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *__end_; 
+        struct __compressed_pair<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > *, std::__1::allocator<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > > > { 
+            struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *__first_; 
+        } __end_cap_; 
+    struct fast_shared_ptr<ggl::PolygonBase::CompressedMeshMesh> { 
+        struct _fast_shared_ptr_control {} *_control; 
+    struct fast_shared_ptr<ggl::RealisticCasingFacade::RealisticMesh> { 
+        struct _fast_shared_ptr_control {} *_control; 
+    struct fast_shared_ptr<ggl::RealisticCasingFacade::RealisticMesh> { 
+        struct _fast_shared_ptr_control {} *_control; 
+    struct fast_shared_ptr<ggl::PolygonBase::CompressedMeshMesh> { 
+        struct _fast_shared_ptr_control {} *_control; 
+    struct fast_shared_ptr<ggl::RealisticRoadShadow::RealisticMesh> { 
+        struct _fast_shared_ptr_control {} *_control; 
     float _casingHeight;
     float _casingShadowLift;
     float _casingShadowRamp;
     float _casingShadowWidth;
-    VGLMesh *_casingShadows;
     float _casingTopLift;
-    VGLMesh *_casingTops;
     float _casingWidth;
-    NSMutableDictionary *_meshDict;
+    } _facadeMesh;
     int _renderZ;
-    NSMutableArray *_roadMeshes;
+    } _roadDrawableIndices;
+    } _roadDrawables;
     VKRealisticPolygonMaker *_roadPolygonMaker;
+    } _roadShadowMesh;
     float _roadShadowRamp;
     float _roadShadowTaperLength;
     float _roadShadowWidth;
-    VGLMesh *_roadShadows;
     float _roadZ;
-    } _sidewalkColor;
+    } _shadowMesh;
+    } _sidewalkShadowMesh;
     float _sidewalkShadowWidth;
-    VGLMesh *_sidewalkShadows;
-    VKStyle *_style;
+    } _styleQuery;
     } _tileKey;
+    } _tileOrigin;
+    } _tileSize;
+    } _topMesh;
 }
 
-@property(readonly) VGLMesh * casingFacades;
+@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  origin; /* unknown property attribute:  1>=[2f]} */
+@property(readonly) struct  size; /* unknown property attribute:  1>=[2f]} */
+@property(readonly) struct * roadMeshDrawables; /* unknown property attribute:  std::__1::default_delete<md::TexturedDrawable> >}}} */
+@property(readonly) struct * casingShadowMesh; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}^^?^{ResourceManager}^{RenderResource}{shared_ptr<ggl::VertexData>=^{VertexData}^{__shared_weak_count}}{shared_ptr<ggl::IndexData>=^{IndexData}^{__shared_weak_count}}{shared_ptr<ggl::RealisticCasingFacade::RealisticVertexData>=^{RealisticVertexData}^{__shared_weak_count}}} */
+@property(readonly) struct * casingFacadeMesh; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}^^?^{ResourceManager}^{RenderResource}{shared_ptr<ggl::VertexData>=^{VertexData}^{__shared_weak_count}}{shared_ptr<ggl::IndexData>=^{IndexData}^{__shared_weak_count}}{shared_ptr<ggl::RealisticCasingFacade::RealisticVertexData>=^{RealisticVertexData}^{__shared_weak_count}}} */
+@property(readonly) struct * casingTopMesh; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}^^?^{ResourceManager}^{RenderResource}{shared_ptr<ggl::VertexData>=^{VertexData}^{__shared_weak_count}}{shared_ptr<ggl::IndexData>=^{IndexData}^{__shared_weak_count}}{shared_ptr<ggl::PolygonBase::CompressedMeshVertexData>=^{CompressedMeshVertexData}^{__shared_weak_count}}} */
+@property(readonly) struct * casingSidewalkShadowMesh; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}^^?^{ResourceManager}^{RenderResource}{shared_ptr<ggl::VertexData>=^{VertexData}^{__shared_weak_count}}{shared_ptr<ggl::IndexData>=^{IndexData}^{__shared_weak_count}}{shared_ptr<ggl::PolygonBase::CompressedMeshVertexData>=^{CompressedMeshVertexData}^{__shared_weak_count}}} */
+@property(readonly) struct * roadShadowMesh; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}^^?^{ResourceManager}^{RenderResource}{shared_ptr<ggl::VertexData>=^{VertexData}^{__shared_weak_count}}{shared_ptr<ggl::IndexData>=^{IndexData}^{__shared_weak_count}}{shared_ptr<ggl::RealisticRoadShadow::RealisticVertexData>=^{RealisticVertexData}^{__shared_weak_count}}} */
 @property(readonly) float casingShadowRamp;
-@property(readonly) VGLMesh * casingShadows;
-@property(readonly) VGLMesh * casingTops;
 @property int renderZ;
-@property(readonly) NSArray * roadMeshes;
 @property(readonly) float roadShadowRamp;
 @property(readonly) float roadShadowTaperLength;
 @property(readonly) float roadShadowWidth;
-@property(readonly) VGLMesh * roadShadows;
-@property(readonly) VGLMesh * sidewalkShadows;
-@property(retain) VKStyle * style;
+@property struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; } styleQuery;
 
+- (struct CompressedMeshMesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::PolygonBase::CompressedMeshVertexData> { struct CompressedMeshVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; }*)casingSidewalkShadowMesh;
+- (struct CompressedMeshMesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::PolygonBase::CompressedMeshVertexData> { struct CompressedMeshVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; }*)casingTopMesh;
+- (struct RealisticMesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::RealisticCasingFacade::RealisticVertexData> { struct RealisticVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; }*)casingFacadeMesh;
+- (struct RealisticMesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::RealisticCasingFacade::RealisticVertexData> { struct RealisticVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; }*)casingShadowMesh;
+- (struct RealisticMesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::RealisticRoadShadow::RealisticVertexData> { struct RealisticVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; }*)roadShadowMesh;
 - (id).cxx_construct;
-- (id)_meshForStyle:(id)arg1 tileKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })arg2 scale:(float)arg3;
-- (void)addRoadForPolygon:(const struct Vec2Imp<float> { float x1; float x2; }*)arg1 pointCount:(unsigned int)arg2 characteristicPoints:(const struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; int x_2_1_2; float x_2_1_3; BOOL x_2_1_4; BOOL x_2_1_5; BOOL x_2_1_6; BOOL x_2_1_7; BOOL x_2_1_8; struct { unsigned char x_9_2_1; unsigned short x_9_2_2; } x_2_1_9[16]; } x2; }*)arg3 characteristicPointCount:(unsigned int)arg4 withStyle:(id)arg5;
-- (id)casingFacades;
+- (void).cxx_destruct;
+- (struct TexturedDrawable { struct unique_ptr<ggl::MeshVendor<ggl::PolygonBase::CompressedMeshMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PolygonBase::CompressedMeshMesh> > > { struct __compressed_pair<ggl::MeshVendor<ggl::PolygonBase::CompressedMeshMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PolygonBase::CompressedMeshMesh> > > { struct MeshVendor<ggl::PolygonBase::CompressedMeshMesh> {} *x_1_2_1; } x_1_1_1; } x1; struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *x_2_1_1; struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *x_2_1_2; struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *x_3_2_1; } x_2_1_3; } x2; struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x_3_1_1; struct __shared_weak_count {} *x_3_1_2; } x3; id x4; struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x_5_1_1; struct __shared_weak_count {} *x_5_1_2; } x5; id x6; struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)_meshForStyleQuery:(struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })arg1 scale:(double)arg2 sharedResources:(id)arg3;
+- (void)addRoadForPolygon:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 pointCount:(unsigned long long)arg2 characteristicPoints:(const struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; int x_2_1_2; float x_2_1_3; boolx_2_1_4; boolx_2_1_5; boolx_2_1_6; boolx_2_1_7; boolx_2_1_8; struct { unsigned char x_9_2_1; unsigned short x_9_2_2; } x_2_1_9[16]; } x2; }*)arg3 characteristicPointCount:(unsigned long long)arg4 withStyleQuery:(struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })arg5;
 - (float)casingShadowRamp;
-- (id)casingShadows;
-- (id)casingTops;
 - (void)dealloc;
+- (void)extractLinesWithPoints:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 count:(unsigned long long)arg2;
+- (void)extractRoadPolygonWithPoints:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 pointCount:(unsigned long long)arg2 indices:(const unsigned short*)arg3 indexCount:(unsigned long long)arg4 styleQuery:(struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })arg5 contentScale:(double)arg6 sharedResources:(id)arg7;
+- (void)extractShadowsWithPoints:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 count:(unsigned long long)arg2;
 - (id)initWithTile:(id)arg1;
+- (struct Matrix<float, 2, 1> { float x1[2]; })origin;
 - (int)renderZ;
-- (id)roadMeshes;
+- (struct vector<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> >, std::__1::allocator<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > > > { struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *x1; struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *x2; struct __compressed_pair<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > *, std::__1::allocator<std::__1::unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > > > { struct unique_ptr<md::TexturedDrawable, std::__1::default_delete<md::TexturedDrawable> > {} *x_3_1_1; } x3; }*)roadMeshDrawables;
 - (float)roadShadowRamp;
 - (float)roadShadowTaperLength;
 - (float)roadShadowWidth;
-- (id)roadShadows;
 - (void)setRenderZ:(int)arg1;
-- (void)setStyle:(id)arg1;
-- (id)sidewalkShadows;
-- (id)style;
-- (unsigned int)triangleCount;
-- (void)updateComponentsWithModelViewProjectionMatrix:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })arg1 contentScale:(float)arg2;
+- (void)setStyleQuery:(struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (struct Matrix<float, 2, 1> { float x1[2]; })size;
+- (struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })styleQuery;
+- (void)updateComponentsWithContentScale:(double)arg1 sharedResources:(id)arg2;
 
 @end

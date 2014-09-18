@@ -6,120 +6,124 @@
 
 @interface UIKBRenderGeometry : NSObject <NSCopying> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL _detachedVariants;
     } _displayFrame;
-    int _flickDirection;
+    long long _flickDirection;
     } _frame;
     } _paddedFrame;
     int _popupBias;
     } _popupSource;
     int _roundRectCorners;
-    float _roundRectRadius;
+    double _roundRectRadius;
     NSValue *_splitLeftRect;
     NSValue *_splitRightRect;
     } _symbolFrame;
+    bool_detachedVariants;
+    bool_tallPopup;
 }
 
-@property BOOL detachedVariants;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } displayFrame;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } displayInsets;
-@property int flickDirection;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } paddedFrame;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddedInsets;
+@property bool detachedVariants;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } displayFrame;
+@property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } displayInsets;
+@property long long flickDirection;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } paddedFrame;
+@property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } paddedInsets;
 @property int popupBias;
-@property struct CGPoint { float x1; float x2; } popupSource;
+@property struct CGPoint { double x1; double x2; } popupSource;
 @property int roundRectCorners;
-@property float roundRectRadius;
+@property double roundRectRadius;
 @property(retain) NSValue * splitLeftRect;
 @property(retain) NSValue * splitRightRect;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } symbolFrame;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } symbolFrame;
+@property bool tallPopup;
 
-+ (id)geometryWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 paddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)geometryWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 paddedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (id)geometryWithShape:(id)arg1;
 
-- (id)_copyForDirection:(int)arg1 positionFactor:(float)arg2 sizeFactor:(float)arg3 scale:(float)arg4;
-- (unsigned int)adjustForTranslucentGapsInFrameWithSize_10Key:(struct CGSize { float x1; float x2; })arg1 centerX:(float)arg2 isInBottomRow:(BOOL)arg3;
-- (unsigned int)adjustForTranslucentGapsWithSize:(struct CGSize { float x1; float x2; })arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)adjustToTopWithInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)applyInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)applyOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)applyShadowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)copyForFlickDirection:(int)arg1 scale:(float)arg2;
-- (id)copyForPopupDirection:(int)arg1 scale:(float)arg2;
+- (id)_copyForDirection:(long long)arg1 positionFactor:(double)arg2 sizeFactor:(double)arg3 scale:(double)arg4;
+- (unsigned long long)adjustForTranslucentGapsInFrameWithSize_10Key:(struct CGSize { double x1; double x2; })arg1 centerX:(double)arg2 isInBottomRow:(bool)arg3;
+- (unsigned long long)adjustForTranslucentGapsWithSize:(struct CGSize { double x1; double x2; })arg1 inFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)adjustToTopWithInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)applyInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)applyOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)applyShadowInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (id)copyForFlickDirection:(long long)arg1 scale:(double)arg2;
+- (id)copyForPopupDirection:(long long)arg1 scale:(double)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)detachedVariants;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })displayFrame;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })displayInsets;
-- (int)flickDirection;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (id)iPadVariantGeometries:(unsigned int)arg1;
-- (id)iPhoneVariantGeometries:(unsigned int)arg1;
+- (bool)detachedVariants;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })displayFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })displayInsets;
+- (long long)flickDirection;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (id)iPadVariantGeometries:(unsigned long long)arg1;
+- (id)iPhoneVariantGeometries:(unsigned long long)arg1;
 - (id)initWithShape:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)makeIntegralWithScale:(float)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)makeIntegralWithScale:(double)arg1;
 - (void)overlayWithGeometry:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrame;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddedInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paddedFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddedInsets;
 - (int)popupBias;
-- (struct CGPoint { float x1; float x2; })popupSource;
+- (struct CGPoint { double x1; double x2; })popupSource;
 - (int)roundRectCorners;
-- (float)roundRectRadius;
-- (void)setDetachedVariants:(BOOL)arg1;
-- (void)setDisplayFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFlickDirection:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPaddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)roundRectRadius;
+- (void)setDetachedVariants:(bool)arg1;
+- (void)setDisplayFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFlickDirection:(long long)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPaddedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPopupBias:(int)arg1;
-- (void)setPopupSource:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPopupSource:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRoundRectCorners:(int)arg1;
-- (void)setRoundRectRadius:(float)arg1;
+- (void)setRoundRectRadius:(double)arg1;
 - (void)setSplitLeftRect:(id)arg1;
 - (void)setSplitRightRect:(id)arg1;
-- (void)setSymbolFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSymbolFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTallPopup:(bool)arg1;
 - (id)similarShape;
 - (id)splitLeftRect;
 - (id)splitRightRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })symbolFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })symbolFrame;
+- (bool)tallPopup;
 
 @end

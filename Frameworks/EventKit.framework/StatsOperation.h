@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
-
 @interface StatsOperation : NSObject {
     double _doubleValue;
     long long _intValue;
-    NSString *_key;
     int _type;
 }
 

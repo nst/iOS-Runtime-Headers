@@ -7,34 +7,48 @@
 @interface VKPShieldIndexEntry : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
     NSString *_artworkIdentifier;
+    } _defaultForFeatureTypes;
     } _shieldTypes;
 }
 
 @property(retain) NSString * artworkIdentifier;
-@property(readonly) BOOL hasArtworkIdentifier;
+@property(readonly) int* defaultForFeatureTypes;
+@property(readonly) unsigned long long defaultForFeatureTypesCount;
+@property(readonly) bool hasArtworkIdentifier;
 @property(readonly) int* shieldTypes;
-@property(readonly) unsigned int shieldTypesCount;
+@property(readonly) unsigned long long shieldTypesCount;
 
+- (void)addDefaultForFeatureType:(int)arg1;
 - (void)addShieldTypes:(int)arg1;
 - (id)artworkIdentifier;
+- (void)clearDefaultForFeatureTypes;
 - (void)clearShieldTypes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (int)defaultForFeatureTypeAtIndex:(unsigned long long)arg1;
+- (int*)defaultForFeatureTypes;
+- (unsigned long long)defaultForFeatureTypesCount;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArtworkIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasArtworkIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArtworkIdentifier:(id)arg1;
-- (void)setShieldTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setDefaultForFeatureTypes:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setShieldTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)shieldTypes;
-- (int)shieldTypesAtIndex:(unsigned int)arg1;
-- (unsigned int)shieldTypesCount;
+- (int)shieldTypesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)shieldTypesCount;
 - (void)writeTo:(id)arg1;
 
 @end

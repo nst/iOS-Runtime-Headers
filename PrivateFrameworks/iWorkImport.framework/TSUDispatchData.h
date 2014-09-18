@@ -8,28 +8,28 @@
     NSObject<OS_dispatch_data> *_data;
     NSObject<OS_dispatch_data> *_defragmentedData;
     NSObject<OS_dispatch_data> *_fragmentedData;
-    unsigned int _fragmentsCount;
-    unsigned int _maxFragmentsCount;
-    unsigned long _size;
+    unsigned long long _fragmentsCount;
+    unsigned long long _maxFragmentsCount;
+    unsigned long long _size;
 }
 
 @property(readonly) NSObject<OS_dispatch_data> * data;
 @property(readonly) NSObject<OS_dispatch_data> * defragmentedData;
 @property(readonly) NSObject<OS_dispatch_data> * fragmentedData;
-@property(readonly) unsigned int fragmentsCount;
-@property unsigned int maxFragmentsCount;
-@property(readonly) unsigned long size;
+@property(readonly) unsigned long long fragmentsCount;
+@property unsigned long long maxFragmentsCount;
+@property(readonly) unsigned long long size;
 
 - (void).cxx_destruct;
 - (void)append:(id)arg1;
 - (id)data;
 - (id)defragmentedData;
 - (id)fragmentedData;
-- (unsigned int)fragmentsCount;
+- (unsigned long long)fragmentsCount;
 - (id)init;
 - (id)initWithData:(id)arg1;
-- (unsigned int)maxFragmentsCount;
-- (void)setMaxFragmentsCount:(unsigned int)arg1;
-- (unsigned long)size;
+- (unsigned long long)maxFragmentsCount;
+- (void)setMaxFragmentsCount:(unsigned long long)arg1;
+- (unsigned long long)size;
 
 @end

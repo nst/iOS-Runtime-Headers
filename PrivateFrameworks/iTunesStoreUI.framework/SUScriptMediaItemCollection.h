@@ -7,10 +7,10 @@
 @interface SUScriptMediaItemCollection : SUScriptObject {
     NSArray *_items;
     SUScriptMediaItem *_representativeItem;
-    BOOL _watchingLibrary;
+    bool_watchingLibrary;
 }
 
-@property(readonly) int count;
+@property(readonly) long long count;
 @property(readonly) NSArray * items;
 @property(readonly) NSArray * mediaTypes;
 @property(readonly) MPMediaItemCollection * nativeCollection;
@@ -23,7 +23,7 @@
 - (id)_className;
 - (void)_libraryChangedNotification:(id)arg1;
 - (id)attributeKeys;
-- (int)count;
+- (long long)count;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
 - (id)items;

@@ -15,9 +15,9 @@
     NSString *_key;
     NSString *_label;
     NSString *_property;
-    BOOL _requiresFollowingWhitespace;
     NSString *_tableField;
     NSString *_whitespace;
+    bool_requiresFollowingWhitespace;
 }
 
 @property int category;
@@ -25,12 +25,12 @@
 @property(copy) NSString * key;
 @property(copy) NSString * label;
 @property(copy) NSString * property;
-@property BOOL requiresFollowingWhitespace;
+@property bool requiresFollowingWhitespace;
 @property(copy) NSString * tableField;
 @property(copy) NSString * whitespace;
 
-- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
-- (BOOL)allowsPasteAsSmartField;
+- (const struct PlaceholderSmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct SmartFieldArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; boolx5; int x6; unsigned int x7[1]; }*)placeholderSmartFieldArchiveFromUnarchiver:(id)arg1;
+- (bool)allowsPasteAsSmartField;
 - (int)category;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -39,16 +39,18 @@
 - (id)key;
 - (id)label;
 - (id)property;
-- (BOOL)requiresFollowingWhitespace;
+- (bool)requiresFollowingWhitespace;
 - (void)saveToArchiver:(id)arg1;
+- (id)scriptTag;
 - (void)setCategory:(int)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setProperty:(id)arg1;
-- (void)setRequiresFollowingWhitespace:(BOOL)arg1;
+- (void)setRequiresFollowingWhitespace:(bool)arg1;
 - (void)setTableField:(id)arg1;
 - (void)setWhitespace:(id)arg1;
+- (int)smartFieldKind;
 - (id)tableField;
 - (id)whitespace;
 

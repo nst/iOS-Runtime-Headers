@@ -7,14 +7,14 @@
 @interface GEOHours : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     } _days;
     NSMutableArray *_timeRanges;
 }
 
 @property(readonly) int* days;
-@property(readonly) unsigned int daysCount;
+@property(readonly) unsigned long long daysCount;
 @property(retain) NSMutableArray * timeRanges;
 
 - (void)addDay:(int)arg1;
@@ -23,20 +23,22 @@
 - (void)clearTimeRanges;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)dayAtIndex:(unsigned int)arg1;
+- (int)dayAtIndex:(unsigned long long)arg1;
 - (int*)days;
-- (unsigned int)daysCount;
+- (unsigned long long)daysCount;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDays:(int*)arg1 count:(unsigned int)arg2;
+- (unsigned long long)hash;
+- (id)initWithPlaceDataHours:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDays:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setTimeRanges:(id)arg1;
-- (id)timeRangeAtIndex:(unsigned int)arg1;
+- (id)timeRangeAtIndex:(unsigned long long)arg1;
 - (id)timeRanges;
-- (unsigned int)timeRangesCount;
+- (unsigned long long)timeRangesCount;
 - (void)writeTo:(id)arg1;
 
 @end

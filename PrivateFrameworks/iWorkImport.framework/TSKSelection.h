@@ -7,6 +7,6 @@
 
 + (Class)archivedSelectionClass;
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 
 @end

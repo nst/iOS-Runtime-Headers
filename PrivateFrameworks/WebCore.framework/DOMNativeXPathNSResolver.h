@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMNativeXPathNSResolver : DOMObject <DOMXPathNSResolver> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (void)finalize;

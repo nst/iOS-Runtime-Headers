@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class WebFrame;
+@class NSString, WebFrame;
 
 @interface WBUFormAutoFillFrame : NSObject <WBSFormAutoFillFrame> {
     WebFrame *_webFrame;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(readonly) WebFrame * webFrame;
 
 + (id)autoFillFrameWithWebFrame:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)committedURL;
-- (BOOL)containsAnyFormElements;
-- (void)dealloc;
+- (bool)containsAnyFormElements;
 - (void)enumerateChildFramesUsingBlock:(id)arg1;
 - (struct OpaqueFormAutoFillFrame { }*)frameRef;
 - (id)initWithWebFrame:(id)arg1;

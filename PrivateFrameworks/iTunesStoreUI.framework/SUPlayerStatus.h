@@ -8,13 +8,13 @@
     double _currentTime;
     double _duration;
     NSError *_error;
-    int _state;
+    long long _state;
 }
 
 @property double currentTime;
 @property double duration;
 @property(retain) NSError * error;
-@property int playerState;
+@property long long playerState;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)currentTime;
@@ -22,10 +22,10 @@
 - (id)description;
 - (double)duration;
 - (id)error;
-- (int)playerState;
+- (long long)playerState;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setError:(id)arg1;
-- (void)setPlayerState:(int)arg1;
+- (void)setPlayerState:(long long)arg1;
 
 @end

@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
+@class NSString;
+
 @interface CUICalibrationRemoteViewController : _UIRemoteViewController <CalibrationPresentationHost> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

@@ -2,8 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSCharacterSet, NSData;
+
 @interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
 }
+
+@property(copy,readonly) NSData * bitmapRepresentation;
+@property(copy,readonly) NSCharacterSet * invertedSet;
 
 + (id)URLFragmentAllowedCharacterSet;
 + (id)URLHostAllowedCharacterSet;
@@ -20,7 +25,7 @@
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)characterSetWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 + (id)controlCharacterSet;
 + (id)decimalDigitCharacterSet;
 + (id)decomposableCharacterSet;
@@ -42,6 +47,7 @@
 + (id)postSmartSet;
 + (id)preSmartSet;
 + (id)punctuationCharacterSet;
++ (id)safari_lockRelatedEmojiCharacterSet;
 + (id)singleQuoteCharacterSet;
 + (id)smartDoubleQuotesCharacterSet;
 + (id)smartQuotesCharacterSet;
@@ -49,29 +55,30 @@
 + (id)spaceCharacterSet;
 + (id)symbolCharacterSet;
 + (id)uppercaseLetterCharacterSet;
++ (id)variationSelectorCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
 + (id)whitespaceCharacterSet;
 + (id)whitespaceNewlineAndSpecialCharacterSet;
 + (id)wordBreakCharacterSet;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
 - (id)_retainedBitmapRepresentation;
 - (id)bitmapRepresentation;
-- (BOOL)characterIsMember:(unsigned short)arg1;
+- (bool)characterIsMember:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (unsigned int)hash;
+- (bool)hasMemberInPlane:(unsigned char)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)invertedSet;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMutable;
-- (BOOL)isSupersetOfSet:(id)arg1;
-- (BOOL)longCharacterIsMember:(unsigned long)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isMutable;
+- (bool)isSupersetOfSet:(id)arg1;
+- (bool)longCharacterIsMember:(unsigned int)arg1;
 - (void)makeImmutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;

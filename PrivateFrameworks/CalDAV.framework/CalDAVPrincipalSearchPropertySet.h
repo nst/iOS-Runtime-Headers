@@ -9,17 +9,17 @@
 }
 
 @property(readonly) NSSet * stringProperties;
-@property(readonly) BOOL supportsPropertySearch;
+@property(readonly) bool supportsPropertySearch;
 
 + (id)searchSetWithProperties:(id)arg1;
 
 - (void)dealloc;
 - (id)initWithSearchProperties:(id)arg1;
 - (id)initWithStringProperties:(id)arg1;
-- (BOOL)isEqualToPropertySet:(id)arg1;
+- (bool)isEqualToPropertySet:(id)arg1;
 - (id)stringProperties;
-- (BOOL)supportsPropertySearch;
-- (BOOL)supportsPropertyTypeWithNameSpace:(id)arg1 andName:(id)arg2;
-- (BOOL)supportsWellKnownType:(int)arg1;
+- (bool)supportsPropertySearch;
+- (bool)supportsPropertyTypeWithNameSpace:(id)arg1 andName:(id)arg2;
+- (bool)supportsWellKnownType:(int)arg1;
 
 @end

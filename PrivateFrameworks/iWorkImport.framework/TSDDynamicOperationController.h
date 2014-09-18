@@ -5,14 +5,14 @@
 @class NSMutableSet, NSSet, TSDAutoscroll, TSDInteractiveCanvasController;
 
 @interface TSDDynamicOperationController : NSObject {
+    boolmOperationIsDynamic;
+    boolmPossibleDynamicOperation;
+    boolmResetGuides;
+    boolmSupportsAlignmentGuides;
     NSMutableSet *mAllTransformedReps;
     TSDAutoscroll *mAutoscroll;
     TSDInteractiveCanvasController *mICC;
-    BOOL mOperationIsDynamic;
-    BOOL mPossibleDynamicOperation;
     NSMutableSet *mReps;
-    BOOL mResetGuides;
-    BOOL mSupportsAlignmentGuides;
 }
 
 @property(readonly) NSSet * allTransformedReps;
@@ -24,18 +24,17 @@
 - (void)cancelOperation;
 - (id)currentlyTransformingReps;
 - (void)dealloc;
-- (void)endOperation;
 - (void)handleGestureRecognizer:(id)arg1;
 - (void)handleTrackerManipulator:(id)arg1;
 - (id)initWithInteractiveCanvasController:(id)arg1;
 - (void)invalidateGuides;
-- (BOOL)isInOperation;
-- (BOOL)isInPossibleDynamicOperation;
-- (BOOL)isOperationDynamic;
+- (bool)isInOperation;
+- (bool)isInPossibleDynamicOperation;
+- (bool)isOperationDynamic;
 - (void)p_beginDynamicOperationForReps:(id)arg1;
 - (void)p_cleanupOperation;
 - (void)p_controllingTMDidResetInOperation:(id)arg1;
-- (void)p_resetGuidesForCleanup:(BOOL)arg1;
+- (void)p_resetGuidesForCleanup:(bool)arg1;
 - (void)startTransformingReps:(id)arg1;
 - (void)stopTransformingReps:(id)arg1;
 

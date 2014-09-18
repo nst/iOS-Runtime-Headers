@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetResourceLoadingContentInformationRequestInternal, NSString;
+@class AVAssetResourceLoadingContentInformationRequestInternal, NSDate, NSString;
 
 @interface AVAssetResourceLoadingContentInformationRequest : NSObject {
     AVAssetResourceLoadingContentInformationRequestInternal *_contentInformationRequest;
 }
 
-@property(getter=isByteRangeAccessSupported) BOOL byteRangeAccessSupported;
+@property(getter=isByteRangeAccessSupported) bool byteRangeAccessSupported;
 @property long long contentLength;
 @property(copy) NSString * contentType;
+@property(copy) NSDate * renewalDate;
 
 - (long long)contentLength;
 - (id)contentType;
@@ -18,12 +19,15 @@
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (BOOL)isByteRangeAccessSupported;
-- (BOOL)isDiskCachingPermitted;
+- (id)initWithLoadingRequest:(id)arg1;
+- (bool)isByteRangeAccessSupported;
+- (bool)isDiskCachingPermitted;
 - (id)propertyList;
-- (void)setByteRangeAccessSupported:(BOOL)arg1;
+- (id)renewalDate;
+- (void)setByteRangeAccessSupported:(bool)arg1;
 - (void)setContentLength:(long long)arg1;
 - (void)setContentType:(id)arg1;
-- (void)setDiskCachingPermitted:(BOOL)arg1;
+- (void)setDiskCachingPermitted:(bool)arg1;
+- (void)setRenewalDate:(id)arg1;
 
 @end

@@ -6,43 +6,57 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSObject<OS_dispatch_data>, __NSCFLocalDownloadFile;
+@class NSDictionary, NSObject<OS_dispatch_data>, NSString, __NSCFLocalDownloadFile;
 
-@interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask {
+@interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask <NSURLSessionDownloadTaskSubclass, __NSCFLocalDownloadFileOpener> {
+    id __afterDidReportProgressOnQueue;
+    unsigned long long __transientWriteProgress;
     __NSCFLocalDownloadFile *_downloadFile;
     id _fileCompletion;
     long long _initialResumeSize;
-    unsigned int _ioSuspend;
+    unsigned long long _ioSuspend;
     NSDictionary *_originalResumeInfo;
     id _resumeCallback;
     int _seqNo;
-    unsigned long _totalWrote;
+    unsigned long long _totalWrote;
     NSObject<OS_dispatch_data> *_writeBuffer;
     bool_canWrite;
     bool_didIssueNeedFinish;
     bool_needFinish;
+    bool_suppressProgress;
 }
 
+@property(copy) id _afterDidReportProgressOnQueue;
+@property unsigned long long _transientWriteProgress;
 @property bool canWrite;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property bool didIssueNeedFinish;
 @property(retain) __NSCFLocalDownloadFile * downloadFile;
 @property(copy) id fileCompletion;
+@property(readonly) unsigned long long hash;
 @property long long initialResumeSize;
-@property unsigned int ioSuspend;
+@property unsigned long long ioSuspend;
 @property bool needFinish;
 @property(retain) NSDictionary * originalResumeInfo;
 @property(copy) id resumeCallback;
 @property int seqNo;
-@property unsigned long totalWrote;
-@property(retain) NSObject<OS_dispatch_data> * writeBuffer;
+@property(readonly) Class superclass;
+@property bool suppressProgress;
+@property unsigned long long totalWrote;
+@property NSObject<OS_dispatch_data> * writeBuffer;
 
-- (void)_onqueue_didReceiveResponse:(id)arg1;
+- (id)_afterDidReportProgressOnQueue;
+- (void)_onqueue_cancelByProducingResumeData:(id)arg1;
+- (void)_onqueue_completeInitialization;
+- (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id)arg2;
 - (void)_onqueue_willCacheResponse:(id)arg1 withCompletion:(id)arg2;
 - (void)_private_errorCompletion;
 - (void)_private_fileCompletion;
 - (void)_private_posixError:(int)arg1;
 - (void)_task_onqueue_didFinish;
-- (void)_task_onqueue_didReceiveDispatchData:(id)arg1;
+- (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(id)arg2;
+- (unsigned long long)_transientWriteProgress;
 - (bool)canWrite;
 - (void)cancelByProducingResumeData:(id)arg1;
 - (void)checkWrite;
@@ -51,15 +65,17 @@
 - (bool)didIssueNeedFinish;
 - (id)downloadFile;
 - (id)fileCompletion;
-- (id)initWithSession:(id)arg1 request:(id)arg2 ident:(unsigned int)arg3 bridge:(id)arg4;
-- (id)initWithSession:(id)arg1 resumeData:(id)arg2 ident:(unsigned int)arg3 bridge:(id)arg4;
-- (id)initWithTask:(id)arg1 suspendedConnection:(struct _CFURLConnection { }*)arg2;
+- (id)initWithSession:(id)arg1 request:(id)arg2 filePath:(id)arg3 ident:(unsigned long long)arg4;
+- (id)initWithSession:(id)arg1 request:(id)arg2 ident:(unsigned long long)arg3;
+- (id)initWithSession:(id)arg1 resumeData:(id)arg2 ident:(unsigned long long)arg3;
+- (id)initWithTask:(id)arg1;
 - (long long)initialResumeSize;
-- (unsigned int)ioSuspend;
-- (BOOL)isKindOfClass:(Class)arg1;
+- (unsigned long long)ioSuspend;
+- (bool)isKindOfClass:(Class)arg1;
 - (bool)needFinish;
+- (int)openItemForPath:(id)arg1 mode:(int)arg2;
 - (id)originalResumeInfo;
-- (void)reportProgress:(unsigned long)arg1;
+- (void)reportProgress:(unsigned long long)arg1;
 - (id)resumeCallback;
 - (int)seqNo;
 - (void)setCanWrite:(bool)arg1;
@@ -67,15 +83,19 @@
 - (void)setDownloadFile:(id)arg1;
 - (void)setFileCompletion:(id)arg1;
 - (void)setInitialResumeSize:(long long)arg1;
-- (void)setIoSuspend:(unsigned int)arg1;
+- (void)setIoSuspend:(unsigned long long)arg1;
 - (void)setNeedFinish:(bool)arg1;
 - (void)setOriginalResumeInfo:(id)arg1;
 - (void)setResumeCallback:(id)arg1;
 - (void)setSeqNo:(int)arg1;
-- (void)setTotalWrote:(unsigned long)arg1;
+- (void)setSuppressProgress:(bool)arg1;
+- (void)setTotalWrote:(unsigned long long)arg1;
 - (void)setWriteBuffer:(id)arg1;
-- (bool)setupForNewDownload;
-- (unsigned long)totalWrote;
+- (void)set_afterDidReportProgressOnQueue:(id)arg1;
+- (void)set_transientWriteProgress:(unsigned long long)arg1;
+- (bool)setupForNewDownload:(id)arg1;
+- (bool)suppressProgress;
+- (unsigned long long)totalWrote;
 - (void)writeAndResume;
 - (id)writeBuffer;
 

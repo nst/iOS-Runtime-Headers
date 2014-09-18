@@ -2,20 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SUClientInterface, SUMediaPlayerItem, UIView;
+@class NSMutableArray, NSString, SUClientInterface, SUMediaPlayerItem, UIView;
 
 @interface SUMediaPlayerViewController : MPMoviePlayerViewController <ISOperationDelegate> {
     UIView *_backgroundContainerView;
     SUClientInterface *_clientInterface;
     SUMediaPlayerItem *_mediaItem;
     NSMutableArray *_operations;
-    int _playerState;
+    long long _playerState;
 }
 
 @property(retain) SUClientInterface * clientInterface;
-@property(readonly) SUMediaPlayerItem * mediaPlayerItem;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(copy,readonly) SUMediaPlayerItem * mediaPlayerItem;
+@property(readonly) Class superclass;
 
-+ (BOOL)_URLIsITunesU:(id)arg1;
++ (bool)_URLIsITunesU:(id)arg1;
 + (void)_sendPingRequestsForURLs:(id)arg1 URLBagKey:(id)arg2 playerItem:(id)arg3;
 + (void)sendDownloadPingRequestsForMediaPlayerItem:(id)arg1;
 + (void)sendPlaybackPingRequestsForMediaPlayerItem:(id)arg1;
@@ -30,7 +34,7 @@
 - (void)_mediaTypesAvailableNotification:(id)arg1;
 - (void)_playbackFinishedNotification:(id)arg1;
 - (void)_prepareMediaItem;
-- (void)_setIsActivePlayer:(BOOL)arg1;
+- (void)_setIsActivePlayer:(bool)arg1;
 - (void)_showBackgroundImage:(id)arg1;
 - (id)clientInterface;
 - (id)copyScriptViewController;
@@ -44,8 +48,8 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)operationFinished:(id)arg1;
 - (void)setClientInterface:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

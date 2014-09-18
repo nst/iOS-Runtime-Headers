@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, UIColor, UIImage;
+@class NSMutableDictionary, NSString, UIColor, UIImage;
 
 @interface UISearchBarBackground : _UIBarBackgroundImageView <_UIBarPositioningInternal> {
     unsigned int _usesEmbeddedAppearance : 1;
@@ -11,48 +11,52 @@
     unsigned int _barStyle : 3;
     unsigned int _barTranslucence : 3;
     unsigned int _barHasController;
-    int _barPosition;
+    long long _barPosition;
     UIColor *_barTintColor;
     NSMutableDictionary *_customBackgroundImages;
     NSMutableDictionary *_generatedBackgroundImages;
-    unsigned int _searchBarStyle;
+    unsigned long long _searchBarStyle;
 }
 
 @property(readonly) UIImage * backgroundImage;
 @property(readonly) UIImage * backgroundImagePrompt;
-@property int barStyle;
+@property long long barStyle;
 @property(retain) UIColor * barTintColor;
-@property unsigned int searchBarStyle;
-@property(getter=isTranslucent) BOOL translucent;
-@property BOOL usesContiguousBarBackground;
-@property BOOL usesEmbeddedAppearance;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property unsigned long long searchBarStyle;
+@property(readonly) Class superclass;
+@property(getter=isTranslucent) bool translucent;
+@property bool usesContiguousBarBackground;
+@property bool usesEmbeddedAppearance;
 
-- (id)_backgroundImageForBarPosition:(int)arg1 barMetrics:(int)arg2;
-- (int)_barPosition;
-- (id)_createBackgroundImageForBarStyle:(int)arg1 alpha:(float)arg2;
-- (BOOL)_hasCustomBackgroundImage;
-- (void)_setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
-- (void)_setBarPosition:(int)arg1;
-- (void)_setBehavesAsIfSearchBarHasController:(BOOL)arg1;
+- (id)_backgroundImageForBarPosition:(long long)arg1 barMetrics:(long long)arg2;
+- (long long)_barPosition;
+- (id)_createBackgroundImageForBarStyle:(long long)arg1 alpha:(double)arg2;
+- (bool)_hasCustomBackgroundImage;
+- (void)_setBackgroundImage:(id)arg1 forBarPosition:(long long)arg2 barMetrics:(long long)arg3;
+- (void)_setBarPosition:(long long)arg1;
+- (void)_setBehavesAsIfSearchBarHasController:(bool)arg1;
 - (void)_updateBackgroundImage;
 - (void)_updateBackgroundImageIfPossible;
 - (id)backgroundImage;
 - (id)backgroundImagePrompt;
-- (int)barStyle;
+- (long long)barStyle;
 - (id)barTintColor;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isTranslucent;
-- (unsigned int)searchBarStyle;
-- (void)setBarStyle:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isTranslucent;
+- (unsigned long long)searchBarStyle;
+- (void)setBarStyle:(long long)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSearchBarStyle:(unsigned int)arg1;
-- (void)setTranslucent:(BOOL)arg1;
-- (void)setUsesContiguousBarBackground:(BOOL)arg1;
-- (void)setUsesEmbeddedAppearance:(BOOL)arg1;
-- (BOOL)usesContiguousBarBackground;
-- (BOOL)usesEmbeddedAppearance;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSearchBarStyle:(unsigned long long)arg1;
+- (void)setTranslucent:(bool)arg1;
+- (void)setUsesContiguousBarBackground:(bool)arg1;
+- (void)setUsesEmbeddedAppearance:(bool)arg1;
+- (bool)usesContiguousBarBackground;
+- (bool)usesEmbeddedAppearance;
 
 @end

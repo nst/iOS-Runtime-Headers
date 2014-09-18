@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKVibrationRecorderViewControllerDelegate>, NSDictionary, TKVibrationRecorderView, TKVibrationRecorderViewController, TKVibratorController, TLVibrationPattern, UIAlertView, UIBarButtonItem;
+@class <TKVibrationRecorderViewControllerDelegate>, NSDictionary, NSString, TKVibrationRecorderView, TKVibrationRecorderViewController, TKVibratorController, TLVibrationPattern, UIAlertAction, UIAlertController, UIBarButtonItem, UITextField;
 
-@interface TKVibrationRecorderContentViewController : UIViewController <TKVibrationRecorderViewDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
+@interface TKVibrationRecorderContentViewController : UIViewController <TKVibrationRecorderViewDelegate, UITextFieldDelegate> {
     UIBarButtonItem *_cancelButton;
     double _currentVibrationComponentDidStartTimeStamp;
     double _currentVibrationProgressDidStartTimestamp;
@@ -14,10 +14,12 @@
     TKVibrationRecorderViewController *_parentVibrationRecorderViewController;
     TLVibrationPattern *_recordedVibrationPattern;
     UIBarButtonItem *_saveButton;
-    UIAlertView *_vibrationNameAlertView;
+    UIAlertController *_vibrationNameAlertController;
+    UIAlertAction *_vibrationNameAlertSaveAction;
+    UITextField *_vibrationNameAlertTextField;
     TKVibrationRecorderView *_vibrationRecorderView;
     TKVibratorController *_vibratorController;
-    BOOL _waitingForEndOfCurrentVibrationComponent;
+    bool_waitingForEndOfCurrentVibrationComponent;
 }
 
 @property(setter=_setCancelButton:,retain) UIBarButtonItem * _cancelButton;
@@ -27,12 +29,18 @@
 @property(setter=_setMode:) int _mode;
 @property(setter=_setRecordedVibrationPattern:,retain) TLVibrationPattern * _recordedVibrationPattern;
 @property(setter=_setSaveButton:,retain) UIBarButtonItem * _saveButton;
-@property(setter=_setVibrationNameAlertView:,retain) UIAlertView * _vibrationNameAlertView;
+@property(setter=_setVibrationNameAlertController:,retain) UIAlertController * _vibrationNameAlertController;
+@property(setter=_setVibrationNameAlertSaveAction:,retain) UIAlertAction * _vibrationNameAlertSaveAction;
+@property(setter=_setVibrationNameAlertTextField:,retain) UITextField * _vibrationNameAlertTextField;
 @property(setter=_setVibrationRecorderView:,retain) TKVibrationRecorderView * _vibrationRecorderView;
 @property(setter=_setVibratorController:,retain) TKVibratorController * _vibratorController;
-@property(getter=_isWaitingForEndOfCurrentVibrationComponent,setter=_setWaitingForEndOfCurrentVibrationComponent:) BOOL _waitingForEndOfCurrentVibrationComponent;
+@property(getter=_isWaitingForEndOfCurrentVibrationComponent,setter=_setWaitingForEndOfCurrentVibrationComponent:) bool _waitingForEndOfCurrentVibrationComponent;
+@property(copy,readonly) NSString * debugDescription;
 @property <TKVibrationRecorderViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property TKVibrationRecorderViewController * parentVibrationRecorderViewController;
+@property(readonly) Class superclass;
 
 - (void)_accessibilityDidEnterRecordingMode;
 - (void)_accessibilityDidEnterReplayMode;
@@ -40,16 +48,19 @@
 - (void)_accessibilityDidExitReplayMode;
 - (void)_accessibilityMakeAnnouncementWithStringForLocalizationIdentifier:(id)arg1;
 - (id)_cancelButton;
+- (void)_cancelButtonInAlertTapped:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
+- (void)_cleanUpVibrationNameAlertController;
 - (double)_currentVibrationComponentDidStartTimeStamp;
 - (double)_currentVibrationProgressDidStartTimestamp;
 - (void)_eraseCurrentVibrationComponentDidStartTimeStamp;
 - (void)_finishedWithRecorder;
 - (id)_indefiniteVibrationPattern;
-- (BOOL)_isWaitingForEndOfCurrentVibrationComponent;
+- (bool)_isWaitingForEndOfCurrentVibrationComponent;
 - (int)_mode;
 - (id)_recordedVibrationPattern;
 - (id)_saveButton;
+- (void)_saveButtonInAlertTapped:(id)arg1;
 - (void)_saveButtonTapped:(id)arg1;
 - (void)_setCancelButton:(id)arg1;
 - (void)_setCurrentVibrationComponentDidStartTimeStamp:(double)arg1;
@@ -58,18 +69,23 @@
 - (void)_setMode:(int)arg1;
 - (void)_setRecordedVibrationPattern:(id)arg1;
 - (void)_setSaveButton:(id)arg1;
-- (void)_setVibrationNameAlertView:(id)arg1;
+- (void)_setVibrationNameAlertController:(id)arg1;
+- (void)_setVibrationNameAlertSaveAction:(id)arg1;
+- (void)_setVibrationNameAlertTextField:(id)arg1;
 - (void)_setVibrationRecorderView:(id)arg1;
 - (void)_setVibratorController:(id)arg1;
-- (void)_setWaitingForEndOfCurrentVibrationComponent:(BOOL)arg1;
+- (void)_setWaitingForEndOfCurrentVibrationComponent:(bool)arg1;
 - (void)_startVibratingWithVibrationPattern:(id)arg1;
 - (void)_stopVibrating;
-- (void)_storeVibrationComponentOfTypePause:(BOOL)arg1;
-- (void)_textFieldTextDidChange:(id)arg1;
-- (id)_vibrationNameAlertView;
+- (void)_storeVibrationComponentOfTypePause:(bool)arg1;
+- (void)_updateStateSaveButtonInAlert;
+- (id)_vibrationNameAlertController;
+- (id)_vibrationNameAlertSaveAction;
+- (id)_vibrationNameAlertTextField;
+- (void)_vibrationNameTextFieldContentsDidChange:(id)arg1;
 - (id)_vibrationRecorderView;
 - (id)_vibratorController;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)applicationWillSuspend;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithVibratorController:(id)arg1;
@@ -77,20 +93,20 @@
 - (id)parentVibrationRecorderViewController;
 - (void)setDelegate:(id)arg1;
 - (void)setParentVibrationRecorderViewController:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (void)vibrationComponentDidEndForVibrationRecorderView:(id)arg1;
 - (void)vibrationComponentDidStartForVibrationRecorderView:(id)arg1;
 - (void)vibrationRecorderView:(id)arg1 buttonTappedWithIdentifier:(int)arg2;
 - (void)vibrationRecorderView:(id)arg1 didExitRecordingModeWithContextObject:(id)arg2;
-- (BOOL)vibrationRecorderViewDidEnterRecordingMode:(id)arg1;
+- (bool)vibrationRecorderViewDidEnterRecordingMode:(id)arg1;
 - (void)vibrationRecorderViewDidFinishReplayingVibration:(id)arg1;
 - (void)vibrationRecorderViewDidReachVibrationRecordingMaximumDuration:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

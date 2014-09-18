@@ -2,29 +2,39 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary, NSMutableArray;
+@class AVWeakReference, NSDictionary, NSMutableArray;
 
 @interface AVCaptureStillImageOutputInternal : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL EV0CaptureEnabled;
-    int HDRCaptureMode;
-    BOOL SISActive;
-    BOOL SISEnabled;
-    BOOL SISSupported;
-    BOOL chromaNoiseReductionEnabled;
-    unsigned long imageDataFormatType;
-    BOOL isCapturingPhoto;
+        double width; 
+        double height; 
+    struct { 
+        unsigned int imageCount; 
+        int outputFormat; 
+        unsigned int outputWidth; 
+        unsigned int outputHeight; 
+    long long HDRCaptureMode;
+    boolEV0CaptureEnabled;
+    boolSISActive;
+    boolSISEnabled;
+    boolSISSupported;
+    boolhighResStillEnabled;
+    boolisCapturingPhoto;
+    booljpegQualitySpecified;
+    boolnoiseReductionEnabled;
+    boolrawCaptureEnabled;
+    boolsquareCropEnabled;
+    boolsuspendsVideoProcessingDuringCapture;
+    unsigned int imageDataFormatType;
     float jpegQuality;
-    BOOL jpegQualitySpecified;
+    unsigned long long maxBracketedCaptureCount;
     NSDictionary *outputSettings;
+    NSMutableArray *prepareRequests;
+    } preparedBracket;
     } previewImageSize;
-    BOOL rawCaptureEnabled;
-    unsigned long shutterSoundID;
-    BOOL squareCropEnabled;
+    unsigned int shutterSoundID;
     NSMutableArray *stillImageRequests;
-    BOOL suspendsVideoProcessingDuringCapture;
+    AVWeakReference *weakReference;
 }
 
 - (void)dealloc;

@@ -7,18 +7,18 @@
 @interface RadioLikeBanItem : NSObject <NSCopying, NSMutableCopying> {
     long long _albumID;
     RadioArtworkCollection *_artworkCollection;
-    BOOL _isSeed;
     RadioSeedMetadata *_seedMetadata;
     long long _storeID;
-    int _type;
+    long long _type;
+    bool_isSeed;
 }
 
 @property(readonly) long long albumID;
 @property(readonly) RadioArtworkCollection * artworkCollection;
-@property(readonly) BOOL isSeed;
-@property(readonly) RadioSeedMetadata * seedMetadata;
+@property(readonly) bool isSeed;
+@property(copy,readonly) RadioSeedMetadata * seedMetadata;
 @property(readonly) long long storeID;
-@property(readonly) int type;
+@property(readonly) long long type;
 
 - (void).cxx_destruct;
 - (long long)albumID;
@@ -27,10 +27,10 @@
 - (id)description;
 - (id)init;
 - (id)initWithItemDictionary:(id)arg1;
-- (BOOL)isSeed;
+- (bool)isSeed;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)seedMetadata;
 - (long long)storeID;
-- (int)type;
+- (long long)type;
 
 @end

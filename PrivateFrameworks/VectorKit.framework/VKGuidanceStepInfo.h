@@ -9,7 +9,7 @@
     int _routePoint;
 }
 
-@property(readonly) NSString * roadName;
+@property(retain,readonly) NSString * roadName;
 @property(readonly) int routePoint;
 
 - (void)dealloc;

@@ -9,7 +9,6 @@
 @class <MCJobQueueObserver>, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
 
 @interface MCJobQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_eventQueue;
     NSObject<OS_dispatch_queue> *_executionQueue;
     id _executionQueueAbortCompletionBlock;
     NSObject<OS_dispatch_group> *_jobGroup;
@@ -17,7 +16,6 @@
     <MCJobQueueObserver> *_observer;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * eventQueue;
 @property(retain) NSObject<OS_dispatch_queue> * executionQueue;
 @property(copy) id executionQueueAbortCompletionBlock;
 @property(retain) NSObject<OS_dispatch_group> * jobGroup;
@@ -27,16 +25,13 @@
 - (void).cxx_destruct;
 - (void)abortEnqueuedJobsCompletionBlock:(id)arg1;
 - (void)enqueueJob:(id)arg1;
-- (id)eventQueue;
 - (id)executionQueue;
 - (id)executionQueueAbortCompletionBlock;
-- (BOOL)hasJobsEnqueued;
 - (id)init;
 - (void)jobDidFinish;
 - (id)jobGroup;
 - (id)jobQueue;
 - (id)observer;
-- (void)setEventQueue:(id)arg1;
 - (void)setExecutionQueue:(id)arg1;
 - (void)setExecutionQueueAbortCompletionBlock:(id)arg1;
 - (void)setJobGroup:(id)arg1;

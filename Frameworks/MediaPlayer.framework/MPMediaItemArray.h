@@ -9,9 +9,9 @@
     NSArray *_items;
 }
 
-@property(readonly) NSArray * items;
+@property(retain,readonly) NSArray * items;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

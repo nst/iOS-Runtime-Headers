@@ -7,40 +7,40 @@
 @interface NSRegularExpression : NSObject <NSCopying, NSCoding> {
     int _checkout;
     void *_internal;
-    unsigned int _options;
+    unsigned long long _options;
     NSString *_pattern;
     id _reserved1;
     int _reserved2;
 }
 
-@property(readonly) unsigned int numberOfCaptureGroups;
-@property(readonly) unsigned int options;
-@property(readonly) NSString * pattern;
+@property(readonly) unsigned long long numberOfCaptureGroups;
+@property(readonly) unsigned long long options;
+@property(copy,readonly) NSString * pattern;
 
 + (id)escapedPatternForString:(id)arg1;
 + (id)escapedTemplateForString:(id)arg1;
 + (void)initialize;
-+ (id)regularExpressionWithPattern:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
++ (id)regularExpressionWithPattern:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
+- (void)enumerateMatchesInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 usingBlock:(id)arg4;
 - (void)finalize;
-- (id)firstMatchInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)hash;
+- (id)firstMatchInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPattern:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (id)matchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)numberOfCaptureGroups;
-- (unsigned int)numberOfMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)options;
+- (id)initWithPattern:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)isEqual:(id)arg1;
+- (id)matchesInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (unsigned long long)numberOfCaptureGroups;
+- (unsigned long long)numberOfMatchesInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (unsigned long long)options;
 - (id)pattern;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfFirstMatchInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)replaceMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 withTemplate:(id)arg4;
-- (id)replacementStringForResult:(id)arg1 inString:(id)arg2 offset:(int)arg3 template:(id)arg4;
-- (id)stringByReplacingMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 withTemplate:(id)arg4;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfFirstMatchInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (unsigned long long)replaceMatchesInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 withTemplate:(id)arg4;
+- (id)replacementStringForResult:(id)arg1 inString:(id)arg2 offset:(long long)arg3 template:(id)arg4;
+- (id)stringByReplacingMatchesInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 withTemplate:(id)arg4;
 
 @end

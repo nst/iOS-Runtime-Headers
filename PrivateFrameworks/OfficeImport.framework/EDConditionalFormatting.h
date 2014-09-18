@@ -5,6 +5,7 @@
 @class EDReferenceCollection, NSMutableArray;
 
 @interface EDConditionalFormatting : NSObject {
+    boolmApplyToDate;
     EDReferenceCollection *mRanges;
     NSMutableArray *mRules;
 }
@@ -15,11 +16,11 @@
 - (void)addRule:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)insertRule:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)rangeAtIndex:(unsigned int)arg1;
-- (unsigned int)rangeCount;
-- (id)ruleAtIndex:(unsigned int)arg1;
-- (unsigned int)ruleCount;
-- (void)sortRulesByPriority;
+- (bool)isApplyToDate;
+- (id)rangeAtIndex:(unsigned long long)arg1;
+- (unsigned long long)rangeCount;
+- (id)ruleAtIndex:(unsigned long long)arg1;
+- (unsigned long long)ruleCount;
+- (id)rules;
 
 @end

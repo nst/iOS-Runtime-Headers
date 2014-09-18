@@ -2,60 +2,64 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class ISDataProvider, NSData, NSDictionary, NSString, NSURL;
+@class ISDataProvider, NSData, NSDictionary, NSString, NSURL, SBKTransaction;
 
 @interface SBKRequest : NSObject {
     NSString *_action;
     NSDictionary *_arguments;
-    int _bodyContentType;
+    long long _bodyContentType;
     NSData *_bodyData;
-    BOOL _concurrent;
     NSDictionary *_headers;
-    BOOL _includeDeviceGUID;
-    int _method;
+    long long _method;
     NSURL *_requestURL;
     ISDataProvider *_responseDataProvider;
-    BOOL _shouldAuthenticate;
+    SBKTransaction *_transaction;
+    bool_concurrent;
+    bool_includeDeviceGUID;
+    bool_shouldAuthenticate;
 }
 
 @property(retain) NSData * bodyData;
-@property(getter=isConcurrent,readonly) BOOL concurrent;
-@property BOOL includeDeviceGUID;
-@property int method;
+@property(getter=isConcurrent,readonly) bool concurrent;
+@property bool includeDeviceGUID;
+@property long long method;
 @property(retain) ISDataProvider * responseDataProvider;
-@property BOOL shouldAuthenticate;
+@property bool shouldAuthenticate;
 @property(readonly) double timeoutInterval;
+@property(retain) SBKTransaction * transaction;
 
-+ (id)_contentEncodingTypeStringForBodyContentEncodingType:(int)arg1;
-+ (id)_contentTypeStringForBodyContentType:(int)arg1;
-+ (id)_methodStringForMethod:(int)arg1;
-+ (int)bodyContentEncodingType;
-+ (int)bodyContentType;
++ (id)_contentEncodingTypeStringForBodyContentEncodingType:(long long)arg1;
++ (id)_contentTypeStringForBodyContentType:(long long)arg1;
++ (id)_methodStringForMethod:(long long)arg1;
++ (long long)bodyContentEncodingType;
++ (long long)bodyContentType;
 + (id)requestWithRequestURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_defaultHeaderFields;
-- (BOOL)acceptsGzipEncoding;
+- (bool)acceptsGzipEncoding;
 - (id)bodyData;
 - (id)canonicalResponseForResponse:(id)arg1;
 - (id)copyRequestProperties;
 - (id)description;
 - (id)descriptionWithoutHeaderFields;
-- (BOOL)includeDeviceGUID;
+- (bool)includeDeviceGUID;
 - (id)initWithRequestURL:(id)arg1;
-- (BOOL)isConcurrent;
-- (int)method;
+- (bool)isConcurrent;
+- (long long)method;
 - (id)newURLOperation;
 - (id)responseDataProvider;
 - (void)setBodyData:(id)arg1;
 - (void)setBodyDataWithPropertyList:(id)arg1;
-- (void)setIncludeDeviceGUID:(BOOL)arg1;
-- (void)setMethod:(int)arg1;
+- (void)setIncludeDeviceGUID:(bool)arg1;
+- (void)setMethod:(long long)arg1;
 - (void)setResponseDataProvider:(id)arg1;
-- (void)setShouldAuthenticate:(BOOL)arg1;
+- (void)setShouldAuthenticate:(bool)arg1;
+- (void)setTransaction:(id)arg1;
 - (void)setValue:(id)arg1 forArgument:(id)arg2;
 - (void)setValue:(id)arg1 forHeaderField:(id)arg2;
-- (BOOL)shouldAuthenticate;
+- (bool)shouldAuthenticate;
 - (double)timeoutInterval;
+- (id)transaction;
 
 @end

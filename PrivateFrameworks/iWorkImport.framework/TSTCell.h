@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <TSUMultipleChoiceListChoiceProviding>, NSString, TSDCommentStorage, TSTCellStyle, TSTConditionalStyleSet, TSTRichTextPayload, TSUFormatReferenceObject, TSWPParagraphStyle, TSWPStorage;
+@class <TSUMultipleChoiceListChoiceProviding>, NSString, TSDCommentStorage, TSTCellStyle, TSTConditionalStyleSet, TSTImportWarningSet, TSTRichTextPayload, TSUFormatObject, TSWPParagraphStyle, TSWPStorage;
 
 @interface TSTCell : NSObject <NSCopying> {
     struct { 
@@ -36,6 +36,8 @@
             TSTRichTextPayload *mRichTextPayload; 
             unsigned int mCommentStorageID; 
             TSDCommentStorage *mCommentStorage; 
+            unsigned int mImportWarningSetID; 
+            TSTImportWarningSet *mImportWarningSet; 
             struct { 
                 unsigned int mExplicitFormatFlags : 16; 
                 unsigned int mCurrentCellFormatID; 
@@ -43,7 +45,7 @@
                     int mFormatType; 
                     union { 
                         struct { 
-                            NSString *mCurrencyCode; 
+                            unsigned int mCurrencyCodeIndex : 16; 
                             unsigned int mDecimalPlaces : 8; 
                             unsigned int mNegativeStyle : 3; 
                             unsigned int mShowThousandsSeparator : 1; 
@@ -88,21 +90,21 @@
                     } ; 
                 } mCurrentCellFormat; 
                 unsigned int mNumberFormatID; 
-                TSUFormatReferenceObject *mNumberFormatRef; 
+                TSUFormatObject *mNumberFormatRef; 
                 unsigned int mCurrencyFormatID; 
-                TSUFormatReferenceObject *mCurrencyFormatRef; 
+                TSUFormatObject *mCurrencyFormatRef; 
                 unsigned int mDurationFormatID; 
-                TSUFormatReferenceObject *mDurationFormatRef; 
+                TSUFormatObject *mDurationFormatRef; 
                 unsigned int mDateFormatID; 
-                TSUFormatReferenceObject *mDateFormatRef; 
+                TSUFormatObject *mDateFormatRef; 
                 unsigned int mControlFormatID; 
-                TSUFormatReferenceObject *mControlFormatRef; 
+                TSUFormatObject *mControlFormatRef; 
                 unsigned int mCustomFormatID; 
-                TSUFormatReferenceObject *mCustomFormatRef; 
+                TSUFormatObject *mCustomFormatRef; 
                 unsigned int mBaseFormatID; 
-                TSUFormatReferenceObject *mBaseFormatRef; 
+                TSUFormatObject *mBaseFormatRef; 
                 unsigned int mMultipleChoiceListFormatID; 
-                TSUFormatReferenceObject *mMultipleChoiceListFormatRef; 
+                TSUFormatObject *mMultipleChoiceListFormatRef; 
             } mCellFormats; 
             unsigned char mStrokePresetNumber; 
         } mValue; 
@@ -112,15 +114,18 @@
 + (id)cell;
 
 - (id).cxx_construct;
+- (id)applyCellDiff:(id)arg1;
+- (void)applyFormulaResult:(const struct TSCEValue { unsigned long long x1[88]; int x2; }*)arg1 context:(id)arg2 hasWarnings:(bool)arg3 outWriteDidBeginOrEndWithTextCell:(bool*)arg4;
+- (void)applyFormulaResult:(const struct TSCEValue { unsigned long long x1[88]; int x2; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2 suppressingFormulaInflation:(BOOL)arg3;
+- (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2 suppressingFormulaInflation:(bool)arg3;
 - (void)inflateFromStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2;
 - (id)init;
 - (id)initWithCell:(id)arg1;
 - (id)initWithStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1 dataStore:(id)arg2;
-- (BOOL)isCellContentsEqualToCell:(id)arg1;
+- (bool)isCellContentsEqualToCell:(id)arg1;
 - (void)writeToStorageRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 8; unsigned char x_1_1_4; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; unsigned int x_1_1_8 : 16; } x1; unsigned char x2[0]; }*)arg1;
 
 @end

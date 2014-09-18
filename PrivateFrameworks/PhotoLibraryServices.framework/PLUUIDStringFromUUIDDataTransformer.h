@@ -5,7 +5,7 @@
 @interface PLUUIDStringFromUUIDDataTransformer : NSValueTransformer {
 }
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (id)reverseTransformedValue:(id)arg1;

@@ -7,24 +7,24 @@
 @interface ACDClientAuthorization : NSObject {
     ACDClient *_client;
     NSSet *_grantedPermissions;
-    BOOL _isGranted;
     NSDictionary *_options;
+    bool_isGranted;
 }
 
 @property(retain) ACDClient * client;
 @property(retain) NSSet * grantedPermissions;
-@property BOOL isGranted;
-@property(retain) NSDictionary * options;
+@property bool isGranted;
+@property(copy) NSDictionary * options;
 
 - (void).cxx_destruct;
 - (id)client;
 - (id)grantedPermissions;
 - (id)initForClient:(id)arg1;
-- (BOOL)isGranted;
+- (bool)isGranted;
 - (id)options;
 - (void)setClient:(id)arg1;
 - (void)setGrantedPermissions:(id)arg1;
-- (void)setIsGranted:(BOOL)arg1;
+- (void)setIsGranted:(bool)arg1;
 - (void)setOptions:(id)arg1;
 
 @end

@@ -12,7 +12,8 @@
 @property(retain) CALayer * layer;
 @property float level;
 @property(readonly) NSDictionary * options;
-@property(readonly) BOOL valid;
+@property(getter=isSecure) bool secure;
+@property(readonly) bool valid;
 
 + (id)allContexts;
 + (id)currentContext;
@@ -26,7 +27,7 @@
 - (id)_associatedScreen;
 - (void)_setAssociatedScreen:(id)arg1;
 - (unsigned int)createFencePort;
-- (unsigned int)createImageSlot:(struct CGSize { float x1; float x2; })arg1 hasAlpha:(BOOL)arg2;
+- (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(bool)arg2;
 - (unsigned int)createSlot;
 - (void)deleteSlot:(unsigned int)arg1;
 - (void)invalidate;

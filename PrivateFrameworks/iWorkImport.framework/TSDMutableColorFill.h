@@ -7,16 +7,16 @@
 @interface TSDMutableColorFill : TSDColorFill {
 }
 
-@property float brightness;
+@property double brightness;
 @property(copy) TSUColor * color;
-@property float hue;
-@property float opacity;
-@property float saturation;
+@property double hue;
+@property double opacity;
+@property double saturation;
 
-- (void)setBrightness:(float)arg1;
+- (void)setBrightness:(double)arg1;
 - (void)setColor:(id)arg1;
-- (void)setHue:(float)arg1;
-- (void)setOpacity:(float)arg1;
-- (void)setSaturation:(float)arg1;
+- (void)setHue:(double)arg1;
+- (void)setOpacity:(double)arg1;
+- (void)setSaturation:(double)arg1;
 
 @end

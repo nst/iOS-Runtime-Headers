@@ -8,12 +8,12 @@
     NSMutableDictionary *_profileDictionary;
 }
 
-@property(readonly) NSString * displayname;
+@property(copy,readonly) NSString * displayname;
 @property(retain) NSMutableDictionary * profileDictionary;
-@property(readonly) NSString * service;
-@property(readonly) NSString * urlString;
-@property(readonly) NSString * userIdentifier;
-@property(readonly) NSString * username;
+@property(copy,readonly) NSString * service;
+@property(copy,readonly) NSString * urlString;
+@property(copy,readonly) NSString * userIdentifier;
+@property(copy,readonly) NSString * username;
 
 + (id)socialProfile;
 + (id)socialProfileWithDictionary:(id)arg1;
@@ -27,7 +27,7 @@
 - (id)displayname;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)profileDictionary;
 - (id)service;

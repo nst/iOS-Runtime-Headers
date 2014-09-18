@@ -9,27 +9,27 @@
 @class CADisplayLink, NSObject<OS_dispatch_queue>, NSTimer;
 
 @interface SKDisplayLink : NSObject {
-    BOOL _asynchronous;
     float _averageFrameTime;
     id _block;
     CADisplayLink *_caDisplayLink;
-    int _frameCount;
+    long long _frameCount;
     double _frameCountBeginTime;
-    int _frameInterval;
-    unsigned int _maxQueuedFrameCount;
-    unsigned int _mode;
-    BOOL _paused;
+    long long _frameInterval;
+    unsigned long long _maxQueuedFrameCount;
+    unsigned long long _mode;
     double _previousFrameTime;
     NSObject<OS_dispatch_queue> *_queue;
     int _queuedFrameCount;
     NSTimer *_timer;
+    bool_asynchronous;
+    bool_paused;
 }
 
-@property BOOL asynchronous;
-@property int frameInterval;
-@property unsigned int maxQueuedFrameCount;
-@property unsigned int mode;
-@property(getter=isPaused) BOOL paused;
+@property bool asynchronous;
+@property long long frameInterval;
+@property unsigned long long maxQueuedFrameCount;
+@property unsigned long long mode;
+@property(getter=isPaused) bool paused;
 
 + (id)displayLinkWithBlock:(id)arg1 queue:(id)arg2;
 
@@ -41,18 +41,18 @@
 - (void)_setup;
 - (void)_start;
 - (void)_teardown;
-- (BOOL)asynchronous;
+- (bool)asynchronous;
 - (void)dealloc;
-- (int)frameInterval;
+- (long long)frameInterval;
 - (id)init;
 - (id)initWithBlock:(id)arg1 queue:(id)arg2;
-- (BOOL)isPaused;
-- (unsigned int)maxQueuedFrameCount;
-- (unsigned int)mode;
-- (void)setAsynchronous:(BOOL)arg1;
-- (void)setFrameInterval:(int)arg1;
-- (void)setMaxQueuedFrameCount:(unsigned int)arg1;
-- (void)setMode:(unsigned int)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (bool)isPaused;
+- (unsigned long long)maxQueuedFrameCount;
+- (unsigned long long)mode;
+- (void)setAsynchronous:(bool)arg1;
+- (void)setFrameInterval:(long long)arg1;
+- (void)setMaxQueuedFrameCount:(unsigned long long)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setPaused:(bool)arg1;
 
 @end

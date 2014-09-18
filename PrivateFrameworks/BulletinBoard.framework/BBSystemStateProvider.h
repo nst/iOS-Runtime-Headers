@@ -2,22 +2,23 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBServerConnection, NSSet;
+@class NSSet, NSXPCConnection;
 
-@interface BBSystemStateProvider : NSObject <BBXPCConnectionDelegate, XPCProxyTarget> {
-    BBServerConnection *_connection;
-    unsigned int _currentState;
+@interface BBSystemStateProvider : NSObject {
+    NSXPCConnection *_connection;
+    unsigned long long _currentState;
     NSSet *_sectionIDs;
 }
 
-- (void)_sendState:(unsigned int)arg1 value:(BOOL)arg2;
-- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
++ (id)clientInterface;
++ (id)serverInterface;
+
+- (void)_sendState:(unsigned long long)arg1 value:(bool)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (void)noteChangeOfState:(unsigned int)arg1 newValue:(BOOL)arg2;
-- (void)noteOccurrenceOfEvent:(unsigned int)arg1;
+- (void)noteChangeOfState:(unsigned long long)arg1 newValue:(bool)arg2;
+- (void)noteOccurrenceOfEvent:(unsigned long long)arg1;
 - (void)noteRestrictedSectionIDsDidChange:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

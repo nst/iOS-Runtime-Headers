@@ -2,8 +2,15 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
+@class NSString;
+
 @interface PKRemoteAddPassesViewController : _UIRemoteViewController <PKRemoteAddPassesViewControllerProtocol> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

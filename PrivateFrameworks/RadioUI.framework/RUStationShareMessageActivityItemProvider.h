@@ -14,7 +14,7 @@
 @property(readonly) RUStationShareInformationProvider * shareInformationProvider;
 
 - (void).cxx_destruct;
-- (BOOL)_isActivityTypeAllowed:(id)arg1;
+- (bool)_isActivityTypeAllowed:(id)arg1;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)initWithShareInformationProvider:(id)arg1;
 - (id)item;

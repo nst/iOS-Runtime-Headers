@@ -10,17 +10,17 @@
         unsigned int problemState : 1; 
     double _creationDate;
     } _has;
-    NSString *_problemID;
+    NSString *_problemId;
     GEORPResolution *_problemResolution;
     int _problemState;
 }
 
 @property double creationDate;
-@property BOOL hasCreationDate;
-@property(readonly) BOOL hasProblemID;
-@property(readonly) BOOL hasProblemResolution;
-@property BOOL hasProblemState;
-@property(retain) NSString * problemID;
+@property bool hasCreationDate;
+@property(readonly) bool hasProblemId;
+@property(readonly) bool hasProblemResolution;
+@property bool hasProblemState;
+@property(retain) NSString * problemId;
 @property(retain) GEORPResolution * problemResolution;
 @property int problemState;
 
@@ -30,20 +30,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCreationDate;
-- (BOOL)hasProblemID;
-- (BOOL)hasProblemResolution;
-- (BOOL)hasProblemState;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)problemID;
+- (bool)hasCreationDate;
+- (bool)hasProblemId;
+- (bool)hasProblemResolution;
+- (bool)hasProblemState;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)problemId;
 - (id)problemResolution;
 - (int)problemState;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCreationDate:(double)arg1;
-- (void)setHasCreationDate:(BOOL)arg1;
-- (void)setHasProblemState:(BOOL)arg1;
-- (void)setProblemID:(id)arg1;
+- (void)setHasCreationDate:(bool)arg1;
+- (void)setHasProblemState:(bool)arg1;
+- (void)setProblemId:(id)arg1;
 - (void)setProblemResolution:(id)arg1;
 - (void)setProblemState:(int)arg1;
 - (void)writeTo:(id)arg1;

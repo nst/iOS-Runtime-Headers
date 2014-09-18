@@ -2,26 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetCache, AVAssetInspector, NSMutableArray, NSURL;
+@class AVAssetInspector, NSMutableArray, NSURL;
 
 @interface AVAssetMakeReadyForInspectionLoader : AVAssetInspectorLoader {
     NSURL *_URL;
-    AVAssetCache *_assetCache;
     AVAssetInspector *_assetInspector;
-    long _basicInspectionFailureCode;
-    NSURL *_downloadDestinationURL;
+    int _basicInspectionFailureCode;
     struct OpaqueFigFormatReader { } *_formatReader;
     NSMutableArray *_keysAwaitingCompletion;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    BOOL _shouldMatchDataInCacheByURLPathComponentOnly;
-    BOOL _shouldMatchDataInCacheByURLWithoutQueryComponent;
-    int _status;
+    long long _status;
 }
-
-@property(readonly) AVAssetCache * assetCache;
-@property(readonly) NSURL * downloadDestinationURL;
-@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 
 - (id)URL;
 - (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
@@ -29,39 +20,35 @@
 - (id)_dictionaryOfSpecialLoadingMethodsForKeys;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)_getAndPruneCompletionsWhileMutexLocked;
-- (BOOL)_inspectionRequiresAFormatReader;
-- (BOOL)_isStreaming;
+- (bool)_inspectionRequiresAFormatReader;
+- (bool)_isStreaming;
 - (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (id)_loadValuesWhileMutexLockedForKeys:(id)arg1;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (BOOL)_providesAccurateTiming;
+- (bool)_providesAccurateTiming;
 - (void)_serverHasDied;
-- (void)_setStatus:(int)arg1 figErrorCode:(long)arg2;
-- (int)_status;
+- (void)_setStatus:(long long)arg1 figErrorCode:(int)arg2;
+- (long long)_status;
 - (id)_statusOfValueForKeyThatIsAlwaysLoaded;
-- (int)_statusOfValueWhileMutexLockedForKey:(id)arg1 error:(id*)arg2;
-- (BOOL)_statusOfValuesIsTerminalWhileMutexLockedForKeys:(id)arg1;
-- (BOOL)_updateStatusWhileMutexLocked:(int)arg1 figErrorCode:(long)arg2;
-- (id)assetCache;
+- (long long)_statusOfValueWhileMutexLockedForKey:(id)arg1 error:(id*)arg2;
+- (bool)_statusOfValuesIsTerminalWhileMutexLockedForKeys:(id)arg1;
+- (bool)_updateStatusWhileMutexLocked:(long long)arg1 figErrorCode:(int)arg2;
 - (id)assetInspector;
 - (void)cancelLoading;
-- (id)chapterGroupInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)downloadDestinationURL;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)figChapterGroupInfo;
 - (void)finalize;
-- (BOOL)hasProtectedContent;
+- (bool)hasProtectedContent;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isComposable;
-- (BOOL)isExportable;
-- (BOOL)isPlayable;
-- (BOOL)isReadable;
+- (bool)isComposable;
+- (bool)isExportable;
+- (bool)isPlayable;
+- (bool)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)lyrics;
-- (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
-- (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 
 @end

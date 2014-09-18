@@ -6,14 +6,20 @@
    See Warning(s) below.
  */
 
+@class NSProgress;
+
 @interface _NSXPCConnectionIncomingReplyBlockInfo : NSObject {
     id _cleanupBlock;
+    NSProgress *_progress;
 }
 
 @property(copy) id cleanupBlock;
+@property(retain) NSProgress * progress;
 
 - (id)cleanupBlock;
 - (void)dealloc;
+- (id)progress;
 - (void)setCleanupBlock:(id)arg1;
+- (void)setProgress:(id)arg1;
 
 @end

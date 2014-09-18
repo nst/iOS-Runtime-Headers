@@ -10,8 +10,8 @@
 
 @interface _UIContentUnavailableView : UIView {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UIButton *_actionButton;
     _UIBackdropView *_backdrop;
     id _buttonAction;
@@ -22,11 +22,11 @@
     } _fromSnapshotSize;
     NSString *_message;
     UILabel *_messageLabel;
-    unsigned int _style;
+    unsigned long long _style;
     NSString *_title;
     UILabel *_titleLabel;
     UIView *_toSnapshot;
-    unsigned int _vibrantOptions;
+    unsigned long long _vibrantOptions;
     NSLayoutConstraint *messageToButtonConstraint;
     NSLayoutConstraint *titleToMessageConstraint;
 }
@@ -35,33 +35,33 @@
 @property(copy) NSString * buttonTitle;
 @property(copy) NSString * message;
 @property(copy) NSString * title;
-@property unsigned int vibrantOptions;
+@property unsigned long long vibrantOptions;
 
 - (void)_actionButtonPressed:(id)arg1;
-- (id)_buttonBackgroundImageForStyle:(unsigned int)arg1 controlState:(unsigned int)arg2;
+- (id)_buttonBackgroundImageForStyle:(unsigned long long)arg1 controlState:(unsigned long long)arg2;
 - (id)_flatTextColor;
-- (BOOL)_hasVibrantButton;
-- (BOOL)_hasVibrantText;
-- (float)_labelAlpha;
+- (bool)_hasVibrantButton;
+- (bool)_hasVibrantText;
+- (double)_labelAlpha;
 - (void)_updateViewHierarchy;
 - (id)_vibrantBaseColor;
 - (id)buttonAction;
 - (id)buttonTitle;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3 includeBackdrop:(BOOL)arg4;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned long long)arg3 includeBackdrop:(bool)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned long long)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)message;
 - (void)setButtonAction:(id)arg1;
 - (void)setButtonTitle:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setVibrantOptions:(unsigned int)arg1;
+- (void)setVibrantOptions:(unsigned long long)arg1;
 - (id)title;
 - (void)updateConstraints;
-- (unsigned int)vibrantOptions;
+- (unsigned long long)vibrantOptions;
 - (void)windowDidRotateNotification:(id)arg1;
 - (void)windowWillAnimateRotateNotification:(id)arg1;
 - (void)windowWillRotateNotification:(id)arg1;

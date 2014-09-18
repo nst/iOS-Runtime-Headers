@@ -22,9 +22,9 @@
 - (id)_dylibNameForImage:(id)arg1;
 - (id)_frameworkNameForImage:(id)arg1;
 - (void)_handleLoadedImagePath:(id)arg1;
-- (BOOL)_loadImageIsBundle:(id)arg1;
-- (BOOL)_loadImageIsDylib:(id)arg1;
-- (BOOL)_loadImageIsFramework:(id)arg1;
+- (bool)_loadImageIsBundle:(id)arg1;
+- (bool)_loadImageIsDylib:(id)arg1;
+- (bool)_loadImageIsFramework:(id)arg1;
 - (void)addHandler:(id)arg1 forBundleID:(id)arg2;
 - (void)addHandler:(id)arg1 forBundleName:(id)arg2;
 - (void)addHandler:(id)arg1 forDylib:(id)arg2;

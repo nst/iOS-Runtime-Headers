@@ -11,19 +11,19 @@
 @interface AXNotificationHandler : NSObject {
     id _dispatcher;
     NSString *_notificationName;
-    unsigned int _observerIdentifier;
+    unsigned long long _observerIdentifier;
     id _target;
-    BOOL _valid;
+    bool_valid;
 }
 
 @property(setter=_setDispatcher:,copy) id _dispatcher;
 @property(setter=_setNotificationName:,retain) NSString * _notificationName;
 @property(setter=_setTarget:,retain) id _target;
-@property(getter=isValid,readonly) BOOL valid;
+@property(getter=isValid,readonly) bool valid;
 
-+ (id)_safelyGetObserverForIdentifier:(unsigned int)arg1;
-+ (unsigned int)_safelyRegisterObserver:(id)arg1;
-+ (void)_safelyRemoveObserverForIdentifier:(unsigned int)arg1;
++ (id)_safelyGetObserverForIdentifier:(unsigned long long)arg1;
++ (unsigned long long)_safelyRegisterObserver:(id)arg1;
++ (void)_safelyRemoveObserverForIdentifier:(unsigned long long)arg1;
 
 - (id)_dispatcher;
 - (void)_handleNotificationWithName:(id)arg1 object:(const void*)arg2 userInfo:(id)arg3;
@@ -37,11 +37,11 @@
 - (id)_target;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3 startObserving:(BOOL)arg4;
+- (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3 startObserving:(bool)arg4;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 dispatcher:(id)arg3;
 - (id)initWithNotificationName:(id)arg1 target:(id)arg2 handler:(SEL)arg3;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)processHandler:(SEL)arg1;
 
 @end

@@ -6,6 +6,6 @@
 }
 
 + (id)databaseTable;
-+ (int)revisionTrackingCode;
++ (long long)revisionTrackingCode;
 
 @end

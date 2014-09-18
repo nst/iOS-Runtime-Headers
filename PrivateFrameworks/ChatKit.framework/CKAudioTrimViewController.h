@@ -4,7 +4,7 @@
 
 @class <CKTrimControllerDelegate>, CKMediaObject;
 
-@interface CKAudioTrimViewController : UIViewController <RCAudioTrimmingModalItemDelegate> {
+@interface CKAudioTrimViewController : UIViewController {
     <CKTrimControllerDelegate> *_delegate;
     double _maxDuration;
     CKMediaObject *_originalMediaObject;
@@ -26,6 +26,5 @@
 - (void)setOriginalMediaObject:(id)arg1;
 - (void)setTrimmedMediaObject:(id)arg1;
 - (id)trimmedMediaObject;
-- (void)viewDidAppear:(BOOL)arg1;
 
 @end

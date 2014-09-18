@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSDictionary, NSString, NSURL, SSAccount;
+@class NSDictionary, NSNumber, NSString, NSURL, SSAccount;
 
-@interface HSConnectionConfiguration : NSObject <HSXPCCoding, NSCopying, NSMutableCopying> {
+@interface HSConnectionConfiguration : NSObject <HSXPCCoding, NSSecureCoding, NSCopying, NSMutableCopying> {
     SSAccount *_account;
     NSURL *_baseURL;
     NSString *_buildIdentifier;
     NSDictionary *_cookieHeaders;
+    NSNumber *_familyMemberStoreID;
     NSString *_purchaseClientIdentifier;
     long long _requestReason;
     NSDictionary *_urlBag;
@@ -19,11 +20,19 @@
 @property(readonly) NSURL * baseURL;
 @property(readonly) NSString * buildIdentifier;
 @property(readonly) NSDictionary * cookieHeaders;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) NSNumber * familyMemberStoreID;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * purchaseClientIdentifier;
 @property(readonly) long long requestReason;
+@property(readonly) Class superclass;
 @property(readonly) NSDictionary * urlBag;
 @property(readonly) NSString * userAgent;
 
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (id)_copyXPCDictonaryFromDictonary:(id)arg1;
 - (id)_dictonaryFromXPCDictonary:(id)arg1;
 - (id)account;
@@ -32,8 +41,10 @@
 - (id)cookieHeaders;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
-- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)familyMemberStoreID;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)purchaseClientIdentifier;

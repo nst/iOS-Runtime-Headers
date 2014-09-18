@@ -7,7 +7,7 @@
 @interface PLChangeNotification : NSNotification {
 }
 
-@property(readonly) PLChangeNotificationCenter * changeNotificationCenter;
+@property(retain,readonly) PLChangeNotificationCenter * changeNotificationCenter;
 
 + (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 

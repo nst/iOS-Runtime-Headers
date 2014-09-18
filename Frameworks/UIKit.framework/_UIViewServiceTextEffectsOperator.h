@@ -2,24 +2,30 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIViewServiceDeputyDelegate>, UIWindow, _UIAsyncInvocation;
+@class NSArray, NSString, UIWindow, _UIAsyncInvocation;
 
-@interface _UIViewServiceTextEffectsOperator : NSObject <XPCProxyTarget, _UIViewServiceTextEffectsOperator_RemoteViewControllerInterface, _UIViewServiceDeputy, _UIViewServiceDeputyRotationDelegate> {
+@interface _UIViewServiceTextEffectsOperator : NSObject <_UIViewServiceTextEffectsOperator_RemoteViewControllerInterface, _UIViewServiceDeputy, _UIViewServiceDeputyRotationDelegate> {
     struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL __automatic_invalidation_invalidated;
+        double x; 
+        double y; 
     int __automatic_invalidation_retainCount;
-    BOOL _canRestoreInputViews;
-    <_UIViewServiceDeputyDelegate> *_delegate;
-    BOOL _didResignForDisappear;
+    NSArray *_allowedNotifications;
     UIWindow *_hostedWindow;
     _UIAsyncInvocation *_invalidationInvocation;
-    BOOL _isRestoringInputViews;
     _UIAsyncInvocation *_prepareForDisconnectionInvocation;
     id _remoteViewControllerProxy;
     } _windowOffset;
+    bool__automatic_invalidation_invalidated;
+    bool_canRestoreInputViews;
+    bool_didResignForDisappear;
+    bool_isRestoringInputViews;
+    bool_localVCDisablesAutomaticBehaviors;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)XPCInterface;
 + (id)operatorWithRemoteViewControllerProxy:(id)arg1 hostPID:(int)arg2;
@@ -27,31 +33,31 @@
 - (int)__automatic_invalidation_logic;
 - (void)__createHostedTextEffectsWithReplyHandler:(id)arg1;
 - (void)__hostDidEnterBackground;
-- (void)__hostViewWillAppear:(BOOL)arg1;
-- (void)__hostViewWillDisappear:(BOOL)arg1;
+- (void)__hostViewWillAppear:(bool)arg1;
+- (void)__hostViewWillDisappear:(bool)arg1;
 - (void)__hostWillEnterForeground;
 - (void)__prepareForDisconnectionWithCompletionHandler:(id)arg1;
-- (void)__setContentSize:(id)arg1 windowOffset:(id)arg2;
+- (void)__setHostAllowedNotifications:(id)arg1;
 - (void)__setNextAutomaticOrderOutDirection:(int)arg1 duration:(double)arg2;
+- (void)__setWindowOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_invalidateUnconditionallyThen:(id)arg1;
-- (BOOL)_isDeallocating;
+- (bool)_isDeallocating;
 - (void)_prepareForDisconnectionUnconditionallyThen:(id)arg1;
 - (id)_queue;
 - (void)_restoreInputViews;
 - (void)_sendNotification:(id)arg1;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (void)_viewServiceHostWillEnterForeground:(id)arg1;
 - (void)dealloc;
-- (void)finishRotation;
+- (void)finishRotationFromInterfaceOrientation:(long long)arg1;
+- (void)forceSyncToStatusBarOrientation;
 - (id)invalidate;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (void)rotateToInterfaceOrientation:(int)arg1;
-- (void)setDeputyDelegate:(id)arg1;
-- (void)setHostedWindow:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1;
+- (unsigned long long)retainCount;
+- (void)rotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)setHostedWindow:(id)arg1 disableAutomaticBehaviors:(bool)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)windowDidGainFirstResponder:(id)arg1;
 
 @end

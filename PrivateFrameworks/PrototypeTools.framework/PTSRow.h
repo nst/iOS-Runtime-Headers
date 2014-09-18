@@ -10,7 +10,7 @@
 
 @interface PTSRow : NSObject <_UISettingsKeyPathObserver> {
     PTSRowAction *_action;
-    int _allowedEditingTypes;
+    long long _allowedEditingTypes;
     NSPredicate *_condition;
     _UISettings *_groupChild;
     NSString *_groupKeyPath;
@@ -27,15 +27,19 @@
 }
 
 @property(copy) PTSRowAction * action;
-@property int allowedEditingTypes;
+@property long long allowedEditingTypes;
 @property(copy) NSPredicate * condition;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) _UISettings * groupChild;
 @property(retain) NSString * groupKeyPath;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * imageKeyPath;
 @property PTSSection * section;
 @property(retain) _UISettings * settings;
 @property(retain) UIImage * staticImage;
 @property(copy) NSString * staticTitle;
+@property(readonly) Class superclass;
 @property(copy) NSString * titleKeyPath;
 @property(retain) id value;
 @property(copy) id valueFormatter;
@@ -52,14 +56,14 @@
 - (id)action:(id)arg1;
 - (id)action;
 - (void)addObserver:(id)arg1;
-- (id)allowedEditingTypes:(int)arg1;
-- (int)allowedEditingTypes;
-- (BOOL)allowsDelete;
-- (BOOL)allowsDuplicate;
-- (BOOL)allowsReorder;
-- (BOOL)allowsShare;
+- (id)allowedEditingTypes:(long long)arg1;
+- (long long)allowedEditingTypes;
+- (bool)allowsDelete;
+- (bool)allowsDuplicate;
+- (bool)allowsReorder;
+- (bool)allowsShare;
 - (id)childSettingsForKeyPath:(id)arg1;
-- (id)concreteCopyWithIndex:(unsigned int)arg1;
+- (id)concreteCopyWithIndex:(unsigned long long)arg1;
 - (id)condition:(id)arg1;
 - (id)condition;
 - (id)conditionFormat:(id)arg1;
@@ -72,13 +76,13 @@
 - (id)imageKeyPath:(id)arg1;
 - (id)imageKeyPath;
 - (id)init;
-- (id)pu_increment:(float)arg1;
+- (id)pu_increment:(double)arg1;
 - (void)removeObserver:(id)arg1;
-- (void)resolveTemplatesWithIndex:(unsigned int)arg1;
+- (void)resolveTemplatesWithIndex:(unsigned long long)arg1;
 - (Class)rowTableViewCellClass;
 - (id)section;
 - (void)setAction:(id)arg1;
-- (void)setAllowedEditingTypes:(int)arg1;
+- (void)setAllowedEditingTypes:(long long)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setGroupChild:(id)arg1;
 - (void)setGroupKeyPath:(id)arg1;

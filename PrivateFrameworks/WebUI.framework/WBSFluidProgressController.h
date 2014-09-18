@@ -12,13 +12,14 @@
 @property <WBSFluidProgressControllerDelegate> * delegate;
 @property <WBSFluidProgressControllerWindowDelegate> * windowDelegate;
 
+- (void).cxx_destruct;
 - (void)_updateFluidProgressWithProgressStateSource:(id)arg1;
 - (void)animationStepCompleted:(id)arg1;
 - (void)cancelFluidProgressWithProgressStateSource:(id)arg1;
 - (id)delegate;
 - (void)finishFluidProgressWithProgressStateSource:(id)arg1;
 - (void)frontmostTabDidChange;
-- (void)progressStateSourceDidCommitLoad:(id)arg1 loadingSingleResource:(BOOL)arg2;
+- (void)progressStateSourceDidCommitLoad:(id)arg1 loadingSingleResource:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setWindowDelegate:(id)arg1;
 - (void)startFluidProgressWithProgressStateSource:(id)arg1;

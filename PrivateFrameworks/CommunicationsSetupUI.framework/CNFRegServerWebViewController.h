@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CNFRegController, CNFRegLoadingView, NSMutableArray, NSTimer, RUILoader, UIAlertView, UIWebView;
+@class CNFRegController, CNFRegLoadingView, NSMutableArray, NSString, NSTimer, RUILoader, UIAlertView, UIWebView;
 
 @interface CNFRegServerWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate, RUIObjectModelDelegate> {
     struct { 
@@ -31,31 +31,35 @@
 
 @property(retain) UIAlertView * alert;
 @property(copy) id alertHandler;
-@property(readonly) BOOL isLoaded;
-@property(readonly) BOOL isLoading;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isLoaded;
+@property(readonly) bool isLoading;
 @property(retain) CNFRegController * regController;
-@property(readonly) BOOL timedOut;
+@property(readonly) Class superclass;
+@property(readonly) bool timedOut;
 @property(retain) UIWebView * webView;
 
 - (void)_cleanupLoader;
 - (void)_handleTimeout;
-- (void)_popObjectModelAnimated:(BOOL)arg1;
-- (BOOL)_shouldLog;
+- (void)_popObjectModelAnimated:(bool)arg1;
+- (bool)_shouldLog;
 - (void)_startTimeoutWithDuration:(double)arg1;
 - (void)_stopTimeout;
 - (void)_timeoutFired:(id)arg1;
 - (id)alert;
 - (id)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)applicationWillSuspend;
-- (BOOL)canSendURLRequest:(id)arg1;
+- (bool)canSendURLRequest:(id)arg1;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)dealloc;
 - (void)hideSpinner;
 - (id)init;
 - (id)initWithRegController:(id)arg1;
-- (BOOL)isLoaded;
-- (BOOL)isLoading;
+- (bool)isLoaded;
+- (bool)isLoading;
 - (void)loadURL:(id)arg1;
 - (void)loadView;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
@@ -73,19 +77,19 @@
 - (void)setAlertHandler:(id)arg1;
 - (void)setHeadersForRequest:(id)arg1;
 - (void)setRegController:(id)arg1;
-- (void)setWantsWifi:(BOOL)arg1;
+- (void)setWantsWifi:(bool)arg1;
 - (void)setWebView:(id)arg1;
-- (BOOL)shouldSetHeadersForRequest:(id)arg1;
+- (bool)shouldSetHeadersForRequest:(id)arg1;
 - (void)showSpinner;
 - (void)startRequiringWifi;
 - (void)stopRequiringWifi;
-- (BOOL)timedOut;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)timedOut;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)webView;
 
 @end

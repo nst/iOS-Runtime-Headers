@@ -5,8 +5,8 @@
 @interface QLArchiveTableViewCell : UITableViewCell {
 }
 
-- (float)indentationMargin;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (double)indentationMargin;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 

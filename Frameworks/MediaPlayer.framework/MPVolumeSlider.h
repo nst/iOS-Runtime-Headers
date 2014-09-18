@@ -4,26 +4,36 @@
 
 @class MPAVController, MPAVRoutingController, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UIView;
 
-@interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate> {
+@interface MPVolumeSlider : UISlider <MPAVRoutingControllerDelegate, MPVolumeControllerDelegate> {
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     NSTimer *_commitTimer;
-    BOOL _forcingOffscreenVisibility;
-    BOOL _isOffScreen;
+    } _hitRectInsets;
     UILabel *_routeNameLabel;
     MPAVRoutingController *_routingController;
-    int _style;
+    long long _style;
     UIImageView *_thumbImageView;
-    BOOL _thumbIsDefault;
     UIImageView *_thumbMaskImageView;
     MPVolumeController *_volumeController;
-    BOOL _volumeWarningBlinking;
     UIImage *_volumeWarningTrackImage;
     UIView *_volumeWarningView;
+    bool_forcingOffscreenVisibility;
+    bool_isOffScreen;
+    bool_thumbIsDefault;
+    bool_volumeWarningBlinking;
 }
 
-@property(setter=_setIsOffScreen:) BOOL _isOffScreen;
-@property(readonly) UIView * _newVolumeWarningView;
+@property(setter=_setIsOffScreen:) bool _isOffScreen;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitRectInsets;
 @property(retain) MPAVController * player;
-@property(readonly) int style;
+@property(readonly) long long style;
+@property(readonly) Class superclass;
 @property(copy) NSString * volumeAudioCategory;
 @property(retain) UIImage * volumeWarningTrackImage;
 
@@ -37,46 +47,47 @@
 - (void)_endBlinkingWarningView;
 - (void)_endTracking;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
-- (BOOL)_isOffScreen;
+- (bool)_isOffScreen;
 - (void)_layoutForAvailableRoutes;
-- (void)_layoutMaskForThumb;
 - (void)_layoutVolumeWarningView;
-- (id)_maxTrackImageForStyle:(int)arg1;
-- (id)_minTrackImageForStyle:(int)arg1;
+- (id)_maxTrackImageForStyle:(long long)arg1;
+- (id)_minTrackImageForStyle:(long long)arg1;
 - (id)_newVolumeWarningView;
-- (void)_resetThumbImageForState:(unsigned int)arg1;
+- (void)_resetThumbImageForState:(unsigned long long)arg1;
 - (void)_routeNameLabelAnimationDidEnd;
-- (void)_setIsOffScreen:(BOOL)arg1;
-- (id)_thumbImageForStyle:(int)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_setIsOffScreen:(bool)arg1;
+- (id)_thumbImageForStyle:(long long)arg1;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (id)createThumbView;
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitRectInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)maximumValue;
 - (float)minimumValue;
 - (id)player;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setAlpha:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHidden:(BOOL)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)setAlpha:(double)arg1;
+- (void)setHidden:(bool)arg1;
+- (void)setHitRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setThumbImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2;
+- (void)setThumbImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setUserInteractionEnabled:(bool)arg1;
+- (void)setValue:(float)arg1 animated:(bool)arg2;
 - (void)setVolumeAudioCategory:(id)arg1;
 - (void)setVolumeWarningTrackImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
+- (long long)style;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (id)volumeAudioCategory;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
-- (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(BOOL)arg2;
+- (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(bool)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (id)volumeWarningTrackImage;
 

@@ -15,9 +15,9 @@
     NSMutableArray *_registrationData;
 }
 
-+ (id)keychainAccessGroupForVersion:(unsigned int)arg1;
-+ (id)keychainAccountForVersion:(unsigned int)arg1;
-+ (id)keychainServiceForVersion:(unsigned int)arg1;
++ (id)keychainAccessGroupForVersion:(unsigned long long)arg1;
++ (id)keychainAccountForVersion:(unsigned long long)arg1;
++ (id)keychainServiceForVersion:(unsigned long long)arg1;
 + (id)sharedInstance;
 
 - (void)_flush;
@@ -25,6 +25,7 @@
 - (void)_reloadFromKeychainLocked;
 - (void)_setPurgeTimer;
 - (void)dealloc;
+- (void)flushCache;
 - (id)init;
 - (id)registrationData;
 - (id)registrationWithServiceType:(id)arg1 accountType:(int)arg2 value:(id)arg3;

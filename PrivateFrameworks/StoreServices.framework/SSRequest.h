@@ -2,23 +2,27 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSRequestDelegate>, NSObject<OS_dispatch_queue>, SSXPCConnection;
+@class <SSRequestDelegate>, NSObject<OS_dispatch_queue>, NSString, SSXPCConnection;
 
 @interface SSRequest : NSObject <SSXPCCoding> {
-    int _backgroundTaskIdentifier;
-    BOOL _cancelAfterTaskExpiration;
+    long long _backgroundTaskIdentifier;
     <SSRequestDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSXPCConnection *_requestConnection;
     SSXPCConnection *_responseConnection;
+    bool_cancelAfterTaskExpiration;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SSRequestDelegate> * delegate;
-@property BOOL shouldCancelAfterTaskExpiration;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool shouldCancelAfterTaskExpiration;
+@property(readonly) Class superclass;
 
 - (void)__beginBackgroundTask;
 - (void)__endBackgroundTask;
-- (BOOL)__shouldUseBackgroundTaskAssertions;
+- (bool)__shouldUseBackgroundTaskAssertions;
 - (void)_beginBackgroundTask;
 - (void)_endBackgroundTask;
 - (id)_initSSRequest;
@@ -31,9 +35,9 @@
 - (void)disconnect;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
-- (BOOL)shouldCancelAfterTaskExpiration;
-- (BOOL)start;
+- (void)setShouldCancelAfterTaskExpiration:(bool)arg1;
+- (bool)shouldCancelAfterTaskExpiration;
+- (bool)start;
 - (void)startWithCompletionBlock:(id)arg1;
 
 @end

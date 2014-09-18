@@ -15,6 +15,6 @@
 - (id)initWithString:(id)arg1 andLevel:(int)arg2;
 - (int)level;
 - (id)string;
-- (id)stringForIndex:(int)arg1 withFormat:(int)arg2 initialNumber:(int)arg3;
+- (id)stringForIndex:(unsigned long long)arg1 withFormat:(int)arg2 orNumberFormatter:(void**)arg3 initialNumber:(unsigned long long)arg4;
 
 @end

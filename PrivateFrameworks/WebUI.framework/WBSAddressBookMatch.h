@@ -19,10 +19,10 @@
 @property(copy) NSString * property;
 @property(copy) NSString * stringValue;
 
+- (void).cxx_destruct;
 - (void)_setValue:(id)arg1;
 - (id)completion;
 - (id)dateValue;
-- (void)dealloc;
 - (id)identifier;
 - (id)initWithValue:(id)arg1 property:(id)arg2 key:(id)arg3 identifier:(id)arg4 label:(id)arg5;
 - (id)initWithValue:(id)arg1 property:(id)arg2 key:(id)arg3 identifier:(id)arg4;

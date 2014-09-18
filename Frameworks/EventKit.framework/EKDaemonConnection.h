@@ -2,37 +2,40 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
+@class <CADInterface>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
 
-@interface EKDaemonConnection : NSObject {
+@interface EKDaemonConnection : NSObject <CADClientInterface> {
+    NSMutableDictionary *_cancellableOperations;
     NSObject<OS_dispatch_queue> *_connectionLock;
-    unsigned int _connectionPort;
     NSString *_dbPath;
     id _delegate;
-    unsigned int _machPort;
-    unsigned int _nextID;
-    unsigned long _options;
-    BOOL _registeredForStartNote;
+    unsigned int _nextCancellationToken;
+    unsigned int _options;
+    <CADInterface> *_remoteOperationProxy;
     NSObject<OS_dispatch_queue> *_replyHandlerLock;
-    NSMutableDictionary *_replyHandlers;
-    NSObject<OS_dispatch_source> *_replySource;
-    unsigned int _serverPort;
+    NSXPCConnection *_xpcConnection;
+    bool_registeredForStartNote;
 }
 
+@property(retain,readonly) <CADInterface> * CADOperationProxy;
 @property id delegate;
-@property(readonly) unsigned int port;
+@property(retain,readonly) NSXPCConnection * xpcConnection;
 
-- (BOOL)_connectToServer;
++ (void)waitOnSemaphoreWithBlock:(id)arg1;
+
+- (void)CADClientReceiveOccurrenceCacheSearchResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(bool)arg3;
+- (id)CADOperationProxy;
+- (bool)_connectToServer;
 - (void)_daemonRestarted;
 - (void)_finishAllRepliesOnServerDeath;
-- (void)_processReplyWithID:(unsigned int)arg1 data:(id)arg2 finished:(BOOL)arg3;
-- (id)addReplyHandler:(id)arg1;
+- (unsigned int)addCancellableRemoteOperation:(id)arg1;
+- (void)cancelRemoteOperation:(unsigned int)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnect;
-- (id)initWithOptions:(unsigned long)arg1 path:(id)arg2;
-- (unsigned int)port;
-- (void)removeReplyHandler:(id)arg1;
+- (id)initWithOptions:(unsigned int)arg1 path:(id)arg2;
+- (void)removeCancellableRemoteOperation:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
+- (id)xpcConnection;
 
 @end

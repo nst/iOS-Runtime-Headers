@@ -6,13 +6,15 @@
 
 @interface JSWrapperMap : NSObject {
     struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id> > { 
-        struct HashTable<id, WTF::KeyValuePair<id, JSC::Weak<JSC::JSObject> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<id, JSC::Weak<JSC::JSObject> > >, WTF::PtrHash<id>, WTF::HashMapValueTraits<WTF::HashTraits<id>, WTF::HashTraits<JSC::Weak<JSC::JSObject> > >, WTF::HashTraits<id> > { 
-            struct KeyValuePair<id, JSC::Weak<JSC::JSObject> > {} *m_table; 
-            int m_tableSize; 
-            int m_tableSizeMask; 
-            int m_keyCount; 
-            int m_deletedCount; 
-        } m_impl; 
+        struct HashMap<id, JSC::Weak<JSC::JSObject>, WTF::PtrHash<id>, WTF::HashTraits<id>, WTF::HashTraits<JSC::Weak<JSC::JSObject> > > { 
+            struct HashTable<id, WTF::KeyValuePair<id, JSC::Weak<JSC::JSObject> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<id, JSC::Weak<JSC::JSObject> > >, WTF::PtrHash<id>, WTF::HashMap<id, JSC::Weak<JSC::JSObject>, WTF::PtrHash<id>, WTF::HashTraits<id>, WTF::HashTraits<JSC::Weak<JSC::JSObject> > >::KeyValuePairTraits, WTF::HashTraits<id> > { 
+                struct KeyValuePair<id, JSC::Weak<JSC::JSObject> > {} *m_table; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
+            } m_impl; 
+        } m_map; 
         int m_gcThreshold; 
     } m_cachedJSWrappers;
     NSMapTable *m_cachedObjCWrappers;

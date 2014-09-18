@@ -11,19 +11,19 @@
     double mStartTime;
 }
 
-@property(readonly) BOOL canPrecedeDiscontinuity;
-@property(getter=isIgnoredWhenSeeking,readonly) BOOL ignoredWhenSeeking;
+@property(readonly) bool canPrecedeDiscontinuity;
+@property(getter=isIgnoredWhenSeeking,readonly) bool ignoredWhenSeeking;
 @property(readonly) double startTime;
 
-- (BOOL)canPrecedeDiscontinuity;
+- (bool)canPrecedeDiscontinuity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithContext:(id)arg1 archive:(const struct RecordingEventArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; struct RecordingNavigationEventArchive {} *x4; struct RecordingLaserEventArchive {} *x5; struct RecordingPauseEventArchive {} *x6; struct RecordingMovieEventArchive {} *x7; int x8; unsigned int x9[1]; }*)arg2 unarchiver:(id)arg3;
 - (id)initWithStartTime:(double)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isIgnoredWhenSeeking;
+- (bool)isEqual:(id)arg1;
+- (bool)isIgnoredWhenSeeking;
 - (id)recordingEventByAddingTimeOffset:(double)arg1;
 - (void)saveToArchive:(struct RecordingEventArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; struct RecordingNavigationEventArchive {} *x4; struct RecordingLaserEventArchive {} *x5; struct RecordingPauseEventArchive {} *x6; struct RecordingMovieEventArchive {} *x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
 - (double)startTime;

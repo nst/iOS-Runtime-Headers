@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSOperationQueue, NSURL, PFUbiquityLocation;
+@class NSOperationQueue, NSString, NSURL, PFUbiquityLocation;
 
 @interface PFUbiquityMetadataFactoryFilePresenter : NSObject <NSFilePresenter> {
     PFUbiquityLocation *_presentedItemLocation;
     NSURL *_presentedItemURL;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) PFUbiquityLocation * presentedItemLocation;
-@property(readonly) NSOperationQueue * presentedItemOperationQueue;
+@property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSURL * presentedItemURL;
-@property(readonly) NSURL * primaryPresentedItemURL;
+@property(copy,readonly) NSURL * primaryPresentedItemURL;
+@property(readonly) Class superclass;
 
 + (void)initialize;
 

@@ -22,12 +22,12 @@
 @property(retain) NSString * trustSubtitle;
 @property(retain) NSString * trustTitle;
 
+- (void).cxx_destruct;
 - (void)_accept;
 - (void)_cancel;
 - (void)_dismissWithResult:(int)arg1;
 - (void)_pushDetailsView;
 - (void)_setupNavItem;
-- (void)dealloc;
 - (id)delegate;
 - (void)loadView;
 - (id)serviceName;
@@ -38,13 +38,13 @@
 - (void)setTrustPurpose:(id)arg1;
 - (void)setTrustSubtitle:(id)arg1;
 - (void)setTrustTitle:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)trustExpiration;
 - (id)trustProperties;
 - (id)trustPurpose;
 - (id)trustSubtitle;
 - (id)trustTitle;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

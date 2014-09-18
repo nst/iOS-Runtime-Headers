@@ -9,9 +9,16 @@
 
 @property(copy) NSString * accessibilityIdentifier;
 
-+ (void)_addCategoryMethod:(struct objc_method { }*)arg1 toClass:(Class)arg2 isClass:(BOOL)arg3;
-+ (id)installCategoryOnClassNamed:(id)arg1 isManaged:(BOOL)arg2;
-+ (void)installCategoryOnClassNamed:(id)arg1;
-+ (id)installLocalValidationMethodOnClassNamed:(id)arg1;
++ (void)_addCategoryMethod:(struct objc_method { }*)arg1 toClass:(Class)arg2 isClass:(bool)arg3;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (id)_installLocalValidationMethodOnClassNamed:(id)arg1;
++ (id)_installSafeCategoryOnClass:(Class)arg1 isManaged:(bool)arg2;
++ (id)_installSafeCategoryOnClassNamed:(id)arg1 isManaged:(bool)arg2;
++ (void)_installSafeCategoryOnClassNamed:(id)arg1;
++ (id)_installSafeCategoryValidationMethod;
++ (void)safeCategoryAddDependenciesToCollection:(id)arg1;
++ (Class)safeCategoryBaseClass;
++ (Class)safeCategoryTargetClass;
++ (id)safeCategoryTargetClassName;
 
 @end

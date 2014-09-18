@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKUnacknowledgedEventsPredicate : NSPredicate {
+@interface EKUnacknowledgedEventsPredicate : NSPredicate <NSSecureCoding> {
 }
 
 + (id)predicate;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)evaluateWithObject:(id)arg1;
+- (bool)evaluateWithObject:(id)arg1;
 
 @end

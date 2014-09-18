@@ -4,18 +4,18 @@
 
 @interface TSDUserDefinedGuide : NSObject {
     int mGuideType;
-    float mPosition;
+    double mPosition;
 }
 
 @property(readonly) int guideType;
-@property(readonly) float position;
+@property(readonly) double position;
 
 - (id)alignmentGuide;
 - (id)alignmentGuideForEditing;
 - (id)description;
 - (int)guideType;
-- (id)initWithPosition:(float)arg1 type:(int)arg2;
+- (id)initWithPosition:(double)arg1 type:(int)arg2;
 - (id)initWithTSDAlignmentGuide:(id)arg1;
-- (float)position;
+- (double)position;
 
 @end

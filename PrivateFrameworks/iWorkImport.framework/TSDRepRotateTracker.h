@@ -2,70 +2,75 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDRepTrackerDelegate>, CAShapeLayer, TSDRep;
+@class <TSDRepTrackerDelegate>, CAShapeLayer, NSString, TSDRep;
 
 @interface TSDRepRotateTracker : NSObject <TSDDecorator, TSDLayoutManipulatingTracker, TSDRepTracker> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
+    boolmDelegateRespondsToContinuedDragging;
+    boolmDidBeginRotation;
+    boolmHaveSproingedHUD;
+    boolmIsInspectorDrivenTracking;
+    boolmMovedMinimumDistance;
+    boolmShouldShowHUD;
     } mCenterForRotation;
-    float mCurrentLogicalAngleInDegrees;
-    float mCurrentPhysicalAngleInDegrees;
+    double mCurrentLogicalAngleInDegrees;
+    double mCurrentPhysicalAngleInDegrees;
     <TSDRepTrackerDelegate> *mDelegate;
-    BOOL mDidBeginRotation;
     CAShapeLayer *mGuideLayer;
-    BOOL mHaveSproingedHUD;
-    BOOL mIsInspectorDrivenTracking;
-    BOOL mMovedMinimumDistance;
-    float mOriginalAngleForRotationInDegrees;
-    float mOriginalAngleInDegrees;
+    double mOriginalAngleForRotationInDegrees;
+    double mOriginalAngleInDegrees;
     TSDRep *mOriginalNonFloatingRep;
-    float mPreviousSnap;
+    double mPreviousSnap;
     TSDRep *mRep;
-    float mRotateDeltaInRadians;
-    BOOL mShouldShowHUD;
-    float mSnapThreshold;
+    double mRotateDeltaInRadians;
+    double mSnapThreshold;
 }
 
-@property struct CGPoint { float x1; float x2; } centerForRotation;
-@property(readonly) float currentLogicalAngleInDegrees;
-@property BOOL isInspectorDrivenTracking;
-@property(readonly) float originalAngleInDegrees;
+@property struct CGPoint { double x1; double x2; } centerForRotation;
+@property(readonly) double currentLogicalAngleInDegrees;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool isInspectorDrivenTracking;
+@property(readonly) double originalAngleInDegrees;
 @property(retain) TSDRep * rep;
-@property BOOL shouldShowHUD;
-@property float snapThreshold;
+@property bool shouldShowHUD;
+@property double snapThreshold;
+@property(readonly) Class superclass;
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (void)addRotateDelta:(float)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })centerForRotation;
+- (void)addRotateDelta:(double)arg1;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (struct CGPoint { double x1; double x2; })centerForRotation;
 - (void)changeDynamicLayoutsForReps:(id)arg1;
 - (void)commitChangesForReps:(id)arg1;
-- (float)currentLogicalAngleInDegrees;
+- (double)currentLogicalAngleInDegrees;
 - (void)dealloc;
 - (id)decoratorOverlayLayers;
 - (id)initWithRep:(id)arg1;
-- (BOOL)isInspectorDrivenTracking;
-- (BOOL)operationShouldBeDynamic;
-- (float)originalAngleInDegrees;
+- (bool)isInspectorDrivenTracking;
+- (bool)operationShouldBeDynamic;
+- (double)originalAngleInDegrees;
 - (void)p_begin;
 - (void)p_hideGuideLayer;
 - (void)p_hideHUD;
 - (void)p_makeSiblingRepsPerformBlock:(id)arg1;
-- (BOOL)p_shouldApplyRotateToSiblingsOfRep;
+- (bool)p_shouldApplyRotateToSiblingsOfRep;
 - (void)p_sproingHUD;
-- (void)p_updateGuideLayerWithAngle:(float)arg1 didSnap:(BOOL)arg2;
-- (void)p_updateHUDWithAngle:(float)arg1;
+- (void)p_updateGuideLayerWithAngle:(double)arg1 didSnap:(bool)arg2;
+- (void)p_updateHUDWithAngle:(double)arg1;
 - (id)rep;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })rotateTransform;
-- (void)setCenterForRotation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setIsInspectorDrivenTracking:(BOOL)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })rotateTransform;
+- (void)setCenterForRotation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setIsInspectorDrivenTracking:(bool)arg1;
 - (void)setRep:(id)arg1;
-- (void)setShouldShowHUD:(BOOL)arg1;
-- (void)setSnapThreshold:(float)arg1;
-- (BOOL)shouldOpenCommandGroupToCommitChangesForReps:(id)arg1;
-- (BOOL)shouldShowHUD;
-- (float)snapThreshold;
-- (BOOL)supportsAlignmentGuides;
+- (void)setShouldShowHUD:(bool)arg1;
+- (void)setSnapThreshold:(double)arg1;
+- (bool)shouldOpenCommandGroupToCommitChangesForReps:(id)arg1;
+- (bool)shouldShowHUD;
+- (double)snapThreshold;
+- (bool)supportsAlignmentGuides;
 
 @end

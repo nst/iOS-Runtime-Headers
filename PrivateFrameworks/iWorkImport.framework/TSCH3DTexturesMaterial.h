@@ -47,13 +47,14 @@
 - (void)dealloc;
 - (id)firstTexture;
 - (id)firstTiling;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithArchive:(const struct Chart3DTexturesMaterialArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DVectorArchive {} *x3; struct RepeatedPtrField<TSCH::Chart3DTSPImageDataTextureArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)saveToArchive:(struct Chart3DTexturesMaterialArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Chart3DVectorArchive {} *x3; struct RepeatedPtrField<TSCH::Chart3DTSPImageDataTextureArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (void)setColor:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
-- (unsigned int)textureCount;
+- (unsigned long long)textureCount;
 - (id)textureEnumerator;
 - (id)textures;
 - (id)tilings;

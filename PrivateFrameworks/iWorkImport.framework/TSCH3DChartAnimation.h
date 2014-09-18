@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSMutableDictionary, TSCH3DAnimationInterpolation, TSCH3DAnimationTimeSlice, TSCH3DAnimationTiming, TSCH3DAnimationTimings, TSCH3DAnimationValueTiming, TSCH3DChartElementAnimationTimeSlice, TSCH3DChartRep, TSCH3DOrderedDictionary, TSCH3DScene;
 
-@interface TSCH3DChartAnimation : NSObject <TSCH3DSceneObjectDelegator, TSCH3DSceneDelegate, TSCHUnretainedParent> {
+@interface TSCH3DChartAnimation : NSObject <TSCHUnretainedParent, TSCH3DSceneObjectDelegator, TSCH3DSceneDelegate> {
     struct ChartAnimationTimeRanges { 
         struct box<glm::detail::tvec1<float> > { 
             struct tvec1<float> { 
@@ -86,11 +86,11 @@
                 } ; 
             } mMax; 
         } shadowBlendRange; 
-        BOOL gridlinesEaseInEaseOut; 
+        boolgridlinesEaseInEaseOut; 
         struct ObjcSharedPtr<TSCH3DAnimationInterpolation> { 
             TSCH3DAnimationInterpolation *mValue; 
         } growPerElementInterpolation; 
-        BOOL blendDynamicShadows; 
+        boolblendDynamicShadows; 
         struct ObjcSharedPtr<TSCH3DAnimationInterpolation> { 
             TSCH3DAnimationInterpolation *mValue; 
         } labelsInterpolation; 
@@ -124,7 +124,7 @@
 + (id)animationInfoForBuildType:(int)arg1;
 + (id)animationWithRep:(id)arg1;
 + (int)chartAnimationType;
-+ (BOOL)dynamicShadowsEnabled;
++ (bool)dynamicShadowsEnabled;
 + (void)updateLayoutScene:(id)arg1;
 + (void)updateRenderScene:(id)arg1;
 + (void)updateScene:(id)arg1;
@@ -140,16 +140,16 @@
 - (void)addToBackgroundBlendAnimClips:(id)arg1 sceneObject:(id)arg2;
 - (void)addToBackgroundBlendTimings:(id)arg1;
 - (void)addToBackgroundPlaneTimings:(id)arg1;
-- (void)addToChartElementBlendAnimClips:(id)arg1 sceneObject:(id)arg2 shouldUpdateDelayOpaqueFlag:(BOOL)arg3 shouldUpdateBlendOpaqueFlag:(BOOL)arg4 shouldUpdateAlwaysRenderFlag:(BOOL)arg5 needPerElementBlending:(BOOL)arg6;
+- (void)addToChartElementBlendAnimClips:(id)arg1 sceneObject:(id)arg2 shouldUpdateDelayOpaqueFlag:(bool)arg3 shouldUpdateBlendOpaqueFlag:(bool)arg4 shouldUpdateAlwaysRenderFlag:(bool)arg5 needPerElementBlending:(bool)arg6;
 - (void)addToChartElementBlendTimings:(id)arg1 range:(const struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; }*)arg2 interpolation:(id)arg3;
-- (void)addToChartRotationAnimationElementBlendAnimClips:(id)arg1 sceneObject:(id)arg2 shouldUpdateAlwaysRenderFlag:(BOOL)arg3;
+- (void)addToChartRotationAnimationElementBlendAnimClips:(id)arg1 sceneObject:(id)arg2 shouldUpdateAlwaysRenderFlag:(bool)arg3;
 - (void)addToCraneElementBlendTimings:(id)arg1;
 - (void)addToElementPlaneTimings:(id)arg1;
 - (void)addToElementTimings:(id)arg1;
 - (void)addToGrowAnimClips:(id)arg1 sceneObject:(id)arg2;
 - (void)addToGrowElementBlendTimings:(id)arg1;
 - (void)addToGrowElementTimings:(id)arg1 range:(const struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; }*)arg2;
-- (void)addToGrowElementTimings:(id)arg1 reserveForLabels:(BOOL)arg2;
+- (void)addToGrowElementTimings:(id)arg1 reserveForLabels:(bool)arg2;
 - (void)addToGrowElementTimings:(id)arg1;
 - (void)addToRadialElementBlendTimings:(id)arg1;
 - (void)addToRotateAnimClips:(id)arg1 scene:(id)arg2 secondaryAngle:(float)arg3;
@@ -163,7 +163,7 @@
 - (void)addToValueLabelsTimings:(id)arg1 range:(const struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; }*)arg2;
 - (void)addToValueLabelsTimings:(id)arg1;
 - (void)addToZAxisElementBlendTimings:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustBodyCanvasBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 againstBodyCanvasDrawableFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })adjustBodyCanvasBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 againstBodyCanvasDrawableFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)clearParent;
 - (void)dealloc;
 - (id)description;
@@ -172,29 +172,29 @@
 - (id)globalTimingInterpolation;
 - (id)gridlineLabelsSelectionBlock;
 - (id)growGlobalTimingInterpolation;
-- (BOOL)individualValueLabels;
+- (bool)individualValueLabels;
 - (id)initWithRep:(id)arg1;
-- (BOOL)isPie;
+- (bool)isPie;
 - (id)layoutScene;
 - (id)makeDelegateWithScene:(id)arg1;
 - (id)makeDelegateWithSceneObject:(id)arg1 scene:(id)arg2;
-- (BOOL)needDynamicShadows;
+- (bool)needDynamicShadows;
 - (void)p_addPlaneTimings:(id)arg1;
-- (BOOL)p_anySeriesHasLabelsEnabled;
-- (BOOL)p_chunkingStyleHasAxes;
+- (bool)p_anySeriesHasLabelsEnabled;
+- (bool)p_chunkingStyleHasAxes;
 - (void)p_didUpdateAnimationTime;
-- (BOOL)p_growAnimationLinearInterpolation;
-- (BOOL)p_growClipRequiresShaderBasedInterpolation;
-- (BOOL)p_isBar;
-- (BOOL)p_isStackedBar;
-- (BOOL)p_sequenceInOrder;
+- (bool)p_growAnimationLinearInterpolation;
+- (bool)p_growClipRequiresShaderBasedInterpolation;
+- (bool)p_isBar;
+- (bool)p_isStackedBar;
+- (bool)p_sequenceInOrder;
 - (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })p_timeRangeForGrowElements;
 - (void)p_updateAllRotatingGrowTimeRanges;
 - (void)p_updateAxesOnlyRotatingGrowTimeRanges;
 - (void)p_updateGrowTimeRangesWithAxesRange:(const struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; }*)arg1 waitTimeAfterAxes:(float)arg2;
 - (void)p_updateNoAxesRotatingGrowTimeRanges;
 - (void)p_updateRotatingGrowLabelsRange;
-- (BOOL)p_usesRotatingGrowEaseOut;
+- (bool)p_usesRotatingGrowEaseOut;
 - (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })pieDelayedLabelsRange;
 - (id)scene;
 - (id)separateLayerSceneObjectsSelectionBlocks;

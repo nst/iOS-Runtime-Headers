@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMDocument, DOMHTMLFormElement, NSString, NSURL;
+@class DOMDocument, DOMHTMLFormElement, NSString, NSURL, WebFrame;
 
 @interface DOMHTMLObjectElement : DOMHTMLElement {
 }
 
-@property(readonly) NSURL * absoluteImageURL;
+@property(copy,readonly) NSURL * absoluteImageURL;
 @property(copy) NSString * align;
 @property(copy) NSString * archive;
 @property(copy) NSString * border;
@@ -15,8 +15,9 @@
 @property(copy) NSString * codeBase;
 @property(copy) NSString * codeType;
 @property(readonly) DOMDocument * contentDocument;
+@property(readonly) WebFrame * contentFrame;
 @property(copy) NSString * data;
-@property BOOL declare;
+@property bool declare;
 @property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * height;
 @property int hspace;
@@ -31,14 +32,14 @@
 - (id)align;
 - (id)archive;
 - (id)border;
-- (BOOL)checkValidity;
+- (bool)checkValidity;
 - (id)code;
 - (id)codeBase;
 - (id)codeType;
 - (id)contentDocument;
 - (id)contentFrame;
 - (id)data;
-- (BOOL)declare;
+- (bool)declare;
 - (id)form;
 - (id)height;
 - (int)hspace;
@@ -51,7 +52,7 @@
 - (void)setCodeType:(id)arg1;
 - (void)setCustomValidity:(id)arg1;
 - (void)setData:(id)arg1;
-- (void)setDeclare:(BOOL)arg1;
+- (void)setDeclare:(bool)arg1;
 - (void)setHeight:(id)arg1;
 - (void)setHspace:(int)arg1;
 - (void)setName:(id)arg1;
@@ -60,7 +61,7 @@
 - (void)setUseMap:(id)arg1;
 - (void)setVspace:(int)arg1;
 - (void)setWidth:(id)arg1;
-- (BOOL)showsTapHighlight;
+- (bool)showsTapHighlight;
 - (id)standby;
 - (id)type;
 - (id)useMap;
@@ -68,6 +69,6 @@
 - (id)validity;
 - (int)vspace;
 - (id)width;
-- (BOOL)willValidate;
+- (bool)willValidate;
 
 @end

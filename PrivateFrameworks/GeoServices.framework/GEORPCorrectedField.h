@@ -12,19 +12,19 @@
     int _field;
     NSString *_fieldName;
     } _has;
-    BOOL _isMarkedIncorrect;
     NSString *_originalValue;
+    bool_isMarkedIncorrect;
 }
 
 @property(retain) NSString * correctedValue;
 @property int field;
 @property(retain) NSString * fieldName;
-@property(readonly) BOOL hasCorrectedValue;
-@property BOOL hasField;
-@property(readonly) BOOL hasFieldName;
-@property BOOL hasIsMarkedIncorrect;
-@property(readonly) BOOL hasOriginalValue;
-@property BOOL isMarkedIncorrect;
+@property(readonly) bool hasCorrectedValue;
+@property bool hasField;
+@property(readonly) bool hasFieldName;
+@property bool hasIsMarkedIncorrect;
+@property(readonly) bool hasOriginalValue;
+@property bool isMarkedIncorrect;
 @property(retain) NSString * originalValue;
 
 - (void)copyTo:(id)arg1;
@@ -35,22 +35,23 @@
 - (id)dictionaryRepresentation;
 - (int)field;
 - (id)fieldName;
-- (BOOL)hasCorrectedValue;
-- (BOOL)hasField;
-- (BOOL)hasFieldName;
-- (BOOL)hasIsMarkedIncorrect;
-- (BOOL)hasOriginalValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMarkedIncorrect;
+- (bool)hasCorrectedValue;
+- (bool)hasField;
+- (bool)hasFieldName;
+- (bool)hasIsMarkedIncorrect;
+- (bool)hasOriginalValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isMarkedIncorrect;
+- (void)mergeFrom:(id)arg1;
 - (id)originalValue;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCorrectedValue:(id)arg1;
 - (void)setField:(int)arg1;
 - (void)setFieldName:(id)arg1;
-- (void)setHasField:(BOOL)arg1;
-- (void)setHasIsMarkedIncorrect:(BOOL)arg1;
-- (void)setIsMarkedIncorrect:(BOOL)arg1;
+- (void)setHasField:(bool)arg1;
+- (void)setHasIsMarkedIncorrect:(bool)arg1;
+- (void)setIsMarkedIncorrect:(bool)arg1;
 - (void)setOriginalValue:(id)arg1;
 - (void)writeTo:(id)arg1;
 

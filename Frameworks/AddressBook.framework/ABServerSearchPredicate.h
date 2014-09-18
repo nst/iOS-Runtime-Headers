@@ -10,24 +10,24 @@
     <ABPredicateDelegate> *_delegate;
     NSConditionLock *_doneLock;
     int _error;
-    BOOL _includePhotosInResults;
-    BOOL _includeSourceInResults;
     DAContactsSearchQuery *_searchQuery;
     NSMutableArray *_searchResults;
     NSString *_searchString;
     void *_source;
+    bool_includePhotosInResults;
+    bool_includeSourceInResults;
 }
 
 @property(copy) NSString * accountIdentifier;
 @property(retain) DADConnection * connection;
 @property <ABPredicateDelegate> * delegate;
 @property(readonly) int error;
-@property BOOL includePhotosInResults;
-@property BOOL includeSourceInResults;
+@property bool includePhotosInResults;
+@property bool includeSourceInResults;
 @property(copy) NSString * searchString;
 @property void* source;
 
-- (int)_errorForDAStatusCode:(int)arg1;
+- (int)_errorForDAStatusCode:(long long)arg1;
 - (void)_searchQueryIsDone;
 - (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 inAddressBook:(void*)arg2 withDelegate:(id)arg3;
 - (id)accountIdentifier;
@@ -35,10 +35,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (int)error;
-- (BOOL)includePhotosInResults;
-- (BOOL)includeSourceInResults;
-- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4 includePhotosInResults:(BOOL)arg5;
-- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(BOOL)arg4;
+- (bool)includePhotosInResults;
+- (bool)includeSourceInResults;
+- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(bool)arg4 includePhotosInResults:(bool)arg5;
+- (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3 includeSourceInResults:(bool)arg4;
 - (id)initWithSearchString:(id)arg1 source:(void*)arg2 account:(id)arg3;
 - (void)runPredicate;
 - (void)runPredicateWithDelegate:(id)arg1;
@@ -48,8 +48,8 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIncludePhotosInResults:(BOOL)arg1;
-- (void)setIncludeSourceInResults:(BOOL)arg1;
+- (void)setIncludePhotosInResults:(bool)arg1;
+- (void)setIncludeSourceInResults:(bool)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setSource:(void*)arg1;
 - (void*)source;

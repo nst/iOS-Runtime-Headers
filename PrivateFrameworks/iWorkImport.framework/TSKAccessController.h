@@ -6,11 +6,14 @@
 
 @interface TSKAccessController : NSObject {
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     struct _TSKThreadInfo { 
         struct _opaque_pthread_t {} *threadId; 
         unsigned int count; 
+    struct _TSKThreadTicketInfo { 
+        unsigned int useCount; 
+        id ticket; 
     NSCondition *_cond;
     TSUWeakReference *_delegate;
     struct __CFRunLoopSource { } *_mainThreadPingSource;
@@ -18,47 +21,55 @@
     unsigned int _readerCount;
     } _readerInfo[64];
     } _rwLock;
-    BOOL _secondaryThreadWriting;
     NSMutableDictionary *_signalIdentifiers;
+    unsigned int _ticketCount;
+    } _ticketInfo[64];
     NSMutableDictionary *_waitIdentifiers;
-    BOOL _writeBlockedMainThread;
-    BOOL _writeHeld;
     NSMutableArray *_writerQueue;
+    bool_secondaryThreadWriting;
+    bool_writeBlockedMainThread;
+    bool_writeHeld;
 }
 
-- (BOOL)currentThreadHasWriteLock;
+- (bool)currentThreadHasWriteLock;
 - (void)dealloc;
+- (bool)hasRead;
+- (bool)hasWrite;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (void)p_asyncPerformSelectorOnMainThread:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3;
 - (void)p_blockMainThreadForWrite;
 - (void)p_dequeueWrite;
 - (void)p_enqueueWriteAndBlock;
-- (void)p_flushPendingMainThreadBlocksQueueAcquiringLock:(BOOL)arg1;
-- (BOOL)p_hasRead;
-- (BOOL)p_hasWrite;
+- (void)p_flushPendingMainThreadBlocksQueueAcquiringLock:(bool)arg1;
+- (bool)p_hasRead;
+- (bool)p_hasWrite;
 - (void)p_performReadOnMainThread:(id)arg1;
 - (void)p_readLock;
+- (void)p_readLockTakingRealLock:(bool)arg1;
 - (void)p_readUnlock;
+- (void)p_readUnlockReleasingRealLock:(bool)arg1;
 - (void)p_scheduleMainThreadRead:(id)arg1;
 - (void)p_signalThread:(id)arg1;
 - (id)p_threadIdentifier;
-- (BOOL)p_waitWithCondition:(id)arg1 untilDate:(id)arg2;
-- (void)p_writeLockAndBlockMainThread:(BOOL)arg1;
+- (bool)p_waitWithCondition:(id)arg1 untilDate:(id)arg2;
+- (void)p_writeLockAndBlockMainThread:(bool)arg1;
 - (void)p_writeUnlock;
 - (void)p_writeUnlockAndPerformWithMainThreadBlocked:(id)arg1;
 - (void)performRead:(SEL)arg1 thenReadOnMainThread:(SEL)arg2 withTarget:(id)arg3 argument:(void*)arg4;
-- (void)performRead:(SEL)arg1 thenWrite:(SEL)arg2 thenReadOnMainThread:(SEL)arg3 withTarget:(id)arg4 argument:(void*)arg5 passReadResultToMainThreadRead:(BOOL)arg6;
+- (void)performRead:(SEL)arg1 thenWrite:(SEL)arg2 thenReadOnMainThread:(SEL)arg3 withTarget:(id)arg4 argument:(void*)arg5 passReadResultToMainThreadRead:(bool)arg6;
 - (void)performRead:(SEL)arg1 thenWrite:(SEL)arg2 thenReadOnMainThread:(SEL)arg3 withTarget:(id)arg4 argument:(void*)arg5;
 - (void)performRead:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3 argument2:(void*)arg4;
 - (void)performRead:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3;
 - (void)performRead:(id)arg1;
+- (void)performReadGrantingTicket:(id)arg1;
+- (void)performReadWithTicket:(id)arg1 block:(id)arg2;
 - (void)performWrite:(SEL)arg1 withTarget:(id)arg2 argument:(void*)arg3;
-- (void)performWrite:(id)arg1 blockMainThread:(BOOL)arg2;
+- (void)performWrite:(id)arg1 blockMainThread:(bool)arg2;
 - (void)performWrite:(id)arg1;
 - (void)signalIdentifier:(id)arg1;
 - (void)spinMainThreadRunLoopUntil:(SEL)arg1 onTarget:(id)arg2;
-- (BOOL)waitOnIdentifier:(id)arg1 untilDate:(id)arg2 releaseReadWhileWaiting:(BOOL)arg3;
+- (bool)waitOnIdentifier:(id)arg1 untilDate:(id)arg2 releaseReadWhileWaiting:(bool)arg3;
 - (void)waitOnIdentifier:(id)arg1;
 
 @end

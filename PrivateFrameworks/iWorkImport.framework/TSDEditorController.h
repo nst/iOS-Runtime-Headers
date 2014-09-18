@@ -5,27 +5,31 @@
 @class NSMutableArray, NSMutableDictionary, NSObject<TSDEditor>, TSKDocumentRoot;
 
 @interface TSDEditorController : NSObject {
-    BOOL mDidChangeCurrentEditors;
-    BOOL mDidChangeTextInputEditor;
+    boolmDidChangeCurrentEditors;
+    boolmDidChangeTextInputEditor;
+    boolmIsReentrantResigningTextInputEditors;
+    boolmNotifiedWillChangeCurrentEditors;
+    boolmNotifiedWillChangeTextInputEditor;
+    unsigned long long mChangingCurrentEditorsWhenCommittingInspectorChangesCount;
     TSKDocumentRoot *mDocumentRoot;
     NSMutableArray *mEditorStack;
     NSMutableDictionary *mInspectorPropertyValueMap;
-    BOOL mIsReentrantResigningTextInputEditors;
-    BOOL mNotifiedWillChangeCurrentEditors;
-    BOOL mNotifiedWillChangeTextInputEditor;
     NSMutableArray *mResignedTextInputEditors;
     NSObject<TSDEditor> *mTextInputEditor;
-    unsigned int mTransactionLevel;
+    unsigned long long mTransactionLevel;
 }
 
-- (BOOL)anyEditorProhibitsAction:(SEL)arg1;
+@property(getter=isChangingCurrentEditorsWhenCommittingInspectorChanges,readonly) bool changingCurrentEditorsWhenCommittingInspectorChanges;
+
+- (bool)anyEditorProhibitsAction:(SEL)arg1;
 - (void)beginTransaction;
 - (id)currentEditors;
 - (id)currentEditorsConformingToProtocol:(id)arg1;
 - (id)currentEditorsOfClass:(Class)arg1;
 - (void)dealloc;
-- (void)editorDidChangeSelection:(id)arg1 withSelectionFlags:(unsigned int)arg2;
-- (void)editorDidChangeSelectionAndWantsKeyboard:(id)arg1 withSelectionFlags:(unsigned int)arg2;
+- (void)didChangeCurrentEditorsWhenCommittingInspectorChanges;
+- (void)editorDidChangeSelection:(id)arg1 withSelectionFlags:(unsigned long long)arg2;
+- (void)editorDidChangeSelectionAndWantsKeyboard:(id)arg1 withSelectionFlags:(unsigned long long)arg2;
 - (id)editorForEditAction:(SEL)arg1 withSender:(id)arg2 response:(int*)arg3;
 - (id)editorForEditAction:(SEL)arg1 withSender:(id)arg2;
 - (void)editorSelectionWasForciblyChanged:(id)arg1;
@@ -33,6 +37,7 @@
 - (void)enumerateEditorsOnStackUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithDocumentRoot:(id)arg1;
+- (bool)isChangingCurrentEditorsWhenCommittingInspectorChanges;
 - (id)mostSpecificCurrentEditorOfClass:(Class)arg1 conformingToProtocol:(id)arg2;
 - (id)mostSpecificCurrentEditorOfClass:(Class)arg1;
 - (id)mostSpecificEditorConformingToProtocol:(id)arg1;
@@ -52,5 +57,6 @@
 - (void)setObject:(id)arg1 forInspectorPropertyKey:(id)arg2;
 - (void)setTextInputEditor:(id)arg1;
 - (id)textInputEditor;
+- (void)willChangeCurrentEditorsWhenCommittingInspectorChanges;
 
 @end

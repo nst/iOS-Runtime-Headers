@@ -7,55 +7,55 @@
 @interface MPStoreOffer : NSObject {
     unsigned long long _entityPersistentID;
     NSString *_entityTitle;
-    int _entityType;
+    unsigned long long _entityType;
     NSDictionary *_mediaAssetDictionary;
     NSDictionary *_offerDictionary;
-    int _passType;
+    long long _passType;
     MPStoreOffer *_regularPriceOffer;
 }
 
-@property(readonly) NSString * actionDisplayTitle;
-@property(readonly) NSString * buyParameters;
-@property(readonly) int buyType;
-@property(readonly) NSString * displayPrice;
-@property(readonly) NSString * displayTitle;
+@property(copy,readonly) NSString * actionDisplayTitle;
+@property(copy,readonly) NSString * buyParameters;
+@property(readonly) long long buyType;
+@property(copy,readonly) NSString * displayPrice;
+@property(copy,readonly) NSString * displayTitle;
 @property(readonly) unsigned long long downloadSize;
 @property(readonly) unsigned long long entityPersistentID;
-@property(readonly) NSString * entityTitle;
-@property(readonly) int entityType;
-@property(readonly) int passType;
+@property(copy,readonly) NSString * entityTitle;
+@property(readonly) unsigned long long entityType;
+@property(readonly) long long passType;
 @property(readonly) double previewDuration;
-@property(readonly) NSURL * previewURL;
+@property(copy,readonly) NSURL * previewURL;
 @property(readonly) float price;
-@property(readonly) NSString * regularPriceDisplayPrice;
-@property(readonly) BOOL requiresConfirmation;
+@property(copy,readonly) NSString * regularPriceDisplayPrice;
+@property(readonly) bool requiresConfirmation;
 
 + (id)_priceForOfferDictionary:(id)arg1;
-+ (int)bestOfferVariantInOfferDictionaries:(id)arg1 withPreferredVariant:(int)arg2;
-+ (int)buyTypeForOfferDictionary:(id)arg1;
-+ (void)getBuyOfferDictionary:(id*)arg1 regularPriceOfferDictionary:(id*)arg2 inOfferDictionaries:(id)arg3 variant:(int)arg4;
++ (long long)bestOfferVariantInOfferDictionaries:(id)arg1 withPreferredVariant:(long long)arg2;
++ (long long)buyTypeForOfferDictionary:(id)arg1 regularPriceOffer:(id)arg2;
++ (void)getBuyOfferDictionary:(id*)arg1 regularPriceOfferDictionary:(id*)arg2 inOfferDictionaries:(id)arg3 variant:(long long)arg4;
 + (void)getBuyOfferDictionary:(id*)arg1 regularPriceOfferDictionary:(id*)arg2 inOfferDictionaries:(id)arg3 variantString:(id)arg4;
-+ (id)offerVariantResponseKeyForOfferVariant:(int)arg1;
++ (id)offerVariantResponseKeyForOfferVariant:(long long)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_isBuy;
+- (bool)_isBuy;
 - (id)actionDisplayTitle;
 - (id)buyParameters;
-- (int)buyType;
+- (long long)buyType;
 - (id)buyURL;
 - (id)displayPrice;
 - (id)displayTitle;
 - (unsigned long long)downloadSize;
 - (unsigned long long)entityPersistentID;
 - (id)entityTitle;
-- (int)entityType;
-- (id)initWithStoreOfferDictionary:(id)arg1 regularPriceOfferDictionary:(id)arg2 passType:(int)arg3 entityType:(int)arg4 persistentID:(unsigned long long)arg5 title:(id)arg6;
-- (int)passType;
+- (unsigned long long)entityType;
+- (id)initWithStoreOfferDictionary:(id)arg1 regularPriceOfferDictionary:(id)arg2 passType:(long long)arg3 entityType:(unsigned long long)arg4 persistentID:(unsigned long long)arg5 title:(id)arg6;
+- (long long)passType;
 - (double)previewDuration;
 - (id)previewURL;
 - (float)price;
 - (id)regularPriceDisplayPrice;
-- (BOOL)requiresConfirmation;
+- (bool)requiresConfirmation;
 - (id)storeOfferDictionary;
 
 @end

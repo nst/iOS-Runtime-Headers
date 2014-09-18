@@ -19,7 +19,7 @@
 - (void)_quietlyMoveEntryToPreviousEntries:(id)arg1;
 - (void)_removeFilePresenter:(id)arg1;
 - (void)addEntryToPreviousEntries:(id)arg1;
-- (BOOL)cacheFilePresenterForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
+- (bool)cacheFilePresenterForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
 - (void)coordinatorWillRemoveStore:(id)arg1;
 - (id)createSetOfCoordinatorsForPersistentStoreName:(id)arg1 andLocalPeerID:(id)arg2 atUbiquityRootLocation:(id)arg3;
 - (void)dealloc;
@@ -27,7 +27,7 @@
 - (id)entryForStore:(id)arg1;
 - (id)filePresenterForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
 - (id)init;
-- (BOOL)registerUbiquitizedPersistentStore:(id)arg1 forLocalPeerID:(id)arg2 withLocalRootLocation:(id)arg3 andUbiquityRootLocation:(id)arg4 error:(id*)arg5;
+- (bool)registerUbiquitizedPersistentStore:(id)arg1 forLocalPeerID:(id)arg2 withLocalRootLocation:(id)arg3 andUbiquityRootLocation:(id)arg4 error:(id*)arg5;
 - (void)releaseAllEntriesForStoreName:(id)arg1 andPeerID:(id)arg2;
 - (void)removeEntryFromPreviousEntries:(id)arg1;
 - (void)removeFilePresenterCachedForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;

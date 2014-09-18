@@ -2,13 +2,19 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class WebBookmarksXPCConnection;
+@class NSString, WebBookmarksXPCConnection;
 
 @interface WebBookmarksSettingsGateway : NSObject <WebBookmarksXPCConnectionDelegate> {
     WebBookmarksXPCConnection *_connection;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)_clearConnection;
+- (void)clearAllSafariHistory;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;
 - (void)dealloc;
 - (void)deleteAllSafariSecurityOrigins;
@@ -18,6 +24,6 @@
 - (id)getSafariDataUsageSummary;
 - (void)getSafariWebDataUsageWithCompletion:(id)arg1;
 - (id)init;
-- (void)setCellularReadingListAllowed:(BOOL)arg1;
+- (void)setCellularReadingListAllowed:(bool)arg1;
 
 @end

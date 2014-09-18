@@ -4,19 +4,19 @@
 
 @class NSData, PKColor;
 
-@interface PKPassDisplayProfile : NSObject <NSSecureCoding, NSCopying> {
+@interface PKPassDisplayProfile : PKDisplayProfile <NSSecureCoding, NSCopying> {
     PKColor *_backgroundColor;
     NSData *_backgroundHash;
     PKColor *_foregroundColor;
     NSData *_iconHash;
     PKColor *_labelColor;
-    int _layoutMode;
     NSData *_logoHash;
-    unsigned int _passStyle;
+    long long _passStyle;
+    NSData *_paymentAssetsHash;
     PKColor *_stripColor;
     NSData *_stripHash;
-    BOOL _tallCode;
     NSData *_thumbnailHash;
+    bool_tallCode;
 }
 
 @property(retain) PKColor * backgroundColor;
@@ -24,15 +24,18 @@
 @property(retain) PKColor * foregroundColor;
 @property(retain) NSData * iconHash;
 @property(retain) PKColor * labelColor;
-@property(readonly) int layoutMode;
+@property(readonly) long long layoutMode;
 @property(retain) NSData * logoHash;
-@property unsigned int passStyle;
+@property long long passStyle;
+@property(retain) NSData * paymentAssetsHash;
+@property(readonly) bool showsBackgroundImage;
+@property(readonly) bool showsStripImage;
 @property(retain) PKColor * stripColor;
 @property(retain) NSData * stripHash;
-@property BOOL tallCode;
+@property bool tallCode;
 @property(retain) NSData * thumbnailHash;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)backgroundColor;
 - (id)backgroundHash;
@@ -42,27 +45,30 @@
 - (id)foregroundColor;
 - (id)iconHash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPassDictionary:(id)arg1 passURL:(id)arg2;
+- (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)labelColor;
-- (int)layoutMode;
+- (long long)layoutMode;
 - (id)logoHash;
-- (unsigned int)passStyle;
+- (long long)passStyle;
+- (id)paymentAssetsHash;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundHash:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setIconHash:(id)arg1;
 - (void)setLabelColor:(id)arg1;
 - (void)setLogoHash:(id)arg1;
-- (void)setPassStyle:(unsigned int)arg1;
+- (void)setPassStyle:(long long)arg1;
+- (void)setPaymentAssetsHash:(id)arg1;
 - (void)setStripColor:(id)arg1;
 - (void)setStripHash:(id)arg1;
-- (void)setTallCode:(BOOL)arg1;
+- (void)setTallCode:(bool)arg1;
 - (void)setThumbnailHash:(id)arg1;
-- (BOOL)showsBackgroundImage;
-- (BOOL)showsStripImage;
+- (bool)showsBackgroundImage;
+- (bool)showsStripImage;
 - (id)stripColor;
 - (id)stripHash;
-- (BOOL)tallCode;
+- (bool)tallCode;
 - (id)thumbnailHash;
+- (long long)type;
 
 @end

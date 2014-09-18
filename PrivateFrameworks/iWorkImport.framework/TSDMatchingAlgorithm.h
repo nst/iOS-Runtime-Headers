@@ -5,17 +5,17 @@
 @class NSMutableArray;
 
 @interface TSDMatchingAlgorithm : NSObject {
-    int *mCostMatrix;
-    BOOL *mIsColCovered;
-    BOOL *mIsRowCovered;
-    BOOL *mIsStarInColumn;
-    BOOL *mIsStarInRow;
+    bool*mIsColCovered;
+    bool*mIsRowCovered;
+    bool*mIsStarInColumn;
+    bool*mIsStarInRow;
+    long long *mCostMatrix;
     char *mMaskMatrix;
-    int mMatrixDimension;
+    long long mMatrixDimension;
     id *mObjectMapping;
     NSMutableArray *mResults;
-    int mZ0Col;
-    int mZ0Row;
+    long long mZ0Col;
+    long long mZ0Row;
 }
 
 + (id)bestMatchesFromArray:(id)arg1;
@@ -29,7 +29,7 @@
 - (int)p_doStep4;
 - (int)p_doStep5;
 - (int)p_doStep6;
-- (BOOL)p_step4FindAZeroAndReturnRow:(int*)arg1 column:(int*)arg2;
+- (bool)p_step4FindAZeroAndReturnRow:(int*)arg1 column:(int*)arg2;
 - (int)p_step4IndexOfStarredZeroInRow:(int)arg1;
 
 @end

@@ -8,7 +8,11 @@
 }
 
 @property(retain) <SASupportCondition> * condition;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * property;
+@property(readonly) Class superclass;
 
 + (id)constraintSupport;
 + (id)constraintSupportWithDictionary:(id)arg1 context:(id)arg2;

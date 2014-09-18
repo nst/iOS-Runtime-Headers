@@ -8,18 +8,18 @@
     NSString *_accountID;
     NSMutableData *_bodyData;
     NSArray *_consumers;
-    BOOL _firstSyncBatch;
     MFActivityMonitor *_monitor;
-    BOOL _moreAvailable;
-    BOOL _receivedFirstItem;
     NSArray *_requests;
     int _serverErrors;
     id _streamConsumer;
     int _syncKeyResets;
     NSString *_tag;
+    bool_firstSyncBatch;
+    bool_moreAvailable;
+    bool_receivedFirstItem;
 }
 
-@property(readonly) BOOL moreAvailable;
+@property(readonly) bool moreAvailable;
 @property(retain) id streamConsumer;
 @property(readonly) NSString * tag;
 
@@ -30,15 +30,15 @@
 - (void)didEndStreamingForMailMessage:(id)arg1;
 - (void)handleSyncResponses:(id)arg1;
 - (id)initWithCurrentTag:(id)arg1 accountID:(id)arg2 requests:(id)arg3 consumers:(id)arg4;
-- (BOOL)moreAvailable;
+- (bool)moreAvailable;
 - (id)originalThreadMonitor;
-- (void)partialResultsForMailbox:(id)arg1 actions:(id)arg2 responses:(id)arg3 percentComplete:(double)arg4 moreAvailable:(BOOL)arg5;
+- (void)partialResultsForMailbox:(id)arg1 actions:(id)arg2 responses:(id)arg3 percentComplete:(double)arg4 moreAvailable:(bool)arg5;
 - (void)reset;
-- (void)resultsForMailbox:(id)arg1 newTag:(id)arg2 actions:(id)arg3 responses:(id)arg4 percentComplete:(double)arg5 moreAvailable:(BOOL)arg6;
+- (void)resultsForMailbox:(id)arg1 newTag:(id)arg2 actions:(id)arg3 responses:(id)arg4 percentComplete:(double)arg5 moreAvailable:(bool)arg6 sentBytesCount:(unsigned long long)arg7 receivedBytesCount:(unsigned long long)arg8;
 - (void)setStreamConsumer:(id)arg1;
-- (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
+- (bool)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
 - (id)streamConsumer;
 - (id)tag;
-- (void)taskFailed:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
+- (void)taskFailed:(id)arg1 statusCode:(long long)arg2 error:(id)arg3;
 
 @end

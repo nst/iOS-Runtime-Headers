@@ -10,7 +10,7 @@
     ICSDateValue *_start;
 }
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (void)dealloc;
 - (id)duration;
 - (void)encodeWithCoder:(id)arg1;
@@ -19,7 +19,7 @@
 - (id)initWithStart:(id)arg1 duration:(id)arg2;
 - (id)initWithStart:(id)arg1 end:(id)arg2;
 - (id)initWithStart:(id)arg1;
-- (BOOL)isDurationBased;
+- (bool)isDurationBased;
 - (id)start;
 
 @end

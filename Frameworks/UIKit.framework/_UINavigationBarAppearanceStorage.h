@@ -6,23 +6,23 @@
 
 @interface _UINavigationBarAppearanceStorage : _UIBarAppearanceStorage {
     NSString *_backdropViewGroupName;
-    BOOL _deferShadowToSearchBar;
-    int activeBarMetrics;
+    long long activeBarMetrics;
     UIImage *backIndicatorImage;
     NSNumber *backIndicatorLeftMargin;
     UIImage *backIndicatorTransitionMaskImage;
-    int barMetrics;
+    long long barMetrics;
+    bool_deferShadowToSearchBar;
+    boolhidesShadow;
+    boolreversesShadowOffset;
     _UIBarButtonItemAppearanceStorage *buttonAppearanceStorage;
-    int defaultBarMetrics;
-    BOOL hidesShadow;
-    BOOL reversesShadowOffset;
+    long long defaultBarMetrics;
     UIImage *shadowImage;
     NSDictionary *textAttributes;
     NSMutableDictionary *titleVerticalAdjustmentsForBarMetrics;
 }
 
 @property(readonly) _UIBarButtonItemAppearanceStorage * _barButtonAppearanceStorage;
-@property int activeBarMetrics;
+@property long long activeBarMetrics;
 @property(retain) UIImage * backIndicatorImage;
 @property(retain) NSNumber * backIndicatorLeftMargin;
 @property(retain) UIImage * backIndicatorTransitionMaskImage;
@@ -30,20 +30,21 @@
 @property(readonly) UIImage * backgroundImage;
 @property(readonly) _UIBarButtonItemAppearanceStorage * barButtonAppearanceStorage;
 @property(readonly) UIImage * cardBackgroundImage;
-@property int defaultBarMetrics;
-@property BOOL deferShadowToSearchBar;
-@property BOOL hidesShadow;
+@property(readonly) UIImage * condensedBackgroundImage;
+@property long long defaultBarMetrics;
+@property bool deferShadowToSearchBar;
+@property bool hidesShadow;
 @property(readonly) UIImage * miniBackgroundImage;
 @property(readonly) UIImage * miniPromptBackgroundImage;
 @property(readonly) UIImage * promptBackgroundImage;
-@property BOOL reversesShadowOffset;
+@property bool reversesShadowOffset;
 @property(retain) UIImage * shadowImage;
 @property(copy) NSDictionary * textAttributes;
 
-+ (int)typicalBarPosition;
++ (long long)typicalBarPosition;
 
 - (id)_barButtonAppearanceStorage;
-- (int)activeBarMetrics;
+- (long long)activeBarMetrics;
 - (id)backIndicatorImage;
 - (id)backIndicatorLeftMargin;
 - (id)backIndicatorTransitionMaskImage;
@@ -51,29 +52,30 @@
 - (id)backgroundImage;
 - (id)barButtonAppearanceStorage;
 - (id)cardBackgroundImage;
+- (id)condensedBackgroundImage;
 - (void)dealloc;
-- (int)defaultBarMetrics;
-- (BOOL)deferShadowToSearchBar;
-- (BOOL)hidesShadow;
+- (long long)defaultBarMetrics;
+- (bool)deferShadowToSearchBar;
+- (bool)hidesShadow;
 - (id)miniBackgroundImage;
 - (id)miniPromptBackgroundImage;
 - (id)promptBackgroundImage;
-- (id)representativeImageForIdiom:(int)arg1;
-- (BOOL)reversesShadowOffset;
-- (void)setActiveBarMetrics:(int)arg1;
+- (id)representativeImageForIdiom:(long long)arg1;
+- (bool)reversesShadowOffset;
+- (void)setActiveBarMetrics:(long long)arg1;
 - (void)setBackIndicatorImage:(id)arg1;
 - (void)setBackIndicatorLeftMargin:(id)arg1;
 - (void)setBackIndicatorTransitionMaskImage:(id)arg1;
 - (void)setBackdropViewGroupName:(id)arg1;
-- (void)setDefaultBarMetrics:(int)arg1;
-- (void)setDeferShadowToSearchBar:(BOOL)arg1;
-- (void)setHidesShadow:(BOOL)arg1;
-- (void)setReversesShadowOffset:(BOOL)arg1;
+- (void)setDefaultBarMetrics:(long long)arg1;
+- (void)setDeferShadowToSearchBar:(bool)arg1;
+- (void)setHidesShadow:(bool)arg1;
+- (void)setReversesShadowOffset:(bool)arg1;
 - (void)setShadowImage:(id)arg1;
 - (void)setTextAttributes:(id)arg1;
-- (void)setTitleVerticalAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)setTitleVerticalAdjustment:(double)arg1 forBarMetrics:(long long)arg2;
 - (id)shadowImage;
 - (id)textAttributes;
-- (float)titleVerticalAdjustmentForBarMetrics:(int)arg1;
+- (double)titleVerticalAdjustmentForBarMetrics:(long long)arg1;
 
 @end

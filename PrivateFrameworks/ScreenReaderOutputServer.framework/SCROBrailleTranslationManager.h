@@ -5,52 +5,52 @@
 @class <SCROBrailleTranslatorProtocol>, NSBundle, NSLock;
 
 @interface SCROBrailleTranslationManager : NSObject {
-    BOOL _alwaysUsesNemethCodeForTechnicalText;
-    BOOL _auxTableSupportsContractedBraille;
-    BOOL _auxTableSupportsEightDotBraille;
     <SCROBrailleTranslatorProtocol> *_auxTranslator;
     NSBundle *_auxTranslatorBundle;
     NSLock *_contentLock;
     <SCROBrailleTranslatorProtocol> *_nemethTranslator;
-    BOOL _tableSupportsContractedBraille;
-    BOOL _tableSupportsEightDotBraille;
     <SCROBrailleTranslatorProtocol> *_translator;
     NSBundle *_translatorBundle;
+    bool_alwaysUsesNemethCodeForTechnicalText;
+    bool_auxTableSupportsContractedBraille;
+    bool_auxTableSupportsEightDotBraille;
+    bool_tableSupportsContractedBraille;
+    bool_tableSupportsEightDotBraille;
 }
 
-@property BOOL alwaysUsesNemethCodeForTechnicalText;
-@property(readonly) BOOL auxiliaryTableSupportsContractedBraille;
-@property(readonly) BOOL auxiliaryTableSupportsEightDotBraille;
-@property(readonly) BOOL primaryTableSupportsContractedBraille;
-@property(readonly) BOOL primaryTableSupportsEightDotBraille;
+@property bool alwaysUsesNemethCodeForTechnicalText;
+@property(readonly) bool auxiliaryTableSupportsContractedBraille;
+@property(readonly) bool auxiliaryTableSupportsEightDotBraille;
+@property(readonly) bool primaryTableSupportsContractedBraille;
+@property(readonly) bool primaryTableSupportsEightDotBraille;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)sharedManager;
 
 - (id)_loadTableIdentifier:(id)arg1 bundle:(id*)arg2 existingBundle:(id)arg3 existingTranslator:(id)arg4;
-- (id)_printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5 isTechnical:(BOOL)arg6;
-- (BOOL)alwaysUsesNemethCodeForTechnicalText;
+- (id)_printBrailleForText:(id)arg1 primaryTable:(bool)arg2 contracted:(bool)arg3 eightDot:(bool)arg4 locations:(id*)arg5 isTechnical:(bool)arg6;
+- (bool)alwaysUsesNemethCodeForTechnicalText;
 - (id)autorelease;
 - (id)auxiliaryTableIdentifier;
-- (BOOL)auxiliaryTableSupportsContractedBraille;
-- (BOOL)auxiliaryTableSupportsEightDotBraille;
+- (bool)auxiliaryTableSupportsContractedBraille;
+- (bool)auxiliaryTableSupportsEightDotBraille;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)primaryTableIdentifier;
-- (BOOL)primaryTableSupportsContractedBraille;
-- (BOOL)primaryTableSupportsEightDotBraille;
-- (id)printBrailleForTechnicalText:(id)arg1 primaryTable:(BOOL)arg2 locations:(id*)arg3;
-- (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
-- (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
+- (bool)primaryTableSupportsContractedBraille;
+- (bool)primaryTableSupportsEightDotBraille;
+- (id)printBrailleForTechnicalText:(id)arg1 primaryTable:(bool)arg2 locations:(id*)arg3;
+- (id)printBrailleForText:(id)arg1 contracted:(bool)arg2 eightDot:(bool)arg3 locations:(id*)arg4;
+- (id)printBrailleForText:(id)arg1 primaryTable:(bool)arg2 contracted:(bool)arg3 eightDot:(bool)arg4 locations:(id*)arg5;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (void)setAlwaysUsesNemethCodeForTechnicalText:(BOOL)arg1;
+- (unsigned long long)retainCount;
+- (void)setAlwaysUsesNemethCodeForTechnicalText:(bool)arg1;
 - (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;
 - (void)setPrimaryTranslationTableWithTableIdentifier:(id)arg1;
-- (id)textForPrintBraille:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
-- (id)textForPrintBraille:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
+- (id)textForPrintBraille:(id)arg1 contracted:(bool)arg2 eightDot:(bool)arg3 locations:(id*)arg4;
+- (id)textForPrintBraille:(id)arg1 primaryTable:(bool)arg2 contracted:(bool)arg3 eightDot:(bool)arg4 locations:(id*)arg5;
 
 @end

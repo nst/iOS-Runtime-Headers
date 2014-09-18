@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface PDComment : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     unsigned int mAuthorId;
-    NSString *mDate;
+    NSDate *mDate;
     unsigned int mIndex;
     } mPosition;
     NSString *mText;
@@ -21,11 +21,11 @@
 - (void)dealloc;
 - (unsigned int)index;
 - (id)init;
-- (struct CGPoint { float x1; float x2; })position;
+- (struct CGPoint { double x1; double x2; })position;
 - (void)setAuthorId:(unsigned int)arg1;
 - (void)setDate:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

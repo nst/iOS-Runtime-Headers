@@ -2,33 +2,34 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSObject<OS_dispatch_semaphore>, RCAudioFileWaveformDataSource, RCGLWaveformRenderer, RCSavedRecording, RCUIConfiguration, UIImage;
+@class RCComposition, RCCompositionWaveformDataSource, RCGLWaveformRenderer, RCUIConfiguration, UIImage;
 
 @interface RCWaveformRasterizationOperation : NSOperation {
     struct CGSize { 
-        float width; 
-        float height; 
-    NSObject<OS_dispatch_semaphore> *_completionSemaphore;
-    RCAudioFileWaveformDataSource *_dataSource;
-    BOOL _loadingSuccessful;
-    } _outputImageSize;
+        double width; 
+        double height; 
+    RCComposition *_composition;
+    RCCompositionWaveformDataSource *_dataSource;
+    } _imageSize;
     UIImage *_rasterizedImage;
-    RCSavedRecording *_recording;
     RCGLWaveformRenderer *_renderer;
+    bool_loadingSuccessful;
 }
 
 @property(copy) RCUIConfiguration * UIConfiguration;
-@property(readonly) struct CGSize { float x1; float x2; } outputImageSize;
+@property(readonly) RCComposition * composition;
+@property(readonly) struct CGSize { double x1; double x2; } imageSize;
 @property(readonly) UIImage * rasterizedImage;
-@property(readonly) RCSavedRecording * recording;
+
++ (id)waveformImageForComposition:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
 - (id)UIConfiguration;
-- (id)initWithRecording:(id)arg1 outputImageSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)composition;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (id)initWithComposition:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)main;
-- (struct CGSize { float x1; float x2; })outputImageSize;
 - (id)rasterizedImage;
-- (id)recording;
 - (void)setUIConfiguration:(id)arg1;
 
 @end

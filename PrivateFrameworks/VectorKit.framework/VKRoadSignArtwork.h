@@ -4,22 +4,23 @@
 
 @interface VKRoadSignArtwork : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     float _contentScale;
     } _layoutSize;
     struct __CTLine { } *_line;
-    BOOL _onRoute;
-    int _orientation;
+    long long _orientation;
     float _scale;
+    bool_onRoute;
 }
 
 - (id).cxx_construct;
 - (void)_updateLayoutSize;
-- (struct BRectImp<float> { struct Vec2Imp<float> { float x_1_1_1; float x_1_1_2; } x1; struct Vec2Imp<float> { float x_2_1_1; float x_2_1_2; } x2; })boundsAtOrigin;
 - (void)dealloc;
 - (id)image;
-- (id)initWithString:(id)arg1 orientation:(int)arg2 contentScale:(float)arg3 scale:(float)arg4 onRoute:(BOOL)arg5;
-- (struct Vec2Imp<float> { float x1; float x2; })offsetPixelForPixel:(struct Vec2Imp<float> { float x1; float x2; })arg1;
+- (id)initWithString:(id)arg1 orientation:(long long)arg2 contentScale:(double)arg3 scale:(double)arg4 onRoute:(bool)arg5;
+- (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localCollisionBounds;
+- (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localRenderBounds;
+- (struct Matrix<float, 2, 1> { float x1[2]; })offsetPixelForPixel:(struct Matrix<float, 2, 1> { float x1[2]; })arg1;
 
 @end

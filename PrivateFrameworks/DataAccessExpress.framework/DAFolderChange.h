@@ -5,44 +5,47 @@
 @class <DAFolderChangeConsumer>, NSString;
 
 @interface DAFolderChange : NSObject <NSSecureCoding> {
-    int _changeType;
+    long long _changeType;
     <DAFolderChangeConsumer> *_consumer;
-    int _dataclass;
+    long long _dataclass;
     NSString *_displayName;
     NSString *_folderId;
     NSString *_parentFolderId;
-    BOOL _renameOnCollision;
     unsigned int _taskId;
+    bool_renameOnCollision;
 }
 
-@property(readonly) int changeType;
+@property long long changeType;
 @property <DAFolderChangeConsumer> * consumer;
-@property(readonly) int dataclass;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * folderId;
-@property(readonly) NSString * parentFolderId;
-@property BOOL renameOnCollision;
+@property long long dataclass;
+@property(retain) NSString * displayName;
+@property(retain) NSString * folderId;
+@property(retain) NSString * parentFolderId;
+@property bool renameOnCollision;
 @property unsigned int taskId;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)changeType;
+- (void).cxx_destruct;
+- (long long)changeType;
 - (id)consumer;
-- (int)dataclass;
-- (void)dealloc;
+- (long long)dataclass;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)folderId;
-- (id)initFolderChangeWithChangeType:(int)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(int)arg5 consumer:(id)arg6;
+- (id)initFolderChangeWithChangeType:(long long)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(long long)arg5 consumer:(id)arg6;
 - (id)initWithCoder:(id)arg1;
 - (id)mf_deferredOperation;
 - (id)parentFolderId;
-- (BOOL)renameOnCollision;
+- (bool)renameOnCollision;
+- (void)setChangeType:(long long)arg1;
 - (void)setConsumer:(id)arg1;
+- (void)setDataclass:(long long)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setFolderId:(id)arg1;
-- (void)setRenameOnCollision:(BOOL)arg1;
+- (void)setParentFolderId:(id)arg1;
+- (void)setRenameOnCollision:(bool)arg1;
 - (void)setTaskId:(unsigned int)arg1;
 - (unsigned int)taskId;
 

@@ -9,17 +9,17 @@
 }
 
 @property(readonly) long long accountIdentifier;
-@property(readonly) NSArray * items;
+@property(copy,readonly) NSArray * items;
 
 + (id)activeWishlist;
 
 - (void).cxx_destruct;
 - (long long)accountIdentifier;
 - (void)addItem:(id)arg1;
-- (BOOL)containsItemWithIdentifier:(long long)arg1;
-- (unsigned int)hash;
+- (bool)containsItemWithIdentifier:(long long)arg1;
+- (unsigned long long)hash;
 - (id)initWithAccountIdentifier:(long long)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)items;
 - (void)postChangeNotification;
 - (void)removeItemsWithItemIdentifiers:(id)arg1;

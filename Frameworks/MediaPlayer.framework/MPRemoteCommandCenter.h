@@ -2,32 +2,41 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPChangePlaybackRateCommand, MPFeedbackCommand, MPRatingCommand, MPRemoteCommand, MPSkipIntervalCommand, NSArray;
+@class MPChangePlaybackRateCommand, MPChangeRepeatModeCommand, MPChangeShuffleModeCommand, MPFeedbackCommand, MPPurchaseCommand, MPRatingCommand, MPRemoteCommand, MPSkipIntervalCommand, NSArray;
 
 @interface MPRemoteCommandCenter : NSObject {
     MPRemoteCommand *_advanceRepeatModeCommand;
     MPRemoteCommand *_advanceShuffleModeCommand;
     MPFeedbackCommand *_bookmarkCommand;
-    BOOL _canBeNowPlayingApplication;
+    MPPurchaseCommand *_buyAlbumCommand;
+    MPPurchaseCommand *_buyTrackCommand;
+    MPPurchaseCommand *_cancelDownloadCommand;
+    MPRemoteCommand *_changePlaybackPositionCommand;
     MPChangePlaybackRateCommand *_changePlaybackRateCommand;
+    MPChangeRepeatModeCommand *_changeRepeatModeCommand;
+    MPChangeShuffleModeCommand *_changeShuffleModeCommand;
     NSArray *_commandsArray;
+    MPRemoteCommand *_createRadioStationCommand;
     MPFeedbackCommand *_dislikeCommand;
     MPFeedbackCommand *_likeCommand;
     void *_mediaRemoteCommandHandler;
     MPRemoteCommand *_nextTrackCommand;
     MPRemoteCommand *_pauseCommand;
     MPRemoteCommand *_playCommand;
+    MPPurchaseCommand *_preOrderAlbumCommand;
     MPRemoteCommand *_previousTrackCommand;
     MPRatingCommand *_ratingCommand;
-    BOOL _scheduledSupportedCommandsChangedNotification;
     MPRemoteCommand *_seekBackwardCommand;
     MPRemoteCommand *_seekForwardCommand;
+    MPRemoteCommand *_setPlaybackQueueCommand;
     MPSkipIntervalCommand *_skipBackwardCommand;
     MPSkipIntervalCommand *_skipForwardCommand;
     MPRemoteCommand *_specialSeekBackwardCommand;
     MPRemoteCommand *_specialSeekForwardCommand;
     MPRemoteCommand *_stopCommand;
     MPRemoteCommand *_togglePlayPauseCommand;
+    bool_canBeNowPlayingApplication;
+    bool_scheduledSupportedCommandsChangedNotification;
 }
 
 @property(readonly) MPFeedbackCommand * bookmarkCommand;
@@ -50,6 +59,8 @@
 
 - (void).cxx_destruct;
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
+- (struct __CFArray { }*)_copySupportedCommands;
+- (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id)arg3;
 - (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
 - (void)_scheduleSupportedCommandsChangedNotify;
 - (void)_setupCommandConfigurationObservers;
@@ -63,7 +74,14 @@
 - (id)advanceRepeatModeCommand;
 - (id)advanceShuffleModeCommand;
 - (id)bookmarkCommand;
+- (id)buyAlbumCommand;
+- (id)buyTrackCommand;
+- (id)cancelDownloadCommand;
+- (id)changePlaybackPositionCommand;
 - (id)changePlaybackRateCommand;
+- (id)changeRepeatModeCommand;
+- (id)changeShuffleModeCommand;
+- (id)createRadioStationCommand;
 - (void)dealloc;
 - (id)dislikeCommand;
 - (id)init;
@@ -72,10 +90,12 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pauseCommand;
 - (id)playCommand;
+- (id)preOrderAlbumCommand;
 - (id)previousTrackCommand;
 - (id)ratingCommand;
 - (id)seekBackwardCommand;
 - (id)seekForwardCommand;
+- (id)setPlaybackQueueCommand;
 - (id)skipBackwardCommand;
 - (id)skipForwardCommand;
 - (id)specialSeekBackwardCommand;

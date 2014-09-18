@@ -27,9 +27,9 @@
 + (id)recurrenceRuleFromICSCString:(const char *)arg1 withTokenizer:(id)arg2;
 + (id)recurrenceRuleFromICSString:(id)arg1;
 
-- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)ICSStringWithOptions:(unsigned int)arg1;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
+- (id)ICSStringWithOptions:(unsigned long long)arg1;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)byday;
 - (id)byhour;
 - (id)byminute;
@@ -50,8 +50,10 @@
 - (id)occurrencesForStartDate:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 inTimeZone:(id)arg4;
 - (id)parameterValueForName:(id)arg1;
 - (id)parametersToIncludeForChecksumVersion:(int)arg1;
+- (id)parametersToObscure;
 - (id)propertiesThatIfPresentExcludeThisComponentFromChecksummingForVersion:(int)arg1;
 - (id)propertiesToIncludeForChecksumVersion:(int)arg1;
+- (id)propertiesToObscure;
 - (void)removeParameterValueForName:(id)arg1;
 - (void)setByday:(id)arg1;
 - (void)setByhour:(id)arg1;
@@ -68,6 +70,7 @@
 - (void)setParameterValue:(id)arg1 forName:(id)arg2;
 - (void)setUntil:(id)arg1;
 - (void)setWkst:(id)arg1;
+- (bool)shouldObscureValue;
 - (id)until;
 - (id)wkst;
 

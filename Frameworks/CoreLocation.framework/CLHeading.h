@@ -8,25 +8,26 @@
     id _internal;
 }
 
-@property(readonly) NSString * compactDescription;
-@property(readonly) BOOL hasGeomagneticVector;
+@property(retain,readonly) NSString * compactDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) bool hasGeomagneticVector;
 @property(readonly) double heading;
 @property(readonly) double headingAccuracy;
 @property(readonly) double magneticHeading;
-@property(readonly) NSDate * timestamp;
+@property(copy,readonly) NSDate * timestamp;
 @property(readonly) double trueHeading;
 @property(readonly) double x;
 @property(readonly) double y;
 @property(readonly) double z;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)compactDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasGeomagneticVector;
+- (bool)hasGeomagneticVector;
 - (double)heading;
 - (double)headingAccuracy;
 - (id)initWithClientHeading:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; })arg1;

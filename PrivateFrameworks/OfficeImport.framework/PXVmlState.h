@@ -4,7 +4,7 @@
 
 @class ESDObject, PBPresentationReaderState;
 
-@interface PXVmlState : OAVState {
+@interface PXVmlState : OAVReadState {
     PBPresentationReaderState *mLegacyPresentationState;
     ESDObject *mLegacyTextGlobals;
 }

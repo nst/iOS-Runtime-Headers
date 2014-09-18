@@ -9,9 +9,6 @@
 }
 
 - (void).cxx_destruct;
-- (id)artworkCacheIDForChapterIndex:(unsigned int)arg1;
-- (id)artworkCacheIDForTimeInMS:(unsigned int)arg1;
-- (id)imageDataForArtworkFormatID:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 artworkChapterIndex:(unsigned int)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; BOOL x_1_1_7; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
 - (id)initWithChapterDataRef:(struct ChapterData { }*)arg1 track:(id)arg2;
 
 @end

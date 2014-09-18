@@ -9,7 +9,7 @@
     struct __IOHIDDevice { } *_hidDevice;
     unsigned char _hidOpened;
     char *_hidReportBuf;
-    long _hidReportMaxLen;
+    long long _hidReportMaxLen;
     struct __CFString { } *_uuid;
 }
 

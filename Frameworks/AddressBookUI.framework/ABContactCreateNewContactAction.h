@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, UIViewController;
+@class CNContact, NSString, UIViewController;
 
 @interface ABContactCreateNewContactAction : ABContactAction <ABNewPersonViewControllerDelegate> {
     CNContact *_createdContact;
@@ -10,7 +10,11 @@
 }
 
 @property(retain) CNContact * createdContact;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property UIViewController * presentingViewController;
+@property(readonly) Class superclass;
 
 - (id)createdContact;
 - (void)dealloc;

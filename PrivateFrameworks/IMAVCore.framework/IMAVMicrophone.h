@@ -8,8 +8,8 @@
     id _internalDevice;
 }
 
-@property(readonly) NSString * name;
-@property(readonly) NSString * uniqueID;
+@property(retain,readonly) NSString * name;
+@property(retain,readonly) NSString * uniqueID;
 
 - (id)_AVAudioDevice;
 - (id)_initWithAVAudioDevice:(id)arg1;

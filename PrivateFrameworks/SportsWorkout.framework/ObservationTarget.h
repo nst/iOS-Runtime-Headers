@@ -3,17 +3,17 @@
  */
 
 @interface ObservationTarget : NSObject {
-    BOOL _isActive;
     SEL _selector;
+    bool_isActive;
 }
 
-@property BOOL isActive;
+@property bool isActive;
 @property SEL selector;
 
 - (id)description;
-- (BOOL)isActive;
+- (bool)isActive;
 - (SEL)selector;
-- (void)setIsActive:(BOOL)arg1;
+- (void)setIsActive:(bool)arg1;
 - (void)setSelector:(SEL)arg1;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface PTSEditFloatRow : PTSRow {
-    unsigned int _precision;
+    unsigned long long _precision;
 }
 
-@property unsigned int precision;
+@property unsigned long long precision;
 
-- (id)between:(float)arg1 and:(float)arg2;
+- (id)between:(double)arg1 and:(double)arg2;
 - (id)init;
-- (id)precision:(unsigned int)arg1;
-- (unsigned int)precision;
+- (id)precision:(unsigned long long)arg1;
+- (unsigned long long)precision;
 - (Class)rowTableViewCellClass;
-- (void)setPrecision:(unsigned int)arg1;
+- (void)setPrecision:(unsigned long long)arg1;
 - (void)updateWithRow:(id)arg1;
 
 @end

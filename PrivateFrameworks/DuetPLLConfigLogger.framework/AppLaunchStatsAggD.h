@@ -14,10 +14,10 @@
     id appisFetchable;
     long long avgDownloadsize;
     long long avgPWConsumed;
-    unsigned long blameReasons[28];
+    unsigned long long blameReasons[29];
     boolbuildLaunchStats;
     NSDate *cycleStart;
-    int fetchAppFiltered[6];
+    int fetchAppFiltered[7];
     int fetchAttempt;
     int fetchDataCount;
     long long fetchDataTotal;

@@ -8,8 +8,8 @@
     UIActivityIndicatorView *_spinner;
 }
 
-- (void)dealloc;
-- (id)initWithActivityIndicatorStyle:(int)arg1;
+- (void).cxx_destruct;
+- (id)initWithActivityIndicatorStyle:(long long)arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
 

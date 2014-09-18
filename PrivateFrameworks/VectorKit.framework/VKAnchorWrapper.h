@@ -2,42 +2,46 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKAnchor, VKLayoutContext, VKScreenCanvas;
+@class MDDisplayLayer, NSString, VKAnchor, VKLayoutContext;
 
 @interface VKAnchorWrapper : NSObject <VKAnchorDelegate> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct { 
         double latitude; 
         double longitude; 
     VKAnchor *_anchor;
-    VKScreenCanvas *_canvas;
-    BOOL _followsTerrain;
-    BOOL _isUpdating;
+    MDDisplayLayer *_displayLayer;
     } _lastCoordinate;
     VKLayoutContext *_lastLayoutContext;
     double _pointsPerMeter;
     } _screenPointInCanvas;
+    bool_followsTerrain;
+    bool_isUpdating;
 }
 
-@property VKScreenCanvas * canvas;
 @property(readonly) struct { double x1; double x2; } coordinate;
-@property BOOL followsTerrain;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property MDDisplayLayer * displayLayer;
+@property bool followsTerrain;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (id)_anchorWithContext:(id)arg1;
 - (void)_updateCachedPointWithContext:(id)arg1;
 - (void)anchorWorldPointDidChange:(void*)arg1;
-- (id)canvas;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (BOOL)followsTerrain;
+- (id)displayLayer;
+- (bool)followsTerrain;
 - (void)layoutWithContext:(id)arg1;
-- (struct CGPoint { float x1; float x2; })pointInLayer:(id)arg1;
-- (float)pointOffsetForDistanceOffset:(double)arg1;
-- (void)setCanvas:(id)arg1;
-- (void)setFollowsTerrain:(BOOL)arg1;
+- (struct CGPoint { double x1; double x2; })pointInLayer:(id)arg1;
+- (double)pointOffsetForDistanceOffset:(double)arg1;
+- (void)setDisplayLayer:(id)arg1;
+- (void)setFollowsTerrain:(bool)arg1;
 - (void)updateIfNeeded;
 
 @end

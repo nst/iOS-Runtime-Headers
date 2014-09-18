@@ -14,8 +14,8 @@
 + (void)incrementPowerAssertion;
 + (void)refreshPowerAssertion;
 
+- (void).cxx_destruct;
 - (id)accountStore;
-- (void)dealloc;
 - (void)setAccountStore:(id)arg1;
 
 @end

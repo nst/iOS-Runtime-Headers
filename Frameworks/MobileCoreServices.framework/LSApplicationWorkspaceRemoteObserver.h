@@ -6,8 +6,8 @@
 
 @interface LSApplicationWorkspaceRemoteObserver : LSApplicationWorkspaceObserver {
     NSHashTable *_observers;
-    BOOL _observinglsd;
     NSObject<OS_dispatch_queue> *_progressSubscriptionsQueue;
+    bool_observinglsd;
 }
 
 - (void)addLocalObserver:(id)arg1;
@@ -19,15 +19,22 @@
 - (void)applicationInstallsDidResume:(id)arg1;
 - (void)applicationInstallsDidStart:(id)arg1;
 - (void)applicationInstallsDidUpdateIcon:(id)arg1;
+- (void)applicationsDidFailToInstall:(id)arg1;
+- (void)applicationsDidFailToUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
-- (unsigned int)currentObserverCount;
+- (void)applicationsWillInstall:(id)arg1;
+- (void)applicationsWillUninstall:(id)arg1;
+- (unsigned long long)currentObserverCount;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isObservinglsd;
+- (bool)isObservinglsd;
 - (id)localObservers;
-- (void)networkUsageChanged:(BOOL)arg1;
+- (void)networkUsageChanged:(bool)arg1;
+- (void)pluginsDidInstall:(id)arg1;
+- (void)pluginsDidUninstall:(id)arg1;
+- (void)pluginsWillUninstall:(id)arg1;
 - (void)removeLocalObserver:(id)arg1;
-- (void)setObservinglsd:(BOOL)arg1;
+- (void)setObservinglsd:(bool)arg1;
 
 @end

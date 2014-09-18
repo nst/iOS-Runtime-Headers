@@ -5,19 +5,8 @@
 @interface PKPhysicsFieldSpring : PKPhysicsField {
 }
 
-@property BOOL isTangential;
-@property float minRadius;
-@property struct CGPoint { float x1; float x2; } offset;
++ (id)field;
 
-+ (id)fieldWithSpring:(struct CGPoint { float x1; float x2; })arg1 strength:(float)arg2 minRadius:(float)arg3;
-+ (id)fieldWithSpring:(struct CGPoint { float x1; float x2; })arg1 strength:(float)arg2;
-
-- (id)initWithSpring:(struct CGPoint { float x1; float x2; })arg1 strength:(float)arg2 minRadius:(float)arg3;
-- (BOOL)isTangential;
-- (float)minRadius;
-- (struct CGPoint { float x1; float x2; })offset;
-- (void)setIsTangential:(BOOL)arg1;
-- (void)setMinRadius:(float)arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (id)init;
 
 @end

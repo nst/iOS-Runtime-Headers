@@ -2,62 +2,62 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class <FlickrPostDelegate>, NSArray, NSData, NSString, NSURL;
+@class NSArray, NSData, NSString, NSURL;
 
 @interface FlickrPost : FlickrRequest <NSURLConnectionDelegate> {
     NSURL *_assetURL;
     int _contentType;
-    <FlickrPostDelegate> *_delegate;
-    NSString *_description;
-    BOOL _hidden;
     NSData *_photoData;
     long long _photoSetID;
+    NSString *_postDescription;
     int _safetyLevel;
     NSArray *_tags;
     NSString *_title;
     unsigned int _visibility;
+    bool_hidden;
 }
 
 @property(retain) NSURL * assetURL;
 @property int contentType;
-@property <FlickrPostDelegate> * delegate;
-@property(retain) NSString * description;
-@property BOOL hidden;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool hidden;
 @property(retain) NSData * photoData;
 @property long long photoSetID;
+@property(retain) NSString * postDescription;
 @property int safetyLevel;
+@property(readonly) Class superclass;
 @property(retain) NSArray * tags;
 @property(retain) NSString * title;
 @property unsigned int visibility;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_uploadData:(id)arg1 toAccount:(id)arg2;
+- (void).cxx_destruct;
+- (void)_uploadData:(id)arg1 toAccount:(id)arg2 completion:(id)arg3;
 - (id)assetURL;
 - (int)contentType;
-- (void)dealloc;
-- (id)delegate;
-- (id)description;
-- (BOOL)hidden;
+- (bool)hidden;
 - (id)initWithDictionary:(id)arg1;
 - (id)photoData;
 - (long long)photoSetID;
+- (id)postDescription;
 - (int)safetyLevel;
 - (id)serializedDictionary;
 - (void)setAssetURL:(id)arg1;
 - (void)setContentType:(int)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setDescription:(id)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setPhotoData:(id)arg1;
 - (void)setPhotoSetID:(long long)arg1;
+- (void)setPostDescription:(id)arg1;
 - (void)setSafetyLevel:(int)arg1;
 - (void)setTags:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setVisibility:(unsigned int)arg1;
 - (id)tags;
 - (id)title;
-- (BOOL)uploadToAccount:(id)arg1;
+- (bool)uploadToAccount:(id)arg1 completion:(id)arg2;
 - (unsigned int)visibility;
 
 @end

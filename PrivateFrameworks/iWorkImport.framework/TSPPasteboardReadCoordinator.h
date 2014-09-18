@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>, TSPFinalizeHandlerQueue, TSPObjectContext, TSPPasteboard;
+@class NSMapTable, NSObject<OS_dispatch_queue>, NSString, TSPFinalizeHandlerQueue, TSPObjectContext, TSPPasteboard;
 
 @interface TSPPasteboardReadCoordinator : TSPReadCoordinatorBase <TSPReadCoordinator> {
     struct hash_map<long long, TSP::DataInfo, TSP::DataIdentifierHash, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, TSP::DataInfo> > > { 
@@ -12,7 +12,7 @@
                     struct __hash_node<std::__1::pair<long long, TSP::DataInfo>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<long long, TSP::DataInfo>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<long long, TSP::DataInfo>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -23,7 +23,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<long long, TSP::DataInfo>, TSP::DataIdentifierHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<long long, TSP::DataInfo>, std::__1::equal_to<long long>, true> > { 
                 float __first_; 
@@ -32,39 +32,46 @@
     } _dataInfoMap;
     NSObject<OS_dispatch_queue> *_dataQueue;
     TSPFinalizeHandlerQueue *_finalizeHandlerQueue;
-    BOOL _isCrossAppPaste;
-    BOOL _isCrossDocumentPaste;
+    NSMapTable *_objects;
     TSPPasteboard *_pasteboard;
     TSPObjectContext *_targetContext;
     unsigned long long _version;
+    bool_isCrossAppPaste;
+    bool_isCrossDocumentPaste;
 }
 
-@property(readonly) BOOL isReadingFromDocument;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isReadingFromDocument;
+@property(readonly) Class superclass;
 @property(readonly) unsigned long long version;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)baseObjectUUID;
 - (id)context;
 - (void)didReferenceExternalObject:(id)arg1 withIdentifier:(long long)arg2;
 - (void)didUpdateLazyReferenceDelegate:(id)arg1;
-- (BOOL)endReading;
-- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(BOOL)arg3;
+- (bool)endReading;
+- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(bool)arg3;
+- (unsigned long long)fileFormatVersion;
 - (id)init;
 - (id)initWithPasteboard:(id)arg1 targetContext:(id)arg2 finalizeHandlerQueue:(id)arg3;
-- (BOOL)isCrossAppPaste;
-- (BOOL)isCrossDocumentPaste;
-- (BOOL)isFromPasteboard;
-- (BOOL)isReadingFromDocument;
+- (bool)isCrossAppPaste;
+- (bool)isCrossDocumentPaste;
+- (bool)isFromPasteboard;
+- (bool)isReadingFromDocument;
 - (id)objectForIdentifier:(long long)arg1;
 - (void)processMetadata:(id)arg1;
 - (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
-- (BOOL)readLazyReference:(id)arg1 object:(id*)arg2 error:(id*)arg3;
+- (bool)readLazyReference:(id)arg1 object:(id*)arg2 error:(id*)arg3;
 - (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id)arg2;
-- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
-- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
+- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(bool)arg4 allowUnknownObject:(bool)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
+- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(bool)arg3 allowUnknownObject:(bool)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
 - (void)reader:(id)arg1 didUnarchiveObject:(id)arg2;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
-- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(BOOL)arg2;
+- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(bool)arg2;
 - (unsigned long long)version;
 
 @end

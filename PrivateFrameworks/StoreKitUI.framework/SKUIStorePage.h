@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableDictionary, NSString, NSURL, SKUIArtwork, SKUIProductPage, SKUIUber, SSMetricsConfiguration;
+@class NSArray, NSData, NSHTTPURLResponse, NSMutableDictionary, NSString, NSURL, SKUIArtwork, SKUIProductPage, SKUIUber, SSMetricsConfiguration;
 
 @interface SKUIStorePage : NSObject <NSCopying> {
     SKUIArtwork *_backgroundArtwork;
+    NSData *_itmlData;
+    NSHTTPURLResponse *_itmlResponse;
     SSMetricsConfiguration *_metricsConfiguration;
     NSString *_metricsPageDescription;
     NSArray *_pageComponents;
@@ -17,6 +19,8 @@
     NSMutableDictionary *_values;
 }
 
+@property(retain) NSData * ITMLData;
+@property(retain) NSHTTPURLResponse * ITMLResponse;
 @property(retain) SKUIArtwork * backgroundArtwork;
 @property(retain) SSMetricsConfiguration * metricsConfiguration;
 @property(copy) NSString * metricsPageDescription;
@@ -28,6 +32,8 @@
 @property(retain) SKUIUber * uber;
 
 - (void).cxx_destruct;
+- (id)ITMLData;
+- (id)ITMLResponse;
 - (id)backgroundArtwork;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)metricsConfiguration;
@@ -37,6 +43,8 @@
 - (id)pageURL;
 - (id)productPage;
 - (void)setBackgroundArtwork:(id)arg1;
+- (void)setITMLData:(id)arg1;
+- (void)setITMLResponse:(id)arg1;
 - (void)setMetricsConfiguration:(id)arg1;
 - (void)setMetricsPageDescription:(id)arg1;
 - (void)setPageComponents:(id)arg1;

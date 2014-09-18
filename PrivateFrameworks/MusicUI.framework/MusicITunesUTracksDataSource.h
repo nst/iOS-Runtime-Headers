@@ -5,6 +5,6 @@
 @interface MusicITunesUTracksDataSource : MusicQueryDataSource {
 }
 
-- (id)initWithQuery:(id)arg1 entityType:(int)arg2;
+- (id)initWithQuery:(id)arg1 entityType:(long long)arg2;
 
 @end

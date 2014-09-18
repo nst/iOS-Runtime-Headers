@@ -8,23 +8,23 @@
     NSDate *_datePlayed;
     NSString *_externalIdentifier;
     RadioTrack *_track;
-    int _type;
+    long long _type;
 }
 
 @property(readonly) NSDate * datePlayed;
-@property(readonly) NSString * externalIdentifier;
+@property(copy,readonly) NSString * externalIdentifier;
 @property(readonly) RadioTrack * track;
-@property(readonly) int type;
+@property(readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)datePlayed;
 - (id)description;
 - (id)externalIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)track;
-- (int)type;
+- (long long)type;
 
 @end

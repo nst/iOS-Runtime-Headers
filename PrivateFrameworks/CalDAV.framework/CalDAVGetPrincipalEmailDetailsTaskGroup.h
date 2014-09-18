@@ -9,10 +9,14 @@
     NSURL *_principalURL;
 }
 
-@property(readonly) NSSet * addresses;
-@property(readonly) NSString * displayName;
+@property(retain,readonly) NSSet * addresses;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(retain,readonly) NSString * displayName;
+@property(readonly) unsigned long long hash;
 @property(retain) CalDAVPrincipalEmailDetailsResult * principalResult;
 @property(retain) NSURL * principalURL;
+@property(readonly) Class superclass;
 
 - (void)_finishWithError:(id)arg1;
 - (void)_processPropFind:(id)arg1;

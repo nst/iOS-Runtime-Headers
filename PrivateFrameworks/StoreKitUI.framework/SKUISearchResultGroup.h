@@ -12,18 +12,18 @@
 
 @property(readonly) NSArray * availableEntities;
 @property(readonly) NSString * groupKind;
-@property(readonly) int numberOfEntities;
+@property(readonly) long long numberOfEntities;
 
 - (void).cxx_destruct;
-- (void)_addEntity:(id)arg1 withIdentifier:(id)arg2 type:(int)arg3;
+- (void)_addEntity:(id)arg1 withIdentifier:(id)arg2 type:(long long)arg3;
 - (void)_removeEntitiesAtIndexes:(id)arg1;
-- (void)_setEntity:(id)arg1 atIndex:(int)arg2;
+- (void)_setEntity:(id)arg1 atIndex:(long long)arg2;
 - (void)_setGroupKind:(id)arg1;
 - (id)availableEntities;
-- (id)entityAtIndex:(int)arg1;
-- (int)entityTypeAtIndex:(int)arg1;
+- (id)entityAtIndex:(long long)arg1;
+- (long long)entityTypeAtIndex:(long long)arg1;
 - (id)groupKind;
 - (id)init;
-- (int)numberOfEntities;
+- (long long)numberOfEntities;
 
 @end

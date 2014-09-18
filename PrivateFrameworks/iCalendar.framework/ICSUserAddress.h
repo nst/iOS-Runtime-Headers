@@ -14,11 +14,11 @@
 @property int partstat;
 @property(retain) ICSDateValue * partstatModified;
 @property int role;
-@property BOOL rsvp;
+@property bool rsvp;
 @property int scheduleagent;
 @property int scheduleforcesend;
 @property int schedulestatus;
-@property BOOL x_apple_self_invited;
+@property bool x_apple_self_invited;
 
 + (id)ICSStringFromCalendarUser:(int)arg1;
 + (id)ICSStringFromParticipationStatus:(int)arg1;
@@ -41,16 +41,18 @@
 - (id)email;
 - (id)emailAddress;
 - (void)fixAddress;
-- (BOOL)hasEmailAddress;
+- (bool)hasEmailAddress;
 - (id)initWithEmailAddress:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isEmailAddress;
-- (BOOL)isHTTPAddress;
-- (BOOL)isHTTPSAddress;
+- (bool)isEmailAddress;
+- (bool)isHTTPAddress;
+- (bool)isHTTPSAddress;
+- (id)parametersToObscure;
 - (int)partstat;
 - (id)partstatModified;
+- (id)propertiesToObscure;
 - (int)role;
-- (BOOL)rsvp;
+- (bool)rsvp;
 - (int)scheduleagent;
 - (int)scheduleforcesend;
 - (int)schedulestatus;
@@ -61,14 +63,15 @@
 - (void)setPartstat:(int)arg1;
 - (void)setPartstatModified:(id)arg1;
 - (void)setRole:(int)arg1;
-- (void)setRsvp:(BOOL)arg1;
+- (void)setRsvp:(bool)arg1;
 - (void)setScheduleagent:(int)arg1;
 - (void)setScheduleforcesend:(int)arg1;
 - (void)setSchedulestatus:(int)arg1;
 - (void)setURL:(id)arg1;
-- (void)setX_apple_self_invited:(BOOL)arg1;
+- (void)setX_apple_self_invited:(bool)arg1;
 - (void)setX_calendarserver_email:(id)arg1;
-- (BOOL)x_apple_self_invited;
+- (bool)shouldObscureValue;
+- (bool)x_apple_self_invited;
 - (id)x_calendarserver_email;
 
 @end

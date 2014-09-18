@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@class <SBCardItemsControllerRemoteInterface>, NSString;
+@class NSString, NSXPCConnection;
 
-@interface SBSCardItemsController : NSObject <XPCProxyTarget, SBSCardItemsControllerRemoteInterface> {
+@interface SBSCardItemsController : NSObject <SBSCardItemsControllerRemoteInterface> {
+    NSXPCConnection *_connection;
     NSString *_identifier;
-    <SBCardItemsControllerRemoteInterface> *_remoteProxy;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)addCardItems:(id)arg1;
 - (void)clearAllCardItems;
 - (void)dealloc;
 - (void)getCardItemsWithHandler:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)removeCardItems:(id)arg1;
 - (void)setCardItems:(id)arg1;
 

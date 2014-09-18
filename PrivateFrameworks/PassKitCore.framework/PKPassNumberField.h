@@ -6,21 +6,21 @@
 
 @interface PKPassNumberField : PKPassField {
     NSString *_currencyCode;
-    int _numberStyle;
+    long long _numberStyle;
 }
 
 @property(copy) NSString * currencyCode;
-@property int numberStyle;
+@property long long numberStyle;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)currencyCode;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)numberStyle;
+- (long long)numberStyle;
 - (void)setCurrencyCode:(id)arg1;
-- (void)setNumberStyle:(int)arg1;
+- (void)setNumberStyle:(long long)arg1;
 - (id)value;
 
 @end

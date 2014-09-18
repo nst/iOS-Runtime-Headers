@@ -2,25 +2,28 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendarNotification, EKEventStore;
+@class EKCalendarNotification, EKEventStore, NSDate;
 
 @interface EKCalendarNotificationReference : NSObject {
     struct { 
-        int notificationType; 
-        struct { 
-            int entityType; 
-            int entityID; 
-        } objectID; 
-        double date; 
-    } _cadNotification;
+        int entityType; 
+        int entityID; 
+    NSDate *_date;
     EKEventStore *_eventStore;
     EKCalendarNotification *_notification;
+    } _objectID;
+    int _type;
 }
 
 @property(readonly) EKCalendarNotification * notification;
+@property(readonly) int type;
 
+- (long long)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
 - (void)dealloc;
-- (id)initWithNotification:(struct { int x1; struct { int x_2_1_1; int x_2_1_2; } x2; double x3; })arg1 eventStore:(id)arg2;
+- (id)description;
+- (id)initWithType:(int)arg1 objectID:(struct { int x1; int x2; })arg2 date:(id)arg3 eventStore:(id)arg4;
+- (id)initWithType:(int)arg1 objectID:(struct { int x1; int x2; })arg2 eventStore:(id)arg3;
 - (id)notification;
+- (int)type;
 
 @end

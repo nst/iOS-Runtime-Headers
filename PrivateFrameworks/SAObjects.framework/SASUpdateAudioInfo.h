@@ -10,15 +10,19 @@
 @property(copy) NSString * aceId;
 @property(copy) NSString * audioSource;
 @property int codec;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * deviceIdentifier;
 @property(copy) NSString * deviceModel;
 @property(copy) NSString * dspStatus;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * headsetAddress;
 @property(copy) NSString * headsetId;
 @property(copy) NSString * headsetName;
 @property(copy) NSNumber * noiseReductionLevel;
 @property(copy) NSString * origin;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 
 + (id)updateAudioInfo;
 + (id)updateAudioInfoWithDictionary:(id)arg1 context:(id)arg2;

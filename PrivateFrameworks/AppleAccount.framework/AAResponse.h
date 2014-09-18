@@ -2,27 +2,36 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSError, NSHTTPURLResponse, NSString;
+@class NSData, NSDictionary, NSError, NSHTTPURLResponse, NSNumber, NSString;
 
 @interface AAResponse : NSObject {
+    NSData *_data;
     NSError *_error;
     NSHTTPURLResponse *_httpResponse;
+    NSNumber *_maxAge;
     NSDictionary *_responseDictionary;
+    long long _statusCode;
 }
 
+@property(readonly) NSData * data;
 @property(retain) NSError * error;
+@property(readonly) NSNumber * maxAge;
 @property(readonly) NSString * protocolVersion;
 @property(readonly) NSDictionary * responseDictionary;
+@property(readonly) long long statusCode;
 
 - (void).cxx_destruct;
 - (id)_deviceSpecificLocalizedString:(id)arg1;
 - (void)_parsePlistResponse:(id)arg1;
 - (id)_stringWithDescriptionForResponseError:(id)arg1;
+- (id)data;
 - (id)error;
-- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(BOOL)arg3;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(bool)arg3;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)maxAge;
 - (id)protocolVersion;
 - (id)responseDictionary;
 - (void)setError:(id)arg1;
+- (long long)statusCode;
 
 @end

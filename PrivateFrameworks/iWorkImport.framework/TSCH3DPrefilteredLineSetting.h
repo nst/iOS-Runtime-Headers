@@ -47,44 +47,44 @@
             float a; 
             float q; 
         } ; 
-    BOOL mCullBackfaces;
-    BOOL mDisableColorOutput;
+    boolmCullBackfaces;
+    boolmDisableColorOutput;
+    boolmUseNormals;
     } mFilterRadius;
     float mLineWidth;
     TSDStroke *mStroke;
     } mStrokeColor;
-    BOOL mUseNormals;
 }
 
-@property BOOL cullBackfaces;
-@property BOOL disableColorOutput;
+@property bool cullBackfaces;
+@property bool disableColorOutput;
 @property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } filterRadius;
 @property float lineWidth;
 @property(copy) TSDStroke * stroke;
 @property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } strokeColor;
-@property BOOL useNormals;
+@property bool useNormals;
 
 + (id)setting;
 
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)cullBackfaces;
+- (bool)cullBackfaces;
 - (void)dealloc;
-- (BOOL)disableColorOutput;
+- (bool)disableColorOutput;
 - (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })filterRadius;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (float)lineWidth;
-- (void)setCullBackfaces:(BOOL)arg1;
-- (void)setDisableColorOutput:(BOOL)arg1;
+- (void)setCullBackfaces:(bool)arg1;
+- (void)setDisableColorOutput:(bool)arg1;
 - (void)setFilterRadius:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setStroke:(id)arg1;
 - (void)setStrokeColor:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
-- (void)setUseNormals:(BOOL)arg1;
+- (void)setUseNormals:(bool)arg1;
 - (id)stroke;
 - (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })strokeColor;
-- (BOOL)useNormals;
+- (bool)useNormals;
 
 @end

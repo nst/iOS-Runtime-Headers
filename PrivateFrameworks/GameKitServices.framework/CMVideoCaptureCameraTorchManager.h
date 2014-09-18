@@ -2,13 +2,20 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
  */
 
+@class NSString;
+
 @interface CMVideoCaptureCameraTorchManager : NSObject <AXCameraTorchManager> {
     struct tagHANDLE { int x1; } *_hCMCapture;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)closeTorchDevice;
 - (id)initWithVideoCaptureHandle:(struct tagHANDLE { int x1; }*)arg1;
-- (BOOL)openTorchDevice;
+- (bool)openTorchDevice;
 - (void)turnTorchOff;
 - (void)turnTorchOn;
 

@@ -7,12 +7,15 @@
  */
 
 @interface _GCControllerButtonInput : GCControllerButtonInput {
+    id _pressedChangedHandler;
     float _value;
     id _valueChangedHandler;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_setValue:(float)arg1;
+- (bool)_setValue:(float)arg1;
+- (id)pressedChangedHandler;
+- (void)setPressedChangedHandler:(id)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (float)value;
 - (id)valueChangedHandler;

@@ -4,22 +4,27 @@
 
 @interface SKUIScreenshotDataConsumer : SKUIImageDataConsumer {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL _forcesPortrait;
+        double width; 
+        double height; 
     } _screenshotSize;
+    bool_drawsBorder;
+    bool_forcesPortrait;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } constraintSize;
-@property BOOL forcesPortrait;
+@property(readonly) struct CGSize { double x1; double x2; } constraintSize;
+@property bool drawsBorder;
+@property bool forcesPortrait;
 
-+ (id)consumerWithScreenshotSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)consumer;
++ (id)consumerWithScreenshotSize:(struct CGSize { double x1; double x2; })arg1;
 
-- (struct CGSize { float x1; float x2; })constraintSize;
-- (BOOL)forcesPortrait;
-- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })constraintSize;
+- (bool)drawsBorder;
+- (bool)forcesPortrait;
+- (id)imageForColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)imageForColor:(id)arg1;
 - (id)imageForImage:(id)arg1;
-- (void)setForcesPortrait:(BOOL)arg1;
+- (void)setDrawsBorder:(bool)arg1;
+- (void)setForcesPortrait:(bool)arg1;
 
 @end

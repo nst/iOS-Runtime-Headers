@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray, NSString;
+@class NSString;
 
 @interface IMPowerAssertion : NSObject {
     unsigned int _assertion;
     NSString *_identifier;
-    NSArray *_stack;
 }
 
 - (void)dealloc;

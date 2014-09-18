@@ -6,43 +6,43 @@
 
 @interface TPWallpaperView : UIView {
     _UIBackdropView *_backdropEffectView;
-    float _blurProportion;
-    BOOL _blursBackground;
+    double _blurProportion;
     UIImage *_contactImage;
     UIImageView *_contactImageView;
-    BOOL _hidesContactImage;
-    BOOL _shouldBindBlurringWithPresenceOfContactImage;
-    BOOL _shouldLockContactImage;
+    bool_blursBackground;
+    bool_hidesContactImage;
+    bool_shouldBindBlurringWithPresenceOfContactImage;
+    bool_shouldLockContactImage;
 }
 
 @property(retain) _UIBackdropView * backdropEffectView;
-@property float blurProportion;
-@property BOOL blursBackground;
+@property double blurProportion;
+@property bool blursBackground;
 @property(retain) UIImage * contactImage;
 @property(retain) UIImageView * contactImageView;
-@property BOOL hidesContactImage;
-@property BOOL shouldBindBlurringWithPresenceOfContactImage;
-@property BOOL shouldLockContactImage;
+@property bool hidesContactImage;
+@property bool shouldBindBlurringWithPresenceOfContactImage;
+@property bool shouldLockContactImage;
 
 - (id)backdropEffectView;
-- (float)blurProportion;
-- (BOOL)blursBackground;
+- (double)blurProportion;
+- (bool)blursBackground;
 - (id)contactImage;
 - (id)contactImageView;
 - (void)dealloc;
-- (BOOL)hidesContactImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)hidesContactImage;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBackdropEffectView:(id)arg1;
-- (void)setBlurProportion:(float)arg1;
-- (void)setBlursBackground:(BOOL)arg1;
-- (void)setContactImage:(id)arg1 animated:(BOOL)arg2;
+- (void)setBlurProportion:(double)arg1;
+- (void)setBlursBackground:(bool)arg1;
+- (void)setContactImage:(id)arg1 animated:(bool)arg2;
 - (void)setContactImage:(id)arg1;
 - (void)setContactImageView:(id)arg1;
-- (void)setHidesContactImage:(BOOL)arg1;
-- (void)setShouldBindBlurringWithPresenceOfContactImage:(BOOL)arg1;
-- (void)setShouldLockContactImage:(BOOL)arg1;
-- (BOOL)shouldBindBlurringWithPresenceOfContactImage;
-- (BOOL)shouldLockContactImage;
+- (void)setHidesContactImage:(bool)arg1;
+- (void)setShouldBindBlurringWithPresenceOfContactImage:(bool)arg1;
+- (void)setShouldLockContactImage:(bool)arg1;
+- (bool)shouldBindBlurringWithPresenceOfContactImage;
+- (bool)shouldLockContactImage;
 - (void)updateBindBlurringWithPresenceOfContactImage;
 
 @end

@@ -6,13 +6,12 @@
 
 @interface UIPrintInteractionControllerInternals : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     UIPrintInfo *_activePrintInfo;
-    int _currentPage;
+    long long _currentPage;
     UIPrintPageRenderer *_formatterRenderer;
-    BOOL _manualPrintPageEnabled;
-    int _pageCount;
+    long long _pageCount;
     } _pageRange;
     UIPrintPaper *_paper;
     int _printInfoState;
@@ -20,7 +19,8 @@
     PKPrintSettings *_printSettings;
     PKPrinter *_printer;
     UIPrintingProgress *_printingProgress;
-    BOOL _supressNotifyDismissed;
+    bool_manualPrintPageEnabled;
+    bool_supressNotifyDismissed;
 }
 
 - (void)dealloc;

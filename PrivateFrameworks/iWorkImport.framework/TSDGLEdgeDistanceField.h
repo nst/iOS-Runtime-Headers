@@ -2,39 +2,48 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLFrameBufferTextureConfig, TSDGLShader;
+@class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLState;
 
 @interface TSDGLEdgeDistanceField : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
-    TSDGLShader *_combineShader;
-    TSDGLShader *_drawShader;
+        double width; 
+        double height; 
+    struct CGSize { 
+        double width; 
+        double height; 
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    TSDGLState *_GLState;
+    double _downsampleScale;
+    } _edgeInsets;
     TSDGLFrameBuffer *_exteriorFramebuffer;
-    TSDGLShader *_floodShader;
-    TSDGLFrameBufferTextureConfig *_framebufferTextureConfig;
-    TSDGLShader *_gradientShader;
     unsigned int _inputTexture;
     TSDGLFrameBuffer *_interiorFramebuffer;
     int _oldViewport[4];
+    TSDGLDataBuffer *_origDataBuffer;
     TSDGLDataBuffer *_rectDataBuffer;
-    TSDGLShader *_seedShader;
+    } _resultTextureSize;
     TSDGLDataBuffer *_squareDataBuffer;
     } _squareSize;
     } _textureSize;
 }
 
-+ (unsigned int)distanceFieldTextureWithTexture:(unsigned int)arg1 textureSize:(struct CGSize { float x1; float x2; })arg2 maxDistance:(float)arg3;
++ (void)didEndUsingShaders;
++ (id)distanceFieldTextureWithTexture:(unsigned int)arg1 textureSize:(struct CGSize { double x1; double x2; })arg2 maxDistance:(long long)arg3 edgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4 downsampleScale:(double)arg5 floatTexture:(bool)arg6 GLState:(id)arg7;
++ (void)willBeginUsingShaders;
 
 - (void)dealloc;
-- (id)initWithTexture:(unsigned int)arg1 textureSize:(struct CGSize { float x1; float x2; })arg2;
-- (unsigned int)p_combinedTextureWithCurrentGLFramebuffer:(int)arg1;
-- (void)p_floodTextureInFramebuffer:(id)arg1 maxDistance:(float)arg2;
+- (id)initWithTexture:(unsigned int)arg1 textureSize:(struct CGSize { double x1; double x2; })arg2 edgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 downsampleScale:(double)arg4 GLState:(id)arg5;
+- (unsigned int)p_combinedTextureWithCurrentGLFramebuffer:(int)arg1 floatTexture:(bool)arg2;
+- (void)p_floodTextureInFramebuffer:(id)arg1 maxDistance:(long long)arg2;
 - (unsigned int)p_gradientTextureFromCombinedTexture:(unsigned int)arg1 withCurrentGLFramebuffer:(int)arg2;
-- (void)p_seedTextureFromTexture:(unsigned int)arg1 invertSeed:(BOOL)arg2;
+- (void)p_seedTextureFromTexture:(unsigned int)arg1 invertSeed:(bool)arg2;
 - (void)p_setupBuffers;
 - (void)p_setupShaders;
 - (void)p_writeIntoSquareTexture;

@@ -10,10 +10,14 @@
 @property(copy) NSString * aceId;
 @property(copy) NSString * appDisplayName;
 @property(copy) NSString * bundleId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * originalCommandId;
 @property(copy) NSString * punchOutName;
 @property(copy) NSURL * punchOutUri;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 
 + (id)appPunchOutEvent;
 + (id)appPunchOutEventWithDictionary:(id)arg1 context:(id)arg2;

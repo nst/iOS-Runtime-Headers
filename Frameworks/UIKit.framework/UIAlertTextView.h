@@ -5,6 +5,6 @@
 @interface UIAlertTextView : _UICompatibilityTextView {
 }
 
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 
 @end

@@ -2,82 +2,42 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPresenterDelegate>, <ABPropertyCellDelegate>, ABPropertyGroupItem, NSDictionary, NSLayoutConstraint, UILabel, UIResponder, UIView;
+@class <ABPresenterDelegate>, <ABPropertyCellDelegate>, ABPropertyGroupItem, UIResponder;
 
-@interface ABPropertyCell : ABContactCell {
-    BOOL _allowsEditing;
+@interface ABPropertyCell : ABLabeledCell {
     <ABPropertyCellDelegate> *_delegate;
-    BOOL _displayConstraintsActive;
-    BOOL _editingConstraintsActive;
     UIResponder *_firstResponderItem;
-    UIView *_innerContentView;
-    UILabel *_labelLabel;
-    NSDictionary *_labelTextAttributes;
-    float _labelWidth;
-    NSLayoutConstraint *_labelWidthConstraint;
+    double _labelWidth;
     <ABPresenterDelegate> *_presentingDelegate;
-    UILabel *_valueLabel;
-    NSDictionary *_valueTextAttributes;
+    bool_allowsEditing;
 }
 
-@property BOOL allowsEditing;
+@property bool allowsEditing;
 @property <ABPropertyCellDelegate> * delegate;
-@property BOOL displayConstraintsActive;
-@property BOOL editingConstraintsActive;
 @property(readonly) UIResponder * firstResponderItem;
-@property(readonly) UIView * innerContentView;
-@property(readonly) UILabel * labelLabel;
-@property(copy) NSDictionary * labelTextAttributes;
-@property float labelWidth;
-@property(retain) NSLayoutConstraint * labelWidthConstraint;
+@property double labelWidth;
 @property <ABPresenterDelegate> * presentingDelegate;
 @property(readonly) ABPropertyGroupItem * propertyItem;
-@property(readonly) UILabel * valueLabel;
-@property(copy) NSDictionary * valueTextAttributes;
 
-+ (float)cellHeight;
-+ (float)labelsPadding;
-+ (BOOL)requiresConstraintBasedLayout;
-
-- (void)_adjustCellLayoutForSectionLocation:(int)arg1;
-- (BOOL)allowsEditing;
-- (id)contentViewConstraints;
-- (id)contentViewEditingConstraints;
+- (bool)allowsEditing;
 - (void)copy:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
-- (BOOL)displayConstraintsActive;
-- (BOOL)editingConstraintsActive;
 - (id)firstResponderItem;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)innerContentView;
-- (id)labelLabel;
-- (id)labelTextAttributes;
-- (float)labelWidth;
-- (id)labelWidthConstraint;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)labelString;
+- (double)labelWidth;
+- (void)performAccessoryAction;
 - (void)performDefaultAction;
 - (id)presentingDelegate;
 - (id)propertyItem;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (void)setBackgroundColor:(id)arg1;
+- (void)setAllowsEditing:(bool)arg1;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayConstraintsActive:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setEditingConstraintsActive:(BOOL)arg1;
-- (void)setLabelTextAttributes:(id)arg1;
-- (void)setLabelWidth:(float)arg1;
-- (void)setLabelWidthConstraint:(id)arg1;
-- (void)setNeedsUpdateDisplayConstraints;
-- (void)setNeedsUpdateEditingConstraints;
+- (void)setLabelWidth:(double)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)setPropertyItem:(id)arg1;
-- (void)setValueTextAttributes:(id)arg1;
-- (void)tintColorDidChange;
-- (void)updateConstraints;
+- (void)updateValueWithPropertyItem:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
-- (id)valueLabel;
-- (id)valueTextAttributes;
-- (void)willMoveToSuperview:(id)arg1;
+- (id)valueString;
 
 @end

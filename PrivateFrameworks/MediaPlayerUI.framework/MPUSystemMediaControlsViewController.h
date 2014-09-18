@@ -2,78 +2,97 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUSystemMediaControlsDelegate>, MPAVRoutingController, MPUNowPlayingController, NSArray, NSDictionary, NSString, NSTimer, RUTrackActionsModalItem, RUTrackActionsViewController, UIImageView, UIPopoverController, UIView, _MPUSystemMediaControlsView;
+@class <MPUSystemMediaControlsDelegate>, MPAVRoutingController, MPUNowPlayingController, MPUSystemMediaControlsView, NSArray, NSDictionary, NSString, NSTimer, RUTrackActionsModalItem, RUTrackActionsViewController, UIImageView, UIPopoverController, UIView;
 
-@interface MPUSystemMediaControlsViewController : UIViewController <MPUNowPlayingDelegate, MPUTransportControlsViewDelegate, MPURemoteViewControllerPresentation, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPAVRoutingControllerDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverControllerDelegate> {
+@interface MPUSystemMediaControlsViewController : UIViewController <MPUNowPlayingDelegate, MPUTransportControlsViewDelegate, MPURemoteViewControllerPresentation, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPUSystemMediaControlsViewDelegate, MPAVRoutingControllerDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverControllerDelegate> {
     UIImageView *_artworkImageView;
     NSString *_audioCategoryForDisabledHUD;
     NSArray *_currentlySupportedCommands;
     <MPUSystemMediaControlsDelegate> *_delegate;
     double _lastDurationFromUpdate;
-    BOOL _lockscreenDisabledForScreenTurnOff;
-    _MPUSystemMediaControlsView *_mediaControlsView;
+    MPUSystemMediaControlsView *_mediaControlsView;
+    NSArray *_notificationObservers;
     MPUNowPlayingController *_nowPlayingController;
     NSDictionary *_nowPlayingInfoForPresentedTrackActions;
-    BOOL _nowPlayingInfoIsOverridingSupportedCommands;
-    BOOL _persistentUpdatesEnabled;
     MPAVRoutingController *_routingController;
     unsigned int _runningLongPressCommand;
     double _scrubbedTimeDestination;
     NSTimer *_scrubberCommitTimer;
-    int _style;
+    NSTimer *_skipInformationRevealTimer;
+    long long _style;
     RUTrackActionsModalItem *_trackActionsModalItem;
     UIPopoverController *_trackActionsPopoverController;
     RUTrackActionsViewController *_trackActionsViewController;
-    BOOL _wantsToLaunchNowPlayingApp;
+    bool_lockscreenDisabledForScreenTurnOff;
+    bool_nowPlayingIsRadioStation;
+    bool_persistentUpdatesEnabled;
+    bool_wantsToLaunchNowPlayingApp;
 }
 
 @property(readonly) UIView * artworkView;
+@property(copy,readonly) NSString * debugDescription;
 @property <MPUSystemMediaControlsDelegate> * delegate;
-@property BOOL persistentUpdatesEnabled;
-@property(readonly) int style;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool persistentUpdatesEnabled;
+@property(readonly) long long style;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyNowPlayingInformation:(id)arg1 toTrackActioningController:(id)arg2;
 - (void)_backlightLevelChangedNotification:(id)arg1;
 - (void)_beginScrubberCommitTimer;
+- (void)_buyButtonActionForSender:(id)arg1 command:(unsigned int)arg2;
 - (void)_cancelRunningLongPressCommand;
+- (id)_commandOptionsForRadioItemUsingNowPlayingInfo:(id)arg1;
 - (void)_commitCurrentScrubberValue;
-- (void)_infoButtonTapped:(id)arg1;
+- (void)_invalidateSkipInformationRevealTimer;
 - (void)_launchCurrentNowPlayingApp;
 - (void)_likeBanButtonTapped:(id)arg1;
+- (void)_revealSkipInformation;
+- (void)_scheduleSkipInformationRevealTimer;
 - (void)_setupNotifications;
 - (void)_stopScrubberCommitTimer;
 - (void)_supportedCommandsDidChangeNotification:(id)arg1;
+- (void)_systemAppDidSkipTrackNotification:(id)arg1;
 - (void)_tearDownNotifications;
+- (void)_updateBuyButtonsWithNowPlayingInfo:(id)arg1;
 - (void)_updateSupportedCommands;
 - (id)artworkView;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)loadView;
 - (void)mediaControlsTitlesViewWasTapped:(id)arg1;
-- (void)modalItem:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)mediaControlsViewDidCancelBuyTrackDownloadAction:(id)arg1;
+- (void)mediaControlsViewDidConfirmBuyAlbumAction:(id)arg1;
+- (void)mediaControlsViewDidConfirmBuyTrackAction:(id)arg1;
+- (void)modalItem:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingApplicationDidChange:(id)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingInfoDidChange:(id)arg2;
-- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(BOOL)arg2;
-- (BOOL)persistentUpdatesEnabled;
+- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(bool)arg2;
+- (bool)persistentUpdatesEnabled;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)progressViewDidBeginScrubbing:(id)arg1;
 - (void)progressViewDidEndScrubbing:(id)arg1;
 - (void)remoteViewControllerDidFinish;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPersistentUpdatesEnabled:(BOOL)arg1;
-- (int)style;
-- (void)trackActioningObject:(id)arg1 didSelectAction:(int)arg2 atIndex:(int)arg3;
-- (id)trackActioningObject:(id)arg1 localizedTitleForAction:(int)arg2;
-- (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(int)arg2;
-- (void)transportControlsView:(id)arg1 longPressEndOnControlType:(int)arg2;
-- (void)transportControlsView:(id)arg1 tapOnAccessoryButtonType:(int)arg2;
-- (void)transportControlsView:(id)arg1 tapOnControlType:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setPersistentUpdatesEnabled:(bool)arg1;
+- (long long)style;
+- (void)trackActioningObject:(id)arg1 didSelectAction:(long long)arg2 atIndex:(long long)arg3;
+- (id)trackActioningObject:(id)arg1 localizedTitleForAction:(long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transportControlsView:(id)arg1 adjustedFrameOfTransportButtonWithControlType:(long long)arg2 proposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct CGSize { double x1; double x2; })transportControlsView:(id)arg1 adjustedMaximumTransportButtonSizeWithProposedSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)transportControlsView:(id)arg1 imageForTransportButtonWithControlType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 longPressEndOnControlType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 prepareTransportButton:(id)arg2;
+- (void)transportControlsView:(id)arg1 tapOnAccessoryButtonType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 tapOnControlType:(long long)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

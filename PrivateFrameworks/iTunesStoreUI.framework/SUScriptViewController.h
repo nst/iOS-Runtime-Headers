@@ -35,7 +35,7 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (void)_dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)_dismissModalViewControllerAnimated:(bool)arg1;
 - (void)_dismissModalViewControllerWithTransition:(id)arg1;
 - (id)_parentViewControllerForVolumeViewController;
 - (void)_presentModalViewController:(id)arg1 withTransition:(id)arg2;
@@ -45,11 +45,11 @@
 - (id)backgroundColor;
 - (id)contextDictionary;
 - (void)dealloc;
-- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)dismissModalViewControllerAnimated:(bool)arg1;
 - (void)dismissModalViewControllerWithTransition:(id)arg1;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (void)dismissVolumeViewControllerAnimated:(id)arg1;
-- (BOOL)equals:(id)arg1;
+- (bool)equals:(id)arg1;
 - (id)inputAccessoryViewController;
 - (id)modalPresentationStyle;
 - (id)modalPresentationStyleNameFormSheet;
@@ -73,7 +73,7 @@
 - (void)setNativeViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setShowsLibraryButton:(id)arg1;
-- (void)setToolbarItems:(id)arg1 animated:(BOOL)arg2;
+- (void)setToolbarItems:(id)arg1 animated:(bool)arg2;
 - (void)setToolbarItems:(id)arg1;
 - (void)setTopBackgroundColor:(id)arg1;
 - (void)setTransientViewController:(id)arg1;

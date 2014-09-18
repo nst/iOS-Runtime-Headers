@@ -8,24 +8,32 @@
     AVMutableMetadataItemInternal *_mutablePriv;
 }
 
+@property(copy) NSString * dataType;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property(copy) NSString * extendedLanguageTag;
 @property(copy) NSDictionary * extraAttributes;
-@property(copy) <NSObject><NSCopying> * key;
-@property(copy) NSString * keySpace;
+@property(copy) NSString * identifier;
 @property(copy) NSLocale * locale;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property(copy) <NSObject><NSCopying> * value;
 
++ (id)keyPathsForValuesAffectingIdentifier;
 + (id)metadataItem;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dataType;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)extendedLanguageTag;
 - (id)extraAttributes;
+- (id)identifier;
 - (id)key;
 - (id)keySpace;
 - (id)locale;
+- (void)setDataType:(id)arg1;
 - (void)setDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setExtendedLanguageTag:(id)arg1;
 - (void)setExtraAttributes:(id)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setKeySpace:(id)arg1;
 - (void)setLocale:(id)arg1;

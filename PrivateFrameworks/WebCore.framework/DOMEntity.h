@@ -7,9 +7,9 @@
 @interface DOMEntity : DOMNode {
 }
 
-@property(readonly) NSString * notationName;
-@property(readonly) NSString * publicId;
-@property(readonly) NSString * systemId;
+@property(copy,readonly) NSString * notationName;
+@property(copy,readonly) NSString * publicId;
+@property(copy,readonly) NSString * systemId;
 
 - (id)notationName;
 - (id)publicId;

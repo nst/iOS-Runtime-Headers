@@ -2,20 +2,16 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface IMHandleRegistrarInternal : NSObject {
     NSMutableDictionary *_accountSiblingsMap;
     NSMutableArray *_allIMHandles;
-    BOOL _buildingChatSiblings;
-    NSMutableDictionary *_candidateNamesMap;
     NSMutableDictionary *_chatSiblingsMap;
     NSMutableDictionary *_existingAccountSiblingsMap;
     NSMutableDictionary *_existingChatSiblingsMap;
-    NSMutableSet *_knownConflictingNames;
-    int _nameStyle;
     NSMutableDictionary *_siblingsMap;
-    NSMutableDictionary *_usedUniqueNames;
+    bool_buildingChatSiblings;
 }
 
 - (void)dealloc;

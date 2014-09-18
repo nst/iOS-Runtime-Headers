@@ -8,12 +8,12 @@
 - (id)controlKeyBackgroundColorName;
 - (id)defaultKeyBackgroundColorName;
 - (id)initWithRenderConfig:(id)arg1;
-- (id)traitsForCellSize:(struct CGSize { float x1; float x2; })arg1 highlighted:(BOOL)arg2 edges:(BOOL)arg3;
-- (id)traitsForEdgeGradientWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)traitsForEmptyExtendedPane:(struct CGSize { float x1; float x2; })arg1 rowHeight:(float)arg2 idiomPad:(BOOL)arg3 clipCorners:(BOOL)arg4;
-- (id)traitsForExtendedCellSize:(struct CGSize { float x1; float x2; })arg1 highlighted:(BOOL)arg2 groupHeader:(BOOL)arg3 edges:(unsigned int)arg4;
-- (id)traitsForHWRCellSize:(struct CGSize { float x1; float x2; })arg1 highlighted:(BOOL)arg2;
-- (id)traitsForSortControlBackgroundWithSize:(struct CGSize { float x1; float x2; })arg1 edges:(unsigned int)arg2;
-- (id)traitsForToggleButtonWithSize:(struct CGSize { float x1; float x2; })arg1 highlighted:(BOOL)arg2 edges:(unsigned int)arg3;
+- (id)traitsForCellSize:(struct CGSize { double x1; double x2; })arg1 highlighted:(bool)arg2 edges:(bool)arg3;
+- (id)traitsForEdgeGradientWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)traitsForEmptyExtendedPane:(struct CGSize { double x1; double x2; })arg1 rowHeight:(double)arg2 idiomPad:(bool)arg3 clipCorners:(bool)arg4;
+- (id)traitsForExtendedCellSize:(struct CGSize { double x1; double x2; })arg1 highlighted:(bool)arg2 groupHeader:(bool)arg3 edges:(unsigned long long)arg4;
+- (id)traitsForHWRCellSize:(struct CGSize { double x1; double x2; })arg1 highlighted:(bool)arg2;
+- (id)traitsForSortControlBackgroundWithSize:(struct CGSize { double x1; double x2; })arg1 edges:(unsigned long long)arg2;
+- (id)traitsForToggleButtonWithSize:(struct CGSize { double x1; double x2; })arg1 highlighted:(bool)arg2 edges:(unsigned long long)arg3;
 
 @end

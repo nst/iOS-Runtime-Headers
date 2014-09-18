@@ -8,11 +8,11 @@
 }
 
 @property(copy) TSUColor * color;
-@property float fraction;
-@property float inflection;
+@property double fraction;
+@property double inflection;
 
 - (void)setColor:(id)arg1;
-- (void)setFraction:(float)arg1;
-- (void)setInflection:(float)arg1;
+- (void)setFraction:(double)arg1;
+- (void)setInflection:(double)arg1;
 
 @end

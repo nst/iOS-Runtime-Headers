@@ -4,13 +4,11 @@
 
 @class UIControl;
 
-@interface PreferencesTableControlCell : UITableViewCell {
-    UIControl *_control;
+@interface PreferencesTableControlCell : EKUIConstrainedFontsTableViewCell {
 }
 
 @property(retain) UIControl * control;
 
-- (void).cxx_destruct;
 - (id)control;
 - (void)setControl:(id)arg1;
 

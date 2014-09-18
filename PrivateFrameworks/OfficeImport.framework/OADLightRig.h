@@ -12,10 +12,11 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (int)direction;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)rotation;
 - (void)setDirection:(int)arg1;
 - (void)setRotation:(id)arg1;

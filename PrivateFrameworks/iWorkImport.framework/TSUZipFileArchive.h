@@ -2,28 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSUReadChannel>, NSObject<OS_dispatch_queue>, NSURL;
+@class NSObject<OS_dispatch_queue>, NSURL;
 
 @interface TSUZipFileArchive : TSUZipArchive {
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned long long _archiveLength;
-    <TSUReadChannel> *_archiveReadChannel;
+    int _fd;
+    int _fdDups;
     NSURL *_temporaryDirectoryURL;
 }
 
-+ (void)readArchiveFromURL:(id)arg1 queue:(id)arg2 completion:(id)arg3;
++ (bool)isZipArchiveAtFD:(int)arg1;
++ (bool)isZipArchiveAtURL:(id)arg1;
++ (void)readArchiveFromURL:(id)arg1 options:(unsigned long long)arg2 queue:(id)arg3 completion:(id)arg4;
++ (id)zipArchiveFromURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;
 - (unsigned long long)archiveLength;
-- (BOOL)copyToTemporaryLocationRelativeToURL:(id)arg1;
+- (bool)copyToTemporaryLocationRelativeToURL:(id)arg1 error:(id*)arg2;
 - (void)createTemporaryDirectoryRelativeToURL:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
-- (id)initWithURL:(id)arg1;
-- (id)initWithWriter:(id)arg1 atURL:(id)arg2;
-- (BOOL)openWithURL:(id)arg1;
-- (id)readChannel;
+- (id)initForReadingFromURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (id)initWithWriter:(id)arg1 forReadingFromURL:(id)arg2 options:(unsigned long long)arg3 error:(id*)arg4;
+- (bool)isValid;
+- (id)newArchiveReadChannel;
+- (id)newArchiveReadChannelWithCleanupHandler:(id)arg1;
+- (bool)openWithURL:(id)arg1 error:(id*)arg2;
 - (void)removeTemporaryDirectory;
-- (BOOL)reopenWithTemporaryURL:(id)arg1;
+- (bool)reopenWithTemporaryURL:(id)arg1 error:(id*)arg2;
 
 @end

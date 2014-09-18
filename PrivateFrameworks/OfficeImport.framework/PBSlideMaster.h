@@ -18,7 +18,5 @@
 + (void)setFont:(id)arg1 fromCharacterProperties:(id)arg2;
 + (id)textBodyForPlaceholderType:(int)arg1 slideLayout:(id)arg2;
 + (int)textTypeFor:(int)arg1 placeholderType:(int)arg2;
-+ (void)writeSlideMaster:(id)arg1 presentationState:(id)arg2;
-+ (void)writeSlideMasterOrLayout:(id)arg1 presentationState:(id)arg2;
 
 @end

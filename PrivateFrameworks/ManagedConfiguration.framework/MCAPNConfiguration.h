@@ -24,6 +24,7 @@
 - (id)authenticationType;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 outError:(id*)arg2;
+- (id)localizedAuthenticationType;
 - (id)name;
 - (id)password;
 - (id)proxyPort;

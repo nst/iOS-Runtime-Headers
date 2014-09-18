@@ -19,22 +19,20 @@
 + (id)x86_32Architecture;
 + (id)x86_64Architecture;
 
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })commpageAddressRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)cpuSubtype;
 - (int)cpuType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
-- (BOOL)is32Bit;
-- (BOOL)is64Bit;
-- (BOOL)isBigEndian;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToArchitecture:(id)arg1;
-- (BOOL)isLittleEndian;
-- (BOOL)matchesArchitecture:(id)arg1;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })objcpageAddressRange;
+- (bool)is32Bit;
+- (bool)is64Bit;
+- (bool)isBigEndian;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToArchitecture:(id)arg1;
+- (bool)isLittleEndian;
+- (bool)matchesArchitecture:(id)arg1;
 
 @end

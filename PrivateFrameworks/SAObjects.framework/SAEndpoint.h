@@ -7,9 +7,13 @@
 @interface SAEndpoint : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSDictionary * operations;
 @property(copy) NSString * providerId;
-@property BOOL supportsAuthentication;
+@property(readonly) Class superclass;
+@property bool supportsAuthentication;
 
 + (id)endpoint;
 + (id)endpointWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,7 +24,7 @@
 - (id)providerId;
 - (void)setOperations:(id)arg1;
 - (void)setProviderId:(id)arg1;
-- (void)setSupportsAuthentication:(BOOL)arg1;
-- (BOOL)supportsAuthentication;
+- (void)setSupportsAuthentication:(bool)arg1;
+- (bool)supportsAuthentication;
 
 @end

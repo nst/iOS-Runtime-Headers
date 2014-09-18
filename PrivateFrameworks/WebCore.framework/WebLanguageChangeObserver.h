@@ -5,6 +5,6 @@
 @interface WebLanguageChangeObserver : NSObject {
 }
 
-+ (void)_webkit_languagePreferencesDidChange;
++ (void)languagePreferencesDidChange:(id)arg1;
 
 @end

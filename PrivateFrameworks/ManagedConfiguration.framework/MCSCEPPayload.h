@@ -10,24 +10,24 @@
     NSString *_CAInstanceName;
     NSString *_URLString;
     NSString *_challenge;
-    unsigned int _keySize;
-    unsigned int _retries;
-    unsigned int _retryDelay;
+    unsigned long long _keySize;
+    unsigned long long _retries;
+    unsigned long long _retryDelay;
     NSArray *_subject;
     NSDictionary *_subjectAltName;
     int _usageFlags;
 }
 
-@property(readonly) NSArray * CACaps;
-@property(readonly) NSData * CAFingerprint;
-@property(readonly) NSString * CAInstanceName;
-@property(readonly) NSString * URLString;
-@property(readonly) NSString * challenge;
-@property(readonly) unsigned int keySize;
-@property(readonly) unsigned int retries;
-@property(readonly) unsigned int retryDelay;
-@property(readonly) NSArray * subject;
-@property(readonly) NSDictionary * subjectAltName;
+@property(retain,readonly) NSArray * CACaps;
+@property(retain,readonly) NSData * CAFingerprint;
+@property(retain,readonly) NSString * CAInstanceName;
+@property(retain,readonly) NSString * URLString;
+@property(retain,readonly) NSString * challenge;
+@property(readonly) unsigned long long keySize;
+@property(readonly) unsigned long long retries;
+@property(readonly) unsigned long long retryDelay;
+@property(retain,readonly) NSArray * subject;
+@property(retain,readonly) NSDictionary * subjectAltName;
 @property(readonly) int usageFlags;
 
 + (id)localizedPluralForm;
@@ -44,11 +44,12 @@
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)isIdentity;
-- (BOOL)isRoot;
-- (unsigned int)keySize;
-- (unsigned int)retries;
-- (unsigned int)retryDelay;
+- (bool)isIdentity;
+- (bool)isRoot;
+- (unsigned long long)keySize;
+- (id)payloadDescriptionKeyValueSections;
+- (unsigned long long)retries;
+- (unsigned long long)retryDelay;
 - (id)stubDictionary;
 - (id)subject;
 - (id)subjectAltName;

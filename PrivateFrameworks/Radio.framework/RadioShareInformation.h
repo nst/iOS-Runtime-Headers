@@ -12,11 +12,11 @@
     NSString *_subject;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) RadioArtworkCollection * artworkCollection;
-@property(readonly) NSString * message;
-@property(readonly) NSString * messageMIMEType;
-@property(readonly) NSString * subject;
+@property(retain,readonly) NSURL * URL;
+@property(copy,readonly) RadioArtworkCollection * artworkCollection;
+@property(copy,readonly) NSString * message;
+@property(copy,readonly) NSString * messageMIMEType;
+@property(copy,readonly) NSString * subject;
 
 - (void).cxx_destruct;
 - (id)URL;

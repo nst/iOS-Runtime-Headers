@@ -11,12 +11,10 @@
 }
 
 @property(readonly) NSString * client;
-@property(readonly) AVExternalDevice * externalDevice;
 @property(readonly) NSString * reason;
 
 - (id)client;
 - (void)dealloc;
-- (id)externalDevice;
 - (void)finalize;
 - (id)init;
 - (id)initWithExternalDevice:(id)arg1 client:(id)arg2 reason:(id)arg3;

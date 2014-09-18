@@ -6,10 +6,10 @@
 
 @interface SKUIBrickGridCollectionViewCell : UICollectionViewCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     NSString *_accessibilityLabel;
     UIImageView *_brickImageView;
     } _contentInsets;
@@ -19,18 +19,18 @@
 
 @property(copy) NSString * accessibilityLabel;
 @property(retain) UIImage * brickImage;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
-- (void)applyEditorialLayout:(id)arg1 orientation:(int)arg2;
+- (void)applyEditorialLayout:(id)arg1 orientation:(long long)arg2;
 - (id)brickImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void)layoutSubviews;
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBrickImage:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

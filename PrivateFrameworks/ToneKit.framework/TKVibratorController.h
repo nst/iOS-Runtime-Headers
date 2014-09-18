@@ -5,8 +5,6 @@
 @interface TKVibratorController : NSObject {
 }
 
-- (void)_turnOff;
-- (void)_turnOnWithVibrationPattern:(id)arg1;
 - (void)turnOff;
 - (void)turnOnWithVibrationPattern:(id)arg1;
 

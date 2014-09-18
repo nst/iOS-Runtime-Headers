@@ -8,7 +8,7 @@
     IMHandle *_handle;
 }
 
-@property(readonly) IMHandle * handle;
+@property(retain,readonly) IMHandle * handle;
 
 - (id)address;
 - (id)commentedAddress;
@@ -17,12 +17,12 @@
 - (void)dealloc;
 - (id)displayString;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)identifier;
 - (id)initWithHandle:(id)arg1;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isRemovableFromSearchResults;
+- (bool)isEqual:(id)arg1;
+- (bool)isRemovableFromSearchResults;
 - (id)label;
 - (id)objectForDragType:(id)arg1;
 - (int)property;

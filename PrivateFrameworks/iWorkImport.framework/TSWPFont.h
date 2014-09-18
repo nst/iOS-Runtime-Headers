@@ -9,7 +9,7 @@
     NSString *_displayName;
     NSString *_familyName;
     NSString *_fontName;
-    unsigned int _hash;
+    unsigned long long _hash;
 }
 
 @property(copy) NSString * compatibilityName;
@@ -17,9 +17,10 @@
 @property(readonly) NSString * familyName;
 @property(copy) NSString * fontName;
 
++ (id)fontForStyles:(id*)arg1 count:(unsigned long long)arg2;
 + (id)fontWithName:(id)arg1 compatibilityName:(id)arg2;
 + (id)fontWithName:(id)arg1;
-+ (BOOL)isKeyValueProxyLeafType;
++ (bool)isKeyValueProxyLeafType;
 
 - (id)compatibilityName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -27,11 +28,11 @@
 - (id)displayName;
 - (id)familyName;
 - (id)fontName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithFontName:(id)arg1 compatibilityName:(id)arg2;
 - (id)initWithFontName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setCompatibilityName:(id)arg1;
 - (void)setFontName:(id)arg1;
 

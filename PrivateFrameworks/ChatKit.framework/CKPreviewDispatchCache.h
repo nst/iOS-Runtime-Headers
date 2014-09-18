@@ -12,24 +12,30 @@
 @property(retain) CKDispatchCache * dispatchCache;
 @property(retain) CKMultiDict * pendingBlocks;
 
-- (void)beginGeneratingForMediaObject:(id)arg1 orientation:(BOOL)arg2;
-- (id)cachedPreviewForMediaObject:(id)arg1 orientation:(BOOL)arg2;
++ (id)detailsPreviewCache;
++ (id)mapThumbnailQueue;
++ (id)transcriptPreviewCache;
+
+- (void)beginGeneratingForKey:(id)arg1;
+- (id)cachedPreviewForKey:(id)arg1;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)dispatchCache;
-- (void)endGeneratingForMediaObject:(id)arg1 orientation:(BOOL)arg2;
-- (void)enqueueGenerationBlock:(id)arg1 completion:(id)arg2 withPriority:(int)arg3 forMediaObject:(id)arg4 orientation:(BOOL)arg5;
-- (void)enqueueSaveBlock:(id)arg1 forMediaObject:(id)arg2 withPriority:(int)arg3;
+- (void)endGeneratingForKey:(id)arg1;
+- (void)enqueueGenerationBlock:(id)arg1 completion:(id)arg2 withPriority:(long long)arg3 forKey:(id)arg4;
+- (void)enqueueSaveBlock:(id)arg1 forMediaObject:(id)arg2 withPriority:(long long)arg3;
+- (void)enqueueSaveBlock:(id)arg1 withPriority:(long long)arg2;
 - (void)flush;
 - (id)init;
-- (BOOL)isGeneratingForMediaObject:(id)arg1 orientation:(BOOL)arg2;
+- (bool)isGeneratingPreviewForKey:(id)arg1;
 - (id)mediaObjectManager;
 - (id)notificationCenter;
 - (id)pendingBlocks;
 - (void)resume;
-- (void)setCachedPreview:(id)arg1 forMediaObject:(id)arg2 orientation:(BOOL)arg3;
+- (void)setCachedPreview:(id)arg1 key:(id)arg2;
 - (void)setDispatchCache:(id)arg1;
 - (void)setPendingBlocks:(id)arg1;
+- (bool)shouldReplaceCachedPreview:(id)arg1 withPreview:(id)arg2;
 - (void)systemApplicationDidSuspend;
 - (void)systemApplicationDidSuspendForEventsOnly;
 - (void)transferFinished:(id)arg1;

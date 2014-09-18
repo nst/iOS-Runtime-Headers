@@ -7,8 +7,8 @@
 @interface DOMNotation : DOMNode {
 }
 
-@property(readonly) NSString * publicId;
-@property(readonly) NSString * systemId;
+@property(copy,readonly) NSString * publicId;
+@property(copy,readonly) NSString * systemId;
 
 - (id)publicId;
 - (id)systemId;

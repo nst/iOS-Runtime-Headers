@@ -2,23 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, TSPDocumentResourceManager, TSPObjectContext;
+@class NSHashTable, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, TSPDocumentResourceManager, TSPObjectContext;
 
 @interface TSPDocumentResourceDataProvider : NSObject <TSPDocumentResourceDownloadNotificationProtocol, TSPDocumentResourceDownloader> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     TSPObjectContext *_context;
-    BOOL _didCancelDownloads;
     NSMutableArray *_downloadItems;
     long long _estimatedDownloadSize;
     NSMutableSet *_infosToDownload;
-    BOOL _isEstimatedDownloadSizePrecise;
     TSPDocumentResourceManager *_manager;
     NSHashTable *_storagesCache;
+    bool_didCancelDownloads;
+    bool_didNotifyObjectContext;
+    bool_isEstimatedDownloadSizePrecise;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) long long estimatedDownloadSize;
-@property(readonly) BOOL isEstimatedDownloadSizePrecise;
-@property(readonly) BOOL needsDownload;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isEstimatedDownloadSizePrecise;
+@property(readonly) bool needsDownload;
+@property(readonly) Class superclass;
 
 + (void)didCompleteDocumentResourceDownloadWithDigestString:(id)arg1;
 + (void)registerDownloadNotificationClass:(Class)arg1;
@@ -26,15 +31,16 @@
 - (void).cxx_destruct;
 - (void)cacheDataForDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3;
 - (void)cancelDownloads;
-- (id)dataForDigestString:(id)arg1 locator:(id)arg2 filename:(id)arg3 needsDownload:(BOOL*)arg4;
+- (id)dataForDigestString:(id)arg1 locator:(id)arg2 filename:(id)arg3 needsDownload:(bool*)arg4;
 - (id)dataForDigestString:(id)arg1 locator:(id)arg2 filename:(id)arg3;
-- (id)dataStorageForDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3 needsDownload:(BOOL*)arg4;
+- (id)dataStorageForDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3 needsDownload:(bool*)arg4;
 - (id)dataStorageForDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3;
+- (id)dataStorageForSageLocator:(id)arg1;
 - (id)downloadWithDelegate:(id)arg1 description:(id)arg2;
 - (long long)estimatedDownloadSize;
 - (id)init;
 - (id)initWithManager:(id)arg1 context:(id)arg2;
-- (BOOL)isEstimatedDownloadSizePrecise;
-- (BOOL)needsDownload;
+- (bool)isEstimatedDownloadSizePrecise;
+- (bool)needsDownload;
 
 @end

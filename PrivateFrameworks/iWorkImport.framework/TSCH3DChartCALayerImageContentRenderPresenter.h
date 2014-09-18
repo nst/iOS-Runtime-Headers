@@ -6,10 +6,10 @@
 }
 
 - (void)cleanupLayer:(id)arg1;
-- (void)cleanupRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; BOOL x5; }*)arg1;
+- (void)cleanupRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; boolx5; }*)arg1;
 - (Class)layerCacheLogicClass;
 - (Class)layerClass;
-- (void)presentRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; BOOL x5; }*)arg1;
-- (BOOL)shouldRenderLegendIntoSeparateLayer;
+- (void)presentRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; boolx5; }*)arg1;
+- (bool)shouldRenderLegendIntoSeparateLayer;
 
 @end

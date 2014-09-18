@@ -8,11 +8,11 @@
     NSMutableDictionary *mMappings;
 }
 
-- (void)addDefaultMappings:(BOOL)arg1;
+- (void)addDefaultMappings:(bool)arg1;
 - (void)addMapping:(int)arg1 index:(int)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)mappingForIndex:(int)arg1;
 
 @end

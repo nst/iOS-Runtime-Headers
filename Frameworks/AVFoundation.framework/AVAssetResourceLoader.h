@@ -2,29 +2,44 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVAssetResourceLoaderDelegate>, AVAssetResourceLoaderInternal, NSObject<OS_dispatch_queue>;
+@class <AVAssetResourceLoaderDelegate>, AVAssetResourceLoaderInternal, NSObject<OS_dispatch_queue>, NSString;
 
-@interface AVAssetResourceLoader : NSObject {
+@interface AVAssetResourceLoader : NSObject <NSURLAuthenticationChallengeSender> {
     AVAssetResourceLoaderInternal *_resourceLoader;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) <AVAssetResourceLoaderDelegate> * delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (void)_attemptDelegateHandlingOfRequestWithDictionary:(id)arg1 fallbackBlock:(id)arg2;
-- (void)_noteFinishingOfLoadingRequest:(id)arg1;
+- (void)_cancelRequestWithKey:(id)arg1 requestDictionary:(id)arg2 fallbackHandler:(id)arg3;
+- (void)_issueLoadingRequestWithKey:(id)arg1 requestDictionary:(id)arg2 fallbackHandler:(id)arg3;
+- (void)_noteFinishingOfRequest:(id)arg1;
 - (void)_performDelegateCallbackSynchronouslyIfCurrentDelegateQueueIsQueue:(id)arg1 delegateCallbackBlock:(id)arg2;
+- (void)_performDelegateSelector:(SEL)arg1 withObject:(id)arg2 representingNewRequest:(bool)arg3 key:(id)arg4 fallbackHandler:(id)arg5;
+- (void)_poseAuthenticationChallengeWithKey:(id)arg1 data:(id)arg2 requestDictionary:(id)arg3 fallbackHandler:(id)arg4;
+- (void)_rejectChallenge:(id)arg1 withError:(id)arg2;
 - (id)_weakReference;
 - (id)asset;
 - (void)cacheContentInformation:(id)arg1 forURL:(id)arg2;
 - (id)cachedContentInformationForURL:(id)arg1;
+- (void)cancelAuthenticationChallenge:(id)arg1;
+- (void)cancelLoading;
+- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
 - (void)finalize;
+- (id)init;
 - (id)initWithAsset:(id)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)stateQueue;
+- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
 @end

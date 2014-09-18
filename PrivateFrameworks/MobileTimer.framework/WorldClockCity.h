@@ -27,7 +27,7 @@
 @property(readonly) NSString * unlocalizedCountryName;
 @property(retain) City * weatherCity;
 
-+ (BOOL)isWorldClockCityProperties:(id)arg1;
++ (bool)isWorldClockCityProperties:(id)arg1;
 
 - (id)alCity;
 - (id)alCityId;
@@ -35,13 +35,13 @@
 - (id)countryName;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)idUrl;
 - (id)initWithALCity:(id)arg1;
 - (id)initWithALCityIdentifier:(int)arg1;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithTimeZone:(id)arg1 countryCode:(id)arg2 name:(id)arg3 countryName:(id)arg4 unlocalizedName:(id)arg5 unlocalizedCountryName:(id)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)properties;
 - (void)setWeatherCity:(id)arg1;

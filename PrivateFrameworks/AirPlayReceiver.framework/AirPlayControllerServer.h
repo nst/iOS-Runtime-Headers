@@ -18,9 +18,13 @@
 }
 
 @property(copy) id copyPropertyBlock;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property NSObject<OS_dispatch_queue> * dispatchQueue;
+@property(readonly) unsigned long long hash;
 @property(copy) id performCommandBlock;
 @property(copy) id setPropertyBlock;
+@property(readonly) Class superclass;
 
 - (void)_connectionInvalidated:(id)arg1;
 - (id)copyPropertyBlock;
@@ -28,7 +32,7 @@
 - (id)dispatchQueue;
 - (void)getProperty:(id)arg1 qualifier:(id)arg2 completion:(id)arg3;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performCommand:(id)arg1 qualifier:(id)arg2 params:(id)arg3 completion:(id)arg4;
 - (id)performCommandBlock;
 - (void)postEvent:(id)arg1 qualifier:(id)arg2 params:(id)arg3 completion:(id)arg4;

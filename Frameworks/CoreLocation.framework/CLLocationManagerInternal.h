@@ -27,14 +27,25 @@
             double longitude; 
         } rawCoordinate; 
         double rawCourse; 
+        int floor; 
     struct { 
         double bestAccuracy; 
-    int fActivityType;
-    BOOL fAllowsLocationPrompts;
-    BOOL fAllowsMapCorrection;
-    BOOL fBatchingLocation;
+    boolfAllowsLocationPrompts;
+    boolfAllowsMapCorrection;
+    boolfBatchingLocation;
+    boolfCapabilitiesValid;
+    boolfCourtesyPromptNeeded;
+    boolfDynamicAccuracyReductionEnabled;
+    boolfMatchInfoEnabled;
+    boolfPaused;
+    boolfPersistentMonitoringEnabled;
+    boolfPreviousAuthorizationStatusValid;
+    boolfUpdatingHeading;
+    boolfUpdatingLocation;
+    boolfUpdatingVehicleHeading;
+    boolfUpdatingVehicleSpeed;
+    long long fActivityType;
     } fCapabilities;
-    BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;
     <CLLocationManagerDelegate> *fDelegate;
     double fDesiredAccuracy;
@@ -43,16 +54,9 @@
     int fHeadingOrientation;
     } fLocation;
     NSString *fLocationEventType;
-    BOOL fPaused;
     int fPausesLocationUpdatesAutomatically;
-    BOOL fPersistentMonitoringEnabled;
     int fPreviousAuthorizationStatus;
-    BOOL fPreviousAuthorizationStatusValid;
     NSMutableSet *fRangedRegions;
-    BOOL fUpdatingHeading;
-    BOOL fUpdatingLocation;
-    BOOL fUpdatingVehicleHeading;
-    BOOL fUpdatingVehicleSpeed;
 }
 
 @property(readonly) NSMutableSet * rangedRegions;
@@ -60,6 +64,7 @@
 - (int)PausesLocationUpdatesAutomatically;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
+- (void)performCourtesyPromptIfNeeded;
 - (id)rangedRegions;
 - (void)setPausesLocationUpdatesAutomatically:(int)arg1;
 - (void)stopUpdatingLocationAutoPaused;

@@ -10,6 +10,7 @@
 
 @property(copy) NSArray * interfaces;
 
+- (void).cxx_destruct;
 - (id)interfaces;
 - (void)setInterfaces:(id)arg1;
 

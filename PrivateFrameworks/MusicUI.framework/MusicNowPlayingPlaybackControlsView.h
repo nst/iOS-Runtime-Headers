@@ -2,67 +2,33 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicNowPlayingPlaybackControlsViewDelegate><MPTransportControlsTarget>, MPVolumeSlider, MusicNowPlayingTransportControls, SKUICircleProgressIndicator, UIActionSheet, UIButton, UIView;
+@class UIView;
 
-@interface MusicNowPlayingPlaybackControlsView : MPPlaybackControlsView <MPDetailSliderDelegate, UIActionSheetDelegate> {
-    UIActionSheet *_createActionSheet;
-    SKUICircleProgressIndicator *_createActivityIndicatorView;
-    UIButton *_createButton;
-    int _createButtonActions[4];
-    UIButton *_infoButton;
-    BOOL _isDetailScrubbing;
-    int _orientation;
-    MusicNowPlayingTransportControls *_transportControls;
-    BOOL _usesMiniProgressControl;
-    MPVolumeSlider *_volumeSlider;
+@interface MusicNowPlayingPlaybackControlsView : RUNowPlayingPlaybackControlsView {
 }
 
-@property(readonly) UIActionSheet * createActionSheet;
-@property <MusicNowPlayingPlaybackControlsViewDelegate><MPTransportControlsTarget> * delegate;
-@property(readonly) UIButton * infoButton;
-@property int orientation;
-@property(getter=isShowingCreateLoadingIndicator) BOOL showingCreateLoadingIndicator;
-@property BOOL usesMiniProgressControl;
 @property(readonly) UIView * viewForPresentingRepeat;
 
 + (unsigned long long)defaultVisibleParts;
 
-- (void).cxx_destruct;
 - (void)_applyRepeatSettingsToButton:(id)arg1;
 - (void)_applyShuffleSettingsToButton:(id)arg1;
-- (void)_createAction:(id)arg1;
-- (void)_defaultsDidChangeNotification;
-- (void)_infoButtonAction:(id)arg1;
-- (BOOL)_isCreateAvailable;
-- (void)_playbackContentsDidChangeNotification:(id)arg1;
-- (void)_updateForItemDidChangeAnimated:(BOOL)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)buttonType;
-- (id)createActionSheet;
+- (id)_availableCreateActionsForItem:(id)arg1;
+- (void)_cloudControllerIsJaliscoGeniusEnabledDidChangeNotification:(id)arg1;
+- (void)_repeatTypeChangedNotification:(id)arg1;
+- (void)_shuffleTypeChangedNotification:(id)arg1;
+- (id)_titleForCreateAction:(long long)arg1;
+- (Class)_transportControlsClass;
+- (void)_updateForItemDidChangeAnimated:(bool)arg1;
 - (void)dealloc;
-- (BOOL)detailScrubbingHidesControls;
-- (id)infoButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isShowingCreateLoadingIndicator;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)newButtonForPart:(unsigned long long)arg1;
-- (id)newProgressIndicator;
-- (int)orientation;
-- (id)playbackSpeedButtonImageForPlaybackSpeed:(unsigned int)arg1;
-- (id)playbackSpeedTitleForPlaybackSpeed:(unsigned int)arg1;
+- (id)playbackSpeedButtonImageForPlaybackSpeed:(unsigned long long)arg1;
+- (id)playbackSpeedTitleForPlaybackSpeed:(unsigned long long)arg1;
+- (void)registerForPlayerNotifications;
 - (void)reloadView;
-- (id)repeatButtonImage;
-- (void)setDelegate:(id)arg1;
-- (void)setItem:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setPlayer:(id)arg1;
-- (void)setShowingCreateLoadingIndicator:(BOOL)arg1;
-- (void)setUsesMiniProgressControl:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setUsesMiniProgressControl:(BOOL)arg1;
-- (BOOL)shouldOverrideProgressTimeLabelStyle;
-- (id)shuffleButtonImage;
-- (void)tintColorDidChange;
-- (BOOL)usesMiniProgressControl;
+- (void)unregisterForPlayerNotifications;
 - (id)viewForPresentingRepeat;
 
 @end

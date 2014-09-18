@@ -2,27 +2,29 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSObject<OS_dispatch_queue>, SBCPlaybackPositionServiceProxy;
+@class NSObject<OS_dispatch_queue>, SBCPlaybackPositionDomain, SBCPlaybackPositionSyncService;
 
 @interface MPUbiquitousPlaybackPositionController : NSObject {
-    BOOL _applicationBecomingActive;
-    BOOL _beganUsingPlaybackPositionMetadata;
-    BOOL _databaseHasBookmarkableContents;
-    BOOL _externallyActive;
-    BOOL _isServiceActive;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_serviceQueue;
-    SBCPlaybackPositionServiceProxy *_uppServiceProxy;
+    SBCPlaybackPositionDomain *_uppDomain;
+    SBCPlaybackPositionSyncService *_uppServiceProxy;
+    bool_applicationBecomingActive;
+    bool_beganUsingPlaybackPositionMetadata;
+    bool_databaseHasBookmarkableContents;
+    bool_externallyActive;
+    bool_isServiceActive;
 }
 
-@property(readonly) BOOL applicationBecomingActive;
-@property(getter=isServiceActive) BOOL beganUsingPlaybackPositionMetadata;
-@property BOOL databaseHasBookmarkableContents;
-@property BOOL externallyActive;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(getter=isServiceActive) BOOL serviceActive;
-@property(readonly) NSObject<OS_dispatch_queue> * serviceQueue;
-@property(retain) SBCPlaybackPositionServiceProxy * uppServiceProxy;
+@property(readonly) bool applicationBecomingActive;
+@property(getter=isServiceActive) bool beganUsingPlaybackPositionMetadata;
+@property bool databaseHasBookmarkableContents;
+@property bool externallyActive;
+@property(retain,readonly) NSObject<OS_dispatch_queue> * queue;
+@property(getter=isServiceActive) bool serviceActive;
+@property(retain,readonly) NSObject<OS_dispatch_queue> * serviceQueue;
+@property(retain) SBCPlaybackPositionDomain * uppDomain;
+@property(retain) SBCPlaybackPositionSyncService * uppServiceProxy;
 
 + (id)sharedUbiquitousPlaybackPositionController;
 
@@ -32,31 +34,33 @@
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
-- (BOOL)_onQueue_isEnabled;
-- (BOOL)_onQueue_shouldBeActive;
+- (bool)_onQueue_isEnabled;
+- (bool)_onQueue_shouldBeActive;
 - (void)_onServiceQueue_becomeActiveService;
 - (id)_onServiceQueue_connectedUPPServiceProxy;
 - (void)_onServiceQueue_resignActiveService;
-- (void)_onServiceQueue_setDatabaseHasBookmarkableContents:(BOOL)arg1;
+- (void)_onServiceQueue_setDatabaseHasBookmarkableContents:(bool)arg1;
 - (void)_onServiceQueue_updateActiveServiceIfNeeded;
 - (void)_onServiceQueue_updateBoomkarkabilityState;
-- (BOOL)applicationBecomingActive;
+- (id)_playbackPositionEntityWithValuesFromMusicLibraryTrackPersistentID:(long long)arg1;
+- (bool)applicationBecomingActive;
 - (void)beginUsingPlaybackPositionMetadata;
-- (BOOL)databaseHasBookmarkableContents;
+- (bool)databaseHasBookmarkableContents;
 - (void)dealloc;
-- (BOOL)externallyActive;
+- (bool)externallyActive;
 - (id)init;
-- (BOOL)isServiceActive;
-- (BOOL)isServiceActive;
-- (void)noteChangedPlaybackPositionMetadataForTrackPersistentID:(long long)arg1 isCheckpoint:(BOOL)arg2;
+- (bool)isServiceActive;
+- (bool)isServiceActive;
+- (void)noteChangedPlaybackPositionMetadataForTrackPersistentID:(long long)arg1 isCheckpoint:(bool)arg2;
 - (id)queue;
 - (id)serviceQueue;
-- (void)setBeganUsingPlaybackPositionMetadata:(BOOL)arg1;
-- (void)setDatabaseHasBookmarkableContents:(BOOL)arg1;
-- (void)setExternallyActive:(BOOL)arg1;
-- (void)setServiceActive:(BOOL)arg1;
+- (void)setBeganUsingPlaybackPositionMetadata:(bool)arg1;
+- (void)setDatabaseHasBookmarkableContents:(bool)arg1;
+- (void)setExternallyActive:(bool)arg1;
+- (void)setServiceActive:(bool)arg1;
+- (void)setUppDomain:(id)arg1;
 - (void)setUppServiceProxy:(id)arg1;
-- (void)synchronizeImmediatelyWithCompletionBlock:(id)arg1;
+- (id)uppDomain;
 - (id)uppServiceProxy;
 
 @end

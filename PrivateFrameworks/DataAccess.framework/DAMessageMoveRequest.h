@@ -12,19 +12,22 @@
 }
 
 @property(retain) id context;
-@property(readonly) NSString * fromFolder;
-@property(readonly) NSString * message;
-@property(readonly) NSString * toFolder;
+@property(copy) NSString * fromFolder;
+@property(copy) NSString * message;
+@property(copy) NSString * toFolder;
 
+- (void).cxx_destruct;
 - (id)context;
-- (void)dealloc;
 - (id)description;
 - (id)fromFolder;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)message;
 - (void)setContext:(id)arg1;
+- (void)setFromFolder:(id)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setToFolder:(id)arg1;
 - (id)toFolder;
 
 @end

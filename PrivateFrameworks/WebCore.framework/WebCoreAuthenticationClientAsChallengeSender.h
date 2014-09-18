@@ -7,10 +7,17 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WebCoreAuthenticationClientAsChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
     struct _CFURLAuthChallenge { } *m_cfChallenge;
     struct AuthenticationClient { int (**x1)(); } *m_client;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (struct AuthenticationClient { int (**x1)(); }*)client;
 - (void)cancelAuthenticationChallenge:(id)arg1;

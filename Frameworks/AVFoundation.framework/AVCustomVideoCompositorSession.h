@@ -12,23 +12,23 @@
     NSDictionary *_clientRequiredPixelBufferAttributes;
     struct OpaqueFigVideoCompositor { } *_figCustomCompositor;
     NSObject<OS_dispatch_queue> *_finishedRequestQ;
-    BOOL _hasRegisteredFigCustomCompositorCallbacks;
     AVVideoCompositionRenderContext *_renderContext;
     NSObject<OS_dispatch_queue> *_renderContextQ;
     AVVideoComposition *_videoComposition;
-    BOOL _videoCompositionDidChange;
     NSObject<OS_dispatch_queue> *_videoCompositionQ;
     AVWeakReference *_weakSelf;
+    bool_hasRegisteredFigCustomCompositorCallbacks;
+    bool_videoCompositionDidChange;
 }
 
 + (id)sessionWithVideoComposition:(id)arg1 recyclingSession:(id)arg2;
 
 - (void)_cleanupFigCallbacks;
-- (long)_compositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 requiresRenderUsingSources:(id)arg3 withInstruction:(void*)arg4;
+- (int)_compositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 requiresRenderUsingSources:(id)arg3 withInstruction:(void*)arg4;
 - (struct OpaqueFigVideoCompositor { }*)_copyFigVideoCompositor;
 - (void)_customCompositorFigPropertyDidChange;
-- (long)_customCompositorShouldCancelPendingFrames;
-- (long)_setupFigCallbacks;
+- (int)_customCompositorShouldCancelPendingFrames;
+- (int)_setupFigCallbacks;
 - (void)_willDeallocOrFinalize;
 - (id)customVideoCompositor;
 - (void)dealloc;

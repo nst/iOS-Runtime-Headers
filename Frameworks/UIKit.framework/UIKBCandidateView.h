@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class TIKeyboardCandidateResultSet, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateSortControl, UIView;
+@class NSString, TIKeyboardCandidateResultSet, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateSortControl, UIView;
 
 @interface UIKBCandidateView : UIKBKeyView <UIKeyboardCandidateGridCollectionViewControllerDelegate> {
     struct { 
@@ -14,49 +14,52 @@
     UIView *_clippingView;
     UIKeyboardCandidateGridCollectionViewController *_collectionViewController;
     UIKeyboardCandidateSortControl *_scrollViewSortControl;
-    unsigned int _selectedSortIndex;
+    unsigned long long _selectedSortIndex;
     UIView *_topBorder;
     } _visualStyling;
 }
 
 @property(readonly) TIKeyboardCandidateResultSet * candidateResultSet;
 @property(retain) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) UIKeyboardCandidateSortControl * scrollViewSortControl;
-@property unsigned int selectedSortIndex;
+@property unsigned long long selectedSortIndex;
+@property(readonly) Class superclass;
 @property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
-- (id).cxx_construct;
 - (void)addSubview:(id)arg1;
-- (void)candidateAcceptedAtIndex:(unsigned int)arg1;
+- (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
 - (id)candidateList;
 - (id)candidateResultSet;
 - (void)clearCollectionViewController;
 - (id)collectionViewController;
 - (id)currentCandidate;
-- (unsigned int)currentIndex;
+- (unsigned long long)currentIndex;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;
-- (unsigned int)gridCollectionViewNumberOfColumns:(id)arg1;
-- (unsigned int)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
-- (id)groupedCandidatesFromCandidateSet:(id)arg1 forSortIndex:(unsigned int)arg2;
-- (BOOL)hasCandidates;
+- (unsigned long long)gridCollectionViewNumberOfColumns:(id)arg1;
+- (unsigned long long)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
+- (id)groupedCandidatesFromCandidateSet:(id)arg1 forSortIndex:(unsigned long long)arg2;
+- (bool)hasCandidates;
 - (id)headerViewForCandidateSet:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
-- (BOOL)isExtendedList;
-- (BOOL)isHiddenCandidatesList;
-- (BOOL)isTenKey;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (bool)isExtendedList;
+- (bool)isHiddenCandidatesList;
+- (bool)isTenKey;
 - (id)keyboardBehaviors;
 - (id)scrollViewSortControl;
-- (unsigned int)selectedSortIndex;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (unsigned long long)selectedSortIndex;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(double)arg4 layout:(bool)arg5;
 - (void)setCollectionViewController:(id)arg1;
 - (void)setRenderConfig:(id)arg1;
 - (void)setScrollViewSortControl:(id)arg1;
-- (void)setSelectedSortIndex:(unsigned int)arg1;
+- (void)setSelectedSortIndex:(unsigned long long)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
-- (void)showCandidate:(id)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
+- (bool)showCandidate:(id)arg1;
+- (void)showCandidateAtIndex:(unsigned long long)arg1;
 - (void)showNextCandidate;
 - (void)showNextPage;
 - (void)showNextRow;
@@ -65,7 +68,7 @@
 - (void)showPreviousRow;
 - (void)sortSelectionBarAction:(id)arg1;
 - (id)statisticsIdentifier;
-- (void)updateCollectionViewController:(BOOL)arg1;
+- (void)updateCollectionViewController:(bool)arg1;
 - (void)updateCollectionViewController;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;

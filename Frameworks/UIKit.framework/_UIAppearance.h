@@ -22,8 +22,8 @@
 + (void)_applyInvocationsTo:(id)arg1 window:(id)arg2 matchingSelector:(SEL)arg3;
 + (void)_applyInvocationsTo:(id)arg1 window:(id)arg2;
 + (id)_currentAppearanceSource;
-+ (BOOL)_hasAnyCustomizations;
-+ (BOOL)_hasCustomizationsForClass:(Class)arg1 guideClass:(Class)arg2;
++ (bool)_hasAnyCustomizations;
++ (bool)_hasCustomizationsForClass:(Class)arg1 guideClass:(Class)arg2;
 + (id)_newAppearanceWithClassInfo:(id)arg1 containerList:(id)arg2;
 + (id)_pendingRecordInvocationsForSource:(id)arg1;
 + (id)_recorderForSource:(id)arg1;
@@ -31,12 +31,14 @@
 + (void)_removeWindow:(id)arg1 forSource:(id)arg2;
 + (id)_rootAppearancesNode;
 + (void)_setCurrentAppearanceSource:(id)arg1;
-+ (void)_setInvalidatesViewsOnAppearanceChange:(BOOL)arg1;
++ (void)_setInvalidatesViewsOnAppearanceChange:(bool)arg1;
 + (id)_windowsForSource:(id)arg1;
 + (id)appearancesAtNode:(id)arg1 withObject:(id)arg2;
 
 - (id)_appearanceInvocations;
 - (id)_customizableClassInfo;
+- (void)_invalidateAppearanceInWindow:(id)arg1;
+- (bool)_isValidAppearanceForCustomizableObject:(id)arg1;
 - (id)_resettableInvocations;
 - (id)_resettableInvocationsCreateIfNecessary;
 - (void)_setResettableInvocations:(id)arg1;
@@ -44,6 +46,6 @@
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)updateResettableSelectorsWithInvocation:(id)arg1 removeSelector:(BOOL)arg2;
+- (void)updateResettableSelectorsWithInvocation:(id)arg1 removeSelector:(bool)arg2;
 
 @end

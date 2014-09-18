@@ -4,40 +4,30 @@
 
 @class TPPaginatedPageInfo;
 
-@interface TPHeaderRep : TSWPRep {
-    BOOL _hideKnobs;
-    float _leftClip;
-    float _rightClip;
+@interface TPHeaderRep : TSWPHeaderRep {
+    bool_hideKnobs;
 }
 
-@property BOOL hideKnobs;
-@property float leftClip;
-@property(getter=p_isInDocumentSetup,readonly) BOOL p_inDocumentSetup;
+@property bool hideKnobs;
 @property(readonly) TPPaginatedPageInfo * pageInfo;
-@property float rightClip;
 
 - (void)addKnobsToArray:(id)arg1;
 - (id)beginEditing;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (BOOL)canEditWithEditor:(id)arg1;
-- (BOOL)doesNeedDisplayOnEditingDidEnd;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (bool)canEditWithEditor:(id)arg1;
+- (bool)doesNeedDisplayOnEditingDidEnd;
 - (void)editingDidEnd;
-- (BOOL)hideKnobs;
-- (float)leftClip;
+- (bool)hideKnobs;
 - (id)newTrackerForKnob:(id)arg1;
-- (BOOL)p_isInDocumentSetup;
-- (BOOL)p_isMiddleFooterRep;
-- (BOOL)p_isMiddleHeaderRep;
-- (BOOL)p_shouldCreateArrowKnobs;
+- (bool)p_isInDocumentSetup;
+- (bool)p_isMiddleFooterRep;
+- (bool)p_isMiddleHeaderRep;
+- (bool)p_shouldCreateArrowKnobs;
 - (id)pageInfo;
 - (id)pageLayout;
-- (float)rightClip;
-- (void)setHideKnobs:(BOOL)arg1;
-- (void)setLeftClip:(float)arg1;
-- (void)setRightClip:(float)arg1;
-- (void)setupForDrawingInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
-- (BOOL)shouldCreateKnobs;
-- (BOOL)shouldIgnoreSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 withRecognizer:(id)arg2;
+- (void)setHideKnobs:(bool)arg1;
+- (bool)shouldCreateKnobs;
+- (bool)shouldIgnoreSingleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1 withRecognizer:(id)arg2;
 - (void)updatePositionsOfKnobs:(id)arg1;
 
 @end

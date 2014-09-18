@@ -2,30 +2,34 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, NSURL;
+@class NSArray, NSSet, NSString, NSURL;
 
 @interface SKUIChart : NSObject {
     NSArray *_items;
-    BOOL _newsstand;
     NSURL *_seeAllURL;
-    BOOL _showsIndexNumbers;
     NSString *_title;
+    NSSet *_unavailableItemIdentifiers;
+    bool_newsstand;
+    bool_showsIndexNumbers;
 }
 
 @property(readonly) NSArray * items;
-@property(getter=isNewsstand,readonly) BOOL newsstand;
+@property(getter=isNewsstand,readonly) bool newsstand;
 @property(readonly) NSURL * seeAllURL;
-@property(readonly) BOOL showsIndexNumbers;
+@property(readonly) bool showsIndexNumbers;
 @property(readonly) NSString * title;
+@property(copy) NSSet * unavailableItemIdentifiers;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithChartPageContext:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
-- (BOOL)isNewsstand;
+- (bool)isNewsstand;
 - (id)items;
 - (id)seeAllURL;
-- (BOOL)showsIndexNumbers;
+- (void)setUnavailableItemIdentifiers:(id)arg1;
+- (bool)showsIndexNumbers;
 - (id)title;
+- (id)unavailableItemIdentifiers;
 
 @end

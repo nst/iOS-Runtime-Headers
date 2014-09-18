@@ -5,15 +5,15 @@
 @interface SACalendarSource : SASource {
 }
 
-@property BOOL strict;
+@property bool strict;
 
 + (id)source;
 + (id)sourceWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setStrict:(BOOL)arg1;
-- (BOOL)strict;
+- (void)setStrict:(bool)arg1;
+- (bool)strict;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

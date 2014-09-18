@@ -8,7 +8,7 @@
     TSCHChartGrid *mGrid;
 }
 
-@property(readonly) TSCHChartGrid * grid;
+@property(retain,readonly) TSCHChartGrid * grid;
 
 - (void)dealloc;
 - (id)grid;

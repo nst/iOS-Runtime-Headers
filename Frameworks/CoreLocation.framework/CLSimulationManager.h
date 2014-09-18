@@ -37,8 +37,8 @@
 - (void)setLocationRepeatBehavior:(int)arg1;
 - (void)setLocationSpeed:(double)arg1;
 - (void)setSimulatedCell:(id)arg1;
-- (void)setSimulatedCellRegistrationStatus:(BOOL)arg1;
-- (void)setSimulatedWifiPower:(BOOL)arg1;
+- (void)setSimulatedCellRegistrationStatus:(bool)arg1;
+- (void)setSimulatedWifiPower:(bool)arg1;
 - (void)setWifiScanResults:(id)arg1;
 - (void)startCellSimulation;
 - (void)startLocationSimulation;

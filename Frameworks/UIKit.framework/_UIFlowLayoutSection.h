@@ -2,150 +2,182 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableArray, _UIFlowLayoutInfo;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableSet, _UIFlowLayoutInfo;
 
 @interface _UIFlowLayoutSection : NSObject {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
     struct CGSize { 
-        float width; 
-        float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    float _actualGap;
-    float _beginMargin;
-    float _endMargin;
-    BOOL _fixedItemSize;
-    float _footerDimension;
+        double width; 
+        double height; 
+    double _actualGap;
+    double _beginMargin;
+    double _endMargin;
+    double _footerDimension;
     } _footerFrame;
     } _frame;
-    float _headerDimension;
+    double _headerDimension;
     } _headerFrame;
-    float _horizontalInterstice;
-    int _indexOfImcompleteRow;
-    BOOL _isValid;
+    double _horizontalInterstice;
+    long long _indexOfIncompleteRow;
+    NSMutableSet *_invalidatedIndexPaths;
     } _itemSize;
     NSMutableArray *_items;
-    int _itemsByRowCount;
-    int _itemsCount;
-    float _lastRowActualGap;
-    float _lastRowBeginMargin;
-    float _lastRowEndMargin;
-    BOOL _lastRowIncomplete;
+    long long _itemsByRowCount;
+    long long _itemsCount;
+    double _lastRowActualGap;
+    double _lastRowBeginMargin;
+    double _lastRowEndMargin;
     _UIFlowLayoutInfo *_layoutInfo;
-    float _otherMargin;
+    double _otherMargin;
+    } _rectToKeepValid;
     NSDictionary *_rowAlignmentOptions;
     NSMutableArray *_rows;
-    } _sectionMagins;
     } _sectionMargins;
-    float _verticalInterstice;
+    } _validItemRange;
+    } _validRect;
+    double _verticalInterstice;
+    bool_fixedItemSize;
+    bool_isValid;
+    bool_lastRowIncomplete;
 }
 
-@property(readonly) float actualGap;
-@property(readonly) float beginMargin;
-@property(readonly) float endMargin;
-@property BOOL fixedItemSize;
-@property float footerDimension;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } footerFrame;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property float headerDimension;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } headerFrame;
-@property float horizontalInterstice;
-@property(readonly) int indexOfImcompleteRow;
-@property struct CGSize { float x1; float x2; } itemSize;
+@property(readonly) double actualGap;
+@property(readonly) double beginMargin;
+@property(readonly) double endMargin;
+@property bool fixedItemSize;
+@property(readonly) double footerDimension;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } footerFrame;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property(readonly) double headerDimension;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } headerFrame;
+@property double horizontalInterstice;
+@property(readonly) long long indexOfIncompleteRow;
+@property(readonly) NSArray * invalidatedIndexPaths;
+@property struct CGSize { double x1; double x2; } itemSize;
 @property(readonly) NSMutableArray * items;
-@property(readonly) int itemsByRowCount;
-@property int itemsCount;
-@property(readonly) float lastRowActualGap;
-@property(readonly) float lastRowBeginMargin;
-@property(readonly) float lastRowEndMargin;
-@property(readonly) BOOL lastRowIncomplete;
+@property(readonly) long long itemsByRowCount;
+@property long long itemsCount;
+@property(readonly) double lastRowActualGap;
+@property(readonly) double lastRowBeginMargin;
+@property(readonly) double lastRowEndMargin;
+@property(readonly) bool lastRowIncomplete;
 @property _UIFlowLayoutInfo * layoutInfo;
-@property(readonly) float otherMargin;
+@property(readonly) double otherMargin;
 @property(retain) NSDictionary * rowAlignmentOptions;
 @property(readonly) NSMutableArray * rows;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionMargins;
-@property float verticalInterstice;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionMargins;
+@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } validItemRange;
+@property double verticalInterstice;
 
-- (float)actualGap;
+- (double)actualGap;
+- (void)addInvalidatedIndexPath:(id)arg1;
 - (id)addItem;
-- (id)addRow;
-- (float)beginMargin;
+- (id)addRowAtEnd:(bool)arg1;
+- (double)beginMargin;
 - (void)computeLayout;
+- (void)computeLayoutInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSection:(long long)arg2 invalidating:(bool)arg3;
 - (id)copyFromLayoutInfo:(id)arg1;
 - (void)dealloc;
-- (float)endMargin;
-- (BOOL)fixedItemSize;
-- (float)footerDimension;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })footerFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (float)headerDimension;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })headerFrame;
-- (float)horizontalInterstice;
-- (int)indexOfImcompleteRow;
+- (double)endMargin;
+- (long long)estimatedIndexOfItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)fixedItemSize;
+- (double)footerDimension;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })footerFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemAtIndexPath:(id)arg1;
+- (double)headerDimension;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })headerFrame;
+- (double)horizontalInterstice;
+- (long long)indexOfIncompleteRow;
 - (id)init;
 - (void)invalidate;
-- (struct CGSize { float x1; float x2; })itemSize;
+- (id)invalidatedIndexPaths;
+- (struct CGSize { double x1; double x2; })itemSize;
 - (id)items;
-- (int)itemsByRowCount;
-- (int)itemsCount;
-- (float)lastRowActualGap;
-- (float)lastRowBeginMargin;
-- (float)lastRowEndMargin;
-- (BOOL)lastRowIncomplete;
+- (long long)itemsByRowCount;
+- (long long)itemsCount;
+- (double)lastRowActualGap;
+- (double)lastRowBeginMargin;
+- (double)lastRowEndMargin;
+- (bool)lastRowIncomplete;
 - (id)layoutInfo;
-- (float)otherMargin;
-- (void)recomputeFromIndex:(int)arg1;
+- (void)logInvalidSizes;
+- (double)otherMargin;
 - (id)rowAlignmentOptions;
 - (id)rows;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionMargins;
-- (void)setFixedItemSize:(BOOL)arg1;
-- (void)setFooterDimension:(float)arg1;
-- (void)setFooterFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHeaderDimension:(float)arg1;
-- (void)setHeaderFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHorizontalInterstice:(float)arg1;
-- (void)setItemSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setItemsCount:(int)arg1;
+- (id)rowsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionMargins;
+- (void)setEstimatedSize:(struct CGSize { double x1; double x2; })arg1 forSection:(long long)arg2;
+- (void)setFixedItemSize:(bool)arg1;
+- (void)setFooterDimension:(double)arg1 forSection:(long long)arg2;
+- (void)setFooterFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHeaderDimension:(double)arg1 forSection:(long long)arg2;
+- (void)setHeaderFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHorizontalInterstice:(double)arg1;
+- (void)setItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setItemsCount:(long long)arg1;
 - (void)setLayoutInfo:(id)arg1;
 - (void)setRowAlignmentOptions:(id)arg1;
-- (void)setSectionMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setVerticalInterstice:(float)arg1;
+- (void)setSectionMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1 forItemAtIndexPath:(id)arg2;
+- (void)setVerticalInterstice:(double)arg1;
+- (void)sizeChangedForItem:(id)arg1 atIndexPath:(id)arg2 inRow:(id)arg3;
 - (id)snapshot;
-- (float)verticalInterstice;
+- (void)updateEstimatedSizeForSection:(long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })validItemRange;
+- (double)verticalInterstice;
 
 @end

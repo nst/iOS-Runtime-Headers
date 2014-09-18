@@ -19,7 +19,6 @@
 - (void)async:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
-- (void)heartAttack;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (id)newTimer;

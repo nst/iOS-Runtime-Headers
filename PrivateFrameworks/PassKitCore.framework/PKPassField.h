@@ -6,46 +6,46 @@
 
 @interface PKPassField : NSObject <NSSecureCoding> {
     NSString *_changeMessage;
-    unsigned int _dataDetectorTypes;
+    unsigned long long _dataDetectorTypes;
     NSString *_key;
     NSString *_label;
-    int _textAlignment;
-    int _type;
+    long long _textAlignment;
+    long long _type;
     id _unformattedValue;
     NSString *_value;
 }
 
 @property(copy) NSString * changeMessage;
-@property unsigned int dataDetectorTypes;
+@property unsigned long long dataDetectorTypes;
 @property(copy) NSString * key;
 @property(copy) NSString * label;
-@property int textAlignment;
-@property int type;
+@property long long textAlignment;
+@property long long type;
 @property(copy) id unformattedValue;
 @property(readonly) NSString * value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)changeMessage;
-- (unsigned int)dataDetectorTypes;
+- (unsigned long long)dataDetectorTypes;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushCachedValue;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (id)label;
 - (void)setChangeMessage:(id)arg1;
-- (void)setDataDetectorTypes:(unsigned int)arg1;
+- (void)setDataDetectorTypes:(unsigned long long)arg1;
 - (void)setKey:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
-- (void)setType:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
+- (void)setType:(long long)arg1;
 - (void)setUnformattedValue:(id)arg1;
-- (int)textAlignment;
-- (int)type;
+- (long long)textAlignment;
+- (long long)type;
 - (id)unformattedValue;
 - (id)value;
 

@@ -7,12 +7,12 @@
 @interface TSDGroupLayout : TSDContainerLayout <TSDWrappableParent> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } mBoundsForStandardKnobs;
     TSDBezierPath *mCachedExternalWrapPath;
@@ -21,17 +21,18 @@
 }
 
 - (id)additionalDependenciesForChildLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
-- (BOOL)allowsConnections;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrame;
+- (bool)allowsConnections;
 - (void)beginDynamicOperation;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (BOOL)canAspectRatioLockBeChangedByUser;
-- (BOOL)canFlip;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (bool)canAspectRatioLockBeChangedByUser;
+- (bool)canFlip;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clipRect;
 - (id)computeInfoGeometryDuringResize;
 - (id)computeLayoutGeometry;
 - (void)dealloc;
 - (id)descendentWrappables;
-- (void)dragBy:(struct CGPoint { float x1; float x2; })arg1;
+- (void)dragBy:(struct CGPoint { double x1; double x2; })arg1;
 - (void)endDynamicOperation;
 - (id)i_computeWrapPath;
 - (id)i_externalWrapPath;
@@ -40,20 +41,22 @@
 - (void)invalidateExteriorWrap;
 - (id)layoutGeometryFromInfo;
 - (id)layoutsForProvidingGuidesForChildLayouts;
-- (struct CGSize { float x1; float x2; })minimumSize;
+- (struct CGSize { double x1; double x2; })minimumSize;
 - (id)p_childWrapPathsFrom:(id)arg1;
 - (void)p_createDynamicCopies;
 - (void)p_destroyDynamicCopies;
 - (void)p_invalidateDescendentWrapPaths;
 - (void)p_invalidateParentForWrap;
 - (void)processChangedProperty:(int)arg1;
-- (BOOL)providesGuidesForChildLayouts;
+- (bool)providesGuidesForChildLayouts;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForPresentingAnnotationPopoverForSelection:(id)arg1;
 - (id)reliedOnLayouts;
-- (BOOL)resizeMayChangeAspectRatio;
+- (bool)resizeMayChangeAspectRatio;
 - (void)setDynamicGeometry:(id)arg1;
 - (void)setGeometry:(id)arg1;
-- (BOOL)supportsParentRotation;
-- (BOOL)supportsRotation;
+- (bool)supportsFlipping;
+- (bool)supportsParentRotation;
+- (bool)supportsRotation;
 - (void)takeRotationFromTracker:(id)arg1;
 - (void)takeSizeFromTracker:(id)arg1;
 - (id)visibleGeometries;

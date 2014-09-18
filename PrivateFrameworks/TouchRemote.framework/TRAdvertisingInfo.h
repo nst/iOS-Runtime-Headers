@@ -9,10 +9,10 @@
     NSData *_wirelessProximityIdentifier;
 }
 
-@property(readonly) NSData * pairingPublicKey;
-@property(readonly) NSData * wirelessProximityIdentifier;
+@property(copy,readonly) NSData * pairingPublicKey;
+@property(copy,readonly) NSData * wirelessProximityIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_TXTRecordRepresentation;

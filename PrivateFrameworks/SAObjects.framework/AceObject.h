@@ -12,9 +12,13 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSMutableDictionary * dict;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSData * plistData;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 
 + (id)_aceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
 + (id)_newAceObjectWithMutableDictionary:(id)arg1;
@@ -29,13 +33,15 @@
 + (id)dictionaryWithAceObjectDictionary:(id)arg1;
 + (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
+- (bool)_afui_isUsefulUserResultCommand;
+- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(long long)arg3 withPrefixes:(id)arg4;
 - (void)_deserializeFromPlistData;
 - (id)_dict;
 - (id)_initWithMutableDictionary:(id)arg1;
 - (id)_initWithPlistData:(id)arg1 aceId:(id)arg2 refId:(id)arg3;
+- (id)_serializedData;
 - (id)aceId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -44,15 +50,15 @@
 - (id)dictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodedClassName;
-- (void)forceEagerDeserialization;
+- (id)forceEagerDeserialization;
 - (id)groupIdentifier;
-- (BOOL)hasArrayForPropertyForKey:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasArrayForPropertyForKey:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)plistData;
 - (id)properties;

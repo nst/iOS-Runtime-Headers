@@ -5,9 +5,11 @@
 @interface ABStarkContactAddressPropertyCell : ABPropertyPostalAddressCell {
 }
 
-- (id)contentViewConstraints;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (double)bottomBaselineConstant;
+- (id)standardTransportIcon;
+- (double)topBaselineConstant;
 - (void)transportButtonClicked:(id)arg1;
 - (void)updateTransportButtons;
+- (id)variableConstraints;
 
 @end

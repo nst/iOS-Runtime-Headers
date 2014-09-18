@@ -5,31 +5,37 @@
 @class <PLCameraImporterDelegate>, ICCameraDevice, NSMutableArray, NSMutableDictionary, NSString, PLCameraImportQueue, PLImportFileManager, PLMutableCameraImportQueue;
 
 @interface PLCameraImporter : NSObject <ICDeviceDelegate, ICCameraDeviceDelegate> {
-    BOOL _autosplitEvents;
     ICCameraDevice *_camera;
     NSMutableArray *_coalescedDeletedItems;
     id _delegate;
     PLCameraImportQueue *_deleteQueue;
     PLCameraImportQueue *_downloadQueue;
-    int _eventSplitGranularity;
+    long long _eventSplitGranularity;
     PLImportFileManager *_importFileManager;
-    BOOL _importInProgress;
-    BOOL _importItemInProgress;
     PLCameraImportQueue *_importQueue;
     NSMutableArray *_items;
     NSMutableDictionary *_itemsMapping;
     NSMutableArray *_orphanItems;
     NSMutableDictionary *_parentFolderMapping;
-    BOOL _stopAfterNextItemImport;
     PLMutableCameraImportQueue *_thumbnailQueue;
+    bool_autosplitEvents;
+    bool_importInProgress;
+    bool_importItemInProgress;
+    bool_isAppleDevice;
+    bool_stopAfterNextItemImport;
     NSString *importSessionIdentifier;
 }
 
 @property(retain) ICCameraDevice * camera;
+@property(copy,readonly) NSString * debugDescription;
 @property <PLCameraImporterDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * importSessionIdentifier;
+@property bool isAppleDevice;
 @property(retain) NSMutableArray * items;
 @property(retain) NSMutableDictionary * itemsMapping;
+@property(readonly) Class superclass;
 
 - (void)_addImportItemFromCameraFile:(id)arg1;
 - (void)_clearImportItemsForDownload:(id)arg1;
@@ -42,7 +48,7 @@
 - (void)_downloadImportItems:(id)arg1;
 - (void)_photoLibraryFinishedImportForPhoto:(id)arg1 atPath:(id)arg2 error:(id)arg3;
 - (void)_removeImportItemsAtPathsInBackground:(id)arg1;
-- (void)_separateItems:(id)arg1 intoEventsWithGranularity:(int)arg2;
+- (void)_separateItems:(id)arg1 intoEventsWithGranularity:(long long)arg2;
 - (void)_stopImport;
 - (void)addImportItemsFromCameraFiles:(id)arg1;
 - (id)allImportItems;
@@ -56,14 +62,14 @@
 - (void)cameraDidError:(id)arg1;
 - (id)cameraKind;
 - (id)cameraName;
-- (unsigned int)contentPercentCompleted;
+- (unsigned long long)contentPercentCompleted;
 - (void)dealloc;
 - (id)delegate;
 - (void)device:(id)arg1 didCloseSessionWithError:(id)arg2;
 - (void)device:(id)arg1 didEncounterError:(id)arg2;
 - (void)device:(id)arg1 didOpenSessionWithError:(id)arg2;
 - (void)deviceDidBecomeReady:(id)arg1;
-- (BOOL)deviceIsLocked;
+- (bool)deviceIsLocked;
 - (void)didConnectToCamera:(id)arg1 error:(id)arg2;
 - (void)didDisconnectFromCamera:(id)arg1 error:(id)arg2;
 - (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void*)arg4;
@@ -74,13 +80,14 @@
 - (void)didReceiveThumbnail:(struct CGImage { }*)arg1 forImportItem:(id)arg2 error:(id)arg3;
 - (void)didRemoveDevice:(id)arg1;
 - (void)ejectCamera;
-- (unsigned int)estimatedNumberOfItems;
+- (unsigned long long)estimatedNumberOfItems;
 - (void)importImportItem:(id)arg1;
 - (id)importItemForCameraFile:(id)arg1;
 - (void)importItems:(id)arg1;
 - (id)importSessionIdentifier;
 - (id)initWithDevice:(id)arg1 delegate:(id)arg2;
-- (BOOL)isImporting;
+- (bool)isAppleDevice;
+- (bool)isImporting;
 - (id)items;
 - (id)itemsMapping;
 - (void)readImportItems;
@@ -91,6 +98,7 @@
 - (void)setCamera:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImportSessionIdentifier:(id)arg1;
+- (void)setIsAppleDevice:(bool)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItemsMapping:(id)arg1;
 - (void)stopImport;

@@ -36,15 +36,15 @@
 - (double)_delayedPresentationTimeout;
 - (void)_didEndDelayingCompositionPresentation;
 - (void)_endDelayingCompositionPresentation;
-- (void)_finishServiceViewControllerRequestWithSuccess:(BOOL)arg1;
-- (void)_loadContentViewControllerForcingPlaceholder:(BOOL)arg1;
-- (void)_notifyBodyDidFinishLoadingWithResult:(BOOL)arg1;
+- (void)_finishServiceViewControllerRequestWithSuccess:(bool)arg1;
+- (void)_loadContentViewControllerForcingPlaceholder:(bool)arg1;
+- (void)_notifyBodyDidFinishLoadingWithResult:(bool)arg1;
 - (void)_notifyCompositionDidFinish;
 - (void)_serviceViewControllerReady:(id)arg1 error:(id)arg2;
 - (void)_setCompositionValue:(id)arg1 forKey:(id)arg2;
 - (void)_setPlaceHolderSubject:(id)arg1;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)autorotationDelegate;
 - (void)autosaveWithHandler:(id)arg1;
 - (void)compositionFinishedWithResult:(int)arg1 error:(id)arg2;
@@ -58,19 +58,20 @@
 - (void)setAutorotationDelegate:(id)arg1;
 - (void)setAutosaveIdentifier:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
+- (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setCcRecipients:(id)arg1;
-- (void)setContentVisible:(BOOL)arg1;
+- (void)setContentVisible:(bool)arg1;
 - (void)setMailComposeDelegate:(id)arg1;
-- (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
-- (void)setShowKeyboardImmediately:(BOOL)arg1;
+- (void)setMessageBody:(id)arg1 isHTML:(bool)arg2;
+- (void)setShowKeyboardImmediately:(bool)arg1;
 - (void)setSourceAccountManagement:(int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (void)setURL:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

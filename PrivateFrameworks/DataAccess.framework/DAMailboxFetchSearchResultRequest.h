@@ -10,13 +10,20 @@
     int _maxSize;
 }
 
+@property int bodyFormat;
+@property(copy) NSString * longID;
+@property int maxSize;
+
+- (void).cxx_destruct;
 - (int)bodyFormat;
-- (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initRequestForBodyFormat:(int)arg1 withLongID:(id)arg2 withBodySizeLimit:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)longID;
 - (int)maxSize;
+- (void)setBodyFormat:(int)arg1;
+- (void)setLongID:(id)arg1;
+- (void)setMaxSize:(int)arg1;
 
 @end

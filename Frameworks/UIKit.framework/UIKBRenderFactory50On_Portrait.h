@@ -7,14 +7,14 @@
 
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (float)controlColumnWidthFactor;
-- (float)deleteKeyFontSize;
-- (float)keyCornerRadius;
-- (float)keyplaneSwitchKeyFontSize;
+- (double)controlColumnWidthFactor;
+- (double)deleteKeyFontSize;
+- (double)keyCornerRadius;
+- (double)keyplaneSwitchKeyFontSize;
 - (id)lightKeycapsFontName;
-- (float)returnKeyFontSize;
+- (double)returnKeyFontSize;
 - (void)setupLayoutSegments;
-- (float)spaceKeyFontSize;
+- (double)spaceKeyFontSize;
 - (id)thinKeycapsFontName;
 
 @end

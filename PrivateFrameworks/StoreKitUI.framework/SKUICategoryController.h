@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUICategoryControllerDelegate>, NSArray, NSOperationQueue, NSURL, SKUICategory, SKUICategoryArtworkLoader, SKUICategoryTableViewController, SKUIClientContext, SKUISegmentedControl, SSVLoadURLOperation, UIBarButtonItem, UIPopoverController, UISegmentedControl, UIViewController;
+@class <SKUICategoryControllerDelegate>, NSArray, NSOperationQueue, NSString, NSURL, SKUICategory, SKUICategoryArtworkLoader, SKUICategoryTableViewController, SKUIClientContext, SKUISegmentedControl, SSVLoadURLOperation, UIBarButtonItem, UIPopoverController, UISegmentedControl, UIViewController;
 
 @interface SKUICategoryController : NSObject <SKUICategoryTableViewControllerDelegate, UIPopoverControllerDelegate> {
     SKUICategoryArtworkLoader *_artworkLoader;
@@ -16,7 +16,7 @@
     UIPopoverController *_popover;
     SKUICategory *_rootCategory;
     SKUISegmentedControl *_segmentedControl;
-    int _segmentedControlLength;
+    long long _segmentedControlLength;
     NSArray *_segmentedControlSegments;
     NSURL *_selectedURL;
     SKUICategoryTableViewController *_tableViewController;
@@ -25,23 +25,26 @@
 @property(retain) SKUICategory * category;
 @property(readonly) UIBarButtonItem * categoryButton;
 @property(retain) SKUIClientContext * clientContext;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) NSURL * defaultURL;
 @property <SKUICategoryControllerDelegate> * delegate;
-@property(readonly) BOOL isLoading;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isLoading;
 @property(retain) NSOperationQueue * operationQueue;
 @property(readonly) UISegmentedControl * segmentedControl;
-@property int segmentedControlLength;
+@property long long segmentedControlLength;
 @property(retain) NSURL * selectedURL;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_artworkLoader;
-- (id)_metricsLocationsWithIndex:(int)arg1;
+- (id)_metricsLocationsWithIndex:(long long)arg1;
 - (void)_precacheArtworkForCategory:(id)arg1;
-- (void)_recordClickEventWithCategory:(id)arg1 index:(int)arg2;
+- (void)_recordClickEventWithCategory:(id)arg1 index:(long long)arg2;
 - (void)_reloadSegmentedControl;
 - (void)_reloadSelectedSegment;
 - (id)_rootMetricsLocations;
-- (void)_setCachedResponse:(id)arg1 error:(id)arg2;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (id)_tableViewControllerWithCategory:(id)arg1;
 - (void)buttonAction:(id)arg1;
@@ -54,21 +57,21 @@
 - (id)delegate;
 - (void)dismiss;
 - (id)initWithContentsController:(id)arg1;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadFromURL:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)metricsPageContextForCategoryTableView:(id)arg1;
 - (id)operationQueue;
-- (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)segmentedControl;
 - (void)segmentedControlAction:(id)arg1;
-- (int)segmentedControlLength;
+- (long long)segmentedControlLength;
 - (id)selectedURL;
 - (void)setCategory:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDefaultURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)setSegmentedControlLength:(int)arg1;
+- (void)setSegmentedControlLength:(long long)arg1;
 - (void)setSelectedURL:(id)arg1;
 
 @end

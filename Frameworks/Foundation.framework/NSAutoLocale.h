@@ -8,10 +8,12 @@
     NSLocale *loc;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_init;
+- (unsigned char)_nullLocale;
 - (id)_prefs;
+- (void)_setNullLocale;
 - (void)_update:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

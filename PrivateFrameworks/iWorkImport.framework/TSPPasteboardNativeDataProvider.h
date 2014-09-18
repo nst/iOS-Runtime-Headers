@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, TSPPasteboard;
+@class NSMutableDictionary, NSString, TSPPasteboard;
 
 @interface TSPPasteboardNativeDataProvider : NSObject <TSPPasteboardWriting> {
     NSMutableDictionary *_nativeData;
     TSPPasteboard *_pasteboard;
     NSMutableDictionary *_tspData;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithPasteboard:(id)arg1 nativeData:(id)arg2 tspData:(id)arg3;

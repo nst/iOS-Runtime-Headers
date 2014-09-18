@@ -2,21 +2,28 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKCalloutBackgroundView, MKSmallCalloutView, NSString, UIView;
+@class <MKSmallCalloutViewControllerDelegate>, MKCalloutBackgroundView, MKSmallCalloutView, NSString, UIView;
 
 @interface MKSmallCalloutViewController : UIViewController <CalloutViewControllerProtocol> {
+    <MKSmallCalloutViewControllerDelegate> *_delegate;
     MKSmallCalloutView *_smallCalloutView;
 }
 
 @property(retain) MKCalloutBackgroundView * calloutBackgroundView;
 @property(copy) NSString * calloutSubtitle;
 @property(copy) NSString * calloutTitle;
+@property(copy,readonly) NSString * debugDescription;
+@property <MKSmallCalloutViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
 @property(retain) UIView * detailView;
+@property(readonly) unsigned long long hash;
 @property(retain) UIView * leftView;
-@property int mapDisplayStyle;
+@property unsigned long long mapDisplayStyle;
+@property double maximumWidth;
 @property(retain) UIView * rightView;
+@property(readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSize;
 
 - (void).cxx_destruct;
 - (id)_smallCalloutView;
@@ -24,27 +31,32 @@
 - (id)calloutBackgroundView;
 - (id)calloutSubtitle;
 - (id)calloutTitle;
-- (BOOL)canDisplayCompleteTitleWhenExpanded;
+- (bool)canDisplayCompleteTitleWhenExpanded;
+- (id)delegate;
 - (id)detailView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)leftView;
 - (void)loadView;
-- (int)mapDisplayStyle;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (unsigned long long)mapDisplayStyle;
+- (double)maximumWidth;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)reset;
 - (id)rightView;
 - (void)setCalloutBackgroundView:(id)arg1;
-- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
+- (void)setCalloutSubtitle:(id)arg1 animated:(bool)arg2;
 - (void)setCalloutSubtitle:(id)arg1;
 - (void)setCalloutTitle:(id)arg1;
-- (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setDetailView:(id)arg1 animated:(bool)arg2;
 - (void)setDetailView:(id)arg1;
-- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftView:(id)arg1 animated:(bool)arg2;
 - (void)setLeftView:(id)arg1;
-- (void)setMapDisplayStyle:(int)arg1;
-- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
+- (void)setMapDisplayStyle:(unsigned long long)arg1;
+- (void)setMaximumWidth:(double)arg1;
+- (void)setRightView:(id)arg1 animated:(bool)arg2;
 - (void)setRightView:(id)arg1;
 - (void)updatePreferredContentSize;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
 
 @end

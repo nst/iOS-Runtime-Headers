@@ -6,55 +6,62 @@
 
 @interface _UIFlowLayoutRow : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL _complete;
-    BOOL _fixedItemSize;
+    double _availableSpace;
     int _horizontalAlignement;
-    int _index;
-    BOOL _isValid;
+    long long _index;
     NSMutableArray *_items;
     } _rowFrame;
     } _rowSize;
     _UIFlowLayoutSection *_section;
     int _verticalAlignement;
+    bool_complete;
+    bool_fixedItemSize;
+    bool_isValid;
 }
 
-@property BOOL complete;
-@property BOOL fixedItemSize;
-@property int index;
+@property double availableSpace;
+@property bool complete;
+@property bool fixedItemSize;
+@property long long index;
 @property(readonly) NSMutableArray * items;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rowFrame;
-@property struct CGSize { float x1; float x2; } rowSize;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rowFrame;
+@property struct CGSize { double x1; double x2; } rowSize;
 @property _UIFlowLayoutSection * section;
 
-- (void)addItem:(id)arg1;
-- (BOOL)complete;
+- (void)addItem:(id)arg1 atEnd:(bool)arg2;
+- (double)availableSpace;
+- (bool)complete;
 - (id)copyFromSection:(id)arg1;
 - (void)dealloc;
-- (BOOL)fixedItemSize;
-- (int)index;
+- (bool)fixedItemSize;
+- (long long)index;
+- (long long)indexOfNearestItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)init;
+- (void)insertItem:(id)arg1 atIndex:(long long)arg2;
 - (void)invalidate;
 - (id)items;
 - (void)layoutRow;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rowFrame;
-- (struct CGSize { float x1; float x2; })rowSize;
+- (void)removeItemAtIndex:(long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rowFrame;
+- (struct CGSize { double x1; double x2; })rowSize;
 - (id)section;
-- (void)setComplete:(BOOL)arg1;
-- (void)setFixedItemSize:(BOOL)arg1;
-- (void)setIndex:(int)arg1;
-- (void)setRowFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setRowSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setAvailableSpace:(double)arg1;
+- (void)setComplete:(bool)arg1;
+- (void)setFixedItemSize:(bool)arg1;
+- (void)setIndex:(long long)arg1;
+- (void)setRowFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRowSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSection:(id)arg1;
 - (id)snapshot;
 

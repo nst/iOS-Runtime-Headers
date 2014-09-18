@@ -6,14 +6,14 @@
 
 @interface UIAttachmentBehavior : UIDynamicBehavior {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct { 
         unsigned int dampingSet : 1; 
         unsigned int frequencySet : 1; 
@@ -23,45 +23,45 @@
     } _anchorPoint;
     } _anchorPointA;
     } _anchorPointB;
-    int _attachedBehaviorType;
-    float _damping;
-    float _frequency;
+    long long _attachedBehaviorType;
+    double _damping;
+    double _frequency;
     PKPhysicsJoint *_joint;
-    float _length;
+    double _length;
     } _stateFlags;
-    int _type;
+    long long _type;
 }
 
-@property struct CGPoint { float x1; float x2; } anchorPoint;
-@property(readonly) int attachedBehaviorType;
-@property float damping;
-@property float frequency;
-@property(readonly) NSArray * items;
-@property float length;
+@property struct CGPoint { double x1; double x2; } anchorPoint;
+@property(readonly) long long attachedBehaviorType;
+@property double damping;
+@property double frequency;
+@property(copy,readonly) NSArray * items;
+@property double length;
 
 - (void)_associate;
 - (void)_changedParameter;
 - (void)_dissociate;
 - (void)_reevaluateJoint;
-- (struct CGPoint { float x1; float x2; })anchorPoint;
-- (int)attachedBehaviorType;
-- (float)damping;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (long long)attachedBehaviorType;
+- (double)damping;
 - (void)dealloc;
 - (id)description;
-- (float)frequency;
+- (double)frequency;
 - (id)init;
-- (id)initWithItem:(id)arg1 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg2;
+- (id)initWithItem:(id)arg1 attachedToAnchor:(struct CGPoint { double x1; double x2; })arg2;
 - (id)initWithItem:(id)arg1 attachedToItem:(id)arg2;
-- (id)initWithItem:(id)arg1 offsetFromCenter:(struct UIOffset { float x1; float x2; })arg2 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg3;
-- (id)initWithItem:(id)arg1 offsetFromCenter:(struct UIOffset { float x1; float x2; })arg2 attachedToItem:(id)arg3 offsetFromCenter:(struct UIOffset { float x1; float x2; })arg4;
-- (id)initWithItem:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg3;
-- (id)initWithItem:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2 attachedToItem:(id)arg3 point:(struct CGPoint { float x1; float x2; })arg4;
+- (id)initWithItem:(id)arg1 offsetFromCenter:(struct UIOffset { double x1; double x2; })arg2 attachedToAnchor:(struct CGPoint { double x1; double x2; })arg3;
+- (id)initWithItem:(id)arg1 offsetFromCenter:(struct UIOffset { double x1; double x2; })arg2 attachedToItem:(id)arg3 offsetFromCenter:(struct UIOffset { double x1; double x2; })arg4;
+- (id)initWithItem:(id)arg1 point:(struct CGPoint { double x1; double x2; })arg2 attachedToAnchor:(struct CGPoint { double x1; double x2; })arg3;
+- (id)initWithItem:(id)arg1 point:(struct CGPoint { double x1; double x2; })arg2 attachedToItem:(id)arg3 point:(struct CGPoint { double x1; double x2; })arg4;
 - (id)items;
-- (float)length;
-- (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDamping:(float)arg1;
-- (void)setFrequency:(float)arg1;
-- (void)setLength:(float)arg1;
-- (int)type;
+- (double)length;
+- (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDamping:(double)arg1;
+- (void)setFrequency:(double)arg1;
+- (void)setLength:(double)arg1;
+- (long long)type;
 
 @end

@@ -3,20 +3,20 @@
  */
 
 @interface CalDAVContainerMultiGetTask : CoreDAVContainerMultiGetTask {
-    BOOL _getScheduleChanges;
-    BOOL _getScheduleTags;
+    bool_getScheduleChanges;
+    bool_getScheduleTags;
 }
 
-@property BOOL getScheduleChanges;
-@property BOOL getScheduleTags;
+@property bool getScheduleChanges;
+@property bool getScheduleTags;
 
 - (id)copyAdditionalPropElements;
-- (BOOL)getScheduleChanges;
-- (BOOL)getScheduleTags;
-- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 getScheduleTags:(BOOL)arg3 getScheduleChanges:(BOOL)arg4 appSpecificCalendarItemClass:(Class)arg5;
-- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 getScheduleTags:(BOOL)arg3 getScheduleChanges:(BOOL)arg4;
+- (bool)getScheduleChanges;
+- (bool)getScheduleTags;
+- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 getScheduleTags:(bool)arg3 getScheduleChanges:(bool)arg4 appSpecificCalendarItemClass:(Class)arg5;
+- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 getScheduleTags:(bool)arg3 getScheduleChanges:(bool)arg4;
 - (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
-- (void)setGetScheduleChanges:(BOOL)arg1;
-- (void)setGetScheduleTags:(BOOL)arg1;
+- (void)setGetScheduleChanges:(bool)arg1;
+- (void)setGetScheduleTags:(bool)arg1;
 
 @end

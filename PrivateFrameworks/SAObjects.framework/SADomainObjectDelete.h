@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SADomainObject;
+@class NSString, SADomainObject;
 
 @interface SADomainObjectDelete : SABaseClientBoundCommand <SADomainObjectCommand> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SADomainObject * identifier;
+@property(readonly) Class superclass;
 
 + (id)domainObjectDelete;
 + (id)domainObjectDeleteWithDictionary:(id)arg1 context:(id)arg2;
@@ -15,7 +19,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)identifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setIdentifier:(id)arg1;
 
 @end

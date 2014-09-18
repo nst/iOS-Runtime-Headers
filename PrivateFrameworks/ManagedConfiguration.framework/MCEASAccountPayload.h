@@ -16,25 +16,25 @@
     NSString *_hostname;
     NSNumber *_mailNumberOfPastDaysToSync;
     NSString *_password;
-    BOOL _syncDefaultFoldersOnly;
-    BOOL _useSSL;
+    NSNumber *_useSSL;
     NSString *_username;
+    bool_syncDefaultFoldersOnly;
 }
 
-@property(readonly) NSString * accountDescription;
+@property(retain,readonly) NSString * accountDescription;
 @property(copy) NSString * accountPersistentUUID;
 @property(retain) NSData * certificatePersistentID;
-@property(readonly) NSString * certificateUUID;
+@property(retain,readonly) NSString * certificateUUID;
 @property(copy) NSString * emailAddress;
-@property(readonly) NSData * embeddedCertificate;
-@property(readonly) NSString * embeddedCertificateName;
+@property(retain,readonly) NSData * embeddedCertificate;
+@property(retain,readonly) NSString * embeddedCertificateName;
 @property(copy) NSString * embeddedCertificatePassword;
-@property(readonly) BOOL hasCertificate;
-@property(readonly) NSString * hostname;
-@property(readonly) NSNumber * mailNumberOfPastDaysToSync;
+@property(readonly) bool hasCertificate;
+@property(retain,readonly) NSString * hostname;
+@property(retain,readonly) NSNumber * mailNumberOfPastDaysToSync;
 @property(copy) NSString * password;
-@property BOOL syncDefaultFoldersOnly;
-@property(readonly) BOOL useSSL;
+@property bool syncDefaultFoldersOnly;
+@property(retain) NSNumber * useSSL;
 @property(copy) NSString * username;
 
 + (id)localizedPluralForm;
@@ -51,26 +51,28 @@
 - (id)embeddedCertificate;
 - (id)embeddedCertificateName;
 - (id)embeddedCertificatePassword;
-- (BOOL)hasCertificate;
+- (bool)hasCertificate;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)mailNumberOfPastDaysToSync;
 - (id)password;
+- (id)payloadDescriptionKeyValueSections;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (void)setCertificatePersistentID:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setEmbeddedCertificatePassword:(id)arg1;
 - (void)setPassword:(id)arg1;
-- (void)setSyncDefaultFoldersOnly:(BOOL)arg1;
+- (void)setSyncDefaultFoldersOnly:(bool)arg1;
+- (void)setUseSSL:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
-- (BOOL)syncDefaultFoldersOnly;
+- (bool)syncDefaultFoldersOnly;
 - (id)title;
-- (BOOL)useSSL;
+- (id)useSSL;
 - (id)username;
 
 @end

@@ -6,18 +6,22 @@
    See Warning(s) below.
  */
 
-@class ACAccount, MSSearch, NSOperationQueue;
+@class ACAccount, MSSearch, NSOperationQueue, NSString;
 
 @interface AAAutoAccountVerifier : NSObject <MSSearchDelegate> {
     ACAccount *_account;
     int _attempts;
-    BOOL _canceled;
     id _handler;
     NSOperationQueue *_requesterQueue;
     MSSearch *_search;
+    bool_canceled;
 }
 
 @property(retain) ACAccount * account;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_resendVerificationEmailForAccount:(id)arg1 completion:(id)arg2;
@@ -27,7 +31,7 @@
 - (void)cancel;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
-- (BOOL)search:(id)arg1 didFindResults:(id)arg2;
+- (bool)search:(id)arg1 didFindResults:(id)arg2;
 - (void)search:(id)arg1 didFinishWithError:(id)arg2;
 - (void)sendVerificationEmail;
 - (void)setAccount:(id)arg1;

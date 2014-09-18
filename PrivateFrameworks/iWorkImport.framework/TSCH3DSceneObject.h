@@ -8,20 +8,20 @@
 + (id)renderCacheKey;
 + (id)sceneObject;
 + (void)setSelectionPath:(id)arg1 selectionMode:(int)arg2 forScene:(id)arg3;
-+ (float)textRotationForChartInfo:(id)arg1;
++ (double)textRotationForChartInfo:(id)arg1;
 
 - (void)addTitleAnimationToClips:(id)arg1;
 - (void)addZAxisAnimationToClips:(id)arg1 scene:(id)arg2;
-- (BOOL)animationTextureSceneDelegateShouldSkipForRep:(id)arg1 finalElements:(BOOL)arg2 chunkStage:(int)arg3;
-- (BOOL)canEditTextForSelectionPath:(id)arg1 forInfo:(id)arg2;
-- (BOOL)canRenderSelectionPath:(id)arg1 forInfo:(id)arg2;
+- (bool)animationTextureSceneDelegateShouldSkipForRep:(id)arg1 finalElements:(bool)arg2 chunkStage:(long long)arg3;
+- (bool)canEditTextForSelectionPath:(id)arg1 forInfo:(id)arg2;
+- (bool)canRenderSelectionPath:(id)arg1 forInfo:(id)arg2;
 - (Class)chartBoundsLayoutSceneDelegateClass;
 - (id)convertSelectionPathTo3D:(id)arg1 path:(id)arg2;
-- (struct EdgeDetectionParameters { BOOL x1; BOOL x2; float x3; })edgeDetectionParameters;
+- (struct EdgeDetectionParameters { boolx1; boolx2; float x3; })edgeDetectionParameters;
 - (void)getBounds:(id)arg1;
 - (void)getSelectionKnobsPositions:(id)arg1;
-- (BOOL)growAnimationLinearInterpolationForChartDeliveryStyle:(unsigned int)arg1;
-- (BOOL)growAnimationSequenceInOrderForChartDeliveryStyle:(unsigned int)arg1;
+- (bool)growAnimationLinearInterpolationForChartDeliveryStyle:(unsigned long long)arg1;
+- (bool)growAnimationSequenceInOrderForChartDeliveryStyle:(unsigned long long)arg1;
 - (int)p_animationTextureSceneDelegateChunkPlane;
 - (void)postGetBounds:(id)arg1;
 - (void)postrender:(id)arg1;
@@ -31,7 +31,8 @@
 - (void)render:(id)arg1;
 - (id)renderInfoForSelectionPath:(id)arg1 info:(id)arg2;
 - (id)selectionPathForInfo:(id)arg1 scene:(id)arg2 pickedPoint:(id)arg3;
-- (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })shadowBlendRangeForChartDeliveryStyle:(unsigned int)arg1;
+- (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })shadowBlendRangeForChartDeliveryStyle:(unsigned long long)arg1;
+- (float)shadowCameraDepthLimitAdjustmentFactorForScene:(id)arg1;
 - (struct box<glm::detail::tvec3<float> > { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; })shadowPlanePadding;
 - (void)statePreservedGetSelectionKnobsPositions:(id)arg1;
 - (void)statePreservedPostrender:(id)arg1;

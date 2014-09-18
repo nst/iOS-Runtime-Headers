@@ -2,34 +2,51 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
+@class AVURLAsset;
+
 @interface CKMovieMediaObject : CKAVMediaObject {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL _checkedVideoInfo;
-    BOOL _hasVideoTrack;
+        double width; 
+        double height; 
+    AVURLAsset *_asset;
     } _pxSize;
+    bool_checkedVideoInfo;
+    bool_hasVideoTrack;
 }
 
-@property BOOL checkedVideoInfo;
-@property BOOL hasVideoTrack;
-@property struct CGSize { float x1; float x2; } pxSize;
+@property(retain) AVURLAsset * asset;
+@property bool checkedVideoInfo;
+@property bool hasVideoTrack;
+@property struct CGSize { double x1; double x2; } pxSize;
 
 + (id)UTITypes;
++ (Class)__ck_attachmentItemClass;
++ (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
-+ (BOOL)isPreviewable;
++ (bool)isPreviewable;
 
-- (struct CGSize { float x1; float x2; })bbSize;
-- (BOOL)checkedVideoInfo;
-- (id)generateThumbnail;
-- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)hasVideoTrack;
+- (id)asset;
+- (struct CGSize { double x1; double x2; })bbSize;
+- (bool)canBeAttachmentContiguous;
+- (bool)canExport;
+- (bool)checkedVideoInfo;
+- (void)dealloc;
+- (void)export:(id)arg1;
+- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (bool)hasNoVideoTrack;
+- (bool)hasVideoTrack;
 - (int)mediaType;
-- (id)previewForOrientation:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })pxSize;
-- (void)setCheckedVideoInfo:(BOOL)arg1;
-- (void)setHasVideoTrack:(BOOL)arg1;
-- (void)setPxSize:(struct CGSize { float x1; float x2; })arg1;
+- (Class)previewBalloonViewClass;
+- (id)previewCacheKeyWithOrientation:(BOOL)arg1;
+- (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;
+- (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (id)previewItemTitle;
+- (struct CGSize { double x1; double x2; })pxSize;
+- (void)setAsset:(id)arg1;
+- (void)setCheckedVideoInfo:(bool)arg1;
+- (void)setHasVideoTrack:(bool)arg1;
+- (void)setPxSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateVideoInfo;
 
 @end

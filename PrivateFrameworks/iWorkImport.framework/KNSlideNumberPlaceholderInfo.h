@@ -3,17 +3,15 @@
  */
 
 @interface KNSlideNumberPlaceholderInfo : KNPlaceholderInfo {
-    unsigned int mSlideNumber;
 }
 
 - (void)acceptVisitor:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)instructionalText;
-- (BOOL)isMagicMoveEquivalentToInfo:(id)arg1;
 - (int)kind;
 - (Class)layoutClass;
+- (id)localizedChunkNameForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned long long)arg3;
 - (Class)repClass;
-- (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
-- (id)titleForBuildChunk:(id)arg1;
+- (id)textureDeliveryStylesLocalized:(bool)arg1 animationFilter:(id)arg2;
 
 @end

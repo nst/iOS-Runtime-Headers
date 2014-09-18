@@ -20,8 +20,8 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)_initializeRelationshipCaches;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (id)ancillaryOrderKeysForProperty:(id)arg1;
 - (void)copyRelationshipCachesFrom:(id)arg1;
 - (void)dealloc;
@@ -36,7 +36,7 @@
 - (oneway void)release;
 - (void)releaseRelationshipCaches;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setAncillaryOrderKeys:(id)arg1 forProperty:(id)arg2 options:(unsigned int)arg3 andTimestamp:(double)arg4;
 - (void)setRelatedObjectIDs:(id)arg1 forProperty:(id)arg2 options:(unsigned int)arg3 andTimestamp:(double)arg4;
 - (void)setTimestamp:(double)arg1;

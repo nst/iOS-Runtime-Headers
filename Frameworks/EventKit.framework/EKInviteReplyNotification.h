@@ -7,7 +7,7 @@
 @interface EKInviteReplyNotification : EKObject {
 }
 
-@property(readonly) BOOL alerted;
+@property(readonly) bool alerted;
 @property(readonly) EKCalendar * calendar;
 @property(readonly) NSString * calendarName;
 @property(readonly) NSDate * creationDate;
@@ -18,7 +18,7 @@
 @property(readonly) int status;
 
 - (id)_persistentInviteReplyNotification;
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarName;
 - (void)clearAlertedStatus;

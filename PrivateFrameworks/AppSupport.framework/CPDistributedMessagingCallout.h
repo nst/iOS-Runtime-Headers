@@ -3,19 +3,19 @@
  */
 
 @interface CPDistributedMessagingCallout : NSObject {
-    BOOL _returnsVoid;
-    BOOL _returnsVoidIsValid;
     SEL _selector;
     id _target;
+    bool_returnsVoid;
+    bool_returnsVoidIsValid;
 }
 
-@property(readonly) BOOL returnsVoid;
+@property(readonly) bool returnsVoid;
 @property(readonly) SEL selector;
-@property(readonly) id target;
+@property(retain,readonly) id target;
 
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
-- (BOOL)returnsVoid;
+- (bool)returnsVoid;
 - (SEL)selector;
 - (id)target;
 

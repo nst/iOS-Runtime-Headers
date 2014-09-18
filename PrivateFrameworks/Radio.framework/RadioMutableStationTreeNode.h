@@ -8,20 +8,20 @@
 }
 
 @property(copy) RadioArtworkCollection * artworkCollection;
-@property int childNodeLoadingStyle;
+@property long long childNodeLoadingStyle;
 @property(copy) NSArray * childNodes;
-@property int displayStyle;
-@property BOOL hasAdditionalChildNodes;
+@property long long displayStyle;
+@property bool hasAdditionalChildNodes;
 @property(copy) NSString * name;
 @property long long nodeID;
 @property(copy) NSDictionary * stationDictionary;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setArtworkCollection:(id)arg1;
-- (void)setChildNodeLoadingStyle:(int)arg1;
+- (void)setChildNodeLoadingStyle:(long long)arg1;
 - (void)setChildNodes:(id)arg1;
-- (void)setDisplayStyle:(int)arg1;
-- (void)setHasAdditionalChildNodes:(BOOL)arg1;
+- (void)setDisplayStyle:(long long)arg1;
+- (void)setHasAdditionalChildNodes:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setNodeID:(long long)arg1;
 - (void)setStationDictionary:(id)arg1;

@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class ACUIAccountViewProvidersManager, NSArray;
+@class ACUIAccountViewProvidersManager, NSArray, NSString;
 
 @interface ACUIAddAccountViewController : PSListController <ACUISetupViewControllerDelegate> {
-    BOOL _dontShowSecondLevelOtherAccountTypes;
     unsigned char _originalCellFlag;
     unsigned char _originalWifiFlag;
     NSArray *_preEnabledDataclasses;
+    bool_dontShowSecondLevelOtherAccountTypes;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(readonly) ACUIAccountViewProvidersManager * viewProvidersManager;
 
 - (void).cxx_destruct;
@@ -29,6 +33,6 @@
 - (id)specifierForOtherAccounts;
 - (id)specifiers;
 - (id)viewProvidersManager;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

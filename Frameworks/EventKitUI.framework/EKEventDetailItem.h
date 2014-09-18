@@ -2,53 +2,60 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventDetailItemDelegate>, EKEvent, EKEventStore, EKUIRecurrenceAlertController, UIViewController, UIViewController<EKEditItemViewControllerProtocol>;
+@class <EKEventDetailItemDelegate>, EKEvent, EKEventStore, EKUIRecurrenceAlertController, NSString, UIViewController, UIViewController<EKEditItemViewControllerProtocol>;
 
 @interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
-    BOOL _allowsEditing;
     int _cellPosition;
     <EKEventDetailItemDelegate> *_delegate;
     EKEvent *_event;
     EKUIRecurrenceAlertController *_recurrenceAlertController;
-    BOOL _shouldIndent;
     EKEventStore *_store;
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
+    bool_allowsEditing;
+    bool_shouldIndent;
 }
 
-@property BOOL allowsEditing;
+@property bool allowsEditing;
 @property int cellPosition;
+@property(copy,readonly) NSString * debugDescription;
 @property <EKEventDetailItemDelegate> * delegate;
-@property BOOL shouldIndent;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool shouldIndent;
+@property(readonly) Class superclass;
 @property(retain) UIViewController * viewController;
 
 - (void).cxx_destruct;
-- (BOOL)allowsEditing;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (bool)allowsEditing;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (int)cellPosition;
-- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
+- (bool)configureWithCalendar:(id)arg1 preview:(bool)arg2;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (BOOL)editItemViewControllerCommit:(id)arg1;
-- (BOOL)editItemViewControllerShouldShowDetachAlert;
-- (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned int)arg2;
-- (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
-- (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
+- (bool)editItemViewControllerCommit:(id)arg1;
+- (bool)editItemViewControllerShouldShowDetachAlert;
+- (void)eventViewController:(id)arg1 didHighlightSubitem:(unsigned long long)arg2;
+- (void)eventViewController:(id)arg1 didSelectReadOnlySubitem:(unsigned long long)arg2;
+- (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (void)eventViewController:(id)arg1 didUnhighlightSubitem:(unsigned long long)arg2;
+- (bool)hasDetailViewControllerAtIndex:(unsigned long long)arg1;
+- (void)layoutCellsForWidth:(double)arg1 position:(int)arg2;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
-- (void)notifySubitemDidCommit:(unsigned int)arg1;
-- (unsigned int)numberOfSubitems;
+- (void)notifySubitemDidCommit:(unsigned long long)arg1;
+- (unsigned long long)numberOfSubitems;
 - (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (void)setAllowsEditing:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
+- (void)setAllowsEditing:(bool)arg1;
 - (void)setCellPosition:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)setShouldIndent:(BOOL)arg1;
+- (void)setShouldIndent:(bool)arg1;
 - (void)setViewController:(id)arg1;
-- (BOOL)shouldIndent;
+- (bool)shouldIndent;
 - (id)viewController;
 
 @end

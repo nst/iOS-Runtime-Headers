@@ -7,31 +7,31 @@
         float start; 
         float duration; 
     } _lifeSpan;
-    float _maxScale;
-    float _maxSpeed;
-    float _minScale;
-    float _randomParticleSpeedMax;
+    double _maxScale;
+    double _maxSpeed;
+    double _minScale;
+    double _randomParticleSpeedMax;
 }
 
 @property struct { float x1; float x2; } lifeSpan;
-@property float maxScale;
-@property float maxSpeed;
-@property float minScale;
-@property float randomParticleSpeedMax;
+@property double maxScale;
+@property double maxSpeed;
+@property double minScale;
+@property double randomParticleSpeedMax;
 
 - (struct { float x1; float x2; })lifeSpan;
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)maxScale;
-- (float)maxSpeed;
-- (float)minScale;
-- (float)randomParticleSpeedMax;
-- (float)scaleAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)maxScale;
+- (double)maxSpeed;
+- (double)minScale;
+- (double)randomParticleSpeedMax;
+- (double)scaleAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setLifeSpan:(struct { float x1; float x2; })arg1;
-- (void)setMaxScale:(float)arg1;
-- (void)setMaxSpeed:(float)arg1;
-- (void)setMinScale:(float)arg1;
-- (void)setRandomParticleSpeedMax:(float)arg1;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
+- (void)setMaxScale:(double)arg1;
+- (void)setMaxSpeed:(double)arg1;
+- (void)setMinScale:(double)arg1;
+- (void)setRandomParticleSpeedMax:(double)arg1;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
 
 @end

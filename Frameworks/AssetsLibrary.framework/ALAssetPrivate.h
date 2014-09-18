@@ -2,31 +2,35 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibrary, PLManagedAsset, PLPhotoLibrary;
+@class ALAssetsLibrary, NSString, PLManagedAsset, PLPhotoLibrary;
 
 @interface ALAssetPrivate : NSObject <ALAssetsLibraryAsset> {
-    BOOL _isValid;
     ALAssetsLibrary *_library;
     PLManagedAsset *_photo;
     PLPhotoLibrary *_photoLibrary;
+    bool_isValid;
 }
 
 @property(retain) PLPhotoLibrary * _photoLibrary;
-@property(getter=isDeletable,readonly) BOOL deletable;
-@property BOOL isValid;
+@property(copy,readonly) NSString * debugDescription;
+@property(getter=isDeletable,readonly) bool deletable;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool isValid;
 @property ALAssetsLibrary * library;
 @property(retain) PLManagedAsset * photo;
+@property(readonly) Class superclass;
 
 - (void)_performBlockAndWait:(id)arg1;
 - (id)_photoLibrary;
 - (void)dealloc;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
-- (BOOL)isDeletable;
-- (BOOL)isValid;
+- (bool)isDeletable;
+- (bool)isValid;
 - (id)library;
 - (void)libraryDidChange;
 - (id)photo;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)set_photoLibrary:(id)arg1;

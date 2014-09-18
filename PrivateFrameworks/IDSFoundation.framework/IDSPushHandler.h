@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class APSConnection, NSData, NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>;
+@class APSConnection, NSData, NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface IDSPushHandler : NSObject <APSConnectionDelegate> {
     Class _APSConnectionClass;
@@ -13,15 +13,20 @@
     NSMutableSet *_topicsCache;
 }
 
-@property(readonly) BOOL isConnected;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isConnected;
 @property(readonly) NSData * pushToken;
+@property(readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void)_recalculateTopicsCacheOnIvarQueue;
 - (void)_updateTopicsOnIvarQueue;
 - (void)addListener:(id)arg1 topics:(id)arg2 commands:(id)arg3 queue:(id)arg4;
-- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
+- (void)configureAsMacNotificationCenterObserver:(id)arg1;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(bool)arg2;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
@@ -29,10 +34,9 @@
 - (void)connectionDidReconnect:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isConnected;
+- (bool)isConnected;
 - (id)pushToken;
 - (void)removeListener:(id)arg1;
-- (void)requestKeepAlive;
 - (void)setCommands:(id)arg1 forListener:(id)arg2;
 - (void)setTopics:(id)arg1 forListener:(id)arg2;
 

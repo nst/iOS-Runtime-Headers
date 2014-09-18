@@ -30,7 +30,6 @@
 - (id)inputTopLeft;
 - (id)inputTopRight;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputBottomLeft:(id)arg1;
 - (void)setInputBottomRight:(id)arg1;
 - (void)setInputExtent:(id)arg1;

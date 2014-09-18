@@ -2,33 +2,55 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBPeripheralManagerDelegate>, CBXpcConnection, NSLock, NSMutableArray, NSMutableDictionary;
+@class <CBPeripheralManagerDelegate>, CBPairingAgent, CBXpcConnection, NSLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface CBPeripheralManager : NSObject <CBXpcConnectionDelegate> {
-    BOOL _advertising;
-    NSMutableDictionary *_centrals;
+@interface CBPeripheralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
+    struct { 
+        unsigned int willRestoreState : 1; 
+        unsigned int didAddService : 1; 
+        unsigned int didReceiveReadRequest : 1; 
+        unsigned int didReceiveWriteRequests : 1; 
+        unsigned int centralDidSubscribeToCharacteristic : 1; 
+        unsigned int centralDidUnsubscribeFromCharacteristic : 1; 
+        unsigned int didStartAdvertising : 1; 
+        unsigned int isReadyToUpdate : 1; 
+        unsigned int centralDidConnect : 1; 
+        unsigned int centralDidUpdateConnectionParameters : 1; 
+    NSMapTable *_centrals;
     NSMutableDictionary *_characteristicIDs;
     CBXpcConnection *_connection;
     <CBPeripheralManagerDelegate> *_delegate;
-    BOOL _readyForUpdates;
+    } _delegateFlags;
+    CBPairingAgent *_pairingAgent;
     NSMutableArray *_services;
-    int _state;
+    long long _state;
     NSLock *_updateLock;
-    BOOL _waitingForReady;
+    bool_connectionIsFinalized;
+    bool_isAdvertising;
+    bool_readyForUpdates;
+    bool_waitingForReady;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <CBPeripheralManagerDelegate> * delegate;
-@property(readonly) BOOL isAdvertising;
-@property(readonly) int state;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool isAdvertising;
+@property(readonly) CBPairingAgent * sharedPairingAgent;
+@property long long state;
+@property(readonly) Class superclass;
 
-+ (int)authorizationStatus;
++ (long long)authorizationStatus;
 
 - (void)addService:(id)arg1;
-- (id)centralFromArgs:(id)arg1;
+- (id)centralWithIdentifier:(id)arg1 dict:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
+- (void)forEachCentral:(id)arg1;
 - (void)handleAdvertisingStarted:(id)arg1;
 - (void)handleAdvertisingStopped:(id)arg1;
+- (void)handleCentralMsg:(int)arg1 args:(id)arg2;
+- (void)handleConnectionParametersUpdated:(id)arg1;
 - (void)handleGetAttributeValue:(id)arg1;
 - (void)handleMTUChanged:(id)arg1;
 - (void)handleNotificationAdded:(id)arg1;
@@ -41,18 +63,27 @@
 - (void)handleStateUpdated:(id)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (BOOL)isAdvertising;
+- (bool)isAdvertising;
+- (bool)isMsgAllowedAlways:(int)arg1;
+- (bool)isMsgAllowedWhenOff:(int)arg1;
+- (id)peerWithIdentifier:(id)arg1 dict:(id)arg2;
+- (oneway void)release;
 - (void)removeAllServices;
 - (void)removeService:(id)arg1;
-- (void)respondToRequest:(id)arg1 withResult:(int)arg2;
-- (void)sendMsg:(int)arg1 args:(id)arg2;
+- (void)respondToRequest:(id)arg1 withResult:(long long)arg2;
+- (bool)sendMsg:(int)arg1 args:(id)arg2;
+- (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredConnectionLatency:(int)arg1 forCentral:(id)arg2;
+- (void)setDesiredConnectionLatency:(long long)arg1 forCentral:(id)arg2;
+- (void)setIsAdvertising:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (id)sharedPairingAgent;
 - (void)startAdvertising:(id)arg1;
-- (int)state;
+- (long long)state;
 - (void)stopAdvertising;
-- (BOOL)updateValue:(id)arg1 forCharacteristic:(id)arg2 onSubscribedCentrals:(id)arg3;
-- (void)xpcConnection:(id)arg1 didReceiveMsg:(int)arg2 args:(id)arg3;
+- (bool)updateValue:(id)arg1 forCharacteristic:(id)arg2 onSubscribedCentrals:(id)arg3;
+- (void)xpcConnection:(id)arg1 didReceiveMsg:(unsigned short)arg2 args:(id)arg3;
+- (void)xpcConnectionDidFinalize:(id)arg1;
 - (void)xpcConnectionDidReset:(id)arg1;
 - (void)xpcConnectionIsInvalid:(id)arg1;
 

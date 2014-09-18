@@ -12,17 +12,17 @@
 @interface NSConcretePointerArray : NSPointerArray {
     struct NSSlice { 
         void **items; 
-        BOOL wantsStrong; 
-        BOOL wantsWeak; 
-        BOOL wantsARC; 
-        BOOL shouldCopyIn; 
-        BOOL usesStrong; 
-        BOOL usesWeak; 
-        BOOL usesARC; 
-        BOOL usesSentinel; 
-        BOOL pointerPersonality; 
-        BOOL integerPersonality; 
-        BOOL simpleReadClear; 
+        boolwantsStrong; 
+        boolwantsWeak; 
+        boolwantsARC; 
+        boolshouldCopyIn; 
+        boolusesStrong; 
+        boolusesWeak; 
+        boolusesARC; 
+        boolusesSentinel; 
+        boolpointerPersonality; 
+        boolintegerPersonality; 
+        boolsimpleReadClear; 
         NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
@@ -35,39 +35,39 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    unsigned int capacity;
-    unsigned int count;
-    unsigned int mutations;
-    BOOL needsCompaction;
-    unsigned int options;
+    boolneedsCompaction;
+    unsigned long long capacity;
+    unsigned long long count;
+    unsigned long long mutations;
+    unsigned long long options;
     } slice;
 }
 
 - (void)_initBlock;
 - (void)_markNeedsCompaction;
 - (void)addPointer:(void*)arg1;
-- (void)arrayGrow:(unsigned int)arg1;
+- (void)arrayGrow:(unsigned long long)arg1;
 - (Class)classForCoder;
 - (void)compact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
-- (unsigned int)hash;
-- (unsigned int)indexOfPointer:(void*)arg1;
+- (unsigned long long)hash;
+- (unsigned long long)indexOfPointer:(void*)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOptions:(unsigned int)arg1;
+- (id)initWithOptions:(unsigned long long)arg1;
 - (id)initWithPointerFunctions:(id)arg1;
-- (void)insertPointer:(void*)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (void*)pointerAtIndex:(unsigned int)arg1;
+- (void)insertPointer:(void*)arg1 atIndex:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (void*)pointerAtIndex:(unsigned long long)arg1;
 - (id)pointerFunctions;
 - (void)removePointer:(void*)arg1;
-- (void)removePointerAtIndex:(unsigned int)arg1;
-- (void)replacePointerAtIndex:(unsigned int)arg1 withPointer:(void*)arg2;
-- (void)setCount:(unsigned int)arg1;
+- (void)removePointerAtIndex:(unsigned long long)arg1;
+- (void)replacePointerAtIndex:(unsigned long long)arg1 withPointer:(void*)arg2;
+- (void)setCount:(unsigned long long)arg1;
 
 @end

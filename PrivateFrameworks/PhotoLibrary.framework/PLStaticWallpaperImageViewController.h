@@ -5,17 +5,17 @@
 @interface PLStaticWallpaperImageViewController : PLWallpaperImageViewController {
 }
 
-@property BOOL colorSamplingEnabled;
+@property bool colorSamplingEnabled;
 
-- (BOOL)colorSamplingEnabled;
+- (bool)colorSamplingEnabled;
 - (id)initWithPhoto:(id)arg1;
-- (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)initWithUIImage:(id)arg1;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
-- (void)setColorSamplingEnabled:(BOOL)arg1;
-- (void)setWallpaperForLocations:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)setColorSamplingEnabled:(bool)arg1;
+- (void)setWallpaperForLocations:(long long)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id)wallpaperImage;
 
 @end

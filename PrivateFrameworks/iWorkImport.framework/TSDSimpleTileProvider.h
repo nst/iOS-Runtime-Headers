@@ -9,9 +9,9 @@
 @property SEL action;
 
 - (SEL)action;
-- (BOOL)canTargetDrawInParallel;
+- (bool)canTargetDrawInParallel;
 - (void)drawTargetInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
-- (BOOL)isTargetOpaque;
+- (bool)isTargetOpaque;
 - (void)setAction:(SEL)arg1;
 
 @end

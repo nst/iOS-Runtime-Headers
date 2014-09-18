@@ -36,6 +36,7 @@
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 - (id)initWithAppleID:(id)arg1 password:(id)arg2;
+- (void)loginDelegatesWithParameters:(id)arg1 completion:(id)arg2;
 - (id)password;
 - (void)setAppleID:(id)arg1;
 - (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;

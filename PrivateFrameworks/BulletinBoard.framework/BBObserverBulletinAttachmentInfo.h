@@ -6,23 +6,23 @@
 
 @interface BBObserverBulletinAttachmentInfo : NSObject {
     NSMutableDictionary *_imageSizePairs;
-    BOOL imagesFetched;
-    BOOL sizesFetched;
+    boolimagesFetched;
+    boolsizesFetched;
 }
 
-@property BOOL imagesFetched;
-@property BOOL sizesFetched;
+@property bool imagesFetched;
+@property bool sizesFetched;
 
-- (id)_pairForKey:(id)arg1 create:(BOOL)arg2;
+- (id)_pairForKey:(id)arg1 create:(bool)arg2;
 - (void)dealloc;
 - (id)imageForKey:(id)arg1;
-- (BOOL)imagesFetched;
+- (bool)imagesFetched;
 - (id)init;
 - (void)setImage:(id)arg1 forKey:(id)arg2;
-- (void)setImagesFetched:(BOOL)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
-- (void)setSizesFetched:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeForKey:(id)arg1;
-- (BOOL)sizesFetched;
+- (void)setImagesFetched:(bool)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1 forKey:(id)arg2;
+- (void)setSizesFetched:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeForKey:(id)arg1;
+- (bool)sizesFetched;
 
 @end

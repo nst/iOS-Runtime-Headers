@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class MCDActionSheetController, MCDNowPlayingViewController, MPUNowPlayingController, NSDictionary;
+@class MCDNowPlayingViewController, MPUNowPlayingController, NSDictionary, NSString, UIAlertController;
 
 @interface MCDMediaRemoteNowPlayingViewController : UIViewController <MPUNowPlayingDelegate, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate> {
     struct { 
@@ -24,17 +24,21 @@
         unsigned int fastForwardWithInterval : 1; 
         unsigned int rewindWithInterval : 1; 
     } __supportedCommandsFlags;
-    MCDActionSheetController *_actionSheetController;
+    UIAlertController *_actionSheetAlertController;
     double _elapsedTime;
-    BOOL _isScrubbing;
     MPUNowPlayingController *_nowPlayingController;
     NSDictionary *_nowPlayingInfo;
     MCDNowPlayingViewController *_nowPlayingViewController;
-    BOOL _observingMediaRemoteCommandChanges;
     NSDictionary *_supportedCommands;
+    bool_isScrubbing;
+    bool_observingMediaRemoteCommandChanges;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSDictionary * nowPlayingInfo;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (unsigned int)_bestCommandForFastForwardPosition;
@@ -49,7 +53,7 @@
 - (void)_stopObservingRemoteCommandChanges;
 - (void)_supportedControlsDidUpdate:(id)arg1;
 - (id)_titleForFeedbackCommand:(unsigned int)arg1;
-- (BOOL)_trackIsLiked;
+- (bool)_trackIsLiked;
 - (void)_updateAllContent;
 - (void)_updatePlayControls;
 - (void)_updateSupportedCommands;
@@ -62,16 +66,17 @@
 - (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingApplicationDidChange:(id)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingInfoDidChange:(id)arg2;
-- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(BOOL)arg2;
+- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(bool)arg2;
 - (id)nowPlayingInfo;
-- (void)nowPlayingViewController:(id)arg1 didSendAction:(int)arg2 state:(int)arg3;
-- (BOOL)nowPlayingViewController:(id)arg1 shouldDisplayButton:(int)arg2 withImage:(out id*)arg3 tinted:(out BOOL*)arg4;
-- (BOOL)nowPlayingViewControllerIsPlaying:(id)arg1;
+- (void)nowPlayingViewController:(id)arg1 didSendAction:(long long)arg2 state:(long long)arg3;
+- (bool)nowPlayingViewController:(id)arg1 shouldDisplayButton:(long long)arg2 withImage:(out id*)arg3 tinted:(out bool*)arg4;
+- (bool)nowPlayingViewControllerIsPlaying:(id)arg1;
+- (bool)nowPlayingViewControllerIsShowingExplicitTrack:(id)arg1;
 - (double)playbackDurationForNowPlayingViewController:(id)arg1 withElapsedTime:(out double*)arg2;
 - (void)setNowPlayingInfo:(id)arg1;
 - (id)titleForNowPlayingController:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

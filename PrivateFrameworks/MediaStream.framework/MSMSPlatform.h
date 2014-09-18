@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class NSData;
+@class NSData, NSString;
 
 @interface MSMSPlatform : NSObject <MSPlatform> {
-    BOOL _isPerfLoggingEnabled;
     NSData *_pushToken;
+    bool_isPerfLoggingEnabled;
 }
 
-@property BOOL isPerfLoggingEnabled;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool isPerfLoggingEnabled;
 @property(retain) NSData * pushToken;
+@property(readonly) Class superclass;
 
 + (id)thePlatform;
 
@@ -20,32 +24,33 @@
 - (id)UDID;
 - (id)_accountForPersonID:(id)arg1;
 - (struct __CFString { }*)_facilityStringForFacility:(int)arg1;
-- (BOOL)_mayPerformFileTransfer;
+- (bool)_mayPerformFileTransfer;
 - (void)_rereadDefaults;
 - (id)appBundleInfoString;
 - (id)authTokenForPersonID:(id)arg1;
 - (id)baseURLForPersonID:(id)arg1;
+- (id)contentURLForPersonID:(id)arg1;
 - (Class)deletePluginClass;
 - (void)didDetectUnrecoverableCondition;
 - (id)fullNameFromFirstName:(id)arg1 lastName:(id)arg2;
 - (id)hardwareString;
 - (id)init;
-- (BOOL)isPerfLoggingEnabled;
-- (BOOL)isPerformanceLoggingEnabled;
-- (void)logFacility:(int)arg1 level:(int)arg2 format:(id)arg3 args:(void*)arg4;
-- (void)logFile:(const char *)arg1 func:(const char *)arg2 line:(int)arg3 facility:(int)arg4 level:(int)arg5 format:(id)arg6 args:(void*)arg7;
+- (bool)isPerfLoggingEnabled;
+- (bool)isPerformanceLoggingEnabled;
+- (void)logFacility:(int)arg1 level:(int)arg2 format:(id)arg3 args:(char *)arg4;
+- (void)logFile:(const char *)arg1 func:(const char *)arg2 line:(int)arg3 facility:(int)arg4 level:(int)arg5 format:(id)arg6 args:(char *)arg7;
 - (id)pathMediaStreamDir;
-- (BOOL)personIDUsesProductionPushEnvironment:(id)arg1;
-- (BOOL)policyMayDownload;
-- (BOOL)policyMayUpload;
+- (bool)personIDUsesProductionPushEnvironment:(id)arg1;
+- (bool)policyMayDownload;
+- (bool)policyMayUpload;
 - (Class)publisherPluginClass;
 - (id)pushToken;
 - (id)pushTokenForPersonID:(id)arg1;
-- (void)setIsPerfLoggingEnabled:(BOOL)arg1;
+- (void)setIsPerfLoggingEnabled:(bool)arg1;
 - (void)setPushToken:(id)arg1;
 - (Class)sharingPluginClass;
-- (BOOL)shouldEnableNewFeatures;
-- (BOOL)shouldLogAtLevel:(int)arg1;
+- (bool)shouldEnableNewFeatures;
+- (bool)shouldLogAtLevel:(int)arg1;
 - (id)socketOptions;
 - (Class)subscriberPluginClass;
 - (id)theDaemon;

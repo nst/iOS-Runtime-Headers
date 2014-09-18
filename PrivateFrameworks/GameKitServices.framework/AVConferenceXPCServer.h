@@ -45,7 +45,7 @@
 - (id)registeredBlocks;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 context:(id)arg3;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2;
 

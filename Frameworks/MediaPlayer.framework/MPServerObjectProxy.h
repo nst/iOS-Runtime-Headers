@@ -11,15 +11,15 @@
 + (id)_center;
 
 - (void)_messagingCenterDied:(id)arg1;
-- (BOOL)_performRemoteSelector:(SEL)arg1 userInfo:(id)arg2 timeout:(double)arg3;
+- (bool)_performRemoteSelector:(SEL)arg1 userInfo:(id)arg2 timeout:(double)arg3;
 - (id)_performRemoteSelectorAndReceiveReply:(SEL)arg1 userInfo:(id)arg2 timeout:(double)arg3;
 - (void)_serverConnectionDied;
 - (void)dealloc;
 - (void)didPrepareForRemoteSelectorInvocation;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
-- (BOOL)prepareForRemoteSelectorInvocation;
-- (BOOL)prepareForRemoteSelectorInvocationWithTimeout:(double*)arg1;
+- (bool)prepareForRemoteSelectorInvocation;
+- (bool)prepareForRemoteSelectorInvocationWithTimeout:(double*)arg1;
 - (void)serverConnectionDied;
 
 @end

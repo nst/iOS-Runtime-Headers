@@ -10,8 +10,8 @@
 
 @property(readonly) NSArray * array;
 
+- (void).cxx_destruct;
 - (id)array;
-- (void)dealloc;
 - (id)initWithArray:(id)arg1;
 
 @end

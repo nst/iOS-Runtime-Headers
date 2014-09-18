@@ -6,31 +6,37 @@
    See Warning(s) below.
  */
 
-@class UIPopoverController, UIViewController;
+@class NSString, UIPopoverController, UIViewController;
 
 @interface _UITextServiceSession : NSObject <UIPopoverControllerDelegate> {
-    BOOL _dismissed;
     id _dismissedHandler;
-    BOOL _isTextEffectsWindow;
     UIViewController *_modalViewController;
     UIPopoverController *_popoverController;
-    int _type;
+    long long _type;
+    bool_dismissed;
+    bool_isTextEffectsWindow;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) id dismissedHandler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (BOOL)canShowTextServices;
-+ (id)showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
++ (bool)canShowTextServices;
++ (id)showServiceForText:(id)arg1 type:(long long)arg2 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 inView:(id)arg4;
++ (id)textServiceSessionForType:(long long)arg1;
 
 - (void)_endSession;
 - (void)dealloc;
-- (void)dismissTextServiceAnimated:(BOOL)arg1;
+- (void)dismissTextServiceAnimated:(bool)arg1;
 - (id)dismissedHandler;
 - (id)init;
-- (id)initWithType:(int)arg1;
-- (BOOL)isDisplaying;
+- (id)initWithType:(long long)arg1;
+- (bool)isDisplaying;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)sessionDidDismiss;
 - (void)setDismissedHandler:(id)arg1;
+- (long long)type;
 
 @end

@@ -6,10 +6,10 @@
 
 @interface MPUCompletionFooterView : UITableViewHeaderFooterView <SKUIItemOfferButtonDelegate> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     UIView *_bottomSeparatorView;
     NSString *_completeMyCollectionTitle;
     NSString *_completeSubtitleFormat;
@@ -19,16 +19,16 @@
     } _contentInsets;
     <MPUCompletionFooterViewDelegate> *_delegate;
     MPUItemOfferButton *_itemOfferButton;
-    int _preferredVariant;
-    BOOL _purchasing;
-    BOOL _showsVariants;
-    int _style;
+    long long _preferredVariant;
+    long long _style;
     UILabel *_subtitleLabel;
     UITapGestureRecognizer *_tapGestureRecognizer;
     NSString *_title;
     UILabel *_titleLabel;
     UIView *_topSeparatorView;
     UISegmentedControl *_variantSegmentedControl;
+    bool_purchasing;
+    bool_showsVariants;
 }
 
 @property(retain) UIView * bottomSeparatorView;
@@ -37,20 +37,24 @@
 @property(copy) NSString * completeTitleFormat;
 @property(retain) MPStoreCompletionOffering * completionOffering;
 @property(copy) NSString * completionTotalFormat;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property(copy,readonly) NSString * debugDescription;
 @property <MPUCompletionFooterViewDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) MPUItemOfferButton * itemOfferButton;
-@property int preferredVariant;
-@property(getter=isPurchasing) BOOL purchasing;
-@property BOOL showsVariants;
-@property int style;
+@property long long preferredVariant;
+@property(getter=isPurchasing) bool purchasing;
+@property bool showsVariants;
+@property long long style;
 @property(retain) UILabel * subtitleLabel;
+@property(readonly) Class superclass;
 @property(copy) NSString * title;
 @property(retain) UILabel * titleLabel;
 @property(retain) UIView * topSeparatorView;
 @property(retain) UISegmentedControl * variantSegmentedControl;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 
 - (void).cxx_destruct;
 - (void)_buttonCancelConfirmationAction:(id)arg1;
@@ -66,36 +70,36 @@
 - (id)completeTitleFormat;
 - (id)completionOffering;
 - (id)completionTotalFormat;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (BOOL)isPurchasing;
+- (bool)isPurchasing;
 - (id)itemOfferButton;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
-- (void)layoutSeparatorsWithInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)layoutSeparatorsWithInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)layoutSubviews;
-- (int)preferredVariant;
+- (long long)preferredVariant;
 - (void)setBottomSeparatorView:(id)arg1;
 - (void)setCompleteMyCollectionTitle:(id)arg1;
 - (void)setCompleteSubtitleFormat:(id)arg1;
 - (void)setCompleteTitleFormat:(id)arg1;
 - (void)setCompletionOffering:(id)arg1;
 - (void)setCompletionTotalFormat:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItemOfferButton:(id)arg1;
-- (void)setPreferredVariant:(int)arg1;
-- (void)setPurchasing:(BOOL)arg1;
-- (void)setShowsVariants:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setPreferredVariant:(long long)arg1;
+- (void)setPurchasing:(bool)arg1;
+- (void)setShowsVariants:(bool)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setTopSeparatorView:(id)arg1;
 - (void)setVariantSegmentedControl:(id)arg1;
-- (BOOL)showsVariants;
-- (int)style;
+- (bool)showsVariants;
+- (long long)style;
 - (id)subtitleLabel;
 - (id)title;
 - (id)titleLabel;

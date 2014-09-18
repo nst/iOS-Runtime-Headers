@@ -5,6 +5,6 @@
 @interface VKPointLabelTileSource : VKLabelTileSource {
 }
 
-- (int)_labelTileType;
+- (unsigned char)_labelTileType;
 
 @end

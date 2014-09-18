@@ -2,30 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <SFUInputStream>;
+@class <SFUInputStream>, NSString;
 
 @interface SFUBufferedInputStream : NSObject <SFUBufferedInputStream> {
     char *mBuffer;
     long long mBufferEnd;
     long long mBufferOffset;
-    unsigned long mBufferSize;
+    unsigned long long mBufferSize;
     long long mBufferStart;
     <SFUInputStream> *mStream;
 }
 
-- (BOOL)canSeek;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (bool)canSeek;
 - (void)close;
 - (id)closeLocalStream;
 - (void)dealloc;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (id)initWithStream:(id)arg1 bufferSize:(unsigned long)arg2;
+- (id)initWithStream:(id)arg1 bufferSize:(unsigned long long)arg2;
 - (id)initWithStream:(id)arg1 dataLength:(long long)arg2;
 - (id)initWithStream:(id)arg1;
 - (long long)offset;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
+- (unsigned long long)readToBuffer:(char *)arg1 size:(unsigned long long)arg2;
+- (unsigned long long)readToOwnBuffer:(const char **)arg1 size:(unsigned long long)arg2;
 - (void)seekToOffset:(long long)arg1;
-- (BOOL)seekWithinBufferToOffset:(long long)arg1;
+- (bool)seekWithinBufferToOffset:(long long)arg1;
 
 @end

@@ -11,6 +11,7 @@
 
 @property(copy) NSArray * durations;
 @property(retain) UIImage * image;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 
 + (id)animatedImageWithContentsOfCPBitmapURL:(id)arg1;
 
@@ -23,6 +24,7 @@
 - (id)initWithImages:(id)arg1 durations:(id)arg2;
 - (void)setDurations:(id)arg1;
 - (void)setImage:(id)arg1;
-- (BOOL)writeToCPBitmapURL:(id)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)writeToCPBitmapURL:(id)arg1;
 
 @end

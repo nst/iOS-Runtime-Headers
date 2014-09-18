@@ -17,6 +17,6 @@
 
 - (id)mutableEntryComments;
 - (id)mutableEntryLikeComments;
-- (BOOL)shouldBeRemovedFromPhotoLibrary:(id)arg1;
+- (bool)shouldBeRemovedFromPhotoLibrary:(id)arg1;
 
 @end

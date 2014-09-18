@@ -9,7 +9,11 @@
     NSString *_previousSyncToken;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <CoreDAVContainerInfoSyncProvider> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (Class)containerItemClass;
 - (id)copyContainerParserMappings;

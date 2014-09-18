@@ -4,8 +4,8 @@
 
 @interface _UIOldSliderAnimation : UIAnimation {
     float _endValue;
-    BOOL _sendAction;
     float _startValue;
+    bool_sendAction;
 }
 
 - (void)setProgress:(float)arg1;

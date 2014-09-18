@@ -8,11 +8,11 @@
 }
 
 @property(readonly) DOMNamedNodeMap * entities;
-@property(readonly) NSString * internalSubset;
-@property(readonly) NSString * name;
+@property(copy,readonly) NSString * internalSubset;
+@property(copy,readonly) NSString * name;
 @property(readonly) DOMNamedNodeMap * notations;
-@property(readonly) NSString * publicId;
-@property(readonly) NSString * systemId;
+@property(copy,readonly) NSString * publicId;
+@property(copy,readonly) NSString * systemId;
 
 - (id)entities;
 - (id)internalSubset;

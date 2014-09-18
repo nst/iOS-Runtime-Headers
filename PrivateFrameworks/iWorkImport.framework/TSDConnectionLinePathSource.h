@@ -8,42 +8,42 @@
  */
 
 @interface TSDConnectionLinePathSource : TSDBezierPathSource <TSDSmartPathSource> {
-    float mOutsetFrom;
-    float mOutsetTo;
+    double mOutsetFrom;
+    double mOutsetTo;
     int mType;
 }
 
-@property(readonly) unsigned int numberOfControlKnobs;
-@property float outsetFrom;
-@property float outsetTo;
+@property(readonly) unsigned long long numberOfControlKnobs;
+@property double outsetFrom;
+@property double outsetTo;
 @property int type;
 
-+ (id)pathSourceAtAngleOfSize:(struct CGSize { float x1; float x2; })arg1 forType:(int)arg2;
-+ (id)pathSourceOfLength:(float)arg1;
++ (id)pathSourceAtAngleOfSize:(struct CGSize { double x1; double x2; })arg1 forType:(int)arg2;
++ (id)pathSourceOfLength:(double)arg1;
 
 - (void)bend;
 - (id)bezierPath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })fixedPointForControlKnobChange;
-- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
-- (id)getFeedbackStringForKnob:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })fixedPointForControlKnobChange;
+- (struct CGPoint { double x1; double x2; })getControlKnobPosition:(unsigned long long)arg1;
+- (id)getFeedbackStringForKnob:(unsigned long long)arg1;
 - (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
 - (id)initWithBezierPath:(id)arg1;
-- (BOOL)isCircular;
-- (BOOL)isLineSegment;
-- (BOOL)isRectangular;
-- (struct CGPath { }*)newFeedbackPathForKnob:(unsigned int)arg1;
-- (unsigned int)numberOfControlKnobs;
-- (float)outsetFrom;
-- (float)outsetTo;
+- (bool)isCircular;
+- (bool)isLineSegment;
+- (bool)isRectangular;
+- (struct CGPath { }*)newFeedbackPathForKnob:(unsigned long long)arg1;
+- (unsigned long long)numberOfControlKnobs;
+- (double)outsetFrom;
+- (double)outsetTo;
 - (void)p_setBezierPath:(id)arg1;
-- (int)pathElementIndexForKnobTag:(unsigned int)arg1;
+- (long long)pathElementIndexForKnobTag:(unsigned long long)arg1;
 - (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
-- (void)scaleToNaturalSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setControlKnobPosition:(unsigned int)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)setOutsetFrom:(float)arg1;
-- (void)setOutsetTo:(float)arg1;
+- (void)scaleToNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setControlKnobPosition:(unsigned long long)arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setOutsetFrom:(double)arg1;
+- (void)setOutsetTo:(double)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKUserTrackingView>, MKMapView, UIButton, UIImage, UINavigationBar, UIToolbar, UIView, _MKUserTrackingButton, _MKUserTrackingButtonController;
+@class <MKUserTrackingView>, MKMapView, NSString, UIButton, UIImage, UINavigationBar, UIToolbar, UIView, _MKUserTrackingButton, _MKUserTrackingButtonController;
 
 @interface MKUserTrackingBarButtonItem : UIBarButtonItem <MKUserTrackingButtonTarget> {
     UIView *_associatedView;
     _MKUserTrackingButtonController *_controller;
     UIButton *_customButton;
-    BOOL _hasCustomAssociatedView;
-    BOOL _isLegacy;
     UINavigationBar *_navigationBar;
     UIToolbar *_toolbar;
     UIImage *_trackingEmptyImage;
@@ -17,53 +15,58 @@
     UIImage *_trackingFollowWithHeadingImage;
     UIImage *_trackingNoneImage;
     _MKUserTrackingButton *_userTrackingButton;
-    <MKUserTrackingView> *_userTrackingView;
+    bool_hasCustomAssociatedView;
+    bool_isLegacy;
 }
 
 @property(retain) UIView * _associatedView;
 @property(retain) UINavigationBar * _navigationBar;
-@property(setter=_setState:) int _state;
+@property(setter=_setState:) long long _state;
 @property(retain) UIToolbar * _toolbar;
 @property(setter=_setUserTrackingView:,retain) <MKUserTrackingView> * _userTrackingView;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) MKMapView * mapView;
-@property(getter=_selectsWhenTracking,setter=_setSelectsWhenTracking:) BOOL selectsWhenTracking;
+@property(getter=_selectsWhenTracking,setter=_setSelectsWhenTracking:) bool selectsWhenTracking;
+@property(readonly) Class superclass;
 
 + (Class)_activityIndicatorClass;
 
 - (void).cxx_destruct;
-- (int)_activityIndicatorStyle;
+- (long long)_activityIndicatorStyle;
 - (id)_associatedView;
 - (void)_goToNextMode:(id)arg1;
-- (id)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
-- (id)_imageForUserTrackingMode:(int)arg1;
-- (id)_initWithUserTrackingView:(id)arg1;
-- (BOOL)_isHighlightedForState:(int)arg1;
-- (BOOL)_isInMiniBar;
-- (id)_landscapeImagePhoneForUserTrackingMode:(int)arg1;
+- (id)_imageForState:(long long)arg1 controlState:(unsigned long long)arg2;
+- (id)_imageForUserTrackingMode:(long long)arg1;
+- (bool)_isHighlightedForState:(long long)arg1;
+- (bool)_isInMiniBar;
+- (id)_landscapeImagePhoneForUserTrackingMode:(long long)arg1;
 - (id)_navigationBar;
 - (void)_repositionViews;
-- (BOOL)_selectsWhenTracking;
-- (void)_setImage:(id)arg1 forUserTrackingMode:(int)arg2;
-- (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(int)arg2;
-- (void)_setSelectsWhenTracking:(BOOL)arg1;
-- (void)_setState:(int)arg1;
+- (bool)_selectsWhenTracking;
+- (void)_setImage:(id)arg1 forUserTrackingMode:(long long)arg2;
+- (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(long long)arg2;
+- (void)_setSelectsWhenTracking:(bool)arg1;
+- (void)_setState:(long long)arg1;
 - (void)_setUserTrackingView:(id)arg1;
-- (int)_state;
-- (int)_styleForState:(int)arg1;
+- (long long)_state;
+- (long long)_styleForState:(long long)arg1;
 - (id)_toolbar;
 - (id)_trackingEmptyImage;
 - (id)_trackingFollowImage;
 - (id)_trackingFollowWithHeadingImage;
 - (id)_trackingNoneImage;
-- (void)_updateForState:(int)arg1;
+- (void)_updateForState:(long long)arg1;
 - (id)_userTrackingView;
 - (id)createViewForNavigationItem:(id)arg1;
 - (id)createViewForToolbar:(id)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)initWithMapView:(id)arg1;
 - (id)mapView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setMapView:(id)arg1;
 - (void)set_associatedView:(id)arg1;
 - (void)set_navigationBar:(id)arg1;

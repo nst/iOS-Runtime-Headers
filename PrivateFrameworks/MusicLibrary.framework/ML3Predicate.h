@@ -11,12 +11,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)databaseStatementParameters;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDynamicForEntityClass:(Class)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFalseAlways;
-- (BOOL)isTrueAlways;
+- (bool)isDynamicForEntityClass:(Class)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isFalseAlways;
+- (bool)isTrueAlways;
 - (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (id)spotlightPredicate;
 

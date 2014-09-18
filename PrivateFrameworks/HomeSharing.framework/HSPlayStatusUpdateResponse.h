@@ -20,7 +20,7 @@
 @property unsigned long long nowPlayingItemID;
 @property(copy) NSDictionary * playStatusInformation;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)nextRevisionID;
 - (unsigned long long)nowPlayingContainerID;

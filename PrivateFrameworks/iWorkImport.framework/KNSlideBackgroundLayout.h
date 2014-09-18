@@ -5,6 +5,6 @@
 @interface KNSlideBackgroundLayout : TSDLayout {
 }
 
-- (BOOL)shouldProvideGuidesDuringExclusiveAlignmentOperation;
+- (bool)shouldProvideGuidesDuringExclusiveAlignmentOperation;
 
 @end

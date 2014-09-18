@@ -2,18 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIViewAnimationAttributes;
+@class NSString, _UIViewAnimationAttributes;
 
 @interface _UIViewServiceImplicitAnimationDecodingProxy : _UITargetedProxy <_UIViewServiceImplicitAnimationDecodingProxy_EncodingProxyInterface> {
     _UIViewAnimationAttributes *_animationAttributes;
     SEL _implicitAnimationSelector;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)proxyDecodingAnimationsForTarget:(id)arg1;
 
 - (void)__animateNextInvocationOfSelector:(id)arg1 withAnimationAttributes:(id)arg2;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

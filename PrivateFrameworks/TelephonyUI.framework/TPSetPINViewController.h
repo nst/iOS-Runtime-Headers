@@ -5,7 +5,6 @@
 @class <TPSetPINViewControllerDelegate>, NSString, TPPasscodeView, TPSimpleNumberPad, UILabel, UIView;
 
 @interface TPSetPINViewController : UIViewController <TPSimpleNumberPadDelegate> {
-    BOOL _confirmPIN;
     UIView *_customBackgroundView;
     <TPSetPINViewControllerDelegate> *_delegate;
     int _initialState;
@@ -21,9 +20,10 @@
     int _state;
     UILabel *_statusLabel;
     NSString *_unconfirmedPIN;
+    bool_confirmPIN;
 }
 
-@property BOOL confirmPIN;
+@property bool confirmPIN;
 @property(retain) UIView * customBackgroundView;
 @property <TPSetPINViewControllerDelegate> * delegate;
 @property int initialState;
@@ -42,19 +42,19 @@
 
 - (void)_cancelButtonTapped;
 - (void)_doneButtonTapped;
-- (id)_initForMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 confirmPIN:(BOOL)arg3;
+- (id)_initForMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 confirmPIN:(bool)arg3;
 - (void)_setPromptText:(id)arg1 oldPromptTextPointer:(id*)arg2;
 - (void)_updateDeleteAllowed;
 - (void)_updateNavBarButtons;
 - (void)_updateStatusLabel;
 - (void)_updateUIForStateChange;
-- (BOOL)confirmPIN;
+- (bool)confirmPIN;
 - (id)customBackgroundView;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initForChangePINWithMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 confirmPIN:(BOOL)arg3;
-- (id)initForNewPINWithMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 confirmPIN:(BOOL)arg3;
+- (id)initForChangePINWithMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 confirmPIN:(bool)arg3;
+- (id)initForNewPINWithMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 confirmPIN:(bool)arg3;
 - (int)initialState;
 - (void)loadView;
 - (unsigned int)maxPINLength;
@@ -68,7 +68,7 @@
 - (id)promptTextForSavingPIN;
 - (void)resetWithErrorPrompt:(id)arg1 title:(id)arg2;
 - (void)resetWithErrorPrompt:(id)arg1;
-- (void)setConfirmPIN:(BOOL)arg1;
+- (void)setConfirmPIN:(bool)arg1;
 - (void)setCustomBackgroundView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInitialState:(int)arg1;
@@ -89,6 +89,6 @@
 - (int)state;
 - (id)statusLabel;
 - (id)unconfirmedPIN;
-- (BOOL)wantsFullScreenLayout;
+- (bool)wantsFullScreenLayout;
 
 @end

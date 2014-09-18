@@ -5,11 +5,13 @@
 @class AVCaptureInput, NSString;
 
 @interface AVCaptureInputPortInternal : NSObject {
+    boolenabled;
+    int changeSeed;
     struct OpaqueCMClock { } *clock;
-    BOOL enabled;
     struct opaqueCMFormatDescription { } *formatDescription;
     AVCaptureInput *input;
     NSString *mediaType;
+    NSString *sourceID;
 }
 
 - (void)dealloc;

@@ -9,18 +9,18 @@
     NSArray *_sections;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
 @property(copy) NSArray * sectionIndexTitles;
-@property(readonly) NSArray * sections;
+@property(copy,readonly) NSArray * sections;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
+- (unsigned long long)indexOfSectionForSectionIndexTitleAtIndex:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)sectionIndexTitles;

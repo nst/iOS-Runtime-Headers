@@ -5,22 +5,22 @@
 @class <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory>, MFDAMessageStore, MFMessage, MFMimePart;
 
 @interface _MFDAMessageStoreFetchRequest : DAMailboxFetchMessageRequest <MFDAMailAccountRequest> {
+    boolpartial;
     <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> *consumer;
     int format;
     MFMessage *message;
     MFMimePart *part;
-    BOOL partial;
     MFDAMessageStore *store;
 }
 
-@property(readonly) BOOL isUserRequested;
-@property(readonly) BOOL shouldSend;
+@property(readonly) bool isUserRequested;
+@property(readonly) bool shouldSend;
 
 - (id)deferredOperation;
 - (unsigned long long)generationNumber;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUserRequested;
-- (BOOL)shouldSend;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isUserRequested;
+- (bool)shouldSend;
 
 @end

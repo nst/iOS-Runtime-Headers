@@ -8,7 +8,7 @@
     NSMutableDictionary *_mutableBody;
 }
 
-@property(readonly) NSDictionary * bodyDictionary;
+@property(copy,readonly) NSDictionary * bodyDictionary;
 
 - (void)addPropertiesWithDictionary:(id)arg1;
 - (void)appendPropertiesToBody:(id)arg1;

@@ -2,33 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSHashTable, NSMutableDictionary, NSMutableOrderedSet, TSPObjectContext, TSPPasteboard, TSPPasteboardNativeDataProvider, TSPPasteboardObject, TSURetainedPointerKeyDictionary;
+@class NSDictionary, NSHashTable, NSMutableDictionary, NSMutableOrderedSet, NSString, TSPObjectContext, TSPPasteboard, TSPPasteboardNativeDataProvider, TSPPasteboardObject, TSURetainedPointerKeyDictionary;
 
 @interface TSPPasteboardWriteAssistant : NSObject <TSPPasteboardWriting, TSPProxyObjectManager> {
     NSDictionary *_contentDescription;
     NSMutableDictionary *_dataProviderMap;
     NSMutableOrderedSet *_dataProviderTypes;
     NSHashTable *_delayedObjects;
-    BOOL _didAttemptToSerializeNativeData;
-    long _nativeDataOnceToken;
+    long long _nativeDataOnceToken;
     TSPPasteboard *_nativeDataPasteboard;
     TSPPasteboardNativeDataProvider *_nativeDataProvider;
     TSPObjectContext *_pasteboardContext;
     TSPPasteboardObject *_pasteboardObject;
     TSURetainedPointerKeyDictionary *_proxyObjectMap;
-    BOOL _shouldRefuseAdditionalDataProviders;
-    long _writeNativeDataToPasteboardOnceToken;
+    long long _writeNativeDataToPasteboardOnceToken;
+    bool_didAttemptToSerializeNativeData;
+    bool_shouldRefuseAdditionalDataProviders;
 }
 
 @property(copy) NSDictionary * contentDescription;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) TSPObjectContext * pasteboardContext;
 @property(readonly) TSPPasteboardObject * pasteboardObject;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)contentDescription;
 - (void)delayArchivingOfObject:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (void)loadNativeData;
+- (void)loadData;
 - (id)pasteboardContext;
 - (id)pasteboardObject;
 - (id)pasteboardPropertyListForType:(id)arg1;

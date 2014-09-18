@@ -5,21 +5,21 @@
 @class TNSheet;
 
 @interface TNSheetSelection : TSKSelection {
-    BOOL mIsPaginated;
+    boolmIsPaginated;
     TNSheet *mSheet;
 }
 
-@property(getter=isPaginated,readonly) BOOL paginated;
-@property(readonly) TNSheet * sheet;
+@property(getter=isPaginated,readonly) bool paginated;
+@property(retain,readonly) TNSheet * sheet;
 
 + (Class)archivedSelectionClass;
-+ (id)selectionForSheet:(id)arg1 paginated:(BOOL)arg2;
++ (id)selectionForSheet:(id)arg1 paginated:(bool)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)initWithSheet:(id)arg1 paginated:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPaginated;
+- (id)initWithSheet:(id)arg1 paginated:(bool)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isPaginated;
 - (id)sheet;
 
 @end

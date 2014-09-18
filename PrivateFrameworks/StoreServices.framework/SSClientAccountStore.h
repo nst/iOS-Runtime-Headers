@@ -6,18 +6,19 @@
 
 @interface SSClientAccountStore : SSAccountStore {
     NSArray *_accounts;
-    BOOL _accountsValid;
+    bool_accountsValid;
 }
 
 @property(copy) NSArray * accounts;
 
 - (id)_accountWithUniqueIdentifier:(id)arg1;
-- (id)_addAccount:(id)arg1 asActiveAccount:(BOOL)arg2 activeLockerAccount:(BOOL)arg3;
+- (id)_addAccount:(id)arg1 asActiveAccount:(bool)arg2 activeLockerAccount:(bool)arg3;
 - (id)_copyReloadedAccounts;
 - (void)_invalidateAccounts;
 - (void)_reloadAccountsIfNeeded;
 - (void)_signOutWithAccountIDs:(id)arg1;
-- (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
+- (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(bool)arg2;
+- (id)accountWithUniqueIdentifier:(id)arg1 scope:(long long)arg2;
 - (id)accountWithUniqueIdentifier:(id)arg1;
 - (id)accounts;
 - (id)activeAccount;

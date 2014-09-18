@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class IMRemoteURLConnection;
+@class IDSRemoteURLConnection;
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
-    BOOL _pendingRetryAfterAirplaneMode;
-    IMRemoteURLConnection *_remoteConnection;
+    IDSRemoteURLConnection *_remoteConnection;
     double _retryTimeAfterAirplaneMode;
+    bool_pendingRetryAfterAirplaneMode;
 }
 
 - (void)_cleanupURLConnection;
@@ -15,18 +15,18 @@
 - (void)_dequeueIfNeeded;
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (id)_processResultData:(id)arg1 forMessage:(id)arg2 error:(id*)arg3;
-- (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
+- (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_serverBagLoaded:(id)arg1;
-- (BOOL)_tryRetryMessageWithTimeInterval:(double)arg1;
+- (bool)_tryRetryMessageWithTimeInterval:(double)arg1;
 - (void)_updateWiFiAssertions;
 - (id)_urlRequestWithURL:(id)arg1 andData:(id)arg2 message:(id)arg3;
-- (BOOL)busy;
+- (bool)busy;
 - (void)cancelMessage:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
 - (void)networkStateChanged;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
-- (BOOL)sendMessage:(id)arg1;
+- (bool)sendMessage:(id)arg1;
 
 @end

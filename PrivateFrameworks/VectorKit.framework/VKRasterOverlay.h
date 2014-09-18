@@ -15,28 +15,28 @@
             double height; 
         } size; 
     <VKRasterOverlayDelegate> *_delegate;
-    unsigned int _level;
+    unsigned long long _level;
     VKRasterOverlayTileSource *_mapModel;
     } _replaceMapContentInRect;
     VKRasterOverlayTileSource *_tileSource;
 }
 
 @property <VKRasterOverlayDelegate> * delegate;
-@property unsigned int level;
+@property unsigned long long level;
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } replaceMapContentInRect;
 @property VKRasterOverlayTileSource * tileSource;
 
 - (id).cxx_construct;
-- (BOOL)canDrawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (bool)canDrawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (id)delegate;
 - (void)drawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)init;
-- (unsigned int)level;
+- (unsigned long long)level;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })replaceMapContentInRect;
 - (void)setDelegate:(id)arg1;
-- (void)setLevel:(unsigned int)arg1;
+- (void)setLevel:(unsigned long long)arg1;
 - (void)setNeedsDisplay;
-- (void)setNeedsDisplayInRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 level:(int)arg2;
+- (void)setNeedsDisplayInRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 level:(long long)arg2;
 - (void)setReplaceMapContentInRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setTileSource:(id)arg1;
 - (id)tileSource;

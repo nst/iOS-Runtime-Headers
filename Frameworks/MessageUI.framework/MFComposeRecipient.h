@@ -19,8 +19,13 @@
 }
 
 @property(retain) NSString * countryCode;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) MFComposeRecipientOriginContext * originContext;
-@property(getter=isRemovableFromSearchResults,readonly) BOOL removableFromSearchResults;
+@property(getter=isRemovableFromSearchResults,readonly) bool removableFromSearchResults;
+@property(readonly) bool showsAccessoryButton;
+@property(readonly) Class superclass;
 
 + (id)mf_recipientWithGALResult:(id)arg1;
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
@@ -42,15 +47,15 @@
 - (void)dealloc;
 - (id)displayString;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (BOOL)isEmail;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGroup;
-- (BOOL)isPhone;
-- (BOOL)isRemovableFromSearchResults;
+- (bool)isEmail;
+- (bool)isEqual:(id)arg1;
+- (bool)isGroup;
+- (bool)isPhone;
+- (bool)isRemovableFromSearchResults;
 - (id)label;
 - (id)normalizedAddress;
 - (id)objectForDragType:(id)arg1;
@@ -67,10 +72,11 @@
 - (void)setOriginContext:(id)arg1;
 - (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
 - (id)shortName;
+- (bool)showsAccessoryButton;
 - (id)sortedChildren;
 - (id)supportedDragTypes;
 - (id)uncommentedAddress;
 - (id)unlocalizedLabel;
-- (BOOL)wasCompleteMatch;
+- (bool)wasCompleteMatch;
 
 @end

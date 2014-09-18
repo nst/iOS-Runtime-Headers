@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOResourceManifestServerProxyDelegate>, GEOActiveTileGroup, GEOResourceLoader, GEOResourceManifestDownload, NSError, NSLock, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, NSTimer, NSURLConnection;
+@class <GEOResourceManifestServerProxyDelegate>, GEOActiveTileGroup, GEOResourceLoader, GEOResourceManifestConfiguration, GEOResourceManifestDownload, NSError, NSLock, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, NSTimer, NSURLConnection;
 
 @interface GEOResourceManifestServerLocalProxy : NSObject <NSURLConnectionDelegate, GEOResourceManifestServerProxy> {
     GEOActiveTileGroup *_activeTileGroup;
     NSString *_authToken;
     NSLock *_authTokenLock;
+    GEOResourceManifestConfiguration *_configuration;
     NSURLConnection *_connection;
     <GEOResourceManifestServerProxyDelegate> *_delegate;
-    BOOL _hiDPI;
-    BOOL _isObservingManifestReachability;
-    BOOL _isObservingTileGroupReachability;
     NSError *_lastResourceManifestLoadError;
-    unsigned int _manifestRetryCount;
+    unsigned long long _manifestRetryCount;
     NSMutableArray *_manifestUpdateCompletionHandlers;
     NSTimer *_manifestUpdateTimer;
     GEOResourceLoader *_resourceLoader;
@@ -22,40 +20,48 @@
     NSMutableDictionary *_resourceRetainCounts;
     NSMutableData *_responseData;
     NSString *_responseETag;
-    BOOL _started;
-    unsigned int _tileGroupRetryCount;
+    unsigned long long _tileGroupRetryCount;
     NSTimer *_tileGroupUpdateTimer;
+    bool_isObservingManifestReachability;
+    bool_isObservingTileGroupReachability;
+    bool_started;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <GEOResourceManifestServerProxyDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_activeTileGroupOverridesChanged:(id)arg1;
 - (void)_cancelConnection;
-- (BOOL)_changeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2;
+- (bool)_changeActiveTileGroup:(id)arg1 flushTileCache:(bool)arg2;
 - (void)_cleanupConnection;
 - (void)_considerChangingActiveTileGroup;
 - (void)_countryProvidersDidChange:(id)arg1;
-- (void)_forceChangeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2 ignoreIdentifier:(BOOL)arg3;
+- (void)_forceChangeActiveTileGroup:(id)arg1 flushTileCache:(bool)arg2 ignoreIdentifier:(bool)arg3;
 - (id)_idealTileGroupToUse;
 - (void)_loadFromDisk;
 - (id)_manifestURL;
 - (void)_notifyManifestUpdateCompletionHandlers:(id)arg1;
 - (void)_purgeOldRegionalResources;
 - (void)_reachabilityChanged:(id)arg1;
-- (void)_registerReachabilityObserver:(unsigned int)arg1;
+- (void)_registerReachabilityObserver:(unsigned long long)arg1;
 - (id)_resourceInfosForTileGroup:(id)arg1;
 - (void)_retainResource:(id)arg1;
 - (void)_scheduleTileGroupUpdateTimerWithTimeInterval:(double)arg1;
 - (void)_scheduleUpdateTimerWithTimeInterval:(double)arg1;
+- (void)_startServer;
 - (void)_tileGroupTimerFired:(id)arg1;
 - (void)_updateManifest:(id)arg1;
 - (void)_updateManifest;
-- (BOOL)_updateManifestIfNecessary;
+- (bool)_updateManifestIfNecessary:(id)arg1;
 - (void)_updateTimerFired:(id)arg1;
 - (void)_writeActiveTileGroupToDisk:(id)arg1;
 - (void)_writeManifestToDisk:(id)arg1;
 - (id)authToken;
 - (void)closeConnection;
+- (id)configuration;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -64,7 +70,7 @@
 - (id)delegate;
 - (void)forceUpdate:(id)arg1;
 - (void)getResourceManifestWithHandler:(id)arg1;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 configuration:(id)arg2;
 - (void)openConnection;
 - (oneway void)releaseResources:(id)arg1;
 - (oneway void)resetActiveTileGroup;
@@ -73,6 +79,6 @@
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setManifestToken:(id)arg1 completionHandler:(id)arg2;
-- (oneway void)startServer:(id)arg1;
+- (void)updateIfNecessary:(id)arg1;
 
 @end

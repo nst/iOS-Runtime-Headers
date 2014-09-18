@@ -19,5 +19,6 @@
 - (id)endSessionForURL:(id)arg1;
 - (id)init;
 - (id)startSessionWithURL:(id)arg1;
+- (id)stopAllAudioPlayerSessions;
 
 @end

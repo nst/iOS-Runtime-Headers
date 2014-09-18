@@ -7,31 +7,38 @@
 @interface PLJPEGPreheatItem : PLPreheatItem {
     UIImage *_cachedImage;
     unsigned int _cancelled;
-    BOOL _dataIsLoading;
     NSString *_imagePath;
     unsigned int _loadingOptions;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_group> *_requestGroup;
-    unsigned long _requestID;
+    unsigned long long _requestID;
     NSObject<OS_dispatch_group> *_waitGroup;
+    bool_cachedImageCancelled;
+    bool_dataIsLoading;
 }
+
+@property(readonly) unsigned int options;
+
++ (id)jpegDataLoadSemaphore;
 
 - (void)_cacheImage;
 - (void)_cancel;
 - (void)_leaveWaitGroupIfNeeded;
 - (void)_uncancel;
-- (BOOL)addImageHandler:(id)arg1;
-- (id)cachedImage;
-- (id)cachedImageIfAvailable;
+- (bool)addImageHandler:(id)arg1;
+- (id)cachedImage:(bool*)arg1;
+- (id)cachedImageIfAvailable:(bool*)arg1;
 - (void)cancelPreheatRequest;
 - (id)createDecodedImage:(struct CGImage { }*)arg1 data:(id)arg2;
 - (void)dealloc;
 - (struct __CFDictionary { }*)decodeSessionOptions;
-- (id)initWithImagePath:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithImagePath:(id)arg1 format:(int)arg2 imageType:(long long)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 options:(unsigned int)arg5;
 - (id)initialDecodeSessionOptions;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (void)loadPreheatDataWithHandler:(id)arg1;
+- (unsigned int)options;
+- (bool)originalIsJpeg;
 - (id)preheatData;
-- (void)startPreheatRequest;
+- (void)startPreheatRequestWithCompletionHandler:(id)arg1;
 
 @end

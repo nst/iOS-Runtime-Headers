@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCPowerAssertion : NSObject {
+@interface MCPowerAssertion : MCProcessAssertion {
+    bool_parked;
 }
 
-+ (id)assertion;
+@property(getter=isParked,readonly) bool parked;
 
 - (void)dealloc;
 - (id)init;
-- (void)touch;
+- (bool)isParked;
+- (void)park;
+- (void)unpark;
 
 @end

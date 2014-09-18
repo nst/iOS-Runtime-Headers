@@ -7,26 +7,26 @@
 @interface EKPersistentResourceChange : EKPersistentObject {
 }
 
-@property(readonly) BOOL alerted;
-@property(readonly) EKPersistentCalendar * calendar;
-@property(readonly) EKPersistentCalendarItem * calendarItem;
+@property(readonly) bool alerted;
+@property(retain,readonly) EKPersistentCalendar * calendar;
+@property(retain,readonly) EKPersistentCalendarItem * calendarItem;
 @property(readonly) unsigned int changeType;
-@property(readonly) NSURL * changedByAddress;
-@property(readonly) NSString * changedByDisplayName;
-@property(readonly) NSString * changedByFirstName;
-@property(readonly) NSString * changedByLastName;
+@property(copy,readonly) NSURL * changedByAddress;
+@property(copy,readonly) NSString * changedByDisplayName;
+@property(copy,readonly) NSString * changedByFirstName;
+@property(copy,readonly) NSString * changedByLastName;
 @property(readonly) unsigned int changedProperties;
 @property(readonly) NSNumber * createCount;
 @property(readonly) NSNumber * deleteCount;
 @property(readonly) NSString * deletedTitle;
 @property(readonly) unsigned int publicStatus;
-@property(readonly) NSDate * timestamp;
+@property(copy,readonly) NSDate * timestamp;
 @property(readonly) NSNumber * updateCount;
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarItem;
 - (unsigned int)changeType;

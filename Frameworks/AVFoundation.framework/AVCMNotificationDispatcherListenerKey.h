@@ -20,8 +20,8 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2 name:(id)arg3 object:(const void*)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

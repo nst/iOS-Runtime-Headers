@@ -14,7 +14,6 @@
 
 - (id)inputCorrectionLevel;
 - (struct CGImage { }*)outputCGImage;
-- (void)setDefaults;
 - (void)setInputCorrectionLevel:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 

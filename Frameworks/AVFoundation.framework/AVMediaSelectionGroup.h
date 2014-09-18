@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMediaSelectionGroupInternal, NSArray;
+@class AVMediaSelectionGroupInternal, AVMediaSelectionOption, NSArray;
 
 @interface AVMediaSelectionGroup : NSObject <NSCopying> {
     AVMediaSelectionGroupInternal *_mediaSelectionGroup;
 }
 
-@property(readonly) BOOL allowsEmptySelection;
+@property(readonly) bool allowsEmptySelection;
+@property(readonly) AVMediaSelectionOption * defaultOption;
 @property(readonly) NSArray * options;
 
 + (id)mediaSelectionGroupWithAsset:(id)arg1 dictionary:(id)arg2;
@@ -18,18 +19,17 @@
 + (id)mediaSelectionOptionsFromArray:(id)arg1 withoutMediaCharacteristics:(id)arg2;
 + (id)playableMediaSelectionOptionsFromArray:(id)arg1;
 
-- (id)_defaultOption;
 - (id)_groupID;
 - (id)_groupMediaType;
-- (BOOL)_isAlternateTrackGroup;
-- (BOOL)_isKeyValueGroup;
-- (BOOL)_matchesGroupID:(id)arg1 mediaType:(id)arg2;
-- (id)_optionWithID:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
+- (bool)_isStreamingGroup;
+- (bool)_matchesGroupID:(id)arg1 mediaType:(id)arg2;
+- (id)_optionWithID:(id)arg1 displaysNonForcedSubtitles:(bool)arg2;
 - (id)_weakReference;
-- (BOOL)allowsEmptySelection;
+- (bool)allowsEmptySelection;
 - (id)asset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)defaultOption;
 - (id)description;
 - (id)dictionary;
 - (void)finalize;

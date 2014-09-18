@@ -10,14 +10,14 @@
     UIToolbar *_persistentToolbar;
 }
 
-@property(getter=isBackgroundAlwaysVisible) BOOL backgroundAlwaysVisible;
-@property(getter=isBackgroundHidden) BOOL backgroundHidden;
+@property(getter=isBackgroundAlwaysVisible) bool backgroundAlwaysVisible;
+@property(getter=isBackgroundHidden) bool backgroundHidden;
 
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isBackgroundAlwaysVisible;
-- (BOOL)isBackgroundHidden;
-- (void)setBackgroundAlwaysVisible:(BOOL)arg1;
-- (void)setBackgroundHidden:(BOOL)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isBackgroundAlwaysVisible;
+- (bool)isBackgroundHidden;
+- (void)setBackgroundAlwaysVisible:(bool)arg1;
+- (void)setBackgroundHidden:(bool)arg1;
 
 @end

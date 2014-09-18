@@ -7,16 +7,16 @@
 @interface _UITintColorVisitor : _UIViewVisitor {
     UIView *_changedSubview;
     UIView *_originalVisitedView;
-    unsigned int _reasons;
-    BOOL _viewHasDefinedTintColor;
-    BOOL _viewHasNonAutomaticTintAdjustmentMode;
-    BOOL _visitedViewIsWindow;
+    unsigned long long _reasons;
+    bool_viewHasDefinedTintColor;
+    bool_viewHasNonAutomaticTintAdjustmentMode;
+    bool_visitedViewIsWindow;
 }
 
-- (void)_prepareForView:(id)arg1 trackingHierarchy:(BOOL)arg2;
-- (BOOL)_prepareVisitor:(id)arg1 toVisitView:(id)arg2 changedSubview:(id)arg3 previousWindow:(id)arg4 previousSuperview:(id)arg5;
-- (BOOL)_visitView:(id)arg1;
-- (id)initWithNotificationReasons:(unsigned int)arg1;
-- (id)initWithTraversalDirection:(unsigned int)arg1;
+- (void)_prepareForView:(id)arg1 trackingHierarchy:(bool)arg2;
+- (bool)_prepareVisitor:(id)arg1 toVisitView:(id)arg2 changedSubview:(id)arg3 previousWindow:(id)arg4 previousSuperview:(id)arg5;
+- (bool)_visitView:(id)arg1;
+- (id)initWithNotificationReasons:(unsigned long long)arg1;
+- (id)initWithTraversalDirection:(unsigned long long)arg1;
 
 @end

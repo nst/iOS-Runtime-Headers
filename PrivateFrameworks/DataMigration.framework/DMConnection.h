@@ -2,11 +2,23 @@
    Image: /System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
  */
 
-@interface DMConnection : DMXPCConnection {
+@class NSString;
+
+@interface DMConnection : DMXPCConnection <DMMigratorServiceProtocol> {
+    NSString *_lastPlugin;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) NSString * lastPlugin;
+@property(readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)handleMessage:(id)arg1;
+- (id)lastPlugin;
 - (void)migrateWithCompletion:(id)arg1;
 - (void)orderedPluginIdentifiersWithCompletion:(id)arg1;
-- (void)testMigrationUIWithProgress:(BOOL)arg1 forceInvert:(BOOL)arg2 completion:(id)arg3;
+- (void)testMigrationUIWithProgress:(bool)arg1 forceInvert:(bool)arg2 completion:(id)arg3;
 
 @end

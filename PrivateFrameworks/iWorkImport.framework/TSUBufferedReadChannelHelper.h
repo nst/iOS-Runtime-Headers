@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUBufferedReadChannel;
+@class NSString, TSUBufferedReadChannel;
 
 @interface TSUBufferedReadChannelHelper : NSObject <TSUStreamReadChannel> {
     TSUBufferedReadChannel *_bufferedReadChannel;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;

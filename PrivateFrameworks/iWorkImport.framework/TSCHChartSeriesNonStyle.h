@@ -2,8 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class TSSPropertyMap;
+
 @interface TSCHChartSeriesNonStyle : TSCHBaseStyle {
 }
+
+@property(copy) TSSPropertyMap * overrideMapForSameAsSource;
 
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;
@@ -15,9 +19,14 @@
 
 - (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
+- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(bool)arg4;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
+- (id)overrideMapForSameAsSource;
 - (void)p_upgradeMixedChartProperties:(id)arg1;
 - (void)p_upgradeSeparateVisibilityProperties:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
+- (void)setOverrideMapForSameAsSource:(id)arg1;
+- (void)updateAfterPasteForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;
 
 @end

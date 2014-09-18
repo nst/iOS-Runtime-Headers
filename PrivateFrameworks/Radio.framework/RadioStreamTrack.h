@@ -7,14 +7,14 @@
 @interface RadioStreamTrack : RadioTrack {
 }
 
-@property(readonly) NSURL * certificateURL;
-@property(readonly) NSURL * contentURL;
-@property(readonly) NSURL * keyServerURL;
-@property(getter=isSkipable,readonly) BOOL skipable;
+@property(retain,readonly) NSURL * certificateURL;
+@property(retain,readonly) NSURL * contentURL;
+@property(retain,readonly) NSURL * keyServerURL;
+@property(getter=isSkipable,readonly) bool skipable;
 
 - (id)certificateURL;
 - (id)contentURL;
-- (BOOL)isSkipable;
+- (bool)isSkipable;
 - (id)keyServerURL;
 
 @end

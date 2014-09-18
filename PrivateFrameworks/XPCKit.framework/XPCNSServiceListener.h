@@ -9,12 +9,16 @@
     XPCServiceListener *_serviceListener;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) <XPCNSServiceListenerDelegate> * delegate;
-@property(readonly) NSString * serviceName;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) NSString * serviceName;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)XPCServiceListener:(id)arg1 didReceiveNewConnection:(id)arg2;
-- (BOOL)XPCServiceListener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)XPCServiceListener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)delegate;
 - (id)initWithServiceName:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
 - (id)serviceName;

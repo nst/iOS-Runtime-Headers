@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RUStationTuningSlider, RadioStation, UIImageView, UILabel;
+@class RUStationTuningSlider, RadioStation, UIImageView, UILabel, UITapGestureRecognizer;
 
 @interface RUStationTuningView : UIView {
     RadioStation *_station;
+    UITapGestureRecognizer *_tapGestureRecognizer;
     RUStationTuningSlider *_tuningSlider;
-    float _tuningSliderMaskDrawnWidth;
+    double _tuningSliderMaskDrawnWidth;
     UIImageView *_tuningSliderMaskView;
     UILabel *_tuningType1Label;
     UILabel *_tuningType2Label;
@@ -16,11 +17,16 @@
 
 @property(retain) RadioStation * station;
 
++ (id)_tuningTypeLabelFont;
++ (double)defaultHeightForTraitCollection:(id)arg1;
+
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (id)_maskImageForSliderTrack;
 - (void)_tapRecognizedAction:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (id)maskImageForSliderTrack;
 - (void)setStation:(id)arg1;
 - (id)station;
 

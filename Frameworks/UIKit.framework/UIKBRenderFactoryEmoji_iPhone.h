@@ -6,6 +6,6 @@
 }
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (id)traitsHashStringForKey:(id)arg1 withGeometry:(id)arg2 controlOpacities:(BOOL)arg3;
+- (id)traitsHashStringForKey:(id)arg1 withGeometry:(id)arg2 controlOpacities:(bool)arg3;
 
 @end

@@ -22,33 +22,37 @@
     } _screenResolution;
 }
 
-@property BOOL hasInteractionModel;
-@property(readonly) BOOL hasManufacturer;
-@property(readonly) BOOL hasModel;
-@property BOOL hasScreenResolution;
+@property bool hasInteractionModel;
+@property(readonly) bool hasManufacturer;
+@property(readonly) bool hasModel;
+@property bool hasScreenResolution;
 @property int interactionModel;
 @property(retain) NSString * manufacturer;
 @property(retain) NSString * model;
 @property struct { double x1; double x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } screenResolution;
+
++ (id)carInfoWithTraits:(id)arg1;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInteractionModel;
-- (BOOL)hasManufacturer;
-- (BOOL)hasModel;
-- (BOOL)hasScreenResolution;
-- (unsigned int)hash;
+- (bool)hasInteractionModel;
+- (bool)hasManufacturer;
+- (bool)hasModel;
+- (bool)hasScreenResolution;
+- (unsigned long long)hash;
+- (id)initWithTraits:(id)arg1;
 - (int)interactionModel;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)manufacturer;
+- (void)mergeFrom:(id)arg1;
 - (id)model;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (struct { double x1; double x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })screenResolution;
-- (void)setHasInteractionModel:(BOOL)arg1;
-- (void)setHasScreenResolution:(BOOL)arg1;
+- (void)setHasInteractionModel:(bool)arg1;
+- (void)setHasScreenResolution:(bool)arg1;
 - (void)setInteractionModel:(int)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModel:(id)arg1;

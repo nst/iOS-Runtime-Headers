@@ -7,10 +7,6 @@
 @interface CalDAVCalendarPropertyRefreshOperation : CalDAVOperation <CoreDAVContainerInfoTaskGroupDelegate, CoreDAVContainerInfoSyncProvider, CoreDAVPropPatchTaskDelegate, CoreDAVTaskGroupDelegate> {
     NSString *_calendarHomeSyncToken;
     NSMutableDictionary *_ctags;
-    BOOL _didFinish;
-    BOOL _didMakeCalendars;
-    BOOL _forceClearCalendarHomeSyncToken;
-    BOOL _isSecondRefresh;
     NSMutableSet *_localCalendarsWithNoPath;
     int _nextCalendarOrder;
     NSObject<OS_dispatch_group> *_outstandingTasksGroup;
@@ -18,22 +14,30 @@
     NSError *_savedError;
     NSMutableDictionary *_syncTokens;
     NSMutableSet *_updatedCalendars;
-    BOOL _useCalendarHomeSyncReport;
+    bool_didFinish;
+    bool_didMakeCalendars;
+    bool_forceClearCalendarHomeSyncToken;
+    bool_isSecondRefresh;
+    bool_useCalendarHomeSyncReport;
 }
 
 @property(retain) NSString * calendarHomeSyncToken;
+@property(copy,readonly) NSString * debugDescription;
 @property <CalDAVCalendarPropertyRefreshDelegate> * delegate;
-@property BOOL useCalendarHomeSyncReport;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property bool useCalendarHomeSyncReport;
 
 - (void)_continueHandleContainerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (void)_finishRefresh;
 - (id)_generateTimeZoneString:(id)arg1;
 - (void)_getDefaultCalendarsTasksIfNeededForPrincipal:(id)arg1;
-- (id)_getDefaultMkCalendarForPrincipalTaskGroup:(id)arg1 isEventCalendar:(BOOL)arg2;
+- (id)_getDefaultMkCalendarForPrincipalTaskGroup:(id)arg1 isEventCalendar:(bool)arg2;
 - (id)_getMkcalendarTaskGroupForCalendar:(id)arg1;
 - (id)_getSetPropertyStringTask:(id)arg1 forName:(id)arg2 andNamespace:(id)arg3 atURL:(id)arg4;
 - (void)_handleCalendarPublish;
-- (BOOL)_handleUpdateForCalendar:(id)arg1;
+- (bool)_handleUpdateForCalendar:(id)arg1;
 - (void)_initializePrincipalCalendarCache;
 - (void)_prepareCalendarsBeforeRefresh;
 - (void)_reallyRefreshCalendarProperties;
@@ -49,7 +53,7 @@
 - (id)initWithPrincipal:(id)arg1;
 - (void)refreshCalendarProperties;
 - (void)setCalendarHomeSyncToken:(id)arg1;
-- (void)setUseCalendarHomeSyncReport:(BOOL)arg1;
-- (BOOL)useCalendarHomeSyncReport;
+- (void)setUseCalendarHomeSyncReport:(bool)arg1;
+- (bool)useCalendarHomeSyncReport;
 
 @end

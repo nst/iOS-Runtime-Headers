@@ -4,20 +4,32 @@
 
 @class EDStyle;
 
-@interface EMCellStyle : CMStyle {
-    BOOL _nameContainsBold;
-    BOOL _nameContainsItalic;
-    EDStyle *edStyle;
+@interface EMCellStyle : CMStyle <NSCopying> {
+    double _columnWidth;
+    double _contentWidth;
+    int _edCellType;
+    EDStyle *_edStyle;
+    bool_isColumnZero;
+    bool_isRowZero;
+    bool_resolvedProperties;
+    bool_truncateContents;
 }
 
-- (id)_parseFontName:(id)arg1;
++ (id)_parseFontName:(id)arg1 nameContainsBold:(bool*)arg2 nameContainsItalic:(bool*)arg3;
++ (id)styleForFont:(id)arg1;
+
 - (void)addAlignmentStyle:(id)arg1;
 - (void)addBordersStyle:(id)arg1;
 - (void)addFillStyle:(id)arg1;
 - (void)addFontStyle:(id)arg1;
-- (void)changeWithContentFormatType:(int)arg1;
-- (void)changeWithContentWidth:(double)arg1 columnWidth:(double)arg2;
-- (id)init;
-- (id)initWithEDStyle:(id)arg1;
+- (id)cacheFriendlyCSSStyleString;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)cssStyleString;
+- (unsigned long long)hash;
+- (id)initWithEDStyle:(id)arg1 type:(int)arg2 rowIndex:(unsigned long long)arg3 columnIndex:(unsigned long long)arg4 columnWidth:(unsigned long long)arg5 contentWidth:(unsigned long long)arg6 truncateContents:(bool)arg7;
+- (bool)isEqual:(id)arg1;
+- (void)resolveBorders;
+- (void)resolveContentWidth;
+- (void)resolveFormatType;
 
 @end

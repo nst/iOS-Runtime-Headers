@@ -2,12 +2,89 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIStorePageCollectionViewLayout : UICollectionViewFlowLayout {
+@class NSArray, NSIndexSet, NSMapTable, NSString, UIColor;
+
+@interface SKUIStorePageCollectionViewLayout : UICollectionViewFlowLayout <SKUIStorePageCollectionViewLayout> {
+    struct { 
+        unsigned int respondsToIndexPathsForPinningItems : 1; 
+        unsigned int respondsToPinningContentInsetForItemAtIndexPath : 1; 
+        unsigned int respondsToPinningStyleForItemAtIndexPath : 1; 
+        unsigned int respondsToPinningTransitionStyleForItemAtIndexPath : 1; 
+        unsigned int respondsToWillApplyLayoutAttributes : 1; 
+    NSString *_backdropGroupName;
+    UIColor *_collectionViewBackgroundColor;
+    } _collectionViewDelegateFlags;
+    NSIndexSet *_expandChildPageSectionsIndexSet;
+    long long _inLayoutAttributesForElementsCount;
+    NSMapTable *_indexPathToItemPinningConfiguration;
+    NSMapTable *_indexPathToPinningLayoutInformation;
+    NSArray *_indexPathsForPinningItems;
+    double _overrideContentWidth;
+    long long _pinnedBackdropViewStyle;
+    NSArray *_updateItems;
+    bool_allowsPinningTransitions;
+    bool_hasValidIndexPathsForPinningItems;
+    bool_hasValidPinnedBackdropViewStyle;
+    bool_hasValidPinningLayoutInformation;
+    bool_rendersWithPerspective;
 }
 
+@property bool allowsPinningTransitions;
+@property(copy) NSString * backdropGroupName;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(copy) NSIndexSet * expandChildPageSectionsIndexSet;
+@property(readonly) unsigned long long hash;
+@property(readonly) NSArray * indexPathsForPinningItems;
+@property double overrideContentWidth;
+@property bool rendersWithPerspective;
+@property(readonly) Class superclass;
+
++ (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void).cxx_destruct;
+- (bool)_allowsBackdropDecorationForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
+- (void)_appendAdditionalLayoutAttributesForPinningItemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toArray:(id)arg2;
+- (void)_calculatePinningLayoutInformation;
+- (void)_configureCellLayoutAttributes:(id)arg1 forItemWithPinningConfiguration:(id)arg2 layoutInformation:(id)arg3 atIndexPath:(id)arg4 allowPinning:(bool)arg5 returningIsPinning:(out bool*)arg6;
+- (id)_getCollectionViewUpdateItemForItemFromIndex:(long long)arg1 initalLayout:(bool)arg2;
+- (id)_indexPathsForPinningItems;
+- (void)_invalidatePinningLayoutInformation;
+- (id)_itemPinningConfigurationForItemAtIndexPath:(id)arg1;
+- (id)_itemPinningLayoutInformationForItemAtIndexPath:(id)arg1;
+- (id)_layoutAttributesForPinnedBackdropDecorationViewAtIndexPath:(id)arg1 pinningConfiguration:(id)arg2 layoutInformation:(id)arg3;
+- (long long)_pinnedBackdropViewStyle;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_pinningContentInsetForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_pinningFrameForStartingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 itemPinningConfiguration:(id)arg2 atIndexPath:(id)arg3;
+- (long long)_pinningStyleForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
+- (long long)_pinningTransitionStyleForItemPinningConfiguration:(id)arg1 atIndexPath:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_targetFrameForStartingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 itemPinningConfiguration:(id)arg2 layoutInformation:(id)arg3 atIndexPath:(id)arg4 returningIsPinning:(out bool*)arg5;
+- (void)_updateItemsLayoutForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)allowsPinningTransitions;
+- (id)backdropGroupName;
+- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (id)expandChildPageSectionsIndexSet;
+- (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
+- (id)indexPathsForPinningItems;
+- (id)init;
+- (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
+- (void)invalidateLayoutWithContext:(id)arg1;
+- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
+- (id)layoutAttributesForUnpinnedItemAtIndexPath:(id)arg1;
+- (double)overrideContentWidth;
+- (id)pinnedLayoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)prepareForCollectionViewUpdates:(id)arg1;
+- (void)prepareLayout;
+- (bool)rendersWithPerspective;
+- (void)setAllowsPinningTransitions:(bool)arg1;
+- (void)setBackdropGroupName:(id)arg1;
+- (void)setExpandChildPageSectionsIndexSet:(id)arg1;
+- (void)setOverrideContentWidth:(double)arg1;
+- (void)setRendersWithPerspective:(bool)arg1;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

@@ -6,29 +6,34 @@
 
 @interface UIMailActivity : UIActivity <UIStateRestoring> {
     NSString *_autosaveIdentifier;
-    BOOL _hasAnyAccount;
-    BOOL _hasFilteredAccount;
-    BOOL _keyboardVisible;
     MFMailComposeViewController *_mailComposeViewController;
-    BOOL _sourceIsManaged;
+    bool_hasAnyAccount;
+    bool_hasFilteredAccount;
+    bool_keyboardVisible;
+    bool_sourceIsManaged;
 }
 
 @property(retain) NSString * autosaveIdentifier;
-@property BOOL hasAnyAccount;
-@property BOOL hasFilteredAccount;
-@property BOOL keyboardVisible;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool hasAnyAccount;
+@property bool hasFilteredAccount;
+@property(readonly) unsigned long long hash;
+@property bool keyboardVisible;
 @property(retain) MFMailComposeViewController * mailComposeViewController;
 @property(readonly) Class objectRestorationClass;
 @property(readonly) <UIStateRestoring> * restorationParent;
-@property BOOL sourceIsManaged;
+@property bool sourceIsManaged;
+@property(readonly) Class superclass;
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (id)_activityImage;
+- (id)_activitySettingsImage;
 - (void)_cleanup;
 - (void)_deleteMailDraftIdentifierRestorationArchive:(id)arg1;
 - (id)_mailDraftRestorationURL;
-- (BOOL)_restoreDraft;
+- (bool)_restoreDraft;
 - (void)_saveDraft:(id)arg1;
 - (void)_setSubject:(id)arg1;
 - (id)_stateRestorationDraftIsAvailable;
@@ -37,24 +42,24 @@
 - (id)activityViewController;
 - (id)autosaveIdentifier;
 - (void)autosaveWithHandler:(id)arg1;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (BOOL)hasAnyAccount;
-- (BOOL)hasFilteredAccount;
+- (bool)hasAnyAccount;
+- (bool)hasFilteredAccount;
 - (id)init;
-- (BOOL)keyboardVisible;
+- (bool)keyboardVisible;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)mailComposeViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setAutosaveIdentifier:(id)arg1;
-- (void)setHasAnyAccount:(BOOL)arg1;
-- (void)setHasFilteredAccount:(BOOL)arg1;
-- (void)setKeyboardVisible:(BOOL)arg1;
+- (void)setHasAnyAccount:(bool)arg1;
+- (void)setHasFilteredAccount:(bool)arg1;
+- (void)setKeyboardVisible:(bool)arg1;
 - (void)setMailComposeViewController:(id)arg1;
-- (void)setSourceIsManaged:(BOOL)arg1;
+- (void)setSourceIsManaged:(bool)arg1;
 - (void)setSubject:(id)arg1;
-- (BOOL)sourceIsManaged;
+- (bool)sourceIsManaged;
 
 @end

@@ -7,7 +7,7 @@
 @interface DOMWebKitAnimationEvent : DOMEvent {
 }
 
-@property(readonly) NSString * animationName;
+@property(copy,readonly) NSString * animationName;
 @property(readonly) double elapsedTime;
 
 - (id)animationName;

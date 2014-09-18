@@ -10,19 +10,19 @@
 
 + (id)sharedController;
 
-- (int)currentSequenceKey;
+- (long long)currentSequenceKey;
 - (void)dealloc;
 - (id)defaultsValueForKey:(id)arg1;
-- (int)emojiCategoryDefaultsIndex:(id)arg1;
+- (long long)emojiCategoryDefaultsIndex:(id)arg1;
 - (id)emptyDefaultsDictionary;
 - (void)handleRead:(id)arg1;
 - (void)handleWrite:(id)arg1;
 - (id)init;
 - (void)readEmojiDefaults;
 - (id)recentsKey;
-- (void)setCurrentSequenceKey:(int)arg1;
+- (void)setCurrentSequenceKey:(long long)arg1;
 - (void)setDefaultsValue:(id)arg1 forKey:(id)arg2;
-- (void)setEmojiCategoryDefaultsIndex:(int)arg1 forCategory:(id)arg2;
+- (void)setEmojiCategoryDefaultsIndex:(long long)arg1 forCategory:(id)arg2;
 - (void)setRecentsKey:(id)arg1;
 - (void)setUsageHistoryKey:(id)arg1;
 - (id)usageHistoryKey;

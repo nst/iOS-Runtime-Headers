@@ -2,19 +2,23 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKUserTrackingView>, MKMapView, NSMutableDictionary, _MKUserTrackingButtonController;
+@class <MKUserTrackingView>, MKMapView, NSMutableDictionary, NSString, _MKUserTrackingButtonController;
 
 @interface _MKUserTrackingButton : UIButton <MKUserTrackingButtonTarget> {
     _MKUserTrackingButtonController *_controller;
     NSMutableDictionary *_customImages;
     NSMutableDictionary *_customLandscapeImagePhones;
-    BOOL _inMiniBar;
-    BOOL _selectsWhenTracking;
+    bool_inMiniBar;
+    bool_selectsWhenTracking;
 }
 
 @property(readonly) _MKUserTrackingButtonController * controller;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) MKMapView * mapView;
-@property(getter=_selectsWhenTracking,setter=_setSelectsWhenTracking:) BOOL selectsWhenTracking;
+@property(getter=_selectsWhenTracking,setter=_setSelectsWhenTracking:) bool selectsWhenTracking;
+@property(readonly) Class superclass;
 @property(retain) <MKUserTrackingView> * userTrackingView;
 
 + (Class)_activityIndicatorClass;
@@ -22,28 +26,28 @@
 + (id)buttonWithUserTrackingView:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)_activityIndicatorStyle;
-- (id)_defaultImageForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
-- (id)_defaultLandscapeImagePhoneForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
-- (id)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
-- (id)_imageForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
-- (BOOL)_isHighlightedForState:(int)arg1;
-- (id)_landscapeImagePhoneForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
+- (long long)_activityIndicatorStyle;
+- (id)_defaultImageForUserTrackingMode:(long long)arg1 controlState:(unsigned long long)arg2;
+- (id)_defaultLandscapeImagePhoneForUserTrackingMode:(long long)arg1 controlState:(unsigned long long)arg2;
+- (id)_imageForState:(long long)arg1 controlState:(unsigned long long)arg2;
+- (id)_imageForUserTrackingMode:(long long)arg1 controlState:(unsigned long long)arg2;
+- (bool)_isHighlightedForState:(long long)arg1;
+- (id)_landscapeImagePhoneForUserTrackingMode:(long long)arg1 controlState:(unsigned long long)arg2;
 - (void)_repositionViews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
-- (BOOL)_selectsWhenTracking;
-- (void)_setImage:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
-- (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
-- (void)_setSelectsWhenTracking:(BOOL)arg1;
-- (void)_setState:(int)arg1;
-- (int)_state;
-- (void)_updateForState:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectedIndicatorBounds;
+- (bool)_selectsWhenTracking;
+- (void)_setImage:(id)arg1 forUserTrackingMode:(long long)arg2 controlState:(unsigned long long)arg3;
+- (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(long long)arg2 controlState:(unsigned long long)arg3;
+- (void)_setSelectsWhenTracking:(bool)arg1;
+- (void)_setState:(long long)arg1;
+- (long long)_state;
+- (void)_updateForState:(long long)arg1;
 - (id)controller;
 - (id)mapView;
 - (void)setMapView:(id)arg1;
 - (void)setUserTrackingView:(id)arg1;
 - (void)sizeToFit;
-- (void)updateForMiniBarState:(BOOL)arg1;
+- (void)updateForMiniBarState:(bool)arg1;
 - (id)userTrackingView;
 
 @end

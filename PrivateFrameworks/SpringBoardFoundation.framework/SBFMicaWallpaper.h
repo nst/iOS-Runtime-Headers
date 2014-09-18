@@ -18,7 +18,7 @@
 - (void)_unloadView;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (void)setAnimating:(BOOL)arg1;
+- (void)setAnimating:(bool)arg1;
 - (void)setWallpaperOptions:(id)arg1;
 
 @end

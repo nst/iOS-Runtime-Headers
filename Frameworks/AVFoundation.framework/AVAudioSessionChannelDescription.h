@@ -8,23 +8,23 @@
     void *_impl;
 }
 
-@property(readonly) unsigned long channelLabel;
+@property(readonly) unsigned int channelLabel;
 @property(readonly) NSString * channelName;
-@property(readonly) unsigned int channelNumber;
+@property(readonly) unsigned long long channelNumber;
 @property(readonly) NSString * owningPortUID;
 
-+ (id)privateCreate:(id)arg1 portUID:(id)arg2 channelNumber:(unsigned long)arg3;
++ (id)privateCreate:(id)arg1 portUID:(id)arg2 channelNumber:(unsigned int)arg3;
 + (id)privateCreateArray:(id)arg1 portUID:(id)arg2;
 
-- (unsigned long)channelLabel;
+- (unsigned int)channelLabel;
 - (id)channelName;
-- (unsigned int)channelNumber;
+- (unsigned long long)channelNumber;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChannel:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChannel:(id)arg1;
 - (id)owningPortUID;
 - (struct ChannelDescriptionImpl { id x1; id x2; unsigned int x3; unsigned int x4; }*)privateGetImplementation;
 

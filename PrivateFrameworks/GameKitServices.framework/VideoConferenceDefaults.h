@@ -9,23 +9,27 @@
     int _forceEncodeHeight;
     int _forceEncodeWidth;
     int _forceFramerate;
+    int _forceRecvVideoPayload;
     int _forceVideoPayload;
 }
 
 @property(readonly) int bundleAudio;
-@property(readonly) BOOL disableVAD;
-@property(readonly) BOOL enable2vuyCapture;
-@property(readonly) BOOL enableBitstreamCapture;
-@property(readonly) BOOL enableRecvBitstreamDump;
-@property(readonly) BOOL enableVPBLogging;
+@property(readonly) bool disableVAD;
+@property(readonly) bool enable2vuyCapture;
+@property(readonly) bool enableBitstreamCapture;
+@property(readonly) bool enableRecvBitstreamDump;
+@property(readonly) bool enableTxBitstreamDump;
+@property(readonly) bool enableTxSourceYuvDump;
+@property(readonly) bool enableVPBLogging;
 @property(readonly) int forceBitrate;
 @property(readonly) int forceCaptureHeight;
 @property(readonly) int forceCaptureWidth;
 @property(readonly) int forceEncodeHeight;
 @property(readonly) int forceEncodeWidth;
 @property(readonly) int forceFramerate;
-@property(readonly) BOOL forceHWI;
-@property(readonly) BOOL forceIPv6;
+@property(readonly) bool forceHWI;
+@property(readonly) bool forceIPv6;
+@property(readonly) int forceRecvVideoPayload;
 @property(readonly) int forceVideoPayload;
 @property(readonly) int max2GRate;
 
@@ -35,24 +39,27 @@
 - (id)autorelease;
 - (int)bundleAudio;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)disableVAD;
-- (BOOL)enable2vuyCapture;
-- (BOOL)enableBitstreamCapture;
-- (BOOL)enableRecvBitstreamDump;
-- (BOOL)enableVPBLogging;
+- (bool)disableVAD;
+- (bool)enable2vuyCapture;
+- (bool)enableBitstreamCapture;
+- (bool)enableRecvBitstreamDump;
+- (bool)enableTxBitstreamDump;
+- (bool)enableTxSourceYuvDump;
+- (bool)enableVPBLogging;
 - (int)forceBitrate;
 - (int)forceCaptureHeight;
 - (int)forceCaptureWidth;
 - (int)forceEncodeHeight;
 - (int)forceEncodeWidth;
 - (int)forceFramerate;
-- (BOOL)forceHWI;
-- (BOOL)forceIPv6;
+- (bool)forceHWI;
+- (bool)forceIPv6;
+- (int)forceRecvVideoPayload;
 - (int)forceVideoPayload;
 - (id)init;
 - (int)max2GRate;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

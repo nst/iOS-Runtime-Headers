@@ -2,20 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL, SKUICategoryController, SKUIStorePageViewController;
+@class NSString, NSURL, SKUICategoryController, SKUIStorePageViewController;
 
 @interface SKUIChartsViewController : SKUIViewController <SKUICategoryControllerDelegate, SKUIMetricsViewController, SKUIViewControllerTesting> {
     SKUICategoryController *_categoryController;
-    BOOL _hasCategoryButton;
     SKUIStorePageViewController *_storePageViewController;
     NSURL *_url;
+    bool_hasCategoryButton;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)_defaultURL;
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (id)_categoryController;
-- (void)_finishLoadWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_finishLoadWithResult:(bool)arg1 error:(id)arg2;
 - (void)_loadCategoriesWithURL:(id)arg1;
 - (void)_loadStorePage;
 - (void)_reloadNavigationItem;
@@ -27,10 +33,8 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
+- (bool)performTestWithName:(id)arg1 options:(id)arg2;
 - (void)reloadData;
-- (void)setClientContext:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

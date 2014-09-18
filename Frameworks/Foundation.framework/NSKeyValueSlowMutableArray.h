@@ -6,12 +6,12 @@
 
 @interface NSKeyValueSlowMutableArray : NSKeyValueMutableArray {
     BOOL _padding[3];
-    BOOL _treatNilValuesLikeEmptyArrays;
     NSKeyValueGetter *_valueGetter;
     NSKeyValueSetter *_valueSetter;
+    bool_treatNilValuesLikeEmptyArrays;
 }
 
-+ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned long long x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 
 - (id)_createNonNilMutableArrayValueWithSelector:(SEL)arg1;
 - (id)_nonNilArrayValueWithSelector:(SEL)arg1;
@@ -19,16 +19,16 @@
 - (void)_proxyNonGCFinalize;
 - (void)_raiseNilValueExceptionWithSelector:(SEL)arg1;
 - (void)addObject:(id)arg1;
-- (unsigned int)count;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned long long)count;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (id)objectsAtIndexes:(id)arg1;
 - (void)removeLastObject;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
 - (void)removeObjectsAtIndexes:(id)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)replaceObjectsAtIndexes:(id)arg1 withObjects:(id)arg2;
 
 @end

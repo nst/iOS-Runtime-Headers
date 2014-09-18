@@ -9,7 +9,11 @@
 
 @property(copy) NSString * aceVersion;
 @property(copy) NSString * classId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * groupId;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSArray * supportedProperties;
 
 + (id)objectSupport;

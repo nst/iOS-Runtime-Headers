@@ -2,9 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, TSDInteractiveCanvasController;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, TSDInteractiveCanvasController;
 
 @interface TSDGuideController : NSObject <TSDDecorator> {
+    boolmDidJustSnapInX;
+    boolmDidJustSnapInY;
+    boolmDoNotRemoveExistingGuidesWhenDisplaying;
+    boolmShouldAlignCenters;
+    boolmShouldAlignEdges;
+    boolmShouldAlignEdgesToMasterGuides;
+    boolmShouldAlignToSizingGuides;
+    boolmShouldAlignToSpacingGuides;
     NSSet *mCurrentGuides;
     NSMutableSet *mCurrentSizingGuideUILayers;
     NSMutableArray *mGuidesForSnappingX;
@@ -20,26 +28,37 @@
     NSMutableDictionary *mVerticalSpacings;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) bool didJustSnapInX;
+@property(readonly) bool didJustSnapInY;
+@property bool doNotRemoveExistingGuidesWhenDisplaying;
+@property(readonly) unsigned long long hash;
 @property(readonly) TSDInteractiveCanvasController * interactiveCanvasController;
+@property(readonly) Class superclass;
 
 + (id)defaultGuideColor;
 + (id)guideColor;
 + (void)initialize;
 + (void)setGuideColor:(id)arg1;
-+ (void)setShouldAlignCenters:(BOOL)arg1;
-+ (void)setShouldAlignEdges:(BOOL)arg1;
-+ (void)setShouldAlignEdgesToMasterGuides:(BOOL)arg1;
-+ (void)setShouldAlignToSizingGuides:(BOOL)arg1;
-+ (void)setShouldAlignToSpacingGuides:(BOOL)arg1;
-+ (BOOL)shouldAlignCenters;
-+ (BOOL)shouldAlignEdges;
-+ (BOOL)shouldAlignEdgesToMasterGuides;
-+ (BOOL)shouldAlignToSizingGuides;
-+ (BOOL)shouldAlignToSpacingGuides;
++ (void)setShouldAlignCenters:(bool)arg1;
++ (void)setShouldAlignEdges:(bool)arg1;
++ (void)setShouldAlignEdgesToMasterGuides:(bool)arg1;
++ (void)setShouldAlignToSizingGuides:(bool)arg1;
++ (void)setShouldAlignToSpacingGuides:(bool)arg1;
++ (bool)shouldAlignCenters;
++ (bool)shouldAlignEdges;
++ (bool)shouldAlignEdgesToMasterGuides;
++ (bool)shouldAlignToSizingGuides;
++ (bool)shouldAlignToSpacingGuides;
 
 - (void)beginAlignmentOperationForRep:(id)arg1;
+- (void)beginAlignmentOperationForReps:(id)arg1 preventCenterGuides:(bool)arg2 preventSpacingGuides:(bool)arg3;
 - (void)beginAlignmentOperationForReps:(id)arg1;
 - (id)decoratorOverlayLayers;
+- (bool)didJustSnapInX;
+- (bool)didJustSnapInY;
+- (bool)doNotRemoveExistingGuidesWhenDisplaying;
 - (void)endAlignmentOperation;
 - (void)hideAlignmentGuides;
 - (void)hideSizingGuides;
@@ -47,23 +66,24 @@
 - (id)interactiveCanvasController;
 - (void)p_addGuide:(id)arg1 toSortedArray:(id)arg2;
 - (void)p_addGuidesForLayout:(id)arg1;
-- (void)p_addSpacingGuidesForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 spacing:(id)arg2 isVerticalSpacing:(BOOL)arg3;
-- (id)p_closestGuideForOffset:(float)arg1 predicate:(id)arg2 inArray:(id)arg3;
-- (void)p_getOffset:(float*)arg1 andGuidesArray:(id*)arg2 forEdge:(int)arg3 ofFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (id)p_guideClosestToEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (BOOL)p_guidesAreRelevantForEdge:(int)arg1 whileDraggingKnobTag:(unsigned int)arg2;
-- (id)p_guidesForEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)p_guidesForOffset:(float)arg1 predicate:(id)arg2 inArray:(id)arg3;
-- (float)p_maxSnap;
-- (BOOL)p_sizingGuidesAreRelevantForOrientation:(int)arg1 whileDraggingKnobTag:(unsigned int)arg2;
+- (void)p_addSpacingGuidesForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 spacing:(id)arg2 isVerticalSpacing:(bool)arg3;
+- (id)p_closestGuideForOffset:(double)arg1 predicate:(id)arg2 inArray:(id)arg3;
+- (void)p_getOffset:(double*)arg1 andGuidesArray:(id*)arg2 forEdge:(int)arg3 ofFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (id)p_guideClosestToEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (bool)p_guidesAreRelevantForEdge:(int)arg1 whileDraggingKnobTag:(unsigned long long)arg2;
+- (id)p_guidesForEdge:(int)arg1 ofFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)p_guidesForOffset:(double)arg1 predicate:(id)arg2 inArray:(id)arg3;
+- (double)p_maxSnap;
+- (bool)p_sizingGuidesAreRelevantForOrientation:(int)arg1 whileDraggingKnobTag:(unsigned long long)arg2;
 - (float)p_spacingForCenterOrSpacingGuide:(id)arg1;
-- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2 shouldRenderX:(BOOL)arg3 shouldRenderY:(BOOL)arg4 shouldRenderSizeGuides:(BOOL)arg5;
-- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2;
-- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 shouldRenderX:(BOOL)arg2 shouldRenderY:(BOOL)arg3;
-- (void)showSizingGuideUIForRep:(id)arg1 matchingWidth:(BOOL)arg2 matchingHeight:(BOOL)arg3;
-- (void)showSizingGuidesAlignedWithLayout:(id)arg1 forKnobTag:(unsigned int)arg2;
-- (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2 snapSize:(BOOL)arg3;
-- (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKnobTag:(unsigned int)arg2;
-- (struct CGPoint { float x1; float x2; })snapRectToGuides:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDoNotRemoveExistingGuidesWhenDisplaying:(bool)arg1;
+- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKnobTag:(unsigned long long)arg2 shouldRenderX:(bool)arg3 shouldRenderY:(bool)arg4 shouldRenderSizeGuides:(bool)arg5;
+- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKnobTag:(unsigned long long)arg2;
+- (void)showGuidesAlignedWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 shouldRenderX:(bool)arg2 shouldRenderY:(bool)arg3;
+- (void)showSizingGuideUIForRep:(id)arg1 matchingWidth:(bool)arg2 matchingHeight:(bool)arg3;
+- (void)showSizingGuidesAlignedWithLayout:(id)arg1 forKnobTag:(unsigned long long)arg2;
+- (struct CGPoint { double x1; double x2; })snapRectToGuides:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKnobTag:(unsigned long long)arg2 snapSize:(bool)arg3;
+- (struct CGPoint { double x1; double x2; })snapRectToGuides:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKnobTag:(unsigned long long)arg2;
+- (struct CGPoint { double x1; double x2; })snapRectToGuides:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

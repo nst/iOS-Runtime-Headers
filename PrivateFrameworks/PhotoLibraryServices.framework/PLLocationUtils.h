@@ -5,6 +5,6 @@
 @interface PLLocationUtils : NSObject {
 }
 
-+ (BOOL)canUseCoordinate:(struct { double x1; double x2; })arg1;
++ (bool)canUseCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

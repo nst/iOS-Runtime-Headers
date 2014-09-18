@@ -12,7 +12,7 @@
  */
 
 @interface SKCustomAction : SKAction {
-    struct SKCCustomAction { int (**x1)(); float x2; id x3; boolx4; double x5; double x6; float x7; float x8; double x9; boolx10; boolx11; id x12; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x13; int x14; float x15; float x16; float x17; float x18; id x19; void*x20; } *_mycaction;
+    struct SKCCustomAction { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; id x22; void*x23; } *_mycaction;
 }
 
 + (id)customActionWithDuration:(double)arg1 actionBlock:(id)arg2;

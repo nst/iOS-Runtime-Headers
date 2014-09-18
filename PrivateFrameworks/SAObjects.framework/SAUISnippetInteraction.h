@@ -8,9 +8,13 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
 @property(copy) NSString * requestId;
 @property(copy) NSString * snippetId;
+@property(readonly) Class superclass;
 
 + (id)snippetInteraction;
 + (id)snippetInteractionWithDictionary:(id)arg1 context:(id)arg2;

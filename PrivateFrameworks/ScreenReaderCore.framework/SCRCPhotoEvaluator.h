@@ -5,9 +5,16 @@
 @interface SCRCPhotoEvaluator : NSObject {
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)initialize;
 + (id)sharedInstance;
 
-- (id)evaluateImage:(struct CGImage { }*)arg1 forCriteria:(int)arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)init;
+- (id)autorelease;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)evaluateImage:(struct CGImage { }*)arg1 forCriteria:(int)arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (oneway void)release;
+- (id)retain;
+- (unsigned long long)retainCount;
 
 @end

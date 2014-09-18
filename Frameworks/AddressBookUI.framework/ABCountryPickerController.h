@@ -14,9 +14,13 @@
 
 @property(retain) UILocalizedIndexedCollation * collation;
 @property(copy) NSArray * countries;
+@property(copy,readonly) NSString * debugDescription;
 @property <ABCountryPickerControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * sections;
 @property(copy) NSString * selectedCountryCode;
+@property(readonly) Class superclass;
 @property(retain) UITableViewController * tableViewController;
 
 - (void)_configureSections;
@@ -26,7 +30,7 @@
 - (id)countries;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (id)sections;
 - (id)selectedCountryCode;
@@ -37,13 +41,13 @@
 - (void)setTableViewController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (id)tableViewController;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

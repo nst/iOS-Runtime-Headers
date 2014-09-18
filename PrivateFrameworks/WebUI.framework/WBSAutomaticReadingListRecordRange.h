@@ -16,8 +16,8 @@
 @property(copy) id oldest;
 @property(copy) NSDate * oldestCreationDate;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithNewest:(id)arg1 newestCreationDate:(id)arg2 oldest:(id)arg3 oldestCreationDate:(id)arg4;
 - (id)newest;
 - (id)newestCreationDate;

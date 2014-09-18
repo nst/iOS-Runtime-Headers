@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIDonationResultView, SKUIGiftAmount;
+@class NSString, SKUIDonationResultView, SKUIGiftAmount;
 
 @interface SKUIDonationResultViewController : SKUIDonationStepViewController <SKUIDonationConfigurationObserver> {
     SKUIGiftAmount *_donationAmount;
     SKUIDonationResultView *_resultView;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) SKUIGiftAmount * donationAmount;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doneButtonAction:(id)arg1;

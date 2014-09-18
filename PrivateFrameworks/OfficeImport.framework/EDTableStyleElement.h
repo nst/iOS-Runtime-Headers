@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection, EDDifferentialStyle;
+@class EDCollection, EDDifferentialStyle, NSString;
 
 @interface EDTableStyleElement : NSObject <EDKeyedObject, NSCopying> {
     unsigned int mBandSize;
@@ -11,6 +11,11 @@
     int mType;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)tableStyleElementWithResources:(id)arg1;
 
 - (unsigned int)bandSize;
@@ -18,10 +23,10 @@
 - (void)dealloc;
 - (id)differentialStyle;
 - (id)initWithResources:(id)arg1;
-- (int)key;
+- (long long)key;
 - (void)setBandSize:(unsigned int)arg1;
 - (void)setDifferentialStyle:(id)arg1;
-- (void)setDifferentialStyleWithIndex:(unsigned int)arg1;
+- (void)setDifferentialStyleWithIndex:(unsigned long long)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSData, NSString;
+@class <GEOCompletionItem>, CLLocation, NSArray, NSString, _MKLocalSearchMerchantParameters;
 
 @interface MKLocalSearchRequest : NSObject <NSCopying> {
     struct { 
@@ -14,33 +14,57 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    BOOL _hasRegion;
+    NSString *_canonicalSearchString;
+    NSString *_contactsDataString;
+    CLLocation *_deviceLocation;
+    <GEOCompletionItem> *_geoCompletionItem;
+    _MKLocalSearchMerchantParameters *_merchantParameters;
+    NSArray *_muids;
     NSString *_naturalLanguageQuery;
+    NSArray *_phoneNumbers;
     } _region;
-    NSData *_suggestionEntryMetadata;
-    NSData *_suggestionMetadata;
+    bool_allowPhoneNumberLookupUsingCellular;
+    bool_hasRegion;
 }
 
-@property(readonly) BOOL _hasRegion;
+@property(readonly) bool _hasRegion;
+@property(getter=_allowPhoneNumberLookupUsingCellular,setter=_setAllowPhoneNumberLookupUsingCellular:) bool allowPhoneNumberLookupUsingCellular;
+@property(getter=_canonicalSearchString,setter=_setCanonicalSearchString:,retain) NSString * canonicalSearchString;
+@property(getter=_contactsDataString,setter=_setContactsDataString:,retain) NSString * contactsDataString;
+@property(getter=_deviceLocation,setter=_setDeviceLocation:,retain) CLLocation * deviceLocation;
+@property(readonly) <GEOCompletionItem> * geoCompletionItem;
+@property(getter=_merchantParameters,setter=_setMerchantParameters:,retain) _MKLocalSearchMerchantParameters * merchantParameters;
+@property(getter=_muids,setter=_setMuids:,retain) NSArray * muids;
 @property(copy) NSString * naturalLanguageQuery;
+@property(getter=_phoneNumbers,setter=_setPhoneNumbers:,retain) NSArray * phoneNumbers;
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
-@property(retain) NSData * suggestionEntryMetadata;
-@property(retain) NSData * suggestionMetadata;
 
 + (id)searchRequestWithCompletion:(id)arg1;
 
 - (void).cxx_destruct;
+- (bool)_allowPhoneNumberLookupUsingCellular;
+- (id)_canonicalSearchString;
+- (id)_contactsDataString;
+- (id)_deviceLocation;
 - (id)_dictionaryRepresentation;
-- (BOOL)_hasRegion;
+- (bool)_hasRegion;
+- (id)_merchantParameters;
+- (id)_muids;
+- (id)_phoneNumbers;
+- (void)_setAllowPhoneNumberLookupUsingCellular:(bool)arg1;
+- (void)_setCanonicalSearchString:(id)arg1;
+- (void)_setContactsDataString:(id)arg1;
+- (void)_setDeviceLocation:(id)arg1;
+- (void)_setMerchantParameters:(id)arg1;
+- (void)_setMuids:(id)arg1;
+- (void)_setPhoneNumbers:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)geoCompletionItem;
+- (id)initWithCompletion:(id)arg1;
 - (id)naturalLanguageQuery;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (void)setNaturalLanguageQuery:(id)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setSuggestionEntryMetadata:(id)arg1;
-- (void)setSuggestionMetadata:(id)arg1;
-- (id)suggestionEntryMetadata;
-- (id)suggestionMetadata;
 
 @end

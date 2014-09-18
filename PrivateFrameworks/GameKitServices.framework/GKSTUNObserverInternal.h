@@ -6,15 +6,15 @@
 
 @interface GKSTUNObserverInternal : GKSTUNObserver {
     struct __SCDynamicStore { } *_dynamicStore;
-    BOOL _fStunDiscoveryQueued;
     NSObject<OS_dispatch_queue> *_stunDiscoveryQueue;
+    bool_fStunDiscoveryQueued;
 }
 
 - (void)cleanUp;
 - (void)dealloc;
 - (void)deregisterForNetworkChanges;
 - (id)init;
-- (BOOL)initialize;
+- (bool)initialize;
 - (void)registerForNetworkChanges;
 - (void)trySTUNDiscovery;
 

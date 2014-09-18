@@ -17,13 +17,13 @@
     unsigned int _type;
 }
 
-@property BOOL cachesInputImage;
-@property(getter=isEnabled) BOOL enabled;
+@property bool cachesInputImage;
+@property(getter=isEnabled) bool enabled;
 @property(copy) NSString * name;
 @property(readonly) NSString * type;
 
 + (void)CAMLParserStartElement:(id)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)filterTypes;
 + (id)filterWithName:(id)arg1;
 + (id)filterWithType:(id)arg1;
@@ -31,21 +31,21 @@
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
-- (BOOL)cachesInputImage;
+- (bool)cachesInputImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)enabled;
+- (bool)enabled;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)initWithType:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
-- (void)setCachesInputImage:(BOOL)arg1;
+- (void)setCachesInputImage:(bool)arg1;
 - (void)setDefaults;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)type;

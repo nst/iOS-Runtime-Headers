@@ -2,21 +2,36 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSString;
+
 @interface WebQuickLookHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
-    struct _CFURLConnection { } *m_connection;
-    struct ResourceHandle { int (**x1)(); unsigned int x2; struct OwnPtr<WebCore::ResourceHandleInternal> { struct ResourceHandleInternal {} *x_3_1_1; } x3; struct OwnPtr<WebCore::QuickLookHandle> { struct QuickLookHandle {} *x_4_1_1; } x4; } *m_handle;
+    struct RefPtr<WebCore::SynchronousResourceHandleCFURLConnectionDelegate> { 
+        struct SynchronousResourceHandleCFURLConnectionDelegate {} *m_ptr; 
+     /* Encoded args for previous method: @24@0:8^{SynchronousResourceHandleCFURLConnectionDelegate=^^?{atomic<int>=Ai}^{ResourceHandle}{RetainPtr<const __CFString *>=^v}}16 */
+    } m_connectionDelegate;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)clearHandle;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(long long)arg3;
 - (void)connection:(id)arg1 didReceiveDataArray:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (id)initWithConnection:(struct _CFURLConnection { }*)arg1 handle:(struct ResourceHandle { int (**x1)(); unsigned int x2; struct OwnPtr<WebCore::ResourceHandleInternal> { struct ResourceHandleInternal {} *x_3_1_1; } x3; struct OwnPtr<WebCore::QuickLookHandle> { struct QuickLookHandle {} *x_4_1_1; } x4; }*)arg2;
+- (id)initWithConnectionDelegate:(struct SynchronousResourceHandleCFURLConnectionDelegate { int (**x1)(); struct atomic<int> { /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*x_2_1_1; int x_2_1_2; } x2; struct ResourceHandle {} *x3; struct RetainPtr<const __CFString *> { void *x_4_1_1; } x4; }*)arg1;
 
 @end

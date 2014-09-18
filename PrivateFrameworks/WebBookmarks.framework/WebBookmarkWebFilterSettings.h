@@ -9,16 +9,16 @@
 }
 
 @property(readonly) WFUserSettings * userSettings;
-@property(getter=isWebFilterEnabled,readonly) BOOL webFilterEnabled;
-@property(getter=isWebFilterWhiteListOnlyModeEnabled,readonly) BOOL webFilterWhiteListOnlyModeEnabled;
+@property(getter=isWebFilterEnabled,readonly) bool webFilterEnabled;
+@property(getter=isWebFilterWhiteListOnlyModeEnabled,readonly) bool webFilterWhiteListOnlyModeEnabled;
 
 + (id)sharedWebFilterSettings;
 
-- (void)clearUserSettings;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isWebFilterEnabled;
-- (BOOL)isWebFilterWhiteListOnlyModeEnabled;
+- (bool)isWebFilterEnabled;
+- (bool)isWebFilterWhiteListOnlyModeEnabled;
+- (void)reloadSettings;
 - (id)userSettings;
 
 @end

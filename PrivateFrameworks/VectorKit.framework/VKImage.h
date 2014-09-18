@@ -2,31 +2,37 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSData, NSString, VGLUncompressedTexture;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSData, NSString, VKResourceManager;
 
 @interface VKImage : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSData *_data;
+    struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; boolx12; boolx13; boolx14; unsigned int x15; unsigned int x16; int x17; int x18; } *_gglTexture;
     struct CGImage { } *_imageRef;
     NSString *_name;
-    float _scale;
+    VKResourceManager *_resourceManager;
+    double _scale;
     } _size;
-    VGLUncompressedTexture *_texture;
-    BOOL _usedAsTextureAndImage;
+    bool_usedAsTextureAndImage;
 }
 
+- (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; boolx12; boolx13; boolx14; unsigned int x15; unsigned int x16; int x17; int x18; }*)gglTexture;
 - (id).cxx_construct;
 - (void)dealloc;
 - (struct CGImage { }*)image;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2;
-- (id)initWithData:(id)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
-- (id)initWithData:(id)arg1 scale:(float)arg2;
-- (id)initWithName:(id)arg1 scale:(float)arg2;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
-- (id)texture;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 usedAsTextureAndImage:(bool)arg3;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2;
+- (id)initWithData:(id)arg1 scale:(double)arg2 usedAsTextureAndImage:(bool)arg3;
+- (id)initWithData:(id)arg1 scale:(double)arg2;
+- (id)initWithName:(id)arg1 scale:(double)arg2 resourceManager:(id)arg3;
+- (double)scale;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

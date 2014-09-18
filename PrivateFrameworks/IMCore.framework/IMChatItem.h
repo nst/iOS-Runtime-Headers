@@ -2,33 +2,22 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMMessage, NSDate, NSString;
+@class IMItem;
 
-@interface IMChatItem : NSObject {
-    NSDate *_date;
-    id _datum1;
-    id _datum2;
-    id _datum3;
-    NSString *_guid;
-    BOOL _isFromArchive;
+@interface IMChatItem : NSObject <NSCopying> {
+    IMItem *_item;
 }
 
-@property(readonly) NSDate * date;
-@property(retain) NSString * guid;
-@property(readonly) BOOL isFromArchive;
-@property(readonly) IMMessage * message;
-@property(readonly) NSString * stringValue;
+@property(readonly) bool canDelete;
 
-- (int)_compareToChatItem:(id)arg1;
-- (id)_initWithGUID:(id)arg1 date:(id)arg2 datum1:(id)arg3 datum2:(id)arg4 datum3:(id)arg5;
-- (int)_reverseCompareToChatItem:(id)arg1;
-- (void)_setIsFromArchive:(BOOL)arg1;
-- (id)date;
+- (id)_initWithItem:(id)arg1;
+- (id)_item;
+- (void)_setTimeAdded:(id)arg1;
+- (id)_timeAdded;
+- (id)_timeStale;
+- (bool)canDelete;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)guid;
-- (BOOL)isFromArchive;
-- (id)message;
-- (void)setGuid:(id)arg1;
-- (id)stringValue;
+- (id)description;
 
 @end

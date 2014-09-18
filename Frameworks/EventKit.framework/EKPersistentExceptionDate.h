@@ -5,7 +5,6 @@
 @class EKPersistentCalendarItem, NSDate;
 
 @interface EKPersistentExceptionDate : EKPersistentObject {
-    NSDate *_date;
 }
 
 @property(readonly) NSDate * date;
@@ -18,7 +17,7 @@
 - (id)date;
 - (id)description;
 - (int)entityType;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithExceptionDate:(id)arg1;
 - (id)owner;
 - (void)setOwner:(id)arg1;

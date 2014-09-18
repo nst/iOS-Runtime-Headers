@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUCreateStationViewControllerDelegate>, NSMutableArray, RUMetricsController, RUSearchViewController, RUStationTreeViewController, UISearchDisplayController;
+@class <RUCreateStationViewControllerDelegate>, NSMutableArray, NSString, RUMetricsController, RUSearchViewController, RUStationTreeViewController, UISearchDisplayController;
 
 @interface RUCreateStationViewController : UIViewController <RUSearchViewControllerDelegate, RUStationTreeViewControllerDelegate, UIScrollViewDelegate> {
     <RUCreateStationViewControllerDelegate> *_delegate;
@@ -10,25 +10,35 @@
     NSMutableArray *_queuedMetricsOperations;
     UISearchDisplayController *_searchDisplayController;
     RUSearchViewController *_searchResultsViewController;
-    BOOL _shouldScrollSearchBar;
     RUStationTreeViewController *_stationTreeViewController;
+    bool_shouldScrollSearchBar;
+    bool_shouldUseSearchingInsetsForSearchBar;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <RUCreateStationViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)_addMetricsControllerOperationBlock:(id)arg1;
 - (void)_addStationWithDictionary:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInset;
 - (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_searchBarSearchingFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_searchBarContentInset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_searchBarSearchingFrame;
 - (id)_searchDisplayController;
 - (void)_statusBarHeightChangedNotification:(id)arg1;
-- (void)_updateSearchBarFrameForced:(BOOL)arg1;
+- (void)_updateSearchBarContentInset;
+- (void)_updateSearchBarFrameForced:(bool)arg1;
+- (void)_updateViewForHorizontalSizeClassChange;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)metricsPageDescriptionForSearchViewController:(id)arg1;
 - (id)metricsPageTypeForSearchViewController:(id)arg1;
@@ -41,7 +51,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)stationTreeViewController:(id)arg1 didSelectStationTreeNode:(id)arg2;
 - (void)stationTreeViewController:(id)arg1 scrollViewDidScroll:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -14,10 +14,10 @@
     NSArray *mPaths;
 }
 
-@property(readonly) TSCHChartDrawableInfo * chartInfo;
-@property(readonly) TSCHSelectionPath * firstPath;
-@property(readonly) NSArray * paths;
-@property(readonly) BOOL returnChartFrameForAutoscroll;
+@property(retain,readonly) TSCHChartDrawableInfo * chartInfo;
+@property(copy,readonly) TSCHSelectionPath * firstPath;
+@property(copy,readonly) NSArray * paths;
+@property(readonly) bool returnChartFrameForAutoscroll;
 
 + (Class)archivedSelectionClass;
 
@@ -29,9 +29,9 @@
 - (id)initFromArchive:(const struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 path:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 paths:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)paths;
-- (BOOL)returnChartFrameForAutoscroll;
+- (bool)returnChartFrameForAutoscroll;
 - (void)saveToArchive:(struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_4_1_1; int x_4_1_2; int x_4_1_3; int x_4_1_4; } x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 
 @end

@@ -17,8 +17,8 @@
     NSObject<OS_dispatch_source> *_idleTimerSource;
     id _lockdownHandler;
     id _shutdownHandler;
-    BOOL _timerHasFiredSinceLastMessage;
     NSObject<OS_dispatch_queue> *_timerQueue;
+    bool_timerHasFiredSinceLastMessage;
 }
 
 @property(readonly) NSSet * connections;
@@ -27,8 +27,9 @@
 @property(copy) id lockdownHandler;
 @property(copy) id shutdownHandler;
 
+- (void).cxx_destruct;
 - (id)_connections;
-- (BOOL)_doingWork;
+- (bool)_doingWork;
 - (void)_handleNewConnection:(id)arg1;
 - (id)_handlerForMessageName:(id)arg1;
 - (id)_highAvailabilityQueue;

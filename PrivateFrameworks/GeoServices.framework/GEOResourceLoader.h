@@ -10,20 +10,20 @@
 
 @interface GEOResourceLoader : NSObject {
     NSString *_baseURLString;
-    BOOL _canceled;
     id _completionHandler;
     NSString *_directory;
-    BOOL _firstLoadEver;
-    BOOL _ignoreCachedResources;
     NSMutableArray *_loadedResources;
-    unsigned int _maxConcurrentLoads;
-    int _numberOfCopiesInProgress;
-    int _numberOfDownloadsInProgress;
+    unsigned long long _maxConcurrentLoads;
+    long long _numberOfCopiesInProgress;
+    long long _numberOfDownloadsInProgress;
     id _progressHandler;
     NSArray *_resourceInfos;
     NSMutableArray *_resourcesToLoad;
     unsigned int _tileGroupIdentifier;
     NSString *_uniqueTileGroupIdentifier;
+    bool_canceled;
+    bool_firstLoadEver;
+    bool_ignoreCachedResources;
 }
 
 @property(readonly) NSArray * loadedResources;
@@ -36,9 +36,9 @@
 - (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3 completionHandler:(id)arg4;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1 uniqueIdentifier:(id)arg2 targetDirectory:(id)arg3 baseURLString:(id)arg4 resources:(id)arg5 isFirstLoad:(BOOL)arg6 ignoreCachedResources:(BOOL)arg7;
+- (id)initWithTileGroupIdentifier:(unsigned int)arg1 uniqueIdentifier:(id)arg2 targetDirectory:(id)arg3 baseURLString:(id)arg4 resources:(id)arg5 isFirstLoad:(bool)arg6 ignoreCachedResources:(bool)arg7;
 - (id)loadedResources;
-- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2 firstLoadEver:(BOOL)arg3;
+- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2 firstLoadEver:(bool)arg3;
 - (unsigned int)tileGroupIdentifier;
 - (id)uniqueTileGroupIdentifier;
 

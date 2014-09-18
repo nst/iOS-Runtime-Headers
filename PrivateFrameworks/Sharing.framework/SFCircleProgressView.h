@@ -7,29 +7,29 @@
 @interface SFCircleProgressView : UIView {
 }
 
-@property float progress;
+@property double progress;
 @property(readonly) UIColor * progressColor;
-@property float progressLineWidth;
-@property int progressStartPoint;
-@property BOOL showProgressTray;
+@property double progressLineWidth;
+@property long long progressStartPoint;
+@property bool showProgressTray;
 
 + (Class)layerClass;
 
 - (void)animateProgressCompletedWithCompletion:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)progress;
+- (double)progress;
 - (id)progressColor;
-- (float)progressLineWidth;
-- (float)progressPresentationValue;
-- (int)progressStartPoint;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3 completion:(id)arg4;
-- (void)setProgress:(float)arg1;
+- (double)progressLineWidth;
+- (double)progressPresentationValue;
+- (long long)progressStartPoint;
+- (void)setProgress:(double)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (void)setProgress:(double)arg1 animated:(bool)arg2 forced:(bool)arg3 completion:(id)arg4;
+- (void)setProgress:(double)arg1;
 - (void)setProgressColor:(id)arg1;
-- (void)setProgressLineWidth:(float)arg1;
-- (void)setProgressStartPoint:(int)arg1;
-- (void)setShowProgressTray:(BOOL)arg1;
-- (BOOL)showProgressTray;
+- (void)setProgressLineWidth:(double)arg1;
+- (void)setProgressStartPoint:(long long)arg1;
+- (void)setShowProgressTray:(bool)arg1;
+- (bool)showProgressTray;
 
 @end

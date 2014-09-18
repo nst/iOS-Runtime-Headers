@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
+@class NSString;
+
 @interface DDCreateEventAction : DDAction <EKEventEditViewDelegate> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (int)interactionType;

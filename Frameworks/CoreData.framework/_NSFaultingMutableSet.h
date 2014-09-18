@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject;
+@class NSManagedObject, NSPropertyDescription;
 
 @interface _NSFaultingMutableSet : NSMutableSet {
     struct _NSFaultingMutableSetFlags { 
@@ -16,51 +16,55 @@
     NSManagedObject *_source;
 }
 
-+ (BOOL)accessInstanceVariablesDirectly;
+@property(getter=isFault,readonly) bool fault;
+@property(readonly) NSPropertyDescription * relationship;
+@property(readonly) NSManagedObject * source;
+
++ (bool)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_isIdenticalFault:(id)arg1;
-- (BOOL)_shouldProcessKVOChange;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_isIdenticalFault:(id)arg1;
+- (bool)_shouldProcessKVOChange;
+- (bool)_tryRetain;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (id)allObjects;
 - (id)anyObject;
 - (Class)classForArchiver;
 - (Class)classForCoder;
-- (BOOL)containsObject:(id)arg1;
+- (bool)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id)arg2;
 - (void)getObjects:(id*)arg1;
 - (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
-- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
+- (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(bool)arg3;
 - (void)intersectSet:(id)arg1;
-- (BOOL)intersectsSet:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSet:(id)arg1;
-- (BOOL)isFault;
-- (BOOL)isSubsetOfSet:(id)arg1;
+- (bool)intersectsSet:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSet:(id)arg1;
+- (bool)isFault;
+- (bool)isSubsetOfSet:(id)arg1;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
-- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)objectsWithOptions:(unsigned long long)arg1 passingTest:(id)arg2;
 - (id)relationship;
 - (oneway void)release;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setSet:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)source;
@@ -69,5 +73,6 @@
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (void)willRead;
+- (void)willReadWithContents:(id)arg1;
 
 @end

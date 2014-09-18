@@ -5,17 +5,19 @@
 @class NSMutableDictionary;
 
 @interface OADShapeGeometry : NSObject {
+    boolmIsEscher;
     NSMutableDictionary *mAdjustValues;
-    BOOL mIsEscher;
 }
 
-- (long)adjustValueAtIndex:(unsigned int)arg1;
+- (int)adjustValueAtIndex:(unsigned int)arg1;
+- (unsigned long long)adjustValueCount;
 - (id)adjustValues;
 - (void)dealloc;
-- (BOOL)hasAdjustValueAtIndex:(unsigned int)arg1;
+- (id)description;
+- (bool)hasAdjustValueAtIndex:(unsigned int)arg1;
 - (id)init;
-- (BOOL)isEscher;
-- (void)setAdjustValue:(long)arg1 atIndex:(unsigned int)arg2;
-- (void)setIsEscher:(BOOL)arg1;
+- (bool)isEscher;
+- (void)setAdjustValue:(int)arg1 atIndex:(unsigned int)arg2;
+- (void)setIsEscher:(bool)arg1;
 
 @end

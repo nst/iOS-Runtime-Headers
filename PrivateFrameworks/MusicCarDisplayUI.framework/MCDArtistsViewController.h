@@ -3,17 +3,17 @@
  */
 
 @interface MCDArtistsViewController : MCDTableViewController {
-    BOOL _allowsActions;
+    bool_allowsActions;
 }
 
-@property BOOL allowsActions;
+@property bool allowsActions;
 
 + (id)actionCellConfigurationClasses;
 + (Class)musicProxyClass;
 
-- (BOOL)allowsActions;
-- (void)setAllowsActions:(BOOL)arg1;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)allowsActions;
+- (void)setAllowsActions:(bool)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

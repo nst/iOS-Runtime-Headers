@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, SADistance;
+@class NSArray, NSData, NSNumber, NSString, SADistance;
 
 @interface SALocation : SADomainObject {
 }
@@ -11,6 +11,7 @@
 @property(copy) NSString * city;
 @property(copy) NSString * countryCode;
 @property(copy) NSArray * entryPoints;
+@property(copy) NSData * forwardGeoData;
 @property(copy) NSString * label;
 @property(copy) NSNumber * latitude;
 @property(copy) NSNumber * longitude;
@@ -22,6 +23,8 @@
 @property(copy) NSString * subThoroughfare;
 @property(copy) NSString * thoroughfare;
 @property(copy) NSString * timezoneId;
+@property(copy) NSNumber * travelDistance;
+@property(copy) NSNumber * travelTime;
 
 + (id)location;
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
@@ -33,6 +36,7 @@
 - (id)countryCode;
 - (id)encodedClassName;
 - (id)entryPoints;
+- (id)forwardGeoData;
 - (id)groupIdentifier;
 - (id)label;
 - (id)latitude;
@@ -44,6 +48,7 @@
 - (void)setCity:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setEntryPoints:(id)arg1;
+- (void)setForwardGeoData:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLatitude:(id)arg1;
 - (void)setLongitude:(id)arg1;
@@ -55,6 +60,8 @@
 - (void)setSubThoroughfare:(id)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (void)setTimezoneId:(id)arg1;
+- (void)setTravelDistance:(id)arg1;
+- (void)setTravelTime:(id)arg1;
 - (id)siriui_coreLocationRepresentation;
 - (id)siriui_mapKitAddressDictionaryRepresentation;
 - (id)stateCode;
@@ -62,6 +69,8 @@
 - (id)subThoroughfare;
 - (id)thoroughfare;
 - (id)timezoneId;
+- (id)travelDistance;
+- (id)travelTime;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

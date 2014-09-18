@@ -13,9 +13,9 @@
 
 - (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)backAlert;
-- (void)backAlertClickedButtonAtIndex:(int)arg1;
+- (void)backAlertClickedButtonAtIndex:(long long)arg1;
 - (id)createBackAlert;
 - (id)createFrontAlert;
 - (void)dealloc;
@@ -23,7 +23,7 @@
 - (void)dismiss;
 - (void)flip;
 - (id)frontAlert;
-- (void)frontAlertClickedButtonAtIndex:(int)arg1;
+- (void)frontAlertClickedButtonAtIndex:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)show;
 

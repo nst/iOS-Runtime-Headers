@@ -12,6 +12,7 @@
     NSNumberFormatter *_numberFormatter;
     UIImageView *_rightBattery;
     UILabel *_rightLabel;
+    bool_bluetoothAvailable;
 }
 
 @property(retain) AXRemoteHearingAidDevice * device;
@@ -21,12 +22,12 @@
 - (void)bluetoothAvailabilityDidChange:(id)arg1;
 - (void)dealloc;
 - (id)device;
-- (id)imageForBatteryLevel:(float)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 andDevice:(id)arg3;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)imageForBatteryLevel:(double)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 andDevice:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)setDevice:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)updateAvailability;
 
 @end

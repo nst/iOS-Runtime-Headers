@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCH3DChartGeometryArrayCompilerDelegate>, TSCH3DChartModelEnumerator, TSCHChartSeries;
+@class <TSCH3DChartGeometryArrayCompilerDelegate>, NSString, TSCH3DChartModelEnumerator, TSCHChartSeries;
 
 @interface TSCH3DChartGeometryArrayCompiler : TSCH3DGeometryCollector <TSCH3DSceneObjectDelegator, TSCH3DChartAllElementSceneObjectDelegate> {
     struct tvec2<int> { 
@@ -23,44 +23,48 @@
 
 @property(readonly) TSCHChartSeries * chartSeries;
 @property(readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } currentElementIndex;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) <TSCH3DChartGeometryArrayCompilerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (void)compileSceneObject:(id)arg1 scene:(id)arg2 delegate:(id)arg3;
 + (void)p_compileScene:(id)arg1 withBlock:(id)arg2;
 
 - (id).cxx_construct;
-- (int)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg3;
+- (long long)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg3;
 - (id)chartSeries;
 - (id)combinationProcessor;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })currentElementIndex;
-- (struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_1_1; } x1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_1_1; struct Lookup {} *x_2_1_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_2_1; } x_2_1_3; } x2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_2_1; } x_3_1_1[8]; } x3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_2_1; int x_1_2_2; BOOL x_1_2_3; BOOL x_1_2_4; BOOL x_1_2_5; int x_1_2_6; struct TextureSizeHint { int x_7_3_1; struct tvec2<int> { union { int x_1_5_1; int x_1_5_2; int x_1_5_3; } x_2_4_1; union { int x_2_5_1; int x_2_5_2; int x_2_5_3; } x_2_4_2; } x_7_3_2; } x_1_2_7; BOOL x_1_2_8; } x_4_1_1[8]; } x4; }*)currentObjectState;
+- (struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_1_1; } x1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_1_1; struct Lookup {} *x_2_1_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_2_1; } x_2_1_3; } x2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_2_1; } x_3_1_1[8]; } x3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_2_1; int x_1_2_2; boolx_1_2_3; boolx_1_2_4; boolx_1_2_5; long long x_1_2_6; struct TextureSizeHint { int x_7_3_1; struct tvec2<int> { union { int x_1_5_1; int x_1_5_2; int x_1_5_3; } x_2_4_1; union { int x_2_5_1; int x_2_5_2; int x_2_5_3; } x_2_4_2; } x_7_3_2; } x_1_2_7; boolx_1_2_8; } x_4_1_1[8]; } x4; }*)currentObjectState;
 - (void)dealloc;
 - (id)delegate;
 - (void)didEndProcessingSceneObject:(id)arg1;
 - (void)didGenerateShaderEffectsForSeriesAtIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 effects:(id)arg2 sceneObject:(id)arg3 pipeline:(id)arg4;
 - (void)didProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
-- (void)didTransformElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1 sceneObject:(id)arg2;
+- (void)didTransformElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; boolx5; boolx6; boolx7; boolx8; }*)arg1 sceneObject:(id)arg2;
 - (id)initWithScene:(id)arg1;
 - (id)makeDelegateWithScene:(id)arg1;
 - (id)makeDelegateWithSceneObject:(id)arg1 scene:(id)arg2;
 - (id)matrixProcessor;
 - (id)objectStateProcessor;
-- (struct StateStack<TSCH3D::ObjectState, 6> { unsigned int x1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_2_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_2_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_2_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; BOOL x_1_3_3; BOOL x_1_3_4; BOOL x_1_3_5; int x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; BOOL x_1_3_8; } x_4_2_1[8]; } x_2_1_4; } x2; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_3_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_3_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_3_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; BOOL x_1_3_3; BOOL x_1_3_4; BOOL x_1_3_5; int x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; BOOL x_1_3_8; } x_4_2_1[8]; } x_3_1_4; } x3[6]; }*)objectStateStack;
+- (struct StateStack<TSCH3D::ObjectState, 6> { unsigned long long x1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_2_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_2_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_2_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; boolx_1_3_3; boolx_1_3_4; boolx_1_3_5; long long x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; boolx_1_3_8; } x_4_2_1[8]; } x_2_1_4; } x2; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_3_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_3_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_3_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; boolx_1_3_3; boolx_1_3_4; boolx_1_3_5; long long x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; boolx_1_3_8; } x_4_2_1[8]; } x_3_1_4; } x3[6]; }*)objectStateStack;
 - (void)p_endCompile;
 - (id)p_initWithScene:(id)arg1;
-- (id)p_transformBuffer:(id)arg1 forVariable:(id)arg2 offset:(unsigned int)arg3 count:(unsigned int)arg4;
-- (BOOL)renderPassDelayDisallowedForSceneObject:(id)arg1 pipeline:(id)arg2;
-- (struct ElementRenderPass { int x1; })renderPassForElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1 sceneObject:(id)arg2;
+- (id)p_transformBuffer:(id)arg1 forVariable:(id)arg2 offset:(unsigned long long)arg3 count:(unsigned long long)arg4;
+- (bool)renderPassDelayDisallowedForSceneObject:(id)arg1 pipeline:(id)arg2;
+- (struct ElementRenderPass { int x1; })renderPassForElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; boolx5; boolx6; boolx7; boolx8; }*)arg1 sceneObject:(id)arg2;
 - (struct ElementRenderPass { int x1; })renderPassForSceneObject:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)submit:(const struct PrimitiveInfo { int x1; int x2; int x3; id x4; }*)arg1;
-- (int)texture:(id)arg1 attributes:(const struct TextureAttributes { int x1; int x2; BOOL x3; BOOL x4; BOOL x5; int x6; struct TextureSizeHint { int x_7_1_1; struct tvec2<int> { union { int x_1_3_1; int x_1_3_2; int x_1_3_3; } x_2_2_1; union { int x_2_3_1; int x_2_3_2; int x_2_3_3; } x_2_2_2; } x_7_1_2; } x7; BOOL x8; }*)arg2;
-- (BOOL)willBeginProcessingSceneObject:(id)arg1;
-- (BOOL)willProcessElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1 sceneObject:(id)arg2;
-- (BOOL)willProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
-- (BOOL)willProcessSeries:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
-- (BOOL)willRenderElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1 sceneObject:(id)arg2;
-- (BOOL)willSubmitElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1 sceneObject:(id)arg2;
-- (BOOL)willUpdateElementEffectsStatesForElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; }*)arg1 sceneObject:(id)arg2;
+- (long long)texture:(id)arg1 attributes:(const struct TextureAttributes { int x1; int x2; boolx3; boolx4; boolx5; long long x6; struct TextureSizeHint { int x_7_1_1; struct tvec2<int> { union { int x_1_3_1; int x_1_3_2; int x_1_3_3; } x_2_2_1; union { int x_2_3_1; int x_2_3_2; int x_2_3_3; } x_2_2_2; } x_7_1_2; } x7; boolx8; }*)arg2;
+- (bool)willBeginProcessingSceneObject:(id)arg1;
+- (bool)willProcessElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; boolx5; boolx6; boolx7; boolx8; }*)arg1 sceneObject:(id)arg2;
+- (bool)willProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
+- (bool)willProcessSeries:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
+- (bool)willRenderElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; boolx5; boolx6; boolx7; boolx8; }*)arg1 sceneObject:(id)arg2;
+- (bool)willSubmitElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; boolx5; boolx6; boolx7; boolx8; }*)arg1 sceneObject:(id)arg2;
+- (bool)willUpdateElementEffectsStatesForElement:(const struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; boolx5; boolx6; boolx7; boolx8; }*)arg1 sceneObject:(id)arg2;
 
 @end

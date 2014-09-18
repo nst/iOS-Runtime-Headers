@@ -11,18 +11,23 @@
 @interface UIKeyboardTaskExecutionContext : NSObject {
     id _continuation;
     UIKeyboardTaskQueue *_executionQueue;
+    id _info;
     UIKeyboardTaskExecutionContext *_parentExecutionContext;
 }
 
 @property(readonly) UIKeyboardTaskQueue * executionQueue;
+@property(retain) id info;
 
 - (id)childWithContinuation:(id)arg1;
 - (void)dealloc;
 - (id)executionQueue;
+- (id)info;
 - (id)init;
 - (id)initWithExecutionQueue:(id)arg1;
 - (id)initWithParentContext:(id)arg1 continuation:(id)arg2;
 - (void)returnExecutionToParent;
+- (void)returnExecutionToParentWithInfo:(id)arg1;
+- (void)setInfo:(id)arg1;
 - (void)transferExecutionToMainThreadWithTask:(id)arg1;
 
 @end

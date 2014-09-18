@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUAudioPreviewViewDelegate>, CADisplayLink, MPDownloadProgressIndicator, RUPreviewSession, SKUIItemOfferButton, UIImage, UIImageView, _RUAudioPreviewTicker;
+@class <RUAudioPreviewViewDelegate>, CADisplayLink, MPUDownloadProgressIndicator, NSString, RUPreviewSession, SKUIItemOfferButton, UIImage, UIImageView, _RUAudioPreviewTicker;
 
 @interface RUAudioPreviewView : UIView <RUPreviewSessionObserver> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     } _artworkEdgeInsets;
     UIImage *_artworkImage;
     UIImageView *_artworkImageView;
@@ -26,21 +26,25 @@
     double _customDuration;
     <RUAudioPreviewViewDelegate> *_delegate;
     CADisplayLink *_displayLink;
-    MPDownloadProgressIndicator *_downloadProgressIndicator;
+    MPUDownloadProgressIndicator *_downloadProgressIndicator;
     double _durationOverride;
     RUPreviewSession *_previewSession;
     _RUAudioPreviewTicker *_previewTicker;
-    int _style;
+    long long _style;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkEdgeInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } artworkEdgeInsets;
 @property(retain) UIImage * artworkImage;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkOverlayEdgeInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } artworkOverlayEdgeInsets;
 @property(retain) UIImage * artworkOverlayImage;
 @property double customDuration;
+@property(copy,readonly) NSString * debugDescription;
 @property <RUAudioPreviewViewDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) RUPreviewSession * previewSession;
-@property(readonly) int style;
+@property(readonly) long long style;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;
@@ -49,29 +53,29 @@
 - (void)_setProgress:(float)arg1;
 - (void)_startAnimating;
 - (void)_stopAnimating;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })artworkEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })artworkEdgeInsets;
 - (id)artworkImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })artworkOverlayEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })artworkOverlayEdgeInsets;
 - (id)artworkOverlayImage;
 - (double)customDuration;
 - (void)dealloc;
 - (id)delegate;
-- (void)flipFromPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (void)flipToPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)flipFromPreviewProgressAnimated:(bool)arg1 withCompletionHandler:(id)arg2;
+- (void)flipToPreviewProgressAnimated:(bool)arg1 withCompletionHandler:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)previewSession:(id)arg1 didChangeFromItem:(id)arg2 toItem:(id)arg3;
-- (void)previewSession:(id)arg1 didStopWithOptions:(int)arg2 withFinalTrack:(id)arg3 didFinalTrackPlayToCompletion:(BOOL)arg4;
+- (void)previewSession:(id)arg1 didStopWithOptions:(long long)arg2 withFinalItem:(id)arg3 didFinalItemPlayToCompletion:(bool)arg4;
 - (id)previewSession;
-- (void)setArtworkEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setArtworkEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setArtworkImage:(id)arg1;
-- (void)setArtworkOverlayEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setArtworkOverlayEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setArtworkOverlayImage:(id)arg1;
 - (void)setCustomDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPreviewSession:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)style;
 
 @end

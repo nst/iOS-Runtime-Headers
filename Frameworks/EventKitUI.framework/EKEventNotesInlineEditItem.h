@@ -2,21 +2,28 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarNotesCell;
+@class CalendarNotesCell, NSString;
 
-@interface EKEventNotesInlineEditItem : EKEventEditItem <UITextViewDelegate> {
+@interface EKEventNotesInlineEditItem : EKEventEditItem <UITextViewDelegate, EKCalendarItemInlineEditItem> {
     CalendarNotesCell *_cell;
+    NSString *_lastTextChange;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void).cxx_destruct;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2 forWidth:(float)arg3;
-- (BOOL)isInline;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (bool)isInline;
+- (bool)isSaveable;
 - (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;
+- (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
-- (BOOL)textViewShouldReturn:(id)arg1;
+- (bool)textViewShouldReturn:(id)arg1;
 
 @end

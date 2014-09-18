@@ -14,12 +14,12 @@
 @property(readonly) UITextInputTraits * textInputTraits;
 
 - (void)_autofillForMesaWithCompletion:(id)arg1;
-- (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
+- (void)_resetForFailedPasscode:(bool)arg1 playUnlockFailedSound:(bool)arg2;
 - (void)dealloc;
-- (id)initWithDefaultSize;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
 - (void)layoutSubviews;
 - (void)notePasscodeFieldTextDidChange;
-- (void)setBackgroundAlpha:(float)arg1;
+- (void)setBackgroundAlpha:(double)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (id)textInputTraits;
 

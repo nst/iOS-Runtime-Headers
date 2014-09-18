@@ -2,10 +2,24 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSArray, NSDictionary, NSString;
+
 @interface NSTask : NSObject {
 }
 
+@property(copy) NSArray * arguments;
+@property(copy) NSString * currentDirectoryPath;
+@property(copy) NSDictionary * environment;
+@property(copy) NSString * launchPath;
+@property(readonly) int processIdentifier;
+@property long long qualityOfService;
+@property(getter=isRunning,readonly) bool running;
+@property(retain) id standardError;
+@property(retain) id standardInput;
+@property(retain) id standardOutput;
 @property(copy) id terminationHandler;
+@property(readonly) long long terminationReason;
+@property(readonly) int terminationStatus;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)currentTaskDictionary;
@@ -17,15 +31,17 @@
 - (id)environment;
 - (id)init;
 - (void)interrupt;
-- (BOOL)isRunning;
+- (bool)isRunning;
 - (void)launch;
 - (id)launchPath;
 - (int)processIdentifier;
-- (BOOL)resume;
+- (long long)qualityOfService;
+- (bool)resume;
 - (void)setArguments:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setLaunchPath:(id)arg1;
+- (void)setQualityOfService:(long long)arg1;
 - (void)setStandardError:(id)arg1;
 - (void)setStandardInput:(id)arg1;
 - (void)setStandardOutput:(id)arg1;
@@ -33,11 +49,11 @@
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
-- (BOOL)suspend;
-- (int)suspendCount;
+- (bool)suspend;
+- (long long)suspendCount;
 - (void)terminate;
 - (id)terminationHandler;
-- (int)terminationReason;
+- (long long)terminationReason;
 - (int)terminationStatus;
 
 @end

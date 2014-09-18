@@ -25,6 +25,8 @@
 - (id)attachAPNConfigurationLabel;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)installationWarnings;
+- (id)payloadDescriptionKeyValueSections;
 - (void)setAPNs:(id)arg1;
 - (void)setAttachAPN:(id)arg1;
 - (id)stubDictionary;

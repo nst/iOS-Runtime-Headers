@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSString;
+@class ICSDuration, NSString;
 
 @interface ICSTravelDuration : ICSProperty {
 }
 
+@property(retain) ICSDuration * duration;
 @property(retain) NSString * transparency;
 
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2 additionalParameters:(id)arg3;
+- (bool)alwaysHasParametersToSerialize;
+- (id)duration;
+- (void)setDuration:(id)arg1;
 - (void)setTransparency:(id)arg1;
 - (id)transparency;
 

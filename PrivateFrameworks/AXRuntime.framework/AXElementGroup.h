@@ -2,47 +2,57 @@
    Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
  */
 
-@class <AXElementGroupGenerator>, AXElementGroup, NSArray, NSHashTable;
+@class <AXElementGroupGenerator>, AXElementGroup, NSArray, NSHashTable, NSString;
 
 @interface AXElementGroup : NSArray <AXGroupable> {
     NSArray *_elementStore;
     <AXElementGroupGenerator> *_generator;
     NSHashTable *_groupObservers;
     int _groupTraits;
+    NSString *_label;
     AXElementGroup *_parentGroup;
-    BOOL _rootGroup;
+    bool_rootGroup;
 }
 
-@property(readonly) BOOL allowsChangingExistingGroupingOfContents;
-@property(readonly) BOOL canBeGroupedWithOtherGroupables;
-@property(readonly) BOOL canBeReplacedByChildren;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property(readonly) bool allowsChangingExistingGroupingOfContents;
+@property(readonly) bool allowsVisualGroupingOfChildren;
+@property(readonly) bool canBeGroupedWithOtherGroupables;
+@property(readonly) bool canBeReplacedByChildren;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property <AXElementGroupGenerator> * generator;
 @property(retain) NSHashTable * groupObservers;
 @property int groupTraits;
-@property(readonly) unsigned int numberOfElements;
+@property(readonly) unsigned long long hash;
+@property(readonly) NSString * label;
+@property(readonly) unsigned long long numberOfElements;
 @property AXElementGroup * parentGroup;
-@property(getter=isRootGroup) BOOL rootGroup;
+@property(getter=isRootGroup) bool rootGroup;
+@property(readonly) bool shouldBeUngrouped;
+@property(readonly) Class superclass;
 
++ (id)groupWithElements:(id)arg1 label:(id)arg2;
 + (id)groupWithElements:(id)arg1;
 + (id)groupWithGenerator:(id)arg1;
 
-- (void)_commonInitWithElements:(id)arg1 generator:(id)arg2;
+- (void)_commonInitWithElements:(id)arg1 label:(id)arg2 generator:(id)arg3;
 - (id)_debugBriefDescription;
 - (id)_debugDescriptionForTraits;
 - (id)_debugFullDescriptionWithIndent:(id)arg1;
 - (void)_generateGroupsIfNeeded;
 - (void)_notifyGroupObserversDidTransferStateToGroup:(id)arg1;
 - (void)_notifyGroupObserversWillTransferStateToGroup:(id)arg1;
-- (id)_siblingOfChild:(id)arg1 inDirection:(BOOL)arg2 didWrap:(BOOL*)arg3;
+- (id)_siblingOfChild:(id)arg1 inDirection:(bool)arg2 didWrap:(bool*)arg3;
 - (void)_transferStateToGroup:(id)arg1;
-- (BOOL)allowsChangingExistingGroupingOfContents;
+- (bool)allowsChangingExistingGroupingOfContents;
+- (bool)allowsVisualGroupingOfChildren;
 - (id)ancestorPassingTest:(id)arg1;
-- (BOOL)canBeGroupedWithOtherGroupables;
-- (BOOL)canBeReplacedByChildren;
+- (bool)canBeGroupedWithOtherGroupables;
+- (bool)canBeReplacedByChildren;
 - (id)childrenPassingTest:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)debugFullDescription;
@@ -55,7 +65,7 @@
 - (id)firstDescendantMatchingItem:(id)arg1;
 - (id)firstDescendantPassingTest:(id)arg1;
 - (id)firstLeafDescendant;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (id)generator;
 - (id)groupByAppendingGroupable:(id)arg1;
 - (id)groupByPrependingGroupable:(id)arg1;
@@ -64,28 +74,30 @@
 - (id)groupObservers;
 - (int)groupTraits;
 - (id)highestAncestorGroup;
-- (id)initWithElements:(id)arg1;
+- (id)initWithElements:(id)arg1 label:(id)arg2;
 - (id)initWithGenerator:(id)arg1;
-- (BOOL)isGroup;
-- (BOOL)isKeyboardContainer;
-- (BOOL)isKeyboardRow;
-- (BOOL)isRootGroup;
+- (bool)isGroup;
+- (bool)isKeyboardContainer;
+- (bool)isKeyboardRow;
+- (bool)isRootGroup;
 - (id)keyboardContainer;
 - (id)keyboardContainerRows;
 - (id)keyboardRow;
+- (id)label;
 - (id)lastChild;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)nextSiblingOfChild:(id)arg1 didWrap:(BOOL*)arg2;
-- (unsigned int)numberOfElements;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)nextSiblingOfChild:(id)arg1 didWrap:(bool*)arg2;
+- (unsigned long long)numberOfElements;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (id)parentGroup;
-- (id)previousSiblingOfChild:(id)arg1 didWrap:(BOOL*)arg2;
+- (id)previousSiblingOfChild:(id)arg1 didWrap:(bool*)arg2;
 - (void)registerGroupObserver:(id)arg1;
 - (void)setGenerator:(id)arg1;
 - (void)setGroupObservers:(id)arg1;
 - (void)setGroupTraits:(int)arg1;
 - (void)setParentGroup:(id)arg1;
-- (void)setRootGroup:(BOOL)arg1;
+- (void)setRootGroup:(bool)arg1;
+- (bool)shouldBeUngrouped;
 - (void)unregisterAllGroupObservers;
 - (void)unregisterGroupObserver:(id)arg1;
 

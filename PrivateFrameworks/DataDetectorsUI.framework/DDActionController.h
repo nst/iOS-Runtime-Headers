@@ -2,31 +2,40 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class DDAction, UIPopoverController, UIView, UIViewController, UIWindow;
+@class <DDDetectionControllerInteractionDelegate>, DDAction, NSString, UIAlertController, UIPopoverController, UIView, UIViewController, UIWindow;
 
-@interface DDActionController : NSObject <UIAlertViewDelegate, UIPopoverControllerDelegate> {
+@interface DDActionController : NSObject <DDActionDelegate, UIPopoverPresentationControllerDelegate> {
+    UIAlertController *_alertController;
     UIView *_baseView;
     DDAction *_currentAction;
     UIViewController *_currentBaseViewController;
     UIPopoverController *_currentPopoverController;
-    id _interactionDelegate;
+    NSString *_idsListenerID;
+    <DDDetectionControllerInteractionDelegate> *_interactionDelegate;
     UIWindow *_originalWindow;
     UIViewController *_presentedViewController;
 }
 
+@property(retain) UIAlertController * alertController;
 @property(retain) UIView * baseView;
 @property(retain) DDAction * currentAction;
-@property(retain) id interactionDelegate;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain) <DDDetectionControllerInteractionDelegate> * interactionDelegate;
 @property(retain) UIPopoverController * popoverController;
+@property(readonly) Class superclass;
 
 - (void)_cleanup;
 - (void)_dismissCurrentViewControllerOurselves;
+- (void)_legacyPresentController:(id)arg1;
 - (void)_presentController:(id)arg1;
 - (void)_presentCurrentViewControllerOurselves;
 - (void)action:(id)arg1 viewControllerReady:(id)arg2;
-- (void)actionDidFinish;
+- (void)actionDidFinish:(id)arg1;
 - (id)actionsForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (id)actionsForURL:(id)arg1 result:(struct __DDResult { }*)arg2 enclosingResult:(struct __DDResult { }*)arg3 context:(id)arg4;
+- (id)alertController;
 - (id)baseView;
 - (id)currentAction;
 - (void)dealloc;
@@ -35,12 +44,16 @@
 - (void)failedToPrepareViewControllerForAction:(id)arg1;
 - (id)init;
 - (id)interactionDelegate;
+- (bool)isPresentingInPopover;
 - (void)performAction:(id)arg1;
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)setAlertController:(id)arg1;
 - (void)setBaseView:(id)arg1;
 - (void)setCurrentAction:(id)arg1;
 - (void)setInteractionDelegate:(id)arg1;
 - (void)setPopoverController:(id)arg1;
+- (void)tellDelegateActionDidFinish;
 
 @end

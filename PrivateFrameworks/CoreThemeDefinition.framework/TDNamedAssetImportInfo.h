@@ -6,61 +6,98 @@
 
 @interface TDNamedAssetImportInfo : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
-    struct TDNamedAssetImportEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double width; 
+        double height; 
+    struct { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    } _alignmentRect;
     NSURL *_fileURL;
-    int _idiom;
+    unsigned long long _graphicsClass;
+    long long _idiom;
+    unsigned long long _memoryClass;
     NSDate *_modificationDate;
     NSString *_name;
-    int _nameIdentifier;
-    int _renditionType;
+    long long _nameIdentifier;
+    long long _renditionType;
     } _resizableSliceSize;
-    int _resizingMode;
-    unsigned int _scaleFactor;
+    long long _resizingMode;
+    unsigned long long _scaleFactor;
+    long long _sizeClassHorizontal;
+    long long _sizeClassVertical;
     } _sliceInsets;
-    int _subtype;
+    long long _subtype;
+    long long _templateRenderingMode;
 }
 
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alignmentRect;
 @property(copy) NSURL * fileURL;
-@property int idiom;
+@property unsigned long long graphicsClass;
+@property long long idiom;
+@property bool isTemplate;
+@property unsigned long long memoryClass;
 @property(copy) NSDate * modificationDate;
 @property(copy) NSString * name;
-@property int nameIdentifier;
-@property int renditionType;
-@property struct CGSize { float x1; float x2; } resizableSliceSize;
-@property int resizingMode;
-@property unsigned int scaleFactor;
-@property struct TDNamedAssetImportEdgeInsets { float x1; float x2; float x3; float x4; } sliceInsets;
-@property int subtype;
+@property long long nameIdentifier;
+@property long long renditionType;
+@property struct CGSize { double x1; double x2; } resizableSliceSize;
+@property long long resizingMode;
+@property unsigned long long scaleFactor;
+@property long long sizeClassHorizontal;
+@property long long sizeClassVertical;
+@property struct { double x1; double x2; double x3; double x4; } sliceInsets;
+@property long long subtype;
+@property long long templateRenderingMode;
 
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
 - (void)dealloc;
 - (id)fileURL;
-- (int)idiom;
+- (unsigned long long)graphicsClass;
+- (long long)idiom;
+- (id)init;
+- (bool)isTemplate;
+- (unsigned long long)memoryClass;
 - (id)modificationDate;
 - (id)name;
-- (int)nameIdentifier;
-- (int)renditionSubtype;
-- (int)renditionType;
-- (struct CGSize { float x1; float x2; })resizableSliceSize;
-- (int)resizingMode;
-- (unsigned int)scaleFactor;
+- (long long)nameIdentifier;
+- (long long)renditionSubtype;
+- (long long)renditionType;
+- (struct CGSize { double x1; double x2; })resizableSliceSize;
+- (long long)resizingMode;
+- (unsigned long long)scaleFactor;
+- (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFileURL:(id)arg1;
-- (void)setIdiom:(int)arg1;
+- (void)setGraphicsClass:(unsigned long long)arg1;
+- (void)setIdiom:(long long)arg1;
+- (void)setIsTemplate:(bool)arg1;
+- (void)setMemoryClass:(unsigned long long)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setNameIdentifier:(int)arg1;
-- (void)setRenditionType:(int)arg1;
-- (void)setResizableSliceSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setResizingMode:(int)arg1;
-- (void)setScaleFactor:(unsigned int)arg1;
-- (void)setSliceInsets:(struct TDNamedAssetImportEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setSubtype:(int)arg1;
-- (struct TDNamedAssetImportEdgeInsets { float x1; float x2; float x3; float x4; })sliceInsets;
-- (int)subtype;
+- (void)setNameIdentifier:(long long)arg1;
+- (void)setRenditionType:(long long)arg1;
+- (void)setResizableSliceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setResizingMode:(long long)arg1;
+- (void)setScaleFactor:(unsigned long long)arg1;
+- (void)setSizeClassHorizontal:(long long)arg1;
+- (void)setSizeClassVertical:(long long)arg1;
+- (void)setSliceInsets:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSubtype:(long long)arg1;
+- (void)setTemplateRenderingMode:(long long)arg1;
+- (long long)sizeClassHorizontal;
+- (long long)sizeClassVertical;
+- (struct { double x1; double x2; double x3; double x4; })sliceInsets;
+- (long long)subtype;
+- (long long)templateRenderingMode;
 
 @end

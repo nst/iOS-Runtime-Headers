@@ -11,10 +11,10 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)equivalentCustomDash;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTypeOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isTypeOverridden;
 - (void)setType:(int)arg1;
 - (int)type;
 

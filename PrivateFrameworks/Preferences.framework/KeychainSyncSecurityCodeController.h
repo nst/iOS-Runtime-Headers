@@ -2,31 +2,25 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, UIAlertView, UIButton, UILabel;
+@class NSString, UIButton, UILabel;
 
-@interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
+@interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController {
     NSString *_firstPasscodeEntry;
     UIButton *_footerButton;
     UILabel *_footerLabel;
-    BOOL _forgotCodeAlertHasApproveButton;
-    UIAlertView *_forgotSecurityCodeAlert;
     NSString *_generatedCode;
-    UIAlertView *_iCSCMismatchAlert;
-    float _keyboardHeight;
+    double _keyboardHeight;
     int _mode;
-    UIAlertView *_resetKeychainAlert;
     int _securityCodeType;
-    BOOL _showsAdvancedSettings;
-    UIAlertView *_weakSecurityCodeAlert;
+    bool_showsAdvancedSettings;
 }
 
 @property(retain) NSString * firstPasscodeEntry;
 @property int mode;
 @property int securityCodeType;
-@property BOOL showsAdvancedSettings;
+@property bool showsAdvancedSettings;
 
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)animatePasscodeFieldLeft:(BOOL)arg1;
+- (void)animatePasscodeFieldLeft:(bool)arg1;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;
 - (void)dismissAlerts;
@@ -41,9 +35,9 @@
 - (void)setFirstPasscodeEntry:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setSecurityCodeType:(int)arg1;
-- (void)setShowsAdvancedSettings:(BOOL)arg1;
+- (void)setShowsAdvancedSettings:(bool)arg1;
 - (void)showAdvancedOptions;
-- (BOOL)showsAdvancedSettings;
+- (bool)showsAdvancedSettings;
 - (id)specifiers;
 - (id)textEntryCell;
 - (Class)textEntryCellClass;
@@ -51,6 +45,6 @@
 - (void)updateNextButton;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

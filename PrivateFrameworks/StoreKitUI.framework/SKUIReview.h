@@ -15,8 +15,12 @@
 @property(readonly) NSString * body;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 @property(readonly) NSString * dateString;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) float rating;
 @property(readonly) NSString * reviewer;
+@property(readonly) Class superclass;
 @property(readonly) NSString * title;
 
 - (void).cxx_destruct;

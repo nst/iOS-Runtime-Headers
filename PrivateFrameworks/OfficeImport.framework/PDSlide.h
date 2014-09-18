@@ -12,18 +12,18 @@
 
 - (void)addComment:(id)arg1;
 - (id)background;
-- (id)commentAtIndex:(unsigned int)arg1;
-- (unsigned int)commentCount;
+- (id)commentAtIndex:(unsigned long long)arg1;
+- (unsigned long long)commentCount;
 - (void)dealloc;
 - (id)defaultTheme;
 - (void)doneWithContent;
-- (BOOL)hasMappableSlideNumberShape;
-- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (bool)hasMappableSlideNumberShape;
+- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
 - (id)notesSlide;
-- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
+- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
+- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(bool)arg4;
 - (id)parentTextStyleForTables;
 - (void)setInheritedTextStyle:(id)arg1 placeholderType:(int)arg2 defaultTextListStyle:(id)arg3;
 - (void)setNotesSlide:(id)arg1;

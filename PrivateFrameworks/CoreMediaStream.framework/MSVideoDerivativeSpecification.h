@@ -5,26 +5,26 @@
 @class NSString;
 
 @interface MSVideoDerivativeSpecification : NSObject {
-    float _bitRate;
-    unsigned int _mediaAssetType;
-    BOOL _powerRequired;
-    BOOL _useCellular;
+    double _bitRate;
+    unsigned long long _mediaAssetType;
     NSString *_videoType;
+    bool_powerRequired;
+    bool_useCellular;
 }
 
-@property(readonly) float bitRate;
-@property(readonly) unsigned int mediaAssetType;
-@property(readonly) BOOL powerRequired;
-@property(readonly) BOOL useCellular;
+@property(readonly) double bitRate;
+@property(readonly) unsigned long long mediaAssetType;
+@property(readonly) bool powerRequired;
+@property(readonly) bool useCellular;
 @property(readonly) NSString * videoType;
 
 + (id)videoDerivativeSpecificationsWithDictionaryArray:(id)arg1;
 
-- (float)bitRate;
+- (double)bitRate;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)mediaAssetType;
-- (BOOL)powerRequired;
-- (BOOL)useCellular;
+- (unsigned long long)mediaAssetType;
+- (bool)powerRequired;
+- (bool)useCellular;
 - (id)videoType;
 
 @end

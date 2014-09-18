@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPComponentWriteChannel>, <TSPComponentWriterDelegate>, NSHashTable, NSMapTable, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, TSPArchiverManager, TSPComponent, TSPObject;
+@class <TSPComponentWriteChannel>, <TSPComponentWriterDelegate>, NSHashTable, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, TSPArchiverManager, TSPComponent, TSPObject;
 
 @interface TSPComponentWriter : NSObject {
     struct vector<TSP::ObjectStackEntry, std::__1::allocator<TSP::ObjectStackEntry> > { 
@@ -34,9 +34,10 @@
     NSHashTable *_indirectCommandToModelExternalReferences;
     NSHashTable *_lazyReferences;
     NSString *_locator;
-    int _mode;
+    long long _mode;
     NSHashTable *_newCommandToModelReferences;
     } _objectStack;
+    NSMutableDictionary *_objectUUIDToIdentifierDictionary;
     unsigned char _packageIdentifier;
     unsigned long long _readVersion;
     TSPObject *_rootObject;
@@ -54,24 +55,24 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addCommandToModelReferences:(id)arg1 parentObject:(id)arg2;
-- (void)analyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(BOOL)arg2 archiver:(id)arg3 completion:(id)arg4;
-- (BOOL)canSkipArchivingStronglyReferencedObject:(id)arg1 fromComponentRootObject:(id)arg2;
+- (void)analyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(bool)arg2 archiver:(id)arg3 completion:(id)arg4;
+- (bool)canSkipArchivingStronglyReferencedObject:(id)arg1 fromComponentRootObject:(id)arg2;
 - (id)commandToModelReferencesToWrite;
 - (id)component;
 - (id)init;
-- (id)initWithComponent:(id)arg1 locator:(id)arg2 rootObject:(id)arg3 delegate:(id)arg4 mode:(int)arg5 packageIdentifier:(unsigned char)arg6 writeChannel:(id)arg7 archiverManager:(id)arg8;
-- (BOOL)isObjectExternal:(id)arg1 parentObject:(id)arg2 validateAmbiguousObjectOwnership:(BOOL)arg3 claimingComponent:(id*)arg4 isOwnedByDifferentPackage:(BOOL*)arg5;
-- (BOOL)isObjectExternalBecauseItAlreadyBelongsToAnotherComponent:(id)arg1 parentObject:(id)arg2 claimingComponent:(id*)arg3 claimingPackageIdentifier:(unsigned char*)arg4 claimingComponentWillBeLinked:(BOOL*)arg5;
+- (id)initWithComponent:(id)arg1 locator:(id)arg2 rootObject:(id)arg3 delegate:(id)arg4 mode:(long long)arg5 packageIdentifier:(unsigned char)arg6 writeChannel:(id)arg7 archiverManager:(id)arg8;
+- (bool)isObjectExternal:(id)arg1 parentObject:(id)arg2 validateAmbiguousObjectOwnership:(bool)arg3 claimingComponent:(id*)arg4 isOwnedByDifferentPackage:(bool*)arg5;
+- (bool)isObjectExternalBecauseItAlreadyBelongsToAnotherComponent:(id)arg1 parentObject:(id)arg2 claimingComponent:(id*)arg3 claimingPackageIdentifier:(unsigned char*)arg4 claimingComponentWillBeLinked:(bool*)arg5;
 - (unsigned long long)readVersion;
-- (BOOL)shouldAnalyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(BOOL)arg2;
-- (BOOL)shouldDelayWritingObject:(id)arg1;
-- (BOOL)shouldWriteObject:(id)arg1;
-- (void)validateAmbiguousObjectOwnershipForObject:(id)arg1 parentObject:(id)arg2 claimingComponent:(id)arg3 claimingPackageIdentifier:(unsigned char)arg4 claimingComponentWillBeLinked:(BOOL)arg5;
+- (bool)shouldAnalyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(bool)arg2;
+- (bool)shouldDelayWritingObject:(id)arg1;
+- (bool)shouldWriteObject:(id)arg1;
+- (void)validateAmbiguousObjectOwnershipForObject:(id)arg1 parentObject:(id)arg2 claimingComponent:(id)arg3 claimingPackageIdentifier:(unsigned char)arg4 claimingComponentWillBeLinked:(bool)arg5;
 - (void)validateExplicitComponentOwnershipForObject:(id)arg1 parentObject:(id)arg2;
-- (BOOL)validateObjectContextForObject:(id)arg1;
+- (bool)validateObjectContextForObject:(id)arg1;
 - (void)writeArchiver:(id)arg1;
 - (void)writeObject:(id)arg1 archiver:(id)arg2 parentObject:(id)arg3 completion:(id)arg4;
-- (void)writeObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(BOOL)arg3 isAnalyzingExternalComponent:(BOOL)arg4 completion:(id)arg5;
+- (void)writeObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(bool)arg3 isAnalyzingExternalComponent:(bool)arg4 completion:(id)arg5;
 - (unsigned long long)writeVersion;
 - (void)writeWithCompletionQueue:(id)arg1 completion:(id)arg2;
 

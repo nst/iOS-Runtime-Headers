@@ -2,39 +2,46 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUMediaControlsTitlesViewDelegate>, CAGradientLayer, NSString;
+@class <MPUMediaControlsTitlesViewDelegate>, CALayer, NSString;
 
-@interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <SBUIControlCenterControlObserver> {
+@interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <SBUIControlCenterControlObserver, MPUContentSizeCategoryChanging> {
     NSString *_appDisplayName;
     <MPUMediaControlsTitlesViewDelegate> *_delegate;
-    BOOL _displayingAppName;
-    CAGradientLayer *_edgesLayerMask;
-    BOOL _highlighted;
-    int _mediaControlsStyle;
+    CALayer *_detailEdgesLayerMask;
+    long long _mediaControlsStyle;
+    CALayer *_titleEdgesLayerMask;
+    bool_displayingAppName;
+    bool_highlighted;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <MPUMediaControlsTitlesViewDelegate> * delegate;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(readonly) int mediaControlsStyle;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(getter=isHighlighted) bool highlighted;
+@property(readonly) long long mediaControlsStyle;
+@property(readonly) Class superclass;
+
++ (id)detailTextColorForMediaControlsStyle:(long long)arg1 highlighted:(bool)arg2;
 
 - (void).cxx_destruct;
+- (id)_createEdgesLayerMask;
 - (id)_detailTextAttributes;
-- (id)_secondaryLabelsColor;
-- (void)_setGlowEnabled:(BOOL)arg1 forLabel:(id)arg2;
-- (void)_setupEdgesLayerMask;
+- (void)_setGlowEnabled:(bool)arg1 forLabel:(id)arg2;
 - (id)_titleTextAttributes;
 - (void)_touchControlActivate:(id)arg1;
 - (void)_touchControlDeactivate:(id)arg1;
 - (void)_touchControlTapped:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithMediaControlsStyle:(int)arg1;
-- (BOOL)isHighlighted;
+- (id)initWithMediaControlsStyle:(long long)arg1;
+- (bool)isHighlighted;
 - (void)layoutSubviews;
-- (int)mediaControlsStyle;
+- (long long)mediaControlsStyle;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)updateNowPlayingAppDisplayName:(id)arg1;
+- (void)updateTextForContentSizeCategory:(id)arg1;
 - (void)updateTrackInformationWithNowPlayingInfo:(id)arg1;
 
 @end

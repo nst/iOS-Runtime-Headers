@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUnknownPersonViewController, UIButton;
+@class ABUnknownPersonViewController, NSString, UIButton;
 
 @interface ABFMFActionButtons : NSObject <ABFMFActionButtonsDelegate> {
     UIButton *_callButton;
@@ -11,17 +11,21 @@
     ABUnknownPersonViewController *_upvc;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property void* displayedPerson;
-@property(readonly) BOOL hasTelephonyCapability;
+@property(readonly) bool hasTelephonyCapability;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (void*)displayedPerson;
-- (BOOL)hasTelephonyCapability;
+- (bool)hasTelephonyCapability;
 - (id)init;
 - (id)initWithMessageButton:(id)arg1 facetimeButton:(id)arg2 callButton:(id)arg3;
 - (void)setDisplayedPerson:(void*)arg1;
-- (void)showFMFCallButton:(BOOL)arg1 withAction:(id)arg2;
-- (void)showFMFFacetimeButton:(BOOL)arg1 withAction:(id)arg2;
-- (void)showFMFMessageButton:(BOOL)arg1 withAction:(id)arg2;
+- (void)showFMFCallButton:(bool)arg1 withAction:(id)arg2;
+- (void)showFMFFacetimeButton:(bool)arg1 withAction:(id)arg2;
+- (void)showFMFMessageButton:(bool)arg1 withAction:(id)arg2;
 
 @end

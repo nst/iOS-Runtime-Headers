@@ -12,7 +12,7 @@
     int _status;
 }
 
-@property BOOL hasStatus;
+@property bool hasStatus;
 @property(retain) NSMutableArray * routes;
 @property int status;
 
@@ -23,14 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)routeAtIndex:(unsigned int)arg1;
+- (bool)hasStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)routeAtIndex:(unsigned long long)arg1;
 - (id)routes;
-- (unsigned int)routesCount;
-- (void)setHasStatus:(BOOL)arg1;
+- (unsigned long long)routesCount;
+- (void)setHasStatus:(bool)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;

@@ -7,12 +7,12 @@
 @interface NSLineFragmentRenderingContext : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct { 
         unsigned int _isRTL : 1; 
@@ -20,46 +20,46 @@
         unsigned int _flipped : 1; 
         unsigned int _usesSimpleTextEffects : 1; 
         unsigned int _reserved : 28; 
-    struct CGSize { float x1; float x2; } *_advancements;
+    struct CGSize { double x1; double x2; } *_advancements;
     CUICatalog *_catalog;
-    float _elasticWidth;
+    double _elasticWidth;
     } _flags;
     unsigned short *_glyphs;
     } _imageBounds;
-    float _leftControlWidth;
-    float _leftSideDelta;
-    float _lineWidth;
-    long _numRuns;
-    float _rightControlWidth;
+    double _leftControlWidth;
+    double _leftSideDelta;
+    double _lineWidth;
+    long long _numRuns;
+    double _rightControlWidth;
     void *_runs;
     CUIStyleEffectConfiguration *_styleEffects;
 }
 
 @property(retain) CUICatalog * cuiCatalog;
 @property(retain) CUIStyleEffectConfiguration * cuiStyleEffects;
-@property(getter=_usesSimpleTextEffects,setter=_setUsesSimpleTextEffects:) BOOL usesSimpleTextEffects;
+@property(getter=_usesSimpleTextEffects,setter=_setUsesSimpleTextEffects:) bool usesSimpleTextEffects;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
-- (BOOL)_isDeallocating;
-- (void)_setUsesSimpleTextEffects:(BOOL)arg1;
-- (BOOL)_tryRetain;
-- (BOOL)_usesSimpleTextEffects;
+- (bool)_isDeallocating;
+- (void)_setUsesSimpleTextEffects:(bool)arg1;
+- (bool)_tryRetain;
+- (bool)_usesSimpleTextEffects;
 - (id)cuiCatalog;
 - (id)cuiStyleEffects;
 - (void)dealloc;
-- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 inContext:(struct CGContext { }*)arg2;
-- (float)elasticWidth;
+- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (double)elasticWidth;
 - (void)finalize;
-- (void)getMaximumAscender:(float*)arg1 minimumDescender:(float*)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageBounds;
-- (id)initWithRuns:(struct __CFArray { }*)arg1 glyphOrigin:(float)arg2 lineFragmentWidth:(float)arg3 elasticWidth:(float)arg4 usesScreenFonts:(BOOL)arg5 isRTL:(BOOL)arg6;
-- (BOOL)isRTL;
-- (float)lineFragmentWidth;
+- (void)getMaximumAscender:(double*)arg1 minimumDescender:(double*)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageBounds;
+- (id)initWithRuns:(struct __CFArray { }*)arg1 glyphOrigin:(double)arg2 lineFragmentWidth:(double)arg3 elasticWidth:(double)arg4 usesScreenFonts:(bool)arg5 isRTL:(bool)arg6;
+- (bool)isRTL;
+- (double)lineFragmentWidth;
 - (oneway void)release;
 - (void)setCuiCatalog:(id)arg1;
 - (void)setCuiStyleEffects:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeWithBehavior:(int)arg1 usesFontLeading:(BOOL)arg2 baselineDelta:(float*)arg3;
+- (struct CGSize { double x1; double x2; })sizeWithBehavior:(long long)arg1 usesFontLeading:(bool)arg2 baselineDelta:(double*)arg3;
 
 @end

@@ -11,7 +11,12 @@
 
 @property(readonly) NSString * HSAAction;
 @property(readonly) NSString * HSAData;
+@property(readonly) NSString * altDSID;
 @property(readonly) NSString * authToken;
+@property(readonly) NSString * cloudKitToken;
+@property(readonly) NSString * fmfAppToken;
+@property(readonly) NSString * fmfToken;
+@property(readonly) NSString * fmipLostModeToken;
 @property(readonly) NSString * fmipToken;
 @property(readonly) NSString * hsaToken;
 @property(readonly) NSString * mapsToken;
@@ -20,7 +25,12 @@
 - (void).cxx_destruct;
 - (id)HSAAction;
 - (id)HSAData;
+- (id)altDSID;
 - (id)authToken;
+- (id)cloudKitToken;
+- (id)fmfAppToken;
+- (id)fmfToken;
+- (id)fmipLostModeToken;
 - (id)fmipToken;
 - (id)hsaToken;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

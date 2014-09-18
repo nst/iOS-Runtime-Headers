@@ -12,23 +12,29 @@
     int _pendingURLsLock;
     NSURL *_presentedItemURL;
     NSObject<OS_dispatch_queue> *_processingQueue;
-    BOOL _scheduledProcessingBlock;
     NSString *_storeName;
     PFUbiquityLocation *_ubiquityRootLocation;
+    bool_scheduledProcessingBlock;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * localPeerID;
 @property(readonly) NSDictionary * locationToSafeSaveFile;
 @property(readonly) NSDictionary * locationToStatus;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSURL * presentedItemURL;
-@property(readonly) NSURL * primaryPresentedItemURL;
+@property(copy,readonly) NSURL * primaryPresentedItemURL;
+@property(readonly) Class superclass;
 @property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
++ (id)cloudDocsRootFolder;
 + (void)initialize;
-+ (void)registerInitialSyncHandlerForURL:(id)arg1 onQueue:(id)arg2 withBlock:(id)arg3;
++ (void)registerInitialSyncHandlerForURL:(id)arg1 andContainerID:(id)arg2 onQueue:(id)arg3 withBlock:(id)arg4;
 + (id)sharedPrivateOperationQueue;
 + (void)startDownloadForItems:(id)arg1 onQueue:(id)arg2 withBlock:(id)arg3;
++ (int)usesCloudDocsFramework;
 
 - (id)copyStatusDictionary;
 - (void)dealloc;
@@ -36,6 +42,7 @@
 - (void)exporterDidMoveLog:(id)arg1;
 - (id)init;
 - (id)initWithUbiquityRootLocation:(id)arg1 localPeerID:(id)arg2 storeName:(id)arg3 processingQueue:(id)arg4;
+- (bool)isiCloudExtension:(id)arg1;
 - (id)localPeerID;
 - (id)locationToSafeSaveFile;
 - (id)locationToStatus;

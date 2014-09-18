@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
+@class NSMutableSet, NSString;
 
 @interface PLRevGeoPlaceInfo : NSObject {
-    double _area;
+    NSMutableSet *_geoPlaceInfos;
     NSString *_placeName;
 }
 
-@property double area;
+@property(retain) NSMutableSet * geoPlaceInfos;
 @property(copy) NSString * placeName;
 
-- (double)area;
 - (void)dealloc;
-- (unsigned int)hash;
-- (id)initWithPlaceName:(id)arg1 area:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)geoPlaceInfos;
+- (id)initWithPlaceName:(id)arg1;
 - (id)placeName;
-- (void)setArea:(double)arg1;
+- (void)setGeoPlaceInfos:(id)arg1;
 - (void)setPlaceName:(id)arg1;
 
 @end

@@ -3,16 +3,17 @@
  */
 
 @interface PDIterate : NSObject {
-    BOOL mIsBackwards;
-    BOOL mIsPercentage;
+    boolmIsBackwards;
+    boolmIsPercentage;
     int mType;
     double mValue;
 }
 
-- (BOOL)isBackwards;
-- (BOOL)isValuePercentage;
-- (void)setIsBackwards:(BOOL)arg1;
-- (void)setIsValuePercentage:(BOOL)arg1;
+- (bool)isBackwards;
+- (bool)isEqual:(id)arg1;
+- (bool)isValuePercentage;
+- (void)setIsBackwards:(bool)arg1;
+- (void)setIsValuePercentage:(bool)arg1;
 - (void)setType:(int)arg1;
 - (void)setValue:(double)arg1;
 - (int)type;

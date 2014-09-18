@@ -3,13 +3,13 @@
  */
 
 @interface ISMainThreadInvocationRecorder : ISInvocationRecorder {
-    BOOL _waitUntilDone;
+    bool_waitUntilDone;
 }
 
-@property BOOL waitUntilDone;
+@property bool waitUntilDone;
 
 - (void)invokeInvocation:(id)arg1;
-- (void)setWaitUntilDone:(BOOL)arg1;
-- (BOOL)waitUntilDone;
+- (void)setWaitUntilDone:(bool)arg1;
+- (bool)waitUntilDone;
 
 @end

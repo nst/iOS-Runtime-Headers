@@ -18,9 +18,10 @@
 
 + (id)defaultStore;
 
+- (void).cxx_destruct;
 - (void)_onBackgroundQueue_determineGroupIDWithCompletionHandler:(id)arg1;
 - (id)appleID;
-- (BOOL)canDetermineGroupID;
+- (bool)canDetermineGroupID;
 - (void)clearAllCredentials;
 - (void)clearCaches;
 - (void)clearGroupID;

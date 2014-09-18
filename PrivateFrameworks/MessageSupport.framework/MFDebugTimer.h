@@ -9,7 +9,7 @@
     unsigned long long _timer_end;
     double _timer_nsecs;
     unsigned long long _timer_start;
-    unsigned long long _timer_tics;
+    unsigned long long _timer_ticks;
     NSString *name;
 }
 
@@ -20,6 +20,7 @@
 
 - (id)initWithName:(id)arg1;
 - (unsigned long long)measure;
+- (unsigned long long)measureWithLogText:(id)arg1;
 - (id)name;
 - (id)rebase;
 - (void)setName:(id)arg1;

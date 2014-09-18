@@ -8,14 +8,18 @@
 }
 
 @property(readonly) NSString * UUID;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * emailAddress;
 @property(copy) NSString * externalID;
 @property(copy) NSString * firstName;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * lastName;
 @property(copy) NSString * name;
 @property(readonly) EKCalendar * owner;
 @property int shareeAccessLevel;
 @property int shareeStatus;
+@property(readonly) Class superclass;
 
 + (id)shareeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
@@ -28,11 +32,11 @@
 - (id)emailAddress;
 - (id)externalID;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lastName;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)name;

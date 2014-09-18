@@ -10,8 +10,8 @@
 
 @property(copy) NSDictionary * artworkInfoDictionary;
 
+- (void).cxx_destruct;
 - (id)artworkInfoDictionary;
-- (void)dealloc;
 - (void)setArtworkInfoDictionary:(id)arg1;
 
 @end

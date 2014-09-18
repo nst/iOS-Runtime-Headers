@@ -5,43 +5,33 @@
 @class NSDate, NSString, UIDateLabel, UIImage, UIImageView, UILabel;
 
 @interface CKStarkConversationListCell : UITableViewCell {
-    NSDate *_date;
     UIDateLabel *_dateLabel;
-    BOOL _hasUnreadMessages;
     UIImage *_monogramImage;
-    NSString *_recipientNames;
     UILabel *_recipientsLabel;
-    UIImage *_unreadImage;
     UIImageView *_unreadImageView;
 }
 
 @property(retain) NSDate * date;
 @property(retain) UIDateLabel * dateLabel;
-@property BOOL hasUnreadMessages;
+@property bool hasUnreadMessages;
 @property UIImage * monogramImage;
 @property(retain) NSString * recipientNames;
 @property(retain) UILabel * recipientsLabel;
-@property(retain) UIImage * unreadImage;
 @property(retain) UIImageView * unreadImageView;
 
-- (id)date;
 - (id)dateLabel;
 - (void)dealloc;
-- (BOOL)hasUnreadMessages;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)monogramImage;
-- (id)recipientNames;
 - (id)recipientsLabel;
 - (void)setDate:(id)arg1;
 - (void)setDateLabel:(id)arg1;
-- (void)setHasUnreadMessages:(BOOL)arg1;
+- (void)setHasUnreadMessages:(bool)arg1;
 - (void)setMonogramImage:(id)arg1;
 - (void)setRecipientNames:(id)arg1;
 - (void)setRecipientsLabel:(id)arg1;
-- (void)setUnreadImage:(id)arg1;
 - (void)setUnreadImageView:(id)arg1;
-- (id)unreadImage;
 - (id)unreadImageView;
 
 @end

@@ -21,8 +21,8 @@
 - (bool)isAppDisabledInSettingsList:(id)arg1;
 - (bool)isManagedConfigurationSettingOn;
 - (void)loadSettingsBlacklist;
-- (void)logAll:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
-- (void)logLight:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
+- (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
+- (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)saveContext:(id)arg1;
 
 @end

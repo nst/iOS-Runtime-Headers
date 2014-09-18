@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, SSDownloadManager;
+@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SSDownloadManager;
 
 @interface MPDownloadManager : NSObject <SSDownloadManagerObserverPrivate> {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -13,7 +13,11 @@
     struct __CFArray { } *_observers;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSArray * downloads;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)mediaPlayerDownloadManager;
 

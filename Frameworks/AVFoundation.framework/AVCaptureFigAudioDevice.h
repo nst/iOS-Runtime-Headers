@@ -2,33 +2,40 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary, NSString;
+@class AVWeakReference, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVCaptureFigAudioDevice : AVCaptureDevice {
-    struct OpaqueCMClock { } *_deviceClock;
-    NSDictionary *_deviceProperties;
-    BOOL _isConnected;
-    BOOL _levelMeteringEnabled;
+    NSDictionary *_attributes;
+    struct OpaqueFigCaptureSource { } *_fcs;
+    NSObject<OS_dispatch_queue> *_fcsQueue;
     NSString *_localizedName;
+    AVWeakReference *_weakReference;
+    bool_isConnected;
+    bool_levelMeteringEnabled;
 }
 
 + (id)_devices;
++ (id)alloc;
++ (void)initialize;
 
+- (id)_copyFigCaptureSourceProperty:(struct __CFString { }*)arg1;
+- (void)_handleNotification:(struct __CFString { }*)arg1 payload:(id)arg2;
+- (id)_initWithFigCaptureSource:(struct OpaqueFigCaptureSource { }*)arg1;
+- (void)_setFigCaptureSource:(struct OpaqueFigCaptureSource { }*)arg1;
 - (void)audioInputDeviceLocalizedNameDidChangeHandler:(id)arg1;
 - (void)audioInputDevicesDidChangeHandler:(id)arg1;
 - (void)dealloc;
 - (struct OpaqueCMClock { }*)deviceClock;
-- (id)devicePropertiesDictionary;
-- (BOOL)hasMediaType:(id)arg1;
+- (struct OpaqueFigCaptureSource { }*)figCaptureSource;
+- (bool)hasMediaType:(id)arg1;
 - (id)init;
-- (id)initWithProperties:(id)arg1;
-- (BOOL)isConnected;
-- (BOOL)isInUseByAnotherApplication;
+- (bool)isConnected;
+- (bool)isInUseByAnotherApplication;
 - (id)localizedName;
 - (id)modelID;
-- (BOOL)startUsingDevice:(id*)arg1;
+- (bool)startUsingDevice:(id*)arg1;
 - (void)stopUsingDevice;
-- (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
+- (bool)supportsAVCaptureSessionPreset:(id)arg1;
 - (id)uniqueID;
 
 @end

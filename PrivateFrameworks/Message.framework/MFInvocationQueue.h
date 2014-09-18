@@ -5,27 +5,27 @@
 @class NSConditionLock, NSMutableArray;
 
 @interface MFInvocationQueue : NSObject {
-    BOOL _isForeground;
     NSMutableArray *_items;
     NSConditionLock *_lock;
     struct __CFSet { } *_lowPriorityThreads;
-    unsigned int _maxThreads;
-    unsigned int _numThreads;
+    unsigned long long _maxThreads;
+    unsigned long long _numThreads;
     int _threadPriorityTrigger;
     double _threadRecycleTimeout;
+    bool_isForeground;
 }
 
-@property(readonly) unsigned int invocationCount;
-@property unsigned int maxThreadCount;
-@property(readonly) unsigned int threadCount;
+@property(readonly) unsigned long long invocationCount;
+@property unsigned long long maxThreadCount;
+@property(readonly) unsigned long long threadCount;
 @property int threadPriorityTrigger;
 @property double threadRecycleTimeout;
 
 + (void)flushAllInvocationQueues;
 + (id)sharedInvocationQueue;
-+ (unsigned int)totalInvocationCount;
++ (unsigned long long)totalInvocationCount;
 
-- (void)_adjustThreadPrioritiesIsForeground:(BOOL)arg1;
+- (void)_adjustThreadPrioritiesIsForeground:(bool)arg1;
 - (void)_drainQueue:(id)arg1;
 - (void)_processInvocation:(id)arg1;
 - (void)addInvocation:(id)arg1;
@@ -35,14 +35,14 @@
 - (void)dealloc;
 - (void)didCancel:(id)arg1;
 - (id)init;
-- (id)initWithMaxThreadCount:(unsigned long)arg1;
-- (unsigned int)invocationCount;
-- (unsigned int)maxThreadCount;
+- (id)initWithMaxThreadCount:(unsigned long long)arg1;
+- (unsigned long long)invocationCount;
+- (unsigned long long)maxThreadCount;
 - (void)removeAllItems;
-- (void)setMaxThreadCount:(unsigned int)arg1;
+- (void)setMaxThreadCount:(unsigned long long)arg1;
 - (void)setThreadPriorityTrigger:(int)arg1;
 - (void)setThreadRecycleTimeout:(double)arg1;
-- (unsigned int)threadCount;
+- (unsigned long long)threadCount;
 - (int)threadPriorityTrigger;
 - (double)threadRecycleTimeout;
 

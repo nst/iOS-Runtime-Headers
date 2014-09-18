@@ -2,16 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface TSWPURLDataDetector : NSObject <TSWPDataDetectorProtocol> {
 }
 
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })calculateScanRangeForString:(id)arg1 changedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (struct _NSRange { unsigned long long x1; unsigned long long x2; })calculateScanRangeForString:(id)arg1 changedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 + (id)detectorIdentifier;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })expandValidRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inString:(id)arg2;
++ (struct _NSRange { unsigned long long x1; unsigned long long x2; })expandValidRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inString:(id)arg2;
 + (void)initURLCharacterSets;
-+ (id)newArrayByScanningString:(id)arg1 scanRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)newArrayByScanningString:(id)arg1 scanRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 + (id)newURLFromString:(id)arg1;
-+ (id)scanString:(id)arg1 scanRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)scanString:(id)arg1 scanRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 + (void)setInvalidURLSchemes:(id)arg1;
 
 @end

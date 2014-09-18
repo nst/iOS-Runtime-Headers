@@ -5,6 +5,6 @@
 @interface VKRasterTrafficIncidentsTileSource : VKRasterTrafficTileSource {
 }
 
-- (unsigned int)mapLayerForZoomLevelRange;
+- (unsigned long long)mapLayerForZoomLevelRange;
 
 @end

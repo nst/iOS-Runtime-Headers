@@ -6,62 +6,62 @@
 
 @interface BubbleTextLayer : CALayer {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     NSMutableArray *_annotationPoints;
-    float _ascent;
+    double _ascent;
     } _boundsSizeConstraint;
     } _bubbleFrame;
     } _bubbleSize;
     } _contentSize;
     struct __CTFont { } *_curCTFont;
-    float _descent;
+    double _descent;
     void *_font;
     } _fontBounds;
     struct CGColor { } *_generalShadowColor;
-    float _leading;
+    double _leading;
     CALayer *_leftImageLayer;
     } _leftImageLayerSize;
     id _owningView;
@@ -73,43 +73,43 @@
     struct CGColor { } *_whiteShadowColor;
 }
 
-@property struct CGSize { float x1; float x2; } boundsSizeConstraint;
+@property struct CGSize { double x1; double x2; } boundsSizeConstraint;
 @property(retain) struct CGColor { }* fillColor2;
 @property(retain) struct CGColor { }* fillColor;
-@property float fontSize;
+@property double fontSize;
 @property(retain) struct CGColor { }* foregroundColor;
 @property(retain) struct CGColor { }* frameColor;
-@property float frameWidth;
+@property double frameWidth;
 @property(retain) struct CGImage { }* image;
 @property id owningView;
 @property(retain) CALayer * rightAccessoryLayer;
 @property(retain) id string;
-@property(readonly) float textBaselineOffset;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } textFrame;
+@property(readonly) double textBaselineOffset;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } textFrame;
 
-+ (BOOL)needsDisplayForKey:(id)arg1;
++ (bool)needsDisplayForKey:(id)arg1;
 
-- (void)addAnnotationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })boundsSizeConstraint;
-- (struct CGSize { float x1; float x2; })calculatePreferredSubframeSizes;
+- (void)addAnnotationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })boundsSizeConstraint;
+- (struct CGSize { double x1; double x2; })calculatePreferredSubframeSizes;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (struct CGSize { float x1; float x2; })getImagePreferredSize;
-- (struct CGSize { float x1; float x2; })getRightAccessoryLayerPreferredSize;
+- (struct CGSize { double x1; double x2; })getImagePreferredSize;
+- (struct CGSize { double x1; double x2; })getRightAccessoryLayerPreferredSize;
 - (struct CGImage { }*)image;
 - (id)initWithOwningView:(id)arg1;
-- (BOOL)isAnnotationBubble;
+- (bool)isAnnotationBubble;
 - (void)layoutSublayers;
 - (id)owningView;
-- (struct CGSize { float x1; float x2; })preferredFrameSize;
+- (struct CGSize { double x1; double x2; })preferredFrameSize;
 - (id)rightAccessoryLayer;
-- (void)setBoundsSizeConstraint:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBoundsSizeConstraint:(struct CGSize { double x1; double x2; })arg1;
 - (void)setFont:(id)arg1;
 - (void)setImage:(struct CGImage { }*)arg1;
 - (void)setOwningView:(id)arg1;
 - (void)setRightAccessoryLayer:(id)arg1;
-- (float)textBaselineOffset;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textFrame;
-- (struct CGSize { float x1; float x2; })textPreferredFrameSizeForLayerSize:(struct CGSize { float x1; float x2; })arg1;
+- (double)textBaselineOffset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textFrame;
+- (struct CGSize { double x1; double x2; })textPreferredFrameSizeForLayerSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -2,16 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebOverflowScrollView;
+@class NSString, UIWebOverflowScrollView;
 
 @interface UIWebOverflowScrollListener : NSObject <UIScrollViewDelegate> {
     UIWebOverflowScrollView *_scrollView;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)_didCompleteScrolling;
 - (id)initWithScrollView:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 

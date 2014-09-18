@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EXState;
+@class EXReadState;
 
-@interface EXOAVState : OAVState {
-    EXState *mEXState;
+@interface EXOAVState : OAVReadState {
+    EXReadState *mEXReadState;
 }
 
 - (id)exState;
-- (id)initWithEXState:(id)arg1 packagePart:(id)arg2;
+- (id)initWithEXReadState:(id)arg1 packagePart:(id)arg2;
 
 @end

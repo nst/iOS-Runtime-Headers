@@ -2,24 +2,36 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNMotionBlurAnimationPluginWrapper, NSArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface KNContentAwareSparkle : KNContentAwareMagicMoveSuperset <KNContentAwareFrameAnimator> {
-    NSArray *_effects;
-    KNMotionBlurAnimationPluginWrapper *_motionBlurWrapper;
+@class KNMagicMoveWrapper, KNMotionBlurWrapper, NSString;
+
+@interface KNContentAwareSparkle : KNAnimationEffect <KNMagicMoveTransitionAnimator, KNMagicMoveFrameAnimator> {
+    KNMagicMoveWrapper *_magicMoveWrapper;
+    KNMotionBlurWrapper *_motionBlurWrapper;
+    id _motionBlurWrapperSetupShaderBlock;
+    id _motionBlurWrapperTextureDrawOptionsBlock;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (BOOL)isCharacterAwareEffect;
++ (bool)isCharacterAwareEffect;
 + (id)localizedMenuString:(int)arg1;
-+ (BOOL)requiresBullets;
-+ (BOOL)requiresMagicMoveTextures;
-+ (BOOL)requiresPerspectiveTransform;
++ (int)rendererTypeForCapabilities:(id)arg1;
++ (bool)requiresBullets;
++ (bool)requiresPerspectiveTransform;
++ (bool)shouldDisableMagicMoveOnText;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
 
@@ -27,6 +39,8 @@
 - (void)animationWillBeginWithContext:(id)arg1;
 - (id)animationsWithContext:(id)arg1;
 - (void)dealloc;
+- (void)p_setupMagicMoveWrapperWithContext:(id)arg1;
 - (void)renderFrameWithContext:(id)arg1;
+- (void)teardown;
 
 @end

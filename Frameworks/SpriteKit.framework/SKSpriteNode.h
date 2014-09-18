@@ -2,56 +2,80 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKTexture, UIColor;
+@class SKLightNode, SKShader, SKTexture, UIColor;
 
 @interface SKSpriteNode : SKNode {
-    BOOL _shouldRepeatTexture;
+    SKLightNode *_light;
+    bool_shouldRepeatTexture;
 }
 
-@property struct CGPoint { float x1; float x2; } anchorPoint;
-@property int blendMode;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } centerRect;
+@property struct CGPoint { double x1; double x2; } anchorPoint;
+@property long long blendMode;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } centerRect;
 @property(retain) UIColor * color;
-@property float colorBlendFactor;
-@property struct CGSize { float x1; float x2; } repeatTextureSize;
-@property BOOL shouldRepeatTexture;
-@property struct CGSize { float x1; float x2; } size;
+@property double colorBlendFactor;
+@property unsigned int lightingBitMask;
+@property(retain) SKTexture * normalTexture;
+@property struct CGSize { double x1; double x2; } repeatTextureSize;
+@property(retain) SKShader * shader;
+@property unsigned int shadowCastBitMask;
+@property unsigned int shadowedBitMask;
+@property bool shouldRepeatTexture;
+@property struct CGSize { double x1; double x2; } size;
 @property(retain) SKTexture * texture;
 
-+ (id)spriteNodeWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)spriteNodeWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)spriteNodeWithImageNamed:(id)arg1 normalMapped:(bool)arg2;
 + (id)spriteNodeWithImageNamed:(id)arg1;
-+ (id)spriteNodeWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)spriteNodeWithTexture:(id)arg1 normalMap:(id)arg2;
++ (id)spriteNodeWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)spriteNodeWithTexture:(id)arg1;
 
-- (struct CGPoint { float x1; float x2; })anchorPoint;
-- (int)blendMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })centerRect;
+- (void).cxx_destruct;
+- (id)_copyImageData;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (long long)blendMode;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })centerRect;
 - (id)color;
-- (float)colorBlendFactor;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (double)colorBlendFactor;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)copy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)initWithImageNamed:(id)arg1;
-- (id)initWithTexture:(id)arg1 color:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
+- (id)initWithTexture:(id)arg1 color:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
 - (id)initWithTexture:(id)arg1;
-- (BOOL)repeatTexture;
-- (struct CGSize { float x1; float x2; })repeatTextureSize;
-- (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBlendMode:(int)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCenterRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)isEqual:(id)arg1;
+- (unsigned int)lightingBitMask;
+- (id)normalTexture;
+- (bool)repeatTexture;
+- (struct CGSize { double x1; double x2; })repeatTextureSize;
+- (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBlendMode:(long long)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCenterRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setColor:(id)arg1;
-- (void)setColorBlendFactor:(float)arg1;
-- (void)setRepeatTexture:(BOOL)arg1;
-- (void)setRepeatTextureSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShouldRepeatTexture:(BOOL)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setColorBlendFactor:(double)arg1;
+- (void)setLightingBitMask:(unsigned int)arg1;
+- (void)setNormalTexture:(id)arg1;
+- (void)setRepeatTexture:(bool)arg1;
+- (void)setRepeatTextureSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShader:(id)arg1;
+- (void)setShadowCastBitMask:(unsigned int)arg1;
+- (void)setShadowedBitMask:(unsigned int)arg1;
+- (void)setShouldRepeatTexture:(bool)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTexture:(id)arg1;
-- (BOOL)shouldRepeatTexture;
-- (struct CGSize { float x1; float x2; })size;
+- (id)shader;
+- (unsigned int)shadowCastBitMask;
+- (unsigned int)shadowedBitMask;
+- (bool)shouldRepeatTexture;
+- (struct CGSize { double x1; double x2; })size;
 - (id)texture;
 
 @end

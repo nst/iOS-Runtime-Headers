@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/XPCKit.framework/XPCKit
  */
 
-@class <XPCNSClientConnectionDelegate>, XPCClientConnection;
+@class <XPCNSClientConnectionDelegate>, NSString, XPCClientConnection;
 
 @interface XPCNSClientConnection : NSObject <XPCClientConnectionDelegate> {
     XPCClientConnection *_clientConnection;
     <XPCNSClientConnectionDelegate> *_delegate;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) <XPCNSClientConnectionDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)XPCClientConnection:(id)arg1 didReceiveRequest:(id)arg2;

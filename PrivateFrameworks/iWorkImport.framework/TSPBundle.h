@@ -2,44 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPFileCoordinatorDelegate>, NSHashTable, SFUCryptoKey, TSUZipFileArchive;
-
-@interface TSPBundle : NSObject <TSPPackage> {
-    SFUCryptoKey *_decryptionKey;
-    <TSPFileCoordinatorDelegate> *_fileCoordinatorDelegate;
-    BOOL _isClosed;
-    TSUZipFileArchive *_objectArchive;
-    NSHashTable *_packageDatas;
-    unsigned char _packageIdentifier;
+@interface TSPBundle : TSPPackage {
 }
 
-@property(readonly) SFUCryptoKey * decryptionKey;
-@property(readonly) <TSPFileCoordinatorDelegate> * fileCoordinatorDelegate;
-@property(readonly) BOOL isClosed;
-@property(readonly) unsigned char packageIdentifier;
-
 + (id)componentFileURLForPackageURL:(id)arg1 packageLocator:(id)arg2;
-+ (BOOL)isBundleFormatURL:(id)arg1;
-+ (id)objectArchiveEntryPathForPackageLocator:(id)arg1;
++ (bool)isBundleFormatURL:(id)arg1;
 + (id)objectArchiveURLForPackageURL:(id)arg1;
++ (unsigned long long)zipArchiveOptions;
++ (id)zipArchiveURLFromPackageURL:(id)arg1;
 
-- (void).cxx_destruct;
-- (BOOL)containsData:(id)arg1;
 - (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 completion:(id)arg6;
-- (id)decryptionKey;
-- (void)didCloseDocument;
-- (void)didReferenceData:(id)arg1;
-- (void)enumerateDatasUsingBlock:(id)arg1;
-- (id)fileCoordinatorDelegate;
-- (id)init;
-- (id)initWithPackageIdentifier:(unsigned char)arg1 fileCoordinatorDelegate:(id)arg2;
-- (id)initWithURL:(id)arg1 packageIdentifier:(unsigned char)arg2 decryptionKey:(id)arg3 fileCoordinatorDelegate:(id)arg4;
-- (BOOL)isClosed;
-- (id)newDataStorageForFilename:(id)arg1 decryptionKey:(id)arg2;
-- (id)newDataStorageForFilename:(id)arg1;
-- (id)newReadChannelForComponent:(id)arg1;
-- (unsigned char)packageIdentifier;
-- (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;
-- (void)setObjectArchive:(id)arg1 decryptionKey:(id)arg2;
+- (id)dataAtRelativePath:(id)arg1 allowDecryption:(bool)arg2 error:(id*)arg3;
+- (unsigned long long)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
+- (bool)hasDataAtRelativePath:(id)arg1;
+- (id)newDataStorageAtRelativePath:(id)arg1;
+- (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id)arg2 error:(id*)arg3;
+- (id)newRawDataReadChannelAtRelativePath:(id)arg1;
+- (id)newRawReadChannelForComponent:(id)arg1;
+- (long long)packageType;
+- (void)prepareForDocumentReplacementWithSuccess:(bool)arg1 forSafeSave:(bool)arg2 originalURL:(id)arg3;
 
 @end

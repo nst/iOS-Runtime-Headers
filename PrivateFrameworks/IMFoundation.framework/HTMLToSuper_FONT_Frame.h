@@ -3,10 +3,10 @@
  */
 
 @interface HTMLToSuper_FONT_Frame : HTMLToSuper_Default_Frame {
-    BOOL _shouldPopBackgroundColor;
-    BOOL _shouldPopFontName;
-    BOOL _shouldPopFontSize;
-    BOOL _shouldPopForegroundColor;
+    bool_shouldPopBackgroundColor;
+    bool_shouldPopFontName;
+    bool_shouldPopFontSize;
+    bool_shouldPopForegroundColor;
 }
 
 - (void)parser:(id)arg1 context:(id)arg2 didEndElement:(id)arg3 namespaceURI:(id)arg4 qualifiedName:(id)arg5;

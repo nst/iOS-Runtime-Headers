@@ -3,13 +3,14 @@
  */
 
 @interface SiriUIHelpButton : SiriUIContentButton {
-    BOOL _animatingEmphasis;
-    BOOL _emphasized;
+    bool_animatingEmphasis;
+    bool_emphasized;
 }
 
 + (id)buttonWithHelpImageMask;
 
+- (double)_targetAlpha;
 - (void)pulse;
-- (void)setEmphasized:(BOOL)arg1;
+- (void)setEmphasized:(bool)arg1;
 
 @end

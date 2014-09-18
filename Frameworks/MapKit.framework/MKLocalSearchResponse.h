@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
-- (id)_initWithGEOSearchResponse:(id)arg1;
+- (id)_initWithMapItems:(id)arg1 boundingRegion:(id)arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRegion;
 - (id)description;
 - (id)mapItems;

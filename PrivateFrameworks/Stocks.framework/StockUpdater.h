@@ -6,44 +6,42 @@
    See Warning(s) below.
  */
 
-@class <StockUpdaterDelegate>, NSArray, NSError, NSMutableDictionary, QuoteParserData;
+@class <StockUpdaterDelegate>, NSArray, NSError;
 
-@interface StockUpdater : XMLHTTPRequest {
-    NSMutableDictionary *_cacheDurationForParts;
+@interface StockUpdater : YQLRequest {
     <StockUpdaterDelegate> *_delegate;
-    BOOL _ignoreNewRequests;
-    BOOL _isComprehensive;
     NSError *_lastError;
-    QuoteParserData *_quoteParserData;
+    NSArray *_pendingStocks;
     NSArray *_requestStocks;
     id _updateCompletionHandler;
+    bool_forceUpdate;
+    bool_isComprehensive;
 }
 
 @property <StockUpdaterDelegate> * delegate;
-@property BOOL isComprehensive;
-@property(retain) NSError * lastError;
+@property(readonly) bool forceUpdate;
+@property(readonly) bool isComprehensive;
+@property(retain) NSArray * pendingStocks;
 @property(retain) NSArray * requestStocks;
 @property(copy) id updateCompletionHandler;
 
 - (void).cxx_destruct;
-- (id)_symbolTagsForRequestStocks;
-- (void)_updateWithPartsTag:(id)arg1 forStocks:(id)arg2;
-- (void)_updateWithPostBody:(id)arg1;
+- (id)_parseDataSourceMapFromDataSourceDictionaries:(id)arg1;
+- (void)_parseExchangeDictionaries:(id)arg1;
+- (void)_parseQuoteDictionaries:(id)arg1 withDataSources:(id)arg2;
+- (bool)_updateStocks:(id)arg1 comprehensive:(bool)arg2 forceUpdate:(bool)arg3;
 - (id)aggregateDictionaryDomain;
-- (void)cancel;
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (BOOL)hadError;
-- (id)init;
-- (BOOL)isComprehensive;
-- (id)lastError;
-- (int)parseData:(id)arg1;
+- (bool)forceUpdate;
+- (bool)hadError;
+- (bool)isComprehensive;
+- (void)parseData:(id)arg1;
+- (id)pendingStocks;
 - (id)requestStocks;
-- (void)setCacheTimeInterval:(double)arg1 forPartsTag:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setIsComprehensive:(BOOL)arg1;
-- (void)setLastError:(id)arg1;
+- (void)setPendingStocks:(id)arg1;
 - (void)setRequestStocks:(id)arg1;
 - (void)setUpdateCompletionHandler:(id)arg1;
 - (id)updateCompletionHandler;

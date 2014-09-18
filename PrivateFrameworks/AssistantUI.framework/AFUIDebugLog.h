@@ -10,15 +10,15 @@
     NSString *_name;
 }
 
-@property(readonly) NSData * data;
-@property(readonly) NSString * mimeType;
-@property(readonly) NSString * name;
+@property(copy,readonly) NSData * data;
+@property(copy,readonly) NSString * mimeType;
+@property(copy,readonly) NSString * name;
 
-+ (id)logWithData:(id)arg1 mimeType:(id)arg2 name:(id)arg3 attemptCompression:(BOOL)arg4;
++ (id)logWithData:(id)arg1 mimeType:(id)arg2 name:(id)arg3 attemptCompression:(bool)arg4;
 
 - (void).cxx_destruct;
 - (id)data;
-- (id)initWithData:(id)arg1 mimeType:(id)arg2 name:(id)arg3 attemptCompression:(BOOL)arg4;
+- (id)initWithData:(id)arg1 mimeType:(id)arg2 name:(id)arg3 attemptCompression:(bool)arg4;
 - (id)mimeType;
 - (id)name;
 

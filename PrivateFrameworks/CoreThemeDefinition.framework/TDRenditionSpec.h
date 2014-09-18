@@ -13,7 +13,7 @@
 @property(retain) TDRenditionType * renditionType;
 
 - (void)awakeFromInsert;
-- (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
+- (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (id)renditionType;
 - (void)resetToBaseKeySpec;
 - (void)setRenditionType:(id)arg1;

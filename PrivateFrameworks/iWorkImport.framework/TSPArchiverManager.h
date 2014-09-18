@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPArchiverManagerDelegate>, NSMapTable, NSObject<OS_dispatch_queue>;
+@class <TSPArchiverManagerDelegate>, NSMapTable, NSObject<OS_dispatch_queue>, TSPDescriptionGenerator;
 
 @interface TSPArchiverManager : NSObject {
     struct { 
@@ -18,8 +18,11 @@
     NSObject<OS_dispatch_queue> *_archiversHighQueue;
     NSObject<OS_dispatch_queue> *_archiversLowQueue;
     <TSPArchiverManagerDelegate> *_delegate;
+    TSPDescriptionGenerator *_descriptionGenerator;
     } _flags;
 }
+
+@property(retain) TSPDescriptionGenerator * descriptionGenerator;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -29,9 +32,11 @@
 - (id)archiverForObject:(id)arg1 archiveQueue:(id)arg2 archiveCompletion:(id)arg3;
 - (void)archiverForObject:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (void)dealloc;
+- (id)descriptionGenerator;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 archiverClass:(Class)arg2;
 - (id)initWithDelegate:(id)arg1;
+- (void)setDescriptionGenerator:(id)arg1;
 - (void)stop;
 
 @end

@@ -7,12 +7,13 @@
 
 + (id)data;
 
+- (bool)_isCompact;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id)arg4;
-- (unsigned int)length;
+- (id)initWithBytes:(void*)arg1 length:(unsigned long long)arg2 copy:(bool)arg3 deallocator:(id)arg4;
+- (unsigned long long)length;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

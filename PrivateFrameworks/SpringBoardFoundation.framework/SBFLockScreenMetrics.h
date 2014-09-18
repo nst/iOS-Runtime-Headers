@@ -5,10 +5,34 @@
 @interface SBFLockScreenMetrics : NSObject {
 }
 
-+ (float)cameraGrabberInset;
-+ (float)dateViewBaselineY;
-+ (float)slideToUnlockFontSize;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })slideToUnlockInsets;
-+ (float)slideToUnlockOverlayMargin;
++ (double)_notificationListBottomOffset;
++ (double)_notificationListSideOffset;
++ (double)_notificationListTopPadding;
++ (double)dateBaselineOffsetFromTime;
++ (double)dateLabelFontSize;
++ (double)dateViewBaselineY;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })notificationListInsets;
++ (double)pinFourDigitEntryFieldBottomYDistanceFromNumberPadTopButton:(bool)arg1;
++ (double)pinFourDigitEntryFieldIndicatorDiameter;
++ (double)pinFourDigitEntryFieldIndicatorPaddingWidth;
++ (double)pinKeypadEntryFieldOffsetForSubtitle;
++ (id)pinKeypadStatusSubtitleViewTitleFont;
++ (double)pinKeypadStatusTitleBaselineOffset:(bool)arg1;
++ (double)pinKeypadStatusTitleBaselineOffsetFromTitle;
++ (double)pinKeypadStatusTitleBaselineOffsetIncludingSubtitle:(bool)arg1;
++ (id)pinKeypadStatusTitleViewTitleFont;
++ (double)pinLongNumericEntryFieldBottomYDistanceFromNumberPadTopButton;
++ (double)pinNumberPadAncillaryButtonOffset;
++ (double)pinNumberPadBaseOffsetFromTopOfScreen:(bool)arg1;
++ (double)pinNumberPadBottomPaddingHeight;
++ (double)pinNumberPadButtonOuterCircleDiameter;
++ (double)pinNumberPadButtonPaddingHeight;
++ (double)pinNumberPadButtonPaddingWidth;
++ (double)pinNumberPadWidth;
++ (double)slideToUnlockFontSize;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })slideToUnlockInsets;
++ (double)slideToUnlockOverlayMargin;
++ (double)slideUpGrabberInset;
++ (double)subtitleBaselineOffsetFromTopOfScreen;
 
 @end

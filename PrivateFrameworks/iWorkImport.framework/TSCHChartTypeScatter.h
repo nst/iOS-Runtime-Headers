@@ -6,9 +6,9 @@
 }
 
 - (id)allCDESectionLabels;
-- (id)defaultSeriesType:(unsigned int)arg1;
+- (id)defaultSeriesType:(unsigned long long)arg1;
 - (id)init;
-- (BOOL)supportsErrorBarsScatterX;
+- (bool)supportsErrorBarsScatterX;
 - (id)userInterfaceName;
 
 @end

@@ -12,16 +12,16 @@
 + (id)defaultProperties;
 
 - (void)addStopWithDash:(float)arg1 space:(float)arg2;
-- (BOOL)areStopsOverridden;
+- (bool)areStopsOverridden;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)dashAtIndex:(unsigned int)arg1;
+- (float)dashAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setStops:(id)arg1;
-- (float)spaceAtIndex:(unsigned int)arg1;
-- (unsigned int)stopCount;
+- (float)spaceAtIndex:(unsigned long long)arg1;
+- (unsigned long long)stopCount;
 - (id)stops;
 
 @end

@@ -6,62 +6,63 @@
 
 @interface QLDisplayBundle : UIViewController {
     struct { 
-        int pid; 
+        long long pid; 
         struct { 
             unsigned int val[8]; 
         } audit_token; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } contentFrame; 
     <QLPreviewItemInteractionDelegate> *_delegate;
-    int _index;
-    BOOL _loaded;
-    BOOL _loading;
-    BOOL _overlayHidden;
+    long long _index;
     NSString *_password;
     <QLPreviewItem> *_previewItem;
     int _previewMode;
     NSTimer *_refreshTimer;
+    bool_loaded;
+    bool_loading;
+    bool_overlayHidden;
     } clientContext;
 }
 
 @property(readonly) UIView * accessoryView;
 @property(readonly) int airPlayMode;
 @property(readonly) UIView * airplayView;
-@property struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } clientContext;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property struct { long long x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; } clientContext;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentFrame;
 @property <QLPreviewItemInteractionDelegate> * delegate;
-@property int index;
-@property BOOL loaded;
-@property BOOL loading;
+@property long long index;
+@property bool loaded;
+@property bool loading;
 @property(retain) NSString * password;
 @property(retain) <QLPreviewItem> * previewItem;
 @property int previewMode;
 
 + (double)allowedLoadingDelay;
-+ (BOOL)needsAVControls;
++ (bool)needsAVControls;
 
 - (void)_notifyDidLoadWithError:(id)arg1;
 - (void)_performCancelLoad;
-- (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
+- (bool)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (id)accessoryView;
+- (bool)adaptativeHeight;
 - (int)airPlayMode;
 - (id)airplayView;
 - (void)beginScrubbing;
 - (void)beginTrackingViewUpdates;
-- (BOOL)canBeCached;
-- (BOOL)canCopyToPasteboard;
+- (bool)canBeCached;
+- (bool)canCopyToPasteboard;
 - (void)cancelLoad;
 - (void)cancelLoadIfNeeded;
-- (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
+- (struct { long long x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; })clientContext;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrame;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -73,14 +74,14 @@
 - (void)endTrackingViewUpdates;
 - (void)enterBackground;
 - (id)gestureRecognizersForFullScreenDisplay;
-- (int)index;
+- (long long)index;
 - (id)init;
 - (void)loadIfNeededWithHints:(id)arg1;
 - (void)loadWithHints:(id)arg1;
-- (BOOL)loaded;
-- (BOOL)loading;
-- (int)modalPresentationStyle;
-- (BOOL)overlayIsHidden;
+- (bool)loaded;
+- (bool)loading;
+- (long long)modalPresentationStyle;
+- (bool)overlayIsHidden;
 - (id)password;
 - (id)pdfPreviewData;
 - (id)previewItem;
@@ -89,19 +90,19 @@
 - (id)printPageRenderer;
 - (void)requiresDisplayBundle:(id)arg1 withHints:(id)arg2;
 - (void)scrubToValue:(double)arg1;
-- (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
+- (void)setClientContext:(struct { long long x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIndex:(int)arg1;
-- (void)setLoaded:(BOOL)arg1;
-- (void)setLoading:(BOOL)arg1;
-- (void)setNavigationBarVerticalOffset:(float)arg1;
-- (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
+- (void)setIndex:(long long)arg1;
+- (void)setLoaded:(bool)arg1;
+- (void)setLoading:(bool)arg1;
+- (void)setNavigationBarVerticalOffset:(double)arg1;
+- (void)setOverlayHidden:(bool)arg1 duration:(double)arg2;
 - (void)setPassword:(id)arg1;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewMode:(int)arg1;
 - (void)setupAirPlayView;
 - (void)togglePlayState;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidUpdate;
 
 @end

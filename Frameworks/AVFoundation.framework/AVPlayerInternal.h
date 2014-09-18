@@ -6,43 +6,53 @@
    See Warning(s) below.
  */
 
-@class AVAudioSessionMediaPlayerOnly, AVPixelBufferAttributeMediator, AVPlayerItem, AVPropertyStorage, AVWeakReference, NSArray, NSDictionary, NSError, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
+@class AVAudioSessionMediaPlayerOnly, AVPixelBufferAttributeMediator, AVPlayerItem, AVPropertyStorage, AVWeakKeyValueObserverProxy, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVPlayerInternal : NSObject {
+    struct CGSize { 
+        double width; 
+        double height; 
+    AVWeakKeyValueObserverProxy *KVOProxy;
     AVAudioSessionMediaPlayerOnly *audioSessionMediaPlayerOnly;
-    BOOL autoSwitchStreamVariants;
-    NSMutableSet *caLayers;
+    NSHashTable *avPlayerLayers;
+    boolallowsOutOfBandTextTrackRendering;
+    boolautoSwitchStreamVariants;
+    boolhadAssociatedOnscreenPlayerLayerWhenSuspended;
+    boolhostApplicationInForeground;
+    booliapdExtendedModeIsActive;
+    boollogPerformanceData;
+    boolneedsToCreateFigPlayer;
+    boolpreparesItemsForPlaybackAsynchronously;
+    boolreevaluateBackgroundPlayback;
+    } cachedDisplaySize;
     NSDictionary *cachedFigMediaSelectionCriteriaProperty;
+    NSMutableSet *closedCaptionLayers;
     AVPlayerItem *currentItem;
-    NSDictionary *currentSubtitlesPayload;
     NSArray *displaysUsedForPlayback;
     NSError *error;
     NSArray *expectedAssetTypes;
     NSString *externalPlaybackVideoGravity;
+    NSObject<OS_dispatch_queue> *figConfigurationQueue;
     struct OpaqueCMClock { } *figMasterClock;
     struct OpaqueFigPlaybackItem { } *figPlaybackItemToIdentifyNextCurrentItem;
     struct OpaqueFigPlayer { } *figPlayer;
-    BOOL hadAssociatedOnscreenPlayerLayerWhenSuspended;
-    BOOL hostApplicationInForeground;
-    BOOL iapdExtendedModeIsActive;
     NSMutableSet *items;
+    NSObject<OS_dispatch_queue> *ivarAccessQueue;
     AVPlayerItem *lastItem;
     NSObject<OS_dispatch_queue> *layersQ;
-    BOOL logPerformanceData;
-    BOOL needsToCreateFigPlayer;
     int nextPrerollIDToGenerate;
     NSMutableDictionary *pendingFigPlayerProperties;
     int pendingPrerollID;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
-    BOOL preparesItemsForPlaybackAsynchronously;
     id prerollCompletionHandler;
     struct OpaqueFigSimpleMutex { } *prerollIDMutex;
     AVPropertyStorage *propertyStorage;
-    BOOL reevaluateBackgroundPlayback;
+    struct OpaqueCMTimebase { } *proxyTimebase;
     NSObject<OS_dispatch_queue> *stateDispatchQueue;
-    int status;
-    NSObject<OS_dispatch_queue> *subtitleQueue;
+    long long status;
+    NSMutableSet *subtitleLayers;
     NSDictionary *vibrationPattern;
+    struct __CFDictionary { } *videoLayers;
     AVWeakReference *weakReference;
 }
 

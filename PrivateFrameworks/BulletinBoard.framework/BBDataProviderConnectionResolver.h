@@ -2,22 +2,31 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class BBDataProviderConnection, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListener;
 
-@class BBXPCIncomingConnection;
-
-@interface BBDataProviderConnectionResolver : NSObject <BBXPCConnectionDelegate, XPCProxyTarget> {
-    BBXPCIncomingConnection *_connection;
-    id _establishedBlock;
+@interface BBDataProviderConnectionResolver : NSObject <NSXPCListenerDelegate, BBDataProviderConnectionClientEndpoint> {
+    BBDataProviderConnection *__dataProviderConnection;
+    NSXPCConnection *_connectionToServer;
+    int _listeningToken;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSXPCListener *_wakeupListener;
 }
 
-- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (id)resolverForConnection:(id)arg1;
+
+- (void)_queue_registerWithServer:(id)arg1;
+- (void)_registerForPublicationNotification;
+- (id)dataProviderConnection;
 - (void)dealloc;
-- (void)establishSectionID:(id)arg1 completion:(id)arg2;
-- (id)initWithConnection:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (id)initWithConnection:(id)arg1;
 - (void)invalidate;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)ping:(id)arg1;
+- (void)setDataProviderConnection:(id)arg1;
 
 @end

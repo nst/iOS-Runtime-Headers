@@ -80,8 +80,9 @@
 @property(copy) NSString * workPhone;
 @property(copy) NSString * zip;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)alias;
 - (id)appleFloor;
 - (id)buildingName;
@@ -89,7 +90,6 @@
 - (id)company;
 - (id)country;
 - (id)cuAddresses;
-- (void)dealloc;
 - (id)department;
 - (id)description;
 - (id)displayName;
@@ -104,8 +104,8 @@
 - (id)imService;
 - (id)imUsername;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDAContactSearchResultElement:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDAContactSearchResultElement:(id)arg1;
 - (id)jpegPhoto;
 - (id)lastName;
 - (id)mainPhone;

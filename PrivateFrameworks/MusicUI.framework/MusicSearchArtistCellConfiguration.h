@@ -5,11 +5,9 @@
 @interface MusicSearchArtistCellConfiguration : MusicSearchCellConfiguration {
 }
 
-+ (id)_artistArtworkCacheIDProperty;
 + (id)_artistRepresentativeItemProperty;
 + (id)_titleProperty;
 + (void)appDefaultsDidChange;
-+ (id)imageCacheRequestForMediaEntity:(id)arg1 valuesForProperties:(id)arg2 shouldLoadAsynchronously:(BOOL*)arg3;
 + (id)mediaEntityPropertiesToFetch;
 + (id)titleForMediaEntity:(id)arg1 valuesForProperties:(id)arg2;
 

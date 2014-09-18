@@ -12,10 +12,11 @@
 + (id)clearScreen;
 + (id)clearScreenWithDictionary:(id)arg1 context:(id)arg2;
 
+- (bool)_afui_isUsefulUserResultCommand;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)initialView;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setInitialView:(id)arg1;
 
 @end

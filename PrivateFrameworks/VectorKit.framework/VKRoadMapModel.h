@@ -2,32 +2,43 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKRoadPainter, VKStylesheet;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
 
-@interface VKRoadMapModel : VKVectorMapModel <VKStylesheetObserver> {
-    BOOL _drawRoads;
-    unsigned int _mapLayerPosition;
-    VKRoadPainter *_roadPainter;
-    float _styleZAdjust;
-    unsigned int _supportedRenderPasses;
+@class NSString, VKStyleManager;
+
+@interface VKRoadMapModel : VKVectorMapModel <VKStyleManagerObserver> {
+    struct unique_ptr<vk::RoadManager, std::__1::default_delete<vk::RoadManager> > { 
+        struct __compressed_pair<vk::RoadManager *, std::__1::default_delete<vk::RoadManager> > { 
+            struct RoadManager {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<vk::PatternedManager, std::__1::default_delete<vk::PatternedManager> > { 
+        struct __compressed_pair<vk::PatternedManager *, std::__1::default_delete<vk::PatternedManager> > { 
+            struct PatternedManager {} *__first_; 
+        } __ptr_; 
+    unsigned long long _mapLayerPosition;
+    } _patternedRibbonManager;
+    } _roadManager;
 }
 
-@property BOOL drawRoads;
-@property unsigned int mapLayerPosition;
-@property(readonly) VKStylesheet * stylesheet;
-@property unsigned int supportedRenderPasses;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property unsigned long long mapLayerPosition;
+@property(readonly) VKStyleManager * styleManager;
+@property(readonly) Class superclass;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (unsigned char)commandBufferId;
 - (void)dealloc;
-- (void)drawDebugScene:(id)arg1 WithContext:(id)arg2;
-- (BOOL)drawRoads;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (void)didReceiveMemoryWarning;
+- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
-- (void)layoutScene:(id)arg1 withContext:(id)arg2;
-- (unsigned int)mapLayerPosition;
-- (void)setDrawRoads:(BOOL)arg1;
-- (void)setMapLayerPosition:(unsigned int)arg1;
-- (void)setSupportedRenderPasses:(unsigned int)arg1;
+- (unsigned long long)mapLayerPosition;
+- (void)setMapLayerPosition:(unsigned long long)arg1;
 - (void)stylesheetDidChange;
-- (unsigned int)supportedRenderPasses;
 
 @end

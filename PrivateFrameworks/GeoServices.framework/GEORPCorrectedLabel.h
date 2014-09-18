@@ -7,19 +7,19 @@
 @interface GEORPCorrectedLabel : PBCodable <NSCopying> {
     NSString *_correctedValue;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; } *_featureHandles;
-    unsigned int _featureHandlesCount;
-    unsigned int _featureHandlesSpace;
+    unsigned long long _featureHandlesCount;
+    unsigned long long _featureHandlesSpace;
     GEOMapRegion *_featureRegion;
     NSString *_originalValue;
 }
 
 @property(retain) NSString * correctedValue;
 @property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }* featureHandles;
-@property(readonly) unsigned int featureHandlesCount;
+@property(readonly) unsigned long long featureHandlesCount;
 @property(retain) GEOMapRegion * featureRegion;
-@property(readonly) BOOL hasCorrectedValue;
-@property(readonly) BOOL hasFeatureRegion;
-@property(readonly) BOOL hasOriginalValue;
+@property(readonly) bool hasCorrectedValue;
+@property(readonly) bool hasFeatureRegion;
+@property(readonly) bool hasOriginalValue;
 @property(retain) NSString * originalValue;
 
 - (void)addFeatureHandle:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; })arg1;
@@ -30,19 +30,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; })featureHandleAtIndex:(unsigned int)arg1;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; })featureHandleAtIndex:(unsigned long long)arg1;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*)featureHandles;
-- (unsigned int)featureHandlesCount;
+- (unsigned long long)featureHandlesCount;
 - (id)featureRegion;
-- (BOOL)hasCorrectedValue;
-- (BOOL)hasFeatureRegion;
-- (BOOL)hasOriginalValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCorrectedValue;
+- (bool)hasFeatureRegion;
+- (bool)hasOriginalValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)originalValue;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCorrectedValue:(id)arg1;
-- (void)setFeatureHandles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*)arg1 count:(unsigned int)arg2;
+- (void)setFeatureHandles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*)arg1 count:(unsigned long long)arg2;
 - (void)setFeatureRegion:(id)arg1;
 - (void)setOriginalValue:(id)arg1;
 - (void)writeTo:(id)arg1;

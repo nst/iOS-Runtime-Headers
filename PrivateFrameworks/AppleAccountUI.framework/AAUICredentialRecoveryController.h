@@ -2,21 +2,29 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSMutableArray, NSObject<AAUICredentialRecoveryPresentationDelegate>, NSURL, RUILoader, RUIPage, UINavigationController, UIViewController;
+@class NSMutableArray, NSObject<AAUICredentialRecoveryPresentationDelegate>, NSString, NSURL, RUILoader, RUIPage, UIActivityIndicatorView, UIBarButtonItem, UINavigationController, UINavigationItem, UIViewController;
 
 @interface AAUICredentialRecoveryController : NSObject <RUIObjectModelDelegate, RUILoaderDelegate> {
     NSObject<AAUICredentialRecoveryPresentationDelegate> *_delegate;
-    BOOL _isModal;
     RUIPage *_loadingPage;
     UIViewController *_navigationBaseViewController;
     UINavigationController *_navigationController;
+    UINavigationItem *_navigationItemShowingSpinner;
     NSMutableArray *_objectModels;
+    UIBarButtonItem *_originalRightBarButtonItem;
     UIViewController *_presentationViewController;
     RUILoader *_remoteUILoader;
     NSURL *_remoteUIURL;
+    UIActivityIndicatorView *_spinnerView;
+    bool_isModal;
+    bool_isShowingSpinner;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property NSObject<AAUICredentialRecoveryPresentationDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;
@@ -24,12 +32,14 @@
 - (void)_cleanupLoader;
 - (void)_createRemoteUIViewControllerFromURL:(id)arg1;
 - (void)_displayConnectionError;
-- (void)_finishPresentationWithSuccess:(BOOL)arg1;
-- (void)_popObjectModelAnimated:(BOOL)arg1;
+- (void)_finishPresentationWithSuccess:(bool)arg1;
+- (void)_hideActivitySpinnerInNavigationBar;
+- (void)_popObjectModelAnimated:(bool)arg1;
+- (void)_showActivitySpinnerInNavigationBar;
 - (void)cancelPresentation;
 - (id)delegate;
 - (id)init;
-- (id)initWithRemoteUIURL:(id)arg1 modalPresentation:(BOOL)arg2;
+- (id)initWithRemoteUIURL:(id)arg1 modalPresentation:(bool)arg2;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;

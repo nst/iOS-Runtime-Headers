@@ -5,29 +5,29 @@
 @class NSMutableCharacterSet;
 
 @interface SBUINumericPasscodeEntryFieldBase : SBUIPasscodeEntryField {
-    BOOL _allowsNewlineAcceptance;
-    BOOL _autoAcceptWhenMaxNumbersMet;
-    unsigned int _maxNumbersAllowed;
+    unsigned long long _maxNumbersAllowed;
     NSMutableCharacterSet *_numericTrimmingSet;
+    bool_allowsNewlineAcceptance;
+    bool_autoAcceptWhenMaxNumbersMet;
 }
 
-@property BOOL allowsNewlineAcceptance;
-@property BOOL autoAcceptWhenMaxNumbersMet;
-@property unsigned int maxNumbersAllowed;
+@property bool allowsNewlineAcceptance;
+@property bool autoAcceptWhenMaxNumbersMet;
+@property unsigned long long maxNumbersAllowed;
 
 - (void)_appendString:(id)arg1;
 - (void)_deleteLastCharacter;
-- (BOOL)_hasMaxDigitsSpecified;
+- (bool)_hasMaxDigitsSpecified;
 - (void)_reallyAppendString:(id)arg1;
-- (BOOL)allowsNewlineAcceptance;
-- (BOOL)autoAcceptWhenMaxNumbersMet;
+- (bool)allowsNewlineAcceptance;
+- (bool)autoAcceptWhenMaxNumbersMet;
 - (void)dealloc;
-- (id)initWithDefaultSize;
-- (unsigned int)maxNumbersAllowed;
-- (BOOL)resignFirstResponder;
-- (void)setAllowsNewlineAcceptance:(BOOL)arg1;
-- (void)setAutoAcceptWhenMaxNumbersMet:(BOOL)arg1;
-- (void)setMaxNumbersAllowed:(unsigned int)arg1;
-- (BOOL)shouldInsertPasscodeText:(id)arg1;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
+- (unsigned long long)maxNumbersAllowed;
+- (bool)resignFirstResponder;
+- (void)setAllowsNewlineAcceptance:(bool)arg1;
+- (void)setAutoAcceptWhenMaxNumbersMet:(bool)arg1;
+- (void)setMaxNumbersAllowed:(unsigned long long)arg1;
+- (bool)shouldInsertPasscodeText:(id)arg1;
 
 @end

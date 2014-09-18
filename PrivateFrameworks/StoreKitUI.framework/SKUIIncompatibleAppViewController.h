@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageChildViewControllerDelegate>, NSOperationQueue, SKUIIncompatibleAppView, SKUIItemArtworkContext, SKUIProductPageHeaderViewController, SKUIProductPageItem, SSVLoadURLOperation, UIImage, UIScrollView;
+@class <SKUIProductPageChildViewControllerDelegate>, NSOperationQueue, NSString, SKUIIncompatibleAppView, SKUIItemArtworkContext, SKUIProductPageHeaderViewController, SKUIProductPageItem, SSVLoadURLOperation, UIImage, UIScrollView;
 
 @interface SKUIIncompatibleAppViewController : SKUIViewController <SKUIProductPageChildViewController> {
     SKUIItemArtworkContext *_artworkContext;
@@ -15,11 +15,15 @@
     NSOperationQueue *_operationQueue;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property(readonly) SKUIProductPageItem * incompatibleItem;
 @property(retain) NSOperationQueue * operationQueue;
 @property(readonly) UIScrollView * scrollView;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_artworkContext;
@@ -38,6 +42,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderViewController:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

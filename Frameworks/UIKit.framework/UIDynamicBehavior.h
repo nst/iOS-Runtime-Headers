@@ -9,17 +9,17 @@
 @class NSArray, NSMutableArray, UIDynamicAnimator;
 
 @interface UIDynamicBehavior : NSObject {
-    BOOL __isPrimitiveBehavior;
     id _action;
     NSMutableArray *_addedBehaviors;
     NSMutableArray *_behaviors;
     UIDynamicAnimator *_context;
     NSMutableArray *_items;
+    bool__isPrimitiveBehavior;
 }
 
-@property(setter=_isPrimitiveBehavior:) BOOL _isPrimitiveBehavior;
+@property(setter=_isPrimitiveBehavior:) bool _isPrimitiveBehavior;
 @property(copy) id action;
-@property(readonly) NSArray * childBehaviors;
+@property(copy,readonly) NSArray * childBehaviors;
 @property(readonly) UIDynamicAnimator * dynamicAnimator;
 
 + (void)initialize;
@@ -28,18 +28,18 @@
 - (void)_changedParameterForBody:(id)arg1;
 - (id)_context;
 - (void)_dissociate;
-- (id)_init:(BOOL)arg1;
-- (void)_isPrimitiveBehavior:(BOOL)arg1;
-- (BOOL)_isPrimitiveBehavior;
+- (id)_init:(bool)arg1;
+- (void)_isPrimitiveBehavior:(bool)arg1;
+- (bool)_isPrimitiveBehavior;
 - (id)_items;
 - (id)_itemsDescription;
-- (void)_reevaluate:(unsigned int)arg1;
+- (void)_reevaluate:(unsigned long long)arg1;
 - (void)_setContext:(id)arg1;
 - (void)_setItems:(id)arg1;
 - (void)_step;
 - (id)action;
 - (void)addChildBehavior:(id)arg1;
-- (BOOL)allowsAnimatorToStop;
+- (bool)allowsAnimatorToStop;
 - (id)childBehaviors;
 - (void)dealloc;
 - (id)description;

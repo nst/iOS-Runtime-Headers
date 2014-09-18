@@ -2,20 +2,24 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface WBUFormsMetadataProvider : NSObject <WBSFormsMetadataProvider> {
     NSArray *_framesForAllForms;
     NSArray *_metadataForAllForms;
 }
 
-@property(readonly) unsigned int formCount;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long formCount;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)metadataProviderWithFrames:(id)arg1 metadataForAllForms:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)enumerateFormsUsingBlock:(id)arg1;
-- (unsigned int)formCount;
+- (unsigned long long)formCount;
 - (id)initWithFrames:(id)arg1 metadataForAllForms:(id)arg2;
 
 @end

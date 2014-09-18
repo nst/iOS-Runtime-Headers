@@ -11,8 +11,12 @@
 @property(copy) NSString * cancelTrigger;
 @property(copy) NSArray * confirmCommands;
 @property(copy) NSString * confirmText;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSArray * denyCommands;
 @property(copy) NSString * denyText;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)confirmationOptions;
 + (id)confirmationOptionsWithDictionary:(id)arg1 context:(id)arg2;

@@ -7,7 +7,7 @@
 }
 
 @property(readonly) struct CGImage { }* image;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
 
@@ -16,6 +16,6 @@
 - (void)dealloc;
 - (struct CGImage { }*)image;
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

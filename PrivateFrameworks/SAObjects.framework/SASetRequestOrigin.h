@@ -10,14 +10,18 @@
 @property(copy) NSString * aceId;
 @property(retain) NSNumber * age;
 @property double altitude;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * desiredAccuracy;
 @property double direction;
+@property(readonly) unsigned long long hash;
 @property double horizontalAccuracy;
 @property double latitude;
 @property double longitude;
 @property(copy) NSString * refId;
 @property double speed;
 @property(copy) NSString * status;
+@property(readonly) Class superclass;
 @property(copy) NSDate * timestamp;
 @property double verticalAccuracy;
 

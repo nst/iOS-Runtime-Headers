@@ -2,31 +2,35 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPInlineVideoController, MPSwipableView, MPVideoPlaybackOverlayView, MPVolumeController, MPWeakTimer, UIActivityIndicatorView, UIPinchGestureRecognizer, UITapGestureRecognizer;
+@class MPAVItem, MPInlineVideoController, MPSwipableView, MPVideoPlaybackOverlayView, MPVolumeController, MPWeakTimer, NSString, UIActivityIndicatorView, UIPinchGestureRecognizer, UITapGestureRecognizer;
 
 @interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPVolumeControllerDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget> {
-    int _activeOverlayUserEvents;
-    BOOL _disableTaps;
+    long long _activeOverlayUserEvents;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     MPWeakTimer *_idleTimer;
-    BOOL _isAnimatingOverlay;
     MPAVItem *_item;
     UIActivityIndicatorView *_loadingIndicator;
     MPInlineVideoController *_masterController;
     MPVideoPlaybackOverlayView *_overlayView;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    BOOL _shouldForwardRotationEvents;
-    BOOL _statusBarWasHidden;
     MPSwipableView *_swipableView;
     UITapGestureRecognizer *_tapGestureRecognizer;
     MPVolumeController *_volumeController;
+    bool_disableTaps;
+    bool_isAnimatingOverlay;
+    bool_shouldForwardRotationEvents;
+    bool_statusBarWasHidden;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) MPAVItem * item;
 @property MPInlineVideoController * masterController;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_hideOverlayAnimated:(BOOL)arg1;
+- (void)_hideOverlayAnimated:(bool)arg1;
 - (void)_hideOverlayDidEnd;
 - (void)_overlayIdleTimerFired;
 - (void)_showOverlayDidEnd;
@@ -34,33 +38,35 @@
 - (void)_viewWasTapped:(id)arg1;
 - (void)cancelOverlayIdleTimer;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)hideLoadingIndicator;
 - (id)init;
 - (id)item;
 - (void)loadView;
 - (id)masterController;
-- (void)overlay:(id)arg1 didBeginUserEvent:(int)arg2;
-- (void)overlay:(id)arg1 didCancelUserEvent:(int)arg2;
-- (void)overlay:(id)arg1 didEndUserEvent:(int)arg2;
+- (void)overlay:(id)arg1 didBeginUserEvent:(long long)arg2;
+- (void)overlay:(id)arg1 didCancelUserEvent:(long long)arg2;
+- (void)overlay:(id)arg1 didEndUserEvent:(long long)arg2;
 - (void)overlayTappedBackButton:(id)arg1;
-- (BOOL)prefersStatusBarHidden;
+- (void)overlayTappedFullscreenButton:(id)arg1;
+- (bool)prefersStatusBarHidden;
 - (void)prepareForTransitionFromFullscreen;
 - (void)resetOverlayIdleTimer;
 - (void)setItem:(id)arg1;
 - (void)setMasterController:(id)arg1;
-- (BOOL)shouldAutorotate;
+- (bool)shouldAutorotate;
 - (void)showAlternateTracks;
 - (void)showLoadingIndicator;
-- (void)showOverlayAnimated:(BOOL)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)showOverlayAnimated:(bool)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)swipableViewHadActivity:(id)arg1;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
+- (bool)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)updateOverlayView;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

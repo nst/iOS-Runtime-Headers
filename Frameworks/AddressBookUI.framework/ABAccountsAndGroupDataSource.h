@@ -2,51 +2,55 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABModel, ACAccountStore, NSArray, NSDictionary;
+@class ABModel, ACAccountStore, NSArray, NSDictionary, NSString;
 
 @interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource> {
     NSArray *_accountDisplayNames;
     NSArray *_accountIdentifiers;
     ACAccountStore *_accountStore;
-    BOOL _dirty;
     NSDictionary *_groupsByAccountIdentifier;
-    BOOL _hidesGlobalGroupWrapper;
-    BOOL _hidesSearchableSources;
     ABModel *_model;
+    bool_dirty;
+    bool_hidesGlobalGroupWrapper;
+    bool_hidesSearchableSources;
 }
 
 @property(retain) ACAccountStore * accountStore;
-@property(getter=isDirty) BOOL dirty;
-@property BOOL hidesGlobalGroupWrapper;
-@property BOOL hidesSearchableSources;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(getter=isDirty) bool dirty;
+@property(readonly) unsigned long long hash;
+@property bool hidesGlobalGroupWrapper;
+@property bool hidesSearchableSources;
 @property(retain) ABModel * model;
+@property(readonly) Class superclass;
 
-- (id)accountDisplayNameAtIndex:(int)arg1;
+- (id)accountDisplayNameAtIndex:(long long)arg1;
 - (id)accountStore;
 - (void)cancelScheduledRefresh;
 - (void)dealloc;
 - (id)defaultGroupWrapper;
 - (id)groupWrapperForIndexPath:(id)arg1;
-- (BOOL)hidesGlobalGroupWrapper;
-- (BOOL)hidesSearchableSources;
+- (bool)hidesGlobalGroupWrapper;
+- (bool)hidesSearchableSources;
 - (id)indexPathForGroupWrapper:(id)arg1;
-- (BOOL)isDirty;
+- (bool)isDirty;
 - (id)model;
 - (id)newContactsFilterFromSelectedGroupWrappers;
-- (int)numberOfGroupsForAccountIdentifier:(id)arg1;
-- (int)numberOfGroupsInAccountAtIndex:(int)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfGroupsForAccountIdentifier:(id)arg1;
+- (long long)numberOfGroupsInAccountAtIndex:(long long)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadData;
-- (void)reloadDataIncludingAccountStore:(BOOL)arg1 usingArchivedState:(BOOL)arg2;
+- (void)reloadDataIncludingAccountStore:(bool)arg1 usingArchivedState:(bool)arg2;
 - (void)scheduleRefresh;
 - (void)setAccountStore:(id)arg1;
-- (void)setDirty:(BOOL)arg1;
-- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
-- (void)setHidesSearchableSources:(BOOL)arg1;
+- (void)setDirty:(bool)arg1;
+- (void)setHidesGlobalGroupWrapper:(bool)arg1;
+- (void)setHidesSearchableSources:(bool)arg1;
 - (void)setModel:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 
 @end

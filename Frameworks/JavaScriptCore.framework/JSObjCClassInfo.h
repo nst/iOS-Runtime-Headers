@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
@@ -16,7 +20,7 @@
         struct WeakImpl {} *m_impl; 
     boolm_block;
     Class m_class;
-    struct OpaqueJSClass { int x1; struct OpaqueJSClass {} *x2; struct OpaqueJSClass {} *x3; int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WTF::StringImpl>, WTF::OwnPtr<StaticValueEntry>, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<WTF::OwnPtr<StaticValueEntry> > > > { struct HashMap<WTF::RefPtr<WTF::StringImpl>, WTF::OwnPtr<StaticValueEntry>, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<WTF::OwnPtr<StaticValueEntry> > > {} *x_16_1_1; } x16; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WTF::StringImpl>, WTF::OwnPtr<StaticFunctionEntry>, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<WTF::OwnPtr<StaticFunctionEntry> > > > { struct HashMap<WTF::RefPtr<WTF::StringImpl>, WTF::OwnPtr<StaticFunctionEntry>, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<WTF::OwnPtr<StaticFunctionEntry> > > {} *x_17_1_1; } x17; } *m_classRef;
+    struct OpaqueJSClass { struct atomic<int> { /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*x_1_1_1; int x_1_1_2; } x1; struct OpaqueJSClass {} *x2; struct OpaqueJSClass {} *x3; int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WTF::StringImpl>, std::__1::unique_ptr<StaticValueEntry, std::__1::default_delete<StaticValueEntry> >, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<std::__1::unique_ptr<StaticValueEntry, std::__1::default_delete<StaticValueEntry> > > > > { struct HashMap<WTF::RefPtr<WTF::StringImpl>, std::__1::unique_ptr<StaticValueEntry, std::__1::default_delete<StaticValueEntry> >, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<std::__1::unique_ptr<StaticValueEntry, std::__1::default_delete<StaticValueEntry> > > > {} *x_16_1_1; } x16; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WTF::StringImpl>, std::__1::unique_ptr<StaticFunctionEntry, std::__1::default_delete<StaticFunctionEntry> >, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<std::__1::unique_ptr<StaticFunctionEntry, std::__1::default_delete<StaticFunctionEntry> > > > > { struct HashMap<WTF::RefPtr<WTF::StringImpl>, std::__1::unique_ptr<StaticFunctionEntry, std::__1::default_delete<StaticFunctionEntry> >, WTF::StringHash, WTF::HashTraits<WTF::RefPtr<WTF::StringImpl> >, WTF::HashTraits<std::__1::unique_ptr<StaticFunctionEntry, std::__1::default_delete<StaticFunctionEntry> > > > {} *x_17_1_1; } x17; } *m_classRef;
     } m_constructor;
     JSContext *m_context;
     } m_prototype;

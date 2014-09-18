@@ -13,19 +13,22 @@
 @property(readonly) NSArray * advisoryNotices;
 @property(readonly) double distance;
 @property(readonly) double expectedTravelTime;
+@property(getter=_geoRoute,readonly) GEORoute * geoRoute;
 @property(readonly) NSString * name;
 @property(readonly) MKPolyline * polyline;
 @property(readonly) NSArray * steps;
-@property(readonly) unsigned int transportType;
+@property(readonly) unsigned long long transportType;
 
 - (void).cxx_destruct;
+- (id)_geoRoute;
 - (id)_initWithGEORoute:(id)arg1;
+- (id)_maneuverImageForStep:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3;
 - (id)advisoryNotices;
 - (double)distance;
 - (double)expectedTravelTime;
 - (id)name;
 - (id)polyline;
 - (id)steps;
-- (unsigned int)transportType;
+- (unsigned long long)transportType;
 
 @end

@@ -8,13 +8,13 @@
     long long _actionType;
     NSString *_albumUUID;
     NSArray *_assetUUIDs;
-    int _cloudFeedContent;
+    long long _cloudFeedContent;
 }
 
 @property long long actionType;
 @property(copy) NSString * albumUUID;
 @property(retain) NSArray * assetUUIDs;
-@property int cloudFeedContent;
+@property long long cloudFeedContent;
 
 + (void)userDidDeleteSharedAlbum:(id)arg1;
 + (void)userDidDeleteSharedAssets:(id)arg1;
@@ -24,21 +24,21 @@
 + (void)userDidNavigateIntoImagePickerSharedAlbum:(id)arg1;
 + (void)userDidNavigateIntoSharedAlbum:(id)arg1;
 + (void)userDidReadCommentOnSharedAsset:(id)arg1;
-+ (void)userDidViewCloudFeedContent:(int)arg1;
++ (void)userDidViewCloudFeedContent:(long long)arg1;
 
 - (long long)actionType;
 - (id)albumUUID;
 - (id)assetUUIDs;
-- (int)cloudFeedContent;
+- (long long)cloudFeedContent;
 - (long long)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
-- (id)initFromXPCObject:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (void)run;
 - (void)runDaemonSide;
 - (void)setActionType:(long long)arg1;
 - (void)setAlbumUUID:(id)arg1;
 - (void)setAssetUUIDs:(id)arg1;
-- (void)setCloudFeedContent:(int)arg1;
+- (void)setCloudFeedContent:(long long)arg1;
 
 @end

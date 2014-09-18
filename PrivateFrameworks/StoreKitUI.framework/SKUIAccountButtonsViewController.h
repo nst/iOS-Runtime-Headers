@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIAccountButtonsDelegate>, SKUIAccountButtonsView, SKUIClientContext, SKUIColorScheme, SKUILink, UIAlertView;
+@class <SKUIAccountButtonsDelegate>, NSString, SKUIAccountButtonsView, SKUIClientContext, SKUILink;
 
-@interface SKUIAccountButtonsViewController : UIViewController <UIAlertViewDelegate> {
-    UIAlertView *_alertView;
+@interface SKUIAccountButtonsViewController : UIViewController <UINavigationControllerDelegate> {
     SKUIAccountButtonsView *_buttonsView;
     SKUIClientContext *_clientContext;
     <SKUIAccountButtonsDelegate> *_delegate;
@@ -14,10 +13,13 @@
 
 @property(retain) SKUILink * ECommerceLink;
 @property(retain) SKUIClientContext * clientContext;
-@property(copy) SKUIColorScheme * colorScheme;
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIAccountButtonsDelegate> * delegate;
-@property(getter=isGiftingHidden) BOOL giftingHidden;
-@property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
+@property(copy,readonly) NSString * description;
+@property(getter=isGiftingHidden) bool giftingHidden;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(getter=isTermsAndConditionsHidden) bool termsAndConditionsHidden;
 
 - (void).cxx_destruct;
 - (id)ECommerceLink;
@@ -36,22 +38,19 @@
 - (void)_termsAndConditionsButtonAction:(id)arg1;
 - (void)_usernameButtonAction:(id)arg1;
 - (void)_viewAppleID;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)clientContext;
-- (id)colorScheme;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isGiftingHidden;
-- (BOOL)isTermsAndConditionsHidden;
+- (bool)isGiftingHidden;
+- (bool)isTermsAndConditionsHidden;
 - (void)loadView;
+- (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setColorScheme:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setECommerceLink:(id)arg1;
-- (void)setGiftingHidden:(BOOL)arg1;
-- (void)setTermsAndConditionsHidden:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)setGiftingHidden:(bool)arg1;
+- (void)setTermsAndConditionsHidden:(bool)arg1;
 
 @end

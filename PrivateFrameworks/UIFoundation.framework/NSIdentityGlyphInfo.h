@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class UIFont;
+@class NSFont;
 
 @interface NSIdentityGlyphInfo : NSGlyphInfo {
-    UIFont *_font;
+    NSFont *_font;
     unsigned int _glyph;
 }
 
@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithGlyph:(unsigned int)arg1 forFont:(id)arg2 baseString:(id)arg3;
 
 @end

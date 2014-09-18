@@ -34,7 +34,7 @@
 - (void)executeSaveServerStateLocallyForSharingACLRelationships;
 - (void)executeSaveServerStateLocallyForSharingInvitationRelationships;
 - (void)executeSendServerPendingInvitationsForAlbumWithGUID;
-- (id)initFromXPCObject:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (long long)jobType;
 - (id)mstreamdInfoDictionary;
 - (long long)relationshipChangeType;
@@ -47,6 +47,6 @@
 - (void)setMstreamdInfoDictionary:(id)arg1;
 - (void)setRelationshipChangeType:(long long)arg1;
 - (void)setResendInvitationGUID:(id)arg1;
-- (BOOL)shouldArchiveXPCToDisk;
+- (bool)shouldArchiveXPCToDisk;
 
 @end

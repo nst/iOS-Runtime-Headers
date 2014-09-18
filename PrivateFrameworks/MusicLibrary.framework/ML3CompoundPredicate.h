@@ -8,7 +8,7 @@
     NSArray *_predicates;
 }
 
-@property(readonly) NSString * compoundOperatorJoiner;
+@property(copy,readonly) NSString * compoundOperatorJoiner;
 @property(retain) NSArray * predicates;
 
 + (id)predicateMatchingPredicates:(id)arg1;
@@ -19,11 +19,11 @@
 - (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicates:(id)arg1;
-- (BOOL)isDynamicForEntityClass:(Class)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDynamicForEntityClass:(Class)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (id)predicates;
 - (void)setPredicates:(id)arg1;

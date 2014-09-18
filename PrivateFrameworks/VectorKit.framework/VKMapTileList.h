@@ -9,21 +9,21 @@
 @class __end_;
 
 @interface VKMapTileList : NSObject {
-    /* Warning: unhandled struct encoding: '{vector<VKMapTile *, vk_allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, vk_allocator<VKMapTile *> >="__first_"^@}}' */ struct vector<VKMapTile *, vk_allocator<VKMapTile *> > { 
+    /* Warning: unhandled struct encoding: '{vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}}' */ struct vector<VKMapTile *, std::__1::allocator<VKMapTile *> > { 
         __end_ **__begin_; 
-    struct vector<VGLRect, vk_allocator<VGLRect> > { 
+    struct vector<VGLRect, std::__1::allocator<VGLRect> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
-        struct __compressed_pair<VGLRect *, vk_allocator<VGLRect> > { 
+        struct __compressed_pair<VGLRect *, std::__1::allocator<VGLRect> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
     } _list;
     float _maximumStyleZ;
-    } _rectList[29];
+    } _rectList[34];
 }
 
 @property(readonly) float maximumStyleZ;
-@property(readonly) unsigned int numTiles;
+@property(readonly) unsigned long long numTiles;
 @property(readonly) id* tileList;
 
 - (id).cxx_construct;
@@ -33,10 +33,10 @@
 - (void)consolidateList;
 - (id)init;
 - (float)maximumStyleZ;
-- (unsigned int)numRectForLayer:(unsigned int)arg1;
-- (unsigned int)numTiles;
-- (const struct { float x1; float x2; float x3; float x4; }*)rectListForLayer:(unsigned int)arg1;
-- (const struct vector<VGLRect, vk_allocator<VGLRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VGLRect *, vk_allocator<VGLRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)rectListVectorForLayer:(unsigned int)arg1;
+- (unsigned long long)numRectForLayer:(unsigned long long)arg1;
+- (unsigned long long)numTiles;
+- (const struct { float x1; float x2; float x3; float x4; }*)rectListForLayer:(unsigned long long)arg1;
+- (const struct vector<VGLRect, std::__1::allocator<VGLRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VGLRect *, std::__1::allocator<VGLRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)rectListVectorForLayer:(unsigned long long)arg1;
 - (id*)tileList;
 
 @end

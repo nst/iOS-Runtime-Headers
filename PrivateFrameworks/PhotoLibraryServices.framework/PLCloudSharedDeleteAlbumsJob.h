@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
-- (id)initFromXPCObject:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (void)run;
 - (void)runDaemonSide;
 - (void)setAlbumCloudGUIDsToDelete:(id)arg1;

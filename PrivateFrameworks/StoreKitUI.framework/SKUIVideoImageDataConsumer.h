@@ -2,29 +2,40 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
+@class SKUIColorScheme, UIColor;
 
 @interface SKUIVideoImageDataConsumer : SKUIImageDataConsumer {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
+    struct CGSize { 
+        double width; 
+        double height; 
+    unsigned long long _allowedOrientations;
     UIColor *_backgroundColor;
-    } _constraintSize;
-    BOOL _forcesPortrait;
+    SKUIColorScheme *_colorScheme;
+    } _landscapeSize;
+    } _portraitSize;
 }
 
+@property unsigned long long allowedOrientations;
 @property(retain) UIColor * backgroundColor;
-@property struct CGSize { float x1; float x2; } constraintSize;
-@property BOOL forcesPortrait;
+@property(retain) SKUIColorScheme * colorScheme;
+@property struct CGSize { double x1; double x2; } landscapeSize;
+@property struct CGSize { double x1; double x2; } portraitSize;
 
 - (void).cxx_destruct;
+- (unsigned long long)allowedOrientations;
 - (id)backgroundColor;
-- (struct CGSize { float x1; float x2; })constraintSize;
-- (BOOL)forcesPortrait;
-- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)colorScheme;
+- (id)imageForColor:(id)arg1 orientation:(unsigned long long)arg2;
 - (id)imageForImage:(id)arg1;
+- (struct CGSize { double x1; double x2; })landscapeSize;
+- (struct CGSize { double x1; double x2; })portraitSize;
+- (void)setAllowedOrientations:(unsigned long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setConstraintSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setForcesPortrait:(BOOL)arg1;
+- (void)setColorScheme:(id)arg1;
+- (void)setLandscapeSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPortraitSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -13,7 +13,7 @@
 + (id)responseWithResponse:(id)arg1 transaction:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_deserializeResponseBodyWithTransaction:(id)arg1;
+- (void)deserializeResponseBodyWithTransaction:(id)arg1;
 - (id)syncResponseData;
 
 @end

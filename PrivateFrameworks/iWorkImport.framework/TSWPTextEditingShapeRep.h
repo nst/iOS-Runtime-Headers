@@ -5,6 +5,6 @@
 @interface TSWPTextEditingShapeRep : TSWPShapeRep {
 }
 
-- (BOOL)shouldShowInvisiblePathHighlight;
+- (bool)shouldShowInvisiblePathHighlight;
 
 @end

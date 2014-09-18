@@ -12,9 +12,9 @@
 @property(readonly) NSURLCredential * credential;
 @property(readonly) NSURLProtectionSpace * protectionSpace;
 
+- (void).cxx_destruct;
 - (id)completion;
 - (id)credential;
-- (void)dealloc;
 - (id)initWithCredential:(id)arg1 protectionSpace:(id)arg2;
 - (id)initWithCredential:(id)arg1;
 - (id)protectionSpace;

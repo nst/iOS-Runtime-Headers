@@ -2,61 +2,52 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBRemoteDataProvider>, BBDataProviderIdentity, BBXPCIncomingConnection, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class <BBRemoteDataProvider>, <BBRemoteDataProviderServerProxy>, BBDataProviderIdentity, NSObject<OS_dispatch_queue>, NSString;
 
-@interface BBDataProviderProxy : NSObject <XPCProxyTarget, BBXPCConnectionDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    BBXPCIncomingConnection *_connection;
+@interface BBDataProviderProxy : NSObject <BBRemoteDataProviderClientProxy> {
+    NSObject<OS_dispatch_queue> *_clientCalloutQueue;
     <BBRemoteDataProvider> *_dataProvider;
-    BOOL _dataProviderDidLoad;
     BBDataProviderIdentity *_identity;
-    NSMutableArray *_pendingRequests;
+    NSObject<OS_dispatch_queue> *_proxyQueue;
     NSObject<OS_dispatch_queue> *_queue;
-    NSString *_sectionID;
+    <BBRemoteDataProviderServerProxy> *_serverProxy;
+    bool_connected;
+    bool_dataProviderDidLoad;
 }
 
-@property(retain) <BBRemoteDataProvider> * dataProvider;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) BBDataProviderIdentity * identity;
-@property(copy) NSString * sectionID;
+@property(readonly) Class superclass;
 
 - (void)_makeClientRequest:(id)arg1;
 - (void)_makeServerRequest:(id)arg1;
-- (void)_processPendingRequests;
-- (void)_queue_makeServerRequest:(id)arg1;
-- (id)_serverProxy;
-- (void)_updateIdentity:(id)arg1;
-- (void)addBulletin:(id)arg1 forDestinations:(unsigned int)arg2;
-- (void)addBulletin:(id)arg1 interrupt:(BOOL)arg2;
+- (void)addBulletin:(id)arg1 forDestinations:(unsigned long long)arg2;
+- (void)addBulletin:(id)arg1 interrupt:(bool)arg2;
 - (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id)arg2;
 - (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id)arg3;
 - (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id)arg3;
 - (void)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
-- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
-- (id)dataProvider;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (void)deliverBulletinActionResponse:(id)arg1;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (id)description;
 - (id)identity;
-- (id)initWithDataProvider:(id)arg1 identity:(id)arg2 queue:(id)arg3 dataProviderQueue:(id)arg4;
-- (void)invalidate;
+- (id)initWithDataProvider:(id)arg1 clientReplyQueue:(id)arg2;
 - (void)invalidateBulletins;
 - (void)modifyBulletin:(id)arg1;
 - (void)noteSectionInfoDidChange:(id)arg1;
-- (void)ping:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)reloadDefaultSectionInfo;
 - (void)reloadSectionParameters;
-- (void)resume;
-- (id)sectionID;
-- (void)sectionIdentityWithCompletion:(id)arg1;
-- (void)setConnection:(id)arg1;
-- (void)setDataProvider:(id)arg1;
 - (void)setIdentity:(id)arg1;
-- (void)setSectionID:(id)arg1;
+- (void)setServerProxy:(id)arg1;
 - (void)updateClearedInfoWithHandler:(id)arg1;
+- (void)updateIdentity:(id)arg1;
+- (void)updateSectionInfoInCategory:(long long)arg1 withHandler:(id)arg2 completion:(id)arg3;
+- (void)updateSectionInfoWithHandler:(id)arg1 completion:(id)arg2;
 - (void)updateSectionInfoWithHandler:(id)arg1;
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1;
 - (void)withdrawBulletinsWithRecordID:(id)arg1;

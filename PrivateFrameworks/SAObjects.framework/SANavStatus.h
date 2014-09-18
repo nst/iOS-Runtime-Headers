@@ -7,7 +7,11 @@
 @interface SANavStatus : AceObject <SABackgroundContextObject> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * statusValue;
+@property(readonly) Class superclass;
 
 + (id)navStatus;
 + (id)navStatusWithDictionary:(id)arg1 context:(id)arg2;

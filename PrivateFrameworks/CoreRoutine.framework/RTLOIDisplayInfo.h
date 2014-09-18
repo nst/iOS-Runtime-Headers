@@ -2,40 +2,41 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class GEOPlace, NSDate, NSString;
+@class <GEOMapItem>, NSDate, NSString;
 
 @interface RTLOIDisplayInfo : NSObject {
     NSDate *_arrival;
     NSDate *_deparature;
     double _eta;
+    <GEOMapItem> *_geoMapItem;
+    long long _modeOfTransportation;
     int _style;
-    int _type;
+    long long _type;
     NSString *_unknownTypeName;
-    GEOPlace *_urlPlace;
 }
 
 @property(readonly) NSDate * arrival;
 @property(readonly) NSDate * deparature;
 @property(readonly) double eta;
+@property(readonly) <GEOMapItem> * geoMapItem;
+@property(readonly) long long modeOfTransportation;
 @property(readonly) int style;
-@property(readonly) int type;
+@property(readonly) long long type;
 @property(readonly) NSString * unknownTypeName;
-@property(readonly) GEOPlace * urlPlace;
 
 - (void).cxx_destruct;
 - (id)arrival;
 - (id)deparature;
 - (id)description;
 - (double)eta;
-- (id)initWithArrivalStyle:(int)arg1 type:(int)arg2 urlPlace:(id)arg3 unknownTypeName:(id)arg4 arrival:(id)arg5 departure:(id)arg6;
-- (id)initWithDurationStyle:(int)arg1 type:(int)arg2 urlPlace:(id)arg3 unknownTypeName:(id)arg4 eta:(double)arg5;
-- (id)initWithStyle:(int)arg1 type:(int)arg2 urlPlace:(id)arg3 unknownTypeName:(id)arg4 eta:(double)arg5 arrival:(id)arg6 departure:(id)arg7;
-- (BOOL)isEquivalentToDisplayInfo:(id)arg1;
+- (id)geoMapItem;
+- (id)initWithStyle:(int)arg1 type:(long long)arg2 geoMapItem:(id)arg3 unknownTypeName:(id)arg4 eta:(double)arg5 arrival:(id)arg6 departure:(id)arg7 modeOfTransportation:(long long)arg8;
+- (bool)isEquivalentToDisplayInfo:(id)arg1;
 - (id)localizedDescription;
 - (id)mapsURL;
+- (long long)modeOfTransportation;
 - (int)style;
-- (int)type;
+- (long long)type;
 - (id)unknownTypeName;
-- (id)urlPlace;
 
 @end

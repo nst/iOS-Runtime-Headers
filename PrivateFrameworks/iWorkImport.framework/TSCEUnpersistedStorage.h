@@ -6,8 +6,8 @@
 }
 
 + (id)copyStorageUnpersisted:(id)arg1;
-+ (id)copyStorageUnpersistedCopyOnlyIfImmutable:(id)arg1;
 
+- (id)copyPersistedWithContext:(id)arg1;
 - (void)willModify;
 
 @end

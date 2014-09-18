@@ -9,7 +9,7 @@
     NSMutableArray *_devices;
     ExFATCameraDeviceManager *_exFATManager;
     MSCameraDeviceManager *_msDevManager;
-    int _numberOfBrowsingBrowsers;
+    long long _numberOfBrowsingBrowsers;
     PTPCameraDeviceManager *_ptpDevManager;
 }
 
@@ -17,7 +17,7 @@
 @property(readonly) NSMutableArray * devices;
 
 + (id)defaultBrowser;
-+ (BOOL)exists;
++ (bool)exists;
 
 - (void)addBrowser:(id)arg1;
 - (int)addExFATCamera:(id)arg1;

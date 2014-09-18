@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface WebAnimationDelegate : NSObject {
-    struct PlatformCALayer { unsigned int x1; struct PlatformCALayerClient {} *x2; int x3; struct OwnPtr<WTF::Vector<WTF::RefPtr<WebCore::PlatformCALayer>, 0, WTF::CrashOnOverflow> > { struct Vector<WTF::RefPtr<WebCore::PlatformCALayer>, 0, WTF::CrashOnOverflow> {} *x_4_1_1; } x4; struct RetainPtr<CALayer> { struct CALayer { Class x_1_2_1; struct _CALayerIvars { int x_2_3_1; unsigned int x_2_3_2; void *x_2_3_3; void *x_2_3_4[8]; } x_1_2_2; } *x_5_1_1; } x5; struct RetainPtr<NSObject> { struct NSObject { Class x_1_2_1; } *x_6_1_1; } x6; } *m_owner;
+    struct PlatformCALayer { int (**x1)(); unsigned int x2; int x3; unsigned long long x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct PlatformCALayerClient {} *x6; } *m_owner;
 }
 
 - (void)animationDidStart:(id)arg1;
-- (void)setOwner:(struct PlatformCALayer { unsigned int x1; struct PlatformCALayerClient {} *x2; int x3; struct OwnPtr<WTF::Vector<WTF::RefPtr<WebCore::PlatformCALayer>, 0, WTF::CrashOnOverflow> > { struct Vector<WTF::RefPtr<WebCore::PlatformCALayer>, 0, WTF::CrashOnOverflow> {} *x_4_1_1; } x4; struct RetainPtr<CALayer> { struct CALayer { Class x_1_2_1; struct _CALayerIvars { int x_2_3_1; unsigned int x_2_3_2; void *x_2_3_3; void *x_2_3_4[8]; } x_1_2_2; } *x_5_1_1; } x5; struct RetainPtr<NSObject> { struct NSObject { Class x_1_2_1; } *x_6_1_1; } x6; }*)arg1;
+- (void)setOwner:(struct PlatformCALayer { int (**x1)(); unsigned int x2; int x3; unsigned long long x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct PlatformCALayerClient {} *x6; }*)arg1;
 
 @end

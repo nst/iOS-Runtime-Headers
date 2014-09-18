@@ -8,9 +8,9 @@
     _IDSAccountController *_internal;
 }
 
-@property(readonly) NSSet * accounts;
+@property(retain,readonly) NSSet * accounts;
 
-- (id)_initWithService:(id)arg1 onIDSQueue:(BOOL)arg2;
+- (id)_initWithService:(id)arg1 onIDSQueue:(bool)arg2;
 - (id)_initWithService:(id)arg1;
 - (id)_internal;
 - (void)_removeAccount:(id)arg1;

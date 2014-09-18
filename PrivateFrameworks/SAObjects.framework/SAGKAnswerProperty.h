@@ -8,11 +8,15 @@
 }
 
 @property(retain) <SAClientBoundCommand> * command;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) SAUIDecoratedText * decoratedValue;
 @property(retain) SAUIDecoratedText * decoratedValueAnnotation;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * name;
 @property(retain) SAUIAppPunchOut * punchOut;
 @property(copy) NSNumber * selected;
+@property(readonly) Class superclass;
 @property(copy) NSString * value;
 @property(copy) NSString * valueAnnotation;
 

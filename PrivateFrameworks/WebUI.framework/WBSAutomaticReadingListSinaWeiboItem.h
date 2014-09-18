@@ -12,9 +12,9 @@
 @property(copy) NSString * originatorProfileImageURLString;
 @property(copy) NSString * profileURLComponent;
 
+- (void).cxx_destruct;
 - (id)_profileImageURLWithImageSizeString:(id)arg1;
 - (id)biggerOriginatorProfileImageURL;
-- (void)dealloc;
 - (id)initWithDictionary:(id)arg1 socialSourceAccountIdentifier:(id)arg2;
 - (id)originatorProfileImageURL;
 - (id)originatorProfileImageURLString;

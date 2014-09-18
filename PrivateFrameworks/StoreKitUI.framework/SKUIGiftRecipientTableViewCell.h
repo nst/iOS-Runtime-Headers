@@ -14,8 +14,12 @@
 }
 
 @property(copy) NSAttributedString * attributedPlaceholder;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
 @property(copy) NSArray * recipientAddresses;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void*)_addressBook;
@@ -27,21 +31,21 @@
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
-- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
 - (void)composeRecipientViewDidBecomeFirstResponder:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)label;
 - (void)layoutSubviews;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)presentPeoplePickerPopover:(id)arg1 animated:(BOOL)arg2;
-- (void)presentSearchResultsPopover:(id)arg1 animated:(BOOL)arg2;
+- (void)presentPeoplePickerPopover:(id)arg1 animated:(bool)arg2;
+- (void)presentSearchResultsPopover:(id)arg1 animated:(bool)arg2;
 - (id)recipientAddresses;
 - (void)recipientViewDidResignFirstResponder:(id)arg1;
 - (void)searchController:(id)arg1 didSelectRecipient:(id)arg2;
@@ -49,6 +53,6 @@
 - (void)setAttributedPlaceholder:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setRecipientAddresses:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

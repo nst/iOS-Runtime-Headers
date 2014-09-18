@@ -9,10 +9,8 @@
 
 - (id)bestValue:(id)arg1;
 - (id)defaultActionURL;
-- (id)displayLabel;
 - (id)displayStringForValue:(id)arg1;
-- (BOOL)isEquivalentToItem:(id)arg1;
+- (bool)isEquivalentToItem:(id)arg1;
 - (id)normalizedValue;
-- (void)updateLabeledValueWithStringValue:(id)arg1;
 
 @end

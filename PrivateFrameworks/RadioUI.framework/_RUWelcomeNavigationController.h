@@ -5,6 +5,6 @@
 @interface _RUWelcomeNavigationController : UINavigationController {
 }
 
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

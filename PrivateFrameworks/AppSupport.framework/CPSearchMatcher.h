@@ -17,10 +17,10 @@
 - (id)initWithSearchString:(id)arg1 andLocale:(id)arg2;
 - (id)initWithSearchString:(id)arg1 options:(int)arg2;
 - (id)initWithSearchString:(id)arg1;
-- (BOOL)matches:(id)arg1 matchType:(int)arg2;
-- (BOOL)matches:(id)arg1;
-- (BOOL)matchesASCIIString:(const char *)arg1 matchType:(int)arg2;
-- (BOOL)matchesUTF8String:(const char *)arg1 matchType:(int)arg2;
-- (BOOL)matchesUTF8String:(const char *)arg1;
+- (bool)matches:(id)arg1 matchType:(int)arg2;
+- (bool)matches:(id)arg1;
+- (bool)matchesASCIIString:(const char *)arg1 matchType:(int)arg2;
+- (bool)matchesUTF8String:(const char *)arg1 matchType:(int)arg2;
+- (bool)matchesUTF8String:(const char *)arg1;
 
 @end

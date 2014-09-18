@@ -2,28 +2,28 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class CUTWeakReference, NSDate;
+@class CUTWeakReference, NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface PCDispatchTimer : NSObject {
     NSDate *_fireDate;
     unsigned long long _fireTime;
-    BOOL _isValid;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
     SEL _selector;
     CUTWeakReference *_target;
-    struct dispatch_source_s { } *_timerSource;
+    NSObject<OS_dispatch_source> *_timerSource;
+    bool_isValid;
 }
 
 @property(retain) NSDate * fireDate;
-@property(readonly) BOOL isValid;
+@property(readonly) bool isValid;
 
 - (void)_callTarget;
 - (void)_cleanupTimer;
 - (void)dealloc;
 - (id)fireDate;
-- (id)initWithQueue:(struct dispatch_queue_s { }*)arg1 target:(id)arg2 selector:(SEL)arg3 fireTime:(unsigned long long)arg4;
+- (id)initWithQueue:(id)arg1 target:(id)arg2 selector:(SEL)arg3 fireTime:(unsigned long long)arg4;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)setFireDate:(id)arg1;
 - (void)start;
 

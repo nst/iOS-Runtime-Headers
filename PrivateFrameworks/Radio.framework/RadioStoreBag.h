@@ -15,12 +15,13 @@
     NSDictionary *_tiltDictionary;
 }
 
+@property(getter=isAdFreeRadioEnabled,readonly) bool adFreeRadioEnabled;
 @property(readonly) NSURL * baseURL;
 @property(readonly) NSString * mescalCertificateURLString;
 @property(readonly) NSString * mescalSetupURLString;
 @property(readonly) NSString * platformLookupURLString;
 @property(readonly) NSDictionary * radioConfigurationDictionary;
-@property(readonly) BOOL shouldSendKBSyncData;
+@property(readonly) bool shouldSendKBSyncData;
 @property(readonly) NSString * streamingDownloadURLString;
 
 - (void).cxx_destruct;
@@ -29,13 +30,14 @@
 - (id)_initWithURLBagDictionary:(id)arg1;
 - (id)_platformContext;
 - (id)baseURL;
+- (bool)isAdFreeRadioEnabled;
 - (id)mescalCertificateURLString;
 - (id)mescalSetupURLString;
 - (id)platformLookupURLString;
 - (id)radioConfigurationDictionary;
-- (BOOL)shouldMescalSignRequestWithURL:(id)arg1;
-- (BOOL)shouldMescalVerifyResponseFromURL:(id)arg1;
-- (BOOL)shouldSendKBSyncData;
+- (bool)shouldMescalSignRequestWithURL:(id)arg1;
+- (bool)shouldMescalVerifyResponseFromURL:(id)arg1;
+- (bool)shouldSendKBSyncData;
 - (id)streamingDownloadURLString;
 
 @end

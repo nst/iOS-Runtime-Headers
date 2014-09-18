@@ -15,10 +15,10 @@
 + (id)portInfoRequestWithInterfaceID:(unsigned int)arg1 key:(unsigned int)arg2;
 + (id)requestWithInterfaceID:(unsigned int)arg1 attributes:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)_bodyDataForAttributes:(id)arg1;
 - (id)_commandStringForCommand:(unsigned int)arg1;
 - (id)attributes;
-- (void)dealloc;
 - (id)initWithInterfaceID:(unsigned int)arg1 attributes:(id)arg2;
 - (unsigned int)interfaceID;
 

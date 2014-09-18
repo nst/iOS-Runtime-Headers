@@ -5,12 +5,12 @@
 @class MPAVRoutingController;
 
 @interface MPAVDestinationBrowser : NSObject {
-    BOOL _isScanning;
     MPAVRoutingController *_routingController;
-    BOOL _scansForDestinationsWhenEnteringForeground;
+    bool_isScanning;
+    bool_scansForDestinationsWhenEnteringForeground;
 }
 
-@property BOOL scansForDestinationsWhenEnteringForeground;
+@property bool scansForDestinationsWhenEnteringForeground;
 
 - (void).cxx_destruct;
 - (void)_beginScanningForDestinationsNotification:(id)arg1;
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (void)endScanningForDestinations;
 - (id)init;
-- (BOOL)scansForDestinationsWhenEnteringForeground;
-- (void)setScansForDestinationsWhenEnteringForeground:(BOOL)arg1;
+- (bool)scansForDestinationsWhenEnteringForeground;
+- (void)setScansForDestinationsWhenEnteringForeground:(bool)arg1;
 
 @end

@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSPlayInfoRequestDelegate>, SSPlayInfoRequestContext, SSPlayInfoResponse;
+@class <SSPlayInfoRequestDelegate>, NSString, SSPlayInfoRequestContext, SSPlayInfoResponse;
 
 @interface SSPlayInfoRequest : SSRequest <SSXPCCoding> {
     SSPlayInfoRequestContext *_context;
     SSPlayInfoResponse *_response;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SSPlayInfoRequestDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) SSPlayInfoRequestContext * playInfoContext;
 @property(readonly) SSPlayInfoResponse * playInfoResponse;
+@property(readonly) Class superclass;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;
@@ -20,7 +24,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)playInfoContext;
 - (id)playInfoResponse;
-- (BOOL)start;
+- (bool)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithPlayInfoResponseBlock:(id)arg1;
 

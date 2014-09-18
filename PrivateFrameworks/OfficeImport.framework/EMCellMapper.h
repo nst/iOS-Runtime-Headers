@@ -5,30 +5,31 @@
 @class EDReference;
 
 @interface EMCellMapper : CMMapper {
+    boolfirstCellFlag;
+    boolspreadLeftFlag;
     int columnSpan;
     double columnWidth;
-    struct EDCellHeader { unsigned short x1; unsigned int x2; } *edCell;
+    struct EDCellHeader { unsigned int x1; unsigned int x2; } *edCell;
     EDReference *edMergedCellReference;
-    BOOL firstCellFlag;
     int firstColumn;
     int lastColumn;
     int rowNumber;
-    BOOL spreadLeftFlag;
 }
 
-- (void)adjustColumnSpanForGrid:(double*)arg1 columnCount:(unsigned int)arg2 nextCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg3 withState:(id)arg4;
++ (bool)isCellEmpty:(struct EDCellHeader { unsigned int x1; unsigned int x2; }*)arg1;
+
+- (void)adjustColumnSpanForGrid:(double*)arg1 columnCount:(unsigned long long)arg2 nextCell:(struct EDCellHeader { unsigned int x1; unsigned int x2; }*)arg3 withState:(id)arg4;
 - (int)columnSpan;
 - (double)columnWidth;
 - (int)firstColumn;
-- (id)initWithEDCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2 parent:(id)arg3 state:(id)arg4;
+- (id)initWithEDCell:(struct EDCellHeader { unsigned int x1; unsigned int x2; }*)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2 parent:(id)arg3 state:(id)arg4;
 - (id)initWithParent:(id)arg1;
-- (BOOL)isCellEmpty;
-- (BOOL)isCellMerged;
-- (BOOL)isCellSpreading:(id)arg1;
-- (BOOL)isFirstCell;
+- (bool)isCellEmpty;
+- (bool)isCellMerged;
+- (bool)isCellSpreading:(id)arg1;
+- (bool)isFirstCell;
 - (int)lastColumn;
-- (void)mapAt:(id)arg1 withState:(id)arg2 height:(double)arg3;
-- (void)mapAt:(id)arg1 withState:(id)arg2;
+- (void)mapAt:(id)arg1 withState:(id)arg2 height:(double)arg3 nextCell:(struct EDCellHeader { unsigned int x1; unsigned int x2; }*)arg4;
 - (id)mapHyperlinkAt:(id)arg1;
 - (void)mapRowColSpansAt:(id)arg1 withState:(id)arg2;
 - (void)resetColumnSpan:(int)arg1;

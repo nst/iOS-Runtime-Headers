@@ -7,21 +7,22 @@
 @interface EKRelation : NSObject {
     NSString *_entityName;
     NSString *_inversePropertyName;
-    BOOL _ownsRelated;
-    BOOL _toMany;
+    bool_ownsRelated;
+    bool_toMany;
 }
 
 @property(readonly) NSString * inversePropertyName;
-@property(readonly) BOOL ownsRelatedObject;
-@property(readonly) BOOL toMany;
+@property(readonly) bool ownsRelatedObject;
+@property(readonly) bool toMany;
 
-+ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
-+ (id)relationWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3;
++ (id)relationWithEntityName:(id)arg1 toMany:(bool)arg2 inversePropertyName:(id)arg3 ownsRelated:(bool)arg4;
++ (id)relationWithEntityName:(id)arg1 toMany:(bool)arg2 inversePropertyName:(id)arg3;
 
 - (void)dealloc;
-- (id)initWithEntityName:(id)arg1 toMany:(BOOL)arg2 inversePropertyName:(id)arg3 ownsRelated:(BOOL)arg4;
+- (id)description;
+- (id)initWithEntityName:(id)arg1 toMany:(bool)arg2 inversePropertyName:(id)arg3 ownsRelated:(bool)arg4;
 - (id)inversePropertyName;
-- (BOOL)ownsRelatedObject;
-- (BOOL)toMany;
+- (bool)ownsRelatedObject;
+- (bool)toMany;
 
 @end

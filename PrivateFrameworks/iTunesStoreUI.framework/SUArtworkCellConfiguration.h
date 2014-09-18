@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary, NSString;
 
 @interface SUArtworkCellConfiguration : SUArrayCellConfiguration <ISStoreURLOperationDelegate> {
     NSMutableDictionary *_artworkByURL;
     NSMutableArray *_artworkLoadOperations;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)copyDefaultContext;
 

@@ -23,7 +23,7 @@
 - (id)defaultsDictionary;
 - (void)emojiUsed:(id)arg1;
 - (id)initWithInputView:(id)arg1;
-- (BOOL)isAncientSequence:(int)arg1;
+- (bool)isAncientSequence:(int)arg1;
 - (id)lastCategory;
 - (id)lastViewedCategory;
 - (id)recents;

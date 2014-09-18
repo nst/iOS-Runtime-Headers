@@ -4,60 +4,60 @@
 
 @interface TSDBezierNode : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
+    boolmSelected;
     } mIn;
     } mNode;
     } mOut;
     int mReflectedState;
-    BOOL mSelected;
     int mType;
 }
 
-@property struct CGPoint { float x1; float x2; } inControlPoint;
-@property(readonly) BOOL isCollapsed;
-@property struct CGPoint { float x1; float x2; } nodePoint;
-@property struct CGPoint { float x1; float x2; } outControlPoint;
+@property struct CGPoint { double x1; double x2; } inControlPoint;
+@property(readonly) bool isCollapsed;
+@property struct CGPoint { double x1; double x2; } nodePoint;
+@property struct CGPoint { double x1; double x2; } outControlPoint;
 @property int reflectedState;
-@property(getter=isSelected) BOOL selected;
+@property(getter=isSelected) bool selected;
 @property int type;
 
-+ (id)bezierNodeWithPoint:(struct CGPoint { float x1; float x2; })arg1 inControlPoint:(struct CGPoint { float x1; float x2; })arg2 outControlPoint:(struct CGPoint { float x1; float x2; })arg3;
-+ (id)bezierNodeWithPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)bezierNodeWithPoint:(struct CGPoint { double x1; double x2; })arg1 inControlPoint:(struct CGPoint { double x1; double x2; })arg2 outControlPoint:(struct CGPoint { double x1; double x2; })arg3;
++ (id)bezierNodeWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 - (void)balanceControlPoints;
 - (void)collapse;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })inControlPoint;
-- (BOOL)isCollapsed;
-- (BOOL)isSelected;
-- (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })nodePoint;
-- (struct CGPoint { float x1; float x2; })outControlPoint;
+- (struct CGPoint { double x1; double x2; })inControlPoint;
+- (bool)isCollapsed;
+- (bool)isSelected;
+- (void)moveToPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })nodePoint;
+- (struct CGPoint { double x1; double x2; })outControlPoint;
 - (int)reflectedState;
 - (id)reflectedStateString;
-- (void)setInControlPoint:(struct CGPoint { float x1; float x2; })arg1 reflect:(int)arg2 constrain:(BOOL)arg3;
-- (void)setInControlPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setInControlPointFromReflection:(struct CGPoint { float x1; float x2; })arg1 constrain:(BOOL)arg2;
-- (void)setNode:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setNodePoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setOutControlPoint:(struct CGPoint { float x1; float x2; })arg1 reflect:(int)arg2 constrain:(BOOL)arg3;
-- (void)setOutControlPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInControlPoint:(struct CGPoint { double x1; double x2; })arg1 reflect:(int)arg2 constrain:(bool)arg3;
+- (void)setInControlPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInControlPointFromReflection:(struct CGPoint { double x1; double x2; })arg1 constrain:(bool)arg2;
+- (void)setNode:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setNodePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOutControlPoint:(struct CGPoint { double x1; double x2; })arg1 reflect:(int)arg2 constrain:(bool)arg3;
+- (void)setOutControlPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setReflectedState:(int)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setType:(int)arg1;
 - (void)swapControlPoints;
-- (void)transformUsingAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)transformUsingAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (int)type;
 - (id)typeString;
-- (BOOL)underPoint:(struct CGPoint { float x1; float x2; })arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
+- (bool)underPoint:(struct CGPoint { double x1; double x2; })arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 andTolerance:(double)arg3 returningType:(long long*)arg4;
 - (void)updateReflectedState;
 
 @end

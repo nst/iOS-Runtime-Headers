@@ -2,23 +2,24 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSMutableData;
+@class PBMutableData;
 
 @interface PBDataWriter : NSObject {
-    NSMutableData *_data;
+    PBMutableData *_data;
 }
 
 - (id)data;
 - (void)dealloc;
+- (id)immutableData;
 - (id)init;
-- (unsigned int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (void)writeBOOL:(BOOL)arg1 forTag:(unsigned short)arg2;
+- (unsigned long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
+- (void)writeBOOL:(bool)arg1 forTag:(unsigned short)arg2;
 - (void)writeBareVarint:(unsigned long long)arg1;
 - (void)writeBigEndianFixed16:(unsigned short)arg1;
 - (void)writeBigEndianFixed32:(unsigned int)arg1;
 - (void)writeBigEndianShortThenString:(id)arg1;
 - (void)writeData:(id)arg1 forTag:(unsigned short)arg2;
-- (BOOL)writeData:(id)arg1;
+- (bool)writeData:(id)arg1;
 - (void)writeDouble:(double)arg1 forTag:(unsigned short)arg2;
 - (void)writeFixed32:(unsigned int)arg1 forTag:(unsigned short)arg2;
 - (void)writeFixed64:(unsigned long long)arg1 forTag:(unsigned short)arg2;

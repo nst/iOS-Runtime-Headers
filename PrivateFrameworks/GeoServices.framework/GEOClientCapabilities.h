@@ -12,19 +12,19 @@
     NSString *_appMinorVersion;
     NSString *_hardwareModel;
     } _has;
-    BOOL _internalInstall;
     int _maxManeuverTypeSupported;
+    bool_internalInstall;
 }
 
 @property(retain) NSString * appMajorVersion;
 @property(retain) NSString * appMinorVersion;
 @property(retain) NSString * hardwareModel;
-@property(readonly) BOOL hasAppMajorVersion;
-@property(readonly) BOOL hasAppMinorVersion;
-@property(readonly) BOOL hasHardwareModel;
-@property BOOL hasInternalInstall;
-@property BOOL hasMaxManeuverTypeSupported;
-@property BOOL internalInstall;
+@property(readonly) bool hasAppMajorVersion;
+@property(readonly) bool hasAppMinorVersion;
+@property(readonly) bool hasHardwareModel;
+@property bool hasInternalInstall;
+@property bool hasMaxManeuverTypeSupported;
+@property bool internalInstall;
 @property int maxManeuverTypeSupported;
 
 - (id)appMajorVersion;
@@ -35,22 +35,23 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)hardwareModel;
-- (BOOL)hasAppMajorVersion;
-- (BOOL)hasAppMinorVersion;
-- (BOOL)hasHardwareModel;
-- (BOOL)hasInternalInstall;
-- (BOOL)hasMaxManeuverTypeSupported;
-- (unsigned int)hash;
-- (BOOL)internalInstall;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAppMajorVersion;
+- (bool)hasAppMinorVersion;
+- (bool)hasHardwareModel;
+- (bool)hasInternalInstall;
+- (bool)hasMaxManeuverTypeSupported;
+- (unsigned long long)hash;
+- (bool)internalInstall;
+- (bool)isEqual:(id)arg1;
 - (int)maxManeuverTypeSupported;
-- (BOOL)readFrom:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setAppMinorVersion:(id)arg1;
 - (void)setHardwareModel:(id)arg1;
-- (void)setHasInternalInstall:(BOOL)arg1;
-- (void)setHasMaxManeuverTypeSupported:(BOOL)arg1;
-- (void)setInternalInstall:(BOOL)arg1;
+- (void)setHasInternalInstall:(bool)arg1;
+- (void)setHasMaxManeuverTypeSupported:(bool)arg1;
+- (void)setInternalInstall:(bool)arg1;
 - (void)setMaxManeuverTypeSupported:(int)arg1;
 - (void)writeTo:(id)arg1;
 

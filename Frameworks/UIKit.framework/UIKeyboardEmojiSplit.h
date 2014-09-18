@@ -2,29 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableView, UIView;
+@class NSString, UITableView, UIView;
 
 @interface UIKeyboardEmojiSplit : UIKBKeyView <UITableViewDelegate, UITableViewDataSource, UIKeyboardEmojiPressIndicationDelegate> {
     UITableView *_picker;
     UIView *_pressIndicator;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) UITableView * picker;
 @property(retain) UIView * pressIndicator;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)defaultIndexPath;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)installPressIndicatorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)installPressIndicatorAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)picker;
 - (id)pressIndicator;
 - (void)removePressIndicator;
 - (void)setPressIndicator:(id)arg1;
-- (BOOL)shouldCache;
+- (bool)shouldCache;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

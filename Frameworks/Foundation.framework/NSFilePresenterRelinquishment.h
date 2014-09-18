@@ -13,7 +13,7 @@
     id _reacquirer;
 }
 
-- (BOOL)addBlockingAccessClaimID:(id)arg1;
+- (bool)addBlockingAccessClaimID:(id)arg1;
 - (void)dealloc;
 - (void)removeAllBlockingAccessClaimIDs;
 - (void)removeBlockingAccessClaimID:(id)arg1 thenContinue:(id)arg2;

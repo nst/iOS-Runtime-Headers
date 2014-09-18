@@ -5,49 +5,49 @@
 @class CALayer<TSCH3DGLLayer>, TSCH3DChartRenderPresenter, TSCH3DGLFramebuffer, TSCH3DSceneRenderPipeline;
 
 @interface TSCH3DChartRenderCycle : NSObject {
-    BOOL mHasFramebuffer;
+    boolmHasFramebuffer;
     TSCH3DSceneRenderPipeline *mPipeline;
     TSCH3DChartRenderPresenter *mPresenter;
     TSCH3DChartRenderPresenter *mRenderPresenterToRestore;
 }
 
 @property(readonly) TSCH3DGLFramebuffer * framebuffer;
-@property(readonly) BOOL hasFramebuffer;
+@property(readonly) bool hasFramebuffer;
 @property(readonly) CALayer<TSCH3DGLLayer> * layer;
 @property(readonly) TSCH3DSceneRenderPipeline * pipeline;
 @property(readonly) TSCH3DChartRenderPresenter * presenter;
 
 + (id)renderCycleWithRenderCycleInfo:(const struct RenderCycleInfo { id x1; id x2; id x3; }*)arg1;
 
-- (BOOL)allocateFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg1;
-- (BOOL)allocateLayerBasedFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg1;
-- (void)beginInteractiveModeWithMinimumBufferSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)cleanupRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; BOOL x5; }*)arg1;
+- (bool)allocateFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; }*)arg1;
+- (bool)allocateLayerBasedFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; }*)arg1;
+- (void)beginInteractiveModeWithMinimumBufferSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)cleanupRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; boolx5; }*)arg1;
 - (void)copyFromChartRenderCycle:(id)arg1;
 - (void)dealloc;
 - (void)destroyFramebuffer;
 - (void)endInteractiveMode;
 - (id)framebuffer;
-- (BOOL)hasFramebuffer;
+- (bool)hasFramebuffer;
 - (id)initWithRenderCycleInfo:(const struct RenderCycleInfo { id x1; id x2; id x3; }*)arg1;
 - (id)layer;
 - (Class)layerCacheLogicClass;
 - (Class)layerClass;
-- (void)layoutWithBoundsSpaces:(const struct ChartProjectedBoundsSpaces { struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_1_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_1_1_2; } x1; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_2_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_2_1_2; } x2; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_3_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_3_1_2; } x3; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_4_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_4_1_2; } x4; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_5_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_5_1_2; } x5; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_6_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_6_1_2; } x6; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_7_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_7_1_2; } x7; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_8_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_8_1_2; } x8; }*)arg1 scale:(float)arg2;
-- (unsigned int)multisamples;
+- (void)layoutWithBoundsSpaces:(const struct ChartProjectedBoundsSpaces { struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_1_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_1_1_2; } x1; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_2_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_2_1_2; } x2; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_3_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_3_1_2; } x3; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_4_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_4_1_2; } x4; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_5_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_5_1_2; } x5; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_6_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_6_1_2; } x6; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_7_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_7_1_2; } x7; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_8_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_8_1_2; } x8; }*)arg1 scale:(float)arg2 offsetFromLayerRelativeToBodyCanvas:(struct CGPoint { double x1; double x2; })arg3;
+- (unsigned long long)multisamples;
 - (void)p_setRenderPresenter:(id)arg1;
 - (id)pipeline;
-- (void)presentRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; BOOL x5; }*)arg1;
+- (void)presentRenderingWithPresenterInfo:(const struct PresenterInfo { id x1; struct CGContext {} *x2; float x3; id x4; boolx5; }*)arg1;
 - (id)presenter;
 - (void)restoreDefaultRenderPresenter;
-- (BOOL)runPipeline:(id)arg1;
-- (void)setLayerVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)runPipeline:(id)arg1;
+- (void)setVisibleBoundsInLayerRelativeSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)setup;
-- (BOOL)setupLayerFromLayerProvider:(id)arg1 canvas:(id)arg2 visible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 pixelAlignmentLayer:(id)arg4;
-- (void)setupOptionalTextureSizeHintUsingCanvasChartBodyBoundsWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg1;
-- (BOOL)shouldDiscardRenderbuffers;
-- (BOOL)shouldRenderLegendIntoSeparateLayer;
+- (bool)setupLayerFromLayerProvider:(id)arg1 canvas:(id)arg2 visible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 pixelAlignmentLayer:(id)arg4;
+- (void)setupOptionalTextureSizeHintUsingCanvasChartBodyBoundsWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; }*)arg1;
+- (bool)shouldDiscardRenderbuffers;
+- (bool)shouldRenderLegendIntoSeparateLayer;
 - (void)switchToRenderPresenter:(id)arg1;
-- (BOOL)usesMultipassRendering;
+- (bool)usesMultipassRendering;
 
 @end

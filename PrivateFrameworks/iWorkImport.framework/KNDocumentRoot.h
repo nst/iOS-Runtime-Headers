@@ -7,48 +7,52 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <KNDocumentRootDelegate>, KNRecordingSyncMaintainer, KNShow, KNSlidePreviewManager, KNThumbnailManager;
+@class <KNDocumentRootDelegate>, KNRecordingSyncMaintainer, KNShow, KNSlidePreviewManager, KNThumbnailManager, NSString;
 
-@interface KNDocumentRoot : TSADocumentRoot <TSKModel, TSCHCommandLifecycleDelegate, TSTResolverContainerNameProvider> {
-    BOOL mIsObservingRecording;
+@interface KNDocumentRoot : TSADocumentRoot <TSKModel, TSTResolverContainerNameProvider> {
+    boolmIsObservingRecording;
     KNRecordingSyncMaintainer *mRecordingSyncMaintainer;
     KNShow *mShow;
     KNSlidePreviewManager *mSlidePreviewManager;
     KNThumbnailManager *mThumbnailManager;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <KNDocumentRootDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) KNShow * show;
+@property(readonly) Class superclass;
 
-+ (Class)commandControllerClass;
 + (void)localizeModelObject:(id)arg1 withTemplateBundle:(id)arg2;
 
 - (id)UIStateForChart:(id)arg1;
-- (unsigned int)applicationType;
-- (void)changeShowSizeTo:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned long long)applicationType;
+- (void)changeShowSizeTo:(struct CGSize { double x1; double x2; })arg1;
 - (id)childEnumerator;
+- (long long)compareLocationSortingInfo:(id)arg1 toSortingInfo:(id)arg2;
 - (id)createViewStateRoot;
 - (void)dealloc;
-- (void)didCommitChartCommand:(id)arg1;
 - (void)documentDidLoad;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isMultiPageForQuickLook;
+- (bool)isMultiPageForQuickLook;
 - (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)nameForResolverContainer:(id)arg1;
 - (void)p_applicationDidBecomeActive:(id)arg1;
 - (void)p_applicationWillResignActive:(id)arg1;
+- (id)p_buildsNeedingBuildOrChunkUpdateForChanges:(id)arg1;
 - (void)prepareForSavingAsTemplate;
 - (void)preprocessForSaveAsTheme;
 - (id)protected_defaultTextPresetOrdering;
-- (id)resizeCommandForSlideNode:(id)arg1 fromOldSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)resolverContainerForName:(id)arg1 caseSensitive:(BOOL)arg2;
+- (id)resizeCommandForSlideNode:(id)arg1 fromOldSize:(struct CGSize { double x1; double x2; })arg2 transformedObjects:(id)arg3;
+- (id)resolverContainerForName:(id)arg1 caseSensitive:(bool)arg2;
 - (id)resolverContainerNameForResolver:(id)arg1;
 - (id)resolverContainerNamesMatchingPrefix:(id)arg1;
 - (id)resolverMatchingName:(id)arg1 contextContainerName:(id)arg2;
 - (id)resolverMatchingName:(id)arg1 contextResolver:(id)arg2;
 - (id)resolversMatchingPrefix:(id)arg1;
-- (unsigned int)rootSearchTargetCountThroughIndex:(unsigned int)arg1;
+- (unsigned long long)rootSearchTargetCountThroughIndex:(unsigned long long)arg1;
 - (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DocumentArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -56,13 +60,17 @@
 - (void)setTheme:(id)arg1;
 - (void)setThemeForTemplateImport:(id)arg1;
 - (void)setUIState:(id)arg1 forChart:(id)arg2;
-- (BOOL)shouldAllowDrawableInGroups:(id)arg1 forImport:(BOOL)arg2;
+- (bool)shouldAllowDrawableInGroups:(id)arg1 forImport:(bool)arg2;
+- (bool)shouldShowComments;
 - (id)show;
 - (id)stylesheet;
 - (id)theme;
+- (void)updateBuildChunksAndBuildsForChanges:(id)arg1 executingCommandsInSequenceWithBlock:(id)arg2;
 - (void)upgradeTextStylesForUnity;
+- (id)warningLocationDescriptionForAffectedObjects:(id)arg1 sortingInfo:(id*)arg2;
 - (void)willClose;
-- (void)willCommitChartCommand:(id)arg1;
-- (void)withRootSearchTargetAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;
+- (void)withRootSearchTargetAtIndex:(unsigned long long)arg1 executeBlock:(id)arg2;
+- (unsigned long long)writingDirection;
+- (unsigned long long)writingDirectionForStorage;
 
 @end

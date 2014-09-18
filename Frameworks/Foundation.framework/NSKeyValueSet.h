@@ -10,13 +10,13 @@
     NSKeyValueNonmutatingSetMethodSet *_methods;
 }
 
-+ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned long long x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 + (id)_proxyShare;
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (struct { id x1; id x2; })_proxyLocator;
 - (void)_proxyNonGCFinalize;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)member:(id)arg1;
 - (id)objectEnumerator;

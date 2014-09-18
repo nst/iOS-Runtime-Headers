@@ -2,24 +2,33 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString, UILabel;
+@class NSAttributedString, UIButton;
 
-@interface CKTranscriptStatusCell : CKTranscriptCell {
-    UILabel *_label;
+@interface CKTranscriptStatusCell : CKTranscriptLabelCell {
+    double _prevBalloonWidth;
+    UIButton *_statusButton;
 }
 
-@property(copy) NSAttributedString * attributedText;
-@property(retain) UILabel * label;
+@property(copy) NSAttributedString * attributedButtonText;
+@property double prevBalloonWidth;
+@property(retain) UIButton * statusButton;
 
-- (id)attributedText;
-- (void)configureForRow:(id)arg1;
-- (void)configureForRowObject:(id)arg1;
++ (id)statusButton;
++ (void)transitionFromView:(id)arg1 toView:(id)arg2 duration:(double)arg3 options:(unsigned long long)arg4 completion:(id)arg5;
++ (void)zoomAnimation:(id)arg1 completion:(id)arg2;
+
+- (id)attributedButtonText;
+- (void)configureForChatItem:(id)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)label;
-- (void)layoutSubviewsForContents;
-- (void)setAttributedText:(id)arg1;
-- (void)setLabel:(id)arg1;
-- (void)startZoomInAnimation;
+- (void)layoutSubviewsForAlignmentContents;
+- (void)performInsertion:(id)arg1;
+- (void)performReload:(id)arg1 completion:(id)arg2;
+- (void)performRemoval:(id)arg1;
+- (double)prevBalloonWidth;
+- (void)setAttributedButtonText:(id)arg1;
+- (void)setOrientation:(BOOL)arg1;
+- (void)setPrevBalloonWidth:(double)arg1;
+- (void)setStatusButton:(id)arg1;
+- (id)statusButton;
 
 @end

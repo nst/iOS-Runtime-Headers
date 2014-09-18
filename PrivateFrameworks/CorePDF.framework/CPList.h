@@ -7,12 +7,12 @@
 @interface CPList : NSObject <CPDisposable> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct __CFArray { } *items;
     unsigned int ordinalPrefixLength;
@@ -25,16 +25,16 @@
 @property unsigned int ordinalPrefixLength;
 @property unsigned int ordinalSuffixLength;
 @property(retain) CPListItem * parentItem;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } spacer;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } spacer;
 @property int type;
 
 - (void)addItem:(id)arg1;
-- (BOOL)containsParagraph:(id)arg1;
+- (bool)containsParagraph:(id)arg1;
 - (void)dealloc;
 - (void)dispose;
 - (void)finalize;
 - (id)init;
-- (BOOL)isMultilevel;
+- (bool)isMultilevel;
 - (id)itemAtIndex:(unsigned int)arg1;
 - (unsigned int)itemCount;
 - (unsigned int)ordinalPrefixLength;
@@ -43,9 +43,9 @@
 - (void)setOrdinalPrefixLength:(unsigned int)arg1;
 - (void)setOrdinalSuffixLength:(unsigned int)arg1;
 - (void)setParentItem:(id)arg1;
-- (void)setSpacer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSpacer:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setType:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })spacer;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })spacer;
 - (int)type;
 
 @end

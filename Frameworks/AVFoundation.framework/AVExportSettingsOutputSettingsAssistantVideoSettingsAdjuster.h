@@ -9,7 +9,12 @@
     NSString *_outputSettingsPresetIdentifier;
 }
 
-- (int)averageBitRateForSourceDimensions:(struct CGSize { float x1; float x2; })arg1 andTargetFrameRate:(float)arg2;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (long long)averageBitRateForSourceDimensions:(struct CGSize { double x1; double x2; })arg1 andTargetFrameRate:(float)arg2;
 - (void)dealloc;
 - (id)initWithOutputSettingsPreset:(id)arg1;
 

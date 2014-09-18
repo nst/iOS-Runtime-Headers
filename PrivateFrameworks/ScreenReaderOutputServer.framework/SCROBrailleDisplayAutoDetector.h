@@ -5,9 +5,9 @@
 @class NSMutableDictionary;
 
 @interface SCROBrailleDisplayAutoDetector : NSObject {
-    BOOL _isDetectingDisplays;
     NSMutableDictionary *_iteratorDict;
     struct IONotificationPort { } *_notificationPort;
+    bool_isDetectingDisplays;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -18,10 +18,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)detectDisplays;
 - (id)init;
-- (BOOL)isAutoDetectEnabled;
+- (bool)isAutoDetectEnabled;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)stopDetectingDisplays;
 
 @end

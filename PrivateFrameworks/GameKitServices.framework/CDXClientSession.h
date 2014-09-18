@@ -16,7 +16,7 @@
     NSData *lastSent_;
     NSMutableIndexSet *participantsInFlight_;
     unsigned char pid_;
-    int retransmitAttempts_;
+    long long retransmitAttempts_;
     NSObject<OS_dispatch_source> *retransmitTimer_;
     unsigned short seq_;
     NSData *sessionKeyPrepped_;
@@ -24,11 +24,11 @@
     NSData *ticket_;
 }
 
-@property(readonly) CDXClient * CDXClient;
+@property(retain,readonly) CDXClient * CDXClient;
 @property <CDXClientSessionDelegate> * delegate;
 @property(copy) id inboundHandler;
-@property(readonly) NSIndexSet * participantsInFlight;
-@property(readonly) NSData * sessionKey;
+@property(copy,readonly) NSIndexSet * participantsInFlight;
+@property(copy,readonly) NSData * sessionKey;
 @property(copy) NSData * ticket;
 
 - (id)CDXClient;
@@ -42,10 +42,10 @@
 - (id)participantsInFlight;
 - (void)recvRaw:(id)arg1 ticket:(id)arg2;
 - (void)resetRetransmitTimer;
-- (BOOL)retransmitEvent;
-- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
-- (BOOL)sendData:(id)arg1;
-- (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
+- (bool)retransmitEvent;
+- (bool)sendData:(id)arg1 toParticipants:(id)arg2;
+- (bool)sendData:(id)arg1;
+- (bool)sendRaw:(id)arg1 toParticipants:(id)arg2;
 - (id)sessionKey;
 - (void)setDelegate:(id)arg1;
 - (void)setInboundHandler:(id)arg1;

@@ -6,24 +6,25 @@
 
 @interface MusicTabBarController : UITabBarController {
     NSArray *_customizableViewControllerIdentifiers;
-    BOOL _displayEmptyTabs;
-    BOOL _isVisible;
     <UINavigationControllerDelegate> *_navigationControllerDelegate;
-    BOOL _needsReloadWhenBecomingVisible;
     NSArray *_orderedViewControllerIdentifiers;
     UINavigationController *_radioNavigationController;
     MusicRadioViewController *_radioViewController;
-    BOOL _supportsTransiency;
+    NSArray *_visibleViewControllerIdentifiers;
+    bool_displayEmptyTabs;
+    bool_isVisible;
+    bool_needsReloadWhenBecomingVisible;
+    bool_supportsTransiency;
 }
 
 @property(copy) NSArray * customizableViewControllerIdentifiers;
 @property <MusicTabBarControllerDelegate> * delegate;
-@property BOOL displayEmptyTabs;
+@property bool displayEmptyTabs;
 @property <UINavigationControllerDelegate> * navigationControllerDelegate;
 @property(copy) NSArray * orderedViewControllerIdentifiers;
 @property(readonly) UINavigationController * radioNavigationController;
 @property(readonly) MusicRadioViewController * radioViewController;
-@property BOOL supportsTransiency;
+@property bool supportsTransiency;
 @property(readonly) NSArray * visibleViewControllerIdentifiers;
 
 + (Class)_moreNavigationControllerClass;
@@ -36,14 +37,15 @@
 - (id)_navigationControllerForNavigationIdentifier:(id)arg1;
 - (id)_navigationControllerIdentifierForViewControllerIdentifier:(id)arg1;
 - (id)_orderedViewControllerIdentifiersForViewControllers:(id)arg1;
-- (void)_reloadTabsAnimated:(BOOL)arg1;
-- (void)_setOrderedViewControllerIdentifiers:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
+- (void)_reloadTabsAnimated:(bool)arg1;
+- (void)_setOrderedViewControllerIdentifiers:(id)arg1 animated:(bool)arg2 notifyDelegate:(bool)arg3;
 - (void)_setSelectedViewController:(id)arg1;
 - (id)_tabBarCustomizableViewControllerIdentifiers;
 - (id)_viewControllerIdentifierForNavigationControllerIdentifier:(id)arg1;
 - (id)customizableViewControllerIdentifiers;
 - (void)dealloc;
-- (BOOL)displayEmptyTabs;
+- (bool)displayEmptyTabs;
+- (void)ensureTabsAreLoaded;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)moreNavigationController;
 - (id)navigationControllerDelegate;
@@ -51,17 +53,19 @@
 - (id)radioNavigationController;
 - (id)radioViewController;
 - (void)setCustomizableViewControllerIdentifiers:(id)arg1;
-- (void)setDisplayEmptyTabs:(BOOL)arg1;
+- (void)setDisplayEmptyTabs:(bool)arg1;
 - (void)setNavigationControllerDelegate:(id)arg1;
-- (void)setOrderedViewControllerIdentifiers:(id)arg1 animated:(BOOL)arg2;
+- (void)setOrderedViewControllerIdentifiers:(id)arg1 animated:(bool)arg2;
 - (void)setOrderedViewControllerIdentifiers:(id)arg1;
-- (void)setSupportsTransiency:(BOOL)arg1;
-- (BOOL)supportsTransiency;
+- (void)setSupportsTransiency:(bool)arg1;
+- (void)setViewControllers:(id)arg1 animated:(bool)arg2;
+- (bool)supportsTransiency;
 - (void)switchToPlaylistWithPID:(id)arg1;
 - (void)switchToShortcutIdentifier:(id)arg1;
-- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(bool)arg3;
+- (id)viewControllerForViewControllerIdentifier:(id)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id)visibleViewControllerIdentifiers;
 
 @end

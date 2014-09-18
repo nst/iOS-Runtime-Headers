@@ -6,18 +6,18 @@
 
 @interface MPMediaQuerySection : NSObject <NSSecureCoding, NSCopying> {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     } _range;
-    unsigned int _sectionIndexTitleIndex;
+    unsigned long long _sectionIndexTitleIndex;
     NSString *_title;
 }
 
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property unsigned int sectionIndexTitleIndex;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property unsigned long long sectionIndexTitleIndex;
 @property(copy) NSString * title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_init;
@@ -26,10 +26,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (unsigned int)sectionIndexTitleIndex;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setSectionIndexTitleIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (unsigned long long)sectionIndexTitleIndex;
+- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSectionIndexTitleIndex:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

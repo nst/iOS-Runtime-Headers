@@ -32,12 +32,14 @@
 - (Class)labelsMeshRendererClassForLabelsRenderer:(id)arg1;
 - (id)makeDelegateWithScene:(id)arg1;
 - (id)makeDelegateWithSceneObject:(id)arg1 scene:(id)arg2;
-- (id)p_pickedPointNoSlack;
-- (id)p_pickedPointSlack;
+- (id)p_closestPickedPoint;
+- (id)p_frontMostPickedPoint;
+- (id)p_renderProcessor;
+- (id)p_unsortedPickedPoints;
 - (id)pickedPoint;
 - (id)pickedPoints;
 - (void)rayPick:(id)arg1;
-- (BOOL)run;
+- (bool)run;
 - (void)setSlack:(float)arg1;
 - (float)slack;
 

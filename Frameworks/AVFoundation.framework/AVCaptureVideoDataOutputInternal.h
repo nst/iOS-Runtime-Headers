@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureVideoDataOutputSampleBufferDelegate>, NSDictionary, NSObject<OS_dispatch_queue>;
+@class AVWeakReference, AVWeakReferencingDelegateStorage, NSDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVCaptureVideoDataOutputInternal : NSObject {
     struct { 
@@ -10,13 +10,14 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    BOOL alwaysDiscardsLateVideoFrames;
-    NSObject<OS_dispatch_queue> *clientQueue;
-    <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
-    BOOL delegateRespondsToDidDropSBufCallback;
-    BOOL delegateRespondsToDidOutputSBufCallback;
+    boolalwaysDiscardsLateVideoFrames;
+    NSObject<OS_dispatch_queue> *bufferQueue;
+    AVWeakReferencingDelegateStorage *delegateStorage;
     } deprecatedMinFrameDuration;
+    struct OpaqueFigSimpleMutex { } *remoteQueueMutex;
+    struct remoteQueueReceiverOpaque { } *remoteReceiverQueue;
     NSDictionary *videoSettings;
+    AVWeakReference *weakReference;
 }
 
 - (void)dealloc;

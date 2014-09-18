@@ -2,48 +2,34 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class NSError, NSURL, RCCompositionComposedAssetWriter;
 
-@class AVAssetExportSession, NSError, NSURL;
-
-@interface RCTrimAudioFileOperation : NSOperation {
-    struct { 
-        double beginTime; 
-        double endTime; 
-    BOOL _createWaveform;
+@interface RCTrimAudioFileOperation : RCTrimTimeRangeOperation {
+    RCCompositionComposedAssetWriter *_assetWriter;
     NSURL *_destinationURL;
     NSError *_error;
-    AVAssetExportSession *_exportSession;
-    id _progressUpdateBlock;
+    double _exportedDuration;
     NSURL *_sourceURL;
-    BOOL _success;
-    } _timeRangeToKeep;
+    bool_createWaveform;
+    bool_success;
 }
 
-@property(readonly) BOOL createWaveform;
-@property(readonly) NSURL * destinationURL;
-@property(readonly) NSError * error;
-@property(copy) id progressUpdateBlock;
-@property(readonly) NSURL * sourceURL;
-@property(readonly) BOOL success;
-@property(readonly) struct { double x1; double x2; } timeRangeToKeep;
+@property(readonly) bool createWaveform;
+@property(copy,readonly) NSURL * destinationURL;
+@property(copy,readonly) NSURL * sourceURL;
 
-+ (BOOL)_trimWaveformAtPath:(id)arg1 clipToTimeRange:(struct { double x1; double x2; })arg2 outputPath:(id)arg3;
 + (id)exportableAudioFormatPathExtensionWithSourceURL:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_updateExportSessionProgressWithInterval:(double)arg1;
-- (BOOL)createWaveform;
+- (void)cancel;
+- (bool)createWaveform;
 - (id)destinationURL;
 - (id)error;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 createWaveform:(BOOL)arg3 timeRangeToKeep:(struct { double x1; double x2; })arg4;
+- (double)exportedDuration;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 createWaveform:(bool)arg3 timeRange:(struct { double x1; double x2; })arg4 trimMode:(long long)arg5;
 - (void)main;
-- (id)progressUpdateBlock;
-- (void)setProgressUpdateBlock:(id)arg1;
+- (double)progress;
 - (id)sourceURL;
-- (BOOL)success;
-- (struct { double x1; double x2; })timeRangeToKeep;
+- (bool)success;
 
 @end

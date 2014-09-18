@@ -5,13 +5,13 @@
 @class EDPivotTable;
 
 @interface EPPivotTableStyleFlattener : EPStyleFlattener {
-    unsigned int mColumnFieldsCount;
-    long mFirstDataColumn;
-    long mFirstDataRow;
-    long mFirstHeaderRow;
-    unsigned int mPageFieldsCount;
+    unsigned long long mColumnFieldsCount;
+    long long mFirstDataColumn;
+    long long mFirstDataRow;
+    long long mFirstHeaderRow;
+    unsigned long long mPageFieldsCount;
     EDPivotTable *mPivotTable;
-    unsigned int mRowFieldsCount;
+    unsigned long long mRowFieldsCount;
 }
 
 - (void)addColumnSubheadingLevel:(unsigned int)arg1 to:(id)arg2;
@@ -23,10 +23,10 @@
 - (void)clearCache;
 - (id)collectionFromWorksheet:(id)arg1;
 - (unsigned int)constrainLevel:(unsigned int)arg1;
-- (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
-- (id)extractRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3;
 - (bool)isObjectSupported:(id)arg1;
 - (id)keysInTheOrderTheyShouldBeApplied;
+- (id)newExtractedCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
+- (id)newExtractedRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3;
 - (int)stripeOffset:(int)arg1 row:(bool)arg2;
 - (id)styleFromObject:(id)arg1;
 

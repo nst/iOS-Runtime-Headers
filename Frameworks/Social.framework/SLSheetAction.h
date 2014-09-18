@@ -2,40 +2,13 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SLSheetActionChangeObserving>, NSString;
-
-@interface SLSheetAction : NSObject {
-    id _actionBlock;
-    int _actionType;
-    <SLSheetActionChangeObserving> *_changeObserver;
-    NSString *_title;
-    NSString *_value;
-    BOOL _valuePending;
+@interface SLSheetAction : SLComposeSheetConfigurationItem {
 }
 
 @property(copy) id actionBlock;
-@property int actionType;
-@property(copy) NSString * title;
-@property(copy) NSString * value;
-@property BOOL valuePending;
 
-- (void).cxx_destruct;
 - (id)actionBlock;
-- (int)actionType;
-- (id)changeObserver;
 - (id)initWithTitle:(id)arg1 value:(id)arg2 actionBlock:(id)arg3;
 - (void)setActionBlock:(id)arg1;
-- (void)setActionType:(int)arg1;
-- (void)setChangeObserver:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setValue:(id)arg1;
-- (void)setValuePending:(BOOL)arg1;
-- (id)title;
-- (id)value;
-- (BOOL)valuePending;
 
 @end

@@ -2,31 +2,34 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKMessage>, NSDictionary, NSError, NSString, NSURL;
+@class IMMessage, NSDictionary, NSError, NSString, NSURL;
 
 @interface CKDBFileTransfer : NSObject <CKFileTransfer> {
     NSURL *_fileURL;
     NSString *_filename;
     NSString *_guid;
-    <CKMessage> *_message;
     NSDictionary *_transcoderUserInfo;
-    int _transferState;
+    long long _transferState;
 }
 
+@property(retain) IMMessage * IMMessage;
 @property(readonly) unsigned long long currentBytes;
-@property(getter=isDownloadable,readonly) BOOL downloadable;
-@property(getter=isDownloading,readonly) BOOL downloading;
-@property(readonly) NSError * error;
-@property(getter=isFileDataReady,readonly) BOOL fileDataReady;
-@property(readonly) NSURL * fileURL;
-@property(getter=isFileURLFinalized,readonly) BOOL fileURLFinalized;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(getter=isDownloadable,readonly) bool downloadable;
+@property(getter=isDownloading,readonly) bool downloading;
+@property(copy,readonly) NSError * error;
+@property(getter=isFileDataReady,readonly) bool fileDataReady;
+@property(copy,readonly) NSURL * fileURL;
+@property(getter=isFileURLFinalized,readonly) bool fileURLFinalized;
 @property(copy) NSString * filename;
-@property(readonly) NSString * guid;
-@property(retain) <CKMessage> * message;
-@property(getter=isRestoring,readonly) BOOL restoring;
+@property(copy,readonly) NSString * guid;
+@property(readonly) unsigned long long hash;
+@property(getter=isRestoring,readonly) bool restoring;
+@property(readonly) Class superclass;
 @property(readonly) unsigned long long totalBytes;
-@property(readonly) NSDictionary * transcoderUserInfo;
-@property int transferState;
+@property(copy,readonly) NSDictionary * transcoderUserInfo;
+@property long long transferState;
 
 - (unsigned long long)currentBytes;
 - (void)dealloc;
@@ -36,20 +39,18 @@
 - (id)filename;
 - (id)guid;
 - (id)initWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2;
-- (id)initWithTransferGUID:(id)arg1 message:(id)arg2;
-- (BOOL)isDownloadable;
-- (BOOL)isDownloading;
-- (BOOL)isFileDataReady;
-- (BOOL)isFileURLFinalized;
-- (BOOL)isRestoring;
+- (id)initWithTransferGUID:(id)arg1 imMessage:(id)arg2;
+- (bool)isDownloadable;
+- (bool)isDownloading;
+- (bool)isFileDataReady;
+- (bool)isFileURLFinalized;
+- (bool)isRestoring;
 - (void)mediaObjectAdded;
 - (void)mediaObjectRemoved;
-- (id)message;
 - (void)setFilename:(id)arg1;
-- (void)setMessage:(id)arg1;
-- (void)setTransferState:(int)arg1;
+- (void)setTransferState:(long long)arg1;
 - (unsigned long long)totalBytes;
 - (id)transcoderUserInfo;
-- (int)transferState;
+- (long long)transferState;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, NSString;
+@class NSDictionary, NSMutableDictionary, NSString;
 
 @interface SKUIItemOffer : NSObject <SKUICacheCoding> {
     NSString *_actionParameters;
@@ -10,18 +10,25 @@
     NSString *_confirmationText;
     long long _fileSize;
     NSString *_fileSizeText;
-    int _offerType;
+    NSString *_offerTypeString;
     float _price;
+    NSString *_variantIdentifier;
 }
 
 @property(readonly) NSString * actionParameters;
 @property(readonly) NSString * buttonText;
 @property(readonly) NSMutableDictionary * cacheRepresentation;
 @property(readonly) NSString * confirmationText;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) long long fileSize;
 @property(readonly) NSString * fileSizeText;
-@property(readonly) int offerType;
+@property(readonly) unsigned long long hash;
+@property(readonly) NSDictionary * lookupDictionary;
+@property(readonly) long long offerType;
 @property(readonly) float price;
+@property(readonly) Class superclass;
+@property(readonly) NSString * variantIdentifier;
 
 - (void).cxx_destruct;
 - (void)_addActionParameterWithName:(id)arg1 value:(id)arg2;
@@ -38,7 +45,9 @@
 - (id)initWithLookupDictionary:(id)arg1;
 - (id)initWithOfferDictionary:(id)arg1;
 - (id)initWithRedownloadToken:(id)arg1;
-- (int)offerType;
+- (id)lookupDictionary;
+- (long long)offerType;
 - (float)price;
+- (id)variantIdentifier;
 
 @end

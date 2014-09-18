@@ -12,7 +12,7 @@
     int _statusCode;
 }
 
-@property BOOL hasStatusCode;
+@property bool hasStatusCode;
 @property(retain) NSMutableArray * problemStatus;
 @property int statusCode;
 
@@ -23,14 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatusCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasStatusCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)problemStatus;
-- (id)problemStatusAtIndex:(unsigned int)arg1;
-- (unsigned int)problemStatusCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
+- (id)problemStatusAtIndex:(unsigned long long)arg1;
+- (unsigned long long)problemStatusCount;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatusCode:(bool)arg1;
 - (void)setProblemStatus:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;

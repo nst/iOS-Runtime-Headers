@@ -2,29 +2,33 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface _MFSecCMSDecoder : NSObject <MFCollectingDataConsumer> {
-    long _SecCMSError;
+    int _SecCMSError;
     struct SecCmsDigestContextStr { } *_digest;
     struct SecCmsEnvelopedDataStr { } *_envelopedData;
-    BOOL _isEncrypted;
     struct SecCmsMessageStr { } *_message;
     struct SecCmsSignedDataStr { } *_signedData;
     NSArray *_signers;
+    bool_isEncrypted;
 }
 
-@property(readonly) long lastSecCMSError;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) int lastSecCMSError;
 @property(readonly) NSArray * signers;
+@property(readonly) Class superclass;
 
-- (int)appendData:(id)arg1;
+- (long long)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;
 - (id)initWithPartData:(id)arg1 error:(id*)arg2;
-- (BOOL)isContentEncrypted;
-- (BOOL)isContentSigned;
-- (long)lastSecCMSError;
+- (bool)isContentEncrypted;
+- (bool)isContentSigned;
+- (int)lastSecCMSError;
 - (id)signedData;
 - (id)signers;
 - (id)verifyAgainstSenders:(id)arg1 signingError:(id*)arg2;

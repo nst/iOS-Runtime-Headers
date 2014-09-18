@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface AVAssetResourceLoadingContentInformationRequestInternal : NSObject {
-    BOOL byteRangeAccessSupported;
+    boolbyteRangeAccessSupported;
+    booldiskCachingPermitted;
     long long contentLength;
     NSString *contentType;
-    BOOL diskCachingPermitted;
+    NSDate *renewalDate;
 }
 
 @end

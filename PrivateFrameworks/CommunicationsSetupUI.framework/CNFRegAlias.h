@@ -12,28 +12,28 @@
 
 @property(retain) IMAccount * account;
 @property(copy) NSString * alias;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * identifier;
-@property(readonly) int type;
+@property(copy,readonly) NSString * displayName;
+@property(retain,readonly) NSString * identifier;
+@property(readonly) long long type;
 
 - (id)account;
 - (id)alias;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithAccount:(id)arg1 alias:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLocalPhoneNumberAlias;
-- (BOOL)isPhoneNumberAliasOnPhoneNumberAccount;
-- (int)localizedCaseInsensitiveCompare:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isLocalPhoneNumberAlias;
+- (bool)isPhoneNumberAliasOnPhoneNumberAccount;
+- (long long)localizedCaseInsensitiveCompare:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (int)type;
-- (BOOL)validate;
-- (int)validationErrorReason;
-- (int)validationStatus;
+- (long long)type;
+- (bool)validate;
+- (long long)validationErrorReason;
+- (long long)validationStatus;
 
 @end

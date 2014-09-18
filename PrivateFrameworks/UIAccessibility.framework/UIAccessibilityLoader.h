@@ -12,11 +12,11 @@
 + (void)_accessibilityStartServer;
 + (void)_accessibilityStopServer;
 + (id)_axBundleForBundle:(id)arg1;
-+ (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2 forceLoad:(BOOL)arg3 loadSubbundles:(BOOL)arg4;
-+ (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2;
++ (id)_loadAXBundleForBundle:(id)arg1 didLoad:(bool*)arg2 forceLoad:(bool)arg3 loadSubbundles:(bool)arg4;
++ (id)_loadAXBundleForBundle:(id)arg1 didLoad:(bool*)arg2;
 + (void)initialize;
-+ (id)loadAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2 force:(BOOL)arg3;
-+ (id)loadAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2;
-+ (void)loadActualAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2 loadSubbundles:(BOOL)arg3;
++ (id)loadAccessibilityBundle:(id)arg1 didLoad:(bool*)arg2 force:(bool)arg3;
++ (id)loadAccessibilityBundle:(id)arg1 didLoad:(bool*)arg2;
++ (void)loadActualAccessibilityBundle:(id)arg1 didLoad:(bool*)arg2 loadSubbundles:(bool)arg3;
 
 @end

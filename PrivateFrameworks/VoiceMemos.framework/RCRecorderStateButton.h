@@ -5,27 +5,33 @@
 @class CALayer, UIColor;
 
 @interface RCRecorderStateButton : UIButton {
+    long long _AVCaptureState;
     UIColor *_innerColor;
     CALayer *_innerLayer;
     UIColor *_outerColor;
-    int _recordingState;
+    bool_isForceDisabled;
+    bool_realEnabledState;
 }
 
-@property int recordingState;
+@property long long AVCaptureState;
+@property bool isForceDisabled;
 
 - (void).cxx_destruct;
-- (float)_currentStateInnerDrawingAlpha;
-- (float)_currentStateTopLevelDrawingAlpha;
+- (long long)AVCaptureState;
+- (double)_currentStateInnerDrawingAlpha;
+- (double)_currentStateTopLevelDrawingAlpha;
 - (void)_drawOuterCircle;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isForceDisabled;
 - (void)layoutSubviews;
-- (int)recordingState;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setRecordingState:(int)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setAVCaptureState:(long long)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setIsForceDisabled:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

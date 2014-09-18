@@ -9,16 +9,16 @@
     NSString *_accountPersistentUUID;
     NSString *_hostname;
     NSString *_password;
-    BOOL _useSSL;
     NSString *_username;
+    bool_useSSL;
 }
 
-@property(readonly) NSString * accountDescription;
+@property(retain,readonly) NSString * accountDescription;
 @property(copy) NSString * accountPersistentUUID;
-@property(readonly) NSString * hostname;
-@property(readonly) NSString * password;
-@property(readonly) BOOL useSSL;
-@property(readonly) NSString * username;
+@property(retain,readonly) NSString * hostname;
+@property(retain,readonly) NSString * password;
+@property(readonly) bool useSSL;
+@property(retain,readonly) NSString * username;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -31,6 +31,7 @@
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)password;
+- (id)payloadDescriptionKeyValueSections;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (id)stubDictionary;
 - (id)subtitle1Description;
@@ -38,7 +39,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)title;
-- (BOOL)useSSL;
+- (bool)useSSL;
 - (id)username;
 
 @end

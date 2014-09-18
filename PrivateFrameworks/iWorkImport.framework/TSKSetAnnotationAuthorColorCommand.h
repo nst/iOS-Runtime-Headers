@@ -14,7 +14,7 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 annotationAuthor:(id)arg2 color:(id)arg3;
 - (void)p_do;
-- (BOOL)process;
+- (bool)process;
 - (void)redo;
 - (void)saveToArchiver:(id)arg1;
 - (void)undo;

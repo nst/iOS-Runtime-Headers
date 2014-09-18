@@ -39,7 +39,7 @@
 - (void)setObject:(id)arg1;
 - (void)setVspace:(int)arg1;
 - (void)setWidth:(id)arg1;
-- (BOOL)showsTapHighlight;
+- (bool)showsTapHighlight;
 - (int)vspace;
 - (id)width;
 

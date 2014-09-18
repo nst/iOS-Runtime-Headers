@@ -7,26 +7,26 @@
 @interface UITextSelectionRect : NSObject {
 }
 
-@property(readonly) BOOL containsEnd;
-@property(readonly) BOOL containsStart;
+@property(readonly) bool containsEnd;
+@property(readonly) bool containsStart;
 @property(getter=_isImpl,readonly) UITextSelectionRectImpl * isImpl;
-@property(readonly) BOOL isVertical;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
-@property(readonly) int writingDirection;
+@property(readonly) bool isVertical;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rect;
+@property(readonly) long long writingDirection;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdgeFromRects:(id)arg1;
-+ (BOOL)endIsHorizontal:(id)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })endEdgeFromRects:(id)arg1;
++ (bool)endIsHorizontal:(id)arg1;
 + (id)endRectFromRects:(id)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startEdgeFromRects:(id)arg1;
-+ (BOOL)startIsHorizontal:(id)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })startEdgeFromRects:(id)arg1;
++ (bool)startIsHorizontal:(id)arg1;
 + (id)startRectFromRects:(id)arg1;
 
 - (id)_isImpl;
-- (BOOL)containsEnd;
-- (BOOL)containsStart;
-- (BOOL)isVertical;
+- (bool)containsEnd;
+- (bool)containsStart;
+- (bool)isVertical;
 - (id)range;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
-- (int)writingDirection;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rect;
+- (long long)writingDirection;
 
 @end

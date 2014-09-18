@@ -17,9 +17,9 @@
 @property(readonly) NSDictionary * compositionSpecification;
 @property id delegate;
 
-- (BOOL)allows8BitMimeParts;
-- (BOOL)allowsBinaryMimeParts;
-- (BOOL)allowsQuotedPrintable;
+- (bool)allows8BitMimeParts;
+- (bool)allowsBinaryMimeParts;
+- (bool)allowsQuotedPrintable;
 - (void)appendDataForMimePart:(id)arg1 toData:(id)arg2 withPartData:(id)arg3;
 - (id)compositionSpecification;
 - (id)createMessageWithHtmlString:(id)arg1 attachments:(id)arg2 headers:(id)arg3;
@@ -31,11 +31,11 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithCompositionSpecification:(id)arg1;
-- (void)setAllows8BitMimeParts:(BOOL)arg1;
-- (void)setAllowsBinaryMimeParts:(BOOL)arg1;
-- (void)setAllowsQuotedPrintable:(BOOL)arg1;
+- (void)setAllows8BitMimeParts:(bool)arg1;
+- (void)setAllowsBinaryMimeParts:(bool)arg1;
+- (void)setAllowsQuotedPrintable:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMessageClassToInstantiate:(Class)arg1;
-- (void)setWriteSizeDispositionParameter:(BOOL)arg1;
+- (void)setWriteSizeDispositionParameter:(bool)arg1;
 
 @end

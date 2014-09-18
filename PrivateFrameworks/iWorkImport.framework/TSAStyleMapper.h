@@ -5,6 +5,8 @@
 @interface TSAStyleMapper : TSSStyleMapper {
 }
 
-- (id)pTargetParentForStyle:(id)arg1 withParentIdentifier:(id)arg2;
+- (bool)shouldMapParentOfStyle:(id)arg1;
+- (id)stylesheetForNewRootStyleFromStyle:(id)arg1;
+- (id)targetParentForStyle:(id)arg1;
 
 @end

@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKSMSComposeRemoteViewControllerDelegate>;
+@class <CKSMSComposeRemoteViewControllerDelegate>, NSString;
 
 @interface CKSMSComposeRemoteViewController : _UIRemoteViewController <CKSMSComposeRemoteViewControllerDelegate> {
     <CKSMSComposeRemoteViewControllerDelegate> *_delegate;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <CKSMSComposeRemoteViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)requestViewControllerWithConnectionHandler:(id)arg1;

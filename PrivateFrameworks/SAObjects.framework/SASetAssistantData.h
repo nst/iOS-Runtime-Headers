@@ -11,15 +11,18 @@
 @property(copy) NSString * aceId;
 @property(copy) NSNumber * allowUserGeneratedContent;
 @property(copy) NSString * anchor;
-@property BOOL censorSpeech;
+@property bool censorSpeech;
 @property(copy) NSString * countryCode;
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSNumber * debugFlags;
+@property(copy,readonly) NSString * description;
 @property(copy) NSArray * deviceCapabilities;
 @property(copy) NSString * deviceColor;
 @property(copy) NSString * deviceEnclosure;
 @property(copy) NSString * deviceVersion;
 @property(copy) NSString * firstName;
-@property BOOL handsFree;
+@property bool handsFree;
+@property(readonly) unsigned long long hash;
 @property(copy) NSNumber * holdToTalkThresholdInMilliseconds;
 @property(copy) NSString * lastName;
 @property(copy) NSArray * meCards;
@@ -28,12 +31,14 @@
 @property(copy) NSString * refId;
 @property(copy) NSString * region;
 @property(copy) NSNumber * storefront;
+@property(readonly) Class superclass;
 @property(copy) NSString * temperatureUnit;
 @property(copy) NSString * timeZoneId;
 @property(retain) SAVoice * ttsVoice;
 @property(copy) NSNumber * twentyFourHourTimeDisplay;
 @property(copy) NSNumber * uiScale;
-@property BOOL voiceOver;
+@property(copy) NSString * userInterfaceIdiom;
+@property bool voiceOver;
 
 + (id)setAssistantData;
 + (id)setAssistantDataWithDictionary:(id)arg1 context:(id)arg2;
@@ -41,7 +46,7 @@
 - (id)abSources;
 - (id)allowUserGeneratedContent;
 - (id)anchor;
-- (BOOL)censorSpeech;
+- (bool)censorSpeech;
 - (id)countryCode;
 - (id)debugFlags;
 - (id)deviceCapabilities;
@@ -51,7 +56,7 @@
 - (id)encodedClassName;
 - (id)firstName;
 - (id)groupIdentifier;
-- (BOOL)handsFree;
+- (bool)handsFree;
 - (id)holdToTalkThresholdInMilliseconds;
 - (id)lastName;
 - (id)meCards;
@@ -61,7 +66,7 @@
 - (void)setAbSources:(id)arg1;
 - (void)setAllowUserGeneratedContent:(id)arg1;
 - (void)setAnchor:(id)arg1;
-- (void)setCensorSpeech:(BOOL)arg1;
+- (void)setCensorSpeech:(bool)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setDebugFlags:(id)arg1;
 - (void)setDeviceCapabilities:(id)arg1;
@@ -69,7 +74,7 @@
 - (void)setDeviceEnclosure:(id)arg1;
 - (void)setDeviceVersion:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setHandsFree:(BOOL)arg1;
+- (void)setHandsFree:(bool)arg1;
 - (void)setHoldToTalkThresholdInMilliseconds:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMeCards:(id)arg1;
@@ -82,13 +87,15 @@
 - (void)setTtsVoice:(id)arg1;
 - (void)setTwentyFourHourTimeDisplay:(id)arg1;
 - (void)setUiScale:(id)arg1;
-- (void)setVoiceOver:(BOOL)arg1;
+- (void)setUserInterfaceIdiom:(id)arg1;
+- (void)setVoiceOver:(bool)arg1;
 - (id)storefront;
 - (id)temperatureUnit;
 - (id)timeZoneId;
 - (id)ttsVoice;
 - (id)twentyFourHourTimeDisplay;
 - (id)uiScale;
-- (BOOL)voiceOver;
+- (id)userInterfaceIdiom;
+- (bool)voiceOver;
 
 @end

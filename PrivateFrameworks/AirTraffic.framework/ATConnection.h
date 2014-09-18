@@ -2,38 +2,45 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class ATXPCConnection, NSMutableArray, NSObject<ATConnectionDelegate>;
+@class NSMutableArray, NSObject<ATConnectionDelegate>, NSString, NSXPCConnection;
 
-@interface ATConnection : NSObject {
-    BOOL _atcRunning;
+@interface ATConnection : NSObject <ATConnectionDelegate> {
     int _atcRunningToken;
-    ATXPCConnection *_connection;
     NSObject<ATConnectionDelegate> *_delegate;
-    BOOL _registerForStatus;
     NSMutableArray *_registeredDataclasses;
+    NSXPCConnection *_xpcConnection;
+    bool_atcRunning;
+    bool_registerForStatus;
 }
 
-@property(retain) NSObject<ATConnectionDelegate> * delegate;
+@property(copy,readonly) NSString * debugDescription;
+@property NSObject<ATConnectionDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (id)_connection;
-- (void)_handleMessage:(id)arg1;
-- (void)_resetConnection;
-- (void)_sendMessage:(id)arg1 info:(id)arg2 reply:(id)arg3;
+- (void).cxx_destruct;
+- (void)_handleDisconnect;
 - (void)_sendStatusRegistration;
 - (void)cancelSync;
 - (void)clearSyncData;
+- (void)connection:(id)arg1 updatedAssets:(id)arg2;
+- (void)connection:(id)arg1 updatedProgress:(id)arg2;
+- (void)connectionWasInterrupted:(id)arg1;
 - (void)dataMigrationFinished;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isSyncing:(BOOL*)arg1 automatically:(BOOL*)arg2 wirelessly:(BOOL*)arg3;
-- (void)keepATCAlive:(BOOL)arg1;
+- (bool)isSyncing:(bool*)arg1 automatically:(bool*)arg2 wirelessly:(bool*)arg3;
+- (void)keepATCAlive:(bool)arg1;
 - (void)lowBatteryNotification;
+- (void)openDeviceMessageLink;
 - (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2;
 - (void)purgePartialAsset:(id)arg1 forDataclass:(id)arg2;
 - (void)registerForAssetProgressForDataclass:(id)arg1;
 - (void)registerForStatus;
 - (void)requestSyncForLibrary:(id)arg1;
+- (void)requestSyncForPairedDeviceWithPriority:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)unregisterForStatus;
 

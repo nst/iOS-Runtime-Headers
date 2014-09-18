@@ -2,77 +2,88 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPImageCache, NSArray, NSMutableArray, RUAddSeedViewController, RUMetricsController, RUParallelScrollView, RUStationTuningView, RadioStation, UIAlertView, UIImage, UITableViewCell, UITextField, UIView, _RUStationSettingsTableView;
+@class NSArray, NSMutableArray, NSString, RUAddSeedViewController, RUMetricsController, RUParallelScrollView, RUStationTuningView, RadioStation, UIAlertView, UIImage, UITableViewCell, UITextField, UIView, _RUStationSettingsTableView;
 
 @interface RUStationSettingsViewController : UIViewController <RUAddSeedViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIImage *_addLikeBanImage;
     RUAddSeedViewController *_addSeedViewController;
-    BOOL _addingForLike;
     NSArray *_bannedItems;
     RUParallelScrollView *_containerScrollView;
     UIView *_deleteTintView;
     UIAlertView *_deletionAlertView;
-    MPImageCache *_imageCache;
-    BOOL _isEditing;
     NSArray *_likedItems;
     RUMetricsController *_metricsController;
     NSMutableArray *_orderedSections;
     NSMutableArray *_queuedMetricsOperations;
-    int _sharingRow;
+    long long _sharingRow;
     RadioStation *_station;
     UITableViewCell *_stationNameCell;
     UITextField *_stationNameTextField;
     UITableViewCell *_stationTuningCell;
     RUStationTuningView *_stationTuningView;
     _RUStationSettingsTableView *_tableView;
-    int _tuningRow;
+    long long _tuningRow;
+    bool_addingForLike;
+    bool_isEditing;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_addLikeBanImage;
 - (void)_addMetricsControllerOperationBlock:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (int)_countOfSettingsSections;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (long long)_countOfSettingsSections;
 - (void)_didSelectLikeBanStation:(id)arg1;
-- (BOOL)_isDeletableRowAtIndexPath:(id)arg1;
+- (bool)_isDeletableRowAtIndexPath:(id)arg1;
+- (id)_nameTextFieldFont;
+- (double)_nameTextFieldHeight;
 - (id)_newPageEvent;
-- (id)_newSectionHeaderWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2;
-- (id)_newShadowViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_newSectionHeaderWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 title:(id)arg2;
+- (id)_newShadowViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_newTextField;
 - (void)_presentAddSeedController;
 - (void)_radioModelDidChangeNotification:(id)arg1;
-- (int)_settingsSectionForTableViewSection:(int)arg1;
+- (double)_sectionHeaderHeight;
+- (id)_sectionHeaderTitleLabelFont;
+- (long long)_settingsSectionForTableViewSection:(long long)arg1;
 - (void)_stationNameTextFieldEditingDidBeginAction:(id)arg1;
 - (void)_stationNameTextFieldValueDidEndEditingAction:(id)arg1;
-- (int)_tableViewSectionForSettingsSection:(int)arg1;
-- (id)_titleForSettingsSection:(int)arg1;
+- (long long)_tableViewSectionForSettingsSection:(long long)arg1;
+- (id)_titleForSettingsSection:(long long)arg1;
 - (void)_toggleEditAction:(id)arg1;
-- (void)_updateEditingStateAnimated:(BOOL)arg1;
+- (void)_updateEditingStateAnimated:(bool)arg1;
 - (void)_updateLikesAndBans;
+- (void)_updateStationNameTextFieldFrame;
+- (void)_updateViewForHorizontalSizeClassChangeAllowingTableReload:(bool)arg1;
 - (void)addSeedViewController:(id)arg1 didSelectStation:(id)arg2;
 - (void)addSeedViewControllerDidCancel:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)contentScrollView;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (id)initWithStation:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -5,15 +5,17 @@
 @interface NSOutputStream : NSStream {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)outputStreamToBuffer:(char *)arg1 capacity:(unsigned int)arg2;
-+ (id)outputStreamToFileAtPath:(id)arg1 append:(BOOL)arg2;
-+ (id)outputStreamToMemory;
-+ (id)outputStreamWithURL:(id)arg1 append:(BOOL)arg2;
+@property(readonly) bool hasSpaceAvailable;
 
-- (struct { int x1; int x2; })_cfStreamError;
-- (unsigned long)_cfTypeID;
-- (BOOL)hasSpaceAvailable;
-- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)outputStreamToBuffer:(char *)arg1 capacity:(unsigned long long)arg2;
++ (id)outputStreamToFileAtPath:(id)arg1 append:(bool)arg2;
++ (id)outputStreamToMemory;
++ (id)outputStreamWithURL:(id)arg1 append:(bool)arg2;
+
+- (struct { long long x1; int x2; })_cfStreamError;
+- (unsigned long long)_cfTypeID;
+- (bool)hasSpaceAvailable;
+- (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
 
 @end

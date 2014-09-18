@@ -6,20 +6,20 @@
 
 @interface MCWebClipPayload : MCPayload {
     NSURL *_URL;
-    BOOL _fullScreen;
     NSData *_iconData;
-    BOOL _isRemovable;
     NSString *_label;
-    BOOL _precomposed;
     NSString *_savedIdentifier;
+    bool_fullScreen;
+    bool_isRemovable;
+    bool_precomposed;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) BOOL fullScreen;
-@property(readonly) NSData * iconData;
-@property(readonly) BOOL isRemovable;
-@property(readonly) NSString * label;
-@property(readonly) BOOL precomposed;
+@property(retain,readonly) NSURL * URL;
+@property(readonly) bool fullScreen;
+@property(retain,readonly) NSData * iconData;
+@property(readonly) bool isRemovable;
+@property(retain,readonly) NSString * label;
+@property(readonly) bool precomposed;
 @property(retain) NSString * savedIdentifier;
 
 + (id)localizedPluralForm;
@@ -29,12 +29,13 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (id)description;
-- (BOOL)fullScreen;
+- (bool)fullScreen;
 - (id)iconData;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)isRemovable;
+- (bool)isRemovable;
 - (id)label;
-- (BOOL)precomposed;
+- (id)payloadDescriptionKeyValueSections;
+- (bool)precomposed;
 - (id)savedIdentifier;
 - (void)setSavedIdentifier:(id)arg1;
 - (id)stubDictionary;

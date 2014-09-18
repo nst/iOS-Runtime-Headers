@@ -2,55 +2,44 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPStarkPhoneCallGalleryViewDelegate>, NSArray, NSMutableArray, UILabel, UIView;
+@class <TPStarkPhoneCallGalleryViewDelegate>, NSString, TPStarkPhoneCallContainer;
 
-@interface TPStarkPhoneCallGalleryView : UIView <TPStarkPhoneCallViewDelegate> {
-    NSArray *_constraintsForMergedCallContainerView;
+@interface TPStarkPhoneCallGalleryView : UIView <TPStarkPhoneCallContainerDataSource, TPStarkPhoneCallContainerDelegate> {
+    TPStarkPhoneCallContainer *_container;
     <TPStarkPhoneCallGalleryViewDelegate> *_delegate;
-    UILabel *_mergedCallNameLabel;
-    UILabel *_mergedCallNumberTypeOrDurationLabel;
-    UIView *_mergedCallPostioningContainerView;
-    NSMutableArray *_phoneCallViewsArray;
 }
 
-@property(retain) NSArray * constraintsForMergedCallContainerView;
+@property(retain) TPStarkPhoneCallContainer * container;
+@property(copy,readonly) NSString * debugDescription;
 @property <TPStarkPhoneCallGalleryViewDelegate> * delegate;
-@property(retain) UILabel * mergedCallNameLabel;
-@property(retain) UILabel * mergedCallNumberTypeOrDurationLabel;
-@property(retain) UIView * mergedCallPostioningContainerView;
-@property(retain) NSMutableArray * phoneCallViewsArray;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-- (void)_updateMergedCallHorizontalSizeConstraints;
-- (void)addPhoneCall:(id)arg1 asParticipantToPrimaryPhoneCall:(id)arg2 animated:(BOOL)arg3;
-- (void)addPrimaryPhoneCall:(id)arg1 animated:(BOOL)arg2;
-- (id)anchorViewForLeftCall;
-- (id)anchorViewForRightCall;
-- (id)conferencePhoneCallViews;
-- (id)constraintsForMergedCallContainerView;
++ (id)statusStringForDisplayForCall:(id)arg1;
+
+- (void)addPrimaryPhoneCall:(id)arg1 animated:(bool)arg2;
+- (id)container;
 - (void)dealloc;
 - (id)delegate;
-- (void)endPhoneCall:(id)arg1 animated:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)mergePrimaryPhoneCallsAnimated:(BOOL)arg1;
-- (id)mergedCallNameLabel;
-- (id)mergedCallNumberTypeOrDurationLabel;
-- (id)mergedCallPostioningContainerView;
-- (id)phoneCallViewForPhoneCall:(id)arg1;
-- (void)phoneCallViewWasTapped:(id)arg1;
-- (id)phoneCallViewsArray;
+- (void)endPhoneCall:(id)arg1 animated:(bool)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)mergePrimaryPhoneCallsAnimated:(bool)arg1;
+- (id)mergedCalls;
+- (id)mergedStringForMergedCalls;
+- (unsigned long long)numberOfViewCellsForPhoneCallContainer:(id)arg1;
+- (bool)phoneCallContainer:(id)arg1 cellIsDimmedAtIndex:(unsigned long long)arg2;
+- (void)phoneCallContainer:(id)arg1 phoneCallViewTappedAtIndex:(unsigned long long)arg2;
+- (id)phoneCallContainer:(id)arg1 subtitleForViewCellAtIndex:(unsigned long long)arg2;
+- (id)phoneCallContainer:(id)arg1 titleForViewCellAtIndex:(unsigned long long)arg2;
+- (void)phoneCallDataDidChange:(id)arg1;
+- (id)phoneCallForIndex:(unsigned long long)arg1 isMerged:(bool*)arg2;
+- (id)primaryCalls;
 - (void)reloadPhoneCallData;
-- (void)removeMergedCallLabels;
-- (void)resetGalleryData;
-- (void)setConstraintsForMergedCallContainerView:(id)arg1;
+- (void)setContainer:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsShowingCallFailure:(BOOL)arg1;
-- (void)setMergedCallNameLabel:(id)arg1;
-- (void)setMergedCallNumberTypeOrDurationLabel:(id)arg1;
-- (void)setMergedCallPostioningContainerView:(id)arg1;
-- (void)setPhoneCallViewsArray:(id)arg1;
-- (void)swapHeldPhoneCallsAnimated:(BOOL)arg1;
-- (void)unmergePhoneCallFromConference:(id)arg1 animated:(BOOL)arg2;
-- (void)updateAndShowMergedCallLabelsIfNecessary;
-- (void)updateClockTickNotification:(id)arg1;
+- (void)setIsShowingCallFailure:(bool)arg1;
+- (void)startListeningForCallNotifications;
+- (void)stopListeningForCallNotifications;
 
 @end

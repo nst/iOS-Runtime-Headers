@@ -7,17 +7,22 @@
 @interface EKPersistentAttendee : EKPersistentParticipant {
 }
 
+@property bool commentChanged;
 @property(copy) NSDate * lastModified;
 @property int participantRole;
 @property int participantStatus;
 @property int participantType;
 @property int pendingStatus;
+@property bool statusChanged;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
+- (void)_setFlag:(unsigned int)arg1 value:(bool)arg2;
+- (bool)_valueForFlag:(unsigned int)arg1;
+- (bool)commentChanged;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)entityType;
@@ -30,11 +35,14 @@
 - (int)participantStatus;
 - (int)participantType;
 - (int)pendingStatus;
+- (void)setCommentChanged:(bool)arg1;
 - (void)setLastModified:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setParticipantRole:(int)arg1;
 - (void)setParticipantStatus:(int)arg1;
 - (void)setParticipantType:(int)arg1;
 - (void)setPendingStatus:(int)arg1;
+- (void)setStatusChanged:(bool)arg1;
+- (bool)statusChanged;
 
 @end

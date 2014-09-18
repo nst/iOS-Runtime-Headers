@@ -8,30 +8,30 @@
     struct { 
         unsigned int isAmPm : 1; 
     } _datePickerContentViewFlags;
-    BOOL _isModern;
-    int _titleAlignment;
+    long long _titleAlignment;
     UILabel *_titleLabel;
-    float _titleLabelMaxX;
+    double _titleLabelMaxX;
+    bool_isModern;
 }
 
-@property BOOL isAmPm;
-@property BOOL isModern;
-@property int titleAlignment;
+@property bool isAmPm;
+@property bool isModern;
+@property long long titleAlignment;
 @property(readonly) UILabel * titleLabel;
-@property float titleLabelMaxX;
+@property double titleLabelMaxX;
 
-- (BOOL)_canBeReusedInPickerView;
+- (bool)_canBeReusedInPickerView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAmPm;
-- (BOOL)isModern;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAmPm;
+- (bool)isModern;
 - (void)layoutSubviews;
-- (void)setIsAmPm:(BOOL)arg1;
-- (void)setIsModern:(BOOL)arg1;
-- (void)setTitleAlignment:(int)arg1;
-- (void)setTitleLabelMaxX:(float)arg1;
-- (int)titleAlignment;
+- (void)setIsAmPm:(bool)arg1;
+- (void)setIsModern:(bool)arg1;
+- (void)setTitleAlignment:(long long)arg1;
+- (void)setTitleLabelMaxX:(double)arg1;
+- (long long)titleAlignment;
 - (id)titleLabel;
-- (float)titleLabelMaxX;
+- (double)titleLabelMaxX;
 
 @end

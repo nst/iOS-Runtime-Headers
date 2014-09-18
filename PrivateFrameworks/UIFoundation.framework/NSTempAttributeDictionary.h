@@ -5,6 +5,4 @@
 @interface NSTempAttributeDictionary : NSAttributeDictionary {
 }
 
-- (id)retain;
-
 @end

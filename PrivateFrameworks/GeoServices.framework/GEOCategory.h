@@ -16,7 +16,7 @@
 
 @property(retain) NSString * alias;
 @property long long geoOntologyId;
-@property BOOL hasGeoOntologyId;
+@property bool hasGeoOntologyId;
 @property int level;
 @property(retain) NSMutableArray * localizedNames;
 
@@ -29,17 +29,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)geoOntologyId;
-- (BOOL)hasGeoOntologyId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasGeoOntologyId;
+- (unsigned long long)hash;
+- (id)initWithPlaceDataCategory:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)level;
 - (id)localizedNames;
-- (id)localizedNamesAtIndex:(unsigned int)arg1;
-- (unsigned int)localizedNamesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)localizedNamesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)localizedNamesCount;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setGeoOntologyId:(long long)arg1;
-- (void)setHasGeoOntologyId:(BOOL)arg1;
+- (void)setHasGeoOntologyId:(bool)arg1;
 - (void)setLevel:(int)arg1;
 - (void)setLocalizedNames:(id)arg1;
 - (void)writeTo:(id)arg1;

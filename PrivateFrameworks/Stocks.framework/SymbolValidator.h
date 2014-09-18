@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class <SymbolValidatorDelegate>, NSMutableArray, SymbolParserData;
+@class NSArray;
 
-@interface SymbolValidator : XMLHTTPRequest {
-    <SymbolValidatorDelegate> *_delegate;
-    SymbolParserData *_symbolParserData;
-    NSMutableArray *_validatedSymbols;
+@interface SymbolValidator : YQLRequest {
+    id _delegate;
+    NSArray *_symbols;
 }
 
 @property id delegate;
 
 - (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
-- (void)cancel;
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
-- (int)parseData:(id)arg1;
+- (void)parseData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)validateSymbol:(id)arg1 withMaxResults:(int)arg2;
 

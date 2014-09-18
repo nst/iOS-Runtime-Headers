@@ -8,8 +8,10 @@
     NSArray *_accounts;
     NSMutableDictionary *_accountsToNumberOfRequestsInProgressForOlderItems;
     NSDictionary *_accountsToTrackedRecordsInfoMap;
+    NSArray *_activeAccounts;
+    Class _fallbackIconProviderClass;
     NSTimer *_minimumTimeBetweenRequestsTimer;
-    unsigned int _numberOfRequestsInProgressForNewerItems;
+    unsigned long long _numberOfRequestsInProgressForNewerItems;
     id _serviceImage;
     NSXPCConnection *_socialHelperConnection;
 }
@@ -17,8 +19,11 @@
 @property(readonly) NSString * accountTypeIdentifier;
 @property(copy) NSArray * accounts;
 @property(retain) NSDictionary * accountsToTrackedRecordsInfoMap;
+@property(getter=isActive,readonly) bool active;
+@property(copy,readonly) NSArray * activeAccounts;
+@property(retain) Class fallbackIconProviderClass;
 @property(retain) NSTimer * minimumTimeBetweenRequestsTimer;
-@property unsigned int numberOfRequestsInProgressForNewerItems;
+@property unsigned long long numberOfRequestsInProgressForNewerItems;
 @property(readonly) id serviceImage;
 @property(readonly) NSString * serviceName;
 @property(readonly) NSString * serviceType;
@@ -26,8 +31,11 @@
 
 + (id)allSocialSources;
 + (id)itemsFromAllSocialSourcesByDate;
++ (void)refreshAllSocialSources;
 
+- (void).cxx_destruct;
 - (void)_accountsChanged:(id)arg1;
+- (id)_activeAccountsFromAccountList:(id)arg1;
 - (void)_addItems:(id)arg1 withAge:(int)arg2 inRange:(id)arg3 rangeOfTrackedRecordsAtTimeOfRequest:(id)arg4 forAccountWithIdentifier:(id)arg5;
 - (void)_didAddItemsForAccountWithIdentifier:(id)arg1;
 - (void)_didCompleteRequestForItemsWithAge:(int)arg1 accountIdentifier:(id)arg2;
@@ -41,16 +49,19 @@
 - (id)accountTypeIdentifier;
 - (id)accounts;
 - (id)accountsToTrackedRecordsInfoMap;
-- (int)compareItem:(id)arg1 toItem:(id)arg2;
-- (int)compareNewestRecordInRange:(id)arg1 toNewestRecordInRange:(id)arg2;
-- (int)compareNewestRecordInRange:(id)arg1 toOldestRecordInRange:(id)arg2;
-- (int)compareOldestRecordInRange:(id)arg1 toOldestRecordInRange:(id)arg2;
+- (id)activeAccounts;
+- (long long)compareItem:(id)arg1 toItem:(id)arg2;
+- (long long)compareNewestRecordInRange:(id)arg1 toNewestRecordInRange:(id)arg2;
+- (long long)compareNewestRecordInRange:(id)arg1 toOldestRecordInRange:(id)arg2;
+- (long long)compareOldestRecordInRange:(id)arg1 toOldestRecordInRange:(id)arg2;
 - (void)dealloc;
+- (Class)fallbackIconProviderClass;
 - (id)init;
+- (bool)isActive;
 - (Class)itemClass;
 - (double)minimumTimeBetweenRequests;
 - (id)minimumTimeBetweenRequestsTimer;
-- (unsigned int)numberOfRequestsInProgressForNewerItems;
+- (unsigned long long)numberOfRequestsInProgressForNewerItems;
 - (id)recordRange:(id)arg1 withOldestFromItem:(id)arg2;
 - (void)repostItem:(id)arg1 fromAccountWithIdentifier:(id)arg2;
 - (id)repostResourceURLStringForItem:(id)arg1;
@@ -63,9 +74,12 @@
 - (id)serviceType;
 - (void)setAccounts:(id)arg1;
 - (void)setAccountsToTrackedRecordsInfoMap:(id)arg1;
+- (void)setFallbackIconProviderClass:(Class)arg1;
 - (void)setMinimumTimeBetweenRequestsTimer:(id)arg1;
-- (void)setNumberOfRequestsInProgressForNewerItems:(unsigned int)arg1;
+- (void)setNumberOfRequestsInProgressForNewerItems:(unsigned long long)arg1;
+- (void)setShouldHideItems:(bool)arg1 forAccount:(id)arg2;
 - (void)setSocialHelperConnection:(id)arg1;
+- (bool)shouldHideItemsFromAccount:(id)arg1;
 - (id)socialHelperConnection;
 - (void)updateMinimumTimeBetweenRequestsFromResponseHeaders:(id)arg1;
 

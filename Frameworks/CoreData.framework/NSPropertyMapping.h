@@ -17,12 +17,16 @@
     NSExpression *_valueExpression;
 }
 
+@property(copy) NSString * name;
+@property(retain) NSDictionary * userInfo;
+@property(retain) NSExpression * valueExpression;
+
 + (void)initialize;
 
 - (void)_createCachesAndOptimizeState;
 - (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;
 - (id)_propertyTransforms;
-- (void)_setIsEditable:(BOOL)arg1;
+- (void)_setIsEditable:(bool)arg1;
 - (void)_setPropertyTransforms:(id)arg1;
 - (void)_setTransformValidations:(id)arg1;
 - (void)_throwIfNotEditable;
@@ -34,8 +38,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 valueExpression:(id)arg2;
-- (BOOL)isEditable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEditable;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
 - (void)setUserInfo:(id)arg1;

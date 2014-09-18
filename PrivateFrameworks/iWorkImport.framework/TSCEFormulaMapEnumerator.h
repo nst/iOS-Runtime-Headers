@@ -18,7 +18,7 @@
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (BOOL)hasNext;
+- (bool)hasNext;
 - (id)initWithFormulaMap:(id)arg1;
 - (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; })nextFormulaGettingOwner:(const struct __CFUUID {}**)arg1 cellCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg2;
 

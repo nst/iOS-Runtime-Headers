@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, SKUIColorScheme, SKUILinkButton, SKUIRoundedRectButton, UIButton, UIControl, UILabel;
+@class NSString, SKUIClientContext, SKUILinkButton, SKUIRoundedRectButton, UIButton, UIControl, UILabel;
 
 @interface SKUIAccountButtonsView : UIView {
     UILabel *_accountCreditsLabel;
     SKUIRoundedRectButton *_appleIDButton;
     SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
     SKUILinkButton *_ecommerceButton;
     SKUIRoundedRectButton *_giftingButton;
-    int _interfaceOrientation;
     UIButton *_redeemButton;
     UIButton *_termsAndConditionsButton;
     SKUIRoundedRectButton *_usernameButton;
@@ -21,38 +19,32 @@
 @property(copy) NSString * ECommerceLinkTitle;
 @property(copy) NSString * accountCredits;
 @property(readonly) UIButton * appleIDButton;
-@property(copy) SKUIColorScheme * colorScheme;
 @property(readonly) UIButton * giftingButton;
-@property(getter=isGiftingHidden) BOOL giftingHidden;
-@property int interfaceOrientation;
+@property(getter=isGiftingHidden) bool giftingHidden;
 @property(readonly) UIButton * redeemButton;
 @property(readonly) UIButton * termsAndConditionsButton;
-@property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
+@property(getter=isTermsAndConditionsHidden) bool termsAndConditionsHidden;
 
 - (void).cxx_destruct;
 - (id)ECommerceButton;
 - (id)ECommerceLinkTitle;
-- (void)_layoutForIPad;
-- (void)_layoutForIPhone;
+- (void)_layoutOneRow;
+- (void)_layoutTwoRows;
 - (id)_newLinkButtonWithTitle:(id)arg1;
-- (id)_termsChevronImage;
 - (id)accountCredits;
 - (id)appleIDButton;
-- (id)colorScheme;
 - (id)giftingButton;
 - (id)initWithClientContext:(id)arg1;
-- (int)interfaceOrientation;
-- (BOOL)isGiftingHidden;
-- (BOOL)isTermsAndConditionsHidden;
+- (bool)isGiftingHidden;
+- (bool)isTermsAndConditionsHidden;
 - (void)layoutSubviews;
 - (id)redeemButton;
 - (void)setAccountCredits:(id)arg1;
-- (void)setColorScheme:(id)arg1;
 - (void)setECommerceLinkTitle:(id)arg1;
-- (void)setGiftingHidden:(BOOL)arg1;
-- (void)setInterfaceOrientation:(int)arg1;
-- (void)setTermsAndConditionsHidden:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setGiftingHidden:(bool)arg1;
+- (void)setTermsAndConditionsHidden:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)termsAndConditionsButton;
+- (void)tintColorDidChange;
 
 @end

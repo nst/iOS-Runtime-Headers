@@ -14,9 +14,9 @@
 @property(readonly) RadioStation * station;
 
 - (void).cxx_destruct;
-- (void)_loadStationShareInfoForShareType:(int)arg1 withCompletionHandler:(id)arg2;
+- (void)_loadStationShareInfoForShareType:(long long)arg1 withCompletionHandler:(id)arg2;
 - (id)initWithStation:(id)arg1;
-- (void)loadShareInformationForShareType:(int)arg1 withCompletionHandler:(id)arg2;
+- (void)loadShareInformationForShareType:(long long)arg1 withCompletionHandler:(id)arg2;
 - (id)station;
 
 @end

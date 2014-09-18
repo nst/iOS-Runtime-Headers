@@ -2,61 +2,65 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLScrubViewDataSource>, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, QLPageNumberView, QLThumbnailView;
+@class <QLScrubViewDataSource>, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, QLPageNumberView, QLThumbnailView;
 
 @interface QLScrubView : UIView <UIGestureRecognizerDelegate> {
     <QLScrubViewDataSource> *_dataSource;
     id _delegate;
-    BOOL _needsThumbLayout;
     NSMutableSet *_operations;
-    int _pageCount;
+    long long _pageCount;
     QLPageNumberView *_pageNumberLabel;
     NSOperationQueue *_queue;
-    BOOL _runOnMainThread;
-    int _selectedPage;
+    long long _selectedPage;
     QLThumbnailView *_selectedThumbnailView;
-    float _thumbEnd;
-    float _thumbHeight;
-    float _thumbOrigin;
+    double _thumbEnd;
+    double _thumbHeight;
+    double _thumbOrigin;
     NSMutableDictionary *_thumbViews;
     NSMutableArray *_visibleThumbIndexes;
+    bool_needsThumbLayout;
+    bool_runOnMainThread;
 }
 
 @property <QLScrubViewDataSource> * dataSource;
+@property(copy,readonly) NSString * debugDescription;
 @property id delegate;
-@property BOOL runOnMainThread;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool runOnMainThread;
+@property(readonly) Class superclass;
 
-+ (float)defaultWidth;
++ (double)defaultWidth;
 
 - (void)_cancelAllOperations;
-- (void)_handleSwipAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_handleSwipAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_hidePageLabel;
 - (void)_notifyPageChanged;
 - (void)_notifyScrubingEnded;
 - (void)_notifyScrubingStarted;
 - (void)_removeThumbviews;
 - (void)_showPageLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_thumbnailFrameForPageAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_thumbnailFrameForPageAtIndex:(long long)arg1;
 - (void)_updatePageLabelPosition;
 - (void)_updateSelectedThumbnailView;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)longTapReceived:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)panReceived:(id)arg1;
 - (void)reloadThumbnails;
-- (BOOL)runOnMainThread;
-- (void)selectPageNumber:(int)arg1;
+- (bool)runOnMainThread;
+- (void)selectPageNumber:(long long)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setRunOnMainThread:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRunOnMainThread:(bool)arg1;
 - (void)tapReceived:(id)arg1;
 
 @end

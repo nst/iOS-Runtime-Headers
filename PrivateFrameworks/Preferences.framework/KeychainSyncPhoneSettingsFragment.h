@@ -18,8 +18,8 @@
 @property(retain) KeychainSyncCountryInfo * countryInfo;
 @property <KeychainSyncPhoneSettingsFragmentDelegate> * delegate;
 @property(retain) NSString * phoneNumber;
-@property(readonly) PSEditableTableCell * phoneNumberCell;
-@property(readonly) NSArray * specifiers;
+@property(retain,readonly) PSEditableTableCell * phoneNumberCell;
+@property(retain,readonly) NSArray * specifiers;
 @property(retain) NSString * title;
 
 - (id)countryInfo;

@@ -3,7 +3,7 @@
  */
 
 @interface TSULinearRegressionModel : TSURegressionModel {
-    BOOL mAffine;
+    boolmAffine;
     double *mCoefficients;
     double *mCoefficientsStandardErrors;
     double mDegreesFreedom;
@@ -26,7 +26,7 @@
 - (id)getEquationStringAndBuildSuperscriptRangesArray;
 - (id)initAffineWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xDimension:(int)arg4;
 - (id)initNonAffineWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xDimension:(int)arg4 desiredIntercept:(double)arg5;
-- (id)initWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xDimension:(int)arg4 makeAffine:(BOOL)arg5 desiredIntercept:(double)arg6;
+- (id)initWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xDimension:(int)arg4 makeAffine:(bool)arg5 desiredIntercept:(double)arg6;
 - (int)numCoefficients;
 - (double)rSquared;
 - (double)regressionSumSquares;

@@ -8,15 +8,15 @@
     UIView *__backgroundView;
     UIImageView *__badgeImageView;
     UILabel *__textLabel;
-    int _numberOfPhotos;
-    int _style;
+    long long _numberOfPhotos;
+    long long _style;
 }
 
 @property(readonly) UIView * _backgroundView;
 @property(readonly) UIImageView * _badgeImageView;
 @property(readonly) UILabel * _textLabel;
-@property int numberOfPhotos;
-@property int style;
+@property long long numberOfPhotos;
+@property long long style;
 
 - (id)_backgroundView;
 - (id)_badgeImageView;
@@ -25,13 +25,13 @@
 - (void)_updateBadgeText;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)numberOfPhotos;
-- (void)setAlpha:(float)arg1;
-- (void)setNumberOfPhotos:(int)arg1;
-- (void)setStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
+- (long long)numberOfPhotos;
+- (void)setAlpha:(double)arg1;
+- (void)setNumberOfPhotos:(long long)arg1;
+- (void)setStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)style;
 
 @end

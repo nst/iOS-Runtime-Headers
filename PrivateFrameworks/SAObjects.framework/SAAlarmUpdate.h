@@ -13,6 +13,7 @@
 @property(copy) NSNumber * hour;
 @property(copy) NSString * label;
 @property(copy) NSNumber * minute;
+@property(copy) NSArray * modifications;
 @property(copy) NSArray * removedFrequency;
 
 + (id)update;
@@ -26,14 +27,16 @@
 - (id)hour;
 - (id)label;
 - (id)minute;
+- (id)modifications;
 - (id)removedFrequency;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAddedFrequency:(id)arg1;
 - (void)setAlarmId:(id)arg1;
 - (void)setEnabled:(id)arg1;
 - (void)setHour:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setMinute:(id)arg1;
+- (void)setModifications:(id)arg1;
 - (void)setRemovedFrequency:(id)arg1;
 
 @end

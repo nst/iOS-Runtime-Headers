@@ -9,8 +9,8 @@
     NSString *_username;
 }
 
-@property(readonly) NSString * service;
-@property(readonly) NSString * username;
+@property(copy,readonly) NSString * service;
+@property(copy,readonly) NSString * username;
 
 + (id)instantMessageAddressWithUsername:(id)arg1 service:(id)arg2;
 
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithUsername:(id)arg1 service:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)service;
 - (id)username;
 

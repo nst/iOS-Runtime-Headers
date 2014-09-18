@@ -19,8 +19,8 @@
 @property(readonly) int returnAddressIndex;
 @property(readonly) int returnValueSize;
 @property(readonly) SEL sel;
-@property(readonly) NSMethodSignature * sig;
-@property(readonly) NSString * str;
+@property(retain,readonly) NSMethodSignature * sig;
+@property(retain,readonly) NSString * str;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -2,35 +2,39 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTabsLayoutManager>, ABPersonViewControllerHelper, UIView;
+@class <ABPersonTabsLayoutManager>, ABPersonViewControllerHelper, NSString, UIView;
 
 @interface ABPersonTableView : UITableView <ABPersonTabsScrollView> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     ABPersonViewControllerHelper *_helper;
-    float _minimumBottomInset;
+    double _minimumBottomInset;
     } _savedContentInset;
     <ABPersonTabsLayoutManager> *_tabsLayoutManager;
 }
 
 @property(retain) UIView * backgroundView;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property ABPersonViewControllerHelper * helper;
-@property float minimumBottomInset;
+@property double minimumBottomInset;
+@property(readonly) Class superclass;
 @property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
 
 - (id)helper;
 - (void)layoutSubviews;
-- (float)minimumBottomInset;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (double)minimumBottomInset;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setHelper:(id)arg1;
-- (void)setMinimumBottomInset:(float)arg1;
+- (void)setMinimumBottomInset:(double)arg1;
 - (void)setTabsLayoutManager:(id)arg1;
 - (id)tabsLayoutManager;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (BOOL)touchesShouldCancelInContentView:(id)arg1;
+- (bool)touchesShouldCancelInContentView:(id)arg1;
 
 @end

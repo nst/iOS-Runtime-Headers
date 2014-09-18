@@ -11,6 +11,9 @@
     unsigned long long _versionNumber;
 }
 
+@property(readonly) NSManagedObjectID * objectID;
+@property(readonly) unsigned long long version;
+
 + (void)initialize;
 
 - (id)_propertyCache;

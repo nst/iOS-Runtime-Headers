@@ -12,6 +12,7 @@
 @property(retain) CoreDAVMultiStatusItem * multiStatus;
 @property(retain) NSSet * propertiesToFind;
 
+- (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
 - (id)description;

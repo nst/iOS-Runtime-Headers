@@ -6,6 +6,7 @@
 
 @interface EDPane : NSObject {
     int mActivePane;
+    int mPaneState;
     EDReference *mTopLeftCell;
     double mXSplitPosition;
     double mYSplitPosition;
@@ -16,7 +17,9 @@
 - (int)activePane;
 - (void)dealloc;
 - (id)init;
+- (int)paneState;
 - (void)setActivePane:(int)arg1;
+- (void)setPaneState:(int)arg1;
 - (void)setTopLeftCell:(id)arg1;
 - (void)setXSplitPosition:(double)arg1;
 - (void)setYSplitPosition:(double)arg1;

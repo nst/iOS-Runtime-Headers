@@ -10,16 +10,16 @@
         unsigned short row; 
     NSMutableArray *mChildren;
     } mDimensions;
-    unsigned int mFirstIndex;
-    unsigned int mLastIndex;
+    unsigned long long mFirstIndex;
+    unsigned long long mLastIndex;
     NSMutableArray *mWhitespaceAfterDelimiters;
     NSString *mWhitespaceBeforeFirstChild;
 }
 
 @property(retain) NSMutableArray * children;
 @property struct TSCEVectorIndexPair { unsigned short x1; unsigned short x2; } dimensions;
-@property unsigned int firstIndex;
-@property unsigned int lastIndex;
+@property unsigned long long firstIndex;
+@property unsigned long long lastIndex;
 @property(retain) NSMutableArray * whitespaceAfterDelimiters;
 @property(retain) NSString * whitespaceBeforeFirstChild;
 
@@ -27,13 +27,13 @@
 - (id)children;
 - (void)dealloc;
 - (struct TSCEVectorIndexPair { unsigned short x1; unsigned short x2; })dimensions;
-- (unsigned int)firstIndex;
+- (unsigned long long)firstIndex;
 - (id)init;
-- (unsigned int)lastIndex;
+- (unsigned long long)lastIndex;
 - (void)setChildren:(id)arg1;
 - (void)setDimensions:(struct TSCEVectorIndexPair { unsigned short x1; unsigned short x2; })arg1;
-- (void)setFirstIndex:(unsigned int)arg1;
-- (void)setLastIndex:(unsigned int)arg1;
+- (void)setFirstIndex:(unsigned long long)arg1;
+- (void)setLastIndex:(unsigned long long)arg1;
 - (void)setWhitespaceAfterDelimiters:(id)arg1;
 - (void)setWhitespaceBeforeFirstChild:(id)arg1;
 - (id)whitespaceAfterDelimiters;

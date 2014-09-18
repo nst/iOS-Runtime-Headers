@@ -16,21 +16,23 @@
 @property(copy) NSString * strokeName;
 
 + (Class)classForName:(id)arg1;
-+ (id)strokeWithName:(id)arg1 color:(id)arg2 width:(float)arg3;
++ (id)strokeWithName:(id)arg1 color:(id)arg2 width:(double)arg3;
 
-- (BOOL)canApplyDirectlyToRepCALayer;
+- (bool)canApplyDirectlyToRepCALayer;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; int x5; int x6; float x7; struct StrokePatternArchive {} *x8; struct SmartStrokeArchive {} *x9; struct FrameArchive {} *x10; struct PatternedStrokeArchive {} *x11; int x12; unsigned int x13[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(float)arg6;
-- (id)initWithName:(id)arg1 color:(id)arg2 width:(float)arg3 cap:(int)arg4 join:(int)arg5 pattern:(id)arg6 miterLimit:(float)arg7;
-- (id)initWithName:(id)arg1 color:(id)arg2 width:(float)arg3 cap:(int)arg4 join:(int)arg5 pattern:(id)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithColor:(id)arg1 width:(double)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(double)arg6;
+- (id)initWithName:(id)arg1 color:(id)arg2 width:(double)arg3 cap:(int)arg4 join:(int)arg5 pattern:(id)arg6 miterLimit:(double)arg7;
+- (id)initWithName:(id)arg1 color:(id)arg2 width:(double)arg3 cap:(int)arg4 join:(int)arg5 pattern:(id)arg6;
+- (bool)isEqual:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)saveToArchive:(struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; int x5; int x6; float x7; struct StrokePatternArchive {} *x8; struct SmartStrokeArchive {} *x9; struct FrameArchive {} *x10; struct PatternedStrokeArchive {} *x11; int x12; unsigned int x13[1]; }*)arg1 archiver:(id)arg2;
 - (void)setStrokeName:(id)arg1;
-- (BOOL)shouldAntialiasDefeat;
+- (bool)shouldAntialiasDefeat;
 - (id)strokeName;
 
 @end

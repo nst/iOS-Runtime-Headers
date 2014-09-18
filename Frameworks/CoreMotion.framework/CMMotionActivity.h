@@ -18,26 +18,28 @@
     } fState;
 }
 
-@property(readonly) BOOL automotive;
-@property(readonly) int confidence;
-@property(readonly) BOOL running;
+@property(readonly) bool automotive;
+@property(readonly) long long confidence;
+@property(readonly) bool cycling;
+@property(readonly) bool running;
 @property(readonly) NSDate * startDate;
-@property(readonly) BOOL stationary;
-@property(readonly) BOOL unknown;
-@property(readonly) BOOL walking;
+@property(readonly) bool stationary;
+@property(readonly) bool unknown;
+@property(readonly) bool walking;
 
 - (id).cxx_construct;
-- (BOOL)automotive;
-- (int)confidence;
+- (bool)automotive;
+- (long long)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (bool)cycling;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1;
-- (BOOL)running;
+- (bool)running;
 - (id)startDate;
-- (BOOL)stationary;
-- (BOOL)unknown;
-- (BOOL)walking;
+- (bool)stationary;
+- (bool)unknown;
+- (bool)walking;
 
 @end

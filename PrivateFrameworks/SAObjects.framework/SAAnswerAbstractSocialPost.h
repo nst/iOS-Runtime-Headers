@@ -12,8 +12,12 @@
 @property(copy) NSArray * comments;
 @property(copy) NSDate * dateCreated;
 @property(copy) NSDate * dateModified;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSURL * icon;
-@property int rank;
+@property long long rank;
+@property(readonly) Class superclass;
 @property(copy) NSString * text;
 @property(copy) NSString * title;
 
@@ -28,14 +32,14 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)icon;
-- (int)rank;
+- (long long)rank;
 - (void)setAuthor:(id)arg1;
 - (void)setAuthorTitle:(id)arg1;
 - (void)setComments:(id)arg1;
 - (void)setDateCreated:(id)arg1;
 - (void)setDateModified:(id)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setRank:(int)arg1;
+- (void)setRank:(long long)arg1;
 - (void)setText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)text;

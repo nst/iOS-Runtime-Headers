@@ -10,15 +10,18 @@
     NSString *_sourceServerId;
 }
 
-@property(readonly) NSString * destinationContainerId;
-@property(readonly) NSString * sourceContainerId;
-@property(readonly) NSString * sourceServerId;
+@property(retain) NSString * destinationContainerId;
+@property(retain) NSString * sourceContainerId;
+@property(retain) NSString * sourceServerId;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)destinationContainerId;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 sourceContainerId:(id)arg3 sourceServerId:(id)arg4 destinationContainerId:(id)arg5;
+- (id)initWithItemChangeType:(long long)arg1 changedItem:(id)arg2 sourceContainerId:(id)arg3 sourceServerId:(id)arg4 destinationContainerId:(id)arg5;
+- (void)setDestinationContainerId:(id)arg1;
+- (void)setSourceContainerId:(id)arg1;
+- (void)setSourceServerId:(id)arg1;
 - (id)sourceContainerId;
 - (id)sourceServerId;
 

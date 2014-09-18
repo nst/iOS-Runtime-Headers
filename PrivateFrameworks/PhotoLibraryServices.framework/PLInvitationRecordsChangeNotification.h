@@ -5,18 +5,18 @@
 @class NSDictionary, PLGenericAlbum;
 
 @interface PLInvitationRecordsChangeNotification : PLContainerChangeNotification {
-    BOOL _invitationRecordsDidChange;
     NSDictionary *_userInfo;
+    bool_invitationRecordsDidChange;
 }
 
-@property(readonly) PLGenericAlbum * album;
-@property(readonly) BOOL invitationRecordsDidChange;
+@property(retain,readonly) PLGenericAlbum * album;
+@property(readonly) bool invitationRecordsDidChange;
 
 + (id)notificationWithAlbum:(id)arg1 snapshot:(id)arg2;
 
 - (void)_calculateDiffs;
 - (struct NSObject { Class x1; }*)album;
-- (BOOL)invitationRecordsDidChange;
+- (bool)invitationRecordsDidChange;
 - (id)name;
 - (id)userInfo;
 

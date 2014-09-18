@@ -2,22 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDimmingView;
+@class NSString, UIDimmingView;
 
 @interface UIDictationFloatingStarkView : UIDictationView <UIGestureRecognizerDelegate> {
     UIDimmingView *_dimmingView;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)dealloc;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)endpointButtonPressed;
 - (void)finishReturnToKeyboard;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (struct CGPoint { float x1; float x2; })positionForShow;
+- (struct CGPoint { double x1; double x2; })positionForShow;
 - (void)prepareForReturnToKeyboard;
 - (void)returnToKeyboard;
-- (void)setInputViewsHiddenForDictation:(BOOL)arg1;
+- (void)setInputViewsHiddenForDictation:(bool)arg1;
 - (void)setState:(int)arg1;
 - (void)show;
 

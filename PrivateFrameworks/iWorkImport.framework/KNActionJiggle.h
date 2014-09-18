@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimParameterGroup;
+@class KNAnimParameterGroup, NSString;
 
 @interface KNActionJiggle : KNAnimationEffect <KNActionEffectBuildAnimator> {
     KNAnimParameterGroup *_parameterGroup;
-    float singleRotationAnimDuration;
+    double singleRotationAnimDuration;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)actionEffectStyle;
 + (int)animationCategory;
@@ -16,8 +21,9 @@
 + (id)applyActionEffect:(id)arg1 toAttributes:(id)arg2;
 + (id)customAttributes;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
++ (bool)isEmphasisBuildAnimation;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
@@ -25,7 +31,7 @@
 - (id)animationsForTextureSet:(id)arg1 finalTextureSet:(id)arg2 duration:(double)arg3 attributes:(id)arg4 previousAttributes:(id)arg5;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
-- (void)p_addAnimationsToLayer:(id)arg1 angleLarge:(float)arg2 angleSmall:(float)arg3 xOffsetLarge:(float)arg4 xOffsetSmall:(float)arg5 duration:(double)arg6 jiggleCount:(float)arg7 result:(id)arg8;
-- (float)p_jiggleCountFromEffectAttributes:(id)arg1;
+- (void)p_addAnimationsToLayer:(id)arg1 angleLarge:(double)arg2 angleSmall:(double)arg3 xOffsetLarge:(double)arg4 xOffsetSmall:(double)arg5 duration:(double)arg6 jiggleCount:(double)arg7 result:(id)arg8;
+- (double)p_jiggleCountFromEffectAttributes:(id)arg1;
 
 @end

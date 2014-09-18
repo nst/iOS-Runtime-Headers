@@ -5,14 +5,14 @@
 @class NSMutableDictionary, NSString;
 
 @interface VCSessionMessaging : NSObject {
-    unsigned long p2pID;
+    unsigned int p2pID;
     NSString *remoteVersion;
     NSMutableDictionary *topics;
 }
 
-- (void)addTopic:(id)arg1 associatedStrings:(id)arg2 receiveHandler:(id)arg3;
+- (void)addTopic:(id)arg1 associatedStrings:(id)arg2 allowConcurrent:(bool)arg3 receiveHandler:(id)arg4;
 - (void)dealloc;
-- (id)initWithP2PID:(unsigned long)arg1 remoteVersion:(id)arg2;
+- (id)initWithP2PID:(unsigned int)arg1 remoteVersion:(id)arg2;
 - (id)newDictionaryFromUnpackedMessage:(id)arg1;
 - (id)newPackedMessageFromDictionary:(id)arg1;
 - (void)sendMessage:(id)arg1 withTopic:(id)arg2;

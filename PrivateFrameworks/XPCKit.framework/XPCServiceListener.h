@@ -5,7 +5,7 @@
 @class <XPCServiceListenerDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
 
 @interface XPCServiceListener : NSObject {
-    unsigned long _clientCount;
+    unsigned long long _clientCount;
     <XPCServiceListenerDelegate> *_delegate;
     NSObject<OS_xpc_object> *_listener;
     NSMutableSet *_serviceConnections;
@@ -13,16 +13,16 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property unsigned long clientCount;
+@property unsigned long long clientCount;
 @property(readonly) <XPCServiceListenerDelegate> * delegate;
 @property(retain) NSObject<OS_xpc_object> * listener;
 @property(retain) NSMutableSet * serviceConnections;
-@property(readonly) NSString * serviceName;
+@property(retain,readonly) NSString * serviceName;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
-- (void)_workQueueShutDownServiceConnections:(id)arg1 index:(unsigned int)arg2 completionBlock:(id)arg3;
-- (unsigned long)clientCount;
+- (void)_workQueueShutDownServiceConnections:(id)arg1 index:(unsigned long long)arg2 completionBlock:(id)arg3;
+- (unsigned long long)clientCount;
 - (id)debugDescription;
 - (id)delegate;
 - (id)initWithServiceName:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
@@ -30,7 +30,7 @@
 - (void)serviceConnectionDidDisconnect:(id)arg1;
 - (id)serviceConnections;
 - (id)serviceName;
-- (void)setClientCount:(unsigned long)arg1;
+- (void)setClientCount:(unsigned long long)arg1;
 - (void)setListener:(id)arg1;
 - (void)setServiceConnections:(id)arg1;
 - (void)setWorkQueue:(id)arg1;

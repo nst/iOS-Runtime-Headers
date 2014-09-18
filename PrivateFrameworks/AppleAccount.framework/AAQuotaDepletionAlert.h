@@ -12,7 +12,7 @@
 - (id)_deviceSpecificLocalizedString:(id)arg1;
 - (id)init;
 - (id)initForDataclass:(id)arg1;
-- (BOOL)showIfNecessaryWithHandler:(id)arg1;
+- (bool)showIfNecessaryWithHandler:(id)arg1;
 - (void)showWithHandler:(id)arg1;
 
 @end

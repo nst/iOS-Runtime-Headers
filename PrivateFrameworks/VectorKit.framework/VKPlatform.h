@@ -3,56 +3,64 @@
  */
 
 @interface VKPlatform : NSObject {
-    unsigned int _memSize;
+    unsigned long long _memSize;
     int _numCPUs;
-    BOOL _proceduralRoadAlpha;
-    BOOL _shouldUseTrafficAlphaHack;
-    BOOL _supports3DBuildingStrokes;
-    BOOL _supportsBuildingStrokes;
-    BOOL _useCheapTrafficShader;
+    bool_proceduralRoadAlpha;
+    bool_shouldUseTrafficAlphaHack;
+    bool_supports3DBuildingStrokes;
+    bool_supportsBuildingStrokes;
+    bool_useCheapTrafficShader;
 }
 
-@property(readonly) BOOL canMakeSharingThumbnails;
-@property(readonly) BOOL isPad;
-@property(readonly) float mainScreenPPI;
-@property(readonly) float mainScreenScale;
-@property(readonly) unsigned int memorySize;
-@property(readonly) BOOL proceduralRoadAlpha;
-@property(readonly) BOOL roadsWithSimpleLineMeshesAvailable;
-@property(readonly) BOOL shouldDrawWhenReady;
-@property(readonly) BOOL shouldStyleLabelsInParallel;
-@property(readonly) BOOL shouldUseTrafficAlphaHack;
-@property(readonly) BOOL supports3DBuildingStrokes;
-@property(readonly) BOOL supportsBuildingStrokes;
-@property(readonly) BOOL supportsDepthDependentBuildings;
-@property(readonly) BOOL supportsHiResBuildings;
-@property(readonly) BOOL supportsHiResRTT;
-@property(readonly) unsigned int tileMaximumLimit;
-@property(readonly) BOOL useCheapTrafficShader;
+@property(readonly) bool canMakeSharingThumbnails;
+@property(readonly) bool isPad;
+@property(readonly) double mainScreenPPI;
+@property(readonly) double mainScreenScale;
+@property(readonly) double maxContentScaleForRendering;
+@property(readonly) unsigned long long memorySize;
+@property(readonly) bool proceduralRoadAlpha;
+@property(readonly) bool roadsWithSimpleLineMeshesAvailable;
+@property(readonly) bool shouldDrawWhenReady;
+@property(readonly) bool shouldPregenerateLabelGlyphs;
+@property(readonly) bool shouldStyleLabelsInParallel;
+@property(readonly) bool shouldUseTrafficAlphaHack;
+@property(readonly) bool supports3DBuildingStrokes;
+@property(readonly) bool supportsBuildingShadows;
+@property(readonly) bool supportsBuildingStrokes;
+@property(readonly) bool supportsHiResBuildings;
+@property(readonly) bool supportsHiResRTT;
+@property(readonly) unsigned int tileDecodeQueueWidth;
+@property(readonly) unsigned long long tileMaximumLimit;
+@property(readonly) unsigned int tilePrefetchNumberOfScreens;
+@property(readonly) bool useCheapTrafficShader;
 
 + (id)sharedPlatform;
 
-- (unsigned int)_calculateMemSize;
+- (unsigned long long)_calculateMemSize;
 - (void)_determineHardware;
-- (BOOL)canMakeSharingThumbnails;
+- (bool)canMakeSharingThumbnails;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isPad;
-- (float)mainScreenPPI;
-- (float)mainScreenScale;
-- (unsigned int)memorySize;
-- (BOOL)proceduralRoadAlpha;
-- (BOOL)roadsWithSimpleLineMeshesAvailable;
-- (BOOL)shouldDrawWhenReady;
-- (BOOL)shouldStyleLabelsInParallel;
-- (BOOL)shouldUseTrafficAlphaHack;
-- (BOOL)supports3DBuildingStrokes;
-- (BOOL)supportsBuildingStrokes;
-- (BOOL)supportsDepthDependentBuildings;
-- (BOOL)supportsHiResBuildings;
-- (BOOL)supportsHiResRTT;
-- (unsigned int)tileMaximumLimit;
-- (unsigned int)tileReserveLimit:(BOOL)arg1;
-- (BOOL)useCheapTrafficShader;
+- (bool)isPad;
+- (double)mainScreenPPI;
+- (double)mainScreenScale;
+- (double)maxContentScaleForRendering;
+- (unsigned long long)memorySize;
+- (bool)proceduralRoadAlpha;
+- (bool)roadsWithSimpleLineMeshesAvailable;
+- (bool)shouldDrawWhenReady;
+- (bool)shouldPregenerateLabelGlyphs;
+- (bool)shouldStyleLabelsInParallel;
+- (bool)shouldUseTrafficAlphaHack;
+- (bool)supports3DBuildingStrokes;
+- (bool)supportsBuildingShadows;
+- (bool)supportsBuildingStrokes;
+- (bool)supportsHiResBuildings;
+- (bool)supportsHiResRTT;
+- (unsigned int)tileDecodeQueueWidth;
+- (unsigned long long)tileMaximumLimit;
+- (unsigned int)tilePrefetchNumberOfScreens;
+- (unsigned long long)tileReserveLimit:(bool)arg1;
+- (bool)useCheapTrafficShader;
 
 @end

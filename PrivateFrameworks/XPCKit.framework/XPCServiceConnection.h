@@ -17,7 +17,7 @@
 @property(retain) <NSObject> * context;
 @property <XPCServiceConnectionDelegate> * delegate;
 @property XPCServiceListener * serviceListener;
-@property(readonly) NSString * serviceName;
+@property(retain,readonly) NSString * serviceName;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;

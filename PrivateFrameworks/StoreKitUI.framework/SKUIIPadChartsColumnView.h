@@ -2,31 +2,31 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIItemListTableViewController;
+@class NSArray, UIViewController;
 
 @interface SKUIIPadChartsColumnView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     } _contentInset;
     NSArray *_contentViewControllers;
-    int _selectedViewControllerIndex;
+    long long _selectedViewControllerIndex;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property(copy) NSArray * contentViewControllers;
-@property(readonly) SKUIItemListTableViewController * selectedViewController;
+@property(readonly) UIViewController * selectedViewController;
 
 - (void).cxx_destruct;
 - (void)_addSelectedViewController;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)contentViewControllers;
 - (void)layoutSubviews;
 - (id)selectedViewController;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setContentViewControllers:(id)arg1;
-- (void)setSelectedViewControllerIndex:(int)arg1;
+- (void)setSelectedViewControllerIndex:(long long)arg1;
 
 @end

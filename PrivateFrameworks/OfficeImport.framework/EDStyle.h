@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDProtection, EDResources;
+@class EDProtection, EDResources, NSString;
 
 @interface EDStyle : NSObject <NSCopying, EDImmutableObject> {
     boolmAlignmentInfoOverridden;
@@ -12,65 +12,70 @@
     boolmFillOverridden;
     boolmFontOverridden;
     boolmProtectionOverridden;
-    unsigned int mAlignmentInfoIndex;
-    unsigned int mBordersIndex;
-    unsigned int mContentFormatId;
-    unsigned int mFillIndex;
-    unsigned int mFontIndex;
-    unsigned int mIndex;
-    unsigned int mParentIndex;
+    unsigned long long mAlignmentInfoIndex;
+    unsigned long long mBordersIndex;
+    unsigned long long mContentFormatId;
+    unsigned long long mFillIndex;
+    unsigned long long mFontIndex;
+    unsigned long long mIndex;
+    unsigned long long mParentIndex;
     EDProtection *mProtection;
     EDResources *mResources;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)styleWithResources:(id)arg1;
 
 - (id)alignmentInfo;
-- (unsigned int)alignmentInfoIndex;
+- (unsigned long long)alignmentInfoIndex;
 - (id)borders;
-- (unsigned int)bordersIndex;
+- (unsigned long long)bordersIndex;
 - (id)contentFormat;
-- (unsigned int)contentFormatId;
+- (unsigned long long)contentFormatId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fill;
-- (unsigned int)fillIndex;
+- (unsigned long long)fillIndex;
 - (id)font;
-- (unsigned int)fontIndex;
-- (unsigned int)hash;
-- (unsigned int)index;
+- (unsigned long long)fontIndex;
+- (unsigned long long)hash;
+- (unsigned long long)index;
 - (id)initWithResources:(id)arg1;
 - (bool)isAlignmentInfoOverridden;
 - (bool)isBordersOverridden;
 - (bool)isContentFormatOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToStyle:(id)arg1;
-- (BOOL)isEquivalentToStyle:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToStyle:(id)arg1;
+- (bool)isEquivalentToStyle:(id)arg1;
 - (bool)isFillOverridden;
 - (bool)isFontOverridden;
 - (bool)isProtectionOverridden;
 - (id)parent;
-- (unsigned int)parentIndex;
+- (unsigned long long)parentIndex;
 - (id)protection;
 - (void)setAlignmentInfo:(id)arg1;
-- (void)setAlignmentInfoIndex:(unsigned int)arg1;
+- (void)setAlignmentInfoIndex:(unsigned long long)arg1;
 - (void)setAlignmentInfoOverridden:(bool)arg1;
 - (void)setBorders:(id)arg1;
-- (void)setBordersIndex:(unsigned int)arg1;
+- (void)setBordersIndex:(unsigned long long)arg1;
 - (void)setBordersOverridden:(bool)arg1;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setContentFormatId:(unsigned long long)arg1;
 - (void)setContentFormatOverridden:(bool)arg1;
 - (void)setDoNotModify:(bool)arg1;
 - (void)setFill:(id)arg1;
-- (void)setFillIndex:(unsigned int)arg1;
+- (void)setFillIndex:(unsigned long long)arg1;
 - (void)setFillOverridden:(bool)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
+- (void)setFontIndex:(unsigned long long)arg1;
 - (void)setFontOverridden:(bool)arg1;
-- (void)setIndex:(unsigned int)arg1;
+- (void)setIndex:(unsigned long long)arg1;
 - (void)setParent:(id)arg1;
-- (void)setParentIndex:(unsigned int)arg1;
+- (void)setParentIndex:(unsigned long long)arg1;
 - (void)setProtection:(id)arg1;
 - (void)setProtectionOverridden:(bool)arg1;
 

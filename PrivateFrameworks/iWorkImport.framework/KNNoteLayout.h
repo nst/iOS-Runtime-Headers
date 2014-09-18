@@ -2,71 +2,74 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPLayout, TSWPPadding;
+@class NSString, TSWPLayout, TSWPPadding;
 
 @interface KNNoteLayout : TSDLayout <TSKChangeSourceObserver, TSWPLayoutParent, TSWPColumnMetrics> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     TSWPLayout *mContainedLayout;
     TSWPPadding *mPadding;
     } mSizeOfScrollViewEnclosingCanvas;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } adjustedInsets;
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
+@property(readonly) bool alwaysStartsNewTarget;
+@property(readonly) unsigned long long columnCount;
+@property(readonly) bool columnsAreLeftToRight;
 @property(readonly) TSWPLayout * containedLayout;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) TSWPPadding * layoutMargins;
 @property(readonly) TSWPPadding * padding;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) float textScaleFactor;
+@property(readonly) bool shrinkTextToFit;
+@property(readonly) Class superclass;
+@property(readonly) double textScaleFactor;
 
 - (id).cxx_construct;
 - (void)addChild:(id)arg1;
-- (struct CGSize { float x1; float x2; })adjustedInsets;
-- (BOOL)alwaysStartsNewTarget;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
+- (bool)alwaysStartsNewTarget;
 - (void)asyncProcessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGPoint { float x1; float x2; })capturedInfoPositionForAttachment;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGPoint { double x1; double x2; })capturedInfoPositionForAttachment;
 - (id)childSearchTargets;
 - (id)children;
-- (unsigned int)columnCount;
-- (id)columnMetricsForCharIndex:(unsigned int)arg1 outRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)columnsAreLeftToRight;
+- (unsigned long long)columnCount;
+- (id)columnMetricsForCharIndex:(unsigned long long)arg1 outRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)columnsAreLeftToRight;
 - (id)computeLayoutGeometry;
 - (id)containedLayout;
 - (void)createContainedLayoutForEditing;
 - (void)dealloc;
 - (id)dependentsOfTextLayout:(id)arg1;
-- (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (void)insertChild:(id)arg1 above:(id)arg2;
-- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertChild:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertChild:(id)arg1 below:(id)arg2;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (void)invalidateSize;
 - (id)layoutGeometryFromInfo;
 - (id)layoutMargins;
-- (float)maxAutoGrowHeightForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
-- (id)p_adjustedPaddingForBodyWidth:(float)arg1;
+- (double)maxAutoGrowHeightForTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (id)p_adjustedPaddingForBodyWidth:(double)arg1;
 - (void)p_setSizeOfScrollViewEnclosingCanvasFromLayoutController:(id)arg1;
 - (id)padding;
-- (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 outWidth:(float*)arg3 outGap:(float*)arg4;
+- (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 target:(id)arg3 outWidth:(double*)arg4 outGap:(double*)arg5;
 - (Class)repClassForTextLayout:(id)arg1;
 - (void)replaceChild:(id)arg1 with:(id)arg2;
 - (void)setChildren:(id)arg1;
-- (BOOL)shrinkTextToFit;
+- (bool)shrinkTextToFit;
 - (void)sizeOfScrollViewEnclosingCanvasDidChange;
-- (BOOL)supportsBoldItalicUnderlineShortcuts;
-- (BOOL)textIsVertical;
-- (float)textScaleFactor;
-- (float)textScaleFactorForPrinting;
+- (bool)supportsBoldItalicUnderlineShortcuts;
+- (bool)textIsVertical;
+- (double)textScaleFactor;
+- (double)textScaleFactorForPrinting;
 - (void)updateChildrenFromInfo;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (float)widthForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (void)willBeAddedToLayoutController:(id)arg1;
 - (void)willBeRemovedFromLayoutController:(id)arg1;
 

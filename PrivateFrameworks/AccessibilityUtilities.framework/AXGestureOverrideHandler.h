@@ -11,19 +11,19 @@
 @interface AXGestureOverrideHandler : NSObject {
     id _handler;
     NSString *_identifier;
-    unsigned int _type;
+    unsigned long long _type;
 }
 
 @property(copy) id handler;
 @property(retain) NSString * identifier;
-@property unsigned int type;
+@property unsigned long long type;
 
 - (void)dealloc;
 - (id)handler;
 - (id)identifier;
 - (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

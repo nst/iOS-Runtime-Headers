@@ -2,27 +2,34 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIKeyboardCandidateView_iPhone_Floating : UIKeyboardCandidateView_iPhone <UIKeyboardCandidateViewInline> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } _collapsedRect;
-    BOOL _withKeyboard;
+    bool_withKeyboard;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)_collapse:(id)arg1;
-- (unsigned int)_numberOfColumns:(BOOL)arg1;
-- (BOOL)_shouldShowHideKeyboard;
-- (BOOL)_shouldUseFullMetrics;
+- (unsigned long long)_numberOfColumns:(bool)arg1;
+- (bool)_shouldShowHideKeyboard;
+- (bool)_shouldUseFullMetrics;
 - (id)activeCandidateList;
 - (void)candidatesDidChange;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCandidateViewExtended:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCandidateViewExtended:(bool)arg1;
 
 @end

@@ -2,63 +2,64 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MPMediaQueryShuffledItems, NSArray;
+@class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MPMediaQueryShuffledItems, NSArray, NSString;
 
-@interface MPMediaQueryQueueFeeder : MPQueueFeeder {
+@interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate> {
     unsigned int _itemsChanged : 1;
     unsigned int _hasPendingLibraryChanges : 1;
     MPMediaItem *_cloudDialogAllowedMediaItem;
     MPMediaLibraryConnectionAssertion *_connectionAssertion;
     MPMediaItem *_focusedItem;
-    int _ignoreShuffleTypeChangesCount;
+    long long _ignoreShuffleTypeChangesCount;
     MPMediaQueryShuffledItems *_items;
     NSArray *_prefixMediaItems;
     MPMediaQuery *_query;
-    BOOL _useAirPlayMusicMode;
 }
 
 @property(retain) MPMediaItem * cloudDialogAllowedMediaItem;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) MPMediaItem * focusedItem;
+@property(readonly) unsigned long long hash;
 @property(retain) NSArray * prefixMediaItems;
 @property(copy) MPMediaQuery * query;
-@property BOOL useAirPlayMusicMode;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_applyAirPlayMusicMode;
-- (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryDidChange;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_libraryDidChangeNotification:(id)arg1;
 - (void)_performWhileIgnoringShuffleChanges:(id)arg1;
-- (unsigned int)_shuffleItemsInFeederQueryWithShuffleType:(unsigned int)arg1 initialIndex:(unsigned int)arg2;
+- (unsigned long long)_shuffleItemsInFeederQueryWithShuffleType:(unsigned long long)arg1 initialIndex:(unsigned long long)arg2 canInvalidateFeederContents:(bool)arg3;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (id)cloudDialogAllowedMediaItem;
-- (id)copyRawItemAtIndex:(unsigned int)arg1;
+- (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)focusedItem;
-- (unsigned int)indexOfMediaItem:(id)arg1;
+- (bool)hasValidItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)indexOfMediaItem:(id)arg1;
 - (id)init;
-- (unsigned int)initialPlaybackQueueDepth;
+- (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;
 - (Class)itemClass;
-- (unsigned int)itemCount;
-- (unsigned int)itemTypeForIndex:(unsigned int)arg1;
-- (id)mediaItemAtIndex:(unsigned int)arg1;
-- (id)pathAtIndex:(unsigned int)arg1;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
+- (unsigned long long)itemCount;
+- (unsigned long long)itemTypeForIndex:(unsigned long long)arg1;
+- (id)mediaItemAtIndex:(unsigned long long)arg1;
+- (id)pathAtIndex:(unsigned long long)arg1;
+- (id)playbackInfoAtIndex:(unsigned long long)arg1;
 - (id)preferredLanguages;
 - (id)prefixMediaItems;
 - (id)query;
+- (bool)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(bool)arg2;
 - (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
 - (void)setAVController:(id)arg1;
 - (void)setCloudDialogAllowedMediaItem:(id)arg1;
 - (void)setFocusedItem:(id)arg1;
 - (void)setPrefixMediaItems:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setUseAirPlayMusicMode:(BOOL)arg1;
-- (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
-- (BOOL)trackChangesCanEndPlayback;
-- (unsigned int)unshuffledIndexOfAVItem:(id)arg1;
-- (BOOL)useAirPlayMusicMode;
+- (void)shuffleItemsWithAnchor:(unsigned long long*)arg1;
+- (bool)trackChangesCanEndPlayback;
+- (unsigned long long)unshuffledIndexOfAVItem:(id)arg1;
+- (bool)wantsAirPlayVideo;
 
 @end

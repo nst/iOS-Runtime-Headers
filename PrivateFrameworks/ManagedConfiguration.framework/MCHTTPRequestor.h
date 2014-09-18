@@ -12,22 +12,26 @@
     NSArray *_anchorCertificates;
     id _completionBlock;
     NSURLConnection *_connection;
-    BOOL _didFailDueToMissingCredentials;
     NSString *_password;
     NSMutableData *_responseData;
     id _selfReference;
-    BOOL _shouldUseResponseBodyAsLoginPrompt;
     NSString *_username;
+    bool_didFailDueToMissingCredentials;
+    bool_shouldUseResponseBodyAsLoginPrompt;
 }
 
 @property(retain) NSArray * anchorCertificates;
 @property(copy) id completionBlock;
 @property(retain) NSURLConnection * connection;
-@property BOOL didFailDueToMissingCredentials;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool didFailDueToMissingCredentials;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * password;
 @property(retain) NSMutableData * responseData;
 @property(retain) id selfReference;
-@property BOOL shouldUseResponseBodyAsLoginPrompt;
+@property bool shouldUseResponseBodyAsLoginPrompt;
+@property(readonly) Class superclass;
 @property(copy) NSString * username;
 
 - (void).cxx_destruct;
@@ -40,7 +44,7 @@
 - (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (id)connection;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (BOOL)didFailDueToMissingCredentials;
+- (bool)didFailDueToMissingCredentials;
 - (void)didFinishWithError:(id)arg1;
 - (id)init;
 - (id)password;
@@ -49,13 +53,13 @@
 - (void)setAnchorCertificates:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setDidFailDueToMissingCredentials:(BOOL)arg1;
+- (void)setDidFailDueToMissingCredentials:(bool)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setResponseData:(id)arg1;
 - (void)setSelfReference:(id)arg1;
-- (void)setShouldUseResponseBodyAsLoginPrompt:(BOOL)arg1;
+- (void)setShouldUseResponseBodyAsLoginPrompt:(bool)arg1;
 - (void)setUsername:(id)arg1;
-- (BOOL)shouldUseResponseBodyAsLoginPrompt;
+- (bool)shouldUseResponseBodyAsLoginPrompt;
 - (void)startWithRequest:(id)arg1 username:(id)arg2 password:(id)arg3 anchorCertificates:(id)arg4 completionBlock:(id)arg5;
 - (id)username;
 

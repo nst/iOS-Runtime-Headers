@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORPUserCredentials, NSData, NSMutableArray, NSString;
+@class GEOLocation, GEORPUserCredentials, NSData, NSMutableArray, NSString;
 
 @interface GEORPProblemCollectionRequest : PBRequest <NSCopying> {
     NSString *_countryCode;
@@ -12,21 +12,27 @@
     NSString *_osRelease;
     NSMutableArray *_requestElements;
     GEORPUserCredentials *_userCredentials;
+    NSString *_userEmail;
+    GEOLocation *_userLocation;
 }
 
 @property(retain) NSString * countryCode;
 @property(retain) NSData * devicePushToken;
-@property(readonly) BOOL hasCountryCode;
-@property(readonly) BOOL hasDevicePushToken;
-@property(readonly) BOOL hasHwMachine;
-@property(readonly) BOOL hasInputLanguage;
-@property(readonly) BOOL hasOsRelease;
-@property(readonly) BOOL hasUserCredentials;
+@property(readonly) bool hasCountryCode;
+@property(readonly) bool hasDevicePushToken;
+@property(readonly) bool hasHwMachine;
+@property(readonly) bool hasInputLanguage;
+@property(readonly) bool hasOsRelease;
+@property(readonly) bool hasUserCredentials;
+@property(readonly) bool hasUserEmail;
+@property(readonly) bool hasUserLocation;
 @property(retain) NSString * hwMachine;
 @property(retain) NSString * inputLanguage;
 @property(retain) NSString * osRelease;
 @property(retain) NSMutableArray * requestElements;
 @property(retain) GEORPUserCredentials * userCredentials;
+@property(retain) NSString * userEmail;
+@property(retain) GEOLocation * userLocation;
 
 - (void)addRequestElement:(id)arg1;
 - (void)clearRequestElements;
@@ -37,21 +43,24 @@
 - (id)description;
 - (id)devicePushToken;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCountryCode;
-- (BOOL)hasDevicePushToken;
-- (BOOL)hasHwMachine;
-- (BOOL)hasInputLanguage;
-- (BOOL)hasOsRelease;
-- (BOOL)hasUserCredentials;
-- (unsigned int)hash;
+- (bool)hasCountryCode;
+- (bool)hasDevicePushToken;
+- (bool)hasHwMachine;
+- (bool)hasInputLanguage;
+- (bool)hasOsRelease;
+- (bool)hasUserCredentials;
+- (bool)hasUserEmail;
+- (bool)hasUserLocation;
+- (unsigned long long)hash;
 - (id)hwMachine;
 - (id)inputLanguage;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (id)osRelease;
-- (BOOL)readFrom:(id)arg1;
-- (id)requestElementAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)requestElementAtIndex:(unsigned long long)arg1;
 - (id)requestElements;
-- (unsigned int)requestElementsCount;
+- (unsigned long long)requestElementsCount;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setCountryCode:(id)arg1;
@@ -61,7 +70,11 @@
 - (void)setOsRelease:(id)arg1;
 - (void)setRequestElements:(id)arg1;
 - (void)setUserCredentials:(id)arg1;
+- (void)setUserEmail:(id)arg1;
+- (void)setUserLocation:(id)arg1;
 - (id)userCredentials;
+- (id)userEmail;
+- (id)userLocation;
 - (void)writeTo:(id)arg1;
 
 @end

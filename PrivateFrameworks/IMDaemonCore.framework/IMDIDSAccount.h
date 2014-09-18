@@ -8,7 +8,7 @@
     IDSAccount *_idsAccount;
 }
 
-@property(readonly) IDSAccount * idsAccount;
+@property(retain,readonly) IDSAccount * idsAccount;
 
 - (id)accountDefaults;
 - (void)dealloc;

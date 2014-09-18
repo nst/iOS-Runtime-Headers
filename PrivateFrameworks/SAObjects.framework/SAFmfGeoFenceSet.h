@@ -25,7 +25,7 @@
 - (id)groupIdentifier;
 - (id)oneTimeOnly;
 - (id)requestedLocation;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setEnable:(id)arg1;
 - (void)setFenceType:(id)arg1;
 - (void)setFriend:(id)arg1;

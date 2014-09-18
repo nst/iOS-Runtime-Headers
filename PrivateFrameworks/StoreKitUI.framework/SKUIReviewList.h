@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSURL;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 
 @interface SKUIReviewList : NSObject <SKUICacheCoding> {
     NSDictionary *_dictionary;
@@ -10,30 +10,34 @@
 }
 
 @property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(readonly) int fiveStarRatingCount;
-@property(readonly) int fourStarRatingCount;
-@property(readonly) int numberOfPages;
-@property(readonly) int oneStarRatingCount;
-@property(readonly) int ratingCount;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) long long fiveStarRatingCount;
+@property(readonly) long long fourStarRatingCount;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long numberOfPages;
+@property(readonly) long long oneStarRatingCount;
+@property(readonly) long long ratingCount;
 @property(readonly) NSArray * reviews;
-@property(readonly) int threeStarRatingCount;
-@property(readonly) int twoStarRatingCount;
+@property(readonly) Class superclass;
+@property(readonly) long long threeStarRatingCount;
+@property(readonly) long long twoStarRatingCount;
 @property(readonly) float userRating;
 @property(readonly) NSURL * writeReviewURL;
 
 - (void).cxx_destruct;
 - (void)addReviews:(id)arg1;
 - (id)cacheRepresentation;
-- (int)fiveStarRatingCount;
-- (int)fourStarRatingCount;
+- (long long)fiveStarRatingCount;
+- (long long)fourStarRatingCount;
 - (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithReviewListDictionary:(id)arg1;
-- (int)numberOfPages;
-- (int)oneStarRatingCount;
-- (int)ratingCount;
+- (long long)numberOfPages;
+- (long long)oneStarRatingCount;
+- (long long)ratingCount;
 - (id)reviews;
-- (int)threeStarRatingCount;
-- (int)twoStarRatingCount;
+- (long long)threeStarRatingCount;
+- (long long)twoStarRatingCount;
 - (float)userRating;
 - (id)writeReviewURL;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPProxyObjectManager>, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSURL, TSPArchiverManager, TSPObjectContext;
+@class <TSPProxyObjectManager>, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL, TSPArchiverManager, TSPObjectContext;
 
 @interface TSPPasteboardWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPProxyObjectManager, TSPObjectModifyDelegate> {
     TSPArchiverManager *_archiverManager;
@@ -13,15 +13,19 @@
     <TSPProxyObjectManager> *_proxyManager;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property <TSPProxyObjectManager> * proxyManager;
 @property(readonly) NSURL * relativeURLForExternalData;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addDataFinalizeHandlerForSuccessfulSave:(id)arg1;
 - (void)archiverManager:(id)arg1 didCreateArchiver:(id)arg2;
-- (BOOL)archiverManager:(id)arg1 shouldDelayArchivingObject:(id)arg2;
+- (bool)archiverManager:(id)arg1 shouldDelayArchivingObject:(id)arg2;
 - (void)componentWriter:(id)arg1 canSkipArchivingStronglyReferencedObject:(id)arg2 fromComponentRootObject:(id)arg3 completion:(id)arg4;
-- (BOOL)componentWriter:(id)arg1 shouldDelayWritingObject:(id)arg2;
+- (bool)componentWriter:(id)arg1 shouldDelayWritingObject:(id)arg2;
 - (void)componentWriter:(id)arg1 wantsComponentOfObject:(id)arg2 queue:(id)arg3 completion:(id)arg4;
 - (id)componentWriter:(id)arg1 wantsExplicitComponentRootObjectForObject:(id)arg2 claimingComponent:(id)arg3;
 - (void)componentWriterWantsDelayedObjects:(id)arg1 queue:(id)arg2 completion:(id)arg3;
@@ -34,8 +38,8 @@
 - (id)proxyManager;
 - (id)relativeURLForExternalData;
 - (void)setProxyManager:(id)arg1;
-- (BOOL)shouldDelayArchivingObject:(id)arg1;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (bool)shouldDelayArchivingObject:(id)arg1;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(bool)arg2;
 - (void)writePasteboardObject:(id)arg1 completion:(id)arg2;
 
 @end

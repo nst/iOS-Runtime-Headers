@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSTimeZone;
+@class NSString, NSTimeZone;
 
 @interface SBFLockScreenSimpleDateFormatter : NSObject <SBFLockScreenDateFormatter> {
     NSTimeZone *_timeZone;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(retain) NSTimeZone * timeZone;
 
 - (void)dealloc;

@@ -6,37 +6,41 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray, PTSImageLoader, UIImagePickerController, UIPopoverController;
+@class NSMutableArray, NSString, PTSImageLoader, UIImagePickerController, UIPopoverController;
 
 @interface PTSImagePickerViewController : UITableViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PTSImageLoaderDelegate, UIPopoverControllerDelegate> {
     id _completion;
-    BOOL _doneLoading;
     NSMutableArray *_filenames;
     PTSImageLoader *_imageLoader;
     NSMutableArray *_images;
-    BOOL _includePhotoLibrary;
     UIImagePickerController *_photoLibraryPicker;
     UIPopoverController *_popoverController;
+    bool_doneLoading;
+    bool_includePhotoLibrary;
 }
 
-@property BOOL includePhotoLibrary;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool includePhotoLibrary;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)dismissAnimated:(BOOL)arg1;
+- (void)dismissAnimated:(bool)arg1;
 - (void)imageLoader:(id)arg1 didLoadImage:(id)arg2 forFilename:(id)arg3;
 - (void)imageLoaderDidFinishLoadingImages:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
-- (BOOL)includePhotoLibrary;
+- (bool)includePhotoLibrary;
 - (id)initWithResourcePath:(id)arg1 completion:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)setIncludePhotoLibrary:(BOOL)arg1;
+- (void)setIncludePhotoLibrary:(bool)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

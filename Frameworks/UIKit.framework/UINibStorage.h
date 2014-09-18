@@ -6,12 +6,12 @@
 
 @interface UINibStorage : NSObject {
     NSData *archiveData;
+    boolcaptureImplicitLoadingContextOnDecode;
+    boolinstantiatingForSimulator;
     NSBundle *bundle;
     NSString *bundleDirectoryName;
     NSString *bundleResourceName;
-    BOOL captureImplicitLoadingContextOnDecode;
     NSString *identifierForStringsFile;
-    BOOL instantiatingForSimulator;
     UINibDecoder *nibDecoder;
 }
 
@@ -19,27 +19,27 @@
 @property(retain) NSBundle * bundle;
 @property(copy) NSString * bundleDirectoryName;
 @property(copy) NSString * bundleResourceName;
-@property BOOL captureImplicitLoadingContextOnDecode;
+@property bool captureImplicitLoadingContextOnDecode;
 @property(copy) NSString * identifierForStringsFile;
-@property BOOL instantiatingForSimulator;
+@property bool instantiatingForSimulator;
 @property(retain) UINibDecoder * nibDecoder;
 
 - (id)archiveData;
 - (id)bundle;
 - (id)bundleDirectoryName;
 - (id)bundleResourceName;
-- (BOOL)captureImplicitLoadingContextOnDecode;
+- (bool)captureImplicitLoadingContextOnDecode;
 - (void)dealloc;
 - (id)identifierForStringsFile;
-- (BOOL)instantiatingForSimulator;
+- (bool)instantiatingForSimulator;
 - (id)nibDecoder;
 - (void)setArchiveData:(id)arg1;
 - (void)setBundle:(id)arg1;
 - (void)setBundleDirectoryName:(id)arg1;
 - (void)setBundleResourceName:(id)arg1;
-- (void)setCaptureImplicitLoadingContextOnDecode:(BOOL)arg1;
+- (void)setCaptureImplicitLoadingContextOnDecode:(bool)arg1;
 - (void)setIdentifierForStringsFile:(id)arg1;
-- (void)setInstantiatingForSimulator:(BOOL)arg1;
+- (void)setInstantiatingForSimulator:(bool)arg1;
 - (void)setNibDecoder:(id)arg1;
 
 @end

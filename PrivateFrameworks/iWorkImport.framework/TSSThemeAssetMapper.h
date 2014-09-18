@@ -25,15 +25,7 @@
 - (id)mapPresetsWithKindFromPreset:(id)arg1;
 - (id)mapStyle:(id)arg1;
 - (id)mappedAssetForAsset:(id)arg1;
-- (BOOL)p_hasCachedMappingsForPresetsOfKind:(id)arg1;
+- (bool)p_hasCachedMappingsForPresetsOfKind:(id)arg1;
 - (id)toTheme;
-- (id)tsdMapColorFill:(id)arg1;
-- (id)tsdMapGradient:(id)arg1;
-- (id)tsdMapImageFill:(id)arg1;
-- (id)tsdMapImageStylePropertyMap:(id)arg1;
-- (id)tsdMapShadow:(id)arg1;
-- (id)tsdMapShapeStylePropertyMap:(id)arg1;
-- (id)tsdMapStroke:(id)arg1;
-- (id)tswpMapParagraphStylePropertyMap:(id)arg1;
 
 @end

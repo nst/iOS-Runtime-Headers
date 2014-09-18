@@ -4,18 +4,18 @@
 
 @class NSString, UITextView;
 
-@interface CalendarNotesCell : UITableViewCell {
+@interface CalendarNotesCell : EKUIConstrainedFontsTableViewCell {
     NSString *_text;
     UITextView *_textView;
 }
 
 @property(retain) NSString * placeholder;
 @property(copy) NSString * text;
-@property(readonly) UITextView * textView;
+@property(retain,readonly) UITextView * textView;
 
 - (void).cxx_destruct;
-- (BOOL)becomeFirstResponder;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)becomeFirstResponder;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)placeholder;
 - (void)setPlaceholder:(id)arg1;

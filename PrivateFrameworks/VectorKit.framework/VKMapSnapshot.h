@@ -6,21 +6,23 @@
 
 @interface VKMapSnapshot : NSObject {
     VKCamera *_camera;
-    unsigned long _height;
+    unsigned long long _height;
     struct CGImage { } *_image;
-    float _scale;
-    unsigned long _width;
+    double _scale;
+    unsigned long long _width;
 }
 
 @property(readonly) struct CGImage { }* image;
-@property(readonly) float scale;
+@property(readonly) double scale;
 
-- (id)_initWithImage:(struct CGImage { }*)arg1 scale:(float)arg2 camera:(id)arg3;
-- (struct { double x1; double x2; })coordinateForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_initWithImage:(struct CGImage { }*)arg1 scale:(double)arg2 camera:(id)arg3;
+- (struct { double x1; double x2; })coordinateForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (id)description;
 - (struct CGImage { }*)image;
-- (struct CGPoint { float x1; float x2; })pointForCoordinate:(struct { double x1; double x2; })arg1;
-- (float)scale;
+- (id)imageDataInFormat:(unsigned long long)arg1;
+- (struct CGPoint { double x1; double x2; })pointForCoordinate:(struct { double x1; double x2; })arg1;
+- (double)scale;
+- (bool)writeImageToFile:(id)arg1 format:(unsigned long long)arg2 error:(id*)arg3;
 
 @end

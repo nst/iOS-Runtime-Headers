@@ -2,40 +2,49 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, TSKSelection, TSPObject<TSKModel>;
+@class NSMutableDictionary, NSString, TSKSelection, TSPObject<TSKModel>;
 
 @interface TPArchivedViewState : TSPObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    struct CGPoint { 
+        double x; 
+        double y; 
     NSMutableDictionary *_chartUIState;
-    BOOL _layoutBordersVisible;
-    BOOL _masterDrawablesSelectable;
-    BOOL _rulerVisible;
+    NSString *_selectedInspectorSwitchSegmentIdentifier;
     TSKSelection *_selection;
     TSPObject<TSKModel> *_selectionModel;
-    BOOL _showsComments;
-    BOOL _showsPageNavigator;
-    float _viewScale;
+    double _viewScale;
     int _viewScaleMode;
     } _visibleRect;
     } _windowFrame;
-    BOOL _wordCountHUDVisible;
+    } _wordCountHUDPosition;
+    int _wordCountHUDType;
+    bool_inspectorHidden;
+    bool_layoutBordersVisible;
+    bool_masterDrawablesSelectable;
+    bool_rulerVisible;
+    bool_showUserDefinedGuides;
+    bool_showsActivitySidebar;
+    bool_showsComments;
+    bool_showsPageNavigator;
+    bool_wordCountHUDVisible;
 }
 
 - (id).cxx_construct;
@@ -44,6 +53,6 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (void)readViewStateWithConsumer:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)showsComments;
+- (bool)showsComments;
 
 @end

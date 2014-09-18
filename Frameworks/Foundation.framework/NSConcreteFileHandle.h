@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_io>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface NSConcreteFileHandle : NSFileHandle {
     unsigned short _activity;
@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> *_fhQueue;
     unsigned short _flags;
     NSObject<OS_dispatch_queue> *_monitoringQueue;
+    NSObject<OS_dispatch_io> *_readChannel;
     NSObject<OS_dispatch_source> *_readMonitoringSource;
     id _readabilityHandler;
     NSObject<OS_dispatch_data> *_resultData;
@@ -40,16 +41,16 @@
 - (int)fileDescriptor;
 - (void)finalize;
 - (id)init;
-- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(bool)arg2;
 - (id)initWithFileDescriptor:(int)arg1;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
+- (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
+- (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3;
+- (id)initWithURL:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
 - (unsigned long long)offsetInFile;
-- (void)performActivity:(int)arg1 modes:(id)arg2;
+- (void)performActivity:(long long)arg1 modes:(id)arg2;
 - (id)port;
-- (unsigned int)readDataOfLength:(unsigned int)arg1 buffer:(char *)arg2;
-- (id)readDataOfLength:(unsigned int)arg1;
+- (unsigned long long)readDataOfLength:(unsigned long long)arg1 buffer:(char *)arg2;
+- (id)readDataOfLength:(unsigned long long)arg1;
 - (id)readDataToEndOfFile;
 - (void)readInBackgroundAndNotify;
 - (void)readInBackgroundAndNotifyForModes:(id)arg1;

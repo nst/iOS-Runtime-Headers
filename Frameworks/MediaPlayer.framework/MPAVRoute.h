@@ -6,25 +6,28 @@
 
 @interface MPAVRoute : NSObject {
     NSDictionary *_avRouteDescription;
-    int _displayRouteType;
-    int _pickableRouteType;
-    BOOL _picked;
-    BOOL _requiresPassword;
+    long long _displayRouteType;
+    long long _pickableRouteType;
     NSString *_routeName;
-    int _routeSubtype;
-    int _routeType;
+    long long _routeSubtype;
+    long long _routeType;
     NSString *_routeUID;
     MPAVRoute *_wirelessDisplayRoute;
+    bool_picked;
+    bool_requiresPassword;
 }
 
-@property(readonly) BOOL displayIsPicked;
-@property(readonly) int displayRouteType;
-@property(readonly) int pickableRouteType;
-@property(getter=isPicked,readonly) BOOL picked;
-@property(readonly) BOOL requiresPassword;
+@property(readonly) bool displayIsPicked;
+@property(readonly) long long displayRouteType;
+@property(readonly) long long passwordType;
+@property(readonly) long long pickableRouteType;
+@property(getter=isPicked,readonly) bool picked;
+@property(readonly) long long rc_audioRouteType;
+@property(readonly) bool rc_shouldExpectFaceContact;
+@property(readonly) bool requiresPassword;
 @property(readonly) NSString * routeName;
-@property(readonly) int routeSubtype;
-@property(readonly) int routeType;
+@property(readonly) long long routeSubtype;
+@property(readonly) long long routeType;
 @property(readonly) NSString * routeUID;
 @property(readonly) MPAVRoute * wirelessDisplayRoute;
 
@@ -34,20 +37,23 @@
 - (id)avRouteDescription;
 - (void)dealloc;
 - (id)description;
-- (BOOL)displayIsPicked;
-- (int)displayRouteType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPicked;
-- (int)pickableRouteType;
-- (BOOL)requiresPassword;
+- (bool)displayIsPicked;
+- (long long)displayRouteType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isPicked;
+- (long long)passwordType;
+- (long long)pickableRouteType;
+- (long long)rc_audioRouteType;
+- (bool)rc_shouldExpectFaceContact;
+- (bool)requiresPassword;
 - (id)routeName;
-- (int)routeSubtype;
-- (int)routeType;
+- (long long)routeSubtype;
+- (long long)routeType;
 - (id)routeUID;
 - (void)setAVRouteDescription:(id)arg1;
-- (void)setDisplayRouteType:(int)arg1;
-- (void)setPicked:(BOOL)arg1;
+- (void)setDisplayRouteType:(long long)arg1;
+- (void)setPicked:(bool)arg1;
 - (void)setRouteName:(id)arg1;
 - (void)setWirelessDisplayRoute:(id)arg1;
 - (id)wirelessDisplayRoute;

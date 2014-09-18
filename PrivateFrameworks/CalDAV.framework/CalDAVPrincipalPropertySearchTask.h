@@ -5,13 +5,13 @@
 @class CalDAVPrincipalSearchPropertySet, NSSet;
 
 @interface CalDAVPrincipalPropertySearchTask : CoreDAVPrincipalPropertySearchTask {
-    void *_searchContext;
+    id _searchContext;
     NSSet *_searchStrings;
     NSSet *_searchTypes;
     CalDAVPrincipalSearchPropertySet *_serverSupportSet;
 }
 
-@property void* searchContext;
+@property(retain) id searchContext;
 @property(retain) NSSet * searchStrings;
 @property(retain) NSSet * searchTypes;
 @property(retain) CalDAVPrincipalSearchPropertySet * serverSupportSet;
@@ -19,12 +19,12 @@
 - (void)dealloc;
 - (id)extraAttributes;
 - (id)initWithSearchStrings:(id)arg1 searchTypes:(id)arg2 serverSupportSet:(id)arg3 atURL:(id)arg4;
-- (void*)searchContext;
+- (id)searchContext;
 - (id)searchItems;
 - (id)searchStrings;
 - (id)searchTypes;
 - (id)serverSupportSet;
-- (void)setSearchContext:(void*)arg1;
+- (void)setSearchContext:(id)arg1;
 - (void)setSearchStrings:(id)arg1;
 - (void)setSearchTypes:(id)arg1;
 - (void)setServerSupportSet:(id)arg1;

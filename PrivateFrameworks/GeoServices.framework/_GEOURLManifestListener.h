@@ -6,13 +6,13 @@
 
 @interface _GEOURLManifestListener : NSObject {
     NSMutableArray *_handlers;
-    NSLock *_handlersLock;
+    NSLock *_lock;
     NSObject<OS_dispatch_source> *_timeoutTimer;
 }
 
 + (id)sharedListener;
 
-- (void)_finish:(BOOL)arg1;
+- (void)_finish:(bool)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)waitForManifestWithHandler:(id)arg1;

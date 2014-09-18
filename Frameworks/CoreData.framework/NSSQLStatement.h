@@ -9,8 +9,8 @@
     NSMutableArray *_bindVariables;
     NSSQLEntity *_entity;
     NSSQLEntity *_fakeEntityForFetch;
-    BOOL _isImpossibleCondition;
     NSString *_sqlString;
+    bool_isImpossibleCondition;
 }
 
 - (unsigned int)addBindIntarray:(id)arg1;
@@ -25,13 +25,13 @@
 - (id)fakeEntityForFetch;
 - (id)initWithEntity:(id)arg1 sqlString:(id)arg2;
 - (id)initWithEntity:(id)arg1;
-- (BOOL)isImpossibleCondition;
-- (BOOL)isReadOnly;
+- (bool)isImpossibleCondition;
+- (bool)isReadOnly;
 - (void)removeAllBindIntarrays;
 - (void)removeAllBindVariables;
 - (void)setBindIntarrays:(id)arg1;
 - (void)setBindVariables:(id)arg1;
-- (void)setImpossibleCondition:(BOOL)arg1;
+- (void)setImpossibleCondition:(bool)arg1;
 - (void)setSQLString:(id)arg1;
 - (id)sqlString;
 

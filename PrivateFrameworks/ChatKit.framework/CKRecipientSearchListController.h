@@ -2,91 +2,82 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKRecipientSearchListControllerDelegate>, IDSBatchIDQueryController, IMAccount, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSDate, NSMutableDictionary, NSNumber, NSString;
+@class <CKRecipientSearchListControllerDelegate>, CKContactsSearchManager, IDSBatchIDQueryController, IMAccount, NSArray, NSDate, NSString;
 
-@interface CKRecipientSearchListController : UITableViewController <IDSBatchIDQueryControllerDelegate, MFContactsSearchConsumer> {
-    NSNumber *_currentSearchTaskID;
+@interface CKRecipientSearchListController : UITableViewController <IDSBatchIDQueryControllerDelegate, CKContactsSearchManagerDelegate> {
     IMAccount *_defaultiMessageAccount;
     <CKRecipientSearchListControllerDelegate> *_delegate;
     NSArray *_enteredRecipients;
     NSDate *_idsQueryStartTime;
-    int _pendingSearchTypes;
-    NSMutableDictionary *_searchIDSStatuses;
-    MFContactsSearchManager *_searchManager;
+    NSArray *_prefilteredRecipients;
+    CKContactsSearchManager *_searchManager;
     NSArray *_searchResults;
-    MFContactsSearchResultsModel *_searchResultsModel;
-    NSString *_searchText;
-    BOOL _shouldDisplayGroupSuggestionCells;
     IDSBatchIDQueryController *_statusQueryController;
+    bool_shouldUsePopovers;
+    bool_smsEnabled;
 }
 
-@property(retain) NSNumber * currentSearchTaskID;
+@property(copy,readonly) NSString * debugDescription;
 @property(retain) IMAccount * defaultiMessageAccount;
 @property <CKRecipientSearchListControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
 @property(retain) NSArray * enteredRecipients;
+@property(readonly) unsigned long long hash;
 @property(retain) NSDate * idsQueryStartTime;
-@property int pendingSearchTypes;
-@property(retain) NSMutableDictionary * searchIDSStatuses;
-@property(retain) MFContactsSearchManager * searchManager;
-@property(retain) NSArray * searchResults;
-@property(retain) MFContactsSearchResultsModel * searchResultsModel;
-@property(retain) NSString * searchText;
-@property BOOL shouldDisplayGroupSuggestionCells;
+@property(retain) NSArray * prefilteredRecipients;
+@property(retain) CKContactsSearchManager * searchManager;
+@property(copy) NSArray * searchResults;
+@property bool shouldUsePopovers;
+@property bool smsEnabled;
 @property(retain) IDSBatchIDQueryController * statusQueryController;
+@property(readonly) Class superclass;
+@property bool suppressGroupSuggestions;
 
-- (void)_performSearchWithBlock:(id)arg1;
 - (BOOL)_serviceColorForRecipients:(id)arg1;
 - (id)_statusQueryController;
-- (void)beganNetworkActivity;
 - (void)cancelSearch;
-- (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
-- (id)currentSearchTaskID;
+- (void)contactsSearchManager:(id)arg1 finishedSearchingWithResults:(id)arg2;
 - (void)dealloc;
 - (id)defaultiMessageAccount;
 - (id)delegate;
-- (void)endedNetworkActivity;
 - (id)enteredRecipients;
-- (void)finishedSearchingForType:(int)arg1;
-- (void)finishedTaskWithID:(id)arg1;
-- (BOOL)hasSearchResults;
+- (bool)hasSearchResults;
 - (void)idStatusUpdatedForDestinations:(id)arg1;
 - (id)idsQueryStartTime;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)invalidateOutstandingIDStatusRequests;
-- (BOOL)isSearchResultsHidden;
+- (void)invalidateSearchManager;
+- (bool)isSearchResultsHidden;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (int)pendingSearchTypes;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)prefilteredRecipients;
 - (void)removeRecipientFromSearchResults:(id)arg1;
-- (BOOL)scrollViewShouldScrollToTop:(id)arg1;
+- (bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (id)searchIDSStatuses;
 - (id)searchManager;
 - (id)searchResults;
-- (id)searchResultsModel;
-- (id)searchText;
 - (void)searchWithText:(id)arg1;
-- (void)setCurrentSearchTaskID:(id)arg1;
 - (void)setDefaultiMessageAccount:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnteredRecipients:(id)arg1;
 - (void)setIdsQueryStartTime:(id)arg1;
-- (void)setPendingSearchTypes:(int)arg1;
-- (void)setSearchIDSStatuses:(id)arg1;
+- (void)setPrefilteredRecipients:(id)arg1;
 - (void)setSearchManager:(id)arg1;
 - (void)setSearchResults:(id)arg1;
-- (void)setSearchResultsModel:(id)arg1;
-- (void)setSearchText:(id)arg1;
-- (void)setShouldDisplayGroupSuggestionCells:(BOOL)arg1;
+- (void)setShouldUsePopovers:(bool)arg1;
+- (void)setSmsEnabled:(bool)arg1;
 - (void)setStatusQueryController:(id)arg1;
-- (BOOL)shouldDisplayGroupSuggestionCells;
+- (void)setSuppressGroupSuggestions:(bool)arg1;
+- (bool)shouldUsePopovers;
+- (bool)smsEnabled;
 - (id)statusQueryController;
+- (bool)suppressGroupSuggestions;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

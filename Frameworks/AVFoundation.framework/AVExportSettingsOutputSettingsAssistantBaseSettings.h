@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary;
+@class NSDictionary, NSString;
 
 @interface AVExportSettingsOutputSettingsAssistantBaseSettings : NSObject <AVOutputSettingsAssistantBaseSettingsProvider> {
     NSDictionary *_exportSettings;
@@ -10,6 +10,10 @@
 
 @property(readonly) NSDictionary * baseAudioSettings;
 @property(readonly) NSDictionary * baseVideoSettings;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)baseAudioSettings;
 - (id)baseVideoSettings;

@@ -2,40 +2,46 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class <PCInterfaceUsabilityMonitorDelegate>, CUTWeakReference, NSMutableArray, NSString;
+@class <PCInterfaceUsabilityMonitorDelegate>, CUTWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PCInterfaceUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol> {
-    struct dispatch_queue_s { } *_delegateQueue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
     CUTWeakReference *_delegateReference;
     void *_dynamicStore;
-    int _interfaceIdentifier;
+    long long _interfaceIdentifier;
     NSString *_interfaceName;
-    BOOL _isInternetReachable;
-    struct dispatch_queue_s { } *_ivarQueue;
+    NSObject<OS_dispatch_queue> *_ivarQueue;
     int _linkQuality;
     struct __CFRunLoopSource { } *_linkQualitySource;
     struct __CFString { } *_lqKey;
     NSMutableArray *_offTransitions;
     void *_reachability;
-    unsigned int _thresholdOffTransitionCount;
-    BOOL _trackUsability;
+    unsigned long long _thresholdOffTransitionCount;
     double _trackedTimeInterval;
+    bool_isInternetReachable;
+    bool_trackUsability;
 }
 
 @property(readonly) struct __CFString { }* currentRAT;
+@property(copy,readonly) NSString * debugDescription;
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
-@property(readonly) int interfaceIdentifier;
-@property(readonly) BOOL isInterfaceHistoricallyUsable;
-@property(readonly) BOOL isInterfaceUsable;
-@property(readonly) BOOL isInternetReachable;
-@property(readonly) BOOL isLTEWithCDRX;
-@property(readonly) BOOL isPoorLinkQuality;
-@property(readonly) BOOL isRadioHot;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long interfaceIdentifier;
+@property(readonly) bool isBadLinkQuality;
+@property(readonly) bool isInterfaceHistoricallyUsable;
+@property(readonly) bool isInterfaceUsable;
+@property(readonly) bool isInternetReachable;
+@property(readonly) bool isLTEWithCDRX;
+@property(readonly) bool isPoorLinkQuality;
+@property(readonly) bool isRadioHot;
 @property(readonly) int linkQuality;
-@property(readonly) NSString * linkQualityString;
+@property(retain,readonly) NSString * linkQualityString;
+@property(readonly) Class superclass;
 @property(readonly) struct __CFString { }* wwanInterfaceName;
 
-+ (BOOL)isPoorLinkQuality:(int)arg1;
++ (bool)isBadLinkQuality:(int)arg1;
++ (bool)isPoorLinkQuality:(int)arg1;
 + (id)stringForLinkQuality:(int)arg1;
 
 - (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
@@ -46,8 +52,8 @@
 - (void)_dynamicStoreCallback:(id)arg1;
 - (void)_dynamicStoreCallbackOnIvarQueue:(id)arg1;
 - (void)_flushStaleTransitionsOnIvarQueue;
-- (BOOL)_isInterfaceHistoricallyUsableOnIvarQueue;
-- (BOOL)_isInterfaceUsableOnIvarQueue;
+- (bool)_isInterfaceHistoricallyUsableOnIvarQueue;
+- (bool)_isInterfaceUsableOnIvarQueue;
 - (void)_processLinkQualityUpdateOnIvarQueueWithUpdatedLinkQuality:(int)arg1;
 - (void)_reachabilityCallback:(unsigned int)arg1;
 - (void)_reachabilityCallbackOnIvarQueue:(unsigned int)arg1;
@@ -57,18 +63,19 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithInterfaceName:(id)arg1 interfaceIdentifier:(int)arg2 delegateQueue:(struct dispatch_queue_s { }*)arg3;
-- (int)interfaceIdentifier;
-- (BOOL)isInterfaceHistoricallyUsable;
-- (BOOL)isInterfaceUsable;
-- (BOOL)isInternetReachable;
-- (BOOL)isPoorLinkQuality;
-- (BOOL)isRadioHot;
+- (id)initWithInterfaceName:(id)arg1 interfaceIdentifier:(long long)arg2 delegateQueue:(id)arg3;
+- (long long)interfaceIdentifier;
+- (bool)isBadLinkQuality;
+- (bool)isInterfaceHistoricallyUsable;
+- (bool)isInterfaceUsable;
+- (bool)isInternetReachable;
+- (bool)isPoorLinkQuality;
+- (bool)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
 - (void)setDelegate:(id)arg1;
-- (void)setThresholdOffTransitionCount:(unsigned int)arg1;
-- (void)setTrackUsability:(BOOL)arg1;
+- (void)setThresholdOffTransitionCount:(unsigned long long)arg1;
+- (void)setTrackUsability:(bool)arg1;
 - (void)setTrackedTimeInterval:(double)arg1;
 
 @end

@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class <NSKeyedUnarchiverDelegate>;
+
 @interface NSKeyedUnarchiver : NSCoder {
     const char *_bytes;
     id _containers;
@@ -21,15 +23,24 @@
     id _tmpRefObjMap;
 }
 
+@property <NSKeyedUnarchiverDelegate> * delegate;
+
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1;
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1;
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
++ (id)_sp_secureUnarchiveObjectWithData:(id)arg1;
 + (Class)classForClassName:(id)arg1;
++ (id)cpl_safeUnarchiveObjectWithData:(id)arg1;
++ (id)cpl_safeUnarchiveObjectWithFile:(id)arg1;
++ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
++ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
++ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (void)initialize;
 + (id)pl_safeUnarchiveObjectWithData:(id)arg1;
 + (id)pl_safeUnarchiveObjectWithFile:(id)arg1;
++ (id)secureUnarchiveData:(id)arg1 withExpectedClass:(Class)arg2 otherAllowedClasses:(id)arg3;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
@@ -45,14 +56,15 @@
 - (void)_setAllowedClassNames:(id)arg1;
 - (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
 - (id)allowedClasses;
-- (BOOL)allowsKeyedCoding;
+- (bool)allowsKeyedCoding;
 - (Class)classForClassName:(id)arg1;
-- (BOOL)containsValueForKey:(id)arg1;
+- (bool)containsValueForKey:(id)arg1;
+- (id)cpl_safeInitForReadingWithData:(id)arg1;
 - (void)dealloc;
-- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
-- (BOOL)decodeBoolForKey:(id)arg1;
-- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
-- (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
+- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned long long)arg2 at:(void*)arg3;
+- (bool)decodeBoolForKey:(id)arg1;
+- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned long long*)arg2;
+- (void*)decodeBytesWithReturnedLength:(unsigned long long*)arg1;
 - (id)decodeDataObject;
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
@@ -72,14 +84,15 @@
 - (id)init;
 - (id)initForReadingWithData:(id)arg1;
 - (id)initWithStream:(id)arg1;
+- (id)moments_safeInitForReadingWithData:(id)arg1;
 - (id)pl_safeInitForReadingWithData:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
-- (BOOL)requiresSecureCoding;
+- (bool)requiresSecureCoding;
 - (void)setAllowedClasses:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setRequiresSecureCoding:(BOOL)arg1;
+- (void)setRequiresSecureCoding:(bool)arg1;
 - (unsigned int)systemVersion;
-- (int)versionForClassName:(id)arg1;
+- (long long)versionForClassName:(id)arg1;
 
 @end

@@ -2,22 +2,22 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADAdRecipient>, <ADSAdSpace_RPC><NSObject>, ADAdImpressionPublicAttributes, ADAdSpaceConfiguration, NSString, NSURL, _ADRemoteViewController, _UIAsyncInvocation;
+@class <ADAdRecipient>, <ADSAdSpace_RPC><NSObject>, ADAdImpressionPublicAttributes, ADAdSpaceConfiguration, NSDictionary, NSSet, NSString, NSURL, _ADRemoteViewController, _UIAsyncInvocation;
 
 @interface ADAdSpace : NSObject <UIViewControllerTransitioningDelegate, ADAdSpace_RPC> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL _actionViewControllerReadyForPresentation;
-    BOOL _actionViewControllerWantsDismissal;
+    NSDictionary *_adToLoad;
     NSString *_advertisingSection;
     NSString *_authenticationUserName;
+    NSSet *_context;
     ADAdImpressionPublicAttributes *_currentAdImpressionPublicAttributes;
     NSString *_identifier;
     double _lastSlowCheck;
@@ -27,19 +27,27 @@
     _UIAsyncInvocation *_remoteViewControllerRequestCancelationInvocation;
     NSURL *_serverURL;
     <ADSAdSpace_RPC><NSObject> *_serviceAdSpace;
-    BOOL _shouldPresentActionViewControllerWhenReady;
     } _viewFrame;
-    int _visibility;
-    BOOL _visibilityCheckScheduled;
+    long long _visibility;
+    bool_actionViewControllerReadyForPresentation;
+    bool_actionViewControllerWantsDismissal;
+    bool_serviceAdSpaceRequestInProgress;
+    bool_shouldPresentActionViewControllerWhenReady;
+    bool_visibilityCheckScheduled;
 }
 
-@property BOOL actionViewControllerReadyForPresentation;
-@property BOOL actionViewControllerWantsDismissal;
+@property bool actionViewControllerReadyForPresentation;
+@property bool actionViewControllerWantsDismissal;
+@property(retain) NSDictionary * adToLoad;
 @property(copy) NSString * advertisingSection;
 @property(copy) NSString * authenticationUserName;
 @property(readonly) ADAdSpaceConfiguration * configuration;
 @property(readonly) NSString * connectionAssertionIdentifier;
+@property(copy) NSSet * context;
 @property(retain) ADAdImpressionPublicAttributes * currentAdImpressionPublicAttributes;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * identifier;
 @property double lastSlowCheck;
 @property(retain) _ADRemoteViewController * portraitOnlyViewController;
@@ -48,10 +56,12 @@
 @property(retain) _UIAsyncInvocation * remoteViewControllerRequestCancelationInvocation;
 @property(copy) NSURL * serverURL;
 @property(retain) <ADSAdSpace_RPC><NSObject> * serviceAdSpace;
-@property BOOL shouldPresentActionViewControllerWhenReady;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } viewFrame;
-@property int visibility;
-@property BOOL visibilityCheckScheduled;
+@property bool serviceAdSpaceRequestInProgress;
+@property bool shouldPresentActionViewControllerWhenReady;
+@property(readonly) Class superclass;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } viewFrame;
+@property long long visibility;
+@property bool visibilityCheckScheduled;
 
 - (void)_clientApplicationDidBecomeActive;
 - (void)_clientApplicationDidEnterBackground;
@@ -64,40 +74,49 @@
 - (void)_remote_dismissPortraitOnlyViewController;
 - (void)_remote_dismissViewController;
 - (void)_remote_openURL:(id)arg1;
+- (void)_remote_pauseBannerMedia;
 - (void)_remote_requestPortraitOnlyViewController;
 - (void)_remote_requestViewControllerWithClassName:(id)arg1 forAdSpaceControllerWithIdentifier:(id)arg2;
-- (void)_remote_setRemoteWindowContextID:(unsigned int)arg1;
-- (void)_remote_updateViewControllerSupportedOrientations:(unsigned int)arg1;
+- (void)_remote_resumeBannerMedia;
+- (void)_remote_setHostedWindowHostingHandle:(id)arg1;
+- (void)_remote_updateViewControllerSupportedOrientations:(unsigned long long)arg1;
 - (void)_requestServiceAdSpace;
 - (void)_serviceConnectionLost;
 - (void)_updateAllProperties;
-- (BOOL)actionViewControllerReadyForPresentation;
-- (BOOL)actionViewControllerWantsDismissal;
+- (bool)actionViewControllerReadyForPresentation;
+- (bool)actionViewControllerWantsDismissal;
+- (id)adToLoad;
 - (id)advertisingSection;
 - (id)authenticationUserName;
 - (void)cancelBannerViewAction;
 - (void)close;
 - (id)configuration;
 - (id)connectionAssertionIdentifier;
+- (id)context;
 - (id)currentAdImpressionPublicAttributes;
 - (void)dealloc;
-- (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTapLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (id)description;
+- (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withTapLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (id)identifier;
 - (id)initForRecipient:(id)arg1;
 - (void)interstitialWasRemovedFromSuperview;
 - (double)lastSlowCheck;
+- (void)loadAd:(id)arg1;
 - (id)portraitOnlyViewController;
-- (void)presentInterstitialStoryboard;
 - (id)recipient;
 - (void)refuseBannerViewAction;
 - (id)remoteViewController;
 - (id)remoteViewControllerRequestCancelationInvocation;
 - (id)serverURL;
 - (id)serviceAdSpace;
-- (void)setActionViewControllerReadyForPresentation:(BOOL)arg1;
-- (void)setActionViewControllerWantsDismissal:(BOOL)arg1;
+- (bool)serviceAdSpaceRequestInProgress;
+- (void)setActionViewControllerReadyForPresentation:(bool)arg1;
+- (void)setActionViewControllerWantsDismissal:(bool)arg1;
+- (void)setAdSpaceType:(int)arg1;
+- (void)setAdToLoad:(id)arg1;
 - (void)setAdvertisingSection:(id)arg1;
 - (void)setAuthenticationUserName:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setCurrentAdImpressionPublicAttributes:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLastSlowCheck:(double)arg1;
@@ -106,14 +125,15 @@
 - (void)setRemoteViewControllerRequestCancelationInvocation:(id)arg1;
 - (void)setServerURL:(id)arg1;
 - (void)setServiceAdSpace:(id)arg1;
-- (void)setShouldPresentActionViewControllerWhenReady:(BOOL)arg1;
-- (void)setViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setVisibility:(int)arg1;
-- (void)setVisibilityCheckScheduled:(BOOL)arg1;
-- (BOOL)shouldPresentActionViewControllerWhenReady;
+- (void)setServiceAdSpaceRequestInProgress:(bool)arg1;
+- (void)setShouldPresentActionViewControllerWhenReady:(bool)arg1;
+- (void)setViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setVisibility:(long long)arg1;
+- (void)setVisibilityCheckScheduled:(bool)arg1;
+- (bool)shouldPresentActionViewControllerWhenReady;
 - (void)updateVisibility;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })viewFrame;
-- (int)visibility;
-- (BOOL)visibilityCheckScheduled;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })viewFrame;
+- (long long)visibility;
+- (bool)visibilityCheckScheduled;
 
 @end

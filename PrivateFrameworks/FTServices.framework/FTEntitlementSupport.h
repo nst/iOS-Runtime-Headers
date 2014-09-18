@@ -9,22 +9,22 @@
     struct __CFString { } *_entitlementStatus;
 }
 
-@property(readonly) BOOL faceTimeNonWiFiEntitled;
-@property(readonly) NSDictionary * registrationState;
+@property(readonly) bool faceTimeNonWiFiEntitled;
+@property(retain,readonly) NSDictionary * registrationState;
 
 + (id)sharedInstance;
 
 - (void)_cleanupMachInfo;
-- (BOOL)_disconnectCTServerConnection;
+- (bool)_disconnectCTServerConnection;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
 - (void)_handleEntitlementNotification:(struct __CFDictionary { }*)arg1;
 - (id)_rawEntitlementValue;
-- (BOOL)_reconnectCTServerConnectionIfNecessary;
-- (BOOL)_registerForCTEntitlementNotifications;
+- (bool)_reconnectCTServerConnectionIfNecessary;
+- (bool)_registerForCTEntitlementNotifications;
 - (void)_registrationStateChanged;
-- (BOOL)_setupCTServerConnection;
+- (bool)_setupCTServerConnection;
 - (void)_unregisterForCTEntitlementNotifications;
-- (BOOL)faceTimeNonWiFiEntitled;
+- (bool)faceTimeNonWiFiEntitled;
 - (id)init;
 - (id)registrationState;
 

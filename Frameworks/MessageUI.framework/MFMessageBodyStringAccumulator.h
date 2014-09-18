@@ -2,25 +2,31 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableString;
+@class NSMutableString, NSString;
 
 @interface MFMessageBodyStringAccumulator : NSObject <MFMessageBodyStringAccumulator> {
     NSMutableString *_accumulatedString;
-    BOOL _isFull;
-    unsigned int _lastCustomEntityTag;
+    unsigned long long _lastCustomEntityTag;
     int _lastEntity;
     int _options;
-    unsigned int _remainingLength;
+    unsigned long long _remainingLength;
+    bool_isFull;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (id)accumulatedString;
-- (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
-- (void)appendCustomEntityWithTag:(unsigned int)arg1 stringRepresentation:(id)arg2;
+- (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned long long)arg2;
+- (void)appendCustomEntityWithTag:(unsigned long long)arg1 stringRepresentation:(id)arg2;
 - (void)appendInnerTextWithConsumableNode:(id)arg1;
-- (void)appendRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 ofString:(id)arg2;
+- (void)appendNewline;
+- (void)appendRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 ofString:(id)arg2;
 - (void)appendString:(id)arg1;
 - (void)dealloc;
-- (id)initWithOptions:(int)arg1 lengthLimit:(unsigned int)arg2;
-- (BOOL)isFull;
+- (id)initWithOptions:(int)arg1 lengthLimit:(unsigned long long)arg2;
+- (bool)isFull;
 
 @end

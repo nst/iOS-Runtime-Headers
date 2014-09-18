@@ -5,21 +5,22 @@
 @class NSString, SUMescalSession;
 
 @interface SUAccountViewController : SUStorePageViewController {
-    BOOL _failed;
     SUMescalSession *_mescalSession;
-    int _mescalState;
+    long long _mescalState;
     NSString *_primingSignature;
-    int _style;
+    long long _style;
+    bool_failed;
 }
 
 @property(getter=_mescalSession,readonly) SUMescalSession * _mescalSession;
-@property int style;
+@property long long style;
 
 + (id)_latestAccountViewController;
 
-- (id)_authenticationQueryParametersForStyle:(int)arg1;
-- (id)_bagKeyForStyle:(int)arg1;
+- (id)_authenticationQueryParametersForStyle:(long long)arg1;
+- (id)_bagKeyForStyle:(long long)arg1;
 - (void)_closeMescalSession;
+- (void)_forceOrientationBackToSupportedOrientation;
 - (void)_mescalDidOpenWithSession:(id)arg1 error:(id)arg2;
 - (id)_mescalSession;
 - (id)copyArchivableContext;
@@ -29,9 +30,11 @@
 - (id)init;
 - (id)initWithExternalAccountURL:(id)arg1;
 - (id)newFetchOperation;
-- (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
-- (void)setStyle:(int)arg1;
-- (int)style;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (id)newViewControllerForPage:(id)arg1 ofType:(long long)arg2 returningError:(id*)arg3;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

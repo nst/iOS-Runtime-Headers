@@ -5,8 +5,8 @@
 @interface KNShimmerSystem : TSDGLParticleSystem {
 }
 
-- (void)drawGLSLWithPercent:(float)arg1 opacity:(float)arg2 rotation:(float)arg3 clockwise:(BOOL)arg4;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
+- (void)drawGLSLWithPercent:(double)arg1 opacity:(double)arg2 rotation:(double)arg3 clockwise:(bool)arg4;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
 
 @end

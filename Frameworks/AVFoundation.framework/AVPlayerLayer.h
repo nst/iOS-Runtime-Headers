@@ -9,51 +9,52 @@
 }
 
 @property(retain) AVPlayer * player;
-@property(getter=isReadyForDisplay,readonly) BOOL readyForDisplay;
+@property(getter=isReadyForDisplay,readonly) bool readyForDisplay;
 @property(copy) NSString * videoGravity;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } videoRect;
 
++ (id)keyPathsForValuesAffectingVideoLayerGravity;
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)playerLayerWithPlayer:(id)arg1;
 
-- (void)_addAnimationsForContentLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 gravity:(id)arg3;
+- (void)_addAnimationsForClosedCaptionLayer:(id)arg1 gravity:(id)arg2;
 - (void)_addAnimationsForMaskLayer:(id)arg1;
-- (void)_addAnimationsForSubtitleLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (void)_calculateSubtitleLayerBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 presentationSize:(struct CGSize { float x1; float x2; })arg2 playLayerTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg3 shouldUpdateCachedSubtitleSample:(BOOL)arg4 outBound:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
-- (void)_connectContentLayerToPlayer;
-- (void)_disconnectContentLayerFromPlayer;
-- (struct CGSize { float x1; float x2; })_getAVPlayerCurrentItemPresentationSizeKeyFromPlayer:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minRectToFitVideoAndSubtitlesInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)_pctOfSubtitleLayerHeight;
-- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
-- (void)_setItem:(id)arg1 readyForDisplay:(BOOL)arg2;
-- (void)_setSubtitleDisplayEnabled:(BOOL)arg1;
+- (void)_addAnimationsForVideoLayer:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 gravity:(id)arg3;
+- (id)_closedCaptionLayer;
+- (void)_forBoundsAnimations:(id)arg1 applyBlock:(id)arg2;
+- (struct CGSize { double x1; double x2; })_getAVPlayerCurrentItemPresentationSizeKeyFromPlayer:(id)arg1;
+- (void)_notifyPlayerOfDisplaySize;
+- (void)_setHasPlayerToObserve:(long long)arg1 andShouldObserveIt:(long long)arg2;
+- (void)_setItem:(id)arg1 readyForDisplay:(bool)arg2;
 - (void)_setSubtitleGravity:(id)arg1;
-- (BOOL)_subtitleDisplayEnabled;
 - (id)_subtitleGravity;
-- (void)_subtitlesDidChange:(id)arg1;
-- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1 forceUpdate:(BOOL)arg2;
-- (void)_updateSubtitleLayerForPlayerLayerBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 presentationSize:(struct CGSize { float x1; float x2; })arg2 playLayerTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg3 forceRender:(BOOL)arg4;
-- (void)_updateSubtitles:(id)arg1 forceRender:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_subtitleLayer;
+- (id)_transformToAbsoluteAnimationOfBounds:(id)arg1;
+- (void)_updatePresentationSize:(struct CGSize { double x1; double x2; })arg1 forceUpdate:(bool)arg2;
+- (id)_videoLayer;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_videoRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
-- (BOOL)isOverscanSubtitleSupportEnabled;
-- (BOOL)isReadyForDisplay;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (bool)isOverscanSubtitleSupportEnabled;
+- (bool)isReadyForDisplay;
+- (void)layerDidBecomeVisible:(bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)pixelBufferAttributes;
 - (id)player;
 - (void)removeAllAnimations;
 - (void)removeAnimationForKey:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOverscanSubtitleSupportEnabled:(bool)arg1;
+- (void)setPixelBufferAttributes:(id)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setPlayerController:(id)arg1;
 - (void)setVideoGravity:(id)arg1;
-- (void)subtitleLayerNeedsLayout:(id)arg1;
+- (void)setVideoLayerGravity:(long long)arg1;
 - (id)videoGravity;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
+- (long long)videoLayerGravity;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoRect;
 
 @end

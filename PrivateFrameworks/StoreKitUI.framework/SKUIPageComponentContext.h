@@ -2,33 +2,44 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDictionary, NSMutableSet;
+@class NSArray, NSDictionary, NSMutableSet, NSSet;
 
 @interface SKUIPageComponentContext : NSObject <NSCopying> {
     NSDictionary *_componentDictionary;
+    NSArray *_ineligibleGratisIdentifiers;
     NSDictionary *_items;
-    int _layoutStyle;
+    long long _layoutStyle;
     double _pageGenerationTime;
+    NSDictionary *_platformKeyProfileOverrides;
     NSMutableSet *_unavailableItems;
 }
 
+@property(copy,readonly) NSSet * allUnavailableItemIdentifiers;
 @property(copy) NSDictionary * componentDictionary;
+@property(copy) NSArray * ineligibleGratisIdentifiers;
 @property(copy) NSDictionary * items;
-@property int layoutStyle;
+@property long long layoutStyle;
 @property(readonly) double pageGenerationTime;
+@property(copy) NSDictionary * platformKeyProfileOverrides;
 
 - (void).cxx_destruct;
+- (void)addUnavailableItemIdentifiers:(id)arg1;
+- (id)allUnavailableItemIdentifiers;
 - (id)componentDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)ineligibleGratisIdentifiers;
 - (id)init;
-- (BOOL)isUnavailableItemIdentifier:(id)arg1;
+- (bool)isUnavailableItemIdentifier:(id)arg1;
 - (id)itemForItemIdentifier:(id)arg1;
 - (id)items;
-- (int)layoutStyle;
+- (long long)layoutStyle;
 - (double)pageGenerationTime;
+- (id)platformKeyProfileOverrides;
 - (void)setComponentDictionary:(id)arg1;
+- (void)setIneligibleGratisIdentifiers:(id)arg1;
 - (void)setItems:(id)arg1;
-- (void)setLayoutStyle:(int)arg1;
+- (void)setLayoutStyle:(long long)arg1;
+- (void)setPlatformKeyProfileOverrides:(id)arg1;
 - (void)setUnavailableItemIdentifiers:(id)arg1;
 
 @end

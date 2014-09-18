@@ -15,13 +15,14 @@
 @property(copy) NSDictionary * info;
 @property(readonly) NSString * name;
 
+- (void).cxx_destruct;
 - (id)_createXPCMessage;
 - (id)_initWithXPCMessage:(id)arg1 onConnection:(id)arg2;
 - (void)dealloc;
 - (id)info;
 - (id)initWithName:(id)arg1;
 - (id)name;
-- (BOOL)needsReply;
+- (bool)needsReply;
 - (void)sendReply:(id)arg1;
 - (void)setInfo:(id)arg1;
 

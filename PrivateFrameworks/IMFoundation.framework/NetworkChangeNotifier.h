@@ -6,16 +6,16 @@
 
 @interface NetworkChangeNotifier : NSObject <IMSystemMonitorListener, IMConnectionMonitorDelegate> {
     IMConnectionMonitor *_connectionMonitor;
-    BOOL _lastPostedNetworkUp;
     NSString *_myIP;
     NSArray *_myIPs;
     struct __SCDynamicStore { } *_store;
+    bool_lastPostedNetworkUp;
 }
 
 @property(retain) IMConnectionMonitor * connectionMonitor;
 @property(readonly) struct __SCDynamicStore { }* getDynamicStore;
-@property(readonly) BOOL isNetworkUp;
-@property BOOL lastPostedNetworkUp;
+@property(readonly) bool isNetworkUp;
+@property bool lastPostedNetworkUp;
 @property(readonly) NSString * myGatewayAddress;
 @property(retain) NSString * myIP;
 @property(readonly) NSString * myIPAddress;
@@ -24,22 +24,22 @@
 @property struct __SCDynamicStore { }* store;
 
 + (void)disableNotifications;
-+ (BOOL)enableNotifications;
++ (bool)enableNotifications;
 + (id)sharedInstance;
 
 - (void)_clearIPCache;
-- (BOOL)_listenForChanges;
+- (bool)_listenForChanges;
 - (id)connectionMonitor;
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)dealloc;
 - (struct __SCDynamicStore { }*)getDynamicStore;
 - (id)init;
-- (BOOL)isNetworkUp;
-- (BOOL)isPrimaryCellular;
-- (BOOL)lastPostedNetworkUp;
-- (unsigned int)linkQualityForInterfaceType:(unsigned int)arg1;
+- (bool)isNetworkUp;
+- (bool)isPrimaryCellular;
+- (bool)lastPostedNetworkUp;
+- (unsigned long long)linkQualityForInterfaceType:(unsigned long long)arg1;
 - (int)linkQualityValueForInterface:(id)arg1;
-- (int)linkQualityValueForInterfaceType:(unsigned int)arg1;
+- (int)linkQualityValueForInterfaceType:(unsigned long long)arg1;
 - (id)myGatewayAddress;
 - (id)myIP;
 - (id)myIPAddress;
@@ -47,7 +47,7 @@
 - (id)myIPs;
 - (id)primaryInterfaceName;
 - (void)setConnectionMonitor:(id)arg1;
-- (void)setLastPostedNetworkUp:(BOOL)arg1;
+- (void)setLastPostedNetworkUp:(bool)arg1;
 - (void)setMyIP:(id)arg1;
 - (void)setMyIPs:(id)arg1;
 - (void)setStore:(struct __SCDynamicStore { }*)arg1;

@@ -5,14 +5,6 @@
 @interface VMUSymbolOwnerCache : NSObject {
 }
 
-+ (void)addSymbolOwner:(id)arg1;
-+ (void)flush;
-+ (void)initialize;
-+ (unsigned int)memoryLimit;
-+ (void)removeSignature:(id)arg1;
-+ (void)setMemoryLimit:(unsigned int)arg1;
-+ (void)shrinkCacheToSize:(unsigned long long)arg1;
-+ (id)symbolOwnerForSignature:(id)arg1;
-+ (id)symbolOwners;
++ (void)setMemoryLimit:(unsigned long long)arg1;
 
 @end

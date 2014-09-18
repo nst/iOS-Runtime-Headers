@@ -6,12 +6,12 @@
    See Warning(s) below.
  */
 
-@class GEOGeocodeRequest, NSObject<OS_dispatch_queue>;
+@class <GEOMapServiceTicket>, NSObject<OS_dispatch_queue>;
 
 @interface CLGeocoderInternal : NSObject {
     id _geocodeCompletionHandler;
     NSObject<OS_dispatch_queue> *_queue;
-    GEOGeocodeRequest *_request;
+    <GEOMapServiceTicket> *_ticket;
 }
 
 @end

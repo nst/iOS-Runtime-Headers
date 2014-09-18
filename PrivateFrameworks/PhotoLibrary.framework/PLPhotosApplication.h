@@ -2,68 +2,45 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <NSCoding>, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, PLLibraryImageDataProvider, PLUIController, UIViewController, UIWindow;
+@class BLActivityAlert, NSDictionary, NSString, PLUIController, UIWindow;
 
-@interface PLPhotosApplication : UIApplication <UIApplicationDelegate, PLPublishingAgentDelegate, MFMailComposeViewControllerDelegate> {
-    unsigned int _backgroundTaskIdentifier;
-    BOOL _cameraCancelledRemaking;
-    UIViewController *_composeParentViewController;
-    BOOL _composeSheetIsReady;
+@interface PLPhotosApplication : UIApplication <UIApplicationDelegate> {
     NSString *_currentTestName;
     NSDictionary *_currentTestOptions;
-    int _delaySuspendCount;
-    int _enableNetworkingFlagsCount;
-    PLLibraryImageDataProvider *_imageDataProvider;
-    BOOL _inactiveUnderTaskSwitcher;
-    BOOL _isOnWifi;
-    BOOL _isReachable;
-    BOOL _isRemaking;
+    BLActivityAlert *_iPhotoMigrationActivityAlert;
     int _observeForRechabilityChanges;
     int _photoStreamActivityToken;
-    BOOL _photoStreamIsBusy;
-    NSMutableSet *_publishingAgents;
-    NSMutableDictionary *_publishingAgentsByMediaItem;
-    BOOL _receivingRemoteControlEvents;
-    int _sendingEmailCount;
     int _sharedPhotoStreamActivityToken;
     int _sharedPhotoStreamInvitationFailureToken;
-    BOOL _sharedPhotoStreamIsBusy;
-    BOOL _shouldCancelPublishAfterRemaking;
-    NSString *_trimmedFilePath;
     PLUIController *_uiController;
-    BOOL _urlNeedsHandling;
-    BOOL _wantsToSuspend;
     UIWindow *_window;
+    bool_isOnWifi;
+    bool_isReachable;
+    bool_photoStreamIsBusy;
+    bool_receivingRemoteControlEvents;
+    bool_sharedPhotoStreamIsBusy;
+    bool_urlNeedsHandling;
 }
 
-@property <NSCoding> * autosaveIdentifier;
 @property(retain) NSString * currentTestName;
 @property(retain) NSDictionary * currentTestOptions;
-@property(readonly) BOOL isOnWifi;
-@property(readonly) BOOL isReachable;
-@property BOOL sendingEmail;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain) BLActivityAlert * iPhotoMigrationActivityAlert;
+@property(readonly) bool isOnWifi;
+@property(readonly) bool isReachable;
+@property(readonly) Class superclass;
 @property(retain) UIWindow * window;
 
 + (void)initialize;
 
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
-- (void)_autosaveMailComposition;
-- (void)_cancelPublish;
-- (void)_cancelRemaking;
-- (void)_cleanUpPendingRemakingAndPublishIfNeeded;
-- (void)_clearPublishingSheetResponders;
-- (void)_discardMediaFilesForPublishingAgentsIfNeeded;
-- (void)_discardTrimmedFile;
-- (void)_dismissMailComposeController;
-- (id)_extendLaunchTest;
 - (void)_finishExtendedTest;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_registerForPhotoStreamActivityNotifications;
-- (void)_setComposeParentViewController:(id)arg1;
 - (void)_setImageOptions;
-- (void)_showAlertForInterruptionDuringRemaking;
-- (void)_showMailComposeSheetForAutosavedMessageWithIdentifier:(id)arg1;
 - (void)_startObservingReachabilityChanges;
 - (void)_statusBarDoubleTap:(id)arg1;
 - (void)_stopObservingReachabilityChanges;
@@ -72,16 +49,9 @@
 - (void)_updatePhotoStreamProgressDisplay;
 - (void)_updateSharedPhotoStreamProgressDisplay;
 - (void)_updateSuspensionSettings;
-- (void)addPublishingAgent:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationDidFinishLaunching:(id)arg1;
-- (BOOL)applicationSuspend:(struct __GSEvent { }*)arg1 settings:(id)arg2;
 - (void)applicationWillEnterForeground:(id)arg1;
-- (id)autosaveIdentifier;
-- (void)cleanStateAfterPublishForAgent:(id)arg1;
-- (id)composeMailForPhotoData:(id)arg1 attachmentName:(id)arg2 withMimeType:(id)arg3 extension:(id)arg4 parentViewController:(id)arg5;
-- (void)composeMailForPhotos:(id)arg1 parentViewController:(id)arg2;
-- (void)composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2 parentViewController:(id)arg3;
 - (id)currentTestName;
 - (id)currentTestOptions;
 - (id)currentUIConfiguration;
@@ -89,41 +59,20 @@
 - (void)disableNetworkObservation;
 - (void)enableNetworkObservation;
 - (void*)getSharedAddressBook;
-- (id)imageDataProvider;
-- (BOOL)isCameraApp;
-- (BOOL)isComposeSheetReady;
-- (BOOL)isComposingEmail;
-- (BOOL)isOnWifi;
-- (BOOL)isReachable;
-- (void)mailComposeController:(id)arg1 bodyFinishedLoadingWithResult:(BOOL)arg2 error:(id)arg3;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (id)iPhotoMigrationActivityAlert;
+- (bool)isOnWifi;
+- (bool)isReachable;
 - (id)mainWindow;
-- (id)newMailComposeViewControllerWithPhotoData:(id)arg1 attachmentName:(id)arg2 withMimeType:(id)arg3 extension:(id)arg4 identifier:(id*)arg5;
 - (void)photosPreferencesChanged;
 - (void)presentInternalSettingsController;
-- (void)presentMailComposeController:(id)arg1 parentViewController:(id)arg2;
-- (void)publishingAgentCancelButtonClicked:(id)arg1;
-- (void)publishingAgentDidBeginPublishing:(id)arg1;
-- (void)publishingAgentDidEndPublishing:(id)arg1 error:(id)arg2;
-- (void)publishingAgentDidEndRemaking:(id)arg1 didSucceed:(BOOL)arg2;
-- (void)publishingAgentDidStartRemaking:(id)arg1;
-- (void)publishingAgentDoneButtonClicked:(id)arg1;
-- (id)publishingAgentForMediaItem:(id)arg1;
-- (void)publishingAgentWillBeDisplayed:(id)arg1;
 - (id)rootViewController;
-- (BOOL)sendingEmail;
-- (void)setAutosaveIdentifier:(id)arg1;
 - (void)setCurrentTestName:(id)arg1;
 - (void)setCurrentTestOptions:(id)arg1;
-- (void)setDelaySuspend:(BOOL)arg1;
-- (void)setEnableNetworkingFlags:(BOOL)arg1;
-- (void)setIsRemaking:(BOOL)arg1;
-- (void)setReceivingRemoteControlEvents:(BOOL)arg1;
-- (void)setSendingEmail:(BOOL)arg1;
-- (void)setStatusBarStyleIfNecessary:(int)arg1;
-- (void)sharedFinishedLaunching:(BOOL)arg1;
-- (BOOL)shouldAllowSBAlertSupression;
-- (BOOL)useCompatibleSuspensionAnimation;
-- (BOOL)visitViewControllersWithBlock:(id)arg1;
+- (void)setIPhotoMigrationActivityAlert:(id)arg1;
+- (void)setReceivingRemoteControlEvents:(bool)arg1;
+- (void)sharedFinishedLaunching:(bool)arg1;
+- (bool)shouldAllowSBAlertSupression;
+- (bool)useCompatibleSuspensionAnimation;
+- (bool)visitViewControllersWithBlock:(id)arg1;
 
 @end

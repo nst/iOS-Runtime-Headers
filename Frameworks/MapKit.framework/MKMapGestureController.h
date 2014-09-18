@@ -2,19 +2,16 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapGestureControllerDelegate>, MKBasicMapView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, _MKUserInteractionGestureRecognizer, _UIDynamicAnimationGroup, _UIDynamicValueAnimation;
+@class <MKMapGestureControllerDelegate>, MKBasicMapView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, _MKUserInteractionGestureRecognizer, _UIDynamicAnimationGroup, _UIDynamicValueAnimation;
 
 @interface MKMapGestureController : NSObject <MKVariableDelayTapRecognizerDelegate, _MKUserInteractionGestureRecognizerTouchObserver, UIGestureRecognizerDelegate> {
     <MKMapGestureControllerDelegate> *_delegate;
     MKVariableDelayTapRecognizer *_doubleTapGestureRecognizer;
-    int _gestureCount;
-    BOOL _isPanning;
-    BOOL _isPinching;
+    long long _gestureCount;
     double _lastScale;
     MKBasicMapView *_mapView;
     _UIDynamicAnimationGroup *_panDecelerationAnimationGroup;
     UIPanGestureRecognizer *_panGestureRecognizer;
-    BOOL _panWithMomentum;
     _UIDynamicValueAnimation *_pinchDecelerationAnimation;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     _UIDynamicValueAnimation *_rotationDecelerationAnimation;
@@ -24,31 +21,39 @@
     _MKUserInteractionGestureRecognizer *_touchGestureRecognizer;
     UILongPressGestureRecognizer *_twoFingerLongPressGestureRecognizer;
     UITapGestureRecognizer *_twoFingerTapGestureRecognizer;
+    bool_didStartLongPress;
+    bool_panWithMomentum;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <MKMapGestureControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
 @property(readonly) UITapGestureRecognizer * doubleTapGestureRecognizer;
+@property(readonly) unsigned long long hash;
 @property(readonly) MKBasicMapView * mapView;
 @property(readonly) UIPanGestureRecognizer * panGestureRecognizer;
-@property BOOL panWithMomentum;
+@property bool panWithMomentum;
 @property(readonly) UIPinchGestureRecognizer * pinchGestureRecognizer;
-@property(getter=isRotationEnabled) BOOL rotationEnabled;
-@property(getter=isScrollEnabled) BOOL scrollEnabled;
-@property(getter=isTiltEnabled) BOOL tiltEnabled;
+@property(getter=isRotationEnabled) bool rotationEnabled;
+@property(getter=isScrollEnabled) bool scrollEnabled;
+@property(readonly) Class superclass;
+@property(getter=isTiltEnabled) bool tiltEnabled;
 @property(readonly) UILongPressGestureRecognizer * twoFingerLongPressGestureRecognizer;
 @property(readonly) UITapGestureRecognizer * twoFingerTapGestureRecognizer;
-@property(getter=isZoomEnabled) BOOL zoomEnabled;
+@property(getter=isZoomEnabled) bool zoomEnabled;
 
 - (void).cxx_destruct;
 - (void)_clearGesture:(id)arg1;
+- (struct CGPoint { double x1; double x2; })_snapPointToDevicePixels:(struct CGPoint { double x1; double x2; })arg1;
 - (void)beginGesturing;
 - (void)clearGestureRecognizersInFlight;
 - (void)dealloc;
 - (id)delegate;
 - (id)doubleTapGestureRecognizer;
 - (void)endGesturing;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)gestureRecognizerTouchesBegan:(id)arg1;
 - (void)gestureRecognizerTouchesCanceled:(id)arg1;
 - (void)gestureRecognizerTouchesEnded:(id)arg1;
@@ -62,20 +67,20 @@
 - (void)handleTwoFingerTap:(id)arg1;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2 doubleTapTargetView:(id)arg3;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2;
-- (BOOL)isRotationEnabled;
-- (BOOL)isScrollEnabled;
-- (BOOL)isTiltEnabled;
-- (BOOL)isZoomEnabled;
+- (bool)isRotationEnabled;
+- (bool)isScrollEnabled;
+- (bool)isTiltEnabled;
+- (bool)isZoomEnabled;
 - (id)mapView;
 - (id)panGestureRecognizer;
-- (BOOL)panWithMomentum;
+- (bool)panWithMomentum;
 - (id)pinchGestureRecognizer;
 - (void)setDelegate:(id)arg1;
-- (void)setPanWithMomentum:(BOOL)arg1;
-- (void)setRotationEnabled:(BOOL)arg1;
-- (void)setScrollEnabled:(BOOL)arg1;
-- (void)setTiltEnabled:(BOOL)arg1;
-- (void)setZoomEnabled:(BOOL)arg1;
+- (void)setPanWithMomentum:(bool)arg1;
+- (void)setRotationEnabled:(bool)arg1;
+- (void)setScrollEnabled:(bool)arg1;
+- (void)setTiltEnabled:(bool)arg1;
+- (void)setZoomEnabled:(bool)arg1;
 - (void)startUserInteractionFromExternalGesture;
 - (void)stopDynamicAnimations;
 - (void)stopUserInteractionFromExternalGesture;

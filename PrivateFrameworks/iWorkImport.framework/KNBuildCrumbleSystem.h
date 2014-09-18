@@ -6,40 +6,40 @@
 
 @interface KNBuildCrumbleSystem : TSDGLParticleSystem {
     struct { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; } *_cellParameters;
-    float _lifeSpanDelay;
-    float _lifeSpanRandomness;
-    float _rotationMax;
-    float _speedMax;
-    float _speedMaxLimiter;
+    double _lifeSpanDelay;
+    double _lifeSpanRandomness;
+    double _rotationMax;
+    double _speedMax;
+    double _speedMaxLimiter;
     TSDGLVoronoiTriangleData *_voronoiTriangleData;
 }
 
-@property float lifeSpanDelay;
-@property float lifeSpanRandomness;
-@property float rotationMax;
-@property float speedMax;
-@property float speedMaxLimiter;
+@property double lifeSpanDelay;
+@property double lifeSpanRandomness;
+@property double rotationMax;
+@property double speedMax;
+@property double speedMaxLimiter;
 
-+ (unsigned int)numberOfVerticesPerParticle;
-+ (BOOL)willOverrideGeometry;
++ (unsigned long long)numberOfVerticesPerParticle;
++ (bool)willOverrideGeometry;
 
-- (struct { float x1; float x2; })centerAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { float x1; float x2; })centerAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
-- (id)initWithNumberOfParticles:(unsigned int)arg1 objectSize:(struct CGSize { float x1; float x2; })arg2 slideSize:(struct CGSize { float x1; float x2; })arg3 duration:(float)arg4 direction:(unsigned int)arg5 shader:(id)arg6 percentOfCellsToSplit:(float)arg7;
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)lifeSpanDelay;
-- (float)lifeSpanRandomness;
+- (id)initWithNumberOfParticles:(unsigned long long)arg1 objectSize:(struct CGSize { double x1; double x2; })arg2 slideSize:(struct CGSize { double x1; double x2; })arg3 duration:(double)arg4 direction:(unsigned long long)arg5 shader:(id)arg6 percentOfCellsToSplit:(double)arg7;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)lifeSpanDelay;
+- (double)lifeSpanRandomness;
 - (void)p_setupParameters;
-- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)rotationMax;
-- (void)setLifeSpanDelay:(float)arg1;
-- (void)setLifeSpanRandomness:(float)arg1;
-- (void)setRotationMax:(float)arg1;
-- (void)setSpeedMax:(float)arg1;
-- (void)setSpeedMaxLimiter:(float)arg1;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
-- (float)speedMaxLimiter;
-- (struct { float x1; float x2; })vertexPositionAtVertexIndex:(unsigned int)arg1 particleIndexPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)rotationMax;
+- (void)setLifeSpanDelay:(double)arg1;
+- (void)setLifeSpanRandomness:(double)arg1;
+- (void)setRotationMax:(double)arg1;
+- (void)setSpeedMax:(double)arg1;
+- (void)setSpeedMaxLimiter:(double)arg1;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
+- (double)speedMaxLimiter;
+- (struct { float x1; float x2; })vertexPositionAtVertexIndex:(unsigned long long)arg1 particleIndexPoint:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

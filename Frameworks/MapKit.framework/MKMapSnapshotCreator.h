@@ -12,17 +12,21 @@
     MKMapSnapshotRequest *_servingRequest;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) MKMapSnapshotRequest * servingRequest;
+@property(readonly) Class superclass;
 
-+ (BOOL)supportsHighResolutionSnapshots;
-+ (BOOL)supportsSharingThumbnails;
++ (bool)supportsHighResolutionSnapshots;
++ (bool)supportsSharingThumbnails;
 
 - (void).cxx_destruct;
 - (id)_newSnapshotWithView:(id)arg1;
 - (void)_processRequest;
 - (void)_respondWithSnapshot;
-- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 handler:(id)arg4;
-- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 requester:(id)arg4 context:(id)arg5;
+- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned long long)arg2 size:(struct CGSize { double x1; double x2; })arg3 handler:(id)arg4;
+- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned long long)arg2 size:(struct CGSize { double x1; double x2; })arg3 requester:(id)arg4 context:(id)arg5;
 - (void)dealloc;
 - (void)flushRequestQueue;
 - (id)init;

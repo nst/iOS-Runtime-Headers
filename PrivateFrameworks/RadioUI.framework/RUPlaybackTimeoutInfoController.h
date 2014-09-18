@@ -5,6 +5,6 @@
 @interface RUPlaybackTimeoutInfoController : RadioPlaybackTimeoutInfoController {
 }
 
-- (id)_generateCurrentTimeoutInfoReturningReady:(BOOL*)arg1;
+- (id)_generateCurrentTimeoutInfoReturningReady:(bool*)arg1;
 
 @end

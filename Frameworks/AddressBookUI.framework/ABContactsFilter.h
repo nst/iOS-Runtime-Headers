@@ -8,19 +8,19 @@
     void *_addressBook;
     void *_directorySource;
     NSArray *_groups;
-    BOOL _showsAllContacts;
     NSArray *_sources;
+    bool_showsAllContacts;
 }
 
 @property(readonly) void* addressBook;
 @property(readonly) void* directorySource;
-@property(getter=isEditable,readonly) BOOL editable;
+@property(getter=isEditable,readonly) bool editable;
 @property(readonly) void* groupForNewRecords;
 @property(readonly) NSArray * groups;
-@property(readonly) BOOL isDirectory;
+@property(readonly) bool isDirectory;
 @property(readonly) NSString * name;
-@property(readonly) BOOL shouldChangeModelSelectionWhenDisplayed;
-@property(readonly) BOOL showsAllContacts;
+@property(readonly) bool shouldChangeModelSelectionWhenDisplayed;
+@property(readonly) bool showsAllContacts;
 @property(readonly) void* sourceForNewRecords;
 @property(readonly) NSArray * sources;
 
@@ -37,17 +37,17 @@
 - (void*)directorySource;
 - (void*)groupForNewRecords;
 - (id)groups;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAddressBook:(void*)arg1;
 - (id)initWithDirectorySource:(void*)arg1 addressBook:(void*)arg2;
 - (id)initWithGroups:(id)arg1 sources:(id)arg2 addressBook:(void*)arg3;
 - (void)invalidateSourcesForAllContacts;
-- (BOOL)isDirectory;
-- (BOOL)isEditable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDirectory;
+- (bool)isEditable;
+- (bool)isEqual:(id)arg1;
 - (id)name;
-- (BOOL)shouldChangeModelSelectionWhenDisplayed;
-- (BOOL)showsAllContacts;
+- (bool)shouldChangeModelSelectionWhenDisplayed;
+- (bool)showsAllContacts;
 - (id)sortedGroupsForGroups:(id)arg1;
 - (id)sortedSourcesForSources:(id)arg1;
 - (void*)sourceForNewRecords;

@@ -6,33 +6,34 @@
 
 @interface CKTranscriptBalloonCell : CKTranscriptMessageCell {
     CKBalloonView *_balloonView;
-    NSAttributedString *_drawerAttributedText;
     UILabel *_drawerLabel;
-    BOOL _drawerTextChanged;
-    BOOL _drawerWasVisible;
+    NSAttributedString *_drawerText;
+    bool_drawerTextChanged;
+    bool_drawerWasVisible;
 }
 
 @property(retain) CKBalloonView * balloonView;
-@property(copy) NSAttributedString * drawerAttributedText;
 @property(retain) UILabel * drawerLabel;
-@property BOOL drawerTextChanged;
-@property BOOL drawerWasVisible;
+@property(copy) NSAttributedString * drawerText;
+@property bool drawerTextChanged;
+@property bool drawerWasVisible;
 
 - (id)balloonView;
-- (void)configureForRow:(id)arg1;
-- (void)configureForRowObject:(id)arg1;
+- (void)configureForChatItem:(id)arg1;
 - (void)dealloc;
-- (id)drawerAttributedText;
+- (id)description;
 - (id)drawerLabel;
-- (BOOL)drawerTextChanged;
-- (BOOL)drawerWasVisible;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviewsForContents;
+- (id)drawerText;
+- (bool)drawerTextChanged;
+- (bool)drawerWasVisible;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviewsForAlignmentContents;
 - (void)layoutSubviewsForDrawer;
 - (void)setBalloonView:(id)arg1;
-- (void)setDrawerAttributedText:(id)arg1;
 - (void)setDrawerLabel:(id)arg1;
-- (void)setDrawerTextChanged:(BOOL)arg1;
-- (void)setDrawerWasVisible:(BOOL)arg1;
+- (void)setDrawerText:(id)arg1;
+- (void)setDrawerTextChanged:(bool)arg1;
+- (void)setDrawerWasVisible:(bool)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 
 @end

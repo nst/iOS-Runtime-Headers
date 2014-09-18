@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMapTable, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSNotificationCenter, NSNumber, NSObject<OS_dispatch_queue>, PLManagedObjectContext;
+@class NSDictionary, NSMapTable, NSMutableArray, NSMutableSet, NSNotificationCenter, NSNumber, PLManagedObjectContext;
 
 @interface PLChangeNotificationCenter : NSObject {
     struct changeList_s { 
@@ -53,30 +53,24 @@
     NSMapTable *_changedInflightAssetsAlbumsToSnapshots;
     } _changedMomentLists;
     } _changedMoments;
-    NSMutableIndexSet *_changedThumbnailIndexes;
     NSMutableArray *_enqueuedNotifications;
-    BOOL _isOverloaded;
-    BOOL _isProcessingRemoteDidSave;
     PLManagedObjectContext *_moc;
     } _momentListsContent;
     } _momentsContent;
     NSMutableSet *_overloadedObjects;
     NSDictionary *_remoteNotificationData;
     NSMutableArray *_snapshots;
-    int _stackViewImageChangeListenerCount;
-    NSObject<OS_dispatch_queue> *_thumbnailIndexIsolation;
-    unsigned int _thumbnailIndexesChangeCounter;
+    bool_isOverloaded;
+    bool_isProcessingRemoteDidSave;
 }
 
-@property(readonly) BOOL _shouldForceFetchingAlbumsToReload;
-@property(readonly) NSNotificationCenter * backingCenter;
+@property(readonly) bool _shouldForceFetchingAlbumsToReload;
+@property(retain,readonly) NSNotificationCenter * backingCenter;
 
 + (id)allManagedObjectKeysStrategy;
 + (id)defaultCenter;
 + (void)forceFetchingAlbumReload;
-+ (void)getInsertedAssetCount:(unsigned int*)arg1 deletedAssetCount:(unsigned int*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
-+ (void)getInsertedAssets:(id)arg1 deletedAssets:(id)arg2 changedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
-+ (void)processChangeHubEvent:(id)arg1 withGroup:(id)arg2;
++ (void)getInsertedAssetCount:(unsigned long long*)arg1 deletedAssetCount:(unsigned long long*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
 
 - (id)_attributesOfInterestForObject:(id)arg1;
 - (void)_cleanupState;
@@ -92,30 +86,26 @@
 - (void)_enqueueMomentChangeNotifications;
 - (void)_enqueueMomentListChangeNotifications;
 - (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
-- (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfoWithObjects:(const id*)arg3 forKeys:(const id*)arg4 count:(unsigned int)arg5;
+- (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfoWithObjects:(const id*)arg3 forKeys:(const id*)arg4 count:(unsigned long long)arg5;
 - (void)_enqueuePhotoLibraryNotifications;
 - (void)_evaluateContainersWithUpdatedContent;
 - (void)_evaluateUpdatedAssets;
-- (BOOL)_isInterestedInUpdatesOfObject:(id)arg1;
+- (bool)_isInterestedInUpdatesOfObject:(id)arg1;
 - (id)_keysOfInterestForObject:(id)arg1;
 - (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
-- (void)_persistUserAlbumChanges;
 - (void)_postEnqueuedNotifications;
-- (void)_processThumbnailsUpdatedEvent:(id)arg1;
 - (void)_registerForCameraPreviewWellChanges;
-- (void)_registerForStackViewImageChanges;
 - (void)_saveCurrentStateForAlbum:(id)arg1;
 - (void)_sendNotificationsForSplitChanges;
-- (BOOL)_shouldForceFetchingAlbumsToReload;
+- (bool)_shouldForceFetchingAlbumsToReload;
 - (id)_snapshotForObject:(id)arg1;
 - (void)_splitContextDidChangeNotification:(id)arg1;
 - (id)_takeSnapshotFromCommittedValuesOfObject:(id)arg1;
-- (id)_takeSnapshotOfObject:(id)arg1 useCommitedValues:(BOOL)arg2;
+- (id)_takeSnapshotOfObject:(id)arg1 useCommitedValues:(bool)arg2;
 - (id)_takeSnapshotOfObject:(id)arg1;
-- (void)_takeSnapshotsFromContext:(id)arg1 forRemoteContextSaveNotification:(id)arg2 usingObjectIDs:(BOOL)arg3;
+- (void)_takeSnapshotsFromContext:(id)arg1 forRemoteContextSaveNotification:(id)arg2 usingObjectIDs:(bool)arg3;
 - (id)_toOneRelationshipsOfInterestForObject:(id)arg1;
 - (void)_unregisterForCameraPreviewWellChanges;
-- (void)_unregisterForStackViewImageChanges;
 - (void)addAssetChangeObserver:(id)arg1;
 - (void)addAssetContainerChangeObserver:(id)arg1 container:(id)arg2;
 - (void)addAssetContainerListChangeObserver:(id)arg1 containerList:(id)arg2;
@@ -133,13 +123,12 @@
 - (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id)arg2;
 - (void)inflightAssetsAlbumWillChange:(id)arg1;
 - (id)init;
-- (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3;
-- (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3 isCoalescedEvent:(BOOL)arg4;
-- (void)managedObjectContextWasOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(BOOL)arg3;
-- (void)managedObjectContextWillBeOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(BOOL)arg3;
+- (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(bool)arg3;
+- (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(bool)arg3 isCoalescedEvent:(bool)arg4;
+- (void)managedObjectContextWasOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(bool)arg3;
+- (void)managedObjectContextWillBeOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(bool)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)postShouldReloadNotification;
-- (void)processChangeHubEvent:(id)arg1 withGroup:(id)arg2;
 - (void)processContextDidChangeNotification:(id)arg1;
 - (void)processContextDidSaveNotification:(id)arg1;
 - (void)removeAssetChangeObserver:(id)arg1;

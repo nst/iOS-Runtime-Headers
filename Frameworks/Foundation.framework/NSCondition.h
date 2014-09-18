@@ -2,9 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSString;
+
 @interface NSCondition : NSObject <NSLocking> {
     void *_priv;
 }
+
+@property(copy) NSString * name;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
@@ -19,6 +23,6 @@
 - (void)signal;
 - (void)unlock;
 - (void)wait;
-- (BOOL)waitUntilDate:(id)arg1;
+- (bool)waitUntilDate:(id)arg1;
 
 @end

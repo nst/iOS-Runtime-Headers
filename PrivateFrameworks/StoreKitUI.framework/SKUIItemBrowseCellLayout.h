@@ -6,53 +6,53 @@
 
 @interface SKUIItemBrowseCellLayout : SKUIItemCellLayout {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     _SKUIItemBrowseCellContentView *_cellContentView;
     } _imageBoundingSize;
-    BOOL _largeSpacing;
-    int _numberOfUserRatings;
+    long long _numberOfUserRatings;
     UIColor *_primaryTextColor;
     UIColor *_secondaryTextColor;
-    float _userRating;
+    double _userRating;
+    bool_largeSpacing;
 }
 
 @property(copy) NSString * category;
-@property struct CGSize { float x1; float x2; } imageBoundingSize;
+@property struct CGSize { double x1; double x2; } imageBoundingSize;
 @property(copy) NSString * indexNumberString;
-@property(getter=isLargeSpacing) BOOL largeSpacing;
-@property int numberOfUserRatings;
+@property(getter=isLargeSpacing) bool largeSpacing;
+@property long long numberOfUserRatings;
 @property(copy) NSString * subtitle;
 @property(copy) NSString * title;
-@property float userRating;
+@property double userRating;
 
 - (void).cxx_destruct;
 - (id)_decimalNumberFormatter;
 - (void)_initSKUIItemBrowseCellLayout;
 - (void)_reloadUserRatingViews;
 - (id)category;
-- (struct CGSize { float x1; float x2; })imageBoundingSize;
+- (struct CGSize { double x1; double x2; })imageBoundingSize;
 - (id)indexNumberString;
 - (id)initWithCollectionViewCell:(id)arg1;
 - (id)initWithParentView:(id)arg1;
 - (id)initWithTableViewCell:(id)arg1;
-- (BOOL)isLargeSpacing;
+- (bool)isLargeSpacing;
 - (void)layoutForItemOfferChange;
 - (void)layoutSubviews;
-- (int)numberOfUserRatings;
+- (long long)numberOfUserRatings;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
 - (void)setIconImage:(id)arg1;
-- (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageBoundingSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setIndexNumberString:(id)arg1;
-- (void)setLargeSpacing:(BOOL)arg1;
-- (void)setNumberOfUserRatings:(int)arg1;
+- (void)setLargeSpacing:(bool)arg1;
+- (void)setNumberOfUserRatings:(long long)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUserRating:(float)arg1;
+- (void)setUserRating:(double)arg1;
 - (id)subtitle;
 - (id)title;
-- (float)userRating;
+- (double)userRating;
 
 @end

@@ -2,73 +2,43 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOVectorTile, NSArray, NSMutableArray, VKBuildingFootprintMaker, VKMapTileList, VKStylesheet, VKTrafficTile;
+@class GEOVectorTile, VKMapTileList, VKSharedResources, VKStyleManager;
 
 @interface VKVectorTile : VKTile {
-    float _alpha;
-    VKBuildingFootprintMaker *_buildingFootprintMaker;
-    NSMutableArray *_coastlineGroups;
-    float _contentScale;
+    double _contentScale;
     VKMapTileList *_fragments;
     float _maximumStyleZ;
     GEOVectorTile *_modelTile;
-    NSMutableArray *_polygonGroups;
-    NSMutableArray *_roadGroups;
-    BOOL _shouldBlend;
-    VKStylesheet *_stylesheet;
+    VKSharedResources *_sharedResources;
+    VKStyleManager *_styleManager;
     float _textureScale;
-    VKTrafficTile *_trafficTile;
-    int _vectorType;
 }
 
-@property float alpha;
-@property(readonly) VKBuildingFootprintMaker * buildingFootprintMaker;
-@property(readonly) NSArray * coastlineGroups;
-@property float contentScale;
+@property double contentScale;
 @property(readonly) VKMapTileList * fragments;
-@property(readonly) double maxHeight;
 @property float maximumStyleZ;
 @property(retain) GEOVectorTile * modelTile;
-@property(readonly) NSArray * polygonGroups;
-@property(readonly) NSArray * roadGroups;
-@property BOOL shouldBlend;
-@property(retain) VKStylesheet * stylesheet;
+@property(retain) VKSharedResources * sharedResources;
+@property(retain) VKStyleManager * styleManager;
 @property float textureScale;
-@property(retain) VKTrafficTile * trafficTile;
-@property int vectorType;
+@property(readonly) long long vectorType;
 
-- (float)alpha;
-- (void)buildCoastlines;
-- (void)buildPolygons;
-- (void)buildRoadGroupsAndGenerateMesh:(BOOL)arg1;
-- (id)buildingFootprintMaker;
-- (id)coastlineGroups;
-- (float)contentScale;
+- (double)contentScale;
 - (void)dealloc;
 - (id)fragments;
-- (void)generateBuildingFootprintMeshWithFacades:(BOOL)arg1;
-- (unsigned int)geometryCount;
-- (BOOL)heightAtX:(float)arg1 Y:(float)arg2 outZ:(float*)arg3;
+- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2 styleManager:(id)arg3 sharedResources:(id)arg4 contentScale:(double)arg5 device:(struct Device { }*)arg6;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (double)maxHeight;
 - (float)maximumStyleZ;
 - (id)modelTile;
-- (id)polygonGroups;
-- (void)postprocessRoadGroups;
-- (id)roadGroups;
-- (void)setAlpha:(float)arg1;
-- (void)setContentScale:(float)arg1;
+- (void)setContentScale:(double)arg1;
 - (void)setMaximumStyleZ:(float)arg1;
 - (void)setModelTile:(id)arg1;
-- (void)setShouldBlend:(BOOL)arg1;
-- (void)setStylesheet:(id)arg1;
+- (void)setSharedResources:(id)arg1;
+- (void)setStyleManager:(id)arg1;
 - (void)setTextureScale:(float)arg1;
-- (void)setTrafficTile:(id)arg1;
-- (void)setVectorType:(int)arg1;
-- (BOOL)shouldBlend;
-- (id)stylesheet;
+- (id)sharedResources;
+- (id)styleManager;
 - (float)textureScale;
-- (id)trafficTile;
-- (int)vectorType;
+- (long long)vectorType;
 
 @end

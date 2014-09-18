@@ -17,20 +17,25 @@
     AITXPCConnection *_xpcConnection;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property NSObject<OS_dispatch_queue> * rpcDispatchQueue;
 @property(copy) NSString * rpcSelectorPrefix;
 @property(retain) id rpcTarget;
+@property(readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedTarget;
 
-- (BOOL)_appIsWhitelisted;
+- (bool)_appIsWhitelisted;
 - (void)_fireProbe:(id)arg1 withArgumentDictionary:(id)arg2;
 - (void)_flushQueuedProbes;
 - (void)_probeBarrier:(id)arg1;
-- (BOOL)_probeIsEnabled:(id)arg1;
+- (bool)_probeIsEnabled:(id)arg1;
 - (id)_rpcTarget;
-- (void)_sendAckForToken:(id)arg1 success:(BOOL)arg2 returnValue:(id)arg3 details:(id)arg4;
+- (void)_sendAckForToken:(id)arg1 success:(bool)arg2 returnValue:(id)arg3 details:(id)arg4;
+- (void)_setupWatchdog;
 - (void)_setupXPCConnectionIfNeeded;
 - (void)addObserver:(id)arg1 forMessage:(id)arg2 dispatchQueue:(id)arg3 block:(id)arg4;
 - (id)autorelease;
@@ -39,7 +44,7 @@
 - (oneway void)release;
 - (void)removeObserver:(id)arg1 forMessage:(id)arg2;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (id)rpcDispatchQueue;
 - (id)rpcSelectorPrefix;
 - (id)rpcTarget;

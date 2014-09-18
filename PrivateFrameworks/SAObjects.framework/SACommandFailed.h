@@ -10,23 +10,27 @@
 @property(copy) NSString * aceId;
 @property(copy) NSString * appId;
 @property(copy) NSArray * callbacks;
-@property int errorCode;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property long long errorCode;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * reason;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 
 + (id)commandFailed;
 + (id)commandFailedWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)commandFailedWithErrorCode:(int)arg1;
++ (id)commandFailedWithErrorCode:(long long)arg1;
 + (id)commandFailedWithReason:(id)arg1;
 
 - (id)encodedClassName;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)groupIdentifier;
-- (id)initWithErrorCode:(int)arg1;
+- (id)initWithErrorCode:(long long)arg1;
 - (id)initWithReason:(id)arg1;
 - (id)reason;
-- (BOOL)requiresResponse;
-- (void)setErrorCode:(int)arg1;
+- (bool)requiresResponse;
+- (void)setErrorCode:(long long)arg1;
 - (void)setReason:(id)arg1;
 
 @end

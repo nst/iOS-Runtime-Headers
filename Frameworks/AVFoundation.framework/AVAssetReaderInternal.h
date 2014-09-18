@@ -23,7 +23,7 @@
     NSError *error;
     struct OpaqueFigAssetReader { } *figAssetReader;
     NSMutableArray *outputs;
-    int status;
+    long long status;
     NSObject<OS_dispatch_queue> *statusReadWriteQueue;
     } timeRange;
     AVWeakReference *weakReference;

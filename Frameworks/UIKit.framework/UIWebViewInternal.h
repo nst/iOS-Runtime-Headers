@@ -12,9 +12,10 @@
     unsigned int webSelectionEnabled : 1;
     unsigned int drawInWebThread : 1;
     unsigned int inRotation : 1;
+    unsigned int didRotateEnclosingScrollView : 1;
     UIWebBrowserView *browserView;
     UICheckeredPatternView *checkeredPatternView;
-    int clickedAlertButtonIndex;
+    long long clickedAlertButtonIndex;
     <UIWebViewDelegate> *delegate;
     UIWebPDFViewHandler *pdfHandler;
     NSURLRequest *request;

@@ -6,12 +6,12 @@
 
 @interface TPTextWrapCookie : NSObject {
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     TSWPColumn *_column;
     NSMutableArray *_floatingWrappables;
     TSDWrapPolygon *_interiorWrapPolygon;
@@ -21,10 +21,10 @@
 }
 
 @property(retain) TSWPColumn * column;
-@property(readonly) NSArray * floatingWrappables;
+@property(retain,readonly) NSArray * floatingWrappables;
 @property(retain) TSDWrapPolygon * interiorWrapPolygon;
 @property TSDLayout<TSWPLayoutTarget> * target;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetInverseTransformInRoot;
+@property(readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } targetInverseTransformInRoot;
 
 + (id)textWrapCookieForColumn:(id)arg1 targetLayout:(id)arg2;
 
@@ -38,7 +38,7 @@
 - (void)setInteriorWrapPolygon:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetInverseTransformInRoot;
-- (id)transformedWrapPolygonForWrappable:(id)arg1 canvasSpaceToWrapSpaceTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetInverseTransformInRoot;
+- (id)transformedWrapPolygonForWrappable:(id)arg1 canvasSpaceToWrapSpaceTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 
 @end

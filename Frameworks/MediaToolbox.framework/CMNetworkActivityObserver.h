@@ -8,8 +8,8 @@
     CMNetworkActivityMonitor *_activityMonitor;
     int _cmActivityPollingToken;
     int _cmActivityToken;
-    BOOL _registered;
-    BOOL _valid;
+    bool_registered;
+    bool_valid;
 }
 
 @property(readonly) CMNetworkActivityMonitor * activityMonitor;

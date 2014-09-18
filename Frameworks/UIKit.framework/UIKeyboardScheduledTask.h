@@ -13,12 +13,13 @@
     id _enqueuedTask;
     id _task;
     UIKeyboardTaskQueue *_taskQueue;
+    double _timeInterval;
     NSTimer *_timer;
 }
 
 @property(retain) _UIActionWhenIdle * deferredAction;
 @property(copy) id enqueuedTask;
-@property(readonly) BOOL repeats;
+@property(readonly) bool repeats;
 @property(readonly) id task;
 @property(readonly) UIKeyboardTaskQueue * taskQueue;
 @property(readonly) double timeInterval;
@@ -28,10 +29,11 @@
 - (id)deferredAction;
 - (id)enqueuedTask;
 - (void)handleDeferredTimerFiredEvent;
-- (id)initWithTaskQueue:(id)arg1 timeInterval:(double)arg2 repeats:(BOOL)arg3 task:(id)arg4;
+- (id)initWithTaskQueue:(id)arg1 timeInterval:(double)arg2 repeats:(bool)arg3 task:(id)arg4;
 - (void)invalidate;
-- (BOOL)isValid;
-- (BOOL)repeats;
+- (bool)isValid;
+- (bool)repeats;
+- (void)resetTimer;
 - (void)setDeferredAction:(id)arg1;
 - (void)setEnqueuedTask:(id)arg1;
 - (void)setTimer:(id)arg1;

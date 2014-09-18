@@ -11,7 +11,7 @@
     struct __CFDictionary { } *_propertyToIndexPair;
 }
 
-@property(getter=isOpen,readonly) BOOL open;
+@property(getter=isOpen,readonly) bool open;
 
 - (void).cxx_destruct;
 - (void)bindDouble:(double)arg1 forProperty:(id)arg2;
@@ -23,7 +23,7 @@
 - (void)close;
 - (void)dealloc;
 - (id)initWithEntityClass:(Class)arg1 properties:(id)arg2 library:(id)arg3;
-- (BOOL)isOpen;
-- (BOOL)perform;
+- (bool)isOpen;
+- (bool)perform;
 
 @end

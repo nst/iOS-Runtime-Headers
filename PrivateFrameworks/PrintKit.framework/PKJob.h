@@ -5,30 +5,32 @@
 @class NSData, NSDate, NSString, PKPrintSettings;
 
 @interface PKJob : NSObject {
-    int mediaProgress;
-    int mediaSheets;
-    int mediaSheetsCompleted;
-    int number;
+    long long mediaProgress;
+    long long mediaSheets;
+    long long mediaSheetsCompleted;
+    long long number;
     NSString *printerDisplayName;
-    int printerKind;
+    long long printerKind;
     NSString *printerLocation;
+    long long remoteJobId;
     PKPrintSettings *settings;
-    int state;
+    long long state;
     NSData *thumbnailImage;
     NSDate *timeAtCompleted;
     NSDate *timeAtCreation;
     NSDate *timeAtProcessing;
 }
 
-@property int mediaProgress;
-@property int mediaSheets;
-@property int mediaSheetsCompleted;
-@property int number;
+@property long long mediaProgress;
+@property long long mediaSheets;
+@property long long mediaSheetsCompleted;
+@property long long number;
 @property(retain) NSString * printerDisplayName;
-@property int printerKind;
+@property long long printerKind;
 @property(retain) NSString * printerLocation;
+@property long long remoteJobId;
 @property(retain) PKPrintSettings * settings;
-@property int state;
+@property long long state;
 @property(retain) NSData * thumbnailImage;
 @property(retain) NSDate * timeAtCompleted;
 @property(retain) NSDate * timeAtCreation;
@@ -37,34 +39,36 @@
 + (id)currentJob;
 + (id)jobs;
 
-- (int)cancel;
-- (BOOL)isEqual:(id)arg1;
-- (int)mediaProgress;
-- (int)mediaSheets;
-- (int)mediaSheetsCompleted;
-- (int)number;
+- (long long)cancel;
+- (bool)isEqual:(id)arg1;
+- (long long)mediaProgress;
+- (long long)mediaSheets;
+- (long long)mediaSheetsCompleted;
+- (long long)number;
 - (id)printerDisplayName;
-- (int)printerKind;
+- (long long)printerKind;
 - (id)printerLocation;
-- (void)setMediaProgress:(int)arg1;
-- (void)setMediaSheets:(int)arg1;
-- (void)setMediaSheetsCompleted:(int)arg1;
-- (void)setNumber:(int)arg1;
+- (long long)remoteJobId;
+- (void)setMediaProgress:(long long)arg1;
+- (void)setMediaSheets:(long long)arg1;
+- (void)setMediaSheetsCompleted:(long long)arg1;
+- (void)setNumber:(long long)arg1;
 - (void)setPrinterDisplayName:(id)arg1;
-- (void)setPrinterKind:(int)arg1;
+- (void)setPrinterKind:(long long)arg1;
 - (void)setPrinterLocation:(id)arg1;
+- (void)setRemoteJobId:(long long)arg1;
 - (void)setSettings:(id)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 - (void)setThumbnailImage:(id)arg1;
 - (void)setTimeAtCompleted:(id)arg1;
 - (void)setTimeAtCreation:(id)arg1;
 - (void)setTimeAtProcessing:(id)arg1;
 - (id)settings;
-- (int)state;
+- (long long)state;
 - (id)thumbnailImage;
 - (id)timeAtCompleted;
 - (id)timeAtCreation;
 - (id)timeAtProcessing;
-- (int)update;
+- (long long)update;
 
 @end

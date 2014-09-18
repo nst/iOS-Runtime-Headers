@@ -7,13 +7,16 @@
 @interface KNMasterSlide : KNAbstractSlide <TSSThemeAsset, TSKTransformableObject> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    boolmCalculatedHasBug16580905;
+    boolmHasBug16580905;
+    boolmSlideObjectsLayerWithMaster;
     NSArray *mBodyListStyles;
     NSArray *mBodyParagraphStyles;
     KNClassicStylesheetRecord *mClassicStylesheetRecord;
@@ -26,8 +29,13 @@
 @property(copy) NSArray * bodyListStyles;
 @property(copy) NSArray * bodyParagraphStyles;
 @property(readonly) KNClassicStylesheetRecord * classicStylesheetRecord;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * name;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } objectRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } objectRect;
+@property bool slideObjectsLayerWithMaster;
+@property(readonly) Class superclass;
 @property(retain) NSString * thumbnailTextForBodyPlaceholder;
 @property(retain) NSString * thumbnailTextForTitlePlaceholder;
 
@@ -43,23 +51,26 @@
 - (id)bodyParagraphStyles;
 - (id)childEnumerator;
 - (id)classicStylesheetRecord;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (BOOL)containsProperty:(int)arg1;
+- (id)commandForTransformingByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (bool)containsProperty:(int)arg1;
 - (id)copyWithContext:(id)arg1 andSlideNode:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)generateObjectPlaceholderIfNecessary;
+- (bool)hasBug16580905;
 - (id)imagePlaceholders;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithSlideNode:(id)arg1 context:(id)arg2;
-- (BOOL)isObjectVisible;
-- (BOOL)isThemeContent;
-- (BOOL)isThemeEquivalent:(id)arg1;
+- (int)intValueForProperty:(int)arg1;
+- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (bool)isObjectVisible;
+- (bool)isThemeContent;
+- (bool)isThemeEquivalent:(id)arg1;
 - (SEL)mapThemeAssetSelector;
 - (id)name;
 - (id)nonPlaceholderObjects;
 - (id)objectForProperty:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })objectRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })objectRect;
 - (id)p_defaultTagForDrawable:(id)arg1;
 - (id)p_defaultThumbnailTextForPlaceholder:(id)arg1;
 - (id)packageLocator;
@@ -67,14 +78,18 @@
 - (void)setBodyListStyles:(id)arg1;
 - (void)setBodyParagraphStyles:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setObjectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setObjectRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSlideObjectsLayerWithMaster:(bool)arg1;
 - (void)setThumbnailTextForBodyPlaceholder:(id)arg1;
 - (void)setThumbnailTextForTitlePlaceholder:(id)arg1;
+- (bool)slideObjectsLayerWithMaster;
 - (id)tagforNewPlaceholderInfo:(id)arg1;
 - (id)tagsforNewPlaceholderInfos:(id)arg1;
 - (id)thumbnailTextForBodyPlaceholder;
 - (id)thumbnailTextForPlaceholder:(id)arg1;
 - (id)thumbnailTextForTitlePlaceholder;
 - (void)updatePlaceholderText;
+- (void)wasAddedToTheme:(id)arg1;
+- (void)willBeAddedToTheme:(id)arg1;
 
 @end

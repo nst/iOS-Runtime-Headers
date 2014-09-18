@@ -2,120 +2,26 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKLineDrawStyle : VKDrawStyle {
-    struct vector<LineDash, vk_allocator<LineDash> > { 
-        struct LineDash {} *__begin_; 
-        struct LineDash {} *__end_; 
-        struct __compressed_pair<LineDash *, vk_allocator<LineDash> > { 
-            struct LineDash {} *__first_; 
-        } __end_cap_; 
-    struct vector<LineStipple, vk_allocator<LineStipple> > { 
-        struct LineStipple {} *__begin_; 
-        struct LineStipple {} *__end_; 
-        struct __compressed_pair<LineStipple *, vk_allocator<LineStipple> > { 
-            struct LineStipple {} *__first_; 
-        } __end_cap_; 
-    struct vector<LineDash, vk_allocator<LineDash> > { 
-        struct LineDash {} *__begin_; 
-        struct LineDash {} *__end_; 
-        struct __compressed_pair<LineDash *, vk_allocator<LineDash> > { 
-            struct LineDash {} *__first_; 
-        } __end_cap_; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<geo::Vec2Imp<float> > { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                struct Vec2Imp<float> { 
-                    float x; 
-                    float y; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct Vec2Imp<float> {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    } dropShadowColor;
-    } dropShadowOffset;
-    } dropShadowWidth;
-    } fillDashes;
-    BOOL hasDashAtAnyZ;
-    } insetShadowAngle;
-    } insetShadowColor;
-    } insetShadowHeight;
-    } stipples;
-    } strokeDashes;
+@interface VKLineDrawStyle : VKRenderStyle {
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })dropShadowColorAtZoom:(float)arg1;
-- (struct Vec2Imp<float> { float x1; float x2; })dropShadowOffsetAtZoom:(float)arg1;
++ (int)renderStyleID;
+
+- (struct Matrix<float, 4, 1> { float x1[4]; })dropShadowColorAtZoom:(float)arg1;
+- (struct Matrix<float, 2, 1> { float x1[2]; })dropShadowOffsetAtZoom:(float)arg1;
 - (float)dropShadowWidthAtZoom:(float)arg1;
-- (void)fillDashPattern:(float**)arg1 length:(unsigned int*)arg2 atZoom:(float)arg3;
-- (BOOL)hasDashAtAnyZ;
-- (BOOL)hasDropShadowAtZoom:(float)arg1;
-- (BOOL)hasFillDashAtZoom:(int)arg1;
-- (BOOL)hasStrokeDashAtZoom:(int)arg1;
+- (unsigned long long)fillDashPatternAtZoom:(float)arg1;
+- (bool)hasDashAtAnyZ;
+- (bool)hasDropShadowAtZoom:(float)arg1;
+- (bool)hasFillDashAtZoom:(int)arg1;
+- (bool)hasStrokeDashAtZoom:(int)arg1;
+- (struct Matrix<float, 4, 1> { float x1[4]; })innerGlowColorAtZoom:(float)arg1;
+- (float)innerGlowRadiusAtZoom:(float)arg1;
 - (float)insetShadowAngleAtZoom:(float)arg1;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })insetShadowColorAtZoom:(float)arg1;
+- (struct Matrix<float, 4, 1> { float x1[4]; })insetShadowColorAtZoom:(float)arg1;
 - (float)insetShadowHeightAtZoom:(float)arg1;
-- (void)stippleArray:(float**)arg1 length:(unsigned int*)arg2 atZoom:(float)arg3;
-- (void)strokeDashPattern:(float**)arg1 length:(unsigned int*)arg2 atZoom:(float)arg3;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
-- (id)variant;
+- (struct Matrix<float, 4, 1> { float x1[4]; })outerGlowColorAtZoom:(float)arg1;
+- (float)outerGlowRadiusAtZoom:(float)arg1;
+- (unsigned long long)strokeDashPatternAtZoom:(float)arg1;
 
 @end

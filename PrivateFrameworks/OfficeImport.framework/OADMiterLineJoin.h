@@ -11,8 +11,8 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLimitOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isLimitOverridden;
 - (float)limit;
 - (void)setLimit:(float)arg1;
 

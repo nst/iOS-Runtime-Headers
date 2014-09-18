@@ -2,25 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSURL, SKUIArtworkList;
+@class NSURL, SKUIArtworkList;
 
 @interface SKUIVideo : NSObject {
     SKUIArtworkList *_artworks;
-    NSString *_runtime;
-    NSString *_title;
     NSURL *_url;
 }
 
 @property(readonly) NSURL * URL;
 @property(readonly) SKUIArtworkList * artworks;
-@property(readonly) NSString * runtime;
-@property(readonly) NSString * title;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (id)artworks;
 - (id)initWithVideoDictionary:(id)arg1;
-- (id)runtime;
-- (id)title;
 
 @end

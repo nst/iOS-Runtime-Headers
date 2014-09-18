@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIQuicklinksPageComponent, SKUIQuicklinksViewController;
+@class NSString, SKUIQuicklinksPageComponent, SKUIQuicklinksViewController;
 
 @interface SKUIQuicklinksPageSection : SKUIStorePageSection <SKUIQuicklinksViewControllerDelegate> {
     SKUIQuicklinksViewController *_quicklinksViewController;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) SKUIQuicklinksPageComponent * pageComponent;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_quicklinksViewController;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;
-- (int)numberOfCells;
-- (void)quicklinksViewController:(id)arg1 didSelectLink:(id)arg2 atIndex:(int)arg3;
+- (long long)numberOfCells;
+- (void)quicklinksViewController:(id)arg1 didSelectLink:(id)arg2 atIndex:(long long)arg3;
 - (void)willAppearInContext:(id)arg1;
+- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

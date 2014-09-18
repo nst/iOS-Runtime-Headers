@@ -5,14 +5,13 @@
 @interface TSDNonInteractiveInsertionContext : TSDInsertionContext {
 }
 
-- (BOOL)fromDragToInsertController;
-- (BOOL)hasPreferredCenter;
-- (BOOL)insertFloating;
-- (BOOL)insertFromDrag;
-- (BOOL)insertWillBeDiscarded;
-- (BOOL)isInteractive;
-- (BOOL)isPreferredCenterRequired;
-- (struct CGPoint { float x1; float x2; })preferredCenter;
-- (BOOL)shouldEndEditing;
+- (bool)fromDragToInsertController;
+- (bool)hasPreferredCenter;
+- (bool)insertFloating;
+- (bool)insertFromDrag;
+- (bool)isInteractive;
+- (bool)isPreferredCenterRequired;
+- (struct CGPoint { double x1; double x2; })preferredCenter;
+- (bool)shouldEndEditing;
 
 @end

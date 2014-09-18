@@ -3,30 +3,30 @@
  */
 
 @interface _UIViewVisitor : NSObject {
-    BOOL __currentlyVisitingHierarchy;
-    BOOL _tracksHierarchy;
-    unsigned int _traversalDirection;
-    BOOL _visitMaskViews;
+    unsigned long long _traversalDirection;
+    bool__currentlyVisitingHierarchy;
+    bool_tracksHierarchy;
+    bool_visitMaskViews;
 }
 
-@property BOOL _currentlyVisitingHierarchy;
-@property BOOL tracksHierarchy;
-@property(readonly) unsigned int traversalDirection;
-@property BOOL visitMaskViews;
+@property bool _currentlyVisitingHierarchy;
+@property bool tracksHierarchy;
+@property(readonly) unsigned long long traversalDirection;
+@property bool visitMaskViews;
 
 + (void)_addHierarchyTrackingVisitor:(id)arg1;
 + (void)_removeHierarchyTrackingVisitor:(id)arg1;
 + (void)_startTraversalOfVisitor:(id)arg1 withView:(id)arg2;
 
-- (BOOL)_currentlyVisitingHierarchy;
-- (BOOL)_prepareVisitor:(id)arg1 toVisitView:(id)arg2 changedSubview:(id)arg3 previousWindow:(id)arg4 previousSuperview:(id)arg5;
-- (BOOL)_visitView:(id)arg1;
-- (id)initWithTraversalDirection:(unsigned int)arg1;
-- (void)setTracksHierarchy:(BOOL)arg1;
-- (void)setVisitMaskViews:(BOOL)arg1;
-- (void)set_currentlyVisitingHierarchy:(BOOL)arg1;
-- (BOOL)tracksHierarchy;
-- (unsigned int)traversalDirection;
-- (BOOL)visitMaskViews;
+- (bool)_currentlyVisitingHierarchy;
+- (bool)_prepareVisitor:(id)arg1 toVisitView:(id)arg2 changedSubview:(id)arg3 previousWindow:(id)arg4 previousSuperview:(id)arg5;
+- (bool)_visitView:(id)arg1;
+- (id)initWithTraversalDirection:(unsigned long long)arg1;
+- (void)setTracksHierarchy:(bool)arg1;
+- (void)setVisitMaskViews:(bool)arg1;
+- (void)set_currentlyVisitingHierarchy:(bool)arg1;
+- (bool)tracksHierarchy;
+- (unsigned long long)traversalDirection;
+- (bool)visitMaskViews;
 
 @end

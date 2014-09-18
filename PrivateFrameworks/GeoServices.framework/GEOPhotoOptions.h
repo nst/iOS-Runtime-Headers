@@ -5,8 +5,8 @@
 @interface GEOPhotoOptions : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     struct { 
         unsigned int photoType : 1; 
     } _has;
@@ -15,10 +15,10 @@
     int _photoType;
 }
 
-@property BOOL hasPhotoType;
+@property bool hasPhotoType;
 @property int maxPhotos;
 @property(readonly) int* photoSizes;
-@property(readonly) unsigned int photoSizesCount;
+@property(readonly) unsigned long long photoSizesCount;
 @property int photoType;
 
 - (void)addPhotoSize:(int)arg1;
@@ -28,18 +28,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPhotoType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPhotoType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)maxPhotos;
-- (int)photoSizeAtIndex:(unsigned int)arg1;
+- (void)mergeFrom:(id)arg1;
+- (int)photoSizeAtIndex:(unsigned long long)arg1;
 - (int*)photoSizes;
-- (unsigned int)photoSizesCount;
+- (unsigned long long)photoSizesCount;
 - (int)photoType;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPhotoType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPhotoType:(bool)arg1;
 - (void)setMaxPhotos:(int)arg1;
-- (void)setPhotoSizes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setPhotoSizes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setPhotoType:(int)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -11,14 +11,14 @@
 @interface TSKDocumentModelEnumerator : NSEnumerator {
     NSMutableArray *_enumeratorStack;
     id _filter;
-    BOOL _filterBeforeAddingChildren;
     <TSKModel> *_root;
-    BOOL _stop;
+    bool_filterBeforeAddingChildren;
+    bool_stop;
 }
 
 @property(retain) NSMutableArray * enumeratorStack;
 @property(copy) id filter;
-@property BOOL filterBeforeAddingChildren;
+@property bool filterBeforeAddingChildren;
 @property(retain) <TSKModel> * root;
 
 - (void)dealloc;
@@ -26,14 +26,14 @@
 - (void)enumerateUsingBlock:(id)arg1;
 - (id)enumeratorStack;
 - (id)filter;
-- (BOOL)filterBeforeAddingChildren;
+- (bool)filterBeforeAddingChildren;
 - (id)initWithEnumerator:(id)arg1 filter:(id)arg2;
 - (id)initWithRootModelObject:(id)arg1 filter:(id)arg2;
 - (id)nextObject;
 - (id)root;
 - (void)setEnumeratorStack:(id)arg1;
 - (void)setFilter:(id)arg1;
-- (void)setFilterBeforeAddingChildren:(BOOL)arg1;
+- (void)setFilterBeforeAddingChildren:(bool)arg1;
 - (void)setRoot:(id)arg1;
 
 @end

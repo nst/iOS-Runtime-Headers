@@ -5,9 +5,9 @@
 @interface KNBuildConfettiSystem : TSDGLParticleSystem {
 }
 
-- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)rotationMax;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
+- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)rotationMax;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
 
 @end

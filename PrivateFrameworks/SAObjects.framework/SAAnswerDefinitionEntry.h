@@ -7,8 +7,12 @@
 @interface SAAnswerDefinitionEntry : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * definition;
+@property(copy,readonly) NSString * description;
 @property(copy) NSArray * examples;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSArray * variations;
 
 + (id)definitionEntry;

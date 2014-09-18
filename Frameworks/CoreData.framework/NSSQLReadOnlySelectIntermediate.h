@@ -3,10 +3,10 @@
  */
 
 @interface NSSQLReadOnlySelectIntermediate : NSSQLSelectIntermediate {
-    BOOL _onlyFetchesAggregates;
+    bool_onlyFetchesAggregates;
 }
 
 - (id)generateSQLStringInContext:(id)arg1;
-- (BOOL)onlyFetchesAggregates;
+- (bool)onlyFetchesAggregates;
 
 @end

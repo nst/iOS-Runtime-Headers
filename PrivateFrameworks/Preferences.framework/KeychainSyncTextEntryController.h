@@ -5,48 +5,52 @@
 @class NSString, PSSpecifier, PSTableCell, UIView<UIKeyInput>;
 
 @interface KeychainSyncTextEntryController : PSKeychainSyncViewController <KeychainSyncPasscodeFieldDelegate> {
-    BOOL _convertsNumeralsToASCII;
-    BOOL _hidesNextButton;
-    BOOL _secureTextEntry;
     PSTableCell *_textEntryCell;
     PSSpecifier *_textEntrySpecifier;
     int _textEntryType;
     UIView<UIKeyInput> *_textEntryView;
-    BOOL _textFieldHasRoundBorder;
     NSString *_textValue;
+    bool_convertsNumeralsToASCII;
+    bool_hidesNextButton;
+    bool_secureTextEntry;
+    bool_textFieldHasRoundBorder;
 }
 
-@property BOOL convertsNumeralsToASCII;
-@property BOOL hidesNextButton;
-@property BOOL secureTextEntry;
+@property bool convertsNumeralsToASCII;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool hidesNextButton;
+@property bool secureTextEntry;
+@property(readonly) Class superclass;
 @property int textEntryType;
-@property BOOL textFieldHasRoundBorder;
+@property bool textFieldHasRoundBorder;
 @property(retain) NSString * textValue;
 
-- (BOOL)becomeFirstResponder;
-- (BOOL)convertsNumeralsToASCII;
+- (bool)becomeFirstResponder;
+- (bool)convertsNumeralsToASCII;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;
 - (id)getTextValueForSpecifier:(id)arg1;
-- (BOOL)hidesNextButton;
+- (bool)hidesNextButton;
 - (id)init;
 - (void)loadView;
 - (void)nextPressed;
-- (unsigned int)numberOfPasscodeFields;
+- (unsigned long long)numberOfPasscodeFields;
 - (void)passcodeField:(id)arg1 didUpdateEnteredPasscode:(id)arg2;
 - (id)placeholderText;
-- (BOOL)secureTextEntry;
-- (void)setConvertsNumeralsToASCII:(BOOL)arg1;
-- (void)setHidesNextButton:(BOOL)arg1;
-- (void)setSecureTextEntry:(BOOL)arg1;
+- (bool)secureTextEntry;
+- (void)setConvertsNumeralsToASCII:(bool)arg1;
+- (void)setHidesNextButton:(bool)arg1;
+- (void)setSecureTextEntry:(bool)arg1;
 - (void)setTextEntryText:(id)arg1;
 - (void)setTextEntryType:(int)arg1;
-- (void)setTextFieldHasRoundBorder:(BOOL)arg1;
+- (void)setTextFieldHasRoundBorder:(bool)arg1;
 - (void)setTextValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)setTextValue:(id)arg1;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)textEntryCell;
 - (Class)textEntryCellClass;
 - (id)textEntrySpecifier;
@@ -55,9 +59,11 @@
 - (id)textEntryView;
 - (void)textEntryViewDidChange:(id)arg1;
 - (void)textFieldChanged:(id)arg1;
-- (BOOL)textFieldHasRoundBorder;
+- (bool)textFieldHasRoundBorder;
 - (id)textValue;
 - (void)updateNextButton;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

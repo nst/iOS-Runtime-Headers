@@ -6,30 +6,30 @@
 
 @interface _UIParallaxDimmingView : UIView {
     UIView *_addingSubview;
-    BOOL _backgroundIsDimmed;
     UIColor *_dimmingColor;
+    bool_backgroundIsDimmed;
     UIImageView *leftEdgeFade;
 }
 
 @property(retain) UIView * addingSubview;
-@property BOOL backgroundIsDimmed;
+@property bool backgroundIsDimmed;
 @property(retain) UIColor * dimmingColor;
 
-+ (id)newDimmingViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (id)newDimmingViewWrappingView:(id)arg1 withLeftBorder:(float)arg2;
++ (id)newDimmingViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)newDimmingViewWrappingView:(id)arg1 withLeftBorder:(double)arg2;
 
 - (id)_basicAnimationWithKeyPath:(id)arg1;
 - (id)addingSubview;
-- (BOOL)backgroundIsDimmed;
+- (bool)backgroundIsDimmed;
 - (void)crossFade;
 - (void)dealloc;
 - (id)defaultBorderColor;
 - (void)didMoveToWindow;
 - (id)dimmingColor;
-- (id)initViewWrappingView:(id)arg1 withLeftBorder:(float)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initViewWrappingView:(id)arg1 withLeftBorder:(double)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAddingSubview:(id)arg1;
-- (void)setBackgroundIsDimmed:(BOOL)arg1;
+- (void)setBackgroundIsDimmed:(bool)arg1;
 - (void)setDimmingColor:(id)arg1;
 
 @end

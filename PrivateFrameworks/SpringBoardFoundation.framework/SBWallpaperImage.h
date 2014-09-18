@@ -6,19 +6,20 @@
 
 @interface SBWallpaperImage : UIImage {
     NSData *_data;
-    int _variant;
+    long long _variant;
 }
 
 @property(readonly) NSData * data;
-@property(readonly) int variant;
+@property(readonly) long long variant;
 
-+ (id)cachedWallpaperDataForVariant:(int)arg1;
-+ (void)preheatWallpaperDataForVariant:(int)arg1;
++ (struct CGImage { }*)_newBlackWallpaperImage;
++ (id)cachedWallpaperDataForVariant:(long long)arg1;
++ (void)preheatWallpaperDataForVariant:(long long)arg1;
 
 - (id)data;
 - (void)dealloc;
-- (id)initWithVariant:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)variant;
+- (id)initWithVariant:(long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)variant;
 
 @end

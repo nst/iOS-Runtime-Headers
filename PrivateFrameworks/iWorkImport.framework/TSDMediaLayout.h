@@ -7,51 +7,51 @@
 @interface TSDMediaLayout : TSDStyledLayout {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct { 
         unsigned int alignmentFrame : 1; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    boolmShouldRenderFrameStroke;
     } mBoundsForStandardKnobs;
     } mCachedAlignmentFrame;
     TSDMutableStroke *mDynamicStroke;
     } mMediaInvalidFlags;
-    BOOL mShouldRenderFrameStroke;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundsForStandardKnobs;
-@property BOOL shouldRenderFrameStroke;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundsForStandardKnobs;
+@property bool shouldRenderFrameStroke;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrameInRoot;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })computeAlignmentFrameInRoot:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrameInRoot;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })computeAlignmentFrameInRoot:(bool)arg1;
 - (void)dynamicStrokeWidthChangeDidBegin;
 - (void)dynamicStrokeWidthChangeDidEnd;
-- (void)dynamicStrokeWidthUpdateToValue:(float)arg1;
+- (void)dynamicStrokeWidthUpdateToValue:(double)arg1;
 - (id)initWithInfo:(id)arg1;
 - (void)invalidateAlignmentFrame;
-- (BOOL)isStrokeBeingManipulated;
+- (bool)isStrokeBeingManipulated;
 - (id)mediaInfo;
 - (void)processChangedProperty:(int)arg1;
-- (void)setBoundsForStandardKnobs:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBoundsForStandardKnobs:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGeometry:(id)arg1;
-- (void)setShouldRenderFrameStroke:(BOOL)arg1;
-- (BOOL)shouldRenderFrameStroke;
+- (void)setShouldRenderFrameStroke:(bool)arg1;
+- (bool)shouldRenderFrameStroke;
 - (id)stroke;
-- (BOOL)supportsRotation;
+- (bool)supportsRotation;
 
 @end

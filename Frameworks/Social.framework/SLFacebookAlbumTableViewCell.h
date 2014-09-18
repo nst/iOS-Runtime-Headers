@@ -12,7 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)albumIdentifier;
-- (void)layoutSubviews;
 - (void)setAlbumIdentifier:(id)arg1;
 
 @end

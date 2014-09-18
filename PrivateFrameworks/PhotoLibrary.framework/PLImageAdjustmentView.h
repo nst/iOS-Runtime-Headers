@@ -2,38 +2,38 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLImageAdjustmentViewDelegate>, NSTimer, PLCropModel, PLCropOverlayLayer, UIImage, UIImageView;
+@class <PLImageAdjustmentViewDelegate>, NSString, NSTimer, PLCropModel, PLCropOverlayLayer, UIImage, UIImageView;
 
 @interface PLImageAdjustmentView : UIView <UIGestureRecognizerDelegate> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     unsigned int _isCropMode : 1;
     unsigned int _isAdjustingCropRect : 1;
@@ -44,8 +44,8 @@
     unsigned int _delegateDidCropImage : 1;
     unsigned int _delegateDidTouchImage : 1;
     double _animationDuration;
-    float _autoCropScale;
-    float _cropAngle;
+    double _autoCropScale;
+    double _cropAngle;
     } _cropInsets;
     PLCropModel *_cropModel;
     unsigned int _currentCropAction;
@@ -57,74 +57,78 @@
     NSTimer *_manualCropTimer;
     } _originalTransform;
     PLCropOverlayLayer *_overlayLayer;
-    float _photoViewScale;
-    float _previousCropAngle;
+    double _photoViewScale;
+    double _previousCropAngle;
     } _previousImageCropRect;
-    float _sourceAspectRatio;
+    double _sourceAspectRatio;
 }
 
-@property struct CGSize { float x1; float x2; } aspectRatio;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cropInsets;
-@property(getter=isCropMode) BOOL cropMode;
+@property struct CGSize { double x1; double x2; } aspectRatio;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } cropInsets;
+@property(getter=isCropMode) bool cropMode;
+@property(copy,readonly) NSString * debugDescription;
 @property <PLImageAdjustmentViewDelegate> * delegate;
+@property(copy,readonly) NSString * description;
 @property(retain) UIImage * editedImage;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_beginCropGesture:(id)arg1;
 - (void)_cropTimer:(id)arg1;
 - (void)_endCropGesture:(id)arg1;
-- (float)_imageScale;
-- (BOOL)_isInCropGesture;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_maxOverlayCropRect;
-- (float)_minimumImageScale;
-- (void)_performCropAction:(int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)_updateCropAngle;
-- (BOOL)_updateCropRect;
+- (double)_imageScale;
+- (bool)_isInCropGesture;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_maxOverlayCropRect;
+- (double)_minimumImageScale;
+- (void)_performCropAction:(int)arg1 location:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)_updateCropAngle;
+- (bool)_updateCropRect;
 - (void)_updateGestureRecognizers;
 - (void)_updateImageView;
 - (void)_updateOverlayCropRect;
-- (struct CGSize { float x1; float x2; })aspectRatio;
+- (struct CGSize { double x1; double x2; })aspectRatio;
 - (void)beginAnimation:(double)arg1;
 - (void)commitAnimations;
-- (float)computeScaleToFillRelativeToPointInImage:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertPointFromImage:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertPointToImage:(struct CGPoint { float x1; float x2; })arg1;
+- (double)computeScaleToFillRelativeToPointInImage:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertPointFromImage:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertPointToImage:(struct CGPoint { double x1; double x2; })arg1;
 - (void)crop:(id)arg1;
-- (int)cropActionForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)cropAngle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cropInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
+- (int)cropActionForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)cropAngle;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cropInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (void)dealloc;
 - (id)delegate;
-- (void)displayProgressIndicatorAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)displayProgressIndicatorAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)editedImage;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isCropMode;
-- (BOOL)isDisplayingProgressIndicators;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isCropMode;
+- (bool)isDisplayingProgressIndicators;
 - (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })overlayCropRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })overlayCropRect;
 - (id)overlayLayer;
 - (void)pan:(id)arg1;
-- (float)previousCropAngle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousCropRect;
-- (void)removeProgressIndicatorAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (double)previousCropAngle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousCropRect;
+- (void)removeProgressIndicatorAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)removeProgressIndicators;
 - (void)replaceEditedImage:(id)arg1;
 - (void)reset;
 - (void)rotate:(id)arg1;
-- (float)rotationAngle;
+- (double)rotationAngle;
 - (void)scale:(id)arg1;
-- (void)setAspectRatio:(struct CGSize { float x1; float x2; })arg1;
-- (void)setCropInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setCropMode:(BOOL)arg1;
-- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cropAngle:(float)arg2;
+- (void)setAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setCropMode:(bool)arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 cropAngle:(double)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEditedImage:(id)arg1;
 - (void)setNeedsRecenterImage;
-- (void)setRotationAngle:(float)arg1;
-- (void)showIndicatorAtPointInImage:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2;
+- (void)setRotationAngle:(double)arg1;
+- (void)showIndicatorAtPointInImage:(struct CGPoint { double x1; double x2; })arg1 duration:(double)arg2;
 - (void)touch:(id)arg1;
 
 @end

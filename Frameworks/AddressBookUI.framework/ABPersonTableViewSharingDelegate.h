@@ -14,23 +14,23 @@
     UIImage *_shareLocationSnapshotImage;
     NSString *_shareLocationURL;
     NSString *_shareMessageBody;
-    BOOL _shareMessageBodyIsHTML;
     NSString *_shareMessageSubject;
     ABStyleProvider *_styleProvider;
     id _willTweetLocationCallback;
     id _willWeiboLocationCallback;
+    bool_shareMessageBodyIsHTML;
 }
 
-@property(readonly) BOOL canSendMMS;
-@property(readonly) BOOL canSendMail;
-@property(readonly) BOOL canShareContact;
-@property(readonly) BOOL canTweet;
-@property(readonly) BOOL canWeibo;
+@property(readonly) bool canSendMMS;
+@property(readonly) bool canSendMail;
+@property(readonly) bool canShareContact;
+@property(readonly) bool canTweet;
+@property(readonly) bool canWeibo;
 @property ABPersonViewControllerHelper * helper;
 @property(retain) UIImage * shareLocationSnapshotImage;
 @property(copy) NSString * shareLocationURL;
 @property(copy) NSString * shareMessageBody;
-@property BOOL shareMessageBodyIsHTML;
+@property bool shareMessageBodyIsHTML;
 @property(copy) NSString * shareMessageSubject;
 @property(retain) ABStyleProvider * styleProvider;
 @property(copy) id willTweetLocationCallback;
@@ -38,29 +38,29 @@
 
 + (id)_fakePersonForMergedPeople:(id)arg1;
 
-- (BOOL)canSendMMS;
-- (BOOL)canSendMail;
-- (BOOL)canShareContact;
-- (BOOL)canTweet;
-- (BOOL)canWeibo;
+- (bool)canSendMMS;
+- (bool)canSendMail;
+- (bool)canShareContact;
+- (bool)canTweet;
+- (bool)canWeibo;
 - (void)dealloc;
 - (void)getVCardData:(id*)arg1 exportMode:(int)arg2 fileName:(id*)arg3;
 - (id)helper;
 - (id)init;
-- (BOOL)loadChatKitAndReturnBundle:(id*)arg1;
-- (BOOL)loadMessageUIAndReturnBundle:(id*)arg1;
+- (bool)loadChatKitAndReturnBundle:(id*)arg1;
+- (bool)loadMessageUIAndReturnBundle:(id*)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (void)setHelper:(id)arg1;
 - (void)setShareLocationSnapshotImage:(id)arg1;
 - (void)setShareLocationURL:(id)arg1;
 - (void)setShareMessageBody:(id)arg1;
-- (void)setShareMessageBodyIsHTML:(BOOL)arg1;
+- (void)setShareMessageBodyIsHTML:(bool)arg1;
 - (void)setShareMessageSubject:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setWillTweetLocationCallback:(id)arg1;
 - (void)setWillWeiboLocationCallback:(id)arg1;
-- (void)shareActionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)shareActionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)shareContact:(id)arg1;
 - (void)shareContactByEmail:(id)arg1;
 - (void)shareContactByTextMessage:(id)arg1;
@@ -71,7 +71,7 @@
 - (id)shareLocationSnapshotImage;
 - (id)shareLocationURL;
 - (id)shareMessageBody;
-- (BOOL)shareMessageBodyIsHTML;
+- (bool)shareMessageBodyIsHTML;
 - (id)shareMessageSubject;
 - (id)styleProvider;
 - (id)vCardFileName;

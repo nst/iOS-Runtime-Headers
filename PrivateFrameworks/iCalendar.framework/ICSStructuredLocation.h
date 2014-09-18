@@ -16,12 +16,14 @@
 @property(retain) NSString * routing;
 @property(retain) NSString * title;
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)abURLString;
 - (id)address;
 - (id)displayName;
 - (id)fmtype;
 - (id)loctype;
+- (id)parametersToObscure;
+- (id)propertiesToObscure;
 - (double)radius;
 - (id)routing;
 - (void)setAbURLString:(id)arg1;
@@ -32,6 +34,7 @@
 - (void)setRadius:(double)arg1;
 - (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (bool)shouldObscureValue;
 - (id)title;
 
 @end

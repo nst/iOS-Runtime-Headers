@@ -11,6 +11,5 @@
 }
 
 + (void)readFromContent:(struct EshContent { int (**x1)(); }*)arg1 toDrawable:(id)arg2 state:(id)arg3;
-+ (void)writeFromDrawable:(id)arg1 toObject:(id)arg2 state:(id)arg3;
 
 @end

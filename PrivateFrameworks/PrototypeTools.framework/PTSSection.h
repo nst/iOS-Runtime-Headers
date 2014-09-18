@@ -18,40 +18,44 @@
 }
 
 @property(retain) NSArray * appearanceConditions;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) _UISettings * settings;
 @property(retain) NSString * submoduleKeyPath;
+@property(readonly) Class superclass;
 @property(retain) NSString * title;
 
 - (void).cxx_destruct;
 - (void)_assertNoGroupTemplateProperties:(id)arg1;
-- (void)_fixRows:(id)arg1 fromIndex:(unsigned int)arg2 withTemplate:(id)arg3;
+- (void)_fixRows:(id)arg1 fromIndex:(unsigned long long)arg2 withTemplate:(id)arg3;
 - (void)_reloadEnabledRows;
 - (void)_sendInserts:(id)arg1 deletes:(id)arg2;
 - (void)_sendReload;
-- (BOOL)_shouldEnableRow:(id)arg1;
+- (bool)_shouldEnableRow:(id)arg1;
 - (void)_updateEnabledRows;
 - (void)addObserver:(id)arg1;
 - (id)appearanceConditions;
 - (void)dealloc;
-- (unsigned int)destinationForRowAtIndex:(unsigned int)arg1 withProposedDestination:(unsigned int)arg2;
+- (unsigned long long)destinationForRowAtIndex:(unsigned long long)arg1 withProposedDestination:(unsigned long long)arg2;
 - (void)enumerateAllRowsUsingBlock:(id)arg1;
 - (void)enumerateEnabledRowsUsingBlock:(id)arg1;
-- (BOOL)hasEnabledEditableRows;
-- (unsigned int)indexOfRow:(id)arg1;
+- (bool)hasEnabledEditableRows;
+- (unsigned long long)indexOfRow:(id)arg1;
 - (id)initWithRows:(id)arg1;
-- (void)moveRowAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
-- (unsigned int)numberOfRows;
+- (void)moveRowAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (unsigned long long)numberOfRows;
 - (void)removeObserver:(id)arg1;
-- (id)rowAtIndex:(unsigned int)arg1;
+- (id)rowAtIndex:(unsigned long long)arg1;
 - (void)setAppearanceConditions:(id)arg1;
 - (void)setSettings:(id)arg1;
 - (void)setSubmoduleKeyPath:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)settings;
-- (void)settingsGroup:(id)arg1 didInsertSettings:(id)arg2 atIndex:(unsigned int)arg3;
-- (void)settingsGroup:(id)arg1 didMoveSettings:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
-- (void)settingsGroup:(id)arg1 didRemoveSettings:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)settingsGroup:(id)arg1 didInsertSettings:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)settingsGroup:(id)arg1 didMoveSettings:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
+- (void)settingsGroup:(id)arg1 didRemoveSettings:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)submoduleKeyPath;
 - (id)title;
 

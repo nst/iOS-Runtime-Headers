@@ -6,9 +6,9 @@
 
 @interface UIScrollViewDelayedTouchesBeganGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _startScreenLocation;
+        double x; 
+        double y; 
+    } _startSceneReferenceLocation;
     UIDelayedAction *_touchDelay;
 }
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, SKComposeReviewViewController;
+@class NSString, NSURL, SKComposeReviewViewController;
 
 @interface SUComposeReviewViewController : SUViewController <SKComposeReviewDelegate> {
     NSURL *_compositionURL;
@@ -10,9 +10,13 @@
 }
 
 @property(readonly) NSURL * compositionURL;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_showRemoteView;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)compositionURL;
 - (id)copyScriptViewController;
 - (void)dealloc;

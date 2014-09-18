@@ -12,6 +12,7 @@
 @property(readonly) double nextFireDate;
 
 - (void)dealloc;
+- (void)disable;
 - (void)fireAfter:(double)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 queue:(id)arg3;
 - (void)invalidate;

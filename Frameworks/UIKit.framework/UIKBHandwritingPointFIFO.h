@@ -10,10 +10,10 @@
 
 @property(retain) UIKBHandwritingPointFIFO * nextFIFO;
 
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)clear;
 - (void)dealloc;
-- (void)emitPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)emitPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)flush;
 - (id)initWithFIFO:(id)arg1;
 - (id)nextFIFO;

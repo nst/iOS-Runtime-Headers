@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
+@class NSString;
+
 @interface SBFObservable : NSObject <SBFObservable> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)forkJoin:(id)arg1;
 + (id)observableWithBlock:(id)arg1;

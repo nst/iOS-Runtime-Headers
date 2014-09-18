@@ -16,8 +16,8 @@
 - (void)_buildSpecifierCache:(id)arg1;
 - (void)_setupEventHandlers;
 - (void)_showAliasValidationError:(id)arg1;
-- (void)_showResendGroup:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_updateUIAnimated:(BOOL)arg1;
+- (void)_showResendGroup:(bool)arg1 animated:(bool)arg2;
+- (void)_updateUIAnimated:(bool)arg1;
 - (id)alias;
 - (id)bundle;
 - (void)dealloc;
@@ -25,15 +25,15 @@
 - (id)initWithRegController:(id)arg1 alias:(id)arg2;
 - (void)resendValidationEmailTapped:(id)arg1;
 - (void)setAlias:(id)arg1;
-- (void)setRemoveAliasEnabled:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setRemoveAliasEnabled:(bool)arg1 animated:(bool)arg2;
 - (void)showRemoveAliasConfirmation;
 - (id)specifierList;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationWillEnterForeground;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

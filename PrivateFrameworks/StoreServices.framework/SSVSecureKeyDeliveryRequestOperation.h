@@ -14,8 +14,10 @@
     NSURL *_keyServerURL;
     AVAssetResourceLoadingRequest *_resourceLoadingRequest;
     id _responseBlock;
+    bool_iTunesStoreRequest;
 }
 
+@property(getter=isITunesStoreRequest) bool ITunesStoreRequest;
 @property(retain) NSURL * certificateURL;
 @property(retain) NSURL * keyServerURL;
 @property(retain) AVAssetResourceLoadingRequest * resourceLoadingRequest;
@@ -28,11 +30,13 @@
 - (id)_streamingRequestDictionaryWithStreamingKeyDictionaries:(id)arg1;
 - (id)certificateURL;
 - (id)init;
+- (bool)isITunesStoreRequest;
 - (id)keyServerURL;
 - (void)main;
 - (id)resourceLoadingRequest;
 - (id)responseBlock;
 - (void)setCertificateURL:(id)arg1;
+- (void)setITunesStoreRequest:(bool)arg1;
 - (void)setKeyServerURL:(id)arg1;
 - (void)setResourceLoadingRequest:(id)arg1;
 - (void)setResponseBlock:(id)arg1;

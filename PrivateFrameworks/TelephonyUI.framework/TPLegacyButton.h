@@ -6,42 +6,42 @@
 
 @interface TPLegacyButton : UIButton {
     int _color;
-    BOOL _currentlyLayingOut;
-    BOOL _forceReLayout;
     NSString *_plusSeparatedTitle;
     UIImageView *_plusSeparator;
-    BOOL _useStandardSizing;
+    bool_currentlyLayingOut;
+    bool_forceReLayout;
+    bool_useStandardSizing;
 }
 
-@property BOOL useStandardSizing;
+@property bool useStandardSizing;
 
 + (id)acceptVideoButtonImage;
 + (id)answerButtonImage;
 + (id)declineButtonImage;
 + (id)declineVideoButtonImage;
-+ (float)defaultHeight;
-+ (float)defaultHeightForColor:(int)arg1;
++ (double)defaultHeight;
++ (double)defaultHeightForColor:(int)arg1;
 
 - (void)_adjustIconColor;
 - (void)_setButtonColor:(int)arg1;
 - (void)_setDisabledButtonColor:(int)arg1;
 - (int)buttonColor;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (void)layoutSubviews;
 - (void)setButtonColor:(int)arg1;
 - (void)setDisabledButtonColor:(int)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setIconVerticalOffset:(float)arg1;
-- (void)setMinimumTitleFontSize:(float)arg1 maximumTitleFontSize:(float)arg2;
-- (void)setMinimumTitleFontSize:(float)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setIconVerticalOffset:(double)arg1;
+- (void)setMinimumTitleFontSize:(double)arg1 maximumTitleFontSize:(double)arg2;
+- (void)setMinimumTitleFontSize:(double)arg1;
 - (void)setPlusSeparatedTitle:(id)arg1;
-- (void)setTitleImagePadding:(float)arg1;
-- (void)setTitleVerticalOffset:(float)arg1;
-- (void)setUseStandardSizing:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)useStandardSizing;
+- (void)setTitleImagePadding:(double)arg1;
+- (void)setTitleVerticalOffset:(double)arg1;
+- (void)setUseStandardSizing:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)useStandardSizing;
 
 @end

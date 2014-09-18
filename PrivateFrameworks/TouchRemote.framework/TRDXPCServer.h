@@ -2,27 +2,31 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSXPCListener;
+@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
 
 @interface TRDXPCServer : NSObject <NSXPCConnectionDelegate, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableArray *_connections;
     NSXPCListener *_listener;
-    unsigned int _serverStartCount;
+    unsigned long long _serverStartCount;
 }
 
 @property(readonly) NSArray * connections;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * remoteClientProxies;
+@property(readonly) Class superclass;
 
 + (id)sharedServer;
 
 - (void).cxx_destruct;
 - (id)_init;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (id)connections;
 - (void)dealloc;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)remoteClientProxies;
 - (void)start;
 - (void)stop;

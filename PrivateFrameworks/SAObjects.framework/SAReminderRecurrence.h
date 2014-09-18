@@ -10,9 +10,13 @@
 @property(copy) NSArray * daysOfTheMonth;
 @property(copy) NSArray * daysOfTheWeek;
 @property(copy) NSArray * daysOfTheYear;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * frequencyTimeUnit;
-@property int interval;
+@property(readonly) unsigned long long hash;
+@property long long interval;
 @property(copy) NSArray * monthsOfTheYear;
+@property(readonly) Class superclass;
 @property(copy) NSArray * weeksOfTheYear;
 
 + (id)recurrence;
@@ -24,13 +28,13 @@
 - (id)encodedClassName;
 - (id)frequencyTimeUnit;
 - (id)groupIdentifier;
-- (int)interval;
+- (long long)interval;
 - (id)monthsOfTheYear;
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;
 - (void)setFrequencyTimeUnit:(id)arg1;
-- (void)setInterval:(int)arg1;
+- (void)setInterval:(long long)arg1;
 - (void)setMonthsOfTheYear:(id)arg1;
 - (void)setWeeksOfTheYear:(id)arg1;
 - (id)weeksOfTheYear;

@@ -2,9 +2,20 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface _RUTrackCancelTableViewCell : UITableViewCell {
+@class UILabel;
+
+@interface _RUTrackCancelTableViewCell : RUTableViewCell {
+    UILabel *_lastConfiguredTextLabel;
 }
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
++ (id)_textLabelFontForTraitCollection:(id)arg1;
++ (double)defaultHeightForTraitCollection:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)_configureTextLabel;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)dealloc;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)textLabel;
 
 @end

@@ -2,75 +2,70 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSArray, NSDictionary;
 
 @interface DDOperation : NSOperation <NSCopying> {
-     /* Encoded args for previous method: ^{__DDScanner={__CFRuntimeBase=I[4C]}^{__DDLRTable}^{__DDLexer}^{__DDLookupTable}^{__DDCache}^{__DDTokenCache}^{__DDLexemCache}^{__DDScanQuery}^{__DDScanQuery}^{__CFArray}^{__CFArray}iii*@?b1b1}12@0:4I8 */
     id _container;
     int _containerNotReadyTryCount;
     NSDictionary *_context;
     int _generationNumber;
-    BOOL _isCurrentlyUsingTheScanner;
-    BOOL _isDiscarded;
-    BOOL _needContinuation;
     struct __DDScanQuery { } *_query;
     NSArray *_results;
     int _tryCount;
-    unsigned int _types;
+    unsigned long long _types;
+    bool_isCurrentlyUsingTheScanner;
+    bool_isDiscarded;
+    bool_needContinuation;
 }
 
 @property(retain) id container;
 @property(retain) NSDictionary * context;
-@property unsigned int detectionTypes;
+@property unsigned long long detectionTypes;
 @property int generationNumber;
-@property BOOL isDiscarded;
-@property BOOL needContinuation;
+@property bool isDiscarded;
+@property bool needContinuation;
 @property(retain) NSArray * results;
 @property int tryCount;
 
-+ (BOOL)_needsFullScannerForDetectionTypes:(unsigned int)arg1;
-+ (struct __DDScanner { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDLRTable {} *x2; struct __DDLexer {} *x3; struct __DDLookupTable {} *x4; struct __DDCache {} *x5; struct __DDTokenCache {} *x6; struct __DDLexemCache {} *x7; struct __DDScanQuery {} *x8; struct __DDScanQuery {} *x9; struct __CFArray {} *x10; struct __CFArray {} *x11; int x12; int x13; int x14; char *x15; id x16; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x17; unsigned int x18 : 1; unsigned int x19 : 1; }*)_sharedScannerForTypes:(unsigned int)arg1;
-+ (id)urlificationBlockForTypes:(unsigned int)arg1;
++ (bool)_needsFullScannerForDetectionTypes:(unsigned long long)arg1;
++ (struct __DDScanner { }*)_sharedScannerForTypes:(unsigned long long)arg1;
++ (id)urlificationBlockForTypes:(unsigned long long)arg1;
 
 - (void)_applyContainerRestrictionsToTypes;
-- (BOOL)_containerReadyForDetection;
+- (bool)_containerReadyForDetection;
 - (int)_createScanQuery;
 - (struct __DDScanQuery { }*)_createScanQueryForBackend;
-- (BOOL)_rangeValidForContainer;
+- (bool)_rangeValidForContainer;
 - (void)_setScanQuery:(struct __DDScanQuery { }*)arg1;
 - (void)_updateGenerationNumber;
 - (void)cancel;
 - (void)cleanup;
 - (id)container;
-- (BOOL)containerIsReady;
+- (bool)containerIsReady;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)detectionTypes;
+- (unsigned long long)detectionTypes;
 - (void)dispatchContainerModificationBlock:(id)arg1;
 - (void)dispatchScanQueryCreationWithCompletionBlock:(id)arg1;
-- (BOOL)doURLificationOnDocument;
+- (bool)doURLificationOnDocument;
 - (int)generationNumber;
 - (id)initWithContainer:(id)arg1;
-- (BOOL)isDiscarded;
+- (bool)isDiscarded;
 - (void)main;
-- (BOOL)needContinuation;
-- (BOOL)needsFullScanner;
-- (BOOL)needsToStartOver;
+- (bool)needContinuation;
+- (bool)needsFullScanner;
+- (bool)needsToStartOver;
 - (id)newOperationForContinuation;
 - (id)newOperationForStartingOver;
 - (id)results;
 - (struct __DDScanQuery { }*)scanQuery;
 - (void)setContainer:(id)arg1;
 - (void)setContext:(id)arg1;
-- (void)setDetectionTypes:(unsigned int)arg1;
+- (void)setDetectionTypes:(unsigned long long)arg1;
 - (void)setGenerationNumber:(int)arg1;
-- (void)setIsDiscarded:(BOOL)arg1;
-- (void)setNeedContinuation:(BOOL)arg1;
+- (void)setIsDiscarded:(bool)arg1;
+- (void)setNeedContinuation:(bool)arg1;
 - (void)setResults:(id)arg1;
 - (void)setTryCount:(int)arg1;
 - (int)tryCount;

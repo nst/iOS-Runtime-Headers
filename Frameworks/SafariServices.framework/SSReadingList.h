@@ -2,22 +2,28 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, WebBookmarksXPCConnection;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, WebBookmarksXPCConnection;
 
 @interface SSReadingList : NSObject <WebBookmarksXPCConnectionDelegate> {
-    BOOL _batchScheduled;
     NSObject<OS_xpc_object> *_batchedReadingListItems;
     WebBookmarksXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_serialQueue;
+    bool_batchScheduled;
 }
 
-+ (id)defaultReadingList;
-+ (BOOL)supportsURL:(id)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
++ (id)defaultReadingList;
++ (bool)supportsURL:(id)arg1;
+
+- (void).cxx_destruct;
 - (void)_addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3;
 - (id)_init;
 - (void)_sendBatchedReadingListItems;
-- (BOOL)addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3 error:(id*)arg4;
+- (bool)addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3 error:(id*)arg4;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;
 - (void)dealloc;
 - (id)init;

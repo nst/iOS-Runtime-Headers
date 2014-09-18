@@ -5,30 +5,30 @@
 @class NSMutableSet, NSSet, NSString;
 
 @interface SUScanOptions : NSObject <NSSecureCoding> {
-    BOOL _forced;
     NSString *_identifier;
     NSMutableSet *_types;
+    bool_forced;
 }
 
-@property(getter=isForced) BOOL forced;
+@property(getter=isForced) bool forced;
 @property(retain) NSString * identifier;
 @property(retain) NSSet * types;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addType:(int)arg1;
 - (void)clearTypes;
-- (BOOL)containsType:(int)arg1;
+- (bool)containsType:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)findsAnyUpdate;
+- (bool)findsAnyUpdate;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isForced;
+- (bool)isForced;
 - (void)removeType:(int)arg1;
-- (void)setForced:(BOOL)arg1;
+- (void)setForced:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTypes:(id)arg1;
 - (id)types;

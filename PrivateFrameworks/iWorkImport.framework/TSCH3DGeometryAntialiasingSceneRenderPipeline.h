@@ -7,7 +7,7 @@
 @interface TSCH3DGeometryAntialiasingSceneRenderPipeline : TSCH3DSceneRenderPipeline <TSCH3DMultipassRenderPipeline> {
     TSCH3DChartElementEdgeOverdrawSceneObject *mGeometry;
     TSCH3DScene *mOverdraw;
-    int mPass;
+    long long mPass;
     TSCH3DGLFramebuffer *mRenderingFBO;
 }
 
@@ -16,10 +16,10 @@
 
 - (void)dealloc;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3;
-- (BOOL)multipassRenderingIsDone;
+- (bool)multipassRenderingIsDone;
 - (id)overdraw;
 - (void)releaseResources;
-- (BOOL)render;
+- (bool)render;
 - (id)renderingFBO;
 - (id)renderingFBOResource;
 - (void)resetMultipassRendering;
@@ -28,6 +28,6 @@
 - (void)setRenderingFBO:(id)arg1;
 - (void)setScene:(id)arg1;
 - (void)skipLowQualityPass;
-- (BOOL)updatesTargetFramebuffer;
+- (bool)updatesTargetFramebuffer;
 
 @end

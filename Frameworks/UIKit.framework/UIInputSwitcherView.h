@@ -2,29 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, UISwitch;
 
 @interface UIInputSwitcherView : UIKeyboardMenuView {
+    boolm_keyboardSettingsFromSwitcher;
     int m_currentInputModeIndex;
     NSMutableArray *m_inputModes;
-    BOOL m_keyboardSettingsFromSwitcher;
+    UISwitch *m_predictiveSwitch;
 }
 
 @property(retain) NSArray * inputModes;
-@property BOOL keyboardSettingsFromSwitcher;
+@property bool keyboardSettingsFromSwitcher;
 
 + (id)activeInstance;
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (int)defaultSelectedIndex;
+- (long long)defaultSelectedIndex;
 - (void)didSelectItemAtIndex:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)fontForItemAtIndex:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inputModes;
-- (BOOL)keyboardSettingsFromSwitcher;
+- (bool)keyboardSettingsFromSwitcher;
+- (id)localizedTitleForItemAtIndex:(int)arg1;
 - (id)nextInputMode;
-- (int)numberOfItems;
-- (struct CGSize { float x1; float x2; })preferredSize;
+- (long long)numberOfItems;
+- (id)predictiveSwitch;
+- (struct CGSize { double x1; double x2; })preferredSize;
 - (id)previousInputMode;
 - (void)selectInputMode:(id)arg1;
 - (void)selectNextInputMode;
@@ -33,9 +37,12 @@
 - (id)selectedInputMode;
 - (void)setInputMode:(id)arg1;
 - (void)setInputModes:(id)arg1;
-- (void)setKeyboardSettingsFromSwitcher:(BOOL)arg1;
+- (void)setKeyboardSettingsFromSwitcher:(bool)arg1;
 - (void)show;
+- (id)subtitleFontForItemAtIndex:(int)arg1;
 - (id)subtitleForItemAtIndex:(int)arg1;
+- (void)switchAction;
 - (id)titleForItemAtIndex:(int)arg1;
+- (void)toggleKeyboardPredictionPreference;
 
 @end

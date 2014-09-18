@@ -2,10 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSArray;
+
 @interface NSMetadataItem : NSObject {
     id _item;
     void *_reserved;
 }
+
+@property(copy,readonly) NSArray * attributes;
 
 - (id)_init:(union { id x1; id x2; })arg1;
 - (id)_item;

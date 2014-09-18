@@ -8,15 +8,19 @@
 }
 
 @property(copy) NSString * aceId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
 @property(copy) NSURL * searchContext;
+@property(readonly) Class superclass;
 
 + (id)visibilitySetCompleted;
 + (id)visibilitySetCompletedWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)searchContext;
 - (void)setSearchContext:(id)arg1;
 

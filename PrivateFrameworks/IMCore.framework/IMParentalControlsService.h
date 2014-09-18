@@ -5,23 +5,23 @@
 @class NSSet, NSString;
 
 @interface IMParentalControlsService : NSObject {
-    BOOL _disableService;
-    BOOL _forceWhiteList;
     NSString *_name;
     NSSet *_whitelist;
+    bool_disableService;
+    bool_forceWhiteList;
 }
 
-@property BOOL disableService;
-@property BOOL forceWhiteList;
+@property bool disableService;
+@property bool forceWhiteList;
 @property(retain) NSString * name;
 @property(retain) NSSet * whitelist;
 
 - (void)dealloc;
-- (BOOL)disableService;
-- (BOOL)forceWhiteList;
+- (bool)disableService;
+- (bool)forceWhiteList;
 - (id)name;
-- (void)setDisableService:(BOOL)arg1;
-- (void)setForceWhiteList:(BOOL)arg1;
+- (void)setDisableService:(bool)arg1;
+- (void)setForceWhiteList:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setWhitelist:(id)arg1;
 - (id)whitelist;

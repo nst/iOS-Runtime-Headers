@@ -9,18 +9,24 @@
     CKImageData *_imageData;
 }
 
-@property(readonly) CKImageData * imageData;
+@property(retain,readonly) CKImageData * imageData;
 
 + (id)UTITypes;
++ (Class)__ck_attachmentItemClass;
++ (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 + (Class)imageDataClass;
-+ (BOOL)isPreviewable;
++ (bool)isPreviewable;
 
-- (struct CGSize { float x1; float x2; })bbSize;
+- (struct CGSize { double x1; double x2; })bbSize;
+- (bool)canBeAttachmentContiguous;
+- (bool)canExport;
 - (void)dealloc;
-- (id)generateThumbnail;
-- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)export:(id)arg1;
+- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)imageData;
+- (id)location;
 - (int)mediaType;
 
 @end

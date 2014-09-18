@@ -8,6 +8,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (id)initWithContext:(id)arg1 URL:(id)arg2 theme:(id)arg3;
-- (id)initWithContext:(id)arg1 imageData:(id)arg2 theme:(id)arg3;
+- (id)initWithContext:(id)arg1 data:(id)arg2 theme:(id)arg3;
 
 @end

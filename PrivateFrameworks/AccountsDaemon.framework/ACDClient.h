@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDatabase, ACDTelemetryWatchdog, NSMutableDictionary, NSNumber, NSString, NSXPCConnection;
+@class ACDDatabase, NSMutableDictionary, NSNumber, NSString, NSXPCConnection;
 
 @interface ACDClient : NSObject {
     struct __CFBundle { } *_bundle;
     NSString *_bundleID;
     NSXPCConnection *_connection;
     ACDDatabase *_database;
-    BOOL _didManuallySetBundleID;
     NSMutableDictionary *_entitlementChecks;
     NSString *_localizedAppName;
     NSString *_name;
     NSNumber *_pid;
-    ACDTelemetryWatchdog *_telemetry;
+    bool_didManuallySetBundleID;
 }
 
 @property(readonly) NSString * adamOrDisplayID;
@@ -25,9 +24,10 @@
 @property(readonly) NSString * localizedAppName;
 @property(readonly) NSString * name;
 @property(readonly) NSNumber * pid;
-@property(retain) ACDTelemetryWatchdog * telemetry;
 
-+ (id)bundleForPID:(int)arg1;
++ (id)_bundleForNonPlugInPID:(int)arg1;
++ (id)_bundleForPID:(int)arg1;
++ (id)_bundleIDForPID:(int)arg1;
 + (id)clientWithBundleID:(id)arg1;
 
 - (void).cxx_destruct;
@@ -41,14 +41,14 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (BOOL)hasEntitlement:(id)arg1;
+- (bool)hasEntitlement:(id)arg1;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)initWithConnection:(id)arg1;
 - (id)localizedAppName;
+- (id)longDebugDescription;
 - (id)name;
 - (id)pid;
 - (void)setBundleID:(id)arg1;
-- (void)setTelemetry:(id)arg1;
-- (id)telemetry;
+- (id)shortDebugDescription;
 
 @end

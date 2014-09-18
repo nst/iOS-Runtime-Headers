@@ -11,8 +11,8 @@
 }
 
 @property(copy) NSAttributedString * attributedPlaceholder;
-@property(getter=isEnabled) BOOL enabled;
-@property int keyboardType;
+@property(getter=isEnabled) bool enabled;
+@property long long keyboardType;
 @property(copy) NSString * label;
 @property(readonly) UIControl * textField;
 @property <UITextFieldDelegate> * textFieldDelegate;
@@ -20,15 +20,15 @@
 
 - (void).cxx_destruct;
 - (id)attributedPlaceholder;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isEnabled;
-- (int)keyboardType;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isEnabled;
+- (long long)keyboardType;
 - (id)label;
 - (void)layoutSubviews;
 - (void)setAttributedPlaceholder:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setKeyboardType:(int)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setKeyboardType:(long long)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setTextFieldDelegate:(id)arg1;
 - (void)setValue:(id)arg1;

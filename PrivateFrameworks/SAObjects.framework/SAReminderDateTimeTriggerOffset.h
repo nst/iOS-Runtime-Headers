@@ -7,8 +7,12 @@
 @interface SAReminderDateTimeTriggerOffset : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * offsetTimeUnit;
 @property(copy) NSNumber * offsetValue;
+@property(readonly) Class superclass;
 
 + (id)dateTimeTriggerOffset;
 + (id)dateTimeTriggerOffsetWithDictionary:(id)arg1 context:(id)arg2;

@@ -13,7 +13,7 @@
 
 @property(readonly) NSMutableArray * productionRules;
 
-+ (BOOL)insertStatementsFromOriginal:(id)arg1 intoBranch:(id)arg2;
++ (bool)insertStatementsFromOriginal:(id)arg1 intoBranch:(id)arg2;
 + (id)loadGrammarsFromPlistAtPath:(id)arg1;
 + (id)retrievePlistForPathArray:(id)arg1 from:(id)arg2;
 + (id)retrievePlistForStringInDotNotation:(id)arg1 from:(id)arg2;

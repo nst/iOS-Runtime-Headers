@@ -8,8 +8,8 @@
  */
 
 @interface TNChartFormulaWrapper : NSObject {
-    int mCachedNumberOfValues;
-    struct TSCEVector { int (**x1)(); struct shared_ptr<TSCEAbstractVector> { struct TSCEAbstractVector {} *x_2_1_1; struct shared_count { struct sp_counted_base {} *x_2_2_1; } x_2_1_2; } x2; struct TSUFormat { int (**x_3_1_1)(); int x_3_1_2; boolx_3_1_3; union { struct { id x_1_3_1; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_3_1_4; struct TSUCustomFormat {} *x_3_1_5; } x3; } *mCachedOuputValueVector;
+    long long mCachedNumberOfValues;
+    struct TSCEVector { int (**x1)(); struct shared_ptr<TSCEAbstractVector> { struct TSCEAbstractVector {} *x_2_1_1; struct shared_count { struct sp_counted_base {} *x_2_2_1; } x_2_1_2; } x2; struct TSUFormat { int (**x_3_1_1)(); int x_3_1_2; boolx_3_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_3_1_4; struct TSUCustomFormat {} *x_3_1_5; } x3; } *mCachedOuputValueVector;
     struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; } *mPtrToFormula;
 }
 
@@ -22,20 +22,21 @@
 + (id)chartFormulaWithCopyOfTSCEFormula:(const struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)arg1;
 + (id)emptyChartFormula;
 
-- (struct TSCEVector { int (**x1)(); struct shared_ptr<TSCEAbstractVector> { struct TSCEAbstractVector {} *x_2_1_1; struct shared_count { struct sp_counted_base {} *x_2_2_1; } x_2_1_2; } x2; struct TSUFormat { int (**x_3_1_1)(); int x_3_1_2; boolx_3_1_3; union { struct { id x_1_3_1; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_3_1_4; struct TSUCustomFormat {} *x_3_1_5; } x3; }*)outputValueVectorWithCalcEngine:(id)arg1 inTable:(struct __CFUUID { }*)arg2;
+- (struct TSCEVector { int (**x1)(); struct shared_ptr<TSCEAbstractVector> { struct TSCEAbstractVector {} *x_2_1_1; struct shared_count { struct sp_counted_base {} *x_2_2_1; } x_2_1_2; } x2; struct TSUFormat { int (**x_3_1_1)(); int x_3_1_2; boolx_3_1_3; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_4_2_1; struct { unsigned int x_2_3_1 : 8; } x_4_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_4_2_3; struct { unsigned int x_4_3_1 : 1; unsigned int x_4_3_2 : 1; id x_4_3_3; } x_4_2_4; struct { unsigned int x_5_3_1 : 1; int x_5_3_2; int x_5_3_3; int x_5_3_4; } x_4_2_5; struct { unsigned int x_6_3_1; struct { /* ? */ } *x_6_3_2; } x_4_2_6; struct { double x_7_3_1; double x_7_3_2; double x_7_3_3; int x_7_3_4; unsigned int x_7_3_5 : 2; unsigned int x_7_3_6 : 2; } x_4_2_7; struct { int x_8_3_1; unsigned int x_8_3_2; id x_8_3_3; } x_4_2_8; } x_3_1_4; struct TSUCustomFormat {} *x_3_1_5; } x3; }*)outputValueVectorWithCalcEngine:(id)arg1 inTable:(struct __CFUUID { }*)arg2;
 - (id)argumentCollectionWithCalcEngine:(id)arg1 inTable:(struct __CFUUID { }*)arg2;
+- (void)clearCacheForCalculationEngine:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)formula;
 - (id)formulaByProcessingArgumentsWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2 usingBlock:(id)arg3;
-- (BOOL)formulaIsEqualTo:(id)arg1;
-- (unsigned int)hash;
+- (bool)formulaIsEqualTo:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCopyOfTSCEFormula:(const struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)arg1;
-- (BOOL)isAllStaticValuesWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)numberOfValuesWithCalcEngine:(id)arg1 inTable:(struct __CFUUID { }*)arg2;
+- (bool)isAllStaticValuesWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)numberOfValuesWithCalcEngine:(id)arg1 inTable:(struct __CFUUID { }*)arg2;
 - (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeCircumscribingPrecedentsWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
 - (id)stringValueForFormulaWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
-- (struct TSCEValue { unsigned int x1[68]; int x2; })valueAtIndex:(unsigned int)arg1 withCalcEngine:(id)arg2 inTable:(struct __CFUUID { }*)arg3;
+- (struct TSCEValue { unsigned long long x1[88]; int x2; })valueAtIndex:(unsigned long long)arg1 withCalcEngine:(id)arg2 inTable:(struct __CFUUID { }*)arg3;
 
 @end

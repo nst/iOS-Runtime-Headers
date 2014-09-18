@@ -6,17 +6,17 @@
 }
 
 - (id)avPlayer;
-- (unsigned int)bufferingStatusMask;
+- (unsigned long long)bufferingStatusMask;
 - (double)currentTime;
 - (double)duration;
 - (id)mpavController;
 - (void)pause;
 - (void)play;
-- (unsigned int)playableContentType;
-- (unsigned int)playbackState;
-- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
+- (unsigned long long)playableContentType;
+- (unsigned long long)playbackState;
+- (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned long long)arg2;
 - (void)setCurrentTime:(double)arg1;
-- (void)setRepeatMode:(unsigned int)arg1;
+- (void)setRepeatMode:(unsigned long long)arg1;
 - (void)stop;
 
 @end

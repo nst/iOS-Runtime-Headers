@@ -5,40 +5,39 @@
 @class NSString, UIColor;
 
 @interface UIStatusBarNewUIForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes {
-    UIColor *_backgroundColor;
-    BOOL _isTintColorBlack;
     UIColor *_tintColor;
     NSString *_uniqueIdentifier;
+    bool_hasBusyBackground;
+    bool_isTintColorBlack;
 }
 
-@property(readonly) UIColor * tintColor;
+@property(retain,readonly) UIColor * tintColor;
 
-- (id)_batteryColorForCapacity:(float)arg1 lowCapacity:(float)arg2 charging:(BOOL)arg3;
-- (BOOL)_isForegroundColorSafe:(id)arg1;
-- (float)_roundDimension:(float)arg1;
-- (BOOL)_shouldUseBoldFontForStyle:(int)arg1;
-- (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
-- (float)batteryAccessoryMargin;
-- (int)batteryImageIdWithCapacity:(float)arg1;
-- (float)bluetoothBatteryExtraPadding;
-- (int)bluetoothBatteryImageIdWithCapacity:(float)arg1;
+- (id)_batteryColorForCapacity:(double)arg1 lowCapacity:(double)arg2 charging:(bool)arg3;
+- (double)_roundDimension:(double)arg1;
+- (bool)_shouldUseBoldFontForStyle:(long long)arg1;
+- (long long)activityIndicatorStyleWithSyncActivity:(bool)arg1;
+- (double)batteryAccessoryMargin;
+- (id)batteryImageNameWithCapacity:(double)arg1;
+- (double)bluetoothBatteryExtraPadding;
+- (id)bluetoothBatteryImageNameWithCapacity:(double)arg1;
 - (void)dealloc;
-- (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;
-- (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBluetoothBatteryInsides;
-- (float)edgePadding;
+- (void)drawBatteryInsidesWithSize:(struct CGSize { double x1; double x2; })arg1 capacity:(double)arg2 charging:(bool)arg3;
+- (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { double x1; double x2; })arg1 capacity:(double)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBatteryInsides;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBluetoothBatteryInsides;
+- (double)edgePadding;
 - (id)expandedNameForImageName:(id)arg1;
-- (id)imageNamed:(id)arg1 withLegibilityStyle:(int)arg2 legibilityStrength:(float)arg3;
-- (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2 tintColor:(id)arg3 backgroundColor:(id)arg4;
-- (id)initWithHeight:(float)arg1 legibilityStyle:(int)arg2;
-- (id)makeTextFontForStyle:(int)arg1;
-- (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)imageNamed:(id)arg1 withLegibilityStyle:(long long)arg2 legibilityStrength:(double)arg3;
+- (id)initWithHeight:(double)arg1 legibilityStyle:(long long)arg2 tintColor:(id)arg3 hasBusyBackground:(bool)arg4;
+- (id)initWithHeight:(double)arg1 legibilityStyle:(long long)arg2;
+- (id)makeTextFontForStyle:(long long)arg1;
+- (struct CGPoint { double x1; double x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)proportionalFontForFont:(id)arg1;
-- (float)sizeForMoonMaskVisible:(BOOL)arg1;
-- (id)textColorForStyle:(int)arg1;
+- (double)sizeForMoonMaskVisible:(bool)arg1;
+- (id)textColorForStyle:(long long)arg1;
 - (id)textForNetworkType:(int)arg1;
-- (float)textOffsetForStyle:(int)arg1;
+- (double)textOffsetForStyle:(long long)arg1;
 - (id)tintColor;
 - (id)uniqueIdentifier;
 

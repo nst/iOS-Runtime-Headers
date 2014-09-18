@@ -3,23 +3,28 @@
  */
 
 @interface TSDGLTextureInfo : NSObject {
-    BOOL _containsMipmaps;
     unsigned int _height;
     unsigned int _name;
     unsigned int _target;
     unsigned int _width;
+    bool_containsMipmaps;
 }
 
-@property(readonly) BOOL containsMipmaps;
+@property(readonly) bool containsMipmaps;
 @property(readonly) unsigned int height;
 @property(readonly) unsigned int name;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 @property(readonly) unsigned int target;
 @property(readonly) unsigned int width;
 
-- (BOOL)containsMipmaps;
++ (id)textureInfoWithName:(unsigned int)arg1 target:(unsigned int)arg2 width:(unsigned int)arg3 height:(unsigned int)arg4 containsMipmaps:(bool)arg5;
+
+- (bool)containsMipmaps;
+- (id)description;
 - (unsigned int)height;
-- (id)initWithName:(unsigned int)arg1 target:(unsigned int)arg2 width:(unsigned int)arg3 height:(unsigned int)arg4 containsMipmaps:(BOOL)arg5;
+- (id)initWithName:(unsigned int)arg1 target:(unsigned int)arg2 width:(unsigned int)arg3 height:(unsigned int)arg4 containsMipmaps:(bool)arg5;
 - (unsigned int)name;
+- (struct CGSize { double x1; double x2; })size;
 - (unsigned int)target;
 - (void)teardown;
 - (unsigned int)width;

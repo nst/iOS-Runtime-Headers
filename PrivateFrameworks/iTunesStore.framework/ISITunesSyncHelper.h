@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
+@class NSString;
+
 @interface ISITunesSyncHelper : NSObject <ISSingleton> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;

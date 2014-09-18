@@ -11,22 +11,21 @@
 @property(readonly) NSObject<OS_dispatch_queue> * sampleBufferCallbackQueue;
 @property(readonly) <AVCaptureAudioDataOutputSampleBufferDelegate> * sampleBufferDelegate;
 
++ (id)alloc;
 + (void)initialize;
 
-- (void)_AVCaptureAudioDataOutput_AudioDataBecameReady;
-- (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_handleNotification:(id)arg1 payload:(id)arg2;
+- (void)_handleRemoteQueueOperation:(struct FigRemoteOperation { int x1; int x2; unsigned long long x3; struct __CFString {} *x4; union { struct { struct __CFDictionary {} *x_1_2_1; struct __CFDictionary {} *x_1_2_2; } x_5_1_1; struct { void *x_2_2_1; struct __IOSurface {} *x_2_2_2; struct __IOSurface {} *x_2_2_3; } x_5_1_2; struct { struct opaqueCMSampleBuffer {} *x_3_2_1; unsigned long long x_3_2_2; } x_5_1_3; struct { struct opaqueCMFormatDescription {} *x_4_2_1; } x_5_1_4; struct { long long x_5_2_1; struct opaqueCMFormatDescription {} *x_5_2_2; } x_5_1_5; } x5; }*)arg1;
+- (void)_updateRemoteQueue:(struct remoteQueueReceiverOpaque { }*)arg1;
+- (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)connectionMediaTypes;
 - (void)dealloc;
-- (void)didStartForSession:(id)arg1;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
-- (void)handleEnabledChangedForConnection:(id)arg1;
+- (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)init;
-- (BOOL)isTheOnlyDataOutput;
 - (id)recommendedAudioSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
-- (void)setSession:(id)arg1;
 - (id)supportedAssetWriterOutputFileTypes;
 
 @end

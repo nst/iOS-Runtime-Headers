@@ -4,21 +4,21 @@
 
 @interface GKTable : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    unsigned long _count;
+        long long __sig; 
+        BOOL __opaque[56]; 
+    unsigned long long _count;
     struct _gktableitem { unsigned int x1; id x2; double x3; double x4; } *_items;
     } _lock;
-    unsigned long _size;
+    unsigned long long _size;
 }
 
-@property(readonly) unsigned long count;
+@property(readonly) unsigned long long count;
 
 - (id)allObjects;
-- (unsigned long)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithSize:(unsigned long)arg1;
+- (id)initWithSize:(unsigned long long)arg1;
 - (void)lock;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)makeObjectsPerformSelector:(SEL)arg1;

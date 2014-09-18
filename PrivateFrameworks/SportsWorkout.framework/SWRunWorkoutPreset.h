@@ -13,18 +13,22 @@
     NSString *_presetGoal;
     SWVoicePromptController *_promptController;
     NSMutableArray *_stateObservationTargets;
-    unsigned int _templateId;
+    unsigned long long _templateId;
     NSString *_templateName;
     NSMutableArray *_timeObservationTargets;
     NSMutableArray *_userEventObservationTargets;
     NSString *_workoutName;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSString * distanceDisplayUnits;
 @property(readonly) float goal;
 @property(readonly) NSString * goalType;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * presetGoal;
-@property(readonly) unsigned int templateId;
+@property(readonly) Class superclass;
+@property(readonly) unsigned long long templateId;
 @property(readonly) NSString * templateName;
 @property(readonly) NSString * workoutName;
 
@@ -57,12 +61,12 @@
 - (id)distanceDisplayUnits;
 - (float)goal;
 - (id)goalType;
-- (id)initWithPresetGoal:(id)arg1 goal:(float)arg2 goalType:(id)arg3 goalInDisplayUnits:(id)arg4 templateId:(unsigned int)arg5 templateName:(id)arg6 workoutName:(id)arg7;
-- (void)observeRunWorkoutControllerDataChange:(id)arg1 elapsedTime:(unsigned int)arg2 pace:(float)arg3 distance:(float)arg4 calories:(float)arg5 location:(id)arg6;
+- (id)initWithPresetGoal:(id)arg1 goal:(float)arg2 goalType:(id)arg3 goalInDisplayUnits:(id)arg4 templateId:(unsigned long long)arg5 templateName:(id)arg6 workoutName:(id)arg7;
+- (void)observeRunWorkoutControllerDataChange:(id)arg1 elapsedTime:(unsigned long long)arg2 pace:(float)arg3 distance:(float)arg4 calories:(float)arg5 location:(id)arg6;
 - (void)observeRunWorkoutStateChange:(id)arg1 oldState:(id)arg2 newState:(id)arg3;
 - (void)observeRunWorkoutUserEvent:(id)arg1 userEvent:(id)arg2;
 - (id)presetGoal;
-- (unsigned int)templateId;
+- (unsigned long long)templateId;
 - (id)templateName;
 - (id)workoutName;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKCodeAcquisitionDelegate>, NSMutableData, NSSet, NSURLConnection, PKCaptureSession, PKReticleView, UILabel, UINavigationBar, UIProgressView;
+@class <PKCodeAcquisitionDelegate>, NSMutableData, NSSet, NSString, NSURLConnection, PKCaptureSession, PKReticleView, UILabel, UINavigationBar, UIProgressView;
 
 @interface PKCodeAcquisitionViewController : UIViewController <PKCaptureDelegate, NSURLConnectionDataDelegate, UIGestureRecognizerDelegate> {
     UILabel *_captionLabel;
@@ -19,7 +19,11 @@
     NSSet *_supportedBarcodeTypes;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <PKCodeAcquisitionDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_cleanupDownload;
 - (void)_handleDownloadFailureWithReason:(id)arg1 errorToDisplay:(id)arg2;
@@ -28,25 +32,26 @@
 - (void)_handleFoundCode:(id)arg1;
 - (void)_handleSingleTap:(id)arg1;
 - (void)_restartCaptureSession;
-- (void)_setCaptureUIState:(int)arg1 animated:(BOOL)arg2;
+- (void)_setCaptureUIState:(long long)arg1 animated:(bool)arg2;
 - (void)cancel;
 - (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 fromConnection:(id)arg3;
-- (void)captureSession:(id)arg1 isRunning:(BOOL)arg2;
+- (void)captureSession:(id)arg1 isRunning:(bool)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

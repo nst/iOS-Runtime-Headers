@@ -9,7 +9,7 @@
 }
 
 - (void)dealloc;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 offset:(struct CGPoint { float x1; float x2; })arg2 animationTextureState:(id)arg3 renderBlock:(id)arg4;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 offset:(struct CGPoint { double x1; double x2; })arg2 animationTextureState:(id)arg3 renderBlock:(id)arg4;
 - (void)teardown;
 
 @end

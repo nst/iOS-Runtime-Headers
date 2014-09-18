@@ -9,45 +9,40 @@
     NSDictionary *_arguments;
     NSData *_bodyData;
     NSMutableArray *_cachedBodyDataBlocks;
-    BOOL _concurrent;
-    BOOL _excludeSessionIDFromURL;
-    NSDictionary *_headers;
-    struct __CFHTTPMessage { } *_message;
-    int _method;
+    long long _method;
+    bool_concurrent;
+    bool_excludeSessionIDFromURL;
 }
 
 @property(readonly) NSString * action;
 @property(copy) NSData * bodyData;
-@property(getter=isConcurrent,readonly) BOOL concurrent;
-@property BOOL excludeSessionIDFromURL;
-@property int method;
+@property(getter=isConcurrent,readonly) bool concurrent;
+@property bool excludeSessionIDFromURL;
+@property long long method;
 @property(readonly) double timeoutInterval;
 
 + (id)request;
 
-- (struct __CFHTTPMessage { }*)CFHTTPMessageForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
-- (id)_defaultHeaderFields;
-- (id)_methodStringForMethod:(int)arg1;
-- (BOOL)acceptsGzipEncoding;
+- (void).cxx_destruct;
+- (id)URLRequestForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
+- (id)_methodStringForMethod:(long long)arg1;
+- (bool)acceptsGzipEncoding;
 - (id)action;
-- (void)appendCachedBodyDataBlocksIntoData:(id)arg1 clearCache:(BOOL)arg2;
+- (void)appendCachedBodyDataBlocksIntoData:(id)arg1 clearCache:(bool)arg2;
 - (id)bodyData;
 - (void)cacheBodyDataBlock:(id)arg1;
 - (unsigned int)cachedBodyDataBlocksLength;
 - (id)canonicalResponseForResponse:(id)arg1;
-- (void)dealloc;
 - (id)description;
-- (id)descriptionWithoutHeaderFields;
-- (BOOL)excludeSessionIDFromURL;
+- (bool)excludeSessionIDFromURL;
 - (id)initWithAction:(id)arg1;
-- (BOOL)isConcurrent;
-- (int)method;
+- (bool)isConcurrent;
+- (long long)method;
 - (id)requestURLForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;
 - (void)setBodyData:(id)arg1;
-- (void)setExcludeSessionIDFromURL:(BOOL)arg1;
-- (void)setMethod:(int)arg1;
+- (void)setExcludeSessionIDFromURL:(bool)arg1;
+- (void)setMethod:(long long)arg1;
 - (void)setValue:(id)arg1 forArgument:(id)arg2;
-- (void)setValue:(id)arg1 forHeaderField:(id)arg2;
 - (double)timeoutInterval;
 
 @end

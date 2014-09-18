@@ -9,5 +9,6 @@
 + (id)animationName;
 + (id)customAttributes;
 + (id)defaultAttributes;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 @end

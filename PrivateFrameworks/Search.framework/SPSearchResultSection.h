@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface SPSearchResultSection : PBCodable {
+@interface SPSearchResultSection : PBCodable <NSCopying> {
     struct { 
         unsigned int domain : 1; 
         unsigned int flags : 1; 
@@ -22,12 +22,12 @@
 @property(retain) NSString * displayIdentifier;
 @property unsigned int domain;
 @property int flags;
-@property(readonly) BOOL hasCategory;
-@property(readonly) BOOL hasDisplayIdentifier;
-@property BOOL hasDomain;
-@property BOOL hasFlags;
-@property(readonly) BOOL hasIcon;
-@property(readonly) BOOL hasScheme;
+@property(readonly) bool hasCategory;
+@property(readonly) bool hasDisplayIdentifier;
+@property bool hasDomain;
+@property bool hasFlags;
+@property(readonly) bool hasIcon;
+@property(readonly) bool hasScheme;
 @property(retain) NSString * icon;
 @property(retain) NSMutableArray * results;
 @property(retain) NSString * scheme;
@@ -36,33 +36,34 @@
 - (id)category;
 - (void)clearResults;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayIdentifier;
 - (unsigned int)domain;
 - (int)flags;
-- (BOOL)hasCategory;
-- (BOOL)hasDisplayIdentifier;
-- (BOOL)hasDomain;
-- (BOOL)hasEquivalentResults:(id)arg1;
-- (BOOL)hasFlags;
-- (BOOL)hasIcon;
-- (BOOL)hasScheme;
-- (unsigned int)hash;
+- (bool)hasCategory;
+- (bool)hasDisplayIdentifier;
+- (bool)hasDomain;
+- (bool)hasEquivalentResults:(id)arg1;
+- (bool)hasFlags;
+- (bool)hasIcon;
+- (bool)hasScheme;
+- (unsigned long long)hash;
 - (id)icon;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)results;
-- (id)resultsAtIndex:(unsigned int)arg1;
-- (unsigned int)resultsCount;
+- (id)resultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)resultsCount;
 - (id)scheme;
 - (void)setCategory:(id)arg1;
 - (void)setDisplayIdentifier:(id)arg1;
 - (void)setDomain:(unsigned int)arg1;
 - (void)setFlags:(int)arg1;
-- (void)setHasDomain:(BOOL)arg1;
-- (void)setHasFlags:(BOOL)arg1;
+- (void)setHasDomain:(bool)arg1;
+- (void)setHasFlags:(bool)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setResults:(id)arg1;
 - (void)setScheme:(id)arg1;

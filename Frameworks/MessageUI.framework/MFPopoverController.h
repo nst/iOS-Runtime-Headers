@@ -2,28 +2,32 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailPopoverManagerDelegate>;
+@class <MFMailPopoverManagerDelegate>, NSString;
 
 @interface MFPopoverController : UIPopoverController <UIPopoverControllerDelegate> {
-    BOOL _isRotating;
     id _mailDelegate;
     id _mailPopoverManager;
+    bool_isRotating;
 }
 
-@property BOOL isRotating;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool isRotating;
 @property <MFMailPopoverManagerDelegate> * mailDelegate;
 @property id mailPopoverManager;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
-- (void)dismissPopoverAnimated:(BOOL)arg1;
+- (void)dismissPopoverAnimated:(bool)arg1;
 - (id)initWithContentViewController:(id)arg1;
-- (BOOL)isRotating;
+- (bool)isRotating;
 - (id)mailDelegate;
 - (id)mailPopoverManager;
-- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
+- (void)popoverController:(id)arg1 animationCompleted:(long long)arg2;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
-- (void)setIsRotating:(BOOL)arg1;
+- (bool)popoverControllerShouldDismissPopover:(id)arg1;
+- (void)setIsRotating:(bool)arg1;
 - (void)setMailDelegate:(id)arg1;
 - (void)setMailPopoverManager:(id)arg1;
 

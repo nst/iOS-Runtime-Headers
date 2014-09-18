@@ -18,7 +18,7 @@
 - (void)_setVoices:(id)arg1;
 - (id)_settingsService;
 - (id)_settingsServiceWithErrorHandler:(id)arg1;
-- (void)_syncDataWithAnchorKeys:(id)arg1 forceReset:(BOOL)arg2 completion:(id)arg3;
+- (void)_syncDataWithAnchorKeys:(id)arg1 forceReset:(bool)arg2 completion:(id)arg3;
 - (void)_updateVoicesSync;
 - (void)_updateVoicesWithCompletion:(id)arg1;
 - (id)_voices;
@@ -30,10 +30,10 @@
 - (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 completion:(id)arg2;
 - (id)init;
 - (void)killDaemon;
-- (void)saveAccount:(id)arg1 setActive:(BOOL)arg2;
+- (void)saveAccount:(id)arg1 setActive:(bool)arg2;
 - (void)setActiveAccountIdentifier:(id)arg1;
-- (void)setAssistantEnabled:(BOOL)arg1;
-- (void)setDictationEnabled:(BOOL)arg1;
+- (void)setAssistantEnabled:(bool)arg1;
+- (void)setDictationEnabled:(bool)arg1;
 - (void)setLanguage:(id)arg1 withCompletion:(id)arg2;
 - (void)setLanguage:(id)arg1;
 - (void)setOutputVoice:(id)arg1 withCompletion:(id)arg2;

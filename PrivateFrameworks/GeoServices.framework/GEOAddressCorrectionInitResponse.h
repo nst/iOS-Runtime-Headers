@@ -17,10 +17,10 @@
 
 @property(retain) NSString * addressID;
 @property(retain) GEOLocation * addressLocation;
-@property(readonly) BOOL hasAddressID;
-@property(readonly) BOOL hasAddressLocation;
-@property BOOL hasNumberOfVisitsBucketSize;
-@property BOOL hasStatusCode;
+@property(readonly) bool hasAddressID;
+@property(readonly) bool hasAddressLocation;
+@property bool hasNumberOfVisitsBucketSize;
+@property bool hasStatusCode;
 @property unsigned int numberOfVisitsBucketSize;
 @property int statusCode;
 
@@ -31,18 +31,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddressID;
-- (BOOL)hasAddressLocation;
-- (BOOL)hasNumberOfVisitsBucketSize;
-- (BOOL)hasStatusCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddressID;
+- (bool)hasAddressLocation;
+- (bool)hasNumberOfVisitsBucketSize;
+- (bool)hasStatusCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (unsigned int)numberOfVisitsBucketSize;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddressID:(id)arg1;
 - (void)setAddressLocation:(id)arg1;
-- (void)setHasNumberOfVisitsBucketSize:(BOOL)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
+- (void)setHasNumberOfVisitsBucketSize:(bool)arg1;
+- (void)setHasStatusCode:(bool)arg1;
 - (void)setNumberOfVisitsBucketSize:(unsigned int)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;

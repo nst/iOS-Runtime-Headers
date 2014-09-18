@@ -7,7 +7,11 @@
 @interface SAAnswerDefinitionVariation : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSArray * examples;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSString * variation;
 
 + (id)definitionVariation;

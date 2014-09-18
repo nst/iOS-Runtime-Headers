@@ -2,21 +2,22 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
+@class TKTonePickerViewController;
+
 @interface ABTonePickerViewController : ABPickerViewController {
-    BOOL _isTextToneViewController;
+    TKTonePickerViewController *_tonePickerViewController;
 }
 
-@property(readonly) id tonePicker;
+@property(retain,readonly) TKTonePickerViewController * tonePickerViewController;
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
+- (void)_getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1;
+- (double)ab_heightToFitForViewInPopoverView;
 - (void)cancelButtonClicked:(id)arg1;
 - (id)init;
-- (id)initAsRingtoneViewController:(BOOL)arg1;
+- (id)initWithAlertType:(int)arg1;
 - (void)loadView;
 - (void)ringtoneSaveButtonClicked:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (id)tonePicker;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (id)tonePickerViewController;
 
 @end

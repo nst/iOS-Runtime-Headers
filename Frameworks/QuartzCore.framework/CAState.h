@@ -7,19 +7,19 @@
 @interface CAState : NSObject <NSCoding, NSCopying> {
     NSString *_basedOn;
     NSMutableArray *_elements;
-    BOOL _enabled;
-    BOOL _initial;
-    BOOL _locked;
     NSString *_name;
     double _nextDelay;
     double _previousDelay;
+    bool_enabled;
+    bool_initial;
+    bool_locked;
 }
 
 @property(copy) NSString * basedOn;
 @property(copy) NSArray * elements;
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isInitial) BOOL initial;
-@property(getter=isLocked) BOOL locked;
+@property(getter=isEnabled) bool enabled;
+@property(getter=isInitial) bool initial;
+@property(getter=isLocked) bool locked;
 @property(copy) NSString * name;
 @property double nextDelay;
 @property double previousDelay;
@@ -39,18 +39,18 @@
 - (void)foreachLayer:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
-- (BOOL)isInitial;
-- (BOOL)isLocked;
+- (bool)isEnabled;
+- (bool)isInitial;
+- (bool)isLocked;
 - (id)name;
 - (double)nextDelay;
 - (double)previousDelay;
 - (void)removeElement:(id)arg1;
 - (void)setBasedOn:(id)arg1;
 - (void)setElements:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setInitial:(BOOL)arg1;
-- (void)setLocked:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setInitial:(bool)arg1;
+- (void)setLocked:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setNextDelay:(double)arg1;
 - (void)setPreviousDelay:(double)arg1;

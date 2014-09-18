@@ -4,41 +4,41 @@
 
 @interface TSDBezierSegment : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     } mA;
     } mB;
     } mIn;
     } mOut;
 }
 
-@property(readonly) BOOL bogusSegment;
-@property(readonly) struct CGPoint { float x1; float x2; } fromPoint;
-@property(readonly) struct CGPoint { float x1; float x2; } inPoint;
-@property(readonly) struct CGPoint { float x1; float x2; } outPoint;
-@property(readonly) struct CGPoint { float x1; float x2; } toPoint;
+@property(readonly) bool bogusSegment;
+@property(readonly) struct CGPoint { double x1; double x2; } fromPoint;
+@property(readonly) struct CGPoint { double x1; double x2; } inPoint;
+@property(readonly) struct CGPoint { double x1; double x2; } outPoint;
+@property(readonly) struct CGPoint { double x1; double x2; } toPoint;
 
-+ (id)segmentFromPoint:(struct CGPoint { float x1; float x2; })arg1 outPoint:(struct CGPoint { float x1; float x2; })arg2 inPoint:(struct CGPoint { float x1; float x2; })arg3 toPoint:(struct CGPoint { float x1; float x2; })arg4;
++ (id)segmentFromPoint:(struct CGPoint { double x1; double x2; })arg1 outPoint:(struct CGPoint { double x1; double x2; })arg2 inPoint:(struct CGPoint { double x1; double x2; })arg3 toPoint:(struct CGPoint { double x1; double x2; })arg4;
 
-- (BOOL)bogusSegment;
-- (struct CGPoint { float x1; float x2; })closestPointToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)bogusSegment;
+- (struct CGPoint { double x1; double x2; })closestPointToPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })fromPoint;
-- (struct CGPoint { float x1; float x2; })inPoint;
-- (id)initFromPoint:(struct CGPoint { float x1; float x2; })arg1 outPoint:(struct CGPoint { float x1; float x2; })arg2 inPoint:(struct CGPoint { float x1; float x2; })arg3 toPoint:(struct CGPoint { float x1; float x2; })arg4;
-- (struct CGPoint { float x1; float x2; })outPoint;
-- (float)parametricValueForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })pointAtParametricValue:(float)arg1;
-- (void)splitAtParametricValue:(float)arg1 left:(id*)arg2 right:(id*)arg3;
-- (struct CGPoint { float x1; float x2; })toPoint;
+- (struct CGPoint { double x1; double x2; })fromPoint;
+- (struct CGPoint { double x1; double x2; })inPoint;
+- (id)initFromPoint:(struct CGPoint { double x1; double x2; })arg1 outPoint:(struct CGPoint { double x1; double x2; })arg2 inPoint:(struct CGPoint { double x1; double x2; })arg3 toPoint:(struct CGPoint { double x1; double x2; })arg4;
+- (struct CGPoint { double x1; double x2; })outPoint;
+- (double)parametricValueForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })pointAtParametricValue:(double)arg1;
+- (void)splitAtParametricValue:(double)arg1 left:(id*)arg2 right:(id*)arg3;
+- (struct CGPoint { double x1; double x2; })toPoint;
 
 @end

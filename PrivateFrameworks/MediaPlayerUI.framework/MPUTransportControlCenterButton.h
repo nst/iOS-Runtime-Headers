@@ -2,22 +2,28 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSObject<OS_dispatch_source>;
+@class MPUTransportButtonEventHandler, NSString;
 
-@interface MPUTransportControlCenterButton : SBUIControlCenterButton <SBUIControlCenterButtonDelegate> {
-    BOOL _longPress;
-    NSObject<OS_dispatch_source> *_longPressTimer;
-    double _minimumPressDuration;
+@interface MPUTransportControlCenterButton : SBUIControlCenterButton <SBUIControlCenterButtonDelegate, MPUTransportButton> {
+    MPUTransportButtonEventHandler *_transportButtonEventHandler;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly) MPUTransportButtonEventHandler * transportButtonEventHandler;
+
 - (void).cxx_destruct;
-- (void)_clearLongPressTimer;
-- (void)_longPressTimerAction;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)applyTransportButtonAttributes:(id)arg1;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)buttonTapped:(id)arg1;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (void)dealloc;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEnabled;
+- (bool)shouldTrack;
+- (id)transportButtonEventHandler;
 
 @end

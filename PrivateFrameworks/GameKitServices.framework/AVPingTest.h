@@ -6,14 +6,14 @@
 
 @interface AVPingTest : NSObject {
     float avg;
+    boolusingWifi;
     NSString *interfaceNameToTest;
     NSString *ipAsString;
-    int lastReturnedError;
+    long long lastReturnedError;
     float max;
     float min;
     float packetLossRate;
     float stddev;
-    BOOL usingWifi;
 }
 
 @property(readonly) float avg;
@@ -21,23 +21,23 @@
 @property(readonly) float min;
 @property(readonly) float packetLossRate;
 @property(readonly) float stddev;
-@property(readonly) BOOL usingWifi;
+@property(readonly) bool usingWifi;
 
 - (float)avg;
 - (void)calculateInterfaceName;
 - (void)dealloc;
 - (id)description;
-- (id)initWithIPAsString:(id)arg1 usingWifi:(BOOL)arg2;
+- (id)initWithIPAsString:(id)arg1 usingWifi:(bool)arg2;
 - (float)max;
 - (float)min;
 - (float)packetLossRate;
-- (BOOL)parsePingLineForBadCommand:(char *)arg1;
-- (BOOL)parsePingLineForBadInterface:(char *)arg1;
-- (BOOL)parsePingLineForLatencyStats:(char *)arg1;
-- (BOOL)parsePingLineForPLR:(char *)arg1;
-- (int)parseResults:(char *)arg1 secondLastLine:(char *)arg2;
-- (int)start;
+- (bool)parsePingLineForBadCommand:(char *)arg1;
+- (bool)parsePingLineForBadInterface:(char *)arg1;
+- (bool)parsePingLineForLatencyStats:(char *)arg1;
+- (bool)parsePingLineForPLR:(char *)arg1;
+- (long long)parseResults:(char *)arg1 secondLastLine:(char *)arg2;
+- (long long)start;
 - (float)stddev;
-- (BOOL)usingWifi;
+- (bool)usingWifi;
 
 @end

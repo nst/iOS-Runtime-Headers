@@ -5,20 +5,20 @@
 @class EDTable;
 
 @interface EPTableStyleFlattener : EPStyleFlattener {
-    unsigned int mHeaderRowCount;
+    unsigned long long mHeaderRowCount;
     EDTable *mTable;
-    unsigned int mTotalsRowCount;
+    unsigned long long mTotalsRowCount;
 }
 
 - (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;
 - (void)cacheSizes:(id)arg1 inObject:(id)arg2;
 - (void)clearCache;
 - (id)collectionFromWorksheet:(id)arg1;
-- (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
-- (id)extractGlobalStyleElements:(id)arg1;
-- (id)extractRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3;
 - (bool)isObjectSupported:(id)arg1;
 - (id)keysInTheOrderTheyShouldBeApplied;
+- (id)newExtractedCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
+- (id)newExtractedGlobalStyleElements:(id)arg1;
+- (id)newExtractedRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3;
 - (int)stripeOffset:(int)arg1 row:(bool)arg2;
 - (id)styleFromObject:(id)arg1;
 

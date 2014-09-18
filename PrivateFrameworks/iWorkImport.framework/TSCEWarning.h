@@ -5,33 +5,30 @@
 @class NSDictionary;
 
 @interface TSCEWarning : NSObject {
-    BOOL mIgnored;
+    boolmIgnored;
     NSDictionary *mMetadata;
 }
 
-+ (void)reportAutomaticUnitConversionWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportBoolToNumberConversionWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportComparisonWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 leftType:(int)arg2 rightType:(int)arg3;
-+ (void)reportDayOutOfRangeWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportLossOfUnitsWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportMismatchedSizesWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportMonthOutOfRangeWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportNonNumericCellWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 reference:(id)arg2;
-+ (void)reportStaleInternetDataWarningInContext:(struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 validAsOfDate:(id)arg2;
-+ (BOOL)setHasVisibleWarnings:(id)arg1;
-+ (id)setKeepingOnlyImportAndIgnoredWarningsFromSet:(id)arg1;
++ (void)reportAutomaticUnitConversionWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportBoolToNumberConversionWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportComparisonWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 leftType:(int)arg2 rightType:(int)arg3;
++ (void)reportDayOutOfRangeWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportLossOfUnitsWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportMismatchedSizesWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportMonthOutOfRangeWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportNonNumericCellWarningInContext:(struct TSCEWarningReportingContext { boolx1; boolx2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 reference:(id)arg2;
++ (bool)setHasVisibleWarnings:(id)arg1;
 
 - (id)copyByRemappingEntityIDs:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayStringWithCalculationEngine:(id)arg1 forTable:(struct __CFUUID { }*)arg2 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isIgnored;
-- (BOOL)isImportWarning;
-- (void)setIgnored:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isIgnored;
+- (void)setIgnored:(bool)arg1;
 - (id)type;
 
 @end

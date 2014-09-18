@@ -14,6 +14,10 @@
 @property(retain) UIImage * artworkImage;
 @property(copy) NSString * songText;
 
++ (id)_artistLabelFont;
++ (id)_songLabelFont;
++ (double)defaultHeightForTraitCollection:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)artistText;
 - (id)artworkImage;

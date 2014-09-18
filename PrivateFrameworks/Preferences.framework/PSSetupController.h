@@ -13,21 +13,21 @@
 - (id)controller;
 - (void)dealloc;
 - (void)dismiss;
-- (void)dismissAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)dismissAnimated:(BOOL)arg1;
+- (void)dismissAnimated:(bool)arg1 completion:(id)arg2;
+- (void)dismissAnimated:(bool)arg1;
 - (void)dismissWithCompletion:(id)arg1;
 - (void)handleURL:(id)arg1;
 - (id)init;
 - (id)parentController;
 - (void)popControllerOnParent;
-- (BOOL)popupStyleIsModal;
-- (void)pushController:(id)arg1;
+- (bool)popupStyleIsModal;
 - (void)pushControllerOnParentWithSpecifier:(id)arg1;
 - (void)setParentController:(id)arg1;
 - (void)setupController;
+- (void)showController:(id)arg1 animate:(bool)arg2;
 - (void)statusBarWillChangeHeight:(id)arg1;
-- (BOOL)usePopupStyle;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (bool)usePopupStyle;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

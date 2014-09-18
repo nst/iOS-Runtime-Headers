@@ -14,21 +14,21 @@
     int _spinLock;
 }
 
-- (BOOL)_GC_queueForDealloc:(id)arg1;
+- (bool)_GC_queueForDealloc:(id)arg1;
 - (void)_contextDidDealloc;
-- (BOOL)_isDeallocating;
-- (void)_processReferenceQueue:(BOOL)arg1;
-- (BOOL)_queueBatchForDealloc:(struct __CFArray { }*)arg1;
-- (int)_queueCount;
-- (BOOL)_queueForDealloc:(id)arg1;
-- (BOOL)_signal;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (void)_processReferenceQueue:(bool)arg1;
+- (bool)_queueBatchForDealloc:(struct __CFArray { }*)arg1;
+- (long long)_queueCount;
+- (bool)_queueForDealloc:(id)arg1;
+- (bool)_signal;
+- (bool)_tryRetain;
 - (void)_unregisterRunloopObservers;
 - (void)dealloc;
 - (void)finalize;
 - (id)initForContext:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

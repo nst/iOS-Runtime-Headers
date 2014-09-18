@@ -9,11 +9,11 @@
     Player *_player;
 }
 
-@property(readonly) BOOL isPlaying;
+@property(readonly) bool isPlaying;
 
 - (id)initWithGender:(id)arg1 language:(id)arg2;
-- (BOOL)isPlaying;
-- (BOOL)playSoundsForWords:(id)arg1;
+- (bool)isPlaying;
+- (bool)playSoundsForWords:(id)arg1;
 - (void)stopAllSounds;
 
 @end

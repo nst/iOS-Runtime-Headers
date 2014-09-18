@@ -7,7 +7,7 @@
 @interface DOMCSSImportRule : DOMCSSRule {
 }
 
-@property(readonly) NSString * href;
+@property(copy,readonly) NSString * href;
 @property(readonly) DOMMediaList * media;
 @property(readonly) DOMCSSStyleSheet * styleSheet;
 

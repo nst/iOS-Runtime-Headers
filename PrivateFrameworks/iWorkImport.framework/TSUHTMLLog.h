@@ -6,13 +6,13 @@
 
 @interface TSUHTMLLog : NSObject {
     NSFileHandle *_handle;
-    BOOL _logStarted;
     NSString *_path;
     NSString *_script;
     NSString *_stylesheet;
-    unsigned int _tableRow;
+    unsigned long long _tableRow;
     NSString *_title;
-    unsigned int _uniquifier;
+    unsigned long long _uniquifier;
+    bool_logStarted;
 }
 
 @property(readonly) NSString * path;

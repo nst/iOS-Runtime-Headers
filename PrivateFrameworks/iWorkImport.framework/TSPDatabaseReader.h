@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>, TSPDatabase;
+@class NSHashTable, NSObject<OS_dispatch_queue>, NSString, TSPDatabase;
 
 @interface TSPDatabaseReader : TSPReader <TSPDatabaseUnarchiverDelegate> {
     struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
@@ -17,7 +17,7 @@
                     struct __hash_node<std::__1::pair<const long long, bool>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -28,7 +28,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true> > { 
                 float __first_; 
@@ -41,11 +41,15 @@
     } _readIdentifiers;
 }
 
-@property(readonly) BOOL didFinishResolvingReferences;
-@property(readonly) BOOL documentHasCurrentFileFormatVersion;
-@property(readonly) BOOL isCrossAppPaste;
-@property(readonly) BOOL isCrossDocumentPaste;
-@property(readonly) BOOL isFromPasteboard;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) bool didFinishResolvingReferences;
+@property(readonly) unsigned long long fileFormatVersion;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isCrossAppPaste;
+@property(readonly) bool isCrossDocumentPaste;
+@property(readonly) bool isFromPasteboard;
+@property(readonly) Class superclass;
 
 - (struct Message { int (**x1)(); }*)newDataMessageForDatabaseObject:(id)arg1;
 - (struct Message { int (**x1)(); }*)newImageDataMessageForDatabaseObject:(id)arg1;
@@ -56,12 +60,13 @@
 - (void)dealloc;
 - (void)didUnarchiveObject:(id)arg1 withUnarchiver:(id)arg2;
 - (id)filenameFromOldDataArchive:(const struct DatabaseDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned long long x6; unsigned int x7; boolx8; int x9; unsigned int x10[1]; }*)arg1;
-- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)filterIdentifiers:(const struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)arg1;
+- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long long x_3_2_1; } x_1_1_3; } x1; }*)filterIdentifiers:(const struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree<long long, std::__1::less<long long>, std::__1::allocator<long long> > { struct __tree_node<long long, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<long long> > { unsigned long long x_3_2_1; } x_1_1_3; } x1; }*)arg1;
 - (id)init;
 - (id)initWithComponent:(id)arg1 delegate:(id)arg2;
 - (id)initWithComponent:(id)arg1 finalizeHandlerQueue:(id)arg2 delegate:(id)arg3 database:(id)arg4 databaseVersion:(unsigned long long)arg5;
 - (id)newUnarchiverWithDatabaseObject:(id)arg1;
+- (id)objectUUIDMap;
 - (void)unarchiveObjectWithIdentifierAsync:(long long)arg1;
-- (BOOL)validateObjectIdentifierForObject:(id)arg1;
+- (bool)validateObjectIdentifierForObject:(id)arg1;
 
 @end

@@ -6,11 +6,11 @@
 }
 
 + (id)chartSeriesType;
-+ (BOOL)isHorizontalChart;
-+ (BOOL)isStacked;
-+ (struct TSCH3DScenePart { id x1; id x2; })partWithEnumerator:(id)arg1 layoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })arg2;
++ (bool)isHorizontalChart;
++ (bool)isStacked;
++ (struct TSCH3DScenePart { id x1; id x2; })partWithEnumerator:(id)arg1 layoutSettings:(struct { boolx1; boolx2; boolx3; boolx4; boolx5; boolx6; unsigned long long x7; })arg2;
 
-- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })labelObjectSpacePosition:(unsigned int)arg1 dataSpaceValue:(float)arg2;
+- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })labelObjectSpacePosition:(unsigned int)arg1 axisValue:(double)arg2 intercept:(double)arg3;
 - (void)updateLightingEffectsState:(id)arg1 scene:(id)arg2;
 
 @end

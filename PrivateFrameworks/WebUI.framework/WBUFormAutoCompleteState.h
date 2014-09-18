@@ -2,49 +2,73 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class DOMHTMLInputElement, NSArray, NSDictionary, NSMutableDictionary, WebFrame;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface WBUFormAutoCompleteState : NSObject <UIActionSheetDelegate> {
-    int _action;
-    BOOL _canAutoComplete;
+@class <WBUFormAutoFillFrameHandle>, NSArray, NSDictionary, NSMutableDictionary, NSString, UIView<WBUFormAutoFillWebView>, WBUFormDataController;
+
+@interface WBUFormAutoCompleteState : NSObject <UIActionSheetDelegate, WBUCreditCardCaptureViewControllerDelegate> {
+    long long _action;
+    id _creditCardCaptureCompletionHandler;
+    WBUFormDataController *_dataController;
     NSDictionary *_formMetadata;
-    unsigned int _formType;
+    unsigned long long _formType;
     NSDictionary *_formValues;
-    BOOL _gatheringFormValues;
     NSMutableDictionary *_matchesByCompletion;
     NSArray *_potentialCredentialMatches;
-    DOMHTMLInputElement *_textField;
     NSDictionary *_textFieldMetadata;
-    WebFrame *_webFrame;
+    bool_canAutoComplete;
+    bool_gatheringFormValues;
 }
 
-@property(readonly) WebFrame * webFrame;
+@property WBUFormDataController * dataController;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) <WBUFormAutoFillFrameHandle> * frame;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly) NSString * textFieldValue;
+@property(readonly) UIView<WBUFormAutoFillWebView> * webView;
 
-+ (BOOL)_shouldSaveCredentialsInProtectionSpace:(id)arg1;
++ (bool)_shouldSaveCredentialsInProtectionSpace:(id)arg1;
 
-- (int)_action;
+- (void).cxx_destruct;
+- (long long)_action;
 - (void)_autoFillCreditCardData;
 - (void)_autoFillFormWithCreditCardData:(id)arg1;
-- (BOOL)_canAutoFillCreditCardData;
+- (void)_autoFillValues:(id)arg1;
+- (bool)_canAutoFillCreditCardData;
+- (void)_captureCreditCardDataWithCameraAndFill;
 - (void)_ensureFormMetadata;
 - (void)_gatherFormValuesWithCompletionHandler:(id)arg1;
 - (void)_generateAndSuggestPassword;
 - (id)_matchesForPartialString:(id)arg1;
 - (void)_offerToAutoFillFromPotentialCredentialMatches;
-- (int)_passwordGenerationAssistanceAction;
-- (BOOL)_passwordGenerationAssistanceAutoFillButtonEnabled;
-- (BOOL)_shouldUsePasswordGenerationAssistanceForTextField;
-- (void)_showDisallowedActionAlert;
-- (BOOL)_textFieldLooksLikeCreditCardFormField;
+- (long long)_passwordGenerationAssistanceAction;
+- (bool)_passwordGenerationAssistanceAutoFillButtonEnabled;
+- (bool)_shouldUsePasswordGenerationAssistanceForTextField;
+- (bool)_textFieldLooksLikeCreditCardFormField;
 - (void)_updateAutoFillButton;
 - (void)acceptedAutoFillWord:(id)arg1;
 - (void)autoFill;
+- (void)autoFillGeneratedPassword:(id)arg1 inForm:(double)arg2;
+- (void)autoFillValues:(id)arg1 andFocusField:(id)arg2;
+- (void)creditCardCaptureViewController:(id)arg1 didCaptureCreditCard:(id)arg2;
+- (void)creditCardCaptureViewControllerDidCancel:(id)arg1;
+- (id)dataController;
 - (void)dealloc;
-- (BOOL)hasCurrentSuggestions;
-- (id)initWithTextField:(id)arg1 webFrame:(id)arg2;
+- (void)fetchFormMetadataWithCompletion:(id)arg1;
+- (id)frame;
+- (void)getTextFieldMetadata:(id*)arg1 formMetadata:(id*)arg2;
+- (bool)hasCurrentSuggestions;
+- (id)initWithFormDataController:(id)arg1;
 - (void)invalidate;
+- (void)setAutoFillButtonTitle:(id)arg1;
+- (void)setDataController:(id)arg1;
 - (id)suggestionsForString:(id)arg1;
+- (id)textFieldValue;
 - (id)titleOfAutoFillButton;
-- (id)webFrame;
+- (id)webView;
 
 @end

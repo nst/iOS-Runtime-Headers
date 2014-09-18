@@ -5,7 +5,6 @@
 @class NSDate, NSString, SUDescriptor, SUDownload;
 
 @interface SUState : NSObject <NSKeyedUnarchiverDelegate> {
-    BOOL _autodownloadNeedsOneTimeRetry;
     SUDownload *_lastDownload;
     NSString *_lastProductBuild;
     NSString *_lastProductType;
@@ -16,9 +15,13 @@
     NSDate *_scheduledAutodownloadPolicyChangeTime;
     NSDate *_scheduledAutodownloadWifiPeriodEndTime;
     NSDate *_scheduledManualDownloadWifiPeriodEndTime;
+    bool_autodownloadNeedsOneTimeRetry;
 }
 
-@property BOOL autodownloadNeedsOneTimeRetry;
+@property bool autodownloadNeedsOneTimeRetry;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) SUDownload * lastDownload;
 @property(retain) NSString * lastProductBuild;
 @property(retain) NSString * lastProductType;
@@ -29,12 +32,13 @@
 @property(retain) NSDate * scheduledAutodownloadPolicyChangeTime;
 @property(retain) NSDate * scheduledAutodownloadWifiPeriodEndTime;
 @property(retain) NSDate * scheduledManualDownloadWifiPeriodEndTime;
+@property(readonly) Class superclass;
 
 + (id)currentState;
 + (id)statePath;
 
 - (id)_stateAsDictionary;
-- (BOOL)autodownloadNeedsOneTimeRetry;
+- (bool)autodownloadNeedsOneTimeRetry;
 - (void)dealloc;
 - (id)description;
 - (id)init;
@@ -52,7 +56,7 @@
 - (id)scheduledAutodownloadPolicyChangeTime;
 - (id)scheduledAutodownloadWifiPeriodEndTime;
 - (id)scheduledManualDownloadWifiPeriodEndTime;
-- (void)setAutodownloadNeedsOneTimeRetry:(BOOL)arg1;
+- (void)setAutodownloadNeedsOneTimeRetry:(bool)arg1;
 - (void)setLastDownload:(id)arg1;
 - (void)setLastProductBuild:(id)arg1;
 - (void)setLastProductType:(id)arg1;

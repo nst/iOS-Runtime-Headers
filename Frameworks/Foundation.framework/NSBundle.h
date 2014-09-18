@@ -2,16 +2,43 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSArray, NSDictionary, NSString, NSURL;
+
 @interface NSBundle : NSObject {
     id _cfBundle;
-    unsigned int _flags;
+    unsigned long long _flags;
     id _initialPath;
     id _lock;
     Class _principalClass;
-    unsigned int _reserved2;
+    unsigned long long _reserved2;
     id _reserved3;
     id _resolvedPath;
 }
+
+@property(copy,readonly) NSURL * appStoreReceiptURL;
+@property(copy,readonly) NSString * builtInPlugInsPath;
+@property(copy,readonly) NSURL * builtInPlugInsURL;
+@property(copy,readonly) NSString * bundleIdentifier;
+@property(copy,readonly) NSString * bundlePath;
+@property(copy,readonly) NSURL * bundleURL;
+@property(copy,readonly) NSString * developmentLocalization;
+@property(copy,readonly) NSArray * executableArchitectures;
+@property(copy,readonly) NSString * executablePath;
+@property(copy,readonly) NSURL * executableURL;
+@property(copy,readonly) NSDictionary * infoDictionary;
+@property(getter=isLoaded,readonly) bool loaded;
+@property(copy,readonly) NSArray * localizations;
+@property(copy,readonly) NSDictionary * localizedInfoDictionary;
+@property(copy,readonly) NSArray * preferredLocalizations;
+@property(readonly) Class principalClass;
+@property(copy,readonly) NSString * privateFrameworksPath;
+@property(copy,readonly) NSURL * privateFrameworksURL;
+@property(copy,readonly) NSString * resourcePath;
+@property(copy,readonly) NSURL * resourceURL;
+@property(copy,readonly) NSString * sharedFrameworksPath;
+@property(copy,readonly) NSURL * sharedFrameworksURL;
+@property(copy,readonly) NSString * sharedSupportPath;
+@property(copy,readonly) NSURL * sharedSupportURL;
 
 + (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 inBundleWithURL:(id)arg4;
 + (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2 inBundleWithURL:(id)arg3;
@@ -29,9 +56,11 @@
 + (id)_mapkitBundle;
 + (id)_typologyBundle;
 + (id)accessibilityBundleWithLastPathComponent:(id)arg1;
++ (id)accessibilityLocalBundleWithLastPathComponent:(id)arg1;
 + (id)afui_assistantUIFrameworkBundle;
 + (id)allBundles;
 + (id)allFrameworks;
++ (id)blj_localizedString:(id)arg1;
 + (id)brailleDriverBundleWithIdentifier:(id)arg1;
 + (id)brailleDriverBundleWithIdentifier:(id)arg1;
 + (id)brailleDriverBundles;
@@ -44,26 +73,26 @@
 + (id)brailleTableIdentifiers;
 + (id)bundleForBinaryImagePath:(id)arg1;
 + (id)bundleForClass:(Class)arg1;
-+ (long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
-+ (long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
++ (long long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
++ (long long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
 + (id)bundleWithIdentifier:(id)arg1;
 + (id)bundleWithPath:(id)arg1;
 + (id)bundleWithURL:(id)arg1;
 + (id)currentNibLoadingBundle;
 + (id)currentNibPath;
 + (id)debugDescription;
-+ (BOOL)doesBrailleTableSupportContractions:(id)arg1;
-+ (BOOL)doesBrailleTableSupportContractions:(id)arg1;
-+ (BOOL)doesBrailleTableSupportEightDot:(id)arg1;
-+ (BOOL)doesBrailleTableSupportEightDot:(id)arg1;
-+ (id)findBundleResourceURLs:(id)arg1 callingMethod:(SEL)arg2 bundleURL:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned int)arg7;
++ (bool)doesBrailleTableSupportContractions:(id)arg1;
++ (bool)doesBrailleTableSupportContractions:(id)arg1;
++ (bool)doesBrailleTableSupportEightDot:(id)arg1;
++ (bool)doesBrailleTableSupportEightDot:(id)arg1;
 + (id)findBundleResourceURLsCallingMethod:(SEL)arg1 baseURL:(id)arg2 passingTest:(id)arg3;
-+ (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned int)arg7;
++ (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned long long)arg7;
 + (id)frameworkBundleForBinaryImagePath:(id)arg1;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)loadedBundles;
 + (id)mainBundle;
++ (bool)mainBundleIsXcode;
 + (id)mediaPlayerBundle;
 + (id)mediaPlayerUIBundle;
 + (id)musicUIBundle;
@@ -88,19 +117,22 @@
 
 - (id)PKSanitizedBundleIdentifier;
 - (id)URLForAuxiliaryExecutable:(id)arg1;
+- (id)URLForMovieResource:(id)arg1;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 localization:(id)arg4;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2;
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2 localization:(id)arg3;
 - (id)URLsForResourcesWithExtension:(id)arg1 subdirectory:(id)arg2;
 - (id)XPCServiceBundles;
+- (void)__static;
 - (void)_accessibilityInitializeContainerLogic;
 - (id)_cachedMainBundleResourcePath;
 - (struct __CFBundle { }*)_cfBundle;
 - (id)_gkBundleVersion;
-- (BOOL)_gkIsBadgingEnabled;
-- (BOOL)_gkIsGameCenter;
-- (BOOL)_gkIsGameCenterUIService;
+- (id)_gkFrameworkVersionDescription;
+- (bool)_gkIsBadgingEnabled;
+- (bool)_gkIsGameCenter;
+- (bool)_gkIsGameCenterUIService;
 - (id)_gkLocalizedName;
 - (id)_gkLocalizedStringForKey:(id)arg1 defaultValue:(id)arg2 arguments:(id)arg3;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
@@ -124,6 +156,7 @@
 - (id)bundleSpecificTableIdentifierForTableIdentifier:(id)arg1;
 - (id)bundleURL;
 - (Class)classNamed:(id)arg1;
+- (id)dataForResourceName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)developmentLocalization;
@@ -132,16 +165,17 @@
 - (id)executableURL;
 - (void)finalize;
 - (id)findBundleResourceURLsCallingMethod:(SEL)arg1 passingTest:(id)arg2;
+- (id)imageForResource:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)infoDictionary;
 - (id)initWithPath:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)invalidateResourceCache;
-- (BOOL)isLoaded;
-- (BOOL)load;
-- (BOOL)loadAndReturnError:(id*)arg1;
+- (bool)isLoaded;
+- (bool)load;
+- (bool)loadAndReturnError:(id*)arg1;
 - (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
 - (id)localizations;
-- (id)localizationsToSearch;
+- (id)localizedDocumentStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)localizedInfoDictionary;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)newDataURLForResource:(id)arg1 ofType:(id)arg2 withMIMEType:(id)arg3;
@@ -155,14 +189,13 @@
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forLocalization:(id)arg3;
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
 - (id)preferredLocalizations;
-- (BOOL)preflightAndReturnError:(id*)arg1;
+- (bool)preflightAndReturnError:(id*)arg1;
 - (Class)principalClass;
 - (id)privateFrameworksPath;
 - (id)privateFrameworksURL;
-- (oneway void)release;
 - (id)resourcePath;
 - (id)resourceURL;
-- (BOOL)safari_primaryLocalizationIsEnglish;
+- (bool)safari_primaryLocalizationIsEnglish;
 - (id)sharedFrameworksPath;
 - (id)sharedFrameworksURL;
 - (id)sharedSupportPath;
@@ -172,8 +205,8 @@
 - (id)siriUILocalizedStringForKey:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
-- (BOOL)unload;
-- (unsigned int)versionNumber;
+- (bool)unload;
+- (unsigned long long)versionNumber;
 - (id)webui_localizedDisplayName;
 
 @end

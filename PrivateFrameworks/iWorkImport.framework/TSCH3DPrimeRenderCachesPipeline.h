@@ -9,6 +9,6 @@
 
 - (id)initWithScene:(id)arg1 renderPipeline:(id)arg2;
 - (void)primeRenderCaches:(id)arg1;
-- (BOOL)run;
+- (bool)run;
 
 @end

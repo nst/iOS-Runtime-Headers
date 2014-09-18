@@ -10,18 +10,21 @@
 @class TSDDrawableInfo;
 
 @interface TSWPDrawableAttachment : TSWPAttachment {
+    double _cachedDescent;
+    unsigned long long _cachedHash;
     TSDDrawableInfo *_drawableInfo;
-    float _hOffset;
+    double _hOffset;
     int _hOffsetType;
-    float _vOffset;
+    double _vOffset;
     int _vOffsetType;
+    bool_cachedWasPICT;
 }
 
-@property(readonly) float descent;
-@property(readonly) TSDDrawableInfo * drawable;
-@property float hOffset;
+@property(readonly) double descent;
+@property(retain,readonly) TSDDrawableInfo * drawable;
+@property double hOffset;
 @property int hOffsetType;
-@property float vOffset;
+@property double vOffset;
 @property int vOffsetType;
 
 + (void)setPositionerClass:(Class)arg1;
@@ -30,37 +33,38 @@
 - (void)attachDrawable:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (float)descent;
+- (double)descent;
 - (id)detachDrawable;
 - (id)drawable;
 - (int)elementKind;
 - (unsigned long long)enabledKnobMask;
-- (float)hOffset;
+- (double)hOffset;
 - (int)hOffsetType;
+- (void)infoChanged;
 - (id)init;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 drawable:(id)arg2;
 - (void)invalidate;
-- (BOOL)isAnchored;
-- (BOOL)isDrawable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHTMLWrap;
-- (BOOL)isPartitioned;
-- (BOOL)isSearchable;
+- (bool)isAnchored;
+- (bool)isDrawable;
+- (bool)isEqual:(id)arg1;
+- (bool)isHTMLWrap;
+- (bool)isPartitioned;
+- (bool)isSearchable;
 - (void)loadMessage:(const struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; unsigned int x4; float x5; unsigned int x6; float x7; int x8; unsigned int x9[1]; }*)arg1 fromUnarchiver:(id)arg2;
 - (Class)positionerClass;
 - (void)saveMessage:(struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; unsigned int x4; float x5; unsigned int x6; float x7; int x8; unsigned int x9[1]; }*)arg1 toArchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setHOffset:(float)arg1;
+- (void)setHOffset:(double)arg1;
 - (void)setHOffsetType:(int)arg1;
 - (void)setParentStorage:(id)arg1;
-- (void)setVOffset:(float)arg1;
+- (void)setVOffset:(double)arg1;
 - (void)setVOffsetType:(int)arg1;
-- (BOOL)specifiesEnabledKnobMask;
+- (bool)specifiesEnabledKnobMask;
 - (id)subclassInitFromUnarchiver:(id)arg1;
 - (id)textRepresentationForCopy;
 - (id)textStorages;
-- (float)vOffset;
+- (double)vOffset;
 - (int)vOffsetType;
 - (void)wasAddedToDocumentRoot:(id)arg1 context:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

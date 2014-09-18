@@ -9,8 +9,12 @@
 
 @property(copy) NSString * aceId;
 @property(copy) NSString * assistantId;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
 @property(copy) NSString * speechId;
+@property(readonly) Class superclass;
 
 + (id)destroyAssistant;
 + (id)destroyAssistantWithDictionary:(id)arg1 context:(id)arg2;

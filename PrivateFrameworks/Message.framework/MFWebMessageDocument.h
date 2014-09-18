@@ -13,7 +13,7 @@
     MFMimeBody *_mimeBody;
     NSMutableDictionary *_partsByFilename;
     NSMutableDictionary *_partsByURL;
-    unsigned long _preferredEncoding;
+    unsigned int _preferredEncoding;
     unsigned int _uniqueId;
 }
 
@@ -22,7 +22,7 @@
 @property(readonly) NSData * htmlData;
 @property(readonly) MFMimeBody * mimeBody;
 @property(readonly) MFMimePart * mimePart;
-@property unsigned long preferredEncoding;
+@property unsigned int preferredEncoding;
 
 + (id)sourceForURL:(id)arg1;
 
@@ -37,14 +37,14 @@
 - (id)htmlData;
 - (id)init;
 - (id)initWithMimeBody:(id)arg1;
-- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
+- (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned int)arg3;
 - (id)initWithMimePart:(id)arg1;
 - (id)mimeBody;
 - (id)mimePart;
 - (id)mimePartForURL:(id)arg1;
 - (id)preferredCharacterSet;
-- (unsigned long)preferredEncoding;
+- (unsigned int)preferredEncoding;
 - (void)setAttachmentManager:(id)arg1;
-- (void)setPreferredEncoding:(unsigned long)arg1;
+- (void)setPreferredEncoding:(unsigned int)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSObject<OS_dispatch_queue>;
+@class AVWeakReference, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVWeakReferencingDelegateStorage : NSObject <AVDelegateStorage> {
     NSObject<OS_dispatch_queue> *_delegateQueue;
@@ -10,8 +10,12 @@
     AVWeakReference *_weakReferenceToDelegate;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property(readonly) id delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (void)initialize;
 

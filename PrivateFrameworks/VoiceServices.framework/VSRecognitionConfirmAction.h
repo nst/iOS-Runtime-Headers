@@ -13,7 +13,7 @@
     VSRecognitionAction *_deniedAction;
 }
 
-- (void)_setConfirmed:(BOOL)arg1;
+- (void)_setConfirmed:(bool)arg1;
 - (int)completionType;
 - (id)confirmedAction;
 - (void)dealloc;

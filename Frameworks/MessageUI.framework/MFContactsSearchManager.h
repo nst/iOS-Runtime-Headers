@@ -9,18 +9,22 @@
     int _contactSearchAccountChangedToken;
     NSArray *_explicitSearchAccountIDs;
     unsigned int _genNumber;
+    unsigned long long _implicitGroupCreationThreshold;
     NSOrderedSet *_properties;
     NSOperationQueue *_queue;
     NSString *_recentsBundleIdentifier;
-    BOOL _registeredForAddressBookChanges;
     NSArray *_searchAccounts;
-    unsigned int _searchTypes;
+    unsigned long long _searchTypes;
     NSString *_sendingAddress;
     NSObject<OS_dispatch_queue> *_serverSearchQueue;
     NSMutableDictionary *_taskContextsByTaskID;
     struct __CFDictionary { } *_taskIDsBySearchQuery;
+    bool_includeUpcomingEventMembers;
+    bool_registeredForAddressBookChanges;
 }
 
+@property unsigned long long implicitGroupCreationThreshold;
+@property bool includeUpcomingEventMembers;
 @property(copy) NSString * recentsBundleIdentifier;
 @property(retain) NSArray * searchAccountIDs;
 @property(readonly) NSArray * searchAccounts;
@@ -28,7 +32,7 @@
 
 - (void)_handleAddressBookChangeNotification;
 - (void)_handleCorecipientSearchResults:(id)arg1 operation:(id)arg2 taskID:(id)arg3;
-- (void)_handleLocalSearchResults:(id)arg1 type:(int)arg2 operation:(id)arg3 taskID:(id)arg4;
+- (void)_handleLocalSearchResults:(id)arg1 type:(unsigned long long)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleRecentsSearchFrequentResults:(id)arg1 infrequentResults:(id)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleSearchQueriesByAccountID:(id)arg1 operation:(id)arg2 taskID:(id)arg3;
 - (void)_handleSearchQuery:(id)arg1 finishedWithError:(id)arg2;
@@ -41,6 +45,8 @@
 - (id)_serverSearchQueue;
 - (void)cancelTaskWithID:(id)arg1;
 - (void)dealloc;
+- (unsigned long long)implicitGroupCreationThreshold;
+- (bool)includeUpcomingEventMembers;
 - (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3 recentsBundleIdentifier:(id)arg4;
 - (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
 - (id)recentsBundleIdentifier;
@@ -51,9 +57,11 @@
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
 - (id)sendingAddress;
+- (void)setImplicitGroupCreationThreshold:(unsigned long long)arg1;
+- (void)setIncludeUpcomingEventMembers:(bool)arg1;
 - (void)setRecentsBundleIdentifier:(id)arg1;
 - (void)setSearchAccountIDs:(id)arg1;
-- (void)setSearchTypes:(unsigned int)arg1;
+- (void)setSearchTypes:(unsigned long long)arg1;
 - (void)setSendingAddress:(id)arg1;
 
 @end

@@ -2,36 +2,45 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSCache, UIAlertView, UITextField;
+@class NSCache, NSString, UIAlertController, UIImage, UITextField;
 
 @interface MusicPlaylistsViewController : MusicTableViewController <MusicPickerOverlayDelegate, UITextFieldDelegate> {
+    UIImage *_initialPlaceholderImage;
+    UIAlertController *_newPlaylistAlertController;
     UITextField *_newPlaylistAlertTextField;
     id _newPlaylistAlertTextFieldChangeObserver;
-    UIAlertView *_newPlaylistAlertView;
     NSCache *_playlistMetadataCache;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSCache * playlistMetadataCache;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)MPH_supportsCoverFlow;
-- (BOOL)_isSaveButtonEnabled;
+- (bool)MPH_supportsCoverFlow;
+- (void)_cleanupNewPlaylistAlertController;
+- (void)_handlePlaylistSaveAction;
 - (id)_playlistTitle;
 - (void)_updateCloudPlaylist:(id)arg1;
 - (void)_updateSaveButtonEnabledState;
+- (id)_viewControllerForSelectedMediaEntity:(id)arg1 containerItemType:(long long)arg2;
 - (void)addPlaylistAction;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)createGeniusPlaylistAction;
-- (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
-- (BOOL)music_hasContent;
+- (void)dealloc;
+- (id)initWithDataSource:(id)arg1;
+- (bool)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (bool)music_hasContent;
 - (void)pickerOverlayDidFinish:(id)arg1;
 - (void)pickerOverlayRequestsFinish:(id)arg1;
 - (id)playlistMetadataCache;
 - (void)reloadData;
 - (void)setPlaylistMetadataCache:(id)arg1;
 - (void)switchToShortcutIdentifier:(id)arg1;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 
 @end

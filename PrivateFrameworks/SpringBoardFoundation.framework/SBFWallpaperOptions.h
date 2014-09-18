@@ -2,35 +2,41 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
+@class NSString;
+
 @interface SBFWallpaperOptions : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } _cropRect;
-    float _parallaxFactor;
-    BOOL _supportsCropping;
-    float _zoomScale;
+    NSString *_name;
+    double _parallaxFactor;
+    double _zoomScale;
+    bool_supportsCropping;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
-@property(readonly) BOOL parallaxEnabled;
-@property(readonly) float parallaxFactor;
-@property(readonly) BOOL supportsCropping;
-@property(readonly) float zoomScale;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
+@property(copy,readonly) NSString * name;
+@property(readonly) bool parallaxEnabled;
+@property(readonly) double parallaxFactor;
+@property(readonly) bool supportsCropping;
+@property(readonly) double zoomScale;
 
-+ (id)optionsWithParallaxFactor:(float)arg1 zoomScale:(float)arg2 supportsCropping:(BOOL)arg3 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
++ (id)optionsWithName:(id)arg1 parallaxFactor:(double)arg2 zoomScale:(double)arg3 supportsCropping:(bool)arg4 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
-- (id)initWithParallaxFactor:(float)arg1 zoomScale:(float)arg2 supportsCropping:(BOOL)arg3 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (BOOL)parallaxEnabled;
-- (float)parallaxFactor;
-- (BOOL)supportsCropping;
-- (float)zoomScale;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (void)dealloc;
+- (id)initWithName:(id)arg1 parallaxFactor:(double)arg2 zoomScale:(double)arg3 supportsCropping:(bool)arg4 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
+- (id)name;
+- (bool)parallaxEnabled;
+- (double)parallaxFactor;
+- (bool)supportsCropping;
+- (double)zoomScale;
 
 @end

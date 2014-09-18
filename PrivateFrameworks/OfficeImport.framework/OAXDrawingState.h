@@ -2,16 +2,25 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, OADBlipCollection, OADColorMap, OADColorScheme, OADFontScheme, OADStyleMatrix, OAVState, OAXClient, OAXTableStyleCache, OCPPackagePart;
+@class CXNamespace, NSMutableArray, NSMutableDictionary, OADBlipCollection, OADColorMap, OADColorScheme, OADFontScheme, OADStyleMatrix, OAVReadState, OAXClient, OAXTableStyleCache, OCPPackagePart;
 
-@interface OAXDrawingState : NSObject {
+@interface OAXDrawingState : OCXReadState {
     OAXClient *mClient;
     OADColorMap *mColorMap;
     OADColorScheme *mColorScheme;
     id mDocumentState;
+    NSMutableDictionary *mDrawableIdToVmlShapeIdMap;
     OADFontScheme *mFontScheme;
-    unsigned int mGroupDepth;
-    OAVState *mOavState;
+    NSMutableArray *mGroupStack;
+    CXNamespace *mOAXChartDrawingNamespace;
+    CXNamespace *mOAXChartNamespace;
+    CXNamespace *mOAXCompatNamespace;
+    CXNamespace *mOAXDrawing2010Namespace;
+    CXNamespace *mOAXLockedCanvasNamespace;
+    CXNamespace *mOAXMainNamespace;
+    CXNamespace *mOAXPictureNamespace;
+    CXNamespace *mOAXWordProcessingMLNamespace;
+    OAVReadState *mOavState;
     OCPPackagePart *mPackagePart;
     NSMutableDictionary *mShapeIdMap;
     NSMutableDictionary *mSrcURLToTgtBlipIndexMap;
@@ -22,9 +31,25 @@
     NSMutableArray *mTgtBulletBlips;
 }
 
+@property(retain) CXNamespace * OAXChartDrawingNamespace;
+@property(retain) CXNamespace * OAXChartNamespace;
+@property(retain) CXNamespace * OAXCompatNamespace;
+@property(retain) CXNamespace * OAXDrawing2010Namespace;
+@property(retain) CXNamespace * OAXLockedCanvasNamespace;
+@property(retain) CXNamespace * OAXMainNamespace;
+@property(retain) CXNamespace * OAXPictureNamespace;
+@property(retain) CXNamespace * OAXWordProcessingMLNamespace;
 @property(retain) NSMutableDictionary * sourceURLToTargetBlipIndexMap;
 @property(retain) NSMutableDictionary * sourceURLToTargetBulletBlipIndexMap;
 
+- (id)OAXChartDrawingNamespace;
+- (id)OAXChartNamespace;
+- (id)OAXCompatNamespace;
+- (id)OAXDrawing2010Namespace;
+- (id)OAXLockedCanvasNamespace;
+- (id)OAXMainNamespace;
+- (id)OAXPictureNamespace;
+- (id)OAXWordProcessingMLNamespace;
 - (id)blipRefForURL:(id)arg1;
 - (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
 - (id)bulletBlipRefForURL:(id)arg1;
@@ -34,21 +59,30 @@
 - (id)colorScheme;
 - (void)dealloc;
 - (id)documentState;
-- (id)drawableForShapeId:(unsigned long)arg1;
+- (id)drawableForShapeId:(unsigned int)arg1;
 - (id)fontScheme;
 - (id)init;
 - (id)initWithClient:(id)arg1;
-- (BOOL)isInsideGroup;
+- (bool)isInsideGroup;
 - (id)oavState;
 - (id)packagePart;
-- (void)popGroup;
-- (void)pushGroup;
+- (id)peekGroup;
+- (id)popGroup;
+- (void)pushGroup:(id)arg1;
 - (void)resetForNewDrawing;
 - (void)setColorMap:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setDocumentState:(id)arg1;
-- (void)setDrawable:(id)arg1 forShapeId:(unsigned long)arg2;
+- (void)setDrawable:(id)arg1 forShapeId:(unsigned int)arg2;
 - (void)setFontScheme:(id)arg1;
+- (void)setOAXChartDrawingNamespace:(id)arg1;
+- (void)setOAXChartNamespace:(id)arg1;
+- (void)setOAXCompatNamespace:(id)arg1;
+- (void)setOAXDrawing2010Namespace:(id)arg1;
+- (void)setOAXLockedCanvasNamespace:(id)arg1;
+- (void)setOAXMainNamespace:(id)arg1;
+- (void)setOAXPictureNamespace:(id)arg1;
+- (void)setOAXWordProcessingMLNamespace:(id)arg1;
 - (void)setOavState:(id)arg1;
 - (void)setPackagePart:(id)arg1;
 - (void)setSourceURLToTargetBlipIndexMap:(id)arg1;
@@ -57,10 +91,13 @@
 - (void)setTableStyleCache:(id)arg1;
 - (void)setTargetBlipCollection:(id)arg1;
 - (void)setTargetBulletBlipArray:(id)arg1;
+- (void)setVmlShapeId:(id)arg1 forDrawableId:(unsigned int)arg2;
+- (void)setupNSForXMLFormat:(int)arg1;
 - (id)sourceURLToTargetBlipIndexMap;
 - (id)sourceURLToTargetBulletBlipIndexMap;
 - (id)styleMatrix;
 - (id)tableStyleCache;
 - (id)targetBlipCollection;
+- (id)vmlShapeIdForDrawableId:(unsigned int)arg1;
 
 @end

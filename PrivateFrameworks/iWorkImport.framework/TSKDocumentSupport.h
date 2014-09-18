@@ -6,28 +6,32 @@
 
 @interface TSKDocumentSupport : TSPObject <TSKCommandHistoryDelegate> {
     NSString *_cachedRedoActionString;
-    unsigned int _cachedRedoCount;
+    unsigned long long _cachedRedoCount;
     NSString *_cachedUndoActionString;
-    unsigned int _cachedUndoCount;
+    unsigned long long _cachedUndoCount;
     TSPLazyReference *_commandHistoryReference;
     TSPLazyReference *_commandSelectionBehaviorHistoryReference;
     TSPObject *_webState;
 }
 
 @property(readonly) NSString * cachedRedoActionString;
-@property(readonly) unsigned int cachedRedoCount;
+@property(readonly) unsigned long long cachedRedoCount;
 @property(readonly) NSString * cachedUndoActionString;
-@property(readonly) unsigned int cachedUndoCount;
+@property(readonly) unsigned long long cachedUndoCount;
 @property(readonly) TSKCommandHistory * commandHistory;
 @property(readonly) TSKCommandSelectionBehaviorHistory * commandSelectionBehaviorHistory;
-@property(readonly) BOOL hasCommands;
-@property(readonly) BOOL isDocumentEditedSinceLastSave;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) bool hasCommands;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isDocumentEditedSinceLastSave;
+@property(readonly) Class superclass;
 @property(retain) TSPObject * webState;
 
 - (id)cachedRedoActionString;
-- (unsigned int)cachedRedoCount;
+- (unsigned long long)cachedRedoCount;
 - (id)cachedUndoActionString;
-- (unsigned int)cachedUndoCount;
+- (unsigned long long)cachedUndoCount;
 - (void)clearCommandHistory;
 - (id)commandHistory;
 - (void)commandHistoryChanged:(id)arg1;
@@ -35,10 +39,10 @@
 - (void)dealloc;
 - (void)didLoadCommandHistory:(id)arg1;
 - (void)documentWasSaved;
-- (BOOL)hasCommands;
+- (bool)hasCommands;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isDocumentEditedSinceLastSave;
+- (bool)isDocumentEditedSinceLastSave;
 - (id)newCommandHistoryReference;
 - (id)newCommandSelectionBehaviorHistoryReference;
 - (void)saveToArchiver:(id)arg1;

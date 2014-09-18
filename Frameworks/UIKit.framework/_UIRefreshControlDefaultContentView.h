@@ -5,8 +5,6 @@
 @class NSMutableDictionary, UIActivityIndicatorView, UIImageView, UILabel;
 
 @interface _UIRefreshControlDefaultContentView : _UIRefreshControlContentView {
-    BOOL _animationsAreValid;
-    BOOL _areAnimationsValid;
     UIImageView *_arrow;
     UIImageView *_imageView;
     NSMutableDictionary *_snappingArrowFromValues;
@@ -14,9 +12,11 @@
     NSMutableDictionary *_snappingTextFromValues;
     UIActivityIndicatorView *_spinner;
     UILabel *_textLabel;
+    bool_animationsAreValid;
+    bool_areAnimationsValid;
 }
 
-@property BOOL areAnimationsValid;
+@property bool areAnimationsValid;
 @property(readonly) UIImageView * arrow;
 @property(readonly) UIImageView * imageView;
 @property(readonly) UIActivityIndicatorView * spinner;
@@ -24,7 +24,7 @@
 
 - (double)_currentTimeOffset;
 - (void)_fadeInMagic;
-- (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
+- (double)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
 - (void)_refreshingMagic;
 - (id)_regenerateArrow;
 - (id)_regenerateCircle;
@@ -36,23 +36,23 @@
 - (double)_snappingTimeOffset;
 - (void)_spinOutMagic;
 - (void)_updateTimeOffsetOfRelevantLayers;
-- (BOOL)areAnimationsValid;
+- (bool)areAnimationsValid;
 - (id)arrow;
 - (id)attributedTitle;
 - (void)dealloc;
 - (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)maximumSnappingHeight;
-- (float)minimumSnappingHeight;
+- (double)maximumSnappingHeight;
+- (double)minimumSnappingHeight;
 - (void)refreshControlInvalidatedSnappingHeight;
-- (void)setAreAnimationsValid:(BOOL)arg1;
+- (void)setAreAnimationsValid:(bool)arg1;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)spinner;
-- (int)style;
+- (long long)style;
 - (id)textLabel;
 - (void)willTransitionFromState:(int)arg1 toState:(int)arg2;
 

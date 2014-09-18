@@ -6,242 +6,257 @@
 
 @interface SCRCGestureFactory : NSObject {
     struct { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
         } size; 
     struct SCRCFingerState { 
-        unsigned int identifier; 
+        unsigned long long identifier; 
         int xDirection; 
         int yDirection; 
         struct SCRCMathAverageValue { 
             unsigned int samples; 
-            float fifo[50]; 
+            double fifo[50]; 
             int fifoIndex; 
-            float sum; 
-            float average; 
-            float current; 
+            double sum; 
+            double average; 
+            double current; 
         } velocity; 
         struct SCRCMathAverageValue { 
             unsigned int samples; 
-            float fifo[50]; 
+            double fifo[50]; 
             int fifoIndex; 
-            float sum; 
-            float average; 
-            float current; 
+            double sum; 
+            double average; 
+            double current; 
         } slopeRise; 
         struct SCRCMathAverageValue { 
             unsigned int samples; 
-            float fifo[50]; 
+            double fifo[50]; 
             int fifoIndex; 
-            float sum; 
-            float average; 
-            float current; 
+            double sum; 
+            double average; 
+            double current; 
         } slopeRun; 
         struct SCRCMathAverageValue { 
             unsigned int samples; 
-            float fifo[50]; 
+            double fifo[50]; 
             int fifoIndex; 
-            float sum; 
-            float average; 
-            float current; 
+            double sum; 
+            double average; 
+            double current; 
         } distance; 
-        float velocityDistance; 
-        BOOL dragStalled; 
+        double velocityDistance; 
+        booldragStalled; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } startPoint; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } lastPoint; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } lastDownPoint; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct { 
         id track; 
         id tap; 
         id gutterUp; 
         id splitTap; 
+        id canSplitTap; 
     struct { 
-        BOOL down; 
-        BOOL dead; 
-        BOOL gutter; 
-        unsigned int current; 
-        unsigned int digits; 
-        unsigned int count; 
+        booldown; 
+        booldead; 
+        boolgutter; 
+        unsigned long long current; 
+        unsigned long long digits; 
+        unsigned long long count; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } frame; 
         struct CGPoint { 
-            float x; 
-            float y; 
-        } location[5]; 
+            double x; 
+            double y; 
+        } location[8]; 
         struct CGPoint { 
-            float x; 
-            float y; 
-        } locationPerTap[5]; 
-        unsigned int digitsPerTap; 
+            double x; 
+            double y; 
+        } locationPerTap[8]; 
+        unsigned long long digitsPerTap; 
         double thisTime; 
         double lastTime; 
     struct { 
         SCRCGestureFactory *factory; 
-        BOOL isSplitting; 
-        BOOL isTapping; 
-        BOOL fastTrack; 
-        BOOL tapDead; 
-        BOOL timedOut; 
-        BOOL active; 
-        unsigned int fingerIdentifier; 
+        boolisSplitting; 
+        boolisTapping; 
+        boolfastTrack; 
+        booltapDead; 
+        booltimedOut; 
+        boolactive; 
+        unsigned long long fingerIdentifier; 
         double fingerDownTime; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } startTapLocation; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } lastTapLocation; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } primaryFingerLocation; 
-        float tapDistance; 
+        double tapDistance; 
         int state; 
-    unsigned int _absoluteFingerCount;
+    unsigned long long _absoluteFingerCount;
     } _axisFlipper;
     } _delegate;
     int _direction;
-    float _directionalSlope;
+    double _directionalSlope;
     int _directions[7];
-    float _distance;
+    double _distance;
     double _echoWaitTime;
     unsigned short _fingerCount;
     } _finger[2];
-    float _flickVelocityThreshold;
+    double _flickVelocityThreshold;
     } _gutterFrame;
     SCRCTargetSelectorTimer *_gutterUpTimer;
-    float _lastDegrees;
+    double _lastDegrees;
     double _lastDownTime;
     unsigned short _lastFingerCount;
     double _lastGutterDownTime;
     double _lastTime;
     } _mainFrame;
-    float _maxDimension;
+    double _maxDimension;
     int _orientation;
     int _previousState;
     double _requireDelayBeforeTracking;
-    BOOL _requireUp;
-    float _scaledTrackingDistance;
-    BOOL _setTrackingTimer;
+    double _scaledTrackingDistance;
     } _split;
-    float _stallDistance;
-    float _startDegrees;
-    float _startDistance;
-    BOOL _startedInGutter;
+    double _stallDistance;
+    double _startDegrees;
+    double _startDistance;
     int _state;
     } _tap;
-    unsigned int _tapCount;
+    unsigned long long _tapCount;
     } _tapFrame;
     } _tapMultiFrame;
+    } _tapSpeedRegion;
     SCRCTargetSelectorTimer *_tapTimer;
     double _tapVelocityThreshold;
-    float _thumbRegion;
-    float _thumbRejectionDistance;
-    BOOL _thumbRejectionEnabled;
+    double _tapVelocityThresholdForRegion;
+    double _thumbRegion;
+    double _thumbRejectionDistance;
     SCRCTargetSelectorTimer *_trackingTimer;
+    bool_inTapSpeedRegionForDownEvent;
+    bool_requireUp;
+    bool_setTrackingTimer;
+    bool_startedInGutter;
+    bool_thumbRejectionEnabled;
 }
 
-@property BOOL thumbRejectionEnabled;
+@property bool thumbRejectionEnabled;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_currentTapRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_currentTapRect;
 - (void)_down:(id)arg1;
 - (void)_drag:(id)arg1;
 - (void)_enterTrackingMode:(id)arg1;
 - (void)_handleGutterUp;
-- (BOOL)_handleSplitEvent:(id)arg1;
-- (BOOL)_handleSplitTap;
+- (bool)_handleSplitEvent:(id)arg1;
+- (bool)_handleSplitTap;
 - (void)_handleTap;
-- (void)_processUpAndPost:(BOOL)arg1;
+- (void)_processUpAndPost:(bool)arg1;
 - (void)_up;
 - (void)_updateMultiTapFrame;
-- (void)_updateStartWithPoint:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
+- (void)_updateStartWithPoint:(struct CGPoint { double x1; double x2; })arg1 time:(double)arg2;
 - (void)_updateTapState;
-- (unsigned int)absoluteFingerCount;
+- (unsigned long long)absoluteFingerCount;
 - (void)dealloc;
 - (int)direction;
-- (float)directionalSlope;
-- (float)distance;
-- (struct CGPoint { float x1; float x2; })endLocation;
-- (unsigned int)fingerCount;
-- (float)flickSpeed;
+- (double)directionalSlope;
+- (double)distance;
+- (struct CGPoint { double x1; double x2; })endLocation;
+- (unsigned long long)fingerCount;
+- (double)flickSpeed;
 - (int)gestureState;
 - (id)gestureStateString;
 - (void)handleGestureEvent:(id)arg1;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2 threadKey:(id)arg3;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mainFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })multiTapFrame;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 delegate:(id)arg2 threadKey:(id)arg3;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 delegate:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })mainFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })multiTapFrame;
 - (int)orientation;
-- (struct CGPoint { float x1; float x2; })rawLocation;
+- (struct CGPoint { double x1; double x2; })rawAverageLocation;
+- (struct CGPoint { double x1; double x2; })rawLocation;
 - (void)reset;
-- (void)setFlickSpeed:(float)arg1;
+- (void)setFlickSpeed:(double)arg1;
 - (void)setOrientation:(int)arg1;
-- (void)setTapSpeed:(float)arg1;
-- (void)setThumbRejectionEnabled:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })startLocation;
-- (unsigned int)tapCount;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tapFrame;
+- (void)setTapSpeed:(double)arg1;
+- (void)setTapSpeedTimeThreshold:(double)arg1 forRegion:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setThumbRejectionEnabled:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })startLocation;
+- (unsigned long long)tapCount;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })tapFrame;
 - (double)tapInterval;
-- (BOOL)tapIsDown;
-- (struct CGPoint { float x1; float x2; })tapPoint;
-- (struct CGPoint { float x1; float x2; })tapPointWeightedToSides;
-- (float)tapSpeed;
-- (BOOL)thumbRejectionEnabled;
-- (float)vector;
-- (float)velocity;
+- (bool)tapIsDown;
+- (struct CGPoint { double x1; double x2; })tapPoint;
+- (struct CGPoint { double x1; double x2; })tapPointWeightedToSides;
+- (double)tapSpeed;
+- (bool)thumbRejectionEnabled;
+- (double)vector;
+- (double)velocity;
 
 @end

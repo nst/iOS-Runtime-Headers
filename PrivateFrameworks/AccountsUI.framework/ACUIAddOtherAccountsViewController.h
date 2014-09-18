@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
+@class NSString;
+
 @interface ACUIAddOtherAccountsViewController : PSListController <ACUISetupViewControllerDelegate> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)_specifiersForOtherCalendarAccounts;
 - (id)_specifiersForOtherContactsAccounts;

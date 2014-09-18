@@ -11,20 +11,26 @@
 @interface QLPreviewRemoteItem : NSObject <QLPreviewItem> {
     id _completionBlock;
     QLServicePreviewContentController *_contentController;
-    int _index;
+    long long _index;
     QLPreviewItemProxy *_proxy;
-    BOOL _resolving;
+    bool_resolving;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSURL * previewItemURL;
 @property(readonly) QLPreviewItemProxy * proxy;
+@property(readonly) Class superclass;
 
 - (void)_clearCompletionBlock;
+- (double)autoPlaybackPosition;
 - (void)dealloc;
 - (id)description;
-- (id)initWithContentController:(id)arg1 index:(int)arg2;
+- (id)initWithContentController:(id)arg1 index:(long long)arg2;
 - (void)invalidate;
+- (bool)isPromisedItem;
 - (id)previewItemContentType;
 - (id)previewItemTitle;
 - (id)previewItemURL;

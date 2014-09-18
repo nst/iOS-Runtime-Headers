@@ -8,15 +8,14 @@
     SUGradient *_backgroundGradient;
     SUGradient *_defaultBackgroundGradient;
     SUGradientView *_gradientView;
-    BOOL _hideLoadingView;
     SULoadingView *_loadingView;
-    BOOL _shouldShowLoadingView;
+    bool_hideLoadingView;
 }
 
 @property(copy) SUGradient * backgroundGradient;
 @property(copy) SUGradient * defaultBackgroundGradient;
 @property(readonly) SULoadingView * loadingView;
-@property BOOL shouldShowLoadingView;
+@property bool shouldShowLoadingView;
 
 - (void)_bagDidLoadNotification:(id)arg1;
 - (id)_copyActiveGradient;
@@ -34,9 +33,9 @@
 - (void)parentViewControllerHierarchyDidChange;
 - (void)setBackgroundGradient:(id)arg1;
 - (void)setDefaultBackgroundGradient:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
+- (void)setLoading:(bool)arg1;
 - (void)setScriptProperties:(id)arg1;
-- (void)setShouldShowLoadingView:(BOOL)arg1;
-- (BOOL)shouldShowLoadingView;
+- (void)setShouldShowLoadingView:(bool)arg1;
+- (bool)shouldShowLoadingView;
 
 @end

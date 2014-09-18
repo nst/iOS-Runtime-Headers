@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CLGeocoder, CLLocationManager, EKReminderLocationItem, NSArray, NSMutableArray;
+@class CLGeocoder, CLLocationManager, EKReminderLocationItem, NSArray, NSMutableArray, NSString;
 
 @interface EKReminderLocationPickerModel : NSObject <CLLocationManagerDelegate> {
     void *_addressBook;
@@ -10,24 +10,28 @@
     EKReminderLocationItem *_customLocationItem;
     struct __CFArray { } *_delegates;
     CLGeocoder *_geocoder;
-    BOOL _isReverseGeocoding;
-    BOOL _isReverseGeocodingQueued;
     EKReminderLocationItem *_itemBeingGeocoded;
     NSMutableArray *_itemsQueuedForGeocoding;
     NSArray *_locationItemsForMe;
     CLLocationManager *_locationManager;
-    BOOL _meCardIsSet;
-    BOOL _needsUpdate;
     int _operationCount;
     int _selectedItemType;
-    int _selectedMeCardItem;
+    long long _selectedMeCardItem;
+    bool_isReverseGeocoding;
+    bool_isReverseGeocodingQueued;
+    bool_meCardIsSet;
+    bool_needsUpdate;
 }
 
 @property(readonly) void* addressBook;
 @property(readonly) EKReminderLocationItem * currentLocationItem;
 @property(retain) EKReminderLocationItem * customLocationItem;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) EKReminderLocationItem * itemBeingGeocoded;
-@property(readonly) BOOL meCardIsSet;
+@property(readonly) bool meCardIsSet;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginOperation;
@@ -37,14 +41,14 @@
 - (void)_didEncounterError:(id)arg1;
 - (void)_didUpdateCurrentLocationItem;
 - (void)_didUpdateCustomLocationItem;
-- (void)_didUpdateMeCardItem:(int)arg1;
+- (void)_didUpdateMeCardItem:(long long)arg1;
 - (void)_endOperation;
 - (void)_endUpdatingCurrentLocation;
 - (void)_geocodeItem:(id)arg1;
 - (void)_giveUpGettingCurrentLocation;
 - (void)_handleCompletedGeocodeWithPlacemarks:(id)arg1 error:(id)arg2;
 - (void)_handleGeocodingAllItems;
-- (BOOL)_isGeocoding;
+- (bool)_isGeocoding;
 - (void)_killTimer;
 - (void)_reverseGeocodeCurrentLocation;
 - (void)_startNextGeocoderOperation;
@@ -56,25 +60,25 @@
 - (id)customLocationItem;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCurrentLocationSelected;
-- (BOOL)isCustomLocationSelected;
+- (bool)isCurrentLocationSelected;
+- (bool)isCustomLocationSelected;
 - (id)itemBeingGeocoded;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (BOOL)meCardIsSet;
-- (id)meCardItemAtIndex:(int)arg1;
-- (int)numberOfMeCardItems;
-- (int)numberOfPossibleLocationItems;
+- (bool)meCardIsSet;
+- (id)meCardItemAtIndex:(long long)arg1;
+- (long long)numberOfMeCardItems;
+- (long long)numberOfPossibleLocationItems;
 - (void)reloadMeCardLocationItems;
 - (void)removeDelegate:(id)arg1;
 - (void)selectCurrentLocation;
 - (void)selectCustomLocation;
 - (void)selectLocation:(id)arg1 withAddressDictionary:(id)arg2;
 - (void)selectLocation:(id)arg1;
-- (void)selectMeCardItem:(int)arg1;
+- (void)selectMeCardItem:(long long)arg1;
 - (id)selectedLocationItem;
-- (int)selectedMeCardItem;
+- (long long)selectedMeCardItem;
 - (void)setCustomLocation:(id)arg1 withAddressDictionary:(id)arg2;
 - (void)setCustomLocationItem:(id)arg1;
 - (void)setItemBeingGeocoded:(id)arg1;

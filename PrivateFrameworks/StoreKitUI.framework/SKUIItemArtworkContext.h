@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, SKUIColorScheme, SKUIIconDataConsumer, SKUINewsstandImageDataConsumer, SKUIProductImageDataConsumer, UIColor;
+@class NSMutableDictionary, SKUIColorScheme, SKUIProductImageDataConsumer, SKUIStyledImageDataConsumer, UIColor;
 
 @interface SKUIItemArtworkContext : NSObject {
     UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
     SKUIProductImageDataConsumer *_generalImageConsumer;
-    SKUIIconDataConsumer *_iconConsumer;
+    SKUIStyledImageDataConsumer *_iconConsumer;
     SKUIProductImageDataConsumer *_letterboxConsumer;
-    SKUINewsstandImageDataConsumer *_newsstandConsumer;
+    SKUIStyledImageDataConsumer *_newsstandConsumer;
     NSMutableDictionary *_placeholders;
     SKUIProductImageDataConsumer *_posterConsumer;
 }
@@ -18,12 +18,12 @@
 @property(retain) UIColor * backgroundColor;
 @property(retain) SKUIColorScheme * colorScheme;
 @property(retain) SKUIProductImageDataConsumer * generalConsumer;
-@property(retain) SKUIIconDataConsumer * iconConsumer;
+@property(retain) SKUIStyledImageDataConsumer * iconConsumer;
 @property(retain) SKUIProductImageDataConsumer * letterboxConsumer;
-@property(retain) SKUINewsstandImageDataConsumer * newsstandConsumer;
+@property(retain) SKUIStyledImageDataConsumer * newsstandConsumer;
 @property(retain) SKUIProductImageDataConsumer * posterConsumer;
 
-+ (id)lockupContextWithSize:(int)arg1;
++ (id)lockupContextWithSize:(long long)arg1;
 + (id)roomContext;
 + (id)wishlistContext;
 
@@ -35,9 +35,9 @@
 - (id)dataConsumerForItem:(id)arg1;
 - (id)generalConsumer;
 - (id)iconConsumer;
-- (struct CGSize { float x1; float x2; })imageSizeForItem:(id)arg1;
-- (struct CGSize { float x1; float x2; })largestImageSizeForItems:(id)arg1;
-- (struct CGSize { float x1; float x2; })largestImageSizeForLockups:(id)arg1;
+- (struct CGSize { double x1; double x2; })imageSizeForItem:(id)arg1;
+- (struct CGSize { double x1; double x2; })largestImageSizeForItems:(id)arg1;
+- (struct CGSize { double x1; double x2; })largestImageSizeForLockups:(id)arg1;
 - (id)letterboxConsumer;
 - (id)newsstandConsumer;
 - (id)placeholderImageForItem:(id)arg1;

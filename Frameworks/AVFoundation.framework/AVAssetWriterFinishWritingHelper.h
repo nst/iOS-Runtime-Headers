@@ -15,9 +15,9 @@
 - (void)cancelWriting;
 - (void)dealloc;
 - (void)finalize;
-- (void)finishOperationCompletedSuccessfully:(BOOL)arg1 withError:(id)arg2;
+- (void)finishOperationCompletedSuccessfully:(bool)arg1 withError:(id)arg2;
 - (id)initWithConfigurationState:(id)arg1 figAssetWriter:(struct OpaqueFigAssetWriter { }*)arg2 delegate:(id)arg3;
 - (void)performFinishOperation;
-- (int)status;
+- (long long)status;
 
 @end

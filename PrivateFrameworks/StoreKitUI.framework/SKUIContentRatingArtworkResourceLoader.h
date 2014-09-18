@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSHashTable, NSMapTable, SKUIImageDataConsumer, SKUIResourceLoader, UIImage;
+@class NSHashTable, NSMapTable, NSString, SKUIImageDataConsumer, SKUIResourceLoader, UIImage;
 
 @interface SKUIContentRatingArtworkResourceLoader : NSObject <SKUIArtworkRequestDelegate> {
     NSMapTable *_artworkRequestIDs;
@@ -13,9 +13,13 @@
 }
 
 @property(readonly) SKUIResourceLoader * artworkLoader;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) SKUIImageDataConsumer * imageDataConsumer;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
+@property(readonly) struct CGSize { double x1; double x2; } imageSize;
 @property(readonly) UIImage * placeholderImage;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_loadImage:(id)arg1;
@@ -25,10 +29,10 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)cachedImageForContentRating:(id)arg1 withClientContext:(id)arg2;
 - (id)imageDataConsumer;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)init;
 - (id)initWithArtworkLoader:(id)arg1;
-- (void)loadImageForContentRating:(id)arg1 clientContent:(id)arg2 reason:(int)arg3;
+- (void)loadImageForContentRating:(id)arg1 clientContent:(id)arg2 reason:(long long)arg3;
 - (id)placeholderImage;
 - (void)removeObserver:(id)arg1;
 - (void)setImageDataConsumer:(id)arg1;

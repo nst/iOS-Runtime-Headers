@@ -6,6 +6,7 @@
     int mType;
 }
 
+- (id)description;
 - (id)equivalentCustomGeometry;
 - (id)escherEquivalentCustomGeometry;
 - (id)oa12EquivalentCustomGeometry;

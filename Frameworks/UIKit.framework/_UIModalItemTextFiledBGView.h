@@ -8,21 +8,21 @@
     UIColor *_backgroundColor;
     UIView *_separatorView;
     UIColor *_separatorsColor;
-    int _textFieldsCount;
+    long long _textFieldsCount;
 }
 
 @property(retain) UIColor * backgroundColor;
 @property(retain) UIColor * separatorsColor;
-@property int textFieldsCount;
+@property long long textFieldsCount;
 
 - (id)backgroundColor;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)separatorsColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setSeparatorsColor:(id)arg1;
-- (void)setTextFieldsCount:(int)arg1;
-- (int)textFieldsCount;
+- (void)setTextFieldsCount:(long long)arg1;
+- (long long)textFieldsCount;
 
 @end

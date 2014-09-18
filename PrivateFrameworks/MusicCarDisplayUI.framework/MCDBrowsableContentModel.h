@@ -13,7 +13,7 @@
     NSObject<OS_dispatch_queue> *_serialAccessQueue;
 }
 
-@property(readonly) NSString * bundleID;
+@property(copy,readonly) NSString * bundleID;
 
 - (void).cxx_destruct;
 - (void)_contentItemsUpdated:(id)arg1;
@@ -26,14 +26,14 @@
 - (id)contentItemForIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)fetchChildrenAtIndexPath:(id)arg1 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 completionHandler:(id)arg3;
+- (void)fetchChildrenAtIndexPath:(id)arg1 forRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 completionHandler:(id)arg3;
 - (void)getCountOfItemsForIndexPath:(id)arg1 completionHandler:(id)arg2;
 - (id)initWithBundleID:(id)arg1;
 - (void)initiatePlaybackAtIndexPath:(id)arg1;
 - (id)listenerForIndexPath:(id)arg1;
 - (void)loadBrowsableContentForIndexPath:(id)arg1;
 - (void)registerListener:(id)arg1 forIndexPath:(id)arg2;
-- (BOOL)remoteAppIsPlaying;
+- (bool)remoteAppIsPlaying;
 - (void)unregisterListenerAtIndexPath:(id)arg1;
 
 @end

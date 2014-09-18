@@ -21,7 +21,7 @@
 @property(retain) NSDictionary * mstreamdInfoDictionary;
 
 + (void)deleteSharedCommentFromServer:(id)arg1;
-+ (id)directoryPathForInFlightComments:(BOOL)arg1;
++ (id)directoryPathForInFlightComments:(bool)arg1;
 + (void)locallyProcessAddedComments:(id)arg1 assetGUID:(id)arg2 albumGUID:(id)arg3 info:(id)arg4;
 + (void)locallyProcessDeletedComments:(id)arg1 info:(id)arg2;
 + (void)publishCommentToServer:(id)arg1;
@@ -36,7 +36,7 @@
 - (void)executeDeleteCommentFromServer;
 - (void)executeProcessServerNotificationOfCommentChanges;
 - (void)executePublishCommentToServer;
-- (id)initFromXPCObject:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (long long)jobType;
 - (id)msASComments;
 - (id)mstreamdInfoDictionary;
@@ -48,6 +48,6 @@
 - (void)setJobType:(long long)arg1;
 - (void)setMsASComments:(id)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;
-- (BOOL)shouldArchiveXPCToDisk;
+- (bool)shouldArchiveXPCToDisk;
 
 @end

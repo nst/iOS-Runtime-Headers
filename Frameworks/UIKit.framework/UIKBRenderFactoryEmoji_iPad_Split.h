@@ -8,7 +8,7 @@
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
-- (float)keyCornerRadius;
+- (double)keyCornerRadius;
 - (id)lightKeycapsFontName;
 - (id)thinKeycapsFontName;
 

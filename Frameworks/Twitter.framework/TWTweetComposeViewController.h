@@ -7,18 +7,18 @@
 
 @property(copy) id completionHandler;
 
-+ (BOOL)canSendTweet;
++ (bool)canSendTweet;
 
 - (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
-- (BOOL)addImage:(id)arg1;
-- (BOOL)addURL:(id)arg1;
+- (bool)addImage:(id)arg1;
+- (bool)addURL:(id)arg1;
 - (id)addURLWithProxyPreviewImage:(id)arg1;
 - (id)completionHandler;
 - (id)init;
-- (BOOL)removeAllImages;
-- (BOOL)removeAllURLs;
+- (bool)removeAllImages;
+- (bool)removeAllURLs;
 - (void)setCompletionHandler:(id)arg1;
-- (BOOL)setInitialText:(id)arg1;
+- (bool)setInitialText:(id)arg1;
 - (void)setLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3;
 
 @end

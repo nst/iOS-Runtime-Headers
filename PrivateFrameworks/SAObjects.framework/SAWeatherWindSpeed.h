@@ -7,6 +7,10 @@
 @interface SAWeatherWindSpeed : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(copy) NSString * value;
 @property(copy) NSString * windDirection;
 @property(copy) NSNumber * windDirectionDegree;

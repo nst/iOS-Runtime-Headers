@@ -8,15 +8,19 @@
     NSNumber *_accountIdentifier;
     NSString *_environmentName;
     NSMutableDictionary *_parameterDictionary;
-    int _requestType;
+    long long _requestType;
 }
 
 @property(copy) NSNumber * accountIdentifier;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * environmentName;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * mediaKinds;
 @property(copy) NSString * notificationType;
 @property(copy) NSDictionary * putParameters;
-@property int requestType;
+@property long long requestType;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_copyParametersDictionary;
@@ -29,13 +33,13 @@
 - (id)mediaKinds;
 - (id)notificationType;
 - (id)putParameters;
-- (int)requestType;
+- (long long)requestType;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setEnvironmentName:(id)arg1;
 - (void)setMediaKinds:(id)arg1;
 - (void)setNotificationType:(id)arg1;
 - (void)setPutParameters:(id)arg1;
-- (void)setRequestType:(int)arg1;
+- (void)setRequestType:(long long)arg1;
 - (void)setValue:(id)arg1 forParameter:(id)arg2;
 - (id)valueForParameter:(id)arg1;
 

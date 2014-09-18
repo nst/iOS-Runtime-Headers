@@ -5,10 +5,8 @@
 @interface GEOETAProvider : NSObject {
 }
 
-+ (unsigned short)providerID;
-
 - (void)cancelRequest;
-- (void)startRequest:(id)arg1 connectionProperties:(const struct { unsigned int x1; double x2; unsigned int x3; }*)arg2 willSendRequest:(id)arg3 finished:(id)arg4 error:(id)arg5;
+- (void)startRequest:(id)arg1 connectionProperties:(const struct { unsigned long long x1; double x2; unsigned long long x3; }*)arg2 willSendRequest:(id)arg3 finished:(id)arg4 error:(id)arg5;
 - (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)startSimpleETARequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 - (void)updateRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;

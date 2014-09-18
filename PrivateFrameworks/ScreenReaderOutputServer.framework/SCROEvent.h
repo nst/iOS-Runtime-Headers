@@ -9,8 +9,8 @@
     NSMutableArray *_callbacks;
     NSMutableDictionary *_getDictionary;
     int _handlerType;
-    BOOL _readOnly;
     NSMutableDictionary *_setDictionary;
+    bool_readOnly;
 }
 
 + (id)brailleEvent;
@@ -21,7 +21,7 @@
 - (int)handlerType;
 - (id)initForHandlerType:(int)arg1;
 - (id)mainDictionary;
-- (void)performWithHandler:(id)arg1 trusted:(BOOL)arg2;
+- (void)performWithHandler:(id)arg1 trusted:(bool)arg2;
 - (void)requestPerformActionForKey:(int)arg1;
 - (void)requestRegisterCallbackForKey:(int)arg1;
 - (void)requestSetValue:(id)arg1 forKey:(int)arg2;

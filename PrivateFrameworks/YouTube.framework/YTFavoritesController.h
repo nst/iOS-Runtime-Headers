@@ -13,14 +13,14 @@
     <YTFavoritesControllerDelegate> *_mergeBookmarksDelegate;
     NSMutableArray *_mergedFavorites;
     NSMutableArray *_pendingFavoritesShortIDs;
-    BOOL _shouldOfferMergeOfLocalBookmarks;
-    BOOL _usingAccountFavorites;
+    bool_shouldOfferMergeOfLocalBookmarks;
+    bool_usingAccountFavorites;
 }
 
 + (id)sharedFavoritesController;
 
 - (void)YTAuthenticatedAccountPost:(id)arg1 didFinishWithType:(int)arg2 error:(id)arg3;
-- (void)_bookmarksDidChangeNotifyObservers:(BOOL)arg1;
+- (void)_bookmarksDidChangeNotifyObservers:(bool)arg1;
 - (void)_loadBookmarks;
 - (void)_processNextPendingFavoritesBatch;
 - (void)_saveBookmarks;
@@ -38,9 +38,9 @@
 - (void)saveBookmarksIfNeeded;
 - (void)searchRequestReturnedVideos:(id)arg1;
 - (void)setBatchURL:(id)arg1;
-- (void)setLocalBookmarksMergeOffered:(BOOL)arg1;
-- (void)setUsingAccountFavorites:(BOOL)arg1;
-- (BOOL)shouldOfferMergeOfLocalBookmarks;
-- (BOOL)usingAccountFavorites;
+- (void)setLocalBookmarksMergeOffered:(bool)arg1;
+- (void)setUsingAccountFavorites:(bool)arg1;
+- (bool)shouldOfferMergeOfLocalBookmarks;
+- (bool)usingAccountFavorites;
 
 @end

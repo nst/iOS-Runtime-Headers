@@ -19,11 +19,12 @@
 - (void)affect:(id)arg1 states:(id)arg2 scene:(id)arg3 texturePool:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithArchive:(const struct Chart3DEnvironmentPackageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::Chart3DEnvironmentMaterialArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)materialCount;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)materialCount;
 - (id)materialEnumerator;
 - (void)saveToArchive:(struct Chart3DEnvironmentPackageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSCH::Chart3DEnvironmentMaterialArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
 

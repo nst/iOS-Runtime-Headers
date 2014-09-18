@@ -25,11 +25,12 @@
 
 - (void)createSupportedBitrateRuleSets;
 - (void)dealloc;
-- (id)init;
+- (id)initWithDeviceRole:(int)arg1;
 - (unsigned int)maxAllowedAudioOnlyBitrateForConnection:(int)arg1;
 - (unsigned int)maxAllowedBitrate2G;
 - (unsigned int)maxAllowedBitrate3G;
 - (unsigned int)maxAllowedBitrate;
+- (unsigned int)maxAllowedBitrateForConnection:(int)arg1 operatingMode:(int)arg2;
 - (unsigned int)maxAllowedBitrateForConnection:(int)arg1;
 - (unsigned int)maxAllowedBitrateLTE;
 - (id)maxAllowedBitrateRuleForConnection:(int)arg1;

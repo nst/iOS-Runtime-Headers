@@ -27,7 +27,7 @@
 - (long long)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
-- (id)initFromXPCObject:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (id)photoLibrary;
 - (void)run;
 - (void)runDaemonSide;

@@ -5,33 +5,33 @@
 @class TPPaginatedPageInfo;
 
 @interface TPMarginAdjustRep : TSDRep {
-    BOOL _bottomKnobEncroachingFooter;
-    BOOL _hideKnobs;
-    float _minBottomMargin;
-    float _minTopMargin;
-    BOOL _topKnobEncroachingHeader;
+    double _minBottomMargin;
+    double _minTopMargin;
+    bool_bottomKnobEncroachingFooter;
+    bool_hideKnobs;
+    bool_topKnobEncroachingHeader;
 }
 
-@property BOOL hideKnobs;
-@property float minBottomMargin;
-@property float minTopMargin;
+@property bool hideKnobs;
+@property double minBottomMargin;
+@property double minTopMargin;
 @property(readonly) TPPaginatedPageInfo * pageInfo;
 
 - (void)addKnobsToArray:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)directlyManagesLayerContent;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)directlyManagesLayerContent;
 - (void)dynamicallyResizingWithTracker:(id)arg1;
-- (BOOL)hideKnobs;
-- (void)hideKnobsEncroachingHeader:(float)arg1 orFooter:(float)arg2;
-- (float)minBottomMargin;
-- (float)minTopMargin;
+- (bool)hideKnobs;
+- (void)hideKnobsEncroachingHeader:(double)arg1 orFooter:(double)arg2;
+- (double)minBottomMargin;
+- (double)minTopMargin;
 - (id)pageInfo;
-- (void)setHideKnobs:(BOOL)arg1;
-- (void)setMinBottomMargin:(float)arg1;
-- (void)setMinTopMargin:(float)arg1;
-- (BOOL)shouldCreateKnobs;
+- (void)setHideKnobs:(bool)arg1;
+- (void)setMinBottomMargin:(double)arg1;
+- (void)setMinTopMargin:(double)arg1;
+- (bool)shouldCreateKnobs;
 - (void)updateFromLayout;
-- (BOOL)wantsGuidesWhileResizing;
+- (bool)wantsGuidesWhileResizing;
 
 @end

@@ -2,36 +2,41 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAudioAndSubtitlesControllerDelegate>, MPAVItem, MPAlternateTrack, UITableView;
+@class <MPAudioAndSubtitlesControllerDelegate>, MPAVItem, MPAlternateTrack, NSString, UITableView;
 
 @interface MPAudioAndSubtitlesController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     MPAVItem *_avItem;
     <MPAudioAndSubtitlesControllerDelegate> *_delegate;
-    BOOL _hasAudio;
-    BOOL _hasSubtitles;
     MPAlternateTrack *_newAudioTrack;
     MPAlternateTrack *_newSubtitleTrack;
     MPAlternateTrack *_originalAudioTrack;
     MPAlternateTrack *_originalSubtitleTrack;
     UITableView *_tableView;
+    bool_hasAudio;
+    bool_hasSubtitles;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <MPAudioAndSubtitlesControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_applyChanges;
 - (void)_doneButtonTapped:(id)arg1;
 - (id)_trackAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithAVItem:(id)arg1;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 
 @end

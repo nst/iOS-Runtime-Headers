@@ -9,16 +9,16 @@
     FTCServiceMonitor *_monitor;
 }
 
-@property(readonly) NSMutableSet * listeners;
+@property(retain,readonly) NSMutableSet * listeners;
 @property(retain) FTCServiceMonitor * monitor;
 
-- (BOOL)addListenerID:(id)arg1;
+- (bool)addListenerID:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasListenerID:(id)arg1;
-- (id)initWithServiceType:(int)arg1;
+- (bool)hasListenerID:(id)arg1;
+- (id)initWithServiceType:(long long)arg1;
 - (id)listeners;
 - (id)monitor;
-- (BOOL)removeListenerID:(id)arg1;
+- (bool)removeListenerID:(id)arg1;
 - (void)setMonitor:(id)arg1;
 
 @end

@@ -10,7 +10,7 @@
                     struct __hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowCoordinate>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowCoordinate>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowCoordinate>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -21,7 +21,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowCoordinate>, TSTCellIDHasher, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowCoordinate>, std::__1::equal_to<TSUColumnRowCoordinate>, true> > { 
                 float __first_; 
@@ -34,7 +34,7 @@
                     struct __hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -45,7 +45,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, TSTCellIDHasher, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<TSUColumnRowCoordinate, TSUColumnRowSize>, std::__1::equal_to<TSUColumnRowCoordinate>, true> > { 
                 float __first_; 
@@ -70,20 +70,21 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
-- (BOOL)find:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)find:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)hasRangeSpanningRows;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initRegionMapFromMap:(id)arg1 intersectingRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (id)initRegionMapFromMap:(id)arg1 rowRemapping:(id)arg2;
 - (id)initWithContext:(id)arg1;
-- (BOOL)insert:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)insert:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)iterator;
 - (id)mergedGridIndicesForDimension:(int)arg1;
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergedRangeForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)partiallyIntersectsCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (BOOL)partiallyIntersectsCellRegion:(id)arg1;
-- (BOOL)remove:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)partiallyIntersectsCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)partiallyIntersectsCellRegion:(id)arg1;
+- (bool)remove:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)saveToArchiver:(id)arg1;
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })unionedMergeRange;
 

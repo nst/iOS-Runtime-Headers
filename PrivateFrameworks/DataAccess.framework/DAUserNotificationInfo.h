@@ -15,7 +15,7 @@
 
 @property(copy) NSString * groupIdentifier;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)groupIdentifier;
 - (id)handler;
 - (void)setGroupIdentifier:(id)arg1;

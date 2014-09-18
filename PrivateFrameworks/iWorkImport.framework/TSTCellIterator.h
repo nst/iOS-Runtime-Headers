@@ -10,45 +10,47 @@
         unsigned char column; 
         unsigned char reserved; 
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
+    boolmDontCheckSize;
+    boolmDontExpandCellRefs;
+    boolmDontInflateFormulas;
+    boolmDontReturnMergeRegions;
+    boolmReturnEmptyCells;
+    boolmReturnHiddenCells;
+    boolmSkipCommentStorageOnlyCells;
+    boolmSkipStyleOnlyCells;
     TSTCell *mCell;
     TSTTableTileRowInfo *mCurRow;
     unsigned short mCurRowID;
     TSTTableTile *mCurTile;
     } mCurTileRange;
-    BOOL mDontCheckSize;
-    BOOL mDontExpandCellRefs;
-    BOOL mDontInflateFormulas;
-    BOOL mDontReturnMergeRegions;
     TSTCellRegion *mModelRegion;
     struct NSObject { Class x1; } *mModelRegionIterator;
     } mPreviousCellID;
-    BOOL mReturnEmptyCells;
-    BOOL mReturnHiddenCells;
     int mRowWalkDirection;
-    BOOL mSkipCommentStorageOnlyCells;
-    BOOL mSkipStyleOnlyCells;
     TSTTableDataStore *mTableDataStore;
     TSTTableModel *mTableModel;
 }
 
-@property(readonly) BOOL dontExpandCellRefs;
+@property(readonly) bool dontExpandCellRefs;
 @property(readonly) int rowWalkDirection;
+@property(readonly) TSTTableModel * tableModel;
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (BOOL)dontExpandCellRefs;
-- (BOOL)getNext:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
-- (id)initWithTableModel:(id)arg1 flags:(unsigned long)arg2;
-- (id)initWithTableModel:(id)arg1 range:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 flags:(unsigned long)arg3;
+- (bool)dontExpandCellRefs;
+- (bool)getNext:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; boolx6; boolx7; boolx8; boolx9; boolx10; }*)arg1;
+- (id)initWithTableModel:(id)arg1 flags:(unsigned long long)arg2;
+- (id)initWithTableModel:(id)arg1 range:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 flags:(unsigned long long)arg3;
 - (id)initWithTableModel:(id)arg1 range:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
-- (id)initWithTableModel:(id)arg1 region:(id)arg2 flags:(unsigned long)arg3;
+- (id)initWithTableModel:(id)arg1 region:(id)arg2 flags:(unsigned long long)arg3;
 - (id)initWithTableModel:(id)arg1 region:(id)arg2;
 - (id)initWithTableModel:(id)arg1;
-- (BOOL)p_getData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (void)p_resetIterData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
+- (bool)p_getData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; boolx6; boolx7; boolx8; boolx9; boolx10; }*)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)p_resetIterData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; boolx6; boolx7; boolx8; boolx9; boolx10; }*)arg1;
 - (int)rowWalkDirection;
+- (id)tableModel;
 - (void)terminate;
 
 @end

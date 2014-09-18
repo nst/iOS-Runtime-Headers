@@ -7,7 +7,7 @@
 
 + (id)actionCellConfigurationClasses;
 
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

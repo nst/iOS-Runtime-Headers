@@ -3,14 +3,13 @@
  */
 
 @interface VKResourceManager : NSObject {
+    unsigned int _tileGroupIdentifier;
 }
-
-+ (id)sharedManager;
 
 - (id)_localNameForResourceName:(id)arg1;
 - (id)dataForResourceWithName:(id)arg1;
-- (id)init;
+- (id)initWithTileGroupIdentifier:(unsigned int)arg1;
+- (bool)isDevResourceWithName:(id)arg1;
 - (id)pathForResourceWithName:(id)arg1;
-- (void)purge;
 
 @end

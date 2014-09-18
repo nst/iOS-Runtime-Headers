@@ -2,46 +2,50 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUIPasscodeFieldDelegate>, NSMutableArray, NSMutableString;
+@class <RUIPasscodeFieldDelegate>, NSMutableArray, NSMutableString, NSString;
 
 @interface RUIPasscodeField : UIView <UIKeyInput> {
     NSMutableArray *_dashViews;
     <RUIPasscodeFieldDelegate> *_delegate;
     NSMutableArray *_digitViews;
     NSMutableArray *_dotViews;
-    unsigned int _numberOfEntryFields;
-    BOOL _securePasscodeEntry;
+    unsigned long long _numberOfEntryFields;
     NSMutableString *_stringValue;
+    bool_securePasscodeEntry;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
+@property long long autocapitalizationType;
+@property long long autocorrectionType;
+@property(copy,readonly) NSString * debugDescription;
 @property <RUIPasscodeFieldDelegate> * delegate;
-@property BOOL enablesReturnKeyAutomatically;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property(readonly) unsigned int numberOfEntryFields;
-@property int returnKeyType;
-@property BOOL securePasscodeEntry;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
+@property(copy,readonly) NSString * description;
+@property bool enablesReturnKeyAutomatically;
+@property(readonly) unsigned long long hash;
+@property long long keyboardAppearance;
+@property long long keyboardType;
+@property(readonly) unsigned long long numberOfEntryFields;
+@property long long returnKeyType;
+@property bool securePasscodeEntry;
+@property(getter=isSecureTextEntry) bool secureTextEntry;
+@property long long spellCheckingType;
+@property(readonly) Class superclass;
 
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (id)delegate;
 - (void)deleteBackward;
-- (BOOL)hasText;
-- (id)initWithNumberOfEntryFields:(unsigned int)arg1;
+- (bool)hasText;
+- (id)initWithNumberOfEntryFields:(unsigned long long)arg1;
 - (void)insertText:(id)arg1;
-- (BOOL)isSecureTextEntry;
-- (int)keyboardType;
+- (bool)isSecureTextEntry;
+- (long long)keyboardType;
 - (void)layoutSubviews;
-- (unsigned int)numberOfEntryFields;
-- (BOOL)securePasscodeEntry;
+- (unsigned long long)numberOfEntryFields;
+- (bool)securePasscodeEntry;
 - (void)setDelegate:(id)arg1;
-- (void)setSecurePasscodeEntry:(BOOL)arg1;
-- (void)setSecureTextEntry:(BOOL)arg1;
+- (void)setSecurePasscodeEntry:(bool)arg1;
+- (void)setSecureTextEntry:(bool)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 

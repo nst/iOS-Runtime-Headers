@@ -2,33 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSMutableData, NSMutableURLRequest, NSURLConnection;
-
-@interface WeatherXMLHTTPRequest : NSObject <NSURLConnectionDelegate> {
-    NSURLConnection *_connection;
-    NSMutableData *_rawData;
-    NSMutableURLRequest *_request;
+@interface WeatherXMLHTTPRequest : WeatherHTTPRequest {
 }
-
-@property(readonly) NSURLConnection * connection;
-
-+ (void)appendDebugString:(id)arg1;
-+ (void)saveDebugString;
 
 - (void)_forceRawDataDump:(id)arg1;
 - (id)aggregateDictionaryDomain;
-- (void)cancel;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (id)connection;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)dealloc;
 - (void)didProcessDocument;
 - (void)failWithError:(id)arg1;
-- (id)init;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
 - (void)processDocument:(struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; }*)arg1;
+- (void)request:(id)arg1 receivedResponseData:(id)arg2;
 - (void)willProcessDocument;
 
 @end

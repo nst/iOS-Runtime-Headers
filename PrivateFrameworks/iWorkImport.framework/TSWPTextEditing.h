@@ -5,21 +5,22 @@
 @class TSDInteractiveCanvasController, TSDLayout<TSWPTextEditingHostLayout>, TSPObjectContext, TSWPEditingController, TSWPParagraphStyle, TSWPShapeStyle, TSWPStorage;
 
 @interface TSWPTextEditing : NSObject {
+    TSWPEditingController *_editor;
     TSDLayout<TSWPTextEditingHostLayout> *_hostLayout;
     TSDInteractiveCanvasController *_icc;
-    BOOL _isEditing;
     TSWPParagraphStyle *_paragraphStyle;
     TSWPShapeStyle *_shapeStyle;
     TSWPStorage *_storage;
+    bool_isEditing;
 }
 
 @property(readonly) TSWPEditingController * editor;
-@property(readonly) BOOL isEditing;
+@property(readonly) bool isEditing;
 @property(readonly) TSPObjectContext * objectContext;
 @property(retain) TSWPStorage * storage;
 
-- (void)beginEditingInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 interactiveCanvasController:(id)arg2 layout:(id)arg3 delegate:(id)arg4;
-- (void)beginEditingInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 interactiveCanvasController:(id)arg2 layout:(id)arg3;
+- (void)beginEditingInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 interactiveCanvasController:(id)arg2 layout:(id)arg3 delegate:(id)arg4;
+- (void)beginEditingInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 interactiveCanvasController:(id)arg2 layout:(id)arg3;
 - (void)beginEditingWithViewController:(id)arg1 geometry:(id)arg2;
 - (void)beginEditingWithViewController:(id)arg1 layout:(id)arg2 geometry:(id)arg3 delegate:(id)arg4;
 - (void)dealloc;
@@ -29,7 +30,7 @@
 - (id)initWithParagraphStyle:(id)arg1 shapeStyle:(id)arg2 defaultText:(id)arg3 stylesheet:(id)arg4;
 - (id)initWithParagraphStyle:(id)arg1 shapeStyle:(id)arg2 defaultText:(id)arg3;
 - (id)initWithShapeStyle:(id)arg1 defaultStorage:(id)arg2;
-- (BOOL)isEditing;
+- (bool)isEditing;
 - (id)objectContext;
 - (void)p_editingDidEndNotification:(id)arg1;
 - (void)p_handleEndEditing;

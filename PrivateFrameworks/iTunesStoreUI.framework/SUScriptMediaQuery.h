@@ -8,7 +8,7 @@
     NSArray *_collections;
     NSArray *_filterPredicates;
     NSArray *_items;
-    BOOL _watchingLibrary;
+    bool_watchingLibrary;
 }
 
 @property(readonly) NSArray * collections;

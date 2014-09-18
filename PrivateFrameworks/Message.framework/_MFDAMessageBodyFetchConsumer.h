@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFDAStreamingContentConsumer>, MFError, NSData;
+@class <MFDAStreamingContentConsumer>, MFError, NSData, NSString;
 
 @interface _MFDAMessageBodyFetchConsumer : NSObject <MFRequestQueueResponseConsumer, DAMailAccountStreamConsumerFactory> {
     NSData *_data;
     MFError *_error;
     <MFDAStreamingContentConsumer> *_streamConsumer;
-    BOOL _succeeded;
+    bool_succeeded;
 }
 
 @property(retain) NSData * data;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(retain) MFError * error;
+@property(readonly) unsigned long long hash;
 @property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
-@property(readonly) BOOL succeeded;
+@property(readonly) bool succeeded;
+@property(readonly) Class superclass;
 
 - (id)data;
 - (void)dealloc;
@@ -25,7 +29,7 @@
 - (void)setStreamConsumer:(id)arg1;
 - (id)streamConsumer;
 - (id)streamingContentConsumer;
-- (BOOL)succeeded;
-- (BOOL)wantsData;
+- (bool)succeeded;
+- (bool)wantsData;
 
 @end

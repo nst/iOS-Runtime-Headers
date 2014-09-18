@@ -50,20 +50,20 @@
 - (void)didAddToAnimationClipsWithSceneObject:(id)arg1 scene:(id)arg2 animation:(id)arg3;
 - (void)didGenerateShaderEffectsForSeriesAtIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 effects:(id)arg2 sceneObject:(id)arg3 pipeline:(id)arg4 context:(id)arg5;
 - (id)makeClipEffectAtIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 sceneObject:(id)arg2 scene:(id)arg3;
-- (BOOL)p_canOptimizePositiveOnlyForSceneObject:(id)arg1;
-- (void)p_updateBlendingForAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned int x7; id x8; }*)arg1;
-- (void)p_updateCapScaleForAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned int x7; id x8; }*)arg1;
-- (void)p_updateElementsTimeForAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned int x7; id x8; }*)arg1;
-- (void)renderAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned int x7; id x8; }*)arg1;
+- (bool)p_canOptimizePositiveOnlyForSceneObject:(id)arg1;
+- (void)p_updateBlendingForAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned long long x7; id x8; }*)arg1;
+- (void)p_updateCapScaleForAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned long long x7; id x8; }*)arg1;
+- (void)p_updateElementsTimeForAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned long long x7; id x8; }*)arg1;
+- (void)renderAnimationElementInfo:(const struct ChartAnimationElementInfo { id x1; id x2; float x3; id x4; id x5; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_6_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_6_1_2; } x6; unsigned long long x7; id x8; }*)arg1;
 - (int)renderMethodPoint;
-- (BOOL)renderPassDelayDisallowedForSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
+- (bool)renderPassDelayDisallowedForSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
 - (void)setShaderPerElementBlendRange:(struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })arg1;
 - (void)setShaderPerElementInterpolation:(id)arg1;
 - (void)setShaderPerElementInterpolationRange:(struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })arg1;
 - (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })shaderPerElementBlendRange;
 - (id)shaderPerElementInterpolation;
 - (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })shaderPerElementInterpolationRange;
-- (BOOL)shouldUpdateSeriesElementTimingWithAnyElement;
-- (BOOL)willProcessSeries:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3 context:(id)arg4;
+- (bool)shouldUpdateSeriesElementTimingWithAnyElement;
+- (bool)willProcessSeries:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3 context:(id)arg4;
 
 @end

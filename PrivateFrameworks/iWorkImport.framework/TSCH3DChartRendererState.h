@@ -6,60 +6,59 @@
 
 @interface TSCH3DChartRendererState : NSObject <TSCHUnretainedParent> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    boolmInteractive;
+    boolmIsInteractiveMode;
+    boolmWantInteractiveMode;
     CALayer<TSCH3DGLLayer> *mGLLayer;
     TSCH3DGLLayerDelegate *mGLLayerDelegate;
-    BOOL mInteractive;
-    BOOL mIsInteractiveMode;
-    } mLayerVisibleBounds;
     } mMinimumBufferSize;
     TSCH3DRenderProcessor *mProcessor;
     TSCH3DChartRenderCycle *mRenderCycle;
     TSCH3DChartRep *mRep;
     TSCH3DSession *mSession;
     TSCH3DSharegroupToken *mSharegroupToken;
-    BOOL mWantInteractiveMode;
+    } mVisibleBoundsInLayerRelativeSpace;
 }
 
-@property(readonly) BOOL canRender;
-@property(readonly) BOOL framebufferCanRender;
-@property(readonly) BOOL hasSession;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } layerVisibleBounds;
-@property(readonly) BOOL mustRecreateRenderCycleForCurrentRenderCycleClass;
+@property(readonly) bool canRender;
+@property(readonly) bool framebufferCanRender;
+@property(readonly) bool hasSession;
+@property(readonly) bool mustRecreateRenderCycleForCurrentRenderCycleClass;
 @property int performance;
 @property(readonly) TSCH3DRenderProcessor * processor;
 @property(readonly) TSCH3DChartRenderCycle * renderCycle;
 @property(readonly) TSCH3DScene * scene;
 @property(readonly) TSCH3DSession * session;
 @property(readonly) TSCH3DSharegroupToken * sharegroupToken;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleBoundsInLayerRelativeSpace;
 
 - (id).cxx_construct;
 - (id)GLLayer;
-- (void)beginInteractiveModeWithMinimumBufferSize:(struct CGSize { float x1; float x2; })arg1 performanceHint:(int)arg2;
-- (BOOL)canRender;
+- (void)beginInteractiveModeWithMinimumBufferSize:(struct CGSize { double x1; double x2; })arg1 performanceHint:(int)arg2;
+- (bool)canRender;
 - (void)clearParent;
 - (void)dealloc;
 - (void)destroy;
 - (void)destroyFramebuffer;
 - (void)endInteractiveMode;
-- (BOOL)framebufferCanRender;
-- (BOOL)hasSession;
+- (bool)framebufferCanRender;
+- (bool)hasSession;
 - (id)initWithRep:(id)arg1 sharegroupToken:(id)arg2;
-- (BOOL)isOneShot;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layerVisibleBounds;
-- (BOOL)mustRecreateRenderCycleForCurrentRenderCycleClass;
+- (bool)isOneShot;
+- (bool)mustRecreateRenderCycleForCurrentRenderCycleClass;
 - (void)p_createGLLayer;
-- (BOOL)p_reusableForCurrentRenderCycleClass;
+- (bool)p_reusableForCurrentRenderCycleClass;
 - (void)p_setupInteractiveMode;
 - (void)p_setupRenderCycle;
 - (void)p_setupSession;
@@ -70,14 +69,15 @@
 - (void)recreateGLLayer;
 - (void)releaseGLLayer;
 - (id)renderCycle;
-- (BOOL)renderLegendIntoSeparateLayer;
+- (bool)renderLegendIntoSeparateLayer;
 - (id)scene;
 - (id)session;
 - (void)setIfIsMoreDemandingPerformance:(int)arg1;
-- (void)setLayerVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPerformance:(int)arg1;
+- (void)setVisibleBoundsInLayerRelativeSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setupForRendering;
 - (id)sharegroupToken;
-- (BOOL)usesMultipassRendering;
+- (bool)usesMultipassRendering;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleBoundsInLayerRelativeSpace;
 
 @end

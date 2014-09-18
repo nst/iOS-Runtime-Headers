@@ -7,7 +7,11 @@
 @interface SADIAGLatencyDiagnosticReportDiagnosticReport : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSNumber * latency;
+@property(readonly) Class superclass;
 @property(copy) NSURL * uri;
 @property(copy) NSString * verb;
 

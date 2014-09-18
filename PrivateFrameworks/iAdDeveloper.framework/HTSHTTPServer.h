@@ -13,7 +13,6 @@
     struct __CFHTTPMessage { } *_currentRequest;
     <HTSHTTPServerDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _digestAuthenticationEnabled;
     NSString *_documentRoot;
     double _kbps;
     double _lastReplenishTime;
@@ -22,10 +21,11 @@
     int _listenSocket4;
     NSObject<OS_dispatch_source> *_listenSource4;
     NSString *_nodename;
-    BOOL _pipeliningEnabled;
     unsigned short _port;
     NSObject<OS_dispatch_queue> *_serverQueue;
     unsigned long long _totalBytesWritten;
+    bool_digestAuthenticationEnabled;
+    bool_pipeliningEnabled;
 }
 
 @property double bandwidthStddev;
@@ -33,12 +33,12 @@
 @property struct __CFHTTPMessage { }* currentRequest;
 @property <HTSHTTPServerDelegate> * delegate;
 @property NSObject<OS_dispatch_queue> * delegateQueue;
-@property BOOL digestAuthenticationEnabled;
+@property bool digestAuthenticationEnabled;
 @property(copy) NSString * documentRoot;
 @property double kbps;
 @property double latency;
 @property double latencyStddev;
-@property BOOL pipeliningEnabled;
+@property bool pipeliningEnabled;
 @property(readonly) unsigned short port;
 @property(readonly) unsigned long long totalBytesWritten;
 @property(readonly) NSString * urlString;
@@ -50,11 +50,11 @@
 - (void)_connectionComplete:(id)arg1;
 - (double)_currentLatency;
 - (void)_handleGeneralRequest:(id)arg1 fromConnection:(id)arg2;
-- (BOOL)_listenOnPort:(unsigned short)arg1;
+- (bool)_listenOnPort:(unsigned short)arg1;
 - (id)_mimeTypeForExtension:(id)arg1;
 - (void)_respondWithData:(id)arg1 mimeType:(id)arg2 toRequest:(id)arg3 connection:(id)arg4;
 - (id)_restrictedFilePathForRelativePath:(id)arg1;
-- (void)_returnResponse:(id)arg1 toConnection:(id)arg2 closeAfterSending:(BOOL)arg3;
+- (void)_returnResponse:(id)arg1 toConnection:(id)arg2 closeAfterSending:(bool)arg3;
 - (unsigned long long)availableBandwidth;
 - (double)bandwidthStddev;
 - (int)cacheMaxAge;
@@ -63,14 +63,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (BOOL)digestAuthenticationEnabled;
+- (bool)digestAuthenticationEnabled;
 - (id)documentRoot;
 - (id)init;
 - (id)initWithPort:(unsigned short)arg1 documentRoot:(id)arg2;
 - (double)kbps;
 - (double)latency;
 - (double)latencyStddev;
-- (BOOL)pipeliningEnabled;
+- (bool)pipeliningEnabled;
 - (unsigned short)port;
 - (void)resetNetworkSetup;
 - (void)setBandwidthStddev:(double)arg1;
@@ -78,12 +78,12 @@
 - (void)setCurrentRequest:(struct __CFHTTPMessage { }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;
-- (void)setDigestAuthenticationEnabled:(BOOL)arg1;
+- (void)setDigestAuthenticationEnabled:(bool)arg1;
 - (void)setDocumentRoot:(id)arg1;
 - (void)setKbps:(double)arg1;
 - (void)setLatency:(double)arg1;
 - (void)setLatencyStddev:(double)arg1;
-- (void)setPipeliningEnabled:(BOOL)arg1;
+- (void)setPipeliningEnabled:(bool)arg1;
 - (unsigned long long)totalBytesWritten;
 - (id)urlString;
 

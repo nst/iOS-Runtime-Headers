@@ -4,15 +4,15 @@
 
 @class <EKCellShortener>, TwoPartTextLabel, UIColor;
 
-@interface PreferencesTwoPartValueCell : UITableViewCell {
+@interface PreferencesTwoPartValueCell : EKUIConstrainedFontsTableViewCell {
     unsigned int _notifiedShort;
     <EKCellShortener> *_shortener;
     TwoPartTextLabel *_twoPartLabel;
 }
 
 @property <EKCellShortener> * shortener;
-@property(readonly) TwoPartTextLabel * twoPartTextLabel;
-@property(readonly) UIColor * valueColor;
+@property(retain,readonly) TwoPartTextLabel * twoPartTextLabel;
+@property(retain,readonly) UIColor * valueColor;
 
 - (void).cxx_destruct;
 - (void)_layoutSubviewsCore;

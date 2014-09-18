@@ -8,35 +8,35 @@
  */
 
 @interface TSWPPadding : NSObject {
-    float _bottomInset;
-    float _leftInset;
-    float _rightInset;
-    float _topInset;
+    double _bottomInset;
+    double _leftInset;
+    double _rightInset;
+    double _topInset;
 }
 
-@property float bottomInset;
-@property float leftInset;
-@property float rightInset;
-@property float topInset;
+@property double bottomInset;
+@property double leftInset;
+@property double rightInset;
+@property double topInset;
 
 + (id)padding;
-+ (id)paddingWithTopInset:(float)arg1 leftInset:(float)arg2 bottomInset:(float)arg3 rightInset:(float)arg4;
++ (id)paddingWithTopInset:(double)arg1 leftInset:(double)arg2 bottomInset:(double)arg3 rightInset:(double)arg4;
 
-- (float)bottomInset;
+- (double)bottomInset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithArchive:(const struct PaddingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; float x4; float x5; float x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithTopInset:(float)arg1 leftInset:(float)arg2 bottomInset:(float)arg3 rightInset:(float)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (float)leftInset;
-- (float)rightInset;
+- (id)initWithTopInset:(double)arg1 leftInset:(double)arg2 bottomInset:(double)arg3 rightInset:(double)arg4;
+- (bool)isEqual:(id)arg1;
+- (double)leftInset;
+- (double)rightInset;
 - (void)saveToArchive:(struct PaddingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; float x4; float x5; float x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
-- (void)setBottomInset:(float)arg1;
-- (void)setLeftInset:(float)arg1;
-- (void)setRightInset:(float)arg1;
-- (void)setTopInset:(float)arg1;
-- (float)topInset;
-- (void)transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setBottomInset:(double)arg1;
+- (void)setLeftInset:(double)arg1;
+- (void)setRightInset:(double)arg1;
+- (void)setTopInset:(double)arg1;
+- (double)topInset;
+- (void)transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 
 @end

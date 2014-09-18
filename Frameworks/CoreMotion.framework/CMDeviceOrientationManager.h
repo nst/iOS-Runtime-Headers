@@ -14,11 +14,12 @@
 - (id)deviceOrientationBlocking;
 - (id)init;
 - (id)initPrivate;
-- (BOOL)isDeviceOrientationActive;
-- (BOOL)isDeviceOrientationAvailable;
-- (void)onDeviceOrientation:(const struct Sample { double x1; struct { int x_2_1_1; } x2; }*)arg1;
+- (bool)isDeviceOrientationActive;
+- (bool)isDeviceOrientationAvailable;
+- (void)onDeviceOrientation:(const struct Sample { double x1; int x2; }*)arg1;
 - (void)onNotification:(id)arg1;
 - (void)setDeviceOrientationCallbackModePrivate:(int)arg1;
+- (void)signalAndReleaseSemaphoreIfNecessaryPrivate;
 - (void)startDeviceOrientationUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startDeviceOrientationUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)stopDeviceOrientationUpdates;

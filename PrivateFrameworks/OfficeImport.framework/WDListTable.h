@@ -2,19 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, WDDocument;
+@class NSMutableArray, NSMutableDictionary, WDDocument, WDList;
 
 @interface WDListTable : NSObject {
     WDDocument *mDocument;
+    NSMutableDictionary *mListMapById;
     NSMutableArray *mLists;
+    WDList *mNullList;
 }
 
-- (id)addList:(id)arg1;
+- (id)addListWithListId:(int)arg1 listDefinitionId:(int)arg2;
 - (void)dealloc;
-- (id)document;
 - (id)initWithDocument:(id)arg1;
-- (id)listAt:(unsigned int)arg1;
-- (unsigned int)listCount;
+- (id)listAt:(unsigned long long)arg1;
+- (unsigned long long)listCount;
+- (id)listWithListId:(int)arg1;
 - (id)lists;
 
 @end

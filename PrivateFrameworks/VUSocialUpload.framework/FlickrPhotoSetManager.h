@@ -14,6 +14,7 @@
 @property(readonly) NSArray * photoSets;
 @property <FlickrPhotoSetTableDelegate> * tableDelegate;
 
+- (void).cxx_destruct;
 - (id)delegate;
 - (id)photoSets;
 - (void)refreshPhotoSets;

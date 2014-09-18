@@ -10,10 +10,10 @@
 @interface TSWPUIGraphicalAttachment : TSWPAttachment {
 }
 
-@property(readonly) float baselineOffset;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) double baselineOffset;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 
-- (float)baselineOffset;
+- (double)baselineOffset;
 - (int)elementKind;
 - (id)initFromArchive:(const struct UIGraphicalAttachment { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; unsigned int x4[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
@@ -21,7 +21,7 @@
 - (id)rendererForAttachment;
 - (void)saveToArchive:(struct UIGraphicalAttachment { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; int x3; unsigned int x4[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (BOOL)wantsSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)wantsSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

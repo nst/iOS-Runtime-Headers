@@ -9,7 +9,7 @@
     NSDictionary *_versionInfoDictionary;
 }
 
-- (id)_modelForVersionHashes:(id)arg1 inStyle:(unsigned int)arg2;
+- (id)_modelForVersionHashes:(id)arg1 inStyle:(unsigned long long)arg2;
 - (id)_modelForVersionHashes:(id)arg1;
 - (id)bundle;
 - (id)currentVersion;

@@ -5,44 +5,44 @@
 @class NSMutableDictionary;
 
 @interface IMParentalControls : NSObject {
-    BOOL _active;
-    BOOL _disableAV;
-    BOOL _forceChatLogging;
     NSMutableDictionary *_parentalControls;
-    BOOL _shouldPostNotifications;
+    bool_active;
+    bool_disableAV;
+    bool_forceChatLogging;
+    bool_shouldPostNotifications;
 }
 
-@property(readonly) BOOL _disableAV;
-@property(readonly) BOOL _forceChatLogging;
-@property(readonly) NSMutableDictionary * _parentalControls;
-@property(readonly) BOOL active;
-@property(readonly) BOOL disableAV;
-@property(readonly) BOOL forceChatLogging;
-@property BOOL shouldPostNotifications;
+@property(readonly) bool _disableAV;
+@property(readonly) bool _forceChatLogging;
+@property(retain,readonly) NSMutableDictionary * _parentalControls;
+@property(readonly) bool active;
+@property(readonly) bool disableAV;
+@property(readonly) bool forceChatLogging;
+@property bool shouldPostNotifications;
 
 + (id)objectForKey:(id)arg1;
 + (id)standardControls;
 
-- (BOOL)_disableAV;
-- (BOOL)_forceChatLogging;
+- (bool)_disableAV;
+- (bool)_forceChatLogging;
 - (void)_managedPrefsNotification:(id)arg1;
 - (id)_parentalControls;
 - (id)_serviceWithName:(id)arg1;
 - (void)_updateParentalSettings;
-- (BOOL)accountHasWhitelist:(id)arg1;
-- (BOOL)accountIsEnabled:(id)arg1;
-- (BOOL)active;
+- (bool)accountHasWhitelist:(id)arg1;
+- (bool)accountIsEnabled:(id)arg1;
+- (bool)active;
 - (void)dealloc;
-- (BOOL)disableAV;
-- (BOOL)disableAccount:(id)arg1;
-- (BOOL)disableService:(id)arg1;
-- (BOOL)forceChatLogging;
-- (BOOL)forceWhitelistForAccount:(id)arg1;
-- (BOOL)forceWhitelistForService:(id)arg1;
+- (bool)disableAV;
+- (bool)disableAccount:(id)arg1;
+- (bool)disableService:(id)arg1;
+- (bool)forceChatLogging;
+- (bool)forceWhitelistForAccount:(id)arg1;
+- (bool)forceWhitelistForService:(id)arg1;
 - (id)init;
-- (BOOL)okToConnectAccount:(id)arg1;
-- (void)setShouldPostNotifications:(BOOL)arg1;
-- (BOOL)shouldPostNotifications;
+- (bool)okToConnectAccount:(id)arg1;
+- (void)setShouldPostNotifications:(bool)arg1;
+- (bool)shouldPostNotifications;
 - (id)whitelistForAccount:(id)arg1;
 - (id)whitelistForService:(id)arg1;
 

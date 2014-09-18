@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class TSTCellRegion;
+@class NSString, TSTCellRegion;
 
 @interface TSTTableSelection : TSKSelection <NSCopying, TSDTextSelection> {
     struct { 
@@ -19,8 +19,8 @@
         unsigned char column; 
         unsigned char reserved; 
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     } mAnchorCellID;
     TSTCellRegion *mBaseRegion;
     TSTCellRegion *mCellRegion;
@@ -33,24 +33,28 @@
 @property(readonly) TSTCellRegion * baseRegion;
 @property(readonly) TSTCellRegion * cellRegion;
 @property(readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cursorCellID;
-@property(readonly) BOOL isAtEndOfLine;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } searchReferenceRange;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isAtEndOfLine;
+@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } searchReferenceRange;
 @property(readonly) int selectionType;
+@property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })anchorCellID;
-- (BOOL)areCellsInTheSameRegionInTable:(id)arg1;
+- (bool)areCellsInTheSameRegionInTable:(id)arg1;
 - (id)baseRegion;
 - (id)cellRegion;
-- (BOOL)containsCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)containsSelection:(id)arg1;
+- (bool)containsCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (bool)containsSelection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cursorCellID;
 - (void)dealloc;
 - (id)description;
 - (void)enumerateSelectedCellsInTable:(id)arg1 usingBlock:(id)arg2;
-- (void)enumerateSelectedCellsInTable:(id)arg1 withFlags:(unsigned long)arg2 usingBlock:(id)arg3;
+- (void)enumerateSelectedCellsInTable:(id)arg1 withFlags:(unsigned long long)arg2 usingBlock:(id)arg3;
 - (id)initWithArchive:(const struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct CellID {} *x4; struct RepeatedPtrField<TST::CellRange> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TST::CellRange> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct CellID {} *x7; int x8; int x9; unsigned int x10[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithTableModel:(id)arg1 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)initWithTableModel:(id)arg1 andCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
@@ -67,20 +71,20 @@
 - (id)initWithTableModel:(id)arg1 startingColumnIndex:(unsigned short)arg2 numberOfColumns:(unsigned short)arg3;
 - (id)initWithTableModel:(id)arg1 startingRowIndex:(unsigned short)arg2 numberOfRows:(unsigned short)arg3;
 - (void)insert:(int)arg1 atIndex:(unsigned short)arg2 count:(unsigned short)arg3;
-- (BOOL)intersectsPartialMergeRangeInTable:(id)arg1;
-- (BOOL)isAtEndOfLine;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSelection:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (bool)intersectsPartialMergeRangeInTable:(id)arg1;
+- (bool)isAtEndOfLine;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSelection:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (void)remove:(int)arg1 atIndex:(unsigned short)arg2 count:(unsigned short)arg3;
 - (void)saveToArchive:(struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; struct CellID {} *x4; struct RepeatedPtrField<TST::CellRange> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TST::CellRange> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct CellID {} *x7; int x8; int x9; unsigned int x10[1]; }*)arg1 archiver:(id)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })searchReferenceRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })searchReferenceRange;
 - (id)selectionByAddingCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 inTable:(id)arg2 withAnchor:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 cursor:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg4 selectionType:(int)arg5;
 - (id)selectionByExtendingWithCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 inTable:(id)arg2 selectionType:(int)arg3 cursorCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg4;
-- (id)selectionByMovingInTableInfo:(id)arg1 inDirection:(int)arg2 withModifierKeys:(int)arg3 forReferenceMove:(BOOL)arg4 suppressWrap:(BOOL)arg5;
-- (id)selectionByMovingInTableInfo:(id)arg1 inDirection:(int)arg2 withModifierKeys:(int)arg3 forReferenceMove:(BOOL)arg4;
+- (id)selectionByMovingInTableInfo:(id)arg1 inDirection:(int)arg2 withModifierKeys:(int)arg3 forReferenceMove:(bool)arg4 suppressWrap:(bool)arg5;
+- (id)selectionByMovingInTableInfo:(id)arg1 inDirection:(int)arg2 withModifierKeys:(int)arg3 forReferenceMove:(bool)arg4;
 - (id)selectionByRemovingCellRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 inTable:(id)arg2 withAnchor:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 cursor:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg4 selectionType:(int)arg5;
 - (int)selectionType;
-- (void)setSearchReferenceRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSearchReferenceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

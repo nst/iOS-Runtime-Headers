@@ -6,15 +6,15 @@
 
 @interface __NSConcreteURLComponents : NSURLComponents <NSCopying> {
     struct _URIParseInfo { 
-        int userinfoNameOffset; 
-        int userinfoPasswordOffset; 
-        int hostOffset; 
-        int portOffset; 
-        int pathOffset; 
-        int paramOffset; 
-        int queryOffset; 
-        int fragmentOffset; 
-        int endOffset; 
+        long long userinfoNameOffset; 
+        long long userinfoPasswordOffset; 
+        long long hostOffset; 
+        long long portOffset; 
+        long long pathOffset; 
+        long long paramOffset; 
+        long long queryOffset; 
+        long long fragmentOffset; 
+        long long endOffset; 
         unsigned int schemeExists : 1; 
         unsigned int authorityExists : 1; 
         unsigned int userinfoNameExists : 1; 
@@ -45,7 +45,7 @@
     NSString *_userComponent;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (id)URL;
 - (id)URLRelativeToURL:(id)arg1;
@@ -55,12 +55,12 @@
 - (void)finalize;
 - (id)fragment;
 - (void)freeIvars;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)host;
 - (id)init;
 - (id)initWithString:(id)arg1;
-- (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)password;
 - (id)path;
 - (id)percentEncodedFragment;
@@ -71,6 +71,7 @@
 - (id)percentEncodedUser;
 - (id)port;
 - (id)query;
+- (id)queryItems;
 - (id)scheme;
 - (void)setFragment:(id)arg1;
 - (void)setHost:(id)arg1;
@@ -84,8 +85,10 @@
 - (void)setPercentEncodedUser:(id)arg1;
 - (void)setPort:(id)arg1;
 - (void)setQuery:(id)arg1;
+- (void)setQueryItems:(id)arg1;
 - (void)setScheme:(id)arg1;
 - (void)setUser:(id)arg1;
+- (id)string;
 - (id)user;
 
 @end

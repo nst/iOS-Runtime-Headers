@@ -2,35 +2,39 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIGallerySwooshViewControllerDelegate>, SKUISwooshPageComponent, SKUISwooshView, UICollectionView;
+@class <SKUIGallerySwooshViewControllerDelegate>, NSString, SKUISwooshPageComponent, SKUISwooshView, UICollectionView;
 
 @interface SKUIGallerySwooshViewController : SKUISwooshViewController <SKUIEmbeddedMediaViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     UICollectionView *_collectionView;
-    BOOL _delegateWantsWillDisplay;
     SKUISwooshPageComponent *_gallerySwoosh;
-    float _itemHeight;
+    double _itemHeight;
     SKUISwooshView *_swooshView;
+    bool_delegateWantsWillDisplay;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIGallerySwooshViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
 @property(readonly) SKUISwooshPageComponent * gallerySwoosh;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_newViewWithMediaComponent:(id)arg1;
-- (id)artworkForItemAtIndex:(int)arg1;
+- (id)artworkForItemAtIndex:(long long)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)gallerySwoosh;
 - (id)indexPathsForVisibleItems;
 - (id)initWithGallerySwoosh:(id)arg1;
 - (void)loadView;
-- (void)mediaView:(id)arg1 playbackStateDidChange:(int)arg2;
-- (void)performActionForItemAtIndex:(int)arg1 animated:(BOOL)arg2;
+- (void)mediaView:(id)arg1 playbackStateDidChange:(long long)arg2;
+- (void)performActionForItemAtIndex:(long long)arg1 animated:(bool)arg2;
 - (void)setColorScheme:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
+- (void)setImage:(id)arg1 forItemAtIndex:(long long)arg2;
 
 @end

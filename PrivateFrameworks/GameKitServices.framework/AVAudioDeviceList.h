@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class AVInternalDeviceList;
 
 @interface AVAudioDeviceList : NSObject {
-    id _changeListener;
     AVInternalDeviceList *_internalList;
 }
 
@@ -18,7 +13,7 @@
 + (id)currentInputDevice;
 + (id)defaultInputDevice;
 + (id)defaultOutputDevice;
-+ (BOOL)setInputDevice:(id)arg1;
++ (bool)setInputDevice:(id)arg1;
 
 - (id)changeListener;
 - (void)dealloc;

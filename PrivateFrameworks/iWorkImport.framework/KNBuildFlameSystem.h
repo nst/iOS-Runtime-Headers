@@ -4,25 +4,26 @@
 
 @interface KNBuildFlameSystem : TSDGLParticleSystem {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     } _actualSize;
-    struct CGPoint { float x1; float x2; } *_bottomRow;
-    BOOL shouldDraw;
+    struct CGPoint { double x1; double x2; } *_bottomRow;
+    unsigned long long _bottomRowCount;
+    boolshouldDraw;
 }
 
-+ (BOOL)useVisibilities;
-+ (BOOL)willOverrideStartingPoints;
++ (bool)useVisibilities;
++ (bool)willOverrideStartingPoints;
 
 - (void)dealloc;
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)p_setupParticleDataWithTexture:(id)arg1;
-- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)rotationMax;
-- (void)setShouldDraw:(BOOL)arg1;
-- (BOOL)shouldDraw;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
-- (struct CGPoint { float x1; float x2; })startingPointAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)rotationMax;
+- (void)setShouldDraw:(bool)arg1;
+- (bool)shouldDraw;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
+- (struct CGPoint { double x1; double x2; })startingPointAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

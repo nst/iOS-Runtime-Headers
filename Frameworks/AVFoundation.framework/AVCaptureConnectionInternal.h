@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputPort, AVCaptureOutput, AVCaptureVideoPreviewLayer, NSArray, NSMutableArray;
+@class AVCaptureDevice, AVCaptureInputPort, AVWeakReference, NSArray, NSMutableArray;
 
 @interface AVCaptureConnectionInternal : NSObject {
     struct { 
@@ -15,29 +15,35 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    BOOL active;
+    long long activeVideoStabilizationMode;
     NSArray *audioChannelLevels;
     NSMutableArray *audioChannels;
     AVCaptureInputPort *audioInputPort;
-    BOOL automaticallyAdjustsVideoMirroring;
-    BOOL enabled;
-    BOOL enablesVideoStabilizationWhenAvailable;
+    boolactive;
+    boolautomaticallyAdjustsVideoMirroring;
+    boolenabled;
+    boolhasActiveObservers;
+    boolhasVideoMinFrameDurationObserver;
+    boolvideoMirrored;
+    boolvideoMirroringSupported;
+    boolvideoOrientationSupported;
+    boolvideoStabilizationEnabled;
+    int changeSeed;
     NSMutableArray *inputPorts;
     long long lastGetAudioLevelsTime;
-    AVCaptureOutput *output;
-    int outputChangeSeedOnDisable;
+    AVCaptureInputPort *metadataInputPort;
+    AVCaptureInputPort *metadataItemInputPort;
+    AVWeakReference *outputWeakReference;
+    long long preferredVideoStabilizationMode;
+    AVCaptureDevice *sourceDevice;
     AVCaptureInputPort *videoInputPort;
     } videoMaxFrameDuration;
-    float videoMaxScaleAndCropFactor;
+    double videoMaxScaleAndCropFactor;
     } videoMinFrameDuration;
-    BOOL videoMirrored;
-    BOOL videoMirroringSupported;
-    int videoOrientation;
-    BOOL videoOrientationSupported;
-    AVCaptureVideoPreviewLayer *videoPreviewLayer;
+    long long videoOrientation;
+    AVWeakReference *videoPreviewLayerWeakReference;
     int videoRetainedBufferCountHint;
-    float videoScaleAndCropFactor;
-    BOOL videoStabilizationEnabled;
+    double videoScaleAndCropFactor;
 }
 
 @end

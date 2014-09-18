@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUAddSeedViewControllerDelegate>, RUSearchViewController, UISearchBar, UISearchDisplayController;
+@class <RUAddSeedViewControllerDelegate>, NSString, RUSearchViewController, UISearchBar, UISearchDisplayController;
 
 @interface RUAddSeedViewController : UIViewController <RUSearchViewControllerDelegate> {
     <RUAddSeedViewControllerDelegate> *_delegate;
@@ -11,7 +11,11 @@
     RUSearchViewController *_searchViewController;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <RUAddSeedViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_newSearchBar;
@@ -26,6 +30,6 @@
 - (void)searchViewControllerDidEndSearching:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

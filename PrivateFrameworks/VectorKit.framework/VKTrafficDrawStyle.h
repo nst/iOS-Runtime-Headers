@@ -2,61 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKTrafficDrawStyle : VKDrawStyle {
-    struct VKProfileSparseRamp<float> { 
-        union _u { 
-            struct VKProfileSparseRampValue { 
-                float value; 
-                unsigned char hi; 
-            } v[2]; 
-            float *extra; 
-        } u; 
-        unsigned char count; 
-    struct { 
-        struct VKProfileSparseRamp<_VGLColor> { 
-            union _u { 
-                struct VKProfileSparseRampValue { 
-                    struct _VGLColor { 
-                        float r; 
-                        float g; 
-                        float b; 
-                        float a; 
-                    } value; 
-                    unsigned char hi; 
-                } v[2]; 
-                struct _VGLColor {} *extra; 
-            } u; 
-            unsigned char count; 
-        } fillColor; 
-        struct VKProfileSparseRamp<_VGLColor> { 
-            union _u { 
-                struct VKProfileSparseRampValue { 
-                    struct _VGLColor { 
-                        float r; 
-                        float g; 
-                        float b; 
-                        float a; 
-                    } value; 
-                    unsigned char hi; 
-                } v[2]; 
-                struct _VGLColor {} *extra; 
-            } u; 
-            unsigned char count; 
-        } secondaryColor; 
-        float pattern[3]; 
-        float fadingFactor[2]; 
-    float animationSpeed;
-    float antiAliasingFactor[2];
-    float glowFadingRange[2];
-    } perSpeedTraffic[4];
-    float shiftRange[2];
-    } width;
+@interface VKTrafficDrawStyle : VKRenderStyle {
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
-- (void)takeFromZoomInvariantProperties:(id)arg1;
-- (id)variant;
++ (int)renderStyleID;
 
 @end

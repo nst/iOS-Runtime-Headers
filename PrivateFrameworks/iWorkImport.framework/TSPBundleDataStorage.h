@@ -2,27 +2,31 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, SFUCryptoKey, TSPBundle;
+@class NSString, TSPBundle;
 
 @interface TSPBundleDataStorage : TSPFileDataStorage {
     TSPBundle *_bundle;
-    SFUCryptoKey *_decryptionKey;
-    BOOL _gilligan_isRemote;
     unsigned char _packageIdentifier;
     NSString *_path;
+    bool_gilligan_isRemote;
+    bool_isMissingData;
 }
 
 - (void).cxx_destruct;
 - (id)AVAssetWithOptions:(id)arg1 contentTypeUTI:(id)arg2;
-- (BOOL)copyToTemporaryURL:(id)arg1;
-- (BOOL)gilligan_isRemote;
-- (id)initWithFilename:(id)arg1 decryptionKey:(id)arg2 bundle:(id)arg3;
-- (BOOL)isInPackage:(id)arg1;
+- (bool)copyToTemporaryURL:(id)arg1 encryptionKey:(id)arg2;
+- (id)decryptionKey;
+- (void)didInitializeFromDocumentURL:(id)arg1;
+- (bool)gilligan_isRemote;
+- (id)initWithPath:(id)arg1 bundle:(id)arg2;
+- (bool)isInPackage:(id)arg1;
+- (bool)isMissingData;
 - (unsigned char)packageIdentifier;
 - (id)packageLocator;
 - (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
-- (void)setGilligan_isRemote:(BOOL)arg1;
-- (BOOL)writeToBundleWriter:(id)arg1 preferredFilename:(id)arg2 filename:(id*)arg3 didCopyDataToBundle:(BOOL*)arg4;
+- (void)setGilligan_isRemote:(bool)arg1;
+- (void)setIsMissingData:(bool)arg1;
+- (bool)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(bool*)arg5 isMissingData:(bool*)arg6;
 
 @end

@@ -5,17 +5,17 @@
 @class SSURLConnectionRequest;
 
 @interface RadioGetWishListRequest : RadioRequest {
-    unsigned int _maxNumberOfTracks;
+    unsigned long long _maxNumberOfTracks;
     SSURLConnectionRequest *_request;
 }
 
-@property unsigned int maxNumberOfTracks;
+@property unsigned long long maxNumberOfTracks;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
-- (unsigned int)maxNumberOfTracks;
-- (void)setMaxNumberOfTracks:(unsigned int)arg1;
+- (unsigned long long)maxNumberOfTracks;
+- (void)setMaxNumberOfTracks:(unsigned long long)arg1;
 - (void)startWithCompletionHandler:(id)arg1;
 
 @end

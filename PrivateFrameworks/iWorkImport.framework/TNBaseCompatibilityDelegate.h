@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface TNBaseCompatibilityDelegate : NSObject <TSKCompatibilityDelegate> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)backwardsCompatibleTypeForType:(id)arg1;
 - (Class)exportOptionsControllerClass;
@@ -11,10 +18,10 @@
 - (Class)exporterClassForType:(id)arg1 options:(id)arg2;
 - (Class)importerClassForType:(id)arg1;
 - (id)indexXmlFilename;
-- (BOOL)isSageDocumentType:(id)arg1;
-- (BOOL)isTCMessageExceptionErrorDomain:(id)arg1;
+- (bool)isSageDocumentType:(id)arg1;
+- (bool)isTCMessageExceptionErrorDomain:(id)arg1;
 - (id)needNewerVersionIndexXmlContentString;
 - (id)nestedDocumentFilename;
-- (id)newExportableDocumentTypesForFlag:(unsigned int)arg1;
+- (id)newExportableDocumentTypesForFlag:(unsigned long long)arg1;
 
 @end

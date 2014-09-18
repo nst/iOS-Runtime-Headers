@@ -2,27 +2,35 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class NSString;
+
 @interface DADataHandler : NSObject {
+    NSString *_changeTrackingID;
     void *_container;
 }
 
+@property(copy) NSString * changeTrackingID;
 @property void* container;
 
-+ (id)newDataHandlerForDataclass:(int)arg1 container:(void*)arg2;
++ (id)newDataHandlerForDataclass:(long long)arg1 container:(void*)arg2 changeTrackingID:(id)arg3;
 
-- (BOOL)closeDBAndSave:(BOOL)arg1;
+- (void).cxx_destruct;
+- (id)changeTrackingID;
+- (bool)closeDBAndSave:(bool)arg1;
 - (void*)container;
 - (void*)copyLocalObjectFromId:(int)arg1;
-- (struct __CFArray { }*)copyOfAllLocalObjectsInContainer;
-- (int)dataclass;
+- (id)copyOfAllLocalObjectsInContainer;
+- (long long)dataclass;
 - (void)dealloc;
 - (void)drainContainer;
+- (void)drainSuperfluousChanges;
 - (id)getDAObjectWithLocalItem:(void*)arg1 serverId:(id)arg2 account:(id)arg3;
 - (int)getIdFromLocalObject:(void*)arg1;
-- (id)initWithContainer:(void*)arg1;
+- (id)initWithContainer:(void*)arg1 changeTrackingID:(id)arg2;
 - (void)openDB;
-- (BOOL)saveContainer;
+- (bool)saveContainer;
+- (void)setChangeTrackingID:(id)arg1;
 - (void)setContainer:(void*)arg1;
-- (BOOL)wipeServerIds;
+- (bool)wipeServerIds;
 
 @end

@@ -2,43 +2,52 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSString, NSTimeZone, NSURL;
+@class <EKTravelAdvice>, NSDate, NSString, NSTimeZone, NSURL;
 
 @interface EKCalendarItemAlertInfo : NSObject <NSCopying> {
-    BOOL _acknowledged;
     NSURL *_action;
-    BOOL _allDay;
+    NSString *_alarmID;
     NSString *_dismissalID;
     NSDate *_endDate;
     NSURL *_entityID;
     NSDate *_eventDate;
     NSTimeZone *_eventTimeZone;
     NSString *_externalID;
+    NSDate *_firstDateAlertedForTravelAdvice;
+    NSDate *_lastFireTimeOfAlertOffsetFromTravelTime;
+    <EKTravelAdvice> *_latestTravelAdvice;
     NSString *_location;
-    int _proximity;
-    BOOL _tentative;
+    long long _proximity;
     NSString *_title;
+    bool_acknowledged;
+    bool_allDay;
+    bool_isOffsetFromTravelTimeStart;
+    bool_tentative;
 }
 
-@property(readonly) BOOL acknowledged;
+@property(readonly) bool acknowledged;
 @property(readonly) NSURL * action;
-@property(readonly) BOOL allDay;
+@property(readonly) NSString * alarmID;
+@property(readonly) bool allDay;
 @property(readonly) NSString * dismissalID;
 @property(readonly) NSDate * endDate;
 @property(readonly) NSURL * entityID;
 @property(readonly) NSDate * eventDate;
 @property(readonly) NSTimeZone * eventTimeZone;
 @property(readonly) NSString * externalID;
+@property(retain) NSDate * firstDateAlertedForTravelAdvice;
+@property(readonly) bool isOffsetFromTravelTimeStart;
+@property(retain) NSDate * lastFireTimeOfAlertOffsetFromTravelTime;
+@property(retain) <EKTravelAdvice> * latestTravelAdvice;
 @property(readonly) NSString * location;
-@property(readonly) int proximity;
-@property(readonly) BOOL tentative;
+@property(readonly) long long proximity;
+@property(readonly) bool tentative;
 @property(readonly) NSString * title;
 
-+ (id)alertInfoWithTitle:(id)arg1 location:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5 allDay:(BOOL)arg6 tentative:(BOOL)arg7 entityID:(id)arg8 action:(id)arg9 proximity:(int)arg10 externalID:(id)arg11 acknowledged:(BOOL)arg12 dismissalID:(id)arg13;
-
-- (BOOL)acknowledged;
+- (bool)acknowledged;
 - (id)action;
-- (BOOL)allDay;
+- (id)alarmID;
+- (bool)allDay;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -48,12 +57,19 @@
 - (id)eventDate;
 - (id)eventTimeZone;
 - (id)externalID;
-- (unsigned int)hash;
-- (id)initWithTitle:(id)arg1 location:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5 allDay:(BOOL)arg6 tentative:(BOOL)arg7 entityID:(id)arg8 action:(id)arg9 proximity:(int)arg10 externalID:(id)arg11 acknowledged:(BOOL)arg12 dismissalID:(id)arg13;
-- (BOOL)isEqual:(id)arg1;
+- (id)firstDateAlertedForTravelAdvice;
+- (unsigned long long)hash;
+- (id)initWithTitle:(id)arg1 location:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5 allDay:(bool)arg6 tentative:(bool)arg7 entityID:(id)arg8 action:(id)arg9 proximity:(long long)arg10 externalID:(id)arg11 acknowledged:(bool)arg12 dismissalID:(id)arg13 alarmID:(id)arg14 isOffsetFromTravelTimeStart:(bool)arg15;
+- (bool)isEqual:(id)arg1;
+- (bool)isOffsetFromTravelTimeStart;
+- (id)lastFireTimeOfAlertOffsetFromTravelTime;
+- (id)latestTravelAdvice;
 - (id)location;
-- (int)proximity;
-- (BOOL)tentative;
+- (long long)proximity;
+- (void)setFirstDateAlertedForTravelAdvice:(id)arg1;
+- (void)setLastFireTimeOfAlertOffsetFromTravelTime:(id)arg1;
+- (void)setLatestTravelAdvice:(id)arg1;
+- (bool)tentative;
 - (id)title;
 
 @end

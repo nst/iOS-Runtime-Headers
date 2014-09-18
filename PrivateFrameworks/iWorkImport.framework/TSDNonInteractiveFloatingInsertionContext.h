@@ -5,6 +5,6 @@
 @interface TSDNonInteractiveFloatingInsertionContext : TSDNonInteractiveInsertionContext {
 }
 
-- (BOOL)insertFloating;
+- (bool)insertFloating;
 
 @end

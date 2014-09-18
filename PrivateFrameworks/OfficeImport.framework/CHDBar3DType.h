@@ -8,6 +8,7 @@
 }
 
 + (bool)is3DType;
++ (id)stringWithShapeType:(int)arg1;
 
 - (int)gapDepth;
 - (id)initWithChart:(id)arg1;

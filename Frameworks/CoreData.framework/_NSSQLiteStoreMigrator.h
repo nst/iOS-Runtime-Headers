@@ -10,7 +10,6 @@
     NSSQLConnection *_connection;
     NSMutableDictionary *_copiedEntityMigrations;
     NSSQLModel *_dstModel;
-    BOOL _hasPKTableChanges;
     NSMappingModel *_mappingModel;
     NSMutableDictionary *_reindexedEntities;
     NSMutableDictionary *_reindexedPropertiesByEntity;
@@ -20,12 +19,13 @@
     NSSQLCore *_store;
     NSMutableDictionary *_tableMigrationDescriptionsByEntity;
     NSMutableDictionary *_transformedEntityMigrations;
+    bool_hasPKTableChanges;
 }
 
 @property(readonly) NSSQLAdapter * adapter;
 
-+ (BOOL)_annotatesMigrationMetadata;
-+ (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;
++ (bool)_annotatesMigrationMetadata;
++ (void)_setAnnotatesMigrationMetadata:(bool)arg1;
 
 - (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 tableMigrationType:(int)arg3;
 - (void)_addReindexedProperty:(id)arg1 toSetForEntity:(id)arg2;
@@ -42,10 +42,10 @@
 - (void)dealloc;
 - (id)entityMigrationDescriptionForEntity:(id)arg1;
 - (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
-- (BOOL)performMigration:(id*)arg1;
+- (bool)performMigration:(id*)arg1;
 - (id)tableMigrationDescriptionForEntity:(id)arg1;
-- (BOOL)validateMandatoryAttribute:(id)arg1 onEntity:(id)arg2 error:(id*)arg3;
-- (BOOL)validateMandatoryRelationship:(id)arg1 onEntity:(id)arg2 error:(id*)arg3;
-- (BOOL)validateMigratedDataFromEntityMapping:(id)arg1 error:(id*)arg2;
+- (bool)validateMandatoryAttribute:(id)arg1 onEntity:(id)arg2 error:(id*)arg3;
+- (bool)validateMandatoryRelationship:(id)arg1 onEntity:(id)arg2 error:(id*)arg3;
+- (bool)validateMigratedDataFromEntityMapping:(id)arg1 error:(id*)arg2;
 
 @end

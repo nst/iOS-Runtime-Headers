@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSData, NSDate, NSNumber, NSString, NSURL, NoteBodyObject, NoteStoreObject;
+@class NSData, NSDate, NSNumber, NSSet, NSString, NSURL, NoteBodyObject, NoteStoreObject;
 
 @interface NoteObject : NSManagedObject {
 }
 
+@property(retain) NSSet * attachments;
 @property(retain) NSString * author;
 @property(retain) NoteBodyObject * body;
 @property(retain) NSNumber * containsCJK;
@@ -21,13 +22,13 @@
 @property(retain) NSNumber * externalSequenceNumber;
 @property(retain) NSNumber * externalServerIntId;
 @property unsigned long long flags;
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasValidServerIntId;
+@property(retain,readonly) NSString * guid;
+@property(readonly) bool hasValidServerIntId;
 @property(retain) NSNumber * integerId;
-@property(readonly) BOOL isBeingMarkedForDeletion;
+@property(readonly) bool isBeingMarkedForDeletion;
 @property(retain) NSNumber * isBookkeepingEntry;
-@property(readonly) BOOL isMarkedForDeletion;
-@property BOOL isPlainText;
+@property(readonly) bool isMarkedForDeletion;
+@property bool isPlainText;
 @property(retain) NSDate * modificationDate;
 @property(readonly) NSURL * noteId;
 @property unsigned long long sequenceNumber;
@@ -37,17 +38,18 @@
 @property(retain) NSString * summary;
 @property(retain) NSString * title;
 
-- (BOOL)containsAttachments;
+- (bool)belongsToCollection:(id)arg1;
+- (bool)containsAttachments;
 - (id)content;
 - (id)contentAsPlainText;
 - (id)contentAsPlainTextPreservingNewlines;
 - (id)externalContentRef;
 - (id)externalRepresentation;
 - (unsigned long long)flags;
-- (BOOL)hasValidServerIntId;
-- (BOOL)isBeingMarkedForDeletion;
-- (BOOL)isMarkedForDeletion;
-- (BOOL)isPlainText;
+- (bool)hasValidServerIntId;
+- (bool)isBeingMarkedForDeletion;
+- (bool)isMarkedForDeletion;
+- (bool)isPlainText;
 - (void)markForDeletion;
 - (id)noteId;
 - (unsigned long long)sequenceNumber;
@@ -56,7 +58,7 @@
 - (void)setExternalContentRef:(id)arg1;
 - (void)setExternalRepresentation:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;
-- (void)setIsPlainText:(BOOL)arg1;
+- (void)setIsPlainText:(bool)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setServerIntId:(long long)arg1;
 

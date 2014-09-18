@@ -5,8 +5,6 @@
 @class AVAssetWriterInput, NSArray, NSDictionary, NSString;
 
 @interface AVAssetWriterInputSelectionOption : AVMediaSelectionOption {
-    BOOL _displaysNonForcedSubtitles;
-    BOOL _enabled;
     NSString *_extendedLanguageTag;
     AVAssetWriterInput *_input;
     NSString *_languageCode;
@@ -15,9 +13,11 @@
     NSDictionary *_outputSettings;
     struct opaqueCMFormatDescription { } *_sourceFormatHint;
     NSDictionary *_trackReferences;
+    bool_displaysNonForcedSubtitles;
+    bool_enabled;
 }
 
-@property(readonly) BOOL displaysNonForcedSubtitles;
+@property(readonly) bool displaysNonForcedSubtitles;
 @property(readonly) NSString * extendedLanguageTag;
 @property(readonly) AVAssetWriterInput * input;
 @property(readonly) NSString * languageCode;
@@ -27,29 +27,29 @@
 @property(readonly) struct opaqueCMFormatDescription { }* sourceFormatHint;
 @property(readonly) NSDictionary * trackReferences;
 
-+ (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
++ (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(bool)arg2;
 + (id)assetWriterInputSelectionOptionWithAssetWriterInput:(id)arg1;
 
 - (id)_ancillaryDescription;
-- (BOOL)_hasEqualValueForKey:(id)arg1 asObject:(id)arg2;
-- (BOOL)_isAuxiliaryContent;
-- (BOOL)_isDesignatedDefault;
-- (BOOL)_isMainProgramContent;
+- (bool)_hasEqualValueForKey:(id)arg1 asObject:(id)arg2;
+- (bool)_isAuxiliaryContent;
+- (bool)_isDesignatedDefault;
+- (bool)_isMainProgramContent;
 - (id)_taggedCharacteristics;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (void)dealloc;
-- (BOOL)displaysNonForcedSubtitles;
+- (bool)displaysNonForcedSubtitles;
 - (id)extendedLanguageTag;
 - (void)finalize;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
+- (bool)hasMediaCharacteristic:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(bool)arg2;
 - (id)initWithAssetWriterInput:(id)arg1;
 - (id)input;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPlayable;
+- (bool)isEqual:(id)arg1;
+- (bool)isPlayable;
 - (id)languageCode;
 - (id)locale;
 - (id)mediaSubTypes;

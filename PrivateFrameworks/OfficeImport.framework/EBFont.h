@@ -14,7 +14,7 @@
 + (int)convertEDUnderlineEnumToXl:(int)arg1;
 + (int)convertXlScriptEnumToED:(int)arg1;
 + (int)convertXlUnderlineEnumToED:(int)arg1;
-+ (id)edFontFromXlDXfFont:(struct XlDXfFont { int (**x1)(); unsigned char x2; struct XlString {} *x3; int x4; int x5; short x6; int x7; int x8; unsigned char x9; unsigned char x10; int x11; int x12; unsigned int x13; unsigned int x14; unsigned int x15; int x16; int x17; int x18; int x19; short x20; }*)arg1 edResources:(id)arg2;
++ (id)edFontFromXlDXfFont:(struct XlDXfFont { int (**x1)(); struct XlString {} *x2; int x3; int x4; short x5; int x6; int x7; unsigned char x8; unsigned char x9; int x10; int x11; unsigned int x12; unsigned int x13; unsigned int x14; int x15; int x16; int x17; int x18; short x19; }*)arg1 edResources:(id)arg2;
 + (id)edFontFromXlFont:(struct XlFont { int (**x1)(); struct XlHeader { unsigned int x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlString {} *x3; short x4; short x5; short x6; int x7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; int x14; unsigned char x15; unsigned char x16; }*)arg1 edResources:(id)arg2;
 
 @end

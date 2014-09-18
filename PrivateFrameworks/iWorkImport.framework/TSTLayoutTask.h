@@ -4,17 +4,21 @@
 
 @class NSMutableArray, TSTMasterLayout;
 
-@interface TSTLayoutTask : NSObject {
+@interface TSTLayoutTask : NSObject <NSCopying> {
     NSMutableArray *mCellStatesToLayout;
     TSTMasterLayout *mMasterLayout;
 }
 
-@property(retain) NSMutableArray * cellStatesToLayout;
+@property(readonly) unsigned long long numberOfCellStates;
 
-- (id)cellStatesToLayout;
+- (void)addCellState:(id)arg1;
+- (void)clear;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)flushToGlobalCaches;
+- (void)enumerateCellStatesUsingBlock:(id)arg1;
+- (id)initWithLayoutTask:(id)arg1;
 - (id)initWithMasterLayout:(id)arg1;
-- (void)setCellStatesToLayout:(id)arg1;
+- (unsigned long long)numberOfCellStates;
+- (void)writeToMasterLayoutCaches;
 
 @end

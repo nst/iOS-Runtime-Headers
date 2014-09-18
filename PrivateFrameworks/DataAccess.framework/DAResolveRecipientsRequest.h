@@ -2,17 +2,37 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSArray;
+@class NSArray, NSDate;
 
 @interface DAResolveRecipientsRequest : NSObject {
     NSArray *_emailAddresses;
+    NSDate *_endTime;
+    NSDate *_startTime;
+    bool_retrieveAvailablilty;
+    bool_retrieveCertificates;
 }
 
-- (void)dealloc;
+@property(retain) NSArray * emailAddresses;
+@property(retain) NSDate * endTime;
+@property bool retrieveAvailablilty;
+@property bool retrieveCertificates;
+@property(retain) NSDate * startTime;
+
+- (void).cxx_destruct;
 - (id)description;
 - (id)emailAddresses;
-- (unsigned int)hash;
+- (id)endTime;
+- (unsigned long long)hash;
+- (id)initWithEmailAddresses:(id)arg1 retrieveCertificates:(bool)arg2 retrieveAvailability:(bool)arg3 withStartTime:(id)arg4 endTime:(id)arg5;
 - (id)initWithEmailAddresses:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)retrieveAvailablilty;
+- (bool)retrieveCertificates;
+- (void)setEmailAddresses:(id)arg1;
+- (void)setEndTime:(id)arg1;
+- (void)setRetrieveAvailablilty:(bool)arg1;
+- (void)setRetrieveCertificates:(bool)arg1;
+- (void)setStartTime:(id)arg1;
+- (id)startTime;
 
 @end

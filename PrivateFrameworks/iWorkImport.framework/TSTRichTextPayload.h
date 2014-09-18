@@ -15,7 +15,7 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 storage:(id)arg2;
 - (id)initWithStorage:(id)arg1;
-- (BOOL)requiresRichText;
+- (bool)requiresRichText;
 - (void)saveToArchiver:(id)arg1;
 - (void)setStorage:(id)arg1;
 - (id)storage;

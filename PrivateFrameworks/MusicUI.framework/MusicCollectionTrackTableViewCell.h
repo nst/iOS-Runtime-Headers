@@ -4,28 +4,23 @@
 
 @class NSString;
 
-@interface MusicCollectionTrackTableViewCell : MusicSongTableViewCell {
+@interface MusicCollectionTrackTableViewCell : MusicMediaTableViewCell {
 }
 
 @property(copy) NSString * durationText;
-@property float maximumDurationWidth;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property double maximumDurationWidth;
 @property(copy) NSString * trackNumberText;
 
 + (Class)contentViewClass;
++ (struct CGSize { double x1; double x2; })sizeForDuration:(double)arg1;
 
-- (id)_collectionTrackCellContentView;
+- (id)_collectionTrackContentView;
 - (id)durationText;
-- (float)maximumDurationWidth;
-- (void)setDisplayAsDisabled:(BOOL)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (double)maximumDurationWidth;
 - (void)setDurationText:(id)arg1;
-- (void)setMaximumDurationWidth:(float)arg1;
-- (void)setSubtitle:(id)arg1;
-- (void)setTitle:(id)arg1;
+- (void)setMaximumDurationWidth:(double)arg1;
 - (void)setTrackNumberText:(id)arg1;
-- (id)subtitle;
-- (id)title;
 - (id)trackNumberText;
 
 @end

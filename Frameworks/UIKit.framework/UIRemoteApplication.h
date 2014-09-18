@@ -9,8 +9,9 @@
     unsigned int _port;
 }
 
-- (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
+- (void)backgroundContinuationEnabledDidChange:(bool)arg1;
 - (void)dealloc;
+- (void)didRegisterUserNotificationSettings:(id)arg1;
 - (void)didTakeScreenshot;
 - (void)hideTopMostMiniAlert;
 - (id)initWithBundleIdentifier:(id)arg1;
@@ -18,12 +19,12 @@
 - (void)localNotificationDidSnooze:(id)arg1;
 - (void)localNotificationMessageDelivered:(id)arg1;
 - (void)remoteNotificationMessageDelivered;
-- (void)remoteNotificationRegistrationFailedWithErrorDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
+- (void)remoteNotificationRegistrationFailedWithErrorDomain:(id)arg1 code:(long long)arg2 localizedDescription:(id)arg3;
 - (void)remoteNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
 - (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
 - (void)showTopMostMiniAlertWithSynchronizationPort:(unsigned int)arg1;
-- (void)simpleRemoteActionDidOccur:(int)arg1;
-- (void)statusBarWillChangeOrientation:(int)arg1 duration:(float)arg2;
+- (void)simpleRemoteActionDidOccur:(long long)arg1;
+- (void)statusBarWillChangeOrientation:(long long)arg1 duration:(float)arg2;
 - (void)updatePort;
 - (void)wakeTimerFired;
 

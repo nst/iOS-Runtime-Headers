@@ -5,6 +5,6 @@
 @interface KNShimmerObjectSystem : KNShimmerSystem {
 }
 
-- (void)drawGLSLWithPercent:(float)arg1 opacity:(float)arg2 rotation:(float)arg3 clockwise:(BOOL)arg4;
+- (void)drawGLSLWithPercent:(double)arg1 opacity:(double)arg2 rotation:(double)arg3 clockwise:(bool)arg4;
 
 @end

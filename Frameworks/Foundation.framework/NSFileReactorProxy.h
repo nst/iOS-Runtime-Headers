@@ -16,6 +16,7 @@
 }
 
 - (id)client;
+- (void)collectDebuggingInformationWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSDictionary, NSString;
+@class NSDate, NSDictionary, NSString;
 
 @interface IMTimer : NSObject {
     NSString *_name;
@@ -11,13 +11,15 @@
     double _timeInterval;
     id _timer;
     NSDictionary *_userInfo;
-    BOOL _wakeDevice;
+    bool_wakeDevice;
 }
 
-@property(readonly) id userInfo;
+@property(retain,readonly) NSDate * fireDate;
+@property(retain,readonly) id userInfo;
 
 - (void)dealloc;
-- (id)initWithTimeInterval:(double)arg1 name:(id)arg2 shouldWake:(BOOL)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
+- (id)fireDate;
+- (id)initWithTimeInterval:(double)arg1 name:(id)arg2 shouldWake:(bool)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
 - (void)invalidate;
 - (void)setFireTimeInterval:(double)arg1;
 - (id)userInfo;

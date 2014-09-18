@@ -6,16 +6,16 @@
 
 @interface GQDSLPublication : GQDRoot {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL mHasBody;
-    BOOL mHasFooters;
-    BOOL mHasHeaders;
-    BOOL mIsOldTemplateNameMapInitialized;
+        double width; 
+        double height; 
+    boolmHasBody;
+    boolmHasFooters;
+    boolmHasHeaders;
+    boolmIsOldTemplateNameMapInitialized;
+    boolmShowOutliner;
     struct __CFDictionary { } *mOldTemplateNameMap;
     GQDSLPageMargins *mPageMargins;
     } mPageSize;
-    BOOL mShowOutliner;
     GQDSStylesheet *mStylesheet;
 }
 
@@ -25,19 +25,19 @@
 - (struct __CFString { }*)createFixedPathForOldAppBundleResourcePath:(struct __CFString { }*)arg1;
 - (struct __CFArray { }*)createUpgradedPathComponentsFromOldTemplatePathComponents:(struct __CFArray { }*)arg1;
 - (struct __CFString { }*)createUpgradedPathForOldAssetPath:(struct __CFString { }*)arg1;
-- (struct __CFURL { }*)createUrlToAppBundleResource:(struct __CFString { }*)arg1 processorBundle:(struct __CFBundle { }*)arg2;
+- (struct __CFURL { }*)createUrlToAppBundleResource:(struct __CFString { }*)arg1 processorBundle:(struct __CFBundle { }*)arg2 fileUrl:(struct __CFURL { }*)arg3;
 - (void)dealloc;
-- (BOOL)hasBody;
-- (BOOL)hasFooters;
-- (BOOL)hasHeaders;
+- (bool)hasBody;
+- (bool)hasFooters;
+- (bool)hasHeaders;
 - (id)init;
-- (void)initializeAppBundleResourcesUrl;
+- (void)initializeAppBundleResourcesUrl:(struct __CFURL { }*)arg1;
 - (id)pageMargins;
-- (struct CGSize { float x1; float x2; })pageSize;
+- (struct CGSize { double x1; double x2; })pageSize;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (void)setPageMargins:(id)arg1;
 - (void)setStylesheet:(id)arg1;
-- (BOOL)showOutliner;
+- (bool)showOutliner;
 - (id)stylesheet;
 
 @end

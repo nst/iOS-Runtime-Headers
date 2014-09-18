@@ -5,19 +5,19 @@
 @class NSAttributedString;
 
 @interface _MKLegendString : CALayer {
-    float halfWidth;
+    double halfWidth;
     NSAttributedString *string;
 }
 
-@property float halfWidth;
+@property double halfWidth;
 @property(retain) NSAttributedString * string;
 
 - (void).cxx_destruct;
 - (id)actionForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (float)halfWidth;
+- (double)halfWidth;
 - (id)init;
-- (void)setHalfWidth:(float)arg1;
+- (void)setHalfWidth:(double)arg1;
 - (void)setString:(id)arg1;
 - (id)string;
 

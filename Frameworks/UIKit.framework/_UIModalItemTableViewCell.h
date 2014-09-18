@@ -7,25 +7,25 @@
 @interface _UIModalItemTableViewCell : UITableViewCell {
     UIView *_fullWidthSeparatorView;
     UIColor *_fullWitdhSeparatorColor;
-    BOOL _isEnabled;
-    BOOL _showFullWidthSeparator;
     UIView *_topSeparatorView;
+    bool_isEnabled;
+    bool_showFullWidthSeparator;
 }
 
 @property(retain) UIColor * fullWidthSeparatorColor;
-@property BOOL isEnabled;
-@property BOOL showFullWidthSeparator;
-@property(readonly) UIView * topSeparatorView;
+@property bool isEnabled;
+@property bool showFullWidthSeparator;
+@property(retain,readonly) UIView * topSeparatorView;
 
 - (void)dealloc;
 - (id)fullWidthSeparatorColor;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isEnabled;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isEnabled;
 - (void)layoutSubviews;
 - (void)setFullWidthSeparatorColor:(id)arg1;
-- (void)setIsEnabled:(BOOL)arg1;
-- (void)setShowFullWidthSeparator:(BOOL)arg1;
-- (BOOL)showFullWidthSeparator;
+- (void)setIsEnabled:(bool)arg1;
+- (void)setShowFullWidthSeparator:(bool)arg1;
+- (bool)showFullWidthSeparator;
 - (id)topSeparatorView;
 
 @end

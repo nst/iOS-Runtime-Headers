@@ -8,7 +8,7 @@
 
 @class GCController, NSString, _GCControllerButtonInput, _GCControllerDirectionPad;
 
-@interface _GCExtendedGamepad : GCExtendedGamepad <GCNamedProfile> {
+@interface _GCExtendedGamepad : GCExtendedGamepad <GCNamedProfile, NSSecureCoding> {
     _GCControllerButtonInput *_button0;
     _GCControllerButtonInput *_button1;
     _GCControllerButtonInput *_button2;
@@ -22,11 +22,19 @@
     _GCControllerDirectionPad *_rightThumbstick;
     _GCControllerButtonInput *_rightTrigger;
     id _valueChangedHandler;
+    bool_dpadFlippedY;
+    bool_leftFlippedY;
+    bool_rightFlippedY;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * name;
+@property(readonly) Class superclass;
 
-+ (BOOL)supportsUSBInterfaceProtocol:(unsigned char)arg1;
++ (bool)supportsSecureCoding;
++ (bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
 
 - (void).cxx_destruct;
 - (id)buttonA;
@@ -35,7 +43,9 @@
 - (id)buttonY;
 - (id)controller;
 - (id)dpad;
-- (id)initWithController:(id)arg1 dpadFlippedY:(BOOL)arg2 leftFlippedY:(BOOL)arg3 rightFlippedY:(BOOL)arg4;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithController:(id)arg1 dpadFlippedY:(bool)arg2 leftFlippedY:(bool)arg3 rightFlippedY:(bool)arg4;
 - (id)initWithController:(id)arg1;
 - (id)leftShoulder;
 - (id)leftThumbstick;
@@ -45,7 +55,7 @@
 - (id)rightThumbstick;
 - (id)rightTrigger;
 - (void)setController:(id)arg1;
-- (void)setPlayerIndex:(int)arg1;
+- (void)setPlayerIndex:(long long)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (id)valueChangedHandler;
 

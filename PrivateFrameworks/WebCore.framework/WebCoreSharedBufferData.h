@@ -2,15 +2,23 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 /* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
    The runtime does not encode function signature information.  We use a signature of: 
            "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface WebCoreSharedBufferData : NSData {
+    struct RefPtr<WebCore::SharedBuffer::DataBuffer> { 
+        struct DataBuffer {} *m_ptr; 
     struct RefPtr<WebCore::SharedBuffer> { 
         struct SharedBuffer {} *m_ptr; 
+     /* Encoded args for previous method: @24@0:8^{DataBuffer={atomic<int>=Ai}{Vector<char, 0, WTF::CrashOnOverflow>=*II}}16 */
     } sharedBuffer;
+    } sharedBufferDataBuffer;
 }
 
 + (void)initialize;
@@ -20,7 +28,8 @@
 - (const void*)bytes;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithSharedBuffer:(struct SharedBuffer { unsigned int x1; unsigned int x2; struct Vector<char, 0, WTF::CrashOnOverflow> { char *x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; } x3; struct Vector<char *, 0, WTF::CrashOnOverflow> { char **x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; boolx5; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_6_1_1; } x6; struct Vector<WTF::RetainPtr<const __CFData *>, 0, WTF::CrashOnOverflow> { struct RetainPtr<const __CFData *> {} *x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; boolx8; unsigned int x9; int (*x10)(); void *x11; struct RetainPtr<const __CFData *> { struct __CFData {} *x_12_1_1; } x12; }*)arg1;
-- (unsigned int)length;
+- (id)initWithMemoryMappedSharedBuffer:(struct SharedBuffer { unsigned int x1; unsigned int x2; struct RefPtr<WebCore::SharedBuffer::DataBuffer> { struct DataBuffer {} *x_3_1_1; } x3; boolx4; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_5_1_1; } x5; struct Vector<WTF::RetainPtr<const __CFData *>, 0, WTF::CrashOnOverflow> { struct RetainPtr<const __CFData *> {} *x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; } x6; boolx7; unsigned int x8; int (*x9)(); void *x10; struct RetainPtr<const __CFData *> { void *x_11_1_1; } x11; }*)arg1;
+- (id)initWithSharedBufferDataBuffer:(struct DataBuffer { struct atomic<int> { /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*x_1_1_1; int x_1_1_2; } x1; struct Vector<char, 0, WTF::CrashOnOverflow> { char *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; }*)arg1;
+- (unsigned long long)length;
 
 @end

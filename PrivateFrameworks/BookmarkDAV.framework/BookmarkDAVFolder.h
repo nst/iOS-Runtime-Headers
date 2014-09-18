@@ -18,10 +18,14 @@
 @property(retain) CoreDAVErrorItem * bulkUploadErrorItem;
 @property(readonly) NSArray * childrenOrder;
 @property(readonly) NSData * dataPayload;
-@property BOOL isBookmarkBarFolder;
-@property BOOL isBookmarkFolder;
-@property BOOL isBookmarkMenuFolder;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property bool isBookmarkBarFolder;
+@property bool isBookmarkFolder;
+@property bool isBookmarkMenuFolder;
 @property(retain) NSURL * serverID;
+@property(readonly) Class superclass;
 @property(readonly) NSString * syncKey;
 
 + (id)copyPropertyMappingsForParser;
@@ -40,16 +44,16 @@
 - (void)dealloc;
 - (id)initWithServerID:(id)arg1 containerName:(id)arg2 appleAttributes:(id)arg3;
 - (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
-- (BOOL)isBookmarkBarFolder;
-- (BOOL)isBookmarkFolder;
-- (BOOL)isBookmarkMenuFolder;
+- (bool)isBookmarkBarFolder;
+- (bool)isBookmarkFolder;
+- (bool)isBookmarkMenuFolder;
 - (id)serverID;
 - (void)setBulkParsedCTag:(id)arg1;
 - (void)setBulkParsedPTag:(id)arg1;
 - (void)setBulkUploadErrorItem:(id)arg1;
-- (void)setIsBookmarkBarFolder:(BOOL)arg1;
-- (void)setIsBookmarkFolder:(BOOL)arg1;
-- (void)setIsBookmarkMenuFolder:(BOOL)arg1;
+- (void)setIsBookmarkBarFolder:(bool)arg1;
+- (void)setIsBookmarkFolder:(bool)arg1;
+- (void)setIsBookmarkMenuFolder:(bool)arg1;
 - (void)setServerID:(id)arg1;
 - (id)syncKey;
 

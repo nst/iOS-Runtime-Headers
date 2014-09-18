@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class GEOPlaceResult, RTLOIDisplayInfo, RTPredictedLocationOfInterest;
+@class <GEOMapItem>, RTLOIDisplayInfo, RTPredictedLocationOfInterest;
 
 @interface RTPLOIETA : NSObject {
+    unsigned int _baselineETASeconds;
     RTLOIDisplayInfo *_displayInfo;
-    unsigned int _historicalETASeconds;
-    unsigned int _liveETASeconds;
-    GEOPlaceResult *_origin;
+    <GEOMapItem> *_origin;
     RTPredictedLocationOfInterest *_ploi;
+    unsigned int _responseETASeconds;
 }
 
 @property(readonly) RTPredictedLocationOfInterest * ploi;
@@ -20,9 +20,9 @@
 - (id)_urlName;
 - (id)description;
 - (id)displayInfo;
-- (BOOL)etaExceedsMinimumETA:(unsigned int)arg1;
-- (BOOL)hasEquivalentDisplayTo:(id)arg1;
-- (id)initWithPLOI:(id)arg1 origin:(id)arg2 liveETASeconds:(unsigned int)arg3 historicalETASeconds:(unsigned int)arg4;
+- (bool)etaExceedsMinimumETA:(unsigned int)arg1;
+- (bool)hasEquivalentDisplayTo:(id)arg1;
+- (id)initWithPLOI:(id)arg1 origin:(id)arg2 responseETASeconds:(unsigned int)arg3 baselineETASeconds:(unsigned int)arg4;
 - (id)localizedDescription;
 - (id)mapsURL;
 - (id)ploi;

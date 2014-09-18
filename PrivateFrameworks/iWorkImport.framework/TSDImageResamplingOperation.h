@@ -6,8 +6,8 @@
 
 @interface TSDImageResamplingOperation : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     } mDesiredSize;
     NSString *mDisplayName;
     TSDImageProvider *mImageProvider;
@@ -15,22 +15,22 @@
     TSPObjectContext *mObjectContext;
 }
 
-@property struct CGSize { float x1; float x2; } desiredSize;
+@property struct CGSize { double x1; double x2; } desiredSize;
 @property(copy) NSString * displayName;
 @property(retain) TSDImageProvider * imageProvider;
 @property struct CGPath { }* maskingPath;
 @property(retain) TSPObjectContext * objectContext;
 
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })desiredSize;
+- (struct CGSize { double x1; double x2; })desiredSize;
 - (id)displayName;
 - (id)imageProvider;
 - (id)init;
-- (id)initWithImageProvider:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithImageProvider:(id)arg1 desiredSize:(struct CGSize { double x1; double x2; })arg2;
 - (struct CGPath { }*)maskingPath;
 - (id)objectContext;
-- (id)performResampleOperationWithResampleOptions:(unsigned int)arg1 bitmapContextOptions:(unsigned int)arg2;
-- (void)setDesiredSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)performResampleOperationWithResampleOptions:(unsigned long long)arg1 bitmapContextOptions:(unsigned long long)arg2;
+- (void)setDesiredSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setImageProvider:(id)arg1;
 - (void)setMaskingPath:(struct CGPath { }*)arg1;

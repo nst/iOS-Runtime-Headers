@@ -2,24 +2,39 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, VKPGlobalProperties;
+@class NSMutableArray, VKPGlobalProperties, VKPMatchingTree;
 
 @interface VKPSheet : PBCodable <NSCopying> {
     struct { 
+        unsigned int mapTypeSupport : 1; 
+        unsigned int matchingTreeVersion : 1; 
         unsigned int version : 1; 
     VKPGlobalProperties *_globalProperties;
     } _has;
+    unsigned int _mapTypeSupport;
+    NSMutableArray *_matchingGraphNodes;
+    VKPMatchingTree *_matchingTree;
+    unsigned int _matchingTreeVersion;
     NSMutableArray *_styles;
     unsigned int _version;
 }
 
 @property(retain) VKPGlobalProperties * globalProperties;
-@property(readonly) BOOL hasGlobalProperties;
-@property BOOL hasVersion;
+@property(readonly) bool hasGlobalProperties;
+@property bool hasMapTypeSupport;
+@property(readonly) bool hasMatchingTree;
+@property bool hasMatchingTreeVersion;
+@property bool hasVersion;
+@property unsigned int mapTypeSupport;
+@property(retain) NSMutableArray * matchingGraphNodes;
+@property(retain) VKPMatchingTree * matchingTree;
+@property unsigned int matchingTreeVersion;
 @property(retain) NSMutableArray * styles;
 @property unsigned int version;
 
+- (void)addMatchingGraphNodes:(id)arg1;
 - (void)addStyle:(id)arg1;
+- (void)clearMatchingGraphNodes;
 - (void)clearStyles;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -27,18 +42,34 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)globalProperties;
-- (BOOL)hasGlobalProperties;
-- (BOOL)hasVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasGlobalProperties;
+- (bool)hasMapTypeSupport;
+- (bool)hasMatchingTree;
+- (bool)hasMatchingTreeVersion;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (unsigned int)mapTypeSupport;
+- (id)matchingGraphNodes;
+- (id)matchingGraphNodesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)matchingGraphNodesCount;
+- (id)matchingTree;
+- (unsigned int)matchingTreeVersion;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setGlobalProperties:(id)arg1;
-- (void)setHasVersion:(BOOL)arg1;
+- (void)setHasMapTypeSupport:(bool)arg1;
+- (void)setHasMatchingTreeVersion:(bool)arg1;
+- (void)setHasVersion:(bool)arg1;
+- (void)setMapTypeSupport:(unsigned int)arg1;
+- (void)setMatchingGraphNodes:(id)arg1;
+- (void)setMatchingTree:(id)arg1;
+- (void)setMatchingTreeVersion:(unsigned int)arg1;
 - (void)setStyles:(id)arg1;
 - (void)setVersion:(unsigned int)arg1;
-- (id)styleAtIndex:(unsigned int)arg1;
+- (id)styleAtIndex:(unsigned long long)arg1;
 - (id)styles;
-- (unsigned int)stylesCount;
+- (unsigned long long)stylesCount;
 - (unsigned int)version;
 - (void)writeTo:(id)arg1;
 

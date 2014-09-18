@@ -24,6 +24,7 @@
 + (void)enableLogRolling;
 + (id)loggerWithFilename:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_filenameWithGenerationNumber:(int)arg1;
 - (id)_fullCompressedFilePathWithGenerationNumber:(int)arg1;
 - (id)_fullFilePathWithGenerationNumber:(int)arg1;

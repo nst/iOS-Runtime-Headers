@@ -2,53 +2,52 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLDataBuffer, TSDGLParticleSystem, TSDGLShader, TSDGLTextureInfo;
+@class NSString, TSDGLDataBuffer, TSDGLParticleSystem, TSDGLShader, TSDGLTextureInfo;
 
-@interface KNBuildAnvil : KNAnimationEffect <KNFrameBuildAnimator> {
+@interface KNBuildAnvil : KNAnimationEffect <KNFrameBuildAnimator, KNAnimationPluginArchiving> {
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } _baseTransform;
-    struct CGPoint { float x1; float x2; } *_cameraShakePoints;
+    struct CGPoint { double x1; double x2; } *_cameraShakePoints;
     } _drawableFrame;
     } _frameRect;
     TSDGLDataBuffer *_objectBlurDataBuffer;
     TSDGLShader *_objectBlurShader;
     TSDGLDataBuffer *_objectDataBuffer;
     TSDGLShader *_objectShader;
-    BOOL _shouldDrawMotionBlur;
     TSDGLShader *_smokeShader;
     TSDGLParticleSystem *_smokeSystem;
     TSDGLTextureInfo *_smokeTexture;
@@ -57,23 +56,30 @@
     TSDGLTextureInfo *_specksTexture;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
-+ (BOOL)requiresSingleTexturePerStage;
++ (bool)requiresSingleTexturePerStage;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (void)animationDidEndWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfEffectWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
-- (struct CGPoint { float x1; float x2; }*)p_cameraShakePoints;
-- (struct CGPoint { float x1; float x2; })p_objectTranslationAtPercent:(double)arg1 duration:(double)arg2 objectSmashDuration:(double)arg3 objectFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfEffectWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (struct CGPoint { double x1; double x2; }*)p_cameraShakePoints;
+- (struct CGPoint { double x1; double x2; })p_objectTranslationAtPercent:(double)arg1 duration:(double)arg2 objectSmashDuration:(double)arg3 objectFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (id)p_smokeSystemForTR:(id)arg1 build:(id)arg2;
 - (id)p_specksSystemForTR:(id)arg1 build:(id)arg2;
 - (void)renderFrameWithContext:(id)arg1;

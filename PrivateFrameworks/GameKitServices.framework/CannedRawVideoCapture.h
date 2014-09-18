@@ -7,15 +7,15 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSDictionary, VideoScaler;
+@class NSArray, NSDictionary, NSString, VideoScaler;
 
 @interface CannedRawVideoCapture : NSObject <CannedVideoFrameFeeder> {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     int _allFrameCount;
     double _allFrameRate;
     NSArray *_allResolutions;
@@ -34,7 +34,11 @@
 @property double allFrameRate;
 @property(retain) NSArray * allResolutions;
 @property(retain) NSDictionary * currentResolution;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property int height;
+@property(readonly) Class superclass;
 @property(retain) VideoScaler * videoScaler;
 @property int width;
 
@@ -47,15 +51,15 @@
 - (void)getFrameRate:(double*)arg1 frameCount:(int*)arg2;
 - (int)height;
 - (id)initWithPath:(id)arg1;
-- (long)initializeFrameResolutionArrayFromFolder:(id)arg1;
-- (long)rotatePixelBuffer:(struct __CVBuffer { }*)arg1 andStoreTo:(struct __CVBuffer {}**)arg2;
+- (int)initializeFrameResolutionArrayFromFolder:(id)arg1;
+- (int)rotatePixelBuffer:(struct __CVBuffer { }*)arg1 andStoreTo:(struct __CVBuffer {}**)arg2;
 - (void)setAllFrameCount:(int)arg1;
 - (void)setAllFrameRate:(double)arg1;
 - (void)setAllResolutions:(id)arg1;
 - (void)setCurrentResolution:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (void)setVideoScaler:(id)arg1;
-- (long)setWidth:(int)arg1 height:(int)arg2;
+- (int)setWidth:(int)arg1 height:(int)arg2;
 - (void)setWidth:(int)arg1;
 - (id)videoScaler;
 - (int)width;

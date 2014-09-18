@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface NSBundleAccessibility : NSBundleAccessibility_super {
+@interface NSBundleAccessibility : __NSBundleAccessibility_super {
 }
 
-+ (id)_accessibilityTargetClassName;
-+ (void)_initializeSafeCategory;
-+ (id)_initializeSafeCategoryFromValidationManager;
-+ (id)_installSafeCategoryValidationMethod;
++ (Class)safeCategoryTargetClass;
++ (id)safeCategoryTargetClassName;
 
-- (void)_loadAXBundleForBundleOnMainThread;
-- (BOOL)loadAndReturnError:(id*)arg1;
+- (void)_loadAXBundleForBundleOffMainThread;
+- (bool)loadAndReturnError:(id*)arg1;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 
 @end

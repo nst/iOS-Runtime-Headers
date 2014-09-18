@@ -12,7 +12,7 @@
     int _lastLine;
 }
 
-@property(readonly) NSString * fileName;
+@property(copy,readonly) NSString * fileName;
 @property(readonly) int firstColumn;
 @property(readonly) int firstLine;
 @property(readonly) int lastColumn;

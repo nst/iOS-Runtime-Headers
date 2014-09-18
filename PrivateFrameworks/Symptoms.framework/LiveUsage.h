@@ -15,6 +15,8 @@
 @property(retain) NSDate * timeStamp;
 @property(retain) NSNumber * wifiIN;
 @property(retain) NSNumber * wifiOUT;
+@property(retain) NSNumber * wiredIN;
+@property(retain) NSNumber * wiredOUT;
 @property(retain) NSNumber * wwanIN;
 @property(retain) NSNumber * wwanOUT;
 

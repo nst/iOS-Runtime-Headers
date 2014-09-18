@@ -2,66 +2,75 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewControllerDataSource>, <QLPreviewItem>, NSMapTable, NSMutableArray, NSMutableDictionary, QLPreviewController;
+@class <QLPreviewControllerDataSource>, <QLPreviewItem>, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, NSURL, QLPreviewController;
 
-@interface QLPreviewItemsSource : NSObject {
-    int _UUID;
-    int _archiveDataSourceIndex;
+@interface QLPreviewItemsSource : NSObject <UIDocumentInteractionControllerDelegatePrivate> {
+    long long _UUID;
+    long long _archiveDataSourceIndex;
     NSMutableArray *_archiveItems;
-    int _currentPreviewItemIndex;
-    int _currentUIItemIndex;
+    long long _currentPreviewItemIndex;
+    long long _currentUIItemIndex;
     <QLPreviewControllerDataSource> *_dataSource;
-    unsigned int _numberOfPreviewItems;
-    BOOL _prepared;
+    unsigned long long _numberOfPreviewItems;
     QLPreviewController *_previewController;
     <QLPreviewItem> *_previewItem;
     NSMutableDictionary *_previewItemCache;
     NSMapTable *_uiItems;
+    NSURL *_unzippingURL;
+    bool_prepared;
 }
 
-@property(readonly) int UUID;
+@property(readonly) long long UUID;
 @property(readonly) <QLPreviewItem> * currentPreviewItem;
-@property int currentPreviewItemIndex;
-@property(readonly) int currentUIItemIndex;
+@property long long currentPreviewItemIndex;
+@property(readonly) long long currentUIItemIndex;
 @property <QLPreviewControllerDataSource> * dataSource;
-@property(readonly) int numberOfPreviewItems;
-@property(readonly) int numberOfUIItems;
-@property(readonly) BOOL prepared;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long numberOfPreviewItems;
+@property(readonly) long long numberOfUIItems;
+@property(readonly) bool prepared;
 @property(retain) <QLPreviewItem> * previewItem;
 @property(readonly) <QLPreviewItem> * realCurrentPreviewItem;
-@property int realCurrentPreviewItemIndex;
-@property(readonly) int realNumberOfPreviewItems;
-@property(readonly) BOOL shouldShowFileList;
-@property(getter=isViewingArchive,readonly) BOOL viewingArchive;
+@property long long realCurrentPreviewItemIndex;
+@property(readonly) long long realNumberOfPreviewItems;
+@property(readonly) bool shouldShowFileList;
+@property(readonly) Class superclass;
+@property(getter=isViewingArchive,readonly) bool viewingArchive;
 
-- (id)UIItemAtIndex:(int)arg1;
-- (int)UUID;
-- (id)_UIItemAtIndex:(int)arg1;
-- (void)_setUIItem:(id)arg1 atIndex:(int)arg2;
+- (id)UIItemAtIndex:(long long)arg1;
+- (long long)UUID;
+- (id)_UIItemAtIndex:(long long)arg1;
+- (void)_setUIItem:(id)arg1 atIndex:(long long)arg2;
+- (void)addArchiveItem:(id)arg1;
 - (id)currentPreviewItem;
-- (int)currentPreviewItemIndex;
-- (int)currentUIItemIndex;
+- (long long)currentPreviewItemIndex;
+- (long long)currentUIItemIndex;
 - (id)dataSource;
 - (void)dealloc;
+- (id)documentInteractionControllerURLOfDirectoryForUnzippedDocument:(id)arg1;
 - (id)initWithPreviewController:(id)arg1;
-- (BOOL)isViewingArchive;
-- (int)numberOfPreviewItems;
-- (int)numberOfUIItems;
+- (bool)isViewingArchive;
+- (long long)numberOfPreviewItems;
+- (long long)numberOfUIItems;
 - (void)prepare;
-- (BOOL)prepared;
-- (void)preparedPreviewItemAtIndex:(int)arg1 completionBlock:(id)arg2;
+- (bool)prepared;
+- (void)preparedPreviewItemAtIndex:(long long)arg1 completionBlock:(id)arg2;
 - (id)previewItem;
-- (id)previewItemAtIndex:(int)arg1;
+- (id)previewItemAtIndex:(long long)arg1;
 - (void)purgeCache;
 - (id)realCurrentPreviewItem;
-- (int)realCurrentPreviewItemIndex;
-- (int)realNumberOfPreviewItems;
-- (id)realPreviewItemAtIndex:(int)arg1;
+- (long long)realCurrentPreviewItemIndex;
+- (long long)realNumberOfPreviewItems;
+- (id)realPreviewItemAtIndex:(long long)arg1;
+- (void)removeArchiveItemAtIndex:(long long)arg1;
 - (void)reset;
-- (void)setCurrentPreviewItemIndex:(int)arg1;
+- (void)resolvePreviewItem:(id)arg1 completionBlock:(id)arg2;
+- (void)setCurrentPreviewItemIndex:(long long)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setPreviewItem:(id)arg1;
-- (void)setRealCurrentPreviewItemIndex:(int)arg1;
-- (BOOL)shouldShowFileList;
+- (void)setRealCurrentPreviewItemIndex:(long long)arg1;
+- (bool)shouldShowFileList;
 
 @end

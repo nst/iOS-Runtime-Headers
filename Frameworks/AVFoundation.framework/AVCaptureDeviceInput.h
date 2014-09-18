@@ -10,28 +10,24 @@
 
 @property(readonly) AVCaptureDevice * device;
 
++ (id)alloc;
 + (id)deviceInputWithDevice:(id)arg1 error:(id*)arg2;
 + (void)initialize;
 
-- (void)_applyOverridesToCaptureOptions:(id)arg1;
-- (BOOL)_authorizedToUseDevice:(id)arg1;
-- (void)_checkForFigCameraAccess;
-- (int)_requestCameraRecordPermission;
-- (void)_setDevice:(id)arg1;
+- (bool)_authorizedToUseDevice:(id)arg1;
+- (void)_handleNotification:(id)arg1 payload:(id)arg2;
+- (int)_requestCameraRecordPermissionForDevice:(id)arg1;
+- (void)_sourceFormatDidChange:(struct opaqueCMFormatDescription { }*)arg1;
+- (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
 - (id)description;
+- (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)device;
-- (void)didStartForSession:(id)arg1;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
-- (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)init;
 - (id)initWithDevice:(id)arg1 error:(id*)arg2;
 - (id)notReadyError;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)ports;
-- (void)setDevice:(id)arg1;
-- (void)setSession:(id)arg1;
-- (void)willStartForSession:(id)arg1;
 
 @end

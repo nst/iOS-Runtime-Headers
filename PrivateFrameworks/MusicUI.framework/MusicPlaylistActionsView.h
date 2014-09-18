@@ -5,24 +5,30 @@
 @class NSMutableArray, NSString, UIView, _UIBackdropView;
 
 @interface MusicPlaylistActionsView : UIView {
-    int _actionsStyle;
+    long long _actionsStyle;
     _UIBackdropView *_backdropView;
     NSMutableArray *_buttons;
     UIView *_hairlineView;
 }
 
-@property int actionsStyle;
+@property long long actionsStyle;
 @property(copy) NSString * backdropViewGroupName;
 
 - (void).cxx_destruct;
 - (void)_addButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_updateButtonsForCurrentStyle;
-- (int)actionsStyle;
+- (long long)actionsStyle;
 - (id)backdropViewGroupName;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setActionsStyle:(int)arg1;
+- (void)setActionsStyle:(long long)arg1;
 - (void)setBackdropViewGroupName:(id)arg1;
-- (void)setCanDeletePlaylist:(BOOL)arg1;
+- (void)setCanClearPlaylist:(bool)arg1;
+- (void)setCanDeletePlaylist:(bool)arg1;
+- (void)setCanEditPlaylist:(bool)arg1;
+- (void)setCanRefreshPlaylist:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

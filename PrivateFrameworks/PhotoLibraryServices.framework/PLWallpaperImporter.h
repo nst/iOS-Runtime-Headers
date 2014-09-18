@@ -10,8 +10,8 @@
     PLPhotoLibrary *photoLibrary;
 }
 
-@property(readonly) NSArray * allWallpaperURLs;
-@property(readonly) PLManagedObjectContext * managedObjectContext;
+@property(retain,readonly) NSArray * allWallpaperURLs;
+@property(retain,readonly) PLManagedObjectContext * managedObjectContext;
 @property(retain) PLPhotoLibrary * photoLibrary;
 
 + (void)importWallpaperAssetsIntoPhotoLibrary:(id)arg1;

@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNChartSelection, TSKSelection;
+@class NSString, TNChartSelection, TSKSelection;
 
 @interface TNArchivedChartSelection : TSPObject <TSKArchivedSelection> {
     TNChartSelection *mSelection;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) TSKSelection * selection;
+@property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

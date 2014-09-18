@@ -2,62 +2,66 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIChartsViewControllerDelegate>, NSArray, NSMutableDictionary, NSOperationQueue, SKUIClientContext, SKUIResourceLoader, SKUISegmentedTableHeaderView, UISegmentedControl;
+@class <SKUIChartsViewControllerDelegate>, NSArray, NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, SKUIResourceLoader, SKUISegmentedTableHeaderView, UISegmentedControl;
 
 @interface SKUIIPhoneChartsViewController : UIViewController <SKUIItemListTableDelegate> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     SKUIResourceLoader *_artworkLoader;
     NSMutableDictionary *_chartViewControllers;
     NSArray *_charts;
     SKUIClientContext *_clientContext;
     } _contentInset;
     <SKUIChartsViewControllerDelegate> *_delegate;
-    BOOL _delegateWantsWillDisplay;
     SKUISegmentedTableHeaderView *_headerView;
     NSOperationQueue *_operationQueue;
     UISegmentedControl *_segmentedControl;
-    int _selectedChartIndex;
+    long long _selectedChartIndex;
+    bool_delegateWantsWillDisplay;
 }
 
 @property(retain) SKUIResourceLoader * artworkLoader;
 @property(copy) NSArray * charts;
 @property(retain) SKUIClientContext * clientContext;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIChartsViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_artworkContextForChart:(id)arg1;
-- (int)_chartIndexForChartViewController:(id)arg1;
+- (long long)_chartIndexForChartViewController:(id)arg1;
 - (id)_itemListWithChart:(id)arg1;
 - (void)_reloadData;
 - (void)_segmentedControlAction:(id)arg1;
 - (id)_selectedViewController;
 - (void)_showSelectedViewController;
-- (id)_viewControllerWithIndex:(int)arg1;
+- (id)_viewControllerWithIndex:(long long)arg1;
 - (id)artworkLoader;
 - (id)charts;
 - (id)clientContext;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (void)dealloc;
 - (id)delegate;
 - (void)enumerateVisibleItemsUsingBlock:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemIndex:(int)arg1 chartIndex:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemIndex:(long long)arg1 chartIndex:(long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)itemList:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)itemList:(id)arg1 didSelectItem:(id)arg2 atIndexPath:(id)arg3;
 - (void)itemList:(id)arg1 willDisplayCellForItem:(id)arg2 atIndexPath:(id)arg3;
-- (void)loadNextPageOfArtworkWithReason:(int)arg1;
+- (void)loadNextPageOfArtworkWithReason:(long long)arg1;
 - (void)loadView;
 - (void)setArtworkLoader:(id)arg1;
 - (void)setCharts:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

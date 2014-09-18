@@ -9,19 +9,21 @@
 @class AVAsset, AVAssetImageGenerator, NSError, NSObject<OS_dispatch_queue>, TSDDrawableInfo, TSDMovieCompatibilityChecker, TSPData, TSUScaledProgress;
 
 @interface TSDMovieInfoImporter : TSDInfoImporter {
+    boolmDidMessageDelegateAboutMovieCompatibility;
+    boolmIsCancelled;
     AVAsset *mAsset;
     TSDMovieCompatibilityChecker *mCompatibilityChecker;
     id mCompletionHandler;
-    BOOL mDidMessageDelegateAboutMovieCompatibility;
     NSError *mError;
     NSObject<OS_dispatch_queue> *mImportQueue;
     TSDDrawableInfo *mInfo;
-    BOOL mIsCancelled;
     TSPData *mMovieData;
     AVAssetImageGenerator *mPosterImageGenerator;
     TSUScaledProgress *mProgress;
 }
 
++ (bool)i_canImportFileAtURL:(id)arg1 type:(id)arg2;
++ (bool)i_canImportFileWithData:(id)arg1 type:(id)arg2;
 + (id)i_supportedFileTypesForSubclass;
 + (id)supportedMovieRemoteURLSchemes;
 
@@ -31,10 +33,12 @@
 - (void)importInfoWithCompletionHandler:(id)arg1;
 - (id)info;
 - (id)initWithContext:(id)arg1 URL:(id)arg2 theme:(id)arg3;
+- (id)initWithContext:(id)arg1 data:(id)arg2 theme:(id)arg3;
 - (void)p_finishImportingWithInfo:(id)arg1 error:(id)arg2;
+- (void)p_importInfoFromAnimatedGIF;
 - (void)p_importInfoFromAsset;
-- (void)p_importInfoFromAssetConvertingIfNeededToRequiredCompatibilityLevel:(int)arg1 fromCompatibilityLevel:(int)arg2;
-- (BOOL)p_isURLRemote;
+- (void)p_importInfoFromAssetConvertingIfNeededToRequiredCompatibilityLevel:(long long)arg1 fromCompatibilityLevel:(long long)arg2;
+- (bool)p_isURLRemote;
 - (void)p_tellMovieCompatibilityProviderToIgnoreCompatibilityLevelIfNeeded;
 - (id)progress;
 

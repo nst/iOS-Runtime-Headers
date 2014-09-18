@@ -5,21 +5,21 @@
 @class NSAttributedString, UILabel, _UIBackdropView;
 
 @interface RUTableSectionHeaderView : UITableViewHeaderFooterView {
-    float _backdropTransitionWeighting;
+    double _backdropTransitionWeighting;
     _UIBackdropView *_backdropView;
     UILabel *_titleLabel;
 }
 
 @property(copy) NSAttributedString * attributedTitle;
-@property float backdropTransitionWeighting;
+@property double backdropTransitionWeighting;
 
 - (void).cxx_destruct;
 - (id)attributedTitle;
-- (float)backdropTransitionWeighting;
+- (double)backdropTransitionWeighting;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (void)setAttributedTitle:(id)arg1;
-- (void)setBackdropTransitionWeighting:(float)arg1;
-- (void)setTableViewStyle:(int)arg1;
+- (void)setBackdropTransitionWeighting:(double)arg1;
+- (void)setTableViewStyle:(long long)arg1;
 
 @end

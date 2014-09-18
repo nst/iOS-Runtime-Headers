@@ -5,32 +5,34 @@
 @class NSString, NSURL, TDDistiller, TDLogger;
 
 @interface TDDistillRunner : NSObject {
-    int _assetStoreVersionNumber;
+    long long _assetStoreVersionNumber;
     NSString *_assetStoreVersionString;
+    long long _capabilities;
     NSURL *_carScratchURL;
     TDDistiller *_distiller;
     TDLogger *_logger;
     NSURL *_outputURL;
 }
 
-@property int assetStoreVersionNumber;
+@property long long assetStoreVersionNumber;
 @property(copy) NSString * assetStoreVersionString;
 @property(retain) TDLogger * logger;
 @property(copy) NSURL * outputURL;
 
-- (BOOL)_isDistillUnnecessaryForDocument:(id)arg1;
+- (bool)_isDistillUnnecessaryForDocument:(id)arg1;
 - (void)_moveScratchToOutputPath;
 - (void)_removeScratchPath;
-- (int)assetStoreVersionNumber;
+- (long long)assetStoreVersionNumber;
 - (id)assetStoreVersionString;
 - (id)carScratchURL;
 - (void)dealloc;
 - (id)init;
 - (id)logger;
 - (id)outputURL;
-- (BOOL)runDistillWithDocumentURL:(id)arg1 outputURL:(id)arg2 attemptIncremental:(BOOL)arg3 forceDistill:(BOOL)arg4;
-- (void)setAssetStoreVersionNumber:(int)arg1;
+- (bool)runDistillWithDocumentURL:(id)arg1 outputURL:(id)arg2 attemptIncremental:(bool)arg3 forceDistill:(bool)arg4;
+- (void)setAssetStoreVersionNumber:(long long)arg1;
 - (void)setAssetStoreVersionString:(id)arg1;
+- (void)setDocumentCapabilities:(long long)arg1;
 - (void)setLogger:(id)arg1;
 - (void)setOutputURL:(id)arg1;
 

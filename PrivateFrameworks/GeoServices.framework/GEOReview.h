@@ -16,35 +16,39 @@
     NSString *_uid;
 }
 
-@property BOOL hasReviewTime;
-@property(readonly) BOOL hasReviewer;
-@property BOOL hasScore;
-@property(readonly) BOOL hasSnippet;
-@property(readonly) BOOL hasUid;
+@property bool hasReviewTime;
+@property(readonly) bool hasReviewer;
+@property bool hasScore;
+@property(readonly) bool hasSnippet;
+@property(readonly) bool hasUid;
 @property double reviewTime;
 @property(retain) GEOUser * reviewer;
 @property double score;
 @property(retain) NSString * snippet;
 @property(retain) NSString * uid;
 
++ (id)reviewWithYelpJSON:(id)arg1;
+
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasReviewTime;
-- (BOOL)hasReviewer;
-- (BOOL)hasScore;
-- (BOOL)hasSnippet;
-- (BOOL)hasUid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasReviewTime;
+- (bool)hasReviewer;
+- (bool)hasScore;
+- (bool)hasSnippet;
+- (bool)hasUid;
+- (unsigned long long)hash;
+- (id)initWithPlaceDataReview:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)reviewTime;
 - (id)reviewer;
 - (double)score;
-- (void)setHasReviewTime:(BOOL)arg1;
-- (void)setHasScore:(BOOL)arg1;
+- (void)setHasReviewTime:(bool)arg1;
+- (void)setHasScore:(bool)arg1;
 - (void)setReviewTime:(double)arg1;
 - (void)setReviewer:(id)arg1;
 - (void)setScore:(double)arg1;

@@ -7,7 +7,7 @@
 @interface BKSApplicationDataStore : NSObject {
     NSString *_bundleId;
     BKSApplicationDataStoreRepositoryClient *_client;
-    BOOL _clientNeedsCheckin;
+    bool_clientNeedsCheckin;
 }
 
 + (void)_doWithClassClient:(id)arg1;
@@ -21,6 +21,8 @@
 - (id)_makeSafe:(id)arg1 forType:(Class)arg2;
 - (void)archivedObjectForKey:(id)arg1 withResult:(id)arg2;
 - (id)archivedObjectForKey:(id)arg1;
+- (void)archivedXPCCodableObjectForKey:(id)arg1 ofType:(Class)arg2 withResult:(id)arg3;
+- (id)archivedXPCCodableObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithBundleIdentifier:(id)arg1;
@@ -33,6 +35,7 @@
 - (void)safeObjectForKey:(id)arg1 ofType:(Class)arg2 withResult:(id)arg3;
 - (id)safeObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (void)setArchivedObject:(id)arg1 forKey:(id)arg2;
+- (void)setArchivedXPCCodableObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

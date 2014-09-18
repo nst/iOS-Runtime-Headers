@@ -11,27 +11,31 @@
 @interface IMRemoteURLConnection : NSObject {
     id _block;
     NSString *_bundleIdentifierForDataUsage;
-    BOOL _cancelled;
     NSObject<OS_xpc_object> *_connection;
-    BOOL _forceCellularIfPossible;
-    BOOL _loading;
     NSURLRequest *_request;
     int _retries;
+    bool_cancelled;
+    bool_forceCellularIfPossible;
+    bool_loading;
+    bool_requireIDSHost;
 }
 
 @property(retain) NSString * bundleIdentifierForDataUsage;
-@property BOOL forceCellularIfPossible;
+@property bool forceCellularIfPossible;
+@property bool requireIDSHost;
 
-- (BOOL)_connect;
-- (BOOL)_disconnect;
+- (bool)_connect;
+- (bool)_disconnect;
 - (void)_disconnected;
 - (id)bundleIdentifierForDataUsage;
 - (void)cancel;
 - (void)dealloc;
-- (BOOL)forceCellularIfPossible;
+- (bool)forceCellularIfPossible;
 - (id)initWithURLRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)load;
+- (bool)requireIDSHost;
 - (void)setBundleIdentifierForDataUsage:(id)arg1;
-- (void)setForceCellularIfPossible:(BOOL)arg1;
+- (void)setForceCellularIfPossible:(bool)arg1;
+- (void)setRequireIDSHost:(bool)arg1;
 
 @end

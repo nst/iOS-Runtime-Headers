@@ -5,21 +5,21 @@
 @class AVAudioPayload;
 
 @interface AVAudioTier : NSObject {
-    unsigned long audioBitrate;
-    unsigned long networkBitrate;
-    unsigned long packetsPerBundle;
+    unsigned int audioBitrate;
+    unsigned int networkBitrate;
+    unsigned int packetsPerBundle;
     AVAudioPayload *payload;
 }
 
-@property(readonly) unsigned long audioBitrate;
-@property(readonly) unsigned long networkBitrate;
-@property(readonly) unsigned long packetsPerBundle;
+@property(readonly) unsigned int audioBitrate;
+@property(readonly) unsigned int networkBitrate;
+@property(readonly) unsigned int packetsPerBundle;
 @property(readonly) AVAudioPayload * payload;
 
-- (unsigned long)audioBitrate;
-- (id)initWithNetworkBitrate:(unsigned long)arg1 audioBitrate:(unsigned long)arg2 packetsPerBundle:(unsigned long)arg3 payload:(id)arg4;
-- (unsigned long)networkBitrate;
-- (unsigned long)packetsPerBundle;
+- (unsigned int)audioBitrate;
+- (id)initWithNetworkBitrate:(unsigned int)arg1 audioBitrate:(unsigned int)arg2 packetsPerBundle:(unsigned int)arg3 payload:(id)arg4;
+- (unsigned int)networkBitrate;
+- (unsigned int)packetsPerBundle;
 - (id)payload;
 
 @end

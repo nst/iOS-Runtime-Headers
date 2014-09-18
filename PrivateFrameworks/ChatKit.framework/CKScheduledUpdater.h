@@ -17,7 +17,7 @@
 - (id)holdingUpdatesKeys;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)invalidate;
-- (BOOL)isHoldingUpdates;
+- (bool)isHoldingUpdates;
 - (void)setHoldingUpdatesKeys:(id)arg1;
 - (void)setNeedsUpdate;
 - (void)updateIfNeeded;

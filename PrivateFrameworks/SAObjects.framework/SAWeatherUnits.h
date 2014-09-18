@@ -7,9 +7,13 @@
 @interface SAWeatherUnits : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSString * distanceUnits;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * pressureUnits;
 @property(copy) NSString * speedUnits;
+@property(readonly) Class superclass;
 @property(copy) NSString * temperatureUnits;
 
 + (id)units;

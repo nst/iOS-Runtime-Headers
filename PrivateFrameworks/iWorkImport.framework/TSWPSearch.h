@@ -6,28 +6,28 @@
 
 @interface TSWPSearch : TSKSearch {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     TSWPFilteredString *_filteredString;
     } _range;
     NSString *_searchedString;
     TSWPStorage *_storage;
 }
 
-@property(readonly) TSWPFilteredString * filteredString;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property(retain,readonly) TSWPFilteredString * filteredString;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property(readonly) NSString * searchedString;
 @property(readonly) TSWPStorage * storage;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)filteredString;
-- (void)foundHitWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)initWithString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3 storage:(id)arg4 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
-- (BOOL)isComplete;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (void)foundHitWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)initWithString:(id)arg1 options:(unsigned long long)arg2 hitBlock:(id)arg3 storage:(id)arg4 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5;
+- (bool)isComplete;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (id)searchedString;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)storage;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSCHChartInfo, TSCHChartLayout;
+@class NSArray, NSString, TSCHChartInfo, TSCHChartLayout;
 
 @interface TSCHChartNonRep : NSObject <TSCHSupportsRendering> {
     TSCHChartInfo *mChartInfo;
@@ -12,33 +12,39 @@
 
 @property(retain) TSCHChartInfo * chartInfo;
 @property(retain) TSCHChartLayout * chartLayout;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)chartInfo;
 - (id)chartLayout;
 - (void)clearRenderers;
 - (id)commandController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertUnscaledToBoundsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertNaturalRectToLayerRelative:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertUnscaledToBoundsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)didDrawInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (BOOL)forceRenderBlankBackground;
+- (bool)forceRenderBlankBackground;
 - (id)geometry;
 - (id)initWithChartInfo:(id)arg1;
-- (BOOL)isDrawingIntoPDF;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })outerShadowFrame;
-- (BOOL)renderElements;
-- (BOOL)renderElementsShadowOnly;
-- (BOOL)renderElementsWithoutShadows;
-- (BOOL)renderLabels;
+- (bool)isDrawingIntoPDF;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })outerShadowFrame;
+- (bool)renderElements;
+- (bool)renderElementsShadowOnly;
+- (bool)renderElementsWithoutShadows;
+- (bool)renderLabels;
 - (id)renderSeriesIndexSet;
-- (BOOL)renderTrendLinesForSeriesIndex:(unsigned int)arg1;
-- (id)renderValueIndexSetForSeries:(unsigned int)arg1;
+- (bool)renderTrendLinesForSeriesIndex:(unsigned long long)arg1;
+- (id)renderValueIndexSetForSeries:(unsigned long long)arg1;
 - (id)renderers;
+- (bool)requireSeparateLabelLayer;
 - (void)setChartInfo:(id)arg1;
 - (void)setChartLayout:(id)arg1;
 - (void)setupForDrawingInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
-- (BOOL)shadowsEnabled;
-- (BOOL)shouldShowLegendHighlight;
-- (float)viewScale;
+- (bool)shadowsEnabled;
+- (bool)shouldShowLegendHighlight;
+- (double)viewScale;
 
 @end

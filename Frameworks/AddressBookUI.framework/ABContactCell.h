@@ -2,47 +2,43 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardGroupItem, UIColor, UIView;
+@class ABCardGroupItem, NSArray;
 
 @interface ABContactCell : UITableViewCell {
     ABCardGroupItem *_cardGroupItem;
-    UIColor *_contactSeparatorColor;
-    BOOL _hasBeenDisplayed;
-    float _leftContentMargin;
-    float _rightContentMargin;
-    UIView *_separatorView;
-    BOOL _showSeparator;
+    double _leftContentMargin;
+    double _rightContentMargin;
+    NSArray *_variableConstraints;
+    bool_addedConstantsConstraints;
+    bool_hasBeenDisplayed;
 }
 
 @property(retain) ABCardGroupItem * cardGroupItem;
-@property(retain) UIColor * contactSeparatorColor;
-@property BOOL hasBeenDisplayed;
-@property float leftContentMargin;
-@property float rightContentMargin;
-@property(readonly) UIView * separatorView;
-@property BOOL showSeparator;
+@property bool hasBeenDisplayed;
+@property double leftContentMargin;
+@property double rightContentMargin;
+@property bool showSeparator;
 
 - (id)cardGroupItem;
-- (id)contactSeparatorColor;
+- (id)constantConstraints;
 - (void)dealloc;
-- (BOOL)hasBeenDisplayed;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
-- (float)leftContentMargin;
+- (bool)hasBeenDisplayed;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (double)leftContentMargin;
+- (double)minCellHeight;
 - (void)performAccessoryAction;
 - (void)performDefaultAction;
-- (float)rightContentMargin;
-- (id)separatorView;
+- (void)prepareForReuse;
+- (double)rightContentMargin;
 - (void)setCardGroupItem:(id)arg1;
-- (void)setContactSeparatorColor:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHasBeenDisplayed:(BOOL)arg1;
-- (void)setLeftContentMargin:(float)arg1;
-- (void)setNeedsLayout;
-- (void)setRightContentMargin:(float)arg1;
-- (void)setShowSeparator:(BOOL)arg1;
-- (BOOL)shouldPerformAccessoryAction;
-- (BOOL)shouldPerformDefaultAction;
-- (BOOL)showSeparator;
+- (void)setHasBeenDisplayed:(bool)arg1;
+- (void)setLeftContentMargin:(double)arg1;
+- (void)setRightContentMargin:(double)arg1;
+- (void)setShowSeparator:(bool)arg1;
+- (bool)shouldPerformAccessoryAction;
+- (bool)shouldPerformDefaultAction;
+- (bool)showSeparator;
+- (void)updateConstraints;
+- (id)variableConstraints;
 
 @end

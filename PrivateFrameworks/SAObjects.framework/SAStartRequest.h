@@ -8,36 +8,40 @@
 }
 
 @property(copy) NSString * aceId;
-@property BOOL clearContext;
-@property BOOL eyesFree;
-@property BOOL handsFree;
+@property bool clearContext;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool eyesFree;
+@property bool handsFree;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * motionActivity;
 @property(copy) NSNumber * motionConfidence;
 @property(copy) NSString * origin;
 @property(copy) NSString * refId;
-@property BOOL talkOnly;
+@property(readonly) Class superclass;
+@property bool talkOnly;
 @property(copy) NSString * utterance;
 
 + (id)startRequest;
 + (id)startRequestWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)clearContext;
+- (bool)clearContext;
 - (id)encodedClassName;
-- (BOOL)eyesFree;
+- (bool)eyesFree;
 - (id)groupIdentifier;
-- (BOOL)handsFree;
+- (bool)handsFree;
 - (id)motionActivity;
 - (id)motionConfidence;
 - (id)origin;
-- (void)setClearContext:(BOOL)arg1;
-- (void)setEyesFree:(BOOL)arg1;
-- (void)setHandsFree:(BOOL)arg1;
+- (void)setClearContext:(bool)arg1;
+- (void)setEyesFree:(bool)arg1;
+- (void)setHandsFree:(bool)arg1;
 - (void)setMotionActivity:(id)arg1;
 - (void)setMotionConfidence:(id)arg1;
 - (void)setOrigin:(id)arg1;
-- (void)setTalkOnly:(BOOL)arg1;
+- (void)setTalkOnly:(bool)arg1;
 - (void)setUtterance:(id)arg1;
-- (BOOL)talkOnly;
+- (bool)talkOnly;
 - (id)utterance;
 
 @end

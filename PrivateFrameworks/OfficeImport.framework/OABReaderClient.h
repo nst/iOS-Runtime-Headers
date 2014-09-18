@@ -5,6 +5,6 @@
 @interface OABReaderClient : NSObject {
 }
 
-+ (BOOL)sourceDrawableIsTopLevel:(id)arg1;
++ (bool)sourceDrawableIsTopLevel:(id)arg1;
 
 @end

@@ -7,22 +7,24 @@
 @interface TSPSaveOperationState : NSObject {
     NSMapTable *_newDataStorages;
     int _sampleID;
-    unsigned int _updateType;
+    long long _updateType;
 }
 
+@property(readonly) bool preserveDocumentUUID;
 @property int sampleID;
-@property(readonly) BOOL shouldUpdate;
-@property(readonly) unsigned int updateType;
+@property(readonly) bool shouldUpdate;
+@property(readonly) long long updateType;
 
 - (void).cxx_destruct;
 - (void)addNewStorage:(id)arg1 forData:(id)arg2;
 - (void)enumerateDatasAndStoragesUsingBlock:(id)arg1;
-- (BOOL)hasNewStorageForData:(id)arg1;
+- (bool)hasNewStorageForData:(id)arg1;
 - (id)init;
-- (id)initWithUpdateType:(unsigned int)arg1;
+- (id)initWithUpdateType:(long long)arg1;
+- (bool)preserveDocumentUUID;
 - (int)sampleID;
 - (void)setSampleID:(int)arg1;
-- (BOOL)shouldUpdate;
-- (unsigned int)updateType;
+- (bool)shouldUpdate;
+- (long long)updateType;
 
 @end

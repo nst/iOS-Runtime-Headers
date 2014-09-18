@@ -6,19 +6,19 @@
 
 @interface PLPublishCloudSharedAssetsJob : PLCloudSharingJob {
     NSString *_batchCommentText;
-    BOOL _isNewAlbum;
     NSArray *_originalAssetUUIDs;
     NSString *_publishAlbumCloudGUID;
     NSDictionary *_trimmedVideoPathInfo;
+    bool_isNewAlbum;
 }
 
 @property(retain) NSString * batchCommentText;
-@property BOOL isNewAlbum;
+@property bool isNewAlbum;
 @property(retain) NSArray * originalAssetUUIDs;
 @property(retain) NSString * publishAlbumCloudGUID;
 @property(retain) NSDictionary * trimmedVideoPathInfo;
 
-+ (void)publishBatchOfOriginalAssets:(id)arg1 toSharedAlbum:(id)arg2 withTrimmedVideoPathInfo:(id)arg3 isNewAlbum:(BOOL)arg4 batchCommentText:(id)arg5;
++ (void)publishBatchOfOriginalAssets:(id)arg1 toSharedAlbum:(id)arg2 withTrimmedVideoPathInfo:(id)arg3 isNewAlbum:(bool)arg4 batchCommentText:(id)arg5;
 
 - (id)batchCommentText;
 - (long long)daemonOperation;
@@ -26,18 +26,18 @@
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)executeDaemonOperation;
-- (id)initFromXPCObject:(id)arg1;
-- (BOOL)isNewAlbum;
+- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (bool)isNewAlbum;
 - (id)originalAssetUUIDs;
 - (id)publishAlbumCloudGUID;
 - (void)run;
 - (void)runDaemonSide;
 - (void)setBatchCommentText:(id)arg1;
-- (void)setIsNewAlbum:(BOOL)arg1;
+- (void)setIsNewAlbum:(bool)arg1;
 - (void)setOriginalAssetUUIDs:(id)arg1;
 - (void)setPublishAlbumCloudGUID:(id)arg1;
 - (void)setTrimmedVideoPathInfo:(id)arg1;
-- (BOOL)shouldArchiveXPCToDisk;
+- (bool)shouldArchiveXPCToDisk;
 - (id)trimmedVideoPathInfo;
 
 @end

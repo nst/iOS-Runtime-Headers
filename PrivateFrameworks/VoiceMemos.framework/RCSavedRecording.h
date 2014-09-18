@@ -2,57 +2,76 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVItem, NSDate, NSString, NSURL;
+@class AVAsset, NSDate, NSString, NSURL;
 
 @interface RCSavedRecording : NSManagedObject <UIActivityItemSource> {
-    AVItem *_avItem;
+    AVAsset *_avAsset;
     NSString *_path;
+    bool_hasPendingChangeAffectingEntityRevision;
+    bool_ignoreChangeForEntityRevision;
+    bool_pathWasInvalid;
 }
 
-@property(readonly) AVItem * avItem;
-@property(getter=isBeingMade) BOOL beingMade;
+@property(copy,readonly) NSURL * URIRepresentation;
+@property(readonly) AVAsset * avAsset;
+@property(getter=isBeingMade) bool beingMade;
 @property(copy) NSString * customLabel;
 @property(copy) NSDate * date;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSString * detailLabel;
 @property double duration;
+@property(readonly) bool hasPendingChangeAffectingEntityRevision;
+@property(readonly) unsigned long long hash;
 @property long long iTunesPersistentID;
 @property(readonly) NSString * label;
-@property int labelPreset;
+@property long long labelPreset;
 @property(copy) NSString * path;
-@property(getter=isPendingRestore) BOOL pendingRestore;
-@property(getter=isSynced) BOOL synced;
-@property(readonly) NSURL * url;
+@property(getter=isPendingRestore) bool pendingRestore;
+@property long long recordingID;
+@property(readonly) Class superclass;
+@property(getter=isSynced) bool synced;
+@property(copy,readonly) NSURL * url;
 
-+ (id)localizedStringForRecordingLabel:(int)arg1;
++ (id)localizedStringForRecordingLabel:(long long)arg1;
++ (id)propertiesAffectingEntityRevision;
 
 - (void).cxx_destruct;
-- (id)_activityURLCreateIfNecessary:(BOOL)arg1;
+- (id)URIRepresentation;
+- (id)_activityURLCreateIfNecessary:(bool)arg1;
 - (id)_inProgressBeingMadeLockfilePath;
-- (id)_temporaryDirectoryCreateIfNecessary:(BOOL)arg1;
+- (id)_labelAllowingEmptyString:(bool)arg1;
+- (void)_validatePath;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
-- (id)avItem;
+- (id)avAsset;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
+- (id)customLabel;
 - (id)detailLabel;
 - (double)duration;
+- (bool)hasPendingChangeAffectingEntityRevision;
 - (long long)iTunesPersistentID;
-- (BOOL)isBeingMade;
-- (BOOL)isPendingRestore;
-- (BOOL)isSynced;
+- (bool)isBeingMade;
+- (bool)isPendingRestore;
+- (bool)isSynced;
 - (id)label;
-- (int)labelPreset;
+- (long long)labelPreset;
 - (id)path;
-- (void)setBeingMade:(BOOL)arg1;
+- (long long)recordingID;
+- (void)setBeingMade:(bool)arg1;
+- (void)setCustomLabel:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setITunesPersistentID:(long long)arg1;
-- (void)setLabelPreset:(int)arg1;
+- (void)setLabelPreset:(long long)arg1;
 - (void)setPath:(id)arg1;
-- (void)setPendingRestore:(BOOL)arg1;
-- (void)setSynced:(BOOL)arg1;
+- (void)setPendingRestore:(bool)arg1;
+- (void)setRecordingID:(long long)arg1;
+- (void)setSynced:(bool)arg1;
 - (id)url;
+- (void)willChangeValueForKey:(id)arg1;
 - (void)willSave;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, UIScreen;
+@class NSDictionary, NSMutableDictionary, NSString, UIScreen;
 
 @interface UIKBGraphCache : NSObject <_UIScreenBasedObject> {
     NSMutableDictionary *_graphCache;
@@ -10,13 +10,19 @@
 }
 
 @property(readonly) UIScreen * _intendedScreen;
+@property(readonly) NSDictionary * _options;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSMutableDictionary * graphCache;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)graphCacheForScreen:(id)arg1;
 
 - (id)_initWithScreen:(id)arg1 options:(id)arg2;
 - (id)_intendedScreen;
-- (BOOL)_matchingOptions:(id)arg1;
+- (bool)_matchingOptions:(id)arg1;
+- (id)_options;
 - (void)dealloc;
 - (id)graphCache;
 

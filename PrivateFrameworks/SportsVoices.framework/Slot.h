@@ -8,6 +8,6 @@
 + (id)instanceFromPlist:(id)arg1;
 
 - (id)initFromPlist:(id)arg1;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 
 @end

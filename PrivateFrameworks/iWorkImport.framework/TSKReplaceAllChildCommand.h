@@ -16,7 +16,7 @@
 
 @property(readonly) unsigned int countOfItemsReplaced;
 @property(readonly) NSString * findString;
-@property(readonly) unsigned int options;
+@property(readonly) unsigned long long options;
 @property TSKReplaceAllCommand * parent;
 @property(readonly) NSString * replaceString;
 
@@ -24,7 +24,7 @@
 - (id)findString;
 - (id)initWithParentCommand:(id)arg1;
 - (void)loadFromArchive:(const struct ReplaceAllChildCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (id)parent;
 - (id)replaceString;
 - (void)saveToArchive:(struct ReplaceAllChildCommandArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct CommandArchive {} *x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;

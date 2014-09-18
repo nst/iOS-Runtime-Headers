@@ -15,19 +15,19 @@
     NSObject<OS_dispatch_queue> *_eventQueue;
     id _messageHandler;
     NSMutableSet *_outstandingMessages;
-    BOOL _ownsQueue;
-    BOOL _timeoutDisabled;
+    bool_ownsQueue;
+    bool_timeoutDisabled;
 }
 
 @property(retain) id context;
 @property(copy) id disconnectHandler;
 @property(copy) id messageHandler;
 @property(readonly) NSString * serviceName;
-@property BOOL timeoutDisabled;
+@property bool timeoutDisabled;
 
 - (void)_handleXPCError:(id)arg1;
 - (void)_handleXPCMessage:(id)arg1;
-- (int)_outstandingMessages;
+- (long long)_outstandingMessages;
 - (void)_registerMessage:(id)arg1;
 - (void)_removeMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;
@@ -45,8 +45,8 @@
 - (void)setContext:(id)arg1;
 - (void)setDisconnectHandler:(id)arg1;
 - (void)setMessageHandler:(id)arg1;
-- (void)setTimeoutDisabled:(BOOL)arg1;
+- (void)setTimeoutDisabled:(bool)arg1;
 - (void)shutdown;
-- (BOOL)timeoutDisabled;
+- (bool)timeoutDisabled;
 
 @end

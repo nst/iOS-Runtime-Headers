@@ -2,23 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSLock, NSMapTable;
-
-@interface GEORPProblemRequester : NSObject {
-    NSMapTable *_pendingRequests;
-    NSLock *_pendingRequestsLock;
-    NSMapTable *_providers;
+@interface GEORPProblemRequester : GEOServiceRequester {
 }
 
-+ (id)sharedRequester;
++ (unsigned long long)_urlType;
++ (id)sharedInstance;
 
+- (id)_validateResponse:(id)arg1;
 - (void)cancelRequest:(id)arg1;
-- (Class)classForProviderID:(short)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)registerProvider:(Class)arg1;
-- (void)startNotificationAvailabilityRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
-- (void)startStatusRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
-- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
+- (void)startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id)arg3;
 
 @end

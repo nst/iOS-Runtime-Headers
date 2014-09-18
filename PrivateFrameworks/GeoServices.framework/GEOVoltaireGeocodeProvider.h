@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORequester;
+@class GEORequester, NSString;
 
 @interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <PBRequesterDelegate> {
-    BOOL _cancelled;
-    BOOL _isBatchRequest;
-    BOOL _isForwardGeocodeRequest;
     GEORequester *_requester;
+    bool_cancelled;
+    bool_isBatchRequest;
+    bool_isForwardGeocodeRequest;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)batchReverseGeocoderURL;
 + (id)forwardGeocoderURL;
-+ (unsigned short)provider;
 + (id)providerName;
 + (id)reverseGeocoderURL;
-+ (void)setUsePersistentConnection:(BOOL)arg1;
 
 - (void)_batchRequesterDidFinish:(id)arg1;
 - (void)_singleRequesterDidFinish:(id)arg1;

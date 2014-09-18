@@ -2,27 +2,35 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, UICollectionView;
+@class UICollectionView;
 
 @interface SKUISearchCollectionViewFlowLayout : SKUIItemGridCollectionViewLayout {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UICollectionView *_collectionView;
     } _headerSize;
-    int _numberOfColumns;
-    int _numberOfRows;
-    NSMutableArray *_sectionCounts;
+    double _horizontalPadding;
+    long long _numberOfColumns;
+    long long _numberOfRows;
+    double _verticalPadding;
+    bool_backfills;
 }
 
+@property bool backfills;
+@property double horizontalPadding;
+@property double verticalPadding;
+
 - (void).cxx_destruct;
-- (int)_globalIndexForIndexPath:(id)arg1;
-- (id)_indexPathForGlobalIndex:(int)arg1;
+- (bool)backfills;
+- (double)horizontalPadding;
 - (id)init;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)layoutAttributesForItemAtIndexPath:(id)arg1;
-- (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)prepareLayout;
+- (void)setBackfills:(bool)arg1;
+- (void)setHorizontalPadding:(double)arg1;
+- (void)setVerticalPadding:(double)arg1;
+- (double)verticalPadding;
 
 @end

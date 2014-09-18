@@ -14,6 +14,9 @@
 @property(readonly) int direction;
 @property(readonly) NSString * property;
 
++ (id)orderingTermWithProperty:(id)arg1 direction:(int)arg2;
++ (id)orderingTermWithProperty:(id)arg1;
+
 - (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (id)collation;
@@ -21,12 +24,12 @@
 - (id)description;
 - (int)direction;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperty:(id)arg1 direction:(int)arg2 collation:(id)arg3;
 - (id)initWithProperty:(id)arg1 direction:(int)arg2;
 - (id)initWithProperty:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)property;
 
 @end

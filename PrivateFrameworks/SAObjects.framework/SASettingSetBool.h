@@ -5,18 +5,18 @@
 @interface SASettingSetBool : SASettingSetValue {
 }
 
-@property BOOL toggle;
-@property BOOL value;
+@property bool toggle;
+@property bool value;
 
 + (id)setBool;
 + (id)setBoolWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
-- (void)setToggle:(BOOL)arg1;
-- (void)setValue:(BOOL)arg1;
-- (BOOL)toggle;
-- (BOOL)value;
+- (bool)requiresResponse;
+- (void)setToggle:(bool)arg1;
+- (void)setValue:(bool)arg1;
+- (bool)toggle;
+- (bool)value;
 
 @end

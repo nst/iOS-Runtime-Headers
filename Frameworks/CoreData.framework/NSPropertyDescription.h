@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSData, NSEntityDescription, NSMutableDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSEntityDescription, NSMutableDictionary, NSString;
 
 @interface NSPropertyDescription : NSObject <NSCoding, NSCopying> {
     struct __propertyDescriptionFlags { 
@@ -17,7 +17,7 @@
         unsigned int _isOrdered : 1; 
         unsigned int _reservedPropertyDescription : 23; 
     NSEntityDescription *_entity;
-    long _entitysReferenceIDForProperty;
+    long long _entitysReferenceIDForProperty;
     void *_extraIvars;
     NSString *_name;
     } _propertyDescriptionFlags;
@@ -27,34 +27,50 @@
     NSArray *_validationWarnings;
     NSData *_versionHash;
     NSString *_versionHashModifier;
+    bool_indexedBySpotlight;
+    bool_storedInExternalRecord;
 }
+
+@property(readonly) NSEntityDescription * entity;
+@property(getter=isIndexed) bool indexed;
+@property(getter=isIndexedBySpotlight) bool indexedBySpotlight;
+@property(copy) NSString * name;
+@property(getter=isOptional) bool optional;
+@property(copy) NSString * renamingIdentifier;
+@property(getter=isStoredInExternalRecord) bool storedInExternalRecord;
+@property(getter=isTransient) bool transient;
+@property(retain) NSDictionary * userInfo;
+@property(readonly) NSArray * validationPredicates;
+@property(readonly) NSArray * validationWarnings;
+@property(copy,readonly) NSData * versionHash;
+@property(copy) NSString * versionHashModifier;
 
 + (void)initialize;
 
 - (void)_appendPropertyFieldsToData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6;
-- (BOOL)_comparePredicatesAndWarnings:(id)arg1;
+- (bool)_comparePredicatesAndWarnings:(id)arg1;
 - (void)_createCachesAndOptimizeState;
-- (long)_entitysReferenceID;
+- (long long)_entitysReferenceID;
 - (struct _NSExtraPropertyIVars { id x1; long long x2; long long x3; }*)_extraIVars;
 - (id)_initWithName:(id)arg1;
 - (void)_initializeExtraIVars;
-- (BOOL)_isEditable;
-- (BOOL)_isOrdered;
-- (BOOL)_isRelationship;
-- (BOOL)_isToManyRelationship;
-- (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
-- (unsigned int)_propertyType;
+- (bool)_isEditable;
+- (bool)_isOrdered;
+- (bool)_isRelationship;
+- (bool)_isToManyRelationship;
+- (bool)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
+- (unsigned long long)_propertyType;
 - (id)_rawValidationPredicates;
 - (id)_rawValidationWarnings;
 - (void)_replaceValidationPredicates:(id)arg1 andWarnings:(id)arg2;
 - (void)_restoreValidation;
 - (void)_setEntity:(id)arg1;
-- (void)_setEntitysReferenceID:(long)arg1;
-- (void)_setOrdered:(BOOL)arg1;
-- (BOOL)_skipValidation;
+- (void)_setEntitysReferenceID:(long long)arg1;
+- (void)_setOrdered:(bool)arg1;
+- (bool)_skipValidation;
 - (void)_stripForMigration;
 - (void)_throwIfNotEditable;
-- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
+- (void)_versionHash:(char *)arg1 inStyle:(unsigned long long)arg2;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -62,33 +78,37 @@
 - (id)elementID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isIndexed;
-- (BOOL)isIndexedBySpotlight;
-- (BOOL)isOptional;
-- (BOOL)isReadOnly;
-- (BOOL)isSpotlightIndexed;
-- (BOOL)isStoredInExternalRecord;
-- (BOOL)isStoredInTruth;
-- (BOOL)isStoredInTruthFile;
-- (BOOL)isTransient;
+- (bool)isEqual:(id)arg1;
+- (bool)isIndexed;
+- (bool)isIndexedBySpotlight;
+- (bool)isIndexedBySpotlight;
+- (bool)isOptional;
+- (bool)isReadOnly;
+- (bool)isSpotlightIndexed;
+- (bool)isStoredInExternalRecord;
+- (bool)isStoredInExternalRecord;
+- (bool)isStoredInTruth;
+- (bool)isStoredInTruthFile;
+- (bool)isTransient;
 - (id)name;
 - (id)renamingIdentifier;
 - (void)setElementID:(id)arg1;
-- (void)setIndexed:(BOOL)arg1;
-- (void)setIndexedBySpotlight:(BOOL)arg1;
+- (void)setIndexed:(bool)arg1;
+- (void)setIndexedBySpotlight:(bool)arg1;
+- (void)setIndexedBySpotlight:(bool)arg1;
 - (void)setName:(id)arg1;
-- (void)setOptional:(BOOL)arg1;
-- (void)setReadOnly:(BOOL)arg1;
+- (void)setOptional:(bool)arg1;
+- (void)setReadOnly:(bool)arg1;
 - (void)setRenamingIdentifier:(id)arg1;
-- (void)setSpotlightIndexed:(BOOL)arg1;
-- (void)setStoredInExternalRecord:(BOOL)arg1;
-- (void)setStoredInTruth:(BOOL)arg1;
-- (void)setStoredInTruthFile:(BOOL)arg1;
-- (void)setTransient:(BOOL)arg1;
+- (void)setSpotlightIndexed:(bool)arg1;
+- (void)setStoredInExternalRecord:(bool)arg1;
+- (void)setStoredInExternalRecord:(bool)arg1;
+- (void)setStoredInTruth:(bool)arg1;
+- (void)setStoredInTruthFile:(bool)arg1;
+- (void)setTransient:(bool)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setValidationPredicates:(id)arg1 withValidationWarnings:(id)arg2;
 - (void)setVersionHashModifier:(id)arg1;

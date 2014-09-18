@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface NSISObjectiveLinearExpression : NSObject <NSISRowBody> {
     struct __CFData { } *_constant;
@@ -10,18 +10,23 @@
     NSMutableArray *_variablesSortedByPriorityVectors;
 }
 
-- (void)addExpression:(id)arg1 priority:(float)arg2 times:(double)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
-- (void)addVariable:(id)arg1 priority:(float)arg2 times:(double)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
-- (void)addVariable:(id)arg1 priority:(float)arg2 times:(double)arg3;
-- (BOOL)constantTermIsZero;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (void)addExpression:(id)arg1 priority:(double)arg2 times:(double)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
+- (void)addVariable:(id)arg1 priority:(double)arg2 times:(double)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
+- (void)addVariable:(id)arg1 priority:(double)arg2 times:(double)arg3;
+- (bool)constantTermIsZero;
 - (void)dealloc;
 - (id)description;
 - (void)enumerateVariables:(id)arg1;
-- (void)incrementConstantWithPriority:(float)arg1 value:(double)arg2;
+- (void)incrementConstantWithPriority:(double)arg1 value:(double)arg2;
 - (void)incrementConstantWithPriorityVector:(struct __CFData { }*)arg1 timesScalarCoefficient:(double)arg2;
 - (id)init;
-- (id)initWithLinearExpression:(id)arg1 priority:(float)arg2;
-- (void)leadingPriority:(float*)arg1 andValue:(double*)arg2 forVariable:(id)arg3;
+- (id)initWithLinearExpression:(id)arg1 priority:(double)arg2;
+- (void)leadingPriority:(double*)arg1 andValue:(double*)arg2 forVariable:(id)arg3;
 - (struct __CFData { }*)priorityVectorForVariable:(id)arg1;
 - (void)removeVariable:(id)arg1;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
@@ -29,7 +34,7 @@
 - (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2;
 - (id)restrictedVariableWithCoefficientOfLargestNegativeMagnitude;
 - (void)setPriorityVector:(struct __CFData { }*)arg1 forKnownAbsentVariable:(id)arg2;
-- (unsigned int)variableCount;
+- (unsigned long long)variableCount;
 - (void)verifyInternalIntegrity;
 
 @end

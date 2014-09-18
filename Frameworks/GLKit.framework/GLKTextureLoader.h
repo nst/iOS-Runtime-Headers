@@ -28,18 +28,18 @@
 + (id)textureWithContentsOfURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (void)unlockAndRestoreContext:(id)arg1 glContext:(id)arg2;
 
-- (void)cubeMapWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
-- (void)cubeMapWithContentsOfFiles:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
-- (void)cubeMapWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
+- (void)cubeMapWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)cubeMapWithContentsOfFiles:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)cubeMapWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
 - (void)dealloc;
 - (id)glContext;
 - (id)initWithSharegroup:(id)arg1;
 - (id)nsLock;
 - (void)setGlContext:(id)arg1;
 - (void)setNsLock:(id)arg1;
-- (void)textureWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
-- (void)textureWithContentsOfData:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
-- (void)textureWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
-- (void)textureWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(struct dispatch_queue_s { }*)arg3 completionHandler:(id)arg4;
+- (void)textureWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)textureWithContentsOfData:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)textureWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)textureWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
 
 @end

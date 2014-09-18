@@ -6,41 +6,41 @@
 
 @interface SiriUIKeyline : UIView {
     UIColor *_customBackgroundColor;
-    float _customLeftPadding;
-    float _customRightPadding;
+    double _customLeftPadding;
+    double _customRightPadding;
     UIView *_keyLineView;
-    int _keylineType;
-    BOOL _veritical;
+    long long _keylineType;
+    bool_veritical;
 }
 
 @property(retain) UIColor * customBackgroundColor;
-@property float customLeftPadding;
-@property float customRightPadding;
-@property int keylineType;
-@property(getter=_isVeritical,setter=_setVertical:) BOOL veritical;
+@property double customLeftPadding;
+@property double customRightPadding;
+@property long long keylineType;
+@property(getter=_isVeritical,setter=_setVertical:) bool veritical;
 
 + (id)keyline;
 + (id)keylineForSelectableRow;
 + (id)keylineWithDefaultInsets;
-+ (id)keylineWithKeylineType:(int)arg1;
++ (id)keylineWithKeylineType:(long long)arg1;
 + (id)starkKeyline;
 + (id)verticalKeyline;
 
 - (void).cxx_destruct;
-- (BOOL)_isVeritical;
-- (id)_keylineColorForType:(int)arg1;
-- (float)_keylineWidthForType:(int)arg1;
-- (void)_setVertical:(BOOL)arg1;
+- (bool)_isVeritical;
+- (id)_keylineColorForType:(long long)arg1;
+- (double)_keylineWidthForType:(long long)arg1;
+- (void)_setVertical:(bool)arg1;
 - (id)customBackgroundColor;
-- (float)customLeftPadding;
-- (float)customRightPadding;
-- (id)initWithKeylineType:(int)arg1;
-- (int)keylineType;
+- (double)customLeftPadding;
+- (double)customRightPadding;
+- (id)initWithKeylineType:(long long)arg1;
+- (long long)keylineType;
 - (void)layoutSubviews;
 - (void)setCustomBackgroundColor:(id)arg1;
-- (void)setCustomLeftPadding:(float)arg1;
-- (void)setCustomRightPadding:(float)arg1;
-- (void)setKeylineType:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setCustomLeftPadding:(double)arg1;
+- (void)setCustomRightPadding:(double)arg1;
+- (void)setKeylineType:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

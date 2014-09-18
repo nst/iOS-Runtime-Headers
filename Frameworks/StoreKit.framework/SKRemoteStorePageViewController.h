@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class SKStorePageViewController;
+@class NSString, SKStorePageViewController;
 
 @interface SKRemoteStorePageViewController : _UIRemoteViewController <SKUIClientStorePageViewController> {
     SKStorePageViewController *_storePageViewController;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property SKStorePageViewController * storePageViewController;
+@property(readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

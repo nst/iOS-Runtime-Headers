@@ -5,35 +5,36 @@
 @class <SCROServerDelegate>, NSLock;
 
 @interface SCROServer : NSObject {
-    long _clientCount;
+    long long _clientCount;
     NSLock *_contentLock;
     unsigned int _deathPort;
     struct __CFRunLoopSource { } *_deathSource;
     struct __CFRunLoopTimer { } *_deathTimer;
     <SCROServerDelegate> *_delegate;
-    BOOL _isRegisteredWithMach;
     unsigned int _serverPort;
     struct __CFRunLoopSource { } *_serverSource;
+    bool_isRegisteredWithMach;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)sharedServer;
 
-- (long)_clientCount;
+- (long long)_clientCount;
 - (struct __CFRunLoopTimer { }*)_deathTimer;
-- (long)_incrementClientCount;
+- (long long)_incrementClientCount;
 - (int)_registerForNotificationOnDeathPort:(unsigned int)arg1;
-- (void)_setClientCount:(long)arg1;
+- (void)_setClientCount:(long long)arg1;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isRegisteredWithMach;
-- (BOOL)registerWithMach;
+- (bool)isRegisteredWithMach;
+- (bool)registerWithMach;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (struct __CFRunLoopSource { }*)serverSource;
 - (void)setDelegate:(id)arg1;
 - (void)unregisterWithMach;

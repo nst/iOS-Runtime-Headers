@@ -6,7 +6,7 @@
     struct __CFArray { } *mWarnings;
 }
 
-- (void)addWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
+- (void)addWarning:(struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)reportWarningsWithAssociatedObject:(id)arg1;

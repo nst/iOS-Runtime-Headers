@@ -5,8 +5,7 @@
 @interface MusicGenreCellConfiguration : MusicAlbumCellConfiguration {
 }
 
-+ (id)_genreImageCache;
 + (id)collectionPropertiesToFetch;
-+ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
++ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned long long)arg4 animated:(bool)arg5;
 
 @end

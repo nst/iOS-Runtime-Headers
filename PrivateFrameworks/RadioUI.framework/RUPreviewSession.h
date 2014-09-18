@@ -5,6 +5,7 @@
 @class MPAVController, MPAVItem, NSArray, NSHashTable;
 
 @interface RUPreviewSession : NSObject {
+    MPAVItem *_currentItem;
     double _customTrackPreviewDuration;
     NSArray *_items;
     MPAVController *_player;
@@ -15,13 +16,13 @@
 @property(readonly) double currentItemDuration;
 @property(readonly) double currentTime;
 @property double customTrackPreviewDuration;
-@property(readonly) NSArray * items;
-@property(getter=isPlaying,readonly) BOOL playing;
+@property(copy,readonly) NSArray * items;
+@property(getter=isPlaying,readonly) bool playing;
 
 - (void).cxx_destruct;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_didChangeFromItem:(id)arg1 toItem:(id)arg2;
-- (void)_didStopWithOptions:(int)arg1 finalItem:(id)arg2 didFinalItemPlayToCompletion:(BOOL)arg3;
+- (void)_didStopWithOptions:(long long)arg1 finalItem:(id)arg2 didFinalItemPlayToCompletion:(bool)arg3;
 - (void)_isExplicitTracksEnabledDidChangeNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
@@ -34,11 +35,11 @@
 - (double)customTrackPreviewDuration;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)items;
 - (void)removeSessionObserver:(id)arg1;
 - (void)setCustomTrackPreviewDuration:(double)arg1;
 - (void)start;
-- (void)stopWithOptions:(int)arg1 fadeoutDuration:(double)arg2;
+- (void)stopWithOptions:(long long)arg1 fadeoutDuration:(double)arg2;
 
 @end

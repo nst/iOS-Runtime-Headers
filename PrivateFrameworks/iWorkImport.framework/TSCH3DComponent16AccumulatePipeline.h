@@ -5,8 +5,8 @@
 @class TSCH3DComponent16WidenShaderEffect, TSCH3DFramebufferCopyPipeline;
 
 @interface TSCH3DComponent16AccumulatePipeline : TSCH3DFramebufferSplitPipeline <TSCH3DFramebufferAccumulator> {
+    boolmValid;
     TSCH3DFramebufferCopyPipeline *mPipeline;
-    BOOL mValid;
     TSCH3DComponent16WidenShaderEffect *mWiden;
 }
 
@@ -15,7 +15,7 @@
 - (id)initWithProcessor:(id)arg1 session:(id)arg2;
 - (id)makeFBOWithSize:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 resource:(id)arg2;
 - (void)reset;
-- (BOOL)run;
+- (bool)run;
 - (void)setFactor:(float)arg1;
 - (void)setTexcoords:(id)arg1;
 - (void)setVertices:(id)arg1;

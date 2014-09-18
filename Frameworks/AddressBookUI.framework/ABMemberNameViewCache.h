@@ -14,8 +14,6 @@
 - (id)boldTextAttributesForStyleProvider:(id)arg1;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
-- (id)disabledBoldTextAttributesForStyleProvider:(id)arg1;
-- (id)disabledRegularTextAttributesForStyleProvider:(id)arg1;
 - (id)init;
 - (id)memberNameBoldFontForStyleProvider:(id)arg1;
 - (id)memberNamePlaceholderFontForStyleProvider:(id)arg1;

@@ -5,40 +5,42 @@
 @class NSString;
 
 @interface AXHearingAidMode : NSObject <NSSecureCoding> {
-    int _category;
+    long long _category;
     int _ear;
     unsigned char _index;
-    BOOL _isSelected;
     NSString *_name;
+    bool_isSelected;
     int syncAttempts;
 }
 
-@property int category;
+@property long long category;
 @property int ear;
 @property unsigned char index;
-@property BOOL isSelected;
+@property bool isSelected;
 @property(copy) NSString * name;
 @property int syncAttempts;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)category;
+- (long long)category;
 - (void)dealloc;
 - (id)description;
 - (int)ear;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned char)index;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSelected;
-- (BOOL)isStream;
+- (id)initWithRepresentation:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isSelected;
+- (bool)isStream;
 - (id)name;
-- (void)setCategory:(int)arg1;
+- (void)setCategory:(long long)arg1;
 - (void)setEar:(int)arg1;
 - (void)setIndex:(unsigned char)arg1;
-- (void)setIsSelected:(BOOL)arg1;
+- (void)setIsSelected:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setSyncAttempts:(int)arg1;
 - (int)syncAttempts;
+- (id)transportRepresentation;
 
 @end

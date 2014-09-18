@@ -31,9 +31,12 @@
 - (void)registerBlockForService:(char *)arg1 block:(id)arg2 queue:(id)arg3;
 - (void)registerBlockForService:(char *)arg1 block:(id)arg2;
 - (id)registeredBlocks;
+- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 fileDescriptor:(int)arg3 reply:(id)arg4 queue:(id)arg5;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id)arg3 queue:(id)arg4;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id)arg3;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2;
+- (id)sendMessageSync:(char *)arg1 arguments:(id)arg2 fileDescriptor:(int)arg3 timeout:(unsigned int)arg4;
+- (id)sendMessageSync:(char *)arg1 arguments:(id)arg2 fileDescriptor:(int)arg3;
 - (id)sendMessageSync:(char *)arg1 arguments:(id)arg2 timeout:(unsigned int)arg3;
 - (id)sendMessageSync:(char *)arg1 arguments:(id)arg2;
 

@@ -5,12 +5,14 @@
 @class <MFLibraryContentIndexDataSource>, NSMutableArray, NSMutableIndexSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, _MFContentIndexWrapper, _MFLibraryContentIndexResultsCache;
 
 @interface MFLibraryContentIndex : NSObject {
+    unsigned int _isForeground : 1;
     unsigned int _refreshing : 1;
     unsigned int _shouldReopen : 1;
     unsigned int _processPendingChangesScheduled : 1;
     _MFContentIndexWrapper *_contentIndexWrapper;
     <MFLibraryContentIndexDataSource> *_dataSource;
     NSObject<OS_dispatch_queue> *_dataSourceQueue;
+    NSObject<OS_dispatch_queue> *_foregroundPriorityQueue;
     NSObject<OS_dispatch_group> *_group;
     NSString *_indexName;
     NSObject<OS_dispatch_queue> *_indexingQueue;
@@ -21,19 +23,20 @@
     NSObject<OS_dispatch_queue> *_queue;
     _MFLibraryContentIndexResultsCache *_resultsCache;
     double _startNonIdle;
-    int _state;
-    unsigned int _throttledBatchSize;
+    long long _state;
+    unsigned long long _throttledBatchSize;
+    NSObject<OS_dispatch_queue> *_utilityPriorityQueue;
 }
 
 - (unsigned int)_addItem:(id)arg1 toContentIndex:(struct __CXIndex { }*)arg2;
-- (id)_consumeBatchOfSize:(unsigned int)arg1;
+- (id)_consumeBatchOfSize:(unsigned long long)arg1;
 - (id)_copyContentIndex;
 - (id)_copyContentIndex_indexingQueue;
 - (struct __CXQuery { }*)_createQueryFromCriterion:(id)arg1 mailboxIDs:(id)arg2 contentIndex:(struct __CXIndex { }*)arg3;
 - (struct __CXQueryNode { }*)_createQueryNodeFromCriterion:(id)arg1;
 - (struct __CXQueryNode { }*)_createQueryNodeFromMailboxIDs:(id)arg1;
 - (void)_dataSourceAssignTransactionIdentifier:(unsigned int)arg1 forDocumentIdentifiers:(id)arg2;
-- (void)_dataSourceIndexItemsNeedingRefreshWithLimit:(unsigned int)arg1;
+- (void)_dataSourceIndexItemsNeedingRefreshWithLimit:(unsigned long long)arg1;
 - (void)_dataSourceInvalidateItemsGreaterThanTransactionId:(unsigned int)arg1;
 - (id)_indexFullPath;
 - (void)_invalidateResultsCache;
@@ -42,14 +45,17 @@
 - (void)_processRefreshRequest;
 - (void)_processRemovals:(struct __CXIndex { }*)arg1;
 - (void)_transitionToNextState;
-- (void)_transitionToNextStatePaused:(BOOL)arg1;
+- (void)_transitionToNextStatePaused:(bool)arg1;
+- (void)_updateDataSourceQueueTargetIsForeground:(bool)arg1;
+- (void)applicationWillResume;
+- (void)applicationWillSuspend;
 - (void)dealloc;
 - (id)documentIdentifiersMatchingCriterion:(id)arg1 mailboxIDs:(id)arg2;
 - (void)forceReopen;
 - (void)indexItems:(id)arg1;
 - (id)initWithPath:(id)arg1 indexName:(id)arg2 dataSource:(id)arg3;
 - (void)invalidateAndWait;
-- (BOOL)isSearchable;
+- (bool)isSearchable;
 - (void)refresh;
 - (void)removeItemsWithDocumentIdentifiers:(id)arg1;
 - (void)resume;

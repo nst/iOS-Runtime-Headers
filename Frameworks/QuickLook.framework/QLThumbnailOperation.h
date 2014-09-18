@@ -6,24 +6,24 @@
 
 @interface QLThumbnailOperation : NSOperation {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UIImage *_image;
-    int _index;
+    long long _index;
     } _size;
 }
 
 @property(retain) UIImage * image;
-@property int index;
-@property struct CGSize { float x1; float x2; } size;
+@property long long index;
+@property struct CGSize { double x1; double x2; } size;
 
 - (void)dealloc;
 - (id)image;
-- (int)index;
+- (long long)index;
 - (id)init;
 - (void)setImage:(id)arg1;
-- (void)setIndex:(int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setIndex:(long long)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

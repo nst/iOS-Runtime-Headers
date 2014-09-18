@@ -15,11 +15,11 @@
 - (void)drawBorder;
 - (unsigned long long)enabledKnobs;
 - (id)initWithRep:(id)arg1;
-- (unsigned int)knobUnderPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)mouseDown:(id)arg1 onControlKnob:(unsigned int)arg2;
-- (void)moveControlKnob:(unsigned int)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (unsigned long long)knobUnderPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)mouseDown:(id)arg1 onControlKnob:(unsigned long long)arg2;
+- (void)moveControlKnob:(unsigned long long)arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (id)pathSource;
-- (struct CGPoint { float x1; float x2; })positionOfKnob:(unsigned int)arg1 transformed:(BOOL)arg2;
+- (struct CGPoint { double x1; double x2; })positionOfKnob:(unsigned long long)arg1 transformed:(bool)arg2;
 - (id)rep;
 - (void)setGeometry:(id)arg1 previousGeometry:(id)arg2;
 

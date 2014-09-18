@@ -27,6 +27,7 @@
 + (id)errorBarType;
 + (id)gridLineType;
 + (id)legendSeriesNameType;
++ (id)legendTrendLineNameType;
 + (id)legendType;
 + (id)selectionPathTypeWithType:(id)arg1 name:(id)arg2;
 + (id)seriesLabelType;
@@ -38,17 +39,17 @@
 + (id)trendLineType;
 + (id)valueAxisType;
 
-- (BOOL)canApplyChartStyleWithDescription:(id)arg1;
-- (BOOL)canApplyParagraphStyle;
-- (BOOL)canApplyShapeStyle;
+- (bool)canApplyChartStyleWithDescription:(id)arg1;
+- (bool)canApplyParagraphStyle;
+- (bool)canApplyShapeStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithArchive:(const struct ChartSelectionPathTypeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6[1]; }*)arg1;
 - (id)initWithType:(id)arg1 name:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)saveToArchive:(struct ChartSelectionPathTypeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; int x5; unsigned int x6[1]; }*)arg1;
 - (id)type;

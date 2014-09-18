@@ -16,7 +16,7 @@
 @property long long size;
 @property long long uniqueID;
 
-+ (int)indexOfObject:(id)arg1 inWrapperArray:(id)arg2;
++ (long long)indexOfObject:(id)arg1 inWrapperArray:(id)arg2;
 + (id)objectsFromWrappers:(id)arg1 equalToObject:(id)arg2;
 + (id)objectsFromWrappers:(id)arg1;
 + (id)wrapperWithObject:(id)arg1 size:(long long)arg2;

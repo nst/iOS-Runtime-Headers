@@ -6,5 +6,6 @@
 }
 
 - (int)defaultLabelPosition;
+- (bool)isSmoothType;
 
 @end

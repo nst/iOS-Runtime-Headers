@@ -16,17 +16,18 @@
 
 - (void)addAttributionURLs:(id)arg1;
 - (id)attributionURLs;
-- (id)attributionURLsAtIndex:(unsigned int)arg1;
-- (unsigned int)attributionURLsCount;
+- (id)attributionURLsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)attributionURLsCount;
 - (void)clearAttributionURLs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAttributionURLs:(id)arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setSourceVersion:(unsigned int)arg1;

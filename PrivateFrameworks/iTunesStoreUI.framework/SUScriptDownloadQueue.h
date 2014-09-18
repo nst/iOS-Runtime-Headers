@@ -11,8 +11,12 @@
     NSString *_queueType;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSArray * downloads;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * queueType;
+@property(readonly) Class superclass;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUColor, TSUImage;
+@class OITSUColor, OITSUImage;
 
 @interface MFPImageBrush : MFPBrush {
-    TSUImage *mPhoneImage;
-    TSUColor *mPhonePatternColor;
+    OITSUImage *mPhoneImage;
+    OITSUColor *mPhonePatternColor;
 }
 
 - (id)color;

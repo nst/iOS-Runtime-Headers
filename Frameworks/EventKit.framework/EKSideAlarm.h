@@ -13,6 +13,7 @@
 @property(retain) NSDate * entityDate;
 @property(retain) NSNumber * entityID;
 @property(retain) NSString * entityTimeZone;
+@property(retain) NSString * entityURI;
 @property(retain) NSString * externalID;
 @property(retain) NSDate * fireTime;
 @property(retain) NSNumber * isDelayedProximityAlarm;

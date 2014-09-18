@@ -2,36 +2,40 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSMutableString, NSURL;
+@class NSMutableString, NSString, NSURL;
 
 @interface SWTotalsFileSerializer : NSObject <NSXMLParserDelegate> {
     float _farthestMile;
     NSMutableString *_foundCharacters;
-    unsigned int _mostCalories;
-    unsigned int _total10K;
-    unsigned int _total5K;
-    unsigned int _totalCalories;
+    unsigned long long _mostCalories;
+    unsigned long long _total10K;
+    unsigned long long _total5K;
+    unsigned long long _totalCalories;
     float _totalDistanceMiles;
-    unsigned int _totalHalfMarathon;
-    unsigned int _totalMarathon;
-    unsigned int _totalSeconds;
-    unsigned int _totalWeightWorkouts;
-    unsigned int _totalWorkouts;
+    unsigned long long _totalHalfMarathon;
+    unsigned long long _totalMarathon;
+    unsigned long long _totalSeconds;
+    unsigned long long _totalWeightWorkouts;
+    unsigned long long _totalWorkouts;
     NSURL *_url;
     double _weight;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) float farthestMile;
-@property(readonly) unsigned int mostCalories;
-@property(readonly) unsigned int total10K;
-@property(readonly) unsigned int total5K;
-@property(readonly) unsigned int totalCalories;
+@property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long mostCalories;
+@property(readonly) Class superclass;
+@property(readonly) unsigned long long total10K;
+@property(readonly) unsigned long long total5K;
+@property(readonly) unsigned long long totalCalories;
 @property(readonly) float totalDistanceMiles;
-@property(readonly) unsigned int totalHalfMarathon;
-@property(readonly) unsigned int totalMarathon;
-@property(readonly) unsigned int totalSeconds;
-@property(readonly) unsigned int totalWeightWorkouts;
-@property(readonly) unsigned int totalWorkouts;
+@property(readonly) unsigned long long totalHalfMarathon;
+@property(readonly) unsigned long long totalMarathon;
+@property(readonly) unsigned long long totalSeconds;
+@property(readonly) unsigned long long totalWeightWorkouts;
+@property(readonly) unsigned long long totalWorkouts;
 @property(readonly) double weight;
 
 + (void)initialize;
@@ -40,7 +44,7 @@
 - (float)farthestMile;
 - (id)init;
 - (id)initWithContentsOfURL:(id)arg1;
-- (unsigned int)mostCalories;
+- (unsigned long long)mostCalories;
 - (void)parseFarthestMile;
 - (void)parseMostCalories;
 - (void)parseTotal10K;
@@ -58,15 +62,15 @@
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parserDidStartDocument:(id)arg1;
 - (void)reset;
-- (unsigned int)total10K;
-- (unsigned int)total5K;
-- (unsigned int)totalCalories;
+- (unsigned long long)total10K;
+- (unsigned long long)total5K;
+- (unsigned long long)totalCalories;
 - (float)totalDistanceMiles;
-- (unsigned int)totalHalfMarathon;
-- (unsigned int)totalMarathon;
-- (unsigned int)totalSeconds;
-- (unsigned int)totalWeightWorkouts;
-- (unsigned int)totalWorkouts;
+- (unsigned long long)totalHalfMarathon;
+- (unsigned long long)totalMarathon;
+- (unsigned long long)totalSeconds;
+- (unsigned long long)totalWeightWorkouts;
+- (unsigned long long)totalWorkouts;
 - (id)url;
 - (double)weight;
 

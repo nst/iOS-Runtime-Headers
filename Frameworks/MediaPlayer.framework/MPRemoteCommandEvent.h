@@ -13,7 +13,6 @@
 @property(readonly) MPRemoteCommand * command;
 @property(readonly) double timestamp;
 
-+ (Class)_commandEventClassForMediaRemoteCommand:(unsigned int)arg1;
 + (id)eventWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 
 - (void).cxx_destruct;

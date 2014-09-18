@@ -10,19 +10,19 @@
 @class EBReaderState, EDSheet;
 
 @interface EBReaderSheetState : NSObject {
-    struct map<int, unsigned int, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, unsigned int> > > { 
-        struct __tree<std::__1::pair<int, unsigned int>, std::__1::__map_value_compare<int, unsigned int, std::__1::less<int>, true>, std::__1::allocator<std::__1::pair<int, unsigned int> > > { 
-            struct __tree_node<std::__1::pair<int, unsigned int>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<int, unsigned int>, void *> > > { 
+    struct map<int, unsigned long, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, unsigned long> > > { 
+        struct __tree<std::__1::__value_type<int, unsigned long>, std::__1::__map_value_compare<int, std::__1::__value_type<int, unsigned long>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, unsigned long> > > { 
+            struct __tree_node<std::__1::__value_type<int, unsigned long>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, unsigned long>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, unsigned int, std::__1::less<int>, true> > { 
-                unsigned long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, unsigned long>, std::__1::less<int>, true> > { 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
-    unsigned int mChartIndex;
+    unsigned long long mChartIndex;
     EDSheet *mEDSheet;
     EBReaderState *mReaderState;
     } mSharedFormulas;
@@ -34,13 +34,13 @@
 - (void)dealloc;
 - (id)edSheet;
 - (id)initWithReaderState:(id)arg1;
-- (unsigned int)nextChartIndex;
+- (unsigned long long)nextChartIndex;
 - (id)readerState;
-- (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
+- (void)reportWorksheetWarning:(struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (id)resources;
 - (void)setEDSheet:(id)arg1;
-- (void)setSharedFormulaIndex:(unsigned int)arg1 forRowCol:(int)arg2;
-- (unsigned int)sharedFormulaIndexForRowCol:(int)arg1;
+- (void)setSharedFormulaIndex:(unsigned long long)arg1 forRowCol:(int)arg2;
+- (unsigned long long)sharedFormulaIndexForRowCol:(int)arg1;
 - (id)workbook;
 
 @end

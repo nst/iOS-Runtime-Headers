@@ -10,12 +10,12 @@
 
 @property(retain) NSArray * trustProperties;
 
+- (void).cxx_destruct;
 - (void)_setupNavItem;
-- (void)dealloc;
 - (void)loadView;
 - (void)setTrustProperties:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)trustProperties;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

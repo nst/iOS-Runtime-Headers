@@ -13,12 +13,12 @@
 }
 
 - (id)_generateSQLForVariableExpression:(id)arg1 inContext:(id)arg2;
-- (BOOL)_isKeypathScopedToSubquery:(id)arg1;
+- (bool)_isKeypathScopedToSubquery:(id)arg1;
 - (id)fetchIntermediateForKeypathExpression:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)governingAliasForKeypathExpression:(id)arg1;
 - (id)governingEntityForKeypathExpression:(id)arg1;
 - (id)initWithPredicate:(id)arg1 inScope:(id)arg2;
-- (BOOL)isExistenceScoped;
+- (bool)isExistenceScoped;
 
 @end

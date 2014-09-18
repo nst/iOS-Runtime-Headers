@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface NSUndoManager : NSObject {
     unsigned long long _NSUndoManagerPrivate1;
@@ -15,13 +15,29 @@
     id _undoStack;
 }
 
+@property(readonly) bool canRedo;
+@property(readonly) bool canUndo;
+@property(readonly) long long groupingLevel;
+@property bool groupsByEvent;
+@property unsigned long long levelsOfUndo;
+@property(readonly) bool redoActionIsDiscardable;
+@property(copy,readonly) NSString * redoActionName;
+@property(copy,readonly) NSString * redoMenuItemTitle;
+@property(getter=isRedoing,readonly) bool redoing;
+@property(copy) NSArray * runLoopModes;
+@property(readonly) bool undoActionIsDiscardable;
+@property(copy,readonly) NSString * undoActionName;
+@property(copy,readonly) NSString * undoMenuItemTitle;
+@property(getter=isUndoRegistrationEnabled,readonly) bool undoRegistrationEnabled;
+@property(getter=isUndoing,readonly) bool undoing;
+
 + (void)_endTopLevelGroupings;
-+ (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;
++ (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(bool)arg1;
 
 - (void)_cancelAutomaticTopLevelGroupEnding;
 - (void)_commitUndoGrouping;
 - (void)_delayAutomaticTermination:(double)arg1;
-- (BOOL)_endUndoGroupRemovingIfEmpty:(BOOL)arg1;
+- (bool)_endUndoGroupRemovingIfEmpty:(bool)arg1;
 - (void)_forwardTargetInvocation:(id)arg1;
 - (id)_methodSignatureForTargetSelector:(SEL)arg1;
 - (void)_postCheckpointNotification;
@@ -31,26 +47,26 @@
 - (void)_rollbackUndoGrouping;
 - (void)_scheduleAutomaticTopLevelGroupEnding;
 - (void)_setGroupIdentifier:(id)arg1;
-- (BOOL)_shouldCoalesceTypingForText:(id)arg1 :(id)arg2;
+- (bool)_shouldCoalesceTypingForText:(id)arg1 :(id)arg2;
 - (id)_undoStack;
 - (void)beginUndoGrouping;
-- (BOOL)canRedo;
-- (BOOL)canUndo;
+- (bool)canRedo;
+- (bool)canUndo;
 - (void)dealloc;
 - (void)disableUndoRegistration;
 - (void)enableUndoRegistration;
 - (void)endUndoGrouping;
 - (void)finalize;
-- (int)groupingLevel;
-- (BOOL)groupsByEvent;
+- (long long)groupingLevel;
+- (bool)groupsByEvent;
 - (id)init;
-- (BOOL)isRedoing;
-- (BOOL)isUndoRegistrationEnabled;
-- (BOOL)isUndoing;
-- (unsigned int)levelsOfUndo;
+- (bool)isRedoing;
+- (bool)isUndoRegistrationEnabled;
+- (bool)isUndoing;
+- (unsigned long long)levelsOfUndo;
 - (id)prepareWithInvocationTarget:(id)arg1;
 - (void)redo;
-- (BOOL)redoActionIsDiscardable;
+- (bool)redoActionIsDiscardable;
 - (id)redoActionName;
 - (id)redoMenuItemTitle;
 - (id)redoMenuTitleForUndoActionName:(id)arg1;
@@ -58,13 +74,13 @@
 - (void)removeAllActions;
 - (void)removeAllActionsWithTarget:(id)arg1;
 - (id)runLoopModes;
-- (void)setActionIsDiscardable:(BOOL)arg1;
+- (void)setActionIsDiscardable:(bool)arg1;
 - (void)setActionName:(id)arg1;
-- (void)setGroupsByEvent:(BOOL)arg1;
-- (void)setLevelsOfUndo:(unsigned int)arg1;
+- (void)setGroupsByEvent:(bool)arg1;
+- (void)setLevelsOfUndo:(unsigned long long)arg1;
 - (void)setRunLoopModes:(id)arg1;
 - (void)undo;
-- (BOOL)undoActionIsDiscardable;
+- (bool)undoActionIsDiscardable;
 - (id)undoActionName;
 - (id)undoMenuItemTitle;
 - (id)undoMenuTitleForUndoActionName:(id)arg1;

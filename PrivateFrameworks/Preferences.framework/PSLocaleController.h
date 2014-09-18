@@ -2,24 +2,61 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier;
+@class NSArray, NSString, PSLocaleSelector, PSRegion, UISearchBar, UITableView, UIView;
 
-@interface PSLocaleController : PSListController {
-    PSSpecifier *_checkedSpecifier;
-    BOOL _firstAppearance;
+@interface PSLocaleController : PSViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate> {
+    UIView *_contentView;
+    PSRegion *_currentRegion;
+    NSArray *_filteredListContent;
+    PSLocaleSelector *_localeSelector;
+    NSArray *_regionsList;
+    UISearchBar *_searchBar;
+    NSArray *_sections;
+    UITableView *_tableView;
+    bool_searchMode;
 }
 
-- (void)addLanguage:(id)arg1 toSupportedLanguages:(id)arg2;
+@property(retain) PSRegion * currentRegion;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(retain) NSArray * filteredListContent;
+@property(readonly) unsigned long long hash;
+@property(retain) PSLocaleSelector * localeSelector;
+@property(retain) NSArray * regionsList;
+@property(retain) NSArray * sections;
+@property(readonly) Class superclass;
+
+- (id)_mainContentView;
+- (id)currentRegion;
 - (void)dealloc;
+- (id)filteredListContent;
+- (id)filteredRegionsForRegionList:(id)arg1 searchString:(id)arg2;
 - (id)init;
-- (id)locale:(id)arg1;
-- (void)localeChangedAction;
-- (void)setLocale:(id)arg1 specifier:(id)arg2;
-- (id)specifiers;
-- (void)subcategorySelected:(id)arg1 specifier:(id)arg2;
+- (void)loadRegions;
+- (void)loadView;
+- (id)localeSelector;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)regionsList;
+- (void)reloadDataAndScrollToCheckedRegionAnimated:(bool)arg1;
+- (void)reloadSections;
+- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
+- (void)searchBarCancelButtonClicked:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
+- (void)searchBarTextDidEndEditing:(id)arg1;
+- (id)sectionIndexTitlesForTableView:(id)arg1;
+- (id)sections;
+- (void)setCurrentRegion:(id)arg1;
+- (void)setFilteredListContent:(id)arg1;
+- (void)setLocaleSelector:(id)arg1;
+- (void)setRegionsList:(id)arg1;
+- (void)setSections:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)updateChecked:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

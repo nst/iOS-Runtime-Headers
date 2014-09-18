@@ -2,12 +2,17 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKIdentityProtocol>, ABUnknownPersonViewController;
+@class <EKIdentityProtocol>, ABUnknownPersonViewController, NSString;
 
 @interface EKUnknownIdentityViewController : UIViewController <ABUnknownPersonViewControllerDelegate> {
     <EKIdentityProtocol> *_identity;
     ABUnknownPersonViewController *_unknownPersonViewController;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithIdentity:(id)arg1;

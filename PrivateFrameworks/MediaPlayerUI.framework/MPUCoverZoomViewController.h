@@ -2,77 +2,80 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUCoverZoomViewControllerDelegate>, CADisplayLink, CAMediaTimingFunction, MPImageCache, MPUCZCollectionViewController, MPUCoverMaskView, MPUDataSource, NSIndexPath, UIPinchGestureRecognizer, UIView, UIViewController<MPUCoverZoomDetailViewControllerProtocol>;
+@class <MPUCoverZoomViewControllerDelegate>, CADisplayLink, CAMediaTimingFunction, MPUCZCollectionViewController, MPUCoverMaskView, MPUDataSource, NSIndexPath, NSString, UIPinchGestureRecognizer, UIView, UIViewController;
 
 @interface MPUCoverZoomViewController : UIViewController <MPUCZCollectionViewControllerDelegate, UIGestureRecognizerDelegate> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     double _animationDuration;
-    float _animationEndProgress;
-    float _animationStartProgress;
+    double _animationEndProgress;
+    double _animationStartProgress;
     double _animationStartTimeInterval;
     CADisplayLink *_animationTimer;
     MPUCZCollectionViewController *_collectionViewController;
-    int _coverCountPerColumn;
+    long long _coverCountPerColumn;
     MPUDataSource *_dataSource;
     <MPUCoverZoomViewControllerDelegate> *_delegate;
-    UIViewController<MPUCoverZoomDetailViewControllerProtocol> *_detailViewController;
-    MPImageCache *_imageCache;
+    UIViewController *_detailViewController;
     MPUCoverMaskView *_maskView;
-    float _pinchContentOffsetDelta;
+    double _pinchContentOffsetDelta;
     NSIndexPath *_pinchContentOffsetIndexPath;
-    int _pinchDirection;
+    long long _pinchDirection;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
-    BOOL _pinching;
     CAMediaTimingFunction *_timingFunction;
     UIView *_transformView;
     MPUCZCollectionViewController *_transitionCollectionViewController;
-    int _transitionCoverCountPerColumn;
+    long long _transitionCoverCountPerColumn;
     } _transitionEndItemSize;
     } _transitionStartItemSize;
-    float _transitionStartScale;
+    double _transitionStartScale;
     } _unzoomedAlbumViewTransform;
-    BOOL _zoomed;
+    bool_pinching;
+    bool_zoomed;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <MPUCoverZoomViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_beginTransitionForScale:(float)arg1;
-- (float)_collectionViewHeightForItemSize:(struct CGSize { float x1; float x2; })arg1 coverCountPerColumn:(unsigned int)arg2;
-- (unsigned int)_defaultNumberOfRows;
+- (void)_beginTransitionForScale:(double)arg1;
+- (double)_collectionViewHeightForItemSize:(struct CGSize { double x1; double x2; })arg1 coverCountPerColumn:(unsigned long long)arg2;
+- (unsigned long long)_defaultNumberOfRows;
 - (void)_displayLinkAction:(id)arg1;
-- (void)_endTransitionAtProgress:(float)arg1 velocity:(float)arg2;
-- (unsigned int)_maximumNumberOfRows;
-- (unsigned int)_minimumNumberOfRows;
+- (void)_endTransitionAtProgress:(double)arg1 velocity:(double)arg2;
+- (unsigned long long)_maximumNumberOfRows;
+- (unsigned long long)_minimumNumberOfRows;
 - (void)_pinchAction:(id)arg1;
-- (void)_removeTransitionCollectionViewForEndProgress:(float)arg1;
-- (void)_setTransitionProgress:(float)arg1;
+- (void)_removeTransitionCollectionViewForEndProgress:(double)arg1;
+- (void)_setTransitionProgress:(double)arg1;
 - (void)_updateContentOffset;
 - (void)_updateContentOffsetForCollectionView:(id)arg1;
 - (void)collectionViewController:(id)arg1 didSelectCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (void)detailViewControllerRequestsExit:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (float)imageAspectRatio;
-- (id)imageRequestForEntity:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (double)imageAspectRatio;
 - (id)initWithDataSource:(id)arg1;
 - (void)loadView;
-- (int)preferredStatusBarUpdateAnimation;
-- (BOOL)prefersStatusBarHidden;
+- (struct CGSize { double x1; double x2; })maximumImageSize;
+- (long long)preferredStatusBarUpdateAnimation;
+- (bool)prefersStatusBarHidden;
 - (void)setDelegate:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

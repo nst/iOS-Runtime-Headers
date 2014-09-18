@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary, NSLocale, NSString;
+@class <NSObject><NSCopying>, NSDictionary, NSLocale, NSString;
 
 @interface AVMetadataItemInternal : NSObject {
     struct { 
@@ -16,15 +16,18 @@
         unsigned int flags; 
         long long epoch; 
     NSString *commonKey;
+    NSString *dataType;
     } duration;
+    NSString *extendedLanguageTag;
     NSDictionary *extras;
-    long itemIndex;
-    id key;
+    NSString *identifier;
+    long long itemIndex;
+    <NSObject><NSCopying> *key;
     NSString *keySpace;
     NSLocale *locale;
     struct OpaqueFigMetadataReader { } *reader;
     } time;
-    id value;
+    <NSObject><NSCopying> *value;
 }
 
 @end

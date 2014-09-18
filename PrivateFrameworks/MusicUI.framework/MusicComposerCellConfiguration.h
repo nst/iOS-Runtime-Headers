@@ -5,8 +5,6 @@
 @interface MusicComposerCellConfiguration : MusicArtistCellConfiguration {
 }
 
-+ (id)artistArtworkCacheIDProperty;
-+ (id)artworkCacheIDProperty;
 + (id)itemPersistentIDProperty;
 + (id)mediaEntityPropertiesToFetch;
 + (id)persistentIDProperty;

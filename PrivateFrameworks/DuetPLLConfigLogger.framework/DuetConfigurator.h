@@ -13,8 +13,8 @@
     NSUserDefaults *sbDomain;
 }
 
-@property(readonly) NSMutableDictionary * appBlackMap;
-@property(readonly) NSMutableArray * appWhiteListArray;
+@property(retain,readonly) NSMutableDictionary * appBlackMap;
+@property(retain,readonly) NSMutableArray * appWhiteListArray;
 
 + (id)sharedInstance;
 
@@ -25,8 +25,8 @@
 - (id)init;
 - (void)loadBundleConfigurations;
 - (void)loadConfigurations:(id)arg1;
-- (void)logAll:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
-- (void)logLight:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
+- (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
+- (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)reloadBundleFromDisk;
 - (void)updateSpringBoardConfiguration:(id)arg1;
 

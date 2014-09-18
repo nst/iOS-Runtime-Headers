@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActivityIndicatorView, UILabel;
+@class NSArray, UIActivityIndicatorView, UILabel;
 
 @interface UIPrinterSearchingView : UIView {
     UIActivityIndicatorView *_searchingIndicator;
     UILabel *_searchingLabel;
+    NSArray *_searchingLabelConstraints;
 }
 
 - (void)dealloc;
 - (id)initInView:(id)arg1;
-- (void)layoutSubviews;
 - (void)searchTimeout;
-- (void)setSearching:(BOOL)arg1;
+- (void)setSearching:(bool)arg1;
 
 @end

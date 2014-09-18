@@ -8,17 +8,21 @@
 }
 
 @property(copy) NSString * aceId;
-@property BOOL alreadyExists;
+@property bool alreadyExists;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
+@property(readonly) Class superclass;
 @property(copy) NSURL * worldClockId;
 
 + (id)addCompleted;
 + (id)addCompletedWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)alreadyExists;
+- (bool)alreadyExists;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setAlreadyExists:(BOOL)arg1;
+- (void)setAlreadyExists:(bool)arg1;
 - (void)setWorldClockId:(id)arg1;
 - (id)worldClockId;
 

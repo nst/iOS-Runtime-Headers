@@ -9,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)clientForConnection:(id)arg1;
+- (id)createClientForConnection:(id)arg1;
 - (id)initWithDatabasePath:(id)arg1;
 
 @end

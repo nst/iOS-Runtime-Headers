@@ -9,9 +9,13 @@
 
 @property(copy) NSString * aceId;
 @property(copy) NSNumber * atRequestedLocation;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) NSArray * fmfLocations;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * refId;
 @property(copy) NSURL * searchContext;
+@property(readonly) Class superclass;
 
 + (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;

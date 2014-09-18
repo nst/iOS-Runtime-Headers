@@ -27,7 +27,7 @@
 @property(retain) NSURL * releaseNotesSummaryURL;
 @property(retain) NSURL * releaseNotesURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_cachedDocumentationDataForURL:(id)arg1;
 - (void)_clearTransientDocumentationData;
@@ -38,7 +38,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasAnyDocumentation;
+- (bool)hasAnyDocumentation;
 - (id)humanReadableUpdateName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

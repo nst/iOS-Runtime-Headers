@@ -2,26 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPImageCache, MPImageCacheRequest;
-
 @interface RUStationTreeArtworkTableViewCell : RUStationTreeTableViewCell {
-    MPImageCache *_imageCache;
-    MPImageCacheRequest *_imageCacheRequest;
 }
 
-@property(readonly) MPImageCache * imageCache;
-@property(readonly) MPImageCacheRequest * imageCacheRequest;
++ (bool)_audioPreviewViewShowsFaceWhenNotPlaying;
++ (struct CGSize { double x1; double x2; })_audioPreviewViewSize;
++ (struct CGSize { double x1; double x2; })artworkSize;
 
-+ (struct CGSize { float x1; float x2; })artworkSize;
-
-- (void).cxx_destruct;
-- (id)_newAudioPreviewView;
-- (void)_showChangeToPlaying:(BOOL)arg1 animated:(BOOL)arg2;
-- (float)_textLabelXWithIsPlaying:(BOOL)arg1;
-- (id)imageCache;
-- (id)imageCacheRequest;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
-- (void)setImageCache:(id)arg1 imageCacheRequest:(id)arg2;
+- (double)_audioPreviewViewMinX;
+- (double)_textLabelMinXWhenPlaying:(bool)arg1;
 
 @end

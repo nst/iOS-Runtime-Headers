@@ -5,7 +5,7 @@
 @class NSMutableArray, UIView;
 
 @interface SBUIFourDigitPasscodeEntryField : SBUINumericPasscodeEntryFieldBase {
-    float _backgroundAlpha;
+    double _backgroundAlpha;
     NSMutableArray *_characterIndicators;
     UIView *_characterIndicatorsContainerView;
     UIView *_leftPaddingView;
@@ -17,19 +17,17 @@
 - (void)_appendString:(id)arg1;
 - (void)_autofillForMesaWithCompletion:(id)arg1;
 - (void)_deleteLastCharacter;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_entryFieldBoundsWithXOffset:(float)arg1;
-- (float)_entryFieldIndicatorDiameter;
-- (float)_entryFieldIndicatorWidthPadding;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_entryFieldPaddingOutsideRing;
-- (BOOL)_hasAnyCharacters;
-- (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
-- (void)_setLuminosityBoost:(float)arg1;
-- (struct CGSize { float x1; float x2; })_viewSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_entryFieldBoundsWithXOffset:(double)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_entryFieldPaddingOutsideRing;
+- (bool)_hasAnyCharacters;
+- (void)_resetForFailedPasscode:(bool)arg1 playUnlockFailedSound:(bool)arg2;
+- (void)_setLuminosityBoost:(double)arg1;
+- (struct CGSize { double x1; double x2; })_viewSize;
 - (void)dealloc;
-- (id)initWithDefaultSize;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
 - (void)layoutSubviews;
 - (void)reset;
-- (void)setBackgroundAlpha:(float)arg1;
+- (void)setBackgroundAlpha:(double)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 
 @end

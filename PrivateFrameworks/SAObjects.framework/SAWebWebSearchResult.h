@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber;
+@class NSArray, NSNumber, NSString;
 
 @interface SAWebWebSearchResult : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * imageResults;
 @property(copy) NSArray * newsResults;
 @property(copy) NSArray * relatedSearchResults;
+@property(readonly) Class superclass;
 @property(copy) NSNumber * totalImageResults;
 @property(copy) NSNumber * totalNewsResults;
 @property(copy) NSNumber * totalVideoResults;

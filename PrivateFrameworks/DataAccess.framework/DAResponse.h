@@ -3,14 +3,15 @@
  */
 
 @interface DAResponse : DAAction {
-    int _status;
+    long long _status;
 }
 
-@property(readonly) int status;
+@property long long status;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3 status:(int)arg4;
-- (int)status;
+- (id)initWithItemChangeType:(long long)arg1 changedItem:(id)arg2 serverId:(id)arg3 status:(long long)arg4;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

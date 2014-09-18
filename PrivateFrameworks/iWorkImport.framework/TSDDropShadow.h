@@ -12,18 +12,18 @@
 
 + (id)instanceWithArchive:(const struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; float x5; int x6; float x7; boolx8; int x9; struct DropShadowArchive {} *x10; struct ContactShadowArchive {} *x11; struct CurvedShadowArchive {} *x12; int x13; unsigned int x14[1]; }*)arg1 unarchiver:(id)arg2;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForRep:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInNaturalSpaceForRep:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForRep:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsInNaturalSpaceForRep:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithAngle:(float)arg1 offset:(float)arg2 radius:(float)arg3 opacity:(float)arg4 color:(struct CGColor { }*)arg5 enabled:(BOOL)arg6;
+- (id)initWithAngle:(double)arg1 offset:(double)arg2 radius:(double)arg3 opacity:(double)arg4 color:(struct CGColor { }*)arg5 enabled:(bool)arg6;
 - (id)initWithArchive:(const struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; float x5; int x6; float x7; boolx8; int x9; struct DropShadowArchive {} *x10; struct ContactShadowArchive {} *x11; struct CurvedShadowArchive {} *x12; int x13; unsigned int x14[1]; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newShadowClampedForSwatches;
-- (struct CGImage { }*)newShadowImageForRep:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 drawSelector:(SEL)arg3 unflipped:(BOOL)arg4;
+- (struct CGImage { }*)newShadowImageForRep:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 drawSelector:(SEL)arg3 unflipped:(bool)arg4;
 - (void)saveToArchive:(struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Color {} *x3; float x4; float x5; int x6; float x7; boolx8; int x9; struct DropShadowArchive {} *x10; struct ContactShadowArchive {} *x11; struct CurvedShadowArchive {} *x12; int x13; unsigned int x14[1]; }*)arg1 archiver:(id)arg2;
-- (unsigned int)shadowType;
+- (unsigned long long)shadowType;
 
 @end

@@ -2,6 +2,8 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString;
+
 @interface EDAlignmentInfo : NSObject <NSCopying, EDImmutableObject> {
     boolmDoNotModify;
     boolmHorizontalAlignOverridden;
@@ -15,15 +17,20 @@
     int mVerticalAlignment;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (id)alignmentInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)horizontalAlignment;
 - (int)indent;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToAlignmentInfo:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAlignmentInfo:(id)arg1;
 - (bool)isHorizontalAlignOverridden;
 - (bool)isIndentOverridden;
 - (bool)isTextWrapped;

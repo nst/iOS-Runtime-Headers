@@ -13,11 +13,13 @@
     NSString *_uid;
 }
 
-@property BOOL hasPhotoType;
-@property(readonly) BOOL hasUid;
+@property bool hasPhotoType;
+@property(readonly) bool hasUid;
 @property(retain) NSMutableArray * photoInfos;
 @property int photoType;
 @property(retain) NSString * uid;
+
++ (id)photoWithYelpUserJSON:(id)arg1;
 
 - (void)addPhotoInfo:(id)arg1;
 - (void)clearPhotoInfos;
@@ -26,16 +28,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPhotoType;
-- (BOOL)hasUid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)photoInfoAtIndex:(unsigned int)arg1;
+- (bool)hasPhotoType;
+- (bool)hasUid;
+- (unsigned long long)hash;
+- (id)initWithPlaceDataPhoto:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (id)photoInfoAtIndex:(unsigned long long)arg1;
 - (id)photoInfos;
-- (unsigned int)photoInfosCount;
+- (unsigned long long)photoInfosCount;
 - (int)photoType;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPhotoType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPhotoType:(bool)arg1;
 - (void)setPhotoInfos:(id)arg1;
 - (void)setPhotoType:(int)arg1;
 - (void)setUid:(id)arg1;

@@ -10,7 +10,7 @@
     NSData *_vertices;
 }
 
-@property(readonly) BOOL hasVertices;
+@property(readonly) bool hasVertices;
 @property(retain) NSMutableArray * trafficIncidents;
 @property(retain) NSMutableArray * trafficSegments;
 @property(retain) NSData * vertices;
@@ -21,23 +21,24 @@
 - (void)clearTrafficSegments;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct { int x1; int x2; }*)createUnpackedVerticesWithGutterSize:(int)arg1;
+- (struct { long long x1; long long x2; }*)createUnpackedVerticesWithGutterSize:(long long)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasVertices;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasVertices;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setTrafficIncidents:(id)arg1;
 - (void)setTrafficSegments:(id)arg1;
 - (void)setVertices:(id)arg1;
-- (id)trafficIncidentAtIndex:(unsigned int)arg1;
+- (id)trafficIncidentAtIndex:(unsigned long long)arg1;
 - (id)trafficIncidents;
-- (unsigned int)trafficIncidentsCount;
-- (id)trafficSegmentAtIndex:(unsigned int)arg1;
+- (unsigned long long)trafficIncidentsCount;
+- (id)trafficSegmentAtIndex:(unsigned long long)arg1;
 - (id)trafficSegments;
-- (unsigned int)trafficSegmentsCount;
+- (unsigned long long)trafficSegmentsCount;
 - (id)vertices;
 - (void)writeTo:(id)arg1;
 

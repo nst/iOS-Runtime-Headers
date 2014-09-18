@@ -5,8 +5,8 @@
 @class OADColor;
 
 @interface OADSolidFill : OADFill {
+    boolmIsColorOverridden;
     OADColor *mColor;
-    BOOL mIsColorOverridden;
 }
 
 + (id)blackFill;
@@ -16,10 +16,10 @@
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isColorOverridden;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isColorOverridden;
+- (bool)isEqual:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setStyleColor:(id)arg1;
 

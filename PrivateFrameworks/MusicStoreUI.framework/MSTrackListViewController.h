@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class MSTrackListHeaderView;
+@class MSTrackListHeaderView, NSString;
 
 @interface MSTrackListViewController : MSStructuredPageViewController <MSTrackListHeaderDelegate> {
     MSTrackListHeaderView *_headerView;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_delayedReloadForWebViews;
 - (id)_headerArtworkImage;
@@ -24,6 +29,6 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)purchasableItemsForHeaderView:(id)arg1;
 - (void)reloadData;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

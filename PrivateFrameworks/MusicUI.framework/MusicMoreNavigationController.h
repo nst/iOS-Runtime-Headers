@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
+@class <MusicNavigationControllerDelegate>;
+
 @interface MusicMoreNavigationController : UIMoreNavigationController {
 }
 
+@property <MusicNavigationControllerDelegate> * delegate;
+
 + (Class)_moreListControllerClass;
 
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (id)init;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

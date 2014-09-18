@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSSet;
+@class NSSet, NSString;
 
 @interface CalDAVUpdateGrantedDelegatesTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate, CoreDAVTaskGroupDelegate> {
     NSSet *_addReadURLs;
@@ -15,15 +15,19 @@
 
 @property(retain) NSSet * addReadURLs;
 @property(retain) NSSet * addWriteURLs;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(retain) NSSet * removeURLs;
 @property int state;
+@property(readonly) Class superclass;
 @property(retain) NSSet * updatedReadURLs;
 @property(retain) NSSet * updatedWriteURLs;
 
 - (void)_fetchExistingGrantedDelegates;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
-- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(BOOL)arg2;
-- (void)_updateDelegatesWithAllowWrite:(BOOL)arg1;
+- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(bool)arg2;
+- (void)_updateDelegatesWithAllowWrite:(bool)arg1;
 - (id)addReadURLs;
 - (id)addWriteURLs;
 - (void)dealloc;

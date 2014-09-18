@@ -5,6 +5,6 @@
 @interface AppAnalytics : ProcessAnalytics {
 }
 
-- (id)initWithWorkspace:(id)arg1 withCache:(BOOL)arg2;
+- (id)initWithWorkspace:(id)arg1 withCache:(bool)arg2;
 
 @end

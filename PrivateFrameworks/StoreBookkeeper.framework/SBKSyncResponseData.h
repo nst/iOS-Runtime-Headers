@@ -20,7 +20,7 @@
 @property(retain) NSMutableDictionary * responseOpEntiesByKey;
 @property(readonly) NSArray * successfullyDeletedKeys;
 @property(readonly) NSArray * successfullyUpdatedKeys;
-@property(readonly) NSString * syncAnchor;
+@property(copy,readonly) NSString * syncAnchor;
 @property(readonly) SBKSyncTransaction * transaction;
 @property(readonly) NSArray * updatedKeys;
 

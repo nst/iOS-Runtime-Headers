@@ -2,38 +2,38 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIColor, UIImageView, UIView;
+@class NSMutableArray, NSString, UIColor, UIImageView, UIView;
 
 @interface UISnapshotView : UIView <UIStatusBarTinting> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     unsigned int _disableEdgeAntialiasing : 1;
     unsigned int _disableVerticalStretch : 1;
@@ -51,51 +51,55 @@
 }
 
 @property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
-@property(getter=_contentOffset,setter=_setContentOffset:) struct CGPoint { float x1; float x2; } contentOffset;
-@property(getter=_contentSize,readonly) struct CGSize { float x1; float x2; } contentSize;
-@property(getter=isEdgeAntialiasingEnabled) BOOL edgeAntialiasingEnabled;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgePadding;
+@property(getter=_contentOffset,setter=_setContentOffset:) struct CGPoint { double x1; double x2; } contentOffset;
+@property(getter=_contentSize,readonly) struct CGSize { double x1; double x2; } contentSize;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(getter=isEdgeAntialiasingEnabled) bool edgeAntialiasingEnabled;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgePadding;
 @property(retain) UIColor * edgePaddingColor;
+@property(readonly) unsigned long long hash;
 @property(retain) UIView * shadowView;
-@property(getter=_snapshotRect,setter=_setSnapshotRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotRect;
+@property(getter=_snapshotRect,setter=_setSnapshotRect:) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } snapshotRect;
 @property(getter=_snapshotView,readonly) UIView * snapshotView;
-@property(getter=isVerticalStretchEnabled) BOOL verticalStretchEnabled;
+@property(readonly) Class superclass;
+@property(getter=isVerticalStretchEnabled) bool verticalStretchEnabled;
 
-- (void)_addEdgePaddingViewInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })_contentOffset;
-- (struct CGSize { float x1; float x2; })_contentSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsCenterForEdgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 withContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_addEdgePaddingViewInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })_contentOffset;
+- (struct CGSize { double x1; double x2; })_contentSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentsCenterForEdgePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 withContentSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (void)_drawEdges:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 withContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgePadding;
+- (void)_drawEdges:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 withContentSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgePadding;
 - (void)_positionImageView;
-- (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_setSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setSnapshotRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setStatusBarTintColor:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snapshotRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_snapshotRect;
 - (id)_snapshotView;
 - (id)_statusBarTintColor;
 - (void)_updateContentsRect;
 - (void)captureSnapshotOfView:(id)arg1 withSnapshotType:(int)arg2;
-- (void)captureSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2 withSnapshotType:(int)arg3;
+- (void)captureSnapshotRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromView:(id)arg2 withSnapshotType:(int)arg3;
 - (void)dealloc;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgePadding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgePadding;
 - (id)edgePaddingColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEdgeAntialiasingEnabled;
-- (BOOL)isVerticalStretchEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEdgeAntialiasingEnabled;
+- (bool)isVerticalStretchEnabled;
 - (void)layoutSubviews;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setContentStretch:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setEdgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentStretch:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setEdgeAntialiasingEnabled:(bool)arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEdgePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setEdgePaddingColor:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setShadowView:(id)arg1;
-- (void)setVerticalStretchEnabled:(BOOL)arg1;
+- (void)setVerticalStretchEnabled:(bool)arg1;
 - (id)shadowView;
 
 @end

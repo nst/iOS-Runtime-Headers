@@ -6,7 +6,7 @@
 
 @interface TSCH3DCombinationRenderProcessor : TSCH3DRetargetRenderProcessor {
     struct StateStack<glm::detail::tmat4x4<float>, 8> { 
-        unsigned int mIndex; 
+        unsigned long long mIndex; 
         struct tmat4x4<float> { 
             struct tvec4<float> { 
                 union { 
@@ -79,7 +79,7 @@
             } ; 
         } value[4]; 
     struct StateStack<TSCH3D::ObjectState, 6> { 
-        unsigned int mIndex; 
+        unsigned long long mIndex; 
         struct ObjectState { 
             struct ObjcSharedPtr<NSSet> { 
                 NSSet *mValue; 
@@ -100,10 +100,10 @@
                 struct TextureAttributes { 
                     int object; 
                     int format; 
-                    BOOL mipmap; 
-                    BOOL repeat; 
-                    BOOL nearest; 
-                    int unit; 
+                    boolmipmap; 
+                    boolrepeat; 
+                    boolnearest; 
+                    long long unit; 
                     struct TextureSizeHint { 
                         int loadOptimizedMipmaps; 
                         struct tvec2<int> { 
@@ -119,7 +119,7 @@
                             } ; 
                         } sizeLODHint; 
                     } textureSizeHint; 
-                    BOOL is3DTexture; 
+                    boolis3DTexture; 
                 } __elems_[8]; 
             } mTextureAttributes; 
         } mCurrent; 
@@ -143,10 +143,10 @@
                 struct TextureAttributes { 
                     int object; 
                     int format; 
-                    BOOL mipmap; 
-                    BOOL repeat; 
-                    BOOL nearest; 
-                    int unit; 
+                    boolmipmap; 
+                    boolrepeat; 
+                    boolnearest; 
+                    long long unit; 
                     struct TextureSizeHint { 
                         int loadOptimizedMipmaps; 
                         struct tvec2<int> { 
@@ -162,22 +162,22 @@
                             } ; 
                         } sizeLODHint; 
                     } textureSizeHint; 
-                    BOOL is3DTexture; 
+                    boolis3DTexture; 
                 } __elems_[8]; 
             } mTextureAttributes; 
         } mStack[6]; 
+    boolmProjectionChanged;
+    boolmTransformChanged;
     TSCH3DShaderEffects *mEffects;
     NSIndexSet *mEnabled;
     } mObjectStateStack;
     } mProjection;
-    BOOL mProjectionChanged;
     TSCH3DShaderEffectsStates *mShaderEffectsStates;
-    BOOL mTransformChanged;
     } mTransformStack;
 }
 
-@property(readonly) BOOL projectionChanged;
-@property(readonly) BOOL transformChanged;
+@property(readonly) bool projectionChanged;
+@property(readonly) bool transformChanged;
 
 + (id)processorWithOriginal:(id)arg1 enableTypes:(id)arg2;
 
@@ -191,14 +191,14 @@
 - (id)effectsStates;
 - (id)initWithOriginal:(id)arg1 enableTypes:(id)arg2;
 - (id)initWithOriginal:(id)arg1;
-- (BOOL)matrixEnabled;
+- (bool)matrixEnabled;
 - (void)multiply:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
-- (BOOL)objectStateEnabled;
-- (struct StateStack<TSCH3D::ObjectState, 6> { unsigned int x1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_2_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_2_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_2_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; BOOL x_1_3_3; BOOL x_1_3_4; BOOL x_1_3_5; int x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; BOOL x_1_3_8; } x_4_2_1[8]; } x_2_1_4; } x2; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_3_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_3_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_3_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; BOOL x_1_3_3; BOOL x_1_3_4; BOOL x_1_3_5; int x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; BOOL x_1_3_8; } x_4_2_1[8]; } x_3_1_4; } x3[6]; }*)objectStateStack;
+- (bool)objectStateEnabled;
+- (struct StateStack<TSCH3D::ObjectState, 6> { unsigned long long x1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_2_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_2_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_2_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; boolx_1_3_3; boolx_1_3_4; boolx_1_3_5; long long x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; boolx_1_3_8; } x_4_2_1[8]; } x_2_1_4; } x2; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; } x_3_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_3_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; } x_3_2_1[8]; } x_3_1_3; struct array<TSCH3D::TextureAttributes, 8> { struct TextureAttributes { int x_1_3_1; int x_1_3_2; boolx_1_3_3; boolx_1_3_4; boolx_1_3_5; long long x_1_3_6; struct TextureSizeHint { int x_7_4_1; struct tvec2<int> { union { int x_1_6_1; int x_1_6_2; int x_1_6_3; } x_2_5_1; union { int x_2_6_1; int x_2_6_2; int x_2_6_3; } x_2_5_2; } x_7_4_2; } x_1_3_7; boolx_1_3_8; } x_4_2_1[8]; } x_3_1_4; } x3[6]; }*)objectStateStack;
 - (void)popMatrix;
 - (void)popState;
 - (void)projection:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
-- (BOOL)projectionChanged;
+- (bool)projectionChanged;
 - (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)projectionTransform;
 - (void)pushMatrix;
 - (void)pushState;
@@ -206,8 +206,8 @@
 - (void)resetBuffers;
 - (void)resetTransformChangeFlags;
 - (void)scale:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1;
-- (BOOL)shaderEnabled;
-- (BOOL)transformChanged;
+- (bool)shaderEnabled;
+- (bool)transformChanged;
 - (void)translate:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1;
 
 @end

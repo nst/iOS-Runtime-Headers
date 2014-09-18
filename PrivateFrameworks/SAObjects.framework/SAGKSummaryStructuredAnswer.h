@@ -9,8 +9,12 @@
 
 @property(copy) NSArray * answerPropertyGroups;
 @property(copy) NSString * category;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSURL * image;
 @property(copy) NSString * imageCaption;
+@property(readonly) Class superclass;
 @property(copy) NSString * text;
 @property(copy) NSString * title;
 @property(copy) NSString * titleAnnotation;

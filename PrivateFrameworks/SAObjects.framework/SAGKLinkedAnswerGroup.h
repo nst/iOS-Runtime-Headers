@@ -7,8 +7,12 @@
 @interface SAGKLinkedAnswerGroup : AceObject <SAAceSerializable> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * linkedAnswers;
 @property(copy) NSNumber * numberOfResults;
+@property(readonly) Class superclass;
 @property(copy) NSString * title;
 
 + (id)linkedAnswerGroup;

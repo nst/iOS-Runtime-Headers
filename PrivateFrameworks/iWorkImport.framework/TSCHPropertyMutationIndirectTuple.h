@@ -3,19 +3,19 @@
  */
 
 @interface TSCHPropertyMutationIndirectTuple : TSCHPropertyMutationTuple {
-    unsigned int mStyleOwnerIndex;
+    unsigned long long mStyleOwnerIndex;
     int mStyleOwnerType;
 }
 
-@property(readonly) unsigned int index;
+@property(readonly) unsigned long long index;
 @property(readonly) int type;
 
-- (unsigned int)index;
+- (unsigned long long)index;
 - (id)indirectTuple;
 - (id)initWithStyleOwner:(id)arg1 mutations:(id)arg2;
-- (id)initWithStyleOwnerType:(int)arg1 index:(unsigned int)arg2 inChart:(id)arg3 mutations:(id)arg4;
+- (id)initWithStyleOwnerType:(int)arg1 index:(unsigned long long)arg2 inChart:(id)arg3 mutations:(id)arg4;
 - (id)styleOwner;
-- (struct { int x1; unsigned int x2; })styleOwnerRef;
+- (id)styleOwnerRef;
 - (int)type;
 
 @end

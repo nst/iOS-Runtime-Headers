@@ -2,20 +2,27 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface KNBuildFlashBulbs : KNAnimationEffect <KNChunkableBuildAnimator> {
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
 
 - (id)animationsWithContext:(id)arg1;
-- (id)p_layerWithImage:(struct CGImage { }*)arg1 centeredAt:(struct CGPoint { float x1; float x2; })arg2;
+- (id)p_layerWithImage:(struct CGImage { }*)arg1 centeredAt:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

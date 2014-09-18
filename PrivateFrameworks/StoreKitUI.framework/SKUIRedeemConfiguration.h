@@ -5,7 +5,7 @@
 @class NSOperationQueue, SKUIClientContext, SKUIITunesPassConfiguration, UIImage;
 
 @interface SKUIRedeemConfiguration : NSObject {
-    int _category;
+    long long _category;
     SKUIClientContext *_clientContext;
     UIImage *_inputImage;
     SKUIITunesPassConfiguration *_itunesPassConfiguration;
@@ -15,6 +15,8 @@
 }
 
 @property(readonly) SKUIITunesPassConfiguration * ITunesPassConfiguration;
+@property(readonly) long long category;
+@property(readonly) SKUIClientContext * clientContext;
 @property(readonly) UIImage * inputImage;
 @property(readonly) UIImage * landingImage;
 @property(readonly) NSOperationQueue * operationQueue;
@@ -29,7 +31,9 @@
 - (void)_setInputImage:(id)arg1;
 - (void)_setLandingImage:(id)arg1;
 - (void)_setSuccessImage:(id)arg1;
-- (id)initWithOperationQueue:(id)arg1 category:(int)arg2 clientContext:(id)arg3;
+- (long long)category;
+- (id)clientContext;
+- (id)initWithOperationQueue:(id)arg1 category:(long long)arg2 clientContext:(id)arg3;
 - (id)inputImage;
 - (id)landingImage;
 - (void)loadConfigurationWithCompletionBlock:(id)arg1;

@@ -9,7 +9,7 @@
 + (id)movingContext;
 
 - (id)undoContext;
-- (BOOL)wasHidden;
-- (BOOL)wasMoved;
+- (bool)wasHidden;
+- (bool)wasMoved;
 
 @end

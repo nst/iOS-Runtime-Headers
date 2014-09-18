@@ -10,6 +10,7 @@
 
 @property(copy) NSArray * databases;
 
+- (void).cxx_destruct;
 - (id)databases;
 - (void)dealloc;
 - (void)setDatabases:(id)arg1;

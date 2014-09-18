@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, NSString;
 
 @interface SSRedeemCodesResponse : NSObject <SSXPCCoding> {
     NSDictionary *_errors;
     NSDictionary *_redeemedCodes;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSArray * failedCodes;
-@property(readonly) NSArray * redeemedCodes;
+@property(readonly) unsigned long long hash;
+@property(copy,readonly) NSArray * redeemedCodes;
+@property(readonly) Class superclass;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;

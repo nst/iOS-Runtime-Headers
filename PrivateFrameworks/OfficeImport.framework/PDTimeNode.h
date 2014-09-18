@@ -5,6 +5,7 @@
 @class NSMutableArray, NSString, PDIterate;
 
 @interface PDTimeNode : NSObject {
+    boolmHasDuration;
     double mAcceleration;
     int mAnimationPresetClass;
     NSMutableArray *mChildTimeNodeList;
@@ -12,7 +13,6 @@
     double mDuration;
     NSMutableArray *mEndTimeConditions;
     NSString *mGroupId;
-    BOOL mHasDuration;
     PDIterate *mIterate;
     int mPresetId;
     int mPresetSubType;
@@ -33,11 +33,12 @@
 - (double)duration;
 - (id)endTimeConditions;
 - (id)groupId;
-- (BOOL)hasDuration;
-- (BOOL)hasPresetClass;
-- (BOOL)hasRestartType;
-- (BOOL)hasType;
+- (bool)hasDuration;
+- (bool)hasPresetClass;
+- (bool)hasRestartType;
+- (bool)hasType;
 - (id)init;
+- (bool)isEqual:(id)arg1;
 - (id)iterate;
 - (int)presetId;
 - (int)presetSubType;

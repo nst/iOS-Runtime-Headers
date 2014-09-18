@@ -10,7 +10,7 @@
     NSString *_threadLocalStorageKey;
 }
 
-@property(setter=_setSerialQueue:,retain) NSObject<OS_dispatch_queue> * _serialQueue;
+@property(setter=_setSerialQueue:) NSObject<OS_dispatch_queue> * _serialQueue;
 @property(setter=_setThreadLocalStorageKey:,copy) NSString * _threadLocalStorageKey;
 @property(copy) NSString * label;
 
@@ -21,7 +21,7 @@
 - (void)_setThreadLocalStorageKey:(id)arg1;
 - (id)_threadLocalStorageKey;
 - (void)dealloc;
-- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(BOOL)arg2;
+- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(bool)arg2;
 - (id)label;
 - (void)performAsynchronousBlock:(id)arg1;
 - (void)performSynchronousBlock:(id)arg1;

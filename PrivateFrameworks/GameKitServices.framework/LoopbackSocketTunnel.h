@@ -21,8 +21,8 @@
             unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
+    boolfoundVTPIP;
     NSObject<LoopbackSocketTunnelDelegate> *delegate;
-    BOOL foundVTPIP;
     NSObject *optionalArg;
     unsigned short port;
     } sa;

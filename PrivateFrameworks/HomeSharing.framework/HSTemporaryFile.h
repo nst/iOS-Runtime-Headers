@@ -8,6 +8,7 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithTemporaryFile:(id)arg1;
 

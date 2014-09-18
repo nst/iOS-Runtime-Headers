@@ -2,12 +2,20 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyPlaceholderCell : ABContactCell {
+@class UILabel;
+
+@interface ABPropertyPlaceholderCell : ABLabeledCell {
+    UILabel *_label;
 }
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+@property(retain) UILabel * label;
+
+- (void)dealloc;
+- (id)label;
+- (id)labelView;
+- (double)minCellHeight;
 - (void)setCardGroupItem:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
-- (void)tintColorDidChange;
+- (void)setLabel:(id)arg1;
+- (bool)shouldPerformDefaultAction;
 
 @end

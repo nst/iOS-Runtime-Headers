@@ -2,12 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSPointerFunctions;
+
 @interface NSMapTable : NSObject <NSCopying, NSCoding, NSFastEnumeration> {
 }
 
+@property(readonly) unsigned long long count;
+@property(copy,readonly) NSPointerFunctions * keyPointerFunctions;
+@property(copy,readonly) NSPointerFunctions * valuePointerFunctions;
+
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)mapTableWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2;
++ (id)mapTableWithKeyOptions:(unsigned long long)arg1 valueOptions:(unsigned long long)arg2;
 + (id)mapTableWithStrongToStrongObjects;
 + (id)mapTableWithStrongToWeakObjects;
 + (id)mapTableWithWeakToStrongObjects;
@@ -19,12 +25,14 @@
 + (id)weakToStrongObjectsMapTable;
 + (id)weakToWeakObjectsMapTable;
 
+- (id)CKAllKeys;
 - (id)allKeys;
 - (id)allValues;
+- (id)bs_takeObjectForKey:(id)arg1;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
@@ -32,14 +40,14 @@
 - (void)enumerateObjectsUsingBlock:(id)arg1;
 - (id)enumerator;
 - (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
-- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
+- (unsigned long long)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
-- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
+- (id)initWithKeyOptions:(unsigned long long)arg1 valueOptions:(unsigned long long)arg2 capacity:(unsigned long long)arg3;
+- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned long long)arg3;
 - (id)keyEnumerator;
 - (id)keyPointerFunctions;
-- (BOOL)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;
+- (bool)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableDictionary;
 - (id)objectEnumerator;

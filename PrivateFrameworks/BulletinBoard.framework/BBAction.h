@@ -6,65 +6,101 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSString, NSURL;
+@class BBAppearance, NSDictionary, NSString, NSURL;
 
-@interface BBAction : NSObject <NSCopying, NSCoding> {
-    int _actionType;
+@interface BBAction : NSObject <NSCopying, NSSecureCoding> {
+    long long _actionType;
     NSDictionary *_activatePluginContext;
     NSString *_activatePluginName;
-    BOOL _deliverResponse;
+    unsigned long long _activationMode;
+    BBAppearance *_appearance;
+    NSString *_identifier;
     id _internalBlock;
     NSString *_launchBundleID;
-    BOOL _launchCanBypassPinLock;
     NSURL *_launchURL;
+    NSString *_remoteServiceBundleIdentifier;
+    NSString *_remoteViewControllerClassName;
+    bool_authenticationRequired;
+    bool_deliverResponse;
+    bool_launchCanBypassPinLock;
+    bool_shouldDismissBulletin;
 }
 
-@property int actionType;
+@property long long actionType;
 @property(copy) NSDictionary * activatePluginContext;
 @property(copy) NSString * activatePluginName;
-@property BOOL canBypassPinLock;
+@property unsigned long long activationMode;
+@property(copy) BBAppearance * appearance;
+@property(getter=isAuthenticationRequired) bool authenticationRequired;
+@property bool canBypassPinLock;
+@property(copy) NSString * identifier;
 @property(copy) id internalBlock;
 @property(copy) NSString * launchBundleID;
-@property BOOL launchCanBypassPinLock;
-@property(retain) NSURL * launchURL;
+@property bool launchCanBypassPinLock;
+@property(copy) NSURL * launchURL;
+@property(copy) NSString * remoteServiceBundleIdentifier;
+@property(copy) NSString * remoteViewControllerClassName;
+@property bool shouldDismissBulletin;
 
 + (id)action;
 + (id)actionWithActivatePluginName:(id)arg1 activationContext:(id)arg2;
++ (id)actionWithAppearance:(id)arg1;
 + (id)actionWithCallblock:(id)arg1;
++ (id)actionWithIdentifier:(id)arg1 title:(id)arg2;
++ (id)actionWithIdentifier:(id)arg1;
 + (id)actionWithLaunchBundleID:(id)arg1 callblock:(id)arg2;
++ (id)actionWithLaunchBundleID:(id)arg1;
 + (id)actionWithLaunchURL:(id)arg1 callblock:(id)arg2;
++ (id)actionWithLaunchURL:(id)arg1;
++ (bool)supportsSecureCoding;
 
-- (int)actionType;
+- (id)_nameForActionType:(long long)arg1;
+- (long long)actionType;
 - (id)activatePluginContext;
 - (id)activatePluginName;
+- (unsigned long long)activationMode;
+- (id)appearance;
 - (id)bundleID;
-- (BOOL)canBypassPinLock;
+- (bool)canBypassPinLock;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)deliverResponse:(id)arg1;
+- (bool)deliverResponse:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasLaunchInfo;
-- (unsigned int)hash;
-- (id)initWithActivatePluginName:(id)arg1 activationContext:(id)arg2;
+- (bool)hasLaunchAction;
+- (bool)hasPluginAction;
+- (bool)hasRemoteViewAction;
+- (unsigned long long)hash;
+- (id)identifier;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1;
 - (id)internalBlock;
-- (BOOL)isAppLaunchAction;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isURLLaunchAction;
+- (bool)isAuthenticationRequired;
+- (bool)isEqual:(id)arg1;
 - (id)launchBundleID;
-- (BOOL)launchCanBypassPinLock;
+- (bool)launchCanBypassPinLock;
 - (id)launchURL;
 - (id)partialDescription;
-- (void)setActionType:(int)arg1;
+- (id)remoteServiceBundleIdentifier;
+- (id)remoteViewControllerClassName;
+- (void)setActionType:(long long)arg1;
 - (void)setActivatePluginContext:(id)arg1;
 - (void)setActivatePluginName:(id)arg1;
+- (void)setActivationMode:(unsigned long long)arg1;
+- (void)setAppearance:(id)arg1;
+- (void)setAuthenticationRequired:(bool)arg1;
 - (void)setCallblock:(id)arg1;
-- (void)setCanBypassPinLock:(BOOL)arg1;
+- (void)setCanBypassPinLock:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setInternalBlock:(id)arg1;
 - (void)setLaunchBundleID:(id)arg1;
-- (void)setLaunchCanBypassPinLock:(BOOL)arg1;
+- (void)setLaunchCanBypassPinLock:(bool)arg1;
 - (void)setLaunchURL:(id)arg1;
+- (void)setRemoteServiceBundleIdentifier:(id)arg1;
+- (void)setRemoteViewControllerClassName:(id)arg1;
+- (void)setShouldDismissBulletin:(bool)arg1;
+- (bool)shouldDismissBulletin;
 - (id)url;
 
 @end

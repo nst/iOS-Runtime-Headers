@@ -6,37 +6,37 @@
 
 @interface UIDragRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     double _angle;
-    BOOL _canBeginDrag;
     SEL _checkCanBeginDrag;
     double _maximumDeviation;
     double _minimumDistance;
     double _quietPeriod;
-    BOOL _restrictsToAngle;
     double _startAngle;
     } _startPosition;
     UIDelayedAction *_tooSlow;
     UITouch *_touch;
+    bool_canBeginDrag;
+    bool_restrictsToAngle;
     UIDelayedAction *ignoreTouch;
 }
 
 @property double angle;
-@property BOOL canBeginDrag;
+@property bool canBeginDrag;
 @property SEL checkCanBeginDrag;
 @property(retain) UIDelayedAction * ignoreTouch;
 @property double maximumDeviation;
 @property double minimumDistance;
 @property double quietPeriod;
-@property BOOL restrictsToAngle;
+@property bool restrictsToAngle;
 @property double startAngle;
-@property struct CGPoint { float x1; float x2; } startPosition;
+@property struct CGPoint { double x1; double x2; } startPosition;
 @property(retain) UITouch * touch;
 
 - (void)_resetGestureRecognizer;
 - (double)angle;
-- (BOOL)canBeginDrag;
+- (bool)canBeginDrag;
 - (SEL)checkCanBeginDrag;
 - (void)clearIgnoreTouch;
 - (void)clearTimer;
@@ -46,20 +46,20 @@
 - (double)maximumDeviation;
 - (double)minimumDistance;
 - (double)quietPeriod;
-- (BOOL)restrictsToAngle;
+- (bool)restrictsToAngle;
 - (void)setAngle:(double)arg1;
-- (void)setCanBeginDrag:(BOOL)arg1;
+- (void)setCanBeginDrag:(bool)arg1;
 - (void)setCheckCanBeginDrag:(SEL)arg1;
 - (void)setIgnoreTouch:(id)arg1;
 - (void)setMaximumDeviation:(double)arg1;
 - (void)setMinimumDistance:(double)arg1;
 - (void)setQuietPeriod:(double)arg1;
-- (void)setRestrictsToAngle:(BOOL)arg1;
+- (void)setRestrictsToAngle:(bool)arg1;
 - (void)setStartAngle:(double)arg1;
-- (void)setStartPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStartPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setTouch:(id)arg1;
 - (double)startAngle;
-- (struct CGPoint { float x1; float x2; })startPosition;
+- (struct CGPoint { double x1; double x2; })startPosition;
 - (void)tooSlow:(id)arg1;
 - (id)touch;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

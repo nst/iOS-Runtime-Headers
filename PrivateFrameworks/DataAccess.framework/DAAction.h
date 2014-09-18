@@ -2,42 +2,50 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class <NSCoding><NSObject>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DAAction : NSObject <NSCoding> {
+     /* Encoded args for previous method: ^{ASEvent=#@@ii@i@?i@}16@0:8 */
+     /* Encoded args for previous method: ^{ASContact=#@@ii@i@?i@}16@0:8 */
+     /* Encoded args for previous method: ^{ASToDo=#@@ii@i@?i@}16@0:8 */
+     /* Encoded args for previous method: ^{ASNote=#@@ii@i@?i@}16@0:8 */
     int _changeId;
-    <NSCoding><NSObject> *_changedItem;
-    int _itemChangeType;
+    id _changedItem;
+    long long _itemChangeType;
     id _serverId;
 }
 
 @property int changeId;
 @property(retain) id changedItem;
-@property(readonly) int itemChangeType;
-@property(readonly) id serverId;
+@property long long itemChangeType;
+@property(retain) id serverId;
 
+- (void).cxx_destruct;
 - (void)_setChangedItem:(id)arg1;
 - (int)changeId;
 - (id)changedItem;
-- (struct ASContact { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; int x9; id x10; int x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; void *x18; id x19; id x20; id x21; id x22; id x23; int x24; BOOL x25; id x26; id x27; id x28; id x29; id x30; id x31; id x32; id x33; id x34; id x35; id x36; id x37; id x38; id x39; id x40; id x41; id x42; id x43; id x44; id x45; id x46; id x47; id x48; id x49; id x50; id x51; id x52; id x53; id x54; id x55; id x56; id x57; id x58; id x59; id x60; id x61; id x62; id x63; id x64; id x65; id x66; id x67; id x68; id x69; id x70; id x71; id x72; id x73; id x74; id x75; id x76; id x77; id x78; id x79; id x80; id x81; int x82; }*)contact;
-- (void)dealloc;
+- (struct ASContact { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; int x10; id x11; }*)contact;
 - (id)deletedContactID;
 - (id)deletedEventID;
 - (id)deletedNoteID;
 - (id)deletedToDoID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (struct ASEvent { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; int x9; id x10; int x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; void *x18; id x19; id x20; id x21; id x22; id x23; id x24; id x25; id x26; id x27; id x28; id x29; id x30; id x31; id x32; id x33; id x34; id x35; id x36; id x37; id x38; id x39; id x40; id x41; int x42; BOOL x43; BOOL x44; BOOL x45; BOOL x46; BOOL x47; BOOL x48; id x49; }*)event;
-- (unsigned int)hash;
+- (struct ASEvent { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; int x10; id x11; }*)event;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (int)itemChangeType;
+- (id)initWithItemChangeType:(long long)arg1 changedItem:(id)arg2 serverId:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (long long)itemChangeType;
 - (id)message;
-- (struct ASNote { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; int x9; id x10; int x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; id x18; id x19; id x20; BOOL x21; id x22; id x23; id x24; id x25; }*)note;
+- (struct ASNote { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; int x10; id x11; }*)note;
 - (id)serverId;
 - (void)setChangeId:(int)arg1;
-- (id)stringForItemChangeType:(int)arg1;
-- (struct ASToDo { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; int x9; id x10; int x11; id x12; id x13; id x14; BOOL x15; BOOL x16; id x17; void *x18; id x19; id x20; id x21; id x22; id x23; id x24; id x25; id x26; id x27; id x28; id x29; id x30; id x31; id x32; id x33; }*)toDo;
+- (void)setItemChangeType:(long long)arg1;
+- (void)setServerId:(id)arg1;
+- (id)stringForItemChangeType:(long long)arg1;
+- (struct ASToDo { Class x1; id x2; id x3; int x4; int x5; id x6; int x7; id x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; int x10; id x11; }*)toDo;
 
 @end

@@ -6,31 +6,31 @@
 
 @interface SKUIReviewMetadata : NSObject <NSCopying> {
     NSString *_body;
-    unsigned int _bodyMaxLength;
+    unsigned long long _bodyMaxLength;
     NSString *_nickname;
-    unsigned int _nicknameMaxLength;
+    unsigned long long _nicknameMaxLength;
     float _rating;
     NSURL *_submitURL;
     NSString *_title;
-    unsigned int _titleMaxLength;
+    unsigned long long _titleMaxLength;
 }
 
 @property(copy) NSString * body;
-@property(readonly) unsigned int bodyMaxLength;
+@property(readonly) unsigned long long bodyMaxLength;
 @property(copy) NSString * nickname;
-@property(readonly) unsigned int nicknameMaxLength;
+@property(readonly) unsigned long long nicknameMaxLength;
 @property float rating;
 @property(readonly) NSURL * submitURL;
 @property(copy) NSString * title;
-@property(readonly) unsigned int titleMaxLength;
+@property(readonly) unsigned long long titleMaxLength;
 
 - (void).cxx_destruct;
 - (id)body;
-- (unsigned int)bodyMaxLength;
+- (unsigned long long)bodyMaxLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithReviewDictionary:(id)arg1;
 - (id)nickname;
-- (unsigned int)nicknameMaxLength;
+- (unsigned long long)nicknameMaxLength;
 - (float)rating;
 - (void)setBody:(id)arg1;
 - (void)setNickname:(id)arg1;
@@ -38,6 +38,6 @@
 - (void)setTitle:(id)arg1;
 - (id)submitURL;
 - (id)title;
-- (unsigned int)titleMaxLength;
+- (unsigned long long)titleMaxLength;
 
 @end

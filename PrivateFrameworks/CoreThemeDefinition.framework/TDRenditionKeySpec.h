@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class TDThemeDirection, TDThemeDrawingLayer, TDThemeElement, TDThemeIdiom, TDThemePart, TDThemePresentationState, TDThemeSize, TDThemeState, TDThemeValue;
+@class TDThemeDirection, TDThemeDrawingLayer, TDThemeElement, TDThemeIdiom, TDThemePart, TDThemePresentationState, TDThemeSize, TDThemeState, TDThemeUISizeClass, TDThemeValue;
 
 @interface TDRenditionKeySpec : NSManagedObject <TDElementAttributes> {
     struct _renditionkeytoken { 
@@ -10,6 +10,8 @@
         unsigned short value; 
     unsigned int _dimension1;
     unsigned int _dimension2;
+    unsigned int _graphicsClass;
+    unsigned int _memoryClass;
     unsigned int _nameIdentifier;
     unsigned int _scaleFactor;
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_scratchKey;
@@ -23,13 +25,17 @@
 @property(retain) TDThemeDrawingLayer * layer;
 @property(retain) TDThemePart * part;
 @property(retain) TDThemePresentationState * presentationState;
+@property(retain) TDThemeState * previousState;
+@property(retain) TDThemeValue * previousValue;
 @property(retain) TDThemeSize * size;
+@property(retain) TDThemeUISizeClass * sizeClassHorizontal;
+@property(retain) TDThemeUISizeClass * sizeClassVertical;
 @property(retain) TDThemeState * state;
 @property(retain) TDThemeValue * value;
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
-- (int)attributeCount;
+- (long long)attributeCount;
 - (void)copyAttributesInto:(id)arg1;
 - (id)copyDataFromAttributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -39,9 +45,11 @@
 - (unsigned int)dimension1;
 - (unsigned int)dimension2;
 - (void)getKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (unsigned int)graphicsClass;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)key;
 - (id)keyDescription;
 - (const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)keyFormat;
+- (unsigned int)memoryClass;
 - (unsigned int)nameIdentifier;
 - (unsigned int)scaleFactor;
 - (id)scaleFactorString;
@@ -50,6 +58,8 @@
 - (void)setAttributesFromRenditionKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 withDocument:(id)arg2;
 - (void)setDimension1:(unsigned int)arg1;
 - (void)setDimension2:(unsigned int)arg1;
+- (void)setGraphicsClass:(unsigned int)arg1;
+- (void)setMemoryClass:(unsigned int)arg1;
 - (void)setNameIdentifier:(unsigned int)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;
 - (void)setScaleFactorString:(id)arg1;

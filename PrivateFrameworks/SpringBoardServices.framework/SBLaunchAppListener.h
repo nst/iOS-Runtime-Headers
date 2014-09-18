@@ -10,21 +10,21 @@
 
 @interface SBLaunchAppListener : NSObject {
     id _block;
-    NSString *_displayIdentifier;
-    BOOL _launched;
+    NSString *_bundleIdentifier;
     NSLock *_lock;
     unsigned int _notifyAppExitedStatus;
     int _notifyAppExitedToken;
     unsigned int _notifyRegisterStatus;
     int _notifyToken;
+    bool_launched;
 }
 
-+ (BOOL)waitForLaunchThatSpringBoardKnowsAbout:(id)arg1 timeout:(double)arg2;
++ (bool)waitForLaunchThatSpringBoardKnowsAbout:(id)arg1 timeout:(double)arg2;
 
 - (void)_didFailToLaunch;
 - (void)_didLaunch;
 - (void)dealloc;
-- (id)initWithDisplayIdentifier:(id)arg1 handlerBlock:(id)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 handlerBlock:(id)arg2;
 - (void)invalidate;
 
 @end

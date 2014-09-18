@@ -14,7 +14,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setStation:(id)arg1;
 - (id)station;
 

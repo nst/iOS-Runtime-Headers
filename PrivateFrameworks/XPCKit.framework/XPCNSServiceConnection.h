@@ -11,11 +11,15 @@
 }
 
 @property(retain) <NSObject> * context;
+@property(copy,readonly) NSString * debugDescription;
 @property <XPCNSServiceConnectionDelegate> * delegate;
-@property(readonly) NSString * serviceName;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain,readonly) NSString * serviceName;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)XPCServiceConnection:(id)arg1 didReceiveRequest:(id)arg2 sequenceNumber:(unsigned int)arg3;
+- (void)XPCServiceConnection:(id)arg1 didReceiveRequest:(id)arg2 sequenceNumber:(unsigned long long)arg3;
 - (void)XPCServiceConnectionDidDisconnect:(id)arg1;
 - (id)context;
 - (id)delegate;

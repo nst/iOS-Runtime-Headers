@@ -7,11 +7,14 @@
 @interface GEODownloadMetadata : PBCodable <NSCopying> {
     NSString *_etag;
     double _timestamp;
+    NSString *_url;
 }
 
 @property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
+@property(readonly) bool hasEtag;
+@property(readonly) bool hasUrl;
 @property double timestamp;
+@property(retain) NSString * url;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -19,13 +22,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasUrl;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (void)setUrl:(id)arg1;
 - (double)timestamp;
+- (id)url;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -10,8 +10,12 @@
 }
 
 @property(readonly) NSMutableDictionary * cacheRepresentation;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(readonly) NSString * formattedPrice;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * name;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)cacheRepresentation;

@@ -25,7 +25,7 @@
 @property(retain) NSNumber * isCaption;
 @property(retain) NSNumber * isDeletable;
 @property(retain) NSNumber * isLike;
-@property(readonly) BOOL isLikeBoolValue;
+@property(readonly) bool isLikeBoolValue;
 @property(retain) NSNumber * isMyComment;
 @property(retain) PLManagedAsset * likedAsset;
 
@@ -33,12 +33,12 @@
 + (id)cloudSharedCommentWithGUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)insertNewCommentIntoAsset:(id)arg1 commentDate:(id)arg2 withText:(id)arg3 isLike:(BOOL)arg4 isMyComment:(BOOL)arg5 inLibrary:(id)arg6;
++ (id)insertNewCommentIntoAsset:(id)arg1 commentDate:(id)arg2 withText:(id)arg3 isLike:(bool)arg4 isMyComment:(bool)arg5 inLibrary:(id)arg6;
 
-- (BOOL)_isInterestingToUser;
+- (bool)_isInterestingToUser;
 - (id)asset;
 - (void)awakeFromInsert;
-- (BOOL)canBeDeletedByUser;
+- (bool)canBeDeletedByUser;
 - (id)cloudFeedEntry;
 - (id)commenterDisplayName;
 - (id)commenterEmail;
@@ -47,10 +47,10 @@
 - (id)commenterLastName;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInterestingForAlbumsSorting;
-- (BOOL)isLikeBoolValue;
+- (bool)isInterestingForAlbumsSorting;
+- (bool)isLikeBoolValue;
 - (void)prepareForDeletion;
-- (BOOL)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(BOOL*)arg2;
+- (bool)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(bool*)arg2;
 - (void)willSave;
 
 @end

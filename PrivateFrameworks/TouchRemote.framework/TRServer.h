@@ -15,9 +15,13 @@
 }
 
 @property(copy) TRAdvertisingInfo * advertisingInfo;
+@property(copy,readonly) NSString * debugDescription;
 @property <TRServerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * name;
 @property(readonly) unsigned short port;
+@property(readonly) Class superclass;
 
 + (id)newServerWithName:(id)arg1 port:(unsigned short)arg2;
 + (id)newServerWithName:(id)arg1;

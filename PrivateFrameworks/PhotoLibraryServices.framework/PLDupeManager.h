@@ -2,35 +2,36 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, PLPhotoLibrary;
+@class NSCountedSet, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, PLPhotoLibrary;
 
 @interface PLDupeManager : NSObject {
     NSMutableArray *_assetsWithUpdatedVisibility;
     NSMutableDictionary *_cloudAssetsToAnalyze;
     NSMutableSet *_cloudInserts;
-    BOOL _doneWithCloudAssets;
-    BOOL _isRebuilding;
     NSMutableArray *_normalAssetsObjectIDsToAnalyze;
     NSMutableSet *_normalInserts;
-    long _once;
-    int _pauseCount;
+    long long _once;
+    NSCountedSet *_pauseReasons;
     PLPhotoLibrary *_photoLibrary;
     double _rebuildStartTime;
+    NSSet *_softPauseReasons;
+    bool_doneWithCloudAssets;
+    bool_isRebuilding;
 }
 
 @property(readonly) PLPhotoLibrary * photoLibrary;
 
-+ (BOOL)_computeHashForAsset:(id)arg1;
++ (bool)_computeHashForAsset:(id)arg1;
 + (id)_hashForFileAtPath:(id)arg1 utiType:(id)arg2;
-+ (BOOL)_resetDupesAnalysisInManagedObjectContext:(id)arg1 resetHashes:(BOOL)arg2;
++ (bool)_resetDupesAnalysisInManagedObjectContext:(id)arg1 resetHashes:(bool)arg2;
 + (void)_setPlaceHolderHashOnAsset:(id)arg1;
 + (id)hashForAsset:(id)arg1;
 + (id)placeholderHash;
-+ (BOOL)resetDupesAnalysisForOfflineStore:(id)arg1 resetHashes:(BOOL)arg2;
++ (bool)resetDupesAnalysisForOfflineStore:(id)arg1 resetHashes:(bool)arg2;
 + (id)sharedInstance;
 
 - (short)_adjustCloudAssetVisibilityStateForManagedObjectContext:(id)arg1;
-- (BOOL)_analyzeDupeForCloudAssetsAndHashes:(id)arg1 andPublicGlobalUUIDs:(id)arg2 forManagedObjectContext:(id)arg3;
+- (bool)_analyzeDupeForCloudAssetsAndHashes:(id)arg1 andPublicGlobalUUIDs:(id)arg2 forManagedObjectContext:(id)arg3;
 - (void)_analyzeDupeForNormalAsset:(id)arg1;
 - (void)_analyzeDupes;
 - (short)_analyzeDupesForCloudInsertsForManagedObjectContext:(id)arg1;
@@ -45,16 +46,18 @@
 - (id)_duplicateCloudAssetForHash:(id)arg1 orPublicGlobalUUID:(id)arg2;
 - (void)_noteAssetVisibilityDidChange:(id)arg1;
 - (void)_performAnalysisTransaction:(id)arg1 completionHandler:(id)arg2;
-- (BOOL)_prepareCloudAssetsToAnalyzeForManagedObjectContext:(id)arg1;
+- (bool)_prepareCloudAssetsToAnalyzeForManagedObjectContext:(id)arg1;
 - (void)_removeCloudAssetFromAnalysis:(id)arg1;
+- (void)_resetSoftPauseReasons;
 - (void)_updateVisibilityState:(short)arg1 forAsset:(id)arg2;
 - (void)analyzeDupesWithNormalInserts:(id)arg1 cloudInserts:(id)arg2 completionHandler:(id)arg3;
 - (void)dealloc;
+- (id)init;
 - (void)launchDupeAnalysisIfNeeded;
-- (void)pauseAnalysis;
+- (void)pauseAnalysisWithReason:(id)arg1;
 - (void)persistPublicGlobalUUIDsForAssets:(id)arg1 completionHandler:(id)arg2;
 - (id)photoLibrary;
-- (void)resetDupesAnalysisResetHashes:(BOOL)arg1;
-- (void)resumeAnalysis;
+- (void)resetDupesAnalysisResetHashes:(bool)arg1;
+- (void)resumeAnalysisWithReason:(id)arg1;
 
 @end

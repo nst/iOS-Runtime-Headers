@@ -6,10 +6,17 @@
    See Warning(s) below.
  */
 
+@class NSString;
+
 @interface AVAssetWriterDoNothingFinishWritingDelegate : NSObject <AVAssetWriterFinishWritingHelperDelegate> {
     id _handler;
     int _handlerCalled;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)_callHandlerIfNotCalled;
 - (void)dealloc;
@@ -17,6 +24,6 @@
 - (void)finishWritingHelperDidCancelFinishWriting:(id)arg1;
 - (void)finishWritingHelperDidFail:(id)arg1;
 - (id)initWithHandler:(id)arg1;
-- (BOOL)shouldHelperPrepareInputs;
+- (bool)shouldHelperPrepareInputs;
 
 @end

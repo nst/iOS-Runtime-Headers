@@ -2,8 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSData;
+
 @interface NSFileHandle : NSObject <NSSecureCoding> {
 }
+
+@property(copy,readonly) NSData * availableData;
+@property(readonly) unsigned long long offsetInFile;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)fileHandleForReadingAtPath:(id)arg1;
@@ -20,21 +25,25 @@
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithStandardOutput;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)availableData;
 - (Class)classForCoder;
 - (void)closeFile;
 - (void)encodeWithCoder:(id)arg1;
 - (int)fileDescriptor;
+- (bool)hk_readValue:(void*)arg1 ofSize:(unsigned long long)arg2;
+- (bool)hk_writeValue:(const void*)arg1 size:(unsigned long long)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(bool)arg2;
+- (id)initWithFileDescriptor:(int)arg1;
+- (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
+- (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3;
+- (id)initWithURL:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
 - (void)ml_lock;
 - (void)ml_unlock;
 - (unsigned long long)offsetInFile;
-- (id)readDataOfLength:(unsigned int)arg1;
+- (id)readDataOfLength:(unsigned long long)arg1;
 - (id)readDataToEndOfFile;
 - (id)readabilityHandler;
 - (unsigned long long)seekToEndOfFile;

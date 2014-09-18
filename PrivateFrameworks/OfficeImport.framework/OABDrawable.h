@@ -5,10 +5,7 @@
 @interface OABDrawable : NSObject {
 }
 
-+ (void)addObject:(id)arg1 toContainer:(id)arg2 forDrawable:(id)arg3 state:(id)arg4;
 + (id)readDrawableFromObject:(id)arg1 state:(id)arg2;
 + (id)readDrawablesFromContainer:(id)arg1 state:(id)arg2;
-+ (void)writeDrawable:(id)arg1 intoParent:(id)arg2 state:(id)arg3;
-+ (void)writeDrawables:(id)arg1 intoParent:(id)arg2 state:(id)arg3;
 
 @end

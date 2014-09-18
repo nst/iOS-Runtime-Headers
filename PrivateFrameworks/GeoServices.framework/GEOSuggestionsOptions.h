@@ -8,19 +8,27 @@
     struct { 
         unsigned int entriesType : 1; 
         unsigned int listType : 1; 
+        unsigned int includeRankingFeatures : 1; 
+        unsigned int normalizePOIs : 1; 
     int _entriesType;
     } _has;
     int _listType;
     NSData *_suggestionEntryMetadata;
     NSData *_suggestionMetadata;
+    bool_includeRankingFeatures;
+    bool_normalizePOIs;
 }
 
 @property int entriesType;
-@property BOOL hasEntriesType;
-@property BOOL hasListType;
-@property(readonly) BOOL hasSuggestionEntryMetadata;
-@property(readonly) BOOL hasSuggestionMetadata;
+@property bool hasEntriesType;
+@property bool hasIncludeRankingFeatures;
+@property bool hasListType;
+@property bool hasNormalizePOIs;
+@property(readonly) bool hasSuggestionEntryMetadata;
+@property(readonly) bool hasSuggestionMetadata;
+@property bool includeRankingFeatures;
 @property int listType;
+@property bool normalizePOIs;
 @property(retain) NSData * suggestionEntryMetadata;
 @property(retain) NSData * suggestionMetadata;
 
@@ -30,18 +38,27 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)entriesType;
-- (BOOL)hasEntriesType;
-- (BOOL)hasListType;
-- (BOOL)hasSuggestionEntryMetadata;
-- (BOOL)hasSuggestionMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEntriesType;
+- (bool)hasIncludeRankingFeatures;
+- (bool)hasListType;
+- (bool)hasNormalizePOIs;
+- (bool)hasSuggestionEntryMetadata;
+- (bool)hasSuggestionMetadata;
+- (unsigned long long)hash;
+- (bool)includeRankingFeatures;
+- (bool)isEqual:(id)arg1;
 - (int)listType;
-- (BOOL)readFrom:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)normalizePOIs;
+- (bool)readFrom:(id)arg1;
 - (void)setEntriesType:(int)arg1;
-- (void)setHasEntriesType:(BOOL)arg1;
-- (void)setHasListType:(BOOL)arg1;
+- (void)setHasEntriesType:(bool)arg1;
+- (void)setHasIncludeRankingFeatures:(bool)arg1;
+- (void)setHasListType:(bool)arg1;
+- (void)setHasNormalizePOIs:(bool)arg1;
+- (void)setIncludeRankingFeatures:(bool)arg1;
 - (void)setListType:(int)arg1;
+- (void)setNormalizePOIs:(bool)arg1;
 - (void)setSuggestionEntryMetadata:(id)arg1;
 - (void)setSuggestionMetadata:(id)arg1;
 - (id)suggestionEntryMetadata;

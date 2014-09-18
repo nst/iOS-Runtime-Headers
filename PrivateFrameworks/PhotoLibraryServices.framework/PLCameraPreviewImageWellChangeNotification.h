@@ -9,8 +9,8 @@
     NSString *_uuid;
 }
 
-@property(readonly) NSString * assetUUID;
-@property(readonly) UIImage * image;
+@property(retain,readonly) NSString * assetUUID;
+@property(retain,readonly) UIImage * image;
 
 + (id)notification;
 

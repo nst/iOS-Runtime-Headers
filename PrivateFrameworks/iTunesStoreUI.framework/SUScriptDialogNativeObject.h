@@ -2,18 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSString;
+
 @interface SUScriptDialogNativeObject : SUScriptNativeObject <UIActionSheetDelegate, UIAlertViewDelegate> {
 }
 
-- (void)_addScriptButton:(id)arg1 toAlert:(id)arg2 atIndex:(int)arg3;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (void)_addScriptButton:(id)arg1 toAlert:(id)arg2 atIndex:(long long)arg3;
 - (id)_newActionSheetForDialog:(id)arg1;
-- (void)_tearDownForDismissWithButtonIndex:(int)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)_tearDownForDismissWithButtonIndex:(long long)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)destroyNativeObject;
 - (void)dismiss;
 - (void)show;
-- (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (void)showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (void)showSheet;
 - (void)showSheetInViewController:(id)arg1;
 

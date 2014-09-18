@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface TPPreviewExporter : TPRenderingExporter <TSKImageExporter> {
 }
 
-@property unsigned int height;
-@property BOOL scaleToFit;
-@property unsigned int width;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property unsigned long long height;
+@property bool scaleToFit;
+@property(readonly) Class superclass;
+@property unsigned long long width;
 
-- (unsigned int)height;
+- (unsigned long long)height;
 - (id)p_renderingExporterDelegate;
-- (BOOL)scaleToFit;
-- (void)setHeight:(unsigned int)arg1;
-- (void)setScaleToFit:(BOOL)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)width;
+- (bool)scaleToFit;
+- (void)setHeight:(unsigned long long)arg1;
+- (void)setScaleToFit:(bool)arg1;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)width;
 
 @end

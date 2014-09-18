@@ -6,8 +6,8 @@
 }
 
 - (void)_handleKeyUIEvent:(id)arg1;
-- (BOOL)becomeFirstResponder;
+- (bool)becomeFirstResponder;
 - (void)dealloc;
-- (BOOL)resignFirstResponder;
+- (bool)resignFirstResponder;
 
 @end

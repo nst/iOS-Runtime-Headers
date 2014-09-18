@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSLock, NSString;
+@class NSLock, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CPDistributedNotificationCenter : NSObject {
     NSString *_centerName;
-    BOOL _isServer;
     NSLock *_lock;
+    NSObject<OS_dispatch_queue> *_queue;
     struct __CFRunLoopSource { } *_receiveNotificationSource;
     struct __CFDictionary { } *_sendPorts;
-    unsigned int _startCount;
+    unsigned long long _startCount;
+    bool_isServer;
 }
 
 + (struct __CFDictionary { }*)_serverPortToNotificationCenterMap;
@@ -28,7 +29,7 @@
 - (void)dealloc;
 - (void)deliverNotification:(id)arg1 userInfo:(id)arg2;
 - (id)name;
-- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
+- (bool)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)postNotificationName:(id)arg1;
 - (void)runServer;

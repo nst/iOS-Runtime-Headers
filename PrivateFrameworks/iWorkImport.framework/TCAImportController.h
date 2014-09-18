@@ -2,21 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSError, NSString;
+@class NSError, NSString, NSUUID;
 
 @interface TCAImportController : TSAImportController <TSAImportDelegate> {
+    NSUUID *_baseUUIDForObjectUUID;
     NSString *_passphrase;
     NSError *_passphraseError;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void)addWarning:(id)arg1;
+- (id)additionalDocumentPropertiesForWrite;
+- (id)baseUUIDForObjectUUID;
 - (void)dealloc;
-- (void)finishImportWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)finishImportWithSuccess:(bool)arg1 error:(id)arg2;
 - (void)importControllerDidRunOutOfSpace:(id)arg1;
-- (BOOL)importWithPassphrase:(id)arg1;
-- (id)initWithPath:(id)arg1 documentType:(id)arg2;
+- (bool)importWithPassphrase:(id)arg1;
+- (id)initWithPath:(id)arg1 documentType:(id)arg2 baseUUIDForObjectUUID:(id)arg3;
 - (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(id)arg2;
-- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned int)arg2;
+- (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned long long)arg2;
 - (id)templateInfoWithName:(id)arg1;
 - (void)willSaveImportedDocument;
 

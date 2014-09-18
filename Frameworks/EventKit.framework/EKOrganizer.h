@@ -5,17 +5,17 @@
 @interface EKOrganizer : EKParticipant {
 }
 
-@property(getter=isCurrentUser) BOOL currentUser;
+@property(getter=isCurrentUser) bool currentUser;
 
-+ (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
++ (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(bool)arg4;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)init;
-- (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
-- (BOOL)isCurrentUser;
+- (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(bool)arg4;
+- (bool)isCurrentUser;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;
-- (void)setCurrentUser:(BOOL)arg1;
+- (void)setCurrentUser:(bool)arg1;
 
 @end

@@ -2,59 +2,44 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
-@interface UIInputViewAnimationStyle : NSObject {
-    BOOL animated;
+@interface UIInputViewAnimationStyle : NSObject <NSCopying> {
+    boolanimated;
+    boolforce;
+    boolinteractivelyCancelled;
     double duration;
-    unsigned int extraOptions;
-    NSMutableArray *extraViews;
-    BOOL force;
-    BOOL ignoreNewAnimations;
-    int outDirection;
-    BOOL persistUntilComplete;
-    BOOL placeholderKeyboard;
+    unsigned long long extraOptions;
 }
 
-@property BOOL animated;
+@property bool animated;
+@property(readonly) bool canDismissWithScrollView;
 @property double duration;
-@property unsigned int extraOptions;
-@property(retain) NSMutableArray * extraViews;
-@property BOOL force;
-@property BOOL ignoreNewAnimations;
-@property(readonly) BOOL isAnimationCompleted;
-@property int outDirection;
-@property BOOL persistUntilComplete;
-@property BOOL placeholderKeyboard;
-@property(readonly) BOOL useCustomTransition;
+@property unsigned long long extraOptions;
+@property bool force;
+@property bool interactivelyCancelled;
+@property(readonly) bool isAnimationCompleted;
 
-+ (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3;
++ (id)animationStyleAnimated:(bool)arg1 duration:(double)arg2;
 + (id)animationStyleDefault;
 + (id)animationStyleImmediate;
 
-- (BOOL)animated;
-- (void)dealloc;
+- (bool)animated;
+- (bool)canDismissWithScrollView;
+- (id)controllerForStartPlacement:(id)arg1 endPlacement:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)duration;
-- (unsigned int)extraOptions;
-- (id)extraViews;
-- (BOOL)force;
-- (BOOL)ignoreNewAnimations;
-- (BOOL)isAnimationCompleted;
-- (BOOL)isEqual:(id)arg1;
-- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
-- (int)outDirection;
-- (BOOL)persistUntilComplete;
-- (BOOL)placeholderKeyboard;
-- (void)setAnimated:(BOOL)arg1;
+- (id)endPlacementForInputViewSet:(id)arg1;
+- (unsigned long long)extraOptions;
+- (bool)force;
+- (bool)interactivelyCancelled;
+- (bool)isAnimationCompleted;
+- (bool)isEqual:(id)arg1;
+- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(bool)arg5;
+- (void)setAnimated:(bool)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setExtraOptions:(unsigned int)arg1;
-- (void)setExtraViews:(id)arg1;
-- (void)setForce:(BOOL)arg1;
-- (void)setIgnoreNewAnimations:(BOOL)arg1;
-- (void)setOutDirection:(int)arg1;
-- (void)setPersistUntilComplete:(BOOL)arg1;
-- (void)setPlaceholderKeyboard:(BOOL)arg1;
-- (BOOL)useCustomTransition;
+- (void)setExtraOptions:(unsigned long long)arg1;
+- (void)setForce:(bool)arg1;
+- (void)setInteractivelyCancelled:(bool)arg1;
+- (id)startPlacementForInputViewSet:(id)arg1 currentPlacement:(id)arg2;
 
 @end

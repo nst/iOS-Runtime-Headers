@@ -4,52 +4,57 @@
 
 @class NSString, RUAudioPreviewView, SKUICircleProgressIndicator, UIButton, UILabel, UIView;
 
-@interface RUStationTreeTableViewCell : UITableViewCell {
+@interface RUStationTreeTableViewCell : RUTableViewCell {
     SKUICircleProgressIndicator *_activityIndicator;
     UIButton *_addButton;
     RUAudioPreviewView *_audioPreviewView;
-    int _cellDisplayStyle;
+    long long _cellDisplayStyle;
     UILabel *_nowPlayingTextLabel;
-    BOOL _playing;
     UIView *_rightAccessoryView;
-    BOOL _showsActivityIndicator;
     UILabel *_titleLabel;
+    bool_playing;
+    bool_showsActivityIndicator;
 }
 
 @property(readonly) UIButton * addButton;
 @property(readonly) RUAudioPreviewView * audioPreviewView;
-@property int cellDisplayStyle;
+@property long long cellDisplayStyle;
 @property(copy) NSString * nowPlayingText;
-@property(getter=isPlaying) BOOL playing;
-@property BOOL showsActivityIndicator;
+@property(getter=isPlaying) bool playing;
+@property bool showsActivityIndicator;
 @property(copy) NSString * title;
-@property(readonly) UILabel * titleLabel;
 
-+ (float)defaultHeight;
++ (bool)_audioPreviewViewShowsFaceWhenNotPlaying;
++ (struct CGSize { double x1; double x2; })_audioPreviewViewSize;
++ (id)_nowPlayingTextLabelFont;
++ (id)_titleLabelFontWithEmphasis:(bool)arg1;
++ (double)defaultHeightForTraitCollection:(id)arg1 includingNowPlayingText:(bool)arg2;
 
 - (void).cxx_destruct;
-- (void)_applyAttributesForChangedCellStyleAnimated:(BOOL)arg1;
-- (id)_audioPreviewAnimationForShowing:(BOOL)arg1;
-- (void)_layoutSubviewsWithTitleLabelNowPlayingOffset:(BOOL)arg1 isPlaying:(BOOL)arg2;
-- (id)_newAudioPreviewView;
-- (void)_showChangeToPlaying:(BOOL)arg1 animated:(BOOL)arg2;
-- (float)_textLabelXWithIsPlaying:(BOOL)arg1;
+- (void)_applyAttributesForChangedCellStyleAnimated:(bool)arg1;
+- (id)_audioPreviewAnimationForShowing:(bool)arg1;
+- (double)_audioPreviewViewMinX;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)_layoutSubviewsForcingTitleLabelCentered:(bool)arg1 alignLabelsHorizontallyForPlaying:(bool)arg2;
+- (void)_showChangeToPlaying:(bool)arg1 animated:(bool)arg2;
+- (double)_textLabelMinXWhenPlaying:(bool)arg1;
 - (id)addButton;
 - (id)audioPreviewView;
-- (int)cellDisplayStyle;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isPlaying;
+- (long long)cellDisplayStyle;
+- (void)dealloc;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isPlaying;
 - (void)layoutSubviews;
 - (id)nowPlayingText;
-- (void)setCellDisplayStyle:(int)arg1;
-- (void)setNowPlayingText:(id)arg1 animated:(BOOL)arg2;
+- (void)setCellDisplayStyle:(long long)arg1;
+- (void)setNowPlayingText:(id)arg1 animated:(bool)arg2;
 - (void)setNowPlayingText:(id)arg1;
-- (void)setPlaying:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPlaying:(BOOL)arg1;
-- (void)setShowsActivityIndicator:(BOOL)arg1;
+- (void)setPlaying:(bool)arg1 animated:(bool)arg2;
+- (void)setPlaying:(bool)arg1;
+- (void)setShowsActivityIndicator:(bool)arg1;
 - (void)setTitle:(id)arg1;
-- (BOOL)showsActivityIndicator;
+- (bool)showsActivityIndicator;
 - (id)title;
-- (id)titleLabel;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
     NSData *_pemData;
 }
 
-@property(readonly) NSData * pemData;
+@property(retain,readonly) NSData * pemData;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -19,7 +19,7 @@
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)isIdentity;
+- (bool)isIdentity;
 - (id)pemData;
 
 @end

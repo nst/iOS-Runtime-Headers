@@ -5,20 +5,24 @@
 @class <SKUIRedeemCameraViewControllerDelegate>, CRCodeRedeemerController, NSString, SKUIRedeem, UIBarButtonItem;
 
 @interface SKUIRedeemCameraViewController : SKUIRedeemStepViewController <CRCodeRedeemerControllerDelegate, SKUIRedeemCameraViewDelegate, UIAlertViewDelegate, SKUIRedeemCameraViewControllerDelegate> {
-    BOOL _alreadyPushed;
     CRCodeRedeemerController *_camera;
-    int _category;
+    long long _category;
     <SKUIRedeemCameraViewControllerDelegate> *_delegate;
     UIBarButtonItem *_flipButton;
-    BOOL _fullscreen;
     NSString *_initialCode;
     UIBarButtonItem *_redeemButton;
     SKUIRedeem *_successfulRedeem;
+    bool_alreadyPushed;
+    bool_fullscreen;
 }
 
-@property(readonly) int category;
+@property(readonly) long long category;
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIRedeemCameraViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * initialCode;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)SKUIRedeemCameraView:(id)arg1 textFieldDidChange:(id)arg2;
@@ -26,23 +30,23 @@
 - (void)SKUIRedeemPreflightImagesDidLoad:(id)arg1;
 - (void)_cameraRedeemDidFinish:(id)arg1 error:(id)arg2;
 - (void)_cancelAction:(id)arg1;
-- (BOOL)_enabled;
+- (bool)_enabled;
 - (void)_flipAction:(id)arg1;
 - (void)_redeemAction:(id)arg1;
 - (void)_redeemDidFinish:(id)arg1 error:(id)arg2;
-- (void)_setEnabled:(BOOL)arg1;
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)_setEnabled:(bool)arg1;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
 - (void)cancelRedeemerViewForSKUIRedeemCameraView:(id)arg1;
-- (int)category;
+- (long long)category;
 - (void)codeRedeemerController:(id)arg1 didEndWithInfo:(id)arg2;
 - (void)codeRedeemerControllerDidCancel:(id)arg1;
 - (void)codeRedeemerControllerDidDisplayMessage:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)disablesAutomaticKeyboardDismissal;
-- (id)initWithRedeemCategory:(int)arg1;
-- (id)initWithRedeemCategoryFullscreen:(int)arg1;
+- (bool)disablesAutomaticKeyboardDismissal;
+- (id)initWithRedeemCategory:(long long)arg1;
+- (id)initWithRedeemCategoryFullscreen:(long long)arg1;
 - (id)initialCode;
 - (void)loadView;
 - (void)presentFullScreenCameraViewForSKUIRedeemCameraView:(id)arg1;

@@ -11,8 +11,8 @@
 }
 
 @property long long databaseID;
-@property(readonly) NSDictionary * externalPropertyValues;
-@property(readonly) NSDictionary * propertyValues;
+@property(copy,readonly) NSDictionary * externalPropertyValues;
+@property(copy,readonly) NSDictionary * propertyValues;
 
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
 + (Class)databaseEntityClass;
@@ -25,18 +25,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)externalPropertyValues;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithDatabaseEntity:(id)arg1 properties:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)propertyValues;
 - (void)reloadFromDatabaseEntity:(id)arg1 properties:(id)arg2;
 - (void)setDatabaseID:(long long)arg1;
 - (void)setExternalValuesWithDictionary:(id)arg1;
 - (void)setValue:(id)arg1 forExternalProperty:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
-- (void)setValues:(id*)arg1 forExternalProperties:(const id*)arg2 count:(int)arg3;
-- (void)setValues:(id*)arg1 forProperties:(const id*)arg2 count:(int)arg3;
+- (void)setValues:(id*)arg1 forExternalProperties:(const id*)arg2 count:(long long)arg3;
+- (void)setValues:(id*)arg1 forProperties:(const id*)arg2 count:(long long)arg3;
 - (void)setValuesWithDictionary:(id)arg1;
 - (id)valueForExternalProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1;

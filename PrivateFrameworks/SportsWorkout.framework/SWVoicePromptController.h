@@ -15,7 +15,7 @@
 }
 
 @property(retain) NSString * gender;
-@property(readonly) BOOL isPlaying;
+@property(readonly) bool isPlaying;
 @property(retain) NSString * language;
 
 + (id)__sharedFemalePromptController;
@@ -24,10 +24,10 @@
 + (id)_currentLanguageIdentifier;
 + (id)sharedPromptController;
 
-- (BOOL)_fireOneLinerPromptUsingRandomGenderWithString:(id)arg1;
-- (BOOL)_fireOneLinerPromptWithString:(id)arg1;
-- (void)_firePacePromptWithAmount:(id)arg1 units:(id)arg2 isAveragePace:(BOOL)arg3;
-- (void)_firePrompt:(id)arg1 amount:(id)arg2 units:(id)arg3 pronounceUnits:(BOOL)arg4 words:(id*)arg5 englishWords:(id*)arg6;
+- (bool)_fireOneLinerPromptUsingRandomGenderWithString:(id)arg1;
+- (bool)_fireOneLinerPromptWithString:(id)arg1;
+- (void)_firePacePromptWithAmount:(id)arg1 units:(id)arg2 isAveragePace:(bool)arg3;
+- (void)_firePrompt:(id)arg1 amount:(id)arg2 units:(id)arg3 pronounceUnits:(bool)arg4 words:(id*)arg5 englishWords:(id*)arg6;
 - (void)_firePrompt:(id)arg1 amount:(id)arg2 units:(id)arg3 words:(id*)arg4 englishWords:(id*)arg5;
 - (void)_fireStandaloneNumberPrompt:(id)arg1;
 - (id)_initWithLanguage:(id)arg1 gender:(id)arg2;
@@ -79,7 +79,7 @@
 - (void)fireWorkoutDistancePromptWithAmount:(id)arg1 units:(id)arg2;
 - (id)gender;
 - (id)init;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)language;
 - (void)refreshSettings;
 - (void)setGender:(id)arg1;

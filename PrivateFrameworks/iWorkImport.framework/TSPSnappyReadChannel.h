@@ -7,18 +7,24 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <TSUStreamReadChannel>;
+@class <TSUStreamReadChannel>, NSString;
 
 @interface TSPSnappyReadChannel : NSObject <TSUStreamReadChannel> {
     <TSUStreamReadChannel> *_readChannel;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (void).cxx_destruct;
 - (void)close;
+- (void)dealloc;
 - (id)initWithReadChannel:(id)arg1;
-- (BOOL)processData:(id*)arg1 isDone:(BOOL)arg2 queue:(id)arg3 handler:(id)arg4;
+- (bool)processData:(id*)arg1 isDone:(bool)arg2 queue:(id)arg3 handler:(id)arg4;
 - (void)readWithQueue:(id)arg1 handler:(id)arg2;
 - (id)uncompressData:(id)arg1;
-- (id)uncompressDataFromSource:(struct SnappySource { int (**x1)(); id x2; unsigned int x3; unsigned int x4; id x5; unsigned int x6; unsigned int x7; char *x8; }*)arg1;
+- (id)uncompressDataFromSource:(struct SnappySource { int (**x1)(); id x2; unsigned long long x3; unsigned long long x4; id x5; unsigned long long x6; unsigned long long x7; char *x8; }*)arg1;
 
 @end

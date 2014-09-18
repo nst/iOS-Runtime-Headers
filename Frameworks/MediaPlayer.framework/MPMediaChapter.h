@@ -6,38 +6,49 @@
    See Warning(s) below.
  */
 
+@class MPMediaLibraryArtworkDataSource, MPMediaLibraryArtworkRequest;
+
 @interface MPMediaChapter : NSObject {
-    int _chapterType;
-    unsigned int _indexInChaptersWithAnyType;
-    unsigned int _indexInChaptersWithSameType;
+    MPMediaLibraryArtworkDataSource *_artworkDataSource;
+    MPMediaLibraryArtworkRequest *_artworkRequest;
+    long long _chapterType;
+    unsigned long long _indexInChaptersWithAnyType;
+    unsigned long long _indexInChaptersWithSameType;
     double _playbackDuration;
     double _playbackTime;
     id _value;
     id _valueLoader;
 }
 
-@property int chapterType;
-@property unsigned int indexInChaptersWithAnyType;
-@property unsigned int indexInChaptersWithSameType;
+@property MPMediaLibraryArtworkDataSource * artworkDataSource;
+@property(retain) MPMediaLibraryArtworkRequest * artworkRequest;
+@property long long chapterType;
+@property unsigned long long indexInChaptersWithAnyType;
+@property unsigned long long indexInChaptersWithSameType;
 @property double playbackDuration;
 @property double playbackTime;
 @property(retain) id value;
 @property(copy) id valueLoader;
 
 - (void).cxx_destruct;
-- (int)_sortByChapterIndex:(id)arg1;
-- (int)chapterType;
+- (long long)_sortByChapterIndex:(id)arg1;
+- (id)artworkCatalog;
+- (id)artworkDataSource;
+- (id)artworkRequest;
+- (long long)chapterType;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)indexInChaptersWithAnyType;
-- (unsigned int)indexInChaptersWithSameType;
+- (unsigned long long)indexInChaptersWithAnyType;
+- (unsigned long long)indexInChaptersWithSameType;
 - (id)initWithCoder:(id)arg1;
 - (double)playbackDuration;
 - (double)playbackTime;
-- (void)setChapterType:(int)arg1;
-- (void)setIndexInChaptersWithAnyType:(unsigned int)arg1;
-- (void)setIndexInChaptersWithSameType:(unsigned int)arg1;
+- (void)setArtworkDataSource:(id)arg1;
+- (void)setArtworkRequest:(id)arg1;
+- (void)setChapterType:(long long)arg1;
+- (void)setIndexInChaptersWithAnyType:(unsigned long long)arg1;
+- (void)setIndexInChaptersWithSameType:(unsigned long long)arg1;
 - (void)setPlaybackDuration:(double)arg1;
 - (void)setPlaybackTime:(double)arg1;
 - (void)setValue:(id)arg1;

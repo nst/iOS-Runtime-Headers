@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class GEORequester;
+@class GEORequester, NSString;
 
 @interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
     id _notificationAvailabilityErrorHandler;
@@ -20,8 +20,10 @@
     GEORequester *_submissionRequester;
 }
 
-+ (unsigned short)providerID;
-+ (void)setUsePersistentConnection:(BOOL)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void)cancelRequest;
 - (void)dealloc;

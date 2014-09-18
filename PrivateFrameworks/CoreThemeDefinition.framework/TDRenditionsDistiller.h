@@ -6,14 +6,14 @@
 
 @interface TDRenditionsDistiller : NSObject {
     TDLogger *_logger;
+    boolnoMoreCSIDataInfo;
+    boolnoMoreRenditions;
+    boolshouldCompressCSIDataFlag;
     CoreThemeDocument *document;
     NSConditionLock *inQueueLock;
-    BOOL noMoreCSIDataInfo;
-    BOOL noMoreRenditions;
     NSConditionLock *outQueueLock;
     NSMutableArray *psiDataInfoOutQueue;
     NSMutableArray *renditionInQueue;
-    BOOL shouldCompressCSIDataFlag;
 }
 
 @property(retain) TDLogger * logger;
@@ -31,7 +31,7 @@
 - (void)enqueueAbortFlag;
 - (void)enqueueLastRenditionFlag;
 - (void)enqueueRenditionSpec:(id)arg1;
-- (id)initWithDocument:(id)arg1 shouldCompressCSIDataFlag:(BOOL)arg2;
+- (id)initWithDocument:(id)arg1 shouldCompressCSIDataFlag:(bool)arg2;
 - (id)logger;
 - (id)nextCSIDataInfoFromQueue;
 - (void)setLogger:(id)arg1;

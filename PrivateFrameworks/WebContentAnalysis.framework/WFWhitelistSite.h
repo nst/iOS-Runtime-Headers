@@ -18,10 +18,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)domainName;
-- (BOOL)hasMetasitePrefix:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasMetasitePrefix:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithURLString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUrlString:(id)arg1;
 - (id)url;

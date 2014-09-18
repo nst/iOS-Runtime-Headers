@@ -5,6 +5,6 @@
 @interface TSKAddedToDocumentContext_ImportingMasterTemplate : TSKAddedToDocumentContext_Importing {
 }
 
-- (BOOL)wasImportedFromMasterTemplate;
+- (bool)wasImportedFromMasterTemplate;
 
 @end

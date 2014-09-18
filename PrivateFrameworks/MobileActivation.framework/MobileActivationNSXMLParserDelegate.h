@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
  */
 
-@class NSMutableDictionary, NSMutableString;
+@class NSMutableDictionary, NSMutableString, NSString;
 
 @interface MobileActivationNSXMLParserDelegate : NSObject <NSXMLParserDelegate> {
     NSMutableDictionary *_activationTicket;
@@ -11,6 +11,11 @@
     bool_recertifying;
     bool_renderHTML;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (id)activationTicket:(id*)arg1 andRenderHTML:(bool*)arg2;
 - (id)activationTicket:(id*)arg1;

@@ -2,48 +2,304 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKRoutePreloadSession>, VGLRenderState, VKSkyModel;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class <GEORoutePreloadSession>, NSString, VKSkyModel;
 
 @interface VKRealisticMapModel : VKVectorMapModel <VKMapLayer> {
-    BOOL _disableRealisticLand;
-    BOOL _disableRealisticRoads;
+    struct unique_ptr<ggl::ClearItem, std::__1::default_delete<ggl::ClearItem> > { 
+        struct __compressed_pair<ggl::ClearItem *, std::__1::default_delete<ggl::ClearItem> > { 
+            struct ClearItem {} *__first_; 
+        } __ptr_; 
+    struct shared_ptr<ggl::AnimatableTexture::VariantUniformData> { 
+        struct VariantUniformData {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticTexture::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticTexture::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticAnimatableTexture::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoad::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticRoad::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticAnimatableRoad::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingShadow::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingFacade::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticCasingTop::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::RealisticRoadShadow::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::PolygonSolidFill::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    struct RenderItemBatcher { 
+        struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { 
+            struct Range {} *__begin_; 
+            struct Range {} *__end_; 
+            struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { 
+                struct Range {} *__first_; 
+            } __end_cap_; 
+        } _activeRanges; 
+        unsigned long long _rangePoolCount; 
+        struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { 
+            struct MultiRange {} *__begin_; 
+            struct MultiRange {} *__end_; 
+            struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { 
+                struct MultiRange {} *__first_; 
+            } __end_cap_; 
+        } _rangePool; 
+        struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { 
+            struct Range {} *__begin_; 
+            struct Range {} *__end_; 
+            struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { 
+                struct Range {} *__first_; 
+            } __end_cap_; 
+        } _activeRanges; 
+        struct RenderItem {} *_prototype; 
+        struct Pool<ggl::RenderItem> { 
+            struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { 
+                struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { 
+                    struct __tree_node<void *, void *> {} *__begin_node_; 
+                    struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { 
+                        struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                            struct __tree_node_base<void *> {} *__left_; 
+                        } __first_; 
+                    } __pair1_; 
+                    struct __compressed_pair<unsigned long, std::__1::less<void *> > { 
+                        unsigned long long __first_; 
+                    } __pair3_; 
+                } __tree_; 
+            } mAllocatedSlabs; 
+            unsigned long long mElementsPerSlab; 
+            unsigned long long mSlabSize; 
+            struct FreeList {} *mFreeElement; 
+        } _pool; 
+        unsigned long long _rangePoolCount; 
+        struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { 
+            struct MultiRange {} *__begin_; 
+            struct MultiRange {} *__end_; 
+            struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { 
+                struct MultiRange {} *__first_; 
+            } __end_cap_; 
+        } _rangePool; 
+    } _animatableRoadShaderSetupPool;
+    } _animatableTexturedShaderSetupPool;
+    } _batcher;
+    } _casingFacadeRenderItemPool;
+    } _casingFacadeRenderStateWithBlending;
+    } _casingFacadeRenderStateWithoutBlending;
+    } _casingFacadeShaderSetupPool;
+    } _casingShadowRenderItemPool;
+    } _casingShadowRenderState;
+    } _casingShadowShaderSetupPool;
+    } _casingSidewalkShadowRenderState;
+    } _casingSidewalkShadowShaderSetupPool;
+    } _casingTopRenderItemPool;
+    } _casingTopRenderStateWithBlending;
+    } _casingTopRenderStateWithoutBlending;
+    } _casingTopShaderSetupPool;
+    } _clearItem;
+    } _coastlineRenderState;
+    } _debugRenderItemPool;
+    } _debugRenderState;
+    } _debugShaderSetupPool;
     double _fade;
-    VGLRenderState *_renderState;
-    <VKRoutePreloadSession> *_routePreloadSession;
+    } _landRenderStateWithBlending;
+    } _landRenderStateWithoutBlending;
+    } _roadRenderItemPool;
+    } _roadRenderStateWithBlending;
+    } _roadRenderStateWithoutBlending;
+    } _roadShaderSetupPool;
+    } _roadShadowRenderItemPool;
+    } _roadShadowRenderState;
+    } _roadShadowShaderSetupPool;
+    } _roadStencilRenderItemPool;
+    } _roadStencilRenderState;
+    } _roadStencilShaderSetupPool;
+    <GEORoutePreloadSession> *_routePreloadSession;
     float _sceneAlpha;
     VKSkyModel *_skyModel;
+    } _texturedRenderItemPool;
+    } _texturedShaderSetupPool;
+    } _variantData;
+    } _waterRenderStateWithBlending;
+    } _waterRenderStateWithoutBlending;
+    bool_disableRealisticLand;
+    bool_disableRealisticRoads;
+    bool_needDebugReset;
 }
 
-@property BOOL disableRealisticLand;
-@property BOOL disableRealisticRoads;
-@property(retain) <VKRoutePreloadSession> * routePreloadSession;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property bool disableRealisticLand;
+@property bool disableRealisticRoads;
+@property(readonly) unsigned long long hash;
+@property(retain) <GEORoutePreloadSession> * routePreloadSession;
 @property float sceneAlpha;
 @property(retain) VKSkyModel * skyModel;
+@property(readonly) Class superclass;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (double)_calculateZoomLevelWithContext:(id)arg1;
+- (void)appendDebugPreloadMissesToBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2 forScene:(id)arg3;
+- (void)appendDebugPreloadStatusToBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2 forScene:(id)arg3;
+- (void)appendLandCommandsToBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2 skyParameters:(const struct { float x1; float x2; float x3; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; struct Matrix<float, 4, 1> { float x_5_1_1[4]; } x5; }*)arg3;
+- (void)appendRoadCommandsToBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2 skyParameters:(const struct { float x1; float x2; float x3; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; struct Matrix<float, 4, 1> { float x_5_1_1[4]; } x5; }*)arg3;
+- (void)appendStencilCommandsToBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2;
+- (void)appendWaterCommandsToBuffer:(struct CommandBuffer { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned long long x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned long long x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long long x_3_2_1; } x_9_1_3; } x9; id x10; }*)arg1 inContext:(id)arg2 skyParameters:(const struct { float x1; float x2; float x3; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; struct Matrix<float, 4, 1> { float x_5_1_1[4]; } x5; }*)arg3;
 - (void)dealloc;
-- (BOOL)disableRealisticLand;
-- (BOOL)disableRealisticRoads;
-- (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (void)didReceiveMemoryWarning;
+- (bool)disableRealisticLand;
+- (bool)disableRealisticRoads;
+- (void)flushPools;
+- (void)gatherRenderingPreloadItems:(struct vector<ggl::ShaderLoadItem, std::__1::allocator<ggl::ShaderLoadItem> > { struct ShaderLoadItem {} *x1; struct ShaderLoadItem {} *x2; struct __compressed_pair<ggl::ShaderLoadItem *, std::__1::allocator<ggl::ShaderLoadItem> > { struct ShaderLoadItem {} *x_3_1_1; } x3; }*)arg1;
+- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
-- (void)layoutScene:(id)arg1 withContext:(id)arg2;
-- (unsigned int)mapLayerPosition;
-- (BOOL)minimumZoomLevelBoundsCamera;
-- (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1 context:(id)arg2;
-- (void)preloadRenderingResourcesWithContext:(id)arg1;
+- (unsigned long long)mapLayerPosition;
+- (bool)minimumZoomLevelBoundsCamera;
+- (void)reset;
+- (void)resetDebugPools:(id)arg1;
+- (void)resetPools;
 - (id)routePreloadSession;
 - (float)sceneAlpha;
-- (void)setDisableRealisticLand:(BOOL)arg1;
-- (void)setDisableRealisticRoads:(BOOL)arg1;
+- (void)setDisableRealisticLand:(bool)arg1;
+- (void)setDisableRealisticRoads:(bool)arg1;
 - (void)setRoutePreloadSession:(id)arg1;
 - (void)setSceneAlpha:(float)arg1;
 - (void)setSkyModel:(id)arg1;
+- (void)setupRealisticUniformBuffer:(struct RealisticUniformData { unsigned long long x1; unsigned long long x2; struct UniformCReflection {} *x3; struct vector<unsigned char, std::__1::allocator<unsigned char> > { char *x_4_1_1; char *x_4_1_2; struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { char *x_3_2_1; } x_4_1_3; } x4; }*)arg1 forTile:(id)arg2;
 - (id)skyModel;
 - (void)stylesheetDidChange;
-- (void)stylesheetWillChange;
-- (unsigned int)supportedRenderPasses;
-- (BOOL)wantsCategorizedSourceTiles;
+- (void)stylesheetDoneChanging;
+- (void)stylesheetTransitionDidProgress;
+- (void)stylesheetWillTransition:(unsigned long long)arg1;
+- (bool)wantsCategorizedSourceTiles;
 - (void)willStartDrawingTiles:(id)arg1;
 
 @end

@@ -2,9 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
+@class <PSSplitViewControllerNavigationDelegate>, PSRootController;
+
 @interface PSSplitViewController : UISplitViewController {
+    PSRootController *_containerNavigationController;
+    <PSSplitViewControllerNavigationDelegate> *_navigationDelegate;
 }
 
-- (unsigned int)supportedInterfaceOrientations;
+@property(retain) PSRootController * containerNavigationController;
+@property <PSSplitViewControllerNavigationDelegate> * navigationDelegate;
+
+- (id)containerNavigationController;
+- (void)dealloc;
+- (id)navigationDelegate;
+- (void)popRecursivelyToRootController;
+- (void)setContainerNavigationController:(id)arg1;
+- (void)setNavigationDelegate:(id)arg1;
+- (void)setupControllerForToolbar:(id)arg1;
+- (void)showInitialViewController:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

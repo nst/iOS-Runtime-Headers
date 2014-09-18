@@ -2,10 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+@class NSArray;
+
 @interface NSBlockOperation : NSOperation {
     id _private2;
     void *_reserved2;
 }
+
+@property(copy,readonly) NSArray * executionBlocks;
 
 + (id)blockOperationWithBlock:(id)arg1;
 

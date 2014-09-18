@@ -2,28 +2,23 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MusicProspectivePlaybackInformation;
+@class MPImageCacheRequest, UIImageView;
 
-@interface MusicMiniPlayerTransportControls : MPTransportControls {
-    MusicProspectivePlaybackInformation *_prospectivePlaybackInformation;
+@interface MusicMiniPlayerTransportControls : MPUMiniPlayerTransportControls {
+    UIImageView *_artworkImageView;
+    MPImageCacheRequest *_currentImageCacheRequest;
 }
 
-@property(retain) MusicProspectivePlaybackInformation * prospectivePlaybackInformation;
-
-+ (BOOL)buttonImagesUseBackgroundImage;
-+ (int)buttonType;
++ (unsigned long long)defaultVisibleParts;
 
 - (void).cxx_destruct;
-- (void)_prospectivePlaybackInformationDidChangeAnimated:(BOOL)arg1;
-- (id)buttonImageForPart:(unsigned long long)arg1;
+- (void)_avItemArtworkDidChangeNotification:(id)arg1;
+- (void)_prospectivePlaybackInformationDidChangeAnimated:(bool)arg1;
+- (void)_updateForItemChangeWithPreviousItem:(id)arg1 animated:(bool)arg2;
+- (void)_updateItemArtwork;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (id)newButtonForPart:(unsigned long long)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)prospectivePlaybackInformation;
-- (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
-- (void)setProspectivePlaybackInformation:(id)arg1 animated:(BOOL)arg2;
-- (void)setProspectivePlaybackInformation:(id)arg1;
-- (id)tintColorForPart:(unsigned long long)arg1;
-- (BOOL)usesTintColorForControls;
+- (void)setItem:(id)arg1;
 
 @end

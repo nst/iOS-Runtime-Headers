@@ -6,21 +6,21 @@
 
 @interface PT2DGraphDatum : NSObject <PT2DGraphDatum> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     UIColor *_color;
     } _graphPoint;
 }
 
 @property(retain) UIColor * color;
-@property struct CGPoint { float x1; float x2; } graphPoint;
+@property struct CGPoint { double x1; double x2; } graphPoint;
 
-+ (id)datumWithPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)datumWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 - (void).cxx_destruct;
 - (id)color;
-- (struct CGPoint { float x1; float x2; })graphPoint;
+- (struct CGPoint { double x1; double x2; })graphPoint;
 - (void)setColor:(id)arg1;
-- (void)setGraphPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setGraphPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

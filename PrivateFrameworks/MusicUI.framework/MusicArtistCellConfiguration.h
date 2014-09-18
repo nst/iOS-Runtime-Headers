@@ -2,26 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicArtistCellConfiguration : MusicCellConfiguration {
+@interface MusicArtistCellConfiguration : MusicStandardMediaCellConfiguration {
 }
 
 + (void)_appDefaultsDidChangeNotification:(id)arg1;
-+ (id)_imageCache;
-+ (id)artistArtworkCacheIDProperty;
-+ (id)artworkCacheIDProperty;
 + (id)collectionPropertiesToFetch;
-+ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
-+ (int)groupingType;
++ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned long long)arg4 animated:(bool)arg5;
++ (long long)groupingType;
 + (id)itemPersistentIDProperty;
 + (id)mediaEntityPropertiesToFetch;
 + (id)persistentIDProperty;
 + (id)representativeItemPersistentIDProperty;
 + (id)representativeItemTitleProperty;
-+ (id)tableViewBackgroundColor;
-+ (id)tableViewCellBackgroundColor;
-+ (Class)tableViewCellClass;
-+ (float)tableViewCellHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tableViewSeparatorInset;
++ (id)reuseIdentifier;
 + (id)titleProperty;
 + (id)unknownTitleText;
 

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSObject<OS_dispatch_queue>, TSUFileIOChannel;
+@class NSError, NSObject<OS_dispatch_queue>, NSString, TSUFileIOChannel;
 
 @interface TSPComponentWriteChannelAdapter : NSObject <TSPComponentWriteChannel> {
     TSUFileIOChannel *_channel;
@@ -14,6 +14,11 @@
     id _handler;
     NSObject<OS_dispatch_queue> *_queue;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;

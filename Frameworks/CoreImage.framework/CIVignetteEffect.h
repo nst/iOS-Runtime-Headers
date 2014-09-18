@@ -20,8 +20,9 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
-- (id)_kernel;
+- (bool)_isIdentity;
+- (id)_negkernel;
+- (id)_poskernel;
 - (id)inputCenter;
 - (id)inputFalloff;
 - (id)inputImage;

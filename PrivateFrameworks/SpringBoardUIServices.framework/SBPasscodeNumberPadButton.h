@@ -2,14 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
+@class NSString;
+
 @interface SBPasscodeNumberPadButton : TPNumberPadDarkStyleButton <SBUIPasscodeNumberPadButton> {
 }
 
-+ (float)_numberPadButtonOuterCircleDiameter;
-+ (float)_numberPadButtonPaddingHeight;
-+ (float)_numberPadButtonPaddingWidth;
-+ (struct CGSize { float x1; float x2; })defaultSize;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingOutsideRing;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (int)_characterTypeForCharacter:(unsigned int)arg1;
++ (double)_numberPadButtonOuterCircleDiameter;
++ (id)_stringCharacterForCharacter:(unsigned int)arg1;
++ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingOutsideRing;
 
 - (int)characterType;
 - (id)initForCharacter:(unsigned int)arg1;

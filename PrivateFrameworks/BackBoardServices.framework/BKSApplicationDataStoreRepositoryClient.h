@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
-@interface BKSApplicationDataStoreRepositoryClient : BKSBaseXPCClient {
+@interface BKSApplicationDataStoreRepositoryClient : BSBaseXPCClient {
     NSMutableDictionary *_pendingChangesToPrefetchedKeys;
     NSObject<OS_dispatch_queue> *_prefetchedDataQueue;
     NSMutableDictionary *_prefetchedKeyCounts;
@@ -14,11 +14,11 @@
 - (id)_allPrefetchedChangesInFlightForApplication:(id)arg1;
 - (void)_handleStoreInvalidated:(id)arg1;
 - (void)_handleValueChanged:(id)arg1;
-- (BOOL)_isChangeInFlightForPrefetchedKey:(id)arg1 application:(id)arg2;
-- (BOOL)_prefetchedObjectIfAvailableForKey:(id)arg1 application:(id)arg2 outObject:(id*)arg3;
-- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(BOOL)arg4;
+- (bool)_isChangeInFlightForPrefetchedKey:(id)arg1 application:(id)arg2;
+- (bool)_prefetchedObjectIfAvailableForKey:(id)arg1 application:(id)arg2 outObject:(id*)arg3;
+- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(bool)arg4;
 - (void)_sendPrefetchedKeys:(id)arg1 withCompletion:(id)arg2;
-- (void)_setChangeInFlight:(BOOL)arg1 forPrefetchedKey:(id)arg2 application:(id)arg3;
+- (void)_setChangeInFlight:(bool)arg1 forPrefetchedKey:(id)arg2 application:(id)arg3;
 - (void)_setPrefetchedObjectIfNecessary:(id)arg1 forKey:(id)arg2 application:(id)arg3;
 - (void)addPrefetchedKeys:(id)arg1 withCompletion:(id)arg2;
 - (void)availableDataStores:(id)arg1;
@@ -30,14 +30,14 @@
 - (id)init;
 - (id)initWithEndpoint:(id)arg1;
 - (void)invalidate;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id)arg3 checkPrefetch:(BOOL)arg4;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id)arg3;
+- (void)objectForKey:(id)arg1 forApplication:(id)arg2 useBSXPCCoding:(bool)arg3 withResult:(id)arg4;
+- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id)arg3 checkPrefetch:(bool)arg4 useBSXPCCoding:(bool)arg5;
 - (void)queue_connectionWasCreated;
 - (void)queue_handleMessage:(id)arg1;
 - (void)removeAllObjectsForApplication:(id)arg1 withCompletion:(id)arg2;
 - (void)removeObjectForKey:(id)arg1 forApplication:(id)arg2 withCompletion:(id)arg3;
 - (void)removePrefetchedKeys:(id)arg1 withCompletion:(id)arg2;
-- (void)setObject:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3 withCompletion:(id)arg4;
+- (void)setObject:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3 useBSXPCCoding:(bool)arg4 withCompletion:(id)arg5;
 - (void)synchronizeWithCompletion:(id)arg1;
 
 @end

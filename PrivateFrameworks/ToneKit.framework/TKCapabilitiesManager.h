@@ -3,24 +3,30 @@
  */
 
 @interface TKCapabilitiesManager : NSObject {
-    BOOL _isRingtoneStoreAvailable;
-    BOOL _isToneStoreAvailable;
+    bool_alertToneStoreAvailable;
+    bool_ringtoneStoreAvailable;
 }
 
-@property BOOL isRingtoneStoreAvailable;
-@property BOOL isToneStoreAvailable;
+@property(getter=_isAlertToneStoreAvailable,setter=_setAlertToneStoreAvailable:) bool _alertToneStoreAvailable;
+@property(getter=_isRingtoneStoreAvailable,setter=_setRingtoneStoreAvailable:) bool _ringtoneStoreAvailable;
+@property(getter=isAlertToneStoreAvailable,readonly) bool alertToneStoreAvailable;
+@property(readonly) bool hasUserGeneratedVibrationsCapability;
+@property(readonly) bool hasVibratorCapability;
+@property(getter=isRingtoneStoreAvailable,readonly) bool ringtoneStoreAvailable;
 
 + (id)sharedCapabilitiesManager;
 
 - (void)_checkRingtoneStoreAvailability;
+- (bool)_hasTelephonyCapability;
+- (bool)_isAlertToneStoreAvailable;
+- (bool)_isRingtoneStoreAvailable;
+- (void)_setAlertToneStoreAvailable:(bool)arg1;
+- (void)_setRingtoneStoreAvailable:(bool)arg1;
 - (void)dealloc;
-- (BOOL)hasTelephonyCapability;
-- (BOOL)hasUserGeneratedVibrationsCapability;
-- (BOOL)hasVibratorCapability;
+- (bool)hasUserGeneratedVibrationsCapability;
+- (bool)hasVibratorCapability;
 - (id)init;
-- (BOOL)isRingtoneStoreAvailable;
-- (BOOL)isToneStoreAvailable;
-- (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
-- (void)setIsToneStoreAvailable:(BOOL)arg1;
+- (bool)isAlertToneStoreAvailable;
+- (bool)isRingtoneStoreAvailable;
 
 @end

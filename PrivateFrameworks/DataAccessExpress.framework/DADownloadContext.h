@@ -16,9 +16,20 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-- (void)dealloc;
+@property(readonly) NSString * accountID;
+@property(readonly) NSString * attachmentUUID;
+@property(copy,readonly) id completionBlock;
+@property(copy,readonly) id progressBlock;
+@property(readonly) NSObject<OS_dispatch_queue> * queue;
+
+- (void).cxx_destruct;
+- (id)accountID;
+- (id)attachmentUUID;
+- (id)completionBlock;
 - (void)finishedWithError:(id)arg1;
 - (id)initWithAttachmentUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 downloadProgressBlock:(id)arg4 completionBlock:(id)arg5;
+- (id)progressBlock;
+- (id)queue;
 - (void)updateProgressDownloadedByteCount:(long long)arg1 totalByteCount:(long long)arg2;
 
 @end

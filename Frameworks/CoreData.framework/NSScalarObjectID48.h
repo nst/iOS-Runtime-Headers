@@ -8,7 +8,6 @@
 
 + (char *)generatedNameSuffix;
 
-- (id)initWithPK64:(long long)arg1;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

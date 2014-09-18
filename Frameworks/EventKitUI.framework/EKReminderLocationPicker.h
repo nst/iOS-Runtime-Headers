@@ -2,74 +2,76 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKReminderLocationPickerDelegate>, <EKStyleProvider>, EKReminderLocationPickerCell, EKReminderLocationPickerModel, UIAlertView;
+@class <EKReminderLocationPickerDelegate>, <EKStyleProvider>, EKReminderLocationPickerCell, EKReminderLocationPickerModel, NSString, UIAlertView;
 
 @interface EKReminderLocationPicker : UITableViewController <ABPeoplePickerNavigationControllerDelegate, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate, UITextFieldDelegate, EKReminderLocationPickerCellButtonHandler> {
-    BOOL _allowsShowInMap;
     EKReminderLocationPickerCell *_currentLocationCell;
-    BOOL _hasEditedText;
-    BOOL _ignoreNextSelectionChange;
-    BOOL _isEditingContactAddress;
-    BOOL _isShowingPeopleAddressPicker;
     <EKReminderLocationPickerDelegate> *_locationPickerDelegate;
     UIAlertView *_meCardAlert;
     EKReminderLocationPickerModel *_model;
-    int _savedStatusBarStyle;
+    long long _savedStatusBarStyle;
     <EKStyleProvider> *_styleProvider;
     EKReminderLocationPickerCell *_typedLocationCell;
+    bool_allowsShowInMap;
+    bool_hasEditedText;
+    bool_ignoreNextSelectionChange;
+    bool_isEditingContactAddress;
+    bool_isShowingPeopleAddressPicker;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property <EKReminderLocationPickerDelegate> * locationPickerDelegate;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_accessoryTypeForLocationItem:(id)arg1 isSelected:(BOOL)arg2;
+- (int)_accessoryTypeForLocationItem:(id)arg1 isSelected:(bool)arg2;
 - (void)_dismissPeoplePicker;
 - (id)_indexPathForSelectedItem;
-- (BOOL)_isCustomLocationRow:(id)arg1;
+- (bool)_isCustomLocationRow:(id)arg1;
 - (id)_prepareCurrentLocationCell;
 - (id)_prepareTypedLocationCell;
 - (void)_presentPersonPicker;
 - (void)_reloadCustomLocationRow;
 - (void)_removeExistingMeCardAlert;
-- (void)_setCell:(id)arg1 checked:(BOOL)arg2;
+- (void)_setCell:(id)arg1 checked:(bool)arg2;
 - (void)_setLocationFromRecord:(void*)arg1 multiValueIdentifier:(int)arg2;
-- (BOOL)_shouldShowTypedLocation;
+- (bool)_shouldShowTypedLocation;
 - (void)_showPickMeCardAlertIfNecessary;
 - (void)_styleCell:(id)arg1;
 - (void)_typedLocationCellTextDidChange;
 - (void)_updateAccessoryViewForTypedLocation;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)contactsButtonPressed;
 - (void)dealloc;
 - (void)failureButtonPressed;
 - (id)initWithModel:(id)arg1 styleProvider:(id)arg2;
 - (id)locationPickerDelegate;
 - (void)locationPickerModel:(id)arg1 didEncounterError:(id)arg2;
-- (void)locationPickerModel:(id)arg1 didUpdateMeCardItem:(int)arg2;
+- (void)locationPickerModel:(id)arg1 didUpdateMeCardItem:(long long)arg2;
 - (void)locationPickerModelDidBeginOperation:(id)arg1;
 - (void)locationPickerModelDidChangeSelection:(id)arg1;
 - (void)locationPickerModelDidEndOperation:(id)arg1;
 - (void)locationPickerModelDidUpdateCurrentLocation:(id)arg1;
 - (void)locationPickerModelDidUpdateCustomLocation:(id)arg1;
-- (float)marginForTableView:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 withLinkedPeople:(struct __CFArray { }*)arg3;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (double)marginForTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 withLinkedPeople:(struct __CFArray { }*)arg3;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)setLocationPickerDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)textFieldClearButtonPressed:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

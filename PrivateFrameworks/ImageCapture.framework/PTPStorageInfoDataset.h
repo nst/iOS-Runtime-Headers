@@ -7,15 +7,15 @@
 @interface PTPStorageInfoDataset : NSObject {
     unsigned short _accessCapability;
     NSMutableData *_content;
-    BOOL _dirty;
     unsigned short _filesystemType;
     unsigned long long _freeSpaceInBytes;
-    unsigned long _freeSpaceInImages;
+    unsigned int _freeSpaceInImages;
     unsigned long long _maxCapacity;
-    BOOL _readOnlyObject;
     NSString *_storageDescription;
     unsigned short _storageType;
     NSString *_volumeLabel;
+    bool_dirty;
+    bool_readOnlyObject;
 }
 
 - (unsigned short)accessCapability;
@@ -24,7 +24,7 @@
 - (id)description;
 - (unsigned short)filesystemType;
 - (unsigned long long)freeSpaceInBytes;
-- (unsigned long)freeSpaceInImages;
+- (unsigned int)freeSpaceInImages;
 - (id)init;
 - (id)initWithData:(id)arg1;
 - (id)initWithMutableData:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)setContent:(id)arg1;
 - (void)setFilesystemType:(unsigned short)arg1;
 - (void)setFreeSpaceInBytes:(unsigned long long)arg1;
-- (void)setFreeSpaceInImages:(unsigned long)arg1;
+- (void)setFreeSpaceInImages:(unsigned int)arg1;
 - (void)setMaxCapacity:(unsigned long long)arg1;
 - (void)setStorageDescription:(id)arg1;
 - (void)setStorageType:(unsigned short)arg1;

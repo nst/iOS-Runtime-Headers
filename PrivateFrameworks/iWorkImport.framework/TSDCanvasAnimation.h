@@ -9,7 +9,6 @@
 @class CAMediaTimingFunction, NSDate, NSString, TSUNoCopyDictionary;
 
 @interface TSDCanvasAnimation : NSObject {
-    BOOL _allAnimationsFinishedBeforeStopping;
     TSUNoCopyDictionary *_animationDictionariesForLayers;
     NSString *_animationID;
     id _completionBlock;
@@ -18,23 +17,24 @@
     id _delegate;
     SEL _didStopSelector;
     double _duration;
-    BOOL _firstAnimationDidStart;
     unsigned int _outstandingAnimationCount;
-    BOOL _repeatAutoreverses;
     float _repeatCount;
     NSDate *_startDate;
     CAMediaTimingFunction *_timingFunction;
     SEL _willStartSelector;
+    bool_allAnimationsFinishedBeforeStopping;
+    bool_firstAnimationDidStart;
+    bool_repeatAutoreverses;
 }
 
-@property(readonly) NSString * animationID;
+@property(retain,readonly) NSString * animationID;
 @property(copy) id completionBlock;
 @property(readonly) void* context;
 @property double delay;
 @property id delegate;
 @property SEL didStopSelector;
 @property double duration;
-@property BOOL repeatAutoreverses;
+@property bool repeatAutoreverses;
 @property float repeatCount;
 @property(retain) NSDate * startDate;
 @property(retain) CAMediaTimingFunction * timingFunction;
@@ -42,7 +42,7 @@
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)animationDidStart:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)animationID;
 - (id)completionBlock;
 - (void*)context;
@@ -52,7 +52,7 @@
 - (SEL)didStopSelector;
 - (double)duration;
 - (id)initWithAnimationID:(id)arg1 context:(void*)arg2;
-- (BOOL)repeatAutoreverses;
+- (bool)repeatAutoreverses;
 - (float)repeatCount;
 - (void)setAnimation:(id)arg1 forLayer:(id)arg2 forKey:(id)arg3;
 - (void)setCompletionBlock:(id)arg1;
@@ -60,7 +60,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDidStopSelector:(SEL)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setRepeatAutoreverses:(BOOL)arg1;
+- (void)setRepeatAutoreverses:(bool)arg1;
 - (void)setRepeatCount:(float)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTimingFunction:(id)arg1;

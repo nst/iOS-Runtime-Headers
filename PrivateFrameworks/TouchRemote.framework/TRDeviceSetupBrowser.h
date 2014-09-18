@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class <TRDeviceSetupBrowserDelegate>, TRDeviceSetupPeripheral, TRTransferBrowser;
+@class <TRDeviceSetupBrowserDelegate>, NSString, TRDeviceSetupPeripheral, TRTransferBrowser;
 
 @interface TRDeviceSetupBrowser : NSObject <TRTransferBrowserDelegate> {
     <TRDeviceSetupBrowserDelegate> *_delegate;
@@ -10,8 +10,12 @@
     TRTransferBrowser *_transferBrowser;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <TRDeviceSetupBrowserDelegate> * delegate;
-@property(readonly) int state;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long state;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)browser:(id)arg1 didReceiveData:(id)arg2;
@@ -22,7 +26,7 @@
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)start;
-- (int)state;
+- (long long)state;
 - (void)stop;
 
 @end

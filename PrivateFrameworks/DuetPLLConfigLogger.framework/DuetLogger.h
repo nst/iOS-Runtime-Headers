@@ -16,8 +16,8 @@
     NSString *homeDir;
     NSObject<OS_dispatch_queue> *logQueue;
     NSString *logState;
-    struct __aslclient { } *log_client;
-    struct __aslmsg { } *log_msg;
+    struct __asl_object_s { } *log_client;
+    struct __asl_object_s { } *log_msg;
 }
 
 @property(readonly) bool canWriteToFile;

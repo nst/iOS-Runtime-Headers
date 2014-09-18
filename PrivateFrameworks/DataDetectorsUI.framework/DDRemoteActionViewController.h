@@ -4,11 +4,11 @@
 
 @class DDAction, DDActionController;
 
-@interface DDRemoteActionViewController : _UIRemoteViewController {
+@interface DDRemoteActionViewController : _UIRemoteViewController <DDRemoteActionPresenter> {
     DDAction *_action;
     DDActionController *_actionController;
-    BOOL _proxyConfigured;
-    BOOL _waitingForRemoteConfiguration;
+    bool_proxyConfigured;
+    bool_waitingForRemoteConfiguration;
 }
 
 @property(retain) DDAction * action;
@@ -22,10 +22,10 @@
 - (id)action;
 - (id)actionController;
 - (void)actionDidFinish;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)getIsBeingPresentedInPopover:(id)arg1;
 - (void)setAction:(id)arg1;
 - (void)setActionController:(id)arg1;
-- (void)viewControllerReadyAndIsModal:(BOOL)arg1;
+- (void)viewControllerReadyAndIsModal:(bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

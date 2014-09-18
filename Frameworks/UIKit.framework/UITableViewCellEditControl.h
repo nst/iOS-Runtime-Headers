@@ -16,36 +16,36 @@
     UIImageView *_shadowView;
 }
 
-@property(getter=isHiding) BOOL hiding;
-@property(getter=isRotated) BOOL rotated;
+@property(getter=isHiding) bool hiding;
+@property(getter=isRotated) bool rotated;
 
-+ (id)_deleteImage:(float)arg1;
-+ (id)_deleteImageBackground:(float)arg1;
-+ (id)_insertImage:(float)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minusRect;
++ (id)_deleteImage:(double)arg1;
++ (id)_deleteImageBackground:(double)arg1;
++ (id)_insertImage:(double)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_minusRect;
 + (id)_multiSelectHighlightedImage;
 + (id)_multiSelectNotSelectedImage;
 + (id)_multiSelectSelectedImage;
-+ (struct CGSize { float x1; float x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSize;
 
 - (id)_currentImage;
 - (id)_minusView;
 - (void)_multiselectColorChanged;
 - (id)_shadowImage;
 - (void)_toggleRotate;
-- (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)_updateImageView;
 - (void)dealloc;
-- (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
-- (BOOL)isHiding;
-- (BOOL)isRotated;
-- (BOOL)isRotating;
+- (id)initWithTableViewCell:(id)arg1 editingStyle:(long long)arg2;
+- (bool)isHiding;
+- (bool)isRotated;
+- (bool)isRotating;
 - (void)layoutSubviews;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHiding:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setRotated:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setRotated:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHiding:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setRotated:(bool)arg1 animated:(bool)arg2;
+- (void)setRotated:(bool)arg1;
+- (void)setSelected:(bool)arg1;
 
 @end

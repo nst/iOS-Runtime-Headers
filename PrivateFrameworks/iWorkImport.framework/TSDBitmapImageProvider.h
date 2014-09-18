@@ -6,18 +6,18 @@
 
 @interface TSDBitmapImageProvider : TSDImageProvider {
     struct CGSize { 
-        float width; 
-        float height; 
-    long mCheckIfValidToken;
-    unsigned int mDPI;
+        double width; 
+        double height; 
+    boolmIsOpaque;
+    boolmIsValid;
+    long long mCheckIfValidToken;
+    unsigned long long mDPI;
     struct CGImage { } *mHalfSizeImage;
     struct CGImage { } *mImage;
     NSObject<OS_dispatch_semaphore> *mImageLock;
     struct CGImageSource { } *mImageSource;
-    BOOL mIsOpaque;
-    BOOL mIsValid;
     } mNaturalSize;
-    int mOrientation;
+    long long mOrientation;
     struct CGImage { } *mQuarterSizeImage;
 }
 
@@ -25,36 +25,36 @@
 + (id)TSUImageForImageData:(id)arg1;
 + (void)clearCacheForData:(id)arg1;
 + (void)initialize;
-+ (struct CGSize { float x1; float x2; })naturalSizeForImageData:(id)arg1;
++ (struct CGSize { double x1; double x2; })naturalSizeForImageData:(id)arg1;
 + (id)p_cacheStringForData:(id)arg1;
 + (struct CGImageSource { }*)p_newImageSourceFromCacheForData:(id)arg1 withFilenameSuffix:(id)arg2;
 + (struct CGImageSource { }*)p_newImageSourceFromFilePath:(id)arg1;
 
 - (struct CGImage { }*)CGImageForNaturalSize;
-- (struct CGImage { }*)CGImageForSize:(struct CGSize { float x1; float x2; })arg1 inContext:(struct CGContext { }*)arg2 orLayer:(id)arg3;
-- (struct CGImage { }*)CGImageForSize:(struct CGSize { float x1; float x2; })arg1 lowQuality:(BOOL)arg2;
+- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1 inContext:(struct CGContext { }*)arg2 orLayer:(id)arg3;
+- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1 lowQuality:(bool)arg2;
 - (struct CGImageSource { }*)CGImageSource;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })dpiAdjustedFillSize;
-- (struct CGSize { float x1; float x2; })dpiAdjustedNaturalSize;
-- (void)drawImageInContext:(struct CGContext { }*)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGSize { double x1; double x2; })dpiAdjustedFillSize;
+- (struct CGSize { double x1; double x2; })dpiAdjustedNaturalSize;
+- (void)drawImageInContext:(struct CGContext { }*)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)flush;
-- (BOOL)hasFlushableContent;
+- (bool)hasFlushableContent;
 - (void)i_commonInit;
-- (unsigned int)imageDPI;
-- (BOOL)isOpaque;
-- (BOOL)isValid;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (int)orientation;
+- (unsigned long long)imageDPI;
+- (bool)isOpaque;
+- (bool)isValid;
+- (struct CGSize { double x1; double x2; })naturalSize;
+- (long long)orientation;
 - (void)p_configureOrientationAndSizeFromImageSource:(struct CGImageSource { }*)arg1 andImage:(struct CGImage { }*)arg2;
 - (void)p_loadFullSizedImageIfNecessary;
 - (void)p_loadImageMetadata;
-- (struct CGImage { }*)p_loadOrCreateResampledImageWithScale:(unsigned int)arg1 andCGImage:(struct CGImage {}**)arg2;
+- (struct CGImage { }*)p_loadOrCreateResampledImageWithScale:(unsigned long long)arg1 andCGImage:(struct CGImage {}**)arg2;
 - (void)p_loadSourceRefIfNecessary;
 - (struct CGImageSource { }*)p_newCGImageSource;
 - (struct CGImageSource { }*)p_newCGImageSourceForTemporaryUse;
 - (struct CGImage { }*)p_newImageFromSource:(struct CGImageSource { }*)arg1;
-- (struct CGImageSource { }*)p_newImageOfSize:(struct CGSize { float x1; float x2; })arg1 andWriteToCacheWithSuffix:(id)arg2;
+- (struct CGImageSource { }*)p_newImageOfSize:(struct CGSize { double x1; double x2; })arg1 andWriteToCacheWithSuffix:(id)arg2;
 - (struct CGImage { }*)p_resampledImageOfSizeType:(int)arg1;
 
 @end

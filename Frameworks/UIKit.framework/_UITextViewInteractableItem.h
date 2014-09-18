@@ -2,41 +2,51 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSString, UITextView, _UIRotatingActionSheet;
+@class NSArray, NSDictionary, NSString, UITextView, UIWindow, _UIRotatingAlertController;
 
-@interface _UITextViewInteractableItem : NSObject <_UIRotatingActionSheetDelegate, UIActionSheetDelegate> {
+@interface _UITextViewInteractableItem : NSObject <_UIRotatingAlertControllerDelegate> {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     NSArray *_actions;
     NSDictionary *_defaultAction;
-    _UIRotatingActionSheet *_linkInteractionSheet;
+    _UIRotatingAlertController *_linkInteractionAlertController;
     } _range;
     UITextView *_textView;
+    UIWindow *_windowForActionSheetPresentation;
+    bool_interactionIsFinished;
 }
 
 @property(readonly) NSArray * actions;
 @property(readonly) NSDictionary * defaultAction;
+@property bool interactionIsFinished;
 @property(readonly) NSString * localizedTitle;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property UITextView * textView;
+@property(retain) UIWindow * windowForActionSheetPresentation;
 
 - (id)_actionSheet;
+- (void)_cleanupSheet;
+- (void)_cleanupWindowForActionSheetPresentation;
 - (void)_handleActionAndFinish:(id)arg1;
 - (void)_showActionSheet;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)actions;
-- (BOOL)allowInteraction;
+- (bool)allowHighlight;
+- (bool)allowInteraction;
 - (id)defaultAction;
 - (void)handleLongPress;
 - (void)handleTap;
 - (id)hostViewForSheet:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialPresentationRectInHostViewForSheet:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialPresentationRectInHostViewForSheet:(id)arg1;
+- (bool)interactionIsFinished;
 - (id)localizedTitle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentationRectInHostViewForSheet:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationRectInHostViewForSheet:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (void)setInteractionIsFinished:(bool)arg1;
+- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTextView:(id)arg1;
+- (void)setWindowForActionSheetPresentation:(id)arg1;
 - (id)textView;
+- (id)windowForActionSheetPresentation;
 
 @end

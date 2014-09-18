@@ -14,6 +14,7 @@
 @property(retain) NSString * connection;
 @property(retain) NSString * eventType;
 @property(retain) NSNumber * eventVersion;
+@property(retain) NSString * hostApplicationIdentifier;
 @property double originalTime;
 @property(retain) NSString * pageContext;
 @property(retain) NSString * pageDescription;
@@ -35,11 +36,13 @@
 - (id)baseVersion;
 - (id)clientVersion;
 - (id)connection;
+- (id)decorateReportingURL:(id)arg1;
 - (id)description;
 - (id)eventType;
 - (id)eventVersion;
+- (id)hostApplicationIdentifier;
 - (id)init;
-- (BOOL)isBlacklistedByConfiguration:(id)arg1;
+- (bool)isBlacklistedByConfiguration:(id)arg1;
 - (double)originalTime;
 - (id)pageContext;
 - (id)pageDescription;
@@ -57,6 +60,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setEventType:(id)arg1;
 - (void)setEventVersion:(id)arg1;
+- (void)setHostApplicationIdentifier:(id)arg1;
 - (void)setOriginalTime:(double)arg1;
 - (void)setOriginalTimeUsingDate:(id)arg1;
 - (void)setPageContext:(id)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/SymptomPresentationFeed
  */
 
-@class AnalyticsWorkspace, NSArray, NSMutableArray, ProcessNetStatsClient, UsageAnalytics;
+@class AnalyticsWorkspace, NSArray, UsageAnalytics;
 
-@interface UsageFeed : NSObject <ProcessNetStatsClientDelegate> {
+@interface UsageFeed : NSObject {
     id _delegate;
     NSArray *_processFeedData;
     UsageAnalytics *handleAnalytics;
-    ProcessNetStatsClient *procClient;
-    NSMutableArray *processBaseline;
     AnalyticsWorkspace *workspace;
 }
 
@@ -17,19 +15,17 @@
 @property(retain) NSArray * processFeedData;
 
 - (void).cxx_destruct;
-- (void)_activateFeederKey:(id)arg1 pollInterval:(float)arg2;
-- (bool)_addValuesFromDict:(id)arg1 toDict:(id)arg2 forKey:(id)arg3;
 - (id)_calendarUsagePresentation:(id)arg1 nameKind:(id)arg2 source:(id)arg3;
-- (id)_composePredicateLineWithName:(id)arg1 keyPath:(id)arg2 wantSweep:(bool*)arg3;
-- (void)_computeBaselineAsync:(unsigned int)arg1 andMetadata:(unsigned int)arg2 from:(id)arg3 until:(id)arg4 pollInterval:(float)arg5;
-- (id)_computeBaselineSync:(unsigned int)arg1 andMetadata:(unsigned int)arg2 from:(id)arg3 until:(id)arg4;
+- (id)_composePredicateLineWithName:(id)arg1 keyPath:(id)arg2 isSweep:(bool*)arg3 wantGeneric:(bool)arg4 gotGeneric:(bool*)arg5;
+- (id)_performRollUp:(unsigned int)arg1 andMetadata:(unsigned int)arg2 from:(id)arg3 until:(id)arg4;
+- (bool)_rollUsageValuesFromDict:(id)arg1 toDict:(id)arg2 forKey:(id)arg3;
+- (void)_rollValuesFrom:(id)arg1 toDict:(id)arg2;
 - (id)_typicalUsagePresentation:(id)arg1 nameKind:(id)arg2 source:(id)arg3;
-- (id)_usagePresentation:(id)arg1 nameKind:(id)arg2 altName:(id)arg3 altNameKind:(id)arg4 source:(unsigned long long*)arg5 since:(id)arg6;
+- (id)_usagePresentation:(id)arg1 nameKind:(id)arg2 altName:(id)arg3 altNameKind:(id)arg4 source:(double*)arg5 since:(id)arg6;
 - (bool)calendarUsageFor:(id)arg1 nameKind:(id)arg2 dayResolution:(id)arg3 daySlot:(unsigned short)arg4 weekSlot:(unsigned short)arg5 reply:(id)arg6;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithWorkspace:(id)arg1;
-- (void)newFeedProcessData:(id)arg1;
 - (void)prepProcessDataFractionWithTag:(unsigned int)arg1 andMetadata:(unsigned int)arg2 from:(id)arg3 until:(id)arg4 pollInterval:(float)arg5;
 - (void)prepProcessDataFractionWithTag:(unsigned int)arg1 from:(id)arg2 until:(id)arg3 pollInterval:(float)arg4;
 - (id)processFeedData;

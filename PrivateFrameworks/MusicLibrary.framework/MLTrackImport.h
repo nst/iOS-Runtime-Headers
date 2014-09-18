@@ -7,21 +7,21 @@
 @interface MLTrackImport : NSObject <NSCopying> {
     NSData *_artworkData;
     NSString *_assetFilePath;
-    BOOL _assignArtworkCacheIDFromAlbum;
     NSArray *_chapters;
     NSMutableDictionary *_properties;
-    BOOL _shouldAddToPurchasedPlaylist;
+    bool_assignArtworkCacheIDFromAlbum;
+    bool_shouldAddToPurchasedPlaylist;
 }
 
 @property(copy) NSData * artworkData;
 @property(copy) NSString * assetFilePath;
-@property BOOL assignArtworkCacheIDFromAlbum;
+@property bool assignArtworkCacheIDFromAlbum;
 @property(copy) NSArray * chapters;
 @property(copy) MLContentRating * contentRating;
-@property(readonly) NSDictionary * entityProperties;
-@property unsigned long mediaType;
+@property(copy,readonly) NSDictionary * entityProperties;
+@property unsigned int mediaType;
 @property(copy) MLMovieProperties * movieProperties;
-@property BOOL shouldAddToPurchasedPlaylist;
+@property bool shouldAddToPurchasedPlaylist;
 
 + (void)initialize;
 
@@ -29,26 +29,26 @@
 - (void)_addSortStrings;
 - (id)artworkData;
 - (id)assetFilePath;
-- (BOOL)assignArtworkCacheIDFromAlbum;
+- (bool)assignArtworkCacheIDFromAlbum;
 - (id)chapters;
 - (id)contentRating;
 - (id)copyEntityProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)entityProperties;
 - (id)init;
-- (unsigned long)mediaType;
+- (unsigned int)mediaType;
 - (id)movieProperties;
 - (void)normalizeEntityProperties;
 - (void)setArtworkData:(id)arg1;
 - (void)setAssetFilePath:(id)arg1;
-- (void)setAssignArtworkCacheIDFromAlbum:(BOOL)arg1;
+- (void)setAssignArtworkCacheIDFromAlbum:(bool)arg1;
 - (void)setChapters:(id)arg1;
 - (void)setContentRating:(id)arg1;
-- (void)setMediaType:(unsigned long)arg1;
+- (void)setMediaType:(unsigned int)arg1;
 - (void)setMovieProperties:(id)arg1;
-- (void)setShouldAddToPurchasedPlaylist:(BOOL)arg1;
+- (void)setShouldAddToPurchasedPlaylist:(bool)arg1;
 - (void)setValue:(id)arg1 forEntityProperty:(id)arg2;
-- (BOOL)shouldAddToPurchasedPlaylist;
+- (bool)shouldAddToPurchasedPlaylist;
 - (id)valueForEntityProperty:(id)arg1;
 
 @end

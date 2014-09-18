@@ -3,48 +3,48 @@
  */
 
 @interface SUManualDownloadPolicy : SUDefaultDownloadPolicy {
-    BOOL _autoDownloadAllowableForCellular;
-    BOOL _downloadAllowableForCellular2G;
-    BOOL _downloadAllowableForCellular;
-    BOOL _downloadAllowableForCellularRoaming;
-    BOOL _downloadAllowableForWiFi;
-    BOOL _downloadFreeForCellular;
-    BOOL _downloadable;
     Class _fakeClass;
-    BOOL _hasEnoughDiskSpace;
-    BOOL _powerRequired;
+    bool_autoDownloadAllowableForCellular;
+    bool_downloadAllowableForCellular2G;
+    bool_downloadAllowableForCellular;
+    bool_downloadAllowableForCellularRoaming;
+    bool_downloadAllowableForWiFi;
+    bool_downloadFreeForCellular;
+    bool_downloadable;
+    bool_hasEnoughDiskSpace;
+    bool_powerRequired;
 }
 
-@property(getter=isDownloadAllowableForCellular2G) BOOL downloadAllowableForCellular2G;
-@property(getter=isDownloadAllowableForCellular) BOOL downloadAllowableForCellular;
-@property(getter=isDownloadAllowableForCellularRoaming) BOOL downloadAllowableForCellularRoaming;
-@property(getter=isDownloadAllowableForWiFi) BOOL downloadAllowableForWiFi;
-@property(getter=isDownloadFreeForCellular) BOOL downloadFreeForCellular;
-@property(getter=isDownloadable) BOOL downloadable;
+@property(getter=isDownloadAllowableForCellular2G) bool downloadAllowableForCellular2G;
+@property(getter=isDownloadAllowableForCellular) bool downloadAllowableForCellular;
+@property(getter=isDownloadAllowableForCellularRoaming) bool downloadAllowableForCellularRoaming;
+@property(getter=isDownloadAllowableForWiFi) bool downloadAllowableForWiFi;
+@property(getter=isDownloadFreeForCellular) bool downloadFreeForCellular;
+@property(getter=isDownloadable) bool downloadable;
 @property(retain) Class fakeClass;
-@property(getter=hasEnoughDiskSpace) BOOL hasEnoughDiskSpace;
-@property(getter=isPowerRequired) BOOL powerRequired;
+@property(getter=hasEnoughDiskSpace) bool hasEnoughDiskSpace;
+@property(getter=isPowerRequired) bool powerRequired;
 
 - (Class)class;
 - (Class)fakeClass;
-- (BOOL)hasEnoughDiskSpace;
+- (bool)hasEnoughDiskSpace;
 - (id)init;
-- (BOOL)isDownloadAllowableForCellular2G;
-- (BOOL)isDownloadAllowableForCellular;
-- (BOOL)isDownloadAllowableForCellularRoaming;
-- (BOOL)isDownloadAllowableForWiFi;
-- (BOOL)isDownloadFreeForCellular;
-- (BOOL)isDownloadable;
-- (BOOL)isPowerRequired;
-- (void)setDownloadAllowableForCellular2G:(BOOL)arg1;
-- (void)setDownloadAllowableForCellular:(BOOL)arg1;
-- (void)setDownloadAllowableForCellularRoaming:(BOOL)arg1;
-- (void)setDownloadAllowableForWiFi:(BOOL)arg1;
-- (void)setDownloadFreeForCellular:(BOOL)arg1;
-- (void)setDownloadable:(BOOL)arg1;
+- (bool)isDownloadAllowableForCellular2G;
+- (bool)isDownloadAllowableForCellular;
+- (bool)isDownloadAllowableForCellularRoaming;
+- (bool)isDownloadAllowableForWiFi;
+- (bool)isDownloadFreeForCellular;
+- (bool)isDownloadable;
+- (bool)isPowerRequired;
+- (void)setDownloadAllowableForCellular2G:(bool)arg1;
+- (void)setDownloadAllowableForCellular:(bool)arg1;
+- (void)setDownloadAllowableForCellularRoaming:(bool)arg1;
+- (void)setDownloadAllowableForWiFi:(bool)arg1;
+- (void)setDownloadFreeForCellular:(bool)arg1;
+- (void)setDownloadable:(bool)arg1;
 - (void)setFakeClass:(Class)arg1;
-- (void)setHasEnoughDiskSpace:(BOOL)arg1;
-- (void)setPowerRequired:(BOOL)arg1;
-- (BOOL)superIsDownloadable;
+- (void)setHasEnoughDiskSpace:(bool)arg1;
+- (void)setPowerRequired:(bool)arg1;
+- (bool)superIsDownloadable;
 
 @end

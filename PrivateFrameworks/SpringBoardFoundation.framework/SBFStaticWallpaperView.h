@@ -8,43 +8,45 @@
     SBFColorBoxes *_colorBoxes;
     UIImage *_image;
     NSMutableSet *_mappedBackdropKeys;
-    BOOL _treatWallpaper;
     UIImage *_treatedImage;
+    bool_treatWallpaper;
 }
 
 @property(retain) SBFColorBoxes * colorBoxes;
 
-+ (BOOL)_allowsParallax;
-+ (BOOL)_allowsRasterization;
++ (bool)_allowsParallax;
++ (bool)_allowsRasterization;
 
-- (id)_averageColorInContentViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 smudgeRadius:(float)arg2;
+- (id)_averageColorInContentViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 smudgeRadius:(double)arg2;
 - (id)_blurredImage;
 - (void)_cacheTreatedImage;
-- (unsigned int)_colorBoxSize;
+- (unsigned long long)_colorBoxSize;
 - (id)_computeAverageColor;
 - (id)_createColorBoxes;
 - (id)_displayedImage;
-- (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1 includeTint:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })_imageSize;
-- (id)_mappedImageKeyForParameters:(struct { int x1; int x2; int x3; })arg1 includingTint:(BOOL)arg2;
+- (id)_imageForBackdropParameters:(struct { long long x1; long long x2; long long x3; })arg1 includeTint:(bool)arg2;
+- (struct CGSize { double x1; double x2; })_imageSize;
+- (id)_mappedImageKeyForParameters:(struct { long long x1; long long x2; long long x3; })arg1 includingTint:(bool)arg2;
 - (id)_newTreatedImage;
 - (void)_removeMappedBlurs;
 - (void)_resetColorBoxes;
 - (void)_setupContentView;
 - (id)_treatedImageKey;
-- (id)_untintedImageForBackdropParameters:(struct { int x1; int x2; int x3; })arg1;
+- (id)_untintedImageForBackdropParameters:(struct { long long x1; long long x2; long long x3; })arg1;
 - (id)_wallpaperImageForAnalysis;
 - (float)_zoomScale;
 - (id)colorBoxes;
-- (float)contrastInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contrastWithinBoxes:(float*)arg2 contrastBetweenBoxes:(float*)arg3;
-- (float)contrastInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)contrastInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contrastWithinBoxes:(double*)arg2 contrastBetweenBoxes:(double*)arg3;
+- (double)contrastInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)cropZoomScale;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 treatWallpaper:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2;
-- (BOOL)isDisplayingWallpaper:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 treatWallpaper:(bool)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2;
+- (bool)isDisplayingWallpaper:(id)arg1 forVariant:(long long)arg2 options:(id)arg3;
 - (void)setColorBoxes:(id)arg1;
 - (void)setContentView:(id)arg1;
-- (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (id)wallpaperImage;
 

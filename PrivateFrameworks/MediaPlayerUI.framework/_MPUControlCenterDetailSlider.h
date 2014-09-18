@@ -2,22 +2,25 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPDetailScrubController;
+@class MPDetailScrubController, NSString;
 
 @interface _MPUControlCenterDetailSlider : SBUIControlCenterSlider <MPDetailedScrubbing, _MPUSliderScrubForwarding> {
     MPDetailScrubController *_scrubController;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
 @property MPDetailScrubController * scrubController;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)scrubController;
 - (void)setScrubController:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbHitRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbViewRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbHitRect;
 
 @end

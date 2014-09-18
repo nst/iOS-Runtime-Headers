@@ -2,10 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
+@class NSString;
+
 @interface MFNullDataConsumer : NSObject <MFDataConsumer> {
 }
 
-- (int)appendData:(id)arg1;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (long long)appendData:(id)arg1;
 - (id)description;
 - (void)done;
 

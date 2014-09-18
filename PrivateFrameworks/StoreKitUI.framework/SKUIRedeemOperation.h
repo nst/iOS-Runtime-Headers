@@ -9,13 +9,13 @@
 @class NSString, SKUIClientContext;
 
 @interface SKUIRedeemOperation : NSOperation {
-    BOOL _cameraRecognized;
     SKUIClientContext *_clientContext;
     NSString *_code;
     id _resultBlock;
+    bool_cameraRecognized;
 }
 
-@property BOOL cameraRecognized;
+@property bool cameraRecognized;
 @property(retain) SKUIClientContext * clientContext;
 @property(copy) id resultBlock;
 
@@ -25,12 +25,12 @@
 - (id)_performRequestWithProperties:(id)arg1 error:(id*)arg2;
 - (id)_redeemForSuccessDictionary:(id)arg1;
 - (id)_requestPropertiesForThankYouWithURL:(id)arg1;
-- (BOOL)cameraRecognized;
+- (bool)cameraRecognized;
 - (id)clientContext;
 - (id)initWithCode:(id)arg1;
 - (void)main;
 - (id)resultBlock;
-- (void)setCameraRecognized:(BOOL)arg1;
+- (void)setCameraRecognized:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setResultBlock:(id)arg1;
 

@@ -5,25 +5,25 @@
 @class DOMNode;
 
 @interface DDRange : NSObject {
-    long _endOffset;
+    long long _endOffset;
     DOMNode *_node;
-    long _startOffset;
+    long long _startOffset;
 }
 
-@property long endOffset;
+@property long long endOffset;
 @property(retain) DOMNode * node;
-@property long startOffset;
+@property long long startOffset;
 
 + (id)rangeWithDOMRange:(id)arg1;
 
 - (void)dealloc;
 - (id)description;
-- (long)endOffset;
+- (long long)endOffset;
 - (id)initWithDOMRange:(id)arg1;
 - (id)node;
-- (void)setEndOffset:(long)arg1;
+- (void)setEndOffset:(long long)arg1;
 - (void)setNode:(id)arg1;
-- (void)setStartOffset:(long)arg1;
-- (long)startOffset;
+- (void)setStartOffset:(long long)arg1;
+- (long long)startOffset;
 
 @end

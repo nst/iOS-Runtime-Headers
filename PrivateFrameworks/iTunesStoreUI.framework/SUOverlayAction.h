@@ -5,7 +5,7 @@
 @class SUOverlayTransition, UIViewController;
 
 @interface SUOverlayAction : NSObject {
-    int _animationCount;
+    long long _animationCount;
     UIViewController *_otherViewController;
     SUOverlayTransition *_transition;
     int _type;
@@ -13,17 +13,17 @@
 }
 
 @property int actionType;
-@property int animationCount;
+@property long long animationCount;
 @property(retain) UIViewController * otherViewController;
 @property(retain) SUOverlayTransition * transition;
 @property(retain) UIViewController * viewController;
 
 - (int)actionType;
-- (int)animationCount;
+- (long long)animationCount;
 - (void)dealloc;
 - (id)otherViewController;
 - (void)setActionType:(int)arg1;
-- (void)setAnimationCount:(int)arg1;
+- (void)setAnimationCount:(long long)arg1;
 - (void)setOtherViewController:(id)arg1;
 - (void)setTransition:(id)arg1;
 - (void)setViewController:(id)arg1;

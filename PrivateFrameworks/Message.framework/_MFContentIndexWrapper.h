@@ -10,6 +10,6 @@
 - (struct __CXIndex { }*)contentIndex;
 - (void)dealloc;
 - (id)initWithContentIndex:(struct __CXIndex { }*)arg1;
-- (BOOL)performTransaction:(id)arg1;
+- (bool)performTransaction:(id)arg1;
 
 @end

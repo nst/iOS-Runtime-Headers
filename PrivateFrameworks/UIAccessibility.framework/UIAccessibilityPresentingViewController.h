@@ -14,6 +14,6 @@
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(id)arg2;
 - (id)init;
 - (void)loadView;
-- (void)presentViewController:(id)arg1 withTransition:(int)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 
 @end

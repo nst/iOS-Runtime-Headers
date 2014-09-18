@@ -21,18 +21,19 @@
 + (id)instanceWithArchive:(const struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DataReference {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Reference {} *x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
 + (id)textureWithImageData:(id)arg1 optimizedMipmapData:(id)arg2;
 
-- (BOOL)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
+- (bool)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
 - (id)data;
 - (id)databufferForDataCache:(id)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)imageData;
 - (id)initWithArchive:(const struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DataReference {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Reference {} *x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithImageData:(id)arg1 optimizedMipmapData:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)optimizedMipmapBuffer;
 - (void)p_setOptimizedMipMapData:(id)arg1;
 - (void)saveToArchive:(struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DataReference {} *x3; struct DataReference {} *x4; struct Reference {} *x5; struct Reference {} *x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
-- (void)setChanged:(BOOL)arg1;
+- (void)setChanged:(bool)arg1;
 
 @end

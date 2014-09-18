@@ -6,34 +6,31 @@
    See Warning(s) below.
  */
 
-@class UIActionSheet, UIAlertView;
+@class NSString, UIAlertController;
 
 @interface EKUIRecurrenceAlertController : NSObject <UIActionSheetDelegate> {
-    UIActionSheet *_alertSheet;
-    UIAlertView *_alertView;
-    int _buttonConfiguration;
+    UIAlertController *_alertController;
     id _completionHandler;
 }
 
 @property(copy) id completionHandler;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
-+ (void)initialize;
 + (id)newAlertControllerWithCompletionHandler:(id)arg1;
-+ (id)presentDeleteAlertWithOptions:(int)arg1 viewController:(id)arg2 toolbarForSheet:(id)arg3 stringForDeleteButton:(id)arg4 withCompletionHandler:(id)arg5;
-+ (id)presentDeleteAlertWithOptions:(int)arg1 viewController:(id)arg2 toolbarForSheet:(id)arg3 withCompletionHandler:(id)arg4;
-+ (id)presentDeleteAlertWithOptions:(int)arg1 viewController:(id)arg2 viewForSheet:(id)arg3 stringForDeleteButton:(id)arg4 withCompletionHandler:(id)arg5;
-+ (id)presentDeleteAlertWithOptions:(int)arg1 viewController:(id)arg2 viewForSheet:(id)arg3 withCompletionHandler:(id)arg4;
-+ (id)presentDetachAlertWithOptions:(int)arg1 viewController:(id)arg2 toolbarForSheet:(id)arg3 withCompletionHandler:(id)arg4;
-+ (id)presentDetachAlertWithOptions:(int)arg1 viewController:(id)arg2 viewForSheet:(id)arg3 withCompletionHandler:(id)arg4;
++ (id)presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 stringForDeleteButton:(id)arg3 withCompletionHandler:(id)arg4;
++ (id)presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 withCompletionHandler:(id)arg3;
++ (id)presentDetachAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 withCompletionHandler:(id)arg3;
 
 - (void).cxx_destruct;
-- (void)_alertButtonClickedWithButtonIndex:(int)arg1;
-- (void)_presentDeleteAlertWithOptions:(int)arg1 viewController:(id)arg2 viewForSheet:(id)arg3 toolbarForSheet:(id)arg4 stringForDeleteButton:(id)arg5;
-- (void)_presentDetachAlertWithOptions:(int)arg1 viewController:(id)arg2 viewForSheet:(id)arg3 toolbarForSheet:(id)arg4;
-- (BOOL)_useSheetForViewController:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)cancelAnimated:(BOOL)arg1;
+- (void)_cleanup;
+- (void)_completeWithSelection:(int)arg1;
+- (void)_presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 stringForDeleteButton:(id)arg3;
+- (void)_presentDetachAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2;
+- (bool)_useSheetForViewController:(id)arg1;
+- (void)cancelAnimated:(bool)arg1;
 - (id)completionHandler;
 - (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;

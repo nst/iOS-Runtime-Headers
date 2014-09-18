@@ -2,44 +2,20 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class IMAVChat;
-
-@interface TUFaceTimeAudioCall : TUCall {
-    IMAVChat *_chat;
+@interface TUFaceTimeAudioCall : TUFaceTimeCall {
 }
 
-- (void)answer;
+- (void)addCallConnectedObserver;
 - (id)audioCategory;
 - (id)audioMode;
-- (id)bundleIDForHostingApplication;
-- (double)callDuration;
-- (int)callIdentifier;
-- (id)callerNameFromNetwork;
-- (id)chat;
+- (int)callStatus;
 - (void)dealloc;
-- (id)description;
-- (id)destinationID;
-- (void)disconnect;
-- (BOOL)hold;
-- (id)initWithChat:(id)arg1;
-- (BOOL)isAlerting;
-- (BOOL)isBlocked;
-- (BOOL)isConferenced;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMuted;
-- (BOOL)isOutgoing;
-- (BOOL)isTTY;
-- (id)isoCountryCode;
-- (void)joinConference;
-- (void)leaveConference;
-- (BOOL)managesAudioInterruptions;
-- (BOOL)needsManualInCallSounds;
-- (id)remoteParticipant;
-- (void)resume;
+- (void)handleCallConnected:(id)arg1;
+- (void)hold;
+- (void)removeCallConnectedObserver;
 - (int)service;
-- (BOOL)setMuted:(BOOL)arg1;
-- (double)startTime;
-- (int)status;
-- (BOOL)unhold;
+- (bool)shouldIgnoreStatusChange;
+- (int)supportedModelType;
+- (void)unhold;
 
 @end

@@ -2,14 +2,21 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
+@class NSString;
+
 @interface WebUIModalAlertView : UIAlertView <UIAlertViewDelegate> {
-    int _clickedButton;
+    long long _clickedButton;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (id)modalAlertSheetWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitle:(id)arg4;
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (int)clickedButton;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (long long)clickedButton;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitle:(id)arg4;
 
 @end

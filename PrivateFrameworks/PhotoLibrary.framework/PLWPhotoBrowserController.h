@@ -2,19 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLLibraryImageDataProvider;
+@class NSString;
 
-@interface PLWPhotoBrowserController : PLPhotoBrowserController <UIGestureRecognizerDelegate, PLAssetContainerObserver> {
-    PLLibraryImageDataProvider *_imageDataProvider;
+@interface PLWPhotoBrowserController : PLPhotoBrowserController <UIGestureRecognizerDelegate> {
 }
 
-- (void)dealloc;
-- (id)initWithAssetContainerList:(id)arg1 atImageIndexPath:(id)arg2 imageDataProvider:(id)arg3 modalDoneButtonItem:(id)arg4;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
+- (id)initWithAssetCollections:(id)arg1 atImageIndexPath:(id)arg2 dataSource:(id)arg3 modalDoneButtonItem:(id)arg4;
 - (void)loadView;
-- (void)setAssetContainerList:(id)arg1 currentImageIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)wantsPhotoBrowserStyleStatusBar;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (bool)wantsPhotoBrowserStyleStatusBar;
 
 @end

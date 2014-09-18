@@ -16,10 +16,10 @@
             unsigned char column; 
             unsigned char reserved; 
         } bottomRight; 
+    boolmIsMaxColumnValid;
+    boolmIsMaxRowValid;
     TNPageCoordinateDictionary *mHintCacheEntryDictionary;
     TSDDrawableInfo *mInfo;
-    BOOL mIsMaxColumnValid;
-    BOOL mIsMaxRowValid;
     TNPageController *mPageController;
     } mPageRange;
 }

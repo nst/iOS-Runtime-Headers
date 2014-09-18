@@ -6,31 +6,27 @@
    See Warning(s) below.
  */
 
-@class MCSession, NSProgress, NSString;
+@class NSProgress, NSString;
 
 @interface MCResourceProgressObserver : NSObject {
     id _cancelHandler;
     NSString *_name;
     NSProgress *_progress;
-    MCSession *_session;
 }
 
-@property id cancelHandler;
+@property(copy) id cancelHandler;
 @property(copy) NSString * name;
 @property(retain) NSProgress * progress;
-@property MCSession * session;
 
 - (id)cancelHandler;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 session:(id)arg2 progress:(id)arg3 cancelHandler:(id)arg4;
+- (id)initWithName:(id)arg1 progress:(id)arg2 cancelHandler:(id)arg3;
 - (void)invalidate;
 - (id)name;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)progress;
-- (id)session;
 - (void)setCancelHandler:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProgress:(id)arg1;
-- (void)setSession:(id)arg1;
 
 @end

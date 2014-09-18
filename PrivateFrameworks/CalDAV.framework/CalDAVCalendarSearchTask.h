@@ -11,7 +11,7 @@
     NSDictionary *_urlsToResults;
 }
 
-@property(readonly) NSDictionary * urlsToResults;
+@property(retain,readonly) NSDictionary * urlsToResults;
 
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;

@@ -2,18 +2,24 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSArray;
+@class NSArray, NSSet;
 
-@interface EKPredicate : NSPredicate {
+@interface EKPredicate : NSPredicate <NSSecureCoding> {
     NSArray *_calendars;
+    NSSet *_restrictedCalendarRowIDs;
 }
 
 @property(readonly) NSArray * calendars;
+@property(retain) NSSet * restrictedCalendarRowIDs;
+
++ (bool)supportsSecureCoding;
 
 - (id)calendars;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCalendars:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)restrictedCalendarRowIDs;
+- (void)setRestrictedCalendarRowIDs:(id)arg1;
 
 @end

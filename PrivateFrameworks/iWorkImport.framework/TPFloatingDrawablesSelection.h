@@ -8,20 +8,20 @@
     NSSet *_selectedInfos;
 }
 
-@property(readonly) NSSet * drawables;
+@property(retain,readonly) NSSet * drawables;
 
 + (id)selectionWithInfos:(id)arg1;
 
-- (BOOL)containsInfo:(id)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (bool)containsInfo:(id)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)drawables;
 - (id)infos;
 - (id)initWithInfo:(id)arg1;
 - (id)initWithInfos:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)selectionByAddingInfo:(id)arg1;
 - (id)selectionByRemovingInfo:(id)arg1;
 

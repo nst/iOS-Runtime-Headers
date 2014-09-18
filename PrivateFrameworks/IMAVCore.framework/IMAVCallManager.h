@@ -20,11 +20,11 @@
     unsigned int _telephonyCallState;
 }
 
-@property(readonly) NSArray * _FTCalls;
+@property(retain,readonly) NSArray * _FTCalls;
 @property(setter=_setTelephonyCallState:) unsigned int _telephonyCallState;
 @property(readonly) unsigned int callState;
-@property(readonly) NSArray * calls;
-@property(readonly) BOOL hasActiveCall;
+@property(retain,readonly) NSArray * calls;
+@property(readonly) bool hasActiveCall;
 
 + (id)sharedInstance;
 
@@ -39,18 +39,18 @@
 - (unsigned int)_callStateForType:(unsigned int)arg1;
 - (id)_calls;
 - (id)_copyMutableFTCalls;
-- (BOOL)_hasActiveAudioCall;
-- (BOOL)_hasActiveFaceTimeCall;
-- (BOOL)_hasActiveTelephonyCall;
+- (bool)_hasActiveAudioCall;
+- (bool)_hasActiveFaceTimeCall;
+- (bool)_hasActiveTelephonyCall;
 - (id)_mutableFTCalls;
 - (id)_nonRetainingChatList;
 - (void)_postStateChangeIfNecessary;
-- (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3 postType:(BOOL)arg4 type:(unsigned int)arg5;
+- (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3 postType:(bool)arg4 type:(unsigned int)arg5;
 - (void)_removeIMAVChatFromChatList:(id)arg1;
 - (void)_sendProxyUpdate;
-- (void)_setACCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
+- (void)_setACCallState:(unsigned int)arg1 quietly:(bool)arg2;
 - (void)_setACCallState:(unsigned int)arg1;
-- (void)_setAVCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
+- (void)_setAVCallState:(unsigned int)arg1 quietly:(bool)arg2;
 - (void)_setAVCallState:(unsigned int)arg1;
 - (void)_setTelephonyCallState:(unsigned int)arg1;
 - (unsigned int)_telephonyCallState;
@@ -62,7 +62,7 @@
 - (unsigned int)callState;
 - (id)calls;
 - (void)dealloc;
-- (BOOL)hasActiveCall;
+- (bool)hasActiveCall;
 - (id)init;
 
 @end

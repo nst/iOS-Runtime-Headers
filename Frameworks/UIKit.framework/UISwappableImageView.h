@@ -6,33 +6,33 @@
 
 @interface UISwappableImageView : UIImageView {
     id _alternate;
-    int _barButtonItemStyle;
-    BOOL _bezel;
+    long long _barButtonItemStyle;
     int _bezelStyle;
     UIToolbar *_buttonBar;
     int _buttonTag;
     int _currentAnimation;
-    BOOL _didDisableWindowAutorotation;
     SEL _didFinishSelector;
     id _didFinishTarget;
-    BOOL _flipped;
     _UISwappableImageViewAnimationProxy *_proxy;
-    float _scale;
-    BOOL _showAlternate;
-    BOOL _updateImage;
+    double _scale;
     id _value;
+    bool_bezel;
+    bool_didDisableWindowAutorotation;
+    bool_flipped;
+    bool_showAlternate;
+    bool_updateImage;
 }
 
 - (void)_willMoveToWindow:(id)arg1;
 - (void)animateImage:(float)arg1 withButtonBar:(id)arg2 withTag:(int)arg3 target:(id)arg4 didFinishSelector:(SEL)arg5;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)dealloc;
-- (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(int)arg3 barButtonItemStyle:(int)arg4 tintColor:(id)arg5 bezel:(BOOL)arg6;
-- (void)setBezelStyleForBarStyle:(int)arg1 tintColor:(id)arg2 iconTintColor:(id)arg3 iconTintColorDidChange:(BOOL)arg4;
-- (void)setBezelStyleForBarStyle:(int)arg1 tintColor:(id)arg2;
-- (void)setFlipped:(BOOL)arg1;
+- (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(long long)arg3 barButtonItemStyle:(long long)arg4 tintColor:(id)arg5 bezel:(bool)arg6;
+- (void)setBezelStyleForBarStyle:(long long)arg1 tintColor:(id)arg2 iconTintColor:(id)arg3 iconTintColorDidChange:(bool)arg4;
+- (void)setBezelStyleForBarStyle:(long long)arg1 tintColor:(id)arg2;
+- (void)setFlipped:(bool)arg1;
 - (void)setImage:(id)arg1;
-- (void)showAlternateImage:(BOOL)arg1;
+- (void)showAlternateImage:(bool)arg1;
 - (void)updateImageIfNeeded;
 - (void)updateImageIfNeededWithTintColor:(id)arg1;
 

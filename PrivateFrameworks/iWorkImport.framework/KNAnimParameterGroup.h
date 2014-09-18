@@ -19,13 +19,14 @@
 
 - (void)dealloc;
 - (id)initWithFileName:(id)arg1;
+- (id)mediaTimingFunctionForAnimationCurve:(id)arg1 reversed:(bool)arg2;
 - (id)mediaTimingFunctionForAnimationCurve:(id)arg1;
 - (id)name;
 - (id)parameterArray;
 - (void)readAnimationCurvesFromFile;
 - (void)resetAnimationCurvesFromBundle;
-- (float)valueForAnimationCurve:(id)arg1 atPercent:(float)arg2;
-- (float)valueForConstant:(id)arg1;
+- (double)valueForAnimationCurve:(id)arg1 atPercent:(double)arg2;
+- (double)valueForConstant:(id)arg1;
 - (void)writeAnimationCurvesToFile;
 
 @end

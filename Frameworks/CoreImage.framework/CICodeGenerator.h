@@ -13,7 +13,6 @@
 - (id)inputMessage;
 - (struct CGImage { }*)outputCGImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputMessage:(id)arg1;
 
 @end

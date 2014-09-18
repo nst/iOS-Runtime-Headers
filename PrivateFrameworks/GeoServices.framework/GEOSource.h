@@ -10,7 +10,7 @@
     NSString *_sourceVersion;
 }
 
-@property(readonly) BOOL hasSourceVersion;
+@property(readonly) bool hasSourceVersion;
 @property(retain) NSString * sourceId;
 @property(retain) NSString * sourceName;
 @property(retain) NSString * sourceVersion;
@@ -20,10 +20,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSourceVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasSourceVersion;
+- (unsigned long long)hash;
+- (id)initWithAttributionID:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setSourceId:(id)arg1;
 - (void)setSourceName:(id)arg1;
 - (void)setSourceVersion:(id)arg1;

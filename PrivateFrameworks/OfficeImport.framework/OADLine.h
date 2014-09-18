@@ -5,6 +5,7 @@
 @interface OADLine : OADShape {
 }
 
+- (id)description;
 - (id)init;
 
 @end

@@ -2,17 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSString;
 
-@interface KNChartMultiDataBuild : KNAnimationEffect <KNChunkableBuildAnimator> {
+@interface KNChartMultiDataBuild : KNAnimationEffect <KNChunkableBuildAnimator, KNAnimationPluginMagicChart> {
     NSArray *mChartAnimatedLayers;
     NSMutableArray *mLayersToRestore;
 }
+
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
++ (bool)isMagicChart;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;

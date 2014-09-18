@@ -10,8 +10,8 @@
 @class TSTFormulaPredicate;
 
 @interface TSTTableFilterRule : NSObject <NSCopying> {
-    BOOL mDisabled;
-    BOOL mDoesNotNeedFormulaRewriteForImport;
+    boolmDisabled;
+    boolmDoesNotNeedFormulaRewriteForImport;
     TSTFormulaPredicate *mPredicate;
 }
 
@@ -22,25 +22,25 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)encodeToArchive:(struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaPredicateArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)arg1;
+- (void)encodeToArchive:(struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaPredicateArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)formula;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initFromArchive:(const struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct FormulaPredicateArchive {} *x3; boolx4; int x5; unsigned int x6[1]; }*)arg1;
 - (id)initRuleWhereValuesInTable:(id)arg1 inColumn:(unsigned char)arg2 matchCell:(id)arg3;
 - (id)initWithFormulaPredicate:(id)arg1;
-- (BOOL)isEnabled;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEnabled;
+- (bool)isEqual:(id)arg1;
 - (id)localizedTextRepresentation;
-- (BOOL)matchesCell:(id)arg1;
-- (BOOL)matchesRow:(unsigned short)arg1 withFormulaTableID:(struct __CFUUID { }*)arg2 withCalculationEngine:(id)arg3;
-- (BOOL)needsFormulaRewriteForImport;
-- (BOOL)needsThreshold;
+- (bool)matchesCell:(id)arg1;
+- (bool)matchesRow:(unsigned short)arg1 withFormulaTableID:(struct __CFUUID { }*)arg2 withCalculationEngine:(id)arg3;
+- (bool)needsFormulaRewriteForImport;
+- (bool)needsThreshold;
 - (id)p_formatDatePredicate;
 - (id)p_formatDurationPredicate;
 - (id)p_formatTextPredicate;
 - (id)p_formatValuePredicate;
 - (id)predicate;
 - (void)setDoesNotNeedFormulaRewriteForImport;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

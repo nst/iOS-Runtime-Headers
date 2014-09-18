@@ -2,27 +2,76 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSData, VGLTexture, VKStylesheet;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSData, VKStyleManager;
 
 @interface VKRasterTile : VKTile {
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    struct RenderItem { 
+        int (**_vptr$RenderItem)(); 
+        char *_name; 
+        struct RenderState {} *_renderState; 
+        struct ShaderSetup {} *_shaderSetup; 
+        unsigned int _stencilRefValue; 
+        unsigned int _renderOrder; 
+        float _lineWidth; 
+        struct Mesh {} *_mesh; 
+        struct Range { 
+            unsigned long long _start; 
+            unsigned long long _count; 
+        } _range; 
+        struct Range {} *_ranges; 
+        unsigned long long _rangeCount; 
+    struct unique_ptr<ggl::Texture::Shader::Setup, std::__1::default_delete<ggl::Texture::Shader::Setup> > { 
+        struct __compressed_pair<ggl::Texture::Shader::Setup *, std::__1::default_delete<ggl::Texture::Shader::Setup> > { 
+            struct Setup {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::Clut::Shader::Setup, std::__1::default_delete<ggl::Clut::Shader::Setup> > { 
+        struct __compressed_pair<ggl::Clut::Shader::Setup *, std::__1::default_delete<ggl::Clut::Shader::Setup> > { 
+            struct Setup {} *__first_; 
+        } __ptr_; 
+    struct unique_ptr<ggl::TextureWithReverseAlpha::Shader::Setup, std::__1::default_delete<ggl::TextureWithReverseAlpha::Shader::Setup> > { 
+        struct __compressed_pair<ggl::TextureWithReverseAlpha::Shader::Setup *, std::__1::default_delete<ggl::TextureWithReverseAlpha::Shader::Setup> > { 
+            struct Setup {} *__first_; 
+        } __ptr_; 
     NSData *_data;
     int _genericTileType;
-    BOOL _hasGenericTileType;
-    VKStylesheet *_stylesheet;
-    VGLTexture *_texture;
+    } _gglTexture;
+    } _renderItem;
+    } _shaderReverseAlphaSetup;
+    } _shaderSetup;
+    } _shaderSetupCLUT;
+    VKStyleManager *_styleManager;
+    bool_hasGenericTileType;
 }
 
 @property(readonly) int genericTileType;
-@property(readonly) BOOL hasGenericTileType;
-@property(retain) VGLTexture * texture;
+@property struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; } gglTexture;
+@property(readonly) bool hasGenericTileType;
+@property(readonly) struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; }* renderItem;
 
-- (void)buildTexture;
+- (struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; }*)renderItem;
+- (struct TextureData2D { int (**x1)(); unsigned int x2; int x3; unsigned int x4; unsigned int x5; char *x6; char **x7; unsigned long long x8; }*)buildTextureDataFromCGImage:(struct CGImage { }*)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (int)genericTileType;
-- (BOOL)hasGenericTileType;
-- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 imageData:(id)arg2 stylesheet:(id)arg3 genericTileType:(int)arg4;
-- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 imageData:(id)arg2 stylesheet:(id)arg3;
-- (void)setTexture:(id)arg1;
-- (id)texture;
+- (void)gglBuildTexture:(struct Device { int (**x1)(); int x2; }*)arg1;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })gglTexture;
+- (bool)hasGenericTileType;
+- (void)immediateLoad:(struct Device { int (**x1)(); int x2; }*)arg1;
+- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 imageData:(id)arg2 styleManager:(id)arg3 genericTileType:(int)arg4;
+- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 imageData:(id)arg2 styleManager:(id)arg3;
+- (struct CGImage { }*)newCGImageFromData:(id)arg1;
+- (void)setGglTexture:(struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (void)setupClutShaderWithRenderState:(struct RenderState { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct DepthState { int (**x_3_1_1)(); int x_3_1_2; boolx_3_1_3; boolx_3_1_4; boolx_3_1_5; float x_3_1_6; float x_3_1_7; } x3; struct ColorState { int (**x_4_1_1)(); boolx_4_1_2; boolx_4_1_3; boolx_4_1_4; boolx_4_1_5; } x4; struct BlendState { int (**x_5_1_1)(); boolx_5_1_2; int x_5_1_3; } x5; struct StencilState { int (**x_6_1_1)(); boolx_6_1_2; boolx_6_1_3; unsigned int x_6_1_4; int x_6_1_5; int x_6_1_6; unsigned int x_6_1_7; int x_6_1_8; int x_6_1_9; int x_6_1_10; } x6; struct ScissorState { int (**x_7_1_1)(); boolx_7_1_2; struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_3_1[2]; } x_3_2_1; struct Matrix<float, 2, 1> { float x_2_3_1[2]; } x_3_2_2; } x_7_1_3; } x7; struct PolygonState { int (**x_8_1_1)(); boolx_8_1_2; int x_8_1_3; int x_8_1_4; } x8; }*)arg1 mesh:(struct Mesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)arg2 clutTexture:(struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; boolx12; boolx13; boolx14; unsigned int x15; unsigned int x16; int x17; int x18; }*)arg3 clutBlend:(float)arg4;
+- (void)setupNormalShaderWithRenderState:(struct RenderState { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct DepthState { int (**x_3_1_1)(); int x_3_1_2; boolx_3_1_3; boolx_3_1_4; boolx_3_1_5; float x_3_1_6; float x_3_1_7; } x3; struct ColorState { int (**x_4_1_1)(); boolx_4_1_2; boolx_4_1_3; boolx_4_1_4; boolx_4_1_5; } x4; struct BlendState { int (**x_5_1_1)(); boolx_5_1_2; int x_5_1_3; } x5; struct StencilState { int (**x_6_1_1)(); boolx_6_1_2; boolx_6_1_3; unsigned int x_6_1_4; int x_6_1_5; int x_6_1_6; unsigned int x_6_1_7; int x_6_1_8; int x_6_1_9; int x_6_1_10; } x6; struct ScissorState { int (**x_7_1_1)(); boolx_7_1_2; struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_3_1[2]; } x_3_2_1; struct Matrix<float, 2, 1> { float x_2_3_1[2]; } x_3_2_2; } x_7_1_3; } x7; struct PolygonState { int (**x_8_1_1)(); boolx_8_1_2; int x_8_1_3; int x_8_1_4; } x8; }*)arg1 mesh:(struct Mesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)arg2;
+- (void)setupReverseAlphaShaderWithRenderState:(struct RenderState { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct DepthState { int (**x_3_1_1)(); int x_3_1_2; boolx_3_1_3; boolx_3_1_4; boolx_3_1_5; float x_3_1_6; float x_3_1_7; } x3; struct ColorState { int (**x_4_1_1)(); boolx_4_1_2; boolx_4_1_3; boolx_4_1_4; boolx_4_1_5; } x4; struct BlendState { int (**x_5_1_1)(); boolx_5_1_2; int x_5_1_3; } x5; struct StencilState { int (**x_6_1_1)(); boolx_6_1_2; boolx_6_1_3; unsigned int x_6_1_4; int x_6_1_5; int x_6_1_6; unsigned int x_6_1_7; int x_6_1_8; int x_6_1_9; int x_6_1_10; } x6; struct ScissorState { int (**x_7_1_1)(); boolx_7_1_2; struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_3_1[2]; } x_3_2_1; struct Matrix<float, 2, 1> { float x_2_3_1[2]; } x_3_2_2; } x_7_1_3; } x7; struct PolygonState { int (**x_8_1_1)(); boolx_8_1_2; int x_8_1_3; int x_8_1_4; } x8; }*)arg1 mesh:(struct Mesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)arg2 roadAlpha:(float)arg3;
 
 @end

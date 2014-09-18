@@ -30,8 +30,9 @@
 - (id)colorScheme;
 - (void)dealloc;
 - (id)fontScheme;
+- (id)initWithStyleMatrix:(id)arg1 fontScheme:(id)arg2 colorScheme:(id)arg3 colorMap:(id)arg4 colorPalette:(id)arg5;
 - (id)initWithTheme:(id)arg1 colorMap:(id)arg2 colorPalette:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lineDefaults;
 - (void)setColorPalette:(id)arg1;
 - (void)setColorScheme:(id)arg1;

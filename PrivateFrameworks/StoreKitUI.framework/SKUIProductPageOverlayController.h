@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageOverlayDelegate>, NSArray, SKUIClientContext, SKUIItem, SKUIOverlayContainerViewController, UIView, UIViewController;
+@class <SKUIProductPageOverlayDelegate>, NSArray, NSString, SKUIClientContext, SKUIItem, SKUIOverlayContainerViewController, UIView, UIViewController;
 
 @interface SKUIProductPageOverlayController : NSObject <SKUIIPadProductPageDelegate, SKStoreProductViewControllerDelegate> {
     SKUIClientContext *_clientContext;
@@ -14,15 +14,19 @@
 
 @property(readonly) NSArray * URLs;
 @property(retain) SKUIClientContext * clientContext;
+@property(copy,readonly) NSString * debugDescription;
 @property <SKUIProductPageOverlayDelegate> * delegate;
-@property(readonly) int numberOfVisibleOverlays;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long numberOfVisibleOverlays;
 @property(readonly) UIViewController * parentViewController;
+@property(readonly) Class superclass;
 @property(readonly) UIView * view;
 
 - (void).cxx_destruct;
 - (id)URLs;
 - (void)_backstopViewAction:(id)arg1;
-- (void)_finishDismissAndNotifyDelegate:(BOOL)arg1 withViewController:(id)arg2;
+- (void)_finishDismissAndNotifyDelegate:(bool)arg1 withViewController:(id)arg2;
 - (void)_removeOverlayViewController;
 - (void)_showOverlayViewController;
 - (void)_showWithInitialViewController:(id)arg1;
@@ -34,7 +38,7 @@
 - (void)iPadProductPage:(id)arg1 openURL:(id)arg2 viewControllerBlock:(id)arg3;
 - (void)iPadProductPageCannotOpen:(id)arg1;
 - (id)initWithParentViewController:(id)arg1;
-- (int)numberOfVisibleOverlays;
+- (long long)numberOfVisibleOverlays;
 - (id)parentViewController;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)setClientContext:(id)arg1;

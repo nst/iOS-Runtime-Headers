@@ -13,9 +13,9 @@
     id _delegate;
     void *_group;
     ABGroupWrapper *_parentGroupWrapper;
-    BOOL _selected;
-    BOOL _shouldBeSelectedWhenAllChildrenAreSelected;
     void *_source;
+    bool_selected;
+    bool_shouldBeSelectedWhenAllChildrenAreSelected;
 }
 
 @property(readonly) NSString * _accountDescriptionBasedOnIdentifier;
@@ -27,15 +27,15 @@
 @property(readonly) void* group;
 @property(readonly) NSString * name;
 @property ABGroupWrapper * parentGroupWrapper;
-@property(getter=isSelected) BOOL selected;
-@property BOOL shouldBeSelectedWhenAllChildrenAreSelected;
+@property(getter=isSelected) bool selected;
+@property bool shouldBeSelectedWhenAllChildrenAreSelected;
 @property(readonly) void* source;
 @property(readonly) int sourceType;
 
 + (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3 excludingSearchableStores:(BOOL)arg4 isSoleAccount:(BOOL)arg5;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3 excludingSearchableStores:(bool)arg4 isSoleAccount:(bool)arg5;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 excludingSearchableStores:(BOOL)arg3;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 excludingSearchableStores:(bool)arg3;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
 
 - (id)_accountDescriptionBasedOnIdentifier;
@@ -43,34 +43,34 @@
 - (id)accountIdentifier;
 - (id)accountStore;
 - (void*)addressBook;
-- (void)childGroupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
+- (void)childGroupWrapper:(id)arg1 didBecomeSelected:(bool)arg2;
 - (id)childGroupWrappers;
-- (int)compareToGroupWrapper:(id)arg1;
+- (long long)compareToGroupWrapper:(id)arg1;
 - (id)copyDictionaryRepresentation;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void*)group;
 - (id)initWithAddressBook:(void*)arg1 accountIdentifier:(id)arg2 source:(void*)arg3 group:(void*)arg4;
-- (BOOL)isContainerWrapper;
-- (BOOL)isDirectoryWrapper;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGlobalWrapper;
-- (BOOL)isSelected;
+- (bool)isContainerWrapper;
+- (bool)isDirectoryWrapper;
+- (bool)isEqual:(id)arg1;
+- (bool)isGlobalWrapper;
+- (bool)isSelected;
 - (id)name;
 - (id)parentGroupWrapper;
-- (int)score;
+- (long long)score;
 - (void)setAccountStore:(id)arg1;
 - (void)setChildGroupWrappers:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setParentGroupWrapper:(id)arg1;
-- (void)setSelected:(BOOL)arg1 propagateSelectionToChildren:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1;
-- (void)setShouldBeSelectedWhenAllChildrenAreSelected:(BOOL)arg1;
-- (BOOL)shouldBeSelectedWhenAllChildrenAreSelected;
-- (BOOL)showLinkedPeople;
+- (void)setSelected:(bool)arg1 propagateSelectionToChildren:(bool)arg2;
+- (void)setSelected:(bool)arg1;
+- (void)setShouldBeSelectedWhenAllChildrenAreSelected:(bool)arg1;
+- (bool)shouldBeSelectedWhenAllChildrenAreSelected;
+- (bool)showLinkedPeople;
 - (void*)source;
 - (int)sourceType;
-- (BOOL)toggleSelection;
+- (bool)toggleSelection;
 
 @end

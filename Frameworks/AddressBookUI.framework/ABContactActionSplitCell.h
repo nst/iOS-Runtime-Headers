@@ -2,31 +2,27 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIButton, UIView;
+@class UIButton;
 
-@interface ABContactActionSplitCell : ABContactCell {
-    BOOL _displayConstraintsActive;
+@interface ABContactActionSplitCell : ABLabeledCell {
     UIButton *_leftLabel;
     UIButton *_rightLabel;
-    UIView *_spacer;
 }
 
-@property BOOL displayConstraintsActive;
 @property(readonly) UIButton * leftLabel;
 @property(readonly) UIButton * rightLabel;
-@property(readonly) UIView * spacer;
 
 - (void)_setupButton:(id)arg1 forAction:(id)arg2;
+- (id)constantConstraints;
 - (void)dealloc;
-- (BOOL)displayConstraintsActive;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)labelView;
 - (id)leftLabel;
+- (double)minCellHeight;
 - (id)rightLabel;
+- (id)rightMostView;
 - (void)setCardGroupItem:(id)arg1;
-- (void)setDisplayConstraintsActive:(BOOL)arg1;
-- (void)setLeftContentMargin:(float)arg1;
-- (void)setRightContentMargin:(float)arg1;
-- (id)spacer;
-- (void)updateConstraints;
+- (void)setLabelTextAttributes:(id)arg1;
+- (id)standardButton;
 
 @end

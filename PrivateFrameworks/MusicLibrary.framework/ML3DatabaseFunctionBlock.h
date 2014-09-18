@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)block;
-- (BOOL)registerWithConnection:(id)arg1;
+- (bool)registerWithConnection:(id)arg1;
 - (void)setBlock:(id)arg1;
 
 @end

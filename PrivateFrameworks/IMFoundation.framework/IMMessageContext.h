@@ -5,17 +5,26 @@
 @class IMLocalObject, NSObject<OS_xpc_object>;
 
 @interface IMMessageContext : NSObject {
+    id _context;
     IMLocalObject *_localObject;
     NSObject<OS_xpc_object> *_xpcMessage;
+    bool_boost;
 }
 
+@property(retain) id context;
 @property(retain) IMLocalObject * localObject;
+@property bool shouldBoost;
 @property NSObject<OS_xpc_object> * xpcMessage;
 
+- (id)context;
 - (void)dealloc;
+- (id)init;
 - (id)localObject;
+- (void)setContext:(id)arg1;
 - (void)setLocalObject:(id)arg1;
+- (void)setShouldBoost:(bool)arg1;
 - (void)setXpcMessage:(id)arg1;
+- (bool)shouldBoost;
 - (id)xpcMessage;
 
 @end

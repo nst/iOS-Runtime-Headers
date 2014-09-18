@@ -10,7 +10,7 @@
     NSHashTable *_proxies;
 }
 
-@property(readonly) NSArray * targets;
+@property(retain,readonly) NSArray * targets;
 
 + (id)sharedInstance;
 

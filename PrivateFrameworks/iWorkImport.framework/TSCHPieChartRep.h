@@ -2,42 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary, TSCHChartPieElementsRenderer, TSCHChartPieWedgeKnobTracker;
+@class NSArray, NSDictionary, TSCHChartPieElementsRenderer;
 
-@interface TSCHPieChartRep : TSCHChartRep <TSCHChartPieWedgeExplosionTracking> {
-    BOOL mHasDrawnSinceWedgeKnobTrackerCreated;
+@interface TSCHPieChartRep : TSCHChartRep {
+    boolmHasDrawnSinceWedgeKnobTrackerCreated;
     TSCHChartPieElementsRenderer *mPieElementRenderer;
     NSDictionary *mSeriesIndexedPieWedgeDraggingLayers;
     NSArray *mWedgeKnobs;
 }
 
-@property(readonly) TSCHChartPieWedgeKnobTracker * wedgeExplosionTracker;
-
-- (void)addAdditionalChildLayersToArray:(id)arg1;
-- (void)addChartKnobsToArray:(id)arg1;
-- (void)clearRenderers;
 - (void)dealloc;
-- (float)dragTravelAlongBisectorBetweenStartPoint:(struct CGPoint { float x1; float x2; })arg1 andEndingPoint:(struct CGPoint { float x1; float x2; })arg2 forSeries:(unsigned int)arg3;
-- (int)dragTypeAtCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })effectivePointForDragPoint:(struct CGPoint { float x1; float x2; })arg1 startingFrom:(struct CGPoint { float x1; float x2; })arg2 forSeries:(unsigned int)arg3;
-- (void)explosionsDidUpdateForNewSeriesIndexedExplosions:(id)arg1;
-- (BOOL)forceRenderBlankBackground;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (id)knobForDynamicStyleChangeKey:(id)arg1;
-- (void)knobTrackingDidBegin:(id)arg1;
-- (void)knobTrackingDidEnd:(id)arg1;
-- (float)newExplosionValueForFinalDragPoint:(struct CGPoint { float x1; float x2; })arg1 startingFrom:(struct CGPoint { float x1; float x2; })arg2 forSeries:(unsigned int)arg3 knob:(id)arg4;
-- (id)newTrackerForKnob:(id)arg1;
-- (struct CGPoint { float x1; float x2; })p_distanceForExplosionValue:(float)arg1 startExplosionValue:(float)arg2 seriesIndex:(unsigned int)arg3;
-- (id)p_makePieWedgeKnob;
-- (float)p_radius;
-- (id)pieElementRenderer;
-- (BOOL)pieWedgeHitByUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1 seriesIndex:(unsigned int)arg2 distanceFromCenter:(struct CGPoint { float x1; float x2; }*)arg3;
-- (void)processChanges:(id)arg1;
-- (void)renderIntoContext:(struct CGContext { }*)arg1 visible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)setCurrentKnobTracker:(id)arg1;
-- (id)subselectionLayer;
-- (void)updatePositionsOfKnobs:(id)arg1;
-- (id)wedgeExplosionTracker;
 
 @end

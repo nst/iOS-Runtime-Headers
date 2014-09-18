@@ -11,7 +11,7 @@
 }
 
 - (id)allowedClassNames;
-- (BOOL)classNameAllowed:(Class)arg1;
+- (bool)classNameAllowed:(Class)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setAllowedClassNames:(id)arg1;

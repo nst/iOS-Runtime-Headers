@@ -7,40 +7,40 @@
 @interface UIKeyboardSliceSet : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     NSMutableDictionary *_controlKeys;
     } _endRect;
-    float _leftWidth;
-    float _mergePoint;
-    float _rightWidth;
+    double _leftWidth;
+    double _mergePoint;
+    double _rightWidth;
     NSMutableSet *_slices;
     NSString *_ssid;
     } _startRect;
 }
 
 @property NSMutableDictionary * controlKeys;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
-@property float leftWidth;
-@property float mergePoint;
-@property float rightWidth;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } endRect;
+@property double leftWidth;
+@property double mergePoint;
+@property double rightWidth;
 @property(retain) NSString * sliceSetID;
 @property(readonly) NSMutableSet * slices;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } startRect;
 
 + (id)sliceSetWithDictionaryRepresenation:(id)arg1;
 
@@ -48,20 +48,20 @@
 - (id)controlKeys;
 - (void)dealloc;
 - (id)description;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })endRect;
 - (id)initWithSliceID:(id)arg1;
-- (float)leftWidth;
-- (float)mergePoint;
-- (float)rightWidth;
+- (double)leftWidth;
+- (double)mergePoint;
+- (double)rightWidth;
 - (void)setControlKeys:(id)arg1;
-- (void)setEndRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLeftWidth:(float)arg1;
-- (void)setMergePoint:(float)arg1;
-- (void)setRightWidth:(float)arg1;
+- (void)setEndRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setLeftWidth:(double)arg1;
+- (void)setMergePoint:(double)arg1;
+- (void)setRightWidth:(double)arg1;
 - (void)setSliceSetID:(id)arg1;
-- (void)setStartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setStartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)sliceSetID;
 - (id)slices;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })startRect;
 
 @end

@@ -9,25 +9,25 @@
     unsigned int _useBase64InHeaders : 1;
     unsigned int _canBeUsedForOutgoingMessages : 1;
     NSString *_charsetName;
-    unsigned long _encoding;
+    unsigned int _encoding;
     NSString *_primaryLanguage;
 }
 
-+ (id)allMimeCharsets:(BOOL)arg1;
++ (id)allMimeCharsets:(bool)arg1;
 + (id)allMimeCharsets;
-+ (id)charsetForEncoding:(unsigned long)arg1;
++ (id)charsetForEncoding:(unsigned int)arg1;
 + (id)preferredMimeCharset;
 
 - (void)_setPrimaryLanguage:(id)arg1;
-- (BOOL)canBeUsedForOutgoingMessages;
+- (bool)canBeUsedForOutgoingMessages;
 - (id)charsetName;
-- (BOOL)coversLargeUnicodeSubset;
+- (bool)coversLargeUnicodeSubset;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (unsigned long)encoding;
-- (id)initWithEncoding:(unsigned long)arg1;
+- (unsigned int)encoding;
+- (id)initWithEncoding:(unsigned int)arg1;
 - (id)primaryLanguage;
-- (BOOL)useBase64InHeaders;
+- (bool)useBase64InHeaders;
 
 @end

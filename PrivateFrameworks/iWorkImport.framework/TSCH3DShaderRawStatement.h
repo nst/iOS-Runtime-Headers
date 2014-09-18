@@ -6,24 +6,28 @@
 
 @interface TSCH3DShaderRawStatement : NSObject <TSCH3DShaderStatement> {
     struct TSCH3DShaderType { 
-        unsigned int mValue; 
+        unsigned long long mValue; 
     } mLinkageType;
     NSString *mString;
 }
 
-@property struct TSCH3DShaderType { unsigned int x1; } linkageType;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property struct TSCH3DShaderType { unsigned long long x1; } linkageType;
 @property(readonly) NSString * string;
+@property(readonly) Class superclass;
 
-+ (id)statementWithString:(id)arg1 linkageType:(struct TSCH3DShaderType { unsigned int x1; })arg2;
++ (id)statementWithString:(id)arg1 linkageType:(struct TSCH3DShaderType { unsigned long long x1; })arg2;
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (id)initWithString:(id)arg1 linkageType:(struct TSCH3DShaderType { unsigned int x1; })arg2;
-- (BOOL)isLinked;
-- (struct TSCH3DShaderType { unsigned int x1; })linkageType;
+- (id)initWithString:(id)arg1 linkageType:(struct TSCH3DShaderType { unsigned long long x1; })arg2;
+- (bool)isLinked;
+- (struct TSCH3DShaderType { unsigned long long x1; })linkageType;
 - (id)resolve;
-- (void)setGeneratedForType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
-- (void)setLinkageType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
+- (void)setGeneratedForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
+- (void)setLinkageType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (id)string;
 
 @end

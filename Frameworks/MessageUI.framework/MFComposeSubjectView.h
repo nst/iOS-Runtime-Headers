@@ -2,28 +2,44 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UITextField;
+@class NSString, UIButton, UITextField;
 
 @interface MFComposeSubjectView : MFComposeHeaderView <UITextFieldDelegate> {
     unsigned int _delegateRespondsToTextChange : 1;
+    unsigned int _notifyButtonSelected : 1;
+    unsigned int _showNotifyButton : 1;
+    UIButton *_notifyButton;
     UITextField *_textField;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) UIButton * notifyButton;
+@property(readonly) Class superclass;
 @property(readonly) UITextField * textField;
 
-- (BOOL)_canBecomeFirstResponder;
-- (BOOL)becomeFirstResponder;
+- (bool)_canBecomeFirstResponder;
+- (bool)becomeFirstResponder;
 - (void)dealloc;
-- (BOOL)endEditing:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
+- (id)delegate;
+- (bool)endEditing:(bool)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isNotifyButtonSelected;
+- (bool)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(bool)arg3;
+- (void)layoutSubviews;
+- (id)notifyButton;
+- (void)notifyButtonClicked:(id)arg1;
 - (void)refreshPreferredContentSize;
 - (void)setDelegate:(id)arg1;
+- (void)setNotifyButtonSelected:(bool)arg1;
+- (void)setShowNotifyButton:(bool)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 - (void)textChanged:(id)arg1;
 - (id)textField;
 - (void)textFieldDidBecomeFirstResponder:(id)arg1;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
+- (void)updateNotifyButton;
 
 @end

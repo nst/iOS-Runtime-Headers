@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIAccelerometerDelegate>;
+@class <UIAccelerometerDelegate>, CMMotionManager;
 
 @interface UIAccelerometer : NSObject {
     struct { 
@@ -10,6 +10,7 @@
         unsigned int reserved : 31; 
     } _accelerometerFlags;
     <UIAccelerometerDelegate> *_delegate;
+    CMMotionManager *_motionManager;
     double _updateInterval;
 }
 
@@ -19,6 +20,12 @@
 + (id)sharedAccelerometer;
 
 - (void)_acceleratedInX:(double)arg1 y:(double)arg2 z:(double)arg3 timestamp:(double)arg4;
+- (void)_didSuspend:(id)arg1;
+- (id)_motionManager;
+- (void)_startAccelerometerIfNecessary;
+- (void)_stopAccelerometer;
+- (void)_willResume:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (void)setDelegate:(id)arg1;

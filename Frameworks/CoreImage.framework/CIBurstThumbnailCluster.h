@@ -9,6 +9,7 @@
 @class CIBurstYUVImage, NSMutableArray, NSMutableDictionary;
 
 @interface CIBurstThumbnailCluster : NSObject {
+    struct __IOSurface { } *_fullsizeJpegData;
     NSMutableArray *burstImages;
     id completionBlock;
     CIBurstYUVImage *image;
@@ -17,6 +18,7 @@
 
 @property NSMutableArray * burstImages;
 @property id completionBlock;
+@property struct __IOSurface { }* fullsizeJpegData;
 @property CIBurstYUVImage * image;
 @property NSMutableDictionary * imageProps;
 
@@ -25,6 +27,7 @@
 - (id)completionBlock;
 - (float)computeMergeCost:(id)arg1 :(int*)arg2 :(int)arg3;
 - (void)dealloc;
+- (struct __IOSurface { }*)fullsizeJpegData;
 - (id)image;
 - (id)imageProps;
 - (id)init;
@@ -32,6 +35,7 @@
 - (void)releaseImage;
 - (void)setBurstImages:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
+- (void)setFullsizeJpegData:(struct __IOSurface { }*)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageProps:(id)arg1;
 

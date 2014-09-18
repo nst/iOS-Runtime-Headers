@@ -6,43 +6,43 @@
 
 @interface MFMailInlineTextAttachment : MFMessageTextAttachment {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     unsigned int _hasBeenDownloaded : 1;
     } _cachedImageSize;
-    BOOL _displayableAsIcon;
     NSData *_iconImageData;
     MFMimeTextAttachment *_original;
+    bool_displayableAsIcon;
 }
 
-@property BOOL displayableAsIcon;
+@property bool displayableAsIcon;
 
-+ (unsigned int)precedenceLevel;
++ (unsigned long long)precedenceLevel;
 
 - (void)_cacheImageSizeIfNecessary;
-- (void)_setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setImageDimensions:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned int)approximateSize;
-- (float)constrainedWidth;
+- (double)constrainedWidth;
 - (void)dealloc;
-- (BOOL)displayableAsIcon;
+- (bool)displayableAsIcon;
 - (void)download;
-- (BOOL)hasBeenDownloaded;
-- (struct CGSize { float x1; float x2; })imageDimensions;
+- (bool)hasBeenDownloaded;
+- (struct CGSize { double x1; double x2; })imageDimensions;
 - (id)initWithMimeTextAttachment:(id)arg1 andMessageBody:(id)arg2;
 - (id)initWithWrapper:(id)arg1;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
-- (BOOL)isDisplayableInline;
-- (BOOL)isDisplayableInsidePlugin;
+- (bool)isDisplayableInline;
+- (bool)isDisplayableInsidePlugin;
 - (id)mimeTextAttachment;
-- (BOOL)needsRedownload;
+- (bool)needsRedownload;
 - (id)persistentUniqueIdentifier;
-- (void)setDisplayableAsIcon:(BOOL)arg1;
-- (void)setDisplayableInline:(BOOL)arg1;
-- (void)setDisplayableInsidePlugin:(BOOL)arg1;
+- (void)setDisplayableAsIcon:(bool)arg1;
+- (void)setDisplayableInline:(bool)arg1;
+- (void)setDisplayableInsidePlugin:(bool)arg1;
 - (void)setFileWrapper:(id)arg1;
-- (void)setNeedsRedownload:(BOOL)arg1;
+- (void)setNeedsRedownload:(bool)arg1;
 - (void)setupForComposition;
-- (BOOL)shouldDownloadAttachmentOnDisplay;
+- (bool)shouldDownloadAttachmentOnDisplay;
 - (id)textEncodingGuess;
 
 @end

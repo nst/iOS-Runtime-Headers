@@ -2,59 +2,50 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, NSCache;
+@class NSCache;
 
-@interface MPMediaQueryNowPlayingItem : MPAVItem {
+@interface MPMediaQueryNowPlayingItem : MPStoreAVItem {
     NSCache *_cache;
-    MPMediaItem *_mediaItem;
-    unsigned int _nowPlayingItemOptions;
 }
 
-@property(readonly) MPMediaItem * mediaItem;
-@property(readonly) unsigned int nowPlayingItemOptions;
-
-+ (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
-+ (void)setShouldAlwaysAirplayFromCloud:(BOOL)arg1;
++ (void)applyVolumeNormalizationWithSoundCheckEnabled:(bool)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfo;
 - (id)_chapterTitleForTime:(double)arg1;
-- (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
-- (id)_newTimeMarkersForChapterType:(int)arg1;
-- (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(BOOL)arg2;
+- (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
+- (id)_newTimeMarkersForChapterType:(long long)arg1;
+- (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(bool)arg2;
 - (id)album;
 - (id)albumArtist;
-- (unsigned int)albumTrackCount;
-- (unsigned int)albumTrackNumber;
-- (BOOL)allowsEQ;
+- (unsigned long long)albumTrackCount;
+- (unsigned long long)albumTrackNumber;
+- (bool)allowsEQ;
 - (id)artist;
 - (id)artworkTimeMarkers;
-- (BOOL)canSeedGenius;
+- (bool)canSeedGenius;
 - (id)chapterTimeMarkers;
 - (id)composer;
 - (id)copyrightText;
-- (int)customAVEQPreset;
+- (long long)customAVEQPreset;
 - (id)description;
-- (unsigned int)discCount;
-- (unsigned int)discNumber;
+- (unsigned long long)discCount;
+- (unsigned long long)discNumber;
 - (id)displayableText;
 - (double)durationFromExternalMetadata;
 - (id)genre;
-- (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
-- (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
-- (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
-- (id)initWithMediaItem:(id)arg1 nowPlayingItemOptions:(unsigned int)arg2;
-- (BOOL)isAssetURLValid;
-- (BOOL)isExplicitTrack;
-- (BOOL)isPlaceholderForItem:(id)arg1;
-- (BOOL)isStreamable;
-- (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
-- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
-- (void)loadAssetAndPlayerItem;
+- (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
+- (bool)hasAlternatesForTypes:(unsigned long long)arg1;
+- (id)initWithMediaItem:(id)arg1 allowCloudDialogue:(bool)arg2;
+- (bool)isAssetURLValid;
+- (bool)isCloudItem;
+- (bool)isExplicitTrack;
+- (bool)isPlaceholderForItem:(id)arg1;
+- (bool)isStreamable;
+- (bool)isSupportedDefaultPlaybackSpeed:(unsigned long long)arg1;
+- (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)mainTitle;
-- (id)mediaItem;
 - (void)notePlaybackFinishedByHittingEnd;
-- (unsigned int)nowPlayingItemOptions;
 - (unsigned long long)persistentID;
 - (double)playbackCheckpointCurrentTime;
 - (void)reevaluateType;
@@ -65,12 +56,11 @@
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setRating:(float)arg1;
 - (long long)storeID;
-- (BOOL)supportsAddStation;
-- (BOOL)supportsRewindAndFastForward15Seconds;
+- (bool)supportsRewindAndFastForward15Seconds;
 - (id)titlesForTime:(double)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)urlTimeMarkers;
-- (BOOL)useEmbeddedChapterData;
+- (bool)useEmbeddedChapterData;
 - (float)userRating;
 
 @end

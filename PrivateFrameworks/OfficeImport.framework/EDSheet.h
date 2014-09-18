@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDColorReference, EDHeaderFooter, EDPageSetup, EDProcessors, EDString, EDWarnings, EDWorkbook, ESDContainer, NSMutableArray, TSUPointerKeyDictionary;
+@class EDColorReference, EDHeaderFooter, EDPageSetup, EDProcessors, EDString, EDWarnings, EDWorkbook, ESDContainer, NSMutableArray, OITSUPointerKeyDictionary;
 
 @interface EDSheet : OCDDelayedNode {
     boolmDisplayFormulas;
     boolmDisplayGridlines;
     boolmHidden;
     boolmIsDialogSheet;
-    TSUPointerKeyDictionary *mCommentMap;
+    OITSUPointerKeyDictionary *mCommentMap;
     EDColorReference *mDefaultGridlineColorReference;
     NSMutableArray *mDrawables;
     ESDContainer *mEscherDrawing;
@@ -17,7 +17,7 @@
     EDString *mName;
     EDPageSetup *mPageSetup;
     EDProcessors *mProcessors;
-    TSUPointerKeyDictionary *mTextBoxMap;
+    OITSUPointerKeyDictionary *mTextBoxMap;
     EDWarnings *mWarnings;
     EDWorkbook *mWorkbook;
 }
@@ -28,12 +28,13 @@
 
 - (void)addDrawable:(id)arg1;
 - (void)applyProcessors;
+- (unsigned long long)commentCount;
 - (void)dealloc;
 - (id)defaultGridlineColor;
 - (id)defaultGridlineColorReference;
 - (void)doneWithNonRowContent;
-- (id)drawableAtIndex:(unsigned int)arg1;
-- (unsigned int)drawableCount;
+- (id)drawableAtIndex:(unsigned long long)arg1;
+- (unsigned long long)drawableCount;
 - (id)drawableEnumerator;
 - (id)drawables;
 - (id)edCommentForShape:(id)arg1;
@@ -49,7 +50,7 @@
 - (id)pageSetup;
 - (id)processors;
 - (void)reduceMemoryIfPossible;
-- (void)removeDrawableAtIndex:(unsigned int)arg1;
+- (void)removeDrawableAtIndex:(unsigned long long)arg1;
 - (void)setDefaultGridlineColor:(id)arg1;
 - (void)setDefaultGridlineColorReference:(id)arg1;
 - (void)setDisplayFormulas:(bool)arg1;

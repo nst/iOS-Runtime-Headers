@@ -16,15 +16,15 @@
     PCPersistentTimer *pcpTimer;
     NSDate *startDate;
     id theCallback;
-    int timeZoneSecondsFromGMT;
+    long long timeZoneSecondsFromGMT;
 }
 
 - (void).cxx_destruct;
 - (void)checkTimeZone;
 - (void)generateFireDates;
 - (id)init:(id)arg1 withRunLoop:(id)arg2 withCallback:(id)arg3;
-- (void)logAll:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
-- (void)logLight:(struct __aslclient { }*)arg1 withMsg:(struct __aslmsg { }*)arg2 withLevel:(int)arg3;
+- (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
+- (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)programTimer;
 - (void)restore:(id)arg1;
 - (void)save:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableData, NSTimer, PTPTCPIPTransport;
+@class NSMutableData, NSObject<OS_dispatch_semaphore>, NSTimer, PTPTCPIPTransport;
 
 @interface PTPTCPIPConnection : NSObject {
     unsigned int _bytesReceived;
@@ -10,11 +10,11 @@
     struct __CFReadStream { } *_inStream;
     NSTimer *_inactivityTimer;
     struct __CFWriteStream { } *_outStream;
-    struct dispatch_semaphore_s { } *_receiveBufferSemaphore;
+    NSObject<OS_dispatch_semaphore> *_receiveBufferSemaphore;
     NSTimer *_receiveTimer;
     NSMutableData *_recieveBuffer;
     NSMutableData *_transmitBuffer;
-    struct dispatch_semaphore_s { } *_transmitBufferSemaphore;
+    NSObject<OS_dispatch_semaphore> *_transmitBufferSemaphore;
     NSTimer *_transmitTimer;
     PTPTCPIPTransport *_transport;
 }
@@ -23,12 +23,12 @@
 - (void)dealloc;
 - (void)handleCanAcceptBytes;
 - (void)handleEndEncountered;
-- (void)handleErrorOccurred:(struct { int x1; int x2; })arg1;
+- (void)handleErrorOccurred:(struct { long long x1; int x2; })arg1;
 - (void)handleHasBytesAvailable;
 - (void)inactivityTimerCallBack:(id)arg1;
 - (id)initWithNativeSocket:(int)arg1 transport:(id)arg2;
-- (id)initWithSocketToHost:(id)arg1 port:(unsigned long)arg2 transport:(id)arg3;
-- (BOOL)open;
-- (BOOL)writeData:(id)arg1;
+- (id)initWithSocketToHost:(id)arg1 port:(unsigned int)arg2 transport:(id)arg3;
+- (bool)open;
+- (bool)writeData:(id)arg1;
 
 @end

@@ -2,12 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class NSString;
+
 @interface TNPersistentChartMediator : TSCHPersistentChartMediator <TSKDocumentObject, TSCECalculationEngineRegistration> {
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 - (id)initFromUnarchiver:(id)arg1;
 - (id)objectToArchiveInDependencyTracker;
-- (BOOL)registerLast;
+- (bool)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)unregisterFromCalculationEngine:(id)arg1;

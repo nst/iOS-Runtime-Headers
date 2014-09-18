@@ -25,6 +25,8 @@
 
 @property(readonly) Class ABNewPersonViewController;
 @property(readonly) Class ABPeoplePickerNavigationController;
+@property(readonly) NSString * AVLayerVideoGravityResizeAspect;
+@property(readonly) NSString * AVLayerVideoGravityResizeAspectFill;
 @property(readonly) Class AVPlayer;
 @property(readonly) Class AVPlayerItem;
 @property(readonly) NSString * AVPlayerItemDidPlayToEndTimeNotification;
@@ -60,6 +62,14 @@
 @property(readonly) Class PKAddPassesViewController;
 @property(readonly) Class PKPass;
 @property(readonly) Class PKPassLibrary;
+@property(readonly) Class PKPayment;
+@property(readonly) Class PKPaymentAuthorizationViewController;
+@property(readonly) NSString * PKPaymentNetworkAmex;
+@property(readonly) NSString * PKPaymentNetworkChinaUnionPay;
+@property(readonly) NSString * PKPaymentNetworkMasterCard;
+@property(readonly) NSString * PKPaymentNetworkVisa;
+@property(readonly) Class PKPaymentRequest;
+@property(readonly) Class PKPaymentSummaryItem;
 @property(readonly) Class PLStaticWallpaperImageViewController;
 @property(readonly) NSString * SKStoreProductParameterITunesItemIdentifier;
 @property(readonly) NSString * SKStoreProductParameterQToken;
@@ -75,7 +85,7 @@
 @property(readonly) int (* VTImageRotationSessionInvalidate;
 @property(readonly) int (* VTImageRotationSessionRelease;
 @property(readonly) int (* VTImageRotationSessionTransferImage;
-@property(readonly) Class WBUFormDataController;
+@property(readonly) Class WBUFormDataControllerWK1;
 @property(readonly) NSMutableDictionary * boundSymbols;
 @property(readonly) struct __CFString { }* kIOSurfaceAllocSize;
 @property(readonly) struct __CFString { }* kIOSurfaceBytesPerElement;
@@ -111,6 +121,8 @@
 - (int (*)())VTImageRotationSessionTransferImage;
 - (Class)ABNewPersonViewController;
 - (Class)ABPeoplePickerNavigationController;
+- (id)AVLayerVideoGravityResizeAspect;
+- (id)AVLayerVideoGravityResizeAspectFill;
 - (Class)AVPlayer;
 - (Class)AVPlayerItem;
 - (id)AVPlayerItemDidPlayToEndTimeNotification;
@@ -134,6 +146,14 @@
 - (Class)PKAddPassesViewController;
 - (Class)PKPass;
 - (Class)PKPassLibrary;
+- (Class)PKPayment;
+- (Class)PKPaymentAuthorizationViewController;
+- (id)PKPaymentNetworkAmex;
+- (id)PKPaymentNetworkChinaUnionPay;
+- (id)PKPaymentNetworkMasterCard;
+- (id)PKPaymentNetworkVisa;
+- (Class)PKPaymentRequest;
+- (Class)PKPaymentSummaryItem;
 - (Class)PLStaticWallpaperImageViewController;
 - (id)SKStoreProductParameterITunesItemIdentifier;
 - (id)SKStoreProductParameterQToken;
@@ -145,7 +165,7 @@
 - (Class)TLToneManager;
 - (id)UIMoviePlayerControllerDidEnterFullscreenNotification;
 - (id)UIMoviePlayerControllerDidExitFullscreenNotification;
-- (Class)WBUFormDataController;
+- (Class)WBUFormDataControllerWK1;
 - (Class)_classWithName:(id)arg1 inFrameworkAtPath:(id)arg2;
 - (void)_loadFrameworkIfNeeded:(id)arg1;
 - (void*)_pointerToSymbolWithName:(id)arg1 inFrameworkAtPath:(id)arg2;

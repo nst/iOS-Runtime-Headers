@@ -14,6 +14,7 @@
 + (id)name;
 + (id)timeZoneWithSystemTimeZoneName:(id)arg1;
 
+- (id)_previousDSTTransitionForDate:(id)arg1 timezone:(id)arg2;
 - (id)computeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (void)dealloc;
 - (id)getNSTimeZone:(id)arg1;
@@ -21,7 +22,7 @@
 - (id)initWithSystemTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
 - (id)initWithSystemTimeZone:(id)arg1;
 - (id)initWithTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
-- (BOOL)isEqualToNSTimeZone:(id)arg1 forDate:(id)arg2;
+- (bool)isEqualToNSTimeZone:(id)arg1 forDate:(id)arg2;
 - (void)setTzid:(id)arg1;
 - (id)systemTimeZoneForDate:(id)arg1;
 - (id)tzid;

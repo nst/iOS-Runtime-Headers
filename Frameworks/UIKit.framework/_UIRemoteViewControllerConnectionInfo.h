@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, XPCMachSendRight, _UIHostedWindowHostingHandle, _UIViewServiceInterface;
+@class NSArray, _UIHostedWindowHostingHandle, _UIViewServiceInterface, _UIViewServiceXPCMachSendRight;
 
 @interface _UIRemoteViewControllerConnectionInfo : NSObject {
     _UIHostedWindowHostingHandle *_hostedWindowHostingHandle;
     _UIViewServiceInterface *_interface;
-    int _preferredStatusBarStyle;
-    BOOL _prefersStatusBarHidden;
-    XPCMachSendRight *_serviceAccessibilityServerPortWrapper;
+    long long _preferredStatusBarStyle;
+    _UIHostedWindowHostingHandle *_remoteKeyboardsWindowHostingHandle;
+    _UIViewServiceXPCMachSendRight *_serviceAccessibilityServerPortWrapper;
     id _serviceViewControllerControlMessageProxy;
     id _serviceViewControllerProxy;
     NSArray *_serviceViewControllerSupportedInterfaceOrientations;
@@ -17,13 +17,15 @@
     _UIHostedWindowHostingHandle *_textEffectsWindowAboveStatusBarHostingHandle;
     _UIHostedWindowHostingHandle *_textEffectsWindowHostingHandle;
     id _viewControllerOperatorProxy;
+    bool_prefersStatusBarHidden;
 }
 
 @property(retain) _UIHostedWindowHostingHandle * hostedWindowHostingHandle;
 @property(retain) _UIViewServiceInterface * interface;
-@property int preferredStatusBarStyle;
-@property BOOL prefersStatusBarHidden;
-@property(retain) XPCMachSendRight * serviceAccessibilityServerPortWrapper;
+@property long long preferredStatusBarStyle;
+@property bool prefersStatusBarHidden;
+@property(retain) _UIHostedWindowHostingHandle * remoteKeyboardsWindowHostingHandle;
+@property(retain) _UIViewServiceXPCMachSendRight * serviceAccessibilityServerPortWrapper;
 @property(retain) id serviceViewControllerControlMessageProxy;
 @property(retain) id serviceViewControllerProxy;
 @property(retain) NSArray * serviceViewControllerSupportedInterfaceOrientations;
@@ -35,16 +37,18 @@
 - (void)dealloc;
 - (id)hostedWindowHostingHandle;
 - (id)interface;
-- (int)preferredStatusBarStyle;
-- (BOOL)prefersStatusBarHidden;
+- (long long)preferredStatusBarStyle;
+- (bool)prefersStatusBarHidden;
+- (id)remoteKeyboardsWindowHostingHandle;
 - (id)serviceAccessibilityServerPortWrapper;
 - (id)serviceViewControllerControlMessageProxy;
 - (id)serviceViewControllerProxy;
 - (id)serviceViewControllerSupportedInterfaceOrientations;
 - (void)setHostedWindowHostingHandle:(id)arg1;
 - (void)setInterface:(id)arg1;
-- (void)setPreferredStatusBarStyle:(int)arg1;
-- (void)setPrefersStatusBarHidden:(BOOL)arg1;
+- (void)setPreferredStatusBarStyle:(long long)arg1;
+- (void)setPrefersStatusBarHidden:(bool)arg1;
+- (void)setRemoteKeyboardsWindowHostingHandle:(id)arg1;
 - (void)setServiceAccessibilityServerPortWrapper:(id)arg1;
 - (void)setServiceViewControllerControlMessageProxy:(id)arg1;
 - (void)setServiceViewControllerProxy:(id)arg1;

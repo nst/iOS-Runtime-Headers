@@ -5,11 +5,11 @@
 @class NSArray;
 
 @interface TPArchivedLayoutState : TSPObject <TPArchivedLayoutStateProtocol> {
-    unsigned int _documentPageIndex;
-    unsigned int _lastPageCount;
+    unsigned long long _documentPageIndex;
+    unsigned long long _lastPageCount;
     NSArray *_sectionHints;
-    unsigned int _sectionIndex;
-    unsigned int _sectionPageIndex;
+    unsigned long long _sectionIndex;
+    unsigned long long _sectionPageIndex;
 }
 
 - (void)captureLayoutStateWithProvider:(id)arg1;

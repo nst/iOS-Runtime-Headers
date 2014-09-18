@@ -7,25 +7,26 @@
 @interface NSFileWritingWritingClaim : NSFileAccessClaim {
     NSFileAccessNode *_location1;
     NSFileAccessNode *_location2;
-    unsigned int _options1;
-    unsigned int _options2;
+    unsigned long long _options1;
+    unsigned long long _options2;
     NSURL *_url1;
-    BOOL _url1DidChange;
     NSURL *_url2;
-    BOOL _url2DidChange;
+    bool_url1DidChange;
+    bool_url2DidChange;
 }
 
-- (BOOL)blocksClaim:(id)arg1;
+- (bool)blocksClaim:(id)arg1;
 - (void)dealloc;
 - (void)devalueSelf;
-- (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
+- (bool)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(bool)arg2;
 - (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
 - (void)granted;
 - (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
-- (id)initWithPurposeID:(id)arg1 url:(id)arg2 options:(unsigned int)arg3 url:(id)arg4 options:(unsigned int)arg5 claimer:(id)arg6;
+- (id)initWithPurposeID:(id)arg1 url:(id)arg2 options:(unsigned long long)arg3 url:(id)arg4 options:(unsigned long long)arg5 claimer:(id)arg6;
 - (void)invokeClaimer;
-- (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
+- (bool)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
+- (void)resolveURLsThenContinueInvokingClaimer:(id)arg1;
 
 @end

@@ -5,34 +5,34 @@
 @class NSString;
 
 @interface PDHeadersFooters : NSObject {
+    boolmHasDateTime;
+    boolmHasFooter;
+    boolmHasHeader;
+    boolmHasNowDateTime;
+    boolmHasSlideNumber;
+    boolmHasUserDateTime;
     int mDateTimeFormat;
     NSString *mFooter;
-    BOOL mHasDateTime;
-    BOOL mHasFooter;
-    BOOL mHasHeader;
-    BOOL mHasNowDateTime;
-    BOOL mHasSlideNumber;
-    BOOL mHasUserDateTime;
     NSString *mHeader;
     NSString *mUserDateTime;
 }
 
 - (void)dealloc;
 - (id)footer;
-- (BOOL)hasDateTime;
-- (BOOL)hasFooter;
-- (BOOL)hasHeader;
-- (BOOL)hasNowDateTime;
-- (BOOL)hasSlideNumber;
-- (BOOL)hasUserDateTime;
+- (bool)hasDateTime;
+- (bool)hasFooter;
+- (bool)hasHeader;
+- (bool)hasNowDateTime;
+- (bool)hasSlideNumber;
+- (bool)hasUserDateTime;
 - (id)header;
 - (void)setFooter:(id)arg1;
-- (void)setHasDateTime:(BOOL)arg1;
-- (void)setHasFooter:(BOOL)arg1;
-- (void)setHasHeader:(BOOL)arg1;
-- (void)setHasNowDateTime:(BOOL)arg1;
-- (void)setHasSlideNumber:(BOOL)arg1;
-- (void)setHasUserDateTime:(BOOL)arg1;
+- (void)setHasDateTime:(bool)arg1;
+- (void)setHasFooter:(bool)arg1;
+- (void)setHasHeader:(bool)arg1;
+- (void)setHasNowDateTime:(bool)arg1;
+- (void)setHasSlideNumber:(bool)arg1;
+- (void)setHasUserDateTime:(bool)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setUserDateTime:(id)arg1;
 - (id)userDateTime;

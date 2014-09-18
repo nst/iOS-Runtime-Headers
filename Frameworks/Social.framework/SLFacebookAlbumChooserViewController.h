@@ -17,6 +17,9 @@
 @property <SLFacebookAlbumChooserViewControllerDelegate> * delegate;
 @property(retain) UIButton * flipBackButton;
 
++ (id)_blankSurrogateAlbumImage;
++ (id)_squareImageFromAlbumImage:(id)arg1;
+
 - (void).cxx_destruct;
 - (void)albumManager:(id)arg1 didFailAlbumRefreshWithError:(id)arg2;
 - (void)albumManager:(id)arg1 didFailLoadingCoverImageForAlbum:(id)arg2 withError:(id)arg3;
@@ -24,7 +27,6 @@
 - (void)albumManager:(id)arg1 didRefreshAlbums:(id)arg2;
 - (id)albumManager;
 - (id)albums;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
 - (id)flipBackButton;
@@ -36,10 +38,10 @@
 - (void)setAlbums:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFlipBackButton:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLoad;
 - (void)viewDidUnload;

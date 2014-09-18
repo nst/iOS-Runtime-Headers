@@ -6,30 +6,35 @@
    See Warning(s) below.
  */
 
-@class MKLocationManagerSingleUpdater;
+@class MKLocationManager, MKLocationManagerSingleUpdater, NSString;
 
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
-    BOOL _active;
     double _desiredAccuracy;
     id _handler;
+    MKLocationManager *_locationManager;
     MKLocationManagerSingleUpdater *_selfReference;
+    bool_active;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
 @property(copy) id handler;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (id)handler;
-- (id)initWithDesiredAccuracy:(double)arg1 handler:(id)arg2;
-- (id)initWithHandler:(id)arg1;
+- (id)initWithLocationManager:(id)arg1 desiredAccuracy:(double)arg2 handler:(id)arg3;
+- (id)initWithLocationManager:(id)arg1 handler:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)setHandler:(id)arg1;
 - (void)start;

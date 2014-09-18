@@ -2,19 +2,26 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBServerConnection;
+@class NSString, NSXPCConnection;
 
-@interface BBServerConduit : NSObject <XPCProxyTarget> {
-    BBServerConnection *_connection;
+@interface BBServerConduit : NSObject <BBServerConduitClientInterface> {
+    NSXPCConnection *_connection;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
++ (id)clientInterface;
++ (id)serverInterface;
 + (id)sharedConduit;
 
+- (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)sendMessageToDataProviderSectionID:(id)arg1 name:(id)arg2 userInfo:(id)arg3;
 - (void)weeAppWithBundleID:(id)arg1 getHiddenFromUser:(id)arg2;
-- (void)weeAppWithBundleID:(id)arg1 setHiddenFromUser:(BOOL)arg2;
+- (void)weeAppWithBundleID:(id)arg1 setHiddenFromUser:(bool)arg2;
 
 @end

@@ -2,45 +2,50 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class ACAccount, ACAccountStore, NSArray, NSString, SLSheetAction, UIImageView, VimeoDetailsController;
+@class ACAccount, ACAccountStore, NSArray, NSString, SLComposeSheetConfigurationItem, UIImageView, VimeoDetailsController, VimeoUploadSession;
 
 @interface VimeoComposeViewController : SLComposeServiceViewController <VimeoComposeOptionViewDelegate> {
     ACAccountStore *_accountStore;
-    NSString *_description;
-    SLSheetAction *_detailsAction;
+    SLComposeSheetConfigurationItem *_detailsConfigurationItem;
     VimeoDetailsController *_detailsController;
     UIImageView *_logoView;
-    int _privacySettings;
+    NSString *_postDescription;
+    long long _privacySettings;
+    VimeoUploadSession *_session;
     NSArray *_tags;
-    int _videoSize;
+    long long _videoSize;
     ACAccount *_vimeoAccount;
 }
 
 @property(retain) ACAccountStore * accountStore;
-@property(retain) NSString * description;
-@property int privacySettings;
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(retain) NSString * postDescription;
+@property long long privacySettings;
+@property(readonly) Class superclass;
 @property(retain) NSArray * tags;
-@property int videoSize;
+@property long long videoSize;
 @property(retain) ACAccount * vimeoAccount;
 
+- (void).cxx_destruct;
 - (id)accountStore;
-- (void)dealloc;
-- (id)description;
+- (id)configurationItems;
+- (void)didSelectPost;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (int)privacySettings;
-- (void)send;
+- (id)postDescription;
+- (long long)privacySettings;
 - (void)setAccountStore:(id)arg1;
-- (void)setDescription:(id)arg1;
-- (void)setPrivacySettings:(int)arg1;
+- (void)setPostDescription:(id)arg1;
+- (void)setPrivacySettings:(long long)arg1;
 - (void)setTags:(id)arg1;
-- (void)setVideoSize:(int)arg1;
+- (void)setVideoSize:(long long)arg1;
 - (void)setVimeoAccount:(id)arg1;
-- (id)sheetActions;
 - (id)tags;
-- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
-- (BOOL)validateText:(id)arg1;
-- (int)videoSize;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
+- (bool)validateText:(id)arg1;
+- (long long)videoSize;
+- (void)viewDidAppear:(bool)arg1;
 - (id)vimeoAccount;
 - (void)vimeoComposeOptionsViewDidFinish:(id)arg1;
 

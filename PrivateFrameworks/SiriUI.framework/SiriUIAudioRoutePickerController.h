@@ -2,42 +2,47 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUIAudioRoutePickerControllerDelegate>, NSArray, NSString, UIActionSheet, UIViewController;
+@class <SiriUIAudioRoutePickerControllerDelegate>, NSString, SiriRoutePickerAlertController, UIActionSheet, UIWindow;
 
 @interface SiriUIAudioRoutePickerController : NSObject <UIActionSheetDelegate> {
     NSString *_audioCategory;
     <SiriUIAudioRoutePickerControllerDelegate> *_delegate;
-    NSArray *_displayedRoutes;
-    BOOL _hasRoutesToPick;
-    UIActionSheet *_pickerSheet;
-    UIViewController *_pickerViewController;
-    BOOL _shouldRedisplayPicker;
+    UIActionSheet *_pickerActionSheet;
+    SiriRoutePickerAlertController *_pickerAlertController;
+    UIWindow *_window;
+    bool_hasRoutesToPick;
+    bool_useActionSheet;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <SiriUIAudioRoutePickerControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_cleanupPickerSheet;
-- (BOOL)_hasPickableRouteOtherThanBuiltIn;
-- (BOOL)_overrideIsPicked;
+- (void)_dismissAlertController:(bool)arg1;
+- (bool)_hasPickableRouteOtherThanBuiltIn;
+- (id)_nameForRouteInfo:(id)arg1 overridePicked:(bool)arg2 isSelected:(bool*)arg3;
+- (bool)_overrideIsPicked;
 - (id)_pickableRoutes;
 - (void)_pickableRoutesChanged:(id)arg1;
-- (id)_pickerSheet;
+- (void)_removeWindow;
 - (void)_routeChanged:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (BOOL)bluetoothIsPicked;
+- (void)_selectRouteWithInfo:(id)arg1;
+- (void)_showActionSheetFromView:(id)arg1 animated:(bool)arg2;
+- (void)_showAlertControllerFromViewController:(id)arg1 animated:(bool)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (bool)bluetoothIsPicked;
+- (void)cancelPickerAnimated:(bool)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)dismissPickerAnimated:(BOOL)arg1;
-- (BOOL)hasRoutesToPick;
+- (bool)hasRoutesToPick;
 - (id)initWithCategory:(id)arg1;
-- (BOOL)pickerIsShowing;
+- (bool)isShowingPicker;
 - (void)setDelegate:(id)arg1;
-- (void)showPickerFromView:(id)arg1 orientation:(int)arg2 animated:(BOOL)arg3;
+- (void)showPickerFromViewController:(id)arg1 animated:(bool)arg2;
 - (void)startUpdatingRoutes;
 - (void)stopUpdatingRoutes;
-- (void)willPresentActionSheet:(id)arg1;
 
 @end

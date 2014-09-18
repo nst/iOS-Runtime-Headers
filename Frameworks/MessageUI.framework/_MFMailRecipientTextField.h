@@ -2,12 +2,18 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface _MFMailRecipientTextField : MFComposeTextField {
+@interface _MFMailRecipientTextField : UITextField {
+    bool_isShowingDictationPlaceholder;
 }
+
+@property(readonly) bool isShowingDictationPlaceholder;
 
 - (void)_handleKeyUIEvent:(id)arg1;
 - (id)_previousKeyResponder;
 - (id)customOverlayContainer;
+- (id)insertDictationResultPlaceholder;
+- (bool)isShowingDictationPlaceholder;
 - (void)paste:(id)arg1;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(bool)arg2;
 
 @end

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
+@class NSString, TSDGLDataBuffer, TSDGLMotionBlurEffect, TSDGLShader;
 
-@interface KNTransitionColorPlanes : KNAnimationEffect <KNFrameAnimator, KNAnimationPlugin> {
-    unsigned int _colorCount;
+@interface KNTransitionColorPlanes : KNAnimationEffect <KNFrameAnimator, KNAnimationPlugin, KNAnimationPluginArchiving> {
+    unsigned long long _colorCount;
     TSDGLDataBuffer *_colorDataBuffer;
     TSDGLShader *_colorShader;
     TSDGLMotionBlurEffect *_motionBlurEffect;
@@ -13,22 +13,29 @@
     TSDGLShader *_velocityShader;
 }
 
+@property(copy,readonly) NSString * debugDescription;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (void)animationDidEndWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
-- (void)p_drawWithContext:(id)arg1 isVelocity:(BOOL)arg2;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })p_mvpMatrixWithTexture:(id)arg1 direction:(unsigned int)arg2 percent:(double)arg3 colorIndex:(unsigned int)arg4;
+- (void)p_drawWithContext:(id)arg1 isVelocity:(bool)arg2;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })p_mvpMatrixWithTexture:(id)arg1 direction:(unsigned long long)arg2 percent:(double)arg3 colorIndex:(unsigned long long)arg4;
 - (void)p_teardown;
 - (void)renderFrameWithContext:(id)arg1;
 

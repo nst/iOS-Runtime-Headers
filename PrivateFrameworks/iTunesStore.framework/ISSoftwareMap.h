@@ -12,12 +12,14 @@
 
 + (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
 + (void)_startWatchingInstallationNotifications;
-+ (id)applicationForBundleIdentifier:(id)arg1 applicationType:(struct __CFString { }*)arg2;
++ (id)applicationForBundleIdentifier:(id)arg1 applicationType:(id)arg2;
 + (id)applicationForBundleIdentifier:(id)arg1;
++ (id)containerPathForApp:(id)arg1 homeDirectory:(id)arg2 systemMetadataDirectory:(id)arg3;
 + (id)copySoftwareUpdatesPropertyListWithApplications:(id)arg1 updatesContext:(id)arg2;
 + (id)currentMap;
-+ (BOOL)currentMapIsValid;
-+ (BOOL)haveApplicationsOfType:(struct __CFString { }*)arg1;
++ (bool)currentMapIsValid;
++ (void)enumerateApplicationsForProxies:(id)arg1 usingBlock:(id)arg2;
++ (bool)haveApplicationsOfType:(id)arg1;
 + (void)invalidateCurrentMap;
 + (id)loadedMap;
 + (void)setCurrentMap:(id)arg1;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OCCancel, TSUTemporaryDirectory;
+@class OCCancel, OITSUTemporaryDirectory;
 
 @interface OCMapper : NSObject {
     OCCancel *mCancel;
-    TSUTemporaryDirectory *mTemporaryDirectoryObject;
+    OITSUTemporaryDirectory *mTemporaryDirectoryObject;
 }
 
 + (id)mapperForCurrentThread;
@@ -14,7 +14,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (void)quit;
 - (void)setup;
 - (void)teardown;

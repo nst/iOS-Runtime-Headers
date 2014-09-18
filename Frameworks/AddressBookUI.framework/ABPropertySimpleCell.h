@@ -2,77 +2,20 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyAction, ABTransportButton, UIButton, UIColor, UIImageView, UITextField, UIView;
+@class UILabel;
 
-@interface ABPropertySimpleCell : ABPropertyCell <ABPickerControllerDelegate, UITextFieldDelegate> {
-    UIColor *_actionsColor;
-    BOOL _allowsActions;
-    UIImageView *_chevron;
-    UIButton *_labelButton;
-    float _labelValueSpacing;
-    UIImageView *_star;
-    UITextField *_textField;
-    ABPropertyAction *_transportAction1;
-    ABPropertyAction *_transportAction2;
-    ABTransportButton *_transportIcon1;
-    ABTransportButton *_transportIcon2;
-    UIView *_vseparator;
+@interface ABPropertySimpleCell : ABPropertyCell {
+    UILabel *_labelLabel;
+    UILabel *_valueLabel;
 }
 
-@property(retain) UIColor * actionsColor;
-@property BOOL allowsActions;
-@property(retain) UIImageView * chevron;
-@property(readonly) UIButton * labelButton;
-@property float labelValueSpacing;
-@property(retain) UIImageView * star;
-@property(retain) UITextField * textField;
-@property(retain) ABPropertyAction * transportAction1;
-@property(retain) ABPropertyAction * transportAction2;
-@property(retain) ABTransportButton * transportIcon1;
-@property(retain) ABTransportButton * transportIcon2;
-@property(retain) UIView * vseparator;
+@property(readonly) UILabel * labelLabel;
+@property(readonly) UILabel * valueLabel;
 
-- (id)_constraintsToOverlapView:(id)arg1 onView:(id)arg2;
-- (void)_setupEditingViews;
-- (void)_updateView;
-- (id)actionsColor;
-- (BOOL)allowsActions;
-- (id)chevron;
-- (id)contentViewConstraints;
-- (id)contentViewEditingConstraints;
 - (void)dealloc;
-- (id)firstResponderItem;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)labelButton;
-- (void)labelButtonClicked:(id)arg1;
-- (float)labelValueSpacing;
-- (void)picker:(id)arg1 didPickItem:(id)arg2;
-- (void)pickerDidCancel:(id)arg1;
-- (void)prepareForReuse;
-- (void)setActionsColor:(id)arg1;
-- (void)setAllowsActions:(BOOL)arg1;
-- (void)setChevron:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setLabelTextAttributes:(id)arg1;
-- (void)setLabelValueSpacing:(float)arg1;
-- (void)setStar:(id)arg1;
-- (void)setTextField:(id)arg1;
-- (void)setTransportAction1:(id)arg1;
-- (void)setTransportAction2:(id)arg1;
-- (void)setTransportIcon1:(id)arg1;
-- (void)setTransportIcon2:(id)arg1;
-- (void)setValueTextAttributes:(id)arg1;
-- (void)setVseparator:(id)arg1;
-- (id)star;
-- (id)textField;
-- (void)textFieldChanged:(id)arg1;
-- (id)transportAction1;
-- (id)transportAction2;
-- (void)transportButtonClicked:(id)arg1;
-- (id)transportIcon1;
-- (id)transportIcon2;
-- (void)updateTransportButtons;
-- (void)updateWithPropertyItem:(id)arg1;
-- (id)vseparator;
+- (id)labelLabel;
+- (id)labelView;
+- (id)valueLabel;
+- (id)valueView;
 
 @end

@@ -14,7 +14,7 @@
 @property(retain) NSArray * itemIDsToUnlike;
 @property(retain) CKShareID * shareID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

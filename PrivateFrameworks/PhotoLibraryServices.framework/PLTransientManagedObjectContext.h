@@ -5,7 +5,7 @@
 @interface PLTransientManagedObjectContext : PLManagedObjectContext {
 }
 
-+ (bool)canMergeRemoteChanges;
-+ (bool)useModelMigratorToCreateDatabase;
++ (BOOL)canMergeRemoteChanges;
++ (BOOL)useModelMigratorToCreateDatabase;
 
 @end

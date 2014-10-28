@@ -9,8 +9,8 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface FudInternalConnection : NSObject <FudConnection> {
-    booldidStop;
     NSString *clientIdentifier;
+    BOOL didStop;
     NSObject<OS_dispatch_queue> *handlerQueue;
     id messageHandler;
     NSMutableDictionary *pendingRequests;
@@ -18,7 +18,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)dealloc;

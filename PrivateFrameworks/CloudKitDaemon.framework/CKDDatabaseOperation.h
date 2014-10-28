@@ -3,15 +3,15 @@
  */
 
 @interface CKDDatabaseOperation : CKDOperation {
-    long long _databaseScope;
+    int _databaseScope;
 }
 
-@property long long databaseScope;
+@property int databaseScope;
 
 - (void)configureRequest:(id)arg1;
-- (long long)databaseScope;
+- (int)databaseScope;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (id)newChildOperationInfoOfClass:(Class)arg1;
-- (void)setDatabaseScope:(long long)arg1;
+- (void)setDatabaseScope:(int)arg1;
 
 @end

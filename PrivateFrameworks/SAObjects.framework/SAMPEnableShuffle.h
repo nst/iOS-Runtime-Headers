@@ -5,15 +5,15 @@
 @interface SAMPEnableShuffle : SADomainCommand {
 }
 
-@property bool enable;
+@property BOOL enable;
 
 + (id)enableShuffle;
 + (id)enableShuffleWithDictionary:(id)arg1 context:(id)arg2;
 
-- (bool)enable;
+- (BOOL)enable;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
-- (void)setEnable:(bool)arg1;
+- (BOOL)requiresResponse;
+- (void)setEnable:(BOOL)arg1;
 
 @end

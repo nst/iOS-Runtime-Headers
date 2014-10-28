@@ -11,7 +11,7 @@
 @property(retain) NSDictionary * restrictions;
 
 + (id)invalidDomainPatternErrorWithPattern:(id)arg1;
-+ (bool)isPatternValid:(id)arg1 outError:(id*)arg2;
++ (BOOL)isPatternValid:(id)arg1 outError:(id*)arg2;
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;

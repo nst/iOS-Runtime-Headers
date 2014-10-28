@@ -16,22 +16,22 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyChangesForAliasWithRank:(id)arg1 container:(id)arg2 li:(id)arg3 si:(id)arg4 diffs:(unsigned long long)arg5;
 - (void)_stageCreationOfDirectory:(id)arg1;
-- (void)applyAdditionsForItemID:(id)arg1 inContainer:(id)arg2;
+- (long long)applyAdditionsForItemID:(id)arg1 inContainer:(id)arg2;
 - (void)applyChangesForItem:(id)arg1 rank:(id)arg2 inContainer:(id)arg3;
 - (void)close;
 - (void)fixupItemsAtStartup;
 - (id)initWithAccountSession:(id)arg1;
 - (void)resume;
 - (id)serialQueue;
-- (void)stageCreationOfFault:(id)arg1 serverItem:(id)arg2 forCreation:(bool)arg3;
+- (void)stageCreationOfFault:(id)arg1 serverItem:(id)arg2 forCreation:(BOOL)arg3;
 - (void)suspend;
-- (void)writeUnderCoordinationFromURL:(id)arg1 toURL:(id)arg2 canDelete:(bool)arg3;
+- (void)writeUnderCoordinationFromURL:(id)arg1 toURL:(id)arg2 canDelete:(BOOL)arg3;
 
 @end

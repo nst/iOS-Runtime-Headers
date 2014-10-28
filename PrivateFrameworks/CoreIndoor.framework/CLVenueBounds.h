@@ -12,7 +12,7 @@
 
 @property(retain) CLLatLonPolygon * exterior;
 @property(retain) NSMutableArray * exteriors;
-@property(readonly) bool hasExterior;
+@property(readonly) BOOL hasExterior;
 @property(retain) NSMutableArray * ids;
 
 - (void).cxx_destruct;
@@ -20,24 +20,24 @@
 - (void)addIds:(id)arg1;
 - (void)clearExteriors;
 - (void)clearIds;
-- (bool)containsIdentifier:(id)arg1;
+- (BOOL)containsIdentifier:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)exterior;
 - (id)exteriors;
-- (id)exteriorsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)exteriorsCount;
-- (bool)hasExterior;
-- (unsigned long long)hash;
+- (id)exteriorsAtIndex:(unsigned int)arg1;
+- (unsigned int)exteriorsCount;
+- (BOOL)hasExterior;
+- (unsigned int)hash;
 - (id)ids;
-- (id)idsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)idsCount;
-- (bool)isEqual:(id)arg1;
+- (id)idsAtIndex:(unsigned int)arg1;
+- (unsigned int)idsCount;
+- (BOOL)isEqual:(id)arg1;
 - (id)locationIdentifiers;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setExterior:(id)arg1;
 - (void)setExteriors:(id)arg1;
 - (void)setIds:(id)arg1;

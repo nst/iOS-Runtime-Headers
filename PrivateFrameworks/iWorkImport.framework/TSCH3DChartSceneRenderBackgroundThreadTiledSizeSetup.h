@@ -5,6 +5,6 @@
 @interface TSCH3DChartSceneRenderBackgroundThreadTiledSizeSetup : TSCH3DChartSceneRenderTiledTightSizeSetup {
 }
 
-- (unsigned long long)tileSize;
+- (unsigned int)tileSize;
 
 @end

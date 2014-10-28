@@ -11,15 +11,15 @@
     NSArray *_assetsToHide;
     NSArray *_assetsToRevert;
     NSString *_clientName;
+    BOOL _confirmationRequired;
     NSSet *_deleteRequests;
+    BOOL _didPrepare;
     NSArray *_foldersToDelete;
     NSSet *_insertRequests;
     NSManagedObjectContext *_managedObjectContext;
     PLPhotoLibrary *_photoLibrary;
     NSArray *_renderedContentURLs;
     NSSet *_updateRequests;
-    bool_confirmationRequired;
-    bool_didPrepare;
 }
 
 @property(readonly) NSArray * albumsToDelete;
@@ -28,7 +28,7 @@
 @property(readonly) NSArray * assetsToHide;
 @property(readonly) NSArray * assetsToRevert;
 @property(copy,readonly) NSString * clientName;
-@property(readonly) bool confirmationRequired;
+@property(readonly) BOOL confirmationRequired;
 @property(readonly) NSSet * deleteRequests;
 @property(readonly) NSArray * foldersToDelete;
 @property(readonly) NSSet * insertRequests;
@@ -38,14 +38,14 @@
 @property(readonly) NSSet * updateRequests;
 
 - (void).cxx_destruct;
-- (bool)_prepareWithError:(id*)arg1;
+- (BOOL)_prepareWithError:(id*)arg1;
 - (id)albumsToDelete;
 - (id)assetsToChangeContent;
 - (id)assetsToDelete;
 - (id)assetsToHide;
 - (id)assetsToRevert;
 - (id)clientName;
-- (bool)confirmationRequired;
+- (BOOL)confirmationRequired;
 - (id)deleteRequests;
 - (id)foldersToDelete;
 - (id)initWithInsertRequests:(id)arg1 updateRequests:(id)arg2 deleteRequests:(id)arg3 context:(id)arg4 photoLibrary:(id)arg5;
@@ -54,6 +54,6 @@
 - (id)photoLibrary;
 - (id)renderedContentURLs;
 - (id)updateRequests;
-- (bool)validateWithError:(id*)arg1;
+- (BOOL)validateWithError:(id*)arg1;
 
 @end

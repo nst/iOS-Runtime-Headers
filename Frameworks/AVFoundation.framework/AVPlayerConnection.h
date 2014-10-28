@@ -9,25 +9,25 @@
     AVWeakReference *_playerItemReference;
     AVWeakReference *_playerReference;
     AVPlayerItem *_previousPlayerItem;
-    long long _status;
-    bool_shouldAppendItem;
+    BOOL _shouldAppendItem;
+    int _status;
 }
 
 @property(readonly) NSError * error;
 @property(readonly) AVPlayer * player;
 @property(readonly) AVPlayerItem * playerItem;
 @property(readonly) NSObject<OS_dispatch_queue> * serializationQueue;
-@property(readonly) long long status;
+@property(readonly) int status;
 
-- (bool)addItemToPlayQueue;
+- (BOOL)addItemToPlayQueue;
 - (void)dealloc;
 - (id)description;
 - (id)error;
-- (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2 shouldAppendItem:(bool)arg3;
+- (id)initWithWeakReferenceToPlayer:(id)arg1 weakReferenceToPlayerItem:(id)arg2 shouldAppendItem:(BOOL)arg3;
 - (id)player;
 - (id)playerItem;
 - (void)removeItemFromPlayQueue;
 - (id)serializationQueue;
-- (long long)status;
+- (int)status;
 
 @end

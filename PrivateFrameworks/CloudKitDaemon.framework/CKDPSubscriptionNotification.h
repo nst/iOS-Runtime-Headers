@@ -11,44 +11,44 @@
     NSMutableArray *_additionalFields;
     CKDPSubscriptionNotificationAlert *_alert;
     } _has;
-    bool_shouldBadge;
-    bool_shouldSendContentAvailable;
+    BOOL _shouldBadge;
+    BOOL _shouldSendContentAvailable;
 }
 
 @property(retain) NSMutableArray * additionalFields;
 @property(retain) CKDPSubscriptionNotificationAlert * alert;
-@property(readonly) bool hasAlert;
-@property bool hasShouldBadge;
-@property bool hasShouldSendContentAvailable;
-@property bool shouldBadge;
-@property bool shouldSendContentAvailable;
+@property(readonly) BOOL hasAlert;
+@property BOOL hasShouldBadge;
+@property BOOL hasShouldSendContentAvailable;
+@property BOOL shouldBadge;
+@property BOOL shouldSendContentAvailable;
 
 - (void).cxx_destruct;
 - (void)addAdditionalFields:(id)arg1;
 - (id)additionalFields;
-- (id)additionalFieldsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)additionalFieldsCount;
+- (id)additionalFieldsAtIndex:(unsigned int)arg1;
+- (unsigned int)additionalFieldsCount;
 - (id)alert;
 - (void)clearAdditionalFields;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAlert;
-- (bool)hasShouldBadge;
-- (bool)hasShouldSendContentAvailable;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAlert;
+- (BOOL)hasShouldBadge;
+- (BOOL)hasShouldSendContentAvailable;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAdditionalFields:(id)arg1;
 - (void)setAlert:(id)arg1;
-- (void)setHasShouldBadge:(bool)arg1;
-- (void)setHasShouldSendContentAvailable:(bool)arg1;
-- (void)setShouldBadge:(bool)arg1;
-- (void)setShouldSendContentAvailable:(bool)arg1;
-- (bool)shouldBadge;
-- (bool)shouldSendContentAvailable;
+- (void)setHasShouldBadge:(BOOL)arg1;
+- (void)setHasShouldSendContentAvailable:(BOOL)arg1;
+- (void)setShouldBadge:(BOOL)arg1;
+- (void)setShouldSendContentAvailable:(BOOL)arg1;
+- (BOOL)shouldBadge;
+- (BOOL)shouldSendContentAvailable;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -8,13 +8,13 @@
     NSNumber *mCurrentInterceptValue;
 }
 
-+ (bool)hasCompiledGeometryForScene:(id)arg1 seriesIndex:(unsigned long long)arg2;
-+ (float)interceptForScene:(id)arg1 seriesIndex:(unsigned long long)arg2;
-+ (id)interleavedArrayForScene:(id)arg1 seriesIndex:(unsigned long long)arg2;
-+ (id)p_compiledGeometryForScene:(id)arg1 seriesIndex:(unsigned long long)arg2;
-+ (void)submitToProcessor:(id)arg1 portion:(int)arg2 scene:(id)arg3 seriesIndex:(unsigned long long)arg4;
++ (BOOL)hasCompiledGeometryForScene:(id)arg1 seriesIndex:(unsigned int)arg2;
++ (float)interceptForScene:(id)arg1 seriesIndex:(unsigned int)arg2;
++ (id)interleavedArrayForScene:(id)arg1 seriesIndex:(unsigned int)arg2;
++ (id)p_compiledGeometryForScene:(id)arg1 seriesIndex:(unsigned int)arg2;
++ (void)submitToProcessor:(id)arg1 portion:(int)arg2 scene:(id)arg3 seriesIndex:(unsigned int)arg4;
 
-- (bool)compileEntireBuffer;
+- (BOOL)compileEntireBuffer;
 - (id)compiledGeometry;
 - (void)dealloc;
 - (void)p_addAnimationTimeSlices;
@@ -22,6 +22,6 @@
 - (void)p_addVertexRenormalizations;
 - (void)p_updateInterceptValue;
 - (void)processElementArrays;
-- (bool)transformBuffers;
+- (BOOL)transformBuffers;
 
 @end

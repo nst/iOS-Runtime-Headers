@@ -7,26 +7,26 @@
 @interface EKCalendarItemAlarmEditItem : EKCalendarItemEditItem {
     CalendarEventAlarmTable *_alarmTable;
     NSArray *_alarms;
-    unsigned long long _disclosedSubitem;
+    BOOL _canHaveLeaveNowAlarm;
+    unsigned int _disclosedSubitem;
+    BOOL _hasLeaveNowAlarm;
     int _lastSeenAllDayState;
-    bool_canHaveLeaveNowAlarm;
-    bool_hasLeaveNowAlarm;
-    bool_userChangedAlarm;
+    BOOL _userChangedAlarm;
 }
 
 - (void).cxx_destruct;
-- (bool)_alarmsMatchCalendarItem;
-- (bool)_calendarItemHasLeaveNowAlarm;
+- (BOOL)_alarmsMatchCalendarItem;
+- (BOOL)_calendarItemHasLeaveNowAlarm;
 - (void)_updateAlarms;
 - (void)_updateDefaultAlarm;
-- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
-- (bool)configureForCalendarConstraints:(id)arg1;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
-- (bool)editItemViewControllerCommit:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (BOOL)configureForCalendarConstraints:(id)arg1;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (BOOL)editItemViewControllerCommit:(id)arg1;
 - (id)init;
-- (unsigned long long)numberOfSubitems;
+- (unsigned int)numberOfSubitems;
 - (void)refreshFromCalendarItemAndStore;
-- (bool)saveAndDismissWithForce:(bool)arg1;
+- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (void)setCalendarItem:(id)arg1 store:(id)arg2;
 - (void)updateInternalTravelTimeStateForCalendarItem:(id)arg1;
 

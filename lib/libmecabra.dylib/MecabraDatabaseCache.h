@@ -5,7 +5,7 @@
 @class MecabraDatabaseCacheIdentifierController, NSArray, NSMutableDictionary;
 
 @interface MecabraDatabaseCache : NSObject {
-    unsigned long long _currentSeed;
+    unsigned int _currentSeed;
     NSMutableDictionary *_entryToIdentifierMapping;
     MecabraDatabaseCacheIdentifierController *_identifierController;
     NSMutableDictionary *_identifierToEntryMapping;
@@ -13,33 +13,33 @@
 }
 
 @property(readonly) NSArray * allIdentifiers;
-@property unsigned long long currentSeed;
+@property unsigned int currentSeed;
 @property(retain) NSMutableDictionary * entryToIdentifierMapping;
 @property(retain) MecabraDatabaseCacheIdentifierController * identifierController;
 @property(retain) NSMutableDictionary * identifierToEntryMapping;
 @property(retain) NSArray * uniqueKeys;
 
 - (id)allIdentifiers;
-- (unsigned long long)currentSeed;
+- (unsigned int)currentSeed;
 - (void)dealloc;
 - (void)deleteEntry:(id)arg1;
-- (id)entryForIdentifier:(unsigned long long)arg1;
+- (id)entryForIdentifier:(unsigned int)arg1;
 - (id)entryToIdentifierMapping;
 - (id)identifierController;
-- (unsigned long long)identifierForEntry:(id)arg1;
+- (unsigned int)identifierForEntry:(id)arg1;
 - (id)identifierToEntryMapping;
 - (id)init;
 - (id)keyStringForEntry:(id)arg1;
-- (unsigned long long)nextSeed;
+- (unsigned int)nextSeed;
 - (id)partialEntryForEntry:(id)arg1;
 - (void)reset;
-- (void)setCurrentSeed:(unsigned long long)arg1;
+- (void)setCurrentSeed:(unsigned int)arg1;
 - (void)setEntryToIdentifierMapping:(id)arg1;
 - (void)setIdentifierController:(id)arg1;
 - (void)setIdentifierToEntryMapping:(id)arg1;
 - (void)setUniqueKeys:(id)arg1;
 - (id)uniqueKeys;
 - (void)updateEntry:(id)arg1 keyString:(id)arg2;
-- (void)updateSeedNumber:(unsigned long long)arg1;
+- (void)updateSeedNumber:(unsigned int)arg1;
 
 @end

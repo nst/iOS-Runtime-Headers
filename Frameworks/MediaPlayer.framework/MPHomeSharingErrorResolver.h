@@ -16,11 +16,11 @@
 @property(retain) MPHomeSharingML3DataProvider * dataProvider;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)_errorIsFairPlayError:(id)arg1;
+- (BOOL)_errorIsFairPlayError:(id)arg1;
 - (void)authorizationRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)dataProvider;
 - (void)dealloc;

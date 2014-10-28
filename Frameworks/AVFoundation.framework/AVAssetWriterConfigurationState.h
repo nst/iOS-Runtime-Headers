@@ -11,12 +11,12 @@
         unsigned int flags; 
         long long epoch; 
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     NSURL *_URL;
     NSURL *_directoryForTemporaryFiles;
     NSArray *_inputGroups;
@@ -28,7 +28,7 @@
     float _preferredRate;
     } _preferredTransform;
     float _preferredVolume;
-    bool_shouldOptimizeForNetworkUse;
+    BOOL _shouldOptimizeForNetworkUse;
 }
 
 @property(copy) NSURL * URL;
@@ -40,9 +40,9 @@
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property int movieTimeScale;
 @property float preferredRate;
-@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property float preferredVolume;
-@property bool shouldOptimizeForNetworkUse;
+@property BOOL shouldOptimizeForNetworkUse;
 
 - (id)URL;
 - (void)dealloc;
@@ -54,7 +54,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (int)movieTimeScale;
 - (float)preferredRate;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (void)setDirectoryForTemporaryFiles:(id)arg1;
 - (void)setInputGroups:(id)arg1;
@@ -64,10 +64,10 @@
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTimeScale:(int)arg1;
 - (void)setPreferredRate:(float)arg1;
-- (void)setPreferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setPreferredVolume:(float)arg1;
-- (void)setShouldOptimizeForNetworkUse:(bool)arg1;
+- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (void)setURL:(id)arg1;
-- (bool)shouldOptimizeForNetworkUse;
+- (BOOL)shouldOptimizeForNetworkUse;
 
 @end

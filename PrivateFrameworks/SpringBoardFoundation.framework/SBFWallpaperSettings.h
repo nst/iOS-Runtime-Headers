@@ -3,23 +3,23 @@
  */
 
 @interface SBFWallpaperSettings : _UISettings {
-    long long _blurReplacementMode;
-    unsigned long long _colorBoxSize;
-    bool_replaceBlurs;
+    int _blurReplacementMode;
+    unsigned int _colorBoxSize;
+    BOOL _replaceBlurs;
 }
 
-@property long long blurReplacementMode;
-@property unsigned long long colorBoxSize;
-@property bool replaceBlurs;
+@property int blurReplacementMode;
+@property unsigned int colorBoxSize;
+@property BOOL replaceBlurs;
 
 + (id)settingsControllerModule;
 
-- (long long)blurReplacementMode;
-- (unsigned long long)colorBoxSize;
-- (bool)replaceBlurs;
-- (void)setBlurReplacementMode:(long long)arg1;
-- (void)setColorBoxSize:(unsigned long long)arg1;
+- (int)blurReplacementMode;
+- (unsigned int)colorBoxSize;
+- (BOOL)replaceBlurs;
+- (void)setBlurReplacementMode:(int)arg1;
+- (void)setColorBoxSize:(unsigned int)arg1;
 - (void)setDefaultValues;
-- (void)setReplaceBlurs:(bool)arg1;
+- (void)setReplaceBlurs:(BOOL)arg1;
 
 @end

@@ -9,28 +9,28 @@
     UIImage *_badgeImage;
     UIImageView *_badgeImageView;
     NSString *_bannerText;
+    BOOL _flattensSubviews;
     UILabel *_textLabel;
     double _videoDuration;
-    unsigned long long _videoSubtypes;
-    bool_flattensSubviews;
+    unsigned int _videoSubtypes;
 }
 
-@property bool flattensSubviews;
+@property BOOL flattensSubviews;
 @property(readonly) double videoDuration;
-@property(readonly) unsigned long long videoSubtypes;
+@property(readonly) unsigned int videoSubtypes;
 
 - (void).cxx_destruct;
-- (id)_badgeImageForVideoSubtype:(unsigned long long)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_badgeImageInsetsForVideoSubtypes:(unsigned long long)arg1;
+- (id)_badgeImageForVideoSubtype:(unsigned int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_badgeImageInsetsForVideoSubtypes:(unsigned int)arg1;
 - (void)_setBadgeImage:(id)arg1 bannerText:(id)arg2;
 - (void)_updateFlattenSubviews;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)flattensSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)flattensSubviews;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setFlattensSubviews:(bool)arg1;
-- (void)setVideoDuration:(double)arg1 videoSubtypes:(unsigned long long)arg2;
+- (void)setFlattensSubviews:(BOOL)arg1;
+- (void)setVideoDuration:(double)arg1 videoSubtypes:(unsigned int)arg2;
 - (double)videoDuration;
-- (unsigned long long)videoSubtypes;
+- (unsigned int)videoSubtypes;
 
 @end

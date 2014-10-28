@@ -6,36 +6,36 @@
 
 @interface SBUIPasscodeLockViewSIMLockKeypad : SBUIPasscodeLockViewLongNumericKeypad {
     UIView *_entryFieldFiller;
+    BOOL _isShowingStatus;
     UIView *_statusSpringView;
     UIView *_statusSpringViewParent;
     UILabel *_statusSubtitleView;
-    double _targetEntryFieldFillerAlpha;
-    bool_isShowingStatus;
+    float _targetEntryFieldFillerAlpha;
 }
 
 @property(copy) NSString * statusSubtitle;
 @property(copy) NSString * statusTitle;
 
-- (double)_distanceFromLastLineBaselineToTextFieldBoundsHeight:(id)arg1;
-- (double)_distanceToFirstLineBaseline:(id)arg1;
-- (double)_expectedDistanceBetweenTitleAndSubtitleBaselines;
-- (double)_expectedYOffsetBetweenTitleAndSubtitleViews;
+- (float)_distanceFromLastLineBaselineToTextFieldBoundsHeight:(id)arg1;
+- (float)_distanceToFirstLineBaseline:(id)arg1;
+- (float)_expectedDistanceBetweenTitleAndSubtitleBaselines;
+- (float)_expectedYOffsetBetweenTitleAndSubtitleViews;
 - (void)_layoutStatusView;
-- (bool)_needsToHideTextFieldForStatus;
-- (void)_setHasInput:(bool)arg1;
+- (BOOL)_needsToHideTextFieldForStatus;
+- (void)_setHasInput:(BOOL)arg1;
 - (void)_setText:(id)arg1 onLabel:(id)arg2;
 - (void)_shakeStatus;
-- (bool)_showsPromptLabelOnEntryField;
+- (BOOL)_showsPromptLabelOnEntryField;
 - (void)_sizeLabel:(id)arg1;
 - (id)_statusSubtitleFont;
-- (double)_subtitleBaselineYOffsetFromTopOfEntryField;
-- (double)_subtitleBaselineYOffsetFromTopOfNumberPad;
+- (float)_subtitleBaselineYOffsetFromTopOfEntryField;
+- (float)_subtitleBaselineYOffsetFromTopOfNumberPad;
 - (void)dealloc;
-- (void)forceShowStatus:(bool)arg1;
-- (id)initWithLightStyle:(bool)arg1;
+- (void)forceShowStatus:(BOOL)arg1;
+- (id)initWithLightStyle:(BOOL)arg1;
 - (void)layoutSubviews;
 - (void)resetForFailedPasscode;
-- (void)setBackgroundAlpha:(double)arg1;
+- (void)setBackgroundAlpha:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setStatusSubtitle:(id)arg1;
 - (void)setStatusTitle:(id)arg1;

@@ -5,8 +5,8 @@
 @class NSString;
 
 @interface TSUTemporaryDirectory : NSObject {
+    BOOL _leak;
     NSString *_path;
-    bool_leak;
 }
 
 - (id)URL;

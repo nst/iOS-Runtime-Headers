@@ -10,7 +10,7 @@
     PHCollection *_phCollection;
     PUPhotoDecoration *_photoDecoration;
     UICollectionViewTransitionLayout *_transitionLayout;
-    bool_usesContentOffsetAutoAdjust;
+    BOOL _usesContentOffsetAutoAdjust;
 }
 
 @property(retain) <PLAssetContainer> * collection;
@@ -18,7 +18,7 @@
 @property(retain) PHCollection * phCollection;
 @property(retain) PUPhotoDecoration * photoDecoration;
 @property(retain) UICollectionViewTransitionLayout * transitionLayout;
-@property bool usesContentOffsetAutoAdjust;
+@property BOOL usesContentOffsetAutoAdjust;
 
 - (void).cxx_destruct;
 - (id)collection;
@@ -30,8 +30,8 @@
 - (void)setPhCollection:(id)arg1;
 - (void)setPhotoDecoration:(id)arg1;
 - (void)setTransitionLayout:(id)arg1;
-- (void)setUsesContentOffsetAutoAdjust:(bool)arg1;
+- (void)setUsesContentOffsetAutoAdjust:(BOOL)arg1;
 - (id)transitionLayout;
-- (bool)usesContentOffsetAutoAdjust;
+- (BOOL)usesContentOffsetAutoAdjust;
 
 @end

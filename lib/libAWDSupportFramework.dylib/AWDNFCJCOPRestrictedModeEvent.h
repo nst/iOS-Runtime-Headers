@@ -8,36 +8,36 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int contactless : 1; 
+    BOOL _contactless;
     } _has;
     NSData *_log;
     unsigned long long _timestamp;
-    bool_contactless;
 }
 
-@property bool contactless;
-@property bool hasContactless;
-@property(readonly) bool hasLog;
-@property bool hasTimestamp;
+@property BOOL contactless;
+@property BOOL hasContactless;
+@property(readonly) BOOL hasLog;
+@property BOOL hasTimestamp;
 @property(retain) NSData * log;
 @property unsigned long long timestamp;
 
-- (bool)contactless;
+- (BOOL)contactless;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasContactless;
-- (bool)hasLog;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasContactless;
+- (BOOL)hasLog;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)log;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setContactless:(bool)arg1;
-- (void)setHasContactless:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setContactless:(BOOL)arg1;
+- (void)setHasContactless:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setLog:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

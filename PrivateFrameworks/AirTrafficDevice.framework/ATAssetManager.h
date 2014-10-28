@@ -10,20 +10,20 @@
     NSMutableArray *_assets;
     NSMutableDictionary *_assetsByDataclass;
     NSMutableDictionary *_assetsByStoreID;
-    unsigned long long _completedAssets;
+    unsigned int _completedAssets;
     NSMutableArray *_completedStoreAssets;
     NSDictionary *_legacyAssetClients;
     NSHashTable *_observers;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_remainingAssetsByDataClass;
     NSObject<OS_dispatch_source> *_signalSource;
-    unsigned long long _totalAssetCount;
+    unsigned int _totalAssetCount;
     NSMutableDictionary *_totalAssetCountByDataClass;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -46,32 +46,32 @@
 - (id)assetProgressForAllDataclasses;
 - (id)assets;
 - (id)assetsForDataclasses:(id)arg1;
-- (unsigned long long)awaitingStoreCompletion;
+- (unsigned int)awaitingStoreCompletion;
 - (id)bypassedRestoresForDataclass:(id)arg1;
 - (void)cancelAssetForDataClass:(id)arg1 withIdentifier:(id)arg2;
-- (unsigned long long)completedAssetCountForDataClasses:(id)arg1;
+- (unsigned int)completedAssetCountForDataClasses:(id)arg1;
 - (id)completedStoreAssets;
-- (unsigned long long)currentAsset;
-- (unsigned long long)currentAssetForDataclass:(id)arg1;
-- (bool)dataclassIsEmpty:(id)arg1;
+- (unsigned int)currentAsset;
+- (unsigned int)currentAssetForDataclass:(id)arg1;
+- (BOOL)dataclassIsEmpty:(id)arg1;
 - (void)dealloc;
 - (void)enqueueAssetsForDataClass:(id)arg1;
 - (void)enqueueLegacyAssetsForDataClass:(id)arg1;
 - (id)init;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (id)legacyAssetsForDataClass:(id)arg1;
 - (void)mapStoreIDToAsset:(id)arg1;
 - (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)prioritizeAssetForDataClass:(id)arg1 withIdentifier:(id)arg2;
-- (unsigned long long)remainingRestoreAssetCountForDataClasses:(id)arg1;
-- (unsigned long long)remainingSyncAssetCountForDataClasses:(id)arg1;
+- (unsigned int)remainingRestoreAssetCountForDataClasses:(id)arg1;
+- (unsigned int)remainingSyncAssetCountForDataClasses:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)reset;
 - (id)restoreAssetsForDataclass:(id)arg1;
 - (id)restoreAssetsForDataclasses:(id)arg1;
 - (id)storeAssetsForDataclass:(id)arg1;
-- (unsigned long long)totalAssetCount;
-- (unsigned long long)totalAssetCountForDataClasses:(id)arg1;
-- (unsigned long long)totalAssetCountForDataclass:(id)arg1;
+- (unsigned int)totalAssetCount;
+- (unsigned int)totalAssetCountForDataClasses:(id)arg1;
+- (unsigned int)totalAssetCountForDataclass:(id)arg1;
 
 @end

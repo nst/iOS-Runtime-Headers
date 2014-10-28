@@ -12,8 +12,8 @@
     int _statusCode;
 }
 
-@property(readonly) bool hasProblemId;
-@property bool hasStatusCode;
+@property(readonly) BOOL hasProblemId;
+@property BOOL hasStatusCode;
 @property(retain) NSString * problemId;
 @property int statusCode;
 
@@ -22,14 +22,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasProblemId;
-- (bool)hasStatusCode;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasProblemId;
+- (BOOL)hasStatusCode;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)problemId;
-- (bool)readFrom:(id)arg1;
-- (void)setHasStatusCode:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasStatusCode:(BOOL)arg1;
 - (void)setProblemId:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;

@@ -14,9 +14,9 @@
     unsigned long long _timestamp;
 }
 
-@property(readonly) bool hasSessionUUID;
-@property bool hasStatus;
-@property bool hasTimestamp;
+@property(readonly) BOOL hasSessionUUID;
+@property BOOL hasStatus;
+@property BOOL hasTimestamp;
 @property(retain) NSString * sessionUUID;
 @property int status;
 @property unsigned long long timestamp;
@@ -26,16 +26,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSessionUUID;
-- (bool)hasStatus;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSessionUUID;
+- (BOOL)hasStatus;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)sessionUUID;
-- (void)setHasStatus:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

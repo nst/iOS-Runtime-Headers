@@ -9,21 +9,21 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)action;
 - (id)actionWithIdentifier:(id)arg1;
-- (bool)canShowInAssistant;
-- (bool)canShowWhileLocked;
+- (BOOL)canShowInAssistant;
+- (BOOL)canShowWhileLocked;
 - (id)defaultActionWithContext:(id)arg1;
-- (bool)hasSubActions;
-- (bool)inertWhenLocked;
-- (bool)isCritical;
-- (bool)isSticky;
+- (BOOL)hasSubActions;
+- (BOOL)inertWhenLocked;
+- (BOOL)isCritical;
+- (BOOL)isSticky;
 - (id)lockScreenActionContextWithContext:(id)arg1;
-- (bool)overridesQuietMode;
-- (unsigned long long)priority;
+- (BOOL)overridesQuietMode;
+- (unsigned int)priority;
 - (id)pullDownNotification;
 - (id)sortDate;
 - (id)sound;

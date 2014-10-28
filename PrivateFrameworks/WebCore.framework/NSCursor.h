@@ -5,6 +5,6 @@
 @interface NSCursor : NSObject {
 }
 
-+ (void)setHiddenUntilMouseMoves:(bool)arg1;
++ (void)setHiddenUntilMouseMoves:(BOOL)arg1;
 
 @end

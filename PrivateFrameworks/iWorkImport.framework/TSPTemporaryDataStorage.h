@@ -7,27 +7,27 @@
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
     NSURL *_URL;
     SFUCryptoKey *_decryptionKey;
-    bool_gilligan_isRemote;
-    bool_isMissingData;
-    bool_isMissingOriginalData;
+    BOOL _gilligan_isRemote;
+    BOOL _isMissingData;
+    BOOL _isMissingOriginalData;
 }
 
-@property bool isMissingData;
-@property bool isMissingOriginalData;
+@property BOOL isMissingData;
+@property BOOL isMissingOriginalData;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)decryptionKey;
-- (bool)gilligan_isRemote;
+- (BOOL)gilligan_isRemote;
 - (id)initWithURL:(id)arg1 decryptionKey:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (bool)isMissingData;
-- (bool)isMissingOriginalData;
+- (BOOL)isMissingData;
+- (BOOL)isMissingOriginalData;
 - (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
-- (void)setGilligan_isRemote:(bool)arg1;
-- (void)setIsMissingData:(bool)arg1;
-- (void)setIsMissingOriginalData:(bool)arg1;
-- (bool)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(bool*)arg5 isMissingData:(bool*)arg6;
+- (void)setGilligan_isRemote:(BOOL)arg1;
+- (void)setIsMissingData:(BOOL)arg1;
+- (void)setIsMissingOriginalData:(BOOL)arg1;
+- (BOOL)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(BOOL*)arg5 isMissingData:(BOOL*)arg6;
 
 @end

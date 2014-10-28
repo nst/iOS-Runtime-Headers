@@ -6,8 +6,14 @@
 
 @interface AAFamilyMember : NSObject {
     NSString *_appleID;
+    BOOL _areParentalControlsEnabled;
     NSString *_firstName;
     NSString *_iTunesNotLinkedMessage;
+    BOOL _isAskToBuyEnabled;
+    BOOL _isChild;
+    BOOL _isMe;
+    BOOL _isOrganizer;
+    BOOL _isSharingPurchases;
     NSDate *_joinDate;
     NSString *_lastName;
     NSString *_linkediTunesAppleID;
@@ -15,23 +21,17 @@
     NSNumber *_personID;
     NSString *_personIDHash;
     NSString *_title;
-    bool_areParentalControlsEnabled;
-    bool_isAskToBuyEnabled;
-    bool_isChild;
-    bool_isMe;
-    bool_isOrganizer;
-    bool_isSharingPurchases;
 }
 
 @property(copy) NSString * appleID;
-@property bool areParentalControlsEnabled;
+@property BOOL areParentalControlsEnabled;
 @property(copy) NSString * firstName;
 @property(copy) NSString * iTunesNotLinkedMessage;
-@property bool isAskToBuyEnabled;
-@property bool isChild;
-@property bool isMe;
-@property bool isOrganizer;
-@property bool isSharingPurchases;
+@property BOOL isAskToBuyEnabled;
+@property BOOL isChild;
+@property BOOL isMe;
+@property BOOL isOrganizer;
+@property BOOL isSharingPurchases;
 @property(copy) NSDate * joinDate;
 @property(copy) NSString * lastName;
 @property(copy) NSString * linkediTunesAppleID;
@@ -42,14 +42,14 @@
 
 - (void).cxx_destruct;
 - (id)appleID;
-- (bool)areParentalControlsEnabled;
+- (BOOL)areParentalControlsEnabled;
 - (id)firstName;
 - (id)iTunesNotLinkedMessage;
-- (bool)isAskToBuyEnabled;
-- (bool)isChild;
-- (bool)isMe;
-- (bool)isOrganizer;
-- (bool)isSharingPurchases;
+- (BOOL)isAskToBuyEnabled;
+- (BOOL)isChild;
+- (BOOL)isMe;
+- (BOOL)isOrganizer;
+- (BOOL)isSharingPurchases;
 - (id)joinDate;
 - (id)lastName;
 - (id)linkediTunesAppleID;
@@ -57,14 +57,14 @@
 - (id)personID;
 - (id)personIDHash;
 - (void)setAppleID:(id)arg1;
-- (void)setAreParentalControlsEnabled:(bool)arg1;
+- (void)setAreParentalControlsEnabled:(BOOL)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setITunesNotLinkedMessage:(id)arg1;
-- (void)setIsAskToBuyEnabled:(bool)arg1;
-- (void)setIsChild:(bool)arg1;
-- (void)setIsMe:(bool)arg1;
-- (void)setIsOrganizer:(bool)arg1;
-- (void)setIsSharingPurchases:(bool)arg1;
+- (void)setIsAskToBuyEnabled:(BOOL)arg1;
+- (void)setIsChild:(BOOL)arg1;
+- (void)setIsMe:(BOOL)arg1;
+- (void)setIsOrganizer:(BOOL)arg1;
+- (void)setIsSharingPurchases:(BOOL)arg1;
 - (void)setJoinDate:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLinkediTunesAppleID:(id)arg1;

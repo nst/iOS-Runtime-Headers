@@ -10,8 +10,8 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) long long numberOfDelegates;
+@property(readonly) unsigned int hash;
+@property(readonly) int numberOfDelegates;
 @property(readonly) Class superclass;
 
 - (void)addDelegate:(id)arg1;
@@ -19,8 +19,8 @@
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (long long)numberOfDelegates;
+- (int)numberOfDelegates;
 - (void)removeDelegate:(id)arg1;
-- (bool)respondsToSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 
 @end

@@ -5,39 +5,39 @@
 @class <EKICSPreviewListDelegate>, EKICSPreviewModel, NSMutableArray;
 
 @interface EKICSPreviewListController : UITableViewController {
+    BOOL _allowsImport;
+    BOOL _allowsSubitems;
     <EKICSPreviewListDelegate> *_listDelegate;
     EKICSPreviewModel *_model;
     NSMutableArray *_sections;
-    bool_allowsImport;
-    bool_allowsSubitems;
-    bool_showWeekNumbers;
+    BOOL _showWeekNumbers;
 }
 
-@property bool allowsImport;
-@property bool allowsSubitems;
+@property BOOL allowsImport;
+@property BOOL allowsSubitems;
 @property <EKICSPreviewListDelegate> * listDelegate;
-@property bool showWeekNumbers;
+@property BOOL showWeekNumbers;
 
 - (void).cxx_destruct;
 - (void)_showWeekNumbersPreferenceChanged:(id)arg1;
-- (bool)allowsImport;
-- (bool)allowsSubitems;
+- (BOOL)allowsImport;
+- (BOOL)allowsSubitems;
 - (void)buildSections;
 - (void)dealloc;
 - (void)importAllPressed:(id)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)listDelegate;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setAllowsImport:(bool)arg1;
-- (void)setAllowsSubitems:(bool)arg1;
+- (void)setAllowsImport:(BOOL)arg1;
+- (void)setAllowsSubitems:(BOOL)arg1;
 - (void)setListDelegate:(id)arg1;
-- (void)setShowWeekNumbers:(bool)arg1;
-- (bool)showWeekNumbers;
+- (void)setShowWeekNumbers:(BOOL)arg1;
+- (BOOL)showWeekNumbers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)updateImportButton;
 - (void)viewDidLoad;
 

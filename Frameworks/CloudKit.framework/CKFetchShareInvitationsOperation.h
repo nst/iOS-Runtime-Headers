@@ -10,15 +10,15 @@
 
 @interface CKFetchShareInvitationsOperation : CKOperation {
     id _fetchShareInvitationsCompletionBlock;
-    long long _fetchType;
+    int _fetchType;
     NSMutableArray *_fetchedInvitations;
-    bool_queryAllContainers;
+    BOOL _queryAllContainers;
 }
 
 @property(copy) id fetchShareInvitationsCompletionBlock;
-@property long long fetchType;
+@property int fetchType;
 @property(retain) NSMutableArray * fetchedInvitations;
-@property bool queryAllContainers;
+@property BOOL queryAllContainers;
 
 + (id)fetchReceivedInvitationsOperation;
 + (id)fetchSentInvitationsOperation;
@@ -26,16 +26,16 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (id)_initWithFetchType:(long long)arg1;
+- (id)_initWithFetchType:(int)arg1;
 - (id)fetchShareInvitationsCompletionBlock;
-- (long long)fetchType;
+- (int)fetchType;
 - (id)fetchedInvitations;
 - (void)fillOutOperationInfo:(id)arg1;
 - (void)performCKOperation;
-- (bool)queryAllContainers;
+- (BOOL)queryAllContainers;
 - (void)setFetchShareInvitationsCompletionBlock:(id)arg1;
-- (void)setFetchType:(long long)arg1;
+- (void)setFetchType:(int)arg1;
 - (void)setFetchedInvitations:(id)arg1;
-- (void)setQueryAllContainers:(bool)arg1;
+- (void)setQueryAllContainers:(BOOL)arg1;
 
 @end

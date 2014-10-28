@@ -6,32 +6,32 @@
 
 @interface _UIAlertControllerTextFieldViewController : UITableViewController {
     <_UIAlertControllerTextFieldViewControllerContaining> *_container;
-    bool_textFieldsCanBecomeFirstResponder;
+    BOOL _textFieldsCanBecomeFirstResponder;
     NSMutableArray *textFieldViews;
     NSMutableArray *textFields;
 }
 
 @property <_UIAlertControllerTextFieldViewControllerContaining> * container;
 @property(readonly) NSArray * textFields;
-@property bool textFieldsCanBecomeFirstResponder;
+@property BOOL textFieldsCanBecomeFirstResponder;
 
-- (double)_bottomMarginForTextFields;
+- (float)_bottomMarginForTextFields;
 - (void)_returnKeyPressedInTextField:(id)arg1;
 - (void)_updatePreferredContentSize;
-- (id)addTextFieldWithPlaceholder:(id)arg1 isSecure:(bool)arg2;
+- (id)addTextFieldWithPlaceholder:(id)arg1 isSecure:(BOOL)arg2;
 - (id)container;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (long long)numberOfTextFields;
+- (id)initWithStyle:(int)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfTextFields;
 - (void)removeAllTextFields;
 - (void)setContainer:(id)arg1;
-- (void)setTextFieldsCanBecomeFirstResponder:(bool)arg1;
+- (void)setTextFieldsCanBecomeFirstResponder:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)textFieldAtIndex:(long long)arg1;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)textFieldAtIndex:(int)arg1;
 - (id)textFields;
-- (bool)textFieldsCanBecomeFirstResponder;
-- (void)viewWillAppear:(bool)arg1;
+- (BOOL)textFieldsCanBecomeFirstResponder;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -5,9 +5,9 @@
 @interface CPLTransaction : NSObject {
 }
 
-+ (void)beginTransactionWithReason:(id)arg1 keepPower:(bool)arg2;
++ (void)beginTransactionWithReason:(id)arg1 keepPower:(BOOL)arg2;
 + (void)endTransactionWithReason:(id)arg1;
-+ (unsigned long long)transactionCount;
++ (unsigned int)transactionCount;
 + (id)transactions;
 
 @end

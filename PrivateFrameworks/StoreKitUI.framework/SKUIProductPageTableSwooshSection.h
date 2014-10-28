@@ -21,7 +21,7 @@
 @property(retain) SKUIColorScheme * colorScheme;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SKUIResourceLoader * resourceLoader;
 @property(readonly) Class superclass;
 @property(readonly) UIViewController * swooshViewController;
@@ -41,8 +41,8 @@
 - (void)setActionBlock:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setResourceLoader:(id)arg1;
-- (void)swoosh:(id)arg1 didSelectCellAtIndex:(long long)arg2;
-- (id)swoosh:(id)arg1 imageForCellAtIndex:(long long)arg2;
+- (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;
+- (id)swoosh:(id)arg1 imageForCellAtIndex:(int)arg2;
 - (id)swooshViewController;
 
 @end

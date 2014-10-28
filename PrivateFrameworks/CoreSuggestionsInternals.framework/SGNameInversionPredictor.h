@@ -11,7 +11,7 @@
 }
 
 + (id)sharedInstance;
-+ (bool)shouldInvertFirst:(id)arg1 last:(id)arg2;
++ (BOOL)shouldInvertFirst:(id)arg1 last:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -19,8 +19,8 @@
 - (double)firstNameLikelihood:(id)arg1 underNamingTradition:(id)arg2 default:(double)arg3;
 - (id)init;
 - (double)inversionRateForNamingTradition:(id)arg1;
-- (bool)shouldInvertFirst:(id)arg1 last:(id)arg2 underNamingTradition:(id)arg3;
-- (bool)shouldInvertFirst:(id)arg1 last:(id)arg2;
+- (BOOL)shouldInvertFirst:(id)arg1 last:(id)arg2 underNamingTradition:(id)arg3;
+- (BOOL)shouldInvertFirst:(id)arg1 last:(id)arg2;
 - (struct _CFBurstTrie { }*)trieForNamingTradition:(id)arg1;
 
 @end

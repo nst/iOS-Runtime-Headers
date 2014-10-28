@@ -12,13 +12,13 @@
 @property(retain) NSString * mimeType;
 @property(retain) NoteObject * note;
 
-+ (bool)applyFileAttributesForAttachment:(id)arg1 error:(id*)arg2;
-+ (bool)migrateAttachmentRelatedFilesInContext:(id)arg1 error:(id*)arg2;
-+ (bool)migrateFileForAttachment:(id)arg1 toCurrentAttachmentPathWithError:(id*)arg2;
++ (BOOL)applyFileAttributesForAttachment:(id)arg1 error:(id*)arg2;
++ (BOOL)migrateAttachmentRelatedFilesInContext:(id)arg1 error:(id*)arg2;
++ (BOOL)migrateFileForAttachment:(id)arg1 toCurrentAttachmentPathWithError:(id*)arg2;
 
 - (id)attachmentDataFileURLWithError:(id*)arg1;
 - (id)attachmentDataWithError:(id*)arg1;
-- (bool)persistAttachmentData:(id)arg1 error:(id*)arg2;
+- (BOOL)persistAttachmentData:(id)arg1 error:(id*)arg2;
 - (void)prepareForDeletion;
 
 @end

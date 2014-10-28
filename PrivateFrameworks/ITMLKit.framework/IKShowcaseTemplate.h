@@ -11,12 +11,12 @@
 @property(retain,readonly) IKCarouselElement * carousel;
 @property(retain,readonly) IKDocumentBannerElement * documentBanner;
 @property(retain,readonly) NSArray * modes;
-@property(readonly) unsigned long long transition;
+@property(readonly) unsigned int transition;
 
 - (id)background;
 - (id)carousel;
 - (id)documentBanner;
 - (id)modes;
-- (unsigned long long)transition;
+- (unsigned int)transition;
 
 @end

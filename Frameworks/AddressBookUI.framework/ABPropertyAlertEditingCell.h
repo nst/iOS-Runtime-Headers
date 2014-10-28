@@ -5,9 +5,9 @@
 @interface ABPropertyAlertEditingCell : ABPropertyAlertCell {
 }
 
-+ (bool)wantsHorizontalLayout;
++ (BOOL)wantsHorizontalLayout;
 
 - (id)constantConstraints;
-- (double)minCellHeight;
+- (float)minCellHeight;
 
 @end

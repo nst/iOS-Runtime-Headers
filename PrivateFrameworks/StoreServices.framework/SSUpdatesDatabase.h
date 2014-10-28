@@ -8,10 +8,10 @@
     SSSQLiteDatabase *_database;
 }
 
-@property(readonly) bool requiresMigration;
+@property(readonly) BOOL requiresMigration;
 
 - (void)_dispatchBlockAsync:(id)arg1;
-- (id)_initReadOnly:(bool)arg1;
+- (id)_initReadOnly:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initReadOnly;
@@ -19,6 +19,6 @@
 - (void)modifyUsingTransactionBlock:(id)arg1;
 - (void)readAsyncUsingSessionBlock:(id)arg1;
 - (void)readUsingSessionBlock:(id)arg1;
-- (bool)requiresMigration;
+- (BOOL)requiresMigration;
 
 @end

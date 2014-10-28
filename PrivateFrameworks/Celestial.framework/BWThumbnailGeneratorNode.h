@@ -5,15 +5,15 @@
 @interface BWThumbnailGeneratorNode : BWNode {
     struct OpaqueVTImageRotationSession { } *_imageRotationSession;
     struct OpaqueVTPixelTransferSession { } *_pixelTransferSession;
+    BOOL _rotateIfPortrait;
     int _rotationDegrees;
-    bool_rotateIfPortrait;
 }
 
 + (void)initialize;
 
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
-- (id)initWithRotationHint:(bool)arg1 rotationDegrees:(int)arg2;
+- (id)initWithRotationHint:(BOOL)arg1 rotationDegrees:(int)arg2;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;

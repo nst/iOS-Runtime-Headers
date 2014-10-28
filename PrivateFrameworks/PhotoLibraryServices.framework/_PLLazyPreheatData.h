@@ -15,6 +15,6 @@
 - (const void*)bytes;
 - (void)dealloc;
 - (id)initWithContentsOfFile:(id)arg1;
-- (unsigned long long)length;
+- (unsigned int)length;
 
 @end

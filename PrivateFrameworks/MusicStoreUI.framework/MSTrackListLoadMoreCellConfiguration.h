@@ -5,11 +5,11 @@
 @interface MSTrackListLoadMoreCellConfiguration : SULoadMoreMediaCellConfiguration {
 }
 
-+ (double)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
++ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
-- (id)colorForLabelAtIndex:(unsigned long long)arg1 withModifiers:(unsigned long long)arg2;
-- (id)fontForLabelAtIndex:(unsigned long long)arg1;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (void)reloadLayoutInformation;
-- (long long)textAlignmentForLabelAtIndex:(unsigned long long)arg1;
+- (int)textAlignmentForLabelAtIndex:(unsigned int)arg1;
 
 @end

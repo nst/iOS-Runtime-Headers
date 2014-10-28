@@ -5,57 +5,57 @@
 @class MPMediaItem, MPMediaPlaylist, MPMediaQuery, MPRadioStation;
 
 @interface MPMusicPlayerClientState : NSObject {
+    BOOL _allowsBackgroundVideo;
     int _backgroundPlaybackAccess;
     MPMediaItem *_firstItem;
     MPMediaPlaylist *_geniusMixPlaylist;
+    BOOL _hasAudioBackgroundMode;
     MPMediaQuery *_query;
     MPRadioStation *_radioStation;
-    long long _repeatMode;
-    long long _shuffleMode;
-    bool_allowsBackgroundVideo;
-    bool_hasAudioBackgroundMode;
-    bool_seeking;
-    bool_useApplicationSpecificQueue;
-    bool_videoPlaybackEnabled;
+    int _repeatMode;
+    BOOL _seeking;
+    int _shuffleMode;
+    BOOL _useApplicationSpecificQueue;
+    BOOL _videoPlaybackEnabled;
 }
 
-@property bool allowsBackgroundVideo;
+@property BOOL allowsBackgroundVideo;
 @property int backgroundPlaybackAccess;
 @property(retain) MPMediaItem * firstItem;
 @property(retain) MPMediaPlaylist * geniusMixPlaylist;
-@property bool hasAudioBackgroundMode;
+@property BOOL hasAudioBackgroundMode;
 @property(retain) MPMediaQuery * query;
 @property(retain) MPRadioStation * radioStation;
-@property long long repeatMode;
-@property bool seeking;
-@property long long shuffleMode;
-@property bool useApplicationSpecificQueue;
-@property bool videoPlaybackEnabled;
+@property int repeatMode;
+@property BOOL seeking;
+@property int shuffleMode;
+@property BOOL useApplicationSpecificQueue;
+@property BOOL videoPlaybackEnabled;
 
 - (void).cxx_destruct;
-- (bool)allowsBackgroundVideo;
+- (BOOL)allowsBackgroundVideo;
 - (int)backgroundPlaybackAccess;
 - (id)firstItem;
 - (id)geniusMixPlaylist;
-- (bool)hasAudioBackgroundMode;
+- (BOOL)hasAudioBackgroundMode;
 - (id)query;
 - (id)radioStation;
-- (long long)repeatMode;
-- (bool)seeking;
-- (void)setAllowsBackgroundVideo:(bool)arg1;
+- (int)repeatMode;
+- (BOOL)seeking;
+- (void)setAllowsBackgroundVideo:(BOOL)arg1;
 - (void)setBackgroundPlaybackAccess:(int)arg1;
 - (void)setFirstItem:(id)arg1;
 - (void)setGeniusMixPlaylist:(id)arg1;
-- (void)setHasAudioBackgroundMode:(bool)arg1;
+- (void)setHasAudioBackgroundMode:(BOOL)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRadioStation:(id)arg1;
-- (void)setRepeatMode:(long long)arg1;
-- (void)setSeeking:(bool)arg1;
-- (void)setShuffleMode:(long long)arg1;
-- (void)setUseApplicationSpecificQueue:(bool)arg1;
-- (void)setVideoPlaybackEnabled:(bool)arg1;
-- (long long)shuffleMode;
-- (bool)useApplicationSpecificQueue;
-- (bool)videoPlaybackEnabled;
+- (void)setRepeatMode:(int)arg1;
+- (void)setSeeking:(BOOL)arg1;
+- (void)setShuffleMode:(int)arg1;
+- (void)setUseApplicationSpecificQueue:(BOOL)arg1;
+- (void)setVideoPlaybackEnabled:(BOOL)arg1;
+- (int)shuffleMode;
+- (BOOL)useApplicationSpecificQueue;
+- (BOOL)videoPlaybackEnabled;
 
 @end

@@ -15,7 +15,7 @@
 - (void)setComment:(id)arg1;
 - (void)setX_calendarserver_attendee_ref:(id)arg1;
 - (void)setX_calendarserver_dtstamp:(id)arg1;
-- (bool)shouldObscureValue;
+- (BOOL)shouldObscureValue;
 - (id)x_calendarserver_attendee_ref;
 - (id)x_calendarserver_dtstamp;
 

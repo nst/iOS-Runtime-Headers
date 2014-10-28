@@ -5,23 +5,23 @@
 @class NSString;
 
 @interface GEOReachability : NSObject <GEOResourceManifestTileGroupObserver> {
-    unsigned long long _errorCount;
-    bool_networkReachable;
+    unsigned int _errorCount;
+    BOOL _networkReachable;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedReachability;
 
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_resetErrors;
-- (bool)anyFailures;
+- (BOOL)anyFailures;
 - (void)dealloc;
 - (id)init;
-- (bool)networkAvailable;
+- (BOOL)networkAvailable;
 - (void)reportLoadFailure:(id)arg1;
 - (void)reportTileLoadSuccess:(id)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;

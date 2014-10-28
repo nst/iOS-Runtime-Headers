@@ -7,14 +7,15 @@
 @interface SPRowSection : SPSection <PRSRowSection> {
 }
 
+@property(retain) NSURL * attribution_url;
 @property(retain) NSString * key;
-@property bool key_nowrap;
-@property long long key_weight;
+@property BOOL key_nowrap;
+@property int key_weight;
 @property(retain) NSString * type;
 @property(retain) NSURL * url;
 @property(retain) NSString * value;
 @property(retain) PRSImage * value_image;
-@property bool value_nowrap;
-@property long long value_weight;
+@property BOOL value_nowrap;
+@property int value_weight;
 
 @end

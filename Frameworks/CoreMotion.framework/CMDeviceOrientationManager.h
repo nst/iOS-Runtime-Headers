@@ -14,8 +14,8 @@
 - (id)deviceOrientationBlocking;
 - (id)init;
 - (id)initPrivate;
-- (bool)isDeviceOrientationActive;
-- (bool)isDeviceOrientationAvailable;
+- (BOOL)isDeviceOrientationActive;
+- (BOOL)isDeviceOrientationAvailable;
 - (void)onDeviceOrientation:(const struct Sample { double x1; int x2; }*)arg1;
 - (void)onNotification:(id)arg1;
 - (void)setDeviceOrientationCallbackModePrivate:(int)arg1;

@@ -11,27 +11,27 @@
     FTRegConnectionHandler *_connectionHandler;
     } _monitorFlags;
     IMServiceImpl *_service;
-    long long _serviceType;
+    int _serviceType;
 }
 
 @property(retain,readonly) NSArray * activeAccounts;
 @property(retain) IMServiceImpl * service;
-@property long long serviceType;
+@property int serviceType;
 
 - (id)_activeAccounts;
 - (void)_handleAccountNotification:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;
-- (bool)_shouldHandleAccountNofication:(id)arg1;
+- (BOOL)_shouldHandleAccountNofication:(id)arg1;
 - (void)_startListeningForNotifications;
 - (void)_stopListeningForNotifications;
-- (void)_updateAccountState:(bool)arg1;
+- (void)_updateAccountState:(BOOL)arg1;
 - (id)activeAccounts;
 - (void)dealloc;
-- (id)initWithServiceType:(long long)arg1;
+- (id)initWithServiceType:(int)arg1;
 - (id)logName;
 - (id)service;
-- (long long)serviceType;
+- (int)serviceType;
 - (void)setService:(id)arg1;
-- (void)setServiceType:(long long)arg1;
+- (void)setServiceType:(int)arg1;
 
 @end

@@ -22,7 +22,7 @@
 @property(retain) NSString * accountYouTubeName;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * password;
 @property(readonly) Class superclass;
 @property(retain) NSHTTPURLResponse * urlResponse;
@@ -34,7 +34,7 @@
 - (void)_clearURLResponseInfo;
 - (id)_clientUUID;
 - (void)_getNewTokenForAccount:(id)arg1 password:(id)arg2;
-- (bool)_isTokenExpired:(id)arg1;
+- (BOOL)_isTokenExpired:(id)arg1;
 - (id)_passwordFromKeychain;
 - (void)_postAccountTokenGenerationFailedWithError:(id)arg1;
 - (void)_postNewAccountTokenAvailable;
@@ -43,7 +43,7 @@
 - (id)accountToken;
 - (id)accountTokenDate;
 - (id)accountYouTubeName;
-- (bool)cachedCredentialsValid;
+- (BOOL)cachedCredentialsValid;
 - (void)clearAccountInfo;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -51,9 +51,9 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)loadStoredCredentials;
+- (BOOL)loadStoredCredentials;
 - (id)password;
-- (bool)readyToRequestToken;
+- (BOOL)readyToRequestToken;
 - (void)setAccount:(id)arg1;
 - (void)setAccountToken:(id)arg1;
 - (void)setAccountTokenDate:(id)arg1;

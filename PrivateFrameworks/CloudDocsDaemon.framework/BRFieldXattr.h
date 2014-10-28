@@ -18,10 +18,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

@@ -12,7 +12,7 @@
 @property(retain) NSString * displayName;
 @property(retain) NSString * preferredAddress;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

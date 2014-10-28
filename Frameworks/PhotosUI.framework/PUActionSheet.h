@@ -15,18 +15,18 @@
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_tearDown;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)completionHandler;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 cancelButtonTitle:(id)arg2 destructiveButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)showFromObject:(id)arg1 animated:(bool)arg2 withCompletionHandler:(id)arg3;
+- (void)showFromObject:(id)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
 - (void)showFromViewController:(id)arg1 withCompletionHandler:(id)arg2;
 
 @end

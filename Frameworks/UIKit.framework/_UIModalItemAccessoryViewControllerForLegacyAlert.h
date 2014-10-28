@@ -10,6 +10,6 @@
 
 - (void)_setAccessoryView:(id)arg1;
 - (void)dealloc;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -7,7 +7,7 @@
 
 + (id)UTITypes;
 
-- (id)_generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)generatePreviewWithCompletion:(id)arg1;
 - (id)previewItemTitle;
 

@@ -21,7 +21,7 @@
 }
 
 - (void)_continueAfterDeferredStart;
-- (bool)_hasDeferredStartCallback;
+- (BOOL)_hasDeferredStartCallback;
 - (id)_session;
 - (void)_setSession:(id)arg1;
 - (id)cancel;
@@ -30,7 +30,7 @@
 - (void)dealloc;
 - (id)perform;
 - (id)resultDisplayString;
-- (bool)sensitiveActionsEnabled;
+- (BOOL)sensitiveActionsEnabled;
 - (void)setResultDisplayString:(id)arg1;
 - (void)setSpokenFeedbackAttributedString:(id)arg1;
 - (void)setSpokenFeedbackString:(id)arg1;

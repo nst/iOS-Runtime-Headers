@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * serviceName;
 @property(readonly) Class superclass;
 @property(retain) UIViewController<ServiceNameEditedDelegate> * viewController;
@@ -19,12 +19,12 @@
 - (void)didReceiveMemoryWarning;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)serviceName;
 - (void)setServiceName:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)textFieldDone:(id)arg1;
 - (id)viewController;
 - (void)viewDidLoad;

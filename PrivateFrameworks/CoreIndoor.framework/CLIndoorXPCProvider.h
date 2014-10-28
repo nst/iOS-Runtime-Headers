@@ -10,7 +10,7 @@
         struct aligned_storage<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
             union dummy_u { 
                 BOOL data[8]; 
-                struct a8 { } aligner_; 
+                struct a4 { } aligner_; 
             } dummy_; 
         } m_storage; 
     NSXPCConnection *_connection;

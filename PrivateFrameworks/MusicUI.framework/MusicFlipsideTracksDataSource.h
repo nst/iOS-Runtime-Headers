@@ -5,6 +5,6 @@
 @interface MusicFlipsideTracksDataSource : MusicSongsDataSource {
 }
 
-- (bool)entityIsNowPlayingAtIndex:(unsigned long long)arg1;
+- (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
 
 @end

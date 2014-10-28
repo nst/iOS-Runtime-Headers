@@ -9,21 +9,21 @@
         unsigned int IDLength; 
         unsigned char ID[20]; 
     NSString *_SAPVersion;
+    BOOL _complete;
     } _hardwareInfo;
     struct FPSAPContextOpaque_ { } *_session;
-    bool_complete;
 }
 
 @property(retain) NSString * SAPVersion;
-@property(getter=isComplete,readonly) bool complete;
+@property(getter=isComplete,readonly) BOOL complete;
 
 - (void).cxx_destruct;
 - (id)SAPVersion;
-- (bool)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
+- (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
 - (void)dealloc;
 - (id)exchangeData:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (bool)isComplete;
+- (BOOL)isComplete;
 - (id)processSignedData:(id)arg1 withSignature:(id)arg2 error:(id*)arg3;
 - (void)setSAPVersion:(id)arg1;
 - (id)signatureForData:(id)arg1 error:(id*)arg2;

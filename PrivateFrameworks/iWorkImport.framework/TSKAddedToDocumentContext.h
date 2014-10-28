@@ -22,25 +22,25 @@
 
 - (void)addDrawable:(id)arg1;
 - (id)addedDrawables;
-- (bool)autoUpdateSmartFields;
-- (bool)changeTrackingSubstorage;
+- (BOOL)autoUpdateSmartFields;
+- (BOOL)changeTrackingSubstorage;
 - (id)importerID;
-- (bool)invokeDOLC;
-- (bool)matchStyle;
-- (bool)preserveChangeTracking;
+- (BOOL)invokeDOLC;
+- (BOOL)matchStyle;
+- (BOOL)preserveChangeTracking;
 - (void)setTableIDMap:(struct __CFDictionary { }*)arg1;
-- (bool)syncChanges;
+- (BOOL)syncChanges;
 - (struct __CFDictionary { }*)tableIDMap;
 - (id)undoContext;
-- (bool)uniqueBookmarks;
-- (bool)wasDragMoved;
-- (bool)wasDragOperation;
-- (bool)wasImported;
-- (bool)wasImportedFromMasterTemplate;
-- (bool)wasMoved;
-- (bool)wasPasted;
-- (bool)wasUnarchived;
-- (bool)wasUndoDelete;
-- (bool)wasUnhidden;
+- (BOOL)uniqueBookmarks;
+- (BOOL)wasDragMoved;
+- (BOOL)wasDragOperation;
+- (BOOL)wasImported;
+- (BOOL)wasImportedFromMasterTemplate;
+- (BOOL)wasMoved;
+- (BOOL)wasPasted;
+- (BOOL)wasUnarchived;
+- (BOOL)wasUndoDelete;
+- (BOOL)wasUnhidden;
 
 @end

@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_clearConnection;
@@ -24,6 +24,6 @@
 - (id)getSafariDataUsageSummary;
 - (void)getSafariWebDataUsageWithCompletion:(id)arg1;
 - (id)init;
-- (void)setCellularReadingListAllowed:(bool)arg1;
+- (void)setCellularReadingListAllowed:(BOOL)arg1;
 
 @end

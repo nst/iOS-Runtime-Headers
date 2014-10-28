@@ -7,11 +7,11 @@
 
 + (Class)_moreListControllerClass;
 
-- (long long)ITunesStoreUIBarStyle;
+- (int)ITunesStoreUIBarStyle;
 - (id)copyScriptViewController;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)viewWillAppear:(bool)arg1;
-- (bool)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(long long)arg2;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 
 @end

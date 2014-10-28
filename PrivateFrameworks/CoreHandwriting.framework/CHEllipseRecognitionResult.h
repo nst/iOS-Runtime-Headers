@@ -4,21 +4,21 @@
 
 @interface CHEllipseRecognitionResult : CHSketchRecognitionResult {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _center;
     } _size;
 }
 
-@property(readonly) struct CGPoint { double x1; double x2; } center;
-@property(readonly) struct CGSize { double x1; double x2; } size;
+@property(readonly) struct CGPoint { float x1; float x2; } center;
+@property(readonly) struct CGSize { float x1; float x2; } size;
 
 - (id).cxx_construct;
-- (struct CGPoint { double x1; double x2; })center;
-- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(double)arg3 center:(struct CGPoint { double x1; double x2; })arg4 size:(struct CGSize { double x1; double x2; })arg5;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGPoint { float x1; float x2; })center;
+- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 center:(struct CGPoint { float x1; float x2; })arg4 size:(struct CGSize { float x1; float x2; })arg5;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

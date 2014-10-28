@@ -7,54 +7,56 @@
 @interface _UIDocumentPickerContainerItem : NSObject {
     id _item;
     NSString *_pickabilityReason;
+    BOOL _pickable;
     NSMapTable *_thumbnailsBySize;
-    long long _type;
+    int _type;
     _UIDocumentPickerContainerModel *_weak_parentModel;
-    bool_pickable;
 }
 
 @property(retain) id item;
 @property _UIDocumentPickerContainerModel * parentModel;
 @property(copy) NSString * pickabilityReason;
-@property bool pickable;
+@property BOOL pickable;
 @property(readonly) NSDate * sortDate;
+@property(retain,readonly) NSString * subtitle2;
 @property(retain,readonly) NSString * subtitle;
 @property(retain) NSMapTable * thumbnailsBySize;
 @property(retain,readonly) NSString * title;
-@property(readonly) long long type;
+@property(readonly) int type;
 @property(retain,readonly) NSURL * url;
 
 + (id)_lruThumbnailArray;
 + (void)clearLRUThumbnailCache;
 + (void)markThumbnailAsRecentlyUsed:(id)arg1;
 
-- (id)_blipWithTags:(id)arg1 height:(double)arg2 scale:(double)arg3;
-- (id)_blockingThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
-- (id)_createThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
-- (id)_defaultThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
+- (id)_blipWithTags:(id)arg1 height:(float)arg2 scale:(float)arg3;
+- (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (id)_createThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (id)_defaultThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithItem:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)item;
 - (id)parentModel;
 - (id)pickabilityReason;
-- (bool)pickable;
+- (BOOL)pickable;
 - (void)setItem:(id)arg1;
 - (void)setParentModel:(id)arg1;
 - (void)setPickabilityReason:(id)arg1;
-- (void)setPickable:(bool)arg1;
+- (void)setPickable:(BOOL)arg1;
 - (void)setThumbnailsBySize:(id)arg1;
 - (id)sortDate;
 - (id)sortTag;
+- (id)subtitle2;
 - (id)subtitle;
-- (id)tagBlipsWithHeight:(double)arg1 scale:(double)arg2;
+- (id)tagBlipsWithHeight:(float)arg1 scale:(float)arg2;
 - (id)tags;
-- (id)thumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
+- (id)thumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)thumbnailsBySize;
 - (id)title;
-- (long long)type;
+- (int)type;
 - (id)url;
 
 @end

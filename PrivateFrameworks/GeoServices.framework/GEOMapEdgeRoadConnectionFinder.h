@@ -5,7 +5,7 @@
 @interface GEOMapEdgeRoadConnectionFinder : GEOMapEdgeConnectionFinder {
 }
 
-- (void)_findConnectedEdges:(id)arg1 incoming:(bool)arg2;
-- (void)_findConnections:(id)arg1 incoming:(bool)arg2;
+- (void)_findConnectedEdges:(id)arg1 incoming:(BOOL)arg2;
+- (void)_findConnections:(id)arg1 incoming:(BOOL)arg2;
 
 @end

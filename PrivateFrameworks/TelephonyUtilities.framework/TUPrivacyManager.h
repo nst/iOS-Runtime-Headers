@@ -12,10 +12,10 @@
 - (id)allBlacklistRules;
 - (void)dealloc;
 - (id)init;
-- (bool)isIncomingCommunicationBlockedForEmailAddress:(id)arg1;
-- (bool)isIncomingCommunicationBlockedForPhoneNumber:(id)arg1;
+- (BOOL)isIncomingCommunicationBlockedForEmailAddress:(id)arg1;
+- (BOOL)isIncomingCommunicationBlockedForPhoneNumber:(id)arg1;
 - (void)removeRule:(id)arg1;
-- (void)setBlockIncomingCommunication:(bool)arg1 forEmailAddress:(id)arg2;
-- (void)setBlockIncomingCommunication:(bool)arg1 forPhoneNumber:(id)arg2;
+- (void)setBlockIncomingCommunication:(BOOL)arg1 forEmailAddress:(id)arg2;
+- (void)setBlockIncomingCommunication:(BOOL)arg1 forPhoneNumber:(id)arg2;
 
 @end

@@ -13,7 +13,7 @@
 @property(retain) NSArray * sortedRecords;
 
 - (void).cxx_destruct;
-- (bool)addRecords:(id)arg1 error:(id*)arg2;
+- (BOOL)addRecords:(id)arg1 error:(id*)arg2;
 - (id)description;
 - (id)init;
 - (id)nodes;

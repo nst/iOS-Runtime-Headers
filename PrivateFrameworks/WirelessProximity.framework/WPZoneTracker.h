@@ -7,23 +7,23 @@
 @interface WPZoneTracker : NSObject <XPCClientDelegate> {
     XPCClient *_connection;
     <WPZoneTrackerDelegate> *_delegate;
-    long long _state;
-    bool_wantEntry;
-    bool_wantExit;
+    int _state;
+    BOOL _wantEntry;
+    BOOL _wantExit;
 }
 
 @property(retain) XPCClient * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property <WPZoneTrackerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property long long state;
+@property(readonly) unsigned int hash;
+@property int state;
 @property(readonly) Class superclass;
-@property bool wantEntry;
-@property bool wantExit;
+@property BOOL wantEntry;
+@property BOOL wantExit;
 
 - (void).cxx_destruct;
-- (void)changeState:(long long)arg1;
+- (void)changeState:(int)arg1;
 - (id)connection;
 - (void)connectionDied;
 - (void)connectionInterrupted;
@@ -38,14 +38,14 @@
 - (void)registerZonesFailed:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setState:(long long)arg1;
-- (void)setWantEntry:(bool)arg1;
-- (void)setWantExit:(bool)arg1;
-- (long long)state;
+- (void)setState:(int)arg1;
+- (void)setWantEntry:(BOOL)arg1;
+- (void)setWantExit:(BOOL)arg1;
+- (int)state;
 - (void)unregisterAllZoneChanges;
 - (void)unregisterForZoneChanges:(id)arg1;
-- (bool)wantEntry;
-- (bool)wantExit;
+- (BOOL)wantEntry;
+- (BOOL)wantExit;
 - (void)zonesEntered:(id)arg1;
 - (void)zonesExited:(id)arg1;
 

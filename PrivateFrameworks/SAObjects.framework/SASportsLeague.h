@@ -12,7 +12,7 @@
 @property(copy) NSString * diplayedText;
 @property(copy) NSNumber * displayTeamLocationOverName;
 @property(copy) NSString * displayedText;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * identifier;
 @property(retain) SASportsSeason * season;
 @property(copy) NSString * sport;

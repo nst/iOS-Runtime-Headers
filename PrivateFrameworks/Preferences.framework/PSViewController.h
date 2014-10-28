@@ -12,10 +12,10 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (bool)canBeShownFromSuspendedState;
+- (BOOL)canBeShownFromSuspendedState;
 - (void)dealloc;
 - (void)didLock;
 - (void)didUnlock;
@@ -26,7 +26,7 @@
 - (id)parentController;
 - (void)popupViewDidDisappear;
 - (void)popupViewWillDisappear;
-- (void)pushController:(id)arg1 animate:(bool)arg2;
+- (void)pushController:(id)arg1 animate:(BOOL)arg2;
 - (void)pushController:(id)arg1;
 - (id)readPreferenceValue:(id)arg1;
 - (id)rootController;
@@ -34,10 +34,10 @@
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 - (void)setRootController:(id)arg1;
 - (void)setSpecifier:(id)arg1;
-- (void)showController:(id)arg1 animate:(bool)arg2;
+- (void)showController:(id)arg1 animate:(BOOL)arg2;
 - (void)showController:(id)arg1;
 - (id)specifier;
-- (void)statusBarWillAnimateByHeight:(double)arg1;
+- (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)suspend;
 - (void)willBecomeActive;
 - (void)willResignActive;

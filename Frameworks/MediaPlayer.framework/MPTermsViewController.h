@@ -8,10 +8,10 @@
     UIActivityIndicatorView *_activityIndicatorView;
     UIView *_bottomSpacerView;
     <MPTermsViewControllerDelegate> *_delegate;
+    BOOL _needToLoadTerms;
     SSTermsAndConditions *_termsAndConditions;
     UITextView *_termsTextView;
     UIView *_topSpacerView;
-    bool_needToLoadTerms;
 }
 
 @property(retain) UIActivityIndicatorView * activityIndicatorView;
@@ -41,11 +41,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setTermsTextView:(id)arg1;
 - (void)setTopSpacerView:(id)arg1;
-- (bool)shouldAutorotate;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)termsTextView;
 - (id)topSpacerView;
-- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

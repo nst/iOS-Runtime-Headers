@@ -15,7 +15,7 @@
 - (id)_collateContexts;
 - (void)_collateContextsIntoArray:(id)arg1;
 - (void)_shutdownServer;
-- (bool)addContextProvider:(id)arg1;
+- (BOOL)addContextProvider:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)nothing;

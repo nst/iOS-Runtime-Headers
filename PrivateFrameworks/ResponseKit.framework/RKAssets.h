@@ -11,7 +11,8 @@
 + (id)categoryResponses;
 + (id)fixedPhrases;
 + (id)polarTagKeywords;
-+ (id)sensitiveSubjects;
++ (id)sensitiveSubjectKeywords;
++ (id)sensitiveSubjectRegularExpressionPatterns;
 + (id)synonyms;
 + (id)wordIDs;
 

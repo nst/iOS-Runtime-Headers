@@ -7,8 +7,8 @@
 @interface GEOSearchAttributionSource : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     NSMutableArray *_attributionApps;
     } _attributionRequirements;
     NSMutableArray *_localizedAttributions;
@@ -18,7 +18,7 @@
 
 @property(retain) NSMutableArray * attributionApps;
 @property(readonly) int* attributionRequirements;
-@property(readonly) unsigned long long attributionRequirementsCount;
+@property(readonly) unsigned int attributionRequirementsCount;
 @property(retain) NSMutableArray * localizedAttributions;
 @property(retain) NSString * sourceIdentifier;
 @property unsigned int sourceVersion;
@@ -27,11 +27,11 @@
 - (void)addAttributionRequirements:(int)arg1;
 - (void)addLocalizedAttribution:(id)arg1;
 - (id)attributionApps;
-- (id)attributionAppsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)attributionAppsCount;
+- (id)attributionAppsAtIndex:(unsigned int)arg1;
+- (unsigned int)attributionAppsCount;
 - (int*)attributionRequirements;
-- (int)attributionRequirementsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)attributionRequirementsCount;
+- (int)attributionRequirementsAtIndex:(unsigned int)arg1;
+- (unsigned int)attributionRequirementsCount;
 - (id)bestLocalizedAttribution;
 - (void)clearAttributionApps;
 - (void)clearAttributionRequirements;
@@ -41,15 +41,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (id)localizedAttributionAtIndex:(unsigned long long)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)localizedAttributionAtIndex:(unsigned int)arg1;
 - (id)localizedAttributions;
-- (unsigned long long)localizedAttributionsCount;
+- (unsigned int)localizedAttributionsCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAttributionApps:(id)arg1;
-- (void)setAttributionRequirements:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setAttributionRequirements:(int*)arg1 count:(unsigned int)arg2;
 - (void)setLocalizedAttributions:(id)arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setSourceVersion:(unsigned int)arg1;

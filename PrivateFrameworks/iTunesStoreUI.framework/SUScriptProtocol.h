@@ -10,10 +10,10 @@
 @property(retain) NSArray * allowedOrientations;
 @property(readonly) NSString * clientIdentifier;
 @property(retain) NSString * copyright;
-@property bool excludeFromNavigationHistory;
+@property BOOL excludeFromNavigationHistory;
 @property(retain) SUScriptURLRequest * overlayBackgroundURLRequest;
 @property(readonly) NSString * protocolVersion;
-@property bool shouldShowInOverlay;
+@property BOOL shouldShowInOverlay;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -27,16 +27,16 @@
 - (id)attributeKeys;
 - (id)clientIdentifier;
 - (id)copyright;
-- (bool)excludeFromNavigationHistory;
+- (BOOL)excludeFromNavigationHistory;
 - (id)overlayBackgroundURLRequest;
 - (id)protocolVersion;
 - (id)scriptAttributeKeys;
 - (void)setAllowedOrientations:(id)arg1;
 - (void)setCopyright:(id)arg1;
-- (void)setExcludeFromNavigationHistory:(bool)arg1;
+- (void)setExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setOverlayBackgroundURLRequest:(id)arg1;
-- (void)setShouldShowInOverlay:(bool)arg1;
+- (void)setShouldShowInOverlay:(BOOL)arg1;
 - (void)setValuesFromDictionary:(id)arg1;
-- (bool)shouldShowInOverlay;
+- (BOOL)shouldShowInOverlay;
 
 @end

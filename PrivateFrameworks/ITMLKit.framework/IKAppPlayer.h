@@ -16,7 +16,7 @@
 @property <IKAppPlayerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSString * featureName;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property IKJSPlayer * jsPlayer;
 @property(readonly) Class superclass;
 

@@ -12,8 +12,8 @@
     GEONameInfo *_nameInfo;
 }
 
-@property bool hasLastZilchStitchedIndex;
-@property(readonly) bool hasNameInfo;
+@property BOOL hasLastZilchStitchedIndex;
+@property(readonly) BOOL hasNameInfo;
 @property int lastZilchStitchedIndex;
 @property(retain) GEONameInfo * nameInfo;
 
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasLastZilchStitchedIndex;
-- (bool)hasNameInfo;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasLastZilchStitchedIndex;
+- (BOOL)hasNameInfo;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (int)lastZilchStitchedIndex;
 - (void)mergeFrom:(id)arg1;
 - (id)nameInfo;
-- (bool)readFrom:(id)arg1;
-- (void)setHasLastZilchStitchedIndex:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasLastZilchStitchedIndex:(BOOL)arg1;
 - (void)setLastZilchStitchedIndex:(int)arg1;
 - (void)setNameInfo:(id)arg1;
 - (void)writeTo:(id)arg1;

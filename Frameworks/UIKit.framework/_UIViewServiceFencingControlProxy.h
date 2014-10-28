@@ -10,7 +10,7 @@
 
 + (id)proxyWithTarget:(id)arg1 fencingController:(id)arg2 exportedProtocol:(id)arg3;
 
-- (void)__beginFencingMessagesWithSendRight:(id)arg1 connectionCount:(unsigned long long)arg2;
+- (void)__beginFencingMessagesWithSendRight:(id)arg1 connectionCount:(unsigned int)arg2;
 - (void)__endFencingMessagesForSendRight:(id)arg1;
 - (void)dealloc;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -3,19 +3,19 @@
  */
 
 @interface SKUIStarBarViewElement : SKUIViewElement {
-    long long _numberOfRatings;
-    long long _numberOfStars;
+    int _numberOfRatings;
+    int _numberOfStars;
     float _value;
 }
 
-@property(readonly) long long numberOfRatings;
-@property(readonly) long long numberOfStars;
+@property(readonly) int numberOfRatings;
+@property(readonly) int numberOfStars;
 @property(readonly) float value;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (long long)numberOfRatings;
-- (long long)numberOfStars;
+- (int)numberOfRatings;
+- (int)numberOfStars;
 - (float)value;
 
 @end

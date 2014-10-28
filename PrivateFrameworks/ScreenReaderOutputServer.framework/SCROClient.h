@@ -16,9 +16,9 @@
 + (id)addClientGetIdentifier:(unsigned int*)arg1 token:(struct { unsigned int x1[8]; })arg2 getPort:(unsigned int*)arg3;
 + (id)callbacksForClientIdentifier:(unsigned int)arg1;
 + (void)initialize;
-+ (bool)isClientTrustedWithPortToken:(struct { unsigned int x1[8]; })arg1;
++ (BOOL)isClientTrustedWithPortToken:(struct { unsigned int x1[8]; })arg1;
 + (void)registerCallbackWithKey:(int)arg1 forClientIdentifier:(unsigned int)arg2;
-+ (long long)removeClientWithPort:(unsigned int)arg1;
++ (long)removeClientWithPort:(unsigned int)arg1;
 + (void)sendCallback:(id)arg1;
 
 - (id)_dequeueCallbacks;
@@ -27,7 +27,7 @@
 - (void)_registerCallbackWithKey:(int)arg1;
 - (void)_sendCallback:(id)arg1;
 - (void)_unlock;
-- (bool)_wantsCallback:(id)arg1;
+- (BOOL)_wantsCallback:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

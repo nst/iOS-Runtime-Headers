@@ -5,11 +5,11 @@
 @interface ABMultiCellContentView_IM : ABMultiCellContentView_DisplayAlternate {
 }
 
-+ (unsigned long long)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
++ (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
 
 - (id)pickerView;
 - (void)reloadFromModel;
-- (void)reloadFromModelIncludingRows:(bool)arg1;
+- (void)reloadFromModelIncludingRows:(BOOL)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
 
 @end

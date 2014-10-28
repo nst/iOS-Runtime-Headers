@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
 @property(readonly) Class superclass;
 
@@ -31,18 +31,18 @@
 - (void)_startScan:(id)arg1;
 - (void)_unlinkAliasAtPath:(id)arg1;
 - (void)close;
-- (void)fseventAtPath:(id)arg1 withFlags:(unsigned int)arg2;
-- (void)fseventOnAlias:(id)arg1 withFlags:(unsigned int)arg2 lookup:(id)arg3;
-- (void)fseventOnContainerPath:(id)arg1 withFlags:(unsigned int)arg2;
-- (void)fseventOnDeadPath:(id)arg1 withFlags:(unsigned int)arg2 lookup:(id)arg3;
-- (void)fseventOnDirectory:(id)arg1 withFlags:(unsigned int)arg2 lookup:(id)arg3;
-- (void)fseventOnDocument:(id)arg1 withFlags:(unsigned int)arg2 lookup:(id)arg3;
-- (void)fseventOnRootPath:(id)arg1 withFlags:(unsigned int)arg2;
+- (void)fseventAtPath:(id)arg1 withFlags:(unsigned long)arg2;
+- (void)fseventOnAlias:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnContainerPath:(id)arg1 withFlags:(unsigned long)arg2;
+- (void)fseventOnDeadPath:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnDirectory:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnDocument:(id)arg1 withFlags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnRootPath:(id)arg1 withFlags:(unsigned long)arg2;
 - (id)initWithAccountSession:(id)arg1;
 - (id)itemForCreatedDocumentsDirectory:(id)arg1 container:(id)arg2;
 - (id)lookupAndReadItemUnderCoordinationAtURL:(id)arg1;
 - (void)readUnderCoordinationAtURL:(id)arg1;
-- (bool)readUnderCoordinationWithLookup:(id)arg1;
+- (BOOL)readUnderCoordinationWithLookup:(id)arg1;
 - (void)reset;
 - (void)resume;
 - (void)scanContainerAtPathIfNeeded:(id)arg1;

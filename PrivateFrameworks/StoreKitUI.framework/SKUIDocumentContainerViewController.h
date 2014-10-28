@@ -17,17 +17,17 @@
     NSDictionary *_presentationOptions;
     NSArray *_searchBarControllers;
     NSValue *_sizeAtDisappear;
-    unsigned long long _templateViewElementType;
+    unsigned int _templateViewElementType;
     NSString *_urlString;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UIView * navigationPaletteView;
 @property(readonly) Class superclass;
 
-+ (bool)_shouldForwardViewWillTransitionToSize;
++ (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)_enqueueLoadURLOperation;
@@ -59,15 +59,15 @@
 - (void)loadView;
 - (id)navigationPaletteView;
 - (void)reloadData;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)skui_viewWillAppear:(bool)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)skui_viewWillAppear:(BOOL)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

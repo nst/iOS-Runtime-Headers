@@ -13,53 +13,53 @@
         float x; 
         float y; 
         float z; 
-     /* Encoded args for previous method: 32@0:816 */
-     /* Encoded args for previous method: 32@0:816 */
+     /* Encoded args for previous method: 24@0:48 */
+     /* Encoded args for previous method: 24@0:48 */
     } _originalCameraPosition;
     SCNScene *_scene;
     <SCNRenderer> *_scnRenderer;
-    boolautoenablesDefaultLighting;
-    boolloops;
-    boolplaying;
+    BOOL autoenablesDefaultLighting;
+    BOOL loops;
+    BOOL playing;
     SCNNode *pointOfView;
     double sceneTime;
 }
 
-@property bool autoenablesDefaultLighting;
-@property bool loops;
-@property(getter=isPlaying) bool playing;
+@property BOOL autoenablesDefaultLighting;
+@property BOOL loops;
+@property(getter=isPlaying) BOOL playing;
 @property(retain) SCNNode * pointOfView;
 @property double sceneTime;
 @property(retain) SCNScene * scnScene;
-@property struct CGSize { double x1; double x2; } viewportSize;
+@property struct CGSize { float x1; float x2; } viewportSize;
 
-+ (id)nodeWithViewportSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)nodeWithViewportSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_renderForTime:(double)arg1;
-- (bool)autoenablesDefaultLighting;
+- (BOOL)autoenablesDefaultLighting;
 - (void)commonInit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 options:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 options:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithViewportSize:(struct CGSize { double x1; double x2; })arg1;
-- (bool)isPlaying;
-- (bool)loops;
+- (id)initWithViewportSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)isPlaying;
+- (BOOL)loops;
 - (id)pointOfView;
-- (/* Warning: Unrecognized filer type: '3' using 'void*' */ void*)projectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)projectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
 - (double)sceneTime;
 - (id)scnScene;
-- (void)setAutoenablesDefaultLighting:(bool)arg1;
-- (void)setLoops:(bool)arg1;
-- (void)setPlaying:(bool)arg1;
+- (void)setAutoenablesDefaultLighting:(BOOL)arg1;
+- (void)setLoops:(BOOL)arg1;
+- (void)setPlaying:(BOOL)arg1;
 - (void)setPointOfView:(id)arg1;
 - (void)setSceneTime:(double)arg1;
 - (void)setScnScene:(id)arg1;
-- (void)setViewportSize:(struct CGSize { double x1; double x2; })arg1;
-- (/* Warning: Unrecognized filer type: '3' using 'void*' */ void*)unprojectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-- (struct CGSize { double x1; double x2; })viewportSize;
+- (void)setViewportSize:(struct CGSize { float x1; float x2; })arg1;
+- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)unprojectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+- (struct CGSize { float x1; float x2; })viewportSize;
 
 @end

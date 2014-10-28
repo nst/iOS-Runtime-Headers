@@ -6,32 +6,32 @@
 
 @interface AVSampleBufferDisplayLayerInternal : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
-    boolaboveHighWaterLevel;
-    booladdedToSynchronizer;
-    boolcontrolTimebaseSetByUserIsInUse;
-    boolisRequestingMediaData;
-    booloutputObscured;
+    BOOL aboveHighWaterLevel;
+    BOOL addedToSynchronizer;
     } bounds;
     CALayer *contentLayer;
     struct OpaqueCMTimebase { } *controlTimebaseSetByUser;
+    BOOL controlTimebaseSetByUserIsInUse;
     NSError *error;
+    BOOL isRequestingMediaData;
     AVMediaDataRequester *mediaDataRequester;
+    BOOL outputObscured;
     } presentationSize;
     struct OpaqueCMTimebase { } *readOnlyRenderingTimebase;
     struct OpaqueCMTimebase { } *readOnlyVideoQueueTimebase;
     NSObject<OS_dispatch_queue> *serialQueue;
-    long long status;
+    int status;
     NSString *videoGravity;
     struct OpaqueFigVideoQueue { } *videoQueue;
     AVWeakReference *weakReferenceToSelf;

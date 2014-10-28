@@ -5,19 +5,19 @@
 @interface EKPersistentOrganizer : EKPersistentParticipant {
 }
 
-@property(getter=isCurrentUser) bool currentUser;
+@property(getter=isCurrentUser) BOOL currentUser;
 
 + (id)defaultPropertiesToLoad;
-+ (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(bool)arg4;
++ (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
 + (id)relations;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)entityType;
-- (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(bool)arg4;
-- (bool)isCurrentUser;
+- (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
+- (BOOL)isCurrentUser;
 - (id)owner;
-- (void)setCurrentUser:(bool)arg1;
+- (void)setCurrentUser:(BOOL)arg1;
 - (void)setOwner:(id)arg1;
 
 @end

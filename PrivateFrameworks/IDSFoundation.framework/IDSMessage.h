@@ -24,9 +24,9 @@
 - (void)setWantsDeliveryStatus:(id)arg1;
 - (id)userAgentHeaderString;
 - (id)version;
-- (bool)wantsAPSRetries;
+- (BOOL)wantsAPSRetries;
 - (id)wantsDeliveryStatus;
-- (bool)wantsHTTPHeaders;
-- (bool)wantsUserAgentInHeaders;
+- (BOOL)wantsHTTPHeaders;
+- (BOOL)wantsUserAgentInHeaders;
 
 @end

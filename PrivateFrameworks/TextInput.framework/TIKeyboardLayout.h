@@ -3,25 +3,25 @@
  */
 
 @interface TIKeyboardLayout : NSObject <NSSecureCoding> {
-    unsigned long long _count;
+    unsigned int _count;
     struct _ShortRect { short x1; short x2; short x3; short x4; } *_frames;
-    unsigned long long _framesCapacity;
+    unsigned int _framesCapacity;
     char *_strings;
-    unsigned long long _stringsCapacity;
-    unsigned long long _stringsSize;
+    unsigned int _stringsCapacity;
+    unsigned int _stringsSize;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (void)addKeyWithString:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)addKeyWithString:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)ensureFrameCapacity:(unsigned long long)arg1;
-- (void)ensureStringCapacity:(unsigned long long)arg1;
+- (void)ensureFrameCapacity:(unsigned int)arg1;
+- (void)ensureStringCapacity:(unsigned int)arg1;
 - (void)enumerateKeysUsingBlock:(id)arg1;
-- (unsigned long long)hash;
-- (id)initWithCapacity:(unsigned long long)arg1;
+- (unsigned int)hash;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

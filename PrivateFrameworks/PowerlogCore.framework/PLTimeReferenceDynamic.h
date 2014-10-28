@@ -26,7 +26,7 @@
 - (double)accumulatedError;
 - (void)checkForTimeChangeWithCurrentTime:(id)arg1;
 - (void)cleanupOffsetHistory;
-- (id)initWithTimeManager:(id)arg1 entryDefinitionKey:(id)arg2 timeReferenceType:(long long)arg3;
+- (id)initWithTimeManager:(id)arg1 entryDefinitionKey:(id)arg2 timeReferenceType:(int)arg3;
 - (void)initializeOffsetWithEntry:(id)arg1;
 - (id)lastQueryTime;
 - (id)newOffsetEntry;
@@ -42,7 +42,7 @@
 - (void)setTimeChangeBlocks:(id)arg1;
 - (void)setTooFarInFutureDistance:(double)arg1;
 - (void)setTooFarInPastDistance:(double)arg1;
-- (bool)shouldQueryCurrentTime;
+- (BOOL)shouldQueryCurrentTime;
 - (id)timeChangeBlocks;
 - (double)tooFarInFutureDistance;
 - (double)tooFarInPastDistance;

@@ -5,6 +5,6 @@
 @interface PUFeedViewControllerPopoverSpec : PUFeedViewControllerPhoneSpec {
 }
 
-- (bool)shouldUseFullscreenLayout;
+- (BOOL)shouldUseFullscreenLayout;
 
 @end

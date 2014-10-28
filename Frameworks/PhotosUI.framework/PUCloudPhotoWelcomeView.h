@@ -13,17 +13,19 @@
     } _delegateFlags;
     UILabel *_finePrintLabel;
     UIButton *_goButton;
+    BOOL _goButtonEnabled;
+    BOOL _goButtonVisible;
     NSLayoutConstraint *_goButtonWidthConstraint;
     UIImageView *_graphicImageView;
     UILabel *_titleLabel;
-    bool_goButtonEnabled;
 }
 
 @property(retain) UILabel * bodyLabel;
 @property <PUCloudPhotoWelcomeViewDelegate> * delegate;
 @property(retain) UILabel * finePrintLabel;
 @property(retain) UIButton * goButton;
-@property(getter=goButtonIsEnabled) bool goButtonEnabled;
+@property(getter=goButtonIsEnabled) BOOL goButtonEnabled;
+@property(getter=goButtonIsVisible) BOOL goButtonVisible;
 @property(retain) UIImageView * graphicImageView;
 @property(retain) UILabel * titleLabel;
 
@@ -38,16 +40,18 @@
 - (id)delegate;
 - (id)finePrintLabel;
 - (id)goButton;
-- (bool)goButtonIsEnabled;
+- (BOOL)goButtonIsEnabled;
+- (BOOL)goButtonIsVisible;
 - (id)graphicImageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setBodyLabel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFinePrintLabel:(id)arg1;
 - (void)setGoButton:(id)arg1;
-- (void)setGoButtonEnabled:(bool)arg1;
+- (void)setGoButtonEnabled:(BOOL)arg1;
+- (void)setGoButtonVisible:(BOOL)arg1;
 - (void)setGraphicImageView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)titleLabel;

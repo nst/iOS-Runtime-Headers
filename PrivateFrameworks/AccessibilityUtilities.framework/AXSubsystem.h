@@ -13,12 +13,12 @@
 + (void)initialize;
 + (void)resetPreferredLogLevel;
 + (void)setPreferredLogLevel:(int)arg1;
-+ (void)setShouldLogToFile:(bool)arg1;
-+ (bool)shouldIncludeBacktraceInLogs;
-+ (bool)shouldLogToFile;
-+ (bool)shouldProcessMessageForLogs;
++ (void)setShouldLogToFile:(BOOL)arg1;
++ (BOOL)shouldIncludeBacktraceInLogs;
++ (BOOL)shouldLogToFile;
++ (BOOL)shouldProcessMessageForLogs;
 + (id)subsystems;
-+ (bool)willLog;
++ (BOOL)willLog;
 + (id)wrapError:(id)arg1 description:(id)arg2;
 
 @end

@@ -33,7 +33,7 @@
 - (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2 xpcInterface:(id)arg3;
 - (void)removeCancellableRemoteOperation:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)sgClientReceivedResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(bool)arg3;
+- (void)sgClientReceivedResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(BOOL)arg3;
 - (id)waitUntilReturn:(id)arg1 error:(id*)arg2;
 - (id)xpcConnection;
 

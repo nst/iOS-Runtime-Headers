@@ -6,10 +6,10 @@
 
 @interface RUFocusedTouchGestureRecognizer : UIGestureRecognizer <UIGestureRecognizerDelegatePrivate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     UIView *_focusedView;
     } _touchAllowance;
 }
@@ -17,16 +17,16 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) UIView * focusedView;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchAllowance;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchAllowance;
 
 - (void).cxx_destruct;
-- (bool)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)focusedView;
-- (id)initWithFocusedView:(id)arg1 touchAllowance:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (void)setTouchAllowance:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchAllowance;
+- (id)initWithFocusedView:(id)arg1 touchAllowance:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)setTouchAllowance:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })touchAllowance;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

@@ -15,22 +15,22 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSDate * expirationDate;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SSMetricsConfiguration * metricsConfiguration;
 @property(retain) SSMetricsPageEvent * metricsPageEvent;
-@property(readonly) bool mpIsPersonalizedOffer;
+@property(readonly) BOOL mpIsPersonalizedOffer;
 @property(readonly) NSDictionary * responseDictionary;
 @property(readonly) Class superclass;
 
-+ (bool)mpFakeCompletionDataForBuys;
++ (BOOL)mpFakeCompletionDataForBuys;
 + (id)mpLoadDebugCompletionsResponseWithStoreLookupID:(id)arg1;
-+ (bool)mpShowBuysWithNoCompletionOffer;
-+ (bool)mpVerboseCMCLogging;
++ (BOOL)mpShowBuysWithNoCompletionOffer;
++ (BOOL)mpVerboseCMCLogging;
 
 - (void)_enumerateItemsWithBlock:(id)arg1;
 - (void)_setMetricsPageEvent:(id)arg1;
 - (id)allItems;
-- (id)appStoreURLWithReason:(long long)arg1 initialIndex:(long long)arg2;
+- (id)appStoreURLWithReason:(int)arg1 initialIndex:(int)arg2;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)expirationDate;
@@ -41,7 +41,7 @@
 - (id)metricsConfiguration;
 - (id)metricsPageEvent;
 - (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;
-- (bool)mpIsPersonalizedOffer;
+- (BOOL)mpIsPersonalizedOffer;
 - (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;
 - (id)responseDictionary;
 - (void)setExpirationDate:(id)arg1;

@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1 annotationAuthor:(id)arg2;
-- (bool)process;
+- (BOOL)process;
 - (void)redo;
 - (void)saveToArchiver:(id)arg1;
 - (void)undo;

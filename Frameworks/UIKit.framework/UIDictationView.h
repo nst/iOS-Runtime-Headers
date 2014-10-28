@@ -5,51 +5,51 @@
 @class NSString, UIButton, UIDictationMeterView, UIKeyboardDicationBackground, _UISiriWaveyView;
 
 @interface UIDictationView : UIView <_UISiriWaveyViewDelegate> {
+    BOOL _automaticAppearanceWasEnabled;
     UIKeyboardDicationBackground *_background;
     UIButton *_endpointButton;
     UIButton *_endpointButtonLandscape;
+    BOOL _keyboardInTransition;
     UIDictationMeterView *_meterView;
     int _state;
     UIButton *_waveTapEndpointButton;
     _UISiriWaveyView *_waveyView;
-    bool_automaticAppearanceWasEnabled;
-    bool_keyboardInTransition;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)activeInstance;
 + (Class)dictationViewClass;
-+ (struct CGSize { double x1; double x2; })layoutSize;
++ (struct CGSize { float x1; float x2; })layoutSize;
 + (id)sharedInstance;
-+ (struct CGSize { double x1; double x2; })viewSize;
++ (struct CGSize { float x1; float x2; })viewSize;
 
 - (void)applicationEnteredBackground;
 - (void)applicationWillResignActive;
 - (float)audioLevelForWaveyView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })backgroundOffset;
-- (struct CGPoint { double x1; double x2; })contentOffset;
-- (id)createEndpointButtonWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 action:(SEL)arg2;
-- (struct CGSize { double x1; double x2; })currentScreenSize;
+- (struct CGPoint { float x1; float x2; })backgroundOffset;
+- (struct CGPoint { float x1; float x2; })contentOffset;
+- (id)createEndpointButtonWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 action:(SEL)arg2;
+- (struct CGSize { float x1; float x2; })currentScreenSize;
 - (void)dealloc;
-- (bool)drawsOwnBackground;
+- (BOOL)drawsOwnBackground;
 - (id)endpointButton;
-- (id)endpointButtonImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 pressed:(bool)arg2;
+- (id)endpointButtonImageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pressed:(BOOL)arg2;
 - (void)endpointButtonPressed;
 - (void)finishReturnToKeyboard;
 - (void)highlightEndpointButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isShowing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isShowing;
 - (void)keyboardDidShow:(id)arg1;
 - (void)layoutSubviews;
-- (struct CGPoint { double x1; double x2; })positionForShow;
+- (struct CGPoint { float x1; float x2; })positionForShow;
 - (void)prepareForReturnToKeyboard;
 - (void)returnToKeyboard;
 - (void)setState:(int)arg1;
 - (void)show;
-- (bool)visible;
+- (BOOL)visible;
 
 @end

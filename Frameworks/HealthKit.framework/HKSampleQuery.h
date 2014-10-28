@@ -9,13 +9,13 @@
 @class NSArray, NSMutableArray;
 
 @interface HKSampleQuery : HKQuery {
-    unsigned long long _limit;
+    unsigned int _limit;
     id _resultHandler;
     NSMutableArray *_results;
     NSArray *_sortDescriptors;
 }
 
-@property(readonly) unsigned long long limit;
+@property(readonly) unsigned int limit;
 @property(readonly) id resultHandler;
 @property(copy,readonly) NSArray * sortDescriptors;
 
@@ -27,9 +27,9 @@
 - (id)_queue_errorHandler;
 - (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
 - (void)_queue_validate;
-- (void)deliverResultsBatch:(id)arg1 final:(bool)arg2 error:(id)arg3 forQueryUUID:(id)arg4 confirmationBlock:(id)arg5;
-- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 sortDescriptors:(id)arg4 resultsHandler:(id)arg5;
-- (unsigned long long)limit;
+- (void)deliverResultsBatch:(id)arg1 final:(BOOL)arg2 error:(id)arg3 forQueryUUID:(id)arg4 confirmationBlock:(id)arg5;
+- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 sortDescriptors:(id)arg4 resultsHandler:(id)arg5;
+- (unsigned int)limit;
 - (id)resultHandler;
 - (id)sortDescriptors;
 

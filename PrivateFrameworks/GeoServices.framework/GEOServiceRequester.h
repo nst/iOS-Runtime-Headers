@@ -11,9 +11,9 @@
 
 + (id)_debugRequestName;
 + (id)_serviceTypeNumber;
-+ (unsigned long long)_urlType;
++ (unsigned int)_urlType;
 + (void)setAttributeData;
-+ (bool)shouldAttributeData;
++ (BOOL)shouldAttributeData;
 
 - (void)_cancelRequest:(id)arg1;
 - (void)_startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id)arg3;

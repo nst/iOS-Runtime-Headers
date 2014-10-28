@@ -23,8 +23,8 @@
 - (id)documentResourceLocator;
 - (id)filenameForPreferredFilename:(id)arg1;
 - (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2;
-- (bool)isMissingData;
-- (bool)isReadable;
+- (BOOL)isMissingData;
+- (BOOL)isReadable;
 - (id)manager;
 - (void)setDocumentResourceInfo:(id)arg1;
 - (id)storageForDataCopyFromOtherContext;

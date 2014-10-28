@@ -10,10 +10,10 @@
 
 @property(copy) NSArray * tokens;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (long long)confidenceScore;
+- (int)confidenceScore;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -6,21 +6,21 @@
 
 @interface TSUZipEntry : NSObject {
     unsigned int _CRC;
+    BOOL _compressed;
     unsigned long long _compressedSize;
     unsigned short _extraFieldsLength;
-    unsigned long long _fileHeaderLength;
+    unsigned long _fileHeaderLength;
     NSString *_name;
     unsigned short _nameLength;
     unsigned long long _offset;
     unsigned long long _size;
-    bool_compressed;
 }
 
 @property unsigned int CRC;
-@property(getter=isCompressed) bool compressed;
+@property(getter=isCompressed) BOOL compressed;
 @property unsigned long long compressedSize;
 @property unsigned short extraFieldsLength;
-@property unsigned long long fileHeaderLength;
+@property unsigned long fileHeaderLength;
 @property(copy) NSString * name;
 @property unsigned short nameLength;
 @property unsigned long long offset;
@@ -31,16 +31,16 @@
 - (unsigned long long)compressedSize;
 - (id)description;
 - (unsigned short)extraFieldsLength;
-- (unsigned long long)fileHeaderLength;
-- (bool)isCompressed;
+- (unsigned long)fileHeaderLength;
+- (BOOL)isCompressed;
 - (id)name;
 - (unsigned short)nameLength;
 - (unsigned long long)offset;
 - (void)setCRC:(unsigned int)arg1;
-- (void)setCompressed:(bool)arg1;
+- (void)setCompressed:(BOOL)arg1;
 - (void)setCompressedSize:(unsigned long long)arg1;
 - (void)setExtraFieldsLength:(unsigned short)arg1;
-- (void)setFileHeaderLength:(unsigned long long)arg1;
+- (void)setFileHeaderLength:(unsigned long)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameLength:(unsigned short)arg1;
 - (void)setOffset:(unsigned long long)arg1;

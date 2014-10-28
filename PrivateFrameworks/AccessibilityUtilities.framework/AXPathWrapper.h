@@ -9,7 +9,7 @@
 @property struct CGPath { }* path;
 
 + (id)currentSharedInstance;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

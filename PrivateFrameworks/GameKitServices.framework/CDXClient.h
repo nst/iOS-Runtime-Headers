@@ -17,13 +17,11 @@
             unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
-    boolpreblobIsUpToDate_;
-    boolwillReconfigureShortly_;
     } cdxaddr_ipv4;
     <CDXClientDelegate> *delegate_;
     NSError *error_;
     int fd_;
-    long long holePunchAttemptCount_;
+    int holePunchAttemptCount_;
     double holePunchInterval_;
     unsigned long long holePunchSID_;
     NSObject<OS_dispatch_source> *holePunchTimer_;
@@ -31,15 +29,17 @@
     void *padding_[10];
     unsigned short port_;
     id preblobCallback_;
+    BOOL preblobIsUpToDate_;
     NSData *preblob_;
     unsigned long long prevHolePunchSID_;
     NSObject<OS_dispatch_queue> *queue_;
-    long long restartCount_;
+    int restartCount_;
     struct __CFRunLoopSource { } *scDynamicStoreRunLoopSource_;
     struct __SCDynamicStore { } *scDynamicStore_;
     NSString *server_;
     NSMutableDictionary *sessionLookup_;
     NSObject<OS_dispatch_source> *source_;
+    BOOL willReconfigureShortly_;
 }
 
 @property <CDXClientDelegate> * delegate;
@@ -55,7 +55,7 @@
 - (id)delegate;
 - (id)error;
 - (void)handleFDEvent;
-- (bool)handleHolePunchEvent;
+- (BOOL)handleHolePunchEvent;
 - (id)initWithOptions:(id)arg1 delegate:(id)arg2;
 - (void)invalidate;
 - (void)invalidateSession:(id)arg1;
@@ -66,7 +66,7 @@
 - (void)resetHolepunchTimer;
 - (void)restart;
 - (void)sendHolePunch;
-- (bool)sendRaw:(id)arg1;
+- (BOOL)sendRaw:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPreblob:(id)arg1;

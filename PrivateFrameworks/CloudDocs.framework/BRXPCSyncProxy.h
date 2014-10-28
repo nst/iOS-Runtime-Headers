@@ -23,7 +23,7 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)result;
 - (id)resultWithTimeout:(int)arg1;
-- (void)setBoolResult:(bool)arg1 error:(id)arg2;
+- (void)setBoolResult:(BOOL)arg1 error:(id)arg2;
 - (void)setError:(id)arg1;
 - (void)setObjResult:(id)arg1 error:(id)arg2;
 - (void)setResult:(id)arg1;

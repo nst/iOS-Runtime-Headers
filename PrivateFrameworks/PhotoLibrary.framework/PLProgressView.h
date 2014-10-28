@@ -13,24 +13,24 @@
     unsigned int _didSetPermanantTextOnLabelView : 1;
     _UIBackdropView *_backgroundBlurredView;
     UIView *_backgroundTintedView;
-    long long _backgroundType;
+    int _backgroundType;
     UIView *_backgroundView;
     UIButton *_cancelButton;
     id _cancelationHandler;
     UILabel *_labelView;
     NSNumberFormatter *_progressFormatter;
     UIProgressView *_progressView;
+    BOOL _showsCancelButton;
     UIView *_topDivider;
-    bool_showsCancelButton;
 }
 
 @property(retain) _UIBackdropView * backgroundBlurredView;
 @property(retain) UIView * backgroundTintedView;
-@property long long backgroundType;
+@property int backgroundType;
 @property(retain) UIView * backgroundView;
 @property(copy) id cancelationHandler;
 @property float percentComplete;
-@property bool showsCancelButton;
+@property BOOL showsCancelButton;
 
 - (void)_cancel:(id)arg1;
 - (void)_installBackgroundBlurredView;
@@ -41,22 +41,22 @@
 - (void)_syncToBackgroundType;
 - (id)backgroundBlurredView;
 - (id)backgroundTintedView;
-- (long long)backgroundType;
+- (int)backgroundType;
 - (id)backgroundView;
 - (id)cancelationHandler;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)percentComplete;
 - (void)setBackgroundBlurredView:(id)arg1;
 - (void)setBackgroundTintedView:(id)arg1;
-- (void)setBackgroundType:(long long)arg1;
+- (void)setBackgroundType:(int)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setCancelationHandler:(id)arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setPercentComplete:(float)arg1;
-- (void)setShowsCancelButton:(bool)arg1;
-- (bool)showsCancelButton;
+- (void)setShowsCancelButton:(BOOL)arg1;
+- (BOOL)showsCancelButton;
 - (void)updateUIForPublishingAgent:(id)arg1;
 
 @end

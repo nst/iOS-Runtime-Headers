@@ -6,7 +6,7 @@
 
 @interface BRCPackageManifestForUpload : NSObject {
     long long _firstAssetRankMissingSignature;
-    unsigned long long _firstPackageItemIndexMissingSignature;
+    unsigned int _firstPackageItemIndexMissingSignature;
     BRCLocalItem *_item;
     BRCAccountSession *_session;
 }
@@ -18,7 +18,7 @@
 - (id)br_manifestURL;
 - (id)ck_manifestURL;
 - (id)constructPackageAndWriteManifestWithError:(id*)arg1;
-- (bool)finishPackageUploadWithRecord:(id)arg1 error:(id*)arg2;
+- (BOOL)finishPackageUploadWithRecord:(id)arg1 error:(id*)arg2;
 - (id)initWithLocalItem:(id)arg1;
 - (id)item;
 

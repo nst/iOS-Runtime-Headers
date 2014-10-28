@@ -12,8 +12,8 @@
 + (id)_backgroundImage;
 
 - (id)button;
-- (double)buttonWidth;
+- (float)buttonWidth;
 - (void)dealloc;
-- (void)setButton:(id)arg1 andStyle:(bool)arg2;
+- (void)setButton:(id)arg1 andStyle:(BOOL)arg2;
 
 @end

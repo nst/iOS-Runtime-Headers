@@ -5,13 +5,13 @@
 @class NSObject<OS_dispatch_source>;
 
 @interface ATCountSessionTask : ATSessionTask {
-    unsigned long long _count;
-    unsigned long long _maxCount;
+    unsigned int _count;
+    unsigned int _maxCount;
     NSObject<OS_dispatch_source> *_timer;
 }
 
 - (void).cxx_destruct;
-- (id)initWithMaximumCount:(unsigned long long)arg1;
+- (id)initWithMaximumCount:(unsigned int)arg1;
 - (void)start;
 
 @end

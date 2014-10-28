@@ -7,6 +7,7 @@
 @interface CTCellularPlanSubscription : NSObject <NSCopying, NSSecureCoding> {
     int _accountStatus;
     NSString *_accountURL;
+    BOOL _autoRenew;
     double _billingEndDate;
     double _billingStartDate;
     NSString *_carrierName;
@@ -15,13 +16,13 @@
     NSString *_planDescription;
     int _planStatus;
     int _planType;
+    int _subscriptionResult;
     double _timestamp;
-    bool_autoRenew;
 }
 
 @property(readonly) int accountStatus;
 @property(readonly) NSString * accountURL;
-@property(readonly) bool autoRenew;
+@property(readonly) BOOL autoRenew;
 @property(readonly) double billingEndDate;
 @property(readonly) double billingStartDate;
 @property(readonly) NSString * carrierName;
@@ -30,13 +31,14 @@
 @property(readonly) NSString * planDescription;
 @property(readonly) int planStatus;
 @property(readonly) int planType;
+@property int subscriptionResult;
 @property(readonly) double timestamp;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (int)accountStatus;
 - (id)accountURL;
-- (bool)autoRenew;
+- (BOOL)autoRenew;
 - (double)billingEndDate;
 - (double)billingStartDate;
 - (id)carrierName;
@@ -47,10 +49,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)iccid;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIccid:(id)arg1 autoRenew:(bool)arg2 billingStartDate:(double)arg3 billingEndDate:(double)arg4 carrierName:(id)arg5 planType:(int)arg6 planDescription:(id)arg7 planStatus:(int)arg8 accountStatus:(int)arg9 accountURL:(id)arg10 timestamp:(double)arg11 dataUsage:(id)arg12;
+- (id)initWithIccid:(id)arg1 subscriptionResult:(int)arg2 autoRenew:(BOOL)arg3 billingStartDate:(double)arg4 billingEndDate:(double)arg5 carrierName:(id)arg6 planType:(int)arg7 planDescription:(id)arg8 planStatus:(int)arg9 accountStatus:(int)arg10 accountURL:(id)arg11 timestamp:(double)arg12 dataUsage:(id)arg13;
+- (BOOL)isEqualOrNewerThanSubscription:(id)arg1;
 - (id)planDescription;
 - (int)planStatus;
 - (int)planType;
+- (void)setSubscriptionResult:(int)arg1;
+- (int)subscriptionResult;
 - (double)timestamp;
 
 @end

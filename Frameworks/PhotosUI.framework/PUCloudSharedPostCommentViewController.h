@@ -23,14 +23,14 @@
     NSArray *_dialogConstraints;
     UIView *_dialogView;
     PUStackView *_imageStackView;
+    BOOL _isNewAlbum;
     UIColor *_placeholderColor;
     NSString *_placeholderText;
-    long long _selectedAlbumIndex;
+    int _selectedAlbumIndex;
     UIColor *_separatorColor;
     UITableView *_tableView;
     UILabel *_textPlaceholderLabel;
     UITextView *_textView;
-    bool_isNewAlbum;
 }
 
 @property <PUCloudSharedPostCommentViewControllerDelegate> * commentDelegate;
@@ -38,10 +38,10 @@
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool isNewAlbum;
+@property(readonly) unsigned int hash;
+@property BOOL isNewAlbum;
 @property(copy) NSString * placeholderText;
-@property long long selectedAlbumIndex;
+@property int selectedAlbumIndex;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -59,32 +59,32 @@
 - (id)commentText;
 - (id)completionHandler;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(long long)arg1;
-- (id)initWithAlbumName:(id)arg1 isCreateAlbum:(bool)arg2;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (id)initWithAlbumName:(id)arg1 isCreateAlbum:(BOOL)arg2;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (bool)isNewAlbum;
+- (BOOL)isNewAlbum;
 - (void)loadView;
 - (id)navigationItem;
 - (id)placeholderText;
-- (struct CGPoint { double x1; double x2; })preferredOffsetInParentViewController;
-- (struct CGSize { double x1; double x2; })preferredSizeInParentViewController;
-- (long long)selectedAlbumIndex;
+- (struct CGPoint { float x1; float x2; })preferredOffsetInParentViewController;
+- (struct CGSize { float x1; float x2; })preferredSizeInParentViewController;
+- (int)selectedAlbumIndex;
 - (void)setCommentDelegate:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (void)setIsNewAlbum:(bool)arg1;
+- (void)setIsNewAlbum:(BOOL)arg1;
 - (void)setPlaceholderText:(id)arg1;
-- (void)setSelectedAlbumIndex:(long long)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (void)setSelectedAlbumIndex:(int)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

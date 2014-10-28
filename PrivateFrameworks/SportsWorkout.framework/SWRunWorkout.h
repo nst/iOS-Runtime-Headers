@@ -5,20 +5,20 @@
 @class NSData, NSString, SWPaceModel, SWRunSensor;
 
 @interface SWRunWorkout : SWWorkout <SWRunSensorPacketObserver> {
+    BOOL _hasStarted;
+    BOOL _isCalibration;
     SWPaceModel *_paceModel;
     SWRunSensor *_sensor;
     float _weightInLbs;
-    bool_hasStarted;
-    bool_isCalibration;
 }
 
-@property(readonly) bool canBeUsedForRunCalibration;
-@property(readonly) bool canBeUsedForWalkCalibration;
+@property(readonly) BOOL canBeUsedForRunCalibration;
+@property(readonly) BOOL canBeUsedForWalkCalibration;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool isCalibration;
-@property(readonly) bool isWalk;
+@property(readonly) unsigned int hash;
+@property BOOL isCalibration;
+@property(readonly) BOOL isWalk;
 @property(readonly) float maximumCalibrationDistanceMiles;
 @property(readonly) float minimumCalibrationDistanceMiles;
 @property(copy) NSData * paceModelParameters;
@@ -29,22 +29,22 @@
 + (id)workoutWithSensor:(id)arg1;
 
 - (void)activateWorkout;
-- (bool)calibrateWithDistanceMiles:(float)arg1 forWalk:(bool)arg2;
-- (bool)canBeUsedForRunCalibration;
-- (bool)canBeUsedForWalkCalibration;
+- (BOOL)calibrateWithDistanceMiles:(float)arg1 forWalk:(BOOL)arg2;
+- (BOOL)canBeUsedForRunCalibration;
+- (BOOL)canBeUsedForWalkCalibration;
 - (void)dealloc;
 - (id)initWithSensor:(id)arg1;
-- (bool)isCalibration;
-- (bool)isWalk;
+- (BOOL)isCalibration;
+- (BOOL)isWalk;
 - (float)maximumCalibrationDistanceMiles;
 - (float)minimumCalibrationDistanceMiles;
 - (id)paceModelParameters;
 - (void)pauseWorkout;
-- (bool)recalibrateWithAdjustedDistanceMiles:(float)arg1;
+- (BOOL)recalibrateWithAdjustedDistanceMiles:(float)arg1;
 - (void)resetCalibration;
-- (void)sensor:(id)arg1 didReceivePacketPayload:(const char *)arg2 timestamp:(unsigned long long)arg3;
+- (void)sensor:(id)arg1 didReceivePacketPayload:(const char *)arg2 timestamp:(unsigned long)arg3;
 - (id)sensor;
-- (void)setIsCalibration:(bool)arg1;
+- (void)setIsCalibration:(BOOL)arg1;
 - (void)setPaceModelParameters:(id)arg1;
 - (void)setWeightInLbs:(float)arg1;
 - (float)weightInLbs;

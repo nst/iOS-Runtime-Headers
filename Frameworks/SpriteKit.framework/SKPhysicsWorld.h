@@ -10,18 +10,18 @@
 
 @interface SKPhysicsWorld : NSObject <NSCoding> {
     struct CGVector { 
-        double dx; 
-        double dy; 
-     /* Encoded args for previous method: 32@0:816 */
-     /* Encoded args for previous method: 32@0:816 */
+        float dx; 
+        float dy; 
+     /* Encoded args for previous method: 24@0:48 */
+     /* Encoded args for previous method: 24@0:48 */
     <SKPhysicsContactDelegate> *_contactDelegate;
     } _gravity;
-    double speed;
+    float speed;
 }
 
 @property <SKPhysicsContactDelegate> * contactDelegate;
-@property struct CGVector { double x1; double x2; } gravity;
-@property double speed;
+@property struct CGVector { float x1; float x2; } gravity;
+@property float speed;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,29 +30,29 @@
 - (void)addBody:(id)arg1;
 - (void)addJoint:(id)arg1;
 - (id)bodies;
-- (id)bodyAlongRayStart:(struct CGPoint { double x1; double x2; })arg1 end:(struct CGPoint { double x1; double x2; })arg2;
-- (id)bodyAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (id)bodyInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)bodyAlongRayStart:(struct CGPoint { float x1; float x2; })arg1 end:(struct CGPoint { float x1; float x2; })arg2;
+- (id)bodyAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)bodyInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)contactDelegate;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateBodiesAlongRayStart:(struct CGPoint { double x1; double x2; })arg1 end:(struct CGPoint { double x1; double x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateBodiesAtPoint:(struct CGPoint { double x1; double x2; })arg1 usingBlock:(id)arg2;
-- (void)enumerateBodiesInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 usingBlock:(id)arg2;
+- (void)enumerateBodiesAlongRayStart:(struct CGPoint { float x1; float x2; })arg1 end:(struct CGPoint { float x1; float x2; })arg2 usingBlock:(id)arg3;
+- (void)enumerateBodiesAtPoint:(struct CGPoint { float x1; float x2; })arg1 usingBlock:(id)arg2;
+- (void)enumerateBodiesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id)arg2;
 - (id)fields;
-- (struct CGVector { double x1; double x2; })gravity;
-- (bool)hasBodies;
-- (bool)hasFields;
+- (struct CGVector { float x1; float x2; })gravity;
+- (BOOL)hasBodies;
+- (BOOL)hasFields;
 - (id)initWithCoder:(id)arg1;
 - (void)removeAllBodies;
 - (void)removeAllJoints;
 - (void)removeBody:(id)arg1;
 - (void)removeJoint:(id)arg1;
-- (/* Warning: Unrecognized filer type: '3' using 'void*' */ void*)sampleFields:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-- (/* Warning: Unrecognized filer type: '3' using 'void*' */ void*)sampleFieldsAt:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)sampleFields:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
+- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)sampleFieldsAt:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
 - (void)setContactDelegate:(id)arg1;
-- (void)setGravity:(struct CGVector { double x1; double x2; })arg1;
-- (void)setSpeed:(double)arg1;
-- (double)speed;
-- (bool)stepWithTime:(double)arg1 velocityIterations:(unsigned long long)arg2 positionIterations:(unsigned long long)arg3;
+- (void)setGravity:(struct CGVector { float x1; float x2; })arg1;
+- (void)setSpeed:(float)arg1;
+- (float)speed;
+- (BOOL)stepWithTime:(double)arg1 velocityIterations:(unsigned int)arg2 positionIterations:(unsigned int)arg3;
 
 @end

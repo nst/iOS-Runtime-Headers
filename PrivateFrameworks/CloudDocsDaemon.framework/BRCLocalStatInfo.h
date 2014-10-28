@@ -37,7 +37,7 @@
 @property(readonly) NSNumber * stagedFileID;
 @property(readonly) unsigned int stagedGenerationID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_clearBouncedName;
@@ -47,7 +47,7 @@
 - (void)_markAlmostDead;
 - (void)_markClearedFromStage;
 - (void)_markDead;
-- (void)_markLiveFromStageAsFault:(bool)arg1;
+- (void)_markLiveFromStageAsFault:(BOOL)arg1;
 - (void)_markLostAddingBackoffWithMode:(unsigned char)arg1 container:(id)arg2;
 - (void)_markRemovedFromFilesystem;
 - (void)_markReserved;
@@ -64,7 +64,7 @@
 - (void)addLiveConflictLoserEtag:(id)arg1;
 - (void)addResolvedConflictLoserEtag:(id)arg1;
 - (id)bouncedName;
-- (bool)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
+- (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
 - (void)clearLiveConflictLoserEtags;
 - (void)clearResolvedConflictLoserEtags;
 - (id)conflictLoserState;
@@ -89,7 +89,7 @@
 - (id)processingStamp;
 - (void)removeLiveConflictLoserEtag:(id)arg1;
 - (id)resolvedConflictLoserEtags;
-- (void)setFilename:(id)arg1 forceRename:(bool)arg2;
+- (void)setFilename:(id)arg1 forceRename:(BOOL)arg2;
 - (void)setFilename:(id)arg1;
 - (id)stagedFileID;
 - (unsigned int)stagedGenerationID;

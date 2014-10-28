@@ -11,13 +11,13 @@
 @property(readonly) NSArray * collectionElements;
 @property(readonly) SKUIIndexBarViewElement * indexBarViewElement;
 @property(readonly) SKUINavigationBarViewElement * navigationBarElement;
-@property(readonly) long long numberOfSplits;
+@property(readonly) int numberOfSplits;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)collectionElements;
 - (id)indexBarViewElement;
 - (id)navigationBarElement;
-- (long long)numberOfSplits;
+- (int)numberOfSplits;
 
 @end

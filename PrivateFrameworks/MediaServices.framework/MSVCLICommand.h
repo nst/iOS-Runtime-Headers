@@ -15,7 +15,7 @@
 @property(readonly) NSDictionary * optionsDictionary;
 
 - (void).cxx_destruct;
-- (bool)containsOption:(id)arg1;
+- (BOOL)containsOption:(id)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithName:(id)arg1 options:(id)arg2;

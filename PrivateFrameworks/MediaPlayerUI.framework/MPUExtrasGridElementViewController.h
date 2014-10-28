@@ -12,11 +12,11 @@
     NSArray *_headerViewConstraints;
     MPUExtrasGridViewControllerStyle *_largeStyle;
     MPUExtrasGridViewControllerStyle *_mediumStyle;
+    BOOL _shelfStyle;
     MPUExtrasGridViewControllerStyle *_smallStyle;
     UIView *_titleRule;
     NSArray *_titleRuleConstraints;
     MPUExtrasGridViewControllerStyle *_wideStyle;
-    bool_shelfStyle;
 }
 
 @property(readonly) UICollectionView * collectionView;
@@ -24,10 +24,10 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) MPUExtrasGridViewControllerStyle * extraLargeStyle;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) MPUExtrasGridViewControllerStyle * largeStyle;
 @property(retain) MPUExtrasGridViewControllerStyle * mediumStyle;
-@property(getter=isShelfStyle) bool shelfStyle;
+@property(getter=isShelfStyle) BOOL shelfStyle;
 @property(retain) MPUExtrasGridViewControllerStyle * smallStyle;
 @property(readonly) Class superclass;
 @property(readonly) IKGridElement * viewElement;
@@ -53,24 +53,24 @@
 + (id)wideStackGridStyle;
 
 - (void).cxx_destruct;
-- (double)_cellSpacingForSection:(id)arg1;
+- (float)_cellSpacingForSection:(id)arg1;
 - (id)_cellStyleForSection:(id)arg1;
 - (void)_dynamicTypeDidChange;
-- (bool)_hasDescriptionText;
+- (BOOL)_hasDescriptionText;
 - (id)_lockupForIndexPath:(id)arg1;
 - (id)_narrowStyle;
 - (void)_prepareLayout;
-- (id)_sectionElementForIndex:(unsigned long long)arg1;
-- (bool)_sectionIndexIsDescriptionSection:(long long)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_sectionInsetsForSection:(id)arg1;
+- (id)_sectionElementForIndex:(unsigned int)arg1;
+- (BOOL)_sectionIndexIsDescriptionSection:(int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_sectionInsetsForSection:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
-- (double)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(long long)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (float)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView;
 - (id)contentScrollView;
@@ -78,23 +78,23 @@
 - (void)dealloc;
 - (id)extraLargeStyle;
 - (id)initWithViewElement:(id)arg1;
-- (bool)isShelfStyle;
+- (BOOL)isShelfStyle;
 - (id)largeStyle;
 - (void)loadView;
 - (id)mediumStyle;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
-- (long long)preferredLayoutAttribute;
+- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (int)preferredLayoutAttribute;
 - (id)preferredLayoutGuide;
 - (void)setExtraLargeStyle:(id)arg1;
 - (void)setLargeStyle:(id)arg1;
 - (void)setMediumStyle:(id)arg1;
-- (void)setShelfStyle:(bool)arg1;
+- (void)setShelfStyle:(BOOL)arg1;
 - (void)setSmallStyle:(id)arg1;
 - (void)setViewElement:(id)arg1;
 - (void)setWideStyle:(id)arg1;
 - (id)smallStyle;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)wideStyle;
 
 @end

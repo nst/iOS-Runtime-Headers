@@ -9,9 +9,9 @@
 
 - (id)description;
 - (float)fontScalePercent;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithFontScalePercent:(float)arg1 lineSpacingReductionPercent:(float)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (float)lineSpacingReductionPercent;
 
 @end

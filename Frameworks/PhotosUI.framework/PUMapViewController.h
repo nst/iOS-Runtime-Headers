@@ -4,34 +4,34 @@
 
 @class MKMapView, NSArray, NSMutableArray, NSObject<PLDiagnosticsProvider>, NSString, PHFetchResult, PUMapAnnotationManager, PUMapViewControllerSpec;
 
-@interface PUMapViewController : UIViewController <PHPhotoLibraryChangeObserver, MKMapViewDelegate, PUMapAnnotationManagerDataSource, PUPhotoBrowserZoomTransitionDelegate, PUStackedAlbumTransitionDelegate> {
+@interface PUMapViewController : UIViewController <PUPhotoLibraryUIChangeObserver, MKMapViewDelegate, PUMapAnnotationManagerDataSource, PUPhotoBrowserZoomTransitionDelegate, PUStackedAlbumTransitionDelegate> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     PUMapAnnotationManager *_annotationManager;
     } _annotationSize;
-    double _annotationWidth;
+    float _annotationWidth;
     PHFetchResult *_assetsFetchResult;
-    double _borderAnnotationPadding;
+    float _borderAnnotationPadding;
     NSObject<PLDiagnosticsProvider> *_diagnosticsProvider;
     NSMutableArray *_mapAnnotations;
     NSArray *_mapItems;
     MKMapView *_mapView;
-    unsigned long long _maxItemsInitialZoom;
+    unsigned int _maxItemsInitialZoom;
+    BOOL _shouldShowTabBar;
+    BOOL _shouldShowToolbar;
     PUMapViewControllerSpec *_spec;
-    bool_shouldShowTabBar;
-    bool_shouldShowToolbar;
-    bool_updatedInitialAnnotations;
-    bool_useCurrentUserLocation;
+    BOOL _updatedInitialAnnotations;
+    BOOL _useCurrentUserLocation;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSObject<PLDiagnosticsProvider> * diagnosticsProvider;
-@property(readonly) unsigned long long hash;
-@property unsigned long long maxItemsInitialZoom;
-@property bool shouldShowTabBar;
-@property bool shouldShowToolbar;
+@property(readonly) unsigned int hash;
+@property unsigned int maxItemsInitialZoom;
+@property BOOL shouldShowTabBar;
+@property BOOL shouldShowToolbar;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -42,8 +42,8 @@
 - (void)_handleReportButton:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectWithDefaultZoomCenteredAtCoordinate:(struct { double x1; double x2; })arg1;
 - (id)_puAnnotationViewForAnnotation:(id)arg1;
-- (void)_showLocations:(id)arg1 animated:(bool)arg2;
-- (void)_updateAnnotationsForMapItems:(id)arg1 shouldScroll:(bool)arg2;
+- (void)_showLocations:(id)arg1 animated:(BOOL)arg2;
+- (void)_updateAnnotationsForMapItems:(id)arg1 shouldScroll:(BOOL)arg2;
 - (void)_updateAnnotationsForMapItems:(id)arg1;
 - (void)_updateMapAssets;
 - (void)_updateNavItem;
@@ -56,26 +56,27 @@
 - (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
 - (void)mapView:(id)arg1 didFailToLocateUserWithError:(id)arg2;
 - (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
-- (void)mapView:(id)arg1 regionDidChangeAnimated:(bool)arg2;
+- (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (id)mapView:(id)arg1 viewForOverlay:(id)arg2;
-- (unsigned long long)maxItemsInitialZoom;
-- (void)photoLibraryDidChange:(id)arg1;
-- (bool)pu_wantsTabBarVisible;
-- (bool)pu_wantsToolbarVisible;
+- (unsigned int)maxItemsInitialZoom;
+- (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
+- (void)prepareForPhotoLibraryChange:(id)arg1;
+- (BOOL)pu_wantsTabBarVisible;
+- (BOOL)pu_wantsToolbarVisible;
 - (void)setDiagnosticsProvider:(id)arg1;
-- (void)setMaxItemsInitialZoom:(unsigned long long)arg1;
-- (void)setShouldShowTabBar:(bool)arg1;
-- (void)setShouldShowToolbar:(bool)arg1;
-- (bool)shouldShowTabBar;
-- (bool)shouldShowToolbar;
+- (void)setMaxItemsInitialZoom:(unsigned int)arg1;
+- (void)setShouldShowTabBar:(BOOL)arg1;
+- (void)setShouldShowToolbar:(BOOL)arg1;
+- (BOOL)shouldShowTabBar;
+- (BOOL)shouldShowToolbar;
 - (id)stackedAlbumTransition:(id)arg1 layoutForCollection:(id)arg2 forCollectionView:(id)arg3;
-- (void)stackedAlbumTransition:(id)arg1 setVisibility:(bool)arg2 forCollection:(id)arg3;
+- (void)stackedAlbumTransition:(id)arg1 setVisibility:(BOOL)arg2 forCollection:(id)arg3;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })zoomTransition:(id)arg1 frameForPhotoToken:(id)arg2 operation:(long long)arg3;
-- (bool)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 contentMode:(long long*)arg3 forPhotoToken:(id)arg4 operation:(long long)arg5;
+- (void)viewWillAppear:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoomTransition:(id)arg1 frameForPhotoToken:(id)arg2 operation:(int)arg3;
+- (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 forPhotoToken:(id)arg4 operation:(int)arg5;
 - (id)zoomTransition:(id)arg1 photoTokenForPhoto:(id)arg2 inCollection:(id)arg3;
-- (void)zoomTransition:(id)arg1 setVisibility:(bool)arg2 forPhotoToken:(id)arg3;
+- (void)zoomTransition:(id)arg1 setVisibility:(BOOL)arg2 forPhotoToken:(id)arg3;
 
 @end

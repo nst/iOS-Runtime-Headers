@@ -10,7 +10,7 @@
 
 @property(retain) CKQueryCursor * cursor;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

@@ -5,16 +5,16 @@
 @class TKTonePickerItem;
 
 @interface TKToneClassicsPickerItem : TKTonePickerItem {
-    long long _classicToneIndex;
+    int _classicToneIndex;
 }
 
-@property long long classicToneIndex;
+@property int classicToneIndex;
 @property(readonly) TKTonePickerItem * parentItem;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
-- (void)_setClassicToneIndex:(long long)arg1;
-- (id)childItemAtIndex:(long long)arg1;
-- (long long)classicToneIndex;
+- (void)_setClassicToneIndex:(int)arg1;
+- (id)childItemAtIndex:(int)arg1;
+- (int)classicToneIndex;
 - (id)parentItem;
 
 @end

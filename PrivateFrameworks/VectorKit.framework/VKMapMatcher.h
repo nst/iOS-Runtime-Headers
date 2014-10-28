@@ -9,16 +9,16 @@
     <GEORoutePreloadSession> *_routePreloader;
 }
 
-@property(readonly) bool allowsNetworkTileLoad;
+@property(readonly) BOOL allowsNetworkTileLoad;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) <GEORoutePreloadSession> * routePreloader;
 @property(readonly) Class superclass;
 
 + (id)mapMatcherOfType:(id)arg1;
 
-- (bool)allowsNetworkTileLoad;
+- (BOOL)allowsNetworkTileLoad;
 - (void)dealloc;
 - (id)init;
 - (id)matchLocation:(id)arg1 transportType:(int)arg2;

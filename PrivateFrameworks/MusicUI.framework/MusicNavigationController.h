@@ -9,7 +9,7 @@
 
 @property <MusicNavigationControllerDelegate> * delegate;
 
-- (bool)music_shouldPresentModallyInMoreList;
+- (BOOL)music_shouldPresentModallyInMoreList;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

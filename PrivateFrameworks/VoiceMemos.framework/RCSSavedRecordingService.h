@@ -17,7 +17,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSSet * exportingCompositionAVURLs;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedService;
@@ -34,7 +34,7 @@
 - (void)closeServiceConnection;
 - (void)dealloc;
 - (oneway void)disableOrphanHandlingWithCompletionBlock:(id)arg1;
-- (oneway void)disableOrphanedFragmentCleanupForCompositionAVURL:(id)arg1;
+- (oneway void)disableOrphanedFragmentCleanupForCompositionAVURL:(id)arg1 completionBlock:(id)arg2;
 - (oneway void)enableOrphanHandlingWithCompletionBlock:(id)arg1;
 - (oneway void)enableOrphanedFragmentCleanupForCompositionAVURL:(id)arg1;
 - (oneway void)endAccessSessionWithToken:(id)arg1;
@@ -43,7 +43,7 @@
 - (id)init;
 - (void)openServiceConnection;
 - (oneway void)prepareToCaptureToCompositionAVURL:(id)arg1 accessRequestHandler:(id)arg2;
-- (oneway void)prepareToExportCompositionAVURL:(id)arg1 cacheWaveform:(bool)arg2 accessRequestHandler:(id)arg3;
+- (oneway void)prepareToExportCompositionAVURL:(id)arg1 cacheWaveform:(BOOL)arg2 accessRequestHandler:(id)arg3;
 - (oneway void)prepareToPreviewCompositionAVURL:(id)arg1 accessRequestHandler:(id)arg2;
 - (oneway void)prepareToTrimCompositionAVURL:(id)arg1 accessRequestHandler:(id)arg2;
 - (id)serviceProxy;

@@ -10,16 +10,16 @@
 
 @property(readonly) NSArray * policies;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)assertionEndpoint;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPolicies:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)matchSharingTouchesPolicy:(id)arg1 orCancelTouchesPolicy:(id)arg2 orCombinedPolicy:(id)arg3;
 - (id)policies;
 - (void)setAssertionEndpoint:(id)arg1;

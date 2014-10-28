@@ -12,9 +12,9 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) <MTLDevice> * device;
 @property(copy,readonly) NSString * filePath;
-@property(readonly) unsigned long long functionType;
-@property(readonly) unsigned long long hash;
-@property(readonly) long long lineNumber;
+@property(readonly) unsigned int functionType;
+@property(readonly) unsigned int hash;
+@property(readonly) int lineNumber;
 @property(readonly) NSString * name;
 @property(readonly) Class superclass;
 @property(readonly) NSArray * vertexAttributes;
@@ -24,10 +24,10 @@
 - (void)dealloc;
 - (id)device;
 - (id)filePath;
-- (unsigned long long)functionType;
+- (unsigned int)functionType;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 functions:(id)arg3;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
-- (long long)lineNumber;
+- (int)lineNumber;
 - (id)name;
 - (id)vertexAttributes;
 

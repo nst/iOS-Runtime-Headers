@@ -12,7 +12,7 @@
 @property(retain) TIUserDictionaryEntryValue * valueToDelete;
 @property(retain) TIUserDictionaryEntryValue * valueToInsert;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

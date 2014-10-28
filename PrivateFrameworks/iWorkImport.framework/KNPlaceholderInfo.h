@@ -8,26 +8,26 @@
  */
 
 @interface KNPlaceholderInfo : TSWPShapeInfo {
-    boolmIsFromPasteboard;
+    BOOL mIsFromPasteboard;
 }
 
-@property(readonly) bool isFromPasteboard;
+@property(readonly) BOOL isFromPasteboard;
 
 + (id)newObjectForUnarchiver:(id)arg1;
 
-- (bool)autoListRecognition;
-- (bool)autoListTermination;
+- (BOOL)autoListRecognition;
+- (BOOL)autoListTermination;
 - (id)copyAsShapeInfoWithContext:(id)arg1;
-- (bool)displaysInstructionalText;
+- (BOOL)displaysInstructionalText;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)instructionalText;
-- (bool)isFromPasteboard;
+- (BOOL)isFromPasteboard;
 - (int)kind;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct PlaceholderArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeInfoArchive {} *x3; int x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
 - (Class)repClass;
 - (void)saveToArchive:(struct PlaceholderArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeInfoArchive {} *x3; int x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (bool)shouldHideEmptyBullets;
+- (BOOL)shouldHideEmptyBullets;
 
 @end

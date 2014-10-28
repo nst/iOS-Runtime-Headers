@@ -6,21 +6,21 @@
 
 @interface MusicTableViewCell : UITableViewCell {
     MusicTableViewCellContentView *_cellContentView;
-    double _maximumContentViewHeight;
+    float _maximumContentViewHeight;
 }
 
 @property(readonly) MusicTableViewCellContentView * cellContentView;
-@property double maximumContentViewHeight;
+@property float maximumContentViewHeight;
 
 + (Class)contentViewClass;
 
 - (void).cxx_destruct;
 - (id)cellContentView;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (void)layoutSubviews;
-- (double)maximumContentViewHeight;
+- (float)maximumContentViewHeight;
 - (void)prepareForReuse;
-- (void)setMaximumContentViewHeight:(double)arg1;
+- (void)setMaximumContentViewHeight:(float)arg1;
 
 @end

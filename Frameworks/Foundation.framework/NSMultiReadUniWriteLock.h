@@ -14,13 +14,13 @@
 - (id)init;
 - (void)lock;
 - (void)lockForReading;
-- (bool)lockForReadingBeforeDate:(id)arg1;
+- (BOOL)lockForReadingBeforeDate:(id)arg1;
 - (void)lockForWriting;
-- (bool)lockForWritingBeforeDate:(id)arg1;
+- (BOOL)lockForWritingBeforeDate:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (bool)tryLockForReading;
-- (bool)tryLockForWriting;
+- (BOOL)tryLockForReading;
+- (BOOL)tryLockForWriting;
 - (void)unlock;
 
 @end

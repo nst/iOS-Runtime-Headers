@@ -5,7 +5,7 @@
 @class NSArray, NSData, NSHTTPURLResponse, NSString, NSURL, SKUIProductPageItem, SKUIProductPageProductInfo, SKUIReviewConfiguration, SKUIUber, SSMetricsConfiguration;
 
 @interface SKUIProductPage : NSObject <NSCopying> {
-    long long _defaultPageFragment;
+    int _defaultPageFragment;
     SKUIProductPageItem *_item;
     NSData *_itmlData;
     NSHTTPURLResponse *_itmlResponse;
@@ -20,7 +20,7 @@
 
 @property(retain) NSData * ITMLData;
 @property(retain) NSHTTPURLResponse * ITMLResponse;
-@property long long defaultPageFragment;
+@property int defaultPageFragment;
 @property(retain) SKUIProductPageItem * item;
 @property(retain) SSMetricsConfiguration * metricsConfiguration;
 @property(copy) NSString * metricsPageDescription;
@@ -34,7 +34,7 @@
 - (id)ITMLData;
 - (id)ITMLResponse;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)defaultPageFragment;
+- (int)defaultPageFragment;
 - (id)item;
 - (id)metricsConfiguration;
 - (id)metricsPageDescription;
@@ -42,7 +42,7 @@
 - (id)productInformation;
 - (id)relatedContentSwooshes;
 - (id)reviewConfiguration;
-- (void)setDefaultPageFragment:(long long)arg1;
+- (void)setDefaultPageFragment:(int)arg1;
 - (void)setITMLData:(id)arg1;
 - (void)setITMLResponse:(id)arg1;
 - (void)setItem:(id)arg1;

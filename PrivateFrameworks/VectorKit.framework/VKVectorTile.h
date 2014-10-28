@@ -5,7 +5,7 @@
 @class GEOVectorTile, VKMapTileList, VKSharedResources, VKStyleManager;
 
 @interface VKVectorTile : VKTile {
-    double _contentScale;
+    float _contentScale;
     VKMapTileList *_fragments;
     float _maximumStyleZ;
     GEOVectorTile *_modelTile;
@@ -14,23 +14,23 @@
     float _textureScale;
 }
 
-@property double contentScale;
+@property float contentScale;
 @property(readonly) VKMapTileList * fragments;
 @property float maximumStyleZ;
 @property(retain) GEOVectorTile * modelTile;
 @property(retain) VKSharedResources * sharedResources;
 @property(retain) VKStyleManager * styleManager;
 @property float textureScale;
-@property(readonly) long long vectorType;
+@property(readonly) int vectorType;
 
-- (double)contentScale;
+- (float)contentScale;
 - (void)dealloc;
 - (id)fragments;
-- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2 styleManager:(id)arg3 sharedResources:(id)arg4 contentScale:(double)arg5 device:(struct Device { }*)arg6;
+- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2 styleManager:(id)arg3 sharedResources:(id)arg4 contentScale:(float)arg5 device:(struct Device { }*)arg6;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (float)maximumStyleZ;
 - (id)modelTile;
-- (void)setContentScale:(double)arg1;
+- (void)setContentScale:(float)arg1;
 - (void)setMaximumStyleZ:(float)arg1;
 - (void)setModelTile:(id)arg1;
 - (void)setSharedResources:(id)arg1;
@@ -39,6 +39,6 @@
 - (id)sharedResources;
 - (id)styleManager;
 - (float)textureScale;
-- (long long)vectorType;
+- (int)vectorType;
 
 @end

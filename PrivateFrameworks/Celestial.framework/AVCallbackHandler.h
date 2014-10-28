@@ -18,7 +18,7 @@
 
 - (SEL)action;
 - (void)dealloc;
-- (bool)hasParams;
+- (BOOL)hasParams;
 - (id)init;
 - (SEL)mainThreadAction;
 - (void)setAction:(SEL)arg1;

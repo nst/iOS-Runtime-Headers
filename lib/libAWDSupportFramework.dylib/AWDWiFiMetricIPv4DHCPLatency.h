@@ -17,10 +17,10 @@
 
 @property unsigned int dhcpLatencyMilliSecs;
 @property unsigned int dhcpLeaseMins;
-@property bool hasDhcpLatencyMilliSecs;
-@property bool hasDhcpLeaseMins;
-@property bool hasSecurityType;
-@property bool hasTimestamp;
+@property BOOL hasDhcpLatencyMilliSecs;
+@property BOOL hasDhcpLeaseMins;
+@property BOOL hasSecurityType;
+@property BOOL hasTimestamp;
 @property unsigned int securityType;
 @property unsigned long long timestamp;
 
@@ -30,21 +30,21 @@
 - (unsigned int)dhcpLatencyMilliSecs;
 - (unsigned int)dhcpLeaseMins;
 - (id)dictionaryRepresentation;
-- (bool)hasDhcpLatencyMilliSecs;
-- (bool)hasDhcpLeaseMins;
-- (bool)hasSecurityType;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDhcpLatencyMilliSecs;
+- (BOOL)hasDhcpLeaseMins;
+- (BOOL)hasSecurityType;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)securityType;
 - (void)setDhcpLatencyMilliSecs:(unsigned int)arg1;
 - (void)setDhcpLeaseMins:(unsigned int)arg1;
-- (void)setHasDhcpLatencyMilliSecs:(bool)arg1;
-- (void)setHasDhcpLeaseMins:(bool)arg1;
-- (void)setHasSecurityType:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasDhcpLatencyMilliSecs:(BOOL)arg1;
+- (void)setHasDhcpLeaseMins:(BOOL)arg1;
+- (void)setHasSecurityType:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSecurityType:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

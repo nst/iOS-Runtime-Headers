@@ -5,30 +5,30 @@
 @class EDResources;
 
 @interface EDColorReference : NSObject <NSCopying> {
-    unsigned long long mColorIndex;
+    unsigned int mColorIndex;
     EDResources *mResources;
     int mSystemColorID;
-    unsigned long long mThemeIndex;
+    unsigned int mThemeIndex;
     double mTint;
 }
 
 + (id)colorReferenceWithColor:(id)arg1 resources:(id)arg2;
-+ (id)colorReferenceWithColorIndex:(unsigned long long)arg1 resources:(id)arg2;
++ (id)colorReferenceWithColorIndex:(unsigned int)arg1 resources:(id)arg2;
 + (id)colorReferenceWithResources:(id)arg1;
 + (id)colorReferenceWithSystemColorID:(int)arg1 resources:(id)arg2;
-+ (id)colorReferenceWithThemeIndex:(unsigned long long)arg1 tint:(double)arg2 resources:(id)arg3;
++ (id)colorReferenceWithThemeIndex:(unsigned int)arg1 tint:(double)arg2 resources:(id)arg3;
 
 - (id)color;
-- (unsigned long long)colorIndex;
+- (unsigned int)colorIndex;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithColor:(id)arg1 resources:(id)arg2;
 - (id)initWithResources:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToColorReference:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToColorReference:(id)arg1;
 - (bool)isValid;
 - (int)systemColorID;
-- (unsigned long long)themeIndex;
+- (unsigned int)themeIndex;
 - (double)tint;
 
 @end

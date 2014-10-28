@@ -17,7 +17,7 @@
     double _fractionCompleted;
     NSProgress *_progress;
     id _progressBlock;
-    bool_progressPublished;
+    BOOL _progressPublished;
 }
 
 @property(readonly) double budgetRequired;
@@ -27,10 +27,10 @@
 @property(copy) id downloadCurrentVersionCompletionBlock;
 @property(copy) id downloadLoserVersionCompletionBlock;
 @property(copy) id downloadThumbnailCompletionBlock;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id progressBlock;
 @property(readonly) Class superclass;
-@property(readonly) long long transferPriority;
+@property(readonly) int transferPriority;
 
 - (void).cxx_destruct;
 - (void)_downloadPackageFilesWithRecord:(id)arg1 inParentOperation:(id)arg2 completionBlock:(id)arg3;
@@ -53,6 +53,6 @@
 - (void)setDownloadLoserVersionCompletionBlock:(id)arg1;
 - (void)setDownloadThumbnailCompletionBlock:(id)arg1;
 - (void)setProgressBlock:(id)arg1;
-- (long long)transferPriority;
+- (int)transferPriority;
 
 @end

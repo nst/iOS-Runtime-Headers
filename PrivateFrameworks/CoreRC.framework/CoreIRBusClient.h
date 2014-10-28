@@ -5,7 +5,7 @@
 @interface CoreIRBusClient : CoreIRBus {
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)addExternalDevice:(id*)arg1;
 - (Class)classForCoder;

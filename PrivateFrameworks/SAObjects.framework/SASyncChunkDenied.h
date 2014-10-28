@@ -13,22 +13,22 @@
 @property(retain) SASyncAnchor * current;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property long long errorCode;
-@property(readonly) unsigned long long hash;
+@property int errorCode;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * refId;
 @property(readonly) Class superclass;
 
 + (id)chunkDenied;
 + (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)chunkDeniedWithErrorCode:(long long)arg1;
++ (id)chunkDeniedWithErrorCode:(int)arg1;
 
 - (id)current;
 - (id)encodedClassName;
-- (long long)errorCode;
+- (int)errorCode;
 - (id)groupIdentifier;
-- (id)initWithErrorCode:(long long)arg1;
-- (bool)requiresResponse;
+- (id)initWithErrorCode:(int)arg1;
+- (BOOL)requiresResponse;
 - (void)setCurrent:(id)arg1;
-- (void)setErrorCode:(long long)arg1;
+- (void)setErrorCode:(int)arg1;
 
 @end

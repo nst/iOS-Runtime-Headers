@@ -6,32 +6,32 @@
 
 @interface UIAlertButton : UIButton {
     UIImageView *_highlightView;
-    double _imageOffset;
-    bool_isNewStyle;
+    float _imageOffset;
+    BOOL _isNewStyle;
 }
 
 @property(retain) UIImage * highlightImage;
 @property(readonly) UIImageView * highlightView;
-@property double imageOffset;
-@property bool isNewStyle;
+@property float imageOffset;
+@property BOOL isNewStyle;
 
 - (void)_focusStateDidChange;
-- (bool)_isFocusableElement;
-- (void)_transitionHighlightViewToHighlighted:(bool)arg1;
+- (BOOL)_isFocusableElement;
+- (void)_transitionHighlightViewToHighlighted:(BOOL)arg1;
 - (void)dealloc;
 - (id)highlightImage;
 - (id)highlightView;
 - (id)image;
-- (double)imageOffset;
+- (float)imageOffset;
 - (id)initWithTitle:(id)arg1;
-- (bool)isNewStyle;
+- (BOOL)isNewStyle;
 - (void)layoutSubviews;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setHighlightImage:(id)arg1;
-- (void)setHighlighted:(bool)arg1;
-- (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
-- (void)setImageOffset:(double)arg1;
-- (void)setIsNewStyle:(bool)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setImageOffset:(float)arg1;
+- (void)setIsNewStyle:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

@@ -6,20 +6,20 @@
 
 @interface MPUMediaControlsVolumeView : UIView <MPVolumeControllerDelegate> {
     UISlider *_slider;
-    long long _style;
+    int _style;
     double _timeStoppedTracking;
     NSTimer *_volumeCommitTimer;
     MPVolumeController *_volumeController;
     NSTimer *_warningBlinkTimer;
+    BOOL _warningIndicatorBlinking;
     UIView *_warningView;
-    bool_warningIndicatorBlinking;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UISlider * slider;
-@property(readonly) long long style;
+@property(readonly) int style;
 @property(readonly) Class superclass;
 @property(readonly) MPVolumeController * volumeController;
 
@@ -31,26 +31,26 @@
 - (id)_createVolumeSliderView;
 - (void)_layoutVolumeWarningView;
 - (void)_removeVolumeSliderInertia;
-- (bool)_shouldStartBlinkingVolumeWarningIndicator;
+- (BOOL)_shouldStartBlinkingVolumeWarningIndicator;
 - (void)_stopBlinkingWarningView;
 - (void)_stopVolumeCommitTimer;
 - (void)_volumeSliderBeganChanging:(id)arg1;
-- (bool)_volumeSliderDynamicsEnabled;
+- (BOOL)_volumeSliderDynamicsEnabled;
 - (void)_volumeSliderStoppedChanging:(id)arg1;
 - (void)_volumeSliderValueChanged:(id)arg1;
 - (id)_warningTrackImage;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(int)arg1;
 - (void)layoutSubviews;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)slider;
-- (long long)style;
+- (int)style;
 - (void)updateSystemVolumeLevel;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
-- (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(bool)arg2;
+- (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(BOOL)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
-- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(long long)arg2;
+- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
 - (id)volumeController;
 
 @end

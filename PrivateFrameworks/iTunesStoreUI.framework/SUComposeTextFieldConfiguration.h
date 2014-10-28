@@ -6,36 +6,36 @@
 
 @interface SUComposeTextFieldConfiguration : NSObject {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _borderInsets;
+    BOOL _isRequired;
     NSString *_label;
-    unsigned long long _maxLength;
+    unsigned int _maxLength;
     NSString *_placeholder;
     NSString *_value;
-    bool_isRequired;
 }
 
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } borderInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
 @property(retain) NSString * label;
-@property unsigned long long maxLength;
+@property unsigned int maxLength;
 @property(retain) NSString * placeholder;
-@property(getter=isRequired) bool required;
+@property(getter=isRequired) BOOL required;
 @property(retain) NSString * value;
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })borderInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
 - (void)dealloc;
-- (bool)isRequired;
+- (BOOL)isRequired;
 - (id)label;
-- (unsigned long long)maxLength;
+- (unsigned int)maxLength;
 - (id)placeholder;
-- (void)setBorderInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMaxLength:(unsigned long long)arg1;
+- (void)setMaxLength:(unsigned int)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (void)setRequired:(bool)arg1;
+- (void)setRequired:(BOOL)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 

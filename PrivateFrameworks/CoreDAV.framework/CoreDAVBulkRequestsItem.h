@@ -11,14 +11,14 @@
 }
 
 @property(readonly) NSDictionary * dictRepresentation;
-@property(readonly) long long maxResources;
+@property(readonly) int maxResources;
 @property(retain) CoreDAVLeafItem * maxResourcesItem;
-@property(readonly) long long maxSize;
+@property(readonly) int maxSize;
 @property(retain) CoreDAVLeafItem * maxSizeItem;
 @property(readonly) NSSet * supportedItems;
-@property(readonly) bool supportsDelete;
-@property(readonly) bool supportsInsert;
-@property(readonly) bool supportsUpdate;
+@property(readonly) BOOL supportsDelete;
+@property(readonly) BOOL supportsInsert;
+@property(readonly) BOOL supportsUpdate;
 
 + (id)copyParseRules;
 
@@ -27,16 +27,16 @@
 - (id)description;
 - (id)dictRepresentation;
 - (id)init;
-- (long long)maxResources;
+- (int)maxResources;
 - (id)maxResourcesItem;
-- (long long)maxSize;
+- (int)maxSize;
 - (id)maxSizeItem;
 - (void)setMaxResourcesItem:(id)arg1;
 - (void)setMaxSizeItem:(id)arg1;
 - (id)supportedItems;
-- (bool)supportsDelete;
-- (bool)supportsInsert;
-- (bool)supportsItemWithNameSpace:(id)arg1 name:(id)arg2;
-- (bool)supportsUpdate;
+- (BOOL)supportsDelete;
+- (BOOL)supportsInsert;
+- (BOOL)supportsItemWithNameSpace:(id)arg1 name:(id)arg2;
+- (BOOL)supportsUpdate;
 
 @end

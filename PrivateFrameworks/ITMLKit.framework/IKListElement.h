@@ -7,10 +7,10 @@
 @interface IKListElement : IKCollectionElement {
 }
 
-@property(readonly) bool isLeftAligned;
+@property(readonly) BOOL isLeftAligned;
 @property(retain,readonly) IKViewElement * relatedContent;
 
-- (bool)isLeftAligned;
+- (BOOL)isLeftAligned;
 - (id)relatedContent;
 
 @end

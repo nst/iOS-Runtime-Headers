@@ -7,31 +7,31 @@
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying> {
     boolmBuiltIn;
     boolmReferenced;
-    unsigned long long mFormatId;
+    unsigned int mFormatId;
     EDString *mFormatString;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned long long)arg2;
++ (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned int)arg2;
 + (id)contentFormatWithFormatString:(id)arg1;
-+ (id)contentFormatWithNSString:(id)arg1 formatId:(unsigned long long)arg2 builtIn:(bool)arg3;
++ (id)contentFormatWithNSString:(id)arg1 formatId:(unsigned int)arg2 builtIn:(bool)arg3;
 
 - (bool)builtIn;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned long long)formatId;
+- (unsigned int)formatId;
 - (id)formatString;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToContentFormat:(id)arg1;
-- (long long)key;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToContentFormat:(id)arg1;
+- (int)key;
 - (bool)referenced;
-- (void)setFormatId:(unsigned long long)arg1;
+- (void)setFormatId:(unsigned int)arg1;
 - (void)setReferenced:(bool)arg1;
 
 @end

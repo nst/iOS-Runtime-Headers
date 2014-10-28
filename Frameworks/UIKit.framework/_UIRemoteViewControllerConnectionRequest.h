@@ -15,6 +15,8 @@
     NSError *_error;
     id _exportedHostingObject;
     id _handler;
+    BOOL _isCancelledOrComplete;
+    BOOL _legacyAppearance;
     NSObject<OS_dispatch_queue> *_queue;
     Class _remoteViewControllerClass;
     _UIAsyncInvocation *_requestCancellationInvocation;
@@ -23,13 +25,11 @@
     <_UIViewServiceDeputyXPCInterface> *_serviceViewControllerDeputyInterface;
     NSString *_viewControllerClassName;
     NSString *_viewServiceBundleIdentifier;
-    bool_isCancelledOrComplete;
-    bool_legacyAppearance;
 }
 
-+ (id)__requestRemoteViewController:(id)arg1 service:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 serializedAppearanceCustomizations:(id)arg4 legacyAppearance:(bool)arg5 exportedHostingObject:(id)arg6 serviceViewControllerDeputyInterface:(id)arg7 connectionHandler:(id)arg8;
-+ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 legacyAppearance:(bool)arg4 exportedHostingObject:(id)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(id)arg7;
-+ (id)requestViewControllerWithService:(id)arg1 serializedAppearanceCustomizations:(id)arg2 legacyAppearance:(bool)arg3 exportedHostingObject:(id)arg4 remoteViewControllerClass:(Class)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(id)arg7;
++ (id)__requestRemoteViewController:(id)arg1 service:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 serializedAppearanceCustomizations:(id)arg4 legacyAppearance:(BOOL)arg5 exportedHostingObject:(id)arg6 serviceViewControllerDeputyInterface:(id)arg7 connectionHandler:(id)arg8;
++ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 legacyAppearance:(BOOL)arg4 exportedHostingObject:(id)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(id)arg7;
++ (id)requestViewControllerWithService:(id)arg1 serializedAppearanceCustomizations:(id)arg2 legacyAppearance:(BOOL)arg3 exportedHostingObject:(id)arg4 remoteViewControllerClass:(Class)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(id)arg7;
 
 - (void)_cancelUnconditionallyThen:(id)arg1;
 - (id)_cancelWithError:(id)arg1;

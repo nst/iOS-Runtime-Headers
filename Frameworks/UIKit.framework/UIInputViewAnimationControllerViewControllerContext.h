@@ -7,21 +7,21 @@
 @interface UIInputViewAnimationControllerViewControllerContext : NSObject <UIViewControllerKeyboardContextTransitioning> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     _UIViewControllerTransitionContext *_context;
     UIView *_from;
@@ -34,21 +34,21 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) UIView * fromKeyboard;
-@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } fromKeyboardFrame;
-@property(readonly) unsigned long long hash;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } fromKeyboardFrame;
+@property(readonly) unsigned int hash;
 @property(readonly) <UIViewControllerContextTransitioning> * mainContext;
 @property(readonly) Class superclass;
 @property(readonly) UIView * toKeyboard;
-@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } toKeyboardFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } toKeyboardFrame;
 
 + (id)contextWithHost:(id)arg1 startPlacement:(id)arg2 endPlacement:(id)arg3 transitionContext:(id)arg4;
 
 - (void)dealloc;
 - (id)fromKeyboard;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fromKeyboardFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fromKeyboardFrame;
 - (id)initWithHost:(id)arg1 startPlacement:(id)arg2 endPlacement:(id)arg3 transitionContext:(id)arg4;
 - (id)mainContext;
 - (id)toKeyboard;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })toKeyboardFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toKeyboardFrame;
 
 @end

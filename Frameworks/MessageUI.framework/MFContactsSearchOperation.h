@@ -19,7 +19,7 @@
 @property(readonly) NSString * sendingAddress;
 @property(readonly) NSNumber * taskID;
 @property(readonly) NSString * text;
-@property(readonly) unsigned long long type;
+@property(readonly) unsigned int type;
 
 + (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4 properties:(id)arg5;
 
@@ -30,6 +30,6 @@
 - (id)sendingAddress;
 - (id)taskID;
 - (id)text;
-- (unsigned long long)type;
+- (unsigned int)type;
 
 @end

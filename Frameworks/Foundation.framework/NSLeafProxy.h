@@ -15,7 +15,7 @@
     NSString *file;
     Class isa;
     id realObject;
-    long long refCount;
+    int refCount;
 }
 
 + (id)alloc;
@@ -23,19 +23,19 @@
 + (void)forwardInvocation:(id)arg1;
 + (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
 
-- (bool)_isDeallocating;
-- (bool)_tryRetain;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)initDir:(id)arg1 file:(id)arg2 docInfo:(id)arg3;
-- (bool)isProxy;
+- (BOOL)isProxy;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)reallyDealloc;
 - (void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

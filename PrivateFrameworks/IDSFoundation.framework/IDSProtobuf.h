@@ -11,11 +11,11 @@
 
 @property(retain) IDSMessageContext * context;
 @property(retain) NSData * data;
-@property bool isResponse;
+@property BOOL isResponse;
 @property unsigned short type;
 @property(retain) NSData * uncompressedData;
 
-+ (id)keyRepresentationForType:(unsigned short)arg1 isResponse:(bool)arg2;
++ (id)keyRepresentationForType:(unsigned short)arg1 isResponse:(BOOL)arg2;
 
 - (id)context;
 - (id)data;
@@ -26,11 +26,11 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithProtobufData:(id)arg1 type:(unsigned short)arg2 isResponse:(bool)arg3;
-- (bool)isResponse;
+- (id)initWithProtobufData:(id)arg1 type:(unsigned short)arg2 isResponse:(BOOL)arg3;
+- (BOOL)isResponse;
 - (void)setContext:(id)arg1;
 - (void)setData:(id)arg1;
-- (void)setIsResponse:(bool)arg1;
+- (void)setIsResponse:(BOOL)arg1;
 - (void)setType:(unsigned short)arg1;
 - (void)setUncompressedData:(id)arg1;
 - (unsigned short)type;

@@ -4,11 +4,11 @@
 
 @interface NSAttributeDictionary : NSDictionary {
     struct _NSAttributeDictionaryElement { 
-        unsigned long long hash; 
+        unsigned int hash; 
         id key; 
         id value; 
     } elements[1];
-    unsigned long long numElements;
+    unsigned int numElements;
 }
 
 + (id)emptyAttributeDictionary;
@@ -16,10 +16,10 @@
 + (id)newWithDictionary:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
-- (bool)isEqualToDictionary:(id)arg1;
+- (BOOL)isEqualToDictionary:(id)arg1;
 - (id)keyEnumerator;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newWithKey:(id)arg1 object:(id)arg2;

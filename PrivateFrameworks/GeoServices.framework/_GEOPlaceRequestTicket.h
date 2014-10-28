@@ -5,17 +5,17 @@
 @class GEOMapRegion, GEOMapServiceTraits, GEOPDPlaceRequest, GEOPDPlaceResponse, NSString;
 
 @interface _GEOPlaceRequestTicket : NSObject <GEOMapServiceTicket> {
+    BOOL _canceled;
     GEOPDPlaceRequest *_request;
     GEOPDPlaceResponse *_response;
     GEOMapRegion *_resultBoundingRegion;
     GEOMapServiceTraits *_traits;
-    bool_canceled;
 }
 
-@property(getter=isCanceled,readonly) bool canceled;
+@property(getter=isCanceled,readonly) BOOL canceled;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) GEOMapRegion * resultBoundingRegion;
 @property(readonly) Class superclass;
 @property(readonly) GEOMapServiceTraits * traits;
@@ -26,12 +26,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2;
-- (bool)isCanceled;
+- (BOOL)isCanceled;
 - (id)resultBoundingRegion;
 - (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
 - (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithRefinedHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
 - (id)traits;
 
 @end

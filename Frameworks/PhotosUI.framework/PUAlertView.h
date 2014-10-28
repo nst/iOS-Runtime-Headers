@@ -17,21 +17,20 @@
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id shouldEnableFirstOtherButtonBlock;
 @property(readonly) Class superclass;
 @property(copy) id willDismissHandler;
 
 + (id)alertForCPLEnableError:(id)arg1;
 + (id)alertForStorageUpgradeLoadFailure;
-+ (id)deleteITunesContentAlertWithAssetCount:(long long)arg1 includesPhotos:(bool)arg2 includesVideos:(bool)arg3;
-+ (void)showCPLBetaAlertViewWithCompletion:(id)arg1;
++ (id)deleteITunesContentAlertWithAssetCount:(int)arg1 includesPhotos:(BOOL)arg2 includesVideos:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (void)_tearDown;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
-- (bool)alertViewShouldEnableFirstOtherButton:(id)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (BOOL)alertViewShouldEnableFirstOtherButton:(id)arg1;
 - (id)completionHandler;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
 - (void)setCompletionHandler:(id)arg1;

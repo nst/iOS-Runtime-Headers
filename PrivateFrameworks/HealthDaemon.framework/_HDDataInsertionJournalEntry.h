@@ -6,21 +6,21 @@
 
 @interface _HDDataInsertionJournalEntry : HDJournalEntry {
     HKObject *_dataObject;
-    unsigned long long _provenance;
+    unsigned int _provenance;
 }
 
 @property(readonly) HKObject * dataObject;
-@property(readonly) unsigned long long provenance;
+@property(readonly) unsigned int provenance;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)applyWithDaemon:(id)arg1;
+- (BOOL)applyWithDaemon:(id)arg1;
 - (id)dataObject;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDataObject:(id)arg1 provenance:(unsigned long long)arg2;
-- (unsigned long long)provenance;
+- (id)initWithDataObject:(id)arg1 provenance:(unsigned int)arg2;
+- (unsigned int)provenance;
 
 @end

@@ -5,15 +5,15 @@
 @class RadioStation, SSURLConnectionRequest;
 
 @interface RadioLikeRequest : RadioRequest {
+    BOOL _isSeed;
     long long _itemID;
     int _likeStatus;
     SSURLConnectionRequest *_request;
     int _seedType;
     RadioStation *_station;
-    bool_isSeed;
 }
 
-@property bool isSeed;
+@property BOOL isSeed;
 @property int likeStatus;
 
 - (void).cxx_destruct;
@@ -21,9 +21,9 @@
 - (id)initWithItemID:(long long)arg1 seedType:(int)arg2 station:(id)arg3;
 - (id)initWithTrack:(id)arg1 station:(id)arg2;
 - (id)initWithTrackID:(id)arg1 station:(id)arg2;
-- (bool)isSeed;
+- (BOOL)isSeed;
 - (int)likeStatus;
-- (void)setIsSeed:(bool)arg1;
+- (void)setIsSeed:(BOOL)arg1;
 - (void)setLikeStatus:(int)arg1;
 - (void)startWithCompletionHandler:(id)arg1;
 - (void)startWithLikeCompletionHandler:(id)arg1;

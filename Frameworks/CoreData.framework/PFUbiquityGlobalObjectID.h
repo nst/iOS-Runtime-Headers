@@ -6,41 +6,41 @@
 
 @interface PFUbiquityGlobalObjectID : NSObject <NSCopying> {
     NSString *_entityName;
-    unsigned long long _hash;
+    unsigned int _hash;
     NSManagedObjectID *_managedObjectID;
     NSString *_owningPeerID;
     NSString *_primaryKey;
-    unsigned long long _primaryKeyInteger;
+    unsigned int _primaryKeyInteger;
     NSString *_storeName;
 }
 
 @property(readonly) NSString * entityName;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSManagedObjectID * managedObjectID;
 @property(readonly) NSString * owningPeerID;
 @property(readonly) NSString * primaryKey;
-@property(readonly) unsigned long long primaryKeyInteger;
+@property(readonly) unsigned int primaryKeyInteger;
 @property(readonly) NSString * storeName;
 
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createCompressedStringWithEntityNameToIndex:(id)arg1 primaryKeyToIndex:(id)arg2 peerIDToIndex:(id)arg3;
 - (id)createGlobalIDString;
 - (void)dealloc;
 - (id)description;
 - (id)entityName;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (id)initFromCopyWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 peerID:(id)arg4 andHash:(unsigned long long)arg5 managedObjectID:(id)arg6 primaryKeyInteger:(unsigned long long)arg7;
+- (id)initFromCopyWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 peerID:(id)arg4 andHash:(unsigned int)arg5 managedObjectID:(id)arg6 primaryKeyInteger:(unsigned int)arg7;
 - (id)initWithCompressedString:(id)arg1 forStoreWithName:(id)arg2 andEntityNames:(id)arg3 primaryKeys:(id)arg4 peerIDs:(id)arg5;
 - (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKey:(id)arg3 andPeerID:(id)arg4;
-- (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKeyInteger:(unsigned long long)arg3 andPeerID:(id)arg4;
+- (id)initWithStoreName:(id)arg1 entityName:(id)arg2 primaryKeyInteger:(unsigned int)arg3 andPeerID:(id)arg4;
 - (id)initWithString:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)managedObjectID;
 - (id)owningPeerID;
 - (id)primaryKey;
-- (unsigned long long)primaryKeyInteger;
+- (unsigned int)primaryKeyInteger;
 - (void)setManagedObjectID:(id)arg1;
 - (id)storeName;
 - (void)updateHash;

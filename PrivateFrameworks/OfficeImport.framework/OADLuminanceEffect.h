@@ -10,9 +10,9 @@
 - (float)brightness;
 - (float)contrast;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setBrightness:(float)arg1;
 - (void)setContrast:(float)arg1;
 

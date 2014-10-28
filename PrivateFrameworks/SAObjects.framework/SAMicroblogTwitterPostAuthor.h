@@ -7,30 +7,30 @@
 @interface SAMicroblogTwitterPostAuthor : SADomainObject {
 }
 
-@property long long followersCount;
+@property int followersCount;
 @property(copy) NSString * fullName;
 @property(copy) NSURL * profileImageUrl;
 @property(copy) NSString * screenName;
 @property(copy) NSNumber * userId;
-@property bool verified;
+@property BOOL verified;
 
 + (id)twitterPostAuthor;
 + (id)twitterPostAuthorWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
-- (long long)followersCount;
+- (int)followersCount;
 - (id)fullName;
 - (id)groupIdentifier;
 - (id)profileImageUrl;
 - (id)screenName;
-- (void)setFollowersCount:(long long)arg1;
+- (void)setFollowersCount:(int)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setProfileImageUrl:(id)arg1;
 - (void)setScreenName:(id)arg1;
 - (void)setUserId:(id)arg1;
-- (void)setVerified:(bool)arg1;
+- (void)setVerified:(BOOL)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)userId;
-- (bool)verified;
+- (BOOL)verified;
 
 @end

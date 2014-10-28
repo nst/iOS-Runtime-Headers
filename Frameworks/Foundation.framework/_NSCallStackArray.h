@@ -3,19 +3,19 @@
  */
 
 @interface _NSCallStackArray : NSArray {
-    unsigned long long _cnt;
+    unsigned int _cnt;
     void **_frames;
-    unsigned long long _ignore;
+    unsigned int _ignore;
     char **_pcstrs;
-    bool_wantSyms;
+    BOOL _wantSyms;
 }
 
-+ (id)arrayWithFrames:(void**)arg1 count:(unsigned long long)arg2 symbols:(bool)arg3;
++ (id)arrayWithFrames:(void**)arg1 count:(unsigned int)arg2 symbols:(BOOL)arg3;
 
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (void)finalize;
-- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 
 @end

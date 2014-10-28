@@ -5,15 +5,15 @@
 @interface GCControllerButtonInput : GCControllerElement {
 }
 
-@property(getter=isPressed,readonly) bool pressed;
+@property(getter=isPressed,readonly) BOOL pressed;
 @property(copy) id pressedChangedHandler;
 @property(readonly) float value;
 @property(copy) id valueChangedHandler;
 
-- (bool)_setValue:(float)arg1;
-- (bool)isPressed;
+- (BOOL)_setValue:(float)arg1;
+- (BOOL)isPressed;
 - (id)pressedChangedHandler;
-- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
 - (void)setPressedChangedHandler:(id)arg1;
 - (void)setValueChangedHandler:(id)arg1;
 - (float)value;

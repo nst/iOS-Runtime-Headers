@@ -12,7 +12,7 @@
 @property(retain,readonly) IKImageElement * image;
 @property(retain,readonly) IKOrdinalElement * ordinal;
 @property(retain,readonly) IKViewElement * overlays;
-@property(readonly) bool showTitlesOnFocus;
+@property(readonly) BOOL showTitlesOnFocus;
 @property(retain,readonly) IKTextElement * subtitle;
 @property(retain,readonly) IKTextElement * title;
 
@@ -21,7 +21,7 @@
 - (id)image;
 - (id)ordinal;
 - (id)overlays;
-- (bool)showTitlesOnFocus;
+- (BOOL)showTitlesOnFocus;
 - (id)subtitle;
 - (id)title;
 

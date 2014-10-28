@@ -32,21 +32,21 @@
         struct __compressed_pair<geo::PolylineCoordinate *, std::__1::allocator<geo::PolylineCoordinate> > { 
             struct PolylineCoordinate {} *__first_; 
         } __end_cap_; 
+    BOOL _clippedBack;
+    BOOL _clippedFront;
     } _localBounds;
     } _mapEdge;
-    unsigned long long _mapEdgeOffset;
+    unsigned long _mapEdgeOffset;
     } _points;
     } _routeOffsets;
-    bool_clippedBack;
-    bool_clippedFront;
 }
 
-@property(readonly) bool clippedBack;
-@property(readonly) bool clippedFront;
-@property(readonly) struct { struct { id x_1_1_1; char *x_1_1_2; unsigned long long x_1_1_3; unsigned long long x_1_1_4; unsigned long long x_1_1_5; unsigned long long x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; boolx_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; unsigned long long x2; unsigned long long x3; int x4; int x5; int x6; unsigned long long x7; unsigned long long x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }* feature;
+@property(readonly) BOOL clippedBack;
+@property(readonly) BOOL clippedFront;
+@property(readonly) struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }* feature;
 @property(readonly) struct shared_ptr<geo::MapEdgeRoad> { struct MapEdgeRoad {} *x1; struct __shared_weak_count {} *x2; } mapEdge;
-@property(readonly) unsigned long long mapEdgeOffset;
-@property(readonly) unsigned long long pointCount;
+@property(readonly) unsigned long mapEdgeOffset;
+@property(readonly) unsigned long pointCount;
 @property(readonly) struct { float x1; float x2; }* points;
 @property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffsetA;
 @property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffsetB;
@@ -55,15 +55,15 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)calculateRouteOffsetsBetweenA:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1 andB:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2 overLength:(float)arg3 onRoute:(id)arg4;
-- (bool)clippedBack;
-- (bool)clippedFront;
+- (BOOL)clippedBack;
+- (BOOL)clippedFront;
 - (void)dealloc;
 - (id)description;
-- (struct { struct { id x_1_1_1; char *x_1_1_2; unsigned long long x_1_1_3; unsigned long long x_1_1_4; unsigned long long x_1_1_5; unsigned long long x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; boolx_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; unsigned long long x2; unsigned long long x3; int x4; int x5; int x6; unsigned long long x7; unsigned long long x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)feature;
-- (id)initWithRoadPath:(const struct RoadPathElement<std::__1::shared_ptr<geo::MapEdge> > { int (**x1)(); int x2; unsigned long long x3; struct shared_ptr<geo::MapEdge> { struct MapEdge {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; struct GeoPolyline { struct shared_ptr<const std::__1::vector<zilch::GeoCoordinates, std::__1::allocator<zilch::GeoCoordinates> > > { struct vector<zilch::GeoCoordinates, std::__1::allocator<zilch::GeoCoordinates> > {} *x_1_2_1; struct __shared_weak_count {} *x_1_2_2; } x_5_1_1; int x_5_1_2; } x5; int x6; }*)arg1 sectionRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
+- (struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)feature;
+- (id)initWithRoadPath:(const struct RoadPathElement<std::__1::shared_ptr<geo::MapEdge> > { int (**x1)(); int x2; unsigned int x3; struct shared_ptr<geo::MapEdge> { struct MapEdge {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; struct GeoPolyline { struct shared_ptr<const std::__1::vector<zilch::GeoCoordinates, std::__1::allocator<zilch::GeoCoordinates> > > { struct vector<zilch::GeoCoordinates, std::__1::allocator<zilch::GeoCoordinates> > {} *x_1_2_1; struct __shared_weak_count {} *x_1_2_2; } x_5_1_1; int x_5_1_2; } x5; int x6; }*)arg1 sectionRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
 - (struct shared_ptr<geo::MapEdgeRoad> { struct MapEdgeRoad {} *x1; struct __shared_weak_count {} *x2; })mapEdge;
-- (unsigned long long)mapEdgeOffset;
-- (unsigned long long)pointCount;
+- (unsigned long)mapEdgeOffset;
+- (unsigned long)pointCount;
 - (struct { float x1; float x2; }*)points;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffsetA;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffsetB;

@@ -6,57 +6,60 @@
 
 @interface PLFetchingAlbum : _PLFetchingAlbum {
     NSPredicate *_ALAssetsGroupFilterPredicate;
+    unsigned int _batchSize;
     NSArray *_cachedKeyAssets;
-    unsigned long long _countForDisplay;
+    unsigned int _countForDisplay;
     int _emptyState;
-    unsigned long long _photosCount;
-    unsigned long long _videosCount;
+    unsigned int _photosCount;
+    unsigned int _videosCount;
 }
 
 @property(retain) NSPredicate * ALAssetsGroupFilterPredicate;
+@property unsigned int batchSize;
 @property(retain) NSData * customQueryParameters;
 @property(retain) NSString * customQueryType;
 @property(retain,readonly) NSPredicate * extraFilterPredicate;
 @property(retain) NSFetchRequest * fetchRequest;
 @property(retain) NSOrderedSet * fetchedAssets;
-@property(readonly) bool hasAssetsCache;
+@property(readonly) BOOL hasAssetsCache;
 
 + (id)_panoramasAlbumPredicate;
-+ (bool)contextShouldIgnoreChangesForALAssetsGroupFilterPredicate;
-+ (bool)contextShouldIgnoreChangesForFetchRequest;
-+ (bool)contextShouldIgnoreChangesForFetchedAssets;
-+ (bool)contextShouldIgnoreChangesForFetchedAssetsSet;
++ (BOOL)contextShouldIgnoreChangesForALAssetsGroupFilterPredicate;
++ (BOOL)contextShouldIgnoreChangesForFetchRequest;
++ (BOOL)contextShouldIgnoreChangesForFetchedAssets;
++ (BOOL)contextShouldIgnoreChangesForFetchedAssetsSet;
 + (id)predicateForAlbumKind:(int)arg1;
 + (id)sortDescriptorsForAlbumKind:(int)arg1;
 
 - (id)ALAssetsGroupFilterPredicate;
 - (id)_cachedKeyAssets;
-- (unsigned long long)_fetchedCountForAssetsOfKind:(short)arg1;
+- (unsigned int)_fetchedCountForAssetsOfKind:(short)arg1;
 - (id)_performFetchWithRequest:(id)arg1;
-- (unsigned long long)approximateCount;
+- (unsigned int)approximateCount;
 - (id)assets;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (void)batchFetchAssets:(id)arg1;
-- (unsigned long long)batchSize;
-- (bool)canPerformEditOperation:(unsigned long long)arg1;
-- (unsigned long long)count;
-- (unsigned long long)countForAssetsOfKind:(short)arg1;
+- (unsigned int)batchSize;
+- (BOOL)canPerformEditOperation:(unsigned int)arg1;
+- (unsigned int)count;
+- (unsigned int)countForAssetsOfKind:(short)arg1;
 - (void)dealloc;
 - (void)didTurnIntoFault;
 - (id)extraFilterPredicate;
 - (id)fastPointerAccessSetForAssets:(id)arg1;
 - (id)fetchRequest;
 - (id)filteredIndexesForPredicate:(id)arg1;
-- (bool)hasAssetsCache;
-- (bool)isEmpty;
+- (BOOL)hasAssetsCache;
+- (BOOL)isEmpty;
 - (id)keyAsset;
-- (bool)mayHaveAssetsInCommon:(id)arg1;
+- (BOOL)mayHaveAssetsInCommon:(id)arg1;
 - (id)mutableAssets;
 - (id)primitiveAssets;
 - (id)secondaryKeyAsset;
 - (void)setALAssetsGroupFilterPredicate:(id)arg1;
 - (void)setAssets:(id)arg1;
+- (void)setBatchSize:(unsigned int)arg1;
 - (void)setFetchRequest:(id)arg1;
 - (void)setKeyAsset:(id)arg1;
 - (void)setSecondaryKeyAsset:(id)arg1;

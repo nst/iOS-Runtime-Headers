@@ -5,31 +5,31 @@
 @class NSURLQueueNode;
 
 @interface NSURLQueue : NSObject {
-    bool_pad1;
-    bool_pad2;
-    bool_pad3;
-    boolwaitOnTake;
-    unsigned long long count;
+    BOOL _pad1;
+    BOOL _pad2;
+    BOOL _pad3;
+    unsigned int count;
     NSURLQueueNode *head;
     id monitor;
     NSURLQueueNode *tail;
+    BOOL waitOnTake;
 }
 
 + (id)newNode;
 
 - (void)clear;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (void)finalize;
-- (long long)indexOf:(id)arg1;
+- (int)indexOf:(id)arg1;
 - (id)init;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (id)peek;
-- (id)peekAt:(unsigned long long)arg1;
+- (id)peekAt:(unsigned int)arg1;
 - (void)put:(id)arg1;
-- (bool)remove:(id)arg1;
-- (void)setWaitOnTake:(bool)arg1;
+- (BOOL)remove:(id)arg1;
+- (void)setWaitOnTake:(BOOL)arg1;
 - (id)take;
-- (bool)waitOnTake;
+- (BOOL)waitOnTake;
 
 @end

@@ -20,14 +20,14 @@
         unsigned int m_size; 
     } _coreLocationProvider;
     } _geolocationManager;
+    BOOL _isWebCoreGeolocationActive;
     } _lastActivePosition;
     } _requestsWaitingForCoreLocationAuthorization;
-    bool_isWebCoreGeolocationActive;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_setEnableHighAccuracy:(bool)arg1;
+- (void)_setEnableHighAccuracy:(BOOL)arg1;
 - (void)_startUpdating;
 - (void)_stopUpdating;
 - (void)decidePolicyForGeolocationRequestFromOrigin:(struct OpaqueWKSecurityOrigin { }*)arg1 frame:(struct OpaqueWKFrame { }*)arg2 request:(struct OpaqueWKGeolocationPermissionRequest { }*)arg3 window:(id)arg4;

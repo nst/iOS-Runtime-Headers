@@ -21,16 +21,16 @@
 - (void)addObject:(id)arg1;
 - (id)allObjects;
 - (id)copy;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void*)getItem:(const void*)arg1;
-- (void)getKeys:(const void**)arg1 count:(unsigned long long*)arg2;
-- (unsigned long long)hash;
+- (void)getKeys:(const void**)arg1 count:(unsigned int*)arg2;
+- (unsigned int)hash;
 - (id)init;
 - (void)insertItem:(const void*)arg1;
 - (void)insertKnownAbsentItem:(const void*)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)removeAllItems;
 - (void)removeItem:(const void*)arg1;
 

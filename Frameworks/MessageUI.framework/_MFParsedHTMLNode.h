@@ -6,48 +6,48 @@
 
 @interface _MFParsedHTMLNode : NSObject <MFMessageBodyTreeNode, MFMessageBodyConsumableInnerTextNode> {
     NSMutableArray *_childNodes;
-    unsigned long long _endLocation;
+    unsigned int _endLocation;
     NSString *_htmlString;
     _MFParsedHTMLNode *_nextSibling;
     _MFParsedHTMLNode *_parentNode;
-    unsigned long long _startLocation;
+    unsigned int _startLocation;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property unsigned long long endLocation;
+@property unsigned int endLocation;
 @property(readonly) _MFParsedHTMLNode * firstChild;
-@property(readonly) bool hasChildNodes;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL hasChildNodes;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * htmlString;
 @property(readonly) _MFParsedHTMLNode * lastChild;
 @property _MFParsedHTMLNode * nextSibling;
 @property _MFParsedHTMLNode * parentNode;
-@property unsigned long long startLocation;
+@property unsigned int startLocation;
 @property(readonly) Class superclass;
 @property(readonly) NSString * tagName;
 
-- (void)addRecursiveDescriptionWithLevel:(unsigned long long)arg1 toString:(id)arg2;
+- (void)addRecursiveDescriptionWithLevel:(unsigned int)arg1 toString:(id)arg2;
 - (void)appendChild:(id)arg1;
 - (void)collectDescendanceIntoArray:(id)arg1;
 - (id)copyConsumableNodesAndAppendInnerTextToStringAccumulator:(id)arg1;
 - (id)copyMutableConsumableNodesAndAppendInnerTextToStringAccumulator:(id)arg1;
 - (void)dealloc;
-- (unsigned long long)endLocation;
+- (unsigned int)endLocation;
 - (id)firstChild;
-- (bool)hasChildNodes;
+- (BOOL)hasChildNodes;
 - (id)htmlString;
 - (id)init;
 - (id)lastChild;
 - (id)nextSibling;
 - (id)parentNode;
 - (id)recursiveDescription;
-- (void)setEndLocation:(unsigned long long)arg1;
+- (void)setEndLocation:(unsigned int)arg1;
 - (void)setHtmlString:(id)arg1;
 - (void)setNextSibling:(id)arg1;
 - (void)setParentNode:(id)arg1;
-- (void)setStartLocation:(unsigned long long)arg1;
-- (unsigned long long)startLocation;
+- (void)setStartLocation:(unsigned int)arg1;
+- (unsigned int)startLocation;
 - (id)tagName;
 
 @end

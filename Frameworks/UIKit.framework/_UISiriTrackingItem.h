@@ -10,73 +10,73 @@
 
 @interface _UISiriTrackingItem : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     UIImageView *_animatedView;
     id _animationCompletionHandler;
     UIImage *_capturedGlyphImage;
+    BOOL _deleted;
     } _glyphRange;
-    double _offscreenXLocation;
+    BOOL _isABigReplacement;
+    BOOL _isASmallReplacement;
+    BOOL _isAnIntroduction;
+    float _offscreenXLocation;
     } _targetFrame;
     UIColor *_textColor;
     } _textRange;
-    bool_deleted;
-    bool_isABigReplacement;
-    bool_isASmallReplacement;
-    bool_isAnIntroduction;
 }
 
 @property(retain) UIImageView * animatedView;
 @property(copy) id animationCompletionHandler;
 @property(retain) UIImage * capturedGlyphImage;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } glyphRange;
-@property bool isABigReplacement;
-@property bool isASmallReplacement;
-@property bool isAnIntroduction;
-@property double offscreenXLocation;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } targetFrame;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } glyphRange;
+@property BOOL isABigReplacement;
+@property BOOL isASmallReplacement;
+@property BOOL isAnIntroduction;
+@property float offscreenXLocation;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetFrame;
 @property(retain) UIColor * textColor;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } textRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } textRange;
 
 - (void)animateOut;
 - (id)animatedView;
 - (id)animationCompletionHandler;
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
-- (void)captureGlyphsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 containerOrigin:(struct CGPoint { double x1; double x2; })arg2 fromLayoutManager:(id)arg3;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)captureGlyphsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 containerOrigin:(struct CGPoint { float x1; float x2; })arg2 fromLayoutManager:(id)arg3;
 - (id)capturedGlyphImage;
 - (void)dealloc;
 - (id)description;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })glyphRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })glyphRange;
 - (id)init;
-- (bool)isABigReplacement;
-- (bool)isASmallReplacement;
-- (bool)isAnIntroduction;
-- (double)offscreenXLocation;
+- (BOOL)isABigReplacement;
+- (BOOL)isASmallReplacement;
+- (BOOL)isAnIntroduction;
+- (float)offscreenXLocation;
 - (void)setAnimatedView:(id)arg1;
 - (void)setAnimationCompletionHandler:(id)arg1;
 - (void)setCapturedGlyphImage:(id)arg1;
-- (void)setGlyphRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)setIsABigReplacement:(bool)arg1;
-- (void)setIsASmallReplacement:(bool)arg1;
-- (void)setIsAnIntroduction:(bool)arg1;
-- (void)setOffscreenXLocation:(double)arg1;
-- (void)setTargetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setIsABigReplacement:(BOOL)arg1;
+- (void)setIsASmallReplacement:(BOOL)arg1;
+- (void)setIsAnIntroduction:(BOOL)arg1;
+- (void)setOffscreenXLocation:(float)arg1;
+- (void)setTargetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetFrame;
+- (void)setTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetFrame;
 - (id)textColor;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })textRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })textRange;
 
 @end

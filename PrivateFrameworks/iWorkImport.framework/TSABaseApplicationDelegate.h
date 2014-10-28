@@ -25,7 +25,7 @@
 + (void)resetSharedConfigurations;
 + (id)sharedDelegate;
 
-- (bool)URLIsValidForImportedHyperlink:(id)arg1;
+- (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)applicationTemplateVariants;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
 - (id)documentRoot;
@@ -35,13 +35,13 @@
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
-- (bool)isReadableDocumentType:(id)arg1;
-- (double)maximumAspectRatioForPreviewImage;
-- (double)mimimumAspectRatioForPreviewImage;
+- (BOOL)isReadableDocumentType:(id)arg1;
+- (float)maximumAspectRatioForPreviewImage;
+- (float)mimimumAspectRatioForPreviewImage;
 - (id)nativeDocumentExtension;
 - (id)nativeDocumentType;
 - (id)nativeSFFDocumentType;
-- (bool)openURL:(id)arg1;
+- (BOOL)openURL:(id)arg1;
 - (void)persistenceError:(id)arg1;
 - (id)readableDocumentTypes;
 - (void)registerDefaults;

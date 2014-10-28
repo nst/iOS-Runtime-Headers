@@ -15,8 +15,8 @@
 - (void)addAtlas:(id)arg1;
 - (void)addShields:(id)arg1;
 - (id)atlas;
-- (id)atlasAtIndex:(unsigned long long)arg1;
-- (unsigned long long)atlasCount;
+- (id)atlasAtIndex:(unsigned int)arg1;
+- (unsigned int)atlasCount;
 - (void)clearAtlas;
 - (void)clearShields;
 - (void)copyTo:(id)arg1;
@@ -24,15 +24,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAtlas:(id)arg1;
 - (void)setShields:(id)arg1;
 - (id)shields;
-- (id)shieldsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)shieldsCount;
+- (id)shieldsAtIndex:(unsigned int)arg1;
+- (unsigned int)shieldsCount;
 - (void)writeTo:(id)arg1;
 
 @end

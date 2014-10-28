@@ -5,6 +5,6 @@
 @interface WBSImageUtilities : NSObject {
 }
 
-+ (id)squareThumbnailImageFromImage:(id)arg1 thumbnailWidthInPixels:(double)arg2;
++ (id)squareThumbnailImageFromImage:(id)arg1 thumbnailWidthInPixels:(float)arg2;
 
 @end

@@ -5,7 +5,7 @@
 @interface NSLikePredicateOperator : NSMatchingPredicateOperator {
 }
 
-- (bool)_shouldEscapeForLike;
+- (BOOL)_shouldEscapeForLike;
 - (SEL)selector;
 - (id)symbol;
 

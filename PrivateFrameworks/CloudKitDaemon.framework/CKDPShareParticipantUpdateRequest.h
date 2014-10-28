@@ -9,7 +9,7 @@
     CKDPShareIdentifier *_shareId;
 }
 
-@property(readonly) bool hasShareId;
+@property(readonly) BOOL hasShareId;
 @property(retain) NSMutableArray * participants;
 @property(retain) CKDPShareIdentifier * shareId;
 
@@ -22,14 +22,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasShareId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasShareId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)participantAtIndex:(unsigned long long)arg1;
+- (id)participantAtIndex:(unsigned int)arg1;
 - (id)participants;
-- (unsigned long long)participantsCount;
-- (bool)readFrom:(id)arg1;
+- (unsigned int)participantsCount;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setParticipants:(id)arg1;

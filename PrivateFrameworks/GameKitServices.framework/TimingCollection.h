@@ -11,7 +11,7 @@
 
 - (void)dealloc;
 - (id)description;
-- (bool)hasKey:(id)arg1;
+- (BOOL)hasKey:(id)arg1;
 - (id)init;
 - (void)removeTimingForKey:(id)arg1;
 - (void)resetTotalTimeForKey:(id)arg1;

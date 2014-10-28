@@ -21,22 +21,22 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned int)CRC;
-- (bool)bookmarkDataNeedsWriteWithOptions:(unsigned long long)arg1;
-- (id)bookmarkDataWithOptions:(unsigned long long)arg1;
-- (bool)copyToTemporaryURL:(id)arg1 encryptionKey:(id)arg2;
+- (BOOL)bookmarkDataNeedsWriteWithOptions:(unsigned int)arg1;
+- (id)bookmarkDataWithOptions:(unsigned int)arg1;
+- (BOOL)copyToTemporaryURL:(id)arg1 encryptionKey:(id)arg2;
 - (id)decryptionKey;
 - (void)didInitializeFromDocumentURL:(id)arg1;
 - (unsigned long long)encodedLength;
 - (id)initWithPath:(id)arg1 package:(id)arg2;
-- (bool)isInPackage:(id)arg1;
-- (bool)isMissingData;
-- (bool)isReadable;
+- (BOOL)isInPackage:(id)arg1;
+- (BOOL)isMissingData;
+- (BOOL)isReadable;
 - (unsigned char)packageIdentifier;
 - (id)packageLocator;
 - (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)resetFlags;
-- (void)setIsMissingData:(bool)arg1;
+- (void)setIsMissingData:(BOOL)arg1;
 - (id)streamReadChannel;
-- (bool)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(bool*)arg5 isMissingData:(bool*)arg6;
+- (BOOL)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(BOOL*)arg5 isMissingData:(BOOL*)arg6;
 
 @end

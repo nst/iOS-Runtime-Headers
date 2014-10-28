@@ -5,6 +5,6 @@
 @interface TSCHChartBubbleElementsRenderer : TSCHChartAbstractLineElementsRenderer {
 }
 
-- (bool)useBlendModeCopyForTransparencyLayer;
+- (BOOL)useBlendModeCopyForTransparencyLayer;
 
 @end

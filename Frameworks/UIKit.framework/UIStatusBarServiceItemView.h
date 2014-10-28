@@ -6,39 +6,39 @@
 
 @interface UIStatusBarServiceItemView : UIStatusBarItemView {
     int _contentType;
-    unsigned long long _crossfadeStep;
+    unsigned int _crossfadeStep;
     NSString *_crossfadeString;
-    double _crossfadeWidth;
-    double _letterSpacing;
-    double _maxWidth;
+    float _crossfadeWidth;
+    float _letterSpacing;
+    BOOL _loopNowIfNecessary;
+    BOOL _loopingNecessaryForString;
+    BOOL _loopingNow;
+    float _maxWidth;
     NSString *_serviceString;
-    double _serviceWidth;
-    bool_loopNowIfNecessary;
-    bool_loopingNecessaryForString;
-    bool_loopingNow;
+    float _serviceWidth;
 }
 
-- (id)_cachedContentImageForString:(id)arg1 withWidth:(double)arg2 letterSpacing:(double)arg3;
-- (id)_contentsImageFromString:(id)arg1 withWidth:(double)arg2 letterSpacing:(double)arg3;
+- (id)_cachedContentImageForString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3;
+- (id)_contentsImageFromString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3;
 - (id)_crossfadeContentsImage;
 - (void)_crossfadeStepAnimation;
-- (bool)_crossfaded;
+- (BOOL)_crossfaded;
 - (void)_finalAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (bool)_loopingNecessary;
+- (BOOL)_loopingNecessary;
 - (id)_serviceContentsImage;
-- (double)addContentOverlap:(double)arg1;
-- (bool)animatesDataChange;
+- (float)addContentOverlap:(float)arg1;
+- (BOOL)animatesDataChange;
 - (id)contentsImage;
 - (void)dealloc;
-- (double)extraRightPadding;
-- (long long)legibilityStyle;
+- (float)extraRightPadding;
+- (int)legibilityStyle;
 - (void)performPendedActions;
-- (double)resetContentOverlap;
-- (void)setVisible:(bool)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
-- (double)standardPadding;
-- (double)updateContentsAndWidth;
-- (bool)updateForContentType:(int)arg1 serviceString:(id)arg2 serviceCrossfadeString:(id)arg3 maxWidth:(double)arg4 actions:(int)arg5;
-- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
+- (float)resetContentOverlap;
+- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (float)standardPadding;
+- (float)updateContentsAndWidth;
+- (BOOL)updateForContentType:(int)arg1 serviceString:(id)arg2 serviceCrossfadeString:(id)arg3 maxWidth:(float)arg4 actions:(int)arg5;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

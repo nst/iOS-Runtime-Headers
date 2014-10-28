@@ -3,12 +3,12 @@
  */
 
 @interface TSTStrokeAssociatedObject : NSObject {
-    booldontClearBackground;
+    BOOL dontClearBackground;
 }
 
-@property bool dontClearBackground;
+@property BOOL dontClearBackground;
 
-- (bool)dontClearBackground;
-- (void)setDontClearBackground:(bool)arg1;
+- (BOOL)dontClearBackground;
+- (void)setDontClearBackground:(BOOL)arg1;
 
 @end

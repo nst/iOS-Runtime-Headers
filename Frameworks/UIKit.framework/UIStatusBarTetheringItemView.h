@@ -7,6 +7,6 @@
 }
 
 - (id)contentsImage;
-- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
+- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

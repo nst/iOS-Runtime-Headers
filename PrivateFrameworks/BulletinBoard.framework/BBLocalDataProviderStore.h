@@ -17,7 +17,7 @@
 @property(retain) NSMutableDictionary * dataProvidersByUniversalSectionID;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSMutableArray * localFactories;
 @property(readonly) Class superclass;
 
@@ -36,7 +36,7 @@
 - (id)dataProvidersByUniversalSectionID;
 - (void)dealloc;
 - (id)debugDescription;
-- (id)debugDescriptionWithChildren:(unsigned long long)arg1;
+- (id)debugDescriptionWithChildren:(unsigned int)arg1;
 - (id)initWithDelegate:(id)arg1 dataProviderQueue:(id)arg2;
 - (void)loadAllDataProviders;
 - (id)localFactories;

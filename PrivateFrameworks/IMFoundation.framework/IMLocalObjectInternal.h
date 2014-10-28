@@ -5,6 +5,7 @@
 @class IMMessageContext, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>, NSProtocolChecker, NSRecursiveLock, NSString;
 
 @interface IMLocalObjectInternal : NSObject {
+    BOOL _busyForwarding;
     NSMutableArray *_componentQueue;
     NSLock *_componentQueueLock;
     NSRecursiveLock *_componentQueueProcessingLock;
@@ -12,13 +13,12 @@
     IMMessageContext *_currentMessageContext;
     NSObject<OS_dispatch_semaphore> *_deathLock;
     NSRecursiveLock *_lock;
+    BOOL _offMainThread;
+    BOOL _pendingComponentQueueProcessing;
     NSString *_portName;
     NSProtocolChecker *_protocolChecker;
     NSObject<OS_dispatch_queue> *_queue;
     id _target;
-    bool_busyForwarding;
-    bool_offMainThread;
-    bool_pendingComponentQueueProcessing;
 }
 
 - (void)dealloc;

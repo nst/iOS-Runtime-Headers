@@ -22,7 +22,7 @@
 
 + (id)feedback;
 + (id)feedbackForSearchResult:(id)arg1 section:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (unsigned int)domain;

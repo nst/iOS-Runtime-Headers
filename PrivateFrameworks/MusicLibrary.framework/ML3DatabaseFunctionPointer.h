@@ -16,7 +16,7 @@
 @property void* userData;
 
 - (int (*)())functionPointer;
-- (bool)registerWithConnection:(id)arg1;
+- (BOOL)registerWithConnection:(id)arg1;
 - (void)setFunctionPointer:(int (*)())arg1;
 - (void)setUserData:(void*)arg1;
 - (void*)userData;

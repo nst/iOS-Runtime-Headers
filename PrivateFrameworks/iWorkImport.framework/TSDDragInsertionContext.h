@@ -4,24 +4,24 @@
 
 @interface TSDDragInsertionContext : TSDInsertionContext {
     struct CGPoint { 
-        double x; 
-        double y; 
-    boolmFromDragToInsertController;
-    boolmInsertFloating;
-    boolmPreferredCenterRequired;
-    boolmShouldEndEditing;
+        float x; 
+        float y; 
+    BOOL mFromDragToInsertController;
+    BOOL mInsertFloating;
     } mPreferredCenter;
+    BOOL mPreferredCenterRequired;
+    BOOL mShouldEndEditing;
 }
 
-- (bool)fromDragToInsertController;
-- (bool)hasPreferredCenter;
+- (BOOL)fromDragToInsertController;
+- (BOOL)hasPreferredCenter;
 - (id)init;
-- (id)initWithPreferredCenter:(struct CGPoint { double x1; double x2; })arg1 required:(bool)arg2 shouldEndEditing:(bool)arg3 fromDragToInsertController:(bool)arg4 insertFloating:(bool)arg5;
-- (bool)insertFloating;
-- (bool)insertFromDrag;
-- (bool)isInteractive;
-- (bool)isPreferredCenterRequired;
-- (struct CGPoint { double x1; double x2; })preferredCenter;
-- (bool)shouldEndEditing;
+- (id)initWithPreferredCenter:(struct CGPoint { float x1; float x2; })arg1 required:(BOOL)arg2 shouldEndEditing:(BOOL)arg3 fromDragToInsertController:(BOOL)arg4 insertFloating:(BOOL)arg5;
+- (BOOL)insertFloating;
+- (BOOL)insertFromDrag;
+- (BOOL)isInteractive;
+- (BOOL)isPreferredCenterRequired;
+- (struct CGPoint { float x1; float x2; })preferredCenter;
+- (BOOL)shouldEndEditing;
 
 @end

@@ -17,13 +17,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
-- (id)invitationAtIndex:(unsigned long long)arg1;
+- (unsigned int)hash;
+- (id)invitationAtIndex:(unsigned int)arg1;
 - (id)invitations;
-- (unsigned long long)invitationsCount;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)invitationsCount;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setInvitations:(id)arg1;
 - (void)writeTo:(id)arg1;
 

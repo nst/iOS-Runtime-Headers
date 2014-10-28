@@ -2,24 +2,34 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableDictionary;
+@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface MCDependencyReader : NSObject {
-    NSMutableDictionary *_domainsDict;
+    NSObject<OS_dispatch_queue> *_memberQueue;
+    NSMutableDictionary *_memberQueueDomainsDict;
 }
 
-@property(retain) NSMutableDictionary * domainsDict;
+@property(readonly) NSDictionary * domainsDict;
+@property(retain) NSObject<OS_dispatch_queue> * memberQueue;
+@property(retain) NSMutableDictionary * memberQueueDomainsDict;
 
++ (void)setStoragePath:(id)arg1;
 + (id)sharedReader;
++ (id)storagePath;
 
 - (void).cxx_destruct;
-- (id)_domainsDictionaryForDomain:(id)arg1 parent:(id)arg2 outParentsDict:(id*)arg3 outDependents:(id*)arg4;
 - (id)_init;
 - (id)dependentsOfParent:(id)arg1 inDomain:(id)arg2;
 - (id)domainsDict;
 - (id)init;
 - (void)invalidateCache;
+- (id)memberQueue;
+- (id)memberQueueDependentsOfParent:(id)arg1 inDomain:(id)arg2;
+- (id)memberQueueDomainsDict;
+- (id)memberQueueParentsInDomain:(id)arg1;
+- (void)memberQueueRereadDomainsDict;
 - (id)parentsInDomain:(id)arg1;
-- (void)setDomainsDict:(id)arg1;
+- (void)setMemberQueue:(id)arg1;
+- (void)setMemberQueueDomainsDict:(id)arg1;
 
 @end

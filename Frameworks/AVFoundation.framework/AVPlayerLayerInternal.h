@@ -7,36 +7,35 @@
 @interface AVPlayerLayerInternal : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     AVPlayer *_player;
-    boolhasPlayerToObserve;
-    boolisInPIPMode;
-    boolisObservingPlayer;
-    boolisPresentationLayer;
-    boolisReadyForDisplay;
-    boolshouldObservePlayer;
     CALayer *closedCaptionLayer;
+    BOOL hasPlayerToObserve;
+    BOOL isInPIPMode;
+    BOOL isObservingPlayer;
+    BOOL isPresentationLayer;
+    BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
     AVPlayerItem *itemMarkedReadyForDisplay;
     } latestPlayerLayerBoundsAtRendering;
@@ -46,6 +45,7 @@
     NSDictionary *pixelBufferAttributes;
     } presentationSize;
     NSObject<OS_dispatch_queue> *serialQueue;
+    BOOL shouldObservePlayer;
     NSString *subtitleGravity;
     FigSubtitleCALayer *subtitleLayer;
     NSString *videoGravity;

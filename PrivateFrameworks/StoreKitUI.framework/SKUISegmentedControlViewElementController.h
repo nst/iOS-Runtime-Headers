@@ -6,8 +6,8 @@
 
 @interface SKUISegmentedControlViewElementController : NSObject <SKUIFlexibleSegmentedControlDelegate, SKUIMenuPopoverDelegate, SKUIMenuViewControllerDelegate> {
     SKUIClientContext *_clientContext;
-    long long _defaultMaximumNumberOfVisibleItems;
-    double _desiredSegmentWidth;
+    int _defaultMaximumNumberOfVisibleItems;
+    float _desiredSegmentWidth;
     UIBarButtonItem *_menuSheetCancelButtonItem;
     SKUIMenuViewController *_menuSheetViewController;
     UIViewController *_parentViewController;
@@ -18,10 +18,10 @@
 
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
-@property long long defaultMaximumNumberOfVisibleItems;
+@property int defaultMaximumNumberOfVisibleItems;
 @property(copy,readonly) NSString * description;
-@property double desiredSegmentWidth;
-@property(readonly) unsigned long long hash;
+@property float desiredSegmentWidth;
+@property(readonly) unsigned int hash;
 @property UIViewController * parentViewController;
 @property(readonly) UIView * segmentedControlView;
 @property(readonly) Class superclass;
@@ -34,26 +34,26 @@
 - (void)_destroyPopoverController;
 - (void)_reloadPropertiesForSegmentedControl:(id)arg1;
 - (id)_segmentedControl;
-- (void)_showMoreListSheetWithTitles:(id)arg1 selectedIndex:(long long)arg2;
+- (void)_showMoreListSheetWithTitles:(id)arg1 selectedIndex:(int)arg2;
 - (void)_showPopoverMoreListWithTitles:(id)arg1;
 - (id)clientContext;
 - (void)dealloc;
-- (long long)defaultMaximumNumberOfVisibleItems;
-- (double)desiredSegmentWidth;
+- (int)defaultMaximumNumberOfVisibleItems;
+- (float)desiredSegmentWidth;
 - (id)initWithViewElement:(id)arg1 segmentedControl:(id)arg2;
 - (id)initWithViewElement:(id)arg1;
-- (void)menuPopover:(id)arg1 didSelectMenuItemAtIndex:(long long)arg2;
-- (void)menuPopover:(id)arg1 willRepositionToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)menuPopover:(id)arg1 didSelectMenuItemAtIndex:(int)arg2;
+- (void)menuPopover:(id)arg1 willRepositionToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)menuPopoverDidCancel:(id)arg1;
-- (void)menuViewController:(id)arg1 didSelectItemAtIndex:(long long)arg2;
+- (void)menuViewController:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (id)parentViewController;
 - (void)reloadAfterDocumentUpdate;
-- (void)segmentedControl:(id)arg1 didSelectSegmentIndex:(long long)arg2;
+- (void)segmentedControl:(id)arg1 didSelectSegmentIndex:(int)arg2;
 - (void)segmentedControl:(id)arg1 showMoreListWithTitles:(id)arg2;
 - (id)segmentedControlView;
 - (void)setClientContext:(id)arg1;
-- (void)setDefaultMaximumNumberOfVisibleItems:(long long)arg1;
-- (void)setDesiredSegmentWidth:(double)arg1;
+- (void)setDefaultMaximumNumberOfVisibleItems:(int)arg1;
+- (void)setDesiredSegmentWidth:(float)arg1;
 - (void)setParentViewController:(id)arg1;
 - (id)viewElement;
 

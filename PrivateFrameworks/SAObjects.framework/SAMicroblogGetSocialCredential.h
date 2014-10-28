@@ -16,7 +16,7 @@
 - (id)encodedClassName;
 - (id)explicitUserPermission;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setExplicitUserPermission:(id)arg1;
 - (void)setSocialNetwork:(id)arg1;
 - (id)socialNetwork;

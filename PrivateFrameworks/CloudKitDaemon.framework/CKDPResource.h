@@ -16,10 +16,10 @@
 }
 
 @property long long customClientResourceType;
-@property bool hasCustomClientResourceType;
-@property(readonly) bool hasRecordId;
-@property bool hasTargetDatabase;
-@property(readonly) bool hasZoneId;
+@property BOOL hasCustomClientResourceType;
+@property(readonly) BOOL hasRecordId;
+@property BOOL hasTargetDatabase;
+@property(readonly) BOOL hasZoneId;
 @property(retain) CKDPRecordIdentifier * recordId;
 @property int targetDatabase;
 @property(retain) CKDPRecordZoneIdentifier * zoneId;
@@ -30,18 +30,18 @@
 - (long long)customClientResourceType;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCustomClientResourceType;
-- (bool)hasRecordId;
-- (bool)hasTargetDatabase;
-- (bool)hasZoneId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCustomClientResourceType;
+- (BOOL)hasRecordId;
+- (BOOL)hasTargetDatabase;
+- (BOOL)hasZoneId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)recordId;
 - (void)setCustomClientResourceType:(long long)arg1;
-- (void)setHasCustomClientResourceType:(bool)arg1;
-- (void)setHasTargetDatabase:(bool)arg1;
+- (void)setHasCustomClientResourceType:(BOOL)arg1;
+- (void)setHasTargetDatabase:(BOOL)arg1;
 - (void)setRecordId:(id)arg1;
 - (void)setTargetDatabase:(int)arg1;
 - (void)setZoneId:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface BSSignal : NSObject {
-    bool_signalled;
+    BOOL _signalled;
 }
 
-- (bool)hasBeenSignalled;
+- (BOOL)hasBeenSignalled;
 - (id)init;
 - (void)reset;
 - (void)signal;

@@ -6,53 +6,53 @@
 
 @interface MPTransitionController : NSObject {
     float _duration;
-    long long _fromInterfaceOrientation;
+    int _fromInterfaceOrientation;
     MPViewController *_fromViewController;
     struct __CFDictionary { } *_observers;
     NSMutableSet *_persistentViewsToFadeIn;
     NSMutableSet *_persistentViewsToFadeOut;
     UIView *_rootView;
     UIViewController *_toContainerViewController;
-    long long _toInterfaceOrientation;
+    int _toInterfaceOrientation;
     MPViewController *_toViewController;
     NSMutableSet *_viewsToFadeIn;
     NSMutableSet *_viewsToFadeOut;
 }
 
 @property float duration;
-@property long long fromInterfaceOrientation;
+@property int fromInterfaceOrientation;
 @property(retain) MPViewController * fromViewController;
 @property(retain) UIView * rootView;
 @property(retain) UIViewController * toContainerViewController;
-@property long long toInterfaceOrientation;
+@property int toInterfaceOrientation;
 @property(retain) MPViewController * toViewController;
 
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
-- (void)addViewToFadeIn:(id)arg1 restoreOnPop:(bool)arg2;
-- (void)addViewToFadeOut:(id)arg1 restoreOnPop:(bool)arg2;
+- (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
+- (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)dealloc;
-- (void)didFinishTransition:(bool)arg1;
+- (void)didFinishTransition:(BOOL)arg1;
 - (float)duration;
-- (void)fadeViewsForRestore:(bool)arg1;
-- (long long)fromInterfaceOrientation;
+- (void)fadeViewsForRestore:(BOOL)arg1;
+- (int)fromInterfaceOrientation;
 - (id)fromViewController;
 - (id)init;
-- (void)messageObserversWithSuccess:(bool)arg1;
-- (void)performTransition:(unsigned long long)arg1;
+- (void)messageObserversWithSuccess:(BOOL)arg1;
+- (void)performTransition:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)rootView;
 - (void)setDuration:(float)arg1;
-- (void)setFromInterfaceOrientation:(long long)arg1;
+- (void)setFromInterfaceOrientation:(int)arg1;
 - (void)setFromViewController:(id)arg1;
 - (void)setRootView:(id)arg1;
 - (void)setToContainerViewController:(id)arg1;
-- (void)setToInterfaceOrientation:(long long)arg1;
+- (void)setToInterfaceOrientation:(int)arg1;
 - (void)setToViewController:(id)arg1;
 - (id)toContainerViewController;
-- (long long)toInterfaceOrientation;
+- (int)toInterfaceOrientation;
 - (id)toViewController;
-- (void)transition:(unsigned long long)arg1;
-- (void)willBeginTransition:(unsigned long long)arg1;
+- (void)transition:(unsigned int)arg1;
+- (void)willBeginTransition:(unsigned int)arg1;
 
 @end

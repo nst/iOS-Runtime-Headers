@@ -9,12 +9,13 @@
 @class NSArray, NSString, PLRoundProgressView, UIActivityIndicatorView, UILabel, _UIBackdropView;
 
 @interface PUProgressIndicatorView : UIView {
-    long long __currentState;
+    int __currentState;
     double __timestampBeganShowing;
     _UIBackdropView *_backgroundView;
     NSArray *_backgroundViewConstraints;
     id _completionHandler;
-    double _currentProgress;
+    float _currentProgress;
+    BOOL _isDeterminate;
     NSArray *_labelAndPieProgressConstraints;
     NSArray *_labelAndSpinnerConstraints;
     NSString *_localizedMessage;
@@ -22,47 +23,46 @@
     NSArray *_messageLabelConstraints;
     PLRoundProgressView *_pieProgressView;
     NSArray *_pieProgressViewConstraints;
+    BOOL _showsBackground;
     UIActivityIndicatorView *_spinnerView;
     NSArray *_spinnerViewConstraints;
-    long long _style;
-    bool_isDeterminate;
-    bool_showsBackground;
-    bool_wantsAnimatedHide;
-    bool_wantsImmediateHide;
+    int _style;
+    BOOL _wantsAnimatedHide;
+    BOOL _wantsImmediateHide;
 }
 
-@property(setter=_setCurrentState:) long long _currentState;
+@property(setter=_setCurrentState:) int _currentState;
 @property(setter=_setTimestampBeganShowing:) double _timestampBeganShowing;
-@property double currentProgress;
-@property(setter=setDeterminate:) bool isDeterminate;
+@property float currentProgress;
+@property(setter=setDeterminate:) BOOL isDeterminate;
 @property(copy) NSString * localizedMessage;
-@property bool showsBackground;
-@property(readonly) long long style;
+@property BOOL showsBackground;
+@property(readonly) int style;
 
 - (void).cxx_destruct;
-- (long long)_currentState;
+- (int)_currentState;
 - (void)_endShowingProgressIfReady;
 - (id)_newBackdropBackgroundView;
-- (void)_setCurrentState:(long long)arg1;
+- (void)_setCurrentState:(int)arg1;
 - (void)_setTimestampBeganShowing:(double)arg1;
 - (double)_timestampBeganShowing;
 - (void)_updatePieProgress;
-- (void)_updateProgressViewsAnimated:(bool)arg1 completion:(id)arg2;
+- (void)_updateProgressViewsAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)_updateSubviewsOrdering;
-- (void)beginShowingProgressImmediately:(bool)arg1 animated:(bool)arg2;
-- (double)currentProgress;
-- (void)endShowingProgressImmediately:(bool)arg1 animated:(bool)arg2 withCompletionHandler:(id)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(long long)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (bool)isDeterminate;
+- (void)beginShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2;
+- (float)currentProgress;
+- (void)endShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (BOOL)isDeterminate;
 - (id)localizedMessage;
-- (void)setCurrentProgress:(double)arg1;
-- (void)setDeterminate:(bool)arg1;
+- (void)setCurrentProgress:(float)arg1;
+- (void)setDeterminate:(BOOL)arg1;
 - (void)setLocalizedMessage:(id)arg1;
-- (void)setShowsBackground:(bool)arg1;
-- (bool)showsBackground;
-- (long long)style;
+- (void)setShowsBackground:(BOOL)arg1;
+- (BOOL)showsBackground;
+- (int)style;
 - (void)updateConstraints;
 
 @end

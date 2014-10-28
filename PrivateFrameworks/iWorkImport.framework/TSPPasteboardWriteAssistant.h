@@ -9,21 +9,21 @@
     NSMutableDictionary *_dataProviderMap;
     NSMutableOrderedSet *_dataProviderTypes;
     NSHashTable *_delayedObjects;
-    long long _nativeDataOnceToken;
+    BOOL _didAttemptToSerializeNativeData;
+    long _nativeDataOnceToken;
     TSPPasteboard *_nativeDataPasteboard;
     TSPPasteboardNativeDataProvider *_nativeDataProvider;
     TSPObjectContext *_pasteboardContext;
     TSPPasteboardObject *_pasteboardObject;
     TSURetainedPointerKeyDictionary *_proxyObjectMap;
-    long long _writeNativeDataToPasteboardOnceToken;
-    bool_didAttemptToSerializeNativeData;
-    bool_shouldRefuseAdditionalDataProviders;
+    BOOL _shouldRefuseAdditionalDataProviders;
+    long _writeNativeDataToPasteboardOnceToken;
 }
 
 @property(copy) NSDictionary * contentDescription;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) TSPObjectContext * pasteboardContext;
 @property(readonly) TSPPasteboardObject * pasteboardObject;
 @property(readonly) Class superclass;

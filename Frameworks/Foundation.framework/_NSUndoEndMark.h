@@ -6,6 +6,6 @@
 }
 
 - (id)description;
-- (bool)isEndMark;
+- (BOOL)isEndMark;
 
 @end

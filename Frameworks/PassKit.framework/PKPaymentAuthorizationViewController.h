@@ -2,49 +2,44 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentAuthorizationViewControllerDelegate>, <PKPaymentAuthorizationViewControllerPrivateDelegate>, <UIViewControllerTransitioningDelegate>, NSMutableArray, PKRemotePaymentAuthorizationViewController, UIView, _UIAsyncInvocation;
+@class <PKPaymentAuthorizationViewControllerDelegate>, <PKPaymentAuthorizationViewControllerPrivateDelegate>, NSString, PKPaymentAuthorizationController;
 
-@interface PKPaymentAuthorizationViewController : UIViewController {
-    _UIAsyncInvocation *_cancelViewServiceRequest;
-    UIView *_contentView;
-    <UIViewControllerTransitioningDelegate> *_defaultTransitionDelegate;
-    NSMutableArray *_delayedActions;
+@interface PKPaymentAuthorizationViewController : UIViewController <PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate> {
     <PKPaymentAuthorizationViewControllerDelegate> *_delegate;
+    PKPaymentAuthorizationController *_paymentController;
     <PKPaymentAuthorizationViewControllerPrivateDelegate> *_privateDelegate;
-    PKRemotePaymentAuthorizationViewController *_remoteViewController;
-    bool_hasAppeared;
 }
 
+@property(copy,readonly) NSString * debugDescription;
 @property <PKPaymentAuthorizationViewControllerDelegate> * delegate;
+@property(copy,readonly) NSString * description;
+@property(readonly) unsigned int hash;
+@property(retain) PKPaymentAuthorizationController * paymentController;
 @property <PKPaymentAuthorizationViewControllerPrivateDelegate> * privateDelegate;
+@property(readonly) Class superclass;
 
-+ (bool)_shouldForwardViewWillTransitionToSize;
-+ (bool)canMakePayments;
-+ (bool)canMakePaymentsUsingNetworks:(id)arg1;
++ (BOOL)canMakePayments;
++ (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
 
-- (void)_authorizationDidAuthorizePayment:(id)arg1;
-- (void)_authorizationDidFinishWithError:(id)arg1;
-- (void)_authorizationDidSelectShippingContact:(id)arg1;
-- (void)_authorizationDidSelectShippingMethod:(id)arg1;
-- (void)_didBecomeActive:(id)arg1;
-- (void)_handleAppDidCancel;
-- (void)_peformOrEnqueueDelayedAction:(id)arg1;
-- (void)_performAllDelayedActions;
-- (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
+- (void)_addDeactivationReason:(id)arg1;
 - (void)_registerForApplicationLifeCycleNotifications;
-- (id)_serviceViewControllerProxy;
+- (void)_removeDeactivationReason:(id)arg1;
 - (void)_unregisterForApplicationLifeCycleNotifications;
-- (void)_willResignActive:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithPaymentRequest:(id)arg1;
+- (int)modalPresentationStyle;
+- (void)paymentAuthorizationController:(id)arg1 didAuthorizePayment:(id)arg2 completion:(id)arg3;
+- (void)paymentAuthorizationController:(id)arg1 didSelectShippingAddress:(void*)arg2 completion:(id)arg3;
+- (void)paymentAuthorizationController:(id)arg1 didSelectShippingMethod:(id)arg2 completion:(id)arg3;
+- (void)paymentAuthorizationController:(id)arg1 willFinishWithError:(id)arg2;
+- (void)paymentAuthorizationControllerDidFinish:(id)arg1;
+- (id)paymentController;
 - (id)privateDelegate;
 - (void)setDelegate:(id)arg1;
+- (void)setPaymentController:(id)arg1;
 - (void)setPrivateDelegate:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
-- (unsigned long long)supportedInterfaceOrientations;
-- (id)transitioningDelegate;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidLoad;
+- (unsigned int)supportedInterfaceOrientations;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

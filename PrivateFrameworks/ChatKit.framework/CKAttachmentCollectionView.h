@@ -6,6 +6,6 @@
 }
 
 - (void)dealloc;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

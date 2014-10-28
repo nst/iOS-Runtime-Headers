@@ -7,6 +7,7 @@
 @interface SPSection : SPProxyObject <PRSSection> {
 }
 
+@property(retain) NSURL * attribution_url;
 @property(retain) NSString * type;
 @property(retain) NSURL * url;
 

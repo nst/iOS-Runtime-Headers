@@ -10,13 +10,13 @@
 
 @property(copy) NSArray * containerRelations;
 
-+ (bool)cplShouldIgnorePropertyForCoding:(id)arg1;
++ (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)containerRelationChangesComparedToRelationEnumerator:(id)arg1 error:(id*)arg2;
 - (id)containerRelations;
 - (id)init;
-- (id)propertiesForChangeType:(unsigned long long)arg1;
+- (id)propertiesForChangeType:(unsigned int)arg1;
 - (void)setContainerRelations:(id)arg1;
 
 @end

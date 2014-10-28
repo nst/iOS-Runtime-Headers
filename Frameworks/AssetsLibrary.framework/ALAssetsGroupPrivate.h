@@ -6,27 +6,27 @@
 
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
     struct NSObject { Class x1; } *_album;
+    BOOL _applyHyperionFilter;
     ALAssetsFilter *_assetsFilter;
-    unsigned long long _groupType;
+    unsigned int _groupType;
+    BOOL _isCloudSharedGroup;
+    BOOL _isValid;
     ALAssetsLibrary *_library;
+    BOOL _loadedAssets;
     PLPhotoLibrary *_photoLibrary;
     NSMutableDictionary *_propertyValues;
-    bool_applyHyperionFilter;
-    bool_isCloudSharedGroup;
-    bool_isValid;
-    bool_loadedAssets;
 }
 
 @property(retain) PLPhotoLibrary * _photoLibrary;
 @property(retain) NSObject<PLAlbumProtocol> * album;
-@property bool applyHyperionFilter;
+@property BOOL applyHyperionFilter;
 @property(retain) ALAssetsFilter * assetsFilter;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property unsigned long long groupType;
-@property(readonly) unsigned long long hash;
-@property bool isCloudSharedGroup;
-@property bool isValid;
+@property unsigned int groupType;
+@property(readonly) unsigned int hash;
+@property BOOL isCloudSharedGroup;
+@property BOOL isValid;
 @property ALAssetsLibrary * library;
 @property(retain) NSMutableDictionary * propertyValues;
 @property(readonly) Class superclass;
@@ -35,29 +35,29 @@
 - (id)_photoLibrary;
 - (struct NSObject { Class x1; }*)album;
 - (int)albumFilter;
-- (bool)applyHyperionFilter;
+- (BOOL)applyHyperionFilter;
 - (id)assetsFilter;
 - (void)dealloc;
-- (unsigned long long)groupType;
-- (bool)hasFilter;
+- (unsigned int)groupType;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2;
-- (bool)isCloudSharedGroup;
-- (bool)isValid;
+- (BOOL)isCloudSharedGroup;
+- (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;
 - (void)populateAssets;
 - (id)propertyValues;
 - (void)resetAssets;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)setApplyHyperionFilter:(bool)arg1;
+- (void)setApplyHyperionFilter:(BOOL)arg1;
 - (void)setAssetsFilter:(id)arg1;
-- (void)setGroupType:(unsigned long long)arg1;
-- (void)setIsCloudSharedGroup:(bool)arg1;
-- (void)setIsValid:(bool)arg1;
+- (void)setGroupType:(unsigned int)arg1;
+- (void)setIsCloudSharedGroup:(BOOL)arg1;
+- (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPropertyValues:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (void)set_photoLibrary:(id)arg1;
+- (void)updateAlbumFiltering;
 - (id)valueForProperty:(id)arg1;
 
 @end

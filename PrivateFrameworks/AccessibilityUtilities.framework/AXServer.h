@@ -8,15 +8,15 @@
     AXIPCClient *_client;
     AXIPCServer *_server;
     NSString *_serverIdentifier;
-    bool_shouldRegisterClientCallbackSourceOnMainRunloop;
+    BOOL _shouldRegisterClientCallbackSourceOnMainRunloop;
 }
 
 @property(retain) AXIPCClient * client;
 @property(retain) AXIPCServer * server;
 @property(copy) NSString * serverIdentifier;
-@property bool shouldRegisterClientCallbackSourceOnMainRunloop;
+@property BOOL shouldRegisterClientCallbackSourceOnMainRunloop;
 
-- (bool)_connectIfNecessary;
+- (BOOL)_connectIfNecessary;
 - (void)_connectServerIfNecessary;
 - (void)_didConnectToClient;
 - (void)_didConnectToServer;
@@ -30,13 +30,13 @@
 - (id)sendMessage:(id)arg1;
 - (void)sendSimpleMessage:(id)arg1;
 - (id)sendSimpleMessageWithObjectResult:(id)arg1;
-- (bool)sendSimpleMessageWithResult:(id)arg1;
+- (BOOL)sendSimpleMessageWithResult:(id)arg1;
 - (id)server;
 - (id)serverIdentifier;
 - (void)setClient:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setServerIdentifier:(id)arg1;
-- (void)setShouldRegisterClientCallbackSourceOnMainRunloop:(bool)arg1;
-- (bool)shouldRegisterClientCallbackSourceOnMainRunloop;
+- (void)setShouldRegisterClientCallbackSourceOnMainRunloop:(BOOL)arg1;
+- (BOOL)shouldRegisterClientCallbackSourceOnMainRunloop;
 
 @end

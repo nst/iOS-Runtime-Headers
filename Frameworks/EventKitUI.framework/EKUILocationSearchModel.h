@@ -41,7 +41,7 @@
 @property(readonly) NSArray * eventsSearchResults;
 @property(readonly) NSArray * frequentsSearchResults;
 @property(readonly) NSArray * geocodedSearchResults;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSArray * mapCompletionSearchResults;
 @property(readonly) NSArray * recentsSearchResults;
 @property(readonly) Class superclass;
@@ -55,7 +55,7 @@
 - (void)beginSearchForTerm:(id)arg1;
 - (void)cancelSearch;
 - (void)cancelTimer;
-- (void)completerDidUpdateResults:(id)arg1 finished:(bool)arg2;
+- (void)completerDidUpdateResults:(id)arg1 finished:(BOOL)arg2;
 - (id)conferenceRoomSearchResults;
 - (id)contactsSearchResults;
 - (id)currentLocation;
@@ -76,10 +76,10 @@
 - (void)resetConferenceRoomSearchResults;
 - (void)resetContactsSearchResults;
 - (void)resetEventsSearchResults;
-- (void)resetSearchResults:(bool)arg1;
+- (void)resetSearchResults:(BOOL)arg1;
 - (void)searchConferenceRooms:(id)arg1;
 - (void)searchFrequentLocations:(id)arg1;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(bool)arg3;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)selectCurrentLocation;
 - (void)selectLocation:(id)arg1;
 - (void)selectMapSearchCompletion:(id)arg1;

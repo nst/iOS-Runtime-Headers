@@ -24,7 +24,7 @@
 @property(retain) UINavigationController * contentNavigationController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) PUAlbumPickerViewControllerSpec * spec;
 @property(readonly) Class superclass;
 
@@ -42,13 +42,13 @@
 - (void)didReceiveMemoryWarning;
 - (id)initWithSpec:(id)arg1 sessionInfo:(id)arg2;
 - (void)loadView;
-- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(bool)arg3;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)setCollectionList:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (bool)shouldAutorotate;
+- (BOOL)shouldAutorotate;
 - (id)spec;
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

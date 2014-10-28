@@ -6,11 +6,11 @@
 
 @interface YTImageLoader : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
-    struct _opaque_pthread_cond_t { 
-        long long __sig; 
+        long __sig; 
         BOOL __opaque[40]; 
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     NSLock *_cacheLock;
     NSMutableDictionary *_imageCache;
     NSMutableArray *_imageCacheLRU;
@@ -34,7 +34,7 @@
 - (struct CGImage { }*)_largeThumbnailOverlay;
 - (void)_loadImageURL:(id)arg1 videoID:(id)arg2;
 - (void)_loadingStatusChanged;
-- (bool)_locked_URLIsLoading:(id)arg1;
+- (BOOL)_locked_URLIsLoading:(id)arg1;
 - (void)_locked_imageLoadStarted:(id)arg1;
 - (id)_locked_loadImageCache:(id)arg1;
 - (void)_locked_loadImageForURL:(id)arg1 videoID:(id)arg2;
@@ -42,17 +42,17 @@
 - (void)_mainThread_postLoadingStatusChanged;
 - (void)_postImageLoadedNotification:(id)arg1;
 - (void)_postLoadingStatusChanged;
-- (void)_setImageData:(id)arg1 videoID:(id)arg2 forURL:(id)arg3 cacheLocked:(bool)arg4;
+- (void)_setImageData:(id)arg1 videoID:(id)arg2 forURL:(id)arg3 cacheLocked:(BOOL)arg4;
 - (void)_startLoader;
 - (struct CGImage { }*)createRoundedThumbnailWithImage:(struct CGImage { }*)arg1;
 - (struct CGImage { }*)createSheenedThumbnailWithImage:(struct CGImage { }*)arg1 overlay:(struct CGImage { }*)arg2 width:(int)arg3 height:(int)arg4;
-- (struct CGImage { }*)imageForURL:(id)arg1 rounded:(bool)arg2 videoID:(id)arg3 loadIfAbsent:(bool)arg4;
+- (struct CGImage { }*)imageForURL:(id)arg1 rounded:(BOOL)arg2 videoID:(id)arg3 loadIfAbsent:(BOOL)arg4;
 - (id)init;
-- (bool)isLoadingImages;
-- (struct CGImage { }*)largeImageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(bool)arg3;
+- (BOOL)isLoadingImages;
+- (struct CGImage { }*)largeImageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(BOOL)arg3;
 - (void)loadCache:(id)arg1;
 - (id)notificationCenter;
-- (struct CGImage { }*)pluginImageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(bool)arg3;
+- (struct CGImage { }*)pluginImageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(BOOL)arg3;
 - (void)saveCache:(id)arg1;
 
 @end

@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)_urlEncodedString:(id)arg1;
 - (void)dealloc;
-- (bool)establish;
+- (BOOL)establish;
 - (id)initWithCertURL:(id)arg1 sessionURL:(id)arg2;
 - (id)signatureForData:(id)arg1;
 

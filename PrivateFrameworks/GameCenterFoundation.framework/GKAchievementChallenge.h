@@ -10,7 +10,7 @@
 
 @property(retain) GKAchievement * achievement;
 
-+ (bool)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
 - (id)achievement;
 - (id)alertGoalText;
@@ -19,7 +19,7 @@
 - (id)description;
 - (id)detailGoalText;
 - (id)detailGoalTextForPlayer:(id)arg1 withAchievement:(id)arg2;
-- (bool)detailsLoaded;
+- (BOOL)detailsLoaded;
 - (id)iconSource;
 - (id)iconURLString;
 - (id)initWithInternalRepresentation:(id)arg1;

@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSArray, NSDecimalNumber, NSString;
+@class NSArray, NSString;
 
 @interface PKPaymentSummaryItemsDataItem : PKPaymentDataItem {
 }
 
 @property(readonly) NSString * currencyCode;
 @property(readonly) NSArray * paymentSummaryItems;
-@property(readonly) NSDecimalNumber * transactionAmount;
 
-+ (long long)dataType;
++ (int)dataType;
 
 - (id)currencyCode;
-- (bool)isValidWithError:(id*)arg1;
+- (BOOL)isValidWithError:(id*)arg1;
 - (id)paymentSummaryItems;
-- (id)transactionAmount;
 
 @end

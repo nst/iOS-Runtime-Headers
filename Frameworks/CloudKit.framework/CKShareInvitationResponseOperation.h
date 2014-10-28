@@ -25,7 +25,7 @@
 @property(retain) NSMutableDictionary * successfulResponsesByID;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;

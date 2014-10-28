@@ -5,22 +5,22 @@
 @class NSMutableArray, NSObject<OS_dispatch_queue>, VKTimer;
 
 @interface MKThrottledGate : NSObject {
-    double _availableTickets;
+    float _availableTickets;
     int _maxAvailableTickets;
     NSObject<OS_dispatch_queue> *_queue;
-    double _refreshRate;
+    float _refreshRate;
     VKTimer *_timer;
     NSMutableArray *_waitingJobs;
 }
 
 - (void).cxx_destruct;
-- (bool)_dispatchWaitingJobsIfNecessary;
+- (BOOL)_dispatchWaitingJobsIfNecessary;
 - (void)_ensureTimer;
-- (bool)_replenishAvailableJobsIfNecessary;
+- (BOOL)_replenishAvailableJobsIfNecessary;
 - (void)_timerFired:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)dispatch:(id)arg1;
-- (id)initWithMax:(int)arg1 refreshRate:(double)arg2 queue:(id)arg3;
+- (id)initWithMax:(int)arg1 refreshRate:(float)arg2 queue:(id)arg3;
 
 @end

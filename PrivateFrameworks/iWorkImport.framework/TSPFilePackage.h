@@ -10,20 +10,20 @@
     NSMutableDictionary *_dataURLMap;
 }
 
-+ (bool)isFilePackageFormatURL:(id)arg1;
-+ (bool)isFilePackageFormatZipArchive:(id)arg1;
-+ (unsigned long long)zipArchiveOptions;
++ (BOOL)isFilePackageFormatURL:(id)arg1;
++ (BOOL)isFilePackageFormatZipArchive:(id)arg1;
++ (unsigned int)zipArchiveOptions;
 + (id)zipArchiveURLFromPackageURL:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)bookmarkDataForDataStorage:(id)arg1 options:(unsigned long long)arg2;
-- (bool)bookmarkDataNeedsWriteForDataStorage:(id)arg1 options:(unsigned long long)arg2;
-- (bool)hasDataAtRelativePath:(id)arg1;
-- (id)initWithPackageIdentifier:(unsigned char)arg1 documentProperties:(id)arg2 fileFormatVersion:(unsigned long long)arg3 decryptionKey:(id)arg4 fileCoordinatorDelegate:(id)arg5 isLazyLoading:(bool)arg6;
+- (id)bookmarkDataForDataStorage:(id)arg1 options:(unsigned int)arg2;
+- (BOOL)bookmarkDataNeedsWriteForDataStorage:(id)arg1 options:(unsigned int)arg2;
+- (BOOL)hasDataAtRelativePath:(id)arg1;
+- (id)initWithPackageIdentifier:(unsigned char)arg1 documentProperties:(id)arg2 fileFormatVersion:(unsigned long long)arg3 decryptionKey:(id)arg4 fileCoordinatorDelegate:(id)arg5 isLazyLoading:(BOOL)arg6;
 - (id)newDataStorageAtRelativePath:(id)arg1;
 - (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id)arg2 error:(id*)arg3;
 - (id)newRawDataReadChannelAtRelativePath:(id)arg1;
-- (long long)packageType;
-- (void)prepareForDocumentReplacementWithSuccess:(bool)arg1 forSafeSave:(bool)arg2 originalURL:(id)arg3;
+- (int)packageType;
+- (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;
 
 @end

@@ -12,8 +12,8 @@
 @property(copy,readonly) NSString * action;
 @property(copy,readonly) UILocalNotification * notification;
 
-- (long long)UIActionType;
-- (id)_initWithNotification:(id)arg1 action:(id)arg2 type:(long long)arg3 withHandler:(id)arg4;
+- (int)UIActionType;
+- (id)_initWithNotification:(id)arg1 action:(id)arg2 type:(int)arg3 withHandler:(id)arg4;
 - (id)action;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
@@ -21,8 +21,8 @@
 - (id)initWithNotification:(id)arg1 withHandler:(id)arg2;
 - (id)initWithNotification:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)notification;
-- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

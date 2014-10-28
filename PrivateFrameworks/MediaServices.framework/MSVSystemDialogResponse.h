@@ -5,17 +5,17 @@
 @class NSArray;
 
 @interface MSVSystemDialogResponse : NSObject {
-    long long _buttonIdentifier;
+    int _buttonIdentifier;
     NSArray *_textFieldValues;
 }
 
-@property(readonly) long long buttonIdentifier;
+@property(readonly) int buttonIdentifier;
 @property(readonly) NSArray * textFieldValues;
 
 - (void).cxx_destruct;
-- (long long)buttonIdentifier;
+- (int)buttonIdentifier;
 - (id)description;
-- (id)initWithIdentifier:(long long)arg1 textFieldValues:(id)arg2;
+- (id)initWithIdentifier:(int)arg1 textFieldValues:(id)arg2;
 - (id)textFieldValues;
 
 @end

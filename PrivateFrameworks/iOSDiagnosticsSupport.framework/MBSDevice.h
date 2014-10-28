@@ -14,17 +14,17 @@
 @property(retain) NSData * logData;
 @property(retain) NSString * logFileName;
 
-- (bool)archiveLogFile:(id)arg1 toFile:(id)arg2 atDir:(id)arg3;
+- (BOOL)archiveLogFile:(id)arg1 toFile:(id)arg2 atDir:(id)arg3;
 - (id)collectAggdData;
-- (bool)collectAllDeviceInformation;
+- (BOOL)collectAllDeviceInformation;
 - (id)collectBasicDeviceData;
 - (id)collectGasGaugeData;
-- (bool)collectLogs:(unsigned long long)arg1;
-- (bool)copyLogsToTempDirectory:(unsigned long long)arg1;
-- (bool)copyPowerLogsToDir:(id)arg1;
-- (bool)createTempDirectory:(unsigned long long)arg1;
+- (BOOL)collectLogs:(unsigned int)arg1;
+- (BOOL)copyLogsToTempDirectory:(unsigned int)arg1;
+- (BOOL)copyPowerLogsToDir:(id)arg1;
+- (BOOL)createTempDirectory:(unsigned int)arg1;
 - (void)dealloc;
-- (bool)deviceHasStockholmChip;
+- (BOOL)deviceHasStockholmChip;
 - (id)deviceInfoDictionary;
 - (id)getMaxMinAvgCapacityOfPowerLog;
 - (id)logData;

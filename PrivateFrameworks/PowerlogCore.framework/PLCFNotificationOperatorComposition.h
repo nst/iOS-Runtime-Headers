@@ -9,17 +9,17 @@
 @class NSObject<OS_dispatch_queue>, NSString, PLOperator;
 
 @interface PLCFNotificationOperatorComposition : NSObject {
+    BOOL _isStateRequired;
+    BOOL _listeningForNotifications;
     NSString *_notificationName;
     PLOperator *_operator;
     id _operatorBlock;
     int _stateToken;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool_isStateRequired;
-    bool_listeningForNotifications;
 }
 
-@property bool isStateRequired;
-@property bool listeningForNotifications;
+@property BOOL isStateRequired;
+@property BOOL listeningForNotifications;
 @property(retain) NSString * notificationName;
 @property PLOperator * operator;
 @property(copy) id operatorBlock;
@@ -28,16 +28,16 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithOperator:(id)arg1 forNotification:(id)arg2 requireState:(bool)arg3 withBlock:(id)arg4;
-- (id)initWithWorkQueue:(id)arg1 forNotification:(id)arg2 requireState:(bool)arg3 withBlock:(id)arg4;
-- (bool)isStateRequired;
-- (bool)listenForNotifications:(bool)arg1;
-- (bool)listeningForNotifications;
+- (id)initWithOperator:(id)arg1 forNotification:(id)arg2 requireState:(BOOL)arg3 withBlock:(id)arg4;
+- (id)initWithWorkQueue:(id)arg1 forNotification:(id)arg2 requireState:(BOOL)arg3 withBlock:(id)arg4;
+- (BOOL)isStateRequired;
+- (BOOL)listenForNotifications:(BOOL)arg1;
+- (BOOL)listeningForNotifications;
 - (id)notificationName;
 - (id)operator;
 - (id)operatorBlock;
-- (void)setIsStateRequired:(bool)arg1;
-- (void)setListeningForNotifications:(bool)arg1;
+- (void)setIsStateRequired:(BOOL)arg1;
+- (void)setListeningForNotifications:(BOOL)arg1;
 - (void)setNotificationName:(id)arg1;
 - (void)setOperator:(id)arg1;
 - (void)setOperatorBlock:(id)arg1;

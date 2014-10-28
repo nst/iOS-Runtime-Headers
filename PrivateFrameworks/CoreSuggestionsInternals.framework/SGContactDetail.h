@@ -24,10 +24,10 @@
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)duplicateKey;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithValue:(id)arg1 label:(id)arg2 duplicateKey:(id)arg3 sourceKey:(id)arg4 context:(id)arg5;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToContactDetail:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToContactDetail:(id)arg1;
 - (id)label;
 - (id)loadOrigin:(id)arg1;
 - (id)sourceKey;

@@ -2,27 +2,24 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassDeleteHandler>, <PKPaymentVerificationEntryDelegate>, NSMutableArray, NSNumberFormatter, NSString, NSURL, PKPassLibrary, PKPassView, PKPaymentApplication, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentService, PKPaymentWebService, PKVerificationRequestRecord;
+@class <PKPassDeleteHandler>, <PKPaymentVerificationEntryDelegate>, NSMutableArray, NSNumberFormatter, NSObject<OS_dispatch_source>, NSString, NSURL, PKPassLibrary, PKPassView, PKPaymentApplication, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentService, PKPaymentVerificationPresentationController, PKPaymentWebService, PKVerificationRequestRecord;
 
-@interface PKPaymentPassDetailViewController : UITableViewController <PKPaymentServiceDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate> {
+@interface PKPaymentPassDetailViewController : UITableViewController <PKPaymentServiceDelegate, PKPaymentVerificationPresentationDelegate, MFMailComposeViewControllerDelegate> {
     PKPaymentPassDetailActivationFooterView *_activationFooter;
-    unsigned long long _activationSection;
+    unsigned int _activationSection;
     NSString *_appLaunchToken;
-    long long _cardInfoNameIndex;
-    long long _cardInfoNumberIndex;
-    unsigned long long _cardInfoSection;
-    long long _contactEmailIndex;
-    unsigned long long _contactIssuerSection;
-    long long _contactPhoneIndex;
-    long long _contactWebsiteIndex;
-    unsigned long long _deleteCardSection;
+    int _cardInfoNameIndex;
+    int _cardInfoNumberIndex;
+    unsigned int _cardInfoSection;
+    unsigned int _contactIssuerSection;
+    unsigned int _deleteCardSection;
     <PKPassDeleteHandler> *_deleteOverrider;
-    unsigned long long _digitalAccountNumberSection;
-    unsigned long long _issuerAppSection;
-    long long _legalInfoPrivacyPolicy;
-    unsigned long long _legalInfoSection;
-    long long _legalInfoTermsAndConditions;
-    unsigned long long _lostModeSection;
+    unsigned int _digitalAccountNumberSection;
+    unsigned int _issuerAppSection;
+    int _legalInfoPrivacyPolicy;
+    unsigned int _legalInfoSection;
+    int _legalInfoTermsAndConditions;
+    unsigned int _lostModeSection;
     NSURL *_moreTransactionsURL;
     NSNumberFormatter *_numberFormatter;
     PKPaymentPass *_pass;
@@ -30,12 +27,14 @@
     PKPassView *_passView;
     PKPaymentApplication *_paymentApplication;
     PKPaymentService *_paymentService;
-    unsigned long long _sectionCount;
-    long long _style;
-    unsigned long long _transactionNotificationsSection;
+    unsigned int _sectionCount;
+    int _style;
+    unsigned int _transactionNotificationsSection;
+    NSObject<OS_dispatch_source> *_transactionTimer;
     NSMutableArray *_transactions;
-    unsigned long long _transactionsSection;
+    unsigned int _transactionsSection;
     <PKPaymentVerificationEntryDelegate> *_verificationDelegate;
+    PKPaymentVerificationPresentationController *_verificationPresenter;
     PKVerificationRequestRecord *_verificationRecord;
     PKPaymentWebService *_webService;
 }
@@ -43,21 +42,20 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPassDeleteHandler> * deleteOverrider;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property <PKPaymentVerificationEntryDelegate> * verificationDelegate;
 
+- (void)_activationFooterPressed:(id)arg1;
 - (id)_activationFooterView;
 - (void)_callIssuer;
 - (void)_cancel:(id)arg1;
-- (id)_cardInfoCellForIndex:(unsigned long long)arg1;
-- (void)_completeVerificationButtonPressed;
+- (id)_cardInfoCellForIndex:(unsigned int)arg1;
 - (id)_defaultCell;
 - (void)_deleteCard;
 - (id)_deleteCardCell;
 - (id)_digitalAccountNumberCell;
 - (void)_emailIssuer;
-- (void)_enterCodeButtonPressed;
 - (id)_infoCell:(id)arg1;
 - (id)_linkCellWithText:(id)arg1;
 - (id)_linkedAppCell;
@@ -67,36 +65,36 @@
 - (void)_openIssuerWebsite;
 - (void)_reloadTransactionsWithCompletion:(id)arg1;
 - (void)_reloadView;
-- (long long)_rowsInCardInfoTable;
-- (long long)_rowsInLegalInfoSection;
+- (int)_rowsInCardInfoTable;
+- (int)_rowsInLegalInfoSection;
 - (void)_setupSections;
-- (bool)_shouldShowContactCell;
-- (bool)_shouldShowPrivacyPolicyCell;
-- (bool)_shouldShowTermsCell;
+- (BOOL)_shouldShowContactCell;
+- (BOOL)_shouldShowPrivacyPolicyCell;
+- (BOOL)_shouldShowTermsCell;
 - (id)_transactionCellForIndexPath:(id)arg1;
-- (id)_verificationStringForRecord:(id)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)_updateTransactionsArrayWithTransaction:(id)arg1;
 - (void)dealloc;
 - (id)deleteOverrider;
-- (id)initWithPass:(id)arg1 webService:(id)arg2 style:(long long)arg3;
+- (void)didChangeVerificationPresentation;
+- (id)initWithPass:(id)arg1 webService:(id)arg2 style:(int)arg3;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(BOOL)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
+- (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setDeleteOverrider:(id)arg1;
 - (void)setVerificationDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)verificationDelegate;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

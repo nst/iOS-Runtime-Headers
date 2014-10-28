@@ -8,10 +8,13 @@
     GEOActiveTileGroup *_activeTileGroup;
     NSLock *_activeTileGroupLock;
     NSSet *_allResourceNames;
-    long long _closedCount;
+    int _closedCount;
     NSLock *_closedCountLock;
     GEOResourceManifestConfiguration *_configuration;
+    BOOL _isLoadingResources;
+    BOOL _isUpdatingManifest;
     GEOLocalizationRegionsInfo *_localizationRegionsInfo;
+    BOOL _needsToLoadTileGroupFromDisk;
     NSMutableArray *_networkActivityHandlers;
     NSDictionary *_resourceNamesToPaths;
     NSLock *_resourceNamesToPathsLock;
@@ -19,16 +22,13 @@
     NSHashTable *_serverProxyObservers;
     NSMutableArray *_tileGroupObservers;
     NSLock *_tileGroupObserversLock;
-    bool_isLoadingResources;
-    bool_isUpdatingManifest;
-    bool_needsToLoadTileGroupFromDisk;
 }
 
 @property(readonly) GEOActiveTileGroup * activeTileGroup;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool hasActiveTileGroup;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL hasActiveTileGroup;
+@property(readonly) unsigned int hash;
 @property(readonly) <GEOResourceManifestServerProxy> * serverProxy;
 @property(readonly) Class superclass;
 
@@ -36,7 +36,7 @@
 + (id)modernManager;
 + (id)modernManagerForConfiguration:(id)arg1;
 + (id)modernManagerForTileGroupIdentifier:(unsigned int)arg1;
-+ (void)setHiDPI:(bool)arg1;
++ (void)setHiDPI:(BOOL)arg1;
 + (void)setServerProxyClass:(Class)arg1;
 + (id)sharedManager;
 + (void)useLocalProxy;
@@ -60,17 +60,17 @@
 - (void)devResourcesFolderDidChange;
 - (void)forceUpdate;
 - (void)getResourceManifestWithHandler:(id)arg1;
-- (bool)hasActiveTileGroup;
-- (bool)hasResourceManifest;
+- (BOOL)hasActiveTileGroup;
+- (BOOL)hasResourceManifest;
 - (id)init;
 - (id)initWithConfiguration:(id)arg1;
-- (bool)isAvailableForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
+- (BOOL)isAvailableForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)languageForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 overrideLocale:(id)arg2;
 - (id)languageForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)localizationURLStringIfNecessaryForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 overrideLocale:(id)arg2;
 - (int)mapMatchingTileSetStyle;
 - (unsigned int)mapMatchingZoomLevel;
-- (id)multiTileURLStringForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 useStatusCodes:(bool*)arg2;
+- (id)multiTileURLStringForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 useStatusCodes:(BOOL*)arg2;
 - (void)openServerConnection;
 - (id)pathForResourceWithName:(id)arg1;
 - (void)removeServerProxyObserver:(id)arg1;
@@ -86,7 +86,7 @@
 - (void)setManifestToken:(id)arg1 completionHandler:(id)arg2;
 - (void)startObservingDevResources;
 - (void)stopObservingDevResources;
-- (bool)supportsTileStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;
+- (BOOL)supportsTileStyle:(int)arg1 size:(int)arg2 scale:(int)arg3;
 - (double)timeToLiveForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)updateManifest:(id)arg1;
 - (void)updateManifestIfNecessary:(id)arg1;

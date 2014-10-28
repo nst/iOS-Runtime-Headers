@@ -14,8 +14,8 @@
 - (void)_setupNavItem;
 - (void)loadView;
 - (void)setTrustProperties:(id)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)trustProperties;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

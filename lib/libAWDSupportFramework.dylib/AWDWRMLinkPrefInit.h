@@ -15,9 +15,9 @@
 
 @property unsigned int countCellular;
 @property unsigned int countWifi;
-@property bool hasCountCellular;
-@property bool hasCountWifi;
-@property bool hasTimestamp;
+@property BOOL hasCountCellular;
+@property BOOL hasCountWifi;
+@property BOOL hasTimestamp;
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -26,18 +26,18 @@
 - (unsigned int)countWifi;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCountCellular;
-- (bool)hasCountWifi;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCountCellular;
+- (BOOL)hasCountWifi;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCountCellular:(unsigned int)arg1;
 - (void)setCountWifi:(unsigned int)arg1;
-- (void)setHasCountCellular:(bool)arg1;
-- (void)setHasCountWifi:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasCountCellular:(BOOL)arg1;
+- (void)setHasCountWifi:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

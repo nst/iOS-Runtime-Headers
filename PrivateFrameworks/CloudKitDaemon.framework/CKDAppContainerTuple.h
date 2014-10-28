@@ -18,9 +18,9 @@
 - (id)containerID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithApplicationBundleID:(id)arg1 containerID:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setContainerID:(id)arg1;
 

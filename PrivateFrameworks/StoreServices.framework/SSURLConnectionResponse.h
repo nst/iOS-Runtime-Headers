@@ -10,7 +10,7 @@
     long long _expectedContentLength;
     SSMetricsPageEvent *_metricsPageEvent;
     NSString *_mimeType;
-    long long _statusCode;
+    int _statusCode;
     NSString *_suggestedFilename;
     NSString *_textEncodingName;
     NSURL *_url;
@@ -23,7 +23,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) long long expectedContentLength;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SSMetricsPageEvent * metricsPageEvent;
 @property(readonly) NSData * radio_decompressedBodyData;
 @property(readonly) NSString * suggestedFilename;
@@ -45,7 +45,7 @@
 - (id)radio_decompressedBodyData;
 - (void)radio_mescalVerifyDataWithCompletionHandler:(id)arg1;
 - (void)setMetricsPageEvent:(id)arg1;
-- (long long)statusCode;
+- (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;
 

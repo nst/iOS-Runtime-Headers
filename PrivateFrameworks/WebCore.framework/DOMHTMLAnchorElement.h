@@ -30,7 +30,7 @@
 
 - (id)absoluteLinkURL;
 - (id)accessKey;
-- (bool)alwaysAttemptToShowTapHighlight;
+- (BOOL)alwaysAttemptToShowTapHighlight;
 - (id)charset;
 - (id)coords;
 - (id)hashName;

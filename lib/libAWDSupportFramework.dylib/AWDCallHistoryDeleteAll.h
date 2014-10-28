@@ -11,8 +11,8 @@
     unsigned long long _timestamp;
 }
 
-@property bool hasRecordCount;
-@property bool hasTimestamp;
+@property BOOL hasRecordCount;
+@property BOOL hasTimestamp;
 @property unsigned int recordCount;
 @property unsigned long long timestamp;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasRecordCount;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasRecordCount;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)recordCount;
-- (void)setHasRecordCount:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasRecordCount:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setRecordCount:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

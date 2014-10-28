@@ -10,7 +10,7 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    boolalwaysDiscardsLateVideoFrames;
+    BOOL alwaysDiscardsLateVideoFrames;
     NSObject<OS_dispatch_queue> *bufferQueue;
     AVWeakReferencingDelegateStorage *delegateStorage;
     } deprecatedMinFrameDuration;

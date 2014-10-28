@@ -12,11 +12,11 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithRadioStation:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isRadioProspectivePlaybackInformation;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isRadioProspectivePlaybackInformation;
 - (id)radioStation;
 
 @end

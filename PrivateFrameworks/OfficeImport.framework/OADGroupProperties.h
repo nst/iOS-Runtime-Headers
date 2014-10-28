@@ -13,7 +13,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)defaultProperties;
@@ -21,10 +21,10 @@
 - (void)dealloc;
 - (id)effects;
 - (id)fill;
-- (bool)hasEffects;
-- (bool)hasFill;
-- (bool)hasScene3D;
-- (bool)hasShape3D;
+- (BOOL)hasEffects;
+- (BOOL)hasFill;
+- (BOOL)hasScene3D;
+- (BOOL)hasShape3D;
 - (id)initWithDefaults;
 - (id)scene3D;
 - (void)setEffects:(id)arg1;

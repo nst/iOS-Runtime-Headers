@@ -8,37 +8,37 @@
     unsigned int _reversesLabels : 1;
     unsigned int _forceLayout : 1;
     unsigned int _verticalArrangement : 1;
-    double _labelSpacing;
+    float _labelSpacing;
     UILabel *_leftLabel;
     UILabel *_rightLabel;
-    long long _textAlignment;
+    int _textAlignment;
 }
 
-@property double labelSpacing;
+@property float labelSpacing;
 @property(readonly) UILabel * leftLabel;
-@property bool reversesLabels;
+@property BOOL reversesLabels;
 @property(readonly) UILabel * rightLabel;
-@property long long textAlignment;
-@property bool verticalArrangement;
+@property int textAlignment;
+@property BOOL verticalArrangement;
 
-- (bool)_labelsNeedSizing;
+- (BOOL)_labelsNeedSizing;
 - (void)_sizeLabelsToFit;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (double)labelSpacing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)labelSpacing;
 - (void)layoutSubviews;
 - (id)leftLabel;
-- (bool)reversesLabels;
+- (BOOL)reversesLabels;
 - (id)rightLabel;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setLabelSpacing:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLabelSpacing:(float)arg1;
 - (void)setNeedsDisplay;
-- (void)setReversesLabels:(bool)arg1;
-- (void)setTextAlignment:(long long)arg1;
-- (void)setVerticalArrangement:(bool)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setReversesLabels:(BOOL)arg1;
+- (void)setTextAlignment:(int)arg1;
+- (void)setVerticalArrangement:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
-- (long long)textAlignment;
-- (bool)verticalArrangement;
+- (int)textAlignment;
+- (BOOL)verticalArrangement;
 
 @end

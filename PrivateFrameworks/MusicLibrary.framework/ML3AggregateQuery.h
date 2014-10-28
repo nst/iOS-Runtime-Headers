@@ -14,16 +14,16 @@
 
 - (void).cxx_destruct;
 - (Class)aggregateEntityClass;
-- (unsigned long long)countOfEntities;
+- (unsigned int)countOfEntities;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)entityClass;
 - (id)foreignPersistentIDProperty;
-- (bool)hasEntities;
+- (BOOL)hasEntities;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUnitQuery:(id)arg1 aggregateEntityClass:(Class)arg2 foreignPersistentIDProperty:(id)arg3;
 - (id)persistentIDProperty;
-- (bool)sectionsPersistentIDColumnIsDistinct;
-- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(bool)arg2;
+- (BOOL)sectionsPersistentIDColumnIsDistinct;
+- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
 
 @end

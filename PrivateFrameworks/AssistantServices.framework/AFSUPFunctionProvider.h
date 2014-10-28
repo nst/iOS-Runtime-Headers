@@ -7,15 +7,15 @@
 @interface AFSUPFunctionProvider : AFSpeakableUtteranceParser <AFSpeakableNamespaceProvider> {
     NSDateFormatter *_dateFormatter;
     NSDateFormatter *_timeFormatter;
-    bool_useSpeechMode;
+    BOOL _useSpeechMode;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (bool)_shouldAutomaticallyProvideFunctions;
++ (BOOL)_shouldAutomaticallyProvideFunctions;
 
 - (void).cxx_destruct;
 - (id)_callFunction:(id)arg1 withArguments:(id)arg2;
@@ -30,6 +30,6 @@
 - (id)init;
 - (id)initWithLocale:(id)arg1;
 - (id)stringForExpression:(id)arg1;
-- (void)useSpeechMode:(bool)arg1;
+- (void)useSpeechMode:(BOOL)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface OADAudioFile : OADLinkedMediaFile {
 }
 
-- (bool)isAudioOnly;
+- (BOOL)isAudioOnly;
 
 @end

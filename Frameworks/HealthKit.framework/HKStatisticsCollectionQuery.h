@@ -13,7 +13,7 @@
     id _initialResultsHandler;
     NSDateComponents *_intervalComponents;
     NSNumber *_lastAnchor;
-    unsigned long long _options;
+    unsigned int _options;
     HKStatisticsCollection *_statisticsCollection;
     id _statisticsUpdateHandler;
 }
@@ -21,11 +21,11 @@
 @property(readonly) NSDate * anchorDate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id initialResultsHandler;
 @property(copy,readonly) NSDateComponents * intervalComponents;
 @property(retain) NSNumber * lastAnchor;
-@property(readonly) unsigned long long options;
+@property(readonly) unsigned int options;
 @property(retain) HKStatisticsCollection * statisticsCollection;
 @property(copy) id statisticsUpdateHandler;
 @property(readonly) Class superclass;
@@ -40,17 +40,17 @@
 - (void)_queue_deliverStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (id)_queue_errorHandler;
 - (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
-- (bool)_queue_shouldStayAliveAfterInitialResults;
+- (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (id)anchorDate;
 - (void)deliverInitialStatisticsObjects:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
 - (void)deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)deliverUpdatedStatistics:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
-- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 anchorDate:(id)arg4 intervalComponents:(id)arg5;
+- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned int)arg3 anchorDate:(id)arg4 intervalComponents:(id)arg5;
 - (id)initialResultsHandler;
 - (id)intervalComponents;
 - (id)lastAnchor;
-- (unsigned long long)options;
+- (unsigned int)options;
 - (void)setInitialResultsHandler:(id)arg1;
 - (void)setLastAnchor:(id)arg1;
 - (void)setStatisticsCollection:(id)arg1;

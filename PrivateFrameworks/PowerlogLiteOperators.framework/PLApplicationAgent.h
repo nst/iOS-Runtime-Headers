@@ -24,15 +24,14 @@
 + (id)entryEventForwardDefinitions;
 + (id)entryEventNoneAllApps;
 + (id)entryEventNoneAllPlugins;
-+ (id)entryEventNoneAppDeleted;
 + (id)entryEventNoneDefinitionApplicationMetadata;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitionApplication;
 + (id)entryEventPointDefinitions;
-+ (id)getAllPlugins;
++ (id)installedBundleIDs;
++ (id)installedPlugins;
 + (void)load;
 + (id)pluginEntryFromProxy:(id)arg1;
-+ (id)thridPartyInstalledBundles;
 
 - (void).cxx_destruct;
 - (id)accountingGroupApplication;
@@ -42,17 +41,19 @@
 - (void)initOperatorDependancies;
 - (id)keyboardPlugins;
 - (void)log;
+- (void)logAllApps;
+- (void)logAllPlugins;
 - (void)logEventPointApplication;
 - (void)logEventPointApplicationForDisplayID:(id)arg1 withPid:(int)arg2 withState:(id)arg3 withReasons:(id)arg4;
 - (void)logEventPointApplicationForDisplayID:(id)arg1;
-- (void)logInstalledAppIfNew:(id)arg1;
-- (void)logInstalledPluginIfNew:(id)arg1;
+- (void)logInstalledApp:(id)arg1;
+- (void)logInstalledPlugin:(id)arg1;
+- (void)logUninstalledApp:(id)arg1;
 - (id)notificationSBApplicationStateChanged;
 - (void)setAppAccountingGroup:(id)arg1;
 - (void)setKeyboardPlugins:(id)arg1;
 - (void)storeInstalledAppsInfo:(id)arg1;
 - (void)storeUninstalledAppsInfo:(id)arg1;
-- (void)updateAllAppBundleIDs;
-- (void)updateAllPlugins;
+- (id)trimmingConditionsForRolloverAtDate:(id)arg1;
 
 @end

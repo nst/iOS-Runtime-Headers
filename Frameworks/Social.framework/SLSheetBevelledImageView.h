@@ -5,21 +5,21 @@
 @class UIImageView, UIView;
 
 @interface SLSheetBevelledImageView : SLSheetImagePreviewView {
+    BOOL _needsURLPlaceholderImage;
     UIImageView *_placeholderGlyphView;
     UIView *_placeholderPreviewView;
-    bool_needsURLPlaceholderImage;
 }
 
-@property bool needsURLPlaceholderImage;
+@property BOOL needsURLPlaceholderImage;
 
 - (void).cxx_destruct;
 - (void)ensurePlaceholderPreviewImage;
-- (bool)generatePreviewImageFromAttachments;
+- (BOOL)generatePreviewImageFromAttachments;
 - (id)init;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (bool)needsURLPlaceholderImage;
+- (BOOL)needsURLPlaceholderImage;
 - (void)setImage:(id)arg1;
-- (void)setNeedsURLPlaceholderImage:(bool)arg1;
+- (void)setNeedsURLPlaceholderImage:(BOOL)arg1;
 
 @end

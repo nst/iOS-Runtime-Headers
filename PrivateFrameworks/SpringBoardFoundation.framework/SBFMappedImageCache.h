@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
+@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface SBFMappedImageCache : NSObject {
+    NSMutableSet *_allKeys;
     NSMutableDictionary *_images;
     NSString *_path;
     NSObject<OS_dispatch_queue> *_queue;
@@ -12,6 +13,7 @@
 
 + (id)wallpaperCache;
 
+- (id)allKeys;
 - (void)dealloc;
 - (id)imageForKey:(id)arg1 generateImageWithBlockIfNecessary:(id)arg2;
 - (id)imageForKey:(id)arg1 options:(int)arg2 generateImageWithBlockIfNecessary:(id)arg3;

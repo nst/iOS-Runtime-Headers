@@ -17,22 +17,22 @@
 @property(readonly) int state;
 
 + (id)copyFetchScheduledNotification;
-+ (bool)discardOldVersion;
-+ (bool)isTimerNotification:(id)arg1;
++ (BOOL)discardOldVersion;
++ (BOOL)isTimerNotification:(id)arg1;
 + (id)newNotificationAt:(double)arg1 withSound:(id)arg2;
 + (void)setSoundID:(id)arg1 forNotification:(id)arg2;
 + (id)sharedManager;
-+ (bool)upgrade;
++ (BOOL)upgrade;
 
-- (bool)cancel;
+- (BOOL)cancel;
 - (void)changeSound:(id)arg1;
 - (double)defaultDuration;
 - (id)defaultSound;
 - (double)fireTime;
-- (bool)pause;
+- (BOOL)pause;
 - (void)reloadState;
 - (double)remainingTime;
-- (bool)resume;
+- (BOOL)resume;
 - (void)scheduleAt:(double)arg1 withSound:(id)arg2;
 - (void)setDefaultDuration:(double)arg1;
 - (void)setDefaultSound:(id)arg1;

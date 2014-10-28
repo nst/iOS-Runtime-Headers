@@ -7,17 +7,17 @@
 @interface CKJoystickButtonItem : NSObject {
     SEL _action;
     UIView<CKJoystickButton> *_button;
+    BOOL _highlighted;
     UIImage *_image;
     SEL _tapAction;
     id _target;
     NSString *_title;
     UIView *_view;
-    bool_highlighted;
 }
 
 @property SEL action;
 @property(retain) UIView<CKJoystickButton> * button;
-@property(getter=isHighlighted) bool highlighted;
+@property(getter=isHighlighted) BOOL highlighted;
 @property(retain) UIImage * image;
 @property SEL tapAction;
 @property id target;
@@ -29,13 +29,13 @@
 - (void)dealloc;
 - (id)image;
 - (id)initWithImage:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4 tapAction:(SEL)arg5;
-- (bool)isHighlighted;
+- (BOOL)isHighlighted;
 - (id)loadButton;
 - (void)sendActionFrom:(id)arg1 forEvent:(id)arg2;
 - (void)sendTapActionFrom:(id)arg1 forEvent:(id)arg2;
 - (void)setAction:(SEL)arg1;
 - (void)setButton:(id)arg1;
-- (void)setHighlighted:(bool)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setTapAction:(SEL)arg1;
 - (void)setTarget:(id)arg1;

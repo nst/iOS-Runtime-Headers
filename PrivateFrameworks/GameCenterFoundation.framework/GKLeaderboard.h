@@ -6,51 +6,51 @@
 
 @interface GKLeaderboard : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     GKLeaderboardInternal *_internal;
     int _loadingCount;
     GKScore *_localPlayerScore;
     int _lock;
-    long long _playerScope;
+    int _playerScope;
     NSArray *_players;
     } _range;
     NSArray *_scores;
-    long long _timeScope;
+    int _timeScope;
     <GKLeaderboardDelegate> *_weakDelegate;
 }
 
 @property(copy) NSString * category;
 @property <GKLeaderboardDelegate> * delegate;
-@property(readonly) long long friendRank;
-@property(readonly) long long friendRankCount;
+@property(readonly) int friendRank;
+@property(readonly) int friendRankCount;
 @property(retain,readonly) NSString * groupIdentifier;
 @property(copy) NSString * identifier;
 @property(retain) GKLeaderboardInternal * internal;
-@property(getter=isLoading,readonly) bool loading;
+@property(getter=isLoading,readonly) BOOL loading;
 @property int loadingCount;
 @property(retain) GKScore * localPlayerScore;
 @property(retain,readonly) NSString * localizedTitle;
 @property int lock;
-@property(readonly) unsigned long long maxRange;
-@property(readonly) long long overallRank;
-@property(readonly) long long overallRankCount;
-@property long long playerScope;
+@property(readonly) unsigned int maxRange;
+@property(readonly) int overallRank;
+@property(readonly) int overallRankCount;
+@property int playerScope;
 @property(retain) NSArray * players;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property(retain) NSArray * scores;
-@property long long timeScope;
+@property int timeScope;
 @property(copy,readonly) NSString * title;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (bool)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (void)loadCategoriesWithCompletionHandler:(id)arg1;
 + (void)loadLeaderboardWithIdentifier:(id)arg1 forGame:(id)arg2 withPlayer:(id)arg3 withCompletionHandler:(id)arg4;
 + (void)loadLeaderboardsForGame:(id)arg1 forSet:(id)arg2 withPlayer:(id)arg3 withCompletionHandler:(id)arg4;
 + (void)loadLeaderboardsForGame:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadLeaderboardsForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadLeaderboardsWithCompletionHandler:(id)arg1;
-+ (id)localizedStringForTimeScope:(long long)arg1;
++ (id)localizedStringForTimeScope:(int)arg1;
 + (void)setDefaultLeaderboard:(id)arg1 withCompletionHandler:(id)arg2;
 
 - (void)dealloc;
@@ -58,7 +58,7 @@
 - (id)delegate;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)imageURL;
 - (void)incrementLoadingCountAtomically;
 - (id)init;
@@ -66,8 +66,8 @@
 - (id)initWithPlayerIDs:(id)arg1;
 - (id)initWithPlayers:(id)arg1;
 - (id)internal;
-- (bool)isEqual:(id)arg1;
-- (bool)isLoading;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isLoading;
 - (void)loadImageWithCompletionHandler:(id)arg1;
 - (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadScoresForRequest:(id)arg1 handler:(id)arg2;
@@ -77,10 +77,10 @@
 - (int)lock;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)miniImageURL;
-- (long long)playerScope;
+- (int)playerScope;
 - (id)players;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
-- (bool)respondsToSelector:(SEL)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (id)scoreRequestForGame:(id)arg1;
 - (id)scores;
 - (void)setDelegate:(id)arg1;
@@ -88,13 +88,13 @@
 - (void)setLoadingCount:(int)arg1;
 - (void)setLocalPlayerScore:(id)arg1;
 - (void)setLock:(int)arg1;
-- (void)setPlayerScope:(long long)arg1;
+- (void)setPlayerScope:(int)arg1;
 - (void)setPlayers:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setScores:(id)arg1;
-- (void)setTimeScope:(long long)arg1;
+- (void)setTimeScope:(int)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (long long)timeScope;
+- (int)timeScope;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)bindInSession:(id)arg1;
@@ -19,6 +19,6 @@
 - (id)description;
 - (void)destroyResourcesInContext:(id)arg1;
 - (id)initWithGLBuffer:(unsigned int)arg1;
-- (bool)valid;
+- (BOOL)valid;
 
 @end

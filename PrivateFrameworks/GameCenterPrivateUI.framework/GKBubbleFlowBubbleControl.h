@@ -5,12 +5,12 @@
 @interface GKBubbleFlowBubbleControl : GKValueWithCaptionBubbleControl {
 }
 
-@property(readonly) bool hasAnyContent;
+@property(readonly) BOOL hasAnyContent;
 
-- (bool)hasAnyContent;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (BOOL)hasAnyContent;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)prepareForReuse;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)syncContentFromBubble:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
     CALayer *animationLayer;
     int auxiliaryTrackID;
     NSArray *postProcessingVideoLayers;
-    long long way;
+    int way;
 }
 
 @end

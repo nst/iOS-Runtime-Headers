@@ -6,44 +6,44 @@
 
 @interface PKPhysicsContact : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     PKPhysicsBody *_bodyA;
     PKPhysicsBody *_bodyB;
     } _contactNormal;
     } _contactPoint;
-    double _impulse;
-    bool_didBegin;
-    bool_didEnd;
+    BOOL _didBegin;
+    BOOL _didEnd;
+    float _impulse;
 }
 
 @property(readonly) PKPhysicsBody * bodyA;
 @property(readonly) PKPhysicsBody * bodyB;
-@property(readonly) double collisionImpulse;
-@property(readonly) struct CGVector { double x1; double x2; } contactNormal;
-@property(readonly) struct CGPoint { double x1; double x2; } contactPoint;
-@property bool didBegin;
-@property bool didEnd;
+@property(readonly) float collisionImpulse;
+@property(readonly) struct CGVector { float x1; float x2; } contactNormal;
+@property(readonly) struct CGPoint { float x1; float x2; } contactPoint;
+@property BOOL didBegin;
+@property BOOL didEnd;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)bodyA;
 - (id)bodyB;
-- (double)collisionImpulse;
-- (struct CGVector { double x1; double x2; })contactNormal;
-- (struct CGPoint { double x1; double x2; })contactPoint;
-- (bool)didBegin;
-- (bool)didEnd;
+- (float)collisionImpulse;
+- (struct CGVector { float x1; float x2; })contactNormal;
+- (struct CGPoint { float x1; float x2; })contactPoint;
+- (BOOL)didBegin;
+- (BOOL)didEnd;
 - (id)init;
 - (void)setBodyA:(id)arg1;
 - (void)setBodyB:(id)arg1;
-- (void)setCollisionImpulse:(double)arg1;
-- (void)setContactNormal:(struct CGVector { double x1; double x2; })arg1;
-- (void)setContactPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setDidBegin:(bool)arg1;
-- (void)setDidEnd:(bool)arg1;
+- (void)setCollisionImpulse:(float)arg1;
+- (void)setContactNormal:(struct CGVector { float x1; float x2; })arg1;
+- (void)setContactPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setDidBegin:(BOOL)arg1;
+- (void)setDidEnd:(BOOL)arg1;
 
 @end

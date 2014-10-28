@@ -5,25 +5,25 @@
 @class MPUExtrasBorderedImageView;
 
 @interface MPUExtrasZoomingImageTransitionContext : NSObject {
-    unsigned long long _appearState;
-    unsigned long long _itemIndex;
+    unsigned int _appearState;
+    BOOL _interactive;
+    unsigned int _itemIndex;
     MPUExtrasBorderedImageView *_zoomingImageView;
-    bool_interactive;
 }
 
-@property unsigned long long appearState;
-@property(getter=isInteractive) bool interactive;
-@property unsigned long long itemIndex;
+@property unsigned int appearState;
+@property(getter=isInteractive) BOOL interactive;
+@property unsigned int itemIndex;
 @property(retain) MPUExtrasBorderedImageView * zoomingImageView;
 
 - (void).cxx_destruct;
-- (unsigned long long)appearState;
-- (id)initWithZoomingImageView:(id)arg1 itemIndex:(unsigned long long)arg2 appearState:(unsigned long long)arg3 isInteractive:(bool)arg4;
-- (bool)isInteractive;
-- (unsigned long long)itemIndex;
-- (void)setAppearState:(unsigned long long)arg1;
-- (void)setInteractive:(bool)arg1;
-- (void)setItemIndex:(unsigned long long)arg1;
+- (unsigned int)appearState;
+- (id)initWithZoomingImageView:(id)arg1 itemIndex:(unsigned int)arg2 appearState:(unsigned int)arg3 isInteractive:(BOOL)arg4;
+- (BOOL)isInteractive;
+- (unsigned int)itemIndex;
+- (void)setAppearState:(unsigned int)arg1;
+- (void)setInteractive:(BOOL)arg1;
+- (void)setItemIndex:(unsigned int)arg1;
 - (void)setZoomingImageView:(id)arg1;
 - (id)zoomingImageView;
 

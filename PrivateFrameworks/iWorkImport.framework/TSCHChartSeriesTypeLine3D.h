@@ -11,8 +11,8 @@
 - (id)genericToSpecificPropertyMap;
 - (int)legendBadgeType;
 - (id)propertiesForReferenceColors;
-- (bool)supportsLineConnectionStyle;
-- (bool)supportsLineTypeNone;
-- (bool)supportsSymbolDrawing;
+- (BOOL)supportsLineConnectionStyle;
+- (BOOL)supportsLineTypeNone;
+- (BOOL)supportsSymbolDrawing;
 
 @end

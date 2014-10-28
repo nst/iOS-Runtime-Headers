@@ -19,7 +19,7 @@
 @property(copy) id currentLocationCompletion;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) CLLocationManager * locationManager;
 @property(copy) id searchCompletion;
 @property(readonly) Class superclass;
@@ -48,6 +48,6 @@
 - (void)weatherInformationForCities:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)weatherInformationForIDs:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)weatherInformationForLocation:(id)arg1 withCompletionHandler:(id)arg2;
-- (bool)weatherListContainsCity:(id)arg1;
+- (BOOL)weatherListContainsCity:(id)arg1;
 
 @end

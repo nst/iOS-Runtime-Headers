@@ -6,26 +6,26 @@
 
 @interface SiriUIDisambiguationItem : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     NSString *_extraDisambiguationSubText;
     NSString *_extraDisambiguationText;
     NSString *_headingText;
     UIImageView *_imageView;
+    BOOL _showsFavoriteStar;
     NSString *_subtitle;
     NSString *_title;
     } _titleBoldedRange;
-    bool_showsFavoriteStar;
 }
 
 @property(copy) NSString * extraDisambiguationSubText;
 @property(copy) NSString * extraDisambiguationText;
 @property(copy) NSString * headingText;
 @property(retain) UIImageView * imageView;
-@property bool showsFavoriteStar;
+@property BOOL showsFavoriteStar;
 @property(copy) NSString * subtitle;
 @property(copy) NSString * title;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } titleBoldedRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } titleBoldedRange;
 
 + (id)disambiguationItem;
 
@@ -38,13 +38,13 @@
 - (void)setExtraDisambiguationText:(id)arg1;
 - (void)setHeadingText:(id)arg1;
 - (void)setImageView:(id)arg1;
-- (void)setShowsFavoriteStar:(bool)arg1;
+- (void)setShowsFavoriteStar:(BOOL)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleBoldedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (bool)showsFavoriteStar;
+- (void)setTitleBoldedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)showsFavoriteStar;
 - (id)subtitle;
 - (id)title;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })titleBoldedRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })titleBoldedRange;
 
 @end

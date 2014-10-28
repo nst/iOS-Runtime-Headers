@@ -16,7 +16,7 @@
 @property(retain) NSString * profile_image_url;
 @property(retain) NSString * screen_name;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 
 - (void).cxx_destruct;

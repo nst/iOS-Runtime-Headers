@@ -10,16 +10,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_handleKeyboardShowOrHide:(id)arg1;
 - (void)_setupKeyboardInteraction;
-- (bool)_shouldShowHideKeyboard;
-- (bool)_shouldUseFullMetrics;
-- (double)barHeight;
+- (BOOL)_shouldShowHideKeyboard;
+- (BOOL)_shouldUseFullMetrics;
+- (float)barHeight;
 - (void)dealloc;
-- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleTap;
 - (void)layoutSubviews;
 - (void)scrollViewWillBeginDragging:(id)arg1;

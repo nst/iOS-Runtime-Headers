@@ -6,6 +6,6 @@
 }
 
 - (void)accept:(id)arg1;
-- (bool)isImageRegion;
+- (BOOL)isImageRegion;
 
 @end

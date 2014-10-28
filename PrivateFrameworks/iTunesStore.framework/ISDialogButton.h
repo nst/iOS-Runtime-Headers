@@ -10,31 +10,31 @@
     id _parameter;
     NSString *_subtarget;
     NSString *_title;
-    long long _urlType;
+    int _urlType;
 }
 
 @property int actionType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSDictionary * dictionary;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) id parameter;
 @property(copy) NSString * subtarget;
 @property(readonly) Class superclass;
 @property(retain) NSString * title;
-@property long long urlType;
+@property int urlType;
 
 + (id)buttonWithTitle:(id)arg1;
 
 - (int)_actionTypeForString:(id)arg1;
 - (void)_openURLWithRequest:(id)arg1;
-- (long long)_urlTypeForString:(id)arg1;
+- (int)_urlTypeForString:(id)arg1;
 - (int)actionType;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)dictionary;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isEqual:(id)arg1 superficial:(bool)arg2;
+- (BOOL)isEqual:(id)arg1 superficial:(BOOL)arg2;
 - (void)loadFromDictionary:(id)arg1;
 - (id)parameter;
 - (void)performDefaultActionForDialog:(id)arg1;
@@ -44,9 +44,9 @@
 - (void)setParameter:(id)arg1;
 - (void)setSubtarget:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUrlType:(long long)arg1;
+- (void)setUrlType:(int)arg1;
 - (id)subtarget;
 - (id)title;
-- (long long)urlType;
+- (int)urlType;
 
 @end

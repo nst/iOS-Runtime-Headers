@@ -14,10 +14,10 @@
 @property(copy) UIColor * backgroundColor;
 @property(copy) UIColor * highlightedTextColor;
 @property(copy) UIColor * primaryTextColor;
-@property(readonly) long long schemeStyle;
+@property(readonly) int schemeStyle;
 @property(copy) UIColor * secondaryTextColor;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
@@ -27,7 +27,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithColorSchemeDictionary:(id)arg1;
 - (id)primaryTextColor;
-- (long long)schemeStyle;
+- (int)schemeStyle;
 - (id)secondaryTextColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setHighlightedTextColor:(id)arg1;

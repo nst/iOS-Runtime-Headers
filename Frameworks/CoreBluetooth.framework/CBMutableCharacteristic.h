@@ -6,31 +6,31 @@
 
 @interface CBMutableCharacteristic : CBCharacteristic {
     NSNumber *_ID;
-    unsigned long long _permissions;
+    unsigned int _permissions;
     NSMutableArray *_subscribedCentrals;
 }
 
 @property(retain) NSNumber * ID;
 @property(retain) CBUUID * UUID;
 @property(retain) NSArray * descriptors;
-@property unsigned long long permissions;
-@property unsigned long long properties;
+@property unsigned int permissions;
+@property unsigned int properties;
 @property(retain,readonly) NSArray * subscribedCentrals;
 @property(retain) NSData * value;
 
 - (id)ID;
 - (void)dealloc;
 - (id)description;
-- (bool)handleCentralSubscribed:(id)arg1;
-- (bool)handleCentralUnsubscribed:(id)arg1;
+- (BOOL)handleCentralSubscribed:(id)arg1;
+- (BOOL)handleCentralUnsubscribed:(id)arg1;
 - (void)handlePowerNotOn;
 - (id)initWithService:(id)arg1 dictionary:(id)arg2;
-- (id)initWithType:(id)arg1 properties:(unsigned long long)arg2 value:(id)arg3 permissions:(unsigned long long)arg4;
-- (unsigned long long)permissions;
+- (id)initWithType:(id)arg1 properties:(unsigned int)arg2 value:(id)arg3 permissions:(unsigned int)arg4;
+- (unsigned int)permissions;
 - (void)setDescriptors:(id)arg1;
 - (void)setID:(id)arg1;
-- (void)setPermissions:(unsigned long long)arg1;
-- (void)setProperties:(unsigned long long)arg1;
+- (void)setPermissions:(unsigned int)arg1;
+- (void)setProperties:(unsigned int)arg1;
 - (id)subscribedCentrals;
 
 @end

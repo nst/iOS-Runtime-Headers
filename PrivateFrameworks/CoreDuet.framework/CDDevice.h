@@ -18,18 +18,18 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (unsigned int)identifier;
 - (id)initWithSession:(id)arg1 identifier:(unsigned int)arg2 modelIdentifier:(id)arg3 error:(id*)arg4;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToDevice:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToDevice:(id)arg1;
 - (id)modelIdentifier;
 - (id)readLogDataWithError:(id*)arg1;
 - (id)readSystemDataWithError:(id*)arg1;
-- (bool)requestLogDataWithError:(id*)arg1;
-- (bool)requestSystemDataWithError:(id*)arg1;
+- (BOOL)requestLogDataWithError:(id*)arg1;
+- (BOOL)requestSystemDataWithError:(id*)arg1;
 - (id)session;
-- (bool)setLogDataHandlerWithError:(id*)arg1 handler:(id)arg2;
-- (bool)setSystemDataHandlerWithError:(id*)arg1 handler:(id)arg2;
+- (BOOL)setLogDataHandlerWithError:(id*)arg1 handler:(id)arg2;
+- (BOOL)setSystemDataHandlerWithError:(id*)arg1 handler:(id)arg2;
 
 @end

@@ -5,46 +5,46 @@
 @class NSData, NSString;
 
 @interface IDSSocketPairProtobufMessage : IDSSocketPairMessage {
+    BOOL _compressed;
     NSData *_data;
+    BOOL _expectsPeerResponse;
     unsigned short _isResponse;
     NSString *_messageUUID;
-    unsigned long long _offset;
+    unsigned int _offset;
     NSString *_peerResponseIdentifier;
     unsigned int _sequenceNumber;
     unsigned short _streamID;
     unsigned short _type;
-    bool_compressed;
-    bool_expectsPeerResponse;
-    bool_wantsAppAck;
+    BOOL _wantsAppAck;
 }
 
-@property bool compressed;
+@property BOOL compressed;
 @property(readonly) NSData * data;
-@property(readonly) bool expectsPeerResponse;
+@property(readonly) BOOL expectsPeerResponse;
 @property(readonly) unsigned short isResponse;
 @property(retain,readonly) NSString * messageUUID;
 @property(retain,readonly) NSString * peerResponseIdentifier;
 @property unsigned int sequenceNumber;
 @property(readonly) unsigned short streamID;
 @property(readonly) unsigned short type;
-@property(readonly) bool wantsAppAck;
+@property(readonly) BOOL wantsAppAck;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;
-- (bool)compressed;
+- (BOOL)compressed;
 - (id)data;
 - (void)dealloc;
-- (bool)expectsPeerResponse;
+- (BOOL)expectsPeerResponse;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
-- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 expectsPeerResponse:(bool)arg3 wantsAppAck:(bool)arg4 compressed:(bool)arg5 peerResponseIdentifier:(id)arg6 messageUUID:(id)arg7 protobuf:(id)arg8;
+- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 expectsPeerResponse:(BOOL)arg3 wantsAppAck:(BOOL)arg4 compressed:(BOOL)arg5 peerResponseIdentifier:(id)arg6 messageUUID:(id)arg7 protobuf:(id)arg8;
 - (unsigned short)isResponse;
 - (id)messageUUID;
 - (id)peerResponseIdentifier;
 - (unsigned int)sequenceNumber;
-- (void)setCompressed:(bool)arg1;
+- (void)setCompressed:(BOOL)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (unsigned short)streamID;
 - (unsigned short)type;
-- (bool)wantsAppAck;
+- (BOOL)wantsAppAck;
 
 @end

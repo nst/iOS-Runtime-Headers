@@ -7,7 +7,7 @@
 
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;
-- (bool)showsShare;
+- (BOOL)showsShare;
 - (id)tallFaceTemplate;
 
 @end

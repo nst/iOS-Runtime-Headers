@@ -15,7 +15,7 @@
 - (id)clockIds;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setClockIds:(id)arg1;
 
 @end

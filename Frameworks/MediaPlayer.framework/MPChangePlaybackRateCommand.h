@@ -12,7 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;
-- (id)keyPathsForValuesTriggeringCommandsChanged;
 - (void)setSupportedPlaybackRates:(id)arg1;
 - (id)supportedPlaybackRates;
 

@@ -14,13 +14,13 @@
 
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 metadata:(id)arg5;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addCorrelatedObject:(id)arg1;
 - (void)_addCorrelatedObjects:(id)arg1;
 - (id)_allTypes;
-- (bool)_containsObjects;
+- (BOOL)_containsObjects;
 - (void)_filterCorrelatedObjectsWithFilterDictionary:(id)arg1;
 - (id)_init;
 - (void)_removeAllCorrelatedObjects;
@@ -29,7 +29,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)hd_cleanupBeforeJournalInsertion;
-- (bool)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entity:(id)arg3 error:(id*)arg4;
+- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entity:(id)arg3 error:(id*)arg4;
 - (id)hd_relatedJournalEntries;
 - (id)initWithCoder:(id)arg1;
 - (id)objects;

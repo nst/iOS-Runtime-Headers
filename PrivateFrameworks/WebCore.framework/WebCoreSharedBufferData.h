@@ -16,7 +16,7 @@
         struct DataBuffer {} *m_ptr; 
     struct RefPtr<WebCore::SharedBuffer> { 
         struct SharedBuffer {} *m_ptr; 
-     /* Encoded args for previous method: @24@0:8^{DataBuffer={atomic<int>=Ai}{Vector<char, 0, WTF::CrashOnOverflow>=*II}}16 */
+     /* Encoded args for previous method: @12@0:4^{DataBuffer={atomic<int>=Ai}{Vector<char, 0, WTF::CrashOnOverflow>=*II}}8 */
     } sharedBuffer;
     } sharedBufferDataBuffer;
 }
@@ -30,6 +30,6 @@
 - (void)finalize;
 - (id)initWithMemoryMappedSharedBuffer:(struct SharedBuffer { unsigned int x1; unsigned int x2; struct RefPtr<WebCore::SharedBuffer::DataBuffer> { struct DataBuffer {} *x_3_1_1; } x3; boolx4; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_5_1_1; } x5; struct Vector<WTF::RetainPtr<const __CFData *>, 0, WTF::CrashOnOverflow> { struct RetainPtr<const __CFData *> {} *x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; } x6; boolx7; unsigned int x8; int (*x9)(); void *x10; struct RetainPtr<const __CFData *> { void *x_11_1_1; } x11; }*)arg1;
 - (id)initWithSharedBufferDataBuffer:(struct DataBuffer { struct atomic<int> { /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*x_1_1_1; int x_1_1_2; } x1; struct Vector<char, 0, WTF::CrashOnOverflow> { char *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; }*)arg1;
-- (unsigned long long)length;
+- (unsigned int)length;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface TSCH3DLowColorBitsShaderEffect : TSCH3DShaderEffect {
-    long long mLowColorBits;
+    int mLowColorBits;
 }
 
-@property long long lowColorBits;
+@property int lowColorBits;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)isEqual:(id)arg1;
-- (long long)lowColorBitShift;
-- (long long)lowColorBits;
-- (void)setLowColorBits:(long long)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (int)lowColorBitShift;
+- (int)lowColorBits;
+- (void)setLowColorBits:(int)arg1;
 
 @end

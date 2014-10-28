@@ -12,8 +12,8 @@
     long long _storeId;
 }
 
-@property(readonly) bool hasName;
-@property bool hasStoreId;
+@property(readonly) BOOL hasName;
+@property BOOL hasStoreId;
 @property(retain) NSString * name;
 @property long long storeId;
 
@@ -22,13 +22,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasName;
-- (bool)hasStoreId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasName;
+- (BOOL)hasStoreId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (bool)readFrom:(id)arg1;
-- (void)setHasStoreId:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasStoreId:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setStoreId:(long long)arg1;
 - (long long)storeId;

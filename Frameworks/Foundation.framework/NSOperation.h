@@ -6,30 +6,29 @@
 
 @interface NSOperation : NSObject {
     int _private1;
-    int _private1b;
     id _private;
 }
 
-@property(getter=isAsynchronous,readonly) bool asynchronous;
-@property(getter=isCancelled,readonly) bool cancelled;
+@property(getter=isAsynchronous,readonly) BOOL asynchronous;
+@property(getter=isCancelled,readonly) BOOL cancelled;
 @property(copy) id completionBlock;
-@property(getter=isConcurrent,readonly) bool concurrent;
+@property(getter=isConcurrent,readonly) BOOL concurrent;
 @property(copy,readonly) NSArray * dependencies;
-@property(getter=isExecuting,readonly) bool executing;
-@property(getter=isFinished,readonly) bool finished;
+@property(getter=isExecuting,readonly) BOOL executing;
+@property(getter=isFinished,readonly) BOOL finished;
 @property(copy) NSString * name;
-@property long long qualityOfService;
-@property long long queuePriority;
-@property(getter=isReady,readonly) bool ready;
-@property unsigned long long tag;
+@property int qualityOfService;
+@property int queuePriority;
+@property(getter=isReady,readonly) BOOL ready;
+@property unsigned int tag;
 @property double threadPriority;
 
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentOperation;
 
 - (id)__;
 - (id)_activity;
-- (long long)_effQoS;
+- (int)_effQoS;
 - (id)_implicitObservationInfo;
 - (void)addDependency:(id)arg1;
 - (void)cancel;
@@ -39,27 +38,27 @@
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (bool)isAsynchronous;
-- (bool)isCancelled;
-- (bool)isConcurrent;
-- (bool)isExecuting;
-- (bool)isFinished;
-- (bool)isReady;
+- (BOOL)isAsynchronous;
+- (BOOL)isCancelled;
+- (BOOL)isConcurrent;
+- (BOOL)isExecuting;
+- (BOOL)isFinished;
+- (BOOL)isReady;
 - (void)main;
 - (id)name;
 - (void*)observationInfo;
-- (long long)qualityOfService;
-- (long long)queuePriority;
+- (int)qualityOfService;
+- (int)queuePriority;
 - (void)removeDependency:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setObservationInfo:(void*)arg1;
-- (void)setQualityOfService:(long long)arg1;
-- (void)setQueuePriority:(long long)arg1;
-- (void)setTag:(unsigned long long)arg1;
+- (void)setQualityOfService:(int)arg1;
+- (void)setQueuePriority:(int)arg1;
+- (void)setTag:(unsigned int)arg1;
 - (void)setThreadPriority:(double)arg1;
 - (void)start;
-- (unsigned long long)tag;
+- (unsigned int)tag;
 - (double)threadPriority;
 - (void)waitUntilFinished;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;

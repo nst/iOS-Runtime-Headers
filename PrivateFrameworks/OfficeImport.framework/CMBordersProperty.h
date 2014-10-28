@@ -15,7 +15,7 @@
     int mCustomWidth;
 }
 
-+ (bool)isStroked:(id)arg1;
++ (BOOL)isStroked:(id)arg1;
 
 - (void)adjustValues;
 - (id)colorString;
@@ -23,7 +23,7 @@
 - (id)cssStringForName:(id)arg1;
 - (id)init;
 - (id)initWithOADStroke:(id)arg1;
-- (bool)isNoneAtLocation:(int)arg1;
+- (BOOL)isNoneAtLocation:(int)arg1;
 - (void)setFromOadStroke:(id)arg1 atLocation:(int)arg2 state:(id)arg3;
 - (void)setNoneAtLocation:(int)arg1;
 - (id)stringFromColor:(id)arg1;

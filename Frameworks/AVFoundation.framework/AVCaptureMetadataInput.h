@@ -10,7 +10,7 @@
 
 + (id)metadataInputWithFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 clock:(struct OpaqueCMClock { }*)arg2;
 
-- (bool)appendTimedMetadataGroup:(id)arg1 error:(id*)arg2;
+- (BOOL)appendTimedMetadataGroup:(id)arg1 error:(id*)arg2;
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
 - (id)init;

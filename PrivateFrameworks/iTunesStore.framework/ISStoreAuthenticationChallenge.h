@@ -5,35 +5,35 @@
 @class <NSURLAuthenticationChallengeSender>, NSString;
 
 @interface ISStoreAuthenticationChallenge : ISAuthenticationChallenge {
-    long long _failureCount;
+    int _failureCount;
+    BOOL _hasPassword;
     NSString *_password;
     <NSURLAuthenticationChallengeSender> *_sender;
     NSString *_user;
-    bool_hasPassword;
-    bool_userNameIsEditable;
+    BOOL _userNameIsEditable;
 }
 
-@property long long failureCount;
-@property bool hasPassword;
+@property int failureCount;
+@property BOOL hasPassword;
 @property(retain) NSString * password;
 @property <NSURLAuthenticationChallengeSender> * sender;
 @property(retain) NSString * user;
-@property bool userNameIsEditable;
+@property BOOL userNameIsEditable;
 
 - (void)dealloc;
-- (long long)failureCount;
-- (bool)hasPassword;
+- (int)failureCount;
+- (BOOL)hasPassword;
 - (id)init;
 - (id)password;
 - (id)sender;
-- (void)setFailureCount:(long long)arg1;
-- (void)setHasPassword:(bool)arg1;
+- (void)setFailureCount:(int)arg1;
+- (void)setHasPassword:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setUser:(id)arg1;
-- (void)setUserNameIsEditable:(bool)arg1;
+- (void)setUserNameIsEditable:(BOOL)arg1;
 - (id)user;
-- (bool)userNameIsEditable;
-- (bool)userNameIsEmail;
+- (BOOL)userNameIsEditable;
+- (BOOL)userNameIsEmail;
 
 @end

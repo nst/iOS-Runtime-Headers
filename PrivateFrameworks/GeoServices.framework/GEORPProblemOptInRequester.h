@@ -5,7 +5,7 @@
 @interface GEORPProblemOptInRequester : GEOServiceRequester {
 }
 
-+ (unsigned long long)_urlType;
++ (unsigned int)_urlType;
 + (id)sharedInstance;
 
 - (id)_validateResponse:(id)arg1;

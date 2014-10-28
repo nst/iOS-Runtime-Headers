@@ -7,8 +7,8 @@
 @interface AWDPowerBBLQMDataTransferMetrics : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     struct { 
         unsigned int timestamp : 1; 
     } _has;
@@ -17,10 +17,10 @@
     unsigned long long _timestamp;
 }
 
-@property bool hasTimestamp;
+@property BOOL hasTimestamp;
 @property(retain) NSMutableArray * lQMBytes;
 @property(readonly) unsigned int* lQMTransitionCntBuckets;
-@property(readonly) unsigned long long lQMTransitionCntBucketsCount;
+@property(readonly) unsigned int lQMTransitionCntBucketsCount;
 @property unsigned long long timestamp;
 
 - (void)addLQMBytes:(id)arg1;
@@ -32,20 +32,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)lQMBytes;
-- (id)lQMBytesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)lQMBytesCount;
+- (id)lQMBytesAtIndex:(unsigned int)arg1;
+- (unsigned int)lQMBytesCount;
 - (unsigned int*)lQMTransitionCntBuckets;
-- (unsigned int)lQMTransitionCntBucketsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)lQMTransitionCntBucketsCount;
+- (unsigned int)lQMTransitionCntBucketsAtIndex:(unsigned int)arg1;
+- (unsigned int)lQMTransitionCntBucketsCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setLQMBytes:(id)arg1;
-- (void)setLQMTransitionCntBuckets:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setLQMTransitionCntBuckets:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

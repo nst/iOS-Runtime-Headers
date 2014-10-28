@@ -4,26 +4,26 @@
 
 @interface __NSATSStringSegment : NSString {
     struct { 
-        long long location; 
-        long long length; 
+        int location; 
+        int length; 
     unsigned short _buffer[128];
     const unsigned short *_characters;
     struct __CFString { } *_originalString;
-    long long _originalStringLength;
+    long _originalStringLength;
     } _range;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (const unsigned short*)_fastCharacterContents;
-- (bool)_isDeallocating;
-- (void)_setOriginalString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (bool)_tryRetain;
-- (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (BOOL)_isDeallocating;
+- (void)_setOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (BOOL)_tryRetain;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (id)initWithOriginalString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (unsigned long long)length;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)length;
 - (oneway void)release;
 
 @end

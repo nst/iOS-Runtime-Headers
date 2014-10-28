@@ -5,21 +5,21 @@
 @class NSString;
 
 @interface PUPhotoEditToolControllerSpec : PUViewControllerSpec <PUPhotoEditLayoutDynamicAdaptable> {
-    long long _layoutOrientation;
+    int _layoutOrientation;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) long long layoutOrientation;
-@property(readonly) double standardBottomBarHeight;
-@property(readonly) double standardSideBarWidth;
+@property(readonly) unsigned int hash;
+@property(readonly) int layoutOrientation;
+@property(readonly) float standardBottomBarHeight;
+@property(readonly) float standardSideBarWidth;
 @property(readonly) Class superclass;
 
-- (long long)layoutOrientation;
-- (void)setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;
-- (void)setLayoutOrientation:(long long)arg1;
-- (double)standardBottomBarHeight;
-- (double)standardSideBarWidth;
+- (int)layoutOrientation;
+- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
+- (void)setLayoutOrientation:(int)arg1;
+- (float)standardBottomBarHeight;
+- (float)standardSideBarWidth;
 
 @end

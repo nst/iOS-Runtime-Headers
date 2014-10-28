@@ -12,8 +12,8 @@
 }
 
 @property unsigned long long duration;
-@property bool hasDuration;
-@property bool hasTimestamp;
+@property BOOL hasDuration;
+@property BOOL hasTimestamp;
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)duration;
-- (bool)hasDuration;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDuration;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDuration:(unsigned long long)arg1;
-- (void)setHasDuration:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasDuration:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

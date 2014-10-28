@@ -13,17 +13,17 @@
     NSError *_error;
     struct OpaqueFigAssetWriter { } *_figAssetWriter;
     AVAssetWriterInputPassDescription *_nextPassDescription;
+    BOOL _succeeded;
     int _trackID;
-    bool_succeeded;
 }
 
 @property(copy) id completionBlock;
 @property(readonly) AVAssetWriterInputPassDescription * descriptionForNextPass;
 @property(readonly) NSError * error;
-@property(readonly) bool succeeded;
+@property(readonly) BOOL succeeded;
 
-- (void)_markOperationAsCompletedWithSuccess:(bool)arg1 error:(id)arg2;
-- (void)_notifyWhetherMorePassesAreNeeded:(bool)arg1 timeRanges:(id)arg2 forTrackWithID:(int)arg3;
+- (void)_markOperationAsCompletedWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_notifyWhetherMorePassesAreNeeded:(BOOL)arg1 timeRanges:(id)arg2 forTrackWithID:(int)arg3;
 - (id)completionBlock;
 - (void)dealloc;
 - (id)descriptionForNextPass;
@@ -33,6 +33,6 @@
 - (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 trackID:(int)arg2;
 - (void)setCompletionBlock:(id)arg1;
 - (void)start;
-- (bool)succeeded;
+- (BOOL)succeeded;
 
 @end

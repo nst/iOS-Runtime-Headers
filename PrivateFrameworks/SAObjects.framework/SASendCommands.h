@@ -15,7 +15,7 @@
 - (id)commands;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setCommands:(id)arg1;
 
 @end

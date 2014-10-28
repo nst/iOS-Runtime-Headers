@@ -3,14 +3,14 @@
  */
 
 @interface HTMLToSuper_SPAN_Frame : HTMLToSuper_Default_Frame {
-    bool_shouldDecrementBoldCount;
-    bool_shouldDecrementItalicCount;
-    bool_shouldDecrementStrikeCount;
-    bool_shouldDecrementUnderlineCount;
-    bool_shouldPopBackgroundColor;
-    bool_shouldPopFontFamily;
-    bool_shouldPopFontSize;
-    bool_shouldPopForegroundColor;
+    BOOL _shouldDecrementBoldCount;
+    BOOL _shouldDecrementItalicCount;
+    BOOL _shouldDecrementStrikeCount;
+    BOOL _shouldDecrementUnderlineCount;
+    BOOL _shouldPopBackgroundColor;
+    BOOL _shouldPopFontFamily;
+    BOOL _shouldPopFontSize;
+    BOOL _shouldPopForegroundColor;
 }
 
 - (void)parser:(id)arg1 context:(id)arg2 didEndElement:(id)arg3 namespaceURI:(id)arg4 qualifiedName:(id)arg5;

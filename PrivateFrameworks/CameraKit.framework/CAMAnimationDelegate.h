@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)animationDidStart:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)completion;
 - (void)setCompletion:(id)arg1;
 - (void)setStart:(id)arg1;

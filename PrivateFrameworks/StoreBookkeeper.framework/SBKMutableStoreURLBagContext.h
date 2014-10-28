@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * domain;
-@property bool domainDisabled;
+@property BOOL domainDisabled;
 @property double pollingIntervalInSeconds;
 @property(retain) NSURL * pullAllKeyValueRequestURL;
 @property(retain) NSURL * pullKeyValueRequestURL;

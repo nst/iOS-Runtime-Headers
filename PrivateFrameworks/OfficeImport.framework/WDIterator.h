@@ -5,7 +5,7 @@
 @interface WDIterator : NSObject {
 }
 
-- (bool)hasNext;
+- (BOOL)hasNext;
 - (id)next;
 
 @end

@@ -11,13 +11,13 @@
 @interface SKUIRedeemPreflightOperation : NSOperation {
     SKUIClientContext *_clientContext;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    BOOL _loadsRedeemCodeMetadata;
     id _outputBlock;
     NSString *_redeemCode;
     SKUIRedeemConfiguration *_redeemConfiguration;
-    bool_loadsRedeemCodeMetadata;
 }
 
-@property bool loadsRedeemCodeMetadata;
+@property BOOL loadsRedeemCodeMetadata;
 @property(copy) id outputBlock;
 @property(retain) SKUIRedeemConfiguration * redeemConfiguration;
 
@@ -27,11 +27,11 @@
 - (id)_redeemCodeMetadataWithClientContext:(id)arg1;
 - (id)init;
 - (id)initWithClientContext:(id)arg1 redeemCode:(id)arg2;
-- (bool)loadsRedeemCodeMetadata;
+- (BOOL)loadsRedeemCodeMetadata;
 - (void)main;
 - (id)outputBlock;
 - (id)redeemConfiguration;
-- (void)setLoadsRedeemCodeMetadata:(bool)arg1;
+- (void)setLoadsRedeemCodeMetadata:(BOOL)arg1;
 - (void)setOutputBlock:(id)arg1;
 - (void)setRedeemConfiguration:(id)arg1;
 

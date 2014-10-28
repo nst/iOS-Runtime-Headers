@@ -10,8 +10,8 @@
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1;
 - (void)appendPropertiesToBody:(id)arg1;
 - (id)decorateReportingURL:(id)arg1;
-- (bool)isBlacklistedByConfiguration:(id)arg1;
-- (bool)isFieldBlacklistEnabled;
+- (BOOL)isBlacklistedByConfiguration:(id)arg1;
+- (BOOL)isFieldBlacklistEnabled;
 - (id)millisecondsFromTimeInterval:(double)arg1;
 - (double)timeIntervalFromMilliseconds:(id)arg1;
 

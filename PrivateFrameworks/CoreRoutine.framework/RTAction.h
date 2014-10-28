@@ -6,20 +6,20 @@
 
 @interface RTAction : NSObject <NSSecureCoding> {
     NSDictionary *_options;
-    long long _type;
+    int _type;
 }
 
 @property(readonly) NSDictionary * options;
-@property(readonly) long long type;
+@property(readonly) int type;
 
-+ (id)actionTypeToString:(long long)arg1;
-+ (bool)supportsSecureCoding;
++ (id)actionTypeToString:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(long long)arg1 andOptions:(id)arg2;
+- (id)initWithType:(int)arg1 andOptions:(id)arg2;
 - (id)options;
-- (long long)type;
+- (int)type;
 
 @end

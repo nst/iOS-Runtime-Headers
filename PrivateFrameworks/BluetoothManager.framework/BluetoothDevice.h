@@ -11,17 +11,17 @@
 }
 
 - (void)_clearName;
-- (bool)_isNameCached;
-- (void)acceptSSP:(long long)arg1;
+- (BOOL)_isNameCached;
+- (void)acceptSSP:(int)arg1;
 - (id)address;
 - (int)batteryLevel;
-- (bool)cloudPaired;
-- (long long)compare:(id)arg1;
+- (BOOL)cloudPaired;
+- (int)compare:(id)arg1;
 - (void)connect;
 - (void)connectWithServices:(unsigned int)arg1;
-- (bool)connected;
-- (unsigned long long)connectedServices;
-- (unsigned long long)connectedServicesCount;
+- (BOOL)connected;
+- (unsigned int)connectedServices;
+- (unsigned int)connectedServicesCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -30,22 +30,22 @@
 - (void)endVoiceCommand;
 - (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
-- (bool)isAccessory;
-- (bool)isServiceSupported:(unsigned int)arg1;
+- (BOOL)isAccessory;
+- (BOOL)isServiceSupported:(unsigned int)arg1;
 - (unsigned int)majorClass;
 - (unsigned int)minorClass;
 - (id)name;
-- (bool)paired;
+- (BOOL)paired;
 - (id)scoUID;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
 - (void)setPIN:(id)arg1;
 - (void)setServiceSetting:(unsigned int)arg1 key:(id)arg2 value:(id)arg3;
-- (void)setSyncGroup:(int)arg1 enabled:(bool)arg2;
-- (void)setSyncSettings:(struct { boolx1; boolx2; boolx3; boolx4; })arg1;
+- (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
+- (void)setSyncSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })arg1;
 - (void)startVoiceCommand;
-- (bool)supportsBatteryLevel;
+- (BOOL)supportsBatteryLevel;
 - (id)syncGroups;
-- (struct { boolx1; boolx2; boolx3; boolx4; })syncSettings;
+- (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })syncSettings;
 - (int)type;
 - (void)unpair;
 

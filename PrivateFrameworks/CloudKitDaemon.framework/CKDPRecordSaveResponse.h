@@ -11,9 +11,9 @@
 }
 
 @property(retain) NSString * etag;
-@property(readonly) bool hasEtag;
-@property(readonly) bool hasServerFields;
-@property(readonly) bool hasTimeStatistics;
+@property(readonly) BOOL hasEtag;
+@property(readonly) BOOL hasServerFields;
+@property(readonly) BOOL hasTimeStatistics;
 @property(retain) CKDPRecord * serverFields;
 @property(retain) CKDPDateStatistics * timeStatistics;
 
@@ -23,13 +23,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (bool)hasEtag;
-- (bool)hasServerFields;
-- (bool)hasTimeStatistics;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasEtag;
+- (BOOL)hasServerFields;
+- (BOOL)hasTimeStatistics;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)serverFields;
 - (void)setEtag:(id)arg1;
 - (void)setServerFields:(id)arg1;

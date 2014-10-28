@@ -11,7 +11,7 @@
 @property(readonly) ISOpenURLRequest * openURLRequest;
 
 - (id)_newSortedTargetsArray;
-- (bool)_openURL:(id)arg1;
+- (BOOL)_openURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithOpenURLRequest:(id)arg1;

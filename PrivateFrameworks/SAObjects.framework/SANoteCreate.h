@@ -15,7 +15,7 @@
 - (id)contents;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setContents:(id)arg1;
 
 @end

@@ -10,20 +10,20 @@
     NSNumber *_iCloudIdentifier;
     NSNumber *_iTunesIdentifier;
     NSString *_lastName;
-    bool_me;
-    bool_sharingPurchases;
+    BOOL _me;
+    BOOL _sharingPurchases;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * firstName;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * iCloudAccountName;
 @property(retain) NSNumber * iCloudIdentifier;
 @property(retain) NSNumber * iTunesIdentifier;
 @property(retain) NSString * lastName;
-@property(getter=isMe) bool me;
-@property(getter=isSharingPurchases) bool sharingPurchases;
+@property(getter=isMe) BOOL me;
+@property(getter=isSharingPurchases) BOOL sharingPurchases;
 @property(readonly) Class superclass;
 
 - (id)copyXPCEncoding;
@@ -32,16 +32,18 @@
 - (id)iCloudAccountName;
 - (id)iCloudIdentifier;
 - (id)iTunesIdentifier;
+- (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isMe;
-- (bool)isSharingPurchases;
+- (BOOL)isMe;
+- (BOOL)isSharingPurchases;
 - (id)lastName;
+- (id)newCacheRepresentation;
 - (void)setFirstName:(id)arg1;
 - (void)setICloudAccountName:(id)arg1;
 - (void)setICloudIdentifier:(id)arg1;
 - (void)setITunesIdentifier:(id)arg1;
 - (void)setLastName:(id)arg1;
-- (void)setMe:(bool)arg1;
-- (void)setSharingPurchases:(bool)arg1;
+- (void)setMe:(BOOL)arg1;
+- (void)setSharingPurchases:(BOOL)arg1;
 
 @end

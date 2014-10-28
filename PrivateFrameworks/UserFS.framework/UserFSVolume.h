@@ -7,25 +7,25 @@
 @interface UserFSVolume : NSObject {
     NSObject<OS_xpc_object> *_connection;
     NSString *_deviceName;
-    bool_isLocked;
+    BOOL _isLocked;
 }
 
 @property(retain) NSObject<OS_xpc_object> * connection;
 @property(copy,readonly) NSString * deviceName;
-@property(readonly) bool isLocked;
+@property(readonly) BOOL isLocked;
 
-+ (bool)prepareToAccessDeviceName:(id)arg1 error:(id*)arg2;
++ (BOOL)prepareToAccessDeviceName:(id)arg1 error:(id*)arg2;
 + (id)volumeWithDeviceName:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
-- (bool)closeAndReturnError:(id*)arg1;
+- (BOOL)closeAndReturnError:(id*)arg1;
 - (id)connection;
 - (void)dealloc;
-- (bool)deleteFiles:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteFiles:(id)arg1 error:(id*)arg2;
 - (id)deviceName;
-- (bool)flushAndReturnError:(id*)arg1;
+- (BOOL)flushAndReturnError:(id*)arg1;
 - (id)initWithDeviceName:(id)arg1 error:(id*)arg2;
-- (bool)isLocked;
+- (BOOL)isLocked;
 - (id)itemAtPath:(id)arg1 error:(id*)arg2;
 - (id)rootDirectoryAndReturnError:(id*)arg1;
 - (void)setConnection:(id)arg1;

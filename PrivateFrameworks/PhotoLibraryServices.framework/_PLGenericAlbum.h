@@ -13,7 +13,7 @@
 @property int cachedPhotosCount;
 @property int cachedVideosCount;
 @property(retain) PLManagedAsset * customKeyAsset;
-@property bool customSortAscending;
+@property BOOL customSortAscending;
 @property int customSortKey;
 @property(retain) PLManagedAsset * keyAsset;
 @property(retain) NSNumber * kind;

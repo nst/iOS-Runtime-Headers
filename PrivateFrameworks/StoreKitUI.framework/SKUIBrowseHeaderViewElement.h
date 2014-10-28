@@ -5,6 +5,6 @@
 @interface SKUIBrowseHeaderViewElement : SKUIHeaderViewElement {
 }
 
-- (long long)pageComponentType;
+- (int)pageComponentType;
 
 @end

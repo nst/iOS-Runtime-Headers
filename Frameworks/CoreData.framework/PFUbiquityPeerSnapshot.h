@@ -20,7 +20,7 @@
 @property(readonly) NSDate * transactionDate;
 @property(readonly) NSNumber * transactionNumber;
 
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)computeDiffToPreviousSnapshot:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -28,7 +28,7 @@
 - (id)exportingPeerID;
 - (id)initWithExportingPeerID:(id)arg1 logSnapshot:(id)arg2 transactionNumber:(id)arg3 transactionDate:(id)arg4 andKnowledgeVector:(id)arg5;
 - (id)initWithTranasctionEntry:(id)arg1 andLogSnapshot:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)knowledgeVector;
 - (id)logSnapshot;
 - (void)removeValuesChangedByPeerSnapshot:(id)arg1;

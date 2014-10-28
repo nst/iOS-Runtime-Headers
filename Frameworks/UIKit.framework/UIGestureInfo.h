@@ -6,32 +6,32 @@
 
 @interface UIGestureInfo : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct { 
         unsigned int pushedRunLoop : 1; 
         unsigned int isRotatingRight : 1; 

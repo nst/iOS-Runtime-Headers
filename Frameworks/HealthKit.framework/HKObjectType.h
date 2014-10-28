@@ -5,45 +5,45 @@
 @class NSString;
 
 @interface HKObjectType : NSObject <NSSecureCoding, NSCopying> {
-    long long _code;
+    int _code;
     Class _dataObjectClass;
     NSString *_identifier;
 }
 
-@property(readonly) long long code;
+@property(readonly) int code;
 @property(readonly) Class dataObjectClass;
 @property(readonly) NSString * identifier;
 
 + (id)_allDataTypeIdentifiers;
-+ (bool)_allowAuthorizationForReadingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
-+ (bool)_allowAuthorizationForSharing:(bool)arg1 types:(id)arg2 entitlements:(id)arg3 disallowedTypes:(id)arg4;
-+ (bool)_allowAuthorizationForSharingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
-+ (void)_insertCode:(long long)arg1 forIdentifier:(id)arg2;
++ (BOOL)_allowAuthorizationForReadingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
++ (BOOL)_allowAuthorizationForSharing:(BOOL)arg1 types:(id)arg2 entitlements:(id)arg3 disallowedTypes:(id)arg4;
++ (BOOL)_allowAuthorizationForSharingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
++ (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
 + (id)categoryTypeForIdentifier:(id)arg1;
 + (id)characteristicTypeForIdentifier:(id)arg1;
 + (id)correlationTypeForIdentifier:(id)arg1;
-+ (id)dataTypeWithCode:(long long)arg1;
++ (id)dataTypeWithCode:(int)arg1;
 + (id)quantityTypeForIdentifier:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)workoutType;
 
 - (void).cxx_destruct;
-- (bool)_allowAuthorizationForReadingWithEntitlements:(id)arg1;
-- (bool)_allowAuthorizationForSharingWithEntitlements:(id)arg1;
-- (id)_initWithDefinition:(struct { long long x1; char *x2; char *x3; long long x4; char *x5; char *x6; }*)arg1;
-- (bool)_requiresAuthorization;
+- (BOOL)_allowAuthorizationForReadingWithEntitlements:(id)arg1;
+- (BOOL)_allowAuthorizationForSharingWithEntitlements:(id)arg1;
+- (id)_initWithDefinition:(struct { int x1; char *x2; char *x3; int x4; char *x5; char *x6; }*)arg1;
+- (BOOL)_requiresAuthorization;
 - (id)awakeAfterUsingCoder:(id)arg1;
-- (long long)code;
+- (int)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)dataObjectClass;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)hk_categoryID;
 - (id)hk_localizedName;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

@@ -8,6 +8,6 @@
 
 - (struct __CFArray { }*)children;
 - (void)dealloc;
-- (bool)isBlank;
+- (BOOL)isBlank;
 
 @end

@@ -6,8 +6,8 @@
 }
 
 + (id)_actionsForItem:(id)arg1;
-+ (id)_imageForAction:(long long)arg1;
-+ (id)_titleForAction:(long long)arg1;
++ (id)_imageForAction:(int)arg1;
++ (id)_titleForAction:(int)arg1;
 
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
 - (void)_cloudControllerIsJaliscoGeniusEnabledDidChangeNotification:(id)arg1;

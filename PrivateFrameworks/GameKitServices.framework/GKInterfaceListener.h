@@ -6,33 +6,33 @@
 
 @interface GKInterfaceListener : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     struct __SCDynamicStore { } *_dynamicStore;
     <InterfaceListenerDelegate> *_interfaceListenerDelegate;
+    BOOL _isCellUp;
+    BOOL _isWifiUp;
+    BOOL _monitoringAvailable;
     } _notificationMutex;
     int _notifyToken;
-    bool_isCellUp;
-    bool_isWifiUp;
-    bool_monitoringAvailable;
 }
 
-@property bool _isCellUp;
-@property bool _isWifiUp;
+@property BOOL _isCellUp;
+@property BOOL _isWifiUp;
 @property <InterfaceListenerDelegate> * interfaceListenerDelegate;
 
-- (bool)_isCellUp;
-- (bool)_isWifiUp;
+- (BOOL)_isCellUp;
+- (BOOL)_isWifiUp;
 - (void)dealloc;
-- (void)hasConnectionWithWifi:(bool*)arg1 cell:(bool*)arg2;
+- (void)hasConnectionWithWifi:(BOOL*)arg1 cell:(BOOL*)arg2;
 - (id)init;
 - (id)interfaceListenerDelegate;
 - (void)setInterfaceListenerDelegate:(id)arg1;
-- (void)set_isCellUp:(bool)arg1;
-- (void)set_isWifiUp:(bool)arg1;
-- (bool)startChangeListener;
-- (bool)startRoutingChangeListener;
-- (bool)stopChangeListener;
+- (void)set_isCellUp:(BOOL)arg1;
+- (void)set_isWifiUp:(BOOL)arg1;
+- (BOOL)startChangeListener;
+- (BOOL)startRoutingChangeListener;
+- (BOOL)stopChangeListener;
 - (void)stopRoutingChangeListener;
 
 @end

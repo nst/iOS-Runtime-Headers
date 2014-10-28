@@ -16,7 +16,7 @@
 @property(copy) NSString * paymentNetwork;
 @property(copy) NSString * transactionIdentifier;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

@@ -7,32 +7,32 @@
  */
 
 @interface ProcessElementParameters : NSObject {
-    unsigned long long _maximumNumberOfElements;
+    BOOL _didCutOffElements;
+    BOOL _forSpeakThis;
+    BOOL _grouped;
+    unsigned int _maximumNumberOfElements;
+    BOOL _onlyIncludeVisible;
     id _shouldAddElement;
-    bool_didCutOffElements;
-    bool_forSpeakThis;
-    bool_grouped;
-    bool_onlyIncludeVisible;
 }
 
-@property bool didCutOffElements;
-@property bool forSpeakThis;
-@property bool grouped;
-@property unsigned long long maximumNumberOfElements;
-@property bool onlyIncludeVisible;
+@property BOOL didCutOffElements;
+@property BOOL forSpeakThis;
+@property BOOL grouped;
+@property unsigned int maximumNumberOfElements;
+@property BOOL onlyIncludeVisible;
 @property(copy) id shouldAddElement;
 
 - (void)dealloc;
-- (bool)didCutOffElements;
-- (bool)forSpeakThis;
-- (bool)grouped;
-- (unsigned long long)maximumNumberOfElements;
-- (bool)onlyIncludeVisible;
-- (void)setDidCutOffElements:(bool)arg1;
-- (void)setForSpeakThis:(bool)arg1;
-- (void)setGrouped:(bool)arg1;
-- (void)setMaximumNumberOfElements:(unsigned long long)arg1;
-- (void)setOnlyIncludeVisible:(bool)arg1;
+- (BOOL)didCutOffElements;
+- (BOOL)forSpeakThis;
+- (BOOL)grouped;
+- (unsigned int)maximumNumberOfElements;
+- (BOOL)onlyIncludeVisible;
+- (void)setDidCutOffElements:(BOOL)arg1;
+- (void)setForSpeakThis:(BOOL)arg1;
+- (void)setGrouped:(BOOL)arg1;
+- (void)setMaximumNumberOfElements:(unsigned int)arg1;
+- (void)setOnlyIncludeVisible:(BOOL)arg1;
 - (void)setShouldAddElement:(id)arg1;
 - (id)shouldAddElement;
 

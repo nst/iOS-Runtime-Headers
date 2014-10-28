@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)_copyAllowedToneStyles;
@@ -21,15 +21,15 @@
 - (void)_dismissPeoplePicker;
 - (void)_pickAssigneeToneStyle;
 - (void)_showPeoplePicker;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheetCancel:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithPurchase:(id)arg1;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)start;
 

@@ -5,14 +5,14 @@
 @interface _UIKeyboardUsageTracking : NSObject {
 }
 
-+ (void)inputSwitcherSetPredictionPreference:(bool)arg1;
++ (void)inputSwitcherSetPredictionPreference:(BOOL)arg1;
 + (void)keyboardExtensionCrashed;
 + (void)keyboardExtensionPrimaryLanguageChanged;
 + (void)keyboardExtensionsOnDevice;
 + (void)keyboardGestureSelectedPredictiveInputCandidate;
-+ (void)keyboardGestureSetPredictionPreference:(bool)arg1;
++ (void)keyboardGestureSetPredictionPreference:(BOOL)arg1;
 + (void)keyboardSetToInputMode:(id)arg1 fromPrevious:(id)arg2;
-+ (void)predictionViewState:(bool)arg1 forInputMode:(id)arg2;
-+ (void)selectedPredictiveInputCandidate:(id)arg1 isAutocorrection:(bool)arg2;
++ (void)predictionViewState:(BOOL)arg1 forInputMode:(id)arg2;
++ (void)selectedPredictiveInputCandidate:(id)arg1 isAutocorrection:(BOOL)arg2;
 
 @end

@@ -9,23 +9,23 @@
     NSIndexPath *_awaitingCallbackForIndexPath;
     UITapGestureRecognizer *_backGestureRecognizer;
     NSIndexPath *_containerIndexPath;
-    long long _count;
+    int _count;
     _UIFilteredDataSource *_dataSource;
     NSMutableSet *_indexesToUpdate;
+    BOOL _isFetchingGuard;
     NSArray *_items;
     MCDBrowsableContentModel *_model;
     MCDNowPlayingButton *_nowPlayingButton;
     NSIndexPath *_reselectIndexPath;
     NSIndexPath *_selectedNextIndexPath;
     NSObject<OS_dispatch_queue> *_serialQueue;
+    BOOL _shouldReloadOnAppear;
     UITableView *_tableView;
-    bool_isFetchingGuard;
-    bool_shouldReloadOnAppear;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -35,7 +35,7 @@
 - (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)_displayLoadingActivity;
 - (void)_makeBestCellFirstResponder;
-- (id)_modelIndexPathForRow:(long long)arg1;
+- (id)_modelIndexPathForRow:(int)arg1;
 - (void)_nowPlayingButtonTapped:(id)arg1;
 - (void)_nowPlayingDidChange:(id)arg1;
 - (void)_performBackGesture:(id)arg1;
@@ -43,7 +43,7 @@
 - (void)_updateForIndexPaths:(id)arg1;
 - (void)_updateNowPlayingButtonVisibility;
 - (void)dealloc;
-- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)getContentItemsWithCompletionBlock:(id)arg1;
 - (id)initWithModel:(id)arg1 indexPath:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -52,11 +52,11 @@
 - (void)model:(id)arg1 didUpdateContentItemsAtIndexPaths:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableViewDidFinishReload:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

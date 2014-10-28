@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) GEOMapServiceTraits * traits;
 
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithAutoCompleteRequest:(id)arg1 traits:(id)arg2;
-- (bool)matchesFragment:(id)arg1;
+- (BOOL)matchesFragment:(id)arg1;
 - (void)submitWithAutoCompletionHandler:(id)arg1 networkActivity:(id)arg2;
 - (id)traits;
 

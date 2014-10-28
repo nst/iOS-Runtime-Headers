@@ -9,12 +9,12 @@
     NSString *_path;
 }
 
-- (bool)_lockBlocking:(bool)arg1;
+- (BOOL)_lockBlocking:(BOOL)arg1;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (void)lock;
-- (bool)tryLock;
+- (BOOL)tryLock;
 - (void)unlock;
 
 @end

@@ -6,26 +6,26 @@
 
 @interface SBUIBannerTargetProxy : NSObject <SBUIBannerTarget> {
     void *_identifier;
-    long long _idiom;
+    int _idiom;
     <SBUIBannerTargetImplementation> *_implementation;
 }
 
 @property(readonly) void* bannerTargetIdentifier;
-@property(readonly) long long bannerTargetIdiom;
+@property(readonly) int bannerTargetIdiom;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void*)bannerTargetIdentifier;
-- (long long)bannerTargetIdiom;
+- (int)bannerTargetIdiom;
 - (void)cacheBannerForContext:(id)arg1 withCompletion:(id)arg2;
 - (id)currentBannerContextForSource:(id)arg1;
 - (id)description;
 - (void)dismissCurrentBannerContextForSource:(id)arg1;
 - (id)initWithTargetImplementation:(id)arg1;
 - (void)invalidate;
-- (bool)isShowingModalBanner;
+- (BOOL)isShowingModalBanner;
 - (void)modallyPresentBannerWithContext:(id)arg1;
 - (void)registerSource:(id)arg1;
 - (void)removeCachedBannerForContext:(id)arg1;

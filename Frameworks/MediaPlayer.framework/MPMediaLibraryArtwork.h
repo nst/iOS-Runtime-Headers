@@ -15,7 +15,7 @@
 @property(readonly) NSURL * originalFileURL;
 @property(retain) NSArray * validSizes;
 
-+ (bool)artworkExistsForRequest:(id)arg1;
++ (BOOL)artworkExistsForRequest:(id)arg1;
 + (void)cancelLoadingArtworkForRequest:(id)arg1;
 + (id)existingArtworkWithRequest:(id)arg1;
 + (void)loadArtworkForRequest:(id)arg1 completionHandler:(id)arg2;
@@ -23,9 +23,9 @@
 - (void).cxx_destruct;
 - (id)artwork;
 - (id)artworkRequest;
-- (unsigned long long)hash;
-- (id)imageFileURLForSize:(struct CGSize { double x1; double x2; })arg1;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)imageFileURLForSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)originalFileURL;
 - (void)setArtwork:(id)arg1;
 - (void)setArtworkRequest:(id)arg1;

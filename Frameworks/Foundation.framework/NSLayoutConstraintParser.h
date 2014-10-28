@@ -8,22 +8,22 @@
     NSMutableArray *_alignmentConstraints;
     NSMutableArray *_constraints;
     <NSLayoutItem> *_containerView;
-    unsigned long long _currentCharacter;
+    unsigned int _currentCharacter;
     NSMutableArray *_incompleteConstraints;
     NSString *_line;
     const char *_lineChars;
-    unsigned long long _lineLength;
+    unsigned int _lineLength;
     NSDictionary *_metrics;
-    unsigned long long _opts;
+    unsigned int _opts;
     <NSLayoutItem> *_parsedConstrainedWidthView;
     <NSLayoutItem> *_parsedLeftView;
     <NSLayoutItem> *_parsedRightView;
     NSMutableArray *_unflushedWidthConstraints;
+    BOOL _useHorizontalArrangement;
     NSDictionary *_views;
-    bool_useHorizontalArrangement;
 }
 
-+ (id)constraintsWithVisualFormat:(id)arg1 options:(unsigned long long)arg2 metrics:(id)arg3 views:(id)arg4;
++ (id)constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4;
 
 - (id)constraints;
 - (void)dealloc;
@@ -33,17 +33,17 @@
 - (void)findContainerView;
 - (void)finishConstraint;
 - (void)flushWidthConstraints;
-- (id)initWithFormat:(id)arg1 options:(unsigned long long)arg2 metrics:(id)arg3 views:(id)arg4;
+- (id)initWithFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4;
 - (id)layoutItemForKey:(id)arg1;
 - (id)metricForKey:(id)arg1;
 - (void)parse;
 - (void)parseConnection;
-- (double)parseConstant;
+- (float)parseConstant;
 - (void)parseOp;
 - (void)parsePredicate;
 - (void)parsePredicateList;
 - (void)parsePredicateWithParentheses;
 - (id)parseView;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfName;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfName;
 
 @end

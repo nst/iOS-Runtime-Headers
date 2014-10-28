@@ -5,8 +5,8 @@
 @interface _PFEncodedString : _PFString {
 }
 
-- (bool)_isDeallocating;
-- (bool)_tryRetain;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (Class)classForArchiver;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -14,6 +14,6 @@
 - (id)init;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

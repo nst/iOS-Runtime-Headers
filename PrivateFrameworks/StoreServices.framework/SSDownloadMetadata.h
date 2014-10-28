@@ -6,7 +6,7 @@
 
 @interface SSDownloadMetadata : NSObject <SSXPCCoding, NSCoding, NSCopying> {
     NSMutableDictionary *_dictionary;
-    long long _keyStyle;
+    int _keyStyle;
     NSLock *_lock;
 }
 
@@ -14,9 +14,9 @@
 @property(retain,readonly) NSData * appReceiptData;
 @property unsigned long long artistIdentifier;
 @property(copy) NSString * artistName;
-@property(getter=isAutomaticDownload) bool automaticDownload;
+@property(getter=isAutomaticDownload) BOOL automaticDownload;
 @property(retain) NSURL * cancelDownloadURL;
-@property(getter=isContentRestricted,readonly) bool contentRestricted;
+@property(getter=isContentRestricted,readonly) BOOL contentRestricted;
 @property(retain) NSString * copyright;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
@@ -28,9 +28,9 @@
 @property(retain) NSURL * fullSizeImageURL;
 @property(retain) NSString * genre;
 @property unsigned long long genreIdentifier;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property unsigned long long itemIdentifier;
-@property long long keyStyle;
+@property int keyStyle;
 @property(retain) NSString * kind;
 @property(retain) NSURL * launchExtrasUrl;
 @property(copy) NSString * longDescription;
@@ -41,13 +41,13 @@
 @property(readonly) NSDictionary * primaryAssetDictionary;
 @property(retain) NSURL * primaryAssetURL;
 @property(copy) NSString * redownloadActionParameters;
-@property(getter=isRedownloadDownload) bool redownloadDownload;
+@property(getter=isRedownloadDownload) BOOL redownloadDownload;
 @property(retain) NSDate * releaseDate;
 @property(retain) NSString * releaseDateString;
 @property(retain) NSNumber * releaseYear;
 @property(copy) id requiredDeviceCapabilities;
 @property(copy) NSString * shortDescription;
-@property bool shouldDownloadAutomatically;
+@property BOOL shouldDownloadAutomatically;
 @property(retain) NSArray * sinfs;
 @property(retain) NSString * sortArtistName;
 @property(retain) NSString * sortCollectionName;
@@ -78,7 +78,7 @@
 - (id)applicationIdentifier;
 - (unsigned long long)artistIdentifier;
 - (id)artistName;
-- (bool)artworkIsPrerendered;
+- (BOOL)artworkIsPrerendered;
 - (id)bundleIdentifier;
 - (id)cancelDownloadURL;
 - (id)cloudIdentifier;
@@ -115,16 +115,16 @@
 - (id)initWithItem:(id)arg1;
 - (id)initWithKind:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isAutomaticDownload;
-- (bool)isCompilation;
-- (bool)isContentRestricted;
-- (bool)isExplicitContent;
-- (bool)isHighDefinition;
-- (bool)isRedownloadDownload;
-- (bool)isRental;
-- (bool)isSample;
+- (BOOL)isAutomaticDownload;
+- (BOOL)isCompilation;
+- (BOOL)isContentRestricted;
+- (BOOL)isExplicitContent;
+- (BOOL)isHighDefinition;
+- (BOOL)isRedownloadDownload;
+- (BOOL)isRental;
+- (BOOL)isSample;
 - (unsigned long long)itemIdentifier;
-- (long long)keyStyle;
+- (int)keyStyle;
 - (id)kind;
 - (id)launchExtrasUrl;
 - (id)longDescription;
@@ -153,8 +153,8 @@
 - (id)seriesName;
 - (void)setArtistIdentifier:(unsigned long long)arg1;
 - (void)setArtistName:(id)arg1;
-- (void)setArtworkIsPrerendered:(bool)arg1;
-- (void)setAutomaticDownload:(bool)arg1;
+- (void)setArtworkIsPrerendered:(BOOL)arg1;
+- (void)setAutomaticDownload:(BOOL)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCancelDownloadURL:(id)arg1;
 - (void)setCloudIdentifier:(id)arg1;
@@ -162,7 +162,7 @@
 - (void)setCollectionIdentifier:(unsigned long long)arg1;
 - (void)setCollectionIndexInCollectionGroup:(id)arg1;
 - (void)setCollectionName:(id)arg1;
-- (void)setCompilation:(bool)arg1;
+- (void)setCompilation:(BOOL)arg1;
 - (void)setComposerIdentifier:(unsigned long long)arg1;
 - (void)setComposerName:(id)arg1;
 - (void)setContentRating:(id)arg1;
@@ -174,15 +174,15 @@
 - (void)setEpisodeIdentifier:(id)arg1;
 - (void)setEpisodeSortIdentifier:(id)arg1;
 - (void)setEpubRightsData:(id)arg1;
-- (void)setExplicitContent:(bool)arg1;
+- (void)setExplicitContent:(BOOL)arg1;
 - (void)setFileExtension:(id)arg1;
 - (void)setFullSizeImageURL:(id)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setGenreIdentifier:(unsigned long long)arg1;
-- (void)setHighDefinition:(bool)arg1;
+- (void)setHighDefinition:(BOOL)arg1;
 - (void)setIndexInCollection:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
-- (void)setKeyStyle:(long long)arg1;
+- (void)setKeyStyle:(int)arg1;
 - (void)setKind:(id)arg1;
 - (void)setLaunchExtrasUrl:(id)arg1;
 - (void)setLongDescription:(id)arg1;
@@ -200,18 +200,18 @@
 - (void)setPrimaryAssetURL:(id)arg1;
 - (void)setPurchaseDate:(id)arg1;
 - (void)setRedownloadActionParameters:(id)arg1;
-- (void)setRedownloadDownload:(bool)arg1;
+- (void)setRedownloadDownload:(BOOL)arg1;
 - (void)setReleaseDate:(id)arg1;
 - (void)setReleaseDateString:(id)arg1;
 - (void)setReleaseYear:(id)arg1;
-- (void)setRental:(bool)arg1;
+- (void)setRental:(BOOL)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
 - (void)setSagaIdentifier:(unsigned long long)arg1;
-- (void)setSample:(bool)arg1;
+- (void)setSample:(BOOL)arg1;
 - (void)setSeasonNumber:(id)arg1;
 - (void)setSeriesName:(id)arg1;
 - (void)setShortDescription:(id)arg1;
-- (void)setShouldDownloadAutomatically:(bool)arg1;
+- (void)setShouldDownloadAutomatically:(BOOL)arg1;
 - (void)setSinfs:(id)arg1;
 - (void)setSortArtistName:(id)arg1;
 - (void)setSortCollectionName:(id)arg1;
@@ -228,7 +228,7 @@
 - (void)setVideoDetailsDictionary:(id)arg1;
 - (void)setViewStoreItemURL:(id)arg1;
 - (id)shortDescription;
-- (bool)shouldDownloadAutomatically;
+- (BOOL)shouldDownloadAutomatically;
 - (id)sinfs;
 - (id)sortArtistName;
 - (id)sortCollectionName;

@@ -14,7 +14,7 @@
 }
 
 - (void).cxx_destruct;
-- (bool)continueGatheringWithBatchSize:(unsigned long long)arg1;
+- (BOOL)continueGatheringWithBatchSize:(int)arg1;
 - (void)done;
 - (id)initWithNotificationPipe:(id)arg1 reply:(id)arg2;
 - (void)invalidate;

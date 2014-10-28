@@ -17,27 +17,27 @@
     id _defaultHandler;
     NSMutableDictionary *_entitlements;
     NSMutableDictionary *_handlers;
+    BOOL _perPidService;
+    BOOL _running;
     unsigned int _serverPort;
     struct __CFRunLoopSource { } *_serverRunLoopSource;
     NSString *_serviceName;
     NSMutableDictionary *_validSecurityTokens;
-    bool_perPidService;
-    bool_running;
 }
 
 @property(copy) id clientInvalidationCallback;
 @property(copy) id defaultHandler;
 @property(retain) NSMutableDictionary * handlers;
 @property(readonly) unsigned int machPort;
-@property bool perPidService;
-@property(getter=isRunning) bool running;
+@property BOOL perPidService;
+@property(getter=isRunning) BOOL running;
 @property(retain) NSString * serviceName;
 
 - (id)_clientIdentificationForAuditToken:(struct { unsigned int x1[8]; })arg1;
-- (bool)_clientWithPort:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 hasAnyEntitlementRequiredForMessage:(id)arg3;
+- (BOOL)_clientWithPort:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 hasAnyEntitlementRequiredForMessage:(id)arg3;
 - (void)_handleClientInvalidation:(unsigned int)arg1;
 - (void)_handleClientRegistration:(id)arg1;
-- (bool)_handleErrorWithMessage:(id)arg1 outError:(id*)arg2;
+- (BOOL)_handleErrorWithMessage:(id)arg1 outError:(id*)arg2;
 - (id)_handleIncomingMessage:(id)arg1 securityToken:(struct { unsigned int x1[2]; })arg2 auditToken:(struct { unsigned int x1[8]; })arg3 clientPort:(unsigned int)arg4;
 - (void)_startServerThread;
 - (void)addPossibleRequiredEntitlement:(id)arg1 forMessageWithKey:(int)arg2;
@@ -47,10 +47,10 @@
 - (id)description;
 - (id)handlers;
 - (id)initWithPort:(unsigned int)arg1 serviceRunLoopSource:(struct __CFRunLoopSource { }*)arg2;
-- (id)initWithServiceName:(id)arg1 perPidService:(bool)arg2;
-- (bool)isRunning;
+- (id)initWithServiceName:(id)arg1 perPidService:(BOOL)arg2;
+- (BOOL)isRunning;
 - (unsigned int)machPort;
-- (bool)perPidService;
+- (BOOL)perPidService;
 - (void)removeAllHandlersForTarget:(id)arg1;
 - (void)removeHandlerForKey:(int)arg1;
 - (void)removePossibleRequiredEntitlement:(id)arg1 forMessageWithKey:(int)arg2;
@@ -61,11 +61,11 @@
 - (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3 possibleRequiredEntitlements:(id)arg4;
 - (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3;
 - (void)setHandlers:(id)arg1;
-- (void)setPerPidService:(bool)arg1;
-- (void)setRunning:(bool)arg1;
+- (void)setPerPidService:(BOOL)arg1;
+- (void)setRunning:(BOOL)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setServiceRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
-- (bool)startServerWithError:(id*)arg1;
-- (bool)stopServerWithError:(id*)arg1;
+- (BOOL)startServerWithError:(id*)arg1;
+- (BOOL)stopServerWithError:(id*)arg1;
 
 @end

@@ -6,23 +6,23 @@
 
 @interface _MFOutgoingMessageBody : MFMessageBody <MFCollectingDataConsumer> {
     MFBufferedDataConsumer *_consumer;
-    unsigned long long _count;
+    unsigned long _count;
+    BOOL _lastNewLine;
     NSData *_rawData;
-    bool_lastNewLine;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (long long)appendData:(id)arg1;
-- (unsigned long long)count;
+- (int)appendData:(id)arg1;
+- (unsigned long)count;
 - (id)data;
 - (void)dealloc;
 - (void)done;
 - (id)init;
-- (bool)isLastCharacterNewLine;
+- (BOOL)isLastCharacterNewLine;
 - (id)rawData;
 
 @end

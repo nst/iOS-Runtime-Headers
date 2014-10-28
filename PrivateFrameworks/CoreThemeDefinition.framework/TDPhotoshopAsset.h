@@ -12,8 +12,8 @@
 - (id)_activeProductionWithRenditionsInProductions:(id)arg1;
 - (id)_productionWithRenditionsInProductions:(id)arg1;
 - (id)copyDataFromAttributes;
-- (bool)hasCursorProduction;
-- (bool)hasProduction;
+- (BOOL)hasCursorProduction;
+- (BOOL)hasProduction;
 - (id)production;
 - (void)setAttributesFromCopyData:(id)arg1;
 

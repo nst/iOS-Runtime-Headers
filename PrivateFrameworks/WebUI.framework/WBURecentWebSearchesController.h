@@ -9,7 +9,7 @@
     NSString *_preferencesDomain;
 }
 
-+ (unsigned long long)_maximumNumberOfSearchesToTrack;
++ (unsigned int)_maximumNumberOfSearchesToTrack;
 
 - (void).cxx_destruct;
 - (void)_migrateLegacyData;

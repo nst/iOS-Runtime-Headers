@@ -7,34 +7,34 @@
 @interface SKUIMenuViewController : UITableViewController {
     UIColor *_borderColor;
     <SKUIMenuViewControllerDelegate> *_delegate;
-    long long _indexOfCheckedTitle;
+    int _indexOfCheckedTitle;
     NSArray *_menuImages;
-    long long _menuStyle;
+    int _menuStyle;
     NSArray *_menuTitles;
 }
 
 @property <SKUIMenuViewControllerDelegate> * delegate;
-@property long long indexOfCheckedTitle;
+@property int indexOfCheckedTitle;
 @property(readonly) NSArray * menuImages;
-@property long long menuStyle;
+@property int menuStyle;
 @property(readonly) NSArray * menuTitles;
 
 - (void).cxx_destruct;
 - (void)_reloadViewStyling;
 - (id)delegate;
-- (long long)indexOfCheckedTitle;
+- (int)indexOfCheckedTitle;
 - (id)initWithMenuTitles:(id)arg1 images:(id)arg2;
 - (id)initWithMenuTitles:(id)arg1;
 - (void)loadView;
 - (id)menuImages;
-- (long long)menuStyle;
+- (int)menuStyle;
 - (id)menuTitles;
 - (void)setDelegate:(id)arg1;
-- (void)setIndexOfCheckedTitle:(long long)arg1;
-- (void)setMenuStyle:(long long)arg1;
+- (void)setIndexOfCheckedTitle:(int)arg1;
+- (void)setMenuStyle:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

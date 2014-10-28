@@ -6,20 +6,20 @@
 
 @interface FBUIApplicationResignActiveAssertion : NSObject {
     FBSDisplay *_display;
-    long long _reason;
-    bool_relinquished;
+    int _reason;
+    BOOL _relinquished;
 }
 
 @property(retain) FBSDisplay * display;
-@property long long reason;
+@property int reason;
 
 - (void)dealloc;
 - (id)description;
 - (id)display;
-- (id)initWithReason:(long long)arg1 forDisplay:(id)arg2;
-- (long long)reason;
+- (id)initWithReason:(int)arg1 forDisplay:(id)arg2;
+- (int)reason;
 - (void)relinquish;
 - (void)setDisplay:(id)arg1;
-- (void)setReason:(long long)arg1;
+- (void)setReason:(int)arg1;
 
 @end

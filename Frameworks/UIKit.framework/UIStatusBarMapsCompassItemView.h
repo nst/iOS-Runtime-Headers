@@ -9,6 +9,6 @@
 }
 
 - (void)dealloc;
-- (double)updateContentsAndWidth;
+- (float)updateContentsAndWidth;
 
 @end

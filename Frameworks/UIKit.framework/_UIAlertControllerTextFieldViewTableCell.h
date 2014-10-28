@@ -10,7 +10,7 @@
 
 @property _UIAlertControllerTextFieldView * textField;
 
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)setTextField:(id)arg1;
 - (id)textField;

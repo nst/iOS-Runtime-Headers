@@ -6,32 +6,32 @@
 
 @interface TSKDocumentSupport : TSPObject <TSKCommandHistoryDelegate> {
     NSString *_cachedRedoActionString;
-    unsigned long long _cachedRedoCount;
+    unsigned int _cachedRedoCount;
     NSString *_cachedUndoActionString;
-    unsigned long long _cachedUndoCount;
+    unsigned int _cachedUndoCount;
     TSPLazyReference *_commandHistoryReference;
     TSPLazyReference *_commandSelectionBehaviorHistoryReference;
     TSPObject *_webState;
 }
 
 @property(readonly) NSString * cachedRedoActionString;
-@property(readonly) unsigned long long cachedRedoCount;
+@property(readonly) unsigned int cachedRedoCount;
 @property(readonly) NSString * cachedUndoActionString;
-@property(readonly) unsigned long long cachedUndoCount;
+@property(readonly) unsigned int cachedUndoCount;
 @property(readonly) TSKCommandHistory * commandHistory;
 @property(readonly) TSKCommandSelectionBehaviorHistory * commandSelectionBehaviorHistory;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool hasCommands;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isDocumentEditedSinceLastSave;
+@property(readonly) BOOL hasCommands;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isDocumentEditedSinceLastSave;
 @property(readonly) Class superclass;
 @property(retain) TSPObject * webState;
 
 - (id)cachedRedoActionString;
-- (unsigned long long)cachedRedoCount;
+- (unsigned int)cachedRedoCount;
 - (id)cachedUndoActionString;
-- (unsigned long long)cachedUndoCount;
+- (unsigned int)cachedUndoCount;
 - (void)clearCommandHistory;
 - (id)commandHistory;
 - (void)commandHistoryChanged:(id)arg1;
@@ -39,10 +39,10 @@
 - (void)dealloc;
 - (void)didLoadCommandHistory:(id)arg1;
 - (void)documentWasSaved;
-- (bool)hasCommands;
+- (BOOL)hasCommands;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (bool)isDocumentEditedSinceLastSave;
+- (BOOL)isDocumentEditedSinceLastSave;
 - (id)newCommandHistoryReference;
 - (id)newCommandSelectionBehaviorHistoryReference;
 - (void)saveToArchiver:(id)arg1;

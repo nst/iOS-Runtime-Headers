@@ -17,7 +17,7 @@
 @property MSMediaStreamDaemon * daemon;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * personID;
 @property(readonly) Class superclass;
 
@@ -28,7 +28,7 @@
 + (void)forgetPersonID:(id)arg1;
 + (int)intValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(int)arg3;
 + (long long)longLongValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(long long)arg3;
-+ (long long)longValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(long long)arg3;
++ (long)longValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(long)arg3;
 + (id)objectForKey:(id)arg1 forPersonID:(id)arg2 defaultValue:(id)arg3;
 
 - (void).cxx_destruct;

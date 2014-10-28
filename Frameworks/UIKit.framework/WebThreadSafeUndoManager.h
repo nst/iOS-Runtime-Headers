@@ -5,7 +5,7 @@
 @interface WebThreadSafeUndoManager : NSUndoManager {
 }
 
-- (bool)_alwaysShowEditAlertView;
+- (BOOL)_alwaysShowEditAlertView;
 - (void)redo;
 - (void)undo;
 

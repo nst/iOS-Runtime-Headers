@@ -6,7 +6,7 @@
 }
 
 - (void)didUpdateLayer:(id)arg1;
-- (bool)directlyManagesLayerContent;
+- (BOOL)directlyManagesLayerContent;
 - (Class)layerClass;
 
 @end

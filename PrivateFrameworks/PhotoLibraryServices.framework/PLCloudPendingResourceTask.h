@@ -5,10 +5,10 @@
 @class CPLResourceTransferTask, NSDate, NSMutableDictionary;
 
 @interface PLCloudPendingResourceTask : NSObject {
+    BOOL _completed;
     NSDate *_lastUpdated;
     NSMutableDictionary *_pendingTasks;
     CPLResourceTransferTask *_transferTask;
-    bool_completed;
 }
 
 - (id)addProgressBlock:(id)arg1 completionHandler:(id)arg2;

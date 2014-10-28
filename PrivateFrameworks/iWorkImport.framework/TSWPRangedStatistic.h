@@ -6,8 +6,8 @@
 
 @interface TSWPRangedStatistic : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     } range;
     TSWPTextStatistics *statistics;
 }

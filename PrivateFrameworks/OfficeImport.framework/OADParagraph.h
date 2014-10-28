@@ -18,12 +18,12 @@
 - (id)addTextLineBreak;
 - (void)applyProperties:(id)arg1;
 - (id)bulletCharacterProperties;
-- (unsigned long long)characterCount;
+- (unsigned int)characterCount;
 - (void)dealloc;
 - (id)findFirstTextRunOfClass:(Class)arg1;
-- (bool)hasBulletCharacterProperties;
+- (BOOL)hasBulletCharacterProperties;
 - (id)init;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (id)paragraphEndCharacterProperties;
 - (id)plainText;
 - (id)properties;
@@ -31,7 +31,7 @@
 - (void)removeUnnecessaryOverrides;
 - (void)setParagraphEndCharacterProperties:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
-- (id)textRunAtIndex:(unsigned long long)arg1;
-- (unsigned long long)textRunCount;
+- (id)textRunAtIndex:(unsigned int)arg1;
+- (unsigned int)textRunCount;
 
 @end

@@ -14,7 +14,7 @@
 @property(retain) CKServerChangeToken * serverChangeToken;
 
 + (id)loadFromClientStateInDBManager:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

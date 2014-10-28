@@ -16,10 +16,10 @@
 - (id)color;
 - (void)dealloc;
 - (float)distance;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithShadowEffect:(id)arg1 type:(int)arg2;
 - (id)initWithType:(int)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setAngle:(float)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setColor:(id)arg1;

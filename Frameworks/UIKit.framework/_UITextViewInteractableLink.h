@@ -10,11 +10,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSURL * link;
 @property(readonly) Class superclass;
 
-+ (id)interactableLinkWithURL:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
++ (id)interactableLinkWithURL:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
 - (void)_dataDetectorAction:(id)arg1;
 - (void)_linkInteractionAddToReadingList;
@@ -23,7 +23,7 @@
 - (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 - (void)actionDidFinish:(id)arg1;
 - (id)actions;
-- (bool)allowInteraction;
+- (BOOL)allowInteraction;
 - (id)dataDetectorActionsForTextView:(id)arg1;
 - (void)dealloc;
 - (id)defaultAction;

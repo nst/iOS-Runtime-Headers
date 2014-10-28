@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_prepareLayout;
-- (bool)matchParentHeight;
+- (BOOL)matchParentHeight;
 - (void)viewDidLoad;
 
 @end

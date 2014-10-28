@@ -14,7 +14,7 @@
     id _parameterizedAttributeCallback;
     id _performActionCallback;
     id _setAttributeCallback;
-    bool_systemWideServer;
+    BOOL _systemWideServer;
 }
 
 @property(copy) id applicationElementCallback;
@@ -24,7 +24,7 @@
 @property(copy) id parameterizedAttributeCallback;
 @property(copy) id performActionCallback;
 @property(copy) id setAttributeCallback;
-@property bool systemWideServer;
+@property BOOL systemWideServer;
 
 + (id)sharedManager;
 
@@ -42,8 +42,8 @@
 - (void)setParameterizedAttributeCallback:(id)arg1;
 - (void)setPerformActionCallback:(id)arg1;
 - (void)setSetAttributeCallback:(id)arg1;
-- (void)setSystemWideServer:(bool)arg1;
+- (void)setSystemWideServer:(BOOL)arg1;
 - (void)start;
-- (bool)systemWideServer;
+- (BOOL)systemWideServer;
 
 @end

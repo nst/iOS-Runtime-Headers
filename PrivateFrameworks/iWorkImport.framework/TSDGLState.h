@@ -19,7 +19,7 @@
 
 - (id)copyCurrentGLStateSnapshot;
 - (id)currentGLStateSnapshot;
-- (id)currentGLStateSnapshotValidatingCurrentState:(bool)arg1;
+- (id)currentGLStateSnapshotValidatingCurrentState:(BOOL)arg1;
 - (unsigned int)currentGL_ACTIVE_TEXTURE;
 - (struct { int x1; int x2; int x3; int x4; })currentGL_VIEWPORT;
 - (void)dealloc;
@@ -29,7 +29,7 @@
 - (id)glGetIntegerv;
 - (id)glViewport;
 - (id)initWithGLContext:(id)arg1;
-- (void)p_setEnum:(unsigned int)arg1 enabled:(bool)arg2;
+- (void)p_setEnum:(unsigned int)arg1 enabled:(BOOL)arg2;
 - (id)popGLState;
 - (void)pushGLState;
 - (void)setCurrentGLStateSnapshot:(id)arg1;

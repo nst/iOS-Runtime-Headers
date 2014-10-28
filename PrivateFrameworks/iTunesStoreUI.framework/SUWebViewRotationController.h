@@ -5,7 +5,7 @@
 @interface SUWebViewRotationController : SURotationController {
 }
 
-- (void)finishRotationFromInterfaceOrientation:(long long)arg1;
-- (void)prepareToRotateToInterfaceOrientation:(long long)arg1;
+- (void)finishRotationFromInterfaceOrientation:(int)arg1;
+- (void)prepareToRotateToInterfaceOrientation:(int)arg1;
 
 @end

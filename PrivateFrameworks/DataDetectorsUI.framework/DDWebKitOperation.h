@@ -18,17 +18,17 @@
 @property int startOffset;
 
 - (void)_applyContainerRestrictionsToTypes;
-- (bool)_containerReadyForDetection;
+- (BOOL)_containerReadyForDetection;
 - (struct __DDScanQuery { }*)_createScanQueryForBackend;
-- (bool)_rangeValidForContainer;
+- (BOOL)_rangeValidForContainer;
 - (void)_updateGenerationNumber;
 - (void)cleanup;
-- (bool)containerIsReady;
+- (BOOL)containerIsReady;
 - (void)dispatchContainerModificationBlock:(id)arg1;
-- (bool)doURLificationOnDocument;
+- (BOOL)doURLificationOnDocument;
 - (id)endNode;
 - (int)endOffset;
-- (bool)needsToStartOver;
+- (BOOL)needsToStartOver;
 - (id)newOperationForContinuation;
 - (id)newOperationForStartingOver;
 - (void)setEndNode:(id)arg1;

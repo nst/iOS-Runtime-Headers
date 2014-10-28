@@ -3,23 +3,23 @@
  */
 
 @interface OADLinearShade : OADShade {
-    boolmIsAngleOverridden;
-    boolmIsScaledOverridden;
-    boolmScaled;
     float mAngle;
+    BOOL mIsAngleOverridden;
+    BOOL mIsScaledOverridden;
+    BOOL mScaled;
 }
 
 + (id)defaultProperties;
 
 - (float)angle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
-- (bool)isAngleOverridden;
-- (bool)isEqual:(id)arg1;
-- (bool)isScaledOverridden;
-- (bool)scaled;
+- (BOOL)isAngleOverridden;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isScaledOverridden;
+- (BOOL)scaled;
 - (void)setAngle:(float)arg1;
-- (void)setScaled:(bool)arg1;
+- (void)setScaled:(BOOL)arg1;
 
 @end

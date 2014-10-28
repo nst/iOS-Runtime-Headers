@@ -8,7 +8,7 @@
     NSDictionary *_attributes;
     GKButton *_button;
     <GKRemoteUIAuxiliaryViewDelegate> *_delegate;
-    double _height;
+    float _height;
     GKLabel *_label;
     int _layoutStyle;
     NSArray *_replaceableConstraints;
@@ -20,8 +20,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <GKRemoteUIAuxiliaryViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property double height;
+@property(readonly) unsigned int hash;
+@property float height;
 @property(retain) GKLabel * label;
 @property int layoutStyle;
 @property(retain) NSArray * replaceableConstraints;
@@ -30,7 +30,7 @@
 
 - (void)applyConstraints;
 - (id)attributes;
-- (double)bottomMargin;
+- (float)bottomMargin;
 - (id)button;
 - (void)buttonTapped:(id)arg1;
 - (void)createButtonWithAttributes:(id)arg1;
@@ -38,28 +38,28 @@
 - (void)createSubLabelWithAttributes:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (double)height;
+- (float)height;
 - (id)initWithAttributes:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)label;
-- (double)labelBaselineOffset;
-- (double)labelBaselineToButtonBaselineOffset;
-- (double)labelBaselineToSubLabelTopOffset;
-- (double)labelTopOffset;
+- (float)labelBaselineOffset;
+- (float)labelBaselineToButtonBaselineOffset;
+- (float)labelBaselineToSubLabelTopOffset;
+- (float)labelTopOffset;
 - (int)layoutStyle;
-- (double)leftMargin;
+- (float)leftMargin;
 - (void)objectModelDidChange:(id)arg1;
 - (id)replaceableConstraints;
-- (double)rightMargin;
+- (float)rightMargin;
 - (void)setAttributes:(id)arg1;
 - (void)setButton:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHeight:(double)arg1;
+- (void)setHeight:(float)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLayoutStyle:(int)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
 - (void)setSubLabel:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subLabel;
 
 @end

@@ -7,7 +7,7 @@
 @interface IKDOMElement : IKDOMNode <IKJSDOMElement, IKJSDOMParentNode> {
 }
 
-@property(readonly) unsigned long long childElementCount;
+@property(readonly) unsigned long childElementCount;
 @property(readonly) IKDOMHTMLCollection * children;
 @property(readonly) IKDOMElement * firstElementChild;
 @property(readonly) IKDOMElement * lastElementChild;
@@ -15,17 +15,17 @@
 
 - (id)attributes;
 - (id)childElementByTagName:(id)arg1;
-- (unsigned long long)childElementCount;
+- (unsigned long)childElementCount;
 - (id)childElements;
 - (id)childElementsByTagName:(id)arg1;
 - (id)children;
 - (id)firstElementChild;
 - (id)getAttribute:(id)arg1;
 - (id)getElementsByTagName:(id)arg1;
-- (bool)hasAttribute:(id)arg1;
+- (BOOL)hasAttribute:(id)arg1;
 - (id)lastElementChild;
 - (id)nodeName;
-- (long long)nodeType;
+- (int)nodeType;
 - (void)removeAttribute:(id)arg1;
 - (void)setAttribute:(id)arg1 :(id)arg2;
 - (void)setAttributeValue:(id)arg1 withName:(id)arg2;

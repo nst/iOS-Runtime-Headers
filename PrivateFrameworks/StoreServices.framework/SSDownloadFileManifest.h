@@ -6,17 +6,17 @@
 
 @interface SSDownloadFileManifest : NSObject {
     SSXPCConnection *_connection;
-    long long _manifestType;
+    int _manifestType;
 }
 
-@property(readonly) long long manifestType;
+@property(readonly) int manifestType;
 
 - (void)_removeItemsWithAssetPaths:(id)arg1 completionBlock:(id)arg2;
 - (void)dealloc;
-- (void)getPathsForFilesWithClass:(long long)arg1 completionBlock:(id)arg2;
+- (void)getPathsForFilesWithClass:(int)arg1 completionBlock:(id)arg2;
 - (id)init;
-- (id)initWithManifestType:(long long)arg1;
-- (long long)manifestType;
+- (id)initWithManifestType:(int)arg1;
+- (int)manifestType;
 - (void)rebuildManifestWithCompletionBlock:(id)arg1;
 - (void)removeItemWithAssetPath:(id)arg1 completionBlock:(id)arg2;
 - (void)removeItemsWithAssetPaths:(id)arg1 completionBlock:(id)arg2;

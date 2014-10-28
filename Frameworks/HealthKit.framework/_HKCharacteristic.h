@@ -5,9 +5,9 @@
 @interface _HKCharacteristic : NSObject {
 }
 
-+ (bool)_validateBiologicalSex:(id)arg1 error:(id*)arg2;
-+ (bool)_validateBloodType:(id)arg1 error:(id*)arg2;
-+ (bool)_validateCharacteristic:(id)arg1 forDataType:(id)arg2 error:(id*)arg3;
-+ (bool)_validateDateOfBirth:(id)arg1 error:(id*)arg2;
++ (BOOL)_validateBiologicalSex:(id)arg1 error:(id*)arg2;
++ (BOOL)_validateBloodType:(id)arg1 error:(id*)arg2;
++ (BOOL)_validateCharacteristic:(id)arg1 forDataType:(id)arg2 error:(id*)arg3;
++ (BOOL)_validateDateOfBirth:(id)arg1 error:(id*)arg2;
 
 @end

@@ -2,18 +2,27 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIView;
+@class NSLayoutConstraint, UITapGestureRecognizer, UIView;
 
 @interface PKPaymentAuthorizationPresentationController : UIPresentationController {
+    struct CGSize { 
+        float width; 
+        float height; 
     UIView *_dimmingView;
+    NSLayoutConstraint *_leftConstraint;
+    } _preferredContentSize;
+    NSLayoutConstraint *_rightConstraint;
+    UITapGestureRecognizer *_tap;
+    NSLayoutConstraint *_topConstraint;
 }
 
 - (void)_dimmingViewTapped:(id)arg1;
 - (void)containerViewWillLayoutSubviews;
+- (void)dealloc;
 - (void)dismissalTransitionWillBegin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)presentationTransitionWillBegin;
+- (BOOL)shouldRemovePresentersView;
 
 @end

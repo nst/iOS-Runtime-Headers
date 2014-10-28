@@ -14,8 +14,8 @@
 }
 
 @property(retain) GEOURLCamera * camera;
-@property(readonly) bool hasCamera;
-@property bool hasMapType;
+@property(readonly) BOOL hasCamera;
+@property BOOL hasMapType;
 @property int mapType;
 @property(readonly) PBUnknownFields * unknownFields;
 
@@ -25,15 +25,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCamera;
-- (bool)hasMapType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCamera;
+- (BOOL)hasMapType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (int)mapType;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCamera:(id)arg1;
-- (void)setHasMapType:(bool)arg1;
+- (void)setHasMapType:(BOOL)arg1;
 - (void)setMapType:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

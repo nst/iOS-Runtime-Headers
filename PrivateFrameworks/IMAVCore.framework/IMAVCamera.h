@@ -8,24 +8,24 @@
     id _internalDevice;
 }
 
-@property(readonly) long long cameraStyle;
-@property(readonly) bool hasShutter;
-@property(readonly) bool isShutterOpen;
-@property(readonly) bool isSuspended;
-@property(readonly) bool isWideScreen;
+@property(readonly) int cameraStyle;
+@property(readonly) BOOL hasShutter;
+@property(readonly) BOOL isShutterOpen;
+@property(readonly) BOOL isSuspended;
+@property(readonly) BOOL isWideScreen;
 @property(retain,readonly) NSString * name;
 @property(retain,readonly) NSString * uniqueID;
 
 - (id)_AVCamera;
 - (id)_initWithAVCamera:(id)arg1;
-- (long long)cameraStyle;
+- (int)cameraStyle;
 - (void)dealloc;
 - (id)description;
-- (bool)hasShutter;
+- (BOOL)hasShutter;
 - (id)init;
-- (bool)isShutterOpen;
-- (bool)isSuspended;
-- (bool)isWideScreen;
+- (BOOL)isShutterOpen;
+- (BOOL)isSuspended;
+- (BOOL)isWideScreen;
 - (id)name;
 - (id)uniqueID;
 

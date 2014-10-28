@@ -7,18 +7,18 @@
 @interface FigCaptureSinkConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSString *_sinkID;
     int _sinkType;
-    bool_videoDataDerivedFromPreview;
-    bool_videoDataDiscardsLateVideoFrames;
+    BOOL _videoDataDerivedFromPreview;
+    BOOL _videoDataDiscardsLateVideoFrames;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * sinkID;
 @property int sinkType;
 @property(readonly) Class superclass;
-@property bool videoDataDerivedFromPreview;
-@property bool videoDataDiscardsLateVideoFrames;
+@property BOOL videoDataDerivedFromPreview;
+@property BOOL videoDataDiscardsLateVideoFrames;
 
 + (void)initialize;
 + (int)sinkTypeForString:(id)arg1;
@@ -30,14 +30,14 @@
 - (id)description;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setSinkID:(id)arg1;
 - (void)setSinkType:(int)arg1;
-- (void)setVideoDataDerivedFromPreview:(bool)arg1;
-- (void)setVideoDataDiscardsLateVideoFrames:(bool)arg1;
+- (void)setVideoDataDerivedFromPreview:(BOOL)arg1;
+- (void)setVideoDataDiscardsLateVideoFrames:(BOOL)arg1;
 - (id)sinkID;
 - (int)sinkType;
-- (bool)videoDataDerivedFromPreview;
-- (bool)videoDataDiscardsLateVideoFrames;
+- (BOOL)videoDataDerivedFromPreview;
+- (BOOL)videoDataDiscardsLateVideoFrames;
 
 @end

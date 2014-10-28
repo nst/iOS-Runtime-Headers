@@ -12,15 +12,15 @@
     ACAccount *_account;
     CLLocation *_currentLocation;
     NSObject<SLPlaceDataSourceDelegate> *_delegate;
+    BOOL _disableTimeout;
+    BOOL _isCanceled;
+    BOOL _isUpdatingLocation;
     CLLocationManager *_locationManager;
     NSMutableData *_placeData;
     id _queuedSearchRequest;
     double _timeout;
     NSURLConnection *_urlConnection;
     NSHTTPURLResponse *_urlResponse;
-    bool_disableTimeout;
-    bool_isCanceled;
-    bool_isUpdatingLocation;
 }
 
 @property(retain) ACAccount * account;
@@ -29,7 +29,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property NSObject<SLPlaceDataSourceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;

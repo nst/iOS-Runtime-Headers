@@ -6,10 +6,10 @@
 
 @interface _NCWidgetViewController : UIViewController <_NCWidgetViewController_Service_IPC, SBUISizeObservingViewDelegate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     struct { 
         unsigned int implementsPerformUpdateWithCompletionHandler : 1; 
         unsigned int implementsMarginInsets : 1; 
@@ -17,7 +17,7 @@
     _UIViewControllerTransitionContext *_activeTransitionContext;
     NSMapTable *_activeTransitionContextsByRequestID;
     } _clientMarginInsets;
-    double _clientPreferredViewHeight;
+    float _clientPreferredViewHeight;
     UIViewController<NCWidgetProviding> *_contentProvidingViewController;
     } _contentProvidingViewControllerFlags;
     UIView *_contentView;
@@ -30,7 +30,7 @@
 @property(getter=_contentProvidingViewController,retain) UIViewController<NCWidgetProviding> * contentProvidingViewController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)_exportedInterface;
@@ -44,22 +44,22 @@
 - (void)__performUpdateWithReplyHandler:(id)arg1;
 - (void)__requestEncodedLayerTreeWithReplyHandler:(id)arg1;
 - (void)__setWidgetIdentifier:(id)arg1;
-- (void)__viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 requestIdentifier:(id)arg2;
+- (void)__viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 requestIdentifier:(id)arg2;
 - (void)_closeTransactionWithAppearState:(int)arg1;
 - (id)_contentProvidingViewController;
-- (id)_customAnimator:(bool)arg1;
-- (bool)_disableAutomaticKeyboardBehavior;
+- (id)_customAnimator:(BOOL)arg1;
+- (BOOL)_disableAutomaticKeyboardBehavior;
 - (void)_encodeLayerTree:(id)arg1;
 - (void)_enqueueProxyRequest:(id)arg1;
 - (void)_openURL:(id)arg1;
 - (void)_performUpdateWithCompletionHandler:(id)arg1;
 - (void)_requestMarginInsets;
-- (void)_requestPreferredViewHeight:(double)arg1 usingAutolayout:(bool)arg2;
-- (double)_sanitizedClientContentWidthForProposedHostWidth:(double)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sanitizedClientFrameFromHostSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_requestPreferredViewHeight:(float)arg1 usingAutolayout:(BOOL)arg2;
+- (float)_sanitizedClientContentWidthForProposedHostWidth:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sanitizedClientFrameFromHostSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setContentProvidingViewController:(id)arg1;
-- (bool)_shouldRemoveViewFromHierarchyOnDisappear;
-- (id)_transitionContextForRequestIdentifier:(id)arg1 usingAutolayout:(bool)arg2 createIfNecessary:(bool)arg3;
+- (BOOL)_shouldRemoveViewFromHierarchyOnDisappear;
+- (id)_transitionContextForRequestIdentifier:(id)arg1 usingAutolayout:(BOOL)arg2 createIfNecessary:(BOOL)arg3;
 - (id)_transitionContextForRequestIdentifier:(id)arg1;
 - (void)_willAppearInRemoteViewController;
 - (void)beginRequestWithExtensionContext:(id)arg1;
@@ -68,13 +68,13 @@
 - (void)loadView;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setContentProvidingViewController:(id)arg1;
-- (bool)shouldAutomaticallyForwardAppearanceMethods;
-- (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

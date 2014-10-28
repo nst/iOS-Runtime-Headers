@@ -7,8 +7,8 @@
 
 + (id)mixableObjectClasses;
 
-- (bool)canBeginEditingChildRepOnDoubleTap:(id)arg1;
-- (bool)isPlaceholder;
+- (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;
+- (BOOL)isPlaceholder;
 - (id)textureForContext:(id)arg1;
 
 @end

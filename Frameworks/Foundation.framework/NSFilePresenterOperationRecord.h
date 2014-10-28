@@ -7,12 +7,12 @@
 @interface NSFilePresenterOperationRecord : NSObject {
     NSString *operationDescription;
     id reactor;
-    long long state;
+    int state;
 }
 
 @property(readonly) NSString * operationDescription;
 @property id reactor;
-@property(readonly) long long state;
+@property(readonly) int state;
 
 + (id)operationRecordWithDescription:(id)arg1;
 
@@ -23,7 +23,7 @@
 - (id)operationDescription;
 - (id)reactor;
 - (void)setReactor:(id)arg1;
-- (long long)state;
+- (int)state;
 - (void)willEnd;
 
 @end

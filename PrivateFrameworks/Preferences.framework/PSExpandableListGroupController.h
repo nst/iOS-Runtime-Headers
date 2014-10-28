@@ -5,24 +5,24 @@
 @class NSMutableArray, NSString, PSListController, PSSpecifier;
 
 @interface PSExpandableListGroupController : NSObject <PSSpecifierGroupController> {
-    long long _collaspeAfterCount;
+    int _collaspeAfterCount;
     PSSpecifier *_groupSpecifier;
     PSListController *_listController;
+    BOOL _showAll;
     PSSpecifier *_showAllSpecifier;
     NSMutableArray *_specifiers;
     PSSpecifier *_spinnerSpecifier;
-    bool_showAll;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (long long)_groupIndex;
+- (int)_groupIndex;
 - (void)addSpecifiers:(id)arg1;
 - (void)dealloc;
-- (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2 collapseAfterCount:(long long)arg3;
+- (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2 collapseAfterCount:(int)arg3;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;
 - (void)reloadSpecifier:(id)arg1;
 - (void)removeAllSpecifiers;

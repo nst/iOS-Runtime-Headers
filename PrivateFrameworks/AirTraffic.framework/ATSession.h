@@ -5,37 +5,37 @@
 @class NSError, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListenerEndpoint;
 
 @interface ATSession : NSObject <ATSessionConnection, NSSecureCoding> {
+    BOOL _cancelled;
     NSXPCConnection *_connection;
     NSXPCListenerEndpoint *_endpoint;
     NSError *_error;
     double _finishTime;
+    BOOL _finished;
     NSObject<OS_dispatch_group> *_group;
     NSString *_localizedDescription;
     NSHashTable *_observers;
     NSMutableSet *_observing;
     double _progress;
     NSObject<OS_dispatch_queue> *_queue;
+    BOOL _running;
     NSString *_sessionIdentifier;
     NSMutableArray *_sessionTasks;
     NSMutableDictionary *_sessionTasksByIdentifier;
     NSString *_sessionTypeIdentifier;
     double _startTime;
-    bool_cancelled;
-    bool_finished;
-    bool_running;
 }
 
-@property(getter=isCancelled) bool cancelled;
+@property(getter=isCancelled) BOOL cancelled;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) double duration;
 @property(retain) NSXPCListenerEndpoint * endpoint;
 @property(copy) NSError * error;
-@property(getter=isFinished) bool finished;
-@property(readonly) unsigned long long hash;
+@property(getter=isFinished) BOOL finished;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * localizedDescription;
 @property double progress;
-@property(getter=isRunning) bool running;
+@property(getter=isRunning) BOOL running;
 @property(retain) NSString * sessionIdentifier;
 @property(retain) NSString * sessionTypeIdentifier;
 @property(readonly) Class superclass;
@@ -44,8 +44,8 @@
 + (id)allSessions;
 + (void)initialize;
 + (id)sessionsWithSessionTypeIdentifier:(id)arg1;
-+ (void)setSessionHost:(bool)arg1;
-+ (bool)supportsSecureCoding;
++ (void)setSessionHost:(BOOL)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_beginTasks:(id)arg1;
@@ -68,9 +68,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSessionTypeIdentifier:(id)arg1;
-- (bool)isCancelled;
-- (bool)isFinished;
-- (bool)isRunning;
+- (BOOL)isCancelled;
+- (BOOL)isFinished;
+- (BOOL)isRunning;
 - (id)localizedDescription;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (double)progress;
@@ -79,13 +79,13 @@
 - (id)sessionTasks;
 - (id)sessionTasksWithGroupingKey:(id)arg1;
 - (id)sessionTypeIdentifier;
-- (void)setCancelled:(bool)arg1;
+- (void)setCancelled:(BOOL)arg1;
 - (void)setEndpoint:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setFinished:(bool)arg1;
+- (void)setFinished:(BOOL)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setProgress:(double)arg1;
-- (void)setRunning:(bool)arg1;
+- (void)setRunning:(BOOL)arg1;
 - (void)setSessionIdentifier:(id)arg1;
 - (void)setSessionTypeIdentifier:(id)arg1;
 - (void)start;

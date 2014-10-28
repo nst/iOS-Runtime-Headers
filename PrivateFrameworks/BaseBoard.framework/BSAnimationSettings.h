@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) double duration;
 @property(readonly) double frameInterval;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain,readonly) CAMediaTimingFunction * timingFunction;
 
@@ -24,7 +24,7 @@
 + (id)settingsWithDuration:(double)arg1 delay:(double)arg2;
 + (id)settingsWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (id)settingsWithDuration:(double)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_initWithDuration:(double)arg1 delay:(double)arg2 frameInterval:(double)arg3 timingFunction:(id)arg4;
 - (void)_setDelay:(double)arg1;
@@ -39,12 +39,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (double)frameInterval;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isSpringAnimation;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isSpringAnimation;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)timingFunction;
 

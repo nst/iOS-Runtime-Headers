@@ -9,7 +9,7 @@
     NSString *_searchString;
 }
 
-@property(readonly) bool hasSearchString;
+@property(readonly) BOOL hasSearchString;
 @property(retain) NSMutableArray * properties;
 @property(retain) NSString * searchString;
 
@@ -21,13 +21,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSearchString;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSearchString;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)properties;
-- (id)propertiesAtIndex:(unsigned long long)arg1;
-- (unsigned long long)propertiesCount;
-- (bool)readFrom:(id)arg1;
+- (id)propertiesAtIndex:(unsigned int)arg1;
+- (unsigned int)propertiesCount;
+- (BOOL)readFrom:(id)arg1;
 - (id)searchString;
 - (void)setProperties:(id)arg1;
 - (void)setSearchString:(id)arg1;

@@ -5,27 +5,27 @@
 @class NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, SSItemImageCollection, SUClientInterface, UIImage;
 
 @interface SUSectionsResponse : NSObject {
+    BOOL _cacheable;
     SUClientInterface *_clientInterface;
     UIImage *_moreListImage;
     UIImage *_moreListSelectedImage;
     NSMutableDictionary *_rawResponseDictionary;
-    long long _responseType;
+    int _responseType;
     NSMutableDictionary *_sectionsCache;
     NSNumber *_shouldResetUserOrdering;
-    bool_cacheable;
 }
 
 @property(readonly) NSArray * allSections;
-@property(getter=isCacheable) bool cacheable;
+@property(getter=isCacheable) BOOL cacheable;
 @property(retain) UIImage * moreListImage;
 @property(readonly) SSItemImageCollection * moreListImageCollection;
 @property(retain) UIImage * moreListSelectedImage;
 @property(readonly) NSString * moreListTitle;
 @property(copy,readonly) NSDictionary * rawResponseDictionary;
-@property(readonly) long long responseType;
+@property(readonly) int responseType;
 @property(readonly) NSArray * sections;
 @property(readonly) NSDictionary * sectionsDictionary;
-@property bool shouldResetUserOrdering;
+@property BOOL shouldResetUserOrdering;
 @property(copy) NSString * storeFrontIdentifier;
 @property(readonly) NSString * versionString;
 
@@ -36,7 +36,7 @@
 - (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
 - (void)_dropImageKeysFromArray:(id)arg1;
 - (void)_dropImageKeysFromDictionary:(id)arg1;
-- (bool)_loadArtworkFromCacheDirectory:(id)arg1;
+- (BOOL)_loadArtworkFromCacheDirectory:(id)arg1;
 - (void)_loadButtonArtworkForSection:(id)arg1 buttons:(id)arg2 cachePath:(id)arg3;
 - (id)_newImageForIdentifier:(id)arg1 variant:(id)arg2 cacheDirectory:(id)arg3;
 - (id)_newSectionsFromDictionary:(id)arg1;
@@ -48,24 +48,24 @@
 - (void)dropEmbeddedImages;
 - (id)init;
 - (id)initWithClientInterface:(id)arg1 cacheDirectory:(id)arg2;
-- (id)initWithClientInterface:(id)arg1 sectionsDictionary:(id)arg2 responseType:(long long)arg3;
-- (bool)isCacheable;
+- (id)initWithClientInterface:(id)arg1 sectionsDictionary:(id)arg2 responseType:(int)arg3;
+- (BOOL)isCacheable;
 - (id)moreListImage;
 - (id)moreListImageCollection;
 - (id)moreListSelectedImage;
 - (id)moreListTitle;
 - (id)rawResponseDictionary;
-- (long long)responseType;
+- (int)responseType;
 - (id)sections;
 - (id)sectionsDictionary;
-- (void)setCacheable:(bool)arg1;
+- (void)setCacheable:(BOOL)arg1;
 - (void)setMoreListImage:(id)arg1;
 - (void)setMoreListSelectedImage:(id)arg1;
-- (void)setShouldResetUserOrdering:(bool)arg1;
+- (void)setShouldResetUserOrdering:(BOOL)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
-- (bool)shouldResetUserOrdering;
+- (BOOL)shouldResetUserOrdering;
 - (id)storeFrontIdentifier;
 - (id)versionString;
-- (bool)writeToCacheDirectory:(id)arg1 error:(id*)arg2;
+- (BOOL)writeToCacheDirectory:(id)arg1 error:(id*)arg2;
 
 @end

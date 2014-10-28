@@ -5,32 +5,32 @@
 @class CKModalTranscriptController, NSString;
 
 @interface CKSMSComposeViewServiceController : UINavigationController <CKTranscriptComposeDelegate, CKSMSComposeViewServiceProtocol> {
+    BOOL _canEditRecipients;
+    BOOL _disableCameraAttachments;
+    BOOL _forceMMS;
     CKModalTranscriptController *_modalTranscriptController;
-    bool_canEditRecipients;
-    bool_disableCameraAttachments;
-    bool_forceMMS;
-    bool_supportsAttachments;
-    bool_supportsMessageInspection;
+    BOOL _supportsAttachments;
+    BOOL _supportsMessageInspection;
 }
 
-@property bool canEditRecipients;
+@property BOOL canEditRecipients;
 @property(copy,readonly) NSString * debugDescription;
 @property id delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) CKModalTranscriptController * modalTranscriptController;
 @property(readonly) Class superclass;
 
 + (id)_exportedInterface;
-+ (bool)_isSecureForRemoteViewService;
++ (BOOL)_isSecureForRemoteViewService;
 + (id)_remoteViewControllerInterface;
 
 - (void)_forceMMSIfNecessary;
 - (void)_willAppearInRemoteViewController;
-- (bool)canEditRecipients;
+- (BOOL)canEditRecipients;
 - (void)dealloc;
 - (void)didCancelComposition:(id)arg1;
-- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)disableCameraAttachments;
 - (void)forceCancelComposition;
 - (void)forceMMS;
@@ -40,20 +40,20 @@
 - (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
 - (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 - (id)modalTranscriptController;
-- (void)setCanEditRecipients:(bool)arg1;
+- (void)setCanEditRecipients:(BOOL)arg1;
 - (void)setModalTranscriptController:(id)arg1;
 - (void)setPendingAddresses:(id)arg1;
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3;
-- (void)setTextEntryContentsVisible:(bool)arg1;
+- (void)setTextEntryContentsVisible:(BOOL)arg1;
 - (void)setUICustomizationData:(id)arg1;
 - (void)showNewMessageCompositionForComposition:(id)arg1;
-- (bool)supportsAttachments;
-- (bool)supportsMessageInspection;
+- (BOOL)supportsAttachments;
+- (BOOL)supportsMessageInspection;
 - (void)transcriptController:(id)arg1 didSelectNewConversation:(id)arg2;
 - (void)transcriptController:(id)arg1 didSendMessageInConversation:(id)arg2;
 - (void)transcriptController:(id)arg1 willSendComposition:(id)arg2 inConversation:(id)arg3;
-- (void)viewDidAppear:(bool)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

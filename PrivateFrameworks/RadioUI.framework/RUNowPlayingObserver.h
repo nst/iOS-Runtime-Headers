@@ -14,7 +14,7 @@
 - (void)_isBannedDidChangeNotification:(id)arg1;
 - (void)_isInWishListDidChangeNotification:(id)arg1;
 - (void)_isLikedDidChangeNotification:(id)arg1;
-- (bool)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
+- (BOOL)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1 playbackCoordinator:(id)arg2;

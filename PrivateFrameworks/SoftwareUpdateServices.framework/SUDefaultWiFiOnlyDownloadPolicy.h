@@ -5,9 +5,9 @@
 @interface SUDefaultWiFiOnlyDownloadPolicy : SUDefaultDownloadPolicy {
 }
 
-+ (unsigned long long)wifiOnlyPeriodInDaysForUpdate:(id)arg1;
++ (unsigned int)wifiOnlyPeriodInDaysForUpdate:(id)arg1;
 
 - (id)initWithDescriptor:(id)arg1;
-- (bool)isDownloadAllowableForCellular;
+- (BOOL)isDownloadAllowableForCellular;
 
 @end

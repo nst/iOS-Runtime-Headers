@@ -12,17 +12,17 @@
     id _handler;
     NSString *_identifier;
     UIImage *_image;
-    unsigned long long _order;
+    unsigned int _order;
     NSString *_title;
 }
 
 @property(copy) id handler;
 @property(copy) NSString * identifier;
 @property(retain) UIImage * image;
-@property unsigned long long order;
+@property unsigned int order;
 @property(copy) NSString * title;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -31,11 +31,11 @@
 - (id)image;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)order;
+- (unsigned int)order;
 - (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setOrder:(unsigned long long)arg1;
+- (void)setOrder:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

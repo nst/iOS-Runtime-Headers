@@ -7,15 +7,15 @@
 @interface TSWPTextParentInfo : NSObject <TSDInfo> {
 }
 
-@property(getter=isAnchoredToText,readonly) bool anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) bool attachedToBodyText;
+@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
+@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isFloatingAboveText,readonly) bool floatingAboveText;
+@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned long long hash;
-@property(getter=isInlineWithText,readonly) bool inlineWithText;
-@property bool matchesObjectPlaceholderGeometry;
+@property(readonly) unsigned int hash;
+@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
+@property BOOL matchesObjectPlaceholderGeometry;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
 @property NSObject<TSDContainerInfo> * parentInfo;
@@ -24,11 +24,11 @@
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)geometry;
-- (bool)isAnchoredToText;
-- (bool)isAttachedToBodyText;
-- (bool)isFloatingAboveText;
-- (bool)isInlineWithText;
-- (bool)isThemeContent;
+- (BOOL)isAnchoredToText;
+- (BOOL)isAttachedToBodyText;
+- (BOOL)isFloatingAboveText;
+- (BOOL)isInlineWithText;
+- (BOOL)isThemeContent;
 - (Class)layoutClass;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;

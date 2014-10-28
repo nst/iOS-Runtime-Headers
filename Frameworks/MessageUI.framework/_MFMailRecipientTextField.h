@@ -3,17 +3,17 @@
  */
 
 @interface _MFMailRecipientTextField : UITextField {
-    bool_isShowingDictationPlaceholder;
+    BOOL _isShowingDictationPlaceholder;
 }
 
-@property(readonly) bool isShowingDictationPlaceholder;
+@property(readonly) BOOL isShowingDictationPlaceholder;
 
 - (void)_handleKeyUIEvent:(id)arg1;
 - (id)_previousKeyResponder;
 - (id)customOverlayContainer;
 - (id)insertDictationResultPlaceholder;
-- (bool)isShowingDictationPlaceholder;
+- (BOOL)isShowingDictationPlaceholder;
 - (void)paste:(id)arg1;
-- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(bool)arg2;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 
 @end

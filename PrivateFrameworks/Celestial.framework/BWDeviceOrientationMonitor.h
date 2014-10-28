@@ -26,7 +26,7 @@
 - (unsigned int)mostRecentPortraitLandscapeOrientation;
 - (id)portraitLandscapeUpdateDelegate;
 - (void)setPortraitLandscapeUpdateDelegate:(id)arg1;
-- (bool)start;
-- (bool)stop;
+- (BOOL)start;
+- (BOOL)stop;
 
 @end

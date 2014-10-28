@@ -17,7 +17,7 @@
 - (void)setSignature:(id)arg1 forAccount:(id)arg2;
 - (void)setSignature:(id)arg1 forEmailAddress:(id)arg2;
 - (void)setSignature:(id)arg1;
-- (void)setUseAccountSignatures:(bool)arg1;
+- (void)setUseAccountSignatures:(BOOL)arg1;
 - (id)signature;
 - (id)signatureForAccount:(id)arg1;
 - (id)signatureForSendingEmailAddress:(id)arg1;
@@ -26,6 +26,6 @@
 - (id)signaturePlainTextForSendingEmailAddress:(id)arg1;
 - (id)signaturePlainTextFormat:(id)arg1;
 - (id)stripSignatureMarkup:(id)arg1;
-- (bool)useAccountSignatures;
+- (BOOL)useAccountSignatures;
 
 @end

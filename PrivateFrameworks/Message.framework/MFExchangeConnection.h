@@ -7,6 +7,6 @@
 
 - (id)_fetchArgumentForMessageSkeletonsWithHeaders:(id)arg1;
 - (id)_fetchArgumentForMessageUidsAndFlags;
-- (bool)_isFetchResponseValid:(id)arg1;
+- (BOOL)_isFetchResponseValid:(id)arg1;
 
 @end

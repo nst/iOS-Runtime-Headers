@@ -7,20 +7,20 @@
 @interface SSVGratisRequestBody : NSObject <NSCopying> {
     NSNumber *_accountID;
     NSMutableDictionary *_additionalParameters;
+    BOOL _backgroundRequest;
     NSArray *_bundleIdentifiers;
     NSArray *_itemIdentifiers;
-    long long _style;
-    bool_backgroundRequest;
+    int _style;
 }
 
 @property(readonly) NSData * JSONBodyData;
 @property(copy) NSNumber * accountIdentifier;
-@property(getter=isBackgroundRequest) bool backgroundRequest;
+@property(getter=isBackgroundRequest) BOOL backgroundRequest;
 @property(readonly) NSMutableDictionary * bodyDictionary;
 @property(copy) NSArray * bundleIdentifiers;
 @property(copy) NSArray * itemIdentifiers;
 @property(readonly) NSData * propertyListBodyData;
-@property(readonly) long long requestStyle;
+@property(readonly) int requestStyle;
 
 - (void).cxx_destruct;
 - (id)JSONBodyData;
@@ -29,13 +29,13 @@
 - (id)bundleIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)initWithRequestStyle:(long long)arg1;
-- (bool)isBackgroundRequest;
+- (id)initWithRequestStyle:(int)arg1;
+- (BOOL)isBackgroundRequest;
 - (id)itemIdentifiers;
 - (id)propertyListBodyData;
-- (long long)requestStyle;
+- (int)requestStyle;
 - (void)setAccountIdentifier:(id)arg1;
-- (void)setBackgroundRequest:(bool)arg1;
+- (void)setBackgroundRequest:(BOOL)arg1;
 - (void)setBundleIdentifiers:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;
 - (void)setValue:(id)arg1 forBodyParameter:(id)arg2;

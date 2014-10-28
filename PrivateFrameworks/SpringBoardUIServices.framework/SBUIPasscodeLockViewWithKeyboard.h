@@ -6,42 +6,42 @@
 
 @interface SBUIPasscodeLockViewWithKeyboard : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate> {
     SBUIAlphanumericPasscodeEntryField *_alphaEntryField;
+    BOOL _disableAnimationsDuringMinMax;
     SBUIRingViewLabelButton *_emergencyCallButton;
     UIView *_emergencyCallLeftFiller;
     UIView *_emergencyCallRightFiller;
     UIView *_emergencyCallToTopFiller;
     UIView *_entryFieldToBottomFiller;
+    BOOL _isAnimating;
     SBPasscodeKeyboard *_keyboard;
+    BOOL _previousKeyboardShowedInlineCandidates;
     UILabel *_statusField;
     UIView *_statusFieldBackground;
     UIView *_statusFieldToTopOrEmergencyCallBottomFiller;
     UILabel *_statusSubtitleView;
-    bool_disableAnimationsDuringMinMax;
-    bool_isAnimating;
-    bool_previousKeyboardShowedInlineCandidates;
-    bool_triedToMinMaxWhileRotating;
-    bool_usesLightStyle;
-    bool_wasMinimizedWhenAnimationStarted;
+    BOOL _triedToMinMaxWhileRotating;
+    BOOL _usesLightStyle;
+    BOOL _wasMinimizedWhenAnimationStarted;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UILabel * statusField;
 @property(retain) UILabel * statusSubtitleView;
 @property(readonly) Class superclass;
 
 - (void)_acceptOrCancelReturnKeyPress;
-- (bool)_canMinMaxKeyboard;
+- (BOOL)_canMinMaxKeyboard;
 - (void)_geometryChanged:(id)arg1;
 - (void)_handleDidRotateNotification:(id)arg1;
 - (void)_handleWillAnimateNotification:(id)arg1;
 - (void)_handleWillRotateNotification:(id)arg1;
 - (void)_hardwareReturnKeyPressed:(id)arg1;
-- (bool)_isMinimized;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keyboardFrameForInterfaceOrientation:(long long)arg1;
-- (double)_keyboardToEntryFieldOffset;
-- (void)_layoutForMinimizationState:(bool)arg1;
+- (BOOL)_isMinimized;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrameForInterfaceOrientation:(int)arg1;
+- (float)_keyboardToEntryFieldOffset;
+- (void)_layoutForMinimizationState:(BOOL)arg1;
 - (void)_luminanceBoostDidChange;
 - (void)_maximize;
 - (void)_minimize;
@@ -50,30 +50,30 @@
 - (void)_notifyDelegatePasscodeCancelled;
 - (void)_notifyDelegatePasscodeEntered;
 - (void)_notifyDelegateThatEmergencyCallButtonWasPressed;
-- (void)_setMinimized:(bool)arg1;
-- (double)_statusFieldHeight;
-- (double)_statusTitleWidth;
+- (void)_setMinimized:(BOOL)arg1;
+- (float)_statusFieldHeight;
+- (float)_statusTitleWidth;
 - (void)_toggleForEmergencyCall;
 - (void)_toggleForStatusField;
-- (double)backgroundAlpha;
-- (bool)becomeFirstResponder;
+- (float)backgroundAlpha;
+- (BOOL)becomeFirstResponder;
 - (void)dealloc;
-- (id)initWithLightStyle:(bool)arg1;
+- (id)initWithLightStyle:(BOOL)arg1;
 - (void)layoutSubviews;
 - (id)passcode;
-- (bool)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
+- (BOOL)passcodeEntryField:(id)arg1 shouldInsertText:(id)arg2;
 - (void)passcodeEntryFieldDidAcceptEntry:(id)arg1;
 - (void)passcodeEntryFieldDidCancelEntry:(id)arg1;
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
-- (bool)resignFirstResponder;
-- (void)setBackgroundAlpha:(double)arg1;
+- (BOOL)resignFirstResponder;
+- (void)setBackgroundAlpha:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
-- (void)setShowsEmergencyCallButton:(bool)arg1;
-- (void)setShowsStatusField:(bool)arg1;
+- (void)setShowsEmergencyCallButton:(BOOL)arg1;
+- (void)setShowsStatusField:(BOOL)arg1;
 - (void)setStatusField:(id)arg1;
 - (void)setStatusSubtitleView:(id)arg1;
 - (id)statusField;
 - (id)statusSubtitleView;
-- (void)updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(bool)arg3;
+- (void)updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
 
 @end

@@ -7,8 +7,8 @@
  */
 
 @interface _NSURLBDOnce : NSObject {
-    boolfDone;
     id fBlock;
+    BOOL fDone;
 }
 
 - (void)dealloc;

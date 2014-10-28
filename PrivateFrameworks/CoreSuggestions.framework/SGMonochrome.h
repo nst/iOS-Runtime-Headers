@@ -5,7 +5,7 @@
 @interface SGMonochrome : NSObject {
 }
 
-+ (id)stringByExtractingPlainTextFromHTML:(id)arg1 tableDelimiters:(bool)arg2;
++ (id)stringByExtractingPlainTextFromHTML:(id)arg1 tableDelimiters:(BOOL)arg2;
 + (id)stringByExtractingPlainTextFromHTML:(id)arg1;
 
 @end

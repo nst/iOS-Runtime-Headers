@@ -29,7 +29,7 @@
 - (id)location;
 - (id)notes;
 - (id)participants;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setEndDate:(id)arg1;
 - (void)setEventId:(id)arg1;
 - (void)setLimit:(id)arg1;

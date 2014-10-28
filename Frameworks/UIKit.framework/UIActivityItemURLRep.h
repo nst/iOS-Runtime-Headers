@@ -6,20 +6,20 @@
 
 @interface UIActivityItemURLRep : NSObject {
     NSURL *_URL;
-    long long _attachmentURLType;
+    int _attachmentURLType;
     UIImage *_thumbnail;
 }
 
 @property(retain) NSURL * URL;
-@property long long attachmentURLType;
+@property int attachmentURLType;
 @property(retain) UIImage * thumbnail;
 
 - (id)URL;
-- (long long)attachmentURLType;
+- (int)attachmentURLType;
 - (void)dealloc;
-- (bool)isFileURL;
+- (BOOL)isFileURL;
 - (id)scheme;
-- (void)setAttachmentURLType:(long long)arg1;
+- (void)setAttachmentURLType:(int)arg1;
 - (void)setThumbnail:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)thumbnail;

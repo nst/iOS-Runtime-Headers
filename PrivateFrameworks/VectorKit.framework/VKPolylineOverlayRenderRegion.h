@@ -34,8 +34,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initForKeysInView:(id)arg1 tiles:(id)arg2 allowsSnapping:(bool)arg3;
-- (bool)isEquivalentToNewRegion:(id)arg1;
+- (id)initForKeysInView:(id)arg1 tiles:(id)arg2 allowsSnapping:(BOOL)arg3;
+- (BOOL)isEquivalentToNewRegion:(id)arg1;
 - (const struct vector<VKRect, std::__1::allocator<VKRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VKRect *, std::__1::allocator<VKRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)rectsForSnapping;
 - (id)tiles;
 - (struct { double x1; double x2; double x3; double x4; })visibleRect;

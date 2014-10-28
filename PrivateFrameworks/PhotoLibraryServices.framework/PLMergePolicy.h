@@ -5,6 +5,6 @@
 @interface PLMergePolicy : NSMergePolicy {
 }
 
-- (bool)resolveConflicts:(id)arg1 error:(id*)arg2;
+- (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
 
 @end

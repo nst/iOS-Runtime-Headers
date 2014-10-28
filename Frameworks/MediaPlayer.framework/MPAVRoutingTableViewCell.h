@@ -5,33 +5,33 @@
 @class <MPAVRoutingTableViewCellDelegate>, MPAVRoute, UILabel, UISwitch, UIView;
 
 @interface MPAVRoutingTableViewCell : UITableViewCell {
+    BOOL _debugCell;
     <MPAVRoutingTableViewCellDelegate> *_delegate;
     UILabel *_mirroringLabel;
     UIView *_mirroringSeparatorView;
     UISwitch *_mirroringSwitch;
+    BOOL _mirroringSwitchVisible;
     MPAVRoute *_route;
-    bool_debugCell;
-    bool_mirroringSwitchVisible;
 }
 
-@property(getter=isDebugCell) bool debugCell;
+@property(getter=isDebugCell) BOOL debugCell;
 @property <MPAVRoutingTableViewCellDelegate> * delegate;
-@property bool mirroringSwitchVisible;
+@property BOOL mirroringSwitchVisible;
 @property(retain) MPAVRoute * route;
 
 - (void).cxx_destruct;
 - (void)_configureLabel:(id)arg1;
 - (void)_mirroringSwitchValueDidChange:(id)arg1;
-- (bool)_shouldShowMirroringAsEnabledForRoute:(id)arg1;
+- (BOOL)_shouldShowMirroringAsEnabledForRoute:(id)arg1;
 - (id)delegate;
-- (bool)isDebugCell;
+- (BOOL)isDebugCell;
 - (void)layoutSubviews;
-- (bool)mirroringSwitchVisible;
+- (BOOL)mirroringSwitchVisible;
 - (id)route;
-- (void)setDebugCell:(bool)arg1;
+- (void)setDebugCell:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMirroringSwitchVisible:(bool)arg1 animated:(bool)arg2;
-- (void)setMirroringSwitchVisible:(bool)arg1;
+- (void)setMirroringSwitchVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setMirroringSwitchVisible:(BOOL)arg1;
 - (void)setRoute:(id)arg1;
 
 @end

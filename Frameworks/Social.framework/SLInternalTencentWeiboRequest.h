@@ -3,15 +3,15 @@
  */
 
 @interface SLInternalTencentWeiboRequest : SLRequest {
-    bool_shouldSign;
+    BOOL _shouldSign;
 }
 
-@property bool shouldSign;
+@property BOOL shouldSign;
 
 - (void)_addAuthenticationParameters:(id)arg1;
 - (void)performRequestWithHandler:(id)arg1;
-- (void)setShouldSign:(bool)arg1;
-- (bool)shouldSign;
+- (void)setShouldSign:(BOOL)arg1;
+- (BOOL)shouldSign;
 - (id)signedTencentRequestFromRequest:(id)arg1;
 
 @end

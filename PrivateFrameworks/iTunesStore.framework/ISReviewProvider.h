@@ -3,14 +3,14 @@
  */
 
 @interface ISReviewProvider : ISDataProvider <NSCopying> {
-    bool_backgroundReview;
+    BOOL _backgroundReview;
 }
 
-@property(getter=isBackgroundReview) bool backgroundReview;
+@property(getter=isBackgroundReview) BOOL backgroundReview;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)isBackgroundReview;
-- (bool)parseData:(id)arg1 returningError:(id*)arg2;
-- (void)setBackgroundReview:(bool)arg1;
+- (BOOL)isBackgroundReview;
+- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
+- (void)setBackgroundReview:(BOOL)arg1;
 
 @end

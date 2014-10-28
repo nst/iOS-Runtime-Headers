@@ -10,31 +10,31 @@
 
 @interface _NSProgressProxy : NSProgress {
     <NSProgressPublisher> *_forwarder;
+    BOOL _isOld;
     id _unpublishingHandler;
-    bool_isOld;
 }
 
-- (void)_acknowledgeWithSuccess:(bool)arg1;
-- (id)_initWithForwarder:(id)arg1 values:(id)arg2 isOld:(bool)arg3;
+- (void)_acknowledgeWithSuccess:(BOOL)arg1;
+- (id)_initWithForwarder:(id)arg1 values:(id)arg2 isOld:(BOOL)arg3;
 - (void)_invokePublishingHandler:(id)arg1;
 - (void)_invokeUnpublishingHandler;
-- (void)acknowledgeWithSuccess:(bool)arg1;
+- (void)acknowledgeWithSuccess:(BOOL)arg1;
 - (void)becomeCurrentWithPendingUnitCount:(long long)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (bool)isOld;
+- (BOOL)isOld;
 - (void)pause;
 - (void)prioritize;
 - (void)publish;
 - (void)resignCurrent;
-- (void)setCancellable:(bool)arg1;
+- (void)setCancellable:(BOOL)arg1;
 - (void)setCancellationHandler:(id)arg1;
 - (void)setCompletedUnitCount:(long long)arg1;
 - (void)setKind:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
-- (void)setPausable:(bool)arg1;
+- (void)setPausable:(BOOL)arg1;
 - (void)setPausingHandler:(id)arg1;
-- (void)setPrioritizable:(bool)arg1;
+- (void)setPrioritizable:(BOOL)arg1;
 - (void)setPrioritizationHandler:(id)arg1;
 - (void)setTotalUnitCount:(long long)arg1;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;

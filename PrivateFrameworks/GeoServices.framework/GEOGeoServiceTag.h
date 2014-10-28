@@ -12,7 +12,7 @@
     NSString *_tag;
 }
 
-@property bool hasServiceType;
+@property BOOL hasServiceType;
 @property int serviceType;
 @property(retain) NSString * tag;
 
@@ -23,13 +23,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasServiceType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasServiceType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (int)serviceType;
-- (void)setHasServiceType:(bool)arg1;
+- (void)setHasServiceType:(BOOL)arg1;
 - (void)setServiceType:(int)arg1;
 - (void)setTag:(id)arg1;
 - (id)tag;

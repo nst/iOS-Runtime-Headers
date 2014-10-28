@@ -5,8 +5,8 @@
 @interface PUPhotosGridViewControllerPadImagePickerSpec : PUPhotosGridViewControllerPhoneSpec {
 }
 
-- (bool)canDisplaySearchActionInNavigationBar;
-- (bool)displaysAvalancheStacks;
+- (BOOL)canDisplaySearchActionInNavigationBar;
+- (BOOL)displaysAvalancheStacks;
 - (int)thumbnailImageFormat;
 
 @end

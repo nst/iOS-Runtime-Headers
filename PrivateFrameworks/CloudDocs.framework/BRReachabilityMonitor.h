@@ -5,13 +5,13 @@
 @class NSHashTable, NSObject<OS_dispatch_queue>;
 
 @interface BRReachabilityMonitor : NSObject {
+    BOOL _isNetworkReachable;
     NSObject<OS_dispatch_queue> *_queue;
     NSHashTable *_reachabilityObservers;
     struct __SCNetworkReachability { } *_reachabilityRef;
-    bool_isNetworkReachable;
 }
 
-@property bool isNetworkReachable;
+@property BOOL isNetworkReachable;
 
 + (id)sharedReachabilityMonitor;
 
@@ -19,8 +19,8 @@
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (bool)isNetworkReachable;
+- (BOOL)isNetworkReachable;
 - (void)removeObserver:(id)arg1;
-- (void)setIsNetworkReachable:(bool)arg1;
+- (void)setIsNetworkReachable:(BOOL)arg1;
 
 @end

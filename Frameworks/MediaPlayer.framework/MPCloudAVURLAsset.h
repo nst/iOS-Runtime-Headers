@@ -6,17 +6,17 @@
 
 @interface MPCloudAVURLAsset : AVURLAsset {
     AVAssetDownloadSession *_downloadSession;
-    bool_isStreamingQuality;
+    BOOL _isStreamingQuality;
 }
 
 @property AVAssetDownloadSession * downloadSession;
-@property bool isStreamingQuality;
+@property BOOL isStreamingQuality;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)downloadSession;
-- (bool)isStreamingQuality;
+- (BOOL)isStreamingQuality;
 - (void)setDownloadSession:(id)arg1;
-- (void)setIsStreamingQuality:(bool)arg1;
+- (void)setIsStreamingQuality:(BOOL)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface TPOffscreenLayoutController : TSDLayoutController {
 }
 
-- (bool)isLayoutOffscreen;
+- (BOOL)isLayoutOffscreen;
 
 @end

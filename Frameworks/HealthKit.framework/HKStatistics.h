@@ -7,7 +7,7 @@
 @interface HKStatistics : NSObject <NSSecureCoding, NSCopying> {
     HKQuantity *_averageQuantity;
     NSDictionary *_averageQuantityBySource;
-    unsigned long long _dataCount;
+    unsigned int _dataCount;
     NSDate *_endDate;
     HKQuantity *_maximumQuantity;
     NSDictionary *_maximumQuantityBySource;
@@ -22,7 +22,7 @@
 
 @property(retain) HKQuantity * averageQuantity;
 @property(retain) NSDictionary * averageQuantityBySource;
-@property unsigned long long dataCount;
+@property unsigned int dataCount;
 @property(readonly) NSDate * endDate;
 @property(retain) HKQuantity * maximumQuantity;
 @property(retain) NSDictionary * maximumQuantityBySource;
@@ -34,8 +34,8 @@
 @property(retain) HKQuantity * sumQuantity;
 @property(retain) NSDictionary * sumQuantityBySource;
 
-+ (void)_validateOptions:(unsigned long long)arg1 forDataType:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (void)_validateOptions:(unsigned int)arg1 forDataType:(id)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initAsCopyOf:(id)arg1;
@@ -47,7 +47,7 @@
 - (id)averageQuantityBySource;
 - (id)averageQuantityForSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)dataCount;
+- (unsigned int)dataCount;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)init;
@@ -61,7 +61,7 @@
 - (id)quantityType;
 - (void)setAverageQuantity:(id)arg1;
 - (void)setAverageQuantityBySource:(id)arg1;
-- (void)setDataCount:(unsigned long long)arg1;
+- (void)setDataCount:(unsigned int)arg1;
 - (void)setMaximumQuantity:(id)arg1;
 - (void)setMaximumQuantityBySource:(id)arg1;
 - (void)setMinimumQuantity:(id)arg1;

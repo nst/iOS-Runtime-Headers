@@ -11,35 +11,35 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property <MPURatingControlDelegate> * ratingDelegate;
-@property bool showingRating;
+@property BOOL showingRating;
 @property(readonly) Class superclass;
 
-+ (bool)_supportsSearch;
-+ (bool)shouldPushNowPlayingOnSelection;
-+ (bool)shouldShowCMC;
++ (BOOL)_supportsSearch;
++ (BOOL)shouldPushNowPlayingOnSelection;
++ (BOOL)shouldShowCMC;
 
 - (void).cxx_destruct;
 - (id)_createTableView;
 - (id)_createTableViewBackgroundView;
-- (void)_updateDownloadabilityStateWithCanReloadActionRowsSynchronously:(bool)arg1 animated:(bool)arg2;
+- (void)_updateDownloadabilityStateWithCanReloadActionRowsSynchronously:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithDataSource:(id)arg1;
-- (double)maximumDurationWidth;
+- (float)maximumDurationWidth;
 - (id)newHeaderView;
 - (id)ratingDelegate;
 - (void)ratingDidChangeForRatingControl:(id)arg1;
 - (void)setRatingDelegate:(id)arg1;
-- (void)setShowingRating:(bool)arg1 animated:(bool)arg2;
-- (void)setShowingRating:(bool)arg1;
-- (bool)shouldShowActionCellConfiguration:(Class)arg1;
-- (bool)showingRating;
+- (void)setShowingRating:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setShowingRating:(BOOL)arg1;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (BOOL)showingRating;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
 - (void)viewDidLoad;
 
 @end

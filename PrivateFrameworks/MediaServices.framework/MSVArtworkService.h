@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)resizeImageAtSourceURL:(id)arg1 destinationSize:(struct CGSize { double x1; double x2; })arg2 destinationURL:(id)arg3 completionHandler:(id)arg4;
+- (void)sendRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)serverConnection;
 - (id)serviceThrottlingOperationQueue;
 - (void)setServerConnection:(id)arg1;

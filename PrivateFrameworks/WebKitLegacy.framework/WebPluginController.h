@@ -8,17 +8,17 @@
     NSMutableSet *_checksInProgress;
     WebDataSource *_dataSource;
     WAKView *_documentView;
+    BOOL _started;
     NSMutableArray *_views;
-    bool_started;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (void)addPlugInView:(id)arg1;
-+ (bool)isPlugInView:(id)arg1;
++ (BOOL)isPlugInView:(id)arg1;
 
 - (id)URLPolicyCheckReferrer;
 - (void)_cancelOutstandingChecks;
@@ -31,12 +31,12 @@
 - (void)destroyPlugin:(id)arg1;
 - (id)initWithDocumentView:(id)arg1;
 - (id)plugInViewWithArguments:(id)arg1 fromPluginPackage:(id)arg2;
-- (bool)plugInsAreRunning;
+- (BOOL)plugInsAreRunning;
 - (void)pluginView:(id)arg1 receivedData:(id)arg2;
 - (void)pluginView:(id)arg1 receivedError:(id)arg2;
 - (void)pluginView:(id)arg1 receivedResponse:(id)arg2;
 - (void)pluginViewFinishedLoading:(id)arg1;
-- (bool)processingUserGesture;
+- (BOOL)processingUserGesture;
 - (void)restorePluginsFromCache;
 - (void)setDataSource:(id)arg1;
 - (void)showStatus:(id)arg1;

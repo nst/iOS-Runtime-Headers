@@ -5,9 +5,9 @@
 @class NSString, NSUUID;
 
 @interface AXSwitch : NSObject <NSSecureCoding> {
-    long long _action;
-    long long _buttonNumber;
-    long long _headSwitch;
+    int _action;
+    int _buttonNumber;
+    int _headSwitch;
     unsigned short _keyCode;
     NSString *_manufacturerName;
     NSString *_name;
@@ -17,9 +17,9 @@
     NSUUID *_uuid;
 }
 
-@property long long action;
-@property long long buttonNumber;
-@property long long headSwitch;
+@property int action;
+@property int buttonNumber;
+@property int headSwitch;
 @property unsigned short keyCode;
 @property(copy) NSString * manufacturerName;
 @property(copy) NSString * name;
@@ -28,26 +28,26 @@
 @property(retain) NSString * type;
 @property(retain) NSUUID * uuid;
 
-+ (bool)supportsSecureCoding;
-+ (id)switchWithAction:(long long)arg1 name:(id)arg2 source:(struct NSString { Class x1; }*)arg3 type:(struct NSString { Class x1; }*)arg4;
++ (BOOL)supportsSecureCoding;
++ (id)switchWithAction:(int)arg1 name:(id)arg2 source:(struct NSString { Class x1; }*)arg3 type:(struct NSString { Class x1; }*)arg4;
 
-- (long long)action;
-- (long long)buttonNumber;
+- (int)action;
+- (int)buttonNumber;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
-- (long long)headSwitch;
-- (id)initWithAction:(long long)arg1 name:(id)arg2 source:(struct NSString { Class x1; }*)arg3 type:(struct NSString { Class x1; }*)arg4;
+- (unsigned int)hash;
+- (int)headSwitch;
+- (id)initWithAction:(int)arg1 name:(id)arg2 source:(struct NSString { Class x1; }*)arg3 type:(struct NSString { Class x1; }*)arg4;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned short)keyCode;
 - (id)manufacturerName;
 - (id)name;
 - (id)productName;
-- (void)setAction:(long long)arg1;
-- (void)setButtonNumber:(long long)arg1;
-- (void)setHeadSwitch:(long long)arg1;
+- (void)setAction:(int)arg1;
+- (void)setButtonNumber:(int)arg1;
+- (void)setHeadSwitch:(int)arg1;
 - (void)setKeyCode:(unsigned short)arg1;
 - (void)setManufacturerName:(id)arg1;
 - (void)setName:(id)arg1;

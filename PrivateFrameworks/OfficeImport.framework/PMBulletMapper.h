@@ -10,7 +10,7 @@
     CMStyle *mStyle;
 }
 
-+ (id)stringForIndex:(unsigned long long)arg1 withFormat:(int)arg2;
++ (id)stringForIndex:(unsigned int)arg1 withFormat:(int)arg2;
 
 - (id)bulletFontName;
 - (int)bulletSize;

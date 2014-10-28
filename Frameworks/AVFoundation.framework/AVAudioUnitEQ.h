@@ -13,7 +13,7 @@
 - (id)bands;
 - (float)globalGain;
 - (id)init;
-- (id)initWithNumberOfBands:(unsigned long long)arg1;
+- (id)initWithNumberOfBands:(unsigned int)arg1;
 - (void)setGlobalGain:(float)arg1;
 
 @end

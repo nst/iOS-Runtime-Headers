@@ -9,8 +9,8 @@
     CKDPShareIdentifier *_shareIdentifier;
 }
 
-@property(readonly) bool hasItemId;
-@property(readonly) bool hasShareIdentifier;
+@property(readonly) BOOL hasItemId;
+@property(readonly) BOOL hasShareIdentifier;
 @property(retain) NSData * itemId;
 @property(retain) CKDPShareIdentifier * shareIdentifier;
 
@@ -19,13 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasItemId;
-- (bool)hasShareIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasItemId;
+- (BOOL)hasShareIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)itemId;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setItemId:(id)arg1;
 - (void)setShareIdentifier:(id)arg1;
 - (id)shareIdentifier;

@@ -9,11 +9,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SACalendar * lastPlayedDate;
-@property long long playbackPositionMillis;
-@property long long plays;
-@property bool rememberPlaybackPosition;
+@property int playbackPositionMillis;
+@property int plays;
+@property BOOL rememberPlaybackPosition;
 @property(readonly) Class superclass;
 
 + (id)playbackInfo;
@@ -22,12 +22,12 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)lastPlayedDate;
-- (long long)playbackPositionMillis;
-- (long long)plays;
-- (bool)rememberPlaybackPosition;
+- (int)playbackPositionMillis;
+- (int)plays;
+- (BOOL)rememberPlaybackPosition;
 - (void)setLastPlayedDate:(id)arg1;
-- (void)setPlaybackPositionMillis:(long long)arg1;
-- (void)setPlays:(long long)arg1;
-- (void)setRememberPlaybackPosition:(bool)arg1;
+- (void)setPlaybackPositionMillis:(int)arg1;
+- (void)setPlays:(int)arg1;
+- (void)setRememberPlaybackPosition:(BOOL)arg1;
 
 @end

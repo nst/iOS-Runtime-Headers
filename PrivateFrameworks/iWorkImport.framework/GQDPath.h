@@ -8,12 +8,12 @@
 
 - (struct CGPath { }*)createBezierPath;
 - (void)dealloc;
-- (bool)hasHorizontalFlip;
-- (bool)hasVerticalFlip;
-- (bool)horizontalFlip;
-- (bool)isRect;
-- (bool)isRectangular;
+- (BOOL)hasHorizontalFlip;
+- (BOOL)hasVerticalFlip;
+- (BOOL)horizontalFlip;
+- (BOOL)isRect;
+- (BOOL)isRectangular;
 - (char *)pathStr;
-- (bool)verticalFlip;
+- (BOOL)verticalFlip;
 
 @end

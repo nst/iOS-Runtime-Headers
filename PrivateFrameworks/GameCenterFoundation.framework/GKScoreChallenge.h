@@ -11,7 +11,7 @@
 @property(readonly) GKLeaderboard * leaderboard;
 @property(retain) GKScore * score;
 
-+ (bool)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
 - (id)alertGoalText;
 - (id)composeGoalText;
@@ -19,7 +19,7 @@
 - (id)description;
 - (id)detailGoalText;
 - (id)detailGoalTextForPlayer:(id)arg1 withLeaderboard:(id)arg2;
-- (bool)detailsLoaded;
+- (BOOL)detailsLoaded;
 - (id)iconSource;
 - (id)iconURLString;
 - (id)initWithInternalRepresentation:(id)arg1;

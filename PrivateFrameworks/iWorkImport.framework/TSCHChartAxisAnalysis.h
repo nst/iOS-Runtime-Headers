@@ -34,7 +34,7 @@
 - (double)modelMin;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setMajorGridLocations:(id)arg1;
 - (void)setMax:(double)arg1;
 - (void)setMin:(double)arg1;

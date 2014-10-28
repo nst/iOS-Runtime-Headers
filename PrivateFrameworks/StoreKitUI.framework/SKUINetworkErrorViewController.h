@@ -15,12 +15,12 @@
 @property id delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property(readonly) UIScrollView * scrollView;
 @property(readonly) Class superclass;
 
-+ (bool)canDisplayError:(id)arg1;
++ (BOOL)canDisplayError:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_networkTypeChanged:(id)arg1;

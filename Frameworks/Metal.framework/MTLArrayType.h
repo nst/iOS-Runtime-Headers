@@ -5,21 +5,21 @@
 @interface MTLArrayType : NSObject {
     unsigned int _arrayLength;
     id _details;
-    unsigned long long _elementType;
+    unsigned int _elementType;
     unsigned int _stride;
 }
 
-@property(readonly) unsigned long long arrayLength;
-@property(readonly) unsigned long long elementType;
-@property(readonly) unsigned long long stride;
+@property(readonly) unsigned int arrayLength;
+@property(readonly) unsigned int elementType;
+@property(readonly) unsigned int stride;
 
-- (unsigned long long)arrayLength;
+- (unsigned int)arrayLength;
 - (void)dealloc;
 - (id)describe;
 - (id)elementArrayType;
 - (id)elementStructType;
-- (unsigned long long)elementType;
-- (id)initWithArrayLength:(unsigned long long)arg1 elementType:(unsigned long long)arg2 stride:(unsigned long long)arg3 details:(id)arg4;
-- (unsigned long long)stride;
+- (unsigned int)elementType;
+- (id)initWithArrayLength:(unsigned int)arg1 elementType:(unsigned int)arg2 stride:(unsigned int)arg3 details:(id)arg4;
+- (unsigned int)stride;
 
 @end

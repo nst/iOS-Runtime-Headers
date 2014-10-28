@@ -3,16 +3,16 @@
  */
 
 @interface VCCallLinkCongestionDetector : NSObject {
-    boolisLinkCongested;
+    BOOL isLinkCongested;
     double lossRateThreshold;
     double rttThreshold;
 }
 
-@property bool isLinkCongested;
+@property BOOL isLinkCongested;
 
 - (void)addNewRTT:(double)arg1 packetLossRate:(double)arg2 timestamp:(double)arg3;
 - (id)initWithRTTThreshold:(double)arg1 lossRateThreshold:(double)arg2;
-- (bool)isLinkCongested;
-- (void)setIsLinkCongested:(bool)arg1;
+- (BOOL)isLinkCongested;
+- (void)setIsLinkCongested:(BOOL)arg1;
 
 @end

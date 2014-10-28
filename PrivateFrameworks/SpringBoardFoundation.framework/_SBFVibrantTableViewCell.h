@@ -3,15 +3,15 @@
  */
 
 @interface _SBFVibrantTableViewCell : UITableViewCell {
-    long long _graphicsQuality;
+    int _graphicsQuality;
 }
 
-@property long long graphicsQuality;
-@property bool usesVibrantSelection;
+@property int graphicsQuality;
+@property BOOL usesVibrantSelection;
 
-- (long long)graphicsQuality;
-- (void)setGraphicsQuality:(long long)arg1;
-- (void)setUsesVibrantSelection:(bool)arg1;
-- (bool)usesVibrantSelection;
+- (int)graphicsQuality;
+- (void)setGraphicsQuality:(int)arg1;
+- (void)setUsesVibrantSelection:(BOOL)arg1;
+- (BOOL)usesVibrantSelection;
 
 @end

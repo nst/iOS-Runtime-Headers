@@ -3,15 +3,15 @@
  */
 
 @interface MusicSongsViewController : MusicTableViewController {
-    bool_hasShuffleActionRow;
+    BOOL _hasShuffleActionRow;
 }
 
 + (id)actionCellConfigurationClasses;
-+ (bool)shouldPushNowPlayingOnSelection;
++ (BOOL)shouldPushNowPlayingOnSelection;
 
-- (bool)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;
-- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
-- (bool)shouldShowActionCellConfiguration:(Class)arg1;
+- (BOOL)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;
+- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

@@ -24,16 +24,16 @@
 - (id)_imagePickerMediaTypes;
 - (void)_setAlbumFilter:(int)arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
-- (bool)canBeginStackCollapseTransition;
-- (bool)canNavigateToPhotoInteractively:(bool)arg1;
+- (BOOL)canBeginStackCollapseTransition;
+- (BOOL)canNavigateToPhotoInteractively:(BOOL)arg1;
 - (id)filterPredicateForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out bool*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
+- (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out BOOL*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (void)handleNavigateToAsset:(id)arg1 inContainer:(id)arg2;
 - (void)handleToggleSelectionOfItemAtIndexPath:(id)arg1;
 - (id)init;
 - (id)initWithSpec:(id)arg1;
 - (void)loadView;
-- (bool)pu_wantsNavigationBarVisible;
+- (BOOL)pu_wantsNavigationBarVisible;
 - (void)setAlbum:(id)arg1;
 - (void)viewDidLoad;
 

@@ -9,9 +9,9 @@
 }
 
 @property(readonly) NSArray * displays;
-@property(getter=isMirroringEnabled) bool mirroringEnabled;
+@property(getter=isMirroringEnabled) BOOL mirroringEnabled;
 @property unsigned int rendererFlags;
-@property(getter=isSecure) bool secure;
+@property(getter=isSecure) BOOL secure;
 
 + (id)context;
 + (id)contextWithOptions:(id)arg1;
@@ -31,14 +31,14 @@
 - (id)displays;
 - (id)init;
 - (id)insecureProcessIds;
-- (bool)isMirroringEnabled;
-- (bool)isSecure;
+- (BOOL)isMirroringEnabled;
+- (BOOL)isSecure;
 - (void)removeAllDisplays;
 - (void)removeDisplay:(id)arg1;
 - (unsigned int)rendererFlags;
-- (void)setMirroringEnabled:(bool)arg1;
+- (void)setMirroringEnabled:(BOOL)arg1;
 - (void)setRendererFlags:(unsigned int)arg1;
-- (void)setSecure:(bool)arg1;
+- (void)setSecure:(BOOL)arg1;
 - (unsigned int)taskPortOfContextId:(unsigned int)arg1;
 
 @end

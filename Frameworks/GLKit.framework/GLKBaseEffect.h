@@ -110,8 +110,8 @@
 - (unsigned char)lightModelTwoSided;
 - (int)lightingType;
 - (id)material;
-- (bool)perPixelLightingEnabled;
-- (bool)perVertexLightingEnabled;
+- (BOOL)perPixelLightingEnabled;
+- (BOOL)perVertexLightingEnabled;
 - (void)prepareToDraw;
 - (unsigned int)programName;
 - (id)propertyArray;

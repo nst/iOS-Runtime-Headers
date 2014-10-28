@@ -6,45 +6,45 @@
 
 @interface TSWPShapeRepMagicMoveTextChunk : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
-    double _opacityFromRenderer;
+        unsigned int location; 
+        unsigned int length; 
+    BOOL _hasListLabel;
+    BOOL _isVisible;
+    float _opacityFromRenderer;
     } _range;
     TSWPShapeRep *_rep;
-    long long _stageIndex;
+    int _stageIndex;
     NSString *_stringValue;
     NSMutableIndexSet *_unhandledIndexSet;
-    bool_hasListLabel;
-    bool_isVisible;
 }
 
-@property bool hasListLabel;
-@property bool isVisible;
-@property double opacityFromRenderer;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property BOOL hasListLabel;
+@property BOOL isVisible;
+@property float opacityFromRenderer;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property TSWPShapeRep * rep;
-@property long long stageIndex;
+@property int stageIndex;
 @property(copy) NSString * stringValue;
 @property(retain) NSMutableIndexSet * unhandledIndexSet;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)description;
-- (bool)hasListLabel;
+- (BOOL)hasListLabel;
 - (id)init;
-- (bool)isVisible;
-- (double)opacityFromRenderer;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (BOOL)isVisible;
+- (float)opacityFromRenderer;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)rep;
-- (void)setHasListLabel:(bool)arg1;
-- (void)setIsVisible:(bool)arg1;
-- (void)setOpacityFromRenderer:(double)arg1;
-- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setHasListLabel:(BOOL)arg1;
+- (void)setIsVisible:(BOOL)arg1;
+- (void)setOpacityFromRenderer:(float)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setRep:(id)arg1;
-- (void)setStageIndex:(long long)arg1;
+- (void)setStageIndex:(int)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setUnhandledIndexSet:(id)arg1;
-- (long long)stageIndex;
+- (int)stageIndex;
 - (id)stringValue;
 - (id)unhandledIndexSet;
 

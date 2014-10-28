@@ -3,21 +3,21 @@
  */
 
 @interface __NSSKGraphE : NSObject {
-    unsigned long long _currE;
-    unsigned long long _dump;
-    struct edge { unsigned long long x1; unsigned long long x2[2]; unsigned long long x3; } *_edges;
-    unsigned long long _l_end;
-    unsigned long long _numE;
-    unsigned long long _numV;
-    struct vertex { unsigned long long x1; unsigned long long x2; unsigned long long *x3; } *_vertices;
+    unsigned int _currE;
+    unsigned int _dump;
+    struct edge { unsigned int x1; unsigned int x2[2]; unsigned int x3; } *_edges;
+    unsigned int _l_end;
+    unsigned int _numE;
+    unsigned int _numV;
+    struct vertex { unsigned int x1; unsigned int x2; unsigned int *x3; } *_vertices;
 }
 
-- (bool)addEdgeWithH1:(unsigned long long)arg1 withH2:(unsigned long long)arg2;
+- (BOOL)addEdgeWithH1:(unsigned int)arg1 withH2:(unsigned int)arg2;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithNumberOfVertices:(unsigned long long)arg1 numberOfEdges:(unsigned long long)arg2;
+- (id)initWithNumberOfVertices:(unsigned int)arg1 numberOfEdges:(unsigned int)arg2;
 - (struct edge {}**)isAcyclic;
-- (bool)isEmpty;
-- (unsigned long long)numOfEdges;
+- (BOOL)isEmpty;
+- (unsigned int)numOfEdges;
 
 @end

@@ -6,7 +6,7 @@
     struct __CFBundle { } *mProcessorBundle;
 }
 
-- (bool)boolValue;
+- (BOOL)boolValue;
 - (struct __CFString { }*)createStringValue;
 - (void)setProcessorBundle:(struct __CFBundle { }*)arg1;
 

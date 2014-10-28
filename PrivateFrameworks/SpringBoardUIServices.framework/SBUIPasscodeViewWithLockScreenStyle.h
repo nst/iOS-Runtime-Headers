@@ -5,18 +5,18 @@
 @class UIView<SBUIPasscodeLockView>, _UIBackdropView;
 
 @interface SBUIPasscodeViewWithLockScreenStyle : UIView {
-    double _blurRadius;
+    BOOL _blurEnabled;
+    float _blurRadius;
     _UIBackdropView *_blurView;
     UIView<SBUIPasscodeLockView> *_passcodeView;
-    bool_blurEnabled;
 }
 
 @property(readonly) UIView<SBUIPasscodeLockView> * passcodeView;
 
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 includeBlur:(bool)arg2 passcodeViewGenerator:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 includeBlur:(BOOL)arg2 passcodeViewGenerator:(id)arg3;
 - (void)layoutSubviews;
 - (id)passcodeView;
-- (void)setBlurEnabled:(bool)arg1;
+- (void)setBlurEnabled:(BOOL)arg1;
 
 @end

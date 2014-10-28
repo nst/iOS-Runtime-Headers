@@ -14,7 +14,7 @@
     NSMutableArray *_spokenStructuredAddress;
 }
 
-@property bool hasKnownAccuracy;
+@property BOOL hasKnownAccuracy;
 @property int knownAccuracy;
 @property(retain) NSMutableArray * localizedAddress;
 @property(retain) NSMutableArray * spokenNavigationAddress;
@@ -34,27 +34,27 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasKnownAccuracy;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasKnownAccuracy;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (int)knownAccuracy;
 - (id)localizedAddress;
-- (id)localizedAddressAtIndex:(unsigned long long)arg1;
-- (unsigned long long)localizedAddressCount;
+- (id)localizedAddressAtIndex:(unsigned int)arg1;
+- (unsigned int)localizedAddressCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasKnownAccuracy:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasKnownAccuracy:(BOOL)arg1;
 - (void)setKnownAccuracy:(int)arg1;
 - (void)setLocalizedAddress:(id)arg1;
 - (void)setSpokenNavigationAddress:(id)arg1;
 - (void)setSpokenStructuredAddress:(id)arg1;
 - (id)spokenAddressForLocale:(id)arg1;
 - (id)spokenNavigationAddress;
-- (id)spokenNavigationAddressAtIndex:(unsigned long long)arg1;
-- (unsigned long long)spokenNavigationAddressCount;
+- (id)spokenNavigationAddressAtIndex:(unsigned int)arg1;
+- (unsigned int)spokenNavigationAddressCount;
 - (id)spokenStructuredAddress;
-- (id)spokenStructuredAddressAtIndex:(unsigned long long)arg1;
-- (unsigned long long)spokenStructuredAddressCount;
+- (id)spokenStructuredAddressAtIndex:(unsigned int)arg1;
+- (unsigned int)spokenStructuredAddressCount;
 - (void)writeTo:(id)arg1;
 
 @end

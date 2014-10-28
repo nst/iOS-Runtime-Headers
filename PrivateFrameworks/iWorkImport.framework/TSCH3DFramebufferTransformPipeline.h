@@ -15,8 +15,8 @@
 
 - (void)dealloc;
 - (void)loadSource;
-- (bool)prepareFramebuffer;
-- (bool)run;
+- (BOOL)prepareFramebuffer;
+- (BOOL)run;
 - (void)setSource:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)source;

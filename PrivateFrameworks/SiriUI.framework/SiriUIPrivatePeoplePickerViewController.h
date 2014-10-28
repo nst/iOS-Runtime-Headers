@@ -11,14 +11,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_pickerController;
 - (void)configureReusableTransparentFooterView:(id)arg1;
-- (double)desiredHeightForTransparentFooterView;
-- (double)desiredHeightForWidth:(double)arg1;
+- (float)desiredHeightForTransparentFooterView;
+- (float)desiredHeightForWidth:(float)arg1;
 - (id)initWithSnippet:(id)arg1;
 - (void)loadView;
 - (void)pickerViewController:(id)arg1 didSelectObject:(id)arg2 fromPicker:(id)arg3;

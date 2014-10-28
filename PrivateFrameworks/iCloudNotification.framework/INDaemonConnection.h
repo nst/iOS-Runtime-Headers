@@ -9,11 +9,11 @@
 }
 
 - (void).cxx_destruct;
-- (bool)clearAllRegistrationDigestsWithError:(id*)arg1;
+- (BOOL)clearAllRegistrationDigestsWithError:(id*)arg1;
 - (void)dealloc;
 - (id)diagnosticReport;
 - (id)init;
-- (bool)registerAccount:(id)arg1 foriCloudNotificationsWithReason:(unsigned long long)arg2 error:(id*)arg3;
-- (bool)unregisterAccount:(id)arg1 fromiCloudNotificationsWithError:(id*)arg2;
+- (BOOL)registerAccount:(id)arg1 foriCloudNotificationsWithReason:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)unregisterAccount:(id)arg1 fromiCloudNotificationsWithError:(id*)arg2;
 
 @end

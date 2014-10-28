@@ -33,32 +33,32 @@
 @property(readonly) struct { double x1; double x2; } center;
 @property(readonly) struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; } clientRegion;
 @property(copy,readonly) NSString * identifier;
-@property bool notifyOnEntry;
-@property bool notifyOnExit;
+@property BOOL notifyOnEntry;
+@property BOOL notifyOnExit;
 @property(readonly) double radius;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_encodeWithCoder:(id)arg1;
 - (id)_initWithCoder:(id)arg1;
 - (struct { double x1; double x2; })center;
 - (struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })clientRegion;
-- (bool)containsCoordinate:(struct { double x1; double x2; })arg1;
+- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)initCircularRegionWithCenter:(struct { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;
 - (id)initWithClientRegion:(struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)notifyOnEntry;
-- (bool)notifyOnExit;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)notifyOnEntry;
+- (BOOL)notifyOnExit;
 - (double)radius;
-- (void)setNotifyOnEntry:(bool)arg1;
-- (void)setNotifyOnExit:(bool)arg1;
+- (void)setNotifyOnEntry:(BOOL)arg1;
+- (void)setNotifyOnExit:(BOOL)arg1;
 
 @end

@@ -8,21 +8,21 @@
 
 @interface PHContentEditingInputRequestOptions : NSObject {
     id _canHandleAdjustmentData;
+    BOOL _networkAccessAllowed;
     id _progressHandler;
-    bool_networkAccessAllowed;
 }
 
 @property(copy) id canHandleAdjustmentData;
-@property(getter=isNetworkAccessAllowed) bool networkAccessAllowed;
+@property(getter=isNetworkAccessAllowed) BOOL networkAccessAllowed;
 @property(copy) id progressHandler;
 
 - (void).cxx_destruct;
 - (id)canHandleAdjustmentData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)isNetworkAccessAllowed;
+- (BOOL)isNetworkAccessAllowed;
 - (id)progressHandler;
 - (void)setCanHandleAdjustmentData:(id)arg1;
-- (void)setNetworkAccessAllowed:(bool)arg1;
+- (void)setNetworkAccessAllowed:(BOOL)arg1;
 - (void)setProgressHandler:(id)arg1;
 
 @end

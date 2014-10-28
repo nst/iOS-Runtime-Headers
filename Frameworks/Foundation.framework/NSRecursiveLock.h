@@ -16,12 +16,12 @@
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (bool)isLocking;
+- (BOOL)isLocking;
 - (void)lock;
-- (bool)lockBeforeDate:(id)arg1;
+- (BOOL)lockBeforeDate:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (bool)tryLock;
+- (BOOL)tryLock;
 - (void)unlock;
 
 @end

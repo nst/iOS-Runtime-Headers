@@ -12,36 +12,36 @@
     struct { 
         double beginTime; 
         double endTime; 
+    BOOL _canSimulateTrimmingProgress;
     id _progressUpdateBlock;
     float _simulatedProgress;
     } _timeRange;
-    bool_canSimulateTrimmingProgress;
-    bool_trimMode;
+    BOOL _trimMode;
 }
 
 @property(readonly) NSError * error;
 @property(readonly) double exportedDuration;
 @property(readonly) double progress;
-@property(readonly) bool progressShouldContinueUpdating;
+@property(readonly) BOOL progressShouldContinueUpdating;
 @property(copy) id progressUpdateBlock;
-@property(readonly) bool success;
+@property(readonly) BOOL success;
 @property(readonly) struct { double x1; double x2; } timeRange;
-@property(readonly) bool trimMode;
+@property(readonly) BOOL trimMode;
 
 - (void).cxx_destruct;
 - (void)_postFinalProgressUpdateNotification;
 - (float)_progress;
-- (id)initWithTimeRange:(struct { double x1; double x2; })arg1 trimMode:(long long)arg2;
+- (id)initWithTimeRange:(struct { double x1; double x2; })arg1 trimMode:(int)arg2;
 - (void)main;
 - (double)progress;
-- (bool)progressShouldContinueUpdating;
+- (BOOL)progressShouldContinueUpdating;
 - (id)progressUpdateBlock;
-- (void)setCanSimulateTrimmingProgress:(bool)arg1;
+- (void)setCanSimulateTrimmingProgress:(BOOL)arg1;
 - (void)setProgressUpdateBlock:(id)arg1;
 - (void)simulateTrimmingProgress;
 - (void)start;
 - (struct { double x1; double x2; })timeRange;
-- (bool)trimMode;
+- (BOOL)trimMode;
 - (void)updateExportSessionProgressWithInterval:(double)arg1;
 
 @end

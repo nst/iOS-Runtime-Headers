@@ -2,38 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class BrightnessSystemInternal;
 
-@class BLControl, NSMutableDictionary, NSString, NSTimer;
-
-@interface BrightnessSystem : NSThread <NSXPCListenerDelegate> {
-    id _callback;
-    NSMutableDictionary *_clients;
-    NSMutableDictionary *_clientsProps;
-    NSTimer *_timer;
-    BLControl *bl;
-    bool_initializationComplete;
+@interface BrightnessSystem : NSObject {
+    BrightnessSystemInternal *bsi;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
-
-- (void)clientConnectedWithExpObj:(id)arg1;
-- (void)clientDisconnectedWithExpObj:(id)arg1;
 - (id)copyPropertyForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)isAlsSupported;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)main;
-- (void)notifyClientsForProperty:(id)arg1 key:(id)arg2;
+- (BOOL)isAlsSupported;
 - (void)registerNotificationBlock:(id)arg1;
-- (void)runXPCServer;
-- (bool)setProperty:(id)arg1 forKey:(id)arg2;
-- (void)timerFire:(id)arg1;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 
 @end

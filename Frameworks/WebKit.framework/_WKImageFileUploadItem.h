@@ -16,6 +16,6 @@
 - (id)displayImage;
 - (id)fileURL;
 - (id)initWithFilePath:(id)arg1 originalImage:(id)arg2;
-- (bool)isVideo;
+- (BOOL)isVideo;
 
 @end

@@ -5,9 +5,9 @@
 @interface DOMHTMLDirectoryElement : DOMHTMLElement {
 }
 
-@property bool compact;
+@property BOOL compact;
 
-- (bool)compact;
-- (void)setCompact:(bool)arg1;
+- (BOOL)compact;
+- (void)setCompact:(BOOL)arg1;
 
 @end

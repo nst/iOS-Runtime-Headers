@@ -7,6 +7,6 @@
 
 - (id)description;
 - (id)undoContext;
-- (bool)wasHidden;
+- (BOOL)wasHidden;
 
 @end

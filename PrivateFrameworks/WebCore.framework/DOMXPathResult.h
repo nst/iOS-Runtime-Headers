@@ -7,18 +7,18 @@
 @interface DOMXPathResult : DOMObject {
 }
 
-@property(readonly) bool booleanValue;
-@property(readonly) bool invalidIteratorState;
+@property(readonly) BOOL booleanValue;
+@property(readonly) BOOL invalidIteratorState;
 @property(readonly) double numberValue;
 @property(readonly) unsigned short resultType;
 @property(readonly) DOMNode * singleNodeValue;
 @property(readonly) unsigned int snapshotLength;
 @property(copy,readonly) NSString * stringValue;
 
-- (bool)booleanValue;
+- (BOOL)booleanValue;
 - (void)dealloc;
 - (void)finalize;
-- (bool)invalidIteratorState;
+- (BOOL)invalidIteratorState;
 - (id)iterateNext;
 - (double)numberValue;
 - (unsigned short)resultType;

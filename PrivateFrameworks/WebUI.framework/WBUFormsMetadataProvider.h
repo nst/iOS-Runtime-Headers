@@ -11,15 +11,15 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long formCount;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int formCount;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)metadataProviderWithFrames:(id)arg1 metadataForAllForms:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)enumerateFormsUsingBlock:(id)arg1;
-- (unsigned long long)formCount;
+- (unsigned int)formCount;
 - (id)initWithFrames:(id)arg1 metadataForAllForms:(id)arg2;
 
 @end

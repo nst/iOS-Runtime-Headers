@@ -16,9 +16,9 @@
     NSString *_uriScheme;
 }
 
-@property bool hasSessionId;
-@property(readonly) bool hasSourceAppBundleId;
-@property(readonly) bool hasUriScheme;
+@property BOOL hasSessionId;
+@property(readonly) BOOL hasSourceAppBundleId;
+@property(readonly) BOOL hasUriScheme;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionId;
 @property(retain) NSString * sourceAppBundleId;
 @property(retain) NSString * uriScheme;
@@ -28,15 +28,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSessionId;
-- (bool)hasSourceAppBundleId;
-- (bool)hasUriScheme;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasSessionId;
+- (BOOL)hasSourceAppBundleId;
+- (BOOL)hasUriScheme;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
-- (void)setHasSessionId:(bool)arg1;
+- (void)setHasSessionId:(BOOL)arg1;
 - (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSourceAppBundleId:(id)arg1;
 - (void)setUriScheme:(id)arg1;

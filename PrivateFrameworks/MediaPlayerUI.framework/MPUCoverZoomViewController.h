@@ -6,76 +6,76 @@
 
 @interface MPUCoverZoomViewController : UIViewController <MPUCZCollectionViewControllerDelegate, UIGestureRecognizerDelegate> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     double _animationDuration;
-    double _animationEndProgress;
-    double _animationStartProgress;
+    float _animationEndProgress;
+    float _animationStartProgress;
     double _animationStartTimeInterval;
     CADisplayLink *_animationTimer;
     MPUCZCollectionViewController *_collectionViewController;
-    long long _coverCountPerColumn;
+    int _coverCountPerColumn;
     MPUDataSource *_dataSource;
     <MPUCoverZoomViewControllerDelegate> *_delegate;
     UIViewController *_detailViewController;
     MPUCoverMaskView *_maskView;
-    double _pinchContentOffsetDelta;
+    float _pinchContentOffsetDelta;
     NSIndexPath *_pinchContentOffsetIndexPath;
-    long long _pinchDirection;
+    int _pinchDirection;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
+    BOOL _pinching;
     CAMediaTimingFunction *_timingFunction;
     UIView *_transformView;
     MPUCZCollectionViewController *_transitionCollectionViewController;
-    long long _transitionCoverCountPerColumn;
+    int _transitionCoverCountPerColumn;
     } _transitionEndItemSize;
     } _transitionStartItemSize;
-    double _transitionStartScale;
+    float _transitionStartScale;
     } _unzoomedAlbumViewTransform;
-    bool_pinching;
-    bool_zoomed;
+    BOOL _zoomed;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <MPUCoverZoomViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_beginTransitionForScale:(double)arg1;
-- (double)_collectionViewHeightForItemSize:(struct CGSize { double x1; double x2; })arg1 coverCountPerColumn:(unsigned long long)arg2;
-- (unsigned long long)_defaultNumberOfRows;
+- (void)_beginTransitionForScale:(float)arg1;
+- (float)_collectionViewHeightForItemSize:(struct CGSize { float x1; float x2; })arg1 coverCountPerColumn:(unsigned int)arg2;
+- (unsigned int)_defaultNumberOfRows;
 - (void)_displayLinkAction:(id)arg1;
-- (void)_endTransitionAtProgress:(double)arg1 velocity:(double)arg2;
-- (unsigned long long)_maximumNumberOfRows;
-- (unsigned long long)_minimumNumberOfRows;
+- (void)_endTransitionAtProgress:(float)arg1 velocity:(float)arg2;
+- (unsigned int)_maximumNumberOfRows;
+- (unsigned int)_minimumNumberOfRows;
 - (void)_pinchAction:(id)arg1;
-- (void)_removeTransitionCollectionViewForEndProgress:(double)arg1;
-- (void)_setTransitionProgress:(double)arg1;
+- (void)_removeTransitionCollectionViewForEndProgress:(float)arg1;
+- (void)_setTransitionProgress:(float)arg1;
 - (void)_updateContentOffset;
 - (void)_updateContentOffsetForCollectionView:(id)arg1;
 - (void)collectionViewController:(id)arg1 didSelectCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (void)detailViewControllerRequestsExit:(id)arg1;
-- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (double)imageAspectRatio;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (float)imageAspectRatio;
 - (id)initWithDataSource:(id)arg1;
 - (void)loadView;
-- (struct CGSize { double x1; double x2; })maximumImageSize;
-- (long long)preferredStatusBarUpdateAnimation;
-- (bool)prefersStatusBarHidden;
+- (struct CGSize { float x1; float x2; })maximumImageSize;
+- (int)preferredStatusBarUpdateAnimation;
+- (BOOL)prefersStatusBarHidden;
 - (void)setDelegate:(id)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

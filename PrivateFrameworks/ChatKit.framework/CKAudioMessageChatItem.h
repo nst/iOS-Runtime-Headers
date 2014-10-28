@@ -9,7 +9,7 @@
 
 @property(retain,readonly) CKAudioMediaObject * mediaObject;
 
-- (unsigned long long)balloonCorners;
+- (unsigned int)balloonCorners;
 - (Class)balloonViewClass;
 
 @end

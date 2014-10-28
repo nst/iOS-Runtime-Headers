@@ -8,43 +8,43 @@
     NSDictionary *_dictionary;
     NSString *_ratingDescription;
     NSString *_ratingLabel;
-    long long _ratingLevel;
-    unsigned long long _ratingSystem;
+    int _ratingLevel;
+    unsigned int _ratingSystem;
 }
 
-@property(getter=isExplicitContent,readonly) bool explicitContent;
+@property(getter=isExplicitContent,readonly) BOOL explicitContent;
 @property(readonly) id mediaPropertyContentRatingValue;
 @property(copy) NSString * ratingDescription;
 @property(copy) NSString * ratingLabel;
-@property long long ratingLevel;
-@property unsigned long long ratingSystem;
-@property(getter=isRestrictedContent,readonly) bool restrictedContent;
-@property(getter=isRestrictedPurchase,readonly) bool restrictedPurchase;
+@property int ratingLevel;
+@property unsigned int ratingSystem;
+@property(getter=isRestrictedContent,readonly) BOOL restrictedContent;
+@property(getter=isRestrictedPurchase,readonly) BOOL restrictedPurchase;
 
-+ (unsigned long long)ratingSystemFromString:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (unsigned int)ratingSystemFromString:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)_isRatingSystemForApps:(unsigned long long)arg1;
-- (bool)_isRatingSystemForMovies:(unsigned long long)arg1;
-- (bool)_isRatingSystemForMusic:(unsigned long long)arg1;
-- (bool)_isRatingSystemForTV:(unsigned long long)arg1;
+- (BOOL)_isRatingSystemForApps:(unsigned int)arg1;
+- (BOOL)_isRatingSystemForMovies:(unsigned int)arg1;
+- (BOOL)_isRatingSystemForMusic:(unsigned int)arg1;
+- (BOOL)_isRatingSystemForTV:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (bool)isExplicitContent;
-- (bool)isRestrictedContent;
-- (bool)isRestrictedPurchase;
+- (BOOL)isExplicitContent;
+- (BOOL)isRestrictedContent;
+- (BOOL)isRestrictedPurchase;
 - (id)mediaPropertyContentRatingValue;
 - (id)ratingDescription;
 - (id)ratingLabel;
-- (long long)ratingLevel;
-- (unsigned long long)ratingSystem;
+- (int)ratingLevel;
+- (unsigned int)ratingSystem;
 - (void)setRatingDescription:(id)arg1;
 - (void)setRatingLabel:(id)arg1;
-- (void)setRatingLevel:(long long)arg1;
-- (void)setRatingSystem:(unsigned long long)arg1;
+- (void)setRatingLevel:(int)arg1;
+- (void)setRatingSystem:(unsigned int)arg1;
 - (id)valueForProperty:(id)arg1;
 
 @end

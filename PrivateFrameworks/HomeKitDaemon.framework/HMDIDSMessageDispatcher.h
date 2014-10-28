@@ -28,7 +28,8 @@
 @property(readonly) NSArray * residentDevices;
 @property(readonly) NSArray * transientDevices;
 
-+ (bool)isWhitelistedLocalMessage:(id)arg1;
++ (BOOL)isWhitelistedLocalMessage:(id)arg1;
++ (id)remappedRemotePrepareWriteCommands;
 + (id)whitelistedCommands;
 
 - (void).cxx_destruct;
@@ -36,7 +37,7 @@
 - (void)_handleSecureServerMessage:(id)arg1 fromID:(id)arg2;
 - (void)_sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
 - (void)_sendSecureMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
-- (void)_setRemoteAccessPeer:(id)arg1 forHome:(id)arg2 sendNotification:(bool)arg3;
+- (void)_setRemoteAccessPeer:(id)arg1 forHome:(id)arg2 sendNotification:(BOOL)arg3;
 - (id)activeClientSecureSessions;
 - (id)activeServerSecureSessions;
 - (id)adminMsgFilter;

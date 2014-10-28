@@ -6,25 +6,25 @@
 
 @interface NSAllDescendantPathsEnumerator : NSDirectoryEnumerator {
     BOOL _padding[3];
-    boolcross;
     NSArray *contents;
-    unsigned long long depth;
+    BOOL cross;
+    unsigned int depth;
     NSFileAttributes *directoryAttributes;
-    unsigned long long idx;
+    unsigned int idx;
     NSString *path;
     NSString *pathToLastReportedItem;
     NSString *prepend;
     NSAllDescendantPathsEnumerator *under;
 }
 
-+ (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(bool)arg4 depth:(unsigned long long)arg5;
++ (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4 depth:(unsigned int)arg5;
 
 - (id)_under;
 - (id)currentSubdirectoryAttributes;
 - (void)dealloc;
 - (id)directoryAttributes;
 - (id)fileAttributes;
-- (unsigned long long)level;
+- (unsigned int)level;
 - (id)nextObject;
 - (void)skipDescendants;
 - (void)skipDescendents;

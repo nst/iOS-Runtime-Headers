@@ -16,7 +16,7 @@
 @property(retain) PKShippingMethod * shippingMethod;
 @property(retain) PKPaymentToken * token;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void*)billingAddress;
 - (void)dealloc;

@@ -18,15 +18,15 @@
 - (struct ImmutableDictionary { int (**x1)(); id x2; struct HashMap<WTF::String, WTF::RefPtr<API::Object>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<API::Object> > > { struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > >, WTF::StringHash, WTF::HashMap<WTF::String, WTF::RefPtr<API::Object>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<API::Object> > >::KeyValuePairTraits, WTF::HashTraits<WTF::String> > { struct KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_3_1_1; } x3; }*)rootObjectDictionary;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (bool)allowsKeyedCoding;
-- (void)encodeBool:(bool)arg1 forKey:(id)arg2;
-- (void)encodeBytes:(const char *)arg1 length:(unsigned long long)arg2 forKey:(id)arg3;
+- (BOOL)allowsKeyedCoding;
+- (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
-- (void)encodeInteger:(long long)arg1 forKey:(id)arg2;
+- (void)encodeInteger:(int)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (id)init;
-- (bool)requiresSecureCoding;
+- (BOOL)requiresSecureCoding;
 
 @end

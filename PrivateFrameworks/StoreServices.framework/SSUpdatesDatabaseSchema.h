@@ -8,6 +8,6 @@
 + (void)_migrate7000to7001InDatabase:(id)arg1;
 + (void)createSchemaInDatabase:(id)arg1 withName:(id)arg2;
 + (id)databasePath;
-+ (bool)databaseRequiresMigration:(id)arg1;
++ (BOOL)databaseRequiresMigration:(id)arg1;
 
 @end

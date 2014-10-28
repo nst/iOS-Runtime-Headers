@@ -25,7 +25,7 @@
 - (id)miscQuestion;
 - (id)placeAttribute;
 - (id)product;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAddress:(id)arg1;
 - (void)setAttribute:(id)arg1;
 - (void)setMiscQuestion:(id)arg1;

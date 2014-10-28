@@ -6,30 +6,30 @@
 
 @interface MFIMAPSimpleDownload : MFIMAPDownload {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     unsigned int _knownLength : 1;
     unsigned int _complete : 1;
     NSError *_error;
-    unsigned long long _length;
-    unsigned long long _offsetAdjustment;
-    unsigned long long _originalDataLength;
+    unsigned int _length;
+    unsigned int _offsetAdjustment;
+    unsigned int _originalDataLength;
     } _range;
     NSString *_section;
 }
 
 - (void)addCommandsToPipeline:(id)arg1 withCache:(id)arg2;
-- (unsigned long long)bytesFetched;
+- (unsigned int)bytesFetched;
 - (void)dealloc;
 - (id)error;
-- (unsigned long long)expectedLength;
+- (unsigned int)expectedLength;
 - (void)handleFetchResult:(id)arg1;
-- (id)initWithUid:(unsigned int)arg1 section:(id)arg2 estimatedLength:(unsigned long long)arg3 consumer:(id)arg4;
-- (id)initWithUid:(unsigned int)arg1 section:(id)arg2 length:(unsigned long long)arg3 consumer:(id)arg4;
-- (id)initWithUid:(unsigned int)arg1 section:(id)arg2 length:(unsigned long long)arg3 lengthIsKnown:(bool)arg4 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5 consumer:(id)arg6;
-- (id)initWithUid:(unsigned int)arg1 section:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 consumer:(id)arg4;
-- (bool)isComplete;
-- (unsigned long long)lengthOfDataBeforeLineConversion;
+- (id)initWithUid:(unsigned long)arg1 section:(id)arg2 estimatedLength:(unsigned int)arg3 consumer:(id)arg4;
+- (id)initWithUid:(unsigned long)arg1 section:(id)arg2 length:(unsigned int)arg3 consumer:(id)arg4;
+- (id)initWithUid:(unsigned long)arg1 section:(id)arg2 length:(unsigned int)arg3 lengthIsKnown:(BOOL)arg4 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 consumer:(id)arg6;
+- (id)initWithUid:(unsigned long)arg1 section:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 consumer:(id)arg4;
+- (BOOL)isComplete;
+- (unsigned int)lengthOfDataBeforeLineConversion;
 - (void)processResults;
 - (id)section;
 - (void)setError:(id)arg1;

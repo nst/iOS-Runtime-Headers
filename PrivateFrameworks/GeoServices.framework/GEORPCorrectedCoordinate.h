@@ -10,8 +10,8 @@
 }
 
 @property(retain) GEOLatLng * correctedCoordinate;
-@property(readonly) bool hasCorrectedCoordinate;
-@property(readonly) bool hasOriginalCoordinate;
+@property(readonly) BOOL hasCorrectedCoordinate;
+@property(readonly) BOOL hasOriginalCoordinate;
 @property(retain) GEOLatLng * originalCoordinate;
 
 - (void)copyTo:(id)arg1;
@@ -20,13 +20,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCorrectedCoordinate;
-- (bool)hasOriginalCoordinate;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasCorrectedCoordinate;
+- (BOOL)hasOriginalCoordinate;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)originalCoordinate;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCorrectedCoordinate:(id)arg1;
 - (void)setOriginalCoordinate:(id)arg1;
 - (void)writeTo:(id)arg1;

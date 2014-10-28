@@ -11,7 +11,7 @@
 @property(retain) SAStockObject * aceStock;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSURL * identifier;
 @property(copy) NSString * refId;
 @property(copy) NSArray * results;

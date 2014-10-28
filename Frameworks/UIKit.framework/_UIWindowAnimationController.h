@@ -5,14 +5,14 @@
 @class NSString, UIWindow;
 
 @interface _UIWindowAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
+    BOOL _shouldCrossfade;
     UIWindow *_window;
-    bool_shouldCrossfade;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool shouldCrossfade;
+@property(readonly) unsigned int hash;
+@property BOOL shouldCrossfade;
 @property(readonly) Class superclass;
 @property UIWindow * window;
 
@@ -22,9 +22,9 @@
 - (void)_performLayoutAnimationWithContext:(id)arg1 windowGeometryUpdatingBlock:(id)arg2;
 - (void)animateTransition:(id)arg1;
 - (id)initWithWindow:(id)arg1;
-- (void)setShouldCrossfade:(bool)arg1;
+- (void)setShouldCrossfade:(BOOL)arg1;
 - (void)setWindow:(id)arg1;
-- (bool)shouldCrossfade;
+- (BOOL)shouldCrossfade;
 - (double)transitionDuration:(id)arg1;
 - (id)window;
 

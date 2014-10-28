@@ -15,31 +15,31 @@
 }
 
 @property(retain) NSMutableArray * appConnStats;
-@property bool hasNumRRCConnections;
-@property bool hasTimestamp;
+@property BOOL hasNumRRCConnections;
+@property BOOL hasTimestamp;
 @property unsigned int numRRCConnections;
 @property unsigned long long timestamp;
 
 - (void)addAppConnStats:(id)arg1;
 - (id)appConnStats;
-- (id)appConnStatsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)appConnStatsCount;
+- (id)appConnStatsAtIndex:(unsigned int)arg1;
+- (unsigned int)appConnStatsCount;
 - (void)clearAppConnStats;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasNumRRCConnections;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasNumRRCConnections;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)numRRCConnections;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAppConnStats:(id)arg1;
-- (void)setHasNumRRCConnections:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasNumRRCConnections:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setNumRRCConnections:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

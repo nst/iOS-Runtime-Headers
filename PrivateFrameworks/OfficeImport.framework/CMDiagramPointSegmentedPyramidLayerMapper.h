@@ -3,10 +3,10 @@
  */
 
 @interface CMDiagramPointSegmentedPyramidLayerMapper : CMDiagramPointMapper {
-    boolmPlaceholder;
+    BOOL mPlaceholder;
 }
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)setIsPlaceholder:(bool)arg1;
+- (void)setIsPlaceholder:(BOOL)arg1;
 
 @end

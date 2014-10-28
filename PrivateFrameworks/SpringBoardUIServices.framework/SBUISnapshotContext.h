@@ -5,14 +5,14 @@
 @class NSString, UIScreen;
 
 @interface SBUISnapshotContext : NSObject <BSXPCCoding> {
+    BOOL _excludesNotificationCenter;
     UIScreen *_screen;
-    bool_excludesNotificationCenter;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool excludesNotificationCenter;
-@property(readonly) unsigned long long hash;
+@property BOOL excludesNotificationCenter;
+@property(readonly) unsigned int hash;
 @property(retain) UIScreen * screen;
 @property(readonly) Class superclass;
 
@@ -20,11 +20,11 @@
 
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (bool)excludesNotificationCenter;
+- (BOOL)excludesNotificationCenter;
 - (id)initWithScreen:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)screen;
-- (void)setExcludesNotificationCenter:(bool)arg1;
+- (void)setExcludesNotificationCenter:(BOOL)arg1;
 - (void)setScreen:(id)arg1;
 
 @end

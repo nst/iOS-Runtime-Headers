@@ -18,7 +18,7 @@
 @property(retain) UIView * containerView;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UIView * rootLayoutView;
 @property(retain) id scrollInsetsToken;
 @property(retain) UIScrollView * scrollView;
@@ -28,7 +28,7 @@
 - (id)containerConstraint;
 - (id)containerView;
 - (void)dealloc;
-- (double)heightConstant;
+- (float)heightConstant;
 - (void)loadView;
 - (id)rootLayoutView;
 - (id)scrollInsetsToken;
@@ -40,7 +40,7 @@
 - (void)setScrollInsetsToken:(id)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)updateViewConstraints;
-- (void)viewDidDisappear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

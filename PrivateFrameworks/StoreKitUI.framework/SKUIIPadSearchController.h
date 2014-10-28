@@ -13,7 +13,7 @@
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UIViewController * parentViewController;
 @property(readonly) SKUISearchFieldController * searchFieldController;
 @property(readonly) Class superclass;
@@ -32,9 +32,9 @@
 - (void)reloadSearchField;
 - (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (id)searchFieldController;
-- (bool)searchFieldControllerShouldBeginEditing:(id)arg1;
+- (BOOL)searchFieldControllerShouldBeginEditing:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setNumberOfSearchResults:(long long)arg1;
+- (void)setNumberOfSearchResults:(int)arg1;
 - (void)setSearchFieldPlaceholderText:(id)arg1;
 - (void)setSearchFieldText:(id)arg1;
 

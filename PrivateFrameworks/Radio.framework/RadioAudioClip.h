@@ -9,10 +9,10 @@
 
 @property(copy,readonly) NSURL * assetURL;
 @property(readonly) long long purchaseID;
-@property(getter=isSkipable,readonly) bool skipable;
+@property(getter=isSkipable,readonly) BOOL skipable;
 
 - (id)assetURL;
-- (bool)isSkipable;
+- (BOOL)isSkipable;
 - (long long)purchaseID;
 
 @end

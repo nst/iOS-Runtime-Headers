@@ -10,7 +10,7 @@
 
 @property(retain) NSString * filename;
 
-+ (bool)enabled;
++ (BOOL)enabled;
 
 - (void).cxx_destruct;
 - (void)_ensureCustomLogFile;

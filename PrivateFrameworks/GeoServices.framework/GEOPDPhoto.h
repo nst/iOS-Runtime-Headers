@@ -9,7 +9,7 @@
     NSMutableArray *_photoVersions;
 }
 
-@property(readonly) bool hasPhotoId;
+@property(readonly) BOOL hasPhotoId;
 @property(retain) NSString * photoId;
 @property(retain) NSMutableArray * photoVersions;
 
@@ -20,15 +20,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPhotoId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPhotoId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)photoId;
-- (id)photoVersionAtIndex:(unsigned long long)arg1;
+- (id)photoVersionAtIndex:(unsigned int)arg1;
 - (id)photoVersions;
-- (unsigned long long)photoVersionsCount;
-- (bool)readFrom:(id)arg1;
+- (unsigned int)photoVersionsCount;
+- (BOOL)readFrom:(id)arg1;
 - (void)setPhotoId:(id)arg1;
 - (void)setPhotoVersions:(id)arg1;
 - (void)writeTo:(id)arg1;

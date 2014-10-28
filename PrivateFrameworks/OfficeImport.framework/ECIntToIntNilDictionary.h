@@ -3,11 +3,11 @@
  */
 
 @interface ECIntToIntNilDictionary : OITSUIntToIntDictionary {
-    boolmNilValueSet;
-    long long mNilValue;
+    int mNilValue;
+    BOOL mNilValueSet;
 }
 
-- (bool)intIsPresentForKey:(long long)arg1 outValue:(long long*)arg2;
-- (void)setInt:(long long)arg1 forKey:(long long)arg2;
+- (BOOL)intIsPresentForKey:(int)arg1 outValue:(int*)arg2;
+- (void)setInt:(int)arg1 forKey:(int)arg2;
 
 @end

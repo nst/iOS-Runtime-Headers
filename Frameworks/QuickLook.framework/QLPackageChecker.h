@@ -8,6 +8,6 @@
 
 - (void)dealloc;
 - (id)initWithAnchorURL:(id)arg1;
-- (bool)pathHasPackageExtension:(id)arg1;
+- (BOOL)pathHasPackageExtension:(id)arg1;
 
 @end

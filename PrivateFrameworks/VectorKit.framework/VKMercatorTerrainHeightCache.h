@@ -19,7 +19,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<vk::Anchor *, std::__1::__value_type<vk::Anchor *, float>, std::__1::less<vk::Anchor *>, true> > { 
-                unsigned long long __first_; 
+                unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
     } _anchorToHeight;

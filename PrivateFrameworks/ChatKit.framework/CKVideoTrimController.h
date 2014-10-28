@@ -15,7 +15,7 @@
 @property <CKTrimControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) UIVideoEditorController * editVideoVC;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) CKMediaObject * originalMediaObject;
 @property(readonly) Class superclass;
 @property(retain) CKMediaObject * trimmedMediaObject;

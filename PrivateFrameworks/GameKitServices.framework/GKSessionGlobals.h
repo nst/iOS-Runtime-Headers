@@ -4,15 +4,15 @@
 
 @interface GKSessionGlobals : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     unsigned int *_activePIDList;
-    unsigned long long _activePIDListCount;
-    unsigned long long _activePIDListSize;
+    unsigned long _activePIDListCount;
+    unsigned long _activePIDListSize;
     } _lock;
 }
 
-- (bool)hasActivePID:(unsigned int)arg1;
+- (BOOL)hasActivePID:(unsigned int)arg1;
 - (id)init;
 - (void)lock;
 - (void)registerPID:(unsigned int)arg1;

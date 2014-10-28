@@ -5,40 +5,40 @@
 @class NSString;
 
 @interface IMLocationShareStatusChangeItem : IMItem <NSCoding, NSCopying, IMRemoteObjectCoding> {
+    BOOL _actionable;
     long long _direction;
+    BOOL _expired;
     NSString *_otherCountryCode;
     NSString *_otherHandle;
     NSString *_otherUnformattedID;
     long long _status;
-    bool_actionable;
-    bool_expired;
 }
 
-@property bool actionable;
+@property BOOL actionable;
 @property long long direction;
-@property bool expired;
+@property BOOL expired;
 @property(retain) NSString * otherCountryCode;
 @property(retain) NSString * otherHandle;
 @property(retain) NSString * otherUnformattedID;
 @property long long status;
 
-- (bool)_hasMessageChatItem;
+- (BOOL)_hasMessageChatItem;
 - (id)_newChatItems;
-- (bool)actionable;
+- (BOOL)actionable;
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (long long)direction;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)expired;
+- (BOOL)expired;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)otherCountryCode;
 - (id)otherHandle;
 - (id)otherUnformattedID;
-- (void)setActionable:(bool)arg1;
+- (void)setActionable:(BOOL)arg1;
 - (void)setDirection:(long long)arg1;
-- (void)setExpired:(bool)arg1;
+- (void)setExpired:(BOOL)arg1;
 - (void)setOtherCountryCode:(id)arg1;
 - (void)setOtherHandle:(id)arg1;
 - (void)setOtherUnformattedID:(id)arg1;

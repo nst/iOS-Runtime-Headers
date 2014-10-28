@@ -31,7 +31,7 @@
 - (id)last;
 - (id)missed;
 - (id)outgoing;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setContacts:(id)arg1;
 - (void)setEnd:(id)arg1;
 - (void)setFaceTime:(id)arg1;

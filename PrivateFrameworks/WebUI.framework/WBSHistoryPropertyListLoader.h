@@ -8,28 +8,28 @@
     double _ageLimit;
     <WBSHistoryLoaderDelegate> *_delegate;
     Class _historyItemClass;
-    unsigned long long _itemCountLimit;
+    unsigned int _itemCountLimit;
+    BOOL _loadInProgress;
     NSMutableArray *_loadedDiscardedItems;
     NSMutableArray *_loadedItems;
     NSCountedSet *_loadedStringsForUserTypedDomainExpansion;
     NSObject<OS_dispatch_queue> *_loadingQueue;
     NSURL *_url;
-    bool_loadInProgress;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <WBSHistoryLoaderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_finishLoadingOnMainThread;
 - (void)_finishLoadingOnMainThreadIfNeeded;
 - (void)_loadHistory;
-- (bool)_loadHistoryFromDictionary:(id)arg1;
+- (BOOL)_loadHistoryFromDictionary:(id)arg1;
 - (id)delegate;
-- (id)initWithURL:(id)arg1 itemCountLimit:(unsigned long long)arg2 ageLimit:(double)arg3 historyItemClass:(Class)arg4;
+- (id)initWithURL:(id)arg1 itemCountLimit:(unsigned int)arg2 ageLimit:(double)arg3 historyItemClass:(Class)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)startLoading;
 - (void)waitForLoadingToComplete;

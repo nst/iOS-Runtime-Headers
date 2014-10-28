@@ -7,21 +7,21 @@
  */
 
 @interface ADTapGestureRecognizer : UIGestureRecognizer {
-    long long _finalTrackingID;
+    int _finalTrackingID;
     id _touchDownHandler;
     id _touchMovedHandler;
     id _touchUpHandler;
 }
 
-@property long long finalTrackingID;
+@property int finalTrackingID;
 @property(copy) id touchDownHandler;
 @property(copy) id touchMovedHandler;
 @property(copy) id touchUpHandler;
 
 - (void)dealloc;
-- (long long)finalTrackingID;
+- (int)finalTrackingID;
 - (void)reset;
-- (void)setFinalTrackingID:(long long)arg1;
+- (void)setFinalTrackingID:(int)arg1;
 - (void)setTouchDownHandler:(id)arg1;
 - (void)setTouchMovedHandler:(id)arg1;
 - (void)setTouchUpHandler:(id)arg1;

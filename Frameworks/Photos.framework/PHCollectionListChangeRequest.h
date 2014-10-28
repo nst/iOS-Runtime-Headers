@@ -8,9 +8,9 @@
     NSString *_clientName;
     int _clientProcessID;
     PHCollectionChangeRequestHelper *_collectionsHelper;
+    BOOL _entitled;
     PHChangeRequestHelper *_helper;
     PHCollectionList *_originalCollectionList;
-    bool_entitled;
 }
 
 @property(readonly) NSString * clientName;
@@ -18,12 +18,12 @@
 @property(readonly) PHCollectionChangeRequestHelper * collectionsHelper;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isEntitled,readonly) bool entitled;
-@property(readonly) unsigned long long hash;
+@property(getter=isEntitled,readonly) BOOL entitled;
+@property(readonly) unsigned int hash;
 @property(readonly) PHChangeRequestHelper * helper;
 @property(readonly) NSString * managedEntityName;
-@property(getter=isMutated,readonly) bool mutated;
-@property(getter=isNew,readonly) bool new;
+@property(getter=isMutated,readonly) BOOL mutated;
+@property(getter=isNew,readonly) BOOL new;
 @property(readonly) NSManagedObjectID * objectID;
 @property(readonly) PHObjectPlaceholder * placeholderForCreatedCollectionList;
 @property(readonly) Class superclass;
@@ -42,9 +42,9 @@
 - (void)_setOriginalCollectionList:(id)arg1;
 - (void)addChildCollection:(id)arg1;
 - (void)addChildCollections:(id)arg1;
-- (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
-- (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
-- (bool)canGenerateUUIDLocally;
+- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (BOOL)canGenerateUUIDLocally;
 - (id)clientName;
 - (int)clientProcessID;
 - (id)collectionsHelper;
@@ -55,27 +55,27 @@
 - (id)helper;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
-- (void)insertChildCollection:(id)arg1 inChildCollectionsAtIndex:(unsigned long long)arg2;
+- (id)initWithXPCDict:(id)arg1 entitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (void)insertChildCollection:(id)arg1 inChildCollectionsAtIndex:(unsigned int)arg2;
 - (void)insertChildCollections:(id)arg1 atIndexes:(id)arg2;
-- (bool)isEntitled;
-- (bool)isMutated;
-- (bool)isNew;
+- (BOOL)isEntitled;
+- (BOOL)isMutated;
+- (BOOL)isNew;
 - (id)managedEntityName;
-- (void)moveChildCollectionsAtIndexes:(id)arg1 toIndex:(unsigned long long)arg2;
+- (void)moveChildCollectionsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
 - (id)mutations;
 - (id)objectID;
 - (id)placeholderForCreatedCollectionList;
 - (void)removeChildCollection:(id)arg1;
-- (void)removeChildCollectionFromChildCollectionsAtIndex:(unsigned long long)arg1;
+- (void)removeChildCollectionFromChildCollectionsAtIndex:(unsigned int)arg1;
 - (void)removeChildCollections:(id)arg1;
 - (void)removeChildCollectionsAtIndexes:(id)arg1;
-- (void)replaceChildCollectionsAtIndex:(unsigned long long)arg1 withChildCollection:(id)arg2;
+- (void)replaceChildCollectionsAtIndex:(unsigned int)arg1 withChildCollection:(id)arg2;
 - (void)replaceChildCollectionsAtIndexes:(id)arg1 withChildCollections:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)uuid;
-- (bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
-- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (BOOL)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
+- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 
 @end

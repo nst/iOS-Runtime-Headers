@@ -5,32 +5,32 @@
 @class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_semaphore>, TSKAccessController;
 
 @interface TSDTilingBackgroundQueue : NSObject {
-    boolmHoldingRead;
-    boolmShuttingDown;
     TSKAccessController *mAccessController;
     NSObject<OS_dispatch_semaphore> *mCanEnqueueReaders;
+    BOOL mHoldingRead;
     NSObject<OS_dispatch_group> *mInFlightReaders;
     NSObject<OS_dispatch_semaphore> *mReadLockLockedSignal;
     NSObject<OS_dispatch_semaphore> *mReadLockUnlockSignal;
-    unsigned long long mReaderCount;
+    unsigned int mReaderCount;
     int mReaderSpinLock;
-    long long mShutdownToken;
+    long mShutdownToken;
+    BOOL mShuttingDown;
 }
 
-@property(getter=isShuttingDown) bool shuttingDown;
+@property(getter=isShuttingDown) BOOL shuttingDown;
 
-+ (bool)isHoldingReadLockFromBackgroundQueue;
++ (BOOL)isHoldingReadLockFromBackgroundQueue;
 + (id)p_sharedLimitedQueue;
 
 - (void)dealloc;
 - (void)drainAndPerformSync:(id)arg1;
 - (id)init;
 - (id)initWithAccessController:(id)arg1;
-- (bool)isShuttingDown;
+- (BOOL)isShuttingDown;
 - (void)p_readLock;
 - (void)p_readUnlock;
 - (void)performAsync:(id)arg1;
-- (void)setShuttingDown:(bool)arg1;
+- (void)setShuttingDown:(BOOL)arg1;
 - (void)shutdown;
 
 @end

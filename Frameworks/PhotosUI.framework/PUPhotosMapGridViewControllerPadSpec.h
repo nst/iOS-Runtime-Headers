@@ -5,6 +5,6 @@
 @interface PUPhotosMapGridViewControllerPadSpec : PUPhotosGridViewControllerPadSpec {
 }
 
-- (bool)usesStackPopTransition;
+- (BOOL)usesStackPopTransition;
 
 @end

@@ -5,27 +5,26 @@
 @interface NSCFData : NSMutableData {
     char *_bytes;
     struct __CFAllocator { } *_bytesDeallocator;
-    long long _capacity;
+    long _capacity;
     unsigned char _cfinfo[4];
-    long long _length;
-    unsigned int _rc;
+    long _length;
 }
 
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (bool)_compact;
-- (bool)allowsWeakReference;
+- (BOOL)_compact;
+- (BOOL)allowsWeakReference;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)finalize;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (unsigned long long)length;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)length;
 - (void*)mutableBytes;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (bool)retainWeakReference;
-- (void)setLength:(unsigned long long)arg1;
+- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
+- (void)setLength:(unsigned int)arg1;
 
 @end

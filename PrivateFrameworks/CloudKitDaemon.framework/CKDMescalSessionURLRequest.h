@@ -13,15 +13,15 @@
 @property(retain) NSData * sessionData;
 
 - (void).cxx_destruct;
-- (bool)allowsAnonymousAccount;
+- (BOOL)allowsAnonymousAccount;
 - (id)initWithSessionData:(id)arg1;
 - (id)mescalData;
 - (int)operationType;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (bool)requiresDeviceID;
-- (bool)requiresSignature;
+- (BOOL)requiresDeviceID;
+- (BOOL)requiresSignature;
 - (id)sessionData;
 - (void)setMescalData:(id)arg1;
 - (void)setSessionData:(id)arg1;

@@ -8,16 +8,16 @@
     XPCClient *_connection;
     <WPAWDLDelegate> *_delegate;
     NSObject<OS_xpc_object> *_server;
-    long long _state;
+    int _state;
 }
 
 @property(retain) XPCClient * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property <WPAWDLDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_xpc_object> * server;
-@property long long state;
+@property int state;
 @property(readonly) Class superclass;
 
 + (id)generateDataFromEmails:(id)arg1;
@@ -41,12 +41,12 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setServer:(id)arg1;
-- (void)setState:(long long)arg1;
+- (void)setState:(int)arg1;
 - (void)startConnectionlessAWDLServiceAdvertisingWithData:(id)arg1;
 - (void)startConnectionlessAWDLServiceScanning;
-- (long long)state;
+- (int)state;
 - (void)stopConnectionlessAWDLServiceAdvertising;
 - (void)stopConnectionlessAWDLServiceScanning;
-- (void)updateState:(long long)arg1;
+- (void)updateState:(int)arg1;
 
 @end

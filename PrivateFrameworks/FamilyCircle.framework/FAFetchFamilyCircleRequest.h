@@ -5,26 +5,26 @@
 @class NSArray;
 
 @interface FAFetchFamilyCircleRequest : FAFamilyCircleRequest {
+    BOOL _doNotFetchFromServer;
     NSArray *_expectedDSIDs;
-    bool_doNotFetchFromServer;
-    bool_forceServerFetch;
-    bool_signedInAccountShouldBeApprover;
+    BOOL _forceServerFetch;
+    BOOL _signedInAccountShouldBeApprover;
 }
 
-@property bool doNotFetchFromServer;
+@property BOOL doNotFetchFromServer;
 @property(copy) NSArray * expectedDSIDs;
-@property bool forceServerFetch;
-@property bool signedInAccountShouldBeApprover;
+@property BOOL forceServerFetch;
+@property BOOL signedInAccountShouldBeApprover;
 
 - (void).cxx_destruct;
-- (bool)doNotFetchFromServer;
+- (BOOL)doNotFetchFromServer;
 - (id)expectedDSIDs;
-- (bool)forceServerFetch;
-- (void)setDoNotFetchFromServer:(bool)arg1;
+- (BOOL)forceServerFetch;
+- (void)setDoNotFetchFromServer:(BOOL)arg1;
 - (void)setExpectedDSIDs:(id)arg1;
-- (void)setForceServerFetch:(bool)arg1;
-- (void)setSignedInAccountShouldBeApprover:(bool)arg1;
-- (bool)signedInAccountShouldBeApprover;
+- (void)setForceServerFetch:(BOOL)arg1;
+- (void)setSignedInAccountShouldBeApprover:(BOOL)arg1;
+- (BOOL)signedInAccountShouldBeApprover;
 - (void)startRequestWithCompletionHandler:(id)arg1;
 
 @end

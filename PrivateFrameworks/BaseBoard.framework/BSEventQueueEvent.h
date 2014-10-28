@@ -24,7 +24,7 @@
 - (void)execute;
 - (void)executeFromEventQueue;
 - (id)handler;
-- (bool)isEqualToEvent:(id)arg1;
+- (BOOL)isEqualToEvent:(id)arg1;
 - (id)name;
 - (void)setHandler:(id)arg1;
 - (void)setName:(id)arg1;

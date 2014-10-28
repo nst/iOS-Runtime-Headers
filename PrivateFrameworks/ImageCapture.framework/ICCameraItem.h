@@ -12,9 +12,9 @@
 @property(readonly) NSDate * creationDate;
 @property(readonly) ICCameraDevice * device;
 @property(readonly) NSString * fileSystemPath;
-@property(readonly) bool hasMetadata;
-@property(readonly) bool hasThumbnail;
-@property(getter=isLocked) bool locked;
+@property(readonly) BOOL hasMetadata;
+@property(readonly) BOOL hasThumbnail;
+@property(getter=isLocked) BOOL locked;
 @property(readonly) NSDictionary * metadata;
 @property(readonly) NSDate * modificationDate;
 @property(readonly) NSString * name;
@@ -32,11 +32,11 @@
 - (void)finalize;
 - (void)flushMetadataCache;
 - (void)flushThumbnailCache;
-- (bool)hasMetadata;
-- (bool)hasThumbnail;
+- (BOOL)hasMetadata;
+- (BOOL)hasThumbnail;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
-- (bool)isCameraFile;
-- (bool)isLocked;
+- (BOOL)isCameraFile;
+- (BOOL)isLocked;
 - (id)metadata;
 - (id)modificationDate;
 - (id)name;
@@ -44,7 +44,7 @@
 - (void)requestMetadata;
 - (void)requestThumbnail;
 - (void)setCreationDate:(id)arg1;
-- (void)setLocked:(bool)arg1;
+- (void)setLocked:(BOOL)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setUTI:(id)arg1;
 - (struct CGImage { }*)thumbnail;

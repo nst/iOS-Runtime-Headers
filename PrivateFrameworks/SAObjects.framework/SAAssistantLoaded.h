@@ -19,7 +19,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)requestSync;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setDataAnchor:(id)arg1;
 - (void)setRequestSync:(id)arg1;
 - (void)setSyncAnchors:(id)arg1;

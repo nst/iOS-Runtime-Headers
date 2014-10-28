@@ -8,25 +8,25 @@
     MFCountingDataConsumer *_countingConsumer;
     MFBaseFilterDataConsumer *_mainConsumer;
     NSMutableArray *_pendingFetchResults;
-    unsigned int _uid;
+    unsigned long _uid;
 }
 
 @property(readonly) MFBaseFilterDataConsumer * mainConsumer;
 
 - (void)addCommandsToPipeline:(id)arg1 withCache:(id)arg2;
-- (unsigned long long)bytesFetched;
-- (unsigned long long)consumerBytesFetched;
+- (unsigned int)bytesFetched;
+- (unsigned int)consumerBytesFetched;
 - (id)data;
 - (void)dealloc;
 - (id)error;
-- (unsigned long long)expectedLength;
+- (unsigned int)expectedLength;
 - (void)handleFetchResult:(id)arg1;
-- (id)initWithUid:(unsigned int)arg1;
-- (bool)isComplete;
-- (unsigned long long)lengthOfDataBeforeLineConversion;
+- (id)initWithUid:(unsigned long)arg1;
+- (BOOL)isComplete;
+- (unsigned int)lengthOfDataBeforeLineConversion;
 - (id)mainConsumer;
 - (void)processResults;
 - (void)setError:(id)arg1;
-- (unsigned int)uid;
+- (unsigned long)uid;
 
 @end

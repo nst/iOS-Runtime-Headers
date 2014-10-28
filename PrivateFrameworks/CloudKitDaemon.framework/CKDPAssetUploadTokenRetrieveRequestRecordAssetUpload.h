@@ -11,27 +11,27 @@
 }
 
 @property(retain) NSMutableArray * assetFields;
-@property(readonly) bool hasRecordId;
-@property(readonly) bool hasType;
+@property(readonly) BOOL hasRecordId;
+@property(readonly) BOOL hasType;
 @property(retain) CKDPRecordIdentifier * recordId;
 @property(retain) CKDPRecordType * type;
 
 - (void).cxx_destruct;
 - (void)addAssetFields:(id)arg1;
 - (id)assetFields;
-- (id)assetFieldsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)assetFieldsCount;
+- (id)assetFieldsAtIndex:(unsigned int)arg1;
+- (unsigned int)assetFieldsCount;
 - (void)clearAssetFields;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasRecordId;
-- (bool)hasType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasRecordId;
+- (BOOL)hasType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)recordId;
 - (void)setAssetFields:(id)arg1;
 - (void)setRecordId:(id)arg1;

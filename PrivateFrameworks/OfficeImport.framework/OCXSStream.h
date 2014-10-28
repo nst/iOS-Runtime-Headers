@@ -11,9 +11,9 @@
 - (int)currentContextChildDepth;
 - (int)currentContextDepth;
 - (void)dealloc;
-- (bool)hasLevels;
+- (BOOL)hasLevels;
 - (id)init;
-- (bool)popLevel;
+- (BOOL)popLevel;
 - (void)pushLevel:(int)arg1 name:(const char *)arg2;
 
 @end

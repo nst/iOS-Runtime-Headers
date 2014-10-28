@@ -15,17 +15,17 @@
     TSPDistributableFileManager *_fileManager;
     NSString *_fileStateIdentifier;
     NSString *_filenameHint;
-    bool_forceFileStorage;
-    bool_hasDataState;
-    bool_hasFileState;
+    BOOL _forceFileStorage;
+    BOOL _hasDataState;
+    BOOL _hasFileState;
 }
 
 @property long long dataStateIdentifier;
 @property(retain) NSString * fileStateIdentifier;
 @property(retain) NSString * filenameHint;
-@property bool forceFileStorage;
-@property(readonly) bool hasDataState;
-@property(readonly) bool hasFileState;
+@property BOOL forceFileStorage;
+@property(readonly) BOOL hasDataState;
+@property(readonly) BOOL hasFileState;
 
 - (void).cxx_destruct;
 - (struct sqlite3_blob { }*)_openDatabaseBlobWithSize:(int)arg1;
@@ -34,15 +34,15 @@
 - (long long)dataStateIdentifier;
 - (id)fileStateIdentifier;
 - (id)filenameHint;
-- (bool)forceFileStorage;
-- (bool)hasDataState;
-- (bool)hasFileState;
+- (BOOL)forceFileStorage;
+- (BOOL)hasDataState;
+- (BOOL)hasFileState;
 - (id)initWithDatabase:(id)arg1 fileManager:(id)arg2;
-- (bool)serializeArchive:(const struct Message { int (**x1)(); }*)arg1;
+- (BOOL)serializeArchive:(const struct Message { int (**x1)(); }*)arg1;
 - (void)serializeDataFromStream:(id)arg1 length:(long long)arg2;
 - (void)setDataStateIdentifier:(long long)arg1;
 - (void)setFileStateIdentifier:(id)arg1;
 - (void)setFilenameHint:(id)arg1;
-- (void)setForceFileStorage:(bool)arg1;
+- (void)setForceFileStorage:(BOOL)arg1;
 
 @end

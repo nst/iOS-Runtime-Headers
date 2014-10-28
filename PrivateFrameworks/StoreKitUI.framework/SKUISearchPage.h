@@ -5,44 +5,44 @@
 @class NSArray, NSString, SSMetricsConfiguration;
 
 @interface SKUISearchPage : NSObject <NSCopying> {
+    BOOL _autoCorrected;
     NSArray *_facets;
     SSMetricsConfiguration *_metricsConfiguration;
     NSString *_metricsPageDescription;
-    long long _preAutoCorrectCount;
+    int _preAutoCorrectCount;
     NSArray *_relatedQueries;
     NSArray *_resultGroups;
     NSString *_searchTerm;
     NSString *_spellCorrectedTerm;
-    bool_autoCorrected;
 }
 
-@property bool autoCorrected;
+@property BOOL autoCorrected;
 @property(copy) NSArray * facets;
 @property(retain) SSMetricsConfiguration * metricsConfiguration;
 @property(copy) NSString * metricsPageDescription;
-@property(readonly) long long numberOfResults;
-@property long long preAutoCorrectCount;
+@property(readonly) int numberOfResults;
+@property int preAutoCorrectCount;
 @property(retain) NSArray * relatedQueries;
 @property(copy) NSArray * resultGroups;
 @property(copy) NSString * searchTerm;
 @property(copy) NSString * spellCorrectedTerm;
 
 - (void).cxx_destruct;
-- (bool)autoCorrected;
+- (BOOL)autoCorrected;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)facets;
 - (id)metricsConfiguration;
 - (id)metricsPageDescription;
-- (long long)numberOfResults;
-- (long long)preAutoCorrectCount;
+- (int)numberOfResults;
+- (int)preAutoCorrectCount;
 - (id)relatedQueries;
 - (id)resultGroups;
 - (id)searchTerm;
-- (void)setAutoCorrected:(bool)arg1;
+- (void)setAutoCorrected:(BOOL)arg1;
 - (void)setFacets:(id)arg1;
 - (void)setMetricsConfiguration:(id)arg1;
 - (void)setMetricsPageDescription:(id)arg1;
-- (void)setPreAutoCorrectCount:(long long)arg1;
+- (void)setPreAutoCorrectCount:(int)arg1;
 - (void)setRelatedQueries:(id)arg1;
 - (void)setResultGroups:(id)arg1;
 - (void)setSearchTerm:(id)arg1;

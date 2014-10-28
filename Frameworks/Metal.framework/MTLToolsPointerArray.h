@@ -5,7 +5,7 @@
 @class NSObject<OS_dispatch_semaphore>, NSPointerArray;
 
 @interface MTLToolsPointerArray : NSObject {
-    unsigned long long _pointerAdditions;
+    unsigned int _pointerAdditions;
     NSPointerArray *_pointerArray;
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }

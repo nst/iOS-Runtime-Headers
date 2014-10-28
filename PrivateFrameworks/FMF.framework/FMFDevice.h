@@ -7,17 +7,17 @@
 @interface FMFDevice : NSObject <NSCopying, NSSecureCoding> {
     NSString *_deviceId;
     NSString *_deviceName;
-    bool_isActiveDevice;
-    bool_isThisDevice;
+    BOOL _isActiveDevice;
+    BOOL _isThisDevice;
 }
 
 @property(copy) NSString * deviceId;
 @property(copy) NSString * deviceName;
-@property bool isActiveDevice;
-@property bool isThisDevice;
+@property BOOL isActiveDevice;
+@property BOOL isThisDevice;
 
-+ (id)deviceWithId:(id)arg1 name:(id)arg2 isActive:(bool)arg3 isThisDevice:(bool)arg4;
-+ (bool)supportsSecureCoding;
++ (id)deviceWithId:(id)arg1 name:(id)arg2 isActive:(BOOL)arg3 isThisDevice:(BOOL)arg4;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,15 +26,15 @@
 - (id)deviceId;
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isActiveDevice;
-- (bool)isEqual:(id)arg1;
-- (bool)isThisDevice;
+- (BOOL)isActiveDevice;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isThisDevice;
 - (void)setDeviceId:(id)arg1;
 - (void)setDeviceName:(id)arg1;
-- (void)setIsActiveDevice:(bool)arg1;
-- (void)setIsThisDevice:(bool)arg1;
-- (void)updateIsActive:(bool)arg1 isThisDevice:(bool)arg2;
+- (void)setIsActiveDevice:(BOOL)arg1;
+- (void)setIsThisDevice:(BOOL)arg1;
+- (void)updateIsActive:(BOOL)arg1 isThisDevice:(BOOL)arg2;
 
 @end

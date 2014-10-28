@@ -6,18 +6,18 @@
 
 @interface PUSearchButtonItemCustomView : UIView {
     UINavigationBar *_navigationBar;
-    bool_nudgesSearchIcon;
+    BOOL _nudgesSearchIcon;
 }
 
 @property UINavigationBar * navigationBar;
-@property bool nudgesSearchIcon;
+@property BOOL nudgesSearchIcon;
 
 - (void).cxx_destruct;
 - (void)didMoveToSuperview;
 - (id)navigationBar;
-- (bool)nudgesSearchIcon;
-- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)nudgesSearchIcon;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setNavigationBar:(id)arg1;
-- (void)setNudgesSearchIcon:(bool)arg1;
+- (void)setNudgesSearchIcon:(BOOL)arg1;
 
 @end

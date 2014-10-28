@@ -17,7 +17,7 @@
 - (id)companyNameList;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setCompanyNameList:(id)arg1;
 - (void)setStockReferences:(id)arg1;
 - (void)setTargetAppId:(id)arg1;

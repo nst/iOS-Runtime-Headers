@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSURL * searchContext;
-@property bool visible;
+@property BOOL visible;
 
 + (id)visibilityView;
 + (id)visibilityViewWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,7 +17,7 @@
 - (id)groupIdentifier;
 - (id)searchContext;
 - (void)setSearchContext:(id)arg1;
-- (void)setVisible:(bool)arg1;
-- (bool)visible;
+- (void)setVisible:(BOOL)arg1;
+- (BOOL)visible;
 
 @end

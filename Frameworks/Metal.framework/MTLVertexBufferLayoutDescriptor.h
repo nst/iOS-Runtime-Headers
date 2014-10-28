@@ -3,22 +3,22 @@
  */
 
 @interface MTLVertexBufferLayoutDescriptor : NSObject <NSCopying> {
-    unsigned long long _instanceStepRate;
-    unsigned long long _stepFunction;
-    unsigned long long _stride;
+    unsigned int _instanceStepRate;
+    unsigned int _stepFunction;
+    unsigned int _stride;
 }
 
-@property unsigned long long stepFunction;
-@property unsigned long long stepRate;
-@property unsigned long long stride;
+@property unsigned int stepFunction;
+@property unsigned int stepRate;
+@property unsigned int stride;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)setStepFunction:(unsigned long long)arg1;
-- (void)setStepRate:(unsigned long long)arg1;
-- (void)setStride:(unsigned long long)arg1;
-- (unsigned long long)stepFunction;
-- (unsigned long long)stepRate;
-- (unsigned long long)stride;
+- (void)setStepFunction:(unsigned int)arg1;
+- (void)setStepRate:(unsigned int)arg1;
+- (void)setStride:(unsigned int)arg1;
+- (unsigned int)stepFunction;
+- (unsigned int)stepRate;
+- (unsigned int)stride;
 
 @end

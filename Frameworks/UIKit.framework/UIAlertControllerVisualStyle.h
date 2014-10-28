@@ -5,33 +5,33 @@
 @interface UIAlertControllerVisualStyle : NSObject {
 }
 
-- (double)_scaledMarginAboveMessageLabelFirstBaseline;
-- (double)_scaledMarginAboveTitleLabelFirstBaseline;
-- (double)_scaledMarginBelowLastLabelLastBaseline;
-- (double)_scaledMarginBelowMessageLabelLastBaseline;
-- (double)_scaledMarginBelowTitleLabelLastBaseline;
+- (float)_scaledMarginAboveMessageLabelFirstBaseline;
+- (float)_scaledMarginAboveTitleLabelFirstBaseline;
+- (float)_scaledMarginBelowLastLabelLastBaseline;
+- (float)_scaledMarginBelowMessageLabelLastBaseline;
+- (float)_scaledMarginBelowTitleLabelLastBaseline;
 - (id)actionHighlightedBackgroundView;
-- (double)backgroundCornerRadius;
+- (float)backgroundCornerRadius;
 - (id)backgroundView;
 - (id)defaultActionBackgroundColorWhenSeparate;
 - (id)defaultActionFont;
 - (id)highlightedActionContentColor;
-- (double)horizontalContentMargin;
-- (double)marginAboveMessageLabelFirstBaseline;
-- (double)marginAboveTitleLabelFirstBaseline;
-- (double)marginBelowLastLabelLastBaseline;
-- (double)marginBelowMessageLabelLastBaseline;
-- (double)marginBelowTitleLabelLastBaseline;
-- (long long)maximumNumberOfLinesInMessageLabel;
-- (long long)maximumNumberOfLinesInTitleLabel;
-- (double)maximumWidth;
+- (float)horizontalContentMargin;
+- (float)marginAboveMessageLabelFirstBaseline;
+- (float)marginAboveTitleLabelFirstBaseline;
+- (float)marginBelowLastLabelLastBaseline;
+- (float)marginBelowMessageLabelLastBaseline;
+- (float)marginBelowTitleLabelLastBaseline;
+- (int)maximumNumberOfLinesInMessageLabel;
+- (int)maximumNumberOfLinesInTitleLabel;
+- (float)maximumWidth;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
-- (double)minimumActionHeight;
+- (float)minimumActionHeight;
 - (id)regularActionFont;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
-- (double)verticalContentMargin;
-- (double)visualAltitude;
+- (float)verticalContentMargin;
+- (float)visualAltitude;
 
 @end

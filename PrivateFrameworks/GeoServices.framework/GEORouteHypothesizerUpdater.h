@@ -10,8 +10,10 @@
     <GEORouteHypothesizerUpdaterDelegate> *_delegate;
     GEOComposedWaypoint *_destination;
     GEODirectionsRequestFeedback *_feedback;
+    BOOL _hasArrived;
+    BOOL _isTraveling;
     NSDate *_lastRerouteDate;
-    unsigned long long _numThrottledReroutes;
+    unsigned int _numThrottledReroutes;
     GEOLocation *_originLocation;
     NSLock *_requestLock;
     NSMutableArray *_rerouteEntries;
@@ -19,21 +21,19 @@
     GEORouteAttributes *_routeAttributes;
     GEORouteMatch *_routeMatch;
     double _score;
+    BOOL _shouldThrottleReroutes;
     GEOComposedWaypoint *_source;
-    bool_hasArrived;
-    bool_isTraveling;
-    bool_shouldThrottleReroutes;
 }
 
 @property <GEORouteHypothesizerUpdaterDelegate> * delegate;
 @property(retain) GEODirectionsRequestFeedback * feedback;
-@property(readonly) bool hasArrived;
-@property(readonly) bool isTraveling;
+@property(readonly) BOOL hasArrived;
+@property(readonly) BOOL isTraveling;
 @property(readonly) GEOComposedRoute * route;
 @property(readonly) GEORouteMatch * routeMatch;
 @property(readonly) double score;
 
-- (bool)_checkForArrival:(id)arg1 routeMatch:(id)arg2;
+- (BOOL)_checkForArrival:(id)arg1 routeMatch:(id)arg2;
 - (void)_requestNewRouteFromLocation:(id)arg1 usualRouteData:(id)arg2;
 - (id)_routeMatchForLocation:(id)arg1;
 - (void)_updateScoreForLocation:(id)arg1;
@@ -41,9 +41,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)feedback;
-- (bool)hasArrived;
+- (BOOL)hasArrived;
 - (id)initWithSource:(id)arg1 destination:(id)arg2 routeAttributes:(id)arg3;
-- (bool)isTraveling;
+- (BOOL)isTraveling;
 - (id)route;
 - (id)routeMatch;
 - (double)score;

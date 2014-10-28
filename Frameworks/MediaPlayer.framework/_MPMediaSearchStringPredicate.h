@@ -11,7 +11,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSSet * properties;
 @property(copy) NSString * searchString;
 @property(readonly) Class superclass;
@@ -24,10 +24,10 @@
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)properties;
 - (id)protobufferEncodableObject;
 - (id)searchString;

@@ -5,24 +5,24 @@
 @class IMAVCamera;
 
 @interface IMAVLocalPreviewClient : NSObject <IMSystemMonitorListener> {
-    bool_supportsPreview;
-    bool_wantsPausedPreview;
-    bool_wantsPreview;
-    bool_wantsUnpausedPreview;
+    BOOL _supportsPreview;
+    BOOL _wantsPausedPreview;
+    BOOL _wantsPreview;
+    BOOL _wantsUnpausedPreview;
 }
 
 @property unsigned int cameraOrientation;
 @property unsigned int cameraType;
-@property(readonly) bool isPreviewRunning;
+@property(readonly) BOOL isPreviewRunning;
 @property IMAVCamera * localCamera;
 @property void* localVideoBackLayer;
 @property void* localVideoLayer;
-@property bool supportsPreview;
+@property BOOL supportsPreview;
 
 + (id)sharedInstance;
 
 - (void)_avDaemonConnected;
-- (bool)_shouldPreviewBeRunning;
+- (BOOL)_shouldPreviewBeRunning;
 - (void)_updatePreviewState;
 - (void)beginAnimationToPIP;
 - (void)beginAnimationToPreview;
@@ -40,7 +40,7 @@
 - (void)endAnimationToPIP;
 - (void)endAnimationToPreview;
 - (id)init;
-- (bool)isPreviewRunning;
+- (BOOL)isPreviewRunning;
 - (id)localCamera;
 - (id)localScreenAttributesForVideoAttributes:(id)arg1;
 - (void*)localVideoBackLayer;
@@ -52,10 +52,10 @@
 - (void)setLocalScreenAttributes:(id)arg1;
 - (void)setLocalVideoBackLayer:(void*)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
-- (void)setSupportsPreview:(bool)arg1;
+- (void)setSupportsPreview:(BOOL)arg1;
 - (void)startPreview;
 - (void)stopPreview;
-- (bool)supportsPreview;
+- (BOOL)supportsPreview;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationWillEnterForeground;
 - (void)systemScreenDidPowerDown;

@@ -14,13 +14,13 @@
 + (id)sayIt;
 + (id)sayItWithDictionary:(id)arg1 context:(id)arg2;
 
-- (bool)_afui_isUsefulUserResultCommand;
+- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)context;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)listenAfterSpeaking;
 - (id)message;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setContext:(id)arg1;
 - (void)setListenAfterSpeaking:(id)arg1;
 - (void)setMessage:(id)arg1;

@@ -6,25 +6,25 @@
 
 @interface CKTranscriptLocationShareCell : UITableViewCell {
     double _offerTimeRemaining;
+    BOOL _showOfferTimeRemaining;
     UILabel *_timeRemainingLabel;
-    bool_showOfferTimeRemaining;
 }
 
 @property double offerTimeRemaining;
-@property bool showOfferTimeRemaining;
+@property BOOL showOfferTimeRemaining;
 @property(retain) UILabel * timeRemainingLabel;
 
 + (id)identifier;
 
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (double)offerTimeRemaining;
 - (void)setOfferTimeRemaining:(double)arg1;
-- (void)setShowOfferTimeRemaining:(bool)arg1;
+- (void)setShowOfferTimeRemaining:(BOOL)arg1;
 - (void)setTimeRemainingLabel:(id)arg1;
-- (bool)showOfferTimeRemaining;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (BOOL)showOfferTimeRemaining;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)timeRemainingLabel;
 - (id)timeStringForTimeInterval:(double)arg1;
 

@@ -7,25 +7,25 @@
 @interface SKUICarouselPageComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
     NSArray *_carouselItems;
     double _cycleInterval;
-    long long _missingItemCount;
+    int _missingItemCount;
 }
 
 @property(readonly) NSArray * carouselItems;
 @property(readonly) double cycleInterval;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) SKUICarouselViewElement * viewElement;
 
 - (void).cxx_destruct;
 - (id)carouselItems;
-- (long long)componentType;
+- (int)componentType;
 - (double)cycleInterval;
-- (void)enumerateMissingItemIdentifiersFromIndex:(long long)arg1 usingBlock:(id)arg2;
-- (id)initWithFeaturedContentContext:(id)arg1 kind:(long long)arg2;
+- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
+- (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
 - (id)initWithViewElement:(id)arg1;
-- (bool)isMissingItemData;
+- (BOOL)isMissingItemData;
 - (id)metricsElementName;
 - (void)updateWithMissingItems:(id)arg1;
 - (id)valueForMetricsField:(id)arg1;

@@ -5,9 +5,9 @@
 @class UILabel;
 
 @interface RegionFormatSampleView : UIView <PSHeaderFooterView> {
-    double _labelTopPadding[4];
+    float _labelTopPadding[4];
     UILabel *_labels[4];
-    double _sized;
+    float _sized;
 }
 
 - (id)_accessibilityLabels;
@@ -15,7 +15,7 @@
 - (id)generateRegionSampleLabel;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
-- (double)preferredHeightForWidth:(double)arg1;
+- (float)preferredHeightForWidth:(float)arg1;
 - (void)setTextForRegionExample:(id)arg1;
 
 @end

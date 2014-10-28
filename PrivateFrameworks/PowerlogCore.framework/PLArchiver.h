@@ -6,16 +6,16 @@
 
 @interface PLArchiver : NSObject {
     PLSQLiteConnection *_connection;
+    BOOL _enabled;
     NSDate *_lastArchiveDate;
     NSNumber *_minDaysMainDB;
     NSNumber *_minDaysTotalLogDuration;
     NSMutableArray *_notificationBlocks;
     PLStorageOperator *_storageOperator;
-    bool_enabled;
 }
 
 @property(retain) PLSQLiteConnection * connection;
-@property bool enabled;
+@property BOOL enabled;
 @property(retain) NSDate * lastArchiveDate;
 @property(retain) NSNumber * minDaysMainDB;
 @property(retain) NSNumber * minDaysTotalLogDuration;
@@ -39,7 +39,7 @@
 - (id)connection;
 - (void)crashMoverDidFinish;
 - (void)dealloc;
-- (bool)enabled;
+- (BOOL)enabled;
 - (id)init;
 - (id)lastArchiveDate;
 - (void)logArchiveEventFromStartDate:(id)arg1 toEndDate:(id)arg2;
@@ -50,7 +50,7 @@
 - (void)removeAllShmAndWal;
 - (void)runActivity;
 - (void)setConnection:(id)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setLastArchiveDate:(id)arg1;
 - (void)setMinDaysMainDB:(id)arg1;
 - (void)setMinDaysTotalLogDuration:(id)arg1;

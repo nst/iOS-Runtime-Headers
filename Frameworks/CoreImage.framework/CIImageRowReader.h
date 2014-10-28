@@ -5,13 +5,13 @@
 @interface CIImageRowReader : NSObject <ImageRowReading> {
     short alpha;
     short blue;
-    unsigned long long bpr;
+    unsigned long bpr;
     struct CGColorSpace { } *cs;
     void *data;
     short green;
-    unsigned long long height;
+    unsigned long height;
     short red;
-    unsigned long long width;
+    unsigned long width;
 }
 
 + (id)forImage:(id)arg1 downscaleToMax:(unsigned int)arg2 colorspace:(struct CGColorSpace { }*)arg3 usingContext:(id)arg4;
@@ -32,10 +32,10 @@
 - (void)dumpImageAsDeviceRGB:(id)arg1;
 - (void)dumpImageAsDict:(id)arg1;
 - (short)green;
-- (unsigned long long)height;
+- (unsigned long)height;
 - (id)init;
 - (short)red;
 - (const char *)rowAtIndex:(unsigned int)arg1;
-- (unsigned long long)width;
+- (unsigned long)width;
 
 @end

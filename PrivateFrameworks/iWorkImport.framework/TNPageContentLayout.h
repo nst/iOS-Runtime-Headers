@@ -6,17 +6,17 @@
 
 @interface TNPageContentLayout : TSDLayout {
     TNPageLayout *mPageLayout;
-    unsigned long long mPageNumber;
+    unsigned int mPageNumber;
 }
 
 @property TNPageLayout * pageLayout;
-@property(readonly) unsigned long long pageNumber;
+@property(readonly) unsigned int pageNumber;
 
 - (id)computeLayoutGeometry;
 - (id)initWithPageLayout:(id)arg1;
-- (unsigned long long)pageCount;
+- (unsigned int)pageCount;
 - (id)pageLayout;
-- (unsigned long long)pageNumber;
+- (unsigned int)pageNumber;
 - (Class)repClassOverride;
 - (void)setPageLayout:(id)arg1;
 - (void)validate;

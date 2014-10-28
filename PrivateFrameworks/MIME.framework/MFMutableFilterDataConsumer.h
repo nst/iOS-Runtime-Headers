@@ -6,17 +6,17 @@
 
 @interface MFMutableFilterDataConsumer : MFBaseFilterDataConsumer <MFGuaranteedCollectingDataConsumer> {
     MFLock *_consumerLock;
+    BOOL _isDone;
     <MFGuaranteedCollectingDataConsumer> *_mainConsumer;
-    bool_isDone;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)addDataConsumer:(id)arg1;
-- (long long)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;

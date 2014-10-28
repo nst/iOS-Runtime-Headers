@@ -17,15 +17,15 @@
 @property(readonly) UIColor * tintColor;
 @property(readonly) UIImage * tintedImage;
 
-- (id)_tintedDisclosureImage:(bool)arg1;
-- (bool)beginContentAccess;
+- (id)_tintedDisclosureImage:(BOOL)arg1;
+- (BOOL)beginContentAccess;
 - (void)dealloc;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
-- (unsigned long long)hash;
-- (id)initWithPressed:(bool)arg1 tintColor:(id)arg2;
-- (bool)isContentDiscarded;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithPressed:(BOOL)arg1 tintColor:(id)arg2;
+- (BOOL)isContentDiscarded;
+- (BOOL)isEqual:(id)arg1;
 - (id)tintColor;
 - (id)tintedImage;
 

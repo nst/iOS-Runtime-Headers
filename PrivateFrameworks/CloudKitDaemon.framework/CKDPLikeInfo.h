@@ -8,30 +8,30 @@
         unsigned int likedByCurrentUser : 1; 
     } _has;
     int _likeCount;
-    bool_likedByCurrentUser;
+    BOOL _likedByCurrentUser;
 }
 
-@property bool hasLikeCount;
-@property bool hasLikedByCurrentUser;
+@property BOOL hasLikeCount;
+@property BOOL hasLikedByCurrentUser;
 @property int likeCount;
-@property bool likedByCurrentUser;
+@property BOOL likedByCurrentUser;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasLikeCount;
-- (bool)hasLikedByCurrentUser;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasLikeCount;
+- (BOOL)hasLikedByCurrentUser;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (int)likeCount;
-- (bool)likedByCurrentUser;
+- (BOOL)likedByCurrentUser;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasLikeCount:(bool)arg1;
-- (void)setHasLikedByCurrentUser:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasLikeCount:(BOOL)arg1;
+- (void)setHasLikedByCurrentUser:(BOOL)arg1;
 - (void)setLikeCount:(int)arg1;
-- (void)setLikedByCurrentUser:(bool)arg1;
+- (void)setLikedByCurrentUser:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

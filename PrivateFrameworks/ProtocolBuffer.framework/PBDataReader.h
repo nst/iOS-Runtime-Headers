@@ -7,25 +7,25 @@
 @interface PBDataReader : NSObject {
     const char *_bytes;
     NSData *_data;
-    unsigned long long _length;
-    unsigned long long _pos;
-    bool_error;
+    BOOL _error;
+    unsigned int _length;
+    unsigned int _pos;
 }
 
-@property unsigned long long length;
-@property unsigned long long position;
+@property unsigned int length;
+@property unsigned int position;
 
 - (id)data;
 - (void)dealloc;
-- (bool)hasError;
-- (bool)hasMoreData;
+- (BOOL)hasError;
+- (BOOL)hasMoreData;
 - (id)initWithData:(id)arg1;
-- (bool)isAtEnd;
-- (unsigned long long)length;
-- (bool)mark:(struct { unsigned long long x1; unsigned long long x2; }*)arg1;
-- (unsigned long long)offset;
-- (unsigned long long)position;
-- (bool)readBOOL;
+- (BOOL)isAtEnd;
+- (unsigned int)length;
+- (BOOL)mark:(struct { unsigned int x1; unsigned int x2; }*)arg1;
+- (unsigned int)offset;
+- (unsigned int)position;
+- (BOOL)readBOOL;
 - (unsigned short)readBigEndianFixed16;
 - (unsigned int)readBigEndianFixed32;
 - (unsigned long long)readBigEndianFixed64;
@@ -49,11 +49,11 @@
 - (unsigned int)readUint32;
 - (unsigned long long)readUint64;
 - (long long)readVarInt;
-- (void)recall:(const struct { unsigned long long x1; unsigned long long x2; }*)arg1;
-- (bool)seekToOffset:(unsigned long long)arg1;
-- (void)setLength:(unsigned long long)arg1;
-- (void)setPosition:(unsigned long long)arg1;
-- (bool)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
+- (void)recall:(const struct { unsigned int x1; unsigned int x2; }*)arg1;
+- (BOOL)seekToOffset:(unsigned int)arg1;
+- (void)setLength:(unsigned int)arg1;
+- (void)setPosition:(unsigned int)arg1;
+- (BOOL)skipValueWithTag:(unsigned short)arg1 andType:(unsigned char)arg2;
 - (void)updateData:(id)arg1;
 
 @end

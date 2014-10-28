@@ -6,16 +6,16 @@
 
 @interface PT2DGraphView : UIView {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     NSArray *_data;
     UIColor *_dataColor;
     } _datumSize;
@@ -26,62 +26,62 @@
     UIColor *_provisionalDataColor;
     NSMutableArray *_provisionalDataSubviews;
     PT2DGraphAxisStyle *_xaxisStyle;
-    double _xmaximum;
-    double _xminimum;
+    float _xmaximum;
+    float _xminimum;
     PT2DGraphAxisStyle *_yaxisStyle;
-    double _ymaximum;
-    double _yminimum;
+    float _ymaximum;
+    float _yminimum;
 }
 
 @property(retain) NSArray * data;
 @property(retain) UIColor * dataColor;
-@property struct CGSize { double x1; double x2; } datumSize;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property struct CGSize { float x1; float x2; } datumSize;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property(retain) UIColor * groundColor;
-@property struct CGPoint { double x1; double x2; } origin;
+@property struct CGPoint { float x1; float x2; } origin;
 @property(retain) NSArray * provisionalData;
 @property(retain) UIColor * provisionalDataColor;
 @property(retain) NSMutableArray * provisionalDataSubviews;
 @property(retain) PT2DGraphAxisStyle * xaxisStyle;
-@property double xmaximum;
-@property double xminimum;
+@property float xmaximum;
+@property float xminimum;
 @property(retain) PT2DGraphAxisStyle * yaxisStyle;
-@property double ymaximum;
-@property double yminimum;
+@property float ymaximum;
+@property float yminimum;
 
 - (void).cxx_destruct;
 - (id)data;
 - (id)dataColor;
-- (struct CGSize { double x1; double x2; })datumSize;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct CGSize { float x1; float x2; })datumSize;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (id)groundColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGPoint { double x1; double x2; })origin;
-- (struct CGPoint { double x1; double x2; })pointForText:(id)arg1 centeredOnPoint:(struct CGPoint { double x1; double x2; })arg2 withAttributes:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })origin;
+- (struct CGPoint { float x1; float x2; })pointForText:(id)arg1 centeredOnPoint:(struct CGPoint { float x1; float x2; })arg2 withAttributes:(id)arg3;
 - (id)provisionalData;
 - (id)provisionalDataColor;
 - (id)provisionalDataSubviews;
 - (void)setData:(id)arg1;
 - (void)setDataColor:(id)arg1;
-- (void)setDatumSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDatumSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGroundColor:(id)arg1;
-- (void)setOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setProvisionalData:(id)arg1;
 - (void)setProvisionalDataColor:(id)arg1;
 - (void)setProvisionalDataSubviews:(id)arg1;
 - (void)setXaxisStyle:(id)arg1;
-- (void)setXmaximum:(double)arg1;
-- (void)setXminimum:(double)arg1;
+- (void)setXmaximum:(float)arg1;
+- (void)setXminimum:(float)arg1;
 - (void)setYaxisStyle:(id)arg1;
-- (void)setYmaximum:(double)arg1;
-- (void)setYminimum:(double)arg1;
+- (void)setYmaximum:(float)arg1;
+- (void)setYminimum:(float)arg1;
 - (id)xaxisStyle;
-- (double)xmaximum;
-- (double)xminimum;
+- (float)xmaximum;
+- (float)xminimum;
 - (id)yaxisStyle;
-- (double)ymaximum;
-- (double)yminimum;
+- (float)ymaximum;
+- (float)yminimum;
 
 @end

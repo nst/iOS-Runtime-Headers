@@ -19,11 +19,11 @@
 - (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicates:(id)arg1;
-- (bool)isDynamicForEntityClass:(Class)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isDynamicForEntityClass:(Class)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (id)predicates;
 - (void)setPredicates:(id)arg1;

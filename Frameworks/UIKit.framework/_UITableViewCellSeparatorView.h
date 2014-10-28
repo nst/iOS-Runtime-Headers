@@ -6,20 +6,20 @@
 
 @interface _UITableViewCellSeparatorView : UIView {
     UIView *_backgroundView;
+    BOOL _drawsWithVibrantLightMode;
     UIVisualEffectView *_effectView;
     UIView *_overlayView;
     UIVisualEffect *_separatorEffect;
-    bool_drawsWithVibrantLightMode;
 }
 
-@property bool drawsWithVibrantLightMode;
+@property BOOL drawsWithVibrantLightMode;
 @property(retain) UIVisualEffect * separatorEffect;
 
 - (void)dealloc;
-- (bool)drawsWithVibrantLightMode;
+- (BOOL)drawsWithVibrantLightMode;
 - (void)layoutSubviews;
 - (id)separatorEffect;
-- (void)setDrawsWithVibrantLightMode:(bool)arg1;
+- (void)setDrawsWithVibrantLightMode:(BOOL)arg1;
 - (void)setSeparatorEffect:(id)arg1;
 
 @end

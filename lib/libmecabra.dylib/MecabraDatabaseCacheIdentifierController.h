@@ -5,21 +5,21 @@
 @class NSMutableArray;
 
 @interface MecabraDatabaseCacheIdentifierController : NSObject {
-    unsigned long long _counter;
+    unsigned int _counter;
     NSMutableArray *_recycledIdentifiers;
 }
 
-@property unsigned long long counter;
+@property unsigned int counter;
 @property(retain) NSMutableArray * recycledIdentifiers;
 
-- (unsigned long long)counter;
+- (unsigned int)counter;
 - (void)dealloc;
 - (id)init;
-- (unsigned long long)newIdentifier;
-- (void)recycleIdentifier:(unsigned long long)arg1;
+- (unsigned int)newIdentifier;
+- (void)recycleIdentifier:(unsigned int)arg1;
 - (id)recycledIdentifiers;
 - (void)reset;
-- (void)setCounter:(unsigned long long)arg1;
+- (void)setCounter:(unsigned int)arg1;
 - (void)setRecycledIdentifiers:(id)arg1;
 
 @end

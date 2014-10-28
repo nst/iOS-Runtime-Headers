@@ -10,7 +10,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) SACalendar * end;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SACalendar * start;
 @property(readonly) Class superclass;
 

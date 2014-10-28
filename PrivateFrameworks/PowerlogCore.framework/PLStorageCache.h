@@ -15,7 +15,7 @@
 - (id)lastEntryCache;
 - (id)readLastEntryCache:(id)arg1 withID:(id)arg2;
 - (void)setLastEntryCache:(id)arg1;
-- (bool)shouldCache:(id)arg1;
-- (void)updateLastEntryCache:(id)arg1 wasUpdate:(bool)arg2;
+- (BOOL)shouldCache:(id)arg1;
+- (void)updateLastEntryCache:(id)arg1 wasUpdate:(BOOL)arg2;
 
 @end

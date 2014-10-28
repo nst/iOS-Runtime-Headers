@@ -12,7 +12,7 @@
 - (void)dealloc;
 - (id)imageForURL:(id)arg1 dataProvider:(id)arg2;
 - (id)init;
-- (id)initWithMaximumCapacity:(long long)arg1;
+- (id)initWithMaximumCapacity:(int)arg1;
 - (void)removeAllCachedImages;
 
 @end

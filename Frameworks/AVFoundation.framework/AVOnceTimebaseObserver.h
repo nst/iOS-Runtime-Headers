@@ -13,18 +13,18 @@
         unsigned int flags; 
         long long epoch; 
     id _block;
+    BOOL _didFire;
     } _fireTime;
-    bool_didFire;
 }
 
-@property(readonly) bool didFire;
+@property(readonly) BOOL didFire;
 
 - (void)_effectiveRateChanged;
 - (void)_fireBlock;
 - (void)_handleTimeDiscontinuity;
 - (void)_resetNextFireTime;
 - (void)dealloc;
-- (bool)didFire;
+- (BOOL)didFire;
 - (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 fireTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(id)arg3 block:(id)arg4;
 - (void)invalidate;
 

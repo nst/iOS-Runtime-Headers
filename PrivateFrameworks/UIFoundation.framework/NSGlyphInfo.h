@@ -8,16 +8,16 @@
     NSString *_baseString;
 }
 
-+ (id)glyphInfoWithCharacterIdentifier:(unsigned long long)arg1 collection:(unsigned long long)arg2 baseString:(id)arg3;
++ (id)glyphInfoWithCharacterIdentifier:(unsigned int)arg1 collection:(unsigned int)arg2 baseString:(id)arg3;
 + (id)glyphInfoWithGlyph:(unsigned int)arg1 forFont:(id)arg2 baseString:(id)arg3;
 + (id)glyphInfoWithGlyphName:(id)arg1 forFont:(id)arg2 baseString:(id)arg3;
 + (void)initialize;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_baseString;
 - (unsigned int)_glyphForFont:(id)arg1 baseString:(id)arg2;
-- (unsigned long long)characterCollection;
-- (unsigned long long)characterIdentifier;
+- (unsigned int)characterCollection;
+- (unsigned int)characterIdentifier;
 - (Class)classForKeyedArchiver;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

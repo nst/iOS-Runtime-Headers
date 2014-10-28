@@ -3,18 +3,18 @@
  */
 
 @interface TSUDownloadTaskProgress : NSObject {
+    BOOL _isActive;
     long long _totalBytesDownloaded;
     long long _totalBytesExpectedToBeDownloaded;
-    bool_isActive;
 }
 
-@property bool isActive;
+@property BOOL isActive;
 @property long long totalBytesDownloaded;
 @property long long totalBytesExpectedToBeDownloaded;
 
 - (id)description;
-- (bool)isActive;
-- (void)setIsActive:(bool)arg1;
+- (BOOL)isActive;
+- (void)setIsActive:(BOOL)arg1;
 - (void)setTotalBytesDownloaded:(long long)arg1;
 - (void)setTotalBytesExpectedToBeDownloaded:(long long)arg1;
 - (long long)totalBytesDownloaded;

@@ -12,8 +12,8 @@
     int _statusCode;
 }
 
-@property(readonly) bool hasPlaceResult;
-@property bool hasStatusCode;
+@property(readonly) BOOL hasPlaceResult;
+@property BOOL hasStatusCode;
 @property(retain) GEOPlaceResult * placeResult;
 @property int statusCode;
 
@@ -22,14 +22,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPlaceResult;
-- (bool)hasStatusCode;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPlaceResult;
+- (BOOL)hasStatusCode;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeResult;
-- (bool)readFrom:(id)arg1;
-- (void)setHasStatusCode:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasStatusCode:(BOOL)arg1;
 - (void)setPlaceResult:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;

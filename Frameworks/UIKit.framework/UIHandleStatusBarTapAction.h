@@ -5,12 +5,12 @@
 @interface UIHandleStatusBarTapAction : BSAction {
 }
 
-@property(readonly) long long statusBarStyle;
+@property(readonly) int statusBarStyle;
 
-- (long long)UIActionType;
+- (int)UIActionType;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
-- (id)initWithStatusBarStyle:(long long)arg1;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
-- (long long)statusBarStyle;
+- (id)initWithStatusBarStyle:(int)arg1;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (int)statusBarStyle;
 
 @end

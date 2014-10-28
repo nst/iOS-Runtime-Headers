@@ -6,12 +6,12 @@
     BOOL _enabled;
 }
 
-@property(readonly) long long cardType;
+@property(readonly) int cardType;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (long long)cardType;
+- (int)cardType;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isEnabled;
+- (BOOL)isEnabled;
 
 @end

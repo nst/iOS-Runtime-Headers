@@ -5,13 +5,13 @@
 @class <UITextFieldDelegate>, NSString, SKUIGift, SKUIGiftRecipientTableViewCell, UITextView;
 
 @interface SKUIGiftAddressingSection : SKUIGiftTableViewSection {
-    double _footerHeight;
+    float _footerHeight;
     NSString *_footerString;
     SKUIGift *_gift;
     UITextView *_messagingTextView;
     SKUIGiftRecipientTableViewCell *_recipientTableViewCell;
     <UITextFieldDelegate> *_textFieldDelegate;
-    double _textViewCellHeight;
+    float _textViewCellHeight;
 }
 
 @property(retain) SKUIGift * gift;
@@ -26,9 +26,9 @@
 - (void)beginEditingMessageForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)endEditingMessageForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)gift;
-- (double)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
+- (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
 - (id)initWithGiftConfiguration:(id)arg1;
-- (long long)numberOfRowsInSection;
+- (int)numberOfRowsInSection;
 - (void)setGift:(id)arg1;
 - (void)setTextFieldDelegate:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forIndexPath:(id)arg3;

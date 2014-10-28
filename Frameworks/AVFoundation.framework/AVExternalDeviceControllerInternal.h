@@ -6,7 +6,7 @@
 
 @interface AVExternalDeviceControllerInternal : NSObject {
     <AVExternalDeviceControllerDelegate> *delegate;
-    long long discoveryMode;
+    int discoveryMode;
     struct OpaqueFigEndpointPicker { } *endpointPicker;
 }
 

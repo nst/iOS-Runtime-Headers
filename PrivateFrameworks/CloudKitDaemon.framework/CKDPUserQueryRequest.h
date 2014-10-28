@@ -10,7 +10,7 @@
 }
 
 @property(retain) CKDPUserAlias * alias;
-@property(readonly) bool hasAlias;
+@property(readonly) BOOL hasAlias;
 @property(retain) NSMutableArray * sortedBys;
 
 + (id)options;
@@ -23,18 +23,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasAlias;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasAlias;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAlias:(id)arg1;
 - (void)setSortedBys:(id)arg1;
-- (id)sortedByAtIndex:(unsigned long long)arg1;
+- (id)sortedByAtIndex:(unsigned int)arg1;
 - (id)sortedBys;
-- (unsigned long long)sortedBysCount;
+- (unsigned int)sortedBysCount;
 - (void)writeTo:(id)arg1;
 
 @end

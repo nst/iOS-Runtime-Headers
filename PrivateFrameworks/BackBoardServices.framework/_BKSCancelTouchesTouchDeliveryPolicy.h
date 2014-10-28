@@ -13,18 +13,18 @@
 @property(readonly) unsigned int contextId;
 @property(readonly) double initialTouchTimestamp;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)assertionEndpoint;
 - (unsigned int)contextId;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContextId:(unsigned int)arg1 initialTouchTimestamp:(double)arg2;
 - (double)initialTouchTimestamp;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)matchSharingTouchesPolicy:(id)arg1 orCancelTouchesPolicy:(id)arg2 orCombinedPolicy:(id)arg3;
 - (void)setAssertionEndpoint:(id)arg1;
 

@@ -10,16 +10,16 @@
     NSURL *_url;
 }
 
-@property(readonly) long long changedRowCount;
+@property(readonly) int changedRowCount;
 @property(readonly) struct sqlite3 { }* handle;
 @property(readonly) int lastErrorCode;
 @property(readonly) NSString * lastErrorMessage;
-@property(readonly) long long lastInsertRowID;
+@property(readonly) int lastInsertRowID;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
 
 - (void).cxx_destruct;
 - (int)_openWithFlags:(int)arg1;
-- (long long)changedRowCount;
+- (int)changedRowCount;
 - (int)close;
 - (void)dealloc;
 - (int)executeQuery:(id)arg1;
@@ -28,7 +28,7 @@
 - (id)initWithURL:(id)arg1 queue:(id)arg2;
 - (int)lastErrorCode;
 - (id)lastErrorMessage;
-- (long long)lastInsertRowID;
+- (int)lastInsertRowID;
 - (int)open;
 - (id)queue;
 

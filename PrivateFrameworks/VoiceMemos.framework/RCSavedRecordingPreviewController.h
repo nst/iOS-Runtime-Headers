@@ -9,9 +9,9 @@
         double beginTime; 
         double endTime; 
     RCCompositionController *_compositionController;
+    BOOL _postPrepareShouldPlay;
     double _postPrepareStartTime;
     } _postPrepareTimeRange;
-    bool_postPrepareShouldPlay;
 }
 
 @property(retain) RCCompositionController * compositionController;

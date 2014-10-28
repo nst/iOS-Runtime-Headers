@@ -7,15 +7,15 @@
 @interface SiriUIAceObjectControllerCell : SiriUIClearBackgroundCell {
     SiriUIAceObjectViewController *_aceViewController;
     UIView *_animationView;
-    long long _insertionAnimationType;
+    int _insertionAnimationType;
     UIView *_replacedView;
-    long long _replacementAnimationType;
+    int _replacementAnimationType;
 }
 
 @property(retain) SiriUIAceObjectViewController * aceViewController;
-@property long long insertionAnimationType;
+@property int insertionAnimationType;
 @property(retain) UIView * replacedView;
-@property long long replacementAnimationType;
+@property int replacementAnimationType;
 
 + (id)reuseIdentifier;
 
@@ -27,18 +27,18 @@
 - (void)_parentPreviousViewInCell;
 - (void)_parentViewInCell;
 - (id)aceViewController;
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)beginAnimation;
 - (void)configureSubviewsForAnimationType;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (long long)insertionAnimationType;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)insertionAnimationType;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)replacedView;
-- (long long)replacementAnimationType;
+- (int)replacementAnimationType;
 - (void)setAceViewController:(id)arg1;
-- (void)setInsertionAnimationType:(long long)arg1;
+- (void)setInsertionAnimationType:(int)arg1;
 - (void)setReplacedView:(id)arg1;
-- (void)setReplacementAnimationType:(long long)arg1;
+- (void)setReplacementAnimationType:(int)arg1;
 
 @end

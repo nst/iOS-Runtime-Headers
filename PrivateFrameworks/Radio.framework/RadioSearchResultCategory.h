@@ -5,25 +5,25 @@
 @class NSArray, NSDictionary, NSString;
 
 @interface RadioSearchResultCategory : NSObject <NSCopying, NSMutableCopying> {
-    long long _categoryType;
+    int _categoryType;
+    BOOL _hasMoreResults;
     NSString *_name;
     NSDictionary *_responseDictionary;
     NSArray *_stationResults;
-    bool_hasMoreResults;
 }
 
-@property(readonly) long long categoryType;
-@property(readonly) bool hasMoreResults;
+@property(readonly) int categoryType;
+@property(readonly) BOOL hasMoreResults;
 @property(copy,readonly) NSString * name;
 @property(copy,readonly) NSDictionary * responseDictionary;
 @property(copy,readonly) NSArray * stationResults;
 
 - (void).cxx_destruct;
 - (id)_initWithResponseDictionary:(id)arg1;
-- (long long)categoryType;
+- (int)categoryType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (bool)hasMoreResults;
+- (BOOL)hasMoreResults;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
 - (id)responseDictionary;

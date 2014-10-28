@@ -70,6 +70,7 @@
 @property(readonly) NSString * PKPaymentNetworkVisa;
 @property(readonly) Class PKPaymentRequest;
 @property(readonly) Class PKPaymentSummaryItem;
+@property(readonly) Class PKShippingMethod;
 @property(readonly) Class PLStaticWallpaperImageViewController;
 @property(readonly) NSString * SKStoreProductParameterITunesItemIdentifier;
 @property(readonly) NSString * SKStoreProductParameterQToken;
@@ -154,6 +155,7 @@
 - (id)PKPaymentNetworkVisa;
 - (Class)PKPaymentRequest;
 - (Class)PKPaymentSummaryItem;
+- (Class)PKShippingMethod;
 - (Class)PLStaticWallpaperImageViewController;
 - (id)SKStoreProductParameterITunesItemIdentifier;
 - (id)SKStoreProductParameterQToken;

@@ -23,7 +23,7 @@
 + (id)shapeWithGeometry:(id)arg1 options:(id)arg2;
 + (id)shapeWithNode:(id)arg1 options:(id)arg2;
 + (id)shapeWithShapes:(id)arg1 transforms:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (struct btCollisionShape { int (**x1)(); int x2; void *x3; }*)_handle;
 - (void)_setTransforms:(id)arg1;

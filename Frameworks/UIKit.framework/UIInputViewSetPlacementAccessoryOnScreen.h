@@ -5,8 +5,8 @@
 @interface UIInputViewSetPlacementAccessoryOnScreen : UIInputViewSetPlacement {
 }
 
-- (bool)accessoryViewWillAppear;
-- (bool)showsInputViews;
+- (BOOL)accessoryViewWillAppear;
+- (BOOL)showsInputViews;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 
 @end

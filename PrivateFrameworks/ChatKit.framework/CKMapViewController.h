@@ -13,7 +13,7 @@
 @property(retain) <MKAnnotation> * annotation;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) MKMapItem * mapItem;
 @property(retain) MKMapView * mapView;
 @property(readonly) Class superclass;
@@ -32,8 +32,8 @@
 - (void)setAnnotation:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMapView:(id)arg1;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
-- (bool)wantsFullScreenLayout;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)wantsFullScreenLayout;
 
 @end

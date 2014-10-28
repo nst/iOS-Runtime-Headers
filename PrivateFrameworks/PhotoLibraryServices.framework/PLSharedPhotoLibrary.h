@@ -8,12 +8,12 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedPhotoLibrary;
 
-- (void)_updateWithInsertedAssetsCount:(unsigned long long)arg1 deletedCount:(unsigned long long)arg2 updatedAssets:(id)arg3;
+- (void)_updateWithInsertedAssetsCount:(unsigned int)arg1 deletedCount:(unsigned int)arg2 updatedAssets:(id)arg3;
 - (id)autorelease;
-- (unsigned long long)concurrencyType;
+- (unsigned int)concurrencyType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

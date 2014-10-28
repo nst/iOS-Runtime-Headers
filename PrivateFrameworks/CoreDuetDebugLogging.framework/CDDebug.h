@@ -3,12 +3,12 @@
  */
 
 @interface CDDebug : NSObject {
-    boolverboseMode;
+    BOOL verboseMode;
 }
 
-- (void)error:(long long)arg1;
+- (void)error:(int)arg1;
 - (id)init;
-- (id)initWithVerboseMode:(bool)arg1;
+- (id)initWithVerboseMode:(BOOL)arg1;
 - (void)log:(const char *)arg1;
 
 @end

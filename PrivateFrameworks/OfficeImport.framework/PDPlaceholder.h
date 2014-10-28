@@ -10,7 +10,7 @@
     int mType;
 }
 
-+ (bool)isTextType:(int)arg1;
++ (BOOL)isTextType:(int)arg1;
 
 - (int)boundsTrack;
 - (id)description;

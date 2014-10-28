@@ -24,9 +24,9 @@
 - (id)initWithSocket:(int)arg1;
 - (void)logMessageType:(unsigned int)arg1 data:(id)arg2 actionString:(id)arg3;
 - (id)messageHandler;
-- (bool)parseMessageFromData:(id)arg1 messageHeader:(struct { unsigned int x1; unsigned int x2; }*)arg2 messageData:(id*)arg3;
+- (BOOL)parseMessageFromData:(id)arg1 messageHeader:(struct { unsigned int x1; unsigned int x2; }*)arg2 messageData:(id*)arg3;
 - (id)previousData;
-- (bool)sendMessageWithType:(unsigned int)arg1 data:(id)arg2 andQueue:(id)arg3;
+- (BOOL)sendMessageWithType:(unsigned int)arg1 data:(id)arg2 andQueue:(id)arg3;
 - (void)setMessageHandler:(id)arg1;
 - (void)setPreviousData:(id)arg1;
 - (void)setSocket:(int)arg1;

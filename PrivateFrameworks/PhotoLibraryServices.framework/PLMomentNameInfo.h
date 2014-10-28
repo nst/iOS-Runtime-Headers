@@ -8,7 +8,7 @@
     NSArray *__orderedNames;
     PLRevGeoCompoundNameInfo *__primaryNameInfo;
     PLRevGeoCompoundNameInfo *__secondaryNameInfo;
-    bool_locationInfoIsValid;
+    BOOL _locationInfoIsValid;
 }
 
 @property(setter=_setOrderedNames:,retain) NSArray * _orderedNames;
@@ -27,7 +27,7 @@
 - (id)initWithMoment:(id)arg1;
 - (id)initWithMomentList:(id)arg1;
 - (id)localizedPrimaryTitle;
-- (bool)locationInfoIsValid;
+- (BOOL)locationInfoIsValid;
 - (void)set_primaryNameInfo:(id)arg1;
 - (void)set_secondaryNameInfo:(id)arg1;
 

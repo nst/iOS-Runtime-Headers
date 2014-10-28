@@ -6,7 +6,7 @@
 
 @interface AVAssetProxyInternal : NSObject {
     AVAssetInspectorLoader *loader;
-    long long makeTracksArrayOnce;
+    long makeTracksArrayOnce;
     NSArray *tracks;
 }
 

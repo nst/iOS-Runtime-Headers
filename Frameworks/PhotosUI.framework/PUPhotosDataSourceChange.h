@@ -2,42 +2,49 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSIndexSet, PHChange;
+@class NSArray, NSDictionary, NSIndexSet, PHChange, PHFetchResultChangeDetails;
 
 @interface PUPhotosDataSourceChange : NSObject {
+    NSDictionary *_assetCollectionChangeDetails;
+    NSDictionary *_assetCollectionToSectionCache;
     NSArray *_changedIndexPaths;
     NSIndexSet *_changedSections;
+    PHFetchResultChangeDetails *_collectionListChangeDetails;
+    NSArray *_contentChangedIndexPaths;
     NSArray *_deletedIndexPaths;
     NSIndexSet *_deletedSections;
     NSArray *_insertedIndexPaths;
     NSIndexSet *_insertedSections;
     PHChange *_originatingPhotoLibraryChange;
+    BOOL _prepared;
+    int _previousCollectionsCount;
 }
 
-@property(copy) NSArray * changedIndexPaths;
-@property(copy) NSIndexSet * changedSections;
-@property(copy) NSArray * deletedIndexPaths;
-@property(copy) NSIndexSet * deletedSections;
-@property(readonly) bool hasIncrementalChanges;
-@property(copy) NSArray * insertedIndexPaths;
-@property(copy) NSIndexSet * insertedSections;
-@property(retain) PHChange * originatingPhotoLibraryChange;
+@property(copy,readonly) NSArray * changedIndexPaths;
+@property(copy,readonly) NSIndexSet * changedSections;
+@property(copy,readonly) NSArray * contentChangedIndexPaths;
+@property(copy,readonly) NSArray * deletedIndexPaths;
+@property(copy,readonly) NSIndexSet * deletedSections;
+@property(readonly) BOOL hasIncrementalChanges;
+@property(copy,readonly) NSArray * insertedIndexPaths;
+@property(copy,readonly) NSIndexSet * insertedSections;
+@property(readonly) PHChange * originatingPhotoLibraryChange;
 
 - (void).cxx_destruct;
+- (void)_prepareIncrementalDetails;
+- (BOOL)_shouldPerformFullReloadForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;
 - (id)changedIndexPaths;
 - (id)changedSections;
+- (id)contentChangedIndexPaths;
 - (id)deletedIndexPaths;
 - (id)deletedSections;
-- (bool)hasIncrementalChanges;
+- (id)description;
+- (BOOL)hasIncrementalChanges;
+- (id)init;
+- (id)initWithIncrementalChanges:(id)arg1 assetCollectionChangeDetails:(id)arg2 previousCollectionsCount:(int)arg3 assetCollectionToSectionCache:(id)arg4 originatingPhotoLibraryChange:(id)arg5;
 - (id)insertedIndexPaths;
 - (id)insertedSections;
 - (id)originatingPhotoLibraryChange;
-- (void)setChangedIndexPaths:(id)arg1;
-- (void)setChangedSections:(id)arg1;
-- (void)setDeletedIndexPaths:(id)arg1;
-- (void)setDeletedSections:(id)arg1;
-- (void)setInsertedIndexPaths:(id)arg1;
-- (void)setInsertedSections:(id)arg1;
-- (void)setOriginatingPhotoLibraryChange:(id)arg1;
+- (void)prepareIfNeeded;
 
 @end

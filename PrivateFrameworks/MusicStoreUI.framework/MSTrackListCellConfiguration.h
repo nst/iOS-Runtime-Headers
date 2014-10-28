@@ -4,28 +4,28 @@
 
 @interface MSTrackListCellConfiguration : SUMediaItemCellConfiguration {
     struct { 
-        unsigned long long localIndex; 
-        unsigned long long localCount; 
-        unsigned long long globalIndex; 
-        unsigned long long globalCount; 
+        unsigned int localIndex; 
+        unsigned int localCount; 
+        unsigned int globalIndex; 
+        unsigned int globalCount; 
     } _position;
 }
 
-@property struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; } position;
+@property struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
 
 + (id)copyDefaultContext;
-+ (double)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
++ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
-- (id)colorForLabelAtIndex:(unsigned long long)arg1 withModifiers:(unsigned long long)arg2;
-- (void)drawBackgroundWithModifiers:(unsigned long long)arg1;
-- (id)fontForLabelAtIndex:(unsigned long long)arg1;
-- (unsigned long long)indexOfLabelForPurchaseAnimation;
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (void)drawBackgroundWithModifiers:(unsigned int)arg1;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfLabelForPurchaseAnimation;
 - (id)init;
-- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })position;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })position;
 - (void)reloadImages;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
-- (void)setPosition:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1;
-- (bool)showContentRating;
+- (void)setPosition:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
+- (BOOL)showContentRating;
 
 @end

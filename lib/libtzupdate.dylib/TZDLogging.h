@@ -5,6 +5,6 @@
 @interface TZDLogging : NSObject {
 }
 
-+ (bool)canLogMessageAtLevel:(long long)arg1;
++ (BOOL)canLogMessageAtLevel:(int)arg1;
 
 @end

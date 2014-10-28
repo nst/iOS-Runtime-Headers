@@ -7,61 +7,61 @@
 @interface PLContainerChangeNotification : PLChangeNotification {
     NSIndexSet *_changedIndexes;
     NSArray *_changedObjects;
+    BOOL _countDidChange;
     NSIndexSet *_deletedIndexes;
+    BOOL _didCalculateDiffs;
     NSIndexSet *_insertedIndexes;
     struct __CFArray { } *_movedFromIndexes;
     NSIndexSet *_movedIndexes;
     id _object;
+    BOOL _shouldReload;
     PLObjectSnapshot *_snapshot;
-    bool_countDidChange;
-    bool_didCalculateDiffs;
-    bool_shouldReload;
 }
 
 @property(retain,readonly) NSArray * _changedObjects;
 @property(retain,readonly) NSString * _contentRelationshipName;
-@property(setter=_setDidCalculateDiffs:) bool _didCalculateDiffs;
+@property(setter=_setDidCalculateDiffs:) BOOL _didCalculateDiffs;
 @property(retain,readonly) NSString * _diffDescription;
 @property(retain,readonly) PLManagedObject * _managedObject;
 @property(retain,readonly) NSIndexSet * changedIndexes;
 @property(retain,readonly) NSIndexSet * changedIndexesRelativeToSnapshot;
 @property(retain,readonly) NSArray * changedObjects;
-@property(readonly) bool countDidChange;
+@property(readonly) BOOL countDidChange;
 @property(retain,readonly) NSIndexSet * deletedIndexes;
 @property(retain,readonly) NSArray * deletedObjects;
-@property(readonly) bool hasMoves;
+@property(readonly) BOOL hasMoves;
 @property(retain,readonly) NSIndexSet * insertedIndexes;
 @property(retain,readonly) NSArray * insertedObjects;
-@property(readonly) bool shouldReload;
+@property(readonly) BOOL shouldReload;
 @property(retain,readonly) PLObjectSnapshot * snapshot;
 
 - (void)_calculateDiffs;
 - (void)_calculateDiffsIfNecessary;
 - (id)_changedObjects;
 - (id)_contentRelationshipName;
-- (bool)_didCalculateDiffs;
+- (BOOL)_didCalculateDiffs;
 - (id)_diffDescription;
-- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)_init;
 - (id)_initWithObject:(id)arg1 snapshot:(id)arg2 changedObjects:(id)arg3;
 - (id)_managedObject;
-- (void)_setDidCalculateDiffs:(bool)arg1;
+- (void)_setDidCalculateDiffs:(BOOL)arg1;
 - (id)changedIndexes;
 - (id)changedIndexesRelativeToSnapshot;
 - (id)changedObjects;
-- (bool)countDidChange;
+- (BOOL)countDidChange;
 - (void)dealloc;
 - (id)deletedIndexes;
 - (id)deletedObjects;
 - (void)enumerateMovesWithBlock:(id)arg1;
-- (bool)hasMoves;
+- (BOOL)hasMoves;
 - (id)init;
 - (id)insertedIndexes;
 - (id)insertedObjects;
 - (id)name;
 - (id)object;
-- (bool)shouldReload;
+- (BOOL)shouldReload;
 - (id)snapshot;
-- (unsigned long long)snapshotIndexForContainedObject:(id)arg1;
+- (unsigned int)snapshotIndexForContainedObject:(id)arg1;
 
 @end

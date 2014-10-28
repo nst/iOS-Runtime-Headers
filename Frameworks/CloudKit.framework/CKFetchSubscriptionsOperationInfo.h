@@ -5,20 +5,20 @@
 @class NSArray;
 
 @interface CKFetchSubscriptionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
+    BOOL _isFetchAllSubscriptionsOperation;
     NSArray *_subscriptionIDs;
-    bool_isFetchAllSubscriptionsOperation;
 }
 
-@property bool isFetchAllSubscriptionsOperation;
+@property BOOL isFetchAllSubscriptionsOperation;
 @property(retain) NSArray * subscriptionIDs;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isFetchAllSubscriptionsOperation;
-- (void)setIsFetchAllSubscriptionsOperation:(bool)arg1;
+- (BOOL)isFetchAllSubscriptionsOperation;
+- (void)setIsFetchAllSubscriptionsOperation:(BOOL)arg1;
 - (void)setSubscriptionIDs:(id)arg1;
 - (id)subscriptionIDs;
 

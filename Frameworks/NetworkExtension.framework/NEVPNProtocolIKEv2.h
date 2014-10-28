@@ -7,39 +7,39 @@
 @interface NEVPNProtocolIKEv2 : NEVPNProtocolIPSec {
     NEVPNIKEv2SecurityAssociationParameters *_IKESecurityAssociationParameters;
     NEVPNIKEv2SecurityAssociationParameters *_childSecurityAssociationParameters;
-    long long _deadPeerDetectionRate;
+    int _deadPeerDetectionRate;
     NSString *_serverCertificateCommonName;
     NSString *_serverCertificateIssuerCommonName;
-    bool_wakeForRekey;
+    BOOL _wakeForRekey;
 }
 
 @property(readonly) NEVPNIKEv2SecurityAssociationParameters * IKESecurityAssociationParameters;
 @property(readonly) NEVPNIKEv2SecurityAssociationParameters * childSecurityAssociationParameters;
-@property long long deadPeerDetectionRate;
+@property int deadPeerDetectionRate;
 @property(copy) NSString * serverCertificateCommonName;
 @property(copy) NSString * serverCertificateIssuerCommonName;
-@property bool wakeForRekey;
+@property BOOL wakeForRekey;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)IKESecurityAssociationParameters;
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)childSecurityAssociationParameters;
 - (id)clone;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)deadPeerDetectionRate;
+- (int)deadPeerDetectionRate;
 - (id)descriptionWithIndent:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)serverCertificateCommonName;
 - (id)serverCertificateIssuerCommonName;
-- (void)setDeadPeerDetectionRate:(long long)arg1;
+- (void)setDeadPeerDetectionRate:(int)arg1;
 - (void)setServerCertificateCommonName:(id)arg1;
 - (void)setServerCertificateIssuerCommonName:(id)arg1;
-- (void)setWakeForRekey:(bool)arg1;
-- (bool)wakeForRekey;
+- (void)setWakeForRekey:(BOOL)arg1;
+- (BOOL)wakeForRekey;
 
 @end

@@ -12,7 +12,7 @@
 @property(readonly) NSDate * date;
 @property(readonly) NSString * errorComment;
 @property(readonly) NSString * errorDomain;
-@property(readonly) long long errorStatusCode;
+@property(readonly) int errorStatusCode;
 @property(readonly) NSString * playbackSessionID;
 @property(readonly) NSString * serverAddress;
 
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (id)errorComment;
 - (id)errorDomain;
-- (long long)errorStatusCode;
+- (int)errorStatusCode;
 - (void)finalize;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

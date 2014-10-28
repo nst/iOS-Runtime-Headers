@@ -6,30 +6,30 @@
 
 @interface RCSSavedRecordingAccessToken : NSObject <NSSecureCoding, NSCoding, NSCopying> {
     NSString *_accessName;
-    unsigned long long _accessType;
+    unsigned int _accessType;
     NSURL *_compositionAVURL;
     NSUUID *_identifier;
 }
 
 @property(copy,readonly) NSString * accessName;
-@property(readonly) unsigned long long accessType;
+@property(readonly) unsigned int accessType;
 @property(readonly) NSURL * compositionAVURL;
 @property(copy,readonly) NSUUID * identifier;
 
-+ (bool)supportsSecureCoding;
-+ (id)tokenWithName:(id)arg1 accessType:(unsigned long long)arg2 compositionAVURL:(id)arg3;
++ (BOOL)supportsSecureCoding;
++ (id)tokenWithName:(id)arg1 accessType:(unsigned int)arg2 compositionAVURL:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)accessName;
-- (unsigned long long)accessType;
+- (unsigned int)accessType;
 - (id)compositionAVURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 accessType:(unsigned long long)arg2 compositionAVURL:(id)arg3 identifier:(id)arg4;
-- (bool)isEqual:(id)arg1;
+- (id)initWithName:(id)arg1 accessType:(unsigned int)arg2 compositionAVURL:(id)arg3 identifier:(id)arg4;
+- (BOOL)isEqual:(id)arg1;
 
 @end

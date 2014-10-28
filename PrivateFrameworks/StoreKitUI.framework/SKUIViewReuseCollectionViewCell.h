@@ -6,29 +6,29 @@
 
 @interface SKUIViewReuseCollectionViewCell : SKUICollectionViewCell {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _contentInset;
     SKUIViewReusePool *_viewPool;
     NSArray *_views;
 }
 
 @property(readonly) NSArray * allExistingViews;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 
 - (void).cxx_destruct;
 - (id)allExistingViews;
 - (void)applyLayoutAttributes:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)enumerateExistingViewsForReuseIdentifier:(id)arg1 usingBlock:(id)arg2;
-- (id)existingViewForIndex:(long long)arg1;
+- (id)existingViewForIndex:(int)arg1;
 - (id)existingViewsForReuseIdentifier:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)modifyUsingBlock:(id)arg1;
 - (void)registerClass:(Class)arg1 forViewWithReuseIdentifier:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

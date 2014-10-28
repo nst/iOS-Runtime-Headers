@@ -6,45 +6,45 @@
 
 @interface UIKeyboardTouchInfo : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
+    BOOL _dragged;
     } _initialDragPoint;
     } _initialPoint;
     UIKBTree *_key;
     UIKBTree *_keyplane;
+    BOOL _maySuppressUpAction;
     UIKBTree *_slidOffKey;
     int _stage;
     UITouch *_touch;
-    bool_dragged;
-    bool_maySuppressUpAction;
 }
 
-@property bool dragged;
-@property struct CGPoint { double x1; double x2; } initialDragPoint;
-@property struct CGPoint { double x1; double x2; } initialPoint;
+@property BOOL dragged;
+@property struct CGPoint { float x1; float x2; } initialDragPoint;
+@property struct CGPoint { float x1; float x2; } initialPoint;
 @property(retain) UIKBTree * key;
 @property(retain) UIKBTree * keyplane;
-@property bool maySuppressUpAction;
+@property BOOL maySuppressUpAction;
 @property(retain) UIKBTree * slidOffKey;
 @property int stage;
 @property(retain) UITouch * touch;
 
 - (void)dealloc;
-- (bool)dragged;
-- (struct CGPoint { double x1; double x2; })initialDragPoint;
-- (struct CGPoint { double x1; double x2; })initialPoint;
+- (BOOL)dragged;
+- (struct CGPoint { float x1; float x2; })initialDragPoint;
+- (struct CGPoint { float x1; float x2; })initialPoint;
 - (id)key;
 - (id)keyplane;
-- (bool)maySuppressUpAction;
-- (void)setDragged:(bool)arg1;
-- (void)setInitialDragPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setInitialPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)maySuppressUpAction;
+- (void)setDragged:(BOOL)arg1;
+- (void)setInitialDragPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInitialPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setKey:(id)arg1;
 - (void)setKeyplane:(id)arg1;
-- (void)setMaySuppressUpAction:(bool)arg1;
+- (void)setMaySuppressUpAction:(BOOL)arg1;
 - (void)setSlidOffKey:(id)arg1;
 - (void)setStage:(int)arg1;
 - (void)setTouch:(id)arg1;

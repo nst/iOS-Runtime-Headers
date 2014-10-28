@@ -5,12 +5,12 @@
 @class NSObject<OS_dispatch_semaphore>;
 
 @interface BLSleepAssertionManager : NSObject {
-    boolm_waiting;
-    long long m_assertionCount;
+    int m_assertionCount;
     int m_assertionLock;
     NSObject<OS_dispatch_semaphore> *m_assertionSemaphore;
-    long long m_idleCount;
+    int m_idleCount;
     int m_idleLock;
+    BOOL m_waiting;
 }
 
 + (id)sharedInstance;

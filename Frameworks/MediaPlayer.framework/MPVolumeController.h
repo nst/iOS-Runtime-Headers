@@ -6,25 +6,25 @@
 
 @interface MPVolumeController : NSObject {
     float _EUVolumeLimit;
+    BOOL _debugVolumeWarning;
     <MPVolumeControllerDelegate> *_delegate;
     MPAVController *_player;
     NSString *_volumeAudioCategory;
     float _volumeValue;
-    long long _volumeWarningState;
+    BOOL _volumeWarningBlinking;
+    BOOL _volumeWarningEnabled;
+    int _volumeWarningState;
     UIImage *_volumeWarningTrackImage;
-    bool_debugVolumeWarning;
-    bool_volumeWarningBlinking;
-    bool_volumeWarningEnabled;
 }
 
 @property(readonly) float EUVolumeLimit;
 @property <MPVolumeControllerDelegate> * delegate;
-@property bool muted;
+@property BOOL muted;
 @property(retain) MPAVController * player;
 @property(copy) NSString * volumeAudioCategory;
 @property(readonly) float volumeValue;
-@property(readonly) bool volumeWarningEnabled;
-@property(readonly) long long volumeWarningState;
+@property(readonly) BOOL volumeWarningEnabled;
+@property(readonly) int volumeWarningState;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
@@ -36,9 +36,9 @@
 - (void)_forcefullySetVolumeValue:(float)arg1;
 - (void)_internalSetVolumeValue:(float)arg1;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
-- (bool)_isPlayerInValidState;
+- (BOOL)_isPlayerInValidState;
 - (void)_mediaServerDiedNotification:(id)arg1;
-- (void)_setVolumeWarningState:(long long)arg1;
+- (void)_setVolumeWarningState:(int)arg1;
 - (void)_setupNotifications;
 - (void)_systemMuteDidChange:(id)arg1;
 - (void)_systemVolumeDidChange:(id)arg1;
@@ -48,10 +48,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (bool)muted;
+- (BOOL)muted;
 - (id)player;
 - (void)setDelegate:(id)arg1;
-- (void)setMuted:(bool)arg1;
+- (void)setMuted:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setVolumeAudioCategory:(id)arg1;
 - (float)setVolumeValue:(float)arg1;
@@ -59,7 +59,7 @@
 - (void)updateVolumeWarningState;
 - (id)volumeAudioCategory;
 - (float)volumeValue;
-- (bool)volumeWarningEnabled;
-- (long long)volumeWarningState;
+- (BOOL)volumeWarningEnabled;
+- (int)volumeWarningState;
 
 @end

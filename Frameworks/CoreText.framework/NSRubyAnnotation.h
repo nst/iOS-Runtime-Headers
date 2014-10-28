@@ -5,7 +5,7 @@
 @interface NSRubyAnnotation : NSObject <NSCopying, NSSecureCoding> {
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

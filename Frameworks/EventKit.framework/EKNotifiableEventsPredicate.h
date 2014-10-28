@@ -9,15 +9,15 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)predicate;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultPropertiesToLoad;
-- (bool)evaluateWithObject:(id)arg1;
-- (bool)shouldLoadDefaultProperties;
+- (BOOL)evaluateWithObject:(id)arg1;
+- (BOOL)shouldLoadDefaultProperties;
 
 @end

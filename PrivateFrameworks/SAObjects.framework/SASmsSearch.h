@@ -25,7 +25,7 @@
 - (id)message;
 - (id)outgoing;
 - (id)recipients;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (id)senders;
 - (void)setEnd:(id)arg1;
 - (void)setMessage:(id)arg1;

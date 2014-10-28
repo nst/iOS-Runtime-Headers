@@ -6,18 +6,21 @@
    See Warning(s) below.
  */
 
-@class <BRItemNotificationReceiving>, BRCItemID, BRCNotificationGatherer, BRCNotificationManager, BRCRelativePath, BRCXPCClient, BRNotificationQueue, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class <BRItemNotificationReceiving>, BRCItemID, BRCNotificationGatherer, BRCNotificationManager, BRCRelativePath, BRCXPCClient, BRNotificationQueue, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface BRCNotificationPipe : NSObject <BRItemNotificationSending> {
     id _boostReply;
     BRCXPCClient *_client;
+    NSMutableSet *_externalContainers;
     BRCNotificationGatherer *_gatherer;
+    BOOL _hasUpdatesInFlight;
     BRCNotificationManager *_manager;
     BRNotificationQueue *_notifs;
     BRCItemID *_oldWatchedAncestorItemID;
     NSObject<OS_dispatch_queue> *_queue;
     <BRItemNotificationReceiving> *_receiver;
     BRCRelativePath *_root;
+    BOOL _volumeIsCaseSensitive;
     NSString *_watchForBundleID;
     unsigned short _watchItemOptions;
     int _watchKind;
@@ -27,14 +30,12 @@
     BRCItemID *_watchedAncestorItemID;
     NSSet *_watchedContainerIDs;
     NSSet *_watchedContainers;
-    unsigned long long _watchedContainersFlags;
-    bool_hasUpdatesInFlight;
-    bool_volumeIsCaseSensitive;
+    unsigned int _watchedContainersFlags;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -44,7 +45,7 @@
 - (int)_isInterestingUpdate:(id)arg1;
 - (void)_stopWatchingItems;
 - (void)addDequeueCallback:(id)arg1;
-- (void)addNotification:(id)arg1 asDead:(bool)arg2;
+- (void)addNotification:(id)arg1 asDead:(BOOL)arg2;
 - (void)boostPriority:(id)arg1;
 - (void)close;
 - (void)dealloc;
@@ -52,6 +53,7 @@
 - (id)initWithReceiver:(id)arg1 root:(id)arg2 manager:(id)arg3;
 - (id)initWithXPCReceiver:(id)arg1 client:(id)arg2 root:(id)arg3 manager:(id)arg4;
 - (oneway void)invalidate;
+- (void)invalidateReceiverIfWatchingContainerID:(id)arg1;
 - (void)processUpdates:(id)arg1;
 - (void)watchItemAtURL:(id)arg1 container:(id)arg2 lookup:(id)arg3 options:(unsigned short)arg4 reply:(id)arg5;
 - (void)watchItemAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id)arg3;

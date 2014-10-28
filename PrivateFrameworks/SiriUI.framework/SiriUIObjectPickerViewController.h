@@ -7,15 +7,15 @@
 @interface SiriUIObjectPickerViewController : UIViewController {
     SAUIDomainObjectPicker *_picker;
     <SiriUIObjectPickerViewControllerDelegate> *_pickerDelegate;
-    bool_showsTopKeyline;
+    BOOL _showsTopKeyline;
 }
 
 @property(getter=_picker,readonly) SAUIDomainObjectPicker * picker;
 @property <SiriUIObjectPickerViewControllerDelegate> * pickerDelegate;
-@property bool showsTopKeyline;
+@property BOOL showsTopKeyline;
 @property(readonly) SiriUIObjectPickerButtonView * view;
 
-+ (double)defaultHeight;
++ (float)defaultHeight;
 + (id)pickerControllerWithPicker:(id)arg1;
 
 - (void).cxx_destruct;
@@ -25,7 +25,7 @@
 - (void)loadView;
 - (id)pickerDelegate;
 - (void)setPickerDelegate:(id)arg1;
-- (void)setShowsTopKeyline:(bool)arg1;
-- (bool)showsTopKeyline;
+- (void)setShowsTopKeyline:(BOOL)arg1;
+- (BOOL)showsTopKeyline;
 
 @end

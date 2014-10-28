@@ -11,7 +11,7 @@
 @property(retain) UIColor * color;
 @property(retain) UIFont * font;
 @property(copy) NSString * text;
-@property long long textAlignment;
+@property int textAlignment;
 
 - (id)initWithAttributedText:(id)arg1;
 - (id)initWithText:(id)arg1;

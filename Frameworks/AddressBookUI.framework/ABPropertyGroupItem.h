@@ -5,6 +5,9 @@
 @class <ABPropertyGroupItemDelegate>, ABCardPropertyGroup, CNContact, CNLabeledValue, NSArray, NSString, NSURL;
 
 @interface ABPropertyGroupItem : ABCardGroupItem {
+    BOOL _allowsEmail;
+    BOOL _allowsIMessage;
+    BOOL _allowsPhone;
     CNContact *_contact;
     NSArray *_contacts;
     <ABPropertyGroupItemDelegate> *_delegate;
@@ -12,15 +15,12 @@
     CNLabeledValue *_labeledValue;
     NSArray *_labeledValues;
     CNLabeledValue *_originalLabeledValue;
-    bool_allowsEmail;
-    bool_allowsIMessage;
-    bool_allowsPhone;
 }
 
-@property bool allowsEmail;
-@property bool allowsIMessage;
-@property bool allowsPhone;
-@property(readonly) bool canRemove;
+@property BOOL allowsEmail;
+@property BOOL allowsIMessage;
+@property BOOL allowsPhone;
+@property(readonly) BOOL canRemove;
 @property(retain) CNContact * contact;
 @property(copy) NSArray * contacts;
 @property(readonly) NSURL * defaultActionURL;
@@ -28,17 +28,17 @@
 @property(readonly) NSString * displayLabel;
 @property(readonly) NSString * displayValue;
 @property(readonly) NSString * editingStringValue;
-@property(getter=isEmpty,readonly) bool empty;
-@property(getter=isFavorite,readonly) bool favorite;
+@property(getter=isEmpty,readonly) BOOL empty;
+@property(getter=isFavorite,readonly) BOOL favorite;
 @property ABCardPropertyGroup * group;
 @property(retain) CNLabeledValue * labeledValue;
 @property(retain) NSArray * labeledValues;
-@property(readonly) bool modified;
+@property(readonly) BOOL modified;
 @property(readonly) id normalizedValue;
 @property(retain) CNLabeledValue * originalLabeledValue;
 @property(readonly) NSString * placeholderString;
 @property(readonly) NSString * property;
-@property(getter=isReadonly,readonly) bool readonly;
+@property(getter=isReadonly,readonly) BOOL readonly;
 @property(readonly) NSArray * supportedLabels;
 
 + (id)newPropertyGroupItemForProperty:(id)arg1;
@@ -46,12 +46,12 @@
 + (id)propertyGroupItemWithLabeledValue:(id)arg1 group:(id)arg2 contacts:(id)arg3;
 
 - (void)_enumerateContactsAndValuesWithBlock:(id)arg1;
-- (bool)allowsEmail;
-- (bool)allowsIMessage;
-- (bool)allowsPhone;
+- (BOOL)allowsEmail;
+- (BOOL)allowsIMessage;
+- (BOOL)allowsPhone;
 - (id)bestLabel:(id)arg1;
 - (id)bestValue:(id)arg1;
-- (bool)canRemove;
+- (BOOL)canRemove;
 - (id)contact;
 - (id)contacts;
 - (void)dealloc;
@@ -67,27 +67,27 @@
 - (id)init;
 - (id)initWithGroup:(id)arg1;
 - (id)initWithLabeledValue:(id)arg1 group:(id)arg2 contacts:(id)arg3;
-- (bool)isEmpty;
-- (bool)isEqual:(id)arg1;
-- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
-- (bool)isEquivalentToItem:(id)arg1;
-- (bool)isFavorite;
-- (bool)isFavoriteOfType:(int)arg1;
-- (bool)isReadonly;
-- (bool)isValidIdentifier:(int)arg1;
-- (bool)isValidValue:(id)arg1;
+- (BOOL)isEmpty;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
+- (BOOL)isEquivalentToItem:(id)arg1;
+- (BOOL)isFavorite;
+- (BOOL)isFavoriteOfType:(int)arg1;
+- (BOOL)isReadonly;
+- (BOOL)isValidIdentifier:(int)arg1;
+- (BOOL)isValidValue:(id)arg1;
 - (id)labeledValue;
 - (id)labeledValues;
 - (void)mergeItem:(id)arg1;
-- (bool)modified;
+- (BOOL)modified;
 - (id)normalizedValue;
 - (id)originalLabeledValue;
 - (id)placeholderString;
 - (id)property;
-- (void)saveChangesImmediately:(bool)arg1;
-- (void)setAllowsEmail:(bool)arg1;
-- (void)setAllowsIMessage:(bool)arg1;
-- (void)setAllowsPhone:(bool)arg1;
+- (void)saveChangesImmediately:(BOOL)arg1;
+- (void)setAllowsEmail:(BOOL)arg1;
+- (void)setAllowsIMessage:(BOOL)arg1;
+- (void)setAllowsPhone:(BOOL)arg1;
 - (void)setContact:(id)arg1;
 - (void)setContacts:(id)arg1;
 - (void)setDelegate:(id)arg1;

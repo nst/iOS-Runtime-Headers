@@ -17,9 +17,9 @@
 - (void)dealloc;
 - (id)defaultOtherLanguages;
 - (id)deviceLanguageIdentifier;
-- (bool)languageIsSupportedLanguage:(id)arg1;
+- (BOOL)languageIsSupportedLanguage:(id)arg1;
 - (id)languagesWithAvailableLocaleIdentifiers;
-- (bool)preferredLanguages;
+- (BOOL)preferredLanguages;
 - (id)renderableLanguagesFromList:(id)arg1;
 - (void)setLanguage:(id)arg1 fallback:(id)arg2;
 - (void)setLanguage:(id)arg1;

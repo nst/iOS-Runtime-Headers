@@ -12,21 +12,21 @@
 @property(readonly) TIKeyboardCandidate * autocorrection;
 @property(readonly) NSArray * candidates;
 @property(readonly) NSArray * predictions;
-@property(readonly) bool shouldAcceptTopCandidate;
+@property(readonly) BOOL shouldAcceptTopCandidate;
 
-+ (id)autocorrectionListWithCandidates:(id)arg1 shouldAcceptTopCandidate:(bool)arg2;
++ (id)autocorrectionListWithCandidates:(id)arg1 shouldAcceptTopCandidate:(BOOL)arg2;
 + (id)listWithAutocorrection:(id)arg1 predictions:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)autocorrection;
 - (id)candidates;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAutocorrection:(id)arg1 predictions:(id)arg2;
-- (id)initWithCandidates:(id)arg1 shouldAcceptTopCandidate:(bool)arg2;
+- (id)initWithCandidates:(id)arg1 shouldAcceptTopCandidate:(BOOL)arg2;
 - (id)initWithCandidates:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)predictions;
-- (bool)shouldAcceptTopCandidate;
+- (BOOL)shouldAcceptTopCandidate;
 
 @end

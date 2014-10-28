@@ -6,16 +6,16 @@
 
 @interface BBSyncDelayedDismissal : NSObject {
     BBBulletin *_bulletin;
-    unsigned long long _feeds;
+    unsigned int _feeds;
 }
 
 @property(retain) BBBulletin * bulletin;
-@property unsigned long long feeds;
+@property unsigned int feeds;
 
 - (id)bulletin;
 - (void)dealloc;
-- (unsigned long long)feeds;
+- (unsigned int)feeds;
 - (void)setBulletin:(id)arg1;
-- (void)setFeeds:(unsigned long long)arg1;
+- (void)setFeeds:(unsigned int)arg1;
 
 @end

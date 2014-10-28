@@ -17,7 +17,7 @@
 @property(copy) NSArray * storeIdentifiers;
 
 + (id)contentWithFileURL:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)appLaunchURL;
 - (id)barcode;

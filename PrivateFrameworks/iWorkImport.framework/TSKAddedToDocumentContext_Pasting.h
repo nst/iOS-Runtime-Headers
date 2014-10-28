@@ -11,14 +11,14 @@
 
 - (void)addDrawable:(id)arg1;
 - (id)addedDrawables;
-- (bool)autoUpdateSmartFields;
+- (BOOL)autoUpdateSmartFields;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (void)setTableIDMap:(struct __CFDictionary { }*)arg1;
-- (bool)syncChanges;
+- (BOOL)syncChanges;
 - (struct __CFDictionary { }*)tableIDMap;
-- (bool)uniqueBookmarks;
-- (bool)wasPasted;
+- (BOOL)uniqueBookmarks;
+- (BOOL)wasPasted;
 
 @end

@@ -35,7 +35,7 @@
 - (id)_initWithMessageSender:(struct MessageSender { int (**x1)(); }*)arg1;
 - (void)_invalidate;
 - (void)_invokeMessageWithInterfaceIdentifier:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 encodedInvocation:(const struct ImmutableDictionary { int (**x1)(); id x2; struct HashMap<WTF::String, WTF::RefPtr<API::Object>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<API::Object> > > { struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > >, WTF::StringHash, WTF::HashMap<WTF::String, WTF::RefPtr<API::Object>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<API::Object> > >::KeyValuePairTraits, WTF::HashTraits<WTF::String> > { struct KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_3_1_1; } x3; }*)arg2;
-- (bool)_invokeMethod:(const struct UserData { struct RefPtr<API::Object> { struct Object {} *x_1_1_1; } x1; }*)arg1;
+- (BOOL)_invokeMethod:(const struct UserData { struct RefPtr<API::Object> { struct Object {} *x_1_1_1; } x1; }*)arg1;
 - (void)_sendInvocation:(id)arg1 interface:(id)arg2;
 - (void)registerExportedObject:(id)arg1 interface:(id)arg2;
 - (id)remoteObjectProxyWithInterface:(id)arg1;

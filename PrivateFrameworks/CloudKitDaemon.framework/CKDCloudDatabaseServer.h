@@ -16,7 +16,7 @@
 @property(retain) NSMutableArray * connectedClients;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * lowDiskQueue;
 @property(retain) NSObject<OS_dispatch_source> * lowDiskSource;
 @property(retain) NSObject<OS_dispatch_source> * lowDiskTimer;
@@ -32,7 +32,7 @@
 - (id)connectedClients;
 - (void)dealloc;
 - (id)init;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)lowDiskQueue;
 - (id)lowDiskSource;
 - (id)lowDiskTimer;

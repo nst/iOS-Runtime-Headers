@@ -11,32 +11,32 @@
 @interface EKTravelAgendaItem : NSObject {
     id _adviceBlock;
     NSDate *_date;
+    BOOL _haveAdvised;
     double _initialDistanceFromDestination;
     CLLocation *_location;
     NSMutableArray *_trace;
     int _travelMethod;
-    bool_haveAdvised;
 }
 
 @property(readonly) NSDate * date;
 @property(readonly) CLLocation * location;
 @property(readonly) int travelMethod;
 
-+ (bool)_clLocation:(id)arg1 isEqualToCLLocation:(id)arg2;
++ (BOOL)_clLocation:(id)arg1 isEqualToCLLocation:(id)arg2;
 
 - (void)advise:(id)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;
-- (bool)haveAdvised;
+- (BOOL)haveAdvised;
 - (id)initWithLocation:(id)arg1 date:(id)arg2 adviceBlock:(id)arg3;
 - (id)initWithLocation:(id)arg1 date:(id)arg2 travelMethod:(int)arg3 adviceBlock:(id)arg4;
-- (bool)isCloseToPersonAtLocation:(id)arg1;
-- (bool)isEqualToTravelAgendaItem:(id)arg1;
+- (BOOL)isCloseToPersonAtLocation:(id)arg1;
+- (BOOL)isEqualToTravelAgendaItem:(id)arg1;
 - (id)location;
 - (void)traceLocation:(id)arg1 date:(id)arg2;
 - (void)tracePrediction:(id)arg1 date:(id)arg2 delay:(double)arg3;
 - (int)travelMethod;
-- (bool)writeTraceToDisk;
+- (BOOL)writeTraceToDisk;
 
 @end

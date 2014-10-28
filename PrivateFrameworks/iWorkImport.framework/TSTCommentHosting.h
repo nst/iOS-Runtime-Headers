@@ -9,7 +9,7 @@
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    bool_forRollover;
+    BOOL _forRollover;
     } mCellID;
     TSDCommentStorage *mStorage;
     TSTTableInfo *mTableInfo;
@@ -25,8 +25,8 @@
 @property(readonly) NSDate * date;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isForRollover,readonly) bool forRollover;
-@property(readonly) unsigned long long hash;
+@property(getter=isForRollover,readonly) BOOL forRollover;
+@property(readonly) unsigned int hash;
 @property <TSKModel> * hostingModel;
 @property(copy) TSDCommentStorage * storage;
 @property(readonly) Class superclass;
@@ -44,11 +44,11 @@
 - (void)dealloc;
 - (id)description;
 - (Class)editorClass;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)hostingModel;
 - (id)initWithStorage:(id)arg1 forTableInfo:(id)arg2 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
-- (bool)isEqual:(id)arg1;
-- (bool)isForRollover;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isForRollover;
 - (void)setAuthor:(id)arg1;
 - (void)setHostingModel:(id)arg1;
 - (void)setStorage:(id)arg1;

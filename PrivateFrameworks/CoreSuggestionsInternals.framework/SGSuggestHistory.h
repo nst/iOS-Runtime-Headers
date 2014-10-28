@@ -6,8 +6,8 @@
 
 @interface SGSuggestHistory : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     NSUbiquitousKeyValueStore *_backingKVStore;
     NSMutableSet *_contactHashes;
     NSMutableSet *_dontUpdate;
@@ -28,21 +28,21 @@
 - (id)description;
 - (id)deviceSalt;
 - (void)handleSyncedDataChanged:(id)arg1;
-- (bool)hasContact:(id)arg1 usingStore:(id)arg2;
-- (bool)hasContact:(id)arg1;
-- (bool)hasContactDetail:(id)arg1 forContact:(id)arg2 usingStore:(id)arg3;
-- (bool)hasEvent:(id)arg1;
-- (bool)hasEventWithRejectedFields:(id)arg1;
-- (bool)hasFieldValues:(id)arg1 forEvent:(id)arg2;
-- (bool)hasFieldValues:(id)arg1 forStorageEvent:(id)arg2;
-- (bool)hasStorageEvent:(id)arg1;
-- (bool)hasStorageEventWithRejectedFields:(id)arg1;
+- (BOOL)hasContact:(id)arg1 usingStore:(id)arg2;
+- (BOOL)hasContact:(id)arg1;
+- (BOOL)hasContactDetail:(id)arg1 forContact:(id)arg2 usingStore:(id)arg3;
+- (BOOL)hasEvent:(id)arg1;
+- (BOOL)hasEventWithRejectedFields:(id)arg1;
+- (BOOL)hasFieldValues:(id)arg1 forEvent:(id)arg2;
+- (BOOL)hasFieldValues:(id)arg1 forStorageEvent:(id)arg2;
+- (BOOL)hasStorageEvent:(id)arg1;
+- (BOOL)hasStorageEventWithRejectedFields:(id)arg1;
 - (id)hashesForContact:(id)arg1;
 - (id)identitySalt;
 - (id)init;
-- (bool)isUpdatableContact:(id)arg1;
-- (bool)isUpdatableEvent:(id)arg1;
-- (bool)isValidSuggestion:(id)arg1;
+- (BOOL)isUpdatableContact:(id)arg1;
+- (BOOL)isUpdatableEvent:(id)arg1;
+- (BOOL)isValidSuggestion:(id)arg1;
 - (id)keysForContact:(id)arg1;
 - (void)pushAll;
 - (void)pushContacts;

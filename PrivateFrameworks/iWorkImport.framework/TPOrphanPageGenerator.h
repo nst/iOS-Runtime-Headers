@@ -10,12 +10,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)createOrUpdatePageHintInSectionHint:(id)arg1 withState:(id)arg2;
 - (id)init;
 - (id)initWithDocumentRoot:(id)arg1;
-- (bool)wantsPageInSectionHint:(id)arg1 withState:(id)arg2;
+- (BOOL)wantsPageInSectionHint:(id)arg1 withState:(id)arg2;
 
 @end

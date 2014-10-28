@@ -9,6 +9,6 @@
 - (const char *)content;
 - (void)dealloc;
 - (id)initWithContent:(const char *)arg1;
-- (bool)isBlank;
+- (BOOL)isBlank;
 
 @end

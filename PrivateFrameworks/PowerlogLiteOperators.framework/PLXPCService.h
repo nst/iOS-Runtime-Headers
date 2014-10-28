@@ -2,22 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_xpc_object>, PLNSNotificationOperatorComposition;
+@class NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_xpc_object>, PLNSNotificationOperatorComposition, PLNSTimerOperatorComposition;
 
 @interface PLXPCService : PLService {
     NSArray *_clientIDs;
+    NSDictionary *_clientNames;
     NSDictionary *_permissionCache;
     NSMutableDictionary *_registeredListeners;
     NSMutableDictionary *_registeredResponders;
     PLNSNotificationOperatorComposition *_registrationNotification;
+    PLNSTimerOperatorComposition *_resetPermissionsForClientsTimer;
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
 @property(retain) NSArray * clientIDs;
+@property(retain) NSDictionary * clientNames;
 @property(retain) NSDictionary * permissionCache;
 @property(retain) NSMutableDictionary * registeredListeners;
 @property(retain) NSMutableDictionary * registeredResponders;
 @property(retain) PLNSNotificationOperatorComposition * registrationNotification;
+@property(retain) PLNSTimerOperatorComposition * resetPermissionsForClientsTimer;
 @property(retain) NSObject<OS_xpc_object> * xpcConnection;
 
 + (id)entryEventPointDefinitionClientLogging;
@@ -26,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)clientIDs;
+- (id)clientNames;
 - (void)handlePeer:(id)arg1 forEvent:(id)arg2;
 - (void)handlePeerListenerEvent:(id)arg1 withMessage:(id)arg2 withClientID:(short)arg3 withProcessName:(id)arg4 withKey:(id)arg5 withPayload:(id)arg6;
 - (void)handlePeerResponderEvent:(id)arg1 withMessage:(id)arg2 withClientID:(short)arg3 withProcessName:(id)arg4 withKey:(id)arg5 withPayload:(id)arg6;
@@ -38,12 +43,16 @@
 - (id)registeredOperatorFromDictionary:(id)arg1 forMessage:(id)arg2;
 - (id)registeredResponders;
 - (id)registrationNotification;
+- (void)resetPermissionsForClients;
+- (id)resetPermissionsForClientsTimer;
 - (void)respondToEvent:(id)arg1 withResponse:(id)arg2;
 - (void)setClientIDs:(id)arg1;
+- (void)setClientNames:(id)arg1;
 - (void)setPermissionCache:(id)arg1;
 - (void)setRegisteredListeners:(id)arg1;
 - (void)setRegisteredResponders:(id)arg1;
 - (void)setRegistrationNotification:(id)arg1;
+- (void)setResetPermissionsForClientsTimer:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;
 

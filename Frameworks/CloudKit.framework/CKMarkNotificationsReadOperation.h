@@ -21,7 +21,7 @@
 @property(retain) NSMutableArray * notificationIDsMarkedRead;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)errorsByNotificationID;

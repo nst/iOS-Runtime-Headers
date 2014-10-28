@@ -7,6 +7,7 @@
 @interface SPTitleSection : SPSection <PRSTitleSection> {
 }
 
+@property(retain) NSURL * attribution_url;
 @property(retain) NSString * subtitle;
 @property(retain) NSString * title;
 @property(retain) NSString * type;

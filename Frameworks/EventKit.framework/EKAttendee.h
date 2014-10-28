@@ -7,24 +7,24 @@
 @interface EKAttendee : EKParticipant {
 }
 
-@property bool commentChanged;
+@property BOOL commentChanged;
 @property(readonly) NSDate * lastModifiedParticipationStatus;
 @property int pendingStatus;
-@property bool statusChanged;
+@property BOOL statusChanged;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 
 - (id)_persistentAttendee;
-- (bool)commentChanged;
+- (BOOL)commentChanged;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
-- (bool)isCurrentUser;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isCurrentUser;
+- (BOOL)isEqual:(id)arg1;
 - (id)lastModifiedParticipationStatus;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;
@@ -32,12 +32,12 @@
 - (int)participantStatus;
 - (int)participantType;
 - (int)pendingStatus;
-- (void)setCommentChanged:(bool)arg1;
+- (void)setCommentChanged:(BOOL)arg1;
 - (void)setParticipantRole:(int)arg1;
 - (void)setParticipantStatus:(int)arg1;
 - (void)setParticipantType:(int)arg1;
 - (void)setPendingStatus:(int)arg1;
-- (void)setStatusChanged:(bool)arg1;
-- (bool)statusChanged;
+- (void)setStatusChanged:(BOOL)arg1;
+- (BOOL)statusChanged;
 
 @end

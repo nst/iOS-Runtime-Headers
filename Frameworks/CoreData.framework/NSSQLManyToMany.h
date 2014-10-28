@@ -22,9 +22,9 @@
 - (id)inverseColumnName;
 - (id)inverseManyToMany;
 - (id)inverseOrderColumnName;
-- (bool)isMaster;
-- (bool)isReflexive;
-- (bool)isTableSchemaEqual:(id)arg1;
+- (BOOL)isMaster;
+- (BOOL)isReflexive;
+- (BOOL)isTableSchemaEqual:(id)arg1;
 - (id)orderColumnName;
 - (unsigned int)orderColumnSQLType;
 

@@ -9,11 +9,11 @@
     NSMutableSet *_mutable;
 }
 
-@property(readonly) unsigned long long count;
+@property(readonly) unsigned int count;
 
 - (void)addObject:(id)arg1;
-- (bool)containsObject:(id)arg1;
-- (unsigned long long)count;
+- (BOOL)containsObject:(id)arg1;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (id)immutableSet;

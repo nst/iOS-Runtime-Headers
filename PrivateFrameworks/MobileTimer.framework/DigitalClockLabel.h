@@ -7,16 +7,16 @@
 @interface DigitalClockLabel : MTDateLabel {
     NSDate *_baseDate;
     NSCalendar *_calendar;
-    long long _hour;
-    long long _minute;
+    int _hour;
+    int _minute;
 }
 
 - (void)dealloc;
-- (void)forceSetHour:(long long)arg1 minute:(long long)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)forceSetHour:(int)arg1 minute:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)refreshUI;
 - (void)resetFontSizes;
-- (bool)setHour:(long long)arg1 minute:(long long)arg2;
+- (BOOL)setHour:(int)arg1 minute:(int)arg2;
 - (void)significantTimeChange:(id)arg1;
 
 @end

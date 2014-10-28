@@ -11,19 +11,19 @@
 @interface AXSpringBoardActionHandlerHolder : NSObject {
     id _handler;
     NSString *_identifier;
-    long long _type;
+    int _type;
 }
 
 @property(copy) id handler;
 @property(copy) NSString * identifier;
-@property long long type;
+@property int type;
 
 - (void)dealloc;
 - (id)handler;
 - (id)identifier;
 - (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setType:(long long)arg1;
-- (long long)type;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

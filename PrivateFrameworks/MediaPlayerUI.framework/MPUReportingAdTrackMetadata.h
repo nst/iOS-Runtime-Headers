@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface MPUReportingAdTrackMetadata : MPUReportingTrackMetadata {
-    long long _adType;
+    int _adType;
     NSString *_externalIdentifier;
 }
 
-@property long long adType;
+@property int adType;
 @property(copy) NSString * externalIdentifier;
 
 - (void).cxx_destruct;
-- (long long)adType;
+- (int)adType;
 - (id)externalIdentifier;
 - (id)initWithRadioAdTrack:(id)arg1;
-- (void)setAdType:(long long)arg1;
+- (void)setAdType:(int)arg1;
 - (void)setExternalIdentifier:(id)arg1;
 
 @end

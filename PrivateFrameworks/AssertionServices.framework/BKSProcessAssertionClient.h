@@ -12,10 +12,10 @@
 + (id)sharedInstance;
 
 - (void)_dispatchClientCalloutBlock:(id)arg1;
-- (id)_errorWithCode:(unsigned long long)arg1;
+- (id)_errorWithCode:(unsigned int)arg1;
 - (void)_handleDestroy:(id)arg1;
 - (void)_invalidate;
-- (void)_sendEvent:(id)arg1 forMessageType:(unsigned long long)arg2 responseHandler:(id)arg3;
+- (void)_sendEvent:(id)arg1 forMessageType:(unsigned int)arg2 responseHandler:(id)arg3;
 - (double)backgroundTimeRemaining:(int)arg1;
 - (void)dealloc;
 - (id)description;

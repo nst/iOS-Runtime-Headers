@@ -5,17 +5,17 @@
 @class UITraitCollection;
 
 @interface PUViewControllerSpec : NSObject {
-    long long _currentLayoutStyle;
+    int _currentLayoutStyle;
     UITraitCollection *_traitCollection;
 }
 
-@property(readonly) long long currentLayoutStyle;
+@property(readonly) int currentLayoutStyle;
 @property(copy) UITraitCollection * traitCollection;
 
 - (void).cxx_destruct;
-- (long long)_actualStyleForAssumedStyle:(long long)arg1;
+- (int)_actualStyleForAssumedStyle:(int)arg1;
 - (void)_updateLayoutStyle;
-- (long long)currentLayoutStyle;
+- (int)currentLayoutStyle;
 - (void)setTraitCollection:(id)arg1;
 - (id)traitCollection;
 

@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id handler;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSMutableArray * matches;
 @property(readonly) Class superclass;
 
@@ -24,7 +24,7 @@
 - (id)handler;
 - (id)init;
 - (id)matches;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(bool)arg3;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)setHandler:(id)arg1;
 
 @end

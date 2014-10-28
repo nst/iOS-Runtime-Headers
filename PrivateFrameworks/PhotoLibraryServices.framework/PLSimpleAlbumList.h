@@ -9,20 +9,20 @@
 }
 
 @property(retain) NSOrderedSet * containers;
-@property(readonly) unsigned long long containersCount;
+@property(readonly) unsigned int containersCount;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (bool)canEditContainers;
+- (BOOL)canEditContainers;
 - (id)containers;
-- (unsigned long long)containersCount;
+- (unsigned int)containersCount;
 - (id)containersRelationshipName;
 - (void)dealloc;
 - (id)initWithAssetContainer:(id)arg1;
 - (id)initWithAssetContainers:(id)arg1;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (id)managedObjectContext;
 - (id)photoLibrary;
 - (void)setContainers:(id)arg1;

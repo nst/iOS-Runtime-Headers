@@ -4,39 +4,39 @@
 
 @interface MTLStencilDescriptor : NSObject <NSCopying> {
     struct MTLStencilDescriptorPrivate { 
-        unsigned long long stencilCompareFunction; 
-        unsigned long long stencilFailureOperation; 
-        unsigned long long depthFailureOperation; 
-        unsigned long long depthStencilPassOperation; 
+        unsigned int stencilCompareFunction; 
+        unsigned int stencilFailureOperation; 
+        unsigned int depthFailureOperation; 
+        unsigned int depthStencilPassOperation; 
         unsigned int readMask; 
         unsigned int writeMask; 
     } _private;
 }
 
-@property unsigned long long depthFailureOperation;
-@property unsigned long long depthStencilPassOperation;
+@property unsigned int depthFailureOperation;
+@property unsigned int depthStencilPassOperation;
 @property unsigned int readMask;
-@property unsigned long long stencilCompareFunction;
-@property unsigned long long stencilFailureOperation;
+@property unsigned int stencilCompareFunction;
+@property unsigned int stencilFailureOperation;
 @property unsigned int writeMask;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)depthFailureOperation;
-- (unsigned long long)depthStencilPassOperation;
+- (unsigned int)depthFailureOperation;
+- (unsigned int)depthStencilPassOperation;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)readMask;
-- (void)setDepthFailureOperation:(unsigned long long)arg1;
-- (void)setDepthStencilPassOperation:(unsigned long long)arg1;
+- (void)setDepthFailureOperation:(unsigned int)arg1;
+- (void)setDepthStencilPassOperation:(unsigned int)arg1;
 - (void)setReadMask:(unsigned int)arg1;
-- (void)setStencilCompareFunction:(unsigned long long)arg1;
-- (void)setStencilFailureOperation:(unsigned long long)arg1;
+- (void)setStencilCompareFunction:(unsigned int)arg1;
+- (void)setStencilFailureOperation:(unsigned int)arg1;
 - (void)setWriteMask:(unsigned int)arg1;
-- (unsigned long long)stencilCompareFunction;
-- (unsigned long long)stencilFailureOperation;
-- (struct MTLStencilDescriptorPrivate { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; }*)stencilPrivate;
+- (unsigned int)stencilCompareFunction;
+- (unsigned int)stencilFailureOperation;
+- (struct MTLStencilDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)stencilPrivate;
 - (unsigned int)writeMask;
 
 @end

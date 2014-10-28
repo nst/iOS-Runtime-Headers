@@ -5,16 +5,16 @@
 @class <ABStyleProvider>;
 
 @interface ABTranslucentNavigationController : UINavigationController {
+    BOOL _overridesNavigationBarInset;
     <ABStyleProvider> *_styleProvider;
-    bool_overridesNavigationBarInset;
 }
 
-@property bool overridesNavigationBarInset;
+@property BOOL overridesNavigationBarInset;
 @property(retain) <ABStyleProvider> * styleProvider;
 
-- (bool)_shouldNavigationBarInsetViewController:(id)arg1;
-- (bool)overridesNavigationBarInset;
-- (void)setOverridesNavigationBarInset:(bool)arg1;
+- (BOOL)_shouldNavigationBarInsetViewController:(id)arg1;
+- (BOOL)overridesNavigationBarInset;
+- (void)setOverridesNavigationBarInset:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 

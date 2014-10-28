@@ -18,7 +18,7 @@
 @property(copy) id requestCompletionBlock;
 
 - (void)_cancelProgress;
-- (bool)_isCancelled;
+- (BOOL)_isCancelled;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 andProgress:(id)arg2 completetionBlock:(id)arg3;

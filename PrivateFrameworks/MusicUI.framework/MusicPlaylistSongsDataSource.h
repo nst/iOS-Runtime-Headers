@@ -13,12 +13,12 @@
 - (void).cxx_destruct;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (void)dealloc;
-- (void)deleteEntityAtIndex:(unsigned long long)arg1;
+- (void)deleteEntityAtIndex:(unsigned int)arg1;
 - (id)entityCountFormat;
-- (bool)entityIsSeedItemAtIndex:(unsigned long long)arg1;
-- (id)initWithQuery:(id)arg1 entityType:(long long)arg2;
-- (void)moveItemFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (BOOL)entityIsSeedItemAtIndex:(unsigned int)arg1;
+- (id)initWithQuery:(id)arg1 entityType:(int)arg2;
+- (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)playlist;
-- (bool)showsEntityCountFooter;
+- (BOOL)showsEntityCountFooter;
 
 @end

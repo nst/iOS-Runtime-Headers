@@ -14,7 +14,7 @@
 
 + (id)customAttributes;
 
-- (bool)_isIdentity;
+- (BOOL)_isIdentity;
 - (id)inputEV;
 - (id)inputImage;
 - (id)outputImage;

@@ -12,17 +12,17 @@
     UIControl *_dimmerView;
     UISearchBar *_searchBar;
     SUSearchDisplayController *_searchController;
-    long long _searchFieldStyle;
+    int _searchFieldStyle;
     SUScriptTextFieldDelegate *_textFieldDelegate;
 }
 
-@property(getter=isActive,readonly) bool active;
+@property(getter=isActive,readonly) BOOL active;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UISearchBar * searchBar;
 @property(copy) SUSearchFieldConfiguration * searchFieldConfiguration;
-@property long long searchFieldStyle;
+@property int searchFieldStyle;
 @property(readonly) Class superclass;
 
 - (id)_cancelButtonView;
@@ -32,14 +32,14 @@
 - (void)_fetchCompletions;
 - (void)_fetchResultsForTerm:(id)arg1 URL:(id)arg2;
 - (void)_fetchResultsForURLRequestProperties:(id)arg1;
-- (bool)_focusTransientViewController;
+- (BOOL)_focusTransientViewController;
 - (id)_newBlankStorePageViewController;
 - (id)_newSearchBar;
 - (id)_newSearchDisplayControllerWithContentsController:(id)arg1;
 - (id)_newTransientViewController;
 - (void)_reloadCompletionsForSearchString:(id)arg1;
 - (void)_reloadSearchBar;
-- (void)_resizeSearchBarForOrientation:(long long)arg1;
+- (void)_resizeSearchBarForOrientation:(int)arg1;
 - (void)_saveSearchTermToDefaults:(id)arg1;
 - (void)_savedSearchTermChangedNotification:(id)arg1;
 - (id)_searchGroupForSearchKind:(id)arg1;
@@ -50,11 +50,11 @@
 - (void)dealloc;
 - (void)handleSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (id)init;
-- (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2 style:(long long)arg3;
+- (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2 style:(int)arg3;
 - (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2;
-- (id)initWithContentsController:(id)arg1 style:(long long)arg2;
+- (id)initWithContentsController:(id)arg1 style:(int)arg2;
 - (id)initWithContentsController:(id)arg1;
-- (bool)isActive;
+- (BOOL)isActive;
 - (id)newRequestPropertiesWithSearchTerm:(id)arg1 kind:(id)arg2;
 - (id)newRequestPropertiesWithSearchTerm:(id)arg1;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
@@ -64,18 +64,18 @@
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarSearchButtonClicked:(id)arg1;
-- (bool)searchBarShouldBeginEditing:(id)arg1;
-- (bool)searchBarShouldEndEditing:(id)arg1;
+- (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (BOOL)searchBarShouldEndEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (void)searchBarWillRemoveFromSuperview:(id)arg1;
-- (bool)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (id)searchFieldConfiguration;
-- (long long)searchFieldStyle;
+- (int)searchFieldStyle;
 - (void)setSearchFieldConfiguration:(id)arg1;
-- (void)setSearchFieldStyle:(long long)arg1;
+- (void)setSearchFieldStyle:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (void)willRotateToInterfaceOrientation:(long long)arg1;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1;
 
 @end

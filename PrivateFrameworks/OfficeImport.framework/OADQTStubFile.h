@@ -3,13 +3,13 @@
  */
 
 @interface OADQTStubFile : OADEmbeddedMediaFile {
-    boolisAudioOnly;
+    BOOL isAudioOnly;
 }
 
-@property bool isAudioOnly;
+@property BOOL isAudioOnly;
 
 - (id)description;
-- (bool)isAudioOnly;
-- (void)setIsAudioOnly:(bool)arg1;
+- (BOOL)isAudioOnly;
+- (void)setIsAudioOnly:(BOOL)arg1;
 
 @end

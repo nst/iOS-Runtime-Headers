@@ -9,17 +9,17 @@
 
 @property(readonly) DOMHTMLFormElement * form;
 
-- (bool)checkValidity;
-- (bool)disabled;
+- (BOOL)checkValidity;
+- (BOOL)disabled;
 - (id)elements;
 - (id)form;
 - (id)name;
 - (void)setCustomValidity:(id)arg1;
-- (void)setDisabled:(bool)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (id)type;
 - (id)validationMessage;
 - (id)validity;
-- (bool)willValidate;
+- (BOOL)willValidate;
 
 @end

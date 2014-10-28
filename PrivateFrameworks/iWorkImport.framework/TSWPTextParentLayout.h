@@ -4,17 +4,17 @@
 
 @interface TSWPTextParentLayout : TSDLayout {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _maximumFrameSizeForChildren;
 }
 
-@property struct CGSize { double x1; double x2; } maximumFrameSizeForChildren;
+@property struct CGSize { float x1; float x2; } maximumFrameSizeForChildren;
 
 - (id).cxx_construct;
 - (id)initWithInfo:(id)arg1;
-- (struct CGSize { double x1; double x2; })maximumFrameSizeForChild:(id)arg1;
-- (struct CGSize { double x1; double x2; })maximumFrameSizeForChildren;
-- (void)setMaximumFrameSizeForChildren:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })maximumFrameSizeForChild:(id)arg1;
+- (struct CGSize { float x1; float x2; })maximumFrameSizeForChildren;
+- (void)setMaximumFrameSizeForChildren:(struct CGSize { float x1; float x2; })arg1;
 
 @end

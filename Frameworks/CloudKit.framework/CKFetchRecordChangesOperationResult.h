@@ -14,7 +14,7 @@
 @property(retain) CKServerChangeToken * serverChangeToken;
 @property(retain) NSNumber * status;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

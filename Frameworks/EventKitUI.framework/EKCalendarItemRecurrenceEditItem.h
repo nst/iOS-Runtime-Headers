@@ -6,20 +6,20 @@
 
 @interface EKCalendarItemRecurrenceEditItem : EKCalendarItemEditItem <EKRecurrenceTypeEditItemViewControllerDelegate, EKCellShortener> {
     NSString *_customRepeatDescription;
-    unsigned long long _disclosedSubitem;
+    unsigned int _disclosedSubitem;
     NSDate *_originalRepeatEnd;
-    long long _originalRepeatType;
+    int _originalRepeatType;
     EKRecurrenceTypeEditItemViewController *_recurrenceTypeVC;
     NSDate *_repeatEnd;
     PreferencesValueCell *_repeatEndDateCell;
     EKCalendarItemRecurrenceEndCell *_repeatEndPickerCell;
-    long long _repeatType;
+    int _repeatType;
     int _shorteningStatus;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,23 +29,23 @@
 - (void)_repeatEndDateChanged:(id)arg1;
 - (id)_repeatEndPickerCell;
 - (void)_updateRepeatEndDateCell;
-- (bool)_validateRecurrenceType:(id)arg1;
-- (bool)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (BOOL)_validateRecurrenceType:(id)arg1;
+- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
-- (bool)editItemViewControllerCommit:(id)arg1 notify:(bool)arg2;
-- (bool)editItemViewControllerCommit:(id)arg1;
-- (bool)forceRefreshStartAndEndDatesOnCommit;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (BOOL)editItemViewControllerCommit:(id)arg1 notify:(BOOL)arg2;
+- (BOOL)editItemViewControllerCommit:(id)arg1;
+- (BOOL)forceRefreshStartAndEndDatesOnCommit;
 - (id)init;
 - (id)minRecurrenceEndDate;
-- (unsigned long long)numberOfSubitems;
+- (unsigned int)numberOfSubitems;
 - (id)recurrenceDate;
 - (id)recurrenceTimeZone;
 - (void)refreshFromCalendarItemAndStore;
-- (long long)repeatTypeForRecurrenceRule:(id)arg1;
+- (int)repeatTypeForRecurrenceRule:(id)arg1;
 - (void)reset;
-- (bool)saveAndDismissWithForce:(bool)arg1;
+- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (void)shortenCell:(id)arg1;
 - (id)stringForDate:(id)arg1;
 

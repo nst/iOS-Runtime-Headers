@@ -10,18 +10,18 @@
     NSObject<OS_xpc_object> *_xpcReply;
 }
 
-@property(readonly) bool clientWantsReply;
+@property(readonly) BOOL clientWantsReply;
 @property(retain,readonly) NSObject<OS_xpc_object> * connection;
 @property(retain,readonly) NSObject<OS_xpc_object> * connection;
 @property(retain,readonly) NSError * replyError;
-@property(readonly) bool replyIsError;
+@property(readonly) BOOL replyIsError;
 @property NSObject<OS_xpc_object> * xpcReply;
 @property NSObject<OS_xpc_object> * xpcReply;
 
 + (void)runDaemonSideWithXPCEvent:(id)arg1 connection:(id)arg2;
 
 - (void)archiveXPCToDisk:(id)arg1;
-- (bool)clientWantsReply;
+- (BOOL)clientWantsReply;
 - (id)connection;
 - (long long)daemonOperation;
 - (void)dealloc;
@@ -29,13 +29,13 @@
 - (void)handleReply;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (id)replyError;
-- (bool)replyIsError;
+- (BOOL)replyIsError;
 - (void)run;
 - (void)runDaemonSide;
 - (void)sendToAssetsd;
 - (void)sendToAssetsdWithReply;
 - (void)setXpcReply:(id)arg1;
-- (bool)shouldArchiveXPCToDisk;
+- (BOOL)shouldArchiveXPCToDisk;
 - (id)xpcReply;
 
 @end

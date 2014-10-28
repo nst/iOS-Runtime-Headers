@@ -6,23 +6,23 @@
 
 @interface SKUIEditorialLinkLayoutRequest : NSObject <SKUILayoutRequest> {
     NSArray *_links;
-    double _width;
+    float _width;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class layoutClass;
 @property(copy) NSArray * links;
 @property(readonly) Class superclass;
-@property double width;
+@property float width;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)layoutClass;
 - (id)links;
 - (void)setLinks:(id)arg1;
-- (void)setWidth:(double)arg1;
-- (double)width;
+- (void)setWidth:(float)arg1;
+- (float)width;
 
 @end

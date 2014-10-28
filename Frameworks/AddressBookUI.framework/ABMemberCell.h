@@ -5,27 +5,27 @@
 @class <ABStyleProvider>, ABStyleProvider, ABUIPerson;
 
 @interface ABMemberCell : UITableViewCell {
+    BOOL _isMeCard;
     ABUIPerson *_person;
     ABStyleProvider *_styleProvider;
-    bool_isMeCard;
 }
 
-@property bool isMeCard;
+@property BOOL isMeCard;
 @property(retain) ABUIPerson * person;
 @property(readonly) <ABStyleProvider> * styleProvider;
 
-- (id)_attributedNameWithNameComponents:(id)arg1 delimiter:(id)arg2 highlightedIndex:(long long)arg3 romanName:(bool)arg4;
+- (id)_attributedNameWithNameComponents:(id)arg1 delimiter:(id)arg2 highlightedIndex:(int)arg3 romanName:(BOOL)arg4;
 - (id)_cachedBoldTextAttributes;
 - (id)_cachedMemberNameRegularFont;
 - (id)_cachedPlaceholderTextAttributes;
 - (id)_cachedRegularTextAttributes;
 - (void)dealloc;
 - (id)initWithStyleProvider:(id)arg1 reuseIdentifier:(id)arg2;
-- (bool)isMeCard;
+- (BOOL)isMeCard;
 - (id)person;
-- (void)setIsMeCard:(bool)arg1;
+- (void)setIsMeCard:(BOOL)arg1;
 - (void)setPerson:(id)arg1;
-- (void)setUserInteractionEnabled:(bool)arg1;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)styleProvider;
 
 @end

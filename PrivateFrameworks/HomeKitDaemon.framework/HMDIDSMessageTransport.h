@@ -17,7 +17,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) IDSService * idsService;
 @property HMMessageDispatcher * messageDispatcher;
 @property(retain) NSMutableSet * peerResidentDeviceAddresses;
@@ -28,9 +28,9 @@
 @property(readonly) Class superclass;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (id)dictionaryForMessageName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 transactionID:(id)arg5 msgType:(unsigned long long)arg6;
-+ (id)idsMessageTypeDescription:(unsigned long long)arg1;
-+ (void)messageElementsFromDictionary:(id)arg1 messageName:(id*)arg2 messageIdentifier:(id*)arg3 messagePayload:(id*)arg4 target:(id*)arg5 transactionID:(id*)arg6 isRequest:(bool*)arg7 isResponse:(bool*)arg8 isNotification:(bool*)arg9;
++ (id)dictionaryForMessageName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 transactionID:(id)arg5 msgType:(unsigned int)arg6;
++ (id)idsMessageTypeDescription:(unsigned int)arg1;
++ (void)messageElementsFromDictionary:(id)arg1 messageName:(id*)arg2 messageIdentifier:(id*)arg3 messagePayload:(id*)arg4 target:(id*)arg5 transactionID:(id*)arg6 isRequest:(BOOL*)arg7 isResponse:(BOOL*)arg8 isNotification:(BOOL*)arg9;
 
 - (void).cxx_destruct;
 - (void)_removePendingResponseTimerForTransaction:(id)arg1;
@@ -49,8 +49,8 @@
 - (id)pendingResponses;
 - (id)pendingSentMessages;
 - (id)residentDevices;
-- (id)sendMessage:(id)arg1 destinations:(id)arg2 msgType:(unsigned long long)arg3 error:(id*)arg4;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (id)sendMessage:(id)arg1 destinations:(id)arg2 msgType:(unsigned int)arg3 error:(id*)arg4;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;

@@ -8,7 +8,7 @@
 
 @property unsigned long long quotaAvailable;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)CKPropertiesDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

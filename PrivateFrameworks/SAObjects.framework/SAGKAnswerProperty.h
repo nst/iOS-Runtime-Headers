@@ -12,7 +12,7 @@
 @property(retain) SAUIDecoratedText * decoratedValue;
 @property(retain) SAUIDecoratedText * decoratedValueAnnotation;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * name;
 @property(retain) SAUIAppPunchOut * punchOut;
 @property(copy) NSNumber * selected;

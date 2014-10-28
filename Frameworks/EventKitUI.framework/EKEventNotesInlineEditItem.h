@@ -11,19 +11,19 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
-- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
-- (bool)isInline;
-- (bool)isSaveable;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
+- (BOOL)isInline;
+- (BOOL)isSaveable;
 - (void)reset;
-- (bool)saveAndDismissWithForce:(bool)arg1;
+- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
-- (bool)textViewShouldReturn:(id)arg1;
+- (BOOL)textViewShouldReturn:(id)arg1;
 
 @end

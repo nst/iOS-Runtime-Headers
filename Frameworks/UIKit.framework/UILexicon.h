@@ -15,6 +15,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)entries;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

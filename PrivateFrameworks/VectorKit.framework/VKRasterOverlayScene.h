@@ -3,12 +3,12 @@
  */
 
 @interface VKRasterOverlayScene : VKScene <NSCopying> {
-    unsigned long long _overlayLevel;
+    unsigned int _overlayLevel;
 }
 
-@property unsigned long long overlayLevel;
+@property unsigned int overlayLevel;
 
-- (unsigned long long)overlayLevel;
-- (void)setOverlayLevel:(unsigned long long)arg1;
+- (unsigned int)overlayLevel;
+- (void)setOverlayLevel:(unsigned int)arg1;
 
 @end

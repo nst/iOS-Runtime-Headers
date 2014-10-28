@@ -14,10 +14,10 @@
 @property(retain) NSString * localAdminName;
 @property(retain) NSMutableDictionary * objectsContainedInHomes;
 
-+ (bool)isWhitelistedMessage:(id)arg1;
++ (BOOL)isWhitelistedMessage:(id)arg1;
 
 - (void).cxx_destruct;
-- (bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
+- (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (void)addHomeWithUUID:(id)arg1 administratorName:(id)arg2;
 - (void)addObjectWithUUID:(id)arg1 containedInHome:(id)arg2;
 - (id)adminsOfHomes;

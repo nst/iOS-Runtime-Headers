@@ -5,58 +5,58 @@
 @class NSObject<TSARenderingExporterDelegate>, NSString, TSADocumentRoot, TSDBitmapRenderingQualityInfo, TSDImager, TSUProgressContext;
 
 @interface TSARenderingExporter : NSObject <TSKRenderingExporter> {
-    boolmDoesDrawAllPages;
-    boolmIsCancelled;
-    boolmIsQuit;
-    boolmPaginate;
     TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
     TSADocumentRoot *mDocumentRoot;
+    BOOL mDoesDrawAllPages;
     TSDImager *mImager;
+    BOOL mIsCancelled;
+    BOOL mIsQuit;
+    BOOL mPaginate;
     TSUProgressContext *mProgressContext;
     NSObject<TSARenderingExporterDelegate> *mRenderingExporterDelegate;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) TSUProgressContext * progressContext;
 @property(readonly) Class superclass;
 
 - (id)bitmapRenderingQualityInfo;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsRect;
 - (void)cancel;
 - (id)currentInfos;
 - (void)dealloc;
 - (id)documentRoot;
-- (void)drawAllPagesWithContext:(struct CGContext { }*)arg1 returnSuccess:(bool*)arg2;
-- (bool)drawCurrentPageInContext:(struct CGContext { }*)arg1 viewScale:(double)arg2 unscaledClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 createPage:(bool)arg4;
-- (void)drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(bool*)arg2;
-- (bool)exportToURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
-- (bool)exportToURL:(id)arg1 pageNumber:(unsigned long long)arg2 delegate:(id)arg3 error:(id*)arg4;
-- (bool)hasMoreThanOnePageToPrint;
+- (void)drawAllPagesWithContext:(struct CGContext { }*)arg1 returnSuccess:(BOOL*)arg2;
+- (BOOL)drawCurrentPageInContext:(struct CGContext { }*)arg1 viewScale:(float)arg2 unscaledClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 createPage:(BOOL)arg4;
+- (void)drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(BOOL*)arg2;
+- (BOOL)exportToURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
+- (BOOL)exportToURL:(id)arg1 pageNumber:(unsigned int)arg2 delegate:(id)arg3 error:(id*)arg4;
+- (BOOL)hasMoreThanOnePageToPrint;
 - (id)imager;
-- (bool)incrementPage;
+- (BOOL)incrementPage;
 - (id)initWithDocumentRoot:(id)arg1 imager:(id)arg2;
 - (id)initWithDocumentRoot:(id)arg1;
-- (bool)isCancelled;
-- (bool)isQuit;
-- (void)p_drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(bool*)arg2 createPage:(bool)arg3;
-- (bool)p_exportToURL:(id)arg1 pageNumber:(unsigned long long)arg2 delegate:(id)arg3 error:(id*)arg4;
+- (BOOL)isCancelled;
+- (BOOL)isQuit;
+- (void)p_drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(BOOL*)arg2 createPage:(BOOL)arg3;
+- (BOOL)p_exportToURL:(id)arg1 pageNumber:(unsigned int)arg2 delegate:(id)arg3 error:(id*)arg4;
 - (id)p_renderingExporterDelegate;
-- (unsigned long long)pageCount;
-- (bool)paginate;
-- (bool)preparePage:(unsigned long long)arg1;
+- (unsigned int)pageCount;
+- (BOOL)paginate;
+- (BOOL)preparePage:(unsigned int)arg1;
 - (id)progressContext;
 - (double)progressForCurrentPage;
 - (void)quit;
-- (bool)setInfosToCurrentPage;
-- (void)setMaxPixels:(double)arg1;
-- (void)setPaginate:(bool)arg1;
+- (BOOL)setInfosToCurrentPage;
+- (void)setMaxPixels:(float)arg1;
+- (void)setPaginate:(BOOL)arg1;
 - (void)setProgressContext:(id)arg1;
 - (void)setup;
 - (void)teardown;
 - (double)totalProgess;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledClipRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledClipRect;
 - (void)waitForRecalcToFinish;
 
 @end

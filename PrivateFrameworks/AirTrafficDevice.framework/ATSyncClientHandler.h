@@ -5,6 +5,7 @@
 @class ATConcreteMessageLink, ATDeviceSettings, NSMutableArray, NSObject<ATSyncClient>, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ATSyncClientHandler : NSObject <ATAssetManagerObserver, ATMessageLinkObserver, ATMessageLinkRequestHandler> {
+    BOOL _allAssetsTransferred;
     NSString *_dataClass;
     NSString *_libraryIdentifier;
     ATConcreteMessageLink *_messageLink;
@@ -13,14 +14,13 @@
     NSObject<OS_dispatch_queue> *_queue;
     ATDeviceSettings *_settings;
     NSMutableArray *_streamReaders;
-    bool_allAssetsTransferred;
-    bool_syncInProgress;
-    bool_syncPending;
+    BOOL _syncInProgress;
+    BOOL _syncPending;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSObject<ATSyncClient> * pluginClient;
 @property(readonly) Class superclass;
 

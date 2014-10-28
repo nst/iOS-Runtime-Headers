@@ -6,44 +6,44 @@
 
 @interface SKUITextLayoutRequest : NSObject <SKUILayoutRequest> {
     NSAttributedString *_attributedText;
-    double _fontSize;
-    long long _fontWeight;
-    long long _numberOfLines;
+    float _fontSize;
+    int _fontWeight;
+    int _numberOfLines;
     NSString *_text;
     unsigned char _textAlignment;
-    double _width;
+    float _width;
 }
 
 @property(copy) NSAttributedString * attributedText;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property double fontSize;
-@property long long fontWeight;
-@property(readonly) unsigned long long hash;
+@property float fontSize;
+@property int fontWeight;
+@property(readonly) unsigned int hash;
 @property(readonly) Class layoutClass;
-@property long long numberOfLines;
+@property int numberOfLines;
 @property(readonly) Class superclass;
 @property(copy) NSString * text;
 @property unsigned char textAlignment;
-@property double width;
+@property float width;
 
 - (void).cxx_destruct;
 - (id)attributedText;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (double)fontSize;
-- (long long)fontWeight;
+- (float)fontSize;
+- (int)fontWeight;
 - (id)init;
 - (Class)layoutClass;
-- (long long)numberOfLines;
+- (int)numberOfLines;
 - (void)setAttributedText:(id)arg1;
-- (void)setFontSize:(double)arg1;
-- (void)setFontWeight:(long long)arg1;
-- (void)setNumberOfLines:(long long)arg1;
+- (void)setFontSize:(float)arg1;
+- (void)setFontWeight:(int)arg1;
+- (void)setNumberOfLines:(int)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(unsigned char)arg1;
-- (void)setWidth:(double)arg1;
+- (void)setWidth:(float)arg1;
 - (id)text;
 - (unsigned char)textAlignment;
-- (double)width;
+- (float)width;
 
 @end

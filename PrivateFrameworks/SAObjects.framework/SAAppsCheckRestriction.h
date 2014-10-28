@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)launchId;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setLaunchId:(id)arg1;
 
 @end

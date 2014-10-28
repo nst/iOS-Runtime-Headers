@@ -3,18 +3,27 @@
  */
 
 @interface UIInputViewSetPlacementUndocked : UIInputViewSetPlacement {
-    double _normalizedOffset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _chromeBuffer;
+    float _normalizedOffset;
 }
 
-@property double normalizedOffset;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } chromeBuffer;
+@property float normalizedOffset;
 
-+ (id)placementWithUndockedOffset:(double)arg1;
++ (id)placementWithUndockedOffset:(float)arg1 chromeBuffer:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 
-- (bool)inputViewWillAppear;
-- (bool)isEqual:(id)arg1;
-- (bool)isUndocked;
-- (double)normalizedOffset;
-- (void)setNormalizedOffset:(double)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })chromeBuffer;
+- (BOOL)inputViewWillAppear;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isUndocked;
+- (float)normalizedOffset;
+- (void)setChromeBuffer:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setNormalizedOffset:(float)arg1;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 
 @end

@@ -8,10 +8,10 @@
     NSMutableDictionary *_activeTileCreators;
     NSObject<OS_dispatch_queue> *_homeQueue;
     NSMutableDictionary *_pendingRequests;
+    BOOL _softwareRendering;
     VKRasterMapTileCache *_superTileCache;
     unsigned int _superTileSize;
     NSMutableSet *_tileCreators;
-    bool_softwareRendering;
 }
 
 @property(readonly) unsigned int superTileSize;
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)detailedDescription;
 - (id)init;
-- (id)initWithSuperTileSize:(unsigned int)arg1 cache:(id)arg2 softwareRendering:(bool)arg3 homeQueue:(id)arg4;
+- (id)initWithSuperTileSize:(unsigned int)arg1 cache:(id)arg2 softwareRendering:(BOOL)arg3 homeQueue:(id)arg4;
 - (void)renderRequest:(id)arg1 completion:(id)arg2;
 - (unsigned int)superTileSize;
 

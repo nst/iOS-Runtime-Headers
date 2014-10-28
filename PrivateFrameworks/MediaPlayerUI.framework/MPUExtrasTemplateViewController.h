@@ -15,8 +15,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) IKAppDocument * document;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool showsPlaceholder;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL showsPlaceholder;
 @property(readonly) Class superclass;
 
 + (id)templateViewControllerWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
@@ -26,14 +26,16 @@
 - (void)_startBackgroundAudio;
 - (void)configureBackgroundWithElements:(id)arg1;
 - (id)context;
+- (void)dealloc;
 - (id)document;
 - (void)documentDidFail:(id)arg1 withError:(id)arg2;
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
-- (bool)shouldUpdateByReplacingViewControllerWithTemplate:(id)arg1;
-- (bool)showsPlaceholder;
-- (void)viewDidAppear:(bool)arg1;
+- (BOOL)shouldUpdateByReplacingViewControllerWithTemplate:(id)arg1;
+- (BOOL)showsPlaceholder;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

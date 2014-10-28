@@ -6,24 +6,23 @@
     unsigned int _bits[4];
     void *_callbacks;
     unsigned char _cfinfo[4];
-    unsigned int _rc;
     id *_values;
 }
 
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (bool)_isDeallocating;
-- (unsigned long long)_trueCount;
-- (bool)_tryRetain;
+- (BOOL)_isDeallocating;
+- (unsigned int)_trueCount;
+- (BOOL)_tryRetain;
 - (void)addObject:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)count;
-- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)finalize;
 - (void)getObjects:(id*)arg1;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)member:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
@@ -31,6 +30,6 @@
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

@@ -11,6 +11,7 @@
     NSMutableSet *_enabledTopics;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_tokensCache;
+    NSMutableSet *_topicsAwaitingPrivateToken;
     NSMutableSet *_topicsAwaitingPublicToken;
     NSMutableDictionary *_topicsToWaitingAppContainerTuples;
 }
@@ -21,10 +22,11 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMutableSet * enabledTopics;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(readonly) Class superclass;
 @property(retain) NSMutableDictionary * tokensCache;
+@property(retain) NSMutableSet * topicsAwaitingPrivateToken;
 @property(retain) NSMutableSet * topicsAwaitingPublicToken;
 @property(retain) NSMutableDictionary * topicsToWaitingAppContainerTuples;
 
@@ -37,7 +39,7 @@
 - (id)apsConnection;
 - (id)apsEnvironmentString;
 - (id)callbacks;
-- (void)connection:(id)arg1 didChangeConnectedStatus:(bool)arg2;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)connectionDidReconnect:(id)arg1;
@@ -45,7 +47,7 @@
 - (id)enabledTopics;
 - (id)initWithEnvironment:(id)arg1;
 - (id)queue;
-- (void)requestTokenForAppContainerTuple:(id)arg1 useAPSPublicToken:(bool)arg2;
+- (void)requestTokenForAppContainerTuple:(id)arg1 useAPSPublicToken:(BOOL)arg2;
 - (void)revokeTokenForAppContainerTuple:(id)arg1;
 - (void)setAPSEnvironmentString:(id)arg1;
 - (void)setApsConnection:(id)arg1;
@@ -53,9 +55,11 @@
 - (void)setEnabledTopics:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setTokensCache:(id)arg1;
+- (void)setTopicsAwaitingPrivateToken:(id)arg1;
 - (void)setTopicsAwaitingPublicToken:(id)arg1;
 - (void)setTopicsToWaitingAppContainerTuples:(id)arg1;
 - (id)tokensCache;
+- (id)topicsAwaitingPrivateToken;
 - (id)topicsAwaitingPublicToken;
 - (id)topicsToWaitingAppContainerTuples;
 

@@ -8,10 +8,10 @@
     ACAccount *_account;
     NSXPCConnection *_connection;
     <ACDOAuthSignerProtocol> *_proxyShim;
-    bool_shouldIncludeAppIdInRequest;
+    BOOL _shouldIncludeAppIdInRequest;
 }
 
-@property bool shouldIncludeAppIdInRequest;
+@property BOOL shouldIncludeAppIdInRequest;
 
 - (void).cxx_destruct;
 - (void)_connectToRemoteOAuthSignerUsingEndpoint:(id)arg1;
@@ -19,8 +19,8 @@
 - (void)disconnectFromRemoteOAuthSigner;
 - (id)initWithAccount:(id)arg1 remoteEndpoint:(id)arg2;
 - (id)initWithAccount:(id)arg1;
-- (void)setShouldIncludeAppIdInRequest:(bool)arg1;
-- (bool)shouldIncludeAppIdInRequest;
+- (void)setShouldIncludeAppIdInRequest:(BOOL)arg1;
+- (BOOL)shouldIncludeAppIdInRequest;
 - (id)signedURLRequestWithURLRequest:(id)arg1 applicationID:(id)arg2 timestamp:(id)arg3;
 - (id)signedURLRequestWithURLRequest:(id)arg1 callingPID:(id)arg2 timestamp:(id)arg3;
 - (id)signedURLRequestWithURLRequest:(id)arg1;

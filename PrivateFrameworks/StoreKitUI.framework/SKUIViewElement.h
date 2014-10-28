@@ -6,36 +6,36 @@
 
 @interface SKUIViewElement : IKViewElement {
     NSMutableArray *_flattenedChildren;
-    long long _pinStyle;
+    int _pinStyle;
 }
 
-@property(getter=isEnabled,readonly) bool enabled;
+@property(getter=isEnabled,readonly) BOOL enabled;
 @property(readonly) NSArray * flattenedChildren;
 @property(copy,readonly) NSString * indexBarEntryID;
 @property(retain,readonly) NSString * itmlID;
-@property(readonly) long long pageComponentType;
+@property(readonly) int pageComponentType;
 @property(readonly) NSSet * personalizationLibraryItems;
-@property(readonly) long long pinStyle;
-@property(readonly) bool rendersWithPerspective;
+@property(readonly) int pinStyle;
+@property(readonly) BOOL rendersWithPerspective;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
-- (bool)descendsFromElementWithType:(unsigned long long)arg1;
+- (BOOL)descendsFromElementWithType:(unsigned int)arg1;
 - (id)elementWithIdentifier:(id)arg1;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
 - (void)enumerateViewElementsWithDictionary:(id)arg1 factory:(id)arg2 usingBlock:(id)arg3;
 - (id)featureWithName:(id)arg1;
-- (id)firstChildForElementType:(unsigned long long)arg1;
+- (id)firstChildForElementType:(unsigned int)arg1;
 - (id)firstDescendentWithIndexBarEntryID:(id)arg1;
 - (id)flattenedChildren;
 - (id)indexBarEntryID;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isDescendentFromViewElement:(id)arg1;
-- (bool)isEnabled;
-- (long long)pageComponentType;
+- (BOOL)isDescendentFromViewElement:(id)arg1;
+- (BOOL)isEnabled;
+- (int)pageComponentType;
 - (id)persistenceKey;
 - (id)personalizationLibraryItems;
-- (long long)pinStyle;
-- (bool)rendersWithPerspective;
+- (int)pinStyle;
+- (BOOL)rendersWithPerspective;
 
 @end

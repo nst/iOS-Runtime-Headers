@@ -5,15 +5,15 @@
 @interface SASetContextConfiguration : SABaseClientBoundCommand {
 }
 
-@property long long contextTimeoutSeconds;
+@property int contextTimeoutSeconds;
 
 + (id)setContextConfiguration;
 + (id)setContextConfigurationWithDictionary:(id)arg1 context:(id)arg2;
 
-- (long long)contextTimeoutSeconds;
+- (int)contextTimeoutSeconds;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
-- (void)setContextTimeoutSeconds:(long long)arg1;
+- (BOOL)requiresResponse;
+- (void)setContextTimeoutSeconds:(int)arg1;
 
 @end

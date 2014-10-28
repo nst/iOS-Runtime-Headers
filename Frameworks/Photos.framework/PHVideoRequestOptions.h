@@ -7,32 +7,32 @@
  */
 
 @interface PHVideoRequestOptions : NSObject {
-    long long _deliveryMode;
+    int _deliveryMode;
+    BOOL _networkAccessAllowed;
     id _progressHandler;
-    long long _version;
-    bool_networkAccessAllowed;
-    bool_streamingAllowed;
+    BOOL _streamingAllowed;
+    int _version;
 }
 
-@property long long deliveryMode;
-@property(getter=isNetworkAccessAllowed) bool networkAccessAllowed;
+@property int deliveryMode;
+@property(getter=isNetworkAccessAllowed) BOOL networkAccessAllowed;
 @property(copy) id progressHandler;
-@property(getter=isStreamingAllowed) bool streamingAllowed;
-@property long long version;
+@property(getter=isStreamingAllowed) BOOL streamingAllowed;
+@property int version;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)deliveryMode;
+- (int)deliveryMode;
 - (id)description;
 - (id)init;
-- (bool)isNetworkAccessAllowed;
-- (bool)isStreamingAllowed;
+- (BOOL)isNetworkAccessAllowed;
+- (BOOL)isStreamingAllowed;
 - (id)progressHandler;
-- (void)setDeliveryMode:(long long)arg1;
-- (void)setNetworkAccessAllowed:(bool)arg1;
+- (void)setDeliveryMode:(int)arg1;
+- (void)setNetworkAccessAllowed:(BOOL)arg1;
 - (void)setProgressHandler:(id)arg1;
-- (void)setStreamingAllowed:(bool)arg1;
-- (void)setVersion:(long long)arg1;
-- (long long)version;
+- (void)setStreamingAllowed:(BOOL)arg1;
+- (void)setVersion:(int)arg1;
+- (int)version;
 
 @end

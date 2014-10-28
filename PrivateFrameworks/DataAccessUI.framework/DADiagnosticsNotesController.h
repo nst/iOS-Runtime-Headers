@@ -10,7 +10,7 @@
 - (void)_enableButtons;
 - (void)_okButtonPressed;
 - (id)init;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

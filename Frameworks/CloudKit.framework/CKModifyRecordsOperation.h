@@ -10,6 +10,7 @@
 
 @interface CKModifyRecordsOperation : CKDatabaseOperation {
     NSMutableDictionary *_assetsByRecordIDAndRecordKey;
+    BOOL _atomic;
     NSData *_clientChangeTokenData;
     NSDictionary *_conflictLosersToResolveByRecordID;
     NSMutableArray *_deletedRecordIDs;
@@ -21,14 +22,13 @@
     NSDictionary *_recordIDsToDeleteToEtags;
     NSMutableDictionary *_recordsByRecordIDs;
     NSArray *_recordsToSave;
-    long long _savePolicy;
+    int _savePolicy;
     NSMutableArray *_savedRecords;
-    bool_atomic;
-    bool_shouldOnlySaveAssetContent;
+    BOOL _shouldOnlySaveAssetContent;
 }
 
 @property(retain) NSMutableDictionary * assetsByRecordIDAndRecordKey;
-@property bool atomic;
+@property BOOL atomic;
 @property(copy) NSData * clientChangeTokenData;
 @property(retain) NSDictionary * conflictLosersToResolveByRecordID;
 @property(retain) NSMutableArray * deletedRecordIDs;
@@ -40,16 +40,16 @@
 @property(copy) NSDictionary * recordIDsToDeleteToEtags;
 @property(retain) NSMutableDictionary * recordsByRecordIDs;
 @property(copy) NSArray * recordsToSave;
-@property long long savePolicy;
+@property int savePolicy;
 @property(retain) NSMutableArray * savedRecords;
-@property bool shouldOnlySaveAssetContent;
+@property BOOL shouldOnlySaveAssetContent;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)assetsByRecordIDAndRecordKey;
-- (bool)atomic;
+- (BOOL)atomic;
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;
 - (id)deletedRecordIDs;
@@ -65,10 +65,10 @@
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsByRecordIDs;
 - (id)recordsToSave;
-- (long long)savePolicy;
+- (int)savePolicy;
 - (id)savedRecords;
 - (void)setAssetsByRecordIDAndRecordKey:(id)arg1;
-- (void)setAtomic:(bool)arg1;
+- (void)setAtomic:(BOOL)arg1;
 - (void)setClientChangeTokenData:(id)arg1;
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
 - (void)setDeletedRecordIDs:(id)arg1;
@@ -80,9 +80,9 @@
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordsByRecordIDs:(id)arg1;
 - (void)setRecordsToSave:(id)arg1;
-- (void)setSavePolicy:(long long)arg1;
+- (void)setSavePolicy:(int)arg1;
 - (void)setSavedRecords:(id)arg1;
-- (void)setShouldOnlySaveAssetContent:(bool)arg1;
-- (bool)shouldOnlySaveAssetContent;
+- (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
+- (BOOL)shouldOnlySaveAssetContent;
 
 @end

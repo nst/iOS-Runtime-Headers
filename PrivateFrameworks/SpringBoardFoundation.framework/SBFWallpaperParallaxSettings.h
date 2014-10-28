@@ -3,27 +3,28 @@
  */
 
 @interface SBFWallpaperParallaxSettings : SBFParallaxSettings {
-    double _overhangX;
-    double _overhangY;
-    double _perspectiveTransform;
+    float _overhangX;
+    float _overhangY;
+    float _perspectiveTransform;
 }
 
-@property double overhangX;
-@property double overhangY;
-@property double perspectiveTransform;
+@property float overhangX;
+@property float overhangY;
+@property float perspectiveTransform;
 
-+ (struct CGSize { double x1; double x2; })_requiredOverhangSizeForCurrentDevice;
-+ (struct CGSize { double x1; double x2; })bestWallpaperSizeForParallaxFactor:(double)arg1;
-+ (struct CGSize { double x1; double x2; })minimumWallpaperSizeForCurrentDevice;
-+ (struct CGSize { double x1; double x2; })overhangSizeForCurrentDevice;
++ (struct CGSize { float x1; float x2; })_requiredOverhangSizeForCurrentDevice;
++ (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1 portrait:(BOOL)arg2;
++ (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1;
++ (struct CGSize { float x1; float x2; })minimumWallpaperSizeForCurrentDevice;
++ (struct CGSize { float x1; float x2; })overhangSizeForCurrentDevice;
 + (id)settingsControllerModule;
 
-- (double)overhangX;
-- (double)overhangY;
-- (double)perspectiveTransform;
+- (float)overhangX;
+- (float)overhangY;
+- (float)perspectiveTransform;
 - (void)setDefaultValues;
-- (void)setOverhangX:(double)arg1;
-- (void)setOverhangY:(double)arg1;
-- (void)setPerspectiveTransform:(double)arg1;
+- (void)setOverhangX:(float)arg1;
+- (void)setOverhangY:(float)arg1;
+- (void)setPerspectiveTransform:(float)arg1;
 
 @end

@@ -6,8 +6,8 @@
 }
 
 - (id)alias;
-- (bool)isAnonymousPlayer;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isAnonymousPlayer;
+- (BOOL)isEqual:(id)arg1;
 - (id)playerID;
 
 @end

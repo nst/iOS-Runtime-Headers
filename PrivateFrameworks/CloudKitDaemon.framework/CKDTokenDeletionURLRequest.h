@@ -19,7 +19,7 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (bool)requiresTokenRegistration;
+- (BOOL)requiresTokenRegistration;
 - (void)setBundleID:(id)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;

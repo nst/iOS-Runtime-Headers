@@ -6,45 +6,45 @@
 
 @interface GKAchievement : NSObject <NSCopying, NSCoding, NSSecureCoding> {
     GKGame *_game;
+    BOOL _hidden;
     GKAchievementInternal *_internal;
     GKPlayer *_player;
-    bool_hidden;
-    bool_showsCompletionBanner;
+    BOOL _showsCompletionBanner;
 }
 
-@property(getter=isCompleted,readonly) bool completed;
+@property(getter=isCompleted,readonly) BOOL completed;
 @property GKGame * game;
 @property(copy,readonly) NSString * groupIdentifier;
-@property(getter=isHidden) bool hidden;
+@property(getter=isHidden) BOOL hidden;
 @property(copy) NSString * identifier;
 @property(retain) GKAchievementInternal * internal;
 @property(copy) NSDate * lastReportedDate;
 @property double percentComplete;
 @property(retain,readonly) GKPlayer * player;
 @property(copy) NSString * playerID;
-@property bool showsCompletionBanner;
+@property BOOL showsCompletionBanner;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (bool)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (void)loadAchievementWithID:(id)arg1 forGame:(id)arg2 players:(id)arg3 complete:(id)arg4;
-+ (void)loadAchievementsForGameV2:(id)arg1 player:(id)arg2 includeUnreported:(bool)arg3 includeHidden:(bool)arg4 withCompletionHandler:(id)arg5;
-+ (void)loadAchievementsForGameV2:(id)arg1 players:(id)arg2 includeUnreported:(bool)arg3 includeHidden:(bool)arg4 withCompletionHandler:(id)arg5;
++ (void)loadAchievementsForGameV2:(id)arg1 player:(id)arg2 includeUnreported:(BOOL)arg3 includeHidden:(BOOL)arg4 withCompletionHandler:(id)arg5;
++ (void)loadAchievementsForGameV2:(id)arg1 players:(id)arg2 includeUnreported:(BOOL)arg3 includeHidden:(BOOL)arg4 withCompletionHandler:(id)arg5;
 + (void)loadAchievementsWithCompletionHandler:(id)arg1;
-+ (void)reportAchievements:(id)arg1 whileScreeningChallenges:(bool)arg2 withEligibleChallenges:(id)arg3 withCompletionHandler:(id)arg4;
++ (void)reportAchievements:(id)arg1 whileScreeningChallenges:(BOOL)arg2 withEligibleChallenges:(id)arg3 withCompletionHandler:(id)arg4;
 + (void)reportAchievements:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)reportAchievements:(id)arg1 withEligibleChallenges:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)resetAchievementsWithCompletionHandler:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_gkSetSharingInfo:(id)arg1;
 - (id)_gkSharingInfo;
-- (long long)activityViewController:(id)arg1 attachmentULRTypeForActivityType:(id)arg2;
+- (int)activityViewController:(id)arg1 attachmentULRTypeForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailForActivityType:(id)arg2;
 - (id)activityViewControllerOperation:(id)arg1;
 - (id)activityViewControllerPlaceholderItems:(id)arg1;
 - (id)activityViewControllerSubject:(id)arg1;
-- (bool)canBeShared;
+- (BOOL)canBeShared;
 - (id)challengeComposeControllerWithMessage:(id)arg1 players:(id)arg2 completionHandler:(id)arg3;
 - (id)challengeComposeControllerWithPlayers:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -54,7 +54,7 @@
 - (id)fetchSharingInfo;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)imageURL;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -64,25 +64,25 @@
 - (id)initWithInternalRepresentation:(id)arg1 playerID:(id)arg2;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
-- (bool)isCompleted;
-- (bool)isEqual:(id)arg1;
-- (bool)isHidden;
+- (BOOL)isCompleted;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isHidden;
 - (void)issueChallengeToPlayers:(id)arg1 message:(id)arg2;
 - (void)loadImageWithCompletionHandler:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)player;
 - (id)playerID;
 - (void)reportAchievementWithCompletionHandler:(id)arg1;
-- (bool)respondsToSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)selectChallengeablePlayerIDs:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)selectChallengeablePlayers:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setGame:(id)arg1;
-- (void)setHidden:(bool)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setInternal:(id)arg1;
-- (void)setShowsCompletionBanner:(bool)arg1;
+- (void)setShowsCompletionBanner:(BOOL)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)showBanner;
-- (bool)showsCompletionBanner;
+- (BOOL)showsCompletionBanner;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

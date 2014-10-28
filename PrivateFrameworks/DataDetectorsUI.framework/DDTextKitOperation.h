@@ -6,28 +6,28 @@
 
 @interface DDTextKitOperation : DDOperation {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     int _editCount;
     } _range;
 }
 
 @property(retain) UITextView * container;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
-- (bool)_addResultsToAttributes;
+- (BOOL)_addResultsToAttributes;
 - (struct __DDScanQuery { }*)_createScanQueryForBackend;
-- (bool)_rangeValidForContainer;
+- (BOOL)_rangeValidForContainer;
 - (void)_updateGenerationNumber;
 - (void)cleanup;
 - (void)dispatchContainerModificationBlock:(id)arg1;
-- (bool)doURLificationOnDocument;
+- (BOOL)doURLificationOnDocument;
 - (id)initWithContainer:(id)arg1;
-- (bool)needsToStartOver;
+- (BOOL)needsToStartOver;
 - (id)newOperationForContinuation;
 - (id)newOperationForStartingOver;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
-- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)textDidChange:(id)arg1;
 
 @end

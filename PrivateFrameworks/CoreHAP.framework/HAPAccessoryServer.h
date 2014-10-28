@@ -11,25 +11,25 @@
     <HAPKeyStore> *_keyStore;
     NSString *_name;
     NSString *_pairSetupPassword;
+    BOOL _paired;
     HAPAccessory *_primaryAccessory;
-    bool_paired;
-    bool_reachable;
-    bool_unconnected;
+    BOOL _reachable;
+    BOOL _unconnected;
 }
 
 @property(copy) NSArray * accessories;
 @property(copy) NSString * homeName;
 @property(copy) NSString * identifier;
 @property <HAPKeyStore> * keyStore;
-@property(readonly) long long linkType;
+@property(readonly) int linkType;
 @property(copy) NSString * name;
 @property(copy) NSString * pairSetupPassword;
-@property(getter=isPaired,readonly) bool paired;
+@property(getter=isPaired,readonly) BOOL paired;
 @property(retain) HAPAccessory * primaryAccessory;
-@property(getter=isReachable) bool reachable;
-@property(getter=isUnconnected) bool unconnected;
+@property(getter=isReachable) BOOL reachable;
+@property(getter=isUnconnected) BOOL unconnected;
 
-+ (bool)isAccessoryServerWithIdentifierPaired:(id)arg1 keyStore:(id)arg2;
++ (BOOL)isAccessoryServerWithIdentifierPaired:(id)arg1 keyStore:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)accessories;
@@ -39,24 +39,24 @@
 - (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
 - (void)discoverDescriptorsForCharacteristic:(id)arg1;
 - (void)discoverServices:(id)arg1 forAccessory:(id)arg2;
-- (void)enableEvents:(bool)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
+- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
 - (id)homeName;
 - (id)identifier;
 - (void)identifyWithCompletion:(id)arg1;
 - (id)init;
-- (bool)isPaired;
-- (bool)isReachable;
-- (bool)isUnconnected;
+- (BOOL)isPaired;
+- (BOOL)isReachable;
+- (BOOL)isUnconnected;
 - (id)keyStore;
-- (long long)linkType;
+- (int)linkType;
 - (id)name;
-- (bool)pairAdditionalControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id)arg3;
+- (BOOL)pairAdditionalControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id)arg3;
 - (id)pairSetupPassword;
 - (id)primaryAccessory;
 - (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 - (void)readValueForDescriptor:(id)arg1 withCompletionHandler:(id)arg2;
-- (bool)removePairingForControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id)arg3;
+- (BOOL)removePairingForControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id)arg3;
 - (void)setAccessories:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setHomeName:(id)arg1;
@@ -65,12 +65,12 @@
 - (void)setName:(id)arg1;
 - (void)setPairSetupPassword:(id)arg1;
 - (void)setPrimaryAccessory:(id)arg1;
-- (void)setReachable:(bool)arg1;
-- (void)setUnconnected:(bool)arg1;
+- (void)setReachable:(BOOL)arg1;
+- (void)setUnconnected:(BOOL)arg1;
 - (void)startPairing;
-- (bool)stopPairingWithError:(id*)arg1;
-- (bool)tryPairingPassword:(id)arg1 error:(id*)arg2;
+- (BOOL)stopPairingWithError:(id*)arg1;
+- (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
 - (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
 
 @end

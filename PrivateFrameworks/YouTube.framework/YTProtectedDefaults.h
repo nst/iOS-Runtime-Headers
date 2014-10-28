@@ -7,7 +7,7 @@
 @interface YTProtectedDefaults : NSObject {
     NSMutableDictionary *_internalDictionary;
     NSString *_plistPath;
-    bool_shouldSynchronize;
+    BOOL _shouldSynchronize;
 }
 
 + (id)sharedInstance;
@@ -18,6 +18,6 @@
 - (id)objectForKey:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (bool)synchronize;
+- (BOOL)synchronize;
 
 @end

@@ -6,16 +6,16 @@
 
 @interface GKSearchBar : UISearchBar {
     GKCollectionViewDataSource *_dataSource;
-    long long _sectionIndex;
+    int _sectionIndex;
 }
 
 @property(retain) GKCollectionViewDataSource * dataSource;
-@property long long sectionIndex;
+@property int sectionIndex;
 
 - (id)dataSource;
 - (void)dealloc;
-- (long long)sectionIndex;
+- (int)sectionIndex;
 - (void)setDataSource:(id)arg1;
-- (void)setSectionIndex:(long long)arg1;
+- (void)setSectionIndex:(int)arg1;
 
 @end

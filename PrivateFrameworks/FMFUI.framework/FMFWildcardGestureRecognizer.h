@@ -15,7 +15,7 @@
 @property(copy) id touchesEndedCallback;
 
 - (void).cxx_destruct;
-- (bool)canPreventGestureRecognizer:(id)arg1;
+- (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
 - (id)init;
 - (void)reset;

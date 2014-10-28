@@ -10,7 +10,7 @@
 
 @property(copy) NSDictionary * imagesForContentSize;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)addImage:(id)arg1 forContentSizeCategory:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

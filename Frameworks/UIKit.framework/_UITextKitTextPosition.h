@@ -3,22 +3,22 @@
  */
 
 @interface _UITextKitTextPosition : UITextPosition {
-    long long _affinity;
-    long long _offset;
+    int _affinity;
+    int _offset;
 }
 
-@property long long affinity;
-@property long long offset;
+@property int affinity;
+@property int offset;
 
-+ (id)positionWithOffset:(long long)arg1 affinity:(long long)arg2;
-+ (id)positionWithOffset:(long long)arg1;
++ (id)positionWithOffset:(int)arg1 affinity:(int)arg2;
++ (id)positionWithOffset:(int)arg1;
 
-- (long long)affinity;
+- (int)affinity;
 - (id)description;
 - (id)init;
-- (bool)isEqual:(id)arg1;
-- (long long)offset;
-- (void)setAffinity:(long long)arg1;
-- (void)setOffset:(long long)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (int)offset;
+- (void)setAffinity:(int)arg1;
+- (void)setOffset:(int)arg1;
 
 @end

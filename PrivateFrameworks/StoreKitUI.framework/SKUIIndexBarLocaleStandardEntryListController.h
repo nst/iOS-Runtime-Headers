@@ -11,10 +11,10 @@
 }
 
 - (void).cxx_destruct;
-- (id)entryDescriptorAtIndex:(long long)arg1;
+- (id)entryDescriptorAtIndex:(int)arg1;
 - (id)initWithSKUIIndexBarEntryListViewElement:(id)arg1;
-- (long long)numberOfEntryDescriptors;
+- (int)numberOfEntryDescriptors;
 - (void)reloadViewElementData;
-- (id)targetIndexBarEntryIDForEntryDescriptorAtIndex:(long long)arg1 returningRelativeSectionIndex:(out long long*)arg2;
+- (id)targetIndexBarEntryIDForEntryDescriptorAtIndex:(int)arg1 returningRelativeSectionIndex:(out int*)arg2;
 
 @end

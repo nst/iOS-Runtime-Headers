@@ -6,30 +6,30 @@
 
 @interface SKUIFamilyCircleController : NSObject {
     SKUIClientContext *_clientContext;
+    BOOL _hasLoaded;
     FAFamilyCircle *_iCloudFamily;
     SSFamilyCircle *_iTunesFamily;
     NSCache *_imageCache;
     NSNumber *_lastAccountID;
     NSOperationQueue *_opQueue;
-    bool_hasLoaded;
 }
 
 @property(retain) SKUIClientContext * clientContext;
 @property(readonly) SSFamilyCircle * familyCircle;
-@property(readonly) bool hasLoaded;
+@property(readonly) BOOL hasLoaded;
 @property(readonly) FAFamilyCircle * iCloudFamily;
 
 + (id)sharedController;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChange:(id)arg1;
-- (void)_reloadDataWithPromptStyle:(long long)arg1;
+- (void)_reloadDataWithPromptStyle:(int)arg1;
 - (void)_setITunesFamily:(id)arg1 error:(id)arg2 iCloudFamily:(id)arg3 error:(id)arg4;
 - (void)_setProfilePicture:(id)arg1 forMember:(id)arg2;
 - (id)clientContext;
 - (void)dealloc;
 - (id)familyCircle;
-- (bool)hasLoaded;
+- (BOOL)hasLoaded;
 - (id)iCloudFamily;
 - (id)init;
 - (id)profilePictureForFamilyMember:(id)arg1;

@@ -25,7 +25,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id handler;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property Class itemClass;
 @property(retain) NSOrderedSet * lastSnapshot;
 @property(retain) NSDate * lastSnapshotDate;
@@ -41,10 +41,10 @@
 
 - (id)_computeUpdatesFromOld:(id)arg1 toNew:(id)arg2 changedItems:(id)arg3;
 - (void)_initialGatherFinished:(id)arg1;
-- (void)_processResults:(id)arg1 changedItems:(id)arg2 reloadAll:(bool)arg3;
+- (void)_processResults:(id)arg1 changedItems:(id)arg2 reloadAll:(BOOL)arg3;
 - (id)_queryResults;
 - (void)_queryUpdated:(id)arg1;
-- (void)_updateObservers:(id)arg1 reloadAll:(bool)arg2;
+- (void)_updateObservers:(id)arg1 reloadAll:(BOOL)arg2;
 - (void)dealloc;
 - (id)handler;
 - (id)initWithScopes:(id)arg1 weakSelf:(id)arg2 updateHandler:(id)arg3 itemClass:(Class)arg4;

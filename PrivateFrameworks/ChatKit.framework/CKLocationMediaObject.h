@@ -14,35 +14,35 @@
 @property struct { double x1; double x2; } coordinate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy,readonly) NSString * subtitle;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * title;
 
 + (id)UTITypes;
 + (Class)__ck_attachmentItemClass;
-+ (id)attachmentSummary:(unsigned long long)arg1;
++ (id)attachmentSummary:(unsigned int)arg1;
 + (id)fallbackFilenamePrefix;
-+ (bool)isPreviewable;
++ (BOOL)isPreviewable;
 + (id)placeholderPreviewCache;
-+ (id)placeholderPreviewForWidth:(double)arg1 orientation:(BOOL)arg2;
-+ (id)titleBarMaskImageForWidth:(double)arg1;
++ (id)placeholderPreviewForWidth:(float)arg1 orientation:(BOOL)arg2;
++ (id)titleBarMaskImageForWidth:(float)arg1;
 + (id)vcardDataFromCLLocation:(id)arg1;
 
-- (id)bbPreviewFillToSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })bbSize;
+- (id)bbPreviewFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })bbSize;
 - (struct { double x1; double x2; })coordinate;
-- (id)generatePlaceholderThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (id)generatePlaceholderThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
-- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generatePlaceholderThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (id)generatePlaceholderThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)initWithTransfer:(id)arg1;
-- (bool)isDroppedPin;
+- (BOOL)isDroppedPin;
 - (int)mediaType;
 - (id)pin;
 - (Class)previewBalloonViewClass;
 - (id)previewCacheKeyWithOrientation:(BOOL)arg1;
 - (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;
-- (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (id)vCardURLProperties;
 

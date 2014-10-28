@@ -8,15 +8,15 @@
     NSString *_amString;
     NSDateFormatter *_dateOnlyFormatter;
     NSString *_pmString;
+    BOOL _timeDesignatorAppearsBeforeTime;
     NSDateFormatter *_timeOnlyFormatter;
-    bool_timeDesignatorAppearsBeforeTime;
-    bool_use24HourTime;
+    BOOL _use24HourTime;
 }
 
 @property(readonly) NSString * amString;
 @property(readonly) NSString * pmString;
-@property(readonly) bool timeDesignatorAppearsBeforeTime;
-@property(readonly) bool use24HourTime;
+@property(readonly) BOOL timeDesignatorAppearsBeforeTime;
+@property(readonly) BOOL use24HourTime;
 
 + (void)load;
 + (id)sharedInstance;
@@ -31,9 +31,9 @@
 - (id)localizedTimeStringFromDate:(id)arg1 forTimeZone:(id)arg2 timeDesignator:(out id*)arg3;
 - (id)localizedTimeStringFromDate:(id)arg1 timeDesignator:(out id*)arg2;
 - (id)pmString;
-- (bool)timeDesignatorAppearsBeforeTime;
+- (BOOL)timeDesignatorAppearsBeforeTime;
 - (id)timeDesignatorForDate:(id)arg1 timeZone:(id)arg2;
 - (id)timeDesignatorForDate:(id)arg1;
-- (bool)use24HourTime;
+- (BOOL)use24HourTime;
 
 @end

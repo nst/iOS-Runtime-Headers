@@ -8,28 +8,28 @@
     NSString *_currentTestName;
     NSDictionary *_currentTestOptions;
     BLActivityAlert *_iPhotoMigrationActivityAlert;
+    BOOL _isOnWifi;
+    BOOL _isReachable;
     int _observeForRechabilityChanges;
     int _photoStreamActivityToken;
+    BOOL _photoStreamIsBusy;
+    BOOL _receivingRemoteControlEvents;
     int _sharedPhotoStreamActivityToken;
     int _sharedPhotoStreamInvitationFailureToken;
+    BOOL _sharedPhotoStreamIsBusy;
     PLUIController *_uiController;
+    BOOL _urlNeedsHandling;
     UIWindow *_window;
-    bool_isOnWifi;
-    bool_isReachable;
-    bool_photoStreamIsBusy;
-    bool_receivingRemoteControlEvents;
-    bool_sharedPhotoStreamIsBusy;
-    bool_urlNeedsHandling;
 }
 
 @property(retain) NSString * currentTestName;
 @property(retain) NSDictionary * currentTestOptions;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) BLActivityAlert * iPhotoMigrationActivityAlert;
-@property(readonly) bool isOnWifi;
-@property(readonly) bool isReachable;
+@property(readonly) BOOL isOnWifi;
+@property(readonly) BOOL isReachable;
 @property(readonly) Class superclass;
 @property(retain) UIWindow * window;
 
@@ -60,8 +60,8 @@
 - (void)enableNetworkObservation;
 - (void*)getSharedAddressBook;
 - (id)iPhotoMigrationActivityAlert;
-- (bool)isOnWifi;
-- (bool)isReachable;
+- (BOOL)isOnWifi;
+- (BOOL)isReachable;
 - (id)mainWindow;
 - (void)photosPreferencesChanged;
 - (void)presentInternalSettingsController;
@@ -69,10 +69,10 @@
 - (void)setCurrentTestName:(id)arg1;
 - (void)setCurrentTestOptions:(id)arg1;
 - (void)setIPhotoMigrationActivityAlert:(id)arg1;
-- (void)setReceivingRemoteControlEvents:(bool)arg1;
-- (void)sharedFinishedLaunching:(bool)arg1;
-- (bool)shouldAllowSBAlertSupression;
-- (bool)useCompatibleSuspensionAnimation;
-- (bool)visitViewControllersWithBlock:(id)arg1;
+- (void)setReceivingRemoteControlEvents:(BOOL)arg1;
+- (void)sharedFinishedLaunching:(BOOL)arg1;
+- (BOOL)shouldAllowSBAlertSupression;
+- (BOOL)useCompatibleSuspensionAnimation;
+- (BOOL)visitViewControllersWithBlock:(id)arg1;
 
 @end

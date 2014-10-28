@@ -20,9 +20,9 @@
 - (void)_switchValueChanged:(id)arg1;
 - (void)dealloc;
 - (SEL)getter;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)reloadValue:(bool)arg1;
+- (void)reloadValue:(BOOL)arg1;
 - (void)setGetter:(SEL)arg1;
 - (void)setSetter:(SEL)arg1;
 - (void)setSpecifier:(id)arg1;

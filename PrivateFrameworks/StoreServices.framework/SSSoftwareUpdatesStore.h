@@ -8,18 +8,18 @@
     NSObject<OS_dispatch_queue> *_calloutQueue;
     SSXPCConnection *_connection;
     SSUpdatesDatabase *_database;
+    BOOL _didMigration;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     void *_mobileCoreServices;
-    bool_didMigration;
-    bool_useLocalRead;
-    bool_useLocalWrite;
+    BOOL _useLocalRead;
+    BOOL _useLocalWrite;
 }
 
 + (id)databasePath;
 
 - (id)_copyUpdates;
 - (id)_copyUpdatesWithSession:(id)arg1 predicate:(id)arg2;
-- (bool)_migrateReadOnlyDatabase;
+- (BOOL)_migrateReadOnlyDatabase;
 - (void)_readUsingSessionBlock:(id)arg1;
 - (void)clearExpiredUpdateHistoryWithCompletionBlock:(id)arg1;
 - (void)dealloc;

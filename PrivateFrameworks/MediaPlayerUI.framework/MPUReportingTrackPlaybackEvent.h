@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)date;
-- (bool)isValid;
+- (BOOL)isValid;
 - (id)radioStationMetadata;
 - (void)setDate:(id)arg1;
 - (void)setRadioStationMetadata:(id)arg1;

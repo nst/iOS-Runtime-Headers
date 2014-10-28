@@ -12,6 +12,7 @@
     CUTWeakReference *_account;
     NSDictionary *_info;
     NSInputStream *_inputStreamForSocket;
+    BOOL _nearby;
     int _nearbyToken;
     id _openSocketCompletionHandler;
     NSString *_openSocketCompletionHandlerID;
@@ -19,22 +20,21 @@
     NSOutputStream *_outputStreamForSocket;
     NSString *_serviceToken;
     int _socket;
-    bool_nearby;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSString * deviceColor;
 @property(retain,readonly) NSString * enclosureColor;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) NSArray * identities;
-@property(readonly) bool isDefaultLocalDevice;
-@property(readonly) bool isDefaultPairedDevice;
+@property(readonly) BOOL isDefaultLocalDevice;
+@property(readonly) BOOL isDefaultPairedDevice;
 @property(retain,readonly) NSArray * linkedUserURIs;
-@property(readonly) bool locallyPresent;
+@property(readonly) BOOL locallyPresent;
 @property(retain,readonly) NSString * modelIdentifier;
 @property(retain,readonly) NSString * name;
-@property(getter=isNearby,readonly) bool nearby;
+@property(getter=isNearby,readonly) BOOL nearby;
 @property(setter=setNSUUID:,retain) NSUUID * nsuuid;
 @property(readonly) NSString * productBuildVersion;
 @property(readonly) NSString * productName;
@@ -42,12 +42,12 @@
 @property(retain,readonly) NSData * pushToken;
 @property(retain,readonly) NSString * service;
 @property(readonly) Class superclass;
-@property(readonly) bool supportsHandoff;
-@property(readonly) bool supportsMMSRelay;
-@property(readonly) bool supportsPhoneCalls;
-@property(readonly) bool supportsSMSRelay;
-@property(readonly) bool supportsTethering;
-@property(readonly) bool supportsiCloudPairing;
+@property(readonly) BOOL supportsHandoff;
+@property(readonly) BOOL supportsMMSRelay;
+@property(readonly) BOOL supportsPhoneCalls;
+@property(readonly) BOOL supportsSMSRelay;
+@property(readonly) BOOL supportsTethering;
+@property(readonly) BOOL supportsiCloudPairing;
 @property(retain,readonly) NSString * uniqueID;
 
 - (void)_addIdentity:(id)arg1;
@@ -64,11 +64,11 @@
 - (id)enclosureColor;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
-- (bool)isDefaultLocalDevice;
-- (bool)isDefaultPairedDevice;
-- (bool)isNearby;
+- (BOOL)isDefaultLocalDevice;
+- (BOOL)isDefaultPairedDevice;
+- (BOOL)isNearby;
 - (id)linkedUserURIs;
-- (bool)locallyPresent;
+- (BOOL)locallyPresent;
 - (id)modelIdentifier;
 - (id)name;
 - (id)nsuuid;
@@ -81,12 +81,12 @@
 - (void)setNSUUID:(id)arg1;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socketForDomain:(id)arg1;
-- (bool)supportsHandoff;
-- (bool)supportsMMSRelay;
-- (bool)supportsPhoneCalls;
-- (bool)supportsSMSRelay;
-- (bool)supportsTethering;
-- (bool)supportsiCloudPairing;
+- (BOOL)supportsHandoff;
+- (BOOL)supportsMMSRelay;
+- (BOOL)supportsPhoneCalls;
+- (BOOL)supportsSMSRelay;
+- (BOOL)supportsTethering;
+- (BOOL)supportsiCloudPairing;
 - (id)uniqueID;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 

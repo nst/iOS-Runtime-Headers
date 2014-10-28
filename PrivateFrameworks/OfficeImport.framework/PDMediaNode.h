@@ -5,24 +5,24 @@
 @class PDAnimationTarget;
 
 @interface PDMediaNode : PDTimeNode {
-    boolmIsMuted;
-    boolmIsShowWhenStopped;
-    long long mNumberOfSlides;
+    BOOL mIsMuted;
+    BOOL mIsShowWhenStopped;
+    long mNumberOfSlides;
     PDAnimationTarget *mTarget;
-    long long mVolume;
+    long mVolume;
 }
 
 - (void)dealloc;
 - (id)init;
-- (bool)isMuted;
-- (bool)isShowWhenStopped;
-- (long long)numberOfSlides;
-- (void)setIsMuted:(bool)arg1;
-- (void)setIsShowWhenStopped:(bool)arg1;
-- (void)setNumberOfSlides:(long long)arg1;
+- (BOOL)isMuted;
+- (BOOL)isShowWhenStopped;
+- (long)numberOfSlides;
+- (void)setIsMuted:(BOOL)arg1;
+- (void)setIsShowWhenStopped:(BOOL)arg1;
+- (void)setNumberOfSlides:(long)arg1;
 - (void)setTarget:(id)arg1;
-- (void)setVolume:(long long)arg1;
+- (void)setVolume:(long)arg1;
 - (id)target;
-- (long long)volume;
+- (long)volume;
 
 @end

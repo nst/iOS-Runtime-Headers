@@ -15,11 +15,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;
 

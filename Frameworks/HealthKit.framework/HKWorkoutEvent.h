@@ -6,15 +6,15 @@
 
 @interface HKWorkoutEvent : NSObject <NSSecureCoding> {
     NSDate *_date;
-    long long _type;
+    int _type;
 }
 
 @property(copy,readonly) NSDate * date;
-@property(readonly) long long type;
+@property(readonly) int type;
 
-+ (bool)_validType:(long long)arg1;
-+ (bool)supportsSecureCoding;
-+ (id)workoutEventWithType:(long long)arg1 date:(id)arg2;
++ (BOOL)_validType:(int)arg1;
++ (BOOL)supportsSecureCoding;
++ (id)workoutEventWithType:(int)arg1 date:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_assertPropertiesValid;
@@ -23,10 +23,10 @@
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (long long)type;
+- (BOOL)isEqual:(id)arg1;
+- (int)type;
 
 @end

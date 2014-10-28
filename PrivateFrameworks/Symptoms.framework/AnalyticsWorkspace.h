@@ -16,8 +16,8 @@
     id __resetCompletionBlock;
     <ServiceInterface> *__service;
     NSString *backingStore;
-    boolpathKnownToFail;
-    boolreadOnly;
+    BOOL pathKnownToFail;
+    BOOL readOnly;
     NSString *revision;
     NSString *storeKind;
     NSString *storeProt;
@@ -31,24 +31,24 @@
 @property(retain,readonly) <ServiceInterface> * service;
 
 + (id)defaultWorkspace;
-+ (id)workspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(bool)arg3;
++ (id)workspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (void)_analyticsErrorHandler;
-- (id)_initWithName:(id)arg1 useReadOnly:(bool)arg2;
-- (bool)_primePath:(id)arg1;
+- (id)_initWithName:(id)arg1 useReadOnly:(BOOL)arg2;
+- (BOOL)_primePath:(id)arg1;
 - (id)connection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createNewContext;
 - (void)dealloc;
-- (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(bool)arg3;
+- (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
 - (id)initWorkspaceWithService:(id)arg1;
 - (id)mainObjectContext;
 - (id)objectModel;
 - (id)persistentStoreCoordinator;
 - (void)reset;
 - (id)resetCompletionBlock;
-- (bool)save;
+- (BOOL)save;
 - (id)service;
 - (void)setConnection:(id)arg1;
 - (void)setResetCompletionBlock:(id)arg1;

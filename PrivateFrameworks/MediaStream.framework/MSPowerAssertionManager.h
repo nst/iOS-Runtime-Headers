@@ -6,15 +6,15 @@
     int _UIBusyCount;
     unsigned int _assertionID;
     int _busyCount;
-    bool_isAssertingPowerAssertion;
-    bool_isBusy;
+    BOOL _isAssertingPowerAssertion;
+    BOOL _isBusy;
 }
 
 @property int UIBusyCount;
 @property unsigned int assertionID;
 @property int busyCount;
-@property bool isAssertingPowerAssertion;
-@property bool isBusy;
+@property BOOL isAssertingPowerAssertion;
+@property BOOL isBusy;
 
 + (id)sharedManager;
 
@@ -24,16 +24,16 @@
 - (void)_recomputePowerAssertion;
 - (unsigned int)assertionID;
 - (int)busyCount;
-- (bool)isAssertingPowerAssertion;
-- (bool)isBusy;
+- (BOOL)isAssertingPowerAssertion;
+- (BOOL)isBusy;
 - (void)releaseBusy;
 - (void)releaseUIBusy;
 - (void)retainBusy;
 - (void)retainUIBusy;
 - (void)setAssertionID:(unsigned int)arg1;
 - (void)setBusyCount:(int)arg1;
-- (void)setIsAssertingPowerAssertion:(bool)arg1;
-- (void)setIsBusy:(bool)arg1;
+- (void)setIsAssertingPowerAssertion:(BOOL)arg1;
+- (void)setIsBusy:(BOOL)arg1;
 - (void)setUIBusyCount:(int)arg1;
 - (void)toggleAssertion;
 

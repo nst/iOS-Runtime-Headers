@@ -7,56 +7,56 @@
 @interface FAFetchFamilyPhotoRequest : FAFamilyCircleRequest {
     NSString *_emailAddress;
     NSString *_fullname;
+    BOOL _localFallback;
     NSNumber *_memberDSID;
     NSString *_memberHashedDSID;
     double _monogramDiameter;
-    long long _monogramStyle;
+    int _monogramStyle;
     NSString *_phoneNumber;
-    unsigned long long _requestedSize;
+    unsigned int _requestedSize;
     double _requiredHeight;
     double _requiredWidth;
-    bool_localFallback;
-    bool_useMonogramAsLastResort;
+    BOOL _useMonogramAsLastResort;
 }
 
 @property(copy) NSString * emailAddress;
 @property(copy) NSString * fullname;
-@property(readonly) bool localFallback;
+@property(readonly) BOOL localFallback;
 @property(copy,readonly) NSNumber * memberDSID;
 @property(copy,readonly) NSString * memberHashedDSID;
 @property double monogramDiameter;
-@property long long monogramStyle;
+@property int monogramStyle;
 @property(copy) NSString * phoneNumber;
-@property(readonly) unsigned long long requestedSize;
+@property(readonly) unsigned int requestedSize;
 @property double requiredHeight;
 @property double requiredWidth;
-@property bool useMonogramAsLastResort;
+@property BOOL useMonogramAsLastResort;
 
 - (void).cxx_destruct;
 - (id)emailAddress;
 - (id)fullname;
 - (id)init;
-- (id)initWithFamilyMemberDSID:(id)arg1 size:(unsigned long long)arg2 localFallback:(bool)arg3;
-- (id)initWithFamilyMemberHashedDSID:(id)arg1 size:(unsigned long long)arg2 localFallback:(bool)arg3;
-- (bool)localFallback;
+- (id)initWithFamilyMemberDSID:(id)arg1 size:(unsigned int)arg2 localFallback:(BOOL)arg3;
+- (id)initWithFamilyMemberHashedDSID:(id)arg1 size:(unsigned int)arg2 localFallback:(BOOL)arg3;
+- (BOOL)localFallback;
 - (id)memberDSID;
 - (id)memberHashedDSID;
 - (double)monogramDiameter;
-- (long long)monogramStyle;
+- (int)monogramStyle;
 - (id)phoneNumber;
 - (id)requestOptions;
-- (unsigned long long)requestedSize;
+- (unsigned int)requestedSize;
 - (double)requiredHeight;
 - (double)requiredWidth;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFullname:(id)arg1;
 - (void)setMonogramDiameter:(double)arg1;
-- (void)setMonogramStyle:(long long)arg1;
+- (void)setMonogramStyle:(int)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setRequiredHeight:(double)arg1;
 - (void)setRequiredWidth:(double)arg1;
-- (void)setUseMonogramAsLastResort:(bool)arg1;
+- (void)setUseMonogramAsLastResort:(BOOL)arg1;
 - (void)startRequestWithCompletionHandler:(id)arg1;
-- (bool)useMonogramAsLastResort;
+- (BOOL)useMonogramAsLastResort;
 
 @end

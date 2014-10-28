@@ -11,6 +11,6 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithCFData:(struct __CFData { }*)arg1;
-- (unsigned long long)length;
+- (unsigned long)length;
 
 @end

@@ -11,16 +11,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)cellForRow:(long long)arg1;
+- (id)cellForRow:(int)arg1;
 - (int)frequency;
 - (void)frequencyPickerUpdated:(id)arg1;
-- (double)heightForRow:(long long)arg1;
+- (float)heightForRow:(int)arg1;
 - (id)initWithDate:(id)arg1;
-- (long long)numberOfRows;
+- (int)numberOfRows;
 - (void)updateFromRecurrenceRule:(id)arg1;
 - (void)updateRecurrenceRuleBuilder:(id)arg1;
 

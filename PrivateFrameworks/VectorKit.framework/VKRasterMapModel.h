@@ -27,38 +27,38 @@
     } _clutRenderState;
     } _gglClutTexture;
     unsigned long long _mapLayer;
+    BOOL _rasterViewer;
     } _renderState;
+    BOOL _showingNoDataPlaceholders;
     NSMutableArray *_sortedTiles;
     } _styleQuery;
-    struct Pos2DUVMesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::Texture::Pos2DUVVertexData> { struct Pos2DUVVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; } *_unitMesh;
-    bool_rasterViewer;
-    bool_showingNoDataPlaceholders;
+    struct Pos2DUVMesh { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int (**x3)(); struct ResourceManager {} *x4; struct RenderResource {} *x5; struct shared_ptr<ggl::VertexData> { struct VertexData {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6; struct shared_ptr<ggl::IndexData> { struct IndexData {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; struct shared_ptr<ggl::Texture::Pos2DUVVertexData> { struct Pos2DUVVertexData {} *x_8_1_1; struct __shared_weak_count {} *x_8_1_2; } x8; } *_unitMesh;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property unsigned long long mapLayerPosition;
-@property bool rasterViewer;
-@property(getter=isShowingNoDataPlaceholders,readonly) bool showingNoDataPlaceholders;
+@property BOOL rasterViewer;
+@property(getter=isShowingNoDataPlaceholders,readonly) BOOL showingNoDataPlaceholders;
 @property(readonly) Class superclass;
 
-+ (bool)reloadOnStylesheetChange;
++ (BOOL)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3 roadAlpha:(float)arg4;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
-- (void)gglSetupClutTextureForLevelOfDetail:(unsigned long long)arg1 scale:(double)arg2;
+- (void)gglSetupClutTextureForLevelOfDetail:(unsigned int)arg1 scale:(float)arg2;
 - (id)init;
-- (bool)isShowingNoDataPlaceholders;
+- (BOOL)isShowingNoDataPlaceholders;
 - (unsigned long long)mapLayerPosition;
-- (bool)rasterViewer;
+- (BOOL)rasterViewer;
 - (void)reset;
 - (void)setMapLayerPosition:(unsigned long long)arg1;
-- (void)setRasterViewer:(bool)arg1;
-- (bool)shouldEnableCLUT;
+- (void)setRasterViewer:(BOOL)arg1;
+- (BOOL)shouldEnableCLUT;
 - (id)styleManager;
 - (void)stylesheetDidChange;
 

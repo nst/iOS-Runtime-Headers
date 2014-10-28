@@ -5,37 +5,37 @@
 @class NSArray, NSString;
 
 @interface CKDMMCSRequestOptions : NSObject {
+    BOOL _allowsCellularAccess;
     NSString *_applicationBundleID;
     NSString *_applicationSecondaryID;
     NSString *_containerID;
+    BOOL _usesBackgroundSession;
     NSArray *_zoneNames;
-    bool_allowsCellularAccess;
-    bool_usesBackgroundSession;
 }
 
-@property bool allowsCellularAccess;
+@property BOOL allowsCellularAccess;
 @property(retain) NSString * applicationBundleID;
 @property(retain) NSString * applicationSecondaryID;
 @property(retain) NSString * containerID;
-@property bool usesBackgroundSession;
+@property BOOL usesBackgroundSession;
 @property(retain) NSArray * zoneNames;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)MMCSOptions;
-- (bool)allowsCellularAccess;
+- (BOOL)allowsCellularAccess;
 - (id)applicationBundleID;
 - (id)applicationSecondaryID;
 - (id)containerID;
 - (id)description;
 - (id)initWithOperation:(id)arg1;
-- (void)setAllowsCellularAccess:(bool)arg1;
+- (void)setAllowsCellularAccess:(BOOL)arg1;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setApplicationSecondaryID:(id)arg1;
 - (void)setContainerID:(id)arg1;
-- (void)setUsesBackgroundSession:(bool)arg1;
+- (void)setUsesBackgroundSession:(BOOL)arg1;
 - (void)setZoneNames:(id)arg1;
-- (bool)usesBackgroundSession;
+- (BOOL)usesBackgroundSession;
 - (id)zoneNames;
 
 @end

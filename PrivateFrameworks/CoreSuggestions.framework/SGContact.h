@@ -19,7 +19,7 @@
 
 + (id)contactWithName:(id)arg1 emailAddresses:(id)arg2 phones:(id)arg3 addresses:(id)arg4;
 + (id)contactWithName:(id)arg1 emailAddresses:(id)arg2 phones:(id)arg3 postalAddresses:(id)arg4;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)addresses;
@@ -27,15 +27,15 @@
 - (id)description;
 - (id)emailAddresses;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 emailAddresses:(id)arg2 phones:(id)arg3 postalAddresses:(id)arg4;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToContact:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToContact:(id)arg1;
 - (id)name;
 - (id)phones;
 - (id)postalAddresses;
-- (unsigned long long)richness;
+- (unsigned int)richness;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setName:(id)arg1;
 

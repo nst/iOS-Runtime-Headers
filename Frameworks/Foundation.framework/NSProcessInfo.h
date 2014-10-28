@@ -6,24 +6,24 @@
 
 @interface NSProcessInfo : NSObject {
     NSArray *arguments;
-    long long automaticTerminationOptOutCounter;
+    int automaticTerminationOptOutCounter;
     NSDictionary *environment;
     NSString *hostName;
     NSString *name;
 }
 
-@property(readonly) unsigned long long activeProcessorCount;
+@property(readonly) unsigned int activeProcessorCount;
 @property(copy,readonly) NSArray * arguments;
-@property bool automaticTerminationSupportEnabled;
+@property BOOL automaticTerminationSupportEnabled;
 @property(copy,readonly) NSDictionary * environment;
 @property(copy,readonly) NSString * globallyUniqueString;
 @property(copy,readonly) NSString * hostName;
-@property(readonly) struct { long long x1; long long x2; long long x3; } operatingSystemVersion;
+@property(readonly) struct { int x1; int x2; int x3; } operatingSystemVersion;
 @property(copy,readonly) NSString * operatingSystemVersionString;
 @property(readonly) unsigned long long physicalMemory;
 @property(readonly) int processIdentifier;
 @property(copy) NSString * processName;
-@property(readonly) unsigned long long processorCount;
+@property(readonly) unsigned int processorCount;
 @property(readonly) double systemUptime;
 
 + (id)processInfo;
@@ -35,10 +35,10 @@
 - (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_reactivateActivity:(id)arg1;
-- (long long)_suddenTerminationDisablingCount;
-- (unsigned long long)activeProcessorCount;
+- (int)_suddenTerminationDisablingCount;
+- (unsigned int)activeProcessorCount;
 - (id)arguments;
-- (bool)automaticTerminationSupportEnabled;
+- (BOOL)automaticTerminationSupportEnabled;
 - (id)beginActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2;
 - (id)beginSuspensionOfSystemBehaviors:(unsigned long long)arg1 reason:(id)arg2;
 - (void)dealloc;
@@ -51,20 +51,20 @@
 - (id)environment;
 - (id)globallyUniqueString;
 - (id)hostName;
-- (bool)isOperatingSystemAtLeastVersion:(struct { long long x1; long long x2; long long x3; })arg1;
-- (bool)isTranslated;
-- (unsigned long long)operatingSystem;
+- (BOOL)isOperatingSystemAtLeastVersion:(struct { int x1; int x2; int x3; })arg1;
+- (BOOL)isTranslated;
+- (unsigned int)operatingSystem;
 - (id)operatingSystemName;
-- (struct { long long x1; long long x2; long long x3; })operatingSystemVersion;
+- (struct { int x1; int x2; int x3; })operatingSystemVersion;
 - (id)operatingSystemVersionString;
 - (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 block:(id)arg3;
 - (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id)arg3;
 - (unsigned long long)physicalMemory;
 - (int)processIdentifier;
 - (id)processName;
-- (unsigned long long)processorCount;
+- (unsigned int)processorCount;
 - (void)setArguments:(id)arg1;
-- (void)setAutomaticTerminationSupportEnabled:(bool)arg1;
+- (void)setAutomaticTerminationSupportEnabled:(BOOL)arg1;
 - (void)setProcessName:(id)arg1;
 - (double)systemUptime;
 - (id)userFullName;

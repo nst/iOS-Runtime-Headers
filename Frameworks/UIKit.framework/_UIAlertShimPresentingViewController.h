@@ -5,6 +5,6 @@
 @interface _UIAlertShimPresentingViewController : UIViewController {
 }
 
-- (bool)_isSupportedInterfaceOrientation:(long long)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 
 @end

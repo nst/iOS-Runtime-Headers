@@ -13,9 +13,9 @@
 @property(copy,readonly) NSString * string;
 
 + (id)emphasizedTextUsingString:(id)arg1 emphasisDelimiter:(id)arg2;
-+ (id)emphasizedTextUsingString:(id)arg1 emphasisSubstring:(id)arg2 options:(unsigned long long)arg3;
++ (id)emphasizedTextUsingString:(id)arg1 emphasisSubstring:(id)arg2 options:(unsigned int)arg3;
 + (id)emphasizedTextWithString:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -23,10 +23,10 @@
 - (id)emphasisRanges;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateEmphasisRangesUsingBlock:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1 emphasisRanges:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newAttributedStringWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
 - (id)newAttributedStringWithTextAttributes:(id)arg1;

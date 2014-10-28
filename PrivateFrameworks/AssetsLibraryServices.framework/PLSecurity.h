@@ -5,9 +5,10 @@
 @interface PLSecurity : NSObject {
 }
 
-+ (bool)connection:(id)arg1 hasEntitlement:(id)arg2;
-+ (bool)connectionIsEntitledForPhotoKit:(id)arg1;
-+ (bool)isEntitledForPhotoKit;
-+ (bool)secTask:(struct __SecTask { }*)arg1 hasEntitlement:(id)arg2;
++ (BOOL)canSkipUserPromptsForProcessWithName:(id)arg1 identifier:(int)arg2;
++ (BOOL)connection:(id)arg1 hasEntitlement:(id)arg2;
++ (BOOL)connectionIsEntitledForPhotoKit:(id)arg1;
++ (BOOL)isEntitledForPhotoKit;
++ (BOOL)secTask:(struct __SecTask { }*)arg1 hasEntitlement:(id)arg2;
 
 @end

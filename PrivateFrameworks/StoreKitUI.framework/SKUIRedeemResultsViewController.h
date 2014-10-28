@@ -6,6 +6,7 @@
 
 @interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate> {
     UIButton *_anotherButton;
+    BOOL _extendedMessageIsExpanded;
     SKUITextLayout *_extendedMessageTextLayout;
     SKUITextBoxView *_extendedMessageView;
     UIImageView *_headerImageView;
@@ -16,15 +17,14 @@
     NSOperationQueue *_operationQueue;
     SKUIRedeemITunesPassLockup *_passbookLockup;
     SKUIRedeem *_redeem;
-    long long _redeemCategory;
-    bool_extendedMessageIsExpanded;
+    int _redeemCategory;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SKUIRedeem * redeem;
-@property long long redeemCategory;
+@property int redeemCategory;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -53,9 +53,9 @@
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)loadView;
 - (id)redeem;
-- (long long)redeemCategory;
+- (int)redeemCategory;
 - (void)redeemResultsView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)setRedeemCategory:(long long)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)setRedeemCategory:(int)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

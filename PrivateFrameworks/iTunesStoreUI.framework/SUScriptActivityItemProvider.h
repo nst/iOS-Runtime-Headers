@@ -22,10 +22,10 @@
 @property(readonly) NSString * activityType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) WebScriptObject * itemFunction;
 @property(readonly) SUActivityItemProvider * nativeActivityItemProvider;
-@property double progress;
+@property float progress;
 @property(copy) NSString * status;
 @property(readonly) Class superclass;
 
@@ -46,12 +46,12 @@
 - (id)initWithMIMEType:(id)arg1;
 - (id)itemFunction;
 - (id)nativeActivityItemProvider;
-- (double)progress;
+- (float)progress;
 - (id)scriptAttributeKeys;
 - (void)setItem:(id)arg1;
 - (void)setItemFunction:(id)arg1;
 - (void)setPreviewImageWithURLString:(id)arg1;
-- (void)setProgress:(double)arg1;
+- (void)setProgress:(float)arg1;
 - (void)setStatus:(id)arg1;
 - (id)status;
 

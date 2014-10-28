@@ -10,28 +10,28 @@
 @class KNSlideNode, TSPLazyReference;
 
 @interface KNRecordingNavigationEvent : KNRecordingEvent {
-    long long mAnimationPhase;
-    unsigned long long mTargetEventIndex;
+    int mAnimationPhase;
+    unsigned int mTargetEventIndex;
     TSPLazyReference *mTargetSlideNodeReference;
 }
 
-@property(readonly) long long animationPhase;
-@property(readonly) unsigned long long targetEventIndex;
+@property(readonly) int animationPhase;
+@property(readonly) unsigned int targetEventIndex;
 @property(readonly) KNSlideNode * targetSlideNode;
 
-- (long long)animationPhase;
-- (bool)canPrecedeDiscontinuity;
+- (int)animationPhase;
+- (BOOL)canPrecedeDiscontinuity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithContext:(id)arg1 archive:(const struct RecordingEventArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; struct RecordingNavigationEventArchive {} *x4; struct RecordingLaserEventArchive {} *x5; struct RecordingPauseEventArchive {} *x6; struct RecordingMovieEventArchive {} *x7; int x8; unsigned int x9[1]; }*)arg2 unarchiver:(id)arg3;
-- (id)initWithStartTime:(double)arg1 targetSlideNode:(id)arg2 targetEventIndex:(unsigned long long)arg3 animationPhase:(long long)arg4;
+- (id)initWithStartTime:(double)arg1 targetSlideNode:(id)arg2 targetEventIndex:(unsigned int)arg3 animationPhase:(int)arg4;
 - (id)initWithStartTime:(double)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isIgnoredWhenSeeking;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isIgnoredWhenSeeking;
 - (void)saveToArchive:(struct RecordingEventArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; struct RecordingNavigationEventArchive {} *x4; struct RecordingLaserEventArchive {} *x5; struct RecordingPauseEventArchive {} *x6; struct RecordingMovieEventArchive {} *x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
-- (unsigned long long)targetEventIndex;
+- (unsigned int)targetEventIndex;
 - (id)targetSlideNode;
 
 @end

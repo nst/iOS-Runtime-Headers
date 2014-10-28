@@ -11,8 +11,8 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isPlaying;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isPlaying;
 @property(readonly) Class superclass;
 
 + (void)__clearSharedPlayQueue;
@@ -21,7 +21,7 @@
 + (void)__nts_indicateEndOfQueuePlayback:(id)arg1;
 + (void)__nts_queuePlayerStatusChanged:(id)arg1;
 + (id)__sharedPlayQueue;
-+ (void)_setAudioSessionActive:(bool)arg1;
++ (void)_setAudioSessionActive:(BOOL)arg1;
 + (void)initialize;
 + (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
@@ -29,7 +29,7 @@
 - (id)_playerItemForFileNamed:(id)arg1;
 - (void)dealloc;
 - (id)initWithDirectory:(id)arg1 bundle:(id)arg2;
-- (bool)isPlaying;
+- (BOOL)isPlaying;
 - (void)playSoundFilesInSequence:(id)arg1;
 - (void)stopAllSounds;
 

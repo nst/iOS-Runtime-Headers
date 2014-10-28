@@ -20,10 +20,10 @@
 + (id)sharedInstance;
 
 - (void)_applicationStateChanged:(id)arg1;
-- (bool)_createBudgetWithName:(id)arg1 parentBudgetName:(id)arg2 attribute:(id)arg3 error:(id*)arg4;
-- (bool)_deleteBudgetWithName:(id)arg1;
+- (BOOL)_createBudgetWithName:(id)arg1 parentBudgetName:(id)arg2 attribute:(id)arg3 error:(id*)arg4;
+- (BOOL)_deleteBudgetWithName:(id)arg1;
 - (void)_deleteDuetAttributesForAccountWithUniqueId:(id)arg1;
-- (id)_duetAttributeForAccountWithUniqueId:(id)arg1 discretionary:(bool)arg2;
+- (id)_duetAttributeForAccountWithUniqueId:(id)arg1 discretionary:(BOOL)arg2;
 - (void)_initDuet;
 - (void)_releaseAssertion_nts;
 - (void)_retainAssertion_nts;
@@ -33,7 +33,7 @@
 - (void)dealloc;
 - (id)duetIdentifier;
 - (id)init;
-- (bool)isPluggedIn;
+- (BOOL)isPluggedIn;
 - (void)recordDuetEventForAccount:(id)arg1 event:(id)arg2;
 - (void)releaseAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1 withAccount:(id)arg2;

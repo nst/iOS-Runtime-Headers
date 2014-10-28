@@ -7,21 +7,21 @@
 @interface WKUserScript : NSObject <NSCopying> {
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    long long _injectionTime;
+    BOOL _forMainFrameOnly;
+    int _injectionTime;
     } _source;
-    bool_forMainFrameOnly;
 }
 
-@property(getter=isForMainFrameOnly,readonly) bool forMainFrameOnly;
-@property(readonly) long long injectionTime;
+@property(getter=isForMainFrameOnly,readonly) BOOL forMainFrameOnly;
+@property(readonly) int injectionTime;
 @property(copy,readonly) NSString * source;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithSource:(id)arg1 injectionTime:(long long)arg2 forMainFrameOnly:(bool)arg3;
-- (long long)injectionTime;
-- (bool)isForMainFrameOnly;
+- (id)initWithSource:(id)arg1 injectionTime:(int)arg2 forMainFrameOnly:(BOOL)arg3;
+- (int)injectionTime;
+- (BOOL)isForMainFrameOnly;
 - (id)source;
 
 @end

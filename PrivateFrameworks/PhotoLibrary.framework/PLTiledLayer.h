@@ -6,32 +6,33 @@
 
 @interface PLTiledLayer : CALayer {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
-    unsigned long long _currentProcessingID;
+    unsigned long _currentProcessingID;
     NSObject<OS_dispatch_queue> *_decodeQueue;
     int _decoderCount;
     struct jpegDecoder { struct ajdec {} *x1; id x2; } *_decoders;
-    int _err;
+    long _err;
     NSObject<OS_dispatch_queue> *_filterQueue;
     } _fullSize;
     NSData *_jpegData;
     } _lastVisibleRect;
-    double _lastZoomScale;
+    float _lastZoomScale;
     int _lock;
-    unsigned long long _nextProcessingID;
+    unsigned long _nextProcessingID;
     struct CGImage { } *_placeholderImage;
     CALayer *_placeholderLayer;
     unsigned int _requestId;
+    BOOL _showTileBorders;
     NSMutableDictionary *_subLayers;
     struct iosPoolOpaque { } *_surfacePool;
     PLCache *_tileCache;
@@ -39,27 +40,26 @@
     <PLTileProcessor> *_tileProcessor;
     NSMutableSet *_visibleTileIds;
     int _zoomLevel;
-    double _zoomStartScale;
-    bool_showTileBorders;
+    float _zoomStartScale;
 }
 
-@property(readonly) struct CGSize { double x1; double x2; } jpegImageSize;
+@property(readonly) struct CGSize { float x1; float x2; } jpegImageSize;
 @property <PLTileProcessor> * tileProcessor;
 
 - (void)dealloc;
-- (void)decodeImageRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forLevel:(int)arg2 requestId:(unsigned int)arg3 completionHandler:(id)arg4;
+- (void)decodeImageRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLevel:(int)arg2 requestId:(unsigned int)arg3 completionHandler:(id)arg4;
 - (void)flushCache;
 - (id)initWithJPEGData:(id)arg1 placeholderImage:(struct CGImage { }*)arg2;
-- (struct CGSize { double x1; double x2; })jpegImageSize;
+- (struct CGSize { float x1; float x2; })jpegImageSize;
 - (void)prepareForDecoding;
 - (void)removeAllTiles;
-- (void)setTileProcessingEnabled:(bool)arg1 withProcessingID:(unsigned long long)arg2 placeholderImage:(struct CGImage { }*)arg3;
+- (void)setTileProcessingEnabled:(BOOL)arg1 withProcessingID:(unsigned long)arg2 placeholderImage:(struct CGImage { }*)arg3;
 - (void)setTileProcessor:(id)arg1;
-- (void)setVisibleRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2 completionHandler:(id)arg3;
-- (void)setVisibleRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2;
+- (void)setVisibleRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 completionHandler:(id)arg3;
+- (void)setVisibleRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (id)tileProcessor;
 - (void)updateSubLayers:(id)arg1;
-- (bool)visibleTileRegionHasChanged:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 level:(int)arg2;
-- (double)zoomStartScaleForImage:(struct CGSize { double x1; double x2; })arg1 placeholderImageSize:(struct CGSize { double x1; double x2; })arg2;
+- (BOOL)visibleTileRegionHasChanged:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 level:(int)arg2;
+- (float)zoomStartScaleForImage:(struct CGSize { float x1; float x2; })arg1 placeholderImageSize:(struct CGSize { float x1; float x2; })arg2;
 
 @end

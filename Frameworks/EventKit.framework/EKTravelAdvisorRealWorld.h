@@ -14,6 +14,7 @@
     id _geofenceHandler;
     CLLocation *_geofenceInitialLocation;
     CLLocationManager *_geofenceLocationManager;
+    BOOL _geofenceUsingSignificantLocationUpdates;
     id _locationAuthorizationHandler;
     NSBundle *_locationBundle;
     id _locationHandler;
@@ -21,20 +22,19 @@
     PCPersistentTimer *_persistentTimer;
     CLLocationManager *_pollingLocationManager;
     NSObject<OS_dispatch_queue> *_queue;
-    bool_geofenceUsingSignificantLocationUpdates;
 }
 
 @property EKTravelAgendaItem * agendaItem;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)_persistentTimerIdentifier;
 
 - (id)agendaItem;
 - (void)alarmFired:(id)arg1;
-- (bool)authorizedToAcquireLocation;
+- (BOOL)authorizedToAcquireLocation;
 - (void)comeOutOfHibernation;
 - (void)dealloc;
 - (void)disableAlarm;

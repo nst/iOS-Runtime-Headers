@@ -20,7 +20,7 @@
 @property(retain) NSNumber * drawingStroke;
 @property(retain) UIImage * image;
 @property(retain) UIColor * imageColor;
-@property(readonly) bool isEmpty;
+@property(readonly) BOOL isEmpty;
 @property(retain) _UIGraphicsLetterpressStyle * letterpressStyle;
 @property(retain) UIColor * shadowColor;
 @property(retain) NSString * title;
@@ -36,7 +36,7 @@
 - (id)image;
 - (id)imageColor;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (id)letterpressStyle;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setBackground:(id)arg1;

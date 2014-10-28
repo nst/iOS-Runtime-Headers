@@ -25,7 +25,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property unsigned long long mapLayerPosition;
 @property(readonly) VKStyleManager * styleManager;
 @property(readonly) Class superclass;

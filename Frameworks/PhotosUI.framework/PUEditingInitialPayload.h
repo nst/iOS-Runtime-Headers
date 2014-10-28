@@ -9,8 +9,8 @@
     NSDate *_creationDate;
     NSData *_displaySizeImageData;
     CLLocation *_location;
-    unsigned long long _mediaSubtypes;
-    long long _mediaType;
+    unsigned int _mediaSubtypes;
+    int _mediaType;
     NSData *_placeholderImageData;
     NSString *_videoPathSandboxExtensionToken;
     NSURL *_videoURL;
@@ -20,13 +20,13 @@
 @property(retain) NSDate * creationDate;
 @property(retain) NSData * displaySizeImageData;
 @property(retain) CLLocation * location;
-@property unsigned long long mediaSubtypes;
-@property long long mediaType;
+@property unsigned int mediaSubtypes;
+@property int mediaType;
 @property(retain) NSData * placeholderImageData;
 @property(retain) NSString * videoPathSandboxExtensionToken;
 @property(retain) NSURL * videoURL;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)adjustmentData;
@@ -35,15 +35,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)location;
-- (unsigned long long)mediaSubtypes;
-- (long long)mediaType;
+- (unsigned int)mediaSubtypes;
+- (int)mediaType;
 - (id)placeholderImageData;
 - (void)setAdjustmentData:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDisplaySizeImageData:(id)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setMediaSubtypes:(unsigned long long)arg1;
-- (void)setMediaType:(long long)arg1;
+- (void)setMediaSubtypes:(unsigned int)arg1;
+- (void)setMediaType:(int)arg1;
 - (void)setPlaceholderImageData:(id)arg1;
 - (void)setVideoPathSandboxExtensionToken:(id)arg1;
 - (void)setVideoURL:(id)arg1;

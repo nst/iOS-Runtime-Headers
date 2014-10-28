@@ -6,10 +6,10 @@
 
 @interface MKTileOverlayTile : NSObject {
     struct { 
-        long long x; 
-        long long y; 
-        long long z; 
-        double contentScaleFactor; 
+        int x; 
+        int y; 
+        int z; 
+        float contentScaleFactor; 
     struct { 
         struct { 
             double x; 
@@ -22,24 +22,24 @@
     } _frame;
     NSData *_image;
     } _path;
-    double _scale;
+    float _scale;
 }
 
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property(retain) NSData * image;
-@property struct { long long x1; long long x2; long long x3; double x4; } path;
-@property double scale;
+@property struct { int x1; int x2; int x3; float x4; } path;
+@property float scale;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (id)image;
-- (struct { long long x1; long long x2; long long x3; double x4; })path;
-- (double)scale;
+- (struct { int x1; int x2; int x3; float x4; })path;
+- (float)scale;
 - (void)setFrame:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
-- (void)setPath:(struct { long long x1; long long x2; long long x3; double x4; })arg1;
-- (void)setScale:(double)arg1;
+- (void)setPath:(struct { int x1; int x2; int x3; float x4; })arg1;
+- (void)setScale:(float)arg1;
 
 @end

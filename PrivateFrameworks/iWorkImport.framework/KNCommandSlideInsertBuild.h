@@ -5,27 +5,27 @@
 @class KNBuild, KNSlideNode;
 
 @interface KNCommandSlideInsertBuild : TSKCommand {
-    boolmShouldCreateChunks;
     KNBuild *mBuild;
-    unsigned long long mIndex;
+    unsigned int mIndex;
+    BOOL mShouldCreateChunks;
     KNSlideNode *mSlideNode;
 }
 
 @property(readonly) KNBuild * build;
-@property(readonly) unsigned long long index;
+@property(readonly) unsigned int index;
 @property(readonly) KNSlideNode * slideNode;
 
 - (id)build;
 - (void)commit;
 - (void)dealloc;
-- (unsigned long long)index;
-- (id)initWithSlideNode:(id)arg1 build:(id)arg2 atIndex:(unsigned long long)arg3 createChunks:(bool)arg4;
-- (id)initWithSlideNode:(id)arg1 build:(id)arg2 atIndex:(unsigned long long)arg3;
+- (unsigned int)index;
+- (id)initWithSlideNode:(id)arg1 build:(id)arg2 atIndex:(unsigned int)arg3 createChunks:(BOOL)arg4;
+- (id)initWithSlideNode:(id)arg1 build:(id)arg2 atIndex:(unsigned int)arg3;
 - (id)p_buildAtPriorIndex;
 - (void)p_do;
-- (unsigned long long)p_indexForInsertingChunks;
+- (unsigned int)p_indexForInsertingChunks;
 - (void)p_insertBuildChunks:(id)arg1;
-- (bool)process;
+- (BOOL)process;
 - (void)redo;
 - (id)slideNode;
 - (void)undo;

@@ -18,15 +18,15 @@
 @property(readonly) double budgetRequired;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id progressBlock;
 @property(readonly) Class superclass;
-@property(readonly) long long transferPriority;
+@property(readonly) int transferPriority;
 @property(copy) id uploadCompletionBlock;
 
 - (void).cxx_destruct;
 - (id)_copyThumnbailToStage:(id)arg1;
-- (bool)_isItemTooLarge;
+- (BOOL)_isItemTooLarge;
 - (double)budgetRequired;
 - (id)description;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
@@ -35,7 +35,7 @@
 - (id)progressBlock;
 - (void)setProgressBlock:(id)arg1;
 - (void)setUploadCompletionBlock:(id)arg1;
-- (long long)transferPriority;
+- (int)transferPriority;
 - (id)uploadAssetsOperationWithRecord:(id)arg1;
 - (id)uploadCompletionBlock;
 

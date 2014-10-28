@@ -3,44 +3,44 @@
  */
 
 @interface MPUTransportControl : NSObject <NSCopying> {
+    BOOL _acceptsTapsWhenDisabled;
+    BOOL _enabled;
     int _group;
-    long long _type;
-    bool_acceptsTapsWhenDisabled;
-    bool_enabled;
-    bool_highlighted;
-    bool_supportsLongPress;
+    BOOL _highlighted;
+    BOOL _supportsLongPress;
+    int _type;
 }
 
-@property bool acceptsTapsWhenDisabled;
-@property(getter=isEnabled) bool enabled;
+@property BOOL acceptsTapsWhenDisabled;
+@property(getter=isEnabled) BOOL enabled;
 @property(readonly) int group;
-@property(getter=isHighlighted) bool highlighted;
-@property bool supportsLongPress;
-@property(readonly) long long type;
+@property(getter=isHighlighted) BOOL highlighted;
+@property BOOL supportsLongPress;
+@property(readonly) int type;
 
-+ (int)_groupForTransportControlType:(long long)arg1;
-+ (int)_ordinalForTransportControlType:(long long)arg1;
-+ (bool)_transportControlAcceptsTapsWhenDisabledForType:(long long)arg1;
-+ (bool)_transportControlSupportsHighlightingForCommand:(unsigned int)arg1;
-+ (long long)_transportControlTypeForCommand:(unsigned int)arg1;
-+ (id)availableTransportControlsForMediaRemoteCommands:(struct __CFArray { }*)arg1 controlsCount:(unsigned long long)arg2;
-+ (id)transportControlWithType:(long long)arg1 group:(int)arg2;
++ (int)_groupForTransportControlType:(int)arg1;
++ (int)_ordinalForTransportControlType:(int)arg1;
++ (BOOL)_transportControlAcceptsTapsWhenDisabledForType:(int)arg1;
++ (BOOL)_transportControlSupportsHighlightingForCommand:(unsigned int)arg1;
++ (int)_transportControlTypeForCommand:(unsigned int)arg1;
++ (id)availableTransportControlsForMediaRemoteCommands:(struct __CFArray { }*)arg1 controlsCount:(unsigned int)arg2;
++ (id)transportControlWithType:(int)arg1 group:(int)arg2;
 
-- (long long)_compare:(id)arg1 ordering:(long long)arg2;
-- (long long)_priority;
-- (bool)acceptsTapsWhenDisabled;
+- (int)_compare:(id)arg1 ordering:(int)arg2;
+- (int)_priority;
+- (BOOL)acceptsTapsWhenDisabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)group;
-- (unsigned long long)hash;
-- (id)initWithType:(long long)arg1 group:(int)arg2;
-- (bool)isEnabled;
-- (bool)isEqual:(id)arg1;
-- (bool)isHighlighted;
-- (void)setAcceptsTapsWhenDisabled:(bool)arg1;
-- (void)setEnabled:(bool)arg1;
-- (void)setHighlighted:(bool)arg1;
-- (void)setSupportsLongPress:(bool)arg1;
-- (bool)supportsLongPress;
-- (long long)type;
+- (unsigned int)hash;
+- (id)initWithType:(int)arg1 group:(int)arg2;
+- (BOOL)isEnabled;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isHighlighted;
+- (void)setAcceptsTapsWhenDisabled:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setSupportsLongPress:(BOOL)arg1;
+- (BOOL)supportsLongPress;
+- (int)type;
 
 @end

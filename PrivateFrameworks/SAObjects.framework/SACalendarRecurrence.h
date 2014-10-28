@@ -9,25 +9,25 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property long long endCount;
+@property int endCount;
 @property(copy) NSDate * endDate;
 @property int frequency;
-@property(readonly) unsigned long long hash;
-@property long long interval;
+@property(readonly) unsigned int hash;
+@property int interval;
 @property(readonly) Class superclass;
 
 + (id)recurrence;
 + (id)recurrenceWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
-- (long long)endCount;
+- (int)endCount;
 - (id)endDate;
 - (int)frequency;
 - (id)groupIdentifier;
-- (long long)interval;
-- (void)setEndCount:(long long)arg1;
+- (int)interval;
+- (void)setEndCount:(int)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setFrequency:(int)arg1;
-- (void)setInterval:(long long)arg1;
+- (void)setInterval:(int)arg1;
 
 @end

@@ -10,11 +10,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) long long persistentID;
 @property(readonly) Class superclass;
 
-+ (bool)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 database:(id)arg4;
++ (BOOL)_insertValues:(id)arg1 intoTable:(id)arg2 withPidOrNil:(id)arg3 database:(id)arg4;
 + (id)aggregateSingleValueForProperty:(id)arg1 function:(id)arg2 predicate:(id)arg3 database:(id)arg4;
 + (id)aggregateValuesForProperty:(id)arg1 functions:(id)arg2 predicate:(id)arg3 groupBy:(id)arg4 database:(id)arg5;
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
@@ -28,7 +28,7 @@
 + (id)databasePropertyToSetClientProperty:(id)arg1;
 + (id)databaseTable;
 + (id)databaseValueForProperty:(id)arg1 clientValue:(id)arg2;
-+ (bool)deleteEntitiesInDatabase:(id)arg1 predicate:(id)arg2;
++ (BOOL)deleteEntitiesInDatabase:(id)arg1 predicate:(id)arg2;
 + (id)disambiguatedDatabaseTable;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)distinctProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
@@ -49,17 +49,17 @@
 + (id)sumValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
 
 - (id)_copyTableClusteredValuesWithValues:(id)arg1;
-- (bool)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2 database:(id)arg3;
-- (bool)deleteFromDatabase:(id)arg1;
-- (bool)existsInDatabase:(id)arg1;
-- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned long long)arg3 database:(id)arg4;
+- (BOOL)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2 database:(id)arg3;
+- (BOOL)deleteFromDatabase:(id)arg1;
+- (BOOL)existsInDatabase:(id)arg1;
+- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3 database:(id)arg4;
 - (void)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id)arg3;
 - (id)initWithPersistentID:(long long)arg1;
 - (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2;
 - (long long)persistentID;
 - (void)setExternalValuesWithDictionary:(id)arg1;
-- (bool)setValue:(id)arg1 forProperty:(id)arg2 database:(id)arg3;
-- (bool)setValuesWithDictionary:(id)arg1 database:(id)arg2;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2 database:(id)arg3;
+- (BOOL)setValuesWithDictionary:(id)arg1 database:(id)arg2;
 - (id)valueForExternalProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1 database:(id)arg2;
 

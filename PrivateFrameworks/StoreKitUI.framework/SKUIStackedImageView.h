@@ -5,34 +5,34 @@
 @class MPUStackView, NSString, UIView;
 
 @interface SKUIStackedImageView : SKUIImageView <MPUStackViewDataSource> {
-    long long _stackDepth;
+    int _stackDepth;
     MPUStackView *_stackView;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property UIView * perspectiveTargetView;
 @property(readonly) Class superclass;
-@property struct CGPoint { double x1; double x2; } vanishingPoint;
+@property struct CGPoint { float x1; float x2; } vanishingPoint;
 
-+ (struct SKUIStackedImageConfiguration { struct UIOffset { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; long long x3; })_configurationForSize:(struct CGSize { double x1; double x2; })arg1;
-+ (double)maximumPerspectiveHeightForSize:(struct CGSize { double x1; double x2; })arg1;
++ (struct SKUIStackedImageConfiguration { struct UIOffset { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; int x3; })_configurationForSize:(struct CGSize { float x1; float x2; })arg1;
++ (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (long long)numberOfItemsInStackView:(id)arg1;
+- (int)numberOfItemsInStackView:(id)arg1;
 - (void)performCompressionAnimationWithCompletionHandler:(id)arg1;
 - (id)perspectiveTargetView;
 - (void)setImage:(id)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
-- (void)setVanishingPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(long long)arg3;
+- (void)setVanishingPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(int)arg3;
 - (void)stackView:(id)arg1 didCreateItem:(id)arg2;
 - (void)updateForChangedDistanceFromVanishingPoint;
-- (struct CGPoint { double x1; double x2; })vanishingPoint;
+- (struct CGPoint { float x1; float x2; })vanishingPoint;
 
 @end

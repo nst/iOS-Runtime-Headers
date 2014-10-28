@@ -14,12 +14,12 @@
 
 + (id)actionWithInfo:(id)arg1 home:(id)arg2;
 + (id)lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)characteristic;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)handleUpdates:(id)arg1;
+- (BOOL)handleUpdates:(id)arg1;
 - (id)init;
 - (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2;
 - (id)initWithCoder:(id)arg1;

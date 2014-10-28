@@ -9,21 +9,21 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (void)initialize;
 
 - (void)dissect:(id)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })findSignaturePrefix:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })findSignaturePrefix:(id)arg1;
 - (id)findSignaturePrefixesInEntity:(id)arg1 withSignaturePrefixes:(id)arg2;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })findValediction:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })findValediction:(id)arg1;
 - (id)findValedictionCommencedSignatureRanges:(id)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })hmmPlausibleSignatureRange:(id)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })hmmSignatureRange:(id)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })hmmSignatureRangeWithContent:(id)arg1 detectedData:(id)arg2 quotedRegions:(id)arg3;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })miniSignatureRange:(id)arg1;
-- (bool)shouldIgnoreSignature:(id)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })signatureRange:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })hmmPlausibleSignatureRange:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })hmmSignatureRange:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })hmmSignatureRangeWithContent:(id)arg1 detectedData:(id)arg2 quotedRegions:(id)arg3;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })miniSignatureRange:(id)arg1;
+- (BOOL)shouldIgnoreSignature:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })signatureRange:(id)arg1;
 
 @end

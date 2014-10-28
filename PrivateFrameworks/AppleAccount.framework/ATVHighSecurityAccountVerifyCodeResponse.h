@@ -7,14 +7,14 @@
 @interface ATVHighSecurityAccountVerifyCodeResponse : AAResponse {
 }
 
-@property(readonly) long long errorCode;
+@property(readonly) int errorCode;
 @property(readonly) NSString * errorMessage;
 @property(readonly) NSString * errorTitle;
-@property(readonly) bool success;
+@property(readonly) BOOL success;
 
-- (long long)errorCode;
+- (int)errorCode;
 - (id)errorMessage;
 - (id)errorTitle;
-- (bool)success;
+- (BOOL)success;
 
 @end

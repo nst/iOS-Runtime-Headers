@@ -9,12 +9,12 @@
     NSNumber *_currentSearchTaskID;
     <CKContactsSearchManagerDelegate> *_delegate;
     NSArray *_enteredRecipients;
-    unsigned long long _pendingSearchTypes;
+    unsigned int _pendingSearchTypes;
     NSMutableDictionary *_recentsDateMap;
     MFContactsSearchManager *_searchManager;
     MFContactsSearchResultsModel *_searchResultsModel;
     NSString *_searchText;
-    bool_suppressGroupSuggestions;
+    BOOL _suppressGroupSuggestions;
 }
 
 @property(copy) NSArray * conversationCache;
@@ -23,31 +23,31 @@
 @property <CKContactsSearchManagerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSArray * enteredRecipients;
-@property(readonly) unsigned long long hash;
-@property unsigned long long pendingSearchTypes;
+@property(readonly) unsigned int hash;
+@property unsigned int pendingSearchTypes;
 @property(retain) NSMutableDictionary * recentsDateMap;
 @property(retain) MFContactsSearchManager * searchManager;
 @property(retain) MFContactsSearchResultsModel * searchResultsModel;
 @property(retain) NSString * searchText;
 @property(readonly) Class superclass;
-@property bool suppressGroupSuggestions;
+@property BOOL suppressGroupSuggestions;
 
 - (void)_generateConversationCache;
 - (void)_sortSearchResultsWithCoreRecentsResults:(id)arg1 namedSearchResults:(id)arg2;
 - (void)beganNetworkActivity;
 - (void)cancelSearch;
 - (void)chatStateChanged:(id)arg1;
-- (void)consumeSearchResults:(id)arg1 type:(unsigned long long)arg2 taskID:(id)arg3;
+- (void)consumeSearchResults:(id)arg1 type:(unsigned int)arg2 taskID:(id)arg3;
 - (id)conversationCache;
 - (id)currentSearchTaskID;
 - (void)dealloc;
 - (id)delegate;
 - (void)endedNetworkActivity;
 - (id)enteredRecipients;
-- (void)finishedSearchingForType:(unsigned long long)arg1;
+- (void)finishedSearchingForType:(unsigned int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)init;
-- (unsigned long long)pendingSearchTypes;
+- (unsigned int)pendingSearchTypes;
 - (id)recentsDateMap;
 - (id)searchManager;
 - (id)searchResultsModel;
@@ -57,12 +57,12 @@
 - (void)setCurrentSearchTaskID:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnteredRecipients:(id)arg1;
-- (void)setPendingSearchTypes:(unsigned long long)arg1;
+- (void)setPendingSearchTypes:(unsigned int)arg1;
 - (void)setRecentsDateMap:(id)arg1;
 - (void)setSearchManager:(id)arg1;
 - (void)setSearchResultsModel:(id)arg1;
 - (void)setSearchText:(id)arg1;
-- (void)setSuppressGroupSuggestions:(bool)arg1;
-- (bool)suppressGroupSuggestions;
+- (void)setSuppressGroupSuggestions:(BOOL)arg1;
+- (BOOL)suppressGroupSuggestions;
 
 @end

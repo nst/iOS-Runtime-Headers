@@ -6,7 +6,7 @@
 
 @interface SKUIHorizontalLockupLayout : NSObject {
     NSMutableArray *_columns;
-    double _tallestNonMetadataColumnHeight;
+    float _tallestNonMetadataColumnHeight;
 }
 
 @property(readonly) NSArray * columns;
@@ -16,14 +16,14 @@
 + (id)fontForOrdinalViewElement:(id)arg1 context:(id)arg2;
 
 - (void).cxx_destruct;
-- (double)_heightForMetadataColumn:(id)arg1 width:(double)arg2 context:(id)arg3;
-- (struct CGSize { double x1; double x2; })_sizeForRightAlignedColumn:(id)arg1 width:(double)arg2 context:(id)arg3;
-- (struct CGSize { double x1; double x2; })_sizeForViewElement:(id)arg1 width:(long long)arg2 context:(id)arg3;
-- (double)bottomPaddingForViewElement:(id)arg1;
-- (double)columnSpacingForColumnIdentifier:(long long)arg1;
+- (float)_heightForMetadataColumn:(id)arg1 width:(float)arg2 context:(id)arg3;
+- (struct CGSize { float x1; float x2; })_sizeForRightAlignedColumn:(id)arg1 width:(float)arg2 context:(id)arg3;
+- (struct CGSize { float x1; float x2; })_sizeForViewElement:(id)arg1 width:(int)arg2 context:(id)arg3;
+- (float)bottomPaddingForViewElement:(id)arg1;
+- (float)columnSpacingForColumnIdentifier:(int)arg1;
 - (id)columns;
 - (id)initWithLockup:(id)arg1 context:(id)arg2;
-- (void)sizeColumnsToFitWidth:(double)arg1 context:(id)arg2;
-- (double)topPaddingForViewElement:(id)arg1;
+- (void)sizeColumnsToFitWidth:(float)arg1 context:(id)arg2;
+- (float)topPaddingForViewElement:(id)arg1;
 
 @end

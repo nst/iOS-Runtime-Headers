@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class RUIObjectModel, UIActivityIndicatorView, UIView;
+@class RUIObjectModel, UIActivityIndicatorView, UILabel, UIView;
 
 @interface RUISpinnerView : RUIElement {
+    UILabel *_label;
     RUIObjectModel *_objectModel;
     UIActivityIndicatorView *_spinner;
     UIView *_view;
@@ -17,7 +18,7 @@
 - (void)setObjectModel:(id)arg1;
 - (id)spinnerView;
 - (void)viewDidLayout;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

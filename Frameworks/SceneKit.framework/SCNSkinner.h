@@ -20,7 +20,7 @@
 + (struct __C3DSkinner { }*)createSkinnerWithBaseGeometry:(id)arg1 bones:(id)arg2 boneWeights:(id)arg3 boneIndices:(id)arg4;
 + (id)skinnerWithBaseGeometry:(id)arg1 bones:(id)arg2 boneInverseBindTransforms:(id)arg3 boneWeights:(id)arg4 boneIndices:(id)arg5;
 + (id)skinnerWithSkinnerRef:(struct __C3DSkinner { }*)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void*)__CFObject;
 - (id)baseGeometry;

@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) CoreRCInterfaceController * interfaceController;
 @property(retain) CoreCECOverride * pluginOverride;
 @property(retain) CoreCECOverride * standardOverride;
@@ -20,7 +20,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)addDeviceWithBus:(id)arg1 logicalAddress:(unsigned char)arg2 physicalAddress:(unsigned long long)arg3 deviceType:(unsigned long long)arg4 message:(id)arg5 reason:(unsigned long long)arg6;
+- (id)addDeviceWithBus:(id)arg1 logicalAddress:(unsigned char)arg2 physicalAddress:(unsigned int)arg3 deviceType:(unsigned int)arg4 message:(id)arg5 reason:(unsigned int)arg6;
 - (void)dealloc;
 - (id)firstCECOverrideFromPaths:(id)arg1;
 - (void)initCECOverrides;
@@ -31,7 +31,7 @@
 - (id)pluginOverride;
 - (id)propertyForKey:(id)arg1 ofBus:(id)arg2 error:(id*)arg3;
 - (void)setPluginOverride:(id)arg1;
-- (bool)setProperty:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 error:(id*)arg4;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 error:(id*)arg4;
 - (void)setStandardOverride:(id)arg1;
 - (id)standardOverride;
 

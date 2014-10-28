@@ -30,10 +30,10 @@
 + (id)secureCodedPropertyKeys;
 
 - (void)dealloc;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)inviteMessage;
 - (id)invitedBy;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)lastTurnDate;
 - (unsigned int)matchOutcome;
 - (id)player;

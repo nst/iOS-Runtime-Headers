@@ -3,22 +3,22 @@
  */
 
 @interface CTCellularPlanExtProperties : NSObject <NSCopying, NSSecureCoding> {
+    BOOL _selected;
     int _status;
-    bool_selected;
 }
 
-@property(readonly) bool selected;
+@property(readonly) BOOL selected;
 @property(readonly) int status;
 
 + (id)statusAsString:(int)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStatus:(int)arg1 selected:(bool)arg2;
-- (bool)selected;
+- (id)initWithStatus:(int)arg1 selected:(BOOL)arg2;
+- (BOOL)selected;
 - (int)status;
 
 @end

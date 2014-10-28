@@ -14,7 +14,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (struct EshBlip { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct UID { unsigned char x_4_1_1[16]; } x4; }*)fillBlipDataReference;
@@ -25,26 +25,26 @@
 - (id)fillBlipName;
 - (int)fillFgAlpha;
 - (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })fillFgColor;
-- (int)fillFocus;
+- (long)fillFocus;
 - (int)fillFocusBottom;
 - (int)fillFocusLeft;
 - (int)fillFocusRight;
 - (int)fillFocusTop;
 - (const struct EshTablePropVal<EshGradientStop> { }*)fillGradientColors;
 - (int)fillType;
-- (bool)hidden;
-- (bool)isFillOK;
-- (bool)isFilled;
-- (bool)isShadowOK;
-- (bool)isShadowed;
-- (bool)isStrokeOK;
-- (bool)isStroked;
-- (bool)isTextPath;
+- (BOOL)hidden;
+- (BOOL)isFillOK;
+- (BOOL)isFilled;
+- (BOOL)isShadowOK;
+- (BOOL)isShadowed;
+- (BOOL)isStrokeOK;
+- (BOOL)isStroked;
+- (BOOL)isTextPath;
 - (int)shadowAlpha;
 - (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })shadowColor;
-- (int)shadowOffsetX;
-- (int)shadowOffsetY;
-- (int)shadowSoftness;
+- (long)shadowOffsetX;
+- (long)shadowOffsetY;
+- (long)shadowSoftness;
 - (int)shadowType;
 - (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })strokeBgColor;
 - (int)strokeCapStyle;
@@ -64,15 +64,15 @@
 - (int)strokeStartArrowLength;
 - (int)strokeStartArrowType;
 - (int)strokeStartArrowWidth;
-- (int)strokeWidth;
-- (bool)textPathBold;
+- (long)strokeWidth;
+- (BOOL)textPathBold;
 - (id)textPathFontFamily;
 - (int)textPathFontSize;
-- (bool)textPathItalic;
-- (bool)textPathSmallcaps;
-- (bool)textPathStrikethrough;
+- (BOOL)textPathItalic;
+- (BOOL)textPathSmallcaps;
+- (BOOL)textPathStrikethrough;
 - (int)textPathTextAlignment;
-- (bool)textPathUnderline;
+- (BOOL)textPathUnderline;
 - (id)textPathUnicodeString;
 
 @end

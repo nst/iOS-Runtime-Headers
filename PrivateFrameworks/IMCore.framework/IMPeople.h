@@ -6,36 +6,36 @@
 
 @interface IMPeople : NSObject {
     int _coalesceCount;
+    BOOL _hidePeople;
     NSMutableArray *_people;
-    bool_hidePeople;
 }
 
-@property(readonly) bool coalescingChanges;
-@property(readonly) unsigned long long count;
+@property(readonly) BOOL coalescingChanges;
+@property(readonly) unsigned int count;
 @property(readonly) NSArray * groups;
-@property(setter=setShouldHidePeople:) bool hidePeople;
+@property(setter=setShouldHidePeople:) BOOL hidePeople;
 @property(readonly) NSArray * people;
 
 - (void)_addedPeople:(id)arg1;
-- (bool)addIMHandle:(id)arg1;
+- (BOOL)addIMHandle:(id)arg1;
 - (void)addNotificationObserver:(id)arg1 selector:(SEL)arg2;
-- (bool)addPeopleFromArray:(id)arg1 skipMe:(bool)arg2;
-- (bool)addPeopleFromArray:(id)arg1;
+- (BOOL)addPeopleFromArray:(id)arg1 skipMe:(BOOL)arg2;
+- (BOOL)addPeopleFromArray:(id)arg1;
 - (void)addedIMHandle:(id)arg1;
 - (void)beginCoalescedChanges;
-- (bool)coalescingChanges;
-- (bool)containsIMHandle:(id)arg1;
-- (unsigned long long)count;
+- (BOOL)coalescingChanges;
+- (BOOL)containsIMHandle:(id)arg1;
+- (unsigned int)count;
 - (void)dealloc;
 - (void)endCoalescedChanges;
 - (id)groups;
-- (bool)hidePeople;
-- (void)imHandle:(id)arg1 buddyStatusChanged:(bool)arg2;
+- (BOOL)hidePeople;
+- (void)imHandle:(id)arg1 buddyStatusChanged:(BOOL)arg2;
 - (id)people;
-- (bool)removeIMHandle:(id)arg1;
+- (BOOL)removeIMHandle:(id)arg1;
 - (void)removeNotificationObserver:(id)arg1;
-- (bool)removePeopleFromArray:(id)arg1;
+- (BOOL)removePeopleFromArray:(id)arg1;
 - (void)removedIMHandle:(id)arg1;
-- (void)setShouldHidePeople:(bool)arg1;
+- (void)setShouldHidePeople:(BOOL)arg1;
 
 @end

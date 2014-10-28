@@ -5,16 +5,16 @@
 @class <NSObject><UIPDFDocumentDelegate>, NSString, UIPDFPageImageCache;
 
 @interface UIPDFDocument : NSObject {
-    double _cachedWidth;
+    float _cachedWidth;
     struct CGPDFDocument { } *_cgDocument;
     <NSObject><UIPDFDocumentDelegate> *_delegate;
     NSString *_documentID;
     NSString *_documentName;
-    unsigned long long _imageCacheCount;
+    unsigned int _imageCacheCount;
     int _imageCacheLock;
-    unsigned long long _imageCacheLookAhead;
+    unsigned int _imageCacheLookAhead;
     int _lock;
-    unsigned long long _numberOfPages;
+    unsigned int _numberOfPages;
     UIPDFPageImageCache *_pageImageCache;
     UIPDFPageImageCache *_thumbnailCache;
     int _thumbnailLock;
@@ -23,34 +23,34 @@
 @property(readonly) struct CGPDFDocument { }* CGDocument;
 @property <NSObject><UIPDFDocumentDelegate> * delegate;
 @property(readonly) NSString * documentID;
-@property(readonly) unsigned long long numberOfPages;
+@property(readonly) unsigned int numberOfPages;
 @property(retain) UIPDFPageImageCache * pageImageCache;
 @property(retain) UIPDFPageImageCache * thumbnailCache;
 
 + (id)documentNamed:(id)arg1;
 
 - (struct CGPDFDocument { }*)CGDocument;
-- (bool)allowsCopying;
+- (BOOL)allowsCopying;
 - (struct CGPDFDocument { }*)copyCGPDFDocument;
-- (bool)copyDocumentTo:(id)arg1;
-- (id)copyPageAtIndex:(unsigned long long)arg1;
+- (BOOL)copyDocumentTo:(id)arg1;
+- (id)copyPageAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)documentID;
 - (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (id)initWithURL:(id)arg1;
-- (double)maxHeight;
-- (double)maxWidth;
-- (unsigned long long)numberOfPages;
-- (id)pageAtIndex:(unsigned long long)arg1;
+- (float)maxHeight;
+- (float)maxWidth;
+- (unsigned int)numberOfPages;
+- (id)pageAtIndex:(unsigned int)arg1;
 - (id)pageImageCache;
-- (void)purgePagesBefore:(unsigned long long)arg1;
+- (void)purgePagesBefore:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setImageCacheCount:(unsigned long long)arg1 lookAhead:(unsigned long long)arg2;
+- (void)setImageCacheCount:(unsigned int)arg1 lookAhead:(unsigned int)arg2;
 - (void)setPageImageCache:(id)arg1;
 - (void)setThumbnailCache:(id)arg1;
-- (double)sumHeight;
-- (double)sumWidth;
+- (float)sumHeight;
+- (float)sumWidth;
 - (id)thumbnailCache;
 
 @end

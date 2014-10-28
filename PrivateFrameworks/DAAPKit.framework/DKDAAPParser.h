@@ -5,18 +5,18 @@
 @class <DKDAAPParserDelegate>, DKDAAPParserContext, NSMutableArray;
 
 @interface DKDAAPParser : NSObject {
+    BOOL _canceled;
     NSMutableArray *_containerStack;
     <DKDAAPParserDelegate> *_delegate;
+    BOOL _finished;
+    BOOL _parsing;
     DKDAAPParserContext *_propertyParseContext;
-    bool_canceled;
-    bool_finished;
-    bool_parsing;
 }
 
-@property(getter=isCanceled) bool canceled;
+@property(getter=isCanceled) BOOL canceled;
 @property <DKDAAPParserDelegate> * delegate;
-@property(getter=isFinished) bool finished;
-@property(getter=isParsing) bool parsing;
+@property(getter=isFinished) BOOL finished;
+@property(getter=isParsing) BOOL parsing;
 
 - (void).cxx_destruct;
 - (void)callDelegateDidCancel;
@@ -26,19 +26,19 @@
 - (void)callDelegateDidParseDataCode:(unsigned int)arg1 bytes:(char *)arg2 contentLength:(unsigned int)arg3;
 - (void)callDelegateDidStart;
 - (void)callDelegateDidStartContainerCode:(unsigned int)arg1 contentLength:(unsigned int)arg2;
-- (bool)callDelegateShouldParseCode:(unsigned int)arg1;
-- (bool)callDelegateShouldParseCodeAsContainer:(unsigned int)arg1;
+- (BOOL)callDelegateShouldParseCode:(unsigned int)arg1;
+- (BOOL)callDelegateShouldParseCodeAsContainer:(unsigned int)arg1;
 - (void)cancel;
 - (id)delegate;
-- (bool)isCanceled;
-- (bool)isFinished;
-- (bool)isParsing;
+- (BOOL)isCanceled;
+- (BOOL)isFinished;
+- (BOOL)isParsing;
 - (void)parse;
 - (unsigned int)parseInputBuffer:(id)arg1;
 - (void)prepareForParse;
-- (void)setCanceled:(bool)arg1;
+- (void)setCanceled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFinished:(bool)arg1;
-- (void)setParsing:(bool)arg1;
+- (void)setFinished:(BOOL)arg1;
+- (void)setParsing:(BOOL)arg1;
 
 @end

@@ -6,44 +6,44 @@
 
 @interface TPSuperBottomBarButton : UIButton {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _buttonSize;
-    long long _orientation;
+    int _orientation;
     UIColor *_originalBackgroundColor;
     UIView *_overlayView;
     TPRingView *_ringView;
-    bool_usesSmallerFontSize;
+    BOOL _usesSmallerFontSize;
 }
 
-@property struct CGSize { double x1; double x2; } buttonSize;
-@property long long orientation;
+@property struct CGSize { float x1; float x2; } buttonSize;
+@property int orientation;
 @property(retain) UIColor * originalBackgroundColor;
-@property bool usesSmallerFontSize;
+@property BOOL usesSmallerFontSize;
 
 + (id)defaultFont;
-+ (double)defaultHeight;
-+ (double)defaultWidth;
++ (float)defaultHeight;
++ (float)defaultWidth;
 
-- (struct CGSize { double x1; double x2; })buttonSize;
+- (struct CGSize { float x1; float x2; })buttonSize;
 - (void)configureForCancelAction;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithAction:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(id)arg3;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)newOverlayView;
-- (long long)orientation;
+- (int)orientation;
 - (id)originalBackgroundColor;
-- (void)setButtonSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setEnabled:(bool)arg1;
-- (void)setHighlighted:(bool)arg1;
-- (void)setOrientation:(long long)arg1;
+- (void)setButtonSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setOriginalBackgroundColor:(id)arg1;
-- (void)setSelected:(bool)arg1;
-- (void)setUsesSmallerFontSize:(bool)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)usesSmallerFontSize;
+- (void)setSelected:(BOOL)arg1;
+- (void)setUsesSmallerFontSize:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)usesSmallerFontSize;
 
 @end

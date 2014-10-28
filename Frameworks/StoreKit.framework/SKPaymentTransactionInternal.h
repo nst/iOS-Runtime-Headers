@@ -13,7 +13,7 @@
     NSDate *_transactionDate;
     NSString *_transactionIdentifier;
     NSData *_transactionReceipt;
-    long long _transactionState;
+    int _transactionState;
 }
 
 - (void)dealloc;

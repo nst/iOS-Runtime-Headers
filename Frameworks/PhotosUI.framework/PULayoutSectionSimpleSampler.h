@@ -3,14 +3,14 @@
  */
 
 @interface PULayoutSectionSimpleSampler : PULayoutSectionSampler {
-    long long _numberOfRealItems;
-    long long _numberOfVisibleItems;
+    int _numberOfRealItems;
+    int _numberOfVisibleItems;
 }
 
 - (void)dumpInternalMemory;
-- (void)enumerateUnsampledIndexesForSampledIndexInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id)arg2;
-- (long long)indexForUnsampledIndex:(long long)arg1 isMainItem:(bool*)arg2;
-- (id)initWithNumberOfVisibleItems:(long long)arg1 numberOfRealItems:(long long)arg2;
-- (long long)unsampledIndexForIndex:(long long)arg1;
+- (void)enumerateUnsampledIndexesForSampledIndexInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
+- (int)indexForUnsampledIndex:(int)arg1 isMainItem:(BOOL*)arg2;
+- (id)initWithNumberOfVisibleItems:(int)arg1 numberOfRealItems:(int)arg2;
+- (int)unsampledIndexForIndex:(int)arg1;
 
 @end

@@ -12,6 +12,7 @@
     NSArray *activitySlots;
     CDDHistoryWindow *allTimeWindow;
     id asyncRecommendHandler;
+    boolbackgroundAppRefreshSwitchedOn;
     boolisClassCLocked;
     boolkEnableSyslog;
     CDAttribute *bundleAttr;
@@ -28,7 +29,7 @@
     NSMutableDictionary *seqTracker;
     CDSession *sessionDuet;
     NSDate *startDate;
-    long long timeZoneSecondsFromGMT;
+    int timeZoneSecondsFromGMT;
     CDAttribute *userEventAttr;
 }
 
@@ -41,12 +42,13 @@
 - (id)init;
 - (void)initAfterClassCUnlocked;
 - (void)ncTriggerObserver:(id)arg1;
-- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
-- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (void)programTimer;
 - (void)setNCLaunchRecommendationHandler:(id)arg1;
 - (void)setNCLaunchRecommendationHandlerWithCompletion:(id)arg1;
 - (void)startEvent:(id)arg1;
 - (void)timerFired:(id)arg1;
+- (void)updateBARSwitch;
 
 @end

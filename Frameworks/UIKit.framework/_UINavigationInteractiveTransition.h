@@ -11,11 +11,11 @@
 @property(readonly) UIScreenEdgePanGestureRecognizer * screenEdgePanGestureRecognizer;
 
 - (void)_configureNavigationGesture;
-- (bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)dealloc;
-- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureRecognizerView;
 - (id)initWithViewController:(id)arg1 animator:(id)arg2;
 - (id)screenEdgePanGestureRecognizer;

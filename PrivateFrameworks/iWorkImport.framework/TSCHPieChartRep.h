@@ -5,7 +5,7 @@
 @class NSArray, NSDictionary, TSCHChartPieElementsRenderer;
 
 @interface TSCHPieChartRep : TSCHChartRep {
-    boolmHasDrawnSinceWedgeKnobTrackerCreated;
+    BOOL mHasDrawnSinceWedgeKnobTrackerCreated;
     TSCHChartPieElementsRenderer *mPieElementRenderer;
     NSDictionary *mSeriesIndexedPieWedgeDraggingLayers;
     NSArray *mWedgeKnobs;

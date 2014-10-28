@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (void)appendDebugString:(id)arg1;
@@ -28,7 +28,7 @@
 - (void)dealloc;
 - (void)failWithError:(id)arg1;
 - (id)init;
-- (bool)isLoading;
+- (BOOL)isLoading;
 - (void)loadRequest:(id)arg1;
 - (void)request:(id)arg1 receivedResponseData:(id)arg2;
 

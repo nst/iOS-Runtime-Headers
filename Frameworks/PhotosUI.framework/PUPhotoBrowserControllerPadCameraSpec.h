@@ -5,6 +5,6 @@
 @interface PUPhotoBrowserControllerPadCameraSpec : PUPhotoBrowserControllerPadSpec {
 }
 
-- (bool)isInCamera;
+- (BOOL)isInCamera;
 
 @end

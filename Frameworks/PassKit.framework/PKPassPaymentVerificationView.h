@@ -2,31 +2,27 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPassView, PKVerificationRequestRecord, UIButton, UILabel, UIView;
+@class PKPassView, PKPaymentVerificationPresentationController, UIButton, UILabel, UIView;
 
-@interface PKPassPaymentVerificationView : PKPassPaymentFooterContentView {
+@interface PKPassPaymentVerificationView : PKPassPaymentFooterContentView <PKPaymentVerificationPresentationDelegate> {
     UIButton *_alternateButton;
     UILabel *_bodyLabel;
     UIView *_bottomRule;
     UIButton *_button;
     PKPassView *_passView;
-    PKVerificationRequestRecord *_requestRecord;
+    PKPaymentVerificationPresentationController *_presenter;
     UILabel *_titleLabel;
 }
 
 - (id)_alternateButton;
 - (id)_bodyLabel;
-- (void)_bodyLabelTapped:(id)arg1;
-- (id)_bodyStringForChannel:(id)arg1;
 - (id)_bottomRule;
 - (id)_button;
-- (void)_completeVerificationButtonPressed:(id)arg1;
-- (void)_enterCodeButtonPressed:(id)arg1;
 - (id)_titleLabel;
 - (void)dealloc;
+- (void)didChangeVerificationPresentation;
 - (id)initWithPass:(id)arg1 passView:(id)arg2;
 - (void)layoutSubviews;
-- (void)reloadView;
-- (void)sharedPaymentServiceChanged:(id)arg1;
+- (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 
 @end

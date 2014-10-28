@@ -7,25 +7,25 @@
 @interface CKAudioAnalyzer : NSObject <Endpointer> {
     struct { 
         float rms; 
-        unsigned long long zc; 
+        unsigned int zc; 
     struct OpaqueAudioComponentInstance { } *_audioUnitEPVAD;
     float _decoderLatency;
+    BOOL _detectedMusic;
     double _endWaitTime;
     int _endpointMode;
     NSMutableData *_floatSampleBuffer;
     } _frameAnalysisArray[25];
-    unsigned int _frameRate;
-    unsigned long long _framesSeen;
+    unsigned long _frameRate;
+    unsigned int _framesSeen;
     float _heuristicTransitionRatio;
     float _heuristicWindowSec;
-    unsigned int _inMaxSamplesPerBuffer;
+    unsigned long _inMaxSamplesPerBuffer;
     double _interspeechWaitTime;
     NSDictionary *_modelDict;
     double _sampleRate;
     double _samplesSeen;
     float _speechPaddingFactor;
     double _startWaitTime;
-    bool_detectedMusic;
 }
 
 @property(copy,readonly) NSString * debugDescription;
@@ -33,10 +33,10 @@
 @property(copy,readonly) NSString * description;
 @property double endWaitTime;
 @property int endpointMode;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property float heuristicTransitionRatio;
 @property float heuristicWindowSec;
-@property unsigned int inMaxSamplesPerBuffer;
+@property unsigned long inMaxSamplesPerBuffer;
 @property double interspeechWaitTime;
 @property float speechPaddingFactor;
 @property double startWaitTime;
@@ -44,7 +44,7 @@
 
 + (void)initialize;
 
-- (bool)configureWithSampleRate:(double)arg1 andFrameRate:(unsigned int)arg2;
+- (BOOL)configureWithSampleRate:(double)arg1 andFrameRate:(unsigned long)arg2;
 - (void)dealloc;
 - (float)decoderLatency;
 - (double)endWaitTime;
@@ -52,7 +52,7 @@
 - (int)getStatus:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1;
 - (float)heuristicTransitionRatio;
 - (float)heuristicWindowSec;
-- (unsigned int)inMaxSamplesPerBuffer;
+- (unsigned long)inMaxSamplesPerBuffer;
 - (id)init;
 - (double)interspeechWaitTime;
 - (void)reset;
@@ -61,7 +61,7 @@
 - (void)setEndpointMode:(int)arg1;
 - (void)setHeuristicTransitionRatio:(float)arg1;
 - (void)setHeuristicWindowSec:(float)arg1;
-- (void)setInMaxSamplesPerBuffer:(unsigned int)arg1;
+- (void)setInMaxSamplesPerBuffer:(unsigned long)arg1;
 - (void)setInterspeechWaitTime:(double)arg1;
 - (void)setSpeechPaddingFactor:(float)arg1;
 - (void)setStartWaitTime:(double)arg1;

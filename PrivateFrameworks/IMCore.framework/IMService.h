@@ -13,24 +13,24 @@
 + (id)facetimeService;
 + (void)forgetStatusImageAppearance;
 + (id)iMessageService;
-+ (id)imageNameForStatus:(unsigned long long)arg1;
-+ (id)imageURLForStatus:(unsigned long long)arg1;
-+ (bool)isEmailAddress:(id)arg1 inDomains:(id)arg2;
++ (id)imageNameForStatus:(unsigned int)arg1;
++ (id)imageURLForStatus:(unsigned int)arg1;
++ (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;
 + (id)jabberService;
 + (id)myIdleTime;
-+ (unsigned long long)myStatus;
++ (unsigned int)myStatus;
 + (id)notificationCenter;
 + (id)serviceWithName:(id)arg1;
 + (id)smsService;
-+ (unsigned long long)statusForABPerson:(id)arg1;
-+ (unsigned long long)statusForIMPerson:(id)arg1;
++ (unsigned int)statusForABPerson:(id)arg1;
++ (unsigned int)statusForIMPerson:(id)arg1;
 + (id)subnetService;
 
 - (BOOL)__ck_displayColor;
 - (id)__ck_displayName;
-- (bool)__ck_isSMS;
-- (bool)__ck_isiMessage;
-- (long long)__ck_maxRecipientCount;
+- (BOOL)__ck_isSMS;
+- (BOOL)__ck_isiMessage;
+- (int)__ck_maxRecipientCount;
 - (id)canonicalFormOfID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)infoForAllPeople;
@@ -39,8 +39,8 @@
 - (id)infoForPerson:(id)arg1;
 - (id)infoForPreferredScreenNames;
 - (id)infoForScreenName:(id)arg1;
-- (bool)initialSyncPerformed;
-- (bool)isEnabled;
+- (BOOL)initialSyncPerformed;
+- (BOOL)isEnabled;
 - (id)localizedName;
 - (id)localizedShortName;
 - (void)login;
@@ -49,6 +49,6 @@
 - (id)name;
 - (id)peopleWithScreenName:(id)arg1;
 - (id)screenNamesForPerson:(id)arg1;
-- (unsigned long long)status;
+- (unsigned int)status;
 
 @end

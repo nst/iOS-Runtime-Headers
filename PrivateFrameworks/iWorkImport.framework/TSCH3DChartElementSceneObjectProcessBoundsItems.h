@@ -5,6 +5,6 @@
 @interface TSCH3DChartElementSceneObjectProcessBoundsItems : TSCH3DChartElementSceneObjectProcessGeometryOnlyItems {
 }
 
-- (bool)useBoundsGeometry;
+- (BOOL)useBoundsGeometry;
 
 @end

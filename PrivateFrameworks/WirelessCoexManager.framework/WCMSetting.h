@@ -5,7 +5,7 @@
 @interface WCMSetting : NSObject {
 }
 
-- (bool)WCMAvailable;
+- (BOOL)WCMAvailable;
 - (void)registerServices:(id)arg1;
 
 @end

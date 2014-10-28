@@ -16,9 +16,9 @@
 - (void)dealloc;
 - (id)description;
 - (float)fieldOfView;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)rotation;
 - (void)setCameraType:(int)arg1;
 - (void)setFieldOfView:(float)arg1;

@@ -7,7 +7,7 @@
 @interface MSSubscribeMMCSProtocol : MSMMCSProtocol <MSSubscribeStorageProtocol> {
     char **_authTokens;
     <MSSubscribeStorageProtocolDelegate> *_delegate;
-    unsigned long long _itemCount;
+    unsigned int _itemCount;
     NSMutableDictionary *_itemIDToAssetDict;
     unsigned long long *_itemIDs;
     const char **_signatures;
@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <MSSubscribeStorageProtocolDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;

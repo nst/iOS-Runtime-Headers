@@ -14,7 +14,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setViews:(id)arg1;
 - (id)views;
 

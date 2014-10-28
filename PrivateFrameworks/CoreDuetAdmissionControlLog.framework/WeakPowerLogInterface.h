@@ -25,8 +25,8 @@
 - (void*)PLLib;
 - (void)dealloc;
 - (id)init;
-- (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 reason:(id)arg9 admitted:(bool)arg10 ableID:(unsigned long long)arg11;
-- (void)logCoreDuetEventForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned long long)arg4 sequenceNumber:(unsigned long long)arg5 event:(unsigned long long)arg6 value:(id)arg7 cellIn:(unsigned long long)arg8 cellOut:(unsigned long long)arg9 wifiIn:(unsigned long long)arg10 wifiOut:(unsigned long long)arg11;
+- (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 reason:(id)arg9 admitted:(BOOL)arg10 ableID:(unsigned long long)arg11;
+- (void)logCoreDuetEventForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned int)arg4 sequenceNumber:(unsigned long long)arg5 event:(unsigned int)arg6 value:(id)arg7 cellIn:(unsigned long long)arg8 cellOut:(unsigned long long)arg9 wifiIn:(unsigned long long)arg10 wifiOut:(unsigned long long)arg11;
 - (void)setPLBatteryLifeMonitorLogCoreDuetAdmissionEvent:(int (*)())arg1;
 - (void)setPLBatteryLifeMonitorLogCoreDuetEvent:(int (*)())arg1;
 - (void)setPLBatteryLifeMonitorLogCoreDuetPredictionEvents:(int (*)())arg1;

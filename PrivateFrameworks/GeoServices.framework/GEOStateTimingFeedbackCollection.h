@@ -18,8 +18,8 @@
 }
 
 @property double durationInOldState;
-@property bool hasDurationInOldState;
-@property bool hasSessionID;
+@property BOOL hasDurationInOldState;
+@property BOOL hasSessionID;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property(retain) NSMutableArray * stateTransitions;
 
@@ -31,21 +31,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)durationInOldState;
-- (bool)hasDurationInOldState;
-- (bool)hasSessionID;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDurationInOldState;
+- (BOOL)hasSessionID;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)setDurationInOldState:(double)arg1;
-- (void)setHasDurationInOldState:(bool)arg1;
-- (void)setHasSessionID:(bool)arg1;
+- (void)setHasDurationInOldState:(BOOL)arg1;
+- (void)setHasSessionID:(BOOL)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setStateTransitions:(id)arg1;
-- (id)stateTransitionAtIndex:(unsigned long long)arg1;
+- (id)stateTransitionAtIndex:(unsigned int)arg1;
 - (id)stateTransitions;
-- (unsigned long long)stateTransitionsCount;
+- (unsigned int)stateTransitionsCount;
 - (void)writeTo:(id)arg1;
 
 @end

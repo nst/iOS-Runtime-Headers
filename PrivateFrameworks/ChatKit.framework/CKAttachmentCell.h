@@ -7,13 +7,13 @@
 @interface CKAttachmentCell : UICollectionViewCell {
     UIImageView *_checkmarkView;
     NSObject<CKAttachmentCellDelegate> *_delegate;
+    BOOL _editing;
     CKAttachmentItem *_representedObject;
-    bool_editing;
 }
 
 @property(retain) UIImageView * checkmarkView;
 @property NSObject<CKAttachmentCellDelegate> * delegate;
-@property(getter=isEditing) bool editing;
+@property(getter=isEditing) BOOL editing;
 @property(retain) CKAttachmentItem * representedObject;
 
 - (id)checkmarkView;
@@ -21,15 +21,15 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)delete:(id)arg1;
-- (bool)isEditing;
+- (BOOL)isEditing;
 - (void)layoutSubviews;
 - (void)more:(id)arg1;
 - (id)representedObject;
 - (void)saveAttachment:(id)arg1;
 - (void)setCheckmarkView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditing:(bool)arg1;
+- (void)setEditing:(BOOL)arg1;
 - (void)setRepresentedObject:(id)arg1;
-- (void)setSelected:(bool)arg1;
+- (void)setSelected:(BOOL)arg1;
 
 @end

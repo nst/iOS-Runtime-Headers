@@ -18,16 +18,16 @@
 - (void)clearHideSwitcherTimer;
 - (void)clearSwitcherTimer;
 - (void)dealloc;
-- (bool)handleModifiersChangedEvent:(id)arg1;
+- (BOOL)handleModifiersChangedEvent:(id)arg1;
 - (void)handleRotate:(id)arg1;
-- (bool)handleSwitchCommand:(bool)arg1;
+- (BOOL)handleSwitchCommand:(BOOL)arg1;
 - (void)hideSwitcher;
 - (id)init;
-- (bool)isVisible;
+- (BOOL)isVisible;
 - (id)newMode;
 - (void)setNewMode:(id)arg1;
 - (void)showSwitcher;
-- (bool)switchMode:(id)arg1 withDelay:(bool)arg2;
+- (BOOL)switchMode:(id)arg1 withDelay:(BOOL)arg2;
 - (void)touchHideSwitcherTimer;
 - (void)touchSwitcherTimer;
 

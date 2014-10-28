@@ -7,23 +7,23 @@
 @interface _UIOpenWithAppActivity : UIActivity {
     NSString *_activityType;
     LSApplicationProxy *_appProxy;
+    BOOL _defaultApp;
     UIDocumentInteractionController *_documentInteractionController;
-    bool_defaultApp;
 }
 
-@property(getter=isDefaultApp) bool defaultApp;
+@property(getter=isDefaultApp) BOOL defaultApp;
 
-+ (long long)activityCategory;
++ (int)activityCategory;
 
 - (id)_activityImage;
 - (id)_activitySettingsImage;
 - (id)activityTitle;
 - (id)activityType;
-- (bool)canPerformWithActivityItems:(id)arg1;
+- (BOOL)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)initWithApplicationIdentifier:(id)arg1 documentInteractionController:(id)arg2;
-- (bool)isDefaultApp;
+- (BOOL)isDefaultApp;
 - (void)performActivity;
-- (void)setDefaultApp:(bool)arg1;
+- (void)setDefaultApp:(BOOL)arg1;
 
 @end

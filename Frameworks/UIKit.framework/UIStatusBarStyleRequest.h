@@ -6,33 +6,33 @@
 
 @interface UIStatusBarStyleRequest : NSObject <NSMutableCopying, NSCopying> {
     UIColor *_foregroundColor;
-    long long _legibilityStyle;
+    BOOL _legacy;
+    int _legibilityStyle;
     NSNumber *_overrideHeight;
-    long long _style;
-    bool_legacy;
+    int _style;
 }
 
 @property(retain,readonly) UIColor * foregroundColor;
-@property(getter=isLegacy,readonly) bool legacy;
-@property(readonly) long long legibilityStyle;
+@property(getter=isLegacy,readonly) BOOL legacy;
+@property(readonly) int legibilityStyle;
 @property(retain,readonly) NSNumber * overrideHeight;
-@property(readonly) long long style;
+@property(readonly) int style;
 
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)foregroundColor;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithStyle:(long long)arg1 legacy:(bool)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
-- (id)initWithStyle:(long long)arg1 legacy:(bool)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4;
-- (bool)isDoubleHeight;
-- (bool)isEqual:(id)arg1;
-- (bool)isLegacy;
-- (bool)isTranslucent;
-- (long long)legibilityStyle;
+- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
+- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4;
+- (BOOL)isDoubleHeight;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isLegacy;
+- (BOOL)isTranslucent;
+- (int)legibilityStyle;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)overrideHeight;
-- (long long)style;
+- (int)style;
 
 @end

@@ -12,11 +12,13 @@
 @property(retain) NSString * cloudMasterGUID;
 @property short cloudServerState;
 @property(retain) NSDate * creationDate;
-@property(retain) NSString * filename;
 @property short fullSizeJPEGSource;
 @property(retain) NSDate * importDate;
+@property(retain) NSString * importSessionID;
 @property(retain) NSManagedObject * mediaMetadata;
 @property(retain) NSString * mediaMetadataType;
+@property(retain) NSString * originalFilename;
+@property short originalOrientation;
 @property(retain) NSSet * resources;
 @property(retain) NSString * uniformTypeIdentifier;
 
@@ -27,9 +29,11 @@
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2;
 
+- (void)applyPropertiesFromCPLMasterChange:(id)arg1;
 - (void)awakeFromInsert;
-- (id)cloudResourceForResourceType:(unsigned long long)arg1;
-- (id)cplResourceForResourceType:(unsigned long long)arg1;
+- (id)cloudResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
+- (id)cloudResourcesForResourceType:(unsigned int)arg1;
+- (id)cplResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (id)description;
 
 @end

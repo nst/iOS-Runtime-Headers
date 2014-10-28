@@ -11,34 +11,34 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (bool)_setCFClientFlags:(unsigned long long)arg1 callback:(int (*)())arg2 context:(struct { long long x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (bool)allowsWeakReference;
+- (BOOL)allowsWeakReference;
 - (void)close;
 - (id)delegate;
 - (void)finalize;
-- (bool)getBuffer:(char **)arg1 length:(unsigned long long*)arg2;
-- (bool)hasBytesAvailable;
-- (unsigned long long)hash;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
+- (BOOL)hasBytesAvailable;
+- (unsigned int)hash;
 - (id)initWithData:(id)arg1;
 - (id)initWithFileAtPath:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)open;
 - (id)propertyForKey:(id)arg1;
-- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (oneway void)release;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (bool)retainWeakReference;
+- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (unsigned long long)streamStatus;
+- (unsigned int)streamStatus;
 
 @end

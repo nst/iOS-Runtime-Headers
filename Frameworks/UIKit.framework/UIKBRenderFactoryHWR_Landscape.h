@@ -5,11 +5,11 @@
 @interface UIKBRenderFactoryHWR_Landscape : UIKBRenderFactoryHWR_Portrait {
 }
 
-- (struct CGPoint { double x1; double x2; })deleteGlyphOffset;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })handwritingAreaInsets;
-- (double)handwritingGradientStartLocation;
+- (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })handwritingAreaInsets;
+- (float)handwritingGradientStartLocation;
 - (void)setupLayoutSegments;
-- (double)spaceKeyFontSize;
-- (struct CGPoint { double x1; double x2; })spaceKeyTextOffset;
+- (float)spaceKeyFontSize;
+- (struct CGPoint { float x1; float x2; })spaceKeyTextOffset;
 
 @end

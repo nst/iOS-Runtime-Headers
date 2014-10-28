@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * description;
 @property double duration;
 @property(copy) NSData * fingerprint;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * refId;
 @property(readonly) Class superclass;
 

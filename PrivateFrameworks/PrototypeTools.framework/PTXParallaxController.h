@@ -6,31 +6,31 @@
 
 @interface PTXParallaxController : NSObject <_UISettingsKeyObserver> {
     CADisplayLink *_displayLink;
+    BOOL _generatingUpdates;
     CMMotionManager *_motionManager;
     NSHashTable *_observers;
     PTXParallaxReferenceFrame *_referenceFrame;
     PTXParallaxEngineSettings *_settings;
     double _startUpdatesTimestamp;
     NSMutableSet *_suspendReasons;
-    bool_generatingUpdates;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_defaultsChanged:(id)arg1;
 - (void)_onDisplayLink:(id)arg1;
 - (void)_sendClearOffset;
-- (void)_sendOffset:(struct CGPoint { double x1; double x2; })arg1 lockStatus:(long long)arg2 lockStrength:(double)arg3;
+- (void)_sendOffset:(struct CGPoint { float x1; float x2; })arg1 lockStatus:(int)arg2 lockStrength:(float)arg3;
 - (void)_setUpDisplayLink;
-- (bool)_shouldGenerateUpdates;
+- (BOOL)_shouldGenerateUpdates;
 - (void)_startGeneratingUpdates;
 - (void)_startOrStopGeneratingUpdates;
 - (void)_stopGeneratingUpdates;
-- (bool)_suspended;
+- (BOOL)_suspended;
 - (void)_tearDownDisplayLink;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

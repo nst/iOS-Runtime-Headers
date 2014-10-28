@@ -9,8 +9,8 @@
     NSString *_stringValue;
 }
 
-@property(readonly) bool hasLocale;
-@property(readonly) bool hasStringValue;
+@property(readonly) BOOL hasLocale;
+@property(readonly) BOOL hasStringValue;
 @property(retain) NSString * locale;
 @property(retain) NSString * stringValue;
 
@@ -19,13 +19,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasLocale;
-- (bool)hasStringValue;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasLocale;
+- (BOOL)hasStringValue;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)locale;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;

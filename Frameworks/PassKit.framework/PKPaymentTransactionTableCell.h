@@ -17,12 +17,16 @@
 @property(retain) NSString * primaryString;
 @property(retain) NSString * secondaryString;
 
++ (float)rowHeight;
+
 - (id)amountString;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (void)prepareForReuse;
 - (id)primaryString;
 - (id)secondaryString;
+- (void)setAmountColor:(id)arg1;
 - (void)setAmountString:(id)arg1;
 - (void)setPrimaryString:(id)arg1;
 - (void)setSecondaryString:(id)arg1;

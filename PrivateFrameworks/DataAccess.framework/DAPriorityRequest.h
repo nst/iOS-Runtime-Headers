@@ -3,16 +3,16 @@
  */
 
 @interface DAPriorityRequest : NSObject {
-    long long _UIDataclasses;
-    long long _refreshDataclasses;
+    int _UIDataclasses;
+    int _refreshDataclasses;
 }
 
-@property long long UIDataclasses;
-@property long long refreshDataclasses;
+@property int UIDataclasses;
+@property int refreshDataclasses;
 
-- (long long)UIDataclasses;
-- (long long)refreshDataclasses;
-- (void)setRefreshDataclasses:(long long)arg1;
-- (void)setUIDataclasses:(long long)arg1;
+- (int)UIDataclasses;
+- (int)refreshDataclasses;
+- (void)setRefreshDataclasses:(int)arg1;
+- (void)setUIDataclasses:(int)arg1;
 
 @end

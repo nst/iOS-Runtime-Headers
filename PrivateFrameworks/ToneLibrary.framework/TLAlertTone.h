@@ -20,7 +20,7 @@
 - (id)actualSound;
 - (void)dealloc;
 - (id)filePath;
-- (id)initWithFilePath:(id)arg1 actualSoundID:(unsigned int)arg2 previewSoundID:(unsigned int)arg3;
+- (id)initWithFilePath:(id)arg1 actualSoundID:(unsigned long)arg2 previewSoundID:(unsigned long)arg3;
 - (id)previewSound;
 
 @end

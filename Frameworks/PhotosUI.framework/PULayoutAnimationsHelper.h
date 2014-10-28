@@ -6,11 +6,11 @@
 
 @interface PULayoutAnimationsHelper : NSObject {
     PUSectionedGridLayout *_layout;
-    bool_shouldAnimateTemporaryImageView;
+    BOOL _shouldAnimateTemporaryImageView;
 }
 
 @property(readonly) PUSectionedGridLayout * layout;
-@property bool shouldAnimateTemporaryImageView;
+@property BOOL shouldAnimateTemporaryImageView;
 
 - (void).cxx_destruct;
 - (id)_adjustAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
@@ -24,10 +24,10 @@
 - (id)_createDefaultZoomingOutAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_defaultAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)animationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
-- (void)didFinishLayoutTransitionAnimations:(bool)arg1 transitionIsAppearing:(bool)arg2;
+- (void)didFinishLayoutTransitionAnimations:(BOOL)arg1 transitionIsAppearing:(BOOL)arg2;
 - (id)initWithSectionedGridLayout:(id)arg1;
 - (id)layout;
-- (void)setShouldAnimateTemporaryImageView:(bool)arg1;
-- (bool)shouldAnimateTemporaryImageView;
+- (void)setShouldAnimateTemporaryImageView:(BOOL)arg1;
+- (BOOL)shouldAnimateTemporaryImageView;
 
 @end

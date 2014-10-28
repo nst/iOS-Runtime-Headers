@@ -5,17 +5,17 @@
 @class NKIssue, NSData, NSDictionary, NSString, NSURLConnection, NSURLRequest;
 
 @interface NKAssetDownload : NSObject {
+    BOOL _attemptedConnection;
     NSURLConnection *_connection;
     NSString *_identifier;
+    BOOL _isDecodingValid;
     NKIssue *_issue;
     NSURLRequest *_request;
     NSData *_userInfoData;
-    bool_attemptedConnection;
-    bool_isDecodingValid;
 }
 
 @property(copy) NSURLRequest * URLRequest;
-@property bool attemptedConnection;
+@property BOOL attemptedConnection;
 @property(retain) NSURLConnection * connection;
 @property(copy) NSString * identifier;
 @property(readonly) NKIssue * issue;
@@ -23,16 +23,16 @@
 @property(retain) NSData * userInfoData;
 
 - (id)URLRequest;
-- (bool)_attemptedConnection;
+- (BOOL)_attemptedConnection;
 - (void)_cancel;
 - (id)_connection;
 - (void)_connectionBackgroundDownloadPostCompleted:(id)arg1;
 - (void)_connectionBackgroundDownloadPreCompleted:(id)arg1;
 - (id)_initWithURLRequest:(id)arg1 issue:(id)arg2;
-- (bool)_isDecodingValid;
+- (BOOL)_isDecodingValid;
 - (void)_issueWasRemovedFromLibrary;
 - (void)_setIssue:(id)arg1;
-- (bool)attemptedConnection;
+- (BOOL)attemptedConnection;
 - (id)connection;
 - (void)dealloc;
 - (id)description;
@@ -42,7 +42,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)issue;
-- (void)setAttemptedConnection:(bool)arg1;
+- (void)setAttemptedConnection:(BOOL)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIssue:(id)arg1;

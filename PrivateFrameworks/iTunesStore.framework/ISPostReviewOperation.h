@@ -5,24 +5,24 @@
 @class ISReview, NSString;
 
 @interface ISPostReviewOperation : ISOperation <ISStoreURLOperationDelegate> {
+    BOOL _backgroundReview;
     ISReview *_review;
-    bool_backgroundReview;
 }
 
-@property(getter=isBackgroundReview) bool backgroundReview;
+@property(getter=isBackgroundReview) BOOL backgroundReview;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) ISReview * review;
 @property(readonly) Class superclass;
 
 - (id)_httpBody;
 - (void)dealloc;
-- (bool)isBackgroundReview;
+- (BOOL)isBackgroundReview;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)review;
 - (void)run;
-- (void)setBackgroundReview:(bool)arg1;
+- (void)setBackgroundReview:(BOOL)arg1;
 - (void)setReview:(id)arg1;
 
 @end

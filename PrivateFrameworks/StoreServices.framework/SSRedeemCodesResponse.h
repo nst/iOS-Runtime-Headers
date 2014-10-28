@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSArray * failedCodes;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy,readonly) NSArray * redeemedCodes;
 @property(readonly) Class superclass;
 

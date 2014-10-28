@@ -10,14 +10,14 @@
 }
 
 @property float factor;
-@property long long lowColorBits;
+@property int lowColorBits;
 
 - (void)dealloc;
 - (float)factor;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2;
-- (long long)lowColorBits;
+- (int)lowColorBits;
 - (void)setFactor:(float)arg1;
-- (void)setLowColorBits:(long long)arg1;
+- (void)setLowColorBits:(int)arg1;
 - (void)updateShaderEffectsStates;
 
 @end

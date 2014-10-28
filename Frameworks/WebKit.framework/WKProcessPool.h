@@ -14,7 +14,7 @@
         void *m_ptr; 
     struct ObjectStorage<WebKit::WebContext> { 
         struct type { 
-            unsigned char __lx[768]; 
+            unsigned char __lx[528]; 
         } data; 
     struct WeakObjCPtr<id<_WKDownloadDelegate> > { 
         id m_weakReference; 
@@ -32,7 +32,7 @@
 @property(readonly) WKGeolocationProviderIOS * _geolocationProvider;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)_websiteDataURLForContainerWithURL:(id)arg1 bundleIdentifierIfNotInContainer:(id)arg2;
@@ -47,7 +47,7 @@
 - (id)_initWithConfiguration:(id)arg1;
 - (id)_objectForBundleParameter:(id)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
-- (void)_setCookieAcceptPolicy:(unsigned long long)arg1;
+- (void)_setCookieAcceptPolicy:(unsigned int)arg1;
 - (void)_setDownloadDelegate:(id)arg1;
 - (void)_setObject:(id)arg1 forBundleParameter:(id)arg2;
 - (void)dealloc;

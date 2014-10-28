@@ -11,18 +11,18 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(retain) UIWindow * window;
 
 - (id)_currentWebAppController;
-- (bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationOpenURL:(id)arg1;
-- (bool)applicationSuspendWithSettings:(id)arg1;
+- (BOOL)applicationSuspendWithSettings:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)bringToFrontWebAppControllerForWebAppURL:(id)arg1;
-- (id)nameOfDefaultImageToUpdateAtSuspension:(long long)arg1;
+- (id)nameOfDefaultImageToUpdateAtSuspension:(int)arg1;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
 
 @end

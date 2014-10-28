@@ -10,7 +10,7 @@
 
 @property _UIRemoteViewController * remoteViewController;
 
-+ (bool)_requiresWindowTouches;
++ (BOOL)_requiresWindowTouches;
 
 - (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;

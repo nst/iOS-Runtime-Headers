@@ -6,28 +6,31 @@
    See Warning(s) below.
  */
 
-@class ATAssetLinkController, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSPredicate, NSString;
+@class ATAssetLinkController, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSPredicate, NSString;
 
 @interface ATAssetSessionTask : ATSessionTask <ATAssetLinkControllerObserver> {
     ATAssetLinkController *_assetLinkController;
+    BOOL _cancelAtStart;
     NSString *_dataClass;
-    unsigned long long _failedAssetsCount;
+    unsigned int _failedAssetsCount;
     NSPredicate *_filterPredicate;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableOrderedSet *_remainingAssets;
+    double _retryInterval;
+    NSObject<OS_dispatch_source> *_retryTimer;
+    BOOL _retryUntilFinished;
     id _shouldRetryAssetBlock;
-    bool_cancelAtStart;
-    bool_retryUntilFinished;
+    BOOL _waitingForRetry;
 }
 
 @property(retain) ATAssetLinkController * assetLinkController;
 @property(copy,readonly) NSString * dataClass;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long failedAssetsCount;
+@property(readonly) unsigned int failedAssetsCount;
 @property(copy) NSPredicate * filterPredicate;
-@property(readonly) unsigned long long hash;
-@property bool retryUntilFinished;
+@property(readonly) unsigned int hash;
+@property BOOL retryUntilFinished;
 @property(copy) id shouldRetryAssetBlock;
 @property(readonly) Class superclass;
 
@@ -40,17 +43,19 @@
 - (void)cancelAllAssets;
 - (id)dataClass;
 - (id)debugDescription;
-- (unsigned long long)failedAssetsCount;
+- (unsigned int)failedAssetsCount;
 - (id)filterPredicate;
 - (id)initWithDataClass:(id)arg1;
 - (id)remainingAssets;
-- (bool)retryUntilFinished;
+- (void)resume;
+- (BOOL)retryUntilFinished;
 - (id)sessionGroupingKey;
 - (void)setAssetLinkController:(id)arg1;
 - (void)setFilterPredicate:(id)arg1;
-- (void)setRetryUntilFinished:(bool)arg1;
+- (void)setRetryUntilFinished:(BOOL)arg1;
 - (void)setShouldRetryAssetBlock:(id)arg1;
 - (id)shouldRetryAssetBlock;
 - (void)start;
+- (void)suspend;
 
 @end

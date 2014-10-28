@@ -7,12 +7,12 @@
 @interface PLManagedObject : NSManagedObject {
 }
 
-@property(readonly) bool isRegisteredWithUserInterfaceContext;
+@property(readonly) BOOL isRegisteredWithUserInterfaceContext;
 @property(retain,readonly) PLPhotoLibrary * photoLibrary;
 @property(copy,readonly) NSString * pl_shortDescription;
 @property(copy,readonly) NSString * shortObjectIDURI;
 
-- (bool)isRegisteredWithUserInterfaceContext;
+- (BOOL)isRegisteredWithUserInterfaceContext;
 - (id)photoLibrary;
 - (id)pl_shortDescription;
 - (id)shortObjectIDURI;

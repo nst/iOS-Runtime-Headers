@@ -8,16 +8,16 @@
     NSURL *_URL;
     MecabraCoreDataController *_databaseController;
     double _lastUpdateTime;
+    BOOL _sqliteDatabaseMigrated;
     NSString *_type;
     NSArray *_uniqueKeys;
-    bool_sqliteDatabaseMigrated;
 }
 
 @property(copy) NSURL * URL;
 @property(readonly) NSArray * allEntries;
 @property(retain) MecabraCoreDataController * databaseController;
 @property double lastUpdateTime;
-@property bool sqliteDatabaseMigrated;
+@property BOOL sqliteDatabaseMigrated;
 @property(copy) NSString * type;
 @property(retain) NSArray * uniqueKeys;
 
@@ -32,17 +32,17 @@
 - (id)entriesToMerge;
 - (id)initWithURL:(id)arg1 type:(id)arg2 uniqueKeys:(id)arg3;
 - (double)lastUpdateTime;
-- (void)removeDuplicatesForEntry:(id)arg1 sortDescriptors:(id)arg2 restrictToNumberOfElements:(unsigned long long)arg3 identifierKey:(id)arg4 uniqueKeys:(id)arg5;
+- (void)removeDuplicatesForEntry:(id)arg1 sortDescriptors:(id)arg2 restrictToNumberOfElements:(unsigned int)arg3 identifierKey:(id)arg4 uniqueKeys:(id)arg5;
 - (void)save;
 - (void)setDatabaseController:(id)arg1;
 - (void)setDatabaseProperty:(id)arg1 forKey:(id)arg2;
 - (void)setLastUpdateTime:(double)arg1;
-- (void)setSqliteDatabaseMigrated:(bool)arg1;
+- (void)setSqliteDatabaseMigrated:(BOOL)arg1;
 - (void)setType:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUniqueKeys:(id)arg1;
 - (void)setValuesForEntry:(id)arg1;
-- (bool)sqliteDatabaseMigrated;
+- (BOOL)sqliteDatabaseMigrated;
 - (id)type;
 - (id)uniqueKeys;
 

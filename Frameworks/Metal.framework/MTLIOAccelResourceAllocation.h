@@ -5,21 +5,21 @@
 @class NSString;
 
 @interface MTLIOAccelResourceAllocation : MTLResourceAllocationInfo {
-    unsigned long long _dirtySize;
+    unsigned int _dirtySize;
     NSString *_memoryPool;
-    unsigned long long _residentSize;
+    BOOL _purgeable;
+    unsigned int _residentSize;
     unsigned long long _uniqueIdentifier;
-    unsigned long long _virtualSize;
-    bool_purgeable;
+    unsigned int _virtualSize;
 }
 
 - (void)dealloc;
-- (unsigned long long)dirtySize;
-- (id)initWithPool:(id)arg1 virtualSize:(unsigned long long)arg2 residentSize:(unsigned long long)arg3 dirtySize:(unsigned long long)arg4 purgeable:(bool)arg5 uniqueID:(unsigned long long)arg6;
+- (unsigned int)dirtySize;
+- (id)initWithPool:(id)arg1 virtualSize:(unsigned int)arg2 residentSize:(unsigned int)arg3 dirtySize:(unsigned int)arg4 purgeable:(BOOL)arg5 uniqueID:(unsigned long long)arg6;
 - (id)memoryPool;
-- (bool)purgeable;
-- (unsigned long long)residentSize;
+- (BOOL)purgeable;
+- (unsigned int)residentSize;
 - (unsigned long long)uniqueIdentifier;
-- (unsigned long long)virtualSize;
+- (unsigned int)virtualSize;
 
 @end

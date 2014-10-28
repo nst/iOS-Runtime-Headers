@@ -5,20 +5,20 @@
 @class NSDictionary, NSMutableDictionary, NSString;
 
 @interface SSMetricsEventLocation : NSObject {
-    long long _position;
+    int _position;
     NSString *_type;
     NSMutableDictionary *_values;
 }
 
-@property long long locationPosition;
+@property int locationPosition;
 @property(copy) NSString * locationType;
 @property(readonly) NSDictionary * reportingDictionary;
 
 - (void).cxx_destruct;
-- (long long)locationPosition;
+- (int)locationPosition;
 - (id)locationType;
 - (id)reportingDictionary;
-- (void)setLocationPosition:(long long)arg1;
+- (void)setLocationPosition:(int)arg1;
 - (void)setLocationType:(id)arg1;
 - (void)setValue:(id)arg1 forLocationKey:(id)arg2;
 - (id)valueForLocationKey:(id)arg1;

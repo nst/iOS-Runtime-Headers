@@ -16,7 +16,7 @@
 @property(copy) NSString * sanitizedLatitude;
 @property(copy) NSString * sanitizedLongitude;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

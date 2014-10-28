@@ -7,17 +7,17 @@
 @interface GEOResourceInfo : NSObject {
     NSString *_checksum;
     NSString *_name;
-    long long _type;
+    int _type;
 }
 
 @property(readonly) NSString * checksum;
 @property(readonly) NSString * name;
-@property(readonly) long long type;
+@property(readonly) int type;
 
 - (id)checksum;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 type:(long long)arg2 checksum:(id)arg3;
+- (id)initWithName:(id)arg1 type:(int)arg2 checksum:(id)arg3;
 - (id)name;
-- (long long)type;
+- (int)type;
 
 @end

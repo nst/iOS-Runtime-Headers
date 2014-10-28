@@ -17,7 +17,7 @@
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)init;
-- (bool)isKindOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (id)notReadyError;
 - (id)ports;
 - (id)session;

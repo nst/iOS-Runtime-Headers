@@ -22,7 +22,7 @@
 - (void)beginSearch:(id)arg1 domains:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (bool)nextSearchResults:(id*)arg1;
+- (BOOL)nextSearchResults:(id*)arg1;
 - (void)removeIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1 forRecordDictionary:(id)arg2;
 - (void)setTopHit:(id)arg1 domain:(unsigned int)arg2 queryString:(id)arg3;

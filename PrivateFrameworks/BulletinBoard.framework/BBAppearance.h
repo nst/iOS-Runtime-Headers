@@ -7,7 +7,7 @@
 @interface BBAppearance : NSObject <BBUniquableObject, NSSecureCoding, NSCopying> {
     BBColor *_color;
     BBImage *_image;
-    long long _style;
+    int _style;
     NSString *_title;
     BBColor *_titleColor;
     NSString *_viewClassName;
@@ -16,32 +16,32 @@
 @property(copy) BBColor * color;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) BBImage * image;
-@property long long style;
+@property int style;
 @property(readonly) Class superclass;
 @property(copy) NSString * title;
 @property(copy) BBColor * titleColor;
 @property(copy) NSString * viewClassName;
 
 + (id)appearanceWithTitle:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setStyle:(long long)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleColor:(id)arg1;
 - (void)setViewClassName:(id)arg1;
-- (long long)style;
+- (int)style;
 - (id)title;
 - (id)titleColor;
 - (id)uniqueIdentifier;

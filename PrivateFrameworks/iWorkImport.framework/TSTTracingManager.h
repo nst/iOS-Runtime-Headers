@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setup;
 - (void)teardown;
 

@@ -6,7 +6,7 @@
 
 @interface NSAttributeDictionaryEnumerator : NSEnumerator {
     NSAttributeDictionary *dictionary;
-    unsigned long long nextElement;
+    unsigned int nextElement;
 }
 
 - (void)dealloc;

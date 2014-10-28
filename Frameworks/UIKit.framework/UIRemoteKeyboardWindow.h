@@ -5,20 +5,20 @@
 @class UIView;
 
 @interface UIRemoteKeyboardWindow : UITextEffectsWindow {
+    BOOL _isViewServiceKeyboard;
     UIView *_viewServiceHostView;
-    bool_isViewServiceKeyboard;
 }
 
 @property UIView * viewServiceHostView;
 
-+ (id)remoteKeyboardWindowForScreen:(id)arg1 create:(bool)arg2 forViewService:(bool)arg3;
++ (id)remoteKeyboardWindowForScreen:(id)arg1 create:(BOOL)arg2 forViewService:(BOOL)arg3;
 
-- (bool)_alwaysGetsContexts;
+- (BOOL)_alwaysGetsContexts;
 - (id)_basicInitWithScreen:(id)arg1 options:(id)arg2;
 - (void)_didRemoveSubview:(id)arg1;
-- (bool)_isHostedInAnotherProcess;
-- (bool)_isWindowServerHostingManaged;
-- (bool)_matchingOptions:(id)arg1;
+- (BOOL)_isHostedInAnotherProcess;
+- (BOOL)_isWindowServerHostingManaged;
+- (BOOL)_matchingOptions:(id)arg1;
 - (void)invalidate;
 - (void)setViewServiceHostView:(id)arg1;
 - (id)viewServiceHostView;

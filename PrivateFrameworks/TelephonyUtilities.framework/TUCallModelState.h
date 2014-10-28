@@ -3,32 +3,32 @@
  */
 
 @interface TUCallModelState : NSObject <NSSecureCoding> {
+    BOOL _addCallAllowed;
     int _ambiguityState;
-    bool_addCallAllowed;
-    bool_ambiguous;
-    bool_endAndAnswerAllowed;
-    bool_hardPauseAvailable;
-    bool_holdAllowed;
-    bool_holdAndAnswerAllowed;
-    bool_mergeable;
-    bool_sendToVoicemailAllowed;
-    bool_swappable;
-    bool_takingCallsPrivateAllowed;
+    BOOL _ambiguous;
+    BOOL _endAndAnswerAllowed;
+    BOOL _hardPauseAvailable;
+    BOOL _holdAllowed;
+    BOOL _holdAndAnswerAllowed;
+    BOOL _mergeable;
+    BOOL _sendToVoicemailAllowed;
+    BOOL _swappable;
+    BOOL _takingCallsPrivateAllowed;
 }
 
-@property(getter=isAddCallAllowed) bool addCallAllowed;
+@property(getter=isAddCallAllowed) BOOL addCallAllowed;
 @property int ambiguityState;
-@property(getter=isAmbiguous,readonly) bool ambiguous;
-@property(getter=isEndAndAnswerAllowed) bool endAndAnswerAllowed;
-@property(getter=isHardPauseAvailable) bool hardPauseAvailable;
-@property(getter=isHoldAllowed) bool holdAllowed;
-@property(getter=isHoldAndAnswerAllowed) bool holdAndAnswerAllowed;
-@property(getter=isMergeable) bool mergeable;
-@property(getter=isSendToVoicemailAllowed) bool sendToVoicemailAllowed;
-@property(getter=isSwappable) bool swappable;
-@property(getter=isTakingCallsPrivateAllowed) bool takingCallsPrivateAllowed;
+@property(getter=isAmbiguous,readonly) BOOL ambiguous;
+@property(getter=isEndAndAnswerAllowed) BOOL endAndAnswerAllowed;
+@property(getter=isHardPauseAvailable) BOOL hardPauseAvailable;
+@property(getter=isHoldAllowed) BOOL holdAllowed;
+@property(getter=isHoldAndAnswerAllowed) BOOL holdAndAnswerAllowed;
+@property(getter=isMergeable) BOOL mergeable;
+@property(getter=isSendToVoicemailAllowed) BOOL sendToVoicemailAllowed;
+@property(getter=isSwappable) BOOL swappable;
+@property(getter=isTakingCallsPrivateAllowed) BOOL takingCallsPrivateAllowed;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (int)ambiguityState;
 - (id)description;
@@ -36,27 +36,27 @@
 - (void)handlePossibleStateChange;
 - (id)initWithAllPropertiesAllowed;
 - (id)initWithCoder:(id)arg1;
-- (bool)isAddCallAllowed;
-- (bool)isAmbiguous;
-- (bool)isEndAndAnswerAllowed;
-- (bool)isEqual:(id)arg1;
-- (bool)isHardPauseAvailable;
-- (bool)isHoldAllowed;
-- (bool)isHoldAndAnswerAllowed;
-- (bool)isMergeable;
-- (bool)isSendToVoicemailAllowed;
-- (bool)isSwappable;
-- (bool)isTakingCallsPrivateAllowed;
-- (void)setAddCallAllowed:(bool)arg1;
+- (BOOL)isAddCallAllowed;
+- (BOOL)isAmbiguous;
+- (BOOL)isEndAndAnswerAllowed;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isHardPauseAvailable;
+- (BOOL)isHoldAllowed;
+- (BOOL)isHoldAndAnswerAllowed;
+- (BOOL)isMergeable;
+- (BOOL)isSendToVoicemailAllowed;
+- (BOOL)isSwappable;
+- (BOOL)isTakingCallsPrivateAllowed;
+- (void)setAddCallAllowed:(BOOL)arg1;
 - (void)setAmbiguityState:(int)arg1;
-- (void)setEndAndAnswerAllowed:(bool)arg1;
-- (void)setHardPauseAvailable:(bool)arg1;
-- (void)setHoldAllowed:(bool)arg1;
-- (void)setHoldAndAnswerAllowed:(bool)arg1;
-- (void)setMergeable:(bool)arg1;
-- (void)setSendToVoicemailAllowed:(bool)arg1;
-- (void)setSwappable:(bool)arg1;
-- (void)setTakingCallsPrivateAllowed:(bool)arg1;
-- (bool)updateInternalState;
+- (void)setEndAndAnswerAllowed:(BOOL)arg1;
+- (void)setHardPauseAvailable:(BOOL)arg1;
+- (void)setHoldAllowed:(BOOL)arg1;
+- (void)setHoldAndAnswerAllowed:(BOOL)arg1;
+- (void)setMergeable:(BOOL)arg1;
+- (void)setSendToVoicemailAllowed:(BOOL)arg1;
+- (void)setSwappable:(BOOL)arg1;
+- (void)setTakingCallsPrivateAllowed:(BOOL)arg1;
+- (BOOL)updateInternalState;
 
 @end

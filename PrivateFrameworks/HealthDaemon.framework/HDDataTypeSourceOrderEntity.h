@@ -10,8 +10,8 @@
 + (id)databaseTable;
 + (void)load;
 + (id)orderedSourceIDsForType:(id)arg1 healthDaemon:(id)arg2;
-+ (long long)protectionClass;
-+ (bool)removeSourceID:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
-+ (bool)saveOrderedSourceIDs:(id)arg1 type:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (int)protectionClass;
++ (BOOL)removeSourceID:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
++ (BOOL)saveOrderedSourceIDs:(id)arg1 type:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 
 @end

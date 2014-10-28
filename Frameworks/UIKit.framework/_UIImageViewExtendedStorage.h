@@ -7,20 +7,20 @@
 @interface _UIImageViewExtendedStorage : NSObject {
     double _animationDuration;
     NSArray *_animationImages;
-    long long _animationRepeatCount;
-    long long _defaultRenderingMode;
+    int _animationRepeatCount;
+    int _defaultRenderingMode;
     UIImage *_displayedHighlightedImage;
     UIImage *_displayedImage;
     int _drawMode;
+    BOOL _highlighted;
     NSArray *_highlightedAnimationImages;
     UIImage *_highlightedImage;
     UIImage *_image;
-    unsigned long long _templateImageRenderingEffects;
-    bool_highlighted;
-    bool_masksTemplateImages;
+    BOOL _masksTemplateImages;
+    unsigned int _templateImageRenderingEffects;
 }
 
-- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 
 @end

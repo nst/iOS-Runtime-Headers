@@ -6,7 +6,7 @@
 
 @interface VSAssetUpdateListener : NSObject {
     PCPersistentTimer *_assetCleanupTimer;
-    bool_isListening;
+    BOOL _isListening;
 }
 
 + (id)sharedListener;
@@ -19,7 +19,7 @@
 - (void)_scheduleNextCleanupForDate:(id)arg1;
 - (void)_spokenLanguageChanged:(id)arg1;
 - (void)_updateNextCleanupDate;
-- (bool)assetDownloadStatus:(id)arg1 progress:(float*)arg2 size:(long long*)arg3;
+- (BOOL)assetDownloadStatus:(id)arg1 progress:(float*)arg2 size:(long long*)arg3;
 - (int)assetStatusForLanguage:(id)arg1;
 - (void)dealloc;
 - (void)downloadAssetForLanguage:(id)arg1;

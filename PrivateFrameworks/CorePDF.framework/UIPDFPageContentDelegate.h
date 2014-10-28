@@ -7,56 +7,56 @@
 @interface UIPDFPageContentDelegate : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     } _bounds;
     } _box;
     UIPDFDocument *_document;
     struct CGColor { } *_highlightColor;
+    BOOL _isCancelled;
     int _lock;
     CALayer *_owner;
-    unsigned long long _pageIndex;
-    unsigned long long _pageRotation;
-    unsigned long long _threadCount;
+    unsigned int _pageIndex;
+    unsigned int _pageRotation;
+    unsigned int _threadCount;
     } _transform;
     UIPDFPageView *_view;
     struct CGColor { } *_white;
-    bool_isCancelled;
 }
 
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } box;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } box;
 @property(retain) UIPDFDocument * document;
 @property struct CGColor { }* highlightColor;
-@property bool isCancelled;
+@property BOOL isCancelled;
 @property CALayer * owner;
-@property unsigned long long pageIndex;
-@property unsigned long long pageRotation;
-@property(readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
+@property unsigned int pageIndex;
+@property unsigned int pageRotation;
+@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property UIPDFPageView * view;
 
-- (void)addRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toPath:(struct CGPath { }*)arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg3 view:(id)arg4 owner:(id)arg5;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })box;
+- (void)addRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toPath:(struct CGPath { }*)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 view:(id)arg4 owner:(id)arg5;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
 - (void)computeTransform;
 - (void)dealloc;
 - (id)document;
@@ -65,20 +65,20 @@
 - (void)drawSelectionLayerBlockMode:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (struct CGColor { }*)highlightColor;
 - (id)init;
-- (bool)isCancelled;
+- (BOOL)isCancelled;
 - (id)owner;
-- (bool)pageHasSelection;
-- (unsigned long long)pageIndex;
-- (unsigned long long)pageRotation;
-- (void)setBox:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)pageHasSelection;
+- (unsigned int)pageIndex;
+- (unsigned int)pageRotation;
+- (void)setBox:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDocument:(id)arg1;
 - (void)setHighlightColor:(struct CGColor { }*)arg1;
-- (void)setIsCancelled:(bool)arg1;
+- (void)setIsCancelled:(BOOL)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setPageIndex:(unsigned long long)arg1;
-- (void)setPageRotation:(unsigned long long)arg1;
+- (void)setPageIndex:(unsigned int)arg1;
+- (void)setPageRotation:(unsigned int)arg1;
 - (void)setView:(id)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (id)view;
 
 @end

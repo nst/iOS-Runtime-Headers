@@ -9,16 +9,16 @@
     PKImage *_footerImage;
     NSArray *_frontFieldBuckets;
     NSString *_logoText;
-    long long _transitType;
+    int _transitType;
 }
 
 @property(copy) NSArray * backFieldBuckets;
 @property(retain) PKImage * footerImage;
 @property(copy) NSArray * frontFieldBuckets;
 @property(copy) NSString * logoText;
-@property long long transitType;
+@property int transitType;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)backFieldBuckets;
 - (void)dealloc;
@@ -33,7 +33,7 @@
 - (void)setFooterImage:(id)arg1;
 - (void)setFrontFieldBuckets:(id)arg1;
 - (void)setLogoText:(id)arg1;
-- (void)setTransitType:(long long)arg1;
-- (long long)transitType;
+- (void)setTransitType:(int)arg1;
+- (int)transitType;
 
 @end

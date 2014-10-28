@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithPropertyValues:(id)arg1;
-- (bool)isHidden;
+- (BOOL)isHidden;
 - (long long)pid;
 - (id)propertyValues;
 - (long long)storeID;

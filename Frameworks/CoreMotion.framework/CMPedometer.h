@@ -10,15 +10,15 @@
 
 @property(readonly) CMPedometerProxy * pedometerProxy;
 
-+ (bool)isDistanceAvailable;
-+ (bool)isFloorCountingAvailable;
-+ (bool)isStepCountingAvailable;
++ (BOOL)isDistanceAvailable;
++ (BOOL)isFloorCountingAvailable;
++ (BOOL)isStepCountingAvailable;
 
 - (void)dealloc;
 - (id)init;
 - (id)pedometerProxy;
 - (void)queryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 withHandler:(id)arg3;
-- (void)queryPedometerDataSinceRecord:(long long)arg1 withHandler:(id)arg2;
+- (void)queryPedometerDataSinceRecord:(int)arg1 withHandler:(id)arg2;
 - (void)startPedometerUpdatesFromDate:(id)arg1 withHandler:(id)arg2;
 - (void)stopPedometerUpdates;
 

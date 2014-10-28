@@ -9,12 +9,12 @@
     UIButton *_button;
     UILabel *_headerLabel;
     UIImageView *_imageView;
-    long long _spacingStyle;
+    int _spacingStyle;
 }
 
 @property(readonly) UIButton * button;
 @property(retain) UIImage * image;
-@property long long spacingStyle;
+@property int spacingStyle;
 
 - (void).cxx_destruct;
 - (id)button;
@@ -22,8 +22,8 @@
 - (id)initWithClientContext:(id)arg1;
 - (void)layoutSubviews;
 - (void)setImage:(id)arg1;
-- (void)setSpacingStyle:(long long)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (long long)spacingStyle;
+- (void)setSpacingStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (int)spacingStyle;
 
 @end

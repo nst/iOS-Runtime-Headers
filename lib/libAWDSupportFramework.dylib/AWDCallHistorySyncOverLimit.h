@@ -11,8 +11,8 @@
     unsigned int _transactionLogCount;
 }
 
-@property bool hasTimestamp;
-@property bool hasTransactionLogCount;
+@property BOOL hasTimestamp;
+@property BOOL hasTransactionLogCount;
 @property unsigned long long timestamp;
 @property unsigned int transactionLogCount;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
-- (bool)hasTransactionLogCount;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTimestamp;
+- (BOOL)hasTransactionLogCount;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasTimestamp:(bool)arg1;
-- (void)setHasTransactionLogCount:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTransactionLogCount:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransactionLogCount:(unsigned int)arg1;
 - (unsigned long long)timestamp;

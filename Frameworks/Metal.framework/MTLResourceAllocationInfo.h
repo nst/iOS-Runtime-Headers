@@ -5,32 +5,32 @@
 @class NSString;
 
 @interface MTLResourceAllocationInfo : NSObject <NSCopying, NSCoding> {
-    unsigned long long _dirtySize;
+    unsigned int _dirtySize;
     NSString *_memoryPool;
-    unsigned long long _residentSize;
+    BOOL _pageoffRequired;
+    BOOL _purgeable;
+    unsigned int _residentSize;
     unsigned long long _uniqueIdentifier;
-    unsigned long long _virtualSize;
-    bool_pageoffRequired;
-    bool_purgeable;
+    unsigned int _virtualSize;
 }
 
-@property(readonly) unsigned long long dirtySize;
+@property(readonly) unsigned int dirtySize;
 @property(readonly) NSString * memoryPool;
-@property(readonly) bool pageoffRequired;
-@property(readonly) bool purgeable;
-@property(readonly) unsigned long long residentSize;
+@property(readonly) BOOL pageoffRequired;
+@property(readonly) BOOL purgeable;
+@property(readonly) unsigned int residentSize;
 @property(readonly) unsigned long long uniqueIdentifier;
-@property(readonly) unsigned long long virtualSize;
+@property(readonly) unsigned int virtualSize;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)dirtySize;
+- (unsigned int)dirtySize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)memoryPool;
-- (bool)pageoffRequired;
-- (bool)purgeable;
-- (unsigned long long)residentSize;
+- (BOOL)pageoffRequired;
+- (BOOL)purgeable;
+- (unsigned int)residentSize;
 - (unsigned long long)uniqueIdentifier;
-- (unsigned long long)virtualSize;
+- (unsigned int)virtualSize;
 
 @end

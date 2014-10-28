@@ -14,9 +14,9 @@
 }
 
 @property unsigned int distance;
-@property bool hasDistance;
-@property bool hasTime;
-@property bool hasTransportType;
+@property BOOL hasDistance;
+@property BOOL hasTime;
+@property BOOL hasTransportType;
 @property unsigned int time;
 @property int transportType;
 
@@ -28,17 +28,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)distance;
-- (bool)hasDistance;
-- (bool)hasTime;
-- (bool)hasTransportType;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDistance;
+- (BOOL)hasTime;
+- (BOOL)hasTransportType;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDistance:(unsigned int)arg1;
-- (void)setHasDistance:(bool)arg1;
-- (void)setHasTime:(bool)arg1;
-- (void)setHasTransportType:(bool)arg1;
+- (void)setHasDistance:(BOOL)arg1;
+- (void)setHasTime:(BOOL)arg1;
+- (void)setHasTransportType:(BOOL)arg1;
 - (void)setTime:(unsigned int)arg1;
 - (void)setTransportType:(int)arg1;
 - (unsigned int)time;

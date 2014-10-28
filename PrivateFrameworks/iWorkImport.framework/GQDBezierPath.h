@@ -10,17 +10,17 @@
 @class NSString;
 
 @interface GQDBezierPath : GQDPath <GQDNameMappable> {
-    boolmHFlip;
-    boolmHasHFlip;
-    boolmHasVFlip;
-    boolmVFlip;
+    BOOL mHFlip;
+    BOOL mHasHFlip;
+    BOOL mHasVFlip;
     struct CGPath { } *mPath;
     char *mPathStr;
+    BOOL mVFlip;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
@@ -28,14 +28,14 @@
 
 - (struct CGPath { }*)createBezierPath;
 - (void)dealloc;
-- (bool)hasHorizontalFlip;
-- (bool)hasVerticalFlip;
-- (bool)horizontalFlip;
+- (BOOL)hasHorizontalFlip;
+- (BOOL)hasVerticalFlip;
+- (BOOL)horizontalFlip;
 - (id)initWithPathString:(const char *)arg1;
-- (bool)isRectangular;
+- (BOOL)isRectangular;
 - (struct CGPath { }*)path;
 - (char *)pathStr;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (bool)verticalFlip;
+- (BOOL)verticalFlip;
 
 @end

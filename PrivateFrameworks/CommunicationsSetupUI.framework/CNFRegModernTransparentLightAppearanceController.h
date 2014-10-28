@@ -5,13 +5,13 @@
 @interface CNFRegModernTransparentLightAppearanceController : CNFRegModernAppearanceController {
 }
 
-- (long long)modalPresentationStyle;
-- (long long)navigationBarActivityIndicatorStyle;
+- (int)modalPresentationStyle;
+- (int)navigationBarActivityIndicatorStyle;
 - (id)navigationBarTintColor;
 - (id)splashEntryFieldLabelTextColor;
 - (id)splashEntryFieldTextColor;
 - (id)splashEntryPlaceholderTextColor;
-- (bool)splashScreenShowsIcon;
+- (BOOL)splashScreenShowsIcon;
 - (id)splashSignInFieldsBackgroundColor;
 - (id)splashSignInFieldsBorderColor;
 - (id)tableBackgroundColor;

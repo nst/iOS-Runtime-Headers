@@ -6,7 +6,7 @@
 }
 
 - (void)animateTransition:(id)arg1;
-- (long long)animatorType;
+- (int)animatorType;
 - (double)minimumDurationForViewAnimations;
 
 @end

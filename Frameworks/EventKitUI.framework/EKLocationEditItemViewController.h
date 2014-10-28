@@ -6,9 +6,11 @@
 
 @interface EKLocationEditItemViewController : EKEditItemViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, EKUILocationSearchModelDelegate> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     EKCalendarItem *_calendarItem;
+    BOOL _needsSave;
+    BOOL _onlyDisplayMapLocations;
     _UINavigationControllerPalette *_palette;
     } _preferredContentSize;
     UISearchBar *_searchBar;
@@ -16,23 +18,21 @@
     EKUIConferenceRoom *_selectedConferenceRoom;
     EKStructuredLocation *_selectedLocation;
     EKStructuredLocation *_structuredLocation;
+    BOOL _supportsStructuredLocations;
     UITableView *_tableView;
-    bool_needsSave;
-    bool_onlyDisplayMapLocations;
-    bool_supportsStructuredLocations;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool needsSave;
-@property bool onlyDisplayMapLocations;
+@property(readonly) unsigned int hash;
+@property BOOL needsSave;
+@property BOOL onlyDisplayMapLocations;
 @property(retain) EKUIConferenceRoom * selectedConferenceRoom;
 @property(retain) EKStructuredLocation * selectedLocation;
 @property(retain) EKStructuredLocation * structuredLocation;
 @property(readonly) Class superclass;
 
-+ (id)_sectionNameForSection:(unsigned long long)arg1;
++ (id)_sectionNameForSection:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (id)_cellForConferenceRoomRowInTableView:(id)arg1 indexPath:(id)arg2;
@@ -45,42 +45,42 @@
 - (void)eventsSearchUpdated:(id)arg1;
 - (void)frequentsSearchUpdated:(id)arg1;
 - (id)greyPinImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)loadView;
 - (id)locationArrowImage;
 - (void)locationSearchModel:(id)arg1 selectedLocation:(id)arg2 withError:(id)arg3;
 - (void)mapSearchUpdated:(id)arg1;
-- (bool)needsSave;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (bool)onlyDisplayMapLocations;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
-- (bool)presentModally;
+- (BOOL)needsSave;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (BOOL)onlyDisplayMapLocations;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (BOOL)presentModally;
 - (void)recentsSearchUpdated:(id)arg1;
 - (id)redPinImage;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (id)selectedConferenceRoom;
 - (id)selectedLocation;
-- (void)setNeedsSave:(bool)arg1;
-- (void)setOnlyDisplayMapLocations:(bool)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNeedsSave:(BOOL)arg1;
+- (void)setOnlyDisplayMapLocations:(BOOL)arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSelectedConferenceRoom:(id)arg1;
 - (void)setSelectedLocation:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;
-- (bool)showingCurrentLocationRow;
-- (bool)showingTextRow;
+- (BOOL)showingCurrentLocationRow;
+- (BOOL)showingTextRow;
 - (id)structuredLocation;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
-- (bool)tableView:(id)arg1 wantsHeaderForSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 wantsHeaderForSection:(int)arg2;
 - (id)title;
 - (void)useAsString:(id)arg1;
-- (void)viewDidDisappear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

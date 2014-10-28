@@ -10,15 +10,15 @@
 
 - (void).cxx_destruct;
 - (void)_invalidateCalculatedEntities;
-- (bool)_updateQueryPredicatesAndOrdering;
-- (bool)canSelectEntityAtIndex:(unsigned long long)arg1;
-- (void)deleteEntityAtIndex:(unsigned long long)arg1;
-- (long long)editingTypeForEntityAtIndex:(unsigned long long)arg1;
+- (BOOL)_updateQueryPredicatesAndOrdering;
+- (BOOL)canSelectEntityAtIndex:(unsigned int)arg1;
+- (void)deleteEntityAtIndex:(unsigned int)arg1;
+- (int)editingTypeForEntityAtIndex:(unsigned int)arg1;
 - (id)entities;
-- (bool)entityIsNowPlayingAtIndex:(unsigned long long)arg1;
-- (unsigned long long)indexOfEntity:(id)arg1;
-- (bool)isEmpty;
-- (id)playbackContextForIndex:(unsigned long long)arg1;
-- (bool)showsIndexBar;
+- (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfEntity:(id)arg1;
+- (BOOL)isEmpty;
+- (id)playbackContextForIndex:(unsigned int)arg1;
+- (BOOL)showsIndexBar;
 
 @end

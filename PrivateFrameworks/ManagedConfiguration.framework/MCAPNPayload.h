@@ -6,10 +6,10 @@
 
 @interface MCAPNPayload : MCPayload {
     NSArray *_apnInfos;
-    bool_wasInstalled;
+    BOOL _wasInstalled;
 }
 
-@property bool wasInstalled;
+@property BOOL wasInstalled;
 
 + (id)apnDomainName;
 + (id)localizedPluralForm;
@@ -17,20 +17,20 @@
 + (id)typeStrings;
 
 - (void).cxx_destruct;
-- (bool)_checkForValidContents:(id)arg1 outError:(id*)arg2;
+- (BOOL)_checkForValidContents:(id)arg1 outError:(id*)arg2;
 - (void)_finishInitializationWithContents:(id)arg1;
 - (id)_strippedAPNDefaults;
-- (id)_validationErrorType:(long long)arg1 forInvalidKey:(id)arg2;
+- (id)_validationErrorType:(int)arg1 forInvalidKey:(id)arg2;
 - (id)apnDefaults;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)payloadDescriptionKeyValueSections;
-- (void)setWasInstalled:(bool)arg1;
+- (void)setWasInstalled:(BOOL)arg1;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
-- (bool)wasInstalled;
+- (BOOL)wasInstalled;
 
 @end

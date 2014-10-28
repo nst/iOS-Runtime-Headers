@@ -8,20 +8,20 @@
 }
 
 @property(copy) NSString * conditionCode;
-@property long long conditionCodeIndex;
+@property int conditionCodeIndex;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)condition;
 + (id)conditionWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)conditionCode;
-- (long long)conditionCodeIndex;
+- (int)conditionCodeIndex;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (void)setConditionCode:(id)arg1;
-- (void)setConditionCodeIndex:(long long)arg1;
+- (void)setConditionCodeIndex:(int)arg1;
 
 @end

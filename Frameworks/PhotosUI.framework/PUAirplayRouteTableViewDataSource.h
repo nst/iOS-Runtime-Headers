@@ -11,19 +11,19 @@
 @interface PUAirplayRouteTableViewDataSource : NSObject {
     NSArray *_routes;
     PUAirplayRoute *_selectedRoute;
+    BOOL _shouldCondenseDisplay;
     id _updateHandler;
-    bool_shouldCondenseDisplay;
 }
 
 @property(copy,readonly) NSString * displayNameForRoutes;
 @property(copy,readonly) NSArray * routes;
 @property(retain) PUAirplayRoute * selectedRoute;
-@property(readonly) bool shouldCondenseDisplay;
+@property(readonly) BOOL shouldCondenseDisplay;
 @property(copy) id updateHandler;
 
 - (void).cxx_destruct;
 - (void)_updateRoutes:(id)arg1;
-- (void)_updateTableViewCell:(id)arg1 forRoute:(id)arg2 isSelectedRoute:(bool)arg3;
+- (void)_updateTableViewCell:(id)arg1 forRoute:(id)arg2 isSelectedRoute:(BOOL)arg3;
 - (void)dealloc;
 - (id)displayNameForRoutes;
 - (id)init;
@@ -32,9 +32,9 @@
 - (void)setSelectedRoute:(id)arg1 updatingCellsFromHelper:(id)arg2;
 - (void)setSelectedRoute:(id)arg1;
 - (void)setUpdateHandler:(id)arg1;
-- (bool)shouldCondenseDisplay;
-- (id)tableView:(id)arg1 cellForRouteIndex:(long long)arg2;
+- (BOOL)shouldCondenseDisplay;
+- (id)tableView:(id)arg1 cellForRouteIndex:(int)arg2;
 - (id)updateHandler;
-- (void)updateTableViewCell:(id)arg1 forRouteIndex:(long long)arg2;
+- (void)updateTableViewCell:(id)arg1 forRouteIndex:(int)arg2;
 
 @end

@@ -6,41 +6,41 @@
 
 @interface UIGravityBehavior : UIDynamicBehavior {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     } _gravity;
 }
 
-@property double angle;
-@property struct CGVector { double x1; double x2; } gravityDirection;
+@property float angle;
+@property struct CGVector { float x1; float x2; } gravityDirection;
 @property(copy,readonly) NSArray * items;
-@property double magnitude;
+@property float magnitude;
 
 - (void)_addItem:(id)arg1;
 - (void)_associate;
 - (void)_commonInit;
 - (void)_dissociate;
-- (void)_setAngle:(double)arg1 magnitude:(double)arg2;
+- (void)_setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)addItem:(id)arg1;
-- (double)angle;
-- (struct CGPoint { double x1; double x2; })denormalizedGravity;
+- (float)angle;
+- (struct CGPoint { float x1; float x2; })denormalizedGravity;
 - (id)description;
-- (struct CGPoint { double x1; double x2; })gravity;
-- (struct CGVector { double x1; double x2; })gravityDirection;
+- (struct CGPoint { float x1; float x2; })gravity;
+- (struct CGVector { float x1; float x2; })gravityDirection;
 - (id)init;
 - (id)initWithItems:(id)arg1;
 - (id)items;
-- (double)magnitude;
+- (float)magnitude;
 - (void)removeItem:(id)arg1;
-- (void)setAngle:(double)arg1 magnitude:(double)arg2;
-- (void)setAngle:(double)arg1;
-- (void)setGravity:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setGravityDirection:(struct CGVector { double x1; double x2; })arg1;
-- (void)setMagnitude:(double)arg1;
-- (void)setXComponent:(double)arg1 yComponent:(double)arg2;
-- (void)setXComponent:(double)arg1;
-- (void)setYComponent:(double)arg1;
-- (double)xComponent;
-- (double)yComponent;
+- (void)setAngle:(float)arg1 magnitude:(float)arg2;
+- (void)setAngle:(float)arg1;
+- (void)setGravity:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setGravityDirection:(struct CGVector { float x1; float x2; })arg1;
+- (void)setMagnitude:(float)arg1;
+- (void)setXComponent:(float)arg1 yComponent:(float)arg2;
+- (void)setXComponent:(float)arg1;
+- (void)setYComponent:(float)arg1;
+- (float)xComponent;
+- (float)yComponent;
 
 @end

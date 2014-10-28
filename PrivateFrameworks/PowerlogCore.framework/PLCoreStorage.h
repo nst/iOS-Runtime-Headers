@@ -17,9 +17,9 @@
     PLKQueue *_profileDefaultsKQueue;
     NSMutableSet *_safeCopyInProgress;
     PLXPCResponderOperatorComposition *_safeFileResponder;
+    BOOL _storageLocked;
     PLStorageOperator *_storageOperator;
-    bool_storageLocked;
-    bool_storageReady;
+    BOOL _storageReady;
 }
 
 @property(retain) PLSQLiteConnection * connection;
@@ -34,9 +34,9 @@
 @property(retain) PLKQueue * profileDefaultsKQueue;
 @property(retain) NSMutableSet * safeCopyInProgress;
 @property(retain) PLXPCResponderOperatorComposition * safeFileResponder;
-@property bool storageLocked;
+@property BOOL storageLocked;
 @property(retain) PLStorageOperator * storageOperator;
-@property bool storageReady;
+@property BOOL storageReady;
 
 + (id)allOperatorTableFiltersForRolloverDate:(id)arg1;
 + (id)mainDBinCRFolderPath;
@@ -50,7 +50,7 @@
 - (void)cleanupTmp;
 - (id)connection;
 - (id)crashReporterKQueue;
-- (bool)createAndChownDirectory:(id)arg1;
+- (BOOL)createAndChownDirectory:(id)arg1;
 - (id)dailyTaskNotification;
 - (id)dailyTaskTimer;
 - (void)dailyTasks;
@@ -65,7 +65,7 @@
 - (void)deleteOldCRPowerlogLink;
 - (void)dispatchAsyncForEntrykey:(id)arg1 withBlock:(id)arg2;
 - (void)dispatchSyncForEntrykey:(id)arg1 withBlock:(id)arg2;
-- (id)entriesForKey:(id)arg1 before:(bool)arg2 timeInterval:(double)arg3 count:(long long)arg4 withFilters:(id)arg5;
+- (id)entriesForKey:(id)arg1 before:(BOOL)arg2 timeInterval:(double)arg3 count:(long long)arg4 withFilters:(id)arg5;
 - (id)entriesForKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withCountOfEntriesBefore:(long long)arg3 withCountOfEntriesAfter:(long long)arg4 withFilters:(id)arg5;
 - (id)entriesForKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withFilters:(id)arg3;
 - (id)entriesForKey:(id)arg1 startingFromRowID:(long long)arg2 count:(long long)arg3 withFilters:(id)arg4;
@@ -86,7 +86,7 @@
 - (void)linkMainDBToCRFolderWithUUID:(id)arg1;
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
 - (void)loadLookupTableValuesIntoEntry:(id)arg1;
-- (id)lookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long long)arg3;
+- (id)lookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long)arg3;
 - (id)mainDBInCRFolderUUIDString;
 - (void)maintainAggregateStorageForEntryKey:(id)arg1;
 - (void)mergeTempDBFile;
@@ -110,31 +110,31 @@
 - (void)setCrashReporterKQueue:(id)arg1;
 - (void)setDailyTaskNotification:(id)arg1;
 - (void)setDailyTaskTimer:(id)arg1;
-- (bool)setFileProtectionForPath:(id)arg1 withLevel:(id)arg2;
+- (BOOL)setFileProtectionForPath:(id)arg1 withLevel:(id)arg2;
 - (void)setKeybagFirstUnlockNotification:(id)arg1;
 - (void)setLastEntryCache:(id)arg1;
-- (void)setLookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long long)arg3 withStringValue:(id)arg4;
+- (void)setLookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long)arg3 withStringValue:(id)arg4;
 - (void)setMainDBInCRFolderUUIDString:(id)arg1;
 - (void)setPeriodicCheckpointTimer:(id)arg1;
 - (void)setProcessIDCache:(id)arg1;
 - (void)setProfileDefaultsKQueue:(id)arg1;
 - (void)setSafeCopyInProgress:(id)arg1;
 - (void)setSafeFileResponder:(id)arg1;
-- (void)setStorageLocked:(bool)arg1;
+- (void)setStorageLocked:(BOOL)arg1;
 - (void)setStorageOperator:(id)arg1;
-- (void)setStorageReady:(bool)arg1;
+- (void)setStorageReady:(BOOL)arg1;
 - (void)setupArrayForTableName:(id)arg1 forColumnNamed:(id)arg2 withValueType:(short)arg3;
 - (void)setupCoveringIndexOnTable:(id)arg1 withColumns:(id)arg2;
 - (void)setupStorageForEntryKey:(id)arg1;
 - (void)setupStorageForOperator:(id)arg1;
 - (void)setupStorageForOperatorClass:(Class)arg1;
 - (void)setupStorageForOperatorName:(id)arg1;
-- (void)setupTableName:(id)arg1 withEntryKeyConfig:(id)arg2 withKeyOrder:(id)arg3 isDynamic:(bool)arg4;
+- (void)setupTableName:(id)arg1 withEntryKeyConfig:(id)arg2 withKeyOrder:(id)arg3 isDynamic:(BOOL)arg4;
 - (void)startStorage;
 - (void)stopStorage;
-- (bool)storageLocked;
+- (BOOL)storageLocked;
 - (id)storageOperator;
-- (bool)storageReady;
+- (BOOL)storageReady;
 - (void)updateEntry:(id)arg1 withCompletionBlock:(id)arg2;
 - (short)verifySchemaVersionOfTable:(id)arg1 matchesExpectedVersion:(double)arg2;
 - (id)whiteBlackListForOperatorName:(id)arg1;

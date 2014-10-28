@@ -13,18 +13,18 @@
 @property(copy,readonly) NSString * viewControllerClassName;
 
 + (id)descriptorWithViewControllerClassName:(id)arg1 bundleIdentifier:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithViewControllerClassName:(id)arg1 bundleIdentifier:(id)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isValid;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isValid;
 - (id)viewControllerClassName;
 
 @end

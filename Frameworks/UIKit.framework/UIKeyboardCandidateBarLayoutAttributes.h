@@ -3,17 +3,17 @@
  */
 
 @interface UIKeyboardCandidateBarLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
-    bool_beginsFirstPage;
-    bool_endsLastPage;
+    BOOL _beginsFirstPage;
+    BOOL _endsLastPage;
 }
 
-@property bool beginsFirstPage;
-@property bool endsLastPage;
+@property BOOL beginsFirstPage;
+@property BOOL endsLastPage;
 
-- (bool)beginsFirstPage;
+- (BOOL)beginsFirstPage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)endsLastPage;
-- (void)setBeginsFirstPage:(bool)arg1;
-- (void)setEndsLastPage:(bool)arg1;
+- (BOOL)endsLastPage;
+- (void)setBeginsFirstPage:(BOOL)arg1;
+- (void)setEndsLastPage:(BOOL)arg1;
 
 @end

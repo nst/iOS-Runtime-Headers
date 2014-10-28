@@ -15,7 +15,7 @@
 - (id)continuityData;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setContinuityData:(id)arg1;
 
 @end

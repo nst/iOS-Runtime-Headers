@@ -5,46 +5,46 @@
 @class <TTSSpeechService>, NSString;
 
 @interface TTSSpeechVoice : NSObject {
-    long long _footprint;
-    long long _gender;
+    int _footprint;
+    int _gender;
     NSString *_identifier;
+    BOOL _isCustomVoice;
+    BOOL _isDefault;
     NSString *_language;
     NSString *_name;
     <TTSSpeechService> *_service;
-    bool_isCustomVoice;
-    bool_isDefault;
-    bool_useVoiceBooster;
+    BOOL _useVoiceBooster;
 }
 
-@property long long footprint;
-@property long long gender;
+@property int footprint;
+@property int gender;
 @property(retain) NSString * identifier;
-@property bool isCustomVoice;
-@property(readonly) bool isDefault;
+@property BOOL isCustomVoice;
+@property(readonly) BOOL isDefault;
 @property(retain) NSString * language;
 @property(retain) NSString * name;
-@property(readonly) bool useVoiceBooster;
+@property(readonly) BOOL useVoiceBooster;
 
 - (void).cxx_destruct;
 - (void)_initializeVoiceBooster;
 - (void)_routeChange:(id)arg1;
 - (id)description;
-- (long long)footprint;
-- (long long)gender;
+- (int)footprint;
+- (int)gender;
 - (id)identifier;
 - (id)init;
-- (bool)isCustomVoice;
-- (bool)isDefault;
+- (BOOL)isCustomVoice;
+- (BOOL)isDefault;
 - (id)language;
 - (id)name;
 - (id)service;
-- (void)setFootprint:(long long)arg1;
-- (void)setGender:(long long)arg1;
+- (void)setFootprint:(int)arg1;
+- (void)setGender:(int)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsCustomVoice:(bool)arg1;
+- (void)setIsCustomVoice:(BOOL)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setService:(id)arg1;
-- (bool)useVoiceBooster;
+- (BOOL)useVoiceBooster;
 
 @end

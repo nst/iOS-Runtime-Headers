@@ -16,7 +16,7 @@
 @property(getter=_creationDate,setter=_setCreationDate:,copy) NSDate * creationDate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy,readonly) NSDictionary * metadata;
 @property(readonly) HKSource * source;
 @property(getter=_sourceBundleIdentifier,setter=_setSourceBundleIdentifier:,copy) NSString * sourceBundleIdentifier;
@@ -25,7 +25,7 @@
 
 + (id)_newDataObjectWithMetadata:(id)arg1 config:(id)arg2;
 + (Class)healthSyncEntity;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
@@ -42,17 +42,17 @@
 - (id)_valueDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)entityType;
-- (unsigned long long)hash;
+- (int)entityType;
+- (unsigned int)hash;
 - (void)hd_cleanupBeforeJournalInsertion;
-- (bool)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entity:(id)arg3 error:(id*)arg4;
+- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entity:(id)arg3 error:(id*)arg4;
 - (id)hd_relatedJournalEntries;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)metadata;
 - (id)source;
 - (id)syncId;
-- (bool)validateForSaving:(id*)arg1;
+- (BOOL)validateForSaving:(id*)arg1;
 
 @end

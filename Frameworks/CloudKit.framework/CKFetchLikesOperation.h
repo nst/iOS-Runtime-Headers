@@ -13,7 +13,7 @@
     id _fetchLikesCompletionBlock;
     NSArray *_itemIDs;
     NSMutableDictionary *_likeCountByItemID;
-    unsigned long long _resultsLimit;
+    unsigned int _resultsLimit;
     CKShareID *_shareID;
     NSMutableDictionary *_userIDsByItemID;
 }
@@ -22,12 +22,12 @@
 @property(copy) id fetchLikesCompletionBlock;
 @property(copy) NSArray * itemIDs;
 @property(retain) NSMutableDictionary * likeCountByItemID;
-@property unsigned long long resultsLimit;
+@property unsigned int resultsLimit;
 @property(copy) CKShareID * shareID;
 @property(retain) NSMutableDictionary * userIDsByItemID;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)errorsByItemID;
@@ -37,12 +37,12 @@
 - (id)itemIDs;
 - (id)likeCountByItemID;
 - (void)performCKOperation;
-- (unsigned long long)resultsLimit;
+- (unsigned int)resultsLimit;
 - (void)setErrorsByItemID:(id)arg1;
 - (void)setFetchLikesCompletionBlock:(id)arg1;
 - (void)setItemIDs:(id)arg1;
 - (void)setLikeCountByItemID:(id)arg1;
-- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setResultsLimit:(unsigned int)arg1;
 - (void)setShareID:(id)arg1;
 - (void)setUserIDsByItemID:(id)arg1;
 - (id)shareID;

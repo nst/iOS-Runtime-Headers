@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSArray * familyMembers;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSArray * iTunesAccountNames;
 @property(readonly) Class superclass;
 
@@ -22,7 +22,9 @@
 - (void)dealloc;
 - (id)familyMembers;
 - (id)iTunesAccountNames;
+- (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)newCacheRepresentation;
 - (void)setFamilyMembers:(id)arg1;
 - (void)setITunesAccountNames:(id)arg1;
 

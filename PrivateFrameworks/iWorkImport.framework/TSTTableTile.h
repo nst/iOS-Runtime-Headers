@@ -23,7 +23,7 @@
 - (void)debugDump;
 - (void)debugListRows;
 - (id)description;
-- (unsigned long long)flushableSize;
+- (unsigned long)flushableSize;
 - (void)i_upgradeTileRowInfosWithDataStore:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;

@@ -15,7 +15,7 @@
 - (id)alarmIds;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAlarmIds:(id)arg1;
 
 @end

@@ -16,12 +16,12 @@
 
 @property(getter=_localExternalValues,setter=_setLocalExternalValues:,copy) NSDictionary * _localExternalValues;
 @property(getter=_localValues,setter=_setLocalValues:,copy) NSDictionary * _localValues;
-@property(getter=_isManaged,readonly) bool _managed;
+@property(getter=_isManaged,readonly) BOOL _managed;
 @property(readonly) long long _persistentIdentifier;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool exists;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL exists;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (long long)_existsMessage;
@@ -35,9 +35,9 @@
 - (void)_addCachedExternalValues:(id)arg1;
 - (void)_addCachedPropertyValues:(id)arg1;
 - (void)_becomeManagedOnConnection:(id)arg1;
-- (void)_getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned long long)arg3 message:(long long)arg4;
+- (void)_getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3 message:(long long)arg4;
 - (id)_initWithPersistentIdentifier:(long long)arg1;
-- (bool)_isManaged;
+- (BOOL)_isManaged;
 - (id)_localExternalValues;
 - (id)_localValues;
 - (long long)_persistentIdentifier;
@@ -49,17 +49,17 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
-- (bool)exists;
-- (void)getValues:(id*)arg1 forExternalProperties:(const id*)arg2 count:(unsigned long long)arg3;
-- (void)getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned long long)arg3;
-- (unsigned long long)hash;
+- (BOOL)exists;
+- (void)getValues:(id*)arg1 forExternalProperties:(const id*)arg2 count:(unsigned int)arg3;
+- (void)getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
-- (void)resetCachedExternalProperties:(const id*)arg1 count:(unsigned long long)arg2;
-- (void)resetCachedProperties:(const id*)arg1 count:(unsigned long long)arg2;
-- (bool)setExternalValuesWithDictionary:(id)arg1;
-- (bool)setValue:(id)arg1 forProperty:(id)arg2;
-- (bool)setValuesWithDictionary:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (void)resetCachedExternalProperties:(const id*)arg1 count:(unsigned int)arg2;
+- (void)resetCachedProperties:(const id*)arg1 count:(unsigned int)arg2;
+- (BOOL)setExternalValuesWithDictionary:(id)arg1;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)setValuesWithDictionary:(id)arg1;
 - (id)valueForExternalProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 

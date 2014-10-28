@@ -6,24 +6,24 @@
 
 @interface UIStatusBarAnimationParameters : NSObject {
     <_UIBasicAnimationFactory> *_animationFactory;
-    long long _curve;
+    int _curve;
     double _delay;
     double _duration;
     double _startTime;
 }
 
 @property(retain) <_UIBasicAnimationFactory> * animationFactory;
-@property long long curve;
+@property int curve;
 @property double delay;
 @property double duration;
 @property double startTime;
 
 + (void)animateWithParameters:(id)arg1 animations:(id)arg2 completion:(id)arg3;
-+ (void)animateWithParameters:(id)arg1 fromCurrentState:(bool)arg2 animations:(id)arg3 completion:(id)arg4;
-+ (void)animateWithParameters:(id)arg1 fromCurrentState:(bool)arg2 frameInterval:(double)arg3 animations:(id)arg4 completion:(id)arg5;
++ (void)animateWithParameters:(id)arg1 fromCurrentState:(BOOL)arg2 animations:(id)arg3 completion:(id)arg4;
++ (void)animateWithParameters:(id)arg1 fromCurrentState:(BOOL)arg2 frameInterval:(float)arg3 animations:(id)arg4 completion:(id)arg5;
 
 - (id)animationFactory;
-- (long long)curve;
+- (int)curve;
 - (void)dealloc;
 - (double)delay;
 - (double)duration;
@@ -31,11 +31,11 @@
 - (id)initWithDefaultParameters;
 - (id)initWithEmptyParameters;
 - (void)setAnimationFactory:(id)arg1;
-- (void)setCurve:(long long)arg1;
+- (void)setCurve:(int)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setStartTime:(double)arg1;
-- (bool)shouldAnimate;
+- (BOOL)shouldAnimate;
 - (double)startTime;
 
 @end

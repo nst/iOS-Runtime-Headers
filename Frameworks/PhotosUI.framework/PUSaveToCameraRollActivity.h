@@ -10,12 +10,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property PUActivityItemSourceController * itemSourceController;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)canPerformWithActivityItems:(id)arg1;
+- (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)itemSourceController;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;

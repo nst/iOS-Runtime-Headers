@@ -16,7 +16,7 @@
 
 + (id)customAttributes;
 
-- (bool)_isIdentity;
+- (BOOL)_isIdentity;
 - (id)_kernel;
 - (id)inputImage;
 - (id)inputIntensity;

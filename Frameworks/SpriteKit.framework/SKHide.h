@@ -12,7 +12,7 @@
  */
 
 @interface SKHide : SKAction {
-    struct SKCHide { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; boolx22; } *_mycaction;
+    struct SKCHide { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; boolx22; } *_mycaction;
 }
 
 + (id)hide;

@@ -11,7 +11,7 @@
 @property(readonly) NSData * xmlUIData;
 
 - (void).cxx_destruct;
-- (bool)bodyIsPlist;
+- (BOOL)bodyIsPlist;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)responseXMLData;
 - (id)xmlUIData;

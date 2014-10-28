@@ -7,40 +7,40 @@
 @interface PKGroup : NSObject {
     PKCatalogGroup *_catalogGroup;
     <PKGroupDelegate> *_delegate;
-    unsigned long long _frontmostPassIndex;
+    unsigned int _frontmostPassIndex;
+    BOOL _local;
     NSMutableDictionary *_passesByUniqueID;
-    bool_local;
 }
 
 @property <PKGroupDelegate> * delegate;
-@property unsigned long long frontmostPassIndex;
+@property unsigned int frontmostPassIndex;
 @property(readonly) NSNumber * groupID;
-@property(getter=isLocal) bool local;
+@property(getter=isLocal) BOOL local;
 
-- (unsigned long long)_indexOfUniqueID:(id)arg1;
-- (void)_insertPass:(id)arg1 atIndex:(unsigned long long)arg2 notify:(bool)arg3;
-- (void)_moveUniqueID:(id)arg1 toIndex:(unsigned long long)arg2 notify:(bool)arg3;
-- (void)_removeUniqueID:(id)arg1 notify:(bool)arg2;
-- (void)_updatePass:(id)arg1 notify:(bool)arg2;
-- (bool)containsOnlyUniqueID:(id)arg1;
-- (bool)containsPasses;
+- (unsigned int)_indexOfUniqueID:(id)arg1;
+- (void)_insertPass:(id)arg1 atIndex:(unsigned int)arg2 notify:(BOOL)arg3;
+- (void)_moveUniqueID:(id)arg1 toIndex:(unsigned int)arg2 notify:(BOOL)arg3;
+- (void)_removeUniqueID:(id)arg1 notify:(BOOL)arg2;
+- (void)_updatePass:(id)arg1 notify:(BOOL)arg2;
+- (BOOL)containsOnlyUniqueID:(id)arg1;
+- (BOOL)containsPasses;
 - (id)copyCatalogGroup;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)enumerateUniqueIDsWithHandler:(id)arg1;
-- (unsigned long long)frontmostPassIndex;
+- (unsigned int)frontmostPassIndex;
 - (id)groupID;
 - (void)handleUserPassDelete:(id)arg1;
-- (unsigned long long)indexForPassUniqueID:(id)arg1;
+- (unsigned int)indexForPassUniqueID:(id)arg1;
 - (id)initWithCatalogGroup:(id)arg1 passes:(id)arg2;
-- (bool)isLocal;
-- (id)passAtIndex:(unsigned long long)arg1;
-- (unsigned long long)passCount;
+- (BOOL)isLocal;
+- (id)passAtIndex:(unsigned int)arg1;
+- (unsigned int)passCount;
 - (id)passWithUniqueID:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrontmostPassIndex:(unsigned long long)arg1;
-- (void)setLocal:(bool)arg1;
-- (void)updateWithCatalogGroup:(id)arg1 passes:(id)arg2 notify:(bool)arg3;
+- (void)setFrontmostPassIndex:(unsigned int)arg1;
+- (void)setLocal:(BOOL)arg1;
+- (void)updateWithCatalogGroup:(id)arg1 passes:(id)arg2 notify:(BOOL)arg3;
 
 @end

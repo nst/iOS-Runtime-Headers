@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (id)initWithFilterItem:(id)arg1 isInList:(long long)arg2;
 - (long long)isInList;
-- (bool)matchesItem:(id)arg1;
+- (BOOL)matchesItem:(id)arg1;
 - (void)setIsInList:(long long)arg1;
 
 @end

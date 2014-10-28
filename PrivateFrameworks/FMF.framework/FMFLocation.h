@@ -8,12 +8,12 @@
     double _TTL;
     FMFHandle *_handle;
     NSString *_label;
+    BOOL _locatingInProgress;
     CLLocation *_location;
     NSString *_longAddress;
     double _maxLocatingInterval;
     NSString *_shortAddressString;
     NSDate *_timestamp;
-    bool_locatingInProgress;
 }
 
 @property double TTL;
@@ -21,9 +21,9 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) FMFHandle * handle;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSString * label;
-@property(getter=isLocatingInProgress) bool locatingInProgress;
+@property(getter=isLocatingInProgress) BOOL locatingInProgress;
 @property(retain) CLLocation * location;
 @property(copy) NSString * longAddress;
 @property double maxLocatingInterval;
@@ -34,7 +34,7 @@
 @property(copy) NSDate * timestamp;
 @property(copy,readonly) NSString * title;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)TTL;
@@ -43,13 +43,13 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handle;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 forHandle:(id)arg2 maxLocatingInterval:(double)arg3 TTL:(double)arg4;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isLocatingInProgress;
-- (bool)isValid;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isLocatingInProgress;
+- (BOOL)isValid;
 - (id)label;
 - (id)location;
 - (id)locationAge;
@@ -61,7 +61,7 @@
 - (void)resetLocateInProgressTimer;
 - (void)setHandle:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setLocatingInProgress:(bool)arg1;
+- (void)setLocatingInProgress:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLongAddress:(id)arg1;
 - (void)setMaxLocatingInterval:(double)arg1;

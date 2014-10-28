@@ -11,25 +11,25 @@
 
 @property(copy) NSString * passUniqueID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (unsigned long long)_hunkIndexForKey:(id)arg1;
+- (unsigned int)_hunkIndexForKey:(id)arg1;
 - (void)addHunkWithKey:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3 message:(id)arg4;
 - (void)addHunksFromDiff:(id)arg1;
 - (id)anyKey;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateHunks:(id)arg1;
-- (bool)getHunkForKey:(id)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4;
-- (unsigned long long)hash;
-- (long long)hunkCount;
+- (BOOL)getHunkForKey:(id)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4;
+- (unsigned int)hash;
+- (int)hunkCount;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToDiff:(id)arg1;
-- (void)key:(id*)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4 forHunkAtIndex:(long long)arg5;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToDiff:(id)arg1;
+- (void)key:(id*)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4 forHunkAtIndex:(int)arg5;
 - (id)passUniqueID;
 - (void)removeHunkForKey:(id)arg1;
 - (void)setPassUniqueID:(id)arg1;

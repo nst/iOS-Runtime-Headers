@@ -15,10 +15,10 @@
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)inputParameters;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setInputParameters:(id)arg1;
 

@@ -13,13 +13,13 @@
     id _captureBlock;
     CALayerHost *_contentLayer;
     id _delegate;
-    double _remoteScale;
-    bool_saved;
+    float _remoteScale;
+    BOOL _saved;
 }
 
 @property(copy) id captureBlock;
-@property double remoteScale;
-@property(getter=isSaved) bool saved;
+@property float remoteScale;
+@property(getter=isSaved) BOOL saved;
 
 - (id)captureBlock;
 - (void)connectToContextID:(unsigned int)arg1 bundleID:(id)arg2;
@@ -27,10 +27,10 @@
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)disconnect;
-- (bool)isSaved;
-- (double)remoteScale;
+- (BOOL)isSaved;
+- (float)remoteScale;
 - (void)setCaptureBlock:(id)arg1;
-- (void)setRemoteScale:(double)arg1;
-- (void)setSaved:(bool)arg1;
+- (void)setRemoteScale:(float)arg1;
+- (void)setSaved:(BOOL)arg1;
 
 @end

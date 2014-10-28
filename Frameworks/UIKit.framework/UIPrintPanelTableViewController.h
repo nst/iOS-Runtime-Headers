@@ -5,36 +5,36 @@
 @class UIPrintPanelViewController;
 
 @interface UIPrintPanelTableViewController : UITableViewController {
-    long long _copiesRow;
-    long long _duplexRow;
-    long long _paperRow;
+    BOOL _contactingPrinter;
+    int _copiesRow;
+    int _duplexRow;
+    int _paperRow;
     UIPrintPanelViewController *_printPanelViewController;
-    long long _rangeRow;
-    bool_contactingPrinter;
-    bool_printerWarningWasShown;
+    BOOL _printerWarningWasShown;
+    int _rangeRow;
 }
 
-- (void)_update:(bool)arg1;
+- (void)_update:(BOOL)arg1;
 - (void)_updateSize;
 - (void)clearPrintPanelViewController;
 - (void)dealloc;
 - (id)initWithPrintPanelViewController:(id)arg1;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)setShowContactingPrinter:(bool)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)setShowContactingPrinter:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showCancelButton;
 - (void)showContacting;
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (void)updateCopies:(id)arg1;
 - (void)updateDuplex:(id)arg1;
-- (void)updatePageRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)viewDidDisappear:(bool)arg1;
+- (void)updatePageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

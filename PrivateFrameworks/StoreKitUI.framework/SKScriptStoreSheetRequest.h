@@ -5,16 +5,16 @@
 @class NSString, WebScriptObject;
 
 @interface SKScriptStoreSheetRequest : SUScriptObject {
-    long long _pageStyle;
+    int _pageStyle;
     WebScriptObject *_productParameters;
     NSString *_productURL;
 }
 
-@property long long productPageStyle;
-@property(readonly) long long productPageStyleAutomatic;
-@property(readonly) long long productPageStyleBanner;
-@property(readonly) long long productPageStylePad;
-@property(readonly) long long productPageStylePhone;
+@property int productPageStyle;
+@property(readonly) int productPageStyleAutomatic;
+@property(readonly) int productPageStyleBanner;
+@property(readonly) int productPageStylePad;
+@property(readonly) int productPageStylePhone;
 @property(retain) WebScriptObject * productParameters;
 @property(retain) NSString * productURL;
 
@@ -27,15 +27,15 @@
 - (id)_safeValueForValue:(id)arg1;
 - (id)attributeKeys;
 - (id)newNativeStorePageRequest;
-- (long long)productPageStyle;
-- (long long)productPageStyleAutomatic;
-- (long long)productPageStyleBanner;
-- (long long)productPageStylePad;
-- (long long)productPageStylePhone;
+- (int)productPageStyle;
+- (int)productPageStyleAutomatic;
+- (int)productPageStyleBanner;
+- (int)productPageStylePad;
+- (int)productPageStylePhone;
 - (id)productParameters;
 - (id)productURL;
 - (id)scriptAttributeKeys;
-- (void)setProductPageStyle:(long long)arg1;
+- (void)setProductPageStyle:(int)arg1;
 - (void)setProductParameters:(id)arg1;
 - (void)setProductURL:(id)arg1;
 

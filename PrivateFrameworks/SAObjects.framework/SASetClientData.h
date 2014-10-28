@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)holdToTalkThresholdInMilliseconds;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setHoldToTalkThresholdInMilliseconds:(id)arg1;
 
 @end

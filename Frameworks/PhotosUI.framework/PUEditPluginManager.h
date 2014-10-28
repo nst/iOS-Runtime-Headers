@@ -6,20 +6,20 @@
 
 @interface PUEditPluginManager : NSObject {
     NSArray *__plugins;
-    long long _mediaType;
+    int _mediaType;
 }
 
 @property(setter=_setPlugins:,copy) NSArray * _plugins;
-@property(readonly) long long mediaType;
+@property(readonly) int mediaType;
 
-+ (id)sharedManagerForMediaType:(long long)arg1;
++ (id)sharedManagerForMediaType:(int)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithMediaType:(long long)arg1;
+- (id)_initWithMediaType:(int)arg1;
 - (id)_plugins;
 - (void)_setPlugins:(id)arg1;
-- (bool)hasPlugins;
-- (long long)mediaType;
+- (BOOL)hasPlugins;
+- (int)mediaType;
 - (id)pluginActivities;
 - (void)rediscoverAvailablePlugins;
 

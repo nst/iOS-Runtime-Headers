@@ -7,30 +7,30 @@
 @interface GEOBatchRevGeocodeRequest : PBRequest <NSCopying> {
     struct { 
         int *list; 
-        unsigned long long count; 
-        unsigned long long size; 
+        unsigned int count; 
+        unsigned int size; 
     struct { 
         unsigned int splitIntoClusters : 1; 
     } _additionalPlaceTypes;
     } _has;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;
-    bool_splitIntoClusters;
+    BOOL _splitIntoClusters;
 }
 
 @property(readonly) int* additionalPlaceTypes;
-@property(readonly) unsigned long long additionalPlaceTypesCount;
-@property bool hasSplitIntoClusters;
+@property(readonly) unsigned int additionalPlaceTypesCount;
+@property BOOL hasSplitIntoClusters;
 @property(retain) NSMutableArray * locations;
 @property(retain) NSMutableArray * serviceTags;
-@property bool splitIntoClusters;
+@property BOOL splitIntoClusters;
 
 - (void)addAdditionalPlaceType:(int)arg1;
 - (void)addLocation:(id)arg1;
 - (void)addServiceTag:(id)arg1;
-- (int)additionalPlaceTypeAtIndex:(unsigned long long)arg1;
+- (int)additionalPlaceTypeAtIndex:(unsigned int)arg1;
 - (int*)additionalPlaceTypes;
-- (unsigned long long)additionalPlaceTypesCount;
+- (unsigned int)additionalPlaceTypesCount;
 - (void)clearAdditionalPlaceTypes;
 - (void)clearLocations;
 - (void)clearServiceTags;
@@ -39,25 +39,25 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasSplitIntoClusters;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (id)locationAtIndex:(unsigned long long)arg1;
+- (BOOL)hasSplitIntoClusters;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)locationAtIndex:(unsigned int)arg1;
 - (id)locations;
-- (unsigned long long)locationsCount;
+- (unsigned int)locationsCount;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (id)serviceTagAtIndex:(unsigned long long)arg1;
+- (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
-- (unsigned long long)serviceTagsCount;
-- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned long long)arg2;
-- (void)setHasSplitIntoClusters:(bool)arg1;
+- (unsigned int)serviceTagsCount;
+- (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setHasSplitIntoClusters:(BOOL)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSplitIntoClusters:(bool)arg1;
-- (bool)splitIntoClusters;
+- (void)setSplitIntoClusters:(BOOL)arg1;
+- (BOOL)splitIntoClusters;
 - (void)writeTo:(id)arg1;
 
 @end

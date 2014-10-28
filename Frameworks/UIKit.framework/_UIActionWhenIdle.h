@@ -19,7 +19,7 @@
 - (void)invalidate;
 - (id)invocation;
 - (void)invoke;
-- (bool)isValid;
+- (BOOL)isValid;
 - (void)setInvocation:(id)arg1;
 
 @end

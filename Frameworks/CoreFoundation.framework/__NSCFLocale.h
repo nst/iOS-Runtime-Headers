@@ -5,21 +5,21 @@
 @interface __NSCFLocale : NSLocale {
 }
 
-+ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (bool)_isDeallocating;
+- (BOOL)_isDeallocating;
 - (unsigned char)_nullLocale;
 - (id)_prefs;
 - (void)_setNullLocale;
-- (bool)_tryRetain;
+- (BOOL)_tryRetain;
 - (id)displayNameForKey:(id)arg1 value:(id)arg2;
 - (void)finalize;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithLocaleIdentifier:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

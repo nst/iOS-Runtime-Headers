@@ -14,7 +14,7 @@
 - (id)_kindDescription;
 - (void)awakeFromInsert;
 - (id)localizedTitle;
-- (unsigned long long)photosCount;
+- (unsigned int)photosCount;
 - (id)posterImage;
 
 @end

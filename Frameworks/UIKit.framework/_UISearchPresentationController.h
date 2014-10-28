@@ -7,12 +7,12 @@
 @interface _UISearchPresentationController : UIPresentationController <_UISearchControllerPresenting> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct { 
         unsigned int searchBarWasTableHeaderView : 1; 
@@ -29,49 +29,49 @@
 @property(readonly) UIPresentationController<_UISearchControllerPresenting> * adaptivePresentationController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } finalFrameForContainerView;
-@property(readonly) unsigned long long hash;
-@property(readonly) double resultsControllerContentOffset;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
+@property(readonly) unsigned int hash;
+@property(readonly) float resultsControllerContentOffset;
 @property(retain,readonly) UIView * searchBarContainerView;
-@property(readonly) bool searchBarToBecomeTopAttached;
-@property(readonly) bool shouldAccountForStatusBar;
-@property(readonly) double statusBarAdjustment;
+@property(readonly) BOOL searchBarToBecomeTopAttached;
+@property(readonly) BOOL shouldAccountForStatusBar;
+@property(readonly) float statusBarAdjustment;
 @property(readonly) Class superclass;
 
-+ (bool)shouldExciseSearchBar:(id)arg1 duringPresentationWithPresenter:(id)arg2;
++ (BOOL)shouldExciseSearchBar:(id)arg1 duringPresentationWithPresenter:(id)arg2;
 
 - (void)_exciseSearchBarFromCurrentContext;
 - (void)_placeSearchBarBackIntoOriginalContext;
-- (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
-- (id)_presentedViewControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
-- (bool)_shouldKeepCurrentFirstResponder;
-- (bool)_shouldRespectDefinesPresentationContext;
+- (id)_presentationControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
+- (id)_presentedViewControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
+- (BOOL)_shouldKeepCurrentFirstResponder;
+- (BOOL)_shouldRespectDefinesPresentationContext;
 - (void)_transitionFromDidEnd;
 - (void)_transitionFromWillBegin;
 - (void)_transitionToDidEnd;
 - (void)_transitionToPresentationController:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_transitionToWillBegin;
 - (void)_updateContainerFinalFrameForNonExcisedSearchBar;
-- (void)_updatePresentingViewControllerContentScrollViewWithOffsets:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
-- (double)_visibleRefreshControlHeightForTableView:(id)arg1;
+- (void)_updatePresentingViewControllerContentScrollViewWithOffsets:(struct CGSize { float x1; float x2; })arg1 transitionCoordinator:(id)arg2;
+- (float)_visibleRefreshControlHeightForTableView:(id)arg1;
 - (id)adaptivePresentationController;
-- (long long)adaptivePresentationStyle;
+- (int)adaptivePresentationStyle;
 - (void)dealloc;
-- (void)dismissalTransitionDidEnd:(bool)arg1;
+- (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalFrameForContainerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForContainerView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
-- (void)presentationTransitionDidEnd:(bool)arg1;
+- (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
-- (double)resultsControllerContentOffset;
+- (float)resultsControllerContentOffset;
 - (id)searchBarContainerView;
-- (bool)searchBarToBecomeTopAttached;
-- (void)setContentVisible:(bool)arg1;
-- (bool)shouldAccountForStatusBar;
-- (bool)shouldPresentInFullscreen;
-- (bool)shouldRemovePresentersView;
-- (double)statusBarAdjustment;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (BOOL)searchBarToBecomeTopAttached;
+- (void)setContentVisible:(BOOL)arg1;
+- (BOOL)shouldAccountForStatusBar;
+- (BOOL)shouldPresentInFullscreen;
+- (BOOL)shouldRemovePresentersView;
+- (float)statusBarAdjustment;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

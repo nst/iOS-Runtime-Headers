@@ -8,10 +8,10 @@
     struct { 
         double latitude; 
         double longitude; 
-    boolquerying;
     } coordinate;
     <MKReverseGeocoderDelegate> *delegate;
     MKMapItem *mapItem;
+    BOOL querying;
     <MKMapServiceTicket> *ticket;
 }
 

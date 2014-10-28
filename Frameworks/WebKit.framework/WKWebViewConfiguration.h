@@ -41,20 +41,20 @@
         struct RetainPtr<WKWebViewContentProviderRegistry> { 
             void *m_ptr; 
         } m_value; 
+    BOOL _allowsInlineMediaPlayback;
     } _alternateWebViewForNavigationGestures;
     } _contentProviderRegistry;
     } _groupIdentifier;
+    BOOL _mediaPlaybackAllowsAirPlay;
+    BOOL _mediaPlaybackRequiresUserAction;
     } _preferences;
     } _processPool;
     } _relatedWebView;
-    long long _selectionGranularity;
+    int _selectionGranularity;
+    BOOL _suppressesIncrementalRendering;
     } _userContentController;
     } _visitedLinkProvider;
     } _websiteDataStore;
-    bool_allowsInlineMediaPlayback;
-    bool_mediaPlaybackAllowsAirPlay;
-    bool_mediaPlaybackRequiresUserAction;
-    bool_suppressesIncrementalRendering;
 }
 
 @property(setter=_setAlternateWebViewForNavigationGestures:) WKWebView * _alternateWebViewForNavigationGestures;
@@ -63,13 +63,13 @@
 @property(setter=_setRelatedWebView:) WKWebView * _relatedWebView;
 @property(setter=_setVisitedLinkProvider:,retain) _WKVisitedLinkProvider * _visitedLinkProvider;
 @property(setter=_setWebsiteDataStore:,retain) _WKWebsiteDataStore * _websiteDataStore;
-@property bool allowsInlineMediaPlayback;
-@property bool mediaPlaybackAllowsAirPlay;
-@property bool mediaPlaybackRequiresUserAction;
+@property BOOL allowsInlineMediaPlayback;
+@property BOOL mediaPlaybackAllowsAirPlay;
+@property BOOL mediaPlaybackRequiresUserAction;
 @property(retain) WKPreferences * preferences;
 @property(retain) WKProcessPool * processPool;
-@property long long selectionGranularity;
-@property bool suppressesIncrementalRendering;
+@property int selectionGranularity;
+@property BOOL suppressesIncrementalRendering;
 @property(retain) WKUserContentController * userContentController;
 
 - (id).cxx_construct;
@@ -87,24 +87,24 @@
 - (void)_validate;
 - (id)_visitedLinkProvider;
 - (id)_websiteDataStore;
-- (bool)allowsInlineMediaPlayback;
+- (BOOL)allowsInlineMediaPlayback;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)init;
-- (bool)mediaPlaybackAllowsAirPlay;
-- (bool)mediaPlaybackRequiresUserAction;
+- (BOOL)mediaPlaybackAllowsAirPlay;
+- (BOOL)mediaPlaybackRequiresUserAction;
 - (id)preferences;
 - (id)processPool;
-- (long long)selectionGranularity;
-- (void)setAllowsInlineMediaPlayback:(bool)arg1;
-- (void)setMediaPlaybackAllowsAirPlay:(bool)arg1;
-- (void)setMediaPlaybackRequiresUserAction:(bool)arg1;
+- (int)selectionGranularity;
+- (void)setAllowsInlineMediaPlayback:(BOOL)arg1;
+- (void)setMediaPlaybackAllowsAirPlay:(BOOL)arg1;
+- (void)setMediaPlaybackRequiresUserAction:(BOOL)arg1;
 - (void)setPreferences:(id)arg1;
 - (void)setProcessPool:(id)arg1;
-- (void)setSelectionGranularity:(long long)arg1;
-- (void)setSuppressesIncrementalRendering:(bool)arg1;
+- (void)setSelectionGranularity:(int)arg1;
+- (void)setSuppressesIncrementalRendering:(BOOL)arg1;
 - (void)setUserContentController:(id)arg1;
-- (bool)suppressesIncrementalRendering;
+- (BOOL)suppressesIncrementalRendering;
 - (id)userContentController;
 
 @end

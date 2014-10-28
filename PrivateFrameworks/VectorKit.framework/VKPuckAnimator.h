@@ -10,20 +10,20 @@
         double y; 
         double z; 
     VKAnimation *_animation;
-    unsigned long long _behavior;
+    unsigned int _behavior;
     VKRunningCurve *_curve;
     <VKPuckAnimatorDelegate> *_delegate;
     GEORouteMatch *_lastProjectedLocation;
     } _lastProjectedPosition;
     VKPuckAnimatorLocationProjector *_locationProjector;
-    long long _pausedCount;
+    int _pausedCount;
+    BOOL _suspended;
     <VKPuckAnimatorTarget> *_target;
     double _tracePlaybackSpeedMultiplier;
     double _vehicleHeading;
-    bool_suspended;
 }
 
-@property unsigned long long behavior;
+@property unsigned int behavior;
 @property <VKPuckAnimatorDelegate> * delegate;
 @property(retain) GEORouteMatch * lastProjectedLocation;
 @property(retain) <VKPuckAnimatorTarget> * target;
@@ -31,14 +31,14 @@
 
 - (id).cxx_construct;
 - (void)_step;
-- (unsigned long long)behavior;
+- (unsigned int)behavior;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)lastProjectedLocation;
 - (void)pause;
 - (void)resume;
-- (void)setBehavior:(unsigned long long)arg1;
+- (void)setBehavior:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLastProjectedLocation:(id)arg1;
 - (void)setTarget:(id)arg1;

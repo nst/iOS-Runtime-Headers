@@ -5,6 +5,6 @@
 @interface SBAppLaunchUtilities : NSObject {
 }
 
-+ (bool)waitForChangeToState:(unsigned int)arg1 forDisplayID:(id)arg2 withTimeout:(double)arg3 performingBlock:(id)arg4;
++ (BOOL)waitForChangeToState:(unsigned int)arg1 forDisplayID:(id)arg2 withTimeout:(double)arg3 performingBlock:(id)arg4;
 
 @end

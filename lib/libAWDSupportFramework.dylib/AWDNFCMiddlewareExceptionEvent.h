@@ -16,10 +16,10 @@
 }
 
 @property unsigned int errorCode;
-@property bool hasErrorCode;
-@property bool hasTimestamp;
-@property bool hasType;
-@property bool hasVersion;
+@property BOOL hasErrorCode;
+@property BOOL hasTimestamp;
+@property BOOL hasType;
+@property BOOL hasVersion;
 @property unsigned long long timestamp;
 @property unsigned int type;
 @property unsigned int version;
@@ -29,19 +29,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)errorCode;
-- (bool)hasErrorCode;
-- (bool)hasTimestamp;
-- (bool)hasType;
-- (bool)hasVersion;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasErrorCode;
+- (BOOL)hasTimestamp;
+- (BOOL)hasType;
+- (BOOL)hasVersion;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setErrorCode:(unsigned int)arg1;
-- (void)setHasErrorCode:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
-- (void)setHasType:(bool)arg1;
-- (void)setHasVersion:(bool)arg1;
+- (void)setHasErrorCode:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasType:(BOOL)arg1;
+- (void)setHasVersion:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;

@@ -5,11 +5,11 @@
 @interface IMExpirableMessageChatItem : IMAttachmentMessagePartChatItem {
 }
 
-@property(readonly) bool isPlayed;
-@property(readonly) bool isSaved;
+@property(readonly) BOOL isPlayed;
+@property(readonly) BOOL isSaved;
 
 - (Class)__ck_chatItemClass;
-- (bool)isPlayed;
-- (bool)isSaved;
+- (BOOL)isPlayed;
+- (BOOL)isSaved;
 
 @end

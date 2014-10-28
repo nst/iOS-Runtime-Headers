@@ -20,7 +20,7 @@
 
 + (id)SCNJSExportProtocol;
 + (id)inverseKinematicsConstraintWithChainRootNode:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_customDecodingOfSCNIKConstraint:(id)arg1;
 - (void)_customEncodingOfSCNIKConstraint:(id)arg1;
@@ -32,9 +32,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)jointForNode:(id)arg1;
-- (double)maxAllowedRotationAngleForJoint:(id)arg1;
+- (float)maxAllowedRotationAngleForJoint:(id)arg1;
 - (void)setChainRootNode:(id)arg1;
-- (void)setMaxAllowedRotationAngle:(double)arg1 forJoint:(id)arg2;
+- (void)setMaxAllowedRotationAngle:(float)arg1 forJoint:(id)arg2;
 - (void)setTargetPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (struct SCNVector3 { float x1; float x2; float x3; })targetPosition;
 

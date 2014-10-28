@@ -2,35 +2,35 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, PKServicePaymentAuthorizationViewController, UITraitCollection;
+@class NSString, PKPaymentAuthorizationServiceViewController, UITraitCollection;
 
 @interface PKPaymentAuthorizationLayout : NSObject <UITraitEnvironment> {
-    double _contentHeightPadding;
-    double _contentMargin;
-    PKServicePaymentAuthorizationViewController *_controller;
-    double _headerMargin;
-    double _valueLeftMargin;
+    float _contentHeightPadding;
+    float _contentMargin;
+    PKPaymentAuthorizationServiceViewController *_controller;
+    float _headerMargin;
+    float _valueLeftMargin;
 }
 
-@property(readonly) double contentHeightPadding;
-@property(readonly) double contentMargin;
-@property PKServicePaymentAuthorizationViewController * controller;
+@property(readonly) float contentHeightPadding;
+@property(readonly) float contentMargin;
+@property PKPaymentAuthorizationServiceViewController * controller;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) double headerMargin;
+@property(readonly) unsigned int hash;
+@property(readonly) float headerMargin;
 @property(readonly) Class superclass;
 @property(readonly) UITraitCollection * traitCollection;
-@property(readonly) double valueLeftMargin;
+@property(readonly) float valueLeftMargin;
 
-- (double)contentHeightPadding;
-- (double)contentMargin;
+- (float)contentHeightPadding;
+- (float)contentMargin;
 - (id)controller;
-- (double)headerMargin;
+- (float)headerMargin;
 - (id)initWithController:(id)arg1;
 - (void)setController:(id)arg1;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
-- (double)valueLeftMargin;
+- (float)valueLeftMargin;
 
 @end

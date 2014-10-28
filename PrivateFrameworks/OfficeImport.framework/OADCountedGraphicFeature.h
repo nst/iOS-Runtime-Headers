@@ -4,17 +4,17 @@
 
 @interface OADCountedGraphicFeature : NSObject {
     id mFeature;
-    unsigned long long mUsageCount;
+    unsigned int mUsageCount;
 }
 
-@property unsigned long long usageCount;
+@property unsigned int usageCount;
 
-- (long long)compareUsageCount:(id)arg1;
+- (int)compareUsageCount:(id)arg1;
 - (void)dealloc;
 - (id)feature;
 - (void)incrementUsageCount;
 - (id)initWithFeature:(id)arg1;
-- (void)setUsageCount:(unsigned long long)arg1;
-- (unsigned long long)usageCount;
+- (void)setUsageCount:(unsigned int)arg1;
+- (unsigned int)usageCount;
 
 @end

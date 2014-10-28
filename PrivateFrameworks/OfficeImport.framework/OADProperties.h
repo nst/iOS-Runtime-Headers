@@ -14,19 +14,19 @@
 
 - (void)dealloc;
 - (void)flatten;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithDefaults;
-- (bool)isEqual:(id)arg1;
-- (bool)isMerged;
-- (bool)isMergedPropertyForSelector:(SEL)arg1;
-- (bool)isMergedWithParent;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isMerged;
+- (BOOL)isMergedPropertyForSelector:(SEL)arg1;
+- (BOOL)isMergedWithParent;
 - (id)overrideForSelector:(SEL)arg1;
 - (void)p_setParent:(id)arg1;
 - (id)parent;
 - (void)removeUnnecessaryOverrides;
-- (void)setMerged:(bool)arg1;
-- (void)setMergedWithParent:(bool)arg1;
+- (void)setMerged:(BOOL)arg1;
+- (void)setMergedWithParent:(BOOL)arg1;
 - (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;
 - (void)setParent:(id)arg1;
 

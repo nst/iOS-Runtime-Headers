@@ -3,22 +3,22 @@
  */
 
 @interface CAMCaptureSessionConfigurationOptions : NSObject {
-    bool_HDRDetectionEnabled;
-    bool_use60FPSVideo;
-    bool_useAlternateSlomoFront;
-    bool_useAlternateSlomoRear;
+    BOOL _HDRDetectionEnabled;
+    BOOL _use60FPSVideo;
+    BOOL _useAlternateSlomoFront;
+    BOOL _useAlternateSlomoRear;
 }
 
-@property(readonly) bool HDRDetectionEnabled;
-@property(readonly) bool use60FPSVideo;
-@property(readonly) bool useAlternateSlomoFront;
-@property(readonly) bool useAlternateSlomoRear;
+@property(readonly) BOOL HDRDetectionEnabled;
+@property(readonly) BOOL use60FPSVideo;
+@property(readonly) BOOL useAlternateSlomoFront;
+@property(readonly) BOOL useAlternateSlomoRear;
 
-- (bool)HDRDetectionEnabled;
+- (BOOL)HDRDetectionEnabled;
 - (id)init;
-- (id)initWithHDRDetectionEnabled:(bool)arg1 use60FPSVideo:(bool)arg2 useAlternateSlomoFront:(bool)arg3 useAlternateSlomoRear:(bool)arg4;
-- (bool)use60FPSVideo;
-- (bool)useAlternateSlomoFront;
-- (bool)useAlternateSlomoRear;
+- (id)initWithHDRDetectionEnabled:(BOOL)arg1 use60FPSVideo:(BOOL)arg2 useAlternateSlomoFront:(BOOL)arg3 useAlternateSlomoRear:(BOOL)arg4;
+- (BOOL)use60FPSVideo;
+- (BOOL)useAlternateSlomoFront;
+- (BOOL)useAlternateSlomoRear;
 
 @end

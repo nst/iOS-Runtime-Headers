@@ -5,6 +5,6 @@
 @interface CKNavigationController : UINavigationController {
 }
 
-- (bool)shouldAutorotate;
+- (BOOL)shouldAutorotate;
 
 @end

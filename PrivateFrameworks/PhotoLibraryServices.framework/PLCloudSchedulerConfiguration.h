@@ -5,18 +5,18 @@
 @class NSArray;
 
 @interface PLCloudSchedulerConfiguration : NSObject {
-    unsigned long long _concurrencyLevel;
+    unsigned int _concurrencyLevel;
     NSArray *_scenarioProducers;
     NSArray *_triggers;
 }
 
-@property unsigned long long concurrencyLevel;
+@property unsigned int concurrencyLevel;
 @property(retain) NSArray * scenarioProducers;
 @property(retain) NSArray * triggers;
 
-- (unsigned long long)concurrencyLevel;
+- (unsigned int)concurrencyLevel;
 - (id)scenarioProducers;
-- (void)setConcurrencyLevel:(unsigned long long)arg1;
+- (void)setConcurrencyLevel:(unsigned int)arg1;
 - (void)setScenarioProducers:(id)arg1;
 - (void)setTriggers:(id)arg1;
 - (id)triggers;

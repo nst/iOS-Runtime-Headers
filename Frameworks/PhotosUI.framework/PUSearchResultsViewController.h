@@ -10,24 +10,24 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) PUSearchResultDataSource * searchResultDataSource;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_reloadVisibleMomentHeadersAnimated:(bool)arg1;
-- (bool)allowSlideshowButton;
-- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
+- (void)_reloadVisibleMomentHeadersAnimated:(BOOL)arg1;
+- (BOOL)allowSlideshowButton;
+- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(BOOL)arg4;
 - (void)didTapHeaderView:(id)arg1;
 - (id)emptyPlaceholderView;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (id)newGridLayout;
 - (id)searchResultDataSource;
 - (void)searchResultHasPendingChanges:(id)arg1;
-- (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPhotosDataSource:(id)arg1;
 - (void)setSearchResultDataSource:(id)arg1;
-- (void)setSelected:(bool)arg1 itemsAtIndexes:(id)arg2 inSection:(long long)arg3 animated:(bool)arg4;
+- (void)setSelected:(BOOL)arg1 itemsAtIndexes:(id)arg2 inSection:(int)arg3 animated:(BOOL)arg4;
 - (void)viewDidLoad;
 
 @end

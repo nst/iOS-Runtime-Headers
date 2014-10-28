@@ -4,16 +4,16 @@
 
 @interface ML3WeakReference : NSObject {
     id _object;
-    unsigned long long _objectAddress;
+    unsigned int _objectAddress;
 }
 
 + (id)weakReferenceWithObject:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithObject:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)object;
 
 @end

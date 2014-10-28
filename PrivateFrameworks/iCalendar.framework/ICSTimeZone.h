@@ -22,7 +22,7 @@
 - (id)initWithSystemTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
 - (id)initWithSystemTimeZone:(id)arg1;
 - (id)initWithTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
-- (bool)isEqualToNSTimeZone:(id)arg1 forDate:(id)arg2;
+- (BOOL)isEqualToNSTimeZone:(id)arg1 forDate:(id)arg2;
 - (void)setTzid:(id)arg1;
 - (id)systemTimeZoneForDate:(id)arg1;
 - (id)tzid;

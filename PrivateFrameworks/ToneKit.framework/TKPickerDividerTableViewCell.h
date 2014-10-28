@@ -5,27 +5,27 @@
 @class UIColor, UIView;
 
 @interface TKPickerDividerTableViewCell : UITableViewCell {
-    long long _contentBackdropOverlayBlendMode;
+    int _contentBackdropOverlayBlendMode;
     UIView *_dividerView;
 }
 
-@property(setter=_setContentBackdropOverlayBlendMode:) long long _contentBackdropOverlayBlendMode;
+@property(setter=_setContentBackdropOverlayBlendMode:) int _contentBackdropOverlayBlendMode;
 @property(setter=_setDividerView:,retain) UIView * _dividerView;
-@property long long contentBackdropOverlayBlendMode;
+@property int contentBackdropOverlayBlendMode;
 @property(retain) UIColor * contentBackgroundColor;
 
-- (long long)_contentBackdropOverlayBlendMode;
+- (int)_contentBackdropOverlayBlendMode;
 - (id)_dividerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_dividerViewFrame;
-- (void)_setContentBackdropOverlayBlendMode:(long long)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_dividerViewFrame;
+- (void)_setContentBackdropOverlayBlendMode:(int)arg1;
 - (void)_setDividerView:(id)arg1;
-- (long long)contentBackdropOverlayBlendMode;
+- (int)contentBackdropOverlayBlendMode;
 - (id)contentBackgroundColor;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)setContentBackdropOverlayBlendMode:(long long)arg1;
+- (void)setContentBackdropOverlayBlendMode:(int)arg1;
 - (void)setContentBackgroundColor:(id)arg1;
-- (void)setSeparatorStyle:(long long)arg1;
+- (void)setSeparatorStyle:(int)arg1;
 
 @end

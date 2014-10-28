@@ -10,7 +10,7 @@
     NSDate *_lastEdited;
     NSDate *_lastInvisible;
     NSDate *_lastViewed;
-    long long _status;
+    int _status;
     CKRecordID *_userRecordID;
 }
 
@@ -20,10 +20,10 @@
 @property(copy) NSDate * lastEdited;
 @property(copy) NSDate * lastInvisible;
 @property(copy) NSDate * lastViewed;
-@property long long status;
+@property int status;
 @property(copy) CKRecordID * userRecordID;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -42,9 +42,9 @@
 - (void)setLastEdited:(id)arg1;
 - (void)setLastInvisible:(id)arg1;
 - (void)setLastViewed:(id)arg1;
-- (void)setStatus:(long long)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setUserRecordID:(id)arg1;
-- (long long)status;
+- (int)status;
 - (id)userRecordID;
 
 @end

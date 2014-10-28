@@ -8,8 +8,8 @@
 
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initObjectWithFormula:(const struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; } x2; }*)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

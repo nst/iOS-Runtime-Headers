@@ -15,9 +15,9 @@
 }
 
 @property(retain) NSString * bundleName;
-@property(readonly) bool hasBundleName;
-@property bool hasPowerMicroWatt;
-@property bool hasRAT;
+@property(readonly) BOOL hasBundleName;
+@property BOOL hasPowerMicroWatt;
+@property BOOL hasRAT;
 @property unsigned int powerMicroWatt;
 @property int rAT;
 
@@ -27,18 +27,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasBundleName;
-- (bool)hasPowerMicroWatt;
-- (bool)hasRAT;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBundleName;
+- (BOOL)hasPowerMicroWatt;
+- (BOOL)hasRAT;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)powerMicroWatt;
 - (int)rAT;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBundleName:(id)arg1;
-- (void)setHasPowerMicroWatt:(bool)arg1;
-- (void)setHasRAT:(bool)arg1;
+- (void)setHasPowerMicroWatt:(BOOL)arg1;
+- (void)setHasRAT:(BOOL)arg1;
 - (void)setPowerMicroWatt:(unsigned int)arg1;
 - (void)setRAT:(int)arg1;
 - (void)writeTo:(id)arg1;

@@ -9,39 +9,39 @@
 @class NSMutableDictionary, PHAsset;
 
 @interface PUResourceDownloadRequest : NSObject {
+    BOOL __downloadCanceled;
     PHAsset *_asset;
     id _downloadCompletionHandler;
     double _progress;
     NSMutableDictionary *_progressByRequestIdentifier;
     id _progressChangeHandler;
-    long long _requestType;
-    bool__downloadCanceled;
+    int _requestType;
 }
 
-@property(getter=_isDownloadCanceled,setter=_setDownloadCanceled:) bool _downloadCanceled;
+@property(getter=_isDownloadCanceled,setter=_setDownloadCanceled:) BOOL _downloadCanceled;
 @property(readonly) PHAsset * asset;
 @property double progress;
 @property(copy) id progressChangeHandler;
-@property(readonly) long long requestType;
+@property(readonly) int requestType;
 
 - (void).cxx_destruct;
-- (void)_didFinishDownloadWithSuccess:(bool)arg1 error:(id)arg2;
-- (void)_fetchResourcesForConsumingAsset:(id)arg1 networkAccessAllowed:(bool)arg2 handler:(id)arg3;
-- (void)_fetchResourcesForEditingAsset:(id)arg1 networkAccessAllowed:(bool)arg2 handler:(id)arg3;
-- (void)_fetchResourcesWithNetworkAccessAllowed:(bool)arg1 handler:(id)arg2;
-- (bool)_isDownloadCanceled;
-- (void)_setDownloadCanceled:(bool)arg1;
+- (void)_didFinishDownloadWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_fetchResourcesForConsumingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id)arg3;
+- (void)_fetchResourcesForEditingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id)arg3;
+- (void)_fetchResourcesWithNetworkAccessAllowed:(BOOL)arg1 handler:(id)arg2;
+- (BOOL)_isDownloadCanceled;
+- (void)_setDownloadCanceled:(BOOL)arg1;
 - (void)_setProgress:(double)arg1;
-- (void)_simulateFetchResourcesWithDuration:(double)arg1 success:(bool)arg2 networkAccessAllowed:(bool)arg3 handler:(id)arg4;
-- (void)_updateCombinedProgressWithValue:(double)arg1 forRequestIdentifier:(id)arg2 networkAccessAllowed:(bool)arg3;
+- (void)_simulateFetchResourcesWithDuration:(double)arg1 success:(BOOL)arg2 networkAccessAllowed:(BOOL)arg3 handler:(id)arg4;
+- (void)_updateCombinedProgressWithValue:(double)arg1 forRequestIdentifier:(id)arg2 networkAccessAllowed:(BOOL)arg3;
 - (id)asset;
 - (void)cancelDownloadRequest;
 - (void)downloadRequiredResourcesWithCompletionHandler:(id)arg1;
 - (void)fetchIsDownloadRequiredWithHandler:(id)arg1;
-- (id)initWithAsset:(id)arg1 requestType:(long long)arg2;
+- (id)initWithAsset:(id)arg1 requestType:(int)arg2;
 - (double)progress;
 - (id)progressChangeHandler;
-- (long long)requestType;
+- (int)requestType;
 - (void)setProgressChangeHandler:(id)arg1;
 
 @end

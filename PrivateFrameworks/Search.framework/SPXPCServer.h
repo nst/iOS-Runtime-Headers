@@ -18,23 +18,23 @@
     NSMutableDictionary *_handlerMap;
     NSObject<OS_dispatch_source> *_idleTimerSource;
     id _shutdownHandler;
+    BOOL _timeoutPending;
+    BOOL _timerHasFiredSinceLastMessage;
     NSObject<OS_dispatch_queue> *_timerQueue;
-    bool_timeoutPending;
-    bool_timerHasFiredSinceLastMessage;
 }
 
 @property(copy) id defaultMessageHandler;
 @property(copy) id disconnectHandler;
 @property(copy) id shutdownHandler;
 
-- (bool)_doingWork;
+- (BOOL)_doingWork;
 - (void)_handleNewConnection:(id)arg1;
 - (id)_handlerForMessageName:(id)arg1;
 - (id)_highAvailabilityQueue;
 - (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
 - (void)_resetMessageFlag;
-- (bool)_runShutdownHandler;
-- (bool)connectionsAreActive;
+- (BOOL)_runShutdownHandler;
+- (BOOL)connectionsAreActive;
 - (void)dealloc;
 - (id)defaultMessageHandler;
 - (id)disconnectHandler;

@@ -12,8 +12,8 @@
 
 - (void).cxx_destruct;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (bool)isEnabled;
-- (long long)pageComponentType;
+- (BOOL)isEnabled;
+- (int)pageComponentType;
 - (id)text;
 
 @end

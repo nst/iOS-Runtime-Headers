@@ -18,11 +18,11 @@
 - (void).cxx_destruct;
 - (id)_deviceAuthorizationDirectory;
 - (id)_deviceAuthorizationFilePath;
-- (bool)addDeviceWithIdentifier:(id)arg1 forDeviceName:(id)arg2 error:(id*)arg3;
+- (BOOL)addDeviceWithIdentifier:(id)arg1 forDeviceName:(id)arg2 error:(id*)arg3;
 - (id)deviceIdentifiers;
 - (id)deviceNameForIdentifier:(id)arg1;
 - (id)init;
-- (bool)isAuthorizedDeviceWithIdentifier:(id)arg1;
-- (bool)removeDeviceWithIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)isAuthorizedDeviceWithIdentifier:(id)arg1;
+- (BOOL)removeDeviceWithIdentifier:(id)arg1 error:(id*)arg2;
 
 @end

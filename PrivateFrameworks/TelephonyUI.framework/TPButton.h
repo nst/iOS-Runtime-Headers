@@ -6,49 +6,49 @@
 
 @interface TPButton : UIButton {
     _UIBackdropView *_backdropView;
+    BOOL _blursBackground;
     int _color;
-    bool_blursBackground;
-    bool_roundsCorners;
-    bool_usesOverlayBlendingForContents;
+    BOOL _roundsCorners;
+    BOOL _usesOverlayBlendingForContents;
 }
 
-@property bool blursBackground;
-@property bool roundsCorners;
-@property bool usesOverlayBlendingForContents;
+@property BOOL blursBackground;
+@property BOOL roundsCorners;
+@property BOOL usesOverlayBlendingForContents;
 
-+ (double)defaultHeight;
-+ (double)defaultHeightForColor:(int)arg1;
++ (float)defaultHeight;
++ (float)defaultHeightForColor:(int)arg1;
 + (id)defaultStandardFont;
-+ (double)defaultWidthForCenterButton;
-+ (double)defaultWidthForSideButton;
-+ (double)maxWidthForCenterButton;
++ (float)defaultWidthForCenterButton;
++ (float)defaultWidthForSideButton;
++ (float)maxWidthForCenterButton;
 
 - (void)_animationDidEnd;
 - (void)_animationWillBegin;
-- (bool)blursBackground;
+- (BOOL)blursBackground;
 - (int)buttonColor;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (bool)roundsCorners;
+- (BOOL)roundsCorners;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBlursBackground:(bool)arg1;
+- (void)setBlursBackground:(BOOL)arg1;
 - (void)setButtonColor:(int)arg1;
 - (void)setDisabledButtonColor:(int)arg1;
-- (void)setEnabled:(bool)arg1;
-- (void)setHighlighted:(bool)arg1;
-- (void)setIconVerticalOffset:(double)arg1;
-- (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
-- (void)setMinimumTitleFontSize:(double)arg1 maximumTitleFontSize:(double)arg2;
-- (void)setMinimumTitleFontSize:(double)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setIconVerticalOffset:(float)arg1;
+- (void)setImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setMinimumTitleFontSize:(float)arg1 maximumTitleFontSize:(float)arg2;
+- (void)setMinimumTitleFontSize:(float)arg1;
 - (void)setPlusSeparatedTitle:(id)arg1;
-- (void)setRoundsCorners:(bool)arg1;
-- (void)setSelected:(bool)arg1;
-- (void)setTitleImagePadding:(double)arg1;
-- (void)setTitleVerticalOffset:(double)arg1;
-- (void)setUsesOverlayBlendingForContents:(bool)arg1;
-- (bool)usesOverlayBlendingForContents;
+- (void)setRoundsCorners:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (void)setTitleImagePadding:(float)arg1;
+- (void)setTitleVerticalOffset:(float)arg1;
+- (void)setUsesOverlayBlendingForContents:(BOOL)arg1;
+- (BOOL)usesOverlayBlendingForContents;
 
 @end

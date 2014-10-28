@@ -23,19 +23,19 @@
 - (id)dataSourceName;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithRawSourceDescription:(id)arg1 andOwningPortID:(id)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToDataSource:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToDataSource:(id)arg1;
 - (id)location;
 - (id)orientation;
 - (id)preferredPolarPattern;
 - (struct DataSourceDescriptionImpl { id x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; }*)privateGetImplementation;
 - (id)privateGetOwningPortID;
-- (bool)privateMatchesRawDescription:(id)arg1;
+- (BOOL)privateMatchesRawDescription:(id)arg1;
 - (id)selectedPolarPattern;
-- (bool)setPreferredPolarPattern:(id)arg1 error:(id*)arg2;
+- (BOOL)setPreferredPolarPattern:(id)arg1 error:(id*)arg2;
 - (id)supportedPolarPatterns;
 
 @end

@@ -17,8 +17,8 @@
 
 - (void).cxx_destruct;
 - (void)_searchOperation:(id)arg1 didFinishWithResults:(id)arg2;
-- (id)_searchPropertiesForGroupingType:(long long)arg1;
-- (unsigned long long)count;
+- (id)_searchPropertiesForGroupingType:(int)arg1;
+- (unsigned int)count;
 - (id)dataSource;
 - (void)dealloc;
 - (id)entities;

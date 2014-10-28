@@ -26,6 +26,7 @@
     boolaabExist;
     boolignoreALSEvents;
     boolignoreBrightnessKey;
+    booloverrideIgnoreBrightness;
     unsigned int displayCount;
     struct __Display {} *display[2];
     unsigned int driverNode[3];

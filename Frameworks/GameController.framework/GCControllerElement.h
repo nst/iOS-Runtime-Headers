@@ -7,13 +7,13 @@
 @interface GCControllerElement : NSObject {
 }
 
-@property(getter=isAnalog,readonly) bool analog;
+@property(getter=isAnalog,readonly) BOOL analog;
 @property(readonly) GCControllerElement * collection;
 
-- (bool)_setValue:(float)arg1;
+- (BOOL)_setValue:(float)arg1;
 - (id)collection;
-- (bool)isAnalog;
-- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (BOOL)isAnalog;
+- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
 - (float)value;
 
 @end

@@ -5,19 +5,19 @@
 @class NSMutableIndexSet;
 
 @interface TSTCoordinateArray : NSObject {
-    boolmLayoutDirectionIsLeftToRight;
-    double mAverage;
-    double *mCoordinates;
+    float mAverage;
+    float *mCoordinates;
     unsigned int mCount;
+    BOOL mLayoutDirectionIsLeftToRight;
     unsigned int mOffset;
-    double mTableWidth;
+    float mTableWidth;
     NSMutableIndexSet *mVisibleIndices;
 }
 
 - (void)dealloc;
 - (id)description;
-- (void)hasRightToLeftOrderingWithWidth:(double)arg1;
+- (void)hasRightToLeftOrderingWithWidth:(float)arg1;
 - (id)initWithCount:(unsigned int)arg1 atOffset:(unsigned int)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

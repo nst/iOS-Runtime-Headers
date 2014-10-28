@@ -9,19 +9,19 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned long long)directionType;
++ (unsigned int)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (bool)isCharacterAwareEffect;
++ (BOOL)isCharacterAwareEffect;
 + (id)localizedMenuString:(int)arg1;
-+ (bool)requiresBullets;
-+ (bool)requiresPerspectiveTransform;
++ (BOOL)requiresBullets;
++ (BOOL)requiresPerspectiveTransform;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
 

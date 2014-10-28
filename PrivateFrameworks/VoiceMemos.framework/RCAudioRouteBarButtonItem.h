@@ -7,9 +7,9 @@
 @interface RCAudioRouteBarButtonItem : UIBarButtonItem {
     UIButton *_button;
     UIView *_contentView;
+    BOOL _needsButtonUpdate;
     UIColor *_toggleSpeakerOtherRouteChosenColor;
     UIColor *_toggleSpeakerSpeakerRouteChosenColor;
-    bool_needsButtonUpdate;
 }
 
 + (id)newAudioRouteItem;

@@ -12,14 +12,14 @@
     int _pendingURLsLock;
     NSURL *_presentedItemURL;
     NSObject<OS_dispatch_queue> *_processingQueue;
+    BOOL _scheduledProcessingBlock;
     NSString *_storeName;
     PFUbiquityLocation *_ubiquityRootLocation;
-    bool_scheduledProcessingBlock;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * localPeerID;
 @property(readonly) NSDictionary * locationToSafeSaveFile;
 @property(readonly) NSDictionary * locationToStatus;
@@ -42,7 +42,7 @@
 - (void)exporterDidMoveLog:(id)arg1;
 - (id)init;
 - (id)initWithUbiquityRootLocation:(id)arg1 localPeerID:(id)arg2 storeName:(id)arg3 processingQueue:(id)arg4;
-- (bool)isiCloudExtension:(id)arg1;
+- (BOOL)isiCloudExtension:(id)arg1;
 - (id)localPeerID;
 - (id)locationToSafeSaveFile;
 - (id)locationToStatus;

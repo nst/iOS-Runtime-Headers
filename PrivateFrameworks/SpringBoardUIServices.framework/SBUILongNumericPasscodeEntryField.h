@@ -5,46 +5,46 @@
 @class SBUIButton, UIButton, UILabel, UIView;
 
 @interface SBUILongNumericPasscodeEntryField : SBUINumericPasscodeEntryFieldBase {
+    BOOL _firstResponder;
     UIView *_leftPaddingView;
     SBUIButton *_okButton;
     UILabel *_promptLabel;
     UIView *_rightPaddingView;
+    BOOL _showsOkButton;
+    BOOL _showsPromptLabel;
     UIView *_springView;
     UIView *_springViewParent;
-    bool_firstResponder;
-    bool_showsOkButton;
-    bool_showsPromptLabel;
 }
 
 @property(readonly) UIButton * okButton;
 @property(readonly) UILabel * promptLabel;
-@property bool showsOkButton;
-@property bool showsPromptLabel;
+@property BOOL showsOkButton;
+@property BOOL showsPromptLabel;
 
 - (void)_autofillForMesaWithCompletion:(id)arg1;
-- (void)_getPasscodeFieldSize:(struct CGSize { double x1; double x2; }*)arg1 okButtonSize:(struct CGSize { double x1; double x2; }*)arg2;
+- (void)_getPasscodeFieldSize:(struct CGSize { float x1; float x2; }*)arg1 okButtonSize:(struct CGSize { float x1; float x2; }*)arg2;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)_okButtonHit;
-- (void)_resetForFailedPasscode:(bool)arg1 playUnlockFailedSound:(bool)arg2;
-- (struct CGSize { double x1; double x2; })_viewSize;
-- (bool)becomeFirstResponder;
-- (bool)canBecomeFirstResponder;
-- (bool)canResignFirstResponder;
+- (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_viewSize;
+- (BOOL)becomeFirstResponder;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canResignFirstResponder;
 - (void)dealloc;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
-- (bool)isFirstResponder;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
+- (BOOL)isFirstResponder;
 - (void)layoutSubviews;
 - (id)okButton;
-- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)promptLabel;
-- (bool)resignFirstResponder;
-- (void)setBackgroundAlpha:(double)arg1;
+- (BOOL)resignFirstResponder;
+- (void)setBackgroundAlpha:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
-- (void)setShowsOkButton:(bool)arg1;
-- (void)setShowsPromptLabel:(bool)arg1;
-- (bool)showsOkButton;
-- (bool)showsPromptLabel;
-- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (void)setShowsOkButton:(BOOL)arg1;
+- (void)setShowsPromptLabel:(BOOL)arg1;
+- (BOOL)showsOkButton;
+- (BOOL)showsPromptLabel;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
 
 @end

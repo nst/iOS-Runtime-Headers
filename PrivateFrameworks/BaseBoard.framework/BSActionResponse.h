@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy,readonly) BSSettings * info;
 @property(readonly) Class superclass;
 
@@ -26,13 +26,13 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)error;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)info;
 - (id)init;
 - (id)initWithInfo:(id)arg1 error:(id)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
-- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

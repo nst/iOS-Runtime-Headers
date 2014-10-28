@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLStatusDelegate>, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
+@class <CPLStatusDelegate>, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
 
 @interface CPLStatus : NSObject {
     <CPLStatusDelegate> *_delegate;
@@ -11,12 +11,14 @@
     NSURL *_statusFileURL;
 }
 
+@property(readonly) NSDictionary * cloudAssetCountPerType;
+@property(readonly) NSDate * cloudAssetCountPerTypeLastCheckDate;
 @property <CPLStatusDelegate> * delegate;
 @property NSDate * exitDeleteTime;
-@property bool hasChangesToProcess;
-@property bool iCloudLibraryExists;
-@property bool iCloudLibraryHasBeenWiped;
-@property bool isExceedingQuota;
+@property BOOL hasChangesToProcess;
+@property BOOL iCloudLibraryExists;
+@property BOOL iCloudLibraryHasBeenWiped;
+@property BOOL isExceedingQuota;
 @property NSDate * lastSuccessfulSyncDate;
 
 + (id)statusForSharedLibrary;
@@ -25,21 +27,24 @@
 - (void)_loadIfNecessary;
 - (void)_save;
 - (void)_statusDidChange;
+- (id)cloudAssetCountPerType;
+- (id)cloudAssetCountPerTypeLastCheckDate;
 - (id)delegate;
 - (id)exitDeleteTime;
-- (bool)hasChangesToProcess;
-- (bool)iCloudLibraryExists;
-- (bool)iCloudLibraryHasBeenWiped;
+- (BOOL)hasChangesToProcess;
+- (BOOL)iCloudLibraryExists;
+- (BOOL)iCloudLibraryHasBeenWiped;
 - (id)initWithClientLibraryBaseURL:(id)arg1;
-- (bool)isExceedingQuota;
+- (BOOL)isExceedingQuota;
 - (id)lastSuccessfulSyncDate;
 - (void)refetchFromDisk;
+- (void)setCloudAssetCountPerType:(id)arg1 updateCheckDate:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setExitDeleteTime:(id)arg1;
-- (void)setHasChangesToProcess:(bool)arg1;
-- (void)setICloudLibraryExists:(bool)arg1;
-- (void)setICloudLibraryHasBeenWiped:(bool)arg1;
-- (void)setIsExceedingQuota:(bool)arg1;
+- (void)setHasChangesToProcess:(BOOL)arg1;
+- (void)setICloudLibraryExists:(BOOL)arg1;
+- (void)setICloudLibraryHasBeenWiped:(BOOL)arg1;
+- (void)setIsExceedingQuota:(BOOL)arg1;
 - (void)setLastSuccessfulSyncDate:(id)arg1;
 - (id)statusDescription;
 

@@ -13,14 +13,14 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property double effectiveInterval;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSUUID * identifier;
 @property(copy) NSDate * startDate;
 @property(readonly) Class superclass;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (bool)containsDate:(id)arg1;
+- (BOOL)containsDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (double)effectiveInterval;

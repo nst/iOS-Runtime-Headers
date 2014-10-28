@@ -5,14 +5,14 @@
 @class MPAVRoutingController, NSString;
 
 @interface AXHAUtilities : NSObject <MPAVRoutingControllerDelegate> {
+    BOOL _hearingAidRouteAvailable;
     MPAVRoutingController *_routingController;
-    bool_hearingAidRouteAvailable;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool hearingAidRouteAvailable;
+@property(readonly) unsigned int hash;
+@property BOOL hearingAidRouteAvailable;
 @property(readonly) Class superclass;
 
 + (id)XDCObjectFromObject:(id)arg1;
@@ -23,11 +23,11 @@
 + (id)sharedUtilityProvider;
 
 - (void)dealloc;
-- (bool)hearingAidRouteAvailable;
-- (bool)hearingAidStreamSelected;
+- (BOOL)hearingAidRouteAvailable;
+- (BOOL)hearingAidStreamSelected;
 - (id)init;
 - (void)routesDidChange:(id)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
-- (void)setHearingAidRouteAvailable:(bool)arg1;
+- (void)setHearingAidRouteAvailable:(BOOL)arg1;
 
 @end

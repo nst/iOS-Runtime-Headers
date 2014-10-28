@@ -15,7 +15,7 @@
 - (id)current;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setCurrent:(id)arg1;
 
 @end

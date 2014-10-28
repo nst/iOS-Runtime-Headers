@@ -10,14 +10,14 @@
 
 @property(readonly) NSString * displayName;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)idString;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisplayName:(id)arg1;
@@ -25,7 +25,7 @@
 - (id)initWithPID:(unsigned int)arg1 displayName:(id)arg2;
 - (id)initWithSerializedRepresentation:(id)arg1;
 - (id)internalDescription;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned long long)pid64;
 - (unsigned int)pid;
 - (id)serializedRepresentation;

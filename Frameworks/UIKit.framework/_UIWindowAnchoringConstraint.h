@@ -10,7 +10,7 @@
 
 @property UIWindow * window;
 
-- (bool)_addToEngine:(id)arg1 integralizationAdjustment:(double)arg2 mutuallyExclusiveConstraints:(id*)arg3;
+- (BOOL)_addToEngine:(id)arg1 integralizationAdjustment:(float)arg2 mutuallyExclusiveConstraints:(id*)arg3;
 - (void)setWindow:(id)arg1;
 - (id)window;
 

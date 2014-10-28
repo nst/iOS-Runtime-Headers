@@ -5,6 +5,7 @@
 @class <_MKResultViewDelegate>, CLLocation, MKLocationManager, MKMapItem, NSArray, NSMutableArray, NSString, NSTimer, UIColor, UIImageView, UILabel;
 
 @interface _MKResultView : UIView <MKLocationManagerObserver> {
+    BOOL _alwaysUsesBusinessLayout;
     <_MKResultViewDelegate> *_delegate;
     double _fallbackDistance;
     int _iconFormat;
@@ -21,51 +22,51 @@
     UILabel *_secondaryLabel;
     NSString *_secondaryLabelText;
     UIColor *_secondaryTextColor;
+    BOOL _selected;
+    BOOL _showsDistance;
     UILabel *_tertiaryLabel;
-    bool_alwaysUsesBusinessLayout;
-    bool_selected;
-    bool_showsDistance;
-    bool_useSpotlightVibrancy;
+    BOOL _useSpotlightVibrancy;
     <_MKResultViewDelegate> *delegate;
 }
 
-@property bool alwaysUsesBusinessLayout;
+@property BOOL alwaysUsesBusinessLayout;
 @property(copy,readonly) NSString * debugDescription;
 @property <_MKResultViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property double fallbackDistance;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property int iconFormat;
 @property(retain) UIImageView * imageView;
 @property(retain) MKMapItem * mapItem;
 @property(retain) NSArray * mapItems;
 @property(retain) UILabel * nameLabel;
-@property(readonly) double preferredHeight;
+@property(readonly) float preferredHeight;
 @property(retain) NSString * primaryLabelText;
 @property(retain) UIColor * primaryTextColor;
 @property(retain) CLLocation * referenceLocation;
 @property(retain) UILabel * secondaryLabel;
 @property(retain) NSString * secondaryLabelText;
 @property(retain) UIColor * secondaryTextColor;
-@property bool selected;
-@property bool showsDistance;
+@property BOOL selected;
+@property BOOL showsDistance;
 @property(readonly) Class superclass;
 @property(retain) UILabel * tertiaryLabel;
-@property bool useSpotlightVibrancy;
+@property BOOL useSpotlightVibrancy;
 
-+ (bool)requiresConstraintBasedLayout;
++ (BOOL)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_cancelReferenceLocationTimer;
 - (void)_contentSizeCategoryDidChange;
 - (id)_defaultPrimaryLabel;
 - (id)_defaultSecondaryCategoryLabel;
-- (double)_expectedHeightForLabels;
+- (float)_expectedHeightForLabels;
 - (void)_fireReferenceLocationTimer;
-- (struct CGSize { double x1; double x2; })_imageSize;
-- (id)_labelWithFontSize:(double)arg1;
-- (unsigned long long)_maxNameLengthForEndingString:(id)arg1;
-- (unsigned long long)_maxSecondaryStringLengthForEndingString:(id)arg1;
+- (struct CGSize { float x1; float x2; })_imageSize;
+- (id)_labelWithFontSize:(float)arg1;
+- (void)_locationApprovalDidChange;
+- (unsigned int)_maxNameLengthForEndingString:(id)arg1;
+- (unsigned int)_maxSecondaryStringLengthForEndingString:(id)arg1;
 - (void)_updateColors;
 - (void)_updateFontSizing;
 - (void)_updateLayoutForAddress;
@@ -73,7 +74,7 @@
 - (void)_updatePrimaryColors;
 - (void)_updateSecondaryColors;
 - (void)addLabelIfNecessary:(id)arg1;
-- (bool)alwaysUsesBusinessLayout;
+- (BOOL)alwaysUsesBusinessLayout;
 - (void)commonInit;
 - (void)dealloc;
 - (id)delegate;
@@ -82,11 +83,11 @@
 - (int)iconFormat;
 - (id)imageView;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 highlightsOnTouch:(bool)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlightsOnTouch:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
@@ -94,20 +95,20 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (id)mapItem;
 - (id)mapItems;
 - (id)nameLabel;
-- (double)preferredHeight;
+- (float)preferredHeight;
 - (id)primaryLabelText;
 - (id)primaryTextColor;
 - (id)referenceLocation;
 - (id)secondaryLabel;
 - (id)secondaryLabelText;
 - (id)secondaryTextColor;
-- (bool)selected;
-- (void)setAlwaysUsesBusinessLayout:(bool)arg1;
+- (BOOL)selected;
+- (void)setAlwaysUsesBusinessLayout:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFallbackDistance:(double)arg1;
 - (void)setIconFormat:(int)arg1;
@@ -122,17 +123,17 @@
 - (void)setSecondaryLabel:(id)arg1;
 - (void)setSecondaryLabelText:(id)arg1;
 - (void)setSecondaryTextColor:(id)arg1;
-- (void)setSelected:(bool)arg1;
-- (void)setShowsDistance:(bool)arg1;
+- (void)setSelected:(BOOL)arg1;
+- (void)setShowsDistance:(BOOL)arg1;
 - (void)setTertiaryLabel:(id)arg1;
-- (void)setUseSpotlightVibrancy:(bool)arg1;
-- (bool)showsDistance;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setUseSpotlightVibrancy:(BOOL)arg1;
+- (BOOL)showsDistance;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tertiaryLabel;
 - (void)updateConstraints;
 - (void)updateImageView;
 - (void)updateLayout;
 - (void)updateSubviews;
-- (bool)useSpotlightVibrancy;
+- (BOOL)useSpotlightVibrancy;
 
 @end

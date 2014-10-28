@@ -5,63 +5,63 @@
 @class FTMessageQueue, IDSBaseMessage, IMTimer, NSArray, NSNumber, NSString;
 
 @interface FTMessageDelivery : NSObject <FTMessageQueueDelegate> {
-    unsigned long long _maxConcurrentMessages;
+    BOOL _logToRegistration;
+    unsigned int _maxConcurrentMessages;
     NSNumber *_protocolVersion;
     FTMessageQueue *_queue;
     unsigned int _retries;
+    BOOL _retryInAirplaneMode;
     IMTimer *_timer;
     NSString *_userAgent;
-    bool_logToRegistration;
-    bool_retryInAirplaneMode;
 }
 
 @property(readonly) NSArray * allMessages;
-@property(readonly) bool busy;
+@property(readonly) BOOL busy;
 @property(readonly) IDSBaseMessage * currentMessage;
-@property(readonly) bool hasQueuedItems;
-@property bool logToRegistration;
-@property unsigned long long maxConcurrentMessages;
-@property(readonly) long long maxLargeMessageSize;
-@property(readonly) long long maxMessageSize;
+@property(readonly) BOOL hasQueuedItems;
+@property BOOL logToRegistration;
+@property unsigned int maxConcurrentMessages;
+@property(readonly) int maxLargeMessageSize;
+@property(readonly) int maxMessageSize;
 @property(copy) NSNumber * protocolVersion;
 @property(readonly) NSArray * queuedMessages;
-@property bool retryInAirplaneMode;
+@property BOOL retryInAirplaneMode;
 @property(copy) NSString * userAgent;
 
 + (Class)APNSMessageDeliveryClass;
 + (Class)HTTPMessageDeliveryClass;
-+ (id)_errorForTDMessageDeliveryStatus:(long long)arg1 userInfo:(id)arg2;
++ (id)_errorForTDMessageDeliveryStatus:(int)arg1 userInfo:(id)arg2;
 + (id)alloc;
 
 - (void)_clearRetryTimer;
-- (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3 resultCode:(long long)arg4;
+- (void)_informDelegateAboutMessage:(id)arg1 error:(id)arg2 result:(id)arg3 resultCode:(int)arg4;
 - (id)_queue;
 - (void)_retryTimerHit:(id)arg1;
-- (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
+- (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_setRetryTimer:(double)arg1;
-- (void)_signMessage:(id)arg1 useDataSignatures:(bool)arg2 body:(id)arg3 queryString:(id)arg4 intoDictionary:(id)arg5;
+- (void)_signMessage:(id)arg1 useDataSignatures:(BOOL)arg2 body:(id)arg3 queryString:(id)arg4 intoDictionary:(id)arg5;
 - (id)allMessages;
-- (bool)busy;
+- (BOOL)busy;
 - (void)cancelMessage:(id)arg1;
 - (id)currentMessage;
 - (void)dealloc;
-- (bool)hasQueuedItems;
+- (BOOL)hasQueuedItems;
 - (id)init;
 - (void)invalidate;
-- (bool)logToRegistration;
-- (unsigned long long)maxConcurrentMessages;
-- (long long)maxLargeMessageSize;
-- (long long)maxMessageSize;
+- (BOOL)logToRegistration;
+- (unsigned int)maxConcurrentMessages;
+- (int)maxLargeMessageSize;
+- (int)maxMessageSize;
 - (void)networkStateChanged;
 - (id)protocolVersion;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (id)queuedMessages;
-- (bool)retryInAirplaneMode;
-- (bool)sendMessage:(id)arg1;
-- (void)setLogToRegistration:(bool)arg1;
-- (void)setMaxConcurrentMessages:(unsigned long long)arg1;
+- (BOOL)retryInAirplaneMode;
+- (BOOL)sendMessage:(id)arg1;
+- (void)setLogToRegistration:(BOOL)arg1;
+- (void)setMaxConcurrentMessages:(unsigned int)arg1;
 - (void)setProtocolVersion:(id)arg1;
-- (void)setRetryInAirplaneMode:(bool)arg1;
+- (void)setRetryInAirplaneMode:(BOOL)arg1;
 - (void)setUserAgent:(id)arg1;
 - (id)userAgent;
 

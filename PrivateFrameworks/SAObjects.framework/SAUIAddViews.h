@@ -9,27 +9,27 @@
 
 @property(copy) NSString * dialogPhase;
 @property(copy) NSString * displayTarget;
-@property bool scrollToTop;
-@property bool temporary;
+@property BOOL scrollToTop;
+@property BOOL temporary;
 @property(copy) NSArray * views;
 
 + (id)addViews;
 + (id)addViewsWithDictionary:(id)arg1 context:(id)arg2;
 
-- (bool)_afui_isUsefulUserResultCommand;
+- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)afui_dialogPhase;
 - (id)dialogPhase;
 - (id)displayTarget;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
-- (bool)scrollToTop;
+- (BOOL)requiresResponse;
+- (BOOL)scrollToTop;
 - (void)setDialogPhase:(id)arg1;
 - (void)setDisplayTarget:(id)arg1;
-- (void)setScrollToTop:(bool)arg1;
-- (void)setTemporary:(bool)arg1;
+- (void)setScrollToTop:(BOOL)arg1;
+- (void)setTemporary:(BOOL)arg1;
 - (void)setViews:(id)arg1;
-- (bool)temporary;
+- (BOOL)temporary;
 - (id)views;
 
 @end

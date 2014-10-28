@@ -23,21 +23,21 @@
 @property <SKUIModalDocumentDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSArray * documents;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property <SKUIModalSourceViewProvider> * modalSourceViewProvider;
 @property <UINavigationControllerDelegate> * navigationControllerDelegate;
 @property(retain) UIViewController * rootViewController;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_dismissOverlayControllerWithStackItem:(id)arg1 animated:(bool)arg2;
+- (void)_dismissOverlayControllerWithStackItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_garbageCollectActivityViewController:(id)arg1;
 - (void)_overlayControllerBackstopAction:(id)arg1;
 - (id)_overlayStackItems;
-- (void)_popDocument:(bool)arg1;
-- (void)_popOverlayStackItem:(id)arg1 animated:(bool)arg2;
-- (void)_popPopoverStackItem:(id)arg1 animated:(bool)arg2;
-- (bool)_popoverController:(id)arg1 containsStackItem:(id)arg2;
+- (void)_popDocument:(BOOL)arg1;
+- (void)_popOverlayStackItem:(id)arg1 animated:(BOOL)arg2;
+- (void)_popPopoverStackItem:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)_popoverController:(id)arg1 containsStackItem:(id)arg2;
 - (void)_presentOverlayViewControllersFromNavigationController:(id)arg1;
 - (id)_presenterViewController;
 - (void)_pushCharityDocument:(id)arg1 options:(id)arg2;
@@ -59,8 +59,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)documents;
-- (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
-- (void)giftViewController:(id)arg1 didFinishWithResult:(bool)arg2;
+- (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(BOOL)arg2;
+- (void)giftViewController:(id)arg1 didFinishWithResult:(BOOL)arg2;
 - (id)init;
 - (id)modalSourceViewProvider;
 - (id)navigationControllerDelegate;

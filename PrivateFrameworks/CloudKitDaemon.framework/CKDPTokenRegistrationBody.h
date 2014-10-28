@@ -15,9 +15,9 @@
 
 @property int apnsEnv;
 @property(retain) NSString * bundleIdentifier;
-@property bool hasApnsEnv;
-@property(readonly) bool hasBundleIdentifier;
-@property(readonly) bool hasToken;
+@property BOOL hasApnsEnv;
+@property(readonly) BOOL hasBundleIdentifier;
+@property(readonly) BOOL hasToken;
 @property(retain) NSData * token;
 
 - (void).cxx_destruct;
@@ -27,16 +27,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasApnsEnv;
-- (bool)hasBundleIdentifier;
-- (bool)hasToken;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasApnsEnv;
+- (BOOL)hasBundleIdentifier;
+- (BOOL)hasToken;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setApnsEnv:(int)arg1;
 - (void)setBundleIdentifier:(id)arg1;
-- (void)setHasApnsEnv:(bool)arg1;
+- (void)setHasApnsEnv:(BOOL)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;
 - (void)writeTo:(id)arg1;

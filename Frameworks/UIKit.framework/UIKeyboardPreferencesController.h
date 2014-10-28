@@ -5,28 +5,28 @@
 @interface UIKeyboardPreferencesController : NSObject {
 }
 
-@property long long handBias;
+@property int handBias;
 
 + (void)handleSpecificHardwareKeyboard;
 + (id)sharedPreferencesController;
 
-- (bool)boolForKey:(int)arg1;
-- (bool)costlyCapture;
+- (BOOL)boolForKey:(int)arg1;
+- (BOOL)costlyCapture;
 - (void)dealloc;
-- (long long)handBias;
+- (int)handBias;
 - (id)init;
 - (void)preferencesControllerChanged:(id)arg1;
 - (void)releaseDontSynchronizePreferences;
-- (double)rivenSizeFactor:(double)arg1;
+- (float)rivenSizeFactor:(float)arg1;
 - (void)saveInputModes:(id)arg1;
-- (void)setHandBias:(long long)arg1;
+- (void)setHandBias:(int)arg1;
 - (void)setInputModeLastUsed:(id)arg1;
 - (void)setLanguageAwareInputModeLastUsed:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(int)arg2;
-- (bool)spaceConfirmationEnabled;
+- (BOOL)spaceConfirmationEnabled;
 - (void)synchronizePreferences;
 - (void)touchSynchronizePreferencesTimer;
-- (bool)typologyEnabled;
+- (BOOL)typologyEnabled;
 - (id)valueForKey:(int)arg1;
 
 @end

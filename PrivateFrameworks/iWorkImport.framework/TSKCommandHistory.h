@@ -7,15 +7,15 @@
 @interface TSKCommandHistory : TSPObject {
     NSMutableArray *_commands;
     <TSKCommandHistoryDelegate> *_delegate;
-    unsigned long long _mark;
+    BOOL _documentEditedSinceLastSave;
+    unsigned int _mark;
     NSMutableArray *_markedRedoCommands;
     TSKCommand<TSKPreflightCommand> *_pendingPreflightCommand;
-    unsigned long long _removedCommandCountSinceLastSave;
-    unsigned long long _removedCommandCountSinceUnarchive;
-    unsigned long long _undoCount;
-    unsigned long long _undoCountAtLastSave;
-    unsigned long long _undoCountAtUnarchive;
-    bool_documentEditedSinceLastSave;
+    unsigned int _removedCommandCountSinceLastSave;
+    unsigned int _removedCommandCountSinceUnarchive;
+    unsigned int _undoCount;
+    unsigned int _undoCountAtLastSave;
+    unsigned int _undoCountAtUnarchive;
 }
 
 @property <TSKCommandHistoryDelegate> * delegate;
@@ -24,7 +24,7 @@
 - (void)acceptMarkedCommands;
 - (void)addCommand:(id)arg1;
 - (void)beginMark;
-- (bool)canCoalesceWithCommand:(id)arg1;
+- (BOOL)canCoalesceWithCommand:(id)arg1;
 - (void)clear;
 - (void)coalesceWithCommand:(id)arg1;
 - (id)commandsRemovedByAcceptingMarkedCommands;
@@ -34,24 +34,24 @@
 - (void)documentWasSaved;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (bool)isDocumentEditedSinceLastSave;
+- (BOOL)isDocumentEditedSinceLastSave;
 - (id)lastCommand;
-- (void)p_endMark:(bool)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })p_rangeOfCommandsOverMaxUndoDepthAfterAddingCommandsWithCount:(unsigned long long)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })p_rangeOfRedoCommands;
-- (void)p_removeCommandsOverMaxUndoDepthAfterAddingCommandsWithCount:(unsigned long long)arg1;
+- (void)p_endMark:(BOOL)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })p_rangeOfCommandsOverMaxUndoDepthAfterAddingCommandsWithCount:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })p_rangeOfRedoCommands;
+- (void)p_removeCommandsOverMaxUndoDepthAfterAddingCommandsWithCount:(unsigned int)arg1;
 - (id)packageLocator;
 - (id)pendingPreflightCommand;
 - (id)popRedo;
 - (id)popUndo;
 - (id)redoActionString;
-- (unsigned long long)redoCount;
+- (unsigned int)redoCount;
 - (id)rejectMarkedCommands;
 - (void)replaceLastCommandWithCommand:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPendingPreflightCommand:(id)arg1;
 - (id)undoActionString;
-- (unsigned long long)undoCount;
+- (unsigned int)undoCount;
 
 @end

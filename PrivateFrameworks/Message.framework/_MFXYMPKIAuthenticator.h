@@ -6,16 +6,16 @@
 
 @interface _MFXYMPKIAuthenticator : MFSASLAuthenticator {
     NSData *_cachedSignature;
+    BOOL _usedCachedSignature;
     YahooAccount *_yahooAccount;
-    bool_usedCachedSignature;
-    boolsentInitialResponse;
+    BOOL sentInitialResponse;
 }
 
 - (id)_XYMPKISignatureData;
 - (struct __CFData { }*)_copyDeviceCertificate;
 - (struct __CFData { }*)_copyDevicePrivateKey;
-- (bool)base64EncodeResponseData;
-- (bool)couldRetry;
+- (BOOL)base64EncodeResponseData;
+- (BOOL)couldRetry;
 - (void)dealloc;
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;

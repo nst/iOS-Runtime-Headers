@@ -7,35 +7,35 @@
 @interface TSPPackageConverter : NSObject {
     NSURL *_URL;
     <TSPFileCoordinatorDelegate> *_fileCoordinatorDelegate;
+    BOOL _isCancelled;
     TSPPackage *_package;
-    bool_isCancelled;
 }
 
 @property(readonly) NSURL * URL;
-@property(readonly) bool isCancelled;
-@property(readonly) bool isPasswordProtected;
-@property(readonly) bool isValid;
+@property(readonly) BOOL isCancelled;
+@property(readonly) BOOL isPasswordProtected;
+@property(readonly) BOOL isValid;
 @property(readonly) TSPPackage * package;
-@property(readonly) long long packageType;
+@property(readonly) int packageType;
 
-+ (bool)convertDocumentAtURL:(id)arg1 toPackageType:(long long)arg2 error:(id*)arg3;
++ (BOOL)convertDocumentAtURL:(id)arg1 toPackageType:(int)arg2 error:(id*)arg3;
 + (id)newPackageConverterWithURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (bool)checkPassword:(id)arg1;
-- (bool)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id)arg2;
+- (BOOL)checkPassword:(id)arg1;
+- (BOOL)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id)arg2;
 - (id)init;
 - (id)initWithURL:(id)arg1 package:(id)arg2 fileCoordinatorDelegate:(id)arg3;
-- (bool)isCancelled;
-- (bool)isDocumentPropertiesPath:(id)arg1;
-- (bool)isObjectArchivePath:(id)arg1;
-- (bool)isPasswordProtected;
-- (bool)isValid;
+- (BOOL)isCancelled;
+- (BOOL)isDocumentPropertiesPath:(id)arg1;
+- (BOOL)isObjectArchivePath:(id)arg1;
+- (BOOL)isPasswordProtected;
+- (BOOL)isValid;
 - (id)newWriteChannelAtPath:(id)arg1 size:(unsigned long long)arg2 CRC:(unsigned int)arg3 packageWriter:(id)arg4 error:(id*)arg5;
 - (id)package;
-- (long long)packageType;
+- (int)packageType;
 - (unsigned long long)progressTotalUnitCountWithZipArchive:(id)arg1;
-- (bool)writeToURL:(id)arg1 packageType:(long long)arg2 error:(id*)arg3;
+- (BOOL)writeToURL:(id)arg1 packageType:(int)arg2 error:(id*)arg3;
 
 @end

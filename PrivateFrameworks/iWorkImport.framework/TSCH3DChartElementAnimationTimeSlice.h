@@ -7,45 +7,45 @@
 @interface TSCH3DChartElementAnimationTimeSlice : TSCH3DAnimationTimeSlice {
     struct ChartRepRenderIndexSet { 
         TSCH3DChartRep *rep; 
-        boolbuilt; 
+        BOOL built; 
         struct ObjcSharedPtr<NSIndexSet> { 
             NSIndexSet *mValue; 
         } series; 
-        long long seriesIndex; 
+        int seriesIndex; 
         struct ObjcSharedPtr<NSIndexSet> { 
             NSIndexSet *mValue; 
         } values; 
-        long long currentChunk; 
+        int currentChunk; 
     struct ChartRepRenderIndexSet { 
         TSCH3DChartRep *rep; 
-        boolbuilt; 
+        BOOL built; 
         struct ObjcSharedPtr<NSIndexSet> { 
             NSIndexSet *mValue; 
         } series; 
-        long long seriesIndex; 
+        int seriesIndex; 
         struct ObjcSharedPtr<NSIndexSet> { 
             NSIndexSet *mValue; 
         } values; 
-        long long currentChunk; 
-    boolmAllowStateMismatch;
+        int currentChunk; 
     } mActive;
+    BOOL mAllowStateMismatch;
     } mBuilt;
     TSCH3DAnimationTimeSlice *mDelivery;
     TSCH3DChartRep *mRep;
 }
 
-@property bool allowStateMismatch;
+@property BOOL allowStateMismatch;
 
 + (id)timeSliceWithRep:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (bool)allowStateMismatch;
+- (BOOL)allowStateMismatch;
 - (void)clearParent;
 - (void)dealloc;
 - (id)initWithRep:(id)arg1;
 - (struct box<glm::detail::tvec1<float> > { struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; } x1; struct tvec1<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; } x2; })rangeForIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1;
 - (void)reset;
-- (void)setAllowStateMismatch:(bool)arg1;
+- (void)setAllowStateMismatch:(BOOL)arg1;
 
 @end

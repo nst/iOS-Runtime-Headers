@@ -5,25 +5,25 @@
 @class NSString;
 
 @interface AFSpeechCorrectionInfo : NSObject <NSSecureCoding> {
-    long long _alternativeSelectionCount;
-    long long _characterModificationCount;
+    int _alternativeSelectionCount;
+    int _characterModificationCount;
     NSString *_correctedText;
 }
 
-@property long long alternativeSelectionCount;
-@property long long characterModificationCount;
+@property int alternativeSelectionCount;
+@property int characterModificationCount;
 @property(copy) NSString * correctedText;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (long long)alternativeSelectionCount;
-- (long long)characterModificationCount;
+- (int)alternativeSelectionCount;
+- (int)characterModificationCount;
 - (id)correctedText;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setAlternativeSelectionCount:(long long)arg1;
-- (void)setCharacterModificationCount:(long long)arg1;
+- (void)setAlternativeSelectionCount:(int)arg1;
+- (void)setCharacterModificationCount:(int)arg1;
 - (void)setCorrectedText:(id)arg1;
 
 @end

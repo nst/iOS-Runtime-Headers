@@ -6,25 +6,25 @@
 
 @interface SKUIHorizontalLockupColumn : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSMutableArray *_childViewElements;
-    long long _identifier;
+    int _identifier;
     } _size;
 }
 
 @property(copy,readonly) NSArray * childViewElements;
-@property long long identifier;
-@property struct CGSize { double x1; double x2; } size;
+@property int identifier;
+@property struct CGSize { float x1; float x2; } size;
 
 - (void).cxx_destruct;
 - (void)_addChildViewElement:(id)arg1;
 - (id)childViewElements;
 - (id)description;
-- (long long)identifier;
+- (int)identifier;
 - (id)init;
-- (void)setIdentifier:(long long)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (void)setIdentifier:(int)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

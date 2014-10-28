@@ -7,18 +7,18 @@
 @interface EKAvailabilitySpan : NSObject {
     NSDate *_endDate;
     NSDate *_startDate;
-    long long _type;
+    int _type;
 }
 
 @property(readonly) NSDate * endDate;
 @property(readonly) NSDate * startDate;
-@property(readonly) long long type;
+@property(readonly) int type;
 
 - (id)description;
 - (id)endDate;
 - (id)init;
-- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 type:(long long)arg3;
+- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 type:(int)arg3;
 - (id)startDate;
-- (long long)type;
+- (int)type;
 
 @end

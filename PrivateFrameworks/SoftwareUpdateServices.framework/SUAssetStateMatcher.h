@@ -12,12 +12,12 @@
 @property(readonly) NSString * assetType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) int interestedStates;
 @property(readonly) Class superclass;
 
 - (id)_findMatchFromCandidates:(id)arg1 error:(id*)arg2;
-- (bool)_matchesFilterType:(id)arg1;
+- (BOOL)_matchesFilterType:(id)arg1;
 - (id)assetType;
 - (id)findMatchFromCandidates:(id)arg1 error:(id*)arg2;
 - (id)initWithType:(id)arg1 interestedStates:(int)arg2;

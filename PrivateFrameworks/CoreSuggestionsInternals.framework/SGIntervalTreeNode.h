@@ -5,28 +5,28 @@
 @class NSMutableSet, SGIntervalTreeNode;
 
 @interface SGIntervalTreeNode : NSObject {
-    unsigned long long _index;
+    BOOL _hasIndex;
+    BOOL _hasLeftIndex;
+    BOOL _hasRightIndex;
+    unsigned int _index;
     NSMutableSet *_keys;
     SGIntervalTreeNode *_left;
-    unsigned long long _leftIndex;
+    unsigned int _leftIndex;
     SGIntervalTreeNode *_right;
-    unsigned long long _rightIndex;
-    bool_hasIndex;
-    bool_hasLeftIndex;
-    bool_hasRightIndex;
+    unsigned int _rightIndex;
 }
 
 - (void).cxx_destruct;
-- (void)assignKey:(id)arg1 forRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (unsigned long long)getMax;
-- (unsigned long long)getMin;
+- (void)assignKey:(id)arg1 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)getMax;
+- (unsigned int)getMin;
 - (id)init;
-- (void)insertIndex:(unsigned long long)arg1;
-- (bool)isSpannedBy:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (bool)isSpannedByLeft:(unsigned long long)arg1;
-- (bool)isSpannedByRight:(unsigned long long)arg1;
-- (void)queryRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toResults:(id)arg2;
-- (id)queryRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)storePosition:(unsigned long long)arg1;
+- (void)insertIndex:(unsigned int)arg1;
+- (BOOL)isSpannedBy:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)isSpannedByLeft:(unsigned int)arg1;
+- (BOOL)isSpannedByRight:(unsigned int)arg1;
+- (void)queryRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toResults:(id)arg2;
+- (id)queryRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)storePosition:(unsigned int)arg1;
 
 @end

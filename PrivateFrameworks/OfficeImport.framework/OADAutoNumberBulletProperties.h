@@ -4,12 +4,12 @@
 
 @interface OADAutoNumberBulletProperties : OADBulletProperties {
     int mSchemeType;
-    unsigned long long mStartIndex;
+    unsigned int mStartIndex;
 }
 
 - (int)autoNumberSchemeType;
-- (id)initWithAutoNumberSchemeType:(int)arg1 startIndex:(unsigned long long)arg2;
-- (bool)isEqual:(id)arg1;
-- (unsigned long long)startIndex;
+- (id)initWithAutoNumberSchemeType:(int)arg1 startIndex:(unsigned int)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)startIndex;
 
 @end

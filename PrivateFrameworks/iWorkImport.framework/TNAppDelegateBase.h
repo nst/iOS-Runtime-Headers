@@ -30,7 +30,7 @@
 - (id)previewImageNameForEncryptedNativeDocument;
 - (id)previewImageNameForNativeDocument;
 - (void)registerClassTypeMappings;
-- (bool)supportsRTL;
+- (BOOL)supportsRTL;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;

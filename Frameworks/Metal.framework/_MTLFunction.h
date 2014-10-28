@@ -20,13 +20,13 @@
         unsigned short languageMinorVersion; 
     struct { 
         unsigned char key[32]; 
-    long long _bitCodeOffset;
+    int _bitCodeOffset;
     } _bitcodeHash;
     <MTLDevice> *_device;
     NSString *_filePath;
-    unsigned long long _functionType;
+    unsigned int _functionType;
     struct MTLLibraryData { int (**x1)(); int x2; id x3; } *_libraryData;
-    long long _lineNumber;
+    int _lineNumber;
     NSString *_name;
     } _offsets;
     unsigned char _privateMetadataInitialized;
@@ -36,17 +36,17 @@
     unsigned char _vertexAttributesInitialized;
 }
 
-@property long long bitCodeOffset;
+@property int bitCodeOffset;
 @property(readonly) struct { unsigned char x1[32]; } bitcodeHash;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) <MTLDevice> * device;
 @property(copy) NSString * filePath;
-@property(readonly) unsigned long long functionType;
+@property(readonly) unsigned int functionType;
 @property(readonly) const struct MTLFunctionVersions { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; }* functionVersions;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) struct MTLLibraryData { int (**x1)(); int x2; id x3; }* libraryData;
-@property long long lineNumber;
+@property int lineNumber;
 @property(readonly) NSString * name;
 @property(readonly) Class superclass;
 @property(readonly) id vendorPrivate;
@@ -54,21 +54,21 @@
 
 - (struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)libraryData;
 - (id).cxx_construct;
-- (long long)bitCodeOffset;
+- (int)bitCodeOffset;
 - (struct { unsigned char x1[32]; })bitcodeHash;
 - (void)dealloc;
 - (id)description;
 - (id)device;
 - (id)filePath;
-- (unsigned long long)functionType;
+- (unsigned int)functionType;
 - (const struct MTLFunctionVersions { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; }*)functionVersions;
-- (id)initWithName:(id)arg1 bitcodeHash:(const struct { unsigned char x1[32]; }*)arg2 type:(unsigned long long)arg3 libraryData:(struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)arg4 offsets:(struct MTLFunctionOffsets { unsigned long long x1; unsigned long long x2; }*)arg5 versions:(struct MTLFunctionVersions { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; }*)arg6 device:(id)arg7;
+- (id)initWithName:(id)arg1 bitcodeHash:(const struct { unsigned char x1[32]; }*)arg2 type:(unsigned int)arg3 libraryData:(struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)arg4 offsets:(struct MTLFunctionOffsets { unsigned long long x1; unsigned long long x2; }*)arg5 versions:(struct MTLFunctionVersions { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; }*)arg6 device:(id)arg7;
 - (void)initializePrivateMetadata;
-- (long long)lineNumber;
+- (int)lineNumber;
 - (id)name;
-- (void)setBitCodeOffset:(long long)arg1;
+- (void)setBitCodeOffset:(int)arg1;
 - (void)setFilePath:(id)arg1;
-- (void)setLineNumber:(long long)arg1;
+- (void)setLineNumber:(int)arg1;
 - (void)setVendorPrivate:(id)arg1;
 - (id)vendorPrivate;
 - (id)vertexAttributes;

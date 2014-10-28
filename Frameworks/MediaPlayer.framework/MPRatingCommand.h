@@ -11,7 +11,6 @@
 @property float minimumRating;
 
 - (id)_mediaRemoteCommandInfoOptions;
-- (id)keyPathsForValuesTriggeringCommandsChanged;
 - (float)maximumRating;
 - (float)minimumRating;
 - (void)setMaximumRating:(float)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface TKPickerItem : NSObject {
-    long long _section;
+    int _section;
 }
 
-@property long long section;
+@property int section;
 
-- (void)_appendDescriptionOfAttributeNamed:(id)arg1 withBoolValue:(bool)arg2 toString:(id)arg3;
-- (void)_appendDescriptionOfAttributeNamed:(id)arg1 withIntegerValue:(long long)arg2 toString:(id)arg3;
+- (void)_appendDescriptionOfAttributeNamed:(id)arg1 withBoolValue:(BOOL)arg2 toString:(id)arg3;
+- (void)_appendDescriptionOfAttributeNamed:(id)arg1 withIntegerValue:(int)arg2 toString:(id)arg3;
 - (void)_appendDescriptionOfAttributeNamed:(id)arg1 withStringValue:(id)arg2 toString:(id)arg3;
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
-- (void)_setSection:(long long)arg1;
+- (void)_setSection:(int)arg1;
 - (id)description;
-- (long long)section;
+- (int)section;
 
 @end

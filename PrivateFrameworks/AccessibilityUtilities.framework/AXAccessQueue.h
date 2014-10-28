@@ -11,45 +11,45 @@
 
 @interface AXAccessQueue : NSObject {
     NSObject<OS_dispatch_queue> *_concurrentQueue;
-    unsigned long long _specialBehaviors;
+    unsigned int _specialBehaviors;
     NSString *_threadLocalStorageKey;
 }
 
-@property(readonly) bool behavesAsMainQueue;
-@property(readonly) bool behavesWithoutErrorReporting;
+@property(readonly) BOOL behavesAsMainQueue;
+@property(readonly) BOOL behavesWithoutErrorReporting;
 @property(retain) NSObject<OS_dispatch_queue> * concurrentQueue;
 @property(copy,readonly) NSString * label;
-@property unsigned long long specialBehaviors;
+@property unsigned int specialBehaviors;
 @property(copy) NSString * threadLocalStorageKey;
 
 + (id)backgroundAccessQueue;
 + (id)mainAccessQueue;
 
-- (unsigned long long)_accessQueueContextInCurrentExecutionThread;
-- (id)_initWithLabel:(id)arg1 appendUUIDToLabel:(bool)arg2 specialBehaviors:(unsigned long long)arg3;
-- (void)_performBlock:(id)arg1 withDispatchFunction:(int (*)())arg2 synchronously:(bool)arg3 accessQueueContext:(unsigned long long)arg4;
+- (unsigned int)_accessQueueContextInCurrentExecutionThread;
+- (id)_initWithLabel:(id)arg1 appendUUIDToLabel:(BOOL)arg2 specialBehaviors:(unsigned int)arg3;
+- (void)_performBlock:(id)arg1 withDispatchFunction:(int (*)())arg2 synchronously:(BOOL)arg3 accessQueueContext:(unsigned int)arg4;
 - (void)afterDelay:(double)arg1 processReadingBlock:(id)arg2;
 - (void)afterDelay:(double)arg1 processWritingBlock:(id)arg2;
-- (bool)behavesAsMainQueue;
-- (bool)behavesWithoutErrorReporting;
-- (bool)canOnlyReadInCurrentExecutionThread;
-- (bool)canReadInCurrentExecutionThread;
-- (bool)canWriteInCurrentExecutionThread;
+- (BOOL)behavesAsMainQueue;
+- (BOOL)behavesWithoutErrorReporting;
+- (BOOL)canOnlyReadInCurrentExecutionThread;
+- (BOOL)canReadInCurrentExecutionThread;
+- (BOOL)canWriteInCurrentExecutionThread;
 - (id)concurrentQueue;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(bool)arg2;
-- (id)initWithParentClass:(Class)arg1 description:(id)arg2 appendUUIDToLabel:(bool)arg3;
+- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(BOOL)arg2;
+- (id)initWithParentClass:(Class)arg1 description:(id)arg2 appendUUIDToLabel:(BOOL)arg3;
 - (id)label;
 - (void)performAsynchronousReadingBlock:(id)arg1;
 - (void)performAsynchronousWritingBlock:(id)arg1;
 - (void)performSynchronousReadingBlock:(id)arg1;
 - (void)performSynchronousWritingBlock:(id)arg1;
 - (void)setConcurrentQueue:(id)arg1;
-- (void)setSpecialBehaviors:(unsigned long long)arg1;
+- (void)setSpecialBehaviors:(unsigned int)arg1;
 - (void)setThreadLocalStorageKey:(id)arg1;
-- (unsigned long long)specialBehaviors;
+- (unsigned int)specialBehaviors;
 - (id)threadLocalStorageKey;
 
 @end

@@ -15,7 +15,7 @@
 - (void)lock;
 - (id)name;
 - (void)setName:(id)arg1;
-- (bool)tryLock;
+- (BOOL)tryLock;
 - (void)unlock;
 
 @end

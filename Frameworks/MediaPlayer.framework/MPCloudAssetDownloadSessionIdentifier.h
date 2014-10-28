@@ -18,7 +18,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)initWithContext:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)persistentID;
 - (void)setPersistentID:(id)arg1;
 - (void)setStoreID:(id)arg1;

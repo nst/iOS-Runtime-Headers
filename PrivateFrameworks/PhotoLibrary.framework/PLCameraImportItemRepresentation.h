@@ -6,40 +6,40 @@
 
 @interface PLCameraImportItemRepresentation : NSObject {
     ICCameraFile *_cameraFile;
+    BOOL _canRequestMetadata;
+    BOOL _canRequestThumbnail;
+    BOOL _inDatabase;
     NSDictionary *_metadata;
     NSString *_path;
-    bool_canRequestMetadata;
-    bool_canRequestThumbnail;
-    bool_inDatabase;
 }
 
 @property(retain) ICCameraFile * cameraFile;
-@property bool canRequestMetadata;
-@property bool canRequestThumbnail;
-@property bool inDatabase;
+@property BOOL canRequestMetadata;
+@property BOOL canRequestThumbnail;
+@property BOOL inDatabase;
 @property(retain) NSDictionary * metadata;
 @property(copy) NSString * path;
 
 - (id)cameraFile;
-- (bool)canRequestMetadata;
-- (bool)canRequestThumbnail;
+- (BOOL)canRequestMetadata;
+- (BOOL)canRequestThumbnail;
 - (void)dealloc;
 - (id)description;
 - (id)fileExtension;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (bool)inDatabase;
+- (BOOL)inDatabase;
 - (id)initWithCameraFile:(id)arg1;
-- (bool)isAudio;
-- (bool)isInDatabaseForce:(bool)arg1;
-- (bool)isJPEG;
-- (bool)isMovie;
-- (bool)isRaw;
+- (BOOL)isAudio;
+- (BOOL)isInDatabaseForce:(BOOL)arg1;
+- (BOOL)isJPEG;
+- (BOOL)isMovie;
+- (BOOL)isRaw;
 - (id)metadata;
 - (id)path;
 - (void)setCameraFile:(id)arg1;
-- (void)setCanRequestMetadata:(bool)arg1;
-- (void)setCanRequestThumbnail:(bool)arg1;
-- (void)setInDatabase:(bool)arg1;
+- (void)setCanRequestMetadata:(BOOL)arg1;
+- (void)setCanRequestThumbnail:(BOOL)arg1;
+- (void)setInDatabase:(BOOL)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setPath:(id)arg1;
 

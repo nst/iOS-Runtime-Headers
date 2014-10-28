@@ -41,7 +41,7 @@
 @property(readonly) BRCFSEventsMonitor * fsEventsMonitor;
 @property(readonly) BRCFSReader<BRCFileCoordinationReading> * fsReader;
 @property(readonly) BRCFSWriter<BRCFileCoordinationWriting> * fsWriter;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) BRCThrottle * lostItemThrottle;
 @property(readonly) BRCNotificationManager * notificationManager;
 @property(readonly) BRCThrottle * operationFailureThrottle;
@@ -54,7 +54,7 @@
 @property(readonly) NSString * ubiquityTokenSalt;
 
 - (void).cxx_destruct;
-- (void)_createAccountSupportPathIfNeeded:(id)arg1 protectParent:(bool)arg2;
+- (void)_createAccountSupportPathIfNeeded:(id)arg1 protectParent:(BOOL)arg2;
 - (void)_setupThrottles;
 - (id)accountID;
 - (id)appSupportDirPath;
@@ -76,7 +76,7 @@
 - (id)lostItemThrottle;
 - (void)markAccountMigrationComplete;
 - (id)notificationManager;
-- (bool)openWithError:(id*)arg1;
+- (BOOL)openWithError:(id*)arg1;
 - (id)operationFailureThrottle;
 - (void)registerClient:(id)arg1;
 - (void)resume;

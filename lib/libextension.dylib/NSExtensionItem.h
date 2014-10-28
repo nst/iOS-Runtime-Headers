@@ -13,7 +13,7 @@
 @property(copy) NSAttributedString * attributedTitle;
 @property(copy) NSDictionary * userInfo;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_matchingDictionaryRepresentation;
 - (id)attachments;

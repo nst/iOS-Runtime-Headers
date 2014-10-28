@@ -15,9 +15,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceName;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithDeviceName:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playInfoDictionary;
 

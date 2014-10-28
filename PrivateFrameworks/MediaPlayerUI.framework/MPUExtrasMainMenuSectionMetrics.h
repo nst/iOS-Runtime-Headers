@@ -6,56 +6,56 @@
 
 @interface MPUExtrasMainMenuSectionMetrics : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
-    struct CGSize { double x1; double x2; } *_calculatedSizes;
+        float width; 
+        float height; 
+    struct CGSize { float x1; float x2; } *_calculatedSizes;
     <MPUExtrasMainMenuSectionMetricsDataSource> *_dataSource;
-    double _desiredCellSpacing;
+    float _desiredCellSpacing;
     UIFontDescriptor *_desiredFontDescriptor;
-    double _desiredWidth;
-    double _fittingCellSpacing;
+    float _desiredWidth;
+    float _fittingCellSpacing;
     UIFontDescriptor *_fittingFontDescriptor;
-    double _fittingWidth;
-    long long _itemCount;
-    double _minimumCellSpacing;
+    float _fittingWidth;
+    int _itemCount;
+    float _minimumCellSpacing;
     UIFontDescriptor *_minimumFontDescriptor;
+    BOOL _needsUpdate;
     } _totalFittingSize;
-    bool_needsUpdate;
 }
 
 @property <MPUExtrasMainMenuSectionMetricsDataSource> * dataSource;
-@property double desiredCellSpacing;
+@property float desiredCellSpacing;
 @property(retain) UIFontDescriptor * desiredFontDescriptor;
-@property double desiredWidth;
-@property(readonly) double fittingCellSpacing;
+@property float desiredWidth;
+@property(readonly) float fittingCellSpacing;
 @property(readonly) UIFontDescriptor * fittingFontDescriptor;
-@property double minimumCellSpacing;
+@property float minimumCellSpacing;
 @property(retain) UIFontDescriptor * minimumFontDescriptor;
-@property(readonly) struct CGSize { double x1; double x2; } totalFittingSize;
+@property(readonly) struct CGSize { float x1; float x2; } totalFittingSize;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_horizontalFittingSizeForFontDescriptor:(id)arg1 gutterSize:(double)arg2 itemCount:(long long)arg3 itemSizes:(out struct CGSize { double x1; double x2; }*)arg4;
+- (struct CGSize { float x1; float x2; })_horizontalFittingSizeForFontDescriptor:(id)arg1 gutterSize:(float)arg2 itemCount:(int)arg3 itemSizes:(out struct CGSize { float x1; float x2; }*)arg4;
 - (void)_recalculateSizes;
 - (void)_setNeedsUpdate;
 - (void)_updateAllMetrics;
 - (id)dataSource;
 - (void)dealloc;
-- (double)desiredCellSpacing;
+- (float)desiredCellSpacing;
 - (id)desiredFontDescriptor;
-- (double)desiredWidth;
-- (double)fittingCellSpacing;
+- (float)desiredWidth;
+- (float)fittingCellSpacing;
 - (id)fittingFontDescriptor;
-- (double)minimumCellSpacing;
+- (float)minimumCellSpacing;
 - (id)minimumFontDescriptor;
 - (void)setDataSource:(id)arg1;
-- (void)setDesiredCellSpacing:(double)arg1;
+- (void)setDesiredCellSpacing:(float)arg1;
 - (void)setDesiredFontDescriptor:(id)arg1;
-- (void)setDesiredWidth:(double)arg1;
-- (void)setFittingWidth:(double)arg1;
-- (void)setMinimumCellSpacing:(double)arg1;
+- (void)setDesiredWidth:(float)arg1;
+- (void)setFittingWidth:(float)arg1;
+- (void)setMinimumCellSpacing:(float)arg1;
 - (void)setMinimumFontDescriptor:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForCellAtIndex:(long long)arg1;
-- (struct CGSize { double x1; double x2; })totalFittingSize;
+- (struct CGSize { float x1; float x2; })sizeForCellAtIndex:(int)arg1;
+- (struct CGSize { float x1; float x2; })totalFittingSize;
 - (void)updateSizes;
 
 @end

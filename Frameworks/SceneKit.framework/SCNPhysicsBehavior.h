@@ -7,7 +7,7 @@
 }
 
 + (id)SCNJSExportProtocol;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)bodyA;
 - (id)bodyB;

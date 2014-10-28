@@ -14,7 +14,7 @@
 - (void)hold;
 - (void)removeCallConnectedObserver;
 - (int)service;
-- (bool)shouldIgnoreStatusChange;
+- (BOOL)shouldIgnoreStatusChange;
 - (int)supportedModelType;
 - (void)unhold;
 

@@ -7,29 +7,33 @@
 @interface PKPaymentCardDetailsViewController : PKPaymentSetupTableViewController <UITextFieldDelegate> {
     CLInUseAssertion *_CLInUse;
     UITextField *_cscField;
-    double _maxHeaderWidth;
+    float _maxHeaderWidth;
+    BOOL _maxHeaderWidthCalculated;
     PKPaymentCredential *_paymentCredential;
     PKPaymentSetupPrivacyFooterView *_privacyView;
     PKWeakReference *_setupDelegate;
     RemoteUIController *_termsUIController;
     PKPaymentWebService *_webService;
-    bool_maxHeaderWidthCalculated;
 }
 
-@property(getter=isComplete,readonly) bool complete;
+@property(getter=isComplete,readonly) BOOL complete;
 @property(retain) UITextField * cscField;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) PKPaymentCredential * paymentCredential;
 @property <PKPaymentSetupViewControllerDelegate> * setupDelegate;
 @property(readonly) Class superclass;
 @property(retain) PKPaymentWebService * webService;
 
++ (void)handleDownloadedPasses:(id)arg1 fromViewController:(id)arg2 withCompletion:(id)arg3;
++ (void)handlePassAlreadyProvisionedError;
++ (void)handleProvisioningError:(id)arg1 forApplicationIdentifier:(id)arg2;
+
 - (void)_handlePassSuccessfullyAdded:(id)arg1;
 - (void)_showEligibilityIssueWithCredential:(id)arg1 completion:(id)arg2;
 - (void)_showProvisioningError:(id)arg1 completion:(id)arg2;
-- (bool)_showSetupAssistantVerificationAlertForRecord:(id)arg1 pass:(id)arg2;
+- (BOOL)_showSetupAssistantVerificationAlertForRecord:(id)arg1 pass:(id)arg2;
 - (void)_showVerificationMethodsForPass:(id)arg1;
 - (void)_showVerifiedUI;
 - (void)_showVerifyingUI;
@@ -42,9 +46,9 @@
 - (void)displayTermsForCredential:(id)arg1 withCompletion:(id)arg2;
 - (void)handleNext:(id)arg1;
 - (id)headerView;
-- (id)initWithWebService:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3;
-- (bool)isComplete;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithWebService:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
+- (BOOL)isComplete;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)paymentCredential;
 - (void)provisionCard:(id)arg1 withCompletion:(id)arg2;
 - (void)setCscField:(id)arg1;
@@ -54,15 +58,15 @@
 - (id)setupDelegate;
 - (void)showPrivacy:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)textFieldDidChange:(id)arg1;
-- (bool)textFieldShouldReturn:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
+- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (id)webService;
 
 @end

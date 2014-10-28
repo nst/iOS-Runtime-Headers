@@ -12,14 +12,14 @@
 
 @property(readonly) int accountStatus;
 @property(readonly) NSString * accountURL;
-@property(readonly) bool autoRenew;
+@property(readonly) BOOL autoRenew;
 @property(readonly) double billingEndDate;
 @property(readonly) double billingStartDate;
 @property(readonly) NSString * carrierName;
 @property(readonly) NSArray * dataUsage;
 @property(retain) CTCellularPlanExtProperties * extendedProperties;
 @property(readonly) NSString * iccid;
-@property(readonly) bool isSelected;
+@property(readonly) BOOL isSelected;
 @property(readonly) NSString * planDescription;
 @property(readonly) int planStatus;
 @property(readonly) int planType;
@@ -29,11 +29,11 @@
 @property(retain) CTCellularPlanSubscription * subscription;
 @property(readonly) double timestamp;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (int)accountStatus;
 - (id)accountURL;
-- (bool)autoRenew;
+- (BOOL)autoRenew;
 - (double)billingEndDate;
 - (double)billingStartDate;
 - (id)carrierName;
@@ -47,7 +47,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProfile:(id)arg1 subscription:(id)arg2;
-- (bool)isSelected;
+- (BOOL)isSelected;
 - (id)planDescription;
 - (int)planStatus;
 - (int)planType;

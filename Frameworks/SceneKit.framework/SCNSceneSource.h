@@ -9,9 +9,9 @@
     struct __C3DScene { } *_lastLoadedScene;
     NSDictionary *_lastOptions;
     id _reserved;
+    BOOL _sceneLoaded;
     struct __C3DSceneSource { } *_sceneSource;
     NSDictionary *_sceneSourceOptions;
-    bool_sceneLoaded;
 }
 
 @property(readonly) NSData * data;
@@ -21,19 +21,19 @@
 + (void)_cacheSceneSource:(id)arg1 forURL:(id)arg2 options:(id)arg3;
 + (id)_cachedSceneSourceForURL:(id)arg1 options:(id)arg2;
 + (void)_removeCachedSceneSourceIfNeededForURL:(id)arg1;
-+ (bool)_shouldCacheWithOptions:(id)arg1;
++ (BOOL)_shouldCacheWithOptions:(id)arg1;
 + (id)sceneFileTypes;
 + (id)sceneSourceWithData:(id)arg1 options:(id)arg2;
 + (id)sceneSourceWithURL:(id)arg1 options:(id)arg2;
 + (id)sceneTypes;
 
 - (id)IDsOfEntriesWithClass:(Class)arg1;
-- (bool)_appendToEntries:(id)arg1 entriesWithType:(unsigned long long)arg2 passingTest:(id)arg3 entryObjectConstructor:(id)arg4;
+- (BOOL)_appendToEntries:(id)arg1 entriesWithType:(unsigned long)arg2 passingTest:(id)arg3 entryObjectConstructor:(id)arg4;
 - (struct __C3DScene { }*)_createSceneRefWithOptions:(id)arg1 statusHandler:(id)arg2;
 - (id)_sceneWithClass:(Class)arg1 options:(id)arg2 statusHandler:(id)arg3;
-- (bool)canExportToColladaWithNoDataLoss;
-- (id)copyPropertiesAtIndex:(long long)arg1 options:(id)arg2;
-- (long long)countOfScenes;
+- (BOOL)canExportToColladaWithNoDataLoss;
+- (id)copyPropertiesAtIndex:(int)arg1 options:(id)arg2;
+- (int)countOfScenes;
 - (id)data;
 - (void)dealloc;
 - (id)description;
@@ -46,16 +46,16 @@
 - (struct __C3DLibrary { }*)library;
 - (id)performConsistencyCheck;
 - (id)propertyForKey:(id)arg1;
-- (id)sceneAtIndex:(unsigned long long)arg1 options:(id)arg2 error:(id*)arg3;
-- (id)sceneAtIndex:(unsigned long long)arg1 options:(id)arg2;
-- (long long)sceneCount;
+- (id)sceneAtIndex:(unsigned int)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)sceneAtIndex:(unsigned int)arg1 options:(id)arg2;
+- (int)sceneCount;
 - (id)sceneSourceOptions;
 - (struct __C3DSceneSource { }*)sceneSourceRef;
 - (id)sceneWithClass:(Class)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)sceneWithClass:(Class)arg1 options:(id)arg2 statusHandler:(id)arg3;
 - (id)sceneWithOptions:(id)arg1 error:(id*)arg2;
 - (id)sceneWithOptions:(id)arg1 statusHandler:(id)arg2;
-- (long long)sourceStatus;
+- (int)sourceStatus;
 - (id)url;
 
 @end

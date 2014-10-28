@@ -3,7 +3,7 @@
  */
 
 @interface RUStationTreeDataSource : NSObject {
-    long long _nodeType;
+    int _nodeType;
     long long _parentNodeID;
 }
 

@@ -5,6 +5,7 @@
 @class BrightnessSystemClient, NSDate, NSDictionary, NSString, PLIOKitOperatorComposition, PLNSTimerOperatorComposition;
 
 @interface PLDisplayAgent : PLAgent {
+    BOOL _alsOn;
     PLNSTimerOperatorComposition *_backlightFilterTimer;
     BrightnessSystemClient *_brightnessSystemClient;
     NSString *_displayHardware;
@@ -14,10 +15,9 @@
     PLIOKitOperatorComposition *_iokitTouch;
     NSDictionary *_pendingBacklightEntry;
     NSDate *_pendingBacklightEntryDate;
-    bool_alsOn;
 }
 
-@property bool alsOn;
+@property BOOL alsOn;
 @property(retain) PLNSTimerOperatorComposition * backlightFilterTimer;
 @property(retain) BrightnessSystemClient * brightnessSystemClient;
 @property(readonly) NSString * displayHardware;
@@ -41,7 +41,7 @@
 + (id)railDefinitions;
 
 - (void).cxx_destruct;
-- (bool)alsOn;
+- (BOOL)alsOn;
 - (id)backlightFilterTimer;
 - (id)brightnessSystemClient;
 - (id)displayHardware;
@@ -52,11 +52,11 @@
 - (id)iokitBacklight;
 - (id)iokitDisplay;
 - (id)iokitTouch;
-- (bool)isAlsEnabled;
+- (BOOL)isAlsEnabled;
 - (void)log;
 - (void)logEventBackwardTouch;
 - (void)logEventForwardALSEnabled;
-- (void)logEventForwardALSEnabledEntry:(bool)arg1;
+- (void)logEventForwardALSEnabledEntry:(BOOL)arg1;
 - (void)logEventForwardALSUserPreferences;
 - (void)logEventForwardALSUserPreferencesEntryWithLux:(id)arg1;
 - (void)logEventForwardALSUserPreferencesWithCurrLux;
@@ -64,14 +64,14 @@
 - (void)logEventForwardDisplayWithRawData:(id)arg1 withDate:(id)arg2;
 - (void)logEventPointDisplay;
 - (void)logEventPointDisplayBacklight;
-- (void)logEventPointDisplayForBlock:(id)arg1 isActive:(bool)arg2;
+- (void)logEventPointDisplayForBlock:(id)arg1 isActive:(BOOL)arg2;
 - (void)logEventPointDisplayMIE;
 - (void)logEventPointUserBrightnessCommitted:(double)arg1;
 - (void)modelDisplayPower:(id)arg1;
 - (double)modelDisplayPowerForK94:(id)arg1;
 - (id)pendingBacklightEntry;
 - (id)pendingBacklightEntryDate;
-- (void)setAlsOn:(bool)arg1;
+- (void)setAlsOn:(BOOL)arg1;
 - (void)setBacklightFilterTimer:(id)arg1;
 - (void)setBrightnessSystemClient:(id)arg1;
 - (void)setPendingBacklightEntry:(id)arg1;

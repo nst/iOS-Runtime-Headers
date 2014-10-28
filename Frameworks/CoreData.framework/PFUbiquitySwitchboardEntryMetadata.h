@@ -19,8 +19,8 @@
     NSString *_storeName;
     NSMutableSet *_stores;
     PFUbiquityLocation *_ubiquityRootLocation;
-    bool_useLocaAccount;
-    bool_useLocalStorage;
+    BOOL _useLocaAccount;
+    BOOL _useLocalStorage;
 }
 
 @property(readonly) NSString * activeModelVersionHash;
@@ -33,8 +33,8 @@
 @property(readonly) PFUbiquityRecordsImporterSchedulingContext * schedulingContext;
 @property(readonly) NSSet * stores;
 @property(retain) PFUbiquityLocation * ubiquityRootLocation;
-@property bool useLocalAccount;
-@property bool useLocalStorage;
+@property BOOL useLocalAccount;
+@property BOOL useLocalStorage;
 
 - (id)activeModelVersionHash;
 - (void)addPersistentStore:(id)arg1;
@@ -50,12 +50,12 @@
 - (id)schedulingContext;
 - (void)setCacheWrapper:(id)arg1;
 - (void)setUbiquityRootLocation:(id)arg1;
-- (void)setUseLocalAccount:(bool)arg1;
-- (void)setUseLocalStorage:(bool)arg1;
+- (void)setUseLocalAccount:(BOOL)arg1;
+- (void)setUseLocalStorage:(BOOL)arg1;
 - (id)stores;
 - (void)tearDown;
 - (id)ubiquityRootLocation;
-- (bool)useLocalAccount;
-- (bool)useLocalStorage;
+- (BOOL)useLocalAccount;
+- (BOOL)useLocalStorage;
 
 @end

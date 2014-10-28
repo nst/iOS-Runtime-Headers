@@ -5,30 +5,30 @@
 @class NSString, TKTonePickerController;
 
 @interface TKTonePickerSectionItem : TKPickerSectionItem <TKPickerContainerItem> {
-    long long _numberOfChildren;
+    int _numberOfChildren;
     TKTonePickerController *_parentTonePickerController;
-    unsigned long long _regularToneSectionIndex;
-    unsigned long long _sectionHeader;
+    unsigned int _regularToneSectionIndex;
+    unsigned int _sectionHeader;
 }
 
 @property(setter=_setParentTonePickerController:) TKTonePickerController * _parentTonePickerController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property long long numberOfChildren;
-@property unsigned long long regularToneSectionIndex;
-@property unsigned long long sectionHeader;
+@property(readonly) unsigned int hash;
+@property int numberOfChildren;
+@property unsigned int regularToneSectionIndex;
+@property unsigned int sectionHeader;
 @property(readonly) Class superclass;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (id)_parentTonePickerController;
-- (void)_setNumberOfChildren:(long long)arg1;
+- (void)_setNumberOfChildren:(int)arg1;
 - (void)_setParentTonePickerController:(id)arg1;
-- (void)_setRegularToneSectionIndex:(unsigned long long)arg1;
-- (void)_setSectionHeader:(unsigned long long)arg1;
-- (id)childItemAtIndex:(long long)arg1;
-- (long long)numberOfChildren;
-- (unsigned long long)regularToneSectionIndex;
-- (unsigned long long)sectionHeader;
+- (void)_setRegularToneSectionIndex:(unsigned int)arg1;
+- (void)_setSectionHeader:(unsigned int)arg1;
+- (id)childItemAtIndex:(int)arg1;
+- (int)numberOfChildren;
+- (unsigned int)regularToneSectionIndex;
+- (unsigned int)sectionHeader;
 
 @end

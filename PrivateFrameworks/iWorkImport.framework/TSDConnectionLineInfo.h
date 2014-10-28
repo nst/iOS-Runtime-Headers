@@ -25,11 +25,11 @@
 @property(retain) TSDDrawableInfo * connectedTo;
 @property(copy) NSString * connectedToUUIDString;
 
-+ (id)cleanupInfos:(id)arg1 duringCommand:(id)arg2 updateGeometries:(bool)arg3;
++ (id)cleanupInfos:(id)arg1 duringCommand:(id)arg2 updateGeometries:(BOOL)arg3;
 
 - (void)acceptVisitor:(id)arg1;
-- (bool)canAnchor;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })computeLayoutFullTransform;
+- (BOOL)canAnchor;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeLayoutFullTransform;
 - (void)computeLayoutInfoGeometry:(id*)arg1 andPathSource:(id*)arg2;
 - (id)computeLayoutInfoGeometry;
 - (id)connectedFrom;
@@ -42,8 +42,8 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ConnectionLineArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ShapeArchive {} *x3; struct Reference {} *x4; struct Reference {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)localizedChunkNameForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned long long)arg3;
-- (long long)mixingTypeWithObject:(id)arg1;
+- (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
+- (int)mixingTypeWithObject:(id)arg1;
 - (void)performBlockWithTemporaryLayout:(id)arg1;
 - (id)presetKind;
 - (Class)repClass;

@@ -17,7 +17,7 @@
 
 - (id)_contactForKeychainKey:(id)arg1;
 - (void)_keychainData:(id*)arg1 forKey:(id)arg2;
-- (void)_setContact:(id)arg1 forKeychainKey:(id)arg2;
+- (void)_setContact:(id)arg1 propertyID:(int)arg2 forKeychainKey:(id)arg3;
 - (void)_setKeychainData:(id)arg1 forKey:(id)arg2;
 - (id)defaultBillingAddress;
 - (id)defaultContactEmail;

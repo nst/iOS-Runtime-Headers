@@ -12,14 +12,14 @@
     TUCall *_call;
     id _didStartHandler;
     id _didStopHandler;
-    bool_receivedDidStart;
+    BOOL _receivedDidStart;
 }
 
 @property(retain) TUCall * call;
 @property(copy) id didStartHandler;
 @property(copy) id didStopHandler;
-@property(getter=isMuted) bool muted;
-@property bool receivedDidStart;
+@property(getter=isMuted) BOOL muted;
+@property BOOL receivedDidStart;
 
 + (id)conferenceConnectionWithCall:(id)arg1;
 
@@ -28,12 +28,12 @@
 - (id)description;
 - (id)didStartHandler;
 - (id)didStopHandler;
-- (bool)isMuted;
-- (bool)receivedDidStart;
+- (BOOL)isMuted;
+- (BOOL)receivedDidStart;
 - (void)setCall:(id)arg1;
 - (void)setDidStartHandler:(id)arg1;
 - (void)setDidStopHandler:(id)arg1;
-- (void)setMuted:(bool)arg1;
-- (void)setReceivedDidStart:(bool)arg1;
+- (void)setMuted:(BOOL)arg1;
+- (void)setReceivedDidStart:(BOOL)arg1;
 
 @end

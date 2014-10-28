@@ -20,13 +20,13 @@
 - (id)_imagePickerControllerHelper;
 - (id)_imagePickerMediaTypes;
 - (void)_setImagePickerMediaTypes:(id)arg1;
-- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
-- (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out bool*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
+- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(BOOL)arg4;
+- (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out BOOL*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (void)handleNavigateToAsset:(id)arg1 inContainer:(id)arg2;
 - (void)handleToggleSelectionOfItemAtIndexPath:(id)arg1;
 - (id)init;
 - (id)initWithSpec:(id)arg1;
-- (bool)initiallyScrolledToBottom;
+- (BOOL)initiallyScrolledToBottom;
 - (void)loadView;
 - (id)newGridLayout;
 - (void)viewDidLoad;

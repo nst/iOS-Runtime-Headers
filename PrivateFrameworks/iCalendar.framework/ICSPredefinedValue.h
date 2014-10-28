@@ -3,18 +3,18 @@
  */
 
 @interface ICSPredefinedValue : NSNumber {
-    long long _value;
+    long _value;
 }
 
-+ (id)numberWithLong:(long long)arg1;
++ (id)numberWithLong:(long)arg1;
 
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getValue:(void*)arg1;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLong:(long long)arg1;
-- (long long)longValue;
+- (id)initWithLong:(long)arg1;
+- (long)longValue;
 - (const char *)objCType;
 
 @end

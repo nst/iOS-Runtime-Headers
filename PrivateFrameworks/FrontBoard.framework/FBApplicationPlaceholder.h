@@ -7,22 +7,22 @@
 @interface FBApplicationPlaceholder : FBBundleInfo {
     NSObject<OS_dispatch_queue> *_queue;
     double _queue_cachedPercentComplete;
+    BOOL _queue_installType;
+    BOOL _queue_isNewsstand;
+    BOOL _queue_isRestricted;
     NSMutableSet *_queue_observers;
     NSProgress *_queue_progress;
-    bool_queue_installType;
-    bool_queue_isNewsstand;
-    bool_queue_isRestricted;
 }
 
-@property(getter=isCancellable,readonly) bool cancellable;
-@property(readonly) unsigned long long installPhase;
-@property(readonly) unsigned long long installState;
-@property(readonly) unsigned long long installType;
-@property(getter=isNewsstand,readonly) bool newsstand;
-@property(getter=isPausable,readonly) bool pausable;
+@property(getter=isCancellable,readonly) BOOL cancellable;
+@property(readonly) unsigned int installPhase;
+@property(readonly) unsigned int installState;
+@property(readonly) unsigned int installType;
+@property(getter=isNewsstand,readonly) BOOL newsstand;
+@property(getter=isPausable,readonly) BOOL pausable;
 @property(readonly) double percentComplete;
 @property(getter=_proxy,setter=_setProxy:,retain) LSApplicationProxy * proxy;
-@property(getter=isRestricted,readonly) bool restricted;
+@property(getter=isRestricted,readonly) BOOL restricted;
 
 - (void)_dispatchToObservers:(id)arg1 block:(id)arg2;
 - (id)_iconDictionary;
@@ -31,7 +31,7 @@
 - (id)_proxy;
 - (id)_queue_observers;
 - (void)_queue_progressChanged;
-- (bool)_queue_setProgress:(id)arg1;
+- (BOOL)_queue_setProgress:(id)arg1;
 - (void)_queue_startObservingProgress:(id)arg1;
 - (void)_queue_stopObservingProgress:(id)arg1;
 - (void)_sendToObserversCancellabilityDidChange:(id)arg1;
@@ -40,20 +40,20 @@
 - (void)_sendToObserversPausabilityDidChange:(id)arg1;
 - (void)_sendToObserversPercentCompleteDidChange:(id)arg1;
 - (void)_sendToObserversPlaceholderDidChangeSignificantly:(id)arg1;
-- (void)_setProxy:(id)arg1 force:(bool)arg2;
+- (void)_setProxy:(id)arg1 force:(BOOL)arg2;
 - (void)_setProxy:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
 - (id)initWithApplicationProxy:(id)arg1;
-- (unsigned long long)installPhase;
-- (unsigned long long)installState;
-- (unsigned long long)installType;
-- (bool)isCancellable;
-- (bool)isNewsstand;
-- (bool)isPausable;
-- (bool)isRestricted;
+- (unsigned int)installPhase;
+- (unsigned int)installState;
+- (unsigned int)installType;
+- (BOOL)isCancellable;
+- (BOOL)isNewsstand;
+- (BOOL)isPausable;
+- (BOOL)isRestricted;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (double)percentComplete;

@@ -15,9 +15,9 @@
 - (id)initWithRegController:(id)arg1;
 - (id)regController;
 - (void)reloadCallerIdValues;
-- (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

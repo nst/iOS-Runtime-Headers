@@ -14,7 +14,7 @@
 @property(retain) GKComposeHeaderField * challengeField;
 @property(retain) NSArray * playersToLoad;
 
-+ (void)composeAndSendFlowForChallenge:(id)arg1 selectPlayers:(id)arg2 defaultMessage:(id)arg3 forcePicker:(bool)arg4 readyHandler:(id)arg5 completionHandler:(id)arg6;
++ (void)composeAndSendFlowForChallenge:(id)arg1 selectPlayers:(id)arg2 defaultMessage:(id)arg3 forcePicker:(BOOL)arg4 readyHandler:(id)arg5 completionHandler:(id)arg6;
 + (id)composeFlowForChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id)arg4;
 + (id)friendPickerFlowForChallenge:(id)arg1 selectPlayers:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id)arg4;
 
@@ -31,6 +31,6 @@
 - (void)setChallengeField:(id)arg1;
 - (void)setPlayersToLoad:(id)arg1;
 - (void)updateChallengeText;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

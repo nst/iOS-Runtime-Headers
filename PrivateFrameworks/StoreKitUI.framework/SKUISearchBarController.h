@@ -7,25 +7,25 @@
 @interface SKUISearchBarController : NSObject <SKUISearchFieldDelegate, UISearchBarDelegate> {
     SKUIFocusedTouchGestureRecognizer *_cancelTouchGestureRecognizer;
     SKUIClientContext *_clientContext;
+    BOOL _displaysSearchBarInNavigationBar;
     UIViewController *_parentViewController;
     UISearchBar *_searchBar;
     SKUISearchBarViewElement *_searchBarViewElement;
     SKUISearchFieldController *_searchFieldController;
+    BOOL _showsResultsForEmptyField;
+    BOOL _usesSearchFieldController;
     SKUISearchBarViewElement *_viewElement;
-    bool_displaysSearchBarInNavigationBar;
-    bool_showsResultsForEmptyField;
-    bool_usesSearchFieldController;
 }
 
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool displaysSearchBarInNavigationBar;
-@property(readonly) unsigned long long hash;
+@property BOOL displaysSearchBarInNavigationBar;
+@property(readonly) unsigned int hash;
 @property UIViewController * parentViewController;
 @property(readonly) UISearchBar * searchBar;
 @property(retain) SKUISearchBarViewElement * searchBarViewElement;
-@property bool showsResultsForEmptyField;
+@property BOOL showsResultsForEmptyField;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -39,11 +39,11 @@
 - (id)_searchFieldController;
 - (id)clientContext;
 - (void)dealloc;
-- (bool)displaysSearchBarInNavigationBar;
+- (BOOL)displaysSearchBarInNavigationBar;
 - (id)initWithSearchBarViewElement:(id)arg1;
 - (id)parentViewController;
 - (void)reloadAfterDocumentUpdate;
-- (void)resignActive:(bool)arg1;
+- (void)resignActive:(BOOL)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarSearchButtonClicked:(id)arg1;
@@ -52,12 +52,12 @@
 - (id)searchBarViewElement;
 - (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (void)searchFieldController:(id)arg1 searchBarDidChangeText:(id)arg2;
-- (bool)searchFieldControllerShouldBeginEditing:(id)arg1;
+- (BOOL)searchFieldControllerShouldBeginEditing:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setDisplaysSearchBarInNavigationBar:(bool)arg1;
+- (void)setDisplaysSearchBarInNavigationBar:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSearchBarViewElement:(id)arg1;
-- (void)setShowsResultsForEmptyField:(bool)arg1;
-- (bool)showsResultsForEmptyField;
+- (void)setShowsResultsForEmptyField:(BOOL)arg1;
+- (BOOL)showsResultsForEmptyField;
 
 @end

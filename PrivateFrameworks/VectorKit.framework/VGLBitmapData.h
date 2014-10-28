@@ -6,11 +6,11 @@
 
 @interface VGLBitmapData : NSObject {
     struct VGLBitmapInfo { 
-        unsigned long long width; 
-        unsigned long long height; 
-        unsigned long long bitsPerComponent; 
-        unsigned long long bitsPerPixel; 
-        unsigned long long bytesPerRow; 
+        unsigned int width; 
+        unsigned int height; 
+        unsigned int bitsPerComponent; 
+        unsigned int bitsPerPixel; 
+        unsigned int bytesPerRow; 
         struct CGColorSpace {} *space; 
         unsigned int bitmapInfo; 
     NSData *_bitmapData;
@@ -18,16 +18,16 @@
     struct __IOSurface { } *_surface;
 }
 
-@property(readonly) struct VGLBitmapInfo { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct CGColorSpace {} *x6; unsigned int x7; } bitmapInfo;
-@property(readonly) unsigned long long dataLength;
+@property(readonly) struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; } bitmapInfo;
+@property(readonly) unsigned long dataLength;
 
-- (void)_commonInitWithBytes:(void*)arg1 bitmapInfo:(const struct VGLBitmapInfo { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct CGColorSpace {} *x6; unsigned int x7; }*)arg2;
-- (struct VGLBitmapInfo { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct CGColorSpace {} *x6; unsigned int x7; })bitmapInfo;
-- (unsigned long long)dataLength;
+- (void)_commonInitWithBytes:(void*)arg1 bitmapInfo:(const struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; }*)arg2;
+- (struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; })bitmapInfo;
+- (unsigned long)dataLength;
 - (void)dealloc;
 - (id)description;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (id)initWithBytes:(void*)arg1 bitmapInfo:(const struct VGLBitmapInfo { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct CGColorSpace {} *x6; unsigned int x7; }*)arg2;
-- (id)initWithSurface:(struct __IOSurface { }*)arg1 bitmapInfo:(const struct VGLBitmapInfo { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct CGColorSpace {} *x6; unsigned int x7; }*)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithBytes:(void*)arg1 bitmapInfo:(const struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; }*)arg2;
+- (id)initWithSurface:(struct __IOSurface { }*)arg1 bitmapInfo:(const struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; }*)arg2;
 
 @end

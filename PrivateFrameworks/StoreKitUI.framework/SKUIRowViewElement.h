@@ -10,6 +10,6 @@
 @property(readonly) NSArray * columns;
 
 - (id)columns;
-- (long long)pageComponentType;
+- (int)pageComponentType;
 
 @end

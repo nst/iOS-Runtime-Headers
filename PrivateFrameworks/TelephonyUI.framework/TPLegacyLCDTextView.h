@@ -7,12 +7,12 @@
 @interface TPLegacyLCDTextView : UIView {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     unsigned int _textRectIsValid : 1;
     unsigned int _centerText : 1;
@@ -22,8 +22,8 @@
     UIFrameAnimation *_animation;
     id _delegate;
     UIFont *_font;
-    double _fontSize;
-    double _minFontSize;
+    float _fontSize;
+    float _minFontSize;
     TPLegacyLCDTextViewScrollingView *_scrollingView;
     UIColor *_shadowColor;
     NSString *_text;
@@ -31,35 +31,35 @@
     } _textRect;
 }
 
-+ (double)defaultMinimumFontSize;
++ (float)defaultMinimumFontSize;
 
 - (id)_automationID;
-- (void)_drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 verticallyOffset:(bool)arg2;
+- (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 verticallyOffset:(BOOL)arg2;
 - (void)_finishedScrolling;
 - (void)_scheduleStartScrolling;
 - (void)_setupForAnimationIfNecessary;
 - (void)_startScrolling;
 - (void)_tearDownAnimation;
-- (bool)animates;
+- (BOOL)animates;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)resetAnimation;
-- (void)setAnimatesIfTruncated:(bool)arg1;
-- (void)setCenterText:(bool)arg1;
+- (void)setAnimatesIfTruncated:(BOOL)arg1;
+- (void)setCenterText:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLCDTextFont:(id)arg1;
-- (void)setLeftTruncatesText:(bool)arg1;
-- (void)setMinimumFontSize:(double)arg1;
+- (void)setLeftTruncatesText:(BOOL)arg1;
+- (void)setMinimumFontSize:(float)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeToFit;
+- (struct CGSize { float x1; float x2; })sizeToFit;
 - (void)startAnimating;
 - (void)stopAnimating;
 - (id)text;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRect;
 
 @end

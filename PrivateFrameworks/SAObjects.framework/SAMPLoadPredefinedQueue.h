@@ -6,7 +6,7 @@
 }
 
 @property int mediaItemType;
-@property bool shouldShuffle;
+@property BOOL shouldShuffle;
 
 + (id)loadPredefinedQueue;
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
@@ -14,9 +14,9 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (int)mediaItemType;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setMediaItemType:(int)arg1;
-- (void)setShouldShuffle:(bool)arg1;
-- (bool)shouldShuffle;
+- (void)setShouldShuffle:(BOOL)arg1;
+- (BOOL)shouldShuffle;
 
 @end

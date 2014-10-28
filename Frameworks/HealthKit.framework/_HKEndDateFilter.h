@@ -6,24 +6,24 @@
 
 @interface _HKEndDateFilter : _HKFilter {
     NSDate *_comparisonDate;
-    unsigned long long _operatorType;
+    unsigned int _operatorType;
 }
 
 @property(readonly) NSDate * comparisonDate;
-@property(readonly) unsigned long long operatorType;
+@property(readonly) unsigned int operatorType;
 
-+ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
-+ (id)filterWithOperatorType:(unsigned long long)arg1 comparisonDate:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
++ (id)filterWithOperatorType:(unsigned int)arg1 comparisonDate:(id)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)acceptsDataObject:(id)arg1;
+- (BOOL)acceptsDataObject:(id)arg1;
 - (id)comparisonDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (unsigned long long)operatorType;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)operatorType;
 - (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

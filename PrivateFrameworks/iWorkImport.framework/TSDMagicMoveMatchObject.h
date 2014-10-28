@@ -6,51 +6,51 @@
 
 @interface TSDMagicMoveMatchObject : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     NSMutableDictionary *_attributes;
     NSString *_name;
     } _position;
     TSDRep *_rep;
     } _stringRange;
     NSString *_stringValue;
-    long long _zOrder;
+    int _zOrder;
 }
 
 @property(retain) NSMutableDictionary * attributes;
 @property(retain) NSString * name;
-@property struct CGPoint { double x1; double x2; } position;
+@property struct CGPoint { float x1; float x2; } position;
 @property(retain) TSDRep * rep;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } stringRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } stringRange;
 @property(retain) NSString * stringValue;
-@property long long zOrder;
+@property int zOrder;
 
-+ (id)matchObjectWithRep:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2;
-+ (id)matchObjectWithTextRep:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
++ (id)matchObjectWithRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2;
++ (id)matchObjectWithTextRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 
 - (id)attributes;
-- (bool)conflictsWithMatchObject:(id)arg1;
+- (BOOL)conflictsWithMatchObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
-- (id)initWithRep:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (struct CGPoint { double x1; double x2; })position;
+- (struct CGPoint { float x1; float x2; })position;
 - (id)rep;
 - (void)setAttributes:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRep:(id)arg1;
-- (void)setStringRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setStringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setStringValue:(id)arg1;
-- (void)setZOrder:(long long)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })stringRange;
+- (void)setZOrder:(int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })stringRange;
 - (id)stringValue;
-- (long long)zOrder;
+- (int)zOrder;
 
 @end

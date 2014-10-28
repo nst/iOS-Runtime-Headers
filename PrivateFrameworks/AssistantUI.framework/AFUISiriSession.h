@@ -6,27 +6,27 @@
 
 @interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUIStateMachineDelegate, AFUISpeechSynthesisLocalDelegate, AFUISiriSession> {
     AFConnection *_connection;
+    BOOL _currentRequestDidPresent;
     <AFUISiriSessionDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
+    BOOL _eyesFree;
     <AFUISiriSessionLocalDataSource> *_localDataSource;
     <AFUISiriSessionLocalDelegate> *_localDelegate;
     AFUISpeechSynthesis *_speechSynthesis;
     AFUIStateMachine *_stateMachine;
-    bool_currentRequestDidPresent;
-    bool_eyesFree;
 }
 
 @property(getter=_connection,readonly) AFConnection * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) <AFUISiriSessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(getter=isEyesFree) bool eyesFree;
-@property(readonly) unsigned long long hash;
+@property(getter=isEyesFree) BOOL eyesFree;
+@property(readonly) unsigned int hash;
 @property <AFUISiriSessionLocalDataSource> * localDataSource;
 @property <AFUISiriSessionLocalDelegate> * localDelegate;
 @property(readonly) Class superclass;
 
-+ (unsigned long long)availabilityState;
++ (unsigned int)availabilityState;
 + (void)beginMonitoringSiriAvailability;
 + (id)effectiveCoreLocationBundle;
 
@@ -35,11 +35,11 @@
 - (void)_didChangeDialogPhase:(id)arg1;
 - (void)_handleRequestUpdateViewsCommand:(id)arg1;
 - (void)_handleUnlockDeviceCommand:(id)arg1;
-- (bool)_hasActiveRequest;
+- (BOOL)_hasActiveRequest;
 - (void)_outputVoiceDidChange:(id)arg1;
 - (void)_performAceCommand:(id)arg1 forRequestUpdateViewsCommand:(id)arg2 afterDelay:(double)arg3;
 - (void)_performBlockWithDelegate:(id)arg1;
-- (void)_performTransitionForEvent:(long long)arg1;
+- (void)_performTransitionForEvent:(int)arg1;
 - (id)_preparedSpeechRequestWithRequestOptions:(id)arg1;
 - (void)_requestContextWithCompletion:(id)arg1;
 - (void)_requestDidFinishWithError:(id)arg1;
@@ -53,15 +53,15 @@
 - (void)_startSpeechPronunciationRequestWithContext:(id)arg1 options:(id)arg2;
 - (void)_startSpeechRequestWithOptions:(id)arg1;
 - (void)_startSpeechRequestWithSpeechFileAtURL:(id)arg1;
-- (long long)_state;
+- (int)_state;
 - (id)_stateMachine;
 - (void)_voiceOverStatusDidChange:(id)arg1;
 - (void)assistantConnection:(id)arg1 didChangeAudioSessionID:(unsigned int)arg2;
-- (void)assistantConnection:(id)arg1 didFinishAcousticIDRequestWithSuccess:(bool)arg2;
+- (void)assistantConnection:(id)arg1 didFinishAcousticIDRequestWithSuccess:(BOOL)arg2;
 - (void)assistantConnection:(id)arg1 openURL:(id)arg2 completion:(id)arg3;
 - (void)assistantConnection:(id)arg1 receivedCommand:(id)arg2;
 - (void)assistantConnection:(id)arg1 requestFailedWithError:(id)arg2 requestClass:(id)arg3;
-- (void)assistantConnection:(id)arg1 shouldSpeak:(bool)arg2;
+- (void)assistantConnection:(id)arg1 shouldSpeak:(BOOL)arg2;
 - (void)assistantConnection:(id)arg1 speechRecognized:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecognizedPartialResult:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecordingDidBeginOnAVRecordRoute:(id)arg2;
@@ -82,9 +82,9 @@
 - (void)end;
 - (void)forceAudioSessionActive;
 - (id)initWithConnection:(id)arg1 delegateQueue:(id)arg2;
-- (bool)isEyesFree;
-- (bool)isListening;
-- (bool)isPreventingActivationGesture;
+- (BOOL)isEyesFree;
+- (BOOL)isListening;
+- (BOOL)isPreventingActivationGesture;
 - (id)localDataSource;
 - (id)localDelegate;
 - (void)performAceCommand:(id)arg1 conflictHandler:(id)arg2;
@@ -100,18 +100,18 @@
 - (void)setAlertContext;
 - (void)setApplicationContext;
 - (void)setDelegate:(id)arg1;
-- (void)setEyesFree:(bool)arg1;
-- (void)setIsStark:(bool)arg1;
+- (void)setEyesFree:(BOOL)arg1;
+- (void)setIsStark:(BOOL)arg1;
 - (void)setLocalDataSource:(id)arg1;
 - (void)setLocalDelegate:(id)arg1;
-- (void)setLockState:(unsigned long long)arg1;
+- (void)setLockState:(unsigned int)arg1;
 - (void)setOverriddenApplicationContext:(id)arg1 withSMSContext:(id)arg2;
 - (id)speechSynthesis;
 - (void)speechSynthesisWillStartSpeaking:(id)arg1;
 - (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2;
 - (void)startRequestWithOptions:(id)arg1;
-- (id)stateMachine:(id)arg1 descriptionForEvent:(long long)arg2;
-- (void)stateMachine:(id)arg1 didTransitionFromState:(long long)arg2 forEvent:(long long)arg3;
+- (id)stateMachine:(id)arg1 descriptionForEvent:(int)arg2;
+- (void)stateMachine:(id)arg1 didTransitionFromState:(int)arg2 forEvent:(int)arg3;
 - (void)stopRecordingSpeech;
 - (void)stopRequestWithOptions:(id)arg1;
 - (void)telephonyRequestCompleted;

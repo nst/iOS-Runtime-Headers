@@ -10,7 +10,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) GKGame * game;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)exportedInterface;
@@ -18,7 +18,7 @@
 
 - (void)didFinishWithPlayerInternals:(id)arg1 message:(id)arg2;
 - (void)remoteViewControllerIsCanceling;
-- (void)setChallenge:(id)arg1 withPlayers:(id)arg2 defaultMessage:(id)arg3 forcePicker:(bool)arg4;
+- (void)setChallenge:(id)arg1 withPlayers:(id)arg2 defaultMessage:(id)arg3 forcePicker:(BOOL)arg4;
 - (void)setupRemoteView;
 
 @end

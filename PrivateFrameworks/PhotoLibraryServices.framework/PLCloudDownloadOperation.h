@@ -6,9 +6,8 @@
     bool_cancelled;
 }
 
-- (unsigned long long)cost;
+- (unsigned int)cost;
 - (id)description;
-- (void)markAsLocallyAvailable:(bool)arg1;
 - (void)requestCancel;
 - (void)runOperationWithCompletionHandler:(id)arg1;
 

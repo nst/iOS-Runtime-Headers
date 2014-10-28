@@ -12,12 +12,12 @@
 @property <PSSearchIndexOperationDelegate> * delegate;
 @property(readonly) PSSearchEntry * searchEntry;
 
-+ (id)_bundleForSearchEntry:(id)arg1 thirdPartyApp:(bool*)arg2 checkManifest:(bool*)arg3;
++ (id)_bundleForSearchEntry:(id)arg1 thirdPartyApp:(BOOL*)arg2 checkManifest:(BOOL*)arg3;
 + (id)_loadSearchEntriesFromPlistForEntry:(id)arg1 bundle:(id)arg2;
 + (id)_loadThirdPartySearchEntriesForEntry:(id)arg1 bundle:(id)arg2;
 
 - (void)_cancel;
-- (void)_finishedIndexingWithEntries:(id)arg1 cancelled:(bool)arg2;
+- (void)_finishedIndexingWithEntries:(id)arg1 cancelled:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithSearchEntry:(id)arg1 delegate:(id)arg2;

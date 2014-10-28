@@ -102,8 +102,8 @@
 - (void)stopMetricCollection:(id)arg1;
 - (void)submitAppBB:(id)arg1 withAwdConn:(id)arg2;
 - (void)submitBBLqm:(id)arg1 withAwdConn:(id)arg2;
-- (bool)submitConnectedPower:(id)arg1 withAwdConn:(id)arg2;
-- (bool)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (BOOL)submitConnectedPower:(id)arg1 withAwdConn:(id)arg2;
+- (BOOL)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
 - (unsigned int)upBytes;
 - (void)updateCurrLqmState;
 - (void)updateLQMTableWithQuality:(int)arg1 withTime:(double)arg2 withRX:(double)arg3 withTX:(double)arg4;

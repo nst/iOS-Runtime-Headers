@@ -5,10 +5,10 @@
 @interface IKCheckMarkElement : IKViewElement {
 }
 
-@property(readonly) unsigned long long alignment;
+@property(readonly) unsigned int alignment;
 
-+ (bool)shouldParseChildDOMElements;
++ (BOOL)shouldParseChildDOMElements;
 
-- (unsigned long long)alignment;
+- (unsigned int)alignment;
 
 @end

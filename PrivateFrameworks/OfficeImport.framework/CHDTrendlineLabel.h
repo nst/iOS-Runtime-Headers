@@ -7,9 +7,9 @@
 @interface CHDTrendlineLabel : NSObject {
     boolmAutomaticLabelDeleted;
     boolmGeneratedText;
-    unsigned long long mContentFormatId;
+    unsigned int mContentFormatId;
     OADGraphicProperties *mGraphicProperties;
-    unsigned long long mLastCachedNameStringIndex;
+    unsigned int mLastCachedNameStringIndex;
     CHDFormula *mName;
     EDResources *mResources;
 }
@@ -17,7 +17,7 @@
 + (id)trendlineLabelWithResources:(id)arg1;
 
 - (id)contentFormat;
-- (unsigned long long)contentFormatId;
+- (unsigned int)contentFormatId;
 - (void)dealloc;
 - (id)graphicProperties;
 - (id)initWithResources:(id)arg1;
@@ -27,12 +27,12 @@
 - (id)name;
 - (void)setAutomaticLabelDeleted:(bool)arg1;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(unsigned long long)arg1;
+- (void)setContentFormatId:(unsigned int)arg1;
 - (void)setGeneratedText:(bool)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (void)setLastCachedName:(id)arg1;
 - (void)setName:(id)arg1 chart:(id)arg2;
-- (void)setStringIndex:(unsigned long long)arg1;
-- (unsigned long long)stringIndex;
+- (void)setStringIndex:(unsigned int)arg1;
+- (unsigned int)stringIndex;
 
 @end

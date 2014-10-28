@@ -5,6 +5,6 @@
 @interface MFMailMessageLibraryMigrator : NSObject {
 }
 
-- (bool)migrateWithSQLiteConnection:(id)arg1;
+- (BOOL)migrateWithSQLiteConnection:(id)arg1;
 
 @end

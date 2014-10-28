@@ -14,9 +14,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithTreeLevel:(unsigned int)arg1 quantizedX:(unsigned int)arg2 quantizedY:(unsigned int)arg3;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)quantizedX;
 - (unsigned int)quantizedY;
 - (unsigned int)treeLevel;

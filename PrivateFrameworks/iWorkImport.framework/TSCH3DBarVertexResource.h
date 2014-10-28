@@ -8,13 +8,13 @@
     TSCH3DBarExtrusionGeometry *mGeometry;
 }
 
-- (long long)capOffset;
+- (int)capOffset;
 - (void)dealloc;
 - (id)geometry;
 - (id)get;
 - (id)initWithGeometry:(id)arg1;
-- (long long)numCapVertices;
-- (long long)numVertices;
-- (long long)verticesOffset;
+- (int)numCapVertices;
+- (int)numVertices;
+- (int)verticesOffset;
 
 @end

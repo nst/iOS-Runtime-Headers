@@ -10,7 +10,8 @@
 
 @interface BBResponse : NSObject <NSSecureCoding> {
     NSString *_actionID;
-    long long _actionType;
+    int _actionType;
+    BOOL _activated;
     NSString *_bulletinID;
     NSString *_buttonID;
     NSDictionary *_context;
@@ -19,13 +20,12 @@
     NSString *_originID;
     NSString *_replyText;
     id _sendBlock;
-    bool_activated;
-    bool_sent;
+    BOOL _sent;
 }
 
 @property(copy) NSString * actionID;
-@property long long actionType;
-@property bool activated;
+@property int actionType;
+@property BOOL activated;
 @property(retain) NSString * bulletinID;
 @property(copy) NSString * buttonID;
 @property(copy) NSDictionary * context;
@@ -34,11 +34,11 @@
 @property(copy) NSString * replyText;
 @property(copy) id sendBlock;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)actionID;
-- (long long)actionType;
-- (bool)activated;
+- (int)actionType;
+- (BOOL)activated;
 - (id)bulletinID;
 - (id)buttonID;
 - (id)context;
@@ -51,8 +51,8 @@
 - (void)send;
 - (id)sendBlock;
 - (void)setActionID:(id)arg1;
-- (void)setActionType:(long long)arg1;
-- (void)setActivated:(bool)arg1;
+- (void)setActionType:(int)arg1;
+- (void)setActivated:(BOOL)arg1;
 - (void)setBulletinID:(id)arg1;
 - (void)setButtonID:(id)arg1;
 - (void)setContext:(id)arg1;

@@ -9,19 +9,19 @@
         int rowIndex; 
         float rowAdjustment; 
     struct CGSize { 
-        double width; 
-        double height; 
-    boolmIsRelative;
+        float width; 
+        float height; 
     } mFrom;
+    BOOL mIsRelative;
     } mSize;
 }
 
 - (id).cxx_construct;
 - (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
-- (bool)isRelative;
+- (BOOL)isRelative;
 - (void)setFrom:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
-- (void)setRelative:(bool)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (void)setRelative:(BOOL)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

@@ -6,15 +6,15 @@
 
 @interface BSBaseXPCServer : NSObject {
     NSMutableSet *_clients;
+    BOOL _connectionResumed;
     NSObject<OS_xpc_object> *_listenerConnection;
     int _notifyToken;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
-    bool_connectionResumed;
-    bool_usesAnonymousConnection;
+    BOOL _usesAnonymousConnection;
 }
 
-@property(getter=usesAnonymousConnection) bool usesAnonymousConnection;
+@property(getter=usesAnonymousConnection) BOOL usesAnonymousConnection;
 
 - (void)_addClientConnection:(id)arg1;
 - (id)_clients;
@@ -35,11 +35,11 @@
 - (void)queue_clientRemoved:(id)arg1;
 - (void)queue_handleMessage:(id)arg1;
 - (id)queue_newClientForConnection:(id)arg1;
-- (bool)queue_shouldAcceptNewConnection:(id)arg1;
+- (BOOL)queue_shouldAcceptNewConnection:(id)arg1;
 - (void)registerServerSuspended;
 - (void)resumeServer;
 - (void)run;
-- (void)setUsesAnonymousConnection:(bool)arg1;
-- (bool)usesAnonymousConnection;
+- (void)setUsesAnonymousConnection:(BOOL)arg1;
+- (BOOL)usesAnonymousConnection;
 
 @end

@@ -16,7 +16,7 @@
 @property(retain) PDAnimationTarget * target;
 @property int triggerType;
 
-+ (unsigned long long)buildPartsFromTarget:(id)arg1;
++ (unsigned int)buildPartsFromTarget:(id)arg1;
 + (id)newSequentialTimeNodeGroupForAnimationInfo;
 + (id)newSequentialTimeNodeGroupForAnimationInfoWithClass:(Class)arg1 target:(id)arg2;
 + (id)newSequentialTimeNodeGroupForAnimationInfoWithClass:(Class)arg1;
@@ -26,9 +26,9 @@
 - (double)direction;
 - (id)groupId;
 - (int)iterateType;
-- (id)level1ParallelTimeNodeGroupAtNodeIndex:(unsigned long long)arg1;
-- (id)level2ParallelTimeNodeGroupAtNodeIndex:(unsigned long long)arg1 level1NodeIndex:(unsigned long long)arg2;
-- (id)level3BehaviorAtNodeIndex:(unsigned long long)arg1 level2NodeIndex:(unsigned long long)arg2 level1NodeIndex:(unsigned long long)arg3;
+- (id)level1ParallelTimeNodeGroupAtNodeIndex:(unsigned int)arg1;
+- (id)level2ParallelTimeNodeGroupAtNodeIndex:(unsigned int)arg1 level1NodeIndex:(unsigned int)arg2;
+- (id)level3BehaviorAtNodeIndex:(unsigned int)arg1 level2NodeIndex:(unsigned int)arg2 level1NodeIndex:(unsigned int)arg3;
 - (int)presetClass;
 - (int)presetId;
 - (void)setDelay:(double)arg1;

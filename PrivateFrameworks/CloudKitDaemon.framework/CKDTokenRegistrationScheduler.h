@@ -16,7 +16,7 @@
 @property(retain) NSMutableDictionary * callbackTimers;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(retain) CKDURLRequest * request;
 @property(retain) NSObject<OS_dispatch_source> * scheduleTimer;
@@ -25,13 +25,13 @@
 + (id)sharedScheduler;
 
 - (void).cxx_destruct;
-- (void)_refreshToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(long long)arg4 completionBlock:(id)arg5;
-- (void)_removeToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(long long)arg4 completionBlock:(id)arg5;
+- (void)_refreshToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 completionBlock:(id)arg5;
+- (void)_removeToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 completionBlock:(id)arg5;
 - (void)_scheduleTokenRefresh;
 - (id)callbackBlocks;
 - (id)callbackTimers;
 - (void)dealloc;
-- (void)ensureTokenRefreshForAppContainerTuple:(id)arg1 apsEnvironmentString:(id)arg2 useAPSPublicToken:(bool)arg3 completionBlock:(id)arg4;
+- (void)ensureTokenRefreshForAppContainerTuple:(id)arg1 apsEnvironmentString:(id)arg2 useAPSPublicToken:(BOOL)arg3 completionBlock:(id)arg4;
 - (void)forceTokenRefreshForAllClients;
 - (void)handlePublicPushTokenDidUpdate:(id)arg1;
 - (void)handlePushTokenDidUpdate:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)setQueue:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setScheduleTimer:(id)arg1;
-- (void)systemAvailabilityChanged:(bool)arg1;
+- (void)systemAvailabilityChanged:(BOOL)arg1;
 - (void)tokenRefreshChanged;
 - (void)unregisterAllTokensWithCompletionHandler:(id)arg1;
 - (void)unregisterTokenForAppContainerTuple:(id)arg1;

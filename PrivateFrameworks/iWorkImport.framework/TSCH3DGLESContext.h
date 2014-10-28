@@ -9,14 +9,14 @@
 }
 
 + (void)clearCurrentContext;
-+ (bool)isCurrentContextValid;
++ (BOOL)isCurrentContextValid;
 
 - (id)bindReturningPreviousContext;
 - (id)capabilitiesForExtensions:(id)arg1;
 - (void)dealloc;
 - (id)extensionsForCurrentVirtualScreen;
 - (id)init;
-- (bool)isBound;
+- (BOOL)isBound;
 - (void)present;
 - (void)restoreEAGLContext:(id)arg1;
 - (void)setVirtualScreen:(int)arg1;

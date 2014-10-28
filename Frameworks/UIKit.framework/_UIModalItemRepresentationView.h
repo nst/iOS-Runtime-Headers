@@ -6,14 +6,14 @@
 
 @interface _UIModalItemRepresentationView : UIView {
     UIView *_fakeEffectSourceView;
-    bool_useFakeEffectSource;
+    BOOL _useFakeEffectSource;
 }
 
-@property bool useFakeEffectSource;
+@property BOOL useFakeEffectSource;
 
 - (void)layoutSubviews;
-- (void)setUseFakeEffectSource:(bool)arg1 animated:(bool)arg2;
-- (void)setUseFakeEffectSource:(bool)arg1;
-- (bool)useFakeEffectSource;
+- (void)setUseFakeEffectSource:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setUseFakeEffectSource:(BOOL)arg1;
+- (BOOL)useFakeEffectSource;
 
 @end

@@ -10,7 +10,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSString * format;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSNumber * height;
 @property(readonly) Class superclass;
 @property(copy) NSNumber * width;

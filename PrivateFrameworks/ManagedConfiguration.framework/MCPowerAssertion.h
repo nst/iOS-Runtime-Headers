@@ -3,14 +3,14 @@
  */
 
 @interface MCPowerAssertion : MCProcessAssertion {
-    bool_parked;
+    BOOL _parked;
 }
 
-@property(getter=isParked,readonly) bool parked;
+@property(getter=isParked,readonly) BOOL parked;
 
 - (void)dealloc;
 - (id)init;
-- (bool)isParked;
+- (BOOL)isParked;
 - (void)park;
 - (void)unpark;
 

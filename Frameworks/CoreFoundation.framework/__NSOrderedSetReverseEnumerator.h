@@ -3,7 +3,7 @@
  */
 
 @interface __NSOrderedSetReverseEnumerator : NSEnumerator {
-    unsigned long long _idx;
+    unsigned int _idx;
     id _obj;
 }
 

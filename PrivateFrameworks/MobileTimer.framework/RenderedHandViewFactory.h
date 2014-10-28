@@ -6,42 +6,42 @@
 
 @interface RenderedHandViewFactory : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
+    BOOL _allowCaching;
     NSMutableDictionary *_angleCache;
     NSString *_imagePath;
     } _offset;
     struct CGPDFPage { } *_page;
-    unsigned long long _registeredClientsCount;
+    unsigned int _registeredClientsCount;
     NSBundle *_resourcesBundle;
     } _scale;
     } _viewSize;
-    bool_allowCaching;
 }
 
-@property(readonly) bool allowCaching;
+@property(readonly) BOOL allowCaching;
 @property(readonly) NSString * key;
-@property unsigned long long registeredClientsCount;
+@property unsigned int registeredClientsCount;
 
 + (void)flushAllCaches;
-+ (id)keyForBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 scale:(struct CGSize { double x1; double x2; })arg4;
-+ (id)registerForFactoryWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 scale:(struct CGSize { double x1; double x2; })arg4 allowCaching:(bool)arg5;
++ (id)keyForBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4;
++ (id)registerForFactoryWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4 allowCaching:(BOOL)arg5;
 + (void)unregisterForFactory:(id)arg1;
 
-- (bool)allowCaching;
+- (BOOL)allowCaching;
 - (void)dealloc;
 - (void)flushCache;
-- (id)imageForAngle:(double)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2;
-- (id)initWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 scale:(struct CGSize { double x1; double x2; })arg4 allowCaching:(bool)arg5;
+- (id)imageForAngle:(float)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4 allowCaching:(BOOL)arg5;
 - (id)key;
-- (unsigned long long)registeredClientsCount;
-- (id)renderImageForAngle:(double)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2;
-- (void)setRegisteredClientsCount:(unsigned long long)arg1;
+- (unsigned int)registeredClientsCount;
+- (id)renderImageForAngle:(float)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)setRegisteredClientsCount:(unsigned int)arg1;
 
 @end

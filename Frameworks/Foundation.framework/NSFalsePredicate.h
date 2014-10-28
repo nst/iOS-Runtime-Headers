@@ -5,24 +5,24 @@
 @interface NSFalsePredicate : NSPredicate {
 }
 
-+ (bool)_allowsEvaluation;
++ (BOOL)_allowsEvaluation;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultInstance;
 + (void)initialize;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_validateForMetadataQueryScopes:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
-- (unsigned long long)hash;
+- (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)predicateFormat;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

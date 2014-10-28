@@ -6,6 +6,6 @@
 }
 
 + (id)predicateWithCalendarIDs:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 @end

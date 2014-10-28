@@ -6,40 +6,40 @@
 
 @interface RCTextLayer : CALayer {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     } _cachedSize;
-    unsigned long long _cachedSizeHash;
+    unsigned int _cachedSizeHash;
     UIFont *_font;
-    long long _preferredAlignment;
+    int _preferredAlignment;
     NSString *_text;
-    long long _textAlignment;
+    int _textAlignment;
     UIColor *_textColor;
 }
 
 @property(retain) UIFont * font;
-@property long long preferredAlignment;
+@property int preferredAlignment;
 @property(copy) NSString * text;
-@property long long textAlignment;
+@property int textAlignment;
 @property(retain) UIColor * textColor;
 
 - (void).cxx_destruct;
 - (id)_attributes;
-- (struct CGSize { double x1; double x2; })_displaySize;
+- (struct CGSize { float x1; float x2; })_displaySize;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)font;
 - (id)init;
-- (long long)preferredAlignment;
+- (int)preferredAlignment;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setPreferredAlignment:(long long)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPreferredAlignment:(int)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(long long)arg1;
+- (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)sizeToFit;
 - (id)text;
-- (long long)textAlignment;
+- (int)textAlignment;
 - (id)textColor;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectWithAlignment:(long long)arg1 inLayoutBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectWithAlignment:(int)arg1 inLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 @end

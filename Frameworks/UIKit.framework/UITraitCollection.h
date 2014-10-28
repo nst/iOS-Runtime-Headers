@@ -6,54 +6,54 @@
 
 @interface UITraitCollection : NSObject <NSCopying, NSSecureCoding> {
     struct { 
-        long long userInterfaceIdiom; 
-        double displayScale; 
-        long long touchLevel; 
-        long long interactionModel; 
-        long long horizontalSizeClass; 
-        long long verticalSizeClass; 
+        int userInterfaceIdiom; 
+        float displayScale; 
+        int touchLevel; 
+        int interactionModel; 
+        int horizontalSizeClass; 
+        int verticalSizeClass; 
     } _builtinTraits;
     NSDictionary *_clientDefinedTraits;
 }
 
-@property(readonly) bool MPU_hasCompactWidth;
-@property(readonly) bool MPU_hasRegularWidth;
-@property(readonly) double displayScale;
-@property(readonly) long long horizontalSizeClass;
-@property(readonly) long long userInterfaceIdiom;
-@property(readonly) long long verticalSizeClass;
+@property(readonly) BOOL MPU_hasCompactWidth;
+@property(readonly) BOOL MPU_hasRegularWidth;
+@property(readonly) float displayScale;
+@property(readonly) int horizontalSizeClass;
+@property(readonly) int userInterfaceIdiom;
+@property(readonly) int verticalSizeClass;
 
 + (id)_emptyTraitCollection;
 + (id)_traitCollectionWithValue:(id)arg1 forTraitNamed:(id)arg2;
-+ (bool)supportsSecureCoding;
-+ (id)traitCollectionWithDisplayScale:(double)arg1;
-+ (id)traitCollectionWithHorizontalSizeClass:(long long)arg1;
-+ (id)traitCollectionWithInteractionModel:(long long)arg1;
-+ (id)traitCollectionWithTouchLevel:(long long)arg1;
++ (BOOL)supportsSecureCoding;
++ (id)traitCollectionWithDisplayScale:(float)arg1;
++ (id)traitCollectionWithHorizontalSizeClass:(int)arg1;
++ (id)traitCollectionWithInteractionModel:(int)arg1;
++ (id)traitCollectionWithTouchLevel:(int)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
-+ (id)traitCollectionWithUserInterfaceIdiom:(long long)arg1;
-+ (id)traitCollectionWithVerticalSizeClass:(long long)arg1;
++ (id)traitCollectionWithUserInterfaceIdiom:(int)arg1;
++ (id)traitCollectionWithVerticalSizeClass:(int)arg1;
 
-- (bool)MPU_hasCompactWidth;
-- (bool)MPU_hasRegularWidth;
-- (id)_initWithBuiltinTraitStorage:(struct { long long x1; double x2; long long x3; long long x4; long long x5; long long x6; }*)arg1 clientDefinedTraits:(id)arg2;
-- (bool)_matchesIntersectionWithTraitCollection:(id)arg1;
+- (BOOL)MPU_hasCompactWidth;
+- (BOOL)MPU_hasRegularWidth;
+- (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; int x4; int x5; int x6; }*)arg1 clientDefinedTraits:(id)arg2;
+- (BOOL)_matchesIntersectionWithTraitCollection:(id)arg1;
 - (id)_namedImageDescription;
 - (id)_valueForTraitNamed:(id)arg1;
-- (bool)containsTraitsInCollection:(id)arg1;
+- (BOOL)containsTraitsInCollection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (double)displayScale;
+- (float)displayScale;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
-- (long long)horizontalSizeClass;
+- (unsigned int)hash;
+- (int)horizontalSizeClass;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (long long)interactionModel;
-- (bool)isEqual:(id)arg1;
-- (long long)touchLevel;
-- (long long)userInterfaceIdiom;
-- (long long)verticalSizeClass;
+- (int)interactionModel;
+- (BOOL)isEqual:(id)arg1;
+- (int)touchLevel;
+- (int)userInterfaceIdiom;
+- (int)verticalSizeClass;
 
 @end

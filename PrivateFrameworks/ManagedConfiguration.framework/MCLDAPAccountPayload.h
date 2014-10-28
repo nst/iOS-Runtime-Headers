@@ -10,8 +10,8 @@
     NSString *_hostname;
     NSString *_password;
     NSArray *_searchSettings;
+    BOOL _useSSL;
     NSString *_username;
-    bool_useSSL;
 }
 
 @property(retain,readonly) NSString * accountDescription;
@@ -19,7 +19,7 @@
 @property(retain,readonly) NSString * hostname;
 @property(retain) NSString * password;
 @property(retain,readonly) NSArray * searchSettings;
-@property(readonly) bool useSSL;
+@property(readonly) BOOL useSSL;
 @property(retain) NSString * username;
 
 + (id)localizedPluralForm;
@@ -44,7 +44,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)title;
-- (bool)useSSL;
+- (BOOL)useSSL;
 - (id)username;
 
 @end

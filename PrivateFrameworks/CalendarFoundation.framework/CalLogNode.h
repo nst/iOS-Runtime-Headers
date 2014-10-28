@@ -6,7 +6,7 @@
 
 @interface CalLogNode : NSObject {
     NSMutableArray *_accumulator;
-    unsigned long long _accumulatorBufferSize;
+    unsigned int _accumulatorBufferSize;
     NSObject<OS_dispatch_group> *_dispatchGroup;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CalLogFilter *_filter;
@@ -15,26 +15,26 @@
 }
 
 @property(retain) NSMutableArray * accumulator;
-@property unsigned long long accumulatorBufferSize;
+@property unsigned int accumulatorBufferSize;
 @property(retain) CalLogFilter * filter;
 @property(retain) NSMutableArray * subnodes;
 @property(retain) <CalLogWriter> * writer;
 
 - (void).cxx_destruct;
 - (id)accumulator;
-- (unsigned long long)accumulatorBufferSize;
+- (unsigned int)accumulatorBufferSize;
 - (void)addSubnode:(id)arg1;
 - (id)allSubnodes;
 - (void)clearAccumulator;
 - (id)filter;
-- (bool)flush;
+- (BOOL)flush;
 - (void)flushAccumulator;
 - (id)init;
 - (int)minimumLevelOfNodeTree;
 - (void)processEnvelope:(id)arg1;
 - (void)removeSubnode:(id)arg1;
 - (void)setAccumulator:(id)arg1;
-- (void)setAccumulatorBufferSize:(unsigned long long)arg1;
+- (void)setAccumulatorBufferSize:(unsigned int)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setSubnodes:(id)arg1;
 - (void)setWriter:(id)arg1;

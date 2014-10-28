@@ -3,9 +3,9 @@
  */
 
 @interface WKProcessAssertionBackgroundTaskManager : NSObject {
-    unsigned long long _backgroundTask;
+    BOOL _appIsBackground;
+    unsigned int _backgroundTask;
     unsigned int _needsToRunInBackgroundCount;
-    bool_appIsBackground;
 }
 
 + (id)shared;

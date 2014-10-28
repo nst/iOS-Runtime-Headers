@@ -5,24 +5,24 @@
 @class NSData, SLRequestMultiPart;
 
 @interface SLRequestMultiPartInputStream : NSInputStream {
-    unsigned long long _bytesReadInState;
+    unsigned int _bytesReadInState;
     int _currentState;
     SLRequestMultiPart *_multiPart;
     NSData *_srcData;
-    unsigned long long _streamStatus;
-    unsigned long long _totalBytesRead;
+    unsigned int _streamStatus;
+    unsigned int _totalBytesRead;
 }
 
 - (void).cxx_destruct;
 - (void)close;
-- (long long)currentStateRead:(char *)arg1 maxLength:(unsigned long long)arg2;
-- (bool)getBuffer:(char **)arg1 length:(unsigned long long*)arg2;
-- (bool)hasBytesAvailable;
+- (int)currentStateRead:(char *)arg1 maxLength:(unsigned int)arg2;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
+- (BOOL)hasBytesAvailable;
 - (id)initWithMultiPart:(id)arg1;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (void)open;
-- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
-- (unsigned long long)readStateSourceData:(id)arg1 toBuffer:(char *)arg2 offset:(unsigned long long)arg3 maxLength:(unsigned long long)arg4;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (unsigned int)readStateSourceData:(id)arg1 toBuffer:(char *)arg2 offset:(unsigned int)arg3 maxLength:(unsigned int)arg4;
 - (void)transitionState;
 
 @end

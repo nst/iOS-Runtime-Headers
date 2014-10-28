@@ -5,24 +5,24 @@
 @class <AVSpeechSynthesizerDelegate>;
 
 @interface AVSpeechSynthesizer : NSObject {
-    boolpaused;
-    boolspeaking;
     <AVSpeechSynthesizerDelegate> *delegate;
+    BOOL paused;
+    BOOL speaking;
 }
 
 @property <AVSpeechSynthesizerDelegate> * delegate;
-@property(getter=isPaused,readonly) bool paused;
-@property(getter=isSpeaking,readonly) bool speaking;
+@property(getter=isPaused,readonly) BOOL paused;
+@property(getter=isSpeaking,readonly) BOOL speaking;
 
 + (void)initialize;
 
-- (bool)continueSpeaking;
+- (BOOL)continueSpeaking;
 - (id)delegate;
-- (bool)isPaused;
-- (bool)isSpeaking;
-- (bool)pauseSpeakingAtBoundary:(long long)arg1;
+- (BOOL)isPaused;
+- (BOOL)isSpeaking;
+- (BOOL)pauseSpeakingAtBoundary:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)speakUtterance:(id)arg1;
-- (bool)stopSpeakingAtBoundary:(long long)arg1;
+- (BOOL)stopSpeakingAtBoundary:(int)arg1;
 
 @end

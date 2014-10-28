@@ -8,35 +8,35 @@
     ML3DatabaseConnection *_connection;
     NSString *_databasePath;
     NSUUID *_existingTransactionIdentifier;
-    unsigned long long _priorityLevel;
+    unsigned int _priorityLevel;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableArray *_statementQueue;
-    unsigned long long _statementThreshold;
+    unsigned int _statementThreshold;
     MLMediaLibraryService *_xpcService;
 }
 
 @property(readonly) ML3DatabaseConnection * connection;
 @property(readonly) NSString * databasePath;
 @property(retain) NSUUID * existingTransactionIdentifier;
-@property unsigned long long priorityLevel;
+@property unsigned int priorityLevel;
 @property(readonly) NSMutableArray * statementQueue;
-@property unsigned long long statementThreshold;
+@property unsigned int statementThreshold;
 
 - (void).cxx_destruct;
-- (bool)_onQueueFlushAndWait:(bool)arg1;
+- (BOOL)_onQueueFlushAndWait:(BOOL)arg1;
 - (id)connection;
 - (id)databasePath;
 - (void)dealloc;
-- (bool)enqueueStatement:(id)arg1;
+- (BOOL)enqueueStatement:(id)arg1;
 - (id)existingTransactionIdentifier;
-- (bool)flushAndWait:(bool)arg1;
+- (BOOL)flushAndWait:(BOOL)arg1;
 - (id)init;
 - (id)initWithConnection:(id)arg1;
-- (unsigned long long)priorityLevel;
+- (unsigned int)priorityLevel;
 - (void)setExistingTransactionIdentifier:(id)arg1;
-- (void)setPriorityLevel:(unsigned long long)arg1;
-- (void)setStatementThreshold:(unsigned long long)arg1;
+- (void)setPriorityLevel:(unsigned int)arg1;
+- (void)setStatementThreshold:(unsigned int)arg1;
 - (id)statementQueue;
-- (unsigned long long)statementThreshold;
+- (unsigned int)statementThreshold;
 
 @end

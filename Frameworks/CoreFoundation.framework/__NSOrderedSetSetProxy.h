@@ -7,7 +7,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)initWithOrderedSet:(id)arg1;
 - (id)member:(id)arg1;

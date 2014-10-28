@@ -8,8 +8,8 @@
     struct _GEOGenericContainer<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, std::__1::hash<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::equal_to<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
-                long long __sig; 
-                BOOL __opaque[56]; 
+                long __sig; 
+                BOOL __opaque[40]; 
             } __m_; 
         } _lock; 
         struct list<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, std::__1::allocator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr> > > { 
@@ -18,7 +18,7 @@
                 struct __list_node<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> {} *__next_; 
             } __end_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> > > { 
-                unsigned long long __first_; 
+                unsigned long __first_; 
             } __size_alloc_; 
         } _list; 
         struct unordered_map<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__list_iterator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *>, std::__1::hash<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::equal_to<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::allocator<std::__1::pair<const geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__list_iterator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> > > > { 
@@ -28,7 +28,7 @@
                         struct __hash_node<std::__1::__hash_value_type<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__list_iterator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> >, void *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__list_iterator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> >, void *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__list_iterator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> >, void *> *> > { 
-                                unsigned long long __first_; 
+                                unsigned long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -39,17 +39,17 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__hash_value_type<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__list_iterator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> >, std::__1::hash<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__hash_value_type<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::__list_iterator<geo::detail::_CacheItem<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, id, _value_ptr>, void *> >, std::__1::equal_to<geo::_retain_ptr<NSString *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, true> > { 
                     float __first_; 
                 } __p3_; 
             } __table_; 
         } _map; 
-        unsigned long long _maxCapacity; 
-        unsigned long long _maxCost; 
-        unsigned long long _currentCost; 
-        unsigned long long _currentCount; 
+        unsigned int _maxCapacity; 
+        unsigned int _maxCost; 
+        unsigned int _currentCost; 
+        unsigned int _currentCount; 
     } _artworkPool;
     NSMapTable *_atlasToImages;
     VKPIconPack *_iconPack;
@@ -57,12 +57,12 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_artworkForBaseImage:(struct CGImage { }*)arg1 additionalImage:(struct CGImage { }*)arg2 cacheKey:(id)arg3 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg4 contentScale:(double)arg5;
-- (struct CGImage { }*)_createImageForIconInfo:(id)arg1 contentScale:(double)arg2;
-- (struct CGImage { }*)_createImageForName:(id)arg1 contentScale:(double)arg2 size:(long long)arg3;
-- (id)artworkForName:(id)arg1 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg2 contentScale:(double)arg3 size:(long long)arg4;
-- (id)artworkForStyleAttributeKey:(unsigned int)arg1 longValue:(unsigned long long)arg2 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg3 contentScale:(double)arg4 size:(long long)arg5;
-- (id)artworkForStyleAttributeKey:(unsigned int)arg1 value:(unsigned int)arg2 style:(struct { long long x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; long long x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { double x_11_1_1; double x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg3 contentScale:(double)arg4 size:(long long)arg5;
+- (id)_artworkForBaseImage:(struct CGImage { }*)arg1 additionalImage:(struct CGImage { }*)arg2 cacheKey:(id)arg3 style:(struct { int x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; int x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg4 contentScale:(float)arg5;
+- (struct CGImage { }*)_createImageForIconInfo:(id)arg1 contentScale:(float)arg2;
+- (struct CGImage { }*)_createImageForName:(id)arg1 contentScale:(float)arg2 size:(int)arg3;
+- (id)artworkForName:(id)arg1 style:(struct { int x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; int x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg2 contentScale:(float)arg3 size:(int)arg4;
+- (id)artworkForStyleAttributeKey:(unsigned int)arg1 longValue:(unsigned long long)arg2 style:(struct { int x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; int x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg3 contentScale:(float)arg4 size:(int)arg5;
+- (id)artworkForStyleAttributeKey:(unsigned int)arg1 value:(unsigned int)arg2 style:(struct { int x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; int x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; int x7; int x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; unsigned int x17; unsigned int x18; }*)arg3 contentScale:(float)arg4 size:(int)arg5;
 - (void)dealloc;
 - (id)init;
 - (id)initWithIconPack:(id)arg1;

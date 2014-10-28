@@ -10,41 +10,42 @@
 
 @interface UIKeyboardKeyplaneTransition : NSObject {
     id _completionBlock;
-    double _currentProgress;
+    float _currentProgress;
     CADisplayLink *_displayLink;
     UIKBTree *_end;
     UIView *_endView;
     double _finalTransitionStartTime;
-    double _finishDuration;
-    double _finishProgress;
-    double _liftOffProgress;
+    float _finishDuration;
+    float _finishProgress;
+    BOOL _initiallyAtEnd;
+    float _liftOffProgress;
     UIKBTree *_start;
     UIView *_startView;
     <UIKeyboardKeyplaneTransitionDelegate> *_transitionDelegate;
-    bool_initiallyAtEnd;
 }
 
 @property(copy) id completionBlock;
-@property(readonly) double endHeight;
-@property bool initiallyAtEnd;
-@property(readonly) double startHeight;
+@property(readonly) float endHeight;
+@property BOOL initiallyAtEnd;
+@property(readonly) float startHeight;
 @property <UIKeyboardKeyplaneTransitionDelegate> * transitionDelegate;
 
-- (bool)canDisplayTransitionFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
+- (BOOL)canDisplayTransitionFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
+- (void)commitTransitionRebuild;
 - (id)completionBlock;
 - (void)dealloc;
-- (double)endHeight;
+- (float)endHeight;
 - (void)finalizeTransition;
-- (void)finishWithProgress:(double)arg1 completionBlock:(id)arg2;
-- (bool)initiallyAtEnd;
-- (void)rebuildFromStartKeyplane:(id)arg1 startView:(id)arg2 toEndKeyplane:(id)arg3 endView:(id)arg4;
+- (void)finishWithProgress:(float)arg1 completionBlock:(id)arg2;
+- (BOOL)initiallyAtEnd;
+- (void)rebuildWithStartKeyplane:(id)arg1 startView:(id)arg2 endKeyplane:(id)arg3 endView:(id)arg4;
 - (void)removeAllAnimations;
 - (void)setCompletionBlock:(id)arg1;
-- (void)setInitiallyAtEnd:(bool)arg1;
+- (void)setInitiallyAtEnd:(BOOL)arg1;
 - (void)setTransitionDelegate:(id)arg1;
-- (double)startHeight;
+- (float)startHeight;
 - (id)transitionDelegate;
 - (void)transitionToFinalState:(id)arg1;
-- (void)updateWithProgress:(double)arg1;
+- (void)updateWithProgress:(float)arg1;
 
 @end

@@ -9,18 +9,20 @@
 @class NSArray, NSMutableArray, NSMutableDictionary;
 
 @interface CKDModifyRecordZonesOperation : CKDDatabaseOperation {
+    BOOL _allowDefaultZoneSave;
     id _deleteCompletionBlock;
+    BOOL _markZonesAsUserPurged;
     int _numZoneSaveAttempts;
     NSMutableDictionary *_pcsOplockFailureCountByZoneID;
     NSArray *_recordZoneIDsToDelete;
     NSMutableDictionary *_recordZonesByZoneID;
     NSMutableArray *_recordZonesToSave;
     id _saveCompletionBlock;
-    bool_allowDefaultZoneSave;
 }
 
-@property bool allowDefaultZoneSave;
+@property BOOL allowDefaultZoneSave;
 @property(copy) id deleteCompletionBlock;
+@property BOOL markZonesAsUserPurged;
 @property int numZoneSaveAttempts;
 @property(retain) NSMutableDictionary * pcsOplockFailureCountByZoneID;
 @property(retain) NSArray * recordZoneIDsToDelete;
@@ -30,26 +32,28 @@
 
 - (void).cxx_destruct;
 - (void)_checkAndPrepareZones;
-- (void)_fetchPCSDataForZone:(id)arg1 fromServer:(bool)arg2;
-- (void)_fetchPCSDataForZonesFromServer:(bool)arg1;
+- (void)_fetchPCSDataForZone:(id)arg1 fromServer:(BOOL)arg2;
+- (void)_fetchPCSDataForZonesFromServer:(BOOL)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordZoneDeleted:(id)arg1 responseCode:(id)arg2;
 - (void)_handleRecordZoneSaved:(id)arg1 responseCode:(id)arg2;
-- (bool)_saveZonesToServer;
-- (bool)allowDefaultZoneSave;
+- (BOOL)_saveZonesToServer;
+- (BOOL)allowDefaultZoneSave;
 - (id)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (bool)makeStateTransition;
-- (id)nameForState:(unsigned long long)arg1;
+- (BOOL)makeStateTransition;
+- (BOOL)markZonesAsUserPurged;
+- (id)nameForState:(unsigned int)arg1;
 - (int)numZoneSaveAttempts;
 - (id)pcsOplockFailureCountByZoneID;
 - (id)recordZoneIDsToDelete;
 - (id)recordZonesByZoneID;
 - (id)recordZonesToSave;
 - (id)saveCompletionBlock;
-- (void)setAllowDefaultZoneSave:(bool)arg1;
+- (void)setAllowDefaultZoneSave:(BOOL)arg1;
 - (void)setDeleteCompletionBlock:(id)arg1;
+- (void)setMarkZonesAsUserPurged:(BOOL)arg1;
 - (void)setNumZoneSaveAttempts:(int)arg1;
 - (void)setPcsOplockFailureCountByZoneID:(id)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;

@@ -8,6 +8,7 @@
     NSString *_currentLeafElement;
     NSMutableString *_email;
     NSString *_errorCode;
+    BOOL _hasFoundRootElement;
     NSMutableString *_pin;
     NSMutableString *_pinStatus;
     NSMutableString *_screenName;
@@ -15,14 +16,13 @@
     NSMutableString *_status;
     NSMutableString *_token;
     NSError *_validationError;
-    bool_hasFoundRootElement;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSString * email;
 @property(readonly) NSString * errorCode;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSString * pin;
 @property(readonly) NSString * pinStatus;
 @property(readonly) NSString * screenName;

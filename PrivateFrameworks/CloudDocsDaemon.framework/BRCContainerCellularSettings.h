@@ -13,9 +13,9 @@
 
 - (void).cxx_destruct;
 - (void)_accountDidChange;
-- (bool)_isCellularEnabledForBundleID:(id)arg1;
-- (bool)_isCellularEnabledForDocumentsAndData;
+- (BOOL)_isCellularEnabledForBundleID:(id)arg1;
+- (BOOL)_isCellularEnabledForDocumentsAndData;
 - (id)init;
-- (bool)isCellularEnabledForContainerID:(id)arg1;
+- (BOOL)isCellularEnabledForContainerID:(id)arg1;
 
 @end

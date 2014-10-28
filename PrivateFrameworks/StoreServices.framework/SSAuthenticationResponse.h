@@ -6,46 +6,46 @@
 
 @interface SSAuthenticationResponse : NSObject {
     NSDictionary *_responseDictionary;
-    long long _urlBagType;
+    int _urlBagType;
     NSHTTPURLResponse *_urlResponse;
 }
 
-@property long long URLBagType;
+@property int URLBagType;
 @property(readonly) NSHTTPURLResponse * URLResponse;
-@property(readonly) long long accountKind;
+@property(readonly) int accountKind;
 @property(readonly) NSString * accountName;
 @property(readonly) NSNumber * accountUniqueIdentifier;
-@property(readonly) long long availableServiceTypes;
+@property(readonly) int availableServiceTypes;
 @property(readonly) NSString * creditsString;
-@property(readonly) long long enabledServiceTypes;
+@property(readonly) int enabledServiceTypes;
 @property(readonly) NSNumber * failureType;
-@property(getter=isNewCustomer,readonly) bool newCustomer;
+@property(getter=isNewCustomer,readonly) BOOL newCustomer;
 @property(readonly) NSDictionary * responseDictionary;
-@property(readonly) long long responseType;
+@property(readonly) int responseType;
 @property(readonly) NSString * storeFrontIdentifier;
 @property(readonly) NSString * token;
 @property(readonly) NSString * userMessage;
 
-- (long long)URLBagType;
+- (int)URLBagType;
 - (id)URLResponse;
-- (long long)_responseTypeForErrorNumber:(long long)arg1;
-- (long long)_responseTypeForFailureType:(long long)arg1;
-- (long long)_responseTypeForStatusValue:(long long)arg1;
+- (int)_responseTypeForErrorNumber:(int)arg1;
+- (int)_responseTypeForFailureType:(int)arg1;
+- (int)_responseTypeForStatusValue:(int)arg1;
 - (id)_valueForFirstAvailableKey:(id)arg1;
-- (long long)accountKind;
+- (int)accountKind;
 - (id)accountName;
 - (id)accountUniqueIdentifier;
-- (long long)availableServiceTypes;
+- (int)availableServiceTypes;
 - (id)creditsString;
 - (void)dealloc;
-- (long long)enabledServiceTypes;
+- (int)enabledServiceTypes;
 - (id)failureType;
 - (id)initWithURLResponse:(id)arg1 dictionary:(id)arg2;
-- (bool)isNewCustomer;
+- (BOOL)isNewCustomer;
 - (id)newAccount;
 - (id)responseDictionary;
-- (long long)responseType;
-- (void)setURLBagType:(long long)arg1;
+- (int)responseType;
+- (void)setURLBagType:(int)arg1;
 - (id)storeFrontIdentifier;
 - (id)token;
 - (id)userMessage;

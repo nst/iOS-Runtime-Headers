@@ -6,35 +6,35 @@
 
 @interface TSDGLEdgeDistanceFieldTraceEffect : NSObject {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     } _bufferSize;
+    BOOL _canDraw;
+    BOOL _didTeardown;
     TSDGLTextureInfo *_edgeDistanceFieldTextureInfo;
+    BOOL _isValid;
     } _randomStrokePoint;
     TSDGLShader *_shader;
     NSArray *_strokeLineSegment;
     } _textureEdgeInsetsAdjustmentMatrix;
     TSDGLTextureInfo *_traceTextureInfo;
-    long long _traceTextureMaxValue;
+    int _traceTextureMaxValue;
     struct __CFArray { } *_zeroesArray;
-    bool_canDraw;
-    bool_didTeardown;
-    bool_isValid;
 }
 
 @property(readonly) TSDGLTextureInfo * edgeDistanceFieldTextureInfo;
-@property(readonly) bool isValid;
-@property(readonly) struct CGPoint { double x1; double x2; } randomStrokePoint;
+@property(readonly) BOOL isValid;
+@property(readonly) struct CGPoint { float x1; float x2; } randomStrokePoint;
 @property(readonly) TSDGLShader * shader;
 @property(readonly) NSArray * strokeLineSegment;
 @property(readonly) TSDGLTextureInfo * traceTextureInfo;
@@ -45,15 +45,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)edgeDistanceFieldTextureInfo;
-- (id)initWithTR:(id)arg1 strokeWidth:(double)arg2 downsampleScale:(double)arg3 clockwise:(bool)arg4 GLState:(id)arg5;
-- (bool)isValid;
-- (void)p_addNearbyPixelsToArray:(struct __CFArray { }*)arg1 pixel:(struct CGPoint { double x1; double x2; })arg2 edgeDataBuffer:(float*)arg3 dataBuffer:(char *)arg4 tempDataBuffer:(char *)arg5 localMaximumLookupBuffer:(bool*)arg6 bufferSize:(struct CGSize { double x1; double x2; })arg7;
-- (void)p_fillFloatBuffer:(float*)arg1 withRGBAData:(char *)arg2 bufferSize:(struct CGSize { double x1; double x2; })arg3;
-- (bool)p_generateTraceTextureInfoWithStrokeWidth:(double)arg1 clockwise:(bool)arg2;
-- (id)p_houghTransformWithZeroes:(struct __CFArray { }*)arg1 bufferSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGPoint { double x1; double x2; })p_normalizedPointInTexturedRectangleFrameFromPoint:(struct CGPoint { double x1; double x2; })arg1 inBufferSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGPoint { double x1; double x2; })randomStrokePoint;
-- (void)setupShaderWithPercent:(double)arg1 MVPMatrix:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg2 opacity:(double)arg3 color:(struct { float x1; float x2; float x3; float x4; })arg4 strokeFadeHardnessLeading:(double)arg5 strokeFadeHardnessTrailing:(double)arg6;
+- (id)initWithTR:(id)arg1 strokeWidth:(float)arg2 downsampleScale:(float)arg3 clockwise:(BOOL)arg4 GLState:(id)arg5;
+- (BOOL)isValid;
+- (void)p_addNearbyPixelsToArray:(struct __CFArray { }*)arg1 pixel:(struct CGPoint { float x1; float x2; })arg2 edgeDataBuffer:(float*)arg3 dataBuffer:(char *)arg4 tempDataBuffer:(char *)arg5 localMaximumLookupBuffer:(BOOL*)arg6 bufferSize:(struct CGSize { float x1; float x2; })arg7;
+- (void)p_fillFloatBuffer:(float*)arg1 withRGBAData:(char *)arg2 bufferSize:(struct CGSize { float x1; float x2; })arg3;
+- (BOOL)p_generateTraceTextureInfoWithStrokeWidth:(float)arg1 clockwise:(BOOL)arg2;
+- (id)p_houghTransformWithZeroes:(struct __CFArray { }*)arg1 bufferSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })p_normalizedPointInTexturedRectangleFrameFromPoint:(struct CGPoint { float x1; float x2; })arg1 inBufferSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })randomStrokePoint;
+- (void)setupShaderWithPercent:(float)arg1 MVPMatrix:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2 opacity:(float)arg3 color:(struct { float x1; float x2; float x3; float x4; })arg4 strokeFadeHardnessLeading:(float)arg5 strokeFadeHardnessTrailing:(float)arg6;
 - (id)shader;
 - (id)strokeLineSegment;
 - (void)teardown;

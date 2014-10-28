@@ -6,22 +6,22 @@
 
 @interface AVCaptureOutputInternal_FigRecorder : NSObject {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
-    boolphysicallyMirrorsVideo;
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     int changeSeed;
     NSMutableArray *connections;
     } metadataTransform;
-    double rollAdjustment;
+    BOOL physicallyMirrorsVideo;
+    float rollAdjustment;
     AVCaptureSession_FigRecorder *session;
 }
 
 - (void)dealloc;
 - (id)init;
-- (bool)isKindOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 
 @end

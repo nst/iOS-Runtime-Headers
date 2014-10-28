@@ -10,23 +10,23 @@
 
 @interface CNFRegActionSheetManager : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
+    BOOL _dismissingActionSheetForRotation;
     id _handler;
     id _presenter;
-    bool_dismissingActionSheetForRotation;
 }
 
 @property(retain) UIActionSheet * actionSheet;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id handler;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) id presenter;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)actionSheet;
 - (void)dealloc;
 - (void)dismissCurrentActionSheet;

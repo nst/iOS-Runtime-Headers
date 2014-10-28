@@ -18,7 +18,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)resolverWithDelegate:(id)arg1;
@@ -31,9 +31,9 @@
 - (void)dataProviderStore:(id)arg1 didRemoveDataProvider:(id)arg2;
 - (void)dealloc;
 - (id)debugDescription;
-- (id)debugDescriptionWithChildren:(unsigned long long)arg1;
+- (id)debugDescriptionWithChildren:(unsigned int)arg1;
 - (id)initWithDelegate:(id)arg1;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)loadAllDataProviders;
 - (void)performBlockOnDataProviders:(id)arg1;
 - (void)registerServiceName:(id)arg1 appBundleID:(id)arg2 completion:(id)arg3;

@@ -5,29 +5,29 @@
 @class NSArray, NSDictionary;
 
 @interface CKPublishAssetsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned long long _URLOptions;
+    unsigned int _URLOptions;
     NSDictionary *_fileNamesByAssetFieldNames;
     NSArray *_recordIDs;
-    unsigned long long _requestedTTL;
+    unsigned int _requestedTTL;
 }
 
-@property unsigned long long URLOptions;
+@property unsigned int URLOptions;
 @property(retain) NSDictionary * fileNamesByAssetFieldNames;
 @property(retain) NSArray * recordIDs;
-@property unsigned long long requestedTTL;
+@property unsigned int requestedTTL;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned long long)URLOptions;
+- (unsigned int)URLOptions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileNamesByAssetFieldNames;
 - (id)initWithCoder:(id)arg1;
 - (id)recordIDs;
-- (unsigned long long)requestedTTL;
+- (unsigned int)requestedTTL;
 - (void)setFileNamesByAssetFieldNames:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
-- (void)setRequestedTTL:(unsigned long long)arg1;
-- (void)setURLOptions:(unsigned long long)arg1;
+- (void)setRequestedTTL:(unsigned int)arg1;
+- (void)setURLOptions:(unsigned int)arg1;
 
 @end

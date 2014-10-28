@@ -12,7 +12,7 @@
 @property(copy) NSString * bundleId;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * originalCommandId;
 @property(copy) NSString * punchOutName;
 @property(copy) NSURL * punchOutUri;

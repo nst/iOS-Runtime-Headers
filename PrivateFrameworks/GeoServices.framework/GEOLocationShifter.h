@@ -5,14 +5,14 @@
 @class GEOLocationShiftFunctionRequest, GEOLocationShiftFunctionResponse, NSLock, NSMutableArray;
 
 @interface GEOLocationShifter : NSObject {
+    BOOL _isRequestingShiftFunction;
     NSMutableArray *_locationsToShift;
     NSLock *_lock;
     GEOLocationShiftFunctionResponse *_shiftFunction;
     GEOLocationShiftFunctionRequest *_shiftRequest;
-    bool_isRequestingShiftFunction;
 }
 
-@property(readonly) bool locationShiftEnabled;
+@property(readonly) BOOL locationShiftEnabled;
 @property(retain) GEOLocationShiftFunctionResponse * shiftFunction;
 @property(retain) GEOLocationShiftFunctionRequest * shiftRequest;
 
@@ -20,13 +20,13 @@
 - (void)_requestShiftFunctionForLocation:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
 - (void)_sendErrorForLocations:(id)arg1;
 - (void)_shiftAndReturnLocations;
-- (bool)_shiftLocation:(id)arg1;
+- (BOOL)_shiftLocation:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)locationShiftEnabled;
+- (BOOL)locationShiftEnabled;
 - (void)setShiftFunction:(id)arg1;
 - (void)setShiftRequest:(id)arg1;
-- (bool)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 shiftedCoordinate:(struct { double x1; double x2; }*)arg3 shiftedAccuracy:(double*)arg4;
+- (BOOL)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 shiftedCoordinate:(struct { double x1; double x2; }*)arg3 shiftedAccuracy:(double*)arg4;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3 mustGoToNetworkCallback:(id)arg4 errorHandler:(id)arg5 callbackQueue:(id)arg6;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3;
 - (id)shiftFunction;

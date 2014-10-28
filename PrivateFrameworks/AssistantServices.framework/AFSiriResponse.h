@@ -8,7 +8,7 @@
     NSUUID *_requestIdentifier;
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithRequest:(id)arg1;

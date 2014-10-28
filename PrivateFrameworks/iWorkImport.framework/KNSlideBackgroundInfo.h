@@ -12,18 +12,18 @@
     TSSStylesheet *mStylesheet;
 }
 
-@property(getter=isAnchoredToText,readonly) bool anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) bool attachedToBodyText;
+@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
+@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) Class editorClass;
 @property(readonly) TSDFill * fill;
-@property(getter=isFloatingAboveText,readonly) bool floatingAboveText;
+@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned long long hash;
-@property(getter=isInlineWithText,readonly) bool inlineWithText;
-@property(readonly) bool isUserModifiable;
-@property bool matchesObjectPlaceholderGeometry;
+@property(readonly) unsigned int hash;
+@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
+@property(readonly) BOOL isUserModifiable;
+@property BOOL matchesObjectPlaceholderGeometry;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
 @property NSObject<TSDContainerInfo> * parentInfo;
@@ -34,21 +34,21 @@
 
 - (void)beginCollectingChanges;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
-- (id)commandForTransformingByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (id)commandForTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)endCollectingChanges;
 - (id)fill;
 - (id)geometry;
 - (id)initWithSlide:(id)arg1 andGeometry:(id)arg2;
-- (bool)isAnchoredToText;
-- (bool)isAttachedToBodyText;
-- (bool)isFloatingAboveText;
-- (bool)isInlineWithText;
-- (bool)isThemeContent;
-- (bool)isUserModifiable;
+- (BOOL)isAnchoredToText;
+- (BOOL)isAttachedToBodyText;
+- (BOOL)isFloatingAboveText;
+- (BOOL)isInlineWithText;
+- (BOOL)isThemeContent;
+- (BOOL)isUserModifiable;
 - (Class)layoutClass;
-- (struct CGSize { double x1; double x2; })minimumSize;
+- (struct CGSize { float x1; float x2; })minimumSize;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (id)parentInfo;

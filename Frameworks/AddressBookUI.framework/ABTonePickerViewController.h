@@ -10,8 +10,8 @@
 
 @property(retain,readonly) TKTonePickerViewController * tonePickerViewController;
 
-- (void)_getRotationContentSettings:(struct { boolx1; boolx2; boolx3; boolx4; double x5; int x6; }*)arg1;
-- (double)ab_heightToFitForViewInPopoverView;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 - (void)cancelButtonClicked:(id)arg1;
 - (id)init;
 - (id)initWithAlertType:(int)arg1;

@@ -9,6 +9,6 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithDefaults;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

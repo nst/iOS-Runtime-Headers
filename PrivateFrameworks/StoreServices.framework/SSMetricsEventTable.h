@@ -10,7 +10,7 @@
 
 + (id)databasePath;
 
-- (bool)_setupDatabase;
+- (BOOL)_setupDatabase;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDatabase:(id)arg1;

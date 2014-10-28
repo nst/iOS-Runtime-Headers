@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)internalCache;
-- (id)keyboardPrefixForWidth:(double)arg1;
+- (id)keyboardPrefixForWidth:(float)arg1;
 - (id)keyboardWithName:(id)arg1 inCache:(id)arg2;
 - (void*)layoutsLibraryHandle;
 - (void)setInternalCache:(id)arg1;

@@ -7,6 +7,7 @@
 @interface SPMovieListSection : SPSection <PRSMovieListSection> {
 }
 
+@property(retain) NSURL * attribution_url;
 @property(retain) NSArray * movies;
 @property(retain) NSString * subtitle;
 @property(retain) NSString * title;

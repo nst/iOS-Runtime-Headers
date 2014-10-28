@@ -5,7 +5,7 @@
 @interface ABStarkUtilities : NSObject {
 }
 
-+ (bool)activeInterfaceMechanismIsHardware;
++ (BOOL)activeInterfaceMechanismIsHardware;
 + (id)starkScreen;
 
 @end

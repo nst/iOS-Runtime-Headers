@@ -7,17 +7,17 @@
 @interface BRCRRQueue : NSEnumerator {
     NSMutableArray *_array;
     NSMapTable *_objects;
-    unsigned long long _pos;
+    unsigned int _pos;
 }
 
-@property(readonly) unsigned long long count;
+@property(readonly) unsigned int count;
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
-- (bool)containsObject:(id)arg1;
-- (unsigned long long)count;
+- (BOOL)containsObject:(id)arg1;
+- (unsigned int)count;
 - (id)init;
-- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)nextObject;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;

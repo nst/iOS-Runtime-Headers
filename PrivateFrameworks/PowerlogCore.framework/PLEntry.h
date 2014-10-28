@@ -10,7 +10,7 @@
     NSDictionary *_entryDefinition;
     long long _entryID;
     NSString *_entryKey;
-    bool_isErrorEntry;
+    BOOL _isErrorEntry;
 }
 
 @property(readonly) NSArray * arrayKeys;
@@ -21,9 +21,9 @@
 @property(retain) NSDictionary * entryDefinition;
 @property long long entryID;
 @property(retain) NSString * entryKey;
-@property(readonly) bool hasArrayKeys;
-@property(readonly) bool hasDynamicKeys;
-@property bool isErrorEntry;
+@property(readonly) BOOL hasArrayKeys;
+@property(readonly) BOOL hasDynamicKeys;
+@property BOOL isErrorEntry;
 @property(readonly) NSMutableArray * keys;
 @property(getter=allValues,readonly) NSMutableArray * values;
 
@@ -39,8 +39,8 @@
 - (void).cxx_destruct;
 - (id)allValues;
 - (id)arrayKeys;
-- (long long)compare:(id)arg1 options:(short)arg2;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1 options:(short)arg2;
+- (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)definedKeys;
@@ -52,10 +52,10 @@
 - (id)entryDefinition;
 - (long long)entryID;
 - (id)entryKey;
-- (bool)filterEntryLogging;
+- (BOOL)filterEntryLogging;
 - (short)formaterForKey:(id)arg1;
-- (bool)hasArrayKeys;
-- (bool)hasDynamicKeys;
+- (BOOL)hasArrayKeys;
+- (BOOL)hasDynamicKeys;
 - (id)init;
 - (id)initEntryWithData:(id)arg1;
 - (id)initEntryWithRawData:(id)arg1;
@@ -63,9 +63,9 @@
 - (id)initWithEntryKey:(id)arg1 withDate:(id)arg2;
 - (id)initWithEntryKey:(id)arg1 withRawData:(id)arg2;
 - (id)initWithEntryKey:(id)arg1;
-- (bool)isErrorEntry;
-- (bool)isKeyAggregateValue:(id)arg1;
-- (bool)isKeyDynamic:(id)arg1;
+- (BOOL)isErrorEntry;
+- (BOOL)isKeyAggregateValue:(id)arg1;
+- (BOOL)isKeyDynamic:(id)arg1;
 - (id)keyValuePathForKey:(id)arg1;
 - (id)keys;
 - (void)loadDynamicKeys;
@@ -81,7 +81,7 @@
 - (void)setEntryDefinition:(id)arg1;
 - (void)setEntryID:(long long)arg1;
 - (void)setEntryKey:(id)arg1;
-- (void)setIsErrorEntry:(bool)arg1;
+- (void)setIsErrorEntry:(BOOL)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObjectsFromData:(id)arg1;

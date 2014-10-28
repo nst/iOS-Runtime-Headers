@@ -6,28 +6,28 @@
 
 @interface CAMHDRButton : CAMExpandableMenuButton {
     CAMButtonLabel *__headerLabel;
-    bool_allowsAutomaticHDR;
+    BOOL _allowsAutomaticHDR;
 }
 
 @property int HDRMode;
 @property(readonly) CAMButtonLabel * _headerLabel;
-@property bool allowsAutomaticHDR;
+@property BOOL allowsAutomaticHDR;
 
 - (void).cxx_destruct;
 - (int)HDRMode;
 - (void)_commonCAMHDRButtonInitialization;
 - (id)_headerLabel;
-- (bool)allowsAutomaticHDR;
+- (BOOL)allowsAutomaticHDR;
 - (id)headerView;
 - (id)hiddenIndexesWhileCollapsed;
-- (long long)indexForMode:(int)arg1;
-- (id)initWithExpansionOrientation:(long long)arg1;
-- (int)modeForIndex:(long long)arg1;
-- (long long)numberOfMenuItems;
+- (int)indexForMode:(int)arg1;
+- (id)initWithExpansionOrientation:(int)arg1;
+- (int)modeForIndex:(int)arg1;
+- (int)numberOfMenuItems;
 - (void)reloadData;
-- (void)setAllowsAutomaticHDR:(bool)arg1;
+- (void)setAllowsAutomaticHDR:(BOOL)arg1;
 - (void)setHDRMode:(int)arg1;
-- (id)titleForMenuItemAtIndex:(long long)arg1;
+- (id)titleForMenuItemAtIndex:(int)arg1;
 - (void)updateToContentSize:(id)arg1;
 
 @end

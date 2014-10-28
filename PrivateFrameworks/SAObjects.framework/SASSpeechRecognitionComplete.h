@@ -14,7 +14,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (id)sessionId;
 - (void)setSessionId:(id)arg1;
 

@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSURL;
+@class NSDictionary, NSString, NSURL;
 
 @interface PLWallpaperAsset : PLManagedAsset {
 }
 
+@property(readonly) NSString * imageName;
 @property(retain) NSURL * imageURL;
 @property(retain) NSURL * thumbnailURL;
 @property(retain) NSDictionary * wallpaperOptions;
@@ -17,13 +18,14 @@
 
 - (id)_image;
 - (id)_thumbnailImage;
-- (bool)allowsWallpaperEditing;
+- (BOOL)allowsWallpaperEditing;
 - (void)awakeFromInsert;
+- (id)imageName;
 - (id)imageURL;
 - (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)imageWithFormat:(int)arg1;
 - (id)indexSheetImage;
-- (bool)isIncludedInMoments;
+- (BOOL)isIncludedInMoments;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (void)prepareForDeletion;
 - (void)setImageURL:(id)arg1;

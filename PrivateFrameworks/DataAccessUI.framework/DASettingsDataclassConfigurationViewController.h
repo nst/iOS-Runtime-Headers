@@ -6,13 +6,13 @@
 
 @interface DASettingsDataclassConfigurationViewController : ACUIDataclassConfigurationViewController <UIModalViewDelegate> {
     DAAccount *_daAccount;
-    bool_haveRegisteredForAccountsChanged;
+    BOOL _haveRegisteredForAccountsChanged;
 }
 
 @property(retain) DAAccount * daAccount;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,14 +26,14 @@
 - (id)daAccount;
 - (void)dealloc;
 - (void)loadView;
-- (void)operationsHelper:(id)arg1 didRemoveAccount:(id)arg2 withSuccess:(bool)arg3 error:(id)arg4;
+- (void)operationsHelper:(id)arg1 didRemoveAccount:(id)arg2 withSuccess:(BOOL)arg3 error:(id)arg4;
 - (id)otherSpecifiers;
 - (void)reloadAccount;
 - (void)setDaAccount:(id)arg1;
-- (bool)shouldVerifyBeforeAccountSave;
+- (BOOL)shouldVerifyBeforeAccountSave;
 - (id)specifiers;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -5,34 +5,34 @@
 @class <SBUIBannerSource>, <SBUIBannerTarget>, NSString, SBUIBannerAction, SBUIBannerItem;
 
 @interface SBUIBannerContext : NSObject {
+    BOOL _isValid;
     SBUIBannerItem *_item;
     NSString *_presentingActionIdentifier;
+    BOOL _requestsModalPresentation;
     <SBUIBannerSource> *_source;
     <SBUIBannerTarget> *_target;
-    bool_isValid;
-    bool_requestsModalPresentation;
 }
 
 @property(readonly) SBUIBannerAction * interactiveAction;
 @property(retain,readonly) SBUIBannerItem * item;
 @property(copy) NSString * presentingActionIdentifier;
-@property bool requestsModalPresentation;
+@property BOOL requestsModalPresentation;
 @property(retain,readonly) <SBUIBannerSource> * source;
 @property(retain,readonly) <SBUIBannerTarget> * target;
-@property(getter=isValid,readonly) bool valid;
+@property(getter=isValid,readonly) BOOL valid;
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3 presentingActionIdentifier:(id)arg4 requestModalPresentation:(bool)arg5;
+- (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3 presentingActionIdentifier:(id)arg4 requestModalPresentation:(BOOL)arg5;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3;
 - (id)interactiveAction;
 - (void)invalidate;
-- (bool)isValid;
+- (BOOL)isValid;
 - (id)item;
 - (id)presentingActionIdentifier;
-- (bool)requestsModalPresentation;
+- (BOOL)requestsModalPresentation;
 - (void)setPresentingActionIdentifier:(id)arg1;
-- (void)setRequestsModalPresentation:(bool)arg1;
+- (void)setRequestsModalPresentation:(BOOL)arg1;
 - (id)source;
 - (id)target;
 

@@ -26,12 +26,12 @@
 - (void)resetFloatValue:(float)arg1 forProperty:(int)arg2;
 - (void)resetIntValue:(int)arg1 forProperty:(int)arg2;
 - (void)resetObject:(id)arg1 forProperty:(int)arg2;
-- (bool)resetsProperty:(int)arg1;
+- (BOOL)resetsProperty:(int)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setFloatValue:(float)arg1 forProperty:(int)arg2;
 - (void)setIntValue:(int)arg1 forProperty:(int)arg2;
 - (void)setObject:(id)arg1 forProperty:(int)arg2;
 - (void)setPropertiesFromMap:(id)arg1;
-- (bool)setsProperty:(int)arg1;
+- (BOOL)setsProperty:(int)arg1;
 
 @end

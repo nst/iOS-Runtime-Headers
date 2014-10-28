@@ -4,17 +4,17 @@
 
 @class <IKAppDataStoring>, IKAppContext, MPUExtrasArtworkDataSource, MPUExtrasContext, MPUExtrasFeatureContainerViewController, MPUExtrasMainTemplateViewController, MPUExtrasNavigationController, NSObject<OS_dispatch_queue>, NSString, UINavigationController, UIView;
 
-@interface MPUExtrasRootViewController : UIViewController <IKApplication, IKAppContextDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, MPVideoOverlayDelegate> {
+@interface MPUExtrasRootViewController : UIViewController <IKApplication, IKAppContextDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, IKAppDeviceConfig, MPVideoOverlayDelegate> {
     IKAppContext *_applicationContext;
     MPUExtrasArtworkDataSource *_artworkDataSource;
     MPUExtrasContext *_context;
+    BOOL _didAttemptRestartAfterAppContextFailure;
     MPUExtrasFeatureContainerViewController *_featureContainer;
     NSObject<OS_dispatch_queue> *_imageRequestQueue;
     <IKAppDataStoring> *_localStorage;
     MPUExtrasMainTemplateViewController *_mainTemplateViewController;
     MPUExtrasNavigationController *_navigationController;
     <IKAppDataStoring> *_vendorStorage;
-    bool_didAttemptRestartAfterAppContextFailure;
 }
 
 @property(retain) IKAppContext * applicationContext;
@@ -23,7 +23,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) MPUExtrasFeatureContainerViewController * featureContainer;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) <IKAppDataStoring> * localStorage;
 @property(readonly) UIView * mainMenuBar;
 @property(retain) MPUExtrasMainTemplateViewController * mainTemplateViewController;
@@ -34,10 +34,10 @@
 + (id)currentController;
 
 - (void).cxx_destruct;
-- (void)_applyMainTemplateOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
+- (void)_applyMainTemplateOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (id)_createDataStorageForIdentifier:(id)arg1;
-- (void)_finalizeMainTemplateOffset:(bool)arg1;
-- (bool)_setMainDocumentWithViewController:(id)arg1;
+- (void)_finalizeMainTemplateOffset:(BOOL)arg1;
+- (BOOL)_setMainDocumentWithViewController:(id)arg1;
 - (void)_setNavigationController:(id)arg1;
 - (void)_setUpForApplication;
 - (void)_stopOldContextIfNeeded;
@@ -46,7 +46,7 @@
 - (void)appContext:(id)arg1 didStopWithOptions:(id)arg2;
 - (void)appContext:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;
 - (id)appIdentifier;
-- (bool)appIsTrusted;
+- (BOOL)appIsTrusted;
 - (id)appJSURL;
 - (id)appLaunchParams;
 - (id)applicationContext;
@@ -58,26 +58,33 @@
 - (id)deviceConfigForContext:(id)arg1;
 - (id)featureContainer;
 - (id)initWithContext:(id)arg1;
+- (BOOL)isTimeZoneSet;
 - (id)localStorage;
 - (id)mainMenuBar;
 - (id)mainTemplateViewController;
-- (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
+- (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 - (id)navigationController;
 - (id)navigationControllerForContext:(id)arg1;
 - (void)overlayTappedBackButton:(id)arg1;
 - (void)popToFeatureOrMain;
-- (bool)prefersStatusBarHidden;
+- (unsigned int)preferredVideoFormat;
+- (unsigned int)preferredVideoPreviewFormat;
+- (BOOL)prefersStatusBarHidden;
+- (struct CGSize { float x1; float x2; })screenSize;
 - (void)setApplicationContext:(id)arg1;
 - (void)setArtworkDataSource:(id)arg1;
 - (void)setFeatureContainer:(id)arg1;
 - (void)setLocalStorage:(id)arg1;
 - (void)setMainTemplateViewController:(id)arg1;
 - (void)setVendorStorage:(id)arg1;
-- (bool)shouldAutorotate;
-- (bool)shouldIgnoreJSValidation;
+- (BOOL)shouldAutorotate;
+- (BOOL)shouldIgnoreJSValidation;
 - (void)start;
-- (unsigned long long)supportedInterfaceOrientations;
+- (id)storeFrontCountryCode;
+- (unsigned int)supportedInterfaceOrientations;
+- (id)systemLanguage;
+- (id)timeZone;
 - (id)vendorIdentifier;
 - (id)vendorStorage;
 - (void)viewDidLoad;

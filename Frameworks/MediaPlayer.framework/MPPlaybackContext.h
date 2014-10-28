@@ -3,23 +3,23 @@
  */
 
 @interface MPPlaybackContext : NSObject {
-    unsigned long long _repeatType;
-    unsigned long long _shuffleType;
-    bool_keepPlayingCurrentItemIfPossible;
+    BOOL _keepPlayingCurrentItemIfPossible;
+    unsigned int _repeatType;
+    unsigned int _shuffleType;
 }
 
-@property bool keepPlayingCurrentItemIfPossible;
-@property unsigned long long repeatType;
-@property unsigned long long shuffleType;
+@property BOOL keepPlayingCurrentItemIfPossible;
+@property unsigned int repeatType;
+@property unsigned int shuffleType;
 
 + (Class)queueFeederClass;
 
 - (id)init;
-- (bool)keepPlayingCurrentItemIfPossible;
-- (unsigned long long)repeatType;
-- (void)setKeepPlayingCurrentItemIfPossible:(bool)arg1;
-- (void)setRepeatType:(unsigned long long)arg1;
-- (void)setShuffleType:(unsigned long long)arg1;
-- (unsigned long long)shuffleType;
+- (BOOL)keepPlayingCurrentItemIfPossible;
+- (unsigned int)repeatType;
+- (void)setKeepPlayingCurrentItemIfPossible:(BOOL)arg1;
+- (void)setRepeatType:(unsigned int)arg1;
+- (void)setShuffleType:(unsigned int)arg1;
+- (unsigned int)shuffleType;
 
 @end

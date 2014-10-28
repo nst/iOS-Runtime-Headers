@@ -7,9 +7,9 @@
 @interface AVFigAssetInspector : AVAssetInspector {
     struct OpaqueFigAsset { } *_figAsset;
     struct OpaqueFigFormatReader { } *_formatReader;
-    long long _formatReaderOnce;
-    booldidCheckForSaveRestriction;
-    boolhasSaveRestriction;
+    long _formatReaderOnce;
+    BOOL didCheckForSaveRestriction;
+    BOOL hasSaveRestriction;
 }
 
 @property(readonly) NSURL * URL;
@@ -18,22 +18,22 @@
 @property(readonly) NSArray * figChapterGroupInfo;
 @property(readonly) NSArray * figChapters;
 @property(getter=_formatReader,readonly) struct OpaqueFigFormatReader { }* formatReader;
-@property(readonly) bool hasProtectedContent;
+@property(readonly) BOOL hasProtectedContent;
 @property(readonly) NSURL * resolvedURL;
-@property(getter=_isStreaming,readonly) bool streaming;
+@property(getter=_isStreaming,readonly) BOOL streaming;
 
 - (id)SHA1Digest;
 - (id)URL;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
-- (bool)_hasQTSaveRestriction;
-- (bool)_isStreaming;
+- (BOOL)_hasQTSaveRestriction;
+- (BOOL)_isStreaming;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
-- (bool)canContainMovieFragments;
+- (BOOL)canContainMovieFragments;
 - (id)commonMetadata;
-- (bool)containsMovieFragments;
+- (BOOL)containsMovieFragments;
 - (id)creationDate;
 - (void)dealloc;
 - (unsigned long long)downloadToken;
@@ -41,28 +41,28 @@
 - (id)figChapterGroupInfo;
 - (id)figChapters;
 - (void)finalize;
-- (bool)hasProtectedContent;
-- (unsigned long long)hash;
+- (BOOL)hasProtectedContent;
+- (unsigned int)hash;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1;
-- (bool)isCompatibleWithSavedPhotosAlbum;
-- (bool)isComposable;
-- (bool)isEqual:(id)arg1;
-- (bool)isExportable;
-- (bool)isPlayable;
-- (bool)isReadable;
+- (BOOL)isCompatibleWithSavedPhotosAlbum;
+- (BOOL)isComposable;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isExportable;
+- (BOOL)isPlayable;
+- (BOOL)isReadable;
 - (id)lyrics;
 - (id)mediaSelectionGroups;
 - (id)metadataForFormat:(id)arg1;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (id)propertyListForProxy;
-- (bool)providesPreciseDurationAndTiming;
+- (BOOL)providesPreciseDurationAndTiming;
 - (id)resolvedURL;
-- (long long)trackCount;
+- (long)trackCount;
 - (id)trackReferences;
 
 @end

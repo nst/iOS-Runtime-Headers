@@ -8,19 +8,19 @@
     NSString *_stationHash;
     NSNumber *_stationID;
     NSNumber *_trackID;
-    long long _type;
+    int _type;
 }
 
 @property(readonly) NSString * stationHash;
 @property(readonly) NSNumber * stationID;
 @property(readonly) NSNumber * trackID;
-@property(readonly) long long type;
+@property(readonly) int type;
 
 - (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (id)stationHash;
 - (id)stationID;
 - (id)trackID;
-- (long long)type;
+- (int)type;
 
 @end

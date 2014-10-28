@@ -23,7 +23,7 @@
 + (id)languagePartOfLanguageCode:(id)arg1;
 + (id)patternsForClass:(Class)arg1;
 + (void)pauseCacheEvictionTemporarily;
-+ (void)useAllLanguagesAtOnce:(bool)arg1;
++ (void)useAllLanguagesAtOnce:(BOOL)arg1;
 
 - (void).cxx_destruct;
 - (void)_becomeImmuneToDeath;

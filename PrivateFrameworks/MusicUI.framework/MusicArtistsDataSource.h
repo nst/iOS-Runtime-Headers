@@ -6,7 +6,7 @@
 }
 
 - (id)entityCountFormat;
-- (bool)entityIsNowPlayingAtIndex:(unsigned long long)arg1;
-- (bool)showsEntityCountFooter;
+- (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
+- (BOOL)showsEntityCountFooter;
 
 @end

@@ -6,10 +6,10 @@
 }
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (double)activeLetterFontSize;
-- (double)carKeyRadius;
-- (double)defaultKeyFontSize;
-- (double)letterLineFontSize;
+- (float)activeLetterFontSize;
+- (float)carKeyRadius;
+- (float)defaultKeyFontSize;
+- (float)letterLineFontSize;
 - (id)lightTextFontName;
 - (void)setupLayoutSegments;
 

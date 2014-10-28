@@ -5,21 +5,21 @@
 @class CBPeripheralManager, NSString;
 
 @interface AMSBTLEAdvertisementManager : NSObject <CBPeripheralManagerDelegate> {
-    boolisAdvertising;
+    BOOL isAdvertising;
     CBPeripheralManager *peripheralManager;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool isAdvertising;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL isAdvertising;
 @property(readonly) Class superclass;
 
 - (void)advertiseMIDIService;
 - (void)dealloc;
 - (id)init;
-- (bool)isAdvertising;
-- (bool)isLECapableHardware;
+- (BOOL)isAdvertising;
+- (BOOL)isLECapableHardware;
 - (void)peripheralManager:(id)arg1 didReceiveReadRequest:(id)arg2;
 - (void)peripheralManagerDidStartAdvertising:(id)arg1 error:(id)arg2;
 - (void)peripheralManagerDidUpdateState:(id)arg1;

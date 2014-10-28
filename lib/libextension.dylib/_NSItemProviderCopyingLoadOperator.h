@@ -11,12 +11,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property NSItemProvider * itemProvider;
 @property(retain) NSDictionary * loadedItems;
 @property(readonly) Class superclass;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_loadItemsForTypeIdentifiers:(id)arg1 itemProvider:(id)arg2;
 - (id)_sandboxedResourceForItemIfNeeded:(id)arg1 error:(id*)arg2;

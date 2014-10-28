@@ -5,49 +5,49 @@
 @class NSString, UIColor, UIView, _UIBackdropView, _UINavigationBarAppearanceStorage;
 
 @interface SKUITabBarBackgroundView : UIView {
-    long long _backdropStyle;
+    int _backdropStyle;
     _UIBackdropView *_backdropView;
     UIView *_borderView;
     UIView *_shadowView;
     _UINavigationBarAppearanceStorage *appearanceStorage;
-    long long barStyle;
+    int barStyle;
     UIColor *barTintColor;
-    boolbarWantsAdaptiveBackdrop;
-    booltranslucent;
+    BOOL barWantsAdaptiveBackdrop;
+    BOOL translucent;
 }
 
 @property(setter=_setShadowView:,retain) UIView * _shadowView;
 @property(retain) _UINavigationBarAppearanceStorage * appearanceStorage;
 @property(copy) NSString * backdropGroupName;
-@property long long backdropStyle;
-@property long long barStyle;
+@property int backdropStyle;
+@property int barStyle;
 @property(retain) UIColor * barTintColor;
-@property bool barWantsAdaptiveBackdrop;
-@property(getter=isTranslucent) bool translucent;
+@property BOOL barWantsAdaptiveBackdrop;
+@property(getter=isTranslucent) BOOL translucent;
 
 - (void).cxx_destruct;
 - (id)_currentCustomBackground;
-- (id)_currentCustomBackgroundRespectOversize_legacy:(bool*)arg1;
-- (void)_setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(bool)arg2;
-- (void)_setIsContainedInPopover:(bool)arg1;
+- (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
+- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(BOOL)arg2;
+- (void)_setIsContainedInPopover:(BOOL)arg1;
 - (void)_setShadowView:(id)arg1;
 - (id)_shadowView;
 - (id)appearanceStorage;
 - (id)backdropGroupName;
-- (long long)backdropStyle;
-- (long long)barStyle;
+- (int)backdropStyle;
+- (int)barStyle;
 - (id)barTintColor;
-- (bool)barWantsAdaptiveBackdrop;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isTranslucent;
+- (BOOL)barWantsAdaptiveBackdrop;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isTranslucent;
 - (void)layoutSubviews;
 - (void)setAppearanceStorage:(id)arg1;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setBackdropStyle:(long long)arg1;
-- (void)setBarStyle:(long long)arg1;
+- (void)setBackdropStyle:(int)arg1;
+- (void)setBarStyle:(int)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBarWantsAdaptiveBackdrop:(bool)arg1;
-- (void)setTranslucent:(bool)arg1;
+- (void)setBarWantsAdaptiveBackdrop:(BOOL)arg1;
+- (void)setTranslucent:(BOOL)arg1;
 - (void)updateBackgroundImage;
 
 @end

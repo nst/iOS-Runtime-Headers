@@ -12,8 +12,8 @@
     NSData *_serverChangeToken;
 }
 
-@property bool hasMaxChanges;
-@property(readonly) bool hasServerChangeToken;
+@property BOOL hasMaxChanges;
+@property(readonly) BOOL hasServerChangeToken;
 @property unsigned int maxChanges;
 @property(retain) NSData * serverChangeToken;
 
@@ -24,15 +24,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasMaxChanges;
-- (bool)hasServerChangeToken;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasMaxChanges;
+- (BOOL)hasServerChangeToken;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)maxChanges;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)serverChangeToken;
-- (void)setHasMaxChanges:(bool)arg1;
+- (void)setHasMaxChanges:(BOOL)arg1;
 - (void)setMaxChanges:(unsigned int)arg1;
 - (void)setServerChangeToken:(id)arg1;
 - (void)writeTo:(id)arg1;

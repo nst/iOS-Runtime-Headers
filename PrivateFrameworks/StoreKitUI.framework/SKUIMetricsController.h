@@ -8,18 +8,18 @@
     SKUIMetricsImpressionSession *_activeImpressionsSession;
     NSString *_applicationIdentifier;
     SSMetricsController *_controller;
+    BOOL _flushesImmediately;
     SSMetricsConfiguration *_globalConfiguration;
     NSString *_hostApplicationIdentifier;
+    BOOL _impressionsEnabled;
     NSObject<OS_dispatch_source> *_impressionsTimer;
+    BOOL _loggingEnabled;
     SSMetricsConfiguration *_pageConfiguration;
     NSString *_pageContext;
     NSString *_pageURL;
     NSString *_topic;
     NSString *_userAgent;
     NSString *_windowOrientation;
-    bool_flushesImmediately;
-    bool_impressionsEnabled;
-    bool_loggingEnabled;
 }
 
 @property(readonly) NSNumber * accountIdentifier;
@@ -44,8 +44,8 @@
 - (id)accountIdentifier;
 - (id)activeImpressionsSession;
 - (id)applicationIdentifier;
-- (bool)canRecordEventWithType:(id)arg1;
-- (id)clickEventWithItem:(id)arg1 locationPosition:(long long)arg2;
+- (BOOL)canRecordEventWithType:(id)arg1;
+- (id)clickEventWithItem:(id)arg1 locationPosition:(int)arg2;
 - (void)closeImpressionsSession;
 - (id)compoundStringWithElements:(id)arg1;
 - (void)dealloc;
@@ -54,9 +54,9 @@
 - (id)globalConfiguration;
 - (id)hostApplicationIdentifier;
 - (id)initWithGlobalConfiguration:(id)arg1;
-- (id)itemOfferClickEventWithItem:(id)arg1 locationPosition:(long long)arg2;
+- (id)itemOfferClickEventWithItem:(id)arg1 locationPosition:(int)arg2;
 - (id)locationWithPageComponent:(id)arg1;
-- (id)locationWithPosition:(long long)arg1 type:(id)arg2 fieldData:(id)arg3;
+- (id)locationWithPosition:(int)arg1 type:(id)arg2 fieldData:(id)arg3;
 - (id)pageConfiguration;
 - (id)pageContext;
 - (id)pageURL;

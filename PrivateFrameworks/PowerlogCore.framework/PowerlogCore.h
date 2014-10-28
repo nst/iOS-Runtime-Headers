@@ -19,8 +19,8 @@
 @property(readonly) PLCoreService * services;
 @property(readonly) PLCoreStorage * storage;
 
-+ (bool)allowRun;
-+ (bool)isDebugEnabled;
++ (BOOL)allowRun;
++ (BOOL)isDebugEnabled;
 + (id)sharedCore;
 
 - (void).cxx_destruct;

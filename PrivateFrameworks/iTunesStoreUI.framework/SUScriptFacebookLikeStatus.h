@@ -8,9 +8,9 @@
     NSDictionary *_dictionary;
 }
 
-@property(readonly) unsigned long long friendLikeCount;
+@property(readonly) unsigned int friendLikeCount;
 @property(readonly) NSArray * friends;
-@property(readonly) unsigned long long globalLikeCount;
+@property(readonly) unsigned int globalLikeCount;
 @property(getter=isLikedByMe,readonly) id likedByMe;
 
 + (void)initialize;
@@ -19,9 +19,9 @@
 - (id)_className;
 - (id)attributeKeys;
 - (void)dealloc;
-- (unsigned long long)friendLikeCount;
+- (unsigned int)friendLikeCount;
 - (id)friends;
-- (unsigned long long)globalLikeCount;
+- (unsigned int)globalLikeCount;
 - (id)initWithLikeStatusDictionary:(id)arg1;
 - (id)isLikedByMe;
 - (id)scriptAttributeKeys;

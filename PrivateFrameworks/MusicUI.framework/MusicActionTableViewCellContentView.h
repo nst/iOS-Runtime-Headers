@@ -6,17 +6,17 @@
 
 @interface MusicActionTableViewCellContentView : MusicTableViewCellContentView {
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
+    BOOL _displayAsDisabled;
     } _imageOffset;
     UIImageView *_imageView;
     UILabel *_titleLabel;
-    bool_displayAsDisabled;
 }
 
-@property(getter=isDisplayingAsDisabled) bool displayAsDisabled;
+@property(getter=isDisplayingAsDisabled) BOOL displayAsDisabled;
 @property(retain) UIImage * image;
-@property struct UIOffset { double x1; double x2; } imageOffset;
+@property struct UIOffset { float x1; float x2; } imageOffset;
 @property(readonly) UIImageView * imageView;
 @property(copy) NSString * title;
 @property(readonly) UILabel * titleLabel;
@@ -24,18 +24,18 @@
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)image;
-- (struct UIOffset { double x1; double x2; })imageOffset;
+- (struct UIOffset { float x1; float x2; })imageOffset;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isDisplayingAsDisabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isDisplayingAsDisabled;
 - (void)layoutSubviews;
-- (void)setDisplayAsDisabled:(bool)arg1;
+- (void)setDisplayAsDisabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setImageOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)title;
 - (id)titleLabel;
 

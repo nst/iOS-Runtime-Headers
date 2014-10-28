@@ -8,13 +8,13 @@
     NSString *_entryDefinitionKey;
     double _offset;
     <PLTimeReferenceManager> *_timeManager;
-    long long _timeReferenceType;
+    int _timeReferenceType;
 }
 
 @property(retain) NSString * entryDefinitionKey;
 @property double offset;
 @property(retain) <PLTimeReferenceManager> * timeManager;
-@property long long timeReferenceType;
+@property int timeReferenceType;
 
 + (id)defaultsKeyFromEntryDefinitionKey:(id)arg1;
 
@@ -22,16 +22,16 @@
 - (id)addTimeOffsetToMonotonicTime:(id)arg1;
 - (id)currentTime;
 - (id)entryDefinitionKey;
-- (id)initWithTimeManager:(id)arg1 entryDefinitionKey:(id)arg2 timeReferenceType:(long long)arg3;
+- (id)initWithTimeManager:(id)arg1 entryDefinitionKey:(id)arg2 timeReferenceType:(int)arg3;
 - (void)initializeOffsetWithEntry:(id)arg1;
 - (double)offset;
 - (id)removeTimeOffsetFromReferenceTime:(id)arg1;
 - (void)setEntryDefinitionKey:(id)arg1;
 - (void)setOffset:(double)arg1;
 - (void)setTimeManager:(id)arg1;
-- (void)setTimeReferenceType:(long long)arg1;
+- (void)setTimeReferenceType:(int)arg1;
 - (id)timeManager;
-- (long long)timeReferenceType;
+- (int)timeReferenceType;
 - (void)writeOffsetToDefaults;
 
 @end

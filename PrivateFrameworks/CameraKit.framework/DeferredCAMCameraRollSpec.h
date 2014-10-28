@@ -5,25 +5,25 @@
 @class CAMCameraRollSpec, DeferredFrameworkLoader;
 
 @interface DeferredCAMCameraRollSpec : CAMCameraRollSpec {
+    BOOL _isPad;
     DeferredFrameworkLoader *_loader;
     CAMCameraRollSpec *_spec;
-    bool_isPad;
 }
 
-@property bool isPad;
+@property BOOL isPad;
 @property(retain) DeferredFrameworkLoader * loader;
 @property(retain) CAMCameraRollSpec * spec;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)ensureCAMCameraRollSpec;
-- (id)initWithDeferredLoader:(id)arg1 isPad:(bool)arg2;
-- (bool)isPad;
+- (id)initWithDeferredLoader:(id)arg1 isPad:(BOOL)arg2;
+- (BOOL)isPad;
 - (id)loader;
 - (id)newAlbumNavigationControllerForAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 inApplicationViewController:(id)arg3;
 - (void)prepareAlbumViewControllerForReuse:(id)arg1 withAssetCollection:(id)arg2 inApplicationViewController:(id)arg3;
 - (void)reloadAlbumViewController:(id)arg1 withAssetCollection:(id)arg2 fetchResultContainingAssetCollection:(id)arg3;
-- (void)setIsPad:(bool)arg1;
+- (void)setIsPad:(BOOL)arg1;
 - (void)setLoader:(id)arg1;
 - (void)setSpec:(id)arg1;
 - (id)spec;

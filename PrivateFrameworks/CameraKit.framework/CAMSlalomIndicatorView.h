@@ -6,22 +6,22 @@
 
 @interface CAMSlalomIndicatorView : UIView {
     UILabel *__framerateLabel;
-    long long _framesPerSecond;
+    int _framesPerSecond;
 }
 
 @property(readonly) UILabel * _framerateLabel;
-@property long long framesPerSecond;
+@property int framesPerSecond;
 
 - (void).cxx_destruct;
 - (void)_commonCAMSlalomIndicatorViewInitialization;
 - (id)_framerateLabel;
 - (void)_updateFramerateLabel;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
-- (long long)framesPerSecond;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (int)framesPerSecond;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (void)setFramesPerSecond:(long long)arg1;
+- (void)setFramesPerSecond:(int)arg1;
 
 @end

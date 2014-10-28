@@ -6,6 +6,6 @@
 }
 
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id)arg2;
-- (bool)isKindOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 
 @end

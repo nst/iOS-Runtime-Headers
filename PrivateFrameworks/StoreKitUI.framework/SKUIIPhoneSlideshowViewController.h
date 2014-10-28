@@ -10,38 +10,38 @@
     <SKUISlideshowViewControllerDataSource> *_dataSource;
     <SKUISlideshowViewControllerDelegate> *_delegate;
     NSMutableArray *_images;
-    long long _indexToScrollToOnLoadView;
+    int _indexToScrollToOnLoadView;
     NSOperationQueue *_operationQueue;
     UIPageControl *_pageControl;
     NSMutableDictionary *_placeholderImages;
     NSOperationQueue *_placeholderQueue;
+    BOOL _respondsToCount;
+    BOOL _respondsToImage;
+    BOOL _respondsToURL;
     SKUIScreenshotDataConsumer *_screenshotConsumer;
-    bool_respondsToCount;
-    bool_respondsToImage;
-    bool_respondsToURL;
 }
 
 @property(retain) SKUIClientContext * clientContext;
-@property long long currentIndex;
+@property int currentIndex;
 @property <SKUISlideshowViewControllerDataSource> * dataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUISlideshowViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;
-- (id)_imageAtIndex:(long long)arg1;
-- (id)_placeholderImageAtIndex:(long long)arg1;
+- (id)_imageAtIndex:(int)arg1;
+- (id)_placeholderImageAtIndex:(int)arg1;
 - (void)_reloadPageControl;
 - (void)_reloadSize;
-- (void)_setImage:(id)arg1 atIndex:(long long)arg2;
-- (void)_setLowResImage:(id)arg1 atIndex:(long long)arg2;
+- (void)_setImage:(id)arg1 atIndex:(int)arg2;
+- (void)_setLowResImage:(id)arg1 atIndex:(int)arg2;
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (long long)currentIndex;
+- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (int)currentIndex;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
@@ -50,10 +50,10 @@
 - (void)reloadData;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setCurrentIndex:(long long)arg1;
+- (void)setCurrentIndex:(int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLayoutSubviews;
 
 @end

@@ -5,8 +5,8 @@
 @interface TSPDirectoryPackageConverter : TSPPackageConverter {
 }
 
-- (bool)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id)arg2;
-- (bool)isValid;
+- (BOOL)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id)arg2;
+- (BOOL)isValid;
 - (unsigned long long)progressTotalUnitCountWithZipArchive:(id)arg1;
 
 @end

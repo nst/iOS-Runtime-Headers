@@ -3,21 +3,21 @@
  */
 
 @interface TSCH3DClipPlaneShaderEffect : TSCH3DChartClippingShaderEffect {
-    boolmIsTransformingVertices;
-    boolmUseDiscard;
-    boolmUseRepresentativeVertex;
-    boolmXConditional;
-    boolmZConditional;
-    unsigned long long mNumPlanes;
+    BOOL mIsTransformingVertices;
+    unsigned int mNumPlanes;
+    BOOL mUseDiscard;
+    BOOL mUseRepresentativeVertex;
+    BOOL mXConditional;
+    BOOL mZConditional;
 }
 
-@property bool isTransformingVertices;
-@property bool useDiscard;
-@property bool useXConditional;
-@property bool useZConditional;
+@property BOOL isTransformingVertices;
+@property BOOL useDiscard;
+@property BOOL useXConditional;
+@property BOOL useZConditional;
 
-+ (bool)defaultUsesRepresentativeVertex;
-+ (id)effectWithPlanes:(unsigned long long)arg1;
++ (BOOL)defaultUsesRepresentativeVertex;
++ (id)effectWithPlanes:(unsigned int)arg1;
 + (id)variableClipPlane;
 + (id)variableClipVertex;
 + (id)variableClipVertexTransform;
@@ -28,21 +28,21 @@
 + (id)variableZLimit;
 
 - (void)addVariables:(id)arg1;
-- (id)initWithPlanes:(unsigned long long)arg1;
+- (id)initWithPlanes:(unsigned int)arg1;
 - (void)inject:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isTransformingVertices;
-- (unsigned long long)numberOfClippingValues;
-- (void)p_gatherClipPlaneStatementAtIndex:(unsigned long long)arg1 combiner:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isTransformingVertices;
+- (unsigned int)numberOfClippingValues;
+- (void)p_gatherClipPlaneStatementAtIndex:(unsigned int)arg1 combiner:(id)arg2;
 - (void)p_gatherXRangeStatementWithCombiner:(id)arg1 program:(id)arg2;
-- (void)setIsTransformingVertices:(bool)arg1;
-- (void)setUseDiscard:(bool)arg1;
-- (void)setUseXConditional:(bool)arg1;
-- (void)setUseZConditional:(bool)arg1;
+- (void)setIsTransformingVertices:(BOOL)arg1;
+- (void)setUseDiscard:(BOOL)arg1;
+- (void)setUseXConditional:(BOOL)arg1;
+- (void)setUseZConditional:(BOOL)arg1;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
-- (bool)useDiscard;
-- (bool)useXConditional;
-- (bool)useZConditional;
+- (BOOL)useDiscard;
+- (BOOL)useXConditional;
+- (BOOL)useZConditional;
 - (id)variableClipPlane;
 - (id)variableClipVertex;
 - (id)variableClipVertexTransform;

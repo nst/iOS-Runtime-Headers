@@ -8,14 +8,14 @@
     NSURL *_URL;
     TSPObjectContext *_context;
     NSString *_documentPasswordHint;
+    BOOL _isClosed;
     TSUTemporaryDirectory *_tempDirForSupport;
-    bool_isClosed;
 }
 
 @property(copy) NSURL * URL;
-@property(readonly) bool areNewExternalReferencesToDataAllowed;
+@property(readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(readonly) bool canUpgradeDocumentSupport;
+@property(readonly) BOOL canUpgradeDocumentSupport;
 @property(retain) TSPObjectContext * context;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * defaultDraftName;
@@ -24,11 +24,11 @@
 @property(readonly) NSString * documentPasswordHint;
 @property(readonly) TSADocumentRoot * documentRoot;
 @property(readonly) <NSFilePresenter> * filePresenter;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool ignoreDocumentSupport;
-@property(readonly) bool isDocumentSupportTemporary;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL ignoreDocumentSupport;
+@property(readonly) BOOL isDocumentSupportTemporary;
 @property(readonly) NSString * name;
-@property(readonly) bool preserveDocumentRevisionIdentifierForSequenceZero;
+@property(readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
 @property(readonly) Class superclass;
 
 - (id)URL;

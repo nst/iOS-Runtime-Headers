@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (bool)integerIsPresentForKey1:(unsigned long long)arg1 key2:(unsigned long long)arg2 outValue:(unsigned long long*)arg3;
-- (void)setObject:(unsigned long long)arg1 forKey1:(unsigned long long)arg2 key2:(unsigned long long)arg3;
+- (BOOL)integerIsPresentForKey1:(unsigned int)arg1 key2:(unsigned int)arg2 outValue:(unsigned int*)arg3;
+- (void)setObject:(unsigned int)arg1 forKey1:(unsigned int)arg2 key2:(unsigned int)arg3;
 
 @end

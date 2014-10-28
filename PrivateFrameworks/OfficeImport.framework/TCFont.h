@@ -9,7 +9,7 @@
         int fontClass; 
         unsigned int stringEncoding; 
         BOOL weight; 
-        boolitalic; 
+        BOOL italic; 
         int width; 
     TCFontFamily *_family;
     NSDictionary *_namesByLanguage;
@@ -20,7 +20,7 @@
 @property TCFontFamily * family;
 @property(readonly) NSDictionary * namesByLanguage;
 @property(readonly) NSString * psName;
-@property(readonly) struct TCFontStyling { int x1; unsigned int x2; BOOL x3; boolx4; int x5; } styling;
+@property(readonly) struct TCFontStyling { int x1; unsigned int x2; BOOL x3; BOOL x4; int x5; } styling;
 
 - (id).cxx_construct;
 - (void)dealloc;
@@ -28,11 +28,11 @@
 - (id)equivalentDictionary;
 - (id)family;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithNamesByLanguage:(id)arg1 psName:(id)arg2 styling:(struct TCFontStyling { int x1; unsigned int x2; BOOL x3; boolx4; int x5; })arg3;
+- (id)initWithNamesByLanguage:(id)arg1 psName:(id)arg2 styling:(struct TCFontStyling { int x1; unsigned int x2; BOOL x3; BOOL x4; int x5; })arg3;
 - (id)localizedFontName;
 - (id)namesByLanguage;
 - (id)psName;
 - (void)setFamily:(id)arg1;
-- (struct TCFontStyling { int x1; unsigned int x2; BOOL x3; boolx4; int x5; })styling;
+- (struct TCFontStyling { int x1; unsigned int x2; BOOL x3; BOOL x4; int x5; })styling;
 
 @end

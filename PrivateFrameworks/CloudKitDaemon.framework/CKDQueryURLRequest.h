@@ -6,7 +6,7 @@
 
 @interface CKDQueryURLRequest : CKDURLRequest {
     NSData *_cursor;
-    unsigned long long _limit;
+    unsigned int _limit;
     CKQuery *_query;
     NSMutableArray *_queryResponses;
     NSArray *_requestedFields;
@@ -15,7 +15,7 @@
 }
 
 @property(retain) NSData * cursor;
-@property unsigned long long limit;
+@property unsigned int limit;
 @property(retain) CKQuery * query;
 @property(retain) NSArray * queryResponses;
 @property(retain) NSArray * requestedFields;
@@ -23,10 +23,10 @@
 @property(retain) CKRecordZoneID * zoneID;
 
 - (void).cxx_destruct;
-- (bool)allowsAnonymousAccount;
+- (BOOL)allowsAnonymousAccount;
 - (id)cursor;
-- (id)initWithQuery:(id)arg1 cursor:(id)arg2 limit:(unsigned long long)arg3 requestedFields:(id)arg4 zoneID:(id)arg5;
-- (unsigned long long)limit;
+- (id)initWithQuery:(id)arg1 cursor:(id)arg2 limit:(unsigned int)arg3 requestedFields:(id)arg4 zoneID:(id)arg5;
+- (unsigned int)limit;
 - (int)operationType;
 - (id)query;
 - (id)queryResponses;
@@ -37,7 +37,7 @@
 - (id)requestedFields;
 - (id)resultsCursor;
 - (void)setCursor:(id)arg1;
-- (void)setLimit:(unsigned long long)arg1;
+- (void)setLimit:(unsigned int)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryResponses:(id)arg1;
 - (void)setRequestedFields:(id)arg1;

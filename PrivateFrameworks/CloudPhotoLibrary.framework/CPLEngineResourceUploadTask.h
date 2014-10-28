@@ -9,6 +9,7 @@
 @class <CPLEngineTransportTask>, CPLResource;
 
 @interface CPLEngineResourceUploadTask : CPLResourceTransferTask {
+    BOOL _backgroundTask;
     id _cancelHandler;
     CPLResource *_cloudResource;
     id _completionHandler;
@@ -16,10 +17,9 @@
     id _launchHandler;
     id _progressHandler;
     <CPLEngineTransportTask> *_transportTask;
-    bool_backgroundTask;
 }
 
-@property(getter=isBackgroundTask) bool backgroundTask;
+@property(getter=isBackgroundTask) BOOL backgroundTask;
 @property(readonly) id cancelHandler;
 @property(retain) CPLResource * cloudResource;
 @property(readonly) id completionHandler;
@@ -35,11 +35,11 @@
 - (id)completionHandler;
 - (id)didStartHandler;
 - (id)initWithLaunchHandler:(id)arg1 cancelHandler:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
-- (bool)isBackgroundTask;
+- (BOOL)isBackgroundTask;
 - (void)launch;
 - (id)launchHandler;
 - (id)progressHandler;
-- (void)setBackgroundTask:(bool)arg1;
+- (void)setBackgroundTask:(BOOL)arg1;
 - (void)setCloudResource:(id)arg1;
 - (void)setTransportTask:(id)arg1;
 - (id)transportTask;

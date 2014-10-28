@@ -11,15 +11,15 @@
 @property(retain,readonly) IMMessage * message;
 @property(copy,readonly) NSArray * pasteboardItems;
 
-- (bool)canCopy;
-- (bool)canForward;
-- (bool)canSendAsTextMessage;
+- (BOOL)canCopy;
+- (BOOL)canForward;
+- (BOOL)canSendAsTextMessage;
 - (BOOL)color;
 - (id)composition;
 - (void)configureBalloonView:(id)arg1;
 - (id)description;
-- (bool)failed;
-- (bool)isFromMe;
+- (BOOL)failed;
+- (BOOL)isFromMe;
 - (id)message;
 - (id)pasteboardItems;
 - (id)sender;

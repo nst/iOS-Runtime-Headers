@@ -10,8 +10,8 @@
 @property(copy) NSString * aceId;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property long long packetNumber;
+@property(readonly) unsigned int hash;
+@property int packetNumber;
 @property(copy) NSArray * packets;
 @property(copy) NSString * refId;
 @property(readonly) Class superclass;
@@ -21,9 +21,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (long long)packetNumber;
+- (int)packetNumber;
 - (id)packets;
-- (void)setPacketNumber:(long long)arg1;
+- (void)setPacketNumber:(int)arg1;
 - (void)setPackets:(id)arg1;
 
 @end

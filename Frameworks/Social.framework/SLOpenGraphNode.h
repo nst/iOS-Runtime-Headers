@@ -8,30 +8,30 @@
     NSURL *_URL;
     int _fetchState;
     NSArray *_likedByFriends;
-    unsigned long long _numberOfFriendLikes;
-    unsigned long long _numberOfLikes;
-    bool_likedByMe;
+    BOOL _likedByMe;
+    unsigned int _numberOfFriendLikes;
+    unsigned int _numberOfLikes;
 }
 
 @property(readonly) NSURL * URL;
 @property int fetchState;
-@property(readonly) unsigned long long friendLikeCount;
-@property(readonly) unsigned long long globalLikeCount;
+@property(readonly) unsigned int friendLikeCount;
+@property(readonly) unsigned int globalLikeCount;
 @property(readonly) NSArray * likedByFriends;
-@property(readonly) bool likedByMe;
+@property(readonly) BOOL likedByMe;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (void)_startUpdateIfNeeded;
 - (id)cache;
 - (int)fetchState;
-- (unsigned long long)friendLikeCount;
-- (unsigned long long)globalLikeCount;
+- (unsigned int)friendLikeCount;
+- (unsigned int)globalLikeCount;
 - (id)initWithURL:(id)arg1;
 - (void)invalidate;
 - (void)likeWithCompletion:(id)arg1;
 - (id)likedByFriends;
-- (bool)likedByMe;
+- (BOOL)likedByMe;
 - (void)setFetchState:(int)arg1;
 - (void)unlikeWithCompletion:(id)arg1;
 

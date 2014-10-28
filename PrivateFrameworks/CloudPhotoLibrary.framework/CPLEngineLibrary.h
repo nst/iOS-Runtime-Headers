@@ -7,6 +7,7 @@
 @interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
     NSHashTable *_attachedObjects;
     NSURL *_clientLibraryBaseURL;
+    BOOL _closed;
     NSURL *_cloudLibraryResourceStorageURL;
     NSURL *_cloudLibraryStateStorageURL;
     NSArray *_components;
@@ -22,7 +23,6 @@
     CPLEngineSyncManager *_syncManager;
     CPLEngineSystemMonitor *_systemMonitor;
     CPLEngineTransport *_transport;
-    bool_closed;
 }
 
 @property(copy,readonly) NSURL * clientLibraryBaseURL;
@@ -32,11 +32,11 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSDate * exitDeleteTime;
-@property bool hasChangesToProcess;
-@property(readonly) unsigned long long hash;
-@property bool iCloudLibraryExists;
-@property bool iCloudLibraryHasBeenWiped;
-@property bool isExceedingQuota;
+@property BOOL hasChangesToProcess;
+@property(readonly) unsigned int hash;
+@property BOOL iCloudLibraryExists;
+@property BOOL iCloudLibraryHasBeenWiped;
+@property BOOL isExceedingQuota;
 @property(copy,readonly) NSString * libraryIdentifier;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) CPLEngineScheduler * scheduler;
@@ -50,12 +50,12 @@
 + (id)platformImplementationProtocol;
 
 - (void).cxx_destruct;
-- (void)_closeNextComponent:(id)arg1 deactivate:(bool)arg2 lastError:(id)arg3 completionHandler:(id)arg4;
+- (void)_closeNextComponent:(id)arg1 deactivate:(BOOL)arg2 lastError:(id)arg3 completionHandler:(id)arg4;
 - (void)_openNextComponent:(id)arg1 completionHandler:(id)arg2;
-- (void)_performBlockWithLibrary:(bool)arg1 enumerateAttachedObjects:(id)arg2;
+- (void)_performBlockWithLibrary:(BOOL)arg1 enumerateAttachedObjects:(id)arg2;
 - (void)attachObject:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)clientLibraryBaseURL;
-- (void)closeAndDeactivate:(bool)arg1 completionHandler:(id)arg2;
+- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
 - (id)cloudLibraryResourceStorageURL;
 - (id)cloudLibraryStateStorageURL;
 - (id)componentName;
@@ -66,16 +66,16 @@
 - (void)getListOfComponentsWithCompletionHandler:(id)arg1;
 - (void)getStatusArrayForComponents:(id)arg1 completionHandler:(id)arg2;
 - (void)getStatusForComponents:(id)arg1 completionHandler:(id)arg2;
-- (bool)hasChangesToProcess;
-- (bool)iCloudLibraryExists;
-- (bool)iCloudLibraryHasBeenWiped;
+- (BOOL)hasChangesToProcess;
+- (BOOL)iCloudLibraryExists;
+- (BOOL)iCloudLibraryHasBeenWiped;
 - (id)initWithClientLibraryBaseURL:(id)arg1 cloudLibraryStateStorageURL:(id)arg2 cloudLibraryResourceStorageURL:(id)arg3 libraryIdentifier:(id)arg4;
-- (bool)isExceedingQuota;
+- (BOOL)isExceedingQuota;
 - (id)libraryIdentifier;
 - (void)notifyAttachedObjectsPullQueueIsFull;
 - (void)notifyAttachedObjectsResourceDidDowloadInBackground:(id)arg1;
 - (void)notifyAttachedObjectsResourceDidFailBackgroundDownloadOfResource:(id)arg1;
-- (void)notifyAttachedObjectsSizeOfResourcesToUploadDidChangeToSize:(unsigned long long)arg1;
+- (void)notifyAttachedObjectsSizeOfResourcesToUploadDidChangeToSize:(unsigned long long)arg1 numberOfImages:(unsigned int)arg2 numberOfVideos:(unsigned int)arg3 numberOfOtherItems:(unsigned int)arg4;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didProgress:(float)arg2;
 - (void)notifyAttachedObjectsUploadTaskDidStart:(id)arg1;
@@ -84,16 +84,17 @@
 - (void)reportUnsuccessfulSync;
 - (id)scheduler;
 - (void)setExitDeleteTime:(id)arg1;
-- (void)setHasChangesToProcess:(bool)arg1;
-- (void)setICloudLibraryExists:(bool)arg1;
-- (void)setICloudLibraryHasBeenWiped:(bool)arg1;
-- (void)setIsExceedingQuota:(bool)arg1;
+- (void)setHasChangesToProcess:(BOOL)arg1;
+- (void)setICloudLibraryExists:(BOOL)arg1;
+- (void)setICloudLibraryHasBeenWiped:(BOOL)arg1;
+- (void)setIsExceedingQuota:(BOOL)arg1;
 - (void)startSyncSession;
 - (id)statistics;
 - (id)store;
 - (id)syncManager;
 - (id)systemMonitor;
 - (id)transport;
+- (void)updateAssetCountsFromServer:(id)arg1;
 - (void)updateLastSuccessfullSyncDate:(id)arg1;
 
 @end

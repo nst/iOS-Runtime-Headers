@@ -22,7 +22,7 @@
 @property(readonly) unsigned long long retryAfter;
 
 - (void).cxx_destruct;
-- (bool)_blackListStackIfItemThrottled:(id)arg1 now:(unsigned long long)arg2;
+- (BOOL)_blackListStackIfItemThrottled:(id)arg1 now:(unsigned long long)arg2;
 - (struct PQLResultSet { Class x1; }*)_documentsOrAliasesNeedingSyncUpEnumerator;
 - (struct PQLResultSet { Class x1; }*)_liveOrNewDirectoriesNeedingSyncUpEnumerator;
 - (id)_nextLiveItem;

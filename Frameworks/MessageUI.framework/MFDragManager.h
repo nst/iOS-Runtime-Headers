@@ -6,25 +6,26 @@
 
 @interface MFDragManager : NSObject <UIGestureRecognizerDelegate> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     <MFDragDestination> *_currentDestination;
     UIGestureRecognizer *_currentGestureBeingProcessed;
     NSMutableArray *_dragContextValues;
     NSMutableArray *_dragDestinations;
     NSMutableArray *_dragSources;
+    BOOL _dragWasSuccessful;
     UIWindow *_dragWindow;
     <MFDraggableItem> *_draggedItem;
     } _draggedItemOriginalFrame;
@@ -34,21 +35,20 @@
     } _offsetCenterOfDraggedView;
     } _previousGestureLocation;
     NSTimer *_scrollTimer;
+    BOOL _scrollingForDrag;
     NSMutableDictionary *_sourceForGestureRecognizer;
     double _timeOfLastBigUpdate;
-    bool_dragWasSuccessful;
-    bool_scrollingForDrag;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void)_cleanUpAfterDragCompleted;
-- (bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_handleLongPress:(id)arg1;
 - (void)_processGestureUpdate;
 - (void)_scrollViewIfNecessary;
@@ -58,7 +58,7 @@
 - (void)cancelCurrentDragOperation;
 - (void)dealloc;
 - (void)enumerateDragContextsUsingBlock:(id)arg1;
-- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (void)removeDragContext:(id)arg1;
 - (void)removeDragDestination:(id)arg1;

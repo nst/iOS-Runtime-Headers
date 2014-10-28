@@ -7,7 +7,7 @@
 
 - (id)createDocument:(id)arg1 :(id)arg2;
 - (id)createLSInput;
-- (id)createLSParser:(long long)arg1 :(id)arg2;
+- (id)createLSParser:(int)arg1 :(id)arg2;
 - (id)createLSSerializer;
 
 @end

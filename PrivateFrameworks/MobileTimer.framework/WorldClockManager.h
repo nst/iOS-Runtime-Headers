@@ -6,8 +6,8 @@
 
 @interface WorldClockManager : NSObject {
     NSMutableArray *_cities;
+    BOOL _dirty;
     NSTimer *_weatherUpdateTimer;
-    bool_dirty;
     NSDate *lastModified;
 }
 
@@ -16,18 +16,18 @@
 
 + (id)sharedManager;
 
-- (unsigned long long)addCity:(id)arg1;
-- (bool)canAddCity;
-- (bool)checkIfCitiesModified;
+- (unsigned int)addCity:(id)arg1;
+- (BOOL)canAddCity;
+- (BOOL)checkIfCitiesModified;
 - (id)cities;
 - (id)cityWithIdUrl:(id)arg1;
 - (void)dealloc;
 - (id)lastModified;
 - (void)loadCities;
-- (void)moveCityFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (void)moveCityFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)removeAllCities;
 - (void)removeCity:(id)arg1;
-- (void)removeCityAtIndex:(unsigned long long)arg1;
+- (void)removeCityAtIndex:(unsigned int)arg1;
 - (void)saveCities;
 - (void)setLastModified:(id)arg1;
 - (void)updateWeatherDataForCities:(id)arg1 withCompletion:(id)arg2;

@@ -7,7 +7,7 @@
 @interface UITextCheckerDictionaryEntry : NSObject {
     NSData *data;
     struct __CFSet { } *dictionary;
-    long long size;
+    int size;
 }
 
 - (void)dealloc;

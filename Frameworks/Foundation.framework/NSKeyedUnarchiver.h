@@ -56,15 +56,15 @@
 - (void)_setAllowedClassNames:(id)arg1;
 - (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
 - (id)allowedClasses;
-- (bool)allowsKeyedCoding;
+- (BOOL)allowsKeyedCoding;
 - (Class)classForClassName:(id)arg1;
-- (bool)containsValueForKey:(id)arg1;
+- (BOOL)containsValueForKey:(id)arg1;
 - (id)cpl_safeInitForReadingWithData:(id)arg1;
 - (void)dealloc;
-- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned long long)arg2 at:(void*)arg3;
-- (bool)decodeBoolForKey:(id)arg1;
-- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned long long*)arg2;
-- (void*)decodeBytesWithReturnedLength:(unsigned long long*)arg1;
+- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
+- (BOOL)decodeBoolForKey:(id)arg1;
+- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
+- (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (id)decodeDataObject;
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
@@ -87,12 +87,12 @@
 - (id)moments_safeInitForReadingWithData:(id)arg1;
 - (id)pl_safeInitForReadingWithData:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
-- (bool)requiresSecureCoding;
+- (BOOL)requiresSecureCoding;
 - (void)setAllowedClasses:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setRequiresSecureCoding:(bool)arg1;
+- (void)setRequiresSecureCoding:(BOOL)arg1;
 - (unsigned int)systemVersion;
-- (long long)versionForClassName:(id)arg1;
+- (int)versionForClassName:(id)arg1;
 
 @end

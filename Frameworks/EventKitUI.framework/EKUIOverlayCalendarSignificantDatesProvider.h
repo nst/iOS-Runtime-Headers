@@ -13,11 +13,11 @@
     CalDateRange *_cachedDateRange;
     NSDictionary *_cachedFirstsOfMonths;
     NSDictionary *_cachedFirstsOfYears;
-    unsigned long long _currentGeneration;
+    unsigned int _currentGeneration;
     NSDate *_currentRequest;
+    BOOL _loadPending;
     NSObject<OS_dispatch_queue> *_queue;
     id _significantDatesChangedHandler;
-    bool_loadPending;
 }
 
 @property(copy) id significantDatesChangedHandler;

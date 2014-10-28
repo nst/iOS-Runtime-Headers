@@ -10,37 +10,37 @@
     NSDictionary *_valueTextAttributes;
 }
 
-@property(readonly) double bottomBaselineConstant;
+@property(readonly) float bottomBaselineConstant;
 @property(readonly) UIImageView * chevron;
-@property(readonly) double chevronWidth;
+@property(readonly) float chevronWidth;
 @property(readonly) NSString * labelString;
 @property(copy) NSDictionary * labelTextAttributes;
 @property(readonly) UIView<ABText> * labelView;
 @property(readonly) UIView * rightMostView;
 @property(readonly) UILabel * standardLabelView;
 @property(readonly) UILabel * standardValueView;
-@property(readonly) double topBaselineConstant;
+@property(readonly) float topBaselineConstant;
 @property(readonly) NSString * valueString;
 @property(copy) NSDictionary * valueTextAttributes;
 @property(readonly) UIView<ABText> * valueView;
 
-+ (bool)wantsChevron;
-+ (bool)wantsHorizontalLayout;
-+ (bool)wantsStandardConstraints;
++ (BOOL)wantsChevron;
++ (BOOL)wantsHorizontalLayout;
++ (BOOL)wantsStandardConstraints;
 
-- (double)bottomBaselineConstant;
+- (float)bottomBaselineConstant;
 - (id)chevron;
-- (double)chevronWidth;
+- (float)chevronWidth;
 - (id)constantConstraints;
 - (id)constantConstraintsForHorizontalLayout;
 - (id)constantConstraintsForStandardLayout;
 - (id)constantConstraintsForVerticalLayout;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)labelString;
 - (id)labelTextAttributes;
 - (id)labelView;
-- (double)minCellHeight;
+- (float)minCellHeight;
 - (id)rightMostView;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
@@ -48,7 +48,7 @@
 - (id)standardLabelView;
 - (id)standardValueView;
 - (void)tintColorDidChange;
-- (double)topBaselineConstant;
+- (float)topBaselineConstant;
 - (id)valueString;
 - (id)valueTextAttributes;
 - (id)valueView;

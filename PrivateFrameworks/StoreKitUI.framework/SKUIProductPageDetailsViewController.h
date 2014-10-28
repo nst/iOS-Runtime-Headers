@@ -5,6 +5,7 @@
 @class <SKUIProductPageChildViewControllerDelegate>, NSMutableArray, NSOperationQueue, NSString, SKUIClientContext, SKUILayoutCache, SKUIProductPage, SKUIProductPageHeaderViewController, SKUIProductPageTableHeaderOnlySection, SKUIProductPageTableTextBoxSection, SKUIProductPageTableViewController, SKUIResourceLoader, UIScrollView;
 
 @interface SKUIProductPageDetailsViewController : UIViewController <SKUIScreenshotsDelegate, SKUIItemStateCenterObserver, SKUITableViewSectionDelegate, SKUIProductPageChildViewController> {
+    BOOL _askPermission;
     SKUIClientContext *_clientContext;
     SKUIProductPageTableHeaderOnlySection *_copyrightSection;
     <SKUIProductPageChildViewControllerDelegate> *_delegate;
@@ -18,22 +19,21 @@
     SKUIProductPageTableViewController *_tableViewController;
     SKUILayoutCache *_textLayoutCache;
     SKUIProductPageTableTextBoxSection *_whatsNewSection;
-    bool_askPermission;
 }
 
-@property bool askPermission;
+@property BOOL askPermission;
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property(retain) NSOperationQueue * operationQueue;
 @property(readonly) SKUIProductPage * productPage;
 @property(readonly) UIScrollView * scrollView;
 @property(readonly) Class superclass;
 
-+ (double)defaultPageWidthForUserInterfaceIdiom:(long long)arg1;
++ (float)defaultPageWidthForUserInterfaceIdiom:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)_addTapRecognizerForView:(id)arg1 action:(SEL)arg2;
@@ -49,9 +49,9 @@
 - (id)_screenshotsSection;
 - (id)_storeNotesSection;
 - (id)_tableViewController;
-- (id)_textLayoutRequestWithText:(id)arg1 widthOffset:(double)arg2;
+- (id)_textLayoutRequestWithText:(id)arg1 widthOffset:(float)arg2;
 - (id)_whatsNewSection;
-- (bool)askPermission;
+- (BOOL)askPermission;
 - (id)clientContext;
 - (void)dealloc;
 - (id)delegate;
@@ -63,7 +63,7 @@
 - (id)productPage;
 - (void)screenshotsWillBeginDragging:(id)arg1;
 - (id)scrollView;
-- (void)setAskPermission:(bool)arg1;
+- (void)setAskPermission:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderViewController:(id)arg1;

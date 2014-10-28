@@ -7,52 +7,52 @@
 @interface BLModalPresenter : UIWindow <UIKeyInput> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     NSMutableArray *_controllers;
     } _keyboard;
-    long long _lockCount;
+    BOOL _keyboardVisible;
+    int _lockCount;
     BLModalPresenterRootViewController *_rootViewController;
-    bool_keyboardVisible;
 }
 
-@property long long autocapitalizationType;
-@property long long autocorrectionType;
+@property int autocapitalizationType;
+@property int autocorrectionType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool enablesReturnKeyAutomatically;
-@property(readonly) unsigned long long hash;
-@property long long keyboardAppearance;
-@property long long keyboardType;
-@property long long returnKeyType;
-@property(getter=isSecureTextEntry) bool secureTextEntry;
-@property long long spellCheckingType;
+@property BOOL enablesReturnKeyAutomatically;
+@property(readonly) unsigned int hash;
+@property int keyboardAppearance;
+@property int keyboardType;
+@property int returnKeyType;
+@property(getter=isSecureTextEntry) BOOL secureTextEntry;
+@property int spellCheckingType;
 @property(readonly) Class superclass;
 
 + (id)presenter;
 
 - (void).cxx_destruct;
-- (bool)canBecomeFirstResponder;
-- (void)configureForOffscreen:(id)arg1 orientation:(long long)arg2;
-- (void)configureForOncreen:(id)arg1 orientation:(long long)arg2;
+- (BOOL)canBecomeFirstResponder;
+- (void)configureForOffscreen:(id)arg1 orientation:(int)arg2;
+- (void)configureForOncreen:(id)arg1 orientation:(int)arg2;
 - (void)dealloc;
 - (void)deleteBackward;
-- (struct CGSize { double x1; double x2; })formSheetSizeForController:(id)arg1 withOrientation:(long long)arg2;
-- (bool)hasText;
+- (struct CGSize { float x1; float x2; })formSheetSizeForController:(id)arg1 withOrientation:(int)arg2;
+- (BOOL)hasText;
 - (id)hidden;
-- (void)hideController:(id)arg1 animated:(bool)arg2 withCompletion:(id)arg3;
+- (void)hideController:(id)arg1 animated:(BOOL)arg2 withCompletion:(id)arg3;
 - (id)init;
 - (void)insertText:(id)arg1;
 - (void)keyboardDidShow:(id)arg1;
-- (bool)keyboardVisible;
+- (BOOL)keyboardVisible;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
-- (void)layoutForOrientation:(long long)arg1;
+- (void)layoutForOrientation:(int)arg1;
 - (void)lockKeyboard;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)orientationDidChange:(id)arg1;

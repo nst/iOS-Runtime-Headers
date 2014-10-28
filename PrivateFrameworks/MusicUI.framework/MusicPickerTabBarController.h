@@ -5,7 +5,7 @@
 @interface MusicPickerTabBarController : UITabBarController {
 }
 
-- (bool)MPH_supportsCoverFlow;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)MPH_supportsCoverFlow;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

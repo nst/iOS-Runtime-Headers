@@ -10,12 +10,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <SBFProceduralWallpaperDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)identifier;
 
-- (void)setAnimating:(bool)arg1;
+- (void)setAnimating:(BOOL)arg1;
 - (id)view;
 
 @end

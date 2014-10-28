@@ -13,7 +13,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setupPipeline:(id)arg1 fromCamera:(id)arg2;
 
 @end

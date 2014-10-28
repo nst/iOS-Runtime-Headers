@@ -13,8 +13,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <MKPlaceSharedAttributionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool requiresPreferredContentSizeInStackingView;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,13 +23,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (bool)requiresPreferredContentSizeInStackingView;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (BOOL)requiresPreferredContentSizeInStackingView;
 - (void)setAttribution:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

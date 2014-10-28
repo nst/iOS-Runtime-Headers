@@ -6,39 +6,39 @@
 
 @interface CPLAdjustmentFingerprinting : NSObject {
     CPLResource *_baseImage;
+    BOOL _hasAutoEnhance;
+    BOOL _hasOtherAdjustments;
+    BOOL _hasRedEye;
+    BOOL _hasSimpleLightenDarken;
     CPLResource *_largeAdjustmentData;
     CPLAdjustments *_otherAdjustments;
     CPLResource *_secondaryAdjustmentData;
-    bool_hasAutoEnhance;
-    bool_hasOtherAdjustments;
-    bool_hasRedEye;
-    bool_hasSimpleLightenDarken;
 }
 
 @property(retain) CPLResource * baseImage;
-@property bool hasAutoEnhance;
-@property bool hasOtherAdjustments;
-@property bool hasRedEye;
-@property bool hasSimpleLightenDarken;
+@property BOOL hasAutoEnhance;
+@property BOOL hasOtherAdjustments;
+@property BOOL hasRedEye;
+@property BOOL hasSimpleLightenDarken;
 @property(retain) CPLResource * largeAdjustmentData;
 @property(retain) CPLAdjustments * otherAdjustments;
 @property(retain) CPLResource * secondaryAdjustmentData;
 
 - (void).cxx_destruct;
 - (id)baseImage;
-- (bool)hasAutoEnhance;
-- (bool)hasOtherAdjustments;
-- (bool)hasRedEye;
-- (bool)hasSimpleLightenDarken;
+- (BOOL)hasAutoEnhance;
+- (BOOL)hasOtherAdjustments;
+- (BOOL)hasRedEye;
+- (BOOL)hasSimpleLightenDarken;
 - (id)largeAdjustmentData;
 - (id)otherAdjustments;
 - (id)otherAdjustmentsFingerprint;
 - (id)secondaryAdjustmentData;
 - (void)setBaseImage:(id)arg1;
-- (void)setHasAutoEnhance:(bool)arg1;
-- (void)setHasOtherAdjustments:(bool)arg1;
-- (void)setHasRedEye:(bool)arg1;
-- (void)setHasSimpleLightenDarken:(bool)arg1;
+- (void)setHasAutoEnhance:(BOOL)arg1;
+- (void)setHasOtherAdjustments:(BOOL)arg1;
+- (void)setHasRedEye:(BOOL)arg1;
+- (void)setHasSimpleLightenDarken:(BOOL)arg1;
 - (void)setLargeAdjustmentData:(id)arg1;
 - (void)setOtherAdjustments:(id)arg1;
 - (void)setSecondaryAdjustmentData:(id)arg1;

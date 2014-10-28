@@ -5,19 +5,19 @@
 @class NSCondition, NSMutableArray, NSString, TSCH3DSharegroupDelayChecker;
 
 @interface TSCH3DSharegroupPool : NSObject <TSCH3DSharegroupDelayCheckerParent, TSUFlushable> {
-    boolmBusy;
-    boolmCanUseOpenGL;
+    BOOL mBusy;
+    BOOL mCanUseOpenGL;
     TSCH3DSharegroupDelayChecker *mChecker;
     NSCondition *mCondition;
-    long long mDisableLevel;
-    long long mNumAlive;
+    int mDisableLevel;
+    int mNumAlive;
     NSMutableArray *mSharegroups;
-    long long mSize;
+    int mSize;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)_singletonAlloc;
@@ -27,7 +27,7 @@
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;
 - (id)autorelease;
-- (bool)canUseOpenGL;
+- (BOOL)canUseOpenGL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)disable;
@@ -42,7 +42,7 @@
 - (oneway void)release;
 - (void)releaseSharegroup:(id)arg1;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)scheduleCheckCondition;
 - (void)waitForBackgroundThreadsWithTimeout:(double)arg1;
 - (void)willCheckCondition;

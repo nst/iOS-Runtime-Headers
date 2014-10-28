@@ -8,14 +8,14 @@
 + (Class)classForKeyedArchiver;
 + (Class)classForKeyedUnarchiver;
 
-- (unsigned long long)_cfTypeID;
-- (bool)allowsWeakReference;
+- (unsigned long)_cfTypeID;
+- (BOOL)allowsWeakReference;
 - (void)finalize;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (bool)retainWeakReference;
+- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 
 @end

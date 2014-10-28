@@ -10,8 +10,8 @@
 
 @interface MTLIOMemoryInfo : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     NSObject<OS_xpc_object> *ak_memlist_connection;
     /* Warning: unhandled array encoding: '[2@?]' */ id ak_memlist_data_sources[2];
     } ak_memlist_mutex;

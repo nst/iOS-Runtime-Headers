@@ -6,13 +6,13 @@
 
 @interface HKMedicalIDEditorMultilineStringCell : HKMedicalIDEditorCell <UITextViewDelegate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     <HKMedicalIDEditorCellHeightChangeDelegate> *_heightChangeDelegate;
     UILabel *_labelLabel;
-    double _lastSeenTextViewContentHeight;
+    float _lastSeenTextViewContentHeight;
     UILabel *_placeholderLabel;
     UITextView *_textView;
     } _textViewExtraMargins;
@@ -20,22 +20,22 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property <HKMedicalIDEditorCellHeightChangeDelegate> * heightChangeDelegate;
 @property(retain) NSString * placeholder;
 @property(retain) NSString * stringValue;
 @property(readonly) Class superclass;
 @property(readonly) UITextView * textView;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textViewExtraMargins;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textViewExtraMargins;
 
-+ (bool)showsLabelAndValue;
++ (BOOL)showsLabelAndValue;
 
 - (void).cxx_destruct;
 - (void)_labelTapped:(id)arg1;
 - (void)commitEditing;
 - (void)dealloc;
 - (id)heightChangeDelegate;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)label;
 - (void)layoutSubviews;
 - (id)placeholder;
@@ -43,12 +43,12 @@
 - (void)setLabel:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setStringValue:(id)arg1;
-- (void)setTextViewExtraMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTextViewExtraMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)stringValue;
 - (id)textView;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textViewExtraMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textViewExtraMargins;
 
 @end

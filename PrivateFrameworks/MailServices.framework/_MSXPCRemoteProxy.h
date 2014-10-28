@@ -16,7 +16,7 @@
     int _selectorLock;
 }
 
-- (bool)conformsToProtocol:(id)arg1;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithConnection:(id)arg1 interface:(id)arg2 errorHandler:(id)arg3;

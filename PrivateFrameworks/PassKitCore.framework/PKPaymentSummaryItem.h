@@ -13,16 +13,16 @@
 @property(copy) NSString * label;
 
 + (id)summaryItemWithLabel:(id)arg1 amount:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)amount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToPaymentSummaryItem:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToPaymentSummaryItem:(id)arg1;
 - (id)label;
 - (void)setAmount:(id)arg1;
 - (void)setLabel:(id)arg1;

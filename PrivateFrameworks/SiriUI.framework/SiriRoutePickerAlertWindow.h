@@ -5,6 +5,6 @@
 @interface SiriRoutePickerAlertWindow : UIWindow {
 }
 
-+ (bool)_isSecure;
++ (BOOL)_isSecure;
 
 @end

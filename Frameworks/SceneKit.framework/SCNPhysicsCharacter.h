@@ -17,8 +17,8 @@
             float y; 
             float z; 
         } direction; 
-        double velocity; 
-        double jumpSpeed; 
+        float velocity; 
+        float jumpSpeed; 
     struct btCapsuleShape { int (**x1)(); int x2; void *x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; float x6; float x7; int x8; } *_capsuleShape;
     struct btCharacterControllerInterface { int (**x1)(); } *_characterController;
     } _definition;
@@ -27,22 +27,22 @@
     SCNPhysicsWorld *_world;
 }
 
-@property double jumpSpeed;
-@property double velocity;
+@property float jumpSpeed;
+@property float velocity;
 
 - (id).cxx_construct;
 - (void)_addToPhysicsWorld:(id)arg1;
-- (void)_handleCreateIfNeeded:(bool)arg1;
+- (void)_handleCreateIfNeeded:(BOOL)arg1;
 - (void)_update;
 - (void)_willRemoveFromPhysicsWorld:(id)arg1;
-- (bool)canJump;
+- (BOOL)canJump;
 - (void)dealloc;
 - (id)initWithCharacter:(id)arg1;
 - (void)jump;
-- (double)jumpSpeed;
-- (void)setJumpSpeed:(double)arg1;
-- (void)setVelocity:(double)arg1;
+- (float)jumpSpeed;
+- (void)setJumpSpeed:(float)arg1;
+- (void)setVelocity:(float)arg1;
 - (void)setWalkingDirection:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (double)velocity;
+- (float)velocity;
 
 @end

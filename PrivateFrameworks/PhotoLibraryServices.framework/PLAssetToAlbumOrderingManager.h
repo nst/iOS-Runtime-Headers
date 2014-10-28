@@ -14,18 +14,18 @@
 
 - (void)_updateOrderKeysForParent:(id)arg1 childToOrderKeyMap:(id)arg2;
 - (void)_updateOrderOfChildrenInParent:(id)arg1 usingTransientOrders:(id)arg2;
-- (long long)compareOrderKeyObject:(id)arg1 withObject:(id)arg2;
+- (void)_updateOrderValuesForAlbum:(id)arg1 managedObjectContext:(id)arg2;
+- (int)compareOrderKeyObject:(id)arg1 withObject:(id)arg2;
 - (void)dealloc;
 - (long long)defaultOrderKeySpacing;
 - (void)ensureValidOrderKey:(id)arg1;
 - (void)fixupOrderKeys:(id)arg1 withSpacing:(long long)arg2;
-- (bool)hasValidOrderKey:(id)arg1;
+- (BOOL)hasValidOrderKey:(id)arg1;
 - (id)init;
 - (id)photoLibrary;
 - (void)updateAlbumAssetsUsingTransientOrdersByAlbumOID:(id)arg1 inLibrary:(id)arg2;
-- (void)updateAlbumCounts:(id)arg1 inLibrary:(id)arg2 completionHandler:(id)arg3;
 - (void)updateChildCollectionsUsingTransientOrdersByFolderOID:(id)arg1 inLibrary:(id)arg2;
-- (void)updateOrderValuesForAlbumOIDs:(id)arg1 inLibrary:(id)arg2 completionHandler:(id)arg3;
+- (void)updateOrderValuesForAlbumOIDs:(id)arg1 albumCounts:(id)arg2 inLibrary:(id)arg3 completionHandler:(id)arg4;
 - (void)updateOrderValuesForAlbums:(id)arg1 managedObjectContext:(id)arg2;
 
 @end

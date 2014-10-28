@@ -9,35 +9,35 @@
     double _lastConnection;
     NSString *_name;
     NSString *_serviceId;
-    long long _type;
+    int _type;
 }
 
 @property(readonly) NSUUID * identifier;
 @property double lastConnection;
 @property(readonly) NSString * name;
 @property(copy) NSString * serviceId;
-@property(readonly) long long type;
+@property(readonly) int type;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithType:(long long)arg1 identifier:(id)arg2 name:(id)arg3 serviceId:(id)arg4;
+- (id)_initWithType:(int)arg1 identifier:(id)arg2 name:(id)arg3 serviceId:(id)arg4;
 - (id)_localizedHealthServiceType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)init;
 - (id)initUnknownServiceWithIdentifier:(id)arg1 name:(id)arg2 serviceId:(id)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(long long)arg1 identifier:(id)arg2 name:(id)arg3;
-- (bool)isEqual:(id)arg1;
+- (id)initWithType:(int)arg1 identifier:(id)arg2 name:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (double)lastConnection;
 - (id)name;
 - (id)serviceId;
 - (void)setLastConnection:(double)arg1;
 - (void)setServiceId:(id)arg1;
-- (long long)type;
+- (int)type;
 
 @end

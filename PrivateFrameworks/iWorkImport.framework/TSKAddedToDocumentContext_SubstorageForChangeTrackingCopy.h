@@ -5,7 +5,7 @@
 @interface TSKAddedToDocumentContext_SubstorageForChangeTrackingCopy : TSKAddedToDocumentContext {
 }
 
-- (bool)changeTrackingSubstorage;
+- (BOOL)changeTrackingSubstorage;
 - (id)description;
 
 @end

@@ -11,7 +11,7 @@
 
 @property(readonly) long long actionType;
 @property(readonly) long long direction;
-@property(readonly) bool isFromMe;
+@property(readonly) BOOL isFromMe;
 @property(retain,readonly) IMHandle * otherHandle;
 @property(retain,readonly) IMHandle * sender;
 
@@ -21,7 +21,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (long long)direction;
-- (bool)isFromMe;
+- (BOOL)isFromMe;
 - (id)otherHandle;
 - (id)sender;
 

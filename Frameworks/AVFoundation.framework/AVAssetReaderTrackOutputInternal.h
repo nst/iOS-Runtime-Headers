@@ -5,9 +5,9 @@
 @class AVAssetTrack, AVOutputSettings, NSString;
 
 @interface AVAssetReaderTrackOutputInternal : NSObject {
+    BOOL appliesPreferredTrackTransform;
     NSString *audioTimePitchAlgorithm;
-    boolappliesPreferredTrackTransform;
-    boolisAttachedToMetadataAdaptor;
+    BOOL isAttachedToMetadataAdaptor;
     AVOutputSettings *outputSettings;
     AVAssetTrack *track;
 }

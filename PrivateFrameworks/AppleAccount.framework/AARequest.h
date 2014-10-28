@@ -6,24 +6,21 @@
    See Warning(s) below.
  */
 
-@class NSError, NSHTTPURLResponse, NSMutableData, NSString, NSURLRequest;
+@class NSString, NSURLRequest;
 
 @interface AARequest : NSObject <NSURLSessionDataDelegate> {
     struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
-    NSError *_error;
+    BOOL _flushCache;
     id _handler;
     NSString *_initialURLString;
     NSString *_machineId;
     NSString *_oneTimePassword;
-    NSHTTPURLResponse *_response;
-    NSMutableData *_responseData;
-    bool_flushCache;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool flushCache;
-@property(readonly) unsigned long long hash;
+@property BOOL flushCache;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) NSURLRequest * urlRequest;
 
@@ -31,21 +28,18 @@
 + (Class)responseClass;
 
 - (void).cxx_destruct;
-- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
-- (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
-- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)_handleDataTaskCompletionWithData:(id)arg1 response:(id)arg2 error:(id)arg3;
 - (id)_redactedHeadersFromHTTPHeaders:(id)arg1;
-- (id)_urlSession;
 - (id)bodyDictionary;
 - (void)dealloc;
-- (bool)flushCache;
+- (BOOL)flushCache;
 - (id)initWithURLString:(id)arg1;
 - (void)performRequestWithHandler:(id)arg1;
 - (id)redactedBodyStringWithPropertyList:(id)arg1;
 - (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (void)setDeviceProvisioningMachineId:(id)arg1;
 - (void)setDeviceProvisioningOneTimePassword:(id)arg1;
-- (void)setFlushCache:(bool)arg1;
+- (void)setFlushCache:(BOOL)arg1;
 - (id)urlCredential;
 - (id)urlRequest;
 - (id)urlString;

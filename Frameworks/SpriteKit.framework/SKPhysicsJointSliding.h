@@ -3,23 +3,23 @@
  */
 
 @interface SKPhysicsJointSliding : SKPhysicsJoint {
-    double _lowerDistanceLimit;
-    double _upperDistanceLimit;
-    bool_shouldEnableLimits;
+    float _lowerDistanceLimit;
+    BOOL _shouldEnableLimits;
+    float _upperDistanceLimit;
 }
 
-@property double lowerDistanceLimit;
-@property bool shouldEnableLimits;
-@property double upperDistanceLimit;
+@property float lowerDistanceLimit;
+@property BOOL shouldEnableLimits;
+@property float upperDistanceLimit;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { double x1; double x2; })arg3 axis:(struct CGVector { double x1; double x2; })arg4;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGVector { float x1; float x2; })arg4;
 
-- (double)lowerDistanceLimit;
-- (void)setLowerDistanceLimit:(double)arg1;
-- (void)setShouldEnableLimits:(bool)arg1;
-- (void)setUpperDistanceLimit:(double)arg1;
-- (bool)shouldEnableLimits;
-- (double)upperDistanceLimit;
+- (float)lowerDistanceLimit;
+- (void)setLowerDistanceLimit:(float)arg1;
+- (void)setShouldEnableLimits:(BOOL)arg1;
+- (void)setUpperDistanceLimit:(float)arg1;
+- (BOOL)shouldEnableLimits;
+- (float)upperDistanceLimit;
 
 @end

@@ -5,10 +5,10 @@
 @class HKCorrelationType, NSArray, NSMutableDictionary, NSString, UIColor, UIImage;
 
 @interface HKDataUnitGroup : NSObject {
-    unsigned long long _categoryID;
-    long long _chartStyle;
+    unsigned int _categoryID;
+    int _chartStyle;
     HKCorrelationType *_correlationType;
-    unsigned long long _dataUnitGroupID;
+    unsigned int _dataUnitGroupID;
     NSArray *_dataUnits;
     NSMutableDictionary *_dataUnitsByType;
     NSArray *_dataUnitsOrderedForDataEntry;
@@ -17,19 +17,19 @@
     NSString *_embeddedDisplayName;
     UIColor *_gradientEndColor;
     UIColor *_gradientStartColor;
+    BOOL _isCharacteristic;
+    BOOL _isNikeFuel;
+    BOOL _isSleep;
     NSString *_joinString;
     NSString *_keywords;
     NSArray *_reversedDataUnits;
     NSString *_summary;
-    bool_isCharacteristic;
-    bool_isNikeFuel;
-    bool_isSleep;
 }
 
-@property(readonly) unsigned long long categoryID;
-@property(readonly) long long chartStyle;
+@property(readonly) unsigned int categoryID;
+@property(readonly) int chartStyle;
 @property(readonly) HKCorrelationType * correlationType;
-@property(readonly) unsigned long long dataUnitGroupID;
+@property(readonly) unsigned int dataUnitGroupID;
 @property(readonly) NSArray * dataUnits;
 @property(readonly) NSArray * dataUnitsOrderedForDataEntry;
 @property(readonly) UIImage * detailImage;
@@ -45,12 +45,12 @@
 @property(readonly) UIImage * unitIcon;
 
 - (void).cxx_destruct;
-- (long long)_chartStyleFromDictionary:(id)arg1;
-- (unsigned long long)categoryID;
-- (long long)chartStyle;
+- (int)_chartStyleFromDictionary:(id)arg1;
+- (unsigned int)categoryID;
+- (int)chartStyle;
 - (id)correlationType;
 - (id)dataUnitForType:(id)arg1;
-- (unsigned long long)dataUnitGroupID;
+- (unsigned int)dataUnitGroupID;
 - (id)dataUnits;
 - (id)dataUnitsOrderedForDataEntry;
 - (id)detailImage;
@@ -59,13 +59,13 @@
 - (id)gradientEndColor;
 - (id)gradientStartColor;
 - (id)groupIcon;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initFromDictionary:(id)arg1;
-- (bool)isCharacteristic;
-- (bool)isEqual:(id)arg1;
-- (bool)isNikeFuel;
-- (bool)isSleep;
+- (BOOL)isCharacteristic;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isNikeFuel;
+- (BOOL)isSleep;
 - (id)joinString;
 - (id)keywords;
 - (id)shareIcon;

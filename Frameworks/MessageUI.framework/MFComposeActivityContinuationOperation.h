@@ -6,29 +6,29 @@
 
 @interface MFComposeActivityContinuationOperation : NSOperation <NSStreamDelegate> {
     <MFComposeActivityContinuationOperationDelegate> *_delegate;
-    unsigned long long _draftBytesReceived;
+    BOOL _doneWithInputStream;
+    BOOL _doneWithOutputStream;
+    unsigned int _draftBytesReceived;
     NSData *_draftData;
-    unsigned long long _draftDataByteIndex;
-    unsigned long long _draftExpectedSize;
+    unsigned int _draftDataByteIndex;
+    unsigned int _draftExpectedSize;
+    BOOL _executing;
+    BOOL _finished;
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     NSObject<OS_dispatch_queue> *_streamHandlerQueue;
-    unsigned long long _transmissionType;
-    bool_doneWithInputStream;
-    bool_doneWithOutputStream;
-    bool_executing;
-    bool_finished;
+    unsigned int _transmissionType;
 }
 
-@property(readonly) unsigned long long bytesExpected;
-@property(readonly) unsigned long long bytesReceived;
+@property(readonly) unsigned int bytesExpected;
+@property(readonly) unsigned int bytesReceived;
 @property(copy,readonly) NSString * debugDescription;
 @property <MFComposeActivityContinuationOperationDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSData * draftData;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property unsigned long long transmissionType;
+@property unsigned int transmissionType;
 
 + (id)receivingOperationWithInputStream:(id)arg1 outputStream:(id)arg2;
 + (id)sendingOperationWithDraftData:(id)arg1 inputStream:(id)arg2 outputStream:(id)arg3;
@@ -40,28 +40,28 @@
 - (void)_didFinishTransferringContinuationPayload;
 - (void)_failedToTransferContinuationPayload;
 - (void)_finishReceivingContinuationDataAndCloseStream;
-- (void)_handleErrorCode:(unsigned long long)arg1 logString:(id)arg2;
-- (void)_receivingDataStream:(id)arg1 handleEvent:(unsigned long long)arg2;
-- (void)_receivingMessageStream:(id)arg1 handleEvent:(unsigned long long)arg2;
-- (void)_sendingDataStream:(id)arg1 handleEvent:(unsigned long long)arg2;
-- (void)_sendingMessageStream:(id)arg1 handleEvent:(unsigned long long)arg2;
-- (void)_setExecuting:(bool)arg1;
-- (void)_setFinished:(bool)arg1;
+- (void)_handleErrorCode:(unsigned int)arg1 logString:(id)arg2;
+- (void)_receivingDataStream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)_receivingMessageStream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)_sendingDataStream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)_sendingMessageStream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)_setExecuting:(BOOL)arg1;
+- (void)_setFinished:(BOOL)arg1;
 - (void)_startContinuationStreams;
-- (unsigned long long)bytesExpected;
-- (unsigned long long)bytesReceived;
+- (unsigned int)bytesExpected;
+- (unsigned int)bytesReceived;
 - (void)dealloc;
 - (id)delegate;
 - (id)draftData;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2;
-- (bool)isConcurrent;
-- (bool)isExecuting;
-- (bool)isFinished;
+- (BOOL)isConcurrent;
+- (BOOL)isExecuting;
+- (BOOL)isFinished;
 - (void)setDelegate:(id)arg1;
 - (void)setDraftData:(id)arg1;
-- (void)setTransmissionType:(unsigned long long)arg1;
+- (void)setTransmissionType:(unsigned int)arg1;
 - (void)start;
-- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
-- (unsigned long long)transmissionType;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (unsigned int)transmissionType;
 
 @end

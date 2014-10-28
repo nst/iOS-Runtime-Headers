@@ -9,24 +9,24 @@
 @class NSArray, NSDictionary;
 
 @interface CKPublishAssetsOperation : CKDatabaseOperation {
-    unsigned long long _URLOptions;
+    unsigned int _URLOptions;
     id _assetPublishedBlock;
     NSDictionary *_fileNamesByAssetFieldNames;
     id _publishAssetCompletionBlock;
     NSArray *_recordIDs;
-    unsigned long long _requestedTTL;
+    unsigned int _requestedTTL;
 }
 
-@property unsigned long long URLOptions;
+@property unsigned int URLOptions;
 @property(copy) id assetPublishedBlock;
 @property(retain) NSDictionary * fileNamesByAssetFieldNames;
 @property(copy) id publishAssetCompletionBlock;
 @property(retain) NSArray * recordIDs;
-@property unsigned long long requestedTTL;
+@property unsigned int requestedTTL;
 
 - (void).cxx_destruct;
-- (bool)CKOperationShouldRun:(id*)arg1;
-- (unsigned long long)URLOptions;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (unsigned int)URLOptions;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)assetPublishedBlock;
@@ -36,12 +36,12 @@
 - (void)performCKOperation;
 - (id)publishAssetCompletionBlock;
 - (id)recordIDs;
-- (unsigned long long)requestedTTL;
+- (unsigned int)requestedTTL;
 - (void)setAssetPublishedBlock:(id)arg1;
 - (void)setFileNamesByAssetFieldNames:(id)arg1;
 - (void)setPublishAssetCompletionBlock:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
-- (void)setRequestedTTL:(unsigned long long)arg1;
-- (void)setURLOptions:(unsigned long long)arg1;
+- (void)setRequestedTTL:(unsigned int)arg1;
+- (void)setURLOptions:(unsigned int)arg1;
 
 @end

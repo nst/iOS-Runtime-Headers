@@ -16,20 +16,20 @@
 @property(readonly) GKPlayer * player;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (bool)instancesRespondToSelector:(SEL)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1 game:(id)arg2;
 - (id)internal;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)player;
-- (bool)respondsToSelector:(SEL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;

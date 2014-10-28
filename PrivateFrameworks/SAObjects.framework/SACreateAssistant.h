@@ -13,7 +13,7 @@
 @property(copy) NSString * connectionType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * language;
 @property(copy) NSString * refId;
 @property(copy) NSString * speechId;

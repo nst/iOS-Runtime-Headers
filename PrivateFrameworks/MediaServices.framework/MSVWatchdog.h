@@ -15,11 +15,11 @@
     NSOperationQueue *_operationQueue;
     NSObject<OS_dispatch_queue> *_queue;
     NSRunLoop *_runLoop;
+    BOOL _running;
+    BOOL _scheduled;
     id _timeoutCallback;
     double _timeoutInterval;
     NSObject<OS_dispatch_source> *_timer;
-    bool_running;
-    bool_scheduled;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
@@ -28,8 +28,8 @@
 @property(retain) NSOperationQueue * operationQueue;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(retain) NSRunLoop * runLoop;
-@property bool running;
-@property bool scheduled;
+@property BOOL running;
+@property BOOL scheduled;
 @property(copy) id timeoutCallback;
 @property double timeoutInterval;
 @property(retain) NSObject<OS_dispatch_source> * timer;
@@ -47,19 +47,19 @@
 - (id)queue;
 - (void)resume;
 - (id)runLoop;
-- (bool)running;
+- (BOOL)running;
 - (void)scheduleInDispatchQueue:(id)arg1;
 - (void)scheduleInOperationQueue:(id)arg1;
 - (void)scheduleInRunLoop:(id)arg1;
-- (bool)scheduled;
+- (BOOL)scheduled;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterval:(double)arg1;
 - (void)setMode:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRunLoop:(id)arg1;
-- (void)setRunning:(bool)arg1;
-- (void)setScheduled:(bool)arg1;
+- (void)setRunning:(BOOL)arg1;
+- (void)setScheduled:(BOOL)arg1;
 - (void)setTimeoutCallback:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setTimer:(id)arg1;

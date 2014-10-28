@@ -21,7 +21,7 @@
     float windowHistory[3840];
 }
 
-- (id)computeWithSampleBuffer:(char *)arg1 numSamples:(unsigned long long)arg2 voiceActive:(bool)arg3;
+- (id)computeWithSampleBuffer:(char *)arg1 numSamples:(unsigned int)arg2 voiceActive:(BOOL)arg3;
 - (void)dealloc;
 - (id)init;
 

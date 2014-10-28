@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)blockableDelegate;
-- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setBlockableDelegate:(id)arg1;
 
 @end

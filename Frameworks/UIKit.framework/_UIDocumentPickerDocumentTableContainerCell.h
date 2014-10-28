@@ -17,11 +17,11 @@
 - (id)containerIconView;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)model;
 - (id)observerToken;
 - (void)prepareForReuse;
-- (void)reloadItem:(bool)arg1;
+- (void)reloadItem:(BOOL)arg1;
 - (void)setContainerIconView:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setObserverToken:(id)arg1;

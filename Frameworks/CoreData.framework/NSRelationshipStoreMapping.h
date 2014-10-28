@@ -16,7 +16,7 @@
 - (void)dealloc;
 - (id)destinationEntityExternalName;
 - (id)foreignKeys;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)joinSemantic;
 - (id)joins;
 - (id)relationship;

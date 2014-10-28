@@ -15,7 +15,7 @@
 - (id)appIds;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAppIds:(id)arg1;
 
 @end

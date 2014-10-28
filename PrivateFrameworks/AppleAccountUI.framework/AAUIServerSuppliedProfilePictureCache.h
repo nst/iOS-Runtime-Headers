@@ -6,19 +6,19 @@
 
 @interface AAUIServerSuppliedProfilePictureCache : NSObject {
     NSMutableDictionary *_personIDToEntryMap;
-    double _pictureDiameter;
+    float _pictureDiameter;
 }
 
-@property(readonly) double pictureDiameter;
+@property(readonly) float pictureDiameter;
 
 + (id)sharedCache;
 
 - (void).cxx_destruct;
-- (void)_ensureMinimumPictureDiameter_mustBeSynchronized:(double)arg1;
+- (void)_ensureMinimumPictureDiameter_mustBeSynchronized:(float)arg1;
 - (id)init;
-- (double)pictureDiameter;
-- (void)profilePictureForPersonID:(id)arg1 diameter:(double)arg2 completion:(id)arg3;
-- (id)profilePictureForPersonID:(id)arg1 diameter:(double)arg2 serverFetchBlock:(id)arg3;
-- (bool)updateProfilePicture:(id)arg1 didReceiveNewPicture:(bool)arg2 serverCacheTag:(id)arg3 forPersonID:(id)arg4;
+- (float)pictureDiameter;
+- (void)profilePictureForPersonID:(id)arg1 diameter:(float)arg2 completion:(id)arg3;
+- (id)profilePictureForPersonID:(id)arg1 diameter:(float)arg2 serverFetchBlock:(id)arg3;
+- (BOOL)updateProfilePicture:(id)arg1 didReceiveNewPicture:(BOOL)arg2 serverCacheTag:(id)arg3 forPersonID:(id)arg4;
 
 @end

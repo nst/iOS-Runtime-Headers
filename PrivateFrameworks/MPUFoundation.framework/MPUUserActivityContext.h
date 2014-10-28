@@ -6,14 +6,14 @@
 
 @interface MPUUserActivityContext : NSObject <NSCopying, NSMutableCopying> {
     NSArray *_containerItems;
-    long long _originatorType;
-    long long _originatorVersion;
+    int _originatorType;
+    int _originatorVersion;
 }
 
 @property(copy,readonly) NSArray * containerItems;
 @property(copy,readonly) NSData * dataRepresentation;
-@property(readonly) long long originatorType;
-@property(readonly) long long originatorVersion;
+@property(readonly) int originatorType;
+@property(readonly) int originatorVersion;
 
 - (void).cxx_destruct;
 - (id)containerItemFollowingContainerItem:(id)arg1;
@@ -23,11 +23,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataRepresentation;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithDataRepresentation:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (long long)originatorType;
-- (long long)originatorVersion;
+- (int)originatorType;
+- (int)originatorVersion;
 
 @end

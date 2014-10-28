@@ -13,12 +13,12 @@
 @property(retain) UILabel * titleLabel;
 
 + (id)fontForLabel;
-+ (double)intrinsicContentHeight;
++ (float)intrinsicContentHeight;
 
 - (void).cxx_destruct;
 - (void)contentSizeDidChange;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)scaledConstraints;
 - (void)setScaledConstraints:(id)arg1;
 - (void)setTitleLabel:(id)arg1;

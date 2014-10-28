@@ -9,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)event:(long long)arg1 params:(id)arg2 reply:(id)arg3;
+- (void)event:(int)arg1 params:(id)arg2 reply:(id)arg3;
 - (id)initWithVRUIDelegate:(id)arg1;
 
 @end

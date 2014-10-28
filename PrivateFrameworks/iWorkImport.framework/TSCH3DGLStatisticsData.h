@@ -5,12 +5,12 @@
 @class TSCH3DGLPointerCountedSet;
 
 @interface TSCH3DGLStatisticsData : NSObject {
-    unsigned long long mFrames;
+    unsigned int mFrames;
     TSCH3DGLPointerCountedSet *mGeometryUseCount;
     TSCH3DGLPointerCountedSet *mShadersUseCount;
 }
 
-@property unsigned long long frames;
+@property unsigned int frames;
 
 + (id)statisticsData;
 
@@ -18,8 +18,8 @@
 - (void)dealloc;
 - (id)description;
 - (void)drawGeometry:(id)arg1;
-- (unsigned long long)frames;
+- (unsigned int)frames;
 - (id)init;
-- (void)setFrames:(unsigned long long)arg1;
+- (void)setFrames:(unsigned int)arg1;
 
 @end

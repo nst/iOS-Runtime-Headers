@@ -5,26 +5,26 @@
 @class NSArray, NSString, UILabel;
 
 @interface SKUISearchAppBundleView : UIView {
-    long long _count;
+    int _count;
     UILabel *_headerLabel;
     NSArray *_imageViews;
     NSArray *_labels;
 }
 
-@property long long count;
+@property int count;
 @property(copy) NSString * headerTitle;
 
 - (void).cxx_destruct;
 - (void)_reload;
-- (long long)count;
+- (int)count;
 - (id)headerTitle;
-- (id)imageAtIndex:(long long)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)imageAtIndex:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setCount:(long long)arg1;
+- (void)setCount:(int)arg1;
 - (void)setHeaderTitle:(id)arg1;
-- (void)setImage:(id)arg1 atIndex:(long long)arg2;
-- (void)setTitle:(id)arg1 atIndex:(long long)arg2;
-- (id)titleAtIndex:(long long)arg1;
+- (void)setImage:(id)arg1 atIndex:(int)arg2;
+- (void)setTitle:(id)arg1 atIndex:(int)arg2;
+- (id)titleAtIndex:(int)arg1;
 
 @end

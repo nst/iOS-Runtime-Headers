@@ -10,16 +10,16 @@
 
 @property(retain) NSPersistentStoreCoordinator * fPersistentStoreCoordinator;
 
-+ (bool)destroyDBAtLocation:(id)arg1;
++ (BOOL)destroyDBAtLocation:(id)arg1;
 + (id)entityDescriptionHavingName:(id)arg1 forContext:(id)arg2;
 + (id)getPersistenCoordinator:(id)arg1;
 + (id)getPropertyValueForKey:(id)arg1 forContext:(id)arg2;
 + (id)getStoreURLforContext:(id)arg1;
 + (id)instanceWithInitDBAtURL:(id)arg1 modelURL:(id)arg2;
 + (id)instanceWithUsingDBAtURL:(id)arg1 modelURL:(id)arg2;
-+ (long long)isDataStoreAtURLInitialized:(id)arg1 withModelAtURL:(id)arg2;
++ (int)isDataStoreAtURLInitialized:(id)arg1 withModelAtURL:(id)arg2;
 + (id)mangedObjectWithURI:(id)arg1 inContext:(id)arg2;
-+ (bool)migrateDataStoreAtLocation:(id)arg1 withDstModelAtLocation:(id)arg2;
++ (BOOL)migrateDataStoreAtLocation:(id)arg1 withDstModelAtLocation:(id)arg2;
 + (id)migrationOptions;
 + (void)setPropertyValue:(id)arg1 forKey:(id)arg2 forContext:(id)arg3;
 

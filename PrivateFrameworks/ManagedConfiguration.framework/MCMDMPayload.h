@@ -7,25 +7,25 @@
 @interface MCMDMPayload : MCPayload {
     int _accessRights;
     NSString *_checkInURLString;
+    BOOL _checkOutWhenRemoved;
     NSData *_identityPersistentID;
     NSString *_identityUUID;
     NSString *_serverURLString;
+    BOOL _signMessage;
     NSString *_topic;
-    bool_checkOutWhenRemoved;
-    bool_signMessage;
-    bool_useDevelopmentAPNS;
+    BOOL _useDevelopmentAPNS;
 }
 
 @property(readonly) int accessRights;
 @property(retain,readonly) NSString * checkInURLString;
-@property(readonly) bool checkOutWhenRemoved;
+@property(readonly) BOOL checkOutWhenRemoved;
 @property(retain) NSData * identityPersistentID;
 @property(retain,readonly) NSString * identityUUID;
 @property(retain,readonly) NSArray * localizedAccessRightDescriptions;
 @property(retain,readonly) NSString * serverURLString;
-@property(readonly) bool signMessage;
+@property(readonly) BOOL signMessage;
 @property(retain,readonly) NSString * topic;
-@property(readonly) bool useDevelopmentAPNS;
+@property(readonly) BOOL useDevelopmentAPNS;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -37,7 +37,7 @@
 - (id)_nonHTTPSURLErrorForField:(id)arg1;
 - (int)accessRights;
 - (id)checkInURLString;
-- (bool)checkOutWhenRemoved;
+- (BOOL)checkOutWhenRemoved;
 - (id)description;
 - (id)identityPersistentID;
 - (id)identityUUID;
@@ -47,12 +47,12 @@
 - (id)payloadDescriptionKeyValueSections;
 - (id)serverURLString;
 - (void)setIdentityPersistentID:(id)arg1;
-- (bool)signMessage;
+- (BOOL)signMessage;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;
 - (id)title;
 - (id)topic;
-- (bool)useDevelopmentAPNS;
+- (BOOL)useDevelopmentAPNS;
 
 @end

@@ -9,16 +9,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) int statusBarStyleOverridesToSuppress;
 @property(readonly) Class superclass;
-@property(readonly) bool underLock;
+@property(readonly) BOOL underLock;
 
-- (bool)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (BOOL)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)statusBarStyleOverridesToSuppress;
-- (bool)underLock;
-- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (BOOL)underLock;
+- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

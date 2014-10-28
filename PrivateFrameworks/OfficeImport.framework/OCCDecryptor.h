@@ -22,12 +22,12 @@
 + (id)allocTempFileWithBase:(id)arg1 outFilename:(id*)arg2;
 
 - (void)dealloc;
-- (bool)decrypt;
-- (bool)decryptIntoOutputFile;
+- (BOOL)decrypt;
+- (BOOL)decryptIntoOutputFile;
 - (void)deleteOutputFile;
 - (id)initWithStreamer:(struct OCCStreamer { int (**x1)(); struct OCCCryptoKey {} *x2; char *x3; }*)arg1;
-- (bool)isReadProtectedUsingDefaultPassphrase;
+- (BOOL)isReadProtectedUsingDefaultPassphrase;
 - (id)outputFilename;
-- (bool)verifyPassphrase:(id)arg1;
+- (BOOL)verifyPassphrase:(id)arg1;
 
 @end

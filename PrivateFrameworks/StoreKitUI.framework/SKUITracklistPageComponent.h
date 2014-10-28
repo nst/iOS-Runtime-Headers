@@ -9,7 +9,7 @@
 
 @property(readonly) SKUITracklistViewElement * viewElement;
 
-- (long long)componentType;
+- (int)componentType;
 - (id)initWithViewElement:(id)arg1;
 
 @end

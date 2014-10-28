@@ -4,28 +4,28 @@
 
 @interface _UIGestureRecognizerTransformAnalyzer : NSObject {
     int _dominantComponent;
-    double _lowPassRotationDelta;
-    double _lowPassScaleDelta;
-    double _lowPassTranslationMagnitudeDelta;
-    double _pinchingWeight;
-    double _rotationWeight;
-    double _translationWeight;
+    float _lowPassRotationDelta;
+    float _lowPassScaleDelta;
+    float _lowPassTranslationMagnitudeDelta;
+    float _pinchingWeight;
+    float _rotationWeight;
+    float _translationWeight;
 }
 
 @property(readonly) int dominantComponent;
-@property double pinchingWeight;
-@property double rotationWeight;
-@property double translationWeight;
+@property float pinchingWeight;
+@property float rotationWeight;
+@property float translationWeight;
 
 - (void)analyzeTouches:(id)arg1;
 - (int)dominantComponent;
 - (id)init;
-- (double)pinchingWeight;
+- (float)pinchingWeight;
 - (void)reset;
-- (double)rotationWeight;
-- (void)setPinchingWeight:(double)arg1;
-- (void)setRotationWeight:(double)arg1;
-- (void)setTranslationWeight:(double)arg1;
-- (double)translationWeight;
+- (float)rotationWeight;
+- (void)setPinchingWeight:(float)arg1;
+- (void)setRotationWeight:(float)arg1;
+- (void)setTranslationWeight:(float)arg1;
+- (float)translationWeight;
 
 @end

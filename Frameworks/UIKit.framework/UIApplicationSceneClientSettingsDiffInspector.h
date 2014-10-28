@@ -5,7 +5,7 @@
 @interface UIApplicationSceneClientSettingsDiffInspector : FBSSceneClientSettingsDiffInspector {
 }
 
-- (void)_observeOtherSetting:(unsigned long long)arg1 withBlock:(id)arg2;
+- (void)_observeOtherSetting:(unsigned int)arg1 withBlock:(id)arg2;
 - (void)observeCompatibilityModeWithBlock:(id)arg1;
 - (void)observeControlCenterRevealModeWithBlock:(id)arg1;
 - (void)observeDefaultPNGExpirationTimeWithBlock:(id)arg1;

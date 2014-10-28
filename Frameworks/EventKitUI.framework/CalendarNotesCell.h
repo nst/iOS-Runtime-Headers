@@ -14,8 +14,8 @@
 @property(retain,readonly) UITextView * textView;
 
 - (void).cxx_destruct;
-- (bool)becomeFirstResponder;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)becomeFirstResponder;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)placeholder;
 - (void)setPlaceholder:(id)arg1;

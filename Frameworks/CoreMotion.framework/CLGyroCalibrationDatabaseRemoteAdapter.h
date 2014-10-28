@@ -5,7 +5,7 @@
 @interface CLGyroCalibrationDatabaseRemoteAdapter : CLNotifierServiceAdapter <CLGyroCalibrationDatabaseRemoteProtocol> {
 }
 
-@property bool valid;
+@property BOOL valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;

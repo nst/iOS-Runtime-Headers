@@ -10,26 +10,26 @@
     NSBundle *_bundle;
     CUICatalog *_catalog;
     _UICache *_imageCache;
+    BOOL _managingUIKitAssets;
     _UIAssetManager *_nextAssetManager;
-    long long _preferredIdiom;
-    unsigned long long _preferredIdiomSubtype;
-    double _preferredScale;
+    int _preferredIdiom;
+    unsigned int _preferredIdiomSubtype;
+    float _preferredScale;
     UITraitCollection *_preferredTraitCollection;
     CUIMutableCatalog *_runtimeCatalog;
-    bool_managingUIKitAssets;
-    long long onceToken_runtimeCatalog;
+    long onceToken_runtimeCatalog;
 }
 
 @property(readonly) NSBundle * bundle;
 @property(readonly) NSString * carFileName;
-@property(getter=_managingUIKitAssets,readonly) bool managingUIKitAssets;
+@property(getter=_managingUIKitAssets,readonly) BOOL managingUIKitAssets;
 @property(retain) _UIAssetManager * nextAssetManager;
-@property double preferredScale;
+@property float preferredScale;
 @property(retain) UITraitCollection * preferredTraitCollection;
 @property(readonly) CUIMutableCatalog * runtimeCatalog;
 
-+ (void)_convertTraitCollection:(id)arg1 toCUIScale:(double*)arg2 CUIIdiom:(long long*)arg3 UIKitIdiom:(long long*)arg4 subtype:(long long*)arg5;
-+ (long long)_userInterfaceIdiomForDeviceClass:(unsigned long long)arg1;
++ (void)_convertTraitCollection:(id)arg1 toCUIScale:(float*)arg2 CUIIdiom:(int*)arg3 UIKitIdiom:(int*)arg4 subtype:(int*)arg5;
++ (int)_userInterfaceIdiomForDeviceClass:(unsigned int)arg1;
 + (id)assetManagerForBundle:(id)arg1;
 + (id)createAssetNamed:(id)arg1 fromBundle:(id)arg2;
 + (id)sharedRuntimeAssetMap;
@@ -39,7 +39,7 @@
 - (id)_catalog;
 - (void)_clearCachedResources:(id)arg1;
 - (void)_insertAssetIntoMap:(id)arg1 forName:(id)arg2;
-- (bool)_managingUIKitAssets;
+- (BOOL)_managingUIKitAssets;
 - (void)_removeAssetFromMap:(id)arg1;
 - (id)bundle;
 - (id)carFileName;
@@ -47,19 +47,19 @@
 - (void)dealloc;
 - (id)description;
 - (void)disableCacheFlushing;
-- (id)imageNamed:(id)arg1 idiom:(long long)arg2 subtype:(unsigned long long)arg3;
-- (id)imageNamed:(id)arg1 idiom:(long long)arg2;
-- (id)imageNamed:(id)arg1 scale:(double)arg2 idiom:(long long)arg3 subtype:(unsigned long long)arg4 cachingOptions:(unsigned long long)arg5 sizeClassPair:(struct { long long x1; long long x2; })arg6 attachCatalogImage:(bool)arg7;
-- (id)imageNamed:(id)arg1 scale:(double)arg2 idiom:(long long)arg3 subtype:(unsigned long long)arg4;
+- (id)imageNamed:(id)arg1 idiom:(int)arg2 subtype:(unsigned int)arg3;
+- (id)imageNamed:(id)arg1 idiom:(int)arg2;
+- (id)imageNamed:(id)arg1 scale:(float)arg2 idiom:(int)arg3 subtype:(unsigned int)arg4 cachingOptions:(unsigned int)arg5 sizeClassPair:(struct { int x1; int x2; })arg6 attachCatalogImage:(BOOL)arg7;
+- (id)imageNamed:(id)arg1 scale:(float)arg2 idiom:(int)arg3 subtype:(unsigned int)arg4;
 - (id)imageNamed:(id)arg1 withTrait:(id)arg2;
 - (id)imageNamed:(id)arg1;
-- (id)initWithName:(id)arg1 inBundle:(id)arg2 idiom:(long long)arg3;
+- (id)initWithName:(id)arg1 inBundle:(id)arg2 idiom:(int)arg3;
 - (id)nextAssetManager;
-- (double)preferredScale;
+- (float)preferredScale;
 - (id)preferredTraitCollection;
 - (id)runtimeCatalog;
 - (void)setNextAssetManager:(id)arg1;
-- (void)setPreferredScale:(double)arg1;
+- (void)setPreferredScale:(float)arg1;
 - (void)setPreferredTraitCollection:(id)arg1;
 
 @end

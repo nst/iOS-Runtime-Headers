@@ -10,8 +10,8 @@
 }
 
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithMotionEffect:(id)arg1 view:(id)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

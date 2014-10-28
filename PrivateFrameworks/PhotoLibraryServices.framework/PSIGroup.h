@@ -6,15 +6,15 @@
 
 @interface PSIGroup : PSIReusableObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct __CFArray { } *_assetIds;
     short _category;
     unsigned long long _compressedRanges[2];
     NSMutableString *_contentString;
     unsigned long long _groupId;
     unsigned long long _owningGroupId;
-    unsigned long long _tokenRangesCount;
+    unsigned int _tokenRangesCount;
     } _tokenRanges[8];
 }
 
@@ -24,20 +24,20 @@
 @property unsigned long long groupId;
 @property unsigned long long owningGroupId;
 
-+ (void)_getTokenRanges:(struct _NSRange { unsigned long long x1; unsigned long long x2; }[8])arg1 fromCompressedRanges:(unsigned long long[2])arg2;
++ (void)_getTokenRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }[8])arg1 fromCompressedRanges:(unsigned long long[2])arg2;
 + (void)getCompressedRanges:(unsigned long long[2])arg1 fromTokenRanges:(id)arg2;
 + (id)newTokenRangesFromCompressedRanges:(unsigned long long[2])arg1;
 
 - (struct __CFArray { }*)assetIds;
 - (short)category;
-- (long long)compareToGroup:(id)arg1;
+- (int)compareToGroup:(id)arg1;
 - (id)contentString;
 - (void)dealloc;
 - (id)description;
 - (unsigned long long)groupId;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned long long)owningGroupId;
 - (void)prepareForReuse;
 - (void)prepareFromStatement:(struct sqlite3_stmt { }*)arg1;
@@ -45,7 +45,7 @@
 - (void)setCategory:(short)arg1;
 - (void)setGroupId:(unsigned long long)arg1;
 - (void)setOwningGroupId:(unsigned long long)arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })tokenRangeAtIndex:(unsigned long long)arg1;
-- (unsigned long long)tokenRangesCount;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tokenRangeAtIndex:(unsigned int)arg1;
+- (unsigned int)tokenRangesCount;
 
 @end

@@ -33,6 +33,6 @@
 - (void)setToField:(id)arg1;
 - (void)setupSendButton;
 - (id)toField;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

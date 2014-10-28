@@ -12,15 +12,15 @@
     id _completionHandler;
     TSPData *_data;
     id _downloadObserver;
-    bool_isInternalObserver;
+    BOOL _isInternalObserver;
 }
 
-@property(readonly) bool isInternalObserver;
+@property(readonly) BOOL isInternalObserver;
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithDownloadObserver:(id)arg1 data:(id)arg2 isInternalObserver:(bool)arg3 completionHandler:(id)arg4;
-- (bool)isInternalObserver;
-- (void)postNotification:(long long)arg1;
+- (id)initWithDownloadObserver:(id)arg1 data:(id)arg2 isInternalObserver:(BOOL)arg3 completionHandler:(id)arg4;
+- (BOOL)isInternalObserver;
+- (void)postNotification:(int)arg1;
 
 @end

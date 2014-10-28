@@ -5,18 +5,18 @@
 @class UILabel, UITextView;
 
 @interface EKEventDetailNotesCell : EKEventDetailCell {
+    BOOL _isTruncatingNotes;
     UILabel *_notesTitleView;
     UITextView *_notesView;
-    bool_isTruncatingNotes;
 }
 
-@property(readonly) bool isTruncatingNotes;
+@property(readonly) BOOL isTruncatingNotes;
 
 - (void).cxx_destruct;
 - (id)_notesTitleView;
 - (id)_notesView;
-- (bool)isTruncatingNotes;
-- (void)layoutForWidth:(double)arg1 position:(int)arg2;
-- (bool)update;
+- (BOOL)isTruncatingNotes;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (BOOL)update;
 
 @end

@@ -15,7 +15,7 @@
 @property(readonly) VCVideoRule * limitingRule;
 
 - (unsigned int)bitrate;
-- (long long)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (int)connectionType;
 - (void)dealloc;
 - (id)description;

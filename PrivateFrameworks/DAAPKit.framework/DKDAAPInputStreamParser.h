@@ -14,7 +14,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSInputStream * inputStream;
 @property(readonly) Class superclass;
 
@@ -22,7 +22,7 @@
 - (id)initWithStream:(id)arg1;
 - (id)inputStream;
 - (void)parse;
-- (void)setFinished:(bool)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (void)setFinished:(BOOL)arg1;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 
 @end

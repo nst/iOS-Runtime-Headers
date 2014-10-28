@@ -10,7 +10,7 @@
 @property(copy) NSArray * attributes;
 @property(copy) NSURL * endpoint;
 @property(copy) NSData * rawRequest;
-@property long long timeoutInSeconds;
+@property int timeoutInSeconds;
 
 + (id)sendToProtobufConduit;
 + (id)sendToProtobufConduitWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,11 +20,11 @@
 - (id)endpoint;
 - (id)groupIdentifier;
 - (id)rawRequest;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAttributes:(id)arg1;
 - (void)setEndpoint:(id)arg1;
 - (void)setRawRequest:(id)arg1;
-- (void)setTimeoutInSeconds:(long long)arg1;
-- (long long)timeoutInSeconds;
+- (void)setTimeoutInSeconds:(int)arg1;
+- (int)timeoutInSeconds;
 
 @end

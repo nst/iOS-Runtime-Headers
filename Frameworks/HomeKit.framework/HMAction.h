@@ -6,12 +6,12 @@
 
 @interface HMAction : NSObject {
     HMActionSet *_actionSet;
-    unsigned long long _actionType;
+    unsigned int _actionType;
     NSUUID *_uuid;
 }
 
 @property HMActionSet * actionSet;
-@property unsigned long long actionType;
+@property unsigned int actionType;
 @property(retain) NSUUID * uuid;
 
 + (id)actionWithInfo:(id)arg1 home:(id)arg2;
@@ -19,13 +19,13 @@
 
 - (void).cxx_destruct;
 - (id)actionSet;
-- (unsigned long long)actionType;
+- (unsigned int)actionType;
 - (void)configure:(id)arg1 actionSet:(id)arg2;
-- (bool)handleUpdates:(id)arg1;
+- (BOOL)handleUpdates:(id)arg1;
 - (void)invalidate;
 - (id)serializeForAdd;
 - (void)setActionSet:(id)arg1;
-- (void)setActionType:(unsigned long long)arg1;
+- (void)setActionType:(unsigned int)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uuid;
 

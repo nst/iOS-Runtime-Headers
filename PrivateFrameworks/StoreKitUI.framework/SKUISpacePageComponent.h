@@ -3,13 +3,13 @@
  */
 
 @interface SKUISpacePageComponent : SKUIPageComponent {
-    double _height;
+    float _height;
 }
 
-@property(readonly) double height;
+@property(readonly) float height;
 
-- (long long)componentType;
-- (double)height;
+- (int)componentType;
+- (float)height;
 - (id)initWithCustomPageContext:(id)arg1;
 
 @end

@@ -5,21 +5,21 @@
 @class SKUIDownloadsCellView, UIImageView;
 
 @interface SKUIDownloadsCollectionViewCell : UICollectionViewCell {
-    long long _cellState;
+    int _cellState;
     SKUIDownloadsCellView *_cellView;
     UIImageView *_editIndicator;
 }
 
-@property long long cellState;
+@property int cellState;
 @property(readonly) SKUIDownloadsCellView * cellView;
 
 - (void).cxx_destruct;
 - (void)_reloadEditState;
-- (long long)cellState;
+- (int)cellState;
 - (id)cellView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setCellState:(long long)arg1;
-- (void)setSelected:(bool)arg1;
+- (void)setCellState:(int)arg1;
+- (void)setSelected:(BOOL)arg1;
 
 @end

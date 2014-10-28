@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
 @property(readonly) NSArray * exactMapItems;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSArray * refinedMapItems;
 @property(readonly) Class superclass;
 @property(readonly) GEOMapServiceTraits * traits;
@@ -32,10 +32,10 @@
 - (id)refinedMapItems;
 - (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
 - (void)submitWithHandler:(id)arg1 queue:(id)arg2 networkActivity:(id)arg3;
-- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
-- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 queue:(id)arg3 networkActivity:(id)arg4;
+- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 queue:(id)arg3 networkActivity:(id)arg4;
 - (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithRefinedHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
 - (id)traits;
 
 @end

@@ -7,58 +7,58 @@
 @interface CAMBlurredSnapshotView : UIView {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     UIView *__dimmingView;
     UIView *__lowQualityBlurView;
+    BOOL __supportsBlur;
+    BOOL _blurred;
+    BOOL _dimmed;
     UIView *_snapshotView;
-    long long _style;
+    int _style;
     } _targetFrame;
-    bool__supportsBlur;
-    bool_blurred;
-    bool_dimmed;
 }
 
 @property(readonly) UIView * _dimmingView;
 @property(readonly) UIView * _lowQualityBlurView;
-@property(readonly) bool _supportsBlur;
-@property bool blurred;
-@property bool dimmed;
+@property(readonly) BOOL _supportsBlur;
+@property BOOL blurred;
+@property BOOL dimmed;
 @property(readonly) UIView * snapshotView;
-@property long long style;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } targetFrame;
+@property int style;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetFrame;
 
 - (void).cxx_destruct;
-- (void)_applyLowQualityBlurAnimated:(bool)arg1 withCompletionBlock:(id)arg2;
-- (void)_applySnapshotBlurAnimated:(bool)arg1 withCompletionBlock:(id)arg2;
-- (void)_applySnapshotDimAnimated:(bool)arg1 withCompletionBlock:(id)arg2;
+- (void)_applyLowQualityBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (void)_applySnapshotBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (void)_applySnapshotDimAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (id)_dimmingView;
 - (id)_lowQualityBlurView;
-- (void)_prepareForApplyingBlurAnimation:(bool)arg1 inputRadiusAmount:(double*)arg2 inputRadiusDuration:(double*)arg3 inputRadiusDelay:(double*)arg4 inputRadiusTimingFunction:(id*)arg5 opacityAmount:(double*)arg6 opacityDuration:(double*)arg7 opacityDelay:(double*)arg8 opacityTimingFunction:(id*)arg9;
-- (void)_prepareForApplyingLowQualityBlurAnimation:(bool)arg1 opacityAmount:(double*)arg2 opacityDuration:(double*)arg3 opacityDelay:(double*)arg4 opacityTimingFunction:(id*)arg5 targetView:(id*)arg6;
-- (void)_removeLowQualityBlurAnimated:(bool)arg1 withCompletionBlock:(id)arg2;
-- (void)_removeSnapshotBlurAnimated:(bool)arg1 withCompletionBlock:(id)arg2;
-- (void)_removeSnapshotDimAnimated:(bool)arg1 withCompletionBlock:(id)arg2;
+- (void)_prepareForApplyingBlurAnimation:(BOOL)arg1 inputRadiusAmount:(float*)arg2 inputRadiusDuration:(double*)arg3 inputRadiusDelay:(double*)arg4 inputRadiusTimingFunction:(id*)arg5 opacityAmount:(float*)arg6 opacityDuration:(double*)arg7 opacityDelay:(double*)arg8 opacityTimingFunction:(id*)arg9;
+- (void)_prepareForApplyingLowQualityBlurAnimation:(BOOL)arg1 opacityAmount:(float*)arg2 opacityDuration:(double*)arg3 opacityDelay:(double*)arg4 opacityTimingFunction:(id*)arg5 targetView:(id*)arg6;
+- (void)_removeLowQualityBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (void)_removeSnapshotBlurAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (void)_removeSnapshotDimAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (void)_setupBlurOnSnapshot;
 - (void)_setupDimOnSnapshot;
 - (void)_setupLowQualityBlurOnSnapshot;
-- (bool)_supportsBlur;
-- (bool)blurred;
-- (bool)dimmed;
+- (BOOL)_supportsBlur;
+- (BOOL)blurred;
+- (BOOL)dimmed;
 - (id)initWithView:(id)arg1;
-- (void)setBlurred:(bool)arg1 animated:(bool)arg2 withCompletionBlock:(id)arg3;
-- (void)setBlurred:(bool)arg1;
-- (void)setDimmed:(bool)arg1 animated:(bool)arg2 withCompletionBlock:(id)arg3;
-- (void)setDimmed:(bool)arg1;
-- (void)setStyle:(long long)arg1;
-- (void)setTargetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBlurred:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id)arg3;
+- (void)setBlurred:(BOOL)arg1;
+- (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id)arg3;
+- (void)setDimmed:(BOOL)arg1;
+- (void)setStyle:(int)arg1;
+- (void)setTargetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)snapshotView;
-- (long long)style;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetFrame;
+- (int)style;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetFrame;
 
 @end

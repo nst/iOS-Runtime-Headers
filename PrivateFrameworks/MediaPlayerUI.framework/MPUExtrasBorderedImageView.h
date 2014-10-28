@@ -6,39 +6,39 @@
 
 @interface MPUExtrasBorderedImageView : UIImageView {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     } _deferredTransform;
-    bool_shouldDeferSettingTransform;
-    bool_shouldSkipImageWhenReplicatingState;
-    bool_shouldUseTransformWhenReplicatingState;
+    BOOL _shouldDeferSettingTransform;
+    BOOL _shouldSkipImageWhenReplicatingState;
+    BOOL _shouldUseTransformWhenReplicatingState;
 }
 
 @property(copy) UIColor * borderColor;
-@property double borderWidth;
-@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } deferredTransform;
-@property bool shouldDeferSettingTransform;
-@property bool shouldSkipImageWhenReplicatingState;
-@property bool shouldUseTransformWhenReplicatingState;
+@property float borderWidth;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } deferredTransform;
+@property BOOL shouldDeferSettingTransform;
+@property BOOL shouldSkipImageWhenReplicatingState;
+@property BOOL shouldUseTransformWhenReplicatingState;
 
-- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)borderColor;
-- (double)borderWidth;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })deferredTransform;
+- (float)borderWidth;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })deferredTransform;
 - (void)replicateStateFromImageView:(id)arg1;
 - (void)setBorderColor:(id)arg1;
-- (void)setBorderWidth:(double)arg1;
-- (void)setDeferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (void)setShouldDeferSettingTransform:(bool)arg1;
-- (void)setShouldSkipImageWhenReplicatingState:(bool)arg1;
-- (void)setShouldUseTransformWhenReplicatingState:(bool)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (bool)shouldDeferSettingTransform;
-- (bool)shouldSkipImageWhenReplicatingState;
-- (bool)shouldUseTransformWhenReplicatingState;
+- (void)setBorderWidth:(float)arg1;
+- (void)setDeferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setShouldDeferSettingTransform:(BOOL)arg1;
+- (void)setShouldSkipImageWhenReplicatingState:(BOOL)arg1;
+- (void)setShouldUseTransformWhenReplicatingState:(BOOL)arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (BOOL)shouldDeferSettingTransform;
+- (BOOL)shouldSkipImageWhenReplicatingState;
+- (BOOL)shouldUseTransformWhenReplicatingState;
 
 @end

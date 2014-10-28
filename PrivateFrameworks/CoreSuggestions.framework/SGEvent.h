@@ -10,6 +10,7 @@
     NSTimeZone *_endTimeZone;
     NSObject<OS_dispatch_queue> *_geocodeQueue;
     SGEvent *_geocoded;
+    BOOL _isAllDay;
     NSDate *_lastModifiedDate;
     NSArray *_locations;
     NSString *_messageId;
@@ -19,14 +20,13 @@
     NSTimeZone *_startTimeZone;
     NSArray *_tags;
     NSString *_title;
-    bool_isAllDay;
 }
 
 @property(readonly) NSDate * creationDate;
 @property(readonly) NSDate * end;
 @property(readonly) NSTimeZone * endTimeZone;
-@property(getter=isGeocodeCandidate,readonly) bool geocodeCandidate;
-@property(readonly) bool isAllDay;
+@property(getter=isGeocodeCandidate,readonly) BOOL geocodeCandidate;
+@property(readonly) BOOL isAllDay;
 @property(readonly) NSDate * lastModifiedDate;
 @property(readonly) NSArray * locations;
 @property(readonly) NSString * messageId;
@@ -37,8 +37,8 @@
 @property(readonly) NSArray * tags;
 @property(readonly) NSString * title;
 
-+ (id)eventWithOpaqueKey:(id)arg1 title:(id)arg2 notes:(id)arg3 start:(id)arg4 startTimeZone:(id)arg5 end:(id)arg6 endTimeZone:(id)arg7 isAllDay:(bool)arg8 creationDate:(id)arg9 lastModifiedDate:(id)arg10 locations:(id)arg11 tags:(id)arg12 messageId:(id)arg13;
-+ (bool)supportsSecureCoding;
++ (id)eventWithOpaqueKey:(id)arg1 title:(id)arg2 notes:(id)arg3 start:(id)arg4 startTimeZone:(id)arg5 end:(id)arg6 endTimeZone:(id)arg7 isAllDay:(BOOL)arg8 creationDate:(id)arg9 lastModifiedDate:(id)arg10 locations:(id)arg11 tags:(id)arg12 messageId:(id)arg13;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -48,17 +48,17 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)end;
 - (id)endTimeZone;
-- (id)firstLocationForType:(unsigned long long)arg1;
+- (id)firstLocationForType:(unsigned int)arg1;
 - (void)geocodeLocation:(id)arg1 withCallback:(id)arg2;
 - (void)geocodeWithCallback:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOpaqueKey:(id)arg1 messageId:(id)arg2 title:(id)arg3 notes:(id)arg4 start:(id)arg5 startTimeZone:(id)arg6 end:(id)arg7 endTimeZone:(id)arg8 isAllDay:(bool)arg9 creationDate:(id)arg10 lastModifiedDate:(id)arg11 locations:(id)arg12 tags:(id)arg13;
-- (bool)isAllDay;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToEvent:(id)arg1;
-- (bool)isGeocodeCandidate;
-- (bool)isGeocodeCandidateLocation:(id)arg1;
+- (id)initWithOpaqueKey:(id)arg1 messageId:(id)arg2 title:(id)arg3 notes:(id)arg4 start:(id)arg5 startTimeZone:(id)arg6 end:(id)arg7 endTimeZone:(id)arg8 isAllDay:(BOOL)arg9 creationDate:(id)arg10 lastModifiedDate:(id)arg11 locations:(id)arg12 tags:(id)arg13;
+- (BOOL)isAllDay;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToEvent:(id)arg1;
+- (BOOL)isGeocodeCandidate;
+- (BOOL)isGeocodeCandidateLocation:(id)arg1;
 - (id)lastModifiedDate;
 - (id)locations;
 - (void)mergeIntoEKEvent:(id)arg1;

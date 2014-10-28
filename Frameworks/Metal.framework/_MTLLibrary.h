@@ -22,7 +22,7 @@
 @property(readonly) <MTLDevice> * device;
 @property NSMutableDictionary * functionDictionary;
 @property(readonly) NSArray * functionNames;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * label;
 @property(readonly) struct MTLLibraryData { int (**x1)(); int x2; id x3; }* libraryData;
 @property(readonly) Class superclass;

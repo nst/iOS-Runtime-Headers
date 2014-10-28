@@ -17,7 +17,7 @@
 @property(retain) NSMutableDictionary * data;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(retain) NSMutableDictionary * responses;
 @property(retain) NSURLSession * session;

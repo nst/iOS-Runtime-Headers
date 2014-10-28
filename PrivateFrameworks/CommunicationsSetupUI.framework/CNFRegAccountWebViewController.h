@@ -6,19 +6,19 @@
 
 @interface CNFRegAccountWebViewController : CNFRegServerWebViewController <UIAlertViewDelegate> {
     NSTimer *_bagLoadTimer;
-    bool_failedBagLoad;
-    bool_listeningForBagLoad;
+    BOOL _failedBagLoad;
+    BOOL _listeningForBagLoad;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool failedBagLoad;
-@property(readonly) unsigned long long hash;
+@property BOOL failedBagLoad;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_bagLoadTimeout:(id)arg1;
 - (void)_handleFTServerBagFinishedLoading;
-- (bool)_loadURLFromBag;
+- (BOOL)_loadURLFromBag;
 - (id)_nonModalParentController;
 - (void)_reload;
 - (void)_reloadDelayed;
@@ -31,17 +31,17 @@
 - (void)_stopListeningForBagLoad;
 - (id)_viewPortForFormSheetPresentation;
 - (id)_viewPortForNormalPresentation;
-- (id)_viewPortStringForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_viewPortStringForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)authIdHeaderValue;
 - (id)authTokenHeaderValue;
 - (id)bagKey;
-- (bool)canSendURLRequest:(id)arg1;
+- (BOOL)canSendURLRequest:(id)arg1;
 - (void)cancelTapped;
 - (id)clientInfoHeaderValue;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)dealloc;
 - (void)doHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
-- (bool)failedBagLoad;
+- (BOOL)failedBagLoad;
 - (id)initWithRegController:(id)arg1;
 - (id)interfaceLayoutHeaderValue;
 - (void)loadView;
@@ -50,13 +50,13 @@
 - (void)receivedStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (id)securityHeaderValue;
 - (id)serviceHeaderValue;
-- (void)setFailedBagLoad:(bool)arg1;
+- (void)setFailedBagLoad:(BOOL)arg1;
 - (void)setHeadersForRequest:(id)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (bool)shouldSetHeadersForRequest:(id)arg1;
-- (void)viewDidAppear:(bool)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldSetHeadersForRequest:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)viewPortHeaderValue;
-- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface OADFooterField : OADTextField {
 }
 
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 
 @end

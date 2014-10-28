@@ -5,7 +5,7 @@
 @interface KNBuildUtility : NSObject {
 }
 
-+ (bool)animationInfo:(id)arg1 onInfo:(id)arg2 canRunSimultaneouslyWithAnimationInfo:(id)arg3 onInfo:(id)arg4;
++ (BOOL)animationInfo:(id)arg1 onInfo:(id)arg2 canRunSimultaneouslyWithAnimationInfo:(id)arg3 onInfo:(id)arg4;
 + (int)animationTypeForBuildChunks:(id)arg1;
 + (id)buildsForChunks:(id)arg1;
 + (id)chunksForInfos:(id)arg1;

@@ -17,30 +17,30 @@
     MPAVRoutingViewController *_routingViewController;
 }
 
-@property(setter=setAVItemType:) unsigned long long avItemType;
+@property(setter=setAVItemType:) unsigned int avItemType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_animateControls:(bool)arg1 withCompletionHandler:(id)arg2;
+- (void)_animateControls:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)_cancelButtonAction:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_cancelButtonFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_controlsViewFrame;
-- (struct CGSize { double x1; double x2; })_maxRoutingViewSize;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_routingViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cancelButtonFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_controlsViewFrame;
+- (struct CGSize { float x1; float x2; })_maxRoutingViewSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_routingViewFrame;
 - (void)_updateRoutingSheetFrame;
-- (unsigned long long)avItemType;
+- (unsigned int)avItemType;
 - (void)dealloc;
 - (void)dismiss;
-- (id)initWithAVItemType:(unsigned long long)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithAVItemType:(unsigned int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
 - (void)routingViewControllerDidShowAirPlayDebugScreen:(id)arg1;
 - (void)routingViewControllerDidUpdateContents:(id)arg1;
-- (void)setAVItemType:(unsigned long long)arg1;
+- (void)setAVItemType:(unsigned int)arg1;
 - (void)showInView:(id)arg1 withCompletionHandler:(id)arg2;
 
 @end

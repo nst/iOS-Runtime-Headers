@@ -8,26 +8,26 @@
 }
 
 @property double execTime;
-@property bool forTesting;
-@property(getter=_lifecycleActionType,setter=_setLifecycleActionType:) unsigned long long lifecycleActionType;
+@property BOOL forTesting;
+@property(getter=_lifecycleActionType,setter=_setLifecycleActionType:) unsigned int lifecycleActionType;
 @property(retain) NSDictionary * payload;
-@property bool safeMode;
+@property BOOL safeMode;
 @property double userLaunchEventTime;
 
-- (unsigned long long)_lifecycleActionType;
-- (void)_setLifecycleActionType:(unsigned long long)arg1;
+- (unsigned int)_lifecycleActionType;
+- (void)_setLifecycleActionType:(unsigned int)arg1;
 - (double)execTime;
-- (bool)forTesting;
-- (bool)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (BOOL)forTesting;
+- (BOOL)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)payload;
-- (bool)safeMode;
+- (BOOL)safeMode;
 - (void)setExecTime:(double)arg1;
-- (void)setForTesting:(bool)arg1;
+- (void)setForTesting:(BOOL)arg1;
 - (void)setPayload:(id)arg1;
-- (void)setSafeMode:(bool)arg1;
+- (void)setSafeMode:(BOOL)arg1;
 - (void)setUserLaunchEventTime:(double)arg1;
 - (double)userLaunchEventTime;
-- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

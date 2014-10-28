@@ -10,13 +10,13 @@
 
 @property(readonly) NSArray * events;
 @property(readonly) NSData * extendedLogData;
-@property(readonly) unsigned long long extendedLogDataStringEncoding;
+@property(readonly) unsigned int extendedLogDataStringEncoding;
 
 - (void).cxx_destruct;
 - (id)_initWithAVItemErrorLog:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)events;
 - (id)extendedLogData;
-- (unsigned long long)extendedLogDataStringEncoding;
+- (unsigned int)extendedLogDataStringEncoding;
 
 @end

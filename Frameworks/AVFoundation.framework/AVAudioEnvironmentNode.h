@@ -10,11 +10,11 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) AVAudioEnvironmentDistanceAttenuationParameters * distanceAttenuationParameters;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property struct AVAudio3DAngularOrientation { float x1; float x2; float x3; } listenerAngularOrientation;
 @property struct AVAudio3DPoint { float x1; float x2; float x3; } listenerPosition;
 @property struct AVAudio3DVectorOrientation { struct AVAudio3DPoint { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct AVAudio3DPoint { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } listenerVectorOrientation;
-@property(readonly) unsigned long long nextAvailableInputBus;
+@property(readonly) unsigned int nextAvailableInputBus;
 @property float outputVolume;
 @property(readonly) AVAudioEnvironmentReverbParameters * reverbParameters;
 @property(readonly) Class superclass;
@@ -26,7 +26,7 @@
 - (struct AVAudio3DAngularOrientation { float x1; float x2; float x3; })listenerAngularOrientation;
 - (struct AVAudio3DPoint { float x1; float x2; float x3; })listenerPosition;
 - (struct AVAudio3DVectorOrientation { struct AVAudio3DPoint { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct AVAudio3DPoint { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })listenerVectorOrientation;
-- (unsigned long long)nextAvailableInputBus;
+- (unsigned int)nextAvailableInputBus;
 - (float)outputVolume;
 - (id)reverbParameters;
 - (void)setListenerAngularOrientation:(struct AVAudio3DAngularOrientation { float x1; float x2; float x3; })arg1;

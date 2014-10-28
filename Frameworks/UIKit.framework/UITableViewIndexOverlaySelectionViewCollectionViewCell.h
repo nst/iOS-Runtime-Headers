@@ -6,29 +6,29 @@
 
 @interface UITableViewIndexOverlaySelectionViewCollectionViewCell : UICollectionViewCell {
     UIButton *_button;
-    double _rightMargin;
+    float _rightMargin;
+    BOOL _rightMarginAdjusted;
     SEL _tapAction;
     id _tapTarget;
-    bool_rightMarginAdjusted;
 }
 
 @property(readonly) UIButton * button;
 @property(readonly) UILabel * label;
-@property double rightMargin;
+@property float rightMargin;
 @property(copy) NSString * text;
-@property long long textAlignment;
+@property int textAlignment;
 
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)button;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)label;
 - (void)layoutSubviews;
-- (double)rightMargin;
-- (void)setRightMargin:(double)arg1;
+- (float)rightMargin;
+- (void)setRightMargin:(float)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(long long)arg1;
+- (void)setTextAlignment:(int)arg1;
 - (id)text;
-- (long long)textAlignment;
+- (int)textAlignment;
 
 @end

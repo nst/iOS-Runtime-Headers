@@ -26,24 +26,24 @@
 + (unsigned int)newBatchAllocation:(id*)arg1 count:(unsigned int)arg2 withOwnedObjectIDs:(id*)arg3;
 
 - (id)_descriptionValues;
-- (bool)_isDeallocating;
+- (BOOL)_isDeallocating;
 - (id)_snapshot_;
-- (bool)_tryRetain;
+- (BOOL)_tryRetain;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)entity;
 - (void)finalize;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithObjectID:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)mutableCopy;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectID;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
 

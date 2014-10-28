@@ -5,6 +5,6 @@
 @interface __NSCFLocalUploadTask : __NSCFLocalDataTask {
 }
 
-- (bool)isKindOfClass:(Class)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
 
 @end

@@ -19,6 +19,6 @@
 - (void)dealloc;
 - (id)initWithGift:(id)arg1 configuration:(id)arg2;
 - (void)loadView;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

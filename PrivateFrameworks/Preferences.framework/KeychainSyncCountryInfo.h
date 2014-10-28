@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dialingPrefix;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)localizedCountryName;
 - (void)setCountryCode:(id)arg1;
 - (void)setCountryName:(id)arg1;

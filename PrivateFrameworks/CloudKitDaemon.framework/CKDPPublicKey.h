@@ -10,9 +10,9 @@
     CKDPIdentifier *_userId;
 }
 
-@property(readonly) bool hasKeyData;
-@property(readonly) bool hasKeyHash;
-@property(readonly) bool hasUserId;
+@property(readonly) BOOL hasKeyData;
+@property(readonly) BOOL hasKeyHash;
+@property(readonly) BOOL hasUserId;
 @property(retain) NSData * keyData;
 @property(retain) NSString * keyHash;
 @property(retain) CKDPIdentifier * userId;
@@ -22,15 +22,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasKeyData;
-- (bool)hasKeyHash;
-- (bool)hasUserId;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasKeyData;
+- (BOOL)hasKeyHash;
+- (BOOL)hasUserId;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)keyData;
 - (id)keyHash;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setKeyData:(id)arg1;
 - (void)setKeyHash:(id)arg1;
 - (void)setUserId:(id)arg1;

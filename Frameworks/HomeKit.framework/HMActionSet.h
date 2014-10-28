@@ -6,6 +6,7 @@
 
 @interface HMActionSet : NSObject <HMMessageReceiver, NSSecureCoding> {
     NSMutableArray *_currentActions;
+    BOOL _executing;
     HMHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
@@ -13,15 +14,14 @@
     NSMutableDictionary *_pendingRequests;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool_executing;
 }
 
 @property(copy,readonly) NSSet * actions;
 @property(retain) NSMutableArray * currentActions;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isExecuting,readonly) bool executing;
-@property(readonly) unsigned long long hash;
+@property(getter=isExecuting,readonly) BOOL executing;
+@property(readonly) unsigned int hash;
 @property HMHome * home;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
 @property(readonly) NSUUID * messageTargetUUID;
@@ -33,7 +33,7 @@
 @property(retain) NSUUID * uuid;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_registerNotificationHandlers;
@@ -51,7 +51,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (void)invalidate;
-- (bool)isExecuting;
+- (BOOL)isExecuting;
 - (id)lookupActionWithInfo:(id)arg1;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;

@@ -8,7 +8,10 @@
     NSMutableDictionary *_caches;
 }
 
++ (void)setDiskCachePath:(id)arg1;
+
 - (id)allCacheEntries;
+- (id)allCaches;
 - (id)cacheForProviderID:(int)arg1;
 - (void)calculateFreeableSpaceWithHandler:(id)arg1;
 - (void)dealloc;

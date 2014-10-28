@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void)_loadPreviewItemInfos;
@@ -26,6 +26,6 @@
 - (void)setError:(id)arg1;
 - (void)setupAirPlayView;
 - (id)subtitleWithDescription:(id)arg1 fileSize:(unsigned long long)arg2;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

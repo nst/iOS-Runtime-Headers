@@ -10,8 +10,8 @@
 
 @property(readonly) NSData * artworkData;
 @property(readonly) NSString * identifier;
-@property(readonly) bool isContainer;
-@property(readonly) bool isPlayable;
+@property(readonly) BOOL isContainer;
+@property(readonly) BOOL isPlayable;
 @property(readonly) float playbackProgress;
 @property(readonly) NSString * subtitle;
 @property(readonly) NSString * title;
@@ -20,8 +20,8 @@
 - (void)dealloc;
 - (id)identifier;
 - (id)initWithMRContentItem:(struct _MRContentItem { }*)arg1;
-- (bool)isContainer;
-- (bool)isPlayable;
+- (BOOL)isContainer;
+- (BOOL)isPlayable;
 - (float)playbackProgress;
 - (id)subtitle;
 - (id)title;

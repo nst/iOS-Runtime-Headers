@@ -12,22 +12,22 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <MSSearchDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned long long)arg3 delegate:(id)arg4;
-+ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(bool)arg3 onServer:(bool)arg4 delegate:(id)arg5;
-+ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(bool)arg3 onServer:(bool)arg4 onlyInboxes:(bool)arg5 delegate:(id)arg6;
++ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned int)arg3 delegate:(id)arg4;
++ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 delegate:(id)arg5;
++ (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 onlyInboxes:(BOOL)arg5 delegate:(id)arg6;
 + (void)setUnitTestingResultsArray:(id)arg1;
 
 - (void)_delegateDidFindResults:(id)arg1;
 - (void)_delegateDidFinishWithError:(id)arg1;
-- (void)_findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned long long)arg3;
+- (void)_findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned int)arg3;
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;
 - (id)_initWithDelegate:(id)arg1;
 - (id)_remoteObjectProxyWithErrorHandler:(id)arg1;
-- (bool)_unitTestsAreEnabled;
+- (BOOL)_unitTestsAreEnabled;
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;

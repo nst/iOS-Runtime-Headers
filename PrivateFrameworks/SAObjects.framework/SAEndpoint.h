@@ -9,11 +9,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSDictionary * operations;
 @property(copy) NSString * providerId;
 @property(readonly) Class superclass;
-@property bool supportsAuthentication;
+@property BOOL supportsAuthentication;
 
 + (id)endpoint;
 + (id)endpointWithDictionary:(id)arg1 context:(id)arg2;
@@ -24,7 +24,7 @@
 - (id)providerId;
 - (void)setOperations:(id)arg1;
 - (void)setProviderId:(id)arg1;
-- (void)setSupportsAuthentication:(bool)arg1;
-- (bool)supportsAuthentication;
+- (void)setSupportsAuthentication:(BOOL)arg1;
+- (BOOL)supportsAuthentication;
 
 @end

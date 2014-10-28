@@ -10,28 +10,28 @@
 
 @interface DKDAAPElementParser : DKDAAPDataParser <DKDAAPParserDelegate> {
     id _completionHandler;
+    BOOL _copyElementData;
     DKDAAPElement *_curContainerElement;
     NSError *_parseError;
     DKDAAPElement *_rootElement;
-    bool_copyElementData;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_finishParserWithError:(id)arg1;
-- (id)initWithData:(id)arg1 copyElementData:(bool)arg2;
+- (id)initWithData:(id)arg1 copyElementData:(BOOL)arg2;
 - (id)parseElementDataWithError:(id*)arg1;
 - (void)parseWithCompletionHandler:(id)arg1;
 - (void)parser:(id)arg1 didEndContainerCode:(unsigned int)arg2;
 - (void)parser:(id)arg1 didFailWithError:(id)arg2;
 - (void)parser:(id)arg1 didParseDataCode:(unsigned int)arg2 bytes:(char *)arg3 contentLength:(unsigned int)arg4;
 - (void)parser:(id)arg1 didStartContainerCode:(unsigned int)arg2 contentLength:(unsigned int)arg3;
-- (bool)parser:(id)arg1 shouldParseCode:(unsigned int)arg2;
-- (bool)parser:(id)arg1 shouldParseCodeAsContainer:(unsigned int)arg2;
+- (BOOL)parser:(id)arg1 shouldParseCode:(unsigned int)arg2;
+- (BOOL)parser:(id)arg1 shouldParseCodeAsContainer:(unsigned int)arg2;
 - (void)parserDidCancel:(id)arg1;
 - (void)parserDidFinish:(id)arg1;
 

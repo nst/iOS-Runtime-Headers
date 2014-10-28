@@ -9,14 +9,14 @@
     NSArray *_exposureValues;
     NSArray *_manualExposureBracketedCaptureParams;
     NSDictionary *_oisBracketedCaptureParams;
-    bool_providePreBracketedEV0;
+    BOOL _providePreBracketedEV0;
 }
 
 @property(copy) NSDictionary * bracketedCaptureOverrides;
 @property(copy) NSArray * exposureValues;
 @property(copy) NSArray * manualExposureBracketedCaptureParams;
 @property(copy) NSDictionary * oisBracketedCaptureParams;
-@property bool providePreBracketedEV0;
+@property BOOL providePreBracketedEV0;
 
 + (id)bracketSettings;
 
@@ -25,11 +25,11 @@
 - (id)exposureValues;
 - (id)manualExposureBracketedCaptureParams;
 - (id)oisBracketedCaptureParams;
-- (bool)providePreBracketedEV0;
+- (BOOL)providePreBracketedEV0;
 - (void)setBracketedCaptureOverrides:(id)arg1;
 - (void)setExposureValues:(id)arg1;
 - (void)setManualExposureBracketedCaptureParams:(id)arg1;
 - (void)setOisBracketedCaptureParams:(id)arg1;
-- (void)setProvidePreBracketedEV0:(bool)arg1;
+- (void)setProvidePreBracketedEV0:(BOOL)arg1;
 
 @end

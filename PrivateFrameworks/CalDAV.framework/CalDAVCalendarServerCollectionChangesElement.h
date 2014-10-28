@@ -3,25 +3,25 @@
  */
 
 @interface CalDAVCalendarServerCollectionChangesElement : CalDAVCalendarServerResourceChangeElement {
-    long long _created;
-    long long _deleted;
-    long long _updated;
+    int _created;
+    int _deleted;
+    int _updated;
 }
 
-@property long long created;
-@property long long deleted;
-@property long long updated;
+@property int created;
+@property int deleted;
+@property int updated;
 
 - (id)copyParseRules;
-- (long long)created;
-- (long long)deleted;
+- (int)created;
+- (int)deleted;
 - (id)init;
-- (void)setCreated:(long long)arg1;
+- (void)setCreated:(int)arg1;
 - (void)setCreatedItem:(id)arg1;
-- (void)setDeleted:(long long)arg1;
+- (void)setDeleted:(int)arg1;
 - (void)setDeletedItem:(id)arg1;
-- (void)setUpdated:(long long)arg1;
+- (void)setUpdated:(int)arg1;
 - (void)setUpdatedItem:(id)arg1;
-- (long long)updated;
+- (int)updated;
 
 @end

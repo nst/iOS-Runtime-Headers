@@ -9,12 +9,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)initFromUnarchiver:(id)arg1;
 - (id)objectToArchiveInDependencyTracker;
-- (bool)registerLast;
+- (BOOL)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)unregisterFromCalculationEngine:(id)arg1;

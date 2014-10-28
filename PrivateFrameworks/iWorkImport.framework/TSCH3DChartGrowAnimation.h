@@ -13,9 +13,9 @@
 - (void)addToElementPlaneTimings:(id)arg1;
 - (void)addToElementTimings:(id)arg1;
 - (id)globalTimingInterpolation;
-- (bool)individualValueLabels;
+- (BOOL)individualValueLabels;
 - (id)makeDelegateWithScene:(id)arg1;
-- (bool)needDynamicShadows;
+- (BOOL)needDynamicShadows;
 - (void)updateTimeRanges;
 
 @end

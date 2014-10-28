@@ -6,36 +6,36 @@
 
 @interface SGPipelineEntity : SGEntity {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     struct { 
         struct { 
             unsigned short bom; 
             unsigned short tag; 
         } _featureType; 
-        boolhasInhumanHeaders; 
-        boolinhumanEmailAddress; 
-        boolinhumanAuthorName; 
-        boolinhumanBody; 
-        boolisTemplate; 
+        BOOL hasInhumanHeaders; 
+        BOOL inhumanEmailAddress; 
+        BOOL inhumanAuthorName; 
+        BOOL inhumanBody; 
+        BOOL isTemplate; 
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     struct __DDResult { } *_dataDetectorsSignature;
     NSMutableDictionary *_emailToCanonicalEmailCache;
     NSMutableArray *_enrichments;
+    BOOL _fullDownloadRequested;
     NSArray *_headers;
-    unsigned long long *_htmlOffsets;
+    unsigned int *_htmlOffsets;
     } _inhumanFeatures;
     NSString *_plainTextContentCache;
+    BOOL _plainTextContentCacheGenerated;
     } _plainTextContentCacheLock;
     NSArray *_plainTextDetectedData;
     NSArray *_plainTextLines;
     NSIndexSet *_plainTextQuotedRegions;
     } _plainTextSigRange;
     NSIndexSet *_plainTextTabularRegions;
-    bool_fullDownloadRequested;
-    bool_plainTextContentCacheGenerated;
 }
 
 @property(readonly) NSArray * addresses;
@@ -44,21 +44,21 @@
 @property(readonly) NSArray * emailAddresses;
 @property(readonly) NSMutableDictionary * emailToCanonicalEmailCache;
 @property(readonly) NSArray * enrichments;
-@property(getter=hasFullDownloadBeenRequested,readonly) bool fullDownloadRequested;
+@property(getter=hasFullDownloadBeenRequested,readonly) BOOL fullDownloadRequested;
 @property(readonly) NSArray * headers;
-@property(readonly) unsigned long long* htmlOffsets;
-@property(readonly) struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; boolx2; boolx3; boolx4; boolx5; boolx6; }* inhumanFeatures;
+@property(readonly) unsigned int* htmlOffsets;
+@property(readonly) struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; }* inhumanFeatures;
 @property(readonly) NSArray * phoneNumbers;
 @property(readonly) NSString * plainTextContent;
 @property(retain) NSArray * plainTextDetectedData;
 @property(readonly) NSArray * plainTextLines;
 @property(retain) NSIndexSet * plainTextQuotedRegions;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } plainTextSigRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } plainTextSigRange;
 @property(retain) NSIndexSet * plainTextTabularRegions;
 
-+ (id)address:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(bool)arg4 context:(id)arg5;
-+ (id)emailAddress:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(bool)arg4 context:(id)arg5;
-+ (id)phoneNumber:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(bool)arg4 context:(id)arg5;
++ (id)address:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
++ (id)emailAddress:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
++ (id)phoneNumber:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
 
 - (void).cxx_destruct;
 - (void)addCuratedEmailAddress:(id)arg1;
@@ -73,9 +73,9 @@
 - (void)addParticipants:(id)arg1 type:(unsigned int)arg2;
 - (id)addresses;
 - (id)authorEmail;
-- (void)chopOffContentAfterIndex:(unsigned long long)arg1;
-- (void)chopOffContentBeforeIndex:(unsigned long long)arg1;
-- (id)contactDetailsWithType:(unsigned long long)arg1;
+- (void)chopOffContentAfterIndex:(unsigned int)arg1;
+- (void)chopOffContentBeforeIndex:(unsigned int)arg1;
+- (id)contactDetailsWithType:(unsigned int)arg1;
 - (struct __DDResult { }*)dataDetectorsSignature;
 - (void)dealloc;
 - (id)debugRegions;
@@ -85,13 +85,13 @@
 - (id)enrichments;
 - (void)enumeratePeople:(id)arg1;
 - (void)enumeratePlainTextLines:(id)arg1;
-- (bool)hasFullDownloadBeenRequested;
+- (BOOL)hasFullDownloadBeenRequested;
 - (id)headers;
-- (unsigned long long*)htmlOffsets;
-- (struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; boolx2; boolx3; boolx4; boolx5; boolx6; }*)inhumanFeatures;
+- (unsigned int*)htmlOffsets;
+- (struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; }*)inhumanFeatures;
 - (id)init;
 - (id)initPrivately;
-- (id)initWithContactDetailWithKey:(id)arg1 type:(unsigned long long)arg2 curated:(bool)arg3 parent:(id)arg4 value:(id)arg5 context:(id)arg6;
+- (id)initWithContactDetailWithKey:(id)arg1 type:(unsigned int)arg2 curated:(BOOL)arg3 parent:(id)arg4 value:(id)arg5 context:(id)arg6;
 - (id)initWithCuratedContactWithABRecordID:(int)arg1 sourceKey:(id)arg2 name:(id)arg3 creationTimestamp:(id)arg4 lastModifiedTimestamp:(id)arg5 emailAddresses:(id)arg6 phoneNumbers:(id)arg7 postalAddresses:(id)arg8;
 - (id)initWithDuplicateKey:(id)arg1 title:(id)arg2 parent:(id)arg3;
 - (id)initWithDuplicateKey:(id)arg1 title:(id)arg2;
@@ -99,21 +99,21 @@
 - (id)initWithParent:(id)arg1;
 - (id)initWithPseudoContactWithKey:(id)arg1 parent:(id)arg2 name:(id)arg3;
 - (id)initWithSimpleCalendarEvent:(id)arg1 fromSource:(id)arg2;
-- (bool)isInhuman;
-- (bool)isPerson;
+- (BOOL)isInhuman;
+- (BOOL)isPerson;
 - (id)phoneNumbers;
 - (id)plainTextContent;
 - (id)plainTextDetectedData;
 - (id)plainTextLines;
 - (id)plainTextQuotedRegions;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })plainTextSigRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })plainTextSigRange;
 - (id)plainTextTabularRegions;
 - (void)requestFullDownload;
 - (void)setDataDetectorsSignature:(struct __DDResult { }*)arg1;
 - (void)setPlainTextDetectedData:(id)arg1;
 - (void)setPlainTextLines:(id)arg1 utf8Offsets:(id)arg2;
 - (void)setPlainTextQuotedRegions:(id)arg1;
-- (void)setPlainTextSigRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setPlainTextSigRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setPlainTextTabularRegions:(id)arg1;
 - (id)templateShortName;
 

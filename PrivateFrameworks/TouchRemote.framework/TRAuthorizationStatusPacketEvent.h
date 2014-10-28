@@ -3,16 +3,16 @@
  */
 
 @interface TRAuthorizationStatusPacketEvent : TRPacketEvent {
-    long long _authorizationStatus;
+    int _authorizationStatus;
 }
 
-@property(readonly) long long authorizationStatus;
+@property(readonly) int authorizationStatus;
 
 + (unsigned int)_packetEventType;
 
 - (id)_initWithVersion:(unsigned int)arg1 payloadDictionary:(id)arg2;
-- (long long)authorizationStatus;
+- (int)authorizationStatus;
 - (id)description;
-- (id)initWithAuthorizationStatus:(long long)arg1;
+- (id)initWithAuthorizationStatus:(int)arg1;
 
 @end

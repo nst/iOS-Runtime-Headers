@@ -3,14 +3,14 @@
  */
 
 @interface ABSteadfastLineView : UIView {
-    booldisappearsOnHighlight;
+    BOOL disappearsOnHighlight;
 }
 
-@property bool disappearsOnHighlight;
+@property BOOL disappearsOnHighlight;
 
-- (bool)disappearsOnHighlight;
+- (BOOL)disappearsOnHighlight;
 - (void)forceSetBackgroundColor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setDisappearsOnHighlight:(bool)arg1;
+- (void)setDisappearsOnHighlight:(BOOL)arg1;
 
 @end

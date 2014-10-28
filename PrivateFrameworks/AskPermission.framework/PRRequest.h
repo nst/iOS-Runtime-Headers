@@ -10,10 +10,10 @@
     NSDate *_dateAddedToLocalCache;
     NSString *_requestID;
     NSDictionary *_requestInfo;
-    unsigned long long _requestStatus;
+    unsigned int _requestStatus;
+    BOOL _requestedOnThisDevice;
     NSNumber *_requesterDSID;
     NSNumber *_responderDSID;
-    bool_requestedOnThisDevice;
 }
 
 @property(copy) NSString * ask;
@@ -21,13 +21,13 @@
 @property(copy) NSDate * dateAddedToLocalCache;
 @property(copy) NSString * requestID;
 @property(copy) NSDictionary * requestInfo;
-@property unsigned long long requestStatus;
-@property bool requestedOnThisDevice;
+@property unsigned int requestStatus;
+@property BOOL requestedOnThisDevice;
 @property(copy) NSNumber * requesterDSID;
 @property(copy) NSNumber * responderDSID;
 @property(readonly) NSString * statusDescription;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ask;
@@ -41,8 +41,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)requestID;
 - (id)requestInfo;
-- (unsigned long long)requestStatus;
-- (bool)requestedOnThisDevice;
+- (unsigned int)requestStatus;
+- (BOOL)requestedOnThisDevice;
 - (id)requesterDSID;
 - (id)responderDSID;
 - (void)setAsk:(id)arg1;
@@ -50,8 +50,8 @@
 - (void)setDateAddedToLocalCache:(id)arg1;
 - (void)setRequestID:(id)arg1;
 - (void)setRequestInfo:(id)arg1;
-- (void)setRequestStatus:(unsigned long long)arg1;
-- (void)setRequestedOnThisDevice:(bool)arg1;
+- (void)setRequestStatus:(unsigned int)arg1;
+- (void)setRequestedOnThisDevice:(BOOL)arg1;
 - (void)setRequesterDSID:(id)arg1;
 - (void)setResponderDSID:(id)arg1;
 - (id)statusDescription;

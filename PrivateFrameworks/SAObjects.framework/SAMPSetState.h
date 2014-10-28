@@ -12,7 +12,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setState:(int)arg1;
 - (int)state;
 

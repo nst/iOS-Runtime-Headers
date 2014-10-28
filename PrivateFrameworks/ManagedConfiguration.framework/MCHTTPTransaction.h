@@ -15,12 +15,12 @@
     struct __SecIdentity { } *_identity;
     NSString *_method;
     NSURL *_permanentlyRedirectedURL;
+    BOOL _rememberData;
     NSURL *_requestURL;
     NSMutableData *_responseData;
-    long long _statusCode;
+    int _statusCode;
     double _timeout;
     NSString *_userAgent;
-    bool_rememberData;
 }
 
 @property(retain) NSString * CMSSignatureHeaderName;
@@ -30,7 +30,7 @@
 @property(retain) NSString * method;
 @property(retain,readonly) NSURL * permanentlyRedirectedURL;
 @property(retain,readonly) NSData * responseData;
-@property(readonly) long long statusCode;
+@property(readonly) int statusCode;
 @property double timeout;
 @property(retain) NSURL * url;
 @property(retain) NSString * userAgent;
@@ -41,15 +41,15 @@
 - (void).cxx_destruct;
 - (id)CMSSignatureHeaderName;
 - (void)_beginTransaction;
-- (bool)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
-- (bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (BOOL)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (bool)connectionShouldUseCredentialStorage:(id)arg1;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (id)contentType;
 - (struct __SecIdentity { }*)copyIdentity;
 - (id)data;
@@ -69,7 +69,7 @@
 - (void)setTimeout:(double)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUserAgent:(id)arg1;
-- (long long)statusCode;
+- (int)statusCode;
 - (double)timeout;
 - (id)url;
 - (id)userAgent;

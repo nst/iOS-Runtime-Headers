@@ -6,15 +6,15 @@
 
 @interface UIKit_PKSubsystem : NSObject <PKModularService> {
     NSDictionary *_infoDictionary;
-    bool_initialized;
-    bool_plugInKitProcess;
+    BOOL _initialized;
+    BOOL _plugInKitProcess;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSDictionary * infoDictionary;
-@property(getter=isPlugInKitProcess) bool plugInKitProcess;
+@property(getter=isPlugInKitProcess) BOOL plugInKitProcess;
 @property(readonly) Class superclass;
 
 + (id)initForPlugInKit;
@@ -23,8 +23,8 @@
 - (void)beginUsing:(id)arg1 withBundle:(id)arg2;
 - (void)endUsing:(id)arg1;
 - (id)infoDictionary;
-- (bool)isPlugInKitProcess;
+- (BOOL)isPlugInKitProcess;
 - (void)setInfoDictionary:(id)arg1;
-- (void)setPlugInKitProcess:(bool)arg1;
+- (void)setPlugInKitProcess:(BOOL)arg1;
 
 @end

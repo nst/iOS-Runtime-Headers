@@ -23,7 +23,7 @@
 @property(copy) NSString * progressIdentifier;
 @property(copy) NSString * typeIdentifier;
 
-+ (bool)shouldCoalesceTasks;
++ (BOOL)shouldCoalesceTasks;
 + (id)taskIdentifier;
 
 - (void).cxx_destruct;
@@ -37,13 +37,13 @@
 - (id)initWithCoder:(id)arg1;
 - (void)launch;
 - (id)localIdentifiers;
-- (unsigned long long)priority;
+- (unsigned int)priority;
 - (id)progressIdentifier;
 - (void)setDestinationURL:(id)arg1;
 - (void)setLocalIdentifiers:(id)arg1;
 - (void)setProgressIdentifier:(id)arg1;
 - (void)setTypeIdentifier:(id)arg1;
-- (bool)shouldStopSyncSession;
+- (BOOL)shouldStopSyncSession;
 - (void)taskDidFinishWithError:(id)arg1;
 - (id)typeIdentifier;
 

@@ -6,23 +6,23 @@
 
 @interface WDTableRow : NSObject {
     NSMutableArray *mCells;
-    unsigned long long mIndex;
+    unsigned int mIndex;
     WDTableRowProperties *mProperties;
     WDTable *mTable;
 }
 
 - (id)addCell;
-- (id)addCellWithIndex:(unsigned long long)arg1;
-- (id)cellAt:(unsigned long long)arg1;
-- (unsigned long long)cellCount;
+- (id)addCellWithIndex:(unsigned int)arg1;
+- (id)cellAt:(unsigned int)arg1;
+- (unsigned int)cellCount;
 - (id)cellIterator;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)index;
-- (id)initWithTable:(id)arg1 at:(unsigned long long)arg2;
+- (unsigned int)index;
+- (id)initWithTable:(id)arg1 at:(unsigned int)arg2;
 - (id)newCellIterator;
 - (id)properties;
-- (void)setIndex:(unsigned long long)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (id)table;
 
 @end

@@ -6,13 +6,13 @@
 
 @interface MFMessageDataContainer : NSObject {
     NSData *_data;
-    bool_incomplete;
-    bool_partial;
+    BOOL _incomplete;
+    BOOL _partial;
 }
 
 - (id)data;
 - (void)dealloc;
-- (id)initWithData:(id)arg1 partial:(bool)arg2 incomplete:(bool)arg3;
+- (id)initWithData:(id)arg1 partial:(BOOL)arg2 incomplete:(BOOL)arg3;
 - (id)initWithData:(id)arg1;
 
 @end

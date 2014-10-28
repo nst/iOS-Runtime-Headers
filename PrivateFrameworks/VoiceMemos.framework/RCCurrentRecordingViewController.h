@@ -7,18 +7,18 @@
 @interface RCCurrentRecordingViewController : UIViewController <RCCurrentRecordingViewControllerDelegate, RCUIServiceCurrentRecordingViewController> {
     RCAVState *_AVState;
     <RCCurrentRecordingViewControllerDelegate> *_delegate;
+    BOOL _isDisplayingLockscreenInterface;
     UIColor *_presentationBackgroundColor;
     RCCurrentRecordingRemoteViewController *_remoteViewController;
+    BOOL _screenUpdatesDisabled;
     UIColor *_waveformForegroundColor;
-    bool_isDisplayingLockscreenInterface;
-    bool_screenUpdatesDisabled;
 }
 
 @property(retain) RCAVState * AVState;
 @property(copy,readonly) NSString * debugDescription;
 @property <RCCurrentRecordingViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (Class)remoteViewControllerClass;
@@ -28,7 +28,7 @@
 - (id)AVState;
 - (void)_failedToBecomeReadyWithMessage:(id)arg1;
 - (void)currentRecordingViewController:(id)arg1 didChangeAVState:(id)arg2;
-- (void)currentRecordingViewController:(id)arg1 didDeterminteAvailability:(bool)arg2;
+- (void)currentRecordingViewController:(id)arg1 didDeterminteAvailability:(BOOL)arg2;
 - (void)currentRecordingViewControllerRecordingDidEnd:(id)arg1;
 - (id)delegate;
 - (void)dismissLockscreenInterface;
@@ -39,9 +39,9 @@
 - (void)presentLockscreenInterfaceWithBackgroundColor:(id)arg1 waveformForegroundColor:(id)arg2;
 - (void)setAVState:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setScreenUpdatesDisabled:(bool)arg1;
-- (bool)shouldAutomaticallyForwardAppearanceMethods;
-- (bool)shouldAutomaticallyForwardRotationMethods;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (void)setScreenUpdatesDisabled:(BOOL)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

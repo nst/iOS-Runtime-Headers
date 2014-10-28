@@ -7,10 +7,10 @@
 @interface SCNActionRunAction : SCNAction {
     SCNAction *_action;
     NSString *_actionKey;
+    BOOL _fired;
+    BOOL _runOnSubSprite;
     NSString *_subSpriteKey;
-    bool_fired;
-    bool_runOnSubSprite;
-    bool_waitForKeyedAction;
+    BOOL _waitForKeyedAction;
 }
 
 + (id)runAction:(id)arg1 afterActionWithKey:(id)arg2;
@@ -19,7 +19,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)isCustom;
+- (BOOL)isCustom;
 - (id)reversedAction;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;
 - (void)willStartWithTarget:(id)arg1 atTime:(double)arg2;

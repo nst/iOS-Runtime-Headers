@@ -9,68 +9,68 @@
 @class NSItemProvider, NSString, NSURL, UIImage;
 
 @interface SLAttachment : NSObject <NSSecureCoding> {
-    long long _downsampleStatus;
+    int _downsampleStatus;
     NSString *_identifier;
     NSItemProvider *_itemProvider;
-    long long _itemProviderPreviewType;
+    int _itemProviderPreviewType;
+    BOOL _needsAnotherPreviewGeneration;
     id _payload;
     NSURL *_payloadSourceFileURL;
     id _payloadUpdateObserver;
     UIImage *_previewImage;
-    long long _previewType;
+    int _previewType;
     id _previewUpdateObserver;
-    long long _type;
+    BOOL _startedPayloadLoad;
+    int _type;
     NSString *_typeIdentifier;
-    bool_needsAnotherPreviewGeneration;
-    bool_startedPayloadLoad;
 }
 
-@property long long downsampleStatus;
+@property int downsampleStatus;
 @property(readonly) NSString * identifier;
 @property(retain) NSItemProvider * itemProvider;
-@property(readonly) long long itemProviderPreviewType;
-@property bool needsAnotherPreviewGeneration;
+@property(readonly) int itemProviderPreviewType;
+@property BOOL needsAnotherPreviewGeneration;
 @property(copy) id payload;
 @property(copy) NSURL * payloadSourceFileURL;
 @property(retain) UIImage * previewImage;
-@property long long previewType;
-@property bool startedPayloadLoad;
-@property long long type;
+@property int previewType;
+@property BOOL startedPayloadLoad;
+@property int type;
 @property(copy) NSString * typeIdentifier;
 
-+ (bool)attachmentTypeRepresentsAnImage:(long long)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)attachmentTypeRepresentsAnImage:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_uniqueIdentifier;
 - (id)description;
-- (long long)downsampleStatus;
+- (int)downsampleStatus;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPayload:(id)arg1 type:(long long)arg2 previewImage:(id)arg3;
+- (id)initWithPayload:(id)arg1 type:(int)arg2 previewImage:(id)arg3;
 - (id)itemProvider;
-- (long long)itemProviderPreviewType;
-- (bool)needsAnotherPreviewGeneration;
+- (int)itemProviderPreviewType;
+- (BOOL)needsAnotherPreviewGeneration;
 - (id)payload;
 - (id)payloadSourceFileURL;
 - (id)previewImage;
-- (long long)previewType;
-- (void)setDownsampleStatus:(long long)arg1;
+- (int)previewType;
+- (void)setDownsampleStatus:(int)arg1;
 - (void)setItemProvider:(id)arg1;
-- (void)setNeedsAnotherPreviewGeneration:(bool)arg1;
+- (void)setNeedsAnotherPreviewGeneration:(BOOL)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPayloadSourceFileURL:(id)arg1;
 - (void)setPayloadUpdateObserverWithBlock:(id)arg1;
 - (void)setPreviewImage:(id)arg1;
-- (void)setPreviewType:(long long)arg1;
+- (void)setPreviewType:(int)arg1;
 - (void)setPreviewUpdateObserverWithBlock:(id)arg1;
-- (void)setStartedPayloadLoad:(bool)arg1;
-- (void)setType:(long long)arg1;
+- (void)setStartedPayloadLoad:(BOOL)arg1;
+- (void)setType:(int)arg1;
 - (void)setTypeIdentifier:(id)arg1;
-- (bool)startedPayloadLoad;
-- (long long)type;
+- (BOOL)startedPayloadLoad;
+- (int)type;
 - (id)typeIdentifier;
 
 @end

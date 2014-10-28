@@ -7,29 +7,29 @@
 @interface GGLDisplayLink : NSObject {
     CADisplay *_display;
     CADisplayLink *_displayLink;
-    long long _frameInterval;
+    int _frameInterval;
+    BOOL _paused;
     SEL _selector;
-    long long _skippedFrames;
+    int _skippedFrames;
     id _target;
-    bool_paused;
 }
 
 @property(retain) CADisplay * display;
-@property long long frameInterval;
-@property(getter=isPaused) bool paused;
+@property int frameInterval;
+@property(getter=isPaused) BOOL paused;
 @property(readonly) double timestamp;
 
 - (void)_displayLinkFired:(id)arg1;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;
 - (id)display;
-- (long long)frameInterval;
+- (int)frameInterval;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (void)invalidate;
-- (bool)isPaused;
+- (BOOL)isPaused;
 - (void)setDisplay:(id)arg1;
-- (void)setFrameInterval:(long long)arg1;
-- (void)setPaused:(bool)arg1;
+- (void)setFrameInterval:(int)arg1;
+- (void)setPaused:(BOOL)arg1;
 - (id)target;
 - (double)timestamp;
 

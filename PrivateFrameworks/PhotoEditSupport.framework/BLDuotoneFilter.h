@@ -11,11 +11,11 @@
     CIImage *_inputImage;
     NSNumber *_inputStrength;
     NSNumber *_inputVersion;
+    BOOL _lastAddColor;
     float _lastAmount;
     float _lastStrength;
-    long long _lastVersion;
-    bool_lastAddColor;
-    bool_needsReprocess;
+    int _lastVersion;
+    BOOL _needsReprocess;
 }
 
 @property(retain) CIFilter * colorCubeFilter;

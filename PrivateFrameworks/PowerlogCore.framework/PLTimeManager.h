@@ -14,7 +14,7 @@
 @property PLSQLiteConnection * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSDictionary * notificationsToTimeReferences;
 @property PLStorageOperator * storageOperator;
 @property(readonly) Class superclass;
@@ -24,14 +24,14 @@
 
 - (void).cxx_destruct;
 - (id)connection;
-- (id)convertTime:(id)arg1 fromTimeReference:(long long)arg2 toTimeReference:(long long)arg3;
-- (id)currentTimeFromTimeReference:(long long)arg1 toTimeReference:(long long)arg2;
+- (id)convertTime:(id)arg1 fromTimeReference:(int)arg2 toTimeReference:(int)arg3;
+- (id)currentTimeFromTimeReference:(int)arg1 toTimeReference:(int)arg2;
 - (id)init;
 - (id)initialMonotonicTime;
 - (void)initializeTimeOffsets;
 - (void)logTimeEntry;
 - (id)notificationsToTimeReferences;
-- (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(long long)arg2 usingBlock:(id)arg3;
+- (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(int)arg2 usingBlock:(id)arg3;
 - (void)setConnection:(id)arg1;
 - (void)setNotificationsToTimeReferences:(id)arg1;
 - (void)setStorageOperator:(id)arg1;
@@ -39,6 +39,6 @@
 - (id)storageOperator;
 - (id)storageQueue;
 - (id)timeReferences;
-- (void)unregisterForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(long long)arg2;
+- (void)unregisterForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(int)arg2;
 
 @end

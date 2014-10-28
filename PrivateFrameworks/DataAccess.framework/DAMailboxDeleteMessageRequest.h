@@ -10,8 +10,8 @@
 @property(copy) NSString * messageID;
 
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initRequestWithMessageID:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

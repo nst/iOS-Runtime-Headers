@@ -19,9 +19,9 @@
 - (void)dealloc;
 - (id)displayString;
 - (id)initWithChildren:(id)arg1 displayString:(id)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isGroup;
-- (bool)isRemovableFromSearchResults;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isGroup;
+- (BOOL)isRemovableFromSearchResults;
 - (id)label;
 - (id)placeholderName;
 - (int)property;
@@ -29,6 +29,6 @@
 - (int)recordID;
 - (id)sortedChildren;
 - (id)unlocalizedLabel;
-- (bool)wasCompleteMatch;
+- (BOOL)wasCompleteMatch;
 
 @end

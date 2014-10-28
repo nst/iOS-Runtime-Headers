@@ -8,7 +8,7 @@
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (bool)canPerformWithActivityItems:(id)arg1;
+- (BOOL)canPerformWithActivityItems:(id)arg1;
 - (void)performActivity;
 
 @end

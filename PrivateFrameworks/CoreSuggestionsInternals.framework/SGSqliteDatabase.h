@@ -6,14 +6,14 @@
 
 @interface SGSqliteDatabase : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
+        long __sig; 
+        BOOL __opaque[40]; 
     struct sqlite3 { } *_db;
+    BOOL _enabled;
     NSString *_filename;
     } _lock;
     NSCache *_queryCache;
     int _transactionDepth;
-    bool_enabled;
 }
 
 @property(readonly) struct sqlite3 { }* handle;
@@ -29,11 +29,11 @@
 - (id)errorMessage:(int)arg1;
 - (struct sqlite3 { }*)handle;
 - (id)initWithFilename:(id)arg1 error:(id*)arg2;
-- (bool)isEnabled;
-- (bool)prepAndRunQuery:(id)arg1 onPrep:(id)arg2 onRow:(id)arg3 onError:(id)arg4;
+- (BOOL)isEnabled;
+- (BOOL)prepAndRunQuery:(id)arg1 onPrep:(id)arg2 onRow:(id)arg3 onError:(id)arg4;
 - (void)prepQuery:(id)arg1 onPrep:(id)arg2 onError:(id)arg3;
-- (bool)runQuery:(struct sqlite3_stmt { }*)arg1 onRow:(id)arg2 onError:(id)arg3;
-- (bool)runQuery:(struct sqlite3_stmt { }*)arg1 onRow:(id)arg2;
+- (BOOL)runQuery:(struct sqlite3_stmt { }*)arg1 onRow:(id)arg2 onError:(id)arg3;
+- (BOOL)runQuery:(struct sqlite3_stmt { }*)arg1 onRow:(id)arg2;
 - (void)transaction:(id)arg1;
 
 @end

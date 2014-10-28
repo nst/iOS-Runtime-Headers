@@ -12,11 +12,11 @@
 + (id)openLink;
 + (id)openLinkWithDictionary:(id)arg1 context:(id)arg2;
 
-- (bool)_afui_isUsefulUserResultCommand;
+- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)ref;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setRef:(id)arg1;
 
 @end

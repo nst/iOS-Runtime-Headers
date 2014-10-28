@@ -10,7 +10,7 @@
                     struct __hash_node<std::__1::__hash_value_type<int, geo::_retain_ptr<id, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, geo::_retain_ptr<id, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, geo::_retain_ptr<id, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, void *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -21,7 +21,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, geo::_retain_ptr<id, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::hash<int>, true> > { 
-                unsigned long long __first_; 
+                unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, geo::_retain_ptr<id, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::equal_to<int>, true> > { 
                 float __first_; 

@@ -16,8 +16,8 @@
 @property(readonly) NSArray * containers;
 @property(retain) NSDictionary * entitlements;
 @property(retain) NSArray * groups;
-@property(readonly) bool isPlaceholder;
-@property(readonly) bool isSystemApp;
+@property(readonly) BOOL isPlaceholder;
+@property(readonly) BOOL isSystemApp;
 @property(retain) NSArray * plugins;
 
 + (id)appWithBundleID:(id)arg1;
@@ -33,8 +33,8 @@
 - (id)domain;
 - (id)entitlements;
 - (id)groups;
-- (bool)isPlaceholder;
-- (bool)isSystemApp;
+- (BOOL)isPlaceholder;
+- (BOOL)isSystemApp;
 - (id)placeholderDomainWithCache:(id)arg1;
 - (id)plugins;
 - (void)setBundleDir:(id)arg1;

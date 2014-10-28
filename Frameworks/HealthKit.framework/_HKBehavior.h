@@ -7,7 +7,7 @@
 
 + (id)currentDeviceDisplayName;
 + (id)currentDeviceProductType;
-+ (bool)isAppleInternalInstall;
-+ (bool)isDeviceSupported;
++ (BOOL)isAppleInternalInstall;
++ (BOOL)isDeviceSupported;
 
 @end

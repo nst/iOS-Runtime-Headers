@@ -13,40 +13,40 @@
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
-        unsigned long long total_in; 
+        unsigned int total_in; 
         char *next_out; 
         unsigned int avail_out; 
-        unsigned long long total_out; 
+        unsigned int total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
         int data_type; 
-        unsigned long long adler; 
-        unsigned long long reserved; 
+        unsigned int adler; 
+        unsigned int reserved; 
     unsigned int _CRC;
     char *_outBuffer;
-    unsigned long long _outBufferSize;
+    unsigned long _outBufferSize;
     <TSUStreamReadChannel> *_readChannel;
     NSObject<OS_dispatch_queue> *_readQueue;
-    unsigned long long _remainingUncompressedSize;
+    unsigned long _remainingUncompressedSize;
     } _stream;
-    bool_validateCRC;
+    BOOL _validateCRC;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;
 - (void)dealloc;
 - (void)handleFailureWithQueue:(id)arg1 handler:(id)arg2 error:(id)arg3;
-- (id)initWithReadChannel:(id)arg1 uncompressedSize:(unsigned long long)arg2 CRC:(unsigned int)arg3 validateCRC:(bool)arg4;
+- (id)initWithReadChannel:(id)arg1 uncompressedSize:(unsigned long)arg2 CRC:(unsigned int)arg3 validateCRC:(BOOL)arg4;
 - (void)prepareBuffer;
-- (bool)processData:(id)arg1 inflateResult:(int*)arg2 CRC:(unsigned int*)arg3 isDone:(bool)arg4 handlerQueue:(id)arg5 handler:(id)arg6;
+- (BOOL)processData:(id)arg1 inflateResult:(int*)arg2 CRC:(unsigned int*)arg3 isDone:(BOOL)arg4 handlerQueue:(id)arg5 handler:(id)arg6;
 - (void)readWithQueue:(id)arg1 handler:(id)arg2;
 
 @end

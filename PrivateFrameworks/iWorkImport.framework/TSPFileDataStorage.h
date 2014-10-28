@@ -6,9 +6,9 @@
 }
 
 - (id)AVAssetWithOptions:(id)arg1 contentTypeUTI:(id)arg2;
-- (id)bookmarkDataWithOptions:(unsigned long long)arg1;
+- (id)bookmarkDataWithOptions:(unsigned int)arg1;
 - (unsigned long long)encodedLength;
-- (bool)isReadable;
+- (BOOL)isReadable;
 - (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
 

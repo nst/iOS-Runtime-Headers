@@ -6,34 +6,34 @@
 
 @interface ABHighlightingTextField : UITextField {
     UIColor *_highlightedTextColor;
+    BOOL _isHighlighted;
+    BOOL _isHighlightingEnabled;
     <ABResponderDelegate> *_responderDelegate;
     UIColor *_savedTextColor;
-    bool_isHighlighted;
-    bool_isHighlightingEnabled;
-    bool_showsClearButtonWhenEmpty;
+    BOOL _showsClearButtonWhenEmpty;
 }
 
 @property(setter=abSetHighlightedTextColor:,retain) UIColor * abHighlightedTextColor;
-@property(setter=abSetHighlighted:) bool abIsHighlighted;
-@property(setter=abSetHighlightingEnabled:) bool abIsHighlightingEnabled;
+@property(setter=abSetHighlighted:) BOOL abIsHighlighted;
+@property(setter=abSetHighlightingEnabled:) BOOL abIsHighlightingEnabled;
 @property <ABResponderDelegate> * responderDelegate;
-@property bool showsClearButtonWhenEmpty;
+@property BOOL showsClearButtonWhenEmpty;
 
 - (id)_nextKeyResponder;
 - (id)_previousKeyResponder;
-- (bool)_showsClearButtonWhenEmpty;
+- (BOOL)_showsClearButtonWhenEmpty;
 - (id)abHighlightedTextColor;
-- (bool)abIsHighlighted;
-- (bool)abIsHighlightingEnabled;
-- (void)abSetHighlighted:(bool)arg1;
+- (BOOL)abIsHighlighted;
+- (BOOL)abIsHighlightingEnabled;
+- (void)abSetHighlighted:(BOOL)arg1;
 - (void)abSetHighlightedTextColor:(id)arg1;
-- (void)abSetHighlightingEnabled:(bool)arg1;
-- (bool)becomeFirstResponder;
+- (void)abSetHighlightingEnabled:(BOOL)arg1;
+- (BOOL)becomeFirstResponder;
 - (void)dealloc;
 - (id)responderDelegate;
 - (void)setResponderDelegate:(id)arg1;
-- (void)setShowsClearButtonWhenEmpty:(bool)arg1;
+- (void)setShowsClearButtonWhenEmpty:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
-- (bool)showsClearButtonWhenEmpty;
+- (BOOL)showsClearButtonWhenEmpty;
 
 @end

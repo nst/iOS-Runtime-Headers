@@ -12,17 +12,17 @@
 @property(readonly) NSString * key;
 @property(readonly) NSString * value;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToSimpleMailHeaderKeyValue:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToSimpleMailHeaderKeyValue:(id)arg1;
 - (id)key;
 - (id)value;
 

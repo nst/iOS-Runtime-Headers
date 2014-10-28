@@ -5,9 +5,9 @@
 @interface PUIndexPathSet : NSObject <NSCopying, NSMutableCopying> {
 }
 
-- (bool)containsIndexPath:(id)arg1;
+- (BOOL)containsIndexPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)count;
+- (int)count;
 - (void)enumerateIndexPathsUsingBlock:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 

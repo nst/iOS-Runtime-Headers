@@ -5,8 +5,8 @@
 @interface _MKPopoverController : UIPopoverController {
 }
 
-+ (bool)_popoversDisabled;
++ (BOOL)_popoversDisabled;
 
-- (bool)_shimPopoverPresentationController;
+- (BOOL)_shimPopoverPresentationController;
 
 @end

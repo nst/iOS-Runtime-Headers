@@ -5,21 +5,21 @@
 @class EDReference;
 
 @interface EDSharedFormula : EDFormula {
-    unsigned long long _baseFormulaIndex;
+    unsigned int _baseFormulaIndex;
     EDReference *_baseFormulaRange;
     int _columnBaseOrOffset;
     int _rowBaseOrOffset;
     bool_forceNonBaseFormula;
 }
 
-@property unsigned long long baseFormulaIndex;
+@property unsigned int baseFormulaIndex;
 @property(readonly) EDReference * baseFormulaRange;
 @property int columnBaseOrOffset;
 @property bool forceNonBaseFormula;
 @property int rowBaseOrOffset;
 
 - (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
-- (unsigned long long)baseFormulaIndex;
+- (unsigned int)baseFormulaIndex;
 - (id)baseFormulaRange;
 - (id)baseFormulaWithRowBlocks:(id)arg1;
 - (int)columnBaseOrOffset;
@@ -31,11 +31,11 @@
 - (bool)isBaseFormula;
 - (bool)isSharedFormula;
 - (int)rowBaseOrOffset;
-- (void)setBaseFormulaIndex:(unsigned long long)arg1;
+- (void)setBaseFormulaIndex:(unsigned int)arg1;
 - (void)setColumnBaseOrOffset:(int)arg1;
 - (void)setForceNonBaseFormula:(bool)arg1;
 - (void)setRowBaseOrOffset:(int)arg1;
-- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned long long*)arg2;
+- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
 - (void)updateBaseFormulaRangeWithRow:(int)arg1 column:(int)arg2;
 - (id)warningWithRowBlocks:(id)arg1;
 

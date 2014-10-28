@@ -11,7 +11,7 @@
 - (id)controlKeyTraits;
 - (id)defaultKeyBackgroundColorName;
 - (id)hashStringElement;
-- (double)passcodeEdgeWeight;
+- (float)passcodeEdgeWeight;
 - (id)shiftLockControlKeyTraits;
 
 @end

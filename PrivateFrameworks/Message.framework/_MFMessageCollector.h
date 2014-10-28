@@ -22,7 +22,7 @@
 - (id)messages;
 - (void)newMessagesAvailable:(id)arg1;
 - (void)setTransmogrifier:(id)arg1;
-- (bool)shouldCancel;
+- (BOOL)shouldCancel;
 - (id)transmogrifier;
 
 @end

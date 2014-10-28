@@ -14,12 +14,12 @@
 
 + (void)initialize;
 
-- (int)_buildBufferPoolWithFormat:(unsigned int)arg1 dimensions:(struct { int x1; int x2; })arg2 poolCapacity:(int)arg3;
-- (int)_buildTransferSession;
+- (long)_buildBufferPoolWithFormat:(unsigned long)arg1 dimensions:(struct { int x1; int x2; })arg2 poolCapacity:(int)arg3;
+- (long)_buildTransferSession;
 - (void)_purgeResources;
-- (int)convertSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 outputSampleBuffer:(struct opaqueCMSampleBuffer {}**)arg2;
+- (long)convertSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 outputSampleBuffer:(struct opaqueCMSampleBuffer {}**)arg2;
 - (void)dealloc;
 - (id)init;
-- (int)updateOutputPixelFormat:(unsigned int)arg1 dimensions:(struct { int x1; int x2; })arg2 poolCapacity:(int)arg3;
+- (long)updateOutputPixelFormat:(unsigned long)arg1 dimensions:(struct { int x1; int x2; })arg2 poolCapacity:(int)arg3;
 
 @end

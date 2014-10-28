@@ -7,7 +7,7 @@
 
 + (id)_currentSystemVersion;
 + (id)createAccountMigrationLock;
-+ (bool)migrationFinished;
++ (BOOL)migrationFinished;
 + (void)signalMigrationFinished;
 + (void)writeMigrationVersionPref;
 

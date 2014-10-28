@@ -3,31 +3,31 @@
  */
 
 @interface SCRCRawImage : NSObject {
-    long long _bytesPerPixel;
+    int _bytesPerPixel;
     char *_data;
-    long long _height;
+    int _height;
     struct CGImage { } *_imageRef;
-    long long _width;
+    int _width;
 }
 
-@property long long bytesPerPixel;
+@property int bytesPerPixel;
 @property char * data;
-@property long long height;
+@property int height;
 @property(retain) struct CGImage { }* imageRef;
-@property long long width;
+@property int width;
 
 + (id)rawImageForImage:(struct CGImage { }*)arg1;
 
-- (long long)bytesPerPixel;
+- (int)bytesPerPixel;
 - (char *)data;
 - (void)dealloc;
-- (long long)height;
+- (int)height;
 - (struct CGImage { }*)imageRef;
-- (void)setBytesPerPixel:(long long)arg1;
+- (void)setBytesPerPixel:(int)arg1;
 - (void)setData:(char *)arg1;
-- (void)setHeight:(long long)arg1;
+- (void)setHeight:(int)arg1;
 - (void)setImageRef:(struct CGImage { }*)arg1;
-- (void)setWidth:(long long)arg1;
-- (long long)width;
+- (void)setWidth:(int)arg1;
+- (int)width;
 
 @end

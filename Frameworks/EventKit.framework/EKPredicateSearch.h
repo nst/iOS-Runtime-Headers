@@ -12,15 +12,15 @@
     id _callback;
     id _cancellationToken;
     Class _entityClass;
+    BOOL _finished;
+    BOOL _isCancelled;
     NSPredicate *_predicate;
     EKEventStore *_store;
-    bool_finished;
-    bool_isCancelled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;

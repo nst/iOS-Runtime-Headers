@@ -34,8 +34,8 @@
 - (id)data;
 - (void)dealloc;
 - (id)exchangeID;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)localizableMessage;
 - (id)recipientIndexes;
 - (id)replies;

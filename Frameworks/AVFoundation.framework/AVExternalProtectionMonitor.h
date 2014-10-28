@@ -8,10 +8,10 @@
     AVExternalProtectionMonitorInternal *_monitor;
 }
 
-@property(readonly) long long externalProtectionState;
+@property(readonly) int externalProtectionState;
 
 - (void)dealloc;
-- (long long)externalProtectionState;
+- (int)externalProtectionState;
 - (id)init;
 
 @end

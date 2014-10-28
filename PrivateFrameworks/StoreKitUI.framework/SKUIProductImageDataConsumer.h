@@ -6,8 +6,8 @@
 
 @interface SKUIProductImageDataConsumer : SKUIImageDataConsumer <NSCopying> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
     } _iconSize;
@@ -15,12 +15,12 @@
 
 @property(retain) UIColor * backgroundColor;
 @property(retain) SKUIColorScheme * colorScheme;
-@property(readonly) struct CGSize { double x1; double x2; } iconSize;
-@property(readonly) struct CGSize { double x1; double x2; } imageSize;
+@property(readonly) struct CGSize { float x1; float x2; } iconSize;
+@property(readonly) struct CGSize { float x1; float x2; } imageSize;
 
 + (id)cardConsumer;
 + (id)chartsConsumer;
-+ (id)consumerWithSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)consumerWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)giftComposeConsumer;
 + (id)giftComposeLetterboxConsumer;
 + (id)giftComposePosterConsumer;
@@ -29,7 +29,7 @@
 + (id)giftThemeLetterboxConsumer;
 + (id)giftThemePosterConsumer;
 + (id)gridConsumer;
-+ (id)lockupConsumerWithSize:(long long)arg1 itemKind:(long long)arg2;
++ (id)lockupConsumerWithSize:(int)arg1 itemKind:(int)arg2;
 + (id)productPageConsumer;
 + (id)purchasedConsumer;
 + (id)smartBannerConsumer;
@@ -41,11 +41,11 @@
 - (id)backgroundColor;
 - (id)colorScheme;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGSize { double x1; double x2; })iconSize;
-- (id)imageForColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })iconSize;
+- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)imageForColor:(id)arg1;
 - (id)imageForImage:(id)arg1;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 

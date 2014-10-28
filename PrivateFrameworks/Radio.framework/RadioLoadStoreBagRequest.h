@@ -3,10 +3,10 @@
  */
 
 @interface RadioLoadStoreBagRequest : RadioRequest {
-    bool_ignoresRadioDiskCache;
+    BOOL _ignoresRadioDiskCache;
 }
 
-@property bool ignoresRadioDiskCache;
+@property BOOL ignoresRadioDiskCache;
 
 + (id)_accessQueue;
 + (id)_cachedBagFilenameForActiveAccount;
@@ -15,9 +15,9 @@
 + (void)_urlBagDidLoadNotification:(id)arg1;
 + (void)_writeStoreBagToDiskCache:(id)arg1;
 
-- (void)_handleFinishedLoadingBag:(id)arg1 withError:(id)arg2 didLoadFromNonDiskCache:(bool)arg3 completionHandler:(id)arg4;
-- (bool)ignoresRadioDiskCache;
-- (void)loadStoreBagWithOptions:(long long)arg1 completionHandler:(id)arg2;
-- (void)setIgnoresRadioDiskCache:(bool)arg1;
+- (void)_handleFinishedLoadingBag:(id)arg1 withError:(id)arg2 didLoadFromNonDiskCache:(BOOL)arg3 completionHandler:(id)arg4;
+- (BOOL)ignoresRadioDiskCache;
+- (void)loadStoreBagWithOptions:(int)arg1 completionHandler:(id)arg2;
+- (void)setIgnoresRadioDiskCache:(BOOL)arg1;
 
 @end

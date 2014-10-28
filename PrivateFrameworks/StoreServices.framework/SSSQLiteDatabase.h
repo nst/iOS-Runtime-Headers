@@ -12,22 +12,22 @@
     NSString *_databasePath;
     struct sqlite3 { } *_db;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    BOOL _isInTransaction;
+    BOOL _readOnly;
     id _setupBlock;
     struct __CFDictionary { } *_statementCache;
+    BOOL _takesTaskCompletionAssertions;
     struct SBSProcessAssertion { } *_taskAssertion;
-    long long _taskAssertionCount;
-    bool_isInTransaction;
-    bool_readOnly;
-    bool_takesTaskCompletionAssertions;
+    int _taskAssertionCount;
 }
 
 @property(copy) id setupBlock;
-@property bool takesTaskCompletionAssertions;
+@property BOOL takesTaskCompletionAssertions;
 
-+ (void)_setTakesTaskCompletionAssertions:(bool)arg1;
-+ (void)_stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(bool*)arg2 didFinish:(bool*)arg3 isCorrupt:(bool*)arg4;
-+ (bool)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
-+ (bool)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
++ (void)_setTakesTaskCompletionAssertions:(BOOL)arg1;
++ (void)_stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 didFinish:(BOOL*)arg3 isCorrupt:(BOOL*)arg4;
++ (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
++ (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 
 - (void)_accessDatabaseUsingBlock:(id)arg1;
 - (void)_beginTaskCompletionAssertion;
@@ -36,31 +36,31 @@
 - (int)_openFlags;
 - (int)_resetAndReopenDatabaseWithPath:(id)arg1;
 - (void)_resetCorruptDatabase;
-- (bool)_resetDatabaseWithPath:(id)arg1;
-- (struct sqlite3_stmt { }*)_statementForSQL:(id)arg1 cache:(bool)arg2;
+- (BOOL)_resetDatabaseWithPath:(id)arg1;
+- (struct sqlite3_stmt { }*)_statementForSQL:(id)arg1 cache:(BOOL)arg2;
 - (void)accessDatabaseUsingBlock:(id)arg1;
 - (void)beginTaskCompletionAssertion;
-- (long long)countChanges;
+- (int)countChanges;
 - (void)dealloc;
 - (void)dispatchAfter:(unsigned long long)arg1 block:(id)arg2;
 - (void)dispatchBlockAsync:(id)arg1;
 - (void)dispatchBlockSync:(id)arg1;
 - (void)endTaskCompletionAssertion;
-- (bool)executeSQL:(id)arg1;
-- (id)initWithDatabaseURL:(id)arg1 readOnly:(bool)arg2;
+- (BOOL)executeSQL:(id)arg1;
+- (id)initWithDatabaseURL:(id)arg1 readOnly:(BOOL)arg2;
 - (id)initWithDatabaseURL:(id)arg1;
 - (id)newDispatchSourceWithType:(struct dispatch_source_type_s { }*)arg1;
 - (void)performTransactionWithBlock:(id)arg1;
-- (void)prepareStatementForSQL:(id)arg1 cache:(bool)arg2 usingBlock:(id)arg3;
+- (void)prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 usingBlock:(id)arg3;
 - (void)setSetupBlock:(id)arg1;
-- (void)setTakesTaskCompletionAssertions:(bool)arg1;
-- (bool)setUserVersion:(long long)arg1 forDatabase:(id)arg2;
-- (bool)setUserVersion:(long long)arg1;
+- (void)setTakesTaskCompletionAssertions:(BOOL)arg1;
+- (BOOL)setUserVersion:(int)arg1 forDatabase:(id)arg2;
+- (BOOL)setUserVersion:(int)arg1;
 - (id)setupBlock;
-- (bool)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
-- (bool)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
-- (bool)takesTaskCompletionAssertions;
-- (long long)userVersion;
-- (long long)userVersionForDatabase:(id)arg1;
+- (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
+- (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
+- (BOOL)takesTaskCompletionAssertions;
+- (int)userVersion;
+- (int)userVersionForDatabase:(id)arg1;
 
 @end

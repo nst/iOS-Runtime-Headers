@@ -15,7 +15,7 @@
 - (id)certificate;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setCertificate:(id)arg1;
 
 @end

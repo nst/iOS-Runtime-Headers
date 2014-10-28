@@ -12,7 +12,7 @@
 @interface _WKWebsiteDataStore : NSObject <WKObject> {
     struct ObjectStorage<API::Session> { 
         struct type { 
-            unsigned char __lx[24]; 
+            unsigned char __lx[16]; 
         } data; 
     } _session;
 }
@@ -20,8 +20,8 @@
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(getter=isNonPersistent,readonly) bool nonPersistent;
+@property(readonly) unsigned int hash;
+@property(getter=isNonPersistent,readonly) BOOL nonPersistent;
 @property(readonly) Class superclass;
 
 + (id)defaultDataStore;
@@ -30,6 +30,6 @@
 - (struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id).cxx_construct;
 - (void)dealloc;
-- (bool)isNonPersistent;
+- (BOOL)isNonPersistent;
 
 @end

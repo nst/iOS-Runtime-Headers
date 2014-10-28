@@ -24,9 +24,9 @@
 @property(retain) PKImage * networkLogoImage;
 @property(retain) PKImage * stripImage;
 
-+ (long long)imageSetType;
-+ (bool)shouldCache;
-+ (bool)supportsSecureCoding;
++ (int)imageSetType;
++ (BOOL)shouldCache;
++ (BOOL)supportsSecureCoding;
 
 - (id)backgroundImage;
 - (id)bankLogoImage;
@@ -35,10 +35,10 @@
 - (id)cobrandLogoImage;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
-- (bool)isEqual:(id)arg1;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
+- (BOOL)isEqual:(id)arg1;
 - (id)logoImage;
 - (id)networkLogoImage;
 - (void)preheatImages;

@@ -9,21 +9,21 @@
     CPLPlatformObject *_platformObject;
     NSString *_sessionIdentifier;
     NSProgress *_sessionProgress;
-    unsigned long long _state;
+    unsigned int _state;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) CPLLibraryManager * libraryManager;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) NSString * sessionIdentifier;
 @property(readonly) NSProgress * sessionProgress;
-@property unsigned long long state;
+@property unsigned int state;
 @property(readonly) Class superclass;
 
 + (id)platformImplementationProtocol;
-+ (id)stateDescriptionForState:(unsigned long long)arg1;
++ (id)stateDescriptionForState:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (id)_sessionLogDomain;
@@ -38,8 +38,8 @@
 - (void)resume;
 - (id)sessionIdentifier;
 - (id)sessionProgress;
-- (void)setState:(unsigned long long)arg1;
-- (unsigned long long)state;
+- (void)setState:(unsigned int)arg1;
+- (unsigned int)state;
 - (void)tearDownWithCompletionHandler:(id)arg1;
 
 @end

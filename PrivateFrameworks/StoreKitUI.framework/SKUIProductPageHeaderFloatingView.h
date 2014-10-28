@@ -8,27 +8,27 @@
     UIView *_backdropAlphaView;
     _UIBackdropView *_backdropView;
     SKUIColorScheme *_colorScheme;
+    BOOL _isPad;
     UISegmentedControl *_sectionControl;
     UIView *_separatorView;
-    bool_isPad;
 }
 
-@property double backdropAlpha;
+@property float backdropAlpha;
 @property(retain) SKUIColorScheme * colorScheme;
 @property(readonly) UIControl * sectionControl;
-@property long long selectedSectionIndex;
+@property int selectedSectionIndex;
 
 - (void).cxx_destruct;
 - (void)_reloadBackdropView;
-- (double)backdropAlpha;
+- (float)backdropAlpha;
 - (id)colorScheme;
-- (id)initWithSectionTitles:(id)arg1 isPad:(bool)arg2;
+- (id)initWithSectionTitles:(id)arg1 isPad:(BOOL)arg2;
 - (void)layoutSubviews;
 - (id)sectionControl;
-- (long long)selectedSectionIndex;
-- (void)setBackdropAlpha:(double)arg1;
+- (int)selectedSectionIndex;
+- (void)setBackdropAlpha:(float)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setSelectedSectionIndex:(long long)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSelectedSectionIndex:(int)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

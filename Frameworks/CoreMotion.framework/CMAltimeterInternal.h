@@ -29,9 +29,9 @@
                 float **__first_; 
             } __end_cap_; 
         } __map_; 
-        unsigned long long __start_; 
+        unsigned int __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<float> > { 
-            unsigned long long __first_; 
+            unsigned long __first_; 
         } __size_; 
     boolfBaselineReceived;
     float fBarometricBaseAltitude;

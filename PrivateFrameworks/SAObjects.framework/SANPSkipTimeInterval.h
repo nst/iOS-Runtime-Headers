@@ -15,7 +15,7 @@
 - (id)adjustmentInMilliseconds;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setAdjustmentInMilliseconds:(id)arg1;
 
 @end

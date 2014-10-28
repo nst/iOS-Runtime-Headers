@@ -6,21 +6,21 @@
 
 @interface SKUIAccountButtonsComponent : SKUIPageComponent {
     SKUILink *_ecommerceLink;
-    bool_hidesTermsAndConditions;
+    BOOL _hidesTermsAndConditions;
 }
 
 @property(retain) SKUILink * ECommerceLink;
-@property bool hidesTermsAndConditions;
+@property BOOL hidesTermsAndConditions;
 @property(readonly) SKUIAccountButtonsViewElement * viewElement;
 
 - (void).cxx_destruct;
 - (id)ECommerceLink;
-- (long long)componentType;
-- (bool)hidesTermsAndConditions;
+- (int)componentType;
+- (BOOL)hidesTermsAndConditions;
 - (id)initWithCustomPageContext:(id)arg1;
-- (id)initWithFeaturedContentContext:(id)arg1 kind:(long long)arg2;
+- (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
 - (id)initWithViewElement:(id)arg1;
 - (void)setECommerceLink:(id)arg1;
-- (void)setHidesTermsAndConditions:(bool)arg1;
+- (void)setHidesTermsAndConditions:(BOOL)arg1;
 
 @end

@@ -14,9 +14,9 @@
     unsigned long long _timestamp;
 }
 
-@property bool hasPid;
-@property(readonly) bool hasProcname;
-@property bool hasTimestamp;
+@property BOOL hasPid;
+@property(readonly) BOOL hasProcname;
+@property BOOL hasTimestamp;
 @property unsigned int pid;
 @property(retain) NSString * procname;
 @property unsigned long long timestamp;
@@ -26,17 +26,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPid;
-- (bool)hasProcname;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasPid;
+- (BOOL)hasProcname;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)pid;
 - (id)procname;
-- (bool)readFrom:(id)arg1;
-- (void)setHasPid:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasPid:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setPid:(unsigned int)arg1;
 - (void)setProcname:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

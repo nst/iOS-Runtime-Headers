@@ -11,7 +11,7 @@
 
 + (Class)_moreListControllerClass;
 
-- (bool)canBecomeFirstResponder;
+- (BOOL)canBecomeFirstResponder;
 - (id)init;
 - (void)traitCollectionDidChange:(id)arg1;
 

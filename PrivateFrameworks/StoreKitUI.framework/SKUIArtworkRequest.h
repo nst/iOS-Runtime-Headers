@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)URL;
-- (bool)cachesInMemory;
+- (BOOL)cachesInMemory;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataConsumer;
 - (id)delegate;

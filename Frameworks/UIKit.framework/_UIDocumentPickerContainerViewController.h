@@ -7,17 +7,17 @@
 @interface _UIDocumentPickerContainerViewController : UIViewController <_UIDocumentPickerServiceInvalidating> {
     UIViewController *_childViewController;
     _UIDocumentPickerContainerModel *_model;
+    BOOL _rootContainer;
     _UINavigationControllerPalette *_searchPalette;
     _UIDocumentPickerViewServiceViewController *_serviceViewController;
-    bool_rootContainer;
 }
 
 @property(retain) UIViewController * childViewController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) _UIDocumentPickerContainerModel * model;
-@property(getter=isRootContainer) bool rootContainer;
+@property(getter=isRootContainer) BOOL rootContainer;
 @property(retain) _UINavigationControllerPalette * searchPalette;
 @property _UIDocumentPickerViewServiceViewController * serviceViewController;
 @property(readonly) Class superclass;
@@ -35,20 +35,20 @@
 - (id)initWithModel:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)invalidate;
-- (bool)isRootContainer;
+- (BOOL)isRootContainer;
 - (id)model;
 - (id)searchPalette;
 - (id)serviceViewController;
-- (void)setChildViewController:(id)arg1 animated:(bool)arg2;
+- (void)setChildViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setChildViewController:(id)arg1;
 - (void)setModel:(id)arg1;
-- (void)setRootContainer:(bool)arg1;
+- (void)setRootContainer:(BOOL)arg1;
 - (void)setSearchPalette:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
 - (void)setupPalettes;
 - (void)teardownPalettes;
 - (id)url;
-- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

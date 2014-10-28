@@ -14,7 +14,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property HMDHome * home;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
 @property(readonly) NSUUID * messageTargetUUID;
@@ -24,7 +24,7 @@
 @property(readonly) NSUUID * uuid;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_handleRenameRequest:(id)arg1;

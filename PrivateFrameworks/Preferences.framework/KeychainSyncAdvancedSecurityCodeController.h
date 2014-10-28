@@ -6,28 +6,28 @@
 
 @interface KeychainSyncAdvancedSecurityCodeController : PSKeychainSyncViewController <UIAlertViewDelegate> {
     UIFont *_cellFont;
-    double _cellTextWidth;
+    float _cellTextWidth;
     UIAlertView *_disableRecoveryConfirmationAlert;
-    bool_showsDisableRecoveryOption;
+    BOOL _showsDisableRecoveryOption;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool showsDisableRecoveryOption;
+@property(readonly) unsigned int hash;
+@property BOOL showsDisableRecoveryOption;
 @property(readonly) Class superclass;
 
 - (void)_finishedWithSpecifier:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)dealloc;
 - (void)nextPressed;
-- (void)setShowsDisableRecoveryOption:(bool)arg1;
-- (bool)showsDisableRecoveryOption;
+- (void)setShowsDisableRecoveryOption:(BOOL)arg1;
+- (BOOL)showsDisableRecoveryOption;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (BOOL)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(int)arg2;
 - (void)viewDidLoad;
 
 @end

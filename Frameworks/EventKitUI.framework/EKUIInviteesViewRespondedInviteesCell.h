@@ -23,12 +23,12 @@
 @property(retain) NSArray * removableConstraints;
 
 + (id)_commentLabelFont;
-+ (double)_leftTextInset;
++ (float)_leftTextInset;
 + (id)_nameLabelFont;
 
 - (void).cxx_destruct;
 - (id)commentLabel;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)minimumHeightConstraint;
 - (id)nameBaselineToTopConstraint;
 - (id)nameLabel;

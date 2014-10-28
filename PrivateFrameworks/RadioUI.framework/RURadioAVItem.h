@@ -6,21 +6,21 @@
 
 @interface RURadioAVItem : MPAVItem {
     NSArray *_buyOffers;
+    BOOL _heartbeatInvalid;
+    BOOL _isBanned;
+    BOOL _isInWishList;
+    BOOL _isLiked;
     RadioTrack *_radioTrack;
     RadioStation *_station;
     NSString *_stationHash;
     long long _stationID;
     NSString *_stationName;
-    bool_heartbeatInvalid;
-    bool_isBanned;
-    bool_isInWishList;
-    bool_isLiked;
 }
 
-@property(getter=isHeartbeatInvalid) bool heartbeatInvalid;
-@property bool isBanned;
-@property bool isInWishList;
-@property bool isLiked;
+@property(getter=isHeartbeatInvalid) BOOL heartbeatInvalid;
+@property BOOL isBanned;
+@property BOOL isInWishList;
+@property BOOL isLiked;
 @property(retain) RadioStation * station;
 @property(readonly) NSString * stationHash;
 @property(readonly) long long stationID;
@@ -32,7 +32,7 @@
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
 - (void)_internalIsLikedDidChangeNotification:(id)arg1;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
-- (void)addDerivedStationForArtist:(bool)arg1 withCompletionHandler:(id)arg2;
+- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (id)aggregateDictionaryItemType;
 - (id)album;
 - (long long)albumStoreID;
@@ -43,21 +43,21 @@
 - (id)chapterTimeMarkerForTime:(double)arg1;
 - (id)chapterTimeMarkers;
 - (id)copyrightText;
-- (unsigned long long)countForQueueFeeder;
+- (unsigned int)countForQueueFeeder;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithRadioTrack:(id)arg1;
-- (bool)isBanned;
-- (bool)isCloudItem;
-- (bool)isEqual:(id)arg1;
-- (bool)isExplicitTrack;
-- (bool)isHeartbeatInvalid;
-- (bool)isInWishList;
-- (bool)isLiked;
-- (bool)isRadioItem;
-- (bool)isStreamable;
-- (bool)isValidPlayerSubstituteForItem:(id)arg1;
+- (BOOL)isBanned;
+- (BOOL)isCloudItem;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isExplicitTrack;
+- (BOOL)isHeartbeatInvalid;
+- (BOOL)isInWishList;
+- (BOOL)isLiked;
+- (BOOL)isRadioItem;
+- (BOOL)isStreamable;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)localizedAttributedPositionInPlaylistStringWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
 - (id)localizedPositionInPlaylistString;
 - (id)mainTitle;
@@ -65,20 +65,20 @@
 - (unsigned long long)persistentID;
 - (id)radioTrack;
 - (void)reevaluateType;
-- (void)setHeartbeatInvalid:(bool)arg1;
-- (void)setIsBanned:(bool)arg1;
-- (void)setIsInWishList:(bool)arg1;
-- (void)setIsLiked:(bool)arg1;
+- (void)setHeartbeatInvalid:(BOOL)arg1;
+- (void)setIsBanned:(BOOL)arg1;
+- (void)setIsInWishList:(BOOL)arg1;
+- (void)setIsLiked:(BOOL)arg1;
 - (void)setStation:(id)arg1;
 - (id)station;
 - (id)stationHash;
 - (long long)stationID;
 - (id)stationName;
 - (long long)storeID;
-- (bool)supportsSettingCurrentTime;
+- (BOOL)supportsSettingCurrentTime;
 - (id)title;
 - (id)titlesForTime:(double)arg1;
-- (unsigned long long)type;
+- (unsigned int)type;
 - (id)urlTimeMarkers;
 
 @end

@@ -17,6 +17,6 @@
 - (void)dealloc;
 - (id)serverRepresentationForReceivingPlayer:(id)arg1;
 - (void)setAchievement:(id)arg1;
-- (unsigned long long)type;
+- (unsigned int)type;
 
 @end

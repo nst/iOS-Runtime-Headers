@@ -7,7 +7,7 @@
 
 - (void)accessoryDone;
 - (id)initWithDOMNode:(id)arg1;
-- (unsigned long long)popoverArrowDirections;
+- (unsigned int)popoverArrowDirections;
 - (void)popoverWasDismissed:(id)arg1;
 
 @end

@@ -5,35 +5,35 @@
 @class TSCH3DDataBufferResource, TSCH3DGeometryVertexFormat, TSCH3DUShortDataBuffer, TSCH3Dvec1DataBuffer;
 
 @interface TSCH3DGeometryInterleavedArray : NSObject {
-    boolmAllBackfacesPreculled;
-    boolmDisableHardwareBackfaceCulling;
+    BOOL mAllBackfacesPreculled;
     TSCH3Dvec1DataBuffer *mBuffer;
-    unsigned long long mElementArraysCount;
+    BOOL mDisableHardwareBackfaceCulling;
+    unsigned int mElementArraysCount;
     TSCH3DGeometryVertexFormat *mFormat;
     TSCH3DUShortDataBuffer *mIndices;
     TSCH3DDataBufferResource *mIndicesResource;
     TSCH3DDataBufferResource *mResource;
-    unsigned long long mTotalVertexCount;
+    unsigned int mTotalVertexCount;
 }
 
-@property(readonly) bool disableHardwareBackfaceCulling;
-@property(readonly) unsigned long long elementArraysCount;
+@property(readonly) BOOL disableHardwareBackfaceCulling;
+@property(readonly) unsigned int elementArraysCount;
 @property(readonly) TSCH3DGeometryVertexFormat * format;
-@property(readonly) bool hasData;
-@property(readonly) unsigned long long totalVertexCount;
+@property(readonly) BOOL hasData;
+@property(readonly) unsigned int totalVertexCount;
 
 - (void)addElementArrays:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (bool)disableHardwareBackfaceCulling;
-- (unsigned long long)elementArraysCount;
+- (BOOL)disableHardwareBackfaceCulling;
+- (unsigned int)elementArraysCount;
 - (id)format;
-- (bool)hasData;
+- (BOOL)hasData;
 - (id)indexBuffer;
 - (id)init;
 - (void)p_copyAllVerticesFromElementArrays:(id)arg1;
 - (void)p_indexVerticesFromElementArrays:(id)arg1;
 - (void)submitToProcessor:(id)arg1 range:(const struct range<unsigned int> { unsigned int x1; unsigned int x2; }*)arg2;
-- (unsigned long long)totalVertexCount;
+- (unsigned int)totalVertexCount;
 
 @end

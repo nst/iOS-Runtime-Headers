@@ -7,32 +7,32 @@
 @interface PUCollectionViewData : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
-    long long _cachedPageCount;
+    int _cachedPageCount;
     } _currentContentBounds;
     NSMutableArray *_itemLayoutAttributes;
     NSMutableDictionary *_itemLayoutAttributesByIndexPath;
 }
 
-@property(readonly) long long cachedPageCount;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } currentContentBounds;
+@property(readonly) int cachedPageCount;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentContentBounds;
 @property(readonly) NSMutableArray * itemLayoutAttributes;
 @property(readonly) NSMutableDictionary * itemLayoutAttributesByIndexPath;
 
 - (void).cxx_destruct;
-- (long long)cachedPageCount;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentContentBounds;
-- (bool)hasReferenceIndexPath;
+- (int)cachedPageCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })currentContentBounds;
+- (BOOL)hasReferenceIndexPath;
 - (id)init;
 - (void)invalidate;
 - (id)itemLayoutAttributes;
 - (id)itemLayoutAttributesByIndexPath;
-- (void)setCurrentContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCurrentContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SADomainObject * identifier;
 @property(readonly) Class superclass;
 
@@ -19,7 +19,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)identifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setIdentifier:(id)arg1;
 
 @end

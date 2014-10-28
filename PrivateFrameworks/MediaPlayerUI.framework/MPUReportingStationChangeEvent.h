@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)currentStationMetadata;
-- (bool)isValid;
+- (BOOL)isValid;
 - (id)oldStationMetadata;
 - (void)setCurrentStationMetadata:(id)arg1;
 - (void)setOldStationMetadata:(id)arg1;

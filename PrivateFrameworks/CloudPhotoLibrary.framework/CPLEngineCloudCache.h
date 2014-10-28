@@ -9,30 +9,30 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool hasDoneAFirstSynchronization;
-@property(readonly) unsigned long long hash;
+@property(readonly) BOOL hasDoneAFirstSynchronization;
+@property(readonly) unsigned int hash;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) Class superclass;
 
-- (bool)_remapRecord:(id)arg1 inBatch:(id)arg2 error:(id*)arg3;
-- (bool)addRecord:(id)arg1 isFinal:(bool)arg2 error:(id*)arg3;
-- (bool)applyBatch:(id)arg1 isFinal:(bool)arg2 withError:(id*)arg3;
-- (id)cloudChangeBatchFromBatch:(id)arg1 usingMapping:(id)arg2 isFinal:(bool)arg3 withError:(id*)arg4;
-- (bool)commitStagedChangesWithError:(id*)arg1;
-- (bool)deleteRecordWithIdentifier:(id)arg1 isFinal:(bool)arg2 error:(id*)arg3;
-- (bool)discardStagedChangesWithError:(id*)arg1;
+- (BOOL)_remapRecord:(id)arg1 inBatch:(id)arg2 error:(id*)arg3;
+- (BOOL)addRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)applyBatch:(id)arg1 isFinal:(BOOL)arg2 withError:(id*)arg3;
+- (id)cloudChangeBatchFromBatch:(id)arg1 usingMapping:(id)arg2 isFinal:(BOOL)arg3 withError:(id*)arg4;
+- (BOOL)commitStagedChangesWithError:(id*)arg1;
+- (BOOL)deleteRecordWithIdentifier:(id)arg1 isFinal:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)discardStagedChangesWithError:(id*)arg1;
 - (void)getCommittedRecord:(id*)arg1 stagedRecord:(id*)arg2 forIdentifier:(id)arg3;
-- (bool)hasDoneAFirstSynchronization;
-- (bool)hasRecordWithIdentifier:(id)arg1;
-- (id)recordWithIdentifier:(id)arg1 isFinal:(bool)arg2;
-- (id)recordsOfClass:(Class)arg1 isFinal:(bool)arg2;
-- (id)recordsWithRelatedIdentifier:(id)arg1 isFinal:(bool)arg2;
-- (bool)remapAllRecordsWithPreviousIdentifier:(id)arg1 newIdentifier:(id)arg2 error:(id*)arg3;
-- (bool)resetSyncAnchorWithError:(id*)arg1;
-- (bool)resetWithError:(id*)arg1;
-- (id)resourceOfType:(unsigned long long)arg1 forRecordWithIdentifier:(id)arg2 error:(id*)arg3;
-- (bool)setSyncAnchor:(id)arg1 error:(id*)arg2;
+- (BOOL)hasDoneAFirstSynchronization;
+- (BOOL)hasRecordWithIdentifier:(id)arg1;
+- (id)recordWithIdentifier:(id)arg1 isFinal:(BOOL)arg2;
+- (id)recordsOfClass:(Class)arg1 isFinal:(BOOL)arg2;
+- (id)recordsWithRelatedIdentifier:(id)arg1 isFinal:(BOOL)arg2;
+- (BOOL)remapAllRecordsWithPreviousIdentifier:(id)arg1 newIdentifier:(id)arg2 error:(id*)arg3;
+- (BOOL)resetSyncAnchorWithError:(id*)arg1;
+- (BOOL)resetWithError:(id*)arg1;
+- (id)resourceOfType:(unsigned int)arg1 forRecordWithIdentifier:(id)arg2 error:(id*)arg3;
+- (BOOL)setSyncAnchor:(id)arg1 error:(id*)arg2;
 - (id)syncAnchor;
-- (bool)updateRecord:(id)arg1 isFinal:(bool)arg2 error:(id*)arg3;
+- (BOOL)updateRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id*)arg3;
 
 @end

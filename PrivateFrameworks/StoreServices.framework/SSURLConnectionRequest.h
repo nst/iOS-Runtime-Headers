@@ -8,9 +8,9 @@
     SSAuthenticationContext *_authenticationContext;
     SSVURLDataConsumer *_dataConsumer;
     SSURLRequestProperties *_requestProperties;
-    bool_runsInProcess;
-    bool_sendsResponseForHTTPFailures;
-    bool_shouldMescalSign;
+    BOOL _runsInProcess;
+    BOOL _sendsResponseForHTTPFailures;
+    BOOL _shouldMescalSign;
 }
 
 @property(readonly) NSURLRequest * URLRequest;
@@ -19,17 +19,17 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <SSURLConnectionRequestDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SSURLRequestProperties * requestProperties;
-@property bool runsInProcess;
-@property bool sendsResponseForHTTPFailures;
-@property bool shouldMescalSign;
+@property BOOL runsInProcess;
+@property BOOL sendsResponseForHTTPFailures;
+@property BOOL shouldMescalSign;
 @property(readonly) Class superclass;
 
 + (id)newRadioRequestWithRequestProperties:(id)arg1;
 
 - (id)URLRequest;
-- (bool)_canRunInProcess;
+- (BOOL)_canRunInProcess;
 - (id)authenticationContext;
 - (id)copyXPCEncoding;
 - (id)dataConsumer;
@@ -39,15 +39,15 @@
 - (id)initWithURLRequest:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)requestProperties;
-- (bool)runsInProcess;
-- (bool)sendsResponseForHTTPFailures;
+- (BOOL)runsInProcess;
+- (BOOL)sendsResponseForHTTPFailures;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDataConsumer:(id)arg1;
-- (void)setRunsInProcess:(bool)arg1;
-- (void)setSendsResponseForHTTPFailures:(bool)arg1;
-- (void)setShouldMescalSign:(bool)arg1;
-- (bool)shouldMescalSign;
-- (bool)start;
+- (void)setRunsInProcess:(BOOL)arg1;
+- (void)setSendsResponseForHTTPFailures:(BOOL)arg1;
+- (void)setShouldMescalSign:(BOOL)arg1;
+- (BOOL)shouldMescalSign;
+- (BOOL)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithConnectionResponseBlock:(id)arg1;
 

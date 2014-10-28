@@ -5,33 +5,33 @@
 @class NSArray, NSMutableDictionary;
 
 @interface TSPPasteboardUIPasteboard : TSPPasteboard {
-    long long _cachedChangeCount;
+    int _cachedChangeCount;
     NSArray *_cachedPasteboardTypes;
-    unsigned long long _pasteboardItemCount;
+    unsigned int _pasteboardItemCount;
     NSMutableDictionary *_pasteboardItemIndexCache;
 }
 
 - (void).cxx_destruct;
 - (id)URLs;
 - (void)addData:(id)arg1 forPasteboardType:(id)arg2;
-- (void)addItems:(id)arg1 isSmartCopy:(bool)arg2;
-- (void)addPasteboardItem:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)addItems:(id)arg1 isSmartCopy:(BOOL)arg2;
+- (void)addPasteboardItem:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addPasteboardItem:(id)arg1;
 - (void)addPasteboardItemForObject:(id)arg1 type:(id)arg2;
-- (void)addPasteboardItemIndex:(unsigned long long)arg1 forType:(id)arg2;
-- (long long)clearContents;
-- (bool)containsImportableTextTypes;
+- (void)addPasteboardItemIndex:(unsigned int)arg1 forType:(id)arg2;
+- (int)clearContents;
+- (BOOL)containsImportableTextTypes;
 - (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)dataForPasteboardType:(id)arg1;
 - (id)importablePlainTextTypes;
 - (id)initWithGeneralPasteboard;
 - (id)initWithNativePasteboard:(id)arg1;
-- (id)initWithPasteboardName:(id)arg1 create:(bool)arg2;
+- (id)initWithPasteboardName:(id)arg1 create:(BOOL)arg2;
 - (id)initWithUniquePasteboardName;
 - (oneway void)invalidate;
 - (void)invalidatePasteboardCache;
 - (void)invalidatePasteboardCacheIfNeeded;
-- (long long)numberOfItems;
+- (int)numberOfItems;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (id)propertyListForValue:(id)arg1;

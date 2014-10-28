@@ -5,18 +5,18 @@
 @interface SASettingSetValue : SASettingCommand {
 }
 
-@property bool dryRun;
-@property bool failOnSiriDisconnectWarnings;
+@property BOOL dryRun;
+@property BOOL failOnSiriDisconnectWarnings;
 
 + (id)setValue;
 + (id)setValueWithDictionary:(id)arg1 context:(id)arg2;
 
-- (bool)dryRun;
+- (BOOL)dryRun;
 - (id)encodedClassName;
-- (bool)failOnSiriDisconnectWarnings;
+- (BOOL)failOnSiriDisconnectWarnings;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
-- (void)setDryRun:(bool)arg1;
-- (void)setFailOnSiriDisconnectWarnings:(bool)arg1;
+- (BOOL)requiresResponse;
+- (void)setDryRun:(BOOL)arg1;
+- (void)setFailOnSiriDisconnectWarnings:(BOOL)arg1;
 
 @end

@@ -9,21 +9,23 @@
     double _lastLaunchTimestamp;
     NSMutableSet *_launchAssertions;
     double _nextScheduledLaunch;
+    BOOL _openApplicationInProgress;
     NSObject<OS_dispatch_queue> *_proxyQueue;
-    long long _unexpectedTerminationCount;
-    bool_launchInProgress;
-    bool_serviceLaunchThrottled;
+    BOOL _serviceLaunchThrottled;
+    int _unexpectedTerminationCount;
+    BOOL _waitingForAdSheet;
 }
 
 @property <ADAdSheetProxyDelegate> * delegate;
 @property double lastLaunchTimestamp;
 @property(retain) NSMutableSet * launchAssertions;
-@property bool launchInProgress;
 @property double nextScheduledLaunch;
+@property BOOL openApplicationInProgress;
 @property(readonly) NSObject<OS_dispatch_queue> * proxyQueue;
 @property(readonly) double remainingLaunchBackoff;
-@property(readonly) bool serviceLaunchThrottled;
-@property long long unexpectedTerminationCount;
+@property(readonly) BOOL serviceLaunchThrottled;
+@property int unexpectedTerminationCount;
+@property BOOL waitingForAdSheet;
 
 + (id)sharedInstance;
 
@@ -34,21 +36,23 @@
 - (id)init;
 - (double)lastLaunchTimestamp;
 - (id)launchAssertions;
-- (bool)launchInProgress;
 - (double)nextScheduledLaunch;
+- (BOOL)openApplicationInProgress;
 - (id)proxyQueue;
 - (void)releaseLaunchAssertion:(id)arg1;
 - (double)remainingLaunchBackoff;
 - (void)reportAdSheetUnexpectedTermination;
 - (void)resetAdSheetThrottle;
-- (bool)serviceLaunchThrottled;
+- (BOOL)serviceLaunchThrottled;
 - (void)setDelegate:(id)arg1;
 - (void)setLastLaunchTimestamp:(double)arg1;
 - (void)setLaunchAssertions:(id)arg1;
-- (void)setLaunchInProgress:(bool)arg1;
 - (void)setNextScheduledLaunch:(double)arg1;
-- (void)setUnexpectedTerminationCount:(long long)arg1;
+- (void)setOpenApplicationInProgress:(BOOL)arg1;
+- (void)setUnexpectedTerminationCount:(int)arg1;
+- (void)setWaitingForAdSheet:(BOOL)arg1;
 - (void)takeLaunchAssertion:(id)arg1;
-- (long long)unexpectedTerminationCount;
+- (int)unexpectedTerminationCount;
+- (BOOL)waitingForAdSheet;
 
 @end

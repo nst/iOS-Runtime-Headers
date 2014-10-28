@@ -4,14 +4,14 @@
 
 @interface _PLLargeJPEGPreheatItem : PLJPEGPreheatItem {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
+    BOOL _forceBGRA;
     } _imageSize;
-    bool_forceBGRA;
 }
 
 - (struct __CFDictionary { }*)decodeSessionOptions;
-- (struct __CFDictionary { }*)decodeSessionOptionsApplyRotationTransform:(bool)arg1;
-- (id)initWithImagePath:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 format:(int)arg3 imageType:(long long)arg4 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg5 options:(unsigned int)arg6;
+- (struct __CFDictionary { }*)decodeSessionOptionsApplyRotationTransform:(BOOL)arg1;
+- (id)initWithImagePath:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 format:(int)arg3 imageType:(int)arg4 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg5 options:(unsigned int)arg6;
 
 @end

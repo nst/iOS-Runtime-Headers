@@ -11,11 +11,11 @@
 }
 
 - (id)bulletLabelAtLevel:(id)arg1 forIndex:(int)arg2 bulletFormat:(int)arg3 listState:(id)arg4;
-- (bool)checkListId:(long long)arg1 level:(unsigned char)arg2;
+- (bool)checkListId:(long)arg1 level:(unsigned char)arg2;
 - (void)dealloc;
 - (void)destyleEmptyParagraph;
-- (id)initWithWDParagraph:(id)arg1 parent:(id)arg2 isInTextFrame:(bool)arg3;
-- (bool)isListItem;
+- (id)initWithWDParagraph:(id)arg1 parent:(id)arg2 isInTextFrame:(BOOL)arg3;
+- (BOOL)isListItem;
 - (id)labelStringWithGap:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapBulletAt:(id)arg1 forLevel:(id)arg2 forIndex:(int)arg3 listState:(id)arg4;

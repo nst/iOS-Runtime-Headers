@@ -19,12 +19,12 @@
 - (void)dealloc;
 - (id)label;
 - (id)labelView;
-- (double)minCellHeight;
+- (float)minCellHeight;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setTransportIcon:(id)arg1;
-- (bool)shouldPerformDefaultAction;
+- (BOOL)shouldPerformDefaultAction;
 - (id)transportIcon;
 - (id)variableConstraints;
 

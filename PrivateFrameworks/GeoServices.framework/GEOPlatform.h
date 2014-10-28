@@ -7,16 +7,16 @@
 
 + (id)sharedPlatform;
 
-- (bool)_deviceSupportsNavigation;
+- (BOOL)_deviceSupportsNavigation;
 - (id)_systemInfoDictionary;
 - (id)buildVersion;
 - (id)clientCapabilities;
 - (id)hardwareIdentifier;
-- (bool)isInternalInstall;
-- (bool)isMainScreenHiDPI;
-- (bool)mapsFeatureFreedomEnabled;
+- (BOOL)isInternalInstall;
+- (BOOL)isMainScreenHiDPI;
+- (BOOL)mapsFeatureFreedomEnabled;
 - (id)osVersion;
-- (bool)supportsNavigation;
-- (bool)supportsRealisticTiles;
+- (BOOL)supportsNavigation;
+- (BOOL)supportsRealisticTiles;
 
 @end

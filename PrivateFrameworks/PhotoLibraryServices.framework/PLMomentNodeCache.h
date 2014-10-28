@@ -34,7 +34,7 @@
 - (struct sqlite3_stmt { }*)_temporalSelectStatement;
 - (void)addNodeByUserTag:(id)arg1;
 - (void)closeMomentsDatabase;
-- (unsigned long long)countOfTemporalNeighborsOfNode:(id)arg1 forTheta:(double)arg2;
+- (unsigned int)countOfTemporalNeighborsOfNode:(id)arg1 forTheta:(double)arg2;
 - (void)dealloc;
 - (void)executePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id)arg2;
 - (id)init;

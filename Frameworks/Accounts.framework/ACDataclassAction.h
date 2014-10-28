@@ -3,24 +3,24 @@
  */
 
 @interface ACDataclassAction : NSObject <NSSecureCoding> {
-    long long _type;
-    bool_isDestructive;
+    BOOL _isDestructive;
+    int _type;
 }
 
-@property(readonly) bool isDestructive;
-@property(readonly) long long type;
+@property(readonly) BOOL isDestructive;
+@property(readonly) int type;
 
-+ (id)actionWithType:(long long)arg1;
-+ (id)destructiveActionWithType:(long long)arg1;
-+ (bool)supportsSecureCoding;
++ (id)actionWithType:(int)arg1;
++ (id)destructiveActionWithType:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(long long)arg1 destructivity:(bool)arg2;
-- (bool)isDestructive;
-- (bool)isEqual:(id)arg1;
-- (long long)type;
+- (id)initWithType:(int)arg1 destructivity:(BOOL)arg2;
+- (BOOL)isDestructive;
+- (BOOL)isEqual:(id)arg1;
+- (int)type;
 
 @end

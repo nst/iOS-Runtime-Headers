@@ -6,17 +6,17 @@
 
 @interface CPLIDMapping : NSObject {
     NSString *_cloudIdentifier;
+    BOOL _final;
     NSString *_localIdentifier;
-    bool_final;
 }
 
 @property(readonly) NSString * cloudIdentifier;
-@property(getter=isFinal,readonly) bool final;
+@property(getter=isFinal,readonly) BOOL final;
 @property(readonly) NSString * localIdentifier;
 
 - (void).cxx_destruct;
 - (id)cloudIdentifier;
-- (bool)isFinal;
+- (BOOL)isFinal;
 - (id)localIdentifier;
 
 @end

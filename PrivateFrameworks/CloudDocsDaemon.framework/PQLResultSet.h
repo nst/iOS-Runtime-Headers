@@ -9,85 +9,85 @@
 @class NSError, NSSet, PQLConnection, PQLStatement;
 
 @interface PQLResultSet : NSObject <NSFastEnumeration> {
-     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@BB@@QQ@}32@0:8#16:24 */
-     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@BB@@QQ@}24@0:8@?16 */
-     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@BB@@QQ@}24@0:8#16 */
-    unsigned long long _columns;
+     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}16@0:4#8:12 */
+     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}12@0:4@?8 */
+     /* Encoded args for previous method: ^{PQLResultSet=#@#:@?@cc@@II@}12@0:4#8 */
+    unsigned int _columns;
     PQLConnection *_db;
     NSSet *_defaultUnarchivingAllowedClasses;
     NSError *_error;
+    BOOL _inTransaction;
     id _lastEnumeratedObject;
     Class _objectsClass;
     SEL _objectsClassInitializer;
     id _objectsConstructor;
-    unsigned long long _rowNumber;
+    BOOL _requiresSecureCoding;
+    unsigned int _rowNumber;
     PQLStatement *_stmt;
-    bool_inTransaction;
-    bool_requiresSecureCoding;
 }
 
-@property(readonly) unsigned long long columns;
+@property(readonly) unsigned int columns;
 @property(readonly) PQLConnection * db;
 @property(retain) NSSet * defaultUnarchivingAllowedClasses;
 @property(readonly) NSError * error;
-@property bool requiresSecureCoding;
-@property(readonly) unsigned long long rowNumber;
+@property BOOL requiresSecureCoding;
+@property(readonly) unsigned int rowNumber;
 @property(readonly) struct sqlite3_stmt { }* stmt;
 
 - (void).cxx_destruct;
 - (const char *)UTF8StringAtIndex:(int)arg1;
-- (bool)_next:(bool)arg1;
+- (BOOL)_next:(BOOL)arg1;
 - (id)archivedObjectOfClass:(Class)arg1 atIndex:(int)arg2;
 - (id)archivedObjectOfClasses:(id)arg1 atIndex:(int)arg2;
-- (bool)boolAtIndex:(int)arg1;
+- (BOOL)boolAtIndex:(int)arg1;
 - (BOOL)charAtIndex:(int)arg1;
 - (id)ckInfoAtIndex:(int)arg1;
 - (void)close;
 - (id)columnNameAtIndex:(int)arg1;
-- (unsigned long long)columns;
-- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
-- (id)dataAtIndex:(int)arg1 noCopy:(bool)arg2;
+- (unsigned int)columns;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (id)dataAtIndex:(int)arg1 noCopy:(BOOL)arg2;
 - (id)dateAtIndex:(int)arg1;
 - (id)db;
 - (void)dealloc;
 - (id)defaultUnarchivingAllowedClasses;
 - (id)description;
 - (double)doubleAtIndex:(int)arg1;
-- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; boolx8; boolx9; id x10; id x11; unsigned long long x12; unsigned long long x13; id x14; }*)enumerateObjects:(id)arg1;
-- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; boolx8; boolx9; id x10; id x11; unsigned long long x12; unsigned long long x13; id x14; }*)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
-- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; boolx8; boolx9; id x10; id x11; unsigned long long x12; unsigned long long x13; id x14; }*)enumerateObjectsOfClass:(Class)arg1;
+- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; BOOL x8; BOOL x9; id x10; id x11; unsigned int x12; unsigned int x13; id x14; }*)enumerateObjects:(id)arg1;
+- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; BOOL x8; BOOL x9; id x10; id x11; unsigned int x12; unsigned int x13; id x14; }*)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
+- (struct PQLResultSet { Class x1; id x2; Class x3; SEL x4; id x5; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x6; id x7; BOOL x8; BOOL x9; id x10; id x11; unsigned int x12; unsigned int x13; id x14; }*)enumerateObjectsOfClass:(Class)arg1;
 - (id)error;
 - (float)floatAtIndex:(int)arg1;
 - (id)generationIDAtIndex:(int)arg1;
 - (id)initWithStatement:(id)arg1 usingDatabase:(id)arg2;
 - (int)intAtIndex:(int)arg1;
-- (long long)integerAtIndex:(int)arg1;
-- (bool)isNullAtIndex:(int)arg1;
+- (int)integerAtIndex:(int)arg1;
+- (BOOL)isNullAtIndex:(int)arg1;
 - (id)itemIDAtIndex:(int)arg1;
-- (long long)longAtIndex:(int)arg1;
+- (long)longAtIndex:(int)arg1;
 - (long long)longLongAtIndex:(int)arg1;
-- (bool)next;
+- (BOOL)next;
 - (id)numberAtIndex:(int)arg1;
 - (id)object:(id)arg1;
 - (id)objectAtIndex:(int)arg1;
-- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (id)objectOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)objectOfClass:(Class)arg1;
 - (id)onlyObject:(id)arg1;
 - (id)onlyObjectOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)onlyObjectOfClass:(Class)arg1;
 - (id)plistAtIndex:(int)arg1;
-- (bool)requiresSecureCoding;
-- (unsigned long long)rowNumber;
+- (BOOL)requiresSecureCoding;
+- (unsigned int)rowNumber;
 - (void)setDefaultUnarchivingAllowedClasses:(id)arg1;
-- (void)setRequiresSecureCoding:(bool)arg1;
+- (void)setRequiresSecureCoding:(BOOL)arg1;
 - (short)shortAtIndex:(int)arg1;
 - (struct sqlite3_stmt { }*)stmt;
 - (id)stringAtIndex:(int)arg1;
 - (unsigned char)unsignedCharAtIndex:(int)arg1;
 - (unsigned int)unsignedIntAtIndex:(int)arg1;
-- (unsigned long long)unsignedIntegerAtIndex:(int)arg1;
-- (unsigned long long)unsignedLongAtIndex:(int)arg1;
+- (unsigned int)unsignedIntegerAtIndex:(int)arg1;
+- (unsigned long)unsignedLongAtIndex:(int)arg1;
 - (unsigned long long)unsignedLongLongAtIndex:(int)arg1;
 - (unsigned short)unsignedShortAtIndex:(int)arg1;
 - (id)uuidAtIndex:(int)arg1;

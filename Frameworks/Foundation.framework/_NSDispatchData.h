@@ -5,21 +5,21 @@
 @interface _NSDispatchData : NSData {
 }
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
-- (bool)_allowsDirectEncoding;
-- (bool)_isDispatchData;
+- (BOOL)_allowsDirectEncoding;
+- (BOOL)_isDispatchData;
 - (const void*)bytes;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateByteRangesUsingBlock:(id)arg1;
-- (void)getBytes:(void*)arg1 length:(unsigned long long)arg2;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getBytes:(void*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)length;
-- (id)subdataWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned int)length;
+- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)disambiguationLabelAtIndex:(unsigned long long)arg1;
+- (id)disambiguationLabelAtIndex:(unsigned int)arg1;
 - (id)disambiguationLabels;
-- (unsigned long long)disambiguationLabelsCount;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)disambiguationLabelsCount;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
 - (void)writeTo:(id)arg1;
 

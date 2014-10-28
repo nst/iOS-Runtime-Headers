@@ -5,31 +5,31 @@
 @class NSArray, NSString;
 
 @interface TTSVoiceAsset : NSObject <NSSecureCoding> {
-    long long _footprint;
-    long long _gender;
+    int _footprint;
+    int _gender;
+    BOOL _isInstalled;
     NSArray *_languages;
     NSString *_name;
-    bool_isInstalled;
 }
 
-@property(readonly) long long footprint;
-@property(readonly) long long gender;
-@property(readonly) bool isInstalled;
+@property(readonly) int footprint;
+@property(readonly) int gender;
+@property(readonly) BOOL isInstalled;
 @property(readonly) NSArray * languages;
 @property(readonly) NSString * name;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)footprint;
-- (long long)gender;
+- (int)footprint;
+- (int)gender;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 isInstalled:(bool)arg5;
-- (bool)isInstalled;
+- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(int)arg3 footprint:(int)arg4 isInstalled:(BOOL)arg5;
+- (BOOL)isInstalled;
 - (id)languages;
 - (id)name;
 

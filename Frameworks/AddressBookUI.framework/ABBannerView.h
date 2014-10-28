@@ -15,13 +15,13 @@
 + (float)defaultHeight;
 
 - (void)_updateLabel;
-- (bool)canBecomeFirstResponder;
-- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)cellWasDoubleTapped:(id)arg1;
 - (void)cellWasLongPressed:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)menuDidHide:(id)arg1;
 - (void)setTitle:(id)arg1 value:(id)arg2;
 - (void)setTitle:(id)arg1;

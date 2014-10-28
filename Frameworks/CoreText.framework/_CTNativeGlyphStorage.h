@@ -3,39 +3,39 @@
  */
 
 @interface _CTNativeGlyphStorage : _CTGlyphStorage {
-    const long long *_attachCounts;
-    long long _capacity;
+    const int *_attachCounts;
+    long _capacity;
     void *_preallocatedStorage;
-    unsigned long long _retainCount;
-    struct GlyphStack { long long x1; long long x2; struct GlyphStackEntry { unsigned short x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; unsigned int x_3_1_3; long long x_3_1_4; unsigned char x_3_1_5; } x3[1]; } *_stack;
+    unsigned int _retainCount;
+    struct GlyphStack { int x1; int x2; struct GlyphStackEntry { unsigned short x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; unsigned int x_3_1_3; int x_3_1_4; unsigned char x_3_1_5; } x3[1]; } *_stack;
 }
 
-+ (id)newWithCount:(long long)arg1;
++ (id)newWithCount:(long)arg1;
 
-- (bool)_isDeallocating;
-- (bool)_tryRetain;
-- (long long)attachmentCountAtIndex:(long long)arg1;
-- (id)copyWithRange:(struct { long long x1; long long x2; })arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (long)attachmentCountAtIndex:(long)arg1;
+- (id)copyWithRange:(struct { int x1; int x2; })arg1;
 - (void)dealloc;
 - (void)finalize;
-- (void)initGlyphStackWithCapacity:(long long)arg1;
-- (id)initWithCount:(long long)arg1;
-- (void)insertGlyphsAtRange:(struct { long long x1; long long x2; })arg1;
-- (void)moveGlyphsFromRange:(struct { long long x1; long long x2; })arg1 toIndex:(long long)arg2;
-- (void)popGlyphAtIndex:(long long)arg1;
-- (void)prepareWithCapacity:(long long)arg1 preallocated:(bool)arg2;
-- (void)puntStringIndicesInRange:(struct { long long x1; long long x2; })arg1 by:(long long)arg2;
-- (void)pushGlyphAtIndex:(long long)arg1;
+- (void)initGlyphStackWithCapacity:(long)arg1;
+- (id)initWithCount:(long)arg1;
+- (void)insertGlyphsAtRange:(struct { int x1; int x2; })arg1;
+- (void)moveGlyphsFromRange:(struct { int x1; int x2; })arg1 toIndex:(long)arg2;
+- (void)popGlyphAtIndex:(long)arg1;
+- (void)prepareWithCapacity:(long)arg1 preallocated:(bool)arg2;
+- (void)puntStringIndicesInRange:(struct { int x1; int x2; })arg1 by:(long)arg2;
+- (void)pushGlyphAtIndex:(long)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (void)setAdvance:(struct CGSize { double x1; double x2; })arg1 atIndex:(long long)arg2;
-- (void)setAttachmentCount:(long long)arg1 atIndex:(long long)arg2;
-- (void)setCapacity:(long long)arg1;
-- (void)setGlyph:(unsigned short)arg1 atIndex:(long long)arg2;
-- (void)setProps:(unsigned int)arg1 atIndex:(long long)arg2;
-- (void)setStringIndex:(long long)arg1 atIndex:(long long)arg2;
-- (const long long*)stringIndices;
-- (void)swapGlyphsAtIndex:(long long)arg1 withIndex:(long long)arg2;
+- (unsigned int)retainCount;
+- (void)setAdvance:(struct CGSize { float x1; float x2; })arg1 atIndex:(long)arg2;
+- (void)setAttachmentCount:(long)arg1 atIndex:(long)arg2;
+- (void)setCapacity:(long)arg1;
+- (void)setGlyph:(unsigned short)arg1 atIndex:(long)arg2;
+- (void)setProps:(unsigned int)arg1 atIndex:(long)arg2;
+- (void)setStringIndex:(long)arg1 atIndex:(long)arg2;
+- (const int*)stringIndices;
+- (void)swapGlyphsAtIndex:(long)arg1 withIndex:(long)arg2;
 
 @end

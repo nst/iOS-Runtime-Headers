@@ -5,21 +5,22 @@
 @class NSArray, NSString;
 
 @interface PKPaymentPassesResponse : PKPaymentWebServiceResponse {
+    NSArray *_devicePassSerialNumbers;
     NSString *_lastUpdatedTag;
     NSArray *_passURLs;
-    NSString *_updatedSinceTag;
 }
 
+@property(retain) NSArray * devicePassSerialNumbers;
 @property(retain) NSString * lastUpdatedTag;
 @property(retain) NSArray * passURLs;
-@property(readonly) NSString * updatedSinceTag;
 
 - (void)dealloc;
+- (id)devicePassSerialNumbers;
 - (id)initWithData:(id)arg1;
 - (id)lastUpdatedTag;
 - (id)passURLs;
+- (void)setDevicePassSerialNumbers:(id)arg1;
 - (void)setLastUpdatedTag:(id)arg1;
 - (void)setPassURLs:(id)arg1;
-- (id)updatedSinceTag;
 
 @end

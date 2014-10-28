@@ -7,7 +7,7 @@
 @interface SKUIGiftTextTableViewCell : UITableViewCell <UITextViewDelegate> {
     UIView *_bottomBorderView;
     UILabel *_label;
-    long long _maximumCharacterCount;
+    int _maximumCharacterCount;
     UILabel *_placeholderLabel;
     UITextView *_textView;
     UIView *_topBorderView;
@@ -15,9 +15,9 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * label;
-@property long long maximumCharacterCount;
+@property int maximumCharacterCount;
 @property(copy) NSString * placeholder;
 @property(readonly) Class superclass;
 @property(retain) UITextView * textView;
@@ -26,16 +26,16 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)label;
 - (void)layoutSubviews;
-- (long long)maximumCharacterCount;
+- (int)maximumCharacterCount;
 - (id)placeholder;
 - (void)setLabel:(id)arg1;
-- (void)setMaximumCharacterCount:(long long)arg1;
+- (void)setMaximumCharacterCount:(int)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setTextView:(id)arg1;
-- (bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
+- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (id)textView;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;

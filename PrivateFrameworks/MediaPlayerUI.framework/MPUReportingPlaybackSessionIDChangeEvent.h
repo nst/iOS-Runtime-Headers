@@ -13,7 +13,7 @@
 @property(retain) MPUReportingTrackMetadata * trackMetadata;
 
 - (void).cxx_destruct;
-- (bool)isValid;
+- (BOOL)isValid;
 - (id)radioStationMetadata;
 - (void)setRadioStationMetadata:(id)arg1;
 - (void)setTrackMetadata:(id)arg1;

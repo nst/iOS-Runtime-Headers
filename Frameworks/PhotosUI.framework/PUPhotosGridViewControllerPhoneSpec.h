@@ -6,15 +6,15 @@
 }
 
 - (id)albumPickerViewControllerSpec;
-- (struct CGSize { double x1; double x2; })baseInterItemSpacing;
-- (bool)canDisplayOptionsInPopover;
-- (bool)canDisplaySearchActionInNavigationBar;
-- (long long)cellFillMode;
-- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2;
-- (double)globalFooterHeight;
+- (struct CGSize { float x1; float x2; })baseInterItemSpacing;
+- (BOOL)canDisplayOptionsInPopover;
+- (BOOL)canDisplaySearchActionInNavigationBar;
+- (int)cellFillMode;
+- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
+- (float)globalFooterHeight;
 - (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
-- (unsigned long long)supportedInterfaceOrientations;
+- (unsigned int)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
 
 @end

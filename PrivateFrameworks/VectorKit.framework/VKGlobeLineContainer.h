@@ -19,7 +19,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<VKPolylineOverlay *, std::__1::__value_type<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData> >, std::__1::less<VKPolylineOverlay *>, true> > { 
-                unsigned long long __first_; 
+                unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
     <VKGlobeLineContainerDelegate> *_delegate;
@@ -31,13 +31,13 @@
     struct VKGlobeRouteSplit { int (**x1)(); id x2; } *_routeSplit;
     struct VKGlobeRouteStyle { float x1; float x2; float x3; struct Color { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; } x4; struct Color { unsigned char x_5_1_1; unsigned char x_5_1_2; unsigned char x_5_1_3; unsigned char x_5_1_4; } x5; struct Color { unsigned char x_6_1_1; unsigned char x_6_1_2; unsigned char x_6_1_3; unsigned char x_6_1_4; } x6; struct Color { unsigned char x_7_1_1; unsigned char x_7_1_2; unsigned char x_7_1_3; unsigned char x_7_1_4; } x7; struct Color { unsigned char x_8_1_1; unsigned char x_8_1_2; unsigned char x_8_1_3; unsigned char x_8_1_4; } x8; float x9; float x10; float x11; float x12; float x13; int x14; struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x_15_1_1; struct __shared_weak_count {} *x_15_1_2; } x15; struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x_16_1_1; struct __shared_weak_count {} *x_16_1_2; } x16; } *_routeStyle;
     VKPolylineOverlay *_selectedPolyline;
-    bool_trafficEnabled;
+    BOOL _trafficEnabled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <VKGlobeLineContainerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
 @property(readonly) Class superclass;
 
@@ -66,9 +66,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setNeedsLayoutForPolyline:(id)arg1;
 - (void)setRouteLineSplitAnnotation:(id)arg1;
-- (void)setSelected:(id)arg1 selected:(bool)arg2;
+- (void)setSelected:(id)arg1 selected:(BOOL)arg2;
 - (void)setStylesheet:(id)arg1;
-- (void)setTrafficEnabled:(bool)arg1;
+- (void)setTrafficEnabled:(BOOL)arg1;
 - (void)updateWithContext:(id)arg1;
 
 @end

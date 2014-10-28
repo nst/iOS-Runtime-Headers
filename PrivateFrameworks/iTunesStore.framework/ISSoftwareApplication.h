@@ -7,6 +7,7 @@
 @interface ISSoftwareApplication : NSObject <SSXPCCoding> {
     NSNumber *_accountDSID;
     NSString *_accountIdentifier;
+    BOOL _beta;
     NSString *_bundleIdentifier;
     NSString *_bundleShortVersionString;
     NSString *_bundleVersion;
@@ -16,21 +17,20 @@
     NSNumber *_familyAccountIdentifier;
     NSNumber *_itemIdentifier;
     NSString *_itemName;
+    BOOL _placeholder;
+    BOOL _profileValidated;
     NSDate *_receiptExpirationDate;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
     NSString *_vendorName;
     NSNumber *_versionIdentifier;
     NSArray *_versionOrdering;
-    unsigned long long _vppStateFlags;
-    bool_beta;
-    bool_placeholder;
-    bool_profileValidated;
+    unsigned int _vppStateFlags;
 }
 
 @property(retain) NSNumber * accountDSID;
 @property(copy) NSString * accountIdentifier;
-@property(getter=isBeta) bool beta;
+@property(getter=isBeta) BOOL beta;
 @property(copy) NSString * bundleIdentifier;
 @property(copy) NSString * bundleShortVersionString;
 @property(copy) NSString * bundleVersion;
@@ -40,11 +40,11 @@
 @property(copy,readonly) NSString * description;
 @property(copy) NSString * deviceIdentifierForVendor;
 @property(copy) NSNumber * familyAccountIdentifier;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSNumber * itemIdentifier;
 @property(copy) NSString * itemName;
-@property(getter=isPlaceholder) bool placeholder;
-@property(getter=isProfileValidated) bool profileValidated;
+@property(getter=isPlaceholder) BOOL placeholder;
+@property(getter=isProfileValidated) BOOL profileValidated;
 @property(readonly) NSDate * receiptExpirationDate;
 @property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
@@ -52,7 +52,7 @@
 @property(copy) NSString * vendorName;
 @property(retain) NSNumber * versionIdentifier;
 @property(copy) NSArray * versionOrdering;
-@property(readonly) unsigned long long vppStateFlags;
+@property(readonly) unsigned int vppStateFlags;
 
 - (id)ITunesMetadataDictionary;
 - (void)_loadMetadataFromContainer:(id)arg1;
@@ -71,16 +71,16 @@
 - (id)initWithLaunchServicesApplication:(id)arg1 containerPath:(id)arg2;
 - (id)initWithLaunchServicesApplication:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (bool)isBeta;
-- (bool)isPlaceholder;
-- (bool)isProfileValidated;
+- (BOOL)isBeta;
+- (BOOL)isPlaceholder;
+- (BOOL)isProfileValidated;
 - (id)itemIdentifier;
 - (id)itemName;
 - (id)receiptExpirationDate;
 - (void)resetVPPStateFlags;
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
-- (void)setBeta:(bool)arg1;
+- (void)setBeta:(BOOL)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleShortVersionString:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
@@ -90,8 +90,8 @@
 - (void)setFamilyAccountIdentifier:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setItemName:(id)arg1;
-- (void)setPlaceholder:(bool)arg1;
-- (void)setProfileValidated:(bool)arg1;
+- (void)setPlaceholder:(BOOL)arg1;
+- (void)setProfileValidated:(BOOL)arg1;
 - (void)setSoftwareType:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setVendorName:(id)arg1;
@@ -102,6 +102,6 @@
 - (id)vendorName;
 - (id)versionIdentifier;
 - (id)versionOrdering;
-- (unsigned long long)vppStateFlags;
+- (unsigned int)vppStateFlags;
 
 @end

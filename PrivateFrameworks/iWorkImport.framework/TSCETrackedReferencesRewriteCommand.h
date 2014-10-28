@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 rewriteSpec:(id)arg2 referenceTracker:(id)arg3;
-- (bool)process;
+- (BOOL)process;
 - (void)redo;
 - (void)saveToArchiver:(id)arg1;
 - (void)undo;

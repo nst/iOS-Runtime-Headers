@@ -6,24 +6,24 @@
 
 @interface _HKPropertyComparisonFilter : _HKFilter {
     NSString *_lhPropertyName;
-    unsigned long long _operatorType;
+    unsigned int _operatorType;
     NSString *_rhPropertyName;
 }
 
 @property(readonly) NSString * lhPropertyName;
-@property(readonly) unsigned long long operatorType;
+@property(readonly) unsigned int operatorType;
 @property(readonly) NSString * rhPropertyName;
 
-+ (id)filterWithLeftHandPropertyName:(id)arg1 rightHandPropertyName:(id)arg2 operator:(unsigned long long)arg3;
-+ (bool)supportsSecureCoding;
++ (id)filterWithLeftHandPropertyName:(id)arg1 rightHandPropertyName:(id)arg2 operator:(unsigned int)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLeftHandPropertyName:(id)arg1 rightHandPropertyName:(id)arg2 operator:(unsigned long long)arg3;
+- (id)initWithLeftHandPropertyName:(id)arg1 rightHandPropertyName:(id)arg2 operator:(unsigned int)arg3;
 - (id)lhPropertyName;
-- (unsigned long long)operatorType;
+- (unsigned int)operatorType;
 - (id)predicateWithHealthDaemon:(id)arg1;
 - (id)rhPropertyName;
 

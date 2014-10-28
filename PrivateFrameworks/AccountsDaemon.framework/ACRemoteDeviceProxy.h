@@ -13,17 +13,17 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_dequeueCompletionHandlersForMessageID:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
+- (void)_dequeueCompletionHandlersForMessageID:(id)arg1 withSuccess:(BOOL)arg2 error:(id)arg3;
 - (void)_enqueueCompletionHandler:(id)arg1 forMessageID:(id)arg2;
-- (bool)_isValidCommandForOutgoingMessage:(id)arg1;
+- (BOOL)_isValidCommandForOutgoingMessage:(id)arg1;
 - (id)init;
 - (void)sendCommand:(id)arg1 withAccount:(id)arg2 completion:(id)arg3;
 - (void)sendCommand:(id)arg1 withAccount:(id)arg2;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 

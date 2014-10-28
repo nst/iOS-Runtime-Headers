@@ -8,16 +8,16 @@
     <SKUIComposeReviewHeaderDelegate> *_delegate;
     SKStarRatingControl *_ratingControl;
     SKUIReviewMetadata *_review;
-    long long _style;
+    BOOL _showNicknameField;
+    int _style;
     SKUIComposeTextFieldListView *_textFieldListView;
-    bool_showNicknameField;
 }
 
-@property(readonly) long long composeReviewStyle;
+@property(readonly) int composeReviewStyle;
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIComposeReviewHeaderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) UIResponder * initialFirstResponder;
 @property(readonly) NSString * nickname;
 @property float rating;
@@ -26,22 +26,22 @@
 @property(readonly) NSString * title;
 
 - (void).cxx_destruct;
-- (long long)composeReviewStyle;
+- (int)composeReviewStyle;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initialFirstResponder;
 - (void)layoutSubviews;
 - (id)nickname;
-- (long long)numberOfColumnsInTextFieldList:(id)arg1;
-- (long long)numberOfFieldsInTextFieldList:(id)arg1;
+- (int)numberOfColumnsInTextFieldList:(id)arg1;
+- (int)numberOfFieldsInTextFieldList:(id)arg1;
 - (float)rating;
 - (id)review;
 - (void)setDelegate:(id)arg1;
 - (void)setRating:(float)arg1;
 - (void)setReview:(id)arg1;
 - (void)sizeToFit;
-- (id)textFieldList:(id)arg1 configurationForFieldAtIndex:(unsigned long long)arg2;
+- (id)textFieldList:(id)arg1 configurationForFieldAtIndex:(unsigned int)arg2;
 - (void)textFieldListValidityDidChange:(id)arg1;
 - (void)textFieldListValuesDidChange:(id)arg1;
 - (id)title;

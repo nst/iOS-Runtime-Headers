@@ -10,10 +10,10 @@
 @property(copy) NSString * attributionId;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(copy) NSArray * urls;
-@property long long version;
+@property int version;
 
 + (id)attribution;
 + (id)attributionWithDictionary:(id)arg1 context:(id)arg2;
@@ -23,8 +23,8 @@
 - (id)groupIdentifier;
 - (void)setAttributionId:(id)arg1;
 - (void)setUrls:(id)arg1;
-- (void)setVersion:(long long)arg1;
+- (void)setVersion:(int)arg1;
 - (id)urls;
-- (long long)version;
+- (int)version;
 
 @end

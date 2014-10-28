@@ -12,7 +12,7 @@
 - (id)_activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (bool)canPerformWithActivityItems:(id)arg1;
+- (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)initWithDocumentInteractionController:(id)arg1 forAction:(SEL)arg2;
 - (void)performActivity;
 

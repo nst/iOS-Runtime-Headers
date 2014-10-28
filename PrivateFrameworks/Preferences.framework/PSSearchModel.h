@@ -13,7 +13,10 @@
     NSMutableSet *_delegates;
     NSMutableSet *_entriesBeingIndexed;
     NSMutableSet *_entriesPendingSearch;
+    BOOL _hasLoadedRootEntries;
+    BOOL _hasStartedIndexing;
     NSOperationQueue *_indexOperationQueue;
+    BOOL _indexing;
     NSMutableSet *_indexingEntriesWithLoadedDataSources;
     NSString *_queryForCurrentResults;
     NSMutableSet *_removedEntriesStillIndexing;
@@ -22,9 +25,6 @@
     NSOperationQueue *_searchOperationQueue;
     NSObject<OS_dispatch_queue> *_searchStateAccessQueue;
     NSMapTable *_specifierDataSources;
-    bool_hasLoadedRootEntries;
-    bool_hasStartedIndexing;
-    bool_indexing;
 }
 
 @property(retain) PSSearchOperation * activeSearchOperation;
@@ -33,11 +33,11 @@
 @property <PSSearchModelDataSource> * dataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool hasCompletedIndexing;
-@property(readonly) unsigned long long hash;
-@property(getter=isIndexing,readonly) bool indexing;
-@property(getter=isLoadingResults,readonly) bool loadingResults;
-@property(readonly) long long observerType;
+@property(readonly) BOOL hasCompletedIndexing;
+@property(readonly) unsigned int hash;
+@property(getter=isIndexing,readonly) BOOL indexing;
+@property(getter=isLoadingResults,readonly) BOOL loadingResults;
+@property(readonly) int observerType;
 @property(readonly) NSArray * rootEntries;
 @property(readonly) Class superclass;
 
@@ -46,7 +46,7 @@
 - (void)_addSearchEntries:(id)arg1 parent:(id)arg2 usingBlock:(id)arg3;
 - (void)_addSpecifierDataSource:(id)arg1 forSearchEntry:(id)arg2;
 - (void)_beginIndexingIfNecessary;
-- (void)_beginSearchingEntriesForCurrentQuery:(id)arg1 newSearch:(bool)arg2;
+- (void)_beginSearchingEntriesForCurrentQuery:(id)arg1 newSearch:(BOOL)arg2;
 - (void)_cancelAllSearchOperations;
 - (id)_defaultSearchResultsSectionComparator;
 - (void)_enumerateDelegatesUsingBlock:(id)arg1;
@@ -55,11 +55,11 @@
 - (void)_performDeferredUpdatesForEntry:(id)arg1;
 - (void)_performSpecifierUpdates:(id)arg1 forSearchEntries:(id)arg2;
 - (void)_reloadSearchEntries:(id)arg1;
-- (void)_removeSearchEntries:(id)arg1 usingBlock:(id)arg2 forReload:(bool)arg3;
+- (void)_removeSearchEntries:(id)arg1 usingBlock:(id)arg2 forReload:(BOOL)arg3;
 - (void)_removeSearchEntries:(id)arg1 usingBlock:(id)arg2;
 - (id)_rootSpecifiers;
 - (id)_searchEntriesForSpecifierDataSource:(id)arg1;
-- (void)_updateWithNewSearchResults:(id)arg1 forQuery:(id)arg2 newSearch:(bool)arg3;
+- (void)_updateWithNewSearchResults:(id)arg1 forQuery:(id)arg2 newSearch:(BOOL)arg3;
 - (void)_updatedEntry:(id)arg1 withChildren:(id)arg2;
 - (id)activeSearchOperation;
 - (void)addDelegate:(id)arg1;
@@ -69,12 +69,12 @@
 - (void)dataSource:(id)arg1 performUpdates:(id)arg2;
 - (id)dataSource;
 - (void)dealloc;
-- (bool)hasCompletedIndexing;
+- (BOOL)hasCompletedIndexing;
 - (id)init;
 - (void)invalidateSpecifiersForDataSource:(id)arg1;
-- (bool)isIndexing;
-- (bool)isLoadingResults;
-- (long long)observerType;
+- (BOOL)isIndexing;
+- (BOOL)isLoadingResults;
+- (int)observerType;
 - (void)preheat;
 - (void)reloadRootSpecifier:(id)arg1;
 - (void)removeDelegate:(id)arg1;

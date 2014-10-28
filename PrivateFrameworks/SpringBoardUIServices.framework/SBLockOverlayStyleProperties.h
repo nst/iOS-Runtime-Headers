@@ -5,33 +5,33 @@
 @class UIColor, _UIBackdropViewSettings;
 
 @interface SBLockOverlayStyleProperties : NSObject {
-    double _blurRadius;
+    float _blurRadius;
     UIColor *_primaryColor;
-    long long _quality;
+    int _quality;
     UIColor *_secondaryColor;
     _UIBackdropViewSettings *_settings;
-    unsigned long long _style;
-    double _tintAlpha;
+    unsigned int _style;
+    float _tintAlpha;
     UIColor *_tintColor;
 }
 
-@property(readonly) double blurRadius;
-@property(readonly) long long graphicsQuality;
-@property(readonly) unsigned long long style;
-@property(readonly) double tintAlpha;
+@property(readonly) float blurRadius;
+@property(readonly) int graphicsQuality;
+@property(readonly) unsigned int style;
+@property(readonly) float tintAlpha;
 @property(readonly) UIColor * tintColor;
 
 - (void)_configure;
 - (id)_settingsForStyle;
 - (id)_stringForQuality;
 - (id)_stringForStyle;
-- (double)blurRadius;
+- (float)blurRadius;
 - (void)dealloc;
 - (id)description;
-- (long long)graphicsQuality;
-- (id)initWithStyle:(unsigned long long)arg1 quality:(long long)arg2;
-- (unsigned long long)style;
-- (double)tintAlpha;
+- (int)graphicsQuality;
+- (id)initWithStyle:(unsigned int)arg1 quality:(int)arg2;
+- (unsigned int)style;
+- (float)tintAlpha;
 - (id)tintColor;
 
 @end

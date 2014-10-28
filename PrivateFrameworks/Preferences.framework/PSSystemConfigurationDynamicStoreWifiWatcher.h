@@ -11,7 +11,7 @@
 
 + (void)releaseSharedInstance;
 + (id)sharedInstance;
-+ (bool)wifiEnabled;
++ (BOOL)wifiEnabled;
 
 - (id)_wifiNameWithState:(id)arg1;
 - (id)_wifiPowerWithState:(id)arg1;

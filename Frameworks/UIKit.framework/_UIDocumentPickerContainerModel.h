@@ -6,7 +6,7 @@
 
 @interface _UIDocumentPickerContainerModel : NSObject {
     NSArray *_pickableTypes;
-    unsigned long long _pickerMode;
+    unsigned int _pickerMode;
     int _sortOrder;
     NSOperationQueue *_thumbnailQueue;
     NSMutableArray *_updateHandlers;
@@ -14,7 +14,7 @@
 
 @property(readonly) NSArray * modelObjects;
 @property(copy) NSArray * pickableTypes;
-@property unsigned long long pickerMode;
+@property unsigned int pickerMode;
 @property int sortOrder;
 @property(retain) NSOperationQueue * thumbnailQueue;
 @property(retain) NSMutableArray * updateHandlers;
@@ -25,11 +25,11 @@
 - (id)init;
 - (id)modelObjects;
 - (id)pickableTypes;
-- (unsigned long long)pickerMode;
-- (void)refreshItem:(id)arg1 thumbnailOnly:(bool)arg2;
+- (unsigned int)pickerMode;
+- (void)refreshItem:(id)arg1 thumbnailOnly:(BOOL)arg2;
 - (void)removeUpdateHandler:(id)arg1;
 - (void)setPickableTypes:(id)arg1;
-- (void)setPickerMode:(unsigned long long)arg1;
+- (void)setPickerMode:(unsigned int)arg1;
 - (void)setSortOrder:(int)arg1;
 - (void)setThumbnailQueue:(id)arg1;
 - (void)setUpdateHandlers:(id)arg1;

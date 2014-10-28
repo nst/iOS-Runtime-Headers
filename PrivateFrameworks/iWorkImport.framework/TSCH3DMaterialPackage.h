@@ -8,9 +8,9 @@
 + (id)package;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)hasCompleteData;
-- (unsigned long long)hash;
+- (BOOL)hasCompleteData;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

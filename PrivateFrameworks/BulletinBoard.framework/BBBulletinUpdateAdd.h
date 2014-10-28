@@ -3,17 +3,17 @@
  */
 
 @interface BBBulletinUpdateAdd : BBBulletinUpdate {
-    bool_shouldPlayLightsAndSirens;
+    BOOL _shouldPlayLightsAndSirens;
 }
 
-@property(readonly) bool shouldPlayLightsAndSirens;
+@property(readonly) BOOL shouldPlayLightsAndSirens;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithBulletin:(id)arg1 updateType:(long long)arg2 transactionID:(unsigned long long)arg3 shouldPlayLightsAndSirens:(bool)arg4;
-- (id)initWithBulletin:(id)arg1 updateType:(long long)arg2 transactionID:(unsigned long long)arg3;
+- (id)initWithBulletin:(id)arg1 updateType:(int)arg2 transactionID:(unsigned int)arg3 shouldPlayLightsAndSirens:(BOOL)arg4;
+- (id)initWithBulletin:(id)arg1 updateType:(int)arg2 transactionID:(unsigned int)arg3;
 - (id)initWithCoder:(id)arg1;
-- (bool)shouldPlayLightsAndSirens;
+- (BOOL)shouldPlayLightsAndSirens;
 
 @end

@@ -5,11 +5,11 @@
 @interface RUStationTreeArtworkTableViewCell : RUStationTreeTableViewCell {
 }
 
-+ (bool)_audioPreviewViewShowsFaceWhenNotPlaying;
-+ (struct CGSize { double x1; double x2; })_audioPreviewViewSize;
-+ (struct CGSize { double x1; double x2; })artworkSize;
++ (BOOL)_audioPreviewViewShowsFaceWhenNotPlaying;
++ (struct CGSize { float x1; float x2; })_audioPreviewViewSize;
++ (struct CGSize { float x1; float x2; })artworkSize;
 
-- (double)_audioPreviewViewMinX;
-- (double)_textLabelMinXWhenPlaying:(bool)arg1;
+- (float)_audioPreviewViewMinX;
+- (float)_textLabelMinXWhenPlaying:(BOOL)arg1;
 
 @end

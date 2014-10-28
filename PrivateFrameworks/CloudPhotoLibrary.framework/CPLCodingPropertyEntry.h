@@ -17,8 +17,8 @@
     SEL _propertyGetter;
     SEL _propertySetter;
     BOOL _propertyType;
+    BOOL _readOnly;
     NSString *_structName;
-    bool_readOnly;
 }
 
 @property struct objc_ivar { }* ivar;
@@ -28,13 +28,13 @@
 @property SEL propertySetter;
 @property int (* propertySetterIMP;
 @property BOOL propertyType;
-@property(getter=isReadOnly) bool readOnly;
+@property(getter=isReadOnly) BOOL readOnly;
 @property(copy) NSString * structName;
 
 - (int (*)())propertyGetterIMP;
 - (int (*)())propertySetterIMP;
 - (void).cxx_destruct;
-- (bool)isReadOnly;
+- (BOOL)isReadOnly;
 - (struct objc_ivar { }*)ivar;
 - (void*)ivarAddrForObject:(id)arg1;
 - (id)ivarValueForObject:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)setPropertySetter:(SEL)arg1;
 - (void)setPropertySetterIMP:(int (*)())arg1;
 - (void)setPropertyType:(BOOL)arg1;
-- (void)setReadOnly:(bool)arg1;
+- (void)setReadOnly:(BOOL)arg1;
 - (void)setStructName:(id)arg1;
 - (id)structName;
 

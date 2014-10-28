@@ -5,22 +5,22 @@
 @class NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 
 @interface _IDSAccountController : NSObject <IDSDaemonListenerProtocol> {
+    BOOL _accountsLoaded;
     NSMutableSet *_cachedAccounts;
     id _delegateContext;
     NSMapTable *_delegateToInfo;
     NSMutableSet *_enabledAccounts;
+    BOOL _isLocalAccountVisible;
     NSString *_service;
     NSString *_serviceToken;
     NSMutableDictionary *_transactionIDToHandlersMap;
-    bool_accountsLoaded;
-    bool_isLocalAccountVisible;
 }
 
 @property(retain,readonly) NSSet * accounts;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSSet * enabledAccounts;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) NSString * serviceName;
 @property(readonly) Class superclass;
 

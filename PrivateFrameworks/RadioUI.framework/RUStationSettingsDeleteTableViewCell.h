@@ -9,11 +9,11 @@
 }
 
 + (id)_fakeButtonLabelFont;
-+ (double)defaultHeightForTraitCollection:(id)arg1;
++ (float)defaultHeightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

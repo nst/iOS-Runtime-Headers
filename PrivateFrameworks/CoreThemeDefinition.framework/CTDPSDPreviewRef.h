@@ -12,26 +12,26 @@
         unsigned short bitsPerSample; 
         unsigned short samplesPerPixel; 
         int isDrawable; 
-    long long _columnWidth;
+    int _columnWidth;
     } _imageInfo;
-    long long _layerCount;
+    int _layerCount;
     NSArray *_layerIndexLayout;
-    long long _rowHeight;
-    long long _sliceColumnCount;
-    long long _sliceCount;
+    int _rowHeight;
+    int _sliceColumnCount;
+    int _sliceCount;
     NSArray *_sliceRects;
-    long long _sliceRowCount;
+    int _sliceRowCount;
 }
 
 - (void)dealloc;
 - (void)evaluateSliceGrid;
-- (bool)hasGradient;
-- (bool)hasRegularSliceGrid;
-- (long long)indexOfDrawingLayerType:(long long)arg1;
+- (BOOL)hasGradient;
+- (BOOL)hasRegularSliceGrid;
+- (int)indexOfDrawingLayerType:(int)arg1;
 - (id)initWithPath:(id)arg1;
-- (long long)numberOfAlphaChannels;
-- (long long)numberOfGradientLayers;
-- (long long)sliceColumnCount;
-- (long long)sliceRowCount;
+- (int)numberOfAlphaChannels;
+- (int)numberOfGradientLayers;
+- (int)sliceColumnCount;
+- (int)sliceRowCount;
 
 @end

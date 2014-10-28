@@ -21,8 +21,8 @@
 + (void)flushHostCache;
 + (id)hostWithAddress:(id)arg1;
 + (id)hostWithName:(id)arg1;
-+ (bool)isHostCacheEnabled;
-+ (void)setHostCacheEnabled:(bool)arg1;
++ (BOOL)isHostCacheEnabled;
++ (void)setHostCacheEnabled:(BOOL)arg1;
 
 - (void)__resolveWithFlags:(int)arg1 resultArray:(id)arg2 handler:(id)arg3;
 - (id)_thingToResolve;
@@ -32,7 +32,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initToResolve:(id)arg1 as:(int)arg2;
-- (bool)isEqualToHost:(id)arg1;
+- (BOOL)isEqualToHost:(id)arg1;
 - (id)localizedName;
 - (id)name;
 - (id)names;

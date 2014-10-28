@@ -3,32 +3,32 @@
  */
 
 @interface CUIStyleEffectConfiguration : NSObject <NSCopying> {
-    long long _presentationState;
-    long long _state;
-    long long _value;
-    bool_foregroundColorShouldTintEffects;
-    bool_useSimplifiedEffect;
+    BOOL _foregroundColorShouldTintEffects;
+    int _presentationState;
+    int _state;
+    BOOL _useSimplifiedEffect;
+    int _value;
 }
 
-@property bool foregroundColorShouldTintEffects;
-@property long long presentationState;
-@property long long state;
-@property bool useSimplifiedEffect;
-@property long long value;
+@property BOOL foregroundColorShouldTintEffects;
+@property int presentationState;
+@property int state;
+@property BOOL useSimplifiedEffect;
+@property int value;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (bool)foregroundColorShouldTintEffects;
+- (BOOL)foregroundColorShouldTintEffects;
 - (id)init;
-- (long long)presentationState;
-- (void)setForegroundColorShouldTintEffects:(bool)arg1;
-- (void)setPresentationState:(long long)arg1;
-- (void)setState:(long long)arg1;
-- (void)setUseSimplifiedEffect:(bool)arg1;
-- (void)setValue:(long long)arg1;
-- (bool)shouldIgnoreForegroundColor;
-- (long long)state;
-- (bool)useSimplifiedEffect;
-- (long long)value;
+- (int)presentationState;
+- (void)setForegroundColorShouldTintEffects:(BOOL)arg1;
+- (void)setPresentationState:(int)arg1;
+- (void)setState:(int)arg1;
+- (void)setUseSimplifiedEffect:(BOOL)arg1;
+- (void)setValue:(int)arg1;
+- (BOOL)shouldIgnoreForegroundColor;
+- (int)state;
+- (BOOL)useSimplifiedEffect;
+- (int)value;
 
 @end

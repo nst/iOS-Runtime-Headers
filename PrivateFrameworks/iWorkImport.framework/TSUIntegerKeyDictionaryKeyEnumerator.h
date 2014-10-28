@@ -3,13 +3,13 @@
  */
 
 @interface TSUIntegerKeyDictionaryKeyEnumerator : NSObject {
-    unsigned long long _count;
-    unsigned long long _index;
-    long long **_keys;
+    unsigned int _count;
+    unsigned int _index;
+    int **_keys;
 }
 
 - (void)dealloc;
 - (id)initWithIntegerKeyDictionary:(id)arg1;
-- (long long)nextKey;
+- (int)nextKey;
 
 @end

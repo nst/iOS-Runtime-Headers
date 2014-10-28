@@ -8,7 +8,7 @@
     CKDPInvitation *_invitation;
 }
 
-@property(readonly) bool hasInvitation;
+@property(readonly) BOOL hasInvitation;
 @property(retain) CKDPInvitation * invitation;
 
 - (void).cxx_destruct;
@@ -16,12 +16,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasInvitation;
-- (unsigned long long)hash;
+- (BOOL)hasInvitation;
+- (unsigned int)hash;
 - (id)invitation;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setInvitation:(id)arg1;
 - (void)writeTo:(id)arg1;
 

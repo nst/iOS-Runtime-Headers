@@ -14,25 +14,25 @@
         struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
             struct TrafficManager {} *__first_; 
         } __ptr_; 
+    BOOL _enabled;
     VKRoadMapModel *_roadModel;
     VKTrafficDrawStyle *_trafficDrawStyle;
     } _trafficManager;
-    bool_enabled;
 }
 
-@property bool enabled;
+@property BOOL enabled;
 @property(retain) VKRoadMapModel * roadModel;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
-- (bool)enabled;
+- (BOOL)enabled;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
 - (unsigned long long)mapLayerPosition;
 - (id)roadModel;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setRoadModel:(id)arg1;
 - (void)stylesheetDidChange;
 

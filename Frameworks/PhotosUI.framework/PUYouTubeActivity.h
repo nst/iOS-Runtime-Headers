@@ -9,7 +9,7 @@
 - (id)_activitySettingsImage;
 - (id)activityTitle;
 - (id)activityType;
-- (bool)canPerformWithActivityItems:(id)arg1;
+- (BOOL)canPerformWithActivityItems:(id)arg1;
 - (id)publishingBundle;
 
 @end

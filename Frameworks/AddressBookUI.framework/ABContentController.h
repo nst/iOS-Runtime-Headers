@@ -13,11 +13,11 @@
 @property void* addressBook;
 
 - (void*)addressBook;
-- (void)back:(bool)arg1 save:(bool)arg2;
+- (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (void)cleanUpContentLayer;
 - (id)contentControllerDelegate;
 - (id)contentView;
-- (bool)contentViewIsVisible;
+- (BOOL)contentViewIsVisible;
 - (void)dealloc;
 - (void)displayScrollerIndicators;
 - (id)init;

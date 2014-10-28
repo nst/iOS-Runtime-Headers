@@ -6,35 +6,35 @@
 
 @interface PKImageSet : NSObject <NSSecureCoding> {
     NSURL *_originCacheURL;
-    long long _version;
+    int _version;
 }
 
 @property(copy) NSURL * originCacheURL;
-@property long long version;
+@property int version;
 
 + (id)_archiveURL:(id)arg1;
 + (id)_archivedImageSet:(id)arg1 forDisplayProfile:(id)arg2;
-+ (Class)_classForDisplayProfileType:(long long)arg1;
++ (Class)_classForDisplayProfileType:(int)arg1;
 + (id)archiveName;
-+ (bool)archivedObject:(id)arg1 matchesDisplayProfile:(id)arg2;
-+ (Class)classForImageSetType:(long long)arg1;
-+ (long long)currentVersion;
-+ (id)imageSetForType:(long long)arg1 displayProfile:(id)arg2 fileURL:(id)arg3 cacheURL:(id)arg4;
-+ (id)imageSetForType:(long long)arg1 screenScale:(double)arg2 suffix:(id)arg3 displayProfile:(id)arg4 fileURL:(id)arg5 cacheURL:(id)arg6;
-+ (long long)imageSetType;
-+ (bool)shouldCache;
-+ (bool)supportsSecureCoding;
++ (BOOL)archivedObject:(id)arg1 matchesDisplayProfile:(id)arg2;
++ (Class)classForImageSetType:(int)arg1;
++ (int)currentVersion;
++ (id)imageSetForType:(int)arg1 displayProfile:(id)arg2 fileURL:(id)arg3 cacheURL:(id)arg4;
++ (id)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 fileURL:(id)arg5 cacheURL:(id)arg6;
++ (int)imageSetType;
++ (BOOL)shouldCache;
++ (BOOL)supportsSecureCoding;
 
-- (bool)_isSetImage:(id)arg1 equalToImage:(id)arg2;
+- (BOOL)_isSetImage:(id)arg1 equalToImage:(id)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 - (id)originCacheURL;
 - (void)preheatImages;
 - (void)saveCache:(id)arg1;
 - (void)setOriginCacheURL:(id)arg1;
-- (void)setVersion:(long long)arg1;
-- (long long)version;
+- (void)setVersion:(int)arg1;
+- (int)version;
 
 @end

@@ -5,8 +5,8 @@
 @interface MPPlaceholderAVItem : MPAVItem {
 }
 
-- (bool)isValidPlayerSubstituteForItem:(id)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
-- (bool)supportsSkip;
+- (BOOL)supportsSkip;
 
 @end

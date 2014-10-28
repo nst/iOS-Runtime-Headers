@@ -5,9 +5,9 @@
 @interface TSTLayoutDynamicResizeInfoAccordion : TSTLayoutDynamicResizeInfo {
 }
 
-- (double)applyResizeHeightFactor:(double)arg1;
-- (double)applyResizeWidthFactor:(double)arg1;
+- (float)applyResizeHeightFactor:(float)arg1;
+- (float)applyResizeWidthFactor:(float)arg1;
 - (void)captureNewMinimumRowHeights:(id)arg1;
-- (double)p_applyAccordionResizeFactor:(double)arg1 region:(id)arg2 direction:(int)arg3 totalOfCaptured:(double)arg4 count:(unsigned short)arg5 capturedArray:(double*)arg6 currentArray:(double*)arg7 minimumArray:(double*)arg8;
+- (float)p_applyAccordionResizeFactor:(float)arg1 region:(id)arg2 direction:(int)arg3 totalOfCaptured:(float)arg4 count:(unsigned short)arg5 capturedArray:(float*)arg6 currentArray:(float*)arg7 minimumArray:(float*)arg8;
 
 @end

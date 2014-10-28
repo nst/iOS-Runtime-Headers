@@ -5,39 +5,39 @@
 @class <CNContactPickerContentDelegate>, NSArray, NSPredicate, NSString;
 
 @interface CNContactPickerContentViewController : UIViewController <CNContactPickerContentViewController> {
+    BOOL _clientWantsPersons;
+    BOOL _clientWantsProperties;
     <CNContactPickerContentDelegate> *_delegate;
     NSArray *_displayedKeys;
     NSPredicate *_predicateForEnablingContact;
     NSPredicate *_predicateForSelectionOfContact;
     NSPredicate *_predicateForSelectionOfProperty;
-    bool_clientWantsPersons;
-    bool_clientWantsProperties;
 }
 
 @property void* addressBook;
-@property bool clientWantsPersons;
-@property bool clientWantsProperties;
+@property BOOL clientWantsPersons;
+@property BOOL clientWantsProperties;
 @property(copy,readonly) NSString * debugDescription;
 @property <CNContactPickerContentDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(copy) NSArray * displayedKeys;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSPredicate * predicateForEnablingContact;
 @property(copy) NSPredicate * predicateForSelectionOfContact;
 @property(copy) NSPredicate * predicateForSelectionOfProperty;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)clientWantsPersons;
-- (bool)clientWantsProperties;
+- (BOOL)clientWantsPersons;
+- (BOOL)clientWantsProperties;
 - (id)delegate;
 - (id)displayedKeys;
 - (void)invalidate;
 - (id)predicateForEnablingContact;
 - (id)predicateForSelectionOfContact;
 - (id)predicateForSelectionOfProperty;
-- (void)setClientWantsPersons:(bool)arg1;
-- (void)setClientWantsProperties:(bool)arg1;
+- (void)setClientWantsPersons:(BOOL)arg1;
+- (void)setClientWantsProperties:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayedKeys:(id)arg1;
 - (void)setPredicateForEnablingContact:(id)arg1;

@@ -4,14 +4,14 @@
 
 @interface _UIMotionEffectEngineLogger : NSObject {
     double _lastUpdateTimeStamp;
-    long long _motionLevelSamples[8];
-    long long _sampleCount;
-    long long _updateFreqency;
+    int _motionLevelSamples[8];
+    int _sampleCount;
+    int _updateFreqency;
 }
 
 - (void)_dumpToAggregated;
 - (id)initWithFastUpdateInterval:(double)arg1 slowUpdateInterval:(double)arg2;
 - (double)lastRecordedTimestamp;
-- (void)recordMotionMagnitude:(double)arg1 atTimestamp:(double)arg2;
+- (void)recordMotionMagnitude:(float)arg1 atTimestamp:(double)arg2;
 
 @end

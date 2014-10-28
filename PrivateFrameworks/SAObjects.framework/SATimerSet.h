@@ -14,7 +14,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setTimer:(id)arg1;
 - (id)timer;
 

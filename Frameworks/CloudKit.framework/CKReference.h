@@ -4,20 +4,20 @@
 
 @class CKRecordID, NSString;
 
-@interface CKReference : NSObject <NSSecureCoding, NSCopying, CKRecordValue> {
+@interface CKReference : NSObject <CKRecordValue, NSSecureCoding, NSCopying> {
     CKRecordID *_recordID;
-    unsigned long long _referenceAction;
+    unsigned int _referenceAction;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) CKRecordID * recordID;
-@property(readonly) unsigned long long referenceAction;
+@property(readonly) unsigned int referenceAction;
 @property(readonly) Class superclass;
 
 + (id)parentStructureRefForItemID:(id)arg1 zoneName:(id)arg2;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (id)weakStructureRefForItemID:(id)arg1 zoneName:(id)arg2 forType:(BOOL)arg3;
 
 - (void).cxx_destruct;
@@ -28,14 +28,14 @@
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecord:(id)arg1 action:(unsigned long long)arg2;
-- (id)initWithRecordID:(id)arg1 action:(unsigned long long)arg2;
-- (bool)isEqual:(id)arg1;
+- (id)initWithRecord:(id)arg1 action:(unsigned int)arg2;
+- (id)initWithRecordID:(id)arg1 action:(unsigned int)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)recordID;
-- (unsigned long long)referenceAction;
+- (unsigned int)referenceAction;
 - (void)setRecordID:(id)arg1;
 
 @end

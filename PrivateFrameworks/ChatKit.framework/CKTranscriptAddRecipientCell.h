@@ -12,15 +12,15 @@
 @property(retain) UIImageView * addIcon;
 @property(retain) UILabel * addLabel;
 
-+ (double)preferredHeight;
++ (float)preferredHeight;
 
 - (id)addIcon;
 - (id)addLabel;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setAddIcon:(id)arg1;
 - (void)setAddLabel:(id)arg1;
-- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(BOOL)arg1;
 
 @end

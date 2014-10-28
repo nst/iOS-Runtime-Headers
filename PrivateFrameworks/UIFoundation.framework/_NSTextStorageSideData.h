@@ -4,8 +4,8 @@
 
 @interface _NSTextStorageSideData : NSObject {
     struct _NSRange { 
-        unsigned long long location; 
-        unsigned long long length; 
+        unsigned int location; 
+        unsigned int length; 
     id _delegate;
     } _lazyFixRange;
 }

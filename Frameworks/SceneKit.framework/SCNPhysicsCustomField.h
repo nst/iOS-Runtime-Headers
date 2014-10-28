@@ -12,7 +12,7 @@
  */
 
 @interface SCNPhysicsCustomField : SCNPhysicsField {
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8 */
+     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
     id _block;
 }
 

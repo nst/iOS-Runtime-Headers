@@ -22,7 +22,7 @@
 @property(readonly) NSNumber * stepValue;
 @property(copy,readonly) NSString * units;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

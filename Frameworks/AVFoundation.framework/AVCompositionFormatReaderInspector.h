@@ -5,10 +5,10 @@
 @interface AVCompositionFormatReaderInspector : AVFormatReaderInspector {
 }
 
-- (bool)isCompatibleWithSavedPhotosAlbum;
-- (bool)isComposable;
-- (bool)isExportable;
-- (bool)isPlayable;
-- (bool)isReadable;
+- (BOOL)isCompatibleWithSavedPhotosAlbum;
+- (BOOL)isComposable;
+- (BOOL)isExportable;
+- (BOOL)isPlayable;
+- (BOOL)isReadable;
 
 @end

@@ -7,14 +7,14 @@
 @interface MSAuthenticationManager : NSObject {
     MSAlertManager *_alertManager;
     int _bagRefetchCount;
+    BOOL _isListeningToKeybagChanges;
     int _keybagChangeNotifyToken;
     int _state;
-    bool_isListeningToKeybagChanges;
 }
 
-@property bool isListeningToKeybagChanges;
+@property BOOL isListeningToKeybagChanges;
 @property int keybagChangeNotifyToken;
-@property(getter=isWaitingForAuth,readonly) bool waitingForAuth;
+@property(getter=isWaitingForAuth,readonly) BOOL waitingForAuth;
 
 + (id)sharedManager;
 
@@ -26,11 +26,11 @@
 - (void)didEncounterAuthenticationFailureForPersonID:(id)arg1;
 - (void)didEncounterAuthenticationSuccessForPersonID:(id)arg1;
 - (id)initWithAlertManager:(id)arg1;
-- (bool)isListeningToKeybagChanges;
-- (bool)isWaitingForAuth;
+- (BOOL)isListeningToKeybagChanges;
+- (BOOL)isWaitingForAuth;
 - (int)keybagChangeNotifyToken;
 - (void)rearmAuthenticationAlert;
-- (void)setIsListeningToKeybagChanges:(bool)arg1;
+- (void)setIsListeningToKeybagChanges:(BOOL)arg1;
 - (void)setKeybagChangeNotifyToken:(int)arg1;
 - (void)waitForDeviceUnlock;
 

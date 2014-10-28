@@ -3,10 +3,10 @@
  */
 
 @interface NSFileProviderProxy : NSFileReactorProxy {
-    bool_wantsWriteNotifications;
+    BOOL _wantsWriteNotifications;
 }
 
-@property bool wantsWriteNotifications;
+@property BOOL wantsWriteNotifications;
 
 - (void)forwardUsingMessageSender:(id)arg1;
 - (void)observeEndOfWriteAtLocation:(id)arg1 forAccessClaim:(id)arg2;
@@ -15,7 +15,7 @@
 - (void)provideLogicalURLForURL:(id)arg1 completionHandler:(id)arg2;
 - (void)providePhysicalURLForURL:(id)arg1 completionHandler:(id)arg2;
 - (void)setItemLocation:(id)arg1;
-- (void)setWantsWriteNotifications:(bool)arg1;
-- (bool)wantsWriteNotifications;
+- (void)setWantsWriteNotifications:(BOOL)arg1;
+- (BOOL)wantsWriteNotifications;
 
 @end

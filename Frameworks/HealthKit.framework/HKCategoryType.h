@@ -5,9 +5,9 @@
 @interface HKCategoryType : HKSampleType {
 }
 
-+ (void)_insertCode:(long long)arg1 forIdentifier:(id)arg2;
++ (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
 
-- (bool)_acceptsValue:(long long)arg1;
-- (long long)_defaultValue;
+- (BOOL)_acceptsValue:(int)arg1;
+- (int)_defaultValue;
 
 @end

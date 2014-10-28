@@ -8,23 +8,23 @@
     NSDate *_expirationDate;
     UIImage *_picture;
     NSString *_serverCacheTag;
-    bool_updating;
+    BOOL _updating;
 }
 
-@property(readonly) bool expired;
+@property(readonly) BOOL expired;
 @property(retain) UIImage * picture;
 @property(copy) NSString * serverCacheTag;
-@property bool updating;
+@property BOOL updating;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)expire;
-- (bool)expired;
+- (BOOL)expired;
 - (id)picture;
 - (id)serverCacheTag;
 - (void)setPicture:(id)arg1;
 - (void)setServerCacheTag:(id)arg1;
-- (void)setUpdating:(bool)arg1;
-- (bool)updating;
+- (void)setUpdating:(BOOL)arg1;
+- (BOOL)updating;
 
 @end

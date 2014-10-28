@@ -14,21 +14,21 @@
     ABCardGroup *_inlineMapGroup;
     MKMapItem *_mapItem;
     _MKPlaceViewController *_owner;
-    bool_showAttribution;
+    BOOL _showAttribution;
 }
 
 @property(retain) NSArray * businessInfoOrder;
 @property(retain) MKYelpDeal * deal;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSAttributedString * infoAttributionString;
 @property <MKPlaceInfoViewControllerDelegate> * infoDelegate;
 @property(retain) UIImage * inlineMap;
 @property(retain) MKMapItem * mapItem;
 @property _MKPlaceViewController * owner;
-@property(readonly) bool requiresPreferredContentSizeInStackingView;
-@property bool showAttribution;
+@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property BOOL showAttribution;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -44,10 +44,10 @@
 - (void)_updatePreferredContentSize;
 - (id)businessInfoOrder;
 - (id)contactHeaderView;
-- (id)contactView:(id)arg1 cellForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
-- (double)contactView:(id)arg1 heightForItemAtIndex:(long long)arg2 inGroup:(id)arg3;
-- (long long)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
-- (bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
+- (id)contactView:(id)arg1 cellForItemAtIndex:(int)arg2 inGroup:(id)arg3;
+- (float)contactView:(id)arg1 heightForItemAtIndex:(int)arg2 inGroup:(id)arg3;
+- (int)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
+- (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
 - (id)deal;
 - (id)infoAttributionString;
 - (id)infoDelegate;
@@ -55,17 +55,17 @@
 - (id)inlineMap;
 - (id)mapItem;
 - (id)owner;
-- (bool)requiresPreferredContentSizeInStackingView;
+- (BOOL)requiresPreferredContentSizeInStackingView;
 - (void)setBusinessInfoOrder:(id)arg1;
 - (void)setDeal:(id)arg1;
 - (void)setInfoDelegate:(id)arg1;
 - (void)setInlineMap:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setShowAttribution:(bool)arg1;
-- (bool)showAttribution;
+- (void)setShowAttribution:(BOOL)arg1;
+- (BOOL)showAttribution;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)updateInlineMapWithRefinedMapItem:(id)arg1;

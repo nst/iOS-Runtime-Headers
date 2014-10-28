@@ -9,8 +9,8 @@
         double latitude; 
         double longitude; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSString *_attributionString;
     id _context;
     } _coordinate;
@@ -19,7 +19,7 @@
     id _requester;
     } _size;
     VKMapSnapshotCreator *_snapshotCreator;
-    unsigned long long _zoomLevel;
+    unsigned int _zoomLevel;
 }
 
 @property(retain) NSString * attributionString;
@@ -28,8 +28,8 @@
 @property MKMapSnapshotCreator * delegate;
 @property(readonly) UIImage * image;
 @property(retain) id requester;
-@property struct CGSize { double x1; double x2; } size;
-@property unsigned long long zoomLevel;
+@property struct CGSize { float x1; float x2; } size;
+@property unsigned int zoomLevel;
 
 - (void).cxx_destruct;
 - (id)attributionString;
@@ -45,10 +45,10 @@
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRequester:(id)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setZoomLevel:(unsigned long long)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setZoomLevel:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })size;
 - (void)start;
-- (unsigned long long)zoomLevel;
+- (unsigned int)zoomLevel;
 
 @end

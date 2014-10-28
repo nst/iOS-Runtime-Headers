@@ -12,7 +12,7 @@
 
 @property UIScrollView * scrollView;
 
-- (double)_hysteresis;
+- (float)_hysteresis;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (id)scrollView;

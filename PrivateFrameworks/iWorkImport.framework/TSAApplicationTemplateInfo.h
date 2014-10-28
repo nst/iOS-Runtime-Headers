@@ -13,7 +13,7 @@
 @property(readonly) NSURL * bundledDocumentContainerURL;
 @property(readonly) NSURL * documentContainerURL;
 @property(readonly) NSString * documentVariant;
-@property(readonly) long long downloadState;
+@property(readonly) int downloadState;
 @property(readonly) NSURL * downloadedDocumentContainerURL;
 @property(readonly) NSString * name;
 @property(readonly) NSBundle * previewBundle;
@@ -35,14 +35,14 @@
 - (id)documentURL;
 - (id)documentURLWithDocumentContainerURL:(id)arg1;
 - (id)documentVariant;
-- (long long)downloadState;
+- (int)downloadState;
 - (id)downloadedDocumentContainerURL;
-- (id)initHeadlessWithName:(id)arg1 variant:(unsigned long long)arg2 locale:(struct __CFLocale { }*)arg3;
-- (id)initHeadlessWithName:(id)arg1 variant:(unsigned long long)arg2;
+- (id)initHeadlessWithName:(id)arg1 variant:(unsigned int)arg2 locale:(struct __CFLocale { }*)arg3;
+- (id)initHeadlessWithName:(id)arg1 variant:(unsigned int)arg2;
 - (id)initHeadlessWithName:(id)arg1;
 - (id)initWithDisplayName:(id)arg1 name:(id)arg2 documentVariant:(id)arg3 previewVariant:(id)arg4;
 - (id)initWithPropertyList:(id)arg1 documentVariant:(id)arg2 previewVariant:(id)arg3;
-- (bool)isAvailable;
+- (BOOL)isAvailable;
 - (id)localizationBundle;
 - (id)makeIdentifier;
 - (id)name;

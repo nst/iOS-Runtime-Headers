@@ -10,7 +10,7 @@
     GKImageBrush *_imageBrush;
     NSString *_name;
     UIImage *_renderedDefaultImage;
-    bool_shouldRenderDefaultImageWithBrush;
+    BOOL _shouldRenderDefaultImageWithBrush;
 }
 
 @property(retain) GKThreadsafeCache * cache;
@@ -18,7 +18,7 @@
 @property(readonly) GKImageBrush * imageBrush;
 @property(readonly) NSString * name;
 @property(retain) UIImage * renderedDefaultImage;
-@property bool shouldRenderDefaultImageWithBrush;
+@property BOOL shouldRenderDefaultImageWithBrush;
 
 + (id)cacheDirectoryForImageID:(id)arg1;
 + (void)clearCache;
@@ -26,7 +26,7 @@
 + (id)syncQueue;
 
 - (id)cache;
-- (unsigned long long)cacheCostForImage:(id)arg1;
+- (unsigned int)cacheCostForImage:(id)arg1;
 - (id)cachedImageForIdentifier:(id)arg1;
 - (id)cachedImageForKey:(id)arg1;
 - (void)clearCachedImageForIdentifier:(id)arg1;
@@ -45,16 +45,16 @@
 - (id)processAndCacheImageDataInContext:(id)arg1 withImage:(id)arg2 forIdentifier:(id)arg3;
 - (id)processAndCacheImageDataInContext:(id)arg1 withImage:(id)arg2 forKey:(id)arg3;
 - (id)renderedDefaultImage;
-- (id)renderedImageWithImage:(id)arg1 defaultSize:(struct CGSize { double x1; double x2; })arg2 returnContext:(id*)arg3;
+- (id)renderedImageWithImage:(id)arg1 defaultSize:(struct CGSize { float x1; float x2; })arg2 returnContext:(id*)arg3;
 - (id)renderedImageWithImage:(id)arg1 returnContext:(id*)arg2;
 - (id)renderedImageWithImage:(id)arg1;
 - (id)renderedTestImage;
 - (void)setCache:(id)arg1;
 - (void)setDefaultImage:(id)arg1;
 - (void)setRenderedDefaultImage:(id)arg1;
-- (void)setShouldRenderDefaultImageWithBrush:(bool)arg1;
-- (bool)shouldRenderDefaultImageWithBrush;
-- (bool)shouldUseTestImage;
+- (void)setShouldRenderDefaultImageWithBrush:(BOOL)arg1;
+- (BOOL)shouldRenderDefaultImageWithBrush;
+- (BOOL)shouldUseTestImage;
 - (id)subsourceWithBrush:(id)arg1;
 - (void)validateFileSystemCache;
 

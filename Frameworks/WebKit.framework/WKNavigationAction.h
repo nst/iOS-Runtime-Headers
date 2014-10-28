@@ -13,33 +13,33 @@
         void *m_ptr; 
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
-    long long _navigationType;
+    BOOL _canHandleRequest;
+    int _navigationType;
     } _originalURL;
     } _request;
     } _sourceFrame;
     } _targetFrame;
-    bool_canHandleRequest;
-    bool_userInitiated;
+    BOOL _userInitiated;
 }
 
-@property(readonly) bool _canHandleRequest;
+@property(readonly) BOOL _canHandleRequest;
 @property(readonly) NSURL * _originalURL;
 @property(setter=_setOriginalURL:,copy) NSURL * _originalURL;
-@property(getter=_isUserInitiated,readonly) bool _userInitiated;
-@property(readonly) long long navigationType;
+@property(getter=_isUserInitiated,readonly) BOOL _userInitiated;
+@property(readonly) int navigationType;
 @property(copy) NSURLRequest * request;
 @property(copy) WKFrameInfo * sourceFrame;
 @property(copy) WKFrameInfo * targetFrame;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (bool)_canHandleRequest;
+- (BOOL)_canHandleRequest;
 - (id)_initWithNavigationActionData:(const struct NavigationActionData { int x1; int x2; int x3; boolx4; boolx5; }*)arg1;
-- (bool)_isUserInitiated;
+- (BOOL)_isUserInitiated;
 - (id)_originalURL;
 - (void)_setOriginalURL:(id)arg1;
 - (id)description;
-- (long long)navigationType;
+- (int)navigationType;
 - (id)request;
 - (void)setRequest:(id)arg1;
 - (void)setSourceFrame:(id)arg1;

@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton, UIImageView, UILabel, UIScrollView;
+@class UIButton, UILabel, UIScrollView;
 
 @interface PKPaymentSetupAboutView : UIView {
     UILabel *_aboutTextLabel;
     UIButton *_actionButton;
-    UIImageView *_headerImageView;
     UIScrollView *_scrollView;
 }
 

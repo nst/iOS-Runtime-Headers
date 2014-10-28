@@ -3,19 +3,19 @@
  */
 
 @interface PKDisplayProfile : NSObject <NSSecureCoding, NSCopying> {
-    long long _type;
+    int _type;
 }
 
-@property(readonly) long long type;
+@property(readonly) int type;
 
-+ (Class)classForDisplayProfileType:(long long)arg1;
-+ (id)displayProfileOfType:(long long)arg1 withDictionary:(id)arg2 bundle:(id)arg3;
-+ (bool)supportsSecureCoding;
++ (Class)classForDisplayProfileType:(int)arg1;
++ (id)displayProfileOfType:(int)arg1 withDictionary:(id)arg2 bundle:(id)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
-- (long long)type;
+- (int)type;
 
 @end

@@ -5,52 +5,52 @@
 @class NSArray, NSMutableArray, NSString, UIResponder, UIWindow;
 
 @interface _UIPhysicalButton : NSObject <_UIResponderForwardable> {
+    BOOL _abandonForwardingRecord;
     NSMutableArray *_forwardingRecord;
     NSMutableArray *_gestureRecognizers;
-    long long _phase;
+    int _phase;
     UIResponder *_responder;
     double _timestamp;
-    long long _type;
+    int _type;
     UIWindow *_window;
-    bool_abandonForwardingRecord;
 }
 
-@property(setter=_setForwardablePhase:) long long _forwardablePhase;
+@property(setter=_setForwardablePhase:) int _forwardablePhase;
 @property(setter=_setResponder:,retain) UIResponder * _responder;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSArray * gestureRecognizers;
-@property(readonly) unsigned long long hash;
-@property long long phase;
+@property(readonly) unsigned int hash;
+@property int phase;
 @property(retain) UIResponder * responder;
 @property(readonly) Class superclass;
 @property double timestamp;
-@property long long type;
+@property int type;
 @property(retain) UIWindow * window;
 
 - (void)_abandonForwardingRecord;
-- (long long)_forwardablePhase;
+- (int)_forwardablePhase;
 - (id)_forwardingRecord;
-- (bool)_isAbandoningForwardingRecord;
+- (BOOL)_isAbandoningForwardingRecord;
 - (id)_mutableForwardingRecord;
 - (void)_removeGestureRecognizer:(id)arg1;
 - (id)_responder;
-- (SEL)_responderSelectorForPhase:(long long)arg1;
-- (void)_setForwardablePhase:(long long)arg1;
+- (SEL)_responderSelectorForPhase:(int)arg1;
+- (void)_setForwardablePhase:(int)arg1;
 - (void)_setResponder:(id)arg1;
-- (bool)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
+- (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
 - (void)dealloc;
 - (id)gestureRecognizers;
-- (long long)phase;
+- (int)phase;
 - (id)responder;
 - (void)setGestureRecognizers:(id)arg1;
-- (void)setPhase:(long long)arg1;
+- (void)setPhase:(int)arg1;
 - (void)setResponder:(id)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setType:(long long)arg1;
+- (void)setType:(int)arg1;
 - (void)setWindow:(id)arg1;
 - (double)timestamp;
-- (long long)type;
+- (int)type;
 - (id)window;
 
 @end

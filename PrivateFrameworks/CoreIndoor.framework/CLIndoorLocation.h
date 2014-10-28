@@ -31,15 +31,15 @@
     } _location;
     NSString *_locationDescription;
     NSString *_locationId;
-    bool_requestsGpsAssistance;
+    BOOL _requestsGpsAssistance;
 }
 
 @property struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; } location;
 @property(retain) NSString * locationDescription;
 @property(retain) NSString * locationId;
-@property bool requestsGpsAssistance;
+@property BOOL requestsGpsAssistance;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -49,10 +49,10 @@
 - (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; })location;
 - (id)locationDescription;
 - (id)locationId;
-- (bool)requestsGpsAssistance;
+- (BOOL)requestsGpsAssistance;
 - (void)setLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; })arg1;
 - (void)setLocationDescription:(id)arg1;
 - (void)setLocationId:(id)arg1;
-- (void)setRequestsGpsAssistance:(bool)arg1;
+- (void)setRequestsGpsAssistance:(BOOL)arg1;
 
 @end

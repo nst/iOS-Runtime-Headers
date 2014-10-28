@@ -6,38 +6,38 @@
 
 @interface AssetCollectionInfo : NSObject <NSSecureCoding> {
     NSString *_GUID;
+    BOOL _hasVideoAsset;
     NSNumber *_height;
+    BOOL _isDeletable;
+    BOOL _isMine;
     NSDictionary *_metaData;
     NSString *_personID;
     NSDate *_timestamp;
     NSNumber *_width;
-    bool_hasVideoAsset;
-    bool_isDeletable;
-    bool_isMine;
 }
 
 @property(retain,readonly) NSString * GUID;
-@property(readonly) bool hasVideoAsset;
+@property(readonly) BOOL hasVideoAsset;
 @property(retain,readonly) NSNumber * height;
-@property(readonly) bool isDeletable;
-@property(readonly) bool isMine;
+@property(readonly) BOOL isDeletable;
+@property(readonly) BOOL isMine;
 @property(retain,readonly) NSDictionary * metaData;
 @property(retain,readonly) NSString * personID;
 @property(retain,readonly) NSDate * timestamp;
 @property(retain,readonly) NSNumber * width;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)GUID;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)hasVideoAsset;
+- (BOOL)hasVideoAsset;
 - (id)height;
 - (id)initWithAssetCollection:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isDeletable;
-- (bool)isMine;
+- (BOOL)isDeletable;
+- (BOOL)isMine;
 - (id)metaData;
 - (id)personID;
 - (id)timestamp;

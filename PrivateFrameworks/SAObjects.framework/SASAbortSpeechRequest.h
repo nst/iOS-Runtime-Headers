@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)reason;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setReason:(id)arg1;
 
 @end

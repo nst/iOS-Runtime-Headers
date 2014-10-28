@@ -19,7 +19,7 @@
 - (id)companyName;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setCompanyName:(id)arg1;
 - (void)setStockReferences:(id)arg1;
 - (void)setStocks:(id)arg1;

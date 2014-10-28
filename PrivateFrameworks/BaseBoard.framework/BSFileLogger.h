@@ -6,62 +6,62 @@
 
 @interface BSFileLogger : NSObject <BSLogging> {
     <BSFileLoggerDelegate> *_delegate;
+    BOOL _enabledByPreference;
     NSMutableSet *_enabledCategories;
     NSString *_logPath;
     NSDateFormatter *_memoryLogDateFormatter;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_recentLogs;
-    bool_enabledByPreference;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <BSFileLoggerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(getter=isEnabled,readonly) bool enabled;
-@property(readonly) unsigned long long hash;
-@property(readonly) unsigned long long logDestinations;
+@property(getter=isEnabled,readonly) BOOL enabled;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int logDestinations;
 @property(readonly) NSString * logPath;
 @property(readonly) NSString * logPreferenceDomain;
 @property(readonly) NSString * logPreferenceName;
 @property(readonly) int maxLogCount;
-@property(readonly) unsigned long long maxLogLinesInMemory;
+@property(readonly) unsigned int maxLogLinesInMemory;
 @property(readonly) int maxLogSize;
 @property(readonly) NSString * name;
 @property(retain,readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) bool shouldEnableOnInternalBuilds;
+@property(readonly) BOOL shouldEnableOnInternalBuilds;
 @property(readonly) Class superclass;
 
-- (void)_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(char *)arg3;
+- (void)_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(void*)arg3;
 - (void)_disableLogCategory:(id)arg1;
 - (void)_enableLogCategory:(id)arg1;
-- (void)_queue_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(char *)arg3;
-- (bool)_queue_isEnabledForCategory:(id)arg1;
-- (void)_setEnabled:(bool)arg1 fromDefaults:(bool)arg2;
-- (void)_setEnabled:(bool)arg1;
-- (id)composedLogForCategory:(id)arg1 destination:(unsigned long long)arg2 format:(id)arg3 arguments:(char *)arg4;
+- (void)_queue_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(void*)arg3;
+- (BOOL)_queue_isEnabledForCategory:(id)arg1;
+- (void)_setEnabled:(BOOL)arg1 fromDefaults:(BOOL)arg2;
+- (void)_setEnabled:(BOOL)arg1;
+- (id)composedLogForCategory:(id)arg1 destination:(unsigned int)arg2 format:(id)arg3 arguments:(void*)arg4;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (bool)isEnabled;
-- (bool)isEnabledForCategory:(id)arg1;
-- (unsigned long long)logDestinations;
+- (BOOL)isEnabled;
+- (BOOL)isEnabledForCategory:(id)arg1;
+- (unsigned int)logDestinations;
 - (id)logPath;
 - (id)logPreferenceDomain;
 - (id)logPreferenceName;
-- (id)logPrefixForCategory:(id)arg1 destination:(unsigned long long)arg2;
-- (void)logWithFormat:(id)arg1 arguments:(char *)arg2;
+- (id)logPrefixForCategory:(id)arg1 destination:(unsigned int)arg2;
+- (void)logWithFormat:(id)arg1 arguments:(void*)arg2;
 - (void)logWithFormat:(id)arg1;
 - (id)loggerForCatagory:(id)arg1;
 - (int)maxLogCount;
-- (unsigned long long)maxLogLinesInMemory;
+- (unsigned int)maxLogLinesInMemory;
 - (int)maxLogSize;
 - (id)name;
 - (id)queue;
 - (id)recentLogs;
 - (void)reloadFromDefaults;
-- (bool)saveRecentLogsToTemporaryPath:(id*)arg1;
+- (BOOL)saveRecentLogsToTemporaryPath:(id*)arg1;
 - (void)setDelegate:(id)arg1;
-- (bool)shouldEnableOnInternalBuilds;
+- (BOOL)shouldEnableOnInternalBuilds;
 - (void)willBeginLoggingToPath:(id)arg1;
 
 @end

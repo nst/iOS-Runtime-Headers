@@ -15,6 +15,6 @@
 - (id).cxx_construct;
 - (const struct VKPoint { double x1; double x2; double x3; }*)corners;
 - (struct VKPoint { double x1; double x2; double x3; })lerpPoint:(float*)arg1;
-- (void)updateWithFrustum:(struct { boolx1; double x2; double x3; double x4; double x5; })arg1 matrix:(const struct { double x1[4][4]; }*)arg2;
+- (void)updateWithFrustum:(struct { BOOL x1; double x2; double x3; double x4; double x5; })arg1 matrix:(const struct { double x1[4][4]; }*)arg2;
 
 @end

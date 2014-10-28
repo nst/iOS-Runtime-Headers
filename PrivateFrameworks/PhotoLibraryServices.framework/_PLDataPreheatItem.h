@@ -6,11 +6,11 @@
 
 @interface _PLDataPreheatItem : PLPreheatItem {
     PLImageTable *_imageTable;
-    unsigned long long _thumbIndex;
+    unsigned int _thumbIndex;
 }
 
 - (void)dealloc;
-- (id)initWithThumbIndex:(unsigned long long)arg1 imageTable:(id)arg2 format:(int)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4;
+- (id)initWithThumbIndex:(unsigned int)arg1 imageTable:(id)arg2 format:(int)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4;
 - (void)startPreheatRequestWithCompletionHandler:(id)arg1;
 
 @end

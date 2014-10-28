@@ -10,7 +10,7 @@
 
 @property(readonly) NSDictionary * dictionary;
 
-+ (bool)isKeyExcludedFromWebScript:(const char *)arg1;
++ (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 
 - (id)attributeKeys;
 - (void)dealloc;

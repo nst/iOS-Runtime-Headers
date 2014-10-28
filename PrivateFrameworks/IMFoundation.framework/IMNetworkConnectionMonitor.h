@@ -5,30 +5,30 @@
 @class IMReachability;
 
 @interface IMNetworkConnectionMonitor : IMConnectionMonitor <IMSystemMonitorListener, IMReachabilityDelegate> {
-    unsigned long long _hostFlags;
+    unsigned int _hostFlags;
     IMReachability *_hostReachability;
-    unsigned long long _ipFlags;
+    unsigned int _ipFlags;
     IMReachability *_ipReachability;
-    bool_isConnected;
-    bool_isSleeping;
+    BOOL _isConnected;
+    BOOL _isSleeping;
 }
 
-@property unsigned long long _hostFlags;
+@property unsigned int _hostFlags;
 @property(retain) IMReachability * _hostReachability;
-@property unsigned long long _ipFlags;
+@property unsigned int _ipFlags;
 @property(retain) IMReachability * _ipReachability;
-@property bool _isConnected;
-@property bool _isSleeping;
+@property BOOL _isConnected;
+@property BOOL _isSleeping;
 
-- (void)_clearReachability:(id*)arg1 flags:(unsigned long long*)arg2;
+- (void)_clearReachability:(id*)arg1 flags:(unsigned int*)arg2;
 - (void)_doCallbackLater;
 - (void)_doCallbackNow;
-- (unsigned long long)_hostFlags;
+- (unsigned int)_hostFlags;
 - (id)_hostReachability;
-- (unsigned long long)_ipFlags;
+- (unsigned int)_ipFlags;
 - (id)_ipReachability;
-- (bool)_isConnected;
-- (bool)_isSleeping;
+- (BOOL)_isConnected;
+- (BOOL)_isSleeping;
 - (void)_networkManagedUpdated:(id)arg1;
 - (void)_setup;
 - (void)_setupReachability;
@@ -36,14 +36,14 @@
 - (void)dealloc;
 - (void)goConnectedWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2;
 - (void)goDisconnected;
-- (bool)isImmediatelyReachable;
+- (BOOL)isImmediatelyReachable;
 - (void)reachabilityDidChange:(id)arg1;
-- (void)set_hostFlags:(unsigned long long)arg1;
+- (void)set_hostFlags:(unsigned int)arg1;
 - (void)set_hostReachability:(id)arg1;
-- (void)set_ipFlags:(unsigned long long)arg1;
+- (void)set_ipFlags:(unsigned int)arg1;
 - (void)set_ipReachability:(id)arg1;
-- (void)set_isConnected:(bool)arg1;
-- (void)set_isSleeping:(bool)arg1;
+- (void)set_isConnected:(BOOL)arg1;
+- (void)set_isSleeping:(BOOL)arg1;
 - (void)systemDidWake;
 - (void)systemWillSleep;
 

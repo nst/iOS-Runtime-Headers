@@ -14,7 +14,7 @@
 - (struct __CFString { }*)createTieredNumberStringForLevel:(int)arg1;
 - (int)currentLevel;
 - (void)dealloc;
-- (bool)hasNumberAtLevel:(int)arg1;
+- (BOOL)hasNumberAtLevel:(int)arg1;
 - (id)init;
 - (int)labelTypeAtLevel:(int)arg1;
 - (id)listStyleAtLevel:(int)arg1;

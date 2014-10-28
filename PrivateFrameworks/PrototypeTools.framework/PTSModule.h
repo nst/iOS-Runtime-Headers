@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMutableArray * enabledSections;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) _UISettings * settings;
 @property(readonly) Class superclass;
 @property(retain) NSString * title;
@@ -34,7 +34,7 @@
 - (void)_addSection:(id)arg1;
 - (void)_addSubmodule:(id)arg1;
 - (id)_settingsForSection:(id)arg1;
-- (bool)_shouldEnableSection:(id)arg1;
+- (BOOL)_shouldEnableSection:(id)arg1;
 - (void)_updateEnabledSections;
 - (void)addObserver:(id)arg1;
 - (id)allSections;
@@ -44,15 +44,15 @@
 - (id)enabledSections;
 - (void)enumerateAllRowsUsingBlock:(id)arg1;
 - (void)enumerateEnabledRowsUsingBlock:(id)arg1;
-- (bool)hasEnabledEditableRows;
+- (BOOL)hasEnabledEditableRows;
 - (id)indexPathForRow:(id)arg1;
 - (id)initWithContents:(id)arg1;
 - (void)moveRowAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
-- (unsigned long long)numberOfSections;
+- (unsigned int)numberOfSections;
 - (void)removeObserver:(id)arg1;
 - (id)rowAtIndexPath:(id)arg1;
 - (void)section:(id)arg1 didInsertRows:(id)arg2 deleteRows:(id)arg3;
-- (id)sectionAtIndex:(unsigned long long)arg1;
+- (id)sectionAtIndex:(unsigned int)arg1;
 - (void)sectionDidReload:(id)arg1;
 - (void)setAllSections:(id)arg1;
 - (void)setEnabledSections:(id)arg1;

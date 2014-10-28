@@ -38,7 +38,7 @@
 - (id)emitter;
 - (id)gameKitVersion;
 - (id)init;
-- (bool)isDevelopmentDevice;
+- (BOOL)isDevelopmentDevice;
 - (id)osVersion;
 - (id)processNameHeader;
 - (id)protocolVersionHeader;

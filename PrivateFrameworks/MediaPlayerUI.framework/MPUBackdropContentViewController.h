@@ -6,29 +6,29 @@
 
 @interface MPUBackdropContentViewController : UIViewController {
     _UIBackdropView *_backdropView;
-    long long _backdropViewPrivateStyle;
+    int _backdropViewPrivateStyle;
     UIView *_backgroundView;
     UIViewController *_contentViewController;
     MPUPinningView *_pinningView;
 }
 
-@property long long backdropViewPrivateStyle;
+@property int backdropViewPrivateStyle;
 @property(retain) UIView * backgroundView;
 @property(retain) UIViewController * contentViewController;
 
 - (void).cxx_destruct;
 - (void)_embedBackgroundView;
-- (long long)backdropViewPrivateStyle;
+- (int)backdropViewPrivateStyle;
 - (id)backgroundView;
 - (id)contentViewController;
 - (id)initWithContentViewController:(id)arg1;
-- (long long)preferredInterfaceOrientationForPresentation;
-- (void)setBackdropViewPrivateStyle:(long long)arg1;
+- (int)preferredInterfaceOrientationForPresentation;
+- (void)setBackdropViewPrivateStyle:(int)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setContentViewController:(id)arg1;
-- (bool)shouldAutorotate;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 
 @end

@@ -6,37 +6,37 @@
 
 @interface SiriUIReviewsHeaderView : SiriUIReusableSubtitledHeaderView {
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     UIView *_providerView;
     } _providerViewOffset;
     UIView *_ratingView;
     } _ratingViewOffset;
-    double _verticalSpaceNeededForRatingsView;
+    float _verticalSpaceNeededForRatingsView;
 }
 
 @property(retain) UIView * providerView;
-@property struct UIOffset { double x1; double x2; } providerViewOffset;
+@property struct UIOffset { float x1; float x2; } providerViewOffset;
 @property(retain) UIView * ratingView;
-@property struct UIOffset { double x1; double x2; } ratingViewOffset;
-@property double verticalSpaceNeededForRatingsView;
+@property struct UIOffset { float x1; float x2; } ratingViewOffset;
+@property float verticalSpaceNeededForRatingsView;
 
 - (void).cxx_destruct;
-- (double)desiredHeightForWidth:(double)arg1;
+- (float)desiredHeightForWidth:(float)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)providerView;
-- (struct UIOffset { double x1; double x2; })providerViewOffset;
+- (struct UIOffset { float x1; float x2; })providerViewOffset;
 - (id)ratingView;
-- (struct UIOffset { double x1; double x2; })ratingViewOffset;
+- (struct UIOffset { float x1; float x2; })ratingViewOffset;
 - (void)setProviderView:(id)arg1;
-- (void)setProviderViewOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setProviderViewOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setRatingView:(id)arg1;
-- (void)setRatingViewOffset:(struct UIOffset { double x1; double x2; })arg1;
-- (void)setVerticalSpaceNeededForRatingsView:(double)arg1;
-- (double)verticalSpaceNeededForRatingsView;
+- (void)setRatingViewOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setVerticalSpaceNeededForRatingsView:(float)arg1;
+- (float)verticalSpaceNeededForRatingsView;
 
 @end

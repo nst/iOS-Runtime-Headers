@@ -10,24 +10,24 @@
 
 @interface TSKSearch : NSObject {
     id _hitBlock;
-    unsigned long long _options;
+    BOOL _isComplete;
+    unsigned int _options;
     NSString *_string;
-    bool_isComplete;
 }
 
 @property(copy) id hitBlock;
-@property bool isComplete;
-@property unsigned long long options;
+@property BOOL isComplete;
+@property unsigned int options;
 @property(copy) NSString * string;
 
 - (void)dealloc;
 - (id)hitBlock;
-- (id)initWithString:(id)arg1 options:(unsigned long long)arg2 hitBlock:(id)arg3;
-- (bool)isComplete;
-- (unsigned long long)options;
+- (id)initWithString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3;
+- (BOOL)isComplete;
+- (unsigned int)options;
 - (void)setHitBlock:(id)arg1;
-- (void)setIsComplete:(bool)arg1;
-- (void)setOptions:(unsigned long long)arg1;
+- (void)setIsComplete:(BOOL)arg1;
+- (void)setOptions:(unsigned int)arg1;
 - (void)setString:(id)arg1;
 - (id)string;
 

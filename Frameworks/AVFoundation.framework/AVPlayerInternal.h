@@ -10,20 +10,13 @@
 
 @interface AVPlayerInternal : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     AVWeakKeyValueObserverProxy *KVOProxy;
+    BOOL allowsOutOfBandTextTrackRendering;
     AVAudioSessionMediaPlayerOnly *audioSessionMediaPlayerOnly;
+    BOOL autoSwitchStreamVariants;
     NSHashTable *avPlayerLayers;
-    boolallowsOutOfBandTextTrackRendering;
-    boolautoSwitchStreamVariants;
-    boolhadAssociatedOnscreenPlayerLayerWhenSuspended;
-    boolhostApplicationInForeground;
-    booliapdExtendedModeIsActive;
-    boollogPerformanceData;
-    boolneedsToCreateFigPlayer;
-    boolpreparesItemsForPlaybackAsynchronously;
-    boolreevaluateBackgroundPlayback;
     } cachedDisplaySize;
     NSDictionary *cachedFigMediaSelectionCriteriaProperty;
     NSMutableSet *closedCaptionLayers;
@@ -36,20 +29,27 @@
     struct OpaqueCMClock { } *figMasterClock;
     struct OpaqueFigPlaybackItem { } *figPlaybackItemToIdentifyNextCurrentItem;
     struct OpaqueFigPlayer { } *figPlayer;
+    BOOL hadAssociatedOnscreenPlayerLayerWhenSuspended;
+    BOOL hostApplicationInForeground;
+    BOOL iapdExtendedModeIsActive;
     NSMutableSet *items;
     NSObject<OS_dispatch_queue> *ivarAccessQueue;
     AVPlayerItem *lastItem;
     NSObject<OS_dispatch_queue> *layersQ;
+    BOOL logPerformanceData;
+    BOOL needsToCreateFigPlayer;
     int nextPrerollIDToGenerate;
     NSMutableDictionary *pendingFigPlayerProperties;
     int pendingPrerollID;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
+    BOOL preparesItemsForPlaybackAsynchronously;
     id prerollCompletionHandler;
     struct OpaqueFigSimpleMutex { } *prerollIDMutex;
     AVPropertyStorage *propertyStorage;
     struct OpaqueCMTimebase { } *proxyTimebase;
+    BOOL reevaluateBackgroundPlayback;
     NSObject<OS_dispatch_queue> *stateDispatchQueue;
-    long long status;
+    int status;
     NSMutableSet *subtitleLayers;
     NSDictionary *vibrationPattern;
     struct __CFDictionary { } *videoLayers;

@@ -7,35 +7,35 @@
 @interface TSDMagicMoveTextureZOrdererMatch : NSObject {
     TSDMagicMoveAnimationMatch *_animationMatch;
     TSDTextureSet *_incomingTexture;
-    long long _incomingZIndex;
+    int _incomingZIndex;
+    BOOL _isIncomingZIndexUnmatched;
+    BOOL _isOutgoingZIndexUnmatched;
     TSDTextureSet *_outgoingTexture;
-    long long _outgoingZIndex;
-    bool_isIncomingZIndexUnmatched;
-    bool_isOutgoingZIndexUnmatched;
+    int _outgoingZIndex;
 }
 
 @property(readonly) TSDMagicMoveAnimationMatch * animationMatch;
 @property(readonly) TSDTextureSet * incomingTexture;
-@property long long incomingZIndex;
-@property(readonly) bool isIncomingZIndexUnmatched;
-@property(readonly) bool isOutgoingZIndexUnmatched;
+@property int incomingZIndex;
+@property(readonly) BOOL isIncomingZIndexUnmatched;
+@property(readonly) BOOL isOutgoingZIndexUnmatched;
 @property(readonly) TSDTextureSet * outgoingTexture;
-@property long long outgoingZIndex;
+@property int outgoingZIndex;
 
 - (id)animationMatch;
 - (id)description;
 - (id)incomingTexture;
-- (long long)incomingZIndex;
+- (int)incomingZIndex;
 - (id)initWithAnimationMatch:(id)arg1;
-- (double)interpolatedZIndexAtPercent:(double)arg1;
-- (double)intersectionPercentWithZOrdererMatch:(id)arg1;
-- (bool)intersectsZOrdererMatch:(id)arg1 withAttemptedZIndex:(long long)arg2;
-- (bool)intersectsZOrdererMatch:(id)arg1;
-- (bool)isIncomingZIndexUnmatched;
-- (bool)isOutgoingZIndexUnmatched;
+- (float)interpolatedZIndexAtPercent:(float)arg1;
+- (float)intersectionPercentWithZOrdererMatch:(id)arg1;
+- (BOOL)intersectsZOrdererMatch:(id)arg1 withAttemptedZIndex:(int)arg2;
+- (BOOL)intersectsZOrdererMatch:(id)arg1;
+- (BOOL)isIncomingZIndexUnmatched;
+- (BOOL)isOutgoingZIndexUnmatched;
 - (id)outgoingTexture;
-- (long long)outgoingZIndex;
-- (void)setIncomingZIndex:(long long)arg1;
-- (void)setOutgoingZIndex:(long long)arg1;
+- (int)outgoingZIndex;
+- (void)setIncomingZIndex:(int)arg1;
+- (void)setOutgoingZIndex:(int)arg1;
 
 @end

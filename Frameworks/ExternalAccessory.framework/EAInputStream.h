@@ -7,10 +7,13 @@
 @interface EAInputStream : NSInputStream {
     EAAccessory *_accessory;
     id _delegate;
+    BOOL _hasNewBytesAvailable;
     char *_inputFromAccBuffer;
     NSCondition *_inputFromAccCondition;
     NSMutableData *_inputFromAccData;
     NSObject<OS_dispatch_queue> *_inputFromAccQueue;
+    BOOL _isAtEndEventSent;
+    BOOL _isOpenCompletedEventSent;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSRecursiveLock *_runloopLock;
@@ -18,10 +21,7 @@
     int _sock;
     NSObject<OS_dispatch_source> *_sockListenSource;
     NSRecursiveLock *_statusLock;
-    unsigned long long _streamStatus;
-    bool_hasNewBytesAvailable;
-    bool_isAtEndEventSent;
-    bool_isOpenCompletedEventSent;
+    unsigned int _streamStatus;
 }
 
 - (void)_accessoryDidDisconnect:(id)arg1;
@@ -32,18 +32,18 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)endStream;
-- (bool)getBuffer:(char **)arg1 length:(unsigned long long*)arg2;
-- (bool)hasBytesAvailable;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
+- (BOOL)hasBytesAvailable;
 - (id)initWithAccessory:(id)arg1 forSession:(id)arg2 socket:(int)arg3;
 - (void)open;
 - (void)openCompleted;
 - (id)propertyForKey:(id)arg1;
-- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (unsigned long long)streamStatus;
+- (unsigned int)streamStatus;
 
 @end

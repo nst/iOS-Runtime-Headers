@@ -6,15 +6,15 @@
 
 @interface SKUIMenuPageSectionContext : NSObject {
     NSMutableDictionary *_sections;
-    long long _selectedIndex;
+    int _selectedIndex;
 }
 
-@property long long selectedIndex;
+@property int selectedIndex;
 
 - (void).cxx_destruct;
-- (id)sectionsForIndex:(long long)arg1;
-- (long long)selectedIndex;
-- (void)setSections:(id)arg1 forIndex:(long long)arg2;
-- (void)setSelectedIndex:(long long)arg1;
+- (id)sectionsForIndex:(int)arg1;
+- (int)selectedIndex;
+- (void)setSections:(id)arg1 forIndex:(int)arg2;
+- (void)setSelectedIndex:(int)arg1;
 
 @end

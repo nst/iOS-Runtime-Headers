@@ -16,10 +16,10 @@
 }
 
 @property unsigned int fetchLimit;
-@property bool hasFetchLimit;
-@property bool hasSchema;
-@property bool hasSize;
-@property bool hasTimestamp;
+@property BOOL hasFetchLimit;
+@property BOOL hasSchema;
+@property BOOL hasSize;
+@property BOOL hasTimestamp;
 @property unsigned int schema;
 @property unsigned int size;
 @property unsigned long long timestamp;
@@ -29,20 +29,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fetchLimit;
-- (bool)hasFetchLimit;
-- (bool)hasSchema;
-- (bool)hasSize;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasFetchLimit;
+- (BOOL)hasSchema;
+- (BOOL)hasSize;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)schema;
 - (void)setFetchLimit:(unsigned int)arg1;
-- (void)setHasFetchLimit:(bool)arg1;
-- (void)setHasSchema:(bool)arg1;
-- (void)setHasSize:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasFetchLimit:(BOOL)arg1;
+- (void)setHasSchema:(BOOL)arg1;
+- (void)setHasSize:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSchema:(unsigned int)arg1;
 - (void)setSize:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

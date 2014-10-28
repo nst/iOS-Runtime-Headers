@@ -11,13 +11,13 @@
 @interface SSVSecureKeyDeliveryRequestOperation : NSOperation {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSURL *_certificateURL;
+    BOOL _iTunesStoreRequest;
     NSURL *_keyServerURL;
     AVAssetResourceLoadingRequest *_resourceLoadingRequest;
     id _responseBlock;
-    bool_iTunesStoreRequest;
 }
 
-@property(getter=isITunesStoreRequest) bool ITunesStoreRequest;
+@property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
 @property(retain) NSURL * certificateURL;
 @property(retain) NSURL * keyServerURL;
 @property(retain) AVAssetResourceLoadingRequest * resourceLoadingRequest;
@@ -30,13 +30,13 @@
 - (id)_streamingRequestDictionaryWithStreamingKeyDictionaries:(id)arg1;
 - (id)certificateURL;
 - (id)init;
-- (bool)isITunesStoreRequest;
+- (BOOL)isITunesStoreRequest;
 - (id)keyServerURL;
 - (void)main;
 - (id)resourceLoadingRequest;
 - (id)responseBlock;
 - (void)setCertificateURL:(id)arg1;
-- (void)setITunesStoreRequest:(bool)arg1;
+- (void)setITunesStoreRequest:(BOOL)arg1;
 - (void)setKeyServerURL:(id)arg1;
 - (void)setResourceLoadingRequest:(id)arg1;
 - (void)setResponseBlock:(id)arg1;

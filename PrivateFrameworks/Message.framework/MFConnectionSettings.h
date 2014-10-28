@@ -6,6 +6,7 @@
 
 @interface MFConnectionSettings : NSObject <NSCopying> {
     NSString *_accountIdentifier;
+    BOOL _allowsTrustPrompt;
     NSString *_certUIService;
     NSArray *_clientCertificates;
     struct __CFString { } *_connectionServiceType;
@@ -13,26 +14,25 @@
     unsigned int _portNumber;
     NSString *_serviceName;
     NSString *_sourceApplicationBundleIdentifier;
-    bool_allowsTrustPrompt;
-    bool_tryDirectSSLConnection;
-    bool_usesOpportunisticSockets;
-    bool_usesSSL;
+    BOOL _tryDirectSSLConnection;
+    BOOL _usesOpportunisticSockets;
+    BOOL _usesSSL;
 }
 
 @property(copy) NSString * accountIdentifier;
-@property bool allowsTrustPrompt;
+@property BOOL allowsTrustPrompt;
 @property(copy) NSString * certUIService;
 @property(copy) NSArray * clientCertificates;
 @property(copy) NSString * hostname;
 @property unsigned int portNumber;
 @property(copy) NSString * serviceName;
 @property(copy) NSString * sourceApplicationBundleIdentifier;
-@property bool tryDirectSSL;
-@property bool usesOpportunisticSockets;
-@property bool usesSSL;
+@property BOOL tryDirectSSL;
+@property BOOL usesOpportunisticSockets;
+@property BOOL usesSSL;
 
 - (id)accountIdentifier;
-- (bool)allowsTrustPrompt;
+- (BOOL)allowsTrustPrompt;
 - (id)certUIService;
 - (id)clientCertificates;
 - (struct __CFString { }*)connectionServiceType;
@@ -43,7 +43,7 @@
 - (unsigned int)portNumber;
 - (id)serviceName;
 - (void)setAccountIdentifier:(id)arg1;
-- (void)setAllowsTrustPrompt:(bool)arg1;
+- (void)setAllowsTrustPrompt:(BOOL)arg1;
 - (void)setCertUIService:(id)arg1;
 - (void)setClientCertificates:(id)arg1;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
@@ -51,12 +51,12 @@
 - (void)setPortNumber:(unsigned int)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
-- (void)setTryDirectSSL:(bool)arg1;
-- (void)setUsesOpportunisticSockets:(bool)arg1;
-- (void)setUsesSSL:(bool)arg1;
+- (void)setTryDirectSSL:(BOOL)arg1;
+- (void)setUsesOpportunisticSockets:(BOOL)arg1;
+- (void)setUsesSSL:(BOOL)arg1;
 - (id)sourceApplicationBundleIdentifier;
-- (bool)tryDirectSSL;
-- (bool)usesOpportunisticSockets;
-- (bool)usesSSL;
+- (BOOL)tryDirectSSL;
+- (BOOL)usesOpportunisticSockets;
+- (BOOL)usesSSL;
 
 @end

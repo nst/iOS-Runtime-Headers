@@ -5,44 +5,44 @@
 @class TSCH3DFramebufferCopyPipeline, TSCH3DGLFramebuffer, TSCH3DTileSceneRenderPipeline, TSCH3DViewFrustumCullingDelegate;
 
 @interface TSCH3DSupersampleSceneRenderPipeline : TSCH3DSceneRenderPipeline <TSCH3DMultipassRenderPipeline> {
-    boolmDidProtectTargetFramebuffer;
-    boolmEnableSinglePassRendering;
     TSCH3DFramebufferCopyPipeline *mCopyPipeline;
-    long long mNumTiles;
-    long long mPass;
+    BOOL mDidProtectTargetFramebuffer;
+    BOOL mEnableSinglePassRendering;
+    int mNumTiles;
+    int mPass;
     TSCH3DGLFramebuffer *mTileFBO;
     TSCH3DTileSceneRenderPipeline *mTilePipeline;
-    unsigned long long mTileSamples;
-    unsigned long long mTileSize;
+    unsigned int mTileSamples;
+    unsigned int mTileSize;
     TSCH3DViewFrustumCullingDelegate *mViewFrustumCullingDelegate;
 }
 
-@property bool enableSinglePassRendering;
-@property unsigned long long tileSamples;
-@property unsigned long long tileSize;
+@property BOOL enableSinglePassRendering;
+@property unsigned int tileSamples;
+@property unsigned int tileSize;
 
 - (id)cloneWithProcessor:(id)arg1 scene:(id)arg2;
 - (void)dealloc;
-- (bool)enableSinglePassRendering;
+- (BOOL)enableSinglePassRendering;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3;
-- (bool)isActivePass;
-- (bool)multipassRenderingIsDone;
-- (bool)p_multipassRender;
-- (bool)p_renderTilesUntilFailingConditionBlock:(id)arg1;
-- (bool)p_singlePassRender;
+- (BOOL)isActivePass;
+- (BOOL)multipassRenderingIsDone;
+- (BOOL)p_multipassRender;
+- (BOOL)p_renderTilesUntilFailingConditionBlock:(id)arg1;
+- (BOOL)p_singlePassRender;
 - (id)p_targetFramebuffer;
-- (unsigned long long)p_tilePixelSize;
+- (unsigned int)p_tilePixelSize;
 - (void)releaseResources;
-- (bool)render;
+- (BOOL)render;
 - (id)renderingFBOResource;
 - (void)resetMultipassRendering;
-- (void)setEnableSinglePassRendering:(bool)arg1;
-- (void)setTileSamples:(unsigned long long)arg1;
-- (void)setTileSize:(unsigned long long)arg1;
+- (void)setEnableSinglePassRendering:(BOOL)arg1;
+- (void)setTileSamples:(unsigned int)arg1;
+- (void)setTileSize:(unsigned int)arg1;
 - (void)setupTiling;
 - (void)skipLowQualityPass;
-- (unsigned long long)tileSamples;
-- (unsigned long long)tileSize;
-- (bool)updatesTargetFramebuffer;
+- (unsigned int)tileSamples;
+- (unsigned int)tileSize;
+- (BOOL)updatesTargetFramebuffer;
 
 @end

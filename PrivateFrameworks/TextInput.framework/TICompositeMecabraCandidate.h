@@ -12,7 +12,7 @@
 @property(copy) NSArray * autoconvertedCandidatePointerValues;
 @property(copy) NSString * remainderCandidateString;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 + (int)type;
 
 - (id)autoconvertedCandidatePointerValues;

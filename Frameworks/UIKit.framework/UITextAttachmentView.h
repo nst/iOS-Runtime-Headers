@@ -12,8 +12,8 @@
 @property NSTextAttachment * attachment;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } drawingBounds;
-@property(readonly) unsigned long long hash;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawingBounds;
+@property(readonly) unsigned int hash;
 @property(retain) UIImage * image;
 @property(readonly) Class superclass;
 
@@ -21,17 +21,17 @@
 + (id)viewForImage:(id)arg1;
 
 - (id)attachment;
-- (struct CGPoint { double x1; double x2; })cellBaselineOffset;
-- (struct CGSize { double x1; double x2; })cellSize;
+- (struct CGPoint { float x1; float x2; })cellBaselineOffset;
+- (struct CGSize { float x1; float x2; })cellSize;
 - (id)contentView;
 - (void)dealloc;
-- (void)drawWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 characterIndex:(unsigned long long)arg3 layoutManager:(id)arg4;
-- (void)drawWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 characterIndex:(unsigned long long)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawingBounds;
+- (void)drawWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 characterIndex:(unsigned int)arg3 layoutManager:(id)arg4;
+- (void)drawWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 characterIndex:(unsigned int)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawingBounds;
 - (id)image;
 - (id)initWithContentView:(id)arg1;
 - (void)setAttachment:(id)arg1;
-- (void)setDrawingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDrawingBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
 
 @end

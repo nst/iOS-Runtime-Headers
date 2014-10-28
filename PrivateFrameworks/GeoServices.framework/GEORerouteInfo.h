@@ -21,6 +21,6 @@
 - (void)setDistanceFromDestination:(double)arg1;
 - (void)setTime:(id)arg1;
 - (id)time;
-- (void)updateWithCurrentTime:(id)arg1 location:(id)arg2 isMostRecentReroute:(bool)arg3 destinationCoordinate:(struct { double x1; double x2; })arg4 numThrottledReroutes:(unsigned long long)arg5;
+- (void)updateWithCurrentTime:(id)arg1 location:(id)arg2 isMostRecentReroute:(BOOL)arg3 destinationCoordinate:(struct { double x1; double x2; })arg4 numThrottledReroutes:(unsigned int)arg5;
 
 @end

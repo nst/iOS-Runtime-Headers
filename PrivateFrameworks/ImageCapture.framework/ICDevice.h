@@ -9,14 +9,14 @@
 }
 
 @property(copy) NSString * UUIDString;
-@property bool autoOpenSession;
-@property bool closeSessionPending;
+@property BOOL autoOpenSession;
+@property BOOL closeSessionPending;
 @property <ICDeviceDelegate> * delegate;
 @property DeviceManager * deviceManager;
-@property bool hasOpenSession;
+@property BOOL hasOpenSession;
 @property(readonly) struct CGImage { }* icon;
 @property(copy) NSString * name;
-@property bool openSessionPending;
+@property BOOL openSessionPending;
 @property(copy) NSString * productKind;
 @property(copy) NSString * transportType;
 @property int usbLocationID;
@@ -24,8 +24,8 @@
 @property int usbVendorID;
 
 - (id)UUIDString;
-- (bool)autoOpenSession;
-- (bool)closeSessionPending;
+- (BOOL)autoOpenSession;
+- (BOOL)closeSessionPending;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -33,22 +33,22 @@
 - (void)finalize;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)handleImageCaptureEventNotification:(id)arg1;
-- (bool)hasOpenSession;
+- (BOOL)hasOpenSession;
 - (struct CGImage { }*)icon;
 - (id)init;
-- (bool)isCameraDevice;
+- (BOOL)isCameraDevice;
 - (id)name;
-- (bool)openSessionPending;
+- (BOOL)openSessionPending;
 - (id)productKind;
 - (void)requestCloseSession;
 - (void)requestOpenSession;
-- (void)setAutoOpenSession:(bool)arg1;
-- (void)setCloseSessionPending:(bool)arg1;
+- (void)setAutoOpenSession:(BOOL)arg1;
+- (void)setCloseSessionPending:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceManager:(id)arg1;
-- (void)setHasOpenSession:(bool)arg1;
+- (void)setHasOpenSession:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setOpenSessionPending:(bool)arg1;
+- (void)setOpenSessionPending:(BOOL)arg1;
 - (void)setProductKind:(id)arg1;
 - (void)setTransportType:(id)arg1;
 - (void)setUUIDString:(id)arg1;

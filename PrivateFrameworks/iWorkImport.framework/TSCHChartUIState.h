@@ -8,31 +8,31 @@
  */
 
 @interface TSCHChartUIState : NSObject <NSCopying> {
-    unsigned long long _lastColCountInCDE;
-    unsigned long long _lastColSelectedInCDE;
-    unsigned long long _lastRowCountInCDE;
-    unsigned long long _lastRowSelectedInCDE;
-    bool_useFullKeyboard;
+    unsigned int _lastColCountInCDE;
+    unsigned int _lastColSelectedInCDE;
+    unsigned int _lastRowCountInCDE;
+    unsigned int _lastRowSelectedInCDE;
+    BOOL _useFullKeyboard;
 }
 
-@property(readonly) unsigned long long lastColCountInCDE;
-@property(readonly) unsigned long long lastColSelectedInCDE;
-@property(readonly) unsigned long long lastRowCountInCDE;
-@property(readonly) unsigned long long lastRowSelectedInCDE;
-@property(readonly) bool useFullKeyboard;
+@property(readonly) unsigned int lastColCountInCDE;
+@property(readonly) unsigned int lastColSelectedInCDE;
+@property(readonly) unsigned int lastRowCountInCDE;
+@property(readonly) unsigned int lastRowSelectedInCDE;
+@property(readonly) BOOL useFullKeyboard;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithArchive:(const struct ChartUIState { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; int x5; int x6; int x7; boolx8; int x9; unsigned int x10[1]; }*)arg1;
-- (id)initWithRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 colRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 useFullKeyboard:(bool)arg3;
-- (bool)isEqual:(id)arg1;
-- (unsigned long long)lastColCountInCDE;
-- (unsigned long long)lastColSelectedInCDE;
-- (unsigned long long)lastRowCountInCDE;
-- (unsigned long long)lastRowSelectedInCDE;
+- (id)initWithRowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 colRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 useFullKeyboard:(BOOL)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned int)lastColCountInCDE;
+- (unsigned int)lastColSelectedInCDE;
+- (unsigned int)lastRowCountInCDE;
+- (unsigned int)lastRowSelectedInCDE;
 - (void)saveToArchive:(struct ChartUIState { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; int x5; int x6; int x7; boolx8; int x9; unsigned int x10[1]; }*)arg1;
-- (bool)useFullKeyboard;
+- (BOOL)useFullKeyboard;
 
 @end

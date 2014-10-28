@@ -12,7 +12,7 @@
 @property(readonly) NSObject<GSAdditionStoring> * storage;
 
 - (void)dealloc;
-- (bool)generationsRemove:(id)arg1 error:(id*)arg2;
+- (BOOL)generationsRemove:(id)arg1 error:(id*)arg2;
 - (id)initWithURL:(id)arg1 error:(id*)arg2;
 - (id)nameSpace;
 - (struct NSObject { Class x1; }*)storage;

@@ -10,7 +10,7 @@
     NSUUID *_identifier;
     double _latitude;
     double _longitude;
-    long long _type;
+    int _type;
     double _uncertainty;
     NSArray *_visits;
 }
@@ -20,24 +20,24 @@
 @property(readonly) NSUUID * identifier;
 @property(readonly) double latitude;
 @property(readonly) double longitude;
-@property(readonly) long long type;
+@property(readonly) int type;
 @property(readonly) double uncertainty;
 @property(readonly) NSArray * visits;
 
-+ (id)locationOfInterestTypeToString:(long long)arg1;
-+ (bool)supportsSecureCoding;
++ (id)locationOfInterestTypeToString:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)frequencyCompare:(id)arg1;
+- (int)frequencyCompare:(id)arg1;
 - (id)geoMapItem;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 confidence:(double)arg4 identifier:(id)arg5 type:(long long)arg6 geoMapItem:(id)arg7 visits:(id)arg8;
-- (bool)isEqual:(id)arg1;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 confidence:(double)arg4 identifier:(id)arg5 type:(int)arg6 geoMapItem:(id)arg7 visits:(id)arg8;
+- (BOOL)isEqual:(id)arg1;
 - (double)latitude;
 - (id)localizedAllVisitsDescription;
 - (id)localizedLastVisitDescription;
@@ -45,9 +45,9 @@
 - (id)mapItem;
 - (id)name;
 - (id)preciseName;
-- (long long)recentCompare:(id)arg1;
+- (int)recentCompare:(id)arg1;
 - (id)relativeNameToMapItem:(id)arg1;
-- (long long)type;
+- (int)type;
 - (double)uncertainty;
 - (id)visits;
 

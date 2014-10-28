@@ -23,7 +23,7 @@
 @property(readonly) TSUColor * popoverAuthorLabelColor;
 @property(readonly) TSUColor * popoverButtonTintColor;
 @property(readonly) TSUColor * popoverColor;
-@property(readonly) bool showAuthorComments;
+@property(readonly) BOOL showAuthorComments;
 @property(readonly) TSUColor * sidebarChangeBarColor;
 @property(readonly) TSUColor * sidebarHoverColor;
 @property(readonly) TSUColor * sidebarSelectedBorderColor;
@@ -33,15 +33,15 @@
 @property(readonly) TSUColor * textHighlightColor;
 @property(readonly) TSUColor * textMarkupColor;
 
-+ (id)authorColorAppearanceNameForIndex:(unsigned long long)arg1;
-+ (id)authorColorForIndex:(unsigned long long)arg1 forKey:(id)arg2;
-+ (id)authorColorNameForIndex:(unsigned long long)arg1;
-+ (id)authorMenuSwatchColorForIndex:(unsigned long long)arg1;
-+ (id)authorStorageColorForIndex:(unsigned long long)arg1;
++ (id)authorColorAppearanceNameForIndex:(unsigned int)arg1;
++ (id)authorColorForIndex:(unsigned int)arg1 forKey:(id)arg2;
++ (id)authorColorNameForIndex:(unsigned int)arg1;
++ (id)authorMenuSwatchColorForIndex:(unsigned int)arg1;
++ (id)authorStorageColorForIndex:(unsigned int)arg1;
 + (id)defaultAuthorName;
-+ (unsigned long long)presetColorCount;
++ (unsigned int)presetColorCount;
 
-- (bool)allowsImplicitComponentOwnership;
+- (BOOL)allowsImplicitComponentOwnership;
 - (id)appearanceColorForAuthor;
 - (id)authorColorName;
 - (id)cellViolatorColor;
@@ -54,20 +54,20 @@
 - (id)flagStrokeColor;
 - (id)gradientEndColor;
 - (id)gradientStartColor;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 color:(id)arg3;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)menuSwatchColorForAuthor;
 - (id)name;
-- (unsigned long long)p_authorColorIndex;
+- (unsigned int)p_authorColorIndex;
 - (id)popoverAuthorLabelColor;
 - (id)popoverButtonTintColor;
 - (id)popoverColor;
 - (void)saveToArchiver:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setStorageColor:(id)arg1;
-- (bool)showAuthorComments;
+- (BOOL)showAuthorComments;
 - (id)sidebarChangeBarColor;
 - (id)sidebarHoverColor;
 - (id)sidebarSelectedBorderColor;

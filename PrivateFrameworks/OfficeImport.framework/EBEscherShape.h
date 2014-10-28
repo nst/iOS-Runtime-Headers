@@ -5,10 +5,10 @@
 @class CHDChart, NSData, NSMutableArray;
 
 @interface EBEscherShape : ESDObject {
-    boolmShowLegend;
     CHDChart *mChart;
     NSMutableArray *mChartColorLocators;
     NSData *mChartData;
+    BOOL mShowLegend;
 }
 
 - (id)chart;
@@ -18,7 +18,7 @@
 - (void)setChart:(id)arg1;
 - (void)setChartColorLocators:(id)arg1;
 - (void)setChartData:(id)arg1;
-- (void)setShowLegend:(bool)arg1;
-- (bool)showLegend;
+- (void)setShowLegend:(BOOL)arg1;
+- (BOOL)showLegend;
 
 @end

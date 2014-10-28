@@ -5,6 +5,6 @@
 @interface _MPAVRoutingSheetSecureWindow : UIWindow {
 }
 
-+ (bool)_isSecure;
++ (BOOL)_isSecure;
 
 @end

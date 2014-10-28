@@ -22,9 +22,9 @@
     NSMutableArray *_pendingAccessoriesTransactions;
     NSMutableDictionary *_pendingRequests;
     NSMutableArray *_pendingTriggerTransactions;
+    BOOL _primary;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
-    bool_primary;
 }
 
 @property(copy,readonly) NSArray * accessories;
@@ -41,7 +41,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <HMHomeDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) HMRoom * homeAsRoom;
 @property HMHomeManager * homeManager;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
@@ -51,7 +51,7 @@
 @property(retain) NSMutableArray * pendingAccessoriesTransactions;
 @property(retain) NSMutableDictionary * pendingRequests;
 @property(retain) NSMutableArray * pendingTriggerTransactions;
-@property(getter=isPrimary) bool primary;
+@property(getter=isPrimary) BOOL primary;
 @property(copy,readonly) NSArray * rooms;
 @property(copy,readonly) NSArray * serviceGroups;
 @property(readonly) Class superclass;
@@ -61,16 +61,16 @@
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 @property(copy,readonly) NSArray * zones;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_addUser:(id)arg1 privilege:(unsigned long long)arg2 confirm:(bool)arg3 completionHandler:(id)arg4;
+- (void)_addUser:(id)arg1 privilege:(unsigned int)arg2 confirm:(BOOL)arg3 completionHandler:(id)arg4;
 - (id)_createFailedAccessoriesListFromError:(id)arg1;
 - (void)_handleBlockedStateNotification:(id)arg1;
 - (void)_handleMultipleCharacteristicValuesUpdated:(id)arg1;
 - (void)_handlePairedAccessoryErrorNotification:(id)arg1;
 - (void)_registerNotificationHandlers;
-- (void)_removeUser:(id)arg1 confirm:(bool)arg2 completionHandler:(id)arg3;
+- (void)_removeUser:(id)arg1 confirm:(BOOL)arg2 completionHandler:(id)arg3;
 - (id)accessories;
 - (id)accessoryWithUUID:(id)arg1;
 - (id)actionSetWithName:(id)arg1;
@@ -84,10 +84,10 @@
 - (void)addServiceGroupWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)addTrigger:(id)arg1 completionHandler:(id)arg2;
 - (void)addUserWithCompletionHandler:(id)arg1;
-- (void)addUserWithoutConfirmation:(id)arg1 privilege:(unsigned long long)arg2 completionHandler:(id)arg3;
+- (void)addUserWithoutConfirmation:(id)arg1 privilege:(unsigned int)arg2 completionHandler:(id)arg3;
 - (void)addZoneWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)assignAccessory:(id)arg1 toRoom:(id)arg2 completionHandler:(id)arg3;
-- (void)configure:(id)arg1 uuid:(id)arg2 primary:(bool)arg3 messageDispatcher:(id)arg4;
+- (void)configure:(id)arg1 uuid:(id)arg2 primary:(BOOL)arg3 messageDispatcher:(id)arg4;
 - (id)currentAccessories;
 - (id)currentActionSets;
 - (id)currentActions;
@@ -122,7 +122,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (void)invalidate;
-- (bool)isPrimary;
+- (BOOL)isPrimary;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (void)migrateDelegatesToHome:(id)arg1 withCompletion:(id)arg2;
@@ -164,7 +164,7 @@
 - (void)setPendingAccessoriesTransactions:(id)arg1;
 - (void)setPendingRequests:(id)arg1;
 - (void)setPendingTriggerTransactions:(id)arg1;
-- (void)setPrimary:(bool)arg1;
+- (void)setPrimary:(BOOL)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)triggerWithName:(id)arg1;

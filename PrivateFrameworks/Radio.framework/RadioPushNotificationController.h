@@ -8,15 +8,15 @@
     APSConnection *_connection;
     <RadioPushNotificationControllerDelegate> *_delegate;
     NSString *_environment;
-    bool_notificationsEnabled;
-    bool_pushEnabled;
+    BOOL _notificationsEnabled;
+    BOOL _pushEnabled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <RadioPushNotificationControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool notificationsEnabled;
+@property(readonly) unsigned int hash;
+@property BOOL notificationsEnabled;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,8 +27,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (bool)notificationsEnabled;
+- (BOOL)notificationsEnabled;
 - (void)setDelegate:(id)arg1;
-- (void)setNotificationsEnabled:(bool)arg1;
+- (void)setNotificationsEnabled:(BOOL)arg1;
 
 @end

@@ -21,17 +21,17 @@
 @property(retain) NSNumber * boxedValueCanWrap;
 @property(retain) NSNumber * boxedVerticalPadding;
 @property(retain) UIFont * labelFont;
-@property bool suppressesEmptyLabel;
-@property bool suppressesLabel;
-@property long long textAlignment;
-@property bool valueCanWrap;
+@property BOOL suppressesEmptyLabel;
+@property BOOL suppressesLabel;
+@property int textAlignment;
+@property BOOL valueCanWrap;
 @property(retain) UIFont * valueFont;
-@property double verticalPadding;
+@property float verticalPadding;
 @property(retain) Class viewSubclass;
 
 + (id)_templateByResolvingTemplate:(id)arg1 withDefault:(id)arg2;
-+ (id)fieldTemplateWithTextAlignment:(long long)arg1;
-+ (id)fieldTemplateWithVerticalPadding:(double)arg1;
++ (id)fieldTemplateWithTextAlignment:(int)arg1;
++ (id)fieldTemplateWithVerticalPadding:(float)arg1;
 + (id)fieldTemplateWithViewSubclass:(Class)arg1;
 
 - (id)boxedSuppressesEmptyLabel;
@@ -47,19 +47,19 @@
 - (void)setBoxedValueCanWrap:(id)arg1;
 - (void)setBoxedVerticalPadding:(id)arg1;
 - (void)setLabelFont:(id)arg1;
-- (void)setSuppressesEmptyLabel:(bool)arg1;
-- (void)setSuppressesLabel:(bool)arg1;
-- (void)setTextAlignment:(long long)arg1;
-- (void)setValueCanWrap:(bool)arg1;
+- (void)setSuppressesEmptyLabel:(BOOL)arg1;
+- (void)setSuppressesLabel:(BOOL)arg1;
+- (void)setTextAlignment:(int)arg1;
+- (void)setValueCanWrap:(BOOL)arg1;
 - (void)setValueFont:(id)arg1;
-- (void)setVerticalPadding:(double)arg1;
+- (void)setVerticalPadding:(float)arg1;
 - (void)setViewSubclass:(Class)arg1;
-- (bool)suppressesEmptyLabel;
-- (bool)suppressesLabel;
-- (long long)textAlignment;
-- (bool)valueCanWrap;
+- (BOOL)suppressesEmptyLabel;
+- (BOOL)suppressesLabel;
+- (int)textAlignment;
+- (BOOL)valueCanWrap;
 - (id)valueFont;
-- (double)verticalPadding;
+- (float)verticalPadding;
 - (Class)viewSubclass;
 
 @end

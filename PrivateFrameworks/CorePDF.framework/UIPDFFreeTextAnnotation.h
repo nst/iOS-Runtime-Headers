@@ -6,6 +6,6 @@
 }
 
 - (int)annotationType;
-- (bool)hasPopUp;
+- (BOOL)hasPopUp;
 
 @end

@@ -3,21 +3,21 @@
  */
 
 @interface CUIPattern : NSObject {
-    double _alpha;
+    float _alpha;
     struct CGPattern { } *_pattern;
     struct CGImage { } *_patternImage;
 }
 
-@property double alpha;
+@property float alpha;
 
 - (struct CGPattern { }*)_newPattern;
-- (double)alpha;
+- (float)alpha;
 - (void)dealloc;
 - (id)description;
 - (id)initWithImageRef:(struct CGImage { }*)arg1;
 - (struct CGPattern { }*)pattern;
 - (struct CGImage { }*)patternImageRef;
-- (void)setAlpha:(double)arg1;
+- (void)setAlpha:(float)arg1;
 - (void)setPatternInContext:(struct CGContext { }*)arg1;
 
 @end

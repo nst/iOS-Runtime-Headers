@@ -6,30 +6,30 @@
 
 @interface SULoadingView : UIView {
     UIColor *_activityIndicatorColor;
-    long long _activityIndicatorStyle;
+    int _activityIndicatorStyle;
     UILabel *_label;
     UIActivityIndicatorView *_progressIndicator;
-    unsigned long long _style;
+    unsigned int _style;
     UIColor *_textColor;
     UIColor *_textShadowColor;
 }
 
 @property(retain) UIColor * activityIndicatorColor;
-@property long long activityIndicatorStyle;
+@property int activityIndicatorStyle;
 @property(retain) UIColor * textColor;
 @property(retain) UIColor * textShadowColor;
 
 - (void)_setupSubviews;
 - (id)activityIndicatorColor;
-- (long long)activityIndicatorStyle;
+- (int)activityIndicatorStyle;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)newProgressIndicator;
 - (id)newTextLabel;
 - (void)setActivityIndicatorColor:(id)arg1;
-- (void)setActivityIndicatorStyle:(long long)arg1;
-- (void)setStyle:(unsigned long long)arg1;
+- (void)setActivityIndicatorStyle:(int)arg1;
+- (void)setStyle:(unsigned int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTextShadowColor:(id)arg1;
 - (void)sizeToFit;

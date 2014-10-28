@@ -9,13 +9,13 @@
     UIAlertController *_alertController;
     NSMutableArray *_alertInvocationQueue;
     id _delegate;
+    BOOL _isDismissed;
     UITableView *_tableView;
-    bool_isDismissed;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,6 +28,6 @@
 - (void)showSheetForAlert:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

@@ -8,12 +8,12 @@
     char *p;
 }
 
-- (void)_pb_growCapacityBy:(unsigned long long)arg1;
+- (void)_pb_growCapacityBy:(unsigned int)arg1;
 - (const void*)bytes;
 - (void)dealloc;
-- (id)initWithCapacity:(unsigned long long)arg1;
-- (unsigned long long)length;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (unsigned int)length;
 - (void*)mutableBytes;
-- (void)setLength:(unsigned long long)arg1;
+- (void)setLength:(unsigned int)arg1;
 
 @end

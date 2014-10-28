@@ -40,7 +40,7 @@
 
 - (unsigned int)M;
 - (id)allKeys;
-- (char *)bytesAtIndex:(unsigned long long)arg1;
+- (char *)bytesAtIndex:(unsigned int)arg1;
 - (double)c;
 - (unsigned char*[3])ckeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -50,21 +50,21 @@
 - (void)finalize;
 - (char *)g;
 - (id)generateSubclassCode:(id)arg1;
-- (unsigned long long)hash;
-- (unsigned long long)indexForBytes:(char *)arg1 length:(unsigned long long)arg2;
-- (unsigned long long)indexForKey:(unsigned short*)arg1 length:(unsigned long long)arg2;
+- (unsigned int)hash;
+- (unsigned int)indexForBytes:(char *)arg1 length:(unsigned int)arg2;
+- (unsigned int)indexForKey:(unsigned short*)arg1 length:(unsigned int)arg2;
 - (id)init;
 - (id)initWithKeys:(void**)arg1 keyLenghtInBytes:(unsigned int)arg2 count:(unsigned int)arg3 type:(unsigned int)arg4;
-- (bool)isEmpty;
-- (bool)isEqual:(id)arg1;
-- (unsigned short*)keyAtIndex:(unsigned long long)arg1;
+- (BOOL)isEmpty;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned short*)keyAtIndex:(unsigned int)arg1;
 - (unsigned int)keyLen;
 - (unsigned int)keySetCount;
 - (unsigned short*[1])keys1;
 - (unsigned short*[2])keys2;
 - (unsigned short*[3])keys3;
 - (unsigned int)maximumIndex;
-- (id)newKeySetWithKeys:(id)arg1 encoding:(unsigned int)arg2;
+- (id)newKeySetWithKeys:(id)arg1 encoding:(unsigned long)arg2;
 - (unsigned int)numKey;
 - (void*)rankTable;
 - (unsigned int*)seeds;

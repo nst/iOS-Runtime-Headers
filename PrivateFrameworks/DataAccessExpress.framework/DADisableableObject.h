@@ -3,13 +3,13 @@
  */
 
 @interface DADisableableObject : NSObject {
-    bool_isDisabled;
+    BOOL _isDisabled;
 }
 
-@property bool isDisabled;
+@property BOOL isDisabled;
 
 - (void)disable;
-- (bool)isDisabled;
-- (void)setIsDisabled:(bool)arg1;
+- (BOOL)isDisabled;
+- (void)setIsDisabled:(BOOL)arg1;
 
 @end

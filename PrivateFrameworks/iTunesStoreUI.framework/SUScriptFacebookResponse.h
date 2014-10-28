@@ -7,17 +7,17 @@
 @interface SUScriptFacebookResponse : SUScriptObject {
     NSString *_bodyData;
     SUScriptError *_error;
-    long long _statusCode;
+    int _statusCode;
 }
 
-@property(readonly) long long HTTPStatusCode;
+@property(readonly) int HTTPStatusCode;
 @property(readonly) NSString * bodyData;
 @property(readonly) SUScriptError * error;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
 
-- (long long)HTTPStatusCode;
+- (int)HTTPStatusCode;
 - (id)_className;
 - (id)attributeKeys;
 - (id)bodyData;

@@ -12,8 +12,8 @@
 
 - (id)data;
 - (void)dealloc;
-- (bool)isComplete;
-- (bool)isPartial;
+- (BOOL)isComplete;
+- (BOOL)isPartial;
 - (id)partName;
 - (void)setData:(id)arg1;
 

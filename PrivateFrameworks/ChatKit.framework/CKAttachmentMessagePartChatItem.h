@@ -12,15 +12,15 @@
 @property(copy,readonly) NSString * transferGUID;
 
 - (unsigned char)attachmentContiguousType;
-- (unsigned long long)balloonCorners;
+- (unsigned int)balloonCorners;
 - (Class)balloonViewClass;
-- (bool)canCopy;
-- (bool)canExport;
-- (bool)canForward;
+- (BOOL)canCopy;
+- (BOOL)canExport;
+- (BOOL)canForward;
 - (id)composition;
 - (void)dealloc;
 - (id)description;
-- (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
+- (id)initWithIMChatItem:(id)arg1 maxWidth:(float)arg2;
 - (id)mediaObject;
 - (id)pasteboardItems;
 - (void)setMediaObject:(id)arg1;

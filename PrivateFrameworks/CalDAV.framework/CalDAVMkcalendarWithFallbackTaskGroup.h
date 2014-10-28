@@ -9,27 +9,27 @@
     NSDictionary *_headersToOverride;
     NSSet *_primaryElements;
     NSDictionary *_responseHeaders;
+    BOOL _shouldSupportVEVENT;
+    BOOL _shouldSupportVTODO;
     NSURL *_url;
-    bool_shouldSupportVEVENT;
-    bool_shouldSupportVTODO;
 }
 
 @property(retain) NSDictionary * headersToOverride;
 @property(retain) NSDictionary * responseHeaders;
-@property bool shouldSupportVEVENT;
-@property bool shouldSupportVTODO;
+@property BOOL shouldSupportVEVENT;
+@property BOOL shouldSupportVTODO;
 
-- (void)_mkcalendarAfterFailureCount:(unsigned long long)arg1;
+- (void)_mkcalendarAfterFailureCount:(unsigned int)arg1;
 - (void)dealloc;
 - (id)headersToOverride;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 primaryPropertiesToSet:(id)arg3 fallbackPropertiesToSet:(id)arg4 atURL:(id)arg5;
 - (id)responseHeaders;
 - (void)setHeadersToOverride:(id)arg1;
 - (void)setResponseHeaders:(id)arg1;
-- (void)setShouldSupportVEVENT:(bool)arg1;
-- (void)setShouldSupportVTODO:(bool)arg1;
-- (bool)shouldSupportVEVENT;
-- (bool)shouldSupportVTODO;
+- (void)setShouldSupportVEVENT:(BOOL)arg1;
+- (void)setShouldSupportVTODO:(BOOL)arg1;
+- (BOOL)shouldSupportVEVENT;
+- (BOOL)shouldSupportVTODO;
 - (void)startTaskGroup;
 
 @end

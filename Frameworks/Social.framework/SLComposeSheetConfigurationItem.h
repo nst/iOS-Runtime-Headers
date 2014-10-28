@@ -13,13 +13,13 @@
     id _tapHandler;
     NSString *_title;
     NSString *_value;
-    bool_valuePending;
+    BOOL _valuePending;
 }
 
 @property(copy) id tapHandler;
 @property(copy) NSString * title;
 @property(copy) NSString * value;
-@property bool valuePending;
+@property BOOL valuePending;
 
 - (void).cxx_destruct;
 - (id)changeObserver;
@@ -28,10 +28,10 @@
 - (void)setTapHandler:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValuePending:(bool)arg1;
+- (void)setValuePending:(BOOL)arg1;
 - (id)tapHandler;
 - (id)title;
 - (id)value;
-- (bool)valuePending;
+- (BOOL)valuePending;
 
 @end

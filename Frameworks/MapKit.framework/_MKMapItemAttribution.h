@@ -11,15 +11,15 @@
 @property(readonly) NSArray * attributionApps;
 @property(readonly) NSArray * attributionURLs;
 @property(readonly) NSString * providerName;
-@property(readonly) bool requiresAttributionInCallout;
+@property(readonly) BOOL requiresAttributionInCallout;
 
 - (void).cxx_destruct;
 - (id)attributionApps;
 - (id)attributionURLs;
 - (id)initWithGEOMapItemAttribution:(id)arg1;
-- (id)providerLogoImageForScale:(double)arg1;
+- (id)providerLogoImageForScale:(float)arg1;
 - (id)providerName;
-- (id)providerSnippetLogoImageForScale:(double)arg1;
-- (bool)requiresAttributionInCallout;
+- (id)providerSnippetLogoImageForScale:(float)arg1;
+- (BOOL)requiresAttributionInCallout;
 
 @end

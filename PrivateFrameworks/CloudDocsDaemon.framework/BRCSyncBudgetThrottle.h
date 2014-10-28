@@ -11,7 +11,7 @@
 @property(readonly) float lastHour;
 @property(readonly) float lastMinute;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (double)_timeToLoseAmount:(float)arg1 count:(int)arg2;
 - (float)availableBudgetWithDefaults:(id)arg1;

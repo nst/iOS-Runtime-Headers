@@ -5,16 +5,16 @@
 @class NSAttributedString, UIButton;
 
 @interface CKTranscriptStatusCell : CKTranscriptLabelCell {
-    double _prevBalloonWidth;
+    float _prevBalloonWidth;
     UIButton *_statusButton;
 }
 
 @property(copy) NSAttributedString * attributedButtonText;
-@property double prevBalloonWidth;
+@property float prevBalloonWidth;
 @property(retain) UIButton * statusButton;
 
 + (id)statusButton;
-+ (void)transitionFromView:(id)arg1 toView:(id)arg2 duration:(double)arg3 options:(unsigned long long)arg4 completion:(id)arg5;
++ (void)transitionFromView:(id)arg1 toView:(id)arg2 duration:(double)arg3 options:(unsigned int)arg4 completion:(id)arg5;
 + (void)zoomAnimation:(id)arg1 completion:(id)arg2;
 
 - (id)attributedButtonText;
@@ -24,10 +24,10 @@
 - (void)performInsertion:(id)arg1;
 - (void)performReload:(id)arg1 completion:(id)arg2;
 - (void)performRemoval:(id)arg1;
-- (double)prevBalloonWidth;
+- (float)prevBalloonWidth;
 - (void)setAttributedButtonText:(id)arg1;
 - (void)setOrientation:(BOOL)arg1;
-- (void)setPrevBalloonWidth:(double)arg1;
+- (void)setPrevBalloonWidth:(float)arg1;
 - (void)setStatusButton:(id)arg1;
 - (id)statusButton;
 

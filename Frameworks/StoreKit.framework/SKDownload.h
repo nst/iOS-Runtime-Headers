@@ -9,7 +9,7 @@
     long long _contentLength;
     NSURL *_contentURL;
     NSNumber *_downloadID;
-    long long _downloadState;
+    int _downloadState;
     NSError *_error;
     float _progress;
     double _timeRemaining;
@@ -22,7 +22,7 @@
 @property(readonly) long long contentLength;
 @property(readonly) NSURL * contentURL;
 @property(readonly) NSString * contentVersion;
-@property(readonly) long long downloadState;
+@property(readonly) int downloadState;
 @property(readonly) NSError * error;
 @property(readonly) float progress;
 @property(readonly) double timeRemaining;
@@ -34,7 +34,7 @@
 - (void)_setContentLength:(long long)arg1;
 - (void)_setContentURL:(id)arg1;
 - (void)_setDownloadID:(id)arg1;
-- (void)_setDownloadState:(long long)arg1;
+- (void)_setDownloadState:(int)arg1;
 - (void)_setError:(id)arg1;
 - (void)_setProgress:(float)arg1;
 - (void)_setTimeRemaining:(double)arg1;
@@ -46,7 +46,7 @@
 - (id)contentVersion;
 - (id)copyXPCEncoding;
 - (void)dealloc;
-- (long long)downloadState;
+- (int)downloadState;
 - (id)error;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;

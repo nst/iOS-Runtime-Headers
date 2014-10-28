@@ -10,7 +10,7 @@
 
 @property(retain) TTSSpeechVoice * voice;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

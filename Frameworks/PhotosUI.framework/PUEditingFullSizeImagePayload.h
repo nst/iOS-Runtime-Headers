@@ -5,23 +5,23 @@
 @class NSString, NSURL;
 
 @interface PUEditingFullSizeImagePayload : NSObject <NSSecureCoding> {
-    long long _imageOrientation;
+    int _imageOrientation;
     NSString *_sandboxExtensionToken;
     NSURL *_url;
 }
 
-@property long long imageOrientation;
+@property int imageOrientation;
 @property(retain) NSString * sandboxExtensionToken;
 @property(setter=setURL:,retain) NSURL * url;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)imageOrientation;
+- (int)imageOrientation;
 - (id)initWithCoder:(id)arg1;
 - (id)sandboxExtensionToken;
-- (void)setImageOrientation:(long long)arg1;
+- (void)setImageOrientation:(int)arg1;
 - (void)setSandboxExtensionToken:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)url;

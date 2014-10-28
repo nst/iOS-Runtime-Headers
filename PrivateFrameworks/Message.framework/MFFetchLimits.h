@@ -3,21 +3,21 @@
  */
 
 @interface MFFetchLimits : NSObject {
-    unsigned long long _fetchMaxBytes;
-    unsigned long long _fetchMinBytes;
-    unsigned long long _minBytesLeft;
+    unsigned int _fetchMaxBytes;
+    unsigned int _fetchMinBytes;
+    unsigned int _minBytesLeft;
 }
 
-@property unsigned long long fetchMaxBytes;
-@property unsigned long long fetchMinBytes;
-@property unsigned long long minBytesLeft;
+@property unsigned int fetchMaxBytes;
+@property unsigned int fetchMinBytes;
+@property unsigned int minBytesLeft;
 
-- (unsigned long long)fetchMaxBytes;
-- (unsigned long long)fetchMinBytes;
+- (unsigned int)fetchMaxBytes;
+- (unsigned int)fetchMinBytes;
 - (id)init;
-- (unsigned long long)minBytesLeft;
-- (void)setFetchMaxBytes:(unsigned long long)arg1;
-- (void)setFetchMinBytes:(unsigned long long)arg1;
-- (void)setMinBytesLeft:(unsigned long long)arg1;
+- (unsigned int)minBytesLeft;
+- (void)setFetchMaxBytes:(unsigned int)arg1;
+- (void)setFetchMinBytes:(unsigned int)arg1;
+- (void)setMinBytesLeft:(unsigned int)arg1;
 
 @end

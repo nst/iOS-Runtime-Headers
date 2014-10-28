@@ -16,7 +16,7 @@
 @property(copy) NSURL * publicDeviceServiceURL;
 @property(copy) NSURL * publicShareServiceURL;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -24,9 +24,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)publicCloudDBURL;
 - (id)publicDeviceServiceURL;
 - (id)publicShareServiceURL;

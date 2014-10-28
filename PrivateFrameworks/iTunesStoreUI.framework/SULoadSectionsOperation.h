@@ -8,20 +8,20 @@
     NSString *_activeSectionVersionString;
     SUClientInterface *_clientInterface;
     SUSectionsResponse *_sectionsResponse;
-    bool_shouldUseCache;
+    BOOL _shouldUseCache;
 }
 
 @property(copy) NSString * activeSectionVersionString;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) SUSectionsResponse * sectionsResponse;
-@property bool shouldUseCache;
+@property BOOL shouldUseCache;
 @property(readonly) Class superclass;
 
-- (id)_cachePathForVersion:(id)arg1 create:(bool)arg2;
-- (bool)_loadSectionsFromCacheForVersion:(id)arg1;
-- (bool)_loadSectionsFromNetworkWithDictionary:(id)arg1;
+- (id)_cachePathForVersion:(id)arg1 create:(BOOL)arg2;
+- (BOOL)_loadSectionsFromCacheForVersion:(id)arg1;
+- (BOOL)_loadSectionsFromNetworkWithDictionary:(id)arg1;
 - (void)_setSectionsResponse:(id)arg1;
 - (void)_writeSectionsResponseToCache:(id)arg1 forVersion:(id)arg2;
 - (id)activeSectionVersionString;
@@ -31,7 +31,7 @@
 - (void)run;
 - (id)sectionsResponse;
 - (void)setActiveSectionVersionString:(id)arg1;
-- (void)setShouldUseCache:(bool)arg1;
-- (bool)shouldUseCache;
+- (void)setShouldUseCache:(BOOL)arg1;
+- (BOOL)shouldUseCache;
 
 @end

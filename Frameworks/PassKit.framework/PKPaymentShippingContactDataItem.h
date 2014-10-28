@@ -10,10 +10,10 @@
 @property(readonly) NSString * email;
 @property(readonly) NSString * phone;
 
-+ (long long)dataType;
++ (int)dataType;
 
 - (id)email;
-- (bool)isValidWithError:(id*)arg1;
+- (BOOL)isValidWithError:(id*)arg1;
 - (id)phone;
 
 @end

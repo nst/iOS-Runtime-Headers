@@ -2,29 +2,24 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, PKPaymentAuthorizationNavigationBarBackgroundView, UIButton, UILabel, UIView;
+@class PKPaymentAuthorizationNavigationBarBackgroundView, UIButton, UIImageView, UIView;
 
 @interface PKPaymentAuthorizationNavigationBar : UINavigationBar {
     PKPaymentAuthorizationNavigationBarBackgroundView *_bgView;
     UIButton *_customButton;
     SEL _customButtonAction;
     id _customButtonTarget;
-    NSString *_customTitle;
-    UILabel *_customTitleView;
+    UIImageView *_logoView;
     UIView *_separatorView;
 }
 
-@property(retain) NSString * customTitle;
-
 - (id)_buttonAttributedStringWithString:(id)arg1;
-- (void)_createSubviewsWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_createSubviewsWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_prepareConstraints;
 - (id)_titleAttributedStringWithString:(id)arg1 color:(id)arg2;
-- (id)customTitle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setCustomButtonHidden:(bool)arg1 animated:(bool)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCustomButtonHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setCustomButtonTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
-- (void)setCustomTitle:(id)arg1;
-- (void)setCustomTitleHidden:(bool)arg1 animated:(bool)arg2;
+- (void)setLogoHidden:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

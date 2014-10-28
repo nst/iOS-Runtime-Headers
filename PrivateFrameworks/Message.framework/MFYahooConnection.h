@@ -6,6 +6,6 @@
 }
 
 - (id)_getAuthenticatorForAccount:(id)arg1;
-- (bool)authenticateUsingAccount:(id)arg1;
+- (BOOL)authenticateUsingAccount:(id)arg1;
 
 @end

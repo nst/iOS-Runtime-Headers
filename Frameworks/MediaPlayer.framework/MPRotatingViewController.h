@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithValidInterfaceOrientationsBlock:(id)arg1;
-- (bool)shouldAutorotate;
-- (unsigned long long)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

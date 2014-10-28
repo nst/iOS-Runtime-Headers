@@ -3,8 +3,6 @@
  */
 
 @interface CPCluster : NSObject <CPDisposable> {
-    boolownData;
-    boolownDifferences;
     unsigned int clusterCount;
     double *ddx;
     unsigned int *ddxOrderIndex;
@@ -18,7 +16,9 @@
     unsigned int minClusterSize;
     double minInterClusterDiff;
     double minInterLevel2ndDiff;
-    const struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; boolx8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; boolx20; } *profile;
+    BOOL ownData;
+    BOOL ownDifferences;
+    const struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; } *profile;
     double *x;
     unsigned int xCount;
     struct { unsigned int x1; double x2; double x3; double x4; } *xStats;
@@ -30,13 +30,13 @@
 
 - (void)analyzeDensities;
 - (void)analyzeDifferences;
-- (bool)applyDifferenceHints:(struct { unsigned int x1; double x2; double x3; double x4; }*)arg1 count:(unsigned int)arg2;
+- (BOOL)applyDifferenceHints:(struct { unsigned int x1; double x2; double x3; double x4; }*)arg1 count:(unsigned int)arg2;
 - (void)assembleDataStats;
 - (void)assembleDensityDifferenceStats;
 - (void)assembleDifferenceStats;
 - (unsigned int)clusterCount;
 - (struct { unsigned int x1; double x2; double x3; double x4; })clusterStatisticsAtIndex:(unsigned int)arg1;
-- (bool)coalesceFrom:(unsigned int)arg1 to:(unsigned int)arg2;
+- (BOOL)coalesceFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (void)computeDataFromDifferences;
 - (void)computeDifferencesFromData;
 - (void)dealloc;
@@ -44,21 +44,21 @@
 - (void)dispose;
 - (void)finalize;
 - (void)findClusters:(double*)arg1 count:(unsigned int)arg2;
-- (void)findClustersFromCharacterSequence:(id)arg1 withSpaceHint:(bool)arg2;
+- (void)findClustersFromCharacterSequence:(id)arg1 withSpaceHint:(BOOL)arg2;
 - (void)findClustersFromDifferences:(double*)arg1 count:(unsigned int)arg2;
 - (void)findDensityClusters:(double*)arg1 count:(unsigned int)arg2;
 - (id)init;
-- (id)initWithProfile:(const struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; boolx8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; boolx20; }*)arg1;
-- (bool)joinClosestLevelPairFrom:(unsigned int)arg1 to:(unsigned int)arg2;
-- (bool)joinLevelsFrom:(unsigned int)arg1 to:(unsigned int)arg2;
+- (id)initWithProfile:(const struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; }*)arg1;
+- (BOOL)joinClosestLevelPairFrom:(unsigned int)arg1 to:(unsigned int)arg2;
+- (BOOL)joinLevelsFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (struct { unsigned int x1; double x2; double x3; double x4; })largestClusterStatistics;
 - (unsigned int)levels;
-- (void)makeWords:(struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; }*)arg1 count:(unsigned int)arg2 fromCharacterSequence:(id)arg3 charOffset:(unsigned int)arg4;
+- (void)makeWords:(struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)arg1 count:(unsigned int)arg2 fromCharacterSequence:(id)arg3 charOffset:(unsigned int)arg4;
 - (void)setMaximumClusterSpread:(double)arg1;
 - (void)setMinimumClusterSize:(unsigned int)arg1;
 - (void)setMinimumRecognizedInterClusterDifference:(double)arg1;
 - (void)setMinimumRecognizedInterLevel2ndDifference:(double)arg1;
-- (bool)splitLevelAtIndex:(unsigned int)arg1 betweenValue:(double)arg2 andValue:(double)arg3;
+- (BOOL)splitLevelAtIndex:(unsigned int)arg1 betweenValue:(double)arg2 andValue:(double)arg3;
 - (void)splitSecondDifferences;
 - (void)tryLevel0SplitBetween:(double)arg1 and:(double)arg2 usingHints:(struct { unsigned int x1; double x2; double x3; double x4; }*)arg3;
 

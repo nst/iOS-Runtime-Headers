@@ -9,34 +9,34 @@
     NSString *_formulaString;
     OITSUPointerKeyDictionary *_maxWorksheetReferences;
     EDString *_nameString;
-    unsigned long long _sheetIndex;
+    unsigned int _sheetIndex;
 }
 
 @property(readonly) EDFormula * formula;
 @property(readonly) NSString * internalFunctionName;
-@property(readonly) bool isInternalFunction;
+@property(readonly) BOOL isInternalFunction;
 @property(readonly) OITSUPointerKeyDictionary * maxWorksheetReferences;
 @property(retain) EDString * nameString;
-@property unsigned long long sheetIndex;
+@property unsigned int sheetIndex;
 
 + (id)name;
 
 - (void)dealloc;
 - (id)formula;
 - (id)formulaString;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)internalFunctionName;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToEDName:(id)arg1;
-- (bool)isEqualToString:(id)arg1;
-- (bool)isInternalFunction;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToEDName:(id)arg1;
+- (BOOL)isEqualToString:(id)arg1;
+- (BOOL)isInternalFunction;
 - (id)maxWorksheetReferences;
 - (id)nameString;
 - (void)setFormula:(id)arg1 workbook:(id)arg2;
 - (void)setFormulaString:(id)arg1 workbook:(id)arg2;
 - (void)setNameString:(id)arg1;
-- (void)setSheetIndex:(unsigned long long)arg1;
-- (unsigned long long)sheetIndex;
+- (void)setSheetIndex:(unsigned int)arg1;
+- (unsigned int)sheetIndex;
 
 @end

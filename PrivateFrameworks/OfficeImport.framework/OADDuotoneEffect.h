@@ -15,9 +15,9 @@
 - (id)color2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setColor1:(id)arg1;
 - (void)setColor2:(id)arg1;
 - (void)setStyleColor:(id)arg1;

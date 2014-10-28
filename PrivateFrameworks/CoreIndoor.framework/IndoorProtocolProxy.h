@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <CLIndoorDelegateProtocol> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) NSError * shutdownReason;
 @property(readonly) Class superclass;
 

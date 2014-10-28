@@ -6,8 +6,8 @@
 
 @interface AVAssetImageGeneratorInternal : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct { 
         long long value; 
         int timescale; 
@@ -19,8 +19,8 @@
         unsigned int flags; 
         long long epoch; 
     NSString *apertureMode;
+    BOOL appliesPreferredTrackTransform;
     AVAsset *asset;
-    boolappliesPreferredTrackTransform;
     int cancelledRequestIDThreshold;
     AVCustomVideoCompositorSession *customVideoCompositorSession;
     struct OpaqueFigAssetImageGenerator { } *generator;

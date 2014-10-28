@@ -3,7 +3,7 @@
  */
 
 @interface ATGrappaSession : NSObject {
-    unsigned int _sessionId;
+    unsigned long _sessionId;
 }
 
 - (id)beginHostSessionWithDeviceResponseData:(id)arg1;

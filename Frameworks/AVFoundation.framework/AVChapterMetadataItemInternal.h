@@ -16,8 +16,8 @@
         unsigned int flags; 
         long long epoch; 
     NSString *chapterDataType;
-    long long chapterGroupIndex;
-    long long chapterIndex;
+    long chapterGroupIndex;
+    long chapterIndex;
     NSString *chapterType;
     NSMutableArray *completions;
     } duration;
@@ -26,8 +26,8 @@
     NSObject<OS_dispatch_queue> *readWriteQueue;
     } time;
     <NSObject><NSCopying> *value;
-    int valueErrorCode;
-    long long valueStatus;
+    long valueErrorCode;
+    int valueStatus;
     AVWeakReference *weakReference;
 }
 

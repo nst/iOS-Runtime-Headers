@@ -8,23 +8,23 @@
     struct _PLTimeIntervalRange { 
         double location; 
         double length; 
+    BOOL _cacheOn;
     NSArray *_cacheResults;
     } _cacheTimeRange;
+    BOOL _isNegativePowerSupported;
     PLEntry *_lastSnapshot;
+    BOOL _logRail;
     short _railDirection;
     NSString *_railName;
     double _selfAdjustedSafeTimeForModeling;
-    bool_cacheOn;
-    bool_isNegativePowerSupported;
-    bool_logRail;
 }
 
-@property bool cacheOn;
+@property BOOL cacheOn;
 @property(retain) NSArray * cacheResults;
 @property struct _PLTimeIntervalRange { double x1; double x2; } cacheTimeRange;
-@property(readonly) bool isNegativePowerSupported;
+@property(readonly) BOOL isNegativePowerSupported;
 @property(retain) PLEntry * lastSnapshot;
-@property bool logRail;
+@property BOOL logRail;
 @property(readonly) short railDirection;
 @property(retain,readonly) NSString * railName;
 @property(readonly) double selfAdjustedSafeTimeForModeling;
@@ -33,7 +33,7 @@
 + (id)entryEventNoneDefinitions;
 + (double)getEnergyInRail:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2;
 + (id)getSnappedRailName:(id)arg1;
-+ (bool)isSnapRail:(id)arg1;
++ (BOOL)isSnapRail:(id)arg1;
 + (id)railFromRailName:(id)arg1;
 + (void)safeGuardAllRails;
 + (id)snapRailFromRailName:(id)arg1;
@@ -41,7 +41,7 @@
 - (void).cxx_destruct;
 - (void)addSnapshot:(id)arg1 withPower:(double)arg2;
 - (void)batchAddSnapshots:(id)arg1;
-- (bool)cacheOn;
+- (BOOL)cacheOn;
 - (void)cacheRailDataForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (id)cacheResults;
 - (struct _PLTimeIntervalRange { double x1; double x2; })cacheTimeRange;
@@ -51,24 +51,24 @@
 - (id)getSnapshotTimeInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (id)getSnapshotsInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (void)initOperatorDependancies;
-- (id)initWithName:(id)arg1 withRailDirection:(short)arg2 withNegativePowerSupport:(bool)arg3 isLoggingOnByDefault:(bool)arg4;
-- (bool)isNegativePowerSupported;
-- (bool)isRailPowerEqual:(double)arg1 withOtherPower:(double)arg2;
+- (id)initWithName:(id)arg1 withRailDirection:(short)arg2 withNegativePowerSupport:(BOOL)arg3 isLoggingOnByDefault:(BOOL)arg4;
+- (BOOL)isNegativePowerSupported;
+- (BOOL)isRailPowerEqual:(double)arg1 withOtherPower:(double)arg2;
 - (id)lastSnapshot;
 - (void)logCacheStats:(id)arg1;
-- (bool)logRail;
+- (BOOL)logRail;
 - (short)railDirection;
 - (id)railName;
 - (double)safeTimeForModeling;
 - (double)selfAdjustedSafeTimeForModeling;
-- (void)setCacheOn:(bool)arg1;
+- (void)setCacheOn:(BOOL)arg1;
 - (void)setCacheResults:(id)arg1;
 - (void)setCacheTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (void)setLastSnapshot:(id)arg1;
-- (void)setLogRail:(bool)arg1;
+- (void)setLogRail:(BOOL)arg1;
 - (double)timeOfLastSnapshot;
 - (id)trimBatchSnapShots:(id)arg1;
 - (id)trimmingConditionsForRolloverAtDate:(id)arg1;
-- (bool)useCachedDataForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
+- (BOOL)useCachedDataForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 
 @end

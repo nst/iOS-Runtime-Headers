@@ -12,7 +12,7 @@
     unsigned long long _timestamp;
 }
 
-@property bool hasTimestamp;
+@property BOOL hasTimestamp;
 @property(retain) NSMutableArray * rATPowers;
 @property unsigned long long timestamp;
 
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)rATPowerAtIndex:(unsigned long long)arg1;
+- (id)rATPowerAtIndex:(unsigned int)arg1;
 - (id)rATPowers;
-- (unsigned long long)rATPowersCount;
-- (bool)readFrom:(id)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (unsigned int)rATPowersCount;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setRATPowers:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

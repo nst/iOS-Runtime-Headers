@@ -10,11 +10,11 @@
 @property(retain,readonly) NSURL * certificateURL;
 @property(retain,readonly) NSURL * contentURL;
 @property(retain,readonly) NSURL * keyServerURL;
-@property(getter=isSkipable,readonly) bool skipable;
+@property(getter=isSkipable,readonly) BOOL skipable;
 
 - (id)certificateURL;
 - (id)contentURL;
-- (bool)isSkipable;
+- (BOOL)isSkipable;
 - (id)keyServerURL;
 
 @end

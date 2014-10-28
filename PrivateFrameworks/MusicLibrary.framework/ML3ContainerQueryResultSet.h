@@ -6,21 +6,21 @@
 
 @interface ML3ContainerQueryResultSet : ML3QueryResultSet {
     long long _containerPID;
-    unsigned long long _entityLimit;
+    unsigned int _entityLimit;
+    BOOL _needsReversing;
+    BOOL _needsSorting;
     ML3QueryResultSet_BackingStore *_sortedBackingStore;
-    bool_needsReversing;
-    bool_needsSorting;
 }
 
 - (void).cxx_destruct;
 - (void)_loadCurrentFullResults;
-- (bool)_updateToLibraryCurrentRevision;
+- (BOOL)_updateToLibraryCurrentRevision;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)entityLimit;
+- (unsigned int)entityLimit;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (void)enumerateSectionsUsingBlock:(id)arg1;
 - (id)initWithQuery:(id)arg1;
-- (long long)persistentIDAtIndex:(unsigned long long)arg1;
+- (long long)persistentIDAtIndex:(unsigned int)arg1;
 - (id)sortedBackingStoreForDisplayOrdering;
 
 @end

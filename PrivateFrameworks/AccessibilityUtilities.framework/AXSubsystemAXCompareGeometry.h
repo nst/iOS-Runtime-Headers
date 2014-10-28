@@ -7,6 +7,6 @@
 
 + (int)defaultLogLevel;
 + (id)identifier;
-+ (bool)shouldProcessMessageForLogs;
++ (BOOL)shouldProcessMessageForLogs;
 
 @end

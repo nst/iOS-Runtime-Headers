@@ -13,9 +13,9 @@
     unsigned long long _timestamp;
 }
 
-@property bool hasRecords;
-@property bool hasSizeBytes;
-@property bool hasTimestamp;
+@property BOOL hasRecords;
+@property BOOL hasSizeBytes;
+@property BOOL hasTimestamp;
 @property unsigned int records;
 @property unsigned int sizeBytes;
 @property unsigned long long timestamp;
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasRecords;
-- (bool)hasSizeBytes;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasRecords;
+- (BOOL)hasSizeBytes;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)records;
-- (void)setHasRecords:(bool)arg1;
-- (void)setHasSizeBytes:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasRecords:(BOOL)arg1;
+- (void)setHasSizeBytes:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setRecords:(unsigned int)arg1;
 - (void)setSizeBytes:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

@@ -8,24 +8,24 @@
     BBBulletin *_bulletin;
     NSString *_bulletinID;
     BBObserverGatewayHolder *_currentGateway;
-    unsigned long long _feeds;
-    boolinvalidated;
+    unsigned int _feeds;
+    BOOL invalidated;
 }
 
 @property(retain) BBBulletin * bulletin;
 @property(copy) NSString * bulletinID;
 @property(readonly) BBObserverGatewayHolder * currentGateway;
-@property unsigned long long feeds;
+@property unsigned int feeds;
 
 - (id)bulletin;
 - (id)bulletinID;
 - (id)currentGateway;
 - (void)dealloc;
-- (void)enumerate:(id)arg1 numberOfUniqueGateways:(unsigned long long)arg2 bulletin:(id)arg3 bulletinID:(id)arg4 feeds:(unsigned long long)arg5 didPlayLightsAndSirensHandler:(id)arg6 completion:(id)arg7;
-- (unsigned long long)feeds;
+- (void)enumerate:(id)arg1 numberOfUniqueGateways:(unsigned int)arg2 bulletin:(id)arg3 bulletinID:(id)arg4 feeds:(unsigned int)arg5 didPlayLightsAndSirensHandler:(id)arg6 completion:(id)arg7;
+- (unsigned int)feeds;
 - (void)invalidateAndSendTo:(id)arg1;
 - (void)setBulletin:(id)arg1;
 - (void)setBulletinID:(id)arg1;
-- (void)setFeeds:(unsigned long long)arg1;
+- (void)setFeeds:(unsigned int)arg1;
 
 @end

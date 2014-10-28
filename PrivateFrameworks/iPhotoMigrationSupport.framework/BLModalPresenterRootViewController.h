@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)loadView;
-- (void)setBackgroundAlpha:(double)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
+- (void)setBackgroundAlpha:(float)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

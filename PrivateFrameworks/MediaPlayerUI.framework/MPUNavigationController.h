@@ -8,17 +8,17 @@
 
 @interface MPUNavigationController : UINavigationController {
     id _overrideSupportedInterfaceOrientationsHandler;
-    bool_supportsStandardInterfaceOrientations;
+    BOOL _supportsStandardInterfaceOrientations;
 }
 
 @property(copy) id overrideSupportedInterfaceOrientationsHandler;
-@property bool supportsStandardInterfaceOrientations;
+@property BOOL supportsStandardInterfaceOrientations;
 
 - (void).cxx_destruct;
 - (id)overrideSupportedInterfaceOrientationsHandler;
 - (void)setOverrideSupportedInterfaceOrientationsHandler:(id)arg1;
-- (void)setSupportsStandardInterfaceOrientations:(bool)arg1;
-- (unsigned long long)supportedInterfaceOrientations;
-- (bool)supportsStandardInterfaceOrientations;
+- (void)setSupportsStandardInterfaceOrientations:(BOOL)arg1;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)supportsStandardInterfaceOrientations;
 
 @end

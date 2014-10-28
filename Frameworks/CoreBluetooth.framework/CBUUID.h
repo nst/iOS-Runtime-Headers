@@ -21,11 +21,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithCFUUID:(struct __CFUUID { }*)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithNSUUID:(id)arg1;
 - (id)initWithString:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

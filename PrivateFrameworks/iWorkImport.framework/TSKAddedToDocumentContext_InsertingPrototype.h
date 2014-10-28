@@ -5,10 +5,10 @@
 @interface TSKAddedToDocumentContext_InsertingPrototype : TSKAddedToDocumentContext {
 }
 
-- (bool)autoUpdateSmartFields;
+- (BOOL)autoUpdateSmartFields;
 - (id)description;
-- (bool)syncChanges;
-- (bool)uniqueBookmarks;
-- (bool)wasPasted;
+- (BOOL)syncChanges;
+- (BOOL)uniqueBookmarks;
+- (BOOL)wasPasted;
 
 @end

@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)filename;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (id)multiPartBoundary;
 - (id)multiPartHeader;
 - (id)name;

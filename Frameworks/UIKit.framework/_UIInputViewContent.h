@@ -5,23 +5,23 @@
 @class UIInputView;
 
 @interface _UIInputViewContent : UIView {
-    double _contentHeight;
-    double _contentWidth;
+    float _contentHeight;
+    float _contentWidth;
     UIInputView *_inputView;
     int _unclippableCorners;
 }
 
 @property int _unclippableCorners;
 
-- (struct CGSize { double x1; double x2; })_contentSize;
-- (bool)_isToolbar;
+- (struct CGSize { float x1; float x2; })_contentSize;
+- (BOOL)_isToolbar;
 - (void)_setToolbarBackgroundImage:(id)arg1;
 - (void)_setToolbarBackgroundViewWithImage:(id)arg1;
-- (struct CGSize { double x1; double x2; })_sizeFittingContentViews;
+- (struct CGSize { float x1; float x2; })_sizeFittingContentViews;
 - (int)_unclippableCorners;
 - (void)_updateCornerClipping;
 - (void)addSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inputView:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputView:(id)arg2;
 - (void)set_unclippableCorners:(int)arg1;
 
 @end

@@ -5,19 +5,19 @@
 @class <CHAutoStyling>, CHDChart, CHDChartType, CHDSeries, EDResources, EXOfficeArtState, OADParagraphProperties, OCPPackagePart;
 
 @interface CHXReadState : NSObject {
-    boolmDefaultTextPropertiesHaveExplicitFontSize;
-    boolmIgnoreFormulas;
     <CHAutoStyling> *mAutoStyling;
     CHDChart *mChart;
     OCPPackagePart *mChartPart;
     CHDChartType *mCurrentChartType;
     CHDSeries *mCurrentSeries;
     OADParagraphProperties *mDefaultTextProperties;
+    BOOL mDefaultTextPropertiesHaveExplicitFontSize;
     EXOfficeArtState *mDrawingState;
+    BOOL mIgnoreFormulas;
     EDResources *mResources;
 }
 
-@property bool ignoreFormulas;
+@property BOOL ignoreFormulas;
 
 - (id)autoStyling;
 - (id)chart;
@@ -28,18 +28,18 @@
 - (id)defaultTextProperties;
 - (id)drawingState;
 - (id)exState;
-- (bool)ignoreFormulas;
+- (BOOL)ignoreFormulas;
 - (id)initWithDrawingState:(id)arg1;
 - (void)popTitleTextProperties;
-- (void)pushTitleTextProperties:(bool)arg1;
+- (void)pushTitleTextProperties:(BOOL)arg1;
 - (id)resources;
 - (void)setChart:(id)arg1;
 - (void)setChartPart:(id)arg1;
 - (void)setCurrentChartType:(id)arg1;
 - (void)setCurrentSeries:(id)arg1;
 - (void)setDefaultTextProperties:(id)arg1;
-- (void)setDefaultTextPropertiesHaveExplicitFontSize:(bool)arg1;
-- (void)setIgnoreFormulas:(bool)arg1;
+- (void)setDefaultTextPropertiesHaveExplicitFontSize:(BOOL)arg1;
+- (void)setIgnoreFormulas:(BOOL)arg1;
 - (void)setResources:(id)arg1;
 
 @end

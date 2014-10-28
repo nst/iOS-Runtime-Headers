@@ -6,40 +6,40 @@
 
 @interface PUCollageView : UIView {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSPointerArray *__imageSizes;
     NSArray *__imageViews;
-    long long __numberOfImageViews;
+    int __numberOfImageViews;
     } _collageSize;
-    long long _numberOfItems;
-    double _spacing;
+    int _numberOfItems;
+    float _spacing;
 }
 
 @property(readonly) NSPointerArray * _imageSizes;
 @property(readonly) NSArray * _imageViews;
-@property(readonly) long long _numberOfImageViews;
-@property struct CGSize { double x1; double x2; } collageSize;
-@property long long numberOfItems;
-@property double spacing;
+@property(readonly) int _numberOfImageViews;
+@property struct CGSize { float x1; float x2; } collageSize;
+@property int numberOfItems;
+@property float spacing;
 
-+ (long long)maximumNumberOfItems;
++ (int)maximumNumberOfItems;
 
 - (void).cxx_destruct;
 - (id)_imageSizes;
 - (id)_imageViews;
-- (long long)_numberOfImageViews;
-- (struct CGSize { double x1; double x2; })collageSize;
-- (struct CGSize { double x1; double x2; })imageSizeForItemAtIndex:(long long)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (int)_numberOfImageViews;
+- (struct CGSize { float x1; float x2; })collageSize;
+- (struct CGSize { float x1; float x2; })imageSizeForItemAtIndex:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (long long)numberOfItems;
-- (void)setCollageSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setImage:(id)arg1 forItemAtIndex:(long long)arg2;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1 forItemAtIndex:(long long)arg2;
-- (void)setNumberOfItems:(long long)arg1;
-- (void)setSpacing:(double)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (double)spacing;
+- (int)numberOfItems;
+- (void)setCollageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1 forItemAtIndex:(int)arg2;
+- (void)setNumberOfItems:(int)arg1;
+- (void)setSpacing:(float)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (float)spacing;
 
 @end

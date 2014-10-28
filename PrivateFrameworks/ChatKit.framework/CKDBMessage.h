@@ -9,7 +9,12 @@
     NSDate *_date;
     NSString *_groupID;
     NSString *_guid;
-    long long _identifier;
+    BOOL _hasBeenRead;
+    int _identifier;
+    BOOL _isAudioMessage;
+    BOOL _isMadrid;
+    BOOL _isOutgoing;
+    BOOL _isVisibleByDefault;
     NSString *_madridAccount;
     NSString *_madridAccountGUID;
     NSString *_madridAccountLogin;
@@ -25,11 +30,6 @@
     NSString *_subject;
     NSString *_text;
     NSString *_voicemailString;
-    bool_hasBeenRead;
-    bool_isAudioMessage;
-    bool_isMadrid;
-    bool_isOutgoing;
-    bool_isVisibleByDefault;
 }
 
 @property(retain,readonly) NSString * address;
@@ -38,13 +38,13 @@
 @property(retain,readonly) NSString * formattedAddress;
 @property(retain,readonly) NSString * groupID;
 @property(retain,readonly) NSString * guid;
-@property(readonly) bool hasAttachments;
-@property(readonly) bool hasBeenRead;
-@property long long identifier;
-@property(readonly) bool isAudioMessage;
-@property(readonly) bool isMadrid;
-@property(readonly) bool isOutgoing;
-@property(readonly) bool isVisibleByDefault;
+@property(readonly) BOOL hasAttachments;
+@property(readonly) BOOL hasBeenRead;
+@property int identifier;
+@property(readonly) BOOL isAudioMessage;
+@property(readonly) BOOL isMadrid;
+@property(readonly) BOOL isOutgoing;
+@property(readonly) BOOL isVisibleByDefault;
 @property(retain,readonly) NSString * madridAccountGUID;
 @property(retain,readonly) NSString * madridAccountLogin;
 @property(retain,readonly) NSAttributedString * madridAttributedBody;
@@ -61,7 +61,7 @@
 
 - (id)address;
 - (id)alertImage;
-- (id)attachmentText:(bool)arg1;
+- (id)attachmentText:(BOOL)arg1;
 - (id)attachmentText;
 - (id)date;
 - (void)dealloc;
@@ -69,15 +69,15 @@
 - (id)formattedAddress;
 - (id)groupID;
 - (id)guid;
-- (bool)hasAttachments;
-- (bool)hasBeenRead;
-- (long long)identifier;
+- (BOOL)hasAttachments;
+- (BOOL)hasBeenRead;
+- (int)identifier;
 - (id)initWithMadridMessageGUID:(id)arg1;
-- (id)initWithRecordID:(long long)arg1;
-- (bool)isAudioMessage;
-- (bool)isMadrid;
-- (bool)isOutgoing;
-- (bool)isVisibleByDefault;
+- (id)initWithRecordID:(int)arg1;
+- (BOOL)isAudioMessage;
+- (BOOL)isMadrid;
+- (BOOL)isOutgoing;
+- (BOOL)isVisibleByDefault;
 - (id)madridAccountGUID;
 - (id)madridAccountLogin;
 - (id)madridAttributedBody;
@@ -90,8 +90,8 @@
 - (id)plainBody;
 - (id)previewText;
 - (id)recipients;
-- (bool)senderIsVoicemail;
-- (void)setIdentifier:(long long)arg1;
+- (BOOL)senderIsVoicemail;
+- (void)setIdentifier:(int)arg1;
 - (id)subject;
 - (id)text;
 - (id)voicemailString;

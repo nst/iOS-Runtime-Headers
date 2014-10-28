@@ -9,7 +9,7 @@
 + (id)kleeneSlotWithArray:(id)arg1;
 
 - (id)description;
-- (bool)matches:(id)arg1;
+- (BOOL)matches:(id)arg1;
 - (id)reversed;
 
 @end

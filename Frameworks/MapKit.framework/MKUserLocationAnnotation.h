@@ -16,7 +16,7 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy,readonly) NSString * subtitle;
 @property(readonly) Class superclass;
 @property(copy,readonly) NSString * title;

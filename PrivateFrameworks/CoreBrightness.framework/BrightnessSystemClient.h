@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness
  */
 
-@class BrightnessSystemClientExportedObj, NSArray, NSTimer, NSXPCConnection;
+@class BrightnessSystemClientInternal;
 
-@interface BrightnessSystemClient : NSThread {
-    NSXPCConnection *_connection;
-    id _remote;
-    NSTimer *_timer;
-    bool_initializationComplete;
-    NSArray *clientProperties;
-    BrightnessSystemClientExportedObj *exportedObj;
+@interface BrightnessSystemClient : NSObject {
+    BrightnessSystemClientInternal *bsci;
 }
 
 - (id)copyPropertyForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)isAlsSupported;
-- (void)main;
+- (BOOL)isAlsSupported;
 - (void)registerNotificationBlock:(id)arg1 forProperties:(id)arg2;
 - (void)registerNotificationBlock:(id)arg1;
-- (bool)setProperty:(id)arg1 forKey:(id)arg2;
-- (void)timerFire:(id)arg1;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 
 @end

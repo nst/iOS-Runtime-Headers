@@ -8,9 +8,9 @@
     <SWRunSensorPacketObserver> *_packetObserver;
 }
 
-@property(readonly) unsigned long long remainingBatteryLifetimeInHours;
+@property(readonly) unsigned int remainingBatteryLifetimeInHours;
 
-+ (unsigned long long)remainingHoursConsideredToBeLowBattery;
++ (unsigned int)remainingHoursConsideredToBeLowBattery;
 
 - (void)setPacketObserver:(id)arg1;
 

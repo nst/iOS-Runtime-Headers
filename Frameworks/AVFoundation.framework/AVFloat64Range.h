@@ -15,10 +15,10 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithAudioValueRange:(struct AudioValueRange { double x1; double x2; })arg1;
 - (id)initWithMinimum:(double)arg1 maximum:(double)arg2;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (double)maximum;
 - (double)minimum;
 

@@ -5,26 +5,26 @@
 @interface NSPlaceholderString : NSString {
 }
 
-- (bool)_isDeallocating;
-- (bool)_tryRetain;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
-- (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned long long)arg2 encoding:(unsigned long long)arg3;
-- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 encoding:(unsigned long long)arg3 freeWhenDone:(bool)arg4;
-- (id)initWithCString:(const char *)arg1 encoding:(unsigned long long)arg2;
-- (id)initWithCString:(const char *)arg1 length:(unsigned long long)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2 encoding:(unsigned int)arg3;
+- (id)initWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 encoding:(unsigned int)arg3 freeWhenDone:(BOOL)arg4;
+- (id)initWithCString:(const char *)arg1 encoding:(unsigned int)arg2;
+- (id)initWithCString:(const char *)arg1 length:(unsigned int)arg2;
 - (id)initWithCString:(const char *)arg1;
-- (id)initWithCStringNoCopy:(char *)arg1 length:(unsigned long long)arg2 freeWhenDone:(bool)arg3;
-- (id)initWithCharacters:(const unsigned short*)arg1 length:(unsigned long long)arg2;
-- (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned long long)arg2 freeWhenDone:(bool)arg3;
-- (id)initWithData:(id)arg1 encoding:(unsigned long long)arg2;
-- (id)initWithFormat:(id)arg1 locale:(id)arg2 arguments:(char *)arg3;
+- (id)initWithCStringNoCopy:(char *)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
+- (id)initWithCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
+- (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
+- (id)initWithData:(id)arg1 encoding:(unsigned int)arg2;
+- (id)initWithFormat:(id)arg1 locale:(id)arg2 arguments:(void*)arg3;
 - (id)initWithString:(id)arg1;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
+- (unsigned int)retainCount;
 
 @end

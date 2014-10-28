@@ -14,25 +14,25 @@
 @class NSInputStream, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MSVStreamReader : NSObject <NSStreamDelegate> {
+    BOOL _closeOnStop;
+    BOOL _compress;
     id _didEncounterErrorBlock;
     id _didFinishReadingBlock;
     id _didReadDataBlock;
-    unsigned long long _maximumBufferSize;
+    unsigned int _maximumBufferSize;
     NSObject<OS_dispatch_queue> *_queue;
     NSInputStream *_stream;
-    struct z_stream_s { char *x1; unsigned int x2; unsigned long long x3; char *x4; unsigned int x5; unsigned long long x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned long long x13; unsigned long long x14; } *_zstreamp;
-    bool_closeOnStop;
-    bool_compress;
+    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_zstreamp;
 }
 
-@property(getter=shouldCompress) bool compress;
+@property(getter=shouldCompress) BOOL compress;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id didEncounterErrorBlock;
 @property(copy) id didFinishReadingBlock;
 @property(copy) id didReadDataBlock;
-@property(readonly) unsigned long long hash;
-@property unsigned long long maximumBufferSize;
+@property(readonly) unsigned int hash;
+@property unsigned int maximumBufferSize;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(retain) NSInputStream * stream;
 @property(readonly) Class superclass;
@@ -44,21 +44,21 @@
 - (id)didFinishReadingBlock;
 - (id)didReadDataBlock;
 - (id)initWithInputStream:(id)arg1 queue:(id)arg2;
-- (unsigned long long)maximumBufferSize;
+- (unsigned int)maximumBufferSize;
 - (id)queue;
 - (void)readAllDataWithCompletion:(id)arg1;
 - (id)readAllDataWithError:(id*)arg1;
-- (void)setCompress:(bool)arg1;
+- (void)setCompress:(BOOL)arg1;
 - (void)setDidEncounterErrorBlock:(id)arg1;
 - (void)setDidFinishReadingBlock:(id)arg1;
 - (void)setDidReadDataBlock:(id)arg1;
-- (void)setMaximumBufferSize:(unsigned long long)arg1;
+- (void)setMaximumBufferSize:(unsigned int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setStream:(id)arg1;
-- (bool)shouldCompress;
+- (BOOL)shouldCompress;
 - (void)start;
 - (void)stop;
-- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (id)stream;
 
 @end

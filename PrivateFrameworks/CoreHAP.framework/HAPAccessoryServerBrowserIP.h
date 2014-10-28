@@ -16,13 +16,13 @@
 @property(retain) NSMutableSet * discoveredAccessoryServers;
 
 - (void).cxx_destruct;
-- (bool)_delegateRespondsToSelector:(SEL)arg1;
+- (BOOL)_delegateRespondsToSelector:(SEL)arg1;
 - (void)_handleBonjourAddOrUpdateWithEventInfo:(id)arg1;
 - (void)_handleBonjourBrowserEvent:(unsigned int)arg1 eventInfo:(id)arg2;
 - (void)_handleBonjourRemoveWithEventInfo:(id)arg1;
-- (int)_initializeAndStartBonjourBrowser;
+- (long)_initializeAndStartBonjourBrowser;
 - (void)_invalidateUnpairedAccessoryServers;
-- (int)_server:(id*)arg1 forBonjourDevice:(id)arg2;
+- (long)_server:(id*)arg1 forBonjourDevice:(id)arg2;
 - (id)delegate;
 - (id)delegateQueue;
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;

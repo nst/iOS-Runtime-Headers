@@ -12,7 +12,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithParagraph:(id)arg1;
-- (bool)isEmpty;
+- (BOOL)isEmpty;
 - (id)paragraph;
 - (int)runType;
 

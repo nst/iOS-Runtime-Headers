@@ -5,57 +5,61 @@
 @class <EKEventDetailItemDelegate>, EKEvent, EKEventStore, EKUIRecurrenceAlertController, NSString, UIViewController, UIViewController<EKEditItemViewControllerProtocol>;
 
 @interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
+    BOOL _allowsEditing;
     int _cellPosition;
     <EKEventDetailItemDelegate> *_delegate;
     EKEvent *_event;
     EKUIRecurrenceAlertController *_recurrenceAlertController;
+    BOOL _shouldIndent;
     EKEventStore *_store;
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
-    bool_allowsEditing;
-    bool_shouldIndent;
 }
 
-@property bool allowsEditing;
+@property BOOL allowsEditing;
 @property int cellPosition;
 @property(copy,readonly) NSString * debugDescription;
 @property <EKEventDetailItemDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool shouldIndent;
+@property(readonly) unsigned int hash;
+@property(readonly) unsigned int maximumNumberOfSubItems;
+@property(readonly) BOOL requiresLayoutForSubitemCount;
+@property BOOL shouldIndent;
 @property(readonly) Class superclass;
 @property(retain) UIViewController * viewController;
 
 - (void).cxx_destruct;
-- (bool)allowsEditing;
-- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (BOOL)allowsEditing;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (int)cellPosition;
-- (bool)configureWithCalendar:(id)arg1 preview:(bool)arg2;
+- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)dealloc;
-- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (bool)editItemViewControllerCommit:(id)arg1;
-- (bool)editItemViewControllerShouldShowDetachAlert;
-- (void)eventViewController:(id)arg1 didHighlightSubitem:(unsigned long long)arg2;
-- (void)eventViewController:(id)arg1 didSelectReadOnlySubitem:(unsigned long long)arg2;
-- (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
-- (void)eventViewController:(id)arg1 didUnhighlightSubitem:(unsigned long long)arg2;
-- (bool)hasDetailViewControllerAtIndex:(unsigned long long)arg1;
-- (void)layoutCellsForWidth:(double)arg1 position:(int)arg2;
+- (BOOL)editItemViewControllerCommit:(id)arg1;
+- (BOOL)editItemViewControllerShouldShowDetachAlert;
+- (void)eventViewController:(id)arg1 didHighlightSubitem:(unsigned int)arg2;
+- (void)eventViewController:(id)arg1 didSelectReadOnlySubitem:(unsigned int)arg2;
+- (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned int)arg2;
+- (void)eventViewController:(id)arg1 didUnhighlightSubitem:(unsigned int)arg2;
+- (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
+- (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
+- (unsigned int)maximumNumberOfSubItems;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
-- (void)notifySubitemDidCommit:(unsigned long long)arg1;
-- (unsigned long long)numberOfSubitems;
+- (void)notifySubitemDidCommit:(unsigned int)arg1;
+- (unsigned int)numberOfSubitems;
+- (BOOL)requiresLayoutForSubitemCount;
 - (void)reset;
-- (bool)saveAndDismissWithForce:(bool)arg1;
-- (void)setAllowsEditing:(bool)arg1;
+- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (void)setAllowsEditing:(BOOL)arg1;
 - (void)setCellPosition:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)setShouldIndent:(bool)arg1;
+- (void)setShouldIndent:(BOOL)arg1;
 - (void)setViewController:(id)arg1;
-- (bool)shouldIndent;
+- (BOOL)shouldIndent;
 - (id)viewController;
 
 @end

@@ -14,7 +14,7 @@
 @property(readonly) NSDate * endDate;
 @property(readonly) NSDate * startDate;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

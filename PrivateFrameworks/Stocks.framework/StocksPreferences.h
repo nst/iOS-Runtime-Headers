@@ -3,29 +3,29 @@
  */
 
 @interface StocksPreferences : NSObject {
-    unsigned long long _textDirection;
-    bool_changeColorSwapped;
-    bool_textAttachmentDirectionIsRightToLeft;
+    BOOL _changeColorSwapped;
+    BOOL _textAttachmentDirectionIsRightToLeft;
+    unsigned int _textDirection;
 }
 
-@property(getter=isChangeColorSwapped,readonly) bool changeColorSwapped;
-@property(readonly) bool textAttachmentDirectionIsRightToLeft;
-@property(readonly) unsigned long long textDirection;
+@property(getter=isChangeColorSwapped,readonly) BOOL changeColorSwapped;
+@property(readonly) BOOL textAttachmentDirectionIsRightToLeft;
+@property(readonly) unsigned int textDirection;
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
 
-- (bool)boolForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (bool)isChangeColorSwapped;
+- (BOOL)isChangeColorSwapped;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)resetLocale;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)synchronize;
-- (bool)textAttachmentDirectionIsRightToLeft;
-- (unsigned long long)textDirection;
+- (BOOL)textAttachmentDirectionIsRightToLeft;
+- (unsigned int)textDirection;
 
 @end

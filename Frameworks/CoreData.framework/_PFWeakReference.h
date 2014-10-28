@@ -4,7 +4,7 @@
 
 @interface _PFWeakReference : NSObject {
     id _object;
-    unsigned long long _objectAddress;
+    unsigned int _objectAddress;
 }
 
 @property(readonly) id object;
@@ -12,9 +12,9 @@
 + (id)weakReferenceWithObject:(id)arg1;
 
 - (void)dealloc;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithObject:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)object;
 
 @end

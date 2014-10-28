@@ -5,28 +5,28 @@
 @class NSNumber, NSString;
 
 @interface AFMetrics : NSObject <NSSecureCoding> {
-    long long _category;
+    int _category;
     NSNumber *_duration;
     NSString *_originalCommandId;
 }
 
-@property long long category;
+@property int category;
 @property(retain) NSNumber * duration;
 @property(copy) NSString * originalCommandId;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (double)_roundDouble:(double)arg1 toSignificantDigits:(unsigned long long)arg2;
+- (double)_roundDouble:(double)arg1 toSignificantDigits:(unsigned int)arg2;
 - (id)aceMetrics;
-- (long long)category;
+- (int)category;
 - (id)categoryString;
 - (id)description;
 - (id)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)originalCommandId;
-- (void)setCategory:(long long)arg1;
+- (void)setCategory:(int)arg1;
 - (void)setDuration:(id)arg1;
 - (void)setOriginalCommandId:(id)arg1;
 

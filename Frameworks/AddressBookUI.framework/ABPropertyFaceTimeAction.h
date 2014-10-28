@@ -6,11 +6,11 @@
 
 @interface ABPropertyFaceTimeAction : ABPropertyAction {
     ABPropertyBestFaceTimeQuery *_bestFaceTimeQuery;
-    long long _type;
+    int _type;
 }
 
 @property(retain) ABPropertyBestFaceTimeQuery * bestFaceTimeQuery;
-@property long long type;
+@property int type;
 
 - (void)_queryFaceTimeStatus;
 - (id)bestFaceTimeQuery;
@@ -18,7 +18,7 @@
 - (id)initWithContact:(id)arg1 propertyItems:(id)arg2;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;
 - (void)setBestFaceTimeQuery:(id)arg1;
-- (void)setType:(long long)arg1;
-- (long long)type;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

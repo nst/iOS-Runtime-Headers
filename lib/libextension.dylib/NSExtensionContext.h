@@ -28,7 +28,7 @@
 @property(setter=_setRequestCleanUpBlock:,copy) id _requestCleanUpBlock;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSArray * inputItems;
 @property(readonly) Class superclass;
 
@@ -39,7 +39,7 @@
 + (id)_extensionContextHostProtocolAllowedClassesForItems;
 + (id)_extensionContextVendorProtocol;
 + (void)initialize;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)_UUID;
 - (void)___nsx_pingHost:(id)arg1;
@@ -49,7 +49,7 @@
 - (id)_derivedExtensionAuxiliaryHostProtocol;
 - (id)_extensionHostProxy;
 - (id)_extensionVendorProxy;
-- (bool)_isHost;
+- (BOOL)_isHost;
 - (void)_loadItemForPayload:(id)arg1 completionHandler:(id)arg2;
 - (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id)arg2;
 - (void)_openURL:(id)arg1 completion:(id)arg2;
@@ -77,7 +77,7 @@
 - (id)initWithInputItems:(id)arg1;
 - (id)inputItems;
 - (void)invalidate;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)openURL:(id)arg1 completionHandler:(id)arg2;
 - (void)set_UUID:(id)arg1;
 

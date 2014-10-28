@@ -8,16 +8,16 @@
 }
 
 @property(copy) NSSet * occlusions;
-@property long long preferredInterfaceOrientation;
-@property double preferredLevel;
+@property int preferredInterfaceOrientation;
+@property float preferredLevel;
 
-+ (bool)_isMutable;
++ (BOOL)_isMutable;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)otherSettings;
 - (void)setOcclusions:(id)arg1;
-- (void)setPreferredInterfaceOrientation:(long long)arg1;
-- (void)setPreferredLevel:(double)arg1;
+- (void)setPreferredInterfaceOrientation:(int)arg1;
+- (void)setPreferredLevel:(float)arg1;
 
 @end

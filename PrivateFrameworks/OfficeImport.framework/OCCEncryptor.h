@@ -19,8 +19,8 @@
 + (id)allocTempFileWithBase:(id)arg1 filename:(id*)arg2;
 
 - (void)dealloc;
-- (bool)encrypt;
-- (bool)encryptIntoOutputFile;
+- (BOOL)encrypt;
+- (BOOL)encryptIntoOutputFile;
 - (id)initWithStreamer:(struct OCCStreamer { int (**x1)(); struct OCCCryptoKey {} *x2; char *x3; }*)arg1;
 - (id)outputFilename;
 

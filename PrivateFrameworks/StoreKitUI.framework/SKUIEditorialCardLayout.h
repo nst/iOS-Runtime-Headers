@@ -6,24 +6,24 @@
 
 @interface SKUIEditorialCardLayout : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     NSMutableArray *_allLockups;
     SKUILockupViewElement *_primaryLockup;
     } _primaryLockupSize;
-    double _secondaryLockupWidth;
+    float _secondaryLockupWidth;
 }
 
 @property(readonly) NSArray * allLockups;
 @property(readonly) SKUILockupViewElement * primaryLockup;
-@property(readonly) struct CGSize { double x1; double x2; } primaryLockupSize;
-@property(readonly) double secondaryLockupWidth;
+@property(readonly) struct CGSize { float x1; float x2; } primaryLockupSize;
+@property(readonly) float secondaryLockupWidth;
 
 - (void).cxx_destruct;
 - (id)allLockups;
-- (id)initWithCard:(id)arg1 width:(double)arg2 context:(id)arg3;
+- (id)initWithCard:(id)arg1 width:(float)arg2 context:(id)arg3;
 - (id)primaryLockup;
-- (struct CGSize { double x1; double x2; })primaryLockupSize;
-- (double)secondaryLockupWidth;
+- (struct CGSize { float x1; float x2; })primaryLockupSize;
+- (float)secondaryLockupWidth;
 
 @end

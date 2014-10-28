@@ -13,6 +13,7 @@
     FigCaptureStillImageSettings *_currentRequestSettings;
     BWNodeOutput *_defaultOutput;
     int _expectedImagesForRequest;
+    BOOL _haveInvokedWillCaptureCallbackForCurrentRequest;
     <BWBracketSettingsProvider> *_hdrBracketSettingsProvider;
     BWNodeOutput *_hdrOutput;
     <BWBracketSettingsProvider> *_oisBracketSettingsProvider;
@@ -24,15 +25,14 @@
     NSObject<OS_dispatch_group> *_stillImageDispatchGroup;
     NSObject<OS_dispatch_queue> *_stillImageDispatchQueue;
     BWNodeInput *_stillImageInput;
+    BOOL _stillImageInputActive;
     struct opaqueCMSimpleQueue { } *_stillImageRequestQueue;
-    bool_haveInvokedWillCaptureCallbackForCurrentRequest;
-    bool_stillImageInputActive;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) BWNodeOutput * defaultOutput;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) BWNodeOutput * hdrOutput;
 @property(readonly) BWNodeOutput * sisOutput;
 @property <BWStillImageCaptureStatusDelegate> * stillImageCaptureStatusDelegate;
@@ -45,21 +45,21 @@
 - (id)_bracketSettingsForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; long long x11; }*)arg2 stillImageSettings:(id)arg3;
 - (int)_captureTypeForSettings:(id)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; long long x11; }*)arg2;
 - (int)_clientExpectedImagesForCaptureType:(int)arg1 stillImageSettings:(id)arg2;
-- (void)_completeCaptureWithStatus:(int)arg1;
+- (void)_completeCaptureWithStatus:(long)arg1;
 - (void)_configureCurrentRequestForStillImageSettings;
 - (void)_didCaptureStillImage;
 - (int)_expectedImagesForCaptureType:(int)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; long long x11; }*)arg2 stillImageSettings:(id)arg3 bracketSettings:(id)arg4;
-- (void)_flushStillImageRequestWithError:(int)arg1;
+- (void)_flushStillImageRequestWithError:(long)arg1;
 - (id)_outputForCaptureType:(int)arg1;
 - (void)_serviceNextStillImageRequest;
 - (void)_servicePrepareBracketQueue;
-- (int)_validateStillImageRequestForSettings:(id)arg1;
+- (long)_validateStillImageRequestForSettings:(id)arg1;
 - (void)_willCaptureStillImage;
-- (void)captureDevice:(id)arg1 stillImageCaptureError:(int)arg2;
+- (void)captureDevice:(id)arg1 stillImageCaptureError:(long)arg2;
 - (void)captureDeviceDidCompleteStillImageCapture:(id)arg1;
 - (void)captureDeviceWillBeginStillImageCapture:(id)arg1;
-- (void)captureFinished:(id)arg1 withStatus:(int)arg2;
-- (int)captureStillImageNowWithSettings:(id)arg1;
+- (void)captureFinished:(id)arg1 withStatus:(long)arg2;
+- (long)captureStillImageNowWithSettings:(id)arg1;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (id)defaultOutput;
@@ -69,7 +69,7 @@
 - (id)initWithCaptureDevice:(id)arg1 hdrBracketSettingsProvider:(id)arg2 sisBracketSettingsProvider:(id)arg3 oisBracketSettingsProvider:(id)arg4;
 - (id)nodeSubType;
 - (id)nodeType;
-- (int)prepareStillImageBracketNowWithSettings:(id)arg1;
+- (long)prepareStillImageBracketNowWithSettings:(id)arg1;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setStillImageCaptureStatusDelegate:(id)arg1;
 - (id)sisOutput;

@@ -7,12 +7,12 @@
 @interface PLComposeRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     struct { 
         unsigned int showingPeoplePicker : 1; 
@@ -23,7 +23,7 @@
     <PLComposeRecipientViewControllerDelegate> *_delegate;
     } _flags;
     } _keyboardFrame;
-    unsigned long long _maxExpandRows;
+    unsigned int _maxExpandRows;
     UIPopoverController *_peoplePickerPopoverController;
     NSArray *_properties;
     UIScrollView *_recipientContainerView;
@@ -39,8 +39,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PLComposeRecipientViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property unsigned long long maxExpandRows;
+@property(readonly) unsigned int hash;
+@property unsigned int maxExpandRows;
 @property(readonly) PLComposeRecipientView * recipientView;
 @property(readonly) Class superclass;
 
@@ -55,52 +55,52 @@
 - (void)_presentSearchResultsPopover;
 - (void)_searchForRecipientWithText:(id)arg1;
 - (id)_searchManager;
-- (bool)_searchResultsShowInPopover;
+- (BOOL)_searchResultsShowInPopover;
 - (void)_setSearchResults:(id)arg1;
 - (void)_updateSearchResultsTableVisibility;
-- (void)_updateViewsLayoutAnimated:(bool)arg1 completion:(id)arg2;
+- (void)_updateViewsLayoutAnimated:(BOOL)arg1 completion:(id)arg2;
 - (void)beganNetworkActivity;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
-- (bool)composeRecipientViewIsShowingPeoplePicker:(id)arg1;
+- (BOOL)composeRecipientViewIsShowingPeoplePicker:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)composeRecipientViewReturnPressed:(id)arg1;
-- (void)consumeSearchResults:(id)arg1 type:(unsigned long long)arg2 taskID:(id)arg3;
+- (void)consumeSearchResults:(id)arg1 type:(unsigned int)arg2 taskID:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
-- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)endedNetworkActivity;
-- (void)finishedSearchingForType:(unsigned long long)arg1;
+- (void)finishedSearchingForType:(unsigned int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (bool)isRecipientViewFirstResponder;
+- (BOOL)isRecipientViewFirstResponder;
 - (void)loadView;
 - (void)makeRecipientViewFirstResponder;
 - (void)makeRecipientViewResignFirstResponder;
-- (unsigned long long)maxExpandRows;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (bool)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (unsigned int)maxExpandRows;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)recipientView;
 - (id)recipients;
 - (void)setDelegate:(id)arg1;
-- (void)setMaxExpandRows:(unsigned long long)arg1;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (bool)shouldShowCardForPerson:(void*)arg1 peoplePicker:(id)arg2;
+- (void)setMaxExpandRows:(unsigned int)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldShowCardForPerson:(void*)arg1 peoplePicker:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewDidUnload;
-- (void)viewWillAppear:(bool)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

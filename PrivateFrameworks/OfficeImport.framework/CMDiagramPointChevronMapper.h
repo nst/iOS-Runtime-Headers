@@ -3,12 +3,12 @@
  */
 
 @interface CMDiagramPointChevronMapper : CMDiagramPointMapper {
-    boolmHomePlate;
-    boolmPlaceholder;
+    BOOL mHomePlate;
+    BOOL mPlaceholder;
 }
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)setIsHomePlate:(bool)arg1;
-- (void)setIsPlaceholder:(bool)arg1;
+- (void)setIsHomePlate:(BOOL)arg1;
+- (void)setIsPlaceholder:(BOOL)arg1;
 
 @end

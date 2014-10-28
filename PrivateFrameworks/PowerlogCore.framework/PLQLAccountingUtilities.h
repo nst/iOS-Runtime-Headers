@@ -6,7 +6,7 @@
 }
 
 + (short)BBConditionInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
-+ (bool)GPSOnInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
++ (BOOL)GPSOnInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 + (id)appsInAirplayInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 + (id)appsInForegroundInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 + (void)batchAndFlushSnapshotsForAllRailAdditions:(id)arg1;
@@ -19,15 +19,15 @@
 + (id)genericAccountingQuerySetup:(id)arg1 withAGName:(id)arg2 withRailsToBeAdded:(id)arg3 withRailsToBeSubtracted:(id)arg4 withAggKey:(id)arg5 withQueryType:(short)arg6;
 + (id)genericPostAccountingQueryEventPointSetup:(id)arg1 withAGName:(id)arg2 withRails:(id)arg3 withAggKey:(id)arg4 withQueryType:(short)arg5;
 + (id)genericPostAccountingQuerySetup:(id)arg1 withAGName:(id)arg2 withRails:(id)arg3 withAggKey:(id)arg4 withQueryType:(short)arg5;
-+ (bool)isAirdropInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
-+ (bool)isAirplayMirroringInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
-+ (bool)isAudioOnInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
-+ (bool)isScreenOnInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
++ (BOOL)isAirdropInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
++ (BOOL)isAirplayMirroringInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
++ (BOOL)isAudioOnInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
++ (BOOL)isScreenOnInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 + (void)printRangeArray:(id)arg1;
 + (id)safeTimeForAccounting:(id)arg1;
-+ (id)safeTimeForModelingForRails:(id)arg1 withSnap:(bool)arg2 withGasGauge:(bool)arg3;
-+ (double)sumOfAllRails:(id)arg1 inRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withSnap:(bool)arg3;
++ (id)safeTimeForModelingForRails:(id)arg1 withSnap:(BOOL)arg2 withGasGauge:(BOOL)arg3;
++ (double)sumOfAllRails:(id)arg1 inRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withSnap:(BOOL)arg3;
 + (double)totalEnergyInAccountedBuckets:(id)arg1;
-+ (bool)wasAppInBackgroundInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 bundleID:(id)arg2;
++ (BOOL)wasAppInBackgroundInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 bundleID:(id)arg2;
 
 @end

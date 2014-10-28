@@ -15,6 +15,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSetFlagsRequest:(id)arg1;
-- (bool)performWithAccount:(id)arg1 offlineCache:(id)arg2;
+- (BOOL)performWithAccount:(id)arg1 offlineCache:(id)arg2;
 
 @end

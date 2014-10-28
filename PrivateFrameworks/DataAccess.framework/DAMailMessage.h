@@ -15,20 +15,20 @@
 - (id)date;
 - (id)displayTo;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)flagged;
-- (bool)flaggedIsSet;
+- (BOOL)flagged;
+- (BOOL)flaggedIsSet;
 - (id)folderID;
 - (id)from;
 - (int)importance;
 - (id)initWithCoder:(id)arg1;
 - (int)lastVerb;
 - (id)longID;
-- (bool)meetingRequestIsActionable;
+- (BOOL)meetingRequestIsActionable;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;
-- (bool)read;
-- (bool)readIsSet;
+- (BOOL)read;
+- (BOOL)readIsSet;
 - (id)remoteID;
 - (id)replyTo;
 - (id)rfc822Data;
@@ -36,6 +36,6 @@
 - (id)subject;
 - (id)threadTopic;
 - (id)to;
-- (bool)verbIsSet;
+- (BOOL)verbIsSet;
 
 @end

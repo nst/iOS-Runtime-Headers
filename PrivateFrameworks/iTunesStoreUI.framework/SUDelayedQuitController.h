@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface SUDelayedQuitController : NSObject {
-    long long _delayTerminateCount;
+    int _delayTerminateCount;
     NSMutableArray *_longLivedViewControllers;
 }
 
@@ -14,17 +14,17 @@
 + (void)checkOutLongLivedViewController:(id)arg1;
 + (id)checkedInViewControllerOfClass:(Class)arg1;
 + (void)endDelayingTerminate;
-+ (bool)isDelayingTerminate;
++ (BOOL)isDelayingTerminate;
 + (id)sharedInstance;
-+ (bool)viewControllerIsLongLived:(id)arg1;
++ (BOOL)viewControllerIsLongLived:(id)arg1;
 
 - (void)_beginDelayingTerminate;
 - (void)_checkInLongLivedViewController:(id)arg1;
 - (void)_checkOutLongLivedViewController:(id)arg1;
 - (id)_checkedInViewControllerOfClass:(Class)arg1;
 - (void)_endDelayingTerminate;
-- (bool)_isDelayingTerminate;
-- (bool)_viewControllerIsLongLived:(id)arg1;
+- (BOOL)_isDelayingTerminate;
+- (BOOL)_viewControllerIsLongLived:(id)arg1;
 - (void)dealloc;
 
 @end

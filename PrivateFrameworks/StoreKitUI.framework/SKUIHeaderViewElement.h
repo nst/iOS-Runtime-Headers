@@ -12,7 +12,7 @@
 
 - (id)button;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (long long)pageComponentType;
+- (int)pageComponentType;
 - (id)titleLabels;
 
 @end

@@ -8,8 +8,8 @@
     CalPreferences *_preferences;
 }
 
-@property(readonly) bool logAutoFlush;
-@property(readonly) bool logEmitUserNotifications;
+@property(readonly) BOOL logAutoFlush;
+@property(readonly) BOOL logEmitUserNotifications;
 @property(readonly) NSString * logFilePath;
 @property(readonly) NSArray * logSimpleConfiguration;
 
@@ -17,8 +17,8 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (bool)logAutoFlush;
-- (bool)logEmitUserNotifications;
+- (BOOL)logAutoFlush;
+- (BOOL)logEmitUserNotifications;
 - (id)logFilePath;
 - (id)logSimpleConfiguration;
 

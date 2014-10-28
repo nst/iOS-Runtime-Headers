@@ -3,11 +3,11 @@
  */
 
 @interface BRCCountedSet : NSCountedSet {
-    unsigned long long _totalCount;
+    unsigned int _totalCount;
 }
 
 - (void)addObject:(id)arg1;
 - (void)removeObject:(id)arg1;
-- (unsigned long long)totalCount;
+- (unsigned int)totalCount;
 
 @end

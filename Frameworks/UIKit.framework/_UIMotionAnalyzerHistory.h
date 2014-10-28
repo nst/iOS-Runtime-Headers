@@ -4,8 +4,8 @@
 
 @interface _UIMotionAnalyzerHistory : NSObject {
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     union _GLKQuaternion { 
         struct { 
             union _GLKVector3 { 
@@ -64,10 +64,10 @@
             float w; 
         } ; 
         float q[4]; 
+    BOOL _isApplyingHysteresis;
     } _lastAppliedRelativeQuaternion;
     } _lastAppliedViewerOffset;
     } _relativeQuaternionOnHysteresisEntry;
-    bool_isApplyingHysteresis;
 }
 
 @end

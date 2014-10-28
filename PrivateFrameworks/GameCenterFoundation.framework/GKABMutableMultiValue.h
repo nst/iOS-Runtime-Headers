@@ -8,6 +8,6 @@
 - (void*)ABMutableMultiValue;
 - (id)addValue:(id)arg1 withLabel:(id)arg2;
 - (id)initWithPropertyType:(unsigned int)arg1;
-- (bool)replaceValueAtIndex:(unsigned long long)arg1 withValue:(id)arg2;
+- (BOOL)replaceValueAtIndex:(unsigned int)arg1 withValue:(id)arg2;
 
 @end

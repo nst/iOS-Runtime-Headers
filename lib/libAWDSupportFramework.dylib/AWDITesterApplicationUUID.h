@@ -12,8 +12,8 @@
     NSString *_uuid;
 }
 
-@property bool hasTimestamp;
-@property(readonly) bool hasUuid;
+@property BOOL hasTimestamp;
+@property(readonly) BOOL hasUuid;
 @property unsigned long long timestamp;
 @property(retain) NSString * uuid;
 
@@ -22,13 +22,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
-- (bool)hasUuid;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTimestamp;
+- (BOOL)hasUuid;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUuid:(id)arg1;
 - (unsigned long long)timestamp;

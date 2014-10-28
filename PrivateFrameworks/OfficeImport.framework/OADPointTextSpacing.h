@@ -6,9 +6,9 @@
     int mPoints;
 }
 
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithPoints:(int)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (int)points;
 
 @end

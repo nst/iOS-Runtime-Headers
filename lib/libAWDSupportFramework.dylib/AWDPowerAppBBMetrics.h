@@ -13,26 +13,26 @@
 }
 
 @property(retain) NSMutableArray * appPowers;
-@property bool hasTimestamp;
+@property BOOL hasTimestamp;
 @property unsigned long long timestamp;
 
 - (void)addAppPower:(id)arg1;
-- (id)appPowerAtIndex:(unsigned long long)arg1;
+- (id)appPowerAtIndex:(unsigned int)arg1;
 - (id)appPowers;
-- (unsigned long long)appPowersCount;
+- (unsigned int)appPowersCount;
 - (void)clearAppPowers;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAppPowers:(id)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

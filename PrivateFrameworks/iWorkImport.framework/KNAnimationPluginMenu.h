@@ -5,32 +5,32 @@
 @class NSArray, NSMutableArray, NSMutableDictionary;
 
 @interface KNAnimationPluginMenu : NSObject {
-    unsigned long long mDefaultDirection;
+    unsigned int mDefaultDirection;
     NSMutableDictionary *mDirectionToLocalizedStringMap;
     NSMutableArray *mDirections;
     NSMutableArray *mLocalizedDirections;
     NSMutableDictionary *mLocalizedStringToDirectionMap;
 }
 
-@property(readonly) unsigned long long count;
-@property unsigned long long defaultDirection;
+@property(readonly) unsigned int count;
+@property unsigned int defaultDirection;
 @property(readonly) NSArray * directions;
 @property(readonly) NSArray * localizedDirections;
 
 + (id)animationPluginMenu;
-+ (id)localizedStringForDirection:(unsigned long long)arg1 shortVersion:(bool)arg2;
++ (id)localizedStringForDirection:(unsigned int)arg1 shortVersion:(BOOL)arg2;
 
-- (void)addDirection:(unsigned long long)arg1 localizedMenuString:(id)arg2;
-- (void)addDirection:(unsigned long long)arg1 useShortString:(bool)arg2;
-- (bool)containsDirection:(unsigned long long)arg1;
-- (unsigned long long)count;
+- (void)addDirection:(unsigned int)arg1 localizedMenuString:(id)arg2;
+- (void)addDirection:(unsigned int)arg1 useShortString:(BOOL)arg2;
+- (BOOL)containsDirection:(unsigned int)arg1;
+- (unsigned int)count;
 - (void)dealloc;
-- (unsigned long long)defaultDirection;
-- (unsigned long long)directionForIndex:(unsigned long long)arg1;
+- (unsigned int)defaultDirection;
+- (unsigned int)directionForIndex:(unsigned int)arg1;
 - (id)directions;
-- (unsigned long long)indexForDirection:(unsigned long long)arg1;
+- (unsigned int)indexForDirection:(unsigned int)arg1;
 - (id)init;
 - (id)localizedDirections;
-- (void)setDefaultDirection:(unsigned long long)arg1;
+- (void)setDefaultDirection:(unsigned int)arg1;
 
 @end

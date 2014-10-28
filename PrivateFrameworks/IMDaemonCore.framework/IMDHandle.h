@@ -16,15 +16,15 @@
 @property(retain) NSString * unformattedID;
 
 - (id)ID;
-- (long long)compareIDs:(id)arg1;
+- (int)compareIDs:(id)arg1;
 - (id)countryCode;
 - (void)dealloc;
 - (id)description;
 - (id)handleInfo;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3;
-- (bool)isBetterDefinedThan:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isBetterDefinedThan:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setID:(id)arg1;
 - (void)setUnformattedID:(id)arg1;

@@ -12,7 +12,7 @@
     int _placeTypeLimit;
 }
 
-@property bool hasPlaceTypeLimit;
+@property BOOL hasPlaceTypeLimit;
 @property(retain) NSMutableArray * locations;
 @property int placeTypeLimit;
 
@@ -23,16 +23,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasPlaceTypeLimit;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (id)locationAtIndex:(unsigned long long)arg1;
+- (BOOL)hasPlaceTypeLimit;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)locationAtIndex:(unsigned int)arg1;
 - (id)locations;
-- (unsigned long long)locationsCount;
+- (unsigned int)locationsCount;
 - (void)mergeFrom:(id)arg1;
 - (int)placeTypeLimit;
-- (bool)readFrom:(id)arg1;
-- (void)setHasPlaceTypeLimit:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasPlaceTypeLimit:(BOOL)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setPlaceTypeLimit:(int)arg1;
 - (void)writeTo:(id)arg1;

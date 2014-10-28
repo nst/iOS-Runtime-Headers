@@ -8,7 +8,7 @@
 
 @property int quality;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

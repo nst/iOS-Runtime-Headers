@@ -3,20 +3,20 @@
  */
 
 @interface CAMVideoCaptureRequest : CAMCaptureRequest <NSCopying, NSMutableCopying> {
-    long long _captureDevice;
-    long long _deviceOrientation;
-    long long _torchMode;
+    int _captureDevice;
+    int _deviceOrientation;
+    int _torchMode;
 }
 
-@property(readonly) long long captureDevice;
-@property(readonly) long long deviceOrientation;
-@property(readonly) long long torchMode;
+@property(readonly) int captureDevice;
+@property(readonly) int deviceOrientation;
+@property(readonly) int torchMode;
 
-- (long long)captureDevice;
+- (int)captureDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)deviceOrientation;
+- (int)deviceOrientation;
 - (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (long long)torchMode;
+- (int)torchMode;
 
 @end

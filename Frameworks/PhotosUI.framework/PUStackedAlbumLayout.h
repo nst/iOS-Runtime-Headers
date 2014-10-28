@@ -6,57 +6,57 @@
 
 @interface PUStackedAlbumLayout : UICollectionViewLayout {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     PUAlbumListTransitionContext *_albumListTransitionContext;
     } _contentSizeAdjust;
     NSMutableDictionary *_derivedLayoutAttributesByIndexPath;
     UICollectionViewLayoutAttributes *_globalHeaderAttributes;
+    BOOL _isInteractive;
     } _referenceCenter;
     UICollectionViewLayoutAttributes *_referenceItemLayoutAttributes;
     NSMutableDictionary *_visibleLayoutAttributesByIndexPath;
     NSArray *_visibleStackedItemLayoutAttributes;
-    double _yAdjust;
+    float _yAdjust;
     NSMutableDictionary *_zIndexByIndexPath;
-    bool_isInteractive;
 }
 
 @property(retain) PUAlbumListTransitionContext * albumListTransitionContext;
-@property struct CGSize { double x1; double x2; } contentSizeAdjust;
+@property struct CGSize { float x1; float x2; } contentSizeAdjust;
 @property(retain) UICollectionViewLayoutAttributes * globalHeaderAttributes;
-@property(setter=setInteractive:) bool isInteractive;
-@property struct CGPoint { double x1; double x2; } referenceCenter;
+@property(setter=setInteractive:) BOOL isInteractive;
+@property struct CGPoint { float x1; float x2; } referenceCenter;
 @property(copy) UICollectionViewLayoutAttributes * referenceItemLayoutAttributes;
 @property(copy) NSArray * visibleStackedItemLayoutAttributes;
-@property double yAdjust;
+@property float yAdjust;
 
 - (void).cxx_destruct;
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
+- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (id)_newAdjustedLayoutAttributes:(id)arg1 indexPath:(id)arg2;
 - (id)albumListTransitionContext;
-- (struct CGSize { double x1; double x2; })collectionViewContentSize;
-- (struct CGSize { double x1; double x2; })contentSizeAdjust;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
+- (struct CGSize { float x1; float x2; })contentSizeAdjust;
 - (id)globalHeaderAttributes;
-- (bool)isInteractive;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)isInteractive;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)prepareLayout;
-- (struct CGPoint { double x1; double x2; })referenceCenter;
+- (struct CGPoint { float x1; float x2; })referenceCenter;
 - (id)referenceItemLayoutAttributes;
 - (void)setAlbumListTransitionContext:(id)arg1;
-- (void)setContentSizeAdjust:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSizeAdjust:(struct CGSize { float x1; float x2; })arg1;
 - (void)setGlobalHeaderAttributes:(id)arg1;
-- (void)setInteractive:(bool)arg1;
-- (void)setReferenceCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInteractive:(BOOL)arg1;
+- (void)setReferenceCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setReferenceItemLayoutAttributes:(id)arg1;
 - (void)setVisibleStackedItemLayoutAttributes:(id)arg1;
-- (void)setYAdjust:(double)arg1;
+- (void)setYAdjust:(float)arg1;
 - (id)visibleStackedItemLayoutAttributes;
-- (double)yAdjust;
-- (long long)zIndexForItemAtIndexPath:(id)arg1;
+- (float)yAdjust;
+- (int)zIndexForItemAtIndexPath:(id)arg1;
 
 @end

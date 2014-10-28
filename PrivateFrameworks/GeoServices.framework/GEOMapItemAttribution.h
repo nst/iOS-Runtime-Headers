@@ -14,7 +14,7 @@
 @property(readonly) NSArray * attributionApps;
 @property(readonly) NSArray * attributionURLs;
 @property(readonly) NSString * providerName;
-@property(readonly) bool requiresAttributionInCallout;
+@property(readonly) BOOL requiresAttributionInCallout;
 
 - (id)attributionApps;
 - (id)attributionURLs;
@@ -22,9 +22,9 @@
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 yelpID:(id)arg3;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2;
-- (id)providerLogoPathForScale:(double)arg1;
+- (id)providerLogoPathForScale:(float)arg1;
 - (id)providerName;
-- (id)providerSnippetLogoPathForScale:(double)arg1;
-- (bool)requiresAttributionInCallout;
+- (id)providerSnippetLogoPathForScale:(float)arg1;
+- (BOOL)requiresAttributionInCallout;
 
 @end

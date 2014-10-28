@@ -8,24 +8,24 @@
     NSNumber *_accountID;
     NSData *_actionData;
     NSString *_actionName;
-    bool_allowsBootstrapCellularData;
-    bool_waitsForPurchaseOperations;
+    BOOL _allowsBootstrapCellularData;
+    BOOL _waitsForPurchaseOperations;
 }
 
 @property(copy) NSNumber * accountIdentifier;
 @property(copy) NSData * actionData;
 @property(copy) NSString * actionName;
-@property bool allowsBootstrapCellularData;
+@property BOOL allowsBootstrapCellularData;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property bool waitsForPurchaseOperations;
+@property BOOL waitsForPurchaseOperations;
 
 - (id)accountIdentifier;
 - (id)actionData;
 - (id)actionName;
-- (bool)allowsBootstrapCellularData;
+- (BOOL)allowsBootstrapCellularData;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)initWithURLResponse:(id)arg1;
@@ -33,9 +33,9 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setActionData:(id)arg1;
 - (void)setActionName:(id)arg1;
-- (void)setAllowsBootstrapCellularData:(bool)arg1;
-- (void)setWaitsForPurchaseOperations:(bool)arg1;
+- (void)setAllowsBootstrapCellularData:(BOOL)arg1;
+- (void)setWaitsForPurchaseOperations:(BOOL)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
-- (bool)waitsForPurchaseOperations;
+- (BOOL)waitsForPurchaseOperations;
 
 @end

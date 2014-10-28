@@ -8,20 +8,20 @@
 }
 
 @property TSUColor * TSUColor;
-@property double angle;
+@property float angle;
 @property struct CGColor { }* color;
-@property double curve;
-@property(getter=isEnabled) bool enabled;
-@property double offset;
-@property double opacity;
-@property long long radius;
+@property float curve;
+@property(getter=isEnabled) BOOL enabled;
+@property float offset;
+@property float opacity;
+@property int radius;
 
-- (void)setAngle:(double)arg1;
+- (void)setAngle:(float)arg1;
 - (void)setColor:(struct CGColor { }*)arg1;
-- (void)setCurve:(double)arg1;
-- (void)setOffset:(double)arg1;
-- (void)setOpacity:(double)arg1;
-- (void)setRadius:(long long)arg1;
+- (void)setCurve:(float)arg1;
+- (void)setOffset:(float)arg1;
+- (void)setOpacity:(float)arg1;
+- (void)setRadius:(int)arg1;
 - (void)setTSUColor:(id)arg1;
 
 @end

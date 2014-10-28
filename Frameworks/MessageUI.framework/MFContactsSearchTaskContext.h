@@ -20,7 +20,7 @@
 
 - (id)consumer;
 - (void)dealloc;
-- (bool)done;
+- (BOOL)done;
 - (id)operations;
 - (id)searchQueries;
 - (id)text;

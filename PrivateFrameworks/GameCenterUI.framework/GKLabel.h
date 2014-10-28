@@ -5,43 +5,43 @@
 @class GKTextStyle, NSString;
 
 @interface GKLabel : UILabel <GKTextStyleReplay> {
-    double _actualFontShrinkageFactor;
+    float _actualFontShrinkageFactor;
     GKTextStyle *_appliedStyle;
     GKTextStyle *_baseStyle;
-    bool_shouldInhibitReplay;
-    bool_usingAttributedText;
+    BOOL _shouldInhibitReplay;
+    BOOL _usingAttributedText;
 }
 
-@property double actualFontShrinkageFactor;
+@property float actualFontShrinkageFactor;
 @property(retain) GKTextStyle * appliedStyle;
 @property(retain) GKTextStyle * baseStyle;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property double minimumScaleFactor;
-@property bool shouldInhibitReplay;
+@property(readonly) unsigned int hash;
+@property float minimumScaleFactor;
+@property BOOL shouldInhibitReplay;
 @property(readonly) Class superclass;
-@property(readonly) bool usingAttributedText;
+@property(readonly) BOOL usingAttributedText;
 
 + (void)initialize;
 
-- (double)actualFontShrinkageFactor;
+- (float)actualFontShrinkageFactor;
 - (id)appliedStyle;
 - (void)applyTextStyle:(id)arg1;
 - (id)baseStyle;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)replayAndApplyStyleUnlessInhibited;
-- (void)replayAndApplyStyleWithSystemContentChange:(bool)arg1;
-- (void)setActualFontShrinkageFactor:(double)arg1;
+- (void)replayAndApplyStyleWithSystemContentChange:(BOOL)arg1;
+- (void)setActualFontShrinkageFactor:(float)arg1;
 - (void)setAppliedStyle:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)setBaseStyle:(id)arg1;
-- (void)setShouldInhibitReplay:(bool)arg1;
+- (void)setShouldInhibitReplay:(BOOL)arg1;
 - (void)setText:(id)arg1;
-- (bool)shouldInhibitReplay;
-- (struct CGSize { double x1; double x2; })shrinkFontToFitSize:(struct CGSize { double x1; double x2; })arg1;
+- (BOOL)shouldInhibitReplay;
+- (struct CGSize { float x1; float x2; })shrinkFontToFitSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)shrinkFontToFitWidth;
-- (bool)usingAttributedText;
+- (BOOL)usingAttributedText;
 
 @end

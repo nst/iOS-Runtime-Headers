@@ -5,16 +5,16 @@
 @class MPMediaQuery;
 
 @interface MusicGeniusIndexedSubQuery : NSObject {
-    unsigned long long _index;
+    unsigned int _index;
     MPMediaQuery *_itemsQuery;
 }
 
-@property(readonly) unsigned long long index;
+@property(readonly) unsigned int index;
 @property(readonly) MPMediaQuery * itemsQuery;
 
 - (void).cxx_destruct;
-- (unsigned long long)index;
-- (id)initWithIndex:(unsigned long long)arg1 itemsQuery:(id)arg2;
+- (unsigned int)index;
+- (id)initWithIndex:(unsigned int)arg1 itemsQuery:(id)arg2;
 - (id)itemsQuery;
 
 @end

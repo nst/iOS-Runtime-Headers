@@ -7,33 +7,33 @@
 @interface Exchange : NSObject {
     double _lastUpdateTime;
     NSString *_name;
-    long long _status;
+    int _status;
     double _streamInterval;
 }
 
 @property(readonly) double lastUpdateTime;
 @property(copy) NSString * name;
-@property long long status;
+@property int status;
 @property double streamInterval;
 
 + (id)formattedExchangeNameForName:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_updateWithDictionary:(id)arg1 newUpdate:(bool)arg2;
+- (void)_updateWithDictionary:(id)arg1 newUpdate:(BOOL)arg2;
 - (id)archiveDictionary;
 - (id)description;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithName:(id)arg1;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (double)lastUpdateTime;
-- (bool)marketIsAfterHours;
-- (bool)marketIsOpen;
+- (BOOL)marketIsAfterHours;
+- (BOOL)marketIsOpen;
 - (id)name;
 - (void)setName:(id)arg1;
-- (void)setStatus:(long long)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setStreamInterval:(double)arg1;
-- (long long)status;
+- (int)status;
 - (double)streamInterval;
 - (void)updateWithDictionary:(id)arg1;
 

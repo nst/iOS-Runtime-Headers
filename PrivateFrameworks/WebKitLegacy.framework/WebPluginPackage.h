@@ -11,7 +11,7 @@
 - (id)bundle;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
-- (bool)load;
+- (BOOL)load;
 - (Class)viewFactory;
 
 @end

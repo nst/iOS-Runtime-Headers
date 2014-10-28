@@ -9,7 +9,9 @@
         double latitude; 
         double longitude; 
     NSTimer *_accuracyFallbackTimer;
+    BOOL _activelyTrackingLocation;
     int _authorizationStatus;
+    BOOL _authorizationStatusSet;
     NSTimer *_automaticLocationUpdateTimer;
     <CLLocationManagerDelegate> *_delegate;
     float _lastLocationAccuracy;
@@ -17,24 +19,22 @@
     NSDate *_lastLocationTimeStamp;
     double _lastLocationUpdateTime;
     CLLocationManager *_locationManager;
+    BOOL _locationTrackingIsReady;
     double _nextPlannedUpdate;
     double _oldestAcceptedTime;
-    bool_activelyTrackingLocation;
-    bool_authorizationStatusSet;
-    bool_locationTrackingIsReady;
 }
 
-@property bool activelyTrackingLocation;
+@property BOOL activelyTrackingLocation;
 @property int authorizationStatus;
 @property(copy,readonly) NSString * debugDescription;
 @property <CLLocationManagerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property float lastLocationAccuracy;
 @property struct { double x1; double x2; } lastLocationCoord;
 @property(copy) NSDate * lastLocationTimeStamp;
 @property(retain) CLLocationManager * locationManager;
-@property bool locationTrackingIsReady;
+@property BOOL locationTrackingIsReady;
 @property(readonly) Class superclass;
 
 + (void)clearSharedLocationManager;
@@ -48,34 +48,34 @@
 - (void)_setAuthorizationStatus:(int)arg1;
 - (void)_setUpLocationTimerWithInterval:(float)arg1;
 - (void)_updateLocation:(id)arg1;
-- (bool)activelyTrackingLocation;
+- (BOOL)activelyTrackingLocation;
 - (int)authorizationStatus;
 - (void)clearLocalWeatherUpdateState;
 - (void)dealloc;
 - (id)delegate;
 - (int)forceLoadingAuthorizationStatus;
 - (void)forceLocationUpdate;
-- (bool)isLocalStaleOrOutOfDate;
+- (BOOL)isLocalStaleOrOutOfDate;
 - (float)lastLocationAccuracy;
 - (struct { double x1; double x2; })lastLocationCoord;
 - (id)lastLocationTimeStamp;
-- (bool)loadAndPrepareLocationTrackingState;
-- (bool)localWeatherAuthorized;
+- (BOOL)loadAndPrepareLocationTrackingState;
+- (BOOL)localWeatherAuthorized;
 - (id)location;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)locationManager;
-- (bool)locationTrackingIsReady;
-- (void)setActivelyTrackingLocation:(bool)arg1;
+- (BOOL)locationTrackingIsReady;
+- (void)setActivelyTrackingLocation:(BOOL)arg1;
 - (void)setAuthorizationStatus:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLastLocationAccuracy:(float)arg1;
 - (void)setLastLocationCoord:(struct { double x1; double x2; })arg1;
 - (void)setLastLocationTimeStamp:(id)arg1;
 - (void)setLocationManager:(id)arg1;
-- (void)setLocationTrackingActive:(bool)arg1;
-- (void)setLocationTrackingIsReady:(bool)arg1;
-- (void)setLocationTrackingReady:(bool)arg1 activelyTracking:(bool)arg2;
+- (void)setLocationTrackingActive:(BOOL)arg1;
+- (void)setLocationTrackingIsReady:(BOOL)arg1;
+- (void)setLocationTrackingReady:(BOOL)arg1 activelyTracking:(BOOL)arg2;
 - (void)updateLocation:(id)arg1;
 
 @end

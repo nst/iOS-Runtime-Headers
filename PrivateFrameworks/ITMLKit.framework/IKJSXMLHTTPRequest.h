@@ -5,7 +5,10 @@
 @class IKDOMDocument, ISURLOperation, JSManagedValue, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableData, NSMutableURLRequest, NSString, NSURLConnection;
 
 @interface IKJSXMLHTTPRequest : IKJSObject <ISStoreURLOperationDelegate, IKJSXMLHTTPRequest> {
+    BOOL _async;
+    BOOL _inProgress;
     ISURLOperation *_jingleOperation;
+    BOOL _jingleRequest;
     JSManagedValue *_managedSelf;
     NSMutableArray *_onReadyStateChangeMessageQueue;
     int _onReadyStateChangeMessageQueueLock;
@@ -14,28 +17,25 @@
     unsigned int _readyState;
     NSMutableData *_receivedData;
     NSError *_requestError;
-    long long _requestReadyState;
-    long long _requestResponseType;
+    int _requestReadyState;
+    int _requestResponseType;
     unsigned int _requestStatusCode;
     NSString *_requestStatusText;
+    BOOL _shouldSquashOnReadyStateEvents;
     unsigned int _status;
     NSString *_statusText;
     NSURLConnection *_urlConnection;
     NSMutableURLRequest *_urlRequest;
     NSHTTPURLResponse *_urlResponse;
     NSString *_user;
-    bool_async;
-    bool_inProgress;
-    bool_jingleRequest;
-    bool_shouldSquashOnReadyStateEvents;
-    unsigned long long timeout;
+    unsigned long timeout;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property ISURLOperation * jingleOperation;
-@property bool jingleRequest;
+@property BOOL jingleRequest;
 @property(retain) JSManagedValue * managedSelf;
 @property(readonly) NSDictionary * metrics;
 @property(retain) NSMutableArray * onReadyStateChangeMessageQueue;
@@ -44,8 +44,8 @@
 @property unsigned int readyState;
 @property(retain) NSMutableData * receivedData;
 @property(retain) NSError * requestError;
-@property long long requestReadyState;
-@property long long requestResponseType;
+@property int requestReadyState;
+@property int requestResponseType;
 @property unsigned int requestStatusCode;
 @property(retain) NSString * requestStatusText;
 @property(readonly) id response;
@@ -55,7 +55,7 @@
 @property unsigned int status;
 @property(retain) NSString * statusText;
 @property(readonly) Class superclass;
-@property unsigned long long timeout;
+@property unsigned long timeout;
 @property(retain) NSURLConnection * urlConnection;
 @property(retain) NSMutableURLRequest * urlRequest;
 @property(retain) NSHTTPURLResponse * urlResponse;
@@ -67,7 +67,7 @@
 - (void)_abort;
 - (void)_clearAllReadyStateChangeMessagesAndSquashFutureOnes;
 - (id)_dequeueReadyStateChangeMessage;
-- (void)_openWithMethod:(id)arg1 url:(id)arg2 async:(bool)arg3 user:(id)arg4 password:(id)arg5;
+- (void)_openWithMethod:(id)arg1 url:(id)arg2 async:(BOOL)arg3 user:(id)arg4 password:(id)arg5;
 - (void)_operationFinished:(id)arg1;
 - (void)_sendWithData:(id)arg1;
 - (void)_setException:(id)arg1;
@@ -81,9 +81,9 @@
 - (id)getAllResponseHeaders;
 - (id)getResponseHeader:(id)arg1;
 - (id)init;
-- (id)initWithAppContext:(id)arg1 jingleRequest:(bool)arg2;
+- (id)initWithAppContext:(id)arg1 jingleRequest:(BOOL)arg2;
 - (id)jingleOperation;
-- (bool)jingleRequest;
+- (BOOL)jingleRequest;
 - (id)managedSelf;
 - (id)metrics;
 - (id)onReadyStateChangeMessageQueue;
@@ -98,8 +98,8 @@
 - (unsigned int)readyState;
 - (id)receivedData;
 - (id)requestError;
-- (long long)requestReadyState;
-- (long long)requestResponseType;
+- (int)requestReadyState;
+- (int)requestResponseType;
 - (unsigned int)requestStatusCode;
 - (id)requestStatusText;
 - (id)response;
@@ -108,7 +108,7 @@
 - (id)responseXML;
 - (void)send:(id)arg1;
 - (void)setJingleOperation:(id)arg1;
-- (void)setJingleRequest:(bool)arg1;
+- (void)setJingleRequest:(BOOL)arg1;
 - (void)setManagedSelf:(id)arg1;
 - (void)setOnReadyStateChangeMessageQueue:(id)arg1;
 - (void)setPassword:(id)arg1;
@@ -117,21 +117,21 @@
 - (void)setReceivedData:(id)arg1;
 - (void)setRequestError:(id)arg1;
 - (void)setRequestHeader:(id)arg1 :(id)arg2;
-- (void)setRequestReadyState:(long long)arg1;
-- (void)setRequestResponseType:(long long)arg1;
+- (void)setRequestReadyState:(int)arg1;
+- (void)setRequestResponseType:(int)arg1;
 - (void)setRequestStatusCode:(unsigned int)arg1;
 - (void)setRequestStatusText:(id)arg1;
 - (void)setResponseType:(unsigned int)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (void)setStatusText:(id)arg1;
-- (void)setTimeout:(unsigned long long)arg1;
+- (void)setTimeout:(unsigned long)arg1;
 - (void)setUrlConnection:(id)arg1;
 - (void)setUrlRequest:(id)arg1;
 - (void)setUrlResponse:(id)arg1;
 - (void)setUser:(id)arg1;
 - (unsigned int)status;
 - (id)statusText;
-- (unsigned long long)timeout;
+- (unsigned long)timeout;
 - (id)urlConnection;
 - (id)urlRequest;
 - (id)urlResponse;

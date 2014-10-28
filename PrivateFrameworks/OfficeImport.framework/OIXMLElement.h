@@ -5,25 +5,25 @@
 @interface OIXMLElement : OIXMLNode {
     id _attributes;
     id _children;
-    bool_hasMultipleAttributes;
-    bool_hasMultipleChildren;
+    BOOL _hasMultipleAttributes;
+    BOOL _hasMultipleChildren;
 }
 
 + (void)_initEmptyHTMLNames;
-+ (bool)isEmptyHTMLElement:(id)arg1;
++ (BOOL)isEmptyHTMLElement:(id)arg1;
 
 - (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(int)arg2;
 - (void)addAttribute:(id)arg1;
 - (void)addChild:(id)arg1;
-- (long long)attributeCount;
-- (long long)childrenCount;
+- (int)attributeCount;
+- (int)childrenCount;
 - (id)closingTagString;
 - (id)contentString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(id)arg1 stringValue:(id)arg2;
-- (void)insertChild:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)objectValue;
 - (id)openingTagString;
 - (void)setObjectValue:(id)arg1;

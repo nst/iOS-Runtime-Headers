@@ -3,18 +3,18 @@
  */
 
 @interface CPDistributedMessagingDelayedReplyContext : NSObject {
+    BOOL _portPassing;
     unsigned int _replyPort;
-    bool_portPassing;
 }
 
-@property bool portPassing;
+@property BOOL portPassing;
 @property unsigned int replyPort;
 
 - (void)dealloc;
-- (id)initWithReplyPort:(unsigned int)arg1 portPassing:(bool)arg2;
-- (bool)portPassing;
+- (id)initWithReplyPort:(unsigned int)arg1 portPassing:(BOOL)arg2;
+- (BOOL)portPassing;
 - (unsigned int)replyPort;
-- (void)setPortPassing:(bool)arg1;
+- (void)setPortPassing:(BOOL)arg1;
 - (void)setReplyPort:(unsigned int)arg1;
 
 @end

@@ -10,16 +10,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-+ (bool)isSupportedEntityType:(long long)arg1;
++ (BOOL)isSupportedEntityType:(long long)arg1;
 
 - (void).cxx_destruct;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)initWithSerialized:(id)arg1;
-- (bool)isEqual:(id)arg1;
-- (bool)isEqualToRawKey:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToRawKey:(id)arg1;
 - (id)serialize;
 
 @end

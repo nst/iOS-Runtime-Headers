@@ -14,27 +14,27 @@
     PUAirplayRoute *_markedRoute;
     MPMediaItemCollection *_musicCollection;
     NSString *_selectedTransitionKey;
+    BOOL _shouldShowCancelButton;
+    BOOL _showingAirplayRoutes;
+    BOOL _showingMusic;
     NSDictionary *_transitions;
-    bool_shouldShowCancelButton;
-    bool_showingAirplayRoutes;
-    bool_showingMusic;
 }
 
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property bool shouldShowCancelButton;
+@property(readonly) unsigned int hash;
+@property BOOL shouldShowCancelButton;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_airplaySectionCellForTableView:(id)arg1 atRow:(long long)arg2;
+- (id)_airplaySectionCellForTableView:(id)arg1 atRow:(int)arg2;
 - (id)_defaultTransitions;
 - (id)_disclosureCellForTableView:(id)arg1;
-- (int)_effectiveSectionFromTableViewSection:(long long)arg1;
-- (id)_indexPathForItem:(long long)arg1 inSection:(int)arg2;
+- (int)_effectiveSectionFromTableViewSection:(int)arg1;
+- (id)_indexPathForItem:(int)arg1 inSection:(int)arg2;
 - (id)_localTransitions;
-- (id)_mainSectionCellForTableView:(id)arg1 atRow:(long long)arg2;
+- (id)_mainSectionCellForTableView:(id)arg1 atRow:(int)arg2;
 - (void)_presentAirplayController;
 - (void)_presentMusicControllerWithPresentationCompletion:(id)arg1;
 - (void)_presentTransitionsController;
@@ -46,9 +46,9 @@
 - (void)_updateMusicCollectionCell:(id)arg1;
 - (void)_updateRoutes;
 - (void)_updateSelectedTransition:(id)arg1;
-- (void)_updateShouldPlayMusic:(bool)arg1;
+- (void)_updateShouldPlayMusic:(BOOL)arg1;
 - (void)_updateShouldPlayMusicCell:(id)arg1;
-- (void)_updateToMarkedRoute:(id)arg1 updateToDefaultSettings:(bool)arg2;
+- (void)_updateToMarkedRoute:(id)arg1 updateToDefaultSettings:(BOOL)arg2;
 - (void)_updateTransitionCell:(id)arg1;
 - (void)_updateTransitions:(id)arg1 fromRoute:(id)arg2;
 - (void)_updateTransitionsForRoute:(id)arg1;
@@ -58,14 +58,14 @@
 - (id)initWithSettings:(id)arg1;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)mediaPickerDidCancel:(id)arg1;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (void)setMarkedRoute:(id)arg1 updateToDefaultSettings:(bool)arg2;
+- (void)setMarkedRoute:(id)arg1 updateToDefaultSettings:(BOOL)arg2;
 - (void)setMarkedRoute:(id)arg1;
-- (void)setShouldShowCancelButton:(bool)arg1;
-- (bool)shouldShowCancelButton;
+- (void)setShouldShowCancelButton:(BOOL)arg1;
+- (BOOL)shouldShowCancelButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

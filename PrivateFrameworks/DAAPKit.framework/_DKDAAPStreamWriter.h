@@ -11,21 +11,21 @@
 @interface _DKDAAPStreamWriter : NSObject <NSStreamDelegate> {
     id _completionBlock;
     NSData *_data;
-    long long _dataOffset;
+    int _dataOffset;
     NSOutputStream *_outputStream;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleSpaceAvailable;
 - (void)_invokeCompletionWithError:(id)arg1;
 - (id)initWithStream:(id)arg1 queue:(id)arg2;
-- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (void)writeData:(id)arg1 withCompletion:(id)arg2;
 
 @end

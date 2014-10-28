@@ -6,46 +6,46 @@
 
 @interface PUHorizontalTiledCollectionViewLayout : UICollectionViewLayout {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     PUCollectionViewData *_data;
     <PUHorizontalTiledCollectionViewLayoutDelegate> *_delegate;
     UICollectionViewLayoutAttributes *_dummyAttrs;
-    double _interitemSpacing;
+    float _interitemSpacing;
     } _itemsContentInset;
 }
 
 @property <PUHorizontalTiledCollectionViewLayoutDelegate> * delegate;
-@property(readonly) bool hasReferenceIndexPath;
-@property double interitemSpacing;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } itemsContentInset;
+@property(readonly) BOOL hasReferenceIndexPath;
+@property float interitemSpacing;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemsContentInset;
 
 + (Class)invalidationContextClass;
 
 - (void).cxx_destruct;
 - (void)_ensureIndexPath:(id)arg1 inData:(id)arg2;
-- (void)_ensureRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inData:(id)arg2 outDeltaOriginX:(double*)arg3;
+- (void)_ensureRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inData:(id)arg2 outDeltaOriginX:(float*)arg3;
 - (id)_layoutAttributesForItemAtIndexPath:(id)arg1;
-- (bool)_shouldInvalidateCachedLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)_updateLayoutData:(id)arg1 inDirection:(long long)arg2 outDeltaOriginX:(double*)arg3;
-- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (BOOL)_shouldInvalidateCachedLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_updateLayoutData:(id)arg1 inDirection:(int)arg2 outDeltaOriginX:(float*)arg3;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)delegate;
-- (bool)hasReferenceIndexPath;
+- (BOOL)hasReferenceIndexPath;
 - (id)init;
-- (double)interitemSpacing;
+- (float)interitemSpacing;
 - (void)invalidateCachedLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
-- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })itemsContentInset;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })itemsContentInset;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
-- (id)layoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)prepareLayout;
 - (void)setDelegate:(id)arg1;
-- (void)setInteritemSpacing:(double)arg1;
-- (void)setItemsContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setInteritemSpacing:(float)arg1;
+- (void)setItemsContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

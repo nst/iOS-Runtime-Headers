@@ -2,23 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, NSMutableSet, NSSet, NSString, NSXPCConnection;
+@class BRCAccountSession, NSCountedSet, NSSet, NSString, NSXPCConnection;
 
-@interface BRCXPCClient : NSObject <BRCProcessMonitorDelegate, BRProtocol> {
+@interface BRCXPCClient : NSObject <BRProtocol, BRCProcessMonitorDelegate> {
     BRCAccountSession *_accountSession;
     NSString *_applicationIdenfier;
     int _clientPid;
     NSXPCConnection *_connection;
-    NSMutableSet *_containers;
+    NSCountedSet *_containers;
     NSString *_debugIdentifier;
     NSString *_defaultContainerID;
+    BOOL _dieOnInvalidate;
     NSSet *_entitledContainerIDs;
-    bool_dieOnInvalidate;
-    bool_entitlementsCached;
-    bool_invalidated;
-    bool_isForeground;
-    bool_isProxyEntitled;
-    bool_isUsingUbiquity;
+    BOOL _entitlementsCached;
+    BOOL _invalidated;
+    BOOL _isForeground;
+    BOOL _isProxyEntitled;
+    BOOL _isUsingUbiquity;
 }
 
 @property(readonly) NSString * bundleID;
@@ -26,40 +26,40 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSString * defaultContainerID;
 @property(copy,readonly) NSString * description;
-@property(readonly) bool dieOnInvalidate;
+@property(readonly) BOOL dieOnInvalidate;
 @property(readonly) NSSet * entitledContainerIDs;
-@property(readonly) unsigned long long hash;
-@property bool isUsingUbiquity;
+@property(readonly) unsigned int hash;
+@property BOOL isUsingUbiquity;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)__cacheEntitlements;
-- (void)_addExternalDocumentReferenceTo:(id)arg1 underParent:(id)arg2 forceReparent:(bool)arg3 reply:(id)arg4;
-- (bool)_canCreateContainerWithID:(id)arg1 error:(id*)arg2;
+- (void)_addExternalDocumentReferenceTo:(id)arg1 underParent:(id)arg2 forceReparent:(BOOL)arg3 reply:(id)arg4;
+- (BOOL)_canCreateContainerWithID:(id)arg1 error:(id*)arg2;
 - (BOOL)_cloudEnabledStatusForContainerIDs:(id)arg1 bundleID:(id)arg2 auditToken:(struct { unsigned int x1[8]; })arg3;
-- (bool)_cloudSyncTCCDisabledForContainerMeta:(id)arg1 enabledBundleIDs:(id)arg2;
+- (BOOL)_cloudSyncTCCDisabledForContainerMeta:(id)arg1 enabledBundleIDs:(id)arg2;
 - (id)_containerIDsForPid:(int)arg1;
 - (id)_enabledBundleIDs;
-- (bool)_entitlementBooleanValueForKey:(id)arg1;
+- (BOOL)_entitlementBooleanValueForKey:(id)arg1;
 - (id)_entitlementValueForKey:(id)arg1 ofClass:(Class)arg2;
-- (bool)_hasAccessToContainerID:(id)arg1 error:(id*)arg2;
-- (bool)_hasPrivateIPCEntitlementForSelector:(SEL)arg1 error:(id*)arg2;
-- (bool)_isContainerAccessAllowed;
-- (bool)_isContainerProxyEntitled;
-- (bool)_isContainerProxyWithError:(id*)arg1;
+- (BOOL)_hasAccessToContainerID:(id)arg1 error:(id*)arg2;
+- (BOOL)_hasPrivateIPCEntitlementForSelector:(SEL)arg1 error:(id*)arg2;
+- (BOOL)_isContainerAccessAllowed;
+- (BOOL)_isContainerProxyEntitled;
+- (BOOL)_isContainerProxyWithError:(id*)arg1;
 - (void)_mutateToLoggedInClientWithSession:(id)arg1;
 - (void)_setupContainerID:(id)arg1 andSendReply:(id)arg2;
-- (void)_startDownloadItemsAtURLs:(id)arg1 pos:(unsigned long long)arg2 options:(unsigned long long)arg3 error:(id)arg4 reply:(id)arg5;
+- (void)_startDownloadItemsAtURLs:(id)arg1 pos:(unsigned int)arg2 options:(unsigned int)arg3 error:(id)arg4 reply:(id)arg5;
 - (void)_startMonitoringProcessIfNeeded;
 - (void)_stopMonitoringProcess;
-- (void)accessLogicalOrPhysicalURL:(id)arg1 needsWrite:(bool)arg2 asynchronously:(bool)arg3 handler:(id)arg4;
+- (void)accessLogicalOrPhysicalURL:(id)arg1 needsWrite:(BOOL)arg2 asynchronously:(BOOL)arg3 handler:(id)arg4;
 - (void)addContainer:(id)arg1;
 - (void)addExternalDocumentReferenceTo:(id)arg1 forPid:(int)arg2 inContainer:(id)arg3 underParent:(id)arg4 reply:(id)arg5;
 - (oneway void)bundleDidAccessExternalDocument:(id)arg1;
 - (id)bundleID;
-- (bool)canAccessPath:(const char *)arg1 needsWrite:(bool)arg2;
-- (bool)canAccessPhysicalURL:(id)arg1;
-- (oneway void)checkinAskClientIfUsingUbiquity:(bool)arg1;
+- (BOOL)canAccessPath:(const char *)arg1 needsWrite:(BOOL)arg2;
+- (BOOL)canAccessPhysicalURL:(id)arg1;
+- (oneway void)checkinAskClientIfUsingUbiquity:(BOOL)arg1;
 - (BOOL)cloudEnabledStatus;
 - (BOOL)cloudEnabledStatusForPID:(int)arg1;
 - (void)computePurgableSpaceWithUrgency:(int)arg1 reply:(id)arg2;
@@ -71,7 +71,7 @@
 - (void)currentAccountLogoutWithReply:(id)arg1;
 - (id)defaultContainerID;
 - (id)description;
-- (bool)dieOnInvalidate;
+- (BOOL)dieOnInvalidate;
 - (void)dumpDatabaseTo:(id)arg1 containerID:(id)arg2 reply:(id)arg3;
 - (id)entitledContainerIDs;
 - (void)evictItemAtURL:(id)arg1 reply:(id)arg2;
@@ -82,6 +82,7 @@
 - (void)getApplicationStatus:(id)arg1;
 - (void)getApplicationStatusWithPID:(int)arg1 reply:(id)arg2;
 - (void)getAttributeValues:(id)arg1 forItemAtURL:(id)arg2 reply:(id)arg3;
+- (void)getBackReferencingContainerIDsForURL:(id)arg1 reply:(id)arg2;
 - (void)getBookmarkDataForURL:(id)arg1 reply:(id)arg2;
 - (void)getContainerForURL:(id)arg1 reply:(id)arg2;
 - (void)getContainerLastServerUpdateWithID:(id)arg1 reply:(id)arg2;
@@ -95,21 +96,21 @@
 - (void)getMigrationStatusForPrimaryiCloudAccount:(id)arg1;
 - (void)getNonLocalVersionSenderWithReceiver:(id)arg1 documentURL:(id)arg2 reply:(id)arg3;
 - (void)getNotificationInfoAtURL:(id)arg1 reply:(id)arg2;
-- (void)getPublishedURLForItemAtURL:(id)arg1 forStreaming:(bool)arg2 requestedTTL:(unsigned long long)arg3 reply:(id)arg4;
+- (void)getPublishedURLForItemAtURL:(id)arg1 forStreaming:(BOOL)arg2 requestedTTL:(unsigned int)arg3 reply:(id)arg4;
 - (void)getTotalApplicationDocumentUsageWithReply:(id)arg1;
 - (void)getiWorkPublishingBadgingStatusAtURL:(id)arg1 reply:(id)arg2;
 - (void)getiWorkPublishingInfoAtURL:(id)arg1 reply:(id)arg2;
 - (id)initWithConnection:(id)arg1 accountSession:(id)arg2;
 - (void)invalidate;
-- (bool)isSandboxed;
-- (bool)isUsingUbiquity;
+- (BOOL)isSandboxed;
+- (BOOL)isUsingUbiquity;
 - (id)issueContainerExtensionForURL:(id)arg1 error:(id*)arg2;
 - (void)jetsamCloudDocsAppsWithReply:(id)arg1;
 - (oneway void)log:(const char *)arg1 function:(const char *)arg2 source:(const char *)arg3 line:(int)arg4 message:(id)arg5;
-- (unsigned long long)loggedStatus;
+- (unsigned int)loggedStatus;
 - (void)performSelfCheck:(id)arg1 reply:(id)arg2;
 - (void)printStatus:(id)arg1 reply:(id)arg2;
-- (void)process:(int)arg1 didBecomeForeground:(bool)arg2;
+- (void)process:(int)arg1 didBecomeForeground:(BOOL)arg2;
 - (void)purgeAmount:(long long)arg1 withUrgency:(int)arg2 reply:(id)arg3;
 - (void)reclaimAmount:(long long)arg1 withUrgency:(int)arg2 reply:(id)arg3;
 - (void)registerInitialSyncBarrierForID:(id)arg1 reply:(id)arg2;
@@ -117,12 +118,12 @@
 - (void)resetBudgets:(id)arg1 reply:(id)arg2;
 - (void)resolveBookmarkDataToURL:(id)arg1 reply:(id)arg2;
 - (void)resolveConflictWithName:(id)arg1 atURL:(id)arg2 reply:(id)arg3;
-- (void)setIsUsingUbiquity:(bool)arg1;
-- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(bool)arg3 reply:(id)arg4;
-- (void)setiWorkPublishingInfoAtURL:(id)arg1 publish:(bool)arg2 readonly:(bool)arg3 reply:(id)arg4;
+- (void)setIsUsingUbiquity:(BOOL)arg1;
+- (void)setMigrationStatus:(BOOL)arg1 forDSID:(id)arg2 shouldNotify:(BOOL)arg3 reply:(id)arg4;
+- (void)setiWorkPublishingInfoAtURL:(id)arg1 publish:(BOOL)arg2 readonly:(BOOL)arg3 reply:(id)arg4;
 - (id)setupContainer:(id)arg1 root:(id)arg2 error:(id*)arg3;
 - (void)setupInstanceWithDict:(id)arg1 reply:(id)arg2;
-- (void)startDownloadItemsAtURLs:(id)arg1 options:(unsigned long long)arg2 reply:(id)arg3;
+- (void)startDownloadItemsAtURLs:(id)arg1 options:(unsigned int)arg2 reply:(id)arg3;
 - (void)thumbnailChangedForItemAtURL:(id)arg1 reply:(id)arg2;
 - (oneway void)updateContainerMetadataForID:(id)arg1 bundleID:(id)arg2;
 - (void)waitForFileSystemChangeProcessingWithReply:(id)arg1;

@@ -11,14 +11,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
 - (id)_imageForImageViewElement:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_imageInsetsForImageViewElement:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageInsetsForImageViewElement:(id)arg1;
 - (void)_itemOfferAction:(id)arg1;
 - (void)_reloadButtonItem:(id)arg1 withButtonViewElement:(id)arg2;
 - (void)_showConfirmationAction:(id)arg1;

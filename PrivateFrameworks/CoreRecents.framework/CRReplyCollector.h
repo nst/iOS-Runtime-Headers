@@ -10,16 +10,16 @@
 }
 
 - (void)addEntriesFromDictionary:(id)arg1;
-- (unsigned long long)condition;
-- (unsigned long long)count;
-- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long *x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (unsigned int)condition;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (id)init;
-- (id)initWithCondition:(unsigned long long)arg1;
+- (id)initWithCondition:(unsigned int)arg1;
 - (id)keyEnumerator;
 - (void)lock;
-- (bool)lockWhenCondition:(unsigned long long)arg1 beforeDate:(id)arg2;
+- (BOOL)lockWhenCondition:(unsigned int)arg1 beforeDate:(id)arg2;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
@@ -30,9 +30,9 @@
 - (void)setDictionary:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
-- (bool)tryLock;
-- (bool)tryLockWhenCondition:(long long)arg1;
+- (BOOL)tryLock;
+- (BOOL)tryLockWhenCondition:(int)arg1;
 - (void)unlock;
-- (void)unlockWithCondition:(unsigned long long)arg1;
+- (void)unlockWithCondition:(unsigned int)arg1;
 
 @end

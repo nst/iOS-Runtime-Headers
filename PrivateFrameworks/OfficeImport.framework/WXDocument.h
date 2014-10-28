@@ -5,7 +5,7 @@
 @interface WXDocument : NSObject {
 }
 
-+ (id)documentFrom:(id)arg1 reader:(id)arg2 cancel:(id)arg3 asThumbnail:(bool)arg4;
++ (id)documentFrom:(id)arg1 reader:(id)arg2 cancel:(id)arg3 asThumbnail:(BOOL)arg4;
 + (void)initialize;
 + (void)readDocument:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)readDocumentSettings:(id)arg1 to:(id)arg2 state:(id)arg3;

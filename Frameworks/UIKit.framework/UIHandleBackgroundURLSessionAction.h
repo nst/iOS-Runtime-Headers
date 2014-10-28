@@ -9,10 +9,10 @@
 
 @property(copy,readonly) NSString * sessionIdentifier;
 
-- (long long)UIActionType;
+- (int)UIActionType;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
 - (id)initWithSessionIdentifier:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)sessionIdentifier;
 
 @end

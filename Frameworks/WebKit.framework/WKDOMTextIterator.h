@@ -17,17 +17,17 @@
     } _upconvertedText;
 }
 
-@property(readonly) bool atEnd;
+@property(readonly) BOOL atEnd;
 @property(readonly) WKDOMRange * currentRange;
-@property(readonly) unsigned long long currentTextLength;
+@property(readonly) unsigned int currentTextLength;
 @property(readonly) const unsigned short* currentTextPointer;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)advance;
-- (bool)atEnd;
+- (BOOL)atEnd;
 - (id)currentRange;
-- (unsigned long long)currentTextLength;
+- (unsigned int)currentTextLength;
 - (const unsigned short*)currentTextPointer;
 - (id)initWithRange:(id)arg1;
 

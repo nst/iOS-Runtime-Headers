@@ -7,25 +7,25 @@
 @interface CPLFileStorageItem : NSObject <NSCopying> {
     CPLResourceIdentity *_identity;
     NSDate *_lastAccessDate;
-    bool_markedForDelete;
-    bool_original;
+    BOOL _markedForDelete;
+    BOOL _original;
 }
 
 @property(readonly) CPLResourceIdentity * identity;
 @property(readonly) NSDate * lastAccessDate;
-@property(getter=isMarkedForDelete,readonly) bool markedForDelete;
-@property(getter=isOriginal,readonly) bool original;
+@property(getter=isMarkedForDelete,readonly) BOOL markedForDelete;
+@property(getter=isOriginal,readonly) BOOL original;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (bool)getResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
-- (unsigned long long)hash;
+- (BOOL)getResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
+- (unsigned int)hash;
 - (id)identity;
-- (id)initWithIdentity:(id)arg1 original:(bool)arg2 markedForDelete:(bool)arg3 lastAccessDate:(id)arg4;
-- (bool)isEqual:(id)arg1;
-- (bool)isMarkedForDelete;
-- (bool)isOriginal;
+- (id)initWithIdentity:(id)arg1 original:(BOOL)arg2 markedForDelete:(BOOL)arg3 lastAccessDate:(id)arg4;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isMarkedForDelete;
+- (BOOL)isOriginal;
 - (id)lastAccessDate;
 
 @end

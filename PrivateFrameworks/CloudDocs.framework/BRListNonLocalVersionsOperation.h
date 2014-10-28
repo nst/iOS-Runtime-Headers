@@ -10,46 +10,46 @@
 
 @interface BRListNonLocalVersionsOperation : NSOperation <BRNonLocalVersionReceiving> {
     NSURL *_documentURL;
+    BOOL _executing;
     id _fetchingVersionsDoneBlock;
+    BOOL _finished;
     <BRNonLocalVersionSending> *_sender;
     BOOL _state;
     NSMutableArray *_versions;
     NSMutableDictionary *_versionsByEtag;
     GSPermanentStorage *_versionsStore;
-    bool_executing;
-    bool_finished;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
-@property(getter=isExecuting) bool executing;
+@property(getter=isExecuting) BOOL executing;
 @property(copy) id fetchingVersionsDoneBlock;
-@property(getter=isFinished) bool finished;
-@property(readonly) unsigned long long hash;
+@property(getter=isFinished) BOOL finished;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly) NSMutableArray * versions;
 
-- (bool)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
-- (bool)__finishIfCancelled;
-- (bool)_advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
+- (BOOL)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
+- (BOOL)__finishIfCancelled;
+- (BOOL)_advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (void)_senderInvalidate;
-- (bool)_setVersionStoreForDocumentAtURL:(id)arg1 error:(id*)arg2;
+- (BOOL)_setVersionStoreForDocumentAtURL:(id)arg1 error:(id*)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
 - (id)error;
 - (id)fetchingVersionsDoneBlock;
 - (id)initWithDocumentURL:(id)arg1;
-- (bool)isConcurrent;
-- (bool)isExecuting;
-- (bool)isFinished;
+- (BOOL)isConcurrent;
+- (BOOL)isExecuting;
+- (BOOL)isFinished;
 - (oneway void)newThumbnailForVersionWithEtag:(id)arg1;
-- (oneway void)newVersionAtURL:(id)arg1 faultURL:(id)arg2 faultExtension:(id)arg3 etag:(id)arg4 hasThumbnail:(bool)arg5 lastEditorDeviceName:(id)arg6;
+- (oneway void)newVersionAtURL:(id)arg1 faultURL:(id)arg2 faultExtension:(id)arg3 etag:(id)arg4 hasThumbnail:(BOOL)arg5 lastEditorDeviceName:(id)arg6;
 - (void)setError:(id)arg1;
-- (void)setExecuting:(bool)arg1;
+- (void)setExecuting:(BOOL)arg1;
 - (void)setFetchingVersionsDoneBlock:(id)arg1;
-- (void)setFinished:(bool)arg1;
+- (void)setFinished:(BOOL)arg1;
 - (void)start;
 - (id)versions;
 - (oneway void)versionsDone;

@@ -8,6 +8,6 @@
 
 - (void)dealloc;
 - (id)initWithSchemaData:(id)arg1;
-- (bool)validateDocument:(id)arg1 error:(id*)arg2;
+- (BOOL)validateDocument:(id)arg1 error:(id*)arg2;
 
 @end

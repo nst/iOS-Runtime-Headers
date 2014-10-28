@@ -8,7 +8,7 @@
     CKDPTokenRegistrationBody *_tokenRegistrationBody;
 }
 
-@property(readonly) bool hasTokenRegistrationBody;
+@property(readonly) BOOL hasTokenRegistrationBody;
 @property(retain) CKDPTokenRegistrationBody * tokenRegistrationBody;
 
 + (id)options;
@@ -18,11 +18,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTokenRegistrationBody;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTokenRegistrationBody;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setTokenRegistrationBody:(id)arg1;
 - (id)tokenRegistrationBody;
 - (void)writeTo:(id)arg1;

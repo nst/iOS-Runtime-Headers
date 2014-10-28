@@ -11,7 +11,7 @@
 
 @property(readonly) SUMescalSession * mescalSession;
 
-- (bool)_isMescalEnabled;
+- (BOOL)_isMescalEnabled;
 - (id)_setupSAPCertificate:(id*)arg1;
 - (id)_setupSAPWithData:(id)arg1 error:(id*)arg2;
 - (void)dealloc;

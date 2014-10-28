@@ -14,7 +14,7 @@
 + (id)createTableSQL;
 + (id)databaseTable;
 + (void)load;
-+ (long long)protectionClass;
-+ (bool)setCharacteristic:(id)arg1 forDataType:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
++ (int)protectionClass;
++ (BOOL)setCharacteristic:(id)arg1 forDataType:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
 
 @end

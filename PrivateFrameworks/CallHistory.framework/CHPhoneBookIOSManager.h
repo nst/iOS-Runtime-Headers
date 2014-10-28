@@ -5,33 +5,33 @@
 @class NSString;
 
 @interface CHPhoneBookIOSManager : CHLogger <CHPhoneBookManagerProtocol> {
+    BOOL _callerIdIsEmail;
     int _multiValueId;
     void *_record;
     int _recordId;
     unsigned int _recordIsSuggested;
-    bool_callerIdIsEmail;
 }
 
-@property bool callerIdIsEmail;
+@property BOOL callerIdIsEmail;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property int multiValueId;
 @property void* record;
 @property int recordId;
 @property unsigned int recordIsSuggested;
 @property(readonly) Class superclass;
 
-- (bool)callerIdIsEmail;
+- (BOOL)callerIdIsEmail;
 - (void)dealloc;
-- (void)fetchABRecord:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(bool)arg3;
+- (void)fetchABRecord:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(BOOL)arg3;
 - (const void*)getABRecordRef;
-- (id)getCallerIdPropertyMultiValueId:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(bool)arg3;
+- (id)getCallerIdPropertyMultiValueId:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(BOOL)arg3;
 - (id)getLocalizedCallerIdLabelForRecordId:(id)arg1;
 - (id)getPersonsNameForRecordId:(id)arg1;
-- (id)getRecordId:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(bool)arg3;
+- (id)getRecordId:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(BOOL)arg3;
 - (id)init;
-- (bool)isABContactASuggestion;
+- (BOOL)isABContactASuggestion;
 - (int)multiValueId;
 - (void*)record;
 - (int)recordId;
@@ -40,7 +40,7 @@
 - (void)setABRecordId:(id)arg1;
 - (void)setABRecordMultiValueId:(id)arg1;
 - (void)setABRecordRef:(const void*)arg1;
-- (void)setCallerIdIsEmail:(bool)arg1;
+- (void)setCallerIdIsEmail:(BOOL)arg1;
 - (void)setMultiValueId:(int)arg1;
 - (void)setRecord:(void*)arg1;
 - (void)setRecordId:(int)arg1;

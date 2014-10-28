@@ -3,12 +3,12 @@
  */
 
 @interface MPUReportingTrackPlaybackEndEvent : MPUReportingTrackPlaybackEvent {
-    long long _endReason;
+    int _endReason;
 }
 
-@property long long endReason;
+@property int endReason;
 
-- (long long)endReason;
-- (void)setEndReason:(long long)arg1;
+- (int)endReason;
+- (void)setEndReason:(int)arg1;
 
 @end

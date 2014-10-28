@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SAUIAppPunchOut * leagueAppPunchOut;
 @property(retain) SASportsMetadata * metadata;
 @property(retain) SAUIAppPunchOut * providerPunchOut;

@@ -12,7 +12,7 @@
     unsigned long long _timestamp;
 }
 
-@property bool hasTimestamp;
+@property BOOL hasTimestamp;
 @property(retain) NSMutableArray * statRecords;
 @property unsigned long long timestamp;
 
@@ -23,17 +23,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setStatRecords:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (id)statRecordAtIndex:(unsigned long long)arg1;
+- (id)statRecordAtIndex:(unsigned int)arg1;
 - (id)statRecords;
-- (unsigned long long)statRecordsCount;
+- (unsigned int)statRecordsCount;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

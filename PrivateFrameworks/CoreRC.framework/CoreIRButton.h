@@ -3,19 +3,19 @@
  */
 
 @interface CoreIRButton : NSObject <NSCopying> {
-    unsigned int _usageID;
-    unsigned int _usagePage;
+    unsigned long _usageID;
+    unsigned long _usagePage;
 }
 
-@property(readonly) unsigned int usageID;
-@property(readonly) unsigned int usagePage;
+@property(readonly) unsigned long usageID;
+@property(readonly) unsigned long usagePage;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithUsagePage:(unsigned int)arg1 usageID:(unsigned int)arg2;
-- (bool)isEqual:(id)arg1;
-- (unsigned int)usageID;
-- (unsigned int)usagePage;
+- (id)initWithUsagePage:(unsigned long)arg1 usageID:(unsigned long)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long)usageID;
+- (unsigned long)usagePage;
 
 @end

@@ -12,11 +12,11 @@
 @property(readonly) int accountType;
 @property(retain,readonly) NSArray * aliasStrings;
 @property(retain,readonly) NSArray * aliases;
-@property(readonly) bool canSend;
+@property(readonly) BOOL canSend;
 @property(readonly) NSDate * dateRegistered;
 @property(retain,readonly) NSArray * devices;
 @property(retain,readonly) NSString * displayName;
-@property(readonly) bool isActive;
+@property(readonly) BOOL isActive;
 @property(retain) NSString * loginID;
 @property(retain,readonly) NSArray * nearbyDevices;
 @property(readonly) NSDate * nextRegistrationDate;
@@ -37,9 +37,9 @@
 - (void)_callNearbyDevicesChanged;
 - (id)_initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
 - (id)_internal;
-- (bool)_isEnabled;
-- (void)_reregisterAndReidentify:(bool)arg1;
-- (void)_setIsEnabled:(bool)arg1;
+- (BOOL)_isEnabled;
+- (void)_reregisterAndReidentify:(BOOL)arg1;
+- (void)_setIsEnabled:(BOOL)arg1;
 - (id)accountInfo;
 - (int)accountType;
 - (void)addAliases:(id)arg1;
@@ -48,7 +48,7 @@
 - (id)aliasStrings;
 - (id)aliases;
 - (void)authenticateAccount;
-- (bool)canSend;
+- (BOOL)canSend;
 - (id)dateRegistered;
 - (void)deactivateAndPurgeIdentify;
 - (void)dealloc;
@@ -57,7 +57,7 @@
 - (id)displayName;
 - (id)initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
 - (id)initWithLoginID:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
-- (bool)isActive;
+- (BOOL)isActive;
 - (id)loginID;
 - (id)nearbyDevices;
 - (id)nextRegistrationDate;

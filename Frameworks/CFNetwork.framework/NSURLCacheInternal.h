@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface NSURLCacheInternal : NSObject {
-    struct _CFURLCache { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFURLCache {} *x2; } *_cacheRef;
-    unsigned long long currentDiskUsage;
-    unsigned long long currentMemoryUsage;
-    unsigned long long diskCapacity;
+    struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFURLCache {} *x2; } *_cacheRef;
+    unsigned int currentDiskUsage;
+    unsigned int currentMemoryUsage;
+    unsigned int diskCapacity;
     NSString *diskPath;
-    unsigned long long memoryCapacity;
+    unsigned int memoryCapacity;
 }
 
 - (void)dealloc;

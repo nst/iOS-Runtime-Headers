@@ -9,12 +9,12 @@
     NSMutableData *_bodyData;
     <MFMessageDataConsumerFactory> *_consumerFactory;
     <MFCollectingDataConsumer> *_dataConsumer;
+    BOOL _didBeginStreaming;
     DAMailMessage *_message;
     int _requestedFormat;
+    BOOL _succeeded;
     double _timeOfLastActivity;
-    bool_didBeginStreaming;
-    bool_succeeded;
-    bool_triedCreatingAlternatePartConsumer;
+    BOOL _triedCreatingAlternatePartConsumer;
 }
 
 @property(retain) <MFCollectingDataConsumer> * alternatePartConsumer;
@@ -23,7 +23,7 @@
 @property(retain) <MFCollectingDataConsumer> * dataConsumer;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain,readonly) DAMailMessage * message;
 @property int requestedFormat;
 @property(readonly) Class superclass;
@@ -37,7 +37,7 @@
 - (id)dataConsumer;
 - (id)dataConsumerForPart:(id)arg1;
 - (void)dealloc;
-- (bool)didBeginStreaming;
+- (BOOL)didBeginStreaming;
 - (void)didEndStreamingForMailMessage:(id)arg1;
 - (id)message;
 - (int)requestedFormat;
@@ -45,8 +45,8 @@
 - (void)setConsumerFactory:(id)arg1;
 - (void)setDataConsumer:(id)arg1;
 - (void)setRequestedFormat:(int)arg1;
-- (bool)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
-- (bool)succeeded;
+- (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
+- (BOOL)succeeded;
 - (double)timeOfLastActivity;
 
 @end

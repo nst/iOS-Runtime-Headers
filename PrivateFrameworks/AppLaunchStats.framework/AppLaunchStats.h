@@ -54,7 +54,7 @@
     NSDistributedNotificationCenter *distNotCenter;
     CDBudget *energyBudget;
     int externalTrigToken;
-    long long externaltriggerType;
+    int externaltriggerType;
     NSString *fakeBundleID;
     NSDate *lastDateOfAliveList;
     NSDate *lastExternalTrigTime;
@@ -91,7 +91,7 @@
 
 - (void).cxx_destruct;
 - (void)ableAdmissionForTopic:(id)arg1 attribute:(id)arg2 value:(id)arg3 withHandler:(id)arg4;
-- (void)aplsSBMonitorEvent:(long long)arg1 withBundleID:(id)arg2;
+- (void)aplsSBMonitorEvent:(int)arg1 withBundleID:(id)arg2;
 - (id)aplsState;
 - (void)appActivityForecastStartingOnDate:(id)arg1 duration:(double)arg2 granularity:(int)arg3 appFilter:(id)arg4 completionHandler:(id)arg5;
 - (id)appLaunchStatDQueue;
@@ -104,7 +104,7 @@
 - (void)dealloc;
 - (id)defaultsDomainReadString:(id)arg1;
 - (void)deleteAllEntriesInDB;
-- (id)doConvertTopicString:(id)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withSubStringIndex:(unsigned long long)arg3;
+- (id)doConvertTopicString:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withSubStringIndex:(unsigned int)arg3;
 - (void)energyForecastStartingOnDate:(id)arg1 duration:(double)arg2 granularity:(int)arg3 completionHandler:(id)arg4;
 - (bool)hasOpportunisticFetchFeature:(id)arg1;
 - (bool)hasOpportunisticFetchFeatureWithType:(id)arg1 withFetch:(int)arg2;
@@ -124,8 +124,8 @@
 - (void)okToPassPushMessageForTopic:(id)arg1 onQueue:(id)arg2 withHandler:(id)arg3;
 - (void)onTick;
 - (id)pendingHandler;
-- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
-- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (void)readPool:(id)arg1;
 - (void)receiveConnectedStateNotification:(unsigned long long)arg1;
 - (void)receiveIncomingLowPriorityPushList:(unsigned long long)arg1;

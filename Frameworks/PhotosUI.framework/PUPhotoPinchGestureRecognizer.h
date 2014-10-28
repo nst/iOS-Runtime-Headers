@@ -6,53 +6,53 @@
 
 @interface PUPhotoPinchGestureRecognizer : UIPinchGestureRecognizer {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     PUValueFilter *__rotationFilter;
+    BOOL __touchesNeedUpdate;
     } _initialPinchRect;
+    BOOL _initialTouchLocationsSet;
     } _initialTouchLocations[2];
     } _latestTouchLocations[2];
-    double _rotationHysteresisDegrees;
-    bool__touchesNeedUpdate;
-    bool_initialTouchLocationsSet;
+    float _rotationHysteresisDegrees;
 }
 
 @property(setter=_setRotationFilter:,retain) PUValueFilter * _rotationFilter;
-@property(setter=_setTouchesNeedUpdate:) bool _touchesNeedUpdate;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialPinchRect;
-@property double rotationHysteresisDegrees;
+@property(setter=_setTouchesNeedUpdate:) BOOL _touchesNeedUpdate;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialPinchRect;
+@property float rotationHysteresisDegrees;
 
 - (void).cxx_destruct;
 - (id)_rotationFilter;
 - (void)_setRotationFilter:(id)arg1;
-- (void)_setTouchesNeedUpdate:(bool)arg1;
-- (bool)_touchesNeedUpdate;
+- (void)_setTouchesNeedUpdate:(BOOL)arg1;
+- (BOOL)_touchesNeedUpdate;
 - (void)_updateIfNeeded;
-- (struct CGPoint { double x1; double x2; })adjustedInitialCenterInView:(id)arg1;
-- (double)adjustedRotationInView:(id)arg1;
-- (double)adjustedRotationVelocityInView:(id)arg1;
-- (double)adjustedScaleInView:(id)arg1;
-- (double)adjustedScaleVelocityInView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })adjustedTranslationInView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })adjustedTranslationVelocityInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })adjustedInitialCenterInView:(id)arg1;
+- (float)adjustedRotationInView:(id)arg1;
+- (float)adjustedRotationVelocityInView:(id)arg1;
+- (float)adjustedScaleInView:(id)arg1;
+- (float)adjustedScaleVelocityInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })adjustedTranslationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })adjustedTranslationVelocityInView:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialPinchRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialPinchRect;
 - (void)reset;
-- (double)rotationHysteresisDegrees;
-- (void)setInitialPinchRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setRotationHysteresisDegrees:(double)arg1;
+- (float)rotationHysteresisDegrees;
+- (void)setInitialPinchRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRotationHysteresisDegrees:(float)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

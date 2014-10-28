@@ -5,13 +5,13 @@
 @class SKUIItem;
 
 @interface SUScriptGiftViewController : SUScriptViewController {
-    long long _giftCategory;
+    int _giftCategory;
     SKUIItem *_item;
 }
 
-@property(readonly) long long giftCategoryApps;
-@property(readonly) long long giftCategoryBooks;
-@property(readonly) long long giftCategoryMedia;
+@property(readonly) int giftCategoryApps;
+@property(readonly) int giftCategoryBooks;
+@property(readonly) int giftCategoryMedia;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -19,12 +19,12 @@
 
 - (id)_className;
 - (id)attributeKeys;
-- (long long)giftCategoryApps;
-- (long long)giftCategoryBooks;
-- (long long)giftCategoryMedia;
+- (int)giftCategoryApps;
+- (int)giftCategoryBooks;
+- (int)giftCategoryMedia;
 - (id)newNativeViewController;
 - (id)scriptAttributeKeys;
-- (void)setCreditGiftStyle:(long long)arg1;
+- (void)setCreditGiftStyle:(int)arg1;
 - (void)setProductGiftItem:(id)arg1;
 
 @end

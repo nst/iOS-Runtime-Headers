@@ -6,26 +6,26 @@
 
 @interface SUSectionButton : NSObject <NSCopying> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     NSString *_accessibilityTitle;
     NSString *_displayTitle;
     UIImage *_image;
     } _imageInsets;
     NSURL *_imageURL;
     float _imageURLScale;
-    long long _tag;
+    int _tag;
 }
 
 @property(copy) NSString * accessibilityTitle;
 @property(copy) NSString * displayTitle;
 @property(retain) UIImage * image;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
 @property(copy) NSURL * imageURL;
 @property float imageURLScale;
-@property long long tag;
+@property int tag;
 
 - (id)accessibilityTitle;
 - (void)applyToBarButtonItem:(id)arg1;
@@ -33,17 +33,17 @@
 - (void)dealloc;
 - (id)displayTitle;
 - (id)image;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })imageInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (id)imageURL;
 - (float)imageURLScale;
 - (id)initWithSectionButtonDictionary:(id)arg1;
 - (void)setAccessibilityTitle:(id)arg1;
 - (void)setDisplayTitle:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setImageURL:(id)arg1;
 - (void)setImageURLScale:(float)arg1;
-- (void)setTag:(long long)arg1;
-- (long long)tag;
+- (void)setTag:(int)arg1;
+- (int)tag;
 
 @end

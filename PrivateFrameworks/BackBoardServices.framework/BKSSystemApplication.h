@@ -13,10 +13,10 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <BKSSystemApplicationDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
-- (bool)clientIsAliveForWatchdog:(id)arg1;
+- (BOOL)clientIsAliveForWatchdog:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithQueue:(id)arg1;

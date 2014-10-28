@@ -11,7 +11,7 @@
 @property(readonly) NSDate * timestamp;
 @property(readonly) double trueHeading;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

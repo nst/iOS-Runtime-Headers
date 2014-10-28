@@ -13,12 +13,12 @@
 
 + (id)enumeratorWithAxis:(id)arg1 kind:(id)arg2;
 
-- (unsigned long long)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)initWithAxis:(id)arg1 kind:(id)arg2;
 - (id)kind;
 - (int)labelPosition;
-- (bool)shouldRender;
+- (BOOL)shouldRender;
 - (id)string;
 - (id)stringForLabelResources:(id)arg1;
 - (void)update;

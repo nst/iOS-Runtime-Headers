@@ -8,7 +8,7 @@
 - (id)_displayedMimePart;
 - (unsigned int)approximateSize;
 - (void)download;
-- (bool)hasBeenDownloaded;
+- (BOOL)hasBeenDownloaded;
 - (id)initWithMimePart:(id)arg1;
 - (id)persistentUniqueIdentifier;
 

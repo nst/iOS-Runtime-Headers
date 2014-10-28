@@ -12,26 +12,26 @@
  */
 
 @interface SCNPhysicsNoiseField : SCNPhysicsField {
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8 */
-    double _animationSpeed;
-    double _smoothness;
+     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
+    float _animationSpeed;
+    float _smoothness;
 }
 
-@property double animationSpeed;
-@property double smoothness;
+@property float animationSpeed;
+@property float smoothness;
 
 + (id)SCNJSExportProtocol;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; }*)_createField;
-- (double)animationSpeed;
+- (float)animationSpeed;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)setAnimationSpeed:(double)arg1;
-- (void)setSmoothness:(double)arg1;
+- (void)setAnimationSpeed:(float)arg1;
+- (void)setSmoothness:(float)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (double)smoothness;
+- (float)smoothness;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

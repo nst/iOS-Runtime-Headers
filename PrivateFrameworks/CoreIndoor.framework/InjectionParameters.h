@@ -13,9 +13,9 @@
     float _timeBetweenLocationsTime2dSeconds;
 }
 
-@property bool hasTimeBetweenLocationsMultiphoneSeconds;
-@property bool hasTimeBetweenLocationsPdrSeconds;
-@property bool hasTimeBetweenLocationsTime2dSeconds;
+@property BOOL hasTimeBetweenLocationsMultiphoneSeconds;
+@property BOOL hasTimeBetweenLocationsPdrSeconds;
+@property BOOL hasTimeBetweenLocationsTime2dSeconds;
 @property float timeBetweenLocationsMultiphoneSeconds;
 @property float timeBetweenLocationsPdrSeconds;
 @property float timeBetweenLocationsTime2dSeconds;
@@ -24,16 +24,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasTimeBetweenLocationsMultiphoneSeconds;
-- (bool)hasTimeBetweenLocationsPdrSeconds;
-- (bool)hasTimeBetweenLocationsTime2dSeconds;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasTimeBetweenLocationsMultiphoneSeconds;
+- (BOOL)hasTimeBetweenLocationsPdrSeconds;
+- (BOOL)hasTimeBetweenLocationsTime2dSeconds;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasTimeBetweenLocationsMultiphoneSeconds:(bool)arg1;
-- (void)setHasTimeBetweenLocationsPdrSeconds:(bool)arg1;
-- (void)setHasTimeBetweenLocationsTime2dSeconds:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasTimeBetweenLocationsMultiphoneSeconds:(BOOL)arg1;
+- (void)setHasTimeBetweenLocationsPdrSeconds:(BOOL)arg1;
+- (void)setHasTimeBetweenLocationsTime2dSeconds:(BOOL)arg1;
 - (void)setTimeBetweenLocationsMultiphoneSeconds:(float)arg1;
 - (void)setTimeBetweenLocationsPdrSeconds:(float)arg1;
 - (void)setTimeBetweenLocationsTime2dSeconds:(float)arg1;

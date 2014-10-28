@@ -10,8 +10,8 @@
 }
 
 @property(retain) NSString * etag;
-@property(readonly) bool hasEtag;
-@property(readonly) bool hasRecordIdentifier;
+@property(readonly) BOOL hasEtag;
+@property(readonly) BOOL hasRecordIdentifier;
 @property(retain) CKDPRecordIdentifier * recordIdentifier;
 
 + (id)options;
@@ -22,12 +22,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (bool)hasEtag;
-- (bool)hasRecordIdentifier;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasEtag;
+- (BOOL)hasRecordIdentifier;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)recordIdentifier;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;

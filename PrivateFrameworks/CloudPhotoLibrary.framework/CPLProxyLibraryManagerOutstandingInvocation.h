@@ -5,28 +5,28 @@
 @class CPLResource, NSError;
 
 @interface CPLProxyLibraryManagerOutstandingInvocation : NSObject {
+    BOOL _didFinish;
+    BOOL _didStart;
     NSError *_finalError;
     CPLResource *_finalResource;
     float _progress;
-    bool_didFinish;
-    bool_didStart;
 }
 
-@property bool didFinish;
-@property bool didStart;
+@property BOOL didFinish;
+@property BOOL didStart;
 @property(retain) NSError * finalError;
 @property(retain) CPLResource * finalResource;
 @property float progress;
 
 - (void).cxx_destruct;
 - (id)description;
-- (bool)didFinish;
-- (bool)didStart;
+- (BOOL)didFinish;
+- (BOOL)didStart;
 - (id)finalError;
 - (id)finalResource;
 - (float)progress;
-- (void)setDidFinish:(bool)arg1;
-- (void)setDidStart:(bool)arg1;
+- (void)setDidFinish:(BOOL)arg1;
+- (void)setDidStart:(BOOL)arg1;
 - (void)setFinalError:(id)arg1;
 - (void)setFinalResource:(id)arg1;
 - (void)setProgress:(float)arg1;

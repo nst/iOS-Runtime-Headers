@@ -5,9 +5,9 @@
 @interface UIKBRenderFactory10Key_Portrait : UIKBRenderFactory10Key {
 }
 
-- (double)controlColumnWidthFactor;
-- (struct CGPoint { double x1; double x2; })dictationKeyTextOffset;
-- (struct CGPoint { double x1; double x2; })globeKeyTextOffset;
+- (float)controlColumnWidthFactor;
+- (struct CGPoint { float x1; float x2; })dictationKeyTextOffset;
+- (struct CGPoint { float x1; float x2; })globeKeyTextOffset;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (void)setupLayoutSegments;

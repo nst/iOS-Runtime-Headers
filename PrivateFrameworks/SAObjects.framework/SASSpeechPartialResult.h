@@ -17,7 +17,7 @@
 - (id)af_userUtteranceValue;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setTokens:(id)arg1;
 - (id)tokens;
 

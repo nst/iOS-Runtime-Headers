@@ -21,7 +21,7 @@
 - (id)init;
 - (id)initForRelationshipAtKey:(id)arg1;
 - (id)insertedObjectIDs;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)relationshipKey;
 
 @end

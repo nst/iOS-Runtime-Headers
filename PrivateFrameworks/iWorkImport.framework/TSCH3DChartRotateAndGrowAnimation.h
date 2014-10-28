@@ -11,7 +11,7 @@
 - (void)addAnimationToClips:(id)arg1 forSceneObject:(id)arg2 scene:(id)arg3;
 - (void)addToElementTimings:(id)arg1;
 - (id)globalTimingInterpolation;
-- (bool)individualValueLabels;
+- (BOOL)individualValueLabels;
 - (void)updateTimeRanges;
 
 @end

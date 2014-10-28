@@ -9,30 +9,31 @@
 
 @class BRCAccountHandler, BRCAccountSession, BRCCloudFileProvider, BRCVersionsFileProvider, NSDate, NSError, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_source>, NSString, NSXPCListener, NSXPCListenerEndpoint;
 
-@interface BRCDaemon : NSObject <NSXPCListenerDelegate, BRCAccountHandlerDelegate> {
+@interface BRCDaemon : NSObject <BRCReachabilityDelegate, NSXPCListenerDelegate, BRCAccountHandlerDelegate> {
     BRCAccountHandler *_accountHandler;
     BRCAccountSession *_accountSession;
     NSString *_appSupportDirPath;
     NSString *_cacheDirPath;
     Class _containerClass;
+    BOOL _deviceUnlocked;
+    BOOL _disableAccountChangesHandling;
+    BOOL _disableAppsChangesHandling;
     BRCCloudFileProvider *_fileProvider;
-    unsigned long long _forceIsGreedyState;
+    unsigned int _forceIsGreedyState;
     NSObject<OS_dispatch_group> *_ipcBlockerGroup;
     NSError *_loggedOutError;
     NSString *_logsDirPath;
+    BOOL _resumed;
     NSString *_rootDirPath;
+    int _serverAvailabilityNotifyToken;
     NSObject<OS_dispatch_source> *_sigIntSrc;
     NSObject<OS_dispatch_source> *_sigQuitSrc;
     NSObject<OS_dispatch_source> *_sigTermSrc;
     NSDate *_startupDate;
     NSString *_ubiquityTokenSalt;
+    BOOL _unitTestMode;
     BRCVersionsFileProvider *_versionsProvider;
     NSXPCListener *_xpcListener;
-    bool_deviceUnlocked;
-    bool_disableAccountChangesHandling;
-    bool_disableAppsChangesHandling;
-    bool_resumed;
-    bool_unitTestMode;
 }
 
 @property(readonly) BRCAccountHandler * accountHandler;
@@ -42,12 +43,12 @@
 @property(retain) Class containerClass;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property bool disableAccountChangesHandling;
-@property bool disableAppsChangesHandling;
+@property BOOL disableAccountChangesHandling;
+@property BOOL disableAppsChangesHandling;
 @property(readonly) NSXPCListenerEndpoint * endpoint;
 @property(readonly) BRCCloudFileProvider * fileProvider;
-@property unsigned long long forceIsGreedyState;
-@property(readonly) unsigned long long hash;
+@property unsigned int forceIsGreedyState;
+@property(readonly) unsigned int hash;
 @property(retain) NSError * loggedOutError;
 @property(retain) NSString * logsDirPath;
 @property(retain) NSString * rootDirPath;
@@ -59,9 +60,9 @@
 + (id)daemon;
 
 - (void).cxx_destruct;
-- (bool)_haveRequiredKernelFeatures;
+- (BOOL)_haveRequiredKernelFeatures;
 - (void)_initSignals;
-- (bool)_isDeviceUnlocked;
+- (BOOL)_isDeviceUnlocked;
 - (void)accountHandler:(id)arg1 didChangeSessionTo:(id)arg2;
 - (void)accountHandler:(id)arg1 willChangeSessionFrom:(id)arg2;
 - (id)accountHandler;
@@ -70,28 +71,29 @@
 - (id)cacheDirPath;
 - (long long)computePurgableSpaceWithUrgency:(int)arg1;
 - (Class)containerClass;
-- (bool)disableAccountChangesHandling;
-- (bool)disableAppsChangesHandling;
+- (BOOL)disableAccountChangesHandling;
+- (BOOL)disableAppsChangesHandling;
 - (id)endpoint;
 - (void)exitWithCode:(int)arg1;
 - (id)fileProvider;
-- (unsigned long long)forceIsGreedyState;
+- (unsigned int)forceIsGreedyState;
 - (void)handleExitSignal:(int)arg1;
 - (id)init;
-- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)loggedOutError;
 - (id)logsDirPath;
+- (void)networkReachabilityChanged:(BOOL)arg1;
 - (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
 - (void)resume;
 - (id)rootDirPath;
-- (bool)selfCheck:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+- (BOOL)selfCheck:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 - (void)setAccountSession:(id)arg1;
 - (void)setAppSupportDirPath:(id)arg1;
 - (void)setCacheDirPath:(id)arg1;
 - (void)setContainerClass:(Class)arg1;
-- (void)setDisableAccountChangesHandling:(bool)arg1;
-- (void)setDisableAppsChangesHandling:(bool)arg1;
-- (void)setForceIsGreedyState:(unsigned long long)arg1;
+- (void)setDisableAccountChangesHandling:(BOOL)arg1;
+- (void)setDisableAppsChangesHandling:(BOOL)arg1;
+- (void)setForceIsGreedyState:(unsigned int)arg1;
 - (void)setLoggedOutError:(id)arg1;
 - (void)setLogsDirPath:(id)arg1;
 - (void)setRootDirPath:(id)arg1;
@@ -99,7 +101,7 @@
 - (void)setUpAnonymousListener;
 - (void)setUpSandbox;
 - (id)startupDate;
-- (bool)status:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+- (BOOL)status:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 - (id)ubiquityTokenSalt;
 - (id)versionsProvider;
 - (void)waitForConfiguration;

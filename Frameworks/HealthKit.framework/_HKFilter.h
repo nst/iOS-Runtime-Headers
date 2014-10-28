@@ -5,12 +5,12 @@
 @interface _HKFilter : NSObject <NSSecureCoding, NSCopying> {
 }
 
-+ (bool)filter:(id)arg1 acceptsDataObject:(id)arg2;
-+ (id)filterByCombiningFilters:(id)arg1 compoundType:(unsigned long long)arg2;
-+ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
-+ (bool)supportsSecureCoding;
++ (BOOL)filter:(id)arg1 acceptsDataObject:(id)arg2;
++ (id)filterByCombiningFilters:(id)arg1 compoundType:(unsigned int)arg2;
++ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
++ (BOOL)supportsSecureCoding;
 
-- (bool)acceptsDataObject:(id)arg1;
+- (BOOL)acceptsDataObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

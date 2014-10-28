@@ -8,14 +8,14 @@
 }
 
 @property(retain) NSArray * arguments;
-@property bool checkForLeaks;
-@property bool disableASLR;
+@property BOOL checkForLeaks;
+@property BOOL disableASLR;
 @property(retain) NSDictionary * environment;
 @property unsigned int launchAssertionFlags;
-@property long long launchIntent;
+@property int launchIntent;
 @property(retain) NSURL * standardErrorURL;
 @property(retain) NSURL * standardOutputURL;
-@property bool waitForDebugger;
+@property BOOL waitForDebugger;
 @property double watchdogExtension;
 
 @end

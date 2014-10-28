@@ -6,37 +6,37 @@
 
 @interface _RUTrackActionsTableViewCell : RUTableViewCell {
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     } _accessoryImageOffset;
     UIImageView *_accessoryImageView;
+    BOOL _displaysAsDisabled;
     UILabel *_lastConfiguredTextLabel;
     UIView *_topSeparatorView;
-    bool_displaysAsDisabled;
 }
 
 @property(retain) UIImage * accessoryImage;
-@property struct UIOffset { double x1; double x2; } accessoryImageOffset;
-@property bool displaysAsDisabled;
+@property struct UIOffset { float x1; float x2; } accessoryImageOffset;
+@property BOOL displaysAsDisabled;
 @property(retain) UIImage * highlightedAccessoryImage;
-@property bool showsTopSeparator;
+@property BOOL showsTopSeparator;
 
 + (id)_textLabelFont;
-+ (double)defaultHeightForTraitCollection:(id)arg1;
++ (float)defaultHeightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)accessoryImage;
-- (struct UIOffset { double x1; double x2; })accessoryImageOffset;
-- (bool)displaysAsDisabled;
+- (struct UIOffset { float x1; float x2; })accessoryImageOffset;
+- (BOOL)displaysAsDisabled;
 - (id)highlightedAccessoryImage;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setAccessoryImage:(id)arg1;
-- (void)setAccessoryImageOffset:(struct UIOffset { double x1; double x2; })arg1;
-- (void)setDisplaysAsDisabled:(bool)arg1;
+- (void)setAccessoryImageOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setDisplaysAsDisabled:(BOOL)arg1;
 - (void)setHighlightedAccessoryImage:(id)arg1;
-- (void)setShowsTopSeparator:(bool)arg1;
-- (bool)showsTopSeparator;
+- (void)setShowsTopSeparator:(BOOL)arg1;
+- (BOOL)showsTopSeparator;
 - (id)textLabel;
 
 @end

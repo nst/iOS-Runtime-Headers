@@ -12,8 +12,8 @@
 }
 
 @property(retain) NSString * field;
-@property(readonly) bool hasField;
-@property(readonly) bool hasValue;
+@property(readonly) BOOL hasField;
+@property(readonly) BOOL hasValue;
 @property(retain) NSMutableArray * operands;
 @property int type;
 @property(retain) NSString * value;
@@ -26,15 +26,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)field;
-- (bool)hasField;
-- (bool)hasValue;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasField;
+- (BOOL)hasValue;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)operandAtIndex:(unsigned long long)arg1;
+- (id)operandAtIndex:(unsigned int)arg1;
 - (id)operands;
-- (unsigned long long)operandsCount;
-- (bool)readFrom:(id)arg1;
+- (unsigned int)operandsCount;
+- (BOOL)readFrom:(id)arg1;
 - (void)setField:(id)arg1;
 - (void)setOperands:(id)arg1;
 - (void)setType:(int)arg1;

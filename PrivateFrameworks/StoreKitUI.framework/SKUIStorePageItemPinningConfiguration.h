@@ -4,36 +4,36 @@
 
 @interface SKUIStorePageItemPinningConfiguration : NSObject {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    BOOL _hasValidPinningContentInset;
+    BOOL _hasValidPinningStyle;
+    BOOL _hasValidPinningTransitionStyle;
     } _pinningContentInset;
-    long long _pinningStyle;
-    long long _pinningTransitionStyle;
-    bool_hasValidPinningContentInset;
-    bool_hasValidPinningStyle;
-    bool_hasValidPinningTransitionStyle;
+    int _pinningStyle;
+    int _pinningTransitionStyle;
 }
 
-@property(readonly) bool hasValidPinningContentInset;
-@property(readonly) bool hasValidPinningStyle;
-@property(readonly) bool hasValidPinningTransitionStyle;
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } pinningContentInset;
-@property long long pinningStyle;
-@property long long pinningTransitionStyle;
+@property(readonly) BOOL hasValidPinningContentInset;
+@property(readonly) BOOL hasValidPinningStyle;
+@property(readonly) BOOL hasValidPinningTransitionStyle;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } pinningContentInset;
+@property int pinningStyle;
+@property int pinningTransitionStyle;
 
-- (bool)hasValidPinningContentInset;
-- (bool)hasValidPinningStyle;
-- (bool)hasValidPinningTransitionStyle;
+- (BOOL)hasValidPinningContentInset;
+- (BOOL)hasValidPinningStyle;
+- (BOOL)hasValidPinningTransitionStyle;
 - (void)invalidatePinningContentInset;
 - (void)invalidatePinningStyle;
 - (void)invalidatePinningTransitionStyle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinningContentInset;
-- (long long)pinningStyle;
-- (long long)pinningTransitionStyle;
-- (void)setPinningContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setPinningStyle:(long long)arg1;
-- (void)setPinningTransitionStyle:(long long)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })pinningContentInset;
+- (int)pinningStyle;
+- (int)pinningTransitionStyle;
+- (void)setPinningContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPinningStyle:(int)arg1;
+- (void)setPinningTransitionStyle:(int)arg1;
 
 @end

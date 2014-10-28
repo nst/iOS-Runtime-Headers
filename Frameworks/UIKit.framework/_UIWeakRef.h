@@ -3,16 +3,16 @@
  */
 
 @interface _UIWeakRef : NSObject {
+    BOOL _useWeakStorage;
     id _weakPointer;
     id _weakStorage;
-    bool_useWeakStorage;
 }
 
 + (id)weakRefWithObject:(id)arg1;
 
 - (void)dealloc;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)object;
 
 @end

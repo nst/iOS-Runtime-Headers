@@ -12,11 +12,14 @@
 
 + (id)writeQueue;
 
+- (id)_keywordsForAsset:(id)arg1;
 - (id)allKeywords;
 - (void)dealloc;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (id)keywordObjectsForKeywords:(id)arg1;
+- (id)keywordsForAsset:(id)arg1;
 - (id)keywordsForAssetWithUUID:(id)arg1;
-- (bool)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
+- (id)keywordsForAssets:(id)arg1;
+- (BOOL)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
 
 @end

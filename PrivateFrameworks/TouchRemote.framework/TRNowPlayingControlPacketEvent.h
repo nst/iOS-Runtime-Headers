@@ -3,16 +3,16 @@
  */
 
 @interface TRNowPlayingControlPacketEvent : TRPacketEvent {
-    long long _controlCommand;
+    int _controlCommand;
 }
 
-@property(readonly) long long controlCommand;
+@property(readonly) int controlCommand;
 
 + (unsigned int)_packetEventType;
 
 - (id)_initWithVersion:(unsigned int)arg1 payloadDictionary:(id)arg2;
-- (long long)controlCommand;
+- (int)controlCommand;
 - (id)description;
-- (id)initWithControlCommand:(long long)arg1;
+- (id)initWithControlCommand:(int)arg1;
 
 @end

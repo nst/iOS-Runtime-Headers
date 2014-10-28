@@ -10,7 +10,7 @@
 
 @property(copy) NSString * category;
 @property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
-@property long long timeScope;
+@property int timeScope;
 
 - (id)category;
 - (id)init;
@@ -18,7 +18,7 @@
 - (void)notifyDelegateOnWillFinish;
 - (void)setCategory:(id)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
-- (void)setTimeScope:(long long)arg1;
-- (long long)timeScope;
+- (void)setTimeScope:(int)arg1;
+- (int)timeScope;
 
 @end

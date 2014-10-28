@@ -23,6 +23,6 @@
 - (id)builtInArguments;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSerializedData:(id)arg1 options:(unsigned long long)arg2 flags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 60; })arg3;
+- (id)initWithSerializedData:(id)arg1 options:(unsigned int)arg2 flags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 60; })arg3;
 
 @end

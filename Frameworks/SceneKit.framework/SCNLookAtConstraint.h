@@ -5,27 +5,27 @@
 @class SCNNode;
 
 @interface SCNLookAtConstraint : SCNConstraint {
+    BOOL _gimbalLockEnabled;
     id _reserved;
     SCNNode *_target;
-    bool_gimbalLockEnabled;
 }
 
-@property bool gimbalLockEnabled;
+@property BOOL gimbalLockEnabled;
 @property(readonly) SCNNode * target;
 
 + (id)SCNJSExportProtocol;
 + (id)lookAtConstraintWithTarget:(id)arg1;
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)_customDecodingOfSCNLookAtConstraint:(id)arg1;
 - (void)_customEncodingOfSCNLookAtConstraint:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)gimbalLockEnabled;
+- (BOOL)gimbalLockEnabled;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1;
-- (void)setGimbalLockEnabled:(bool)arg1;
+- (void)setGimbalLockEnabled:(BOOL)arg1;
 - (id)target;
 
 @end

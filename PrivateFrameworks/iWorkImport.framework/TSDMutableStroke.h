@@ -7,20 +7,20 @@
 @interface TSDMutableStroke : TSDStroke {
 }
 
-@property double actualWidth;
+@property float actualWidth;
 @property int cap;
 @property(retain) TSUColor * color;
-@property bool dontClearBackground;
+@property BOOL dontClearBackground;
 @property int join;
-@property double miterLimit;
+@property float miterLimit;
 @property(retain) TSDStrokePattern * pattern;
-@property double width;
+@property float width;
 
 + (id)emptyStroke;
 + (id)stroke;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setDontClearBackground:(bool)arg1;
+- (void)setDontClearBackground:(BOOL)arg1;
 - (void)setPatternPropertiesFromStroke:(id)arg1;
 - (void)setPropertiesFromStroke:(id)arg1;
 

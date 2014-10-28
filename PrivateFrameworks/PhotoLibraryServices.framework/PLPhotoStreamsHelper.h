@@ -3,51 +3,51 @@
  */
 
 @interface PLPhotoStreamsHelper : NSObject {
-    bool_appHasPolledOnceThisForegroundSession;
+    BOOL _appHasPolledOnceThisForegroundSession;
 }
 
 + (id)_acaccountStore;
-+ (bool)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
++ (BOOL)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
 + (id)iCloudServiceAccount;
-+ (bool)photoStreamsEnabled;
++ (BOOL)photoStreamsEnabled;
 + (id)publishBreadcrumbsPath;
 + (id)sharedPhotoStreamsHelper;
-+ (bool)writeBreadcrumbContent:(id)arg1 forHashString:(id)arg2;
++ (BOOL)writeBreadcrumbContent:(id)arg1 forHashString:(id)arg2;
 
 - (void)_appDidEnterBackground:(id)arg1;
-- (long long)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
+- (int)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
 - (void)cleanupPhotoStreamMetadataForAssetsWithUUIDs:(id)arg1 forStreamID:(id)arg2;
 - (void)clearCachedAccountState;
 - (void)dealloc;
-- (bool)dequeueAssetsForPSPublishing:(id)arg1;
+- (BOOL)dequeueAssetsForPSPublishing:(id)arg1;
 - (id)derivedAssetForMasterAsset:(id)arg1;
-- (struct CGSize { double x1; double x2; })derivedAssetSizeForMasterSizeWidth:(double)arg1 height:(double)arg2;
-- (bool)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6 publicGlobalUUID:(id*)arg7;
+- (struct CGSize { float x1; float x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2;
+- (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6 publicGlobalUUID:(id*)arg7;
 - (void)enumerateMasterHashesAndPublicGlobalUUIDsForAssets:(id)arg1 withBlock:(id)arg2;
-- (long long)friendsLimit;
-- (long long)imageLimitForFriendStream;
-- (long long)imageLimitForOwnStream;
+- (int)friendsLimit;
+- (int)imageLimitForFriendStream;
+- (int)imageLimitForOwnStream;
 - (id)imageLimitsByAssetType;
 - (id)init;
 - (void)initiateDeletionOfOriginalAssets:(id)arg1;
 - (void)initiateDeletionOfPhotoStreamAssets:(id)arg1;
-- (bool)isValidUploadAsset:(id)arg1 type:(id)arg2 fileSize:(id)arg3;
+- (BOOL)isValidUploadAsset:(id)arg1 type:(id)arg2 fileSize:(id)arg3;
 - (id)lastPhotoStreamUpdateDate;
-- (long long)maxPixelSizeForDerivative;
-- (id)pathToSavedMetadataForAssetHash:(id)arg1 streamID:(id)arg2 createIntermediateDirs:(bool)arg3;
+- (int)maxPixelSizeForDerivative;
+- (id)pathToSavedMetadataForAssetHash:(id)arg1 streamID:(id)arg2 createIntermediateDirs:(BOOL)arg3;
 - (id)pause_mstreamd;
 - (id)photoStreamsPublishStreamID;
 - (void)pollForNewSubscriptionContent;
 - (void)pollForNewSubscriptionContentOncePerAppForegroundSession;
 - (id)psHashAsString:(id)arg1;
 - (id)psHashForData:(id)arg1;
-- (bool)removeBreadcrumbsForHashString:(id)arg1;
+- (BOOL)removeBreadcrumbsForHashString:(id)arg1;
 - (void)resetMstreamdStateForPersonID:(id)arg1;
 - (void)resetServerState;
 - (void)resume_mstreamd:(id)arg1;
 - (void)savePhotoStreamMetadata:(id)arg1 forAsset:(id)arg2;
-- (bool)shouldPublishScreenShots;
-- (bool)shouldUploadVideos;
+- (BOOL)shouldPublishScreenShots;
+- (BOOL)shouldUploadVideos;
 - (id)temporaryPathForRecentlyUploadedAsset:(id)arg1;
 - (void)writeDidEnqueueBreadcrumbForHash:(id)arg1 imagePath:(id)arg2;
 - (void)writeDidPublishBreadcrumbforHash:(id)arg1 imagePath:(id)arg2;

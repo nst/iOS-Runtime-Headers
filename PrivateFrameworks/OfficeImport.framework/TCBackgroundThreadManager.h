@@ -5,24 +5,24 @@
 @class <TCCancelDelegate>, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, TCMessageContext, TCProgressContext;
 
 @interface TCBackgroundThreadManager : NSObject {
-    boolmIsWaiting;
-    unsigned long long mBlockCount;
+    unsigned int mBlockCount;
     <TCCancelDelegate> *mCancelDelegate;
     NSObject<OS_dispatch_group> *mGroup;
+    BOOL mIsWaiting;
     TCMessageContext *mMessageContext;
     TCProgressContext *mProgressContext;
     NSObject<OS_dispatch_queue> *mProgressReportingQueue;
     NSObject<OS_dispatch_queue> *mQueue;
 }
 
-@property(readonly) bool isCancelled;
+@property(readonly) BOOL isCancelled;
 @property(retain) TCMessageContext * messageContext;
 @property(retain) TCProgressContext * progressContext;
 
 - (void)addASyncBlock:(id)arg1;
 - (void)dealloc;
 - (id)initWithCancelDelegate:(id)arg1;
-- (bool)isCancelled;
+- (BOOL)isCancelled;
 - (id)messageContext;
 - (id)progressContext;
 - (void)reportWarning:(struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;

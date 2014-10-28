@@ -21,11 +21,11 @@
 - (id)_initWithParentAccount:(id)arg1 inStore:(id)arg2;
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)accountStore;
-- (bool)allowsCellularAccess;
+- (BOOL)allowsCellularAccess;
 - (id)ckAccount;
 - (id)cloudKitAuthToken;
-- (bool)cloudKitIsEnabled;
-- (bool)cloudPhotosIsEnabled;
+- (BOOL)cloudKitIsEnabled;
+- (BOOL)cloudPhotosIsEnabled;
 - (id)dsid;
 - (id)iCloudAuthToken;
 - (id)identifier;

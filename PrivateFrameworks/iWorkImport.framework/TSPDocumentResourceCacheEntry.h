@@ -6,33 +6,33 @@
 
 @interface TSPDocumentResourceCacheEntry : NSObject {
     NSURL *_URL;
-    long long _accessCount;
+    int _accessCount;
     NSDate *_contentAccessDate;
     NSString *_digestString;
     long long _fileSize;
-    bool_wasDownloaded;
+    BOOL _wasDownloaded;
 }
 
 @property(copy) NSURL * URL;
-@property long long accessCount;
+@property int accessCount;
 @property(retain) NSDate * contentAccessDate;
 @property(readonly) NSString * digestString;
 @property long long fileSize;
-@property bool wasDownloaded;
+@property BOOL wasDownloaded;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (long long)accessCount;
+- (int)accessCount;
 - (id)contentAccessDate;
 - (id)digestString;
 - (long long)fileSize;
 - (id)init;
 - (id)initWithDigestString:(id)arg1;
-- (void)setAccessCount:(long long)arg1;
+- (void)setAccessCount:(int)arg1;
 - (void)setContentAccessDate:(id)arg1;
 - (void)setFileSize:(long long)arg1;
 - (void)setURL:(id)arg1;
-- (void)setWasDownloaded:(bool)arg1;
-- (bool)wasDownloaded;
+- (void)setWasDownloaded:(BOOL)arg1;
+- (BOOL)wasDownloaded;
 
 @end

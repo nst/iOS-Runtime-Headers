@@ -12,7 +12,7 @@
 + (id)entitlementsWithDictionary:(id)arg1;
 
 - (id)applicationIdentifier;
-- (bool)hasEntitlement:(id)arg1;
+- (BOOL)hasEntitlement:(id)arg1;
 - (id)stringForEntitlement:(id)arg1;
 - (id)valueForEntitlement:(id)arg1;
 

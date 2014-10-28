@@ -10,9 +10,9 @@
     GEOWaypointTyped *_waypoint;
 }
 
-@property(readonly) bool hasLatLng;
-@property(readonly) bool hasMapItemStorage;
-@property(readonly) bool hasWaypoint;
+@property(readonly) BOOL hasLatLng;
+@property(readonly) BOOL hasMapItemStorage;
+@property(readonly) BOOL hasWaypoint;
 @property(retain) GEOLatLng * latLng;
 @property(retain) GEOMapItemStorage * mapItemStorage;
 @property(retain) GEOWaypointTyped * waypoint;
@@ -23,7 +23,7 @@
 + (void)composedWaypointForID:(unsigned long long)arg1 traits:(id)arg2 clientAttributes:(id)arg3 completionHandler:(id)arg4 networkActivityHandler:(id)arg5;
 + (id)composedWaypointForIncompleteMapItem:(id)arg1 traits:(id)arg2 clientAttributes:(id)arg3 completionHandler:(id)arg4 networkActivityHandler:(id)arg5;
 + (id)composedWaypointForLocation:(id)arg1 mapItem:(id)arg2 traits:(id)arg3 completionHandler:(id)arg4 networkActivityHandler:(id)arg5;
-+ (void)composedWaypointForMapItem:(id)arg1 forQuickETA:(bool)arg2 completionHandler:(id)arg3 networkActivityHandler:(id)arg4;
++ (void)composedWaypointForMapItem:(id)arg1 forQuickETA:(BOOL)arg2 completionHandler:(id)arg3 networkActivityHandler:(id)arg4;
 + (id)composedWaypointForMapItem:(id)arg1 traits:(id)arg2 clientAttributes:(id)arg3 completionHandler:(id)arg4 networkActivityHandler:(id)arg5;
 + (id)composedWaypointForMapItemToRefine:(id)arg1 traits:(id)arg2 clientAttributes:(id)arg3 completionHandler:(id)arg4 networkActivityHandler:(id)arg5;
 + (void)composedWaypointForMapServiceResponse:(id)arg1 clientAttributes:(id)arg2 error:(id)arg3 handler:(id)arg4;
@@ -35,19 +35,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)geoMapItem;
-- (bool)hasLatLng;
-- (bool)hasMapItemStorage;
-- (bool)hasWaypoint;
-- (unsigned long long)hash;
-- (id)initWithLocation:(id)arg1 isCurrentLocation:(bool)arg2;
+- (BOOL)hasLatLng;
+- (BOOL)hasMapItemStorage;
+- (BOOL)hasWaypoint;
+- (unsigned int)hash;
+- (id)initWithLocation:(id)arg1 isCurrentLocation:(BOOL)arg2;
 - (id)initWithMapItem:(id)arg1;
-- (bool)isCurrentLocation;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isCurrentLocation;
+- (BOOL)isEqual:(id)arg1;
 - (id)latLng;
 - (id)mapItemStorage;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setIsCurrentLocation:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setIsCurrentLocation:(BOOL)arg1;
 - (void)setLatLng:(id)arg1;
 - (void)setMapItemStorage:(id)arg1;
 - (void)setWaypoint:(id)arg1;

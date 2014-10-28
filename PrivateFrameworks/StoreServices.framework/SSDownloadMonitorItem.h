@@ -6,38 +6,38 @@
 
 @interface SSDownloadMonitorItem : NSObject <SSXPCCoding> {
     NSString *_clientIdentifier;
-    long long _itemState;
+    int _itemState;
     NSString *_representativeTitle;
     NSString *_statusString;
-    long long _totalNumberOfItems;
-    unsigned long long _transferTypes;
+    int _totalNumberOfItems;
+    unsigned int _transferTypes;
 }
 
 @property(copy) NSString * clientIdentifier;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property long long itemState;
+@property(readonly) unsigned int hash;
+@property int itemState;
 @property(copy) NSString * representativeTitle;
 @property(copy) NSString * statusString;
 @property(readonly) Class superclass;
-@property long long totalNumberOfItems;
-@property unsigned long long transferTypes;
+@property int totalNumberOfItems;
+@property unsigned int transferTypes;
 
 - (id)clientIdentifier;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)initWithXPCEncoding:(id)arg1;
-- (long long)itemState;
+- (int)itemState;
 - (id)representativeTitle;
 - (void)setClientIdentifier:(id)arg1;
-- (void)setItemState:(long long)arg1;
+- (void)setItemState:(int)arg1;
 - (void)setRepresentativeTitle:(id)arg1;
 - (void)setStatusString:(id)arg1;
-- (void)setTotalNumberOfItems:(long long)arg1;
-- (void)setTransferTypes:(unsigned long long)arg1;
+- (void)setTotalNumberOfItems:(int)arg1;
+- (void)setTransferTypes:(unsigned int)arg1;
 - (id)statusString;
-- (long long)totalNumberOfItems;
-- (unsigned long long)transferTypes;
+- (int)totalNumberOfItems;
+- (unsigned int)transferTypes;
 
 @end

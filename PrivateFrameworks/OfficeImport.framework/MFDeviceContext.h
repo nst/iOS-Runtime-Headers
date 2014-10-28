@@ -6,11 +6,11 @@
 
 @interface MFDeviceContext : NSObject <NSCopying> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     boolm_textUpdateCP;
     int m_arcDirection;
     OITSUColor *m_bkColour;
@@ -46,13 +46,13 @@
 - (id)getBkColour;
 - (int)getBkMode;
 - (id)getBrush;
-- (struct CGPoint { double x1; double x2; })getBrushOrg;
+- (struct CGPoint { float x1; float x2; })getBrushOrg;
 - (id)getCurrentTransform;
 - (id)getFont;
 - (double)getMiterLimit;
 - (id)getPath;
 - (id)getPen;
-- (struct CGPoint { double x1; double x2; })getPenPosition;
+- (struct CGPoint { float x1; float x2; })getPenPosition;
 - (int)getPolyFillMode;
 - (int)getRop2;
 - (id)getSelectedPalette;
@@ -70,13 +70,13 @@
 - (void)setBkColour:(id)arg1;
 - (void)setBkMode:(int)arg1;
 - (void)setBrush:(id)arg1;
-- (void)setBrushOrg:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBrushOrg:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCurrentTransform:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setMiterLimit:(double)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPen:(id)arg1;
-- (void)setPenPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPenPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPolyFillMode:(int)arg1;
 - (void)setRop2:(int)arg1;
 - (void)setSelectedPalette:(id)arg1;

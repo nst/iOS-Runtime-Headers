@@ -8,29 +8,29 @@
 }
 
 @property(copy,readonly) NSArray * rightAccessoryViews;
-@property(readonly) double rightContentInset;
-@property(readonly) long long titleLabelNumberOfLines;
+@property(readonly) float rightContentInset;
+@property(readonly) int titleLabelNumberOfLines;
 
 + (id)_subtitleRegularTextAttributes;
 + (id)_titleRegularTextAttributes;
-+ (struct CGSize { double x1; double x2; })artworkSize;
++ (struct CGSize { float x1; float x2; })artworkSize;
 + (void)contentSizeCategoryDidChange;
 + (id)detailEmphasizedTextAttributes;
 + (id)detailRegularTextAttributes;
-+ (double)interLabelLeading;
++ (float)interLabelLeading;
 + (id)subtitleEmphasizedTextAttributes;
 + (id)subtitleRegularTextAttributes;
-+ (double)textLeadingDistance;
-+ (double)textLeadingDistanceFromArtwork;
++ (float)textLeadingDistance;
++ (float)textLeadingDistanceFromArtwork;
 + (id)titleEmphasizedTextAttributes;
 + (id)titleRegularTextAttributes;
 
 - (void)layoutSubviews;
 - (void)reloadContent;
 - (id)rightAccessoryViews;
-- (double)rightContentInset;
-- (void)setDisplayAsDisabled:(bool)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (long long)titleLabelNumberOfLines;
+- (float)rightContentInset;
+- (void)setDisplayAsDisabled:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (int)titleLabelNumberOfLines;
 
 @end

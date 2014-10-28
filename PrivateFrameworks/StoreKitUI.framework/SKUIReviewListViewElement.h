@@ -9,7 +9,7 @@
 
 @property(readonly) NSArray * reviews;
 
-- (long long)pageComponentType;
+- (int)pageComponentType;
 - (id)reviews;
 
 @end

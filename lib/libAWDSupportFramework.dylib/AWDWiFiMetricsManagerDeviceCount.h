@@ -17,10 +17,10 @@
 
 @property unsigned int deviceCount;
 @property unsigned int deviceIdentifierMap;
-@property bool hasDeviceCount;
-@property bool hasDeviceIdentifierMap;
-@property bool hasTimeSinceBoot;
-@property bool hasTimestamp;
+@property BOOL hasDeviceCount;
+@property BOOL hasDeviceIdentifierMap;
+@property BOOL hasTimeSinceBoot;
+@property BOOL hasTimestamp;
 @property double timeSinceBoot;
 @property unsigned long long timestamp;
 
@@ -30,20 +30,20 @@
 - (unsigned int)deviceCount;
 - (unsigned int)deviceIdentifierMap;
 - (id)dictionaryRepresentation;
-- (bool)hasDeviceCount;
-- (bool)hasDeviceIdentifierMap;
-- (bool)hasTimeSinceBoot;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasDeviceCount;
+- (BOOL)hasDeviceIdentifierMap;
+- (BOOL)hasTimeSinceBoot;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setDeviceCount:(unsigned int)arg1;
 - (void)setDeviceIdentifierMap:(unsigned int)arg1;
-- (void)setHasDeviceCount:(bool)arg1;
-- (void)setHasDeviceIdentifierMap:(bool)arg1;
-- (void)setHasTimeSinceBoot:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasDeviceCount:(BOOL)arg1;
+- (void)setHasDeviceIdentifierMap:(BOOL)arg1;
+- (void)setHasTimeSinceBoot:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimeSinceBoot:(double)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (double)timeSinceBoot;

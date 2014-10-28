@@ -9,19 +9,19 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property long long height;
+@property(readonly) unsigned int hash;
+@property int height;
 @property(readonly) Class superclass;
-@property long long width;
+@property int width;
 
 + (id)resolution;
 + (id)resolutionWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (long long)height;
-- (void)setHeight:(long long)arg1;
-- (void)setWidth:(long long)arg1;
-- (long long)width;
+- (int)height;
+- (void)setHeight:(int)arg1;
+- (void)setWidth:(int)arg1;
+- (int)width;
 
 @end

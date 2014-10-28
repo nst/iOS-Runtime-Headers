@@ -11,10 +11,10 @@
 
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (bool)hasInterestForDiscreteGraphics;
+- (BOOL)hasInterestForDiscreteGraphics;
 - (oneway void)release;
 - (id)retain;
-- (unsigned long long)retainCount;
-- (bool)shouldClearCurrentContextOnOwnerChange;
+- (unsigned int)retainCount;
+- (BOOL)shouldClearCurrentContextOnOwnerChange;
 
 @end

@@ -12,10 +12,10 @@
 @property(readonly) NSArray * searchDomains;
 @property(readonly) NSArray * servers;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;

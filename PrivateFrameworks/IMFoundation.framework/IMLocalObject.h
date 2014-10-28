@@ -9,22 +9,22 @@
 }
 
 @property(readonly) NSObject<OS_xpc_object> * connection;
-@property(readonly) bool isValid;
+@property(readonly) BOOL isValid;
 @property(readonly) NSString * portName;
 @property id target;
 
 + (id)_imLocalObjectQueue;
 + (void)_registerIMLocalObject:(id)arg1;
 + (id)_registeredIMLocalObjectForPort:(unsigned int)arg1;
-+ (void)_setExceptionHandlingDisabled:(bool)arg1;
++ (void)_setExceptionHandlingDisabled:(BOOL)arg1;
 + (void)_unregisterIMLocalObject:(id)arg1;
 + (void)initialize;
 
 - (void)_cancelHandlerCompleted;
-- (void)_clearPort:(bool)arg1;
+- (void)_clearPort:(BOOL)arg1;
 - (id)_currentMessageContext;
 - (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;
-- (bool)_handleInvocation:(id)arg1;
+- (BOOL)_handleInvocation:(id)arg1;
 - (void)_handleNewInvocations;
 - (void)_noteNewInvocation;
 - (id)_peekInvocation;
@@ -35,14 +35,14 @@
 - (id)connection;
 - (void)dealloc;
 - (id)description;
-- (bool)handleInvocation:(id)arg1;
-- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 offMainThread:(bool)arg4;
+- (BOOL)handleInvocation:(id)arg1;
+- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 offMainThread:(BOOL)arg4;
 - (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
 - (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;
-- (bool)isValid;
-- (bool)isValidSelector:(SEL)arg1;
+- (BOOL)isValid;
+- (BOOL)isValidSelector:(SEL)arg1;
 - (id)portName;
 - (void)setPortName:(id)arg1;
 - (void)setTarget:(id)arg1;

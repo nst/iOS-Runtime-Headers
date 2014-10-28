@@ -12,8 +12,8 @@
 }
 
 @property int btState;
-@property bool hasBtState;
-@property bool hasTimestamp;
+@property BOOL hasBtState;
+@property BOOL hasTimestamp;
 @property unsigned long long timestamp;
 
 - (int)btState;
@@ -21,15 +21,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasBtState;
-- (bool)hasTimestamp;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
+- (BOOL)hasBtState;
+- (BOOL)hasTimestamp;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setBtState:(int)arg1;
-- (void)setHasBtState:(bool)arg1;
-- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasBtState:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

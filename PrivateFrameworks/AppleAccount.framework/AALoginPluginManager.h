@@ -5,31 +5,31 @@
 @class <AASetupAssistantDelegateService>, NSArray, NSObject<OS_dispatch_queue>;
 
 @interface AALoginPluginManager : NSObject {
+    BOOL _hasStashedLoginResponse;
     <AASetupAssistantDelegateService> *_idsPlugin;
     NSObject<OS_dispatch_queue> *_pluginNotificationQueue;
     NSArray *_plugins;
-    bool_hasStashedLoginResponse;
-    bool_shouldSkipiTunesPlugin;
-    bool_shouldStashLoginResponse;
+    BOOL _shouldSkipiTunesPlugin;
+    BOOL _shouldStashLoginResponse;
 }
 
-@property bool shouldSkipiTunesPlugin;
-@property bool shouldStashLoginResponse;
+@property BOOL shouldSkipiTunesPlugin;
+@property BOOL shouldStashLoginResponse;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_loadPlugins;
-- (bool)_notifyServicesOfLoginResponse:(id)arg1 forAppleID:(id)arg2 password:(id)arg3;
+- (BOOL)_notifyServicesOfLoginResponse:(id)arg1 forAppleID:(id)arg2 password:(id)arg3;
 - (void)_stashServiceTokensFromResponse:(id)arg1;
 - (id)collectParametersForIdentityEstablishmentRequest;
 - (id)collectParametersForLoginRequest;
 - (id)init;
 - (void)notifyServicesOfLoginResponse:(id)arg1 forAppleID:(id)arg2 password:(id)arg3 completion:(id)arg4;
-- (void)setShouldSkipiTunesPlugin:(bool)arg1;
-- (void)setShouldStashLoginResponse:(bool)arg1;
-- (bool)shouldSkipiTunesPlugin;
-- (bool)shouldStashLoginResponse;
+- (void)setShouldSkipiTunesPlugin:(BOOL)arg1;
+- (void)setShouldStashLoginResponse:(BOOL)arg1;
+- (BOOL)shouldSkipiTunesPlugin;
+- (BOOL)shouldStashLoginResponse;
 - (void)unstashLoginResponse;
 
 @end

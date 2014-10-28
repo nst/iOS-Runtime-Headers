@@ -3,13 +3,13 @@
  */
 
 @interface UIKeyboardBehaviors_Handwriting : TIKeyboardBehaviors {
-    bool_usesCandidateSelection;
+    BOOL _usesCandidateSelection;
 }
 
-@property bool usesCandidateSelection;
+@property BOOL usesCandidateSelection;
 
 - (id)keyBehaviorsForState:(id)arg1;
-- (void)setUsesCandidateSelection:(bool)arg1;
-- (bool)usesCandidateSelection;
+- (void)setUsesCandidateSelection:(BOOL)arg1;
+- (BOOL)usesCandidateSelection;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface _UIAlertExternalViewControllerButton : UIButton {
-    long long _index;
+    int _index;
 }
 
-@property long long index;
+@property int index;
 
-- (long long)index;
-- (void)setIndex:(long long)arg1;
+- (int)index;
+- (void)setIndex:(int)arg1;
 
 @end

@@ -8,7 +8,7 @@
     CKDPLikedId *_identifier;
 }
 
-@property(readonly) bool hasIdentifier;
+@property(readonly) BOOL hasIdentifier;
 @property(retain) CKDPLikedId * identifier;
 
 + (id)options;
@@ -18,12 +18,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasIdentifier;
-- (unsigned long long)hash;
+- (BOOL)hasIdentifier;
+- (unsigned int)hash;
 - (id)identifier;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setIdentifier:(id)arg1;

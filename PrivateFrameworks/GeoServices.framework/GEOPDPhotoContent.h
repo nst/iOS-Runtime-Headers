@@ -14,9 +14,9 @@
     unsigned int _width;
 }
 
-@property bool hasHeight;
-@property(readonly) bool hasUrl;
-@property bool hasWidth;
+@property BOOL hasHeight;
+@property(readonly) BOOL hasUrl;
+@property BOOL hasWidth;
 @property unsigned int height;
 @property(retain) NSString * url;
 @property unsigned int width;
@@ -26,16 +26,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasHeight;
-- (bool)hasUrl;
-- (bool)hasWidth;
-- (unsigned long long)hash;
+- (BOOL)hasHeight;
+- (BOOL)hasUrl;
+- (BOOL)hasWidth;
+- (unsigned int)hash;
 - (unsigned int)height;
-- (bool)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (bool)readFrom:(id)arg1;
-- (void)setHasHeight:(bool)arg1;
-- (void)setHasWidth:(bool)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (void)setHasHeight:(BOOL)arg1;
+- (void)setHasWidth:(BOOL)arg1;
 - (void)setHeight:(unsigned int)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setWidth:(unsigned int)arg1;

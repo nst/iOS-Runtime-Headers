@@ -6,11 +6,11 @@
 
 @interface OCImporter : OCMapper {
     NSString *_docPassphrase;
-    boolmTryAlternateReader;
     NSData *mData;
     OITSUProgressContext *mProgressContext;
     OCDReader *mReader;
     TCImportTracing *mTracing;
+    BOOL mTryAlternateReader;
     NSURL *mURL;
 }
 
@@ -27,16 +27,16 @@
 - (void)finalizeBackgroundTasksWithDocumentState:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (bool)isDocumentEncryptedUnsupportedVersion:(bool*)arg1 errorMessage:(id*)arg2;
-- (bool)isDocumentEncryptedUnsupportedVersionHelper:(bool*)arg1 errorMessage:(id*)arg2 readError:(bool*)arg3;
-- (bool)isXML;
+- (BOOL)isDocumentEncryptedUnsupportedVersion:(BOOL*)arg1 errorMessage:(id*)arg2;
+- (BOOL)isDocumentEncryptedUnsupportedVersionHelper:(BOOL*)arg1 errorMessage:(id*)arg2 readError:(BOOL*)arg3;
+- (BOOL)isXML;
 - (id)progressContext;
 - (void)setDocPassphrase:(id)arg1;
-- (bool)setPassphrase:(id)arg1;
+- (BOOL)setPassphrase:(id)arg1;
 - (void)setProgressContext:(id)arg1;
 - (void)setURL:(id)arg1;
-- (bool)start;
+- (BOOL)start;
 - (id)tracing;
-- (bool)tryAlternateReader;
+- (BOOL)tryAlternateReader;
 
 @end

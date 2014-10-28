@@ -11,7 +11,7 @@
 }
 
 @property(retain) CalDAVCalendarServerChangesItem * changes;
-@property(readonly) bool isMaster;
+@property(readonly) BOOL isMaster;
 @property(retain) CoreDAVItemWithNoChildren * master;
 @property(retain) CoreDAVLeafItem * recurrenceID;
 
@@ -21,7 +21,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (bool)isMaster;
+- (BOOL)isMaster;
 - (id)master;
 - (id)recurrenceID;
 - (void)setChanges:(id)arg1;

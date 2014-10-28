@@ -5,24 +5,28 @@
 @class NSArray;
 
 @interface CKModifyRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
+    BOOL _allowDefaultZoneSave;
+    BOOL _markZonesAsUserPurged;
     NSArray *_recordZoneIDsToDelete;
     NSArray *_recordZonesToSave;
-    bool_allowDefaultZoneSave;
 }
 
-@property bool allowDefaultZoneSave;
+@property BOOL allowDefaultZoneSave;
+@property BOOL markZonesAsUserPurged;
 @property(retain) NSArray * recordZoneIDsToDelete;
 @property(retain) NSArray * recordZonesToSave;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)allowDefaultZoneSave;
+- (BOOL)allowDefaultZoneSave;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)markZonesAsUserPurged;
 - (id)recordZoneIDsToDelete;
 - (id)recordZonesToSave;
-- (void)setAllowDefaultZoneSave:(bool)arg1;
+- (void)setAllowDefaultZoneSave:(BOOL)arg1;
+- (void)setMarkZonesAsUserPurged:(BOOL)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (void)setRecordZonesToSave:(id)arg1;
 

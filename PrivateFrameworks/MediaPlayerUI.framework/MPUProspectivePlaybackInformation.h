@@ -7,13 +7,13 @@
 @interface MPUProspectivePlaybackInformation : NSObject <NSCopying> {
 }
 
-@property(readonly) bool isRadioProspectivePlaybackInformation;
+@property(readonly) BOOL isRadioProspectivePlaybackInformation;
 @property(readonly) RadioStation * radioStation;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (bool)isRadioProspectivePlaybackInformation;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isRadioProspectivePlaybackInformation;
 - (id)radioStation;
 
 @end

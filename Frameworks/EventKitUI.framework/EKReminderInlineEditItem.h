@@ -6,27 +6,27 @@
 
 @interface EKReminderInlineEditItem : EKReminderEditItem <EKExpandingTextViewDelegate> {
     EKReminderInlineEditItemCell *_cell;
-    bool_isListeningToHeightChanges;
+    BOOL _isListeningToHeightChanges;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyStylesFromStyleProviderToTextView:(id)arg1;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
-- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
-- (long long)cellStyle;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (int)cellStyle;
 - (void)dealloc;
-- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)init;
-- (bool)isInline;
+- (BOOL)isInline;
 - (id)newCell;
-- (bool)shouldPinKeyboard;
+- (BOOL)shouldPinKeyboard;
 - (id)textFromReminder;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;

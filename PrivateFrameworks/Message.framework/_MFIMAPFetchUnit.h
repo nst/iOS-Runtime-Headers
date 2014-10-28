@@ -23,7 +23,7 @@
 - (id)copyFailedFetchResponse;
 - (void)dealloc;
 - (id)fetchItem;
-- (bool)matchesFetchResponse:(id)arg1;
+- (BOOL)matchesFetchResponse:(id)arg1;
 - (void)setBodyDataConsumer:(id)arg1;
 - (void)setConsumerSection:(id)arg1;
 - (void)setFetchItem:(id)arg1;

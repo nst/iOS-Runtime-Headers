@@ -5,45 +5,45 @@
 @class NSDictionary, NSObject<OS_dispatch_queue>, RadioRequestContext;
 
 @interface RadioRequest : NSObject {
-    long long _errorCode;
+    BOOL _asynchronousBackgroundRequest;
+    BOOL _cachedResponse;
+    int _errorCode;
     NSObject<OS_dispatch_queue> *_queue;
     RadioRequestContext *_requestContext;
     double _retryInterval;
-    long long _status;
+    int _status;
     NSDictionary *_unparsedResponseDictionary;
-    bool_asynchronousBackgroundRequest;
-    bool_cachedResponse;
 }
 
-@property(getter=isAsynchronousBackgroundRequest) bool asynchronousBackgroundRequest;
-@property(getter=isCachedResponse,readonly) bool cachedResponse;
-@property(readonly) long long errorCode;
+@property(getter=isAsynchronousBackgroundRequest) BOOL asynchronousBackgroundRequest;
+@property(getter=isCachedResponse,readonly) BOOL cachedResponse;
+@property(readonly) int errorCode;
 @property(copy) RadioRequestContext * requestContext;
 @property(readonly) double retryInterval;
-@property(readonly) long long status;
+@property(readonly) int status;
 @property(copy,readonly) NSDictionary * unparsedResponseDictionary;
 
 + (void)loadServiceConfigurationWithCompletionHandler:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_loadRadioStoreBagAndAllowRetry:(bool)arg1 withCompletionHandler:(id)arg2;
+- (void)_loadRadioStoreBagAndAllowRetry:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (void)_loadRadioStoreBagWithCompletionHandler:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (long long)errorCode;
+- (int)errorCode;
 - (id)init;
-- (bool)isAsynchronousBackgroundRequest;
-- (bool)isCachedResponse;
+- (BOOL)isAsynchronousBackgroundRequest;
+- (BOOL)isCachedResponse;
 - (id)requestContext;
 - (double)retryInterval;
-- (void)setAsynchronousBackgroundRequest:(bool)arg1;
-- (void)setCachedResponse:(bool)arg1;
-- (void)setErrorCode:(long long)arg1;
+- (void)setAsynchronousBackgroundRequest:(BOOL)arg1;
+- (void)setCachedResponse:(BOOL)arg1;
+- (void)setErrorCode:(int)arg1;
 - (void)setRequestContext:(id)arg1;
 - (void)setRetryInterval:(double)arg1;
-- (void)setStatus:(long long)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setUnparsedResponseDictionary:(id)arg1;
-- (long long)status;
+- (int)status;
 - (id)unparsedResponseDictionary;
 
 @end

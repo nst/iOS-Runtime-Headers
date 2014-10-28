@@ -17,7 +17,7 @@
 @property(copy) NSNumber * contentIdentifier;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSString * playerGUID;
 @property(copy) NSArray * sinfs;
 @property(readonly) Class superclass;

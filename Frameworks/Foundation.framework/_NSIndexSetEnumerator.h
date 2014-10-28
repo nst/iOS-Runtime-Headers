@@ -5,7 +5,7 @@
 @class NSIndexSet;
 
 @interface _NSIndexSetEnumerator : NSEnumerator {
-    unsigned long long _index;
+    unsigned int _index;
     NSIndexSet *_indexSet;
 }
 

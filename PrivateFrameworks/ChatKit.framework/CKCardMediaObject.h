@@ -5,8 +5,8 @@
 @interface CKCardMediaObject : CKMediaObject {
 }
 
-- (bool)shouldBeQuickLooked;
-- (bool)shouldShowDisclosure;
-- (bool)shouldShowViewer;
+- (BOOL)shouldBeQuickLooked;
+- (BOOL)shouldShowDisclosure;
+- (BOOL)shouldShowViewer;
 
 @end

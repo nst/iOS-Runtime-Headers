@@ -16,14 +16,14 @@
 @property <MKSmallCalloutViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) UIView * detailView;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) UIView * leftView;
-@property unsigned long long mapDisplayStyle;
-@property double maximumWidth;
+@property unsigned int mapDisplayStyle;
+@property float maximumWidth;
 @property(retain) UIView * rightView;
 @property(readonly) Class superclass;
 
-+ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct CGSize { float x1; float x2; })defaultSize;
 
 - (void).cxx_destruct;
 - (id)_smallCalloutView;
@@ -31,32 +31,32 @@
 - (id)calloutBackgroundView;
 - (id)calloutSubtitle;
 - (id)calloutTitle;
-- (bool)canDisplayCompleteTitleWhenExpanded;
+- (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (id)delegate;
 - (id)detailView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)leftView;
 - (void)loadView;
-- (unsigned long long)mapDisplayStyle;
-- (double)maximumWidth;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (unsigned int)mapDisplayStyle;
+- (float)maximumWidth;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)reset;
 - (id)rightView;
 - (void)setCalloutBackgroundView:(id)arg1;
-- (void)setCalloutSubtitle:(id)arg1 animated:(bool)arg2;
+- (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setCalloutSubtitle:(id)arg1;
 - (void)setCalloutTitle:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDetailView:(id)arg1 animated:(bool)arg2;
+- (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 - (void)setDetailView:(id)arg1;
-- (void)setLeftView:(id)arg1 animated:(bool)arg2;
+- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
-- (void)setMapDisplayStyle:(unsigned long long)arg1;
-- (void)setMaximumWidth:(double)arg1;
-- (void)setRightView:(id)arg1 animated:(bool)arg2;
+- (void)setMapDisplayStyle:(unsigned int)arg1;
+- (void)setMaximumWidth:(float)arg1;
+- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightView:(id)arg1;
 - (void)updatePreferredContentSize;
-- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

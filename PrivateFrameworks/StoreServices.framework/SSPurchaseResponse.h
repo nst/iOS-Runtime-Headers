@@ -5,6 +5,7 @@
 @class NSArray, NSError, NSMutableDictionary, NSString, SSPurchase, SSURLConnectionResponse;
 
 @interface SSPurchaseResponse : NSObject <SSXPCCoding> {
+    BOOL _cancelsPurchaseBatch;
     NSArray *_downloadIdentifiers;
     NSError *_error;
     SSPurchase *_purchase;
@@ -13,16 +14,15 @@
     double _responseEndTime;
     double _responseStartTime;
     NSMutableDictionary *_transactionIdentifiers;
-    bool_cancelsPurchaseBatch;
 }
 
 @property(retain) SSURLConnectionResponse * URLResponse;
-@property bool cancelsPurchaseBatch;
+@property BOOL cancelsPurchaseBatch;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSArray * downloadIdentifiers;
 @property(copy) NSError * error;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) SSPurchase * purchase;
 @property double requestStartTime;
 @property double responseEndTime;
@@ -30,7 +30,7 @@
 @property(readonly) Class superclass;
 
 - (id)URLResponse;
-- (bool)cancelsPurchaseBatch;
+- (BOOL)cancelsPurchaseBatch;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadIdentifiers;
@@ -41,7 +41,7 @@
 - (double)responseEndTime;
 - (id)responseMetrics;
 - (double)responseStartTime;
-- (void)setCancelsPurchaseBatch:(bool)arg1;
+- (void)setCancelsPurchaseBatch:(BOOL)arg1;
 - (void)setDownloadIdentifiers:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPurchase:(id)arg1;

@@ -26,7 +26,7 @@
 - (void)dealloc;
 - (void)destroyAllPluginInstanceViews;
 - (id)init;
-- (bool)isMIMETypeRegistered:(id)arg1;
+- (BOOL)isMIMETypeRegistered:(id)arg1;
 - (id)pluginForExtension:(id)arg1;
 - (id)pluginForMIMEType:(id)arg1;
 - (id)plugins;

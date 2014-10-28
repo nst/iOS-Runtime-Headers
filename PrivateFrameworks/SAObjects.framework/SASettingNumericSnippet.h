@@ -5,14 +5,14 @@
 @interface SASettingNumericSnippet : SASettingSnippet {
 }
 
-@property bool increment;
+@property BOOL increment;
 
 + (id)numericSnippet;
 + (id)numericSnippetWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (bool)increment;
-- (void)setIncrement:(bool)arg1;
+- (BOOL)increment;
+- (void)setIncrement:(BOOL)arg1;
 
 @end

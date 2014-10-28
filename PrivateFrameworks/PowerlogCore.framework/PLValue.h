@@ -16,30 +16,30 @@
 @property(retain) id value;
 
 + (id)formattedStringForDate:(id)arg1;
-+ (bool)isFormater:(short)arg1 validForObject:(id)arg2;
++ (BOOL)isFormater:(short)arg1 validForObject:(id)arg2;
 + (void)resetTimestampFormaterTimezone;
-+ (id)valueWithBool:(bool)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
++ (id)valueWithBool:(BOOL)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithDate:(id)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithDouble:(double)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
-+ (id)valueWithLong:(long long)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
++ (id)valueWithLong:(long)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithLongLong:(long long)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithNumber:(id)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithString:(id)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithTimeIntervalSince1970:(double)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
-+ (id)valueWithUnsignedLong:(unsigned long long)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
++ (id)valueWithUnsignedLong:(unsigned long)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithUnsignedLongLong:(unsigned long long)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 + (id)valueWithValue:(id)arg1 withUnit:(id)arg2 withFormat:(short)arg3;
 
 - (void).cxx_destruct;
-- (bool)boolValue;
-- (long long)compare:(id)arg1;
+- (BOOL)boolValue;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (double)doubleValue;
 - (short)formatter;
 - (id)init;
 - (long long)longLongValue;
-- (long long)longValue;
+- (long)longValue;
 - (id)numberFormatter;
 - (void)setFormatter:(short)arg1;
 - (void)setUnit:(id)arg1;
@@ -47,7 +47,7 @@
 - (double)timeIntervalSince1970;
 - (id)unit;
 - (unsigned long long)unsignedLongLongValue;
-- (unsigned long long)unsignedLongValue;
+- (unsigned long)unsignedLongValue;
 - (id)value;
 
 @end

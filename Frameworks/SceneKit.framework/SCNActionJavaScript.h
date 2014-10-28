@@ -15,7 +15,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1;
-- (bool)isCustom;
+- (BOOL)isCustom;
 - (id)reversedAction;
 
 @end

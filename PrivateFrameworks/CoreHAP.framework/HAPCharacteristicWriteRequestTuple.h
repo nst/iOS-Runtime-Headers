@@ -2,20 +2,24 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class HAPCharacteristic;
+@class HAPCharacteristic, NSData;
 
 @interface HAPCharacteristicWriteRequestTuple : NSObject {
+    NSData *_authorizationData;
     HAPCharacteristic *_characteristic;
     id _value;
 }
 
+@property(retain) NSData * authorizationData;
 @property(retain) HAPCharacteristic * characteristic;
 @property(retain) id value;
 
-+ (id)writeRequestTupleForCharacteristic:(id)arg1 value:(id)arg2;
++ (id)writeRequestTupleForCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3;
 
 - (void).cxx_destruct;
+- (id)authorizationData;
 - (id)characteristic;
+- (void)setAuthorizationData:(id)arg1;
 - (void)setCharacteristic:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

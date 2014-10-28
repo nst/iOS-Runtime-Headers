@@ -8,7 +8,7 @@
     <GEOCacheManaging> *_proxy;
 }
 
-+ (bool)_isLocalProxy;
++ (BOOL)_isLocalProxy;
 + (id)sharedManager;
 + (void)useLocalProxy;
 + (void)useRemoteProxy;
@@ -16,7 +16,7 @@
 - (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (long long)invalidationStateForPlace:(id)arg1;
+- (int)invalidationStateForPlace:(id)arg1;
 - (void)versionsForDomains:(id)arg1 handler:(id)arg2;
 
 @end

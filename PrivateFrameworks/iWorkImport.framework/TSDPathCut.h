@@ -3,19 +3,19 @@
  */
 
 @interface TSDPathCut : NSObject {
-    long long mSegment;
-    double mSkew;
-    double mT;
+    int mSegment;
+    float mSkew;
+    float mT;
 }
 
-@property(readonly) long long segment;
-@property(readonly) double skew;
-@property(readonly) double t;
+@property(readonly) int segment;
+@property(readonly) float skew;
+@property(readonly) float t;
 
 - (id)description;
-- (id)initWithSegment:(long long)arg1 atT:(double)arg2 withSkew:(double)arg3;
-- (long long)segment;
-- (double)skew;
-- (double)t;
+- (id)initWithSegment:(int)arg1 atT:(float)arg2 withSkew:(float)arg3;
+- (int)segment;
+- (float)skew;
+- (float)t;
 
 @end

@@ -5,20 +5,20 @@
 @class NSString;
 
 @interface _NSLayoutConstraintConstant : NSObject <NSCoding, NSCopying> {
-    double _numericValue;
+    float _numericValue;
     NSString *_symbolicValue;
 }
 
-@property(readonly) double numericValue;
+@property(readonly) float numericValue;
 @property(copy,readonly) NSString * symbolicValue;
 
-+ (id)constantWithSymbolicValue:(id)arg1 numericValue:(double)arg2;
++ (id)constantWithSymbolicValue:(id)arg1 numericValue:(float)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSymbolicValue:(id)arg1 numericValue:(double)arg2;
-- (double)numericValue;
+- (id)initWithSymbolicValue:(id)arg1 numericValue:(float)arg2;
+- (float)numericValue;
 - (id)symbolicValue;
 
 @end

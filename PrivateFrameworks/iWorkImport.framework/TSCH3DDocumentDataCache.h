@@ -13,7 +13,7 @@
 
 - (id)dataForFile:(id)arg1 group:(id)arg2 generateBlock:(id)arg3;
 - (void)dealloc;
-- (bool)debug_nukeDocumentCachePathForGroup:(id)arg1;
+- (BOOL)debug_nukeDocumentCachePathForGroup:(id)arg1;
 - (id)init;
 - (id)initWithDocumentRoot:(id)arg1;
 

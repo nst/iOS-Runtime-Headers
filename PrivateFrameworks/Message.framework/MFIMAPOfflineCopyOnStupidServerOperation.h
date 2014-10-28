@@ -7,12 +7,12 @@
     struct __CFArray { } *messageIds;
 }
 
-- (void)_deserializeOpSpecificValuesFromData:(id)arg1 cursor:(unsigned long long*)arg2;
+- (void)_deserializeOpSpecificValuesFromData:(id)arg1 cursor:(unsigned int*)arg2;
 - (unsigned char)_magic;
 - (unsigned int)approximateSize;
 - (void)dealloc;
 - (void)expungeTemporaryUid:(unsigned int)arg1;
-- (bool)getMessageId:(id*)arg1 andInternalDate:(id*)arg2 forDestinationUid:(unsigned int)arg3;
+- (BOOL)getMessageId:(id*)arg1 andInternalDate:(id*)arg2 forDestinationUid:(unsigned int)arg3;
 - (void)serializeIntoData:(id)arg1;
 - (void)setMessageId:(id)arg1 andInternalDate:(id)arg2 forMessageWithSourceUid:(unsigned int)arg3;
 

@@ -3,15 +3,15 @@
  */
 
 @interface CKMultiCache : IMMultiDict {
-    unsigned long long _limit;
+    unsigned int _limit;
 }
 
-@property unsigned long long limit;
+@property unsigned int limit;
 
 - (void)dealloc;
 - (id)init;
-- (unsigned long long)limit;
+- (unsigned int)limit;
 - (void)pushObject:(id)arg1 forKey:(id)arg2;
-- (void)setLimit:(unsigned long long)arg1;
+- (void)setLimit:(unsigned int)arg1;
 
 @end

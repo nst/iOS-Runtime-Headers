@@ -18,7 +18,7 @@
 @property(retain) NSUUID * proximityUUID;
 @property(retain) NSString * relevantText;
 
-+ (bool)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

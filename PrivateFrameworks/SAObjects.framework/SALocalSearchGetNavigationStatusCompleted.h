@@ -10,7 +10,7 @@
 @property(copy) NSString * aceId;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) SALocalSearchAceNavigationEta * nextManeuverEta;
 @property(retain) SALocalSearchAceNavigationEta * overallEta;
 @property(copy) NSString * refId;

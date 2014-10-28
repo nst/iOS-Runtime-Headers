@@ -4,66 +4,66 @@
 
 @interface KNBuildSkidSmokeSystem : TSDGLParticleSystem {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
-    double _moveDuration;
-    double _smokeLift;
+    BOOL _isOutgoing;
+    float _moveDuration;
+    float _smokeLift;
     } _smokeLine;
-    double _smokeRotationMax;
-    double _smokeScaleMax;
+    float _smokeRotationMax;
+    float _smokeScaleMax;
     } _smokeSpeedMax;
-    double _smokeStartLocationPower;
-    double _smokeStartTime;
-    bool_isOutgoing;
+    float _smokeStartLocationPower;
+    float _smokeStartTime;
 }
 
-@property bool isOutgoing;
-@property double moveDuration;
-@property double smokeLift;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } smokeLine;
-@property double smokeRotationMax;
-@property double smokeScaleMax;
-@property struct CGSize { double x1; double x2; } smokeSpeedMax;
-@property double smokeStartLocationPower;
-@property double smokeStartTime;
+@property BOOL isOutgoing;
+@property float moveDuration;
+@property float smokeLift;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } smokeLine;
+@property float smokeRotationMax;
+@property float smokeScaleMax;
+@property struct CGSize { float x1; float x2; } smokeSpeedMax;
+@property float smokeStartLocationPower;
+@property float smokeStartTime;
 
-+ (bool)useVisibilities;
-+ (bool)willOverrideStartingPoints;
++ (BOOL)useVisibilities;
++ (BOOL)willOverrideStartingPoints;
 
-- (bool)isOutgoing;
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (double)moveDuration;
-- (double)p_skidGlobalScale;
-- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (double)rotationMax;
-- (double)scaleAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setIsOutgoing:(bool)arg1;
-- (void)setMoveDuration:(double)arg1;
-- (void)setSmokeLift:(double)arg1;
-- (void)setSmokeLine:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setSmokeRotationMax:(double)arg1;
-- (void)setSmokeScaleMax:(double)arg1;
-- (void)setSmokeSpeedMax:(struct CGSize { double x1; double x2; })arg1;
-- (void)setSmokeStartLocationPower:(double)arg1;
-- (void)setSmokeStartTime:(double)arg1;
-- (double)smokeLift;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })smokeLine;
-- (double)smokeRotationMax;
-- (double)smokeScaleMax;
-- (struct CGSize { double x1; double x2; })smokeSpeedMax;
-- (double)smokeStartLocationPower;
-- (double)smokeStartTime;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (double)speedMax;
-- (struct CGPoint { double x1; double x2; })startingPointAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)isOutgoing;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (float)moveDuration;
+- (float)p_skidGlobalScale;
+- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (float)rotationMax;
+- (float)scaleAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setIsOutgoing:(BOOL)arg1;
+- (void)setMoveDuration:(float)arg1;
+- (void)setSmokeLift:(float)arg1;
+- (void)setSmokeLine:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSmokeRotationMax:(float)arg1;
+- (void)setSmokeScaleMax:(float)arg1;
+- (void)setSmokeSpeedMax:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSmokeStartLocationPower:(float)arg1;
+- (void)setSmokeStartTime:(float)arg1;
+- (float)smokeLift;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })smokeLine;
+- (float)smokeRotationMax;
+- (float)smokeScaleMax;
+- (struct CGSize { float x1; float x2; })smokeSpeedMax;
+- (float)smokeStartLocationPower;
+- (float)smokeStartTime;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (float)speedMax;
+- (struct CGPoint { float x1; float x2; })startingPointAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

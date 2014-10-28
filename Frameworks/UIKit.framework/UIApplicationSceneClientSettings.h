@@ -7,38 +7,38 @@
 @interface UIApplicationSceneClientSettings : FBSSceneClientSettings <UIApplicationSceneClientSettings> {
 }
 
-@property(readonly) long long compatibilityMode;
-@property(readonly) long long controlCenterRevealMode;
+@property(readonly) int compatibilityMode;
+@property(readonly) int controlCenterRevealMode;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) double defaultPNGExpirationTime;
 @property(copy,readonly) NSString * defaultPNGName;
-@property(readonly) bool defaultStatusBarHidden;
-@property(readonly) long long defaultStatusBarStyle;
+@property(readonly) BOOL defaultStatusBarHidden;
+@property(readonly) int defaultStatusBarStyle;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
-@property(readonly) bool idleTimerDisabled;
-@property(readonly) long long notificationCenterRevealMode;
-@property(readonly) bool orientationEnabled;
-@property(readonly) unsigned long long proximityDetectionModes;
-@property(readonly) bool statusBarHidden;
-@property(readonly) long long statusBarStyle;
+@property(readonly) unsigned int hash;
+@property(readonly) BOOL idleTimerDisabled;
+@property(readonly) int notificationCenterRevealMode;
+@property(readonly) BOOL orientationEnabled;
+@property(readonly) unsigned int proximityDetectionModes;
+@property(readonly) BOOL statusBarHidden;
+@property(readonly) int statusBarStyle;
 @property(readonly) Class superclass;
 
-- (long long)compatibilityMode;
-- (long long)controlCenterRevealMode;
+- (int)compatibilityMode;
+- (int)controlCenterRevealMode;
 - (double)defaultPNGExpirationTime;
 - (id)defaultPNGName;
-- (bool)defaultStatusBarHidden;
-- (long long)defaultStatusBarStyle;
-- (bool)idleTimerDisabled;
-- (bool)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (BOOL)defaultStatusBarHidden;
+- (int)defaultStatusBarStyle;
+- (BOOL)idleTimerDisabled;
+- (BOOL)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (long long)notificationCenterRevealMode;
-- (bool)orientationEnabled;
-- (unsigned long long)proximityDetectionModes;
-- (bool)statusBarHidden;
-- (long long)statusBarStyle;
-- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (int)notificationCenterRevealMode;
+- (BOOL)orientationEnabled;
+- (unsigned int)proximityDetectionModes;
+- (BOOL)statusBarHidden;
+- (int)statusBarStyle;
+- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

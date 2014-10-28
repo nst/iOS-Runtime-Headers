@@ -3,29 +3,29 @@
  */
 
 @interface FBApplicationDefaults : NSObject {
-    long long _backgroundStyle;
-    long long _interfaceOrientation;
-    long long _statusBarStyle;
-    bool_statusBarHidden;
-    bool_statusBarHiddenWhenVerticallyCompact;
+    int _backgroundStyle;
+    int _interfaceOrientation;
+    BOOL _statusBarHidden;
+    BOOL _statusBarHiddenWhenVerticallyCompact;
+    int _statusBarStyle;
 }
 
-@property long long backgroundStyle;
-@property long long interfaceOrientation;
-@property bool statusBarHidden;
-@property bool statusBarHiddenWhenVerticallyCompact;
-@property long long statusBarStyle;
+@property int backgroundStyle;
+@property int interfaceOrientation;
+@property BOOL statusBarHidden;
+@property BOOL statusBarHiddenWhenVerticallyCompact;
+@property int statusBarStyle;
 
-- (long long)backgroundStyle;
+- (int)backgroundStyle;
 - (id)init;
-- (long long)interfaceOrientation;
-- (void)setBackgroundStyle:(long long)arg1;
-- (void)setInterfaceOrientation:(long long)arg1;
-- (void)setStatusBarHidden:(bool)arg1;
-- (void)setStatusBarHiddenWhenVerticallyCompact:(bool)arg1;
-- (void)setStatusBarStyle:(long long)arg1;
-- (bool)statusBarHidden;
-- (bool)statusBarHiddenWhenVerticallyCompact;
-- (long long)statusBarStyle;
+- (int)interfaceOrientation;
+- (void)setBackgroundStyle:(int)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
+- (void)setStatusBarHidden:(BOOL)arg1;
+- (void)setStatusBarHiddenWhenVerticallyCompact:(BOOL)arg1;
+- (void)setStatusBarStyle:(int)arg1;
+- (BOOL)statusBarHidden;
+- (BOOL)statusBarHiddenWhenVerticallyCompact;
+- (int)statusBarStyle;
 
 @end

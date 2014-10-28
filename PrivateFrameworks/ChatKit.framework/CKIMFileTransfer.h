@@ -7,40 +7,40 @@
 @interface CKIMFileTransfer : NSObject <CKFileTransfer> {
     unsigned long long _currentBytes;
     NSError *_error;
+    BOOL _fileDataReady;
     NSURL *_fileURL;
+    BOOL _fileURLFinalized;
     NSString *_filename;
     NSString *_guid;
     IMMessage *_imMessage;
     NSURL *_linkFileURL;
-    unsigned long long _mediaObjectCount;
+    unsigned int _mediaObjectCount;
+    BOOL _restoring;
     NSObject<OS_dispatch_queue> *_serial_queue;
     unsigned long long _totalBytes;
     NSDictionary *_transcoderUserInfo;
-    long long _transferState;
-    bool_fileDataReady;
-    bool_fileURLFinalized;
-    bool_restoring;
+    int _transferState;
 }
 
 @property(retain) IMMessage * IMMessage;
 @property(readonly) unsigned long long currentBytes;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isDownloadable,readonly) bool downloadable;
-@property(getter=isDownloading,readonly) bool downloading;
+@property(getter=isDownloadable,readonly) BOOL downloadable;
+@property(getter=isDownloading,readonly) BOOL downloading;
 @property(copy,readonly) NSError * error;
-@property(getter=isFileDataReady,readonly) bool fileDataReady;
+@property(getter=isFileDataReady,readonly) BOOL fileDataReady;
 @property(copy,readonly) NSURL * fileURL;
-@property(getter=isFileURLFinalized,readonly) bool fileURLFinalized;
+@property(getter=isFileURLFinalized,readonly) BOOL fileURLFinalized;
 @property(copy,readonly) NSString * filename;
 @property(copy,readonly) NSString * guid;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(copy) NSURL * linkFileURL;
-@property(getter=isRestoring,readonly) bool restoring;
+@property(getter=isRestoring,readonly) BOOL restoring;
 @property(readonly) Class superclass;
 @property(readonly) unsigned long long totalBytes;
 @property(copy,readonly) NSDictionary * transcoderUserInfo;
-@property long long transferState;
+@property int transferState;
 
 - (id)IMMessage;
 - (void)attachmentRestored:(id)arg1;
@@ -55,11 +55,11 @@
 - (id)imFileTransferCenter;
 - (id)initWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2;
 - (id)initWithTransferGUID:(id)arg1 imMessage:(id)arg2;
-- (bool)isDownloadable;
-- (bool)isDownloading;
-- (bool)isFileDataReady;
-- (bool)isFileURLFinalized;
-- (bool)isRestoring;
+- (BOOL)isDownloadable;
+- (BOOL)isDownloading;
+- (BOOL)isFileDataReady;
+- (BOOL)isFileURLFinalized;
+- (BOOL)isRestoring;
 - (id)linkFileURL;
 - (id)linkFileURLWithFilename:(id)arg1;
 - (void)mediaObjectAdded;
@@ -67,11 +67,11 @@
 - (id)notificationCenter;
 - (void)setIMMessage:(id)arg1;
 - (void)setLinkFileURL:(id)arg1;
-- (void)setTransferState:(long long)arg1;
+- (void)setTransferState:(int)arg1;
 - (id)syncController;
 - (unsigned long long)totalBytes;
 - (id)transcoderUserInfo;
-- (long long)transferState;
+- (int)transferState;
 - (void)transferUpdated:(id)arg1;
 - (void)updateTransfer;
 

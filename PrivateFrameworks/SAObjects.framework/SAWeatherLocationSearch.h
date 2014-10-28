@@ -17,7 +17,7 @@
 - (id)groupIdentifier;
 - (id)identifier;
 - (id)locationId;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setIdentifier:(id)arg1;
 - (void)setLocationId:(id)arg1;
 

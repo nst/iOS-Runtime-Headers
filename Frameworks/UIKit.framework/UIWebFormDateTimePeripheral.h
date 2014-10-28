@@ -15,7 +15,7 @@
 + (id)createPeripheralWithDOMHTMLInputElement:(id)arg1;
 
 - (id)_control;
-- (long long)_datePickerModeForInputType:(id)arg1;
+- (int)_datePickerModeForInputType:(id)arg1;
 - (id)_inputElement;
 - (id)assistantView;
 - (void)beginEditing;

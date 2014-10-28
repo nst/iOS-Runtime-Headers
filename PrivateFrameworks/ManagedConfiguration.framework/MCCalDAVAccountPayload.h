@@ -11,8 +11,8 @@
     NSString *_password;
     int _port;
     NSString *_principalURL;
+    BOOL _useSSL;
     NSString *_username;
-    bool_useSSL;
 }
 
 @property(retain,readonly) NSString * accountDescription;
@@ -21,7 +21,7 @@
 @property(copy) NSString * password;
 @property(readonly) int port;
 @property(retain,readonly) NSString * principalURL;
-@property(readonly) bool useSSL;
+@property(readonly) BOOL useSSL;
 @property(copy) NSString * username;
 
 + (id)localizedPluralForm;
@@ -47,7 +47,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)title;
-- (bool)useSSL;
+- (BOOL)useSSL;
 - (id)username;
 
 @end

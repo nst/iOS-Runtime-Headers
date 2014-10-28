@@ -10,19 +10,19 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 - (id)bufferedInputStream;
-- (id)bufferedInputStreamWithBufferSize:(unsigned long long)arg1;
+- (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
 - (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (id)data;
 - (long long)dataLength;
 - (void)dealloc;
-- (bool)hasSameLocationAs:(id)arg1;
+- (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)inputStream;
 - (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
-- (bool)isReadable;
+- (BOOL)isReadable;
 
 @end

@@ -5,23 +5,23 @@
 @class HKCategoryType;
 
 @interface HKCategorySample : HKSample {
-    long long _value;
+    int _value;
 }
 
 @property(readonly) HKCategoryType * categoryType;
-@property(readonly) long long value;
+@property(readonly) int value;
 
-+ (id)categorySampleWithType:(id)arg1 value:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
-+ (id)categorySampleWithType:(id)arg1 value:(long long)arg2 startDate:(id)arg3 endDate:(id)arg4;
-+ (bool)supportsSecureCoding;
++ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
++ (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4;
++ (BOOL)supportsSecureCoding;
 
-- (void)_setValue:(long long)arg1;
+- (void)_setValue:(int)arg1;
 - (id)_validateConfiguration;
 - (id)_valueDescription;
 - (id)categoryType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (long long)value;
+- (int)value;
 
 @end

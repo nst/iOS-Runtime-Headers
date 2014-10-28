@@ -15,7 +15,7 @@
 @property <CoreDAVTaskGroupDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) CoreDAVPropFindTask * fetchTask;
-@property(readonly) unsigned long long hash;
+@property(readonly) unsigned int hash;
 @property(retain) NSURL * inboxURL;
 @property(readonly) Class superclass;
 

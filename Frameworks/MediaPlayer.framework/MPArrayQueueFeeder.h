@@ -11,12 +11,12 @@
 @property(readonly) NSArray * items;
 
 - (void).cxx_destruct;
-- (id)copyRawItemAtIndex:(unsigned long long)arg1;
+- (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
-- (unsigned long long)itemCount;
+- (unsigned int)itemCount;
 - (id)items;
-- (id)pathAtIndex:(unsigned long long)arg1;
-- (id)playbackInfoAtIndex:(unsigned long long)arg1;
+- (id)pathAtIndex:(unsigned int)arg1;
+- (id)playbackInfoAtIndex:(unsigned int)arg1;
 
 @end

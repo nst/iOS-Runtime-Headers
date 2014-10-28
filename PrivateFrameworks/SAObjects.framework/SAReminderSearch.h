@@ -23,7 +23,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)listName;
-- (bool)requiresResponse;
+- (BOOL)requiresResponse;
 - (void)setCompletionStatus:(id)arg1;
 - (void)setDueAfter:(id)arg1;
 - (void)setDueBefore:(id)arg1;

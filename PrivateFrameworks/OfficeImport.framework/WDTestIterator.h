@@ -10,9 +10,9 @@
 }
 
 - (void)dealloc;
-- (BOOL)hasNext;
+- (bool)hasNext;
 - (id)initWithIterator:(id)arg1;
 - (id)next;
-- (BOOL)test:(id)arg1;
+- (bool)test:(id)arg1;
 
 @end

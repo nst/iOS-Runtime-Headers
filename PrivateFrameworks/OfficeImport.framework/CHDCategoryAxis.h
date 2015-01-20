@@ -8,7 +8,7 @@
     boolmNoMultipleLevelLabel;
     boolmShowSeriesNames;
     int mLabelAlignment;
-    long mLabelFrequency;
+    long long mLabelFrequency;
 }
 
 - (void)adjustAxisPositionForHorizontalChart;
@@ -17,10 +17,10 @@
 - (bool)isLabelFrequencyAutomatic;
 - (bool)isNoMultipleLabellevel;
 - (int)labelAlignment;
-- (long)labelFrequency;
+- (long long)labelFrequency;
 - (void)setAutomatic:(bool)arg1;
 - (void)setLabelAlignment:(int)arg1;
-- (void)setLabelFrequency:(long)arg1;
+- (void)setLabelFrequency:(long long)arg1;
 - (void)setNoMultipleLevelLabel:(bool)arg1;
 - (void)setShowSeriesLabels:(bool)arg1;
 - (bool)showSeriesLabels;

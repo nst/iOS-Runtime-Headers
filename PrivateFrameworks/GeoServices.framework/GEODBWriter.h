@@ -5,29 +5,26 @@
 @class NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface GEODBWriter : NSObject {
-    BOOL _closed;
     unsigned long long _databaseSize;
     struct sqlite3 { } *_db;
-    BOOL _defunct;
     struct sqlite3_stmt { } *_editionDelete;
     struct sqlite3_stmt { } *_editionInvalidate;
     void *_editionMap;
     struct sqlite3_stmt { } *_editionQuery;
     struct sqlite3_stmt { } *_editionUpdate;
     long long _evictionRowsThreshold;
-    unsigned int _expirationRecordCount;
+    unsigned long long _expirationRecordCount;
     struct { unsigned int x1; double x2; } *_expirationRecords;
     double _lastCheckedGeneralExpiration;
     long long _lastRowID;
     unsigned long long _maxDatabaseSize;
     NSString *_path;
-    unsigned int _pendingWriteBytes;
-    BOOL _preloading;
+    unsigned long long _pendingWriteBytes;
     struct sqlite3_stmt { } *_sizeQuery;
-    unsigned int _tileCacheMaximumWriteBytes;
-    unsigned int _tileCacheMaximumWriteCount;
-    unsigned int _tileCacheMinimumWriteBytes;
-    unsigned int _tileCacheMinimumWriteCount;
+    unsigned long long _tileCacheMaximumWriteBytes;
+    unsigned long long _tileCacheMaximumWriteCount;
+    unsigned long long _tileCacheMinimumWriteBytes;
+    unsigned long long _tileCacheMinimumWriteCount;
     struct sqlite3_stmt { } *_tileDelete;
     struct sqlite3_stmt { } *_tileInsert;
     struct sqlite3_stmt { } *_tileSize;
@@ -37,9 +34,12 @@
     NSMutableArray *_writeList;
     NSLock *_writeListLock;
     NSObject<OS_dispatch_queue> *_writeQueue;
+    bool_closed;
+    bool_defunct;
+    bool_preloading;
 }
 
-@property BOOL closed;
+@property bool closed;
 @property(readonly) unsigned long long databaseSize;
 @property unsigned long long maxDatabaseSize;
 @property(readonly) NSString * path;
@@ -55,22 +55,22 @@
 - (void)_evict;
 - (unsigned long long)_freeableDiskSpace;
 - (void)_localeChanged:(id)arg1;
-- (void)_openDBForceRecreate:(BOOL)arg1;
+- (void)_openDBForceRecreate:(bool)arg1;
 - (void)_openIfNecessary;
-- (void)_performWrites:(BOOL)arg1;
+- (void)_performWrites:(bool)arg1;
 - (void)_prepareStatements;
 - (void)_printDBStatus:(const char *)arg1;
-- (BOOL)_readEditions;
-- (void)_shrinkToUnderSize:(unsigned long long)arg1 vacuum:(BOOL)arg2;
-- (BOOL)_tileSetExpires:(unsigned int)arg1;
-- (void)_updateEdition:(unsigned int)arg1 forTileset:(unsigned int)arg2 provider:(unsigned int)arg3 invalidateOnly:(BOOL)arg4;
+- (bool)_readEditions;
+- (void)_shrinkToUnderSize:(unsigned long long)arg1 vacuum:(bool)arg2;
+- (bool)_tileSetExpires:(unsigned int)arg1;
+- (void)_updateEdition:(unsigned int)arg1 forTileset:(unsigned int)arg2 provider:(unsigned int)arg3 invalidateOnly:(bool)arg4;
 - (void)_updateSize;
 - (void)_writeEntry:(id)arg1;
 - (void)_writeVersion;
 - (void)addData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 edition:(unsigned int)arg3 set:(unsigned int)arg4 provider:(unsigned int)arg5 etag:(id)arg6;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
 - (void)calculateFreeableSizeWithHandler:(id)arg1;
-- (BOOL)closed;
+- (bool)closed;
 - (unsigned long long)databaseSize;
 - (void)dealloc;
 - (void)deleteData:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
@@ -81,9 +81,9 @@
 - (id)path;
 - (id)pendingWriteForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)pendingWritesForKeys:(id)arg1 handler:(id)arg2;
-- (BOOL)prepareSingleStatement:(struct sqlite3_stmt {}**)arg1 forSql:(id)arg2;
-- (void)setClosed:(BOOL)arg1;
-- (void)setExpirationRecords:(struct { unsigned int x1; double x2; }*)arg1 count:(unsigned int)arg2;
+- (bool)prepareSingleStatement:(struct sqlite3_stmt {}**)arg1 forSql:(id)arg2;
+- (void)setClosed:(bool)arg1;
+- (void)setExpirationRecords:(struct { unsigned int x1; double x2; }*)arg1 count:(unsigned long long)arg2;
 - (void)setMaxDatabaseSize:(unsigned long long)arg1;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(id)arg2;
 

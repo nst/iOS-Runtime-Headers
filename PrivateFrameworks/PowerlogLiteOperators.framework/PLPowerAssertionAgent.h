@@ -7,7 +7,6 @@
 @interface PLPowerAssertionAgent : PLAgent {
     NSMutableDictionary *_assertionAggregatedLastSample;
     PLCFNotificationOperatorComposition *_assertionBufferFullNotification;
-    BOOL _assertionBufferFullNotificationActive;
     PLNSTimerOperatorComposition *_assertionBufferFullNotificationRearmTimer;
     NSMutableArray *_assertionBufferNotificationTracking;
     PLCFNotificationOperatorComposition *_assertionNotification;
@@ -15,23 +14,24 @@
     PLEntryNotificationOperatorComposition *_batteryLevelNotificiations;
     PLEntryNotificationOperatorComposition *_canSleepNotification;
     PLNSNotificationOperatorComposition *_dailyTaskNotification;
-    BOOL _firstBufferDrain;
     PLNSTimerOperatorComposition *_runQueryTimer;
     PLEntryNotificationOperatorComposition *_wakeNotification;
+    bool_assertionBufferFullNotificationActive;
+    bool_firstBufferDrain;
 }
 
 @property(retain) NSMutableDictionary * assertionAggregatedLastSample;
 @property(retain) PLCFNotificationOperatorComposition * assertionBufferFullNotification;
-@property BOOL assertionBufferFullNotificationActive;
+@property bool assertionBufferFullNotificationActive;
 @property(retain) PLNSTimerOperatorComposition * assertionBufferFullNotificationRearmTimer;
 @property(retain) NSMutableArray * assertionBufferNotificationTracking;
 @property(retain) PLCFNotificationOperatorComposition * assertionNotification;
 @property(retain) PLNSTimerOperatorComposition * assertionSnapShotTimer;
-@property BOOL assertionSnapshotTimerActive;
+@property bool assertionSnapshotTimerActive;
 @property(retain) PLEntryNotificationOperatorComposition * batteryLevelNotificiations;
 @property(retain) PLEntryNotificationOperatorComposition * canSleepNotification;
 @property(retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
-@property BOOL firstBufferDrain;
+@property bool firstBufferDrain;
 @property(retain) PLNSTimerOperatorComposition * runQueryTimer;
 @property(retain) PLEntryNotificationOperatorComposition * wakeNotification;
 
@@ -52,18 +52,18 @@
 - (void).cxx_destruct;
 - (id)assertionAggregatedLastSample;
 - (id)assertionBufferFullNotification;
-- (BOOL)assertionBufferFullNotificationActive;
+- (bool)assertionBufferFullNotificationActive;
 - (id)assertionBufferFullNotificationRearmTimer;
 - (id)assertionBufferNotificationTracking;
 - (id)assertionNotification;
 - (id)assertionSnapShotTimer;
-- (BOOL)assertionSnapshotTimerActive;
+- (bool)assertionSnapshotTimerActive;
 - (id)batteryLevelNotificiations;
 - (id)bundleIDForAssertionProcessPID:(int)arg1;
 - (id)canSleepNotification;
 - (void)checkAssertionBufferFullNotificationRate;
 - (id)dailyTaskNotification;
-- (BOOL)firstBufferDrain;
+- (bool)firstBufferDrain;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
@@ -77,17 +77,17 @@
 - (void)sanitizeAssertionNameForEntry:(id)arg1;
 - (void)setAssertionAggregatedLastSample:(id)arg1;
 - (void)setAssertionBufferFullNotification:(id)arg1;
-- (void)setAssertionBufferFullNotificationActive:(BOOL)arg1 withReason:(id)arg2;
-- (void)setAssertionBufferFullNotificationActive:(BOOL)arg1;
+- (void)setAssertionBufferFullNotificationActive:(bool)arg1 withReason:(id)arg2;
+- (void)setAssertionBufferFullNotificationActive:(bool)arg1;
 - (void)setAssertionBufferFullNotificationRearmTimer:(id)arg1;
 - (void)setAssertionBufferNotificationTracking:(id)arg1;
 - (void)setAssertionNotification:(id)arg1;
 - (void)setAssertionSnapShotTimer:(id)arg1;
-- (void)setAssertionSnapshotTimerActive:(BOOL)arg1;
+- (void)setAssertionSnapshotTimerActive:(bool)arg1;
 - (void)setBatteryLevelNotificiations:(id)arg1;
 - (void)setCanSleepNotification:(id)arg1;
 - (void)setDailyTaskNotification:(id)arg1;
-- (void)setFirstBufferDrain:(BOOL)arg1;
+- (void)setFirstBufferDrain:(bool)arg1;
 - (void)setRunQueryTimer:(id)arg1;
 - (void)setWakeNotification:(id)arg1;
 - (id)wakeNotification;

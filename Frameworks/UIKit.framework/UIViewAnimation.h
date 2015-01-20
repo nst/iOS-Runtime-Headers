@@ -7,64 +7,64 @@
 @interface UIViewAnimation : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL _animateFromCurrentPosition;
     int _curve;
-    BOOL _editing;
-    float _endAlpha;
-    float _endFraction;
+    double _endAlpha;
+    double _endFraction;
     } _endRect;
     NSIndexPath *_indexPath;
-    BOOL _shouldAllowGroupOpacityAfterAnimation;
-    BOOL _shouldAnimateShadow;
-    BOOL _shouldClipToBoundsAfterAnimation;
-    BOOL _shouldDeleteAfterAnimation;
-    BOOL _shouldResetGroupOpacityAfterAnimation;
-    float _startFraction;
+    double _startFraction;
     UIView *_view;
+    bool_animateFromCurrentPosition;
+    bool_editing;
+    bool_shouldAllowGroupOpacityAfterAnimation;
+    bool_shouldAnimateShadow;
+    bool_shouldClipToBoundsAfterAnimation;
+    bool_shouldDeleteAfterAnimation;
+    bool_shouldResetGroupOpacityAfterAnimation;
 }
 
-@property(readonly) BOOL animateFromCurrentPosition;
+@property(readonly) bool animateFromCurrentPosition;
 @property(readonly) int curve;
-@property(readonly) BOOL editing;
-@property(readonly) float endAlpha;
-@property(readonly) float endFraction;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
+@property(readonly) bool editing;
+@property(readonly) double endAlpha;
+@property(readonly) double endFraction;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } endRect;
 @property(readonly) NSIndexPath * indexPath;
-@property BOOL shouldAllowGroupOpacityAfterAnimation;
-@property BOOL shouldAnimateShadow;
-@property BOOL shouldClipToBoundsAfterAnimation;
-@property(readonly) BOOL shouldDeleteAfterAnimation;
-@property BOOL shouldResetGroupOpacityAfterAnimation;
-@property(readonly) float startFraction;
+@property bool shouldAllowGroupOpacityAfterAnimation;
+@property bool shouldAnimateShadow;
+@property bool shouldClipToBoundsAfterAnimation;
+@property(readonly) bool shouldDeleteAfterAnimation;
+@property bool shouldResetGroupOpacityAfterAnimation;
+@property(readonly) double startFraction;
 @property(readonly) UIView * view;
 
-- (BOOL)animateFromCurrentPosition;
+- (bool)animateFromCurrentPosition;
 - (int)curve;
 - (void)dealloc;
 - (id)description;
-- (BOOL)editing;
-- (float)endAlpha;
-- (float)endFraction;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endRect;
+- (bool)editing;
+- (double)endAlpha;
+- (double)endFraction;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })endRect;
 - (id)indexPath;
-- (id)initWithView:(id)arg1 indexPath:(id)arg2 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 endAlpha:(float)arg4 startFraction:(float)arg5 endFraction:(float)arg6 curve:(int)arg7 animateFromCurrentPosition:(BOOL)arg8 shouldDeleteAfterAnimation:(BOOL)arg9 editing:(BOOL)arg10;
-- (void)setShouldAllowGroupOpacityAfterAnimation:(BOOL)arg1;
-- (void)setShouldAnimateShadow:(BOOL)arg1;
-- (void)setShouldClipToBoundsAfterAnimation:(BOOL)arg1;
-- (void)setShouldResetGroupOpacityAfterAnimation:(BOOL)arg1;
-- (BOOL)shouldAllowGroupOpacityAfterAnimation;
-- (BOOL)shouldAnimateShadow;
-- (BOOL)shouldClipToBoundsAfterAnimation;
-- (BOOL)shouldDeleteAfterAnimation;
-- (BOOL)shouldResetGroupOpacityAfterAnimation;
-- (float)startFraction;
+- (id)initWithView:(id)arg1 indexPath:(id)arg2 endRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 endAlpha:(double)arg4 startFraction:(double)arg5 endFraction:(double)arg6 curve:(int)arg7 animateFromCurrentPosition:(bool)arg8 shouldDeleteAfterAnimation:(bool)arg9 editing:(bool)arg10;
+- (void)setShouldAllowGroupOpacityAfterAnimation:(bool)arg1;
+- (void)setShouldAnimateShadow:(bool)arg1;
+- (void)setShouldClipToBoundsAfterAnimation:(bool)arg1;
+- (void)setShouldResetGroupOpacityAfterAnimation:(bool)arg1;
+- (bool)shouldAllowGroupOpacityAfterAnimation;
+- (bool)shouldAnimateShadow;
+- (bool)shouldClipToBoundsAfterAnimation;
+- (bool)shouldDeleteAfterAnimation;
+- (bool)shouldResetGroupOpacityAfterAnimation;
+- (double)startFraction;
 - (id)view;
 
 @end

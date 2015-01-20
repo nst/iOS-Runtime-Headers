@@ -7,6 +7,6 @@
 
 - (id)init;
 - (id)messageToSyncFlagsForUID:(unsigned int)arg1;
-- (BOOL)shouldAddUID:(unsigned int)arg1;
+- (bool)shouldAddUID:(unsigned int)arg1;
 
 @end

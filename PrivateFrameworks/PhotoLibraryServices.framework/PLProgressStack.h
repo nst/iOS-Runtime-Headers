@@ -5,12 +5,12 @@
 @class NSMutableArray, NSString;
 
 @interface PLProgressStack : NSObject {
+    boolnotifyUsingAssetsdNotificationCenter;
     float currentMultiplier;
     float currentTotal;
     id delegate;
     NSString *mediaPathString;
     NSMutableArray *multipliers;
-    BOOL notifyUsingAssetsdNotificationCenter;
 }
 
 @property float currentMultiplier;
@@ -18,7 +18,7 @@
 @property id delegate;
 @property(retain) NSString * mediaPathString;
 @property(retain) NSMutableArray * multipliers;
-@property BOOL notifyUsingAssetsdNotificationCenter;
+@property bool notifyUsingAssetsdNotificationCenter;
 
 + (id)unarchiveFromDictionary:(id)arg1;
 
@@ -30,7 +30,7 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)mediaPathString;
 - (id)multipliers;
-- (BOOL)notifyUsingAssetsdNotificationCenter;
+- (bool)notifyUsingAssetsdNotificationCenter;
 - (void)pop;
 - (void)popAndUpdate;
 - (void)push:(float)arg1;
@@ -40,7 +40,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setMediaPathString:(id)arg1;
 - (void)setMultipliers:(id)arg1;
-- (void)setNotifyUsingAssetsdNotificationCenter:(BOOL)arg1;
+- (void)setNotifyUsingAssetsdNotificationCenter:(bool)arg1;
 - (float)totalProgress:(float)arg1;
 - (void)updateProgress:(float)arg1;
 

@@ -11,7 +11,6 @@
 @interface CAMStillImageCaptureResponse : CAMCaptureResponse {
     NSString *_avalancheUUID;
     CIFilter *_effectFilter;
-    BOOL _finalResponse;
     id _stillImageCompletionBlock;
     UIImage *_stillImageFilteredPreviewImage;
     struct __IOSurface { } *_stillImageFilteredPreviewSurface;
@@ -20,17 +19,18 @@
     UIImage *_stillImageOriginalImage;
     struct opaqueCMSampleBuffer { } *_stillImageOriginalSampleBuffer;
     struct __IOSurface { } *_stillImageOriginalSurface;
-    unsigned long _stillImageOriginalSurfaceSize;
+    unsigned long long _stillImageOriginalSurfaceSize;
     id _stillImageRequestEnqueuedBlock;
     UIImage *_stillImageUnfilteredPreviewImage;
     struct __IOSurface { } *_stillImageUnfilteredPreviewSurface;
     NSString *_timelapseDestinationPath;
-    BOOL _transient;
+    bool_finalResponse;
+    bool_transient;
 }
 
 @property(copy) NSString * avalancheUUID;
 @property(copy) CIFilter * effectFilter;
-@property(getter=isFinalResponse) BOOL finalResponse;
+@property(getter=isFinalResponse) bool finalResponse;
 @property(copy) id stillImageCompletionBlock;
 @property(retain) UIImage * stillImageFilteredPreviewImage;
 @property struct __IOSurface { }* stillImageFilteredPreviewSurface;
@@ -40,25 +40,25 @@
 @property(retain) UIImage * stillImageOriginalImage;
 @property struct opaqueCMSampleBuffer { }* stillImageOriginalSampleBuffer;
 @property struct __IOSurface { }* stillImageOriginalSurface;
-@property unsigned long stillImageOriginalSurfaceSize;
+@property unsigned long long stillImageOriginalSurfaceSize;
 @property(copy) id stillImageRequestEnqueuedBlock;
 @property(retain) UIImage * stillImageUnfilteredPreviewImage;
 @property struct __IOSurface { }* stillImageUnfilteredPreviewSurface;
 @property(readonly) UIImage * thumbnailImage;
 @property(copy) NSString * timelapseDestinationPath;
-@property(getter=isTransient) BOOL transient;
+@property(getter=isTransient) bool transient;
 
 - (void).cxx_destruct;
 - (id)avalancheUUID;
 - (void)dealloc;
 - (id)effectFilter;
 - (id)init;
-- (BOOL)isFinalResponse;
-- (BOOL)isTransient;
+- (bool)isFinalResponse;
+- (bool)isTransient;
 - (void)releaseCachedImages;
 - (void)setAvalancheUUID:(id)arg1;
 - (void)setEffectFilter:(id)arg1;
-- (void)setFinalResponse:(BOOL)arg1;
+- (void)setFinalResponse:(bool)arg1;
 - (void)setStillImageCompletionBlock:(id)arg1;
 - (void)setStillImageFilteredPreviewImage:(id)arg1;
 - (void)setStillImageFilteredPreviewSurface:(struct __IOSurface { }*)arg1;
@@ -67,12 +67,12 @@
 - (void)setStillImageOriginalImage:(id)arg1;
 - (void)setStillImageOriginalSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)setStillImageOriginalSurface:(struct __IOSurface { }*)arg1;
-- (void)setStillImageOriginalSurfaceSize:(unsigned long)arg1;
+- (void)setStillImageOriginalSurfaceSize:(unsigned long long)arg1;
 - (void)setStillImageRequestEnqueuedBlock:(id)arg1;
 - (void)setStillImageUnfilteredPreviewImage:(id)arg1;
 - (void)setStillImageUnfilteredPreviewSurface:(struct __IOSurface { }*)arg1;
 - (void)setTimelapseDestinationPath:(id)arg1;
-- (void)setTransient:(BOOL)arg1;
+- (void)setTransient:(bool)arg1;
 - (id)stillImageCompletionBlock;
 - (id)stillImageFilteredPreviewImage;
 - (struct __IOSurface { }*)stillImageFilteredPreviewSurface;
@@ -82,7 +82,7 @@
 - (id)stillImageOriginalImage;
 - (struct opaqueCMSampleBuffer { }*)stillImageOriginalSampleBuffer;
 - (struct __IOSurface { }*)stillImageOriginalSurface;
-- (unsigned long)stillImageOriginalSurfaceSize;
+- (unsigned long long)stillImageOriginalSurfaceSize;
 - (id)stillImageRequestEnqueuedBlock;
 - (id)stillImageUnfilteredPreviewImage;
 - (struct __IOSurface { }*)stillImageUnfilteredPreviewSurface;

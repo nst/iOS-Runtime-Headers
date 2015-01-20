@@ -9,23 +9,23 @@
 @property(readonly) struct { double x1; double x2; } matchCoordinate;
 @property(readonly) double matchCourse;
 @property(readonly) int matchFormOfWay;
-@property(readonly) int matchQuality;
+@property(readonly) long long matchQuality;
 @property(readonly) int matchRoadClass;
-@property(getter=isMatchShifted,readonly) BOOL matchShifted;
+@property(getter=isMatchShifted,readonly) bool matchShifted;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(BOOL)arg6;
-- (BOOL)isMatchShifted;
+- (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(bool)arg6;
+- (bool)isMatchShifted;
 - (struct { double x1; double x2; })matchCoordinate;
 - (double)matchCourse;
 - (int)matchFormOfWay;
-- (int)matchQuality;
+- (long long)matchQuality;
 - (int)matchRoadClass;
 - (id)shortDescription;
 

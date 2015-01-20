@@ -17,9 +17,9 @@
 - (id)description;
 - (id)init;
 - (id)inputs;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRoute:(id)arg1;
-- (BOOL)matchesRawDescription:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRoute:(id)arg1;
+- (bool)matchesRawDescription:(id)arg1;
 - (id)outputs;
 - (struct RouteDescriptionImpl { id x1; id x2; }*)privateGetImplementation;
 

@@ -16,7 +16,7 @@
 @property id target;
 
 - (id)_accessibilityCustomActionIdentifier;
-- (BOOL)_accessibilityMatchesCustomActionIdentifier:(id)arg1;
+- (bool)_accessibilityMatchesCustomActionIdentifier:(id)arg1;
 - (id)_image;
 - (void)_setImage:(id)arg1;
 - (void)dealloc;

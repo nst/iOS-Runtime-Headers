@@ -18,7 +18,7 @@
 - (void)handleTelephonyNotification:(id)arg1 withInfo:(id)arg2;
 - (void)handleVocoderNotificationWithInfo:(id)arg1;
 - (id)init;
-- (BOOL)registerForNotifications;
+- (bool)registerForNotifications;
 - (void)setDelegate:(id)arg1;
 - (id)translateVocoderTypeToCoreAudioType:(id)arg1;
 - (void)unregisterForNotifications;

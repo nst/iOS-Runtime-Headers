@@ -25,7 +25,7 @@
 @property(retain) NSString * serviceType;
 @property(copy,readonly) NSString * type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessory;
@@ -50,7 +50,7 @@
 - (void)setServiceType:(id)arg1;
 - (id)type;
 - (void)unconfigure;
-- (BOOL)updateAssociatedServiceType:(id)arg1 error:(id*)arg2;
+- (bool)updateAssociatedServiceType:(id)arg1 error:(id*)arg2;
 - (id)updateName:(id)arg1;
 
 @end

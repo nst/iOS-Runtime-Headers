@@ -5,8 +5,8 @@
 @interface NSBetweenPredicateOperator : NSPredicateOperator {
 }
 
-- (void)_setOptions:(unsigned int)arg1;
+- (void)_setOptions:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (bool)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 
 @end

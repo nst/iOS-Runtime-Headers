@@ -19,7 +19,7 @@
         } status; 
         NSArray *searchResults; 
         struct { 
-            unsigned int mailboxAttributes; 
+            unsigned long long mailboxAttributes; 
             id separatorAndOrMboxName; 
             NSArray *extraAttributes; 
         } list; 
@@ -65,11 +65,11 @@
 - (id)flagsFetchResult;
 - (id)initWithConnection:(id)arg1 responseConsumer:(id)arg2;
 - (id)initWithString:(id)arg1;
-- (BOOL)isAlertResponse;
-- (BOOL)isResponseWithCode:(int)arg1;
-- (BOOL)isUntagged;
+- (bool)isAlertResponse;
+- (bool)isResponseWithCode:(int)arg1;
+- (bool)isUntagged;
 - (id)keyValuePairs;
-- (unsigned int)mailboxAttributes;
+- (unsigned long long)mailboxAttributes;
 - (id)mailboxName;
 - (unsigned long long)number;
 - (id)parameters;
@@ -89,7 +89,7 @@
 - (void)setFetchResults:(id)arg1;
 - (void)setFlags:(id)arg1;
 - (void)setFlagsFetchResult:(id)arg1;
-- (void)setMailboxAttributes:(unsigned int)arg1 separator:(id)arg2 mailboxName:(id)arg3 extraAttributes:(id)arg4;
+- (void)setMailboxAttributes:(unsigned long long)arg1 separator:(id)arg2 mailboxName:(id)arg3 extraAttributes:(id)arg4;
 - (void)setMailboxName:(id)arg1 quotaRootNames:(id)arg2;
 - (void)setMailboxName:(id)arg1 statusEntries:(id)arg2;
 - (void)setNumber:(unsigned long long)arg1;

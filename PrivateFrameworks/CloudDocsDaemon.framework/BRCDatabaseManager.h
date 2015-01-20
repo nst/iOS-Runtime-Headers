@@ -21,30 +21,30 @@
 @property(readonly) PQLConnection * serverTruthConnection;
 
 - (void).cxx_destruct;
-- (BOOL)_attachDatabase:(id)arg1 toConnection:(id)arg2 error:(id*)arg3;
-- (BOOL)_checkIntegrity:(id)arg1 serverTruth:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)_dumpContainer:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
-- (BOOL)_openClientTruthConnectionWithError:(id*)arg1;
-- (BOOL)_openServerTruthConnectionWithError:(id*)arg1;
+- (bool)_attachDatabase:(id)arg1 toConnection:(id)arg2 error:(id*)arg3;
+- (bool)_checkIntegrity:(id)arg1 serverTruth:(bool)arg2 error:(id*)arg3;
+- (bool)_dumpContainer:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
+- (bool)_openClientTruthConnectionWithError:(id*)arg1;
+- (bool)_openServerTruthConnectionWithError:(id*)arg1;
 - (void)_registerLastBootIfNeeded:(id)arg1 table:(struct NSObject { Class x1; }*)arg2;
-- (BOOL)_setupBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg1 error:(id*)arg2;
-- (BOOL)_setupConnection:(id)arg1 databaseName:(id)arg2 error:(id*)arg3;
+- (bool)_setupBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg1 error:(id*)arg2;
+- (bool)_setupConnection:(id)arg1 databaseName:(id)arg2 error:(id*)arg3;
 - (void)_startWatcher;
-- (BOOL)_stepBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1 newState:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2 error:(id*)arg3;
-- (BOOL)backupDatabaseToURL:(id)arg1 error:(id*)arg2;
+- (bool)_stepBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1 newState:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2 error:(id*)arg3;
+- (bool)backupDatabaseToURL:(id)arg1 error:(id*)arg2;
 - (id)clientState;
 - (id)clientTruthConnection;
-- (BOOL)closeWithError:(id*)arg1;
+- (bool)closeWithError:(id*)arg1;
 - (void)dealloc;
-- (BOOL)dumpDatabaseToFileHandle:(id)arg1 containerID:(id)arg2 error:(id*)arg3;
+- (bool)dumpDatabaseToFileHandle:(id)arg1 containerID:(id)arg2 error:(id*)arg3;
 - (id)initWithAccountSession:(id)arg1;
 - (id)newConnection:(id)arg1;
 - (id)newConnectionWithLabel:(id)arg1 error:(id*)arg2;
-- (BOOL)openAtURL:(id)arg1 error:(id*)arg2;
+- (bool)openAtURL:(id)arg1 error:(id*)arg2;
 - (id)serverState;
 - (id)serverTruthConnection;
 - (void)setupForDumpingDatabaseAtURL:(id)arg1;
 - (void)stopWatcher;
-- (BOOL)validateDatabase:(id)arg1 serverTruth:(BOOL)arg2 error:(id*)arg3;
+- (bool)validateDatabase:(id)arg1 serverTruth:(bool)arg2 error:(id*)arg3;
 
 @end

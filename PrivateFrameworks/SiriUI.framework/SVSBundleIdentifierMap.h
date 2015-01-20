@@ -12,8 +12,8 @@
 
 - (void).cxx_destruct;
 - (void)_addItem:(id)arg1 toBundleDictionary:(id)arg2 groupIdentifier:(id)arg3;
-- (id)_bundleMapArrayForType:(int)arg1 groupIdentifier:(id)arg2;
-- (id)factoryInstancesForGroupIdentifier:(id)arg1 type:(int)arg2;
+- (id)_bundleMapArrayForType:(long long)arg1 groupIdentifier:(id)arg2;
+- (id)factoryInstancesForGroupIdentifier:(id)arg1 type:(long long)arg2;
 - (id)init;
 - (void)registerBundle:(id)arg1;
 

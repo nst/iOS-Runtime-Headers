@@ -3,17 +3,17 @@
  */
 
 @interface ASClientController : SUClientController {
-    BOOL _shouldExitAfterPurchases;
+    bool_shouldExitAfterPurchases;
 }
 
-@property BOOL shouldExitAfterPurchases;
+@property bool shouldExitAfterPurchases;
 
 - (id)initWithClientIdentifier:(id)arg1;
 - (id)initWithClientInterface:(id)arg1;
-- (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
+- (bool)libraryContainsItemIdentifier:(unsigned long long)arg1;
 - (id)purchaseManager:(id)arg1 purchaseBatchForItems:(id)arg2;
 - (id)purchaseManager:(id)arg1 purchaseBatchForPurchases:(id)arg2;
-- (void)setShouldExitAfterPurchases:(BOOL)arg1;
-- (BOOL)shouldExitAfterPurchases;
+- (void)setShouldExitAfterPurchases:(bool)arg1;
+- (bool)shouldExitAfterPurchases;
 
 @end

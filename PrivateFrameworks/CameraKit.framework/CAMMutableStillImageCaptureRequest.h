@@ -7,23 +7,23 @@
 @interface CAMMutableStillImageCaptureRequest : CAMStillImageCaptureRequest {
 }
 
-@property int captureDevice;
+@property long long captureDevice;
 @property <CAMStillImageCaptureRequestDelegate> * delegate;
-@property int deviceOrientation;
-@property int flashMode;
+@property long long deviceOrientation;
+@property long long flashMode;
 @property int hdrMode;
-@property(getter=isTransient) BOOL transient;
-@property BOOL usesStillImageStabilization;
-@property BOOL wantsAudioForCapture;
+@property(getter=isTransient) bool transient;
+@property bool usesStillImageStabilization;
+@property bool wantsAudioForCapture;
 
-- (void)setCaptureDevice:(int)arg1;
+- (void)setCaptureDevice:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDeviceOrientation:(int)arg1;
-- (void)setFlashMode:(int)arg1;
+- (void)setDeviceOrientation:(long long)arg1;
+- (void)setFlashMode:(long long)arg1;
 - (void)setHdrMode:(int)arg1;
 - (void)setParameter:(id)arg1 forKey:(id)arg2;
-- (void)setTransient:(BOOL)arg1;
-- (void)setUsesStillImageStabilization:(BOOL)arg1;
-- (void)setWantsAudioForCapture:(BOOL)arg1;
+- (void)setTransient:(bool)arg1;
+- (void)setUsesStillImageStabilization:(bool)arg1;
+- (void)setWantsAudioForCapture:(bool)arg1;
 
 @end

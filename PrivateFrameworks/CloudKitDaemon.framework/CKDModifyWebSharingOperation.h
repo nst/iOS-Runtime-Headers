@@ -38,8 +38,8 @@
 - (id)fetchedRecordIDs;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (id)recordIDsToShare;
 - (id)recordIDsToShareReadWrite;
 - (id)recordIDsToUnshare;

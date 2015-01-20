@@ -16,7 +16,6 @@
         } __ptr_; 
     GEOMapRequest *_edgeSearchRequest;
     NSArray *_edges;
-    BOOL _hasCompletedMapMatching;
     } _mapMatchingSection;
     struct __CFSet { } *_observers;
     GEOComposedRoute *_route;
@@ -25,12 +24,13 @@
     GEOComposedRouteSection *_section;
     unsigned int _unsnappedPointCount;
     struct { float x1; float x2; } *_unsnappedPoints;
+    bool_hasCompletedMapMatching;
 }
 
 @property(readonly) NSArray * edges;
-@property(readonly) BOOL hasCompletedMapMatching;
-@property(readonly) BOOL isMapMatched;
-@property(readonly) BOOL isMapMatching;
+@property(readonly) bool hasCompletedMapMatching;
+@property(readonly) bool isMapMatched;
+@property(readonly) bool isMapMatching;
 @property(readonly) const struct RouteMapMatchingSection { int (**x1)(); }* mapMatchingSection;
 @property(readonly) unsigned int routeEndIndex;
 @property(readonly) unsigned int routeStartIndex;
@@ -45,13 +45,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)edges;
-- (BOOL)hasCompletedMapMatching;
-- (BOOL)hasObserver:(id)arg1;
+- (bool)hasCompletedMapMatching;
+- (bool)hasObserver:(id)arg1;
 - (id)initWithRoute:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
-- (BOOL)isMapMatched;
-- (BOOL)isMapMatching;
+- (bool)isMapMatched;
+- (bool)isMapMatching;
 - (void)matchWithDecoder:(id)arg1 completionHandler:(id)arg2;
-- (BOOL)removeObserver:(id)arg1;
+- (bool)removeObserver:(id)arg1;
 - (unsigned int)routeEndIndex;
 - (unsigned int)routeStartIndex;
 - (id)section;

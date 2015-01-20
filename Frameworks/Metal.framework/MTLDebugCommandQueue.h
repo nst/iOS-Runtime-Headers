@@ -3,14 +3,14 @@
  */
 
 @interface MTLDebugCommandQueue : MTLToolsCommandQueue {
-    unsigned int _maxCommandBufferCount;
+    unsigned long long _maxCommandBufferCount;
 }
 
-@property(readonly) unsigned int maxCommandBufferCount;
+@property(readonly) unsigned long long maxCommandBufferCount;
 
 - (id)commandBuffer;
 - (id)commandBufferWithUnretainedReferences;
-- (id)initWithCommandQueue:(id)arg1 device:(id)arg2 maxBufferCount:(unsigned int)arg3;
-- (unsigned int)maxCommandBufferCount;
+- (id)initWithCommandQueue:(id)arg1 device:(id)arg2 maxBufferCount:(unsigned long long)arg3;
+- (unsigned long long)maxCommandBufferCount;
 
 @end

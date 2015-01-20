@@ -5,8 +5,8 @@
 @class OADRelativeRect;
 
 @interface OADStretchTechnique : OADImageFillTechnique {
+    boolmIsFillRectOverridden;
     OADRelativeRect *mFillRect;
-    BOOL mIsFillRectOverridden;
 }
 
 + (id)defaultProperties;
@@ -14,10 +14,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fillRect;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFillRectOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isFillRectOverridden;
 - (void)setFillRect:(id)arg1;
 
 @end

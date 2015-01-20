@@ -6,7 +6,6 @@
 
 @interface MKAnnotationManager : NSObject {
     NSMutableSet *_annotationRepresentations;
-    BOOL _annotationRepresentationsAreAddedImmediately;
     MKQuadTrie *_annotations;
     NSMapTable *_annotationsToRepresentations;
     <MKAnnotationMarkerContainer> *_container;
@@ -14,7 +13,6 @@
     NSMutableSet *_disallowAnimationAnnotations;
     <MKAnnotation> *_draggedAnnotation;
     NSMutableSet *_invalidCoordinateAnnotations;
-    BOOL _isChangingCoordinate;
     NSMutableSet *_managedAnnotations;
     NSMutableSet *_managedAnnotationsObservingCoordinate;
     NSMutableSet *_pendingAnnotations;
@@ -22,10 +20,12 @@
     <MKAnnotation> *_selectedAnnotation;
     NSTimer *_updateVisibleTimer;
     NSMutableSet *_visibleAnnotations;
+    bool_annotationRepresentationsAreAddedImmediately;
+    bool_isChangingCoordinate;
 }
 
 @property(readonly) NSArray * annotationRepresentations;
-@property BOOL annotationRepresentationsAreAddedImmediately;
+@property bool annotationRepresentationsAreAddedImmediately;
 @property(readonly) NSArray * annotations;
 @property <MKAnnotationMarkerContainer> * container;
 @property <MKAnnotationManagerDelegate> * delegate;
@@ -33,35 +33,35 @@
 @property(readonly) <MKAnnotationRepresentation> * selectedAnnotationRepresentation;
 
 - (void).cxx_destruct;
-- (void)_addAnnotation:(id)arg1 updateVisible:(BOOL)arg2;
+- (void)_addAnnotation:(id)arg1 updateVisible:(bool)arg2;
 - (id)_addRepresentationForAnnotation:(id)arg1;
-- (void)_removeAnnotation:(id)arg1 updateVisible:(BOOL)arg2 removeFromContainer:(BOOL)arg3;
-- (void)_removeRepresentationForAnnotation:(id)arg1 fromCull:(BOOL)arg2;
+- (void)_removeAnnotation:(id)arg1 updateVisible:(bool)arg2 removeFromContainer:(bool)arg3;
+- (void)_removeRepresentationForAnnotation:(id)arg1 fromCull:(bool)arg2;
 - (void)_setupUpdateVisibleAnnotationsTimer;
-- (void)addAnnotation:(id)arg1 allowAnimation:(BOOL)arg2;
+- (void)addAnnotation:(id)arg1 allowAnimation:(bool)arg2;
 - (void)addAnnotation:(id)arg1;
 - (void)addAnnotations:(id)arg1;
-- (void)addManagedAnnotation:(id)arg1 observeCoordinateChanges:(BOOL)arg2;
+- (void)addManagedAnnotation:(id)arg1 observeCoordinateChanges:(bool)arg2;
 - (void)addManagedAnnotation:(id)arg1;
-- (id)addRepresentationForManagedAnnotation:(id)arg1 notifyDelegate:(BOOL)arg2;
+- (id)addRepresentationForManagedAnnotation:(id)arg1 notifyDelegate:(bool)arg2;
 - (void)addRepresentationsForAnnotations:(id)arg1;
-- (BOOL)annotationIsInternal:(id)arg1;
+- (bool)annotationIsInternal:(id)arg1;
 - (id)annotationRepresentations;
-- (BOOL)annotationRepresentationsAreAddedImmediately;
+- (bool)annotationRepresentationsAreAddedImmediately;
 - (id)annotations;
 - (id)annotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)cleanUpAnnotationRepresentationForRemoval:(id)arg1;
 - (void)configureAnnotationRepresentation:(id)arg1 forAnnotation:(id)arg2;
 - (void)configureDefaultAnnotationRepresentation:(id)arg1 forAnnotation:(id)arg2;
 - (id)container;
-- (BOOL)containsAnnotation:(id)arg1;
+- (bool)containsAnnotation:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)dequeueReusableAnnotationRepresentationWithIdentifier:(id)arg1;
-- (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
+- (void)deselectAnnotation:(id)arg1 animated:(bool)arg2;
 - (id)draggedAnnotation;
 - (id)init;
-- (BOOL)internalAnnotationAllowsCustomRepresentation:(id)arg1;
+- (bool)internalAnnotationAllowsCustomRepresentation:(id)arg1;
 - (id)newDefaultAnnotationRepresentationForAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)newInternalAnnotationRepresentationForInternalAnnotation:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -70,10 +70,10 @@
 - (void)removeRepresentationForManagedAnnotation:(id)arg1;
 - (void)replaceAnnotation:(id)arg1 withAnnotation:(id)arg2;
 - (id)representationForAnnotation:(id)arg1;
-- (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2;
+- (void)selectAnnotation:(id)arg1 animated:(bool)arg2 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)selectAnnotation:(id)arg1 animated:(bool)arg2;
 - (id)selectedAnnotationRepresentation;
-- (void)setAnnotationRepresentationsAreAddedImmediately:(BOOL)arg1;
+- (void)setAnnotationRepresentationsAreAddedImmediately:(bool)arg1;
 - (void)setContainer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDraggedAnnotation:(id)arg1;

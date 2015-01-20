@@ -18,7 +18,7 @@
 @property double ratioOnFailure;
 @property double ratioOnSuccess;
 
-- (BOOL)check;
+- (bool)check;
 - (double)doubleForKey:(id)arg1 inParams:(id)arg2 defaults:(id)arg3;
 - (double)inactivityKickbackDelay;
 - (double)inactivityKickbackRatio;

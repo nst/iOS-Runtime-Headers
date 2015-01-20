@@ -6,42 +6,42 @@
 
 @interface TSDImageRepSizingState : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
+    boolmIncludesAdjustments;
     } mDesiredSize;
-    BOOL mIncludesAdjustments;
     struct CGPath { } *mMaskPath;
     TSDImageProvider *mProvider;
     struct CGImage { } *mSizedImage;
-    int mSizedImageOrientation;
+    long long mSizedImageOrientation;
     int mStatus;
 }
 
-@property struct CGSize { float x1; float x2; } desiredSize;
+@property struct CGSize { double x1; double x2; } desiredSize;
 @property(readonly) struct CGPath { }* maskPath;
 @property(retain) TSDImageProvider * provider;
 @property struct CGImage { }* sizedImage;
-@property(readonly) BOOL sizedImageHasMask;
-@property BOOL sizedImageIncludesAdjustments;
-@property int sizedImageOrientation;
+@property(readonly) bool sizedImageHasMask;
+@property bool sizedImageIncludesAdjustments;
+@property long long sizedImageOrientation;
 @property int status;
 
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })desiredSize;
+- (struct CGSize { double x1; double x2; })desiredSize;
 - (void)generateSizedImage;
-- (id)initWithDesiredSize:(struct CGSize { float x1; float x2; })arg1 provider:(id)arg2 maskPath:(struct CGPath { }*)arg3;
+- (id)initWithDesiredSize:(struct CGSize { double x1; double x2; })arg1 provider:(id)arg2 maskPath:(struct CGPath { }*)arg3;
 - (struct CGPath { }*)maskPath;
 - (id)provider;
-- (void)setDesiredSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDesiredSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setProvider:(id)arg1;
 - (void)setSizedImage:(struct CGImage { }*)arg1;
-- (void)setSizedImageIncludesAdjustments:(BOOL)arg1;
-- (void)setSizedImageOrientation:(int)arg1;
+- (void)setSizedImageIncludesAdjustments:(bool)arg1;
+- (void)setSizedImageOrientation:(long long)arg1;
 - (void)setStatus:(int)arg1;
 - (struct CGImage { }*)sizedImage;
-- (BOOL)sizedImageHasMask;
-- (BOOL)sizedImageIncludesAdjustments;
-- (int)sizedImageOrientation;
+- (bool)sizedImageHasMask;
+- (bool)sizedImageIncludesAdjustments;
+- (long long)sizedImageOrientation;
 - (int)status;
 
 @end

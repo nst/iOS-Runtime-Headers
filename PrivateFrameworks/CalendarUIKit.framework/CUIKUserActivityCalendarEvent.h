@@ -8,19 +8,19 @@
     NSDate *_date;
     NSString *_externalID;
     NSString *_title;
-    unsigned int _view;
+    unsigned long long _view;
 }
 
 @property(readonly) NSString * title;
-@property(readonly) unsigned int view;
+@property(readonly) unsigned long long view;
 
 - (void).cxx_destruct;
 - (id)dictionary;
 - (id)eventFromStore:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithEvent:(id)arg1 view:(unsigned int)arg2 forceLocal:(BOOL)arg3;
-- (id)initWithEvent:(id)arg1 view:(unsigned int)arg2;
+- (id)initWithEvent:(id)arg1 view:(unsigned long long)arg2 forceLocal:(bool)arg3;
+- (id)initWithEvent:(id)arg1 view:(unsigned long long)arg2;
 - (id)title;
-- (unsigned int)view;
+- (unsigned long long)view;
 
 @end

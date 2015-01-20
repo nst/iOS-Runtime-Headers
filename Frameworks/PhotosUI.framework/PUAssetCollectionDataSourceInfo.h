@@ -3,16 +3,16 @@
  */
 
 @interface PUAssetCollectionDataSourceInfo : NSObject {
-    BOOL _UUIDFilterHidesSomeAssets;
-    BOOL _explicitlyDisableFilters;
+    bool_UUIDFilterHidesSomeAssets;
+    bool_explicitlyDisableFilters;
 }
 
-@property BOOL UUIDFilterHidesSomeAssets;
-@property BOOL explicitlyDisableFilters;
+@property bool UUIDFilterHidesSomeAssets;
+@property bool explicitlyDisableFilters;
 
-- (BOOL)UUIDFilterHidesSomeAssets;
-- (void)_setExplicitlyDisableFilters:(BOOL)arg1;
-- (void)_setUUIDFilterHidesSomeAssets:(BOOL)arg1;
-- (BOOL)explicitlyDisableFilters;
+- (bool)UUIDFilterHidesSomeAssets;
+- (void)_setExplicitlyDisableFilters:(bool)arg1;
+- (void)_setUUIDFilterHidesSomeAssets:(bool)arg1;
+- (bool)explicitlyDisableFilters;
 
 @end

@@ -7,14 +7,14 @@
 @interface FBSystemServiceServerClient : BSBasicServerClient {
     NSString *_bundleID;
     NSString *_bundlePath;
-    BOOL _extension;
-    BOOL _uiApp;
+    bool_extension;
+    bool_uiApp;
 }
 
-@property(getter=isUIApp) BOOL UIApp;
+@property(getter=isUIApp) bool UIApp;
 @property(retain,readonly) NSString * bundleID;
 @property(retain) NSString * bundlePath;
-@property(getter=isExtension) BOOL extension;
+@property(getter=isExtension) bool extension;
 @property(readonly) int pid;
 
 - (id)bundleID;
@@ -22,11 +22,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithConnection:(id)arg1;
-- (BOOL)isExtension;
-- (BOOL)isUIApp;
+- (bool)isExtension;
+- (bool)isUIApp;
 - (int)pid;
 - (void)setBundlePath:(id)arg1;
-- (void)setExtension:(BOOL)arg1;
-- (void)setUIApp:(BOOL)arg1;
+- (void)setExtension:(bool)arg1;
+- (void)setUIApp:(bool)arg1;
 
 @end

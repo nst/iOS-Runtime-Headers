@@ -10,12 +10,12 @@
 
 @property(retain) UIControl * control;
 
-- (BOOL)canReload;
+- (bool)canReload;
 - (id)control;
 - (void)controlChanged:(id)arg1;
 - (id)controlValue;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (id)newControl;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)setControl:(id)arg1;

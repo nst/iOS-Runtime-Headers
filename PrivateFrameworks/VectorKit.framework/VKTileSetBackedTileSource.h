@@ -17,8 +17,8 @@
         unsigned int reserved1 : 7; 
         unsigned char reserved2[4]; 
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     } _downloadTemplate;
     VKTimer *_expirationTimer;
     VKTilePool *_expiredTilePool;
@@ -35,20 +35,20 @@
 - (double)_expirationInterval;
 - (void)_expireTiles;
 - (double)_nextTileExpirationDate;
-- (void)_scheduleTileExpirationTimer:(double)arg1 forceUpdate:(BOOL)arg2;
+- (void)_scheduleTileExpirationTimer:(double)arg1 forceUpdate:(bool)arg2;
 - (void)clearCaches;
 - (void)dealloc;
-- (int)defaultMaximumZoomLevel;
-- (int)defaultMinimumZoomLevel;
+- (long long)defaultMaximumZoomLevel;
+- (long long)defaultMinimumZoomLevel;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })downloadKeyAtX:(unsigned int)arg1 y:(unsigned int)arg2 z:(unsigned int)arg3;
-- (BOOL)expires;
+- (bool)expires;
 - (void)fetchedTile:(id)arg1 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (id)initWithTileSet:(id)arg1 tileGroupIdentifier:(unsigned int)arg2 locale:(id)arg3;
 - (unsigned long long)mapLayerForZoomLevelRange;
 - (unsigned int)maximumDownloadZoomLevel;
-- (int)maximumZoomLevel;
+- (long long)maximumZoomLevel;
 - (unsigned int)minimumDownloadZoomLevel;
-- (int)minimumZoomLevel;
+- (long long)minimumZoomLevel;
 - (void)populateVisibleTileSets:(id)arg1 withTiles:(id)arg2;
 - (void)setClient:(id)arg1;
 - (void)setStyleManager:(id)arg1;
@@ -58,6 +58,6 @@
 - (id)tileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (id)tileLoader;
 - (id)tileSet;
-- (int)tileSize;
+- (long long)tileSize;
 
 @end

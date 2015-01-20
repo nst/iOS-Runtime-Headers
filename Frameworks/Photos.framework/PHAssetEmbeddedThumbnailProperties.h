@@ -18,7 +18,7 @@
 @property(readonly) int embeddedThumbnailLength;
 @property(readonly) int embeddedThumbnailOffset;
 @property(readonly) short embeddedThumbnailWidth;
-@property(readonly) BOOL hasEmbeddedThumbnail;
+@property(readonly) bool hasEmbeddedThumbnail;
 
 - (void).cxx_destruct;
 - (id)asset;
@@ -27,7 +27,7 @@
 - (int)embeddedThumbnailLength;
 - (int)embeddedThumbnailOffset;
 - (short)embeddedThumbnailWidth;
-- (BOOL)hasEmbeddedThumbnail;
+- (bool)hasEmbeddedThumbnail;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2;
 
 @end

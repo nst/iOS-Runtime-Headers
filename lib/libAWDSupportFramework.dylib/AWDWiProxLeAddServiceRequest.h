@@ -13,9 +13,9 @@
     unsigned long long _timestamp;
 }
 
-@property(readonly) BOOL hasServiceUUID;
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
+@property(readonly) bool hasServiceUUID;
+@property(readonly) bool hasSessionId;
+@property bool hasTimestamp;
 @property(retain) NSString * serviceUUID;
 @property(retain) NSString * sessionId;
 @property unsigned long long timestamp;
@@ -25,16 +25,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasServiceUUID;
-- (BOOL)hasSessionId;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasServiceUUID;
+- (bool)hasSessionId;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)serviceUUID;
 - (id)sessionId;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setServiceUUID:(id)arg1;
 - (void)setSessionId:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

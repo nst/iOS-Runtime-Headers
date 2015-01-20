@@ -10,7 +10,7 @@
 }
 
 - (id)_connection;
-- (id)_connectionWithTeardownExisting:(BOOL)arg1 createNewIfNecessary:(BOOL)arg2;
+- (id)_connectionWithTeardownExisting:(bool)arg1 createNewIfNecessary:(bool)arg2;
 - (id)_errorHandlerWithCompletion:(id)arg1;
 - (void)_establishPaymentServiceConnection;
 - (void)_registerForApplicationLifeCycleNotifications;

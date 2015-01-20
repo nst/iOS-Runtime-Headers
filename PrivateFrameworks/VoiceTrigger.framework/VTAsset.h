@@ -5,12 +5,12 @@
 @class NSArray, NSString;
 
 @interface VTAsset : NSObject {
-    BOOL _isInstalled;
     NSArray *_languages;
     NSString *_version;
+    bool_isInstalled;
 }
 
-@property BOOL isInstalled;
+@property bool isInstalled;
 @property(retain) NSArray * languages;
 @property(retain) NSString * version;
 
@@ -18,10 +18,10 @@
 - (id)dictionaryRepresentation;
 - (id)init;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithLanguages:(id)arg1 isInstalled:(BOOL)arg2;
-- (BOOL)isInstalled;
+- (id)initWithLanguages:(id)arg1 isInstalled:(bool)arg2;
+- (bool)isInstalled;
 - (id)languages;
-- (void)setIsInstalled:(BOOL)arg1;
+- (void)setIsInstalled:(bool)arg1;
 - (void)setLanguages:(id)arg1;
 - (void)setVersion:(id)arg1;
 - (id)version;

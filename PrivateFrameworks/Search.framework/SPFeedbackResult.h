@@ -15,7 +15,7 @@
 @property int flags;
 @property(readonly) NSString * parsecString;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (unsigned int)domain;

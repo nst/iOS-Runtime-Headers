@@ -9,7 +9,6 @@
 @class EKSource, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString;
 
 @interface EKUIInviteeAlternativeTimeSearcher : NSObject {
-    BOOL _availabilityRequestInProgress;
     NSOperationQueue *_availabilityRequestsQueue;
     double _availabilitySearchDurationMultiplier;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -17,8 +16,6 @@
     NSMutableArray *_internalOriginalConflictedParticipants;
     NSDate *_internalOriginalEndDate;
     NSDate *_internalOriginalStartDate;
-    BOOL _internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
-    BOOL _internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
     NSMutableArray *_internalTimesWhenAllAttendeesCanAttend;
     NSMutableArray *_internalTimesWhenSomeAttendeesCanAttend;
     NSMutableArray *_leftoverSpans;
@@ -26,12 +23,15 @@
     NSString *_organizerAddress;
     NSMutableDictionary *_participantAddressesToParticipants;
     NSObject<OS_dispatch_queue> *_processingQueue;
-    unsigned int _remainingSearchAttempts;
+    unsigned long long _remainingSearchAttempts;
     EKSource *_source;
     id _stateChanged;
+    bool_availabilityRequestInProgress;
+    bool_internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
+    bool_internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
 }
 
-@property BOOL availabilityRequestInProgress;
+@property bool availabilityRequestInProgress;
 @property(retain) NSOperationQueue * availabilityRequestsQueue;
 @property double availabilitySearchDurationMultiplier;
 @property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
@@ -39,8 +39,8 @@
 @property(retain) NSMutableArray * internalOriginalConflictedParticipants;
 @property(retain) NSDate * internalOriginalEndDate;
 @property(retain) NSDate * internalOriginalStartDate;
-@property BOOL internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
-@property BOOL internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
+@property bool internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
+@property bool internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
 @property(retain) NSMutableArray * internalTimesWhenAllAttendeesCanAttend;
 @property(retain) NSMutableArray * internalTimesWhenSomeAttendeesCanAttend;
 @property(retain) NSMutableArray * leftoverSpans;
@@ -51,9 +51,9 @@
 @property(readonly) NSDate * originalStartDate;
 @property(retain) NSMutableDictionary * participantAddressesToParticipants;
 @property(retain) NSObject<OS_dispatch_queue> * processingQueue;
-@property unsigned int remainingSearchAttempts;
-@property(readonly) BOOL searchingForMoreTimesWhenAllAttendeesCanAttend;
-@property(readonly) BOOL searchingForMoreTimesWhenSomeAttendeesCanAttend;
+@property unsigned long long remainingSearchAttempts;
+@property(readonly) bool searchingForMoreTimesWhenAllAttendeesCanAttend;
+@property(readonly) bool searchingForMoreTimesWhenSomeAttendeesCanAttend;
 @property(retain) EKSource * source;
 @property(copy) id stateChanged;
 @property(readonly) NSArray * timesWhenAllAttendeesCanAttend;
@@ -62,16 +62,16 @@
 + (id)_addressesForParticipants:(id)arg1;
 + (id)_allButFirstItemInArray:(id)arg1;
 + (id)_allButLastItemInArray:(id)arg1;
-+ (int)_binarySearchForIndexOfTimeSpanInArray:(id)arg1 containingDate:(id)arg2;
++ (long long)_binarySearchForIndexOfTimeSpanInArray:(id)arg1 containingDate:(id)arg2;
 + (id)_findHighestRankedNonOptimalTimeSpans:(id)arg1;
 + (id)_findLeftoverSpans:(id)arg1 usingFreeTimes:(id)arg2 andNonOptimalTimes:(id)arg3;
 + (void)_insertUniqueParticipants:(id)arg1 intoExistingParticipantsArray:(id)arg2;
-+ (int)_invalidBinarySearchIndex;
++ (long long)_invalidBinarySearchIndex;
 + (id)_rankNonOptimalTimeSpans:(id)arg1;
 + (id)_selfOrganizerForNewlyScheduledEventWithAddress:(id)arg1;
-+ (BOOL)_span:(id)arg1 hasSameConflictedParticipantsAsSpan:(id)arg2;
++ (bool)_span:(id)arg1 hasSameConflictedParticipantsAsSpan:(id)arg2;
 + (void)_validateSpans:(id)arg1;
-+ (id)stateAsString:(int)arg1;
++ (id)stateAsString:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_attemptSearch;
@@ -83,9 +83,9 @@
 - (id)_participantforParticipantAddress:(id)arg1;
 - (void)_processResults:(id)arg1 betweenStartDate:(id)arg2 endDate:(id)arg3;
 - (void)_resetSearchFallbackNumbers;
-- (void)_sendStateChange:(int)arg1;
+- (void)_sendStateChange:(long long)arg1;
 - (id)_spliceLeftTimeSpans:(id)arg1 andNewTimeSpans:(id)arg2;
-- (BOOL)availabilityRequestInProgress;
+- (bool)availabilityRequestInProgress;
 - (id)availabilityRequestsQueue;
 - (double)availabilitySearchDurationMultiplier;
 - (id)callbackQueue;
@@ -95,8 +95,8 @@
 - (id)internalOriginalConflictedParticipants;
 - (id)internalOriginalEndDate;
 - (id)internalOriginalStartDate;
-- (BOOL)internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
-- (BOOL)internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
+- (bool)internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
+- (bool)internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
 - (id)internalTimesWhenAllAttendeesCanAttend;
 - (id)internalTimesWhenSomeAttendeesCanAttend;
 - (id)leftoverSpans;
@@ -107,13 +107,13 @@
 - (id)originalStartDate;
 - (id)participantAddressesToParticipants;
 - (id)processingQueue;
-- (unsigned int)remainingSearchAttempts;
+- (unsigned long long)remainingSearchAttempts;
 - (void)resetWithEvent:(id)arg1 organizerAddressForNewlyScheduledEvent:(id)arg2;
 - (void)searchForMoreTimesWhenAllAttendeesCanAttend;
 - (void)searchForMoreTimesWhenSomeAttendeesCanAttend;
-- (BOOL)searchingForMoreTimesWhenAllAttendeesCanAttend;
-- (BOOL)searchingForMoreTimesWhenSomeAttendeesCanAttend;
-- (void)setAvailabilityRequestInProgress:(BOOL)arg1;
+- (bool)searchingForMoreTimesWhenAllAttendeesCanAttend;
+- (bool)searchingForMoreTimesWhenSomeAttendeesCanAttend;
+- (void)setAvailabilityRequestInProgress:(bool)arg1;
 - (void)setAvailabilityRequestsQueue:(id)arg1;
 - (void)setAvailabilitySearchDurationMultiplier:(double)arg1;
 - (void)setCallbackQueue:(id)arg1;
@@ -121,8 +121,8 @@
 - (void)setInternalOriginalConflictedParticipants:(id)arg1;
 - (void)setInternalOriginalEndDate:(id)arg1;
 - (void)setInternalOriginalStartDate:(id)arg1;
-- (void)setInternalSearchingForMoreTimesWhenAllAttendeesCanAttend:(BOOL)arg1;
-- (void)setInternalSearchingForMoreTimesWhenSomeAttendeesCanAttend:(BOOL)arg1;
+- (void)setInternalSearchingForMoreTimesWhenAllAttendeesCanAttend:(bool)arg1;
+- (void)setInternalSearchingForMoreTimesWhenSomeAttendeesCanAttend:(bool)arg1;
 - (void)setInternalTimesWhenAllAttendeesCanAttend:(id)arg1;
 - (void)setInternalTimesWhenSomeAttendeesCanAttend:(id)arg1;
 - (void)setLeftoverSpans:(id)arg1;
@@ -130,7 +130,7 @@
 - (void)setOrganizerAddress:(id)arg1;
 - (void)setParticipantAddressesToParticipants:(id)arg1;
 - (void)setProcessingQueue:(id)arg1;
-- (void)setRemainingSearchAttempts:(unsigned int)arg1;
+- (void)setRemainingSearchAttempts:(unsigned long long)arg1;
 - (void)setSource:(id)arg1;
 - (void)setStateChanged:(id)arg1;
 - (id)source;

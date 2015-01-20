@@ -18,7 +18,7 @@
 - (id)_formattedValueForInches:(double)arg1;
 - (void)_getFeet:(double*)arg1 inches:(double*)arg2 fromCentimeters:(double)arg3;
 - (void)_localeChanged:(id)arg1;
-- (BOOL)_usesImperialUnits;
+- (bool)_usesImperialUnits;
 - (void)dealloc;
 - (id)init;
 - (id)stringFromHeightInCentimeters:(id)arg1;

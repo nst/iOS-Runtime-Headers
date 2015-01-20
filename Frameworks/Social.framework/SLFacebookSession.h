@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (void)cancelUploadWithIdentifier:(id)arg1;
-- (void)fetchLikeStatusForURL:(id)arg1 flags:(unsigned int)arg2 completion:(id)arg3;
+- (void)fetchLikeStatusForURL:(id)arg1 flags:(unsigned long long)arg2 completion:(id)arg3;
 - (id)init;
 - (void)injectCompletedUploadWithCompletion:(id)arg1;
 - (void)likeURL:(id)arg1 completion:(id)arg2;
@@ -22,10 +22,10 @@
 - (void)testCall;
 - (id)tokenSecretForEntitledClientWithError:(id*)arg1;
 - (void)unlikeURL:(id)arg1 completion:(id)arg2;
-- (BOOL)uploadPost:(id)arg1 forPID:(int)arg2;
-- (void)uploadPost:(id)arg1 suppressAlerts:(BOOL)arg2 withPostCompletion:(id)arg3;
-- (BOOL)uploadPost:(id)arg1;
-- (BOOL)uploadProfilePicture:(id)arg1 error:(id*)arg2;
+- (bool)uploadPost:(id)arg1 forPID:(int)arg2;
+- (void)uploadPost:(id)arg1 suppressAlerts:(bool)arg2 withPostCompletion:(id)arg3;
+- (bool)uploadPost:(id)arg1;
+- (bool)uploadProfilePicture:(id)arg1 error:(id*)arg2;
 - (void)uploadsInProgress:(id)arg1;
 
 @end

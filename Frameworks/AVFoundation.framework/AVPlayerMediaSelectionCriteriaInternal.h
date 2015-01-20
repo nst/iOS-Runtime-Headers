@@ -5,38 +5,38 @@
 @class NSArray;
 
 @interface AVPlayerMediaSelectionCriteriaInternal : NSObject {
-    BOOL _precludeMultichannelAudio;
     NSArray *_precludedMediaCharacteristics;
     NSArray *_precludedMediaSubTypes;
-    BOOL _preferMultichannelAudio;
     NSArray *_preferredLanguages;
     NSArray *_preferredMediaCharacteristics;
     NSArray *_preferredMediaSubTypes;
     NSArray *_requiredMediaCharacteristics;
+    bool_precludeMultichannelAudio;
+    bool_preferMultichannelAudio;
 }
 
-@property BOOL precludeMultichannelAudio;
+@property bool precludeMultichannelAudio;
 @property(retain) NSArray * precludedMediaCharacteristics;
 @property(retain) NSArray * precludedMediaSubTypes;
-@property BOOL preferMultichannelAudio;
+@property bool preferMultichannelAudio;
 @property(retain) NSArray * preferredLanguages;
 @property(retain) NSArray * preferredMediaCharacteristics;
 @property(retain) NSArray * preferredMediaSubTypes;
 @property(retain) NSArray * requiredMediaCharacteristics;
 
 - (void)dealloc;
-- (BOOL)precludeMultichannelAudio;
+- (bool)precludeMultichannelAudio;
 - (id)precludedMediaCharacteristics;
 - (id)precludedMediaSubTypes;
-- (BOOL)preferMultichannelAudio;
+- (bool)preferMultichannelAudio;
 - (id)preferredLanguages;
 - (id)preferredMediaCharacteristics;
 - (id)preferredMediaSubTypes;
 - (id)requiredMediaCharacteristics;
-- (void)setPrecludeMultichannelAudio:(BOOL)arg1;
+- (void)setPrecludeMultichannelAudio:(bool)arg1;
 - (void)setPrecludedMediaCharacteristics:(id)arg1;
 - (void)setPrecludedMediaSubTypes:(id)arg1;
-- (void)setPreferMultichannelAudio:(BOOL)arg1;
+- (void)setPreferMultichannelAudio:(bool)arg1;
 - (void)setPreferredLanguages:(id)arg1;
 - (void)setPreferredMediaCharacteristics:(id)arg1;
 - (void)setPreferredMediaSubTypes:(id)arg1;

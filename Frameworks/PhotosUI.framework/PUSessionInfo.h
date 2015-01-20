@@ -13,30 +13,30 @@
     NSString *_localizedPrompt;
     NSPointerArray *_observers;
     PUPhotoSelectionManager *_photoSelectionManager;
-    int _promptLocation;
-    BOOL _selectingAssets;
-    BOOL _selectingTargetAlbum;
+    long long _promptLocation;
     struct NSObject { Class x1; } *_sourceAlbum;
-    int _status;
+    long long _status;
     struct NSObject { Class x1; } *_targetAlbum;
-    BOOL _targetAlbumIsNewLocalAlbum;
     NSOrderedSet *_transferredAssets;
+    bool_selectingAssets;
+    bool_selectingTargetAlbum;
+    bool_targetAlbumIsNewLocalAlbum;
 }
 
 @property(copy) id bannerGenerator;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * localizedPrompt;
 @property(retain) PUPhotoSelectionManager * photoSelectionManager;
-@property int promptLocation;
-@property(getter=isSelectingAssets,readonly) BOOL selectingAssets;
-@property(getter=isSelectingTargetAlbum,readonly) BOOL selectingTargetAlbum;
+@property long long promptLocation;
+@property(getter=isSelectingAssets,readonly) bool selectingAssets;
+@property(getter=isSelectingTargetAlbum,readonly) bool selectingTargetAlbum;
 @property(retain) NSObject<PLAlbumProtocol> * sourceAlbum;
-@property int status;
+@property long long status;
 @property(readonly) Class superclass;
 @property(retain) NSObject<PLAlbumProtocol> * targetAlbum;
-@property BOOL targetAlbumIsNewLocalAlbum;
+@property bool targetAlbumIsNewLocalAlbum;
 @property(copy) NSOrderedSet * transferredAssets;
 
 - (void).cxx_destruct;
@@ -44,26 +44,26 @@
 - (void)addSessionInfoObserver:(id)arg1;
 - (id)bannerGenerator;
 - (id)init;
-- (BOOL)isSelectingAssets;
-- (BOOL)isSelectingTargetAlbum;
+- (bool)isSelectingAssets;
+- (bool)isSelectingTargetAlbum;
 - (id)localizedPrompt;
 - (id)photoSelectionManager;
 - (void)photoSelectionManagerSelectionDidChange:(id)arg1;
-- (int)promptLocation;
+- (long long)promptLocation;
 - (void)removeSessionInfoObserver:(id)arg1;
 - (void)setBannerGenerator:(id)arg1;
 - (void)setLocalizedPrompt:(id)arg1;
 - (void)setPhotoSelectionManager:(id)arg1;
-- (void)setPromptLocation:(int)arg1;
+- (void)setPromptLocation:(long long)arg1;
 - (void)setSourceAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)setStatus:(int)arg1;
+- (void)setStatus:(long long)arg1;
 - (void)setTargetAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)setTargetAlbumIsNewLocalAlbum:(BOOL)arg1;
+- (void)setTargetAlbumIsNewLocalAlbum:(bool)arg1;
 - (void)setTransferredAssets:(id)arg1;
 - (struct NSObject { Class x1; }*)sourceAlbum;
-- (int)status;
+- (long long)status;
 - (struct NSObject { Class x1; }*)targetAlbum;
-- (BOOL)targetAlbumIsNewLocalAlbum;
+- (bool)targetAlbumIsNewLocalAlbum;
 - (id)transferredAssets;
 
 @end

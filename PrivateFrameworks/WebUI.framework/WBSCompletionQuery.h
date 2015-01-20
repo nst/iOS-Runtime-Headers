@@ -17,7 +17,7 @@
         long long __rep_; 
     struct duration<long long, std::__1::ratio<1, 1000> > { 
         long long __rep_; 
-    unsigned int _indexInFeedbackArray;
+    unsigned long long _indexInFeedbackArray;
     NSString *_parsecFeedbackQueryIdentifier;
     } _parsecLatency;
     NSURLRequest *_parsecSearchRequest;
@@ -30,7 +30,7 @@
 @property(readonly) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  timestamp; /* unknown property attribute:  1000000000> >=q}} */
 @property struct  searchSuggestionProviderLatency; /* unknown property attribute:  1000> >=q} */
 @property struct  parsecLatency; /* unknown property attribute:  1000> >=q} */
-@property unsigned int indexInFeedbackArray;
+@property unsigned long long indexInFeedbackArray;
 @property(copy) NSString * parsecFeedbackQueryIdentifier;
 @property(copy) NSURLRequest * parsecSearchRequest;
 @property(readonly) NSString * queryString;
@@ -39,7 +39,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)indexInFeedbackArray;
+- (unsigned long long)indexInFeedbackArray;
 - (id)initWithQueryString:(id)arg1;
 - (id)parsecFeedbackQueryIdentifier;
 - (struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })parsecLatency;
@@ -47,7 +47,7 @@
 - (id)queryString;
 - (id)searchSuggestionProviderIdentifier;
 - (struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })searchSuggestionProviderLatency;
-- (void)setIndexInFeedbackArray:(unsigned int)arg1;
+- (void)setIndexInFeedbackArray:(unsigned long long)arg1;
 - (void)setParsecFeedbackQueryIdentifier:(id)arg1;
 - (void)setParsecLatency:(struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })arg1;
 - (void)setParsecSearchRequest:(id)arg1;

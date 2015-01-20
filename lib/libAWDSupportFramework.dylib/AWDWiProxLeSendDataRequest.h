@@ -16,10 +16,10 @@
 }
 
 @property unsigned int dataLength;
-@property BOOL hasDataLength;
-@property(readonly) BOOL hasPeerId;
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
+@property bool hasDataLength;
+@property(readonly) bool hasPeerId;
+@property(readonly) bool hasSessionId;
+@property bool hasTimestamp;
 @property(retain) NSString * peerId;
 @property(retain) NSString * sessionId;
 @property unsigned long long timestamp;
@@ -30,19 +30,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDataLength;
-- (BOOL)hasPeerId;
-- (BOOL)hasSessionId;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDataLength;
+- (bool)hasPeerId;
+- (bool)hasSessionId;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)peerId;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionId;
 - (void)setDataLength:(unsigned int)arg1;
-- (void)setHasDataLength:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDataLength:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setPeerId:(id)arg1;
 - (void)setSessionId:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

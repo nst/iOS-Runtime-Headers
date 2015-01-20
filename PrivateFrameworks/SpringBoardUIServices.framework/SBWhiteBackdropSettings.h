@@ -5,7 +5,7 @@
 @interface SBWhiteBackdropSettings : _UIBackdropViewSettings {
 }
 
-- (float)blurRadius;
+- (double)blurRadius;
 - (id)combinedTintColor;
 
 @end

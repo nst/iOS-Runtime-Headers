@@ -11,9 +11,9 @@
 }
 
 @property(retain) NSData * directionsResponseID;
-@property(readonly) BOOL hasDirectionsResponseID;
-@property(readonly) BOOL hasRouteID;
-@property(readonly) BOOL hasZilchPoints;
+@property(readonly) bool hasDirectionsResponseID;
+@property(readonly) bool hasRouteID;
+@property(readonly) bool hasZilchPoints;
 @property(retain) NSData * routeID;
 @property(retain) NSData * zilchPoints;
 
@@ -23,13 +23,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)directionsResponseID;
-- (BOOL)hasDirectionsResponseID;
-- (BOOL)hasRouteID;
-- (BOOL)hasZilchPoints;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDirectionsResponseID;
+- (bool)hasRouteID;
+- (bool)hasZilchPoints;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routeID;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)setRouteID:(id)arg1;

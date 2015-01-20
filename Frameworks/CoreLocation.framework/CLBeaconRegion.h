@@ -12,11 +12,11 @@
 
 @property(readonly) NSNumber * major;
 @property(readonly) NSNumber * minor;
-@property BOOL notifyEntryStateOnDisplay;
+@property bool notifyEntryStateOnDisplay;
 @property(readonly) NSUUID * proximityUUID;
 
 + (id)any;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (BOOL)_measuredPowerForDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,9 +32,9 @@
 - (id)initWithProximityUUID:(id)arg1 major:(unsigned short)arg2 minor:(unsigned short)arg3 identifier:(id)arg4;
 - (id)major;
 - (id)minor;
-- (BOOL)notifyEntryStateOnDisplay;
+- (bool)notifyEntryStateOnDisplay;
 - (id)peripheralDataWithMeasuredPower:(id)arg1;
 - (id)proximityUUID;
-- (void)setNotifyEntryStateOnDisplay:(BOOL)arg1;
+- (void)setNotifyEntryStateOnDisplay:(bool)arg1;
 
 @end

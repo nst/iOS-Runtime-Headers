@@ -15,8 +15,8 @@
     MPUDataSourceConfiguration *_dataSourceConfiguration;
     Class _navigationControllerClass;
     Class _viewControllerClass;
-    BOOL _wantsModalPresentation;
-    BOOL _wantsNavigationController;
+    bool_wantsModalPresentation;
+    bool_wantsNavigationController;
 }
 
 @property(copy) NSString * aggregateStatisticDisplayCountKey;
@@ -25,8 +25,8 @@
 @property(retain) MPUDataSourceConfiguration * dataSourceConfiguration;
 @property(retain) Class navigationControllerClass;
 @property(readonly) Class viewControllerClass;
-@property BOOL wantsModalPresentation;
-@property BOOL wantsNavigationController;
+@property bool wantsModalPresentation;
+@property bool wantsNavigationController;
 
 + (id)configurationWithViewControllerClass:(Class)arg1 cellConfigurationClass:(Class)arg2;
 + (id)configurationWithViewControllerClass:(Class)arg1;
@@ -43,10 +43,10 @@
 - (void)setConfigurationBlock:(id)arg1;
 - (void)setDataSourceConfiguration:(id)arg1;
 - (void)setNavigationControllerClass:(Class)arg1;
-- (void)setWantsModalPresentation:(BOOL)arg1;
-- (void)setWantsNavigationController:(BOOL)arg1;
+- (void)setWantsModalPresentation:(bool)arg1;
+- (void)setWantsNavigationController:(bool)arg1;
 - (Class)viewControllerClass;
-- (BOOL)wantsModalPresentation;
-- (BOOL)wantsNavigationController;
+- (bool)wantsModalPresentation;
+- (bool)wantsNavigationController;
 
 @end

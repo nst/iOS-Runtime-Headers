@@ -15,7 +15,7 @@
                     struct __hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -26,7 +26,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSUColumnRowCoordinate, std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::hash<TSUColumnRowCoordinate>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<TSUColumnRowCoordinate, std::__1::__hash_value_type<TSUColumnRowCoordinate, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::equal_to<TSUColumnRowCoordinate>, true> > { 
                 float __first_; 
@@ -42,13 +42,13 @@
     } _warningSetForCoordinate;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addWarning:(id)arg1 atCellCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellCoordinateForIndex:(unsigned int)arg1;
-- (unsigned int)count;
+- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellCoordinateForIndex:(unsigned long long)arg1;
+- (unsigned long long)count;
 - (id)initFromArchive:(const struct ImportWarningSetByCoordinateMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TST::CellCoordinateImportWarningSetPairArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
 - (void)saveToArchive:(struct ImportWarningSetByCoordinateMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TST::CellCoordinateImportWarningSetPairArchive> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
 - (id)warningSetAtCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;

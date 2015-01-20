@@ -16,11 +16,11 @@
 - (id)_cell;
 - (void)_switchSwitched:(id)arg1;
 - (id)enabledDelegate;
-- (id)initInEditMode:(BOOL)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (id)initInEditMode:(bool)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
 - (void)setEnabledDelegate:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 - (id)titleForFooter;
 - (id)titleForHeader;
 

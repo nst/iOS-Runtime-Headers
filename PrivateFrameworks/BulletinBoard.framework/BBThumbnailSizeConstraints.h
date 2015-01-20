@@ -3,7 +3,7 @@
  */
 
 @interface BBThumbnailSizeConstraints : NSObject <NSSecureCoding> {
-    int _constraintType;
+    long long _constraintType;
     float _fixedDimension;
     float _fixedHeight;
     float _fixedWidth;
@@ -12,7 +12,7 @@
     float _thumbnailScale;
 }
 
-@property int constraintType;
+@property long long constraintType;
 @property float fixedDimension;
 @property float fixedHeight;
 @property float fixedWidth;
@@ -20,10 +20,10 @@
 @property float minAspectRatio;
 @property float thumbnailScale;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)areReasonable;
-- (int)constraintType;
+- (bool)areReasonable;
+- (long long)constraintType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (float)fixedDimension;
@@ -32,7 +32,7 @@
 - (id)initWithCoder:(id)arg1;
 - (float)maxAspectRatio;
 - (float)minAspectRatio;
-- (void)setConstraintType:(int)arg1;
+- (void)setConstraintType:(long long)arg1;
 - (void)setFixedDimension:(float)arg1;
 - (void)setFixedHeight:(float)arg1;
 - (void)setFixedWidth:(float)arg1;

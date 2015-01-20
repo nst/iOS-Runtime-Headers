@@ -17,7 +17,7 @@
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)enumerateTracksUsingBlock:(id)arg1;
 - (id)header;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)sections;
 - (id)tracks;
 

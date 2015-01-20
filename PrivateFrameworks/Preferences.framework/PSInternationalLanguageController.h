@@ -15,8 +15,8 @@
     NSArray *_otherLanguages;
     NSString *_savedSearchTerm;
     UISearchBar *_searchBar;
-    BOOL _searchIsActive;
     UITableView *_tableView;
+    bool_searchIsActive;
 }
 
 @property(retain) PSLanguage * checkedLanguage;
@@ -25,12 +25,12 @@
 @property(retain) NSArray * deviceLanguages;
 @property(retain) NSArray * filteredDeviceLanguages;
 @property(retain) NSArray * filteredOtherLanguages;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) PSLanguageSelector * languageSelector;
 @property(retain) PSLocaleSelector * localeSelector;
 @property(retain) NSArray * otherLanguages;
 @property(retain) NSString * savedSearchTerm;
-@property BOOL searchIsActive;
+@property bool searchIsActive;
 @property(readonly) Class superclass;
 
 - (id)_mainContentView;
@@ -49,15 +49,15 @@
 - (void)loadData;
 - (void)loadView;
 - (id)localeSelector;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)otherLanguages;
-- (void)reloadDataAndScrollToCheckedLanguageWithAnimation:(BOOL)arg1;
+- (void)reloadDataAndScrollToCheckedLanguageWithAnimation:(bool)arg1;
 - (id)savedSearchTerm;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
-- (BOOL)searchIsActive;
+- (bool)searchIsActive;
 - (void)setCheckedLanguage:(id)arg1;
 - (void)setDeviceLanguages:(id)arg1;
 - (void)setFilteredDeviceLanguages:(id)arg1;
@@ -66,14 +66,14 @@
 - (void)setLocaleSelector:(id)arg1;
 - (void)setOtherLanguages:(id)arg1;
 - (void)setSavedSearchTerm:(id)arg1;
-- (void)setSearchIsActive:(BOOL)arg1;
+- (void)setSearchIsActive:(bool)arg1;
 - (void)sortByLocalizedLanguage:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)updateNavigationItem;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

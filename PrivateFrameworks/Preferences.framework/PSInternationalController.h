@@ -6,25 +6,25 @@
 
 @interface PSInternationalController : PSListController {
     PSSpecifier *_addLanguageSpecifier;
-    BOOL _changePrimaryLanguage;
     NSArray *_deviceLanguageGroup;
-    unsigned int _deviceLanguageIndex;
+    unsigned long long _deviceLanguageIndex;
     NSLocale *_locale;
     NSArray *_preferredLanguagesGroup;
     NSArray *_regionFormatExampleGroup;
     NSArray *_regionFormatGroup;
-    BOOL _shouldReloadSpecifiers;
     NSString *_topMostLanguage;
     NSMutableArray *_updatedAppleLanguages;
+    bool_changePrimaryLanguage;
+    bool_shouldReloadSpecifiers;
 }
 
 @property(retain) PSSpecifier * addLanguageSpecifier;
-@property BOOL changePrimaryLanguage;
+@property bool changePrimaryLanguage;
 @property(retain) NSArray * deviceLanguageGroup;
 @property(retain) NSArray * preferredLanguagesGroup;
 @property(retain) NSArray * regionFormatExampleGroup;
 @property(retain) NSArray * regionFormatGroup;
-@property BOOL shouldReloadSpecifiers;
+@property bool shouldReloadSpecifiers;
 @property(retain) NSMutableArray * updatedAppleLanguages;
 
 + (id)canonicalLocaleIdentifierWithValidCalendarForComponents:(id)arg1;
@@ -44,17 +44,17 @@
 + (void)setLocaleOnly:(id)arg1;
 + (id)shortTitlesForLanguageIdentifiers:(id)arg1;
 + (id)titlesForLanguageIdentifiers:(id)arg1;
-+ (void)updateAppleLanguages:(id)arg1 showPreferredLanguages:(BOOL)arg2;
++ (void)updateAppleLanguages:(id)arg1 showPreferredLanguages:(bool)arg2;
 + (id)validateLocale:(id)arg1;
 
 - (void)_removeBlackFrame;
 - (id)addLanguageSpecifier;
 - (id)calendar:(id)arg1;
-- (BOOL)canEditLanguageAtIndexPath:(id)arg1 tableView:(id)arg2;
+- (bool)canEditLanguageAtIndexPath:(id)arg1 tableView:(id)arg2;
 - (void)cancelChangeLanguage:(id)arg1;
 - (void)cancelEdits;
 - (void)changeLanguage:(id)arg1;
-- (BOOL)changePrimaryLanguage;
+- (bool)changePrimaryLanguage;
 - (void)dealloc;
 - (id)deviceLanguageGroup;
 - (id)init;
@@ -62,42 +62,42 @@
 - (id)locale:(id)arg1;
 - (void)localeChangedAction;
 - (id)localizedLanguage:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)onlyOneSystemLanguageInPreferredLanguages;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (bool)onlyOneSystemLanguageInPreferredLanguages;
 - (id)preferredLanguagesGroup;
 - (id)regionFormatExampleGroup;
 - (id)regionFormatGroup;
 - (void)reloadLocale;
-- (unsigned int)sectionIndexForTableView:(id)arg1 fromSuperSectionIndex:(unsigned int)arg2;
+- (unsigned long long)sectionIndexForTableView:(id)arg1 fromSuperSectionIndex:(unsigned long long)arg2;
 - (void)setAddLanguageSpecifier:(id)arg1;
 - (void)setCalendar:(id)arg1 specifier:(id)arg2;
-- (void)setChangePrimaryLanguage:(BOOL)arg1;
+- (void)setChangePrimaryLanguage:(bool)arg1;
 - (void)setCountryForLocale:(id)arg1;
 - (void)setDeviceLanguageGroup:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setLanguage:(id)arg1 specifier:(id)arg2;
 - (void)setLocale:(id)arg1 specifier:(id)arg2;
 - (void)setPreferredLanguagesGroup:(id)arg1;
 - (void)setRegionFormatExampleGroup:(id)arg1;
 - (void)setRegionFormatGroup:(id)arg1;
-- (void)setShouldReloadSpecifiers:(BOOL)arg1;
+- (void)setShouldReloadSpecifiers:(bool)arg1;
 - (void)setUpdatedAppleLanguages:(id)arg1;
-- (BOOL)shouldReloadSpecifiers;
+- (bool)shouldReloadSpecifiers;
 - (void)showBlackViewWithLabel:(id)arg1 withLanguageIdentifier:(id)arg2;
 - (void)showLanguageSheet:(id)arg1;
 - (void)showOfficialLanguageSheet:(id)arg1;
 - (id)specifiers;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (void)toggleEdit;
-- (void)updateCell:(id)arg1 forPreferredLanguageAtIndex:(unsigned int)arg2;
+- (void)updateCell:(id)arg1 forPreferredLanguageAtIndex:(unsigned long long)arg2;
 - (void)updateSelectionStyleForVisibleCells;
 - (id)updatedAppleLanguages;
 - (id)updatedDeviceLanguage;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

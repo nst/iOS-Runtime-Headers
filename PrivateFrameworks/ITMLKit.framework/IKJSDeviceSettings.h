@@ -9,7 +9,7 @@
 }
 
 @property(readonly) IKJSRestrictions * Restrictions;
-@property(readonly) struct CGSize { float x1; float x2; } Screen;
+@property(readonly) struct CGSize { double x1; double x2; } Screen;
 @property <IKAppDeviceConfig> * deviceConfig;
 @property(retain,readonly) NSString * language;
 @property(retain,readonly) NSString * name;
@@ -19,8 +19,8 @@
 
 - (void).cxx_destruct;
 - (id)Restrictions;
-- (struct CGSize { float x1; float x2; })Screen;
-- (id)_formatStringForVideoFormat:(unsigned int)arg1;
+- (struct CGSize { double x1; double x2; })Screen;
+- (id)_formatStringForVideoFormat:(unsigned long long)arg1;
 - (void)_restrictionsDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)deviceConfig;

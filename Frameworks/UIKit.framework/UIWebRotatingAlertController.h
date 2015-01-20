@@ -5,8 +5,8 @@
 @class UIWebDocumentView;
 
 @interface UIWebRotatingAlertController : _UIRotatingAlertController {
-    BOOL _wasDeferringCallbacks;
     UIWebDocumentView *_webBrowserView;
+    bool_wasDeferringCallbacks;
 }
 
 - (void)_disableWebView;
@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (void)doneWithSheet;
 - (id)initWithUIWebDocumentView:(id)arg1;
-- (BOOL)presentSheet;
+- (bool)presentSheet;
 
 @end

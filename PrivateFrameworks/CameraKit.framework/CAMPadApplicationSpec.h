@@ -5,23 +5,23 @@
 @interface CAMPadApplicationSpec : CAMApplicationSpec {
 }
 
-- (int)bottomBarOrientation;
-- (int)modeDialOrientation;
+- (long long)bottomBarOrientation;
+- (long long)modeDialOrientation;
 - (int)rotationStyle;
-- (BOOL)shouldCreateAvalancheIndicator;
-- (BOOL)shouldCreateBottomBar;
-- (BOOL)shouldCreateElapsedTimeView;
-- (BOOL)shouldCreateFiltersButton;
-- (BOOL)shouldCreateFlashButton;
-- (BOOL)shouldCreateFlipButton;
-- (BOOL)shouldCreateHDRButton;
-- (BOOL)shouldCreateImageWell;
-- (BOOL)shouldCreateModeDial;
-- (BOOL)shouldCreatePanoramaView;
-- (BOOL)shouldCreateShutterButton;
-- (BOOL)shouldCreateStillDuringVideo;
-- (BOOL)shouldCreateTimerButton;
-- (BOOL)shouldCreateTopBar;
-- (BOOL)shouldCreateZoomSlider;
+- (bool)shouldCreateAvalancheIndicator;
+- (bool)shouldCreateBottomBar;
+- (bool)shouldCreateElapsedTimeView;
+- (bool)shouldCreateFiltersButton;
+- (bool)shouldCreateFlashButton;
+- (bool)shouldCreateFlipButton;
+- (bool)shouldCreateHDRButton;
+- (bool)shouldCreateImageWell;
+- (bool)shouldCreateModeDial;
+- (bool)shouldCreatePanoramaView;
+- (bool)shouldCreateShutterButton;
+- (bool)shouldCreateStillDuringVideo;
+- (bool)shouldCreateTimerButton;
+- (bool)shouldCreateTopBar;
+- (bool)shouldCreateZoomSlider;
 
 @end

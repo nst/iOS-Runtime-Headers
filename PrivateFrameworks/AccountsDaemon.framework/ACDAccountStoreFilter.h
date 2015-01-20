@@ -11,20 +11,20 @@
 @property(retain) ACDAccountStore * backingAccountStore;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)_whiteList;
 
 - (void).cxx_destruct;
-- (BOOL)_accessGrantedForBundleID:(id)arg1 onAccountTypeID:(id)arg2;
-- (BOOL)_accessGrantedForClient:(id)arg1 onAccountTypeID:(id)arg2;
+- (bool)_accessGrantedForBundleID:(id)arg1 onAccountTypeID:(id)arg2;
+- (bool)_accessGrantedForClient:(id)arg1 onAccountTypeID:(id)arg2;
 - (id)_appPermissionsForAccountTypeIdentifier:(id)arg1;
-- (BOOL)_clientHasPermissionToAddAccount:(id)arg1;
-- (BOOL)_isClientPermittedToAccessAccount:(id)arg1;
-- (BOOL)_isClientPermittedToAccessAccountTypeWithIdentifier:(id)arg1;
-- (BOOL)_isClientPermittedToRemoveAccount:(id)arg1;
-- (BOOL)_wildCardAuthorizationMatchingForAccountTypeIdentifier:(id)arg1;
+- (bool)_clientHasPermissionToAddAccount:(id)arg1;
+- (bool)_isClientPermittedToAccessAccount:(id)arg1;
+- (bool)_isClientPermittedToAccessAccountTypeWithIdentifier:(id)arg1;
+- (bool)_isClientPermittedToRemoveAccount:(id)arg1;
+- (bool)_wildCardAuthorizationMatchingForAccountTypeIdentifier:(id)arg1;
 - (void)accessKeysForAccountType:(id)arg1 handler:(id)arg2;
 - (void)accountExistsWithDescription:(id)arg1 completion:(id)arg2;
 - (void)accountIdentifiersEnabledForDataclass:(id)arg1 handler:(id)arg2;
@@ -61,7 +61,7 @@
 - (void)kerberosAccountsForDomainFromURL:(id)arg1 completion:(id)arg2;
 - (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2 completion:(id)arg3;
 - (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1 withChangeType:(id)arg2;
-- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
+- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(bool)arg3 completion:(id)arg4;
 - (void)parentAccountForAccountWithIdentifier:(id)arg1 handler:(id)arg2;
 - (void)permissionForAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)provisionedDataclassesForAccountWithIdentifier:(id)arg1 handler:(id)arg2;
@@ -69,18 +69,18 @@
 - (void)removeAccountType:(id)arg1 withHandler:(id)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
 - (void)requestAccessForAccountTypeWithIdentifier:(id)arg1 options:(id)arg2 withHandler:(id)arg3;
-- (void)saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
+- (void)saveAccount:(id)arg1 verify:(bool)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
 - (void)saveAccount:(id)arg1 withHandler:(id)arg2;
 - (void)setBackingAccountStore:(id)arg1;
 - (void)setClientBundleID:(id)arg1 withHandler:(id)arg2;
-- (void)setNotificationsEnabled:(BOOL)arg1;
+- (void)setNotificationsEnabled:(bool)arg1;
 - (void)setPermissionGranted:(id)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3 withHandler:(id)arg4;
 - (void)supportedDataclassesForAccountType:(id)arg1 handler:(id)arg2;
 - (void)syncableDataclassesForAccountType:(id)arg1 handler:(id)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id)arg2;
 - (void)typeIdentifierForDomain:(id)arg1 withHandler:(id)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id)arg2;
-- (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
+- (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(bool)arg2 withHandler:(id)arg3;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface CAMFormattingManager : NSObject {
-    BOOL _supportsVerticalText;
-    BOOL _wantsCustomKerning;
+    bool_supportsVerticalText;
+    bool_wantsCustomKerning;
 }
 
-@property(readonly) BOOL supportsVerticalText;
-@property(readonly) BOOL wantsCustomKerning;
+@property(readonly) bool supportsVerticalText;
+@property(readonly) bool wantsCustomKerning;
 
 + (id)sharedManager;
 
 - (void)_commonCAMFormattingManagerInitialization;
 - (id)init;
-- (BOOL)supportsVerticalText;
-- (BOOL)wantsCustomKerning;
+- (bool)supportsVerticalText;
+- (bool)wantsCustomKerning;
 
 @end

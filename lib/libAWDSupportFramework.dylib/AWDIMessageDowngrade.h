@@ -18,10 +18,10 @@
 
 @property unsigned int durationBeforeDowngrade;
 @property(retain) NSString * guid;
-@property BOOL hasDurationBeforeDowngrade;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsManualDowngrade;
-@property BOOL hasTimestamp;
+@property bool hasDurationBeforeDowngrade;
+@property(readonly) bool hasGuid;
+@property bool hasIsManualDowngrade;
+@property bool hasTimestamp;
 @property unsigned int isManualDowngrade;
 @property unsigned long long timestamp;
 
@@ -32,20 +32,20 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)durationBeforeDowngrade;
 - (id)guid;
-- (BOOL)hasDurationBeforeDowngrade;
-- (BOOL)hasGuid;
-- (BOOL)hasIsManualDowngrade;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDurationBeforeDowngrade;
+- (bool)hasGuid;
+- (bool)hasIsManualDowngrade;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)isManualDowngrade;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDurationBeforeDowngrade:(unsigned int)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setHasDurationBeforeDowngrade:(BOOL)arg1;
-- (void)setHasIsManualDowngrade:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDurationBeforeDowngrade:(bool)arg1;
+- (void)setHasIsManualDowngrade:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setIsManualDowngrade:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

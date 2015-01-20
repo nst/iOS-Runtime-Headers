@@ -3,14 +3,14 @@
  */
 
 @interface MCTimerContext : NSObject {
-    BOOL _enabled;
+    bool_enabled;
 }
 
-@property BOOL enabled;
+@property bool enabled;
 
 - (void)disable;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)init;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

@@ -9,17 +9,17 @@
 
 @interface CLNotifierClientAdapter : NSObject <CLNotifierServiceClientProtocol> {
     struct CLNotifierClientBase { int (**x1)(); } *_client;
-    BOOL _valid;
+    bool_valid;
 }
 
-@property BOOL valid;
+@property bool valid;
 
 - (id)debugDescription;
 - (id)init;
 - (id)initWithClient:(struct CLNotifierClientBase { int (**x1)(); }*)arg1;
 - (void)invalidate;
 - (void)onNotification:(int)arg1 withData:(id)arg2;
-- (void)setValid:(BOOL)arg1;
-- (BOOL)valid;
+- (void)setValid:(bool)arg1;
+- (bool)valid;
 
 @end

@@ -13,7 +13,7 @@
 @property(copy) id buttonHandler;
 
 - (id)buttonHandler;
-- (BOOL)isSelectable;
+- (bool)isSelectable;
 - (void)setButtonHandler:(id)arg1;
 - (Class)tableViewCellClass;
 

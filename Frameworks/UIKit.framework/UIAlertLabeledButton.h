@@ -5,17 +5,17 @@
 @class UILabel;
 
 @interface UIAlertLabeledButton : UIAlertButton {
-    float _titleOffset;
+    double _titleOffset;
     UILabel *_typeLabel;
 }
 
-@property float titleOffset;
+@property double titleOffset;
 @property(readonly) UILabel * typeLabel;
 
 - (void)dealloc;
 - (void)layoutSubviews;
-- (void)setTitleOffset:(float)arg1;
-- (float)titleOffset;
+- (void)setTitleOffset:(double)arg1;
+- (double)titleOffset;
 - (id)typeLabel;
 
 @end

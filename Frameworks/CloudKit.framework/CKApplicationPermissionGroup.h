@@ -7,25 +7,25 @@
 @interface CKApplicationPermissionGroup : NSObject <NSSecureCoding> {
     NSArray *_applicationBundleIDs;
     NSArray *_containerIDs;
-    unsigned int _enabledPermissions;
+    unsigned long long _enabledPermissions;
 }
 
 @property(retain) NSArray * applicationBundleIDs;
 @property(retain) NSArray * containerIDs;
-@property unsigned int enabledPermissions;
+@property unsigned long long enabledPermissions;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)applicationBundleIDs;
 - (id)containerIDs;
 - (id)description;
-- (unsigned int)enabledPermissions;
+- (unsigned long long)enabledPermissions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setApplicationBundleIDs:(id)arg1;
 - (void)setContainerIDs:(id)arg1;
-- (void)setEnabledPermissions:(unsigned int)arg1;
+- (void)setEnabledPermissions:(unsigned long long)arg1;
 
 @end

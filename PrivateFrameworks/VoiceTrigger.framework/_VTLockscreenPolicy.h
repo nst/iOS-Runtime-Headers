@@ -7,19 +7,19 @@
 @interface _VTLockscreenPolicy : _VTStatePolicy <MCProfileConnectionObserver> {
     unsigned char _lockedState;
     int _lockscreenNotifyToken;
-    BOOL _siriRestrictedOnLockScreen;
+    bool_siriRestrictedOnLockScreen;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)_registerForLockscreenUpdates;
 - (void)_unregisterForLockscreenUpdates;
 - (void)dealloc;
 - (id)initWithCallback:(id)arg1 queue:(id)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 
 @end

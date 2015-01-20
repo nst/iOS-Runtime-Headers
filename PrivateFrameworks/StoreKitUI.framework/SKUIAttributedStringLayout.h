@@ -6,34 +6,34 @@
 
 @interface SKUIAttributedStringLayout : NSObject <SKUICachedLayout> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSAttributedString *_attributedString;
     } _boundingSize;
     NSStringDrawingContext *_context;
-    float _topInset;
+    double _topInset;
 }
 
 @property(readonly) NSAttributedString * attributedString;
-@property(readonly) float baselineOffset;
-@property(readonly) struct CGSize { float x1; float x2; } boundingSize;
+@property(readonly) double baselineOffset;
+@property(readonly) struct CGSize { double x1; double x2; } boundingSize;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) float firstBaselineOffset;
-@property(readonly) unsigned int hash;
-@property(readonly) int numberOfLines;
+@property(readonly) double firstBaselineOffset;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long numberOfLines;
 @property(readonly) NSStringDrawingContext * stringDrawingContext;
 @property(readonly) Class superclass;
-@property(readonly) float topInset;
+@property(readonly) double topInset;
 
 - (void).cxx_destruct;
 - (id)attributedString;
-- (float)baselineOffset;
-- (struct CGSize { float x1; float x2; })boundingSize;
-- (float)firstBaselineOffset;
+- (double)baselineOffset;
+- (struct CGSize { double x1; double x2; })boundingSize;
+- (double)firstBaselineOffset;
 - (id)initWithLayoutRequest:(id)arg1;
-- (int)numberOfLines;
+- (long long)numberOfLines;
 - (id)stringDrawingContext;
-- (float)topInset;
+- (double)topInset;
 
 @end

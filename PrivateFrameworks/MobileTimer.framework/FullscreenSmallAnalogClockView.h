@@ -5,8 +5,8 @@
 @interface FullscreenSmallAnalogClockView : AnalogClockView {
 }
 
-+ (float)faceRadius;
-+ (BOOL)shouldCacheImageOnDiskForType:(int)arg1 dayTime:(BOOL)arg2;
++ (double)faceRadius;
++ (bool)shouldCacheImageOnDiskForType:(int)arg1 dayTime:(bool)arg2;
 + (int)style;
 
 @end

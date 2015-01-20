@@ -13,7 +13,7 @@
 @property(copy) NSString * fileFormat;
 @property(copy) NSString * fileName;
 @property(copy) NSNumber * fileSize;
-@property(readonly) BOOL isBinary;
+@property(readonly) bool isBinary;
 @property(copy) NSURL * localURL;
 
 + (id)relations;
@@ -27,12 +27,12 @@
 - (id)fileFormat;
 - (id)fileName;
 - (id)fileSize;
-- (BOOL)isBinary;
+- (bool)isBinary;
 - (id)localURL;
 - (void)setFileFormat:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setFileSize:(id)arg1;
-- (void)setIsBinary:(BOOL)arg1;
+- (void)setIsBinary:(bool)arg1;
 - (void)setLocalURL:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setXProperties:(id)arg1;

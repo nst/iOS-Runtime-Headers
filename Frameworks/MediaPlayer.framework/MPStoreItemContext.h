@@ -9,7 +9,7 @@
     NSString *_buyParametersString;
     NSString *_downloadIdentifier;
     MPMediaItem *_mediaItem;
-    unsigned int _mediaType;
+    unsigned long long _mediaType;
     long long _storeID;
 }
 
@@ -19,17 +19,17 @@
 @property(copy,readonly) NSString * buyParametersString;
 @property(copy,readonly) NSString * contentTitle;
 @property(copy) NSString * downloadIdentifier;
-@property(readonly) BOOL isDownloadInProgress;
-@property(readonly) BOOL isDownloadable;
-@property(readonly) BOOL isDownloadableStoreOffer;
-@property(readonly) BOOL isPurchasableStoreOffer;
-@property(readonly) BOOL localFileIsStreamingQuality;
-@property(readonly) BOOL localFileIsTemporaryCloudDownload;
-@property(readonly) BOOL localFileIsValidForPlayback;
+@property(readonly) bool isDownloadInProgress;
+@property(readonly) bool isDownloadable;
+@property(readonly) bool isDownloadableStoreOffer;
+@property(readonly) bool isPurchasableStoreOffer;
+@property(readonly) bool localFileIsStreamingQuality;
+@property(readonly) bool localFileIsTemporaryCloudDownload;
+@property(readonly) bool localFileIsValidForPlayback;
 @property(copy,readonly) NSString * localFileName;
 @property(copy) NSString * localFilePath;
 @property(readonly) long long matchID;
-@property(readonly) unsigned int mediaType;
+@property(readonly) unsigned long long mediaType;
 @property(readonly) unsigned long long persistentStorageIdentifier;
 @property(copy,readonly) NSURL * protectedContentSupportStorageURL;
 @property(readonly) long long purchaseHistoryID;
@@ -37,17 +37,17 @@
 @property(readonly) float volumeNormalization;
 
 + (id)contextWithMediaItem:(id)arg1;
-+ (id)contextWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3;
++ (id)contextWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned long long)arg3;
 + (id)contextsWithMediaItems:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)ITunesStoreContentDownloadInfo;
 - (id)ITunesStoreContentStreamingInfo;
 - (id)URLFromPath:(id)arg1;
-- (id)_ITunesStoreContentInfo:(BOOL)arg1;
+- (id)_ITunesStoreContentInfo:(bool)arg1;
 - (void)_fetchMediaItemPropertyValues;
 - (void)_setBuyParameters:(id)arg1;
-- (id)buyOfferForVariant:(int)arg1;
+- (id)buyOfferForVariant:(long long)arg1;
 - (id)buyParametersDictionary;
 - (id)buyParametersString;
 - (id)contentTitle;
@@ -55,19 +55,19 @@
 - (id)description;
 - (id)downloadIdentifier;
 - (id)initWithMediaItem:(id)arg1;
-- (id)initWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3;
-- (BOOL)isDownloadInProgress;
-- (BOOL)isDownloadable;
-- (BOOL)isDownloadableStoreOffer;
-- (BOOL)isPurchasableStoreOffer;
-- (unsigned int)itemType;
-- (BOOL)localFileIsStreamingQuality;
-- (BOOL)localFileIsTemporaryCloudDownload;
-- (BOOL)localFileIsValidForPlayback;
+- (id)initWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned long long)arg3;
+- (bool)isDownloadInProgress;
+- (bool)isDownloadable;
+- (bool)isDownloadableStoreOffer;
+- (bool)isPurchasableStoreOffer;
+- (unsigned long long)itemType;
+- (bool)localFileIsStreamingQuality;
+- (bool)localFileIsTemporaryCloudDownload;
+- (bool)localFileIsValidForPlayback;
 - (id)localFileName;
 - (id)localFilePath;
 - (long long)matchID;
-- (unsigned int)mediaType;
+- (unsigned long long)mediaType;
 - (unsigned long long)persistentStorageIdentifier;
 - (id)protectedContentSupportStorageURL;
 - (long long)purchaseHistoryID;

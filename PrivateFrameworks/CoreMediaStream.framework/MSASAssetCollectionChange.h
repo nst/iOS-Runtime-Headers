@@ -7,12 +7,12 @@
 @interface MSASAssetCollectionChange : NSObject {
     NSString *_GUID;
     NSString *_ctag;
-    BOOL _wasDeleted;
+    bool_wasDeleted;
 }
 
 @property(retain) NSString * GUID;
 @property(retain) NSString * ctag;
-@property BOOL wasDeleted;
+@property bool wasDeleted;
 
 - (void).cxx_destruct;
 - (id)GUID;
@@ -20,7 +20,7 @@
 - (id)description;
 - (void)setCtag:(id)arg1;
 - (void)setGUID:(id)arg1;
-- (void)setWasDeleted:(BOOL)arg1;
-- (BOOL)wasDeleted;
+- (void)setWasDeleted:(bool)arg1;
+- (bool)wasDeleted;
 
 @end

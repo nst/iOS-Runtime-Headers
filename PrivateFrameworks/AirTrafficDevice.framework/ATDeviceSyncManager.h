@@ -7,14 +7,14 @@
 @interface ATDeviceSyncManager : NSObject <ATMessageLinkObserver> {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_syncClientHandlers;
-    BOOL _syncPending;
+    bool_syncPending;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property BOOL syncPending;
+@property bool syncPending;
 
 + (id)deviceSyncManager;
 
@@ -25,7 +25,7 @@
 - (void)messageLinkWasClosed:(id)arg1;
 - (void)messageLinkWasInitialized:(id)arg1;
 - (void)messageLinkWasOpened:(id)arg1;
-- (void)setSyncPending:(BOOL)arg1;
-- (BOOL)syncPending;
+- (void)setSyncPending:(bool)arg1;
+- (bool)syncPending;
 
 @end

@@ -10,7 +10,7 @@
 
 @interface RUIAlertView : RUIElement {
     UIAlertController *_alertController;
-    int _buttonIndex;
+    long long _buttonIndex;
     id _completion;
     NSString *_message;
     RUIObjectModel<RUIAlertViewDelegate> *_objectModel;
@@ -18,16 +18,16 @@
 }
 
 @property(retain) NSDictionary * attributes;
-@property(readonly) int buttonIndex;
+@property(readonly) long long buttonIndex;
 @property(copy) id completion;
 @property(retain) NSString * message;
 @property RUIObjectModel<RUIAlertViewDelegate> * objectModel;
 @property(retain) NSString * title;
 
 - (void).cxx_destruct;
-- (void)addButtonWithTitle:(id)arg1 URL:(id)arg2 destructive:(BOOL)arg3 attributes:(id)arg4;
+- (void)addButtonWithTitle:(id)arg1 URL:(id)arg2 destructive:(bool)arg3 attributes:(id)arg4;
 - (id)alertController;
-- (int)buttonIndex;
+- (long long)buttonIndex;
 - (id)completion;
 - (void)dealloc;
 - (id)init;

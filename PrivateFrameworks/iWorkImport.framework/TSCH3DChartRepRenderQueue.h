@@ -5,8 +5,8 @@
 @class NSMutableArray;
 
 @interface TSCH3DChartRepRenderQueue : NSObject {
-    int mCurrentPass;
-    int mPauseLevel;
+    long long mCurrentPass;
+    long long mPauseLevel;
     NSMutableArray *mQueue;
 }
 
@@ -14,7 +14,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
 
-- (void)addRep:(id)arg1 front:(BOOL)arg2;
+- (void)addRep:(id)arg1 front:(bool)arg2;
 - (id)autorelease;
 - (void)cancelCallback;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,7 +28,7 @@
 - (void)requestCallbackWithDelay:(float)arg1;
 - (void)resume;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)threadRemoveRep:(id)arg1;
 
 @end

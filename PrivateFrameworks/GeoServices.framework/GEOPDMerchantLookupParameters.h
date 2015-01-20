@@ -16,11 +16,11 @@
     double _transactionTimestamp;
 }
 
-@property(readonly) BOOL hasMerchantCode;
-@property(readonly) BOOL hasPaymentNetwork;
-@property(readonly) BOOL hasTransactionLocation;
-@property BOOL hasTransactionLocationAge;
-@property BOOL hasTransactionTimestamp;
+@property(readonly) bool hasMerchantCode;
+@property(readonly) bool hasPaymentNetwork;
+@property(readonly) bool hasTransactionLocation;
+@property bool hasTransactionLocationAge;
+@property bool hasTransactionTimestamp;
 @property(retain) NSString * merchantCode;
 @property(retain) NSString * paymentNetwork;
 @property(retain) GEOLocation * transactionLocation;
@@ -32,19 +32,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMerchantCode;
-- (BOOL)hasPaymentNetwork;
-- (BOOL)hasTransactionLocation;
-- (BOOL)hasTransactionLocationAge;
-- (BOOL)hasTransactionTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMerchantCode;
+- (bool)hasPaymentNetwork;
+- (bool)hasTransactionLocation;
+- (bool)hasTransactionLocationAge;
+- (bool)hasTransactionTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)merchantCode;
 - (void)mergeFrom:(id)arg1;
 - (id)paymentNetwork;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTransactionLocationAge:(BOOL)arg1;
-- (void)setHasTransactionTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTransactionLocationAge:(bool)arg1;
+- (void)setHasTransactionTimestamp:(bool)arg1;
 - (void)setMerchantCode:(id)arg1;
 - (void)setPaymentNetwork:(id)arg1;
 - (void)setTransactionLocation:(id)arg1;

@@ -5,14 +5,14 @@
 @class GEOMapServiceTraits, GEORPProblemOptInRequest, NSString;
 
 @interface _GEORPOptInTicket : NSObject <GEOMapServiceFixNotificationTicket> {
-    BOOL _canceled;
     GEORPProblemOptInRequest *_request;
     GEOMapServiceTraits *_traits;
+    bool_canceled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) GEOMapServiceTraits * traits;
 

@@ -8,13 +8,13 @@
 
 @interface PFZlibDataDecompressionOptions : NSObject {
     id _createBuffer;
-    BOOL _decompressAllAtOnce;
     id _growData;
     int _windowBits;
+    bool_decompressAllAtOnce;
 }
 
 @property(copy) id createBuffer;
-@property BOOL decompressAllAtOnce;
+@property bool decompressAllAtOnce;
 @property(copy) id growData;
 @property int windowBits;
 
@@ -22,10 +22,10 @@
 
 - (void).cxx_destruct;
 - (id)createBuffer;
-- (BOOL)decompressAllAtOnce;
+- (bool)decompressAllAtOnce;
 - (id)growData;
 - (void)setCreateBuffer:(id)arg1;
-- (void)setDecompressAllAtOnce:(BOOL)arg1;
+- (void)setDecompressAllAtOnce:(bool)arg1;
 - (void)setGrowData:(id)arg1;
 - (void)setWindowBits:(int)arg1;
 - (int)windowBits;

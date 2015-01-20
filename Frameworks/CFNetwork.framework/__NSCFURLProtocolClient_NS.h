@@ -13,12 +13,12 @@
     struct URLProtocolClient { int (**x1)(); } *_cf;
     struct _CFURLAuthChallenge { } *_cfChallenge;
     NSURLAuthenticationChallenge *_challenge;
-    struct URLProtocol { int (**x1)(); int (**x2)(); struct CoreSchedulingSet {} *x3; double x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; int x13; int x14; long long x15; unsigned char x16; int x17; long long x18; id x19; struct URLProtocolClient {} *x20; struct _CFCachedURLResponse {} *x21; } *_prot;
+    struct URLProtocol { int (**x1)(); int (**x2)(); struct CoreSchedulingSet {} *x3; double x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; long long x13; long long x14; long long x15; unsigned char x16; int x17; long long x18; id x19; struct URLProtocolClient {} *x20; struct _CFCachedURLResponse {} *x21; } *_prot;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)URLProtocol:(id)arg1 cachedResponseIsValid:(id)arg2;
@@ -26,13 +26,13 @@
 - (void)URLProtocol:(id)arg1 didFailWithError:(id)arg2;
 - (void)URLProtocol:(id)arg1 didLoadData:(id)arg2;
 - (void)URLProtocol:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(unsigned int)arg3;
+- (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(unsigned long long)arg3;
 - (void)URLProtocol:(id)arg1 wasRedirectedToRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)URLProtocolDidFinishLoading:(id)arg1;
 - (struct _CFURLAuthChallenge { }*)cfChallenge;
 - (id)challenge;
 - (void)dealloc;
-- (id)initWithCFClient:(struct URLProtocolClient { int (**x1)(); }*)arg1 prot:(struct URLProtocol { int (**x1)(); int (**x2)(); struct CoreSchedulingSet {} *x3; double x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; int x13; int x14; long long x15; unsigned char x16; int x17; long long x18; id x19; struct URLProtocolClient {} *x20; struct _CFCachedURLResponse {} *x21; }*)arg2;
+- (id)initWithCFClient:(struct URLProtocolClient { int (**x1)(); }*)arg1 prot:(struct URLProtocol { int (**x1)(); int (**x2)(); struct CoreSchedulingSet {} *x3; double x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; long long x13; long long x14; long long x15; unsigned char x16; int x17; long long x18; id x19; struct URLProtocolClient {} *x20; struct _CFCachedURLResponse {} *x21; }*)arg2;
 - (void)teardown;
 
 @end

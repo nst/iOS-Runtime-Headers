@@ -14,10 +14,10 @@
 }
 
 @property(readonly) NSURL * URL;
-@property(getter=isActionable,readonly) BOOL actionable;
+@property(getter=isActionable,readonly) bool actionable;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) SKUIItem * item;
 @property(readonly) NSNumber * itemIdentifier;
 @property(readonly) NSDictionary * linkDictionary;
@@ -32,7 +32,7 @@
 - (id)initWithLinkDictionary:(id)arg1;
 - (id)initWithURL:(id)arg1 title:(id)arg2 targetString:(id)arg3;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isActionable;
+- (bool)isActionable;
 - (id)item;
 - (id)itemIdentifier;
 - (id)linkDictionary;

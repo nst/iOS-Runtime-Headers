@@ -9,7 +9,7 @@
 }
 
 @property(retain) NSDictionary * diskUsageInfo;
-@property BOOL hasCompletedDataMigration;
+@property bool hasCompletedDataMigration;
 
 + (id)readOnlyDefaults;
 + (void)synchronize;
@@ -18,12 +18,12 @@
 - (void)_updateDefaults;
 - (id)allHosts;
 - (id)diskUsageInfo;
-- (BOOL)hasCompletedDataMigration;
+- (bool)hasCompletedDataMigration;
 - (id)hostInfoForIdentifier:(id)arg1;
 - (id)init;
 - (void)removeHost:(id)arg1;
 - (void)setDiskUsageInfo:(id)arg1;
-- (void)setHasCompletedDataMigration:(BOOL)arg1;
+- (void)setHasCompletedDataMigration:(bool)arg1;
 - (void)updateHostInfo:(id)arg1 disabledAssetTypes:(id)arg2;
 - (void)updateLastSyncWithHostLibrary:(id)arg1;
 

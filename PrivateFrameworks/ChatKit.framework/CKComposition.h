@@ -9,20 +9,20 @@
     NSAttributedString *_text;
 }
 
-@property(getter=isExpirableComposition,readonly) BOOL expirableComposition;
-@property(readonly) BOOL hasContent;
-@property(readonly) BOOL hasNonwhiteSpaceContent;
+@property(getter=isExpirableComposition,readonly) bool expirableComposition;
+@property(readonly) bool hasContent;
+@property(readonly) bool hasNonwhiteSpaceContent;
 @property(retain,readonly) NSArray * mediaObjects;
 @property(retain,readonly) NSArray * pasteboardItems;
-@property(getter=isSaveable,readonly) BOOL saveable;
-@property(getter=isSendAnimated,readonly) BOOL sendAnimated;
+@property(getter=isSaveable,readonly) bool saveable;
+@property(getter=isSendAnimated,readonly) bool sendAnimated;
 @property(copy) NSAttributedString * subject;
 @property(copy) NSAttributedString * text;
-@property(getter=isTextOnly,readonly) BOOL textOnly;
+@property(getter=isTextOnly,readonly) bool textOnly;
 
 + (id)audioCompositionWithMediaObject:(id)arg1;
 + (id)composition;
-+ (id)compositionForMessageParts:(id)arg1 preserveSubject:(BOOL)arg2;
++ (id)compositionForMessageParts:(id)arg1 preserveSubject:(bool)arg2;
 + (id)compositionWithMediaObject:(id)arg1 subject:(id)arg2;
 + (id)compositionWithMediaObjects:(id)arg1 subject:(id)arg2;
 + (void)deleteCompositionWithGUID:(id)arg1;
@@ -39,14 +39,14 @@
 - (id)compositionByReplacingMediaObject:(id)arg1 withMediaObject:(id)arg2;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasContent;
-- (BOOL)hasNonwhiteSpaceContent;
+- (bool)hasContent;
+- (bool)hasNonwhiteSpaceContent;
 - (id)initWithText:(id)arg1 subject:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExpirableComposition;
-- (BOOL)isSaveable;
-- (BOOL)isSendAnimated;
-- (BOOL)isTextOnly;
+- (bool)isEqual:(id)arg1;
+- (bool)isExpirableComposition;
+- (bool)isSaveable;
+- (bool)isSendAnimated;
+- (bool)isTextOnly;
 - (id)mediaObjects;
 - (id)messageWithGUID:(id)arg1;
 - (id)pasteboardItems;

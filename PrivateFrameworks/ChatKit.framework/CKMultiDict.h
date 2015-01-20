@@ -5,7 +5,7 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface CKMultiDict : NSObject {
-    unsigned int _count;
+    unsigned long long _count;
     NSMutableDictionary *_dictionary;
     NSObject<OS_dispatch_queue> *_lockQueue;
 }
@@ -14,7 +14,7 @@
 @property(retain) NSObject<OS_dispatch_queue> * lockQueue;
 
 - (id)allKeys;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)dequeueObjectForKey:(id)arg1;
 - (id)description;

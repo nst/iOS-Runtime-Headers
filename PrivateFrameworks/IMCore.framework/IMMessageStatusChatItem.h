@@ -5,38 +5,38 @@
 @class NSDate, NSString;
 
 @interface IMMessageStatusChatItem : IMTranscriptChatItem {
-    unsigned int _count;
-    int _expireStatusType;
-    int _statusType;
+    unsigned long long _count;
+    long long _expireStatusType;
+    long long _statusType;
     NSDate *_time;
     NSDate *_timeAdded;
     NSDate *_timeStale;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
 @property(retain,readonly) NSString * errorText;
-@property(readonly) int expireStatusType;
-@property(readonly) BOOL isFromMe;
-@property(readonly) int messageStatusType;
-@property(readonly) int statusType;
+@property(readonly) long long expireStatusType;
+@property(readonly) bool isFromMe;
+@property(readonly) long long messageStatusType;
+@property(readonly) long long statusType;
 @property(retain,readonly) NSDate * time;
 
 - (Class)__ck_chatItemClass;
-- (id)_initWithItem:(id)arg1 expireStatusType:(int)arg2 count:(unsigned int)arg3;
-- (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4 expireStatusType:(int)arg5;
-- (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4;
+- (id)_initWithItem:(id)arg1 expireStatusType:(long long)arg2 count:(unsigned long long)arg3;
+- (id)_initWithItem:(id)arg1 statusType:(long long)arg2 time:(id)arg3 count:(unsigned long long)arg4 expireStatusType:(long long)arg5;
+- (id)_initWithItem:(id)arg1 statusType:(long long)arg2 time:(id)arg3 count:(unsigned long long)arg4;
 - (void)_setTimeAdded:(id)arg1;
 - (id)_timeAdded;
 - (id)_timeStale;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (id)errorText;
-- (int)expireStatusType;
-- (BOOL)isFromMe;
-- (int)messageStatusType;
-- (int)statusType;
+- (long long)expireStatusType;
+- (bool)isFromMe;
+- (long long)messageStatusType;
+- (long long)statusType;
 - (id)time;
 
 @end

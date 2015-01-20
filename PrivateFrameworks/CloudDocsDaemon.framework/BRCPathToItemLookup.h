@@ -38,9 +38,9 @@
 + (id)lookupForRelativePath:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_fetchByDocumentID;
-- (BOOL)_fetchByFileID;
-- (BOOL)_fetchByPath;
+- (bool)_fetchByDocumentID;
+- (bool)_fetchByFileID;
+- (bool)_fetchByPath;
 - (id)byDocumentID;
 - (id)byFileID;
 - (id)byPath;

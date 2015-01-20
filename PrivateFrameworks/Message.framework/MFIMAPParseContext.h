@@ -7,21 +7,21 @@
 @interface MFIMAPParseContext : NSObject {
     MFIMAPConnection *_connection;
     const char *_end;
-    BOOL _invalid;
     const char *_lastLoggedChar;
     const char *_originalEnd;
     const char *_originalStart;
     MFIMAPResponse *_response;
     const char *_start;
+    bool_invalid;
 }
 
-+ (BOOL)hadWarningOrError;
++ (bool)hadWarningOrError;
 + (void)resetWarningOrError;
 
 - (id)connection;
 - (id)copyAString;
 - (id)copyArray;
-- (struct __CFArray { }*)copyArrayAllowingNulls:(BOOL)arg1;
+- (struct __CFArray { }*)copyArrayAllowingNulls:(bool)arg1;
 - (id)copyAtom;
 - (id)copyDateTime;
 - (id)copyLiteral;
@@ -35,17 +35,17 @@
 - (void)emitError:(id)arg1;
 - (void)emitWarning:(id)arg1;
 - (const char *)end;
-- (BOOL)getNumber:(unsigned long long*)arg1;
+- (bool)getNumber:(unsigned long long*)arg1;
 - (void)increment;
 - (id)initWithConnection:(id)arg1 response:(id)arg2 start:(const char *)arg3 end:(const char *)arg4;
-- (BOOL)isValid;
-- (BOOL)literalWithResponseConsumer:(id)arg1 section:(id)arg2;
+- (bool)isValid;
+- (bool)literalWithResponseConsumer:(id)arg1 section:(id)arg2;
 - (void)logReadChars;
 - (unsigned char)lookAhead;
-- (BOOL)match:(const char *)arg1 upToSpecial:(const char *)arg2;
-- (BOOL)match:(const char *)arg1;
+- (bool)match:(const char *)arg1 upToSpecial:(const char *)arg2;
+- (bool)match:(const char *)arg1;
 - (const char *)nextSeparator;
-- (BOOL)parseSpace;
+- (bool)parseSpace;
 - (id)response;
 - (void)setEnd:(const char *)arg1;
 - (void)setStart:(const char *)arg1;

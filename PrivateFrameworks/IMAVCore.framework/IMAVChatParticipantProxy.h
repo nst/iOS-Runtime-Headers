@@ -9,11 +9,11 @@
     NSDictionary *_info;
 }
 
-@property(readonly) BOOL _inviteDelivered;
+@property(readonly) bool _inviteDelivered;
 @property(retain,readonly) IMAVChat * avChat;
 @property(retain,readonly) NSString * name;
 
-- (BOOL)_inviteDelivered;
+- (bool)_inviteDelivered;
 - (id)avChat;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;

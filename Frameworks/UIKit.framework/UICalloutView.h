@@ -7,36 +7,36 @@
 @interface UICalloutView : UIControl {
     struct { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } offset; 
         int position; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } desiredPoint; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } desiredBounds; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct { 
         unsigned int animated : 1; 
@@ -55,7 +55,7 @@
     UIImageView *_leftBackground;
     UIImageView *_leftCap;
     UIView *_leftView;
-    float _maximumWidth;
+    double _maximumWidth;
     UIImageView *_rightBackground;
     UIImageView *_rightCap;
     UIView *_rightView;
@@ -65,91 +65,91 @@
     UIImageView *_topAnchor;
 }
 
-@property(readonly) float UICalloutViewButtonPadding;
-@property(readonly) float UICalloutViewCapHeight;
-@property(readonly) float UICalloutViewCapPaddingTop;
-@property(readonly) float UICalloutViewHorizontalMargin;
-@property(readonly) float UICalloutViewHorizontalPadding;
+@property(readonly) double UICalloutViewButtonPadding;
+@property(readonly) double UICalloutViewCapHeight;
+@property(readonly) double UICalloutViewCapPaddingTop;
+@property(readonly) double UICalloutViewHorizontalMargin;
+@property(readonly) double UICalloutViewHorizontalPadding;
 @property(readonly) double UICalloutViewLayoutDuration;
-@property(readonly) float UICalloutViewMinimumWidth;
-@property(readonly) float UICalloutViewVerticalMargin;
-@property BOOL canAnchorFromBottom;
+@property(readonly) double UICalloutViewMinimumWidth;
+@property(readonly) double UICalloutViewVerticalMargin;
+@property bool canAnchorFromBottom;
 @property(retain) UIView * leftView;
-@property float maximumWidth;
+@property double maximumWidth;
 @property(retain) UIView * rightView;
-@property int subtitleLineBreakMode;
-@property int subtitleTextAlignment;
-@property int titleLineBreakMode;
-@property int titleTextAlignment;
+@property long long subtitleLineBreakMode;
+@property long long subtitleTextAlignment;
+@property long long titleLineBreakMode;
+@property long long titleTextAlignment;
 
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
 + (id)_leftCapImage;
 + (id)_rightCapImage;
 + (id)_topAnchorImage;
-+ (float)defaultHeight;
++ (double)defaultHeight;
 + (id)sharedCalloutView;
 
-- (float)UICalloutViewButtonPadding;
-- (float)UICalloutViewCapHeight;
-- (float)UICalloutViewCapPaddingTop;
-- (float)UICalloutViewHorizontalMargin;
-- (float)UICalloutViewHorizontalPadding;
+- (double)UICalloutViewButtonPadding;
+- (double)UICalloutViewCapHeight;
+- (double)UICalloutViewCapPaddingTop;
+- (double)UICalloutViewHorizontalMargin;
+- (double)UICalloutViewHorizontalPadding;
 - (double)UICalloutViewLayoutDuration;
-- (float)UICalloutViewMinimumWidth;
-- (float)UICalloutViewVerticalMargin;
-- (void)_fadeViewsIn:(BOOL)arg1;
+- (double)UICalloutViewMinimumWidth;
+- (double)UICalloutViewVerticalMargin;
+- (void)_fadeViewsIn:(bool)arg1;
 - (void)_layoutAnimation;
-- (void)_layoutSubviews:(BOOL)arg1;
+- (void)_layoutSubviews:(bool)arg1;
 - (void)_markDidMoveCalled;
 - (void)_scheduleLayoutAnimation;
 - (void)_scheduleViewToFadeIn:(id)arg1;
 - (void)_scheduleViewToFadeOut:(id)arg1;
 - (void)_setLayoutAnimationTimer:(id)arg1;
 - (void)_setLeftView:(id)arg1;
-- (void)_setOriginForScale:(float)arg1;
+- (void)_setOriginForScale:(double)arg1;
 - (void)_setRightView:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { float x1; float x2; })anchorPoint;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (BOOL)canAnchorFromBottom;
+- (bool)canAnchorFromBottom;
 - (void)completeBounceAnimation;
 - (void)dealloc;
 - (id)delegate;
 - (void)fadeOutWithDuration:(double)arg1;
-- (void)getActualAnchorPoint:(struct CGPoint { float x1; float x2; }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { float x1; float x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isExpanded;
+- (void)getActualAnchorPoint:(struct CGPoint { double x1; double x2; }*)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { double x1; double x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isExpanded;
 - (id)leftView;
-- (float)maximumWidth;
-- (struct CGPoint { float x1; float x2; })offset;
+- (double)maximumWidth;
+- (struct CGPoint { double x1; double x2; })offset;
 - (void)removeTarget:(id)arg1;
 - (id)rightView;
-- (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animate:(BOOL)arg3;
-- (void)setCanAnchorFromBottom:(BOOL)arg1;
+- (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animate:(bool)arg3;
+- (void)setCanAnchorFromBottom:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftView:(id)arg1 animated:(bool)arg2;
 - (void)setLeftView:(id)arg1;
-- (void)setMaximumWidth:(float)arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
+- (void)setMaximumWidth:(double)arg1;
+- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRightView:(id)arg1 animated:(bool)arg2;
 - (void)setRightView:(id)arg1;
-- (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
+- (void)setSubtitle:(id)arg1 animated:(bool)arg2;
 - (void)setSubtitle:(id)arg1;
-- (void)setSubtitleLineBreakMode:(int)arg1;
-- (void)setSubtitleTextAlignment:(int)arg1;
+- (void)setSubtitleLineBreakMode:(long long)arg1;
+- (void)setSubtitleTextAlignment:(long long)arg1;
 - (void)setTemporaryTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleLineBreakMode:(int)arg1;
-- (void)setTitleTextAlignment:(int)arg1;
+- (void)setTitleLineBreakMode:(long long)arg1;
+- (void)setTitleTextAlignment:(long long)arg1;
 - (id)subtitle;
-- (int)subtitleLineBreakMode;
-- (int)subtitleTextAlignment;
+- (long long)subtitleLineBreakMode;
+- (long long)subtitleTextAlignment;
 - (id)temporaryTitle;
 - (id)title;
-- (int)titleLineBreakMode;
-- (int)titleTextAlignment;
+- (long long)titleLineBreakMode;
+- (long long)titleTextAlignment;
 
 @end

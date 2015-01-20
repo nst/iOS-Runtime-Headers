@@ -19,14 +19,14 @@
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)mf_addImmediateObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 - (void)mf_removeObservers:(id)arg1;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
 - (void)postNotificationName:(id)arg1;
-- (void)postNotificationNameOnMainThread:(id)arg1 object:(id)arg2 userInfo:(id)arg3 waitUntilDone:(BOOL)arg4;
+- (void)postNotificationNameOnMainThread:(id)arg1 object:(id)arg2 userInfo:(id)arg3 waitUntilDone:(bool)arg4;
 - (void)postNotificationNameOnMainThreadHandler:(id)arg1;
 - (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)removeObserver:(id)arg1;

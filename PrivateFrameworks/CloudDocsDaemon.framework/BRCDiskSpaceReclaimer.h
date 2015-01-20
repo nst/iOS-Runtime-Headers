@@ -5,31 +5,31 @@
 @class BRCAccountSession, NSObject<OS_dispatch_queue>;
 
 @interface BRCDiskSpaceReclaimer : NSObject {
-    BOOL _isClosed;
     NSObject<OS_dispatch_queue> *_queue;
     BRCAccountSession *_session;
+    bool_isClosed;
 }
 
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
 
-+ (BOOL)createTablesWithDB:(id)arg1;
++ (bool)createTablesWithDB:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id)arg1 withUrgency:(int)arg2;
 - (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
 - (void)close;
 - (long long)computePurgableSpaceWithUrgency:(int)arg1;
-- (BOOL)containerWasReset:(id)arg1;
+- (bool)containerWasReset:(id)arg1;
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
-- (BOOL)documentChangedEvictability:(id)arg1;
+- (bool)documentChangedEvictability:(id)arg1;
 - (void)documentWasAccessed:(id)arg1;
-- (BOOL)documentWasCreated:(id)arg1;
-- (BOOL)documentWasDeleted:(id)arg1;
+- (bool)documentWasCreated:(id)arg1;
+- (bool)documentWasDeleted:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
 - (long long)periodicReclaimSpace:(long long)arg1 withUrgency:(int)arg2;
 - (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
 - (id)queue;
-- (BOOL)renameAndUnlinkInBackgroundItemAtPath:(id)arg1;
+- (bool)renameAndUnlinkInBackgroundItemAtPath:(id)arg1;
 - (void)unlinkInBackgroundItemsRenamedBeforeRestart;
 
 @end

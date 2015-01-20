@@ -10,14 +10,14 @@
 @property(readonly) CNContact * billingAddress;
 @property(readonly) PKPaymentPass * pass;
 @property(readonly) PKPaymentApplication * paymentApplication;
-@property(readonly) BOOL requiresBillingAddress;
+@property(readonly) bool requiresBillingAddress;
 
-+ (int)dataType;
++ (long long)dataType;
 
 - (id)billingAddress;
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isValidWithError:(id*)arg1;
 - (id)pass;
 - (id)paymentApplication;
-- (BOOL)requiresBillingAddress;
+- (bool)requiresBillingAddress;
 
 @end

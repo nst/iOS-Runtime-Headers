@@ -7,7 +7,7 @@
 
 + (id)sortedKeywordsForKeywordSet:(id)arg1;
 
-- (int)compareObject:(id)arg1 toObject:(id)arg2;
+- (long long)compareObject:(id)arg1 toObject:(id)arg2;
 - (id)description;
 - (id)init;
 

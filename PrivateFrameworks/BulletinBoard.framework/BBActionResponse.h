@@ -6,7 +6,7 @@
 
 @interface BBActionResponse : NSObject <NSSecureCoding> {
     NSString *_actionID;
-    int _actionType;
+    long long _actionType;
     NSString *_bulletinButtonID;
     NSDictionary *_bulletinContext;
     NSString *_bulletinPublisherID;
@@ -15,7 +15,7 @@
 }
 
 @property(copy) NSString * actionID;
-@property int actionType;
+@property long long actionType;
 @property(copy) NSString * bulletinButtonID;
 @property(copy) NSDictionary * bulletinContext;
 @property(copy) NSString * bulletinPublisherID;
@@ -23,10 +23,10 @@
 @property(copy) NSDictionary * context;
 
 + (id)actionResponseForResponse:(id)arg1 bulletinRequest:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)actionID;
-- (int)actionType;
+- (long long)actionType;
 - (id)bulletinButtonID;
 - (id)bulletinContext;
 - (id)bulletinPublisherID;
@@ -37,7 +37,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setActionID:(id)arg1;
-- (void)setActionType:(int)arg1;
+- (void)setActionType:(long long)arg1;
 - (void)setBulletinButtonID:(id)arg1;
 - (void)setBulletinContext:(id)arg1;
 - (void)setBulletinPublisherID:(id)arg1;

@@ -5,6 +5,6 @@
 @interface PLQLDuetQuery : PLQLAccountingQuery {
 }
 
-- (id)runQueryForTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 withSnapRail:(BOOL)arg2;
+- (id)runQueryForTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 withSnapRail:(bool)arg2;
 
 @end

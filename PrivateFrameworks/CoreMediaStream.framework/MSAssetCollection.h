@@ -11,7 +11,7 @@
     NSString *_fileName;
     long long _initialFailureDate;
     MSAsset *_masterAsset;
-    BOOL _wasDeleted;
+    bool_wasDeleted;
 }
 
 @property(retain) NSString * assetCollectionID;
@@ -21,11 +21,11 @@
 @property long long initialFailureDate;
 @property(retain) MSAsset * masterAsset;
 @property(readonly) NSData * masterAssetHash;
-@property BOOL wasDeleted;
+@property bool wasDeleted;
 
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetCollectionID;
@@ -37,7 +37,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 - (long long)initialFailureDate;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)masterAsset;
 - (id)masterAssetHash;
 - (void)setAssetCollectionID:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)setFileName:(id)arg1;
 - (void)setInitialFailureDate:(long long)arg1;
 - (void)setMasterAsset:(id)arg1;
-- (void)setWasDeleted:(BOOL)arg1;
-- (BOOL)wasDeleted;
+- (void)setWasDeleted:(bool)arg1;
+- (bool)wasDeleted;
 
 @end

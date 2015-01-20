@@ -12,15 +12,15 @@
     AXRemoteHearingAidDevice *_device;
     struct __CFSocket { } *_ipv4socket;
     struct __CFSocket { } *_ipv6socket;
-    BOOL _isVisible;
     AXHATimer *_resolveTimer;
     id _searchCompletion;
+    bool_isVisible;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) AXRemoteHearingAidDevice * device;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) id searchCompletion;
 @property(readonly) Class superclass;
 
@@ -29,8 +29,8 @@
 - (void)dealloc;
 - (id)device;
 - (id)init;
-- (BOOL)initialize;
-- (BOOL)isSlave;
+- (bool)initialize;
+- (bool)isSlave;
 - (void)netService:(id)arg1 didNotPublish:(id)arg2;
 - (void)netServiceDidPublish:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;
@@ -42,9 +42,9 @@
 - (id)searchCompletion;
 - (void)setDevice:(id)arg1;
 - (void)setSearchCompletion:(id)arg1;
-- (BOOL)setVisible:(BOOL)arg1;
-- (void)updateProperty:(int)arg1 forDeviceID:(id)arg2;
+- (bool)setVisible:(bool)arg1;
+- (void)updateProperty:(long long)arg1 forDeviceID:(id)arg2;
 - (void)validatePairedAid;
-- (void)writeValue:(id)arg1 forProperty:(int)arg2 forDeviceID:(id)arg3;
+- (void)writeValue:(id)arg1 forProperty:(long long)arg2 forDeviceID:(id)arg3;
 
 @end

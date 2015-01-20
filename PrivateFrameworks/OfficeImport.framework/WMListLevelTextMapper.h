@@ -17,6 +17,6 @@
 - (id)initWithText:(id)arg1;
 - (id)listLevelTextforOutline:(id)arg1;
 - (id)token:(unsigned int)arg1;
-- (unsigned int)tokenCount;
+- (unsigned long long)tokenCount;
 
 @end

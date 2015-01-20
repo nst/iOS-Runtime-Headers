@@ -8,8 +8,8 @@
 + (void)withSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 perform:(id)arg3;
 
 - (void)alreadylocked_setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
-- (id)initWithDomain:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 byHost:(BOOL)arg3;
-- (BOOL)managed;
-- (long)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (id)initWithDomain:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 byHost:(bool)arg3;
+- (bool)managed;
+- (long long)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 
 @end

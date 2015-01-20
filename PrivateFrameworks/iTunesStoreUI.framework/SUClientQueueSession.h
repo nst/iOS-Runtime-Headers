@@ -5,24 +5,24 @@
 @class NSArray, SSDownloadManagerOptions;
 
 @interface SUClientQueueSession : NSObject {
-    int _count;
+    long long _count;
     NSArray *_downloadKinds;
     SSDownloadManagerOptions *_managerOptions;
     id _queue;
 }
 
-@property int count;
+@property long long count;
 @property(copy) NSArray * downloadKinds;
 @property(copy) SSDownloadManagerOptions * managerOptions;
 @property(retain) id queue;
 
-- (int)count;
+- (long long)count;
 - (void)dealloc;
 - (id)downloadKinds;
 - (id)initWithQueue:(id)arg1;
 - (id)managerOptions;
 - (id)queue;
-- (void)setCount:(int)arg1;
+- (void)setCount:(long long)arg1;
 - (void)setDownloadKinds:(id)arg1;
 - (void)setManagerOptions:(id)arg1;
 - (void)setQueue:(id)arg1;

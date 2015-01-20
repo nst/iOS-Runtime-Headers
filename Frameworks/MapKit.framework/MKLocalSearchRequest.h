@@ -14,22 +14,22 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    BOOL _allowPhoneNumberLookupUsingCellular;
     NSString *_canonicalSearchString;
     NSString *_contactsDataString;
     CLLocation *_deviceLocation;
     <GEOCompletionItem> *_geoCompletionItem;
-    BOOL _hasRegion;
     _MKLocalSearchMerchantParameters *_merchantParameters;
     NSArray *_muids;
     NSString *_naturalLanguageQuery;
     NSArray *_phoneNumbers;
     } _region;
     int _resultProviderID;
+    bool_allowPhoneNumberLookupUsingCellular;
+    bool_hasRegion;
 }
 
-@property(readonly) BOOL _hasRegion;
-@property(getter=_allowPhoneNumberLookupUsingCellular,setter=_setAllowPhoneNumberLookupUsingCellular:) BOOL allowPhoneNumberLookupUsingCellular;
+@property(readonly) bool _hasRegion;
+@property(getter=_allowPhoneNumberLookupUsingCellular,setter=_setAllowPhoneNumberLookupUsingCellular:) bool allowPhoneNumberLookupUsingCellular;
 @property(getter=_canonicalSearchString,setter=_setCanonicalSearchString:,retain) NSString * canonicalSearchString;
 @property(getter=_contactsDataString,setter=_setContactsDataString:,retain) NSString * contactsDataString;
 @property(getter=_deviceLocation,setter=_setDeviceLocation:,retain) CLLocation * deviceLocation;
@@ -44,17 +44,17 @@
 + (id)searchRequestWithCompletion:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_allowPhoneNumberLookupUsingCellular;
+- (bool)_allowPhoneNumberLookupUsingCellular;
 - (id)_canonicalSearchString;
 - (id)_contactsDataString;
 - (id)_deviceLocation;
 - (id)_dictionaryRepresentation;
-- (BOOL)_hasRegion;
+- (bool)_hasRegion;
 - (id)_merchantParameters;
 - (id)_muids;
 - (id)_phoneNumbers;
 - (int)_resultProviderID;
-- (void)_setAllowPhoneNumberLookupUsingCellular:(BOOL)arg1;
+- (void)_setAllowPhoneNumberLookupUsingCellular:(bool)arg1;
 - (void)_setCanonicalSearchString:(id)arg1;
 - (void)_setContactsDataString:(id)arg1;
 - (void)_setDeviceLocation:(id)arg1;

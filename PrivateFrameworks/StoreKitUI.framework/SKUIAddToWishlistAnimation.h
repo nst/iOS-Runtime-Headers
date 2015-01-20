@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)animateWithCompletionBlock:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)initWithImage:(id)arg1 buttonItem:(id)arg2 navigationBar:(id)arg3;
 
 @end

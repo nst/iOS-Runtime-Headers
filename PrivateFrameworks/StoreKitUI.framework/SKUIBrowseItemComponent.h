@@ -6,26 +6,26 @@
 
 @interface SKUIBrowseItemComponent : SKUIPageComponent {
     SKUIImageViewElement *_decorationImage;
-    int _index;
-    BOOL _showTopBorder;
+    long long _index;
     NSString *_subtitle;
     NSString *_title;
+    bool_showTopBorder;
 }
 
 @property(readonly) SKUIImageViewElement * decorationImage;
-@property int index;
-@property BOOL showTopBorder;
+@property long long index;
+@property bool showTopBorder;
 @property(readonly) NSString * subtitle;
 @property(readonly) NSString * title;
 
 - (void).cxx_destruct;
-- (int)componentType;
+- (long long)componentType;
 - (id)decorationImage;
-- (int)index;
+- (long long)index;
 - (id)initWithViewElement:(id)arg1;
-- (void)setIndex:(int)arg1;
-- (void)setShowTopBorder:(BOOL)arg1;
-- (BOOL)showTopBorder;
+- (void)setIndex:(long long)arg1;
+- (void)setShowTopBorder:(bool)arg1;
+- (bool)showTopBorder;
 - (id)subtitle;
 - (id)title;
 

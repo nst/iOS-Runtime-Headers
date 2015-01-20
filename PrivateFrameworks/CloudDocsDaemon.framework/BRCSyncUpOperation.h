@@ -18,7 +18,7 @@
 @property(readonly) float cost;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) CKModifyRecordsOperation * modifyOperation;
 @property(readonly) NSArray * recordsNeedingSharingInfo;
 @property(readonly) Class superclass;
@@ -35,7 +35,7 @@
 - (id)modifyOperation;
 - (id)recordsNeedingSharingInfo;
 - (void)setSyncUpCompletionBlock:(id)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 - (id)syncUpCompletionBlock;
 
 @end

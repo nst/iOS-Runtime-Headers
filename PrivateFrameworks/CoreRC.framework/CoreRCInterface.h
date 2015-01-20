@@ -13,12 +13,12 @@
 @property(copy) id testProperty;
 
 - (void)dealloc;
-- (BOOL)doesNotImplement:(SEL)arg1 error:(id*)arg2;
+- (bool)doesNotImplement:(SEL)arg1 error:(id*)arg2;
 - (id)listener;
 - (id)propertyForKey:(id)arg1 error:(id*)arg2;
 - (void)scheduleWithDispatchQueue:(id)arg1;
 - (void)setListener:(id)arg1;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)setTestProperty:(id)arg1;
 - (id)testProperty;
 - (void)unscheduleFromDispatchQueue:(id)arg1;

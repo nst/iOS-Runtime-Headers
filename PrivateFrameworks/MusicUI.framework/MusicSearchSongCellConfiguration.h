@@ -5,7 +5,7 @@
 @interface MusicSearchSongCellConfiguration : MusicSearchCellConfiguration {
 }
 
-+ (BOOL)isMediaEntityExplicit:(id)arg1 valuesForProperties:(id)arg2;
++ (bool)isMediaEntityExplicit:(id)arg1 valuesForProperties:(id)arg2;
 + (id)mediaEntityPropertiesToFetch;
 + (id)subtitleForMediaEntity:(id)arg1 valuesForProperties:(id)arg2;
 + (id)titleForMediaEntity:(id)arg1 valuesForProperties:(id)arg2;

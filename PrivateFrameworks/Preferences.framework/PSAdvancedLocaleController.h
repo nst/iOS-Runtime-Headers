@@ -3,20 +3,20 @@
  */
 
 @interface PSAdvancedLocaleController : PSListController {
-    BOOL _automaticLocaleDisabled;
+    bool_automaticLocaleDisabled;
 }
 
-@property BOOL automaticLocaleDisabled;
+@property bool automaticLocaleDisabled;
 
-+ (BOOL)automaticLanguageUpdateEnabled;
++ (bool)automaticLanguageUpdateEnabled;
 
 - (id)automatic:(id)arg1;
-- (BOOL)automaticLocaleDisabled;
+- (bool)automaticLocaleDisabled;
 - (id)init;
 - (void)localeChangedAction;
 - (void)reloadLocale;
 - (void)setAutomatic:(id)arg1 specifier:(id)arg2;
-- (void)setAutomaticLocaleDisabled:(BOOL)arg1;
+- (void)setAutomaticLocaleDisabled:(bool)arg1;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 

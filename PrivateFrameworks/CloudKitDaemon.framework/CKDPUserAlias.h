@@ -12,8 +12,8 @@
     int _type;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasType;
+@property(readonly) bool hasIdentifier;
+@property bool hasType;
 @property(retain) NSString * identifier;
 @property int type;
 
@@ -22,14 +22,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasType;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasType;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

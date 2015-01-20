@@ -13,18 +13,18 @@
     NSObject<OS_dispatch_group> *_waypointsDispatchGroup;
 }
 
-@property(getter=isCalculating,readonly) BOOL calculating;
+@property(getter=isCalculating,readonly) bool calculating;
 
 - (void).cxx_destruct;
 - (void)_calculateETAWithCompletionHandler:(id)arg1;
 - (void)_cleanupLocationOperation;
 - (void)_establishCurrentLocationAndThen:(id)arg1;
-- (void)_performWithValidCurrentLocationAndWaypointsForQuickETA:(BOOL)arg1 handler:(id)arg2;
+- (void)_performWithValidCurrentLocationAndWaypointsForQuickETA:(bool)arg1 handler:(id)arg2;
 - (void)calculateDirectionsWithCompletionHandler:(id)arg1;
 - (void)calculateETAWithCompletionHandler:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)isCalculating;
+- (bool)isCalculating;
 
 @end

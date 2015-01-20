@@ -11,10 +11,10 @@
     NSObject<OS_dispatch_queue> *__expirationQueue;
     NSObject<OS_dispatch_source> *__expirationTimer;
     <CAMAvalancheSessionDelegate> *_delegate;
-    unsigned int _numberOfPhotos;
+    unsigned long long _numberOfPhotos;
     CAMInflightAsset *_possibleAvalancheAsset;
-    int _state;
-    int _type;
+    long long _state;
+    long long _type;
     NSString *_uuid;
 }
 
@@ -24,27 +24,27 @@
 @property(readonly) NSObject<OS_dispatch_queue> * _expirationQueue;
 @property(readonly) NSObject<OS_dispatch_source> * _expirationTimer;
 @property <CAMAvalancheSessionDelegate> * delegate;
-@property(readonly) unsigned int numberOfPhotos;
+@property(readonly) unsigned long long numberOfPhotos;
 @property(retain) CAMInflightAsset * possibleAvalancheAsset;
-@property int state;
-@property(readonly) int type;
+@property long long state;
+@property(readonly) long long type;
 @property(copy,readonly) NSString * uuid;
 
 - (void).cxx_destruct;
 - (id)_assets;
 - (id)_burstImageSet;
-- (void)_didTransitionToState:(int)arg1;
-- (BOOL)_ensureValidStateChange:(int)arg1;
+- (void)_didTransitionToState:(long long)arg1;
+- (bool)_ensureValidStateChange:(long long)arg1;
 - (id)_expirationDate;
 - (id)_expirationQueue;
 - (id)_expirationTimer;
 - (void)_expirationTimerFired;
 - (void)_setExpirationDate:(id)arg1;
 - (void)_setPossibleAvalancheAsset:(id)arg1;
-- (void)_setState:(int)arg1;
+- (void)_setState:(long long)arg1;
 - (void)_setupExpirationTimer;
 - (void)_teardownExpirationTimer;
-- (void)_transitionToState:(int)arg1;
+- (void)_transitionToState:(long long)arg1;
 - (void)addAssetForAnalysis:(id)arg1 withIOSurface:(struct __IOSurface { }*)arg2 metadata:(id)arg3 completionHandler:(id)arg4;
 - (id)allAssetIdentifiers;
 - (id)assetWithUUID:(id)arg1;
@@ -52,16 +52,16 @@
 - (id)bestAssetIndentifiers;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)extend;
-- (void)finalizeWithAnalysis:(BOOL)arg1;
+- (bool)extend;
+- (void)finalizeWithAnalysis:(bool)arg1;
 - (id)init;
-- (id)initWithType:(int)arg1;
-- (unsigned int)numberOfPhotos;
+- (id)initWithType:(long long)arg1;
+- (unsigned long long)numberOfPhotos;
 - (id)possibleAvalancheAsset;
 - (void)setDelegate:(id)arg1;
 - (id)stackAssetIdentifier;
-- (int)state;
-- (int)type;
+- (long long)state;
+- (long long)type;
 - (id)uuid;
 
 @end

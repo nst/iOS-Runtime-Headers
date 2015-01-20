@@ -7,28 +7,28 @@
 @interface CAMTimerButton : CAMExpandableMenuButton {
     UIImageView *__glyphView;
     <CAMTimerButtonDelegate> *_delegate;
-    BOOL _hideOffWhenCollapsed;
+    bool_hideOffWhenCollapsed;
 }
 
 @property(readonly) UIImageView * _glyphView;
 @property <CAMTimerButtonDelegate> * delegate;
-@property int duration;
-@property BOOL hideOffWhenCollapsed;
+@property long long duration;
+@property bool hideOffWhenCollapsed;
 
 - (void).cxx_destruct;
 - (void)_commonCAMTimerButtonInitialization;
 - (id)_glyphView;
 - (id)delegate;
-- (int)duration;
+- (long long)duration;
 - (id)headerView;
 - (id)hiddenIndexesWhileCollapsed;
-- (BOOL)hideOffWhenCollapsed;
-- (id)initWithExpansionOrientation:(int)arg1;
-- (int)numberOfMenuItems;
+- (bool)hideOffWhenCollapsed;
+- (id)initWithExpansionOrientation:(long long)arg1;
+- (long long)numberOfMenuItems;
 - (void)setDelegate:(id)arg1;
-- (void)setDuration:(int)arg1 animated:(BOOL)arg2;
-- (void)setDuration:(int)arg1;
-- (void)setHideOffWhenCollapsed:(BOOL)arg1;
-- (id)titleForMenuItemAtIndex:(int)arg1;
+- (void)setDuration:(long long)arg1 animated:(bool)arg2;
+- (void)setDuration:(long long)arg1;
+- (void)setHideOffWhenCollapsed:(bool)arg1;
+- (id)titleForMenuItemAtIndex:(long long)arg1;
 
 @end

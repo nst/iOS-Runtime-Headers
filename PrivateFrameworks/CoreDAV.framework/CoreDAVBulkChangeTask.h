@@ -13,10 +13,10 @@
     NSString *_nextCTag;
     NSData *_pushedData;
     NSString *_requestDataContentType;
-    BOOL _returnChangedData;
-    BOOL _simple;
     NSDictionary *_uuidsToAddActions;
-    BOOL _validCTag;
+    bool_returnChangedData;
+    bool_simple;
+    bool_validCTag;
 }
 
 @property(readonly) NSSet * bulkChangeResponses;
@@ -32,7 +32,7 @@
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)hrefsToModDeleteActions;
 - (id)httpMethod;
-- (id)initWithURL:(id)arg1 checkCTag:(id)arg2 simple:(BOOL)arg3 returnChangedData:(BOOL)arg4 uuidsToAddActions:(id)arg5 hrefsToModDeleteActions:(id)arg6;
+- (id)initWithURL:(id)arg1 checkCTag:(id)arg2 simple:(bool)arg3 returnChangedData:(bool)arg4 uuidsToAddActions:(id)arg5 hrefsToModDeleteActions:(id)arg6;
 - (id)nextCTag;
 - (id)requestBody;
 - (id)uuidsToAddActions;

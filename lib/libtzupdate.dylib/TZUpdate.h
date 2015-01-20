@@ -16,13 +16,13 @@
 
 - (void).cxx_destruct;
 - (id)affectedZones;
-- (BOOL)alertForAllZones;
+- (bool)alertForAllZones;
 - (id)connectionToService;
 - (id)createNewXPCConnection;
 - (id)currentTZDataVersion;
 - (id)fileSystemInterface;
 - (id)init;
-- (BOOL)isUpdateWaiting;
+- (bool)isUpdateWaiting;
 - (void)isUpdateWaitingWithCompletion:(id)arg1;
 - (void)purgeAllAssetsWithCompletion:(id)arg1;
 - (void)setConnectionToService:(id)arg1;

@@ -12,7 +12,7 @@
 @property(retain) NSURL * objectID;
 @property(copy) NSNumber * uid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 
 - (void).cxx_destruct;

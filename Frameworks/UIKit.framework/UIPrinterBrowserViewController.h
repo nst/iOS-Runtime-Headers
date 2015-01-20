@@ -5,50 +5,50 @@
 @class <UIPrinterBrowserOwner>, NSArray, NSMutableArray, NSString, PKPrinter, PKPrinterBrowser, UIPrinterSearchingView;
 
 @interface UIPrinterBrowserViewController : UITableViewController <PKPrinterBrowserDelegate> {
-    BOOL _clearCurrentPrinter;
     NSMutableArray *_filteredOutPrinters;
     NSArray *_lastUsedPrinters;
-    BOOL _loaded;
     PKPrinter *_lockedPrinter;
-    float _maximumPopoverHeight;
+    double _maximumPopoverHeight;
     NSMutableArray *_otherPrinters;
     <UIPrinterBrowserOwner> *_ownerPanelViewController;
     NSMutableArray *_preferredPrinters;
     PKPrinterBrowser *_printerBrowser;
     UIPrinterSearchingView *_searchingView;
-    BOOL _shouldFilterPrinters;
+    bool_clearCurrentPrinter;
+    bool_loaded;
+    bool_shouldFilterPrinters;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float maximumPopoverHeight;
+@property(readonly) unsigned long long hash;
+@property double maximumPopoverHeight;
 @property(readonly) Class superclass;
 
-- (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
+- (void)addPrinter:(id)arg1 moreComing:(bool)arg2;
 - (void)adjustPopoverSize;
 - (void)dealloc;
 - (id)initWithOwnerViewController:(id)arg1;
 - (void)loadView;
-- (float)maximumPopoverHeight;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (double)maximumPopoverHeight;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)printerAtIndexPath:(id)arg1;
-- (void)removePrinter:(id)arg1 moreGoing:(BOOL)arg2;
+- (void)removePrinter:(id)arg1 moreGoing:(bool)arg2;
 - (void)selectPrinter:(id)arg1;
-- (void)setMaximumPopoverHeight:(float)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setMaximumPopoverHeight:(double)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)showCancelButton;
 - (void)startPrinterBrowser;
 - (void)stopPrinterBrowser;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)updateSearching;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)willEnterForeground;
 
 @end

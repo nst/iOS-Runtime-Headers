@@ -8,19 +8,19 @@
     NSString *_diskCacheLocation;
     NSLocale *_locale;
     GEOResourceManifestConfiguration *_manifestConfiguration;
-    unsigned int _memoryCacheCostLimit;
-    unsigned int _memoryCacheCountLimit;
+    unsigned long long _memoryCacheCostLimit;
+    unsigned long long _memoryCacheCountLimit;
     Class _serverProxyClass;
-    BOOL _trackUsage;
+    bool_trackUsage;
 }
 
 @property(copy) NSString * diskCacheLocation;
 @property(retain) NSLocale * locale;
 @property(retain) GEOResourceManifestConfiguration * manifestConfiguration;
-@property unsigned int memoryCacheCostLimit;
-@property unsigned int memoryCacheCountLimit;
+@property unsigned long long memoryCacheCostLimit;
+@property unsigned long long memoryCacheCountLimit;
 @property Class serverProxyClass;
-@property BOOL trackUsage;
+@property bool trackUsage;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -28,16 +28,16 @@
 - (id)init;
 - (id)locale;
 - (id)manifestConfiguration;
-- (unsigned int)memoryCacheCostLimit;
-- (unsigned int)memoryCacheCountLimit;
+- (unsigned long long)memoryCacheCostLimit;
+- (unsigned long long)memoryCacheCountLimit;
 - (Class)serverProxyClass;
 - (void)setDiskCacheLocation:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setManifestConfiguration:(id)arg1;
-- (void)setMemoryCacheCostLimit:(unsigned int)arg1;
-- (void)setMemoryCacheCountLimit:(unsigned int)arg1;
+- (void)setMemoryCacheCostLimit:(unsigned long long)arg1;
+- (void)setMemoryCacheCountLimit:(unsigned long long)arg1;
 - (void)setServerProxyClass:(Class)arg1;
-- (void)setTrackUsage:(BOOL)arg1;
-- (BOOL)trackUsage;
+- (void)setTrackUsage:(bool)arg1;
+- (bool)trackUsage;
 
 @end

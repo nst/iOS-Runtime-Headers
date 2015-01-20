@@ -14,9 +14,9 @@
     CKQuery *_query;
     id _recordFetchedBlock;
     CKQueryCursor *_resultsCursor;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContent;
+    unsigned long long _resultsLimit;
     CKRecordZoneID *_zoneID;
+    bool_shouldFetchAssetContent;
 }
 
 @property(readonly) CKQueryCursor * cursor;
@@ -24,8 +24,8 @@
 @property(readonly) CKQuery * query;
 @property(copy) id recordFetchedBlock;
 @property(retain) CKQueryCursor * resultsCursor;
-@property(readonly) unsigned int resultsLimit;
-@property BOOL shouldFetchAssetContent;
+@property(readonly) unsigned long long resultsLimit;
+@property bool shouldFetchAssetContent;
 @property(retain) CKRecordZoneID * zoneID;
 
 - (void).cxx_destruct;
@@ -40,13 +40,13 @@
 - (id)query;
 - (id)recordFetchedBlock;
 - (id)resultsCursor;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setDesiredKeySet:(id)arg1;
 - (void)setRecordFetchedBlock:(id)arg1;
 - (void)setResultsCursor:(id)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
 - (void)setZoneID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContent;
 - (id)zoneID;
 
 @end

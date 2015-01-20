@@ -19,14 +19,14 @@
 @property(copy,readonly) NSString * description;
 @property(retain) NSXPCListenerEndpoint * endpoint;
 @property(copy) id handler;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSXPCListener * listener;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(readonly) Class superclass;
 
 + (id)configuredEndpointWithUpdateHandler:(id)arg1 withConnection:(id)arg2;
 + (id)remoteUpdateHanderForEndpoint:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -35,7 +35,7 @@
 - (id)handler;
 - (id)initWithCoder:(id)arg1;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
 - (id)queue;
 - (void)setEndpoint:(id)arg1;

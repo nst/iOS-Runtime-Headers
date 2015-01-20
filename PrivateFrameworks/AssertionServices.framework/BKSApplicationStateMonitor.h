@@ -10,7 +10,6 @@
 
 @interface BKSApplicationStateMonitor : NSObject {
     NSObject<OS_xpc_object> *_connection;
-    BOOL _denied;
     id _handler;
     NSArray *_interestedBundleIDs;
     unsigned int _interestedStates;
@@ -18,6 +17,7 @@
     NSObject<OS_dispatch_queue> *_messageHandlingQueue;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_serverEndpoint;
+    bool_denied;
 }
 
 @property(copy) id handler;
@@ -38,7 +38,7 @@
 - (id)interestedBundleIDs;
 - (unsigned int)interestedStates;
 - (void)invalidate;
-- (BOOL)isApplicationBeingDebugged:(id)arg1;
+- (bool)isApplicationBeingDebugged:(id)arg1;
 - (unsigned int)mostElevatedApplicationStateForPID:(int)arg1;
 - (void)queue_connectionWasInvalidated;
 - (void)queue_handleMessage:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)queue_setHandler:(id)arg1;
 - (void)queue_setInterestedBundleIDs:(id)arg1;
 - (void)queue_setInterestedStates:(unsigned int)arg1;
-- (void)queue_updateInterestedStates:(BOOL)arg1;
+- (void)queue_updateInterestedStates:(bool)arg1;
 - (void)queue_updateInterestedStates;
 - (void)setHandler:(id)arg1;
 - (void)setInterestedBundleIDs:(id)arg1;

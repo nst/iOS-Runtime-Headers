@@ -13,8 +13,8 @@
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct RetainPtr<UIImagePickerController> { 
         void *m_ptr; 
     struct RetainPtr<UIAlertController> { 
@@ -24,7 +24,6 @@
     struct RetainPtr<UIPopoverController> { 
         void *m_ptr; 
     } _actionSheetController;
-    BOOL _allowMultipleFiles;
     <WKFileUploadPanelDelegate> *_delegate;
     } _imagePicker;
     } _interactionPoint;
@@ -32,32 +31,33 @@
     } _mimeTypes;
     } _presentationPopover;
     } _presentationViewController;
-    BOOL _usingCamera;
     WKContentView *_view;
+    bool_allowMultipleFiles;
+    bool_usingCamera;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <WKFileUploadPanelDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_cancel;
 - (void)_chooseFiles:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;
-- (void)_dismissDisplayAnimated:(BOOL)arg1;
+- (void)_dismissDisplayAnimated:(bool)arg1;
 - (void)_dispatchDidDismiss;
-- (id)_displayStringForPhotos:(unsigned int)arg1 videos:(unsigned int)arg2;
-- (id)_mediaTypesForPickerSourceType:(int)arg1;
-- (void)_presentFullscreenViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_presentPopoverWithContentViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned int)arg2 processedResults:(id)arg3 processedImageCount:(unsigned int)arg4 processedVideoCount:(unsigned int)arg5 successBlock:(id)arg6 failureBlock:(id)arg7;
+- (id)_displayStringForPhotos:(unsigned long long)arg1 videos:(unsigned long long)arg2;
+- (id)_mediaTypesForPickerSourceType:(long long)arg1;
+- (void)_presentFullscreenViewController:(id)arg1 animated:(bool)arg2;
+- (void)_presentPopoverWithContentViewController:(id)arg1 animated:(bool)arg2;
+- (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned long long)arg2 processedResults:(id)arg3 processedImageCount:(unsigned long long)arg4 processedVideoCount:(unsigned long long)arg5 successBlock:(id)arg6 failureBlock:(id)arg7;
 - (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)_showMediaSourceSelectionSheet;
-- (void)_showPhotoPickerWithSourceType:(int)arg1;
+- (void)_showPhotoPickerWithSourceType:(long long)arg1;
 - (void)_uploadItemFromMediaInfo:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
-- (BOOL)_willMultipleSelectionDelegateBeCalled;
+- (bool)_willMultipleSelectionDelegateBeCalled;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismiss;

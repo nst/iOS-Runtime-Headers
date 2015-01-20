@@ -15,9 +15,9 @@
 @property(retain) NSDate * expirationDate;
 @property(readonly) unsigned long long globalVersion;
 @property(copy,readonly) NSDictionary * responseDictionary;
-@property(readonly) BOOL shouldIncrementSkipCount;
+@property(readonly) bool shouldIncrementSkipCount;
 @property(readonly) NSDate * skipDate;
-@property(readonly) int tracklistActionType;
+@property(readonly) long long tracklistActionType;
 @property(copy,readonly) NSArray * unusedKBSyncStrings;
 
 - (void).cxx_destruct;
@@ -29,9 +29,9 @@
 - (id)initWithResponseDictionary:(id)arg1;
 - (id)responseDictionary;
 - (void)setExpirationDate:(id)arg1;
-- (BOOL)shouldIncrementSkipCount;
+- (bool)shouldIncrementSkipCount;
 - (id)skipDate;
-- (int)tracklistActionType;
+- (long long)tracklistActionType;
 - (id)tracksForStation:(id)arg1;
 - (id)tracksForStationHash:(id)arg1;
 - (id)tracksForStationID:(long long)arg1;

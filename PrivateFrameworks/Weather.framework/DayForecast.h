@@ -5,31 +5,31 @@
 @class NSString;
 
 @interface DayForecast : NSObject {
-    unsigned int _dayNumber;
-    unsigned int _dayOfWeek;
+    unsigned long long _dayNumber;
+    unsigned long long _dayOfWeek;
     NSString *_high;
-    unsigned int _icon;
+    unsigned long long _icon;
     NSString *_low;
 }
 
-@property unsigned int dayNumber;
-@property unsigned int dayOfWeek;
+@property unsigned long long dayNumber;
+@property unsigned long long dayOfWeek;
 @property(copy) NSString * high;
-@property unsigned int icon;
+@property unsigned long long icon;
 @property(copy) NSString * low;
 
-- (int)compareDayNumberToDayForecast:(id)arg1;
-- (unsigned int)dayNumber;
-- (unsigned int)dayOfWeek;
+- (long long)compareDayNumberToDayForecast:(id)arg1;
+- (unsigned long long)dayNumber;
+- (unsigned long long)dayOfWeek;
 - (void)dealloc;
 - (id)description;
 - (id)high;
-- (unsigned int)icon;
+- (unsigned long long)icon;
 - (id)low;
-- (void)setDayNumber:(unsigned int)arg1;
-- (void)setDayOfWeek:(unsigned int)arg1;
+- (void)setDayNumber:(unsigned long long)arg1;
+- (void)setDayOfWeek:(unsigned long long)arg1;
 - (void)setHigh:(id)arg1;
-- (void)setIcon:(unsigned int)arg1;
+- (void)setIcon:(unsigned long long)arg1;
 - (void)setLow:(id)arg1;
 
 @end

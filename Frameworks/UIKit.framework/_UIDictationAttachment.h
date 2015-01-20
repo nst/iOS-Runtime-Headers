@@ -6,18 +6,18 @@
 
 @interface _UIDictationAttachment : NSTextAttachment {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     } _attachmentRange;
     NSDictionary *_typingAttributesBeforeInsertion;
 }
 
-@property struct _NSRange { unsigned int x1; unsigned int x2; } attachmentRange;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } attachmentRange;
 @property(copy) NSDictionary * typingAttributesBeforeInsertion;
 
-- (struct _NSRange { unsigned int x1; unsigned int x2; })attachmentRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })attachmentRange;
 - (void)dealloc;
-- (void)setAttachmentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setAttachmentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTypingAttributesBeforeInsertion:(id)arg1;
 - (id)typingAttributesBeforeInsertion;
 

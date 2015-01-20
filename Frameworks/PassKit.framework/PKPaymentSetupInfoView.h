@@ -8,29 +8,29 @@
     UIButton *_aboutButton;
     UIActivityIndicatorView *_activityIndicatorView;
     UILabel *_bodyLabel;
-    int _context;
+    long long _context;
     UIImageView *_glyph;
     UILabel *_titleLabel;
 }
 
 @property(retain) UIButton * aboutButton;
 @property(retain) UIActivityIndicatorView * activityIndicatorView;
-@property int context;
+@property long long context;
 
 - (id)_bodyFont;
 - (id)_titleFont;
 - (id)aboutButton;
 - (id)activityIndicatorView;
 - (id)bodyLabel;
-- (int)context;
+- (long long)context;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2;
-- (BOOL)isBuddyiPad;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(long long)arg2;
+- (bool)isBuddyiPad;
 - (void)layoutSubviews;
 - (void)setAboutButton:(id)arg1;
 - (void)setActivityIndicatorView:(id)arg1;
-- (void)setContext:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContext:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)titleLabel;
 
 @end

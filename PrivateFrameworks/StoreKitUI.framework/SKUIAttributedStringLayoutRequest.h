@@ -6,31 +6,31 @@
 
 @interface SKUIAttributedStringLayoutRequest : NSObject <SKUILayoutRequest> {
     NSAttributedString *_attributedString;
-    int _numberOfLines;
-    BOOL _wantsBaselineOffset;
-    float _width;
+    long long _numberOfLines;
+    double _width;
+    bool_wantsBaselineOffset;
 }
 
 @property(readonly) NSAttributedString * attributedString;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class layoutClass;
-@property int numberOfLines;
+@property long long numberOfLines;
 @property(readonly) Class superclass;
-@property BOOL wantsBaselineOffset;
-@property float width;
+@property bool wantsBaselineOffset;
+@property double width;
 
 - (void).cxx_destruct;
 - (id)attributedString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithAttributedString:(id)arg1;
 - (Class)layoutClass;
-- (int)numberOfLines;
-- (void)setNumberOfLines:(int)arg1;
-- (void)setWantsBaselineOffset:(BOOL)arg1;
-- (void)setWidth:(float)arg1;
-- (BOOL)wantsBaselineOffset;
-- (float)width;
+- (long long)numberOfLines;
+- (void)setNumberOfLines:(long long)arg1;
+- (void)setWantsBaselineOffset:(bool)arg1;
+- (void)setWidth:(double)arg1;
+- (bool)wantsBaselineOffset;
+- (double)width;
 
 @end

@@ -5,27 +5,27 @@
 @class UIScreen;
 
 @interface UIKBScreenTraits : NSObject {
-    float _keyboardWidth;
-    BOOL _knobInput;
-    int _orientation;
+    double _keyboardWidth;
+    long long _orientation;
     UIScreen *_screen;
+    bool_knobInput;
 }
 
-@property(readonly) int idiom;
-@property float keyboardWidth;
-@property(readonly) BOOL knobInput;
-@property int orientation;
+@property(readonly) long long idiom;
+@property double keyboardWidth;
+@property(readonly) bool knobInput;
+@property long long orientation;
 @property(readonly) UIScreen * screen;
 
-+ (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
++ (id)traitsWithScreen:(id)arg1 orientation:(long long)arg2;
 
-- (int)idiom;
-- (id)initWithScreen:(id)arg1 orientation:(int)arg2;
-- (float)keyboardWidth;
-- (BOOL)knobInput;
-- (int)orientation;
+- (long long)idiom;
+- (id)initWithScreen:(id)arg1 orientation:(long long)arg2;
+- (double)keyboardWidth;
+- (bool)knobInput;
+- (long long)orientation;
 - (id)screen;
-- (void)setKeyboardWidth:(float)arg1;
-- (void)setOrientation:(int)arg1;
+- (void)setKeyboardWidth:(double)arg1;
+- (void)setOrientation:(long long)arg1;
 
 @end

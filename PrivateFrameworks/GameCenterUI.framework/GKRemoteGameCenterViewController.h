@@ -7,31 +7,31 @@
 @interface GKRemoteGameCenterViewController : GKActivityProxyRemoteViewController <GameCenterUIServiceViewControllerDelegate> {
     GKGameCenterViewController *_delegateWeak;
     NSString *_leaderboardIdentifier;
-    int _leaderboardTimeScope;
-    BOOL _shouldDisplayChallengePlayButton;
-    int _viewState;
+    long long _leaderboardTimeScope;
+    long long _viewState;
+    bool_shouldDisplayChallengePlayButton;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property GKGameCenterViewController * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) GKGame * game;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * leaderboardIdentifier;
-@property int leaderboardTimeScope;
-@property BOOL shouldDisplayChallengePlayButton;
+@property long long leaderboardTimeScope;
+@property bool shouldDisplayChallengePlayButton;
 @property(readonly) Class superclass;
-@property int viewState;
+@property long long viewState;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
-- (BOOL)_dismissSelfAfterGettingShouldFinish;
+- (bool)_dismissSelfAfterGettingShouldFinish;
 - (void)dealloc;
 - (id)delegate;
 - (void)getMethodsImplementedByChallengeEventHandlerDelegate:(id)arg1;
 - (id)leaderboardIdentifier;
-- (int)leaderboardTimeScope;
+- (long long)leaderboardTimeScope;
 - (id)observedKeyPaths;
 - (void)playPressedForChallenge:(id)arg1;
 - (void)remoteControllerDidChangeViewState:(id)arg1;
@@ -39,14 +39,14 @@
 - (void)remoteControllerDidSelectLeaderboardTimeScope:(id)arg1;
 - (void)remoteViewControllerIsCanceling;
 - (void)remoteViewControllerIsFinishing;
-- (void)setAPIControllerFlags:(struct { BOOL x1; })arg1;
+- (void)setAPIControllerFlags:(struct { boolx1; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLeaderboardIdentifier:(id)arg1;
-- (void)setLeaderboardTimeScope:(int)arg1;
+- (void)setLeaderboardTimeScope:(long long)arg1;
 - (void)setNilValueForKey:(id)arg1;
-- (void)setShouldDisplayChallengePlayButton:(BOOL)arg1;
-- (void)setViewState:(int)arg1;
-- (BOOL)shouldDisplayChallengePlayButton;
-- (int)viewState;
+- (void)setShouldDisplayChallengePlayButton:(bool)arg1;
+- (void)setViewState:(long long)arg1;
+- (bool)shouldDisplayChallengePlayButton;
+- (long long)viewState;
 
 @end

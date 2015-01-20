@@ -6,17 +6,17 @@
 
 @interface CKDApplicationMetadata : NSObject {
     NSString *_apsEnvironmentString;
-    int _isApplication;
+    long long _isApplication;
 }
 
 @property(retain) NSString * apsEnvironmentString;
-@property int isApplication;
+@property long long isApplication;
 
 - (void).cxx_destruct;
 - (id)apsEnvironmentString;
 - (id)init;
-- (int)isApplication;
+- (long long)isApplication;
 - (void)setApsEnvironmentString:(id)arg1;
-- (void)setIsApplication:(int)arg1;
+- (void)setIsApplication:(long long)arg1;
 
 @end

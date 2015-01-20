@@ -13,7 +13,7 @@
     PKPaymentPass *_pass;
     UIImage *_passSnapshot;
     PKPaymentWebService *_paymentWebService;
-    unsigned int _selectedIndex;
+    unsigned long long _selectedIndex;
     <PKPaymentSetupViewControllerDelegate> *_setupDelegate;
     NSArray *_verificationChannels;
     id _verificationRequestHandler;
@@ -31,8 +31,8 @@
 - (void)_terminateFlow;
 - (void)cancel:(id)arg1;
 - (void)dealloc;
-- (id)initWithPaymentWebService:(id)arg1 pass:(id)arg2 context:(int)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithPaymentWebService:(id)arg1 pass:(id)arg2 context:(long long)arg3;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)passSnapshot;
 - (void)send:(id)arg1;
 - (void)setPassSnapshot:(id)arg1;
@@ -41,9 +41,9 @@
 - (id)setupDelegate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)verificationRequestHandler;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

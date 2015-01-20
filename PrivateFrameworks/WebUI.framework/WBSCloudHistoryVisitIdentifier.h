@@ -21,9 +21,9 @@
 - (id)associatedHistoryVisit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithURLString:(id)arg1 visitTime:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAssociatedHistoryItem:(id)arg1;
 - (void)setAssociatedHistoryVisit:(id)arg1;
 - (void)setUrlString:(id)arg1;

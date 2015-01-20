@@ -8,11 +8,11 @@
     union { 
         NSArray *envelope; 
         NSDate *internalDate; 
-        unsigned int messageSize; 
+        unsigned long long messageSize; 
         NSArray *bodyStructure; 
         struct { 
             NSString *section; 
-            unsigned int startOffset; 
+            unsigned long long startOffset; 
             NSData *sectionData; 
         } bodySectionInfo; 
         unsigned int uid; 
@@ -30,14 +30,14 @@
 - (id)customFlagsArray;
 - (void)dealloc;
 - (id)description;
-- (unsigned long)encoding;
+- (unsigned int)encoding;
 - (id)envelope;
 - (id)fetchData;
 - (id)flagsArray;
 - (id)initWithType:(int)arg1;
 - (id)internalDate;
 - (unsigned long long)messageFlags;
-- (unsigned int)messageSize;
+- (unsigned long long)messageSize;
 - (unsigned long long)modSequenceNumber;
 - (id)section;
 - (void)setBodyStructure:(id)arg1;
@@ -47,15 +47,15 @@
 - (void)setFlagsArray:(id)arg1;
 - (void)setInternalDate:(id)arg1;
 - (void)setMessageFlags:(unsigned long long)arg1;
-- (void)setMessageSize:(unsigned int)arg1;
+- (void)setMessageSize:(unsigned long long)arg1;
 - (void)setModSequenceNumber:(unsigned long long)arg1;
 - (void)setSection:(id)arg1;
-- (void)setStartOffset:(unsigned int)arg1;
-- (void)setUid:(unsigned long)arg1;
+- (void)setStartOffset:(unsigned long long)arg1;
+- (void)setUid:(unsigned int)arg1;
 - (void)setUniqueRemoteId:(unsigned long long)arg1;
-- (unsigned int)startOffset;
+- (unsigned long long)startOffset;
 - (int)type;
-- (unsigned long)uid;
+- (unsigned int)uid;
 - (unsigned long long)uniqueRemoteId;
 
 @end

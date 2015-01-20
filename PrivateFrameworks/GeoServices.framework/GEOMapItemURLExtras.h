@@ -5,12 +5,12 @@
 @interface GEOMapItemURLExtras : NSObject {
 }
 
-+ (id)_mapItemsFromDirectionsAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
-+ (id)_mapItemsFromPresentAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
-+ (id)_mapItemsFromShowAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
-+ (id)mapItemsFromURL:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
++ (id)_mapItemsFromDirectionsAction:(id)arg1 hasCurrentLocation:(bool*)arg2 currentLocationIndex:(unsigned long long*)arg3 options:(id*)arg4;
++ (id)_mapItemsFromPresentAction:(id)arg1 hasCurrentLocation:(bool*)arg2 currentLocationIndex:(unsigned long long*)arg3 options:(id*)arg4;
++ (id)_mapItemsFromShowAction:(id)arg1 hasCurrentLocation:(bool*)arg2 currentLocationIndex:(unsigned long long*)arg3 options:(id*)arg4;
++ (id)mapItemsFromURL:(id)arg1 hasCurrentLocation:(bool*)arg2 currentLocationIndex:(unsigned long long*)arg3 options:(id*)arg4;
 + (id)urlToPresentAction:(id)arg1 present:(id)arg2;
-+ (id)urlToPresentCurrentLocationAndMapItems:(id)arg1 currentLocationIndex:(unsigned int)arg2 options:(id)arg3;
++ (id)urlToPresentCurrentLocationAndMapItems:(id)arg1 currentLocationIndex:(unsigned long long)arg2 options:(id)arg3;
 + (id)urlToPresentCurrentLocationWithOptions:(id)arg1;
 + (id)urlToPresentDirectionsForItems:(id)arg1 options:(id)arg2;
 + (id)urlToPresentDirectionsForMapItems:(id)arg1 options:(id)arg2;

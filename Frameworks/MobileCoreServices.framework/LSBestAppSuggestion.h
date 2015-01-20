@@ -13,7 +13,7 @@
     NSString *_originatingDeviceIdentifier;
     NSString *_originatingDeviceName;
     NSString *_originatingDeviceType;
-    unsigned int _type;
+    unsigned long long _type;
     NSUUID *_uniqueIdentifier;
 }
 
@@ -25,12 +25,12 @@
 @property(copy,readonly) NSString * originatingDeviceIdentifier;
 @property(copy,readonly) NSString * originatingDeviceName;
 @property(copy,readonly) NSString * originatingDeviceType;
-@property(readonly) unsigned int type;
+@property(readonly) unsigned long long type;
 @property(copy) NSUUID * uniqueIdentifier;
 @property(copy,readonly) NSString * userActivityTypeIdentifier;
 @property(copy,readonly) NSDate * when;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)activityType;
 - (id)bundleIdentifier;
@@ -38,9 +38,9 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithBundleIdentifier:(id)arg1 uuid:(id)arg2 activityType:(id)arg3 lastUpdateTime:(id)arg4 type:(unsigned int)arg5 deviceName:(id)arg6 deviceIdentifier:(id)arg7 deviceType:(id)arg8 options:(id)arg9;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithBundleIdentifier:(id)arg1 uuid:(id)arg2 activityType:(id)arg3 lastUpdateTime:(id)arg4 type:(unsigned long long)arg5 deviceName:(id)arg6 deviceIdentifier:(id)arg7 deviceType:(id)arg8 options:(id)arg9;
+- (bool)isEqual:(id)arg1;
 - (id)lastUpdateTime;
 - (id)options;
 - (id)originatingDeviceIdentifier;
@@ -48,7 +48,7 @@
 - (id)originatingDeviceType;
 - (void)setActivityType:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)uniqueIdentifier;
 - (id)userActivityTypeIdentifier;
 - (id)when;

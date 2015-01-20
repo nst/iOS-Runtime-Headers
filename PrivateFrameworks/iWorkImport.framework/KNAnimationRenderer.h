@@ -6,23 +6,23 @@
 
 @interface KNAnimationRenderer : NSObject {
     <KNAnimationPluginContext> *_pluginContext;
+    boolmAreAnimationsPaused;
     KNAnimatedSlideView *mASV;
-    BOOL mAreAnimationsPaused;
-    unsigned int mDirection;
+    unsigned long long mDirection;
     double mDuration;
     id mPlugin;
     Class mPluginClass;
     KNPlaybackSession *mSession;
 }
 
-@property unsigned int direction;
+@property unsigned long long direction;
 @property double duration;
 @property(readonly) id plugin;
 @property(readonly) Class pluginClass;
 @property(readonly) <KNAnimationPluginContext> * pluginContext;
 
 - (void)dealloc;
-- (unsigned int)direction;
+- (unsigned long long)direction;
 - (double)duration;
 - (void)pauseAnimations;
 - (void)pauseAnimationsAtTime:(double)arg1;
@@ -31,7 +31,7 @@
 - (id)pluginContext;
 - (void)resumeAnimationsIfPaused;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;
-- (void)setDirection:(unsigned int)arg1;
+- (void)setDirection:(unsigned long long)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setupPluginContext;
 - (void)stopAnimations;

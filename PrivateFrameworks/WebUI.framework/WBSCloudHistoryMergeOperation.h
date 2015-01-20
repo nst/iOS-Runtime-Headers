@@ -8,13 +8,13 @@
     NSSet *_existingVisits;
     WBSCloudHistoryFetchResult *_fetchResult;
     WBSHistory *_history;
-    BOOL _mergeStarted;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_redirectChainEarliestVisits;
     NSSet *_redirectChainSourceVisits;
     NSSet *_tombstones;
     NSMutableDictionary *_tombstonesByURLString;
     NSMutableDictionary *_visitsByVisitIdentifiers;
+    bool_mergeStarted;
 }
 
 - (void).cxx_destruct;

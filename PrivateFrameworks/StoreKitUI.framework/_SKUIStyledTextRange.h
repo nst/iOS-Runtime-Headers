@@ -4,10 +4,10 @@
 
 @interface _SKUIStyledTextRange : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     } _range;
-    int _textStyle;
+    long long _textStyle;
     id _value;
 }
 

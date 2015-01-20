@@ -5,9 +5,9 @@
 @class NSArray, NSBundle, NSExtension, NSString;
 
 @interface UIKeyboardInputMode : UITextInputMode <NSCopying> {
+    boolisDisplayed;
     NSString *hardwareLayout;
     NSString *identifier;
-    BOOL isDisplayed;
     NSString *languageWithRegion;
     NSString *normalizedIdentifier;
     NSString *primaryLanguage;
@@ -16,16 +16,16 @@
 
 @property(readonly) NSBundle * containingBundle;
 @property(readonly) NSString * containingBundleDisplayName;
-@property(readonly) BOOL defaultLayoutIsASCIICapable;
+@property(readonly) bool defaultLayoutIsASCIICapable;
 @property(readonly) NSString * displayName;
 @property(readonly) NSString * extendedDisplayName;
 @property(readonly) NSExtension * extension;
 @property(retain) NSString * hardwareLayout;
 @property(retain) NSString * identifier;
 @property(readonly) NSString * identifierWithLayouts;
-@property(readonly) BOOL isDefaultRightToLeft;
-@property BOOL isDisplayed;
-@property(readonly) BOOL isExtensionInputMode;
+@property(readonly) bool isDefaultRightToLeft;
+@property bool isDisplayed;
+@property(readonly) bool isExtensionInputMode;
 @property(retain) NSString * languageWithRegion;
 @property(retain) NSString * normalizedIdentifier;
 @property(retain,readonly) NSArray * normalizedIdentifierLevels;
@@ -43,7 +43,7 @@
 - (id)containingBundleDisplayName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)defaultLayoutIsASCIICapable;
+- (bool)defaultLayoutIsASCIICapable;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extendedDisplayName;
@@ -53,19 +53,19 @@
 - (id)identifierWithLayouts;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isAllowedForTraits:(id)arg1;
-- (BOOL)isDefaultRightToLeft;
-- (BOOL)isDesiredForTraits:(id)arg1 forceASCIICapable:(BOOL)arg2;
-- (BOOL)isDisplayed;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExtensionInputMode;
+- (bool)isAllowedForTraits:(id)arg1;
+- (bool)isDefaultRightToLeft;
+- (bool)isDesiredForTraits:(id)arg1 forceASCIICapable:(bool)arg2;
+- (bool)isDisplayed;
+- (bool)isEqual:(id)arg1;
+- (bool)isExtensionInputMode;
 - (id)languageWithRegion;
 - (id)normalizedIdentifier;
 - (id)normalizedIdentifierLevels;
 - (id)primaryLanguage;
 - (void)setHardwareLayout:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsDisplayed:(BOOL)arg1;
+- (void)setIsDisplayed:(bool)arg1;
 - (void)setLanguageWithRegion:(id)arg1;
 - (void)setNormalizedIdentifier:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;

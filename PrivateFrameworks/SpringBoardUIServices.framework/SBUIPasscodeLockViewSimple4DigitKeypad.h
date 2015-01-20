@@ -5,8 +5,8 @@
 @interface SBUIPasscodeLockViewSimple4DigitKeypad : SBUIPasscodeLockViewWithKeypad {
 }
 
-- (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
+- (double)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (id)_newEntryField;
-- (id)initWithLightStyle:(BOOL)arg1;
+- (id)initWithLightStyle:(bool)arg1;
 
 @end

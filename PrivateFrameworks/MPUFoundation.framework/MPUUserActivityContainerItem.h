@@ -5,25 +5,25 @@
 @class MPMediaEntity, _MPUProtoBufUserActivityContainerItem;
 
 @interface MPUUserActivityContainerItem : NSObject <NSCopying, NSMutableCopying> {
-    int _containerItemType;
+    long long _containerItemType;
     MPMediaEntity *_selectedMediaEntity;
     MPMediaEntity *_visualReferenceMediaEntity;
 }
 
-@property(readonly) int containerItemType;
+@property(readonly) long long containerItemType;
 @property(readonly) _MPUProtoBufUserActivityContainerItem * protoBufUserActivityContainerItem;
 @property(readonly) MPMediaEntity * selectedMediaEntity;
 @property(readonly) MPMediaEntity * visualReferenceMediaEntity;
 
 - (void).cxx_destruct;
-- (int)containerItemType;
+- (long long)containerItemType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithContainerItemType:(int)arg1;
+- (id)initWithContainerItemType:(long long)arg1;
 - (id)initWithProtoBufUserActivityContainerItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)protoBufUserActivityContainerItem;
 - (id)selectedMediaEntity;

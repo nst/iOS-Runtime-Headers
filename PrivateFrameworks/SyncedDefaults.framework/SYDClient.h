@@ -5,11 +5,11 @@
 @class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
 
 @interface SYDClient : NSObject {
-    BOOL _additionalSource;
     NSString *_bundleIdentifier;
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_storeIdentifier;
+    bool_additionalSource;
 }
 
 - (void)_createConnectionIfNecessary;
@@ -20,7 +20,7 @@
 - (id)_sendMessageWithReplySync:(id)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3 additionalSource:(BOOL)arg4;
+- (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3 additionalSource:(bool)arg4;
 - (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3;
 - (void)sendMessageWithName:(id)arg1 replyHandler:(id)arg2;
 - (void)sendMessageWithName:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;

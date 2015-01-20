@@ -3,16 +3,16 @@
  */
 
 @interface PUPhotoEditPhotoBrowserTransition : PUNavigationTransition {
-    BOOL _editSessionDidSaveChanges;
+    bool_editSessionDidSaveChanges;
 }
 
-@property BOOL editSessionDidSaveChanges;
+@property bool editSessionDidSaveChanges;
 
-- (void)_prepareViewForTransitionIsPresenting:(BOOL)arg1;
+- (void)_prepareViewForTransitionIsPresenting:(bool)arg1;
 - (void)animatePopTransition;
 - (void)animatePushTransition;
-- (BOOL)editSessionDidSaveChanges;
+- (bool)editSessionDidSaveChanges;
 - (id)init;
-- (void)setEditSessionDidSaveChanges:(BOOL)arg1;
+- (void)setEditSessionDidSaveChanges:(bool)arg1;
 
 @end

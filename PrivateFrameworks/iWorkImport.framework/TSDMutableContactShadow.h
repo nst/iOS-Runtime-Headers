@@ -9,18 +9,18 @@
 
 @property TSUColor * TSUColor;
 @property struct CGColor { }* color;
-@property(getter=isEnabled) BOOL enabled;
-@property float height;
-@property float offset;
-@property float perspective;
-@property int radius;
+@property(getter=isEnabled) bool enabled;
+@property double height;
+@property double offset;
+@property double perspective;
+@property long long radius;
 
 - (void)setColor:(struct CGColor { }*)arg1;
-- (void)setHeight:(float)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setOpacity:(float)arg1;
-- (void)setPerspective:(float)arg1;
-- (void)setRadius:(int)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setOffset:(double)arg1;
+- (void)setOpacity:(double)arg1;
+- (void)setPerspective:(double)arg1;
+- (void)setRadius:(long long)arg1;
 - (void)setTSUColor:(id)arg1;
 
 @end

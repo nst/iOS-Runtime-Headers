@@ -8,18 +8,18 @@
     NSString *_matchDesignatedRequirement;
     NSString *_matchPath;
     NSString *_matchSigningIdentifier;
-    BOOL _requiresDomains;
+    bool_requiresDomains;
 }
 
 @property(readonly) NSString * matchDesignatedRequirement;
 @property(copy) NSString * matchPath;
 @property(readonly) NSString * matchSigningIdentifier;
-@property(readonly) BOOL requiresDomains;
+@property(readonly) bool requiresDomains;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
@@ -30,7 +30,7 @@
 - (id)matchDesignatedRequirement;
 - (id)matchPath;
 - (id)matchSigningIdentifier;
-- (BOOL)requiresDomains;
+- (bool)requiresDomains;
 - (void)setMatchPath:(id)arg1;
 
 @end

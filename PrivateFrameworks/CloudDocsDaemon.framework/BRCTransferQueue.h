@@ -11,8 +11,8 @@
 @interface BRCTransferQueue : NSObject {
     NSMutableDictionary *_currentOperations;
     <BRCTransferQueueDelegate> *_delegate;
-    unsigned int _maxConcurrentOperationsCount;
-    unsigned int _minConcurrentOperationsCount;
+    unsigned long long _maxConcurrentOperationsCount;
+    unsigned long long _minConcurrentOperationsCount;
     NSString *_name;
     NSMutableDictionary *_operationsByPriority;
     NSObject<OS_dispatch_queue> *_queue;
@@ -23,13 +23,13 @@
 }
 
 @property <BRCTransferQueueDelegate> * delegate;
-@property(readonly) BOOL isSuspended;
+@property(readonly) bool isSuspended;
 
 + (id)sharedTargetQueue;
 
 - (void).cxx_destruct;
-- (double)_availableBudgetForPriority:(int)arg1;
-- (double)_budgetInFlightForPriority:(int)arg1;
+- (double)_availableBudgetForPriority:(long long)arg1;
+- (double)_budgetInFlightForPriority:(long long)arg1;
 - (void)_requestOperations;
 - (id)cancelAllOperations;
 - (void)cancelOperationForKey:(id)arg1;
@@ -39,11 +39,11 @@
 - (void)dumpToContext:(id)arg1 name:(id)arg2;
 - (id)inflightOperationForKey:(id)arg1;
 - (id)initWithName:(id)arg1;
-- (BOOL)isSuspended;
+- (bool)isSuspended;
 - (void)noteShouldRequestsOperations;
 - (void)resume;
 - (void)setDelegate:(id)arg1;
 - (void)suspend;
-- (BOOL)trySchedulingOperation:(id)arg1 forKey:(id)arg2;
+- (bool)trySchedulingOperation:(id)arg1 forKey:(id)arg2;
 
 @end

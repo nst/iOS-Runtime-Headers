@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <TTSSpeechConnectionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) TTSSpeechRequest * request;
 @property <TTSSpeechService> * speechService;
 @property(readonly) Class superclass;
@@ -26,19 +26,19 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithSpeechService:(id)arg1;
-- (BOOL)isSystemSpeaking;
-- (BOOL)isSystemSpeakingOnBehalfOfCurrentConnection;
-- (void)pauseCurrentSpeechRequestAtMark:(int)arg1 waitUntilPaused:(BOOL)arg2;
+- (bool)isSystemSpeaking;
+- (bool)isSystemSpeakingOnBehalfOfCurrentConnection;
+- (void)pauseCurrentSpeechRequestAtMark:(long long)arg1 waitUntilPaused:(bool)arg2;
 - (id)request;
 - (void)setDelegate:(id)arg1;
 - (void)setSpeechService:(id)arg1;
-- (oneway void)speechRequest:(id)arg1 didStopWithSuccess:(BOOL)arg2 phonemesSpoken:(id)arg3 forService:(id)arg4 error:(id)arg5;
-- (oneway void)speechRequest:(id)arg1 withMark:(int)arg2 didStartForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 forService:(id)arg4;
+- (oneway void)speechRequest:(id)arg1 didStopWithSuccess:(bool)arg2 phonemesSpoken:(id)arg3 forService:(id)arg4 error:(id)arg5;
+- (oneway void)speechRequest:(id)arg1 withMark:(long long)arg2 didStartForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 forService:(id)arg4;
 - (oneway void)speechRequestDidContinue:(id)arg1 forService:(id)arg2;
 - (oneway void)speechRequestDidPause:(id)arg1 forService:(id)arg2;
 - (oneway void)speechRequestDidStart:(id)arg1 forService:(id)arg2;
 - (id)speechService;
 - (void)startSpeechRequest:(id)arg1;
-- (void)stopCurrentSpeechRequestAtMark:(int)arg1 waitUntilStopped:(BOOL)arg2;
+- (void)stopCurrentSpeechRequestAtMark:(long long)arg1 waitUntilStopped:(bool)arg2;
 
 @end

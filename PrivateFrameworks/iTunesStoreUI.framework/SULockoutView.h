@@ -9,7 +9,7 @@
     UILabel *_bodyLabel;
     UIImageView *_glowImageView;
     UIImageView *_imageView;
-    int _layoutPreset;
+    long long _layoutPreset;
     UILabel *_titleLabel;
 }
 
@@ -17,7 +17,7 @@
 @property(copy) NSString * body;
 @property(retain) UIImage * glowImage;
 @property(retain) UIImage * image;
-@property int layoutPreset;
+@property long long layoutPreset;
 @property(copy) NSString * title;
 
 - (id)_bodyLabel;
@@ -30,13 +30,13 @@
 - (void)dealloc;
 - (id)glowImage;
 - (id)image;
-- (int)layoutPreset;
+- (long long)layoutPreset;
 - (void)layoutSubviews;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBody:(id)arg1;
 - (void)setGlowImage:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setLayoutPreset:(int)arg1;
+- (void)setLayoutPreset:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

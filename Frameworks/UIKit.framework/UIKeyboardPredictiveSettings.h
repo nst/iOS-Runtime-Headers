@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface UIKeyboardPredictiveSettings : _UISettings {
-    BOOL _alwaysShowTypedText;
     NSString *_currentInputMode;
-    BOOL _currentInputModeEnablePrediction;
-    BOOL _didShowHUD;
     int _lastVolume;
     int _minLetters;
-    BOOL _nextPage;
+    bool_alwaysShowTypedText;
+    bool_currentInputModeEnablePrediction;
+    bool_didShowHUD;
+    bool_nextPage;
 }
 
-@property BOOL alwaysShowTypedText;
+@property bool alwaysShowTypedText;
 @property int messageCount;
 @property int minLetters;
 
@@ -22,9 +22,9 @@
 + (void)loadSettings;
 + (id)sharedInstance;
 
-- (BOOL)_isShowingHUD;
+- (bool)_isShowingHUD;
 - (id)_sharedHUD;
-- (BOOL)alwaysShowTypedText;
+- (bool)alwaysShowTypedText;
 - (void)cancel;
 - (void)hide;
 - (id)initWithDefaultValues;
@@ -34,12 +34,12 @@
 - (void)pressRingerButton;
 - (void)previous;
 - (void)saveSettings;
-- (void)setAlwaysShowTypedText:(BOOL)arg1;
+- (void)setAlwaysShowTypedText:(bool)arg1;
 - (void)setMessageCount:(int)arg1;
 - (void)setMinLetters:(int)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)settingsHUDConfiguration;
-- (void)show:(BOOL)arg1;
+- (void)show:(bool)arg1;
 - (void)show;
 - (id)valueForKey:(id)arg1;
 

@@ -12,15 +12,15 @@
     NSMutableDictionary *_entriesBySection;
     id _entryComparator;
     NSMutableSet *_explicitlyAddedSectionEntries;
-    BOOL _needsSorting;
     id _sectionComparator;
     NSMutableArray *_sectionEntries;
-    BOOL _treatSectionEntriesAsRegularEntries;
+    bool_needsSorting;
+    bool_treatSectionEntriesAsRegularEntries;
 }
 
 @property(copy) id entryComparator;
 @property(copy) id sectionComparator;
-@property BOOL treatSectionEntriesAsRegularEntries;
+@property bool treatSectionEntriesAsRegularEntries;
 
 - (id)_initForCopyWithSectionEntries:(id)arg1 entriesBySection:(id)arg2 explicitlyAddedSectionEntries:(id)arg3;
 - (void)addEntries:(id)arg1;
@@ -29,23 +29,23 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)entriesInSectionAtIndex:(unsigned int)arg1;
+- (id)entriesInSectionAtIndex:(unsigned long long)arg1;
 - (id)entryAtIndexPath:(id)arg1;
 - (id)entryComparator;
 - (id)init;
 - (void)mergeWithResults:(id)arg1;
-- (unsigned int)numberOfEntriesInSectionAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfSectionEntries;
-- (unsigned int)removeEntries:(id)arg1;
-- (BOOL)removeEntry:(id)arg1;
+- (unsigned long long)numberOfEntriesInSectionAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfSectionEntries;
+- (unsigned long long)removeEntries:(id)arg1;
+- (bool)removeEntry:(id)arg1;
 - (id)resultsByMergingWithResults:(id)arg1;
 - (id)sectionComparator;
-- (id)sectionEntryAtIndex:(unsigned int)arg1;
+- (id)sectionEntryAtIndex:(unsigned long long)arg1;
 - (void)setEntryComparator:(id)arg1;
 - (void)setSectionComparator:(id)arg1;
-- (void)setTreatSectionEntriesAsRegularEntries:(BOOL)arg1;
+- (void)setTreatSectionEntriesAsRegularEntries:(bool)arg1;
 - (void)sortResults;
-- (unsigned int)totalNumberOfEntries;
-- (BOOL)treatSectionEntriesAsRegularEntries;
+- (unsigned long long)totalNumberOfEntries;
+- (bool)treatSectionEntriesAsRegularEntries;
 
 @end

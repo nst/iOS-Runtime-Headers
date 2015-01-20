@@ -8,7 +8,7 @@
     struct shared_ptr<vk::NavLabel> { 
         struct NavLabel {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    int _alignment;
+    long long _alignment;
     float _desiredOffsetDistance;
     NSString *_displayGroup;
     unsigned int _displayID;
@@ -17,30 +17,30 @@
     int _navLabelType;
 }
 
-@property int alignment;
+@property long long alignment;
 @property float desiredOffsetDistance;
 @property unsigned int displayID;
-@property(readonly) BOOL isJunctionLabel;
-@property(readonly) BOOL isRoadLabel;
-@property(readonly) BOOL isShieldLabel;
+@property(readonly) bool isJunctionLabel;
+@property(readonly) bool isRoadLabel;
+@property(readonly) bool isShieldLabel;
 @property(readonly) const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }* label;
 @property <VKLabelNavFeature> * navFeature;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (int)alignment;
+- (long long)alignment;
 - (void)dealloc;
 - (id)description;
 - (float)desiredOffsetDistance;
 - (id)displayGroup;
 - (unsigned int)displayID;
 - (id)initWithNavFeature:(id)arg1 label:(const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*)arg2 navLabelType:(int)arg3;
-- (BOOL)isJunctionLabel;
-- (BOOL)isRoadLabel;
-- (BOOL)isShieldLabel;
+- (bool)isJunctionLabel;
+- (bool)isRoadLabel;
+- (bool)isShieldLabel;
 - (const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*)label;
 - (id)navFeature;
-- (void)setAlignment:(int)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)setDesiredOffsetDistance:(float)arg1;
 - (void)setDisplayID:(unsigned int)arg1;
 - (void)setNavFeature:(id)arg1;

@@ -13,8 +13,8 @@
     _VTSiriEnabledPolicy *_siriEnabledPolicy;
     _VTSiriUIPolicy *_siriUIPolicy;
     _VTSpringBoardStartedPolicy *_springboardPolicy;
-    BOOL _voiceTriggerIsEnabled;
     _VTVoiceTriggerEnabledPolicy *_vtEnabledPolicy;
+    bool_voiceTriggerIsEnabled;
 }
 
 + (void)initialize;
@@ -25,7 +25,7 @@
 - (id)_init;
 - (void)_powerlog:(id)arg1;
 - (void)_sbsEventObserved:(struct __CFString { }*)arg1;
-- (void)_stateTransitionDidOccur:(BOOL)arg1;
+- (void)_stateTransitionDidOccur:(bool)arg1;
 - (void)dealloc;
 - (void)register:(id)arg1;
 - (void)unregister:(id)arg1;

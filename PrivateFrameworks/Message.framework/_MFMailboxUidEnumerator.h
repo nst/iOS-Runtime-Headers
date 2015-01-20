@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface _MFMailboxUidEnumerator : NSEnumerator {
-    unsigned int _index;
+    unsigned long long _index;
     NSMutableArray *_mailboxes;
 }
 

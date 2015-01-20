@@ -9,11 +9,11 @@
 
 @property(copy,readonly) NSDictionary * directoryAttributes;
 @property(copy,readonly) NSDictionary * fileAttributes;
-@property(readonly) unsigned int level;
+@property(readonly) unsigned long long level;
 
 - (id)directoryAttributes;
 - (id)fileAttributes;
-- (unsigned int)level;
+- (unsigned long long)level;
 - (id)nextObject;
 - (void)skipDescendants;
 - (void)skipDescendents;

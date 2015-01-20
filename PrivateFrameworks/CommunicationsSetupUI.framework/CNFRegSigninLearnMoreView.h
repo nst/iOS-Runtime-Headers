@@ -12,7 +12,7 @@
     UIButton *_learnMoreButton;
     UITextField *_passwordField;
     UILabel *_passwordLabel;
-    int _serviceType;
+    long long _serviceType;
     UIButton *_signInButton;
     UIProgressIndicator *_signInSpinner;
     PSSpecifier *_specifier;
@@ -24,7 +24,7 @@
 }
 
 @property CNFRegSplashSignInController * controller;
-@property int serviceType;
+@property long long serviceType;
 
 - (void)_learnMorePressed:(id)arg1;
 - (id)_splashImage;
@@ -41,13 +41,13 @@
 - (id)passwordField;
 - (id)passwordLabel;
 - (id)passwordTextField;
-- (float)preferredHeightForWidth:(float)arg1;
-- (int)serviceType;
+- (double)preferredHeightForWidth:(double)arg1;
+- (long long)serviceType;
 - (void)setController:(id)arg1;
 - (void)setCreateNewButtonTarget:(id)arg1 selector:(SEL)arg2;
-- (void)setFieldsEnabled:(BOOL)arg1;
+- (void)setFieldsEnabled:(bool)arg1;
 - (void)setForgotIDButtonTarget:(id)arg1 selector:(SEL)arg2;
-- (void)setServiceType:(int)arg1;
+- (void)setServiceType:(long long)arg1;
 - (void)setSignInButtonTarget:(id)arg1 selector:(SEL)arg2;
 - (id)signInButton;
 - (id)signInSpinner;

@@ -14,7 +14,7 @@
 @property(copy) NSString * recordType;
 @property(copy) NSArray * sortDescriptors;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

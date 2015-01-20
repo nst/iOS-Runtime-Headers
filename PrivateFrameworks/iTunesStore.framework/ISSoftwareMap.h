@@ -17,9 +17,9 @@
 + (id)containerPathForApp:(id)arg1 homeDirectory:(id)arg2 systemMetadataDirectory:(id)arg3;
 + (id)copySoftwareUpdatesPropertyListWithApplications:(id)arg1 updatesContext:(id)arg2;
 + (id)currentMap;
-+ (BOOL)currentMapIsValid;
++ (bool)currentMapIsValid;
 + (void)enumerateApplicationsForProxies:(id)arg1 usingBlock:(id)arg2;
-+ (BOOL)haveApplicationsOfType:(id)arg1;
++ (bool)haveApplicationsOfType:(id)arg1;
 + (void)invalidateCurrentMap;
 + (id)loadedMap;
 + (void)setCurrentMap:(id)arg1;

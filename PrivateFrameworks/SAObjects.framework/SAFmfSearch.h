@@ -24,7 +24,7 @@
 - (id)groupIdentifier;
 - (id)proximity;
 - (id)requestedLocation;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setCurrentLocation:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setFriends:(id)arg1;

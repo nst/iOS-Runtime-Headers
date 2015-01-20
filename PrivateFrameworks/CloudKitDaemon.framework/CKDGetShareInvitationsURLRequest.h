@@ -7,26 +7,26 @@
  */
 
 @interface CKDGetShareInvitationsURLRequest : CKDURLRequest {
-    BOOL _queryAllContainers;
     id _shareInvitationFetchedBlock;
-    BOOL _shouldGetReceived;
+    bool_queryAllContainers;
+    bool_shouldGetReceived;
 }
 
-@property BOOL queryAllContainers;
+@property bool queryAllContainers;
 @property(copy) id shareInvitationFetchedBlock;
-@property BOOL shouldGetReceived;
+@property bool shouldGetReceived;
 
 - (void).cxx_destruct;
-- (id)initWithShouldGetReceived:(BOOL)arg1 queryAllContainers:(BOOL)arg2;
+- (id)initWithShouldGetReceived:(bool)arg1 queryAllContainers:(bool)arg2;
 - (int)operationType;
-- (BOOL)queryAllContainers;
+- (bool)queryAllContainers;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setQueryAllContainers:(BOOL)arg1;
+- (void)setQueryAllContainers:(bool)arg1;
 - (void)setShareInvitationFetchedBlock:(id)arg1;
-- (void)setShouldGetReceived:(BOOL)arg1;
+- (void)setShouldGetReceived:(bool)arg1;
 - (id)shareInvitationFetchedBlock;
-- (BOOL)shouldGetReceived;
+- (bool)shouldGetReceived;
 
 @end

@@ -10,10 +10,10 @@
 }
 
 + (id)defaultReadingList;
-+ (BOOL)supportsURL:(id)arg1;
++ (bool)supportsURL:(id)arg1;
 
 - (id)_init;
-- (BOOL)addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3 error:(id*)arg4;
+- (bool)addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3 error:(id*)arg4;
 - (void)dealloc;
 - (id)init;
 

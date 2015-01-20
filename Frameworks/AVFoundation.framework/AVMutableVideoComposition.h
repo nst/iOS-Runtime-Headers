@@ -13,7 +13,7 @@
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } frameDuration;
 @property(copy) NSArray * instructions;
 @property float renderScale;
-@property struct CGSize { float x1; float x2; } renderSize;
+@property struct CGSize { double x1; double x2; } renderSize;
 
 + (id)videoComposition;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
@@ -25,13 +25,13 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })frameDuration;
 - (id)instructions;
 - (float)renderScale;
-- (struct CGSize { float x1; float x2; })renderSize;
+- (struct CGSize { double x1; double x2; })renderSize;
 - (void)setAnimationTool:(id)arg1;
 - (void)setBuiltInCompositorName:(id)arg1;
 - (void)setCustomVideoCompositorClass:(Class)arg1;
 - (void)setFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setInstructions:(id)arg1;
 - (void)setRenderScale:(float)arg1;
-- (void)setRenderSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setRenderSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

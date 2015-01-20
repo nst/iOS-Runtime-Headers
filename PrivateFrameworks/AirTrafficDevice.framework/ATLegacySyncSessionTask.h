@@ -7,23 +7,23 @@
 @interface ATLegacySyncSessionTask : ATSessionTask {
     <ATClient> *_client;
     NSString *_dataClass;
-    unsigned long _grappaSessionID;
+    unsigned int _grappaSessionID;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(copy,readonly) NSString * dataClass;
-@property unsigned long grappaSessionID;
+@property unsigned int grappaSessionID;
 
 - (void).cxx_destruct;
-- (void)_finishWithError:(id)arg1 shouldAddAssetTask:(BOOL)arg2;
+- (void)_finishWithError:(id)arg1 shouldAddAssetTask:(bool)arg2;
 - (void)cancel;
 - (id)dataClass;
-- (unsigned long)grappaSessionID;
+- (unsigned int)grappaSessionID;
 - (id)initWithDataClass:(id)arg1;
 - (void)prepareWithHostAnchor:(id)arg1 version:(id)arg2;
 - (void)reconcileWithAnchor:(id)arg1 syncType:(unsigned int)arg2;
 - (id)sessionGroupingKey;
-- (void)setGrappaSessionID:(unsigned long)arg1;
+- (void)setGrappaSessionID:(unsigned int)arg1;
 - (void)start;
 
 @end

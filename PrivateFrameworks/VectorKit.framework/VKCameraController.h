@@ -8,18 +8,18 @@
     VKCamera *_camera;
     <MDRenderTarget> *_canvas;
     <VKCameraControllerDelegate> *_delegate;
-    BOOL _gesturing;
-    BOOL _inProgressRegionChangeIsAnimated;
-    unsigned int _regionChangeCount;
+    unsigned long long _regionChangeCount;
+    bool_gesturing;
+    bool_inProgressRegionChangeIsAnimated;
 }
 
-@property(getter=isAnimating,readonly) BOOL animating;
+@property(getter=isAnimating,readonly) bool animating;
 @property(retain) VKCamera * camera;
 @property <MDRenderTarget> * canvas;
 @property <VKCameraControllerDelegate> * delegate;
-@property(getter=isGesturing) BOOL gesturing;
+@property(getter=isGesturing) bool gesturing;
 
-- (void)beginRegionChange:(BOOL)arg1;
+- (void)beginRegionChange:(bool)arg1;
 - (id)camera;
 - (id)canvas;
 - (void)canvasDidLayout;
@@ -27,11 +27,11 @@
 - (id)delegate;
 - (id)detailedDescription;
 - (void)endRegionChange;
-- (BOOL)isAnimating;
-- (BOOL)isGesturing;
+- (bool)isAnimating;
+- (bool)isGesturing;
 - (void)setCamera:(id)arg1;
 - (void)setCanvas:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setGesturing:(BOOL)arg1;
+- (void)setGesturing:(bool)arg1;
 
 @end

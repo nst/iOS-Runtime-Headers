@@ -10,48 +10,48 @@
 
 @interface GKHostedAuthenticateViewController : GKHostedViewController <GKAuthenticateViewController> {
     id _completionHandler;
-    BOOL _disablesSignIn;
     id _dismissCompletionHandler;
     NSError *_error;
-    int _mode;
-    BOOL _rotationLocked;
+    long long _mode;
+    bool_disablesSignIn;
+    bool_rotationLocked;
 }
 
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property BOOL disablesSignIn;
+@property bool disablesSignIn;
 @property(copy) id dismissCompletionHandler;
 @property(retain) NSError * error;
-@property(readonly) unsigned int hash;
-@property int mode;
-@property(getter=isRotationLocked) BOOL rotationLocked;
+@property(readonly) unsigned long long hash;
+@property long long mode;
+@property(getter=isRotationLocked) bool rotationLocked;
 @property(readonly) Class superclass;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)completionHandler;
 - (void)dealloc;
-- (BOOL)disablesSignIn;
+- (bool)disablesSignIn;
 - (id)dismissCompletionHandler;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (id)error;
 - (void)finishAuthenticationWithError:(id)arg1;
 - (id)hostSideViewControllerClassName;
-- (id)initWithMode:(int)arg1;
-- (BOOL)isRotationLocked;
-- (int)mode;
+- (id)initWithMode:(long long)arg1;
+- (bool)isRotationLocked;
+- (long long)mode;
 - (id)serviceSideViewControllerClassName;
 - (void)setCompletionHandler:(id)arg1;
-- (void)setDisablesSignIn:(BOOL)arg1;
+- (void)setDisablesSignIn:(bool)arg1;
 - (void)setDismissCompletionHandler:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setMode:(int)arg1;
-- (void)setRotationLocked:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
-- (BOOL)shouldAutorotate;
+- (void)setMode:(long long)arg1;
+- (void)setRotationLocked:(bool)arg1;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldAutomaticallyForwardRotationMethods;
+- (bool)shouldAutorotate;
 - (void)showPasswordChangeAlertWithURL:(id)arg1;
 
 @end

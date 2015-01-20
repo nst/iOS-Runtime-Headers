@@ -7,14 +7,14 @@
 @interface WDAAnchor : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL mAllowOverlap;
+    boolmAllowOverlap;
     } mBounds;
     int mHorizontalPosition;
     int mRelativeHorizontalPosition;
@@ -27,11 +27,11 @@
     double mWrapDistanceLeft;
     double mWrapDistanceRight;
     double mWrapDistanceTop;
-    long mZIndex;
+    long long mZIndex;
 }
 
-@property BOOL allowOverlap;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property bool allowOverlap;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property int horizontalPosition;
 @property int relativeHorizontalPosition;
 @property int relativeVerticalPosition;
@@ -43,20 +43,20 @@
 @property double wrapDistanceLeft;
 @property double wrapDistanceRight;
 @property double wrapDistanceTop;
-@property long zIndex;
+@property long long zIndex;
 
 + (id)stringForTextWrappingModeType:(int)arg1;
 
 - (id).cxx_construct;
-- (BOOL)allowOverlap;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (bool)allowOverlap;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (void)dealloc;
 - (int)horizontalPosition;
 - (id)init;
 - (int)relativeHorizontalPosition;
 - (int)relativeVerticalPosition;
-- (void)setAllowOverlap:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAllowOverlap:(bool)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHorizontalPosition:(int)arg1;
 - (void)setRelativeHorizontalPosition:(int)arg1;
 - (void)setRelativeVerticalPosition:(int)arg1;
@@ -68,7 +68,7 @@
 - (void)setWrapDistanceLeft:(double)arg1;
 - (void)setWrapDistanceRight:(double)arg1;
 - (void)setWrapDistanceTop:(double)arg1;
-- (void)setZIndex:(long)arg1;
+- (void)setZIndex:(long long)arg1;
 - (id)textWrapPoints;
 - (int)textWrappingMode;
 - (int)textWrappingModeType;
@@ -77,6 +77,6 @@
 - (double)wrapDistanceLeft;
 - (double)wrapDistanceRight;
 - (double)wrapDistanceTop;
-- (long)zIndex;
+- (long long)zIndex;
 
 @end

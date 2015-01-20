@@ -11,12 +11,12 @@
     NSMutableDictionary *_updateBlocks;
 }
 
-@property BOOL allowHearingAidControlOnLockScreen;
-@property BOOL independentHearingAidSettings;
+@property bool allowHearingAidControlOnLockScreen;
+@property bool independentHearingAidSettings;
 @property(retain) NSDictionary * pairedHearingAids;
 @property(retain) NSMutableSet * registeredNotifications;
-@property BOOL shouldStreamToLeftAid;
-@property BOOL shouldStreamToRightAid;
+@property bool shouldStreamToLeftAid;
+@property bool shouldStreamToRightAid;
 @property(retain) NSMutableSet * synchronizePreferences;
 @property(retain) NSMutableDictionary * updateBlocks;
 
@@ -30,29 +30,29 @@
 - (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2;
 - (void)_synchronizeIfNecessary:(id)arg1;
 - (id)_valueForPreferenceKey:(id)arg1;
-- (BOOL)allowHearingAidControlOnLockScreen;
+- (bool)allowHearingAidControlOnLockScreen;
 - (void)dealloc;
 - (void)iCloudAccountDidChange:(id)arg1;
 - (void)icloudHearingSettingsDidChange:(id)arg1;
-- (BOOL)independentHearingAidSettings;
+- (bool)independentHearingAidSettings;
 - (id)init;
-- (BOOL)isPairedWithFakeHearingAids;
+- (bool)isPairedWithFakeHearingAids;
 - (id)pairedHearingAids;
 - (void)pushLocalHearingAidsToiCloud;
 - (void)registerUpdateBlock:(id)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
 - (id)registeredNotifications;
-- (void)setAllowHearingAidControlOnLockScreen:(BOOL)arg1;
-- (void)setIndependentHearingAidSettings:(BOOL)arg1;
+- (void)setAllowHearingAidControlOnLockScreen:(bool)arg1;
+- (void)setIndependentHearingAidSettings:(bool)arg1;
 - (void)setLocalHearingAidsFromiCloud:(id)arg1;
 - (void)setPairedHearingAids:(id)arg1;
 - (void)setRegisteredNotifications:(id)arg1;
-- (void)setShouldStreamToLeftAid:(BOOL)arg1;
-- (void)setShouldStreamToRightAid:(BOOL)arg1;
+- (void)setShouldStreamToLeftAid:(bool)arg1;
+- (void)setShouldStreamToRightAid:(bool)arg1;
 - (void)setSynchronizePreferences:(id)arg1;
 - (void)setUpdateBlocks:(id)arg1;
-- (BOOL)shouldStreamToLeftAid;
-- (BOOL)shouldStreamToRightAid;
-- (BOOL)shouldUseiCloud;
+- (bool)shouldStreamToLeftAid;
+- (bool)shouldStreamToRightAid;
+- (bool)shouldUseiCloud;
 - (id)synchronizePreferences;
 - (id)updateBlocks;
 

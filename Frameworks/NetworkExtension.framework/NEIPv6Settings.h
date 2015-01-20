@@ -6,22 +6,22 @@
 
 @interface NEIPv6Settings : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
     NSString *_address;
-    int _configMethod;
+    long long _configMethod;
     int _prefixLength;
     NSString *_router;
 }
 
 @property(copy) NSString * address;
-@property int configMethod;
+@property long long configMethod;
 @property int prefixLength;
 @property(copy) NSString * router;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)address;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
-- (int)configMethod;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (long long)configMethod;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
@@ -32,7 +32,7 @@
 - (int)prefixLength;
 - (id)router;
 - (void)setAddress:(id)arg1;
-- (void)setConfigMethod:(int)arg1;
+- (void)setConfigMethod:(long long)arg1;
 - (void)setPrefixLength:(int)arg1;
 - (void)setRouter:(id)arg1;
 

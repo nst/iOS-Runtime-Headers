@@ -5,22 +5,22 @@
 @class NSDate, NSHashTable, NSObject<OS_dispatch_group>, NSString, RCAVState, RCAudioSessionRoutingAssertion, RCCaptureInputDevice, RCCaptureInputWaveformDataSource, RCCaptureOutputWriter;
 
 @interface RCCaptureSession : NSObject <RCCaptureOutputWriterDelegate, RCWaveformDataSourceObserver> {
-    unsigned int _backgroundTaskIdentifier;
-    BOOL _captureBeginSoundEffectDisabled;
-    BOOL _captureEndSoundEffectDisabled;
+    unsigned long long _backgroundTaskIdentifier;
     RCCaptureOutputWriter *_captureOutputWriter;
     RCAudioSessionRoutingAssertion *_captureRouteAssertion;
     NSDate *_captureStartDate;
     RCCaptureInputWaveformDataSource *_captureWaveformDataSource;
-    BOOL _deleteCapturedOutWhenFinished;
-    BOOL _destinationShouldBeDeleted;
     NSObject<OS_dispatch_group> *_endCaptureTaskGroup;
-    BOOL _handledFinishedCapturingAfterCompletionSound;
-    BOOL _handlingDidFinishCapturing;
     RCCaptureInputDevice *_inputDevice;
-    int _sessionCaptureState;
+    long long _sessionCaptureState;
     NSString *_sessionRouteName;
     NSHashTable *_weakObservers;
+    bool_captureBeginSoundEffectDisabled;
+    bool_captureEndSoundEffectDisabled;
+    bool_deleteCapturedOutWhenFinished;
+    bool_destinationShouldBeDeleted;
+    bool_handledFinishedCapturingAfterCompletionSound;
+    bool_handlingDidFinishCapturing;
 }
 
 @property(readonly) RCAVState * AVState;
@@ -28,9 +28,9 @@
 @property(readonly) RCCaptureInputWaveformDataSource * captureWaveformDataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) RCCaptureInputDevice * inputDevice;
-@property(readonly) BOOL isCaptureSessionFinished;
+@property(readonly) bool isCaptureSessionFinished;
 @property(readonly) Class superclass;
 
 + (void)playCaptureDidFinishSoundEffectWithCompletionBlock:(id)arg1;
@@ -39,22 +39,22 @@
 - (void).cxx_destruct;
 - (id)AVState;
 - (void)_applicationWillTerminateNotification:(id)arg1;
-- (BOOL)_attachInputToCaptureSession:(id)arg1;
-- (void)_beginAVCapturingToDestinationInitiallyPaused:(BOOL)arg1;
+- (bool)_attachInputToCaptureSession:(id)arg1;
+- (void)_beginAVCapturingToDestinationInitiallyPaused:(bool)arg1;
 - (void)_captureInputDeviceAvailabilityDidChangeNotification:(id)arg1;
 - (void)_captureInputDeviceRouteDidChangeNotification:(id)arg1;
 - (void)_closeCaptureSession;
 - (void)_deleteCaptureDestinationAndPostDidEndNotification:(id)arg1;
 - (void)_enumerateCaptureSessionObserversWithBlock:(id)arg1;
 - (void)_handleCaptureSessionDidError:(id)arg1;
-- (BOOL)_handleFinishWritingByRestartingCaptureForError:(id)arg1 testOnly:(BOOL)arg2;
+- (bool)_handleFinishWritingByRestartingCaptureForError:(id)arg1 testOnly:(bool)arg2;
 - (void)_onMainQueueHandleCaptureDidFinishCapturingAfterCompletionSound;
-- (BOOL)_openAVCaptureSessionAndWaitUntilRunning;
+- (bool)_openAVCaptureSessionAndWaitUntilRunning;
 - (void)_postToObserversWithBlock:(id)arg1;
-- (void)_setDisableSBMediaHUD:(BOOL)arg1;
-- (void)_setPostPrepareRequestedState:(int)arg1;
+- (void)_setDisableSBMediaHUD:(bool)arg1;
+- (void)_setPostPrepareRequestedState:(long long)arg1;
 - (void)addCaptureSessionObserver:(id)arg1;
-- (BOOL)canResumeCapturingAtCompositionDestinationTime:(double)arg1;
+- (bool)canResumeCapturingAtCompositionDestinationTime:(double)arg1;
 - (double)captureDestinationComposedDuration;
 - (void)captureOutputWriter:(id)arg1 captureSessionDidTerminateWithError:(id)arg2;
 - (void)captureOutputWriter:(id)arg1 didFinishWritingToOutputFileAtURL:(id)arg2 error:(id)arg3;
@@ -72,10 +72,10 @@
 - (void)finishCapturing;
 - (id)initWithInputDevice:(id)arg1 captureWaveformDataSource:(id)arg2;
 - (id)inputDevice;
-- (BOOL)isCaptureActive;
-- (BOOL)isCapturePaused;
-- (BOOL)isCaptureSessionFinished;
-- (BOOL)isPreparing;
+- (bool)isCaptureActive;
+- (bool)isCapturePaused;
+- (bool)isCaptureSessionFinished;
+- (bool)isPreparing;
 - (void)pauseCapturing;
 - (void)prepareToCaptureWithPreparedHandler:(id)arg1;
 - (void)removeCaptureSessionObserver:(id)arg1;

@@ -3,30 +3,30 @@
  */
 
 @interface _UIVisualEffectBackdropView : _UIVisualEffectSubview {
-    unsigned int _blurHardEdges;
-    float _blurRadius;
+    unsigned long long _blurHardEdges;
+    double _blurRadius;
     id _statisticsDelegate;
 }
 
-@property unsigned int blurHardEdges;
-@property float blurRadius;
+@property unsigned long long blurHardEdges;
+@property double blurRadius;
 @property id statisticsDelegate;
 
 + (Class)layerClass;
 
 - (id)_groupName;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 settings:(id)arg2;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 settings:(id)arg2;
 - (void)_setGroupName:(id)arg1;
 - (void)_updateInputBounds;
 - (id)backdropLayer;
 - (void)backdropLayerStatisticsDidChange:(id)arg1;
-- (unsigned int)blurHardEdges;
-- (float)blurRadius;
+- (unsigned long long)blurHardEdges;
+- (double)blurRadius;
 - (void)dealloc;
-- (void)setBlurHardEdges:(unsigned int)arg1;
-- (void)setBlurRadius:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBlurHardEdges:(unsigned long long)arg1;
+- (void)setBlurRadius:(double)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setStatisticsDelegate:(id)arg1;
 - (id)statisticsDelegate;
 

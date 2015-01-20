@@ -3,7 +3,7 @@
  */
 
 @interface NSHTTPURLResponseInternal : NSObject <NSCoding> {
-    BOOL isMixedReplace;
+    boolisMixedReplace;
     struct __SecTrust { } *peerTrust;
 }
 

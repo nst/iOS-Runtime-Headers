@@ -10,16 +10,16 @@
 @class KNRecordingMovieTrack, NSArray, NSDate;
 
 @interface KNRecording : TSPObject {
+    boolmInSyncWithShow;
     double mDuration;
     NSArray *mEventTracks;
-    BOOL mInSyncWithShow;
     NSDate *mModificationDate;
     KNRecordingMovieTrack *mMovieTrack;
 }
 
 @property(readonly) double duration;
 @property(readonly) NSArray * eventTracks;
-@property(getter=isInSyncWithShow,readonly) BOOL inSyncWithShow;
+@property(getter=isInSyncWithShow,readonly) bool inSyncWithShow;
 @property(readonly) NSDate * modificationDate;
 @property(readonly) KNRecordingMovieTrack * movieTrack;
 
@@ -30,7 +30,7 @@
 - (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4 modificationDate:(id)arg5;
 - (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isInSyncWithShow;
+- (bool)isInSyncWithShow;
 - (id)modificationDate;
 - (id)movieTrack;
 - (id)recordingByMarkingAsOutOfSyncWithShow;

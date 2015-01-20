@@ -12,8 +12,8 @@
     int _status;
 }
 
-@property(readonly) BOOL hasMescalHeaderData;
-@property BOOL hasStatus;
+@property(readonly) bool hasMescalHeaderData;
+@property bool hasStatus;
 @property(retain) NSData * mescalHeaderData;
 @property int status;
 
@@ -22,14 +22,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMescalHeaderData;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMescalHeaderData;
+- (bool)hasStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)mescalHeaderData;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setMescalHeaderData:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;

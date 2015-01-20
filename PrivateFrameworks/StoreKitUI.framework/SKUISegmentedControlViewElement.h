@@ -5,13 +5,13 @@
 @class NSArray, NSString, SKUIDividerViewElement;
 
 @interface SKUISegmentedControlViewElement : SKUIViewElement {
-    int _maximumNumberOfVisibleItems;
+    long long _maximumNumberOfVisibleItems;
     NSString *_moreListTitle;
 }
 
 @property(readonly) SKUIDividerViewElement * bottomDivider;
-@property(readonly) int initialSelectedItemIndex;
-@property(readonly) int maximumNumberOfVisibleItems;
+@property(readonly) long long initialSelectedItemIndex;
+@property(readonly) long long maximumNumberOfVisibleItems;
 @property(readonly) NSString * moreListTitle;
 @property(readonly) NSArray * segmentItemTitles;
 
@@ -19,12 +19,12 @@
 - (void)_enumerateItemElementsUsingBlock:(id)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)bottomDivider;
-- (void)dispatchEventOfType:(unsigned int)arg1 forItemAtIndex:(int)arg2;
+- (void)dispatchEventOfType:(unsigned long long)arg1 forItemAtIndex:(long long)arg2;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)initialSelectedItemIndex;
-- (int)maximumNumberOfVisibleItems;
+- (long long)initialSelectedItemIndex;
+- (long long)maximumNumberOfVisibleItems;
 - (id)moreListTitle;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)segmentItemTitles;
 
 @end

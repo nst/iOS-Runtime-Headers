@@ -20,8 +20,8 @@
 - (id)_exclamationGlyphImage;
 - (id)_failImage;
 - (id)_failPressedImage;
-- (id)initWithStyle:(int)arg1 buttonHandler:(id)arg2 styleProvider:(id)arg3;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 buttonHandler:(id)arg2 styleProvider:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (int)locationPickerCellAccessoryType;
 - (void)setLocationPickerCellAccessoryType:(int)arg1;

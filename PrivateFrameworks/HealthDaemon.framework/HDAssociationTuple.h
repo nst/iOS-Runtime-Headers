@@ -12,7 +12,7 @@
 @property(retain) NSUUID * associationUUID;
 @property(retain) NSUUID * objectUUID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)associationUUID;

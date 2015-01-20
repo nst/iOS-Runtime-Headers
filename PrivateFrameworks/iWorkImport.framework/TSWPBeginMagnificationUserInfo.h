@@ -6,29 +6,29 @@
 
 @interface TSWPBeginMagnificationUserInfo : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL _animated;
+        double x; 
+        double y; 
     } _magnificationPoint;
     } _offset;
     TSWPRep *_target;
+    bool_animated;
 }
 
-@property BOOL animated;
-@property struct CGPoint { float x1; float x2; } magnificationPoint;
-@property struct CGPoint { float x1; float x2; } offset;
+@property bool animated;
+@property struct CGPoint { double x1; double x2; } magnificationPoint;
+@property struct CGPoint { double x1; double x2; } offset;
 @property TSWPRep * target;
 
 - (id).cxx_construct;
-- (BOOL)animated;
-- (struct CGPoint { float x1; float x2; })magnificationPoint;
-- (struct CGPoint { float x1; float x2; })offset;
-- (void)setAnimated:(BOOL)arg1;
-- (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)animated;
+- (struct CGPoint { double x1; double x2; })magnificationPoint;
+- (struct CGPoint { double x1; double x2; })offset;
+- (void)setAnimated:(bool)arg1;
+- (void)setMagnificationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
 

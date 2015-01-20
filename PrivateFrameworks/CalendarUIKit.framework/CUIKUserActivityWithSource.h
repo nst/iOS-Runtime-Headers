@@ -11,13 +11,13 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_isLocalSource;
-- (BOOL)_requiresHostAndOwner;
-- (BOOL)_supportsConsistentExternalIDAcrossDevices:(int)arg1;
-- (BOOL)_supportsConsistentExternalIDAcrossDevices;
+- (bool)_isLocalSource;
+- (bool)_requiresHostAndOwner;
+- (bool)_supportsConsistentExternalIDAcrossDevices:(int)arg1;
+- (bool)_supportsConsistentExternalIDAcrossDevices;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithSource:(id)arg1 type:(unsigned int)arg2;
-- (unsigned int)isMatchForSource:(id)arg1;
+- (id)initWithSource:(id)arg1 type:(unsigned long long)arg2;
+- (unsigned long long)isMatchForSource:(id)arg1;
 
 @end

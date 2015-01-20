@@ -15,10 +15,10 @@
     NSMutableArray *_snippets;
 }
 
-@property(readonly) BOOL hasRating;
-@property(readonly) BOOL hasReviewId;
-@property BOOL hasReviewTime;
-@property(readonly) BOOL hasReviewer;
+@property(readonly) bool hasRating;
+@property(readonly) bool hasReviewId;
+@property bool hasReviewTime;
+@property(readonly) bool hasReviewer;
 @property(retain) GEOPDRating * rating;
 @property(retain) NSString * reviewId;
 @property double reviewTime;
@@ -33,27 +33,27 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRating;
-- (BOOL)hasReviewId;
-- (BOOL)hasReviewTime;
-- (BOOL)hasReviewer;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRating;
+- (bool)hasReviewId;
+- (bool)hasReviewTime;
+- (bool)hasReviewer;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)rating;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)reviewId;
 - (double)reviewTime;
 - (id)reviewer;
-- (void)setHasReviewTime:(BOOL)arg1;
+- (void)setHasReviewTime:(bool)arg1;
 - (void)setRating:(id)arg1;
 - (void)setReviewId:(id)arg1;
 - (void)setReviewTime:(double)arg1;
 - (void)setReviewer:(id)arg1;
 - (void)setSnippets:(id)arg1;
-- (id)snippetAtIndex:(unsigned int)arg1;
+- (id)snippetAtIndex:(unsigned long long)arg1;
 - (id)snippets;
-- (unsigned int)snippetsCount;
+- (unsigned long long)snippetsCount;
 - (void)writeTo:(id)arg1;
 
 @end

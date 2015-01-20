@@ -7,24 +7,24 @@
 @interface _UILegibilityLabel : _UILegibilityView {
     UIFont *_font;
     NSString *_string;
-    BOOL _usesSecondaryColor;
+    bool_usesSecondaryColor;
 }
 
-@property(readonly) float baselineOffset;
+@property(readonly) double baselineOffset;
 @property(retain) UIFont * font;
 @property(copy) NSString * string;
-@property(readonly) BOOL usesSecondaryColor;
+@property(readonly) bool usesSecondaryColor;
 
-- (float)baselineOffset;
+- (double)baselineOffset;
 - (void)dealloc;
 - (id)font;
-- (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4 options:(int)arg5;
-- (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4;
+- (id)initWithSettings:(id)arg1 strength:(double)arg2 string:(id)arg3 font:(id)arg4 options:(long long)arg5;
+- (id)initWithSettings:(id)arg1 strength:(double)arg2 string:(id)arg3 font:(id)arg4;
 - (void)setFont:(id)arg1;
 - (void)setString:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)string;
 - (void)updateImage;
-- (BOOL)usesSecondaryColor;
+- (bool)usesSecondaryColor;
 
 @end

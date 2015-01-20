@@ -5,35 +5,35 @@
 @interface TSDWrapPolygon : NSObject <NSCopying> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
+    boolmComputedBounds;
+    boolmComputedSelfIntersection;
+    boolmIntersectsSelf;
     } mBounds;
-    BOOL mComputedBounds;
-    BOOL mComputedSelfIntersection;
-    BOOL mIntersectsSelf;
     void *mPolygon;
 }
 
 - (id).cxx_construct;
 - (id)bezierPath;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
-- (struct CGPoint { float x1; float x2; })intersectionPointBetween:(struct CGPoint { float x1; float x2; })arg1 and:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)intersectsSelf;
+- (struct CGPoint { double x1; double x2; })intersectionPointBetween:(struct CGPoint { double x1; double x2; })arg1 and:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)intersectsSelf;
 - (void)p_computeIntersectionState;
 - (int)p_countSegments;
 - (void)p_freePolygon;
 - (void)p_setPolygon:(struct { int x1; int *x2; struct { /* ? */ } *x3; }*)arg1;
 - (void*)polygon;
-- (void)setIntersectsSelf:(BOOL)arg1;
+- (void)setIntersectsSelf:(bool)arg1;
 - (void)setPath:(id)arg1;
-- (void)transformUsingAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)transformUsingAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface PLCloudPruneOperation : PLCloudOperation {
-    BOOL _cancelled;
+    bool_cancelled;
 }
 
 - (id)_cloudResourceForCPLResource:(id)arg1 inPhotoLibrary:(id)arg2 outAssetsAffected:(id)arg3;
 - (void)_resetCloudPlaceholderKindForAsset:(id)arg1;
-- (BOOL)canPruneResource;
-- (unsigned int)cost;
-- (BOOL)keepOriginalsEnabled;
+- (bool)canPruneResource;
+- (unsigned long long)cost;
+- (bool)keepOriginalsEnabled;
 - (void)markAsNotLocallyAvailable;
 - (void)requestCancel;
 - (void)runOperationWithCompletionHandler:(id)arg1;

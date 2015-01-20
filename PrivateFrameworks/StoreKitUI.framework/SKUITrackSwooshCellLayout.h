@@ -9,22 +9,22 @@
     UIView *_bottomBorderView;
     NSString *_collectionName;
     SKUIColorScheme *_colorScheme;
-    int _layoutIdiom;
-    int _lockupSize;
+    long long _layoutIdiom;
+    long long _lockupSize;
     UIView *_selectionBackgroundView;
     NSString *_subtitleFormatString;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
-    unsigned int _visibleFields;
+    unsigned long long _visibleFields;
 }
 
 @property(copy) NSString * artistName;
 @property(copy) NSString * collectionName;
-@property int layoutIdiom;
-@property int lockupSize;
+@property long long layoutIdiom;
+@property long long lockupSize;
 @property(copy) NSString * subtitleFormatString;
 @property(copy) NSString * title;
-@property unsigned int visibleFields;
+@property unsigned long long visibleFields;
 
 - (void).cxx_destruct;
 - (void)_delayedReloadSubviewBackgroundColors;
@@ -32,22 +32,22 @@
 - (id)artistName;
 - (id)collectionName;
 - (void)layoutForItemOfferChange;
-- (int)layoutIdiom;
+- (long long)layoutIdiom;
 - (void)layoutSubviews;
-- (int)lockupSize;
+- (long long)lockupSize;
 - (void)setArtistName:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCollectionName:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setLayoutIdiom:(int)arg1;
-- (void)setLockupSize:(int)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setLayoutIdiom:(long long)arg1;
+- (void)setLockupSize:(long long)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setSubtitleFormatString:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setVisibleFields:(unsigned int)arg1;
+- (void)setVisibleFields:(unsigned long long)arg1;
 - (id)subtitleFormatString;
 - (id)title;
-- (unsigned int)visibleFields;
+- (unsigned long long)visibleFields;
 
 @end

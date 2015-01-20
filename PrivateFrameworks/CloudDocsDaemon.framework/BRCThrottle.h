@@ -9,7 +9,7 @@
     BRCMinHeap *_retryHeap;
 }
 
-+ (long long)throttleHashBytes:(void*)arg1 length:(unsigned long)arg2;
++ (long long)throttleHashBytes:(void*)arg1 length:(unsigned long long)arg2;
 + (long long)throttleHashFormat:(id)arg1;
 
 - (void).cxx_destruct;

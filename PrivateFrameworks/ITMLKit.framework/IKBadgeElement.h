@@ -9,7 +9,7 @@
 
 @property(retain,readonly) NSString * textContent;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (id)textContent;
 

@@ -16,15 +16,15 @@
             int mDurationUnitLargest; 
             int mDurationStyle; 
         } durationFormat; 
-    BOOL mBlank;
+    boolmBlank;
     } mValue;
 }
 
-@property(getter=isBlank) BOOL blank;
+@property(getter=isBlank) bool blank;
 @property struct TSTDurationWrapper { double x1; struct { unsigned int x_2_1_1 : 1; int x_2_1_2; int x_2_1_3; int x_2_1_4; } x2; } value;
 
 - (id).cxx_construct;
-- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)date;
 - (id)description;
 - (struct TSTDurationWrapper { double x1; struct { unsigned int x_2_1_1 : 1; int x_2_1_2; int x_2_1_3; int x_2_1_4; } x2; })durationWrapper;
@@ -33,14 +33,14 @@
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initFromArchive:(const struct DurationNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; double x4; unsigned int x5; unsigned int x6; unsigned int x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 asBlank:(BOOL)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (id)initWithContext:(id)arg1 duration:(struct TSTDurationWrapper { double x1; struct { unsigned int x_2_1_1 : 1; int x_2_1_2; int x_2_1_3; int x_2_1_4; } x2; })arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
-- (BOOL)isBlank;
+- (id)initWithContext:(id)arg1 asBlank:(bool)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (id)initWithContext:(id)arg1 duration:(struct TSTDurationWrapper { double x1; struct { unsigned int x_2_1_1 : 1; int x_2_1_2; int x_2_1_3; int x_2_1_4; } x2; })arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (void)insertFormulaText:(id)arg1 includeWhitespace:(bool)arg2;
+- (bool)isBlank;
 - (void)saveToArchive:(struct DurationNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; double x4; unsigned int x5; unsigned int x6; unsigned int x7; int x8; unsigned int x9[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setBlank:(BOOL)arg1;
+- (void)setBlank:(bool)arg1;
 - (void)setValue:(struct TSTDurationWrapper { double x1; struct { unsigned int x_2_1_1 : 1; int x_2_1_2; int x_2_1_3; int x_2_1_4; } x2; })arg1;
 - (id)string;
 - (int)tokenType;

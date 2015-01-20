@@ -9,7 +9,7 @@
     NSString *_cachedSubtitle;
     NSArray *_cachedTags;
     NSString *_cachedTitle;
-    int _cachedType;
+    long long _cachedType;
     NSURL *_cachedURL;
 }
 
@@ -22,7 +22,7 @@
 - (id)subtitle;
 - (id)tags;
 - (id)title;
-- (int)type;
+- (long long)type;
 - (id)url;
 
 @end

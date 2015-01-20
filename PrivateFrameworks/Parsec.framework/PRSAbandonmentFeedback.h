@@ -3,18 +3,18 @@
  */
 
 @interface PRSAbandonmentFeedback : PRSFeedback {
-    unsigned int _method;
+    unsigned long long _method;
 }
 
-@property(readonly) unsigned int method;
+@property(readonly) unsigned long long method;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInput:(id)arg1 timestamp:(int)arg2 method:(unsigned int)arg3;
-- (id)initWithInput:(id)arg1 timestamp:(int)arg2;
-- (unsigned int)method;
+- (id)initWithInput:(id)arg1 timestamp:(long long)arg2 method:(unsigned long long)arg3;
+- (id)initWithInput:(id)arg1 timestamp:(long long)arg2;
+- (unsigned long long)method;
 - (id)plist;
 - (id)type;
 

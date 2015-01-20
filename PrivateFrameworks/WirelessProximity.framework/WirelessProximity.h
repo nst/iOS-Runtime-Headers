@@ -14,7 +14,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <WirelessProximityDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property int state;
 @property(readonly) Class superclass;
 

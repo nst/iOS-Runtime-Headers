@@ -15,9 +15,9 @@
 
 @interface AOSContext : NSObject <NSPortDelegate> {
     int (*_callback)();
-     /* Encoded args for previous method: @16@0:4^{AOSAccount=}8^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}12 */
-     /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8@0:4 */
-     /* Encoded args for previous method: v12@0:4^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8 */
+     /* Encoded args for previous method: @32@0:8^{AOSAccount=}16^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}24 */
+     /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}16@0:8 */
+     /* Encoded args for previous method: v24@0:8^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}16 */
     struct AOSAccount { } *_account;
     NSThread *_callbackThread;
     id _info;
@@ -26,7 +26,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg2;
@@ -39,7 +39,7 @@
 - (void)finalize;
 - (id)info;
 - (id)init;
-- (BOOL)scheduleCallback;
+- (bool)scheduleCallback;
 - (void)setAccount:(struct AOSAccount { }*)arg1;
 - (void)setInfo:(id)arg1;
 - (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg1;

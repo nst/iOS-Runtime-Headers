@@ -5,14 +5,14 @@
 @class UIScrollView;
 
 @interface UIAccessibilityAutoscrollManager : NSObject {
-    float _autoscrollSpeed;
-    BOOL _autoscrolling;
+    double _autoscrollSpeed;
     int _scrollDirection;
     UIScrollView *_scrollView;
+    bool_autoscrolling;
 }
 
-@property float autoscrollSpeed;
-@property(getter=isAutoscrolling) BOOL autoscrolling;
+@property double autoscrollSpeed;
+@property(getter=isAutoscrolling) bool autoscrolling;
 @property int scrollDirection;
 @property(retain) UIScrollView * scrollView;
 
@@ -20,20 +20,20 @@
 
 - (void)_autoscroll;
 - (void)autoscrollInDirection:(int)arg1;
-- (float)autoscrollSpeed;
+- (double)autoscrollSpeed;
 - (int)availableAutoscrollDirections;
 - (void)dealloc;
 - (void)decrementAutoscrollSpeed;
 - (void)incrementAutoscrollSpeed;
 - (id)init;
-- (BOOL)isAutoscrolling;
+- (bool)isAutoscrolling;
 - (void)pause;
 - (int)scrollDirection;
 - (void)scrollToBottom;
 - (void)scrollToTop;
 - (id)scrollView;
-- (void)setAutoscrollSpeed:(float)arg1;
-- (void)setAutoscrolling:(BOOL)arg1;
+- (void)setAutoscrollSpeed:(double)arg1;
+- (void)setAutoscrolling:(bool)arg1;
 - (void)setScrollDirection:(int)arg1;
 - (void)setScrollView:(id)arg1;
 

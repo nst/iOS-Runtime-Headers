@@ -18,7 +18,7 @@
 - (int)bodyFormat;
 - (id)init;
 - (id)messageID;
-- (BOOL)mf_alwaysReportFailures;
+- (bool)mf_alwaysReportFailures;
 - (int)requestType;
 - (void)setBodyFormat:(int)arg1;
 - (void)setMessageID:(id)arg1;

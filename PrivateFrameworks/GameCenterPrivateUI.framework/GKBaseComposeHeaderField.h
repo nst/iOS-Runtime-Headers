@@ -6,36 +6,36 @@
 
 @interface GKBaseComposeHeaderField : UIImageView {
     SEL _actionWhenTouched;
-    unsigned int _maxLineCount;
+    unsigned long long _maxLineCount;
     GKLabel *_nameLabel;
     GKHairlineView *_separatorView;
 }
 
 @property SEL actionWhenTouched;
-@property unsigned int maxLineCount;
+@property unsigned long long maxLineCount;
 @property(retain) GKLabel * nameLabel;
 @property(retain) NSString * nameText;
 @property(retain) GKHairlineView * separatorView;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } valueFrame;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } valueFrame;
 @property(retain) NSString * valueText;
 
 - (SEL)actionWhenTouched;
 - (void)addConstraintsForValueView:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)maxLineCount;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned long long)maxLineCount;
 - (id)nameLabel;
 - (id)nameText;
 - (id)separatorView;
 - (void)setActionWhenTouched:(SEL)arg1;
-- (void)setMaxLineCount:(unsigned int)arg1;
+- (void)setMaxLineCount:(unsigned long long)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setNameText:(id)arg1;
 - (void)setSeparatorView:(id)arg1;
 - (void)setValueText:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })valueFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })valueFrame;
 - (id)valueText;
 - (id)viewForBaselineLayout;
 

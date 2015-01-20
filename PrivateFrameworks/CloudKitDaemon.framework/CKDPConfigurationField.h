@@ -9,8 +9,8 @@
     CKDPConfigurationFieldValue *_value;
 }
 
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasValue;
+@property(readonly) bool hasName;
+@property(readonly) bool hasValue;
 @property(retain) NSString * name;
 @property(retain) CKDPConfigurationFieldValue * value;
 
@@ -19,13 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

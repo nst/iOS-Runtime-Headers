@@ -22,8 +22,8 @@
 @property(readonly) NSNumber * stepValue;
 @property(copy,readonly) NSString * units;
 
-+ (BOOL)isValidMetadata:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)isValidMetadata:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)configureWithCharacteristicMetadata:(id)arg1;

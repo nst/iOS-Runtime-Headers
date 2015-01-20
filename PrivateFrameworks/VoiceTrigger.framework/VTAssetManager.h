@@ -20,7 +20,7 @@
 - (void)_onetimeRemoteQuery;
 - (void)_runAssetQuery:(id)arg1 completion:(id)arg2;
 - (void)_startDownloadingVoiceTriggerAsset:(id)arg1 progress:(id)arg2 completion:(id)arg3;
-- (id)_voiceAssetQueryForLanguage:(id)arg1 contentVersion:(id)arg2 localOnly:(BOOL)arg3;
+- (id)_voiceAssetQueryForLanguage:(id)arg1 contentVersion:(id)arg2 localOnly:(bool)arg3;
 - (id)_voicetriggerAssetFromASAsset:(id)arg1;
 - (id)init;
 - (void)invalidateAsset:(id)arg1;

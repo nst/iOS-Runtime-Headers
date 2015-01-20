@@ -13,7 +13,7 @@
 @property(retain) NSMutableDictionary * zoneIDsToGateHolders;
 
 - (void).cxx_destruct;
-- (BOOL)hasStatusToReport;
+- (bool)hasStatusToReport;
 - (id)init;
 - (void)registerWaiter:(id)arg1 forZoneIDs:(id)arg2 completionHandler:(id)arg3;
 - (void)relinquishLocksForWaiter:(id)arg1;

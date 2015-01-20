@@ -5,31 +5,31 @@
 @class NSDate, NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PFUbiquityLocation;
 
 @interface _PFUbiquityRecordsExporter : NSObject {
-    BOOL _allowTempLogStorage;
     NSDate *_lastTransactionDate;
     NSString *_localPeerID;
     PFUbiquityLocation *_localRootLocation;
-    BOOL _pendingTempLogMove;
     NSMutableDictionary *_pendingTransactionsToStoreNameAndTransactionNumber;
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSString *_storeName;
-    BOOL _throwOptimisticLockingException;
     NSLock *_transactionLock;
     PFUbiquityLocation *_ubiquityRootLocation;
-    BOOL _useLocalStorage;
+    bool_allowTempLogStorage;
+    bool_pendingTempLogMove;
+    bool_throwOptimisticLockingException;
+    bool_useLocalStorage;
 }
 
-@property BOOL allowTempLogStorage;
+@property bool allowTempLogStorage;
 @property(readonly) PFUbiquityLocation * currentRootLocation;
 @property(retain) NSDate * lastTransactionDate;
 @property(readonly) NSString * localPeerID;
 @property(readonly) PFUbiquityLocation * localRootLocation;
-@property(readonly) BOOL pendingTempLogMove;
-@property BOOL throwOptimisticLockingException;
+@property(readonly) bool pendingTempLogMove;
+@property bool throwOptimisticLockingException;
 @property(retain) PFUbiquityLocation * ubiquityRootLocation;
-@property BOOL useLocalStorage;
+@property bool useLocalStorage;
 
-- (BOOL)allowTempLogStorage;
+- (bool)allowTempLogStorage;
 - (void)beginWatchingForChangesFromStore:(id)arg1;
 - (void)cleanUpFromRolledbackPendingTransaction:(id)arg1 withNotification:(id)arg2;
 - (id)createDictionaryForObjectsInSaveNotification:(id)arg1 forTransactionOfType:(int)arg2 withExportContext:(id)arg3 andSaveSnapshot:(id)arg4;
@@ -43,17 +43,17 @@
 - (id)localRootLocation;
 - (void)managedObjectContextDidSave:(id)arg1;
 - (void)moveLogsFromTempDirectory;
-- (BOOL)pendingTempLogMove;
+- (bool)pendingTempLogMove;
 - (void)scheduleTempLogMove;
-- (void)setAllowTempLogStorage:(BOOL)arg1;
+- (void)setAllowTempLogStorage:(bool)arg1;
 - (void)setLastTransactionDate:(id)arg1;
-- (void)setThrowOptimisticLockingException:(BOOL)arg1;
+- (void)setThrowOptimisticLockingException:(bool)arg1;
 - (void)setUbiquityRootLocation:(id)arg1;
-- (void)setUseLocalStorage:(BOOL)arg1;
-- (BOOL)shouldRespondToSaveNotification:(id)arg1;
+- (void)setUseLocalStorage:(bool)arg1;
+- (bool)shouldRespondToSaveNotification:(id)arg1;
 - (void)stopWatchingForChanges;
-- (BOOL)throwOptimisticLockingException;
+- (bool)throwOptimisticLockingException;
 - (id)ubiquityRootLocation;
-- (BOOL)useLocalStorage;
+- (bool)useLocalStorage;
 
 @end

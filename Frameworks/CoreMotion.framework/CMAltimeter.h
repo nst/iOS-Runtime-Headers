@@ -8,7 +8,7 @@
 
 + (void)dummySelector:(id)arg1;
 + (void)initialize;
-+ (BOOL)isRelativeAltitudeAvailable;
++ (bool)isRelativeAltitudeAvailable;
 
 - (void)dealloc;
 - (void)deallocPrivate;

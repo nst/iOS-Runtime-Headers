@@ -15,10 +15,10 @@
 }
 
 @property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasRecord;
-@property BOOL hasType;
+@property(readonly) bool hasEtag;
+@property(readonly) bool hasIdentifier;
+@property(readonly) bool hasRecord;
+@property bool hasType;
 @property(retain) CKDPRecordIdentifier * identifier;
 @property(retain) CKDPRecord * record;
 @property int type;
@@ -29,18 +29,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasIdentifier;
-- (BOOL)hasRecord;
-- (BOOL)hasType;
-- (unsigned int)hash;
+- (bool)hasEtag;
+- (bool)hasIdentifier;
+- (bool)hasRecord;
+- (bool)hasType;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)record;
 - (void)setEtag:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setType:(int)arg1;

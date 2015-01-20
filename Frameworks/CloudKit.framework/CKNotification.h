@@ -12,10 +12,10 @@
     NSString *_alertLocalizationKey;
     NSNumber *_badge;
     NSString *_containerIdentifier;
-    BOOL _isPruned;
     CKNotificationID *_notificationID;
-    int _notificationType;
+    long long _notificationType;
     NSString *_soundName;
+    bool_isPruned;
 }
 
 @property(copy) NSString * alertActionLocalizationKey;
@@ -25,14 +25,14 @@
 @property(copy) NSString * alertLocalizationKey;
 @property(copy) NSNumber * badge;
 @property(copy) NSString * containerIdentifier;
-@property BOOL isPruned;
+@property bool isPruned;
 @property(copy) CKNotificationID * notificationID;
-@property int notificationType;
+@property long long notificationType;
 @property(copy) NSString * soundName;
 
 + (id)_realNotificationFromRemoteNotificationDictionary:(id)arg1;
 + (id)notificationFromRemoteNotificationDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -49,10 +49,10 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteNotificationDictionary:(id)arg1;
-- (BOOL)isPruned;
-- (BOOL)isRead;
+- (bool)isPruned;
+- (bool)isRead;
 - (id)notificationID;
-- (int)notificationType;
+- (long long)notificationType;
 - (void)setAlertActionLocalizationKey:(id)arg1;
 - (void)setAlertBody:(id)arg1;
 - (void)setAlertLaunchImage:(id)arg1;
@@ -60,9 +60,9 @@
 - (void)setAlertLocalizationKey:(id)arg1;
 - (void)setBadge:(id)arg1;
 - (void)setContainerIdentifier:(id)arg1;
-- (void)setIsPruned:(BOOL)arg1;
+- (void)setIsPruned:(bool)arg1;
 - (void)setNotificationID:(id)arg1;
-- (void)setNotificationType:(int)arg1;
+- (void)setNotificationType:(long long)arg1;
 - (void)setSoundName:(id)arg1;
 - (id)soundName;
 

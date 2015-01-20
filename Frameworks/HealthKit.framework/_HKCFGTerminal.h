@@ -12,12 +12,12 @@
 + (id)terminalMatchingDoubleWithCondition:(id)arg1;
 + (id)terminalMatchingIntegerWithCondition:(id)arg1;
 + (id)terminalMatchingSequenceOfCharactersInSet:(id)arg1;
-+ (id)terminalMatchingString:(id)arg1 caseSensitive:(BOOL)arg2;
++ (id)terminalMatchingString:(id)arg1 caseSensitive:(bool)arg2;
 + (id)terminalMatchingString:(id)arg1;
 
 - (id)_label;
-- (unsigned int)_minimumLength;
-- (BOOL)_scanValue:(id*)arg1 withScanner:(id)arg2;
+- (unsigned long long)_minimumLength;
+- (bool)_scanValue:(id*)arg1 withScanner:(id)arg2;
 - (void)_tryNodesWithContext:(id)arg1 solutionTest:(id)arg2;
 - (id)characterSet;
 

@@ -18,7 +18,7 @@
 @property(readonly) EKCalendarNotification * notification;
 @property(readonly) int type;
 
-- (int)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
+- (long long)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)initWithType:(int)arg1 objectID:(struct { int x1; int x2; })arg2 date:(id)arg3 eventStore:(id)arg4;

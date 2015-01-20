@@ -8,21 +8,21 @@
 
 @interface HKHealthServiceDiscovery : NSObject {
     id _discoveryHandler;
-    unsigned int _discoveryIdentifier;
-    int _serviceType;
+    unsigned long long _discoveryIdentifier;
+    long long _serviceType;
 }
 
 @property(copy) id discoveryHandler;
-@property unsigned int discoveryIdentifier;
-@property(readonly) int serviceType;
+@property unsigned long long discoveryIdentifier;
+@property(readonly) long long serviceType;
 
 - (void).cxx_destruct;
 - (id)discoveryHandler;
-- (unsigned int)discoveryIdentifier;
+- (unsigned long long)discoveryIdentifier;
 - (id)initForAllTypes;
-- (id)initWithType:(int)arg1;
-- (int)serviceType;
+- (id)initWithType:(long long)arg1;
+- (long long)serviceType;
 - (void)setDiscoveryHandler:(id)arg1;
-- (void)setDiscoveryIdentifier:(unsigned int)arg1;
+- (void)setDiscoveryIdentifier:(unsigned long long)arg1;
 
 @end

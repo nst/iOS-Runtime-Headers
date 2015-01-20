@@ -6,11 +6,11 @@
 
 @interface SBKTransactionURLOperation : ISStoreURLOperation {
     SBKRequest *_SBKRequest;
-    BOOL _shouldAuthenticate;
+    bool_shouldAuthenticate;
 }
 
 @property(retain) SBKRequest * SBKRequest;
-@property BOOL shouldAuthenticate;
+@property bool shouldAuthenticate;
 
 + (id)operationWithRequest:(id)arg1 delegate:(id)arg2;
 
@@ -20,7 +20,7 @@
 - (id)description;
 - (id)init;
 - (void)setSBKRequest:(id)arg1;
-- (void)setShouldAuthenticate:(BOOL)arg1;
-- (BOOL)shouldAuthenticate;
+- (void)setShouldAuthenticate:(bool)arg1;
+- (bool)shouldAuthenticate;
 
 @end

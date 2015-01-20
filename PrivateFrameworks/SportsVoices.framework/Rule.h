@@ -6,8 +6,8 @@
 
 @interface Rule : GrammarPart {
     SlotsInContext *_leftHandSide;
-    BOOL _repeat;
     NewProduction *_rightHandSide;
+    bool_repeat;
 }
 
 + (id)instanceFromPlist:(id)arg1;

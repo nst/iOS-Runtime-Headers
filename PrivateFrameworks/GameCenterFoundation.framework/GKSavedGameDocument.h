@@ -7,19 +7,19 @@
 @interface GKSavedGameDocument : NSObject <NSFilePresenter> {
     NSString *_deviceName;
     NSURL *_fileURL;
-    BOOL _hasConflict;
-    BOOL _isConflictVersion;
     NSDate *_modificationDate;
     NSString *_name;
+    bool_hasConflict;
+    bool_isConflictVersion;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSString * deviceName;
 @property(retain) NSURL * fileURL;
-@property BOOL hasConflict;
-@property(readonly) unsigned int hash;
-@property BOOL isConflictVersion;
+@property bool hasConflict;
+@property(readonly) unsigned long long hash;
+@property bool isConflictVersion;
 @property(retain) NSDate * modificationDate;
 @property(retain) NSString * name;
 @property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
@@ -30,14 +30,14 @@
 + (id)currentDeviceName;
 
 - (void)dealloc;
-- (void)deleteAllVersionsIncludingCurrent:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)deleteAllVersionsIncludingCurrent:(bool)arg1 withCompletionHandler:(id)arg2;
 - (void)deleteConflictVersion:(id)arg1 completionHandler:(id)arg2;
 - (id)description;
 - (id)deviceName;
 - (id)fileURL;
-- (BOOL)hasConflict;
+- (bool)hasConflict;
 - (id)initWithFileURL:(id)arg1;
-- (BOOL)isConflictVersion;
+- (bool)isConflictVersion;
 - (void)loadDataWithCompletionHandler:(id)arg1;
 - (void)loadMetadataWithCompletionHandler:(id)arg1;
 - (void)loadWrapperDataWithFilename:(id)arg1 completionHandler:(id)arg2;
@@ -53,8 +53,8 @@
 - (void)saveData:(id)arg1 completionHandler:(id)arg2;
 - (void)setDeviceName:(id)arg1;
 - (void)setFileURL:(id)arg1;
-- (void)setHasConflict:(BOOL)arg1;
-- (void)setIsConflictVersion:(BOOL)arg1;
+- (void)setHasConflict:(bool)arg1;
+- (void)setIsConflictVersion:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setName:(id)arg1;

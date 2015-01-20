@@ -11,7 +11,7 @@
 @property(getter=_localeIdentifier,setter=_setLocaleIdentifier:,copy) NSString * _localeIdentifier;
 @property(readonly) NSArray * downloadContentLengths;
 @property(readonly) NSString * downloadContentVersion;
-@property(getter=isDownloadable,readonly) BOOL downloadable;
+@property(getter=isDownloadable,readonly) bool downloadable;
 @property(readonly) NSString * localizedDescription;
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSDecimalNumber * price;
@@ -21,7 +21,7 @@
 - (id)_localeIdentifier;
 - (void)_setContentVersion:(id)arg1;
 - (void)_setDownloadContentLengths:(id)arg1;
-- (void)_setDownloadable:(BOOL)arg1;
+- (void)_setDownloadable:(bool)arg1;
 - (void)_setLocaleIdentifier:(id)arg1;
 - (void)_setLocalizedDescription:(id)arg1;
 - (void)_setLocalizedTitle:(id)arg1;
@@ -34,7 +34,7 @@
 - (id)downloadContentVersion;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isDownloadable;
+- (bool)isDownloadable;
 - (id)localizedDescription;
 - (id)localizedTitle;
 - (id)price;

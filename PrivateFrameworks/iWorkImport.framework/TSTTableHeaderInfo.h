@@ -8,14 +8,14 @@
     TSTCellStyle *mCellStyle;
     unsigned char mHidingState;
     unsigned short mNumberOfCells;
-    float mSize;
+    double mSize;
     TSWPParagraphStyle *mTextStyle;
 }
 
 @property(retain) TSTCellStyle * cellStyle;
 @property unsigned char hidingState;
 @property unsigned short numberOfCells;
-@property float size;
+@property double size;
 @property(retain) TSWPParagraphStyle * textStyle;
 
 - (id)cellStyle;
@@ -26,9 +26,9 @@
 - (void)setCellStyle:(id)arg1;
 - (void)setHidingState:(unsigned char)arg1;
 - (void)setNumberOfCells:(unsigned short)arg1;
-- (void)setSize:(float)arg1;
+- (void)setSize:(double)arg1;
 - (void)setTextStyle:(id)arg1;
-- (float)size;
+- (double)size;
 - (id)textStyle;
 
 @end

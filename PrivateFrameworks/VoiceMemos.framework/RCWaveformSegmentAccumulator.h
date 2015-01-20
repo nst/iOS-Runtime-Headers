@@ -5,28 +5,28 @@
 @class NSMutableArray, NSString, RCWaveformGenerator;
 
 @interface RCWaveformSegmentAccumulator : NSObject <RCWaveformGeneratorSegmentOutputObserver> {
-    BOOL _finishedSuccessfully;
     RCWaveformGenerator *_generator;
     NSMutableArray *_segments;
+    bool_finishedSuccessfully;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) BOOL finishedSuccessfully;
+@property(readonly) bool finishedSuccessfully;
 @property(retain) RCWaveformGenerator * generator;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSMutableArray * segments;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (BOOL)finishedSuccessfully;
+- (bool)finishedSuccessfully;
 - (id)generator;
 - (id)initWithWaveformGenerator:(id)arg1;
 - (id)segments;
 - (void)setGenerator:(id)arg1;
 - (void)setSegments:(id)arg1;
-- (BOOL)waitUntilFinished;
+- (bool)waitUntilFinished;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
 - (void)waveformGeneratorWillBeginLoading:(id)arg1;

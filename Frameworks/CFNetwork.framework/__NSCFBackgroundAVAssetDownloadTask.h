@@ -20,8 +20,8 @@
 - (void)_onqueue_didReceiveProgressUpdateWithTotalBytesWritten:(long long)arg1 totalBytesExpectedToWrite:(long long)arg2;
 - (void)dealloc;
 - (id)destinationURL;
-- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 URL:(id)arg3 destinationURL:(id)arg4 ident:(unsigned int)arg5;
-- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned int)arg4;
+- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 URL:(id)arg3 destinationURL:(id)arg4 ident:(unsigned long long)arg5;
+- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned long long)arg4;
 - (void)setAVAssetDownloadToken:(unsigned long long)arg1;
 - (void)setDestinationURL:(id)arg1;
 - (void)setURL:(id)arg1;

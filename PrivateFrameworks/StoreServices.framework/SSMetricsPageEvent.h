@@ -7,7 +7,7 @@
 @interface SSMetricsPageEvent : SSMetricsBaseEvent {
 }
 
-@property(getter=isCachedResponse) BOOL cachedResponse;
+@property(getter=isCachedResponse) bool cachedResponse;
 @property(retain) NSString * navigationType;
 @property(retain) NSString * pageHistoryDescription;
 @property double pageRenderTime;
@@ -20,12 +20,12 @@
 @property(retain) NSString * searchTerm;
 @property(retain) NSString * serverApplicationInstance;
 @property(retain) NSString * serverTiming;
-@property(getter=isUbered) BOOL ubered;
+@property(getter=isUbered) bool ubered;
 
 - (id)description;
 - (id)init;
-- (BOOL)isCachedResponse;
-- (BOOL)isUbered;
+- (bool)isCachedResponse;
+- (bool)isUbered;
 - (id)navigationType;
 - (id)pageHistoryDescription;
 - (double)pageRenderTime;
@@ -38,7 +38,7 @@
 - (id)searchTerm;
 - (id)serverApplicationInstance;
 - (id)serverTiming;
-- (void)setCachedResponse:(BOOL)arg1;
+- (void)setCachedResponse:(bool)arg1;
 - (void)setNavigationType:(id)arg1;
 - (void)setPageHistoryDescription:(id)arg1;
 - (void)setPageHistoryDescriptionWithIdentifiers:(id)arg1;
@@ -52,6 +52,6 @@
 - (void)setSearchTerm:(id)arg1;
 - (void)setServerApplicationInstance:(id)arg1;
 - (void)setServerTiming:(id)arg1;
-- (void)setUbered:(BOOL)arg1;
+- (void)setUbered:(bool)arg1;
 
 @end

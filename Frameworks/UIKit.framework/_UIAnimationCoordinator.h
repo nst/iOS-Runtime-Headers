@@ -11,21 +11,21 @@
 @interface _UIAnimationCoordinator : NSObject <UIViewControllerAnimatedTransitioning> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     id _animator;
     id _completion;
@@ -46,10 +46,10 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property double duration;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
-@property(readonly) unsigned int hash;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } endFrame;
+@property(readonly) unsigned long long hash;
 @property(copy) id preperation;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startFrame;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } startFrame;
 @property(retain,readonly) NSMutableDictionary * stash;
 @property(readonly) Class superclass;
 @property(retain,readonly) _UIViewControllerOneToOneTransitionContext * transitionContext;
@@ -59,29 +59,29 @@
 - (void)animate;
 - (void)animateInteractively;
 - (void)animateTransition:(id)arg1;
-- (void)animationEnded:(BOOL)arg1;
+- (void)animationEnded:(bool)arg1;
 - (id)animator;
 - (void)cancelInteractiveAnimation;
 - (id)completion;
 - (id)containerView;
 - (void)dealloc;
 - (double)duration;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })endFrame;
 - (void)finishInteractiveAnimation;
 - (id)preperation;
 - (void)setAnimator:(id)arg1;
 - (void)setCompletion:(id)arg1;
 - (void)setContainerView:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setEndFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPreperation:(id)arg1;
-- (void)setStartFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setStartFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setViewController:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })startFrame;
 - (id)stash;
 - (id)transitionContext;
 - (double)transitionDuration:(id)arg1;
-- (void)updateInteractiveProgress:(float)arg1;
+- (void)updateInteractiveProgress:(double)arg1;
 - (id)viewController;
 
 @end

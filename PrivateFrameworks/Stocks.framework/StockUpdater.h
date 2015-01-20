@@ -10,17 +10,17 @@
 
 @interface StockUpdater : YQLRequest {
     <StockUpdaterDelegate> *_delegate;
-    BOOL _forceUpdate;
-    BOOL _isComprehensive;
     NSError *_lastError;
     NSArray *_pendingStocks;
     NSArray *_requestStocks;
     id _updateCompletionHandler;
+    bool_forceUpdate;
+    bool_isComprehensive;
 }
 
 @property <StockUpdaterDelegate> * delegate;
-@property(readonly) BOOL forceUpdate;
-@property(readonly) BOOL isComprehensive;
+@property(readonly) bool forceUpdate;
+@property(readonly) bool isComprehensive;
 @property(retain) NSArray * pendingStocks;
 @property(retain) NSArray * requestStocks;
 @property(copy) id updateCompletionHandler;
@@ -29,14 +29,14 @@
 - (id)_parseDataSourceMapFromDataSourceDictionaries:(id)arg1;
 - (void)_parseExchangeDictionaries:(id)arg1;
 - (void)_parseQuoteDictionaries:(id)arg1 withDataSources:(id)arg2;
-- (BOOL)_updateStocks:(id)arg1 comprehensive:(BOOL)arg2 forceUpdate:(BOOL)arg3;
+- (bool)_updateStocks:(id)arg1 comprehensive:(bool)arg2 forceUpdate:(bool)arg3;
 - (id)aggregateDictionaryDomain;
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (BOOL)forceUpdate;
-- (BOOL)hadError;
-- (BOOL)isComprehensive;
+- (bool)forceUpdate;
+- (bool)hadError;
+- (bool)isComprehensive;
 - (void)parseData:(id)arg1;
 - (id)pendingStocks;
 - (id)requestStocks;

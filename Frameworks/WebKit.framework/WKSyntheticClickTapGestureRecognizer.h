@@ -12,6 +12,6 @@
 - (void)reset;
 - (void)setGestureRecognizedTarget:(id)arg1 action:(SEL)arg2;
 - (void)setResetTarget:(id)arg1 action:(SEL)arg2;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 
 @end

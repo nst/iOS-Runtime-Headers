@@ -15,7 +15,7 @@
 - (void)audioLevelDidChange:(float)arg1;
 - (void)dealloc;
 - (id)dotImageViews;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)liveListenUpdateUUID;
 - (void)setDotImageViews:(id)arg1;

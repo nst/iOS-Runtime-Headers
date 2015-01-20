@@ -17,28 +17,28 @@
 @property(retain) NSDictionary * thumbnailDataDictionary;
 
 + (id)_additionCreationInfo;
-+ (BOOL)_hitAdditionsOnURL:(id)arg1 error:(id*)arg2;
-+ (BOOL)_hitAdditionsOnURLUsingDaemon:(id)arg1 error:(id*)arg2;
-+ (BOOL)_removeAdditionsOnURLDirectly:(id)arg1 error:(id*)arg2;
-+ (BOOL)_removeAdditionsOnURLUsingDaemon:(id)arg1 error:(id*)arg2;
-+ (BOOL)_removedAdditionsOnURL:(id)arg1;
-+ (BOOL)_removedAdditionsOnURLUsingDaemon:(id)arg1;
-+ (BOOL)associateImage:(struct CGImage { }*)arg1 metadata:(id)arg2 withURL:(id)arg3 error:(id*)arg4;
-+ (BOOL)associateThumbnailImagesDictionary:(id)arg1 serializedQuickLookMetadata:(id)arg2 withDocumentAtURL:(id)arg3 error:(id*)arg4;
-+ (BOOL)associateThumbnailImagesDictionary:(id)arg1 serializedQuickLookMetadata:(id)arg2 withImmutableDocument:(BOOL)arg3 atURL:(id)arg4 error:(id*)arg5;
-+ (BOOL)hasThumbnailOnImmutableDocumentAtURL:(id)arg1;
++ (bool)_hitAdditionsOnURL:(id)arg1 error:(id*)arg2;
++ (bool)_hitAdditionsOnURLUsingDaemon:(id)arg1 error:(id*)arg2;
++ (bool)_removeAdditionsOnURLDirectly:(id)arg1 error:(id*)arg2;
++ (bool)_removeAdditionsOnURLUsingDaemon:(id)arg1 error:(id*)arg2;
++ (bool)_removedAdditionsOnURL:(id)arg1;
++ (bool)_removedAdditionsOnURLUsingDaemon:(id)arg1;
++ (bool)associateImage:(struct CGImage { }*)arg1 metadata:(id)arg2 withURL:(id)arg3 error:(id*)arg4;
++ (bool)associateThumbnailImagesDictionary:(id)arg1 serializedQuickLookMetadata:(id)arg2 withDocumentAtURL:(id)arg3 error:(id*)arg4;
++ (bool)associateThumbnailImagesDictionary:(id)arg1 serializedQuickLookMetadata:(id)arg2 withImmutableDocument:(bool)arg3 atURL:(id)arg4 error:(id*)arg5;
++ (bool)hasThumbnailOnImmutableDocumentAtURL:(id)arg1;
 + (Class)imageClassWithError:(id*)arg1;
-+ (BOOL)imageContainsAlpha:(struct CGImage { }*)arg1;
-+ (BOOL)makeAdditionFromStagingURL:(id)arg1 metadata:(id)arg2 inStorage:(id)arg3 error:(id*)arg4;
++ (bool)imageContainsAlpha:(struct CGImage { }*)arg1;
++ (bool)makeAdditionFromStagingURL:(id)arg1 metadata:(id)arg2 inStorage:(id)arg3 error:(id*)arg4;
 + (id)plistInExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 onFileDescriptor:(int)arg3 error:(id*)arg4;
-+ (BOOL)removeAdditionsOnURL:(id)arg1 error:(id*)arg2;
-+ (BOOL)setThumbnailsDictionary:(id)arg1 forURL:(id)arg2 error:(id*)arg3;
-+ (BOOL)storeThumbnailDataDictionary:(id)arg1 metadata:(id)arg2 asExtendedAttributeOnURL:(id)arg3 error:(id*)arg4;
++ (bool)removeAdditionsOnURL:(id)arg1 error:(id*)arg2;
++ (bool)setThumbnailsDictionary:(id)arg1 forURL:(id)arg2 error:(id*)arg3;
++ (bool)storeThumbnailDataDictionary:(id)arg1 metadata:(id)arg2 asExtendedAttributeOnURL:(id)arg3 error:(id*)arg4;
 + (id)thumbnailsDictionaryForURL:(id)arg1 error:(id*)arg2;
 
-- (BOOL)_initWithAdditionsPresentOnURLDirectly:(id)arg1 error:(id*)arg2;
-- (BOOL)_initWithAdditionsPresentOnURLUsingDaemon:(id)arg1 error:(id*)arg2;
-- (BOOL)_initWithXattrsPresentOnURL:(id)arg1 error:(id*)arg2;
+- (bool)_initWithAdditionsPresentOnURLDirectly:(id)arg1 error:(id*)arg2;
+- (bool)_initWithAdditionsPresentOnURLUsingDaemon:(id)arg1 error:(id*)arg2;
+- (bool)_initWithXattrsPresentOnURL:(id)arg1 error:(id*)arg2;
 - (id)additionURL;
 - (void*)cacheVersion;
 - (void)dealloc;
@@ -50,7 +50,7 @@
 - (id)thumbnailDataDictionary;
 - (id)thumbnailDataForKey:(id)arg1;
 - (id)thumbnailURLForKey:(id)arg1;
-- (struct CGImage { }*)thumbnailWithMaximumDimension:(float)arg1 properties:(id*)arg2 flavor:(int*)arg3 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (struct CGImage { }*)thumbnailWithMaximumDimension:(double)arg1 properties:(id*)arg2 flavor:(int*)arg3 contentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
 - (id)thumbnailsDictionaryWithError:(id*)arg1;
 
 @end

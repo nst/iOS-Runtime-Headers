@@ -3,11 +3,11 @@
  */
 
 @interface RUINavigationController : UINavigationController {
-    int _ruiSupportedInterfaceOrientations;
+    long long _ruiSupportedInterfaceOrientations;
 }
 
-- (BOOL)canBeShownFromSuspendedState;
-- (void)setSupportedInterfaceOrientations:(unsigned int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)canBeShownFromSuspendedState;
+- (void)setSupportedInterfaceOrientations:(unsigned long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

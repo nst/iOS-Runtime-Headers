@@ -6,19 +6,19 @@
     double _timestamp;
 }
 
-@property(readonly) int subtype;
+@property(readonly) long long subtype;
 @property(readonly) double timestamp;
-@property(readonly) int type;
+@property(readonly) long long type;
 
 - (id)_allPhysicalButtons;
 - (struct __GSEvent { }*)_gsEvent;
 - (struct __IOHIDEvent { }*)_hidEvent;
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
-- (BOOL)_isKeyDown;
+- (bool)_isKeyDown;
 - (id)_modifiedInput;
-- (int)_modifierFlags;
-- (int)_moveDirection;
+- (long long)_modifierFlags;
+- (long long)_moveDirection;
 - (id)_physicalButtonsForGestureRecognizer:(id)arg1;
 - (id)_physicalButtonsForResponder:(id)arg1;
 - (id)_physicalButtonsForWindow:(id)arg1;
@@ -29,15 +29,15 @@
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)_triggeringPhysicalButton;
 - (id)_unmodifiedInput;
-- (float)_wheelVelocity;
+- (double)_wheelVelocity;
 - (id)_windows;
 - (id)allTouches;
-- (BOOL)isKeyDown;
-- (int)subtype;
+- (bool)isKeyDown;
+- (long long)subtype;
 - (double)timestamp;
 - (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

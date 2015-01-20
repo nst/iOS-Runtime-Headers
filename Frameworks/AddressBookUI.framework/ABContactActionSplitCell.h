@@ -15,10 +15,10 @@
 - (void)_setupButton:(id)arg1 forAction:(id)arg2;
 - (id)constantConstraints;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)labelView;
 - (id)leftLabel;
-- (float)minCellHeight;
+- (double)minCellHeight;
 - (id)rightLabel;
 - (id)rightMostView;
 - (void)setCardGroupItem:(id)arg1;

@@ -29,35 +29,35 @@
 }
 
 @property(readonly) MFAccount * account;
-@property(readonly) BOOL accountIsValid;
-@property(readonly) BOOL accountSupportsSSL;
+@property(readonly) bool accountIsValid;
+@property(readonly) bool accountSupportsSSL;
 @property id delegate;
 @property(readonly) MFError * error;
-@property(readonly) BOOL performsValidationInBackground;
+@property(readonly) bool performsValidationInBackground;
 @property(readonly) MFMonitoredInvocation * validationInvocation;
 
 - (void)_backgroundValidateAccountFinished:(id)arg1 authSchemes:(id)arg2;
-- (BOOL)_incomingServerValid;
+- (bool)_incomingServerValid;
 - (id)_ispAccountInfo;
-- (BOOL)_outgoingServerValid;
-- (void)_validateAccount:(id)arg1 withFallbacks:(BOOL)arg2;
+- (bool)_outgoingServerValid;
+- (void)_validateAccount:(id)arg1 withFallbacks:(bool)arg2;
 - (void)_validateAccount:(id)arg1;
 - (void)_validateAccountWithoutFallbacks:(id)arg1;
 - (id)account;
-- (BOOL)accountIsValid;
-- (BOOL)accountSupportsSSL;
-- (BOOL)accountValidationCanceled;
+- (bool)accountIsValid;
+- (bool)accountSupportsSSL;
+- (bool)accountValidationCanceled;
 - (void)cancelValidation;
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
 - (id)init;
-- (id)initWithPerformsValidationInBackground:(BOOL)arg1;
-- (BOOL)performsValidationInBackground;
+- (id)initWithPerformsValidationInBackground:(bool)arg1;
+- (bool)performsValidationInBackground;
 - (void)setDelegate:(id)arg1;
 - (void)stop;
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id)arg3;
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
+- (void)validateAccount:(id)arg1 useSSL:(bool)arg2 withCompletion:(id)arg3;
+- (void)validateAccount:(id)arg1 useSSL:(bool)arg2;
 - (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id)arg2;
 - (void)validateAccountWithoutFallbacks:(id)arg1;
 - (id)validationInvocation;

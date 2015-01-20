@@ -5,7 +5,7 @@
 @interface TSCH3DGeometryRepresentativeVertexCollector : TSCH3DGeometryCollector {
 }
 
-- (int)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg3;
+- (long long)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg3;
 - (void)endCollection;
 - (id)initWithScene:(id)arg1;
 - (id)matrixProcessor;

@@ -20,24 +20,24 @@
     GEONetworkDataReader *_reader;
     GEOTileKeyList *_receivedKeys;
     NSURL *_requestURL;
-    BOOL _requireWiFi;
     GEOTileKeyList *_requiresLocalization;
     NSString *_sharedPrefix;
     double _startTime;
     double _timeout;
-    BOOL _useStatusCodes;
     NSString *_userAgent;
+    bool_requireWiFi;
+    bool_useStatusCodes;
 }
 
 @property(retain) NSData * auditToken;
 @property(copy,readonly) NSString * debugDescription;
 @property <GEOVoltaireMultiTileDownloaderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSURL * requestURL;
-@property BOOL requireWiFi;
+@property bool requireWiFi;
 @property(readonly) Class superclass;
-@property BOOL useStatusCodes;
+@property bool useStatusCodes;
 @property(retain) NSString * userAgent;
 
 - (void)_cancelWithError:(id)arg1;
@@ -46,7 +46,7 @@
 - (id)_localizationURLForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)_localizationURLIfNecessaryForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)_mergeBaseTile:(id)arg1 withLocalizationTile:(id)arg2;
-- (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })_tileKeyForURL:(id)arg1 edition:(unsigned int*)arg2 isLocalized:(BOOL*)arg3;
+- (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })_tileKeyForURL:(id)arg1 edition:(unsigned int*)arg2 isLocalized:(bool*)arg3;
 - (void)_tryParseTiles;
 - (id)_urlForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)auditToken;
@@ -61,14 +61,14 @@
 - (id)initWithURL:(id)arg1 keyList:(id)arg2 manifestConfiguration:(id)arg3 locale:(id)arg4;
 - (void)logDownloadDetails;
 - (id)requestURL;
-- (BOOL)requireWiFi;
+- (bool)requireWiFi;
 - (void)setAuditToken:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRequireWiFi:(BOOL)arg1;
-- (void)setUseStatusCodes:(BOOL)arg1;
+- (void)setRequireWiFi:(bool)arg1;
+- (void)setUseStatusCodes:(bool)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)start;
-- (BOOL)useStatusCodes;
+- (bool)useStatusCodes;
 - (id)userAgent;
 
 @end

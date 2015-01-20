@@ -18,7 +18,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIProductPageChildViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) SKUIProductPageHeaderViewController * headerViewController;
 @property(readonly) SKUIProductPageItem * incompatibleItem;
 @property(retain) NSOperationQueue * operationQueue;
@@ -42,6 +42,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderViewController:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

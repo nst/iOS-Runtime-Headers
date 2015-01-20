@@ -6,8 +6,8 @@
 
 @interface MPUStringTruncationStrategy : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSString *_componentsNamePlural;
     NSString *_componentsNameSingular;
     } _drawingSize;
@@ -17,17 +17,17 @@
 
 @property(copy) NSString * componentsNamePlural;
 @property(copy) NSString * componentsNameSingular;
-@property(readonly) struct CGSize { float x1; float x2; } drawingSize;
+@property(readonly) struct CGSize { double x1; double x2; } drawingSize;
 @property(readonly) NSDictionary * textAttributes;
 @property(copy) NSString * truncationTokenFormat;
 
-+ (id)truncationStrategyWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)truncationStrategyWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
 - (id)componentsNamePlural;
 - (id)componentsNameSingular;
-- (struct CGSize { float x1; float x2; })drawingSize;
-- (id)initWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })drawingSize;
+- (id)initWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)setComponentsNamePlural:(id)arg1;
 - (void)setComponentsNameSingular:(id)arg1;
 - (void)setTruncationTokenFormat:(id)arg1;

@@ -14,20 +14,20 @@
 @property bool cardEmulationSuspended;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSObject<OS_dispatch_semaphore> * semaphore;
 @property(readonly) Class superclass;
 
-- (void)cardEmulation:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;
-- (void)cardEmulation:(id)arg1 didDetectField:(BOOL)arg2;
+- (void)cardEmulation:(id)arg1 didChangeRestrictedMode:(bool)arg2;
+- (void)cardEmulation:(id)arg1 didDetectField:(bool)arg2;
 - (void)cardEmulation:(id)arg1 didSelectCard:(id)arg2;
 - (void)cardEmulation:(id)arg1 didStartTransaction:(id)arg2;
-- (void)cardEmulation:(id)arg1 isSuspended:(BOOL)arg2;
+- (void)cardEmulation:(id)arg1 isSuspended:(bool)arg2;
 - (id)cardEmulation;
 - (bool)cardEmulationSuspended;
 - (void)cardEmulationTransactionButtonPressed:(id)arg1;
 - (void)cardEmulationTransactionTimerExpired:(id)arg1;
-- (void)fieldDetect:(id)arg1 isSuspended:(BOOL)arg2;
+- (void)fieldDetect:(id)arg1 isSuspended:(bool)arg2;
 - (id)init;
 - (bool)pingRotterdam:(id*)arg1;
 - (bool)pingStockholm:(id*)arg1;

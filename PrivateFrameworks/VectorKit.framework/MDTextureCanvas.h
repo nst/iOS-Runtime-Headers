@@ -6,33 +6,33 @@
 
 @interface MDTextureCanvas : NSObject <MDRenderTarget> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
-    float _contentScale;
+        double width; 
+        double height; 
+    double _contentScale;
     } _size;
     } _sizeInPixels;
 }
 
 @property(readonly) float averageFPS;
-@property(readonly) float contentScale;
+@property(readonly) double contentScale;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) struct CGSize { float x1; float x2; } sizeInPixels;
+@property(readonly) unsigned long long hash;
+@property(readonly) struct CGSize { double x1; double x2; } size;
+@property(readonly) struct CGSize { double x1; double x2; } sizeInPixels;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
-- (float)contentScale;
+- (double)contentScale;
 - (void)dealloc;
 - (id)description;
 - (void)didDrawView;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })sizeInPixels;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { double x1; double x2; })sizeInPixels;
 - (void)willDrawView;
 
 @end

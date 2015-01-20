@@ -16,7 +16,7 @@
 + (id)relationWithItemIdentifier:(id)arg1 containerIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 usingClientCache:(id)arg3;
+- (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(bool)arg2 usingClientCache:(id)arg3;
 - (id)description;
 - (id)identifiersForMapping;
 - (id)itemIdentifier;

@@ -11,31 +11,31 @@
 @property(retain,readonly) TUProxyCallModel * proxyCallModel;
 @property(retain,readonly) TUTelephonyCallModel * telephonyCallModel;
 
-- (BOOL)_allCallsSupportCallModelType:(int)arg1;
-- (BOOL)_anyCallsSupportCallModelType:(int)arg1;
-- (BOOL)_displayedCallSupportsCallModelType:(int)arg1;
-- (BOOL)_onlySupportsCallModelType:(int)arg1;
-- (BOOL)_supportsCallModelType:(int)arg1;
-- (BOOL)_updateAddCallAllowed;
-- (BOOL)_updateAmbiguityState;
-- (BOOL)_updateEndAndAnswerAllowed;
-- (BOOL)_updateHardPauseAvailable;
-- (BOOL)_updateHoldAllowed;
-- (BOOL)_updateHoldAndAnswerAllowed;
-- (BOOL)_updateMergeable;
-- (BOOL)_updateSendToVoicemailAllowed;
-- (BOOL)_updateSwappable;
-- (BOOL)_updateTakingCallsPrivateAllowed;
+- (bool)_allCallsSupportCallModelType:(int)arg1;
+- (bool)_anyCallsSupportCallModelType:(int)arg1;
+- (bool)_displayedCallSupportsCallModelType:(int)arg1;
+- (bool)_onlySupportsCallModelType:(int)arg1;
+- (bool)_supportsCallModelType:(int)arg1;
+- (bool)_updateAddCallAllowed;
+- (bool)_updateAmbiguityState;
+- (bool)_updateEndAndAnswerAllowed;
+- (bool)_updateHardPauseAvailable;
+- (bool)_updateHoldAllowed;
+- (bool)_updateHoldAndAnswerAllowed;
+- (bool)_updateMergeable;
+- (bool)_updateSendToVoicemailAllowed;
+- (bool)_updateSwappable;
+- (bool)_updateTakingCallsPrivateAllowed;
 - (void)dealloc;
 - (id)description;
 - (id)faceTimeAudioCallModel;
 - (void)faceTimeAudioCallModelDidChange:(id)arg1;
 - (void)handlePossibleStateChange;
 - (id)init;
-- (BOOL)isAmbiguous;
+- (bool)isAmbiguous;
 - (id)proxyCallModel;
 - (id)telephonyCallModel;
 - (void)telephonyCallModelDidChange:(id)arg1;
-- (BOOL)updateInternalState;
+- (bool)updateInternalState;
 
 @end

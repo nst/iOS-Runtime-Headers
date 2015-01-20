@@ -17,7 +17,7 @@
 - (id)commands;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setCommands:(id)arg1;
 - (void)setTimeInSeconds:(id)arg1;
 - (void)setViewIds:(id)arg1;

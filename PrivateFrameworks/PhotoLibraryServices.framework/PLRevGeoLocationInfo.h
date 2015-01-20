@@ -8,28 +8,28 @@
     PLRevGeoCompoundNameInfo *_compoundNameInfo;
     PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
     <GEOMapItemPrivate> *_geoMapItem;
-    BOOL _isHome;
-    BOOL _isValid;
     NSString *_providerId;
-    unsigned int _providerVersion;
+    unsigned long long _providerVersion;
+    bool_isHome;
+    bool_isValid;
 }
 
 @property(retain) PLRevGeoCompoundNameInfo * compoundNameInfo;
 @property(retain) PLRevGeoCompoundNameInfo * compoundSecondaryNameInfo;
 @property(copy,readonly) NSString * countryCode;
 @property(retain) <GEOMapItemPrivate> * geoMapItem;
-@property BOOL isHome;
-@property(readonly) BOOL isValid;
+@property bool isHome;
+@property(readonly) bool isValid;
 @property(retain) NSString * providerId;
-@property unsigned int providerVersion;
+@property unsigned long long providerVersion;
 
 + (id)_namingOrderForAssetReverseGeoDescription;
-+ (unsigned int)currentVersion;
-+ (BOOL)isValidFromData:(id)arg1;
-+ (unsigned int)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
-+ (id)sortedNameInfoComparatorWithHomeAtEnd:(BOOL)arg1;
++ (unsigned long long)currentVersion;
++ (bool)isValidFromData:(id)arg1;
++ (unsigned long long)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
++ (id)sortedNameInfoComparatorWithHomeAtEnd:(bool)arg1;
 
-- (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(int*)arg3;
+- (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(long long*)arg3;
 - (id)compoundNameInfo;
 - (id)compoundSecondaryNameInfo;
 - (id)countryCode;
@@ -39,16 +39,16 @@
 - (id)geoMapItem;
 - (id)init;
 - (id)initWithData:(id)arg1;
-- (BOOL)isHome;
-- (BOOL)isValid;
+- (bool)isHome;
+- (bool)isValid;
 - (id)localizedDescription;
 - (id)providerId;
-- (unsigned int)providerVersion;
+- (unsigned long long)providerVersion;
 - (void)setCompoundNameInfo:(id)arg1;
 - (void)setCompoundSecondaryNameInfo:(id)arg1;
 - (void)setGeoMapItem:(id)arg1;
-- (void)setIsHome:(BOOL)arg1;
+- (void)setIsHome:(bool)arg1;
 - (void)setProviderId:(id)arg1;
-- (void)setProviderVersion:(unsigned int)arg1;
+- (void)setProviderVersion:(unsigned long long)arg1;
 
 @end

@@ -6,16 +6,16 @@
 
 @interface _GEOGeocodeTicket : NSObject <GEOMapServiceTicket, _GEOLegacyMapServiceTicket> {
     GEOGeocodeRequest *_geocodeRequest;
-    BOOL _isForwardGeocode;
     GEOPlaceSearchResponse *_response;
     GEOMapRegion *_resultBoundingRegion;
-    BOOL _shiftLocationsIfNeeded;
     GEOMapServiceTraits *_traits;
+    bool_isForwardGeocode;
+    bool_shiftLocationsIfNeeded;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) GEOPlaceSearchResponse * response;
 @property(readonly) GEOMapRegion * resultBoundingRegion;
 @property(readonly) Class superclass;
@@ -28,15 +28,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithForwardGeocodeRequest:(id)arg1 traits:(id)arg2;
-- (id)initWithReverseGeocodeRequest:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
+- (id)initWithReverseGeocodeRequest:(id)arg1 shiftLocationsIfNeeded:(bool)arg2 traits:(id)arg3;
 - (id)request;
 - (id)response;
 - (id)resultBoundingRegion;
 - (void)setResponse:(id)arg1;
 - (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
 - (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithRefinedHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
+- (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
 - (id)traits;
 
 @end

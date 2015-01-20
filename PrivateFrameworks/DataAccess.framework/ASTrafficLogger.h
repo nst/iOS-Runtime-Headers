@@ -5,13 +5,13 @@
 @class NSFileHandle, NSString;
 
 @interface ASTrafficLogger : NSObject {
-    BOOL _didFlushLogs;
-    BOOL _isOutgoingTraffic;
     NSFileHandle *_lookasideFileHandle;
     NSString *_lookasideFilePath;
+    bool_didFlushLogs;
+    bool_isOutgoingTraffic;
 }
 
-@property BOOL isOutgoingTraffic;
+@property bool isOutgoingTraffic;
 
 + (id)_logQueue;
 
@@ -20,9 +20,9 @@
 - (void)_openLookasideFile;
 - (void)dealloc;
 - (void)flushLogs;
-- (BOOL)isOutgoingTraffic;
+- (bool)isOutgoingTraffic;
 - (void)logPlainTextData:(id)arg1;
 - (void)logWBXMLData:(id)arg1;
-- (void)setIsOutgoingTraffic:(BOOL)arg1;
+- (void)setIsOutgoingTraffic:(bool)arg1;
 
 @end

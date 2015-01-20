@@ -10,41 +10,41 @@
     NSString *_manufacturer;
     NSString *_model;
     NSString *_name;
-    BOOL _primary;
     NSString *_serialNumber;
     HAPAccessoryServer *_server;
     NSArray *_services;
     NSString *_uniqueIdentifier;
+    bool_primary;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
 @property(copy) NSNumber * instanceID;
-@property(readonly) int linkType;
+@property(readonly) long long linkType;
 @property(copy) NSString * manufacturer;
 @property(copy) NSString * model;
 @property(copy) NSString * name;
-@property(getter=isPrimary) BOOL primary;
+@property(getter=isPrimary) bool primary;
 @property(copy) NSString * serialNumber;
 @property HAPAccessoryServer * server;
 @property(retain) NSArray * services;
 @property(copy) NSString * uniqueIdentifier;
 
-+ (BOOL)isAccessoryWithUniqueIdentifier:(id)arg1 bridgedToServerWithIdentifier:(id)arg2;
-+ (BOOL)isAccessoryWithUniqueIdentifierPaired:(id)arg1;
-+ (BOOL)isAccessoryWithUniqueIdentifierPrimary:(id)arg1;
++ (bool)isAccessoryWithUniqueIdentifier:(id)arg1 bridgedToServerWithIdentifier:(id)arg2;
++ (bool)isAccessoryWithUniqueIdentifierPaired:(id)arg1;
++ (bool)isAccessoryWithUniqueIdentifierPrimary:(id)arg1;
 + (id)serverIdentifierForUniqueIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_updateAndValidateServices;
-- (BOOL)_updateForAccessoryInformationService;
-- (BOOL)_updateService:(id)arg1;
+- (bool)_updateAndValidateServices;
+- (bool)_updateForAccessoryInformationService;
+- (bool)_updateService:(id)arg1;
 - (id)description;
 - (id)dispatchQueue;
 - (id)initWithInstanceID:(id)arg1 parsedServices:(id)arg2;
 - (id)initWithInstanceID:(id)arg1;
 - (id)instanceID;
-- (BOOL)isPrimary;
-- (int)linkType;
+- (bool)isPrimary;
+- (long long)linkType;
 - (id)manufacturer;
 - (id)model;
 - (id)name;
@@ -57,7 +57,7 @@
 - (void)setManufacturer:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPrimary:(BOOL)arg1;
+- (void)setPrimary:(bool)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setServices:(id)arg1;

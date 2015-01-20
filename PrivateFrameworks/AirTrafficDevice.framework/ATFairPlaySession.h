@@ -3,11 +3,11 @@
  */
 
 @interface ATFairPlaySession : NSObject {
-    unsigned long _contextId;
+    unsigned int _contextId;
 }
 
 - (struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; })_fpHWInfoFromString:(id)arg1;
-- (BOOL)contextIsValid;
+- (bool)contextIsValid;
 - (void)dealloc;
 - (id)deviceCertificate:(id*)arg1;
 - (struct DeviceKeyTypeSupport { int x1; unsigned int x2; })deviceKeyTypeSupport;

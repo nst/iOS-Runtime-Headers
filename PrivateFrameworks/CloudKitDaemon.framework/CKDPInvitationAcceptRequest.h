@@ -9,8 +9,8 @@
     NSData *_parameters;
 }
 
-@property(readonly) BOOL hasInvitationId;
-@property(readonly) BOOL hasParameters;
+@property(readonly) bool hasInvitationId;
+@property(readonly) bool hasParameters;
 @property(retain) CKDPIdentifier * invitationId;
 @property(retain) NSData * parameters;
 
@@ -21,14 +21,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInvitationId;
-- (BOOL)hasParameters;
-- (unsigned int)hash;
+- (bool)hasInvitationId;
+- (bool)hasParameters;
+- (unsigned long long)hash;
 - (id)invitationId;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)parameters;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setInvitationId:(id)arg1;

@@ -12,13 +12,13 @@
     NSString *_dataSourceCachingKey;
     Class _dataSourceClass;
     id _defaultQueryCreationBlock;
-    int _entityType;
+    long long _entityType;
 }
 
 @property(copy) NSString * dataSourceCachingKey;
 @property(readonly) Class dataSourceClass;
 @property(copy) id defaultQueryCreationBlock;
-@property int entityType;
+@property long long entityType;
 
 + (id)configurationWithDataSourceClass:(Class)arg1;
 
@@ -26,10 +26,10 @@
 - (id)dataSourceCachingKey;
 - (Class)dataSourceClass;
 - (id)defaultQueryCreationBlock;
-- (int)entityType;
+- (long long)entityType;
 - (id)initWithDataSourceClass:(Class)arg1;
 - (void)setDataSourceCachingKey:(id)arg1;
 - (void)setDefaultQueryCreationBlock:(id)arg1;
-- (void)setEntityType:(int)arg1;
+- (void)setEntityType:(long long)arg1;
 
 @end

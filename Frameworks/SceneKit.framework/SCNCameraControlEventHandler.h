@@ -10,8 +10,8 @@
 
 @interface SCNCameraControlEventHandler : SCNEventHandler {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     union C3DMatrix4x4 { 
         float components[16]; 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
@@ -29,13 +29,13 @@
         float y; 
         float z; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
-     /* Encoded args for previous method: v28@0:48i24 */
-     /* Encoded args for previous method: 8@0:4 */
+        double x; 
+        double y; 
+     /* Encoded args for previous method: v40@0:816q32 */
+     /* Encoded args for previous method: 16@0:8 */
     unsigned int _hasCheckedIfViewingAnObject : 1;
     unsigned int _isViewingAnObject : 1;
     unsigned int _isViewedObjectSphereComputed : 1;
@@ -48,14 +48,13 @@
     } _cameraTarget;
     id _dReserved;
     SCNNode *_freeViewCameraNode;
-    float _friction;
+    double _friction;
     } _gimbalLockVector;
     } _inertiaVelocity;
     } _initialMatrix;
     } _initialMatrixForRoll;
     } _initialPoint;
     float _initialZoom;
-    BOOL _isDraggingWithOneFinger;
     int _lastGestureFingerCount;
     double _lastSimulationTime;
     int _mode;
@@ -69,25 +68,26 @@
     UIGestureRecognizer *_rotateGesture;
     float _savedZfar;
     float _savedZnear;
-    int _stickyAxis;
+    long long _stickyAxis;
     UIGestureRecognizer *_tapGesture;
     } _totalDragWithInertia;
     } _viewedObjectSphere;
     float _zoomFactor;
+    bool_isDraggingWithOneFinger;
     /* Warning: Unrecognized filer type: '' using 'void*' */ void*_clickOrigin;
     /* Warning: Unrecognized filer type: '' using 'void*' */ void*_upDir;
 }
 
-@property BOOL automaticCameraTarget;
+@property bool automaticCameraTarget;
 @property struct SCNVector3 { float x1; float x2; float x3; } cameraTarget;
-@property BOOL enableInertia;
-@property float friction;
-@property BOOL gimbalLockMode;
+@property bool enableInertia;
+@property double friction;
+@property bool gimbalLockMode;
 @property struct SCNVector3 { float x1; float x2; float x3; } gimbalLockVector;
-@property int stickyAxis;
+@property long long stickyAxis;
 
-- (void)_beginTranslateAtLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)_freeCameraActivated;
+- (void)_beginTranslateAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)_freeCameraActivated;
 - (void)_handleDoubleTap:(id)arg1;
 - (void)_handlePan:(id)arg1;
 - (void)_handlePinch:(id)arg1;
@@ -97,53 +97,53 @@
 - (void)_onInertiaTimer;
 - (void)_prepareFreeViewCamera;
 - (void)_resetFreeViewCamera;
-- (void)_rotateWithDrag:(struct CGPoint { float x1; float x2; })arg1 mode:(int)arg2 stickyAxis:(int)arg3;
-- (void)_startBrowsingIfNeeded:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_rotateWithDrag:(struct CGPoint { double x1; double x2; })arg1 mode:(long long)arg2 stickyAxis:(long long)arg3;
+- (void)_startBrowsingIfNeeded:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_stopInertiaIfNeeded;
 - (void)_switchToFreeViewCamera;
-- (void)_translateTo:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_translateTo:(struct CGPoint { double x1; double x2; })arg1;
 - (float)_translationCoef;
-- (BOOL)automaticCameraTarget;
+- (bool)automaticCameraTarget;
 - (void)beginGesture:(id)arg1;
 - (void)cameraDidChange;
 - (struct SCNVector3 { float x1; float x2; float x3; })cameraTarget;
 - (void)cameraWillChange;
-- (BOOL)computeBoundingSphereOmittingFloorsForNode:(struct __C3DNode { }*)arg1 sphere:(struct C3DSphere { }*)arg2;
+- (bool)computeBoundingSphereOmittingFloorsForNode:(struct __C3DNode { }*)arg1 sphere:(struct C3DSphere { }*)arg2;
 - (void)dealloc;
-- (BOOL)enableInertia;
-- (void)endDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1;
-- (float)friction;
-- (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)frontVector;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)enableInertia;
+- (void)endDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg1;
+- (double)friction;
+- (/* Warning: Unrecognized filer type: '1' using 'void*' */ void*)frontVector;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureRecognizers;
-- (BOOL)gimbalLockMode;
+- (bool)gimbalLockMode;
 - (struct SCNVector3 { float x1; float x2; float x3; })gimbalLockVector;
 - (id)init;
-- (BOOL)isViewingAnObject;
+- (bool)isViewingAnObject;
 - (void)panWithGestureRecognizer:(id)arg1;
 - (void)pinchWithGestureRecognizer:(id)arg1;
-- (void)rotateOf:(float)arg1;
+- (void)rotateOf:(double)arg1;
 - (void)rotateWithGestureRecognizer:(id)arg1;
-- (void)rotateWithVector:(int)arg1 mode:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg2;
+- (void)rotateWithVector:(long long)arg1 mode:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg2;
 - (void)sceneDidChange;
 - (void)sceneWillChange;
-- (void)setAutomaticCameraTarget:(BOOL)arg1;
+- (void)setAutomaticCameraTarget:(bool)arg1;
 - (void)setCameraTarget:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setEnableInertia:(BOOL)arg1;
-- (void)setFriction:(float)arg1;
-- (void)setGimbalLockMode:(BOOL)arg1;
+- (void)setEnableInertia:(bool)arg1;
+- (void)setFriction:(double)arg1;
+- (void)setGimbalLockMode:(bool)arg1;
 - (void)setGimbalLockVector:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setStickyAxis:(int)arg1;
-- (void)setZoomFactor:(float)arg1;
-- (int)stickyAxis;
+- (void)setStickyAxis:(long long)arg1;
+- (void)setZoomFactor:(double)arg1;
+- (long long)stickyAxis;
 - (void)translateByX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
 - (void)updateCameraTargetIfNeeded;
 - (void)viewWillDraw;
 - (struct C3DSphere { })viewedObjectSphere;
-- (BOOL)wantsRedraw;
-- (void)zoomBy:(float)arg1 animate:(BOOL)arg2;
+- (bool)wantsRedraw;
+- (void)zoomBy:(float)arg1 animate:(bool)arg2;
 - (void)zoomBy:(float)arg1;
-- (float)zoomFactor;
+- (double)zoomFactor;
 
 @end

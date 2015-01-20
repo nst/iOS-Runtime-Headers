@@ -11,9 +11,9 @@
     NSString *_itemDescription;
     NSString *_label;
     void *_platformReference;
-    BOOL _syncable;
     NSNumber *_type;
     NSData *_valueData;
+    bool_syncable;
 }
 
 @property(retain) NSString * accessGroup;
@@ -22,7 +22,7 @@
 @property(retain) NSString * itemDescription;
 @property(retain) NSString * label;
 @property void* platformReference;
-@property(getter=isSyncable) BOOL syncable;
+@property(getter=isSyncable) bool syncable;
 @property(retain) NSNumber * type;
 @property(retain) NSData * valueData;
 
@@ -31,8 +31,8 @@
 - (id)account;
 - (void)dealloc;
 - (id)genericData;
-- (id)initWithQueryResult:(struct __CFDictionary { }*)arg1 shouldIncludeData:(BOOL)arg2;
-- (BOOL)isSyncable;
+- (id)initWithQueryResult:(struct __CFDictionary { }*)arg1 shouldIncludeData:(bool)arg2;
+- (bool)isSyncable;
 - (id)itemDescription;
 - (id)label;
 - (void*)platformReference;
@@ -42,7 +42,7 @@
 - (void)setItemDescription:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setPlatformReference:(void*)arg1;
-- (void)setSyncable:(BOOL)arg1;
+- (void)setSyncable:(bool)arg1;
 - (void)setType:(id)arg1;
 - (void)setValueData:(id)arg1;
 - (id)type;

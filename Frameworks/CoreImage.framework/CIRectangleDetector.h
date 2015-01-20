@@ -5,9 +5,9 @@
 @class CIContext, NSMutableDictionary;
 
 @interface CIRectangleDetector : CIDetector {
-    float _height;
+    double _height;
     void *_internalBuffer;
-    float _width;
+    double _width;
     CIContext *context;
     NSMutableDictionary *featureOptions;
     struct __CVBuffer { } *interimScaleBuffer;

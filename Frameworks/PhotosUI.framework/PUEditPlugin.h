@@ -15,10 +15,10 @@
 
 - (void).cxx_destruct;
 - (id)extension;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icon;
 - (id)initWithExtension:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)smallIcon;
 - (id)title;
 

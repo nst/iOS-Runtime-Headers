@@ -12,7 +12,7 @@
 @property(readonly) NSDate * date;
 @property(readonly) CLLocation * location;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)date;
 - (void)dealloc;

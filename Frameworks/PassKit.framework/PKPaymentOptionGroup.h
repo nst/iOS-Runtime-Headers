@@ -10,28 +10,28 @@
 
 @interface PKPaymentOptionGroup : NSObject {
     NSString *_groupType;
-    int _indexForSelectedItem;
+    long long _indexForSelectedItem;
     NSArray *_items;
     id _selectionChangedHandler;
 }
 
 @property(readonly) NSString * groupDisplayName;
 @property(copy) NSString * groupType;
-@property int indexForSelectedItem;
+@property long long indexForSelectedItem;
 @property(retain) NSArray * items;
 @property(copy) id selectionChangedHandler;
 
 - (void)dealloc;
 - (id)groupDisplayName;
 - (id)groupType;
-- (int)indexForSelectedItem;
+- (long long)indexForSelectedItem;
 - (id)init;
 - (id)items;
-- (void)prependGroupItem:(id)arg1 promoteAndCoalesceDupes:(BOOL)arg2;
+- (void)prependGroupItem:(id)arg1 promoteAndCoalesceDupes:(bool)arg2;
 - (void)prependGroupItems:(id)arg1 afterItem:(id)arg2;
 - (id)selectionChangedHandler;
 - (void)setGroupType:(id)arg1;
-- (void)setIndexForSelectedItem:(int)arg1;
+- (void)setIndexForSelectedItem:(long long)arg1;
 - (void)setItems:(id)arg1;
 - (void)setSelectionChangedHandler:(id)arg1;
 

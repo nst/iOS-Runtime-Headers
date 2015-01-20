@@ -3,16 +3,16 @@
  */
 
 @interface LALogger : NSObject {
-    BOOL _loggingEnabled;
+    bool_loggingEnabled;
 }
 
-@property(getter=isLoggingEnabled,readonly) BOOL loggingEnabled;
+@property(getter=isLoggingEnabled,readonly) bool loggingEnabled;
 
 + (id)sharedInstance;
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isLoggingEnabled;
+- (bool)isLoggingEnabled;
 - (void)readPreferences;
 
 @end

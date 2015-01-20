@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (id)MMCS;
 - (void)_cleanupItems;
-- (BOOL)_setupItemsWithError:(id*)arg1;
+- (bool)_setupItemsWithError:(id*)arg1;
 - (void)cancel;
 - (id)completionBlock;
 - (void)didCompleteRequestWithError:(id)arg1;

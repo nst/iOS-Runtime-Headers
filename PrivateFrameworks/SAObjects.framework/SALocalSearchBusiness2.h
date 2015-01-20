@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * description;
 @property(copy) NSString * descriptionText;
 @property(copy) NSString * extSessionGuid;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSDictionary * identifierMap;
 @property(copy) NSString * name;
 @property(copy) NSArray * offerLists;

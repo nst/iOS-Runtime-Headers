@@ -17,9 +17,9 @@
     JSManagedValue *_jsManagedDocument;
     IKViewElement *_navigationBarElement;
     IKJSObject *_owner;
-    BOOL _subtreeUpdated;
     IKViewElement *_templateElement;
-    BOOL _updated;
+    bool_subtreeUpdated;
+    bool_updated;
 }
 
 @property(readonly) IKAppContext * appContext;
@@ -27,7 +27,7 @@
 @property <IKAppDocumentDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * error;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) IKHeadElement * headElement;
 @property(retain) NSString * identifier;
 @property double impressionThreshold;
@@ -38,13 +38,13 @@
 @property(retain) IKViewElement * navigationBarElement;
 @property(readonly) IKJSNavigationDocument * navigationDocument;
 @property(readonly) IKJSObject * owner;
-@property(getter=isSubtreeUpdated) BOOL subtreeUpdated;
+@property(getter=isSubtreeUpdated) bool subtreeUpdated;
 @property(readonly) Class superclass;
 @property(retain) IKViewElement * templateElement;
-@property(getter=isUpdated) BOOL updated;
+@property(getter=isUpdated) bool updated;
 
 - (void).cxx_destruct;
-- (BOOL)_clearUpdatesForElement:(id)arg1;
+- (bool)_clearUpdatesForElement:(id)arg1;
 - (void)_impressionDataFromViewElements:(id)arg1 timestamp:(long long)arg2 impressions:(id)arg3 impressionsDict:(id)arg4;
 - (void)_updateWithXML:(id)arg1;
 - (id)appContext;
@@ -57,8 +57,8 @@
 - (id)impressions;
 - (id)impressionsDict;
 - (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3;
-- (BOOL)isSubtreeUpdated;
-- (BOOL)isUpdated;
+- (bool)isSubtreeUpdated;
+- (bool)isUpdated;
 - (id)jsDocument;
 - (id)jsManagedDocument;
 - (id)navigationBarElement;
@@ -86,9 +86,9 @@
 - (void)setJsManagedDocument:(id)arg1;
 - (void)setNavigationBarElement:(id)arg1;
 - (void)setNeedsUpdateForDocument:(id)arg1;
-- (void)setSubtreeUpdated:(BOOL)arg1;
+- (void)setSubtreeUpdated:(bool)arg1;
 - (void)setTemplateElement:(id)arg1;
-- (void)setUpdated:(BOOL)arg1;
+- (void)setUpdated:(bool)arg1;
 - (id)snapshotImpressions;
 - (id)templateElement;
 - (void)updateForDocument:(id)arg1;

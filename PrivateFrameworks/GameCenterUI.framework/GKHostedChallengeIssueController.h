@@ -13,31 +13,31 @@
     id _completionHandler;
     NSString *_defaultMessage;
     id _dismissCompletionHandler;
-    BOOL _forcePicker;
     NSArray *_players;
+    bool_forcePicker;
 }
 
 @property(retain) GKChallenge * challenge;
 @property(copy) id completionHandler;
 @property(copy) NSString * defaultMessage;
 @property(copy) id dismissCompletionHandler;
-@property BOOL forcePicker;
+@property bool forcePicker;
 @property(retain) NSArray * players;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 + (id)hostedIssueControllerWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id)arg4;
 + (void)presentHostedIssueControllerWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3;
 + (id)presentationQueue;
 
 - (id)_remote;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)challenge;
 - (id)completionHandler;
 - (void)dealloc;
 - (id)defaultMessage;
 - (id)dismissCompletionHandler;
 - (void)doneWithPlayers:(id)arg1 message:(id)arg2;
-- (BOOL)forcePicker;
+- (bool)forcePicker;
 - (id)hostSideViewControllerClassName;
 - (id)initWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id)arg4;
 - (id)players;
@@ -46,9 +46,9 @@
 - (void)setCompletionHandler:(id)arg1;
 - (void)setDefaultMessage:(id)arg1;
 - (void)setDismissCompletionHandler:(id)arg1;
-- (void)setForcePicker:(BOOL)arg1;
+- (void)setForcePicker:(bool)arg1;
 - (void)setPlayers:(id)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldAutomaticallyForwardRotationMethods;
 
 @end

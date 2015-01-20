@@ -7,28 +7,28 @@
 @interface SKUIStorePagePinnedBackdropLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
     UIColor *_backdropColor;
     NSString *_backdropGroupName;
-    int _backdropStyle;
-    BOOL _hidesBackdropView;
-    float _transitionProgress;
+    long long _backdropStyle;
+    double _transitionProgress;
+    bool_hidesBackdropView;
 }
 
 @property(retain) UIColor * backdropColor;
 @property(copy) NSString * backdropGroupName;
-@property int backdropStyle;
-@property BOOL hidesBackdropView;
-@property float transitionProgress;
+@property long long backdropStyle;
+@property bool hidesBackdropView;
+@property double transitionProgress;
 
 - (void).cxx_destruct;
 - (id)backdropColor;
 - (id)backdropGroupName;
-- (int)backdropStyle;
+- (long long)backdropStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)hidesBackdropView;
+- (bool)hidesBackdropView;
 - (void)setBackdropColor:(id)arg1;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setBackdropStyle:(int)arg1;
-- (void)setHidesBackdropView:(BOOL)arg1;
-- (void)setTransitionProgress:(float)arg1;
-- (float)transitionProgress;
+- (void)setBackdropStyle:(long long)arg1;
+- (void)setHidesBackdropView:(bool)arg1;
+- (void)setTransitionProgress:(double)arg1;
+- (double)transitionProgress;
 
 @end

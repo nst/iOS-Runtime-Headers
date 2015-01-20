@@ -5,8 +5,6 @@
 @class NSData, NSDictionary, NSString;
 
 @interface NEContentFilterPlugin : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying> {
-    BOOL _filterBrowsers;
-    BOOL _filterSockets;
     NSData *_identityReference;
     NSString *_organization;
     NSData *_passwordReference;
@@ -14,10 +12,12 @@
     NSString *_serverAddress;
     NSString *_username;
     NSDictionary *_vendorConfiguration;
+    bool_filterBrowsers;
+    bool_filterSockets;
 }
 
-@property BOOL filterBrowsers;
-@property BOOL filterSockets;
+@property bool filterBrowsers;
+@property bool filterSockets;
 @property(copy) NSData * identityReference;
 @property(copy) NSString * organization;
 @property(copy) NSData * passwordReference;
@@ -26,15 +26,15 @@
 @property(copy) NSString * username;
 @property(copy) NSDictionary * vendorConfiguration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)filterBrowsers;
-- (BOOL)filterSockets;
+- (bool)filterBrowsers;
+- (bool)filterSockets;
 - (id)identityReference;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPluginType:(id)arg1;
@@ -42,8 +42,8 @@
 - (id)passwordReference;
 - (id)pluginType;
 - (id)serverAddress;
-- (void)setFilterBrowsers:(BOOL)arg1;
-- (void)setFilterSockets:(BOOL)arg1;
+- (void)setFilterBrowsers:(bool)arg1;
+- (void)setFilterSockets:(bool)arg1;
 - (void)setIdentityReference:(id)arg1;
 - (void)setOrganization:(id)arg1;
 - (void)setPasswordReference:(id)arg1;

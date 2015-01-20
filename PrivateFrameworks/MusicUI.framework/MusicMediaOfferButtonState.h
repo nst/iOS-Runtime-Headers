@@ -7,39 +7,39 @@
 @interface MusicMediaOfferButtonState : NSObject {
     NSString *_confirmationTitle;
     MPUMediaDownloadObserver *_downloadObserver;
-    BOOL _enabled;
-    BOOL _hidden;
-    int _progressType;
-    BOOL _showsCloudButton;
-    BOOL _showsConfirmationState;
+    long long _progressType;
     NSString *_title;
+    bool_enabled;
+    bool_hidden;
+    bool_showsCloudButton;
+    bool_showsConfirmationState;
 }
 
 @property(copy) NSString * confirmationTitle;
 @property(retain) MPUMediaDownloadObserver * downloadObserver;
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isHidden) BOOL hidden;
-@property int progressType;
-@property BOOL showsCloudButton;
-@property BOOL showsConfirmationState;
+@property(getter=isEnabled) bool enabled;
+@property(getter=isHidden) bool hidden;
+@property long long progressType;
+@property bool showsCloudButton;
+@property bool showsConfirmationState;
 @property(copy) NSString * title;
 
 - (void).cxx_destruct;
 - (id)confirmationTitle;
 - (id)downloadObserver;
-- (BOOL)isEnabled;
-- (BOOL)isHidden;
-- (int)progressType;
+- (bool)isEnabled;
+- (bool)isHidden;
+- (long long)progressType;
 - (void)setConfirmationTitle:(id)arg1;
 - (void)setDownloadObserver:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)setProgressType:(int)arg1;
-- (void)setShowsCloudButton:(BOOL)arg1;
-- (void)setShowsConfirmationState:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHidden:(bool)arg1;
+- (void)setProgressType:(long long)arg1;
+- (void)setShowsCloudButton:(bool)arg1;
+- (void)setShowsConfirmationState:(bool)arg1;
 - (void)setTitle:(id)arg1;
-- (BOOL)showsCloudButton;
-- (BOOL)showsConfirmationState;
+- (bool)showsCloudButton;
+- (bool)showsConfirmationState;
 - (id)title;
 
 @end

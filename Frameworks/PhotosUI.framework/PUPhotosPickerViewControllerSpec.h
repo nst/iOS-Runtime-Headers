@@ -5,14 +5,14 @@
 @class PUTabbedLibraryViewControllerSpec;
 
 @interface PUPhotosPickerViewControllerSpec : NSObject {
-    unsigned int _supportedInterfaceOrientations;
+    unsigned long long _supportedInterfaceOrientations;
 }
 
-@property(readonly) unsigned int supportedInterfaceOrientations;
+@property(readonly) unsigned long long supportedInterfaceOrientations;
 @property(readonly) PUTabbedLibraryViewControllerSpec * tabbedLibraryViewControllerSpec;
 
 - (void)configureSessionInfo:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tabbedLibraryViewControllerSpec;
 
 @end

@@ -3,47 +3,47 @@
  */
 
 @interface BSSpringAnimationSettings : BSAnimationSettings {
-    float _damping;
-    float _epsilon;
-    BOOL _hasCalculatedDuration;
-    float _mass;
-    float _stiffness;
+    double _damping;
+    double _epsilon;
+    double _mass;
+    double _stiffness;
+    bool_hasCalculatedDuration;
 }
 
-@property(readonly) float damping;
-@property(readonly) float epsilon;
-@property(readonly) float mass;
-@property(readonly) float stiffness;
+@property(readonly) double damping;
+@property(readonly) double epsilon;
+@property(readonly) double mass;
+@property(readonly) double stiffness;
 
-+ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4 delay:(double)arg5 timingFunction:(id)arg6;
-+ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4 timingFunction:(id)arg5;
-+ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;
-+ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 timingFunction:(id)arg4;
-+ (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)settingsWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 epsilon:(double)arg4 delay:(double)arg5 timingFunction:(id)arg6;
++ (id)settingsWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 epsilon:(double)arg4 timingFunction:(id)arg5;
++ (id)settingsWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 epsilon:(double)arg4;
++ (id)settingsWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 timingFunction:(id)arg4;
++ (id)settingsWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_hasCalculatedDuration;
+- (bool)_hasCalculatedDuration;
 - (id)_initWithDuration:(double)arg1 delay:(double)arg2 frameInterval:(double)arg3 timingFunction:(id)arg4;
-- (id)_initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4 delay:(double)arg5 frameInterval:(double)arg6 timingFunction:(id)arg7;
-- (void)_setDamping:(float)arg1;
+- (id)_initWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 epsilon:(double)arg4 delay:(double)arg5 frameInterval:(double)arg6 timingFunction:(id)arg7;
+- (void)_setDamping:(double)arg1;
 - (void)_setDuration:(double)arg1;
-- (void)_setEpsilon:(float)arg1;
-- (void)_setMass:(float)arg1;
-- (void)_setStiffness:(float)arg1;
+- (void)_setEpsilon:(double)arg1;
+- (void)_setMass:(double)arg1;
+- (void)_setStiffness:(double)arg1;
 - (void)_setTimingFunction:(id)arg1;
-- (float)damping;
+- (double)damping;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (float)epsilon;
-- (unsigned int)hash;
+- (double)epsilon;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSpringAnimation;
-- (float)mass;
+- (bool)isEqual:(id)arg1;
+- (bool)isSpringAnimation;
+- (double)mass;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (float)stiffness;
+- (double)stiffness;
 
 @end

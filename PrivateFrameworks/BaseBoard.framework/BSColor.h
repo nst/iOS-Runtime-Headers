@@ -5,36 +5,36 @@
 @class NSString;
 
 @interface BSColor : NSObject <NSCopying, NSSecureCoding, BSXPCCoding> {
-    float _alpha;
-    float _blue;
-    float _green;
-    float _red;
+    double _alpha;
+    double _blue;
+    double _green;
+    double _red;
 }
 
-@property(readonly) float alpha;
-@property(readonly) float blue;
+@property(readonly) double alpha;
+@property(readonly) double blue;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) float green;
-@property(readonly) unsigned int hash;
-@property(readonly) float red;
+@property(readonly) double green;
+@property(readonly) unsigned long long hash;
+@property(readonly) double red;
 @property(readonly) Class superclass;
 
-+ (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (BOOL)supportsSecureCoding;
++ (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (bool)supportsSecureCoding;
 
-- (float)alpha;
-- (float)blue;
+- (double)alpha;
+- (double)blue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (float)green;
-- (unsigned int)hash;
+- (double)green;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToColor:(id)arg1;
-- (float)red;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToColor:(id)arg1;
+- (double)red;
 
 @end

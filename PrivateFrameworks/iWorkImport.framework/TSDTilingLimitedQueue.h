@@ -5,6 +5,6 @@
 @interface TSDTilingLimitedQueue : TSUWidthLimitedQueue {
 }
 
-- (id)initWithLimit:(unsigned int)arg1;
+- (id)initWithLimit:(unsigned long long)arg1;
 
 @end

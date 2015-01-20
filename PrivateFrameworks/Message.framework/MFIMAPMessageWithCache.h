@@ -13,9 +13,9 @@
 - (id)headerData;
 - (id)headers;
 - (id)headersIfAvailable;
-- (BOOL)isMessageContentsLocallyAvailable;
+- (bool)isMessageContentsLocallyAvailable;
 - (id)messageData;
 - (void)setHeaders:(id)arg1;
-- (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;
+- (void)setMessageData:(id)arg1 isPartial:(bool)arg2;
 
 @end

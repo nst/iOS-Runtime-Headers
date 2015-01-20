@@ -7,32 +7,32 @@
 @interface FBSSceneClientSettings : NSObject <NSCopying, NSMutableCopying> {
     NSSet *_occlusions;
     BSSettings *_otherSettings;
-    int _preferredInterfaceOrientation;
-    float _preferredLevel;
+    long long _preferredInterfaceOrientation;
+    double _preferredLevel;
 }
 
 @property(copy,readonly) NSSet * occlusions;
-@property(readonly) int preferredInterfaceOrientation;
-@property(readonly) float preferredLevel;
+@property(readonly) long long preferredInterfaceOrientation;
+@property(readonly) double preferredLevel;
 
-+ (BOOL)_isMutable;
++ (bool)_isMutable;
 + (id)settings;
 
 - (id)_descriptionOfSettingsWithMultilinePrefix:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithSettings:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)occlusions;
 - (id)otherSettings;
-- (int)preferredInterfaceOrientation;
-- (float)preferredLevel;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (long long)preferredInterfaceOrientation;
+- (double)preferredLevel;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 @end

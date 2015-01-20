@@ -8,13 +8,13 @@
     NSArray *_propertyItems;
 }
 
-@property(readonly) BOOL canPerformAction;
+@property(readonly) bool canPerformAction;
 @property <ABPropertyActionDelegate> * delegate;
 @property(copy) NSArray * propertyItems;
 
 + (void)performDefaultActionForItem:(id)arg1 sender:(id)arg2;
 
-- (BOOL)canPerformAction;
+- (bool)canPerformAction;
 - (void)dealloc;
 - (id)initWithContact:(id)arg1 propertyItem:(id)arg2;
 - (id)initWithContact:(id)arg1 propertyItems:(id)arg2;

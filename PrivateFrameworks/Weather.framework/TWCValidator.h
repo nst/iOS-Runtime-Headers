@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <WeatherValidatorDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)sharedValidator;
@@ -22,7 +22,7 @@
 - (void)autocompleteLocation:(id)arg1;
 - (void)cancel;
 - (void)completerDidFail:(id)arg1 error:(id)arg2;
-- (void)completerDidUpdateResults:(id)arg1 finished:(BOOL)arg2;
+- (void)completerDidUpdateResults:(id)arg1 finished:(bool)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)geocodeLocation:(id)arg1;

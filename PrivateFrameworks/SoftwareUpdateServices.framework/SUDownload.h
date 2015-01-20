@@ -14,7 +14,7 @@
 @property(retain) SUDownloadMetadata * metadata;
 @property(retain) SUOperationProgress * progress;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

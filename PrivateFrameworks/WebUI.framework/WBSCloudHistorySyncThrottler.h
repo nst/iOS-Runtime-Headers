@@ -6,7 +6,7 @@
 
 @interface WBSCloudHistorySyncThrottler : NSObject {
     <WBSCloudHistorySyncThrottlerDataStore> *_dataStore;
-    unsigned int _maximumNumberOfOperationWithinMonitoredPeriod;
+    unsigned long long _maximumNumberOfOperationWithinMonitoredPeriod;
     double _numberOfSecondsToMonitor;
     NSMutableArray *_syncOperationsWithinMonitoredPeriod;
     NSArray *_throttlingDistribution;
@@ -15,30 +15,30 @@
 @property(retain) <WBSCloudHistorySyncThrottlerDataStore> * dataStore;
 
 + (id)_distributionBucketsFromConfiguration:(id)arg1;
-+ (BOOL)policyStringRepresentsValidPolicy:(id)arg1;
++ (bool)policyStringRepresentsValidPolicy:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addSyncOperationAtDate:(id)arg1;
 - (double)_currentMinimumTimeIntervalBetweenSyncOperations;
 - (id)_dateOfNextPermittedSyncAttemptWithNormalPriority;
-- (BOOL)_loadDistributionConfiguration:(id)arg1;
+- (bool)_loadDistributionConfiguration:(id)arg1;
 - (void)_loadRecordOfPastSyncOperations;
 - (double)_minimumTimeBetweenSyncOperationsForSyncOperations:(id)arg1;
 - (void)_pruneExpiredOrInvalidSyncEntries;
 - (void)_saveRecordOfPastSyncOperations;
-- (unsigned int)_test_maximumNumberOfOperationWithinMonitoredPeriod;
+- (unsigned long long)_test_maximumNumberOfOperationWithinMonitoredPeriod;
 - (double)_test_numberOfSecondsToMonitor;
-- (BOOL)_throttlerIsActive;
+- (bool)_throttlerIsActive;
 - (double)_timeIntervalUntilNextPermittedSyncAttemptWithNormalPriority;
 - (double)_timeIntervalUntilSyncOperationShouldBePruned:(id)arg1;
 - (id)dataStore;
-- (id)dateOfNextPermittedSyncAttemptWithPriority:(int)arg1;
+- (id)dateOfNextPermittedSyncAttemptWithPriority:(long long)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithPolicyString:(id)arg1;
 - (void)setDataStore:(id)arg1;
 - (void)setPolicyString:(id)arg1;
-- (void)syncAttemptWithPriority:(int)arg1 didCompleteWithResult:(int)arg2;
-- (BOOL)throttlingPolicyPermitsSyncAttemptWithPriority:(int)arg1;
+- (void)syncAttemptWithPriority:(long long)arg1 didCompleteWithResult:(long long)arg2;
+- (bool)throttlingPolicyPermitsSyncAttemptWithPriority:(long long)arg1;
 
 @end

@@ -5,7 +5,6 @@
 @class HMDHome, HMMessageDispatcher, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMDTrigger : NSObject <HMMessageReceiver, NSSecureCoding> {
-    BOOL _active;
     NSMutableArray *_currentActionSets;
     HMDHome *_home;
     NSDate *_mostRecentFireDate;
@@ -13,13 +12,14 @@
     NSString *_name;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
+    bool_active;
 }
 
-@property BOOL active;
+@property bool active;
 @property(retain) NSMutableArray * currentActionSets;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property HMDHome * home;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
 @property(readonly) NSUUID * messageTargetUUID;
@@ -30,17 +30,17 @@
 @property(retain) NSUUID * uuid;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_activate:(BOOL)arg1;
+- (id)_activate:(bool)arg1;
 - (void)_handleActivateTriggerRequest:(id)arg1;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_handleUpdateActionSetRequest:(id)arg1;
 - (void)_registerForMessages;
-- (id)_updateActionSets:(id)arg1 add:(BOOL)arg2;
+- (id)_updateActionSets:(id)arg1 add:(bool)arg2;
 - (id)actionSets;
-- (BOOL)active;
+- (bool)active;
 - (void)checkForNoActions;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
 - (id)currentActionSets;
@@ -56,7 +56,7 @@
 - (id)name;
 - (void)reEvaluate;
 - (void)removeActionSet:(id)arg1;
-- (void)setActive:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
 - (void)setCurrentActionSets:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMostRecentFireDate:(id)arg1;

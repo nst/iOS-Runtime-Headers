@@ -17,7 +17,7 @@
 @property <SKUINavigationDocumentDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSArray * documentStackItems;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) UINavigationController * navigationController;
 @property(retain) UINavigationController * overrideNavigationController;
 @property(readonly) Class superclass;
@@ -46,6 +46,6 @@
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOverrideNavigationController:(id)arg1;
-- (void)setStackItems:(id)arg1 animated:(BOOL)arg2;
+- (void)setStackItems:(id)arg1 animated:(bool)arg2;
 
 @end

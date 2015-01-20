@@ -3,31 +3,31 @@
  */
 
 @interface KNBuildSmokeSystem : TSDGLParticleSystem {
-    float _lifeSpanDelay;
-    float _rotationMax;
-    float _scaleMax;
-    float _speedMax;
+    double _lifeSpanDelay;
+    double _rotationMax;
+    double _scaleMax;
+    double _speedMax;
 }
 
-@property float lifeSpanDelay;
-@property float rotationMax;
-@property float scaleMax;
-@property float speedMax;
+@property double lifeSpanDelay;
+@property double rotationMax;
+@property double scaleMax;
+@property double speedMax;
 
-+ (BOOL)willOverrideStartingPoints;
++ (bool)willOverrideStartingPoints;
 
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)lifeSpanDelay;
-- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)rotationMax;
-- (float)scaleAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)scaleMax;
-- (void)setLifeSpanDelay:(float)arg1;
-- (void)setRotationMax:(float)arg1;
-- (void)setScaleMax:(float)arg1;
-- (void)setSpeedMax:(float)arg1;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
-- (struct CGPoint { float x1; float x2; })startingPointAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)lifeSpanDelay;
+- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)rotationMax;
+- (double)scaleAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)scaleMax;
+- (void)setLifeSpanDelay:(double)arg1;
+- (void)setRotationMax:(double)arg1;
+- (void)setScaleMax:(double)arg1;
+- (void)setSpeedMax:(double)arg1;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
+- (struct CGPoint { double x1; double x2; })startingPointAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

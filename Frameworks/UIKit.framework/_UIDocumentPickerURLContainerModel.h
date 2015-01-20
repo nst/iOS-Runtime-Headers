@@ -30,14 +30,14 @@
 - (void)modelChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (id)modelObjects;
 - (id)observer;
-- (void)refreshItem:(id)arg1 thumbnailOnly:(BOOL)arg2;
+- (void)refreshItem:(id)arg1 thumbnailOnly:(bool)arg2;
 - (id)scopes;
 - (void)setDisplayTitle:(id)arg1;
 - (void)setModelObjects:(id)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (BOOL)shouldAllowPickingType:(id)arg1;
-- (BOOL)shouldShowContainerForType:(id)arg1;
+- (bool)shouldAllowPickingType:(id)arg1;
+- (bool)shouldShowContainerForType:(id)arg1;
 - (void)startMonitoringChanges;
 - (void)stopMonitoringChanges;
 - (void)updateSortDescriptors;

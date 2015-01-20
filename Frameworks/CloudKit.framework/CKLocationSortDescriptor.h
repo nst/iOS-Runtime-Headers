@@ -10,12 +10,12 @@
 
 @property(copy) CLLocation * relativeLocation;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKDPQuerySort;
 - (id)CKPropertiesDescription;
-- (int)compareObject:(id)arg1 toObject:(id)arg2;
+- (long long)compareObject:(id)arg1 toObject:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

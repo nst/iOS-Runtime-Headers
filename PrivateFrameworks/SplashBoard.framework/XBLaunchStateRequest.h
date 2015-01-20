@@ -7,68 +7,68 @@
 @interface XBLaunchStateRequest : NSObject <BSXPCCoding> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    int _currentOrientation;
-    BOOL _isLaunchingLive;
-    BOOL _isMainScene;
-    int _launchingOrientation;
-    float _scale;
+    long long _currentOrientation;
+    long long _launchingOrientation;
+    double _scale;
     NSString *_sceneID;
     } _screenBounds;
     } _statusBarJailRect;
-    unsigned int _statusBarState;
+    unsigned long long _statusBarState;
+    bool_isLaunchingLive;
+    bool_isMainScene;
 }
 
-@property int currentOrientation;
+@property long long currentOrientation;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isLaunchingLive;
-@property BOOL isMainScene;
-@property int launchingOrientation;
-@property float scale;
+@property(readonly) unsigned long long hash;
+@property bool isLaunchingLive;
+@property bool isMainScene;
+@property long long launchingOrientation;
+@property double scale;
 @property(copy) NSString * sceneID;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } statusBarJailRect;
-@property unsigned int statusBarState;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } screenBounds;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } statusBarJailRect;
+@property unsigned long long statusBarState;
 @property(readonly) Class superclass;
 
-- (int)currentOrientation;
+- (long long)currentOrientation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isLaunchingLive;
-- (BOOL)isMainScene;
-- (int)launchingOrientation;
-- (float)scale;
+- (bool)isLaunchingLive;
+- (bool)isMainScene;
+- (long long)launchingOrientation;
+- (double)scale;
 - (id)sceneID;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
-- (void)setCurrentOrientation:(int)arg1;
-- (void)setIsLaunchingLive:(BOOL)arg1;
-- (void)setIsMainScene:(BOOL)arg1;
-- (void)setLaunchingOrientation:(int)arg1;
-- (void)setScale:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenBounds;
+- (void)setCurrentOrientation:(long long)arg1;
+- (void)setIsLaunchingLive:(bool)arg1;
+- (void)setIsMainScene:(bool)arg1;
+- (void)setLaunchingOrientation:(long long)arg1;
+- (void)setScale:(double)arg1;
 - (void)setSceneID:(id)arg1;
-- (void)setScreenBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setStatusBarJailRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setStatusBarState:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })statusBarJailRect;
-- (unsigned int)statusBarState;
+- (void)setScreenBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setStatusBarJailRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setStatusBarState:(unsigned long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarJailRect;
+- (unsigned long long)statusBarState;
 
 @end

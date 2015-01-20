@@ -9,12 +9,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)enumerateStatesForLibraryItems:(id)arg1 usingBlock:(id)arg2;
 - (id)exposedPlatformItemKinds;
-- (BOOL)performActionForLibraryItem:(id)arg1;
+- (bool)performActionForLibraryItem:(id)arg1;
 - (id)stateForLibraryItem:(id)arg1;
 
 @end

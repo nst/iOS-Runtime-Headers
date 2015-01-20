@@ -9,7 +9,7 @@
 
 @property(copy) NSArray * filters;
 @property(retain) SAMPCollection * mediaItems;
-@property BOOL shouldShuffle;
+@property bool shouldShuffle;
 @property(copy) NSArray * sort;
 
 + (id)setQueue;
@@ -19,12 +19,12 @@
 - (id)filters;
 - (id)groupIdentifier;
 - (id)mediaItems;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setFilters:(id)arg1;
 - (void)setMediaItems:(id)arg1;
-- (void)setShouldShuffle:(BOOL)arg1;
+- (void)setShouldShuffle:(bool)arg1;
 - (void)setSort:(id)arg1;
-- (BOOL)shouldShuffle;
+- (bool)shouldShuffle;
 - (id)sort;
 
 @end

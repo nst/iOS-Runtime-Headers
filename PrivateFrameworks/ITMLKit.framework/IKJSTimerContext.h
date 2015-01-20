@@ -5,14 +5,14 @@
 @class IKJSManagedArray, JSManagedValue, NSTimer;
 
 @interface IKJSTimerContext : NSObject {
-    BOOL _isRepeating;
     IKJSManagedArray *_managedArgs;
     JSManagedValue *_managedCallback;
     id _ownerObject;
     NSTimer *_timer;
+    bool_isRepeating;
 }
 
-@property(readonly) BOOL isRepeating;
+@property(readonly) bool isRepeating;
 @property(retain,readonly) IKJSManagedArray * managedArgs;
 @property(retain,readonly) JSManagedValue * managedCallback;
 @property(retain,readonly) id ownerObject;
@@ -21,8 +21,8 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (id)initWithCallback:(id)arg1 callbackArgs:(id)arg2 repeating:(BOOL)arg3 ownerObject:(id)arg4 timer:(id)arg5;
-- (BOOL)isRepeating;
+- (id)initWithCallback:(id)arg1 callbackArgs:(id)arg2 repeating:(bool)arg3 ownerObject:(id)arg4 timer:(id)arg5;
+- (bool)isRepeating;
 - (id)managedArgs;
 - (id)managedCallback;
 - (id)ownerObject;

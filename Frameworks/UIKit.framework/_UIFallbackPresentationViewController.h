@@ -11,15 +11,15 @@
 
 @property(retain) UIWindow * rotationDecider;
 
-- (void)_presentViewController:(id)arg1 sendingView:(id)arg2 animated:(BOOL)arg3;
+- (void)_presentViewController:(id)arg1 sendingView:(id)arg2 animated:(bool)arg3;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)rotationDecider;
 - (void)setRotationDecider:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 

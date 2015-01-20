@@ -16,8 +16,8 @@
         double y; 
         double z; 
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     struct { 
         double w; 
         double x; 
@@ -42,7 +42,7 @@
 - (void)dealloc;
 - (void)didUpdateAcceleration:(struct { float x1; float x2; float x3; })arg1 time:(double)arg2;
 - (struct { double x1; double x2; double x3; double x4; })getQuaternionByTimestamp:(double)arg1;
-- (long)getVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
+- (int)getVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (id)init;
 - (void)processGyroData:(id)arg1 withError:(id)arg2;
 - (void)start;

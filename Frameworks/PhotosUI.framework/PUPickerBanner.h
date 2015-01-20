@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)bannerView;
-- (float)height;
+- (double)height;
 - (id)view;
 
 @end

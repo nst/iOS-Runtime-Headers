@@ -14,9 +14,9 @@
 
 - (void*)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithProperty:(int)arg1 context:(void*)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)property;
 
 @end

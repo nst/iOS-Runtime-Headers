@@ -12,16 +12,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)_cellTapped:(id)arg1;
 - (void)_doneTapped;
 - (void)_invalidateTable;
 - (void)_setIndexColor:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)initWithTable:(id)arg1;
 - (void)layoutSubviews;

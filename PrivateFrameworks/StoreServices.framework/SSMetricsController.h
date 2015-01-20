@@ -9,11 +9,11 @@
     SSXPCConnection *_connection;
     NSTimer *_flushEventsTimer;
     NSObject<OS_dispatch_queue> *_flushSerialQueue;
-    BOOL _flushTimerEnabled;
     NSObject<OS_dispatch_queue> *_serialQueue;
+    bool_flushTimerEnabled;
 }
 
-@property(getter=isFlushTimerEnabled) BOOL flushTimerEnabled;
+@property(getter=isFlushTimerEnabled) bool flushTimerEnabled;
 
 - (id)_connection;
 - (id)_cookieValuesForConfiguration:(id)arg1;
@@ -28,12 +28,12 @@
 - (id)init;
 - (void)insertEvent:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)insertEvents:(id)arg1 withCompletionHandler:(id)arg2;
-- (BOOL)isDisabled;
-- (BOOL)isFlushTimerEnabled;
-- (id)locationWithPosition:(int)arg1 type:(id)arg2 fieldData:(id)arg3;
+- (bool)isDisabled;
+- (bool)isFlushTimerEnabled;
+- (id)locationWithPosition:(long long)arg1 type:(id)arg2 fieldData:(id)arg3;
 - (id)pingURLs;
 - (id)serialQueue;
-- (void)setFlushTimerEnabled:(BOOL)arg1;
+- (void)setFlushTimerEnabled:(bool)arg1;
 - (void)setGlobalConfiguration:(id)arg1;
 - (void)setPageConfiguration:(id)arg1;
 

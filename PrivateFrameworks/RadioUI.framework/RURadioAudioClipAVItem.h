@@ -9,7 +9,7 @@
 - (id)audioClip;
 - (id)initWithAudioClip:(id)arg1;
 - (void)loadAssetAndPlayerItem;
-- (BOOL)supportsSkip;
-- (unsigned int)type;
+- (bool)supportsSkip;
+- (unsigned long long)type;
 
 @end

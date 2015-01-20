@@ -5,14 +5,14 @@
 @class <TSCH3DSharegroupDelayCheckerParent>;
 
 @interface TSCH3DSharegroupDelayChecker : NSObject <TSCHUnretainedParent> {
-    BOOL mCondition;
+    boolmCondition;
     <TSCH3DSharegroupDelayCheckerParent> *mParent;
 }
 
-@property BOOL condition;
+@property bool condition;
 
 - (void)clearParent;
-- (BOOL)condition;
+- (bool)condition;
 - (void)dealloc;
 - (id)initWithParent:(id)arg1;
 - (void)invalidateCondition;
@@ -20,6 +20,6 @@
 - (void)p_checkCondition;
 - (void)p_scheduleCheckConditionOnMainThread;
 - (void)scheduleCheckCondition;
-- (void)setCondition:(BOOL)arg1;
+- (void)setCondition:(bool)arg1;
 
 @end

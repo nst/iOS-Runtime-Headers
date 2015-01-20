@@ -23,8 +23,8 @@
 - (id)album;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)initWithAdTrack:(id)arg1;
-- (BOOL)isStreamable;
-- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (bool)isStreamable;
+- (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (void)reevaluateType;
@@ -33,9 +33,9 @@
 - (id)stationHash;
 - (long long)stationID;
 - (id)stationName;
-- (BOOL)supportsSkip;
+- (bool)supportsSkip;
 - (id)title;
 - (id)titlesForTime:(double)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

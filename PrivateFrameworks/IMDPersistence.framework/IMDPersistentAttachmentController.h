@@ -8,8 +8,8 @@
 + (id)sharedInstance;
 
 - (id)_persistentPathForTransfer:(id)arg1;
-- (BOOL)cleanseOrphanedFileTransfers;
-- (BOOL)deleteAttachmentForTransfer:(id)arg1;
+- (bool)cleanseOrphanedFileTransfers;
+- (bool)deleteAttachmentForTransfer:(id)arg1;
 - (id)saveAttachmentForTransfer:(id)arg1;
 
 @end

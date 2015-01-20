@@ -19,7 +19,7 @@
 @property(readonly) UIViewController * _viewController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) MPAVController * player;
 @property(readonly) Class superclass;
 
@@ -38,15 +38,15 @@
 - (void)_updateMiniPlayerAttachment;
 - (void)_updateMiniPlayerPaletteForNavigationController:(id)arg1;
 - (id)_viewController;
-- (BOOL)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
+- (bool)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPlayer:(id)arg1;
-- (void)miniPlayerActionsViewController:(id)arg1 didSelectAction:(int)arg2;
+- (void)miniPlayerActionsViewController:(id)arg1 didSelectAction:(long long)arg2;
 - (void)navigationController:(id)arg1 traitCollectionDidChange:(id)arg2;
 - (id)player;
 - (void)prospectivePlaybackInformationDidChangeForViewController:(id)arg1;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
+- (bool)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)willShowViewController:(id)arg1 inNavigationController:(id)arg2;
 
 @end

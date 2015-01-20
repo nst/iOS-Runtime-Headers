@@ -6,15 +6,15 @@
 
 @interface CBScalablePipeManager : NSObject <CBXpcConnectionDelegate> {
     CBXpcConnection *_connection;
-    BOOL _connectionIsFinalized;
     <CBScalablePipeManagerDelegate> *_delegate;
     NSMutableSet *_identifiers;
     NSHashTable *_pipes;
-    int _state;
+    long long _state;
+    bool_connectionIsFinalized;
 }
 
 @property(readonly) NSSet * identifiers;
-@property(readonly) int state;
+@property(readonly) long long state;
 
 - (void)dealloc;
 - (void)handleDataAvailable:(id)arg1;
@@ -27,13 +27,13 @@
 - (id)identifiers;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)isMsgAllowedWhenOff:(int)arg1;
+- (bool)isMsgAllowedWhenOff:(int)arg1;
 - (void)orphanPipes;
 - (id)pipeForName:(id)arg1 identifier:(id)arg2;
-- (void)registerEndpoint:(id)arg1 type:(int)arg2 priority:(int)arg3;
+- (void)registerEndpoint:(id)arg1 type:(long long)arg2 priority:(long long)arg3;
 - (oneway void)release;
-- (BOOL)sendMsg:(int)arg1 args:(id)arg2;
-- (int)state;
+- (bool)sendMsg:(int)arg1 args:(id)arg2;
+- (long long)state;
 - (void)unregisterAllEndpoints;
 - (void)unregisterEndpoint:(id)arg1;
 - (void)xpcConnection:(id)arg1 didReceiveMsg:(unsigned short)arg2 args:(id)arg3;

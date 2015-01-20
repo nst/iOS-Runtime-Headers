@@ -21,10 +21,10 @@
 - (void)didRemoveAuthorRelationshipFromDocument;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)nextAuthorColor;
-- (void)p_addAuthor:(id)arg1 isFromDocumentSupport:(BOOL)arg2;
+- (void)p_addAuthor:(id)arg1 isFromDocumentSupport:(bool)arg2;
 - (id)packageLocator;
 - (void)removeAuthor:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)shouldDelayArchiving;
+- (bool)shouldDelayArchiving;
 
 @end

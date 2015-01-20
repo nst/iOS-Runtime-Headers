@@ -14,7 +14,7 @@
 @property(readonly) double delay;
 @property(readonly) EKTravelPrediction * prediction;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)date;
 - (void)dealloc;

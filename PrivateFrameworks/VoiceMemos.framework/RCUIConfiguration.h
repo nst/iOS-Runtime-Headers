@@ -5,7 +5,7 @@
 @class NSString, UIColor;
 
 @interface RCUIConfiguration : NSObject <NSCopying> {
-    float _acousticAnnotationVerticalMargin;
+    double _acousticAnnotationVerticalMargin;
     UIColor *_acousticGradientMaskEndColor;
     UIColor *_acousticValueColor;
     UIColor *_backgroundColor;
@@ -17,16 +17,16 @@
     UIColor *_selectionOverlayColor;
     UIColor *_selectionOverlayEndpointBarColor;
     UIColor *_selectionOverlayEndpointTimeColor;
-    BOOL _showsWaveformCenterline;
     UIColor *_timeLineMarkerColor;
     UIColor *_timeLineTimeColor;
     UIColor *_waveformBoundaryLineColor;
-    BOOL _waveformBoundaryLineDimInSelectionMode;
     UIColor *_waveformColor;
     UIColor *_waveformHighlightColor;
+    bool_showsWaveformCenterline;
+    bool_waveformBoundaryLineDimInSelectionMode;
 }
 
-@property float acousticAnnotationVerticalMargin;
+@property double acousticAnnotationVerticalMargin;
 @property(retain) UIColor * acousticGradientMaskEndColor;
 @property(retain) UIColor * acousticValueColor;
 @property(retain) UIColor * backgroundColor;
@@ -38,18 +38,18 @@
 @property(retain) UIColor * selectionOverlayColor;
 @property(retain) UIColor * selectionOverlayEndpointBarColor;
 @property(retain) UIColor * selectionOverlayEndpointTimeColor;
-@property BOOL showsWaveformCenterline;
+@property bool showsWaveformCenterline;
 @property(retain) UIColor * timeLineMarkerColor;
 @property(retain) UIColor * timeLineTimeColor;
 @property(retain) UIColor * waveformBoundaryLineColor;
-@property BOOL waveformBoundaryLineDimInSelectionMode;
+@property bool waveformBoundaryLineDimInSelectionMode;
 @property(retain) UIColor * waveformColor;
 @property(retain) UIColor * waveformHighlightColor;
 
 + (id)defaultConfiguration;
 
 - (void).cxx_destruct;
-- (float)acousticAnnotationVerticalMargin;
+- (double)acousticAnnotationVerticalMargin;
 - (id)acousticGradientMaskEndColor;
 - (id)acousticValueColor;
 - (id)backgroundColor;
@@ -63,7 +63,7 @@
 - (id)selectionOverlayColor;
 - (id)selectionOverlayEndpointBarColor;
 - (id)selectionOverlayEndpointTimeColor;
-- (void)setAcousticAnnotationVerticalMargin:(float)arg1;
+- (void)setAcousticAnnotationVerticalMargin:(double)arg1;
 - (void)setAcousticGradientMaskEndColor:(id)arg1;
 - (void)setAcousticValueColor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
@@ -75,18 +75,18 @@
 - (void)setSelectionOverlayColor:(id)arg1;
 - (void)setSelectionOverlayEndpointBarColor:(id)arg1;
 - (void)setSelectionOverlayEndpointTimeColor:(id)arg1;
-- (void)setShowsWaveformCenterline:(BOOL)arg1;
+- (void)setShowsWaveformCenterline:(bool)arg1;
 - (void)setTimeLineMarkerColor:(id)arg1;
 - (void)setTimeLineTimeColor:(id)arg1;
 - (void)setWaveformBoundaryLineColor:(id)arg1;
-- (void)setWaveformBoundaryLineDimInSelectionMode:(BOOL)arg1;
+- (void)setWaveformBoundaryLineDimInSelectionMode:(bool)arg1;
 - (void)setWaveformColor:(id)arg1;
 - (void)setWaveformHighlightColor:(id)arg1;
-- (BOOL)showsWaveformCenterline;
+- (bool)showsWaveformCenterline;
 - (id)timeLineMarkerColor;
 - (id)timeLineTimeColor;
 - (id)waveformBoundaryLineColor;
-- (BOOL)waveformBoundaryLineDimInSelectionMode;
+- (bool)waveformBoundaryLineDimInSelectionMode;
 - (id)waveformColor;
 - (id)waveformHighlightColor;
 

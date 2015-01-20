@@ -9,14 +9,14 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_group>, SPDaemonQueryToken, SPSearchResultSection;
 
 @interface CKSpotlightQuery : NSObject <SPDaemonQueryDelegate> {
-    BOOL _cancelled;
     NSMutableDictionary *_chatGUIDToLatestSearchResult;
     id _completion;
-    BOOL _processing;
     SPDaemonQueryToken *_queryToken;
-    unsigned int _resultIndex;
+    unsigned long long _resultIndex;
     NSObject<OS_dispatch_group> *_searchResultLoadingGroup;
     SPSearchResultSection *_searchResults;
+    bool_cancelled;
+    bool_processing;
 }
 
 @property(copy) id completion;

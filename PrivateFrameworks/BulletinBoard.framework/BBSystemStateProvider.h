@@ -6,19 +6,19 @@
 
 @interface BBSystemStateProvider : NSObject {
     NSXPCConnection *_connection;
-    unsigned int _currentState;
+    unsigned long long _currentState;
     NSSet *_sectionIDs;
 }
 
 + (id)clientInterface;
 + (id)serverInterface;
 
-- (void)_sendState:(unsigned int)arg1 value:(BOOL)arg2;
+- (void)_sendState:(unsigned long long)arg1 value:(bool)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (void)noteChangeOfState:(unsigned int)arg1 newValue:(BOOL)arg2;
-- (void)noteOccurrenceOfEvent:(unsigned int)arg1;
+- (void)noteChangeOfState:(unsigned long long)arg1 newValue:(bool)arg2;
+- (void)noteOccurrenceOfEvent:(unsigned long long)arg1;
 - (void)noteRestrictedSectionIDsDidChange:(id)arg1;
 
 @end

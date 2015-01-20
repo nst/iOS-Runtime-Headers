@@ -7,22 +7,22 @@
 @interface ABNamePredicate : ABPredicate {
     void *_addressBook;
     NSArray *_groups;
-    BOOL _matchPersonOrCompanyNamesExclusively;
-    BOOL _matchPreferredName;
-    BOOL _matchWholeWords;
     NSString *_name;
     NSArray *_sources;
     struct __CFArray { } *_tokenizationSortKeys;
     void *_tokenizations;
+    bool_matchPersonOrCompanyNamesExclusively;
+    bool_matchPreferredName;
+    bool_matchWholeWords;
 }
 
 @property(copy) NSString * accountIdentifier;
 @property void* addressBook;
 @property void* group;
 @property(retain) NSArray * groups;
-@property BOOL matchPersonOrCompanyNamesExclusively;
-@property BOOL matchPreferredName;
-@property BOOL matchWholeWords;
+@property bool matchPersonOrCompanyNamesExclusively;
+@property bool matchPreferredName;
+@property bool matchWholeWords;
 @property(copy) NSString * name;
 @property void* source;
 @property(retain) NSArray * sources;
@@ -35,21 +35,21 @@
 - (void*)group;
 - (id)groups;
 - (id)init;
-- (BOOL)isValid;
-- (BOOL)matchPersonOrCompanyNamesExclusively;
-- (BOOL)matchPreferredName;
-- (BOOL)matchWholeWords;
+- (bool)isValid;
+- (bool)matchPersonOrCompanyNamesExclusively;
+- (bool)matchPreferredName;
+- (bool)matchWholeWords;
 - (id)name;
 - (id)predicateFormat;
-- (id)queryJoinsInCompound:(BOOL)arg1;
+- (id)queryJoinsInCompound:(bool)arg1;
 - (id)queryWhereString;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setGroup:(void*)arg1;
 - (void)setGroups:(id)arg1;
-- (void)setMatchPersonOrCompanyNamesExclusively:(BOOL)arg1;
-- (void)setMatchPreferredName:(BOOL)arg1;
-- (void)setMatchWholeWords:(BOOL)arg1;
+- (void)setMatchPersonOrCompanyNamesExclusively:(bool)arg1;
+- (void)setMatchPreferredName:(bool)arg1;
+- (void)setMatchWholeWords:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setSource:(void*)arg1;
 - (void)setSources:(id)arg1;

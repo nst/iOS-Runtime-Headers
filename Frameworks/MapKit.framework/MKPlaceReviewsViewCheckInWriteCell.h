@@ -16,7 +16,7 @@
 @property(retain) NSMutableArray * scaledConstraints;
 @property(retain) NSAttributedString * writeReviewTitle;
 
-+ (float)intrinsicContentHeight;
++ (double)intrinsicContentHeight;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
@@ -25,7 +25,7 @@
 - (void)contentSizeDidChange;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)newLabel;
 - (id)scaledConstraints;
 - (void)setCheckInTitle:(id)arg1;
@@ -34,7 +34,7 @@
 - (void)setWriteReviewTitle:(id)arg1;
 - (void)tintColorDidChange;
 - (void)updateConstraints;
-- (id)updatedAttributedString:(id)arg1 onlyUpdateColor:(BOOL)arg2;
+- (id)updatedAttributedString:(id)arg1 onlyUpdateColor:(bool)arg2;
 - (id)writeReviewTitle;
 
 @end

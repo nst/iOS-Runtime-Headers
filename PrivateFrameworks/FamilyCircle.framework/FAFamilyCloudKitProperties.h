@@ -14,7 +14,7 @@
 @property(copy,readonly) NSString * shareID;
 @property(copy,readonly) NSString * zoneID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleID;

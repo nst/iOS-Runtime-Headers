@@ -5,10 +5,10 @@
 @class NSDate, NSString;
 
 @interface AVAssetResourceLoadingContentInformationRequestInternal : NSObject {
-    BOOL byteRangeAccessSupported;
+    boolbyteRangeAccessSupported;
+    booldiskCachingPermitted;
     long long contentLength;
     NSString *contentType;
-    BOOL diskCachingPermitted;
     NSDate *renewalDate;
 }
 

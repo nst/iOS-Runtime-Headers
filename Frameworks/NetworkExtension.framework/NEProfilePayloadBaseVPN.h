@@ -6,31 +6,31 @@
 
 @interface NEProfilePayloadBaseVPN : NEProfilePayloadBase {
     NSString *_password;
-    BOOL _passwordRequired;
     NSString *_pin;
-    BOOL _pinRequired;
     NSString *_proxyPassword;
-    BOOL _proxyPasswordRequired;
     NSString *_proxyUserName;
-    BOOL _proxyUserNameRequired;
     NSString *_sharedSecret;
-    BOOL _sharedSecretRequired;
     NSString *_userName;
-    BOOL _userNameRequired;
+    bool_passwordRequired;
+    bool_pinRequired;
+    bool_proxyPasswordRequired;
+    bool_proxyUserNameRequired;
+    bool_sharedSecretRequired;
+    bool_userNameRequired;
 }
 
 @property(copy) NSString * password;
-@property BOOL passwordRequired;
+@property bool passwordRequired;
 @property(copy) NSString * pin;
-@property BOOL pinRequired;
+@property bool pinRequired;
 @property(copy) NSString * proxyPassword;
-@property BOOL proxyPasswordRequired;
+@property bool proxyPasswordRequired;
 @property(copy) NSString * proxyUserName;
-@property BOOL proxyUserNameRequired;
+@property bool proxyUserNameRequired;
 @property(copy) NSString * sharedSecret;
-@property BOOL sharedSecretRequired;
+@property bool sharedSecretRequired;
 @property(copy) NSString * userName;
-@property BOOL userNameRequired;
+@property bool userNameRequired;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,30 +42,30 @@
 - (id)getPreprocessedPayloadContents;
 - (id)initWithPayload:(id)arg1;
 - (id)password;
-- (BOOL)passwordRequired;
+- (bool)passwordRequired;
 - (id)pin;
-- (BOOL)pinRequired;
+- (bool)pinRequired;
 - (id)proxyPassword;
-- (BOOL)proxyPasswordRequired;
+- (bool)proxyPasswordRequired;
 - (id)proxyUserName;
-- (BOOL)proxyUserNameRequired;
+- (bool)proxyUserNameRequired;
 - (void)setPassword:(id)arg1;
-- (void)setPasswordRequired:(BOOL)arg1;
+- (void)setPasswordRequired:(bool)arg1;
 - (void)setPin:(id)arg1;
-- (void)setPinRequired:(BOOL)arg1;
-- (BOOL)setPostprocessedPayloadContents:(id)arg1;
+- (void)setPinRequired:(bool)arg1;
+- (bool)setPostprocessedPayloadContents:(id)arg1;
 - (void)setProxyPassword:(id)arg1;
-- (void)setProxyPasswordRequired:(BOOL)arg1;
+- (void)setProxyPasswordRequired:(bool)arg1;
 - (void)setProxyUserName:(id)arg1;
-- (void)setProxyUserNameRequired:(BOOL)arg1;
+- (void)setProxyUserNameRequired:(bool)arg1;
 - (void)setSharedSecret:(id)arg1;
-- (void)setSharedSecretRequired:(BOOL)arg1;
+- (void)setSharedSecretRequired:(bool)arg1;
 - (void)setUserName:(id)arg1;
-- (void)setUserNameRequired:(BOOL)arg1;
+- (void)setUserNameRequired:(bool)arg1;
 - (id)sharedSecret;
-- (BOOL)sharedSecretRequired;
+- (bool)sharedSecretRequired;
 - (id)userName;
-- (BOOL)userNameRequired;
+- (bool)userNameRequired;
 - (id)validatePayload;
 
 @end

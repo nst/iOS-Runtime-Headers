@@ -6,6 +6,6 @@
 }
 
 - (void)main;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

@@ -9,8 +9,8 @@
     CKDPShareIdentifier *_shareId;
 }
 
-@property(readonly) BOOL hasParticipantId;
-@property(readonly) BOOL hasShareId;
+@property(readonly) bool hasParticipantId;
+@property(readonly) bool hasShareId;
 @property(retain) CKDPIdentifier * participantId;
 @property(retain) CKDPShareIdentifier * shareId;
 
@@ -21,13 +21,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasParticipantId;
-- (BOOL)hasShareId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasParticipantId;
+- (bool)hasShareId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)participantId;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setParticipantId:(id)arg1;

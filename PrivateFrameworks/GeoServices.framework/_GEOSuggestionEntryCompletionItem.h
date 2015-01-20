@@ -18,7 +18,7 @@
 @property(readonly) NSArray * displayLines;
 @property(readonly) NSData * entryMetadata;
 @property(readonly) <GEOMapItem> * geoMapItem;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSData * metadata;
 @property(readonly) Class superclass;
 
@@ -30,11 +30,11 @@
 - (id)displayLines;
 - (id)entryMetadata;
 - (id)geoMapItem;
-- (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
-- (unsigned int)hash;
-- (id)highlightsForLine:(unsigned int)arg1;
+- (bool)getCoordinate:(struct { double x1; double x2; }*)arg1;
+- (unsigned long long)hash;
+- (id)highlightsForLine:(unsigned long long)arg1;
 - (id)initWithSuggestionEntry:(id)arg1 query:(id)arg2 entryListIndex:(int)arg3 entryIndex:(int)arg4 completion:(id)arg5 traits:(id)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)metadata;
 - (id)query;
 - (id)queryLine;

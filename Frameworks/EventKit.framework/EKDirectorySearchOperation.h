@@ -11,16 +11,16 @@
 @interface EKDirectorySearchOperation : NSOperation {
     NSString *_accountID;
     NSError *_error;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    BOOL _numberOfMatchesExceededLimit;
     EKDirectorySearchQuery *_query;
     id _resultsBlock;
     id _searchID;
+    bool_isExecuting;
+    bool_isFinished;
+    bool_numberOfMatchesExceededLimit;
 }
 
 @property(retain) NSError * error;
-@property BOOL numberOfMatchesExceededLimit;
+@property bool numberOfMatchesExceededLimit;
 
 - (void)_finishWithError:(id)arg1;
 - (id)_processGroupsInResults:(id)arg1;
@@ -34,13 +34,13 @@
 - (id)error;
 - (id)init;
 - (id)initWithSource:(id)arg1 query:(id)arg2 resultsBlock:(id)arg3;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)main;
-- (BOOL)numberOfMatchesExceededLimit;
+- (bool)numberOfMatchesExceededLimit;
 - (void)setError:(id)arg1;
-- (void)setNumberOfMatchesExceededLimit:(BOOL)arg1;
+- (void)setNumberOfMatchesExceededLimit:(bool)arg1;
 - (void)start;
 
 @end

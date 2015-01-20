@@ -5,43 +5,43 @@
 @class <PUSuggestedSearchDelegate>, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, PSIQuery;
 
 @interface PUSuggestedSearch : NSObject <PUSearchResult> {
-    unsigned int __approximateCount;
+    unsigned long long __approximateCount;
     id _albumUUID;
     <PUSuggestedSearchDelegate> *_delegate;
     NSString *_displaySubtitle;
     NSString *_displayTitle;
-    BOOL _hasPendingChanges;
     PSIQuery *_query;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_searchString;
-    unsigned int _taskId;
+    unsigned long long _taskId;
     NSMutableArray *_uncommittedUUIDs;
     NSArray *_uuids;
+    bool_hasPendingChanges;
 }
 
-@property(setter=_setApproximateCount:) unsigned int _approximateCount;
+@property(setter=_setApproximateCount:) unsigned long long _approximateCount;
 @property(retain) id albumUUID;
 @property(copy,readonly) NSString * debugDescription;
 @property <PUSuggestedSearchDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * displaySubtitle;
 @property(copy) NSString * displayTitle;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isEmpty;
 @property(copy) NSString * searchString;
 @property(readonly) Class superclass;
 @property(readonly) NSArray * uuids;
 
 - (void).cxx_destruct;
-- (unsigned int)_approximateCount;
+- (unsigned long long)_approximateCount;
 - (void)_inqAddAssetUUIDsFromFetchRequest:(id)arg1;
-- (BOOL)_inqIsCancelledWithTaskId:(unsigned int)arg1;
+- (bool)_inqIsCancelledWithTaskId:(unsigned long long)arg1;
 - (void)_inqMergePendingChanges;
 - (void)_inqRestart;
-- (unsigned int)_inqTaskId;
+- (unsigned long long)_inqTaskId;
 - (void)_mergePendingChanges;
 - (void)_setAlbumUUID:(id)arg1;
-- (void)_setApproximateCount:(unsigned int)arg1;
+- (void)_setApproximateCount:(unsigned long long)arg1;
 - (void)_setDisplayTitle:(id)arg1;
 - (void)_setSearchString:(id)arg1;
 - (id)albumUUID;
@@ -50,11 +50,11 @@
 - (id)displaySubtitle;
 - (id)displayTitle;
 - (void)fetchRemainingUUIDs:(id)arg1;
-- (BOOL)hasPendingChanges;
+- (bool)hasPendingChanges;
 - (id)init;
 - (id)initWithDisplayTitle:(id)arg1 uuids:(id)arg2;
 - (id)initWithDisplayTitle:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)restart;
 - (id)searchString;
 - (void)setDelegate:(id)arg1;

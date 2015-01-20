@@ -7,24 +7,24 @@
 @interface TSCECellDependenciesPrinter : NSObject {
     NSMutableArray *_cleanCellDependencyRows;
     NSMutableArray *_dirtyCellDependencyRows;
-    unsigned int _numDirtyCells;
+    unsigned long long _numDirtyCells;
     NSString *_ownerName;
-    BOOL _showCleanCells;
+    bool_showCleanCells;
 }
 
-@property unsigned int numDirtyCells;
+@property unsigned long long numDirtyCells;
 @property(retain) NSString * ownerName;
-@property BOOL showCleanCells;
+@property bool showCleanCells;
 
 - (void)addDependencyRow:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (unsigned int)numDirtyCells;
+- (unsigned long long)numDirtyCells;
 - (id)ownerName;
-- (void)setNumDirtyCells:(unsigned int)arg1;
+- (void)setNumDirtyCells:(unsigned long long)arg1;
 - (void)setOwnerName:(id)arg1;
-- (void)setShowCleanCells:(BOOL)arg1;
-- (BOOL)showCleanCells;
+- (void)setShowCleanCells:(bool)arg1;
+- (bool)showCleanCells;
 
 @end

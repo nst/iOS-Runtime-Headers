@@ -9,16 +9,16 @@
     SSAuthenticationContext *_authenticationContext;
     ISDialog *_dialog;
     ISDialogButton *_performedButton;
-    BOOL _performsButtonAction;
     NSURL *_redirectURL;
     ISDialogButton *_selectedButton;
+    bool_performsButtonAction;
 }
 
 @property(retain) NSNumber * authenticatedAccountDSID;
 @property(retain) SSAuthenticationContext * authenticationContext;
 @property(retain) ISDialog * dialog;
 @property(retain) ISDialogButton * performedButton;
-@property BOOL performsButtonAction;
+@property bool performsButtonAction;
 @property(retain) NSURL * redirectURL;
 @property(retain) ISDialogButton * selectedButton;
 
@@ -28,7 +28,7 @@
 - (id)dialog;
 - (id)init;
 - (id)performedButton;
-- (BOOL)performsButtonAction;
+- (bool)performsButtonAction;
 - (id)redirectURL;
 - (void)run;
 - (id)selectedButton;
@@ -36,7 +36,7 @@
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDialog:(id)arg1;
 - (void)setPerformedButton:(id)arg1;
-- (void)setPerformsButtonAction:(BOOL)arg1;
+- (void)setPerformsButtonAction:(bool)arg1;
 - (void)setRedirectURL:(id)arg1;
 - (void)setSelectedButton:(id)arg1;
 

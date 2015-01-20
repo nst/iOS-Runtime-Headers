@@ -23,7 +23,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSURL * logicalURL;
 @property(readonly) NSURL * physicalURL;
 @property(readonly) Class superclass;
@@ -39,6 +39,6 @@
 - (id)logicalURL;
 - (void)main;
 - (id)physicalURL;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

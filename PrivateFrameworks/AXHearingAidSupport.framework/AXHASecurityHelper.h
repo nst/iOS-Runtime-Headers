@@ -24,8 +24,8 @@
 - (id)securityQueue;
 - (void)setCertificateDescription:(id)arg1;
 - (void)setSecurityQueue:(id)arg1;
-- (BOOL)shouldTrustStream:(id)arg1;
+- (bool)shouldTrustStream:(id)arg1;
 - (id)trustChain;
-- (BOOL)trustChainAvailable;
+- (bool)trustChainAvailable;
 
 @end

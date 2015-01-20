@@ -5,20 +5,20 @@
 @class NSMutableArray;
 
 @interface PLCloudScenarioExecutionResult : NSObject {
-    BOOL _duplicateScenario;
     NSMutableArray *_failedOperations;
     NSMutableArray *_successfullOperations;
+    bool_duplicateScenario;
 }
 
-@property BOOL duplicateScenario;
+@property bool duplicateScenario;
 @property(retain) NSMutableArray * failedOperations;
 @property(retain) NSMutableArray * successfullOperations;
 
 - (void)dealloc;
-- (BOOL)duplicateScenario;
+- (bool)duplicateScenario;
 - (id)failedOperations;
 - (id)init;
-- (void)setDuplicateScenario:(BOOL)arg1;
+- (void)setDuplicateScenario:(bool)arg1;
 - (void)setFailedOperations:(id)arg1;
 - (void)setSuccessfullOperations:(id)arg1;
 - (id)successfullOperations;

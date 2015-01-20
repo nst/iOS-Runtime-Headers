@@ -6,29 +6,29 @@
 
 @interface SGOrigin : NSObject <NSCopying, NSSecureCoding> {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     NSString *_contextSnippet;
     } _contextSnippetRange;
     NSDate *_date;
     NSString *_externalKey;
-    BOOL _fromForwardedMessage;
     NSString *_sourceKey;
     NSString *_title;
-    unsigned int _type;
+    unsigned long long _type;
+    bool_fromForwardedMessage;
 }
 
 @property(readonly) NSDate * date;
 @property(readonly) NSString * externalKey;
-@property(getter=isFromForwardedMessage,readonly) BOOL fromForwardedMessage;
+@property(getter=isFromForwardedMessage,readonly) bool fromForwardedMessage;
 @property(readonly) NSString * sourceKey;
 @property(readonly) NSString * title;
-@property(readonly) unsigned int type;
+@property(readonly) unsigned long long type;
 @property(readonly) NSURL * url;
 
 + (id)originForDuplicateKey:(id)arg1 sourceKey:(id)arg2 store:(id)arg3;
-+ (id)originWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(BOOL)arg4;
-+ (BOOL)supportsSecureCoding;
++ (id)originWithType:(unsigned long long)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(bool)arg4;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addDetailsFromOriginatingContactEntity:(id)arg1 store:(id)arg2;
@@ -38,16 +38,16 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalKey;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(BOOL)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToOrigin:(id)arg1;
-- (BOOL)isFromForwardedMessage;
+- (id)initWithType:(unsigned long long)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(bool)arg4;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToOrigin:(id)arg1;
+- (bool)isFromForwardedMessage;
 - (id)sourceKey;
 - (id)title;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)url;
 
 @end

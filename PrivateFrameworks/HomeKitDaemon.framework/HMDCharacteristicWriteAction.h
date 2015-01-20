@@ -16,7 +16,7 @@
 @property(copy) id targetValue;
 @property(copy,readonly) NSUUID * uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actionSet;

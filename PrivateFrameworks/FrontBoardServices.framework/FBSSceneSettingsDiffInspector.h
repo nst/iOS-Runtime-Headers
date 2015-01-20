@@ -5,11 +5,11 @@
 @class BSMutableSettings;
 
 @interface FBSSceneSettingsDiffInspector : NSObject {
-    BOOL _iteratingObservers;
     BSMutableSettings *_observerInfo;
+    bool_iteratingObservers;
 }
 
-- (void)_addObserver:(id)arg1 forSetting:(unsigned int)arg2 inInfo:(id)arg3;
+- (void)_addObserver:(id)arg1 forSetting:(unsigned long long)arg2 inInfo:(id)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)init;
@@ -20,7 +20,7 @@
 - (void)observeIsBackgroundedWithBlock:(id)arg1;
 - (void)observeLevelWithBlock:(id)arg1;
 - (void)observeOcclusionsWithBlock:(id)arg1;
-- (void)observeOtherSetting:(unsigned int)arg1 withBlock:(id)arg2;
+- (void)observeOtherSetting:(unsigned long long)arg1 withBlock:(id)arg2;
 - (void)removeAllObservers;
 
 @end

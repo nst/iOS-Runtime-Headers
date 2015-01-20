@@ -6,12 +6,12 @@
 
 @interface SKUIErrorDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
     SKUIClientContext *_clientContext;
-    unsigned int _contentUnavailableStyle;
+    unsigned long long _contentUnavailableStyle;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;

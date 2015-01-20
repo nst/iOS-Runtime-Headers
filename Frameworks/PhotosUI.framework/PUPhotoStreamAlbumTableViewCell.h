@@ -5,8 +5,8 @@
 @interface PUPhotoStreamAlbumTableViewCell : UITableViewCell {
 }
 
-+ (float)cellHeight;
-+ (float)labelXOrigin;
++ (double)cellHeight;
++ (double)labelXOrigin;
 
 - (void)layoutSubviews;
 

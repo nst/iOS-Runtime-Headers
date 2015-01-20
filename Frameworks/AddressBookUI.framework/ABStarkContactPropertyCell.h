@@ -4,27 +4,27 @@
 
 @interface ABStarkContactPropertyCell : ABPropertyPhoneNumberCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     } _contentInsets;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 
-+ (BOOL)wantsHorizontalLayout;
++ (bool)wantsHorizontalLayout;
 
-- (float)bottomBaselineConstant;
+- (double)bottomBaselineConstant;
 - (id)constantConstraints;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (id)standardStarView;
 - (id)standardTransportIcon;
-- (float)topBaselineConstant;
+- (double)topBaselineConstant;
 - (void)transportButtonClicked:(id)arg1;
 - (id)variableConstraints;
 

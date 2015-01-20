@@ -6,31 +6,31 @@
 
 @interface MFIMAPMessage : MFMailMessage {
     NSArray *_customFlags;
-    unsigned int _size;
-    unsigned long _uid;
+    unsigned long long _size;
+    unsigned int _uid;
     unsigned long long _uniqueRemoteId;
 }
 
-- (int)compareByNumberWithMessage:(id)arg1;
+- (long long)compareByNumberWithMessage:(id)arg1;
 - (id)customFlags;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasTemporaryUid;
-- (id)initWithFlags:(unsigned long long)arg1 customFlags:(id)arg2 size:(unsigned int)arg3 uid:(unsigned long)arg4;
-- (BOOL)isMessageContentsLocallyAvailable;
-- (BOOL)isPartial;
+- (bool)hasTemporaryUid;
+- (id)initWithFlags:(unsigned long long)arg1 customFlags:(id)arg2 size:(unsigned long long)arg3 uid:(unsigned int)arg4;
+- (bool)isMessageContentsLocallyAvailable;
+- (bool)isPartial;
 - (id)mailboxName;
 - (id)messageID;
-- (unsigned int)messageSize;
+- (unsigned long long)messageSize;
 - (id)originalMailboxURL;
 - (id)remoteID;
 - (id)remoteMailboxURL;
-- (void)setHasTemporaryUid:(BOOL)arg1;
-- (void)setIsPartial:(BOOL)arg1;
-- (void)setPreferredEncoding:(unsigned long)arg1;
-- (void)setUid:(unsigned long)arg1;
+- (void)setHasTemporaryUid:(bool)arg1;
+- (void)setIsPartial:(bool)arg1;
+- (void)setPreferredEncoding:(unsigned int)arg1;
+- (void)setUid:(unsigned int)arg1;
 - (void)setUniqueRemoteId:(unsigned long long)arg1;
-- (unsigned long)uid;
+- (unsigned int)uid;
 - (unsigned long long)uniqueRemoteId;
 
 @end

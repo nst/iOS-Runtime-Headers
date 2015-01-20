@@ -5,8 +5,8 @@
 @interface AirPortAssistantUINavigationController : UINavigationController {
 }
 
-- (BOOL)disablesAutomaticKeyboardDismissal;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)disablesAutomaticKeyboardDismissal;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

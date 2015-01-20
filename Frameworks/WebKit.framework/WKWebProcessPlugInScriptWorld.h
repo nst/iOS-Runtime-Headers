@@ -12,7 +12,7 @@
 @interface WKWebProcessPlugInScriptWorld : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundleScriptWorld> { 
         struct type { 
-            unsigned char __lx[12]; 
+            unsigned char __lx[24]; 
         } data; 
     } _world;
 }
@@ -21,7 +21,7 @@
 @property(readonly) struct InjectedBundleScriptWorld { int (**x1)(); id x2; struct RefPtr<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x_3_1_1; } x3; }* _scriptWorld;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)normalWorld;

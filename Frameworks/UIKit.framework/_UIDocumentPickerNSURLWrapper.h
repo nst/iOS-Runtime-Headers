@@ -5,27 +5,27 @@
 @class NSData, NSURL;
 
 @interface _UIDocumentPickerNSURLWrapper : NSObject <NSSecureCoding> {
-    BOOL _createSandbox;
     NSData *_scope;
     NSURL *_url;
+    bool_createSandbox;
 }
 
-@property BOOL createSandbox;
+@property bool createSandbox;
 @property(copy) NSData * scope;
 @property(copy) NSURL * url;
 
 + (void)assembleURL:(id)arg1 sandbox:(id)arg2 physicalURL:(id)arg3 physicalSandbox:(id)arg4;
-+ (BOOL)supportsSecureCoding;
-+ (id)wrapperWithURL:(id)arg1 createSandboxIfNoneAttached:(BOOL)arg2;
-+ (id)wrapperWithURL:(id)arg1 readonly:(BOOL)arg2;
++ (bool)supportsSecureCoding;
++ (id)wrapperWithURL:(id)arg1 createSandboxIfNoneAttached:(bool)arg2;
++ (id)wrapperWithURL:(id)arg1 readonly:(bool)arg2;
 + (id)wrapperWithURL:(id)arg1;
 
-- (BOOL)createSandbox;
+- (bool)createSandbox;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)scope;
-- (void)setCreateSandbox:(BOOL)arg1;
+- (void)setCreateSandbox:(bool)arg1;
 - (void)setScope:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

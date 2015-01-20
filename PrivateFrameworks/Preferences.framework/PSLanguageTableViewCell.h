@@ -5,6 +5,6 @@
 @interface PSLanguageTableViewCell : PSTableCell {
 }
 
-+ (int)cellStyle;
++ (long long)cellStyle;
 
 @end

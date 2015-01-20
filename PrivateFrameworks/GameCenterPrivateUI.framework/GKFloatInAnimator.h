@@ -3,28 +3,28 @@
  */
 
 @interface GKFloatInAnimator : GKBubblePathAnimator {
-    float _additionalDelay;
-    float _delayIncrement;
-    int _focusBubbleType;
-    BOOL _useWelcomeSpringValues;
+    double _additionalDelay;
+    double _delayIncrement;
+    long long _focusBubbleType;
+    bool_useWelcomeSpringValues;
 }
 
-@property float additionalDelay;
-@property float delayIncrement;
-@property int focusBubbleType;
-@property BOOL useWelcomeSpringValues;
+@property double additionalDelay;
+@property double delayIncrement;
+@property long long focusBubbleType;
+@property bool useWelcomeSpringValues;
 
-- (float)additionalDelay;
+- (double)additionalDelay;
 - (void)animateTransition:(id)arg1;
-- (int)animatorType;
-- (float)delayIncrement;
+- (long long)animatorType;
+- (double)delayIncrement;
 - (id)floatBubblesSortedLeftToRightInContext:(id)arg1;
-- (int)focusBubbleType;
+- (long long)focusBubbleType;
 - (id)init;
-- (void)setAdditionalDelay:(float)arg1;
-- (void)setDelayIncrement:(float)arg1;
-- (void)setFocusBubbleType:(int)arg1;
-- (void)setUseWelcomeSpringValues:(BOOL)arg1;
-- (BOOL)useWelcomeSpringValues;
+- (void)setAdditionalDelay:(double)arg1;
+- (void)setDelayIncrement:(double)arg1;
+- (void)setFocusBubbleType:(long long)arg1;
+- (void)setUseWelcomeSpringValues:(bool)arg1;
+- (bool)useWelcomeSpringValues;
 
 @end

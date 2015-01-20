@@ -10,8 +10,8 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isTexturable;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isTexturable;
 @property(readonly) Class superclass;
 
 + (id)allocator;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (id)depthbufferWithAllocatorInfo:(const struct RenderbufferAllocatorInfo { struct FramebufferAttributes {} *x1; struct tvec2<int> {} *x2; id x3; }*)arg1;
 - (id)initWithStorage:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTexturable;
+- (bool)isEqual:(id)arg1;
+- (bool)isTexturable;
 
 @end

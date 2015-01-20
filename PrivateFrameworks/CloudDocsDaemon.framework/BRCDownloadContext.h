@@ -6,43 +6,43 @@
 
 @interface BRCDownloadContext : NSObject {
     BRCLocalContainer *_container;
-    BOOL _contentIsPackage;
     double _contentSize;
-    BOOL _contentsHasThumbnail;
     NSString *_debugName;
     NSNumber *_documentID;
     NSProgress *_downloadProgress;
     NSString *_etag;
     BRCItemID *_itemID;
     NSNumber *_liveFileID;
-    BOOL _liveItemIsPackage;
     struct NSObject { Class x1; } *_storage;
-    int _transferPriority;
-    BOOL _wantsContent;
+    long long _transferPriority;
+    bool_contentIsPackage;
+    bool_contentsHasThumbnail;
+    bool_liveItemIsPackage;
+    bool_wantsContent;
 }
 
 @property(readonly) BRCLocalContainer * container;
-@property(readonly) BOOL contentIsPackage;
+@property(readonly) bool contentIsPackage;
 @property(readonly) double contentSize;
-@property(readonly) BOOL contentsHasThumbnail;
+@property(readonly) bool contentsHasThumbnail;
 @property(readonly) NSString * debugName;
 @property(readonly) NSNumber * documentID;
 @property(readonly) NSProgress * downloadProgress;
 @property(readonly) NSString * etag;
 @property(readonly) BRCItemID * itemID;
 @property(readonly) NSNumber * liveFileID;
-@property(readonly) BOOL liveItemIsPackage;
+@property(readonly) bool liveItemIsPackage;
 @property(readonly) CKRecordID * recordID;
 @property(readonly) NSObject<GSAdditionStoring> * storage;
 @property(readonly) CKRecordID * structuralRecordID;
-@property(readonly) int transferPriority;
-@property(readonly) BOOL wantsContent;
+@property(readonly) long long transferPriority;
+@property(readonly) bool wantsContent;
 
 - (void).cxx_destruct;
 - (id)container;
-- (BOOL)contentIsPackage;
+- (bool)contentIsPackage;
 - (double)contentSize;
-- (BOOL)contentsHasThumbnail;
+- (bool)contentsHasThumbnail;
 - (id)debugName;
 - (id)description;
 - (id)documentID;
@@ -51,11 +51,11 @@
 - (id)initWithLocalItem:(id)arg1;
 - (id)itemID;
 - (id)liveFileID;
-- (BOOL)liveItemIsPackage;
+- (bool)liveItemIsPackage;
 - (id)recordID;
 - (struct NSObject { Class x1; }*)storage;
 - (id)structuralRecordID;
-- (int)transferPriority;
-- (BOOL)wantsContent;
+- (long long)transferPriority;
+- (bool)wantsContent;
 
 @end

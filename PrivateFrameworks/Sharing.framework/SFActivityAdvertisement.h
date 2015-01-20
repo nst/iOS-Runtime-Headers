@@ -20,7 +20,7 @@
 @property(retain,readonly) NSString * deviceName;
 @property(retain,readonly) NSDictionary * options;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)activityPayload;
 - (id)advertisementPayload;

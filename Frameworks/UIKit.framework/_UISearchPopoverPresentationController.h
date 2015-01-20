@@ -7,12 +7,12 @@
 @interface _UISearchPopoverPresentationController : UIPopoverPresentationController <_UISearchControllerPresenting> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     _UISearchPresentationAssistant *_assistant;
     } finalFrameForContainerView;
@@ -21,33 +21,33 @@
 @property(readonly) UIPresentationController<_UISearchControllerPresenting> * adaptivePresentationController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
-@property(readonly) unsigned int hash;
-@property(readonly) float resultsControllerContentOffset;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } finalFrameForContainerView;
+@property(readonly) unsigned long long hash;
+@property(readonly) double resultsControllerContentOffset;
 @property(retain,readonly) UIView * searchBarContainerView;
-@property(readonly) BOOL searchBarToBecomeTopAttached;
-@property(readonly) BOOL shouldAccountForStatusBar;
-@property(readonly) float statusBarAdjustment;
+@property(readonly) bool searchBarToBecomeTopAttached;
+@property(readonly) bool shouldAccountForStatusBar;
+@property(readonly) double statusBarAdjustment;
 @property(readonly) Class superclass;
 
 - (id)_popoverHostingWindow;
-- (id)_presentationControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
-- (id)_presentedViewControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
+- (id)_presentationControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
+- (id)_presentedViewControllerForSizeClassPair:(struct { long long x1; long long x2; })arg1;
 - (void)_transitionFromDidEnd;
 - (void)_transitionFromWillBegin;
 - (void)_transitionToDidEnd;
 - (void)_transitionToWillBegin;
 - (id)adaptivePresentationController;
-- (int)adaptivePresentationStyle;
+- (long long)adaptivePresentationStyle;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForContainerView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalFrameForContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)presentationTransitionWillBegin;
-- (float)resultsControllerContentOffset;
+- (double)resultsControllerContentOffset;
 - (id)searchBarContainerView;
-- (BOOL)searchBarToBecomeTopAttached;
-- (void)setContentVisible:(BOOL)arg1;
-- (BOOL)shouldAccountForStatusBar;
-- (float)statusBarAdjustment;
+- (bool)searchBarToBecomeTopAttached;
+- (void)setContentVisible:(bool)arg1;
+- (bool)shouldAccountForStatusBar;
+- (double)statusBarAdjustment;
 
 @end

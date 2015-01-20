@@ -6,8 +6,8 @@
 
 @interface __NSOperationQueueInternal : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     int __actualMaxNumOps;
     NSObject<OS_dispatch_queue> *__dispatch_queue;
     NSOperation *__firstOperation;
@@ -15,7 +15,7 @@
     NSOperation *__lastOperation;
     NSOperation *__lastPriOperation[5];
     unsigned char __mainQ;
-    int __maxNumOps;
+    long long __maxNumOps;
     BOOL __nameBuffer[160];
     int __numExecOps;
     unsigned char __overcommit;

@@ -9,14 +9,14 @@
     PUMomentsSettings *_momentsSettings;
     PUPhotoEditProtoSettings *_photoEditingSettings;
     PUPhotosGridSettings *_photosGridSettings;
-    unsigned int _settingsVersion;
+    unsigned long long _settingsVersion;
 }
 
 @property(retain) PUFeedSettings * feedSettings;
 @property(retain) PUMomentsSettings * momentsSettings;
 @property(retain) PUPhotoEditProtoSettings * photoEditingSettings;
 @property(retain) PUPhotosGridSettings * photosGridSettings;
-@property unsigned int settingsVersion;
+@property unsigned long long settingsVersion;
 
 + (void)_addPhoto;
 + (id)_currentViewControllerStack;
@@ -38,7 +38,7 @@
 - (void)setMomentsSettings:(id)arg1;
 - (void)setPhotoEditingSettings:(id)arg1;
 - (void)setPhotosGridSettings:(id)arg1;
-- (void)setSettingsVersion:(unsigned int)arg1;
-- (unsigned int)settingsVersion;
+- (void)setSettingsVersion:(unsigned long long)arg1;
+- (unsigned long long)settingsVersion;
 
 @end

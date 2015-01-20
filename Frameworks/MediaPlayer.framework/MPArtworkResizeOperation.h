@@ -6,15 +6,15 @@
 
 @interface MPArtworkResizeOperation : NSOperation {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSURL *_destinationURL;
     NSError *_error;
     UIImage *_image;
     NSObject<OS_dispatch_group> *_operationGroup;
     UIImage *_resizedImage;
     } _scaledFittingSize;
-    BOOL _usesExactFittingSizeAsDestinationSize;
+    bool_usesExactFittingSizeAsDestinationSize;
 }
 
 @property(readonly) NSURL * destinationURL;
@@ -22,24 +22,24 @@
 @property(retain) UIImage * image;
 @property(readonly) NSObject<OS_dispatch_group> * operationGroup;
 @property(readonly) UIImage * resizedImage;
-@property struct CGSize { float x1; float x2; } scaledFittingSize;
-@property BOOL usesExactFittingSizeAsDestinationSize;
+@property struct CGSize { double x1; double x2; } scaledFittingSize;
+@property bool usesExactFittingSizeAsDestinationSize;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_resizedScaledSizeForScaledImageSize:(struct CGSize { float x1; float x2; })arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })_resizedScaledSizeForScaledImageSize:(struct CGSize { double x1; double x2; })arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)destinationURL;
 - (id)error;
 - (id)image;
-- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 destinationURL:(id)arg3;
-- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 useExactFittingSizeAsDestinationSize:(BOOL)arg3 destinationURL:(id)arg4;
-- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2 destinationURL:(id)arg3;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2 useExactFittingSizeAsDestinationSize:(bool)arg3 destinationURL:(id)arg4;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)main;
 - (id)operationGroup;
 - (id)resizedImage;
-- (struct CGSize { float x1; float x2; })scaledFittingSize;
+- (struct CGSize { double x1; double x2; })scaledFittingSize;
 - (void)setImage:(id)arg1;
-- (void)setScaledFittingSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setUsesExactFittingSizeAsDestinationSize:(BOOL)arg1;
-- (BOOL)usesExactFittingSizeAsDestinationSize;
+- (void)setScaledFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setUsesExactFittingSizeAsDestinationSize:(bool)arg1;
+- (bool)usesExactFittingSizeAsDestinationSize;
 
 @end

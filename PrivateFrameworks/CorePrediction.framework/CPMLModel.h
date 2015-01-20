@@ -22,9 +22,9 @@
 - (id)getPropertyList;
 - (id)initWithModelPath:(id)arg1 withConfiguration:(id)arg2;
 - (id)initWithModelPath:(id)arg1 withPropertyListPath:(id)arg2;
-- (BOOL)reset;
+- (bool)reset;
 - (void)setCpModelEvaluate:(id)arg1;
-- (BOOL)updateModelWithCPDB:(id)arg1;
-- (BOOL)updateModelWithDB:(id)arg1;
+- (bool)updateModelWithCPDB:(id)arg1;
+- (bool)updateModelWithDB:(id)arg1;
 
 @end

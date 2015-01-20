@@ -5,7 +5,7 @@
 @interface SiriUIFontScalingUtilities : NSObject {
 }
 
-+ (float)labelLeadingForCurrentScale;
-+ (float)labelWidthForCurrentScale;
++ (double)labelLeadingForCurrentScale;
++ (double)labelWidthForCurrentScale;
 
 @end

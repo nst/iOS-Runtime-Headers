@@ -10,9 +10,9 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    BOOL alwaysDiscardsLateVideoFrames;
-    BOOL delegateRespondsToDidDropSBufCallback;
-    BOOL delegateRespondsToDidOutputSBufCallback;
+    boolalwaysDiscardsLateVideoFrames;
+    booldelegateRespondsToDidDropSBufCallback;
+    booldelegateRespondsToDidOutputSBufCallback;
     AVWeakReferencingDelegateStorage *delegateStorage;
     } deprecatedMinFrameDuration;
     NSDictionary *videoSettings;

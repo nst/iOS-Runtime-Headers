@@ -5,12 +5,12 @@
 @class NSArray, NSError, NSMutableArray, NSOperation, NSOperationQueue, NSString, NSURL, QLPreviewThumbnailGenerator, UIDocumentInteractionController, UIImage;
 
 @interface QLPreviewArchiveItem : NSObject <QLPreviewUIItem> {
-    int _UIItemIndex;
+    long long _UIItemIndex;
     UIDocumentInteractionController *_archiveController;
     NSMutableArray *_completionBlocks;
-    int _level;
+    long long _level;
     NSString *_path;
-    int _previewItemIndex;
+    long long _previewItemIndex;
     NSURL *_rootUnzippingURL;
     NSArray *_subItems;
     QLPreviewThumbnailGenerator *_thumbnailGenerator;
@@ -20,23 +20,23 @@
     NSError *_unarchivingError;
 }
 
-@property int UIItemIndex;
+@property long long UIItemIndex;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) UIImage * icon;
-@property(readonly) BOOL isFolder;
-@property int level;
+@property(readonly) bool isFolder;
+@property long long level;
 @property(readonly) NSString * path;
-@property int previewItemIndex;
+@property long long previewItemIndex;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSURL * previewItemURL;
 @property(retain) NSURL * rootUnzippingURL;
 @property(copy) NSArray * subItems;
 @property(readonly) Class superclass;
-@property(readonly) BOOL unarchived;
+@property(readonly) bool unarchived;
 
-- (int)UIItemIndex;
+- (long long)UIItemIndex;
 - (void)cancelIconUpdate;
 - (void)cleanup;
 - (void)dealloc;
@@ -44,22 +44,22 @@
 - (id)icon;
 - (id)initWithArchiveController:(id)arg1 path:(id)arg2;
 - (id)initWithPath:(id)arg1;
-- (BOOL)isFolder;
-- (BOOL)isPromisedItem;
-- (int)level;
+- (bool)isFolder;
+- (bool)isPromisedItem;
+- (long long)level;
 - (id)path;
-- (int)previewItemIndex;
+- (long long)previewItemIndex;
 - (id)previewItemURL;
 - (id)rootUnzippingURL;
-- (void)setLevel:(int)arg1;
-- (void)setPreviewItemIndex:(int)arg1;
+- (void)setLevel:(long long)arg1;
+- (void)setPreviewItemIndex:(long long)arg1;
 - (void)setRootUnzippingURL:(id)arg1;
 - (void)setSubItems:(id)arg1;
-- (void)setUIItemIndex:(int)arg1;
+- (void)setUIItemIndex:(long long)arg1;
 - (id)subItems;
 - (void)unarchiveWithCompletionBlock:(id)arg1;
-- (BOOL)unarchived;
+- (bool)unarchived;
 - (id)unarchivingError;
-- (void)updateIconWithSize:(struct CGSize { float x1; float x2; })arg1 completionBlock:(id)arg2;
+- (void)updateIconWithSize:(struct CGSize { double x1; double x2; })arg1 completionBlock:(id)arg2;
 
 @end

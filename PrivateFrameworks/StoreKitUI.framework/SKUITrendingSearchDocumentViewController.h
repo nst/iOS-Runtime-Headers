@@ -11,13 +11,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_reloadResultsView;
 - (void)_resultButtonAction:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_resultsViewContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_resultsViewContentInset;
 - (void)documentDidUpdate:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;

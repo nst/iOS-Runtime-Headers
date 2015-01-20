@@ -6,6 +6,6 @@
 }
 
 - (void)getProjectedBounds:(id)arg1;
-- (void)set2DProjectedRenderingMode:(BOOL)arg1;
+- (void)set2DProjectedRenderingMode:(bool)arg1;
 
 @end

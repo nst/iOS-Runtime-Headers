@@ -6,8 +6,8 @@
 }
 
 + (void)continueMusic;
-+ (void)pauseMusic:(BOOL)arg1;
-+ (void)setShouldRepeatMusic:(BOOL)arg1;
++ (void)pauseMusic:(bool)arg1;
++ (void)setShouldRepeatMusic:(bool)arg1;
 + (void)startMusicForAlbum:(struct NSObject { Class x1; }*)arg1;
 + (void)startMusicWithSettings:(id)arg1;
 + (void)stopMusic;

@@ -19,13 +19,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSError * downloadError;
-@property(readonly) unsigned int hash;
-@property BOOL isFault;
+@property(readonly) unsigned long long hash;
+@property bool isFault;
 @property(readonly) NSString * serverName;
 @property(readonly) Class superclass;
-@property BOOL wantsContent;
+@property bool wantsContent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,13 +35,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDesiredVersion:(id)arg1;
 - (id)initWithServerVersion:(id)arg1 serverName:(id)arg2;
-- (BOOL)isFault;
-- (BOOL)isStillValidForEtag:(id)arg1;
+- (bool)isFault;
+- (bool)isStillValidForEtag:(id)arg1;
 - (id)serverName;
 - (void)setDownloadError:(id)arg1;
-- (void)setIsFault:(BOOL)arg1;
-- (void)setWantsContent:(BOOL)arg1;
+- (void)setIsFault:(bool)arg1;
+- (void)setWantsContent:(bool)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (BOOL)wantsContent;
+- (bool)wantsContent;
 
 @end

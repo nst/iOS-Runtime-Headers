@@ -32,7 +32,7 @@
 - (id)_unwrapPackageAssets:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)operationShouldBeFlowControlled;
+- (bool)operationShouldBeFlowControlled;
 - (id)recordDecryptGroup;
 - (id)recordDecryptedBlock;
 - (id)recordsToDecrypt;
@@ -40,7 +40,7 @@
 - (void)setRecordDecryptedBlock:(id)arg1;
 - (void)setRecordsToDecrypt:(id)arg1;
 - (void)setWebSharingIdentityDataByRecordID:(id)arg1;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 - (id)webSharingIdentityDataByRecordID;
 
 @end

@@ -5,9 +5,9 @@
 @interface MPUNowPlayingVideoViewController : MPVideoViewController {
 }
 
-+ (int)_activityIndicatorViewStyle;
++ (long long)_activityIndicatorViewStyle;
 
 - (void)displayVideoViewOnScreen;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

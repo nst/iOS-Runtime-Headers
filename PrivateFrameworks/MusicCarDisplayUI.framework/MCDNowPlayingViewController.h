@@ -8,18 +8,18 @@
     UITapGestureRecognizer *_backPressRecognizer;
     <MCDNowPlayingViewControllerDataSource> *_dataSource;
     <MCDNowPlayingViewControllerDelegate> *_delegate;
-    int _heldAction;
-    BOOL _highTouchMode;
-    BOOL _isScrubbing;
+    long long _heldAction;
     UITapGestureRecognizer *_knobPressRecognizer;
     UIColor *_navbarColor;
-    BOOL _navbarHidesShadow;
     MCDNowPlayingView *_nowPlayingView;
     MCDPlayModeControlView *_playModeControlView;
     UIViewController *_playModeViewController;
     MCDTransportControlView *_transportControlView;
     UIViewController *_transportViewController;
     _MCDNowPlayingHostView *_viewForSelectingAFirstResponderForKnobSupport;
+    bool_highTouchMode;
+    bool_isScrubbing;
+    bool_navbarHidesShadow;
 }
 
 @property(readonly) UITapGestureRecognizer * backPressRecognizer;
@@ -40,13 +40,13 @@
 - (void)_playPauseButtonTouchUp:(id)arg1;
 - (void)_repeatButtonTouchUp:(id)arg1;
 - (void)_respondToHeldAction;
-- (void)_sendAction:(int)arg1 withState:(int)arg2;
+- (void)_sendAction:(long long)arg1 withState:(long long)arg2;
 - (void)_sendHeldAction;
 - (void)_shuffleButtonTouchUp:(id)arg1;
 - (void)_updatePlayModesState;
-- (void)_updateRepeatStateWithType:(unsigned int)arg1;
-- (void)_updateShuffleStateWithType:(unsigned int)arg1;
-- (void)_updateTransportControl:(id)arg1 withDefaultImage:(id)arg2 actionType:(int)arg3;
+- (void)_updateRepeatStateWithType:(unsigned long long)arg1;
+- (void)_updateShuffleStateWithType:(unsigned long long)arg1;
+- (void)_updateTransportControl:(id)arg1 withDefaultImage:(id)arg2 actionType:(long long)arg3;
 - (void)attemptFirstResponderThing;
 - (id)backPressRecognizer;
 - (id)dataSource;
@@ -61,7 +61,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)transportControlView;
 - (void)updatePlayControls;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

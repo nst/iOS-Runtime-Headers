@@ -8,7 +8,7 @@
     UIView *_bottomSeparator;
     UILabel *_headerLabel;
     UITextView *_locationSharingTextView;
-    float _margin;
+    double _margin;
     UILabel *_preceedingSectionFooterLabel;
     UIView *_topSeparator;
 }
@@ -16,7 +16,7 @@
 @property(retain) UIView * bottomSeparator;
 @property(retain) UILabel * headerLabel;
 @property(retain) UITextView * locationSharingTextView;
-@property float margin;
+@property double margin;
 @property(retain) UILabel * preceedingSectionFooterLabel;
 @property(retain) UIView * topSeparator;
 
@@ -28,12 +28,12 @@
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (id)locationSharingTextView;
-- (float)margin;
+- (double)margin;
 - (id)preceedingSectionFooterLabel;
 - (void)setBottomSeparator:(id)arg1;
 - (void)setHeaderLabel:(id)arg1;
 - (void)setLocationSharingTextView:(id)arg1;
-- (void)setMargin:(float)arg1;
+- (void)setMargin:(double)arg1;
 - (void)setPreceedingSectionFooterLabel:(id)arg1;
 - (void)setTopSeparator:(id)arg1;
 - (id)topSeparator;

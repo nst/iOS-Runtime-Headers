@@ -6,7 +6,7 @@
 
 @interface SGPostalAddress : SGLabeledObject {
     NSString *_cachedAddress;
-    long _cachedAddressDispatchOnceToken;
+    long long _cachedAddressDispatchOnceToken;
     NSString *_rawAddress;
 }
 
@@ -15,17 +15,17 @@
 
 + (id)address:(id)arg1 label:(id)arg2;
 + (id)postalAddress:(id)arg1 label:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)address;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAddress:(id)arg1 label:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPostalAddress:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPostalAddress:(id)arg1;
 - (id)rawAddress;
 
 @end

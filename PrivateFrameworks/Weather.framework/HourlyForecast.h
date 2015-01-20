@@ -5,32 +5,32 @@
 @class NSString;
 
 @interface HourlyForecast : NSObject {
-    int _conditionCode;
+    long long _conditionCode;
     NSString *_detail;
-    unsigned int _eventType;
-    int _hourIndex;
+    unsigned long long _eventType;
+    long long _hourIndex;
     float _percentPrecipitation;
     NSString *_time;
 }
 
-@property int conditionCode;
+@property long long conditionCode;
 @property(copy) NSString * detail;
-@property unsigned int eventType;
-@property int hourIndex;
+@property unsigned long long eventType;
+@property long long hourIndex;
 @property float percentPrecipitation;
 @property(copy) NSString * time;
 
-- (int)conditionCode;
+- (long long)conditionCode;
 - (void)dealloc;
 - (id)description;
 - (id)detail;
-- (unsigned int)eventType;
-- (int)hourIndex;
+- (unsigned long long)eventType;
+- (long long)hourIndex;
 - (float)percentPrecipitation;
-- (void)setConditionCode:(int)arg1;
+- (void)setConditionCode:(long long)arg1;
 - (void)setDetail:(id)arg1;
-- (void)setEventType:(unsigned int)arg1;
-- (void)setHourIndex:(int)arg1;
+- (void)setEventType:(unsigned long long)arg1;
+- (void)setHourIndex:(long long)arg1;
 - (void)setPercentPrecipitation:(float)arg1;
 - (void)setTime:(id)arg1;
 - (id)time;

@@ -9,17 +9,17 @@
 }
 
 @property(copy,readonly) NSDictionary * allHeaderFields;
-@property(readonly) int statusCode;
+@property(readonly) long long statusCode;
 
-+ (BOOL)isErrorStatusCode:(int)arg1;
-+ (id)localizedStringForStatusCode:(int)arg1;
++ (bool)isErrorStatusCode:(long long)arg1;
++ (id)localizedStringForStatusCode:(long long)arg1;
 + (id)sl_twitterResponseObjectErrorCode:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_clientCertificateChain;
 - (id)_clientCertificateState;
 - (id)_dateFromExpires;
-- (BOOL)_getCacheControlMaxAge:(double*)arg1;
+- (bool)_getCacheControlMaxAge:(double*)arg1;
 - (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
 - (double)_maxAge;
@@ -34,11 +34,11 @@
 - (double)expirationInterval;
 - (id)getSAPSignature;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
-- (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
+- (id)initWithURL:(id)arg1 statusCode:(long long)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
+- (id)initWithURL:(id)arg1 statusCode:(long long)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
 - (long long)maxExpectedContentLength;
 - (void)radio_mescalVerifyData:(id)arg1 withCompletionHandler:(id)arg2;
 - (int)sl_twitterResponseType:(id)arg1;
-- (int)statusCode;
+- (long long)statusCode;
 
 @end

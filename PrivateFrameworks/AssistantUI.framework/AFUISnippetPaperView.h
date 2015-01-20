@@ -12,40 +12,40 @@
         float a; 
     <AFUISnippetPaperViewDelegate> *_delegate;
     } _gradientValues[5];
-    BOOL _hasBeveledEdge;
     UIImage *_paperImage;
     UIImageView *_paperImageView;
-    BOOL _usesGradient;
-    BOOL _usingProvidedPaper;
+    bool_hasBeveledEdge;
+    bool_usesGradient;
+    bool_usingProvidedPaper;
 }
 
-@property BOOL hasBeveledEdge;
+@property bool hasBeveledEdge;
 @property(retain) UIColor * paperColor;
 @property(retain) UIImage * paperImage;
-@property float paperImageAlpha;
-@property BOOL usesGradient;
+@property double paperImageAlpha;
+@property bool usesGradient;
 
 - (void).cxx_destruct;
-- (struct { float x1; float x2; float x3; float x4; float x5; })_uiGradientValueForValue:(struct { float x1; float x2; float x3; float x4; })arg1;
+- (struct { double x1; double x2; double x3; double x4; double x5; })_uiGradientValueForValue:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (id)color;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)hasBeveledEdge;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)hasBeveledEdge;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)paperColor;
 - (id)paperImage;
-- (float)paperImageAlpha;
+- (double)paperImageAlpha;
 - (void)setColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setGradientEndColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (void)setGradientStartColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (void)setGradientEndColorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+- (void)setGradientStartColorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 - (void)setGradientValues:(const struct { float x1; float x2; float x3; float x4; }*)arg1;
-- (void)setHasBeveledEdge:(BOOL)arg1;
+- (void)setHasBeveledEdge:(bool)arg1;
 - (void)setNeedsDisplay;
 - (void)setPaperColor:(id)arg1;
 - (void)setPaperImage:(id)arg1;
-- (void)setPaperImageAlpha:(float)arg1;
-- (void)setUsesGradient:(BOOL)arg1;
-- (BOOL)usesGradient;
+- (void)setPaperImageAlpha:(double)arg1;
+- (void)setUsesGradient:(bool)arg1;
+- (bool)usesGradient;
 
 @end

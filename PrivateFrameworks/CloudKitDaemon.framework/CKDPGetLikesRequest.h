@@ -12,8 +12,8 @@
     unsigned int _limit;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasLimit;
+@property(readonly) bool hasIdentifier;
+@property bool hasLimit;
 @property(retain) CKDPLikedId * identifier;
 @property unsigned int limit;
 
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasLimit;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasLimit;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)limit;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setHasLimit:(BOOL)arg1;
+- (void)setHasLimit:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLimit:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

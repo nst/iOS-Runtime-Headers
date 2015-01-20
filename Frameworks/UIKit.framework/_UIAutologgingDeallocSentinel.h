@@ -5,17 +5,17 @@
 @class NSString;
 
 @interface _UIAutologgingDeallocSentinel : NSObject {
-    BOOL _called;
     NSString *_message;
+    bool_called;
 }
 
-@property BOOL called;
+@property bool called;
 @property(retain) NSString * message;
 
-- (BOOL)called;
+- (bool)called;
 - (void)dealloc;
 - (id)message;
-- (void)setCalled:(BOOL)arg1;
+- (void)setCalled:(bool)arg1;
 - (void)setMessage:(id)arg1;
 
 @end

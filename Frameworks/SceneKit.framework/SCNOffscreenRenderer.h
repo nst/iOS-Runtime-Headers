@@ -5,26 +5,26 @@
 @interface SCNOffscreenRenderer : SCNRenderer {
 }
 
-@property unsigned int antialiasingMode;
+@property unsigned long long antialiasingMode;
 @property(readonly) unsigned int textureID;
 
-+ (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
 - (void)_bindFramebuffer;
 - (void)_createFramebufferIfNeeded;
 - (void)_deleteFramebuffer;
-- (id)_initWithOptions:(id)arg1 isPrivateRenderer:(BOOL)arg2 privateRendererOwner:(id)arg3 clearsOnDraw:(BOOL)arg4 context:(void*)arg5 size:(struct CGSize { float x1; float x2; })arg6;
+- (id)_initWithOptions:(id)arg1 isPrivateRenderer:(bool)arg2 privateRendererOwner:(id)arg3 clearsOnDraw:(bool)arg4 context:(void*)arg5 size:(struct CGSize { double x1; double x2; })arg6;
 - (void)_resolveAndDiscard;
-- (unsigned int)_sampleCount;
+- (unsigned long long)_sampleCount;
 - (void)_unbindFramebuffer;
-- (unsigned int)antialiasingMode;
-- (struct CGImage { }*)copySnapshotWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned long long)antialiasingMode;
+- (struct CGImage { }*)copySnapshotWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGImage { }*)createCGImageSnapshot:(double)arg1;
 - (void)dealloc;
 - (void)render;
-- (void)setAntialiasingMode:(unsigned int)arg1;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)snapshot;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)snapshotAtTime:(double)arg1;
+- (void)setAntialiasingMode:(unsigned long long)arg1;
+- (struct UIImage { Class x1; void *x2; double x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)snapshot;
+- (struct UIImage { Class x1; void *x2; double x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)snapshotAtTime:(double)arg1;
 - (unsigned int)textureID;
 
 @end

@@ -19,7 +19,7 @@
 @property(readonly) NSString * iForgotUIURL;
 @property(readonly) NSString * iForgotURL;
 @property(readonly) NSString * loginDelegatesURL;
-@property(readonly) BOOL setupAssistantServerEnabled;
+@property(readonly) bool setupAssistantServerEnabled;
 @property(readonly) NSString * signingSessionCertURL;
 @property(readonly) NSString * signingSessionURL;
 @property(readonly) NSString * updateAppleIDURL;
@@ -40,7 +40,7 @@
 - (id)iForgotURL;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)loginDelegatesURL;
-- (BOOL)setupAssistantServerEnabled;
+- (bool)setupAssistantServerEnabled;
 - (id)signingSessionCertURL;
 - (id)signingSessionURL;
 - (id)updateAppleIDURL;

@@ -7,8 +7,8 @@
 
 + (Class)sceneRenderSetupClass;
 
-- (BOOL)antialiasing;
-- (unsigned int)tileSamples;
-- (unsigned int)tileSize;
+- (bool)antialiasing;
+- (unsigned long long)tileSamples;
+- (unsigned long long)tileSize;
 
 @end

@@ -9,7 +9,7 @@
 @interface NSURLDirectoryEnumerator : NSDirectoryEnumerator {
     struct __CFURLEnumerator { } *_enumerator;
     id _errorHandler;
-    BOOL shouldContinue;
+    boolshouldContinue;
 }
 
 @property(copy) id errorHandler;
@@ -19,8 +19,8 @@
 - (id)errorHandler;
 - (id)fileAttributes;
 - (void)finalize;
-- (id)initWithURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned int)arg3 errorHandler:(id)arg4;
-- (unsigned int)level;
+- (id)initWithURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned long long)arg3 errorHandler:(id)arg4;
+- (unsigned long long)level;
 - (id)nextObject;
 - (void)setErrorHandler:(id)arg1;
 - (void)skipDescendants;

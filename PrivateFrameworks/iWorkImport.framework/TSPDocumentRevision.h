@@ -19,12 +19,12 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithRevisionString:(id)arg1;
 - (id)initWithSequence:(unsigned long long)arg1 identifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)nextRevisionWithIdentifier:(id)arg1;
 - (id)revisionString;
 - (unsigned long long)sequence;

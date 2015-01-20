@@ -7,33 +7,33 @@
 @interface CKBalloonChatItem : CKChatItem {
 }
 
-@property(readonly) unsigned int balloonCorners;
+@property(readonly) unsigned long long balloonCorners;
 @property(readonly) BOOL balloonOrientation;
 @property(readonly) Class balloonViewClass;
-@property(readonly) BOOL failed;
-@property(getter=isFromMe,readonly) BOOL fromMe;
+@property(readonly) bool failed;
+@property(getter=isFromMe,readonly) bool fromMe;
 @property(retain,readonly) IMHandle * sender;
 @property(retain,readonly) NSDate * time;
 
-- (unsigned int)balloonCorners;
+- (unsigned long long)balloonCorners;
 - (BOOL)balloonOrientation;
 - (Class)balloonViewClass;
 - (Class)cellClass;
 - (id)cellIdentifier;
 - (void)configureBalloonView:(id)arg1;
 - (id)contactImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)description;
-- (BOOL)displayDuringSend;
-- (BOOL)failed;
-- (BOOL)isEditable;
-- (BOOL)isFromMe;
-- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (bool)displayDuringSend;
+- (bool)failed;
+- (bool)isEditable;
+- (bool)isFromMe;
+- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (id)loadTranscriptDrawerText;
 - (id)sender;
 - (id)time;
 - (BOOL)transcriptOrientation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })transcriptTextAlignmentInsets;
-- (BOOL)wantsDrawerLayout;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })transcriptTextAlignmentInsets;
+- (bool)wantsDrawerLayout;
 
 @end

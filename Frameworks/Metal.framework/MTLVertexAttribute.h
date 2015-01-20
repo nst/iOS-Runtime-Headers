@@ -5,20 +5,20 @@
 @class NSString;
 
 @interface MTLVertexAttribute : NSObject {
-    BOOL _active;
-    unsigned int _attributeIndex;
+    unsigned long long _attributeIndex;
     NSString *_name;
+    bool_active;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) unsigned int attributeIndex;
+@property(getter=isActive,readonly) bool active;
+@property(readonly) unsigned long long attributeIndex;
 @property(readonly) NSString * name;
 
-- (unsigned int)attributeIndex;
+- (unsigned long long)attributeIndex;
 - (void)dealloc;
 - (id)description;
-- (id)initWithName:(id)arg1 attributeIndex:(unsigned int)arg2 isActive:(BOOL)arg3;
-- (BOOL)isActive;
+- (id)initWithName:(id)arg1 attributeIndex:(unsigned long long)arg2 isActive:(bool)arg3;
+- (bool)isActive;
 - (id)name;
 
 @end

@@ -6,24 +6,24 @@
 
 @interface GKScoreSharingInfo : NSObject <NSCoding, NSSecureCoding> {
     UIImage *_badgeImage;
-    BOOL _complete;
     GKGame *_game;
     UIImage *_iconImage;
     GKLeaderboard *_leaderboardCategory;
     GKPlayer *_player;
+    bool_complete;
 }
 
 @property(retain) UIImage * badgeImage;
-@property BOOL complete;
+@property bool complete;
 @property(retain) GKGame * game;
 @property(retain) UIImage * iconImage;
 @property(retain) GKLeaderboard * leaderboardCategory;
 @property(retain) GKPlayer * player;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)badgeImage;
-- (BOOL)complete;
+- (bool)complete;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)game;
@@ -35,7 +35,7 @@
 - (id)operationThatBlocksUntilLoaded;
 - (id)player;
 - (void)setBadgeImage:(id)arg1;
-- (void)setComplete:(BOOL)arg1;
+- (void)setComplete:(bool)arg1;
 - (void)setGame:(id)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setLeaderboardCategory:(id)arg1;

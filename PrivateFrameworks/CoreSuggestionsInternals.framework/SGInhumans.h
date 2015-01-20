@@ -5,11 +5,11 @@
 @interface SGInhumans : NSObject {
 }
 
-+ (BOOL)areHumanHeaders:(id)arg1;
++ (bool)areHumanHeaders:(id)arg1;
 + (void)initialize;
-+ (BOOL)isInhuman:(id)arg1;
-+ (BOOL)isInhumanBody:(id)arg1;
-+ (BOOL)isInhumanEmailAddress:(id)arg1;
-+ (BOOL)isInhumanName:(id)arg1;
++ (bool)isInhuman:(id)arg1;
++ (bool)isInhumanBody:(id)arg1;
++ (bool)isInhumanEmailAddress:(id)arg1;
++ (bool)isInhumanName:(id)arg1;
 
 @end

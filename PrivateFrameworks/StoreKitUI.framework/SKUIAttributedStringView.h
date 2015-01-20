@@ -5,44 +5,44 @@
 @class NSArray, NSMutableArray, SKUIAttributedStringLayout, UIColor;
 
 @interface SKUIAttributedStringView : UIView {
-    float _calculatedTopInset;
-    int _firstLineTopInset;
+    double _calculatedTopInset;
+    long long _firstLineTopInset;
     SKUIAttributedStringLayout *_layout;
     NSMutableArray *_requiredBadges;
-    int _stringTreatment;
+    long long _stringTreatment;
     UIColor *_textColor;
     UIColor *_treatmentColor;
 }
 
-@property(readonly) float baselineOffset;
-@property(readonly) float firstBaselineOffset;
-@property int firstLineTopInset;
+@property(readonly) double baselineOffset;
+@property(readonly) double firstBaselineOffset;
+@property long long firstLineTopInset;
 @property(retain) SKUIAttributedStringLayout * layout;
 @property(copy) NSArray * requiredBadges;
-@property int stringTreatment;
+@property long long stringTreatment;
 @property(retain) UIColor * textColor;
 @property(retain) UIColor * treatmentColor;
 
-+ (struct CGSize { float x1; float x2; })sizeWithLayout:(id)arg1 treatment:(int)arg2;
++ (struct CGSize { double x1; double x2; })sizeWithLayout:(id)arg1 treatment:(long long)arg2;
 
 - (void).cxx_destruct;
 - (void)_reloadTopInset;
-- (float)baselineOffset;
+- (double)baselineOffset;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)firstBaselineOffset;
-- (int)firstLineTopInset;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)firstBaselineOffset;
+- (long long)firstLineTopInset;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layout;
 - (id)requiredBadges;
-- (void)setFirstLineTopInset:(int)arg1;
+- (void)setFirstLineTopInset:(long long)arg1;
 - (void)setLayout:(id)arg1;
 - (void)setRequiredBadges:(id)arg1;
-- (void)setStringTreatment:(int)arg1;
+- (void)setStringTreatment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTreatmentColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)stringTreatment;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)stringTreatment;
 - (id)textColor;
 - (id)treatmentColor;
 

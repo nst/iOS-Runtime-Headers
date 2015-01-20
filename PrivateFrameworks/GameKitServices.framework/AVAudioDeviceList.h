@@ -13,7 +13,7 @@
 + (id)currentInputDevice;
 + (id)defaultInputDevice;
 + (id)defaultOutputDevice;
-+ (BOOL)setInputDevice:(id)arg1;
++ (bool)setInputDevice:(id)arg1;
 
 - (id)changeListener;
 - (void)dealloc;

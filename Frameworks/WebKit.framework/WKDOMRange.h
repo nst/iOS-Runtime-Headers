@@ -11,10 +11,10 @@
 }
 
 @property(retain,readonly) WKDOMNode * endContainer;
-@property(readonly) int endOffset;
-@property(readonly) BOOL isCollapsed;
+@property(readonly) long long endOffset;
+@property(readonly) bool isCollapsed;
 @property(retain,readonly) WKDOMNode * startContainer;
-@property(readonly) int startOffset;
+@property(readonly) long long startOffset;
 @property(copy,readonly) NSString * text;
 @property(readonly) NSArray * textRects;
 
@@ -22,18 +22,18 @@
 - (void).cxx_destruct;
 - (struct OpaqueWKBundleRangeHandle { }*)_copyBundleRangeHandleRef;
 - (id)_initWithImpl:(struct Range { unsigned int x1; struct Ref<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_3_1_1; int x_3_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_4_1_1; int x_4_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
-- (void)collapse:(BOOL)arg1;
+- (void)collapse:(bool)arg1;
 - (void)dealloc;
 - (id)endContainer;
-- (int)endOffset;
+- (long long)endOffset;
 - (id)initWithDocument:(id)arg1;
-- (BOOL)isCollapsed;
+- (bool)isCollapsed;
 - (void)selectNode:(id)arg1;
 - (void)selectNodeContents:(id)arg1;
 - (void)setEnd:(id)arg1 offset:(int)arg2;
 - (void)setStart:(id)arg1 offset:(int)arg2;
 - (id)startContainer;
-- (int)startOffset;
+- (long long)startOffset;
 - (id)text;
 - (id)textRects;
 

@@ -6,22 +6,22 @@
 
 @interface ABContactHeaderView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     CNContact *_contact;
     } _contentMargins;
     <ABPresenterDelegate> *_delegate;
     NSMutableArray *_headerConstraints;
     <ABContactHeaderViewDelegate> *_headerDelegate;
     NSDictionary *_nameTextAttributes;
-    BOOL _needsReload;
     ABContactPhotoView *_photoView;
+    bool_needsReload;
 }
 
 @property(readonly) CNContact * contact;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentMargins;
 @property <ABPresenterDelegate> * delegate;
 @property(retain) NSMutableArray * headerConstraints;
 @property <ABContactHeaderViewDelegate> * headerDelegate;
@@ -29,24 +29,24 @@
 @property(readonly) ABContactPhotoView * photoView;
 
 - (id)contact;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargins;
 - (void)dealloc;
 - (id)delegate;
 - (id)headerConstraints;
 - (id)headerDelegate;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)nameTextAttributes;
 - (id)photoView;
 - (void)reloadDataIfNeeded;
-- (void)reloadDataPreservingChanges:(BOOL)arg1;
+- (void)reloadDataPreservingChanges:(bool)arg1;
 - (void)saveContactPhoto;
-- (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderConstraints:(id)arg1;
 - (void)setHeaderDelegate:(id)arg1;
 - (void)setNameTextAttributes:(id)arg1;
 - (void)setNeedsReload;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 - (void)updateFontSizes;
 - (void)updateWithNewContact:(id)arg1;

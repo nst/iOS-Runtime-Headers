@@ -12,7 +12,7 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * subtitle;
 @property(readonly) Class superclass;
 @property(copy) NSString * title;

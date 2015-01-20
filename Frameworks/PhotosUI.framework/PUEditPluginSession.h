@@ -6,39 +6,39 @@
 
 @interface PUEditPluginSession : NSObject <PUEditPluginHostViewControllerDataSource, PUEditPluginHostViewControllerDelegate, UINavigationControllerDelegate, UIActivityGroupViewControllerDelegate> {
     UIViewController *__hostViewController;
-    int _adjustmentType;
+    long long _adjustmentType;
     PHAsset *_asset;
     PUEditPlugin *_currentPlugin;
     <PUEditPluginSessionDataSource> *_dataSource;
     <PUEditPluginSessionDelegate> *_delegate;
-    BOOL _isAvailable;
     PUEditPluginManager *_pluginManager;
     UINavigationController *_pluginNavigationController;
+    bool_isAvailable;
 }
 
 @property(setter=_setHostViewController:) UIViewController * _hostViewController;
-@property int adjustmentType;
+@property long long adjustmentType;
 @property(retain) PHAsset * asset;
 @property <PUEditPluginSessionDataSource> * dataSource;
 @property(copy,readonly) NSString * debugDescription;
 @property <PUEditPluginSessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isAvailable;
-@property(readonly) int mediaType;
+@property(readonly) unsigned long long hash;
+@property bool isAvailable;
+@property(readonly) long long mediaType;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginSessionWithAsset:(id)arg1 fromViewController:(id)arg2 sourceElement:(id)arg3;
 - (id)_hostViewController;
 - (void)_pluginManagerPluginsDidChange:(id)arg1;
-- (void)_setAdjustmentType:(int)arg1;
+- (void)_setAdjustmentType:(long long)arg1;
 - (void)_setAsset:(id)arg1;
 - (void)_setHostViewController:(id)arg1;
-- (void)_setIsAvailable:(BOOL)arg1;
+- (void)_setIsAvailable:(bool)arg1;
 - (void)_updateAvailability;
 - (void)activityGroupViewController:(id)arg1 didSelectActivity:(id)arg2;
-- (int)adjustmentType;
+- (long long)adjustmentType;
 - (id)asset;
 - (void)beginSessionWithAsset:(id)arg1 fromViewController:(id)arg2 sourceElement:(id)arg3;
 - (id)dataSource;
@@ -46,13 +46,13 @@
 - (id)delegate;
 - (void)dismissSession;
 - (void)editPluginHostViewController:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)editPluginHostViewController:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)editPluginHostViewController:(id)arg1 didFinishWithSuccess:(bool)arg2;
 - (void)editPluginHostViewController:(id)arg1 loadItemProviderWithHandler:(id)arg2;
 - (id)init;
-- (BOOL)isAvailable;
+- (bool)isAvailable;
 - (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id)arg2;
-- (int)mediaType;
-- (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
+- (long long)mediaType;
+- (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

@@ -9,37 +9,37 @@
 @class NSArray, NSDictionary, NSMutableDictionary, NSSet;
 
 @interface CKDGetRecordsURLRequest : CKDURLRequest {
-    unsigned int _URLOptions;
+    unsigned long long _URLOptions;
     NSSet *_assetFieldNamesToPublishURLs;
     NSSet *_desiredKeys;
-    unsigned int _recordCount;
+    unsigned long long _recordCount;
     id _recordFetchedBlock;
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDs;
     NSDictionary *_recordIDsToETags;
     NSDictionary *_recordIDsToVersionETags;
-    unsigned int _requestedTTL;
+    unsigned long long _requestedTTL;
 }
 
-@property unsigned int URLOptions;
+@property unsigned long long URLOptions;
 @property(retain) NSSet * assetFieldNamesToPublishURLs;
 @property(retain) NSSet * desiredKeys;
-@property unsigned int recordCount;
+@property unsigned long long recordCount;
 @property(copy) id recordFetchedBlock;
 @property(retain) NSMutableDictionary * recordIDByRequestID;
 @property(retain) NSArray * recordIDs;
 @property(retain) NSDictionary * recordIDsToETags;
 @property(retain) NSDictionary * recordIDsToVersionETags;
-@property unsigned int requestedTTL;
+@property unsigned long long requestedTTL;
 
 - (void).cxx_destruct;
-- (unsigned int)URLOptions;
-- (BOOL)allowsAnonymousAccount;
+- (unsigned long long)URLOptions;
+- (bool)allowsAnonymousAccount;
 - (id)assetFieldNamesToPublishURLs;
 - (id)desiredKeys;
 - (id)initWithRecordIDs:(id)arg1 recordIDsToEtags:(id)arg2 recordIDsToVersionETags:(id)arg3 desiredKeys:(id)arg4;
 - (int)operationType;
-- (unsigned int)recordCount;
+- (unsigned long long)recordCount;
 - (id)recordFetchedBlock;
 - (id)recordIDByRequestID;
 - (id)recordIDs;
@@ -49,17 +49,17 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (unsigned int)requestedTTL;
+- (unsigned long long)requestedTTL;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setRecordCount:(unsigned int)arg1;
+- (void)setRecordCount:(unsigned long long)arg1;
 - (void)setRecordFetchedBlock:(id)arg1;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordIDsToETags:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
-- (void)setRequestedTTL:(unsigned int)arg1;
-- (void)setURLOptions:(unsigned int)arg1;
+- (void)setRequestedTTL:(unsigned long long)arg1;
+- (void)setURLOptions:(unsigned long long)arg1;
 - (id)zoneIDsToLock;
 
 @end

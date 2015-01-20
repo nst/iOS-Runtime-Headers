@@ -6,14 +6,14 @@
 
 @interface SFCompanionXPCManager : NSObject {
     NSXPCConnection *_connection;
-    BOOL _interrupted;
-    BOOL _invalid;
     NSMutableArray *_observers;
+    bool_interrupted;
+    bool_invalid;
 }
 
 @property(retain) NSXPCConnection * connection;
-@property BOOL interrupted;
-@property(getter=isInvalid) BOOL invalid;
+@property bool interrupted;
+@property(getter=isInvalid) bool invalid;
 @property(retain) NSMutableArray * observers;
 
 + (id)advertiserClientInterface;
@@ -40,8 +40,8 @@
 - (void)continuityScannerProxyForClient:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)interrupted;
-- (BOOL)isInvalid;
+- (bool)interrupted;
+- (bool)isInvalid;
 - (void)notifyObservers;
 - (void)notifyOfInvalidation;
 - (void)notifyOfResume;
@@ -50,8 +50,8 @@
 - (void)remoteHotspotSessionForClient:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)serviceManagerProxyForIdentifier:(id)arg1 client:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)setConnection:(id)arg1;
-- (void)setInterrupted:(BOOL)arg1;
-- (void)setInvalid:(BOOL)arg1;
+- (void)setInterrupted:(bool)arg1;
+- (void)setInvalid:(bool)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setupConnection;
 - (void)streamsForMessage:(id)arg1 withCompletionHandler:(id)arg2;

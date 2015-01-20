@@ -3,15 +3,15 @@
  */
 
 @interface TSCH3DTileImageSceneRenderPipelineImageGenerator : NSObject {
-    BOOL mFlipped;
+    boolmFlipped;
 }
 
-@property BOOL flipped;
+@property bool flipped;
 
 + (id)imageGenerator;
 
-- (BOOL)flipped;
+- (bool)flipped;
 - (id)init;
-- (void)setFlipped:(BOOL)arg1;
+- (void)setFlipped:(bool)arg1;
 
 @end

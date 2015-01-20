@@ -8,18 +8,18 @@
 }
 
 @property(copy) NSString * durationText;
-@property float maximumDurationWidth;
+@property double maximumDurationWidth;
 @property(copy) NSString * trackNumberText;
 
 + (Class)contentViewClass;
-+ (struct CGSize { float x1; float x2; })sizeForDuration:(double)arg1;
++ (struct CGSize { double x1; double x2; })sizeForDuration:(double)arg1;
 
 - (id)_collectionTrackContentView;
 - (id)durationText;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (float)maximumDurationWidth;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (double)maximumDurationWidth;
 - (void)setDurationText:(id)arg1;
-- (void)setMaximumDurationWidth:(float)arg1;
+- (void)setMaximumDurationWidth:(double)arg1;
 - (void)setTrackNumberText:(id)arg1;
 - (id)trackNumberText;
 

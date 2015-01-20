@@ -10,7 +10,7 @@
 
 @interface EKUICustomRecurrenceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, EKRecurrenceChooserControllerDelegate> {
     int _cachedFrequency;
-    int _cachedInterval;
+    long long _cachedInterval;
     EKRecurrenceRule *_cachedRecurrenceRule;
     id _completionBlock;
     EKRecurrenceChooserController *_currentChooser;
@@ -19,10 +19,7 @@
     EKUICustomRecurrenceIntervalViewController *_intervalPickerViewController;
     UITableViewCell *_intervalSummaryCell;
     EKRecurrenceMonthlyChooserController *_monthlyChooser;
-    BOOL _prohibitsYearlyRecurrenceInterval;
     NSString *_recurrenceSummaryString;
-    BOOL _showingFrequencyPicker;
-    BOOL _showingIntervalPicker;
     NSDate *_startDate;
     UITableView *_tableView;
     NSTimeZone *_timeZone;
@@ -30,6 +27,9 @@
     UISwitch *_yearOrdinalSwitch;
     EKRecurrenceMonthChooserController *_yearlyChooser;
     EKRecurrenceOrdinalChooserController *_yearlyOrdinalChooser;
+    bool_prohibitsYearlyRecurrenceInterval;
+    bool_showingFrequencyPicker;
+    bool_showingIntervalPicker;
 }
 
 @property(copy) id completionBlock;
@@ -37,12 +37,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) UIPickerView * frequencyPickerView;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) EKUICustomRecurrenceIntervalViewController * intervalPickerViewController;
 @property(retain) EKRecurrenceMonthlyChooserController * monthlyChooser;
-@property BOOL prohibitsMultipleDaysInMonthlyRecurrence;
-@property BOOL prohibitsMultipleMonthsInYearlyRecurrence;
-@property BOOL prohibitsYearlyRecurrenceInterval;
+@property bool prohibitsMultipleDaysInMonthlyRecurrence;
+@property bool prohibitsMultipleMonthsInYearlyRecurrence;
+@property bool prohibitsYearlyRecurrenceInterval;
 @property(copy) NSString * recurrenceSummaryString;
 @property(retain) NSDate * startDate;
 @property(readonly) Class superclass;
@@ -53,22 +53,22 @@
 @property(retain) EKRecurrenceMonthChooserController * yearlyChooser;
 @property(retain) EKRecurrenceOrdinalChooserController * yearlyOrdinalChooser;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
-+ (BOOL)isRecurrenceRuleOrdinal:(id)arg1;
++ (bool)_shouldForwardViewWillTransitionToSize;
++ (bool)isRecurrenceRuleOrdinal:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_chooserForFrequency:(int)arg1;
 - (void)_collapseAllPickers;
 - (void)_createChoosersAndControls;
 - (void)_frequencyPickerViewUpdated;
-- (int)_numberOfRowsForSection:(int)arg1;
+- (long long)_numberOfRowsForSection:(long long)arg1;
 - (void)_refreshCacheAndPickers;
-- (void)_setShowingFrequencyPicker:(BOOL)arg1;
-- (void)_setShowingIntervalPicker:(BOOL)arg1;
-- (id)_stringForFrequency:(int)arg1 interval:(int)arg2;
+- (void)_setShowingFrequencyPicker:(bool)arg1;
+- (void)_setShowingIntervalPicker:(bool)arg1;
+- (id)_stringForFrequency:(int)arg1 interval:(long long)arg2;
 - (id)_stringForFrequency:(int)arg1;
-- (int)_tagForIndexPath:(id)arg1;
-- (void)_toggleInlineSpinnerForTag:(int)arg1;
+- (long long)_tagForIndexPath:(id)arg1;
+- (void)_toggleInlineSpinnerForTag:(long long)arg1;
 - (void)_updateCustomPickerView;
 - (void)_updateFrequencyRows;
 - (void)_updateIntervalPicker;
@@ -84,15 +84,15 @@
 - (id)intervalPickerViewController;
 - (void)loadView;
 - (id)monthlyChooser;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (BOOL)prohibitsMultipleDaysInMonthlyRecurrence;
-- (BOOL)prohibitsMultipleMonthsInYearlyRecurrence;
-- (BOOL)prohibitsYearlyRecurrenceInterval;
-- (void)recurrenceChooser:(id)arg1 wantsRowReload:(int)arg2;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (bool)prohibitsMultipleDaysInMonthlyRecurrence;
+- (bool)prohibitsMultipleMonthsInYearlyRecurrence;
+- (bool)prohibitsYearlyRecurrenceInterval;
+- (void)recurrenceChooser:(id)arg1 wantsRowReload:(long long)arg2;
 - (void)recurrenceChooserUpdated:(id)arg1;
 - (void)recurrenceChooserWantsReload:(id)arg1;
 - (id)recurrenceRule;
@@ -102,10 +102,10 @@
 - (void)setFrequencyPickerView:(id)arg1;
 - (void)setIntervalPickerViewController:(id)arg1;
 - (void)setMonthlyChooser:(id)arg1;
-- (void)setProhibitsMultipleDaysInMonthlyRecurrence:(BOOL)arg1;
-- (void)setProhibitsMultipleMonthsInYearlyRecurrence:(BOOL)arg1;
-- (void)setProhibitsYearlyRecurrenceInterval:(BOOL)arg1;
-- (void)setRecurrenceRule:(id)arg1 shouldUpdatePickers:(BOOL)arg2;
+- (void)setProhibitsMultipleDaysInMonthlyRecurrence:(bool)arg1;
+- (void)setProhibitsMultipleMonthsInYearlyRecurrence:(bool)arg1;
+- (void)setProhibitsYearlyRecurrenceInterval:(bool)arg1;
+- (void)setRecurrenceRule:(id)arg1 shouldUpdatePickers:(bool)arg2;
 - (void)setRecurrenceRule:(id)arg1;
 - (void)setRecurrenceSummaryString:(id)arg1;
 - (void)setStartDate:(id)arg1;
@@ -118,14 +118,14 @@
 - (id)startDate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableView;
 - (id)timeZone;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)weeklyChooser;
 - (id)yearOrdinalSwitch;
 - (id)yearlyChooser;

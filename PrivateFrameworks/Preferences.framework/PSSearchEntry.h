@@ -28,7 +28,7 @@
 @property(copy) NSString * plistName;
 @property(retain,readonly) PSSpecifier * specifier;
 
-- (BOOL)_hasDetailController:(BOOL)arg1;
+- (bool)_hasDetailController:(bool)arg1;
 - (id)action;
 - (id)ancestorEntries;
 - (id)bundleName;
@@ -37,13 +37,13 @@
 - (id)debugDescription;
 - (id)description;
 - (id)groupSpecifier;
-- (BOOL)hasDetailController;
-- (BOOL)hasListController;
+- (bool)hasDetailController;
+- (bool)hasListController;
 - (id)hierarchyDescription;
 - (id)identifier;
 - (id)initWithSpecifier:(id)arg1 parent:(id)arg2;
-- (BOOL)isRootEntry;
-- (BOOL)isSectionEntry;
+- (bool)isRootEntry;
+- (bool)isSectionEntry;
 - (id)keywords;
 - (id)manifestBundleName;
 - (id)name;
@@ -58,6 +58,6 @@
 - (void)setParentEntry:(id)arg1;
 - (void)setPlistName:(id)arg1;
 - (id)specifier;
-- (BOOL)treeContainsPropertyForKey:(id)arg1;
+- (bool)treeContainsPropertyForKey:(id)arg1;
 
 @end

@@ -33,26 +33,26 @@
     VKTimer *_layoutTimer;
     } _mapCamera;
     struct RenderTree { int (**x1)(); id x2; } *_mapScene;
-    BOOL _needsLayout;
     } _renderQueue;
     } _renderQueueResolve;
-    BOOL _shouldDrawWhileLoading;
     VKWorld *_world;
     } _yFlipPass;
+    bool_needsLayout;
+    bool_shouldDrawWhileLoading;
 }
 
 @property(readonly) VKCamera * camera;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) VKDispatch * dispatch;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) VKWorld * world;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_spinScene:(id)arg1;
-- (void)_spinSceneWillRender:(BOOL)arg1;
+- (void)_spinSceneWillRender:(bool)arg1;
 - (void)_updateViewTransform;
 - (void)animationDidResume:(id)arg1;
 - (void)animationDidStop:(id)arg1;
@@ -60,12 +60,12 @@
 - (void)cancelLoad;
 - (void)dealloc;
 - (id)dispatch;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 useMultisampling:(bool)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 useMultisampling:(bool)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4;
 - (void)loadScene;
-- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; boolx5; float x6; }*)arg1 completion:(id)arg2;
+- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned long long x3; unsigned long long x4; boolx5; float x6; }*)arg1 completion:(id)arg2;
 - (void)runAnimation:(id)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)world;
 - (void)worldDisplayDidChange:(id)arg1;
 - (void)worldLayoutDidChange:(id)arg1;

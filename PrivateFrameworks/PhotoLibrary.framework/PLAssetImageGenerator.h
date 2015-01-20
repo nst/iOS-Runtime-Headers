@@ -6,17 +6,17 @@
 
 @interface PLAssetImageGenerator : NSObject {
     AVAssetImageGenerator *_imageGenerator;
-    BOOL _inUse;
+    bool_inUse;
 }
 
 @property(retain) AVAssetImageGenerator * imageGenerator;
-@property BOOL inUse;
+@property bool inUse;
 
 - (void)dealloc;
 - (id)imageGenerator;
-- (BOOL)inUse;
+- (bool)inUse;
 - (id)initWithAsset:(id)arg1;
 - (void)setImageGenerator:(id)arg1;
-- (void)setInUse:(BOOL)arg1;
+- (void)setInUse:(bool)arg1;
 
 @end

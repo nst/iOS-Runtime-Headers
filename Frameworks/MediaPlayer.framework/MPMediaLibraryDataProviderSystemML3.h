@@ -10,7 +10,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (BOOL)_isGeniusEnabled;
++ (bool)_isGeniusEnabled;
 + (id)_localizedCloudGeniusErrorForError:(id)arg1;
 + (id)_localizedGeniusErrorForError:(id)arg1;
 
@@ -19,14 +19,14 @@
 - (void)_initInstanceVariableOnce;
 - (void)_seedCloudPlaylistWithTrack:(id)arg1 container:(id)arg2 completionBlock:(id)arg3;
 - (id)completeMyCollectionArtworkDataSource;
-- (void*)createGeniusClusterPlaylistWithSeedItemIdentifiers:(long long*)arg1 count:(unsigned int)arg2 error:(id*)arg3;
+- (void*)createGeniusClusterPlaylistWithSeedItemIdentifiers:(long long*)arg1 count:(unsigned long long)arg2 error:(id*)arg3;
 - (id)errorResolverForMediaItem:(id)arg1;
-- (long long*)generateItemIdentifiersForGeniusClusterPlaylist:(void*)arg1 count:(unsigned int*)arg2 error:(id*)arg3;
+- (long long*)generateItemIdentifiersForGeniusClusterPlaylist:(void*)arg1 count:(unsigned long long*)arg2 error:(id*)arg3;
 - (id)initWithLibrary:(id)arg1;
-- (BOOL)isGeniusEnabled;
+- (bool)isGeniusEnabled;
 - (void)releaseGeniusClusterPlaylist:(void*)arg1;
 - (void)seedPlaylistWithIdentifier:(long long)arg1 withItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
-- (BOOL)supportsEntityChangeTrackingForMediaEntityType:(unsigned int)arg1 collectionGroupingType:(int)arg2 dataProviderClass:(out Class*)arg3;
+- (bool)supportsEntityChangeTrackingForMediaEntityType:(unsigned long long)arg1 collectionGroupingType:(long long)arg2 dataProviderClass:(out Class*)arg3;
 - (void)updateEntitesToCurrentRevision;
 
 @end

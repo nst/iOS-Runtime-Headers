@@ -8,24 +8,24 @@
     NSString *_applicationIdentifier;
     NSString *_dpanIdentifier;
     NSString *_dpanSuffix;
-    int _paymentNetworkIdentifier;
+    long long _paymentNetworkIdentifier;
     NSString *_secureElementIdentifier;
-    int _state;
-    BOOL _supportsContactlessPayment;
-    BOOL _supportsInAppPayment;
+    long long _state;
+    bool_supportsContactlessPayment;
+    bool_supportsInAppPayment;
 }
 
 @property(copy) NSString * applicationIdentifier;
 @property(setter=setDPANIdentifier:,copy) NSString * dpanIdentifier;
 @property(setter=setDPANSuffix:,copy) NSString * dpanSuffix;
-@property int paymentNetworkIdentifier;
+@property long long paymentNetworkIdentifier;
 @property(copy) NSString * secureElementIdentifier;
-@property int state;
+@property long long state;
 @property(readonly) NSString * stateAsString;
-@property BOOL supportsContactlessPayment;
-@property BOOL supportsInAppPayment;
+@property bool supportsContactlessPayment;
+@property bool supportsInAppPayment;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)applicationIdentifier;
 - (void)dealloc;
@@ -33,24 +33,24 @@
 - (id)dpanIdentifier;
 - (id)dpanSuffix;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPaymentApplicationDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPaymentApplication:(id)arg1;
-- (int)paymentNetworkIdentifier;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPaymentApplication:(id)arg1;
+- (long long)paymentNetworkIdentifier;
 - (id)secureElementIdentifier;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setDPANIdentifier:(id)arg1;
 - (void)setDPANSuffix:(id)arg1;
-- (void)setPaymentNetworkIdentifier:(int)arg1;
+- (void)setPaymentNetworkIdentifier:(long long)arg1;
 - (void)setSecureElementIdentifier:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)setSupportsContactlessPayment:(BOOL)arg1;
-- (void)setSupportsInAppPayment:(BOOL)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (void)setSupportsContactlessPayment:(bool)arg1;
+- (void)setSupportsInAppPayment:(bool)arg1;
+- (long long)state;
 - (id)stateAsString;
-- (BOOL)supportsContactlessPayment;
-- (BOOL)supportsInAppPayment;
+- (bool)supportsContactlessPayment;
+- (bool)supportsInAppPayment;
 
 @end

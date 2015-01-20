@@ -9,13 +9,13 @@
 @class BRQueryItem, NSObject<OS_dispatch_queue>, NSProgress;
 
 @interface BRQueryItemProgressObserver : NSObject {
-    BOOL _isUpload;
     BRQueryItem *_item;
     NSProgress *_progress;
     id _progressHandler;
     NSObject<OS_dispatch_queue> *_queue;
-    BOOL _stopped;
     id _subscriber;
+    bool_isUpload;
+    bool_stopped;
 }
 
 @property(readonly) BRQueryItem * item;

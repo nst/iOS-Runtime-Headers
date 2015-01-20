@@ -10,24 +10,24 @@
 }
 
 @property(readonly) double backgroundTimeRemaining;
-@property int badgeNumber;
+@property long long badgeNumber;
 @property(copy) NSString * badgeString;
-@property float currentBacklightLevel;
+@property double currentBacklightLevel;
 @property <FBSUIApplicationSystemServiceDelegate> * delegate;
 
 - (id)_getBadgeValue;
 - (double)backgroundTimeRemaining;
-- (int)badgeNumber;
+- (long long)badgeNumber;
 - (id)badgeString;
-- (float)currentBacklightLevel;
+- (double)currentBacklightLevel;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
-- (void)setBadgeNumber:(int)arg1;
+- (void)setBadgeNumber:(long long)arg1;
 - (void)setBadgeString:(id)arg1;
-- (void)setCurrentBacklightLevel:(float)arg1;
+- (void)setCurrentBacklightLevel:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setNextWakeInterval:(double)arg1;
+- (bool)setNextWakeInterval:(double)arg1;
 
 @end

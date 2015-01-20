@@ -10,8 +10,8 @@
 @property(readonly) SKUIDividerViewElement * bottomDivider;
 
 - (id)bottomDivider;
-- (id)childViewElementsForAlignment:(unsigned int)arg1;
+- (id)childViewElementsForAlignment:(unsigned long long)arg1;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 
 @end

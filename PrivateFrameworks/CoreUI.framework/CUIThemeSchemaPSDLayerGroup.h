@@ -3,12 +3,12 @@
  */
 
 @interface CUIThemeSchemaPSDLayerGroup : CUIThemeSchemaPSDLayer {
-    BOOL isStart;
+    boolisStart;
 }
 
-@property BOOL isStart;
+@property bool isStart;
 
-- (BOOL)isStart;
-- (void)setIsStart:(BOOL)arg1;
+- (bool)isStart;
+- (void)setIsStart:(bool)arg1;
 
 @end

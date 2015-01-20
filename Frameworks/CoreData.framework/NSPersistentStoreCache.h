@@ -3,7 +3,7 @@
  */
 
 @interface NSPersistentStoreCache : NSObject {
-    unsigned int _capacity;
+    unsigned long long _capacity;
     id _externalData;
 }
 
@@ -11,7 +11,7 @@
 
 - (void)_createExternalDataDictWithValueCallbacks:(void*)arg1;
 - (void)_doForgetAllExternalData:(void*)arg1;
-- (void)_growRegistrationCollectionTo:(unsigned int)arg1;
+- (void)_growRegistrationCollectionTo:(unsigned long long)arg1;
 - (id)_initWithValueCallbacks:(void*)arg1;
 - (id)ancillaryOrderKeysForSourceObjectID:(id)arg1 forProperty:(id)arg2 timestamp:(double)arg3;
 - (void)dealloc;

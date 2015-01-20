@@ -8,17 +8,17 @@
 
 + (id)recordIdWithInternalEntityId:(long long)arg1;
 + (id)recordIdWithNumericValue:(long long)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInternalEntityId:(long long)arg1;
 - (long long)internalEntityId;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRecordId:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRecordId:(id)arg1;
 - (long long)numericValue;
 
 @end

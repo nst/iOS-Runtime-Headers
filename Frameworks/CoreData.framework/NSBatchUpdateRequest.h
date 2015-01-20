@@ -21,11 +21,11 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) NSEntityDescription * entity;
 @property(copy,readonly) NSString * entityName;
-@property(readonly) unsigned int hash;
-@property BOOL includesSubentities;
+@property(readonly) unsigned long long hash;
+@property bool includesSubentities;
 @property(retain) NSPredicate * predicate;
 @property(copy) NSDictionary * propertiesToUpdate;
-@property unsigned int resultType;
+@property unsigned long long resultType;
 @property(readonly) Class superclass;
 
 + (id)batchUpdateRequestWithEntityName:(id)arg1;
@@ -36,17 +36,17 @@
 - (void)dealloc;
 - (id)entity;
 - (id)entityName;
-- (BOOL)includesSubentities;
+- (bool)includesSubentities;
 - (id)init;
 - (id)initWithEntity:(id)arg1;
 - (id)initWithEntityName:(id)arg1;
 - (id)predicate;
 - (id)propertiesToUpdate;
-- (unsigned int)requestType;
-- (unsigned int)resultType;
-- (void)setIncludesSubentities:(BOOL)arg1;
+- (unsigned long long)requestType;
+- (unsigned long long)resultType;
+- (void)setIncludesSubentities:(bool)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setPropertiesToUpdate:(id)arg1;
-- (void)setResultType:(unsigned int)arg1;
+- (void)setResultType:(unsigned long long)arg1;
 
 @end

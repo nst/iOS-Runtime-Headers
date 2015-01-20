@@ -3,18 +3,18 @@
  */
 
 @interface PKPaymentDeviceConfigurationData : NSObject <NSSecureCoding> {
-    BOOL _devSigned;
+    bool_devSigned;
 }
 
-@property BOOL devSigned;
+@property bool devSigned;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)devSigned;
+- (bool)devSigned;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setDevSigned:(BOOL)arg1;
+- (void)setDevSigned:(bool)arg1;
 
 @end

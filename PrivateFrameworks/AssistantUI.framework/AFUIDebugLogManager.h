@@ -19,7 +19,7 @@
 - (id)_archiveLogsInDirectoryAtURL:(id)arg1 matchingPatterns:(id)arg2 archiveName:(id)arg3 error:(id*)arg4;
 - (id)_baseLogDirectoryURL;
 - (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 completion:(id)arg4;
-- (id)_captureLogsInDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 withMimeType:(id)arg3 attemptCompression:(BOOL)arg4 limit:(int)arg5 error:(id*)arg6;
+- (id)_captureLogsInDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 withMimeType:(id)arg3 attemptCompression:(bool)arg4 limit:(long long)arg5 error:(id*)arg6;
 - (id)_contentsOfDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 includingPropertiesForKeys:(id)arg3 error:(id*)arg4;
 - (id)_contentsOfDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 sortedByDateWithResourceKey:(id)arg3 error:(id*)arg4;
 - (id)_queue;

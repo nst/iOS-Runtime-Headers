@@ -23,10 +23,10 @@
 
 - (void)dealloc;
 - (id)groupIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icons;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)leaderboardIdentifiers;
 - (void)setGroupIdentifier:(id)arg1;
 - (void)setIcons:(id)arg1;

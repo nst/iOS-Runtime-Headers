@@ -5,15 +5,15 @@
 @class GEORequester, NSString;
 
 @interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <PBRequesterDelegate> {
-    BOOL _cancelled;
-    BOOL _isBatchRequest;
-    BOOL _isForwardGeocodeRequest;
     GEORequester *_requester;
+    bool_cancelled;
+    bool_isBatchRequest;
+    bool_isForwardGeocodeRequest;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)batchReverseGeocoderURL;

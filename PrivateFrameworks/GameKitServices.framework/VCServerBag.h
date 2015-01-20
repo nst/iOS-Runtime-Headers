@@ -4,12 +4,12 @@
 
 @interface VCServerBag : NSObject {
     struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
+        long long __sig; 
         BOOL __opaque[40]; 
-    BOOL isLoaded;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    boolisLoaded;
     } isLoadedCondition;
     } isLoadedMutex;
     id observer;
@@ -19,9 +19,9 @@
 + (void)pullStoreBagKeys;
 + (void)retrieveBag;
 + (id)sharedInstance;
-+ (BOOL)verifyRequiredKeys:(id)arg1 withError:(id*)arg2;
-+ (BOOL)verifyRequiredKeys:(id*)arg1;
-+ (BOOL)verifyRequiredVoiceChatKeys:(id*)arg1;
++ (bool)verifyRequiredKeys:(id)arg1 withError:(id*)arg2;
++ (bool)verifyRequiredKeys:(id*)arg1;
++ (bool)verifyRequiredVoiceChatKeys:(id*)arg1;
 
 - (id)init;
 - (void)waitForBagLoad;

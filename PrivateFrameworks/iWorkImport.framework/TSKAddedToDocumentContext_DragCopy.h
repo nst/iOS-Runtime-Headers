@@ -6,6 +6,6 @@
 }
 
 - (id)description;
-- (BOOL)wasDragOperation;
+- (bool)wasDragOperation;
 
 @end

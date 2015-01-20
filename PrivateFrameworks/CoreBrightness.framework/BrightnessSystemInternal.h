@@ -20,7 +20,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)clientConnectedWithExpObj:(id)arg1;
@@ -29,13 +29,13 @@
 - (void)dealloc;
 - (void)destroyServer;
 - (id)init;
-- (BOOL)isAlsSupported;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)isAlsSupported;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)main;
 - (void)notifyClientsForProperty:(id)arg1 key:(id)arg2;
 - (void)registerNotificationBlock:(id)arg1;
 - (void)runXPCServer;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)timerFire:(id)arg1;
 
 @end

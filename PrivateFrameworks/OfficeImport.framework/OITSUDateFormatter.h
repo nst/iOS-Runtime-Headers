@@ -13,7 +13,7 @@
 + (id)dateFormatStringSpecialSymbols;
 + (id)datePortionOfDateTimeFormatString:(id)arg1;
 + (id)defaultDateTimeFormat;
-+ (unsigned int)p_DateTimeSplitLocationInFormatString:(id)arg1;
++ (unsigned long long)p_DateTimeSplitLocationInFormatString:(id)arg1;
 + (id)shortMonthNamesForNonCachedCurrentLocale;
 + (id)supportedDateFormats;
 + (id)supportedTimeFormats;

@@ -4,17 +4,17 @@
 
 @interface SKUIGridViewElement : SKUIViewElement {
     id _persistenceKey;
-    BOOL _showsEditMode;
+    bool_showsEditMode;
 }
 
-@property(readonly) BOOL showsEditMode;
+@property(readonly) bool showsEditMode;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)persistenceKey;
-- (BOOL)showsEditMode;
+- (bool)showsEditMode;
 
 @end

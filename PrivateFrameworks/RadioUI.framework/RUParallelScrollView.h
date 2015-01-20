@@ -5,21 +5,21 @@
 @class UIScrollView;
 
 @interface RUParallelScrollView : UIScrollView {
-    float _displayScale;
+    double _displayScale;
     UIScrollView *_targetScrollView;
-    float _targetScrollViewWidth;
+    double _targetScrollViewWidth;
 }
 
 @property(retain) UIScrollView * targetScrollView;
-@property float targetScrollViewWidth;
+@property double targetScrollViewWidth;
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setTargetScrollView:(id)arg1;
-- (void)setTargetScrollViewWidth:(float)arg1;
+- (void)setTargetScrollViewWidth:(double)arg1;
 - (id)targetScrollView;
-- (float)targetScrollViewWidth;
+- (double)targetScrollViewWidth;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

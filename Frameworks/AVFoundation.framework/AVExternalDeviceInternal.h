@@ -8,7 +8,7 @@
     NSArray *_HIDs;
     <AVExternalDeviceDelegate> *_delegate;
     struct OpaqueFigEndpoint { } *_figEndpoint;
-    long _makeHIDsOnlyOnce;
+    long long _makeHIDsOnlyOnce;
     AVWeakReference *_weakReference;
 }
 

@@ -6,25 +6,25 @@
 
 @interface _UIViewServiceTextEffectsOperator : NSObject <_UIViewServiceTextEffectsOperator_RemoteViewControllerInterface, _UIViewServiceDeputy, _UIViewServiceDeputyRotationDelegate> {
     struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL __automatic_invalidation_invalidated;
+        double x; 
+        double y; 
     int __automatic_invalidation_retainCount;
     NSArray *_allowedNotifications;
-    BOOL _canRestoreInputViews;
-    BOOL _didResignForDisappear;
     UIWindow *_hostedWindow;
     _UIAsyncInvocation *_invalidationInvocation;
-    BOOL _isRestoringInputViews;
-    BOOL _localVCDisablesAutomaticBehaviors;
     _UIAsyncInvocation *_prepareForDisconnectionInvocation;
     id _remoteViewControllerProxy;
     } _windowOffset;
+    bool__automatic_invalidation_invalidated;
+    bool_canRestoreInputViews;
+    bool_didResignForDisappear;
+    bool_isRestoringInputViews;
+    bool_localVCDisablesAutomaticBehaviors;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)XPCInterface;
@@ -33,31 +33,31 @@
 - (int)__automatic_invalidation_logic;
 - (void)__createHostedTextEffectsWithReplyHandler:(id)arg1;
 - (void)__hostDidEnterBackground;
-- (void)__hostViewWillAppear:(BOOL)arg1;
-- (void)__hostViewWillDisappear:(BOOL)arg1;
+- (void)__hostViewWillAppear:(bool)arg1;
+- (void)__hostViewWillDisappear:(bool)arg1;
 - (void)__hostWillEnterForeground;
 - (void)__prepareForDisconnectionWithCompletionHandler:(id)arg1;
 - (void)__setHostAllowedNotifications:(id)arg1;
 - (void)__setNextAutomaticOrderOutDirection:(int)arg1 duration:(double)arg2;
-- (void)__setWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)__setWindowOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_invalidateUnconditionallyThen:(id)arg1;
-- (BOOL)_isDeallocating;
+- (bool)_isDeallocating;
 - (void)_prepareForDisconnectionUnconditionallyThen:(id)arg1;
 - (id)_queue;
 - (void)_restoreInputViews;
 - (void)_sendNotification:(id)arg1;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (void)_viewServiceHostWillEnterForeground:(id)arg1;
 - (void)dealloc;
-- (void)finishRotationFromInterfaceOrientation:(int)arg1;
+- (void)finishRotationFromInterfaceOrientation:(long long)arg1;
 - (void)forceSyncToStatusBarOrientation;
 - (id)invalidate;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (void)rotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)setHostedWindow:(id)arg1 disableAutomaticBehaviors:(BOOL)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (unsigned long long)retainCount;
+- (void)rotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)setHostedWindow:(id)arg1 disableAutomaticBehaviors:(bool)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)windowDidGainFirstResponder:(id)arg1;
 
 @end

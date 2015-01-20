@@ -10,12 +10,12 @@
 
 - (void)addColor:(id)arg1 index:(int)arg2;
 - (void)addDefaultColors;
-- (unsigned int)colorCount;
+- (unsigned long long)colorCount;
 - (id)colorForIndex:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setColor:(id)arg1 index:(int)arg2;
 
 @end

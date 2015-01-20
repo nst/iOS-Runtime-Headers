@@ -5,11 +5,11 @@
 @class NSObject, NSString;
 
 @interface ODDPointPropertySet : NSObject {
+    boolmCustomVerticalFlip;
     double mCustomOffsetX;
     double mCustomOffsetY;
     double mCustomScaleX;
     double mCustomScaleY;
-    BOOL mCustomVerticalFlip;
     NSString *mLayoutTypeId;
     NSObject *mPresentationAssociatedId;
     NSString *mPresentationName;
@@ -22,7 +22,7 @@
 - (double)customOffsetY;
 - (double)customScaleX;
 - (double)customScaleY;
-- (BOOL)customVerticalFlip;
+- (bool)customVerticalFlip;
 - (void)dealloc;
 - (id)layoutTypeId;
 - (id)presentationAssociatedId;
@@ -34,7 +34,7 @@
 - (void)setCustomOffsetY:(double)arg1;
 - (void)setCustomScaleX:(double)arg1;
 - (void)setCustomScaleY:(double)arg1;
-- (void)setCustomVerticalFlip:(BOOL)arg1;
+- (void)setCustomVerticalFlip:(bool)arg1;
 - (void)setLayoutTypeId:(id)arg1;
 - (void)setPresentationAssociatedId:(id)arg1;
 - (void)setPresentationName:(id)arg1;

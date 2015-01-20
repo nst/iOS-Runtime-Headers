@@ -12,15 +12,15 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (BOOL)createFramebufferFromLayer:(id)arg1;
+- (bool)createFramebufferFromLayer:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)lock;
-- (BOOL)makeCurrentContext;
+- (bool)makeCurrentContext;
 - (void)presentRenderbuffer;
 - (void)teardown;
 - (void)unlock;

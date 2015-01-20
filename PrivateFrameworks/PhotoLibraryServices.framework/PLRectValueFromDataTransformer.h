@@ -5,7 +5,7 @@
 @interface PLRectValueFromDataTransformer : NSValueTransformer {
 }
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (id)reverseTransformedValue:(id)arg1;

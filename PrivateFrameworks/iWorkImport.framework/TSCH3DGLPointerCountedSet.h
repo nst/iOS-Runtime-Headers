@@ -5,18 +5,18 @@
 @class TSUPointerKeyDictionary;
 
 @interface TSCH3DGLPointerCountedSet : NSObject {
-    unsigned int mByteCount;
-    unsigned int mCount;
+    unsigned long long mByteCount;
+    unsigned long long mCount;
     TSUPointerKeyDictionary *mSet;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
 
 - (void)addObject:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithFrames:(unsigned int)arg1;
+- (id)descriptionWithFrames:(unsigned long long)arg1;
 - (id)init;
 
 @end

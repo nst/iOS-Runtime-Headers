@@ -3,17 +3,17 @@
  */
 
 @interface TSPCachedDocumentResourceDataStorage : TSPDocumentResourceDataStorage {
-    BOOL _isValidated;
+    bool_isValidated;
 }
 
 - (void)addDownloadObserver:(id)arg1 forData:(id)arg2 completionHandler:(id)arg3;
 - (void)dealloc;
 - (unsigned long long)encodedLength;
 - (id)fileURL;
-- (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2 isValidated:(BOOL)arg3;
+- (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2 isValidated:(bool)arg3;
 - (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2;
-- (BOOL)isReadable;
-- (BOOL)needsDownload;
+- (bool)isReadable;
+- (bool)needsDownload;
 - (void)performReadWithAccessor:(id)arg1;
 
 @end

@@ -25,20 +25,20 @@
 - (id)initWithTimerName:(id)arg1;
 - (void)labelsResourcesSessionWillBeginForSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
 - (void)labelsResourcesSessionWillEndForSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
-- (BOOL)renderPassDelayDisallowedForSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
+- (bool)renderPassDelayDisallowedForSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
 - (struct ElementRenderPass { int x1; })renderPassForElement:(const struct RenderElementInfo { }*)arg1 sceneObject:(id)arg2 context:(id)arg3;
 - (struct ElementRenderPass { int x1; })renderPassForSceneObject:(id)arg1;
-- (BOOL)shouldUpdateSeriesElementTimingWithAnyElement;
+- (bool)shouldUpdateSeriesElementTimingWithAnyElement;
 - (float)timeFromContext:(id)arg1;
 - (id)timerName;
 - (void)updateExternalLabelAttribute:(struct ExternalLabelAttribute { }*)arg1 sceneObject:(id)arg2 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo { }*)arg3 timeSlice:(id)arg4 context:(id)arg5;
-- (BOOL)willProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3 context:(id)arg4;
-- (BOOL)willProcessSeries:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3 context:(id)arg4;
-- (BOOL)willRenderElement:(const struct RenderElementInfo { }*)arg1 sceneObject:(id)arg2 context:(id)arg3;
+- (bool)willProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3 context:(id)arg4;
+- (bool)willProcessSeries:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3 context:(id)arg4;
+- (bool)willRenderElement:(const struct RenderElementInfo { }*)arg1 sceneObject:(id)arg2 context:(id)arg3;
 - (void)willRunWithScene:(id)arg1 context:(id)arg2 layers:(id)arg3;
-- (BOOL)willSubmitElement:(const struct RenderElementInfo { }*)arg1 sceneObject:(id)arg2 context:(id)arg3;
-- (BOOL)willSubmitLabelForSceneObject:(id)arg1 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo { }*)arg2 context:(id)arg3;
-- (BOOL)willSubmitSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
-- (BOOL)willUpdateElementEffectsStatesForElement:(const struct RenderElementInfo { }*)arg1 sceneObject:(id)arg2 context:(id)arg3;
+- (bool)willSubmitElement:(const struct RenderElementInfo { }*)arg1 sceneObject:(id)arg2 context:(id)arg3;
+- (bool)willSubmitLabelForSceneObject:(id)arg1 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo { }*)arg2 context:(id)arg3;
+- (bool)willSubmitSceneObject:(id)arg1 pipeline:(id)arg2 context:(id)arg3;
+- (bool)willUpdateElementEffectsStatesForElement:(const struct RenderElementInfo { }*)arg1 sceneObject:(id)arg2 context:(id)arg3;
 
 @end

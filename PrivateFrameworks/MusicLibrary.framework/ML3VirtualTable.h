@@ -22,7 +22,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <ML3VirtualTableDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * name;
 @property(readonly) Class superclass;
 
@@ -35,9 +35,9 @@
 - (id)delegate;
 - (id)initWithDatabaseTable:(id)arg1;
 - (id)name;
-- (BOOL)registerWithConnection:(id)arg1;
+- (bool)registerWithConnection:(id)arg1;
 - (void)setDataSource:(struct shared_ptr<ML3VirtualTableDataSource> { struct ML3VirtualTableDataSource {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)unregister;
+- (bool)unregister;
 
 @end

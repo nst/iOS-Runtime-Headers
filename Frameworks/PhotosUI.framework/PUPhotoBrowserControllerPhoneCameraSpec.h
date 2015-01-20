@@ -5,7 +5,7 @@
 @interface PUPhotoBrowserControllerPhoneCameraSpec : PUPhotoBrowserControllerPhoneSpec {
 }
 
-- (BOOL)isInCamera;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)isInCamera;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

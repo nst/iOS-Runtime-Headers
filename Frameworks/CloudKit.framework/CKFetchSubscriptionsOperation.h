@@ -10,15 +10,15 @@
 
 @interface CKFetchSubscriptionsOperation : CKDatabaseOperation {
     id _fetchSubscriptionCompletionBlock;
-    BOOL _isFetchAllSubscriptionsOperation;
     NSMutableDictionary *_subscriptionErrors;
     NSArray *_subscriptionIDs;
     NSArray *_subscriptions;
     NSMutableDictionary *_subscriptionsBySubscriptionID;
+    bool_isFetchAllSubscriptionsOperation;
 }
 
 @property(copy) id fetchSubscriptionCompletionBlock;
-@property BOOL isFetchAllSubscriptionsOperation;
+@property bool isFetchAllSubscriptionsOperation;
 @property(retain) NSMutableDictionary * subscriptionErrors;
 @property(copy) NSArray * subscriptionIDs;
 @property(retain) NSArray * subscriptions;
@@ -27,17 +27,17 @@
 + (id)fetchAllSubscriptionsOperation;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)fetchSubscriptionCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithSubscriptionIDs:(id)arg1;
-- (BOOL)isFetchAllSubscriptionsOperation;
+- (bool)isFetchAllSubscriptionsOperation;
 - (void)performCKOperation;
 - (void)setFetchSubscriptionCompletionBlock:(id)arg1;
-- (void)setIsFetchAllSubscriptionsOperation:(BOOL)arg1;
+- (void)setIsFetchAllSubscriptionsOperation:(bool)arg1;
 - (void)setSubscriptionErrors:(id)arg1;
 - (void)setSubscriptionIDs:(id)arg1;
 - (void)setSubscriptions:(id)arg1;

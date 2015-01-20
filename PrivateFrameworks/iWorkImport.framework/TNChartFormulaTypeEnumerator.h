@@ -3,8 +3,8 @@
  */
 
 @interface TNChartFormulaTypeEnumerator : NSObject {
-    unsigned int _count;
-    unsigned int _index;
+    unsigned long long _count;
+    unsigned long long _index;
     int **_keys;
 }
 

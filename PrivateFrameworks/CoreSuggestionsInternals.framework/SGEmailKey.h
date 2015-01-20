@@ -12,21 +12,21 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * messageId;
 @property(readonly) long long messageIdHash;
 @property(readonly) NSString * source;
 @property(readonly) Class superclass;
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (bool)isSupportedEntityType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithSerialized:(id)arg1;
 - (id)initWithSource:(id)arg1 messageId:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToEmailKey:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToEmailKey:(id)arg1;
 - (id)messageId;
 - (long long)messageIdHash;
 - (id)messageURL;

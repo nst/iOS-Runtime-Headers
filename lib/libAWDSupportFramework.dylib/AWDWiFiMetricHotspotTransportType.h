@@ -16,10 +16,10 @@
 }
 
 @property unsigned int bt;
-@property BOOL hasBt;
-@property BOOL hasTimestamp;
-@property BOOL hasUsb;
-@property BOOL hasWifi;
+@property bool hasBt;
+@property bool hasTimestamp;
+@property bool hasUsb;
+@property bool hasWifi;
 @property unsigned long long timestamp;
 @property unsigned int usb;
 @property unsigned int wifi;
@@ -29,19 +29,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBt;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUsb;
-- (BOOL)hasWifi;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBt;
+- (bool)hasTimestamp;
+- (bool)hasUsb;
+- (bool)hasWifi;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBt:(unsigned int)arg1;
-- (void)setHasBt:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasUsb:(BOOL)arg1;
-- (void)setHasWifi:(BOOL)arg1;
+- (void)setHasBt:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasUsb:(bool)arg1;
+- (void)setHasWifi:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUsb:(unsigned int)arg1;
 - (void)setWifi:(unsigned int)arg1;

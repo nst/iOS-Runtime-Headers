@@ -14,7 +14,7 @@
 @property(readonly) UILabel * nameLabel;
 @property(readonly) UILabel * sourceLabel;
 
-+ (BOOL)wantsChevron;
++ (bool)wantsChevron;
 
 - (void)dealloc;
 - (id)delegate;
@@ -23,7 +23,7 @@
 - (void)performDefaultAction;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 - (id)sourceLabel;
 - (id)valueView;
 

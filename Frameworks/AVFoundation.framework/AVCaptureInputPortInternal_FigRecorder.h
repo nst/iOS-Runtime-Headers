@@ -5,8 +5,8 @@
 @class AVCaptureInput_FigRecorder, NSString;
 
 @interface AVCaptureInputPortInternal_FigRecorder : NSObject {
+    boolenabled;
     struct OpaqueCMClock { } *clock;
-    BOOL enabled;
     struct opaqueCMFormatDescription { } *formatDescription;
     AVCaptureInput_FigRecorder *input;
     NSString *mediaType;

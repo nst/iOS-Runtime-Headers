@@ -3,20 +3,20 @@
  */
 
 @interface CKFetchShareInvitationsOperationInfo : CKOperationInfo {
-    int _fetchType;
-    BOOL _queryAllContainers;
+    long long _fetchType;
+    bool_queryAllContainers;
 }
 
-@property int fetchType;
-@property BOOL queryAllContainers;
+@property long long fetchType;
+@property bool queryAllContainers;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
-- (int)fetchType;
+- (long long)fetchType;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)queryAllContainers;
-- (void)setFetchType:(int)arg1;
-- (void)setQueryAllContainers:(BOOL)arg1;
+- (bool)queryAllContainers;
+- (void)setFetchType:(long long)arg1;
+- (void)setQueryAllContainers:(bool)arg1;
 
 @end

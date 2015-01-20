@@ -6,12 +6,12 @@
 
 @interface TRConnection : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _closed;
-    unsigned int _connectionCount;
+    unsigned long long _connectionCount;
     NSMapTable *_packetEventClassToTargetActions;
     NSObject<OS_dispatch_queue> *_sendQueue;
     TRService *_service;
     int _uniqueID;
+    bool_closed;
 }
 
 @property(readonly) TRService * service;
@@ -28,8 +28,8 @@
 - (void)addTarget:(id)arg1 action:(SEL)arg2 queue:(id)arg3 forPacketEventClasses:(id)arg4;
 - (void)close;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 queue:(id)arg3 forPacketEventClasses:(id)arg4;
 - (void)sendPacketEvent:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)service;

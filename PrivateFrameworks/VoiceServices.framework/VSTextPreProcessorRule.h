@@ -5,14 +5,14 @@
 @class NSString;
 
 @interface VSTextPreProcessorRule : NSObject {
-    BOOL _caseSensitive;
-    BOOL _eatPunctuation;
     NSString *_matchPattern;
     NSString *_replacement;
+    bool_caseSensitive;
+    bool_eatPunctuation;
 }
 
 - (void)dealloc;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)matchedString:(id)arg1 forTokenInRange:(struct { int x1; int x2; }*)arg2;
+- (id)matchedString:(id)arg1 forTokenInRange:(struct { long long x1; long long x2; }*)arg2;
 
 @end

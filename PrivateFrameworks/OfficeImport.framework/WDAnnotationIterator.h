@@ -5,6 +5,6 @@
 @interface WDAnnotationIterator : WDTestIterator {
 }
 
-- (BOOL)test:(id)arg1;
+- (bool)test:(id)arg1;
 
 @end

@@ -6,28 +6,28 @@
 
 @interface RCWaveformRasterizationOperation : NSOperation {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     RCComposition *_composition;
     RCCompositionWaveformDataSource *_dataSource;
     } _imageSize;
-    BOOL _loadingSuccessful;
     UIImage *_rasterizedImage;
     RCGLWaveformRenderer *_renderer;
+    bool_loadingSuccessful;
 }
 
 @property(copy) RCUIConfiguration * UIConfiguration;
 @property(readonly) RCComposition * composition;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
+@property(readonly) struct CGSize { double x1; double x2; } imageSize;
 @property(readonly) UIImage * rasterizedImage;
 
-+ (id)waveformImageForComposition:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)waveformImageForComposition:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
 - (id)UIConfiguration;
 - (id)composition;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (id)initWithComposition:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (id)initWithComposition:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)main;
 - (id)rasterizedImage;
 - (void)setUIConfiguration:(id)arg1;

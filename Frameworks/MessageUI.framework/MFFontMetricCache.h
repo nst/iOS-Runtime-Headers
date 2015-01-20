@@ -13,10 +13,10 @@
 
 - (void)_didReceivePreferredFontChangedNotification:(id)arg1;
 - (void)_invalidateCache;
-- (float)cachedFloat:(id)arg1 forKey:(id)arg2;
+- (double)cachedFloat:(id)arg1 forKey:(id)arg2;
 - (id)cachedFont:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
-- (BOOL)ensureCacheIsValid;
+- (bool)ensureCacheIsValid;
 - (id)init;
 
 @end

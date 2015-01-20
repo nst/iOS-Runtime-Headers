@@ -5,7 +5,7 @@
 @interface _UIOverFullscreenPresentationController : _UIFullscreenPresentationController {
 }
 
-- (BOOL)_shouldChangeStatusBarViewController;
-- (BOOL)shouldRemovePresentersView;
+- (bool)_shouldChangeStatusBarViewController;
+- (bool)shouldRemovePresentersView;
 
 @end

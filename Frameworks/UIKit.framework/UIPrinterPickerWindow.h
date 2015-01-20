@@ -5,6 +5,6 @@
 @interface UIPrinterPickerWindow : UIWindow {
 }
 
-- (BOOL)_canAffectStatusBarAppearance;
+- (bool)_canAffectStatusBarAppearance;
 
 @end

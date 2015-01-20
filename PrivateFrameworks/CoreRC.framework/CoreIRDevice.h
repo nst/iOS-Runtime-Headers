@@ -3,16 +3,16 @@
  */
 
 @interface CoreIRDevice : CoreRCDevice {
-    BOOL _isLocalDevice;
+    bool_isLocalDevice;
 }
 
-@property BOOL isLocalDevice;
+@property bool isLocalDevice;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isLocalDevice;
-- (void)setIsLocalDevice:(BOOL)arg1;
+- (bool)isLocalDevice;
+- (void)setIsLocalDevice:(bool)arg1;
 
 @end

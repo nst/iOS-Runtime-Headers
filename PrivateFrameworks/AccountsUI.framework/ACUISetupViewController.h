@@ -3,8 +3,8 @@
  */
 
 @interface ACUISetupViewController : PSSetupController {
-    BOOL _didAttemptDataclassSetup;
-    BOOL _shouldForceMailSetup;
+    bool_didAttemptDataclassSetup;
+    bool_shouldForceMailSetup;
 }
 
 - (void)_dismissAndNotifyParent;

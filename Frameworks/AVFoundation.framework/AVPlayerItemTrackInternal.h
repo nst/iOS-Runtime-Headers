@@ -6,10 +6,10 @@
 
 @interface AVPlayerItemTrackInternal : NSObject {
     AVAsset *asset;
-    BOOL enabled;
-    BOOL enabledWasSet;
+    boolenabled;
+    boolenabledWasSet;
+    boolfigPlaybackItemIsReadyForInspection;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
-    BOOL figPlaybackItemIsReadyForInspection;
     NSDictionary *loudnessInfo;
     int trackID;
     NSString *videoFieldMode;

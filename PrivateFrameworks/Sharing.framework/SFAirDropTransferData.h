@@ -5,7 +5,6 @@
 @class LSApplicationProxy, NSArray, NSDate, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSString, NSURL, UIImage;
 
 @interface SFAirDropTransferData : NSObject <NSSecureCoding> {
-    BOOL _autoAccept;
     NSString *_bundleID;
     NSNumber *_bytesCopied;
     NSString *_contentType;
@@ -18,7 +17,6 @@
     NSArray *_items;
     NSString *_itemsDescription;
     NSDictionary *_itemsDescriptionAdvanced;
-    BOOL _nonFileItem;
     NSArray *_possibleApplicationDestinations;
     NSString *_recordID;
     LSApplicationProxy *_selectedApplicationDestination;
@@ -28,21 +26,23 @@
     NSString *_senderFirstName;
     NSString *_senderID;
     NSString *_senderLastName;
-    BOOL _soundPlayed;
     NSDate *_timeLastUserInteraction;
     NSNumber *_timeRemaining;
     NSNumber *_totalBytes;
     NSString *_transferCompleteMessage;
-    BOOL _transferCompleted;
-    int _transferState;
-    int _transferStateResetCount;
-    BOOL _undesiredMixOfItems;
-    BOOL _unknownFileType;
-    BOOL _unknownScheme;
-    BOOL _verifiableIdentity;
+    long long _transferState;
+    long long _transferStateResetCount;
+    bool_autoAccept;
+    bool_nonFileItem;
+    bool_soundPlayed;
+    bool_transferCompleted;
+    bool_undesiredMixOfItems;
+    bool_unknownFileType;
+    bool_unknownScheme;
+    bool_verifiableIdentity;
 }
 
-@property(getter=shouldAutoAccept) BOOL autoAccept;
+@property(getter=shouldAutoAccept) bool autoAccept;
 @property(copy) NSString * bundleID;
 @property(retain) NSNumber * bytesCopied;
 @property(copy) NSString * contentType;
@@ -58,7 +58,7 @@
 @property(retain) NSArray * items;
 @property(copy) NSString * itemsDescription;
 @property(retain) NSDictionary * itemsDescriptionAdvanced;
-@property(getter=isNonFileItem,readonly) BOOL nonFileItem;
+@property(getter=isNonFileItem,readonly) bool nonFileItem;
 @property(retain) NSArray * possibleApplicationDestinations;
 @property(copy,readonly) NSString * progressMessage;
 @property(copy,readonly) NSString * recordID;
@@ -73,19 +73,19 @@
 @property(copy) NSString * senderID;
 @property(copy) NSString * senderLastName;
 @property(copy,readonly) NSString * senderName;
-@property BOOL soundPlayed;
+@property bool soundPlayed;
 @property(retain) NSDate * timeLastUserInteraction;
 @property(retain) NSNumber * timeRemaining;
 @property(retain) NSNumber * totalBytes;
 @property(copy,readonly) NSString * transferCompleteMessage;
-@property BOOL transferCompleted;
-@property int transferState;
-@property(readonly) int transferStateResetCount;
-@property(getter=isUndesiredMixOfItems,readonly) BOOL undesiredMixOfItems;
-@property(getter=isUnknownFileType,readonly) BOOL unknownFileType;
-@property(getter=isUnknownScheme,readonly) BOOL unknownScheme;
-@property(getter=isValid,readonly) BOOL valid;
-@property(getter=isVerifiableIdentity) BOOL verifiableIdentity;
+@property bool transferCompleted;
+@property long long transferState;
+@property(readonly) long long transferStateResetCount;
+@property(getter=isUndesiredMixOfItems,readonly) bool undesiredMixOfItems;
+@property(getter=isUnknownFileType,readonly) bool unknownFileType;
+@property(getter=isUnknownScheme,readonly) bool unknownScheme;
+@property(getter=isValid,readonly) bool valid;
+@property(getter=isVerifiableIdentity) bool verifiableIdentity;
 
 + (id)airDropTransferDataWithRecordID:(id)arg1;
 + (id)archivedTransferName;
@@ -93,7 +93,7 @@
 + (id)archivedTransfersBaseURL;
 + (void)cleanupTransferWithRecordID:(id)arg1;
 + (id)loadFromURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)transferURLForRecordID:(id)arg1;
 + (id)validateTransferFolder:(id)arg1 withRecordID:(id)arg2;
 
@@ -117,18 +117,18 @@
 - (id)firstURL;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecordID:(id)arg1;
-- (BOOL)isNonFileItem;
-- (BOOL)isUndesiredMixOfItems;
-- (BOOL)isUnknownFileType;
-- (BOOL)isUnknownScheme;
-- (BOOL)isValid;
-- (BOOL)isVerifiableIdentity;
+- (bool)isNonFileItem;
+- (bool)isUndesiredMixOfItems;
+- (bool)isUnknownFileType;
+- (bool)isUnknownScheme;
+- (bool)isValid;
+- (bool)isVerifiableIdentity;
 - (id)items;
 - (id)itemsDescription;
 - (id)itemsDescriptionAdvanced;
 - (id)messageAndButtonTitle:(id*)arg1;
-- (id)messageInProgress:(BOOL)arg1 buttonTitle:(id*)arg2;
-- (id)messageLocalizedKeyWithTypes:(id)arg1 isTrustedPerson:(BOOL)arg2 isInProgress:(BOOL)arg3;
+- (id)messageInProgress:(bool)arg1 buttonTitle:(id*)arg2;
+- (id)messageLocalizedKeyWithTypes:(id)arg1 isTrustedPerson:(bool)arg2 isInProgress:(bool)arg3;
 - (id)possibleApplicationDestinations;
 - (id)progressMessage;
 - (id)recordID;
@@ -145,7 +145,7 @@
 - (id)senderID;
 - (id)senderLastName;
 - (id)senderName;
-- (void)setAutoAccept:(BOOL)arg1;
+- (void)setAutoAccept:(bool)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setBytesCopied:(id)arg1;
 - (void)setContentType:(id)arg1;
@@ -164,22 +164,22 @@
 - (void)setSenderFirstName:(id)arg1;
 - (void)setSenderID:(id)arg1;
 - (void)setSenderLastName:(id)arg1;
-- (void)setSoundPlayed:(BOOL)arg1;
+- (void)setSoundPlayed:(bool)arg1;
 - (void)setTimeLastUserInteraction:(id)arg1;
 - (void)setTimeRemaining:(id)arg1;
 - (void)setTotalBytes:(id)arg1;
-- (void)setTransferCompleted:(BOOL)arg1;
-- (void)setTransferState:(int)arg1;
-- (void)setVerifiableIdentity:(BOOL)arg1;
-- (BOOL)shouldAutoAccept;
-- (BOOL)soundPlayed;
+- (void)setTransferCompleted:(bool)arg1;
+- (void)setTransferState:(long long)arg1;
+- (void)setVerifiableIdentity:(bool)arg1;
+- (bool)shouldAutoAccept;
+- (bool)soundPlayed;
 - (id)timeLastUserInteraction;
 - (id)timeRemaining;
 - (id)totalBytes;
 - (id)transferCompleteMessage;
-- (BOOL)transferCompleted;
-- (int)transferState;
-- (int)transferStateResetCount;
+- (bool)transferCompleted;
+- (long long)transferState;
+- (long long)transferStateResetCount;
 - (id)typeForFileExtension:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 

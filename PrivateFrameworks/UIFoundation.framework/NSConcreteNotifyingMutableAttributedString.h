@@ -10,7 +10,7 @@
 
 - (void)beginEditing;
 - (id)delegate;
-- (void)edited:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 changeInLength:(int)arg3;
+- (void)edited:(unsigned long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 changeInLength:(long long)arg3;
 - (void)endEditing;
 - (void)setDelegate:(id)arg1;
 

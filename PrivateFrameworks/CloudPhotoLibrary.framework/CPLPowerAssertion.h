@@ -11,6 +11,6 @@
 + (void)disableSleep;
 + (void)enableSleep;
 + (id)powerAssertionStatus;
-+ (void)setHasEnoughPower:(BOOL)arg1;
++ (void)setHasEnoughPower:(bool)arg1;
 
 @end

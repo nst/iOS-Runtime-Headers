@@ -7,7 +7,7 @@
 
 - (id)error;
 - (int)errorCode;
-- (id)initWithCode:(int)arg1 format:(id)arg2 args:(void*)arg3;
+- (id)initWithCode:(int)arg1 format:(id)arg2 args:(char *)arg3;
 - (id)initWithCode:(int)arg1 format:(id)arg2;
 
 @end

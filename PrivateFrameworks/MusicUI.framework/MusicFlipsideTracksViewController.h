@@ -8,16 +8,16 @@
     UIView *_container;
     MPAVItem *_currentAVItem;
     MPMediaItem *_currentMediaItem;
-    BOOL _hasPlaylist;
     UISegmentedControl *_segmentedControl;
-    BOOL _showingRating;
     MusicFlipsideAlbumDetailHeaderView *_trackInfoView;
+    bool_hasPlaylist;
+    bool_showingRating;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property BOOL hasPlaylist;
-@property(readonly) unsigned int hash;
+@property bool hasPlaylist;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,17 +26,17 @@
 - (void)_performDone:(id)arg1;
 - (void)_performRating:(id)arg1;
 - (void)_selectedSegmentDidChange:(id)arg1;
-- (void)_setShowingRating:(BOOL)arg1;
+- (void)_setShowingRating:(bool)arg1;
 - (void)_updateMediaItem;
 - (id)contentScrollView;
 - (void)dealloc;
-- (BOOL)hasPlaylist;
+- (bool)hasPlaylist;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)ratingDidChangeForRatingControl:(id)arg1;
-- (void)setHasPlaylist:(BOOL)arg1;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (void)setHasPlaylist:(bool)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

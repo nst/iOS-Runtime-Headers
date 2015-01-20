@@ -6,25 +6,25 @@
 
 @interface IKPlayerStateChangeInfo : NSObject {
     NSDictionary *_jsonValue;
-    int _state;
+    long long _state;
 }
 
 @property double duration;
 @property double elapsedTime;
 @property(copy) NSDictionary * jsonValue;
-@property(readonly) int state;
+@property(readonly) long long state;
 
 - (void).cxx_destruct;
-- (id)_stateNameForState:(int)arg1;
+- (id)_stateNameForState:(long long)arg1;
 - (double)duration;
 - (double)elapsedTime;
-- (id)initWithState:(int)arg1;
+- (id)initWithState:(long long)arg1;
 - (id)jsonValue;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setElapsedTime:(double)arg1;
 - (void)setJsonValue:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
-- (int)state;
+- (long long)state;
 
 @end

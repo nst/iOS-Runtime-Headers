@@ -13,11 +13,11 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)clearBookmarkMatchesCaches;
-- (void)clearBookmarkMatchesCachesKeepingEmptyValues:(BOOL)arg1;
+- (void)clearBookmarkMatchesCachesKeepingEmptyValues:(bool)arg1;
 - (void)clearMatchesCaches;
 - (void)enumerateMatchDataForTypedStringHint:(id)arg1 withBlock:(id)arg2;
 - (id)fakeBookmarkMatchDataWithURLString:(id)arg1 title:(id)arg2;
-- (void)getBestMatchesForTypedString:(id)arg1 topHits:(id*)arg2 matches:(id*)arg3 limit:(unsigned int)arg4;
+- (void)getBestMatchesForTypedString:(id)arg1 topHits:(id*)arg2 matches:(id*)arg3 limit:(unsigned long long)arg4;
 - (id)init;
 
 @end

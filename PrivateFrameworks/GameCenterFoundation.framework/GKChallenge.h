@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * challengeID;
 @property(copy,readonly) NSOrderedSet * compatibleBundleIDs;
 @property(retain,readonly) NSDate * completionDate;
-@property(readonly) BOOL detailsLoaded;
+@property(readonly) bool detailsLoaded;
 @property(readonly) GKGame * game;
 @property(retain) GKChallengeInternal * internal;
 @property(retain,readonly) NSDate * issueDate;
@@ -21,19 +21,19 @@
 @property(copy,readonly) NSString * message;
 @property(copy,readonly) GKPlayer * receivingPlayer;
 @property(copy,readonly) NSString * receivingPlayerID;
-@property(readonly) int state;
+@property(readonly) long long state;
 
 + (id)challengeForGame:(id)arg1 andPlayer:(id)arg2 withAchievement:(id)arg3;
 + (id)challengeForGame:(id)arg1 andPlayer:(id)arg2 withScore:(id)arg3;
 + (id)challengeForInternalRepresentation:(id)arg1;
 + (void)getCountOfChallenges:(id)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 + (void)loadChallengesForGame:(id)arg1 receivingPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadChallengesForReceivingPlayer:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadReceivedChallengesWithCompletionHandler:(id)arg1;
-+ (id)stringForState:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)stringForState:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)alertGoalText;
 - (id)composeGoalText;
@@ -42,19 +42,19 @@
 - (void)declineWithCompletionHandler:(id)arg1;
 - (id)detailFromText;
 - (id)detailGoalText;
-- (BOOL)detailsLoaded;
+- (bool)detailsLoaded;
 - (void)encodeWithCoder:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
-- (BOOL)hasLoadedUIDetails;
-- (unsigned int)hash;
+- (bool)hasLoadedUIDetails;
+- (unsigned long long)hash;
 - (id)iconSource;
 - (id)iconURLString;
 - (id)infoTextForIssuingPlayer:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)issueToPlayers:(id)arg1 message:(id)arg2;
 - (id)issuingPlayer;
 - (id)issuingPlayerID;
@@ -68,7 +68,7 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)receivingPlayer;
 - (id)receivingPlayerID;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)smallIconURLString;

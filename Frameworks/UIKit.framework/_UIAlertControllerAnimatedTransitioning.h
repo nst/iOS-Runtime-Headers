@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface _UIAlertControllerAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning> {
-    BOOL _presentation;
+    bool_presentation;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isPresentation) BOOL presentation;
+@property(readonly) unsigned long long hash;
+@property(getter=isPresentation) bool presentation;
 @property(readonly) Class superclass;
 
 - (void)animateTransition:(id)arg1;
-- (BOOL)isPresentation;
-- (void)setPresentation:(BOOL)arg1;
+- (bool)isPresentation;
+- (void)setPresentation:(bool)arg1;
 - (double)transitionDuration:(id)arg1;
 
 @end

@@ -5,23 +5,23 @@
 @class NSAttributedString;
 
 @interface IMMessagePartChatItem : IMMessageChatItem {
-    int _index;
+    long long _index;
     NSAttributedString *_text;
 }
 
-@property int index;
+@property long long index;
 @property(copy,readonly) NSAttributedString * text;
 
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (id)_newMessagePartsForMessageItem:(id)arg1;
 
-- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3;
-- (BOOL)canDelete;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3;
+- (bool)canDelete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (int)index;
-- (void)setIndex:(int)arg1;
+- (long long)index;
+- (void)setIndex:(long long)arg1;
 - (id)text;
 
 @end

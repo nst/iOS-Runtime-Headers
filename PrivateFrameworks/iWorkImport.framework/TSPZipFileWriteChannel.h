@@ -6,13 +6,13 @@
 
 @interface TSPZipFileWriteChannel : NSObject <TSUStreamWriteChannel> {
     TSUZipFileWriter *_archiveWriter;
-    BOOL _isClosed;
+    bool_isClosed;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isValid;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isValid;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,8 +20,8 @@
 - (void)close;
 - (id)init;
 - (id)initWithArchiveWriter:(id)arg1;
-- (BOOL)isValid;
-- (void)setLowWater:(unsigned long)arg1;
+- (bool)isValid;
+- (void)setLowWater:(unsigned long long)arg1;
 - (void)writeData:(id)arg1 queue:(id)arg2 handler:(id)arg3;
 
 @end

@@ -6,11 +6,11 @@
 
 @interface TSDHUDViewController : UIViewController {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     TSDCanvasView *mCanvasView;
     int mHUDOffset;
     } mHUDPoint;
@@ -27,8 +27,8 @@
 - (void)hideHUDForKey:(id)arg1;
 - (void)p_labelTextTimerFired;
 - (void)setLabelText:(id)arg1;
-- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { float x1; float x2; })arg2 inCanvasView:(id)arg3 withNudge:(struct CGSize { float x1; float x2; })arg4 size:(int)arg5;
-- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { float x1; float x2; })arg2 inCanvasView:(id)arg3 withUpwardsNudge:(float)arg4 size:(int)arg5;
-- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { float x1; float x2; })arg2 inCanvasView:(id)arg3 withUpwardsNudge:(float)arg4;
+- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { double x1; double x2; })arg2 inCanvasView:(id)arg3 withNudge:(struct CGSize { double x1; double x2; })arg4 size:(int)arg5;
+- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { double x1; double x2; })arg2 inCanvasView:(id)arg3 withUpwardsNudge:(double)arg4 size:(int)arg5;
+- (void)showHUDForKey:(id)arg1 forTouchPoint:(struct CGPoint { double x1; double x2; })arg2 inCanvasView:(id)arg3 withUpwardsNudge:(double)arg4;
 
 @end

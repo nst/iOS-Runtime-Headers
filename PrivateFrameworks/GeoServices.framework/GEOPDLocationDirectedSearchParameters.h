@@ -16,11 +16,11 @@
     GEOPDViewportInfo *_viewportInfo;
 }
 
-@property BOOL hasMaxResults;
-@property(readonly) BOOL hasSearchLocation;
-@property(readonly) BOOL hasSearchString;
-@property BOOL hasSortOrder;
-@property(readonly) BOOL hasViewportInfo;
+@property bool hasMaxResults;
+@property(readonly) bool hasSearchLocation;
+@property(readonly) bool hasSearchString;
+@property bool hasSortOrder;
+@property(readonly) bool hasViewportInfo;
 @property unsigned int maxResults;
 @property(retain) GEOLatLng * searchLocation;
 @property(retain) NSString * searchString;
@@ -32,21 +32,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxResults;
-- (BOOL)hasSearchLocation;
-- (BOOL)hasSearchString;
-- (BOOL)hasSortOrder;
-- (BOOL)hasViewportInfo;
-- (unsigned int)hash;
+- (bool)hasMaxResults;
+- (bool)hasSearchLocation;
+- (bool)hasSearchString;
+- (bool)hasSortOrder;
+- (bool)hasViewportInfo;
+- (unsigned long long)hash;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 maxResults:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxResults;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)searchLocation;
 - (id)searchString;
-- (void)setHasMaxResults:(BOOL)arg1;
-- (void)setHasSortOrder:(BOOL)arg1;
+- (void)setHasMaxResults:(bool)arg1;
+- (void)setHasSortOrder:(bool)arg1;
 - (void)setMaxResults:(unsigned int)arg1;
 - (void)setSearchLocation:(id)arg1;
 - (void)setSearchString:(id)arg1;

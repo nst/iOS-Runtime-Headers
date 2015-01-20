@@ -27,7 +27,7 @@
 - (id)displayname;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)profileDictionary;
 - (id)service;

@@ -6,8 +6,8 @@
 
 @interface VKMapSnapshotRequest : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct { 
         struct { 
             double latitude; 
@@ -18,7 +18,7 @@
             double longitudeDelta; 
         } span; 
     NSLocale *_locale;
-    int _mapType;
+    long long _mapType;
     } _region;
     unsigned int _scale;
     } _size;
@@ -26,28 +26,28 @@
 }
 
 @property(retain) NSLocale * locale;
-@property int mapType;
+@property long long mapType;
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
 @property unsigned int scale;
-@property struct CGSize { float x1; float x2; } size;
+@property struct CGSize { double x1; double x2; } size;
 @property unsigned int tileGroupID;
 
 - (id).cxx_construct;
-- (struct VKRequestKey { struct { struct { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; unsigned int x4; unsigned short x5; })_requestKey;
+- (struct VKRequestKey { struct { struct { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; unsigned int x4; unsigned short x5; })_requestKey;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)locale;
-- (int)mapType;
+- (long long)mapType;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (unsigned int)scale;
 - (void)setLocale:(id)arg1;
-- (void)setMapType:(int)arg1;
+- (void)setMapType:(long long)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setScale:(unsigned int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTileGroupID:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (unsigned int)tileGroupID;
 
 @end

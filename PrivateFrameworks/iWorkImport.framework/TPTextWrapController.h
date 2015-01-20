@@ -6,39 +6,39 @@
 
 @interface TPTextWrapController : NSObject <TSWPTextWrap> {
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     } _canvasSpaceToWrapSpace;
     TPDocumentRoot *_documentRoot;
-    BOOL _wrapAnimationEnabled;
     NSTimer *_wrapAnimationTimer;
     } _wrapSpaceToCanvasSpace;
+    bool_wrapAnimationEnabled;
 }
 
-+ (struct CGPoint { float x1; float x2; })p_baseWrappablePoint;
++ (struct CGPoint { double x1; double x2; })p_baseWrappablePoint;
 
 - (id).cxx_construct;
-- (id)beginWrappingToColumn:(id)arg1 target:(id)arg2 hasWrapables:(BOOL*)arg3;
+- (id)beginWrappingToColumn:(id)arg1 target:(id)arg2 hasWrapables:(bool*)arg3;
 - (void)dealloc;
 - (id)initWithDocumentRoot:(id)arg1;
-- (float)nextUnobstructedSpanStartingAt:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wrappableAttachments:(id)arg2 userInfo:(id)arg3;
+- (double)nextUnobstructedSpanStartingAt:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wrappableAttachments:(id)arg2 userInfo:(id)arg3;
 - (void)p_animateWrap;
 - (id)p_groupInfoContainingWrappable:(id)arg1;
 - (void)p_setWrapAnimationPhase:(double)arg1;
-- (BOOL)p_shouldTextFlowAroundWrappable:(id)arg1 inTarget:(id)arg2 inColumn:(id)arg3;
-- (unsigned int)p_splitLine:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lineSegmentRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }[128])arg2 wrappable:(id)arg3 cookie:(id)arg4;
-- (unsigned int)splitLine:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lineSegmentRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }[128])arg2 wrappableAttachments:(id)arg3 ignoreFloatingGraphics:(BOOL)arg4 floatingCausedWrap:(BOOL*)arg5 skipHint:(float*)arg6 userInfo:(id)arg7;
+- (bool)p_shouldTextFlowAroundWrappable:(id)arg1 inTarget:(id)arg2 inColumn:(id)arg3;
+- (unsigned int)p_splitLine:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lineSegmentRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }[128])arg2 wrappable:(id)arg3 cookie:(id)arg4;
+- (unsigned int)splitLine:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lineSegmentRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }[128])arg2 wrappableAttachments:(id)arg3 ignoreFloatingGraphics:(bool)arg4 floatingCausedWrap:(bool*)arg5 skipHint:(double*)arg6 userInfo:(id)arg7;
 - (void)stopAnimation;
 - (void)toggleWrapAnimation;
 

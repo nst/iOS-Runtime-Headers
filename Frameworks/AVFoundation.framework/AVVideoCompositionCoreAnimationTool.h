@@ -14,8 +14,8 @@
 
 - (int)_auxiliaryTrackID;
 - (id)_auxiliaryTrackLayer;
-- (BOOL)_hasLayerAsAuxiliaryTrack;
-- (BOOL)_hasPostProcessingLayers;
+- (bool)_hasLayerAsAuxiliaryTrack;
+- (bool)_hasPostProcessingLayers;
 - (id)_postProcessingRootLayer;
 - (id)_postProcessingVideoLayers;
 - (void)dealloc;

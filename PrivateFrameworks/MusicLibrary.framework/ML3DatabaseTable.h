@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)columnDefinitionsSQL;
 - (id)columns;
-- (id)createTableSQLWithExistenceClause:(BOOL)arg1;
+- (id)createTableSQLWithExistenceClause:(bool)arg1;
 - (id)foreignKeyConstraints;
 - (id)name;
 

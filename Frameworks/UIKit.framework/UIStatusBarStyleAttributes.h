@@ -9,29 +9,29 @@
     UIStatusBarStyleRequest *_request;
 }
 
-- (BOOL)areTopCornersRounded;
+- (bool)areTopCornersRounded;
 - (id)backgroundColorWithTintColor:(id)arg1;
 - (id)backgroundImageName;
 - (int)cornerStyle;
 - (void)dealloc;
-- (float)foregroundAlpha;
+- (double)foregroundAlpha;
 - (id)foregroundStyle;
 - (double)glowAnimationDuration;
-- (float)heightForMetrics:(int)arg1;
-- (float)heightForOrientation:(int)arg1;
-- (int)idiom;
+- (double)heightForMetrics:(long long)arg1;
+- (double)heightForOrientation:(long long)arg1;
+- (long long)idiom;
 - (id)init;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)isDoubleHeight;
-- (BOOL)isTranslucent;
-- (BOOL)isTransparent;
-- (int)legibilityStyle;
-- (id)newForegroundStyleWithHeight:(float)arg1;
-- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
-- (BOOL)shouldUseVisualAltitude;
-- (int)style;
-- (BOOL)supportsRasterization;
-- (int)tapButtonType;
-- (BOOL)usesVerticalLayout;
+- (bool)isDoubleHeight;
+- (bool)isTranslucent;
+- (bool)isTransparent;
+- (long long)legibilityStyle;
+- (id)newForegroundStyleWithHeight:(double)arg1;
+- (bool)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
+- (bool)shouldUseVisualAltitude;
+- (long long)style;
+- (bool)supportsRasterization;
+- (long long)tapButtonType;
+- (bool)usesVerticalLayout;
 
 @end

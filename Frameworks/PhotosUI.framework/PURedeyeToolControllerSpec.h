@@ -5,12 +5,12 @@
 @interface PURedeyeToolControllerSpec : PUPhotoEditToolControllerSpec {
 }
 
-@property(readonly) BOOL displaysTooltipAtTopInPortrait;
-@property(readonly) float tooltipLandscapeMargin;
-@property(readonly) float tooltipPortraitMargin;
+@property(readonly) bool displaysTooltipAtTopInPortrait;
+@property(readonly) double tooltipLandscapeMargin;
+@property(readonly) double tooltipPortraitMargin;
 
-- (BOOL)displaysTooltipAtTopInPortrait;
-- (float)tooltipLandscapeMargin;
-- (float)tooltipPortraitMargin;
+- (bool)displaysTooltipAtTopInPortrait;
+- (double)tooltipLandscapeMargin;
+- (double)tooltipPortraitMargin;
 
 @end

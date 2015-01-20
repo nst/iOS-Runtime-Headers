@@ -6,25 +6,25 @@
 
 @interface TPStarkInCallButtonRing : UIView {
     UIColor *_fillColor;
-    BOOL _highlighted;
-    BOOL _selected;
-    BOOL _toggledOn;
+    bool_highlighted;
+    bool_selected;
+    bool_toggledOn;
 }
 
 @property(retain) UIColor * fillColor;
-@property BOOL highlighted;
-@property BOOL selected;
-@property BOOL toggledOn;
+@property bool highlighted;
+@property bool selected;
+@property bool toggledOn;
 
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)fillColor;
-- (BOOL)highlighted;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)selected;
+- (bool)highlighted;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)selected;
 - (void)setFillColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setToggledOn:(BOOL)arg1;
-- (BOOL)toggledOn;
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setToggledOn:(bool)arg1;
+- (bool)toggledOn;
 
 @end

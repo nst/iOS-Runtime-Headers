@@ -6,25 +6,25 @@
 
 @interface AVCaptureStillImageOutputInternal_FigRecorder : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL EV0CaptureEnabled;
-    int HDRCaptureMode;
-    BOOL SISActive;
-    BOOL SISEnabled;
-    BOOL SISSupported;
-    unsigned long imageDataFormatType;
-    BOOL isCapturingPhoto;
+        double width; 
+        double height; 
+    long long HDRCaptureMode;
+    boolEV0CaptureEnabled;
+    boolSISActive;
+    boolSISEnabled;
+    boolSISSupported;
+    boolisCapturingPhoto;
+    booljpegQualitySpecified;
+    boolnoiseReductionEnabled;
+    boolrawCaptureEnabled;
+    boolsquareCropEnabled;
+    boolsuspendsVideoProcessingDuringCapture;
+    unsigned int imageDataFormatType;
     float jpegQuality;
-    BOOL jpegQualitySpecified;
-    BOOL noiseReductionEnabled;
     NSDictionary *outputSettings;
     } previewImageSize;
-    BOOL rawCaptureEnabled;
-    unsigned long shutterSoundID;
-    BOOL squareCropEnabled;
+    unsigned int shutterSoundID;
     NSMutableArray *stillImageRequests;
-    BOOL suspendsVideoProcessingDuringCapture;
 }
 
 - (void)dealloc;

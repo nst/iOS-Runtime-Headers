@@ -7,36 +7,36 @@
 @interface SKUIStorePageSplitCollectionViewLayout : _UICollectionViewCompositionLayout <SKUIStorePageCollectionViewLayout> {
     NSString *_backdropGroupName;
     NSMutableArray *_orderedSublayouts;
-    BOOL _rendersWithPerspective;
     NSMapTable *_sublayoutToSectionsToIndexRanges;
+    bool_rendersWithPerspective;
 }
 
 @property(copy) NSString * backdropGroupName;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * indexPathsForPinningItems;
-@property BOOL rendersWithPerspective;
+@property bool rendersWithPerspective;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_createSectionsToIndexRangesMapTableIfNeededForSublayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForLayout:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2 relativeToEdges:(unsigned int)arg3 fromSiblingLayout:(id)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForLayout:(id)arg1 offset:(struct CGPoint { double x1; double x2; })arg2 relativeToEdges:(unsigned long long)arg3 fromSiblingLayout:(id)arg4;
 - (id)_newStorePageCollectionViewLayout;
 - (void)addSublayout:(id)arg1 forElementKinds:(id)arg2;
-- (void)addSublayout:(id)arg1 forItems:(id)arg2 inSection:(int)arg3 offset:(struct CGPoint { float x1; float x2; })arg4 relativeToEdges:(unsigned int)arg5 fromSiblingLayout:(id)arg6;
-- (void)addSublayout:(id)arg1 forSections:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 relativeToEdges:(unsigned int)arg4 fromSiblingLayout:(id)arg5;
+- (void)addSublayout:(id)arg1 forItems:(id)arg2 inSection:(long long)arg3 offset:(struct CGPoint { double x1; double x2; })arg4 relativeToEdges:(unsigned long long)arg5 fromSiblingLayout:(id)arg6;
+- (void)addSublayout:(id)arg1 forSections:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 relativeToEdges:(unsigned long long)arg4 fromSiblingLayout:(id)arg5;
 - (void)addSublayoutsUsingSplitsDescription:(id)arg1;
 - (id)backdropGroupName;
 - (id)indexPathsForPinningItems;
 - (id)init;
 - (id)layoutAttributesForUnpinnedItemAtIndexPath:(id)arg1;
-- (id)pinnedLayoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)pinnedLayoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)removeSublayout:(id)arg1;
-- (BOOL)rendersWithPerspective;
+- (bool)rendersWithPerspective;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setRendersWithPerspective:(BOOL)arg1;
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRendersWithPerspective:(bool)arg1;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)sublayouts;
 
 @end

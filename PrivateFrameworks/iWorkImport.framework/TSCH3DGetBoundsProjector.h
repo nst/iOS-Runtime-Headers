@@ -97,13 +97,13 @@
                 float q; 
             } ; 
         } value[4]; 
+    boolmUseAggressiveBackProjection;
     struct ChartScenePropertyAccessor { id x1; id x2; } *mAccessor;
     TSCH3DCamera *mCamera;
     } mConstantDepthModelView;
     } mMVP;
     } mModelView;
     } mProjection;
-    BOOL mUseAggressiveBackProjection;
 }
 
 - (id).cxx_construct;

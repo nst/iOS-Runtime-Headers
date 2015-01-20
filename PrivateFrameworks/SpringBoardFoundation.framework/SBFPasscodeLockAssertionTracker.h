@@ -12,7 +12,7 @@
 - (void)addAssertion:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasActiveAssertions;
+- (bool)hasActiveAssertions;
 - (id)init;
 - (id)mkbAssertionOptions;
 - (void)removeAssertion:(id)arg1;

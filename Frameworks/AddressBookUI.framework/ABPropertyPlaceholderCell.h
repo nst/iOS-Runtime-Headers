@@ -13,9 +13,9 @@
 - (void)dealloc;
 - (id)label;
 - (id)labelView;
-- (float)minCellHeight;
+- (double)minCellHeight;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 
 @end

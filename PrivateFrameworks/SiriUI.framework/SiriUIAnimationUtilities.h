@@ -5,7 +5,7 @@
 @interface SiriUIAnimationUtilities : NSObject {
 }
 
-+ (float)defaultAnimationDuration;
++ (double)defaultAnimationDuration;
 + (id)defaultTimingFunction;
 
 @end

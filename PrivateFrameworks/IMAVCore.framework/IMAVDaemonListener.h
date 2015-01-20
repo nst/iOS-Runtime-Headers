@@ -6,13 +6,13 @@
 
 @interface IMAVDaemonListener : NSObject {
     NSMutableArray *_handlers;
-    BOOL _postedSetupComplete;
     NSProtocolChecker *_protocol;
-    BOOL _setupComplete;
+    bool_postedSetupComplete;
+    bool_setupComplete;
 }
 
 @property(readonly) NSArray * handlers;
-@property(readonly) BOOL isSetupComplete;
+@property(readonly) bool isSetupComplete;
 
 - (void)_noteDisconnected;
 - (void)addHandler:(id)arg1;
@@ -20,9 +20,9 @@
 - (void)forwardInvocation:(id)arg1;
 - (id)handlers;
 - (id)init;
-- (BOOL)isSetupComplete;
+- (bool)isSetupComplete;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)removeHandler:(id)arg1;
-- (void)setupComplete:(BOOL)arg1 info:(id)arg2;
+- (void)setupComplete:(bool)arg1 info:(id)arg2;
 
 @end

@@ -12,17 +12,17 @@
  */
 
 @interface SKScale : SKAction {
-    struct SKCScale { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; BOOL x31; BOOL x32; BOOL x33; BOOL x34; } *_mycaction;
+    struct SKCScale { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; boolx31; boolx32; boolx33; boolx34; } *_mycaction;
 }
 
-+ (id)scaleBy:(float)arg1 duration:(double)arg2;
-+ (id)scaleTo:(float)arg1 duration:(double)arg2;
-+ (id)scaleXBy:(float)arg1 duration:(double)arg2;
-+ (id)scaleXBy:(float)arg1 y:(float)arg2 duration:(double)arg3;
-+ (id)scaleXTo:(float)arg1 duration:(double)arg2;
-+ (id)scaleXTo:(float)arg1 y:(float)arg2 duration:(double)arg3;
-+ (id)scaleYBy:(float)arg1 duration:(double)arg2;
-+ (id)scaleYTo:(float)arg1 duration:(double)arg2;
++ (id)scaleBy:(double)arg1 duration:(double)arg2;
++ (id)scaleTo:(double)arg1 duration:(double)arg2;
++ (id)scaleXBy:(double)arg1 duration:(double)arg2;
++ (id)scaleXBy:(double)arg1 y:(double)arg2 duration:(double)arg3;
++ (id)scaleXTo:(double)arg1 duration:(double)arg2;
++ (id)scaleXTo:(double)arg1 y:(double)arg2 duration:(double)arg3;
++ (id)scaleYBy:(double)arg1 duration:(double)arg2;
++ (id)scaleYTo:(double)arg1 duration:(double)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -5,7 +5,7 @@
 @class <IKJSImpression>, NSArray, NSMutableArray, NSString;
 
 @interface IKJSImpression : IKJSObject <IKJSImpression> {
-    long _indexInParent;
+    long long _indexInParent;
     NSString *_metricsData;
     NSMutableArray *_mutableChildren;
     NSMutableArray *_mutableTimestamps;
@@ -14,8 +14,8 @@
 
 @property(readonly) NSArray * children;
 @property(readonly) NSString * data;
-@property(readonly) long index;
-@property long indexInParent;
+@property(readonly) long long index;
+@property long long indexInParent;
 @property(copy) NSString * metricsData;
 @property(retain) NSMutableArray * mutableChildren;
 @property(retain) NSMutableArray * mutableTimestamps;
@@ -29,16 +29,16 @@
 - (id)children;
 - (id)data;
 - (id)description;
-- (long)index;
-- (long)indexInParent;
-- (id)initWithAppContext:(id)arg1 data:(id)arg2 index:(unsigned int)arg3;
+- (long long)index;
+- (long long)indexInParent;
+- (id)initWithAppContext:(id)arg1 data:(id)arg2 index:(unsigned long long)arg3;
 - (void)linkReferences;
 - (id)metricsData;
 - (id)mutableChildren;
 - (id)mutableTimestamps;
 - (id)parent;
 - (id)parentImpression;
-- (void)setIndexInParent:(long)arg1;
+- (void)setIndexInParent:(long long)arg1;
 - (void)setMetricsData:(id)arg1;
 - (void)setMutableChildren:(id)arg1;
 - (void)setMutableTimestamps:(id)arg1;

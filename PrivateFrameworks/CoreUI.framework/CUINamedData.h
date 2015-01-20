@@ -7,7 +7,7 @@
 @interface CUINamedData : NSObject {
     CUIRenditionKey *_key;
     NSString *_name;
-    unsigned int _storageRef;
+    unsigned long long _storageRef;
 }
 
 @property(readonly) NSData * data;
@@ -21,7 +21,7 @@
 - (id)data;
 - (void)dealloc;
 - (id)description;
-- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned int)arg3;
+- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned long long)arg3;
 - (id)name;
 - (void)setName:(id)arg1;
 - (id)utiType;

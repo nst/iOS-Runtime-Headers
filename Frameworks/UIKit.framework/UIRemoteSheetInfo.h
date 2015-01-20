@@ -8,7 +8,7 @@
     void *_context;
     id _delegate;
     UISpringBoardHostedView *_remoteView;
-    int _returnCode;
+    long long _returnCode;
     SEL _selector;
     UIView *_sheetView;
 }
@@ -16,7 +16,7 @@
 @property void* context;
 @property id delegate;
 @property(retain) UISpringBoardHostedView * remoteView;
-@property int returnCode;
+@property long long returnCode;
 @property SEL selector;
 @property(retain) UIView * sheetView;
 
@@ -24,12 +24,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)remoteView;
-- (int)returnCode;
+- (long long)returnCode;
 - (SEL)selector;
 - (void)setContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRemoteView:(id)arg1;
-- (void)setReturnCode:(int)arg1;
+- (void)setReturnCode:(long long)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setSheetView:(id)arg1;
 - (id)sheetView;

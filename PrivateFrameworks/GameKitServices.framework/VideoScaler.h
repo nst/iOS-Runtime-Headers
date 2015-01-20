@@ -6,13 +6,13 @@
     struct __IOSurfaceAccelerator { } *_ioSurfaceAccelerator;
     char *_tempBuffer1;
     char *_tempBuffer2;
-    unsigned long _tempBufferHeight;
-    unsigned long _tempBufferWidth;
+    unsigned long long _tempBufferHeight;
+    unsigned long long _tempBufferWidth;
 }
 
-- (long)convertAndScalePixelBuffer:(struct __CVBuffer { }*)arg1 toWidth:(int)arg2 toHeight:(int)arg3 withPixelFormat:(unsigned long)arg4 usingPixelBufferPool:(struct __CVPixelBufferPool { }*)arg5 andStoreTo:(struct __CVBuffer {}**)arg6;
+- (int)convertAndScalePixelBuffer:(struct __CVBuffer { }*)arg1 toWidth:(int)arg2 toHeight:(int)arg3 withPixelFormat:(unsigned int)arg4 usingPixelBufferPool:(struct __CVPixelBufferPool { }*)arg5 andStoreTo:(struct __CVBuffer {}**)arg6;
 - (void)dealloc;
 - (id)init;
-- (long)rotatePixelBuffer:(struct __CVBuffer { }*)arg1 withPixelFormat:(unsigned long)arg2 usingPixelBufferPool:(struct __CVPixelBufferPool { }*)arg3 andStoreTo:(struct __CVBuffer {}**)arg4;
+- (int)rotatePixelBuffer:(struct __CVBuffer { }*)arg1 withPixelFormat:(unsigned int)arg2 usingPixelBufferPool:(struct __CVPixelBufferPool { }*)arg3 andStoreTo:(struct __CVBuffer {}**)arg4;
 
 @end

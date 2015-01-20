@@ -6,12 +6,12 @@
     unsigned int _edgeCapacity;
     unsigned int _edgeCount;
     struct _VMUDirectedGraphEdge { unsigned int x1; unsigned int x2; unsigned int x3; } *_edges;
-    BOOL _needsAdjacencyUpdate;
     unsigned int _nextEdgeName;
     unsigned int _nextNodeName;
     unsigned int _nodeCount;
     unsigned int *_nodeNameMap;
     struct _VMUDirectedGraphNode { unsigned int x1; unsigned int x2; } *_nodes;
+    bool_needsAdjacencyUpdate;
 }
 
 @property(readonly) unsigned int edgeCount;

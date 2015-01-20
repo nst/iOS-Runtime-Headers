@@ -6,33 +6,33 @@
 
 @interface _UIDatePickerComponent : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    unsigned int _calendarUnit;
-    unsigned int _equivalentUnit;
+        unsigned long long location; 
+        unsigned long long length; 
+    unsigned long long _calendarUnit;
+    unsigned long long _equivalentUnit;
     NSString *_formatString;
     } _unitRange;
-    float _width;
+    double _width;
 }
 
-@property(readonly) unsigned int calendarUnit;
-@property(readonly) unsigned int equivalentUnit;
+@property(readonly) unsigned long long calendarUnit;
+@property(readonly) unsigned long long equivalentUnit;
 @property(readonly) NSString * formatString;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } unitRange;
-@property float width;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } unitRange;
+@property double width;
 
-+ (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(int)arg3;
++ (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(long long)arg3;
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2;
 
-- (id)_initWithFormatString:(id)arg1 calendarUnit:(unsigned int)arg2;
-- (unsigned int)calendarUnit;
+- (id)_initWithFormatString:(id)arg1 calendarUnit:(unsigned long long)arg2;
+- (unsigned long long)calendarUnit;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)equivalentUnit;
+- (unsigned long long)equivalentUnit;
 - (id)formatString;
-- (void)setUnitRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setWidth:(float)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })unitRange;
-- (float)width;
+- (void)setUnitRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setWidth:(double)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })unitRange;
+- (double)width;
 
 @end

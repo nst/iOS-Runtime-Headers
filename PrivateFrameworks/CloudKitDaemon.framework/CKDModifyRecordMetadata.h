@@ -7,22 +7,22 @@
 @interface CKDModifyRecordMetadata : NSObject {
     NSError *_error;
     NSString *_etag;
-    BOOL _isDelete;
     CKRecord *_record;
     CKRecordID *_recordID;
     CKRecord *_serverRecord;
-    unsigned int _uploadState;
+    unsigned long long _uploadState;
+    bool_isDelete;
 }
 
 @property(retain) NSError * error;
 @property(retain) NSString * etag;
-@property BOOL isDelete;
+@property bool isDelete;
 @property(retain) CKRecord * record;
 @property(retain) CKRecordID * recordID;
 @property(retain) CKRecord * serverRecord;
-@property unsigned int uploadState;
+@property unsigned long long uploadState;
 
-+ (id)_stringForUploadState:(unsigned int)arg1;
++ (id)_stringForUploadState:(unsigned long long)arg1;
 + (id)modifyMetadataForDeleteWithRecordID:(id)arg1;
 + (id)modifyMetadataWithRecord:(id)arg1;
 
@@ -30,17 +30,17 @@
 - (id)description;
 - (id)error;
 - (id)etag;
-- (BOOL)isDelete;
+- (bool)isDelete;
 - (id)record;
 - (id)recordID;
 - (id)serverRecord;
 - (void)setError:(id)arg1;
 - (void)setEtag:(id)arg1;
-- (void)setIsDelete:(BOOL)arg1;
+- (void)setIsDelete:(bool)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setRecordID:(id)arg1;
 - (void)setServerRecord:(id)arg1;
-- (void)setUploadState:(unsigned int)arg1;
-- (unsigned int)uploadState;
+- (void)setUploadState:(unsigned long long)arg1;
+- (unsigned long long)uploadState;
 
 @end

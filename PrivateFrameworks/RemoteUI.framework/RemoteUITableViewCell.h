@@ -11,32 +11,32 @@
 @interface RemoteUITableViewCell : UITableViewCell {
     UIButton *_detailLinkButton;
     id _detailLinkHandler;
-    BOOL _forceFullSizeDetailLabel;
     UIImageView *_invalidRowView;
-    BOOL _leftAlignDetailLabel;
-    int _remoteUIAccessoryType;
+    long long _remoteUIAccessoryType;
     UIView *_remoteUIAccessoryView;
+    bool_forceFullSizeDetailLabel;
+    bool_leftAlignDetailLabel;
 }
 
-@property BOOL forceFullSizeDetailLabel;
-@property BOOL leftAlignDetailLabel;
-@property int remoteUIAccessoryType;
+@property bool forceFullSizeDetailLabel;
+@property bool leftAlignDetailLabel;
+@property long long remoteUIAccessoryType;
 @property(retain) UIView * remoteUIAccessoryView;
 
 - (void).cxx_destruct;
 - (void)_accessoriesChanged;
 - (void)_detailLinkPressed;
-- (BOOL)forceFullSizeDetailLabel;
+- (bool)forceFullSizeDetailLabel;
 - (void)layoutSubviews;
-- (BOOL)leftAlignDetailLabel;
+- (bool)leftAlignDetailLabel;
 - (void)prepareForReuse;
-- (int)remoteUIAccessoryType;
+- (long long)remoteUIAccessoryType;
 - (id)remoteUIAccessoryView;
 - (void)setDetailLinkText:(id)arg1 handler:(id)arg2;
-- (void)setForceFullSizeDetailLabel:(BOOL)arg1;
-- (void)setLeftAlignDetailLabel:(BOOL)arg1;
-- (void)setRemoteUIAccessoryType:(int)arg1;
+- (void)setForceFullSizeDetailLabel:(bool)arg1;
+- (void)setLeftAlignDetailLabel:(bool)arg1;
+- (void)setRemoteUIAccessoryType:(long long)arg1;
 - (void)setRemoteUIAccessoryView:(id)arg1;
-- (void)setRowInvalid:(BOOL)arg1;
+- (void)setRowInvalid:(bool)arg1;
 
 @end

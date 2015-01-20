@@ -12,7 +12,7 @@
 @property(readonly) _UIVisualEffectConfig * effectConfig;
 @property(readonly) _UIBackdropViewSettings * effectSettings;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;

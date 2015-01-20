@@ -29,7 +29,7 @@
 - (id)activities;
 - (id)connections;
 - (void)dealloc;
-- (int)distance;
+- (long long)distance;
 - (struct CGImage { }*)icon;
 - (id)identifier;
 - (id)init;

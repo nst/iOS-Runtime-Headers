@@ -5,7 +5,7 @@
 @interface DDFaceTimeAudioAction : DDTelephoneNumberAction {
 }
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 
 - (int)interactionType;
 - (id)localizedName;

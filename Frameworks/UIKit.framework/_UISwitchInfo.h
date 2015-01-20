@@ -16,11 +16,11 @@
     UIView *leftEdgeView;
     CALayer *maskLayer;
     UIColor *onButtonColor;
-    float position;
+    double position;
     UIView *rightEdgeView;
 }
 
 - (void)dealloc;
-- (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
+- (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned long long)arg2;
 
 @end

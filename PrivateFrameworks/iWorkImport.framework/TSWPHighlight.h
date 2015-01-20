@@ -24,7 +24,7 @@
 @property(readonly) NSDate * date;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property <TSKModel> * hostingModel;
 @property(copy) TSDCommentStorage * storage;
 @property(readonly) Class superclass;
@@ -46,8 +46,8 @@
 - (id)hostingModel;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 commentStorage:(id)arg2;
-- (BOOL)isCommentEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCommentEmpty;
+- (bool)isEqual:(id)arg1;
 - (void)loadFromArchive:(const struct HighlightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct Reference {} *x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 - (void)p_invalidateAnnotationResultsForDocumentRoot:(id)arg1 key:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

@@ -6,12 +6,12 @@
 
 @interface UISubTest : NSObject {
     NSMutableArray *_fps;
-    BOOL _showFps;
-    BOOL _showTime;
     NSNumber *_startFrame;
     NSNumber *_startTime;
     NSString *_testName;
     NSMutableArray *_time;
+    bool_showFps;
+    bool_showTime;
 }
 
 - (void).cxx_destruct;

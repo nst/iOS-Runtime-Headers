@@ -14,13 +14,13 @@
 @property(retain) NSString * local_result;
 @property(retain) NSString * parsec_result;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fbr;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInput:(id)arg1 timestamp:(int)arg2;
+- (id)initWithInput:(id)arg1 timestamp:(long long)arg2;
 - (id)local_result;
 - (id)parsec_result;
 - (id)plist;

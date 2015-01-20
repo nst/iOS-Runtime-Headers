@@ -12,8 +12,8 @@
     NSString *_libraryName;
 }
 
-@property BOOL hasLibraryId;
-@property(readonly) BOOL hasLibraryName;
+@property bool hasLibraryId;
+@property(readonly) bool hasLibraryName;
 @property long long libraryId;
 @property(retain) NSString * libraryName;
 
@@ -22,14 +22,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLibraryId;
-- (BOOL)hasLibraryName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLibraryId;
+- (bool)hasLibraryName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (long long)libraryId;
 - (id)libraryName;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLibraryId:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLibraryId:(bool)arg1;
 - (void)setLibraryId:(long long)arg1;
 - (void)setLibraryName:(id)arg1;
 - (void)writeTo:(id)arg1;

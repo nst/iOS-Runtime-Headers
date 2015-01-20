@@ -10,27 +10,27 @@
 
 @interface ATAssetSessionTask : ATSessionTask <ATAssetLinkControllerObserver> {
     ATAssetLinkController *_assetLinkController;
-    BOOL _cancelAtStart;
     NSString *_dataClass;
-    unsigned int _failedAssetsCount;
+    unsigned long long _failedAssetsCount;
     NSPredicate *_filterPredicate;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableOrderedSet *_remainingAssets;
     double _retryInterval;
     NSObject<OS_dispatch_source> *_retryTimer;
-    BOOL _retryUntilFinished;
     id _shouldRetryAssetBlock;
-    BOOL _waitingForRetry;
+    bool_cancelAtStart;
+    bool_retryUntilFinished;
+    bool_waitingForRetry;
 }
 
 @property(retain) ATAssetLinkController * assetLinkController;
 @property(copy,readonly) NSString * dataClass;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int failedAssetsCount;
+@property(readonly) unsigned long long failedAssetsCount;
 @property(copy) NSPredicate * filterPredicate;
-@property(readonly) unsigned int hash;
-@property BOOL retryUntilFinished;
+@property(readonly) unsigned long long hash;
+@property bool retryUntilFinished;
 @property(copy) id shouldRetryAssetBlock;
 @property(readonly) Class superclass;
 
@@ -43,16 +43,16 @@
 - (void)cancelAllAssets;
 - (id)dataClass;
 - (id)debugDescription;
-- (unsigned int)failedAssetsCount;
+- (unsigned long long)failedAssetsCount;
 - (id)filterPredicate;
 - (id)initWithDataClass:(id)arg1;
 - (id)remainingAssets;
 - (void)resume;
-- (BOOL)retryUntilFinished;
+- (bool)retryUntilFinished;
 - (id)sessionGroupingKey;
 - (void)setAssetLinkController:(id)arg1;
 - (void)setFilterPredicate:(id)arg1;
-- (void)setRetryUntilFinished:(BOOL)arg1;
+- (void)setRetryUntilFinished:(bool)arg1;
 - (void)setShouldRetryAssetBlock:(id)arg1;
 - (id)shouldRetryAssetBlock;
 - (void)start;

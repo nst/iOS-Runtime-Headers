@@ -4,20 +4,20 @@
 
 @interface MPSkipTrackCommand : MPRemoteCommand {
     struct { 
-        int numberOfAvailableSkips; 
-        int skipFrequency; 
+        long long numberOfAvailableSkips; 
+        long long skipFrequency; 
         double skipInterval; 
-    BOOL _adPreventsDisplay;
     } _skipLimit;
+    bool_adPreventsDisplay;
 }
 
-@property BOOL adPreventsDisplay;
-@property struct { int x1; int x2; double x3; } skipLimit;
+@property bool adPreventsDisplay;
+@property struct { long long x1; long long x2; double x3; } skipLimit;
 
 - (id)_mediaRemoteCommandInfoOptions;
-- (BOOL)adPreventsDisplay;
-- (void)setAdPreventsDisplay:(BOOL)arg1;
-- (void)setSkipLimit:(struct { int x1; int x2; double x3; })arg1;
-- (struct { int x1; int x2; double x3; })skipLimit;
+- (bool)adPreventsDisplay;
+- (void)setAdPreventsDisplay:(bool)arg1;
+- (void)setSkipLimit:(struct { long long x1; long long x2; double x3; })arg1;
+- (struct { long long x1; long long x2; double x3; })skipLimit;
 
 @end

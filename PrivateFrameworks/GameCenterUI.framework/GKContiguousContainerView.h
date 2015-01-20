@@ -6,46 +6,46 @@
 
 @interface GKContiguousContainerView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    BOOL _applyOrthogonalConstraints;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     UIView *_baselineView;
     } _insets;
-    float _overlap;
+    double _overlap;
     NSArray *_replaceableConstraints;
-    BOOL _vertical;
+    bool_applyOrthogonalConstraints;
+    bool_vertical;
 }
 
-@property BOOL applyOrthogonalConstraints;
+@property bool applyOrthogonalConstraints;
 @property UIView * baselineView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property float overlap;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property double overlap;
 @property(retain) NSArray * replaceableConstraints;
-@property BOOL vertical;
+@property bool vertical;
 
-+ (id)containerForViewsFontsLeadings:(id)arg1 options:(int)arg2;
-+ (id)containerViewForViews:(id)arg1 overlap:(float)arg2 vertical:(BOOL)arg3 applyOrthogonalConstraints:(BOOL)arg4;
-+ (id)containerViewForViews:(id)arg1 overlap:(float)arg2 vertical:(BOOL)arg3;
++ (id)containerForViewsFontsLeadings:(id)arg1 options:(long long)arg2;
++ (id)containerViewForViews:(id)arg1 overlap:(double)arg2 vertical:(bool)arg3 applyOrthogonalConstraints:(bool)arg4;
++ (id)containerViewForViews:(id)arg1 overlap:(double)arg2 vertical:(bool)arg3;
 
 - (void)_addContiguousSubviews:(id)arg1;
-- (BOOL)applyOrthogonalConstraints;
+- (bool)applyOrthogonalConstraints;
 - (id)baselineView;
 - (void)dealloc;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (float)overlap;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (double)overlap;
 - (void)replaceSubviews:(id)arg1;
 - (id)replaceableConstraints;
-- (void)setApplyOrthogonalConstraints:(BOOL)arg1;
+- (void)setApplyOrthogonalConstraints:(bool)arg1;
 - (void)setBaselineView:(id)arg1;
-- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setOverlap:(float)arg1;
+- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setOverlap:(double)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
-- (void)setVertical:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)vertical;
+- (void)setVertical:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)vertical;
 - (id)viewForBaselineLayout;
 
 @end

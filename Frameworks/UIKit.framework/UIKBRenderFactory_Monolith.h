@@ -9,12 +9,12 @@
 - (id)activeTextColor;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (id)displayContentsForKey:(id)arg1;
-- (float)enabledFontSize;
-- (struct CGPoint { float x1; float x2; })enabledTextOffset;
+- (double)enabledFontSize;
+- (struct CGPoint { double x1; double x2; })enabledTextOffset;
 - (id)fontName;
-- (float)highlightedFontSize;
+- (double)highlightedFontSize;
 - (id)highlightedKeyColor;
-- (struct CGPoint { float x1; float x2; })highlightedTextOffset;
+- (struct CGPoint { double x1; double x2; })highlightedTextOffset;
 - (id)inactiveTextColor;
 
 @end

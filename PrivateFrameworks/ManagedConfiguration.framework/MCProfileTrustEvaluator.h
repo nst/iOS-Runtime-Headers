@@ -5,6 +5,6 @@
 @interface MCProfileTrustEvaluator : NSObject {
 }
 
-- (BOOL)sanitizedProfileSignerCertificateChainIsAllowedToWriteDefaults:(id)arg1;
+- (bool)sanitizedProfileSignerCertificateChainIsAllowedToWriteDefaults:(id)arg1;
 
 @end

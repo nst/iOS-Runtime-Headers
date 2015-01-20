@@ -11,7 +11,7 @@
 @property <TSPProxyObjectManager> * proxyManager;
 
 - (void).cxx_destruct;
-- (BOOL)forPasteboard;
+- (bool)forPasteboard;
 - (id)proxyManager;
 - (void)setProxyManager:(id)arg1;
 - (void)setStrongLazyReference:(id)arg1 message:(struct Reference { }*)arg2;

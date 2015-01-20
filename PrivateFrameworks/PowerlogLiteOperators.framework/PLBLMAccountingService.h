@@ -78,7 +78,7 @@
 - (void)initAccountingEntitiesLastTime;
 - (void)initOperatorDependancies;
 - (id)ioreportCallback;
-- (BOOL)isAppPresentInFGDictionary:(id)arg1 app:(id)arg2;
+- (bool)isAppPresentInFGDictionary:(id)arg1 app:(id)arg2;
 - (double)lastBoundedTimeForAccountingWithNow:(id)arg1 withLastDate:(id)arg2;
 - (id)lastQueryRunTime;
 - (double)lastSafeTimeForSnapping;

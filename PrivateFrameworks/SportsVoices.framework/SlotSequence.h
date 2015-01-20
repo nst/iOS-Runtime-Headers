@@ -13,24 +13,24 @@
 + (id)emptySlotSequence;
 + (id)slotSequenceWithArray:(id)arg1;
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
-- (BOOL)empty;
+- (bool)empty;
 - (id)first;
 - (id)indicesOfOccurrencesInTarget:(id)arg1;
 - (id)initFromPlist:(id)arg1;
 - (id)initWithArray:(id)arg1;
-- (BOOL)matches:(id)arg1;
-- (id)occurrenceOfSequence:(id)arg1 atIndex:(unsigned int)arg2;
+- (bool)matches:(id)arg1;
+- (id)occurrenceOfSequence:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)overlayedOn:(id)arg1;
-- (id)portionFollowingOccurrenceOfSequence:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)portionPrecedingOccurrenceOfSequence:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)portionFollowingOccurrenceOfSequence:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)portionPrecedingOccurrenceOfSequence:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)rest;
 - (id)reversed;
 - (void)setSlots:(id)arg1;
-- (id)slotSubsequenceFromIndex:(unsigned int)arg1;
+- (id)slotSubsequenceFromIndex:(unsigned long long)arg1;
 - (id)slots;
-- (id)subsequenceFromIndex:(unsigned int)arg1;
+- (id)subsequenceFromIndex:(unsigned long long)arg1;
 
 @end

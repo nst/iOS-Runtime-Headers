@@ -7,14 +7,14 @@
 @interface TSDMutableCalligraphyStroke : TSDCalligraphyStroke {
 }
 
-@property float actualWidth;
+@property double actualWidth;
 @property int cap;
 @property(copy) TSUColor * color;
 @property int join;
-@property float miterLimit;
+@property double miterLimit;
 @property(copy) TSDStrokePattern * pattern;
 @property(copy) NSString * strokeName;
-@property float width;
+@property double width;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setPatternPropertiesFromStroke:(id)arg1;

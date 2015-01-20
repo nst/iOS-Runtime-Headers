@@ -9,32 +9,32 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-+ (BOOL)_insertOrUpdateSourceWithSyncObject:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
-+ (id)_insertSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(BOOL)arg4 productType:(id)arg5 provenance:(int)arg6 syncAnchor:(id)arg7 database:(id)arg8;
++ (bool)_insertOrUpdateSourceWithSyncObject:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
++ (id)_insertSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(bool)arg4 productType:(id)arg5 provenance:(long long)arg6 syncAnchor:(id)arg7 database:(id)arg8;
 + (id)_predicateForSourceRepresentingCurrentDevice;
 + (id)_predicateForSourceWithBundleIdentifier:(id)arg1;
 + (id)_propertySettersForSource;
 + (id)_sourceRepresentingCurrentDeviceWithDatabase:(id)arg1;
 + (id)_sourceWithBundleIdentifier:(id)arg1 database:(id)arg2;
-+ (BOOL)addObject:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (bool)addObject:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)allSourcePersistentIDsWithHealthDatabase:(id)arg1 error:(id*)arg2;
 + (id)createTableSQL;
 + (id)databaseTable;
 + (void)enumerateSourceEntitiesWithStartAnchor:(id)arg1 endAnchor:(id)arg2 healthDatabase:(id)arg3 handler:(id)arg4;
-+ (id)insertSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(BOOL)arg4 productType:(id)arg5 provenance:(int)arg6 syncAnchor:(id)arg7 healthDatabase:(id)arg8 error:(id*)arg9;
-+ (BOOL)isManagedEntity;
++ (id)insertSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(bool)arg4 productType:(id)arg5 provenance:(long long)arg6 syncAnchor:(id)arg7 healthDatabase:(id)arg8 error:(id*)arg9;
++ (bool)isManagedEntity;
 + (void)load;
-+ (int)protectionClass;
++ (long long)protectionClass;
 + (id)sourceRepresentingCurrentDeviceWithHealthDatabase:(id)arg1 error:(id*)arg2;
 + (id)sourceWithBundleIdentifier:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (id)syncEntitiesWithStartAnchor:(id)arg1 endAnchor:(id)arg2 healthDaemon:(id)arg3 actionHandler:(id)arg4;
 + (id)syncEntityIdentifier;
-+ (BOOL)updateObject:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (bool)updateObject:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 
-- (BOOL)setName:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
+- (bool)setName:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 - (id)sourceBundleIdentifierInHealthDatabase:(id)arg1 error:(id*)arg2;
 - (id)sourceInHealthDatabase:(id)arg1 error:(id*)arg2;
 

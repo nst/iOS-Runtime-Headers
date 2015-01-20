@@ -3,33 +3,33 @@
  */
 
 @interface FMDUIFMIPSettingsCache : NSObject {
-    unsigned int _fmipState;
-    BOOL _fmipStateAvailable;
-    BOOL _lowBatteryLocateEnabled;
-    BOOL _lowBatteryLocateStateAvailable;
+    unsigned long long _fmipState;
+    bool_fmipStateAvailable;
+    bool_lowBatteryLocateEnabled;
+    bool_lowBatteryLocateStateAvailable;
 }
 
-@property(readonly) BOOL fmipEnabled;
-@property unsigned int fmipState;
-@property BOOL fmipStateAvailable;
-@property(readonly) BOOL fmipStateChangeInProgress;
-@property BOOL lowBatteryLocateEnabled;
-@property BOOL lowBatteryLocateStateAvailable;
+@property(readonly) bool fmipEnabled;
+@property unsigned long long fmipState;
+@property bool fmipStateAvailable;
+@property(readonly) bool fmipStateChangeInProgress;
+@property bool lowBatteryLocateEnabled;
+@property bool lowBatteryLocateStateAvailable;
 
 + (id)sharedInstance;
 
 - (void)_loadFMIPState;
 - (void)_loadLowBatteryState;
-- (BOOL)fmipEnabled;
-- (unsigned int)fmipState;
-- (BOOL)fmipStateAvailable;
-- (BOOL)fmipStateChangeInProgress;
+- (bool)fmipEnabled;
+- (unsigned long long)fmipState;
+- (bool)fmipStateAvailable;
+- (bool)fmipStateChangeInProgress;
 - (id)init;
-- (BOOL)lowBatteryLocateEnabled;
-- (BOOL)lowBatteryLocateStateAvailable;
-- (void)setFmipState:(unsigned int)arg1;
-- (void)setFmipStateAvailable:(BOOL)arg1;
-- (void)setLowBatteryLocateEnabled:(BOOL)arg1;
-- (void)setLowBatteryLocateStateAvailable:(BOOL)arg1;
+- (bool)lowBatteryLocateEnabled;
+- (bool)lowBatteryLocateStateAvailable;
+- (void)setFmipState:(unsigned long long)arg1;
+- (void)setFmipStateAvailable:(bool)arg1;
+- (void)setLowBatteryLocateEnabled:(bool)arg1;
+- (void)setLowBatteryLocateStateAvailable:(bool)arg1;
 
 @end

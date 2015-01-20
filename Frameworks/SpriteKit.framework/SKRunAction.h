@@ -7,10 +7,10 @@
 @interface SKRunAction : SKAction {
     SKAction *_action;
     NSString *_actionKey;
-    BOOL _fired;
-    BOOL _runOnSubSprite;
     NSString *_subSpriteKey;
-    BOOL _waitForKeyedAction;
+    bool_fired;
+    bool_runOnSubSprite;
+    bool_waitForKeyedAction;
 }
 
 + (id)runAction:(id)arg1 afterActionWithKey:(id)arg2;

@@ -8,7 +8,7 @@
     NSString *_queryString;
 }
 
-@property(readonly) BOOL hasQueryString;
+@property(readonly) bool hasQueryString;
 @property(retain) NSString * queryString;
 
 - (void)copyTo:(id)arg1;
@@ -16,12 +16,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasQueryString;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasQueryString;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)queryString;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setQueryString:(id)arg1;
 - (void)writeTo:(id)arg1;
 

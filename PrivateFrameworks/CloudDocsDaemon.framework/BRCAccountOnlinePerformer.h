@@ -12,17 +12,17 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-+ (BOOL)addPerformer:(id)arg1;
++ (bool)addPerformer:(id)arg1;
 + (void)removePerformer:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_close;
 - (id)_key;
 - (id)initWithAccountID:(id)arg1;
-- (void)networkReachabilityChanged:(BOOL)arg1;
+- (void)networkReachabilityChanged:(bool)arg1;
 - (void)perform;
 - (void)resumeAndAutoClose;
 

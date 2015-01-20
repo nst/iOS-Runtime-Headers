@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)isEqualToMetadataConstraints:(id)arg1;
+- (bool)isEqualToMetadataConstraints:(id)arg1;
 - (id)maxLength;
 - (id)maximumValue;
 - (id)minLength;

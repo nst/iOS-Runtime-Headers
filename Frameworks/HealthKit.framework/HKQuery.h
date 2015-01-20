@@ -10,11 +10,11 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
     <HKQueryDelegate> *_delegate;
     _HKFilter *_filter;
-    BOOL _hasBeenExecuted;
     NSPredicate *_predicate;
-    BOOL _receivedInitialResults;
     HKSampleType *_sampleType;
     <NSXPCProxyCreating> *_serverProxy;
+    bool_hasBeenExecuted;
+    bool_receivedInitialResults;
 }
 
 @property(readonly) NSUUID * activationUUID;
@@ -23,10 +23,10 @@
 @property(readonly) <HKQueryDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(getter=_filter,retain) _HKFilter * filter;
-@property(readonly) BOOL hasBeenExecuted;
-@property(readonly) unsigned int hash;
+@property(readonly) bool hasBeenExecuted;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSPredicate * predicate;
-@property(getter=_hasReceivedInitialResults,readonly) BOOL receivedInitialResults;
+@property(getter=_hasReceivedInitialResults,readonly) bool receivedInitialResults;
 @property(readonly) HKSampleType * sampleType;
 @property(retain) <NSXPCProxyCreating> * serverProxy;
 @property(readonly) Class superclass;
@@ -35,22 +35,22 @@
 + (void)_configureClientInterface:(id)arg1;
 + (id)_serverInterfaceProtocol;
 + (id)clientInterface;
-+ (id)predicateForCategorySamplesWithOperatorType:(unsigned int)arg1 value:(int)arg2;
++ (id)predicateForCategorySamplesWithOperatorType:(unsigned long long)arg1 value:(long long)arg2;
 + (id)predicateForObjectWithUUID:(id)arg1;
 + (id)predicateForObjectsFromSource:(id)arg1;
 + (id)predicateForObjectsFromSources:(id)arg1;
 + (id)predicateForObjectsFromWorkout:(id)arg1;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 allowedValues:(id)arg2;
-+ (id)predicateForObjectsWithMetadataKey:(id)arg1 operatorType:(unsigned int)arg2 value:(id)arg3;
++ (id)predicateForObjectsWithMetadataKey:(id)arg1 operatorType:(unsigned long long)arg2 value:(id)arg3;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1;
 + (id)predicateForObjectsWithNoCorrelation;
 + (id)predicateForObjectsWithUUIDs:(id)arg1;
-+ (id)predicateForQuantitySamplesWithOperatorType:(unsigned int)arg1 quantity:(id)arg2;
-+ (id)predicateForSamplesWithStartDate:(id)arg1 endDate:(id)arg2 options:(unsigned int)arg3;
-+ (id)predicateForWorkoutsWithOperatorType:(unsigned int)arg1 duration:(double)arg2;
-+ (id)predicateForWorkoutsWithOperatorType:(unsigned int)arg1 totalDistance:(id)arg2;
-+ (id)predicateForWorkoutsWithOperatorType:(unsigned int)arg1 totalEnergyBurned:(id)arg2;
-+ (id)predicateForWorkoutsWithWorkoutActivityType:(unsigned int)arg1;
++ (id)predicateForQuantitySamplesWithOperatorType:(unsigned long long)arg1 quantity:(id)arg2;
++ (id)predicateForSamplesWithStartDate:(id)arg1 endDate:(id)arg2 options:(unsigned long long)arg3;
++ (id)predicateForWorkoutsWithOperatorType:(unsigned long long)arg1 duration:(double)arg2;
++ (id)predicateForWorkoutsWithOperatorType:(unsigned long long)arg1 totalDistance:(id)arg2;
++ (id)predicateForWorkoutsWithOperatorType:(unsigned long long)arg1 totalEnergyBurned:(id)arg2;
++ (id)predicateForWorkoutsWithWorkoutActivityType:(unsigned long long)arg1;
 + (id)serverInterface;
 
 - (void).cxx_destruct;
@@ -59,16 +59,16 @@
 - (void)_dispatchSyncToResourceQueue:(id)arg1;
 - (void)_dispatchToClientForUUID:(id)arg1 block:(id)arg2;
 - (id)_filter;
-- (BOOL)_hasReceivedInitialResults;
+- (bool)_hasReceivedInitialResults;
 - (id)_initWithDataType:(id)arg1 predicate:(id)arg2;
 - (id)_predicateFilterClasses;
-- (void)_queue_activateWithConnection:(id)arg1 isReactivation:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)_queue_activateWithConnection:(id)arg1 isReactivation:(bool)arg2 withCompletion:(id)arg3;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_deactivate;
 - (void)_queue_deliverErrorAndDeactivate:(id)arg1;
 - (id)_queue_errorHandler;
 - (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (void)_throwInvalidArgumentExceptionIfHasBeenExecuted:(SEL)arg1;
 - (void)activateWithClientQueue:(id)arg1 connection:(id)arg2 delegate:(id)arg3 withCompletion:(id)arg4;
@@ -77,7 +77,7 @@
 - (void)deactivate;
 - (id)delegate;
 - (void)deliverError:(id)arg1 forQuery:(id)arg2;
-- (BOOL)hasBeenExecuted;
+- (bool)hasBeenExecuted;
 - (id)init;
 - (id)predicate;
 - (void)reactivateWithConnection:(id)arg1;

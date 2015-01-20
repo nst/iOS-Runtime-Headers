@@ -7,18 +7,18 @@
 @interface _MKWiFiObserver : NSObject {
     <_MKWiFiObserverDelegate> *_delegate;
     struct __WiFiDeviceClient { } *_wifiDevice;
-    BOOL _wifiEnabled;
     struct __WiFiManagerClient { } *_wifiManager;
+    bool_wifiEnabled;
 }
 
 @property <_MKWiFiObserverDelegate> * delegate;
-@property(getter=isWifiEnabled,readonly) BOOL wifiEnabled;
+@property(getter=isWifiEnabled,readonly) bool wifiEnabled;
 
 - (void).cxx_destruct;
-- (void)_updateWiFiState:(BOOL)arg1;
+- (void)_updateWiFiState:(bool)arg1;
 - (id)delegate;
 - (id)init;
-- (BOOL)isWifiEnabled;
+- (bool)isWifiEnabled;
 - (void)setDelegate:(id)arg1;
 
 @end

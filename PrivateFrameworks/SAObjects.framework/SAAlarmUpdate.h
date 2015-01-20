@@ -29,7 +29,7 @@
 - (id)minute;
 - (id)modifications;
 - (id)removedFrequency;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAddedFrequency:(id)arg1;
 - (void)setAlarmId:(id)arg1;
 - (void)setEnabled:(id)arg1;

@@ -9,6 +9,6 @@
 
 @property(retain) PLManagedAsset * asset;
 @property(retain) NSData * data;
-@property BOOL valid;
+@property bool valid;
 
 @end

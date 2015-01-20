@@ -5,12 +5,12 @@
 @class NSMutableSet, PSSpecifierUpdates;
 
 @interface _PSDeferredUpdates : NSObject {
-    BOOL _invalidatedSpecifiers;
     NSMutableSet *_searchEntries;
     PSSpecifierUpdates *_specifierUpdates;
+    bool_invalidatedSpecifiers;
 }
 
-@property BOOL invalidatedSpecifiers;
+@property bool invalidatedSpecifiers;
 @property(retain) NSMutableSet * searchEntries;
 @property(retain) PSSpecifierUpdates * specifierUpdates;
 
@@ -18,10 +18,10 @@
 + (id)deferredUpdatesWithEntries:(id)arg1 specifierUpdates:(id)arg2;
 
 - (void)dealloc;
-- (id)initWithSearchEntries:(id)arg1 specifierUpdates:(id)arg2 invalidatedSpecifiers:(BOOL)arg3;
-- (BOOL)invalidatedSpecifiers;
+- (id)initWithSearchEntries:(id)arg1 specifierUpdates:(id)arg2 invalidatedSpecifiers:(bool)arg3;
+- (bool)invalidatedSpecifiers;
 - (id)searchEntries;
-- (void)setInvalidatedSpecifiers:(BOOL)arg1;
+- (void)setInvalidatedSpecifiers:(bool)arg1;
 - (void)setSearchEntries:(id)arg1;
 - (void)setSpecifierUpdates:(id)arg1;
 - (id)specifierUpdates;

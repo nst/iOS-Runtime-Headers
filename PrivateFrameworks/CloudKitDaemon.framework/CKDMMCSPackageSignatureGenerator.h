@@ -4,20 +4,20 @@
 
 @interface CKDMMCSPackageSignatureGenerator : NSObject {
     void *_generator;
-    BOOL _valid;
+    bool_valid;
 }
 
 @property void* generator;
-@property(getter=isValid) BOOL valid;
+@property(getter=isValid) bool valid;
 
 - (char *)_finishGenerator;
 - (id)dataByFinishingSignature;
 - (void)dealloc;
 - (void*)generator;
 - (id)init;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)setGenerator:(void*)arg1;
-- (void)setValid:(BOOL)arg1;
+- (void)setValid:(bool)arg1;
 - (void)updateWithData:(id)arg1;
 
 @end

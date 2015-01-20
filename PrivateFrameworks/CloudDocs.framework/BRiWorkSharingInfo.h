@@ -8,17 +8,17 @@
 
 @property BOOL options;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOptions:(BOOL)arg1;
 - (id)initWithSharingInfo:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToiWorkSharingInfo:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToiWorkSharingInfo:(id)arg1;
 - (BOOL)options;
 - (void)setOptions:(BOOL)arg1;
 

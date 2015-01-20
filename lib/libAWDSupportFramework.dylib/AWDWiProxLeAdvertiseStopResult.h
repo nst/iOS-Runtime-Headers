@@ -14,9 +14,9 @@
     int _type;
 }
 
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
+@property(readonly) bool hasSessionId;
+@property bool hasTimestamp;
+@property bool hasType;
 @property(retain) NSString * sessionId;
 @property unsigned long long timestamp;
 @property int type;
@@ -26,16 +26,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSessionId;
-- (BOOL)hasTimestamp;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSessionId;
+- (bool)hasTimestamp;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionId;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setSessionId:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(int)arg1;

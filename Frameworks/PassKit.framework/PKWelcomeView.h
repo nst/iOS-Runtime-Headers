@@ -23,14 +23,14 @@
 @property(copy) NSAttributedString * title;
 
 + (void)beginTrackingAction;
-+ (float)bodySeparation;
-+ (float)defaultHeight;
++ (double)bodySeparation;
++ (double)defaultHeight;
 + (void)endTrackingAction;
-+ (float)headerImageRegionHeight;
-+ (BOOL)isAvailable;
-+ (BOOL)isPerformingAction;
++ (double)headerImageRegionHeight;
++ (bool)isAvailable;
++ (bool)isPerformingAction;
 + (id)messageFont;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
 + (id)titleFont;
 
 - (id)actionButton;
@@ -38,8 +38,8 @@
 - (void)dealloc;
 - (id)headerImage;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithHeight:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithHeight:(double)arg1;
 - (void)layoutSubviews;
 - (id)message;
 - (void)setActionButton:(id)arg1;

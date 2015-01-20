@@ -5,7 +5,6 @@
 @class <PRSSimpleResult>, NSArray, NSString, PRSDecoder;
 
 @interface PRSSearchCompletionResultSet : NSObject <PRSDecoderDelegate> {
-    BOOL _cacheable;
     float _completionScore;
     NSString *_completionString;
     PRSDecoder *_decoder;
@@ -14,15 +13,16 @@
     double _maxAge;
     NSString *_prefix;
     NSArray *_results;
+    bool_cacheable;
 }
 
-@property(getter=isCacheable,readonly) BOOL cacheable;
+@property(getter=isCacheable,readonly) bool cacheable;
 @property(readonly) float completionScore;
 @property(readonly) NSString * completionString;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSString * feedbackQueryIdentifier;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property double maxAge;
 @property(readonly) NSString * prefix;
 @property(readonly) NSArray * results;
@@ -36,11 +36,11 @@
 - (id)convertedValue:(id)arg1 forPropertyPath:(id)arg2 ofObject:(id)arg3;
 - (id)description;
 - (id)feedbackQueryIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 prefix:(id)arg4 completionString:(id)arg5 score:(float)arg6 resultStatusString:(id)arg7 feedbackQueryIdentifier:(id)arg8 resultDictionaries:(id)arg9;
 - (id)initWithResultSet:(id)arg1 prefix:(id)arg2 completionString:(id)arg3 score:(float)arg4;
-- (BOOL)isCacheable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCacheable;
+- (bool)isEqual:(id)arg1;
 - (double)maxAge;
 - (id)prefix;
 - (id)resultForFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 dictionary:(id)arg4;

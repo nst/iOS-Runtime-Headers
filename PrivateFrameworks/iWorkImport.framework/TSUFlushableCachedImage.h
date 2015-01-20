@@ -9,7 +9,7 @@
 }
 
 - (void)dealloc;
-- (BOOL)hasFlushableContent;
+- (bool)hasFlushableContent;
 - (id)initWithDelegate:(id)arg1 createImageSelector:(SEL)arg2;
 - (struct CGImage { }*)newImage;
 - (void)unload;

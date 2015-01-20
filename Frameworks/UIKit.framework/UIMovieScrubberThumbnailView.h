@@ -6,7 +6,7 @@
     unsigned int _hasPlaceholderImage : 1;
 }
 
-- (BOOL)hasPlaceholderImage;
-- (void)setHasPlaceholderImage:(BOOL)arg1;
+- (bool)hasPlaceholderImage;
+- (void)setHasPlaceholderImage:(bool)arg1;
 
 @end

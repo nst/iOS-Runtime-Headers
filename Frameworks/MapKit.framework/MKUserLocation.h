@@ -17,7 +17,7 @@
 @property double expectedCoordinateUpdateInterval;
 @property double expectedHeadingUpdateInterval;
 @property(retain) CLLocation * fixedLocation;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) CLHeading * heading;
 @property(readonly) double headingDegrees;
 @property(retain) CLLocation * location;
@@ -27,7 +27,7 @@
 @property(readonly) Class superclass;
 @property double timestamp;
 @property(copy) NSString * title;
-@property(getter=isUpdating) BOOL updating;
+@property(getter=isUpdating) bool updating;
 
 + (void)_setAnnotationClass:(Class)arg1;
 + (id)keyPathsForValuesAffectingSubtitle;
@@ -46,8 +46,8 @@
 - (id)heading;
 - (double)headingDegrees;
 - (id)init;
-- (BOOL)isEqualToLocation:(id)arg1;
-- (BOOL)isUpdating;
+- (bool)isEqualToLocation:(id)arg1;
+- (bool)isUpdating;
 - (id)location;
 - (id)predictedLocation;
 - (void)reset;
@@ -62,7 +62,7 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUpdating:(BOOL)arg1;
+- (void)setUpdating:(bool)arg1;
 - (id)shortDescription;
 - (id)subtitle;
 - (double)timestamp;

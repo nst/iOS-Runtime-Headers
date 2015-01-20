@@ -8,18 +8,18 @@
     EKTravelAgendaItem *_agendaItem;
     NSDate *_arrivalDate;
     GEOComposedWaypoint *_destinationWaypoint;
-    BOOL _hypothesisInProgress;
     GEORouteHypothesizer *_hypothesizer;
     EKTravelRealRoutePredictorInternalDelegate *_hypothesizerDelegate;
     GEOQuickETARequester *_quickHypothesizer;
     GEOComposedWaypoint *_sourceWaypoint;
     int _travelMethod;
+    bool_hypothesisInProgress;
 }
 
 @property EKTravelAgendaItem * agendaItem;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) int travelMethod;
 

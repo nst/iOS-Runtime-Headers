@@ -6,24 +6,24 @@
 
 @interface CKDiscoverUserInfosOperationInfo : CKOperationInfo <NSSecureCoding> {
     NSArray *_emails;
-    BOOL _shouldDiscoverAllContacts;
     NSArray *_userRecordIDs;
+    bool_shouldDiscoverAllContacts;
 }
 
 @property(retain) NSArray * emails;
-@property BOOL shouldDiscoverAllContacts;
+@property bool shouldDiscoverAllContacts;
 @property(retain) NSArray * userRecordIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)emails;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setEmails:(id)arg1;
-- (void)setShouldDiscoverAllContacts:(BOOL)arg1;
+- (void)setShouldDiscoverAllContacts:(bool)arg1;
 - (void)setUserRecordIDs:(id)arg1;
-- (BOOL)shouldDiscoverAllContacts;
+- (bool)shouldDiscoverAllContacts;
 - (id)userRecordIDs;
 
 @end

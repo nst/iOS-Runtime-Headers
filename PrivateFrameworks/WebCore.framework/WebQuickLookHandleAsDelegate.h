@@ -16,13 +16,13 @@
 @interface WebQuickLookHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
     struct RefPtr<WebCore::SynchronousResourceHandleCFURLConnectionDelegate> { 
         struct SynchronousResourceHandleCFURLConnectionDelegate {} *m_ptr; 
-     /* Encoded args for previous method: @12@0:4^{SynchronousResourceHandleCFURLConnectionDelegate=^^?{atomic<int>=Ai}^{ResourceHandle}{RetainPtr<const __CFString *>=^v}}8 */
+     /* Encoded args for previous method: @24@0:8^{SynchronousResourceHandleCFURLConnectionDelegate=^^?{atomic<int>=Ai}^{ResourceHandle}{RetainPtr<const __CFString *>=^v}}16 */
     } m_connectionDelegate;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;

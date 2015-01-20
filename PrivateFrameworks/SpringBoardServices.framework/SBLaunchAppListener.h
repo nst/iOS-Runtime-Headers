@@ -11,15 +11,15 @@
 @interface SBLaunchAppListener : NSObject {
     id _block;
     NSString *_bundleIdentifier;
-    BOOL _launched;
     NSLock *_lock;
     unsigned int _notifyAppExitedStatus;
     int _notifyAppExitedToken;
     unsigned int _notifyRegisterStatus;
     int _notifyToken;
+    bool_launched;
 }
 
-+ (BOOL)waitForLaunchThatSpringBoardKnowsAbout:(id)arg1 timeout:(double)arg2;
++ (bool)waitForLaunchThatSpringBoardKnowsAbout:(id)arg1 timeout:(double)arg2;
 
 - (void)_didFailToLaunch;
 - (void)_didLaunch;

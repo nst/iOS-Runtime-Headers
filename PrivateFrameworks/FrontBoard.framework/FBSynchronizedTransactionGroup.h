@@ -5,17 +5,17 @@
 @class <FBSynchronizedTransactionDelegate>, NSMutableSet, NSString;
 
 @interface FBSynchronizedTransactionGroup : FBTransaction <FBSynchronizedTransaction, FBSynchronizedTransactionDelegate> {
-    BOOL _didCommit;
-    BOOL _readyForCommit;
     <FBSynchronizedTransactionDelegate> *_synchronizationDelegate;
     NSMutableSet *_synchronizedTransactions;
     NSMutableSet *_synchronizedTransactionsAwaitingCommitReadiness;
     NSMutableSet *_synchronizedTransactionsReadyToCommit;
+    bool_didCommit;
+    bool_readyForCommit;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property <FBSynchronizedTransactionDelegate> * synchronizationDelegate;
 
@@ -23,7 +23,7 @@
 - (void)addSynchronizedTransaction:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isReadyForSynchronizedCommit;
+- (bool)isReadyForSynchronizedCommit;
 - (void)performSynchronizedCommit;
 - (void)setSynchronizationDelegate:(id)arg1;
 - (id)synchronizationDelegate;

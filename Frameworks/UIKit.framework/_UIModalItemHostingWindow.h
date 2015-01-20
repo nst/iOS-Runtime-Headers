@@ -5,6 +5,6 @@
 @interface _UIModalItemHostingWindow : UIWindow {
 }
 
-+ (BOOL)_isSystemWindow;
++ (bool)_isSystemWindow;
 
 @end

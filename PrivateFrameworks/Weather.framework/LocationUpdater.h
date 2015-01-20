@@ -11,8 +11,8 @@
 @interface LocationUpdater : WeatherUpdater {
     City *_currentCity;
     CLGeocoder *_geoCoder;
-    BOOL _isGeoCoding;
     id _localWeatherHandler;
+    bool_isGeoCoding;
 }
 
 @property(retain) City * currentCity;
@@ -20,17 +20,17 @@
 + (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
 
-- (void)_failed:(unsigned int)arg1;
+- (void)_failed:(unsigned long long)arg1;
 - (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (id)currentCity;
 - (void)dealloc;
 - (void)didProcessDocument;
-- (void)enableProgressIndicator:(BOOL)arg1;
+- (void)enableProgressIndicator:(bool)arg1;
 - (void)failCity:(id)arg1;
-- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned int)arg2;
+- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned long long)arg2;
 - (void)handleNilCity;
-- (BOOL)isDataValid:(id)arg1;
+- (bool)isDataValid:(id)arg1;
 - (void)parsedResultCity:(id)arg1;
 - (void)setCurrentCity:(id)arg1;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id)arg3;

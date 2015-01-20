@@ -6,13 +6,13 @@
 
 @interface SUApplication : UIApplication <UIApplicationDelegate> {
     UIColor *_interactionTintColor;
-    BOOL _terminateOnNextSuspend;
     UIWindow *_window;
+    bool_terminateOnNextSuspend;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) UIColor * interactionTintColor;
 @property(readonly) Class superclass;
 @property(retain) UIWindow * window;
@@ -24,18 +24,18 @@
 - (void)_setupUI;
 - (void)_storeEnabledChangeNotification:(id)arg1;
 - (void)_teardownUI;
-- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
-- (BOOL)application:(id)arg1 openURL:(id)arg2 sourceApplication:(id)arg3 annotation:(id)arg4;
-- (unsigned int)application:(id)arg1 supportedInterfaceOrientationsForWindow:(id)arg2;
+- (bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (bool)application:(id)arg1 openURL:(id)arg2 sourceApplication:(id)arg3 annotation:(id)arg4;
+- (unsigned long long)application:(id)arg1 supportedInterfaceOrientationsForWindow:(id)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationDidFinishLaunching:(id)arg1;
-- (BOOL)applicationSuspendWithSettings:(id)arg1;
+- (bool)applicationSuspendWithSettings:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)dealloc;
 - (double)defaultImageSnapshotExpiration;
 - (id)init;
 - (id)interactionTintColor;
-- (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (bool)runTest:(id)arg1 options:(id)arg2;
 - (void)runTestInvocation:(id)arg1;
 - (void)setInteractionTintColor:(id)arg1;
 

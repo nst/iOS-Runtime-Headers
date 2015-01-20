@@ -7,12 +7,12 @@
 @interface NetPreferences : NSObject {
     NSString *_UUID;
     NSString *_buildVersion;
-    BOOL _isNetworkReachable;
     NSString *_productVersion;
-    BOOL _serviceDebugging;
+    bool_isNetworkReachable;
+    bool_serviceDebugging;
 }
 
-@property(getter=isNetworkReachable) BOOL networkReachable;
+@property(getter=isNetworkReachable) bool networkReachable;
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
@@ -28,13 +28,13 @@
 - (id)financeRequestAttributes;
 - (id)fullQuoteURLOverrideForStock:(id)arg1;
 - (id)init;
-- (BOOL)isNetworkReachable;
+- (bool)isNetworkReachable;
 - (id)logoBacksideImage;
 - (id)logoButtonImage;
 - (void)resetLocale;
-- (BOOL)serviceDebugging;
+- (bool)serviceDebugging;
 - (id)serviceDebuggingPath;
-- (void)setNetworkReachable:(BOOL)arg1;
+- (void)setNetworkReachable:(bool)arg1;
 - (void)setupLogging;
 - (id)signedRequestForURL:(id)arg1 parameters:(id)arg2;
 - (id)stocksCountryCode;

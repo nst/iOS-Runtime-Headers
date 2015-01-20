@@ -12,10 +12,10 @@
 @property(copy) NSString * alt;
 @property(copy,readonly) NSString * altDisplayString;
 @property(copy) NSString * border;
-@property(readonly) BOOL complete;
+@property(readonly) bool complete;
 @property int height;
 @property int hspace;
-@property BOOL isMap;
+@property bool isMap;
 @property(copy) NSString * longDesc;
 @property(copy) NSString * lowsrc;
 @property(copy) NSString * name;
@@ -29,26 +29,26 @@
 @property(readonly) int y;
 
 + (id)mf_edgeToEdgeImageAttachmentStyle;
-+ (float)mf_maxPhotoWidth;
++ (double)mf_maxPhotoWidth;
 
 - (id)absoluteImageURL;
 - (id)align;
 - (id)alt;
 - (id)altDisplayString;
-- (BOOL)alwaysAttemptToShowTapHighlight;
+- (bool)alwaysAttemptToShowTapHighlight;
 - (id)border;
-- (BOOL)complete;
+- (bool)complete;
 - (id)crossOrigin;
-- (id)dataRepresentation:(BOOL)arg1;
+- (id)dataRepresentation:(bool)arg1;
 - (int)height;
 - (int)hspace;
-- (BOOL)isMap;
+- (bool)isMap;
 - (id)longDesc;
 - (id)lowsrc;
 - (void)mf_applyEdgeToEdgeStyle;
-- (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)mf_isEdgeToEdgeFormatted;
-- (BOOL)mf_shouldFormatEdgeToEdge;
+- (void)mf_constrainImageToSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)mf_isEdgeToEdgeFormatted;
+- (bool)mf_shouldFormatEdgeToEdge;
 - (void)mf_unconstrainImageSize;
 - (id)mimeType;
 - (id)name;
@@ -61,7 +61,7 @@
 - (void)setCrossOrigin:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (void)setHspace:(int)arg1;
-- (void)setIsMap:(BOOL)arg1;
+- (void)setIsMap:(bool)arg1;
 - (void)setLongDesc:(id)arg1;
 - (void)setLowsrc:(id)arg1;
 - (void)setName:(id)arg1;
@@ -70,7 +70,7 @@
 - (void)setUseMap:(id)arg1;
 - (void)setVspace:(int)arg1;
 - (void)setWidth:(int)arg1;
-- (BOOL)showsTapHighlight;
+- (bool)showsTapHighlight;
 - (id)src;
 - (id)srcset;
 - (id)useMap;

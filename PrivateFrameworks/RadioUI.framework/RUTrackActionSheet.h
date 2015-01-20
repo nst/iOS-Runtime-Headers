@@ -3,21 +3,21 @@
  */
 
 @interface RUTrackActionSheet : UIActionSheet {
-    BOOL _disableAddToWishList;
-    BOOL _disableBan;
-    BOOL _disableLike;
+    bool_disableAddToWishList;
+    bool_disableBan;
+    bool_disableLike;
 }
 
-@property BOOL disableAddToWishList;
-@property BOOL disableBan;
-@property BOOL disableLike;
+@property bool disableAddToWishList;
+@property bool disableBan;
+@property bool disableLike;
 
-- (BOOL)disableAddToWishList;
-- (BOOL)disableBan;
-- (BOOL)disableLike;
+- (bool)disableAddToWishList;
+- (bool)disableBan;
+- (bool)disableLike;
 - (id)initWithDelegate:(id)arg1;
-- (void)setDisableAddToWishList:(BOOL)arg1;
-- (void)setDisableBan:(BOOL)arg1;
-- (void)setDisableLike:(BOOL)arg1;
+- (void)setDisableAddToWishList:(bool)arg1;
+- (void)setDisableBan:(bool)arg1;
+- (void)setDisableLike:(bool)arg1;
 
 @end

@@ -5,18 +5,18 @@
 @class NSString, NSURL, UIColor, UITabBarItem;
 
 @interface SKUITabBarItem : NSObject <NSCopying> {
-    BOOL _alwaysCreatesRootViewController;
-    int _barTintStyle;
+    long long _barTintStyle;
     NSString *_metricsIdentifier;
     NSURL *_rootURL;
     Class _rootViewControllerClass;
     NSString *_tabIdentifier;
     UITabBarItem *_underlyingTabBarItem;
     UIColor *_userInterfaceTintColor;
+    bool_alwaysCreatesRootViewController;
 }
 
-@property BOOL alwaysCreatesRootViewController;
-@property int barTintStyle;
+@property bool alwaysCreatesRootViewController;
+@property long long barTintStyle;
 @property(copy) NSString * metricsIdentifier;
 @property(copy) NSURL * rootURL;
 @property(retain) Class rootViewControllerClass;
@@ -25,18 +25,18 @@
 @property(retain) UIColor * userInterfaceTintColor;
 
 - (void).cxx_destruct;
-- (BOOL)alwaysCreatesRootViewController;
-- (int)barTintStyle;
+- (bool)alwaysCreatesRootViewController;
+- (long long)barTintStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTabIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)metricsIdentifier;
 - (id)rootURL;
 - (Class)rootViewControllerClass;
-- (void)setAlwaysCreatesRootViewController:(BOOL)arg1;
-- (void)setBarTintStyle:(int)arg1;
+- (void)setAlwaysCreatesRootViewController:(bool)arg1;
+- (void)setBarTintStyle:(long long)arg1;
 - (void)setMetricsIdentifier:(id)arg1;
 - (void)setRootURL:(id)arg1;
 - (void)setRootViewControllerClass:(Class)arg1;

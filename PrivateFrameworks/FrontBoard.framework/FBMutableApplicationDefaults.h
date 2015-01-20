@@ -5,10 +5,10 @@
 @interface FBMutableApplicationDefaults : FBApplicationDefaults {
 }
 
-@property int backgroundStyle;
-@property int interfaceOrientation;
-@property BOOL statusBarHidden;
-@property BOOL statusBarHiddenWhenVerticallyCompact;
-@property int statusBarStyle;
+@property long long backgroundStyle;
+@property long long interfaceOrientation;
+@property bool statusBarHidden;
+@property bool statusBarHiddenWhenVerticallyCompact;
+@property long long statusBarStyle;
 
 @end

@@ -8,30 +8,30 @@
  */
 
 @interface TSDReflection : NSObject <TSDMixing, NSCopying, NSMutableCopying> {
-    float mFadeAcceleration;
-    float mOpacity;
+    double mFadeAcceleration;
+    double mOpacity;
 }
 
-@property(readonly) float fadeAcceleration;
-@property(readonly) float opacity;
+@property(readonly) double fadeAcceleration;
+@property(readonly) double opacity;
 
-+ (BOOL)canMixWithNilObjects;
++ (bool)canMixWithNilObjects;
 + (id)instanceWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 + (id)reflection;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (float)fadeAcceleration;
-- (unsigned int)hash;
+- (double)fadeAcceleration;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithOpacity:(float)arg1 fadeAcceleration:(float)arg2;
-- (id)initWithOpacity:(float)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (id)initWithOpacity:(double)arg1 fadeAcceleration:(double)arg2;
+- (id)initWithOpacity:(double)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (float)opacity;
+- (double)opacity;
 - (void)saveToArchive:(struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
 
 @end

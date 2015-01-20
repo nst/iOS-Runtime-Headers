@@ -16,10 +16,10 @@
 
 @property(retain) GEOComposedWaypoint * destination;
 @property(retain) NSString * destinationName;
-@property(readonly) BOOL hasDestination;
-@property(readonly) BOOL hasDestinationName;
-@property(readonly) BOOL hasOrigin;
-@property BOOL hasTransportType;
+@property(readonly) bool hasDestination;
+@property(readonly) bool hasDestinationName;
+@property(readonly) bool hasOrigin;
+@property bool hasTransportType;
 @property(retain) GEOComposedWaypoint * origin;
 @property int transportType;
 
@@ -30,19 +30,19 @@
 - (id)destination;
 - (id)destinationName;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDestination;
-- (BOOL)hasDestinationName;
-- (BOOL)hasOrigin;
-- (BOOL)hasTransportType;
-- (unsigned int)hash;
+- (bool)hasDestination;
+- (bool)hasDestinationName;
+- (bool)hasOrigin;
+- (bool)hasTransportType;
+- (unsigned long long)hash;
 - (id)initWithRoute:(id)arg1 destinationName:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)origin;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDestination:(id)arg1;
 - (void)setDestinationName:(id)arg1;
-- (void)setHasTransportType:(BOOL)arg1;
+- (void)setHasTransportType:(bool)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setTransportType:(int)arg1;

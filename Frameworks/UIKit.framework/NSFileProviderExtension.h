@@ -13,7 +13,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property(retain) NSURL * memberQueueDocumentStorageURL;
 @property(copy) NSString * memberQueueProviderIdentifier;
@@ -22,7 +22,7 @@
 + (id)_relativeComponentsOfURL:(id)arg1 fromBaseURL:(id)arg2;
 + (id)_resourceIDOfURL:(id)arg1 outError:(id*)arg2;
 + (id)placeholderURLForURL:(id)arg1;
-+ (BOOL)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
++ (bool)writePlaceholderAtURL:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
 
 - (id)URLForItemWithPersistentIdentifier:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;

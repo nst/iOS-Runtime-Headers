@@ -15,6 +15,6 @@
 - (void).cxx_destruct;
 - (id)onViewDidDisappearBlock;
 - (void)setOnViewDidDisappearBlock:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

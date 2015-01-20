@@ -5,8 +5,8 @@
 @interface HKCorrelationType : HKSampleType {
 }
 
-+ (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
++ (void)_insertCode:(long long)arg1 forIdentifier:(id)arg2;
 
-- (BOOL)_requiresAuthorization;
+- (bool)_requiresAuthorization;
 
 @end

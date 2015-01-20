@@ -20,8 +20,8 @@
 @property <SKComposeReviewDelegate> * delegate;
 
 - (void)_addRemoteView;
-- (void)_didFinishWithResult:(BOOL)arg1 error:(id)arg2;
-- (void)_didPrepareWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_didFinishWithResult:(bool)arg1 error:(id)arg2;
+- (void)_didPrepareWithResult:(bool)arg1 error:(id)arg2;
 - (void)_requestRemoteViewController;
 - (void)_tearDownAfterError:(id)arg1;
 - (void)dealloc;
@@ -31,6 +31,6 @@
 - (void)loadView;
 - (void)prepareWithCompletionBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

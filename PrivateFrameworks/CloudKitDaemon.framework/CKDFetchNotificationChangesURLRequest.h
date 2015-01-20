@@ -5,33 +5,33 @@
 @class NSArray, NSData, NSMutableArray;
 
 @interface CKDFetchNotificationChangesURLRequest : CKDURLRequest {
-    BOOL _moreComing;
     NSMutableArray *_resultChangedNotifications;
     NSData *_resultServerChangeTokenData;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
     NSData *_serverChangeTokenData;
+    bool_moreComing;
 }
 
-@property BOOL moreComing;
+@property bool moreComing;
 @property(readonly) NSArray * resultChangedNotifications;
 @property(retain) NSData * resultServerChangeTokenData;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 @property(retain) NSData * serverChangeTokenData;
 
 - (void).cxx_destruct;
 - (id)initWithServerChangeTokenData:(id)arg1;
-- (BOOL)moreComing;
+- (bool)moreComing;
 - (int)operationType;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
 - (id)resultChangedNotifications;
 - (id)resultServerChangeTokenData;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (id)serverChangeTokenData;
-- (void)setMoreComing:(BOOL)arg1;
+- (void)setMoreComing:(bool)arg1;
 - (void)setResultServerChangeTokenData:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setServerChangeTokenData:(id)arg1;
 
 @end

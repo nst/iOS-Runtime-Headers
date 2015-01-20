@@ -14,7 +14,7 @@
 @property(readonly) double delay;
 @property(readonly) double nextTry;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)clear;

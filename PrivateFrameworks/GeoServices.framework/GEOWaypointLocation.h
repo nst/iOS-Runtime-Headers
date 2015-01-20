@@ -8,7 +8,7 @@
     GEOLocation *_location;
 }
 
-@property(readonly) BOOL hasLocation;
+@property(readonly) bool hasLocation;
 @property(retain) GEOLocation * location;
 
 - (void)copyTo:(id)arg1;
@@ -16,12 +16,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)writeTo:(id)arg1;
 

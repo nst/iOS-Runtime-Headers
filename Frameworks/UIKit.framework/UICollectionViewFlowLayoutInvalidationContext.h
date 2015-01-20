@@ -9,13 +9,13 @@
     } _flowLayoutInvalidationFlags;
 }
 
-@property BOOL invalidateFlowLayoutAttributes;
-@property BOOL invalidateFlowLayoutDelegateMetrics;
+@property bool invalidateFlowLayoutAttributes;
+@property bool invalidateFlowLayoutDelegateMetrics;
 
 - (id)init;
-- (BOOL)invalidateFlowLayoutAttributes;
-- (BOOL)invalidateFlowLayoutDelegateMetrics;
-- (void)setInvalidateFlowLayoutAttributes:(BOOL)arg1;
-- (void)setInvalidateFlowLayoutDelegateMetrics:(BOOL)arg1;
+- (bool)invalidateFlowLayoutAttributes;
+- (bool)invalidateFlowLayoutDelegateMetrics;
+- (void)setInvalidateFlowLayoutAttributes:(bool)arg1;
+- (void)setInvalidateFlowLayoutDelegateMetrics:(bool)arg1;
 
 @end

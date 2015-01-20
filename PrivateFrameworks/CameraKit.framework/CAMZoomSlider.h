@@ -5,61 +5,61 @@
 @class <CAMZoomSliderDelegate>, NSTimer, UIImageView, UIView;
 
 @interface CAMZoomSlider : UISlider {
-    BOOL __autozooming;
     UIView *__maxTrackMaskView;
     UIView *__minTrackMaskView;
     UIImageView *__thumbImageView;
     NSTimer *__visibilityTimer;
     <CAMZoomSliderDelegate> *_delegate;
-    BOOL _maximumAutozooming;
-    BOOL _minimumAutozooming;
+    bool__autozooming;
+    bool_maximumAutozooming;
+    bool_minimumAutozooming;
 }
 
-@property(getter=_isAutozooming,setter=_setAutozooming:) BOOL _autozooming;
+@property(getter=_isAutozooming,setter=_setAutozooming:) bool _autozooming;
 @property(readonly) UIView * _maxTrackMaskView;
 @property(readonly) UIView * _minTrackMaskView;
 @property(readonly) UIImageView * _thumbImageView;
 @property(readonly) NSTimer * _visibilityTimer;
 @property <CAMZoomSliderDelegate> * delegate;
-@property(getter=isMaximumAutozooming) BOOL maximumAutozooming;
-@property(getter=isMinimumAutozooming) BOOL minimumAutozooming;
+@property(getter=isMaximumAutozooming) bool maximumAutozooming;
+@property(getter=isMinimumAutozooming) bool minimumAutozooming;
 
 - (void).cxx_destruct;
 - (void)_beginAutozooming;
 - (void)_commonCAMZoomSliderInitialization;
 - (void)_endAutozooming;
 - (void)_hideZoomSlider:(id)arg1;
-- (BOOL)_isAutozooming;
-- (BOOL)_isMinimumOrMaximumAutozooming;
+- (bool)_isAutozooming;
+- (bool)_isMinimumOrMaximumAutozooming;
 - (id)_maxTrackMaskView;
 - (id)_minTrackMaskView;
 - (void)_postHideZoomSliderAnimation;
-- (void)_setAutozooming:(BOOL)arg1;
-- (void)_setMaximumAutozooming:(BOOL)arg1;
-- (void)_setMinimumAutozooming:(BOOL)arg1;
+- (void)_setAutozooming:(bool)arg1;
+- (void)_setMaximumAutozooming:(bool)arg1;
+- (void)_setMinimumAutozooming:(bool)arg1;
 - (id)_thumbImageView;
 - (void)_updateAutozooming;
 - (id)_visibilityTimer;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)createThumbView;
 - (void)dealloc;
 - (id)delegate;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isMaximumAutozooming;
-- (BOOL)isMinimumAutozooming;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isMaximumAutozooming;
+- (bool)isMinimumAutozooming;
 - (void)layoutSubviews;
-- (int)locationOfTouch:(id)arg1;
+- (long long)locationOfTouch:(id)arg1;
 - (void)makeInvisible;
 - (void)makeVisible;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)startVisibilityTimer;
 - (void)stopVisibilityTimer;
-- (BOOL)visibilityTimerIsValid;
+- (bool)visibilityTimerIsValid;
 
 @end

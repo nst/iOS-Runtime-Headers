@@ -4,7 +4,7 @@
 
 @interface WDRubyProperties : NSObject {
     unsigned int mOriginal : 1;
-    struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; } *mOriginalProperties;
+    struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; boolx6; boolx7; boolx8; boolx9; boolx10; } *mOriginalProperties;
 }
 
 @property int alignment;
@@ -23,13 +23,13 @@
 - (void)dealloc;
 - (unsigned short)distanceBetween;
 - (id)init;
-- (BOOL)isAlignmentOverridden;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isAnythingOverriddenIn:(struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
-- (BOOL)isBaseFontSizeOverridden;
-- (BOOL)isDistanceBetweenOverridden;
-- (BOOL)isPhoneticGuideFontSizeOverridden;
-- (BOOL)isPhoneticGuideLanguageOverridden;
+- (bool)isAlignmentOverridden;
+- (bool)isAnythingOverridden;
+- (bool)isAnythingOverriddenIn:(struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; boolx6; boolx7; boolx8; boolx9; boolx10; }*)arg1;
+- (bool)isBaseFontSizeOverridden;
+- (bool)isDistanceBetweenOverridden;
+- (bool)isPhoneticGuideFontSizeOverridden;
+- (bool)isPhoneticGuideLanguageOverridden;
 - (unsigned short)phoneticGuideFontSize;
 - (int)phoneticGuideLanguage;
 - (void)setAlignment:(int)arg1;

@@ -6,10 +6,10 @@
 }
 
 - (Class)authenticatorClass;
-- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
-- (BOOL)hasEncryption;
+- (bool)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
+- (bool)hasEncryption;
 - (id)humanReadableName;
 - (id)name;
-- (BOOL)sendsPlainTextPasswords;
+- (bool)sendsPlainTextPasswords;
 
 @end

@@ -12,12 +12,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)dismissPopoverAnimated:(BOOL)arg1;
+- (void)dismissPopoverAnimated:(bool)arg1;
 - (id)initWithPopoverController:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setTarget:(id)arg1 selector:(SEL)arg2;

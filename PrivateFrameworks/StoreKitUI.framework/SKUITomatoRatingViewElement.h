@@ -3,15 +3,15 @@
  */
 
 @interface SKUITomatoRatingViewElement : SKUIViewElement {
-    int _freshness;
+    long long _freshness;
     float _tomatoRating;
 }
 
-@property(readonly) int freshness;
+@property(readonly) long long freshness;
 @property(readonly) float tomatoRating;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (int)freshness;
+- (long long)freshness;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (float)tomatoRating;
 

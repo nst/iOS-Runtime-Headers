@@ -11,7 +11,6 @@
 @interface PKPaymentAuthorizationController : NSObject <NSXPCListenerDelegate> {
     NSXPCConnection *_connection;
     double _connectionTimeout;
-    BOOL _didPresent;
     PKPaymentAuthorizationControllerExportedObject *_exportedObject;
     NSString *_hostIdentifier;
     PKInAppPaymentService *_inAppPaymentService;
@@ -20,6 +19,7 @@
     id _presentationCompletionBlock;
     NSObject<OS_dispatch_queue> *_queue;
     NSTimer *_timer;
+    bool_didPresent;
 }
 
 @property(setter=_setPrivateDelegate:) <PKPaymentAuthorizationControllerPrivateDelegate> * _privateDelegate;
@@ -28,9 +28,9 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPaymentAuthorizationControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property BOOL didPresent;
+@property bool didPresent;
 @property(retain) PKPaymentAuthorizationControllerExportedObject * exportedObject;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * hostIdentifier;
 @property(retain) PKInAppPaymentService * inAppPaymentService;
 @property(retain) NSXPCListener * listener;
@@ -40,10 +40,10 @@
 @property(readonly) Class superclass;
 @property(retain) NSTimer * timer;
 
-+ (BOOL)canMakePayments;
-+ (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
++ (bool)canMakePayments;
++ (bool)canMakePaymentsUsingNetworks:(id)arg1;
 
-- (void)_invokeCallbackWithSuccess:(BOOL)arg1;
+- (void)_invokeCallbackWithSuccess:(bool)arg1;
 - (id)_privateDelegate;
 - (id)_remoteObjectProxy;
 - (void)_setPrivateDelegate:(id)arg1;
@@ -52,13 +52,13 @@
 - (double)connectionTimeout;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)didPresent;
+- (bool)didPresent;
 - (void)dismissWithCompletion:(id)arg1;
 - (id)exportedObject;
 - (id)hostIdentifier;
 - (id)inAppPaymentService;
 - (id)initWithPaymentRequest:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)listener;
 - (id)paymentRequest;
 - (void)presentWithCompletion:(id)arg1;
@@ -67,7 +67,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setConnectionTimeout:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDidPresent:(BOOL)arg1;
+- (void)setDidPresent:(bool)arg1;
 - (void)setExportedObject:(id)arg1;
 - (void)setHostIdentifier:(id)arg1;
 - (void)setInAppPaymentService:(id)arg1;

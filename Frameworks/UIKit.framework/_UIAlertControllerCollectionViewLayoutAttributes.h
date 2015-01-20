@@ -3,14 +3,14 @@
  */
 
 @interface _UIAlertControllerCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
-    float _alignedDescriptiveLabelTextWidth;
+    double _alignedDescriptiveLabelTextWidth;
 }
 
-@property float alignedDescriptiveLabelTextWidth;
+@property double alignedDescriptiveLabelTextWidth;
 
-- (float)alignedDescriptiveLabelTextWidth;
+- (double)alignedDescriptiveLabelTextWidth;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setAlignedDescriptiveLabelTextWidth:(float)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setAlignedDescriptiveLabelTextWidth:(double)arg1;
 
 @end

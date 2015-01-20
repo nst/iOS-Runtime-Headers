@@ -6,28 +6,28 @@
 
 @interface PTSSavedModeTableView : UITableView <PTSHUDControl> {
     int _alignment;
-    BOOL _enabled;
     _UISettings *_settings;
     NSString *_valueKeyPath;
+    bool_enabled;
 }
 
 @property int alignment;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
+@property bool enabled;
+@property(readonly) unsigned long long hash;
 @property _UISettings * settings;
 @property(readonly) Class superclass;
 @property(copy) NSString * valueKeyPath;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultFrame;
 
 - (void).cxx_destruct;
 - (int)alignment;
-- (BOOL)enabled;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)enabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAlignment:(int)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setSettings:(id)arg1;
 - (void)setValueKeyPath:(id)arg1;
 - (id)settings;

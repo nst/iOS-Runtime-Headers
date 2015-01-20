@@ -12,24 +12,24 @@
 @property(readonly) NSDate * endDate;
 @property(readonly) NSDate * startDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)timePeriodWithStartDate:(id)arg1 endDate:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_initWithStartDate:(id)arg1 endDate:(id)arg2;
-- (int)compareByEndDate:(id)arg1;
-- (int)compareByStartDate:(id)arg1;
-- (BOOL)containsDate:(id)arg1;
-- (BOOL)containsTimePeriod:(id)arg1;
+- (long long)compareByEndDate:(id)arg1;
+- (long long)compareByStartDate:(id)arg1;
+- (bool)containsDate:(id)arg1;
+- (bool)containsTimePeriod:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (BOOL)endsBeforeDate:(id)arg1;
-- (unsigned int)hash;
+- (bool)endsBeforeDate:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)overlapsTimePeriod:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)overlapsTimePeriod:(id)arg1;
 - (id)startDate;
-- (BOOL)startsAfterDate:(id)arg1;
+- (bool)startsAfterDate:(id)arg1;
 
 @end

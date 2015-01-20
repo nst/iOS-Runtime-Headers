@@ -17,31 +17,31 @@
     WBSCompletionQuery *_currentQuery;
     <WBSParsecSearchSessionDelegate> *_delegate;
     NSMutableArray *_feedbackActions;
-    BOOL _hasRespondedToCurrentQuery;
     } _latestQueryTimestamp;
     double _minimumIntervalBetweenQueriesFromResponseHeaders;
     NSMutableDictionary *_resultSetPrefixCache;
     WBSParsecSearchResultCache *_searchResultCache;
     } _sessionStartTimestamp;
-    float _uiScale;
+    double _uiScale;
     NSURLSession *_urlSession;
-    BOOL _valid;
+    bool_hasRespondedToCurrentQuery;
+    bool_valid;
 }
 
 @property(readonly) WBSParsecSearchClient * client;
 @property(retain) WBSCompletionQuery * currentQuery;
 @property <WBSParsecSearchSessionDelegate> * delegate;
-@property(setter=setUIScale:) float uiScale;
-@property(getter=isValid,readonly) BOOL valid;
+@property(setter=setUIScale:) double uiScale;
+@property(getter=isValid,readonly) bool valid;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned int)_addFeedbackAction:(id)arg1;
+- (unsigned long long)_addFeedbackAction:(id)arg1;
 - (void)_addParsecAndSearchSuggestionDeltaForQuery:(id)arg1 toFeedbackDictionary:(id)arg2;
 - (void)_cacheResultSet:(id)arg1;
 - (void)_cacheResultsFromSearchResponse:(id)arg1;
 - (id)_cachedResultSetForQuery:(id)arg1;
-- (BOOL)_canSendQuery;
+- (bool)_canSendQuery;
 - (void)_endSession;
 - (void)_generateCachedSearchFeedbackForQuery:(id)arg1;
 - (void)_generateSearchFeedbackForResponse:(id)arg1 forQuery:(id)arg2 timeToFirstByte:(double)arg3 error:(id)arg4;
@@ -67,12 +67,12 @@
 - (void)didReceiveLocalResultsForQuery:(id)arg1;
 - (void)didReceiveWebSuggestionsForQuery:(id)arg1 fromSearchProvider:(id)arg2;
 - (id)initWithClient:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)setCurrentQuery:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setUIScale:(float)arg1;
-- (float)uiScale;
-- (void)userDidCancelSession:(int)arg1;
+- (void)setUIScale:(double)arg1;
+- (double)uiScale;
+- (void)userDidCancelSession:(long long)arg1;
 - (void)userDidCancelSession;
 - (void)userDidSelectCompletionListItem:(id)arg1 hidingParsecResult:(id)arg2;
 - (void)userDidSelectCompletionListItem:(id)arg1;

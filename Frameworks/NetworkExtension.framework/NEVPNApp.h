@@ -10,11 +10,11 @@
 
 @property(copy) NSArray * appRules;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appRules;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyAppRuleByID:(id)arg1;
 - (id)copyAppRuleBySigningIdentifier:(id)arg1;
 - (id)copyAppRuleIDs;
@@ -25,7 +25,7 @@
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)removeAppRuleByID:(id)arg1;
+- (bool)removeAppRuleByID:(id)arg1;
 - (void)setAppRules:(id)arg1;
 
 @end

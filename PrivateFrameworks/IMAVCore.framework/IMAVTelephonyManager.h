@@ -11,36 +11,36 @@
     struct __CFMachPort { } *_ctServerMachPort;
     struct __CFUUID { } *_ctVideoToken;
     NSMutableDictionary *_currentCallDictionary;
-    BOOL _isDesignatedAudioServiceProvider;
-    BOOL _isDesignatedVideoServiceProvider;
+    bool_isDesignatedAudioServiceProvider;
+    bool_isDesignatedVideoServiceProvider;
 }
 
 @property(readonly) unsigned int callState;
 
-+ (id)numberToDialForNumber:(id)arg1 dialAssist:(BOOL*)arg2;
++ (id)numberToDialForNumber:(id)arg1 dialAssist:(bool*)arg2;
 + (id)sharedInstance;
 
 - (void)__handleCallEvent:(id)arg1;
 - (void)_answerCall:(struct __CTCall { }*)arg1;
-- (BOOL)_breakCSCallsIfNecessary;
+- (bool)_breakCSCallsIfNecessary;
 - (struct __CTCall { }*)_callRefForChat:(id)arg1;
 - (void)_chatStateChanged:(id)arg1;
 - (void)_cleanupMachInfo;
 - (void)_dialRequested:(struct __CFDictionary { }*)arg1;
 - (void)_disconnectCSCallWithID:(id)arg1;
-- (BOOL)_disconnectCTServerConnection;
+- (bool)_disconnectCTServerConnection;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
 - (void)_handleCallEvent:(id)arg1;
 - (void)_hangUpCall:(struct __CTCall { }*)arg1;
-- (BOOL)_isOnCallToID:(id)arg1;
-- (void)_notifyMissedCallForInviteFromID:(id)arg1 isVideo:(BOOL)arg2;
-- (BOOL)_reconnectCTServerConnectionIfNecessary;
-- (BOOL)_registerCTRequestService;
+- (bool)_isOnCallToID:(id)arg1;
+- (void)_notifyMissedCallForInviteFromID:(id)arg1 isVideo:(bool)arg2;
+- (bool)_reconnectCTServerConnectionIfNecessary;
+- (bool)_registerCTRequestService;
 - (void)_setCallRef:(struct __CTCall { }*)arg1 forChat:(id)arg2;
 - (void)_setCurrentCallStatus:(int)arg1 forChat:(id)arg2;
-- (BOOL)_setupCTServerConnection;
-- (BOOL)_unregisterCTRequestService;
-- (BOOL)_wantsBreakBeforeMake;
+- (bool)_setupCTServerConnection;
+- (bool)_unregisterCTRequestService;
+- (bool)_wantsBreakBeforeMake;
 - (unsigned int)callState;
 - (void)dealloc;
 - (id)init;

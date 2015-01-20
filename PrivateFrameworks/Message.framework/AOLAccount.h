@@ -10,26 +10,26 @@
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)deliveryAccountHostname;
 + (unsigned int)deliveryAccountPortNumber;
-+ (BOOL)deliveryAccountUsesSSL;
++ (bool)deliveryAccountUsesSSL;
 + (id)displayedAccountTypeString;
 + (id)emailAddressHostPart;
 + (id)hostname;
-+ (BOOL)isPredefinedAccountType;
-+ (BOOL)usernameIsEmailAddress;
-+ (BOOL)usesSSL;
++ (bool)isPredefinedAccountType;
++ (bool)usernameIsEmailAddress;
++ (bool)usesSSL;
 
 - (id)_defaultSpecialMailboxNameForType:(int)arg1;
-- (id)_deliveryAccountCreateIfNeeded:(BOOL)arg1;
-- (BOOL)derivesDeliveryAccountInfoFromMailAccount;
+- (id)_deliveryAccountCreateIfNeeded:(bool)arg1;
+- (bool)derivesDeliveryAccountInfoFromMailAccount;
 - (id)displayUsername;
 - (id)emailAddresses;
 - (id)hostname;
 - (id)iconString;
 - (void)setHostname:(id)arg1;
 - (void)setUsername:(id)arg1;
-- (void)setUsesSSL:(BOOL)arg1;
-- (BOOL)shouldFetchACEDBInfoForError:(id)arg1;
+- (void)setUsesSSL:(bool)arg1;
+- (bool)shouldFetchACEDBInfoForError:(id)arg1;
 - (id)statisticsKind;
-- (BOOL)usesSSL;
+- (bool)usesSSL;
 
 @end

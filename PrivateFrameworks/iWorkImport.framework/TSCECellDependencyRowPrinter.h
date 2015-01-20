@@ -7,30 +7,30 @@
 @interface TSCECellDependencyRowPrinter : NSObject {
     NSString *_cellID;
     TSCEEdgeListPrinter *_dependentsList;
-    unsigned int _dirtyPrecedentCount;
-    BOOL _isFormula;
-    BOOL _isInCycle;
+    unsigned long long _dirtyPrecedentCount;
     TSCEEdgeListPrinter *_precedentsList;
+    bool_isFormula;
+    bool_isInCycle;
 }
 
 @property(retain) NSString * cellID;
-@property unsigned int dirtyPrecedentCount;
-@property BOOL isFormula;
-@property BOOL isInCycle;
+@property unsigned long long dirtyPrecedentCount;
+@property bool isFormula;
+@property bool isInCycle;
 
 - (void)addDependentWithCellID:(id)arg1 forOwner:(id)arg2;
 - (void)addPrecedentWithCellID:(id)arg1 forOwner:(id)arg2;
 - (id)cellID;
 - (void)dealloc;
-- (unsigned int)dirtyPrecedentCount;
-- (id)initWithCellID:(id)arg1 dirtyPrecedentCount:(unsigned int)arg2;
-- (BOOL)isFormula;
-- (BOOL)isInCycle;
-- (int)numericCompare:(id)arg1;
+- (unsigned long long)dirtyPrecedentCount;
+- (id)initWithCellID:(id)arg1 dirtyPrecedentCount:(unsigned long long)arg2;
+- (bool)isFormula;
+- (bool)isInCycle;
+- (long long)numericCompare:(id)arg1;
 - (void)setCellID:(id)arg1;
-- (void)setDirtyPrecedentCount:(unsigned int)arg1;
-- (void)setIsFormula:(BOOL)arg1;
-- (void)setIsInCycle:(BOOL)arg1;
+- (void)setDirtyPrecedentCount:(unsigned long long)arg1;
+- (void)setIsFormula:(bool)arg1;
+- (void)setIsInCycle:(bool)arg1;
 - (id)stringForDependencyRow;
 
 @end

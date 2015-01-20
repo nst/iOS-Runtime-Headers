@@ -34,11 +34,11 @@
 - (id)directorySuffix;
 - (id)environment;
 - (id)hardwareIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithConciseDictionaryRepresentation:(id)arg1;
-- (BOOL)isDefaultConfiguration;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDefaultConfiguration;
+- (bool)isEqual:(id)arg1;
 - (id)os;
 - (id)osBuild;
 - (id)osVersion;

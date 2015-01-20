@@ -14,9 +14,9 @@
     unsigned int _timeSinceMapViewportChanged;
 }
 
-@property BOOL hasMapMode;
-@property(readonly) BOOL hasMapRegion;
-@property BOOL hasTimeSinceMapViewportChanged;
+@property bool hasMapMode;
+@property(readonly) bool hasMapRegion;
+@property bool hasTimeSinceMapViewportChanged;
 @property int mapMode;
 @property(retain) GEOMapRegion * mapRegion;
 @property unsigned int timeSinceMapViewportChanged;
@@ -28,18 +28,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMapMode;
-- (BOOL)hasMapRegion;
-- (BOOL)hasTimeSinceMapViewportChanged;
-- (unsigned int)hash;
+- (bool)hasMapMode;
+- (bool)hasMapRegion;
+- (bool)hasTimeSinceMapViewportChanged;
+- (unsigned long long)hash;
 - (id)initWithTraits:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)mapMode;
 - (id)mapRegion;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMapMode:(BOOL)arg1;
-- (void)setHasTimeSinceMapViewportChanged:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMapMode:(bool)arg1;
+- (void)setHasTimeSinceMapViewportChanged:(bool)arg1;
 - (void)setMapMode:(int)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setTimeSinceMapViewportChanged:(unsigned int)arg1;

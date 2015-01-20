@@ -5,14 +5,14 @@
 @interface SAPhoneCallEmergencySnippet : SAPhoneCallSnippet {
 }
 
-@property int countDownSeconds;
+@property long long countDownSeconds;
 
 + (id)callEmergencySnippet;
 + (id)callEmergencySnippetWithDictionary:(id)arg1 context:(id)arg2;
 
-- (int)countDownSeconds;
+- (long long)countDownSeconds;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setCountDownSeconds:(int)arg1;
+- (void)setCountDownSeconds:(long long)arg1;
 
 @end

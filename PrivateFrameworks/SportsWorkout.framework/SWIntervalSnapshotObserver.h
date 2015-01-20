@@ -7,16 +7,16 @@
 @interface SWIntervalSnapshotObserver : NSObject <SWRunWorkoutObserver> {
     float _calorieInterval;
     float _distanceIntervalInMiles;
-    unsigned int _previousCalorieSnapshotIndex;
-    unsigned int _previousDistanceSnapshotIndex;
-    unsigned int _previousTimeSnapshotIndex;
+    unsigned long long _previousCalorieSnapshotIndex;
+    unsigned long long _previousDistanceSnapshotIndex;
+    unsigned long long _previousTimeSnapshotIndex;
     NSMutableArray *_snapshots;
-    unsigned int _timeIntervalInSeconds;
+    unsigned long long _timeIntervalInSeconds;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * snapshots;
 @property(readonly) Class superclass;
 
@@ -25,8 +25,8 @@
 - (void)dealloc;
 - (id)initWithCalorieInterval:(float)arg1;
 - (id)initWithDistanceIntervalInMiles:(float)arg1;
-- (id)initWithTimeIntervalInSeconds:(unsigned int)arg1;
-- (void)observeRunWorkoutControllerDataChange:(id)arg1 elapsedTime:(unsigned int)arg2 pace:(float)arg3 distance:(float)arg4 calories:(float)arg5 location:(id)arg6;
+- (id)initWithTimeIntervalInSeconds:(unsigned long long)arg1;
+- (void)observeRunWorkoutControllerDataChange:(id)arg1 elapsedTime:(unsigned long long)arg2 pace:(float)arg3 distance:(float)arg4 calories:(float)arg5 location:(id)arg6;
 - (void)observeRunWorkoutStateChange:(id)arg1 oldState:(id)arg2 newState:(id)arg3;
 - (void)observeRunWorkoutUserEvent:(id)arg1 userEvent:(id)arg2;
 - (id)snapshots;

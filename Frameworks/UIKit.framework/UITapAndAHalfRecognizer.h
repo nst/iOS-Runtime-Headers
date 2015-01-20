@@ -6,10 +6,10 @@
 
 @interface UITapAndAHalfRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     NSMutableSet *_activeTouches;
-    float _allowableMovement;
+    double _allowableMovement;
     int _currentNumberOfTaps;
     double _minimumFinalPressDuration;
     int _numberOfFullTaps;
@@ -18,21 +18,21 @@
     UITouch *_touch;
 }
 
-@property float allowableMovement;
+@property double allowableMovement;
 @property double minimumFinalPressDuration;
 @property int numberOfFullTaps;
 @property(retain) UITouch * touch;
 
 - (void)_resetGestureRecognizer;
 - (void)_verifyMovementInAllowableRange;
-- (float)allowableMovement;
+- (double)allowableMovement;
 - (void)clearTapTimer;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (double)minimumFinalPressDuration;
 - (int)numberOfFullTaps;
 - (void)recognized:(id)arg1;
-- (void)setAllowableMovement:(float)arg1;
+- (void)setAllowableMovement:(double)arg1;
 - (void)setMinimumFinalPressDuration:(double)arg1;
 - (void)setNumberOfFullTaps:(int)arg1;
 - (void)setTouch:(id)arg1;

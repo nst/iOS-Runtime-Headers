@@ -11,7 +11,7 @@
 @property(readonly) int chartGridValueType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)durationValueWithDouble:(double)arg1;
@@ -19,8 +19,8 @@
 - (int)chartGridValueType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)doubleValue;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDouble:(double)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

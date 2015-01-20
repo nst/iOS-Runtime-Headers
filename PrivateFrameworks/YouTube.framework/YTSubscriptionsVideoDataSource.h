@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface YTSubscriptionsVideoDataSource : YTVideoDataSource {
-    BOOL _requiresAuth;
     NSString *_subscriptionURL;
+    bool_requiresAuth;
 }
 
 - (void)reloadData;
-- (void)setSubscriptionURL:(id)arg1 requiresAuthentication:(BOOL)arg2;
+- (void)setSubscriptionURL:(id)arg1 requiresAuthentication:(bool)arg2;
 
 @end

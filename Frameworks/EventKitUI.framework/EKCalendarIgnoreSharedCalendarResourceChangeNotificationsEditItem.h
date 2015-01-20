@@ -6,10 +6,10 @@
 }
 
 - (id)cellText;
-- (BOOL)configureWithCalendar:(id)arg1;
+- (bool)configureWithCalendar:(id)arg1;
 - (id)descriptionLabelText;
 - (id)headerTitle;
-- (void)setUnderlyingCalendarState:(BOOL)arg1;
-- (BOOL)underlyingCalendarState;
+- (void)setUnderlyingCalendarState:(bool)arg1;
+- (bool)underlyingCalendarState;
 
 @end

@@ -5,9 +5,9 @@
 @interface HDJournalEntry : NSObject <NSSecureCoding> {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)applyWithDaemon:(id)arg1;
+- (bool)applyWithDaemon:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -6,31 +6,31 @@
 
 @interface AVCaptureSessionInternal : NSObject {
     AVCaptureDevice *adjustingDeviceActiveFormat;
-    BOOL adjustingVideoDeviceHDREnabled;
-    BOOL automaticallyConfiguresApplicationAudioSession;
     int beginConfigRefCount;
+    booladjustingVideoDeviceHDREnabled;
+    boolautomaticallyConfiguresApplicationAudioSession;
+    boolfigCaptureSessionRunning;
+    boolinterrupted;
+    boolnotifiesOnMainThread;
+    boolrunning;
+    boolsessionPresetChanging;
+    boolusesApplicationAudioSession;
+    boolwaitingForFigCaptureSessionConfigurationToBecomeLive;
+    boolwaitingForFigCaptureSessionToStart;
+    boolwaitingForFigCaptureSessionToStop;
+    boolwaitingForFigCaptureSessionToStopDueToEmptyConfig;
     NSMutableArray *committedAVCaptureSessionConfigurations;
     NSMutableArray *connections;
     struct OpaqueFigCaptureSession { } *figCaptureSession;
-    BOOL figCaptureSessionRunning;
     NSMutableArray *inputs;
-    BOOL interrupted;
     AVCaptureSessionConfiguration *liveAVCaptureSessionConfiguration;
     struct OpaqueCMClock { } *masterClock;
-    BOOL notifiesOnMainThread;
     NSMutableArray *outputs;
     AVRunLoopCondition *runLoopCondition;
-    BOOL running;
     FigCaptureSessionConfiguration *sessionConfig;
     NSString *sessionPreset;
-    BOOL sessionPresetChanging;
     NSError *stopError;
-    BOOL usesApplicationAudioSession;
     NSHashTable *videoPreviewLayers;
-    BOOL waitingForFigCaptureSessionConfigurationToBecomeLive;
-    BOOL waitingForFigCaptureSessionToStart;
-    BOOL waitingForFigCaptureSessionToStop;
-    BOOL waitingForFigCaptureSessionToStopDueToEmptyConfig;
     AVWeakReference *weakReference;
 }
 

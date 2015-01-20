@@ -3,16 +3,16 @@
  */
 
 @interface GateKeeper : CHLogger {
-    BOOL _hasDeviceBeenUnlockedSinceBoot;
+    bool_hasDeviceBeenUnlockedSinceBoot;
 }
 
-@property BOOL hasDeviceBeenUnlockedSinceBoot;
+@property bool hasDeviceBeenUnlockedSinceBoot;
 
 + (id)instance;
 
-- (BOOL)hasDeviceBeenUnlockedSinceBoot;
+- (bool)hasDeviceBeenUnlockedSinceBoot;
 - (id)init;
-- (void)setHasDeviceBeenUnlockedSinceBoot:(BOOL)arg1;
+- (void)setHasDeviceBeenUnlockedSinceBoot:(bool)arg1;
 - (void)setupMobileKeyBag;
 
 @end

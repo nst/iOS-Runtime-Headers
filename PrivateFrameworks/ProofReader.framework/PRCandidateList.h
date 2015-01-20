@@ -6,20 +6,20 @@
 
 @interface PRCandidateList : NSObject {
     NSMutableArray *_candidates;
-    unsigned int _maxCount;
+    unsigned long long _maxCount;
 }
 
 - (void)addCandidate:(id)arg1;
-- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 errorType:(unsigned int)arg3;
-- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorType:(unsigned int)arg4;
-- (void)addCandidateWithString:(id)arg1 errorType:(unsigned int)arg2;
+- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 errorType:(unsigned long long)arg3;
+- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 errorType:(unsigned long long)arg4;
+- (void)addCandidateWithString:(id)arg1 errorType:(unsigned long long)arg2;
 - (id)candidateStrings;
 - (id)candidates;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
-- (id)initWithMaxCount:(unsigned int)arg1;
-- (BOOL)isFull;
-- (unsigned int)maxCount;
+- (id)initWithMaxCount:(unsigned long long)arg1;
+- (bool)isFull;
+- (unsigned long long)maxCount;
 
 @end

@@ -5,40 +5,40 @@
 @class NSString;
 
 @interface EKTravelPredictionCar : EKTravelPrediction <NSSecureCoding> {
-    unsigned int _currentTrafficDensity;
-    BOOL _hasTrafficIncidentOnRoute;
-    unsigned int _historicTrafficDensity;
+    unsigned long long _currentTrafficDensity;
+    unsigned long long _historicTrafficDensity;
     int _routeIncidentSignificance;
     NSString *_routeIncidentStreetName;
     int _routeIncidentType;
-    unsigned int _travelState;
+    unsigned long long _travelState;
     double _travelStateScore;
+    bool_hasTrafficIncidentOnRoute;
 }
 
-@property(readonly) unsigned int currentTrafficDensity;
-@property(readonly) BOOL hasTrafficIncidentOnRoute;
-@property(readonly) unsigned int historicTrafficDensity;
+@property(readonly) unsigned long long currentTrafficDensity;
+@property(readonly) bool hasTrafficIncidentOnRoute;
+@property(readonly) unsigned long long historicTrafficDensity;
 @property(readonly) int routeIncidentSignificance;
 @property(readonly) NSString * routeIncidentStreetName;
 @property(readonly) int routeIncidentType;
-@property(readonly) unsigned int travelState;
+@property(readonly) unsigned long long travelState;
 @property(readonly) double travelStateScore;
 
 - (void)addTrafficIncidentOfType:(int)arg1 withSignificance:(int)arg2 onStreet:(id)arg3;
 - (id)advice;
-- (unsigned int)currentTrafficDensity;
+- (unsigned long long)currentTrafficDensity;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasTrafficIncidentOnRoute;
-- (unsigned int)historicTrafficDensity;
+- (bool)hasTrafficIncidentOnRoute;
+- (unsigned long long)historicTrafficDensity;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 predictionDate:(id)arg4 hypothesizer:(id)arg5;
 - (int)routeIncidentSignificance;
 - (id)routeIncidentStreetName;
 - (int)routeIncidentType;
-- (void)setTrafficConditionsCurrent:(unsigned int)arg1 historic:(unsigned int)arg2;
-- (void)setTravelState:(unsigned int)arg1 withConfidence:(double)arg2;
-- (unsigned int)travelState;
+- (void)setTrafficConditionsCurrent:(unsigned long long)arg1 historic:(unsigned long long)arg2;
+- (void)setTravelState:(unsigned long long)arg1 withConfidence:(double)arg2;
+- (unsigned long long)travelState;
 - (double)travelStateScore;
 
 @end

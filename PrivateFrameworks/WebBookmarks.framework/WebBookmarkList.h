@@ -8,10 +8,10 @@
     unsigned int _bookmarkCount;
     NSMutableArray *_bookmarks;
     WebBookmarkCollection *_collection;
-    BOOL _customQuery;
     unsigned int _folderID;
     NSString *_query;
     unsigned int _skipOffset;
+    bool_customQuery;
 }
 
 @property(readonly) unsigned int folderID;
@@ -25,6 +25,6 @@
 - (void)dealloc;
 - (unsigned int)folderID;
 - (id)initWithBookmarksWhere:(id)arg1 collection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4;
-- (id)initWithFolderID:(unsigned int)arg1 inCollection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4 includeHidden:(BOOL)arg5;
+- (id)initWithFolderID:(unsigned int)arg1 inCollection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4 includeHidden:(bool)arg5;
 
 @end

@@ -10,19 +10,19 @@
         unsigned int last : 1; 
         unsigned int synchronousMode : 1; 
     } _has;
-    BOOL _last;
     NSString *_operationUUID;
-    BOOL _synchronousMode;
     int _type;
+    bool_last;
+    bool_synchronousMode;
 }
 
-@property BOOL hasLast;
-@property(readonly) BOOL hasOperationUUID;
-@property BOOL hasSynchronousMode;
-@property BOOL hasType;
-@property BOOL last;
+@property bool hasLast;
+@property(readonly) bool hasOperationUUID;
+@property bool hasSynchronousMode;
+@property bool hasType;
+@property bool last;
 @property(retain) NSString * operationUUID;
-@property BOOL synchronousMode;
+@property bool synchronousMode;
 @property int type;
 
 - (void).cxx_destruct;
@@ -30,24 +30,24 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLast;
-- (BOOL)hasOperationUUID;
-- (BOOL)hasSynchronousMode;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)last;
+- (bool)hasLast;
+- (bool)hasOperationUUID;
+- (bool)hasSynchronousMode;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)last;
 - (void)mergeFrom:(id)arg1;
 - (id)operationUUID;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLast:(BOOL)arg1;
-- (void)setHasSynchronousMode:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
-- (void)setLast:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLast:(bool)arg1;
+- (void)setHasSynchronousMode:(bool)arg1;
+- (void)setHasType:(bool)arg1;
+- (void)setLast:(bool)arg1;
 - (void)setOperationUUID:(id)arg1;
-- (void)setSynchronousMode:(BOOL)arg1;
+- (void)setSynchronousMode:(bool)arg1;
 - (void)setType:(int)arg1;
-- (BOOL)synchronousMode;
+- (bool)synchronousMode;
 - (int)type;
 - (void)writeTo:(id)arg1;
 

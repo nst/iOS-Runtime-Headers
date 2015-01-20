@@ -9,7 +9,7 @@
 }
 
 @property(readonly) NSNumber * ITunesStoreIdentifier;
-@property(getter=isPOIBased,readonly) BOOL POIBased;
+@property(getter=isPOIBased,readonly) bool POIBased;
 @property(readonly) NSString * artistName;
 @property(readonly) NSArray * artwork;
 @property(readonly) NSString * bundleIdentifier;
@@ -17,8 +17,8 @@
 @property(readonly) NSString * displayName;
 @property(readonly) NSString * itemKind;
 @property(readonly) NSDictionary * lookupDictionary;
-@property(readonly) int numberOfUserRatings;
-@property(readonly) int numberOfUserRatingsForCurrentVersion;
+@property(readonly) long long numberOfUserRatings;
+@property(readonly) long long numberOfUserRatingsForCurrentVersion;
 @property(readonly) NSArray * offers;
 @property(readonly) NSURL * productPageURL;
 @property(readonly) float userRating;
@@ -32,11 +32,11 @@
 - (void)dealloc;
 - (id)displayName;
 - (id)initWithLookupDictionary:(id)arg1;
-- (BOOL)isPOIBased;
+- (bool)isPOIBased;
 - (id)itemKind;
 - (id)lookupDictionary;
-- (int)numberOfUserRatings;
-- (int)numberOfUserRatingsForCurrentVersion;
+- (long long)numberOfUserRatings;
+- (long long)numberOfUserRatingsForCurrentVersion;
 - (id)offers;
 - (id)productPageURL;
 - (float)userRating;

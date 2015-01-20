@@ -29,7 +29,7 @@
 - (void)_fetchAuthTokensForPackage:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_finishPackage:(id)arg1 assets:(id)arg2 error:(id)arg3;
-- (BOOL)_handleSectionItemSaved:(id)arg1 package:(id)arg2 error:(id*)arg3;
+- (bool)_handleSectionItemSaved:(id)arg1 package:(id)arg2 error:(id*)arg3;
 - (void)_planSectionsForPackage:(id)arg1;
 - (void)_removeManifests;
 - (void)_saveMMCSManifestItem:(id)arg1 andMMCSSectionItems:(id)arg2 forPackage:(id)arg3;

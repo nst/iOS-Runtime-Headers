@@ -5,9 +5,9 @@
 @interface CPLEngineUtils : NSObject {
 }
 
-+ (BOOL)createPathIfNeeded:(id)arg1;
-+ (struct CGSize { float x1; float x2; })dimensionsOfImageAtPath:(id)arg1 outFileSize:(unsigned int*)arg2;
-+ (BOOL)reCreatePath:(id)arg1;
-+ (void)resizeImageAtPath:(id)arg1 toPath:(id)arg2 maxSide:(float)arg3;
++ (bool)createPathIfNeeded:(id)arg1;
++ (struct CGSize { double x1; double x2; })dimensionsOfImageAtPath:(id)arg1 outFileSize:(unsigned long long*)arg2;
++ (bool)reCreatePath:(id)arg1;
++ (void)resizeImageAtPath:(id)arg1 toPath:(id)arg2 maxSide:(double)arg3;
 
 @end

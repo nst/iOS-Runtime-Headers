@@ -13,17 +13,17 @@
     UIVisualEffect *_backgroundEffect;
     _UITableViewCellActionButton *_button;
     id _handler;
-    int _style;
+    long long _style;
     NSString *_title;
 }
 
 @property(copy) UIColor * backgroundColor;
 @property(copy) UIVisualEffect * backgroundEffect;
 @property(getter=_handler,readonly) id handler;
-@property(readonly) int style;
+@property(readonly) long long style;
 @property(copy) NSString * title;
 
-+ (id)rowActionWithStyle:(int)arg1 title:(id)arg2 handler:(id)arg3;
++ (id)rowActionWithStyle:(long long)arg1 title:(id)arg2 handler:(id)arg3;
 
 - (id)_button;
 - (id)_handler;
@@ -36,7 +36,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundEffect:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)title;
 
 @end

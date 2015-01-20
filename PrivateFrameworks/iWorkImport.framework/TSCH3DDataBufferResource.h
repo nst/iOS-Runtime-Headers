@@ -15,6 +15,6 @@
 - (id)get;
 - (id)initWithBuffer:(id)arg1;
 - (void)setBuffer:(id)arg1;
-- (void)setChanged:(BOOL)arg1;
+- (void)setChanged:(bool)arg1;
 
 @end

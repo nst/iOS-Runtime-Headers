@@ -8,21 +8,21 @@
     NSDictionary *__parameterStorage;
     NSDictionary *_additionalInformation;
     CAMInflightAsset *_asset;
-    BOOL _completed;
     NSDictionary *_diagnostics;
     NSMutableDictionary *_metadata;
     CAMCaptureRequest *_request;
-    int _type;
+    long long _type;
+    bool_completed;
 }
 
 @property(copy,readonly) NSDictionary * _parameterStorage;
 @property(copy) NSDictionary * additionalInformation;
 @property(retain) CAMInflightAsset * asset;
-@property(getter=isCompleted) BOOL completed;
+@property(getter=isCompleted) bool completed;
 @property(copy) NSDictionary * diagnostics;
 @property(retain) NSMutableDictionary * metadata;
 @property(copy) CAMCaptureRequest * request;
-@property(readonly) int type;
+@property(readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)_parameterStorage;
@@ -30,18 +30,18 @@
 - (id)asset;
 - (id)diagnostics;
 - (id)init;
-- (id)initWithType:(int)arg1;
-- (BOOL)isCompleted;
+- (id)initWithType:(long long)arg1;
+- (bool)isCompleted;
 - (id)metadata;
 - (id)parameterForKey:(id)arg1;
 - (void)releaseCachedImages;
 - (id)request;
 - (void)setAdditionalInformation:(id)arg1;
 - (void)setAsset:(id)arg1;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setDiagnostics:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

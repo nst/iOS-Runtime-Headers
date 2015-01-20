@@ -8,19 +8,19 @@
     unsigned long long _fetchTimestamp;
     NSObject<OS_dispatch_queue> *isolation;
     NSMutableIndexSet *unusedIndexes;
-    int usedMax;
+    long long usedMax;
 }
 
 + (void)getAvailableThumbnailIndexWithHandler:(id)arg1;
-+ (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
-+ (unsigned int)nextAvailableThumbnailIndex;
++ (void)getAvailableThumbnailIndexesWithCount:(unsigned long long)arg1 handler:(id)arg2;
++ (unsigned long long)nextAvailableThumbnailIndex;
 + (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 + (void)recycleThumbnailIndexes:(id)arg1;
 + (id)sharedInstance;
 
 - (id)fetchOccupiedThumbnailIndexesWithLibrary:(id)arg1;
 - (void)getAvailableThumbnailIndexesFromDatabase;
-- (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
+- (void)getAvailableThumbnailIndexesWithCount:(unsigned long long)arg1 handler:(id)arg2;
 - (id)init;
 - (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 

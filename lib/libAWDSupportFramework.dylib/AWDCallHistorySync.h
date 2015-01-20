@@ -14,9 +14,9 @@
 }
 
 @property unsigned int downloadRecordCount;
-@property BOOL hasDownloadRecordCount;
-@property BOOL hasTimestamp;
-@property BOOL hasUploadRecordCount;
+@property bool hasDownloadRecordCount;
+@property bool hasTimestamp;
+@property bool hasUploadRecordCount;
 @property unsigned long long timestamp;
 @property unsigned int uploadRecordCount;
 
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)downloadRecordCount;
-- (BOOL)hasDownloadRecordCount;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUploadRecordCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDownloadRecordCount;
+- (bool)hasTimestamp;
+- (bool)hasUploadRecordCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDownloadRecordCount:(unsigned int)arg1;
-- (void)setHasDownloadRecordCount:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasUploadRecordCount:(BOOL)arg1;
+- (void)setHasDownloadRecordCount:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasUploadRecordCount:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUploadRecordCount:(unsigned int)arg1;
 - (unsigned long long)timestamp;

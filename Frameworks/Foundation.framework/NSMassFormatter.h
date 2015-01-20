@@ -6,29 +6,29 @@
 
 @interface NSMassFormatter : NSFormatter {
     void *_formatter;
-    BOOL _isForPersonMassUse;
     void *_reserved[2];
+    bool_isForPersonMassUse;
 }
 
-@property(getter=isForPersonMassUse) BOOL forPersonMassUse;
+@property(getter=isForPersonMassUse) bool forPersonMassUse;
 @property(copy) NSNumberFormatter * numberFormatter;
-@property int unitStyle;
+@property long long unitStyle;
 
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (void)dealloc;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (id)init;
-- (BOOL)isForPersonMassUse;
+- (bool)isForPersonMassUse;
 - (id)numberFormatter;
-- (void)setForPersonMassUse:(BOOL)arg1;
+- (void)setForPersonMassUse:(bool)arg1;
 - (void)setNumberFormatter:(id)arg1;
-- (void)setUnitStyle:(int)arg1;
+- (void)setUnitStyle:(long long)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromKilograms:(double)arg1;
-- (id)stringFromValue:(double)arg1 unit:(int)arg2;
-- (int)targetUnitFromKilograms:(double)arg1;
-- (id)unitStringFromKilograms:(double)arg1 usedUnit:(int*)arg2;
-- (id)unitStringFromValue:(double)arg1 unit:(int)arg2;
-- (int)unitStyle;
+- (id)stringFromValue:(double)arg1 unit:(long long)arg2;
+- (long long)targetUnitFromKilograms:(double)arg1;
+- (id)unitStringFromKilograms:(double)arg1 usedUnit:(long long*)arg2;
+- (id)unitStringFromValue:(double)arg1 unit:(long long)arg2;
+- (long long)unitStyle;
 
 @end

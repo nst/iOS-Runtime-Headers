@@ -22,7 +22,7 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)_kernelCNeg;
 - (id)_kernelCPos;
 - (id)_kernelCast;

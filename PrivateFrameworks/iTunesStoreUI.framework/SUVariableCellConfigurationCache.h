@@ -7,7 +7,7 @@
 @interface SUVariableCellConfigurationCache : NSObject {
     NSMutableDictionary *_caches;
     id _cellContext;
-    float _tableHeight;
+    double _tableHeight;
 }
 
 @property(readonly) NSArray * caches;
@@ -17,7 +17,7 @@
 - (id)caches;
 - (id)cellContext;
 - (void)dealloc;
-- (id)initWithTableHeight:(float)arg1;
+- (id)initWithTableHeight:(double)arg1;
 - (void)reset;
 - (void)resetLayoutCaches;
 - (void)setCellContext:(id)arg1;

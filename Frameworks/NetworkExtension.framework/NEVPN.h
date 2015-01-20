@@ -5,21 +5,21 @@
 @class NEVPNProtocol, NSArray;
 
 @interface NEVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
-    BOOL _enabled;
-    BOOL _onDemandEnabled;
     NSArray *_onDemandRules;
     NEVPNProtocol *_protocol;
+    bool_enabled;
+    bool_onDemandEnabled;
 }
 
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isOnDemandEnabled) BOOL onDemandEnabled;
+@property(getter=isEnabled) bool enabled;
+@property(getter=isOnDemandEnabled) bool onDemandEnabled;
 @property(copy) NSArray * onDemandRules;
 @property(copy) NEVPNProtocol * protocol;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyProfileDictionaryWithCertificateUUID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,12 +29,12 @@
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
-- (BOOL)isOnDemandEnabled;
+- (bool)isEnabled;
+- (bool)isOnDemandEnabled;
 - (id)onDemandRules;
 - (id)protocol;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setOnDemandEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setOnDemandEnabled:(bool)arg1;
 - (void)setOnDemandRules:(id)arg1;
 - (void)setProtocol:(id)arg1;
 

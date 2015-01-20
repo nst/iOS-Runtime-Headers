@@ -14,10 +14,10 @@
 @property(retain) UITextField * textFieldLeft;
 @property(retain) UITextField * textFieldRight;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)separator;
 - (void)setNeedsUpdateConstraints;
 - (void)setSeparator:(id)arg1;

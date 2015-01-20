@@ -18,9 +18,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)currentGL_ACTIVE_TEXTURE;
 - (struct { int x1; int x2; int x3; int x4; })currentGL_VIEWPORT;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCurrentGLState;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setCurrentGL_ACTIVE_TEXTURE:(unsigned int)arg1;
 - (void)setCurrentGL_VIEWPORT:(struct { int x1; int x2; int x3; int x4; })arg1;
 - (void)updateWithCurrentGLState;

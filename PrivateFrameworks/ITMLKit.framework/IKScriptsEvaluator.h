@@ -7,31 +7,31 @@
 @interface IKScriptsEvaluator : NSObject <ISURLOperationDelegate> {
     IKAppContext *_appContext;
     JSManagedValue *_callback;
-    BOOL _isJingleRequest;
     NSMutableArray *_records;
     NSArray *_scripts;
-    BOOL _success;
+    bool_isJingleRequest;
+    bool_success;
 }
 
 @property IKAppContext * appContext;
 @property(retain) JSManagedValue * callback;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isJingleRequest;
+@property(readonly) unsigned long long hash;
+@property bool isJingleRequest;
 @property(retain) NSMutableArray * records;
 @property(retain) NSArray * scripts;
-@property BOOL success;
+@property bool success;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_operation:(id)arg1 finishedWithResult:(id)arg2 error:(id)arg3;
-- (void)_sendCallback:(id)arg1 inContext:(id)arg2 success:(BOOL)arg3;
+- (void)_sendCallback:(id)arg1 inContext:(id)arg2 success:(bool)arg3;
 - (id)appContext;
 - (id)callback;
 - (void)evaluate;
-- (id)initWithScripts:(id)arg1 withContext:(id)arg2 callback:(id)arg3 jingleRequest:(BOOL)arg4;
-- (BOOL)isJingleRequest;
+- (id)initWithScripts:(id)arg1 withContext:(id)arg2 callback:(id)arg3 jingleRequest:(bool)arg4;
+- (bool)isJingleRequest;
 - (void)operation:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
@@ -40,10 +40,10 @@
 - (id)scripts;
 - (void)setAppContext:(id)arg1;
 - (void)setCallback:(id)arg1;
-- (void)setIsJingleRequest:(BOOL)arg1;
+- (void)setIsJingleRequest:(bool)arg1;
 - (void)setRecords:(id)arg1;
 - (void)setScripts:(id)arg1;
-- (void)setSuccess:(BOOL)arg1;
-- (BOOL)success;
+- (void)setSuccess:(bool)arg1;
+- (bool)success;
 
 @end

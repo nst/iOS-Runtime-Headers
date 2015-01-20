@@ -21,13 +21,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <AAUIFamilySetupPageDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_createDescriptionLabelForText:(id)arg1;
 - (void)_getStartedButtonWasTapped:(id)arg1;
-- (float)_heightForText:(id)arg1 constrainedToWidth:(float)arg2;
+- (double)_heightForText:(id)arg1 constrainedToWidth:(double)arg2;
 - (id)delegate;
 - (id)initWithAccount:(id)arg1 store:(id)arg2 familyEligibilityResponse:(id)arg3;
 - (id)initWithAccount:(id)arg1 store:(id)arg2;

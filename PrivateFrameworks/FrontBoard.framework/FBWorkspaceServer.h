@@ -11,8 +11,8 @@
     NSMutableArray *_messagesQueuedForSend;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_sceneIDToSceneHandlerMap;
-    unsigned int _transactionBlockDepth;
-    BOOL _triedToSendMessageInTransaction;
+    unsigned long long _transactionBlockDepth;
+    bool_triedToSendMessageInTransaction;
 }
 
 @property <FBWorkspaceServerDelegate> * delegate;
@@ -24,7 +24,7 @@
 - (void)_queue_deserializeEventFromMessage:(id)arg1 ofType:(Class)arg2 withSceneHandlerBlock:(id)arg3;
 - (void)_queue_handleCreateSceneRequest:(id)arg1;
 - (void)_queue_handleDestroySceneRequest:(id)arg1;
-- (BOOL)_queue_handleMessage:(id)arg1 withType:(long long)arg2;
+- (bool)_queue_handleMessage:(id)arg1 withType:(long long)arg2;
 - (void)_queue_handleMessage:(id)arg1;
 - (void)_queue_handleSceneAttachContext:(id)arg1;
 - (void)_queue_handleSceneDetachContext:(id)arg1;
@@ -32,9 +32,9 @@
 - (void)_queue_handleSceneDidUpdateClientSettings:(id)arg1;
 - (void)_queue_handleSceneUpdateContext:(id)arg1;
 - (void)_queue_invalidate;
-- (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2 withResponseEvent:(id)arg3 ofType:(Class)arg4;
-- (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2;
-- (void)_queue_sendMessage:(int)arg1 withMessagePacker:(id)arg2 withReplyHandler:(id)arg3;
+- (void)_queue_sendMessage:(long long)arg1 withEvent:(id)arg2 withResponseEvent:(id)arg3 ofType:(Class)arg4;
+- (void)_queue_sendMessage:(long long)arg1 withEvent:(id)arg2;
+- (void)_queue_sendMessage:(long long)arg1 withMessagePacker:(id)arg2 withReplyHandler:(id)arg3;
 - (void)_queue_sendReplyForMessage:(id)arg1 withEvent:(id)arg2;
 - (void)_queue_setXPCConnection:(id)arg1;
 - (id)auditToken;

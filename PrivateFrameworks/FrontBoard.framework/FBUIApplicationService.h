@@ -18,8 +18,8 @@
 - (id)delegate;
 - (void)handleApplication:(id)arg1 getBadgeValueWithCompletion:(id)arg2;
 - (void)handleApplication:(id)arg1 setBadgeValue:(id)arg2;
-- (void)handleApplicationProcess:(id)arg1 requestBrightness:(float)arg2 completion:(id)arg3;
-- (BOOL)handleApplicationProcess:(id)arg1 setNextWakeInterval:(double)arg2;
+- (void)handleApplicationProcess:(id)arg1 requestBrightness:(double)arg2 completion:(id)arg3;
+- (bool)handleApplicationProcess:(id)arg1 setNextWakeInterval:(double)arg2;
 - (id)initWithQueue:(id)arg1;
 - (id)queue;
 - (void)setDelegate:(id)arg1;

@@ -6,13 +6,13 @@
 
 @interface UIStatusBarDoubleHeightItemView : UIStatusBarItemView {
     NSString *_contentsString;
-    BOOL _ellipsize;
-    float _letterSpacing;
+    double _letterSpacing;
+    bool_ellipsize;
 }
 
 - (id)contentsImage;
 - (void)dealloc;
-- (float)extraRightPadding;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)extraRightPadding;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

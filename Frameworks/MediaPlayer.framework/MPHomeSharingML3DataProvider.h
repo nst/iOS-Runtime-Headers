@@ -14,14 +14,14 @@
 }
 
 @property(readonly) HSHomeSharingLibrary * homeSharingLibrary;
-@property(readonly) BOOL isSupportedSharingVersion;
+@property(readonly) bool isSupportedSharingVersion;
 
 + (void)_determineHomeSharingGroupIDWithCompletionHandler:(id)arg1;
 + (void)beginScanningForLibraries;
 + (void)endScanningForLibraries;
 + (id)homeSharingGroupID;
-+ (BOOL)isConnecting;
-+ (BOOL)isScanningForLibraries;
++ (bool)isConnecting;
++ (bool)isScanningForLibraries;
 
 - (void).cxx_destruct;
 - (void)_fetchTokensForAuthorizedDSIDs;
@@ -36,11 +36,11 @@
 - (void)dealloc;
 - (void)disconnect;
 - (id)errorResolverForMediaItem:(id)arg1;
-- (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
-- (BOOL)hasGeniusMixes;
+- (bool)hasArtworkImageForItemWithIdentifier:(long long)arg1;
+- (bool)hasGeniusMixes;
 - (id)homeSharingLibrary;
 - (id)initWithHomeSharingLibrary:(id)arg1;
-- (BOOL)isSupportedSharingVersion;
+- (bool)isSupportedSharingVersion;
 - (id)itemResultSetForQueryCriteria:(id)arg1;
 - (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id)arg2;
@@ -48,7 +48,7 @@
 - (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (id)name;
 - (id)protectedContentSupportStorageURL;
-- (BOOL)requiresAuthentication;
+- (bool)requiresAuthentication;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id)arg4;

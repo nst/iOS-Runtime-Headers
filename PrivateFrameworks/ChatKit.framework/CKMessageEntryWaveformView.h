@@ -7,7 +7,7 @@
 @interface CKMessageEntryWaveformView : UIView {
     UIImageView *_balloonImageView;
     double _duration;
-    unsigned int _maxPowerLevelsCount;
+    unsigned long long _maxPowerLevelsCount;
     NSMutableArray *_powerLevels;
     UILabel *_timeLabel;
     UIImageView *_waveformImageView;
@@ -15,30 +15,30 @@
 
 @property(retain) UIImageView * balloonImageView;
 @property double duration;
-@property unsigned int maxPowerLevelsCount;
+@property unsigned long long maxPowerLevelsCount;
 @property(retain) NSMutableArray * powerLevels;
 @property(retain) UILabel * timeLabel;
 @property(retain) UIImageView * waveformImageView;
 
 + (id)waveformCurveTransform;
 
-- (void)appendPowerLevel:(float)arg1;
+- (void)appendPowerLevel:(double)arg1;
 - (id)balloonImageView;
 - (void)clearPowerLevels;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (double)duration;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned int)maxPowerLevelsCount;
+- (unsigned long long)maxPowerLevelsCount;
 - (id)powerLevels;
 - (void)setBalloonImageView:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setMaxPowerLevelsCount:(unsigned int)arg1;
+- (void)setMaxPowerLevelsCount:(unsigned long long)arg1;
 - (void)setPowerLevels:(id)arg1;
 - (void)setTimeLabel:(id)arg1;
 - (void)setWaveformImageView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)timeLabel;
 - (void)updateWaveform;
 - (id)waveformImageView;

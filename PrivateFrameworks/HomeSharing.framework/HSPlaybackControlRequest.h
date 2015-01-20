@@ -3,15 +3,15 @@
  */
 
 @interface HSPlaybackControlRequest : HSRequest {
-    int _controlCommand;
+    long long _controlCommand;
     unsigned int _interfaceID;
 }
 
-@property(readonly) int controlCommand;
+@property(readonly) long long controlCommand;
 @property(readonly) unsigned int interfaceID;
 
-- (int)controlCommand;
-- (id)initWithInterfaceID:(unsigned int)arg1 controlCommand:(int)arg2;
+- (long long)controlCommand;
+- (id)initWithInterfaceID:(unsigned int)arg1 controlCommand:(long long)arg2;
 - (unsigned int)interfaceID;
 
 @end

@@ -21,7 +21,7 @@
 @property(readonly) double ttl;
 @property(readonly) double validRadius;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)advice;
 - (id)arrivalDate;
@@ -30,9 +30,9 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 predictionDate:(id)arg4 pollAggressively:(BOOL)arg5;
+- (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 predictionDate:(id)arg4 pollAggressively:(bool)arg5;
 - (id)initWithDepartureDate:(id)arg1 arrivalDate:(id)arg2 startingLocation:(id)arg3 validRadius:(double)arg4 predictionDate:(id)arg5 ttl:(double)arg6;
-- (BOOL)isExpiredWithLocation:(id)arg1 date:(id)arg2;
+- (bool)isExpiredWithLocation:(id)arg1 date:(id)arg2;
 - (id)predictionDate;
 - (id)startingLocation;
 - (double)ttl;

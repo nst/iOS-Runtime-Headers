@@ -10,7 +10,6 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    BOOL _aboveHighWaterLevel;
     NSObject<OS_dispatch_queue> *_aboveHighWaterLevelQueue;
     AVAssetWriterInputFigAssetWriterEndPassOperation *_endPassOperation;
     struct OpaqueFigAssetWriter { } *_figAssetWriter;
@@ -19,10 +18,11 @@
     } _sampleBufferCoalescingInterval;
     int _trackID;
     AVWeakReference *_weakReference;
+    bool_aboveHighWaterLevel;
 }
 
-@property(getter=isAboveHighWaterLevel,readonly) BOOL aboveHighWaterLevel;
-@property(readonly) BOOL encoderSupportsMultiPass;
+@property(getter=isAboveHighWaterLevel,readonly) bool aboveHighWaterLevel;
+@property(readonly) bool encoderSupportsMultiPass;
 @property(readonly) struct OpaqueFigAssetWriter { }* figAssetWriter;
 @property(readonly) AVMediaFileType * mediaFileType;
 @property(readonly) NSString * mediaType;
@@ -30,41 +30,41 @@
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } sampleBufferCoalescingInterval;
 @property(readonly) int trackID;
 
-+ (id)assetWriterTrackWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 formatSpecification:(id)arg4 sourcePixelBufferAttributes:(id)arg5 multiPass:(BOOL)arg6 error:(id*)arg7;
++ (id)assetWriterTrackWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 formatSpecification:(id)arg4 sourcePixelBufferAttributes:(id)arg5 multiPass:(bool)arg6 error:(id*)arg7;
 
-- (int)_attachToFigAssetWriterUsingFormatSpecification:(id)arg1 sourcePixelBufferAttributes:(id)arg2 multiPass:(BOOL)arg3 error:(id*)arg4;
+- (int)_attachToFigAssetWriterUsingFormatSpecification:(id)arg1 sourcePixelBufferAttributes:(id)arg2 multiPass:(bool)arg3 error:(id*)arg4;
 - (void)_figAssetWriterDidDropBelowLowWaterLevelForTrackID:(int)arg1;
 - (void)_refreshAboveHighWaterLevel;
-- (BOOL)addPixelBuffer:(struct __CVBuffer { }*)arg1 atPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 error:(id*)arg3;
-- (BOOL)addSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
-- (BOOL)beginPassReturningError:(id*)arg1;
+- (bool)addPixelBuffer:(struct __CVBuffer { }*)arg1 atPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 error:(id*)arg3;
+- (bool)addSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
+- (bool)beginPassReturningError:(id*)arg1;
 - (void)dealloc;
-- (BOOL)encoderSupportsMultiPass;
+- (bool)encoderSupportsMultiPass;
 - (void)endPassWithCompletionHandler:(id)arg1;
 - (struct OpaqueFigAssetWriter { }*)figAssetWriter;
 - (void)finalize;
 - (id)init;
-- (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 formatSpecification:(id)arg4 sourcePixelBufferAttributes:(id)arg5 multiPass:(BOOL)arg6 error:(id*)arg7;
-- (BOOL)isAboveHighWaterLevel;
-- (BOOL)markEndOfDataReturningError:(id*)arg1;
+- (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 formatSpecification:(id)arg4 sourcePixelBufferAttributes:(id)arg5 multiPass:(bool)arg6 error:(id*)arg7;
+- (bool)isAboveHighWaterLevel;
+- (bool)markEndOfDataReturningError:(id*)arg1;
 - (id)mediaFileType;
 - (id)mediaType;
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (void)prepareToEndSession;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })sampleBufferCoalescingInterval;
 - (void)setAlternateGroupID:(short)arg1;
-- (void)setExcludeFromAutoSelection:(BOOL)arg1;
+- (void)setExcludeFromAutoSelection:(bool)arg1;
 - (void)setExtendedLanguageTag:(id)arg1;
 - (void)setFigDimensions:(id)arg1;
 - (void)setFigMetadata:(id)arg1;
 - (void)setFigTrackMatrix:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
-- (void)setLayer:(int)arg1;
-- (void)setMarksOutputTrackAsEnabled:(BOOL)arg1;
+- (void)setLayer:(long long)arg1;
+- (void)setMarksOutputTrackAsEnabled:(bool)arg1;
 - (void)setMediaTimeScale:(int)arg1;
-- (void)setPreferredChunkAlignment:(int)arg1;
+- (void)setPreferredChunkAlignment:(long long)arg1;
 - (void)setPreferredChunkDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setPreferredChunkSize:(int)arg1;
+- (void)setPreferredChunkSize:(long long)arg1;
 - (void)setSampleBufferCoalescingInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setSampleReferenceBaseURL:(id)arg1;
 - (void)setTrackVolume:(float)arg1;

@@ -14,13 +14,13 @@
 @property float accumulated;
 @property float factor;
 
-- (BOOL)accumulate;
+- (bool)accumulate;
 - (float)accumulated;
 - (void)dealloc;
 - (float)factor;
 - (void)reset;
-- (BOOL)resolve;
-- (BOOL)run;
+- (bool)resolve;
+- (bool)run;
 - (void)setAccumulated:(float)arg1;
 - (void)setFactor:(float)arg1;
 - (void)setSource:(id)arg1;

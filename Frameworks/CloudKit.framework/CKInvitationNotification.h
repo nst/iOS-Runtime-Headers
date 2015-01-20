@@ -6,13 +6,13 @@
 
 @interface CKInvitationNotification : CKNotification <NSSecureCoding> {
     NSString *_invitationID;
-    int _invitationNotificationReason;
+    long long _invitationNotificationReason;
 }
 
 @property(copy) NSString * invitationID;
-@property int invitationNotificationReason;
+@property long long invitationNotificationReason;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -21,8 +21,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteNotificationDictionary:(id)arg1;
 - (id)invitationID;
-- (int)invitationNotificationReason;
+- (long long)invitationNotificationReason;
 - (void)setInvitationID:(id)arg1;
-- (void)setInvitationNotificationReason:(int)arg1;
+- (void)setInvitationNotificationReason:(long long)arg1;
 
 @end

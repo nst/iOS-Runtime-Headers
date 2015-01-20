@@ -5,17 +5,17 @@
 @class <UIWebSelectedItemPrivate>, DOMHTMLSelectElement, NSArray, NSString;
 
 @interface UIWebSelectSinglePicker : UIPickerView <UIWebFormControl, UIPickerViewDataSource, UIPickerViewDelegate> {
-    int _indexToSelectWhenDone;
+    long long _indexToSelectWhenDone;
     NSArray *_optionItems;
     <UIWebSelectedItemPrivate> *_optionToSelectWhenDone;
     DOMHTMLSelectElement *_selectNode;
-    int _selectedIndex;
+    long long _selectedIndex;
     <UIWebSelectedItemPrivate> *_selectedOptionItem;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)controlBeginEditing;
@@ -23,9 +23,9 @@
 - (id)controlView;
 - (void)dealloc;
 - (id)initWithDOMHTMLSelectElement:(id)arg1 allItems:(id)arg2;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (id)pickerView:(id)arg1 attributedTitleForRow:(int)arg2 forComponent:(int)arg3;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
 
 @end

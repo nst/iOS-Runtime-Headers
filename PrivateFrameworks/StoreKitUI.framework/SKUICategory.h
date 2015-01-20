@@ -25,7 +25,7 @@
 - (id)artworkList;
 - (long long)categoryIdentifier;
 - (id)children;
-- (BOOL)containsURL:(id)arg1;
+- (bool)containsURL:(id)arg1;
 - (id)initWithCategoryDictionary:(id)arg1;
 - (id)name;
 - (id)parentLabel;

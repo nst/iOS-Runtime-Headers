@@ -19,7 +19,7 @@
 
 + (id)customAttributes;
 
-- (id)_outputData:(BOOL)arg1;
+- (id)_outputData:(bool)arg1;
 - (void)dealloc;
 - (id)inputCount;
 - (id)inputExtent;

@@ -10,7 +10,7 @@
         struct aligned_storage<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
             union dummy_u { 
                 BOOL data[8]; 
-                struct a4 { } aligner_; 
+                struct a8 { } aligner_; 
             } dummy_; 
         } m_storage; 
     NSObject<OS_dispatch_queue> *_frameworkQueue;
@@ -25,7 +25,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned int)connectionOptions:(id)arg1;
+- (unsigned long long)connectionOptions:(id)arg1;
 - (void)dealloc;
 - (id)defaultErrHandler;
 - (void)gpsEstimateAvailable:(id)arg1;

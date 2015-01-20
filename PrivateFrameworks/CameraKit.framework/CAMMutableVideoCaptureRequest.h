@@ -5,13 +5,13 @@
 @interface CAMMutableVideoCaptureRequest : CAMVideoCaptureRequest {
 }
 
-@property int captureDevice;
-@property int deviceOrientation;
-@property int torchMode;
+@property long long captureDevice;
+@property long long deviceOrientation;
+@property long long torchMode;
 
-- (void)setCaptureDevice:(int)arg1;
-- (void)setDeviceOrientation:(int)arg1;
+- (void)setCaptureDevice:(long long)arg1;
+- (void)setDeviceOrientation:(long long)arg1;
 - (void)setParameter:(id)arg1 forKey:(id)arg2;
-- (void)setTorchMode:(int)arg1;
+- (void)setTorchMode:(long long)arg1;
 
 @end

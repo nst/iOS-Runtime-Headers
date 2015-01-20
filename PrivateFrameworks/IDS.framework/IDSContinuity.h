@@ -8,21 +8,21 @@
     _IDSContinuity *_internal;
 }
 
-@property(readonly) int state;
+@property(readonly) long long state;
 
 - (void)connectToPeer:(id)arg1;
 - (void)dealloc;
 - (void)disconnectFromPeer:(id)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (void)startAdvertisingOfType:(int)arg1 withData:(id)arg2 withOptions:(id)arg3;
-- (void)startScanningForType:(int)arg1 withData:(id)arg2 peers:(id)arg3 withOptions:(id)arg4;
-- (void)startScanningForType:(int)arg1 withData:(id)arg2 withOptions:(id)arg3;
-- (void)startTrackingPeer:(id)arg1 forType:(int)arg2;
+- (void)startAdvertisingOfType:(long long)arg1 withData:(id)arg2 withOptions:(id)arg3;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2 peers:(id)arg3 withOptions:(id)arg4;
+- (void)startScanningForType:(long long)arg1 withData:(id)arg2 withOptions:(id)arg3;
+- (void)startTrackingPeer:(id)arg1 forType:(long long)arg2;
 - (void)startTrackingPeer:(id)arg1;
-- (int)state;
-- (void)stopAdvertisingOfType:(int)arg1;
-- (void)stopScanningForType:(int)arg1;
-- (void)stopTrackingPeer:(id)arg1 forType:(int)arg2;
+- (long long)state;
+- (void)stopAdvertisingOfType:(long long)arg1;
+- (void)stopScanningForType:(long long)arg1;
+- (void)stopTrackingPeer:(id)arg1 forType:(long long)arg2;
 - (void)stopTrackingPeer:(id)arg1;
 
 @end

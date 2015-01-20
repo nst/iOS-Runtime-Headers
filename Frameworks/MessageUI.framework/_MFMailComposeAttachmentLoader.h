@@ -11,12 +11,12 @@
 @interface _MFMailComposeAttachmentLoader : NSObject {
     id _completionBlock;
     id _content;
-    BOOL _isDraft;
     MFMailMessage *_message;
+    bool_isDraft;
 }
 
 - (void)dealloc;
-- (id)initWithMessage:(id)arg1 content:(id)arg2 isDraft:(BOOL)arg3 completion:(id)arg4;
+- (id)initWithMessage:(id)arg1 content:(id)arg2 isDraft:(bool)arg3 completion:(id)arg4;
 - (void)loadAttachments;
 
 @end

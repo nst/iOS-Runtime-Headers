@@ -6,15 +6,15 @@
 
 @interface SCNIKJoint : NSObject {
     SCNNode *joint;
-    float maxAllowedRotationAngle;
+    double maxAllowedRotationAngle;
 }
 
 @property SCNNode * joint;
-@property float maxAllowedRotationAngle;
+@property double maxAllowedRotationAngle;
 
 - (id)joint;
-- (float)maxAllowedRotationAngle;
+- (double)maxAllowedRotationAngle;
 - (void)setJoint:(id)arg1;
-- (void)setMaxAllowedRotationAngle:(float)arg1;
+- (void)setMaxAllowedRotationAngle:(double)arg1;
 
 @end

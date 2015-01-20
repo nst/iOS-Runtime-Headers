@@ -11,10 +11,10 @@
 + (id)_propertySettersForDataObject;
 + (id)_tableValuesFromDataObject:(id)arg1;
 + (void)applyRelatedPropertiesToObject:(id)arg1 entity:(id)arg2 properties:(id)arg3 values:(id*)arg4 authorizationFilter:(id)arg5 healthDaemon:(id)arg6;
-+ (BOOL)associateSamples:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (bool)associateSamples:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)columnNameForSortIdentifier:(id)arg1;
 + (void)load;
 
-- (BOOL)deleteAssociatedEntitiesInDatabase:(id)arg1 error:(id*)arg2;
+- (bool)deleteAssociatedEntitiesInDatabase:(id)arg1 error:(id*)arg2;
 
 @end

@@ -7,14 +7,14 @@
 @interface AVURLAssetInternal : NSObject {
     NSURL *URL;
     AVAssetCache *assetCache;
+    boolshouldMatchDataInCacheByURLPathComponentOnly;
+    boolshouldMatchDataInCacheByURLWithoutQueryComponent;
+    boolshouldOptimizeAccessForLinearMoviePlayback;
     NSURL *downloadDestinationURL;
     AVAssetInspectorLoader *loader;
-    long makeOneResourceLoaderOnly;
-    unsigned int referenceRestrictions;
+    long long makeOneResourceLoaderOnly;
+    unsigned long long referenceRestrictions;
     AVAssetResourceLoader *resourceLoader;
-    BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-    BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
-    BOOL shouldOptimizeAccessForLinearMoviePlayback;
     NSArray *tracks;
     NSObject<OS_dispatch_queue> *tracksAccessQueue;
 }

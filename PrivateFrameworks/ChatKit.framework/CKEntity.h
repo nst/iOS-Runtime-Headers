@@ -35,10 +35,10 @@
 - (id)description;
 - (id)fullName;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)identifier;
 - (id)initWithIMHandle:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)locationMapViewContactImage;
 - (id)locationShareBalloonContactImage;
 - (id)name;

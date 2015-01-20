@@ -10,37 +10,37 @@
 @class NSMutableArray, NSString;
 
 @interface TSTTiledCellMap : TSPContainedObject <TSTCellMap> {
-    BOOL mAppliesToHidden;
-    unsigned int mCount;
-    BOOL mMayModifyFormulasInCells;
-    BOOL mMayModifyValuesReferencedByFormulas;
+    boolmAppliesToHidden;
+    boolmMayModifyFormulasInCells;
+    boolmMayModifyValuesReferencedByFormulas;
+    unsigned long long mCount;
     NSMutableArray *mTiles;
 }
 
-@property BOOL appliesToHidden;
+@property bool appliesToHidden;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL mayModifyFormulasInCells;
-@property BOOL mayModifyValuesReferencedByFormulas;
+@property(readonly) unsigned long long hash;
+@property bool mayModifyFormulasInCells;
+@property bool mayModifyValuesReferencedByFormulas;
 @property(readonly) Class superclass;
 
 - (void)addCell:(id)arg1 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (BOOL)appliesToHidden;
-- (id)cellAtIndex:(unsigned int)arg1;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDAtIndex:(unsigned int)arg1;
-- (unsigned int)count;
+- (bool)appliesToHidden;
+- (id)cellAtIndex:(unsigned long long)arg1;
+- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDAtIndex:(unsigned long long)arg1;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)initWithArchive:(const struct TiledCellMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; boolx4; boolx5; boolx6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
 - (id)initWithOwner:(id)arg1;
-- (BOOL)mayModifyFormulasInCells;
-- (BOOL)mayModifyValuesReferencedByFormulas;
+- (bool)mayModifyFormulasInCells;
+- (bool)mayModifyValuesReferencedByFormulas;
 - (void)popLastCell;
 - (void)saveToArchive:(struct TiledCellMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Reference> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; boolx4; boolx5; boolx6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;
-- (void)setAppliesToHidden:(BOOL)arg1;
-- (void)setMayModifyFormulasInCells:(BOOL)arg1;
-- (void)setMayModifyValuesReferencedByFormulas:(BOOL)arg1;
-- (id)tileForIndex:(unsigned int)arg1;
-- (unsigned int)tileIndexForIndex:(unsigned int)arg1;
+- (void)setAppliesToHidden:(bool)arg1;
+- (void)setMayModifyFormulasInCells:(bool)arg1;
+- (void)setMayModifyValuesReferencedByFormulas:(bool)arg1;
+- (id)tileForIndex:(unsigned long long)arg1;
+- (unsigned long long)tileIndexForIndex:(unsigned long long)arg1;
 
 @end

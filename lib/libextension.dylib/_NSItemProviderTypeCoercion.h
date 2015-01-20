@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (void)setTargetClass:(Class)arg1;
 - (void)setValue:(id)arg1;
-- (BOOL)shouldCoerceForCoding;
+- (bool)shouldCoerceForCoding;
 - (Class)targetClass;
 - (id)value;
 

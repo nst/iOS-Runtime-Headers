@@ -3,16 +3,16 @@
  */
 
 @interface FBWorkspaceLogger : FBFileLogger {
-    unsigned int _overrideDestinations;
-    BOOL _useOverrideDestinations;
+    unsigned long long _overrideDestinations;
+    bool_useOverrideDestinations;
 }
 
 - (void)_configureOverrideDestinationForString:(id)arg1;
-- (void)_setEnabled:(BOOL)arg1;
+- (void)_setEnabled:(bool)arg1;
 - (id)init;
-- (BOOL)isEnabled;
-- (unsigned int)logDestinations;
-- (id)logPrefixForCategory:(id)arg1 destination:(unsigned int)arg2;
+- (bool)isEnabled;
+- (unsigned long long)logDestinations;
+- (id)logPrefixForCategory:(id)arg1 destination:(unsigned long long)arg2;
 - (int)maxLogCount;
 - (int)maxLogSize;
 - (id)name;

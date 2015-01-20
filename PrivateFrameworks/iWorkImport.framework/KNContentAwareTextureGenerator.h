@@ -8,10 +8,10 @@
 + (void)addLayersWithTag:(id)arg1 plugin:(id)arg2 baseLayer:(id)arg3 backgroundLayer:(id)arg4 textures:(id)arg5 layerToOldHiddenValueMap:(id)arg6;
 + (id)generateTexturesTagsAndAttributesForASV:(id)arg1 plugin:(id)arg2;
 + (void)p_addBlackBackgroundLayerWithTag:(id)arg1 asv:(id)arg2 plugin:(id)arg3 addToTextures:(id)arg4;
-+ (void)p_addLayersForInfos:(id)arg1 tag:(id)arg2 isBackground:(BOOL)arg3 asv:(id)arg4 isIncoming:(BOOL)arg5 plugin:(id)arg6 addToTextures:(id)arg7 ignoreBuildVisibiility:(BOOL)arg8;
-+ (void)p_generateLayersForTexture:(id)arg1 tag:(id)arg2 isBackground:(BOOL)arg3 isMagicMove:(BOOL)arg4 addToTextures:(id)arg5;
-+ (void)p_preloadTexturesConcurrentlyWithInfos:(id)arg1 asv:(id)arg2 plugin:(id)arg3 ignoreBuildVisibiility:(BOOL)arg4 isIncoming:(BOOL)arg5;
-+ (void)p_setHidden:(BOOL)arg1 onLayer:(id)arg2 oldValueMap:(id)arg3;
-+ (id)p_textureForRep:(id)arg1 info:(id)arg2 asv:(id)arg3 plugin:(id)arg4 ignoreBuildVisibiility:(BOOL)arg5 isIncoming:(BOOL)arg6;
++ (void)p_addLayersForInfos:(id)arg1 tag:(id)arg2 isBackground:(bool)arg3 asv:(id)arg4 isIncoming:(bool)arg5 plugin:(id)arg6 addToTextures:(id)arg7 ignoreBuildVisibiility:(bool)arg8;
++ (void)p_generateLayersForTexture:(id)arg1 tag:(id)arg2 isBackground:(bool)arg3 isMagicMove:(bool)arg4 addToTextures:(id)arg5;
++ (void)p_preloadTexturesConcurrentlyWithInfos:(id)arg1 asv:(id)arg2 plugin:(id)arg3 ignoreBuildVisibiility:(bool)arg4 isIncoming:(bool)arg5;
++ (void)p_setHidden:(bool)arg1 onLayer:(id)arg2 oldValueMap:(id)arg3;
++ (id)p_textureForRep:(id)arg1 info:(id)arg2 asv:(id)arg3 plugin:(id)arg4 ignoreBuildVisibiility:(bool)arg5 isIncoming:(bool)arg6;
 
 @end

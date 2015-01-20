@@ -5,16 +5,16 @@
 @class CPLPlatformObject, NSMutableArray, NSString;
 
 @interface CPLEngineTransientRepository : CPLEngineStorage <CPLAbstractObject> {
-    unsigned int _maximumCountOfRecordsInBatches;
-    unsigned int _popState;
+    unsigned long long _maximumCountOfRecordsInBatches;
+    unsigned long long _popState;
     NSMutableArray *_remainingClassesToBePopped;
-    unsigned int _state;
+    unsigned long long _state;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int maximumCountOfRecordsInBatches;
+@property(readonly) unsigned long long hash;
+@property unsigned long long maximumCountOfRecordsInBatches;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) Class superclass;
 
@@ -22,24 +22,24 @@
 + (id)orderedClassesForDelete;
 
 - (void).cxx_destruct;
-- (BOOL)_appendBatchToStorage:(id)arg1 alreadyMingled:(BOOL)arg2 error:(id*)arg3;
+- (bool)_appendBatchToStorage:(id)arg1 alreadyMingled:(bool)arg2 error:(id*)arg3;
 - (id)_changeWithIdentifier:(id)arg1;
-- (BOOL)_popChangeBatchOfChangedRecords:(id*)arg1 maximumCount:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)_popChangeBatchOfDeletedRecords:(id*)arg1 maximumCount:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)appendBatch:(id)arg1 alreadyMingled:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)beginTransientRepositoryWithError:(id*)arg1;
-- (BOOL)deleteMingledRecordsWithError:(id*)arg1;
-- (BOOL)endTransientRepositoryWithError:(id*)arg1;
-- (BOOL)hasRecordWithIdentifier:(id)arg1;
+- (bool)_popChangeBatchOfChangedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)_popChangeBatchOfDeletedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)appendBatch:(id)arg1 alreadyMingled:(bool)arg2 error:(id*)arg3;
+- (bool)beginTransientRepositoryWithError:(id*)arg1;
+- (bool)deleteMingledRecordsWithError:(id*)arg1;
+- (bool)endTransientRepositoryWithError:(id*)arg1;
+- (bool)hasRecordWithIdentifier:(id)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
-- (unsigned int)maximumCountOfRecordsInBatches;
-- (BOOL)openWithError:(id*)arg1;
-- (BOOL)popChangeBatch:(id*)arg1 error:(id*)arg2;
-- (BOOL)prepareForMinglingWithError:(id*)arg1;
-- (BOOL)resetMingledRecordsWithError:(id*)arg1;
-- (BOOL)resetTransientRepositoryWithError:(id*)arg1;
-- (void)setMaximumCountOfRecordsInBatches:(unsigned int)arg1;
-- (BOOL)storeTransientSyncAnchor:(id)arg1 error:(id*)arg2;
+- (unsigned long long)maximumCountOfRecordsInBatches;
+- (bool)openWithError:(id*)arg1;
+- (bool)popChangeBatch:(id*)arg1 error:(id*)arg2;
+- (bool)prepareForMinglingWithError:(id*)arg1;
+- (bool)resetMingledRecordsWithError:(id*)arg1;
+- (bool)resetTransientRepositoryWithError:(id*)arg1;
+- (void)setMaximumCountOfRecordsInBatches:(unsigned long long)arg1;
+- (bool)storeTransientSyncAnchor:(id)arg1 error:(id*)arg2;
 - (id)transientSyncAnchor;
 
 @end

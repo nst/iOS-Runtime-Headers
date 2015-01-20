@@ -5,31 +5,31 @@
 @class NSString;
 
 @interface PUCropAspect : NSObject {
-    unsigned int _height;
+    unsigned long long _height;
     NSString *_localizedName;
-    unsigned int _width;
+    unsigned long long _width;
 }
 
-@property(readonly) unsigned int height;
+@property(readonly) unsigned long long height;
 @property(readonly) NSString * localizedName;
-@property(readonly) float ratio;
-@property(readonly) unsigned int width;
+@property(readonly) double ratio;
+@property(readonly) unsigned long long width;
 
-+ (id)allAspectsWithOriginalSize:(struct CGSize { float x1; float x2; })arg1 currentSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)allAspectsWithOriginalSize:(struct CGSize { double x1; double x2; })arg1 currentSize:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2 localizedName:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 boundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 boundingAngle:(float)arg3 minSize:(struct CGSize { float x1; float x2; })arg4;
-- (unsigned int)height;
-- (float)heightForWidth:(float)arg1;
+- (id)_initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 localizedName:(id)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })constrainRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 boundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 boundingAngle:(double)arg3 minSize:(struct CGSize { double x1; double x2; })arg4;
+- (unsigned long long)height;
+- (double)heightForWidth:(double)arg1;
 - (id)init;
-- (id)initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2;
+- (id)initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
 - (id)inverseAspect;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToCropAspect:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCropAspect:(id)arg1;
 - (id)localizedName;
-- (float)ratio;
-- (unsigned int)width;
-- (float)widthForHeight:(float)arg1;
+- (double)ratio;
+- (unsigned long long)width;
+- (double)widthForHeight:(double)arg1;
 
 @end

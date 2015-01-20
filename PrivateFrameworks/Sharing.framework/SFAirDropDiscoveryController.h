@@ -9,44 +9,44 @@
     id _actionSheetDelegate;
     struct __SFOperation { } *_controller;
     id _delegate;
-    int _discoverableMode;
-    BOOL _isLegacyDevice;
-    BOOL _isLegacyModeEnabled;
-    BOOL _isLegacyModeSettable;
-    BOOL _isVisible;
+    long long _discoverableMode;
+    bool_isLegacyDevice;
+    bool_isLegacyModeEnabled;
+    bool_isLegacyModeSettable;
+    bool_isVisible;
 }
 
 @property <SFAirDropDiscoveryActionSheetDelegate> * actionSheetDelegate;
 @property(copy,readonly) NSString * debugDescription;
 @property <SFAirDropDiscoveryControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property int discoverableMode;
-@property(readonly) unsigned int hash;
-@property(getter=isLegacyDevice,readonly) BOOL legacyDevice;
-@property(getter=isLegacyModeEnabled) BOOL legacyModeEnabled;
-@property(getter=isLegacyModeSettable,readonly) BOOL legacyModeSettable;
+@property long long discoverableMode;
+@property(readonly) unsigned long long hash;
+@property(getter=isLegacyDevice,readonly) bool legacyDevice;
+@property(getter=isLegacyModeEnabled) bool legacyModeEnabled;
+@property(getter=isLegacyModeSettable,readonly) bool legacyModeSettable;
 @property(readonly) Class superclass;
-@property(getter=isVisible,readonly) BOOL visible;
+@property(getter=isVisible,readonly) bool visible;
 
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
 - (id)actionSheetDelegate;
 - (void)dealloc;
 - (id)delegate;
-- (int)discoverableMode;
+- (long long)discoverableMode;
 - (id)discoverableModeActionSheet;
-- (id)discoverableModeToString:(int)arg1;
-- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
+- (id)discoverableModeToString:(long long)arg1;
+- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
 - (id)init;
-- (BOOL)isLegacyDevice;
-- (BOOL)isLegacyModeEnabled;
-- (BOOL)isLegacyModeSettable;
-- (BOOL)isVisible;
-- (int)operationDiscoverableModeToInteger:(id)arg1;
+- (bool)isLegacyDevice;
+- (bool)isLegacyModeEnabled;
+- (bool)isLegacyModeSettable;
+- (bool)isVisible;
+- (long long)operationDiscoverableModeToInteger:(id)arg1;
 - (void)setActionSheetDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDiscoverableMode:(int)arg1;
-- (void)setLegacyModeEnabled:(BOOL)arg1;
+- (void)setDiscoverableMode:(long long)arg1;
+- (void)setLegacyModeEnabled:(bool)arg1;
 
 @end

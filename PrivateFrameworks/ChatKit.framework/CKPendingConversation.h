@@ -6,22 +6,22 @@
 
 @interface CKPendingConversation : CKConversation {
     IMService *_composeSendingService;
-    BOOL _noAvailableServices;
     IMService *_previousSendingService;
+    bool_noAvailableServices;
 }
 
 @property IMService * composeSendingService;
-@property BOOL noAvailableServices;
+@property bool noAvailableServices;
 @property IMService * previousSendingService;
 
 - (id)composeSendingService;
-- (BOOL)noAvailableServices;
+- (bool)noAvailableServices;
 - (id)previousSendingService;
 - (void)refreshComposeSendingServiceForAddresses:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)refreshStatusForAddresses:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)sendingService;
 - (void)setComposeSendingService:(id)arg1;
-- (void)setNoAvailableServices:(BOOL)arg1;
+- (void)setNoAvailableServices:(bool)arg1;
 - (void)setPreviousSendingService:(id)arg1;
 
 @end

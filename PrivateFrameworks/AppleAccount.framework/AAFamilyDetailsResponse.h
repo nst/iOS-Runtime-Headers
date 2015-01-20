@@ -5,8 +5,6 @@
 @class AAFamilyMember, NSArray, NSString;
 
 @interface AAFamilyDetailsResponse : AAResponse {
-    BOOL _canAddChildMembers;
-    BOOL _canAddMembers;
     NSString *_childAccountButtonTitle;
     NSString *_childAccountPrompt;
     NSArray *_invites;
@@ -14,36 +12,38 @@
     NSArray *_members;
     AAFamilyMember *_organizer;
     NSArray *_pendingMembers;
+    bool_canAddChildMembers;
+    bool_canAddMembers;
 }
 
-@property(readonly) BOOL canAddChildMembers;
-@property(readonly) BOOL canAddMembers;
+@property(readonly) bool canAddChildMembers;
+@property(readonly) bool canAddMembers;
 @property(readonly) NSString * childAccountButtonTitle;
 @property(readonly) NSString * childAccountPrompt;
 @property(readonly) NSArray * firstNames;
 @property(readonly) NSArray * invites;
 @property(readonly) AAFamilyMember * me;
-@property(readonly) int memberCount;
+@property(readonly) long long memberCount;
 @property(readonly) NSArray * members;
 @property(readonly) AAFamilyMember * organizer;
-@property(readonly) int pendingInviteCount;
-@property(readonly) int pendingMemberCount;
+@property(readonly) long long pendingInviteCount;
+@property(readonly) long long pendingMemberCount;
 @property(readonly) NSArray * pendingMembers;
 
 - (void).cxx_destruct;
-- (BOOL)canAddChildMembers;
-- (BOOL)canAddMembers;
+- (bool)canAddChildMembers;
+- (bool)canAddMembers;
 - (id)childAccountButtonTitle;
 - (id)childAccountPrompt;
 - (id)firstNames;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)invites;
 - (id)me;
-- (int)memberCount;
+- (long long)memberCount;
 - (id)members;
 - (id)organizer;
-- (int)pendingInviteCount;
-- (int)pendingMemberCount;
+- (long long)pendingInviteCount;
+- (long long)pendingMemberCount;
 - (id)pendingMembers;
 
 @end

@@ -16,13 +16,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) EKEvent * event;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) id messageSendingComplete;
 @property(readonly) Class superclass;
 
 + (id)_attendeesIgnorningMe:(id)arg1;
 + (id)_recipientEmailAddressesToDisplayNames:(id)arg1;
-+ (BOOL)canShowForEvent:(id)arg1;
++ (bool)canShowForEvent:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_htmlBodyForMailMessageWithNames:(id)arg1;

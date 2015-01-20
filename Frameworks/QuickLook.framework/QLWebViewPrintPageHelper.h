@@ -6,8 +6,8 @@
 
 @interface QLWebViewPrintPageHelper : NSObject <QLRemotePrintPageHelper> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UIWebBrowserView *_browserView;
     NSString *_documentType;
     QLPreviewConverter *_previewConverter;
@@ -17,23 +17,23 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) QLPreviewConverter * previewConverter;
-@property struct CGSize { float x1; float x2; } printableSize;
+@property struct CGSize { double x1; double x2; } printableSize;
 @property(readonly) Class superclass;
 
-+ (BOOL)_isXPathType:(id)arg1;
++ (bool)_isXPathType:(id)arg1;
 + (id)printPageRendererWithBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
 
 - (void)_waitForPreview;
 - (void)dealloc;
 - (id)initWithWebBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;
-- (int)numberOfPages;
-- (id)pdfDataForPageAtIndex:(int)arg1 printingDone:(BOOL*)arg2;
-- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (long long)numberOfPages;
+- (id)pdfDataForPageAtIndex:(long long)arg1 printingDone:(bool*)arg2;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)previewConverter;
-- (struct CGSize { float x1; float x2; })printableSize;
+- (struct CGSize { double x1; double x2; })printableSize;
 - (void)setPreviewConverter:(id)arg1;
-- (void)setPrintableSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPrintableSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

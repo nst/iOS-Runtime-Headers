@@ -10,11 +10,11 @@
 
 @interface UIKeyboardTaskQueue : NSObject {
     NSMutableArray *_deferredTasks;
-    BOOL _executingOnMainThread;
     UIKeyboardTaskExecutionContext *_executionContext;
     NSConditionLock *_lock;
     id _mainThreadContinuation;
     NSMutableArray *_tasks;
+    bool_executingOnMainThread;
 }
 
 @property(retain) UIKeyboardTaskExecutionContext * executionContext;
@@ -26,16 +26,16 @@
 - (id)executionContext;
 - (void)finishExecution;
 - (id)init;
-- (BOOL)isMainThreadExecutingTask;
+- (bool)isMainThreadExecutingTask;
 - (void)lock;
 - (void)lockWhenReadyForMainThread;
 - (void)performDeferredTaskIfIdle;
 - (void)performTask:(id)arg1;
-- (void)performTaskOnMainThread:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)performTaskOnMainThread:(id)arg1 waitUntilDone:(bool)arg2;
 - (void)promoteDeferredTaskIfIdle;
-- (id)scheduleTask:(id)arg1 timeInterval:(double)arg2 repeats:(BOOL)arg3;
+- (id)scheduleTask:(id)arg1 timeInterval:(double)arg2 repeats:(bool)arg3;
 - (void)setExecutionContext:(id)arg1;
-- (BOOL)tryLockWhenReadyForMainThread;
+- (bool)tryLockWhenReadyForMainThread;
 - (void)unlock;
 - (void)waitUntilAllTasksAreFinished;
 

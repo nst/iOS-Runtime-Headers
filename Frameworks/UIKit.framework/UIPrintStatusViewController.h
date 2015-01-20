@@ -12,15 +12,15 @@
 @property <UIPrintStatusDelegate> * printStatusDelegate;
 
 - (void)dealloc;
-- (void)dismissAnimated:(BOOL)arg1;
+- (void)dismissAnimated:(bool)arg1;
 - (void)jobDidCancel;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)presentPrintStatusFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (void)presentPrintStatusFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(bool)arg3;
 - (id)printStatusDelegate;
 - (id)printStatusView;
 - (void)setPrintStatusDelegate:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <GKSegmentInfoDelegagte> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) GKPlaceholderContentStateMachine * loadingMatchine;
 @property(retain) NSString * loadingState;
 @property(readonly) Class superclass;

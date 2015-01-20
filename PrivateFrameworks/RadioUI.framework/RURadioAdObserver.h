@@ -8,33 +8,33 @@
     MPURTCReportingController *_RTCReportingController;
     NSObject<OS_dispatch_queue> *_accessQueue;
     MPUReportingController *_globalReportingController;
-    BOOL _hasDirtyVisualEngagement;
-    BOOL _isSlotAcquisitionInProgress;
     RUJingleTiltReportingController *_jingleTiltReportingController;
-    int _lastApplicationState;
+    long long _lastApplicationState;
     double _minDurationToCountAsPlayed;
-    unsigned int _numberOfSkippedTracks;
+    unsigned long long _numberOfSkippedTracks;
     NSString *_playbackSessionID;
     MPAVController *_player;
-    int _policyEngineEnabledCount;
+    long long _policyEngineEnabledCount;
     NSDate *_sapSessionLoadBeginDate;
     double _skipThreshold;
     ISDialogOperation *_slotAcquisitionDialogOperation;
     double _startTimeForCurrentItem;
-    int _visualEngagementCount;
-    BOOL _visuallyEngaged;
+    long long _visualEngagementCount;
+    bool_hasDirtyVisualEngagement;
+    bool_isSlotAcquisitionInProgress;
+    bool_visuallyEngaged;
 }
 
 @property(retain) MPURTCReportingController * RTCReportingController;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) MPUReportingController * globalReportingController;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) RUJingleTiltReportingController * jingleTiltReportingController;
-@property(readonly) unsigned int numberOfSkippedTracks;
+@property(readonly) unsigned long long numberOfSkippedTracks;
 @property(retain) MPAVController * player;
 @property(readonly) Class superclass;
-@property(getter=isVisuallyEngaged,readonly) BOOL visuallyEngaged;
+@property(getter=isVisuallyEngaged,readonly) bool visuallyEngaged;
 
 + (id)sharedAdObserver;
 
@@ -48,10 +48,10 @@
 - (void)_beginEnablingPolicyEngine;
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (void)_clearAssetCacheForItem:(id)arg1;
-- (void)_getCurrentTime:(double*)arg1 duration:(double*)arg2 wasSkipped:(BOOL*)arg3 didAssetFailToLoad:(BOOL*)arg4 forItem:(id)arg5;
-- (void)_handleSkipForChangedItem:(id)arg1 didChangeStation:(BOOL)arg2;
+- (void)_getCurrentTime:(double*)arg1 duration:(double*)arg2 wasSkipped:(bool*)arg3 didAssetFailToLoad:(bool*)arg4 forItem:(id)arg5;
+- (void)_handleSkipForChangedItem:(id)arg1 didChangeStation:(bool)arg2;
 - (void)_heartbeatChangedNotification:(id)arg1;
-- (BOOL)_isPolicyEngineEnabled;
+- (bool)_isPolicyEngineEnabled;
 - (void)_itemAssetLoadedDidChangeNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_itemDidFinishLoadingNotification:(id)arg1;
@@ -78,7 +78,7 @@
 - (void)beginEnablingPolicyEngine;
 - (void)beginVisualEngagement;
 - (void)dealloc;
-- (void)didHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
+- (void)didHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
 - (void)endEnablingPolicyEngine;
 - (void)endVisualEngagement;
 - (void)getHistoryWithRequest:(id)arg1 completionHandler:(id)arg2;
@@ -88,10 +88,10 @@
 - (void)historyDidBeginPlayingAdTrack:(id)arg1 withItem:(id)arg2;
 - (void)historyDidEndPlayingAdTrack:(id)arg1 withItem:(id)arg2;
 - (id)init;
-- (BOOL)isVisuallyEngaged;
+- (bool)isVisuallyEngaged;
 - (id)jingleTiltReportingController;
 - (void)noteDidEnterStation:(id)arg1;
-- (unsigned int)numberOfSkippedTracks;
+- (unsigned long long)numberOfSkippedTracks;
 - (void)operation:(id)arg1 selectedButton:(id)arg2;
 - (void)optimalTransmissionWindowDidOpen;
 - (id)player;
@@ -100,6 +100,6 @@
 - (void)setJingleTiltReportingController:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRTCReportingController:(id)arg1;
-- (void)willHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
+- (void)willHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
 
 @end

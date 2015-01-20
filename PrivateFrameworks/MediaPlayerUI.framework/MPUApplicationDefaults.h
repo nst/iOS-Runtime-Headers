@@ -14,16 +14,16 @@
 - (void)_defaultsDidChange;
 - (id)_defaultsDidChangeNotificationName;
 - (struct __CFString { }*)_defaultsDomain;
-- (id)_objectForKey:(id)arg1 expectedTypeID:(unsigned long)arg2;
+- (id)_objectForKey:(id)arg1 expectedTypeID:(unsigned long long)arg2;
 - (void)_setObject:(id)arg1 forKey:(id)arg2;
 - (id)arrayForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1;
 - (void)dealloc;
 - (id)initWithApplicationIdentifier:(id)arg1;
 - (void)registerDefaults:(id)arg1;
 - (void)removeValueForKey:(id)arg1;
 - (void)setArray:(id)arg1 forKey:(id)arg2;
-- (void)setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)setBool:(bool)arg1 forKey:(id)arg2;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
 

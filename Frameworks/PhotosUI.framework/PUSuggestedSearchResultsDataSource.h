@@ -10,21 +10,21 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSArray *_recentSearches;
     PSIDatabase *_searchIndex;
-    BOOL _shouldReloadRecentSearchChanges;
     NSArray *_suggestedSearches;
+    bool_shouldReloadRecentSearchChanges;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <PUSuggestedSearchResultsDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) PSIDatabase * searchIndex;
 @property(readonly) Class superclass;
 
 + (void)_clearRecentSearches;
 + (id)_recentSearchObjects;
 + (id)_recentSearches;
-+ (BOOL)_saveRecentSearchWithSearchString:(id)arg1 displayTitle:(id)arg2 uuids:(id)arg3 albumUUID:(id)arg4;
++ (bool)_saveRecentSearchWithSearchString:(id)arg1 displayTitle:(id)arg2 uuids:(id)arg3 albumUUID:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)_reloadRecentSearches;
@@ -34,17 +34,17 @@
 - (id)delegate;
 - (id)initWithSearchIndex:(id)arg1;
 - (void)mergePendingChanges;
-- (id)nonemptySuggestedSearchAtIndex:(unsigned int)arg1;
+- (id)nonemptySuggestedSearchAtIndex:(unsigned long long)arg1;
 - (id)nonemptySuggestedSearches;
-- (unsigned int)numberOfRecentSearches;
-- (unsigned int)numberOfSuggestedSearches;
-- (id)recentSearchAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfRecentSearches;
+- (unsigned long long)numberOfSuggestedSearches;
+- (id)recentSearchAtIndex:(unsigned long long)arg1;
 - (id)recentSearches;
 - (void)saveRecentSearchWithSearchString:(id)arg1 displayTitle:(id)arg2 uuids:(id)arg3 albumUUID:(id)arg4;
 - (id)searchIndex;
 - (void)setDelegate:(id)arg1;
 - (void)setSearchIndex:(id)arg1;
-- (id)suggestedSearchAtIndex:(unsigned int)arg1;
+- (id)suggestedSearchAtIndex:(unsigned long long)arg1;
 - (void)suggestedSearchHasPendingChanges:(id)arg1;
 - (id)suggestedSearchIndex:(id)arg1;
 - (id)suggestedSearchPhotoLibrary:(id)arg1;

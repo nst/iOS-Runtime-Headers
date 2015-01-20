@@ -3,56 +3,56 @@
  */
 
 @interface PUPhotosGridSettings : PUSettings {
-    BOOL _badgeAllItemsAsVideos;
-    float _defaultItemSideSize;
-    BOOL _displayAllItemsAsBursts;
-    BOOL _flashDegradedImages;
-    BOOL _forceJPEGThumbnailsInDefaultGrid;
-    float _maximumSpacing;
-    float _minimumSpacing;
-    int _numberColumnsInDefaultGrid;
-    int _numberOfColumnsInWideGrid;
-    float _sideMargins;
-    BOOL _slowBackgroundFetch;
+    double _defaultItemSideSize;
+    double _maximumSpacing;
+    double _minimumSpacing;
+    long long _numberColumnsInDefaultGrid;
+    long long _numberOfColumnsInWideGrid;
+    double _sideMargins;
+    bool_badgeAllItemsAsVideos;
+    bool_displayAllItemsAsBursts;
+    bool_flashDegradedImages;
+    bool_forceJPEGThumbnailsInDefaultGrid;
+    bool_slowBackgroundFetch;
 }
 
-@property BOOL badgeAllItemsAsVideos;
-@property float defaultItemSideSize;
-@property BOOL displayAllItemsAsBursts;
-@property BOOL flashDegradedImages;
-@property BOOL forceJPEGThumbnailsInDefaultGrid;
-@property float maximumSpacing;
-@property float minimumSpacing;
-@property int numberColumnsInDefaultGrid;
-@property int numberOfColumnsInWideGrid;
-@property float sideMargins;
-@property BOOL slowBackgroundFetch;
+@property bool badgeAllItemsAsVideos;
+@property double defaultItemSideSize;
+@property bool displayAllItemsAsBursts;
+@property bool flashDegradedImages;
+@property bool forceJPEGThumbnailsInDefaultGrid;
+@property double maximumSpacing;
+@property double minimumSpacing;
+@property long long numberColumnsInDefaultGrid;
+@property long long numberOfColumnsInWideGrid;
+@property double sideMargins;
+@property bool slowBackgroundFetch;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)badgeAllItemsAsVideos;
-- (float)defaultItemSideSize;
-- (BOOL)displayAllItemsAsBursts;
-- (BOOL)flashDegradedImages;
-- (BOOL)forceJPEGThumbnailsInDefaultGrid;
-- (float)maximumSpacing;
-- (float)minimumSpacing;
-- (int)numberColumnsInDefaultGrid;
-- (int)numberOfColumnsInWideGrid;
-- (void)setBadgeAllItemsAsVideos:(BOOL)arg1;
-- (void)setDefaultItemSideSize:(float)arg1;
+- (bool)badgeAllItemsAsVideos;
+- (double)defaultItemSideSize;
+- (bool)displayAllItemsAsBursts;
+- (bool)flashDegradedImages;
+- (bool)forceJPEGThumbnailsInDefaultGrid;
+- (double)maximumSpacing;
+- (double)minimumSpacing;
+- (long long)numberColumnsInDefaultGrid;
+- (long long)numberOfColumnsInWideGrid;
+- (void)setBadgeAllItemsAsVideos:(bool)arg1;
+- (void)setDefaultItemSideSize:(double)arg1;
 - (void)setDefaultValues;
-- (void)setDisplayAllItemsAsBursts:(BOOL)arg1;
-- (void)setFlashDegradedImages:(BOOL)arg1;
-- (void)setForceJPEGThumbnailsInDefaultGrid:(BOOL)arg1;
-- (void)setMaximumSpacing:(float)arg1;
-- (void)setMinimumSpacing:(float)arg1;
-- (void)setNumberColumnsInDefaultGrid:(int)arg1;
-- (void)setNumberOfColumnsInWideGrid:(int)arg1;
-- (void)setSideMargins:(float)arg1;
-- (void)setSlowBackgroundFetch:(BOOL)arg1;
-- (float)sideMargins;
-- (BOOL)slowBackgroundFetch;
+- (void)setDisplayAllItemsAsBursts:(bool)arg1;
+- (void)setFlashDegradedImages:(bool)arg1;
+- (void)setForceJPEGThumbnailsInDefaultGrid:(bool)arg1;
+- (void)setMaximumSpacing:(double)arg1;
+- (void)setMinimumSpacing:(double)arg1;
+- (void)setNumberColumnsInDefaultGrid:(long long)arg1;
+- (void)setNumberOfColumnsInWideGrid:(long long)arg1;
+- (void)setSideMargins:(double)arg1;
+- (void)setSlowBackgroundFetch:(bool)arg1;
+- (double)sideMargins;
+- (bool)slowBackgroundFetch;
 
 @end

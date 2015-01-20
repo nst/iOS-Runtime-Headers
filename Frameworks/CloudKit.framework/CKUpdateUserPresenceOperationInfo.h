@@ -6,36 +6,36 @@
 
 @interface CKUpdateUserPresenceOperationInfo : CKOperationInfo {
     unsigned long long _customStatusFlags;
-    BOOL _isLurk;
     NSString *_lastETag;
     CKShareID *_shareID;
-    int _status;
+    long long _status;
     double _ttl;
+    bool_isLurk;
 }
 
 @property unsigned long long customStatusFlags;
-@property BOOL isLurk;
+@property bool isLurk;
 @property(retain) NSString * lastETag;
 @property(retain) CKShareID * shareID;
-@property int status;
+@property long long status;
 @property double ttl;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)customStatusFlags;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isLurk;
+- (bool)isLurk;
 - (id)lastETag;
 - (void)setCustomStatusFlags:(unsigned long long)arg1;
-- (void)setIsLurk:(BOOL)arg1;
+- (void)setIsLurk:(bool)arg1;
 - (void)setLastETag:(id)arg1;
 - (void)setShareID:(id)arg1;
-- (void)setStatus:(int)arg1;
+- (void)setStatus:(long long)arg1;
 - (void)setTtl:(double)arg1;
 - (id)shareID;
-- (int)status;
+- (long long)status;
 - (double)ttl;
 
 @end

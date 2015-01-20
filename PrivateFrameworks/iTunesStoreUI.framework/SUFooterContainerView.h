@@ -7,20 +7,20 @@
 @interface SUFooterContainerView : UIView {
     UIView *_contentView;
     UIView *_footerView;
-    BOOL _footerVisible;
+    bool_footerVisible;
 }
 
 @property(retain) UIView * contentView;
 @property(retain) UIView * footerView;
-@property(getter=isFooterVisible) BOOL footerVisible;
+@property(getter=isFooterVisible) bool footerVisible;
 
 - (id)contentView;
 - (void)dealloc;
 - (id)footerView;
-- (BOOL)isFooterVisible;
+- (bool)isFooterVisible;
 - (void)layoutSubviews;
 - (void)setContentView:(id)arg1;
 - (void)setFooterView:(id)arg1;
-- (void)setFooterVisible:(BOOL)arg1;
+- (void)setFooterVisible:(bool)arg1;
 
 @end

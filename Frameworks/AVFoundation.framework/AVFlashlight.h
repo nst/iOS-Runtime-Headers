@@ -8,12 +8,12 @@
     AVFlashlightInternal *_internal;
 }
 
-@property(getter=isAvailable,readonly) BOOL available;
+@property(getter=isAvailable,readonly) bool available;
 @property(readonly) float flashlightLevel;
-@property(getter=isOverheated,readonly) BOOL overheated;
+@property(getter=isOverheated,readonly) bool overheated;
 
 + (id)alloc;
-+ (BOOL)hasFlashlight;
++ (bool)hasFlashlight;
 + (void)initialize;
 
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
@@ -22,10 +22,10 @@
 - (void)dealloc;
 - (float)flashlightLevel;
 - (id)init;
-- (BOOL)isAvailable;
-- (BOOL)isOverheated;
-- (BOOL)setFlashlightLevel:(float)arg1 withError:(id*)arg2;
+- (bool)isAvailable;
+- (bool)isOverheated;
+- (bool)setFlashlightLevel:(float)arg1 withError:(id*)arg2;
 - (void)turnPowerOff;
-- (BOOL)turnPowerOnWithError:(id*)arg1;
+- (bool)turnPowerOnWithError:(id*)arg1;
 
 @end

@@ -7,26 +7,26 @@
 @interface _SBFVibrantTableViewHeaderFooterView : UITableViewHeaderFooterView {
     _UIBackdropView *_backdrop;
     NSString *_backdropGroupName;
-    int _graphicsQuality;
+    long long _graphicsQuality;
     UIView *_plusDView;
-    BOOL _wantsPlusDLayer;
+    bool_wantsPlusDLayer;
 }
 
 @property(copy) NSString * backdropGroupName;
-@property int graphicsQuality;
-@property BOOL wantsPlusDLayer;
+@property long long graphicsQuality;
+@property bool wantsPlusDLayer;
 
-+ (id)defaultBackgroundColorForGraphicsQuality:(int)arg1;
++ (id)defaultBackgroundColorForGraphicsQuality:(long long)arg1;
 
 - (id)backdropGroupName;
 - (void)dealloc;
-- (int)graphicsQuality;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)initialGraphicsQuality;
+- (long long)graphicsQuality;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)initialGraphicsQuality;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setFloating:(BOOL)arg1;
-- (void)setGraphicsQuality:(int)arg1;
-- (void)setWantsPlusDLayer:(BOOL)arg1;
-- (BOOL)wantsPlusDLayer;
+- (void)setFloating:(bool)arg1;
+- (void)setGraphicsQuality:(long long)arg1;
+- (void)setWantsPlusDLayer:(bool)arg1;
+- (bool)wantsPlusDLayer;
 
 @end

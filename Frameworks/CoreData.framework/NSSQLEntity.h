@@ -6,8 +6,8 @@
 
 @interface NSSQLEntity : NSStoreMapping {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     struct __sqlentityFlags { 
         unsigned int _hasAttributesWithExternalDataReferences : 1; 
         unsigned int _reserved : 31; 
@@ -56,9 +56,9 @@
 - (void)_addRootColumnToFetch:(id)arg1;
 - (void)_addSubentity:(id)arg1;
 - (id)_addVirtualToOneForToMany:(id)arg1 withInheritedProperty:(id)arg2;
-- (BOOL)_collectFKSlots:(id)arg1 error:(id*)arg2;
+- (bool)_collectFKSlots:(id)arg1 error:(id*)arg2;
 - (void)_doPostModelGenerationCleanup;
-- (BOOL)_entityIsBroken:(id*)arg1;
+- (bool)_entityIsBroken:(id*)arg1;
 - (unsigned int)_generateIDWithSuperEntity:(id)arg1 nextID:(unsigned int)arg2;
 - (void)_generateInverseRelationshipsAndMore;
 - (void)_generateProperties;
@@ -68,9 +68,9 @@
 - (void)_resetPKCount;
 - (void)_setMaxPK:(long long)arg1;
 - (id)_sqlPropertyWithRenamingIdentifier:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_toOneRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_toOneRange;
 - (void)addInsertedObject:(id)arg1 toArray:(id)arg2;
-- (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
+- (bool)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
 - (id)attributeColumns;
 - (id)attributeNamed:(id)arg1;
 - (id)attributes;
@@ -105,14 +105,14 @@
 - (id)foreignEntityKeyColumns;
 - (id)foreignKeyColumns;
 - (id)foreignOrderKeyColumns;
-- (BOOL)hasAttributesWithExternalDataReferences;
-- (BOOL)hasInheritance;
-- (BOOL)hasSubentities;
+- (bool)hasAttributesWithExternalDataReferences;
+- (bool)hasInheritance;
+- (bool)hasSubentities;
 - (id)initWithModel:(id)arg1 entityDescription:(id)arg2;
 - (void)insertOrReplaceStatement:(id)arg1 forRelationship:(id)arg2 inDictionary:(struct __CFDictionary { }*)arg3;
 - (id)insertStatement;
-- (BOOL)isKindOfSQLEntity:(id)arg1;
-- (BOOL)isRootEntity;
+- (bool)isKindOfSQLEntity:(id)arg1;
+- (bool)isRootEntity;
 - (id)manyToManyRelationships;
 - (id)mappingGenerator;
 - (id)model;

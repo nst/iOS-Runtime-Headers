@@ -7,23 +7,23 @@
 @interface HMHomeManager : NSObject <HMMessageReceiver> {
     NSMutableArray *_currentHomes;
     <HMHomeManagerDelegate> *_delegate;
-    BOOL _fetchInProgress;
-    unsigned int _generationCounter;
+    unsigned long long _generationCounter;
     HMMessageDispatcher *_msgDispatcher;
     NSMutableDictionary *_pendingRequests;
     HMHome *_primaryHome;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMXpcClient *_xpcClient;
+    bool_fetchInProgress;
 }
 
 @property(retain) NSMutableArray * currentHomes;
 @property(copy,readonly) NSString * debugDescription;
 @property <HMHomeManagerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property BOOL fetchInProgress;
-@property unsigned int generationCounter;
-@property(readonly) unsigned int hash;
+@property bool fetchInProgress;
+@property unsigned long long generationCounter;
+@property(readonly) unsigned long long hash;
 @property(copy,readonly) NSArray * homes;
 @property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
 @property(readonly) NSUUID * messageTargetUUID;
@@ -53,8 +53,8 @@
 - (id)currentHomes;
 - (id)delegate;
 - (void)eraseHomeDataWithCompletionHandler:(id)arg1;
-- (BOOL)fetchInProgress;
-- (unsigned int)generationCounter;
+- (bool)fetchInProgress;
+- (unsigned long long)generationCounter;
 - (id)homes;
 - (id)init;
 - (void)logControl:(id)arg1 completionHandler:(id)arg2;
@@ -67,11 +67,11 @@
 - (id)primaryHome;
 - (void)queryHomeKitUsageStateWithCompletionHandler:(id)arg1;
 - (void)removeHome:(id)arg1 completionHandler:(id)arg2;
-- (void)resetConfiguration:(BOOL)arg1 withoutPopup:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)resetConfiguration:(bool)arg1 withoutPopup:(bool)arg2 completionHandler:(id)arg3;
 - (void)setCurrentHomes:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFetchInProgress:(BOOL)arg1;
-- (void)setGenerationCounter:(unsigned int)arg1;
+- (void)setFetchInProgress:(bool)arg1;
+- (void)setGenerationCounter:(unsigned long long)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setPendingRequests:(id)arg1;
 - (void)setPrimaryHome:(id)arg1;

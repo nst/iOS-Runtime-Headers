@@ -6,15 +6,15 @@
 
 @interface MPTapGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _lastTapCount;
+        double x; 
+        double y; 
+    unsigned long long _lastTapCount;
     NSTimer *_tapHandleTimer;
     } _tapLocation;
     UITouch *_trackingTouch;
 }
 
-@property unsigned int tapCount;
+@property unsigned long long tapCount;
 
 - (void).cxx_destruct;
 - (void)_delayedHandleTaps:(id)arg1;
@@ -22,10 +22,10 @@
 - (void)_setTapTimerWithDuration:(double)arg1;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
 - (void)reset;
-- (void)setTapCount:(unsigned int)arg1;
-- (unsigned int)tapCount;
+- (void)setTapCount:(unsigned long long)arg1;
+- (unsigned long long)tapCount;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -12,9 +12,9 @@
 - (id)errorResolverForItem:(id)arg1;
 - (Class)itemClass;
 - (id)mixPlaylist;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
-- (unsigned int)realRepeatType;
-- (unsigned int)realShuffleType;
+- (id)playbackInfoAtIndex:(unsigned long long)arg1;
+- (unsigned long long)realRepeatType;
+- (unsigned long long)realShuffleType;
 - (void)setMixPlaylist:(id)arg1;
 
 @end

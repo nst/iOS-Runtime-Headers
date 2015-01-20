@@ -5,22 +5,22 @@
 @class NSString;
 
 @interface TSUDateFormatter_NSFormatter : NSFormatter {
-    BOOL isDateOnly;
-    BOOL isTimeOnly;
+    boolisDateOnly;
+    boolisTimeOnly;
     NSString *mPreferredFormat;
 }
 
-@property BOOL isDateOnly;
-@property BOOL isTimeOnly;
+@property bool isDateOnly;
+@property bool isTimeOnly;
 @property(retain) NSString * preferredFormat;
 
 - (void)dealloc;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)isDateOnly;
-- (BOOL)isTimeOnly;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)isDateOnly;
+- (bool)isTimeOnly;
 - (id)preferredFormat;
-- (void)setIsDateOnly:(BOOL)arg1;
-- (void)setIsTimeOnly:(BOOL)arg1;
+- (void)setIsDateOnly:(bool)arg1;
+- (void)setIsTimeOnly:(bool)arg1;
 - (void)setPreferredFormat:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;
 

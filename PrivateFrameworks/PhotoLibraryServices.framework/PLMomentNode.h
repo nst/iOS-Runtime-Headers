@@ -10,10 +10,10 @@
     CLLocation *__location;
     NSObject<NSCopying> *__objectID;
     NSString *__userTag;
-    unsigned int __userTagType;
+    unsigned long long __userTagType;
     NSNumber *_cacheInsertionIndex;
-    BOOL _marked;
-    BOOL _visited;
+    bool_marked;
+    bool_visited;
 }
 
 @property(retain) NSNumber * cacheInsertionIndex;
@@ -21,11 +21,11 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(retain,readonly) NSDate * creationDate;
 @property(readonly) CLLocation * location;
-@property(getter=isMarked) BOOL marked;
+@property(getter=isMarked) bool marked;
 @property(retain,readonly) NSObject<NSCopying> * objectID;
 @property(readonly) NSString * userTag;
-@property(readonly) unsigned int userTagType;
-@property(getter=isVisited) BOOL visited;
+@property(readonly) unsigned long long userTagType;
+@property(getter=isVisited) bool visited;
 
 - (id)cacheInsertionIndex;
 - (id)cluster;
@@ -35,16 +35,16 @@
 - (id)description;
 - (id)initWithManagedAsset:(id)arg1;
 - (id)initWithPartialFetchDictionary:(id)arg1;
-- (BOOL)isMarked;
-- (BOOL)isTagged;
-- (BOOL)isVisited;
+- (bool)isMarked;
+- (bool)isTagged;
+- (bool)isVisited;
 - (id)location;
 - (id)objectID;
 - (void)setCacheInsertionIndex:(id)arg1;
 - (void)setCluster:(id)arg1;
-- (void)setMarked:(BOOL)arg1;
-- (void)setVisited:(BOOL)arg1;
+- (void)setMarked:(bool)arg1;
+- (void)setVisited:(bool)arg1;
 - (id)userTag;
-- (unsigned int)userTagType;
+- (unsigned long long)userTagType;
 
 @end

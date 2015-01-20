@@ -6,16 +6,16 @@
 
 @interface GKConstraintLeadingInfo : NSObject {
     NSString *_fontTextStyle;
-    float _leading;
+    double _leading;
 }
 
 @property(retain) NSString * fontTextStyle;
-@property float leading;
+@property double leading;
 
 - (void)dealloc;
 - (id)fontTextStyle;
-- (float)leading;
+- (double)leading;
 - (void)setFontTextStyle:(id)arg1;
-- (void)setLeading:(float)arg1;
+- (void)setLeading:(double)arg1;
 
 @end

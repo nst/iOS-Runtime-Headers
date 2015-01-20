@@ -11,32 +11,32 @@
 
 @property(retain) NSDictionary * callManagementState;
 @property(retain) NSObject<OS_dispatch_semaphore> * callManagementStateSemaphore;
-@property(getter=isWiFiCallingCurrentlyAvailable,readonly) BOOL wiFiCallingCurrentlyAvailable;
+@property(getter=isWiFiCallingCurrentlyAvailable,readonly) bool wiFiCallingCurrentlyAvailable;
 
 + (id)sharedInstance;
 
-- (BOOL)_booleanValueForKey:(struct __CFString { }*)arg1;
+- (bool)_booleanValueForKey:(struct __CFString { }*)arg1;
 - (void)_invalidateCachedState;
 - (void)_invalidateNetworkCanTakeCallsPrivateCache;
-- (BOOL)_isAmbiguousCallList;
-- (BOOL)_isAmbiguousMultiPartyCall;
-- (BOOL)_networkCanTakeCallsPrivate;
-- (BOOL)_valueExistsForKey:(struct __CFString { }*)arg1;
+- (bool)_isAmbiguousCallList;
+- (bool)_isAmbiguousMultiPartyCall;
+- (bool)_networkCanTakeCallsPrivate;
+- (bool)_valueExistsForKey:(struct __CFString { }*)arg1;
 - (int)ambiguityState;
 - (id)callManagementState;
 - (id)callManagementStateSemaphore;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isAddCallAllowed;
-- (BOOL)isEndAndAnswerAllowed;
-- (BOOL)isHardPauseAvailable;
-- (BOOL)isHoldAllowed;
-- (BOOL)isHoldAndAnswerAllowed;
-- (BOOL)isMergeable;
-- (BOOL)isSendToVoicemailAllowed;
-- (BOOL)isSwappable;
-- (BOOL)isTakingCallsPrivateAllowed;
-- (BOOL)isWiFiCallingCurrentlyAvailable;
+- (bool)isAddCallAllowed;
+- (bool)isEndAndAnswerAllowed;
+- (bool)isHardPauseAvailable;
+- (bool)isHoldAllowed;
+- (bool)isHoldAndAnswerAllowed;
+- (bool)isMergeable;
+- (bool)isSendToVoicemailAllowed;
+- (bool)isSwappable;
+- (bool)isTakingCallsPrivateAllowed;
+- (bool)isWiFiCallingCurrentlyAvailable;
 - (void)setCallManagementState:(id)arg1;
 - (void)setCallManagementStateSemaphore:(id)arg1;
 

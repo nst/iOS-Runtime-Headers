@@ -8,10 +8,10 @@
 - (id)_maskImage;
 - (id)_text;
 - (id)_textAttributes;
-- (float)_textHorizontalInset;
-- (float)_textHorizontalKerningOffset;
-- (struct CGSize { float x1; float x2; })_textSize;
-- (float)_textVerticalInset;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (double)_textHorizontalInset;
+- (double)_textHorizontalKerningOffset;
+- (struct CGSize { double x1; double x2; })_textSize;
+- (double)_textVerticalInset;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

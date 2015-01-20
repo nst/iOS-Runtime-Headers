@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface TRKeyboardUserEntryPacketEvent : TRPacketEvent {
-    int _commandType;
+    long long _commandType;
     unsigned long long _sessionID;
     NSString *_text;
 }
 
-@property(readonly) int commandType;
+@property(readonly) long long commandType;
 @property(readonly) unsigned long long sessionID;
 @property(readonly) NSString * text;
 
@@ -18,9 +18,9 @@
 
 - (void).cxx_destruct;
 - (id)_initWithVersion:(unsigned int)arg1 payloadDictionary:(id)arg2;
-- (int)commandType;
+- (long long)commandType;
 - (id)description;
-- (id)initWithCommandType:(int)arg1 sessionID:(unsigned long long)arg2 text:(id)arg3;
+- (id)initWithCommandType:(long long)arg1 sessionID:(unsigned long long)arg2 text:(id)arg3;
 - (unsigned long long)sessionID;
 - (id)text;
 

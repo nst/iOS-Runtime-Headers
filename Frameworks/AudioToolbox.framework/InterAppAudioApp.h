@@ -6,17 +6,17 @@
 
 @interface InterAppAudioApp : NSObject {
     UIImage *_icon;
-    BOOL _isCurrentApp;
-    BOOL _isHost;
-    int _key;
+    long long _key;
     NSString *_name;
     NSURL *_url;
+    bool_isCurrentApp;
+    bool_isHost;
 }
 
 @property(readonly) UIImage * icon;
-@property(readonly) BOOL isCurrentApp;
-@property(readonly) BOOL isHost;
-@property(readonly) int key;
+@property(readonly) bool isCurrentApp;
+@property(readonly) bool isHost;
+@property(readonly) long long key;
 @property(readonly) NSString * name;
 @property(readonly) NSURL * url;
 
@@ -24,9 +24,9 @@
 - (id)description;
 - (id)icon;
 - (id)init:(const struct InterAppAudioAppInfo { boolx1; int x2; struct ObjCUIImage {} *x3; struct __CFString {} *x4; struct __CFString {} *x5; struct __CFURL {} *x6; }*)arg1 iconSize:(float)arg2;
-- (BOOL)isCurrentApp;
-- (BOOL)isHost;
-- (int)key;
+- (bool)isCurrentApp;
+- (bool)isHost;
+- (long long)key;
 - (id)name;
 - (id)url;
 

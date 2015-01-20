@@ -7,7 +7,7 @@
 }
 
 - (void)addBrowsedRecords:(id)arg1 toDestList:(id)arg2;
-- (BOOL)canBeExtendedWithDWDS;
+- (bool)canBeExtendedWithDWDS;
 - (id)devicePickerLabel;
 - (id)deviceTableLabel;
 - (void)selectedDeviceUpdated;
@@ -16,6 +16,6 @@
 - (void)stepByStepUpdateProgress:(id)arg1 forState:(int)arg2;
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (void)updateNavigationButtons;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

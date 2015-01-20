@@ -8,42 +8,42 @@
     UIImage *_blur;
     NSTimer *_colorSampleTimer;
     NSDictionary *_options;
-    BOOL _pausedForThermalReasons;
     <SBFProceduralWallpaper> *_proceduralWallpaper;
     int _thermalNotificationToken;
+    bool_pausedForThermalReasons;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-+ (BOOL)_allowsParallax;
-+ (BOOL)_allowsRasterization;
++ (bool)_allowsParallax;
++ (bool)_allowsRasterization;
 
 - (id)_blurredImage;
 - (id)_computeAverageColor;
 - (void)_handleVariantChange;
 - (void)_handleVisibilityChange;
-- (BOOL)_isVisible;
-- (id)_newImageFromBlurSurface:(struct __IOSurface { }*)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (bool)_isVisible;
+- (id)_newImageFromBlurSurface:(struct __IOSurface { }*)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_sample;
-- (BOOL)_shouldSampleContinuously;
+- (bool)_shouldSampleContinuously;
 - (void)_startGeneratingBlurredImages;
 - (void)_stopGeneratingBlurredImages;
 - (void)_updateAnimating;
 - (void)_updateSampleTimer;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 proceduralWallpaper:(id)arg2 options:(id)arg3 variant:(int)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 proceduralWallpaper:(id)arg2 options:(id)arg3 variant:(long long)arg4;
 - (void)invalidate;
-- (BOOL)isDisplayingWallpaper:(id)arg1 forVariant:(int)arg2 options:(id)arg3;
+- (bool)isDisplayingWallpaper:(id)arg1 forVariant:(long long)arg2 options:(id)arg3;
 - (void)layoutSubviews;
 - (id)options;
 - (void)prepareToAppear;
 - (void)prepareToDisappear;
-- (void)setContinuousColorSamplingEnabled:(BOOL)arg1;
-- (void)setWallpaperAnimationEnabled:(BOOL)arg1;
-- (void)wallpaper:(id)arg1 didComputeAverageColor:(id)arg2 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)wallpaper:(id)arg1 didGenerateBlur:(struct __IOSurface { }*)arg2 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)setContinuousColorSamplingEnabled:(bool)arg1;
+- (void)setWallpaperAnimationEnabled:(bool)arg1;
+- (void)wallpaper:(id)arg1 didComputeAverageColor:(id)arg2 forRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)wallpaper:(id)arg1 didGenerateBlur:(struct __IOSurface { }*)arg2 forRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 
 @end

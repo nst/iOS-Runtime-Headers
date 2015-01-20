@@ -6,21 +6,21 @@
 
 @interface MFDbJournal : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     NSMutableData *_buffer;
     int _fd;
     } _lock;
     NSString *_path;
 }
 
-- (BOOL)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
+- (bool)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
 - (void)_resetBuffer;
-- (BOOL)append:(const char *)arg1;
+- (bool)append:(const char *)arg1;
 - (void)clear;
 - (void)dealloc;
-- (BOOL)flush;
+- (bool)flush;
 - (id)initWithPath:(id)arg1;
-- (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
+- (bool)mergeWithDatabase:(struct sqlite3 { }*)arg1;
 
 @end

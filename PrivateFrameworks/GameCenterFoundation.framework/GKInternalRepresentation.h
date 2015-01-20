@@ -8,7 +8,7 @@
 + (id)codedPropertyKeys;
 + (id)internalRepresentation;
 + (id)secureCodedPropertyKeys;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

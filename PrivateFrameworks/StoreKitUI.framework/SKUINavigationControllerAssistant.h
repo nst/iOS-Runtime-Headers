@@ -14,28 +14,28 @@
 }
 
 @property(readonly) SKUIClientContext * clientContext;
-@property BOOL hidesShadow;
+@property bool hidesShadow;
 @property(readonly) UINavigationController * navigationController;
 
 + (id)assistantForNavigationController:(id)arg1 clientContext:(id)arg2;
 + (id)existingAssistantForNavigationController:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_hideChildPaletteView:(id)arg1 animated:(BOOL)arg2;
-- (void)_hideOverlayView:(id)arg1 animated:(BOOL)arg2;
+- (void)_hideChildPaletteView:(id)arg1 animated:(bool)arg2;
+- (void)_hideOverlayView:(id)arg1 animated:(bool)arg2;
 - (id)_initWithNavigationController:(id)arg1 clientContext:(id)arg2;
 - (void)_previewDocumentChangeNotification:(id)arg1;
-- (void)_setPreviewDocumentController:(id)arg1 animated:(BOOL)arg2;
-- (void)_showOverlayView:(id)arg1 previousOverlayView:(id)arg2 animated:(BOOL)arg3;
-- (void)_transitionToPaletteView:(id)arg1 animated:(BOOL)arg2 operation:(int)arg3;
+- (void)_setPreviewDocumentController:(id)arg1 animated:(bool)arg2;
+- (void)_showOverlayView:(id)arg1 previousOverlayView:(id)arg2 animated:(bool)arg3;
+- (void)_transitionToPaletteView:(id)arg1 animated:(bool)arg2 operation:(long long)arg3;
 - (id)clientContext;
 - (void)dealloc;
-- (BOOL)hidesShadow;
+- (bool)hidesShadow;
 - (id)navigationController;
-- (void)setHidesShadow:(BOOL)arg1;
-- (void)setPalettePinningBarHidden:(BOOL)arg1;
-- (void)setPaletteView:(id)arg1 animated:(BOOL)arg2;
+- (void)setHidesShadow:(bool)arg1;
+- (void)setPalettePinningBarHidden:(bool)arg1;
+- (void)setPaletteView:(id)arg1 animated:(bool)arg2;
 - (void)setPreviewDocumentController:(id)arg1;
-- (void)willShowViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)willShowViewController:(id)arg1 animated:(bool)arg2;
 
 @end

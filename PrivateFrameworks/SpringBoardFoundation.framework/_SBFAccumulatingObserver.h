@@ -5,15 +5,15 @@
 @class NSError, NSMutableArray, NSObject<OS_dispatch_semaphore>, NSString;
 
 @interface _SBFAccumulatingObserver : NSObject <SBFObserver> {
-    BOOL _didComplete;
     NSError *_error;
     NSMutableArray *_results;
     NSObject<OS_dispatch_semaphore> *_semaphore;
+    bool_didComplete;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)dealloc;

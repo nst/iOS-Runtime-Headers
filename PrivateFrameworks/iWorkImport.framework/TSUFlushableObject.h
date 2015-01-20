@@ -13,14 +13,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)dealloc;
 - (void)flush;
-- (BOOL)hasFlushableContent;
+- (bool)hasFlushableContent;
 - (id)init;
 - (id)ownerAutoreleasedAccess;
 - (void)ownerDidAccess;
@@ -29,7 +29,7 @@
 - (void)ownerWillAccess;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)unload;
 
 @end

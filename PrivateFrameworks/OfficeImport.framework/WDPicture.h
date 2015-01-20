@@ -6,7 +6,7 @@
 }
 
 - (void)dealloc;
-- (BOOL)hasContent;
+- (bool)hasContent;
 - (int)runType;
 
 @end

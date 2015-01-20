@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface SUScriptMenuItem : SUScriptObject {
-    BOOL _enabled;
     NSString *_title;
     id _userInfo;
+    bool_enabled;
 }
 
-@property BOOL enabled;
+@property bool enabled;
 @property(retain) NSString * title;
 @property(retain) id userInfo;
 
@@ -21,10 +21,10 @@
 - (void)_sendDidChange;
 - (id)attributeKeys;
 - (void)dealloc;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)init;
 - (id)scriptAttributeKeys;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)title;

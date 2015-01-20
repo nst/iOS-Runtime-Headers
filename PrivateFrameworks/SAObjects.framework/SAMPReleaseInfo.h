@@ -9,9 +9,9 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) SACalendar * releaseDate;
-@property int releaseYear;
+@property long long releaseYear;
 @property(readonly) Class superclass;
 
 + (id)releaseInfo;
@@ -20,8 +20,8 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)releaseDate;
-- (int)releaseYear;
+- (long long)releaseYear;
 - (void)setReleaseDate:(id)arg1;
-- (void)setReleaseYear:(int)arg1;
+- (void)setReleaseYear:(long long)arg1;
 
 @end

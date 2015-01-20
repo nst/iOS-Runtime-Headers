@@ -5,26 +5,26 @@
 @class <ABStyleProvider>, ABUIPerson, NSArray;
 
 @interface ABAbstractPropertyGroup : NSObject {
-    BOOL _hasChanges;
     NSArray *_people;
     ABUIPerson *_preinsertedPerson;
     <ABStyleProvider> *_styleProvider;
+    bool_hasChanges;
 }
 
-@property BOOL hasChanges;
+@property bool hasChanges;
 @property(retain) NSArray * people;
 @property(retain) ABUIPerson * preinsertedPerson;
 @property(retain) <ABStyleProvider> * styleProvider;
 
-- (BOOL)canSave;
+- (bool)canSave;
 - (void)dealloc;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)init;
 - (id)people;
 - (id)preinsertedPerson;
 - (int)property;
 - (void)reloadFromModel;
-- (void)setHasChanges:(BOOL)arg1;
+- (void)setHasChanges:(bool)arg1;
 - (void)setPeople:(id)arg1;
 - (void)setPreinsertedPerson:(id)arg1;
 - (void)setStyleProvider:(id)arg1;

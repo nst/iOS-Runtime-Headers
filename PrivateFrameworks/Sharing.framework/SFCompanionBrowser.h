@@ -9,21 +9,21 @@
     <SFCompanionBrowserProtocol> *_connectionProxy;
     <SFCompanionBrowserDelegate> *_delegate;
     NSMutableDictionary *_deviceServices;
-    BOOL _foundDevices;
     NSMutableArray *_foundPeople;
     NSMutableDictionary *_foundServices;
     NSString *_identifier;
     NSMutableArray *_lostPeople;
     NSMutableDictionary *_nodes;
     NSMutableArray *_serviceTypes;
+    bool_foundDevices;
 }
 
 @property(retain) <SFCompanionBrowserProtocol> * connectionProxy;
 @property(copy,readonly) NSString * debugDescription;
 @property <SFCompanionBrowserDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property BOOL foundDevices;
-@property(readonly) unsigned int hash;
+@property bool foundDevices;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * identifier;
 @property(copy,readonly) NSString * serviceType;
 @property(readonly) Class superclass;
@@ -33,7 +33,7 @@
 - (id)connectionProxy;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)foundDevices;
+- (bool)foundDevices;
 - (void)handleBrowserCallback;
 - (void)handleNewActivities:(id)arg1 forDevice:(id)arg2;
 - (void)handleNoDevices;
@@ -46,7 +46,7 @@
 - (id)serviceTypes;
 - (void)setConnectionProxy:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFoundDevices:(BOOL)arg1;
+- (void)setFoundDevices:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)start;
 - (void)startBluetooth;

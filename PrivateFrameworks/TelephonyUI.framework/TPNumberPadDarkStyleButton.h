@@ -5,16 +5,16 @@
 @interface TPNumberPadDarkStyleButton : TPNumberPadButton {
 }
 
-+ (float)highlightCrossfadeHighlightBeginTime;
-+ (float)highlightCrossfadeHighlightFadeDuration;
-+ (float)highlightCrossfadeNormalBeginTime;
-+ (float)highlightCrossfadeNormalFadeDuration;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
++ (double)highlightCrossfadeHighlightBeginTime;
++ (double)highlightCrossfadeHighlightFadeDuration;
++ (double)highlightCrossfadeNormalBeginTime;
++ (double)highlightCrossfadeNormalFadeDuration;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(bool)arg2;
 + (id)imageForCharacter:(unsigned int)arg1;
-+ (float)unhighlightCrossfadeHighlightBeginTime;
-+ (float)unhighlightCrossfadeHighlightFadeDuration;
-+ (float)unhighlightCrossfadeNormalBeginTime;
-+ (float)unhighlightCrossfadeNormalFadeDuration;
++ (double)unhighlightCrossfadeHighlightBeginTime;
++ (double)unhighlightCrossfadeHighlightFadeDuration;
++ (double)unhighlightCrossfadeNormalBeginTime;
++ (double)unhighlightCrossfadeNormalFadeDuration;
 
 - (id)defaultColor;
 

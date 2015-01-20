@@ -46,7 +46,7 @@
 - (void)logEventBackwardUsage;
 - (void)logEventBackwardUsageWithOutcome:(id)arg1;
 - (void)logEventPointConnectionEvent:(id)arg1 forSource:(id)arg2;
-- (BOOL)outcomeHasDataUsage:(id)arg1;
+- (bool)outcomeHasDataUsage:(id)arg1;
 - (void)setBatteryLevelChanged:(id)arg1;
 - (void)setLastEntry:(id)arg1;
 - (void)setLastEntryTime:(id)arg1;

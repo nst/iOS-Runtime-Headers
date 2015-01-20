@@ -5,9 +5,9 @@
 @class <TSDBackgroundLayoutAndRenderStateDelegate>;
 
 @interface TSDBackgroundLayoutAndRenderState : NSObject {
+    boolmNeedsLayoutAndRender;
+    boolmNeedsLayoutForTilingLayers;
     <TSDBackgroundLayoutAndRenderStateDelegate> *mDelegate;
-    BOOL mNeedsLayoutAndRender;
-    BOOL mNeedsLayoutForTilingLayers;
 }
 
 - (id)initWithDelegate:(id)arg1;

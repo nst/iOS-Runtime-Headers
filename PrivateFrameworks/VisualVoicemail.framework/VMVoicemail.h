@@ -26,7 +26,7 @@
 + (void)forceReloadAllLiveVoicemailsForAccount:(id)arg1;
 + (void)initialize;
 + (void)scheduleVoicemailMapHousekeeping;
-+ (id)voicemailWithAccount:(id)arg1 identifier:(long long)arg2 creating:(BOOL)arg3;
++ (id)voicemailWithAccount:(id)arg1 identifier:(long long)arg2 creating:(bool)arg3;
 
 - (void)_forceUpdateCache;
 - (void)_handleDataAvailable:(id)arg1;
@@ -45,10 +45,10 @@
 - (id)description;
 - (id)displayLabelUsingAddressBook:(void*)arg1;
 - (id)displayNameUsingAddressBook:(void*)arg1;
-- (BOOL)doesNotHaveFlags:(unsigned int)arg1;
+- (bool)doesNotHaveFlags:(unsigned int)arg1;
 - (int)duration;
 - (unsigned int)flags;
-- (BOOL)hasFlags:(unsigned int)arg1;
+- (bool)hasFlags:(unsigned int)arg1;
 - (long long)identifier;
 - (id)imageDataUsingAddressBook:(void*)arg1;
 - (id)initWithAccount:(id)arg1 identifier:(long long)arg2;
@@ -58,6 +58,6 @@
 - (void)setCachedAddressBookRef:(id)arg1;
 - (void)setCachedDisplayName:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
-- (BOOL)willBroadcastNotificationName:(id)arg1 userInfo:(id)arg2;
+- (bool)willBroadcastNotificationName:(id)arg1 userInfo:(id)arg2;
 
 @end

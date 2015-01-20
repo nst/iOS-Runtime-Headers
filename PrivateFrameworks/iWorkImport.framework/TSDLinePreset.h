@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)headLineEnd;
 - (id)initWithStroke:(id)arg1 headLineEnd:(id)arg2 tailLineEnd:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)stroke;
 - (id)tailLineEnd;
 

@@ -13,14 +13,14 @@
     CKCommentCursor *_cursor;
     CKCommentCursor *_nextCursor;
     CKCommentQuery *_query;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
 }
 
 @property(copy) id commentFetchedProgressBlock;
 @property(retain) CKCommentCursor * cursor;
 @property(retain) CKCommentCursor * nextCursor;
 @property(retain) CKCommentQuery * query;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -33,11 +33,11 @@
 - (id)nextCursor;
 - (Class)operationResultClass;
 - (id)query;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setCommentFetchedProgressBlock:(id)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setNextCursor:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 
 @end

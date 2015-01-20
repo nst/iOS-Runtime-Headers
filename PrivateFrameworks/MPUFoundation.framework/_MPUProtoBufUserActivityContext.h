@@ -15,8 +15,8 @@
 }
 
 @property(retain) NSMutableArray * containerItems;
-@property BOOL hasOriginatorType;
-@property BOOL hasOriginatorVersion;
+@property bool hasOriginatorType;
+@property bool hasOriginatorVersion;
 @property int originatorType;
 @property int originatorVersion;
 
@@ -24,22 +24,22 @@
 - (void)addContainerItems:(id)arg1;
 - (void)clearContainerItems;
 - (id)containerItems;
-- (id)containerItemsAtIndex:(unsigned int)arg1;
-- (unsigned int)containerItemsCount;
+- (id)containerItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)containerItemsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOriginatorType;
-- (BOOL)hasOriginatorVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOriginatorType;
+- (bool)hasOriginatorVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)originatorType;
 - (int)originatorVersion;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setContainerItems:(id)arg1;
-- (void)setHasOriginatorType:(BOOL)arg1;
-- (void)setHasOriginatorVersion:(BOOL)arg1;
+- (void)setHasOriginatorType:(bool)arg1;
+- (void)setHasOriginatorVersion:(bool)arg1;
 - (void)setOriginatorType:(int)arg1;
 - (void)setOriginatorVersion:(int)arg1;
 - (void)writeTo:(id)arg1;

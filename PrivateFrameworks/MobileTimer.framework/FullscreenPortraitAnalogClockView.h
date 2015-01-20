@@ -5,8 +5,8 @@
 @interface FullscreenPortraitAnalogClockView : FullscreenLandscapeAnalogClockView {
 }
 
-+ (float)faceRadius;
-+ (struct CGPoint { float x1; float x2; })handRotationalCenterForHand:(int)arg1;
++ (double)faceRadius;
++ (struct CGPoint { double x1; double x2; })handRotationalCenterForHand:(int)arg1;
 + (id)resourcePath;
 + (int)style;
 

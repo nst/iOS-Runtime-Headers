@@ -5,12 +5,12 @@
 @class NSString;
 
 @interface DAContactsSearchQuery : DASearchQuery {
-    BOOL _includePhotos;
     NSString *_searchBase;
     NSString *_searchScope;
+    bool_includePhotos;
 }
 
-@property BOOL includePhotos;
+@property bool includePhotos;
 @property(copy) NSString * searchBase;
 @property(copy) NSString * searchScope;
 
@@ -18,12 +18,12 @@
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (BOOL)includePhotos;
+- (bool)includePhotos;
 - (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)initWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3 consumer:(id)arg4;
 - (id)searchBase;
 - (id)searchScope;
-- (void)setIncludePhotos:(BOOL)arg1;
+- (void)setIncludePhotos:(bool)arg1;
 - (void)setSearchBase:(id)arg1;
 - (void)setSearchScope:(id)arg1;
 

@@ -8,7 +8,7 @@
     EKAvailabilityCache *_availabilityCache;
     NSString *_cachedHost;
     NSSet *_cachedOwnerAddresses;
-    int _cachedPort;
+    long long _cachedPort;
     NSDate *_timeOfLastExternalIdentificationCache;
 }
 
@@ -16,26 +16,26 @@
 @property(readonly) EKAvailabilityCache * availabilityCache;
 @property(retain) NSString * cachedHost;
 @property(retain) NSSet * cachedOwnerAddresses;
-@property int cachedPort;
+@property long long cachedPort;
 @property(readonly) NSSet * calendars;
 @property(readonly) EKSourceConstraints * constraints;
 @property(copy) NSNumber * defaultAlarmOffset;
 @property(readonly) int displayOrderForNewCalendar;
-@property(getter=isEnabled,readonly) BOOL enabled;
+@property(getter=isEnabled,readonly) bool enabled;
 @property(copy) NSString * externalID;
 @property(copy) NSString * externalModificationTag;
-@property(readonly) BOOL isFacebookSource;
-@property BOOL onlyCreatorCanModify;
+@property(readonly) bool isFacebookSource;
+@property bool onlyCreatorCanModify;
 @property(readonly) NSSet * ownerAddresses;
-@property(readonly) int preferredEventPrivateValue;
+@property(readonly) long long preferredEventPrivateValue;
 @property(readonly) NSString * serverHost;
-@property(readonly) int serverPort;
+@property(readonly) long long serverPort;
 @property(readonly) NSString * sourceIdentifier;
 @property(readonly) int sourceType;
-@property(readonly) int strictestEventPrivateValue;
+@property(readonly) long long strictestEventPrivateValue;
 @property(retain) NSDate * timeOfLastExternalIdentificationCache;
 @property(copy) NSString * title;
-@property(readonly) BOOL wantsCommentPromptWhenDeclining;
+@property(readonly) bool wantsCommentPromptWhenDeclining;
 
 + (id)sourceWithEventStore:(id)arg1;
 
@@ -45,10 +45,10 @@
 - (id)availabilityCache;
 - (id)cachedHost;
 - (id)cachedOwnerAddresses;
-- (int)cachedPort;
+- (long long)cachedPort;
 - (id)calendars;
-- (id)calendarsForEntityType:(unsigned int)arg1;
-- (BOOL)commit:(id*)arg1;
+- (id)calendarsForEntityType:(unsigned long long)arg1;
+- (bool)commit:(id*)arg1;
 - (id)constraints;
 - (void)dealloc;
 - (id)defaultAlarmOffset;
@@ -57,29 +57,29 @@
 - (id)externalID;
 - (id)externalModificationTag;
 - (id)init;
-- (BOOL)isEnabled;
-- (BOOL)isFacebookSource;
-- (BOOL)onlyCreatorCanModify;
+- (bool)isEnabled;
+- (bool)isFacebookSource;
+- (bool)onlyCreatorCanModify;
 - (id)ownerAddresses;
-- (int)preferredEventPrivateValue;
-- (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
-- (BOOL)remove:(id*)arg1;
+- (long long)preferredEventPrivateValue;
+- (id)readWriteCalendarsForEntityType:(unsigned long long)arg1;
+- (bool)remove:(id*)arg1;
 - (id)serverHost;
-- (int)serverPort;
+- (long long)serverPort;
 - (void)setCachedHost:(id)arg1;
 - (void)setCachedOwnerAddresses:(id)arg1;
-- (void)setCachedPort:(int)arg1;
+- (void)setCachedPort:(long long)arg1;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setExternalModificationTag:(id)arg1;
-- (void)setOnlyCreatorCanModify:(BOOL)arg1;
+- (void)setOnlyCreatorCanModify:(bool)arg1;
 - (void)setTimeOfLastExternalIdentificationCache:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)sourceIdentifier;
 - (int)sourceType;
-- (int)strictestEventPrivateValue;
+- (long long)strictestEventPrivateValue;
 - (id)timeOfLastExternalIdentificationCache;
 - (id)title;
-- (BOOL)wantsCommentPromptWhenDeclining;
+- (bool)wantsCommentPromptWhenDeclining;
 
 @end

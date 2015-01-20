@@ -26,16 +26,16 @@
 @property(retain) UIImageView * thumbnailView;
 @property(retain) UILabel * titleLabel;
 
-+ (struct CGSize { float x1; float x2; })defaultSizeForTraits:(id)arg1;
-+ (struct CGSize { float x1; float x2; })thumbnailSizeForTraits:(id)arg1;
++ (struct CGSize { double x1; double x2; })defaultSizeForTraits:(id)arg1;
++ (struct CGSize { double x1; double x2; })thumbnailSizeForTraits:(id)arg1;
 
 - (void)_showPickableDiagnostic;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)pickableDiagnosticGestureRecognizer;
 - (void)prepareForReuse;
 - (id)progressView;
-- (void)reloadItem:(BOOL)arg1;
+- (void)reloadItem:(bool)arg1;
 - (void)setPickableDiagnosticGestureRecognizer:(id)arg1;
 - (void)setProgressView:(id)arg1;
 - (void)setSubtitle2Label:(id)arg1;

@@ -7,12 +7,12 @@
 }
 
 @property(readonly) int confidence;
-@property(readonly) BOOL hasExitedVehicle;
-@property(readonly) BOOL isDriving;
-@property(readonly) BOOL isMoving;
-@property(readonly) BOOL isRunning;
-@property(readonly) BOOL isWalking;
-@property(readonly) BOOL maybeExitingVehicle;
+@property(readonly) bool hasExitedVehicle;
+@property(readonly) bool isDriving;
+@property(readonly) bool isMoving;
+@property(readonly) bool isRunning;
+@property(readonly) bool isWalking;
+@property(readonly) bool maybeExitingVehicle;
 
 - (struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })activity;
 - (int)confidence;
@@ -20,13 +20,13 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasExitedVehicle;
+- (bool)hasExitedVehicle;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1 andTimestamp:(double)arg2;
-- (BOOL)isDriving;
-- (BOOL)isMoving;
-- (BOOL)isRunning;
-- (BOOL)isWalking;
-- (BOOL)maybeExitingVehicle;
+- (bool)isDriving;
+- (bool)isMoving;
+- (bool)isRunning;
+- (bool)isWalking;
+- (bool)maybeExitingVehicle;
 
 @end

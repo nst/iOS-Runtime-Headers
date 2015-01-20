@@ -3,12 +3,12 @@
  */
 
 @interface _VTSiriEnabledPolicy : _VTStatePolicy {
-    BOOL _enabled;
+    bool_enabled;
 }
 
 - (void)_registerForSiriEnabledUpdates;
 - (void)_siriEnabledStateUpdated;
 - (id)initWithCallback:(id)arg1 queue:(id)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 
 @end

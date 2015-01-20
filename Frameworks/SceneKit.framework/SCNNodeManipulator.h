@@ -31,8 +31,8 @@
         struct { 
             unsigned short selectedAxis; 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } originalMouseLocation; 
             float rotationSign; 
             struct __C3DQuaternion { 
@@ -44,19 +44,19 @@
         } axisRotate; 
     unsigned short _action;
     } _actionData;
-    BOOL _isMouseDown;
     } _xAxisToZAxisTransform;
     } _xyPlaneToXZPlaneTransform;
     } _xyPlaneToYZPlaneTransform;
     } _yAxisToZAxisTransform;
+    bool_isMouseDown;
 }
 
 - (id)copy;
 - (void)draw;
 - (id)init;
-- (BOOL)mouseDown:(struct { id x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; float x6; })arg1;
-- (BOOL)mouseDragged:(struct { id x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; float x6; })arg1;
-- (BOOL)mouseMoved:(struct { id x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; float x6; })arg1;
-- (BOOL)mouseUp:(struct { id x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; float x6; })arg1;
+- (bool)mouseDown:(struct { id x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; double x6; })arg1;
+- (bool)mouseDragged:(struct { id x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; double x6; })arg1;
+- (bool)mouseMoved:(struct { id x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; double x6; })arg1;
+- (bool)mouseUp:(struct { id x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct SCNVector3 { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; struct SCNVector3 { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; double x6; })arg1;
 
 @end

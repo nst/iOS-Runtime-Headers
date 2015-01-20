@@ -14,7 +14,7 @@
     CKCommentCursor *_nextCursor;
     CKCommentQuery *_query;
     NSMutableArray *_resultComments;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
 }
 
 @property(copy) CKCommentCursor * cursor;
@@ -22,10 +22,10 @@
 @property(retain) CKCommentCursor * nextCursor;
 @property(copy) CKCommentQuery * query;
 @property(retain) NSMutableArray * resultComments;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
@@ -38,12 +38,12 @@
 - (void)performCKOperation;
 - (id)query;
 - (id)resultComments;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setCursor:(id)arg1;
 - (void)setFetchShareCommentsCompletionBlock:(id)arg1;
 - (void)setNextCursor:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setResultComments:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 
 @end

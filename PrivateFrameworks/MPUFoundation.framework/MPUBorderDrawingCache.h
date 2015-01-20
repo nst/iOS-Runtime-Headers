@@ -6,20 +6,20 @@
 
 @interface MPUBorderDrawingCache : NSObject {
     MPUBorderView *_borderView;
-    float _displayScale;
+    double _displayScale;
     NSCache *_images;
 }
 
-@property float displayScale;
+@property double displayScale;
 
 - (void).cxx_destruct;
 - (void)_applicationDidReceiveMemoryWarning:(id)arg1;
 - (id)_borderView;
 - (void)_invalidate;
 - (void)dealloc;
-- (float)displayScale;
+- (double)displayScale;
 - (id)imageForBorderConfiguration:(id)arg1;
 - (id)init;
-- (void)setDisplayScale:(float)arg1;
+- (void)setDisplayScale:(double)arg1;
 
 @end

@@ -22,7 +22,7 @@
 @property(copy) NSNumber * progress;
 @property(copy) NSNumber * timeRemaining;
 
-+ (id)changesetWithDownloadID:(id)arg1 state:(int)arg2;
++ (id)changesetWithDownloadID:(id)arg1 state:(long long)arg2;
 
 - (id)contentLength;
 - (id)contentURL;

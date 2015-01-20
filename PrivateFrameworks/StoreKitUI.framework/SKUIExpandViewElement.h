@@ -3,18 +3,18 @@
  */
 
 @interface SKUIExpandViewElement : SKUIViewElement {
-    BOOL _open;
-    BOOL _previousIsOpen;
+    bool_open;
+    bool_previousIsOpen;
 }
 
-@property(getter=isOpen,readonly) BOOL open;
-@property BOOL previousIsOpen;
+@property(getter=isOpen,readonly) bool open;
+@property bool previousIsOpen;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isOpen;
-- (int)pageComponentType;
-- (BOOL)previousIsOpen;
-- (void)setPreviousIsOpen:(BOOL)arg1;
+- (bool)isOpen;
+- (long long)pageComponentType;
+- (bool)previousIsOpen;
+- (void)setPreviousIsOpen:(bool)arg1;
 
 @end

@@ -7,25 +7,25 @@
 @interface CIQRCodeFeature : CIFeature {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     } bottomLeft;
     } bottomRight;
     } bounds;
@@ -34,31 +34,31 @@
     } topRight;
 }
 
-@property struct CGPoint { float x1; float x2; } bottomLeft;
-@property struct CGPoint { float x1; float x2; } bottomRight;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property struct CGPoint { double x1; double x2; } bottomLeft;
+@property struct CGPoint { double x1; double x2; } bottomRight;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property(copy) NSString * messageString;
-@property struct CGPoint { float x1; float x2; } topLeft;
-@property struct CGPoint { float x1; float x2; } topRight;
+@property struct CGPoint { double x1; double x2; } topLeft;
+@property struct CGPoint { double x1; double x2; } topRight;
 
-+ (id)barcodeFeatureWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (id)barcodeFeaturesWithBoundsArray:(const struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 count:(unsigned int)arg2;
++ (id)barcodeFeatureWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)barcodeFeaturesWithBoundsArray:(const struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 count:(unsigned long long)arg2;
 
 - (id).cxx_construct;
-- (struct CGPoint { float x1; float x2; })bottomLeft;
-- (struct CGPoint { float x1; float x2; })bottomRight;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 topLeft:(struct CGPoint { float x1; float x2; })arg2 topRight:(struct CGPoint { float x1; float x2; })arg3 bottomLeft:(struct CGPoint { float x1; float x2; })arg4 bottomRight:(struct CGPoint { float x1; float x2; })arg5 messageString:(id)arg6;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })bottomLeft;
+- (struct CGPoint { double x1; double x2; })bottomRight;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 topLeft:(struct CGPoint { double x1; double x2; })arg2 topRight:(struct CGPoint { double x1; double x2; })arg3 bottomLeft:(struct CGPoint { double x1; double x2; })arg4 bottomRight:(struct CGPoint { double x1; double x2; })arg5 messageString:(id)arg6;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)messageString;
-- (void)setBottomLeft:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBottomRight:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBottomLeft:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBottomRight:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMessageString:(id)arg1;
-- (void)setTopLeft:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTopRight:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })topLeft;
-- (struct CGPoint { float x1; float x2; })topRight;
+- (void)setTopLeft:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTopRight:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })topLeft;
+- (struct CGPoint { double x1; double x2; })topRight;
 - (id)type;
 
 @end

@@ -10,10 +10,10 @@
 
 @property(retain,readonly) <PLAssetContainerList> * containerList;
 
-- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned long long)arg2 usingBlock:(id)arg3;
 - (id)containerList;
 - (void)dealloc;
-- (id)initWithContainerList:(id)arg1 library:(id)arg2 type:(unsigned int)arg3;
+- (id)initWithContainerList:(id)arg1 library:(id)arg2 type:(unsigned long long)arg3;
 - (id)valueForProperty:(id)arg1;
 
 @end

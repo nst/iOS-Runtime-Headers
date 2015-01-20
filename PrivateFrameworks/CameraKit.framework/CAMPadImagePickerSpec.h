@@ -5,20 +5,20 @@
 @interface CAMPadImagePickerSpec : CAMImagePickerSpec {
 }
 
-- (int)bottomBarOrientation;
-- (int)modeDialOrientation;
-- (BOOL)shouldCreateBottomBar;
-- (BOOL)shouldCreateElapsedTimeView;
-- (BOOL)shouldCreateFiltersButton;
-- (BOOL)shouldCreateFlashButton;
-- (BOOL)shouldCreateFlipButton;
-- (BOOL)shouldCreateHDRButton;
-- (BOOL)shouldCreateImageWell;
-- (BOOL)shouldCreateModeDial;
-- (BOOL)shouldCreatePanoramaView;
-- (BOOL)shouldCreateShutterButton;
-- (BOOL)shouldCreateStillDuringVideo;
-- (BOOL)shouldCreateTopBar;
-- (BOOL)shouldCreateZoomSlider;
+- (long long)bottomBarOrientation;
+- (long long)modeDialOrientation;
+- (bool)shouldCreateBottomBar;
+- (bool)shouldCreateElapsedTimeView;
+- (bool)shouldCreateFiltersButton;
+- (bool)shouldCreateFlashButton;
+- (bool)shouldCreateFlipButton;
+- (bool)shouldCreateHDRButton;
+- (bool)shouldCreateImageWell;
+- (bool)shouldCreateModeDial;
+- (bool)shouldCreatePanoramaView;
+- (bool)shouldCreateShutterButton;
+- (bool)shouldCreateStillDuringVideo;
+- (bool)shouldCreateTopBar;
+- (bool)shouldCreateZoomSlider;
 
 @end

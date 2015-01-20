@@ -5,34 +5,34 @@
 @class ATIDSSocket, IDSDevice;
 
 @interface ATIDSConnectionState : NSObject {
-    BOOL _connecting;
     IDSDevice *_device;
     unsigned int _failureCount;
     double _lastWakeupSentTime;
-    int _priority;
+    long long _priority;
     ATIDSSocket *_socket;
     unsigned int _wakeupCount;
+    bool_connecting;
 }
 
-@property BOOL connecting;
+@property bool connecting;
 @property(retain) IDSDevice * device;
 @property unsigned int failureCount;
 @property double lastWakeupSentTime;
-@property int priority;
+@property long long priority;
 @property(retain) ATIDSSocket * socket;
 @property unsigned int wakeupCount;
 
 - (void).cxx_destruct;
-- (BOOL)connecting;
+- (bool)connecting;
 - (id)device;
 - (unsigned int)failureCount;
 - (double)lastWakeupSentTime;
-- (int)priority;
-- (void)setConnecting:(BOOL)arg1;
+- (long long)priority;
+- (void)setConnecting:(bool)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setFailureCount:(unsigned int)arg1;
 - (void)setLastWakeupSentTime:(double)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setPriority:(long long)arg1;
 - (void)setSocket:(id)arg1;
 - (void)setWakeupCount:(unsigned int)arg1;
 - (id)socket;

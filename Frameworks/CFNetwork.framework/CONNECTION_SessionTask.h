@@ -25,7 +25,7 @@
 - (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
 - (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (struct __CFDictionary { }*)_additionalHeaders;
-- (unsigned long)_allowedProtocolTypes;
+- (unsigned long long)_allowedProtocolTypes;
 - (id)_allowsCellular;
 - (id)_backgroundTaskTimingData;
 - (id)_boundInterfaceIdentifier;
@@ -54,13 +54,13 @@
 - (id)_protocolForTask;
 - (struct __CFDictionary { }*)_proxySettings;
 - (void)_releasePreventIdleSleepAssertionIfAppropriate;
-- (long)_requestPriority;
+- (long long)_requestPriority;
 - (void)_setConnectionIsCellular:(bool)arg1;
 - (void)_setSocketProperties:(struct __CFDictionary { }*)arg1 connectionProperties:(struct __CFDictionary { }*)arg2;
 - (id)_shouldHandleCookies;
 - (unsigned char)_shouldPipelineHTTP;
 - (unsigned char)_shouldSkipPipelineProbe;
-- (BOOL)_shouldSkipPreferredClientCertificateLookup;
+- (bool)_shouldSkipPreferredClientCertificateLookup;
 - (unsigned char)_shouldUsePipelineHeuristics;
 - (struct __CFDictionary { }*)_sslSettings;
 - (unsigned char)_strictContentLength;

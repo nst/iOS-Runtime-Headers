@@ -7,13 +7,13 @@
 @interface SFCompanionAdvertiser : NSObject {
     <SFCompanionAdvertiserDelegate> *_delegate;
     NSString *_serviceType;
-    BOOL _supportsStreams;
+    bool_supportsStreams;
 }
 
 @property <SFCompanionAdvertiserDelegate> * delegate;
 @property(readonly) NSData * serviceEndpointData;
 @property(copy,readonly) NSString * serviceType;
-@property BOOL supportsStreams;
+@property bool supportsStreams;
 
 - (void)dealloc;
 - (id)delegate;
@@ -22,9 +22,9 @@
 - (id)serviceEndpointData;
 - (id)serviceType;
 - (void)setDelegate:(id)arg1;
-- (void)setSupportsStreams:(BOOL)arg1;
+- (void)setSupportsStreams:(bool)arg1;
 - (void)start;
 - (void)stop;
-- (BOOL)supportsStreams;
+- (bool)supportsStreams;
 
 @end

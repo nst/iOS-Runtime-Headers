@@ -8,24 +8,24 @@
 }
 
 @property(readonly) NSString * annotationNavigationString;
-@property(readonly) unsigned int documentAnnotationCount;
-@property(readonly) BOOL hasAnnotations;
-@property BOOL textSelectionChangeShouldDismissAnnotations;
+@property(readonly) unsigned long long documentAnnotationCount;
+@property(readonly) bool hasAnnotations;
+@property bool textSelectionChangeShouldDismissAnnotations;
 
-+ (float)commentFontSize;
++ (double)commentFontSize;
 
 - (id)annotationNavigationString;
-- (id)annotationNavigationTypeStringUsedForNavigating:(BOOL)arg1;
+- (id)annotationNavigationTypeStringUsedForNavigating:(bool)arg1;
 - (void)commitCommentText:(id)arg1 forAnnotation:(id)arg2;
 - (void)didShowAnnotation:(id)arg1;
-- (unsigned int)documentAnnotationCount;
-- (BOOL)hasAnnotations;
+- (unsigned long long)documentAnnotationCount;
+- (bool)hasAnnotations;
 - (void)nextAnnotation:(id)arg1;
 - (void)previousAnnotation:(id)arg1;
 - (void)registerDelegate:(id)arg1;
 - (void)setFilteredAuthors:(id)arg1;
-- (void)setTextSelectionChangeShouldDismissAnnotations:(BOOL)arg1;
-- (BOOL)textSelectionChangeShouldDismissAnnotations;
+- (void)setTextSelectionChangeShouldDismissAnnotations:(bool)arg1;
+- (bool)textSelectionChangeShouldDismissAnnotations;
 - (void)unregisterDelegate:(id)arg1;
 - (void)updateCurrentAnnotation:(id)arg1;
 - (void)willShowAnnotation:(id)arg1;

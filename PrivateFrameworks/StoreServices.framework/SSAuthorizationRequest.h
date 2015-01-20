@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <SSAuthorizationRequestDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * keybagPath;
 @property(readonly) Class superclass;
 
@@ -28,7 +28,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)keybagPath;
 - (void)setKeybagPath:(id)arg1;
-- (BOOL)start;
+- (bool)start;
 - (void)startWithAuthorizationResponseBlock:(id)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
 

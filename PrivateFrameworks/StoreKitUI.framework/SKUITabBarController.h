@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) UIViewController * floatingOverlayViewController;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (Class)_moreNavigationControllerClass;
@@ -24,13 +24,13 @@
 - (void)cancelTransientViewController:(id)arg1;
 - (id)floatingOverlayViewController;
 - (id)init;
-- (void)moreNavigationController:(id)arg1 didSelectItemAtIndex:(int)arg2;
+- (void)moreNavigationController:(id)arg1 didSelectItemAtIndex:(long long)arg2;
 - (id)moreNavigationController;
-- (void)setFloatingOverlayViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)setTabBarBackdropStyle:(int)arg1;
-- (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setFloatingOverlayViewController:(id)arg1 animated:(bool)arg2;
+- (void)setTabBarBackdropStyle:(long long)arg1;
+- (void)setTransientViewController:(id)arg1 animated:(bool)arg2;
 - (id)skui_activeNavigationController;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -9,19 +9,19 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int nextAvailableInputBus;
+@property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long nextAvailableInputBus;
 @property float outputVolume;
 @property(readonly) Class superclass;
 @property float volume;
 
 - (void)didAttachToEngine:(id)arg1;
 - (id)init;
-- (void)inputConnected:(unsigned int)arg1;
-- (unsigned int)nextAvailableInputBus;
+- (void)inputConnected:(unsigned long long)arg1;
+- (unsigned long long)nextAvailableInputBus;
 - (float)outputVolume;
-- (void)setInputPan:(float)arg1 bus:(unsigned int)arg2;
-- (void)setInputVolume:(float)arg1 bus:(unsigned int)arg2;
+- (void)setInputPan:(float)arg1 bus:(unsigned long long)arg2;
+- (void)setInputVolume:(float)arg1 bus:(unsigned long long)arg2;
 - (void)setOutputVolume:(float)arg1;
 
 @end

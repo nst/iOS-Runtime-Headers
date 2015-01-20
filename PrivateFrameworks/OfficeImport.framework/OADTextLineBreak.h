@@ -5,6 +5,6 @@
 @interface OADTextLineBreak : OADTextRun {
 }
 
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 
 @end

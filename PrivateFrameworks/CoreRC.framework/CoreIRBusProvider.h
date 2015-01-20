@@ -11,11 +11,11 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) IRInterface * interface;
 @property(readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)addExternalDevice:(id*)arg1;
 - (Class)classForCoder;
@@ -27,6 +27,6 @@
 - (id)localDevice;
 - (id)propertyForKey:(id)arg1 error:(id*)arg2;
 - (void)setManager:(id)arg1;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 
 @end

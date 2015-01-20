@@ -5,6 +5,6 @@
 @interface MPUReportingEvent : NSObject {
 }
 
-- (BOOL)isValid;
+- (bool)isValid;
 
 @end

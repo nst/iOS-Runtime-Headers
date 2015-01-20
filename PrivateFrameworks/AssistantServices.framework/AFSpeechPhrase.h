@@ -6,13 +6,13 @@
 
 @interface AFSpeechPhrase : NSObject <NSSecureCoding> {
     NSArray *_interpretations;
-    BOOL _isLowConfidence;
+    bool_isLowConfidence;
 }
 
 @property(copy) NSArray * interpretations;
-@property BOOL isLowConfidence;
+@property bool isLowConfidence;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bestInterpretation;
@@ -20,8 +20,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)interpretations;
-- (BOOL)isLowConfidence;
+- (bool)isLowConfidence;
 - (void)setInterpretations:(id)arg1;
-- (void)setIsLowConfidence:(BOOL)arg1;
+- (void)setIsLowConfidence:(bool)arg1;
 
 @end

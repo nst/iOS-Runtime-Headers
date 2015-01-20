@@ -10,7 +10,7 @@
 @property(copy) NSDateComponents * alternateBirthday;
 @property(copy) NSDateComponents * birthday;
 @property(copy) NSArray * birthdays;
-@property int contactType;
+@property long long contactType;
 @property(copy) NSArray * dates;
 @property(copy) NSString * departmentName;
 @property(copy) NSArray * emailAddresses;
@@ -37,7 +37,7 @@
 @property(copy) NSArray * urlAddresses;
 
 + (id)contact;
-+ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
++ (id)contactWithRecord:(void*)arg1 unify:(bool)arg2;
 + (id)contactWithRecord:(void*)arg1;
 
 - (struct __CFString { }*)_ABLabelFromCNLabel:(id)arg1;
@@ -45,22 +45,22 @@
 - (void)_setStringMultiValueForProperty:(int)arg1 values:(id)arg2;
 - (void)_setValue:(id)arg1 forProperty:(int)arg2;
 - (void)addProperties:(id)arg1 excludingProperties:(id)arg2 fromContact:(id)arg3;
-- (BOOL)addToGroup:(void*)arg1;
-- (BOOL)deleteContact;
-- (BOOL)hasChanges;
+- (bool)addToGroup:(void*)arg1;
+- (bool)deleteContact;
+- (bool)hasChanges;
 - (id)init;
-- (id)initWithRecord:(void*)arg1 unify:(BOOL)arg2 originalRecord:(void*)arg3;
+- (id)initWithRecord:(void*)arg1 unify:(bool)arg2 originalRecord:(void*)arg3;
 - (id)initWithRecord:(void*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToContact:(id)arg1 includeIdentifiers:(BOOL)arg2;
-- (BOOL)isEqualToContact:(id)arg1;
-- (BOOL)linkToContact:(id)arg1;
-- (BOOL)saveContact;
-- (BOOL)saveContactInAddressBook:(void*)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToContact:(id)arg1 includeIdentifiers:(bool)arg2;
+- (bool)isEqualToContact:(id)arg1;
+- (bool)linkToContact:(id)arg1;
+- (bool)saveContact;
+- (bool)saveContactInAddressBook:(void*)arg1;
 - (void)setAlternateBirthday:(id)arg1;
 - (void)setBirthday:(id)arg1;
 - (void)setBirthdays:(id)arg1;
-- (void)setContactType:(int)arg1;
+- (void)setContactType:(long long)arg1;
 - (void)setDates:(id)arg1;
 - (void)setDepartmentName:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
@@ -87,7 +87,7 @@
 - (void)setSocialProfiles:(id)arg1;
 - (void)setTextTone:(id)arg1;
 - (void)setUrlAddresses:(id)arg1;
-- (BOOL)unlinkContact;
-- (void)updateContactType:(BOOL)arg1;
+- (bool)unlinkContact;
+- (void)updateContactType:(bool)arg1;
 
 @end

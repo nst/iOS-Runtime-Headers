@@ -5,26 +5,26 @@
 @class NSString;
 
 @interface FMDLostModeInfo : NSObject <NSSecureCoding> {
-    BOOL _lostModeEnabled;
     NSString *_message;
     NSString *_phoneNumber;
+    bool_lostModeEnabled;
 }
 
-@property BOOL lostModeEnabled;
+@property bool lostModeEnabled;
 @property(retain) NSString * message;
 @property(retain) NSString * phoneNumber;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)lostModeEnabled;
+- (bool)lostModeEnabled;
 - (id)message;
 - (id)phoneNumber;
-- (void)setLostModeEnabled:(BOOL)arg1;
+- (void)setLostModeEnabled:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 

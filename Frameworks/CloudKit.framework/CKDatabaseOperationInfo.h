@@ -3,16 +3,16 @@
  */
 
 @interface CKDatabaseOperationInfo : CKOperationInfo <NSSecureCoding> {
-    int _databaseScope;
+    long long _databaseScope;
 }
 
-@property int databaseScope;
+@property long long databaseScope;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)databaseScope;
+- (long long)databaseScope;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setDatabaseScope:(int)arg1;
+- (void)setDatabaseScope:(long long)arg1;
 
 @end

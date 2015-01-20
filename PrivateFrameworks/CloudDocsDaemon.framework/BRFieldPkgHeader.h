@@ -13,9 +13,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setVersion:(int)arg1;
 - (int)version;
 - (void)writeTo:(id)arg1;

@@ -10,21 +10,21 @@
     NSString *_movieSubtitle;
     NSString *_movieTitle;
     MPAVController *_player;
-    unsigned int _scaleMode;
+    unsigned long long _scaleMode;
     double _startTime;
     double _stopTime;
     NSString *_videoID;
 }
 
 @property(retain) NSDictionary * AVURLAssetOptions;
-@property(readonly) BOOL canChangeScaleMode;
-@property(readonly) unsigned int effectiveScaleMode;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieContentFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieFrame;
+@property(readonly) bool canChangeScaleMode;
+@property(readonly) unsigned long long effectiveScaleMode;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } movieContentFrame;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } movieFrame;
 @property(retain) NSString * movieSubtitle;
 @property(retain) NSString * movieTitle;
 @property MPAVController * player;
-@property unsigned int scaleMode;
+@property unsigned long long scaleMode;
 @property double startTime;
 @property double stopTime;
 @property(copy) NSString * videoID;
@@ -35,13 +35,13 @@
 - (id)AVURLAssetOptions;
 - (void)_bufferingStateChangedNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
-- (BOOL)canChangeScaleMode;
+- (bool)canChangeScaleMode;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (unsigned int)effectiveScaleMode;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieContentFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieFrame;
+- (unsigned long long)effectiveScaleMode;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })movieContentFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })movieFrame;
 - (id)moviePath;
 - (id)movieSubtitle;
 - (id)movieTitle;
@@ -50,21 +50,21 @@
 - (void)playWhenLikelyToKeepUp;
 - (id)player;
 - (void)prepareAVControllerQueue;
-- (unsigned int)scaleMode;
+- (unsigned long long)scaleMode;
 - (void)setAVURLAssetOptions:(id)arg1;
 - (void)setMovieSubtitle:(id)arg1;
 - (void)setMovieTitle:(id)arg1;
 - (void)setMovieWithPath:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
-- (void)setScaleMode:(unsigned int)arg1 duration:(float)arg2;
-- (void)setScaleMode:(unsigned int)arg1;
+- (void)setScaleMode:(unsigned long long)arg1 animated:(bool)arg2;
+- (void)setScaleMode:(unsigned long long)arg1 duration:(float)arg2;
+- (void)setScaleMode:(unsigned long long)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;
 - (void)setVideoID:(id)arg1;
 - (double)startTime;
 - (double)stopTime;
-- (void)toggleScaleMode:(BOOL)arg1;
+- (void)toggleScaleMode:(bool)arg1;
 - (id)videoID;
 
 @end

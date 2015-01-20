@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy) NSString * unit;
 @property(copy) NSString * units;
@@ -19,7 +19,7 @@
 + (id)distanceWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)afui_abbreviatedUnit;
-- (int)afui_compare:(id)arg1;
+- (long long)afui_compare:(id)arg1;
 - (id)afui_metersValue;
 - (id)encodedClassName;
 - (id)groupIdentifier;

@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <CoreDAVTaskGroupDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSURL * inboxURL;
 @property(readonly) Class superclass;
 

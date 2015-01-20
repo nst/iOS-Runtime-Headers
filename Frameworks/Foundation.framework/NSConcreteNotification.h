@@ -5,7 +5,7 @@
 @class NSDictionary, NSString;
 
 @interface NSConcreteNotification : NSNotification {
-    BOOL dyingObject;
+    booldyingObject;
     NSString *name;
     id object;
     NSDictionary *userInfo;

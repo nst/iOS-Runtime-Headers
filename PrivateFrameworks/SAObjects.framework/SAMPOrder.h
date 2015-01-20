@@ -8,20 +8,20 @@
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property BOOL descending;
+@property bool descending;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * mediaItemProperty;
 @property(readonly) Class superclass;
 
 + (id)order;
 + (id)orderWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)descending;
+- (bool)descending;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)mediaItemProperty;
-- (void)setDescending:(BOOL)arg1;
+- (void)setDescending:(bool)arg1;
 - (void)setMediaItemProperty:(id)arg1;
 
 @end

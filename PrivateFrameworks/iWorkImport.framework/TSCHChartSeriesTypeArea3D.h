@@ -10,6 +10,6 @@
 - (id)g_genericToSpecificPropertyMap3DArea;
 - (id)genericToSpecificPropertyMap;
 - (int)legendBadgeType;
-- (BOOL)supportsSymbolDrawing;
+- (bool)supportsSymbolDrawing;
 
 @end

@@ -10,20 +10,20 @@
 
 @property long long albumID;
 @property(retain) RadioArtworkCollection * artworkCollection;
-@property BOOL isSeed;
+@property bool isSeed;
 @property long long itemID;
 @property(copy) RadioSeedMetadata * seedMetadata;
 @property long long storeID;
-@property int type;
+@property long long type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)itemID;
 - (void)setAlbumID:(long long)arg1;
 - (void)setArtworkCollection:(id)arg1;
-- (void)setIsSeed:(BOOL)arg1;
+- (void)setIsSeed:(bool)arg1;
 - (void)setItemID:(long long)arg1;
 - (void)setSeedMetadata:(id)arg1;
 - (void)setStoreID:(long long)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 
 @end

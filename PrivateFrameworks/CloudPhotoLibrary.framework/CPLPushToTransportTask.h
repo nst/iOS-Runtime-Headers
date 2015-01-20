@@ -6,8 +6,8 @@
 
 @interface CPLPushToTransportTask : CPLEngineSyncTask {
     NSString *_clientCacheIdentifier;
-    unsigned int _countOfPushedBatches;
-    unsigned int _lastReportedProgress;
+    unsigned long long _countOfPushedBatches;
+    unsigned long long _lastReportedProgress;
     NSObject<OS_dispatch_queue> *_lock;
     NSArray *_resourcesForBackgroundUpload;
     NSArray *_staleOrUnavailableResources;
@@ -19,11 +19,11 @@
 @property(retain) <CPLPushToTransportTaskDelegate> * delegate;
 
 - (void).cxx_destruct;
-- (BOOL)_discardResourcesToUploadFromBatch:(id)arg1 error:(id*)arg2;
+- (bool)_discardResourcesToUploadFromBatch:(id)arg1 error:(id*)arg2;
 - (void)_doOneIteration;
-- (BOOL)_markUploadedTasksDidFinishWithError:(id)arg1 error:(id*)arg2;
+- (bool)_markUploadedTasksDidFinishWithError:(id)arg1 error:(id*)arg2;
 - (void)_popNextBatchAndContinue;
-- (BOOL)_prepareResourcesToUploadInBatch:(id)arg1 error:(id*)arg2;
+- (bool)_prepareResourcesToUploadInBatch:(id)arg1 error:(id*)arg2;
 - (void)_pushTaskDidFinishWithError:(id)arg1;
 - (void)cancel;
 - (id)initWithEngineLibrary:(id)arg1;

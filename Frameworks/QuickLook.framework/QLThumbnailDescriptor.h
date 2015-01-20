@@ -4,20 +4,20 @@
 
 @interface QLThumbnailDescriptor : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
-    float _scaleFactor;
+        double width; 
+        double height; 
+    double _scaleFactor;
     } _size;
 }
 
-@property float scaleFactor;
-@property struct CGSize { float x1; float x2; } size;
+@property double scaleFactor;
+@property struct CGSize { double x1; double x2; } size;
 
-+ (id)descriptorWithSize:(struct CGSize { float x1; float x2; })arg1 scaleFactor:(float)arg2;
++ (id)descriptorWithSize:(struct CGSize { double x1; double x2; })arg1 scaleFactor:(double)arg2;
 
-- (float)scaleFactor;
-- (void)setScaleFactor:(float)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (double)scaleFactor;
+- (void)setScaleFactor:(double)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

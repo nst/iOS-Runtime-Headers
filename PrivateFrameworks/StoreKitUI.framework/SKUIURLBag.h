@@ -7,8 +7,8 @@
 @interface SKUIURLBag : SSURLBag {
     ISURLBag *_bag;
     NSMutableArray *_completionBlocks;
-    BOOL _forceInvalidationForNextLoad;
     ISLoadURLBagOperation *_operation;
+    bool_forceInvalidationForNextLoad;
 }
 
 + (id)URLBagForContext:(id)arg1;

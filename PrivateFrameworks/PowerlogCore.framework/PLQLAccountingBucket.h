@@ -29,7 +29,7 @@
 - (double)energyForAccountingIdentifier:(id)arg1;
 - (double)getEnergy;
 - (id)initWithRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
-- (unsigned int)numberOfAccountingEvents;
+- (unsigned long long)numberOfAccountingEvents;
 - (void)performBucketEnergyAccounting:(double)arg1;
 - (struct _PLTimeIntervalRange { double x1; double x2; })range;
 - (void)setEnergy:(double)arg1;

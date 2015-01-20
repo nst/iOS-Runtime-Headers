@@ -22,7 +22,7 @@
 - (void)_updateCookie;
 - (long long)bytesToAutomaticallyClear;
 - (void)dealloc;
-- (BOOL)hasEnoughDiskToTakePicture;
+- (bool)hasEnoughDiskToTakePicture;
 - (id)init;
 - (void)updateAvailableDiskSpace;
 

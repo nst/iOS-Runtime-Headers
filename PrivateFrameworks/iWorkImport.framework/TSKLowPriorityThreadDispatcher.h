@@ -9,7 +9,7 @@
     int _suspendCount;
 }
 
-@property(getter=isSuspended,readonly) BOOL suspended;
+@property(getter=isSuspended,readonly) bool suspended;
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -18,12 +18,12 @@
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (BOOL)isSuspended;
+- (bool)isSuspended;
 - (id)p_dispatchQueue;
 - (oneway void)release;
 - (void)resume;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)suspend;
 
 @end

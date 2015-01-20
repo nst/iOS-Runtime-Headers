@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSManagedObjectContext * moc;
 @property(retain) NSManagedObjectID * objectID;
 @property long long orderValue;
@@ -21,12 +21,12 @@
 - (id)childManagedObject;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isSpecial;
+- (bool)isSpecial;
 - (id)moc;
 - (id)objectID;
 - (long long)orderValue;
 - (id)secondaryOrderSortKey;
-- (void)setIsSpecial:(BOOL)arg1;
+- (void)setIsSpecial:(bool)arg1;
 - (void)setMoc:(id)arg1;
 - (void)setObjectID:(id)arg1;
 - (void)setOrderValue:(long long)arg1;

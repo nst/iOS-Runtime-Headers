@@ -7,13 +7,13 @@
 @interface GKMatchmakerViewController : UINavigationController <GKMatchDelegate> {
     GKInvite *_acceptedInvite;
     UIAlertController *_alertController;
-    BOOL _hosted;
     NSMutableArray *_hostedPlayers;
     GKHostedMatchmakerViewController *_hostedViewController;
     GKMatch *_match;
     GKMatchRequest *_matchRequest;
     <GKMatchmakerViewControllerDelegate> *_matchmakerDelegateWeak;
     GKRemoteMatchmakerViewController *_remoteViewController;
+    bool_hosted;
 }
 
 @property(retain) GKInvite * acceptedInvite;
@@ -21,8 +21,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy) NSString * defaultInvitationMessage;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isHosted) BOOL hosted;
+@property(readonly) unsigned long long hash;
+@property(getter=isHosted) bool hosted;
 @property(retain) NSMutableArray * hostedPlayers;
 @property(retain) GKHostedMatchmakerViewController * hostedViewController;
 @property(retain) GKMatch * match;
@@ -31,7 +31,7 @@
 @property(retain) GKRemoteMatchmakerViewController * remoteViewController;
 @property(readonly) Class superclass;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 
 - (void)_setupChildViewController;
 - (id)acceptedInvite;
@@ -52,13 +52,13 @@
 - (id)init;
 - (id)initWithInvite:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
-- (void)invitedPlayer:(id)arg1 responded:(int)arg2;
+- (void)invitedPlayer:(id)arg1 responded:(long long)arg2;
 - (void)inviterCancelledNotification:(id)arg1;
-- (BOOL)isHosted;
+- (bool)isHosted;
 - (void)localPlayerAcceptedGameInvite:(id)arg1;
 - (void)match:(id)arg1 didFailWithError:(id)arg2;
 - (void)match:(id)arg1 didReceiveData:(id)arg2 fromRemotePlayer:(id)arg3;
-- (void)match:(id)arg1 player:(id)arg2 didChangeConnectionState:(int)arg3;
+- (void)match:(id)arg1 player:(id)arg2 didChangeConnectionState:(long long)arg3;
 - (id)match;
 - (id)matchRequest;
 - (id)matchmakerDelegate;
@@ -67,11 +67,11 @@
 - (void)sendData:(id)arg1;
 - (void)setAcceptedInvite:(id)arg1;
 - (void)setAlertController:(id)arg1;
-- (void)setBrowsingForNearbyPlayers:(BOOL)arg1;
+- (void)setBrowsingForNearbyPlayers:(bool)arg1;
 - (void)setDefaultInvitationMessage:(id)arg1;
-- (void)setHosted:(BOOL)arg1;
-- (void)setHostedPlayer:(id)arg1 connected:(BOOL)arg2;
-- (void)setHostedPlayer:(id)arg1 didConnect:(BOOL)arg2;
+- (void)setHosted:(bool)arg1;
+- (void)setHostedPlayer:(id)arg1 connected:(bool)arg2;
+- (void)setHostedPlayer:(id)arg1 didConnect:(bool)arg2;
 - (void)setHostedPlayerReady:(id)arg1;
 - (void)setHostedPlayers:(id)arg1;
 - (void)setHostedViewController:(id)arg1;
@@ -79,11 +79,11 @@
 - (void)setMatchmakerDelegate:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setupNotifications;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)startMatchingWithRequest:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

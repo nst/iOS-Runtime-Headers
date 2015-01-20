@@ -5,22 +5,22 @@
 @class NSFetchRequest;
 
 @interface NSAsynchronousFetchRequest : NSPersistentStoreRequest {
-    int _estimatedResultCount;
+    long long _estimatedResultCount;
     NSFetchRequest *_fetchRequest;
     id _requestCompletionBlock;
 }
 
 @property(readonly) id completionBlock;
-@property int estimatedResultCount;
+@property long long estimatedResultCount;
 @property(readonly) NSFetchRequest * fetchRequest;
 
 - (id)completionBlock;
 - (void)dealloc;
 - (id)description;
-- (int)estimatedResultCount;
+- (long long)estimatedResultCount;
 - (id)fetchRequest;
 - (id)initWithFetchRequest:(id)arg1 completionBlock:(id)arg2;
-- (unsigned int)requestType;
-- (void)setEstimatedResultCount:(int)arg1;
+- (unsigned long long)requestType;
+- (void)setEstimatedResultCount:(long long)arg1;
 
 @end

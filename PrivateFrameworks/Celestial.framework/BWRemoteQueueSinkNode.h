@@ -10,17 +10,17 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    BOOL _attachPanoramaMetadata;
     struct opaqueCMFormatDescription { } *_cachedVideoFormatDescription;
     int _clientVideoRetainedBufferCount;
     <BWRemoteQueueSinkNodeDelegate> *_delegate;
-    BOOL _discardsLateSampleBuffers;
     } _lastPTS;
-    BOOL _mediaTypeIsVideo;
     struct remoteQueueSenderOpaque { } *_remoteQueueSender;
-    BOOL _sentDiagnosticMetadata;
     struct shmemPoolOpaque { } *_sharedMemoryPool;
     NSDictionary *_videoColorInfo;
+    bool_attachPanoramaMetadata;
+    bool_discardsLateSampleBuffers;
+    bool_mediaTypeIsVideo;
+    bool_sentDiagnosticMetadata;
 }
 
 @property <BWRemoteQueueSinkNodeDelegate> * delegate;
@@ -29,22 +29,22 @@
 
 - (void)_attachDiagnosticMetadataIfDevicePropertiesLockedForPanorama:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_handlePeerTerminated;
-- (BOOL)attachPanoramaMetadata;
+- (bool)attachPanoramaMetadata;
 - (int)clientVideoRetainedBufferCount;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReachEndOfDataForInput:(id)arg1;
-- (BOOL)discardsLateSampleBuffers;
+- (bool)discardsLateSampleBuffers;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
-- (id)initWithMediaType:(unsigned long)arg1;
+- (id)initWithMediaType:(unsigned int)arg1;
 - (id)nodeSubType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setAttachPanoramaMetadata:(BOOL)arg1;
+- (void)setAttachPanoramaMetadata:(bool)arg1;
 - (void)setClientVideoRetainedBufferCount:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDiscardsLateSampleBuffers:(BOOL)arg1;
+- (void)setDiscardsLateSampleBuffers:(bool)arg1;
 - (void)setVideoColorInfo:(id)arg1;
 - (id)videoColorInfo;
 

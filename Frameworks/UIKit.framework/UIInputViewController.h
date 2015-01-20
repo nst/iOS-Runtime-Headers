@@ -5,24 +5,24 @@
 @class NSObject<UITextDocumentProxy>, NSString, UIInputView, UIKeyboard;
 
 @interface UIInputViewController : UIViewController <_UITextDocumentInterfaceDelegate, UITextInputDelegate> {
-    BOOL _alignsToContentViewController;
     NSString *_primaryLanguage;
     NSObject<UITextDocumentProxy> *_textDocumentProxy;
+    bool_alignsToContentViewController;
 }
 
-@property BOOL _alignsToContentViewController;
+@property bool _alignsToContentViewController;
 @property(readonly) UIKeyboard * _keyboard;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) UIInputView * inputView;
 @property(copy) NSString * primaryLanguage;
 @property(readonly) Class superclass;
 @property(readonly) NSObject<UITextDocumentProxy> * textDocumentProxy;
 
-+ (BOOL)_requiresProxyInterface;
++ (bool)_requiresProxyInterface;
 
-- (BOOL)_alignsToContentViewController;
+- (bool)_alignsToContentViewController;
 - (id)_compatibilityController;
 - (void)_didResetDocumentState;
 - (id)_extensionContext;
@@ -31,8 +31,8 @@
 - (void)_setExtensionContext:(id)arg1;
 - (void)_setTextDocumentProxy:(id)arg1;
 - (void)_setupInputController;
-- (BOOL)_shouldForwardSystemLayoutFittingSizeChanges;
-- (struct CGSize { float x1; float x2; })_systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (bool)_shouldForwardSystemLayoutFittingSizeChanges;
+- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)_textDocumentInterface;
 - (void)_willResetDocumentState;
 - (void)advanceToNextInputMode;
@@ -51,7 +51,7 @@
 - (void)setInputView:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
 - (void)setView:(id)arg1;
-- (void)set_alignsToContentViewController:(BOOL)arg1;
+- (void)set_alignsToContentViewController:(bool)arg1;
 - (void)textDidChange:(id)arg1;
 - (id)textDocumentProxy;
 - (void)textWillChange:(id)arg1;

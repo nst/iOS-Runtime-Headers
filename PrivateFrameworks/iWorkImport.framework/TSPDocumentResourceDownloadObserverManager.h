@@ -12,8 +12,8 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (void)addDownloadObserver:(id)arg1 forData:(id)arg2 digestString:(id)arg3 isInternalObserver:(BOOL)arg4 completionHandler:(id)arg5;
+- (void)addDownloadObserver:(id)arg1 forData:(id)arg2 digestString:(id)arg3 isInternalObserver:(bool)arg4 completionHandler:(id)arg5;
 - (id)init;
-- (void)postNotification:(int)arg1 forDigestString:(id)arg2 wait:(BOOL)arg3;
+- (void)postNotification:(long long)arg1 forDigestString:(id)arg2 wait:(bool)arg3;
 
 @end

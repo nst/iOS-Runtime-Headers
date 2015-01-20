@@ -5,13 +5,13 @@
 @class NSDictionary;
 
 @interface PKSecureElementConsistencyData : NSObject {
-    unsigned int _backoffLevel;
+    unsigned long long _backoffLevel;
     NSDictionary *_cleanupActionsByAID;
     NSDictionary *_passStateByAID;
     NSDictionary *_secureElementCardStateByAID;
 }
 
-@property unsigned int backoffLevel;
+@property unsigned long long backoffLevel;
 @property(retain) NSDictionary * cleanupActionsByAID;
 @property(readonly) NSDictionary * dictionary;
 @property(retain) NSDictionary * passStateByAID;
@@ -19,12 +19,12 @@
 
 + (id)consistencyDataWithPaymentApplications:(id)arg1 secureElementCards:(id)arg2 cleanupActions:(id)arg3;
 
-- (unsigned int)backoffLevel;
+- (unsigned long long)backoffLevel;
 - (id)cleanupActionsByAID;
 - (id)dictionary;
 - (id)passStateByAID;
 - (id)secureElementCardStateByAID;
-- (void)setBackoffLevel:(unsigned int)arg1;
+- (void)setBackoffLevel:(unsigned long long)arg1;
 - (void)setCleanupActionsByAID:(id)arg1;
 - (void)setPassStateByAID:(id)arg1;
 - (void)setSecureElementCardStateByAID:(id)arg1;

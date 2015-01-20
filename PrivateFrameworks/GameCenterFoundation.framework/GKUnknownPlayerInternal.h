@@ -5,7 +5,7 @@
 @interface GKUnknownPlayerInternal : GKSpecialPlayerInternal {
 }
 
-- (BOOL)isUnknownPlayer;
+- (bool)isUnknownPlayer;
 - (id)playerID;
 
 @end

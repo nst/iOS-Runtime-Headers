@@ -8,14 +8,14 @@
     NSString *_assetType;
     double _networkTimeout;
     NSPredicate *_predicate;
-    BOOL _queriesLocalAssetInformationOnly;
     NSArray *_results;
+    bool_queriesLocalAssetInformationOnly;
 }
 
 @property(copy) NSString * assetType;
 @property double networkTimeout;
 @property(retain) NSPredicate * predicate;
-@property BOOL queriesLocalAssetInformationOnly;
+@property bool queriesLocalAssetInformationOnly;
 @property(retain) NSArray * results;
 
 + (id)queryPredicateForProperties:(id)arg1;
@@ -25,13 +25,13 @@
 - (id)initWithAssetType:(id)arg1;
 - (double)networkTimeout;
 - (id)predicate;
-- (BOOL)queriesLocalAssetInformationOnly;
+- (bool)queriesLocalAssetInformationOnly;
 - (id)results;
 - (id)runQueryAndReturnError:(id*)arg1;
 - (void)setAssetType:(id)arg1;
 - (void)setNetworkTimeout:(double)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setQueriesLocalAssetInformationOnly:(BOOL)arg1;
+- (void)setQueriesLocalAssetInformationOnly:(bool)arg1;
 - (void)setResults:(id)arg1;
 - (void)startQuery:(id)arg1;
 - (void)stopQuery;

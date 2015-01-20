@@ -14,7 +14,7 @@
 + (id)assertionWithAssertionName:(id)arg1 reason:(id)arg2 withHandler:(id)arg3;
 
 - (id)assertionName;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (unsigned int)port;
 - (id)reason;
 

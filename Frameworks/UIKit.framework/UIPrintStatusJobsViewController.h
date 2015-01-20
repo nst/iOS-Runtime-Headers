@@ -5,27 +5,27 @@
 @class NSArray, UIPrintingMessageView;
 
 @interface UIPrintStatusJobsViewController : UITableViewController {
-    BOOL _autoPush;
     NSArray *_jobs;
     UIPrintingMessageView *_noJobsView;
+    bool_autoPush;
 }
 
 - (void)dealloc;
 - (void)handleJobListDidChange;
 - (id)init;
 - (void)loadView;
-- (void)pushJob:(id)arg1 animated:(BOOL)arg2;
-- (void)pushSingleJobAnimated:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)pushJob:(id)arg1 animated:(bool)arg2;
+- (void)pushSingleJobAnimated:(bool)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)updateForJobCountChange;
 - (void)updateJobInfo:(id)arg1;
 - (void)updateTableViewCell:(id)arg1 withJob:(id)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)visibleJobs;
 - (void)willReappear;
 

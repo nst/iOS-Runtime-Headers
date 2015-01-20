@@ -5,26 +5,26 @@
 @class NSString;
 
 @interface SSTermsAndConditions : NSObject <NSCopying> {
-    BOOL _requiresAuthentication;
     NSString *_text;
-    BOOL _userAccepted;
     long long _versionID;
+    bool_requiresAuthentication;
+    bool_userAccepted;
 }
 
 @property NSString * currentText;
 @property long long currentVersionIdentifier;
-@property(readonly) BOOL requiresAuthentication;
-@property(getter=isUserAccepted) BOOL userAccepted;
+@property(readonly) bool requiresAuthentication;
+@property(getter=isUserAccepted) bool userAccepted;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentText;
 - (long long)currentVersionIdentifier;
 - (void)dealloc;
 - (id)initWithResponseData:(id)arg1 error:(id*)arg2;
-- (BOOL)isUserAccepted;
-- (BOOL)requiresAuthentication;
+- (bool)isUserAccepted;
+- (bool)requiresAuthentication;
 - (void)setCurrentText:(id)arg1;
 - (void)setCurrentVersionIdentifier:(long long)arg1;
-- (void)setUserAccepted:(BOOL)arg1;
+- (void)setUserAccepted:(bool)arg1;
 
 @end

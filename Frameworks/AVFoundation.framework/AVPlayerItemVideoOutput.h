@@ -11,7 +11,7 @@
 @property(readonly) <AVPlayerItemOutputPullDelegate> * delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
 
-- (BOOL)_attachToPlayerItem:(id)arg1;
+- (bool)_attachToPlayerItem:(id)arg1;
 - (void)_detachFromPlayerItem;
 - (void)_dispatchOutputMediaDataWillChange;
 - (void)_dispatchOutputSequenceWasFlushed;
@@ -26,12 +26,12 @@
 - (id)delegate;
 - (id)delegateQueue;
 - (void)finalize;
-- (BOOL)hasNewPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (bool)hasNewPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)init;
 - (id)initWithPixelBufferAttributes:(id)arg1;
 - (void)requestNotificationOfMediaDataChangeWithAdvanceInterval:(double)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (void)setSuppressesPlayerRendering:(BOOL)arg1;
-- (BOOL)suppressesPlayerRendering;
+- (void)setSuppressesPlayerRendering:(bool)arg1;
+- (bool)suppressesPlayerRendering;
 
 @end

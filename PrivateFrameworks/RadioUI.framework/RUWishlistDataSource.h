@@ -11,7 +11,7 @@
 }
 
 @property <RUWishlistDataSourceDelegate> * delegate;
-@property(getter=isRefreshing,readonly) BOOL refreshing;
+@property(getter=isRefreshing,readonly) bool refreshing;
 @property(readonly) NSArray * wishlistedTracks;
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (id)delegate;
 - (void)deleteAllWishlistedTracks;
 - (void)deleteWishlistedTrack:(id)arg1;
-- (BOOL)isRefreshing;
+- (bool)isRefreshing;
 - (void)refreshWishlist;
 - (void)setDelegate:(id)arg1;
 - (id)wishlistedTracks;

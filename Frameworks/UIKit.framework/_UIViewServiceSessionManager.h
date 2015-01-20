@@ -13,22 +13,22 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)__serviceSessionManager;
-+ (BOOL)hasActiveSessions;
-+ (void)startViewServiceSessionManagerAsPlugin:(BOOL)arg1;
++ (bool)hasActiveSessions;
++ (void)startViewServiceSessionManagerAsPlugin:(bool)arg1;
 
 - (void)_configureSessionForConnection:(id)arg1;
-- (BOOL)_hasActiveSessions;
-- (id)_initAsPlugIn:(BOOL)arg1;
+- (bool)_hasActiveSessions;
+- (id)_initAsPlugIn:(bool)arg1;
 - (void)_registerSessionForDefaultDeputies:(id)arg1;
 - (void)_startListener;
 - (void)_startListenerWithName:(id)arg1;
 - (void)_startOrStopSystemsForBackgroundRunning;
 - (void)dealloc;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

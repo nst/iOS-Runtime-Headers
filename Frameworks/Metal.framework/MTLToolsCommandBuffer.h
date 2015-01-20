@@ -18,14 +18,14 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) <MTLDevice> * device;
 @property(readonly) NSError * error;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
 @property(readonly) MTLToolsPointerArray * parallelRenderCommandEncoders;
-@property(getter=isProfilingEnabled) BOOL profilingEnabled;
+@property(getter=isProfilingEnabled) bool profilingEnabled;
 @property(readonly) NSDictionary * profilingResults;
 @property(readonly) MTLToolsPointerArray * renderCommandEncoders;
-@property(readonly) BOOL retainedReferences;
-@property(readonly) unsigned int status;
+@property(readonly) bool retainedReferences;
+@property(readonly) unsigned long long status;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -42,7 +42,7 @@
 - (void)enqueue;
 - (id)error;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
-- (BOOL)isProfilingEnabled;
+- (bool)isProfilingEnabled;
 - (id)label;
 - (id)parallelRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)parallelRenderCommandEncoders;
@@ -51,12 +51,12 @@
 - (id)profilingResults;
 - (id)renderCommandEncoderWithDescriptor:(id)arg1;
 - (id)renderCommandEncoders;
-- (BOOL)retainedReferences;
-- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned int)arg2;
-- (id)sampledRenderCommandEncoderWithFramebuffer:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned int)arg3;
+- (bool)retainedReferences;
+- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned long long)arg2;
+- (id)sampledRenderCommandEncoderWithFramebuffer:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned long long)arg3;
 - (void)setLabel:(id)arg1;
-- (void)setProfilingEnabled:(BOOL)arg1;
-- (unsigned int)status;
+- (void)setProfilingEnabled:(bool)arg1;
+- (unsigned long long)status;
 - (id)unwrapMTLRenderPassDescriptor:(id)arg1;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;

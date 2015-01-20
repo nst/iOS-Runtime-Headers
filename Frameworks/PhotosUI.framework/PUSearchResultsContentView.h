@@ -6,24 +6,24 @@
 
 @interface PUSearchResultsContentView : UIView {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     NSAttributedString *_attributedTitle;
     NSString *_auxSubtitle;
     UILabel *_auxSubtitleLabel;
-    float _clippingOffsetY;
+    double _clippingOffsetY;
     UIView *_clippingView;
     } _contentInsets;
-    float _draggingOffsetX;
+    double _draggingOffsetX;
     } _imageSize;
     NSMutableArray *_imageViews;
     NSPointerArray *_images;
-    unsigned int _maxImageCount;
+    unsigned long long _maxImageCount;
     NSString *_subtitle;
     UILabel *_subtitleLabel;
     NSAttributedString *_title;
@@ -31,11 +31,11 @@
 }
 
 @property(copy) NSString * auxSubtitle;
-@property float clippingOffsetY;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property float draggingOffsetX;
-@property struct CGSize { float x1; float x2; } imageSize;
-@property unsigned int maxImageCount;
+@property double clippingOffsetY;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property double draggingOffsetX;
+@property struct CGSize { double x1; double x2; } imageSize;
+@property unsigned long long maxImageCount;
 @property(copy) NSString * subtitle;
 @property(copy) NSAttributedString * title;
 
@@ -48,20 +48,20 @@
 - (void)_updateSubviews;
 - (id)auxSubtitle;
 - (void)clearImages;
-- (float)clippingOffsetY;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (float)draggingOffsetX;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)clippingOffsetY;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (double)draggingOffsetX;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned int)maxImageCount;
+- (unsigned long long)maxImageCount;
 - (void)setAuxSubtitle:(id)arg1;
-- (void)setClippingOffsetY:(float)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setDraggingOffsetX:(float)arg1;
-- (void)setImage:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setMaxImageCount:(unsigned int)arg1;
+- (void)setClippingOffsetY:(double)arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDraggingOffsetX:(double)arg1;
+- (void)setImage:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMaxImageCount:(unsigned long long)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)subtitle;

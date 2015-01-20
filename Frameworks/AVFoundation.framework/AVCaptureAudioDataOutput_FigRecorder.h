@@ -21,8 +21,8 @@
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)init;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isTheOnlyDataOutput;
+- (bool)isKindOfClass:(Class)arg1;
+- (bool)isTheOnlyDataOutput;
 - (id)recommendedAudioSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;

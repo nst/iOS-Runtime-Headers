@@ -15,7 +15,7 @@
 + (id)delegateWithCompletion:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)completion;
 - (void)setCompletion:(id)arg1;
 

@@ -17,7 +17,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id formatDidBecomeLiveHandler;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy) id willRenderSampleBufferHandler;
 

@@ -7,13 +7,13 @@
         unsigned int queryType : 1; 
         unsigned int queryAllContainers : 1; 
     } _has;
-    BOOL _queryAllContainers;
     int _queryType;
+    bool_queryAllContainers;
 }
 
-@property BOOL hasQueryAllContainers;
-@property BOOL hasQueryType;
-@property BOOL queryAllContainers;
+@property bool hasQueryAllContainers;
+@property bool hasQueryType;
+@property bool queryAllContainers;
 @property int queryType;
 
 + (id)options;
@@ -22,19 +22,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasQueryAllContainers;
-- (BOOL)hasQueryType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasQueryAllContainers;
+- (bool)hasQueryType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)queryAllContainers;
+- (bool)queryAllContainers;
 - (int)queryType;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setHasQueryAllContainers:(BOOL)arg1;
-- (void)setHasQueryType:(BOOL)arg1;
-- (void)setQueryAllContainers:(BOOL)arg1;
+- (void)setHasQueryAllContainers:(bool)arg1;
+- (void)setHasQueryType:(bool)arg1;
+- (void)setQueryAllContainers:(bool)arg1;
 - (void)setQueryType:(int)arg1;
 - (void)writeTo:(id)arg1;
 

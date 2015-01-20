@@ -6,30 +6,30 @@
 
 @interface CTCellularPlanProfile : NSObject <NSCopying, NSSecureCoding> {
     NSString *_iccid;
-    BOOL _isBootstrap;
-    BOOL _isSelected;
     NSData *_profileId;
+    bool_isBootstrap;
+    bool_isSelected;
 }
 
 @property(copy) NSString * iccid;
-@property BOOL isBootstrap;
-@property BOOL isSelected;
+@property bool isBootstrap;
+@property bool isSelected;
 @property(copy) NSData * profileId;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)iccid;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProfileId:(id)arg1 iccid:(id)arg2 selected:(BOOL)arg3 bootstrap:(BOOL)arg4;
-- (BOOL)isBootstrap;
-- (BOOL)isSelected;
+- (id)initWithProfileId:(id)arg1 iccid:(id)arg2 selected:(bool)arg3 bootstrap:(bool)arg4;
+- (bool)isBootstrap;
+- (bool)isSelected;
 - (id)profileId;
 - (void)setIccid:(id)arg1;
-- (void)setIsBootstrap:(BOOL)arg1;
-- (void)setIsSelected:(BOOL)arg1;
+- (void)setIsBootstrap:(bool)arg1;
+- (void)setIsSelected:(bool)arg1;
 - (void)setProfileId:(id)arg1;
 
 @end

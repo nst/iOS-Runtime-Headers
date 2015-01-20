@@ -5,14 +5,14 @@
 @interface SAHABooleanValue : SAHAAttributeValue {
 }
 
-@property BOOL value;
+@property bool value;
 
 + (id)booleanValue;
 + (id)booleanValueWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setValue:(BOOL)arg1;
-- (BOOL)value;
+- (void)setValue:(bool)arg1;
+- (bool)value;
 
 @end

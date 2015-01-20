@@ -9,7 +9,7 @@
 - (id)_multilineStringValue;
 - (id)_placeholderText;
 - (void)_updateMultilineStringValueWithValue:(id)arg1;
-- (BOOL)hasPresentableData;
+- (bool)hasPresentableData;
 - (id)title;
 
 @end

@@ -5,9 +5,6 @@
 @class NSString;
 
 @interface BSPlatform : NSObject {
-    BOOL _hasGasGauge;
-    BOOL _isInternalInstall;
-    BOOL _isMultiCore;
     NSString *_localizedProductName;
     NSString *_productBuildVersion;
     NSString *_productClass;
@@ -15,12 +12,15 @@
     NSString *_productType;
     NSString *_productVersion;
     NSString *_uniqueDeviceIdentifier;
+    bool_hasGasGauge;
+    bool_isInternalInstall;
+    bool_isMultiCore;
 }
 
-@property(readonly) BOOL hasGasGauge;
-@property(getter=isInternalInstall,readonly) BOOL internalInstall;
+@property(readonly) bool hasGasGauge;
+@property(getter=isInternalInstall,readonly) bool internalInstall;
 @property(copy,readonly) NSString * localizedProductName;
-@property(getter=isMultiCore,readonly) BOOL multiCore;
+@property(getter=isMultiCore,readonly) bool multiCore;
 @property(copy,readonly) NSString * productBuildVersion;
 @property(copy,readonly) NSString * productClass;
 @property(copy,readonly) NSString * productHardwareModel;
@@ -31,10 +31,10 @@
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (BOOL)hasGasGauge;
+- (bool)hasGasGauge;
 - (id)init;
-- (BOOL)isInternalInstall;
-- (BOOL)isMultiCore;
+- (bool)isInternalInstall;
+- (bool)isMultiCore;
 - (id)localizedProductName;
 - (id)productBuildVersion;
 - (id)productClass;

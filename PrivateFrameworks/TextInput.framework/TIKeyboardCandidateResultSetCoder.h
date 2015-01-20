@@ -7,14 +7,14 @@
 @interface TIKeyboardCandidateResultSetCoder : NSObject {
     NSData *_data;
     NSMutableData *_mutableData;
-    unsigned int _offset;
+    unsigned long long _offset;
 }
 
 @property(readonly) const char * bytes;
 @property(readonly) const char * currentPosition;
 @property(retain) NSData * data;
 @property(retain) NSMutableData * mutableData;
-@property unsigned int offset;
+@property unsigned long long offset;
 
 + (id)candidateTypeToClassNameMap;
 + (Class)classFromCandidateType:(int)arg1;
@@ -27,7 +27,7 @@
 - (id)data;
 - (id)dataFromCandidateResultSet:(id)arg1;
 - (void)dealloc;
-- (BOOL)decodeBool;
+- (bool)decodeBool;
 - (unsigned char)decodeByte;
 - (id)decodeCandidate;
 - (id)decodePointerValueArray;
@@ -36,7 +36,7 @@
 - (id)decodeStringArray;
 - (unsigned int)decodeUInt32;
 - (unsigned long long)decodeUInt64;
-- (void)encodeBool:(BOOL)arg1;
+- (void)encodeBool:(bool)arg1;
 - (void)encodeByte:(unsigned char)arg1;
 - (void)encodePointerValueArray:(id)arg1;
 - (void)encodeShort:(unsigned short)arg1;
@@ -48,9 +48,9 @@
 - (id)initForEncoding;
 - (id)initWithData:(id)arg1 mutableData:(id)arg2;
 - (id)mutableData;
-- (unsigned int)offset;
+- (unsigned long long)offset;
 - (void)setData:(id)arg1;
 - (void)setMutableData:(id)arg1;
-- (void)setOffset:(unsigned int)arg1;
+- (void)setOffset:(unsigned long long)arg1;
 
 @end

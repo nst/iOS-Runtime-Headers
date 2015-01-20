@@ -10,8 +10,8 @@
 - (id)instructionalText;
 - (int)kind;
 - (Class)layoutClass;
-- (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
+- (id)localizedChunkNameForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned long long)arg3;
 - (Class)repClass;
-- (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
+- (id)textureDeliveryStylesLocalized:(bool)arg1 animationFilter:(id)arg2;
 
 @end

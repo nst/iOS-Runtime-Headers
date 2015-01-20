@@ -34,26 +34,26 @@
 @property(retain) UIImage * renderedActivityImage;
 @property(retain) UIImage * renderedActivitySettingsImage;
 
-+ (id)_applicationExtensionActivitiesForItems:(id)arg1 sourceIsManaged:(BOOL)arg2;
++ (id)_applicationExtensionActivitiesForItems:(id)arg1 sourceIsManaged:(bool)arg2;
 + (id)_applicationExtensionActivitiesForItems:(id)arg1;
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (id)_activityImage;
 - (id)_activitySettingsImage;
-- (BOOL)_canBeExcludedByActivityViewController:(id)arg1;
+- (bool)_canBeExcludedByActivityViewController:(id)arg1;
 - (void)_cleanup;
-- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (id)_injectedExtensionItem;
 - (void)_injectedJavaScriptResult:(id)arg1;
 - (void)_instantiateExtensionViewControllerWithInputItems:(id)arg1;
-- (BOOL)_isServiceExtension;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (bool)_isServiceExtension;
+- (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (void)_presentExtensionViewControllerIfPossible;
 - (id)activityBundleHelper;
 - (id)activityTitle;
 - (id)activityType;
 - (id)applicationExtension;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)extensionContextIdentifier;

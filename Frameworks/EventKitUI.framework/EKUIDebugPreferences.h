@@ -8,16 +8,16 @@
     CalPreferences *_preferences;
 }
 
-@property BOOL showInviteesAndMoreRegion;
-@property BOOL verifyIntegrityOfAvailabilityTimeSearchTimelines;
+@property bool showInviteesAndMoreRegion;
+@property bool verifyIntegrityOfAvailabilityTimeSearchTimelines;
 
 + (id)shared;
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)setShowInviteesAndMoreRegion:(BOOL)arg1;
-- (void)setVerifyIntegrityOfAvailabilityTimeSearchTimelines:(BOOL)arg1;
-- (BOOL)showInviteesAndMoreRegion;
-- (BOOL)verifyIntegrityOfAvailabilityTimeSearchTimelines;
+- (void)setShowInviteesAndMoreRegion:(bool)arg1;
+- (void)setVerifyIntegrityOfAvailabilityTimeSearchTimelines:(bool)arg1;
+- (bool)showInviteesAndMoreRegion;
+- (bool)verifyIntegrityOfAvailabilityTimeSearchTimelines;
 
 @end

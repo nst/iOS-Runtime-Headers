@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)actionEffectStyle;
@@ -18,16 +18,16 @@
 + (id)animationName;
 + (id)applyActionEffect:(id)arg1 toAttributes:(id)arg2;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
-+ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (unsigned long long)directionType;
++ (void)downgradeAttributes:(id*)arg1 animationName:(id*)arg2 warning:(id*)arg3 type:(int)arg4 isToClassic:(bool)arg5 version:(unsigned long long)arg6;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
 + (id)localizedMenuString:(int)arg1;
 + (id)obsoleteAnimationNames;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
-+ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(BOOL)arg5 version:(unsigned long long)arg6;
++ (void)upgradeAttributes:(id*)arg1 animationName:(id)arg2 warning:(id*)arg3 type:(int)arg4 isFromClassic:(bool)arg5 version:(unsigned long long)arg6;
 
 - (id)animationsForTextureSet:(id)arg1 finalTextureSet:(id)arg2 duration:(double)arg3 attributes:(id)arg4 previousAttributes:(id)arg5;
-- (void)p_addAnimationForLayer:(id)arg1 toLayer:(id)arg2 duration:(double)arg3 scale:(float)arg4 acceleration:(id)arg5 toAnimationDictionary:(id)arg6;
+- (void)p_addAnimationForLayer:(id)arg1 toLayer:(id)arg2 duration:(double)arg3 scale:(double)arg4 acceleration:(id)arg5 toAnimationDictionary:(id)arg6;
 
 @end

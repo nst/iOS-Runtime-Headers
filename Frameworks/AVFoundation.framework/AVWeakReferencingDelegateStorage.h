@@ -14,7 +14,7 @@
 @property(readonly) id delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (void)initialize;

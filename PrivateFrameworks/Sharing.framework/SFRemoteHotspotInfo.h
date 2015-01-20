@@ -14,7 +14,7 @@
 @property(copy) NSString * name;
 @property(copy) NSString * password;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)channel;
 - (void)dealloc;

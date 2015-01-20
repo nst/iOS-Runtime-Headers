@@ -8,7 +8,7 @@
 + (id)sharedService;
 
 - (id)_badArgumentError;
-- (BOOL)canOpenApplication:(id)arg1 reason:(int*)arg2;
+- (bool)canOpenApplication:(id)arg1 reason:(long long*)arg2;
 - (void)cleanupClientPort:(unsigned int)arg1;
 - (id)clientCallbackQueue;
 - (unsigned int)createClientPort;
@@ -25,7 +25,7 @@
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;
 - (void)shutdown;
 - (id)systemApplicationBundleIdentifier;
-- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4;
-- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4;
+- (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4;
+- (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4;
 
 @end

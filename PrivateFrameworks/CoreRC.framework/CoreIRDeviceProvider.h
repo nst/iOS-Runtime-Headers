@@ -5,10 +5,10 @@
 @interface CoreIRDeviceProvider : CoreIRDevice {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (Class)classForCoder;
 - (id)interface;
-- (BOOL)sendHIDEvent:(id)arg1 target:(id)arg2 error:(id*)arg3;
+- (bool)sendHIDEvent:(id)arg1 target:(id)arg2 error:(id*)arg3;
 
 @end

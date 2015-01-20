@@ -8,9 +8,9 @@
     PHCollectionChangeRequestHelper *_assetsHelper;
     NSString *_clientName;
     int _clientProcessID;
-    BOOL _entitled;
     PHChangeRequestHelper *_helper;
     PHAssetCollection *_originalAssetCollection;
+    bool_entitled;
 }
 
 @property(readonly) PHCollectionChangeRequestHelper * assetsHelper;
@@ -18,12 +18,12 @@
 @property(readonly) int clientProcessID;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isEntitled,readonly) BOOL entitled;
-@property(readonly) unsigned int hash;
+@property(getter=isEntitled,readonly) bool entitled;
+@property(readonly) unsigned long long hash;
 @property(readonly) PHChangeRequestHelper * helper;
 @property(readonly) NSString * managedEntityName;
-@property(getter=isMutated,readonly) BOOL mutated;
-@property(getter=isNew,readonly) BOOL new;
+@property(getter=isMutated,readonly) bool mutated;
+@property(getter=isNew,readonly) bool new;
 @property(readonly) NSManagedObjectID * objectID;
 @property(retain) PHAssetCollection * originalAssetCollection;
 @property(readonly) PHObjectPlaceholder * placeholderForCreatedAssetCollection;
@@ -43,10 +43,10 @@
 - (void)_setOriginalAssetCollection:(id)arg1;
 - (void)addAsset:(id)arg1;
 - (void)addAssets:(id)arg1;
-- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
-- (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (id)assetsHelper;
-- (BOOL)canGenerateUUIDLocally;
+- (bool)canGenerateUUIDLocally;
 - (id)clientName;
 - (int)clientProcessID;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
@@ -56,29 +56,29 @@
 - (id)helper;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 entitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
-- (void)insertAsset:(id)arg1 inAssetsAtIndex:(unsigned int)arg2;
+- (id)initWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (void)insertAsset:(id)arg1 inAssetsAtIndex:(unsigned long long)arg2;
 - (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
-- (BOOL)isEntitled;
-- (BOOL)isMutated;
-- (BOOL)isNew;
+- (bool)isEntitled;
+- (bool)isMutated;
+- (bool)isNew;
 - (id)managedEntityName;
-- (void)moveAssetsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
+- (void)moveAssetsAtIndexes:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)mutations;
 - (id)objectID;
 - (id)originalAssetCollection;
 - (id)placeholderForCreatedAssetCollection;
 - (void)removeAsset:(id)arg1;
-- (void)removeAssetFromAssetsAtIndex:(unsigned int)arg1;
+- (void)removeAssetFromAssetsAtIndex:(unsigned long long)arg1;
 - (void)removeAssets:(id)arg1;
 - (void)removeAssetsAtIndexes:(id)arg1;
-- (void)replaceAssetInAssetsAtIndex:(unsigned int)arg1 withAsset:(id)arg2;
+- (void)replaceAssetInAssetsAtIndex:(unsigned long long)arg1 withAsset:(id)arg2;
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
 - (void)setOriginalAssetCollection:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)uuid;
-- (BOOL)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
-- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 
 @end

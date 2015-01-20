@@ -12,37 +12,37 @@
 @interface TSWPTab : NSObject <NSCopying> {
     int _alignment;
     NSString *_leader;
-    float _position;
+    double _position;
 }
 
 @property int alignment;
 @property(copy) NSString * leader;
-@property float position;
+@property double position;
 
 + (id)displayStringFromTabLeader:(id)arg1;
-+ (id)stringFromTabAlignment:(int)arg1 isRTL:(BOOL)arg2;
++ (id)stringFromTabAlignment:(int)arg1 isRTL:(bool)arg2;
 + (id)tab;
-+ (int)tabAlignmentFromString:(id)arg1 isRTL:(BOOL)arg2;
++ (int)tabAlignmentFromString:(id)arg1 isRTL:(bool)arg2;
 + (id)tabLeaderFromDisplayString:(id)arg1;
 
 - (int)alignment;
-- (int)compare:(id)arg1;
-- (int)compareToPosition:(float)arg1;
+- (long long)compare:(id)arg1;
+- (long long)compareToPosition:(double)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithArchive:(const struct TabArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithPosition:(float)arg1 alignment:(int)arg2 leader:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPosition:(float)arg1;
+- (id)initWithPosition:(double)arg1 alignment:(int)arg2 leader:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPosition:(double)arg1;
 - (id)leader;
-- (float)position;
-- (float)positionInInches;
+- (double)position;
+- (double)positionInInches;
 - (void)saveToArchive:(struct TabArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; float x3; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)setAlignment:(int)arg1;
 - (void)setLeader:(id)arg1;
-- (void)setPosition:(float)arg1;
-- (void)setPositionInInches:(float)arg1;
+- (void)setPosition:(double)arg1;
+- (void)setPositionInInches:(double)arg1;
 
 @end

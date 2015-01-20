@@ -10,6 +10,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)notifyPassUsed:(id)arg1 fromSource:(int)arg2;
+- (void)notifyPassUsed:(id)arg1 fromSource:(long long)arg2;
 
 @end

@@ -10,34 +10,34 @@
 
 @property <GKVoiceChatClient> * client;
 @property(readonly) float inputMeterLevel;
-@property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
-@property(getter=isMicrophoneMuted) BOOL microphoneMuted;
+@property(getter=isInputMeteringEnabled) bool inputMeteringEnabled;
+@property(getter=isMicrophoneMuted) bool microphoneMuted;
 @property(readonly) float outputMeterLevel;
-@property(getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled;
+@property(getter=isOutputMeteringEnabled) bool outputMeteringEnabled;
 @property float remoteParticipantVolume;
 
 + (id)defaultVoiceChatService;
 + (void)initialize;
-+ (BOOL)isVoIPAllowed;
++ (bool)isVoIPAllowed;
 
-- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
+- (bool)acceptCallID:(long long)arg1 error:(id*)arg2;
 - (id)client;
 - (void)dealloc;
-- (void)denyCallID:(int)arg1;
+- (void)denyCallID:(long long)arg1;
 - (float)inputMeterLevel;
-- (BOOL)isInputMeteringEnabled;
-- (BOOL)isMicrophoneMuted;
-- (BOOL)isOutputMeteringEnabled;
+- (bool)isInputMeteringEnabled;
+- (bool)isMicrophoneMuted;
+- (bool)isOutputMeteringEnabled;
 - (float)outputMeterLevel;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (float)remoteParticipantVolume;
 - (void)setClient:(id)arg1;
-- (void)setInputMeteringEnabled:(BOOL)arg1;
-- (void)setMicrophoneMuted:(BOOL)arg1;
-- (void)setOutputMeteringEnabled:(BOOL)arg1;
+- (void)setInputMeteringEnabled:(bool)arg1;
+- (void)setMicrophoneMuted:(bool)arg1;
+- (void)setOutputMeteringEnabled:(bool)arg1;
 - (void)setRemoteParticipantVolume:(float)arg1;
-- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
+- (bool)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (void)stopVoiceChatWithParticipantID:(id)arg1;
 
 @end

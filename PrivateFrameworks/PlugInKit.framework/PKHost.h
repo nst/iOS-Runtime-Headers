@@ -25,17 +25,17 @@
 - (id)activePlugIns;
 - (void)cancelPlugInDiscovery:(id)arg1;
 - (id)client;
-- (id)continuouslyDiscoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id)arg3;
+- (id)continuouslyDiscoverPlugInsForAttributes:(id)arg1 flags:(unsigned long long)arg2 found:(id)arg3;
 - (void)deactivatePlugIn:(id)arg1;
-- (void)discoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id)arg3;
+- (void)discoverPlugInsForAttributes:(id)arg1 flags:(unsigned long long)arg2 found:(id)arg3;
 - (id)hostInfoPlist;
 - (id)hostQueue;
 - (id)init;
 - (void)readyPlugIns:(id)arg1 ready:(id)arg2;
-- (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned int)arg2;
+- (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned long long)arg2;
 - (void)setActivePlugIns:(id)arg1;
 - (void)setClient:(id)arg1;
-- (void)setElection:(int)arg1 forPlugIn:(id)arg2;
+- (void)setElection:(long long)arg1 forPlugIn:(id)arg2;
 - (void)setExtensionState:(id)arg1 forPlugIn:(id)arg2;
 - (void)setHostQueue:(id)arg1;
 

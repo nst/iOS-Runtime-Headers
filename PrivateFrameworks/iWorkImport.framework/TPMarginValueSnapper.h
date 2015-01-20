@@ -6,12 +6,12 @@
 
 @interface TPMarginValueSnapper : NSObject {
     TSKRulerUnits *_rulerUnits;
-    float _screenScale;
-    float _visiblePageWidth;
+    double _screenScale;
+    double _visiblePageWidth;
 }
 
 - (void)dealloc;
-- (id)initWithRulerUnits:(id)arg1 visiblePageSize:(struct CGSize { float x1; float x2; })arg2 screenScale:(float)arg3;
-- (float)snapMarginValue:(float)arg1;
+- (id)initWithRulerUnits:(id)arg1 visiblePageSize:(struct CGSize { double x1; double x2; })arg2 screenScale:(double)arg3;
+- (double)snapMarginValue:(double)arg1;
 
 @end

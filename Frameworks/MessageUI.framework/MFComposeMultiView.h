@@ -5,32 +5,32 @@
 @class MFHeaderLabelView, UILabel;
 
 @interface MFComposeMultiView : MFComposeHeaderView {
-    BOOL _accountAutoselected;
-    BOOL _accountHasUnsafeDomain;
     UILabel *_accountLabel;
     MFHeaderLabelView *_imageSizeHeaderLabelView;
     UILabel *_imageSizeLabel;
-    BOOL _imageSizeShown;
     UILabel *_placeholderImageSizeLabel;
+    bool_accountAutoselected;
+    bool_accountHasUnsafeDomain;
+    bool_imageSizeShown;
 }
 
-@property(getter=isAccountAutoselected) BOOL accountAutoselected;
-@property BOOL accountHasUnsafeDomain;
+@property(getter=isAccountAutoselected) bool accountAutoselected;
+@property bool accountHasUnsafeDomain;
 
-- (BOOL)accountHasUnsafeDomain;
+- (bool)accountHasUnsafeDomain;
 - (id)accountLabel;
 - (void)dealloc;
 - (id)imageSizeHeaderLabelView;
 - (id)imageSizeLabel;
-- (BOOL)isAccountAutoselected;
+- (bool)isAccountAutoselected;
 - (id)labelColor;
 - (void)layoutSubviews;
 - (id)placeholderImageSizeLabel;
 - (void)refreshPreferredContentSize;
-- (void)setAccountAutoselected:(BOOL)arg1;
+- (void)setAccountAutoselected:(bool)arg1;
 - (void)setAccountDescription:(id)arg1;
-- (void)setAccountHasUnsafeDomain:(BOOL)arg1;
+- (void)setAccountHasUnsafeDomain:(bool)arg1;
 - (void)setImageSizeDescription:(id)arg1;
-- (void)setShowsImageSize:(BOOL)arg1;
+- (void)setShowsImageSize:(bool)arg1;
 
 @end

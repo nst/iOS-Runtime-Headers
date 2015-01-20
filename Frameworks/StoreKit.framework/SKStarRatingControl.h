@@ -6,48 +6,48 @@
 
 @interface SKStarRatingControl : UIControl {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     UIImageView *_backgroundImageView;
     UILabel *_explanationLabel;
     UIImageView *_foregroundImageView;
     } _hitPadding;
-    float _starWidth;
+    double _starWidth;
     } _trackingLastPoint;
     } _trackingStartPoint;
     float _value;
 }
 
 @property(copy) NSString * explanationText;
-@property float starWidth;
+@property double starWidth;
 @property float value;
 
-- (BOOL)_alwaysHandleScrollerMouseEvent;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_foregroundImageClipBounds;
+- (bool)_alwaysHandleScrollerMouseEvent;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_foregroundImageClipBounds;
 - (id)_newExplanationLabel;
-- (void)_updateValueForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)canHandleSwipes;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_updateValueForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)canHandleSwipes;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)explanationText;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
 - (id)initWithBackgroundImage:(id)arg1 foregroundImage:(id)arg2;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setExplanationText:(id)arg1;
-- (void)setHitPadding:(struct CGSize { float x1; float x2; })arg1;
-- (void)setStarWidth:(float)arg1;
+- (void)setHitPadding:(struct CGSize { double x1; double x2; })arg1;
+- (void)setStarWidth:(double)arg1;
 - (void)setValue:(float)arg1;
 - (void)sizeToFit;
-- (float)starWidth;
+- (double)starWidth;
 - (float)value;
 
 @end

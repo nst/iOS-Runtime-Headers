@@ -16,21 +16,21 @@
 @property(retain) NSArray * keyboardConstraits;
 @property(retain) UIResponder<UITextInput> * persistentDelegate;
 
-+ (BOOL)_requiresProxyInterface;
++ (bool)_requiresProxyInterface;
 
-- (BOOL)_disableAutomaticKeyboardBehavior;
+- (bool)_disableAutomaticKeyboardBehavior;
 - (id)_keyboard;
-- (id)accessoryViewForEdge:(int)arg1;
-- (id)constraintFromView:(id)arg1 attribute:(int)arg2 toView:(id)arg3 attribute:(int)arg4;
-- (id)constraitsForEdge:(int)arg1;
+- (id)accessoryViewForEdge:(long long)arg1;
+- (id)constraintFromView:(id)arg1 attribute:(long long)arg2 toView:(id)arg3 attribute:(long long)arg4;
+- (id)constraitsForEdge:(long long)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)keyboard;
 - (id)keyboardConstraits;
 - (void)loadView;
 - (id)persistentDelegate;
-- (void)setAccessoryView:(id)arg1 forEdge:(int)arg2;
-- (void)setConstraits:(id)arg1 forEdge:(int)arg2;
+- (void)setAccessoryView:(id)arg1 forEdge:(long long)arg2;
+- (void)setConstraits:(id)arg1 forEdge:(long long)arg2;
 - (void)setKeyboard:(id)arg1;
 - (void)setKeyboardConstraits:(id)arg1;
 - (void)setPersistentDelegate:(id)arg1;

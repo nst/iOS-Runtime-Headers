@@ -5,15 +5,15 @@
 @class NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface CPLBackgroundUploadsTask : CPLEngineSyncTask {
-    unsigned int _failedUploadedResourcesCount;
-    BOOL _hasBadErrors;
-    BOOL _hasResetQueue;
+    unsigned long long _failedUploadedResourcesCount;
     NSObject<OS_dispatch_queue> *_lock;
-    BOOL _shouldStop;
     double _start;
-    unsigned int _successfullyUploadedResourcesCount;
-    unsigned int _total;
+    unsigned long long _successfullyUploadedResourcesCount;
+    unsigned long long _total;
     NSMutableArray *_uploadTasks;
+    bool_hasBadErrors;
+    bool_hasResetQueue;
+    bool_shouldStop;
 }
 
 - (void).cxx_destruct;

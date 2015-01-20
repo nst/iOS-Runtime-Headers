@@ -6,36 +6,36 @@
 
 @interface MPRestrictionsMonitor : NSObject <MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _allowsAccountModification;
-    BOOL _allowsDeletion;
-    BOOL _allowsExplicitContent;
-    BOOL _allowsRadioPurchases;
-    BOOL _allowsStorePurchases;
     NSMutableDictionary *_cachedSettings;
     MCProfileConnection *_connection;
+    bool_allowsAccountModification;
+    bool_allowsDeletion;
+    bool_allowsExplicitContent;
+    bool_allowsRadioPurchases;
+    bool_allowsStorePurchases;
 }
 
-@property(readonly) BOOL allowsAccountModification;
-@property(readonly) BOOL allowsDeletion;
-@property(readonly) BOOL allowsExplicitContent;
-@property(readonly) BOOL allowsRadioPurchases;
-@property(readonly) BOOL allowsStorePurchases;
+@property(readonly) bool allowsAccountModification;
+@property(readonly) bool allowsDeletion;
+@property(readonly) bool allowsExplicitContent;
+@property(readonly) bool allowsRadioPurchases;
+@property(readonly) bool allowsStorePurchases;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)sharedRestrictionsMonitor;
 
 - (void).cxx_destruct;
 - (void)_cacheValue:(id)arg1 forSetting:(id)arg2;
-- (BOOL)_isRunningInStoreDemoMode;
-- (void)_updateWithCanPostNotifications:(BOOL)arg1;
-- (BOOL)allowsAccountModification;
-- (BOOL)allowsDeletion;
-- (BOOL)allowsExplicitContent;
-- (BOOL)allowsRadioPurchases;
-- (BOOL)allowsStorePurchases;
+- (bool)_isRunningInStoreDemoMode;
+- (void)_updateWithCanPostNotifications:(bool)arg1;
+- (bool)allowsAccountModification;
+- (bool)allowsDeletion;
+- (bool)allowsExplicitContent;
+- (bool)allowsRadioPurchases;
+- (bool)allowsStorePurchases;
 - (void)dealloc;
 - (id)effectiveValueForSetting:(id)arg1;
 - (id)init;

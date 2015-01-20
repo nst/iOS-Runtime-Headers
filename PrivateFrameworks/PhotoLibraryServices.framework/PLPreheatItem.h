@@ -4,38 +4,38 @@
 
 @interface PLPreheatItem : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     int _bestFormat;
     int _format;
-    BOOL _heated;
-    int _imageType;
+    long long _imageType;
     } _optimalSourcePixelSize;
     int _prefetchCount;
+    bool_heated;
 }
 
 @property int bestFormat;
 @property(readonly) int format;
-@property BOOL heated;
-@property(readonly) int imageType;
-@property(readonly) struct CGSize { float x1; float x2; } optimalSourcePixelSize;
+@property bool heated;
+@property(readonly) long long imageType;
+@property(readonly) struct CGSize { double x1; double x2; } optimalSourcePixelSize;
 
-- (BOOL)addImageHandler:(id)arg1;
+- (bool)addImageHandler:(id)arg1;
 - (int)bestFormat;
-- (id)cachedImage:(BOOL*)arg1;
-- (id)cachedImageIfAvailable:(BOOL*)arg1;
+- (id)cachedImage:(bool*)arg1;
+- (id)cachedImageIfAvailable:(bool*)arg1;
 - (void)cancelPreheatRequest;
-- (int)decrementPrefetchCount;
+- (long long)decrementPrefetchCount;
 - (int)format;
-- (BOOL)hasPrefetchCount;
-- (BOOL)heated;
-- (int)imageType;
-- (int)incrementPrefetchCount;
-- (BOOL)isCancelled;
-- (struct CGSize { float x1; float x2; })optimalSourcePixelSize;
+- (bool)hasPrefetchCount;
+- (bool)heated;
+- (long long)imageType;
+- (long long)incrementPrefetchCount;
+- (bool)isCancelled;
+- (struct CGSize { double x1; double x2; })optimalSourcePixelSize;
 - (void)resetPrefetchCount;
 - (void)setBestFormat:(int)arg1;
-- (void)setHeated:(BOOL)arg1;
+- (void)setHeated:(bool)arg1;
 - (void)startPreheatRequestWithCompletionHandler:(id)arg1;
 
 @end

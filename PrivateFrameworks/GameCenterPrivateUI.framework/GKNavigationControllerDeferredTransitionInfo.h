@@ -5,17 +5,17 @@
 @class UIViewController;
 
 @interface GKNavigationControllerDeferredTransitionInfo : NSObject {
-    BOOL _animated;
     int _type;
     UIViewController *_viewController;
+    bool_animated;
 }
 
-@property BOOL animated;
+@property bool animated;
 @property int type;
 @property(retain) UIViewController * viewController;
 
-- (BOOL)animated;
-- (void)setAnimated:(BOOL)arg1;
+- (bool)animated;
+- (void)setAnimated:(bool)arg1;
 - (void)setType:(int)arg1;
 - (void)setViewController:(id)arg1;
 - (int)type;

@@ -13,7 +13,7 @@
     NSMutableArray *_nsOutputNotifications;
     NSMutableArray *_nsRoutingNotifications;
     PLXPCListenerOperatorComposition *_speakerAmpXPCListener;
-    BOOL _speakerIsPlayingAudio;
+    bool_speakerIsPlayingAudio;
 }
 
 @property(retain) PLXPCListenerOperatorComposition * audioAppXPCListener;
@@ -24,7 +24,7 @@
 @property(readonly) NSMutableArray * nsOutputNotifications;
 @property(readonly) NSMutableArray * nsRoutingNotifications;
 @property(retain) PLXPCListenerOperatorComposition * speakerAmpXPCListener;
-@property BOOL speakerIsPlayingAudio;
+@property bool speakerIsPlayingAudio;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventBackwardDefinitions;
@@ -39,7 +39,7 @@
 + (id)railDefinitions;
 
 - (void).cxx_destruct;
-- (BOOL)active;
+- (bool)active;
 - (id)activeRoute;
 - (id)audioAppXPCListener;
 - (id)audioHardware;
@@ -50,8 +50,8 @@
 - (void)createBluetoothAccountingEvents:(id)arg1;
 - (id)entryRoutingOld;
 - (id)entrySpeakerPowerOld;
-- (BOOL)headphonesConnected;
-- (BOOL)headsetHasInput;
+- (bool)headphonesConnected;
+- (bool)headsetHasInput;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
@@ -62,7 +62,7 @@
 - (void)modelAudioPower;
 - (double)modelAudioPowerForK94:(double)arg1;
 - (void)modelAudioPowerSpeaker:(id)arg1;
-- (BOOL)muted;
+- (bool)muted;
 - (int)nowPlayingAppPID;
 - (id)nsOutputNotifications;
 - (id)nsRoutingNotifications;
@@ -72,10 +72,10 @@
 - (void)setEntryRoutingOld:(id)arg1;
 - (void)setEntrySpeakerPowerOld:(id)arg1;
 - (void)setSpeakerAmpXPCListener:(id)arg1;
-- (void)setSpeakerIsPlayingAudio:(BOOL)arg1;
+- (void)setSpeakerIsPlayingAudio:(bool)arg1;
 - (void)setupAVSystemController;
 - (id)speakerAmpXPCListener;
-- (BOOL)speakerIsPlayingAudio;
+- (bool)speakerIsPlayingAudio;
 - (id)volume;
 
 @end

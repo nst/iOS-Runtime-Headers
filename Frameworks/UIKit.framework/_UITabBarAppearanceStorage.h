@@ -22,8 +22,8 @@
 @property(retain) UIImage * shadowImage;
 @property(retain) _UITabBarItemAppearanceStorage * tabItemAppearanceStorage;
 
-- (id)_dividerImageForLeftButtonState:(unsigned int)arg1 rightButtonState:(unsigned int)arg2;
-- (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned int)arg2 rightButtonState:(unsigned int)arg3;
+- (id)_dividerImageForLeftButtonState:(unsigned long long)arg1 rightButtonState:(unsigned long long)arg2;
+- (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned long long)arg2 rightButtonState:(unsigned long long)arg3;
 - (id)_tabItemAppearanceStorage;
 - (id)backgroundImage;
 - (id)barTintColor;

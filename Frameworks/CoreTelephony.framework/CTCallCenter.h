@@ -18,17 +18,17 @@
 @property(retain) NSSet * currentCalls;
 
 - (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;
-- (BOOL)calculateCallStateChanges:(id)arg1;
+- (bool)calculateCallStateChanges:(id)arg1;
 - (id)callEventHandler;
 - (void)cleanUpServerConnection;
 - (id)currentCalls;
 - (void)dealloc;
 - (id)description;
-- (BOOL)getCurrentCallSetFromServer:(id)arg1;
+- (bool)getCurrentCallSetFromServer:(id)arg1;
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (id)init;
 - (void)setCallEventHandler:(id)arg1;
 - (void)setCurrentCalls:(id)arg1;
-- (BOOL)setUpServerConnection;
+- (bool)setUpServerConnection;
 
 @end

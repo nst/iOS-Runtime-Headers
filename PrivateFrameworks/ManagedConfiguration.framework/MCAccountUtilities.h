@@ -6,6 +6,6 @@
 }
 
 + (id)accountDataclassesForBundleID:(id)arg1;
-+ (BOOL)hasManagedAccountOfDataclasses:(id)arg1;
++ (bool)hasManagedAccountOfDataclasses:(id)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface UIAccessibilityMathWebView : UIWebView {
 }
 
-- (BOOL)_accessibilityIsMathTouchExplorationView;
+- (bool)_accessibilityIsMathTouchExplorationView;
 
 @end

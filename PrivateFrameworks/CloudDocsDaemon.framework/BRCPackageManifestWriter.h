@@ -14,9 +14,9 @@
 
 - (void).cxx_destruct;
 - (void)_handleStreamError;
-- (BOOL)addItem:(id)arg1;
-- (BOOL)addLocalItem:(id)arg1;
-- (BOOL)done;
+- (bool)addItem:(id)arg1;
+- (bool)addLocalItem:(id)arg1;
+- (bool)done;
 - (id)error;
 - (id)initWithPath:(id)arg1;
 

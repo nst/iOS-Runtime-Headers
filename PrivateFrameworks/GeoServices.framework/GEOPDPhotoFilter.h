@@ -4,12 +4,12 @@
 
 @interface GEOPDPhotoFilter : PBCodable <NSCopying> {
     struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_photoSizeFilters;
-    unsigned int _photoSizeFiltersCount;
-    unsigned int _photoSizeFiltersSpace;
+    unsigned long long _photoSizeFiltersCount;
+    unsigned long long _photoSizeFiltersSpace;
 }
 
 @property(readonly) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* photoSizeFilters;
-@property(readonly) unsigned int photoSizeFiltersCount;
+@property(readonly) unsigned long long photoSizeFiltersCount;
 
 - (void)addPhotoSizeFilter:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)clearPhotoSizeFilters;
@@ -18,14 +18,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })photoSizeFilterAtIndex:(unsigned int)arg1;
+- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })photoSizeFilterAtIndex:(unsigned long long)arg1;
 - (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)photoSizeFilters;
-- (unsigned int)photoSizeFiltersCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setPhotoSizeFilters:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
+- (unsigned long long)photoSizeFiltersCount;
+- (bool)readFrom:(id)arg1;
+- (void)setPhotoSizeFilters:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned long long)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

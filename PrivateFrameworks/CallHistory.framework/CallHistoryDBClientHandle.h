@@ -14,20 +14,20 @@
 
 - (void).cxx_destruct;
 - (id)convertToCHRecentCalls_sync:(id)arg1;
-- (BOOL)createCallRecord:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
-- (BOOL)createCallRecord:(id)arg1 error:(id*)arg2;
-- (BOOL)createCallRecord:(id)arg1;
-- (BOOL)createCallRecords:(id)arg1 error:(id*)arg2;
-- (BOOL)createCallRecords:(id)arg1;
+- (bool)createCallRecord:(id)arg1 error:(id*)arg2 save:(bool)arg3;
+- (bool)createCallRecord:(id)arg1 error:(id*)arg2;
+- (bool)createCallRecord:(id)arg1;
+- (bool)createCallRecords:(id)arg1 error:(id*)arg2;
+- (bool)createCallRecords:(id)arg1;
 - (id)dbStoreHandle;
 - (void)dealloc;
-- (BOOL)deleteAll:(id*)arg1;
-- (BOOL)deleteAll;
-- (BOOL)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
-- (BOOL)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2;
-- (BOOL)deleteObjectWithUniqueId:(id)arg1;
-- (BOOL)deleteObjectsWithUniqueIds:(id)arg1 error:(id*)arg2;
-- (BOOL)deleteObjectsWithUniqueIds:(id)arg1;
+- (bool)deleteAll:(id*)arg1;
+- (bool)deleteAll;
+- (bool)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2 save:(bool)arg3;
+- (bool)deleteObjectWithUniqueId:(id)arg1 error:(id*)arg2;
+- (bool)deleteObjectWithUniqueId:(id)arg1;
+- (bool)deleteObjectsWithUniqueIds:(id)arg1 error:(id*)arg2;
+- (bool)deleteObjectsWithUniqueIds:(id)arg1;
 - (id)fetchAll;
 - (id)fetchAllNoLimit;
 - (id)fetchObjectWithUniqueId:(id)arg1;
@@ -38,10 +38,10 @@
 - (void)handleCallRecordSave_sync:(id)arg1;
 - (void)handleCallTimersSave_sync:(id)arg1;
 - (id)init;
-- (void)parseCallStatus_sync:(unsigned int)arg1 isAnswered:(BOOL*)arg2 isOriginated:(BOOL*)arg3;
+- (void)parseCallStatus_sync:(unsigned int)arg1 isAnswered:(bool*)arg2 isOriginated:(bool*)arg3;
 - (void)registerForNotifications;
 - (void)resetTimers;
-- (BOOL)saveDatabase:(id*)arg1;
+- (bool)saveDatabase:(id*)arg1;
 - (void)setClientObject_sync:(id)arg1 withStoreObject:(id)arg2;
 - (void)setStoreObject_sync:(id)arg1 withClientObject:(id)arg2;
 - (id)timerIncoming;
@@ -52,11 +52,11 @@
 - (id)updateAllCallRecords:(id)arg1 error:(id*)arg2;
 - (id)updateAllCallRecords:(id)arg1;
 - (id)updateAllCallRecords_sync:(id)arg1 error:(id*)arg2;
-- (BOOL)updateCallRecord_sync:(id)arg1 withChangeDict:(id)arg2;
-- (id)updateCallRecords:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
+- (bool)updateCallRecord_sync:(id)arg1 withChangeDict:(id)arg2;
+- (id)updateCallRecords:(id)arg1 error:(id*)arg2 save:(bool)arg3;
 - (id)updateCallRecords:(id)arg1 error:(id*)arg2;
 - (id)updateCallRecords:(id)arg1;
-- (id)updateCallRecords_sync:(id)arg1 error:(id*)arg2 save:(BOOL)arg3;
-- (BOOL)willHandleNotification_sync:(id)arg1;
+- (id)updateCallRecords_sync:(id)arg1 error:(id*)arg2 save:(bool)arg3;
+- (bool)willHandleNotification_sync:(id)arg1;
 
 @end

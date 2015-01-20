@@ -3,15 +3,15 @@
  */
 
 @interface SPFeedbackAbandonment : SPFeedback {
-    unsigned int _reason;
+    unsigned long long _reason;
 }
 
-@property unsigned int reason;
+@property unsigned long long reason;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)parsecFeedbackFromSession:(id)arg1;
-- (unsigned int)reason;
-- (void)setReason:(unsigned int)arg1;
+- (unsigned long long)reason;
+- (void)setReason:(unsigned long long)arg1;
 
 @end

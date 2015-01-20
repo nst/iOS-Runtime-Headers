@@ -7,14 +7,14 @@
 @interface SKUIPassbookLoader : NSObject <PKAddPassesViewControllerDelegate> {
     SKUIClientContext *_clientContext;
     <SKUIPassbookLoaderDelegate> *_delegate;
-    int _loadCount;
+    long long _loadCount;
     NSOperationQueue *_operationQueue;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIPassbookLoaderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSOperationQueue * operationQueue;
 @property(readonly) Class superclass;
 

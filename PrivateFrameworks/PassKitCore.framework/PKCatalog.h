@@ -13,7 +13,7 @@
 @property(retain) NSDate * timestamp;
 
 + (id)catalogWithContentsOfURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)allGroupIDs;
 - (void)dealloc;
@@ -22,12 +22,12 @@
 - (id)groups;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEquivalentToCatalog:(id)arg1;
-- (BOOL)isNewerThanCatalog:(id)arg1;
+- (bool)isEquivalentToCatalog:(id)arg1;
+- (bool)isNewerThanCatalog:(id)arg1;
 - (void)setGroups:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)shuffle:(int)arg1;
 - (id)timestamp;
-- (void)writeToURL:(id)arg1 atomically:(BOOL)arg2;
+- (void)writeToURL:(id)arg1 atomically:(bool)arg2;
 
 @end

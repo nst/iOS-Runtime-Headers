@@ -5,21 +5,21 @@
 @class AnalyticsWorkspace, NSString;
 
 @interface ObjectAnalytics : NSObject {
+    boolmanagedCache;
     NSString *entityName;
-    BOOL managedCache;
     AnalyticsWorkspace *wspace;
 }
 
 - (void).cxx_destruct;
 - (id)_fetch:(id)arg1 sortDesc:(id)arg2;
-- (id)_firstLastHappened:(BOOL)arg1;
+- (id)_firstLastHappened:(bool)arg1;
 - (id)createEntity;
 - (id)createEntityForEntityName:(id)arg1;
 - (id)createTemporaryEntityForEntityName:(id)arg1;
 - (id)fetchEntitiesFreeForm:(id)arg1 sortDesc:(id)arg2;
 - (id)firstHappened;
 - (id)getDescriptionForName:(id)arg1;
-- (id)initWithWorkspace:(id)arg1 entityName:(id)arg2 withCache:(BOOL)arg3;
+- (id)initWithWorkspace:(id)arg1 entityName:(id)arg2 withCache:(bool)arg3;
 - (id)lastHappened;
 - (void)refresh:(id)arg1;
 - (void)removeEntities:(id)arg1;

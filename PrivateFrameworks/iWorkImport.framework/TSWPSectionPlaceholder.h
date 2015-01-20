@@ -15,7 +15,7 @@
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)parentStorage;
 - (void)saveToArchiver:(id)arg1;
 - (void)setParentStorage:(id)arg1;

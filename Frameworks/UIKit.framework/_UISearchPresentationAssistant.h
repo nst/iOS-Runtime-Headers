@@ -7,20 +7,20 @@
 @interface _UISearchPresentationAssistant : NSObject <UIDimmingViewDelegate> {
     UIPresentationController<_UISearchControllerPresenting> *_adaptivePresentationController;
     UIDimmingView *_dimmingView;
-    BOOL _isFormSheetPresentation;
-    BOOL _presentationWasAnimated;
     UIView *_searchBarContainerView;
     UIPresentationController *_searchPresentationController;
     <UIViewControllerTransitionCoordinator> *_transitioningToSizeCoordinator;
+    bool_isFormSheetPresentation;
+    bool_presentationWasAnimated;
 }
 
 @property UIPresentationController<_UISearchControllerPresenting> * adaptivePresentationController;
-@property BOOL presentationWasAnimated;
+@property bool presentationWasAnimated;
 @property(retain) <UIViewControllerTransitionCoordinator> * transitioningToSizeCoordinator;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_containerFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_containerFrame;
 - (id)_searchBarContainerSuperview;
-- (BOOL)_statusBarPreferredHidden;
+- (bool)_statusBarPreferredHidden;
 - (id)adaptivePresentationController;
 - (void)dealloc;
 - (id)dimmingView;
@@ -28,20 +28,20 @@
 - (void)ensureAppropriatelySizedSearchBar:(id)arg1;
 - (id)initWithSearchPresentationController:(id)arg1;
 - (id)locateNavigationController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })optimalFrameForSearchBar:(id)arg1;
-- (BOOL)presentationIsPopoverToOverFullScreenAdaptation;
-- (BOOL)presentationWasAnimated;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })optimalFrameForSearchBar:(id)arg1;
+- (bool)presentationIsPopoverToOverFullScreenAdaptation;
+- (bool)presentationWasAnimated;
 - (void)removeContainerViewFromSuperview;
-- (float)resultsControllerContentOffset;
+- (double)resultsControllerContentOffset;
 - (id)searchBarContainerView;
-- (BOOL)searchBarToBecomeTopAttached;
-- (BOOL)searchBarWillResizeForScopeBar;
+- (bool)searchBarToBecomeTopAttached;
+- (bool)searchBarWillResizeForScopeBar;
 - (void)setAdaptivePresentationController:(id)arg1;
-- (void)setPresentationWasAnimated:(BOOL)arg1;
+- (void)setPresentationWasAnimated:(bool)arg1;
 - (void)setTransitioningToSizeCoordinator:(id)arg1;
-- (BOOL)shouldAccountForStatusBar;
-- (float)statusBarAdjustment;
+- (bool)shouldAccountForStatusBar;
+- (double)statusBarAdjustment;
 - (id)transitioningToSizeCoordinator;
-- (struct CGSize { float x1; float x2; })updateSearchBarContainerFrame;
+- (struct CGSize { double x1; double x2; })updateSearchBarContainerFrame;
 
 @end

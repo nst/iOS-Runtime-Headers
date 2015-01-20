@@ -5,27 +5,27 @@
 @class RadioStation, SSURLConnectionRequest;
 
 @interface RadioGetLikesRequest : RadioRequest {
-    unsigned int _numberOfBannedTracks;
-    unsigned int _numberOfLikedTracks;
+    unsigned long long _numberOfBannedTracks;
+    unsigned long long _numberOfLikedTracks;
     SSURLConnectionRequest *_request;
-    BOOL _shouldProcessItems;
     RadioStation *_station;
+    bool_shouldProcessItems;
 }
 
-@property unsigned int numberOfBannedTracks;
-@property unsigned int numberOfLikedTracks;
-@property BOOL shouldProcessItems;
+@property unsigned long long numberOfBannedTracks;
+@property unsigned long long numberOfLikedTracks;
+@property bool shouldProcessItems;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
 - (id)initWithStation:(id)arg1;
-- (unsigned int)numberOfBannedTracks;
-- (unsigned int)numberOfLikedTracks;
-- (void)setNumberOfBannedTracks:(unsigned int)arg1;
-- (void)setNumberOfLikedTracks:(unsigned int)arg1;
-- (void)setShouldProcessItems:(BOOL)arg1;
-- (BOOL)shouldProcessItems;
+- (unsigned long long)numberOfBannedTracks;
+- (unsigned long long)numberOfLikedTracks;
+- (void)setNumberOfBannedTracks:(unsigned long long)arg1;
+- (void)setNumberOfLikedTracks:(unsigned long long)arg1;
+- (void)setShouldProcessItems:(bool)arg1;
+- (bool)shouldProcessItems;
 - (void)startWithLikeBanCompletionHandler:(id)arg1;
 
 @end

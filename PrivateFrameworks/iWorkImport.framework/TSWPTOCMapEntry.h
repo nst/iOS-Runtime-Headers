@@ -5,17 +5,17 @@
 @class TSWPTOCEntryStyle;
 
 @interface TSWPTOCMapEntry : NSObject {
-    BOOL _showInTOC;
     TSWPTOCEntryStyle *_tocEntryStyle;
+    bool_showInTOC;
 }
 
-@property BOOL showInTOC;
+@property bool showInTOC;
 @property(retain) TSWPTOCEntryStyle * tocEntryStyle;
 
-- (id)initWithTOCEntryStyle:(id)arg1 showInTOC:(BOOL)arg2;
-- (void)setShowInTOC:(BOOL)arg1;
+- (id)initWithTOCEntryStyle:(id)arg1 showInTOC:(bool)arg2;
+- (void)setShowInTOC:(bool)arg1;
 - (void)setTocEntryStyle:(id)arg1;
-- (BOOL)showInTOC;
+- (bool)showInTOC;
 - (id)tocEntryStyle;
 
 @end

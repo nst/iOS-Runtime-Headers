@@ -3,16 +3,16 @@
  */
 
 @interface TSCH3DChartAreaGrowClipShaderEffect : TSCH3DChartClippingShaderEffect {
+    boolmIsOneSidedClipping;
+    boolmUseDiscard;
     float mCapFudge;
     float mClipFudge;
-    BOOL mIsOneSidedClipping;
-    BOOL mUseDiscard;
 }
 
 @property float capFudge;
 @property float clipFudge;
-@property BOOL isOneSidedClipping;
-@property BOOL useDiscard;
+@property bool isOneSidedClipping;
+@property bool useDiscard;
 
 + (id)variableAbsIsCap;
 + (id)variableClipValues;
@@ -25,15 +25,15 @@
 - (float)clipFudge;
 - (id)init;
 - (void)inject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isOneSidedClipping;
-- (unsigned int)numberOfClippingValues;
+- (bool)isEqual:(id)arg1;
+- (bool)isOneSidedClipping;
+- (unsigned long long)numberOfClippingValues;
 - (void)setCapFudge:(float)arg1;
 - (void)setClipFudge:(float)arg1;
-- (void)setIsOneSidedClipping:(BOOL)arg1;
-- (void)setUseDiscard:(BOOL)arg1;
+- (void)setIsOneSidedClipping:(bool)arg1;
+- (void)setUseDiscard:(bool)arg1;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
-- (BOOL)useDiscard;
+- (bool)useDiscard;
 - (id)variableAbsIsCap;
 - (id)variableClipValues;
 - (id)variableClipVertex;

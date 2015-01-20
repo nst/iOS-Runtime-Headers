@@ -11,12 +11,12 @@
 
 @property(retain,readonly) NSIndexSet * indexSet;
 
-- (BOOL)addItem:(id)arg1;
+- (bool)addItem:(id)arg1;
 - (void)dealloc;
 - (unsigned long long)flagsForItem:(id)arg1;
-- (BOOL)flush;
+- (bool)flush;
 - (id)indexSet;
 - (id)init;
-- (unsigned int)uidForItem:(id)arg1;
+- (unsigned long long)uidForItem:(id)arg1;
 
 @end

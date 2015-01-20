@@ -6,20 +6,20 @@
 
 @interface UICollectionViewLayout : NSObject <NSCoding> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct { 
         unsigned int inTransitionFromTransitionLayout : 1; 
         unsigned int inTransitionToTransitionLayout : 1; 
@@ -45,10 +45,10 @@
     NSIndexSet *_items;
     } _layoutFlags;
     } _layoutOffset;
-    unsigned int _layoutOffsetEdges;
+    unsigned long long _layoutOffsetEdges;
     NSIndexSet *_sections;
     UICollectionViewLayout *_siblingLayout;
-    int _sublayoutType;
+    long long _sublayoutType;
     UICollectionViewLayout *_transitioningFromLayout;
     UICollectionViewLayout *_transitioningToLayout;
 }
@@ -56,65 +56,65 @@
 @property(readonly) UICollectionView * collectionView;
 @property(getter=_compositionLayout,setter=_setCompositionLayout:) _UICollectionViewCompositionLayout * compositionLayout;
 @property(getter=_elementKinds,setter=_setElementKinds:,copy) NSArray * elementKinds;
-@property(getter=_frame,setter=_setFrame:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property(getter=_frame,setter=_setFrame:) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property(getter=_items,setter=_setItems:,copy) NSIndexSet * items;
-@property(getter=_layoutOffset,setter=_setLayoutOffset:) struct CGPoint { float x1; float x2; } layoutOffset;
-@property(getter=_layoutOffsetEdges,setter=_setLayoutOffsetEdges:) unsigned int layoutOffsetEdges;
-@property(getter=_isPrepared,setter=_setPrepared:) BOOL prepared;
+@property(getter=_layoutOffset,setter=_setLayoutOffset:) struct CGPoint { double x1; double x2; } layoutOffset;
+@property(getter=_layoutOffsetEdges,setter=_setLayoutOffsetEdges:) unsigned long long layoutOffsetEdges;
+@property(getter=_isPrepared,setter=_setPrepared:) bool prepared;
 @property(getter=_sections,setter=_setSections:,copy) NSIndexSet * sections;
 @property(getter=_siblingLayout,setter=_setSiblingLayout:) UICollectionViewLayout * siblingLayout;
-@property(getter=_sublayoutType,setter=_setSublayoutType:) int sublayoutType;
+@property(getter=_sublayoutType,setter=_setSublayoutType:) long long sublayoutType;
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
+- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
 - (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_bounds;
 - (struct _UICollectionViewCompositionLayout { Class x1; }*)_compositionLayout;
 - (id)_decorationViewForLayoutAttributes:(id)arg1;
-- (void)_didFinishLayoutTransitionAnimations:(BOOL)arg1;
+- (void)_didFinishLayoutTransitionAnimations:(bool)arg1;
 - (id)_dynamicAnimator;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_dynamicReferenceBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_dynamicReferenceBounds;
 - (id)_elementKinds;
 - (void)_finalizeCollectionViewItemAnimations;
 - (void)_finalizeLayoutTransition;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frame;
 - (id)_indexPathsToDeleteForDecorationViewOfKind:(id)arg1;
 - (id)_indexPathsToDeleteForSupplementaryViewOfKind:(id)arg1;
 - (id)_indexPathsToInsertForDecorationViewOfKind:(id)arg1;
 - (id)_indexPathsToInsertForSupplementaryViewOfKind:(id)arg1;
 - (void)_invalidateLayoutUsingContext:(id)arg1;
-- (BOOL)_isPrepared;
+- (bool)_isPrepared;
 - (id)_items;
-- (struct CGPoint { float x1; float x2; })_layoutOffset;
-- (unsigned int)_layoutOffsetEdges;
-- (struct CGPoint { float x1; float x2; })_offsetInTopParentLayout:(struct _UICollectionViewCompositionLayout { Class x1; }**)arg1;
+- (struct CGPoint { double x1; double x2; })_layoutOffset;
+- (unsigned long long)_layoutOffsetEdges;
+- (struct CGPoint { double x1; double x2; })_offsetInTopParentLayout:(struct _UICollectionViewCompositionLayout { Class x1; }**)arg1;
 - (void)_prepareForTransitionFromLayout:(id)arg1;
 - (void)_prepareForTransitionToLayout:(id)arg1;
-- (void)_prepareToAnimateFromCollectionViewItems:(id)arg1 atContentOffset:(struct CGPoint { float x1; float x2; })arg2 toItems:(id)arg3 atContentOffset:(struct CGPoint { float x1; float x2; })arg4;
+- (void)_prepareToAnimateFromCollectionViewItems:(id)arg1 atContentOffset:(struct CGPoint { double x1; double x2; })arg2 toItems:(id)arg3 atContentOffset:(struct CGPoint { double x1; double x2; })arg4;
 - (id)_sections;
 - (void)_setCollectionView:(id)arg1;
-- (void)_setCollectionViewBoundsSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setCollectionViewBoundsSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setCompositionLayout:(struct _UICollectionViewCompositionLayout { Class x1; }*)arg1;
 - (void)_setDynamicAnimator:(id)arg1;
 - (void)_setElementKinds:(id)arg1;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfDecorationViewOfKind:(id)arg2;
-- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setItems:(id)arg1;
-- (void)_setLayoutOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_setLayoutOffsetEdges:(unsigned int)arg1;
-- (void)_setPrepared:(BOOL)arg1;
+- (void)_setLayoutOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setLayoutOffsetEdges:(unsigned long long)arg1;
+- (void)_setPrepared:(bool)arg1;
 - (void)_setSections:(id)arg1;
 - (void)_setSiblingLayout:(id)arg1;
-- (void)_setSublayoutType:(int)arg1;
+- (void)_setSublayoutType:(long long)arg1;
 - (id)_siblingLayout;
-- (int)_sublayoutType;
-- (BOOL)_supportsAdvancedTransitionAnimations;
+- (long long)_sublayoutType;
+- (bool)_supportsAdvancedTransitionAnimations;
 - (id)collectionView;
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromLayout:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toLayout:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromLayout:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toLayout:(id)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
@@ -134,26 +134,26 @@
 - (id)initialLayoutAttributesForAppearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)invalidateLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
-- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (void)prepareForAnimatedBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)prepareForAnimatedBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (void)prepareForTransitionFromLayout:(id)arg1;
 - (void)prepareForTransitionToLayout:(id)arg1;
 - (void)prepareLayout;
-- (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 passingTest:(id)arg3;
+- (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { double x1; double x2; })arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 passingTest:(id)arg3;
 - (void)registerClass:(Class)arg1 forDecorationViewOfKind:(id)arg2;
 - (void)registerNib:(id)arg1 forDecorationViewOfKind:(id)arg2;
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)shouldInvalidateLayoutForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)shouldInvalidateLayoutForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)snapshottedLayoutAttributeForItemAtIndexPath:(id)arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })transitionContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 keyItemIndexPath:(id)arg2;
-- (struct CGPoint { float x1; float x2; })updatesContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1 withScrollingVelocity:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })transitionContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1 keyItemIndexPath:(id)arg2;
+- (struct CGPoint { double x1; double x2; })updatesContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

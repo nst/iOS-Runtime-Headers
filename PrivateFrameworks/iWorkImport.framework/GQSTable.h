@@ -5,30 +5,30 @@
 @class GQDTCell, GQDTOverlapCell, GQDTTable;
 
 @interface GQSTable : NSObject {
-    BOOL mAlwaysPutReadCellsInArray;
-    long mCellCount;
+    boolmAlwaysPutReadCellsInArray;
+    boolmIsCounting;
+    boolmIsStreaming;
+    long long mCellCount;
     GQDTOverlapCell *mCurrentOverlapCell;
-    BOOL mIsCounting;
-    BOOL mIsStreaming;
     GQDTCell *mLastCellRead;
     GQDTTable *mTable;
 }
 
-- (BOOL)alwaysPutReadCellsInArray;
-- (long)column;
+- (bool)alwaysPutReadCellsInArray;
+- (long long)column;
 - (id)currentOverlapCell;
 - (void)dealloc;
 - (void)incrementCellPosition;
-- (id)initWithStreaming:(BOOL)arg1 table:(id)arg2;
-- (BOOL)isCounting;
-- (BOOL)isStreaming;
+- (id)initWithStreaming:(bool)arg1 table:(id)arg2;
+- (bool)isCounting;
+- (bool)isStreaming;
 - (id)lastCellRead;
-- (long)row;
-- (void)setAlwaysPutReadCellsInArray:(BOOL)arg1;
+- (long long)row;
+- (void)setAlwaysPutReadCellsInArray:(bool)arg1;
 - (void)setCurrentOverlapCell:(id)arg1;
-- (void)setIsCountingCount:(BOOL)arg1;
+- (void)setIsCountingCount:(bool)arg1;
 - (void)setLastCellRead:(id)arg1;
-- (void)skipCells:(long)arg1;
+- (void)skipCells:(long long)arg1;
 - (id)table;
 
 @end

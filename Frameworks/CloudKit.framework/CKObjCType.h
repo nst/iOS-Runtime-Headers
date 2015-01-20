@@ -6,40 +6,40 @@
 
 @interface CKObjCType : NSObject {
     NSString *_className;
-    int _code;
+    long long _code;
     NSString *_encoding;
-    unsigned int _flags;
+    unsigned long long _flags;
     NSString *_name;
-    unsigned int _size;
+    unsigned long long _size;
 }
 
 @property(readonly) NSString * className;
-@property(readonly) int code;
+@property(readonly) long long code;
 @property(readonly) NSString * encoding;
-@property(readonly) unsigned int flags;
-@property(getter=isFloatingPointNumber,readonly) BOOL floatingPointNumber;
-@property(getter=isIntegerNumber,readonly) BOOL integerNumber;
+@property(readonly) unsigned long long flags;
+@property(getter=isFloatingPointNumber,readonly) bool floatingPointNumber;
+@property(getter=isIntegerNumber,readonly) bool integerNumber;
 @property(readonly) NSString * name;
-@property(getter=isNumber,readonly) BOOL number;
-@property(getter=isObject,readonly) BOOL object;
-@property(readonly) unsigned int size;
+@property(getter=isNumber,readonly) bool number;
+@property(getter=isObject,readonly) bool object;
+@property(readonly) unsigned long long size;
 
 + (id)typeForEncoding:(const char *)arg1;
 + (id)typeForValue:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)className;
-- (int)code;
+- (long long)code;
 - (id)encoding;
-- (unsigned int)flags;
+- (unsigned long long)flags;
 - (void)getBytes:(void*)arg1 forObject:(id)arg2;
-- (id)initWithCode:(int)arg1 encoding:(id)arg2 name:(id)arg3 className:(id)arg4 size:(unsigned int)arg5 flags:(unsigned int)arg6;
-- (BOOL)isFloatingPointNumber;
-- (BOOL)isIntegerNumber;
-- (BOOL)isNumber;
-- (BOOL)isObject;
+- (id)initWithCode:(long long)arg1 encoding:(id)arg2 name:(id)arg3 className:(id)arg4 size:(unsigned long long)arg5 flags:(unsigned long long)arg6;
+- (bool)isFloatingPointNumber;
+- (bool)isIntegerNumber;
+- (bool)isNumber;
+- (bool)isObject;
 - (id)name;
 - (id)objectWithBytes:(const void*)arg1;
-- (unsigned int)size;
+- (unsigned long long)size;
 
 @end

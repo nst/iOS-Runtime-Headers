@@ -10,13 +10,13 @@
 
 @property(retain) NSTextAttachment * attachment;
 
-+ (id)interactableLinkWithAttachment:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)interactableLinkWithAttachment:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 - (void)_copyImage;
 - (id)_image;
 - (void)_saveToCameraRoll;
 - (id)actions;
-- (BOOL)allowInteraction;
+- (bool)allowInteraction;
 - (id)attachment;
 - (void)dealloc;
 - (id)defaultAction;

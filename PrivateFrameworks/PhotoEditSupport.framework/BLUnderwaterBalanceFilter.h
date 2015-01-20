@@ -11,7 +11,6 @@
     NSNumber *_inputWaterBlend;
     float _lastDepthStrength;
     float _lastWaterBlend;
-    BOOL _needsReprocess;
     CIFilter *_underwaterAdditionFilter;
     CIFilter *_underwaterBalanceFilter;
     CIFilter *_underwaterColorMatrixIQFilter;
@@ -21,6 +20,7 @@
     CIFilter *_underwaterColorMatrixYIQ2RGBFilter;
     CIFilter *_underwaterGamma1Filter;
     CIFilter *_underwaterGamma2Filter;
+    bool_needsReprocess;
 }
 
 @property(copy) CIVector * inputAverageLinearColor;

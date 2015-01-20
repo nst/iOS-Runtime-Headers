@@ -12,6 +12,6 @@
 - (void)_unregisterForSiriStateUpdates;
 - (void)dealloc;
 - (id)initWithCallback:(id)arg1 queue:(id)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 
 @end

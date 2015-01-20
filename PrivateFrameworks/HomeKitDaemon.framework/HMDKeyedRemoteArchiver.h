@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)finishEncoding;
-- (id)initForWritingWithMutableData:(id)arg1 remoteDeviceIsOnSameAccount:(BOOL)arg2;
+- (id)initForWritingWithMutableData:(id)arg1 remoteDeviceIsOnSameAccount:(bool)arg2;
 - (void)setArchiver:(id)arg1;
 - (void)setTransportType:(id)arg1;
 - (id)transportType;

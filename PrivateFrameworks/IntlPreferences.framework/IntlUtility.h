@@ -13,7 +13,7 @@
     NSDictionary *mLocalizedLanguageList;
 }
 
-+ (int)UDisplayContextForIUDisplayNameContext:(unsigned int)arg1;
++ (int)UDisplayContextForIUDisplayNameContext:(unsigned long long)arg1;
 + (id)alternateContinentOfRegion:(id)arg1;
 + (id)capitalizeFirstWordOfName:(id)arg1 accordingToLanguage:(id)arg2;
 + (id)defaultCalendarForLocaleID:(id)arg1;
@@ -21,17 +21,17 @@
 + (id)importAppleLanguages;
 + (id)importAppleLanguagesLegacy;
 + (id)importUsedLanguages;
-+ (BOOL)isLunarCalendarDefaultOn;
-+ (BOOL)isLunarCalendarDefaultOnForLanguage:(id)arg1 locale:(id)arg2;
-+ (BOOL)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
++ (bool)isLunarCalendarDefaultOn;
++ (bool)isLunarCalendarDefaultOnForLanguage:(id)arg1 locale:(id)arg2;
++ (bool)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
 + (id)languageCharSetList;
 + (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;
 + (id)localeForCalendarID:(id)arg1;
 + (id)lunarCalendarsForLocaleID:(id)arg1;
-+ (id)nativeNameForLanguage:(id)arg1 context:(unsigned int)arg2;
++ (id)nativeNameForLanguage:(id)arg1 context:(unsigned long long)arg2;
 + (id)normalizedLanguageIDFromString:(id)arg1;
 + (id)parentLocaleIdentifierForIdentifier:(id)arg1;
-+ (BOOL)performMigration;
++ (bool)performMigration;
 + (id)preferredLanguagesForRegion:(id)arg1;
 + (id)preferredLunarCalendarForLocaleID:(id)arg1;
 + (id)restrictedCountryCodes;
@@ -40,15 +40,15 @@
 + (id)stdLanguageIDs;
 + (id)stdLanguageIDsAndNativeNames;
 + (id)supportedCalendars;
-+ (BOOL)upgradeAppleLanguagesFrom:(id)arg1 to:(id)arg2;
-+ (int)yearlessYearForMonth:(int)arg1 withCalendar:(id)arg2;
++ (bool)upgradeAppleLanguagesFrom:(id)arg1 to:(id)arg2;
++ (long long)yearlessYearForMonth:(long long)arg1 withCalendar:(id)arg2;
 
-- (BOOL)canRenderLanguage:(id)arg1;
+- (bool)canRenderLanguage:(id)arg1;
 - (void)dealloc;
 - (id)displayNameForLabelForLunarCalendarID:(id)arg1 displayLanguage:(id)arg2;
-- (id)displayNameForLanguage:(id)arg1 context:(unsigned int)arg2 displayLanguage:(id)arg3;
-- (id)displayNameForNormalizedLanguage:(id)arg1 context:(unsigned int)arg2 displayLanguage:(id)arg3;
-- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned int)arg3;
+- (id)displayNameForLanguage:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;
+- (id)displayNameForNormalizedLanguage:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;
+- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3;
 - (id)languageList;
 - (id)localizedLanguageForLanguage:(id)arg1;
 - (id)localizedLanguageList;

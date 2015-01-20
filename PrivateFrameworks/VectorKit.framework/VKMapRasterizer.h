@@ -54,7 +54,7 @@
     VKLayoutContext *_rasterizeLayoutContext;
     VKScene *_rasterizeScene;
     NSMutableSet *_rasterizeTilesToRender;
-    unsigned int _rasterizingScaleFactor;
+    unsigned long long _rasterizingScaleFactor;
     } _renderTexture;
     } _renderToTextureTarget;
     VKMapRasterizerRoot *_root;
@@ -67,7 +67,7 @@
 @property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }* keyToRasterize;
 @property VKMapModel * mapModel;
-@property unsigned int rasterizingScaleFactor;
+@property unsigned long long rasterizingScaleFactor;
 @property VKTileProvider * tileProvider;
 
 - (id).cxx_construct;
@@ -80,16 +80,16 @@
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)gglLayoutSceneIfNeeded:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3 dispatchQueue:(id)arg4;
 - (id)init;
-- (BOOL)isBusy;
+- (bool)isBusy;
 - (const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)keyToRasterize;
 - (id)mapModel;
 - (void)prepRenderTargetWithTexture:(const struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)rasterizeKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 scene:(id)arg2;
-- (unsigned int)rasterizingScaleFactor;
+- (unsigned long long)rasterizingScaleFactor;
 - (void)reset;
 - (void)setBackgroundColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (void)setMapModel:(id)arg1;
-- (void)setRasterizingScaleFactor:(unsigned int)arg1;
+- (void)setRasterizingScaleFactor:(unsigned long long)arg1;
 - (void)setTileProvider:(id)arg1;
 - (void)stylesheetDidChange;
 - (id)tileProvider;

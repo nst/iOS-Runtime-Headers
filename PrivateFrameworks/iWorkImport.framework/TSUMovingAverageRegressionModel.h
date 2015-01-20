@@ -21,7 +21,7 @@
 - (int)numTrendPoint;
 - (double)rSquared;
 - (int)regressionType;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })superscriptRangeAtIndex:(int)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })superscriptRangeAtIndex:(int)arg1;
 - (double)trendXValueAtIndex:(int)arg1;
 - (double)trendYValueAtIndex:(int)arg1;
 

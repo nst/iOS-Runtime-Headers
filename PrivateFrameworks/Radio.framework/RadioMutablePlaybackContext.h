@@ -7,11 +7,11 @@
 @interface RadioMutablePlaybackContext : RadioPlaybackContext {
 }
 
-@property int numberOfSkipsUsed;
+@property long long numberOfSkipsUsed;
 @property(copy) NSArray * trackPlaybackDescriptorQueue;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setNumberOfSkipsUsed:(int)arg1;
+- (void)setNumberOfSkipsUsed:(long long)arg1;
 - (void)setTrackPlaybackDescriptorQueue:(id)arg1;
 
 @end

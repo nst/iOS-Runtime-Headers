@@ -7,7 +7,7 @@
 @interface DOMStyleSheet : DOMObject {
 }
 
-@property BOOL disabled;
+@property bool disabled;
 @property(copy,readonly) NSString * href;
 @property(readonly) DOMMediaList * media;
 @property(readonly) DOMNode * ownerNode;
@@ -16,13 +16,13 @@
 @property(copy,readonly) NSString * type;
 
 - (void)dealloc;
-- (BOOL)disabled;
+- (bool)disabled;
 - (void)finalize;
 - (id)href;
 - (id)media;
 - (id)ownerNode;
 - (id)parentStyleSheet;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (id)title;
 - (id)type;
 

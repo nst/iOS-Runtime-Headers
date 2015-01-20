@@ -5,57 +5,57 @@
 @interface WebSelectionRect : NSObject <NSCopying> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL m_containsEnd;
-    BOOL m_containsStart;
-    BOOL m_isFirstOnLine;
-    BOOL m_isHorizontal;
-    BOOL m_isInFixedPosition;
-    BOOL m_isLastOnLine;
-    BOOL m_isLineBreak;
+    boolm_containsEnd;
+    boolm_containsStart;
+    boolm_isFirstOnLine;
+    boolm_isHorizontal;
+    boolm_isInFixedPosition;
+    boolm_isLastOnLine;
+    boolm_isLineBreak;
     } m_rect;
     int m_writingDirection;
 }
 
-@property BOOL containsEnd;
-@property BOOL containsStart;
-@property BOOL isFirstOnLine;
-@property BOOL isHorizontal;
-@property BOOL isInFixedPosition;
-@property BOOL isLastOnLine;
-@property BOOL isLineBreak;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property bool containsEnd;
+@property bool containsStart;
+@property bool isFirstOnLine;
+@property bool isHorizontal;
+@property bool isInFixedPosition;
+@property bool isLastOnLine;
+@property bool isLineBreak;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rect;
 @property int writingDirection;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdge:(id)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })endEdge:(id)arg1;
 + (id)selectionRect;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startEdge:(id)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })startEdge:(id)arg1;
 
-- (BOOL)containsEnd;
-- (BOOL)containsStart;
+- (bool)containsEnd;
+- (bool)containsStart;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)init;
-- (BOOL)isFirstOnLine;
-- (BOOL)isHorizontal;
-- (BOOL)isInFixedPosition;
-- (BOOL)isLastOnLine;
-- (BOOL)isLineBreak;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
-- (void)setContainsEnd:(BOOL)arg1;
-- (void)setContainsStart:(BOOL)arg1;
-- (void)setIsFirstOnLine:(BOOL)arg1;
-- (void)setIsHorizontal:(BOOL)arg1;
-- (void)setIsInFixedPosition:(BOOL)arg1;
-- (void)setIsLastOnLine:(BOOL)arg1;
-- (void)setIsLineBreak:(BOOL)arg1;
-- (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)isFirstOnLine;
+- (bool)isHorizontal;
+- (bool)isInFixedPosition;
+- (bool)isLastOnLine;
+- (bool)isLineBreak;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rect;
+- (void)setContainsEnd:(bool)arg1;
+- (void)setContainsStart:(bool)arg1;
+- (void)setIsFirstOnLine:(bool)arg1;
+- (void)setIsHorizontal:(bool)arg1;
+- (void)setIsInFixedPosition:(bool)arg1;
+- (void)setIsLastOnLine:(bool)arg1;
+- (void)setIsLineBreak:(bool)arg1;
+- (void)setRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setWritingDirection:(int)arg1;
 - (int)writingDirection;
 

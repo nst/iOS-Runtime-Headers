@@ -19,7 +19,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (void)_accessPresenterOperationRecordsUsingBlock:(id)arg1;
@@ -36,8 +36,8 @@
 - (void)_makePresenter:(id)arg1 reacquireFromReadingClaimForID:(id)arg2;
 - (void)_makePresenter:(id)arg1 reacquireFromWritingClaimForID:(id)arg2;
 - (void)_makePresenter:(id)arg1 relinquishToAccessClaimWithID:(id)arg2 ifNecessaryUsingSelector:(SEL)arg3 recordingRelinquishment:(id)arg4 continuer:(id)arg5;
-- (void)_makePresenter:(id)arg1 relinquishToReadingClaimWithID:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
-- (void)_makePresenter:(id)arg1 relinquishToWritingClaimWithID:(id)arg2 options:(unsigned int)arg3 subitemURL:(id)arg4 completionHandler:(id)arg5;
+- (void)_makePresenter:(id)arg1 relinquishToReadingClaimWithID:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id)arg4;
+- (void)_makePresenter:(id)arg1 relinquishToWritingClaimWithID:(id)arg2 options:(unsigned long long)arg3 subitemURL:(id)arg4 completionHandler:(id)arg5;
 - (void)_makePresenter:(id)arg1 saveChangesWithCompletionHandler:(id)arg2;
 - (void)_makePresenter:(id)arg1 setLastPresentedItemEventIdentifier:(unsigned long long)arg2;
 - (void)_makePresenterObserveDisconnection:(id)arg1;
@@ -57,7 +57,7 @@
 - (id)fileProviders;
 - (void)finalize;
 - (void)getDebugInfoWithCompletionHandler:(id)arg1;
-- (id)grantAccessClaim:(id)arg1 synchronouslyIfPossible:(BOOL)arg2;
+- (id)grantAccessClaim:(id)arg1 synchronouslyIfPossible:(bool)arg2;
 - (void)grantSubarbitrationClaim:(id)arg1 withServer:(id)arg2;
 - (void)handleCanceledServer;
 - (void)handleMessage:(id)arg1;

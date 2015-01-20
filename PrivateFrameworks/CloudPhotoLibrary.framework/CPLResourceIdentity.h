@@ -6,22 +6,22 @@
 
 @interface CPLResourceIdentity : NSObject <NSSecureCoding, NSCopying> {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL _available;
-    unsigned int _fileSize;
+        double width; 
+        double height; 
+    unsigned long long _fileSize;
     NSURL *_fileURL;
     NSString *_fileUTI;
     NSString *_fingerPrint;
     } _imageDimensions;
+    bool_available;
 }
 
-@property(getter=isAvailable) BOOL available;
-@property unsigned int fileSize;
+@property(getter=isAvailable) bool available;
+@property unsigned long long fileSize;
 @property(copy) NSURL * fileURL;
 @property(copy) NSString * fileUTI;
 @property(copy) NSString * fingerPrint;
-@property struct CGSize { float x1; float x2; } imageDimensions;
+@property struct CGSize { double x1; double x2; } imageDimensions;
 
 + (Class)_identityImplementationClass;
 + (id)alloc;
@@ -36,28 +36,28 @@
 + (Class)resourceIdentityImplementation;
 + (void)setResourceIdentityImplementation:(Class)arg1;
 + (id)storageNameForFingerPrint:(id)arg1 fileUTI:(id)arg2 bucket:(id*)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (id)fileURL;
 - (id)fileUTI;
 - (id)fingerPrint;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identityForStorage;
-- (struct CGSize { float x1; float x2; })imageDimensions;
+- (struct CGSize { double x1; double x2; })imageDimensions;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileURL:(id)arg1;
-- (BOOL)isAvailable;
-- (BOOL)isEqual:(id)arg1;
-- (void)setAvailable:(BOOL)arg1;
-- (void)setFileSize:(unsigned int)arg1;
+- (bool)isAvailable;
+- (bool)isEqual:(id)arg1;
+- (void)setAvailable:(bool)arg1;
+- (void)setFileSize:(unsigned long long)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setFileUTI:(id)arg1;
 - (void)setFingerPrint:(id)arg1;
-- (void)setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageDimensions:(struct CGSize { double x1; double x2; })arg1;
 
 @end

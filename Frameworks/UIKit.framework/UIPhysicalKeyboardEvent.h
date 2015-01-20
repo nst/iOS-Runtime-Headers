@@ -9,20 +9,20 @@
     int _inputFlags;
     NSString *_markedInput;
     NSString *_modifiedInput;
-    int _modifierFlags;
+    long long _modifierFlags;
     NSString *_privateInput;
     NSString *_shiftModifiedInput;
     NSString *_unmodifiedInput;
 }
 
 @property(retain) NSString * _commandModifiedInput;
-@property(readonly) int _gsModifierFlags;
+@property(readonly) long long _gsModifierFlags;
 @property int _inputFlags;
-@property(readonly) BOOL _isKeyDown;
-@property(readonly) long _keyCode;
+@property(readonly) bool _isKeyDown;
+@property(readonly) long long _keyCode;
 @property(retain) NSString * _markedInput;
 @property(retain) NSString * _modifiedInput;
-@property int _modifierFlags;
+@property long long _modifierFlags;
 @property(retain) NSString * _privateInput;
 @property(retain) NSString * _shiftModifiedInput;
 @property(retain) NSString * _unmodifiedInput;
@@ -31,29 +31,29 @@
 
 - (id)_cloneEvent;
 - (id)_commandModifiedInput;
-- (int)_gsModifierFlags;
+- (long long)_gsModifierFlags;
 - (int)_inputFlags;
-- (BOOL)_isKeyDown;
-- (long)_keyCode;
+- (bool)_isKeyDown;
+- (long long)_keyCode;
 - (id)_markedInput;
-- (BOOL)_matchesKeyCommand:(id)arg1;
+- (bool)_matchesKeyCommand:(id)arg1;
 - (id)_modifiedInput;
-- (int)_modifierFlags;
+- (long long)_modifierFlags;
 - (id)_privateInput;
 - (void)_privatizeInput;
 - (void)_setHIDEvent:(struct __IOHIDEvent { }*)arg1 keyboard:(struct __GSKeyboard { }*)arg2;
 - (id)_shiftModifiedInput;
 - (id)_unmodifiedInput;
 - (void)dealloc;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)set_commandModifiedInput:(id)arg1;
 - (void)set_inputFlags:(int)arg1;
 - (void)set_markedInput:(id)arg1;
 - (void)set_modifiedInput:(id)arg1;
-- (void)set_modifierFlags:(int)arg1;
+- (void)set_modifierFlags:(long long)arg1;
 - (void)set_privateInput:(id)arg1;
 - (void)set_shiftModifiedInput:(id)arg1;
 - (void)set_unmodifiedInput:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

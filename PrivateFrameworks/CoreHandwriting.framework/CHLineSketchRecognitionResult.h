@@ -4,17 +4,17 @@
 
 @interface CHLineSketchRecognitionResult : CHSketchRecognitionResult {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     } _controlPoint;
     int _endEndpointType;
     } _endLocation;
@@ -23,20 +23,20 @@
     } _startLocation;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } controlPoint;
+@property(readonly) struct CGPoint { double x1; double x2; } controlPoint;
 @property(readonly) int endEndpointType;
-@property(readonly) struct CGPoint { float x1; float x2; } endLocation;
-@property(readonly) struct CGPoint { float x1; float x2; } midpointLocation;
+@property(readonly) struct CGPoint { double x1; double x2; } endLocation;
+@property(readonly) struct CGPoint { double x1; double x2; } midpointLocation;
 @property(readonly) int startEndpointType;
-@property(readonly) struct CGPoint { float x1; float x2; } startLocation;
+@property(readonly) struct CGPoint { double x1; double x2; } startLocation;
 
 - (id).cxx_construct;
-- (struct CGPoint { float x1; float x2; })controlPoint;
+- (struct CGPoint { double x1; double x2; })controlPoint;
 - (int)endEndpointType;
-- (struct CGPoint { float x1; float x2; })endLocation;
-- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 startLocation:(struct CGPoint { float x1; float x2; })arg4 startEndpointType:(int)arg5 endLocation:(struct CGPoint { float x1; float x2; })arg6 endEndpointType:(int)arg7 midPointLocation:(struct CGPoint { float x1; float x2; })arg8 controlPointLocation:(struct CGPoint { float x1; float x2; })arg9;
-- (struct CGPoint { float x1; float x2; })midpointLocation;
+- (struct CGPoint { double x1; double x2; })endLocation;
+- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(double)arg3 startLocation:(struct CGPoint { double x1; double x2; })arg4 startEndpointType:(int)arg5 endLocation:(struct CGPoint { double x1; double x2; })arg6 endEndpointType:(int)arg7 midPointLocation:(struct CGPoint { double x1; double x2; })arg8 controlPointLocation:(struct CGPoint { double x1; double x2; })arg9;
+- (struct CGPoint { double x1; double x2; })midpointLocation;
 - (int)startEndpointType;
-- (struct CGPoint { float x1; float x2; })startLocation;
+- (struct CGPoint { double x1; double x2; })startLocation;
 
 @end

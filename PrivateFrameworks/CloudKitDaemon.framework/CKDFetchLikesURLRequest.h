@@ -12,14 +12,14 @@
     NSMutableDictionary *_itemIDsByRequestID;
     NSArray *_itemIDsToFetch;
     id _likesFetchedBlock;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
     CKShareID *_shareID;
 }
 
 @property(retain) NSMutableDictionary * itemIDsByRequestID;
 @property(copy) NSArray * itemIDsToFetch;
 @property(copy) id likesFetchedBlock;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 @property(copy) CKShareID * shareID;
 
 - (void).cxx_destruct;
@@ -32,11 +32,11 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setItemIDsByRequestID:(id)arg1;
 - (void)setItemIDsToFetch:(id)arg1;
 - (void)setLikesFetchedBlock:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
 

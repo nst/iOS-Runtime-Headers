@@ -11,16 +11,16 @@
 @property(readonly) NSURL * URL;
 @property(retain) ACAccount * account;
 @property(readonly) NSDictionary * parameters;
-@property(readonly) int requestMethod;
+@property(readonly) long long requestMethod;
 
 - (id)URL;
 - (id)account;
 - (void)addMultiPartData:(id)arg1 withName:(id)arg2 type:(id)arg3;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
+- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(long long)arg3;
 - (id)parameters;
 - (void)performRequestWithHandler:(id)arg1;
-- (int)requestMethod;
+- (long long)requestMethod;
 - (void)setAccount:(id)arg1;
 - (id)signedURLRequest;
 

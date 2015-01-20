@@ -22,10 +22,10 @@
 @property int aggregationFunction;
 @property(retain) NSMutableArray * filters;
 @property(retain) CKDPRecordFieldIdentifier * groupByField;
-@property(readonly) BOOL hasAggregatedField;
-@property BOOL hasAggregationFunction;
-@property(readonly) BOOL hasGroupByField;
-@property(readonly) BOOL hasIdentifier;
+@property(readonly) bool hasAggregatedField;
+@property bool hasAggregationFunction;
+@property(readonly) bool hasGroupByField;
+@property(readonly) bool hasIdentifier;
 @property(retain) CKDPRecordFieldIdentifier * identifier;
 @property(retain) NSMutableArray * targetTypes;
 
@@ -35,8 +35,8 @@
 - (void)addTargetTypes:(id)arg1;
 - (id)aggregatedField;
 - (id)aggregatedTypes;
-- (id)aggregatedTypesAtIndex:(unsigned int)arg1;
-- (unsigned int)aggregatedTypesCount;
+- (id)aggregatedTypesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)aggregatedTypesCount;
 - (int)aggregationFunction;
 - (void)clearAggregatedTypes;
 - (void)clearFilters;
@@ -46,29 +46,29 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)filters;
-- (id)filtersAtIndex:(unsigned int)arg1;
-- (unsigned int)filtersCount;
+- (id)filtersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)filtersCount;
 - (id)groupByField;
-- (BOOL)hasAggregatedField;
-- (BOOL)hasAggregationFunction;
-- (BOOL)hasGroupByField;
-- (BOOL)hasIdentifier;
-- (unsigned int)hash;
+- (bool)hasAggregatedField;
+- (bool)hasAggregationFunction;
+- (bool)hasGroupByField;
+- (bool)hasIdentifier;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAggregatedField:(id)arg1;
 - (void)setAggregatedTypes:(id)arg1;
 - (void)setAggregationFunction:(int)arg1;
 - (void)setFilters:(id)arg1;
 - (void)setGroupByField:(id)arg1;
-- (void)setHasAggregationFunction:(BOOL)arg1;
+- (void)setHasAggregationFunction:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTargetTypes:(id)arg1;
 - (id)targetTypes;
-- (id)targetTypesAtIndex:(unsigned int)arg1;
-- (unsigned int)targetTypesCount;
+- (id)targetTypesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)targetTypesCount;
 - (void)writeTo:(id)arg1;
 
 @end

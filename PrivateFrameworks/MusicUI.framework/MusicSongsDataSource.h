@@ -7,19 +7,19 @@
 @interface MusicSongsDataSource : MusicQueryDataSource {
     unsigned long long _syncAssetTotal;
     int _syncAssetTotalToken;
-    BOOL _syncAssetTotalTokenIsValid;
     unsigned long long _syncCurrentAssetNumber;
     int _syncCurrentAssetNumberToken;
-    BOOL _syncCurrentAssetNumberTokenIsValid;
     NSString *_syncProgressString;
+    bool_syncAssetTotalTokenIsValid;
+    bool_syncCurrentAssetNumberTokenIsValid;
 }
 
 - (void).cxx_destruct;
 - (void)_updateSyncProgressString;
 - (void)dealloc;
 - (id)entityCountFormat;
-- (id)initWithQuery:(id)arg1 entityType:(int)arg2;
-- (BOOL)showsEntityCountFooter;
-- (BOOL)showsIndexBar;
+- (id)initWithQuery:(id)arg1 entityType:(long long)arg2;
+- (bool)showsEntityCountFooter;
+- (bool)showsIndexBar;
 
 @end

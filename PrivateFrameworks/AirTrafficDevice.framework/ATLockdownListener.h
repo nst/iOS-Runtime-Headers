@@ -16,7 +16,7 @@
 - (id)initWithServiceName:(id)arg1;
 - (id)serviceName;
 - (void)setServiceName:(id)arg1;
-- (BOOL)start;
+- (bool)start;
 - (void)stop;
 
 @end

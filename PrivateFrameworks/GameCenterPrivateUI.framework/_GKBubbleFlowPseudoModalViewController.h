@@ -6,9 +6,9 @@
 }
 
 - (id)_backgroundColorForModalFormSheet;
-- (BOOL)_cleanupRemovableCoveredViewControllers;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)_cleanupRemovableCoveredViewControllers;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
+- (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

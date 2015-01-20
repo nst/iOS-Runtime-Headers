@@ -8,7 +8,7 @@
 + (Class)safeCategoryTargetClass;
 + (id)safeCategoryTargetClassName;
 
-- (BOOL)_playSoundForBulletin:(id)arg1 playedInternally:(BOOL)arg2;
+- (bool)_playSoundForBulletin:(id)arg1 playedInternally:(bool)arg2;
 - (void)killSoundForBulletin:(id)arg1;
 
 @end

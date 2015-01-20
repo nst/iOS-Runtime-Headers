@@ -9,16 +9,16 @@
 
 @property(copy) NSString * aceId;
 @property(copy) NSString * audioSource;
-@property BOOL clearContext;
+@property bool clearContext;
 @property int codec;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSString * deviceIdentifier;
 @property(copy) NSString * deviceModel;
-@property BOOL disableAutoEndpointing;
+@property bool disableAutoEndpointing;
 @property(copy) NSString * dspStatus;
-@property BOOL enablePartialResults;
-@property(readonly) unsigned int hash;
+@property bool enablePartialResults;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * headsetAddress;
 @property(copy) NSString * headsetId;
 @property(copy) NSString * headsetName;
@@ -30,13 +30,13 @@
 @property(readonly) Class superclass;
 
 - (id)audioSource;
-- (BOOL)clearContext;
+- (bool)clearContext;
 - (int)codec;
 - (id)deviceIdentifier;
 - (id)deviceModel;
-- (BOOL)disableAutoEndpointing;
+- (bool)disableAutoEndpointing;
 - (id)dspStatus;
-- (BOOL)enablePartialResults;
+- (bool)enablePartialResults;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)headsetAddress;
@@ -48,13 +48,13 @@
 - (id)noiseReductionLevel;
 - (id)origin;
 - (void)setAudioSource:(id)arg1;
-- (void)setClearContext:(BOOL)arg1;
+- (void)setClearContext:(bool)arg1;
 - (void)setCodec:(int)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
-- (void)setDisableAutoEndpointing:(BOOL)arg1;
+- (void)setDisableAutoEndpointing:(bool)arg1;
 - (void)setDspStatus:(id)arg1;
-- (void)setEnablePartialResults:(BOOL)arg1;
+- (void)setEnablePartialResults:(bool)arg1;
 - (void)setHeadsetAddress:(id)arg1;
 - (void)setHeadsetId:(id)arg1;
 - (void)setHeadsetName:(id)arg1;

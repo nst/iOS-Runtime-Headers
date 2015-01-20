@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) Protocol * protocol;
 @property(retain) NSArray * requiredEntitlements;
 @property(readonly) Class superclass;
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1 listener:(id)arg2 protocol:(id)arg3 exportedObj:(id)arg4 requiredEntitlements:(id)arg5;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)protocol;
 - (id)requiredEntitlements;
 - (void)setProtocol:(id)arg1;

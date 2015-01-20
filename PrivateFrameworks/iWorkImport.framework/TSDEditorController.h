@@ -5,31 +5,31 @@
 @class NSMutableArray, NSMutableDictionary, NSObject<TSDEditor>, TSKDocumentRoot;
 
 @interface TSDEditorController : NSObject {
-    unsigned int mChangingCurrentEditorsWhenCommittingInspectorChangesCount;
-    BOOL mDidChangeCurrentEditors;
-    BOOL mDidChangeTextInputEditor;
+    boolmDidChangeCurrentEditors;
+    boolmDidChangeTextInputEditor;
+    boolmIsReentrantResigningTextInputEditors;
+    boolmNotifiedWillChangeCurrentEditors;
+    boolmNotifiedWillChangeTextInputEditor;
+    unsigned long long mChangingCurrentEditorsWhenCommittingInspectorChangesCount;
     TSKDocumentRoot *mDocumentRoot;
     NSMutableArray *mEditorStack;
     NSMutableDictionary *mInspectorPropertyValueMap;
-    BOOL mIsReentrantResigningTextInputEditors;
-    BOOL mNotifiedWillChangeCurrentEditors;
-    BOOL mNotifiedWillChangeTextInputEditor;
     NSMutableArray *mResignedTextInputEditors;
     NSObject<TSDEditor> *mTextInputEditor;
-    unsigned int mTransactionLevel;
+    unsigned long long mTransactionLevel;
 }
 
-@property(getter=isChangingCurrentEditorsWhenCommittingInspectorChanges,readonly) BOOL changingCurrentEditorsWhenCommittingInspectorChanges;
+@property(getter=isChangingCurrentEditorsWhenCommittingInspectorChanges,readonly) bool changingCurrentEditorsWhenCommittingInspectorChanges;
 
-- (BOOL)anyEditorProhibitsAction:(SEL)arg1;
+- (bool)anyEditorProhibitsAction:(SEL)arg1;
 - (void)beginTransaction;
 - (id)currentEditors;
 - (id)currentEditorsConformingToProtocol:(id)arg1;
 - (id)currentEditorsOfClass:(Class)arg1;
 - (void)dealloc;
 - (void)didChangeCurrentEditorsWhenCommittingInspectorChanges;
-- (void)editorDidChangeSelection:(id)arg1 withSelectionFlags:(unsigned int)arg2;
-- (void)editorDidChangeSelectionAndWantsKeyboard:(id)arg1 withSelectionFlags:(unsigned int)arg2;
+- (void)editorDidChangeSelection:(id)arg1 withSelectionFlags:(unsigned long long)arg2;
+- (void)editorDidChangeSelectionAndWantsKeyboard:(id)arg1 withSelectionFlags:(unsigned long long)arg2;
 - (id)editorForEditAction:(SEL)arg1 withSender:(id)arg2 response:(int*)arg3;
 - (id)editorForEditAction:(SEL)arg1 withSender:(id)arg2;
 - (void)editorSelectionWasForciblyChanged:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)enumerateEditorsOnStackUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithDocumentRoot:(id)arg1;
-- (BOOL)isChangingCurrentEditorsWhenCommittingInspectorChanges;
+- (bool)isChangingCurrentEditorsWhenCommittingInspectorChanges;
 - (id)mostSpecificCurrentEditorOfClass:(Class)arg1 conformingToProtocol:(id)arg2;
 - (id)mostSpecificCurrentEditorOfClass:(Class)arg1;
 - (id)mostSpecificEditorConformingToProtocol:(id)arg1;

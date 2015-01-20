@@ -7,16 +7,16 @@
 @interface ACAccountCredential : NSObject <NSSecureCoding> {
     NSMutableDictionary *_credentialItems;
     NSString *_credentialType;
-    BOOL _dirty;
     NSMutableSet *_dirtyProperties;
-    BOOL _empty;
     ACAccount *_owningAccount;
+    bool_dirty;
+    bool_empty;
 }
 
 @property(copy) NSString * credentialType;
-@property(getter=isDirty) BOOL dirty;
+@property(getter=isDirty) bool dirty;
 @property(readonly) NSSet * dirtyProperties;
-@property(getter=isEmpty) BOOL empty;
+@property(getter=isEmpty) bool empty;
 @property(retain) NSDate * expiryDate;
 @property(copy) NSString * findMyiPhoneToken;
 @property(copy) NSString * hsaToken;
@@ -33,7 +33,7 @@
 + (id)credentialWithPassword:(id)arg1;
 + (id)nonPersistentKeysForAccountTypeIdentifier:(id)arg1 credentialType:(id)arg2;
 + (id)supportedKeysForAccountTypeIdentifier:(id)arg1 credentialType:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_clearDirtyProperties;
@@ -46,16 +46,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiryDate;
 - (id)findMyiPhoneToken;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)hsaToken;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOAuth2Token:(id)arg1 refreshToken:(id)arg2 expiryDate:(id)arg3;
 - (id)initWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;
 - (id)initWithPassword:(id)arg1;
-- (BOOL)isDirty;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDirty;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (id)keysForCredentialItems;
 - (id)mapsToken;
 - (id)oauthRefreshToken;
@@ -65,8 +65,8 @@
 - (id)password;
 - (void)setCredentialItem:(id)arg1 forKey:(id)arg2;
 - (void)setCredentialType:(id)arg1;
-- (void)setDirty:(BOOL)arg1;
-- (void)setEmpty:(BOOL)arg1;
+- (void)setDirty:(bool)arg1;
+- (void)setEmpty:(bool)arg1;
 - (void)setExpiryDate:(id)arg1;
 - (void)setFindMyiPhoneToken:(id)arg1;
 - (void)setHsaToken:(id)arg1;

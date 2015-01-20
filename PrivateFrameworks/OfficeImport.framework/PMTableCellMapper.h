@@ -7,13 +7,13 @@
 @interface PMTableCellMapper : CMMapper {
     OADTableCell *mCell;
     int mColIndex;
-    unsigned int mRowIndex;
+    unsigned long long mRowIndex;
     CMStyle *mStyle;
     float mWidth;
 }
 
 - (void)dealloc;
-- (id)initWithOadTableCell:(id)arg1 rowIndex:(unsigned int)arg2 columnIndex:(int)arg3 parent:(id)arg4;
+- (id)initWithOadTableCell:(id)arg1 rowIndex:(unsigned long long)arg2 columnIndex:(int)arg3 parent:(id)arg4;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapBordersWithState:(id)arg1;
 - (void)mapCellPropertiesWithState:(id)arg1 textAnchor:(int)arg2;

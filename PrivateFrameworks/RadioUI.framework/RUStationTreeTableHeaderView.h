@@ -11,7 +11,7 @@
 @property(copy) NSString * title;
 
 + (id)_titleLabelFont;
-+ (float)defaultHeightForTraitCollection:(id)arg1;
++ (double)defaultHeightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithReuseIdentifier:(id)arg1;

@@ -12,6 +12,6 @@
 - (void)addReaderID:(id)arg1 completionHandler:(id)arg2;
 - (void)cancelReaderID:(id)arg1;
 - (void)completedWithResult:(id)arg1 error:(id)arg2;
-- (id)initWithDownloadContext:(id)arg1 etag:(id)arg2 isConflict:(BOOL)arg3;
+- (id)initWithDownloadContext:(id)arg1 etag:(id)arg2 isConflict:(bool)arg3;
 
 @end

@@ -8,17 +8,17 @@
 }
 
 @property(retain) NSURL * attribution_url;
-@property BOOL description_expand;
+@property bool description_expand;
 @property(retain) NSString * description_expand_text;
-@property int description_maxlines;
-@property int description_size;
-@property int description_weight;
+@property long long description_maxlines;
+@property long long description_size;
+@property long long description_weight;
 @property(retain) PRSImage * image;
 @property(retain) NSString * image_align;
 @property(retain) NSString * resultDescription;
 @property(retain) NSString * title;
-@property BOOL title_nowrap;
-@property int title_weight;
+@property bool title_nowrap;
+@property long long title_weight;
 @property(retain) NSString * type;
 @property(retain) NSURL * url;
 

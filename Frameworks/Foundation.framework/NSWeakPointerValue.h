@@ -9,9 +9,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)getValue:(void*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithPointer:(void*)arg1;
-- (BOOL)isEqualToValue:(id)arg1;
+- (bool)isEqualToValue:(id)arg1;
 - (id)nonretainedObjectValue;
 - (const char *)objCType;
 

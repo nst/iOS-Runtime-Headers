@@ -19,21 +19,21 @@
 + (id)railDefinitions;
 
 - (void).cxx_destruct;
-- (int)autolockTime;
+- (long long)autolockTime;
 - (id)baseband;
 - (id)basebandFirmware;
 - (id)bootArgs;
 - (id)buildVersion;
 - (id)crashReporterKey;
 - (id)deviceName;
-- (BOOL)disableCABlanking;
+- (bool)disableCABlanking;
 - (id)hardwareModel;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
 - (id)logAutomatedDeviceGroup;
 - (void)logEventNoneConfig;
-- (BOOL)noWatchdogs;
+- (bool)noWatchdogs;
 - (void)setTimedTrigger:(id)arg1;
 - (id)timedTrigger;
 - (id)trimmingConditionsForRolloverAtDate:(id)arg1;

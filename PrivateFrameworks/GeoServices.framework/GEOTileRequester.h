@@ -15,8 +15,8 @@
     GEOTileKeyList *_keyList;
     NSLocale *_locale;
     GEOResourceManifestConfiguration *_manifestConfiguration;
-    BOOL _requireWiFi;
     NSThread *_thread;
+    bool_requireWiFi;
 }
 
 @property(retain) NSData * auditToken;
@@ -27,12 +27,12 @@
 @property(retain) id context;
 @property(retain) <GEOTileRequesterDelegate> * delegate;
 @property(readonly) GEOTileKeyList * keyList;
-@property BOOL requireWiFi;
+@property bool requireWiFi;
 @property(retain) NSThread * thread;
 
-+ (unsigned int)expiringTilesetsCount;
++ (unsigned long long)expiringTilesetsCount;
 + (struct { unsigned int x1; double x2; }*)newExpiringTilesets;
-+ (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
++ (bool)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;
 
 - (id)auditToken;
@@ -46,13 +46,13 @@
 - (id)delegate;
 - (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3 cachedEtags:(id)arg4 cachedData:(id)arg5;
 - (id)keyList;
-- (BOOL)requireWiFi;
+- (bool)requireWiFi;
 - (void)setAuditToken:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRequireWiFi:(BOOL)arg1;
+- (void)setRequireWiFi:(bool)arg1;
 - (void)setThread:(id)arg1;
 - (void)start;
 - (id)thread;

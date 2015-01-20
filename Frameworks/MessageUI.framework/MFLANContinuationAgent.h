@@ -12,12 +12,12 @@
     id _connectCallbackBlock;
     MFLANContinuationContext *_continuationContext;
     struct __CFRunLoopSource { } *_serverRunLoopSource;
-    BOOL _serverRunning;
     struct __CFSocket { } *_socket;
+    bool_serverRunning;
 }
 
 @property(readonly) MFLANContinuationContext * continuationContext;
-@property(readonly) BOOL serverRunning;
+@property(readonly) bool serverRunning;
 
 - (void)_cleanupRunLoopSource;
 - (void)_cleanupSocket;
@@ -27,7 +27,7 @@
 - (id)continuationContext;
 - (void)dealloc;
 - (id)init;
-- (BOOL)serverRunning;
+- (bool)serverRunning;
 - (id)startServerWithCompletion:(id)arg1;
 - (void)stopServer;
 

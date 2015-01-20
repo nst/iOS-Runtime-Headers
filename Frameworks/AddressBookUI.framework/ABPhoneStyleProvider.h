@@ -5,7 +5,7 @@
 @interface ABPhoneStyleProvider : ABStyleProvider {
 }
 
-- (BOOL)cardActionsAllowFaceTimeFavorites;
-- (BOOL)cardActionsAllowVoiceFavorites;
+- (bool)cardActionsAllowFaceTimeFavorites;
+- (bool)cardActionsAllowVoiceFavorites;
 
 @end

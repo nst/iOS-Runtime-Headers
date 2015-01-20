@@ -5,12 +5,12 @@
 @class GQDSStyle;
 
 @interface GQDBGPlaceholder : GQDDrawable {
-    BOOL mIsVisible;
+    boolmIsVisible;
     GQDSStyle *mStyle;
 }
 
 - (void)dealloc;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (id)placeholderStyle;
 
 @end

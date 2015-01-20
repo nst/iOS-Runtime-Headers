@@ -13,7 +13,7 @@
 
 + (id)atlasNamed:(id)arg1;
 + (id)atlasWithDictionary:(id)arg1;
-+ (BOOL)canUseObjectForAtlas:(id)arg1;
++ (bool)canUseObjectForAtlas:(id)arg1;
 + (id)findTextureNamed:(id)arg1;
 + (id)getSupportedPostfixes;
 + (void)preloadTextureAtlases:(id)arg1 withCompletionHandler:(id)arg2;

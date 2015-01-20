@@ -6,8 +6,8 @@
 
 @interface _VKScaledFallbackIconArtwork : VKIconArtwork {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     VKIconArtwork *_artwork;
     } _size;
 }
@@ -16,7 +16,7 @@
 - (void)_cleanUpAfterDrawing;
 - (id)_newImage;
 - (void)dealloc;
-- (id)initWithArtwork:(id)arg1 contentScale:(float)arg2;
-- (struct CGSize { float x1; float x2; })size;
+- (id)initWithArtwork:(id)arg1 contentScale:(double)arg2;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

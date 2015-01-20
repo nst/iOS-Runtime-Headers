@@ -24,7 +24,7 @@
 @property(copy) id backgroundTaskStart;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)sharedManager;
@@ -47,7 +47,7 @@
 - (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureRequestsForPlaceDataCache:(id)arg1 appIdentifier:(id)arg2;
 - (void)captureStateTimingFeedbackCollection:(id)arg1;
-- (void)captureStateTransition:(id)arg1 force:(BOOL)arg2;
+- (void)captureStateTransition:(id)arg1 force:(bool)arg2;
 - (void)captureSuggestionsFeedbackCollection:(id)arg1;
 - (void)captureTrafficRerouteFeedbackCollection:(id)arg1;
 - (void)captureTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
@@ -63,6 +63,6 @@
 - (void)requesterDidFinish:(id)arg1;
 - (void)setBackgroundTaskEnd:(id)arg1;
 - (void)setBackgroundTaskStart:(id)arg1;
-- (BOOL)shouldIgnoreCollectionForCountry;
+- (bool)shouldIgnoreCollectionForCountry;
 
 @end

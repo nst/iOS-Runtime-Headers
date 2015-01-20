@@ -8,20 +8,20 @@
     NSMutableArray *_delegates;
     int _descriptor;
     NSObject<OS_dispatch_queue> *_queue;
-    int _socketMode;
+    long long _socketMode;
     NSObject<OS_dispatch_source> *_source;
-    unsigned int _suggestedBufferSize;
+    unsigned long long _suggestedBufferSize;
     id _userInfo;
 }
 
 @property int descriptor;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property int socketMode;
-@property unsigned int suggestedBufferSize;
+@property long long socketMode;
+@property unsigned long long suggestedBufferSize;
 @property(retain) id userInfo;
 
 + (id)createBoundPair:(id[2])arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addDelegate:(id)arg1;
@@ -31,22 +31,22 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isOpen;
+- (bool)isOpen;
 - (void)notifyHasDataAvailable:(id)arg1;
 - (void)notifySocketDidClose;
-- (BOOL)open;
+- (bool)open;
 - (id)queue;
 - (int)recv:(char *)arg1 offset:(unsigned int)arg2 len:(unsigned int)arg3 error:(id*)arg4;
 - (void)removeDelegate:(id)arg1;
 - (int)send:(const char *)arg1 offset:(unsigned int)arg2 len:(unsigned int)arg3 error:(id*)arg4;
 - (void)setDescriptor:(int)arg1;
-- (void)setSocketMode:(int)arg1;
-- (void)setSuggestedBufferSize:(unsigned int)arg1;
+- (void)setSocketMode:(long long)arg1;
+- (void)setSuggestedBufferSize:(unsigned long long)arg1;
 - (void)setUserInfo:(id)arg1;
-- (int)socketMode;
-- (unsigned int)suggestedBufferSize;
+- (long long)socketMode;
+- (unsigned long long)suggestedBufferSize;
 - (id)userInfo;
-- (BOOL)writeAllData:(id)arg1 error:(id*)arg2;
+- (bool)writeAllData:(id)arg1 error:(id*)arg2;
 - (void)writeData:(id)arg1 withCompletion:(id)arg2;
 
 @end

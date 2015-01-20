@@ -14,37 +14,37 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property UIView * perspectiveTargetView;
 @property(retain) MPUBorderDrawingCache * stackItemBorderDrawingCache;
 @property(copy) NSString * stationName;
 @property(readonly) Class superclass;
-@property struct CGPoint { float x1; float x2; } vanishingPoint;
+@property struct CGPoint { double x1; double x2; } vanishingPoint;
 
-+ (id)_titleLabelFontWithEmphasis:(BOOL)arg1;
-+ (float)artworkMidXForTraitCollection:(id)arg1;
-+ (struct CGSize { float x1; float x2; })artworkSize;
-+ (float)defaultHeightForTraitCollection:(id)arg1;
++ (id)_titleLabelFontWithEmphasis:(bool)arg1;
++ (double)artworkMidXForTraitCollection:(id)arg1;
++ (struct CGSize { double x1; double x2; })artworkSize;
++ (double)defaultHeightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_applyImageToStackItems:(id)arg1;
 - (id)_newStackView;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (int)numberOfItemsInStackView:(id)arg1;
+- (long long)numberOfItemsInStackView:(id)arg1;
 - (id)perspectiveTargetView;
 - (void)setImage:(id)arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
 - (void)setStackItemBorderDrawingCache:(id)arg1;
 - (void)setStationName:(id)arg1;
-- (void)setVanishingPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setVanishingPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)stackItemBorderDrawingCache;
-- (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(int)arg3;
+- (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(long long)arg3;
 - (void)stackView:(id)arg1 didCreateItem:(id)arg2;
 - (id)stationName;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateForChangedDistanceFromVanishingPoint;
-- (struct CGPoint { float x1; float x2; })vanishingPoint;
+- (struct CGPoint { double x1; double x2; })vanishingPoint;
 
 @end

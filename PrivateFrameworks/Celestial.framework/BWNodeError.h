@@ -5,26 +5,26 @@
 @class FigCaptureRecordingSettings, FigCaptureStillImageSettings, NSString;
 
 @interface BWNodeError : NSObject {
-    long _errorCode;
+    int _errorCode;
     FigCaptureRecordingSettings *_recordingSettings;
     NSString *_sourceNodeDescription;
     FigCaptureStillImageSettings *_stillImageSettings;
-    int _uniqueID;
+    long long _uniqueID;
 }
 
-@property(readonly) long errorCode;
+@property(readonly) int errorCode;
 @property(readonly) FigCaptureRecordingSettings * recordingSettings;
 @property(readonly) NSString * sourceNodeDescription;
 @property(readonly) FigCaptureStillImageSettings * stillImageSettings;
 
-+ (id)newError:(long)arg1 sourceNode:(id)arg2 recordingSettings:(id)arg3;
-+ (id)newError:(long)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3;
-+ (id)newError:(long)arg1 sourceNode:(id)arg2;
++ (id)newError:(int)arg1 sourceNode:(id)arg2 recordingSettings:(id)arg3;
++ (id)newError:(int)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3;
++ (id)newError:(int)arg1 sourceNode:(id)arg2;
 
-- (id)_initWithError:(long)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3 recordingSettings:(id)arg4;
+- (id)_initWithError:(int)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3 recordingSettings:(id)arg4;
 - (void)dealloc;
-- (long)errorCode;
-- (unsigned int)hash;
+- (int)errorCode;
+- (unsigned long long)hash;
 - (id)recordingSettings;
 - (id)sourceNodeDescription;
 - (id)stillImageSettings;

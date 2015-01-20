@@ -10,7 +10,6 @@
     id _context;
     NSString *_ctag;
     NSString *_foreignCtag;
-    BOOL _isFamilySharedAlbum;
     NSDictionary *_metadata;
     NSString *_ownerEmail;
     NSString *_ownerFirstName;
@@ -20,6 +19,7 @@
     NSString *_publicURLString;
     int _relationshipState;
     NSDate *_subscriptionDate;
+    bool_isFamilySharedAlbum;
 }
 
 @property(retain) NSString * GUID;
@@ -27,7 +27,7 @@
 @property(retain) id context;
 @property(retain) NSString * ctag;
 @property(retain) NSString * foreignCtag;
-@property BOOL isFamilySharedAlbum;
+@property bool isFamilySharedAlbum;
 @property(retain) NSDictionary * metadata;
 @property(retain) NSString * ownerEmail;
 @property(retain) NSString * ownerFirstName;
@@ -37,11 +37,11 @@
 @property(retain) NSString * publicURLString;
 @property int relationshipState;
 @property(retain) NSDate * subscriptionDate;
-@property(readonly) BOOL useForeignCtag;
+@property(readonly) bool useForeignCtag;
 
 + (id)album;
 + (id)albumWithAlbum:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)GUID;
@@ -52,10 +52,10 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)foreignCtag;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFamilySharedAlbum;
+- (bool)isEqual:(id)arg1;
+- (bool)isFamilySharedAlbum;
 - (id)metadata;
 - (id)metadataValueForKey:(id)arg1;
 - (id)ownerEmail;
@@ -69,7 +69,7 @@
 - (void)setCtag:(id)arg1;
 - (void)setForeignCtag:(id)arg1;
 - (void)setGUID:(id)arg1;
-- (void)setIsFamilySharedAlbum:(BOOL)arg1;
+- (void)setIsFamilySharedAlbum:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setOwnerEmail:(id)arg1;
@@ -82,6 +82,6 @@
 - (void)setSubscriptionDate:(id)arg1;
 - (void)setURLString:(id)arg1;
 - (id)subscriptionDate;
-- (BOOL)useForeignCtag;
+- (bool)useForeignCtag;
 
 @end

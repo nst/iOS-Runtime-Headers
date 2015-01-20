@@ -5,7 +5,7 @@
 @interface SBUIPasscodeLockViewFactory : NSObject {
 }
 
-+ (id)_passcodeLockViewForStyle:(int)arg1 withLightStyle:(BOOL)arg2;
++ (id)_passcodeLockViewForStyle:(int)arg1 withLightStyle:(bool)arg2;
 + (void)_warmupKBDIfNecessary;
 + (id)lightPasscodeLockViewForStyle:(int)arg1;
 + (id)lightPasscodeLockViewForUsersCurrentStyle;

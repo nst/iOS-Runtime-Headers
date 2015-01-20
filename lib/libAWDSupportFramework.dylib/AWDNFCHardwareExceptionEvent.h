@@ -15,9 +15,9 @@
 }
 
 @property(retain) NSString * exceptionData;
-@property(readonly) BOOL hasExceptionData;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
+@property(readonly) bool hasExceptionData;
+@property bool hasTimestamp;
+@property bool hasType;
 @property unsigned long long timestamp;
 @property unsigned int type;
 
@@ -27,16 +27,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)exceptionData;
-- (BOOL)hasExceptionData;
-- (BOOL)hasTimestamp;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasExceptionData;
+- (bool)hasTimestamp;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExceptionData:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(unsigned int)arg1;
 - (unsigned long long)timestamp;

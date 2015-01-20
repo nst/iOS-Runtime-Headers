@@ -5,19 +5,19 @@
 @class NSString;
 
 @interface SGDataDetectorDissector : NSObject <SGPipelineDissector> {
-    long _scannerOptions;
+    long long _scannerOptions;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (void)initialize;
-+ (BOOL)stringHasDatesOrTimes:(id)arg1;
++ (bool)stringHasDatesOrTimes:(id)arg1;
 
 - (void)dissect:(id)arg1;
 - (id)init;
-- (id)initWithSigs:(BOOL)arg1;
+- (id)initWithSigs:(bool)arg1;
 
 @end

@@ -13,12 +13,12 @@
     NSMutableDictionary *_openSearchDescriptionsByDescriptionDocumentURLString;
     NSMutableDictionary *_quickWebsiteSearchProvidersByHost;
     NSObject<OS_dispatch_queue> *_quickWebsiteSearchProvidersBySourcePageURLStringAccessQueue;
-    BOOL _quickWebsiteSearchProvidersLoadedFromDisk;
     } _writer;
+    bool_quickWebsiteSearchProvidersLoadedFromDisk;
 }
 
 @property(readonly) NSArray * quickWebsiteSearchHosts;
-@property BOOL quickWebsiteSearchProvidersLoadedFromDisk;
+@property bool quickWebsiteSearchProvidersLoadedFromDisk;
 
 + (id)sharedController;
 
@@ -30,13 +30,13 @@
 - (void)_didFinishLoadingFromDisk;
 - (void)_loadFromDisk;
 - (void)_pruneUnusedQuickWebsiteSearchProviders;
-- (BOOL)_quickWebsiteSearchProviderHasSearchURLTemplateStringOnAccessQueue:(id)arg1;
+- (bool)_quickWebsiteSearchProviderHasSearchURLTemplateStringOnAccessQueue:(id)arg1;
 - (void)_removeHost:(id)arg1 fromOpenSearchDescriptionWithDocumentURL:(id)arg2;
 - (void)_resetCachedDataWithCompletionHandler:(id)arg1;
 - (void)_saveToDiskSoon;
 - (id)_searchDescriptionsURL;
 - (void)_sendNotification:(id)arg1 forQuickWebsiteSearchProvider:(id)arg2;
-- (BOOL)_shouldRemoveQuickWebsiteSearchProvider:(id)arg1;
+- (bool)_shouldRemoveQuickWebsiteSearchProvider:(id)arg1;
 - (void)beginLoadingFromDiskIfNeeded;
 - (void)clear;
 - (void)didPerformSearchWithProvider:(id)arg1;
@@ -46,13 +46,13 @@
 - (id)providerForSourcePageURLString:(id)arg1;
 - (id)providersMatchingQueryString:(id)arg1;
 - (id)quickWebsiteSearchHosts;
-- (BOOL)quickWebsiteSearchProvidersLoadedFromDisk;
+- (bool)quickWebsiteSearchProvidersLoadedFromDisk;
 - (void)removeProviderWithHost:(id)arg1;
 - (void)removeProvidersAddedAfterDate:(id)arg1 beforeDate:(id)arg2;
 - (void)removeProvidersWithHosts:(id)arg1;
 - (void)savePendingChangesBeforeTermination;
 - (void)setOpenSearchDescriptionURLString:(id)arg1 forSourcePageURLString:(id)arg2;
-- (void)setQuickWebsiteSearchProvidersLoadedFromDisk:(BOOL)arg1;
+- (void)setQuickWebsiteSearchProvidersLoadedFromDisk:(bool)arg1;
 - (void)setSearchURLTemplateStringFromForm:(id)arg1 forSourcePageURLString:(id)arg2;
 
 @end

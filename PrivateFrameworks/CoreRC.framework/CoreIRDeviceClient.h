@@ -5,7 +5,7 @@
 @interface CoreIRDeviceClient : CoreIRDevice {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (Class)classForCoder;
 

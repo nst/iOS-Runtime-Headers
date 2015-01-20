@@ -8,31 +8,31 @@
     NSSet *_assetUUIDs;
     NSOrderedSet *_containers;
     <PUSearchResultDelegate> *_delegate;
-    BOOL _finished;
-    BOOL _hasPendingChanges;
     NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _taskId;
+    unsigned long long _taskId;
     NSSet *_uncommittedAssetUUIDs;
     NSMutableOrderedSet *_uncommittedContainers;
+    bool_finished;
+    bool_hasPendingChanges;
 }
 
 @property(readonly) NSSet * assetUUIDs;
 @property(copy,readonly) NSString * debugDescription;
 @property <PUSearchResultDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(getter=isFinished,readonly) BOOL finished;
-@property(readonly) unsigned int hash;
+@property(getter=isFinished,readonly) bool finished;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_inqClearPendingChanges;
-- (BOOL)_inqIsCancelledWithTaskId:(unsigned int)arg1;
-- (BOOL)_isCancelledWithTaskId:(unsigned int)arg1;
+- (bool)_inqIsCancelledWithTaskId:(unsigned long long)arg1;
+- (bool)_isCancelledWithTaskId:(unsigned long long)arg1;
 - (id)assetUUIDs;
 - (id)delegate;
 - (id)fetchResult;
 - (id)init;
-- (BOOL)isFinished;
+- (bool)isFinished;
 - (void)mergePendingChanges;
 - (void)setDelegate:(id)arg1;
 - (void)updateAssetUUIDs:(id)arg1 completion:(id)arg2;

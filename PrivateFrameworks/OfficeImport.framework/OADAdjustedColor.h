@@ -5,12 +5,12 @@
 @class OADColor;
 
 @interface OADAdjustedColor : OADColor {
+    boolmGray;
+    boolmInvert128;
+    boolmInvert;
     unsigned char mAdjustmentParam;
     int mAdjustmentType;
     OADColor *mBaseColor;
-    BOOL mGray;
-    BOOL mInvert128;
-    BOOL mInvert;
 }
 
 - (unsigned char)adjustmentParam;
@@ -18,11 +18,11 @@
 - (id)baseColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)gray;
-- (unsigned int)hash;
-- (id)initWithBaseColor:(id)arg1 adjustmentType:(int)arg2 adjustmentParam:(unsigned char)arg3 invert:(BOOL)arg4 invert128:(BOOL)arg5 gray:(BOOL)arg6;
-- (BOOL)invert128;
-- (BOOL)invert;
-- (BOOL)isEqual:(id)arg1;
+- (bool)gray;
+- (unsigned long long)hash;
+- (id)initWithBaseColor:(id)arg1 adjustmentType:(int)arg2 adjustmentParam:(unsigned char)arg3 invert:(bool)arg4 invert128:(bool)arg5 gray:(bool)arg6;
+- (bool)invert128;
+- (bool)invert;
+- (bool)isEqual:(id)arg1;
 
 @end

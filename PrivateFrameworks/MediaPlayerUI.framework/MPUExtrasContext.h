@@ -22,7 +22,7 @@
 @property(readonly) MPUExtrasRootViewController * extrasRootViewController;
 @property(retain) MPPlaybackContext * featurePlaybackContext;
 @property(retain) UIViewController * featurePlaybackViewController;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy,readonly) NSURL * javascriptURL;
 @property(readonly) MPMediaItem * mediaItem;
 @property(readonly) long long storeID;
@@ -37,7 +37,7 @@
 - (id)buyParameters;
 - (id)delegate;
 - (void)extrasRequestReloadWithContext:(id)arg1;
-- (void)extrasRequestsMediaPlayback:(id)arg1 isBackground:(BOOL)arg2;
+- (void)extrasRequestsMediaPlayback:(id)arg1 isBackground:(bool)arg2;
 - (void)extrasRequestsPlaybackStop;
 - (id)extrasRootViewController;
 - (void)failWithError:(id)arg1;

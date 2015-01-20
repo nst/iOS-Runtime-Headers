@@ -12,42 +12,42 @@
     PKPaymentCredential *_credential;
     id _learnMorePresentationHandler;
     id _preflightCompletion;
-    BOOL _preloadLearnMoreWebView;
-    int _setupContext;
+    long long _setupContext;
     <PKPaymentSetupViewControllerDelegate> *_setupDelegate;
     UIWebView *_webView;
+    bool_preloadLearnMoreWebView;
 }
 
 @property(retain) PKPaymentCredential * credential;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) id learnMorePresentationHandler;
-@property BOOL preloadLearnMoreWebView;
-@property int setupContext;
+@property bool preloadLearnMoreWebView;
+@property long long setupContext;
 @property <PKPaymentSetupViewControllerDelegate> * setupDelegate;
 @property(readonly) Class superclass;
 
-- (id)_alertWithLearnMoreURL:(id)arg1 isPreloaded:(BOOL)arg2;
-- (id)_learnMoreURLForEligibiltyStatus:(int)arg1;
-- (void)_webViewDidLoad:(BOOL)arg1 withError:(id)arg2;
+- (id)_alertWithLearnMoreURL:(id)arg1 isPreloaded:(bool)arg2;
+- (id)_learnMoreURLForEligibiltyStatus:(long long)arg1;
+- (void)_webViewDidLoad:(bool)arg1 withError:(id)arg2;
 - (id)credential;
 - (void)dealloc;
 - (void)handleDone:(id)arg1;
-- (id)initWithCredential:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
+- (id)initWithCredential:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3;
 - (id)learnMorePresentationHandler;
 - (void)preflightWithCompletion:(id)arg1;
-- (BOOL)preloadLearnMoreWebView;
+- (bool)preloadLearnMoreWebView;
 - (void)setCredential:(id)arg1;
 - (void)setLearnMorePresentationHandler:(id)arg1;
-- (void)setPreloadLearnMoreWebView:(BOOL)arg1;
-- (void)setSetupContext:(int)arg1;
+- (void)setPreloadLearnMoreWebView:(bool)arg1;
+- (void)setSetupContext:(long long)arg1;
 - (void)setSetupDelegate:(id)arg1;
-- (int)setupContext;
+- (long long)setupContext;
 - (id)setupDelegate;
 - (void)viewDidLoad;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 

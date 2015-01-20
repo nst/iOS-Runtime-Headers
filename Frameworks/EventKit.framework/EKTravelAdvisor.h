@@ -5,14 +5,14 @@
 @class <EKTravelAdvisorWorld>, <EKTravelRoutePredictor>, EKTravelAgendaItem, EKTravelPrediction, NSMutableArray;
 
 @interface EKTravelAdvisor : NSObject {
-    BOOL _invalidated;
     EKTravelAgendaItem *_nextAgendaItem;
     EKTravelPrediction *_prediction;
     NSMutableArray *_queue;
-    BOOL _queueDirty;
     <EKTravelRoutePredictor> *_routePredictor;
     Class _routePredictorClass;
     <EKTravelAdvisorWorld> *_world;
+    bool_invalidated;
+    bool_queueDirty;
 }
 
 - (void)_forceInvalidatePrediction;
@@ -21,7 +21,7 @@
 - (void)_updatePrediction;
 - (void)_updatePredictionFromCurrentLocation:(id)arg1;
 - (void)addAgendaItem:(id)arg1;
-- (BOOL)authorizedToAcquireLocation;
+- (bool)authorizedToAcquireLocation;
 - (void)dealloc;
 - (id)init;
 - (id)initWithWorld:(id)arg1 routePredictorClass:(Class)arg2;

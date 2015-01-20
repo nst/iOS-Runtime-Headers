@@ -9,8 +9,8 @@
     CKDPIdentifier *_value;
 }
 
-@property(readonly) BOOL hasOwnerIdentifier;
-@property(readonly) BOOL hasValue;
+@property(readonly) bool hasOwnerIdentifier;
+@property(readonly) bool hasValue;
 @property(retain) CKDPIdentifier * ownerIdentifier;
 @property(retain) CKDPIdentifier * value;
 
@@ -19,13 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOwnerIdentifier;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOwnerIdentifier;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)ownerIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setOwnerIdentifier:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

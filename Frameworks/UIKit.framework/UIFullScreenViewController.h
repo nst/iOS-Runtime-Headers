@@ -5,6 +5,6 @@
 @interface UIFullScreenViewController : UIViewController {
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 
 @end

@@ -11,7 +11,7 @@
 + (id)defaultProperties;
 
 - (void)dealloc;
-- (BOOL)hasImageFill;
+- (bool)hasImageFill;
 - (id)imageFill;
 - (void)setImageFill:(id)arg1;
 

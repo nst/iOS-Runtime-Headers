@@ -18,13 +18,13 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
 - (id)initWithType:(int)arg1 width:(int)arg2 length:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLengthOverridden;
-- (BOOL)isTypeOverridden;
-- (BOOL)isWidthOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isLengthOverridden;
+- (bool)isTypeOverridden;
+- (bool)isWidthOverridden;
 - (int)length;
 - (void)setLength:(int)arg1;
 - (void)setType:(int)arg1;

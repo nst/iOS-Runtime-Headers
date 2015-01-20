@@ -5,6 +5,6 @@
 @interface NoRasterization : CALayer {
 }
 
-- (void)setShouldRasterize:(BOOL)arg1;
+- (void)setShouldRasterize:(bool)arg1;
 
 @end

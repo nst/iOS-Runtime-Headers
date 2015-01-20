@@ -19,9 +19,9 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <RUHistoryDataSourceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy,readonly) NSArray * historyCategories;
-@property(getter=isRefreshing,readonly) BOOL refreshing;
+@property(getter=isRefreshing,readonly) bool refreshing;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -40,7 +40,7 @@
 - (id)delegate;
 - (id)historyCategories;
 - (id)init;
-- (BOOL)isRefreshing;
+- (bool)isRefreshing;
 - (void)refreshHistory;
 - (void)setDelegate:(id)arg1;
 - (id)viewControllerForStoryboardPresentationFromBannerView:(id)arg1;

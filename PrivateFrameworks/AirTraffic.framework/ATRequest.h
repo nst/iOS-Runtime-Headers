@@ -12,7 +12,7 @@
 @property(copy) NSString * command;
 @property(copy) NSString * dataClass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ATPMessage;

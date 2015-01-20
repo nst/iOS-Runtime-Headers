@@ -12,7 +12,7 @@
 @property(copy) NSNumber * favoriteFacetime;
 @property(copy) NSNumber * favoriteFacetimeAudio;
 @property(copy) NSNumber * favoriteVoice;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
 @property(copy) NSString * number;
 @property(readonly) Class superclass;

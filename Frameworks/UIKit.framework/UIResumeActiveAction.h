@@ -5,13 +5,13 @@
 @interface UIResumeActiveAction : BSAction {
 }
 
-@property(readonly) int reason;
+@property(readonly) long long reason;
 
-- (int)UIActionType;
+- (long long)UIActionType;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
-- (id)initWithReason:(int)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
-- (int)reason;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (id)initWithReason:(long long)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (long long)reason;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 @end

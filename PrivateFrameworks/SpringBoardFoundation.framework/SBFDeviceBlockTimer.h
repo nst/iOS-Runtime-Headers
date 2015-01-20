@@ -11,16 +11,16 @@
 @interface SBFDeviceBlockTimer : NSObject {
     NSString *_cachedLocalizedPlatformName;
     SBFDeviceLockController *_deviceLockController;
-    BOOL _enabled;
     id _handler;
     NSString *_subtitleText;
     NSTimer *_timer;
     NSString *_titleText;
+    bool_enabled;
 }
 
 @property(copy) NSString * cachedLocalizedPlatformName;
 @property(retain) SBFDeviceLockController * deviceLockController;
-@property BOOL enabled;
+@property bool enabled;
 @property(copy) id handler;
 @property(copy) NSString * subtitleText;
 @property(retain) NSTimer * timer;
@@ -32,13 +32,13 @@
 - (id)cachedLocalizedPlatformName;
 - (void)dealloc;
 - (id)deviceLockController;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)handler;
 - (id)initWithDeviceLockController:(id)arg1;
 - (void)invalidate;
 - (void)setCachedLocalizedPlatformName:(id)arg1;
 - (void)setDeviceLockController:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHandler:(id)arg1;
 - (void)setSubtitleText:(id)arg1;
 - (void)setTimer:(id)arg1;

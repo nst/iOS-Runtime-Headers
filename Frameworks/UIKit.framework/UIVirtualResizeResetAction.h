@@ -5,7 +5,7 @@
 @interface UIVirtualResizeResetAction : BSAction {
 }
 
-- (int)UIActionType;
+- (long long)UIActionType;
 - (id)init;
 
 @end

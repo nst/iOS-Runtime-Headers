@@ -7,21 +7,21 @@
 @interface SKUIGalleryPageComponent : SKUIPageComponent {
     NSArray *_childComponents;
     double _cycleInterval;
-    BOOL _hidesPageIndicator;
+    bool_hidesPageIndicator;
 }
 
 @property(readonly) NSArray * childComponents;
 @property double cycleInterval;
-@property BOOL hidesPageIndicator;
+@property bool hidesPageIndicator;
 
 - (void).cxx_destruct;
 - (id)childComponents;
-- (int)componentType;
+- (long long)componentType;
 - (double)cycleInterval;
-- (BOOL)hidesPageIndicator;
+- (bool)hidesPageIndicator;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)metricsElementName;
 - (void)setCycleInterval:(double)arg1;
-- (void)setHidesPageIndicator:(BOOL)arg1;
+- (void)setHidesPageIndicator:(bool)arg1;
 
 @end

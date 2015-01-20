@@ -12,36 +12,36 @@
     NSArray *_desiredKeys;
     NSDictionary *_desiredPackageFileIndices;
     id _fetchRecordsCompletionBlock;
-    BOOL _isFetchCurrentUserOperation;
     id _perRecordCompletionBlock;
     id _perRecordProgressBlock;
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDs;
     NSMutableDictionary *_recordIDsToRecords;
     NSDictionary *_recordIDsToVersionETags;
-    BOOL _shouldFetchAssetContent;
     NSMutableDictionary *_signaturesOfAssetsByRecordIDAndKey;
     NSDictionary *_webSharingIdentityDataByRecordID;
+    bool_isFetchCurrentUserOperation;
+    bool_shouldFetchAssetContent;
 }
 
 @property(copy) NSArray * desiredKeys;
 @property(copy) NSDictionary * desiredPackageFileIndices;
 @property(copy) id fetchRecordsCompletionBlock;
-@property BOOL isFetchCurrentUserOperation;
+@property bool isFetchCurrentUserOperation;
 @property(copy) id perRecordCompletionBlock;
 @property(copy) id perRecordProgressBlock;
 @property(retain) NSMutableDictionary * recordErrors;
 @property(copy) NSArray * recordIDs;
 @property(retain) NSMutableDictionary * recordIDsToRecords;
 @property(retain) NSDictionary * recordIDsToVersionETags;
-@property BOOL shouldFetchAssetContent;
+@property bool shouldFetchAssetContent;
 @property(retain) NSMutableDictionary * signaturesOfAssetsByRecordIDAndKey;
 @property(retain) NSDictionary * webSharingIdentityDataByRecordID;
 
 + (id)fetchCurrentUserRecordOperation;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)desiredKeys;
@@ -50,7 +50,7 @@
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithRecordIDs:(id)arg1;
-- (BOOL)isFetchCurrentUserOperation;
+- (bool)isFetchCurrentUserOperation;
 - (id)perRecordCompletionBlock;
 - (id)perRecordProgressBlock;
 - (void)performCKOperation;
@@ -61,17 +61,17 @@
 - (void)setDesiredKeys:(id)arg1;
 - (void)setDesiredPackageFileIndices:(id)arg1;
 - (void)setFetchRecordsCompletionBlock:(id)arg1;
-- (void)setIsFetchCurrentUserOperation:(BOOL)arg1;
+- (void)setIsFetchCurrentUserOperation:(bool)arg1;
 - (void)setPerRecordCompletionBlock:(id)arg1;
 - (void)setPerRecordProgressBlock:(id)arg1;
 - (void)setRecordErrors:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordIDsToRecords:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
 - (void)setWebSharingIdentityDataByRecordID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContent;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (id)webSharingIdentityDataByRecordID;
 

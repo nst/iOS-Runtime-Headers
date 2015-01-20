@@ -7,10 +7,10 @@
 
 - (void)_dispose;
 - (void)_xref_dispose;
-- (BOOL)allowsWeakReference;
+- (bool)allowsWeakReference;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 
 @end

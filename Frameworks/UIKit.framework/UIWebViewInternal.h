@@ -15,7 +15,7 @@
     unsigned int didRotateEnclosingScrollView : 1;
     UIWebBrowserView *browserView;
     UICheckeredPatternView *checkeredPatternView;
-    int clickedAlertButtonIndex;
+    long long clickedAlertButtonIndex;
     <UIWebViewDelegate> *delegate;
     UIWebPDFViewHandler *pdfHandler;
     NSURLRequest *request;

@@ -8,18 +8,18 @@
         float y; 
         float z; 
     } center;
-    float radius;
+    double radius;
 }
 
 @property struct SCNVector3 { float x1; float x2; float x3; } center;
-@property float radius;
+@property double radius;
 
 + (id)SCNJSExportProtocol;
 
 - (struct SCNVector3 { float x1; float x2; float x3; })center;
 - (id)description;
-- (float)radius;
+- (double)radius;
 - (void)setCenter:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setRadius:(float)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

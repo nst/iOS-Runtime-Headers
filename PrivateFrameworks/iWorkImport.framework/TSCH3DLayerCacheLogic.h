@@ -7,12 +7,12 @@
 @interface TSCH3DLayerCacheLogic : NSObject <TSCHUnretainedParent, TSCH3DLayerCacheLogicProtocol> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } mDrawingBounds;
     CALayer *mParent;
@@ -21,22 +21,22 @@
 
 @property id repLayerDelegate;
 
-+ (BOOL)cacheable;
++ (bool)cacheable;
 
 - (id).cxx_construct;
 - (void)clearParent;
-- (BOOL)contentsIsHighQuality;
-- (BOOL)contentsIsValid;
+- (bool)contentsIsHighQuality;
+- (bool)contentsIsValid;
 - (void)dealloc;
 - (id)description;
 - (id)initWithParent:(id)arg1;
-- (BOOL)isClipped;
-- (BOOL)isClippedAreaVisibleInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)isClipped;
+- (bool)isClippedAreaVisibleInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)repLayerDelegate;
-- (void)setContentsIsValid:(BOOL)arg1 highQuality:(BOOL)arg2;
-- (void)setContentsIsValid:(BOOL)arg1;
-- (void)setDrawingBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentsIsValid:(bool)arg1 highQuality:(bool)arg2;
+- (void)setContentsIsValid:(bool)arg1;
+- (void)setDrawingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setRepLayerDelegate:(id)arg1;
 
 @end

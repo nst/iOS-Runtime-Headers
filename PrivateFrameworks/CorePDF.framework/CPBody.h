@@ -6,6 +6,6 @@
 }
 
 - (void)accept:(id)arg1;
-- (BOOL)isBodyZone;
+- (bool)isBodyZone;
 
 @end

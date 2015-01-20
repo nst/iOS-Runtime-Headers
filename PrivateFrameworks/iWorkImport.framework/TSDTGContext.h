@@ -6,24 +6,24 @@
 
 @interface TSDTGContext : NSObject {
     <TSDThumbnailConsumer> *_consumer;
-    BOOL _continueThumbnailing;
     <TSDThumbnailProducer> *_producer;
     TSUImage *_thumbnail;
     <TSDThumbnailIdentifier> *_thumbnailId;
+    bool_continueThumbnailing;
 }
 
 @property(readonly) <TSDThumbnailConsumer> * consumer;
-@property BOOL continueThumbnailing;
+@property bool continueThumbnailing;
 @property(readonly) <TSDThumbnailProducer> * producer;
 @property(retain) TSUImage * thumbnail;
 @property <TSDThumbnailIdentifier> * thumbnailId;
 
 - (id)consumer;
-- (BOOL)continueThumbnailing;
+- (bool)continueThumbnailing;
 - (void)dealloc;
 - (id)initWithConsumer:(id)arg1 producer:(id)arg2;
 - (id)producer;
-- (void)setContinueThumbnailing:(BOOL)arg1;
+- (void)setContinueThumbnailing:(bool)arg1;
 - (void)setThumbnail:(id)arg1;
 - (void)setThumbnailId:(id)arg1;
 - (id)thumbnail;

@@ -11,6 +11,6 @@
 - (id)init;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 forContext:(id)arg3 withLanguage:(id)arg4;
 - (void)resetRegisteredResponsesForContext:(id)arg1;
-- (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
+- (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned long long)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned long long)arg5;
 
 @end

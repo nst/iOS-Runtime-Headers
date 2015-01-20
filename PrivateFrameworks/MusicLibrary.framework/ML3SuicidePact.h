@@ -10,7 +10,7 @@
     NSMutableSet *_signatures;
 }
 
-@property(readonly) BOOL isSigned;
+@property(readonly) bool isSigned;
 
 + (id)sharedPact;
 
@@ -19,9 +19,9 @@
 - (void)dealloc;
 - (void)execute;
 - (id)init;
-- (BOOL)isSigned;
-- (BOOL)isSignedForReason:(int)arg1;
-- (void)secedeForReason:(int)arg1;
-- (void)signForReason:(int)arg1;
+- (bool)isSigned;
+- (bool)isSignedForReason:(long long)arg1;
+- (void)secedeForReason:(long long)arg1;
+- (void)signForReason:(long long)arg1;
 
 @end

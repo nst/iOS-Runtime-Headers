@@ -8,62 +8,62 @@
 
 @interface AVCaptureStillImageRequest_FigRecorder : NSObject <NSCopying> {
     struct CGSize { 
-        float width; 
-        float height; 
-    int _HDRMode;
-    unsigned long _imageDataFormatType;
+        double width; 
+        double height; 
+    long long _HDRMode;
+    unsigned int _imageDataFormatType;
     id _iosurfaceCompletionBlock;
     float _jpegQuality;
-    BOOL _jpegQualitySpecified;
-    BOOL _noiseReductionEnabled;
     } _previewImageSize;
     id _sbufCompletionBlock;
-    unsigned long _shutterSoundID;
-    BOOL _stillImageMirrored;
-    int _stillImageOrientation;
-    BOOL _suspendsVideoProcessing;
+    unsigned int _shutterSoundID;
+    long long _stillImageOrientation;
+    bool_jpegQualitySpecified;
+    bool_noiseReductionEnabled;
+    bool_stillImageMirrored;
+    bool_suspendsVideoProcessing;
 }
 
-@property int HDRMode;
-@property unsigned long imageDataFormatType;
+@property long long HDRMode;
+@property unsigned int imageDataFormatType;
 @property(copy) id iosurfaceCompletionBlock;
 @property float jpegQuality;
-@property BOOL jpegQualitySpecified;
-@property BOOL noiseReductionEnabled;
-@property struct CGSize { float x1; float x2; } previewImageSize;
+@property bool jpegQualitySpecified;
+@property bool noiseReductionEnabled;
+@property struct CGSize { double x1; double x2; } previewImageSize;
 @property(copy) id sbufCompletionBlock;
-@property unsigned long shutterSoundID;
-@property(getter=isStillImageMirrored) BOOL stillImageMirrored;
-@property int stillImageOrientation;
-@property BOOL suspendsVideoProcessing;
+@property unsigned int shutterSoundID;
+@property(getter=isStillImageMirrored) bool stillImageMirrored;
+@property long long stillImageOrientation;
+@property bool suspendsVideoProcessing;
 
 + (id)request;
 
-- (int)HDRMode;
+- (long long)HDRMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned long)imageDataFormatType;
+- (unsigned int)imageDataFormatType;
 - (id)iosurfaceCompletionBlock;
-- (BOOL)isStillImageMirrored;
+- (bool)isStillImageMirrored;
 - (float)jpegQuality;
-- (BOOL)jpegQualitySpecified;
-- (BOOL)noiseReductionEnabled;
-- (struct CGSize { float x1; float x2; })previewImageSize;
+- (bool)jpegQualitySpecified;
+- (bool)noiseReductionEnabled;
+- (struct CGSize { double x1; double x2; })previewImageSize;
 - (id)sbufCompletionBlock;
-- (void)setHDRMode:(int)arg1;
-- (void)setImageDataFormatType:(unsigned long)arg1;
+- (void)setHDRMode:(long long)arg1;
+- (void)setImageDataFormatType:(unsigned int)arg1;
 - (void)setIosurfaceCompletionBlock:(id)arg1;
 - (void)setJpegQuality:(float)arg1;
-- (void)setJpegQualitySpecified:(BOOL)arg1;
-- (void)setNoiseReductionEnabled:(BOOL)arg1;
-- (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setJpegQualitySpecified:(bool)arg1;
+- (void)setNoiseReductionEnabled:(bool)arg1;
+- (void)setPreviewImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSbufCompletionBlock:(id)arg1;
-- (void)setShutterSoundID:(unsigned long)arg1;
-- (void)setStillImageMirrored:(BOOL)arg1;
-- (void)setStillImageOrientation:(int)arg1;
-- (void)setSuspendsVideoProcessing:(BOOL)arg1;
-- (unsigned long)shutterSoundID;
-- (int)stillImageOrientation;
-- (BOOL)suspendsVideoProcessing;
+- (void)setShutterSoundID:(unsigned int)arg1;
+- (void)setStillImageMirrored:(bool)arg1;
+- (void)setStillImageOrientation:(long long)arg1;
+- (void)setSuspendsVideoProcessing:(bool)arg1;
+- (unsigned int)shutterSoundID;
+- (long long)stillImageOrientation;
+- (bool)suspendsVideoProcessing;
 
 @end

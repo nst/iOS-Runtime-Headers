@@ -19,14 +19,14 @@
 @property(retain,readonly) TSSMutablePropertySet * changedPropertySet;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) TSSMutablePropertySet * i_propertiesWithOldValuesRecordedButNotNewValues;
 @property(retain,readonly) <TSSPropertySource> * propertiesAfterChange;
 @property(retain,readonly) <TSSPropertySource> * propertiesBeforeChange;
 @property(retain,readonly) id prototype;
-@property(readonly) BOOL prototypeIsBeingDeleted;
-@property(readonly) BOOL prototypeIsBeingModified;
-@property(readonly) BOOL prototypeIsBeingReplaced;
+@property(readonly) bool prototypeIsBeingDeleted;
+@property(readonly) bool prototypeIsBeingModified;
+@property(readonly) bool prototypeIsBeingReplaced;
 @property(retain,readonly) id replacement;
 @property(readonly) Class superclass;
 
@@ -38,13 +38,13 @@
 - (id)i_propertiesWithOldValuesRecordedButNotNewValues;
 - (id)initModifyPrototypeChangeForPrototype:(id)arg1;
 - (id)propertiesAfterChange;
-- (BOOL)propertiesAreChanging:(id)arg1;
+- (bool)propertiesAreChanging:(id)arg1;
 - (id)propertiesBeforeChange;
-- (BOOL)propertyIsChanging:(int)arg1;
+- (bool)propertyIsChanging:(int)arg1;
 - (id)prototype;
-- (BOOL)prototypeIsBeingDeleted;
-- (BOOL)prototypeIsBeingModified;
-- (BOOL)prototypeIsBeingReplaced;
+- (bool)prototypeIsBeingDeleted;
+- (bool)prototypeIsBeingModified;
+- (bool)prototypeIsBeingReplaced;
 - (id)replacement;
 
 @end

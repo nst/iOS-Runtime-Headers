@@ -6,18 +6,18 @@
 
 @interface EKUIAlarm : NSObject {
     EKAlarm *_alarm;
-    BOOL _isLeaveNowAlarm;
+    bool_isLeaveNowAlarm;
 }
 
 @property(readonly) EKAlarm * alarm;
-@property(readonly) BOOL isLeaveNowAlarm;
+@property(readonly) bool isLeaveNowAlarm;
 
 - (void).cxx_destruct;
 - (id)alarm;
 - (id)description;
 - (id)initLeaveNowAlarm;
 - (id)initWithAlarm:(id)arg1;
-- (BOOL)isLeaveNowAlarm;
-- (id)localizedDescriptionAllDay:(BOOL)arg1;
+- (bool)isLeaveNowAlarm;
+- (id)localizedDescriptionAllDay:(bool)arg1;
 
 @end

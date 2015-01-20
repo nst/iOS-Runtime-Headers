@@ -7,8 +7,8 @@
 
 - (id)_text;
 - (id)_textAttributes;
-- (float)_textHorizontalInset;
-- (float)_textHorizontalKerningOffset;
-- (float)_textVerticalInset;
+- (double)_textHorizontalInset;
+- (double)_textHorizontalKerningOffset;
+- (double)_textVerticalInset;
 
 @end

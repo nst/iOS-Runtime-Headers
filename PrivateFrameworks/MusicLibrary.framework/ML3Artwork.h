@@ -6,28 +6,28 @@
 
 @interface ML3Artwork : NSObject {
     NSString *_artworkToken;
-    int _artworkType;
+    long long _artworkType;
     NSURL *_originalFileURL;
     NSString *_relativePath;
-    int _sourceType;
+    long long _sourceType;
 }
 
 @property(readonly) NSString * artworkToken;
-@property(readonly) int artworkType;
+@property(readonly) long long artworkType;
 @property(readonly) NSURL * originalFileURL;
 @property(readonly) NSString * relativePath;
-@property(readonly) int sourceType;
+@property(readonly) long long sourceType;
 
 - (void).cxx_destruct;
 - (id)artworkToken;
-- (int)artworkType;
-- (id)fileURLForSize:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned int)hash;
-- (id)initWithToken:(id)arg1 sourceType:(int)arg2 artworkType:(int)arg3;
-- (id)initWithToken:(id)arg1 sourceType:(int)arg2 relativePath:(id)arg3 artworkType:(int)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (long long)artworkType;
+- (id)fileURLForSize:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)hash;
+- (id)initWithToken:(id)arg1 sourceType:(long long)arg2 artworkType:(long long)arg3;
+- (id)initWithToken:(id)arg1 sourceType:(long long)arg2 relativePath:(id)arg3 artworkType:(long long)arg4;
+- (bool)isEqual:(id)arg1;
 - (id)originalFileURL;
 - (id)relativePath;
-- (int)sourceType;
+- (long long)sourceType;
 
 @end

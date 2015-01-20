@@ -8,17 +8,17 @@
     NSArray *_desiredKeys;
     CKServerChangeToken *_previousServerChangeToken;
     CKRecordZoneID *_recordZoneID;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContents;
+    unsigned long long _resultsLimit;
+    bool_shouldFetchAssetContents;
 }
 
 @property(retain) NSArray * desiredKeys;
 @property(retain) CKServerChangeToken * previousServerChangeToken;
 @property(retain) CKRecordZoneID * recordZoneID;
-@property unsigned int resultsLimit;
-@property BOOL shouldFetchAssetContents;
+@property unsigned long long resultsLimit;
+@property bool shouldFetchAssetContents;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)desiredKeys;
@@ -26,12 +26,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)previousServerChangeToken;
 - (id)recordZoneID;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setRecordZoneID:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
-- (void)setShouldFetchAssetContents:(BOOL)arg1;
-- (BOOL)shouldFetchAssetContents;
+- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setShouldFetchAssetContents:(bool)arg1;
+- (bool)shouldFetchAssetContents;
 
 @end

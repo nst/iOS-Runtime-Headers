@@ -9,21 +9,22 @@
     NSLock *_connectionLock;
     <PKPaymentServiceDelegate> *_delegate;
     PKPaymentServiceExportedProxy *_exportedProxy;
+    unsigned long long _paymentInterfacePreventionCounter;
 }
 
 @property(retain) NSString * defaultPaymentPassUniqueIdentifier;
 @property <PKPaymentServiceDelegate> * delegate;
-@property(readonly) BOOL paymentDeviceIsAvailable;
-@property(readonly) BOOL paymentDeviceIsInField;
-@property(readonly) BOOL paymentDeviceIsInRestrictedMode;
+@property(readonly) bool paymentDeviceIsAvailable;
+@property(readonly) bool paymentDeviceIsInField;
+@property(readonly) bool paymentDeviceIsInRestrictedMode;
 @property(readonly) NSString * secureElementIdentifier;
 @property(retain) PKPaymentWebServiceContext * sharedPaymentWebServiceContext;
 
-+ (BOOL)paymentServiceIsAvailable;
++ (bool)paymentServiceIsAvailable;
 
 - (void)_activationStateForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
 - (id)_connection;
-- (id)_connectionWithTeardownExisting:(BOOL)arg1 createNewIfNecessary:(BOOL)arg2;
+- (id)_connectionWithTeardownExisting:(bool)arg1 createNewIfNecessary:(bool)arg2;
 - (void)_defaultPaymentPassUniqueIdentifier:(id)arg1;
 - (void)_deleteMessageWithIdentifier:(id)arg1 fromPassWithUniqueIdentifier:(id)arg2 completion:(id)arg3;
 - (id)_errorHandlerWithCompletion:(id)arg1;
@@ -41,9 +42,10 @@
 - (void)_unregisterForApplicationLifeCycleNotifications;
 - (void)_unregisterForPaymentServiceNotifications;
 - (void)activatePaymentPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
-- (int)activationStateForPaymentPassWithUniqueIdentifier:(id)arg1;
+- (long long)activationStateForPaymentPassWithUniqueIdentifier:(id)arg1;
 - (void)authorizeInAppPaymentRequest:(id)arg1 completion:(id)arg2;
 - (void)authorizePaymentPassWithUniqueIdentifier:(id)arg1 authenticationCredential:(id)arg2 completion:(id)arg3;
+- (void)beginPreventingPaymentInterfacePresentation;
 - (void)consistencyCheck;
 - (void)dealloc;
 - (void)deauthorizePaymentPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
@@ -52,6 +54,7 @@
 - (void)deleteMessageWithIdentifier:(id)arg1 fromPassWithUniqueIdentifier:(id)arg2;
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(id)arg1;
 - (void)downloadAllPaymentPasses;
+- (void)endPreventingPaymentInterfacePresentation;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (void)insertOrUpdatePaymentTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3 completion:(id)arg4;
@@ -63,11 +66,11 @@
 - (void)paymentDeviceDidEnterRestrictedMode;
 - (void)paymentDeviceDidLeaveField;
 - (void)paymentDeviceDidLeaveRestrictedMode;
-- (BOOL)paymentDeviceIsAvailable;
-- (BOOL)paymentDeviceIsInField;
-- (BOOL)paymentDeviceIsInRestrictedMode;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(BOOL)arg2;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(BOOL)arg2;
+- (bool)paymentDeviceIsAvailable;
+- (bool)paymentDeviceIsInField;
+- (bool)paymentDeviceIsInRestrictedMode;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(bool)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifierDidActivate:(id)arg1;
@@ -81,7 +84,7 @@
 - (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNewAuthRandom;
-- (void)setNewAuthRandomIfNecessaryWithRetryCount:(unsigned int)arg1 completion:(id)arg2;
+- (void)setNewAuthRandomIfNecessaryWithRetryCount:(unsigned long long)arg1 completion:(id)arg2;
 - (void)setSharedPaymentWebServiceContext:(id)arg1;
 - (id)sharedPaymentWebServiceContext;
 - (void)simulatePaymentPush;

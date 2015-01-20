@@ -8,16 +8,16 @@
     NSMutableDictionary *mCellIDToIndexMap;
 }
 
-@property BOOL appliesToHidden;
+@property bool appliesToHidden;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)addCell:(id)arg1 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)dealloc;
 - (id)findCellFromCellMap:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
 - (void)popLastCell;
 
 @end

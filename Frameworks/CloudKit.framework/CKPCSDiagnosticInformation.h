@@ -16,7 +16,7 @@
 @property(retain) NSMutableDictionary * pcsInfoByZoneID;
 @property(retain) NSString * serviceIdentityInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

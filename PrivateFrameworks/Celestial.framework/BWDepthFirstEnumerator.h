@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface BWDepthFirstEnumerator : BWNodeEnumerator {
-    unsigned int _currentSourceIndex;
+    unsigned long long _currentSourceIndex;
     NSMutableArray *_stack;
 }
 

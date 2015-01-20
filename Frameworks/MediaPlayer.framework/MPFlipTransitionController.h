@@ -7,32 +7,32 @@
 @interface MPFlipTransitionController : MPTransitionController {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     UIView *_fromView;
     } _toFrame;
-    float _topMargin;
+    double _topMargin;
 }
 
 @property(retain) UIView * fromView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } toFrame;
-@property float topMargin;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } toFrame;
+@property double topMargin;
 
 - (void).cxx_destruct;
-- (id)_subtypeForTransitionType:(unsigned int)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (id)_subtypeForTransitionType:(unsigned long long)arg1;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)fromView;
 - (id)init;
-- (void)performTransition:(unsigned int)arg1;
+- (void)performTransition:(unsigned long long)arg1;
 - (void)setFromView:(id)arg1;
-- (void)setToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTopMargin:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toFrame;
-- (float)topMargin;
+- (void)setToFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTopMargin:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })toFrame;
+- (double)topMargin;
 
 @end

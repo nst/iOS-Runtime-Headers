@@ -5,27 +5,27 @@
 @class NSData, NSURL;
 
 @interface _NSItemProviderSandboxedResource : NSObject <NSSecureCoding, NSCopying> {
-    BOOL _accessingSecurityScopedResource;
     NSURL *_resourceURL;
     NSData *_sandboxExtensionToken;
+    bool_accessingSecurityScopedResource;
 }
 
-@property(getter=isAccessingSecurityScopedResource) BOOL accessingSecurityScopedResource;
+@property(getter=isAccessingSecurityScopedResource) bool accessingSecurityScopedResource;
 @property(copy) NSURL * resourceURL;
 @property(copy) NSData * sandboxExtensionToken;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
-- (BOOL)isAccessingSecurityScopedResource;
+- (bool)isAccessingSecurityScopedResource;
 - (id)resolveURLAndReturnError:(id*)arg1;
 - (id)resourceURL;
 - (id)sandboxExtensionToken;
-- (void)setAccessingSecurityScopedResource:(BOOL)arg1;
+- (void)setAccessingSecurityScopedResource:(bool)arg1;
 - (void)setResourceURL:(id)arg1;
 - (void)setSandboxExtensionToken:(id)arg1;
 

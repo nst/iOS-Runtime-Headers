@@ -5,15 +5,15 @@
 @class NSError, NSMutableData, NSString, NSURLResponse;
 
 @interface MFMessageURLConnectionDelegate : NSObject <NSURLConnectionDelegate> {
-    BOOL _done;
     NSError *_error;
     NSURLResponse *_response;
     NSMutableData *_responseBody;
+    bool_done;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

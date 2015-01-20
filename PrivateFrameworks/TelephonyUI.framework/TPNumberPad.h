@@ -6,18 +6,18 @@
 
 @interface TPNumberPad : UIControl {
     NSMutableArray *_buttons;
-    BOOL _numberButtonsEnabled;
+    bool_numberButtonsEnabled;
 }
 
-@property float buttonBackgroundAlpha;
+@property double buttonBackgroundAlpha;
 @property(retain) NSArray * buttons;
-@property BOOL numberButtonsEnabled;
+@property bool numberButtonsEnabled;
 
 - (void)_addButton:(id)arg1;
-- (float)_backgroundAlphaOfButton:(id)arg1;
+- (double)_backgroundAlphaOfButton:(id)arg1;
 - (void)_layoutGrid;
-- (void)_setBackgroundAlphaOnButton:(id)arg1 alpha:(float)arg2;
-- (float)buttonBackgroundAlpha;
+- (void)_setBackgroundAlphaOnButton:(id)arg1 alpha:(double)arg2;
+- (double)buttonBackgroundAlpha;
 - (void)buttonCancelled:(id)arg1;
 - (void)buttonDown:(id)arg1;
 - (void)buttonLongPressed:(id)arg1;
@@ -27,11 +27,11 @@
 - (id)buttons;
 - (void)dealloc;
 - (id)initWithButtons:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)numberButtonsEnabled;
-- (void)replaceButton:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setButtonBackgroundAlpha:(float)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)numberButtonsEnabled;
+- (void)replaceButton:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)setButtonBackgroundAlpha:(double)arg1;
 - (void)setButtons:(id)arg1;
-- (void)setNumberButtonsEnabled:(BOOL)arg1;
+- (void)setNumberButtonsEnabled:(bool)arg1;
 
 @end

@@ -27,7 +27,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)componentsWithString:(id)arg1;
-+ (id)componentsWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
++ (id)componentsWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
 
 - (id)URL;
 - (id)URLRelativeToURL:(id)arg1;
@@ -36,7 +36,7 @@
 - (id)host;
 - (id)init;
 - (id)initWithString:(id)arg1;
-- (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
+- (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
 - (id)password;
 - (id)path;
 - (id)percentEncodedFragment;

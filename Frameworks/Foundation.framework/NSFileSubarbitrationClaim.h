@@ -13,12 +13,12 @@
     id _messageSender;
     NSMutableDictionary *_readRelinquishmentsByPresenterID;
     NSArray *_readingLocations;
-    unsigned int _readingOptions;
+    unsigned long long _readingOptions;
     NSArray *_readingURLs;
     NSFileAccessNode *_rootNode;
     NSMutableDictionary *_writeRelinquishmentsByPresenterID;
     NSArray *_writingLocations;
-    unsigned int _writingOptions;
+    unsigned long long _writingOptions;
     NSArray *_writingURLs;
 }
 
@@ -26,16 +26,16 @@
 - (void)devalueOldClaim:(id)arg1;
 - (void)devalueSelf;
 - (void)evaluateNewClaim:(id)arg1;
-- (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
+- (bool)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(bool)arg2;
 - (void)forwardReacquisitionMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenterForID:(id)arg3 usingReplySender:(id)arg4;
 - (void)forwardRelinquishmentMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenter:(id)arg3 usingReplySender:(id)arg4;
 - (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
 - (void)granted;
 - (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
-- (id)initWithReadingURLs:(id)arg1 options:(unsigned int)arg2 writingURLs:(id)arg3 options:(unsigned int)arg4 claimer:(id)arg5;
+- (id)initWithReadingURLs:(id)arg1 options:(unsigned long long)arg2 writingURLs:(id)arg3 options:(unsigned long long)arg4 claimer:(id)arg5;
 - (void)invokeClaimer;
-- (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
+- (bool)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (id)messageSender;
 - (id)relinquishmentForMessageOfKind:(id)arg1 toPresenterForID:(id)arg2;

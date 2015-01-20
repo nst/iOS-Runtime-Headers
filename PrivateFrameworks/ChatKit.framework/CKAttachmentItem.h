@@ -6,8 +6,8 @@
 
 @interface CKAttachmentItem : NSObject <QLPreviewItem> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSURL *_fileURL;
     NSString *_guid;
     NSURL *_previewURL;
@@ -18,18 +18,18 @@
 @property(copy,readonly) NSString * description;
 @property(copy) NSURL * fileURL;
 @property(copy) NSString * guid;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSURL * previewItemURL;
 @property(retain) NSURL * previewURL;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 @property(readonly) Class superclass;
 
 + (id)UTITypes;
-+ (struct CGSize { float x1; float x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSize;
 + (id)previewCache;
 + (id)previewSizingQueue;
-+ (unsigned int)pxWidth;
++ (unsigned long long)pxWidth;
 
 - (id)UTIType;
 - (void)_savePreview:(id)arg1;
@@ -41,14 +41,14 @@
 - (void)generatePreviewWithCompletion:(id)arg1;
 - (id)guid;
 - (id)imageData;
-- (id)initWithFileURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 guid:(id)arg3;
+- (id)initWithFileURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 guid:(id)arg3;
 - (id)pasteboardItem;
 - (id)previewItemURL;
 - (id)previewURL;
 - (void)setFileURL:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setPreviewURL:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (void)startDeferredSetup;
 
 @end

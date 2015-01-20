@@ -6,38 +6,38 @@
 
 @interface CKRaiseGesture : NSObject {
     SEL _action;
-    BOOL _enabled;
     CMGestureManager *_gestureManager;
-    int _gestureState;
-    BOOL _proximityState;
+    long long _gestureState;
     id _target;
+    bool_enabled;
+    bool_proximityState;
 }
 
 @property SEL action;
-@property(getter=isEnabled) BOOL enabled;
+@property(getter=isEnabled) bool enabled;
 @property(retain) CMGestureManager * gestureManager;
-@property int gestureState;
-@property BOOL proximityState;
-@property(getter=isRecognized,readonly) BOOL recognized;
+@property long long gestureState;
+@property bool proximityState;
+@property(getter=isRecognized,readonly) bool recognized;
 @property id target;
 
-+ (BOOL)isRaiseGestureEnabled;
-+ (BOOL)isRaiseGestureSupported;
++ (bool)isRaiseGestureEnabled;
++ (bool)isRaiseGestureSupported;
 
 - (SEL)action;
 - (void)dealloc;
 - (id)gestureManager;
-- (int)gestureState;
+- (long long)gestureState;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)isEnabled;
-- (BOOL)isRecognized;
-- (BOOL)proximityState;
+- (bool)isEnabled;
+- (bool)isRecognized;
+- (bool)proximityState;
 - (void)proximityStateDidChange:(id)arg1;
 - (void)setAction:(SEL)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setGestureManager:(id)arg1;
-- (void)setGestureState:(int)arg1;
-- (void)setProximityState:(BOOL)arg1;
+- (void)setGestureState:(long long)arg1;
+- (void)setProximityState:(bool)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
 

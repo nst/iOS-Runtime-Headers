@@ -8,21 +8,21 @@
     MPMediaQuery *_localItemsQuery;
     MPStoreOfferMediaItemCollection *_mergedCollection;
     MPStoreOfferMediaItemCollection *_offeredCollection;
-    int _preferredStoreOfferVariant;
+    long long _preferredStoreOfferVariant;
 }
 
 @property(readonly) MPStoreOfferMediaItemCollection * itemsWithCompletionsCollection;
 @property(readonly) NSArray * localItems;
 @property(readonly) MPStoreOfferMediaItemCollection * mergedCollection;
 @property(readonly) MPStoreOfferMediaItemCollection * offeredCollection;
-@property(readonly) int preferredStoreOfferVariant;
+@property(readonly) long long preferredStoreOfferVariant;
 
 - (void).cxx_destruct;
-- (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(int)arg3;
+- (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(long long)arg3;
 - (id)itemsWithCompletionsCollection;
 - (id)localItems;
 - (id)mergedCollection;
 - (id)offeredCollection;
-- (int)preferredStoreOfferVariant;
+- (long long)preferredStoreOfferVariant;
 
 @end

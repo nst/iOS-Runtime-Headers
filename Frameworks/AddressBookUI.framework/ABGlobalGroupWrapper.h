@@ -7,8 +7,8 @@
 
 + (id)newGlobalGroupWrapperWithAddressBook:(void*)arg1;
 
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGlobalWrapper;
+- (bool)isEqual:(id)arg1;
+- (bool)isGlobalWrapper;
 - (id)name;
 
 @end

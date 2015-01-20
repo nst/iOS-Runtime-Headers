@@ -6,21 +6,21 @@
 
 @interface RURadioStreamPing : NSObject {
     double _timestamp;
-    int _type;
+    long long _type;
     NSData *_value;
 }
 
 @property(readonly) double timestamp;
-@property(readonly) int type;
+@property(readonly) long long type;
 @property(copy,readonly) NSData * value;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithType:(int)arg1 value:(id)arg2 timestamp:(double)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithType:(long long)arg1 value:(id)arg2 timestamp:(double)arg3;
+- (bool)isEqual:(id)arg1;
 - (double)timestamp;
-- (int)type;
+- (long long)type;
 - (id)value;
 
 @end

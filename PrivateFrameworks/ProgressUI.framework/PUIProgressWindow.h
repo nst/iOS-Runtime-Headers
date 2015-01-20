@@ -6,32 +6,32 @@
 
 @interface PUIProgressWindow : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGImage { } *_appleLogo;
     CAContext *_context;
     float _currentProgress;
     float _displayOrientation;
     float _displayScale;
     } _displaySize;
-    BOOL _forceInverted;
     CALayer *_layer;
     NSString *_pluginName;
     CALayer *_pluginNameLayer;
     CALayer *_progressLayer;
-    float _progressWidth;
-    float _progressXDelta;
-    float _progressYDelta;
-    BOOL _showPluginName;
-    BOOL _showsProgressBar;
-    BOOL _sideways;
-    BOOL _weCreatedTheContext;
-    BOOL _white;
+    double _progressWidth;
+    double _progressXDelta;
+    double _progressYDelta;
+    bool_forceInverted;
+    bool_showPluginName;
+    bool_showsProgressBar;
+    bool_sideways;
+    bool_weCreatedTheContext;
+    bool_white;
 }
 
 @property(readonly) CALayer * layer;
 
-+ (BOOL)_usesPreBoardAppearance;
++ (bool)_usesPreBoardAppearance;
 + (void)setUsesPreBoardAppearance;
 
 - (void).cxx_destruct;
@@ -47,16 +47,16 @@
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)init;
-- (id)initWithForceInverted:(BOOL)arg1;
-- (id)initWithOptions:(unsigned int)arg1 contextLevel:(float)arg2 appearance:(int)arg3;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 context:(id)arg2;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 createContext:(BOOL)arg2 contextLevel:(float)arg3 appearance:(int)arg4;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2 forceInverted:(BOOL)arg3;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2;
-- (id)initWithProgressBarVisibility:(BOOL)arg1;
+- (id)initWithForceInverted:(bool)arg1;
+- (id)initWithOptions:(unsigned long long)arg1 contextLevel:(float)arg2 appearance:(long long)arg3;
+- (id)initWithProgressBarVisibility:(bool)arg1 context:(id)arg2;
+- (id)initWithProgressBarVisibility:(bool)arg1 createContext:(bool)arg2 contextLevel:(float)arg3 appearance:(long long)arg4;
+- (id)initWithProgressBarVisibility:(bool)arg1 level:(float)arg2 forceInverted:(bool)arg3;
+- (id)initWithProgressBarVisibility:(bool)arg1 level:(float)arg2;
+- (id)initWithProgressBarVisibility:(bool)arg1;
 - (id)layer;
 - (void)setPluginName:(id)arg1;
 - (void)setProgressValue:(float)arg1;
-- (void)setVisible:(BOOL)arg1;
+- (void)setVisible:(bool)arg1;
 
 @end

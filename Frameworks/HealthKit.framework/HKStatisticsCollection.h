@@ -27,14 +27,14 @@
 - (void)_enumerateTimePeriodsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id)arg3;
 - (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2 emptyStatisticsConstructor:(id)arg3;
 - (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2;
-- (BOOL)_insertStatistics:(id)arg1;
+- (bool)_insertStatistics:(id)arg1;
 - (id)_maxSumQuantityStatistics;
 - (id)_minSumQuantityStatistics;
 - (void)_resetStatistics:(id)arg1;
-- (id)_statisticsForIndex:(int)arg1;
-- (id)_statisticsPeriodAndIndex:(int*)arg1 forDate:(id)arg2;
+- (id)_statisticsForIndex:(long long)arg1;
+- (id)_statisticsPeriodAndIndex:(long long*)arg1 forDate:(id)arg2;
 - (id)_timePeriodForDate:(id)arg1;
-- (void)_timePeriodForStatisticsAtIndex:(int)arg1 startDate:(id*)arg2 endDate:(id*)arg3;
+- (void)_timePeriodForStatisticsAtIndex:(long long)arg1 startDate:(id*)arg2 endDate:(id*)arg3;
 - (id)anchorDate;
 - (void)enumerateStatisticsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id)arg3;
 - (id)init;

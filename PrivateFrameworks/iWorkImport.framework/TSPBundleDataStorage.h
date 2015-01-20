@@ -6,27 +6,27 @@
 
 @interface TSPBundleDataStorage : TSPFileDataStorage {
     TSPBundle *_bundle;
-    BOOL _gilligan_isRemote;
-    BOOL _isMissingData;
     unsigned char _packageIdentifier;
     NSString *_path;
+    bool_gilligan_isRemote;
+    bool_isMissingData;
 }
 
 - (void).cxx_destruct;
 - (id)AVAssetWithOptions:(id)arg1 contentTypeUTI:(id)arg2;
-- (BOOL)copyToTemporaryURL:(id)arg1 encryptionKey:(id)arg2;
+- (bool)copyToTemporaryURL:(id)arg1 encryptionKey:(id)arg2;
 - (id)decryptionKey;
 - (void)didInitializeFromDocumentURL:(id)arg1;
-- (BOOL)gilligan_isRemote;
+- (bool)gilligan_isRemote;
 - (id)initWithPath:(id)arg1 bundle:(id)arg2;
-- (BOOL)isInPackage:(id)arg1;
-- (BOOL)isMissingData;
+- (bool)isInPackage:(id)arg1;
+- (bool)isMissingData;
 - (unsigned char)packageIdentifier;
 - (id)packageLocator;
 - (void)performIOChannelReadWithAccessor:(id)arg1;
 - (void)performReadWithAccessor:(id)arg1;
-- (void)setGilligan_isRemote:(BOOL)arg1;
-- (void)setIsMissingData:(BOOL)arg1;
-- (BOOL)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(BOOL*)arg5 isMissingData:(BOOL*)arg6;
+- (void)setGilligan_isRemote:(bool)arg1;
+- (void)setIsMissingData:(bool)arg1;
+- (bool)writeData:(id)arg1 toPackageWriter:(id)arg2 preferredFilename:(id)arg3 filename:(id*)arg4 didCopyDataToPackage:(bool*)arg5 isMissingData:(bool*)arg6;
 
 @end

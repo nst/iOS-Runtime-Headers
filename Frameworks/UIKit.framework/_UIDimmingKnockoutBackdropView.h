@@ -9,13 +9,13 @@
     UIView *dimmingKnockoutView;
 }
 
-@property float cornerRadius;
+@property double cornerRadius;
 
-- (id)_dimmingKnockoutBackgroundColorForBackdropStyle:(int)arg1;
-- (id)_filterForBackdropStyle:(int)arg1;
-- (float)cornerRadius;
+- (id)_dimmingKnockoutBackgroundColorForBackdropStyle:(long long)arg1;
+- (id)_filterForBackdropStyle:(long long)arg1;
+- (double)cornerRadius;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1;
-- (void)setCornerRadius:(float)arg1;
+- (id)initWithStyle:(long long)arg1;
+- (void)setCornerRadius:(double)arg1;
 
 @end

@@ -4,28 +4,28 @@
 
 @interface PUGridPinchGestureRecognizer : UIPinchGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
-    float _lastTransitionProgress;
+        double x; 
+        double y; 
+    double _lastTransitionProgress;
     } _touch0InitialLocation;
     } _touch1InitialLocation;
-    unsigned int _transitionDirection;
+    unsigned long long _transitionDirection;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } centerOffset;
-@property(readonly) unsigned int transitionDirection;
-@property(readonly) float transitionProgress;
-@property(readonly) BOOL transitionShouldFinish;
+@property(readonly) struct CGSize { double x1; double x2; } centerOffset;
+@property(readonly) unsigned long long transitionDirection;
+@property(readonly) double transitionProgress;
+@property(readonly) bool transitionShouldFinish;
 
 - (void)_resetTransitionState;
-- (struct CGSize { float x1; float x2; })centerOffset;
+- (struct CGSize { double x1; double x2; })centerOffset;
 - (void)reset;
-- (void)setState:(int)arg1;
-- (unsigned int)transitionDirection;
-- (float)transitionProgress;
-- (BOOL)transitionShouldFinish;
+- (void)setState:(long long)arg1;
+- (unsigned long long)transitionDirection;
+- (double)transitionProgress;
+- (bool)transitionShouldFinish;
 
 @end

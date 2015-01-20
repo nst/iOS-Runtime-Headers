@@ -3,15 +3,15 @@
  */
 
 @interface UINibStringIDTable : NSObject {
-    struct UIStringIDTableBucket { id x1; unsigned int x2; struct UIStringIDTableBucket {} *x3; } *buckets;
-    unsigned int count;
-    unsigned int hashMask;
+    struct UIStringIDTableBucket { id x1; unsigned long long x2; struct UIStringIDTableBucket {} *x3; } *buckets;
+    unsigned long long count;
+    unsigned long long hashMask;
     struct UIStringIDTableBucket {} **table;
 }
 
-- (int)count;
+- (long long)count;
 - (void)dealloc;
-- (id)initWithKeysTransferingOwnership:(id*)arg1 count:(unsigned int)arg2;
-- (BOOL)lookupKey:(id)arg1 identifier:(int*)arg2;
+- (id)initWithKeysTransferingOwnership:(id*)arg1 count:(unsigned long long)arg2;
+- (bool)lookupKey:(id)arg1 identifier:(long long*)arg2;
 
 @end

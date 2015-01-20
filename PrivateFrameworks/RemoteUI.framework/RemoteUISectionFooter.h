@@ -8,15 +8,15 @@
     <RUITableFooterDelegate> *_delegate;
     UIButton *_linkButton;
     NSURL *_linkURL;
-    int _textAlignment;
+    long long _textAlignment;
     UILabel *_textLabel;
-    BOOL _usesCustomTextAlignment;
+    bool_usesCustomTextAlignment;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <RUITableFooterDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) UIButton * linkButton;
 @property(retain) NSURL * linkURL;
 @property(readonly) Class superclass;
@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (void)_linkPressed;
 - (id)delegate;
-- (float)footerHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (double)footerHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (id)initWithAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (id)linkButton;
@@ -32,7 +32,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLinkURL:(id)arg1;
 - (void)setText:(id)arg1 attributes:(id)arg2;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
 
 @end

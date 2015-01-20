@@ -13,14 +13,14 @@
 @property(retain) NSHashTable * assertions;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSObject<OS_dispatch_queue> * internalQueue;
 @property(retain) NSXPCConnection * sbXPCConnection;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (void)_internalQueue_removeStatusBarStyleOverridesAssertionMatchingData:(id)arg1 invalidate:(BOOL)arg2;
+- (void)_internalQueue_removeStatusBarStyleOverridesAssertionMatchingData:(id)arg1 invalidate:(bool)arg2;
 - (void)_invalidateStatusBarStyleOverridesAssertionsWithData:(id)arg1;
 - (void)_reactivateAssertions;
 - (void)_tearDownXPCConnection;

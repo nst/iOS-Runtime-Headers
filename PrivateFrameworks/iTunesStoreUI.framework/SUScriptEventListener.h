@@ -8,12 +8,12 @@
     WebScriptObject *_callback;
     NSLock *_lock;
     NSString *_name;
-    BOOL _useCapture;
+    bool_useCapture;
 }
 
 @property(retain) WebScriptObject * callback;
 @property(copy) NSString * name;
-@property BOOL shouldUseCapture;
+@property bool shouldUseCapture;
 
 - (id)callback;
 - (void)dealloc;
@@ -21,7 +21,7 @@
 - (id)name;
 - (void)setCallback:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setShouldUseCapture:(BOOL)arg1;
-- (BOOL)shouldUseCapture;
+- (void)setShouldUseCapture:(bool)arg1;
+- (bool)shouldUseCapture;
 
 @end

@@ -12,6 +12,6 @@
 @property(retain) NSOrderedSet * hasTypicalUsage;
 @property(retain) AppCalendarUsage * hintCalendarUsage;
 
-- (void)insertObject:(id)arg1 inHasTypicalUsageAtIndex:(unsigned int)arg2;
+- (void)insertObject:(id)arg1 inHasTypicalUsageAtIndex:(unsigned long long)arg2;
 
 @end

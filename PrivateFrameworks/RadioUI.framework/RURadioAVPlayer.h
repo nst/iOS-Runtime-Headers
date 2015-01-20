@@ -5,11 +5,11 @@
 @class NSObject<OS_dispatch_queue>, RadioStation;
 
 @interface RURadioAVPlayer : MPAVController {
-    BOOL _checkedDefaultsForLastPlayedStation;
     RadioStation *_lastPlayedStation;
     NSObject<OS_dispatch_queue> *_lastPlayedStationSaveQueue;
     RadioStation *_playbackCoordinatorCurrentStation;
     NSObject<OS_dispatch_queue> *_radioUIAccessQueue;
+    bool_checkedDefaultsForLastPlayedStation;
 }
 
 @property(readonly) RadioStation * currentStation;
@@ -19,8 +19,8 @@
 - (void)_currentStationDidChangeNotification:(id)arg1;
 - (void)_previewSessionDidStopNotification:(id)arg1;
 - (void)_updateLastPlayedStation;
-- (BOOL)beginOrTogglePlaybackWithCoordinator:(id)arg1;
-- (BOOL)beginPlaybackWithCoordinator:(id)arg1;
+- (bool)beginOrTogglePlaybackWithCoordinator:(id)arg1;
+- (bool)beginPlaybackWithCoordinator:(id)arg1;
 - (id)currentStation;
 - (void)dealloc;
 - (void)feederChangedContents:(id)arg1;

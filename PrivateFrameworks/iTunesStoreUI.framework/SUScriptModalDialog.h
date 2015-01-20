@@ -6,14 +6,14 @@
 
 @interface SUScriptModalDialog : NSObject {
     UIAlertView *_alert;
-    int _buttonIndex;
+    long long _buttonIndex;
     ISDialog *_dialog;
 }
 
 + (id)titleForURL:(id)arg1;
 
 - (id)_copyResponseByRunningModal;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)copyResponseByRunningModal;
 - (void)dealloc;
 - (id)initWithDialog:(id)arg1;

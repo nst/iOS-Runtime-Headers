@@ -7,13 +7,13 @@
 @interface CKTextMessagePartChatItem : CKMessagePartChatItem {
 }
 
-@property(readonly) BOOL containsHyperlink;
+@property(readonly) bool containsHyperlink;
 @property(copy,readonly) NSAttributedString * subject;
 @property(copy,readonly) NSAttributedString * text;
 
 - (Class)balloonViewClass;
 - (id)composition;
-- (BOOL)containsHyperlink;
+- (bool)containsHyperlink;
 - (id)loadTranscriptText;
 - (id)pasteboardItems;
 - (id)subject;

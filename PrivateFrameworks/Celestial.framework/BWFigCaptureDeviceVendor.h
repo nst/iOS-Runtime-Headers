@@ -6,13 +6,13 @@
 }
 
 + (void)_setupDeviceCloseTimer;
-+ (BOOL)activeDeviceEquals:(struct OpaqueFigCaptureDevice { }*)arg1;
++ (bool)activeDeviceEquals:(struct OpaqueFigCaptureDevice { }*)arg1;
 + (struct OpaqueFigCaptureDevice { }*)copyDefaultVideoDeviceWithStealingBehavior:(int)arg1;
 + (struct OpaqueFigCaptureStream { }*)copyStreamWithPosition:(int)arg1 forDevice:(struct OpaqueFigCaptureDevice { }*)arg2;
 + (void)initialize;
 + (void)invalidateVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1;
 + (void)powerOnDefaultVideoDevice;
 + (void)takeBackVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1;
-+ (BOOL)videoCaptureDeviceFirmwareIsLoaded;
++ (bool)videoCaptureDeviceFirmwareIsLoaded;
 
 @end

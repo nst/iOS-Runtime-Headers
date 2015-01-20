@@ -9,10 +9,10 @@
     <UIInputViewAnimationController> *animationController;
     int animationState;
     UIInputViewAnimationStyle *animationStyle;
-    BOOL cancelled;
+    boolcancelled;
     UIInputViewSetPlacement *fromPlacement;
     UIInputViewSetNotificationInfo *notificationInfo;
-    unsigned int notifications;
+    unsigned long long notifications;
     UIInputViewSetPlacement *toPlacement;
 }
 
@@ -20,10 +20,10 @@
 @property(retain) <UIInputViewAnimationController> * animationController;
 @property int animationState;
 @property(retain) UIInputViewAnimationStyle * animationStyle;
-@property BOOL cancelled;
+@property bool cancelled;
 @property(retain) UIInputViewSetPlacement * fromPlacement;
 @property(retain) UIInputViewSetNotificationInfo * notificationInfo;
-@property unsigned int notifications;
+@property unsigned long long notifications;
 @property(retain) UIInputViewSetPlacement * toPlacement;
 
 + (id)transitionFromPlacement:(id)arg1 toPlacement:(id)arg2 withAnimationStyle:(id)arg3;
@@ -32,20 +32,20 @@
 - (id)animationController;
 - (int)animationState;
 - (id)animationStyle;
-- (BOOL)cancelled;
+- (bool)cancelled;
 - (void)dealloc;
-- (BOOL)didAdvanceAnimationToState:(int)arg1;
+- (bool)didAdvanceAnimationToState:(int)arg1;
 - (id)fromPlacement;
 - (id)notificationInfo;
-- (unsigned int)notifications;
+- (unsigned long long)notifications;
 - (void)setAnimationContext:(id)arg1;
 - (void)setAnimationController:(id)arg1;
 - (void)setAnimationState:(int)arg1;
 - (void)setAnimationStyle:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setFromPlacement:(id)arg1;
 - (void)setNotificationInfo:(id)arg1;
-- (void)setNotifications:(unsigned int)arg1;
+- (void)setNotifications:(unsigned long long)arg1;
 - (void)setToPlacement:(id)arg1;
 - (id)toPlacement;
 

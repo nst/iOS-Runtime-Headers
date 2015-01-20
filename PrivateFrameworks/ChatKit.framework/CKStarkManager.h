@@ -5,13 +5,13 @@
 @class UIScreen, UIViewController, UIWindow;
 
 @interface CKStarkManager : NSObject {
-    BOOL _isStarkConnected;
     UIViewController *_starkRootViewController;
     UIScreen *_starkScreen;
     UIWindow *_starkWindow;
+    bool_isStarkConnected;
 }
 
-@property(readonly) BOOL isStarkConnected;
+@property(readonly) bool isStarkConnected;
 @property(retain) UIViewController * starkRootViewController;
 @property(retain) UIScreen * starkScreen;
 @property(retain) UIWindow * starkWindow;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (void)detachStarkScreen:(id)arg1;
 - (id)init;
-- (BOOL)isStarkConnected;
+- (bool)isStarkConnected;
 - (void)screenDidConnectNotification:(id)arg1;
 - (void)screenDidDisconnectNotification:(id)arg1;
 - (void)setStarkRootViewController:(id)arg1;

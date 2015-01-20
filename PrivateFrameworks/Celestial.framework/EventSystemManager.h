@@ -7,9 +7,9 @@
 @interface EventSystemManager : NSObject {
     int accelEventIndex;
     int accelUpdateInternalUS;
+    boolmanageAccel;
     NSMutableArray *clientList;
     struct __IOHIDEventSystemClient { } *eventSystemClient;
-    BOOL manageAccel;
     struct __CFRunLoop { } *runLoop;
 }
 
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (struct __IOHIDEventSystemClient { }*)eventSystemClient;
 - (id)init;
-- (BOOL)managingAccel;
+- (bool)managingAccel;
 - (void)refreshEventSystem;
 - (void)removeClient:(id)arg1;
 - (void)setAccelUpdateInterval:(double)arg1;

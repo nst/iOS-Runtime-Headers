@@ -10,12 +10,12 @@
 
 @property(retain,readonly) UIAlertController * alertController;
 
-+ (BOOL)_isSystemWindow;
++ (bool)_isSystemWindow;
 
 - (id)_presentationViewController;
 - (id)alertController;
 - (void)dealloc;
 - (id)init;
-- (void)presentAlertController:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)presentAlertController:(id)arg1 animated:(bool)arg2 completionBlock:(id)arg3;
 
 @end

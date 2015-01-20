@@ -5,13 +5,13 @@
 @interface GEOPDETAFilter : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     } _transportTypes;
 }
 
 @property(readonly) int* transportTypes;
-@property(readonly) unsigned int transportTypesCount;
+@property(readonly) unsigned long long transportTypesCount;
 
 - (void)addTransportType:(int)arg1;
 - (void)clearTransportTypes;
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setTransportTypes:(int*)arg1 count:(unsigned int)arg2;
-- (int)transportTypeAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setTransportTypes:(int*)arg1 count:(unsigned long long)arg2;
+- (int)transportTypeAtIndex:(unsigned long long)arg1;
 - (int*)transportTypes;
-- (unsigned int)transportTypesCount;
+- (unsigned long long)transportTypesCount;
 - (void)writeTo:(id)arg1;
 
 @end

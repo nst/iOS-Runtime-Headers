@@ -9,8 +9,8 @@
 + (id)cachedObjectWithKey:(id)arg1 block:(id)arg2;
 + (id)cloudGlyph;
 + (id)disabledPlaybackControlColor;
-+ (float)explicitGlyphImageBaselineOffsetFromBottomForSizeCategory:(unsigned int)arg1;
-+ (id)explicitGlyphImageForSizeCategory:(unsigned int)arg1;
-+ (float)tableViewContentLeftInset;
++ (double)explicitGlyphImageBaselineOffsetFromBottomForSizeCategory:(unsigned long long)arg1;
++ (id)explicitGlyphImageForSizeCategory:(unsigned long long)arg1;
++ (double)tableViewContentLeftInset;
 
 @end

@@ -6,12 +6,12 @@
 
 @interface MFPPen : NSObject {
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     int mAlignment;
     MFPBrush *mBrush;
     float *mCompoundArray;
@@ -66,11 +66,11 @@
 - (void)setLineJoin:(int)arg1;
 - (void)setMiterLimit:(float)arg1;
 - (void)setStartCap:(int)arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setWidth:(float)arg1;
 - (int)startCap;
 - (void)strokePath:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
 - (float)width;
 
 @end

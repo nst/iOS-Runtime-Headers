@@ -3,13 +3,13 @@
  */
 
 @interface TSKCOAbstractOperation : NSObject <TSKCOOperation> {
-    BOOL mNoop;
+    boolmNoop;
 }
 
-@property(readonly) BOOL isNoop;
+@property(readonly) bool isNoop;
 
 - (void)dealloc;
-- (id)initWithNoop:(BOOL)arg1;
-- (BOOL)isNoop;
+- (id)initWithNoop:(bool)arg1;
+- (bool)isNoop;
 
 @end

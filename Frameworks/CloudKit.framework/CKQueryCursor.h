@@ -12,7 +12,7 @@
 @property(retain) NSData * data;
 @property(retain) CKRecordZoneID * zoneID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -7,10 +7,10 @@
 @interface HDSQLiteHasAssociatedEntityPredicate : HDSQLitePredicate <NSCopying> {
     Class _associatedEntityClass;
     HDSQLitePredicate *_associatedPredicate;
-    BOOL _inverted;
+    bool_inverted;
 }
 
-+ (id)predicateWithAssociatedEntityClass:(Class)arg1 associatedPredicate:(id)arg2 inverted:(BOOL)arg3;
++ (id)predicateWithAssociatedEntityClass:(Class)arg1 associatedPredicate:(id)arg2 inverted:(bool)arg3;
 + (id)predicateWithAssociatedEntityClass:(Class)arg1;
 
 - (void).cxx_destruct;

@@ -5,10 +5,7 @@
 @class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSUbiquitousKeyValueStore, NSXPCConnection, WBSAutomaticReadingListTrackedRecordsInfo;
 
 @interface WBSAutomaticReadingListWebFeedSource : WBSAutomaticReadingListSocialSource {
-    BOOL _canFetchFeeds;
-    BOOL _cloudSyncEnabled;
     NSMutableSet *_feedURLs;
-    BOOL _hasStartedFetchingFeeds;
     NSMutableDictionary *_posts;
     NSMutableSet *_potentialFeedSubscriptions;
     NSMutableSet *_subscribedFeeds;
@@ -16,9 +13,12 @@
     NSUbiquitousKeyValueStore *_subscriptionsKeyValueStore;
     NSXPCConnection *_webFeedParserConnection;
     NSObject<OS_dispatch_queue> *_webFeedSourceDataSynchronizationQueue;
+    bool_canFetchFeeds;
+    bool_cloudSyncEnabled;
+    bool_hasStartedFetchingFeeds;
 }
 
-@property BOOL cloudSyncEnabled;
+@property bool cloudSyncEnabled;
 @property(readonly) WBSAutomaticReadingListTrackedRecordsInfo * items;
 @property(retain) NSXPCConnection * webFeedParserConnection;
 
@@ -49,14 +49,14 @@
 - (void)addPairingFromSourceURL:(id)arg1 toFeedURL:(id)arg2 title:(id)arg3 iconURLs:(id)arg4;
 - (void)blockFeedWithFeedURL:(id)arg1;
 - (void)blockFeedWithItem:(id)arg1;
-- (BOOL)cloudSyncEnabled;
+- (bool)cloudSyncEnabled;
 - (void)debugClearWebFeedSubscriptionsKeyValueStore;
 - (void)fetchPotentialSubscriptionFeedSources:(id)arg1;
-- (void)getFeedSourcesWithState:(int)arg1 completionBlock:(id)arg2;
+- (void)getFeedSourcesWithState:(long long)arg1 completionBlock:(id)arg2;
 - (void)getSiteIconURLsForFeedURL:(id)arg1 completionBlock:(id)arg2;
 - (void)getSourceURLsForFeedURL:(id)arg1 completionBlock:(id)arg2;
 - (id)init;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)items;
 - (void)loadFeedSourcesIfNecessary;
 - (void)requestMoreItemsWithAge:(int)arg1;
@@ -65,7 +65,7 @@
 - (id)serviceImage;
 - (id)serviceName;
 - (id)serviceType;
-- (void)setCloudSyncEnabled:(BOOL)arg1;
+- (void)setCloudSyncEnabled:(bool)arg1;
 - (void)setWebFeedParserConnection:(id)arg1;
 - (void)subscribeToFeedURL:(id)arg1 fromSourceURL:(id)arg2 siteIconURLs:(id)arg3;
 - (id)webFeedParserConnection;

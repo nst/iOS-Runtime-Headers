@@ -12,7 +12,7 @@
 @property(copy) NSString * name;
 @property(copy) NSString * stationHash;
 @property long long stationID;
-@property int type;
+@property long long type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCategoryDescription:(id)arg1;
@@ -20,6 +20,6 @@
 - (void)setName:(id)arg1;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 
 @end

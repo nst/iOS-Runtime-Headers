@@ -3,22 +3,22 @@
  */
 
 @interface _UIViewAnimationAttributes : NSObject <NSSecureCoding> {
-    int _curve;
+    long long _curve;
     double _delay;
     double _duration;
-    unsigned int _options;
+    unsigned long long _options;
 }
 
-@property(getter=_curve,readonly) int curve;
+@property(getter=_curve,readonly) long long curve;
 @property(getter=_delay,readonly) double delay;
 @property(getter=_duration,readonly) double duration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)_curve;
+- (long long)_curve;
 - (double)_delay;
 - (double)_duration;
-- (int)curve;
+- (long long)curve;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

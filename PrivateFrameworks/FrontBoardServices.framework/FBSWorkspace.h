@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <FBSWorkspaceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) FBSSerialQueue * queue;
 @property(copy,readonly) NSArray * scenes;
 @property(readonly) Class superclass;
@@ -39,7 +39,7 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)initWithSerialQueue:(id)arg1;
-- (BOOL)isUIApplicationWorkspace;
+- (bool)isUIApplicationWorkspace;
 - (id)queue;
 - (void)requestDestructionOfScene:(id)arg1 withCompletion:(id)arg2;
 - (void)requestSceneCreationWithInitialClientSettings:(id)arg1 completion:(id)arg2;

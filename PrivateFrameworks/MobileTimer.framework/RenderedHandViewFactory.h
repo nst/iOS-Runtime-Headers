@@ -6,42 +6,42 @@
 
 @interface RenderedHandViewFactory : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL _allowCaching;
+        double width; 
+        double height; 
     NSMutableDictionary *_angleCache;
     NSString *_imagePath;
     } _offset;
     struct CGPDFPage { } *_page;
-    unsigned int _registeredClientsCount;
+    unsigned long long _registeredClientsCount;
     NSBundle *_resourcesBundle;
     } _scale;
     } _viewSize;
+    bool_allowCaching;
 }
 
-@property(readonly) BOOL allowCaching;
+@property(readonly) bool allowCaching;
 @property(readonly) NSString * key;
-@property unsigned int registeredClientsCount;
+@property unsigned long long registeredClientsCount;
 
 + (void)flushAllCaches;
-+ (id)keyForBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4;
-+ (id)registerForFactoryWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4 allowCaching:(BOOL)arg5;
++ (id)keyForBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 scale:(struct CGSize { double x1; double x2; })arg4;
++ (id)registerForFactoryWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 scale:(struct CGSize { double x1; double x2; })arg4 allowCaching:(bool)arg5;
 + (void)unregisterForFactory:(id)arg1;
 
-- (BOOL)allowCaching;
+- (bool)allowCaching;
 - (void)dealloc;
 - (void)flushCache;
-- (id)imageForAngle:(float)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)initWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4 allowCaching:(BOOL)arg5;
+- (id)imageForAngle:(double)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 scale:(struct CGSize { double x1; double x2; })arg4 allowCaching:(bool)arg5;
 - (id)key;
-- (unsigned int)registeredClientsCount;
-- (id)renderImageForAngle:(float)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)setRegisteredClientsCount:(unsigned int)arg1;
+- (unsigned long long)registeredClientsCount;
+- (id)renderImageForAngle:(double)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setRegisteredClientsCount:(unsigned long long)arg1;
 
 @end

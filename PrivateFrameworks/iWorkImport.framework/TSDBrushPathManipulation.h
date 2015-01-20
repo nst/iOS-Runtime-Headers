@@ -5,13 +5,13 @@
 @class NSMutableArray, NSMutableDictionary;
 
 @interface TSDBrushPathManipulation : TSDPathManipulation {
+    boolmSplitAtSharpAngles;
     struct CGPath { } *mBrushStroke;
     NSMutableArray *mMiddleSections;
-    float mRepeatLength;
+    double mRepeatLength;
     NSMutableDictionary *mSections;
-    float mSmallLimitWidth;
+    double mSmallLimitWidth;
     NSMutableArray *mSmallSections;
-    BOOL mSplitAtSharpAngles;
 }
 
 @end

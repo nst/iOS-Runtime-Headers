@@ -8,12 +8,12 @@
     NSMutableArray *_recentScrollTimestamps;
 }
 
-- (BOOL)_canHaveVelocity;
+- (bool)_canHaveVelocity;
 - (void)_sendEventToResponder:(id)arg1;
 - (void)_setHIDEvent:(struct __IOHIDEvent { }*)arg1;
-- (float)_wheelVelocity;
+- (double)_wheelVelocity;
 - (void)dealloc;
-- (int)subtype;
-- (int)type;
+- (long long)subtype;
+- (long long)type;
 
 @end

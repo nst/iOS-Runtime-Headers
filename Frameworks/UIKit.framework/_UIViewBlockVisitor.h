@@ -12,9 +12,9 @@
 
 @property(copy) id visitorBlock;
 
-- (BOOL)_visitView:(id)arg1;
+- (bool)_visitView:(id)arg1;
 - (void)dealloc;
-- (id)initWithTraversalDirection:(unsigned int)arg1 visitorBlock:(id)arg2;
+- (id)initWithTraversalDirection:(unsigned long long)arg1 visitorBlock:(id)arg2;
 - (void)setVisitorBlock:(id)arg1;
 - (id)visitorBlock;
 

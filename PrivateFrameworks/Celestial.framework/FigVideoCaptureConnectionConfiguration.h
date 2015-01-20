@@ -3,16 +3,16 @@
  */
 
 @interface FigVideoCaptureConnectionConfiguration : FigCaptureConnectionConfiguration {
-    BOOL _mirroringEnabled;
     int _orientation;
     int _outputFormat;
     int _outputHeight;
     int _outputWidth;
     int _retainedBufferCount;
     int _videoStabilizationMethod;
+    bool_mirroringEnabled;
 }
 
-@property BOOL mirroringEnabled;
+@property bool mirroringEnabled;
 @property int orientation;
 @property int outputFormat;
 @property int outputHeight;
@@ -26,14 +26,14 @@
 - (id)description;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)mirroringEnabled;
+- (bool)isEqual:(id)arg1;
+- (bool)mirroringEnabled;
 - (int)orientation;
 - (int)outputFormat;
 - (int)outputHeight;
 - (int)outputWidth;
 - (int)retainedBufferCount;
-- (void)setMirroringEnabled:(BOOL)arg1;
+- (void)setMirroringEnabled:(bool)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setOutputFormat:(int)arg1;
 - (void)setOutputHeight:(int)arg1;

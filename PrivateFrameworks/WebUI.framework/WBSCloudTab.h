@@ -5,35 +5,35 @@
 @class NSDictionary, NSString, NSURL, NSUUID;
 
 @interface WBSCloudTab : NSObject <NSCopying> {
-    BOOL _isShowingReader;
     NSDictionary *_readerScrollPositionDictionary;
     NSString *_title;
     NSURL *_url;
     NSUUID *_uuid;
+    bool_isShowingReader;
 }
 
 @property(readonly) NSDictionary * dictionaryRepresentation;
 @property(readonly) NSDictionary * dictionaryRepresentationForUserActivityUserInfo;
-@property BOOL isShowingReader;
+@property bool isShowingReader;
 @property(copy) NSDictionary * readerScrollPositionDictionary;
 @property(copy) NSString * title;
 @property(retain) NSURL * url;
 @property(retain) NSUUID * uuid;
 
-+ (id)_dictionaryWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(BOOL)arg4 readerScrollPosition:(id)arg5;
++ (id)_dictionaryWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(bool)arg4 readerScrollPosition:(id)arg5;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentationForUserActivityUserInfo;
-- (BOOL)hasSameUUIDAndURLAsTab:(id)arg1;
+- (bool)hasSameUUIDAndURLAsTab:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithDictionaryFromUserActivityUserInfo:(id)arg1;
-- (id)initWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(BOOL)arg4 readerScrollPosition:(id)arg5;
-- (BOOL)isShowingReader;
+- (id)initWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(bool)arg4 readerScrollPosition:(id)arg5;
+- (bool)isShowingReader;
 - (id)readerScrollPositionDictionary;
-- (void)setIsShowingReader:(BOOL)arg1;
+- (void)setIsShowingReader:(bool)arg1;
 - (void)setReaderScrollPositionDictionary:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;

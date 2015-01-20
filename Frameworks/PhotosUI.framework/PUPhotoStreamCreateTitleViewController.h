@@ -17,16 +17,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property <PUPhotoStreamCreateTitleDelegate> * titleDelegate;
 
 - (void).cxx_destruct;
-- (void)_addConstraintsForInterfaceOrientation:(int)arg1;
+- (void)_addConstraintsForInterfaceOrientation:(long long)arg1;
 - (void)_cancelPost:(id)arg1;
 - (id)_placeholderColor;
 - (void)_setTitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
@@ -34,8 +34,8 @@
 - (void)setTitleDelegate:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (id)titleDelegate;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

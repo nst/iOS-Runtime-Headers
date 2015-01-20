@@ -6,19 +6,19 @@
 
 @interface VolumeGraphView : UIView {
     StockGraphImageSet *_graphImageSet;
-    BOOL _showingTintedRegion;
     UIView *_tintedRegionClipView;
     TintedView *_tintedVolumeView;
     UIImage *_volumeImage;
+    bool_showingTintedRegion;
 }
 
 @property(retain) StockGraphImageSet * graphImageSet;
 
 - (void).cxx_destruct;
 - (id)graphImageSet;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)resizeSelectedVolumeClipViewWithLeftX:(float)arg1 rightX:(float)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)resizeSelectedVolumeClipViewWithLeftX:(double)arg1 rightX:(double)arg2;
 - (void)setGraphImageSet:(id)arg1;
-- (void)setShowingSelectedRegion:(BOOL)arg1;
+- (void)setShowingSelectedRegion:(bool)arg1;
 
 @end

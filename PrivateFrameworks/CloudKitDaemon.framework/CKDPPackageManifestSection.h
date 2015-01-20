@@ -9,15 +9,15 @@
         unsigned int size : 1; 
         unsigned int lastSection : 1; 
     } _has;
-    BOOL _lastSection;
     NSData *_signature;
     long long _size;
+    bool_lastSection;
 }
 
-@property BOOL hasLastSection;
-@property(readonly) BOOL hasSignature;
-@property BOOL hasSize;
-@property BOOL lastSection;
+@property bool hasLastSection;
+@property(readonly) bool hasSignature;
+@property bool hasSize;
+@property bool lastSection;
 @property(retain) NSData * signature;
 @property long long size;
 
@@ -26,17 +26,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLastSection;
-- (BOOL)hasSignature;
-- (BOOL)hasSize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)lastSection;
+- (bool)hasLastSection;
+- (bool)hasSignature;
+- (bool)hasSize;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)lastSection;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLastSection:(BOOL)arg1;
-- (void)setHasSize:(BOOL)arg1;
-- (void)setLastSection:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLastSection:(bool)arg1;
+- (void)setHasSize:(bool)arg1;
+- (void)setLastSection:(bool)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setSize:(long long)arg1;
 - (id)signature;

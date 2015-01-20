@@ -6,22 +6,22 @@
 
 @interface EKUIDividedGridViewCell : UIView {
     UITextLabel *_label;
-    BOOL _selected;
     EKUIDividedGridViewController *_viewController;
     NSLayoutConstraint *_widthConstraint;
+    bool_selected;
 }
 
 @property(retain) UITextLabel * label;
-@property BOOL selected;
+@property bool selected;
 @property EKUIDividedGridViewController * viewController;
 @property NSLayoutConstraint * widthConstraint;
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)label;
-- (BOOL)selected;
+- (bool)selected;
 - (void)setLabel:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setWidthConstraint:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

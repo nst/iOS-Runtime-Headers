@@ -7,21 +7,21 @@
 @interface MPCloudAVAssetDownloadSession : AVAssetDownloadSession {
     MPStoreItemContext *_context;
     MPCloudAssetDownloadSessionIdentifier *_downloadSessionIdentifier;
-    BOOL _isStreamingQuality;
+    bool_isStreamingQuality;
 }
 
 @property(retain) MPStoreItemContext * context;
 @property(retain) MPCloudAssetDownloadSessionIdentifier * downloadSessionIdentifier;
-@property BOOL isStreamingQuality;
+@property bool isStreamingQuality;
 
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3 context:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)context;
 - (id)downloadSessionIdentifier;
-- (BOOL)isStreamingQuality;
+- (bool)isStreamingQuality;
 - (void)setContext:(id)arg1;
 - (void)setDownloadSessionIdentifier:(id)arg1;
-- (void)setIsStreamingQuality:(BOOL)arg1;
+- (void)setIsStreamingQuality:(bool)arg1;
 
 @end

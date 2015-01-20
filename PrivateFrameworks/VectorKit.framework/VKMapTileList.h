@@ -23,7 +23,7 @@
 }
 
 @property(readonly) float maximumStyleZ;
-@property(readonly) unsigned int numTiles;
+@property(readonly) unsigned long long numTiles;
 @property(readonly) id* tileList;
 
 - (id).cxx_construct;
@@ -33,8 +33,8 @@
 - (void)consolidateList;
 - (id)init;
 - (float)maximumStyleZ;
-- (unsigned int)numRectForLayer:(unsigned long long)arg1;
-- (unsigned int)numTiles;
+- (unsigned long long)numRectForLayer:(unsigned long long)arg1;
+- (unsigned long long)numTiles;
 - (const struct { float x1; float x2; float x3; float x4; }*)rectListForLayer:(unsigned long long)arg1;
 - (const struct vector<VGLRect, std::__1::allocator<VGLRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VGLRect *, std::__1::allocator<VGLRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)rectListVectorForLayer:(unsigned long long)arg1;
 - (id*)tileList;

@@ -17,7 +17,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * responseConflictedKeys;
 @property(readonly) SBKSyncResponseData * responseData;
 @property(readonly) NSArray * responseDeletedKeys;
@@ -26,7 +26,7 @@
 @property(readonly) Class superclass;
 @property(readonly) SBKTransactionController * transactionController;
 
-+ (int)conflictDetectionType;
++ (long long)conflictDetectionType;
 
 - (void).cxx_destruct;
 - (void)_onQueue_clearTransactionResponseData;
@@ -42,8 +42,8 @@
 - (void)startTransactionWithSyncAnchor:(id)arg1 keysToUpdate:(id)arg2 keysToDelete:(id)arg3 finishedBlock:(id)arg4;
 - (void)transaction:(id)arg1 didProcessResponseData:(id)arg2;
 - (id)transaction:(id)arg1 keyValuePairForUpdatedKey:(id)arg2;
-- (void)transaction:(id)arg1 processDeletedKey:(id)arg2 isDirty:(BOOL*)arg3;
-- (void)transaction:(id)arg1 processUpdatedKey:(id)arg2 data:(id)arg3 conflict:(BOOL)arg4 isDirty:(BOOL*)arg5;
+- (void)transaction:(id)arg1 processDeletedKey:(id)arg2 isDirty:(bool*)arg3;
+- (void)transaction:(id)arg1 processUpdatedKey:(id)arg2 data:(id)arg3 conflict:(bool)arg4 isDirty:(bool*)arg5;
 - (void)transaction:(id)arg1 willProcessResponseData:(id)arg2;
 - (id)transactionController;
 

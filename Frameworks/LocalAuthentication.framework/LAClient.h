@@ -25,9 +25,9 @@
 - (void)dealloc;
 - (void)enterPassword:(id)arg1 reply:(id)arg2;
 - (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(id)arg4;
-- (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id)arg3;
+- (void)evaluatePolicy:(long long)arg1 options:(id)arg2 reply:(id)arg3;
 - (id)externalizedContext;
-- (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id)arg3;
+- (void)failProcessedEvent:(long long)arg1 failureError:(id)arg2 reply:(id)arg3;
 - (id)initWithDaemonConnection:(id)arg1 remoteContext:(id)arg2 constInfo:(id)arg3;
 - (void)invalidate;
 

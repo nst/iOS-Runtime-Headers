@@ -14,7 +14,7 @@
 @property(copy) NSString * CASDRSACertificate;
 @property(copy) NSString * deviceIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)CASDECCCertificate;
 - (id)CASDRSACertificate;

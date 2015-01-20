@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (id)endpointName;
@@ -20,7 +20,7 @@
 - (void)prefetch:(id)arg1;
 - (id)remoteObjectProtocol;
 - (void)shutdown;
-- (BOOL)withinQueueCanReinitializeRemoteState;
+- (bool)withinQueueCanReinitializeRemoteState;
 - (void)withinQueueInvalidateState;
 - (id)withinQueuePermanentShutdownReason;
 - (void)withinQueueReconnectInvalidatedConnectionFailed:(id)arg1;

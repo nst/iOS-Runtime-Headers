@@ -5,35 +5,35 @@
 @class <ABPresenterDelegate>, <ABPropertyCellDelegate>, ABPropertyGroupItem, UIResponder;
 
 @interface ABPropertyCell : ABLabeledCell {
-    BOOL _allowsEditing;
     <ABPropertyCellDelegate> *_delegate;
     UIResponder *_firstResponderItem;
-    float _labelWidth;
+    double _labelWidth;
     <ABPresenterDelegate> *_presentingDelegate;
+    bool_allowsEditing;
 }
 
-@property BOOL allowsEditing;
+@property bool allowsEditing;
 @property <ABPropertyCellDelegate> * delegate;
 @property(readonly) UIResponder * firstResponderItem;
-@property float labelWidth;
+@property double labelWidth;
 @property <ABPresenterDelegate> * presentingDelegate;
 @property(readonly) ABPropertyGroupItem * propertyItem;
 
-- (BOOL)allowsEditing;
+- (bool)allowsEditing;
 - (void)copy:(id)arg1;
 - (id)delegate;
 - (id)firstResponderItem;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)labelString;
-- (float)labelWidth;
+- (double)labelWidth;
 - (void)performAccessoryAction;
 - (void)performDefaultAction;
 - (id)presentingDelegate;
 - (id)propertyItem;
-- (void)setAllowsEditing:(BOOL)arg1;
+- (void)setAllowsEditing:(bool)arg1;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLabelWidth:(float)arg1;
+- (void)setLabelWidth:(double)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)setPropertyItem:(id)arg1;
 - (void)updateValueWithPropertyItem:(id)arg1;

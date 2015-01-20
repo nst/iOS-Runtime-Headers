@@ -13,7 +13,7 @@
 @property(retain) NSString * personName;
 
 - (void)dealloc;
-- (id)initWithRecordID:(int)arg1;
+- (id)initWithRecordID:(long long)arg1;
 - (void)markAsRead;
 - (int)personID;
 - (id)personName;

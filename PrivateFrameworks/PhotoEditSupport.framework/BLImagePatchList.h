@@ -6,8 +6,8 @@
 
 @interface BLImagePatchList : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGImage { } *_baseImage;
     NSMutableArray *_patchArray;
     } _size;
@@ -16,12 +16,12 @@
 + (id)imagePatchListWithSingleImage:(struct CGImage { }*)arg1;
 
 - (void)addPatch:(id)arg1;
-- (int)count;
+- (long long)count;
 - (void)dealloc;
 - (id)description;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)initWithImage:(struct CGImage { }*)arg1;
 - (void)removeAllPatches;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

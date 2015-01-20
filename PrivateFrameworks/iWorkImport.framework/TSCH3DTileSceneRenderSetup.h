@@ -42,28 +42,28 @@
     TSCH3DSceneRenderSetup *mFullSetup;
     } mOverlap;
     } mTileIndex;
-    int mTileSamples;
+    long long mTileSamples;
     } mTileSize;
-    int mTileSuperSamples;
+    long long mTileSuperSamples;
 }
 
 @property struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } tileIndex;
-@property(readonly) int tileSamples;
-@property(readonly) int tileSuperSamples;
+@property(readonly) long long tileSamples;
+@property(readonly) long long tileSuperSamples;
 
-+ (id)setupWithFullSetup:(id)arg1 camera:(id)arg2 tileSize:(int)arg3 overlap:(int)arg4 tileSamples:(int)arg5 tileSuperSamples:(int)arg6;
++ (id)setupWithFullSetup:(id)arg1 camera:(id)arg2 tileSize:(long long)arg3 overlap:(long long)arg4 tileSamples:(long long)arg5 tileSuperSamples:(long long)arg6;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; })fullViewport;
-- (id)initWithSetup:(id)arg1 camera:(id)arg2 tileSize:(int)arg3 overlap:(int)arg4 tileSamples:(int)arg5 tileSuperSamples:(int)arg6;
+- (id)initWithSetup:(id)arg1 camera:(id)arg2 tileSize:(long long)arg3 overlap:(long long)arg4 tileSamples:(long long)arg5 tileSuperSamples:(long long)arg6;
 - (id)renderingCameraFromOriginalCamera:(id)arg1 pipeline:(id)arg2;
 - (void)setTileIndex:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })arg1;
 - (void)setupPipeline:(id)arg1 fromCamera:(id)arg2;
 - (struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; })targetViewportRegion;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })tileIndex;
-- (int)tileSamples;
-- (int)tileSuperSamples;
+- (long long)tileSamples;
+- (long long)tileSuperSamples;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })totalTiles;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })usableTileSize;
 - (struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; })usableTileViewportRegion;

@@ -5,11 +5,11 @@
 @interface TSCH3DTightComponent16AccumulatePipeline : TSCH3DComponent16AccumulatePipeline {
 }
 
-@property int lowColorBits;
+@property long long lowColorBits;
 
 - (id)initWithProcessor:(id)arg1 session:(id)arg2;
-- (int)lowColorBits;
+- (long long)lowColorBits;
 - (void)runAccumulation;
-- (void)setLowColorBits:(int)arg1;
+- (void)setLowColorBits:(long long)arg1;
 
 @end

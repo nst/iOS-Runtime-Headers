@@ -11,32 +11,32 @@
 @interface _RCCaptureInputDeviceSession : NSObject {
     RCCaptureInputDevice *_captureInputDevice;
     RCCaptureSession *_captureSession;
-    BOOL _captureSessionWasActivated;
     NSMutableArray *_sessionFinishedBlocks;
     id _sessionPreparedBlock;
-    BOOL _useStartSoundEffect;
+    bool_captureSessionWasActivated;
+    bool_useStartSoundEffect;
 }
 
 @property(readonly) RCCaptureInputDevice * captureInputDevice;
 @property(retain) RCCaptureSession * captureSession;
-@property BOOL captureSessionWasActivated;
+@property bool captureSessionWasActivated;
 @property(copy) id sessionPreparedBlock;
-@property BOOL useStartSoundEffect;
+@property bool useStartSoundEffect;
 
 - (void).cxx_destruct;
 - (void)addSessionFinishedBlock:(id)arg1;
 - (id)captureInputDevice;
 - (id)captureSession;
-- (BOOL)captureSessionWasActivated;
+- (bool)captureSessionWasActivated;
 - (void)dealloc;
 - (id)description;
 - (id)initWithCaptureInputDevice:(id)arg1;
 - (void)invokeSessionFinishedBlocksWithError:(id)arg1;
 - (id)sessionPreparedBlock;
 - (void)setCaptureSession:(id)arg1;
-- (void)setCaptureSessionWasActivated:(BOOL)arg1;
+- (void)setCaptureSessionWasActivated:(bool)arg1;
 - (void)setSessionPreparedBlock:(id)arg1;
-- (void)setUseStartSoundEffect:(BOOL)arg1;
-- (BOOL)useStartSoundEffect;
+- (void)setUseStartSoundEffect:(bool)arg1;
+- (bool)useStartSoundEffect;
 
 @end

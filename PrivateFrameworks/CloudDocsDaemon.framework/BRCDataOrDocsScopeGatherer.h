@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)_gatheringDescendantOfContainerWithID:(id)arg1;
 - (id)_gatheringNotDescendantOfContainerWithID:(id)arg1;
-- (BOOL)continueGatheringWithBatchSize:(int)arg1;
+- (bool)continueGatheringWithBatchSize:(long long)arg1;
 - (id)gatheredChildrenItemID;
 - (id)initWithNotificationPipe:(id)arg1 reply:(id)arg2;
 - (void)setGatheredChildrenItemID:(id)arg1;

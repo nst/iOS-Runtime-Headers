@@ -7,7 +7,7 @@
 
 + (Class)_associatedDataObjectClass;
 + (id)_columnsSQL;
-+ (unsigned int)_countPartialSamplesFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 database:(id)arg4;
++ (unsigned long long)_countPartialSamplesFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 database:(id)arg4;
 + (id)_databaseTable;
 + (void)_enumerateSamplesWithType:(id)arg1 predicate:(id)arg2 unit:(id)arg3 healthDaemon:(id)arg4 handler:(id)arg5;
 + (double)_firstDoubleFromOrderedSources:(id)arg1 inValuesBySource:(id)arg2 healthDaemon:(id)arg3 extraSources:(id)arg4;
@@ -19,7 +19,7 @@
 + (id)_propertySettersForDataObject;
 + (id)_tableValuesFromDataObject:(id)arg1;
 + (void)load;
-+ (id)statisticsForDataType:(id)arg1 options:(unsigned int)arg2 healthDaemon:(id)arg3 predicate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 sourceIdentifier:(id)arg7 orderedSources:(id)arg8 extraSources:(id)arg9 shouldStopProcessing:(id)arg10 error:(id*)arg11;
++ (id)statisticsForDataType:(id)arg1 options:(unsigned long long)arg2 healthDaemon:(id)arg3 predicate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 sourceIdentifier:(id)arg7 orderedSources:(id)arg8 extraSources:(id)arg9 shouldStopProcessing:(id)arg10 error:(id*)arg11;
 + (id)sumOfSamplesWithDataType:(id)arg1 inDatabase:(id)arg2 predicate:(id)arg3;
 
 @end

@@ -6,8 +6,8 @@
 
 @interface OITSUMemoryWatcher : NSObject {
     OITSUFlushingManager *_flushingManager;
-    BOOL _going;
-    BOOL _stop;
+    bool_going;
+    bool_stop;
 }
 
 - (void)_periodicallySimulateMemoryWarning:(id)arg1;

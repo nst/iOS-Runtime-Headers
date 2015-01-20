@@ -9,15 +9,15 @@
     NSMutableString *_dataString;
     NSString *_errorDescription;
     NSMutableArray *_photoSets;
-    int _stage;
-    BOOL _success;
+    long long _stage;
+    bool_success;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSMutableArray * photoSets;
-@property int stage;
+@property long long stage;
 @property(readonly) Class superclass;
 
 + (id)responseWithData:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (id)photoSets;
 - (void)setPhotoSets:(id)arg1;
-- (void)setStage:(int)arg1;
-- (int)stage;
+- (void)setStage:(long long)arg1;
+- (long long)stage;
 
 @end

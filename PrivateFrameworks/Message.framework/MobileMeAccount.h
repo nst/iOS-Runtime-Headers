@@ -12,8 +12,8 @@
 + (id)hostname;
 + (void)initialize;
 
-- (BOOL)isAccountClassEquivalentTo:(id)arg1;
-- (BOOL)isHostnameEquivalentTo:(id)arg1;
-- (BOOL)shouldFetchACEDBInfoForError:(id)arg1;
+- (bool)isAccountClassEquivalentTo:(id)arg1;
+- (bool)isHostnameEquivalentTo:(id)arg1;
+- (bool)shouldFetchACEDBInfoForError:(id)arg1;
 
 @end

@@ -15,10 +15,10 @@
 @property(readonly) NSDate * cloudAssetCountPerTypeLastCheckDate;
 @property <CPLStatusDelegate> * delegate;
 @property NSDate * exitDeleteTime;
-@property BOOL hasChangesToProcess;
-@property BOOL iCloudLibraryExists;
-@property BOOL iCloudLibraryHasBeenWiped;
-@property BOOL isExceedingQuota;
+@property bool hasChangesToProcess;
+@property bool iCloudLibraryExists;
+@property bool iCloudLibraryHasBeenWiped;
+@property bool isExceedingQuota;
 @property NSDate * lastSuccessfulSyncDate;
 
 + (id)statusForSharedLibrary;
@@ -31,20 +31,20 @@
 - (id)cloudAssetCountPerTypeLastCheckDate;
 - (id)delegate;
 - (id)exitDeleteTime;
-- (BOOL)hasChangesToProcess;
-- (BOOL)iCloudLibraryExists;
-- (BOOL)iCloudLibraryHasBeenWiped;
+- (bool)hasChangesToProcess;
+- (bool)iCloudLibraryExists;
+- (bool)iCloudLibraryHasBeenWiped;
 - (id)initWithClientLibraryBaseURL:(id)arg1;
-- (BOOL)isExceedingQuota;
+- (bool)isExceedingQuota;
 - (id)lastSuccessfulSyncDate;
 - (void)refetchFromDisk;
-- (void)setCloudAssetCountPerType:(id)arg1 updateCheckDate:(BOOL)arg2;
+- (void)setCloudAssetCountPerType:(id)arg1 updateCheckDate:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setExitDeleteTime:(id)arg1;
-- (void)setHasChangesToProcess:(BOOL)arg1;
-- (void)setICloudLibraryExists:(BOOL)arg1;
-- (void)setICloudLibraryHasBeenWiped:(BOOL)arg1;
-- (void)setIsExceedingQuota:(BOOL)arg1;
+- (void)setHasChangesToProcess:(bool)arg1;
+- (void)setICloudLibraryExists:(bool)arg1;
+- (void)setICloudLibraryHasBeenWiped:(bool)arg1;
+- (void)setIsExceedingQuota:(bool)arg1;
 - (void)setLastSuccessfulSyncDate:(id)arg1;
 - (id)statusDescription;
 

@@ -6,41 +6,41 @@
 
 @interface ACUIAppInstaller : NSObject {
     ACUIAppDescription *_app;
-    BOOL _availableInStoreResult;
-    BOOL _cachedReachabilityResult;
     NSDate *_dateOfLastInstallationCheck;
     NSDate *_dateOfLastReachabilityCheck;
     <ACUIAppInstallerDelegate> *_delegate;
-    BOOL _needsAvailableInStoreCheck;
     NSURL *_publisherURL;
-    BOOL _resultOfLastInstallationCheck;
+    bool_availableInStoreResult;
+    bool_cachedReachabilityResult;
+    bool_needsAvailableInStoreCheck;
+    bool_resultOfLastInstallationCheck;
 }
 
 @property <ACUIAppInstallerDelegate> * delegate;
-@property(readonly) BOOL isAvailableInStore;
-@property(readonly) BOOL isDownloadable;
-@property(readonly) BOOL isInstalled;
+@property(readonly) bool isAvailableInStore;
+@property(readonly) bool isDownloadable;
+@property(readonly) bool isInstalled;
 @property(retain) NSURL * publisherURL;
-@property(readonly) BOOL requiresReachabilityCheckToDetermineDownloadability;
+@property(readonly) bool requiresReachabilityCheckToDetermineDownloadability;
 
 + (id)currentStoreFront;
 
 - (void).cxx_destruct;
-- (BOOL)_isGreenTeaAvailable;
+- (bool)_isGreenTeaAvailable;
 - (void)_performAvailabilityCheck:(id)arg1;
 - (void)_performReachabilityCheck:(id)arg1;
-- (BOOL)_quicklyGenerateCachedReachabilityResultConsideringPublisherURL:(BOOL)arg1;
-- (void)_setAvailableInStoreResult:(BOOL)arg1;
-- (void)_setCachedReachabilityResult:(BOOL)arg1;
+- (bool)_quicklyGenerateCachedReachabilityResultConsideringPublisherURL:(bool)arg1;
+- (void)_setAvailableInStoreResult:(bool)arg1;
+- (void)_setCachedReachabilityResult:(bool)arg1;
 - (void)checkAvailabilityInStore:(id)arg1;
 - (id)delegate;
 - (void)fetchDownloadability:(id)arg1;
 - (id)initForAppWithDescription:(id)arg1;
-- (BOOL)isAvailableInStore;
-- (BOOL)isDownloadable;
-- (BOOL)isInstalled;
+- (bool)isAvailableInStore;
+- (bool)isDownloadable;
+- (bool)isInstalled;
 - (id)publisherURL;
-- (BOOL)requiresReachabilityCheckToDetermineDownloadability;
+- (bool)requiresReachabilityCheckToDetermineDownloadability;
 - (void)setDelegate:(id)arg1;
 - (void)setPublisherURL:(id)arg1;
 - (void)start;

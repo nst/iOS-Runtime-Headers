@@ -7,38 +7,38 @@
 @interface SKUIDownloadsCellView : UIView {
     NSAttributedString *_attributedTitle;
     UIButton *_button;
-    int _buttonType;
+    long long _buttonType;
     UIImageView *_imageView;
-    BOOL _isPad;
     UISlider *_progressSlider;
     NSString *_subtitle;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
+    bool_isPad;
 }
 
 @property(retain) NSAttributedString * attributedTitle;
 @property(readonly) UIButton * button;
-@property int buttonType;
+@property long long buttonType;
 @property(retain) UIImage * image;
-@property BOOL isPad;
-@property float progress;
+@property bool isPad;
+@property double progress;
 @property(retain) NSString * subtitle;
 
 - (void).cxx_destruct;
 - (id)attributedTitle;
 - (id)button;
-- (int)buttonType;
+- (long long)buttonType;
 - (id)image;
 - (id)init;
-- (BOOL)isPad;
+- (bool)isPad;
 - (void)layoutSubviews;
-- (float)progress;
+- (double)progress;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setButtonType:(int)arg1;
+- (void)setButtonType:(long long)arg1;
 - (void)setImage:(id)arg1;
-- (void)setIsPad:(BOOL)arg1;
-- (void)setProgress:(float)arg1;
+- (void)setIsPad:(bool)arg1;
+- (void)setProgress:(double)arg1;
 - (void)setSubtitle:(id)arg1;
 - (id)subtitle;
 

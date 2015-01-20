@@ -5,26 +5,26 @@
 @class NSString, SKUIViewElementText;
 
 @interface SKUILabelViewElement : SKUIViewElement {
-    int _labelViewStyle;
+    long long _labelViewStyle;
     NSString *_moreButtonTitle;
-    int _numberOfLines;
+    long long _numberOfLines;
     SKUIViewElementText *_text;
 }
 
-@property(readonly) int labelViewStyle;
+@property(readonly) long long labelViewStyle;
 @property(readonly) NSString * moreButtonTitle;
-@property(readonly) int numberOfLines;
+@property(readonly) long long numberOfLines;
 @property(readonly) SKUIViewElementText * text;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)labelViewStyle;
+- (long long)labelViewStyle;
 - (id)moreButtonTitle;
-- (int)numberOfLines;
-- (int)pageComponentType;
+- (long long)numberOfLines;
+- (long long)pageComponentType;
 - (id)text;
 
 @end

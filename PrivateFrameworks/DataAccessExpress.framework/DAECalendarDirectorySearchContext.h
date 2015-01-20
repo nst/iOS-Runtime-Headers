@@ -12,7 +12,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)finishedWithError:(id)arg1 exceededResultLimit:(BOOL)arg2;
+- (void)finishedWithError:(id)arg1 exceededResultLimit:(bool)arg2;
 - (id)initWithResultsBlock:(id)arg1 completionBlock:(id)arg2;
 - (void)resultsReturned:(id)arg1;
 

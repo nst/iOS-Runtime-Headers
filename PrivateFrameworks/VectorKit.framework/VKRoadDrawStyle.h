@@ -67,13 +67,13 @@
             struct _VGLColor {} *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<int> { 
@@ -94,22 +94,22 @@
             int *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
@@ -144,13 +144,13 @@
             float *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<signed char> { 
+    struct VKProfileSparseRamp<bool> { 
         union _u { 
             struct VKProfileSparseRampValue { 
-                BOOL value; 
+                boolvalue; 
                 unsigned char hi; 
             } v[2]; 
-            char *extra; 
+            bool*extra; 
         } u; 
         unsigned char count; 
     } alternateFillColor;
@@ -176,6 +176,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned char)railroadPattern;
-- (BOOL)visibleAtZoom:(float)arg1;
+- (bool)visibleAtZoom:(float)arg1;
 
 @end

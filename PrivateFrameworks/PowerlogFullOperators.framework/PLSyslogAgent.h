@@ -8,8 +8,8 @@
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
     struct __CFRunLoopSource { } *fileDescriptorSource;
     int kq;
-    unsigned int lastMessageID;
-    unsigned int syslogdPid;
+    unsigned long long lastMessageID;
+    unsigned long long syslogdPid;
 }
 
 @property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;

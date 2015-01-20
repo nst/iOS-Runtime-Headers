@@ -6,22 +6,22 @@
 
 @interface TIKeyboardConfiguration : NSObject <NSSecureCoding> {
     NSString *_accentKeyString;
-    BOOL _assertDefaultKeyPlane;
     TIKeyboardInputManagerState *_inputManagerState;
     TIKeyboardIntermediateText *_intermediateText;
     NSString *_layoutTag;
+    bool_assertDefaultKeyPlane;
 }
 
 @property(copy) NSString * accentKeyString;
-@property BOOL assertDefaultKeyPlane;
+@property bool assertDefaultKeyPlane;
 @property(copy) TIKeyboardInputManagerState * inputManagerState;
 @property(retain) TIKeyboardIntermediateText * intermediateText;
 @property(copy) NSString * layoutTag;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)accentKeyString;
-- (BOOL)assertDefaultKeyPlane;
+- (bool)assertDefaultKeyPlane;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -29,7 +29,7 @@
 - (id)intermediateText;
 - (id)layoutTag;
 - (void)setAccentKeyString:(id)arg1;
-- (void)setAssertDefaultKeyPlane:(BOOL)arg1;
+- (void)setAssertDefaultKeyPlane:(bool)arg1;
 - (void)setInputManagerState:(id)arg1;
 - (void)setIntermediateText:(id)arg1;
 - (void)setLayoutTag:(id)arg1;

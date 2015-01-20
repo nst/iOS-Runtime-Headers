@@ -7,8 +7,8 @@
 @interface GEOZilchDecoder : GEOMapRequestManager {
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
+            long long __sig; 
+            BOOL __opaque[56]; 
         } __m_; 
     NSObject<OS_dispatch_queue> *_decoderQueue;
     } _lock;
@@ -19,7 +19,7 @@
 @property(readonly) NSObject<OS_dispatch_queue> * decoderQueue;
 @property <GEOMapAccessRestrictions> * mapAccessRestrictions;
 
-+ (BOOL)decodingSupported;
++ (bool)decodingSupported;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

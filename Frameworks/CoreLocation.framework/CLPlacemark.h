@@ -26,7 +26,7 @@
 @property(copy,readonly) NSString * thoroughfare;
 
 + (id)placemarkWithGEOMapItem:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)ISOcountryCode;
 - (id)_geoMapItem;

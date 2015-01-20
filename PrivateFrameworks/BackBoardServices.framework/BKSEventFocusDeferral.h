@@ -12,18 +12,18 @@
 @property(readonly) BKSEventFocusDeferralProperties * deferredProperties;
 @property(readonly) BKSEventFocusDeferralProperties * properties;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)deferredProperties;
 - (id)deferredPropertiesForProperties:(id)arg1;
-- (BOOL)defersProperties:(id)arg1;
+- (bool)defersProperties:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperties:(id)arg1 deferredProperties:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)properties;
 
 @end

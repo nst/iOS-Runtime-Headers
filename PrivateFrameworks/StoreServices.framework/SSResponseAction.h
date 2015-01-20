@@ -12,11 +12,11 @@
     SSDialog *_dialog;
     NSString *_footerSection;
     NSURL *_url;
-    int _urlBagType;
+    long long _urlBagType;
 }
 
 @property(readonly) NSURL * URL;
-@property(readonly) int URLBagType;
+@property(readonly) long long URLBagType;
 @property(readonly) SSAccount * account;
 @property(readonly) NSString * actionType;
 @property(readonly) NSString * clientIdentifier;
@@ -34,7 +34,7 @@
 + (id)_urlActionWithType:(id)arg1 URL:(id)arg2;
 
 - (id)URL;
-- (int)URLBagType;
+- (long long)URLBagType;
 - (id)account;
 - (id)actionType;
 - (id)clientIdentifier;

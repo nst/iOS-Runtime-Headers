@@ -14,7 +14,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)cloudDocsAppsMonitor;
@@ -28,7 +28,7 @@
 - (id)applicationIdentifiersForContainerID:(id)arg1;
 - (void)forceRefetchAppList;
 - (id)init;
-- (BOOL)isApplicationInstalledForContainerID:(id)arg1;
+- (bool)isApplicationInstalledForContainerID:(id)arg1;
 - (void)removeObserver:(id)arg1;
 
 @end

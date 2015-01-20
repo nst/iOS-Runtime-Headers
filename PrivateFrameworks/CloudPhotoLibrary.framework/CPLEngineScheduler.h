@@ -5,27 +5,27 @@
 @class CPLEngineLibrary, CPLPlatformObject, NSCountedSet, NSDate, NSObject<OS_dispatch_queue>, NSString;
 
 @interface CPLEngineScheduler : NSObject <CPLAbstractObject, CPLEngineComponent> {
-    unsigned int _currentRequestGeneration;
-    unsigned int _currentSyncState;
+    unsigned long long _currentRequestGeneration;
+    unsigned long long _currentSyncState;
     NSCountedSet *_disablingReasons;
     CPLEngineLibrary *_engineLibrary;
-    unsigned int _foregroundCalls;
+    unsigned long long _foregroundCalls;
     double _intervalForRetry;
-    unsigned int _lastRequestGeneration;
+    unsigned long long _lastRequestGeneration;
     NSDate *_lastSyncSessionDateCausedByForeground;
     NSDate *_nextScheduledDate;
-    BOOL _opened;
     CPLPlatformObject *_platformObject;
     NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _requiredFirstState;
-    BOOL _shouldRetryASyncSessionForResourcesUpload;
+    unsigned long long _requiredFirstState;
     NSDate *_unavailabilityLimitDate;
+    bool_opened;
+    bool_shouldRetryASyncSessionForResourcesUpload;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) CPLEngineLibrary * engineLibrary;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) Class superclass;
 
@@ -39,14 +39,14 @@
 - (void)_handleResetClientCacheWithError:(id)arg1 completionHandler:(id)arg2;
 - (void)_handleResetCloudCacheWithError:(id)arg1 completionHandler:(id)arg2;
 - (void)_noteServerIsUnavailableWithErrorLocked:(id)arg1;
-- (void)_noteSyncSessionNeededFromState:(unsigned int)arg1;
+- (void)_noteSyncSessionNeededFromState:(unsigned long long)arg1;
 - (void)_reallyStartSyncSession;
 - (void)_reallyUnscheduleSession;
 - (void)_scheduleNextSyncSession;
 - (void)_startRequiredSyncSession;
-- (BOOL)_syncSessionIsPossible;
+- (bool)_syncSessionIsPossible;
 - (void)_unscheduleNextSyncSession;
-- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)closeAndDeactivate:(bool)arg1 completionHandler:(id)arg2;
 - (id)componentName;
 - (void)disableSynchronizationWithReason:(id)arg1;
 - (void)enableSynchronizationWithReason:(id)arg1;
@@ -54,8 +54,8 @@
 - (void)getStatusDictionaryWithCompletionHandler:(id)arg1;
 - (void)getStatusWithCompletionHandler:(id)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
-- (BOOL)isClientInForeground;
-- (BOOL)isSynchronizationDisabledWithReasonError:(id*)arg1;
+- (bool)isClientInForeground;
+- (bool)isSynchronizationDisabledWithReasonError:(id*)arg1;
 - (void)noteClientIsInBackground;
 - (void)noteClientIsInForeground;
 - (void)noteClientIsInSyncWithClientCache;
@@ -68,8 +68,8 @@
 - (void)noteResourceUploadQueueIsFull;
 - (void)noteServerHasChanges;
 - (void)noteServerIsUnavailableWithError:(id)arg1;
-- (void)noteSyncSessionFailedDuringPhase:(unsigned int)arg1 withError:(id)arg2;
-- (void)noteSyncSessionStateWillBeAttempted:(unsigned int)arg1;
+- (void)noteSyncSessionFailedDuringPhase:(unsigned long long)arg1 withError:(id)arg2;
+- (void)noteSyncSessionStateWillBeAttempted:(unsigned long long)arg1;
 - (void)noteSyncSessionSucceeded;
 - (void)openWithCompletionHandler:(id)arg1;
 - (id)platformObject;

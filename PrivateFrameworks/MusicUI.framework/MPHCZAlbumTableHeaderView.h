@@ -5,7 +5,7 @@
 @interface MPHCZAlbumTableHeaderView : MusicAlbumsDetailTableHeaderView {
 }
 
-+ (struct CGSize { float x1; float x2; })artworkSize;
++ (struct CGSize { double x1; double x2; })artworkSize;
 
 - (id)initWithReuseIdentifier:(id)arg1;
 

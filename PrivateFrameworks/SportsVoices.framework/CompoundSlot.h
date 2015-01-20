@@ -14,7 +14,7 @@
 - (id)description;
 - (id)initFromPlist:(id)arg1;
 - (id)initWithArray:(id)arg1;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (id)reversed;
 - (id)slots;
 

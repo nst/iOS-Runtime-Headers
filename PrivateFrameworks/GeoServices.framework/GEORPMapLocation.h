@@ -15,10 +15,10 @@
 }
 
 @property(retain) GEOLatLng * coordinate;
-@property(readonly) BOOL hasCoordinate;
-@property(readonly) BOOL hasImage;
-@property(readonly) BOOL hasViewportInfo;
-@property BOOL hasZoomLevel;
+@property(readonly) bool hasCoordinate;
+@property(readonly) bool hasImage;
+@property(readonly) bool hasViewportInfo;
+@property bool hasZoomLevel;
 @property(retain) NSData * image;
 @property(retain) GEOPDViewportInfo * viewportInfo;
 @property float zoomLevel;
@@ -29,17 +29,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCoordinate;
-- (BOOL)hasImage;
-- (BOOL)hasViewportInfo;
-- (BOOL)hasZoomLevel;
-- (unsigned int)hash;
+- (bool)hasCoordinate;
+- (bool)hasImage;
+- (bool)hasViewportInfo;
+- (bool)hasZoomLevel;
+- (unsigned long long)hash;
 - (id)image;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCoordinate:(id)arg1;
-- (void)setHasZoomLevel:(BOOL)arg1;
+- (void)setHasZoomLevel:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (void)setZoomLevel:(float)arg1;

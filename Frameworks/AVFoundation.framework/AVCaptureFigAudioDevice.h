@@ -8,10 +8,10 @@
     NSDictionary *_attributes;
     struct OpaqueFigCaptureSource { } *_fcs;
     NSObject<OS_dispatch_queue> *_fcsQueue;
-    BOOL _isConnected;
-    BOOL _levelMeteringEnabled;
     NSString *_localizedName;
     AVWeakReference *_weakReference;
+    bool_isConnected;
+    bool_levelMeteringEnabled;
 }
 
 + (id)_devices;
@@ -27,15 +27,15 @@
 - (void)dealloc;
 - (struct OpaqueCMClock { }*)deviceClock;
 - (struct OpaqueFigCaptureSource { }*)figCaptureSource;
-- (BOOL)hasMediaType:(id)arg1;
+- (bool)hasMediaType:(id)arg1;
 - (id)init;
-- (BOOL)isConnected;
-- (BOOL)isInUseByAnotherApplication;
+- (bool)isConnected;
+- (bool)isInUseByAnotherApplication;
 - (id)localizedName;
 - (id)modelID;
-- (BOOL)startUsingDevice:(id*)arg1;
+- (bool)startUsingDevice:(id*)arg1;
 - (void)stopUsingDevice;
-- (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
+- (bool)supportsAVCaptureSessionPreset:(id)arg1;
 - (id)uniqueID;
 
 @end

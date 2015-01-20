@@ -12,12 +12,12 @@
 + (id)sharedSearchRequester;
 
 - (void)cancelSearch:(id)arg1;
-- (void)completions:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 refinement:(id)arg5 networkActivity:(id)arg6 error:(id)arg7;
+- (void)completions:(id)arg1 timeout:(long long)arg2 useBackgroundConnection:(bool)arg3 finished:(id)arg4 refinement:(id)arg5 networkActivity:(id)arg6 error:(id)arg7;
 - (void)dealloc;
 - (id)init;
 - (void)search:(id)arg1 finished:(id)arg2 refinement:(id)arg3 networkActivity:(id)arg4 error:(id)arg5;
-- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 refinement:(id)arg5 networkActivity:(id)arg6 error:(id)arg7 isCompletions:(BOOL)arg8;
-- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 refinement:(id)arg5 networkActivity:(id)arg6 error:(id)arg7;
-- (void)search:(id)arg1 useBackgroundConnection:(BOOL)arg2 finished:(id)arg3 refinement:(id)arg4 networkActivity:(id)arg5 error:(id)arg6;
+- (void)search:(id)arg1 timeout:(long long)arg2 useBackgroundConnection:(bool)arg3 finished:(id)arg4 refinement:(id)arg5 networkActivity:(id)arg6 error:(id)arg7 isCompletions:(bool)arg8;
+- (void)search:(id)arg1 timeout:(long long)arg2 useBackgroundConnection:(bool)arg3 finished:(id)arg4 refinement:(id)arg5 networkActivity:(id)arg6 error:(id)arg7;
+- (void)search:(id)arg1 useBackgroundConnection:(bool)arg2 finished:(id)arg3 refinement:(id)arg4 networkActivity:(id)arg5 error:(id)arg6;
 
 @end

@@ -6,25 +6,25 @@
 
 @interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHostInterface, NCInteractiveNotificationHostDelegate> {
     NCViewServiceDescriptor *_accessoryViewService;
-    float _bottomOverhangHeight;
+    double _bottomOverhangHeight;
     <NCInteractiveNotificationHostDelegate> *_delegate;
     NCViewServiceDescriptor *_inlayViewService;
-    float _maximumHeight;
-    BOOL _modal;
-    BOOL _proximityMonitoringEnabled;
-    BOOL _showsKeyboard;
+    double _maximumHeight;
+    bool_modal;
+    bool_proximityMonitoringEnabled;
+    bool_showsKeyboard;
 }
 
 @property(retain) NCViewServiceDescriptor * accessoryViewService;
-@property float bottomOverhangHeight;
+@property double bottomOverhangHeight;
 @property(copy,readonly) NSString * debugDescription;
 @property <NCInteractiveNotificationHostDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NCViewServiceDescriptor * inlayViewService;
-@property float maximumHeight;
-@property(getter=isModal) BOOL modal;
-@property BOOL showsKeyboard;
+@property double maximumHeight;
+@property(getter=isModal) bool modal;
+@property bool showsKeyboard;
 @property(readonly) Class superclass;
 
 + (id)exportedInterface;
@@ -34,30 +34,30 @@
 
 - (void)_dismissWithContext:(id)arg1;
 - (void)_proximityStateChanged:(id)arg1;
-- (void)_requestPreferredContentHeight:(float)arg1;
-- (void)_requestProximityMonitoringEnabled:(BOOL)arg1;
-- (void)_setActionEnabled:(BOOL)arg1 atIndex:(unsigned int)arg2;
-- (void)_setProximityMonitoringEnabled:(BOOL)arg1;
+- (void)_requestPreferredContentHeight:(double)arg1;
+- (void)_requestProximityMonitoringEnabled:(bool)arg1;
+- (void)_setActionEnabled:(bool)arg1 atIndex:(unsigned long long)arg2;
+- (void)_setProximityMonitoringEnabled:(bool)arg1;
 - (id)accessoryViewService;
-- (float)bottomOverhangHeight;
+- (double)bottomOverhangHeight;
 - (void)dealloc;
 - (id)delegate;
-- (void)didChangeRevealPercent:(float)arg1;
+- (void)didChangeRevealPercent:(double)arg1;
 - (void)getActionContextWithCompletion:(id)arg1;
-- (void)handleActionAtIndex:(int)arg1;
+- (void)handleActionAtIndex:(long long)arg1;
 - (void)handleActionIdentifier:(id)arg1;
 - (id)inlayViewService;
 - (void)interactiveNotificationDidAppear;
-- (BOOL)isModal;
-- (float)maximumHeight;
+- (bool)isModal;
+- (double)maximumHeight;
 - (void)setAccessoryViewService:(id)arg1;
-- (void)setBottomOverhangHeight:(float)arg1;
+- (void)setBottomOverhangHeight:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInlayViewService:(id)arg1;
-- (void)setMaximumHeight:(float)arg1;
-- (void)setModal:(BOOL)arg1;
-- (void)setShowsKeyboard:(BOOL)arg1;
-- (BOOL)showsKeyboard;
+- (void)setMaximumHeight:(double)arg1;
+- (void)setModal:(bool)arg1;
+- (void)setShowsKeyboard:(bool)arg1;
+- (bool)showsKeyboard;
 - (void)willPresentFromActionIdentifier:(id)arg1;
 
 @end

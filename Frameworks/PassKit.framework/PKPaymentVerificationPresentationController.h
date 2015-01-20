@@ -5,7 +5,6 @@
 @class <PKPaymentVerificationPresentationDelegate>, NSNumber, NSString, PKPassView, PKPaymentPass, PKVerificationRequestRecord;
 
 @interface PKPaymentVerificationPresentationController : NSObject <SKStoreProductViewControllerDelegate> {
-    BOOL _bankAppNotFound;
     <PKPaymentVerificationPresentationDelegate> *_delegate;
     NSNumber *_inStoreBankAppStoreID;
     NSString *_inStoreBankAppTitle;
@@ -14,6 +13,7 @@
     PKPaymentPass *_pass;
     PKPassView *_passView;
     PKVerificationRequestRecord *_requestRecord;
+    bool_bankAppNotFound;
 }
 
 @property(readonly) NSString * alternateMethodButtonTitle;
@@ -21,19 +21,19 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPaymentVerificationPresentationDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) NSString * verificationBodyString;
 @property(readonly) NSString * verificationTitleString;
 
 - (id)_bankAppName;
 - (id)_bankAppStoreIDs;
-- (unsigned int)_channelType;
+- (unsigned long long)_channelType;
 - (void)_completeVerificationUsingBankApp;
 - (void)_completeVerificationUsingCodeEntry;
 - (void)_completeVerificationUsingOutboundCall;
 - (void)_didChangePresentation;
-- (BOOL)_isBankAppInstalled;
+- (bool)_isBankAppInstalled;
 - (void)_launchBankApp;
 - (id)_outboundCallPhoneNumber;
 - (void)_performStoreLookupForBankApp;

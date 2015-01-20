@@ -5,31 +5,31 @@
 @class GKLabel, NSString;
 
 @interface GKRemoteUIHeaderView : UIView <RemoteUITableHeader> {
-    float _bottomMargin;
-    float _height;
-    BOOL _isFirstSection;
+    double _bottomMargin;
+    double _height;
     GKLabel *_textLabel;
+    bool_isFirstSection;
 }
 
-@property float bottomMargin;
+@property double bottomMargin;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float height;
-@property BOOL isFirstSection;
+@property(readonly) unsigned long long hash;
+@property double height;
+@property bool isFirstSection;
 @property(readonly) Class superclass;
 @property(retain) GKLabel * textLabel;
 
-- (float)bottomMargin;
+- (double)bottomMargin;
 - (void)dealloc;
-- (float)headerHeightForWidth:(float)arg1 inTableView:(id)arg2;
-- (float)height;
+- (double)headerHeightForWidth:(double)arg1 inTableView:(id)arg2;
+- (double)height;
 - (id)initWithAttributes:(id)arg1;
-- (BOOL)isFirstSection;
-- (void)setBottomMargin:(float)arg1;
-- (void)setHeight:(float)arg1;
-- (void)setIsFirstSection:(BOOL)arg1;
-- (void)setSectionIsFirst:(BOOL)arg1;
+- (bool)isFirstSection;
+- (void)setBottomMargin:(double)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setIsFirstSection:(bool)arg1;
+- (void)setSectionIsFirst:(bool)arg1;
 - (void)setTextLabel:(id)arg1;
 - (id)textLabel;
 

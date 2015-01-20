@@ -5,7 +5,7 @@
 @interface AOSCLLocation : CLLocation <NSSecureCoding> {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCLLocation:(id)arg1;

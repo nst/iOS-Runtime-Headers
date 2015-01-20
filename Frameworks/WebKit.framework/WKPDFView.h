@@ -16,14 +16,13 @@
         unsigned int m_capacity; 
         unsigned int m_size; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     unsigned int _centerPageNumber;
     UIView *_fixedOverlayView;
-    BOOL _isStartingZoom;
     } _minimumSize;
     } _overlaidAccessoryViewsInset;
     } _pageNumberIndicator;
@@ -32,11 +31,12 @@
     UIScrollView *_scrollView;
     } _suggestedFilename;
     WKWebView *_webView;
+    bool_isStartingZoom;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) struct CGPDFDocument { }* pdfDocument;
 @property(readonly) NSString * suggestedFilename;
 @property(readonly) Class superclass;
@@ -45,7 +45,7 @@
 - (void).cxx_destruct;
 - (void)_clearPages;
 - (void)_computePageAndDocumentFrames;
-- (struct CGPoint { float x1; float x2; })_offsetForPageNumberIndicator;
+- (struct CGPoint { double x1; double x2; })_offsetForPageNumberIndicator;
 - (void)_revalidateViews;
 - (void)_updatePageNumberIndicator;
 - (void)dealloc;
@@ -54,11 +54,11 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)suggestedFilename;
 - (void)web_computedContentInsetDidChange;
-- (id)web_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 webView:(id)arg2;
+- (id)web_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 webView:(id)arg2;
 - (void)web_setContentProviderData:(id)arg1 suggestedFilename:(id)arg2;
 - (void)web_setFixedOverlayView:(id)arg1;
-- (void)web_setMinimumSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)web_setOverlaidAccessoryViewsInset:(struct CGSize { float x1; float x2; })arg1;
-- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 kind:(int)arg4;
+- (void)web_setMinimumSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)web_setOverlaidAccessoryViewsInset:(struct CGSize { double x1; double x2; })arg1;
+- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3 kind:(int)arg4;
 
 @end

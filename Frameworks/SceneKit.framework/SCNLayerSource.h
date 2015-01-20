@@ -11,7 +11,7 @@
 @property(retain) CALayer * layer;
 
 - (void)dealloc;
-- (BOOL)isOpaque;
+- (bool)isOpaque;
 - (id)layer;
 - (void)setLayer:(id)arg1;
 - (id)textureSourceForContext:(void*)arg1;

@@ -8,7 +8,7 @@
     NSDictionary *_userInfo;
 }
 
-@property(readonly) int actionType;
+@property(readonly) long long actionType;
 @property(readonly) NSString * alertBodyString;
 @property(readonly) NSString * alertCancelString;
 @property(readonly) NSString * alertOKString;
@@ -16,13 +16,13 @@
 @property(readonly) id badgeValue;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSDictionary * notificationUserInfo;
 @property(readonly) NSString * soundFileName;
 @property(readonly) Class superclass;
 
 - (id)_valueForAlertKey:(id)arg1;
-- (int)actionType;
+- (long long)actionType;
 - (id)alertBodyString;
 - (id)alertCancelString;
 - (id)alertOKString;

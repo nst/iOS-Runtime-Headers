@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface TSUPolynomialRegressionModel : TSURegressionModel {
-    BOOL mAffine;
+    boolmAffine;
     double *mCoefficients;
     double mIntercept;
     int mNumCoefficients;
@@ -21,11 +21,11 @@
 - (id)getEquationStringAndBuildSuperscriptRangesArray;
 - (id)initAffineWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xOrder:(int)arg4;
 - (id)initNonAffineWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xOrder:(int)arg4 desiredIntercept:(double)arg5;
-- (id)initWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xOrder:(int)arg4 makeAffine:(BOOL)arg5 desiredIntercept:(double)arg6;
+- (id)initWithMappings:(int)arg1 xs:(double*)arg2 ys:(double*)arg3 xOrder:(int)arg4 makeAffine:(bool)arg5 desiredIntercept:(double)arg6;
 - (int)numCoefficients;
 - (int)numSuperscriptRanges;
 - (double)rSquared;
 - (int)regressionType;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })superscriptRangeAtIndex:(int)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })superscriptRangeAtIndex:(int)arg1;
 
 @end

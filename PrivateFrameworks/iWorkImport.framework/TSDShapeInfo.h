@@ -19,13 +19,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) TSDFill * fill;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) TSDLineEnd * headLineEnd;
 @property(retain) TSDPathSource * pathSource;
 @property(readonly) TSDShapeStyle * shapeStyle;
 @property(readonly) Class superclass;
-@property(readonly) BOOL supportsShrinkTextToFit;
-@property(readonly) BOOL supportsTextInset;
+@property(readonly) bool supportsShrinkTextToFit;
+@property(readonly) bool supportsTextInset;
 @property(retain) TSDLineEnd * tailLineEnd;
 
 - (id)animationFilters;
@@ -43,11 +43,11 @@
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
-- (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ShapeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct DrawableArchive {} *x3; struct Reference {} *x4; struct PathSourceArchive {} *x5; struct LineEndArchive {} *x6; struct LineEndArchive {} *x7; int x8; unsigned int x9[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (id)objectForProperty:(int)arg1;
 - (void)p_correctLineSegmentGeometry;
 - (void)p_correctNearZeroWidthLines;
@@ -66,9 +66,9 @@
 - (id)style;
 - (Class)styleClass;
 - (id)subclassInitFromUnarchiver:(id)arg1;
-- (BOOL)supportsShrinkTextToFit;
-- (BOOL)supportsTextInset;
+- (bool)supportsShrinkTextToFit;
+- (bool)supportsTextInset;
 - (id)tailLineEnd;
-- (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 
 @end

@@ -19,7 +19,7 @@
 @property <IKAppMenuBarDocumentDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSString * featureName;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;

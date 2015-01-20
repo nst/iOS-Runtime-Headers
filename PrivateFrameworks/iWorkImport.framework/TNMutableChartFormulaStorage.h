@@ -9,7 +9,7 @@
 - (void)clearFormulaListForKey:(int)arg1;
 - (id)initWithChartFormulaStorage:(id)arg1;
 - (id)mutableFormulaListForType:(int)arg1;
-- (unsigned int)numberOfGroupsWithCalcEngine:(id)arg1 inEntity:(struct __CFUUID { }*)arg2;
+- (unsigned long long)numberOfGroupsWithCalcEngine:(id)arg1 inEntity:(struct __CFUUID { }*)arg2;
 - (void)setDirection:(int)arg1;
 - (void)setFormulaList:(id)arg1 forKey:(int)arg2;
 

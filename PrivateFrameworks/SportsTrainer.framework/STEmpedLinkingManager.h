@@ -16,12 +16,12 @@
 + (void)_stopLinking;
 
 - (void)_empedLinkingStateChanged:(id)arg1;
-- (void)_fakeEmpedLinkingStateChanged:(BOOL)arg1 afterDelay:(double)arg2;
+- (void)_fakeEmpedLinkingStateChanged:(bool)arg1 afterDelay:(double)arg2;
 - (void)_remoteLinkingStateChanged:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isLinking;
+- (bool)isLinking;
 - (void)setDelegate:(id)arg1;
 - (void)startLinking;
 - (void)startRemoteLinking;

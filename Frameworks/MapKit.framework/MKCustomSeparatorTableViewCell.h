@@ -8,17 +8,17 @@
     MKViewWithHairline *_separatorView;
 }
 
-@property float leftSeparatorInset;
+@property double leftSeparatorInset;
 @property(retain) UIColor * separatorColor;
-@property(getter=isSeparatorHidden) BOOL separatorHidden;
+@property(getter=isSeparatorHidden) bool separatorHidden;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isSeparatorHidden;
-- (float)leftSeparatorInset;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isSeparatorHidden;
+- (double)leftSeparatorInset;
 - (id)separatorColor;
-- (void)setLeftSeparatorInset:(float)arg1;
+- (void)setLeftSeparatorInset:(double)arg1;
 - (void)setSeparatorColor:(id)arg1;
-- (void)setSeparatorHidden:(BOOL)arg1;
+- (void)setSeparatorHidden:(bool)arg1;
 
 @end

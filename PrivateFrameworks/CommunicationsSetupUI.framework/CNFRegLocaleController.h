@@ -8,20 +8,20 @@
     PSSpecifier *_countryFieldSpecifier;
     NSString *_currentPhoneValue;
     NSString *_currentRegionID;
-    BOOL _isError;
-    BOOL _isLoading;
     PSSpecifier *_phoneNumberFieldSpecifier;
     PSSpecifier *_phoneNumberGroupSpecifier;
     NSArray *_phoneNumberSpecifiers;
     NSArray *_regionData;
     id _regionListChangeObserver;
+    bool_isError;
+    bool_isLoading;
 }
 
 @property(copy) NSString * currentPhoneValue;
 @property(copy) NSString * currentRegionID;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSArray * regionData;
 @property(readonly) Class superclass;
 
@@ -33,17 +33,17 @@
 - (void)_finishValidation;
 - (void)_handleRegionListLoad;
 - (void)_handleTimeout;
-- (void)_hideCountryPickerAnimated:(BOOL)arg1;
+- (void)_hideCountryPickerAnimated:(bool)arg1;
 - (void)_loadInitialValues;
 - (void)_loadRegionsIfNecessary;
 - (id)_phoneTextField;
-- (void)_refreshCountryFieldAnimated:(BOOL)arg1;
-- (void)_refreshPhoneFieldAnimated:(BOOL)arg1;
+- (void)_refreshCountryFieldAnimated:(bool)arg1;
+- (void)_refreshPhoneFieldAnimated:(bool)arg1;
 - (void)_rightButtonTapped;
-- (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setFieldsEnabled:(bool)arg1 animated:(bool)arg2;
 - (void)_setupEventHandlers;
-- (void)_showCountryPickerAnimated:(BOOL)arg1;
-- (void)_showPhoneField:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_showCountryPickerAnimated:(bool)arg1;
+- (void)_showPhoneField:(bool)arg1 animated:(bool)arg2;
 - (void)_startListeningForRegionListChanges;
 - (void)_startTimeout;
 - (void)_stopListeningForRegionListChanges;
@@ -73,9 +73,9 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)titleString;
 - (id)validationString;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

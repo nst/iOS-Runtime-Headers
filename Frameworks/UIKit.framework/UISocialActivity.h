@@ -12,16 +12,16 @@
 @property(copy) NSString * builtinActivityType;
 @property(retain) SLComposeViewController * socialComposeViewController;
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
-- (BOOL)_canBeExcludedByActivityViewController:(id)arg1;
+- (bool)_canBeExcludedByActivityViewController:(id)arg1;
 - (void)_cleanup;
-- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (id)activityType;
 - (id)activityViewController;
 - (id)builtinActivityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)initWithActivityType:(id)arg1;

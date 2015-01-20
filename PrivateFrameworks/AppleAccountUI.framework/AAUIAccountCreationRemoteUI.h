@@ -9,19 +9,19 @@
     UINavigationController *_createAccountNavController;
     <AAUIAccountCreationDelegate> *_delegate;
     UIAlertView *_failedToCreateAccountAlert;
-    BOOL _isModal;
     RUILoader *_loader;
     NSMutableArray *_objectModels;
-    BOOL _over13;
     UINavigationController *_parentNavController;
     UIAlertView *_tcConfirmationAlert;
     AAAutoAccountVerifier *_verifier;
+    bool_isModal;
+    bool_over13;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <AAUIAccountCreationDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,13 +30,13 @@
 - (void)_cleanupLoader;
 - (void)_createAppleAccount;
 - (void)_displayConnectionErrorAndDismiss;
-- (void)_popObjectModelAnimated:(BOOL)arg1;
-- (void)_userAgreedToTCs:(BOOL)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)_popObjectModelAnimated:(bool)arg1;
+- (void)_userAgreedToTCs:(bool)arg1;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithNavController:(id)arg1 isModal:(BOOL)arg2;
-- (void)loadURLRequest:(id)arg1 addHeaders:(BOOL)arg2;
+- (id)initWithNavController:(id)arg1 isModal:(bool)arg2;
+- (void)loadURLRequest:(id)arg1 addHeaders:(bool)arg2;
 - (void)loadURLRequest:(id)arg1;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
@@ -46,6 +46,6 @@
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
+- (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 
 @end

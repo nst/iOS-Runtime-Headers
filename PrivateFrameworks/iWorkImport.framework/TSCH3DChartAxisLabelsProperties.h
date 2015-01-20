@@ -5,37 +5,37 @@
 @class TSCH3DLabelResources, TSCHChartInfo, TSCHSelectionPath, TSULRUCache;
 
 @interface TSCH3DChartAxisLabelsProperties : NSObject {
+    boolmHidden;
     float mCachedTextFactor;
     TSULRUCache *mCategoryStridingCache;
-    BOOL mHidden;
     TSCHChartInfo *mInfo;
     TSCH3DLabelResources *mLabels;
     TSCHSelectionPath *mSelectionPath;
-    unsigned int mStyleIndex;
+    unsigned long long mStyleIndex;
 }
 
 @property float cachedTextFactor;
 @property(readonly) TSULRUCache * categoryStridingCache;
-@property BOOL hidden;
+@property bool hidden;
 @property(readonly) TSCHChartInfo * info;
 @property(readonly) TSCH3DLabelResources * labels;
 @property(retain) TSCHSelectionPath * selectionPath;
-@property(readonly) unsigned int styleIndex;
+@property(readonly) unsigned long long styleIndex;
 
-+ (id)propertiesWithInfo:(id)arg1 labels:(id)arg2 styleIndex:(unsigned int)arg3;
++ (id)propertiesWithInfo:(id)arg1 labels:(id)arg2 styleIndex:(unsigned long long)arg3;
 
 - (float)cachedTextFactor;
 - (id)categoryStridingCache;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)hidden;
+- (bool)hidden;
 - (id)info;
-- (id)initWithInfo:(id)arg1 labels:(id)arg2 styleIndex:(unsigned int)arg3;
+- (id)initWithInfo:(id)arg1 labels:(id)arg2 styleIndex:(unsigned long long)arg3;
 - (id)labels;
 - (id)selectionPath;
 - (void)setCachedTextFactor:(float)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setSelectionPath:(id)arg1;
-- (unsigned int)styleIndex;
+- (unsigned long long)styleIndex;
 
 @end

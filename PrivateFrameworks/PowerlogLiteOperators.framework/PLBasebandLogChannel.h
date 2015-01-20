@@ -5,17 +5,17 @@
 @class <PLBasebandLogChannelDelegate>;
 
 @interface PLBasebandLogChannel : NSObject {
-    BOOL cachingEnabled;
+    boolcachingEnabled;
     <PLBasebandLogChannelDelegate> *delegate;
     struct __CFMessagePort { } *localPort;
     struct __CFMessagePort { } *remotePort;
 }
 
-@property BOOL cachingEnabled;
+@property bool cachingEnabled;
 @property <PLBasebandLogChannelDelegate> * delegate;
-@property(readonly) BOOL isValid;
+@property(readonly) bool isValid;
 
-- (BOOL)cachingEnabled;
+- (bool)cachingEnabled;
 - (void)close;
 - (void)commitHardwareLogs;
 - (void)connectionInvalidated:(id)arg1;
@@ -25,12 +25,12 @@
 - (void)flush;
 - (id)init;
 - (void)invalidate;
-- (BOOL)isValid;
-- (BOOL)openWithConnection:(id)arg1;
+- (bool)isValid;
+- (bool)openWithConnection:(id)arg1;
 - (void)sendObjectOverRemotePort:(id)arg1;
-- (void)setCachingEnabled:(BOOL)arg1;
+- (void)setCachingEnabled:(bool)arg1;
 - (void)setChannelTimeout:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHardwareLoggingLevel:(unsigned int)arg1 withWindowSize:(unsigned int)arg2;
+- (void)setHardwareLoggingLevel:(unsigned long long)arg1 withWindowSize:(unsigned long long)arg2;
 
 @end

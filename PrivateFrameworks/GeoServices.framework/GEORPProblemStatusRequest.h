@@ -10,8 +10,8 @@
     GEORPUserCredentials *_userCredentials;
 }
 
-@property(readonly) BOOL hasStatusNotificationId;
-@property(readonly) BOOL hasUserCredentials;
+@property(readonly) bool hasStatusNotificationId;
+@property(readonly) bool hasUserCredentials;
 @property(retain) NSMutableArray * problemIds;
 @property(retain) NSString * statusNotificationId;
 @property(retain) GEORPUserCredentials * userCredentials;
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatusNotificationId;
-- (BOOL)hasUserCredentials;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasStatusNotificationId;
+- (bool)hasUserCredentials;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)problemIdAtIndex:(unsigned int)arg1;
+- (id)problemIdAtIndex:(unsigned long long)arg1;
 - (id)problemIds;
-- (unsigned int)problemIdsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)problemIdsCount;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setProblemIds:(id)arg1;

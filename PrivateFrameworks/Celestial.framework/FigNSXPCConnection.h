@@ -6,14 +6,14 @@
 
 @interface FigNSXPCConnection : NSXPCConnection {
     NSObject<OS_dispatch_group> *_connectionRunningGroup;
-    BOOL _explicitlyInvalidated;
+    bool_explicitlyInvalidated;
 }
 
-@property(readonly) BOOL explicitlyInvalidated;
+@property(readonly) bool explicitlyInvalidated;
 
 - (void)blockUntilInvalidateHandlerHasBeenCalled;
 - (void)dealloc;
-- (BOOL)explicitlyInvalidated;
+- (bool)explicitlyInvalidated;
 - (void)invalidate;
 - (void)resume;
 - (void)setInvalidationHandler:(id)arg1;

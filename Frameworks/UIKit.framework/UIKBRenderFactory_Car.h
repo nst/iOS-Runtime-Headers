@@ -8,7 +8,7 @@
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)activeKeyColor;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
-- (float)defaultKeyFontSize;
+- (double)defaultKeyFontSize;
 - (id)displayContentsForKey:(id)arg1;
 - (id)dividerColor;
 - (id)enabledKeyColor;

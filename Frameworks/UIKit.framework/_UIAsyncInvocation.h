@@ -10,8 +10,8 @@
 
 @interface _UIAsyncInvocation : NSObject {
     id _invocationBlock;
-    BOOL _invocationBlockHasBeenCalled;
     _UIAsyncInvocationObserver *_observer;
+    bool_invocationBlockHasBeenCalled;
 }
 
 + (id)emptyInvocation;

@@ -16,12 +16,12 @@
 @property(retain) GKNearbyPlayersDataSource * nearbyPlayersDataSource;
 @property(retain) GKGameRecentPlayersDataSource * recentPlayersDataSource;
 
-- (BOOL)canSelectIndexPath:(id)arg1;
+- (bool)canSelectIndexPath:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionViewWillBecomeActive:(id)arg1;
 - (void)dealloc;
 - (id)friendsSplittingDataSource;
-- (BOOL)hasPlayer:(id)arg1;
+- (bool)hasPlayer:(id)arg1;
 - (id)hiddenPlayers;
 - (id)indexPathsForPlayer:(id)arg1;
 - (id)init;

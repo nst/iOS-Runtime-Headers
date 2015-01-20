@@ -5,23 +5,23 @@
 @class NSString;
 
 @interface SSFamilyCircleRequest : SSRequest <SSXPCCoding> {
-    int _authenticationPromptStyle;
-    BOOL _fetchITunesAccountNames;
+    long long _authenticationPromptStyle;
+    bool_fetchITunesAccountNames;
 }
 
-@property int authenticationPromptStyle;
+@property long long authenticationPromptStyle;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property BOOL fetchITunesAccountNames;
-@property(readonly) unsigned int hash;
+@property bool fetchITunesAccountNames;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (int)authenticationPromptStyle;
+- (long long)authenticationPromptStyle;
 - (id)copyXPCEncoding;
-- (BOOL)fetchITunesAccountNames;
+- (bool)fetchITunesAccountNames;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setAuthenticationPromptStyle:(int)arg1;
-- (void)setFetchITunesAccountNames:(BOOL)arg1;
+- (void)setAuthenticationPromptStyle:(long long)arg1;
+- (void)setFetchITunesAccountNames:(bool)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithResponseBlock:(id)arg1;
 

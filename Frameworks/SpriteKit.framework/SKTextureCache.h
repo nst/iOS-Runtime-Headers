@@ -4,21 +4,21 @@
 
 @interface SKTextureCache : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     unsigned int *alphaMap;
     } alphaMapSize;
+    boolhasAlpha;
+    boolisLoaded;
+    boolisPOT;
     struct CGImage { } *collisionMask;
-    int filteringMode;
-    BOOL hasAlpha;
-    BOOL isLoaded;
-    BOOL isPOT;
+    long long filteringMode;
     int lock;
     char *pixelData;
     } pixelSize;
@@ -32,15 +32,15 @@
 }
 
 @property unsigned int* alphaMap;
-@property struct CGSize { float x1; float x2; } alphaMapSize;
-@property int filteringMode;
-@property BOOL hasAlpha;
-@property BOOL isLoaded;
-@property BOOL isPOT;
+@property struct CGSize { double x1; double x2; } alphaMapSize;
+@property long long filteringMode;
+@property bool hasAlpha;
+@property bool isLoaded;
+@property bool isPOT;
 @property(getter=getLock,readonly) int* lock;
 @property char * pixelData;
-@property struct CGSize { float x1; float x2; } pixelSize;
-@property struct CGSize { float x1; float x2; } size;
+@property struct CGSize { double x1; double x2; } pixelSize;
+@property struct CGSize { double x1; double x2; } size;
 @property int state;
 @property unsigned int texFormat;
 @property unsigned int texId;
@@ -50,32 +50,32 @@
 
 - (id).cxx_construct;
 - (unsigned int*)alphaMap;
-- (struct CGSize { float x1; float x2; })alphaMapSize;
+- (struct CGSize { double x1; double x2; })alphaMapSize;
 - (void)dealloc;
-- (int)filteringMode;
+- (long long)filteringMode;
 - (int*)getLock;
-- (BOOL)hasAlpha;
+- (bool)hasAlpha;
 - (id)init;
-- (BOOL)isLoaded;
-- (BOOL)isPOT;
+- (bool)isLoaded;
+- (bool)isPOT;
 - (char *)pixelData;
-- (struct CGSize { float x1; float x2; })pixelSize;
+- (struct CGSize { double x1; double x2; })pixelSize;
 - (void)setAlphaMap:(unsigned int*)arg1;
-- (void)setAlphaMapSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setFilteringMode:(int)arg1;
-- (void)setHasAlpha:(BOOL)arg1;
-- (void)setIsLoaded:(BOOL)arg1;
-- (void)setIsPOT:(BOOL)arg1;
+- (void)setAlphaMapSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setFilteringMode:(long long)arg1;
+- (void)setHasAlpha:(bool)arg1;
+- (void)setIsLoaded:(bool)arg1;
+- (void)setIsPOT:(bool)arg1;
 - (void)setPixelData:(char *)arg1;
-- (void)setPixelSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPixelSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setState:(int)arg1;
 - (void)setTexFormat:(unsigned int)arg1;
 - (void)setTexId:(unsigned int)arg1;
 - (void)setTexInternalFormat:(int)arg1;
 - (void)setTexType:(unsigned int)arg1;
 - (void)setWrapMode:(int)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (int)state;
 - (unsigned int)texFormat;
 - (unsigned int)texId;

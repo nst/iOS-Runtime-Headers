@@ -12,13 +12,13 @@
     NSNumber *_iTunesItemIdentifier;
     WBSParsecImageRepresentation *_icon;
     NSString *_identifier;
-    unsigned int _minimumRankOfTopHitToSuppressResult;
+    unsigned long long _minimumRankOfTopHitToSuppressResult;
     NSURL *_reportProblemURL;
     NSString *_sectionHeader;
     NSDictionary *_styleOverrides;
     NSArray *_supportedStyleOverrides;
     NSString *_title;
-    unsigned int _type;
+    unsigned long long _type;
     NSString *_urlString;
 }
 
@@ -27,10 +27,10 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) NSString * descriptionText;
 @property(readonly) NSString * feedbackIdentifier;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSNumber * iTunesItemIdentifier;
 @property(readonly) NSString * identifier;
-@property(readonly) unsigned int minimumRankOfTopHitToSuppressResult;
+@property(readonly) unsigned long long minimumRankOfTopHitToSuppressResult;
 @property(readonly) NSString * parsecDomainIdentifier;
 @property(readonly) NSURL * reportProblemURL;
 @property(readonly) NSString * sectionHeader;
@@ -38,7 +38,7 @@
 @property(readonly) Class superclass;
 @property(readonly) NSArray * supportedStyleOverrides;
 @property(readonly) NSString * title;
-@property(readonly) unsigned int type;
+@property(readonly) unsigned long long type;
 @property(readonly) NSString * urlString;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -47,7 +47,7 @@
 + (void)setReplacementClass:(Class)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)_constructTypeMaskForTypeString:(id)arg1;
+- (unsigned long long)_constructTypeMaskForTypeString:(id)arg1;
 - (id)_glyphRepresentationsFromGlyphDictionaries:(id)arg1;
 - (id)_glyphsFromGlyphRepresentations:(id)arg1 withSession:(id)arg2;
 - (void)_setStyleOverridesWithDictionary:(id)arg1;
@@ -59,14 +59,14 @@
 - (id)iconWithSession:(id)arg1;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)minimumRankOfTopHitToSuppressResult;
+- (unsigned long long)minimumRankOfTopHitToSuppressResult;
 - (id)parsecDomainIdentifier;
 - (id)reportProblemURL;
 - (id)sectionHeader;
 - (id)styleOverrides;
 - (id)supportedStyleOverrides;
 - (id)title;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)urlString;
 
 @end

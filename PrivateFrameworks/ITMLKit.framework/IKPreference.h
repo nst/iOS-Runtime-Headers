@@ -5,10 +5,10 @@
 @interface IKPreference : NSObject {
 }
 
-+ (BOOL)ignoreHTTPCache;
-+ (BOOL)jsContextInspectable;
-+ (BOOL)logDocumentXML;
-+ (unsigned int)logLevel;
++ (bool)ignoreHTTPCache;
++ (bool)jsContextInspectable;
++ (bool)logDocumentXML;
++ (unsigned long long)logLevel;
 + (void)setupJSCoreConsoleLogging;
 
 @end

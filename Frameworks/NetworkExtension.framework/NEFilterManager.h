@@ -8,14 +8,14 @@
     NEConfiguration *_configuration;
     NEConfigurationManager *_configurationManager;
     NSArray *_entitlements;
-    BOOL _hasLoaded;
+    bool_hasLoaded;
 }
 
 @property(retain) NEConfiguration * configuration;
 @property(readonly) NEConfigurationManager * configurationManager;
-@property(getter=isEnabled) BOOL enabled;
+@property(getter=isEnabled) bool enabled;
 @property(retain) NSArray * entitlements;
-@property BOOL hasLoaded;
+@property bool hasLoaded;
 @property(copy) NSString * localizedDescription;
 @property(retain) NEContentFilterPlugin * pluginConfiguration;
 
@@ -26,19 +26,19 @@
 - (id)configurationManager;
 - (void)createEmptyConfiguration;
 - (id)entitlements;
-- (BOOL)hasLoaded;
+- (bool)hasLoaded;
 - (id)init;
 - (id)initFilterManager;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)loadFromPreferencesWithCompletionHandler:(id)arg1;
 - (id)localizedDescription;
 - (id)pluginConfiguration;
 - (void)removeFromPreferencesWithCompletionHandler:(id)arg1;
 - (void)saveToPreferencesWithCompletionHandler:(id)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setEntitlements:(id)arg1;
-- (void)setHasLoaded:(BOOL)arg1;
+- (void)setHasLoaded:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setPluginConfiguration:(id)arg1;
 

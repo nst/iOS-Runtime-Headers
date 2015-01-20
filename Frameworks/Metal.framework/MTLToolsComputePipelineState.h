@@ -11,17 +11,17 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int maxTotalThreadsPerThreadgroup;
-@property(readonly) unsigned int staticLocalMemorySize;
+@property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long maxTotalThreadsPerThreadgroup;
+@property(readonly) unsigned long long staticLocalMemorySize;
 @property(readonly) Class superclass;
-@property(readonly) unsigned int threadExecutionWidth;
+@property(readonly) unsigned long long threadExecutionWidth;
 
 - (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;
 - (id)device;
-- (unsigned int)maxTotalThreadsPerThreadgroup;
-- (unsigned int)staticLocalMemorySize;
-- (unsigned int)threadExecutionWidth;
+- (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (unsigned long long)staticLocalMemorySize;
+- (unsigned long long)threadExecutionWidth;
 
 @end

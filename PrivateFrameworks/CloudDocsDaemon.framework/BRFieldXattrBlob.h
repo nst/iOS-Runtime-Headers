@@ -10,25 +10,25 @@
 
 @property(retain) NSMutableArray * xattrs;
 
-+ (BOOL)loadXattrsFromFD:(int)arg1 structuralBlob:(id*)arg2 contentBlob:(id*)arg3 withMaximumSize:(unsigned int)arg4 error:(id*)arg5;
-+ (BOOL)removeXattrsOnFD:(int)arg1 includingContentRelated:(BOOL)arg2 error:(id*)arg3;
++ (bool)loadXattrsFromFD:(int)arg1 structuralBlob:(id*)arg2 contentBlob:(id*)arg3 withMaximumSize:(unsigned long long)arg4 error:(id*)arg5;
++ (bool)removeXattrsOnFD:(int)arg1 includingContentRelated:(bool)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;
 - (void)addXattrs:(id)arg1;
-- (BOOL)applyToFileDescriptor:(int)arg1 error:(id*)arg2;
+- (bool)applyToFileDescriptor:(int)arg1 error:(id*)arg2;
 - (void)clearXattrs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setXattrs:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)xattrs;
-- (id)xattrsAtIndex:(unsigned int)arg1;
-- (unsigned int)xattrsCount;
+- (id)xattrsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)xattrsCount;
 
 @end

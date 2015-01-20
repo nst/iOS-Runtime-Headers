@@ -12,7 +12,7 @@
 @property MPVideoViewController * videoController;
 
 - (void).cxx_destruct;
-- (void)performTransition:(unsigned int)arg1;
+- (void)performTransition:(unsigned long long)arg1;
 - (void)setVideoController:(id)arg1;
 - (id)videoController;
 

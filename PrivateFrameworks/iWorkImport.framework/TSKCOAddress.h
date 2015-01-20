@@ -14,11 +14,11 @@
 @property(readonly) NSString * pathElement;
 
 - (id)allPathElements;
-- (BOOL)contains:(id)arg1;
+- (bool)contains:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)equals:(id)arg1;
-- (BOOL)hasSamePrefix:(id)arg1;
+- (bool)equals:(id)arg1;
+- (bool)hasSamePrefix:(id)arg1;
 - (id)initWithParent:(id)arg1;
 - (id)parent;
 - (id)path;

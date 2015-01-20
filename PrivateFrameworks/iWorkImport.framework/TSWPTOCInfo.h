@@ -23,7 +23,7 @@
 @property(setter=setTOCEntries:,retain) NSArray * tocEntries;
 @property(setter=setTOCSettings:,retain) TSWPTOCSettings * tocSettings;
 
-+ (BOOL)canPartition;
++ (bool)canPartition;
 
 - (void)acceptVisitor:(id)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
@@ -43,7 +43,7 @@
 - (void)setTOCEntries:(id)arg1;
 - (void)setTOCSettings:(id)arg1;
 - (void)setTocController:(id)arg1;
-- (BOOL)supportsAttachedComments;
+- (bool)supportsAttachedComments;
 - (id)tocController;
 - (id)tocEntries;
 - (id)tocSettings;

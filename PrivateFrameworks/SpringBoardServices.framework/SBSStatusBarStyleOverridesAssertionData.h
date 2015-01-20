@@ -5,32 +5,32 @@
 @class NSString;
 
 @interface SBSStatusBarStyleOverridesAssertionData : NSObject <NSSecureCoding> {
-    BOOL _exclusive;
-    BOOL _isExclusive;
     int _pid;
     int _statusBarStyleOverrides;
     NSString *_uniqueIdentifier;
+    bool_exclusive;
+    bool_isExclusive;
 }
 
-@property(getter=isExclusive) BOOL exclusive;
-@property(readonly) BOOL isExclusive;
+@property(getter=isExclusive) bool exclusive;
+@property(readonly) bool isExclusive;
 @property int pid;
 @property int statusBarStyleOverrides;
 @property(copy) NSString * uniqueIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3 uniqueIdentifier:(id)arg4;
-- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExclusive;
-- (BOOL)isExclusive;
+- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(bool)arg3 uniqueIdentifier:(id)arg4;
+- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(bool)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isExclusive;
+- (bool)isExclusive;
 - (int)pid;
-- (void)setExclusive:(BOOL)arg1;
+- (void)setExclusive:(bool)arg1;
 - (void)setPid:(int)arg1;
 - (void)setStatusBarStyleOverrides:(int)arg1;
 - (void)setUniqueIdentifier:(id)arg1;

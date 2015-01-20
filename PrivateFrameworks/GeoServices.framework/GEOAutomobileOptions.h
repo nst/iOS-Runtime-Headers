@@ -6,24 +6,24 @@
     struct { 
         unsigned int includeHistoricTravelTime : 1; 
     } _has;
-    BOOL _includeHistoricTravelTime;
+    bool_includeHistoricTravelTime;
 }
 
-@property BOOL hasIncludeHistoricTravelTime;
-@property BOOL includeHistoricTravelTime;
+@property bool hasIncludeHistoricTravelTime;
+@property bool includeHistoricTravelTime;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIncludeHistoricTravelTime;
-- (unsigned int)hash;
-- (BOOL)includeHistoricTravelTime;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasIncludeHistoricTravelTime;
+- (unsigned long long)hash;
+- (bool)includeHistoricTravelTime;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
-- (void)setIncludeHistoricTravelTime:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIncludeHistoricTravelTime:(bool)arg1;
+- (void)setIncludeHistoricTravelTime:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

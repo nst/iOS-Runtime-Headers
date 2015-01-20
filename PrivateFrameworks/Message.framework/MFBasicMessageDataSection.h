@@ -5,25 +5,25 @@
 @class NSData, NSString;
 
 @interface MFBasicMessageDataSection : NSObject <MFMessageDataSection> {
-    BOOL _complete;
     NSData *_data;
     NSString *_partName;
-    BOOL _partial;
+    bool_complete;
+    bool_partial;
 }
 
-@property(getter=isComplete) BOOL complete;
+@property(getter=isComplete) bool complete;
 @property(retain) NSData * data;
 @property(retain) NSString * partName;
-@property(getter=isPartial) BOOL partial;
+@property(getter=isPartial) bool partial;
 
 - (id)data;
 - (void)dealloc;
-- (BOOL)isComplete;
-- (BOOL)isPartial;
+- (bool)isComplete;
+- (bool)isPartial;
 - (id)partName;
-- (void)setComplete:(BOOL)arg1;
+- (void)setComplete:(bool)arg1;
 - (void)setData:(id)arg1;
 - (void)setPartName:(id)arg1;
-- (void)setPartial:(BOOL)arg1;
+- (void)setPartial:(bool)arg1;
 
 @end

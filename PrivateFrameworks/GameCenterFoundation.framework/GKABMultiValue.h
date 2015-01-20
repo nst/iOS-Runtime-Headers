@@ -9,9 +9,9 @@
 
 - (void*)ABMultiValue;
 - (id)allValues;
-- (int)count;
+- (long long)count;
 - (void)enumerateValuesUsingBlock:(id)arg1;
 - (id)mutableCopy;
-- (id)valueAtIndex:(int)arg1;
+- (id)valueAtIndex:(long long)arg1;
 
 @end

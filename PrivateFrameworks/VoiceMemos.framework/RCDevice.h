@@ -5,7 +5,7 @@
 @interface RCDevice : NSObject {
 }
 
-+ (float)audioInputWaveformFlushInterval;
-+ (unsigned int)timeDisplayUpdateFrameInterval;
++ (double)audioInputWaveformFlushInterval;
++ (unsigned long long)timeDisplayUpdateFrameInterval;
 
 @end

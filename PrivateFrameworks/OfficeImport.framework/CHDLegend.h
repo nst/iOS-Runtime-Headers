@@ -6,7 +6,7 @@
 
 @interface CHDLegend : NSObject {
     boolmIsVertical;
-    unsigned int mFontIndex;
+    unsigned long long mFontIndex;
     OADGraphicProperties *mGraphicProperties;
     EDCollection *mLegendEntries;
     int mLegendPosition;
@@ -15,14 +15,14 @@
 
 - (void)dealloc;
 - (id)font;
-- (unsigned int)fontIndex;
+- (unsigned long long)fontIndex;
 - (id)graphicProperties;
 - (id)initWithResources:(id)arg1;
 - (bool)isSingleColumnLegend;
 - (id)legendEntries;
 - (int)legendPosition;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
+- (void)setFontIndex:(unsigned long long)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (void)setIsSingleColumnLegend:(bool)arg1;
 - (void)setLegendPosition:(int)arg1;

@@ -13,7 +13,7 @@
     boolmShowDefaultSubTotal;
     boolmSubtotalTop;
     int mAxis;
-    unsigned long mNumFmtId;
+    unsigned long long mNumFmtId;
     EDCollection *mPivotFieldItems;
 }
 
@@ -25,14 +25,14 @@
 - (void)dealloc;
 - (id)init;
 - (bool)insertBlankRow;
-- (unsigned long)numFmtId;
+- (unsigned long long)numFmtId;
 - (bool)outlineItems;
 - (id)pivotFieldItems;
 - (void)setAxis:(int)arg1;
 - (void)setCompact:(bool)arg1;
 - (void)setDataField:(bool)arg1;
 - (void)setInsertBlankRow:(bool)arg1;
-- (void)setNumFmtId:(unsigned long)arg1;
+- (void)setNumFmtId:(unsigned long long)arg1;
 - (void)setOutlineItems:(bool)arg1;
 - (void)setShowAllItems:(bool)arg1;
 - (void)setShowDefaultSubTotal:(bool)arg1;

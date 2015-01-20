@@ -10,6 +10,6 @@
 + (id)beginDisablingUserInteractionWithExpectedTimeout:(double)arg1;
 + (id)currentTheme;
 + (void)endDisablingUserInteraction:(id)arg1;
-+ (BOOL)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
++ (bool)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
 
 @end

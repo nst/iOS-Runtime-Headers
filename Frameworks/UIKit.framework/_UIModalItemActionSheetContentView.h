@@ -15,7 +15,7 @@
 - (void)_prepareViewIfNeeded;
 - (void)dealloc;
 - (void)layout;
-- (float)numberOfOtherButtonTitles;
+- (double)numberOfOtherButtonTitles;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 

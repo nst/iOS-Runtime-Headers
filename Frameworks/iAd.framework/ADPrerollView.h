@@ -6,24 +6,24 @@
 
 @interface ADPrerollView : UIView <UIGestureRecognizerDelegate, ADPrerollTopBarDelegate, ADPrerollBottomBarDelegate> {
     double _accumulatedViewingTime;
-    BOOL _barsVisible;
     ADPrerollBottomBar *_bottomBar;
     <ADPrerollViewDelegate> *_delegate;
     NSTimer *_passiveWatchingTimer;
-    BOOL _skipButtonCountingDown;
     UIImageView *_swooshView;
     ADPrerollTopBar *_topBar;
+    bool_barsVisible;
+    bool_skipButtonCountingDown;
 }
 
 @property double accumulatedViewingTime;
-@property BOOL barsVisible;
+@property bool barsVisible;
 @property(retain) ADPrerollBottomBar * bottomBar;
 @property(copy,readonly) NSString * debugDescription;
 @property <ADPrerollViewDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSTimer * passiveWatchingTimer;
-@property BOOL skipButtonCountingDown;
+@property bool skipButtonCountingDown;
 @property(readonly) Class superclass;
 @property(retain) UIImageView * swooshView;
 @property(retain) ADPrerollTopBar * topBar;
@@ -31,13 +31,13 @@
 + (Class)layerClass;
 
 - (void)_firePassiveWatchingTimer:(id)arg1;
-- (BOOL)_layoutForExpandedSize;
+- (bool)_layoutForExpandedSize;
 - (void)_restartPassiveWatchingTimer;
 - (void)_singleTapGestureRecognized:(id)arg1;
-- (BOOL)accessibilityPerformEscape;
+- (bool)accessibilityPerformEscape;
 - (double)accumulatedViewingTime;
-- (void)attachToAVPlayer:(id)arg1 showiAdBrandingSwoosh:(BOOL)arg2;
-- (BOOL)barsVisible;
+- (void)attachToAVPlayer:(id)arg1 showiAdBrandingSwoosh:(bool)arg2;
+- (bool)barsVisible;
 - (void)beginCountdown:(double)arg1;
 - (id)bottomBar;
 - (void)bottomBarActionButtonTapped:(id)arg1;
@@ -46,24 +46,24 @@
 - (void)bottomBarSkipButtonTapped:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)displayAsPaused:(BOOL)arg1;
+- (void)displayAsPaused:(bool)arg1;
 - (void)fadeToBlackWithCompletion:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)passiveWatchingTimer;
 - (void)setAccumulatedViewingTime:(double)arg1;
-- (void)setBarsVisible:(BOOL)arg1;
+- (void)setBarsVisible:(bool)arg1;
 - (void)setBottomBar:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setElapsedTime:(double)arg1 totalTime:(double)arg2;
 - (void)setPassiveWatchingTimer:(id)arg1;
-- (void)setSkipButtonCountingDown:(BOOL)arg1;
+- (void)setSkipButtonCountingDown:(bool)arg1;
 - (void)setSwooshView:(id)arg1;
 - (void)setTopBar:(id)arg1;
 - (void)shutdown;
-- (BOOL)skipButtonCountingDown;
+- (bool)skipButtonCountingDown;
 - (id)swooshView;
 - (id)topBar;
 - (void)topBarDoneButtonTapped:(id)arg1;

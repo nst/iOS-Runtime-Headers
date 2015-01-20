@@ -18,7 +18,7 @@
 @property(readonly) NSDate * date;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property <TSKModel> * hostingModel;
 @property TSDDrawableInfo * parent;
 @property(copy) TSDCommentStorage * storage;
@@ -37,7 +37,7 @@
 - (Class)editorClass;
 - (id)hostingModel;
 - (id)initWithParent:(id)arg1 storage:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)parent;
 - (void)setAuthor:(id)arg1;
 - (void)setHostingModel:(id)arg1;

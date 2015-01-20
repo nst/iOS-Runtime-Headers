@@ -16,10 +16,10 @@
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (id)databaseStatementParameters;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicate;
 - (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (void)setPredicate:(id)arg1;

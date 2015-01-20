@@ -15,10 +15,10 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasSwitchCount;
-@property(readonly) BOOL hasSwitchFromInterfaceName;
-@property(readonly) BOOL hasSwitchToInterfaceName;
-@property BOOL hasTimestamp;
+@property bool hasSwitchCount;
+@property(readonly) bool hasSwitchFromInterfaceName;
+@property(readonly) bool hasSwitchToInterfaceName;
+@property bool hasTimestamp;
 @property int switchCount;
 @property(retain) NSString * switchFromInterfaceName;
 @property(retain) NSString * switchToInterfaceName;
@@ -29,16 +29,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSwitchCount;
-- (BOOL)hasSwitchFromInterfaceName;
-- (BOOL)hasSwitchToInterfaceName;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSwitchCount;
+- (bool)hasSwitchFromInterfaceName;
+- (bool)hasSwitchToInterfaceName;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasSwitchCount:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasSwitchCount:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSwitchCount:(int)arg1;
 - (void)setSwitchFromInterfaceName:(id)arg1;
 - (void)setSwitchToInterfaceName:(id)arg1;

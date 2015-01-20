@@ -5,62 +5,62 @@
 @class NSNumber, NSString;
 
 @interface AFSpeechRequestOptions : NSObject <NSSecureCoding> {
-    BOOL _acousticIdEnabled;
-    int _activationEvent;
+    long long _activationEvent;
     double _activationEventTime;
-    int _audioFileType;
+    long long _audioFileType;
     NSString *_btDeviceAddress;
     double _expectedActivationEventTime;
     NSNumber *_homeButtonUpFromBeep;
-    BOOL _isEyesFree;
-    BOOL _isInitialBringUp;
     NSString *_serverCommandId;
-    BOOL _useAutomaticEndpointing;
-    BOOL _useStreamingDictation;
+    bool_acousticIdEnabled;
+    bool_isEyesFree;
+    bool_isInitialBringUp;
+    bool_useAutomaticEndpointing;
+    bool_useStreamingDictation;
 }
 
-@property BOOL acousticIdEnabled;
-@property int activationEvent;
+@property bool acousticIdEnabled;
+@property long long activationEvent;
 @property double activationEventTime;
-@property int audioFileType;
+@property long long audioFileType;
 @property(copy) NSString * btDeviceAddress;
 @property double expectedActivationEventTime;
 @property(copy) NSNumber * homeButtonUpFromBeep;
-@property BOOL isEyesFree;
-@property BOOL isInitialBringUp;
+@property bool isEyesFree;
+@property bool isInitialBringUp;
 @property(copy) NSString * serverCommandId;
-@property BOOL useAutomaticEndpointing;
-@property BOOL useStreamingDictation;
+@property bool useAutomaticEndpointing;
+@property bool useStreamingDictation;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)acousticIdEnabled;
-- (int)activationEvent;
+- (bool)acousticIdEnabled;
+- (long long)activationEvent;
 - (double)activationEventTime;
-- (int)audioFileType;
+- (long long)audioFileType;
 - (id)btDeviceAddress;
 - (void)encodeWithCoder:(id)arg1;
 - (double)expectedActivationEventTime;
 - (id)homeButtonUpFromBeep;
-- (id)initWithActivationEvent:(int)arg1;
+- (id)initWithActivationEvent:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEyesFree;
-- (BOOL)isInitialBringUp;
+- (bool)isEyesFree;
+- (bool)isInitialBringUp;
 - (id)serverCommandId;
-- (void)setAcousticIdEnabled:(BOOL)arg1;
-- (void)setActivationEvent:(int)arg1;
+- (void)setAcousticIdEnabled:(bool)arg1;
+- (void)setActivationEvent:(long long)arg1;
 - (void)setActivationEventTime:(double)arg1;
-- (void)setAudioFileType:(int)arg1;
+- (void)setAudioFileType:(long long)arg1;
 - (void)setBtDeviceAddress:(id)arg1;
 - (void)setExpectedActivationEventTime:(double)arg1;
 - (void)setHomeButtonUpFromBeep:(id)arg1;
-- (void)setIsEyesFree:(BOOL)arg1;
-- (void)setIsInitialBringUp:(BOOL)arg1;
+- (void)setIsEyesFree:(bool)arg1;
+- (void)setIsInitialBringUp:(bool)arg1;
 - (void)setServerCommandId:(id)arg1;
-- (void)setUseAutomaticEndpointing:(BOOL)arg1;
-- (void)setUseStreamingDictation:(BOOL)arg1;
-- (BOOL)useAutomaticEndpointing;
-- (BOOL)useStreamingDictation;
+- (void)setUseAutomaticEndpointing:(bool)arg1;
+- (void)setUseStreamingDictation:(bool)arg1;
+- (bool)useAutomaticEndpointing;
+- (bool)useStreamingDictation;
 
 @end

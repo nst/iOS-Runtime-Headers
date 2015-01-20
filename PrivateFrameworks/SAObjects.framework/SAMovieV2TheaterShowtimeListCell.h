@@ -7,7 +7,7 @@
 @interface SAMovieV2TheaterShowtimeListCell : SADomainObject {
 }
 
-@property BOOL bookable;
+@property bool bookable;
 @property(copy) NSArray * displayableShowtimes;
 @property(retain) SADistance * relativeDistance;
 @property(retain) SAMovieV2ShowtimeSnippet * showtimeSnippet;
@@ -16,12 +16,12 @@
 + (id)theaterShowtimeListCell;
 + (id)theaterShowtimeListCellWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)bookable;
+- (bool)bookable;
 - (id)displayableShowtimes;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)relativeDistance;
-- (void)setBookable:(BOOL)arg1;
+- (void)setBookable:(bool)arg1;
 - (void)setDisplayableShowtimes:(id)arg1;
 - (void)setRelativeDistance:(id)arg1;
 - (void)setShowtimeSnippet:(id)arg1;

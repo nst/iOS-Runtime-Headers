@@ -9,20 +9,20 @@
 @class NSArray, NSMutableArray, NSString, PHChangeRequestHelper;
 
 @interface PHCollectionChangeRequestHelper : NSObject {
-    BOOL _allowsInsert;
-    BOOL _allowsMove;
-    BOOL _allowsRemove;
     PHChangeRequestHelper *_changeRequestHelper;
     NSString *_destinationEntityName;
     id _isDestinationObjectValid;
     NSMutableArray *_mutableObjectIDsAndUUIDs;
     NSArray *_originalObjectIDs;
     NSString *_relationshipName;
+    bool_allowsInsert;
+    bool_allowsMove;
+    bool_allowsRemove;
 }
 
-@property BOOL allowsInsert;
-@property BOOL allowsMove;
-@property BOOL allowsRemove;
+@property bool allowsInsert;
+@property bool allowsMove;
+@property bool allowsRemove;
 @property(retain) PHChangeRequestHelper * changeRequestHelper;
 @property(retain) NSString * destinationEntityName;
 @property(copy) id isDestinationObjectValid;
@@ -33,10 +33,10 @@
 + (id)_offsetsFromSourceOIDs:(id)arg1 toManagedObjects:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)allowsInsert;
-- (BOOL)allowsMove;
-- (BOOL)allowsRemove;
-- (BOOL)applyMutationsToManagedObject:(id)arg1 mutableChildren:(id)arg2 error:(id*)arg3;
+- (bool)allowsInsert;
+- (bool)allowsMove;
+- (bool)allowsRemove;
+- (bool)applyMutationsToManagedObject:(id)arg1 mutableChildren:(id)arg2 error:(id*)arg3;
 - (id)changeRequestHelper;
 - (id)destinationEntityName;
 - (void)encodeToXPCDict:(id)arg1;
@@ -46,9 +46,9 @@
 - (id)mutableObjectIDsAndUUIDs;
 - (id)originalObjectIDs;
 - (id)relationshipName;
-- (void)setAllowsInsert:(BOOL)arg1;
-- (void)setAllowsMove:(BOOL)arg1;
-- (void)setAllowsRemove:(BOOL)arg1;
+- (void)setAllowsInsert:(bool)arg1;
+- (void)setAllowsMove:(bool)arg1;
+- (void)setAllowsRemove:(bool)arg1;
 - (void)setChangeRequestHelper:(id)arg1;
 - (void)setDestinationEntityName:(id)arg1;
 - (void)setIsDestinationObjectValid:(id)arg1;

@@ -19,20 +19,20 @@
 + (id)argumentSpecForFunctionIndex:(int)arg1 argumentIndex:(int)arg2;
 
 - (id)bakedValue;
-- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (id)copyIntoContext:(id)arg1 bakeModes:(BOOL)arg2 children:(id)arg3;
+- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (id)copyIntoContext:(id)arg1 bakeModes:(bool)arg2 children:(id)arg3;
 - (void)dealloc;
 - (id)detokenizedText;
 - (id)exportString;
 - (id)formulaPlainText;
-- (BOOL)hasMenu;
+- (bool)hasMenu;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initFromArchive:(const struct ArgumentPlaceholderNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; unsigned int x4; unsigned int x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 argumentSpec:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (id)initWithContext:(id)arg1 firstIndex:(unsigned int)arg2 lastIndex:(unsigned int)arg3;
-- (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
+- (id)initWithContext:(id)arg1 argumentSpec:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (id)initWithContext:(id)arg1 firstIndex:(unsigned long long)arg2 lastIndex:(unsigned long long)arg3;
+- (void)insertFormulaText:(id)arg1 includeWhitespace:(bool)arg2;
 - (short)mode;
 - (void)p_invalidate;
 - (void)saveToArchive:(struct ArgumentPlaceholderNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; unsigned int x4; unsigned int x5; unsigned int x6; int x7; unsigned int x8[1]; }*)arg1 archiver:(id)arg2;

@@ -6,29 +6,29 @@
 
 @interface PHChangeRequestHelper : NSObject {
     id _changeRequest;
-    BOOL _didRequestUUID;
-    BOOL _isMutated;
-    BOOL _isNew;
     NSMutableDictionary *_mutations;
     NSManagedObjectID *_objectID;
     NSString *_uuid;
     NSString *_uuidSaveToken;
+    bool_didRequestUUID;
+    bool_isMutated;
+    bool_isNew;
 }
 
 @property id changeRequest;
-@property(getter=isMutated) BOOL mutated;
+@property(getter=isMutated) bool mutated;
 @property(readonly) NSMutableDictionary * mutations;
-@property(getter=isNew) BOOL new;
+@property(getter=isNew) bool new;
 @property(retain) NSManagedObjectID * objectID;
 @property(readonly) NSString * uuid;
 @property(readonly) NSString * uuidSaveToken;
 
 + (id)changeRequestForObject:(id)arg1;
-+ (id)changeRequestWithXPCDict:(id)arg1 entitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
++ (id)changeRequestWithXPCDict:(id)arg1 entitled:(bool)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 
 - (void).cxx_destruct;
-- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
-- (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (id)changeRequest;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
 - (id)description;
@@ -40,16 +40,16 @@
 - (id)initForNewObjectWithUUID:(id)arg1 changeRequest:(id)arg2;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2 changeRequest:(id)arg3;
 - (id)initWithXPCDict:(id)arg1 changeRequest:(id)arg2;
-- (BOOL)isMutated;
-- (BOOL)isNew;
+- (bool)isMutated;
+- (bool)isNew;
 - (id)mutations;
 - (id)objectID;
 - (void)setChangeRequest:(id)arg1;
-- (void)setMutated:(BOOL)arg1;
-- (void)setNew:(BOOL)arg1;
+- (void)setMutated:(bool)arg1;
+- (void)setNew:(bool)arg1;
 - (void)setObjectID:(id)arg1;
 - (id)uuid;
 - (id)uuidSaveToken;
-- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 
 @end

@@ -5,10 +5,10 @@
 @class AVWeakReference, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetResourceLoadingDataRequestInternal : NSObject {
-    BOOL canSupplyIncrementalDataImmediately;
+    boolcanSupplyIncrementalDataImmediately;
     long long currentOffset;
     NSObject<OS_dispatch_queue> *dataResponseQueue;
-    int requestedLength;
+    long long requestedLength;
     long long requestedOffset;
     AVWeakReference *weakReferenceToLoadingRequest;
 }

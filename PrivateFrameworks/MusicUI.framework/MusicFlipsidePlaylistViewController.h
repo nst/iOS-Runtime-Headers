@@ -5,40 +5,40 @@
 @class <MPURatingControlDelegate>, NSIndexPath, NSString;
 
 @interface MusicFlipsidePlaylistViewController : MusicPlaylistSongsViewController <MusicFlipsideRating, MPURatingControlDelegate> {
-    float _maximumDurationWidth;
+    double _maximumDurationWidth;
     <MPURatingControlDelegate> *_ratingDelegate;
     NSIndexPath *_ratingItemIndexPath;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float maximumDurationWidth;
+@property(readonly) unsigned long long hash;
+@property(readonly) double maximumDurationWidth;
 @property <MPURatingControlDelegate> * ratingDelegate;
-@property BOOL showingRating;
+@property bool showingRating;
 @property(readonly) Class superclass;
 
-+ (BOOL)_shouldDisplayActions;
-+ (BOOL)_shouldShowActions;
-+ (BOOL)shouldPushNowPlayingOnSelection;
++ (bool)_shouldDisplayActions;
++ (bool)_shouldShowActions;
++ (bool)shouldPushNowPlayingOnSelection;
 
 - (void).cxx_destruct;
 - (id)_createTableViewBackgroundView;
 - (void)_flipsidePlaylist_contentSizeCategoryDidChangeNotification:(id)arg1;
-- (void)_updateDownloadabilityStateWithCanReloadActionRowsSynchronously:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_updateDownloadabilityStateWithCanReloadActionRowsSynchronously:(bool)arg1 animated:(bool)arg2;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
-- (float)maximumDurationWidth;
+- (double)maximumDurationWidth;
 - (id)ratingDelegate;
 - (void)ratingDidChangeForRatingControl:(id)arg1;
 - (void)reloadData;
 - (void)setRatingDelegate:(id)arg1;
-- (void)setShowingRating:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShowingRating:(BOOL)arg1;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
-- (BOOL)showingRating;
+- (void)setShowingRating:(bool)arg1 animated:(bool)arg2;
+- (void)setShowingRating:(bool)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)showingRating;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLoad;
 

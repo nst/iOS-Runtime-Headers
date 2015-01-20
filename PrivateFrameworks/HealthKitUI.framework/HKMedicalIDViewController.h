@@ -5,30 +5,30 @@
 @class <HKMedicalIDViewControllerDelegate>, HKEmergencyCardGroupTableItem, HKHealthStore, NSArray, NSString, _HKMedicalIDData;
 
 @interface HKMedicalIDViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HKMedicalIDViewControllerDelegate, HKEmergencyCardEnabledDelegate, HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate> {
-    BOOL _allowsEditing;
     <HKMedicalIDViewControllerDelegate> *_delegate;
     HKEmergencyCardGroupTableItem *_groupItem;
     HKHealthStore *_healthStore;
-    BOOL _inEditMode;
     _HKMedicalIDData *_medicalID;
     NSArray *_presentableTableItems;
-    BOOL _showsDeleteButton;
-    BOOL _showsDismissButton;
     NSArray *_tableItems;
+    bool_allowsEditing;
+    bool_inEditMode;
+    bool_showsDeleteButton;
+    bool_showsDismissButton;
 }
 
-@property BOOL allowsEditing;
+@property bool allowsEditing;
 @property(copy,readonly) NSString * debugDescription;
 @property <HKMedicalIDViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) HKHealthStore * healthStore;
 @property(retain) _HKMedicalIDData * medicalID;
-@property BOOL showsDeleteButton;
-@property BOOL showsDismissButton;
+@property bool showsDeleteButton;
+@property bool showsDismissButton;
 @property(readonly) Class superclass;
 
-+ (BOOL)isSupportedOnThisDevice;
++ (bool)isSupportedOnThisDevice;
 
 - (void).cxx_destruct;
 - (void)_buildPresentableTableItems;
@@ -37,40 +37,40 @@
 - (void)_doneEditingTapped:(id)arg1;
 - (void)_doneTapped:(id)arg1;
 - (void)_editTapped:(id)arg1;
-- (id)_fetchMedicalIDDataSynchronously:(BOOL*)arg1;
-- (BOOL)allowsEditing;
+- (id)_fetchMedicalIDDataSynchronously:(bool*)arg1;
+- (bool)allowsEditing;
 - (id)delegate;
 - (void)deletionTableItemDidTapDelete:(id)arg1;
-- (void)enabledTableItem:(id)arg1 stateDidChange:(BOOL)arg2;
+- (void)enabledTableItem:(id)arg1 stateDidChange:(bool)arg2;
 - (id)healthStore;
-- (id)initInEditMode:(BOOL)arg1;
+- (id)initInEditMode:(bool)arg1;
 - (id)medicalID;
 - (void)medicalIDViewControllerDidCancel:(id)arg1;
 - (void)medicalIDViewControllerDidDelete:(id)arg1;
 - (void)medicalIDViewControllerDidSave:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (int)preferredStatusBarStyle;
-- (void)setAllowsEditing:(BOOL)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (long long)preferredStatusBarStyle;
+- (void)setAllowsEditing:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHealthStore:(id)arg1;
 - (void)setMedicalID:(id)arg1;
-- (void)setShowsDeleteButton:(BOOL)arg1;
-- (void)setShowsDismissButton:(BOOL)arg1;
-- (BOOL)showsDeleteButton;
-- (BOOL)showsDismissButton;
-- (void)tableItem:(id)arg1 heightDidChangeForRowIndex:(int)arg2 keepRectVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (void)setShowsDeleteButton:(bool)arg1;
+- (void)setShowsDismissButton:(bool)arg1;
+- (bool)showsDeleteButton;
+- (bool)showsDismissButton;
+- (void)tableItem:(id)arg1 heightDidChangeForRowIndex:(long long)arg2 keepRectVisible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 inView:(id)arg4;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

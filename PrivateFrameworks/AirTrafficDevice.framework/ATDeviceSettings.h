@@ -10,15 +10,15 @@
 }
 
 @property(copy,readonly) NSSet * dataClassesNeedingSync;
-@property(readonly) BOOL fairPlayEnabled;
-@property(readonly) BOOL grappaEnabled;
+@property(readonly) bool fairPlayEnabled;
+@property(readonly) bool grappaEnabled;
 @property(copy,readonly) NSString * interfaceName;
-@property(readonly) BOOL isDeviceLinkClient;
+@property(readonly) bool isDeviceLinkClient;
 @property(copy,readonly) NSString * libraryIdentifier;
 @property(copy,readonly) NSString * serviceDomain;
 @property(copy,readonly) NSString * serviceName;
 @property(copy,readonly) NSString * serviceType;
-@property(readonly) BOOL useNetServicesConnection;
+@property(readonly) bool useNetServicesConnection;
 
 + (id)sharedInstance;
 
@@ -27,13 +27,13 @@
 - (void)_setEndpointInfo:(id)arg1 forLibrary:(id)arg2;
 - (id)dataClassesNeedingSync;
 - (id)endpointInfo;
-- (BOOL)fairPlayEnabled;
-- (BOOL)grappaEnabled;
-- (BOOL)hasCompletedDataMigration;
+- (bool)fairPlayEnabled;
+- (bool)grappaEnabled;
+- (bool)hasCompletedDataMigration;
 - (id)hostInfoForLibrary:(id)arg1;
 - (id)init;
 - (id)interfaceName;
-- (BOOL)isDeviceLinkClient;
+- (bool)isDeviceLinkClient;
 - (id)lastSyncTimeForLibrary:(id)arg1 dataClass:(id)arg2;
 - (id)libraryIdentifier;
 - (void)removeEndpointInfoForLibrary:(id)arg1;
@@ -41,13 +41,13 @@
 - (id)serviceName;
 - (id)serviceType;
 - (void)setEndpointInfo:(id)arg1;
-- (void)setHasCompletedDataMigration:(BOOL)arg1;
+- (void)setHasCompletedDataMigration:(bool)arg1;
 - (void)setHostInfo:(id)arg1 forLibrary:(id)arg2;
-- (void)setSyncRequested:(BOOL)arg1 forDataClass:(id)arg2;
+- (void)setSyncRequested:(bool)arg1 forDataClass:(id)arg2;
 - (void)setSyncState:(id)arg1 forLibrary:(id)arg2 dataClass:(id)arg3;
 - (id)syncStateForLibrary:(id)arg1 dataClass:(id)arg2;
 - (void)synchronize;
 - (void)updateLastSyncTimeForLibrary:(id)arg1 dataClass:(id)arg2;
-- (BOOL)useNetServicesConnection;
+- (bool)useNetServicesConnection;
 
 @end

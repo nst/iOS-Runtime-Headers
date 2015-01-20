@@ -9,22 +9,22 @@
 @class AXTimer;
 
 @interface AXPostConnectionTask : NSObject {
-    BOOL _didTimeout;
     id _postConnectionBlock;
     AXTimer *_timeoutTimer;
+    bool_didTimeout;
 }
 
-@property BOOL didTimeout;
+@property bool didTimeout;
 @property(copy) id postConnectionBlock;
 @property(retain) AXTimer * timeoutTimer;
 
 - (void)_performTask;
 - (void)dealloc;
-- (BOOL)didTimeout;
+- (bool)didTimeout;
 - (id)initWithConnectBlock:(id)arg1 timeout:(double)arg2 accessQueue:(id)arg3;
 - (void)performTask;
 - (id)postConnectionBlock;
-- (void)setDidTimeout:(BOOL)arg1;
+- (void)setDidTimeout:(bool)arg1;
 - (void)setPostConnectionBlock:(id)arg1;
 - (void)setTimeoutTimer:(id)arg1;
 - (id)timeoutTimer;

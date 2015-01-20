@@ -3,18 +3,18 @@
  */
 
 @interface ML3ContainerMediaTypeCounts : NSObject {
-    unsigned int _count;
+    unsigned long long _count;
     struct __CFDictionary { } *_map;
 }
 
-@property unsigned int count;
+@property unsigned long long count;
 
-- (void)addMediaType:(unsigned long)arg1 count:(unsigned int)arg2;
-- (unsigned int)count;
+- (void)addMediaType:(unsigned int)arg1 count:(unsigned long long)arg2;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (void)enumerateMediaTypesWithBlock:(id)arg1;
 - (id)init;
-- (void)setCount:(unsigned int)arg1;
+- (void)setCount:(unsigned long long)arg1;
 
 @end

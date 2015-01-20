@@ -23,7 +23,7 @@
 - (void)setSrc:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setWidth:(int)arg1;
-- (BOOL)showsTapHighlight;
+- (bool)showsTapHighlight;
 - (id)src;
 - (id)type;
 - (int)width;

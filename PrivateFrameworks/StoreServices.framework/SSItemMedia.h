@@ -5,31 +5,31 @@
 @class NSString, NSURL;
 
 @interface SSItemMedia : NSObject {
-    int _duration;
-    int _fullDuration;
+    long long _duration;
+    long long _fullDuration;
     long long _mediaFileSize;
     NSString *_mediaKind;
-    BOOL _protected;
     NSURL *_url;
+    bool_protected;
 }
 
 @property(readonly) NSURL * URL;
-@property(readonly) int durationInMilliseconds;
-@property(readonly) int fullDurationInMilliseconds;
+@property(readonly) long long durationInMilliseconds;
+@property(readonly) long long fullDurationInMilliseconds;
 @property(readonly) long long mediaFileSize;
 @property(copy) NSString * mediaKind;
-@property(getter=isProtectedMedia,readonly) BOOL protectedMedia;
+@property(getter=isProtectedMedia,readonly) bool protectedMedia;
 
 - (id)URL;
 - (void)dealloc;
 - (id)description;
-- (int)durationInMilliseconds;
-- (int)fullDurationInMilliseconds;
-- (unsigned int)hash;
+- (long long)durationInMilliseconds;
+- (long long)fullDurationInMilliseconds;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithStoreOfferDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isProtectedMedia;
+- (bool)isEqual:(id)arg1;
+- (bool)isProtectedMedia;
 - (long long)mediaFileSize;
 - (id)mediaKind;
 - (void)setMediaKind:(id)arg1;

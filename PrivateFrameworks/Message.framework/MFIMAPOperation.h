@@ -28,11 +28,11 @@
     } _opSpecific;
 }
 
-+ (id)deserializedCopyFromData:(id)arg1 cursor:(unsigned int*)arg2;
++ (id)deserializedCopyFromData:(id)arg1 cursor:(unsigned long long*)arg2;
 
-- (void)_deserializeOpSpecificValuesFromData:(id)arg1 cursor:(unsigned int*)arg2;
+- (void)_deserializeOpSpecificValuesFromData:(id)arg1 cursor:(unsigned long long*)arg2;
 - (unsigned char)_magic;
-- (BOOL)actsOnTemporaryUid:(unsigned int)arg1;
+- (bool)actsOnTemporaryUid:(unsigned int)arg1;
 - (unsigned int)approximateSize;
 - (void)dealloc;
 - (id)description;
@@ -43,24 +43,24 @@
 - (id)flags;
 - (id)flagsToClear;
 - (id)flagsToSet;
-- (BOOL)getMessageId:(id*)arg1 andInternalDate:(id*)arg2 forDestinationUid:(unsigned int)arg3;
+- (bool)getMessageId:(id*)arg1 andInternalDate:(id*)arg2 forDestinationUid:(unsigned int)arg3;
 - (id)initWithAppendedUid:(unsigned int)arg1 approximateSize:(unsigned int)arg2 flags:(id)arg3 internalDate:(id)arg4 mailbox:(id)arg5;
 - (id)initWithFlagsToSet:(id)arg1 flagsToClear:(id)arg2 forUids:(id)arg3 inMailbox:(id)arg4;
 - (id)initWithMailboxToCreate:(id)arg1;
 - (id)initWithMailboxToDelete:(id)arg1;
 - (id)initWithUidsToCopy:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 firstNewUid:(unsigned int)arg4;
 - (id)internalDate;
-- (BOOL)isSourceOfTemporaryUid:(unsigned int)arg1;
+- (bool)isSourceOfTemporaryUid:(unsigned int)arg1;
 - (unsigned int)lastTemporaryUid;
 - (id)mailboxName;
 - (int)operationType;
 - (void)serializeIntoData:(id)arg1;
 - (void)setMessageId:(id)arg1 andInternalDate:(id)arg2 forMessageWithSourceUid:(unsigned int)arg3;
-- (void)setUsesRealUids:(BOOL)arg1;
+- (void)setUsesRealUids:(bool)arg1;
 - (unsigned int)sourceUidForTemporaryUid:(unsigned int)arg1;
 - (id)sourceUids;
 - (unsigned int)uid;
 - (id)uids;
-- (BOOL)usesRealUids;
+- (bool)usesRealUids;
 
 @end

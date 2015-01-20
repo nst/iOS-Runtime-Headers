@@ -14,9 +14,9 @@
 }
 
 @property int batching;
-@property BOOL hasBatching;
-@property BOOL hasHistoryTimespanSeconds;
-@property BOOL hasScanPeriodSeconds;
+@property bool hasBatching;
+@property bool hasHistoryTimespanSeconds;
+@property bool hasScanPeriodSeconds;
 @property float historyTimespanSeconds;
 @property float scanPeriodSeconds;
 
@@ -25,19 +25,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBatching;
-- (BOOL)hasHistoryTimespanSeconds;
-- (BOOL)hasScanPeriodSeconds;
-- (unsigned int)hash;
+- (bool)hasBatching;
+- (bool)hasHistoryTimespanSeconds;
+- (bool)hasScanPeriodSeconds;
+- (unsigned long long)hash;
 - (float)historyTimespanSeconds;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (float)scanPeriodSeconds;
 - (void)setBatching:(int)arg1;
-- (void)setHasBatching:(BOOL)arg1;
-- (void)setHasHistoryTimespanSeconds:(BOOL)arg1;
-- (void)setHasScanPeriodSeconds:(BOOL)arg1;
+- (void)setHasBatching:(bool)arg1;
+- (void)setHasHistoryTimespanSeconds:(bool)arg1;
+- (void)setHasScanPeriodSeconds:(bool)arg1;
 - (void)setHistoryTimespanSeconds:(float)arg1;
 - (void)setScanPeriodSeconds:(float)arg1;
 - (void)writeTo:(id)arg1;

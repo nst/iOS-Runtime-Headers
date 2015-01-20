@@ -21,9 +21,9 @@
 - (void)didReceiveMemoryWarning;
 - (id)initWithTrust:(struct __SecTrust { }*)arg1 action:(int)arg2 delegate:(id)arg3;
 - (id)initWithTrustCertificateDelegate:(id)arg1;
-- (void)setCertificateInfo:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 isRoot:(BOOL)arg5 properties:(id)arg6 action:(int)arg7;
+- (void)setCertificateInfo:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 isRoot:(bool)arg5 properties:(id)arg6 action:(int)arg7;
 - (void)setCertificateViewController:(id)arg1;
-- (void)setShowCertificateButton:(BOOL)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(BOOL)arg4 handler:(id)arg5;
+- (void)setShowCertificateButton:(bool)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(bool)arg4 handler:(id)arg5;
 - (void)setTrustCertificateDelegate:(id)arg1;
 - (id)trustCertificateDelegate;
 

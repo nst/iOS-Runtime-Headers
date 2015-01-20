@@ -33,15 +33,15 @@
             float l2_penalty; 
             float l1_penalty; 
         } opts_; 
-    int _leftContext;
+    long long _leftContext;
     } _nnet;
     NSObject<OS_dispatch_queue> *_queue;
-    int _rightContext;
+    long long _rightContext;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithContentsOfNNetFile:(id)arg1 leftContext:(int)arg2 rightContext:(int)arg3;
+- (id)initWithContentsOfNNetFile:(id)arg1 leftContext:(long long)arg2 rightContext:(long long)arg3;
 - (id)initWithContentsOfNNetFile:(id)arg1;
 - (id)startedClassificationSessionWithDelegate:(id)arg1 sampleRate:(float)arg2;
 

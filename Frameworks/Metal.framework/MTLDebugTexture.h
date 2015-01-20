@@ -5,35 +5,35 @@
 @class MTLTextureDescriptor;
 
 @interface MTLDebugTexture : MTLToolsTexture {
-    unsigned int _bytesPerRow;
+    unsigned long long _bytesPerRow;
     MTLTextureDescriptor *_descriptor;
-    unsigned int _offset;
-    unsigned int _plane;
-    unsigned int _purgeableState;
-    BOOL _purgeableStateHasBeenSet;
+    unsigned long long _offset;
+    unsigned long long _plane;
+    unsigned long long _purgeableState;
+    bool_purgeableStateHasBeenSet;
 }
 
-@property(readonly) unsigned int bytesPerRow;
+@property(readonly) unsigned long long bytesPerRow;
 @property(copy,readonly) MTLTextureDescriptor * descriptor;
-@property(readonly) unsigned int offset;
-@property(readonly) unsigned int plane;
-@property(readonly) unsigned int purgeableState;
-@property(readonly) BOOL purgeableStateHasBeenSet;
+@property(readonly) unsigned long long offset;
+@property(readonly) unsigned long long plane;
+@property(readonly) unsigned long long purgeableState;
+@property(readonly) bool purgeableStateHasBeenSet;
 
 - (void).cxx_destruct;
-- (unsigned int)bytesPerRow;
+- (unsigned long long)bytesPerRow;
 - (id)description;
 - (id)descriptor;
-- (id)initWithBaseTexture:(id)arg1 buffer:(id)arg2 descriptor:(id)arg3 offset:(unsigned int)arg4 bytesPerRow:(unsigned int)arg5;
-- (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3 plane:(unsigned int)arg4;
+- (id)initWithBaseTexture:(id)arg1 buffer:(id)arg2 descriptor:(id)arg3 offset:(unsigned long long)arg4 bytesPerRow:(unsigned long long)arg5;
+- (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3 plane:(unsigned long long)arg4;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3;
 - (id)initWithBaseTexture:(id)arg1 texture:(id)arg2 descriptor:(id)arg3;
-- (id)initWithBaseTexture:(id)arg1 texture:(id)arg2 pixelFormat:(unsigned int)arg3;
-- (id)newTextureViewWithPixelFormat:(unsigned int)arg1;
-- (unsigned int)offset;
-- (unsigned int)plane;
-- (unsigned int)purgeableState;
-- (BOOL)purgeableStateHasBeenSet;
-- (unsigned int)setPurgeableState:(unsigned int)arg1;
+- (id)initWithBaseTexture:(id)arg1 texture:(id)arg2 pixelFormat:(unsigned long long)arg3;
+- (id)newTextureViewWithPixelFormat:(unsigned long long)arg1;
+- (unsigned long long)offset;
+- (unsigned long long)plane;
+- (unsigned long long)purgeableState;
+- (bool)purgeableStateHasBeenSet;
+- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 
 @end

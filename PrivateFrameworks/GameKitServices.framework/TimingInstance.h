@@ -3,13 +3,13 @@
  */
 
 @interface TimingInstance : NSObject {
-    BOOL isRunning;
+    boolisRunning;
     float startTiming;
     float stopTiming;
     float totalTime;
 }
 
-@property BOOL isRunning;
+@property bool isRunning;
 @property float startTiming;
 @property float stopTiming;
 @property float totalTime;
@@ -17,8 +17,8 @@
 + (id)createTimingInstanceWithStartTime:(float)arg1;
 
 - (id)description;
-- (BOOL)isRunning;
-- (void)setIsRunning:(BOOL)arg1;
+- (bool)isRunning;
+- (void)setIsRunning:(bool)arg1;
 - (void)setStartTiming:(float)arg1;
 - (void)setStopTiming:(float)arg1;
 - (void)setTotalTime:(float)arg1;

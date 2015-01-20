@@ -7,12 +7,12 @@
 @interface CKGradientView : UIView {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     NSArray *_colors;
     UIView *_effectView;
@@ -22,12 +22,12 @@
 
 @property(retain) NSArray * colors;
 @property(retain) UIView * effectView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } gradientFrame;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } gradientFrame;
 @property UIView<CKGradientReferenceView> * referenceView;
 
 + (id)gradientViews;
 
-- (void)_removeAllAnimations:(BOOL)arg1;
+- (void)_removeAllAnimations:(bool)arg1;
 - (id)colors;
 - (void)dealloc;
 - (id)description;
@@ -35,13 +35,13 @@
 - (void)didMoveToWindow;
 - (id)effectView;
 - (id)gradient;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gradientFrame;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })gradientFrame;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)referenceView;
 - (void)setColors:(id)arg1;
 - (void)setEffectView:(id)arg1;
-- (void)setGradientFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGradientFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setReferenceView:(id)arg1;
 - (void)updateAnimation;
 - (void)updateGradientImage;

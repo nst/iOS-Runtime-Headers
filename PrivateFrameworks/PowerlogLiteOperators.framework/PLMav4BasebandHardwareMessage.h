@@ -46,7 +46,7 @@
 - (struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; }*)gps;
 - (struct _PLMav4BasebandHWStatsHeader { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; unsigned int x5; unsigned int x6; unsigned int x7; }*)header;
 - (unsigned short)hw_rev;
-- (id)indexToRAT:(unsigned int)arg1;
+- (id)indexToRAT:(unsigned long long)arg1;
 - (id)initWithData:(id)arg1;
 - (unsigned char)level;
 - (unsigned int)logDuration;

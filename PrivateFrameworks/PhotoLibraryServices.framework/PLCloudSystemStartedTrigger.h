@@ -5,8 +5,8 @@
 @class PLCloudPhotoLibraryManager;
 
 @interface PLCloudSystemStartedTrigger : PLCloudTrigger {
-    BOOL _activated;
     PLCloudPhotoLibraryManager *_cloudLibraryManager;
+    bool_activated;
 }
 
 @property(retain,readonly) PLCloudPhotoLibraryManager * cloudLibraryManager;

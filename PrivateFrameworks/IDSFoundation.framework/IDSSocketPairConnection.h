@@ -5,14 +5,13 @@
 @class NSData, NSMapTable, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface IDSSocketPairConnection : NSObject {
-    long _bytesReceived;
+    long long _bytesReceived;
     int _connectedSocket;
     unsigned int _currentDataLength;
     NSMutableData *_currentMessageData;
-    unsigned int _currentOutgoingDataIndex;
+    unsigned long long _currentOutgoingDataIndex;
     NSMapTable *_delegateToInfo;
     NSMutableData *_headerData;
-    BOOL _isConnected;
     double _lastDateCheck;
     NSData *_outgoingData;
     NSMutableArray *_outgoingDataArray;
@@ -20,17 +19,18 @@
     NSObject<OS_dispatch_queue> *_readQueue;
     NSObject<OS_dispatch_source> *_readSource;
     NSObject<OS_dispatch_source> *_writeSource;
-    BOOL _writeSourceIsResumed;
+    bool_isConnected;
+    bool_writeSourceIsResumed;
 }
 
-@property(readonly) BOOL isConnected;
-@property(readonly) BOOL isEmpty;
+@property(readonly) bool isConnected;
+@property(readonly) bool isEmpty;
 @property(readonly) int socket;
 
 - (void)_callDelegatesWithBlock:(id)arg1;
 - (void)_endSession;
 - (void)_processBytesAvailable;
-- (int)_read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (long long)_read:(char *)arg1 maxLength:(unsigned long long)arg2;
 - (void)_sendToConnectedSocket;
 - (void)_setupWriteSource;
 - (void)_sourceCancelled;
@@ -39,9 +39,9 @@
 - (void)endSession;
 - (id)initWithQueue:(id)arg1 delegate:(id)arg2;
 - (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3;
-- (BOOL)isConnected;
-- (BOOL)isEmpty;
-- (BOOL)sendDataMessage:(id)arg1;
+- (bool)isConnected;
+- (bool)isEmpty;
+- (bool)sendDataMessage:(id)arg1;
 - (int)socket;
 
 @end

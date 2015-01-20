@@ -6,19 +6,19 @@
 
 @interface MPStoreAsset : NSObject {
     AVAsset *_asset;
-    unsigned int _storeAssetType;
+    unsigned long long _storeAssetType;
 }
 
 @property(retain) AVAsset * asset;
-@property unsigned int storeAssetType;
+@property unsigned long long storeAssetType;
 
-+ (id)assetForContext:(id)arg1 allowCloudDialogue:(BOOL)arg2;
-+ (void)setShouldAlwaysAirPlayFromCloud:(BOOL)arg1;
++ (id)assetForContext:(id)arg1 allowCloudDialogue:(bool)arg2;
++ (void)setShouldAlwaysAirPlayFromCloud:(bool)arg1;
 
 - (void).cxx_destruct;
 - (id)asset;
 - (void)setAsset:(id)arg1;
-- (void)setStoreAssetType:(unsigned int)arg1;
-- (unsigned int)storeAssetType;
+- (void)setStoreAssetType:(unsigned long long)arg1;
+- (unsigned long long)storeAssetType;
 
 @end

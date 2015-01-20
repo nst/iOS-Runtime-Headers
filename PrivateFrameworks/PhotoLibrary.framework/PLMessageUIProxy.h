@@ -12,7 +12,7 @@
 + (Class)MFMailComposeViewControllerClass;
 + (Class)MFRecipientTableViewCellClass;
 + (Class)MFSearchShadowViewClass;
-+ (BOOL)canSendMail;
++ (bool)canSendMail;
 + (id)newABUnknownPersonViewControllerWithEmailAddress:(id)arg1;
 + (id)newComposeViewController;
 

@@ -6,8 +6,8 @@
 }
 
 + (void)blockUntilFirstUnlock;
-+ (BOOL)isClassCLocked;
-+ (BOOL)isUnlocked;
++ (bool)isClassCLocked;
++ (bool)isUnlocked;
 + (void)registerBlockForFirstUnlock:(id)arg1;
 
 @end

@@ -9,37 +9,37 @@
         void *m_ptr; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } _avPlayerController;
     } _avPlayerViewController;
-    BOOL _readyForDisplay;
-    int _videoLayerGravity;
+    long long _videoLayerGravity;
     } _videoRect;
+    bool_readyForDisplay;
 }
 
-@property(getter=isReadyForDisplay) BOOL readyForDisplay;
-@property int videoLayerGravity;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property(getter=isReadyForDisplay) bool readyForDisplay;
+@property long long videoLayerGravity;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } videoRect;
 
 + (id)videoLayer;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)isReadyForDisplay;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)isReadyForDisplay;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPlayerController:(id)arg1;
 - (void)setPlayerViewController:(id)arg1;
-- (void)setReadyForDisplay:(BOOL)arg1;
-- (void)setVideoLayerGravity:(int)arg1;
-- (void)setVideoRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)videoLayerGravity;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
+- (void)setReadyForDisplay:(bool)arg1;
+- (void)setVideoLayerGravity:(long long)arg1;
+- (void)setVideoRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)videoLayerGravity;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoRect;
 
 @end

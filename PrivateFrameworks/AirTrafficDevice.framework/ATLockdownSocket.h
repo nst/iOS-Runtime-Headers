@@ -14,15 +14,15 @@
     NSObject<OS_dispatch_queue> *_socketRWQueue;
 }
 
-@property(readonly) BOOL isWifi;
+@property(readonly) bool isWifi;
 
 - (void).cxx_destruct;
 - (void)close;
 - (void)dealloc;
 - (id)initWithLockdownInfo:(void*)arg1;
-- (BOOL)isOpen;
-- (BOOL)isWifi;
-- (BOOL)open;
+- (bool)isOpen;
+- (bool)isWifi;
+- (bool)open;
 - (int)recv:(char *)arg1 offset:(unsigned int)arg2 len:(unsigned int)arg3 error:(id*)arg4;
 - (int)send:(const char *)arg1 offset:(unsigned int)arg2 len:(unsigned int)arg3 error:(id*)arg4;
 - (void)writeData:(id)arg1 withCompletion:(id)arg2;

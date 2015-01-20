@@ -6,10 +6,10 @@
 
 @interface TSCH3DJitteredSceneRenderPipeline : TSCH3DSceneRenderPipeline <TSCH3DMultipassRenderPipeline> {
     TSCH3DFramebufferAccumulationPipeline *mAccumulationPipeline;
-    int mJitter;
-    int mRefinementJitters;
+    long long mJitter;
+    long long mRefinementJitters;
     TSCH3DGLFramebuffer *mRenderingFBO;
-    int mTotalJitters;
+    long long mTotalJitters;
 }
 
 @property(retain) TSCH3DFramebufferAccumulationPipeline * accumulationPipeline;
@@ -18,12 +18,12 @@
 - (id)accumulationPipeline;
 - (void)dealloc;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3;
-- (BOOL)isActivePass;
+- (bool)isActivePass;
 - (id)jitterCamera:(id)arg1;
-- (BOOL)multipassRenderingIsDone;
-- (BOOL)refinementIsReady;
+- (bool)multipassRenderingIsDone;
+- (bool)refinementIsReady;
 - (void)releaseResources;
-- (BOOL)render;
+- (bool)render;
 - (id)renderingFBO;
 - (id)renderingFBOResource;
 - (void)resetMultipassRendering;
@@ -31,6 +31,6 @@
 - (void)setFramebuffer:(id)arg1;
 - (void)setRenderingFBO:(id)arg1;
 - (void)skipLowQualityPass;
-- (BOOL)updatesTargetFramebuffer;
+- (bool)updatesTargetFramebuffer;
 
 @end

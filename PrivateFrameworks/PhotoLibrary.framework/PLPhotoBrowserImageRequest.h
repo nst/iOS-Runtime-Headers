@@ -3,16 +3,16 @@
  */
 
 @interface PLPhotoBrowserImageRequest : NSObject {
-    BOOL _canceled;
     int _imageManagerRequestID;
+    bool_canceled;
 }
 
-@property BOOL canceled;
+@property bool canceled;
 @property int imageManagerRequestID;
 
-- (BOOL)canceled;
+- (bool)canceled;
 - (int)imageManagerRequestID;
-- (void)setCanceled:(BOOL)arg1;
+- (void)setCanceled:(bool)arg1;
 - (void)setImageManagerRequestID:(int)arg1;
 
 @end

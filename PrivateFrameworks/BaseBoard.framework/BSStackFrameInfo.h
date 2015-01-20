@@ -5,24 +5,24 @@
 @class NSString;
 
 @interface BSStackFrameInfo : NSObject {
-    unsigned long _address;
+    unsigned long long _address;
     NSString *_className;
     NSString *_executableName;
     NSString *_functionName;
     NSString *_realFunctionName;
 }
 
-@property(readonly) unsigned long address;
+@property(readonly) unsigned long long address;
 @property(retain,readonly) NSString * className;
 @property(retain,readonly) NSString * executableName;
 @property(retain,readonly) NSString * functionName;
 
-- (unsigned long)address;
+- (unsigned long long)address;
 - (id)className;
 - (void)dealloc;
 - (id)description;
 - (id)executableName;
 - (id)functionName;
-- (id)initWithReturnAddress:(unsigned long)arg1;
+- (id)initWithReturnAddress:(unsigned long long)arg1;
 
 @end

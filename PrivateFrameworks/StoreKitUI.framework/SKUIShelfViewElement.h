@@ -5,19 +5,19 @@
 @class NSString;
 
 @interface SKUIShelfViewElement : SKUIViewElement {
-    int _numberOfRows;
+    long long _numberOfRows;
     NSString *_slideshowTitle;
 }
 
-@property(readonly) int numberOfRows;
+@property(readonly) long long numberOfRows;
 @property(readonly) NSString * slideshowTitle;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)numberOfRows;
-- (int)pageComponentType;
+- (long long)numberOfRows;
+- (long long)pageComponentType;
 - (id)slideshowTitle;
 
 @end

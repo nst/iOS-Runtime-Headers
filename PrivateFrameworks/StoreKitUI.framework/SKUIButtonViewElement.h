@@ -7,7 +7,7 @@
 @interface SKUIButtonViewElement : SKUIViewElement {
     NSString *_badgeResourceName;
     SKUIViewElementText *_buttonText;
-    int _buttonViewType;
+    long long _buttonViewType;
     NSString *_confirmationText;
     BOOL _enabled;
     long long _itemIdentifier;
@@ -17,7 +17,7 @@
 @property(readonly) NSString * badgeResourceName;
 @property(readonly) SKUIImageViewElement * buttonImage;
 @property(readonly) SKUIViewElementText * buttonText;
-@property(readonly) int buttonViewType;
+@property(readonly) long long buttonViewType;
 @property(readonly) NSString * confirmationText;
 @property(readonly) long long itemIdentifier;
 @property(readonly) NSString * variantIdentifier;
@@ -27,16 +27,16 @@
 - (id)badgeResourceName;
 - (id)buttonImage;
 - (id)buttonText;
-- (int)buttonViewType;
-- (BOOL)canPerformLocalActionWithItemState:(id)arg1;
-- (BOOL)canPersonalizeUsingItemState:(id)arg1;
+- (long long)buttonViewType;
+- (bool)canPerformLocalActionWithItemState:(id)arg1;
+- (bool)canPersonalizeUsingItemState:(id)arg1;
 - (id)confirmationText;
 - (id)description;
-- (unsigned int)elementType;
+- (unsigned long long)elementType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (long long)itemIdentifier;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)personalizationLibraryItems;
 - (id)variantIdentifier;
 

@@ -5,33 +5,33 @@
 @class NSFileAccessNode, NSMutableArray;
 
 @interface NSFileMultipleAccessClaim : NSFileAccessClaim {
-    unsigned int _currentlyLinkResolvingURLIndex;
-    int _readingLinkResolutionCount;
+    unsigned long long _currentlyLinkResolvingURLIndex;
+    long long _readingLinkResolutionCount;
     NSMutableArray *_readingLocations;
-    unsigned int *_readingOptions;
+    unsigned long long *_readingOptions;
     NSMutableArray *_readingURLs;
-    BOOL *_readingURLsDidChange;
     NSFileAccessNode *_rootNode;
     NSMutableArray *_writingLocations;
-    unsigned int *_writingOptions;
+    unsigned long long *_writingOptions;
     NSMutableArray *_writingURLs;
-    BOOL *_writingURLsDidChange;
+    bool*_readingURLsDidChange;
+    bool*_writingURLsDidChange;
 }
 
-- (BOOL)blocksClaim:(id)arg1;
+- (bool)blocksClaim:(id)arg1;
 - (void)dealloc;
 - (void)devalueSelf;
-- (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
+- (bool)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(bool)arg2;
 - (void)finalize;
 - (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
 - (void)granted;
 - (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
 - (id)initWithPurposeID:(id)arg1 intents:(id)arg2 claimer:(id)arg3;
 - (void)invokeClaimer;
-- (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
+- (bool)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)resolveURLsThenMaybeContinueInvokingClaimer:(id)arg1;
-- (BOOL)shouldBeRevokedPriorToInvokingAccessor;
+- (bool)shouldBeRevokedPriorToInvokingAccessor;
 
 @end

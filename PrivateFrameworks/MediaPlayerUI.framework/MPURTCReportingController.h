@@ -6,22 +6,22 @@
 
 @interface MPURTCReportingController : MPUReportingController {
     NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _recordingEnabled;
     unsigned int _reportingFlag;
     NSMutableArray *_reportingFlagLoadCompletionHandlers;
     RTCReporting *_rtcReporting;
-    BOOL _shouldDeferEventFlushing;
+    bool_recordingEnabled;
+    bool_shouldDeferEventFlushing;
 }
 
-@property BOOL shouldDeferEventFlushing;
+@property bool shouldDeferEventFlushing;
 
 - (void).cxx_destruct;
-- (BOOL)_getMethod:(unsigned short*)arg1 respCode:(unsigned short*)arg2 infoDictionary:(id*)arg3 fromReportingEvent:(id)arg4;
+- (bool)_getMethod:(unsigned short*)arg1 respCode:(unsigned short*)arg2 infoDictionary:(id*)arg3 fromReportingEvent:(id)arg4;
 - (void)_recordReportingEvents:(id)arg1;
 - (void)flushImmediately;
 - (id)init;
 - (void)loadRTCReportingFlagWithCompletionHandler:(id)arg1;
-- (void)setShouldDeferEventFlushing:(BOOL)arg1;
-- (BOOL)shouldDeferEventFlushing;
+- (void)setShouldDeferEventFlushing:(bool)arg1;
+- (bool)shouldDeferEventFlushing;
 
 @end

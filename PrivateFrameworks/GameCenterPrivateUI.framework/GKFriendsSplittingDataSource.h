@@ -9,7 +9,7 @@
     GKGame *_game;
     NSSet *_hiddenPlayers;
     NSString *_leaderboardID;
-    int _maxSelectable;
+    long long _maxSelectable;
     NSMutableDictionary *_pickerInfos;
 }
 
@@ -18,15 +18,15 @@
 @property(retain) GKGame * game;
 @property(retain) NSSet * hiddenPlayers;
 @property(retain) NSString * leaderboardID;
-@property int maxSelectable;
+@property long long maxSelectable;
 @property(retain) NSMutableDictionary * pickerInfos;
 @property(retain) NSArray * selectedPlayers;
 
-- (BOOL)_changePickerInfo:(id)arg1 selected:(BOOL)arg2;
+- (bool)_changePickerInfo:(id)arg1 selected:(bool)arg2;
 - (id)achievementID;
 - (id)allPickerInfos;
-- (BOOL)canSelectIndexPath:(id)arg1;
-- (BOOL)canSelectPlayerInfo:(id)arg1;
+- (bool)canSelectIndexPath:(id)arg1;
+- (bool)canSelectPlayerInfo:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 forPickerInfo:(id)arg2 forIndexPath:(id)arg3;
 - (void)collectionViewWillBecomeActive:(id)arg1;
@@ -42,7 +42,7 @@
 - (void)loadAchievedWithUpdateNotifier:(id)arg1;
 - (void)loadGamePlayersWithUpdateNotifier:(id)arg1;
 - (void)loadRanksWithUpdateNotifier:(id)arg1;
-- (int)maxSelectable;
+- (long long)maxSelectable;
 - (void)notifyPickerItemsChanged:(id)arg1;
 - (id)pickerInfos;
 - (id)playerInfoForPlayer:(id)arg1;
@@ -53,9 +53,9 @@
 - (void)setGame:(id)arg1;
 - (void)setHiddenPlayers:(id)arg1;
 - (void)setLeaderboardID:(id)arg1;
-- (void)setMaxSelectable:(int)arg1;
+- (void)setMaxSelectable:(long long)arg1;
 - (void)setPickerInfos:(id)arg1;
-- (void)setPlayers:(id)arg1 selected:(BOOL)arg2 deselectOthers:(BOOL)arg3;
+- (void)setPlayers:(id)arg1 selected:(bool)arg2 deselectOthers:(bool)arg3;
 - (void)setSelectedPlayers:(id)arg1;
 - (void)toggleSelectionAtIndexPath:(id)arg1;
 - (void)toggleSelectionForPlayer:(id)arg1;

@@ -12,7 +12,7 @@
 @interface WKNavigationData : NSObject <WKObject> {
     struct ObjectStorage<API::NavigationData> { 
         struct type { 
-            unsigned char __lx[360]; 
+            unsigned char __lx[472]; 
         } data; 
     } _data;
 }
@@ -21,7 +21,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSURL * destinationURL;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSURLRequest * originalRequest;
 @property(readonly) NSURLResponse * response;
 @property(readonly) Class superclass;

@@ -13,8 +13,8 @@
 - (float)dx;
 - (float)dy;
 - (float)dz;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDx:(float)arg1 dy:(float)arg2 dz:(float)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

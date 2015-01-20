@@ -8,26 +8,26 @@
     GKPlayer *_player;
 }
 
-@property(readonly) unsigned int achievementPoints;
-@property(readonly) unsigned int achievements;
+@property(readonly) unsigned long long achievementPoints;
+@property(readonly) unsigned long long achievements;
 @property(readonly) NSString * defaultLeaderboardIdentifier;
-@property(readonly) unsigned int friendRank;
+@property(readonly) unsigned long long friendRank;
 @property(retain,readonly) GKGameRecordInternal * internal;
 @property(readonly) NSDate * lastPlayedDate;
-@property(readonly) unsigned int maxAchievementPoints;
-@property(readonly) unsigned int maxAchievements;
-@property(readonly) unsigned int maxFriendRank;
-@property(readonly) unsigned int maxRank;
-@property(readonly) unsigned int numberOfCategories;
-@property(readonly) unsigned int numberOfLeaderboardSets;
-@property(readonly) unsigned int numberOfLeaderboards;
-@property(readonly) BOOL played;
+@property(readonly) unsigned long long maxAchievementPoints;
+@property(readonly) unsigned long long maxAchievements;
+@property(readonly) unsigned long long maxFriendRank;
+@property(readonly) unsigned long long maxRank;
+@property(readonly) unsigned long long numberOfCategories;
+@property(readonly) unsigned long long numberOfLeaderboardSets;
+@property(readonly) unsigned long long numberOfLeaderboards;
+@property(readonly) bool played;
 @property(retain) GKPlayer * player;
 @property(readonly) NSDate * purchaseDate;
-@property(readonly) unsigned int rank;
-@property(readonly) BOOL supportsAchievements;
-@property(readonly) BOOL supportsLeaderboardSets;
-@property(readonly) BOOL supportsLeaderboards;
+@property(readonly) unsigned long long rank;
+@property(readonly) bool supportsAchievements;
+@property(readonly) bool supportsLeaderboardSets;
+@property(readonly) bool supportsLeaderboards;
 
 + (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
 + (id)cacheKeyForPlayer:(id)arg1 internal:(id)arg2;
@@ -38,17 +38,17 @@
 + (void)loadGameRecordForPlayer:(id)arg1 game:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadGameRecordsForPlayer:(id)arg1 games:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)partitionGameRecords:(id)arg1 returniOS:(id*)arg2 returnMac:(id*)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1 player:(id)arg2;
 - (id)initWithInternalRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)played;
+- (bool)isEqual:(id)arg1;
+- (bool)played;
 - (id)player;
 - (void)setPlayer:(id)arg1;
 

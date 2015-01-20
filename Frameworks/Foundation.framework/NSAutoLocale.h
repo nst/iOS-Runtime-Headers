@@ -8,7 +8,7 @@
     NSLocale *loc;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_init;
 - (unsigned char)_nullLocale;

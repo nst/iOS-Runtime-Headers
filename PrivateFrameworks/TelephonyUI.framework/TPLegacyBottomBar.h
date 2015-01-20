@@ -5,38 +5,38 @@
 @class UIImageView;
 
 @interface TPLegacyBottomBar : UIView {
-    int _orientation;
+    long long _orientation;
     UIImageView *_shadowView;
-    int _style;
-    BOOL _suppressDrawingBackground;
+    long long _style;
+    bool_suppressDrawingBackground;
 }
 
 @property(readonly) UIImageView * shadowView;
-@property BOOL suppressDrawingBackground;
+@property bool suppressDrawingBackground;
 
 + (id)_backgroundImage;
-+ (float)defaultHeight;
-+ (float)defaultHeightForOrientation:(int)arg1;
-+ (float)defaultHeightForStyle:(int)arg1 orientation:(int)arg2;
-+ (float)defaultHeightForStyle:(int)arg1;
-+ (int)fullscreenStyle;
-+ (int)overlayStyle;
++ (double)defaultHeight;
++ (double)defaultHeightForOrientation:(long long)arg1;
++ (double)defaultHeightForStyle:(long long)arg1 orientation:(long long)arg2;
++ (double)defaultHeightForStyle:(long long)arg1;
++ (long long)fullscreenStyle;
++ (long long)overlayStyle;
 + (id)upsideDownShadowImage;
 
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)init;
 - (id)initWithDefaultSize;
-- (id)initWithDefaultSizeForOrientation:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithDefaultSizeForOrientation:(long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)orientation;
-- (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
-- (void)setOrientation:(int)arg1;
-- (void)setSuppressDrawingBackground:(BOOL)arg1;
-- (void)setWellAlpha:(float)arg1;
+- (long long)orientation;
+- (void)setOrientation:(long long)arg1 updateFrame:(bool)arg2;
+- (void)setOrientation:(long long)arg1;
+- (void)setSuppressDrawingBackground:(bool)arg1;
+- (void)setWellAlpha:(double)arg1;
 - (id)shadowView;
-- (BOOL)suppressDrawingBackground;
+- (bool)suppressDrawingBackground;
 
 @end

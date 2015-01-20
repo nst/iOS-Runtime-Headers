@@ -5,15 +5,15 @@
 @class GKGridLayoutMetrics, GKSectionMetrics, NSMutableArray, NSString;
 
 @interface GKMetricData : NSObject {
-    unsigned int _currentMaxVisibleItemCount;
-    unsigned int _filteredTotalItemCount;
+    unsigned long long _currentMaxVisibleItemCount;
+    unsigned long long _filteredTotalItemCount;
     NSMutableArray *_footerPinnableAttributes;
     NSMutableArray *_headerPinnableAttributes;
     GKGridLayoutMetrics *_metrics;
 }
 
-@property unsigned int currentMaxVisibleItemCount;
-@property unsigned int filteredTotalItemCount;
+@property unsigned long long currentMaxVisibleItemCount;
+@property unsigned long long filteredTotalItemCount;
 @property(retain) NSMutableArray * footerPinnableAttributes;
 @property(retain) NSMutableArray * headerPinnableAttributes;
 @property(readonly) NSString * layoutKey;
@@ -21,11 +21,11 @@
 @property(readonly) GKSectionMetrics * sectionMetrics;
 
 - (id)_gkDescriptionWithChildren:(int)arg1;
-- (void)addAttributes:(id)arg1 forLocation:(unsigned int)arg2;
-- (unsigned int)currentMaxVisibleItemCount;
+- (void)addAttributes:(id)arg1 forLocation:(unsigned long long)arg2;
+- (unsigned long long)currentMaxVisibleItemCount;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)filteredTotalItemCount;
+- (unsigned long long)filteredTotalItemCount;
 - (id)footerPinnableAttributes;
 - (id)headerPinnableAttributes;
 - (id)init;
@@ -33,8 +33,8 @@
 - (id)localDescription;
 - (id)metrics;
 - (id)sectionMetrics;
-- (void)setCurrentMaxVisibleItemCount:(unsigned int)arg1;
-- (void)setFilteredTotalItemCount:(unsigned int)arg1;
+- (void)setCurrentMaxVisibleItemCount:(unsigned long long)arg1;
+- (void)setFilteredTotalItemCount:(unsigned long long)arg1;
 - (void)setFooterPinnableAttributes:(id)arg1;
 - (void)setHeaderPinnableAttributes:(id)arg1;
 - (void)setMetrics:(id)arg1;

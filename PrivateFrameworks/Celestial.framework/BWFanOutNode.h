@@ -13,8 +13,8 @@
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
-- (BOOL)hasNonLiveConfigurationChanges;
-- (id)initWithFanOutCount:(int)arg1 mediaType:(unsigned long)arg2;
+- (bool)hasNonLiveConfigurationChanges;
+- (id)initWithFanOutCount:(int)arg1 mediaType:(unsigned int)arg2;
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;
 - (id)nodeType;

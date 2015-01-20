@@ -12,7 +12,7 @@
 @property(retain) NSString * appIdentifier;
 @property(retain) ABUIDataCollectorLogger * logger;
 
-+ (BOOL)isEnabled;
++ (bool)isEnabled;
 + (id)sharedCollector;
 
 - (void)_reallyLogIndexUsage;
@@ -21,7 +21,7 @@
 - (id)init;
 - (void)logAddProperty:(int)arg1 contact:(void*)arg2;
 - (void)logContactActionType:(id)arg1 attributes:(id)arg2;
-- (void)logGroupsShown:(int)arg1 totalGroups:(int)arg2;
+- (void)logGroupsShown:(long long)arg1 totalGroups:(long long)arg2;
 - (void)logIndexUsage;
 - (void)logPresentation;
 - (void)logRefreshUsage;

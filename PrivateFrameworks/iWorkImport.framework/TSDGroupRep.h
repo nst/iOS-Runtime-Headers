@@ -5,33 +5,33 @@
 @interface TSDGroupRep : TSDContainerRep <TSDMagicMoveMatching> {
 }
 
-+ (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2;
++ (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2;
 
 - (id)allRepsContainedInGroup;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRect;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 withSlop:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertNaturalPointFromUnscaledCanvas:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)directlyManagesLayerContent;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clipRect;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1 withSlop:(struct CGSize { double x1; double x2; })arg2;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertNaturalPointFromUnscaledCanvas:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)dynamicOperationDidBegin;
 - (id)dynamicResizeDidBegin;
 - (void)dynamicResizeDidEndWithTracker:(id)arg1;
 - (void)dynamicallyResizingWithTracker:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvas;
-- (BOOL)handleDoubleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)handleMultipleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)handleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)intersectsUnscaledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDraggable;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameInUnscaledCanvas;
+- (bool)handleDoubleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)handleMultipleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)handleSingleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)intersectsUnscaledRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDraggable;
 - (Class)layerClass;
-- (BOOL)p_handleSubselectionTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)p_handleSubselectionTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)processChangedProperty:(int)arg1;
 - (void)recursivelyDrawInContext:(struct CGContext { }*)arg1;
 - (struct CGColor { }*)selectionHighlightColor;
 - (void)setNeedsDisplay;
-- (BOOL)shouldShowCommentHighlight;
-- (BOOL)shouldShowSelectionHighlight;
-- (BOOL)wantsToHandleTapsWhenLocked;
+- (bool)shouldShowCommentHighlight;
+- (bool)shouldShowSelectionHighlight;
+- (bool)wantsToHandleTapsWhenLocked;
 
 @end

@@ -11,9 +11,9 @@
 @interface BSDispatchSource : NSObject {
     id _cancelHandler;
     id _eventHandler;
-    BOOL _invalidated;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_source;
+    bool_invalidated;
 }
 
 @property(copy) id cancelHandler;
@@ -23,7 +23,7 @@
 - (id)cancelHandler;
 - (void)dealloc;
 - (id)eventHandler;
-- (id)initWithType:(struct dispatch_source_type_s { }*)arg1 handle:(unsigned long)arg2 mask:(unsigned long)arg3 queue:(id)arg4 configureSourceBlock:(id)arg5;
+- (id)initWithType:(struct dispatch_source_type_s { }*)arg1 handle:(unsigned long long)arg2 mask:(unsigned long long)arg3 queue:(id)arg4 configureSourceBlock:(id)arg5;
 - (void)invalidate;
 - (id)queue;
 - (void)resume;

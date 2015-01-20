@@ -10,19 +10,19 @@
     NSString *_name;
     NSString *_nameSpace;
     NSData *_payload;
-    BOOL _useCDATA;
+    bool_useCDATA;
 }
 
 @property(retain) NSMutableSet * attributes;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSMutableArray * extraChildItems;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * name;
 @property(retain) NSString * nameSpace;
 @property(retain) NSData * payload;
 @property(readonly) Class superclass;
-@property BOOL useCDATA;
+@property bool useCDATA;
 
 + (id)copyParseRules;
 + (id)parseRuleCache;
@@ -51,9 +51,9 @@
 - (void)setNameSpace:(id)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPayloadAsString:(id)arg1;
-- (void)setUseCDATA:(BOOL)arg1;
-- (BOOL)useCDATA;
-- (BOOL)validate;
+- (void)setUseCDATA:(bool)arg1;
+- (bool)useCDATA;
+- (bool)validate;
 - (void)write:(id)arg1;
 
 @end

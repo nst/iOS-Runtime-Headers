@@ -7,6 +7,7 @@
 @interface MKUserLocationInternal : NSObject {
     <MKUserLocationAnnotation> *_annotation;
     <MKAnnotation> *annotation;
+    boolupdating;
     double course;
     CLLocation *fixedLocation;
     CLHeading *heading;
@@ -15,7 +16,6 @@
     NSString *subtitle;
     double timestamp;
     NSString *title;
-    BOOL updating;
 }
 
 @property(readonly) <MKAnnotation> * annotation;
@@ -27,14 +27,14 @@
 @property(retain) NSString * subtitle;
 @property double timestamp;
 @property(retain) NSString * title;
-@property(getter=isUpdating) BOOL updating;
+@property(getter=isUpdating) bool updating;
 
 - (void).cxx_destruct;
 - (id)annotation;
 - (double)course;
 - (id)fixedLocation;
 - (id)heading;
-- (BOOL)isUpdating;
+- (bool)isUpdating;
 - (id)location;
 - (id)predictedLocation;
 - (void)setCourse:(double)arg1;
@@ -45,7 +45,7 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUpdating:(BOOL)arg1;
+- (void)setUpdating:(bool)arg1;
 - (id)subtitle;
 - (double)timestamp;
 - (id)title;

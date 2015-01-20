@@ -5,11 +5,11 @@
 @interface DCIMAssetFormats : NSObject {
 }
 
-+ (BOOL)formatSizeIsShortSide:(int)arg1;
-+ (int)masterThumbnailFormat;
-+ (struct CGSize { float x1; float x2; })scaledSizeForSize:(struct CGSize { float x1; float x2; })arg1 format:(int)arg2 capLength:(BOOL)arg3;
-+ (struct CGSize { float x1; float x2; })sizeForFormat:(int)arg1;
-+ (int)thumbnailFormat;
-+ (int)wildcatStackFormat;
++ (bool)formatSizeIsShortSide:(long long)arg1;
++ (long long)masterThumbnailFormat;
++ (struct CGSize { double x1; double x2; })scaledSizeForSize:(struct CGSize { double x1; double x2; })arg1 format:(long long)arg2 capLength:(bool)arg3;
++ (struct CGSize { double x1; double x2; })sizeForFormat:(long long)arg1;
++ (long long)thumbnailFormat;
++ (long long)wildcatStackFormat;
 
 @end

@@ -6,8 +6,8 @@
 
 @interface TSWPStorageIterationEvent : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     NSObject *_object;
     NSString *_providerIdentifier;
     } _range;
@@ -17,22 +17,22 @@
 
 @property(readonly) NSString * identifier;
 @property(readonly) NSObject * object;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property TSWPStorage * storage;
 @property(readonly) int type;
 
-+ (id)characterEventWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (id)eventWithType:(int)arg1 providerIdentifier:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 object:(id)arg4;
++ (id)characterEventWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
++ (id)eventWithType:(int)arg1 providerIdentifier:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 object:(id)arg4;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
-- (id)initWithCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)initWithType:(int)arg1 providerIdentifier:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 object:(id)arg4;
-- (BOOL)isRangeEnd;
+- (id)initWithCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)initWithType:(int)arg1 providerIdentifier:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 object:(id)arg4;
+- (bool)isRangeEnd;
 - (id)object;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (void)setStorage:(id)arg1;
 - (id)storage;
 - (int)type;

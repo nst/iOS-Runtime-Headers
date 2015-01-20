@@ -10,10 +10,10 @@
 @interface TSTPostfixOperatorNode : TSTOperatorNode {
 }
 
-- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)initFromArchive:(const struct PostfixOperatorNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct OperatorNodeArchive {} *x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
-- (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
+- (void)insertFormulaText:(id)arg1 includeWhitespace:(bool)arg2;
 - (void)saveToArchive:(struct PostfixOperatorNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct OperatorNodeArchive {} *x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 

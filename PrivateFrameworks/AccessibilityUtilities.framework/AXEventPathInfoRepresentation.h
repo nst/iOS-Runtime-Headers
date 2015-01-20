@@ -4,8 +4,8 @@
 
 @interface AXEventPathInfoRepresentation : NSObject <NSSecureCoding, NSCopying> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     float _pathDensity;
     unsigned int _pathEventMask;
     unsigned char _pathIdentity;
@@ -18,14 +18,14 @@
     float _pathQuality;
     float _pathTwist;
     void *_pathWindow;
-    unsigned long _pathWindowContextID;
+    unsigned int _pathWindowContextID;
 }
 
 @property float pathDensity;
 @property unsigned int pathEventMask;
 @property unsigned char pathIdentity;
 @property unsigned char pathIndex;
-@property struct CGPoint { float x1; float x2; } pathLocation;
+@property struct CGPoint { double x1; double x2; } pathLocation;
 @property float pathMajorRadius;
 @property float pathMinorRadius;
 @property float pathPressure;
@@ -33,10 +33,10 @@
 @property float pathQuality;
 @property float pathTwist;
 @property void* pathWindow;
-@property unsigned long pathWindowContextID;
+@property unsigned int pathWindowContextID;
 
-+ (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -46,7 +46,7 @@
 - (unsigned int)pathEventMask;
 - (unsigned char)pathIdentity;
 - (unsigned char)pathIndex;
-- (struct CGPoint { float x1; float x2; })pathLocation;
+- (struct CGPoint { double x1; double x2; })pathLocation;
 - (float)pathMajorRadius;
 - (float)pathMinorRadius;
 - (float)pathPressure;
@@ -54,12 +54,12 @@
 - (float)pathQuality;
 - (float)pathTwist;
 - (void*)pathWindow;
-- (unsigned long)pathWindowContextID;
+- (unsigned int)pathWindowContextID;
 - (void)setPathDensity:(float)arg1;
 - (void)setPathEventMask:(unsigned int)arg1;
 - (void)setPathIdentity:(unsigned char)arg1;
 - (void)setPathIndex:(unsigned char)arg1;
-- (void)setPathLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPathLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPathMajorRadius:(float)arg1;
 - (void)setPathMinorRadius:(float)arg1;
 - (void)setPathPressure:(float)arg1;
@@ -67,7 +67,7 @@
 - (void)setPathQuality:(float)arg1;
 - (void)setPathTwist:(float)arg1;
 - (void)setPathWindow:(void*)arg1;
-- (void)setPathWindowContextID:(unsigned long)arg1;
-- (void)writeToPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
+- (void)setPathWindowContextID:(unsigned int)arg1;
+- (void)writeToPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
 
 @end

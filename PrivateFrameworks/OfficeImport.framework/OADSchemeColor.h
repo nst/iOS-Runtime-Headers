@@ -9,9 +9,9 @@
 + (id)schemeColorWithIndex:(int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithSchemeColorIndex:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)schemeColorIndex;
 
 @end

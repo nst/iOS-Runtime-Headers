@@ -7,18 +7,18 @@
 @interface KeychainSyncHeaderView : UIView <PSHeaderFooterView> {
     UILabel *_detailLabel;
     UILabel *_titleLabel;
-    BOOL _usesCompactLayout;
+    bool_usesCompactLayout;
 }
 
-@property BOOL usesCompactLayout;
+@property bool usesCompactLayout;
 
 - (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
-- (float)preferredHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (void)setDetailText:(id)arg1;
 - (void)setTitleText:(id)arg1;
-- (void)setUsesCompactLayout:(BOOL)arg1;
-- (BOOL)usesCompactLayout;
+- (void)setUsesCompactLayout:(bool)arg1;
+- (bool)usesCompactLayout;
 
 @end

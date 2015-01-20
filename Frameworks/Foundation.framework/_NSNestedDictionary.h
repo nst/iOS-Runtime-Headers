@@ -9,7 +9,7 @@
 
 - (id)_recursiveAllKeys;
 - (id)_recursiveAllValues;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)keyEnumerator;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;

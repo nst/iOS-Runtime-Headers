@@ -6,24 +6,24 @@
 
 @interface HMDPowerManager : NSObject {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _ethernetActive;
-    BOOL _networkAccessRequired;
     unsigned int _powerAssertion;
     void *_scContext;
     struct __SCDynamicStore { } *_scStore;
-    BOOL _started;
+    bool_ethernetActive;
+    bool_networkAccessRequired;
+    bool_started;
 }
 
-@property(getter=isNetworkAccessRequired) BOOL networkAccessRequired;
+@property(getter=isNetworkAccessRequired) bool networkAccessRequired;
 
 - (void).cxx_destruct;
-- (long)_ensureNetworkInterfaceMonitorStarted;
+- (int)_ensureNetworkInterfaceMonitorStarted;
 - (void)_ensureNetworkInterfaceMonitorStopped;
 - (void)_update;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isNetworkAccessRequired;
-- (void)setNetworkAccessRequired:(BOOL)arg1;
+- (bool)isNetworkAccessRequired;
+- (void)setNetworkAccessRequired:(bool)arg1;
 - (void)start;
 - (void)stop;
 

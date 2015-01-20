@@ -59,14 +59,14 @@
 @property(readonly) BRCServerItem * reservedServerItem;
 @property(readonly) NSURL * url;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (int)_applyDesiredAdditionsOnItem:(id)arg1;
 - (int)_applyThumbnailOnItem:(id)arg1 atURL:(id)arg2;
-- (BOOL)_bounceBouncesHiddenByFault:(id)arg1;
-- (BOOL)_bouncePathMatch:(const struct { id x1; id x2; id x3; unsigned long long x4; }*)arg1 toApplyServerItem:(id)arg2;
-- (BOOL)_canUpdatePathMatch:(const struct { id x1; id x2; id x3; unsigned long long x4; }*)arg1;
+- (bool)_bounceBouncesHiddenByFault:(id)arg1;
+- (bool)_bouncePathMatch:(const struct { id x1; id x2; id x3; unsigned long long x4; }*)arg1 toApplyServerItem:(id)arg2;
+- (bool)_canUpdatePathMatch:(const struct { id x1; id x2; id x3; unsigned long long x4; }*)arg1;
 - (void)_clearNamespace:(unsigned char)arg1;
 - (int)_discoverConflictLosersOnItem:(id)arg1 atURL:(id)arg2;
 - (void)_fetchFaultedPathMatch;
@@ -75,11 +75,11 @@
 - (void)_fetchRelPath;
 - (void)_fetchReservedPathMatch;
 - (id)_generateGentleBounceForPathMatch:(const struct { id x1; id x2; id x3; unsigned long long x4; }*)arg1 dirfd:(int)arg2;
-- (BOOL)_isPathMatchIdle:(const struct { id x1; id x2; id x3; unsigned long long x4; }*)arg1;
+- (bool)_isPathMatchIdle:(const struct { id x1; id x2; id x3; unsigned long long x4; }*)arg1;
 - (void)_moveMissingItemAsideInNamespace:(unsigned char)arg1;
 - (struct { id x1; id x2; id x3; unsigned long long x4; })_pathMatchInNamespace:(unsigned char)arg1;
 - (id)_relpath;
-- (BOOL)_removeDirectory:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
+- (bool)_removeDirectory:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
 - (unsigned long long)byIDDiffs;
 - (id)byIDLocalItem;
 - (struct { id x1; id x2; id x3; unsigned long long x4; })byIDMatch;
@@ -116,8 +116,8 @@
 - (id)reservedLocalItem;
 - (struct { id x1; id x2; id x3; unsigned long long x4; })reservedMatch;
 - (id)reservedServerItem;
-- (BOOL)resolveParentAndKeepOpenMustExist:(BOOL)arg1 errcode:(int*)arg2;
-- (BOOL)tryToDeleteItemInNamespace:(unsigned char)arg1;
+- (bool)resolveParentAndKeepOpenMustExist:(bool)arg1 errcode:(int*)arg2;
+- (bool)tryToDeleteItemInNamespace:(unsigned char)arg1;
 - (void)tryToUpdateItemInNamespace:(unsigned char)arg1 withDstLookup:(id)arg2;
 - (id)url;
 

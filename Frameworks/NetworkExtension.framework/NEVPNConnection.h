@@ -4,11 +4,11 @@
 
 @interface NEVPNConnection : NSObject {
     void *_session;
-    int _status;
+    long long _status;
 }
 
 @property void* session;
-@property(readonly) int status;
+@property(readonly) long long status;
 
 - (void)dealloc;
 - (void)destroySession;
@@ -16,8 +16,8 @@
 - (void)newSessionWithConfigID:(id)arg1 withCompletionHandler:(id)arg2;
 - (void*)session;
 - (void)setSession:(void*)arg1;
-- (BOOL)startVPNTunnelAndReturnError:(id*)arg1;
-- (int)status;
+- (bool)startVPNTunnelAndReturnError:(id*)arg1;
+- (long long)status;
 - (void)stopVPNTunnel;
 
 @end

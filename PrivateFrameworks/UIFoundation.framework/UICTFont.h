@@ -5,14 +5,14 @@
 @interface UICTFont : UIFont {
 }
 
-- (unsigned long)_cfTypeID;
-- (BOOL)allowsWeakReference;
+- (unsigned long long)_cfTypeID;
+- (bool)allowsWeakReference;
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 
 @end

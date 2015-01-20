@@ -6,25 +6,25 @@
 
 @interface SKUIFocusedTouchGestureRecognizer : UIGestureRecognizer {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     NSMutableSet *_activeTouches;
-    BOOL _didTouchOutside;
     UIView *_focusedView;
     } _touchAllowance;
+    bool_didTouchOutside;
 }
 
 @property(readonly) UIView * focusedView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchAllowance;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchAllowance;
 
 - (void).cxx_destruct;
 - (id)focusedView;
-- (id)initWithFocusedView:(id)arg1 touchAllowance:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (id)initWithFocusedView:(id)arg1 touchAllowance:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)reset;
-- (void)setTouchAllowance:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })touchAllowance;
+- (void)setTouchAllowance:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchAllowance;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 

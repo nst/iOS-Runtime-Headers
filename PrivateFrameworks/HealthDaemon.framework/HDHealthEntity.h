@@ -5,21 +5,21 @@
 @interface HDHealthEntity : HDSQLiteEntity {
 }
 
-+ (BOOL)_performWriteTransaction:(BOOL)arg1 withHealthDatabase:(id)arg2 usingBlock:(id)arg3 errorHandler:(id)arg4;
++ (bool)_performWriteTransaction:(bool)arg1 withHealthDatabase:(id)arg2 usingBlock:(id)arg3 errorHandler:(id)arg4;
 + (id)anyWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (id)createTableSQL;
 + (id)databaseName;
-+ (BOOL)deleteEntitiesWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
-+ (BOOL)enumerateProperties:(id)arg1 withPredicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id)arg5;
++ (bool)deleteEntitiesWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (bool)enumerateProperties:(id)arg1 withPredicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id)arg5;
 + (id)maxRowIDForPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (void)performReadTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2 errorHandler:(id)arg3;
 + (void)performReadTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2;
-+ (BOOL)performWriteTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2 errorHandler:(id)arg3;
-+ (BOOL)performWriteTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2;
++ (bool)performWriteTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2 errorHandler:(id)arg3;
++ (bool)performWriteTransactionWithHealthDatabase:(id)arg1 usingBlock:(id)arg2;
 + (id)propertyValueForAnyWithProperty:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
 + (id)propertyValuesForAnyWithProperties:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
 + (id)protectedDatabaseName;
-+ (int)protectionClass;
-+ (BOOL)setValuesWithDictionary:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
++ (long long)protectionClass;
++ (bool)setValuesWithDictionary:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
 
 @end

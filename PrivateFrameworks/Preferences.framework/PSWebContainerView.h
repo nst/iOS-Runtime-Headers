@@ -14,7 +14,7 @@
 
 - (id)content;
 - (void)dealloc;
-- (float)heightForWidth:(float)arg1;
+- (double)heightForWidth:(double)arg1;
 - (id)init;
 - (void)layoutSubviews;
 - (void)setContent:(id)arg1;

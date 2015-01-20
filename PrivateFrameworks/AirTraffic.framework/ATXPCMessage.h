@@ -22,7 +22,7 @@
 - (id)info;
 - (id)initWithName:(id)arg1;
 - (id)name;
-- (BOOL)needsReply;
+- (bool)needsReply;
 - (void)sendReply:(id)arg1;
 - (void)setInfo:(id)arg1;
 

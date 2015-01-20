@@ -11,12 +11,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) <CalLogFormatter> * formatter;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)flush;
+- (bool)flush;
 - (id)formatter;
 - (id)init;
 - (id)initWithParameters:(id)arg1;

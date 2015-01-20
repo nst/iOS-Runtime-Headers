@@ -14,14 +14,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (int)property;
 
 - (struct __CFArray { }*)copyArrayOfUIDsMatchingText:(id)arg1 addresses:(const struct __CFArray {}**)arg2 identifiers:(const struct __CFArray {}**)arg3;
 - (void)dealloc;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
-- (BOOL)predicateShouldContinue:(id)arg1;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
+- (bool)predicateShouldContinue:(id)arg1;
 
 @end

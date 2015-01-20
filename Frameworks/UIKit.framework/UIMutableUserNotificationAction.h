@@ -7,9 +7,9 @@
 @interface UIMutableUserNotificationAction : UIUserNotificationAction {
 }
 
-@property unsigned int activationMode;
-@property(getter=isAuthenticationRequired) BOOL authenticationRequired;
-@property(getter=isDestructive) BOOL destructive;
+@property unsigned long long activationMode;
+@property(getter=isAuthenticationRequired) bool authenticationRequired;
+@property(getter=isDestructive) bool destructive;
 @property(copy) NSString * identifier;
 @property(copy) NSString * title;
 

@@ -9,15 +9,15 @@
 }
 
 - (void)_createSubviews;
-- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(BOOL)arg2;
-- (void)_setIsContainedInPopover:(BOOL)arg1;
+- (void)_setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(bool)arg2;
+- (void)_setIsContainedInPopover:(bool)arg1;
 - (id)appearanceStorage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAppearanceStorage:(id)arg1;
-- (void)setBarStyle:(int)arg1;
+- (void)setBarStyle:(long long)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBarWantsAdaptiveBackdrop:(BOOL)arg1;
-- (void)setTranslucent:(BOOL)arg1;
+- (void)setBarWantsAdaptiveBackdrop:(bool)arg1;
+- (void)setTranslucent:(bool)arg1;
 - (void)updateBackgroundImage;
 
 @end

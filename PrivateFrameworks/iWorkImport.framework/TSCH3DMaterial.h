@@ -8,8 +8,8 @@
 + (id)material;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)hasCompleteData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 
 @end

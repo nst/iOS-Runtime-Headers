@@ -13,8 +13,7 @@
         unsigned int count[2]; 
         unsigned int hash[8]; 
         unsigned int wbuf[16]; 
-    unsigned int _curObjectLength;
-    BOOL _isParsing;
+    unsigned long long _curObjectLength;
     } _mescalSignature;
     Class _messageClass;
     id _objectParsedBlock;
@@ -22,13 +21,14 @@
     NSData *_parserData;
     NSError *_parserError;
     NSMutableData *_tailParserData;
+    bool_isParsing;
 }
 
-@property unsigned int curObjectLength;
+@property unsigned long long curObjectLength;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isParsing;
+@property(readonly) unsigned long long hash;
+@property bool isParsing;
 @property struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; } mescalSignature;
 @property Class messageClass;
 @property(copy) id objectParsedBlock;
@@ -39,12 +39,12 @@
 @property(retain) NSMutableData * tailParserData;
 
 - (void).cxx_destruct;
-- (BOOL)_parseObjectFromData:(id)arg1 rawData:(id)arg2;
-- (BOOL)_parseObjects:(BOOL)arg1;
-- (unsigned int)curObjectLength;
+- (bool)_parseObjectFromData:(id)arg1 rawData:(id)arg2;
+- (bool)_parseObjects:(bool)arg1;
+- (unsigned long long)curObjectLength;
 - (void)finishWithCompletion:(id)arg1;
 - (id)init;
-- (BOOL)isParsing;
+- (bool)isParsing;
 - (struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })mescalSignature;
 - (Class)messageClass;
 - (id)objectParsedBlock;
@@ -52,8 +52,8 @@
 - (id)parserData;
 - (id)parserError;
 - (void)processData:(id)arg1;
-- (void)setCurObjectLength:(unsigned int)arg1;
-- (void)setIsParsing:(BOOL)arg1;
+- (void)setCurObjectLength:(unsigned long long)arg1;
+- (void)setIsParsing:(bool)arg1;
 - (void)setMescalSignature:(struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })arg1;
 - (void)setMessageClass:(Class)arg1;
 - (void)setObjectParsedBlock:(id)arg1;

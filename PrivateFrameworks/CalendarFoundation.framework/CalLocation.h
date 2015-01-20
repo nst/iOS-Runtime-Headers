@@ -8,19 +8,19 @@
     NSString *_abURLString;
     NSString *_address;
     NSString *_displayName;
-    BOOL _isCurrentLocation;
     CLLocation *_location;
     CLPlacemark *_placemark;
     double _radius;
     NSString *_routeType;
     NSString *_title;
     int _type;
+    bool_isCurrentLocation;
 }
 
 @property(copy) NSString * abURLString;
 @property(copy) NSString * address;
 @property(copy) NSString * displayName;
-@property(readonly) BOOL isCurrentLocation;
+@property(readonly) bool isCurrentLocation;
 @property(copy) CLLocation * location;
 @property(retain) CLPlacemark * placemark;
 @property double radius;
@@ -31,9 +31,9 @@
 + (id)coordinatesFromGeoURLString:(id)arg1;
 + (id)fullDisplayStringWithTitle:(id)arg1 address:(id)arg2;
 + (id)geoURLStringFromCoordinates:(id)arg1;
-+ (id)routeTypeStringForCalLocationRoutingMode:(int)arg1;
-+ (int)routingModeEnumForCalRouteType:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)routeTypeStringForCalLocationRoutingMode:(long long)arg1;
++ (long long)routingModeEnumForCalRouteType:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)abURLString;
@@ -47,8 +47,8 @@
 - (id)fullTitleAndAddressString;
 - (id)geoURLString;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCurrentLocation;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCurrentLocation;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (id)placemark;
 - (double)radius;

@@ -14,7 +14,7 @@
 
 @property(readonly) char * bytes;
 @property unsigned int code;
-@property BOOL isContainer;
+@property bool isContainer;
 @property(readonly) unsigned int length;
 @property DKDAAPElement * parent;
 
@@ -33,14 +33,14 @@
 - (id)getStringValue;
 - (id)initWithCode:(unsigned int)arg1;
 - (id)initWithCoreElement:(struct shared_ptr<DKDAAPElementCore> { struct DKDAAPElementCore {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (BOOL)isContainer;
+- (bool)isContainer;
 - (unsigned int)length;
 - (unsigned int)numChildren;
 - (id)parent;
-- (void)setBytes:(char *)arg1 ofLength:(unsigned int)arg2 copy:(BOOL)arg3;
+- (void)setBytes:(char *)arg1 ofLength:(unsigned int)arg2 copy:(bool)arg3;
 - (void)setBytes:(char *)arg1 ofLength:(unsigned int)arg2;
 - (void)setCode:(unsigned int)arg1;
-- (void)setIsContainer:(BOOL)arg1;
+- (void)setIsContainer:(bool)arg1;
 - (void)setParent:(id)arg1;
 
 @end

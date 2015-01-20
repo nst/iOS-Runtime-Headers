@@ -13,7 +13,7 @@
 @property(readonly) <MTLDevice> * device;
 @property(readonly) NSArray * functionNames;
 @property(readonly) MTLToolsPointerArray * functions;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
 @property(readonly) Class superclass;
 

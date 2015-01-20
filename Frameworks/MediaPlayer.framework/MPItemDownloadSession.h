@@ -26,7 +26,7 @@
 - (id)downloadProperties;
 - (id)downloadSession;
 - (id)initWithItemDownloadProperties:(id)arg1;
-- (BOOL)isNetworkConstrainedForNetworkType:(int)arg1;
+- (bool)isNetworkConstrainedForNetworkType:(long long)arg1;
 - (float)percentComplete;
 - (void)reloadNetworkConstraints;
 - (id)sessionError;

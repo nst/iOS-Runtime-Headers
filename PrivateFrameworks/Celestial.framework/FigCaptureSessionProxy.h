@@ -7,8 +7,8 @@
 @interface FigCaptureSessionProxy : NSObject {
     long long _identifier;
     <FigCaptureSessionPreviewTapDelegate> *_previewTapDelegate;
-    BOOL _previewTapOpened;
     struct OpaqueFigCaptureSession { } *_session;
+    bool_previewTapOpened;
 }
 
 @property(readonly) long long identifier;
@@ -19,6 +19,6 @@
 - (void)dealloc;
 - (long long)identifier;
 - (id)initWithFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1 identifier:(long long)arg2;
-- (long)openPreviewTapWithDelegate:(id)arg1;
+- (int)openPreviewTapWithDelegate:(id)arg1;
 
 @end

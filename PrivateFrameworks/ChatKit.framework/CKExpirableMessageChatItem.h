@@ -5,14 +5,14 @@
 @interface CKExpirableMessageChatItem : CKAttachmentMessagePartChatItem {
 }
 
-@property(readonly) BOOL isPlayed;
-@property(readonly) BOOL isSaved;
+@property(readonly) bool isPlayed;
+@property(readonly) bool isSaved;
 
-- (BOOL)canCopy;
-- (BOOL)canExport;
-- (BOOL)canForward;
-- (BOOL)canSendAsTextMessage;
-- (BOOL)isPlayed;
-- (BOOL)isSaved;
+- (bool)canCopy;
+- (bool)canExport;
+- (bool)canForward;
+- (bool)canSendAsTextMessage;
+- (bool)isPlayed;
+- (bool)isSaved;
 
 @end

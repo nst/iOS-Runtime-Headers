@@ -18,12 +18,12 @@
 - (id)_debugDescriptionForRecord:(id)arg1;
 - (void)_deleteAllRecordsWithCompletion:(id)arg1;
 - (id)_dictionaryForRecordData:(id)arg1;
-- (void)_fetchRecordsWithServerChangeToken:(id)arg1 numberOfFetchRecordsOperationsPerformedSoFar:(unsigned int)arg2 result:(id)arg3 completion:(id)arg4;
+- (void)_fetchRecordsWithServerChangeToken:(id)arg1 numberOfFetchRecordsOperationsPerformedSoFar:(unsigned long long)arg2 result:(id)arg3 completion:(id)arg4;
 - (void)_prepareRecordZoneWithCompletion:(id)arg1;
 - (id)_recordDataForDictionary:(id)arg1;
 - (id)_recordWithCloudHistoryVisits:(id)arg1 zoneID:(id)arg2;
 - (id)_recordWithHistoryTombstones:(id)arg1 zoneID:(id)arg2;
-- (id)_recordWithType:(id)arg1 zoneID:(id)arg2 version:(unsigned int)arg3 dataDictionary:(id)arg4;
+- (id)_recordWithType:(id)arg1 zoneID:(id)arg2 version:(unsigned long long)arg3 dataDictionary:(id)arg4;
 - (id)_recordsWithCloudHistoryVisits:(id)arg1 zoneID:(id)arg2;
 - (void)_resetRecordZone;
 - (void)_saveCloudHistoryVisits:(id)arg1 tombstones:(id)arg2 completion:(id)arg3;

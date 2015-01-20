@@ -5,8 +5,8 @@
 @interface IKOrdinalElement : IKTextElement {
 }
 
-@property(readonly) unsigned int maxLength;
+@property(readonly) unsigned long long maxLength;
 
-- (unsigned int)maxLength;
+- (unsigned long long)maxLength;
 
 @end

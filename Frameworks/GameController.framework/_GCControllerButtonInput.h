@@ -13,7 +13,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_setValue:(float)arg1;
+- (bool)_setValue:(float)arg1;
 - (id)pressedChangedHandler;
 - (void)setPressedChangedHandler:(id)arg1;
 - (void)setValueChangedHandler:(id)arg1;

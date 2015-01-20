@@ -13,7 +13,7 @@
 @property(copy) NSMutableDictionary * pendingCertificates;
 
 - (void).cxx_destruct;
-- (BOOL)addCertificatePending:(id)arg1 certificateTag:(id)arg2;
+- (bool)addCertificatePending:(id)arg1 certificateTag:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)getPreprocessedPayloadContents;
 - (id)initWithPayload:(id)arg1;
@@ -21,7 +21,7 @@
 - (id)pendingCertificates;
 - (void)setPayloadAtom:(id)arg1;
 - (void)setPendingCertificates:(id)arg1;
-- (BOOL)setPostprocessedPayloadContents:(id)arg1;
+- (bool)setPostprocessedPayloadContents:(id)arg1;
 - (id)validatePayload;
 
 @end

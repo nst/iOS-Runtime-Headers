@@ -5,11 +5,11 @@
 @class NSTimer;
 
 @interface YTNetworkController : NSObject {
-    BOOL _isCellular;
-    BOOL _isReachable;
     int _networkType;
     NSTimer *_notificationTimer;
-    BOOL _registered;
+    bool_isCellular;
+    bool_isReachable;
+    bool_registered;
 }
 
 + (id)sharedNetworkController;
@@ -17,10 +17,10 @@
 - (void)_carrierBundleChangeNotification:(id)arg1;
 - (void)_checkForNetworkWithDataStatus:(id)arg1;
 - (void)_reachabilityChanged:(id)arg1;
-- (BOOL)allowsHighQuality3GPlayback;
+- (bool)allowsHighQuality3GPlayback;
 - (int)networkType;
 - (void)recheckNetwork;
-- (BOOL)serviceIsReachable;
+- (bool)serviceIsReachable;
 - (void)start;
 
 @end

@@ -16,21 +16,21 @@
 @property(copy) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)newAlertControllerWithCompletionHandler:(id)arg1;
-+ (id)presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 stringForDeleteButton:(id)arg3 withCompletionHandler:(id)arg4;
-+ (id)presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 withCompletionHandler:(id)arg3;
-+ (id)presentDetachAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 withCompletionHandler:(id)arg3;
++ (id)presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 stringForDeleteButton:(id)arg3 withCompletionHandler:(id)arg4;
++ (id)presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 withCompletionHandler:(id)arg3;
++ (id)presentDetachAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 withCompletionHandler:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_completeWithSelection:(int)arg1;
-- (void)_presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 stringForDeleteButton:(id)arg3;
-- (void)_presentDetachAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2;
-- (BOOL)_useSheetForViewController:(id)arg1;
-- (void)cancelAnimated:(BOOL)arg1;
+- (void)_presentDeleteAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2 stringForDeleteButton:(id)arg3;
+- (void)_presentDetachAlertWithOptions:(unsigned long long)arg1 viewController:(id)arg2;
+- (bool)_useSheetForViewController:(id)arg1;
+- (void)cancelAnimated:(bool)arg1;
 - (id)completionHandler;
 - (void)dealloc;
 - (void)setCompletionHandler:(id)arg1;

@@ -39,20 +39,20 @@
         void *m_ptr; 
     } _coreLocationProvider;
     } _coreLocationUpdateListenerProxy;
-    BOOL _enableHighAccuracy;
-    BOOL _isSuspended;
     } _lastPosition;
     } _pendingInitialPositionWebView;
     } _registeredWebViews;
     } _sendLastPositionAsynchronouslyTimer;
-    BOOL _shouldResetOnResume;
     } _trackedWebViews;
     } _webViewsWaitingForCoreLocationAuthorization;
+    bool_enableHighAccuracy;
+    bool_isSuspended;
+    bool_shouldResetOnResume;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)sharedGeolocationProvider;
@@ -70,7 +70,7 @@
 - (void)registerWebView:(id)arg1;
 - (void)resetGeolocation;
 - (void)resume;
-- (void)setEnableHighAccuracy:(BOOL)arg1;
+- (void)setEnableHighAccuracy:(bool)arg1;
 - (void)stopTrackingWebView:(id)arg1;
 - (void)suspend;
 - (void)unregisterWebView:(id)arg1;

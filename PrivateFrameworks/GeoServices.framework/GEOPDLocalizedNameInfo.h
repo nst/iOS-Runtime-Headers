@@ -10,9 +10,9 @@
     NSString *_requestedLanguageCode;
 }
 
-@property(readonly) BOOL hasLanguageCode;
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasRequestedLanguageCode;
+@property(readonly) bool hasLanguageCode;
+@property(readonly) bool hasName;
+@property(readonly) bool hasRequestedLanguageCode;
 @property(retain) NSString * languageCode;
 @property(retain) GEONameInfo * name;
 @property(retain) NSString * requestedLanguageCode;
@@ -22,15 +22,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLanguageCode;
-- (BOOL)hasName;
-- (BOOL)hasRequestedLanguageCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLanguageCode;
+- (bool)hasName;
+- (bool)hasRequestedLanguageCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)languageCode;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestedLanguageCode;
 - (void)setLanguageCode:(id)arg1;
 - (void)setName:(id)arg1;

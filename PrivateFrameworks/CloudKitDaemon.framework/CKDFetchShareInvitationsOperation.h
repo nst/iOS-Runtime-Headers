@@ -9,26 +9,26 @@
 @class NSArray;
 
 @interface CKDFetchShareInvitationsOperation : CKDOperation {
-    int _fetchType;
-    BOOL _queryAllContainers;
+    long long _fetchType;
     id _shareInvitationFetchedProgressBlock;
     NSArray *_shareInvitations;
+    bool_queryAllContainers;
 }
 
-@property int fetchType;
-@property BOOL queryAllContainers;
+@property long long fetchType;
+@property bool queryAllContainers;
 @property(copy) id shareInvitationFetchedProgressBlock;
 @property(retain) NSArray * shareInvitations;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleShareInvitationFetched:(id)arg1 responseCode:(id)arg2;
-- (int)fetchType;
+- (long long)fetchType;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)queryAllContainers;
-- (void)setFetchType:(int)arg1;
-- (void)setQueryAllContainers:(BOOL)arg1;
+- (bool)queryAllContainers;
+- (void)setFetchType:(long long)arg1;
+- (void)setQueryAllContainers:(bool)arg1;
 - (void)setShareInvitationFetchedProgressBlock:(id)arg1;
 - (void)setShareInvitations:(id)arg1;
 - (id)shareInvitationFetchedProgressBlock;

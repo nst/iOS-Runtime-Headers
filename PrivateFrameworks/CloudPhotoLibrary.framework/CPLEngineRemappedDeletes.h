@@ -9,12 +9,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) Class superclass;
 
 - (void)discardDeleteForRemappedRecordWithIdentifier:(id)arg1;
-- (BOOL)resetWithError:(id*)arg1;
-- (void)scheduleDeleteForRemappedRecordWithIdentifier:(id)arg1 realIdentifier:(id)arg2 asap:(BOOL)arg3;
+- (bool)resetWithError:(id*)arg1;
+- (void)scheduleDeleteForRemappedRecordWithIdentifier:(id)arg1 realIdentifier:(id)arg2 asap:(bool)arg3;
 
 @end

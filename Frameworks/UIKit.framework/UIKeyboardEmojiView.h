@@ -18,7 +18,7 @@
 @property(retain) UIView * popup;
 @property(retain) UIKBRenderConfig * renderConfig;
 
-+ (id)emojiViewForEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)emojiViewForEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (void)recycleEmojiView:(id)arg1;
 
 - (id)createAndInstallKeyPopupView;
@@ -26,11 +26,11 @@
 - (id)delegate;
 - (id)emoji;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 emoji:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 emoji:(id)arg2;
 - (id)popup;
 - (id)renderConfig;
 - (void)setDelegate:(id)arg1;
-- (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)setEmoji:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setPopup:(id)arg1;

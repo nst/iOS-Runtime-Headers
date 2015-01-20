@@ -8,10 +8,10 @@
     OADCharacterProperties *mProperties;
 }
 
-- (unsigned int)characterCount;
+- (unsigned long long)characterCount;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)properties;
 - (void)removeUnnecessaryOverrides;
 - (void)setProperties:(id)arg1;

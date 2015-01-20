@@ -9,7 +9,7 @@
     NSString *_key;
 }
 
-+ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned long long x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 + (id)_proxyShare;
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;

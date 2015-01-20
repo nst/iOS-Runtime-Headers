@@ -22,12 +22,12 @@
 - (id)description;
 - (id)displayLines;
 - (id)geoCompletionItem;
-- (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
-- (unsigned int)hash;
-- (id)highlightsForLine:(unsigned int)arg1;
-- (id)iconWithScale:(float)arg1;
+- (bool)getCoordinate:(struct { double x1; double x2; }*)arg1;
+- (unsigned long long)hash;
+- (id)highlightsForLine:(unsigned long long)arg1;
+- (id)iconWithScale:(double)arg1;
 - (id)initWithGeoCompletionItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedSectionHeader;
 - (id)mapItem;
 - (id)queryLine;

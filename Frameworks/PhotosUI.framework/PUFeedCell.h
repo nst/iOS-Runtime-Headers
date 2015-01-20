@@ -9,18 +9,18 @@
     <PUFeedCellDelegate> *_delegate;
     NSIndexPath *_indexPath;
     NSString *_representedElementKind;
-    BOOL _tappable;
+    bool_tappable;
 }
 
 @property(setter=_setTapGestureRecognizer:,retain) UITapGestureRecognizer * _tapGestureRecognizer;
 @property(copy,readonly) NSString * debugDescription;
 @property <PUFeedCellDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSIndexPath * indexPath;
 @property(retain) NSString * representedElementKind;
 @property(readonly) Class superclass;
-@property(getter=isTappable) BOOL tappable;
+@property(getter=isTappable) bool tappable;
 
 - (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;
@@ -30,14 +30,14 @@
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)indexPath;
-- (BOOL)isTappable;
+- (bool)isTappable;
 - (id)representedElementKind;
 - (void)setDelegate:(id)arg1;
 - (void)setIndexPath:(id)arg1;
 - (void)setRepresentedElementKind:(id)arg1;
-- (void)setTappable:(BOOL)arg1;
-- (BOOL)shouldRecognizerTap:(id)arg1;
+- (void)setTappable:(bool)arg1;
+- (bool)shouldRecognizerTap:(id)arg1;
 
 @end

@@ -9,7 +9,7 @@
     UIImageView *_transitImageView;
 }
 
-- (id)_transitGlyphForTransitType:(int)arg1;
+- (id)_transitGlyphForTransitType:(long long)arg1;
 - (void)createBodyContentViews;
 - (void)dealloc;
 - (void)layoutSubviews;

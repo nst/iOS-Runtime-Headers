@@ -5,7 +5,7 @@
 @interface _MFPlainAuthenticator : MFSASLAuthenticator {
 }
 
-- (BOOL)justSentPlainTextPassword;
+- (bool)justSentPlainTextPassword;
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;
 

@@ -7,24 +7,24 @@
 @interface PLSlideshowAirPlayRoutesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *_airplayRoutes;
     UIView *_containerView;
-    unsigned int _selectedRouteIndex;
+    unsigned long long _selectedRouteIndex;
     UITableView *_table;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int selectedRouteIndex;
+@property(readonly) unsigned long long hash;
+@property unsigned long long selectedRouteIndex;
 @property(readonly) Class superclass;
 
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
-- (id)initWithAirplayRoutes:(id)arg1 selectedRouteIndex:(unsigned int)arg2;
+- (id)initWithAirplayRoutes:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
 - (void)loadView;
-- (unsigned int)selectedRouteIndex;
-- (void)setSelectedRouteIndex:(unsigned int)arg1;
+- (unsigned long long)selectedRouteIndex;
+- (void)setSelectedRouteIndex:(unsigned long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 
 @end

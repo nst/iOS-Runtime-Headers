@@ -5,30 +5,30 @@
 @class NSTimer, UITableViewCell;
 
 @interface PSTableCellHighlightContext : NSObject {
-    BOOL _animateUnhighlight;
     UITableViewCell *_cell;
-    int _originalSelectionStyle;
+    long long _originalSelectionStyle;
     NSTimer *_timer;
-    BOOL _valid;
+    bool_animateUnhighlight;
+    bool_valid;
 }
 
-@property(readonly) BOOL animateUnhighlight;
+@property(readonly) bool animateUnhighlight;
 @property UITableViewCell * cell;
-@property int originalSelectionStyle;
-@property(readonly) BOOL valid;
+@property long long originalSelectionStyle;
+@property(readonly) bool valid;
 
 + (id)contextWithCell:(id)arg1;
 
 - (void)_killTimer;
 - (void)_timerFired;
-- (BOOL)animateUnhighlight;
+- (bool)animateUnhighlight;
 - (id)cell;
 - (void)dealloc;
 - (void)invalidate;
-- (int)originalSelectionStyle;
-- (void)performHighlightForDuration:(double)arg1 animateUnhighlight:(BOOL)arg2;
+- (long long)originalSelectionStyle;
+- (void)performHighlightForDuration:(double)arg1 animateUnhighlight:(bool)arg2;
 - (void)setCell:(id)arg1;
-- (void)setOriginalSelectionStyle:(int)arg1;
-- (BOOL)valid;
+- (void)setOriginalSelectionStyle:(long long)arg1;
+- (bool)valid;
 
 @end

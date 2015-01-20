@@ -9,7 +9,7 @@
     NSString *_address;
     NSString *_label;
     double _latitude;
-    unsigned int _locationType;
+    unsigned long long _locationType;
     double _longitude;
     double _quality;
 }
@@ -18,30 +18,30 @@
 @property(readonly) NSString * address;
 @property(readonly) NSString * label;
 @property(readonly) double latitude;
-@property(readonly) unsigned int locationType;
+@property(readonly) unsigned long long locationType;
 @property(readonly) double longitude;
 @property(readonly) double quality;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)accuracy;
 - (id)address;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)convertToLocation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 label:(id)arg2 address:(id)arg3 accuracy:(double)arg4 quality:(double)arg5;
-- (id)initWithType:(unsigned int)arg1 label:(id)arg2 address:(id)arg3 latitude:(double)arg4 longitude:(double)arg5 accuracy:(double)arg6 quality:(double)arg7;
-- (id)initWithType:(unsigned int)arg1 label:(id)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(double)arg5 quality:(double)arg6;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToStorageLocation:(id)arg1;
+- (id)initWithType:(unsigned long long)arg1 label:(id)arg2 address:(id)arg3 accuracy:(double)arg4 quality:(double)arg5;
+- (id)initWithType:(unsigned long long)arg1 label:(id)arg2 address:(id)arg3 latitude:(double)arg4 longitude:(double)arg5 accuracy:(double)arg6 quality:(double)arg7;
+- (id)initWithType:(unsigned long long)arg1 label:(id)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(double)arg5 quality:(double)arg6;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToStorageLocation:(id)arg1;
 - (id)label;
 - (double)latitude;
-- (unsigned int)locationType;
+- (unsigned long long)locationType;
 - (double)longitude;
 - (double)quality;
 

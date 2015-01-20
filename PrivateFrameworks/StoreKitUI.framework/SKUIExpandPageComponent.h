@@ -12,9 +12,9 @@
 @property(readonly) SKUIExpandViewElement * viewElement;
 
 - (void).cxx_destruct;
-- (id)childComponentForIndex:(int)arg1;
+- (id)childComponentForIndex:(long long)arg1;
 - (id)childComponents;
-- (int)componentType;
+- (long long)componentType;
 - (id)initWithViewElement:(id)arg1;
 - (id)metricsElementName;
 - (id)viewElement;

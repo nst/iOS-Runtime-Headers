@@ -10,19 +10,19 @@
     <LTEAudioSessionDelegate> *_delegate;
     LTEConferenceXPCClient *connection;
     LTEConference *opaqueSession;
-    unsigned int sessionID;
+    unsigned long long sessionID;
     id weakSelf;
 }
 
 @property(retain) NSDictionary * capabilities;
 @property(retain) LTEAudioSessionConfig * configuration;
 @property <LTEAudioSessionDelegate> * delegate;
-@property int direction;
-@property(getter=isRTCPEnabled) BOOL rtcpEnabled;
+@property long long direction;
+@property(getter=isRTCPEnabled) bool rtcpEnabled;
 @property double rtcpSendIntervalSec;
-@property(getter=isRTCPTimeOutEnabled) BOOL rtcpTimeOutEnabled;
+@property(getter=isRTCPTimeOutEnabled) bool rtcpTimeOutEnabled;
 @property double rtcpTimeOutIntervalSec;
-@property(getter=isRTPTimeOutEnabled) BOOL rtpTimeOutEnabled;
+@property(getter=isRTPTimeOutEnabled) bool rtpTimeOutEnabled;
 @property double rtpTimeOutIntervalSec;
 
 - (id)capabilities;
@@ -31,17 +31,17 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)deregisterBlocksForDelegateNotifications;
-- (int)direction;
+- (long long)direction;
 - (id)initWithLocalAddress:(id)arg1 error:(id*)arg2;
-- (id)initWithLocalAddress:(id)arg1 isOriginator:(BOOL)arg2 error:(id*)arg3;
-- (id)initWithLocalAddress:(id)arg1 networkSockets:(id)arg2 isOriginator:(BOOL)arg3 error:(id*)arg4;
-- (id)initWithNetworkSockets:(id)arg1 isOriginator:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)isRTCPEnabled;
-- (BOOL)isRTCPTimeOutEnabled;
-- (BOOL)isRTPTimeOutEnabled;
+- (id)initWithLocalAddress:(id)arg1 isOriginator:(bool)arg2 error:(id*)arg3;
+- (id)initWithLocalAddress:(id)arg1 networkSockets:(id)arg2 isOriginator:(bool)arg3 error:(id*)arg4;
+- (id)initWithNetworkSockets:(id)arg1 isOriginator:(bool)arg2 error:(id*)arg3;
+- (bool)isRTCPEnabled;
+- (bool)isRTCPTimeOutEnabled;
+- (bool)isRTPTimeOutEnabled;
 - (void)lteConference:(id)arg1 didReceiveDTMFEventWithDigit:(BOOL)arg2;
 - (void)lteConference:(id)arg1 didReceiveRTCPPackets:(id)arg2;
-- (void)lteConference:(id)arg1 didStartSession:(BOOL)arg2 error:(id)arg3;
+- (void)lteConference:(id)arg1 didStartSession:(bool)arg2 error:(id)arg3;
 - (void)lteConferenceDidRTCPTimeOut:(id)arg1;
 - (void)lteConferenceDidRTPTimeOut:(id)arg1;
 - (void)lteConferenceDidStop:(id)arg1;
@@ -55,12 +55,12 @@
 - (void)setCapabilities:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDirection:(int)arg1;
-- (void)setRtcpEnabled:(BOOL)arg1;
+- (void)setDirection:(long long)arg1;
+- (void)setRtcpEnabled:(bool)arg1;
 - (void)setRtcpSendIntervalSec:(double)arg1;
-- (void)setRtcpTimeOutEnabled:(BOOL)arg1;
+- (void)setRtcpTimeOutEnabled:(bool)arg1;
 - (void)setRtcpTimeOutIntervalSec:(double)arg1;
-- (void)setRtpTimeOutEnabled:(BOOL)arg1;
+- (void)setRtpTimeOutEnabled:(bool)arg1;
 - (void)setRtpTimeOutIntervalSec:(double)arg1;
 - (void)start;
 - (void)startContinuousDTMFWithDigit:(BOOL)arg1 volume:(unsigned char)arg2;

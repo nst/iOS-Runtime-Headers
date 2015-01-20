@@ -15,16 +15,16 @@
     float LOmega;
     float RA;
     float ROmega;
-    BOOL collectDebugData;
+    boolcollectDebugData;
+    boolestimate;
+    boolshowDebugData;
     NSMutableArray *debugData;
-    BOOL estimate;
     CMMotionManager *motionManager;
     int numberOfSamples;
     int numberOfValidSamplesAngularVelocity;
     int numberOfValidSamplesLinearAcceleration;
     NSOperationQueue *operationQueue;
     void *outputRefCon;
-    BOOL showDebugData;
     unsigned long long startTime;
     unsigned long long stopTime;
 }
@@ -33,7 +33,7 @@
 @property float LOmega;
 @property float RA;
 @property float ROmega;
-@property BOOL estimate;
+@property bool estimate;
 @property int numberOfSamples;
 @property int numberOfValidSamplesAngularVelocity;
 @property int numberOfValidSamplesLinearAcceleration;
@@ -45,7 +45,7 @@
 - (float)ROmega;
 - (id)createCSVfromDebugData;
 - (void)dealloc;
-- (BOOL)estimate;
+- (bool)estimate;
 - (void)estimateSwingMotion;
 - (void)initSensors;
 - (id)initWithCallback:(int (*)())arg1 userData:(void*)arg2;
@@ -55,7 +55,7 @@
 - (int)numberOfValidSamplesAngularVelocity;
 - (int)numberOfValidSamplesLinearAcceleration;
 - (id)operationQueue;
-- (void)setEstimate:(BOOL)arg1;
+- (void)setEstimate:(bool)arg1;
 - (void)setLA:(float)arg1;
 - (void)setLOmega:(float)arg1;
 - (void)setNumberOfSamples:(int)arg1;
@@ -64,7 +64,7 @@
 - (void)setRA:(float)arg1;
 - (void)setROmega:(float)arg1;
 - (void)stopMotionManager;
-- (float)updateEvidenceAngularVelocity:(float)arg1 withOmegaX:(float)arg2 withOmegaY:(float)arg3 withOmegaZ:(float)arg4 checkIfSampleIsGood:(BOOL*)arg5;
-- (float)updateEvidenceLinearAcceleration:(float)arg1 withAX:(float)arg2 withAY:(float)arg3 withAZ:(float)arg4 checkIfSampleIsGood:(BOOL*)arg5;
+- (float)updateEvidenceAngularVelocity:(float)arg1 withOmegaX:(float)arg2 withOmegaY:(float)arg3 withOmegaZ:(float)arg4 checkIfSampleIsGood:(bool*)arg5;
+- (float)updateEvidenceLinearAcceleration:(float)arg1 withAX:(float)arg2 withAY:(float)arg3 withAZ:(float)arg4 checkIfSampleIsGood:(bool*)arg5;
 
 @end

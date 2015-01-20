@@ -15,7 +15,7 @@
 @property(readonly) SKUICountdownComponent * countdownComponent;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (id)initWithCountdownComponent:(id)arg1 artworkLoader:(id)arg2;
 - (void)loadView;
 - (void)setClientContext:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

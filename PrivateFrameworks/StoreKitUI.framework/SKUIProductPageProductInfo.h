@@ -9,11 +9,11 @@
     NSMutableArray *_values;
 }
 
-@property(readonly) int numberOfEntries;
+@property(readonly) long long numberOfEntries;
 
 - (void).cxx_destruct;
 - (void)enumerateEntriesWithBlock:(id)arg1;
 - (id)initWithInfoSectionDictionaries:(id)arg1;
-- (int)numberOfEntries;
+- (long long)numberOfEntries;
 
 @end

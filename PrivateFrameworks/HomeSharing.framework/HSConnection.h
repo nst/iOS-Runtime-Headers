@@ -8,32 +8,32 @@
     NSObject<OS_dispatch_source> *_activityTimerSource;
     HSConnectionConfiguration *_configuration;
     NSURLSession *_connectionSession;
-    int _connectionState;
+    long long _connectionState;
     HSConnectionStream *_connectionStream;
-    int _connectionType;
+    long long _connectionType;
     unsigned int _controlKey;
     unsigned int _controlPort;
     unsigned int _interfaceID;
     unsigned int _promptID;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    BOOL _tokenCheckRequred;
-    BOOL authenticationRequired;
     unsigned int basePlaylistContainerID;
+    bool_tokenCheckRequred;
+    boolauthenticationRequired;
+    booltokenCheckRequired;
     unsigned int databaseID;
     unsigned int databaseRevision;
     HSFairPlayInfo *fairPlayInfo;
     NSString *homeSharingGroupID;
     NSString *password;
     unsigned int sessionID;
-    BOOL tokenCheckRequired;
     NSString *username;
 }
 
-@property(getter=isAuthenticationRequired) BOOL authenticationRequired;
+@property(getter=isAuthenticationRequired) bool authenticationRequired;
 @property unsigned int basePlaylistContainerID;
 @property(readonly) NSURL * baseURL;
-@property int connectionState;
-@property(readonly) int connectionType;
+@property long long connectionState;
+@property(readonly) long long connectionType;
 @property unsigned int controlKey;
 @property unsigned int controlPort;
 @property unsigned int databaseID;
@@ -44,8 +44,8 @@
 @property(copy) NSString * password;
 @property unsigned int promptID;
 @property unsigned int sessionID;
-@property BOOL tokenCheckRequired;
-@property(getter=isTokenCheckRequired,readonly) BOOL tokenCheckRequred;
+@property bool tokenCheckRequired;
+@property(getter=isTokenCheckRequired,readonly) bool tokenCheckRequred;
 @property(copy) NSString * username;
 
 + (void)_scheduleDialogResetIfNeeded;
@@ -62,8 +62,8 @@
 - (id)baseURL;
 - (void)checkForDatabaseUpdatesWithCompletionHandler:(id)arg1;
 - (void)connectWithCompletionHandler:(id)arg1;
-- (int)connectionState;
-- (int)connectionType;
+- (long long)connectionState;
+- (long long)connectionType;
 - (unsigned int)controlKey;
 - (unsigned int)controlPort;
 - (unsigned int)databaseID;
@@ -72,20 +72,20 @@
 - (void)disconnect;
 - (id)fairPlayInfo;
 - (id)homeSharingGroupID;
-- (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
+- (id)initWithBaseURL:(id)arg1 connectionType:(long long)arg2;
 - (id)initWithBaseURL:(id)arg1;
-- (id)initWithConfiguration:(id)arg1 connectionType:(int)arg2;
+- (id)initWithConfiguration:(id)arg1 connectionType:(long long)arg2;
 - (unsigned int)interfaceID;
-- (BOOL)isAuthenticationRequired;
-- (BOOL)isTokenCheckRequired;
+- (bool)isAuthenticationRequired;
+- (bool)isTokenCheckRequired;
 - (id)newControlConnection;
 - (id)password;
 - (unsigned int)promptID;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id)arg2;
 - (unsigned int)sessionID;
-- (void)setAuthenticationRequired:(BOOL)arg1;
+- (void)setAuthenticationRequired:(bool)arg1;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;
-- (void)setConnectionState:(int)arg1;
+- (void)setConnectionState:(long long)arg1;
 - (void)setControlKey:(unsigned int)arg1;
 - (void)setControlPort:(unsigned int)arg1;
 - (void)setDatabaseID:(unsigned int)arg1;
@@ -96,10 +96,10 @@
 - (void)setPassword:(id)arg1;
 - (void)setPromptID:(unsigned int)arg1;
 - (void)setSessionID:(unsigned int)arg1;
-- (void)setTokenCheckRequired:(BOOL)arg1;
+- (void)setTokenCheckRequired:(bool)arg1;
 - (void)setUsername:(id)arg1;
 - (id)signedRequestFromURLRequest:(id)arg1;
-- (BOOL)tokenCheckRequired;
+- (bool)tokenCheckRequired;
 - (id)username;
 
 @end

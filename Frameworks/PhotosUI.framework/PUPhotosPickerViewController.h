@@ -21,11 +21,11 @@
 @property int currentContentMode;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2 orTargetAlbumName:(id)arg3 isLocal:(BOOL)arg4;
+- (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2 orTargetAlbumName:(id)arg3 isLocal:(bool)arg4;
 - (void)_setTabbedLibraryViewController:(id)arg1;
 - (id)_tabbedLibraryViewController;
 - (void)assetContainerListDidChange:(id)arg1;
@@ -34,13 +34,13 @@
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2;
-- (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 isLocal:(BOOL)arg3;
+- (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 isLocal:(bool)arg3;
 - (void)loadView;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setCurrentContentMode:(int)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 
 @end

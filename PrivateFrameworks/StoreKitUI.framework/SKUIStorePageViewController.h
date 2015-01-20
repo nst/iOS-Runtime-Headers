@@ -10,7 +10,6 @@
     NSString *_lastDataConsumerClassName;
     SSMetricsPageEvent *_lastPageEvent;
     NSURLRequest *_lastRequest;
-    BOOL _loadOnAppear;
     SSVLoadURLOperation *_loadOperation;
     SKUIMetricsController *_metricsController;
     NSOperationQueue *_operationQueue;
@@ -20,20 +19,21 @@
     UIRefreshControl *_refreshControl;
     SKUIStorePageSectionsViewController *_sectionsViewController;
     SKUIStorePage *_storePage;
+    bool_loadOnAppear;
 }
 
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIStorePageDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isLoading,readonly) BOOL loading;
+@property(readonly) unsigned long long hash;
+@property(getter=isLoading,readonly) bool loading;
 @property(retain) NSOperationQueue * operationQueue;
 @property(retain) UIRefreshControl * refreshControl;
 @property(copy) SKUIStorePage * storePage;
 @property(readonly) Class superclass;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (bool)_shouldForwardViewWillTransitionToSize;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
@@ -55,10 +55,10 @@
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadURL:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)loadURL:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id)arg3;
 - (void)loadURLRequest:(id)arg1 withCompletionBlock:(id)arg2;
@@ -66,10 +66,10 @@
 - (void)loadView;
 - (void)loadWithJSONData:(id)arg1 fromOperation:(id)arg2 completionBlock:(id)arg3;
 - (id)operationQueue;
-- (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
+- (bool)performTestWithName:(id)arg1 options:(id)arg2;
 - (id)refreshControl;
-- (BOOL)sectionsViewController:(id)arg1 showProductPageForItem:(id)arg2;
-- (BOOL)sectionsViewController:(id)arg1 showStorePageForURL:(id)arg2;
+- (bool)sectionsViewController:(id)arg1 showProductPageForItem:(id)arg2;
+- (bool)sectionsViewController:(id)arg1 showStorePageForURL:(id)arg2;
 - (void)sectionsViewControllerDidDismissOverlayController:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -78,7 +78,7 @@
 - (void)setRefreshControl:(id)arg1;
 - (void)setStorePage:(id)arg1;
 - (id)storePage;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewWillAppear:(BOOL)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -5,15 +5,15 @@
 @class NSArray, NSData, NSMutableDictionary, NSString;
 
 @interface NSHTTPURLRequestParameters : NSObject {
-    BOOL _pad1;
-    BOOL _pad2;
-    BOOL _pad3;
+    bool_pad1;
+    bool_pad2;
+    bool_pad3;
+    boolshouldHandleCookies;
     NSData *data;
     NSArray *extraCookies;
     NSMutableDictionary *fields;
     NSString *method;
-    unsigned int pageNotFoundCacheLifetime;
-    BOOL shouldHandleCookies;
+    unsigned long long pageNotFoundCacheLifetime;
 }
 
 - (void)dealloc;

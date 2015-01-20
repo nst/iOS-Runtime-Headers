@@ -9,8 +9,8 @@
     CKDPRecordFieldValue *_value;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasValue;
+@property(readonly) bool hasIdentifier;
+@property(readonly) bool hasValue;
 @property(retain) CKDPRecordFieldIdentifier * identifier;
 @property(retain) CKDPRecordFieldValue * value;
 
@@ -21,13 +21,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasValue;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasValue;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

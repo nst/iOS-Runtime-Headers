@@ -3,29 +3,29 @@
  */
 
 @interface PKPassDateField : PKPassField {
-    int _dateStyle;
-    BOOL _ignoresTimeZone;
-    BOOL _isRelative;
-    int _timeStyle;
+    long long _dateStyle;
+    long long _timeStyle;
+    bool_ignoresTimeZone;
+    bool_isRelative;
 }
 
-@property int dateStyle;
-@property BOOL ignoresTimeZone;
-@property BOOL isRelative;
-@property int timeStyle;
+@property long long dateStyle;
+@property bool ignoresTimeZone;
+@property bool isRelative;
+@property long long timeStyle;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)dateStyle;
+- (long long)dateStyle;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)ignoresTimeZone;
+- (bool)ignoresTimeZone;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isRelative;
-- (void)setDateStyle:(int)arg1;
-- (void)setIgnoresTimeZone:(BOOL)arg1;
-- (void)setIsRelative:(BOOL)arg1;
-- (void)setTimeStyle:(int)arg1;
-- (int)timeStyle;
+- (bool)isRelative;
+- (void)setDateStyle:(long long)arg1;
+- (void)setIgnoresTimeZone:(bool)arg1;
+- (void)setIsRelative:(bool)arg1;
+- (void)setTimeStyle:(long long)arg1;
+- (long long)timeStyle;
 - (id)value;
 
 @end

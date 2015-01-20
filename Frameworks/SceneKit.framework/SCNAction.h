@@ -12,72 +12,72 @@
  */
 
 @interface SCNAction : NSObject <NSCopying, NSSecureCoding> {
-     /* Encoded args for previous method: ^{SCNCAction=^^?f@?@BddffdBB@?^{__CFString}iffff}8@0:4 */
-    struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; float x9; float x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; } *_caction;
+     /* Encoded args for previous method: ^{SCNCAction=^^?f@?@BdddddBB@?^{__CFString}qdddd}16@0:8 */
+    struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; double x9; double x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; long long x17; double x18; double x19; double x20; double x21; } *_caction;
     id _reserved;
 }
 
 @property double duration;
-@property float speed;
+@property double speed;
 @property id timingFunction;
-@property int timingMode;
+@property long long timingMode;
 
 + (id)SCNJSExportProtocol;
 + (id)customActionWithDuration:(double)arg1 actionBlock:(id)arg2;
 + (id)fadeInWithDuration:(double)arg1;
-+ (id)fadeOpacityBy:(float)arg1 duration:(double)arg2;
-+ (id)fadeOpacityTo:(float)arg1 duration:(double)arg2;
++ (id)fadeOpacityBy:(double)arg1 duration:(double)arg2;
++ (id)fadeOpacityTo:(double)arg1 duration:(double)arg2;
 + (id)fadeOutWithDuration:(double)arg1;
 + (id)group:(id)arg1;
 + (id)javaScriptActionWithScript:(id)arg1 duration:(double)arg2;
 + (id)moveBy:(struct SCNVector3 { float x1; float x2; float x3; })arg1 duration:(double)arg2;
-+ (id)moveByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
++ (id)moveByX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4;
 + (id)moveTo:(struct SCNVector3 { float x1; float x2; float x3; })arg1 duration:(double)arg2;
 + (id)performSelector:(SEL)arg1 onTarget:(id)arg2;
 + (id)removeFromParentNode;
-+ (id)repeatAction:(id)arg1 count:(unsigned int)arg2;
++ (id)repeatAction:(id)arg1 count:(unsigned long long)arg2;
 + (id)repeatActionForever:(id)arg1;
-+ (id)rotateByAngle:(float)arg1 aroundAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg2 duration:(double)arg3;
-+ (id)rotateByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
++ (id)rotateByAngle:(double)arg1 aroundAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg2 duration:(double)arg3;
++ (id)rotateByX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4;
 + (id)rotateToAxisAngle:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 duration:(double)arg2;
-+ (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4 shortestUnitArc:(BOOL)arg5;
-+ (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
++ (id)rotateToX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4 shortestUnitArc:(bool)arg5;
++ (id)rotateToX:(double)arg1 y:(double)arg2 z:(double)arg3 duration:(double)arg4;
 + (id)runAction:(id)arg1 onChildNodeWithName:(id)arg2;
 + (id)runBlock:(id)arg1 queue:(id)arg2;
 + (id)runBlock:(id)arg1;
-+ (id)scaleBy:(float)arg1 duration:(double)arg2;
-+ (id)scaleTo:(float)arg1 duration:(double)arg2;
++ (id)scaleBy:(double)arg1 duration:(double)arg2;
++ (id)scaleTo:(double)arg1 duration:(double)arg2;
 + (id)sequence:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 + (id)waitForDuration:(double)arg1;
 
-- (struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; float x9; float x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; }*)caction;
+- (struct SCNCAction { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; double x9; double x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; long long x17; double x18; double x19; double x20; double x21; }*)caction;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (double)duration;
 - (double)durationRange;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)finished;
+- (bool)finished;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCustom;
-- (float)ratioForTime:(double)arg1;
+- (bool)isCustom;
+- (double)ratioForTime:(double)arg1;
 - (id)reversedAction;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setCppAction:(void*)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setDurationRange:(double)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setKey:(id)arg1;
-- (void)setSpeed:(float)arg1;
+- (void)setSpeed:(double)arg1;
 - (void)setTimingFunction:(id)arg1;
-- (void)setTimingMode:(int)arg1;
-- (float)speed;
+- (void)setTimingMode:(long long)arg1;
+- (double)speed;
 - (void)timeJumpWithTarget:(id)arg1 timeOffset:(double)arg2;
 - (id)timingFunction;
-- (int)timingMode;
+- (long long)timingMode;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;
 - (void)wasAddedToTarget:(id)arg1 atTime:(double)arg2;
 - (void)wasPausedWithTarget:(id)arg1 atTime:(double)arg2;

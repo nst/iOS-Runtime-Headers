@@ -5,6 +5,6 @@
 @interface TSCHChartAreaElementsRenderer : TSCHChartAbstractLineElementsRenderer {
 }
 
-- (BOOL)supportsSeparateLabelsRenderPass;
+- (bool)supportsSeparateLabelsRenderPass;
 
 @end

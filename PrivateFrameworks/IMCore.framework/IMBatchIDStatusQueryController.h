@@ -7,10 +7,10 @@
 @interface IMBatchIDStatusQueryController : NSObject {
     NSMutableArray *_imHandles;
     NSMutableArray *_imHandlesQueried;
-    BOOL _isDead;
     NSTimer *_nextQueryTimer;
     int _numberOfQueriesDone;
     NSDate *_timeOfDeath;
+    bool_isDead;
 }
 
 - (void)_invalidateNextQueryTimer;

@@ -12,12 +12,12 @@
     SGSimpleNamedEmailAddress *_from;
     NSArray *_headers;
     NSString *_htmlBody;
-    BOOL _isInhuman;
     NSString *_messageId;
     NSNumber *_received;
     SGSimpleNamedEmailAddress *_replyTo;
     NSString *_subject;
     NSArray *_to;
+    bool_isInhuman;
 }
 
 @property(copy) NSArray * bcc;
@@ -27,7 +27,7 @@
 @property(copy) SGSimpleNamedEmailAddress * from;
 @property(readonly) NSArray * headers;
 @property(copy) NSString * htmlBody;
-@property BOOL isInhuman;
+@property bool isInhuman;
 @property(readonly) SGSimpleNamedEmailAddress * mailingList;
 @property(copy) NSString * messageId;
 @property(copy) NSNumber * received;
@@ -38,7 +38,7 @@
 
 + (id)fromDictionary:(id)arg1;
 + (id)parseRfc822Headers:(id)arg1 htmlContent:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)asDictionary;
@@ -50,13 +50,13 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)from;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)headers;
 - (id)htmlBody;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSimpleMailMessage:(id)arg1;
-- (BOOL)isInhuman;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSimpleMailMessage:(id)arg1;
+- (bool)isInhuman;
 - (id)mailingList;
 - (id)messageId;
 - (id)received;
@@ -68,7 +68,7 @@
 - (void)setDate:(id)arg1;
 - (void)setFrom:(id)arg1;
 - (void)setHtmlBody:(id)arg1;
-- (void)setIsInhuman:(BOOL)arg1;
+- (void)setIsInhuman:(bool)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)setReceived:(id)arg1;
 - (void)setReplyTo:(id)arg1;

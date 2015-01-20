@@ -14,8 +14,8 @@
 
 - (id)cloneTargetPipeline:(id)arg1;
 - (void)dealloc;
-- (BOOL)renderTile:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 targetPipeline:(id)arg2;
-- (id)setupWithTileSize:(int)arg1 overlap:(int)arg2 tileSamples:(int)arg3 tileSuperSamples:(int)arg4 targetPipeline:(id)arg5;
+- (bool)renderTile:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 targetPipeline:(id)arg2;
+- (id)setupWithTileSize:(long long)arg1 overlap:(long long)arg2 tileSamples:(long long)arg3 tileSuperSamples:(long long)arg4 targetPipeline:(id)arg5;
 - (id)tileSetup;
 
 @end

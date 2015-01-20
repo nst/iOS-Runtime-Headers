@@ -26,7 +26,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -54,7 +54,7 @@
 - (void)environmentMonitorDidChangePower:(id)arg1;
 - (void)getSyncStateWithCompletion:(id)arg1;
 - (id)init;
-- (void)keepATCAlive:(BOOL)arg1 withCompletion:(id)arg2;
+- (void)keepATCAlive:(bool)arg1 withCompletion:(id)arg2;
 - (void)listener:(id)arg1 didReceiveMessageLinkRequest:(id)arg2;
 - (void)lowBatteryNotificationWithCompletion:(id)arg1;
 - (void)messageLinkWasClosed:(id)arg1;
@@ -66,8 +66,8 @@
 - (void)removeMessageLink:(id)arg1;
 - (void)requestSyncForLibrary:(id)arg1 withCompletion:(id)arg2;
 - (void)requestSyncForPairedDeviceWithPriority:(int)arg1 withCompletion:(id)arg2;
-- (BOOL)run;
-- (BOOL)stop;
+- (bool)run;
+- (bool)stop;
 - (void)syncClient:(id)arg1 hasChangesWithPriority:(int)arg2;
 
 @end

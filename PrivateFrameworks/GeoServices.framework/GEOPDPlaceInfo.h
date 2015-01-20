@@ -11,17 +11,17 @@
     double _area;
     GEOLatLng *_center;
     } _has;
-    BOOL _isApproximateCenter;
     GEOTimezone *_timezone;
+    bool_isApproximateCenter;
 }
 
 @property double area;
 @property(retain) GEOLatLng * center;
-@property BOOL hasArea;
-@property(readonly) BOOL hasCenter;
-@property BOOL hasIsApproximateCenter;
-@property(readonly) BOOL hasTimezone;
-@property BOOL isApproximateCenter;
+@property bool hasArea;
+@property(readonly) bool hasCenter;
+@property bool hasIsApproximateCenter;
+@property(readonly) bool hasTimezone;
+@property bool isApproximateCenter;
 @property(retain) GEOTimezone * timezone;
 
 + (id)placeInfoForPlaceData:(id)arg1;
@@ -33,20 +33,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArea;
-- (BOOL)hasCenter;
-- (BOOL)hasIsApproximateCenter;
-- (BOOL)hasTimezone;
-- (unsigned int)hash;
-- (BOOL)isApproximateCenter;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasArea;
+- (bool)hasCenter;
+- (bool)hasIsApproximateCenter;
+- (bool)hasTimezone;
+- (unsigned long long)hash;
+- (bool)isApproximateCenter;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArea:(double)arg1;
 - (void)setCenter:(id)arg1;
-- (void)setHasArea:(BOOL)arg1;
-- (void)setHasIsApproximateCenter:(BOOL)arg1;
-- (void)setIsApproximateCenter:(BOOL)arg1;
+- (void)setHasArea:(bool)arg1;
+- (void)setHasIsApproximateCenter:(bool)arg1;
+- (void)setIsApproximateCenter:(bool)arg1;
 - (void)setTimezone:(id)arg1;
 - (id)timezone;
 - (void)writeTo:(id)arg1;

@@ -20,7 +20,7 @@
 @property(retain) NSObject<OS_dispatch_queue> * notificationQueue;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
-+ (id)applicationStateDescription:(unsigned int)arg1;
++ (id)applicationStateDescription:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)bkAppStateMonitor;

@@ -5,46 +5,46 @@
 @class NSMutableOrderedSet, NSNumber, NSString, NSURL, PLGenericAlbum;
 
 @interface PLPersistedAlbumMetadata : NSObject {
-    BOOL _allowsOverwite;
     NSMutableOrderedSet *_assetUUIDs;
     NSString *_cloudGUID;
     NSString *_customKeyAssetUUID;
-    BOOL _customSortAscending;
     int _customSortKey;
     PLGenericAlbum *_genericAlbum;
-    BOOL _inTrash;
-    BOOL _isFolder;
     NSNumber *_kind;
     NSURL *_metadataURL;
-    BOOL _pinned;
     NSString *_title;
     NSString *_uuid;
+    bool_allowsOverwite;
+    bool_customSortAscending;
+    bool_inTrash;
+    bool_isFolder;
+    bool_pinned;
 }
 
-@property BOOL allowsOverwite;
+@property bool allowsOverwite;
 @property(retain) NSMutableOrderedSet * assetUUIDs;
 @property(retain) NSString * cloudGUID;
 @property(retain) NSString * customKeyAssetUUID;
-@property BOOL customSortAscending;
+@property bool customSortAscending;
 @property int customSortKey;
 @property(retain) PLGenericAlbum * genericAlbum;
-@property(getter=isInTrash) BOOL inTrash;
-@property(readonly) BOOL isFolder;
+@property(getter=isInTrash) bool inTrash;
+@property(readonly) bool isFolder;
 @property(retain) NSNumber * kind;
 @property(retain) NSURL * metadataURL;
-@property(getter=isPinned) BOOL pinned;
+@property(getter=isPinned) bool pinned;
 @property(retain) NSString * title;
 @property(retain) NSString * uuid;
 
-+ (BOOL)isValidPath:(id)arg1;
++ (bool)isValidPath:(id)arg1;
 
 - (void)_readMetadata;
 - (void)_saveMetadata;
-- (BOOL)allowsOverwite;
+- (bool)allowsOverwite;
 - (id)assetUUIDs;
 - (id)cloudGUID;
 - (id)customKeyAssetUUID;
-- (BOOL)customSortAscending;
+- (bool)customSortAscending;
 - (int)customSortKey;
 - (void)dealloc;
 - (id)description;
@@ -55,28 +55,28 @@
 - (id)initWithPersistedDataAtPath:(id)arg1;
 - (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 assetUUIDs:(id)arg5;
 - (id)insertAlbumFromDataInManagedObjectContext:(id)arg1;
-- (BOOL)isFolder;
-- (BOOL)isInTrash;
-- (BOOL)isPinned;
+- (bool)isFolder;
+- (bool)isInTrash;
+- (bool)isPinned;
 - (id)kind;
 - (id)metadataURL;
 - (void)persistAlbumData;
 - (void)removePersistedAlbumData;
-- (void)setAllowsOverwite:(BOOL)arg1;
+- (void)setAllowsOverwite:(bool)arg1;
 - (void)setAssetUUIDs:(id)arg1;
 - (void)setCloudGUID:(id)arg1;
 - (void)setCustomKeyAssetUUID:(id)arg1;
-- (void)setCustomSortAscending:(BOOL)arg1;
+- (void)setCustomSortAscending:(bool)arg1;
 - (void)setCustomSortKey:(int)arg1;
 - (void)setGenericAlbum:(id)arg1;
-- (void)setInTrash:(BOOL)arg1;
+- (void)setInTrash:(bool)arg1;
 - (void)setKind:(id)arg1;
 - (void)setMetadataURL:(id)arg1;
-- (void)setPinned:(BOOL)arg1;
+- (void)setPinned:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (id)title;
-- (void)updateChildrenOrderingInAlbum:(id)arg1 includePendingAssetChanges:(BOOL)arg2;
+- (void)updateChildrenOrderingInAlbum:(id)arg1 includePendingAssetChanges:(bool)arg2;
 - (id)uuid;
 
 @end

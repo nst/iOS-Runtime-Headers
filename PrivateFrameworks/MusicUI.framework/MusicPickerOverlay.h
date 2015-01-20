@@ -5,28 +5,28 @@
 @class <MusicPickerOverlayDelegate>, NSString, UIBarButtonItem, UIViewController;
 
 @interface MusicPickerOverlay : NSObject {
-    BOOL _allowsMultipleSelections;
     <MusicPickerOverlayDelegate> *_delegate;
     UIViewController *_viewController;
+    bool_allowsMultipleSelections;
 }
 
-@property BOOL allowsMultipleSelections;
+@property bool allowsMultipleSelections;
 @property <MusicPickerOverlayDelegate> * delegate;
 @property(readonly) UIBarButtonItem * rightBarButtonItem;
 @property(readonly) NSString * title;
 @property(retain) UIViewController * viewController;
 
 - (void).cxx_destruct;
-- (BOOL)allowsMultipleSelections;
+- (bool)allowsMultipleSelections;
 - (id)delegate;
 - (void)finish;
 - (void)loadViewController;
 - (id)rightBarButtonItem;
-- (void)setAllowsMultipleSelections:(BOOL)arg1;
+- (void)setAllowsMultipleSelections:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setViewController:(id)arg1;
-- (BOOL)shouldDisplayAddAllAsDisabledFromDataSource:(id)arg1;
-- (BOOL)shouldDisplayEntityAsDisabled:(id)arg1;
+- (bool)shouldDisplayAddAllAsDisabledFromDataSource:(id)arg1;
+- (bool)shouldDisplayEntityAsDisabled:(id)arg1;
 - (id)title;
 - (void)viewController:(id)arg1 didPickAllEntitiesFromDataSource:(id)arg2;
 - (void)viewController:(id)arg1 didPickEntity:(id)arg2;

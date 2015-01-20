@@ -18,7 +18,7 @@
 @property(copy,readonly) HKCorrelationType * correlationType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy,readonly) NSDictionary * samplePredicates;
 @property(readonly) Class superclass;
 

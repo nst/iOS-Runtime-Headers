@@ -9,11 +9,8 @@
 @class NSArray, NSData, NSDictionary, NSMutableDictionary;
 
 @interface MRMediaRemoteOriginClient : NSObject {
-    BOOL _canBeNowPlayingApp;
     id _commandHandlerBlock;
     NSMutableDictionary *_commandHandlerBlocks;
-    BOOL _isOverrideApp;
-    BOOL _keepAlive;
     int _notifyDidLaunchToken;
     int _notifyRestoreClientStateForLaunch;
     NSData *_nowPlayingArtworkData;
@@ -21,12 +18,15 @@
     struct _MROrigin { } *_origin;
     id _playbackStateRequestHandler;
     unsigned int _routeDiscoveryMode;
+    bool_canBeNowPlayingApp;
+    bool_isOverrideApp;
+    bool_keepAlive;
 }
 
-@property BOOL canBeNowPlayingApp;
+@property bool canBeNowPlayingApp;
 @property(copy,readonly) NSArray * commandHandlerBlocks;
-@property BOOL isOverrideApp;
-@property BOOL keepAlive;
+@property bool isOverrideApp;
+@property bool keepAlive;
 @property(retain) NSData * nowPlayingArtworkData;
 @property(retain) NSDictionary * nowPlayingInfo;
 @property(readonly) struct _MROrigin { }* origin;
@@ -35,21 +35,21 @@
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
 - (void)addCommandHandlerBlock:(id)arg1 forKey:(id)arg2;
-- (BOOL)canBeNowPlayingApp;
+- (bool)canBeNowPlayingApp;
 - (id)commandHandlerBlocks;
 - (void)dealloc;
 - (id)initWithOrigin:(struct _MROrigin { }*)arg1;
-- (BOOL)isOverrideApp;
-- (BOOL)keepAlive;
+- (bool)isOverrideApp;
+- (bool)keepAlive;
 - (id)nowPlayingArtworkData;
 - (id)nowPlayingInfo;
 - (struct _MROrigin { }*)origin;
 - (id)playbackStateRequestHandler;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (unsigned int)routeDiscoveryMode;
-- (void)setCanBeNowPlayingApp:(BOOL)arg1;
-- (void)setIsOverrideApp:(BOOL)arg1;
-- (void)setKeepAlive:(BOOL)arg1;
+- (void)setCanBeNowPlayingApp:(bool)arg1;
+- (void)setIsOverrideApp:(bool)arg1;
+- (void)setKeepAlive:(bool)arg1;
 - (void)setNowPlayingArtworkData:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackStateRequestHandler:(id)arg1;

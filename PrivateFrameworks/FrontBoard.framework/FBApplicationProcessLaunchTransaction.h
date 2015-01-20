@@ -13,23 +13,23 @@
     FBWaitForProcessDeathTransaction *_deathTransaction;
     FBProcessExecutionContext *_executionContext;
     id _executionContextProvider;
-    BOOL _exited;
-    BOOL _failedLaunch;
     FBApplicationProcess *_process;
-    BOOL _processIsValid;
     FBProcessManager *_processManager;
+    bool_exited;
+    bool_failedLaunch;
+    bool_processIsValid;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) BOOL exited;
-@property(readonly) BOOL failedLaunch;
-@property(readonly) unsigned int hash;
+@property(readonly) bool exited;
+@property(readonly) bool failedLaunch;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) FBApplicationProcess * process;
 @property(readonly) Class superclass;
 
 - (void)_begin;
-- (BOOL)_canBeInterrupted;
+- (bool)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
@@ -40,8 +40,8 @@
 - (void)applicationProcessDidLaunch:(id)arg1;
 - (void)applicationProcessWillLaunch:(id)arg1;
 - (void)dealloc;
-- (BOOL)exited;
-- (BOOL)failedLaunch;
+- (bool)exited;
+- (bool)failedLaunch;
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id)arg2;
 - (id)initWithApplicationProcess:(id)arg1;
 - (id)process;

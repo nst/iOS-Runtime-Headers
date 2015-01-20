@@ -5,19 +5,19 @@
 @class UIView;
 
 @interface UILayoutContainerView : UIView <NSCoding> {
-    float _cornerRadius;
+    double _cornerRadius;
     id _delegate;
-    BOOL _forwardMoveToWindowCallbacks;
     UIView *_shadowView;
-    BOOL _shadowViewsInstalled;
-    BOOL _usesInnerShadow;
-    BOOL _usesRoundedCorners;
+    bool_forwardMoveToWindowCallbacks;
+    bool_shadowViewsInstalled;
+    bool_usesInnerShadow;
+    bool_usesRoundedCorners;
 }
 
 @property id delegate;
-@property BOOL forwardMoveToWindowCallbacks;
-@property BOOL usesInnerShadow;
-@property BOOL usesRoundedCorners;
+@property bool forwardMoveToWindowCallbacks;
+@property bool usesInnerShadow;
+@property bool usesRoundedCorners;
 
 - (void)_installShadowViews;
 - (void)_tearDownShadowViews;
@@ -26,17 +26,17 @@
 - (id)delegate;
 - (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)forwardMoveToWindowCallbacks;
+- (bool)forwardMoveToWindowCallbacks;
 - (id)initWithCoder:(id)arg1;
 - (void)layoutSubviews;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setForwardMoveToWindowCallbacks:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setUsesInnerShadow:(BOOL)arg1;
-- (void)setUsesRoundedCorners:(BOOL)arg1;
-- (BOOL)usesInnerShadow;
-- (BOOL)usesRoundedCorners;
+- (void)setForwardMoveToWindowCallbacks:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setUsesInnerShadow:(bool)arg1;
+- (void)setUsesRoundedCorners:(bool)arg1;
+- (bool)usesInnerShadow;
+- (bool)usesRoundedCorners;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

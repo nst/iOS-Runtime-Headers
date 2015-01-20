@@ -5,34 +5,34 @@
 @class NSMutableArray;
 
 @interface PRPinyinContext : PRAutocorrectionContext {
-    unsigned int _abbreviatedSyllableCount;
+    unsigned long long _abbreviatedSyllableCount;
     NSMutableArray *_addedModifications;
     NSMutableArray *_addedRemovedModifications;
     char *_altBuffer;
     char *_altBufferScores;
     char *_buffer;
     void *_connection;
-    unsigned int _endIndex;
+    unsigned long long _endIndex;
     NSMutableArray *_geometryDataArray;
-    unsigned int _lastIndexes[4];
-    BOOL _lastSyllableIsPartial;
-    unsigned int _length;
-    unsigned int _lengthBeforeApostrophes;
+    unsigned long long _lastIndexes[4];
+    unsigned long long _length;
+    unsigned long long _lengthBeforeApostrophes;
     NSMutableArray *_modifications;
-    unsigned int _nextIndexes[2];
+    unsigned long long _nextIndexes[2];
     NSMutableArray *_prefixes;
-    unsigned int _previouslyAnalyzedLength;
+    unsigned long long _previouslyAnalyzedLength;
     NSMutableArray *_removedModifications;
-    unsigned int _startIndex;
-    unsigned int _startingPoint;
-    unsigned int *_syllableLengthArray;
+    unsigned long long _startIndex;
+    unsigned long long _startingPoint;
+    unsigned long long *_syllableLengthArray;
     double _validSequenceCorrectionThreshold;
+    bool_lastSyllableIsPartial;
 }
 
 - (void)_addDeletions;
-- (BOOL)_addEnglishWordForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 quickly:(BOOL)arg2;
-- (BOOL)_addEnglishWordsEndingAtIndex:(unsigned int)arg1 quickly:(BOOL)arg2;
-- (void)_addEnglishWordsQuickly:(BOOL)arg1;
+- (bool)_addEnglishWordForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 quickly:(bool)arg2;
+- (bool)_addEnglishWordsEndingAtIndex:(unsigned long long)arg1 quickly:(bool)arg2;
+- (void)_addEnglishWordsQuickly:(bool)arg1;
 - (void)_addInsertions;
 - (void)_addPrefixes;
 - (void)_addReplacements;
@@ -50,7 +50,7 @@
 - (id)description;
 - (id)init;
 - (id)prefixes;
-- (void)removeNumberOfInputCharacters:(unsigned int)arg1;
+- (void)removeNumberOfInputCharacters:(unsigned long long)arg1;
 - (id)removedModifications;
 - (void)reset;
 - (void)setValidSequenceCorrectionThreshold:(double)arg1;

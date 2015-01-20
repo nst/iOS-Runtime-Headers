@@ -10,11 +10,11 @@
 
 - (void)addCommandsToPipeline:(id)arg1 withCache:(id)arg2;
 - (void)addSubdownload:(id)arg1;
-- (unsigned int)bytesFetched;
+- (unsigned long long)bytesFetched;
 - (void)dealloc;
-- (unsigned int)expectedLength;
-- (BOOL)isComplete;
-- (unsigned int)lengthOfDataBeforeLineConversion;
+- (unsigned long long)expectedLength;
+- (bool)isComplete;
+- (unsigned long long)lengthOfDataBeforeLineConversion;
 - (void)processResults;
 - (void)removeSubdownload:(id)arg1;
 - (id)subdownloads;

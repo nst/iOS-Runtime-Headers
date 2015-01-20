@@ -6,8 +6,8 @@
 
 @interface SBSAssertion : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     NSString *_assertionName;
     } _lock;
     unsigned int _port;

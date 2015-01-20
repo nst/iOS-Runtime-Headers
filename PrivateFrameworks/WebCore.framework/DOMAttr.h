@@ -9,15 +9,15 @@
 
 @property(copy,readonly) NSString * name;
 @property(readonly) DOMElement * ownerElement;
-@property(readonly) BOOL specified;
+@property(readonly) bool specified;
 @property(readonly) DOMCSSStyleDeclaration * style;
 @property(copy) NSString * value;
 
-- (BOOL)isId;
+- (bool)isId;
 - (id)name;
 - (id)ownerElement;
 - (void)setValue:(id)arg1;
-- (BOOL)specified;
+- (bool)specified;
 - (id)style;
 - (id)value;
 

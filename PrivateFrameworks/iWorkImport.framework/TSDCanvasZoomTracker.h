@@ -6,57 +6,57 @@
 
 @interface TSDCanvasZoomTracker : NSObject {
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL mAlwaysUsesTranslationSprings;
-    BOOL mAnimateTransform;
+        double x; 
+        double y; 
+    boolmAlwaysUsesTranslationSprings;
+    boolmAnimateTransform;
+    boolmHasGestureOrigin;
+    boolmIsShowingZoomHUD;
+    boolmIsZooming;
+    boolmSnapsViewScale;
     TSDCanvasLayer *mCanvasLayer;
     NSObject<TSDCanvasZoomTrackerDelegate> *mDelegate;
     } mGestureOffset;
     } mGestureOrigin;
-    BOOL mHasGestureOrigin;
-    BOOL mIsShowingZoomHUD;
-    BOOL mIsZooming;
     } mSavedContentOffset;
     } mSavedTransform;
-    BOOL mSnapsViewScale;
     } mZoomOrigin;
     double mZoomStartTime;
-    float mZoomVelocity;
-    unsigned int mZoomVelocitySampleCount;
+    double mZoomVelocity;
+    unsigned long long mZoomVelocitySampleCount;
 }
 
-@property BOOL alwaysUsesTranslationSprings;
-@property BOOL animateTransform;
+@property bool alwaysUsesTranslationSprings;
+@property bool animateTransform;
 @property NSObject<TSDCanvasZoomTrackerDelegate> * delegate;
-@property BOOL snapsViewScale;
+@property bool snapsViewScale;
 
-- (BOOL)alwaysUsesTranslationSprings;
-- (BOOL)animateTransform;
+- (bool)alwaysUsesTranslationSprings;
+- (bool)animateTransform;
 - (id)delegate;
 - (id)initWithCanvasLayer:(id)arg1;
-- (void)p_finishZoomWithFinalScaleFactor:(float)arg1 contentOffset:(struct CGPoint { float x1; float x2; })arg2;
-- (void)setAlwaysUsesTranslationSprings:(BOOL)arg1;
-- (void)setAnimateTransform:(BOOL)arg1;
+- (void)p_finishZoomWithFinalScaleFactor:(double)arg1 contentOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setAlwaysUsesTranslationSprings:(bool)arg1;
+- (void)setAnimateTransform:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSnapsViewScale:(BOOL)arg1;
-- (BOOL)snapsViewScale;
-- (void)zoomWithScale:(float)arg1 velocity:(float)arg2 locationInView:(struct CGPoint { float x1; float x2; })arg3 phase:(int)arg4;
+- (void)setSnapsViewScale:(bool)arg1;
+- (bool)snapsViewScale;
+- (void)zoomWithScale:(double)arg1 velocity:(double)arg2 locationInView:(struct CGPoint { double x1; double x2; })arg3 phase:(int)arg4;
 
 @end

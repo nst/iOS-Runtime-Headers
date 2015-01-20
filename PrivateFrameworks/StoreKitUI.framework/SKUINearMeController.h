@@ -7,24 +7,24 @@
 @interface SKUINearMeController : NSObject <CLLocationManagerDelegate, SKUIItemStateCenterObserver> {
     int _authorizationStatus;
     SKUIClientContext *_clientContext;
-    BOOL _isMonitoring;
     NSArray *_items;
     CLLocationManager *_locationManager;
-    int _locationTimeoutCount;
+    long long _locationTimeoutCount;
     NSObject<OS_dispatch_source> *_locationTimeoutTimer;
     SSLookupRequest *_lookupRequest;
     NSObject<OS_dispatch_source> *_refreshTimer;
     NSDictionary *_responseDictionary;
-    int _status;
+    long long _status;
+    bool_isMonitoring;
 }
 
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * items;
 @property(readonly) NSDictionary * responseDictionary;
-@property(readonly) int status;
+@property(readonly) long long status;
 @property(readonly) Class superclass;
 
 + (id)sharedController;
@@ -36,7 +36,7 @@
 - (void)_lookupItemsForLocation:(id)arg1;
 - (void)_monitorLocationTimeout;
 - (void)_refreshTimeout;
-- (void)_setItems:(id)arg1 responseDictionary:(id)arg2 error:(id)arg3 status:(int)arg4;
+- (void)_setItems:(id)arg1 responseDictionary:(id)arg2 error:(id)arg3 status:(long long)arg4;
 - (void)_startMonitoringLocation;
 - (void)_startRefreshTimer;
 - (void)_stopMonitoringLocation;
@@ -52,6 +52,6 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)responseDictionary;
 - (void)setClientContext:(id)arg1;
-- (int)status;
+- (long long)status;
 
 @end

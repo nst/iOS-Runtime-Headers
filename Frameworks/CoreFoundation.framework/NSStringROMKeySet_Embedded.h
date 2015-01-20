@@ -8,10 +8,10 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
-- (unsigned int)indexForCString:(const char *)arg1 length:(unsigned int)arg2 key:(const struct __CFString {}**)arg3;
+- (unsigned long long)indexForCString:(const char *)arg1 length:(unsigned long long)arg2 key:(const struct __CFString {}**)arg3;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKeys:(id*)arg1 count:(unsigned int)arg2;
-- (BOOL)isEmpty;
+- (id)initWithKeys:(id*)arg1 count:(unsigned long long)arg2;
+- (bool)isEmpty;
 
 @end

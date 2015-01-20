@@ -6,18 +6,18 @@
 
 @interface MPClosedCaptionDisplay : UIView {
     UIView *_backgroundView;
-    BOOL _hidden;
     UILabel *_label;
-    BOOL _rotating;
+    bool_hidden;
+    bool_rotating;
 }
 
 - (void).cxx_destruct;
 - (void)_hidePanel;
-- (void)_updatePositioning:(BOOL)arg1;
+- (void)_updatePositioning:(bool)arg1;
 - (void)endLayoutChange;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout;
 - (void)setText:(id)arg1;
-- (void)startLayoutChange:(BOOL)arg1;
+- (void)startLayoutChange:(bool)arg1;
 
 @end

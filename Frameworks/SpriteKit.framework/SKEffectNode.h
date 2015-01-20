@@ -7,33 +7,33 @@
 @interface SKEffectNode : SKNode {
 }
 
-@property int blendMode;
+@property long long blendMode;
 @property(retain) CIFilter * filter;
 @property(retain) SKShader * shader;
-@property BOOL shouldCenterFilter;
-@property BOOL shouldEnableEffects;
-@property BOOL shouldRasterize;
+@property bool shouldCenterFilter;
+@property bool shouldEnableEffects;
+@property bool shouldRasterize;
 
-- (void)_flippedChangedFrom:(BOOL)arg1 to:(BOOL)arg2;
+- (void)_flippedChangedFrom:(bool)arg1 to:(bool)arg2;
 - (void)_scaleFactorChangedFrom:(float)arg1 to:(float)arg2;
-- (int)blendMode;
+- (long long)blendMode;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filter;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualToNode:(id)arg1;
-- (void)setBlendMode:(int)arg1;
+- (bool)isEqualToNode:(id)arg1;
+- (void)setBlendMode:(long long)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setShader:(id)arg1;
-- (void)setShouldCenterFilter:(BOOL)arg1;
-- (void)setShouldEnableEffects:(BOOL)arg1;
-- (void)setShouldRasterize:(BOOL)arg1;
+- (void)setShouldCenterFilter:(bool)arg1;
+- (void)setShouldEnableEffects:(bool)arg1;
+- (void)setShouldRasterize:(bool)arg1;
 - (id)shader;
-- (BOOL)shouldCenterFilter;
-- (BOOL)shouldEnableEffects;
-- (BOOL)shouldRasterize;
+- (bool)shouldCenterFilter;
+- (bool)shouldEnableEffects;
+- (bool)shouldRasterize;
 
 @end

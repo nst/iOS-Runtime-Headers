@@ -3,12 +3,12 @@
  */
 
 @interface PUHorizontalTiledCollectionViewLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext {
-    BOOL _invalidateCachedLayout;
+    bool_invalidateCachedLayout;
 }
 
-@property BOOL invalidateCachedLayout;
+@property bool invalidateCachedLayout;
 
-- (void)_setInvalidateCachedLayout:(BOOL)arg1;
-- (BOOL)invalidateCachedLayout;
+- (void)_setInvalidateCachedLayout:(bool)arg1;
+- (bool)invalidateCachedLayout;
 
 @end

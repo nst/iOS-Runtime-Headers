@@ -6,21 +6,21 @@
 
 @interface MFComposeScrollView : UIScrollView {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     NSMutableSet *_disabledSubviews;
-    int _scrollBlocked;
-    BOOL _shouldScrollToFirstResponder;
+    long long _scrollBlocked;
     UIGestureRecognizer *_singleTapGestureRecognizer;
-    BOOL _subviewsDisabled;
     } _tapLocation;
+    bool_shouldScrollToFirstResponder;
+    bool_subviewsDisabled;
 }
 
 @property(readonly) NSSet * disabledSubviews;
-@property BOOL shouldScrollToFirstResponder;
-@property BOOL subviewsDisabled;
+@property bool shouldScrollToFirstResponder;
+@property bool subviewsDisabled;
 
-- (BOOL)_scrollsToMakeFirstResponderVisible;
+- (bool)_scrollsToMakeFirstResponderVisible;
 - (void)beginBlockingScroll;
 - (void)dealloc;
 - (void)didAddSubview:(id)arg1;
@@ -28,12 +28,12 @@
 - (id)disabledSubviews;
 - (void)enableSubview:(id)arg1;
 - (void)endBlockingScroll;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
-- (void)setShouldScrollToFirstResponder:(BOOL)arg1;
-- (void)setSubviewsDisabled:(BOOL)arg1;
-- (BOOL)shouldScrollToFirstResponder;
-- (BOOL)subviewsDisabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
+- (void)setShouldScrollToFirstResponder:(bool)arg1;
+- (void)setSubviewsDisabled:(bool)arg1;
+- (bool)shouldScrollToFirstResponder;
+- (bool)subviewsDisabled;
 - (void)willRemoveSubview:(id)arg1;
 
 @end

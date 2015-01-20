@@ -14,12 +14,12 @@
     NSDate *_endDate;
     NSError *_error;
     NSString *_ignoredEventID;
-    BOOL _isExecuting;
-    BOOL _isFinished;
     NSObject<OS_dispatch_queue> *_queue;
     id _requestID;
     id _resultsBlock;
     NSDate *_startDate;
+    bool_isExecuting;
+    bool_isFinished;
 }
 
 @property(retain) NSError * error;
@@ -31,9 +31,9 @@
 - (id)error;
 - (id)init;
 - (id)initWithSource:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ignoredEventID:(id)arg4 addresses:(id)arg5 resultsBlock:(id)arg6;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)main;
 - (void)setError:(id)arg1;
 - (void)start;

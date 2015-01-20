@@ -11,7 +11,7 @@
 @property(copy,readonly) NSAttributedString * subject;
 
 - (Class)__ck_chatItemClass;
-- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 subject:(id)arg4;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 subject:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

@@ -12,7 +12,7 @@
     NSMutableDictionary *_playerInfo;
 }
 
-@property(readonly) BOOL isEnabled;
+@property(readonly) bool isEnabled;
 @property(readonly) NSString * messageFormat;
 @property(readonly) NSDictionary * playerInfo;
 
@@ -24,7 +24,7 @@
 - (void)addListener:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)messageFormat;
 - (id)playerInfo;
 - (void)removeListener:(id)arg1;

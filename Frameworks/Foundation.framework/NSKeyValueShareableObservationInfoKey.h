@@ -5,15 +5,15 @@
 @class NSKeyValueObservance, NSKeyValueObservationInfo, NSKeyValueProperty, NSObject;
 
 @interface NSKeyValueShareableObservationInfoKey : NSObject {
-    BOOL _addingNotRemoving;
     void *_additionContext;
     NSObject *_additionObserver;
-    unsigned int _additionOptions;
+    unsigned long long _additionOptions;
     NSObject *_additionOriginalObservable;
     NSKeyValueProperty *_additionProperty;
     NSKeyValueObservationInfo *_baseObservationInfo;
     NSKeyValueObservance *_removalObservance;
-    unsigned int _removalObservanceIndex;
+    unsigned long long _removalObservanceIndex;
+    bool_addingNotRemoving;
 }
 
 @end

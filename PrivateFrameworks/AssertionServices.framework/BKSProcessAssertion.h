@@ -9,8 +9,6 @@
 @class BKSProcessAssertionClient, BSSignal, NSObject<OS_dispatch_queue>, NSString;
 
 @interface BKSProcessAssertion : NSObject <BKSProcessAssertionClientHandler> {
-    BOOL _acquired;
-    BOOL _acquiring;
     id _acquisitionHandler;
     NSString *_bundleIdentifier;
     BKSProcessAssertionClient *_client;
@@ -22,23 +20,25 @@
     NSString *_name;
     int _pid;
     unsigned int _reason;
+    bool_acquired;
+    bool_acquiring;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property unsigned int flags;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) id invalidationHandler;
 @property(copy) NSString * name;
 @property(readonly) unsigned int reason;
 @property(readonly) Class superclass;
-@property(readonly) BOOL valid;
+@property(readonly) bool valid;
 
 + (id)NameForReason:(unsigned int)arg1;
 
 - (void)_clientQueue_acquireAssertion;
-- (void)_clientQueue_invalidate:(BOOL)arg1;
-- (void)_clientQueue_notifyAssertionAcquired:(BOOL)arg1;
+- (void)_clientQueue_invalidate:(bool)arg1;
+- (void)_clientQueue_notifyAssertionAcquired:(bool)arg1;
 - (void)_clientQueue_setAcquisitionHandler:(id)arg1;
 - (void)_clientQueue_updateAssertion;
 - (id)acquisitionHandler;
@@ -57,6 +57,6 @@
 - (void)setInvalidationHandler:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setReason:(unsigned int)arg1;
-- (BOOL)valid;
+- (bool)valid;
 
 @end

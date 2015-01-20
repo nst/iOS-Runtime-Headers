@@ -8,8 +8,8 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSDictionary *_bestOfferDictionary;
     NSDate *_expirationDate;
-    BOOL _isPreorderAlbum;
     NSMutableDictionary *_trackDictionary;
+    bool_isPreorderAlbum;
 }
 
 @property(copy,readonly) NSData * adData;
@@ -17,7 +17,7 @@
 @property(readonly) RadioAudioClip * afterPromoAudioClip;
 @property(copy,readonly) NSString * album;
 @property(copy,readonly) NSString * albumBuyButtonText;
-@property(readonly) int albumBuyButtonType;
+@property(readonly) long long albumBuyButtonType;
 @property(readonly) long long albumID;
 @property(copy,readonly) NSURL * albumURL;
 @property(copy,readonly) NSString * artist;
@@ -30,9 +30,9 @@
 @property(readonly) double duration;
 @property(retain) NSDate * expirationDate;
 @property(copy,readonly) NSDictionary * feedbackDictionaryRepresentation;
-@property BOOL inWishList;
-@property(readonly) BOOL isExplicit;
-@property(readonly) BOOL isPreorderAlbum;
+@property bool inWishList;
+@property(readonly) bool isExplicit;
+@property(readonly) bool isPreorderAlbum;
 @property(readonly) int likeStatus;
 @property(copy) NSDictionary * metadataDictionary;
 @property(copy,readonly) NSArray * offers;
@@ -44,7 +44,7 @@
 @property(copy,readonly) NSDictionary * trackDictionary;
 @property(copy,readonly) NSDictionary * trackInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_offers;
@@ -60,7 +60,7 @@
 - (id)afterPromoAudioClip;
 - (id)album;
 - (id)albumBuyButtonText;
-- (int)albumBuyButtonType;
+- (long long)albumBuyButtonType;
 - (long long)albumID;
 - (id)albumURL;
 - (id)artist;
@@ -75,18 +75,18 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
 - (id)feedbackDictionaryRepresentation;
-- (BOOL)inWishList;
+- (bool)inWishList;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTrackDictionary:(id)arg1;
-- (BOOL)isExplicit;
-- (BOOL)isPreorderAlbum;
+- (bool)isExplicit;
+- (bool)isPreorderAlbum;
 - (int)likeStatus;
 - (id)metadataDictionary;
 - (id)offers;
 - (id)previewURL;
 - (void)setExpirationDate:(id)arg1;
-- (void)setInWishList:(BOOL)arg1;
+- (void)setInWishList:(bool)arg1;
 - (void)setMetadataDictionary:(id)arg1;
 - (long long)shuffleSeed;
 - (double)startTime;

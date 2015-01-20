@@ -5,61 +5,61 @@
 @class NSMutableArray, TNPageController, TNPdfHyperlinkController;
 
 @interface TNRenderingExporter : TSARenderingExporter {
-    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
-        unsigned int *__begin_; 
-        unsigned int *__end_; 
-        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
-            unsigned int *__first_; 
+    struct vector<unsigned long, std::__1::allocator<unsigned long> > { 
+        unsigned long long *__begin_; 
+        unsigned long long *__end_; 
+        struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
+            unsigned long long *__first_; 
         } __end_cap_; 
-    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
-        unsigned int *__begin_; 
-        unsigned int *__end_; 
-        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
-            unsigned int *__first_; 
+    struct vector<unsigned long, std::__1::allocator<unsigned long> > { 
+        unsigned long long *__begin_; 
+        unsigned long long *__end_; 
+        struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
+            unsigned long long *__first_; 
         } __end_cap_; 
-    BOOL _renderingAllSheets;
+    bool_renderingAllSheets;
     NSMutableArray *mCanvasBasedSheets;
     TNPdfHyperlinkController *mHyperlinkController;
     TNPageController *mPageController;
-    unsigned int mPageIndex;
-    unsigned int mSheetIndex;
+    unsigned long long mPageIndex;
+    unsigned long long mSheetIndex;
     } mSheetPageCountArray;
     } mSheetPageStartArray;
-    unsigned int mTotalPagesCount;
+    unsigned long long mTotalPagesCount;
 }
 
-@property(getter=isRenderingAllSheets) BOOL renderingAllSheets;
+@property(getter=isRenderingAllSheets) bool renderingAllSheets;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsRect;
 - (id)currentInfos;
 - (void)dealloc;
-- (void)drawAllPagesWithContext:(struct CGContext { }*)arg1 returnSuccess:(BOOL*)arg2;
-- (BOOL)drawCurrentPageInContext:(struct CGContext { }*)arg1 viewScale:(float)arg2 unscaledClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 createPage:(BOOL)arg4;
-- (void)drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(BOOL*)arg2;
-- (unsigned int)inSheetPageIndexForPage:(unsigned int)arg1;
-- (BOOL)incrementPage;
+- (void)drawAllPagesWithContext:(struct CGContext { }*)arg1 returnSuccess:(bool*)arg2;
+- (bool)drawCurrentPageInContext:(struct CGContext { }*)arg1 viewScale:(double)arg2 unscaledClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 createPage:(bool)arg4;
+- (void)drawCurrentPageWithContext:(struct CGContext { }*)arg1 returnSuccess:(bool*)arg2;
+- (unsigned long long)inSheetPageIndexForPage:(unsigned long long)arg1;
+- (bool)incrementPage;
 - (id)initWithDocumentRoot:(id)arg1;
-- (BOOL)isPageInPortraitOrientation:(unsigned int)arg1;
-- (BOOL)isRenderingAllSheets;
-- (unsigned int)numberOfCanvasBasedSheets;
+- (bool)isPageInPortraitOrientation:(unsigned long long)arg1;
+- (bool)isRenderingAllSheets;
+- (unsigned long long)numberOfCanvasBasedSheets;
 - (id)p_activeSheet;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_boundsRectForFirstPage;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_boundsRectForFirstPage;
 - (id)p_canvasBasedSheets;
-- (BOOL)p_isActiveSheetForm;
-- (struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_1_1; } x3; })p_pageCountArray;
-- (struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_1_1; } x3; })p_pageStartArray;
+- (bool)p_isActiveSheetForm;
+- (struct vector<unsigned long, std::__1::allocator<unsigned long> > { unsigned long long *x1; unsigned long long *x2; struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { unsigned long long *x_3_1_1; } x3; })p_pageCountArray;
+- (struct vector<unsigned long, std::__1::allocator<unsigned long> > { unsigned long long *x1; unsigned long long *x2; struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { unsigned long long *x_3_1_1; } x3; })p_pageStartArray;
 - (id)pageController;
-- (unsigned int)pageCount;
-- (BOOL)preparePage:(unsigned int)arg1;
+- (unsigned long long)pageCount;
+- (bool)preparePage:(unsigned long long)arg1;
 - (double)progressForCurrentPage;
-- (void)setRenderingAllSheets:(BOOL)arg1;
-- (void)setSheetIndex:(unsigned int)arg1 andPageIndex:(unsigned int)arg2;
+- (void)setRenderingAllSheets:(bool)arg1;
+- (void)setSheetIndex:(unsigned long long)arg1 andPageIndex:(unsigned long long)arg2;
 - (void)setup;
-- (unsigned int)sheetIndexForPage:(unsigned int)arg1;
+- (unsigned long long)sheetIndexForPage:(unsigned long long)arg1;
 - (void)teardown;
 - (double)totalProgess;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledClipRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledClipRect;
 
 @end

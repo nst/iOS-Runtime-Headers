@@ -15,9 +15,9 @@
 
 @property unsigned int domain;
 @property unsigned int error;
-@property BOOL hasDomain;
-@property BOOL hasError;
-@property BOOL hasTimestamp;
+@property bool hasDomain;
+@property bool hasError;
+@property bool hasTimestamp;
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -26,18 +26,18 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)domain;
 - (unsigned int)error;
-- (BOOL)hasDomain;
-- (BOOL)hasError;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDomain;
+- (bool)hasError;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDomain:(unsigned int)arg1;
 - (void)setError:(unsigned int)arg1;
-- (void)setHasDomain:(BOOL)arg1;
-- (void)setHasError:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDomain:(bool)arg1;
+- (void)setHasError:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

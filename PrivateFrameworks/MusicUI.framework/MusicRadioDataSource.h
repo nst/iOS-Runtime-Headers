@@ -5,6 +5,6 @@
 @interface MusicRadioDataSource : RURadioDataSource {
 }
 
-- (id)initWithEntityType:(int)arg1;
+- (id)initWithEntityType:(long long)arg1;
 
 @end

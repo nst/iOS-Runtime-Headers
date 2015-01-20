@@ -5,8 +5,8 @@
 @interface TPStarkUtilities : NSObject {
 }
 
-+ (BOOL)activeInterfaceMechanismIsHardware;
-+ (BOOL)activeInterfaceMechanismIsTouchOnly;
++ (bool)activeInterfaceMechanismIsHardware;
++ (bool)activeInterfaceMechanismIsTouchOnly;
 + (id)starkScreen;
 
 @end

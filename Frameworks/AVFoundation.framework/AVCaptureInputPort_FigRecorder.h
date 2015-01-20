@@ -9,13 +9,13 @@
 }
 
 @property(readonly) struct OpaqueCMClock { }* clock;
-@property(getter=isEnabled) BOOL enabled;
+@property(getter=isEnabled) bool enabled;
 @property(readonly) struct opaqueCMFormatDescription { }* formatDescription;
 @property(readonly) AVCaptureInput_FigRecorder * input;
 @property(readonly) NSString * mediaType;
 
-+ (BOOL)automaticallyNotifiesObserversOfClock;
-+ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
++ (bool)automaticallyNotifiesObserversOfClock;
++ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(bool)arg4;
 
 - (void)_setClock:(struct OpaqueCMClock { }*)arg1;
 - (void)_setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
@@ -24,12 +24,12 @@
 - (id)description;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
 - (id)init;
-- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
+- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(bool)arg4;
 - (id)input;
-- (BOOL)isEnabled;
-- (BOOL)isKindOfClass:(Class)arg1;
+- (bool)isEnabled;
+- (bool)isKindOfClass:(Class)arg1;
 - (id)mediaType;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setOwner:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 

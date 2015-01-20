@@ -5,54 +5,54 @@
 @class <PRSSearchQueryHandler>, NSObject<OS_dispatch_queue>, NSString, PRSSearchFeedback, PRSSearchSession;
 
 @interface PRSQueryTask : NSObject {
-    BOOL _canceled;
     NSString *_fbq;
     PRSSearchFeedback *_feedback;
     <PRSSearchQueryHandler> *_handler;
-    int _queryId;
+    long long _queryId;
     NSObject<OS_dispatch_queue> *_queue;
     id _representedObject;
     PRSSearchSession *_session;
-    BOOL _started;
-    BOOL _webSearch;
+    bool_canceled;
+    bool_started;
+    bool_webSearch;
 }
 
-@property BOOL canceled;
+@property bool canceled;
 @property(retain) NSString * fbq;
 @property(retain) PRSSearchFeedback * feedback;
 @property(retain) <PRSSearchQueryHandler> * handler;
-@property int queryId;
+@property long long queryId;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(retain) id representedObject;
 @property PRSSearchSession * session;
-@property BOOL started;
-@property BOOL webSearch;
+@property bool started;
+@property bool webSearch;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (BOOL)canceled;
+- (bool)canceled;
 - (id)fbq;
 - (id)feedback;
 - (id)feedbackQueryIdentifier;
 - (id)handler;
 - (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3 feedback:(id)arg4;
 - (void)invalidateHandler;
-- (int)queryId;
+- (long long)queryId;
 - (id)queue;
 - (id)representedObject;
 - (void)resume;
 - (id)session;
-- (void)setCanceled:(BOOL)arg1;
+- (void)setCanceled:(bool)arg1;
 - (void)setFbq:(id)arg1;
 - (void)setFeedback:(id)arg1;
 - (void)setHandler:(id)arg1;
-- (void)setQueryId:(int)arg1;
+- (void)setQueryId:(long long)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)setSession:(id)arg1;
-- (void)setStarted:(BOOL)arg1;
-- (void)setWebSearch:(BOOL)arg1;
-- (BOOL)started;
-- (BOOL)webSearch;
+- (void)setStarted:(bool)arg1;
+- (void)setWebSearch:(bool)arg1;
+- (bool)started;
+- (bool)webSearch;
 
 @end

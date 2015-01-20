@@ -28,7 +28,7 @@
 - (id)_digestFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_expirationFromTrust:(struct __SecTrust { }*)arg1;
 - (void)_informConsumerOfResponse:(int)arg1;
-- (BOOL)_isRootCertificateFromTrust:(struct __SecTrust { }*)arg1;
+- (bool)_isRootCertificateFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_issuerFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_messagingCenter;
 - (id)_newUserInfoForDisplayName:(id)arg1 hostname:(id)arg2 trust:(struct __SecTrust { }*)arg3;

@@ -5,6 +5,6 @@
 @interface _MKNoFullLengthBottomSeparatorAttributionCell : MKPlaceAttributionCell {
 }
 
-- (void)_setShouldHaveFullLengthBottomSeparator:(BOOL)arg1;
+- (void)_setShouldHaveFullLengthBottomSeparator:(bool)arg1;
 
 @end

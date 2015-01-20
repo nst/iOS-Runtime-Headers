@@ -16,13 +16,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)passUsedFromSource:(int)arg1 withTypeIdentifier:(id)arg2 info:(id)arg3;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)passUsedFromSource:(long long)arg1 withTypeIdentifier:(id)arg2 info:(id)arg3;
 - (void)setPassUsageHandler:(id)arg1;
 
 @end

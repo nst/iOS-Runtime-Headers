@@ -9,7 +9,7 @@
 @class NSString, NSURL, SKUIItem, UIViewController;
 
 @interface SKUIProductPageAction : NSObject {
-    int _actionType;
+    long long _actionType;
     SKUIItem *_item;
     NSURL *_url;
     NSString *_urlTitle;
@@ -17,18 +17,18 @@
 }
 
 @property(copy) NSURL * URL;
-@property int actionType;
+@property long long actionType;
 @property(retain) SKUIItem * item;
 @property(readonly) UIViewController * viewController;
 @property(copy) id viewControllerBlock;
 
-+ (id)actionWithType:(int)arg1;
++ (id)actionWithType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (int)actionType;
+- (long long)actionType;
 - (id)item;
-- (void)setActionType:(int)arg1;
+- (void)setActionType:(long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setViewControllerBlock:(id)arg1;

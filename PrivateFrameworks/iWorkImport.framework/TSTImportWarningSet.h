@@ -25,7 +25,7 @@
         unsigned int mUnsupportedConditionalFormatImportWarning : 1; 
         unsigned int mUnsupportedDataFormatImportWarning : 1; 
     struct TSTImportFormulaWarning { 
-        int mType; 
+        long long mType; 
         NSString *mOriginalFormula; 
         NSString *mSupplementaryText; 
     } mCellWarning;
@@ -35,7 +35,7 @@
 
 + (id)cellDiffClearingAllWarningsWithContext:(id)arg1;
 + (id)emptyWarningSet;
-+ (id)p_warningSetForFormulaWarningType:(int)arg1 originalFormula:(id)arg2 supplementaryText:(id)arg3;
++ (id)p_warningSetForFormulaWarningType:(long long)arg1 originalFormula:(id)arg2 supplementaryText:(id)arg3;
 + (id)properties;
 + (id)warningSetFor3DReferenceFormula:(id)arg1;
 + (id)warningSetForArrayedFormula:(id)arg1;
@@ -67,17 +67,17 @@
 + (id)warningSetForUnsupportedNameFormula:(id)arg1;
 
 - (id).cxx_construct;
-- (BOOL)areAnySet;
+- (bool)areAnySet;
 - (id)cellDiffClearingWarningsWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)individualWarnings;
 - (id)init;
 - (id)initFromArchive:(const struct ImportWarningSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ImportWarningSetArchive_FormulaImportWarning {} *x3; boolx4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; boolx16; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x17; int x18; unsigned int x19[1]; }*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTransposeWarning;
+- (bool)isEqual:(id)arg1;
+- (bool)isTransposeWarning;
 - (id)localizedWarningStrings;
 - (id)objectByRemovingPropertiesInMap:(id)arg1 addingPropertiesInMap:(id)arg2;
 - (id)propertiesMatchingThoseInMap:(id)arg1;

@@ -10,13 +10,13 @@
 @class NSDate, NSMutableDictionary, NSMutableString;
 
 @interface CMProgressiveArchiveManager : CMArchiveManager {
+    boolmMainDataInited;
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } *mCallBacks;
     const void *mClient;
     NSMutableString *mCssString;
     NSMutableDictionary *mDataCache;
     NSMutableString *mHtmlLogString;
     NSDate *mLastCommitDate;
-    BOOL mMainDataInited;
     NSDate *mStartDate;
     NSMutableDictionary *mStyleCache;
 }
@@ -29,8 +29,8 @@
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)initWithClient:(const void*)arg1 andCallBacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
-- (BOOL)isCancelled;
-- (BOOL)isProgressive;
+- (bool)isCancelled;
+- (bool)isProgressive;
 - (void)pushCssToPath:(id)arg1;
 - (void)pushData:(id)arg1 toPath:(id)arg2;
 - (void)pushText:(id)arg1 toPath:(id)arg2;

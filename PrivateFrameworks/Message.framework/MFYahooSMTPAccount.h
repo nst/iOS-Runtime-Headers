@@ -17,7 +17,7 @@
 - (id)mailAccountIfAvailable;
 - (id)preferredAuthScheme;
 - (void)setMailAccount:(id)arg1;
-- (BOOL)shouldUseSaveSentForAccount:(id)arg1;
-- (BOOL)usesSSL;
+- (bool)shouldUseSaveSentForAccount:(id)arg1;
+- (bool)usesSSL;
 
 @end

@@ -5,48 +5,48 @@
 @class NSArray;
 
 @interface UIKeyboardSquishTransition : UIKeyboardKeyplaneTransition {
-    unsigned int _animationType;
+    unsigned long long _animationType;
     NSArray *_commonVisibleKeys;
-    BOOL _disableMeshOptimization;
     NSArray *_endGeometries;
-    BOOL _nonoverlappingCrossfade;
-    float _offsetX;
+    double _offsetX;
     NSArray *_startGeometries;
-    BOOL _transitionNeedsUpdate;
-    float _widthRatio;
+    double _widthRatio;
+    bool_disableMeshOptimization;
+    bool_nonoverlappingCrossfade;
+    bool_transitionNeedsUpdate;
 }
 
-@property unsigned int animationType;
+@property unsigned long long animationType;
 @property(retain) NSArray * commonVisibleKeys;
-@property BOOL disableMeshOptimization;
+@property bool disableMeshOptimization;
 @property(retain) NSArray * endGeometries;
-@property BOOL nonoverlappingCrossfade;
+@property bool nonoverlappingCrossfade;
 @property(retain) NSArray * startGeometries;
-@property(readonly) float transitionOverlapDelta;
+@property(readonly) double transitionOverlapDelta;
 
 - (void)_updateTransition;
-- (unsigned int)animationType;
+- (unsigned long long)animationType;
 - (void)commitTransitionRebuild;
 - (id)commonVisibleKeys;
 - (void)dealloc;
-- (BOOL)disableMeshOptimization;
+- (bool)disableMeshOptimization;
 - (id)endGeometries;
 - (id)geometriesForKeyplane:(id)arg1;
 - (id)meshTransformForKeyplane:(id)arg1 toKeyplane:(id)arg2;
-- (BOOL)nonoverlappingCrossfade;
+- (bool)nonoverlappingCrossfade;
 - (void)rebuildWithStartKeyplane:(id)arg1 startView:(id)arg2 endKeyplane:(id)arg3 endView:(id)arg4;
 - (void)removeAllAnimations;
-- (void)setAnimationType:(unsigned int)arg1;
+- (void)setAnimationType:(unsigned long long)arg1;
 - (void)setCommonVisibleKeys:(id)arg1;
-- (void)setDisableMeshOptimization:(BOOL)arg1;
+- (void)setDisableMeshOptimization:(bool)arg1;
 - (void)setEndGeometries:(id)arg1;
-- (void)setNonoverlappingCrossfade:(BOOL)arg1;
+- (void)setNonoverlappingCrossfade:(bool)arg1;
 - (void)setStartGeometries:(id)arg1;
 - (id)sortedCommonVisibleKeys;
 - (id)startGeometries;
 - (id)symmetricMeshTransformForKeyplane:(id)arg1;
-- (float)transitionOverlapDelta;
+- (double)transitionOverlapDelta;
 - (void)updateTransitionIfNeeded;
-- (void)updateWithProgress:(float)arg1;
+- (void)updateWithProgress:(double)arg1;
 
 @end

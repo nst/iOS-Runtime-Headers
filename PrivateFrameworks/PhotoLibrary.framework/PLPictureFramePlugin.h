@@ -10,7 +10,7 @@
     unsigned int _slideshowTimerIsScheduled : 1;
     unsigned int _paused : 1;
     PLCroppedImageView *_currentImageView;
-    unsigned int _currentIndex;
+    unsigned long long _currentIndex;
     PLImageCache *_imageCache;
     struct __CFArray { } *_imageIndexes;
     PLImageLoadingQueue *_imageLoadingQueue;
@@ -22,16 +22,16 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (long)_albumImageIndexForSlideIndex:(long)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBounds;
+- (long long)_albumImageIndexForSlideIndex:(long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentBounds;
 - (void)_crossFadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_didLoadImage:(id)arg1;
 - (void)_displayFirstImage;
 - (id)_nextImage;
-- (void)_requestNextImageSynchronously:(BOOL)arg1;
+- (void)_requestNextImageSynchronously:(bool)arg1;
 - (void)_scheduleSlideshowTimer;
 - (void)_slideshowTimerFired;
 - (void)_transitionToNextImage;

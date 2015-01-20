@@ -7,19 +7,19 @@
 @interface _WBUPolicyDecisionListener : NSObject <WebPolicyDecisionListener> {
     NSDictionary *_formMetadata;
     WebFrame *_frame;
-    int _navigationType;
+    long long _navigationType;
     <WebPolicyDecisionListener> *_originalListener;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)download;
 - (void)ignore;
-- (id)initWithFrame:(id)arg1 navigationType:(int)arg2 formMetadata:(id)arg3 originalListener:(id)arg4;
+- (id)initWithFrame:(id)arg1 navigationType:(long long)arg2 formMetadata:(id)arg3 originalListener:(id)arg4;
 - (void)use;
 
 @end

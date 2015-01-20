@@ -10,21 +10,21 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * opaqueKey;
 @property(readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)defaultPropertiesToLoad;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)evaluateWithObject:(id)arg1;
+- (bool)evaluateWithObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOpaqueKey:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)opaqueKey;
 - (id)predicateFormat;
-- (BOOL)shouldLoadDefaultProperties;
+- (bool)shouldLoadDefaultProperties;
 
 @end

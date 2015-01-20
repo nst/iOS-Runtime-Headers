@@ -14,12 +14,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_initWithReadChannel:(id)arg1 streamReadChannel:(id)arg2;
-- (BOOL)canSeek;
+- (bool)canSeek;
 - (void)close;
 - (id)closeLocalStream;
 - (void)dealloc;
@@ -28,7 +28,7 @@
 - (id)initWithReadChannel:(id)arg1;
 - (id)initWithStreamReadChannel:(id)arg1;
 - (long long)offset;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
+- (unsigned long long)readToBuffer:(char *)arg1 size:(unsigned long long)arg2;
 - (void)seekToOffset:(long long)arg1;
 
 @end

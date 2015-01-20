@@ -5,7 +5,6 @@
 @class CKDGlobalConfigurationOperation, CKDServerConfiguration, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface CKDServerConfigurationManager : NSObject {
-    BOOL _allowsCellularAccess;
     NSOperationQueue *_configurationQueue;
     NSMutableDictionary *_containerOperations;
     NSMutableDictionary *_containerSpecificInfoOperations;
@@ -15,10 +14,11 @@
     CKDGlobalConfigurationOperation *_globalConfigurationOp;
     int _iCloudEnvNotifToken;
     NSObject<OS_dispatch_queue> *_queue;
-    BOOL _usesBackgroundSession;
+    bool_allowsCellularAccess;
+    bool_usesBackgroundSession;
 }
 
-@property BOOL allowsCellularAccess;
+@property bool allowsCellularAccess;
 @property(retain) NSOperationQueue * configurationQueue;
 @property(retain) NSMutableDictionary * containerOperations;
 @property(retain) NSMutableDictionary * containerSpecificInfoOperations;
@@ -28,11 +28,11 @@
 @property(retain) CKDGlobalConfigurationOperation * globalConfigurationOp;
 @property int iCloudEnvNotifToken;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
-@property BOOL usesBackgroundSession;
+@property bool usesBackgroundSession;
 
 + (void)expireConfigurationForContext:(id)arg1;
 + (void)expireGlobalConfiguration;
-+ (id)sharedManagerUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2;
++ (id)sharedManagerUsingBackgroundSession:(bool)arg1 allowsCellularAccess:(bool)arg2;
 
 - (void).cxx_destruct;
 - (void)_behaviorOptionsChanged:(id)arg1;
@@ -40,7 +40,7 @@
 - (void)_expireConfigurationForContext:(id)arg1;
 - (void)_expireGlobalConfiguration;
 - (id)_uniqueStringForContainerAndAccount:(id)arg1;
-- (BOOL)allowsCellularAccess;
+- (bool)allowsCellularAccess;
 - (void)configurationForContext:(id)arg1 completionHandler:(id)arg2;
 - (id)configurationQueue;
 - (id)containerOperations;
@@ -49,15 +49,15 @@
 - (id)containerSpecificInfoQueue;
 - (id)containerSpecificInfos;
 - (void)dealloc;
-- (void)fetchContainerSpecificInfoForContext:(id)arg1 needUserID:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)fetchContainerSpecificInfoForContext:(id)arg1 needUserID:(bool)arg2 completionHandler:(id)arg3;
 - (void)fetchGlobalConfigWithContext:(id)arg1 completionHandler:(id)arg2;
 - (id)globalConfiguration;
 - (id)globalConfigurationOp;
 - (int)iCloudEnvNotifToken;
 - (id)init;
-- (void)publicURLForServerType:(int)arg1 context:(id)arg2 completionHandler:(id)arg3;
+- (void)publicURLForServerType:(long long)arg1 context:(id)arg2 completionHandler:(id)arg3;
 - (id)queue;
-- (void)setAllowsCellularAccess:(BOOL)arg1;
+- (void)setAllowsCellularAccess:(bool)arg1;
 - (void)setConfigurationQueue:(id)arg1;
 - (void)setContainerOperations:(id)arg1;
 - (void)setContainerSpecificInfoOperations:(id)arg1;
@@ -67,7 +67,7 @@
 - (void)setGlobalConfigurationOp:(id)arg1;
 - (void)setICloudEnvNotifToken:(int)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setUsesBackgroundSession:(BOOL)arg1;
-- (BOOL)usesBackgroundSession;
+- (void)setUsesBackgroundSession:(bool)arg1;
+- (bool)usesBackgroundSession;
 
 @end

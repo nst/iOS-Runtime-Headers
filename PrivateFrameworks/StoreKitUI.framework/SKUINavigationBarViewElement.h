@@ -5,15 +5,15 @@
 @class NSArray;
 
 @interface SKUINavigationBarViewElement : SKUIViewElement {
-    BOOL _hidesShadow;
+    bool_hidesShadow;
 }
 
-@property(readonly) BOOL hidesShadow;
+@property(readonly) bool hidesShadow;
 @property(readonly) NSArray * mainViewElements;
 @property(readonly) NSArray * navigationPalettes;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (BOOL)hidesShadow;
+- (bool)hidesShadow;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)mainViewElements;
 - (id)navigationPalettes;

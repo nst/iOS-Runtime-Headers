@@ -19,7 +19,7 @@
 - (void)_queue_cleanupAfterDeactivation;
 - (id)_queue_errorHandler;
 - (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (void)dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 updateHandler:(id)arg3;

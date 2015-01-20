@@ -3,17 +3,17 @@
  */
 
 @interface CKTranscriptCell : CKEditableCollectionViewCell {
-    float _drawerPercentRevealed;
+    double _drawerPercentRevealed;
     BOOL _orientation;
-    BOOL _wantsDrawerLayout;
+    bool_wantsDrawerLayout;
 }
 
-@property float drawerPercentRevealed;
+@property double drawerPercentRevealed;
 @property BOOL orientation;
-@property BOOL wantsDrawerLayout;
+@property bool wantsDrawerLayout;
 
 - (void)configureForChatItem:(id)arg1;
-- (float)drawerPercentRevealed;
+- (double)drawerPercentRevealed;
 - (void)layoutSubviews;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)layoutSubviewsForContents;
@@ -22,9 +22,9 @@
 - (void)performInsertion:(id)arg1;
 - (void)performReload:(id)arg1 completion:(id)arg2;
 - (void)performRemoval:(id)arg1;
-- (void)setDrawerPercentRevealed:(float)arg1;
+- (void)setDrawerPercentRevealed:(double)arg1;
 - (void)setOrientation:(BOOL)arg1;
-- (void)setWantsDrawerLayout:(BOOL)arg1;
-- (BOOL)wantsDrawerLayout;
+- (void)setWantsDrawerLayout:(bool)arg1;
+- (bool)wantsDrawerLayout;
 
 @end

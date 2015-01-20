@@ -14,7 +14,7 @@
 @property(retain) NSArray * recordIDsToShareReadWrite;
 @property(retain) NSArray * recordIDsToUnshare;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

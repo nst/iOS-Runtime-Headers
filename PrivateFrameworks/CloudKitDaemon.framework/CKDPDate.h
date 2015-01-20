@@ -9,7 +9,7 @@
     double _time;
 }
 
-@property BOOL hasTime;
+@property bool hasTime;
 @property double time;
 
 - (id)_prettyDictionaryRepresentation;
@@ -17,12 +17,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTime;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTime;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTime:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTime:(bool)arg1;
 - (void)setTime:(double)arg1;
 - (double)time;
 - (void)writeTo:(id)arg1;

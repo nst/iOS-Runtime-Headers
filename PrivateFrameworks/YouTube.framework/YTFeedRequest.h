@@ -7,11 +7,11 @@
 @interface YTFeedRequest : YTXMLHTTPRequest {
     NSURL *_batchURL;
     id _delegate;
-    BOOL _invalidatedToken;
     unsigned int _startIndex;
     unsigned int _totalResults;
     NSMutableArray *_videos;
     unsigned int _videosPerPage;
+    bool_invalidatedToken;
 }
 
 + (int)partialFeedType;
@@ -20,7 +20,7 @@
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (id)init;
-- (void)loadRequest:(id)arg1 withDelegate:(id)arg2 accountAuthRequired:(BOOL)arg3;
+- (void)loadRequest:(id)arg1 withDelegate:(id)arg2 accountAuthRequired:(bool)arg3;
 - (int)parseData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

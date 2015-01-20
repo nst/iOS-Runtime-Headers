@@ -6,8 +6,8 @@
 
 @interface PRLogging : NSObject {
     NSObject<OS_dispatch_queue> *_logQueue;
-    BOOL _logToFile;
-    BOOL _logToSyslog;
+    bool_logToFile;
+    bool_logToSyslog;
 }
 
 + (id)sharedLogger;
@@ -15,6 +15,6 @@
 - (void).cxx_destruct;
 - (void)_reloadLogPreferences;
 - (id)init;
-- (void)logMessageWithFormat:(id)arg1 args:(void*)arg2;
+- (void)logMessageWithFormat:(id)arg1 args:(char *)arg2;
 
 @end

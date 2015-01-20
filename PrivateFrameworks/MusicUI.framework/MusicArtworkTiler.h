@@ -6,8 +6,8 @@
 
 @interface MusicArtworkTiler : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSString *_cacheIdentifier;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     id _context;
@@ -18,21 +18,21 @@
 @property(copy) NSString * cacheIdentifier;
 @property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
 @property id context;
-@property struct CGSize { float x1; float x2; } imageSize;
+@property struct CGSize { double x1; double x2; } imageSize;
 @property(retain) UIImage * placeholderImage;
 
 - (void).cxx_destruct;
 - (id)cacheIdentifier;
 - (id)callbackQueue;
 - (id)context;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)placeholderImage;
 - (void)requestTiledArtworkForCatalogs:(id)arg1 completionHandler:(id)arg2;
-- (void)requestTiledArtworkForPlaylist:(id)arg1 tileCount:(int)arg2 completionHandler:(id)arg3;
+- (void)requestTiledArtworkForPlaylist:(id)arg1 tileCount:(long long)arg2 completionHandler:(id)arg3;
 - (void)setCacheIdentifier:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setContext:(id)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPlaceholderImage:(id)arg1;
 
 @end

@@ -6,21 +6,21 @@
 
 @interface TLSound : NSObject {
     NSString *_filePath;
-    BOOL _shouldDisposeOfSoundID;
-    unsigned long _soundID;
+    unsigned int _soundID;
+    bool_shouldDisposeOfSoundID;
 }
 
-@property(setter=_setShouldDisposeOfSoundID:) BOOL _shouldDisposeOfSoundID;
+@property(setter=_setShouldDisposeOfSoundID:) bool _shouldDisposeOfSoundID;
 @property(copy) NSString * filePath;
-@property unsigned long soundID;
+@property unsigned int soundID;
 
 - (void)_setFilePath:(id)arg1;
-- (void)_setShouldDisposeOfSoundID:(BOOL)arg1;
-- (void)_setSoundID:(unsigned long)arg1;
-- (BOOL)_shouldDisposeOfSoundID;
+- (void)_setShouldDisposeOfSoundID:(bool)arg1;
+- (void)_setSoundID:(unsigned int)arg1;
+- (bool)_shouldDisposeOfSoundID;
 - (void)dealloc;
 - (id)filePath;
-- (id)initWithFilePath:(id)arg1 soundID:(unsigned long)arg2;
-- (unsigned long)soundID;
+- (id)initWithFilePath:(id)arg1 soundID:(unsigned int)arg2;
+- (unsigned int)soundID;
 
 @end

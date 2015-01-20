@@ -6,18 +6,18 @@
 
 @interface FAAddFamilyMemberRequest : FAFamilyCircleRequest {
     NSString *_memberAppleID;
-    BOOL _memberIsUnder13;
     NSString *_memberPassword;
+    bool_memberIsUnder13;
 }
 
 @property(copy,readonly) NSString * memberAppleID;
-@property(readonly) BOOL memberIsUnder13;
+@property(readonly) bool memberIsUnder13;
 @property(copy,readonly) NSString * memberPassword;
 
 - (void).cxx_destruct;
-- (id)initWithFamilyMemberAppleID:(id)arg1 password:(id)arg2 isUnder13:(BOOL)arg3;
+- (id)initWithFamilyMemberAppleID:(id)arg1 password:(id)arg2 isUnder13:(bool)arg3;
 - (id)memberAppleID;
-- (BOOL)memberIsUnder13;
+- (bool)memberIsUnder13;
 - (id)memberPassword;
 - (void)startRequestWithCompletionHandler:(id)arg1;
 

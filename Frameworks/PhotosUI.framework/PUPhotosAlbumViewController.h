@@ -14,34 +14,34 @@
 @property(readonly) PHFetchResult * assetCollectionAssets;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_globalHeaderTitle;
 - (id)assetCollection;
 - (id)assetCollectionAssets;
-- (BOOL)canBeginStackCollapseTransition;
+- (bool)canBeginStackCollapseTransition;
 - (void)configureGlobalFooterView:(id)arg1;
 - (void)configureGlobalHeaderView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })contentOffsetForPreheating;
+- (struct CGPoint { double x1; double x2; })contentOffsetForPreheating;
 - (id)filterPredicateForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (float)globalHeaderHeight;
+- (double)globalHeaderHeight;
 - (void)handleAddFromAction;
 - (void)handleAddToAlbum:(id)arg1 pickedAssets:(id)arg2;
-- (void)handleTransitionFade:(BOOL)arg1 animate:(BOOL)arg2;
+- (void)handleTransitionFade:(bool)arg1 animate:(bool)arg2;
 - (id)initWithSpec:(id)arg1;
-- (BOOL)isTrashBinViewController;
+- (bool)isTrashBinViewController;
 - (id)localizedTitleForAssets:(id)arg1;
 - (id)newGridLayout;
-- (BOOL)prepareForDismissingForced:(BOOL)arg1;
+- (bool)prepareForDismissingForced:(bool)arg1;
 - (id)sessionInfoForTransferredAssets:(id)arg1;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)setAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 filterPredicate:(id)arg3;
 - (void)setupScrubber;
 - (void)updateTitle;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)wantsAssetCounts;
-- (BOOL)wantsGlobalFooter;
+- (void)viewWillAppear:(bool)arg1;
+- (bool)wantsAssetCounts;
+- (bool)wantsGlobalFooter;
 
 @end

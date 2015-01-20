@@ -6,20 +6,20 @@
 
 @interface TSUPerformanceTestHarness : NSObject {
     struct timeval { 
-        int tv_sec; 
+        long long tv_sec; 
         int tv_usec; 
-    BOOL mPassed;
-    int mPassingTests;
-    BOOL mQuiet;
+    boolmPassed;
+    boolmQuiet;
+    long long mPassingTests;
     } mSetupTime;
     NSMutableArray *mTestCases;
-    int mTotalTests;
+    long long mTotalTests;
 }
 
-@property(readonly) BOOL passed;
-@property(readonly) int passingTestCount;
-@property BOOL quiet;
-@property(readonly) int testCount;
+@property(readonly) bool passed;
+@property(readonly) long long passingTestCount;
+@property bool quiet;
+@property(readonly) long long testCount;
 
 + (id)harness;
 
@@ -30,16 +30,16 @@
 - (void)p_writeConsoleMessagesToDirectory:(id)arg1;
 - (void)p_writeCsvResultsToDirectory:(id)arg1;
 - (void)p_writeSystemConfigurationToDirectory:(id)arg1;
-- (BOOL)passed;
-- (int)passingTestCount;
-- (BOOL)quiet;
+- (bool)passed;
+- (long long)passingTestCount;
+- (bool)quiet;
 - (void)report;
 - (void)runTestWithName:(id)arg1 selector:(SEL)arg2 goalTime:(double)arg3 precision:(double)arg4;
 - (void)runTestWithName:(id)arg1 selector:(SEL)arg2 goalTime:(double)arg3;
-- (BOOL)runTests;
-- (void)setQuiet:(BOOL)arg1;
+- (bool)runTests;
+- (void)setQuiet:(bool)arg1;
 - (void)setup;
-- (int)testCount;
+- (long long)testCount;
 - (void)testSuite;
 - (id)testWithName:(id)arg1 selector:(SEL)arg2 goalTime:(double)arg3;
 

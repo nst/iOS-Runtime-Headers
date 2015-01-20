@@ -5,20 +5,20 @@
 @class NSArray;
 
 @interface _UIPathLazyImageAsset : UIImageAsset {
-    BOOL _haveCGCacheImages;
     NSArray *_imagePaths;
-    BOOL _imagesHaveBeenLoaded;
+    bool_haveCGCacheImages;
+    bool_imagesHaveBeenLoaded;
 }
 
-@property BOOL haveCGCacheImages;
+@property bool haveCGCacheImages;
 @property(copy) NSArray * imagePaths;
 
 - (void)_clearResolvedImageResources;
 - (void)dealloc;
-- (BOOL)haveCGCacheImages;
+- (bool)haveCGCacheImages;
 - (id)imagePaths;
 - (id)imageWithTraitCollection:(id)arg1;
-- (void)setHaveCGCacheImages:(BOOL)arg1;
+- (void)setHaveCGCacheImages:(bool)arg1;
 - (void)setImagePaths:(id)arg1;
 
 @end

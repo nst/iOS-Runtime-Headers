@@ -15,7 +15,7 @@
 @property(copy) id start;
 
 - (void)animationDidStart:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)completion;
 - (void)dealloc;
 - (void)setCompletion:(id)arg1;

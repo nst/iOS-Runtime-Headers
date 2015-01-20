@@ -6,8 +6,8 @@
 
 @interface PKPaymentAuthorizationPresentationController : UIPresentationController {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UIView *_dimmingView;
     NSLayoutConstraint *_leftConstraint;
     } _preferredContentSize;
@@ -23,6 +23,6 @@
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)presentationTransitionWillBegin;
-- (BOOL)shouldRemovePresentersView;
+- (bool)shouldRemovePresentersView;
 
 @end

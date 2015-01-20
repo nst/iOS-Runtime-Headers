@@ -4,7 +4,7 @@
 
 @interface PKWeakReference : NSObject {
     id _store;
-    BOOL _storedValue;
+    bool_storedValue;
 }
 
 - (void)dealloc;

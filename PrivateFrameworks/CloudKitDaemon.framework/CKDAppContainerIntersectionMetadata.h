@@ -3,17 +3,17 @@
  */
 
 @interface CKDAppContainerIntersectionMetadata : NSObject {
-    int _tokenRegistered;
-    int _usesAPSPublicToken;
+    long long _tokenRegistered;
+    long long _usesAPSPublicToken;
 }
 
-@property int tokenRegistered;
-@property int usesAPSPublicToken;
+@property long long tokenRegistered;
+@property long long usesAPSPublicToken;
 
 - (id)init;
-- (void)setTokenRegistered:(int)arg1;
-- (void)setUsesAPSPublicToken:(int)arg1;
-- (int)tokenRegistered;
-- (int)usesAPSPublicToken;
+- (void)setTokenRegistered:(long long)arg1;
+- (void)setUsesAPSPublicToken:(long long)arg1;
+- (long long)tokenRegistered;
+- (long long)usesAPSPublicToken;
 
 @end

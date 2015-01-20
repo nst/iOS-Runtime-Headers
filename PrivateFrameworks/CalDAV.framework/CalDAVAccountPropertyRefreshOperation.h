@@ -5,15 +5,15 @@
 @class <CalDAVAccountPropertyRefreshDelegate>;
 
 @interface CalDAVAccountPropertyRefreshOperation : CalDAVOperation {
-    BOOL _fetchPrincipalSearchProperties;
+    bool_fetchPrincipalSearchProperties;
 }
 
 @property <CalDAVAccountPropertyRefreshDelegate> * delegate;
-@property BOOL fetchPrincipalSearchProperties;
+@property bool fetchPrincipalSearchProperties;
 
-- (BOOL)fetchPrincipalSearchProperties;
+- (bool)fetchPrincipalSearchProperties;
 - (void)getAccountPropertiesTask:(id)arg1 completedWithError:(id)arg2;
 - (void)refreshProperties;
-- (void)setFetchPrincipalSearchProperties:(BOOL)arg1;
+- (void)setFetchPrincipalSearchProperties:(bool)arg1;
 
 @end

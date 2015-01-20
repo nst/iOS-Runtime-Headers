@@ -25,7 +25,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithSQLiteRow:(id)arg1;
 - (id)initWithURLString:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 generation:(long long)arg4;
-- (BOOL)matchesVisitTime:(double)arg1 urlString:(id)arg2;
+- (bool)matchesVisitTime:(double)arg1 urlString:(id)arg2;
 - (double)startTime;
 - (id)urlString;
 

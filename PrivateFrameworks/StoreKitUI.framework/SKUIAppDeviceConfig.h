@@ -9,13 +9,13 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (BOOL)isTimeZoneSet;
-- (unsigned int)preferredVideoFormat;
-- (unsigned int)preferredVideoPreviewFormat;
-- (struct CGSize { float x1; float x2; })screenSize;
+- (bool)isTimeZoneSet;
+- (unsigned long long)preferredVideoFormat;
+- (unsigned long long)preferredVideoPreviewFormat;
+- (struct CGSize { double x1; double x2; })screenSize;
 - (id)storeFrontCountryCode;
 - (id)systemLanguage;
 - (id)timeZone;

@@ -13,8 +13,8 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <TRDeviceSetupBrowserDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int state;
+@property(readonly) unsigned long long hash;
+@property(readonly) long long state;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,11 +22,12 @@
 - (void)browserDidChangeState:(id)arg1;
 - (void)browserDidDisconnect:(id)arg1;
 - (id)browserDidStartTransfer:(id)arg1;
+- (void)defer;
 - (id)delegate;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)start;
-- (int)state;
+- (long long)state;
 - (void)stop;
 
 @end

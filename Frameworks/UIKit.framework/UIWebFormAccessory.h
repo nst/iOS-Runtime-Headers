@@ -21,8 +21,8 @@
 @property(retain) UIBarButtonItem * _clearButton;
 @property(retain) UISegmentedControl * _tab;
 @property <UIWebFormAccessoryDelegate> * delegate;
-@property(getter=isNextEnabled) BOOL nextEnabled;
-@property(getter=isPreviousEnabled) BOOL previousEnabled;
+@property(getter=isNextEnabled) bool nextEnabled;
+@property(getter=isPreviousEnabled) bool previousEnabled;
 
 + (id)toolbarWithItems:(id)arg1;
 
@@ -44,14 +44,14 @@
 - (id)delegate;
 - (void)done:(id)arg1;
 - (void)hideAutoFillButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isNextEnabled;
-- (BOOL)isPreviousEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isNextEnabled;
+- (bool)isPreviousEnabled;
 - (void)layoutSubviews;
-- (void)setClearVisible:(BOOL)arg1;
+- (void)setClearVisible:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setNextEnabled:(BOOL)arg1;
-- (void)setPreviousEnabled:(BOOL)arg1;
+- (void)setNextEnabled:(bool)arg1;
+- (void)setPreviousEnabled:(bool)arg1;
 - (void)set_autofill:(id)arg1;
 - (void)set_clearButton:(id)arg1;
 - (void)set_tab:(id)arg1;

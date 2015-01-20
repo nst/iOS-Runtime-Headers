@@ -6,7 +6,7 @@
 
 @interface PCMultiStageGrowthAlgorithm : NSObject <PCGrowthAlgorithm> {
     NSString *_algorithmName;
-    unsigned int _countOfGrowthActions;
+    unsigned long long _countOfGrowthActions;
     double _currentKeepAliveInterval;
     int _growthStage;
     double _highWatermark;
@@ -20,11 +20,11 @@
 }
 
 @property(copy,readonly) NSDictionary * cacheInfo;
-@property(readonly) unsigned int countOfGrowthActions;
+@property(readonly) unsigned long long countOfGrowthActions;
 @property(readonly) double currentKeepAliveInterval;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * loggingIdentifier;
 @property double maximumKeepAliveInterval;
 @property double minimumKeepAliveInterval;
@@ -44,7 +44,7 @@
 - (id)_stringForAction:(int)arg1;
 - (id)_stringForStage:(int)arg1;
 - (id)cacheInfo;
-- (unsigned int)countOfGrowthActions;
+- (unsigned long long)countOfGrowthActions;
 - (double)currentKeepAliveInterval;
 - (void)dealloc;
 - (id)description;
@@ -55,6 +55,6 @@
 - (void)processNextAction:(int)arg1;
 - (void)setMaximumKeepAliveInterval:(double)arg1;
 - (void)setMinimumKeepAliveInterval:(double)arg1;
-- (BOOL)useIntervalIfImprovement:(double)arg1;
+- (bool)useIntervalIfImprovement:(double)arg1;
 
 @end

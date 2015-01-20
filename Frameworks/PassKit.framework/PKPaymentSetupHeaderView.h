@@ -8,18 +8,18 @@
     UIActivityIndicatorView *_activityIndicator;
     UIButton *_button;
     UIImageView *_checkmark;
-    int _context;
-    BOOL _hideImage;
+    long long _context;
     UIImageView *_image;
     UILabel *_subTitleLabel;
     UILabel *_titleLabel;
+    bool_hideImage;
 }
 
 @property(retain) UIActivityIndicatorView * activityIndicator;
 @property(retain) UIButton * button;
 @property(retain) UIImageView * checkmark;
-@property int context;
-@property BOOL hideImage;
+@property long long context;
+@property bool hideImage;
 @property(retain) UIImageView * image;
 @property(retain) UILabel * subTitleLabel;
 @property(retain) UILabel * titleLabel;
@@ -29,22 +29,22 @@
 - (id)activityIndicator;
 - (id)button;
 - (id)checkmark;
-- (int)context;
+- (long long)context;
 - (void)dealloc;
-- (BOOL)hideImage;
+- (bool)hideImage;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2;
-- (BOOL)isBuddyiPad;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(long long)arg2;
+- (bool)isBuddyiPad;
 - (void)layoutSubviews;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setButton:(id)arg1;
 - (void)setCheckmark:(id)arg1;
-- (void)setContext:(int)arg1;
-- (void)setHideImage:(BOOL)arg1;
+- (void)setContext:(long long)arg1;
+- (void)setHideImage:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setSubTitleLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)subTitleLabel;
 - (id)titleLabel;
 

@@ -5,18 +5,18 @@
 @class NSArray;
 
 @interface KNMotionBlurWrapperDrawPass : NSObject {
-    BOOL _shouldMotionBlur;
     NSArray *_textures;
+    bool_shouldMotionBlur;
 }
 
-@property BOOL shouldMotionBlur;
+@property bool shouldMotionBlur;
 @property(retain) NSArray * textures;
 
 - (void)dealloc;
 - (id)description;
-- (void)setShouldMotionBlur:(BOOL)arg1;
+- (void)setShouldMotionBlur:(bool)arg1;
 - (void)setTextures:(id)arg1;
-- (BOOL)shouldMotionBlur;
+- (bool)shouldMotionBlur;
 - (id)textures;
 
 @end

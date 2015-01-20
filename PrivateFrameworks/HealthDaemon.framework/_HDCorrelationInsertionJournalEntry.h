@@ -12,10 +12,10 @@
 @property(readonly) NSUUID * correlationUUID;
 @property(readonly) NSArray * objectUUIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)applyWithDaemon:(id)arg1;
+- (bool)applyWithDaemon:(id)arg1;
 - (id)correlationUUID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

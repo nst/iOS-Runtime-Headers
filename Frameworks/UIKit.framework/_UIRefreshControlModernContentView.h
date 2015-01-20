@@ -5,28 +5,28 @@
 @class UILabel, UIView, _UIRefreshControlModernReplicatorView;
 
 @interface _UIRefreshControlModernContentView : _UIRefreshControlContentView {
-    BOOL _animationsAreValid;
-    BOOL _areAnimationsValid;
-    float _currentPopStiffness;
-    BOOL _hasFinishedRevealing;
+    double _currentPopStiffness;
     UIView *_replicatorContainer;
     _UIRefreshControlModernReplicatorView *_replicatorView;
     UIView *_seed;
     UILabel *_textLabel;
+    bool_animationsAreValid;
+    bool_areAnimationsValid;
+    bool_hasFinishedRevealing;
 }
 
-@property BOOL areAnimationsValid;
-@property float currentPopStiffness;
+@property bool areAnimationsValid;
+@property double currentPopStiffness;
 @property(readonly) UILabel * textLabel;
 
 - (void)_cleanUpAfterRevealing;
 - (double)_currentTimeOffset;
-- (float)_effectiveScrollViewHeight;
+- (double)_effectiveScrollViewHeight;
 - (id)_effectiveTintColor;
-- (id)_effectiveTintColorWithAlpha:(float)arg1;
+- (id)_effectiveTintColorWithAlpha:(double)arg1;
 - (void)_goAway;
-- (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
-- (float)_percentageShowing;
+- (double)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
+- (double)_percentageShowing;
 - (void)_resetToRevealingState;
 - (void)_reveal;
 - (void)_setSpunAppearance;
@@ -35,20 +35,20 @@
 - (void)_tick;
 - (void)_tickDueToProgrammaticRefresh;
 - (void)_updateTimeOffsetOfRelevantLayers;
-- (BOOL)areAnimationsValid;
+- (bool)areAnimationsValid;
 - (id)attributedTitle;
-- (float)currentPopStiffness;
+- (double)currentPopStiffness;
 - (void)dealloc;
 - (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)maximumSnappingHeight;
-- (void)setAreAnimationsValid:(BOOL)arg1;
+- (double)maximumSnappingHeight;
+- (void)setAreAnimationsValid:(bool)arg1;
 - (void)setAttributedTitle:(id)arg1;
-- (void)setCurrentPopStiffness:(float)arg1;
+- (void)setCurrentPopStiffness:(double)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)style;
 - (id)textLabel;
 - (void)willTransitionFromState:(int)arg1 toState:(int)arg2;
 

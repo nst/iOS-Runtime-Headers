@@ -10,9 +10,9 @@
     CKDPShare *_share;
 }
 
-@property(readonly) BOOL hasInvitationImageUrl;
-@property(readonly) BOOL hasInvitationMessage;
-@property(readonly) BOOL hasShare;
+@property(readonly) bool hasInvitationImageUrl;
+@property(readonly) bool hasInvitationMessage;
+@property(readonly) bool hasShare;
 @property(retain) NSString * invitationImageUrl;
 @property(retain) NSString * invitationMessage;
 @property(retain) CKDPShare * share;
@@ -24,15 +24,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInvitationImageUrl;
-- (BOOL)hasInvitationMessage;
-- (BOOL)hasShare;
-- (unsigned int)hash;
+- (bool)hasInvitationImageUrl;
+- (bool)hasInvitationMessage;
+- (bool)hasShare;
+- (unsigned long long)hash;
 - (id)invitationImageUrl;
 - (id)invitationMessage;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setInvitationImageUrl:(id)arg1;

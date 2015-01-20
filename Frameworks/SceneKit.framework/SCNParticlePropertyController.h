@@ -7,25 +7,25 @@
 @interface SCNParticlePropertyController : NSObject <NSSecureCoding, NSCopying> {
     CAAnimation *_animation;
     id _c3dAnimation;
-    float _inputBias;
-    int _inputMode;
+    double _inputBias;
+    long long _inputMode;
     SCNNode *_inputOrigin;
     NSString *_inputProperty;
-    float _inputScale;
+    double _inputScale;
     id _reserved;
 }
 
 @property(retain) CAAnimation * animation;
-@property float inputBias;
-@property int inputMode;
+@property double inputBias;
+@property long long inputMode;
 @property SCNNode * inputOrigin;
 @property(copy) NSString * inputProperty;
-@property float inputScale;
+@property double inputScale;
 
 + (id)SCNJSExportProtocol;
 + (id)controllerWithAnimation:(id)arg1;
 + (id)particlePropertyControllerWithAnimation:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_customDecodingOfSCNParticlePropertyController:(id)arg1;
 - (void)_customEncodingOfSCNParticlePropertyController:(id)arg1;
@@ -37,17 +37,17 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (float)inputBias;
-- (int)inputMode;
+- (double)inputBias;
+- (long long)inputMode;
 - (id)inputOrigin;
 - (id)inputProperty;
-- (float)inputScale;
+- (double)inputScale;
 - (void)setAnimation:(id)arg1;
 - (void)setC3dAnimation:(id)arg1;
-- (void)setInputBias:(float)arg1;
-- (void)setInputMode:(int)arg1;
+- (void)setInputBias:(double)arg1;
+- (void)setInputMode:(long long)arg1;
 - (void)setInputOrigin:(id)arg1;
 - (void)setInputProperty:(id)arg1;
-- (void)setInputScale:(float)arg1;
+- (void)setInputScale:(double)arg1;
 
 @end

@@ -9,34 +9,34 @@
     NSMutableArray *_netRequests;
     NSObject<OS_dispatch_source> *_recheckTimer;
     NSObject<OS_dispatch_source> *_retryTimer;
-    BOOL _started;
-    BOOL _verifyEV;
     NSXPCListener *_xpcListener;
     NSMutableArray *_xpcRequests;
+    bool_started;
+    bool_verifyEV;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (long)_addService:(id)arg1 app:(id)arg2 domain:(id)arg3;
+- (int)_addService:(id)arg1 app:(id)arg2 domain:(id)arg3;
 - (id)_appEntitlementsByID:(id)arg1;
-- (void)_completeAppsRequestForURLConnection:(id)arg1 status:(long)arg2 services:(id)arg3;
+- (void)_completeAppsRequestForURLConnection:(id)arg1 status:(int)arg2 services:(id)arg3;
 - (void)_connectionInvalidated:(id)arg1;
-- (long)_ensureDatabaseLoaded;
+- (int)_ensureDatabaseLoaded;
 - (id)_findAppRequestForURLConnection:(id)arg1;
 - (id)_findService:(id)arg1 app:(id)arg2 domain:(id)arg3;
 - (id)_installedAppByID:(id)arg1;
-- (void)_parseServiceDomainString:(id)arg1 legacy:(BOOL)arg2 service:(id*)arg3 domain:(id*)arg4;
+- (void)_parseServiceDomainString:(id)arg1 legacy:(bool)arg2 service:(id*)arg3 domain:(id*)arg4;
 - (void)_performPeriodicRechecks;
 - (void)_retryDownloads;
 - (void)_sanitizeDatabase;
-- (long)_saveDatabase;
+- (int)_saveDatabase;
 - (void)_schedulePeriodicRechecks;
 - (void)_scheduleRetries;
-- (long)_startAppsRequestForDomain:(id)arg1;
-- (long)_verifyTrust:(struct __SecTrust { }*)arg1;
+- (int)_startAppsRequestForDomain:(id)arg1;
+- (int)_verifyTrust:(struct __SecTrust { }*)arg1;
 - (void)addAllApps;
 - (void)addAllAppsWithReply:(id)arg1;
 - (void)addBundleID:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)dealloc;
 - (void)getInfoForService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id)arg4;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)logControl:(id)arg1 reply:(id)arg2;
 - (void)removeBundleID:(id)arg1;
 - (void)removeService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id)arg4;

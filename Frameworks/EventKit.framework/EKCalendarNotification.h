@@ -6,59 +6,59 @@
 
 @interface EKCalendarNotification : NSObject <EKIdentityProtocol> {
     NSURL *_URI;
-    BOOL _alerted;
     struct CGColor { } *_dotColor;
     NSString *_emailAddress;
     NSString *_firstName;
-    BOOL _hiddenFromNotificationCenter;
     NSString *_lastName;
     NSString *_name;
     EKObjectID *_objectID;
     NSString *_title;
-    int _type;
+    long long _type;
+    bool_alerted;
+    bool_hiddenFromNotificationCenter;
 }
 
 @property(retain) NSURL * URI;
-@property BOOL alerted;
+@property bool alerted;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property struct CGColor { }* dotColor;
 @property(retain) NSString * emailAddress;
 @property(retain) NSString * firstName;
-@property(readonly) unsigned int hash;
-@property BOOL hiddenFromNotificationCenter;
+@property(readonly) unsigned long long hash;
+@property bool hiddenFromNotificationCenter;
 @property(retain) NSString * lastName;
 @property(retain) NSString * name;
-@property(readonly) BOOL needsAlert;
+@property(readonly) bool needsAlert;
 @property(retain) EKObjectID * objectID;
 @property(readonly) Class superclass;
 @property(retain) NSString * title;
-@property int type;
+@property long long type;
 
 - (id)URI;
-- (BOOL)alerted;
+- (bool)alerted;
 - (void)dealloc;
 - (struct CGColor { }*)dotColor;
 - (id)emailAddress;
 - (id)firstName;
-- (BOOL)hiddenFromNotificationCenter;
-- (id)initWithType:(int)arg1;
+- (bool)hiddenFromNotificationCenter;
+- (id)initWithType:(long long)arg1;
 - (id)lastName;
 - (id)name;
-- (BOOL)needsAlert;
+- (bool)needsAlert;
 - (id)objectID;
-- (void)setAlerted:(BOOL)arg1;
+- (void)setAlerted:(bool)arg1;
 - (void)setDotColor:(struct CGColor { }*)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setHiddenFromNotificationCenter:(BOOL)arg1;
+- (void)setHiddenFromNotificationCenter:(bool)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setObjectID:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setURI:(id)arg1;
 - (id)title;
-- (int)type;
+- (long long)type;
 
 @end

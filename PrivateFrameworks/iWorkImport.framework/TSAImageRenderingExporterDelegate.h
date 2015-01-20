@@ -5,38 +5,38 @@
 @class NSString, NSURL, TSARenderingExporter<TSKImageExporter>;
 
 @interface TSAImageRenderingExporterDelegate : NSObject <TSARenderingExporterDelegate> {
+    boolmScaleToFit;
     float mCompressionFactor;
-    unsigned int mHeight;
+    unsigned long long mHeight;
     NSString *mImageType;
     TSARenderingExporter<TSKImageExporter> *mRenderingExporter;
-    BOOL mScaleToFit;
     NSURL *mURL;
-    unsigned int mWidth;
+    unsigned long long mWidth;
 }
 
 @property float compressionFactor;
-@property unsigned int height;
+@property unsigned long long height;
 @property(retain) NSString * imageType;
-@property BOOL scaleToFit;
-@property unsigned int width;
+@property bool scaleToFit;
+@property unsigned long long width;
 
 - (float)compressionFactor;
-- (unsigned int)height;
+- (unsigned long long)height;
 - (id)imageType;
 - (id)initWithRenderingExporter:(id)arg1;
 - (struct CGContext { }*)newCGContextForURL:(id)arg1;
 - (void)releaseCGContext:(struct CGContext { }*)arg1;
-- (BOOL)scaleToFit;
+- (bool)scaleToFit;
 - (void)setCompressionFactor:(float)arg1;
-- (void)setHeight:(unsigned int)arg1;
+- (void)setHeight:(unsigned long long)arg1;
 - (void)setImageType:(id)arg1;
-- (void)setScaleToFit:(BOOL)arg1;
-- (void)setWidth:(unsigned int)arg1;
+- (void)setScaleToFit:(bool)arg1;
+- (void)setWidth:(unsigned long long)arg1;
 - (void)setup;
-- (BOOL)supportsPaging;
-- (BOOL)supportsRenderingQuality;
+- (bool)supportsPaging;
+- (bool)supportsRenderingQuality;
 - (void)teardown;
-- (float)viewScale;
-- (unsigned int)width;
+- (double)viewScale;
+- (unsigned long long)width;
 
 @end

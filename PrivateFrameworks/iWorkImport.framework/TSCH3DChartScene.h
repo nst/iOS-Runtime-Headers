@@ -11,19 +11,19 @@
         TSCHChartType *chartType; 
         TSCHChartSeriesType *seriesType; 
         struct { 
-            BOOL forceOmitLegend; 
-            BOOL forceOmitTitle; 
-            BOOL forceOmitAxisTitle; 
-            BOOL enable3DTightBounds; 
-            BOOL enable3DScaledDepthBounds; 
-            BOOL enable3DSageMaxDepthRatio; 
-            unsigned int max3DLimitingSeries; 
+            boolforceOmitLegend; 
+            boolforceOmitTitle; 
+            boolforceOmitAxisTitle; 
+            boolenable3DTightBounds; 
+            boolenable3DScaledDepthBounds; 
+            boolenable3DSageMaxDepthRatio; 
+            unsigned long long max3DLimitingSeries; 
         } layoutSettings; 
     } mSceneInfo;
 }
 
-+ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; id x3; id x4; struct { BOOL x_5_1_1; BOOL x_5_1_2; BOOL x_5_1_3; BOOL x_5_1_4; BOOL x_5_1_5; BOOL x_5_1_6; unsigned int x_5_1_7; } x5; }*)arg1;
-+ (BOOL)supportsValueAxisLabelAlignmentCaching;
++ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; id x3; id x4; struct { boolx_5_1_1; boolx_5_1_2; boolx_5_1_3; boolx_5_1_4; boolx_5_1_5; boolx_5_1_6; unsigned long long x_5_1_7; } x5; }*)arg1;
++ (bool)supportsValueAxisLabelAlignmentCaching;
 
 - (id).cxx_construct;
 - (void)addAllLabelsToScene;
@@ -35,8 +35,8 @@
 - (void)adjustSceneSettings;
 - (id)chartInfo;
 - (id)chartType;
-- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; id x3; id x4; struct { BOOL x_5_1_1; BOOL x_5_1_2; BOOL x_5_1_3; BOOL x_5_1_4; BOOL x_5_1_5; BOOL x_5_1_6; unsigned int x_5_1_7; } x5; }*)arg1;
-- (const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; }*)layoutSettings;
+- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; id x3; id x4; struct { boolx_5_1_1; boolx_5_1_2; boolx_5_1_3; boolx_5_1_4; boolx_5_1_5; boolx_5_1_6; unsigned long long x_5_1_7; } x5; }*)arg1;
+- (const struct { boolx1; boolx2; boolx3; boolx4; boolx5; boolx6; unsigned long long x7; }*)layoutSettings;
 - (id)scene;
 - (id)seriesType;
 

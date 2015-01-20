@@ -14,7 +14,7 @@
     float _exposureBiasMax;
     float _exposureBiasMin;
     float _exposureBiasValue;
-    BOOL _suspendTrackFadeOut;
+    bool_suspendTrackFadeOut;
 }
 
 @property(readonly) double _lastInteractionTime;
@@ -26,11 +26,11 @@
 @property float exposureBiasMax;
 @property float exposureBiasMin;
 @property float exposureBiasValue;
-@property BOOL suspendTrackFadeOut;
-@property(readonly) float thumbMaxExtension;
+@property bool suspendTrackFadeOut;
+@property(readonly) double thumbMaxExtension;
 
 - (void).cxx_destruct;
-- (void)_animateTrackAlpha:(float)arg1 withDuration:(double)arg2;
+- (void)_animateTrackAlpha:(double)arg1 withDuration:(double)arg2;
 - (void)_cancelDelayedDim;
 - (void)_dimTrackForInactivity;
 - (double)_lastInteractionTime;
@@ -40,23 +40,23 @@
 - (id)_minTrackView;
 - (float)_normalizedExposureValue;
 - (void)_scheduleDelayedDim;
-- (struct CGPoint { float x1; float x2; })_sunCenterForNormalizedValue:(float)arg1;
+- (struct CGPoint { double x1; double x2; })_sunCenterForNormalizedValue:(float)arg1;
 - (id)_thumbView;
-- (float)_trackAlpha;
+- (double)_trackAlpha;
 - (void)_updateForChangedNormalizedExposureValue;
 - (float)exposureBiasMax;
 - (float)exposureBiasMin;
 - (float)exposureBiasValue;
 - (void)forceTrackDimmed;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setExposureBiasMax:(float)arg1;
 - (void)setExposureBiasMin:(float)arg1;
 - (void)setExposureBiasValue:(float)arg1;
-- (void)setSuspendTrackFadeOut:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)suspendTrackFadeOut;
-- (float)thumbMaxExtension;
+- (void)setSuspendTrackFadeOut:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)suspendTrackFadeOut;
+- (double)thumbMaxExtension;
 - (void)updateLastInteractionTime;
 
 @end

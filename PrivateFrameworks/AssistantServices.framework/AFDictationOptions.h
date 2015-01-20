@@ -10,13 +10,13 @@
     NSString *_fieldIdentifier;
     NSString *_fieldLabel;
     NSString *_interactionIdentifier;
-    int _keyboardType;
+    long long _keyboardType;
     NSString *_languageCodeOverride;
     NSString *_postfixText;
     NSString *_prefixText;
-    int _returnKeyType;
+    long long _returnKeyType;
     NSString *_selectedText;
-    int _transcriptionMode;
+    long long _transcriptionMode;
 }
 
 @property(copy) NSString * applicationName;
@@ -24,15 +24,15 @@
 @property(copy) NSString * fieldIdentifier;
 @property(copy) NSString * fieldLabel;
 @property(copy) NSString * interactionIdentifier;
-@property int keyboardType;
+@property long long keyboardType;
 @property(copy) NSString * languageCodeOverride;
 @property(copy) NSString * postfixText;
 @property(copy) NSString * prefixText;
-@property int returnKeyType;
+@property long long returnKeyType;
 @property(copy) NSString * selectedText;
-@property int transcriptionMode;
+@property long long transcriptionMode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)applicationName;
@@ -44,24 +44,24 @@
 - (id)fieldLabel;
 - (id)initWithCoder:(id)arg1;
 - (id)interactionIdentifier;
-- (int)keyboardType;
+- (long long)keyboardType;
 - (id)languageCodeOverride;
 - (id)postfixText;
 - (id)prefixText;
-- (int)returnKeyType;
+- (long long)returnKeyType;
 - (id)selectedText;
 - (void)setApplicationName:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setFieldIdentifier:(id)arg1;
 - (void)setFieldLabel:(id)arg1;
 - (void)setInteractionIdentifier:(id)arg1;
-- (void)setKeyboardType:(int)arg1;
+- (void)setKeyboardType:(long long)arg1;
 - (void)setLanguageCodeOverride:(id)arg1;
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;
-- (void)setReturnKeyType:(int)arg1;
+- (void)setReturnKeyType:(long long)arg1;
 - (void)setSelectedText:(id)arg1;
-- (void)setTranscriptionMode:(int)arg1;
-- (int)transcriptionMode;
+- (void)setTranscriptionMode:(long long)arg1;
+- (long long)transcriptionMode;
 
 @end

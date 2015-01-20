@@ -20,7 +20,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <MSDeleterDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)_clearInstantiatedDeletersByPersonID;
@@ -29,7 +29,7 @@
 + (id)deleterForPersonID:(id)arg1;
 + (id)existingDeleterForPersonID:(id)arg1;
 + (void)forgetPersonID:(id)arg1;
-+ (BOOL)isInRetryState;
++ (bool)isInRetryState;
 + (id)nextActivityDate;
 + (id)nextActivityDateForPersonID:(id)arg1;
 + (id)personIDsWithOutstandingActivities;
@@ -39,8 +39,8 @@
 - (void)_abort;
 - (id)_abortedError;
 - (void)_forget;
-- (BOOL)_isAllowedToDelete;
-- (BOOL)_isInRetryState;
+- (bool)_isAllowedToDelete;
+- (bool)_isInRetryState;
 - (void)_sendDeleteRequest;
 - (void)_stop;
 - (void)_updateMasterManifest;

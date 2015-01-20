@@ -5,52 +5,52 @@
 @class NSData, NSString;
 
 @interface SCNGeometrySource : NSObject <NSSecureCoding> {
-    int _bytesPerComponent;
-    int _componentsPerVector;
+    long long _bytesPerComponent;
+    long long _componentsPerVector;
     NSData *_data;
-    int _dataOffset;
-    int _dataStride;
-    BOOL _floatComponents;
-    struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; } x_1_1_3; unsigned int x_1_1_4 : 1; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; } x1; unsigned short x2; unsigned short x3; } *_meshSource;
+    long long _dataOffset;
+    long long _dataStride;
+    struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_3_1; unsigned char x_1_3_2[4]; unsigned int x_1_3_3; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; long long x_1_2_6; long long x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; } x_1_1_3; unsigned int x_1_1_4 : 1; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; } x1; unsigned short x2; unsigned short x3; } *_meshSource;
     id _reserved;
     NSString *_semantic;
-    int _vectorCount;
+    long long _vectorCount;
+    bool_floatComponents;
 }
 
-@property(readonly) int bytesPerComponent;
-@property(readonly) int componentsPerVector;
+@property(readonly) long long bytesPerComponent;
+@property(readonly) long long componentsPerVector;
 @property(readonly) NSData * data;
-@property(readonly) int dataOffset;
-@property(readonly) int dataStride;
-@property(readonly) BOOL floatComponents;
+@property(readonly) long long dataOffset;
+@property(readonly) long long dataStride;
+@property(readonly) bool floatComponents;
 @property(readonly) NSString * semantic;
-@property(readonly) int vectorCount;
+@property(readonly) long long vectorCount;
 
 + (id)SCNJSExportProtocol;
-+ (id)dataWithPointArray:(const struct CGPoint { float x1; float x2; }*)arg1 count:(int)arg2 bytesPerComponent:(int*)arg3;
-+ (id)dataWithVector3Array:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(int)arg2 bytesPerComponent:(int*)arg3;
-+ (id)geometrySourceWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 floatComponents:(BOOL)arg4 componentsPerVector:(int)arg5 bytesPerComponent:(int)arg6 dataOffset:(int)arg7 dataStride:(int)arg8;
-+ (id)geometrySourceWithNormals:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(int)arg2;
-+ (id)geometrySourceWithTextureCoordinates:(const struct CGPoint { float x1; float x2; }*)arg1 count:(int)arg2;
-+ (id)geometrySourceWithVertices:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)dataWithPointArray:(const struct CGPoint { double x1; double x2; }*)arg1 count:(long long)arg2 bytesPerComponent:(long long*)arg3;
++ (id)dataWithVector3Array:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2 bytesPerComponent:(long long*)arg3;
++ (id)geometrySourceWithData:(id)arg1 semantic:(id)arg2 vectorCount:(long long)arg3 floatComponents:(bool)arg4 componentsPerVector:(long long)arg5 bytesPerComponent:(long long)arg6 dataOffset:(long long)arg7 dataStride:(long long)arg8;
++ (id)geometrySourceWithNormals:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2;
++ (id)geometrySourceWithTextureCoordinates:(const struct CGPoint { double x1; double x2; }*)arg1 count:(long long)arg2;
++ (id)geometrySourceWithVertices:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(long long)arg2;
++ (bool)supportsSecureCoding;
 
 - (short)baseTypeForDataFormat;
-- (int)bytesPerComponent;
-- (int)componentsPerVector;
+- (long long)bytesPerComponent;
+- (long long)componentsPerVector;
 - (id)data;
-- (int)dataOffset;
-- (int)dataStride;
+- (long long)dataOffset;
+- (long long)dataStride;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)floatComponents;
+- (bool)floatComponents;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 floatComponents:(BOOL)arg4 componentsPerVector:(int)arg5 bytesPerComponent:(int)arg6 dataOffset:(int)arg7 dataStride:(int)arg8;
-- (id)initWithMeshSource:(struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; } x_1_1_3; unsigned int x_1_1_4 : 1; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; } x1; unsigned short x2; unsigned short x3; }*)arg1;
-- (struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; } x_1_1_3; unsigned int x_1_1_4 : 1; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; } x1; unsigned short x2; unsigned short x3; }*)meshSource;
+- (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(long long)arg3 floatComponents:(bool)arg4 componentsPerVector:(long long)arg5 bytesPerComponent:(long long)arg6 dataOffset:(long long)arg7 dataStride:(long long)arg8;
+- (id)initWithMeshSource:(struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_3_1; unsigned char x_1_3_2[4]; unsigned int x_1_3_3; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; long long x_1_2_6; long long x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; } x_1_1_3; unsigned int x_1_1_4 : 1; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; } x1; unsigned short x2; unsigned short x3; }*)arg1;
+- (struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_3_1; unsigned char x_1_3_2[4]; unsigned int x_1_3_3; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; long long x_1_2_6; long long x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; } x_1_1_3; unsigned int x_1_1_4 : 1; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; } x1; unsigned short x2; unsigned short x3; }*)meshSource;
 - (id)semantic;
-- (int)vectorCount;
+- (long long)vectorCount;
 
 @end

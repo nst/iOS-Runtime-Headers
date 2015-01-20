@@ -13,9 +13,9 @@
 
 @property(retain) NSString * activeKeyboard;
 @property(retain) NSMutableArray * enabledKeyboards;
-@property(readonly) BOOL hasActiveKeyboard;
-@property(readonly) BOOL hasLanguageCode;
-@property(readonly) BOOL hasRegionCode;
+@property(readonly) bool hasActiveKeyboard;
+@property(readonly) bool hasLanguageCode;
+@property(readonly) bool hasRegionCode;
 @property(retain) NSString * languageCode;
 @property(retain) NSString * regionCode;
 
@@ -28,16 +28,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)enabledKeyboards;
-- (id)enabledKeyboardsAtIndex:(unsigned int)arg1;
-- (unsigned int)enabledKeyboardsCount;
-- (BOOL)hasActiveKeyboard;
-- (BOOL)hasLanguageCode;
-- (BOOL)hasRegionCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)enabledKeyboardsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)enabledKeyboardsCount;
+- (bool)hasActiveKeyboard;
+- (bool)hasLanguageCode;
+- (bool)hasRegionCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)languageCode;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)regionCode;
 - (void)setActiveKeyboard:(id)arg1;
 - (void)setEnabledKeyboards:(id)arg1;

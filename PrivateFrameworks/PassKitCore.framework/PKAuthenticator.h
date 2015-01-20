@@ -9,27 +9,27 @@
     double _authenticationTimeout;
     <PKAuthenticatorDelegate> *_delegate;
     double _evaluationStartTime;
-    BOOL _fingerPresent;
     double _lastFingerOffTimestamp;
     double _lastMatchTimestamp;
-    BOOL _passcodeRemoteViewControllerPresented;
     VRCredentialReference *_reference;
     NSObject<OS_dispatch_queue> *_referenceMutationQueue;
+    bool_fingerPresent;
+    bool_passcodeRemoteViewControllerPresented;
 }
 
 @property(retain) NSNumber * applicationProcessID;
 @property double authenticationTimeout;
 @property <PKAuthenticatorDelegate> * delegate;
-@property BOOL fingerPresent;
+@property bool fingerPresent;
 
-+ (void)_preflightPolicy:(int)arg1 completion:(id)arg2;
-+ (unsigned int)currentStateForPreflightPolicy:(int)arg1;
++ (void)_preflightPolicy:(long long)arg1 completion:(id)arg2;
++ (unsigned long long)currentStateForPreflightPolicy:(long long)arg1;
 + (void)preheatAuthenticator;
 
 - (id)_credentialReference;
-- (BOOL)_credentialReferenceMatches:(id)arg1;
-- (BOOL)_delegateSupportsPasscodeDismissal;
-- (BOOL)_delegateSupportsPasscodePresentation;
+- (bool)_credentialReferenceMatches:(id)arg1;
+- (bool)_delegateSupportsPasscodeDismissal;
+- (bool)_delegateSupportsPasscodePresentation;
 - (id)_swapCredentialReference:(id)arg1;
 - (id)_swapCredentialReferenceWithReference:(id)arg1 ifMatchesReference:(id)arg2;
 - (id)applicationProcessID;
@@ -37,15 +37,15 @@
 - (void)cancelEvaluation;
 - (void)dealloc;
 - (id)delegate;
-- (void)evaluatePolicy:(int)arg1 completion:(id)arg2;
+- (void)evaluatePolicy:(long long)arg1 completion:(id)arg2;
 - (void)event:(id)arg1 params:(id)arg2 reply:(id)arg3;
 - (void)fallbackToSystemPasscodeUI;
-- (BOOL)fingerPresent;
+- (bool)fingerPresent;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (void)setApplicationProcessID:(id)arg1;
 - (void)setAuthenticationTimeout:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFingerPresent:(BOOL)arg1;
+- (void)setFingerPresent:(bool)arg1;
 
 @end

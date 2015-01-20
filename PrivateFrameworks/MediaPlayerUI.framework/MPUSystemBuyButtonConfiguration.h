@@ -7,26 +7,26 @@
 @interface MPUSystemBuyButtonConfiguration : NSObject {
     float _downloadProgress;
     MPStoreItemOffer *_offer;
-    unsigned int _progressType;
-    BOOL _visible;
+    unsigned long long _progressType;
+    bool_visible;
 }
 
 @property float downloadProgress;
 @property(readonly) NSSet * interfacePerceptibleKeyPaths;
 @property(retain) MPStoreItemOffer * offer;
-@property unsigned int progressType;
-@property BOOL visible;
+@property unsigned long long progressType;
+@property bool visible;
 
 - (void).cxx_destruct;
 - (float)downloadProgress;
 - (id)init;
 - (id)interfacePerceptibleKeyPaths;
 - (id)offer;
-- (unsigned int)progressType;
+- (unsigned long long)progressType;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setOffer:(id)arg1;
-- (void)setProgressType:(unsigned int)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)visible;
+- (void)setProgressType:(unsigned long long)arg1;
+- (void)setVisible:(bool)arg1;
+- (bool)visible;
 
 @end

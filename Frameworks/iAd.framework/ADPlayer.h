@@ -8,10 +8,10 @@
     AVPlayer *_avPlayer;
     AVPlayerItem *_avPlayerItem;
     <ADPlayerDelegate> *_delegate;
-    BOOL _playbackHasBegun;
-    unsigned int _playbackState;
+    unsigned long long _playbackState;
     id _timeObserver;
     ADBannerView *_videoAd;
+    bool_playbackHasBegun;
 }
 
 @property(retain) AVPlayer * avPlayer;
@@ -19,9 +19,9 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <ADPlayerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL playbackHasBegun;
-@property unsigned int playbackState;
+@property(readonly) unsigned long long hash;
+@property bool playbackHasBegun;
+@property unsigned long long playbackState;
 @property(readonly) Class superclass;
 @property(retain) id timeObserver;
 @property(retain) ADBannerView * videoAd;
@@ -33,7 +33,7 @@
 - (id)avPlayerItem;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
-- (BOOL)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
+- (bool)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(bool)arg2;
 - (void)bannerViewDidLoadAd:(id)arg1;
 - (void)bannerViewShouldPauseMedia:(id)arg1;
 - (void)bannerViewShouldResumeMedia:(id)arg1;
@@ -45,17 +45,17 @@
 - (void)pause;
 - (void)performAction;
 - (void)play;
-- (BOOL)playbackHasBegun;
-- (unsigned int)playbackState;
+- (bool)playbackHasBegun;
+- (unsigned long long)playbackState;
 - (void)playerItemDidFailedToPlayToEnd:(id)arg1;
 - (void)playerItemDidPlayToEnd:(id)arg1;
 - (void)playerItemEncounteredPlaybackStall:(id)arg1;
-- (BOOL)prepareForPlayback;
+- (bool)prepareForPlayback;
 - (void)setAvPlayer:(id)arg1;
 - (void)setAvPlayerItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPlaybackHasBegun:(BOOL)arg1;
-- (void)setPlaybackState:(unsigned int)arg1;
+- (void)setPlaybackHasBegun:(bool)arg1;
+- (void)setPlaybackState:(unsigned long long)arg1;
 - (void)setTimeObserver:(id)arg1;
 - (void)setVideoAd:(id)arg1;
 - (void)shutdown;

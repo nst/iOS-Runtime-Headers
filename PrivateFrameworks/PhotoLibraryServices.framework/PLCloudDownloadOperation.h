@@ -6,7 +6,7 @@
     bool_cancelled;
 }
 
-- (unsigned int)cost;
+- (unsigned long long)cost;
 - (id)description;
 - (void)requestCancel;
 - (void)runOperationWithCompletionHandler:(id)arg1;

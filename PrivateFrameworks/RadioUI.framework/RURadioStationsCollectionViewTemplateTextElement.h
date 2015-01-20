@@ -5,46 +5,46 @@
 @class MPUTextDrawingCache, NSString, UIFont;
 
 @interface RURadioStationsCollectionViewTemplateTextElement : NSObject {
-    float _defaultFirstBaselineOffset;
-    int _defaultNumberOfLines;
+    double _defaultFirstBaselineOffset;
+    long long _defaultNumberOfLines;
     UIFont *_emphasizedFont;
     NSString *_fontTextStyle;
     MPUTextDrawingCache *_nowPlayingTextDrawingCache;
-    int _numberOfLines;
+    long long _numberOfLines;
     UIFont *_regularFont;
-    float _scaledFirstBaselineOffset;
+    double _scaledFirstBaselineOffset;
     MPUTextDrawingCache *_textDrawingCache;
-    BOOL _wantsAdditionalLineForExtraLargeContentSizes;
-    BOOL _wantsEmphasizedStationName;
+    bool_wantsAdditionalLineForExtraLargeContentSizes;
+    bool_wantsEmphasizedStationName;
 }
 
-@property(readonly) float defaultFirstBaselineOffset;
-@property(readonly) int defaultNumberOfLines;
+@property(readonly) double defaultFirstBaselineOffset;
+@property(readonly) long long defaultNumberOfLines;
 @property(readonly) NSString * fontTextStyle;
 @property(readonly) MPUTextDrawingCache * nowPlayingTextDrawingCache;
-@property(readonly) int numberOfLines;
-@property(readonly) float scaledFirstBaselineOffset;
+@property(readonly) long long numberOfLines;
+@property(readonly) double scaledFirstBaselineOffset;
 @property(readonly) UIFont * tallestFont;
 @property(readonly) MPUTextDrawingCache * textDrawingCache;
-@property(readonly) BOOL wantsAdditionalLineForExtraLargeContentSizes;
-@property(readonly) BOOL wantsEmphasizedStationName;
+@property(readonly) bool wantsAdditionalLineForExtraLargeContentSizes;
+@property(readonly) bool wantsEmphasizedStationName;
 
 - (void).cxx_destruct;
-- (id)_fontWithEmphasis:(BOOL)arg1;
-- (id)_newTextDrawingCacheWithStationNameEmphasizer:(BOOL)arg1;
+- (id)_fontWithEmphasis:(bool)arg1;
+- (id)_newTextDrawingCacheWithStationNameEmphasizer:(bool)arg1;
 - (id)_textAttributesByReplacingFontInTextAttributes:(id)arg1 withFont:(id)arg2;
 - (void)_updateTextAttributesTextDrawingCache:(id)arg1;
-- (float)defaultFirstBaselineOffset;
-- (int)defaultNumberOfLines;
+- (double)defaultFirstBaselineOffset;
+- (long long)defaultNumberOfLines;
 - (id)fontTextStyle;
-- (id)initWithFontTextStyle:(id)arg1 defaultFirstBaselineOffset:(float)arg2 defaultNumberOfLines:(int)arg3 wantsAdditionalLineForExtraLargeContentSizes:(BOOL)arg4 wantsEmphasizedStationName:(BOOL)arg5;
+- (id)initWithFontTextStyle:(id)arg1 defaultFirstBaselineOffset:(double)arg2 defaultNumberOfLines:(long long)arg3 wantsAdditionalLineForExtraLargeContentSizes:(bool)arg4 wantsEmphasizedStationName:(bool)arg5;
 - (id)nowPlayingTextDrawingCache;
-- (int)numberOfLines;
-- (float)scaledFirstBaselineOffset;
+- (long long)numberOfLines;
+- (double)scaledFirstBaselineOffset;
 - (id)tallestFont;
 - (id)textDrawingCache;
 - (void)updateForPreferredContentSizeChange;
-- (BOOL)wantsAdditionalLineForExtraLargeContentSizes;
-- (BOOL)wantsEmphasizedStationName;
+- (bool)wantsAdditionalLineForExtraLargeContentSizes;
+- (bool)wantsEmphasizedStationName;
 
 @end

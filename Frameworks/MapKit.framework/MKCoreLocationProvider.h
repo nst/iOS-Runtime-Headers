@@ -16,14 +16,14 @@
     <MKLocationProviderDelegate> *_delegate;
     NSBundle *_effectiveBundle;
     NSString *_effectiveBundleIdentifier;
-    BOOL _hasQueriedAuthorization;
-    BOOL _locationServicesPreferencesDialogEnabled;
-    BOOL _waitingForAuthorization;
+    bool_hasQueriedAuthorization;
+    bool_locationServicesPreferencesDialogEnabled;
+    bool_waitingForAuthorization;
 }
 
 @property(readonly) CLLocationManager * _clLocationManager;
-@property int activityType;
-@property(readonly) BOOL airplaneModeBlocksLocation;
+@property long long activityType;
+@property(readonly) bool airplaneModeBlocksLocation;
 @property(copy) id authorizationRequestBlock;
 @property(readonly) int authorizationStatus;
 @property(copy,readonly) NSString * debugDescription;
@@ -34,22 +34,22 @@
 @property(retain) NSBundle * effectiveBundle;
 @property(copy) NSString * effectiveBundleIdentifier;
 @property(readonly) double expectedGpsUpdateInterval;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property int headingOrientation;
-@property(readonly) BOOL isSimulation;
-@property(readonly) BOOL isTracePlayer;
-@property(getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
-@property BOOL matchInfoEnabled;
+@property(readonly) bool isSimulation;
+@property(readonly) bool isTracePlayer;
+@property(getter=isLocationServicesPreferencesDialogEnabled) bool locationServicesPreferencesDialogEnabled;
+@property bool matchInfoEnabled;
 @property(readonly) Class superclass;
-@property(readonly) BOOL usesCLMapCorrection;
+@property(readonly) bool usesCLMapCorrection;
 
 - (void).cxx_destruct;
 - (id)_clLocationManager;
 - (void)_createCLLocationManager;
 - (void)_resetForNewEffectiveBundle;
 - (void)_updateAuthorizationStatus;
-- (int)activityType;
-- (BOOL)airplaneModeBlocksLocation;
+- (long long)activityType;
+- (bool)airplaneModeBlocksLocation;
 - (id)authorizationRequestBlock;
 - (int)authorizationStatus;
 - (void)dealloc;
@@ -62,9 +62,9 @@
 - (double)expectedGpsUpdateInterval;
 - (int)headingOrientation;
 - (id)init;
-- (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (BOOL)isSimulation;
-- (BOOL)isTracePlayer;
+- (bool)isLocationServicesPreferencesDialogEnabled;
+- (bool)isSimulation;
+- (bool)isTracePlayer;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
@@ -73,9 +73,9 @@
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(id)arg2;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
-- (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
-- (BOOL)matchInfoEnabled;
-- (void)setActivityType:(int)arg1;
+- (bool)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
+- (bool)matchInfoEnabled;
+- (void)setActivityType:(long long)arg1;
 - (void)setAuthorizationRequestBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
@@ -83,8 +83,8 @@
 - (void)setEffectiveBundle:(id)arg1;
 - (void)setEffectiveBundleIdentifier:(id)arg1;
 - (void)setHeadingOrientation:(int)arg1;
-- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
-- (void)setMatchInfoEnabled:(BOOL)arg1;
+- (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
+- (void)setMatchInfoEnabled:(bool)arg1;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
 - (void)startUpdatingVehicleHeading;
@@ -93,6 +93,6 @@
 - (void)stopUpdatingLocation;
 - (void)stopUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
-- (BOOL)usesCLMapCorrection;
+- (bool)usesCLMapCorrection;
 
 @end

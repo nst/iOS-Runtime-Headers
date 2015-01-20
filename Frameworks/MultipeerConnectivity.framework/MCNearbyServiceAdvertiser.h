@@ -10,14 +10,14 @@
     NSDictionary *_discoveryInfo;
     NSString *_formattedServiceType;
     NSMutableDictionary *_invites;
-    BOOL _isAdvertising;
     MCPeerID *_myPeerID;
     NSNetService *_networkServer;
-    int _outgoingInviteID;
+    long long _outgoingInviteID;
     NSMutableDictionary *_peers;
     NSString *_serviceType;
     NSObject<OS_dispatch_queue> *_syncQueue;
-    BOOL _wasAdvertising;
+    bool_isAdvertising;
+    bool_wasAdvertising;
 }
 
 @property(retain) NSData * TXTRecordData;
@@ -26,17 +26,17 @@
 @property(copy,readonly) NSString * description;
 @property(copy) NSDictionary * discoveryInfo;
 @property(copy) NSString * formattedServiceType;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSMutableDictionary * invites;
-@property BOOL isAdvertising;
+@property bool isAdvertising;
 @property(readonly) MCPeerID * myPeerID;
 @property(retain) NSNetService * networkServer;
-@property int outgoingInviteID;
+@property long long outgoingInviteID;
 @property(retain) NSMutableDictionary * peers;
 @property(copy) NSString * serviceType;
 @property(readonly) Class superclass;
 @property(retain) NSObject<OS_dispatch_queue> * syncQueue;
-@property BOOL wasAdvertising;
+@property bool wasAdvertising;
 
 - (id)TXTRecordData;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
@@ -50,7 +50,7 @@
 - (id)init;
 - (id)initWithPeer:(id)arg1 discoveryInfo:(id)arg2 serviceType:(id)arg3;
 - (id)invites;
-- (BOOL)isAdvertising;
+- (bool)isAdvertising;
 - (id)makeTXTRecordDataWithDiscoveryInfo:(id)arg1;
 - (id)myPeerID;
 - (void)netService:(id)arg1 didAcceptConnectionWithInputStream:(id)arg2 outputStream:(id)arg3;
@@ -58,7 +58,7 @@
 - (void)netServiceDidPublish:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;
 - (id)networkServer;
-- (int)outgoingInviteID;
+- (long long)outgoingInviteID;
 - (void)parseIDString:(id*)arg1 displayName:(id*)arg2 fromIdentifier:(id)arg3;
 - (id)peers;
 - (id)serviceType;
@@ -66,14 +66,14 @@
 - (void)setDiscoveryInfo:(id)arg1;
 - (void)setFormattedServiceType:(id)arg1;
 - (void)setInvites:(id)arg1;
-- (void)setIsAdvertising:(BOOL)arg1;
+- (void)setIsAdvertising:(bool)arg1;
 - (void)setNetworkServer:(id)arg1;
-- (void)setOutgoingInviteID:(int)arg1;
+- (void)setOutgoingInviteID:(long long)arg1;
 - (void)setPeers:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setTXTRecordData:(id)arg1;
-- (void)setWasAdvertising:(BOOL)arg1;
+- (void)setWasAdvertising:(bool)arg1;
 - (void)startAdvertisingPeer;
 - (void)stopAdvertisingPeer;
 - (void)syncAttachConnection:(id)arg1 toPeer:(id)arg2;
@@ -88,6 +88,6 @@
 - (void)syncStartAdvertisingPeer;
 - (void)syncStopAdvertisingPeer;
 - (id)txtRecordDataWithDiscoveryInfo:(id)arg1;
-- (BOOL)wasAdvertising;
+- (bool)wasAdvertising;
 
 @end

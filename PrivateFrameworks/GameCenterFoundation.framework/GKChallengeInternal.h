@@ -14,7 +14,7 @@
     GKPlayerInternal *_issuingPlayer;
     NSString *_message;
     GKPlayerInternal *_receivingPlayer;
-    int _state;
+    long long _state;
 }
 
 @property(retain) NSString * bundleID;
@@ -26,8 +26,8 @@
 @property(retain) GKPlayerInternal * issuingPlayer;
 @property(retain) NSString * message;
 @property(retain) GKPlayerInternal * receivingPlayer;
-@property int state;
-@property(readonly) unsigned int type;
+@property long long state;
+@property(readonly) unsigned long long type;
 
 + (id)internalRepresentation;
 + (id)secureCodedPropertyKeys;
@@ -40,8 +40,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)findLocalGameBundleID;
 - (id)game;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)issueDate;
 - (id)issuingPlayer;
 - (id)message;
@@ -57,8 +57,8 @@
 - (void)setIssuingPlayer:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setReceivingPlayer:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
-- (unsigned int)type;
+- (void)setState:(long long)arg1;
+- (long long)state;
+- (unsigned long long)type;
 
 @end

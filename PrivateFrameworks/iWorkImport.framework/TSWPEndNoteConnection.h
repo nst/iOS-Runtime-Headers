@@ -6,14 +6,14 @@
 
 @interface TSWPEndNoteConnection : NSObject {
     struct { 
-        BOOL applicationExists; 
-        BOOL oldPluginExists; 
-        BOOL currentPluginExists; 
+        boolapplicationExists; 
+        boololdPluginExists; 
+        boolcurrentPluginExists; 
     } _availability;
-    BOOL _checkedEndNoteAvailability;
     NSArray *_defaultFormats;
     unsigned int _failedPluginLoadingAttempts;
     NSString *_format;
+    bool_checkedEndNoteAvailability;
 }
 
 @property(retain) NSString * format;
@@ -23,29 +23,29 @@
 + (id)sharedEndNoteConnection;
 
 - (id).cxx_construct;
-- (BOOL)anyOpenLibraries;
-- (BOOL)anyOpenNonEmptyLibraries;
-- (struct { BOOL x1; BOOL x2; BOOL x3; })availability;
+- (bool)anyOpenLibraries;
+- (bool)anyOpenNonEmptyLibraries;
+- (struct { boolx1; boolx2; boolx3; })availability;
 - (id)availableFormats;
 - (void)dealloc;
 - (id)defaultStyle;
 - (id)favoriteStyles;
 - (id)format;
-- (id)formatForTag:(int)arg1;
-- (BOOL)getBibliographyString:(id*)arg1 andCitationStrings:(id*)arg2 forCitationInfos:(id)arg3 usingPosition:(unsigned int)arg4;
-- (BOOL)getBibliographyString:(id*)arg1 andCitationStrings:(id*)arg2 forCitationRecords:(id)arg3 usingPosition:(unsigned int)arg4;
-- (BOOL)getFormattedTextForCitation:(id)arg1 usingPosition:(unsigned int)arg2 outCitation:(id*)arg3 outBiblioEntry:(id*)arg4;
-- (id)infoForCitation:(id)arg1 isFootnote:(BOOL)arg2;
+- (id)formatForTag:(long long)arg1;
+- (bool)getBibliographyString:(id*)arg1 andCitationStrings:(id*)arg2 forCitationInfos:(id)arg3 usingPosition:(unsigned int)arg4;
+- (bool)getBibliographyString:(id*)arg1 andCitationStrings:(id*)arg2 forCitationRecords:(id)arg3 usingPosition:(unsigned int)arg4;
+- (bool)getFormattedTextForCitation:(id)arg1 usingPosition:(unsigned int)arg2 outCitation:(id*)arg3 outBiblioEntry:(id*)arg4;
+- (id)infoForCitation:(id)arg1 isFootnote:(bool)arg2;
 - (id)infoForCitation:(id)arg1;
-- (id)infosForAdjacentCitations:(id)arg1 isFootnote:(BOOL)arg2;
+- (id)infosForAdjacentCitations:(id)arg1 isFootnote:(bool)arg2;
 - (id)init;
-- (BOOL)isEndNoteAvailable;
-- (BOOL)launchEndNote:(BOOL)arg1;
+- (bool)isEndNoteAvailable;
+- (bool)launchEndNote:(bool)arg1;
 - (id)outputStyles;
 - (id)p_getProxyObject;
-- (id)p_infoForCitation:(id)arg1 isAdjacent:(BOOL)arg2 isFootnote:(BOOL)arg3;
+- (id)p_infoForCitation:(id)arg1 isAdjacent:(bool)arg2 isFootnote:(bool)arg3;
 - (id)recordsForSearchString:(id)arg1 forContext:(id)arg2;
 - (void)setFormat:(id)arg1;
-- (int)tagForFormat:(id)arg1;
+- (long long)tagForFormat:(id)arg1;
 
 @end

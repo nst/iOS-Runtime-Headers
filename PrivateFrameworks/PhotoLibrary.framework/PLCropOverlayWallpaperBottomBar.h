@@ -11,13 +11,13 @@
     PLWallpaperButton *_doSetButton;
     PLWallpaperButton *_doSetHomeScreenButton;
     PLWallpaperButton *_doSetLockScreenButton;
-    float _maxToggleWidth;
+    double _maxToggleWidth;
     PLWallpaperButton *_motionToggle;
-    BOOL _motionToggleHidden;
     UIView *_separatorLine;
-    BOOL _shouldOnlyShowHomeScreenButton;
-    BOOL _shouldOnlyShowLockScreenButton;
     _UILegibilityLabel *_titleLabel;
+    bool_motionToggleHidden;
+    bool_shouldOnlyShowHomeScreenButton;
+    bool_shouldOnlyShowLockScreenButton;
 }
 
 @property(retain) _UIBackdropView * backdropView;
@@ -26,12 +26,12 @@
 @property(readonly) PLWallpaperButton * doSetButton;
 @property(readonly) PLWallpaperButton * doSetHomeScreenButton;
 @property(readonly) PLWallpaperButton * doSetLockScreenButton;
-@property float maxToggleWidth;
+@property double maxToggleWidth;
 @property(readonly) PLWallpaperButton * motionToggle;
-@property BOOL motionToggleHidden;
+@property bool motionToggleHidden;
 @property(retain) UIView * separatorLine;
-@property BOOL shouldOnlyShowHomeScreenButton;
-@property BOOL shouldOnlyShowLockScreenButton;
+@property bool shouldOnlyShowHomeScreenButton;
+@property bool shouldOnlyShowLockScreenButton;
 @property(retain) _UILegibilityLabel * titleLabel;
 
 - (void)_commonPLCropOverlayWallpaperBottomBarInitialization;
@@ -39,7 +39,7 @@
 - (void)_commonPLCropOverlayWallpaperBottomBarInitializationPhone;
 - (void)_layoutSubviewsPad;
 - (void)_layoutSubviewsPhone;
-- (struct CGSize { float x1; float x2; })_sizeForString:(id)arg1;
+- (struct CGSize { double x1; double x2; })_sizeForString:(id)arg1;
 - (id)backdropView;
 - (void)dealloc;
 - (id)doCancelButton;
@@ -48,25 +48,25 @@
 - (id)doSetHomeScreenButton;
 - (id)doSetLockScreenButton;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)maxToggleWidth;
+- (double)maxToggleWidth;
 - (id)motionToggle;
-- (BOOL)motionToggleHidden;
+- (bool)motionToggleHidden;
 - (id)separatorLine;
 - (void)setBackdropView:(id)arg1;
-- (void)setMaxToggleWidth:(float)arg1;
-- (void)setMotionToggleHidden:(BOOL)arg1;
+- (void)setMaxToggleWidth:(double)arg1;
+- (void)setMotionToggleHidden:(bool)arg1;
 - (void)setSeparatorLine:(id)arg1;
-- (void)setShouldOnlyShowHomeScreenButton:(BOOL)arg1;
-- (void)setShouldOnlyShowLockScreenButton:(BOOL)arg1;
+- (void)setShouldOnlyShowHomeScreenButton:(bool)arg1;
+- (void)setShouldOnlyShowLockScreenButton:(bool)arg1;
 - (void)setText:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (BOOL)shouldOnlyShowHomeScreenButton;
-- (BOOL)shouldOnlyShowLockScreenButton;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (bool)shouldOnlyShowHomeScreenButton;
+- (bool)shouldOnlyShowLockScreenButton;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)titleLabel;
 - (void)updateForChangedSettings:(id)arg1;
-- (float)widthForToggleText;
+- (double)widthForToggleText;
 
 @end

@@ -6,10 +6,10 @@
 
 @interface TSUDateParserLibrary : NSObject {
     NSMutableArray *mAvailableDateParsers;
-    unsigned int mMaxPermittedParsers;
-    unsigned int mNumberOfUses;
+    unsigned long long mMaxPermittedParsers;
+    unsigned long long mNumberOfUses;
     NSCondition *mParserLibraryConditionVariable;
-    unsigned int mParsersCreated;
+    unsigned long long mParsersCreated;
 }
 
 + (id)_singletonAlloc;
@@ -22,7 +22,7 @@
 - (id)init;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)returnDateParser:(id)arg1;
 
 @end

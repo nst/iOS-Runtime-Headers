@@ -3,16 +3,16 @@
  */
 
 @interface CMOutlineState : NSObject {
-    unsigned int counter[10];
-    unsigned int listId;
+    unsigned long long counter[10];
+    unsigned long long listId;
 }
 
-- (unsigned int)counterAtLevel:(unsigned char)arg1;
+- (unsigned long long)counterAtLevel:(unsigned char)arg1;
 - (void)increaseCounterAtLevel:(unsigned char)arg1;
 - (id)init;
-- (id)initWithListId:(unsigned int)arg1;
-- (unsigned int)listId;
+- (id)initWithListId:(unsigned long long)arg1;
+- (unsigned long long)listId;
 - (void)reset;
-- (void)setCounterTo:(unsigned int)arg1 atLevel:(unsigned char)arg2;
+- (void)setCounterTo:(unsigned long long)arg1 atLevel:(unsigned char)arg2;
 
 @end

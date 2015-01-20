@@ -51,11 +51,11 @@
             } spanningRangeReference; 
             struct __CFUUID {} *tableID; 
         } referenceUnion; 
+    boolmWasConstructedViaNames;
     NSString *mOverrideText;
     NSString *mOverrideTextAsTyped;
     } mRef;
     unsigned char mStickyBits;
-    BOOL mWasConstructedViaNames;
 }
 
 - (id).cxx_construct;
@@ -63,21 +63,21 @@
 - (void)dealloc;
 - (id)initWithCellReference:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
 - (id)initWithRangeReference:(struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)overrideText;
 - (id)overrideTextAsTyped;
-- (id)p_stringByUnescapingQuotedStringWithPossibleDollarPrefix:(id)arg1 partial:(BOOL)arg2;
+- (id)p_stringByUnescapingQuotedStringWithPossibleDollarPrefix:(id)arg1 partial:(bool)arg2;
 - (struct { struct { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeReference;
-- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(BOOL)arg5;
-- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 hostTableID:(struct __CFUUID { }*)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(BOOL)arg5;
+- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(bool)arg5;
+- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 hostTableID:(struct __CFUUID { }*)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(bool)arg5;
 - (id)referenceTextWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2;
 - (id)referenceTextWithCalculationEngine:(id)arg1 hostTableID:(struct __CFUUID { }*)arg2;
 - (void)setOverrideText:(id)arg1;
 - (void)setOverrideTextAsTyped:(id)arg1;
 - (void)setStickyBits:(unsigned char)arg1;
-- (void)setWasConstructedViaNames:(BOOL)arg1;
+- (void)setWasConstructedViaNames:(bool)arg1;
 - (unsigned char)stickyBits;
 - (struct __CFUUID { }*)tableID;
-- (BOOL)wasConstructedViaNames;
+- (bool)wasConstructedViaNames;
 
 @end

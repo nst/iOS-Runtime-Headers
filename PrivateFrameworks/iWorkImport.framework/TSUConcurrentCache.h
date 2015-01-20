@@ -11,15 +11,15 @@
 @property(readonly) TSUReadWriteQueue * readWriteQueue;
 
 - (void)addEntriesFromDictionary:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (BOOL)hasFlushableContent;
+- (bool)hasFlushableContent;
 - (id)initWithName:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
 - (id)readWriteQueue;
 - (void)removeAllObjects;
-- (void)removeObjectForKey:(id)arg1 andWait:(BOOL)arg2;
+- (void)removeObjectForKey:(id)arg1 andWait:(bool)arg2;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)unload;

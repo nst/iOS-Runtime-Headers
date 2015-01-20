@@ -5,16 +5,16 @@
 @class UIColor, _UIBackdropView;
 
 @interface SBUIEmergencyCallHostViewController : _UIRemoteViewController <SBUIEmergencyCallHostInterface> {
-    int _backgroundStyle;
-    float _blurRadius;
+    long long _backgroundStyle;
+    double _blurRadius;
     _UIBackdropView *_blurView;
-    BOOL _blursSelf;
     UIColor *_tintColor;
+    bool_blursSelf;
 }
 
-@property int backgroundStyle;
-@property float blurRadius;
-@property BOOL blursSelf;
+@property long long backgroundStyle;
+@property double blurRadius;
+@property bool blursSelf;
 @property(retain) UIColor * tintColor;
 
 + (id)exportedInterface;
@@ -22,17 +22,17 @@
 + (id)serviceViewControllerInterface;
 
 - (void)_createAndAddBlurViewIfNecessary;
-- (int)backgroundStyle;
-- (float)blurRadius;
-- (BOOL)blursSelf;
+- (long long)backgroundStyle;
+- (double)blurRadius;
+- (bool)blursSelf;
 - (void)dealloc;
 - (void)dismiss;
-- (void)setBackgroundStyle:(int)arg1;
-- (void)setBlurRadius:(float)arg1;
-- (void)setBlursSelf:(BOOL)arg1;
+- (void)setBackgroundStyle:(long long)arg1;
+- (void)setBlurRadius:(double)arg1;
+- (void)setBlursSelf:(bool)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
-- (id)tintColorForBackgroundStyle:(int)arg1 outBlurRadius:(float*)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (id)tintColorForBackgroundStyle:(long long)arg1 outBlurRadius:(double*)arg2;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

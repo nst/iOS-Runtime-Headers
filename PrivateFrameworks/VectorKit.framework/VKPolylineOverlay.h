@@ -6,10 +6,10 @@
 
 @interface VKPolylineOverlay : NSObject <VKOverlay, GEOComposedRouteObserver> {
     GEOComposedRoute *_composedRoute;
-    BOOL _isReadyForSnapping;
     struct __CFSet { } *_observers;
     VKTrafficSegmentsAlongRoute *_trafficSegments;
     double _trafficTimeStamp;
+    bool_isReadyForSnapping;
 }
 
 @property(readonly) GEOMapRegion * boundingMapRegion;
@@ -17,7 +17,7 @@
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly) VKTrafficSegmentsAlongRoute * trafficSegments;
 @property(readonly) double trafficTimeStamp;
@@ -32,11 +32,11 @@
 - (void)composedRouteUpdatedTraffic:(id)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (id)getPathsForPainter:(id)arg1 renderRegion:(id)arg2 shouldSnapToRoads:(BOOL)arg3 snappingCompletionHandler:(id)arg4;
+- (id)getPathsForPainter:(id)arg1 renderRegion:(id)arg2 shouldSnapToRoads:(bool)arg3 snappingCompletionHandler:(id)arg4;
 - (id)initWithComposedRoute:(id)arg1;
-- (BOOL)isSnappingForSceneTiles;
+- (bool)isSnappingForSceneTiles;
 - (void)removeObserver:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })sectionRangeForBounds:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })sectionRangeForBounds:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (id)trafficSegments;
 - (double)trafficTimeStamp;
 - (void)updateLabelExternalObjectsInRenderRegion:(id)arg1;

@@ -12,12 +12,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) unsigned long long offsetInFile;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (const void*)dataOfLength:(unsigned int)arg1;
+- (const void*)dataOfLength:(unsigned long long)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithMemoryMappedPath:(id)arg1;
 - (id)initWithMemoryMappedURL:(id)arg1;

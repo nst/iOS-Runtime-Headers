@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSData * glyphData;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * identifier;
 @property(copy) BBImage * image;
 @property(readonly) Class superclass;
@@ -27,7 +27,7 @@
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2;
 + (id)buttonWithTitle:(id)arg1 glyphData:(id)arg2 action:(id)arg3 identifier:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 image:(id)arg2 action:(id)arg3 identifier:(id)arg4;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)action;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,11 +35,11 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)glyphData;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAction:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;

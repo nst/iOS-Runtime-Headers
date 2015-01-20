@@ -18,13 +18,13 @@
 @property(copy,readonly) CLIntersiloInterface * delegateInterface;
 @property(readonly) CLSilo * delegateSilo;
 @property(copy,readonly) CLIntersiloInterface * proxiedInterface;
-@property BOOL valid;
+@property bool valid;
 
 + (id)getSilo;
 + (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 withInboundInterface:(id)arg3 andOutboundInterface:(id)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)delegate;
 - (id)delegateInterface;
 - (id)delegateSilo;

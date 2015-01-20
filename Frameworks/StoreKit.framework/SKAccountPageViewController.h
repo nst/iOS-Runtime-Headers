@@ -20,7 +20,7 @@
 @property <SKAccountPageViewControllerDelegate> * delegate;
 
 - (void)_addRemoteView;
-- (void)_didPrepareWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_didPrepareWithResult:(bool)arg1 error:(id)arg2;
 - (void)_dismissViewController;
 - (void)_requestRemoteViewController;
 - (void)dealloc;
@@ -29,6 +29,6 @@
 - (void)loadView;
 - (void)prepareWithCompletionBlock:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

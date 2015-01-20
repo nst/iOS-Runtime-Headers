@@ -7,17 +7,17 @@
 @interface MPUExtrasGalleryTemplateViewController : MPUExtrasTemplateViewController {
     MPUExtrasBannerController *_bannerController;
     MPUExtrasGridElementViewController *_gridViewController;
-    unsigned int _selectedItemIndex;
+    unsigned long long _selectedItemIndex;
 }
 
-@property unsigned int selectedItemIndex;
+@property unsigned long long selectedItemIndex;
 
 - (void).cxx_destruct;
 - (void)_prepareLayout;
 - (id)contentScrollView;
-- (unsigned int)selectedItemIndex;
-- (void)setSelectedItemIndex:(unsigned int)arg1;
-- (BOOL)showsPlaceholder;
+- (unsigned long long)selectedItemIndex;
+- (void)setSelectedItemIndex:(unsigned long long)arg1;
+- (bool)showsPlaceholder;
 - (id)templateElement;
 - (void)viewDidLoad;
 

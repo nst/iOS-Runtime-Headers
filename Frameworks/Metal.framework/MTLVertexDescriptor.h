@@ -18,20 +18,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)layouts;
-- (unsigned int)offsetAtAttributeIndex:(unsigned int)arg1;
+- (unsigned long long)offsetAtAttributeIndex:(unsigned long long)arg1;
 - (void)reset;
 - (id)serializeDescriptor;
-- (void)setStride:(unsigned int)arg1 atVertexBufferIndex:(unsigned int)arg2;
-- (void)setStride:(unsigned int)arg1 stepFunction:(unsigned int)arg2 stepRate:(unsigned int)arg3 atVertexBufferIndex:(unsigned int)arg4;
-- (void)setVertexFormat:(unsigned int)arg1 offset:(unsigned int)arg2 vertexBufferIndex:(unsigned int)arg3 atAttributeIndex:(unsigned int)arg4;
-- (unsigned int)stepFunctionAtVertexBufferIndex:(unsigned int)arg1;
-- (unsigned int)stepRateAtVertexBufferIndex:(unsigned int)arg1;
-- (unsigned int)strideAtVertexBufferIndex:(unsigned int)arg1;
-- (unsigned int)vertexBufferIndexAtAttributeIndex:(unsigned int)arg1;
-- (unsigned int)vertexFormatAtAttributeIndex:(unsigned int)arg1;
+- (void)setStride:(unsigned long long)arg1 atVertexBufferIndex:(unsigned long long)arg2;
+- (void)setStride:(unsigned long long)arg1 stepFunction:(unsigned long long)arg2 stepRate:(unsigned long long)arg3 atVertexBufferIndex:(unsigned long long)arg4;
+- (void)setVertexFormat:(unsigned long long)arg1 offset:(unsigned long long)arg2 vertexBufferIndex:(unsigned long long)arg3 atAttributeIndex:(unsigned long long)arg4;
+- (unsigned long long)stepFunctionAtVertexBufferIndex:(unsigned long long)arg1;
+- (unsigned long long)stepRateAtVertexBufferIndex:(unsigned long long)arg1;
+- (unsigned long long)strideAtVertexBufferIndex:(unsigned long long)arg1;
+- (unsigned long long)vertexBufferIndexAtAttributeIndex:(unsigned long long)arg1;
+- (unsigned long long)vertexFormatAtAttributeIndex:(unsigned long long)arg1;
 
 @end

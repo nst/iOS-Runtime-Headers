@@ -19,10 +19,10 @@
 - (void)_checkForCycles;
 - (void)_invalidate;
 - (id)_label;
-- (unsigned int)_minimumLength;
+- (unsigned long long)_minimumLength;
 - (id)_parseTreeWithContext:(id)arg1;
 - (id)_replacementRules;
-- (BOOL)_tryNodesForExpressions:(id)arg1 nodes:(id)arg2 context:(id)arg3 solutionTest:(id)arg4;
+- (bool)_tryNodesForExpressions:(id)arg1 nodes:(id)arg2 context:(id)arg3 solutionTest:(id)arg4;
 - (void)_tryNodesWithContext:(id)arg1 solutionTest:(id)arg2;
 - (void)addReplacementRuleWithExpressions:(id)arg1 nodeEvaluator:(id)arg2;
 - (id)charactersToBeSkipped;

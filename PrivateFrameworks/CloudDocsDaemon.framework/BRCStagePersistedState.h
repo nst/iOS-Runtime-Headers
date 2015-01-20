@@ -6,14 +6,14 @@
 
 @interface BRCStagePersistedState : NSObject <NSSecureCoding> {
     BRCDatabaseManager *_dbManager;
-    long _latestGCStartTime;
+    long long _latestGCStartTime;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 
 + (id)loadFromClientStateInDBManager:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -21,7 +21,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)queue;
-- (void)setLatestGCStartTime:(long)arg1;
+- (void)setLatestGCStartTime:(long long)arg1;
 - (void)setQueue:(id)arg1;
 - (long long)timeSinceLatestGCStartTime;
 

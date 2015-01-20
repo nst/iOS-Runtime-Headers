@@ -8,14 +8,14 @@
     CalPreferences *_preferences;
 }
 
-@property BOOL enableTravelAdvisoriesForAutomaticBehavior;
+@property bool enableTravelAdvisoriesForAutomaticBehavior;
 @property double travelEngineThrottlePeriod;
 
 + (id)shared;
 
-- (BOOL)enableTravelAdvisoriesForAutomaticBehavior;
+- (bool)enableTravelAdvisoriesForAutomaticBehavior;
 - (id)init;
-- (void)setEnableTravelAdvisoriesForAutomaticBehavior:(BOOL)arg1;
+- (void)setEnableTravelAdvisoriesForAutomaticBehavior:(bool)arg1;
 - (void)setTravelEngineThrottlePeriod:(double)arg1;
 - (double)travelEngineThrottlePeriod;
 

@@ -14,6 +14,6 @@
 - (id)debugDescription;
 - (id)description;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
-- (unsigned long)mediaType;
+- (unsigned int)mediaType;
 
 @end

@@ -10,12 +10,12 @@
 
 @interface _HKCFGReplacementRule : NSObject {
     NSString *_description;
-    unsigned int _lengthIncrease;
+    unsigned long long _lengthIncrease;
     id _nodeEvaluator;
     NSArray *_rightHandSide;
 }
 
-@property(readonly) unsigned int lengthIncrease;
+@property(readonly) unsigned long long lengthIncrease;
 @property(copy,readonly) id nodeEvaluator;
 @property(copy,readonly) NSArray * rightHandSide;
 
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)lengthIncrease;
+- (unsigned long long)lengthIncrease;
 - (id)nodeEvaluator;
 - (id)rightHandSide;
 

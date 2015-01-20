@@ -3,16 +3,16 @@
  */
 
 @interface CAMPanoramaCaptureRequest : CAMCaptureRequest <NSCopying, NSMutableCopying> {
-    int _captureDevice;
-    int _deviceOrientation;
+    long long _captureDevice;
+    long long _deviceOrientation;
 }
 
-@property(readonly) int captureDevice;
-@property(readonly) int deviceOrientation;
+@property(readonly) long long captureDevice;
+@property(readonly) long long deviceOrientation;
 
-- (int)captureDevice;
+- (long long)captureDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)deviceOrientation;
+- (long long)deviceOrientation;
 - (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 

@@ -12,10 +12,10 @@
 @property(readonly) HKCharacteristicType * dataType;
 @property(readonly) id value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)applyWithDaemon:(id)arg1;
+- (bool)applyWithDaemon:(id)arg1;
 - (id)dataType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

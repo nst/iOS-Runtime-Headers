@@ -12,19 +12,19 @@
 @property(readonly) NSString * fileFormat;
 @property(readonly) NSString * fileName;
 @property(readonly) NSNumber * fileSize;
-@property(readonly) BOOL isBinary;
+@property(readonly) bool isBinary;
 @property(readonly) NSURL * localURL;
 
 - (id)URL;
 - (id)UUID;
-- (int)compareFileNames:(id)arg1;
+- (long long)compareFileNames:(id)arg1;
 - (id)description;
 - (id)fileFormat;
 - (id)fileName;
 - (id)fileSize;
 - (id)init;
-- (BOOL)isBinary;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBinary;
+- (bool)isEqual:(id)arg1;
 - (id)localURL;
 
 @end

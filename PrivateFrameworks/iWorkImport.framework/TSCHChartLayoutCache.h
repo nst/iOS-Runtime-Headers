@@ -5,21 +5,21 @@
 @class NSMutableArray;
 
 @interface TSCHChartLayoutCache : NSObject {
+    boolmIgnoreInvalidation;
     NSMutableArray *mCacheItems;
-    BOOL mIgnoreInvalidation;
 }
 
-@property BOOL ignoreInvalidation;
+@property bool ignoreInvalidation;
 
 + (id)cacheWithCacheItem:(id)arg1;
 
 - (void)accessWithCacheItemBlock:(id)arg1 calculateBlock:(id)arg2;
 - (void)dealloc;
-- (BOOL)ignoreInvalidation;
+- (bool)ignoreInvalidation;
 - (id)init;
 - (id)initWithCacheItem:(id)arg1;
 - (void)invalidate;
 - (void)printDebug;
-- (void)setIgnoreInvalidation:(BOOL)arg1;
+- (void)setIgnoreInvalidation:(bool)arg1;
 
 @end

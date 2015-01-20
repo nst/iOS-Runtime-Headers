@@ -9,14 +9,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isPlaying,readonly) BOOL playing;
+@property(readonly) unsigned long long hash;
+@property(getter=isPlaying,readonly) bool playing;
 @property(readonly) Class superclass;
 @property float volume;
 
 - (void)didAttachToEngine:(id)arg1;
 - (id)init;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)nodeTimeForPlayerTime:(id)arg1;
 - (void)pause;
 - (void)play;
@@ -24,7 +24,7 @@
 - (id)playerTimeForNodeTime:(id)arg1;
 - (void)prepareWithFrameCount:(unsigned int)arg1;
 - (void)scheduleBuffer:(id)arg1 atTime:(id)arg2 completionHandler:(id)arg3;
-- (void)scheduleBuffer:(id)arg1 atTime:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
+- (void)scheduleBuffer:(id)arg1 atTime:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id)arg4;
 - (void)scheduleBuffer:(id)arg1 completionHandler:(id)arg2;
 - (void)scheduleFile:(id)arg1 atTime:(id)arg2 completionHandler:(id)arg3;
 - (void)scheduleSegment:(id)arg1 startingFrame:(long long)arg2 frameCount:(unsigned int)arg3 atTime:(id)arg4 completionHandler:(id)arg5;

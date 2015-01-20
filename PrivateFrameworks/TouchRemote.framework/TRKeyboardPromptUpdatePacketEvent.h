@@ -5,35 +5,35 @@
 @class NSString;
 
 @interface TRKeyboardPromptUpdatePacketEvent : TRPacketEvent {
-    int _keyboardType;
-    BOOL _secureText;
+    long long _keyboardType;
     unsigned long long _sessionID;
     NSString *_subtitle;
     NSString *_text;
     NSString *_title;
-    int _updateType;
+    long long _updateType;
+    bool_secureText;
 }
 
-@property(readonly) int keyboardType;
-@property(getter=isSecureText,readonly) BOOL secureText;
+@property(readonly) long long keyboardType;
+@property(getter=isSecureText,readonly) bool secureText;
 @property(readonly) unsigned long long sessionID;
 @property(readonly) NSString * subtitle;
 @property(readonly) NSString * text;
 @property(readonly) NSString * title;
-@property(readonly) int updateType;
+@property(readonly) long long updateType;
 
 + (unsigned int)_packetEventType;
 
 - (void).cxx_destruct;
 - (id)_initWithVersion:(unsigned int)arg1 payloadDictionary:(id)arg2;
 - (id)description;
-- (id)initWithKeyboardType:(int)arg1 secureText:(BOOL)arg2 sessionID:(unsigned long long)arg3 subtitle:(id)arg4 text:(id)arg5 title:(id)arg6 updateType:(int)arg7;
-- (BOOL)isSecureText;
-- (int)keyboardType;
+- (id)initWithKeyboardType:(long long)arg1 secureText:(bool)arg2 sessionID:(unsigned long long)arg3 subtitle:(id)arg4 text:(id)arg5 title:(id)arg6 updateType:(long long)arg7;
+- (bool)isSecureText;
+- (long long)keyboardType;
 - (unsigned long long)sessionID;
 - (id)subtitle;
 - (id)text;
 - (id)title;
-- (int)updateType;
+- (long long)updateType;
 
 @end

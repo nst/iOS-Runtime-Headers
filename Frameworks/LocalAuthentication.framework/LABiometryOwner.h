@@ -8,27 +8,27 @@
     <LABiometricClient> *_biometricClient;
     BiometricKit *_biometricKit;
     NSObject<OS_dispatch_semaphore> *_matchCanceledSemaphore;
-    BOOL _matching;
+    bool_matching;
 }
 
 @property(retain) <LABiometricClient> * biometricClient;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-+ (BOOL)_loadBiometricKit;
++ (bool)_loadBiometricKit;
 + (Class)biometricKitClassFromString:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)biometricClient;
 - (void)dealloc;
-- (BOOL)deviceHasBiometry;
+- (bool)deviceHasBiometry;
 - (id)init;
-- (BOOL)isBiometryOnForStockholm;
-- (BOOL)isEnrolledWithError:(id*)arg1;
-- (BOOL)isLockedOutWithError:(id*)arg1;
+- (bool)isBiometryOnForStockholm;
+- (bool)isEnrolledWithError:(id*)arg1;
+- (bool)isLockedOutWithError:(id*)arg1;
 - (void)matchForClient:(id)arg1 options:(id)arg2;
 - (void)matchResult:(id)arg1;
 - (void)releaseBiometryForClient:(id)arg1;

@@ -12,20 +12,20 @@
     NSUUID *_identifier;
     NSDictionary *_messagePayload;
     NSString *_name;
-    BOOL _remoteSource;
     id _responseHandler;
     id _transport;
+    bool_remoteSource;
 }
 
 @property(readonly) NSUUID * identifier;
 @property(readonly) NSDictionary * messagePayload;
 @property(readonly) NSString * name;
-@property(getter=isRemoteSource,readonly) BOOL remoteSource;
+@property(getter=isRemoteSource,readonly) bool remoteSource;
 @property(readonly) id responseHandler;
 @property(readonly) id transport;
 
-+ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4 responseHandler:(id)arg5;
-+ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(BOOL)arg4;
++ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(bool)arg4 responseHandler:(id)arg5;
++ (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 remoteSource:(bool)arg4;
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 responseHandler:(id)arg4;
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4 responseHandler:(id)arg5;
 + (id)messageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4;
@@ -37,8 +37,8 @@
 
 - (void).cxx_destruct;
 - (id)arrayForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (BOOL)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1 keyPresent:(bool*)arg2;
+- (bool)boolForKey:(id)arg1;
 - (id)calendarForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
 - (id)dateComponentsForKey:(id)arg1;
@@ -46,8 +46,8 @@
 - (id)dictionaryForKey:(id)arg1;
 - (id)errorForKey:(id)arg1;
 - (id)identifier;
-- (id)initWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4 responseHandler:(id)arg5 remoteSource:(BOOL)arg6;
-- (BOOL)isRemoteSource;
+- (id)initWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 transport:(id)arg4 responseHandler:(id)arg5 remoteSource:(bool)arg6;
+- (bool)isRemoteSource;
 - (id)messagePayload;
 - (id)name;
 - (id)nullForKey:(id)arg1;

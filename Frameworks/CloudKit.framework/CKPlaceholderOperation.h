@@ -12,17 +12,17 @@
     id _context;
     id _daemonInvokeBlock;
     NSObject<OS_dispatch_group> *_group;
-    BOOL _isExecuting;
-    BOOL _isFinished;
     NSString *_operationID;
     NSString *_sectionID;
     NSDate *_startDate;
+    bool_isExecuting;
+    bool_isFinished;
 }
 
 @property(retain) id context;
 @property(readonly) id daemonInvokeBlock;
-@property BOOL isExecuting;
-@property BOOL isFinished;
+@property bool isExecuting;
+@property bool isFinished;
 @property(readonly) NSString * operationID;
 @property(retain) NSString * sectionID;
 @property(retain) NSDate * startDate;
@@ -34,15 +34,15 @@
 - (id)daemonInvokeBlock;
 - (id)description;
 - (id)initWithOperation:(id)arg1 daemonInvocationBlock:(id)arg2;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)main;
 - (id)operationID;
 - (id)sectionID;
 - (void)setContext:(id)arg1;
-- (void)setIsExecuting:(BOOL)arg1;
-- (void)setIsFinished:(BOOL)arg1;
+- (void)setIsExecuting:(bool)arg1;
+- (void)setIsFinished:(bool)arg1;
 - (void)setSectionID:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)start;

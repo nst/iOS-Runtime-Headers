@@ -17,7 +17,7 @@
 
 + (id)phoneNumberWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)countryCode;
 - (void)dealloc;
@@ -28,7 +28,7 @@
 - (id)initWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (void)setPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 - (id)unformattedInternationalRepresentation;

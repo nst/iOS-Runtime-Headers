@@ -13,9 +13,9 @@
     int _stateType;
 }
 
-@property BOOL hasNewValue;
-@property BOOL hasOldValue;
-@property BOOL hasStateType;
+@property bool hasNewValue;
+@property bool hasOldValue;
+@property bool hasStateType;
 @property int newValue;
 @property int oldValue;
 @property int stateType;
@@ -24,18 +24,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNewValue;
-- (BOOL)hasOldValue;
-- (BOOL)hasStateType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNewValue;
+- (bool)hasOldValue;
+- (bool)hasStateType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)newValue;
 - (int)oldValue;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasNewValue:(BOOL)arg1;
-- (void)setHasOldValue:(BOOL)arg1;
-- (void)setHasStateType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasNewValue:(bool)arg1;
+- (void)setHasOldValue:(bool)arg1;
+- (void)setHasStateType:(bool)arg1;
 - (void)setNewValue:(int)arg1;
 - (void)setOldValue:(int)arg1;
 - (void)setStateType:(int)arg1;

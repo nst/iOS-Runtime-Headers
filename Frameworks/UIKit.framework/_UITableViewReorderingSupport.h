@@ -16,7 +16,7 @@
     UITableViewCell *_reorderedCell;
     NSIndexPath *_targetIndexPath;
     UIShadowView *_topShadowView;
-    BOOL _wasScrollingEnabled;
+    bool_wasScrollingEnabled;
 }
 
 @end

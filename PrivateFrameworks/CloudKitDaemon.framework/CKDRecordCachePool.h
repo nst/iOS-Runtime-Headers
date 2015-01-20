@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)_poolForContext:(id)arg1;
-- (id)acquireCacheWithContext:(id)arg1 scope:(int)arg2;
+- (id)acquireCacheWithContext:(id)arg1 scope:(long long)arg2;
 - (void)clearAllCachesForContext:(id)arg1;
 - (id)expiryTimer;
 - (id)init;

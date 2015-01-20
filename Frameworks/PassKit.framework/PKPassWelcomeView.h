@@ -5,8 +5,8 @@
 @interface PKPassWelcomeView : PKWelcomeView {
 }
 
-+ (float)headerImageRegionHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
++ (double)headerImageRegionHeight;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
 
 - (void)_scanCodePressed;
 - (id)init;

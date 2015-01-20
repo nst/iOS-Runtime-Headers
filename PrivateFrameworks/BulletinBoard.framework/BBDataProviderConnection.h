@@ -7,7 +7,6 @@
 @interface BBDataProviderConnection : NSObject <NSXPCListenerDelegate> {
     NSString *_bundleID;
     NSObject<OS_dispatch_queue> *_clientCalloutQueue;
-    BOOL _connected;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     BBDataProviderConnectionResolver *_connectionResolver;
     NSMutableDictionary *_dataProvidersBySectionID;
@@ -15,11 +14,12 @@
     NSObject<OS_dispatch_queue> *_queue;
     <BBDataProviderConnectionServerProxy> *_serverProxy;
     NSString *_serviceName;
+    bool_connected;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (void)initialize;

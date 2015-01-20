@@ -12,7 +12,7 @@
 @property(readonly) NSArray * calendars;
 @property(retain) NSSet * restrictedCalendarRowIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)calendars;
 - (void)dealloc;

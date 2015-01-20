@@ -4,19 +4,19 @@
 
 @interface CKJoystickTouchDownButtonItem : CKJoystickButtonItem {
     SEL _touchDownAction;
-    BOOL _touchDownSticky;
+    bool_touchDownSticky;
 }
 
 @property SEL touchDownAction;
-@property(getter=isTouchDownSticky) BOOL touchDownSticky;
+@property(getter=isTouchDownSticky) bool touchDownSticky;
 
-- (id)initWithImage:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4 touchDownAction:(SEL)arg5 tapAction:(SEL)arg6 touchDownSticky:(BOOL)arg7;
-- (BOOL)isTouchDownSticky;
+- (id)initWithImage:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4 touchDownAction:(SEL)arg5 tapAction:(SEL)arg6 touchDownSticky:(bool)arg7;
+- (bool)isTouchDownSticky;
 - (void)sendActionFrom:(id)arg1 forEvent:(id)arg2;
 - (void)sendTouchDownActionFrom:(id)arg1 forEvent:(id)arg2;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setTouchDownAction:(SEL)arg1;
-- (void)setTouchDownSticky:(BOOL)arg1;
+- (void)setTouchDownSticky:(bool)arg1;
 - (SEL)touchDownAction;
 
 @end

@@ -7,23 +7,23 @@
 @interface _UIActivityApplicationExtensionDiscovery : NSObject {
     id _extensionMatchingContext;
     NSArray *_extensionPointIdentifiers;
-    BOOL _performsInitialMatching;
+    bool_performsInitialMatching;
 }
 
 @property(retain) id extensionMatchingContext;
 @property(copy) NSArray * extensionPointIdentifiers;
-@property BOOL performsInitialMatching;
+@property bool performsInitialMatching;
 
-- (id)activitiesMatchingInputItems:(id)arg1 sourceIsManaged:(BOOL)arg2 error:(id*)arg3 updateBlock:(id)arg4;
+- (id)activitiesMatchingInputItems:(id)arg1 sourceIsManaged:(bool)arg2 error:(id*)arg3 updateBlock:(id)arg4;
 - (void)cancelUpdatesIfNeeded;
 - (void)dealloc;
 - (id)extensionMatchingContext;
 - (id)extensionPointIdentifiers;
 - (id)init;
 - (id)initWithExtensionPointIdentifiers:(id)arg1;
-- (BOOL)performsInitialMatching;
+- (bool)performsInitialMatching;
 - (void)setExtensionMatchingContext:(id)arg1;
 - (void)setExtensionPointIdentifiers:(id)arg1;
-- (void)setPerformsInitialMatching:(BOOL)arg1;
+- (void)setPerformsInitialMatching:(bool)arg1;
 
 @end

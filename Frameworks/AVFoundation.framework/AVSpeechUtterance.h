@@ -17,16 +17,16 @@
 @property float pitchMultiplier;
 @property double postUtteranceDelay;
 @property double preUtteranceDelay;
-@property BOOL processEmoticons;
+@property bool processEmoticons;
 @property float rate;
 @property(retain) NSString * speechString;
-@property BOOL useCompactVoice;
+@property bool useCompactVoice;
 @property(retain) AVSpeechSynthesisVoice * voice;
 @property float volume;
 
 + (void)initialize;
 + (id)speechUtteranceWithString:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -36,19 +36,19 @@
 - (float)pitchMultiplier;
 - (double)postUtteranceDelay;
 - (double)preUtteranceDelay;
-- (BOOL)processEmoticons;
+- (bool)processEmoticons;
 - (float)rate;
 - (void)setPitchMultiplier:(float)arg1;
 - (void)setPostUtteranceDelay:(double)arg1;
 - (void)setPreUtteranceDelay:(double)arg1;
-- (void)setProcessEmoticons:(BOOL)arg1;
+- (void)setProcessEmoticons:(bool)arg1;
 - (void)setRate:(float)arg1;
 - (void)setSpeechString:(id)arg1;
-- (void)setUseCompactVoice:(BOOL)arg1;
+- (void)setUseCompactVoice:(bool)arg1;
 - (void)setVoice:(id)arg1;
 - (void)setVolume:(float)arg1;
 - (id)speechString;
-- (BOOL)useCompactVoice;
+- (bool)useCompactVoice;
 - (id)voice;
 - (float)volume;
 

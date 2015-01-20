@@ -8,18 +8,18 @@
     NSArray *_daysOfTheMonth;
     NSArray *_daysOfTheWeek;
     NSArray *_daysOfTheYear;
-    BOOL _dirty;
     NSArray *_monthsOfTheYear;
-    BOOL _parsed;
     NSArray *_setPositions;
     NSString *_specifier;
     NSArray *_weeksOfTheYear;
+    bool_dirty;
+    bool_parsed;
 }
 
 @property(copy) NSArray * daysOfTheMonth;
 @property(copy) NSArray * daysOfTheWeek;
 @property(copy) NSArray * daysOfTheYear;
-@property(readonly) BOOL isDirty;
+@property(readonly) bool isDirty;
 @property(copy) NSArray * monthsOfTheYear;
 @property(copy) NSArray * setPositions;
 @property(copy) NSString * specifier;
@@ -28,8 +28,8 @@
 - (void)_appendDaysOfTheWeek:(id)arg1 toSpecifier:(id)arg2;
 - (void)_appendIndexList:(id)arg1 toSpecifier:(id)arg2 propertyKey:(unsigned short)arg3;
 - (void)_clearArrays;
-- (id)_parseDaysOfWeek:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; }*)arg1 range:(struct { int x1; int x2; })arg2;
-- (id)_parseIndexList:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; }*)arg1 range:(struct { int x1; int x2; })arg2;
+- (id)_parseDaysOfWeek:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { long long x_5_1_1; long long x_5_1_2; } x5; long long x6; long long x7; }*)arg1 range:(struct { long long x1; long long x2; })arg2;
+- (id)_parseIndexList:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { long long x_5_1_1; long long x_5_1_2; } x5; long long x6; long long x7; }*)arg1 range:(struct { long long x1; long long x2; })arg2;
 - (void)_parseSpecifierIfNeeded;
 - (void)_updateSpecifier;
 - (id)daysOfTheMonth;
@@ -37,8 +37,8 @@
 - (id)daysOfTheYear;
 - (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;
-- (BOOL)isDirty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDirty;
+- (bool)isEqual:(id)arg1;
 - (id)monthsOfTheYear;
 - (void)revert;
 - (void)setDaysOfTheMonth:(id)arg1;

@@ -5,41 +5,41 @@
 @interface UIKBRenderFactoryiPadLandscape : UIKBRenderFactoryiPad {
 }
 
-- (float)bottomRowDefaultFontSize;
-- (float)defaultVariantSizeThreshold;
-- (float)deleteKeyFontSize;
+- (double)bottomRowDefaultFontSize;
+- (double)defaultVariantSizeThreshold;
+- (double)deleteKeyFontSize;
 - (id)deleteKeyImageName;
-- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
-- (float)dictationKeyFontSize;
+- (struct CGPoint { double x1; double x2; })deleteKeyOffset;
+- (double)dictationKeyFontSize;
 - (id)dictationKeyImageName;
-- (float)dismissKeyFontSize;
+- (double)dismissKeyFontSize;
 - (id)dismissKeyImageName;
-- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dismissKeySymbolFrame;
-- (float)dualStringKeyFontSizeAdjustment;
-- (float)dualStringKeyMiddleMargin;
-- (struct CGPoint { float x1; float x2; })dualStringKeyOffset;
-- (float)emailDotKeyFontSize;
-- (float)facemarkKeyFontSize;
-- (float)fallbackFontSize;
-- (float)fontSizeAdjustmentForNonAlphanumericKeycaps;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })dismissKeySymbolFrame;
+- (double)dualStringKeyFontSizeAdjustment;
+- (double)dualStringKeyMiddleMargin;
+- (struct CGPoint { double x1; double x2; })dualStringKeyOffset;
+- (double)emailDotKeyFontSize;
+- (double)facemarkKeyFontSize;
+- (double)fallbackFontSize;
+- (double)fontSizeAdjustmentForNonAlphanumericKeycaps;
 - (id)globalKeyImageName;
 - (id)handwritingMoreKeyImageName;
-- (float)internationalKeyFontSize;
-- (float)keyCornerRadius;
-- (float)moreKeyFontSize;
+- (double)internationalKeyFontSize;
+- (double)keyCornerRadius;
+- (double)moreKeyFontSize;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
-- (float)shiftKeyFontSize;
+- (double)shiftKeyFontSize;
 - (id)shiftKeyImageName;
-- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shiftKeySymbolFrame;
+- (struct CGPoint { double x1; double x2; })shiftKeyOffset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shiftKeySymbolFrame;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
-- (float)skinnyKeyThreshold;
-- (float)smallKanaKeyFontSize;
-- (float)spaceKeyFontSize;
-- (float)stringKeyFontSize;
-- (float)zhuyinFirstToneKeyFontSize;
+- (double)skinnyKeyThreshold;
+- (double)smallKanaKeyFontSize;
+- (double)spaceKeyFontSize;
+- (double)stringKeyFontSize;
+- (double)zhuyinFirstToneKeyFontSize;
 
 @end

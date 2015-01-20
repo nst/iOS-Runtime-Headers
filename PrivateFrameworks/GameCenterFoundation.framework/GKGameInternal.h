@@ -33,7 +33,7 @@
 
 @property(retain) NSString * defaultLeaderboardIdentifier;
 @property unsigned int flags;
-@property BOOL hasAggregateLeaderboard;
+@property bool hasAggregateLeaderboard;
 @property(retain) NSDictionary * icons;
 @property unsigned short maxAchievementPoints;
 @property(retain) NSString * name;
@@ -41,14 +41,14 @@
 @property unsigned short numberOfLeaderboardSets;
 @property unsigned short numberOfLeaderboards;
 @property unsigned char platform;
-@property(getter=isPrerendered) BOOL prerendered;
+@property(getter=isPrerendered) bool prerendered;
 @property(retain) GKStoreItemInternal * storeItem;
-@property BOOL supportsAchievements;
-@property BOOL supportsLeaderboardSets;
-@property BOOL supportsLeaderboards;
-@property BOOL supportsMultiplayer;
-@property BOOL supportsTurnBasedMultiplayer;
-@property(getter=isValid) BOOL valid;
+@property bool supportsAchievements;
+@property bool supportsLeaderboardSets;
+@property bool supportsLeaderboards;
+@property bool supportsMultiplayer;
+@property bool supportsTurnBasedMultiplayer;
+@property(getter=isValid) bool valid;
 
 + (id)secureCodedPropertyKeys;
 
@@ -57,12 +57,12 @@
 - (id)defaultLeaderboardIdentifier;
 - (id)description;
 - (unsigned int)flags;
-- (BOOL)hasAggregateLeaderboard;
-- (unsigned int)hash;
+- (bool)hasAggregateLeaderboard;
+- (unsigned long long)hash;
 - (id)icons;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPrerendered;
-- (BOOL)isValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrerendered;
+- (bool)isValid;
 - (unsigned short)maxAchievementPoints;
 - (id)name;
 - (unsigned short)numberOfAchievements;
@@ -73,7 +73,7 @@
 - (id)serverRepresentation;
 - (void)setDefaultLeaderboardIdentifier:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
-- (void)setHasAggregateLeaderboard:(BOOL)arg1;
+- (void)setHasAggregateLeaderboard:(bool)arg1;
 - (void)setIcons:(id)arg1;
 - (void)setMaxAchievementPoints:(unsigned short)arg1;
 - (void)setName:(id)arg1;
@@ -81,19 +81,19 @@
 - (void)setNumberOfLeaderboardSets:(unsigned short)arg1;
 - (void)setNumberOfLeaderboards:(unsigned short)arg1;
 - (void)setPlatform:(unsigned char)arg1;
-- (void)setPrerendered:(BOOL)arg1;
+- (void)setPrerendered:(bool)arg1;
 - (void)setStoreItem:(id)arg1;
-- (void)setSupportsAchievements:(BOOL)arg1;
-- (void)setSupportsLeaderboardSets:(BOOL)arg1;
-- (void)setSupportsLeaderboards:(BOOL)arg1;
-- (void)setSupportsMultiplayer:(BOOL)arg1;
-- (void)setSupportsTurnBasedMultiplayer:(BOOL)arg1;
-- (void)setValid:(BOOL)arg1;
+- (void)setSupportsAchievements:(bool)arg1;
+- (void)setSupportsLeaderboardSets:(bool)arg1;
+- (void)setSupportsLeaderboards:(bool)arg1;
+- (void)setSupportsMultiplayer:(bool)arg1;
+- (void)setSupportsTurnBasedMultiplayer:(bool)arg1;
+- (void)setValid:(bool)arg1;
 - (id)storeItem;
-- (BOOL)supportsAchievements;
-- (BOOL)supportsLeaderboardSets;
-- (BOOL)supportsLeaderboards;
-- (BOOL)supportsMultiplayer;
-- (BOOL)supportsTurnBasedMultiplayer;
+- (bool)supportsAchievements;
+- (bool)supportsLeaderboardSets;
+- (bool)supportsLeaderboards;
+- (bool)supportsMultiplayer;
+- (bool)supportsTurnBasedMultiplayer;
 
 @end

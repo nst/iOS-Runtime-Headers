@@ -5,19 +5,19 @@
 @interface TSWPDocumentRoot : TSKDocumentRoot {
 }
 
-@property(getter=isChangeTrackingEnabled,readonly) BOOL changeTrackingEnabled;
-@property(readonly) BOOL supportHeaderFooterParagraphAlignmentInInspectors;
+@property(getter=isChangeTrackingEnabled,readonly) bool changeTrackingEnabled;
+@property(readonly) bool supportHeaderFooterParagraphAlignmentInInspectors;
 
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
 - (id)documentFonts;
 - (struct __CFLocale { }*)hyphenationLocale;
-- (BOOL)isChangeTrackingEnabled;
-- (int)naturalAlignmentAtCharIndex:(unsigned int)arg1 inTextStorage:(id)arg2;
-- (BOOL)shouldHyphenate;
-- (BOOL)supportHeaderFooterParagraphAlignmentInInspectors;
+- (bool)isChangeTrackingEnabled;
+- (int)naturalAlignmentAtCharIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
+- (bool)shouldHyphenate;
+- (bool)supportHeaderFooterParagraphAlignmentInInspectors;
 - (id)unavailableDocumentFonts;
-- (BOOL)useLigatures;
+- (bool)useLigatures;
 - (int)verticalAlignmentForTextStorage:(id)arg1;
 
 @end

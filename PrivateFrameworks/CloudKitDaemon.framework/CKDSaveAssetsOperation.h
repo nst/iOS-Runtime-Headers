@@ -13,16 +13,16 @@
     NSMutableArray *_assetsToRetry;
     NSArray *_assetsToSave;
     id _progressBlock;
-    BOOL _shouldAutomaticallyRetryNetworkErrors;
+    bool_shouldAutomaticallyRetryNetworkErrors;
 }
 
 @property(retain) CKDMMCSItemGroupSetContext * MMCSContext;
 @property(retain) NSMutableArray * assetsToRetry;
 @property(retain) NSArray * assetsToSave;
 @property(copy) id progressBlock;
-@property BOOL shouldAutomaticallyRetryNetworkErrors;
+@property bool shouldAutomaticallyRetryNetworkErrors;
 
-+ (BOOL)_isTransientError:(id)arg1;
++ (bool)_isTransientError:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)MMCSContext;
@@ -35,7 +35,7 @@
 - (void)_handleProgressForMMCSItem:(id)arg1;
 - (void)_retryOrFinishWithError:(id)arg1;
 - (void)_saveAssets;
-- (BOOL)_shouldRetryError:(id)arg1;
+- (bool)_shouldRetryError:(id)arg1;
 - (id)assetsToRetry;
 - (id)assetsToSave;
 - (void)cancel;
@@ -46,7 +46,7 @@
 - (void)setAssetsToSave:(id)arg1;
 - (void)setMMCSContext:(id)arg1;
 - (void)setProgressBlock:(id)arg1;
-- (void)setShouldAutomaticallyRetryNetworkErrors:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyRetryNetworkErrors;
+- (void)setShouldAutomaticallyRetryNetworkErrors:(bool)arg1;
+- (bool)shouldAutomaticallyRetryNetworkErrors;
 
 @end

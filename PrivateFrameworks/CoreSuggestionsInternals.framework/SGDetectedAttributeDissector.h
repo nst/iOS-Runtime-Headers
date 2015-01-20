@@ -9,12 +9,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (void)initialize;
-+ (BOOL)isAddressContext:(id)arg1;
-+ (BOOL)isPhoneContext:(id)arg1;
++ (bool)isAddressContext:(id)arg1;
++ (bool)isPhoneContext:(id)arg1;
 
 - (id)detailTypeFromPrefix:(id)arg1;
 - (id)detectionFromBodyDDMatch:(id)arg1 onEntity:(id)arg2;
@@ -24,6 +24,6 @@
 - (id)filterDangerousSigDetections:(id)arg1 onEntity:(id)arg2;
 - (id)filterDangerousSigEmailDetections:(id)arg1 onEntity:(id)arg2;
 - (id)filterDangerousSigPhoneDetections:(id)arg1 onEntity:(id)arg2;
-- (id)getLineContaining:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inText:(id)arg2;
+- (id)getLineContaining:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inText:(id)arg2;
 
 @end

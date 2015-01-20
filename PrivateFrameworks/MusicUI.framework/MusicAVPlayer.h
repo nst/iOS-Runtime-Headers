@@ -13,7 +13,7 @@
 - (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
 - (void)_musicPlayer_defaultsDidChangeNotification:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (BOOL)_shouldSwitchToAudioPlaybackWhenTransitioningFromVideo;
+- (bool)_shouldSwitchToAudioPlaybackWhenTransitioningFromVideo;
 - (void)beginOrTogglePlayback;
 - (void)beginPlayback;
 - (void)dealloc;

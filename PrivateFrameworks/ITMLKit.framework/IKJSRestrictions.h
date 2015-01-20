@@ -7,26 +7,26 @@
 @interface IKJSRestrictions : IKJSObject <IKJSRestrictions> {
 }
 
-@property(readonly) BOOL allowsErotica;
-@property(readonly) BOOL allowsExplicit;
-@property(readonly) BOOL appInstallationAllowed;
-@property(readonly) int maxAppRank;
+@property(readonly) bool allowsErotica;
+@property(readonly) bool allowsExplicit;
+@property(readonly) bool appInstallationAllowed;
+@property(readonly) long long maxAppRank;
 @property(readonly) NSString * maxAppRating;
-@property(readonly) int maxMovieRank;
-@property(readonly) int maxTVShowRank;
+@property(readonly) long long maxMovieRank;
+@property(readonly) long long maxTVShowRank;
 
 + (id)restrictionsDidChangeNotificationName;
 
 - (id)_contentRestrictionsCountryCode;
 - (id)_ratingForSetting:(id)arg1 domain:(id)arg2 countryCode:(id)arg3;
-- (BOOL)allowsErotica;
-- (BOOL)allowsExplicit;
-- (BOOL)appInstallationAllowed;
-- (int)maxAppRank;
+- (bool)allowsErotica;
+- (bool)allowsExplicit;
+- (bool)appInstallationAllowed;
+- (long long)maxAppRank;
 - (id)maxAppRating;
-- (int)maxMovieRank;
+- (long long)maxMovieRank;
 - (id)maxMovieRatingForCountry:(id)arg1;
-- (int)maxTVShowRank;
+- (long long)maxTVShowRank;
 - (id)maxTVShowRatingForCountry:(id)arg1;
 
 @end

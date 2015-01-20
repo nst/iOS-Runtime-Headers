@@ -6,24 +6,24 @@
 
 @interface _MTLParallelRenderCommandEncoder : NSObject <MTLParallelRenderCommandEncoder> {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     _MTLCommandBuffer<MTLCommandBuffer> *_commandBuffer;
     id *_commandBuffers;
-    unsigned long _commandBuffersCount;
-    unsigned long _commandBuffersSize;
+    unsigned long long _commandBuffersCount;
+    unsigned long long _commandBuffersSize;
     <MTLDevice> *_device;
     NSString *_label;
     } _lock;
     <MTLCommandQueue> *_queue;
     MTLRenderPassDescriptor *_renderPassDescriptor;
-    BOOL _retainedReferences;
+    bool_retainedReferences;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
 @property(readonly) Class superclass;
 
@@ -39,7 +39,7 @@
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;
 - (id)renderCommandEncoder;
-- (id)sampledRenderCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned int)arg2;
+- (id)sampledRenderCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned long long)arg2;
 - (void)setLabel:(id)arg1;
 
 @end

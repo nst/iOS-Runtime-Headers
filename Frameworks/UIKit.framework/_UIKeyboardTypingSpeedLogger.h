@@ -3,8 +3,8 @@
  */
 
 @interface _UIKeyboardTypingSpeedLogger : NSObject {
-    int _typingDelaySampleCount;
-    int _typingDelaySamples[7];
+    long long _typingDelaySampleCount;
+    long long _typingDelaySamples[7];
 }
 
 - (id)init;

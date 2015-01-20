@@ -6,18 +6,18 @@
 
 @interface PUPhotoEditVisualLevelSliderCell : UICollectionViewCell {
     UIImageView *_imageView;
-    unsigned int _roundedCornersEdge;
+    unsigned long long _roundedCornersEdge;
     UIImage *_thumbnail;
 }
 
-@property unsigned int roundedCornersEdge;
+@property unsigned long long roundedCornersEdge;
 @property(retain) UIImage * thumbnail;
 
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (unsigned int)roundedCornersEdge;
-- (void)setRoundedCornersEdge:(unsigned int)arg1;
-- (void)setThumbnail:(id)arg1 animated:(BOOL)arg2;
+- (unsigned long long)roundedCornersEdge;
+- (void)setRoundedCornersEdge:(unsigned long long)arg1;
+- (void)setThumbnail:(id)arg1 animated:(bool)arg2;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
 

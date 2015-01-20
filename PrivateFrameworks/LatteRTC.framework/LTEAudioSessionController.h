@@ -15,10 +15,10 @@
 + (id)defaultInputDevice;
 + (id)defaultOutputDevice;
 + (void)initializeAudioSessionQ;
-+ (BOOL)isMicrophoneMuted;
++ (bool)isMicrophoneMuted;
 + (void)setAudioSessionProperties:(id)arg1;
-+ (BOOL)setInputDevice:(id)arg1;
-+ (void)setMicrophoneMuted:(BOOL)arg1;
++ (bool)setInputDevice:(id)arg1;
++ (void)setMicrophoneMuted:(bool)arg1;
 + (void)startAudioSession;
 + (void)stopAudioSession;
 

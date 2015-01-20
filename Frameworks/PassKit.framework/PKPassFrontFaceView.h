@@ -8,32 +8,32 @@
     WLEasyToHitCustomButton *_flipButton;
     UILabel *_logoLabel;
     WLEasyToHitCustomButton *_shareButton;
-    BOOL _showsInfo;
-    BOOL _showsShare;
+    bool_showsInfo;
+    bool_showsShare;
 }
 
-@property BOOL showsInfo;
-@property BOOL showsShare;
+@property bool showsInfo;
+@property bool showsShare;
 
 - (void)_flipButtonPressed;
 - (id)_relevantBuckets;
 - (void)_shareButtonPressed;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (void)createBodyContentViews;
 - (void)createHeaderContentViews;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isFrontFace;
+- (bool)isFrontFace;
 - (void)layoutSubviews;
 - (id)passFaceTemplate;
 - (void)prepareForFlip;
-- (void)setClipsContent:(BOOL)arg1;
-- (void)setShowsInfo:(BOOL)arg1;
-- (void)setShowsShare:(BOOL)arg1;
+- (void)setClipsContent:(bool)arg1;
+- (void)setShowsInfo:(bool)arg1;
+- (void)setShowsShare:(bool)arg1;
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;
-- (BOOL)showsInfo;
-- (BOOL)showsShare;
+- (bool)showsInfo;
+- (bool)showsShare;
 - (id)tallFaceTemplate;
 - (void)updateValidity;
 

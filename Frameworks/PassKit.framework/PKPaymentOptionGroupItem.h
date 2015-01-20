@@ -13,7 +13,7 @@
 
 @property(readonly) NSString * detail;
 @property(readonly) NSString * groupType;
-@property(readonly) BOOL isSelectable;
+@property(readonly) bool isSelectable;
 @property(readonly) id referenceObject;
 @property(readonly) Class tableViewCellClass;
 @property(readonly) NSString * title;
@@ -23,11 +23,11 @@
 - (void)dealloc;
 - (id)detail;
 - (id)groupType;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithReferenceObject:(id)arg1 title:(id)arg2 detail:(id)arg3 groupType:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToOptionGroupItem:(id)arg1;
-- (BOOL)isSelectable;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToOptionGroupItem:(id)arg1;
+- (bool)isSelectable;
 - (id)referenceObject;
 - (Class)tableViewCellClass;
 - (id)title;

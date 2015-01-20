@@ -15,9 +15,9 @@
 - (id)_allPhysicalButtons;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (id)_init;
-- (id)_physicalButtonsForGestureRecognizer:(id)arg1 withPhase:(int)arg2;
+- (id)_physicalButtonsForGestureRecognizer:(id)arg1 withPhase:(long long)arg2;
 - (id)_physicalButtonsForGestureRecognizer:(id)arg1;
-- (id)_physicalButtonsForResponder:(id)arg1 withPhase:(int)arg2;
+- (id)_physicalButtonsForResponder:(id)arg1 withPhase:(long long)arg2;
 - (id)_physicalButtonsForResponder:(id)arg1;
 - (id)_physicalButtonsForWindow:(id)arg1;
 - (void)_removePhysicalButton:(id)arg1;
@@ -26,6 +26,6 @@
 - (id)_windows;
 - (void)dealloc;
 - (void)set_triggeringPhysicalButton:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

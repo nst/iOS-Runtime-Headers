@@ -12,18 +12,18 @@
     NSString *_distanceToPlace;
     GEOPlace *_place;
     id _updateHandler;
-    BOOL _useMetric;
-    BOOL _useYardsForShortDistances;
+    bool_useMetric;
+    bool_useYardsForShortDistances;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) GEOPlace * place;
 @property(readonly) Class superclass;
 @property(copy) id updateHandler;
 
-+ (BOOL)infoAvailable;
++ (bool)infoAvailable;
 
 - (void).cxx_destruct;
 - (void)_handleLocaleChangeNotification:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (id)place;
 - (void)setPlace:(id)arg1;

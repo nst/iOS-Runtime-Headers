@@ -17,8 +17,8 @@
 - (void)dealloc;
 - (void)setConsumer:(id)arg1;
 - (void)setTriggers:(id)arg1;
-- (void)subscribeToTriggerType:(unsigned int)arg1 withSelector:(SEL)arg2;
+- (void)subscribeToTriggerType:(unsigned long long)arg1 withSelector:(SEL)arg2;
 - (id)triggers;
-- (void)unsubscribeFromTriggerType:(unsigned int)arg1;
+- (void)unsubscribeFromTriggerType:(unsigned long long)arg1;
 
 @end

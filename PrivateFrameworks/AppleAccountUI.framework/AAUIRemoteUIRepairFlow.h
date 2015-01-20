@@ -18,16 +18,16 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <AAUIRemoteUIRepairFlowDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(BOOL)arg3;
+- (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(bool)arg3;
 - (void)accountRepairRemoteUIWillAppear:(id)arg1;
 - (void)accountRepairRemoteUIWillDismiss:(id)arg1;
 - (id)delegate;
 - (id)initWithAccount:(id)arg1;
-- (void)presentFlowFromViewController:(id)arg1 modal:(BOOL)arg2 completion:(id)arg3;
+- (void)presentFlowFromViewController:(id)arg1 modal:(bool)arg2 completion:(id)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

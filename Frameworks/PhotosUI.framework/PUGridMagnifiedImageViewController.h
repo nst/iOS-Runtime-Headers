@@ -6,41 +6,40 @@
 
 @interface PUGridMagnifiedImageViewController : UIViewController {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    BOOL _canShowFullScreen;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     id _delegate;
     } _gestureWindLocation;
     int _imageFormat;
@@ -50,72 +49,73 @@
     } _magnifiedDragEdgeInsets;
     } _magnifiedSize;
     PUGridMagnifiedView *_magnifiedView;
-    float _magnifiedYOffset;
+    double _magnifiedYOffset;
     } _shadowOffset;
-    float _shadowOpacity;
-    float _shadowRadius;
+    double _shadowOpacity;
+    double _shadowRadius;
     } _trackingWindFrame;
+    bool_canShowFullScreen;
 }
 
-@property(readonly) BOOL canShowFullScreen;
+@property(readonly) bool canShowFullScreen;
 @property id delegate;
-@property struct CGPoint { float x1; float x2; } gestureWindLocation;
+@property struct CGPoint { double x1; double x2; } gestureWindLocation;
 @property int imageFormat;
 @property(retain) NSIndexPath * itemIndexPath;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } itemWindFrame;
-@property struct CGPoint { float x1; float x2; } lastLocation;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } magnifiedDragEdgeInsets;
-@property struct CGSize { float x1; float x2; } magnifiedSize;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } itemWindFrame;
+@property struct CGPoint { double x1; double x2; } lastLocation;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } magnifiedDragEdgeInsets;
+@property struct CGSize { double x1; double x2; } magnifiedSize;
 @property(retain) PUGridMagnifiedView * magnifiedView;
-@property float magnifiedYOffset;
-@property struct CGSize { float x1; float x2; } shadowOffset;
-@property float shadowOpacity;
-@property float shadowRadius;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackingWindFrame;
+@property double magnifiedYOffset;
+@property struct CGSize { double x1; double x2; } shadowOffset;
+@property double shadowOpacity;
+@property double shadowRadius;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } trackingWindFrame;
 
 - (void).cxx_destruct;
 - (void)beginMagnification;
-- (BOOL)canShowFullScreen;
+- (bool)canShowFullScreen;
 - (void)continueMagnification;
 - (id)delegate;
 - (void)endMagnification;
-- (BOOL)gestureInNewLocation;
-- (struct CGPoint { float x1; float x2; })gestureWindLocation;
-- (void)hideMagnifiedThumbnailWithAnimation:(BOOL)arg1;
+- (bool)gestureInNewLocation;
+- (struct CGPoint { double x1; double x2; })gestureWindLocation;
+- (void)hideMagnifiedThumbnailWithAnimation:(bool)arg1;
 - (id)imageForIndexPath:(id)arg1;
-- (id)imageForMagnifyLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (id)imageForMagnifyLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (int)imageFormat;
 - (id)initWithDelegate:(id)arg1;
 - (id)installMagnifiedView;
-- (BOOL)isValidMagnifyLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)isValidMagnifyLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)itemIndexPath;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })itemWindFrame;
-- (struct CGPoint { float x1; float x2; })lastLocation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })itemWindFrame;
+- (struct CGPoint { double x1; double x2; })lastLocation;
 - (void)loadView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })magnifiedDragEdgeInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })magnifiedImageWindFrame;
-- (struct CGSize { float x1; float x2; })magnifiedSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })magnifiedDragEdgeInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })magnifiedImageWindFrame;
+- (struct CGSize { double x1; double x2; })magnifiedSize;
 - (id)magnifiedView;
-- (float)magnifiedYOffset;
+- (double)magnifiedYOffset;
 - (void)prepareForRelease;
 - (void)setDelegate:(id)arg1;
-- (void)setGestureWindLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setGestureWindLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setImageFormat:(int)arg1;
 - (void)setItemIndexPath:(id)arg1;
-- (void)setItemWindFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLastLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setMagnifiedDragEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setMagnifiedSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setItemWindFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setLastLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setMagnifiedDragEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMagnifiedSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMagnifiedView:(id)arg1;
-- (void)setMagnifiedYOffset:(float)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShadowOpacity:(float)arg1;
-- (void)setShadowRadius:(float)arg1;
-- (void)setTrackingWindFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setMagnifiedYOffset:(double)arg1;
+- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowOpacity:(double)arg1;
+- (void)setShadowRadius:(double)arg1;
+- (void)setTrackingWindFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setupMagnifiedView;
-- (struct CGSize { float x1; float x2; })shadowOffset;
-- (float)shadowOpacity;
-- (float)shadowRadius;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackingWindFrame;
+- (struct CGSize { double x1; double x2; })shadowOffset;
+- (double)shadowOpacity;
+- (double)shadowRadius;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackingWindFrame;
 
 @end

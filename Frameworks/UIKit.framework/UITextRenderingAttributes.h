@@ -7,26 +7,26 @@
 @interface UITextRenderingAttributes : NSObject <NSCopying> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    float _actualFontSize;
-    float _actualTrackingAdjustment;
-    int _alignment;
-    int _baselineAdjustment;
-    BOOL _drawUnderline;
+    double _actualFontSize;
+    double _actualTrackingAdjustment;
+    long long _alignment;
+    long long _baselineAdjustment;
     UIFont *_font;
-    BOOL _includeEmoji;
-    int _lineBreakMode;
-    float _lineSpacing;
-    float _minimumFontSize;
-    float _minimumTrackingAdjustment;
-    float _trackingAdjustment;
+    long long _lineBreakMode;
+    double _lineSpacing;
+    double _minimumFontSize;
+    double _minimumTrackingAdjustment;
+    double _trackingAdjustment;
     } _truncationRect;
+    bool_drawUnderline;
+    bool_includeEmoji;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

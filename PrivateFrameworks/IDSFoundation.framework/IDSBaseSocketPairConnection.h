@@ -5,7 +5,7 @@
 @class IMWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface IDSBaseSocketPairConnection : NSObject {
-    long _bytesReceived;
+    long long _bytesReceived;
     int _connectedSocket;
     IMWeakReference *_delegate;
     double _lastDateCheck;
@@ -15,7 +15,7 @@
     NSObject<OS_dispatch_queue> *_readQueue;
     NSObject<OS_dispatch_source> *_readSource;
     NSObject<OS_dispatch_source> *_writeSource;
-    BOOL _writeSourceIsResumed;
+    bool_writeSourceIsResumed;
 }
 
 @property(readonly) int socket;
@@ -27,9 +27,9 @@
 - (void)dealloc;
 - (void)endSession;
 - (id)initWithQueue:(id)arg1 delegate:(id)arg2;
-- (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3 start:(BOOL)arg4;
+- (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3 start:(bool)arg4;
 - (id)initWithSocket:(int)arg1 queue:(id)arg2 delegate:(id)arg3;
-- (BOOL)sendData:(id)arg1;
+- (bool)sendData:(id)arg1;
 - (void)setDestination:(id)arg1;
 - (int)socket;
 - (void)start;

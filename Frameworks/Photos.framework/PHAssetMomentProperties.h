@@ -7,17 +7,17 @@
 @interface PHAssetMomentProperties : NSObject {
     PHAsset *_asset;
     NSData *_reverseLocationData;
-    BOOL _reverseLocationDataIsValid;
+    bool_reverseLocationDataIsValid;
 }
 
 @property(readonly) PHAsset * asset;
 @property(readonly) NSData * reverseLocationData;
-@property(readonly) BOOL reverseLocationDataIsValid;
+@property(readonly) bool reverseLocationDataIsValid;
 
 - (void).cxx_destruct;
 - (id)asset;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2;
 - (id)reverseLocationData;
-- (BOOL)reverseLocationDataIsValid;
+- (bool)reverseLocationDataIsValid;
 
 @end

@@ -18,19 +18,19 @@
 - (void).cxx_destruct;
 - (id)creatorDisplayName;
 - (id)credentialHandle;
-- (BOOL)evaluateACL:(id)arg1 operation:(id)arg2 hints:(id)arg3 error:(id*)arg4;
+- (bool)evaluateACL:(id)arg1 operation:(id)arg2 hints:(id)arg3 error:(id*)arg4;
 - (void)evaluateACL:(id)arg1 operation:(id)arg2 hints:(id)arg3 reply:(id)arg4;
-- (BOOL)evaluatePolicy:(id)arg1 hints:(id)arg2 error:(id*)arg3;
+- (bool)evaluatePolicy:(id)arg1 hints:(id)arg2 error:(id*)arg3;
 - (void)evaluatePolicy:(id)arg1 hints:(id)arg2 reply:(id)arg3;
 - (void)invalidate;
 - (void)resultForTag:(id)arg1 reply:(id)arg2;
 - (id)resultForTag:(id)arg1;
 - (void)sendClientRequest:(id)arg1 params:(id)arg2 reply:(id)arg3;
-- (BOOL)setupNewReferenceWithError:(id*)arg1;
+- (bool)setupNewReferenceWithError:(id*)arg1;
 - (void)setupNewReferenceWithReply:(id)arg1;
 - (void)setupWithCredentialHandle:(id)arg1 domain:(id)arg2 reply:(id)arg3;
 - (void)setupWithCredentialHandle:(id)arg1 domain:(id)arg2 uiDelegate:(id)arg3 reply:(id)arg4;
-- (BOOL)setupWithCredentialHandle:(id)arg1 error:(id*)arg2;
+- (bool)setupWithCredentialHandle:(id)arg1 error:(id*)arg2;
 - (void)setupWithCredentialHandle:(id)arg1 reply:(id)arg2;
 - (void)setupWithCredentialHandle:(id)arg1 uiDelegate:(id)arg2 reply:(id)arg3;
 

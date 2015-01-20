@@ -7,7 +7,7 @@
 @interface EKResourceChange : EKObject <EKIdentityProtocol> {
 }
 
-@property(readonly) BOOL alerted;
+@property(readonly) bool alerted;
 @property(retain,readonly) EKCalendar * calendar;
 @property(retain,readonly) EKCalendarItem * calendarItem;
 @property(readonly) unsigned int changeType;
@@ -16,23 +16,23 @@
 @property(copy,readonly) NSString * changedByFirstName;
 @property(copy,readonly) NSString * changedByLastName;
 @property(readonly) NSNumber * createCount;
-@property(readonly) BOOL dateChanged;
+@property(readonly) bool dateChanged;
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) NSNumber * deleteCount;
 @property(readonly) NSString * deletedTitle;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL locationChanged;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool locationChanged;
 @property(readonly) unsigned int publicStatus;
 @property(readonly) Class superclass;
-@property(readonly) BOOL timeChanged;
+@property(readonly) bool timeChanged;
 @property(copy,readonly) NSDate * timestamp;
-@property(readonly) BOOL titleChanged;
+@property(readonly) bool titleChanged;
 @property(readonly) NSNumber * updateCount;
 
 - (id)_calendarItemRelation;
 - (id)_persistentResourceChange;
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarItem;
 - (unsigned int)changeType;
@@ -42,19 +42,19 @@
 - (id)changedByLastName;
 - (void)clearAlertedStatus;
 - (id)createCount;
-- (BOOL)dateChanged;
+- (bool)dateChanged;
 - (id)deleteCount;
 - (id)deletedTitle;
 - (id)emailAddress;
 - (id)firstName;
 - (id)lastName;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (BOOL)locationChanged;
+- (bool)locationChanged;
 - (id)name;
 - (unsigned int)publicStatus;
-- (BOOL)timeChanged;
+- (bool)timeChanged;
 - (id)timestamp;
-- (BOOL)titleChanged;
+- (bool)titleChanged;
 - (id)updateCount;
 
 @end

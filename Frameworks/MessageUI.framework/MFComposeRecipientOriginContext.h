@@ -5,17 +5,17 @@
 @class NSString;
 
 @interface MFComposeRecipientOriginContext : NSObject {
-    unsigned int _resultType;
+    unsigned long long _resultType;
     NSString *_searchTerm;
 }
 
-@property(readonly) unsigned int resultType;
+@property(readonly) unsigned long long resultType;
 @property(readonly) NSString * searchTerm;
 
 - (void)dealloc;
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 - (id)searchTerm;
-- (void)setResultType:(unsigned int)arg1;
+- (void)setResultType:(unsigned long long)arg1;
 - (void)setSearchTerm:(id)arg1;
 
 @end

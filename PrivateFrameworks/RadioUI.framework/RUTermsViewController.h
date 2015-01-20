@@ -23,8 +23,8 @@
 - (id)initWithCurrentTermsVersion:(unsigned long long)arg1 terms:(id)arg2;
 - (void)loadView;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

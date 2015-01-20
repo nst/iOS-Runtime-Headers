@@ -5,6 +5,6 @@
 @interface SKUIAccountButtonsViewElement : SKUIViewElement {
 }
 
-- (int)pageComponentType;
+- (long long)pageComponentType;
 
 @end

@@ -10,10 +10,10 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_canCacheImages;
+- (bool)_canCacheImages;
 - (void)cacheImage:(id)arg1 named:(id)arg2 forGroup:(id)arg3;
 - (void)dealloc;
-- (id)imageNamed:(id)arg1 forGroup:(id)arg2 withScale:(float)arg3;
+- (id)imageNamed:(id)arg1 forGroup:(id)arg2 withScale:(double)arg3;
 - (id)init;
 - (void)removeImagesInGroup:(id)arg1;
 

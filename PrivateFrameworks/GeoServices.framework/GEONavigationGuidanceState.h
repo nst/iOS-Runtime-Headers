@@ -11,8 +11,8 @@
     int _trackedTransportType;
 }
 
-@property BOOL hasNavigationState;
-@property BOOL hasTrackedTransportType;
+@property bool hasNavigationState;
+@property bool hasTrackedTransportType;
 @property int navigationState;
 @property int trackedTransportType;
 
@@ -20,16 +20,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNavigationState;
-- (BOOL)hasTrackedTransportType;
-- (unsigned int)hash;
+- (bool)hasNavigationState;
+- (bool)hasTrackedTransportType;
+- (unsigned long long)hash;
 - (id)initWithTransportType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)navigationState;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasNavigationState:(BOOL)arg1;
-- (void)setHasTrackedTransportType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasNavigationState:(bool)arg1;
+- (void)setHasTrackedTransportType:(bool)arg1;
 - (void)setNavigationState:(int)arg1;
 - (void)setTrackedTransportType:(int)arg1;
 - (int)trackedTransportType;

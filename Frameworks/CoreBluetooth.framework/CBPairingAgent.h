@@ -7,11 +7,11 @@
 @interface CBPairingAgent : NSObject {
     <CBPairingAgentDelegate> *_delegate;
     <CBPairingAgentParentDelegate> *_parentManager;
-    BOOL _useOOBMode;
+    bool_useOOBMode;
 }
 
 @property <CBPairingAgentDelegate> * delegate;
-@property BOOL useOOBMode;
+@property bool useOOBMode;
 
 - (void)checkIn;
 - (id)delegate;
@@ -20,17 +20,17 @@
 - (void)handlePairingRequested:(id)arg1;
 - (void)handleUnpaired:(id)arg1;
 - (id)initWithParentManager:(id)arg1;
-- (BOOL)isPeerCloudPaired:(id)arg1;
-- (BOOL)isPeerPaired:(id)arg1;
+- (bool)isPeerCloudPaired:(id)arg1;
+- (bool)isPeerPaired:(id)arg1;
 - (void)pairPeer:(id)arg1;
-- (void)respondToPairingRequest:(id)arg1 type:(int)arg2 accept:(BOOL)arg3 data:(id)arg4;
+- (void)respondToPairingRequest:(id)arg1 type:(long long)arg2 accept:(bool)arg3 data:(id)arg4;
 - (id)retrieveOOBDataForPeer:(id)arg1;
 - (id)retrievePairedPeers;
 - (void)setDelegate:(id)arg1;
-- (void)setOOBPairingEnabled:(BOOL)arg1 forPeer:(id)arg2;
+- (void)setOOBPairingEnabled:(bool)arg1 forPeer:(id)arg2;
 - (void)setOrphan;
-- (void)setUseOOBMode:(BOOL)arg1;
+- (void)setUseOOBMode:(bool)arg1;
 - (void)unpairPeer:(id)arg1;
-- (BOOL)useOOBMode;
+- (bool)useOOBMode;
 
 @end

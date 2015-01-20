@@ -5,18 +5,18 @@
 @class NSMutableArray;
 
 @interface MPMediaCollectionDownloadObserver : MPUMediaDownloadObserver {
-    BOOL _callingProgressHandler;
     NSMutableArray *_downloadObservers;
+    bool_callingProgressHandler;
 }
 
 - (void).cxx_destruct;
 - (void)_callProgressHandler;
 - (void)dealloc;
 - (double)downloadProgress;
-- (unsigned int)downloadsCount;
+- (unsigned long long)downloadsCount;
 - (id)initWithCollection:(id)arg1;
 - (void)invalidate;
-- (BOOL)isCurrentlyPlayable;
-- (BOOL)isPurchasing;
+- (bool)isCurrentlyPlayable;
+- (bool)isPurchasing;
 
 @end

@@ -5,32 +5,32 @@
 @class NSString, PKPaymentAuthorizationServiceViewController, UITraitCollection;
 
 @interface PKPaymentAuthorizationLayout : NSObject <UITraitEnvironment> {
-    float _contentHeightPadding;
-    float _contentMargin;
+    double _contentHeightPadding;
+    double _contentMargin;
     PKPaymentAuthorizationServiceViewController *_controller;
-    float _headerMargin;
-    float _valueLeftMargin;
+    double _headerMargin;
+    double _valueLeftMargin;
 }
 
-@property(readonly) float contentHeightPadding;
-@property(readonly) float contentMargin;
+@property(readonly) double contentHeightPadding;
+@property(readonly) double contentMargin;
 @property PKPaymentAuthorizationServiceViewController * controller;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float headerMargin;
+@property(readonly) unsigned long long hash;
+@property(readonly) double headerMargin;
 @property(readonly) Class superclass;
 @property(readonly) UITraitCollection * traitCollection;
-@property(readonly) float valueLeftMargin;
+@property(readonly) double valueLeftMargin;
 
-- (float)contentHeightPadding;
-- (float)contentMargin;
+- (double)contentHeightPadding;
+- (double)contentMargin;
 - (id)controller;
-- (float)headerMargin;
+- (double)headerMargin;
 - (id)initWithController:(id)arg1;
 - (void)setController:(id)arg1;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
-- (float)valueLeftMargin;
+- (double)valueLeftMargin;
 
 @end

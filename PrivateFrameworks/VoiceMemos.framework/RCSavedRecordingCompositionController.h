@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)activeRecordingSessionWillFinish;
-- (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(struct { double x1; double x2; })arg2 isUndoable:(BOOL)arg3 isOverdub:(BOOL)arg4 sessionPreparedBlock:(id)arg5 sessionFinishedBlock:(id)arg6;
+- (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(struct { double x1; double x2; })arg2 isUndoable:(bool)arg3 isOverdub:(bool)arg4 sessionPreparedBlock:(id)arg5 sessionFinishedBlock:(id)arg6;
 - (void)deleteCompositionFromFileSystemAndDatabase;
 - (id)initWithComposition:(id)arg1;
 - (id)initWithExistingSavedRecordingURI:(id)arg1;

@@ -8,9 +8,9 @@
 @property float preGain;
 @property float wetDryMix;
 
-- (struct AUPreset { int x1; struct __CFString {} *x2; })FillOutAUPreset:(int)arg1;
+- (struct AUPreset { int x1; struct __CFString {} *x2; })FillOutAUPreset:(long long)arg1;
 - (id)init;
-- (void)loadFactoryPreset:(int)arg1;
+- (void)loadFactoryPreset:(long long)arg1;
 - (float)preGain;
 - (void)setPreGain:(float)arg1;
 - (void)setWetDryMix:(float)arg1;

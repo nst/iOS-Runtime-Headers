@@ -14,28 +14,28 @@
     NSString *_personID;
     NSObject<OS_dispatch_queue> *_workQueue;
     MSPBTimerContext *_workQueueGlobalResetSyncTimerContext;
-    BOOL _workQueueIsExternalPowered;
-    BOOL _workQueueIsFileTransferAllowed;
-    BOOL _workQueueIsForeground;
     MSPBTimerContext *_workQueuePostForegroundTimerContext;
     MSPBTimerContext *_workQueuePushTimerContext;
+    bool_workQueueIsExternalPowered;
+    bool_workQueueIsFileTransferAllowed;
+    bool_workQueueIsForeground;
 }
 
 @property <MSPowerBudgetDelegate> * delegate;
-@property(getter=isFileTransferAllowed,readonly) BOOL fileTransferAllowed;
+@property(getter=isFileTransferAllowed,readonly) bool fileTransferAllowed;
 @property(retain) NSString * focusAlbumGUID;
 @property(retain) NSString * focusAssetCollectionGUID;
-@property(getter=hasForegroundFocus,readonly) BOOL foregroundFocus;
-@property(readonly) BOOL hasActiveTimers;
+@property(getter=hasForegroundFocus,readonly) bool foregroundFocus;
+@property(readonly) bool hasActiveTimers;
 @property double maxActiveTimeAfterGlobalResetSync;
 @property double maxActiveTimeAfterLossOfForeground;
 @property double maxActiveTimeAfterPush;
 @property(retain) NSString * personID;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 @property(retain) MSPBTimerContext * workQueueGlobalResetSyncTimerContext;
-@property(setter=workQueueSetExternalPowered:) BOOL workQueueIsExternalPowered;
-@property(setter=workQueueSetFileTransferAllowed:) BOOL workQueueIsFileTransferAllowed;
-@property(setter=workQueueSetForeground:) BOOL workQueueIsForeground;
+@property(setter=workQueueSetExternalPowered:) bool workQueueIsExternalPowered;
+@property(setter=workQueueSetFileTransferAllowed:) bool workQueueIsFileTransferAllowed;
+@property(setter=workQueueSetForeground:) bool workQueueIsForeground;
 @property(retain) MSPBTimerContext * workQueuePostForegroundTimerContext;
 @property(retain) MSPBTimerContext * workQueuePushTimerContext;
 
@@ -51,10 +51,10 @@
 - (void)didReceivePushNotification;
 - (id)focusAlbumGUID;
 - (id)focusAssetCollectionGUID;
-- (BOOL)hasActiveTimers;
-- (BOOL)hasForegroundFocus;
+- (bool)hasActiveTimers;
+- (bool)hasForegroundFocus;
 - (id)init;
-- (BOOL)isFileTransferAllowed;
+- (bool)isFileTransferAllowed;
 - (double)maxActiveTimeAfterGlobalResetSync;
 - (double)maxActiveTimeAfterLossOfForeground;
 - (double)maxActiveTimeAfterPush;
@@ -62,7 +62,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;
 - (void)setFocusAssetCollectionGUID:(id)arg1;
-- (void)setIsFileTransferAllowed:(BOOL)arg1;
+- (void)setIsFileTransferAllowed:(bool)arg1;
 - (void)setMaxActiveTimeAfterGlobalResetSync:(double)arg1;
 - (void)setMaxActiveTimeAfterLossOfForeground:(double)arg1;
 - (void)setMaxActiveTimeAfterPush:(double)arg1;
@@ -75,20 +75,20 @@
 - (id)workQueue;
 - (void)workQueueCommitPersistedValues;
 - (id)workQueueGlobalResetSyncTimerContext;
-- (BOOL)workQueueIsExternalPowered;
-- (BOOL)workQueueIsFileTransferAllowed;
-- (BOOL)workQueueIsForeground;
+- (bool)workQueueIsExternalPowered;
+- (bool)workQueueIsFileTransferAllowed;
+- (bool)workQueueIsForeground;
 - (double)workQueueMaxActiveTimeAfterGlobalResetSync;
 - (double)workQueueMaxActiveTimeAfterLossOfForeground;
 - (double)workQueueMaxActiveTimeAfterPush;
 - (id)workQueuePostForegroundTimerContext;
 - (id)workQueuePushTimerContext;
 - (void)workQueueRecomputeFileTransferAllowed;
-- (void)workQueueSetExternalPowered:(BOOL)arg1;
-- (void)workQueueSetFileTransferAllowed:(BOOL)arg1;
-- (void)workQueueSetForeground:(BOOL)arg1;
+- (void)workQueueSetExternalPowered:(bool)arg1;
+- (void)workQueueSetFileTransferAllowed:(bool)arg1;
+- (void)workQueueSetForeground:(bool)arg1;
 - (void)workQueueSetGlobalResetSyncTimerDate:(id)arg1;
-- (void)workQueueSetIsFileTransferAllowed:(BOOL)arg1;
+- (void)workQueueSetIsFileTransferAllowed:(bool)arg1;
 - (void)workQueueSetPostForegroundTimerDate:(id)arg1;
 - (void)workQueueSetPushTimerDate:(id)arg1;
 

@@ -3,13 +3,13 @@
  */
 
 @interface _VTBatteryPolicy : _VTStatePolicy {
-    BOOL _allowOnBattery;
-    BOOL _allowOnCharger;
     unsigned char _batteryState;
-    BOOL _locked;
     int _notificationToken;
     void *_powerAssertion;
     int _powerSourceNotificationToken;
+    bool_allowOnBattery;
+    bool_allowOnCharger;
+    bool_locked;
 }
 
 - (void)_makePowerAssertion;
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (void)dependencyUpdated:(id)arg1;
 - (id)initWithCallback:(id)arg1 queue:(id)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)reload;
 
 @end

@@ -5,7 +5,7 @@
 @interface AAUIBleachedNavigationController : UINavigationController {
 }
 
-- (BOOL)shouldAutorotate;
+- (bool)shouldAutorotate;
 - (void)viewDidLoad;
 
 @end

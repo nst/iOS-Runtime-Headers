@@ -5,16 +5,16 @@
 @class <TCCancelDelegate>, CXNamespace, ECColumnWidthConvertor, EDReference, EDResources, EDSheet, EDWorkbook, EXOAVState, EXOfficeArtState, NSMutableArray, NSMutableDictionary, OCPPackagePart, TCImportTracing;
 
 @interface EXReadState : OAVReadState {
-    struct map<long, unsigned int, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, unsigned int> > > { 
-        struct __tree<std::__1::__value_type<long, unsigned int>, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned int>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, unsigned int> > > { 
-            struct __tree_node<std::__1::__value_type<long, unsigned int>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, unsigned int>, void *> > > { 
+    struct map<long, unsigned long, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, unsigned long> > > { 
+        struct __tree<std::__1::__value_type<long, unsigned long>, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned long>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, unsigned long> > > { 
+            struct __tree_node<std::__1::__value_type<long, unsigned long>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, unsigned long>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned int>, std::__1::less<long>, true> > { 
-                unsigned long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned long>, std::__1::less<long>, true> > { 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     boolmIsPredefinedDxfsBeingRead;
@@ -23,7 +23,7 @@
     boolmMaxRowsWarned;
     NSMutableArray *mArrayedFormulas;
     <TCCancelDelegate> *mCancelDelegate;
-    unsigned long mCellStyleXfsOffset;
+    unsigned long long mCellStyleXfsOffset;
     ECColumnWidthConvertor *mColumnWidthConvertor;
     OCPPackagePart *mCurrentPart;
     unsigned int mCurrentRowMaxColumnIndex;
@@ -58,11 +58,11 @@
 - (id)EXSpreadsheetDrawingNamespace;
 - (id)EXSpreadsheetMLNamespace;
 - (id)EXSpreadsheetRelationsNamespace;
-- (void)addSharedBaseFormulaIndex:(unsigned int)arg1 withIndex:(long)arg2;
+- (void)addSharedBaseFormulaIndex:(unsigned long long)arg1 withIndex:(long long)arg2;
 - (id)arrayedFormulas;
 - (id)authorForReference:(id)arg1;
 - (id)cancelDelegate;
-- (unsigned long)cellStyleXfsOffset;
+- (unsigned long long)cellStyleXfsOffset;
 - (id)columnWidthConvertor;
 - (id)currentPart;
 - (unsigned int)currentRowMaxColumnIndex;
@@ -73,7 +73,7 @@
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
 - (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (bool)isPredefinedDxfsBeingRead;
 - (bool)isPredefinedTableStylesRead;
 - (id)legacyDrawables;
@@ -85,7 +85,7 @@
 - (void)reportWorksheetWarning:(struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (void)resetForNewSheet;
 - (id)resources;
-- (void)setCellStyleXfsOffset:(unsigned long)arg1;
+- (void)setCellStyleXfsOffset:(unsigned long long)arg1;
 - (void)setCurrentPart:(id)arg1;
 - (void)setCurrentRowMaxColumnIndex:(unsigned int)arg1;
 - (void)setCurrentRowMinColumnIndex:(unsigned int)arg1;
@@ -104,7 +104,7 @@
 - (void)setTextBox:(id)arg1 author:(id)arg2 forReference:(id)arg3;
 - (void)setWorkbook:(id)arg1;
 - (void)setupNSForXMLFormat:(int)arg1;
-- (unsigned int)sharedBaseFormulaIndexWithIndex:(long)arg1;
+- (unsigned long long)sharedBaseFormulaIndexWithIndex:(long long)arg1;
 - (id)sheetDimension;
 - (id)textBoxForReference:(id)arg1;
 - (id)workbook;

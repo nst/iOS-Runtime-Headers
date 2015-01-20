@@ -5,35 +5,35 @@
 @class NSString, NSURL;
 
 @interface PLImageDataInfo : NSObject {
-    int _EXIFOrientation;
+    long long _EXIFOrientation;
     NSURL *_URL;
     NSString *_UTI;
-    BOOL _canDownloadFromCloud;
-    int _deliveredFormat;
-    BOOL _deliveredPlaceholder;
+    long long _deliveredFormat;
     NSString *_sandboxExtensionToken;
+    bool_canDownloadFromCloud;
+    bool_deliveredPlaceholder;
 }
 
-@property int EXIFOrientation;
+@property long long EXIFOrientation;
 @property(retain) NSURL * URL;
 @property(retain) NSString * UTI;
-@property BOOL canDownloadFromCloud;
-@property int deliveredFormat;
-@property BOOL deliveredPlaceholder;
+@property bool canDownloadFromCloud;
+@property long long deliveredFormat;
+@property bool deliveredPlaceholder;
 @property(retain) NSString * sandboxExtensionToken;
 
-- (int)EXIFOrientation;
+- (long long)EXIFOrientation;
 - (id)URL;
 - (id)UTI;
-- (BOOL)canDownloadFromCloud;
+- (bool)canDownloadFromCloud;
 - (void)dealloc;
-- (int)deliveredFormat;
-- (BOOL)deliveredPlaceholder;
+- (long long)deliveredFormat;
+- (bool)deliveredPlaceholder;
 - (id)sandboxExtensionToken;
-- (void)setCanDownloadFromCloud:(BOOL)arg1;
-- (void)setDeliveredFormat:(int)arg1;
-- (void)setDeliveredPlaceholder:(BOOL)arg1;
-- (void)setEXIFOrientation:(int)arg1;
+- (void)setCanDownloadFromCloud:(bool)arg1;
+- (void)setDeliveredFormat:(long long)arg1;
+- (void)setDeliveredPlaceholder:(bool)arg1;
+- (void)setEXIFOrientation:(long long)arg1;
 - (void)setSandboxExtensionToken:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUTI:(id)arg1;

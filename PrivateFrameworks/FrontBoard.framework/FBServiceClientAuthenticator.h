@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface FBServiceClientAuthenticator : NSObject {
-    unsigned int _credentials;
+    unsigned long long _credentials;
     NSString *_entitlement;
 }
 
@@ -19,8 +19,8 @@
 - (int)authenticateConnection:(id)arg1 forEntitlement:(id)arg2 withResult:(id)arg3;
 - (int)authenticateConnection:(id)arg1 withResult:(id)arg2;
 - (id)init;
-- (id)initWithCredentials:(unsigned int)arg1;
-- (id)initWithEntitlement:(id)arg1 additionalCredentials:(unsigned int)arg2;
+- (id)initWithCredentials:(unsigned long long)arg1;
+- (id)initWithEntitlement:(id)arg1 additionalCredentials:(unsigned long long)arg2;
 - (id)initWithEntitlement:(id)arg1;
 
 @end

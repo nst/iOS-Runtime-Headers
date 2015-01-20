@@ -5,47 +5,47 @@
 @class NSNumber, NSString;
 
 @interface SKPaymentQueueClient : NSObject <NSCopying> {
-    BOOL _allowsBootstrapCellularData;
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
-    BOOL _hidesConfirmationDialogs;
-    BOOL _ignoresInAppPurchaseRestriction;
     NSString *_receiptDirectoryPath;
-    BOOL _requiresAuthenticationForPayment;
     NSNumber *_storeExternalVersion;
     NSNumber *_storeItemIdentifier;
     NSString *_vendorIdentifier;
+    bool_allowsBootstrapCellularData;
+    bool_hidesConfirmationDialogs;
+    bool_ignoresInAppPurchaseRestriction;
+    bool_requiresAuthenticationForPayment;
 }
 
-@property BOOL allowsBootstrapCellularData;
+@property bool allowsBootstrapCellularData;
 @property(copy) NSString * bundleIdentifier;
 @property(copy) NSString * bundleVersion;
-@property BOOL hidesConfirmationDialogs;
-@property BOOL ignoresInAppPurchaseRestriction;
+@property bool hidesConfirmationDialogs;
+@property bool ignoresInAppPurchaseRestriction;
 @property(copy) NSString * receiptDirectoryPath;
-@property BOOL requiresAuthenticationForPayment;
+@property bool requiresAuthenticationForPayment;
 @property(copy) NSNumber * storeExternalVersion;
 @property(copy) NSNumber * storeItemIdentifier;
 @property(copy) NSString * vendorIdentifier;
 
-- (BOOL)allowsBootstrapCellularData;
+- (bool)allowsBootstrapCellularData;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
-- (BOOL)hidesConfirmationDialogs;
-- (BOOL)ignoresInAppPurchaseRestriction;
+- (bool)hidesConfirmationDialogs;
+- (bool)ignoresInAppPurchaseRestriction;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)receiptDirectoryPath;
-- (BOOL)requiresAuthenticationForPayment;
-- (void)setAllowsBootstrapCellularData:(BOOL)arg1;
+- (bool)requiresAuthenticationForPayment;
+- (void)setAllowsBootstrapCellularData:(bool)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
-- (void)setHidesConfirmationDialogs:(BOOL)arg1;
-- (void)setIgnoresInAppPurchaseRestriction:(BOOL)arg1;
+- (void)setHidesConfirmationDialogs:(bool)arg1;
+- (void)setIgnoresInAppPurchaseRestriction:(bool)arg1;
 - (void)setReceiptDirectoryPath:(id)arg1;
-- (void)setRequiresAuthenticationForPayment:(BOOL)arg1;
+- (void)setRequiresAuthenticationForPayment:(bool)arg1;
 - (void)setStoreExternalVersion:(id)arg1;
 - (void)setStoreItemIdentifier:(id)arg1;
 - (void)setVendorIdentifier:(id)arg1;

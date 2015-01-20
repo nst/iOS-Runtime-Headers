@@ -5,49 +5,49 @@
 @class NSString, NSURLRequest;
 
 @interface PRSSearchFeedback : PRSFeedback {
-    BOOL _cached;
-    int _delta;
-    int _delta_ref;
-    BOOL _error;
+    long long _delta;
+    long long _delta_ref;
     NSString *_error_code;
-    int _latency;
-    int _ttfb;
-    int _type;
+    long long _latency;
+    long long _ttfb;
+    long long _type;
     NSURLRequest *_urlRequest;
+    bool_cached;
+    bool_error;
 }
 
-@property BOOL cached;
-@property int delta;
-@property int delta_ref;
-@property BOOL error;
+@property bool cached;
+@property long long delta;
+@property long long delta_ref;
+@property bool error;
 @property(retain) NSString * error_code;
-@property int latency;
-@property int ttfb;
+@property long long latency;
+@property long long ttfb;
 @property(retain) NSURLRequest * urlRequest;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)cached;
-- (int)delta;
-- (int)delta_ref;
+- (bool)cached;
+- (long long)delta;
+- (long long)delta_ref;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)error;
+- (bool)error;
 - (id)error_code;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFeedback:(id)arg1;
-- (id)initWithInput:(id)arg1 type:(int)arg2 timestamp:(int)arg3;
-- (int)latency;
+- (id)initWithInput:(id)arg1 type:(long long)arg2 timestamp:(long long)arg3;
+- (long long)latency;
 - (id)plist;
-- (void)setCached:(BOOL)arg1;
-- (void)setDelta:(int)arg1;
-- (void)setDelta_ref:(int)arg1;
-- (void)setError:(BOOL)arg1;
+- (void)setCached:(bool)arg1;
+- (void)setDelta:(long long)arg1;
+- (void)setDelta_ref:(long long)arg1;
+- (void)setError:(bool)arg1;
 - (void)setError_code:(id)arg1;
-- (void)setLatency:(int)arg1;
-- (void)setTtfb:(int)arg1;
+- (void)setLatency:(long long)arg1;
+- (void)setTtfb:(long long)arg1;
 - (void)setUrlRequest:(id)arg1;
-- (int)ttfb;
+- (long long)ttfb;
 - (id)type;
 - (id)urlRequest;
 - (void)validate;

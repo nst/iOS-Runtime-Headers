@@ -6,15 +6,13 @@
 
 @interface UIKBRenderTraits : NSObject <NSCopying> {
     UIKBGradient *_backgroundGradient;
-    int _blendForm;
-    BOOL _controlOpacities;
+    long long _blendForm;
     UIKBTextStyle *_fallbackSymbolStyle;
-    float _forceOpacity;
+    double _forceOpacity;
     NSMutableArray *_foregroundRenderEffects;
     UIKBRenderGeometry *_geometry;
     NSString *_hashString;
     UIKBRenderTraits *_highlightedVariantTraits;
-    BOOL _honorControlOpacity;
     UIKBGradient *_layeredBackgroundGradient;
     UIKBGradient *_layeredForegroundGradient;
     NSMutableArray *_renderEffects;
@@ -22,13 +20,15 @@
     UIKBTextStyle *_symbolStyle;
     NSArray *_variantGeometries;
     UIKBRenderTraits *_variantTraits;
+    bool_controlOpacities;
+    bool_honorControlOpacity;
 }
 
 @property(retain) UIKBGradient * backgroundGradient;
-@property int blendForm;
-@property BOOL controlOpacities;
+@property long long blendForm;
+@property bool controlOpacities;
 @property(retain) UIKBTextStyle * fallbackSymbolStyle;
-@property float forceOpacity;
+@property double forceOpacity;
 @property(readonly) NSArray * foregroundRenderEffects;
 @property(retain) UIKBRenderGeometry * geometry;
 @property(retain) NSString * hashString;
@@ -48,18 +48,18 @@
 - (void)addForegroundRenderEffect:(id)arg1;
 - (void)addRenderEffect:(id)arg1;
 - (id)backgroundGradient;
-- (int)blendForm;
-- (BOOL)controlOpacities;
+- (long long)blendForm;
+- (bool)controlOpacities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)fallbackSymbolStyle;
-- (float)forceOpacity;
+- (double)forceOpacity;
 - (id)foregroundRenderEffects;
 - (id)geometry;
 - (id)hashString;
 - (id)highlightedVariantTraits;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)layeredBackgroundGradient;
 - (id)layeredForegroundGradient;
 - (void)modifyForMasking;
@@ -68,10 +68,10 @@
 - (id)renderEffects;
 - (id)secondarySymbolStyle;
 - (void)setBackgroundGradient:(id)arg1;
-- (void)setBlendForm:(int)arg1;
-- (void)setControlOpacities:(BOOL)arg1;
+- (void)setBlendForm:(long long)arg1;
+- (void)setControlOpacities:(bool)arg1;
 - (void)setFallbackSymbolStyle:(id)arg1;
-- (void)setForceOpacity:(float)arg1;
+- (void)setForceOpacity:(double)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setHashString:(id)arg1;
 - (void)setHighlightedVariantTraits:(id)arg1;

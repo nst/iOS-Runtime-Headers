@@ -18,7 +18,7 @@
 @property unsigned long long nextSyncDownRank;
 
 + (id)loadFromClientStateInDBManager:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)allocateItemRowID;

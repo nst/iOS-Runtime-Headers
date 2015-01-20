@@ -11,14 +11,14 @@
 @interface PSLazyImagePromise : NSObject {
     UIImage *_image;
     NSBundle *_imageBundle;
-    BOOL _imageLoaded;
     NSString *_imageName;
     NSString *_imagePath;
     id _loadBlock;
+    bool_imageLoaded;
 }
 
 @property(readonly) UIImage * image;
-@property(getter=isImageLoaded,readonly) BOOL imageLoaded;
+@property(getter=isImageLoaded,readonly) bool imageLoaded;
 
 + (id)imagePromiseWithImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imagePromiseWithImagePath:(id)arg1;
@@ -26,7 +26,7 @@
 
 - (void)dealloc;
 - (id)image;
-- (BOOL)isImageLoaded;
+- (bool)isImageLoaded;
 - (void)loadImage;
 
 @end

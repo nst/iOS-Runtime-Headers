@@ -18,14 +18,14 @@
     CKRecordZoneID *_recordZoneID;
     NSData *_resultClientChangeTokenData;
     CKServerChangeToken *_resultServerChangeToken;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContents;
-    int _status;
+    unsigned long long _resultsLimit;
+    long long _status;
+    bool_shouldFetchAssetContents;
 }
 
 @property(copy) NSArray * desiredKeys;
 @property(copy) id fetchRecordChangesCompletionBlock;
-@property(readonly) BOOL moreComing;
+@property(readonly) bool moreComing;
 @property(copy) CKServerChangeToken * previousServerChangeToken;
 @property(copy) id recordChangedBlock;
 @property(retain) NSMutableDictionary * recordErrors;
@@ -33,12 +33,12 @@
 @property(copy) CKRecordZoneID * recordZoneID;
 @property(retain) NSData * resultClientChangeTokenData;
 @property(retain) CKServerChangeToken * resultServerChangeToken;
-@property unsigned int resultsLimit;
-@property BOOL shouldFetchAssetContents;
-@property int status;
+@property unsigned long long resultsLimit;
+@property bool shouldFetchAssetContents;
+@property long long status;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
@@ -46,7 +46,7 @@
 - (id)fetchRecordChangesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithRecordZoneID:(id)arg1 previousServerChangeToken:(id)arg2;
-- (BOOL)moreComing;
+- (bool)moreComing;
 - (void)performCKOperation;
 - (id)previousServerChangeToken;
 - (id)recordChangedBlock;
@@ -55,7 +55,7 @@
 - (id)recordZoneID;
 - (id)resultClientChangeTokenData;
 - (id)resultServerChangeToken;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchRecordChangesCompletionBlock:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
@@ -65,10 +65,10 @@
 - (void)setRecordZoneID:(id)arg1;
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
-- (void)setShouldFetchAssetContents:(BOOL)arg1;
-- (void)setStatus:(int)arg1;
-- (BOOL)shouldFetchAssetContents;
-- (int)status;
+- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setShouldFetchAssetContents:(bool)arg1;
+- (void)setStatus:(long long)arg1;
+- (bool)shouldFetchAssetContents;
+- (long long)status;
 
 @end

@@ -4,19 +4,19 @@
 
 @interface RUStationActionTableViewCell : RUTableViewCell {
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     } _imageOffset;
 }
 
-@property struct UIOffset { float x1; float x2; } imageOffset;
+@property struct UIOffset { double x1; double x2; } imageOffset;
 
 + (id)_textLabelFont;
-+ (float)defaultHeightForTraitCollection:(id)arg1;
++ (double)defaultHeightForTraitCollection:(id)arg1;
 
-- (struct UIOffset { float x1; float x2; })imageOffset;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (struct UIOffset { double x1; double x2; })imageOffset;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)setImageOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setImageOffset:(struct UIOffset { double x1; double x2; })arg1;
 
 @end

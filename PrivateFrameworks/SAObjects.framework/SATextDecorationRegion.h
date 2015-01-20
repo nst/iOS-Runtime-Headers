@@ -9,7 +9,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSNumber * length;
 @property(copy) NSString * property;
 @property(copy) NSNumber * start;
@@ -25,7 +25,7 @@
 - (void)setLength:(id)arg1;
 - (void)setProperty:(id)arg1;
 - (void)setStart:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })siriui_range;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })siriui_range;
 - (id)start;
 
 @end

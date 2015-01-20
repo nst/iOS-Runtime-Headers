@@ -6,29 +6,29 @@
 
 @interface TKPickerSelectableItem : TKPickerRowItem {
     NSString *_detailText;
-    BOOL _showsCheckmark;
-    BOOL _showsDisclosureIndicator;
     NSString *_text;
-    BOOL _textCentered;
+    bool_showsCheckmark;
+    bool_showsDisclosureIndicator;
+    bool_textCentered;
 }
 
 @property(copy) NSString * detailText;
-@property BOOL showsCheckmark;
-@property BOOL showsDisclosureIndicator;
+@property bool showsCheckmark;
+@property bool showsDisclosureIndicator;
 @property(copy) NSString * text;
-@property(getter=isTextCentered) BOOL textCentered;
+@property(getter=isTextCentered) bool textCentered;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (void)_setDetailText:(id)arg1;
-- (void)_setShowsCheckmark:(BOOL)arg1;
-- (void)_setShowsDisclosureIndicator:(BOOL)arg1;
+- (void)_setShowsCheckmark:(bool)arg1;
+- (void)_setShowsDisclosureIndicator:(bool)arg1;
 - (void)_setText:(id)arg1;
-- (void)_setTextCentered:(BOOL)arg1;
+- (void)_setTextCentered:(bool)arg1;
 - (void)dealloc;
 - (id)detailText;
-- (BOOL)isTextCentered;
-- (BOOL)showsCheckmark;
-- (BOOL)showsDisclosureIndicator;
+- (bool)isTextCentered;
+- (bool)showsCheckmark;
+- (bool)showsDisclosureIndicator;
 - (id)text;
 
 @end

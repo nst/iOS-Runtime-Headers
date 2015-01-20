@@ -6,74 +6,74 @@
 
 @interface TSDInstantAlphaTracker : NSObject <TSDLayoutManipulatingTracker> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL mAllowDisconnectedRegions;
-    float mAngleInRadiansForUIFeedback;
+        double width; 
+        double height; 
+    boolmAllowDisconnectedRegions;
+    boolmCurrentlyInOperation;
+    boolmOperationShouldSubtract;
+    boolmOperationWasCancelled;
+    double mAngleInRadiansForUIFeedback;
     } mControllingPoint;
-    BOOL mCurrentlyInOperation;
     NSMutableArray *mDecoratorLayers;
     TSUIntegerKeyDictionary *mDisconnectedBitmapCache;
     TSUColor *mFillColor;
     TSDImageRep *mImageRep;
     TSDInstantAlphaBinaryBitmap *mLastBitmap;
     TSDInstantAlphaImage *mMaskingImage;
-    BOOL mOperationShouldSubtract;
-    BOOL mOperationWasCancelled;
     } mRawImageSize;
     TSUColor *mStartColor;
     } mStartPoint;
-    int mTolerance;
+    long long mTolerance;
     } mUnderlyingImageSize;
     } mVisualImageSize;
     TSUIntegerKeyDictionary *mWandBitmapCache;
 }
 
-@property BOOL allowDisconnectedRegions;
-@property float angleInRadiansForUIFeedback;
-@property struct CGPoint { float x1; float x2; } controllingPoint;
-@property BOOL operationShouldSubtract;
-@property int tolerance;
+@property bool allowDisconnectedRegions;
+@property double angleInRadiansForUIFeedback;
+@property struct CGPoint { double x1; double x2; } controllingPoint;
+@property bool operationShouldSubtract;
+@property long long tolerance;
 
-+ (id)newInstantAlphaImageWithCGImage:(struct CGImage { }*)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2;
-+ (id)newMaskBitmapWithPoint:(struct CGPoint { float x1; float x2; })arg1 image:(id)arg2 tolerance:(unsigned int)arg3 oldMaskBitmap:(id)arg4;
-+ (id)newMaskSeedFillWithPoint:(struct CGPoint { float x1; float x2; })arg1 inImage:(id)arg2 tolerance:(unsigned int)arg3 oldFill:(id)arg4;
++ (id)newInstantAlphaImageWithCGImage:(struct CGImage { }*)arg1 ofSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)newMaskBitmapWithPoint:(struct CGPoint { double x1; double x2; })arg1 image:(id)arg2 tolerance:(unsigned long long)arg3 oldMaskBitmap:(id)arg4;
++ (id)newMaskSeedFillWithPoint:(struct CGPoint { double x1; double x2; })arg1 inImage:(id)arg2 tolerance:(unsigned long long)arg3 oldFill:(id)arg4;
 
-- (BOOL)allowDisconnectedRegions;
-- (float)angleInRadiansForUIFeedback;
-- (void)beginIAOperationAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)allowDisconnectedRegions;
+- (double)angleInRadiansForUIFeedback;
+- (void)beginIAOperationAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)bezierPathForIABitmap:(id)arg1;
 - (void)cancelCurrentOperation;
 - (void)changeDynamicLayoutsForReps:(id)arg1;
-- (id)colorForOperationAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)colorForOperationAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)commitChangesForReps:(id)arg1;
-- (struct CGPoint { float x1; float x2; })controllingPoint;
+- (struct CGPoint { double x1; double x2; })controllingPoint;
 - (void)dealloc;
 - (id)decoratorLayers;
 - (id)initWithImage:(id)arg1;
-- (BOOL)operationShouldBeDynamic;
-- (BOOL)operationShouldSubtract;
-- (struct CGPoint { float x1; float x2; })p_convertNaturalPointToImagePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)operationShouldBeDynamic;
+- (bool)operationShouldSubtract;
+- (struct CGPoint { double x1; double x2; })p_convertNaturalPointToImagePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)p_updateDecoratorLayersWithMask:(id)arg1;
-- (void)setAllowDisconnectedRegions:(BOOL)arg1;
-- (void)setAngleInRadiansForUIFeedback:(float)arg1;
-- (void)setControllingPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setOperationShouldSubtract:(BOOL)arg1;
-- (void)setTolerance:(int)arg1;
-- (BOOL)shouldOpenCommandGroupToCommitChangesForReps:(id)arg1;
-- (BOOL)supportsAlignmentGuides;
-- (int)tolerance;
+- (void)setAllowDisconnectedRegions:(bool)arg1;
+- (void)setAngleInRadiansForUIFeedback:(double)arg1;
+- (void)setControllingPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOperationShouldSubtract:(bool)arg1;
+- (void)setTolerance:(long long)arg1;
+- (bool)shouldOpenCommandGroupToCommitChangesForReps:(id)arg1;
+- (bool)supportsAlignmentGuides;
+- (long long)tolerance;
 
 @end

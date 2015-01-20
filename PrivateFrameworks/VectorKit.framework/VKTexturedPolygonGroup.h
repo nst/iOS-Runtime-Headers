@@ -16,10 +16,10 @@
     struct shared_ptr<ggl::Texture2D> { 
         struct Texture2D {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    BOOL _needsTextureUpdate;
     VKSharedResources *_sharedResources;
     } _texture;
     } _textureVariant;
+    bool_needsTextureUpdate;
 }
 
 @property(readonly) GEOFeatureStyleAttributes * styleAttributes;

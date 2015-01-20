@@ -3,10 +3,10 @@
  */
 
 @interface SBUIControlCenterVisualEffect : UIVisualEffect {
-    int _style;
+    long long _style;
 }
 
-+ (id)effectWithStyle:(int)arg1;
++ (id)effectWithStyle:(long long)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;

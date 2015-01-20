@@ -11,33 +11,33 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_yearsFetchResult;
 - (struct __CFString { }*)aggregateLevelKey;
-- (id)assetsToDisplayInMapForVisualSection:(int)arg1;
+- (id)assetsToDisplayInMapForVisualSection:(long long)arg1;
 - (double)cellAspectRatioHint;
-- (int)cellFillMode;
-- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
-- (BOOL)consolidatesAssetFetchesForPreheat;
-- (id)diagnosticsProviderForVisualSection:(int)arg1;
+- (long long)cellFillMode;
+- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(long long)arg2;
+- (bool)consolidatesAssetFetchesForPreheat;
+- (id)diagnosticsProviderForVisualSection:(long long)arg1;
 - (id)displayTitle;
-- (BOOL)hasEnoughContentToDisplay;
-- (int)imageDeliveryMode;
+- (bool)hasEnoughContentToDisplay;
+- (long long)imageDeliveryMode;
 - (int)imageFormat;
-- (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
-- (int)maxRowsPerSection;
+- (id)initWithZoomLevel:(unsigned long long)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
+- (long long)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;
 - (id)momentsInCollectionList:(id)arg1;
 - (id)newCollectionViewLayout;
-- (int)numberOfVisualSectionsForSectionedGridLayout:(id)arg1;
+- (long long)numberOfVisualSectionsForSectionedGridLayout:(id)arg1;
 - (id)renderedStripsElementKind;
 - (id)sectionHeaderElementKind;
-- (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(int)arg2;
-- (BOOL)supportsIncrementalChangeNotifications;
-- (void)updateLayoutMetricsForWidth:(float)arg1;
+- (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(long long)arg2;
+- (bool)supportsIncrementalChangeNotifications;
+- (void)updateLayoutMetricsForWidth:(double)arg1;
 - (void)willShowMagnifiedViewController:(id)arg1;
 
 @end

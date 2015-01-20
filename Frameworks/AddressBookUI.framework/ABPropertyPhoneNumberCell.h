@@ -5,7 +5,7 @@
 @interface ABPropertyPhoneNumberCell : ABPropertySimpleTransportCell {
 }
 
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 - (void)updateTransportButtons;
 
 @end

@@ -13,7 +13,7 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)wallpaperImageViewControllerDidCancel:(id)arg1;
 - (void)wallpaperImageViewControllerDidCropWallpaper:(id)arg1;

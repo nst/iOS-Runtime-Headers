@@ -13,11 +13,11 @@
 }
 
 @property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasProtectionInfo;
-@property(readonly) BOOL hasShareId;
-@property(readonly) BOOL hasZoneIdentifier;
-@property(readonly) BOOL hasZoneProtectionInfoTag;
+@property(readonly) bool hasEtag;
+@property(readonly) bool hasProtectionInfo;
+@property(readonly) bool hasShareId;
+@property(readonly) bool hasZoneIdentifier;
+@property(readonly) bool hasZoneProtectionInfoTag;
 @property(retain) CKDPProtectionInfo * protectionInfo;
 @property(retain) CKDPShareIdentifier * shareId;
 @property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
@@ -29,16 +29,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasProtectionInfo;
-- (BOOL)hasShareId;
-- (BOOL)hasZoneIdentifier;
-- (BOOL)hasZoneProtectionInfoTag;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasProtectionInfo;
+- (bool)hasShareId;
+- (bool)hasZoneIdentifier;
+- (bool)hasZoneProtectionInfoTag;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)protectionInfo;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setProtectionInfo:(id)arg1;
 - (void)setShareId:(id)arg1;

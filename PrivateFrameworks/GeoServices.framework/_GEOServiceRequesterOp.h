@@ -10,24 +10,24 @@
 
 @interface _GEOServiceRequesterOp : NSObject <PBRequesterDelegate> {
     NSString *_appIdentifier;
-    BOOL _cancelled;
     id _completionHandler;
     NSString *_debugRequestName;
     PBRequest *_request;
     GEORequester *_requester;
     NSNumber *_serviceTypeNumber;
-    unsigned int _urlType;
+    unsigned long long _urlType;
+    bool_cancelled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)_cleanup;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithRequest:(id)arg1 appIdentifier:(id)arg2 urlType:(unsigned int)arg3 debugRequestName:(id)arg4 serviceType:(id)arg5;
+- (id)initWithRequest:(id)arg1 appIdentifier:(id)arg2 urlType:(unsigned long long)arg3 debugRequestName:(id)arg4 serviceType:(id)arg5;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;

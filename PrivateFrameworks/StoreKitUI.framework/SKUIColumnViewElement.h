@@ -5,17 +5,17 @@
 @class SKUIHeaderViewElement;
 
 @interface SKUIColumnViewElement : SKUIViewElement {
-    int _columnSpan;
+    long long _columnSpan;
 }
 
-@property(readonly) int columnSpan;
+@property(readonly) long long columnSpan;
 @property(readonly) SKUIHeaderViewElement * headerElement;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (int)columnSpan;
+- (long long)columnSpan;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
 - (id)headerElement;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 
 @end

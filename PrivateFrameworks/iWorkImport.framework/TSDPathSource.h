@@ -8,40 +8,40 @@
  */
 
 @interface TSDPathSource : NSObject <TSDMixing, NSCopying> {
-    BOOL mHorizontalFlip;
-    BOOL mVerticalFlip;
+    boolmHorizontalFlip;
+    boolmVerticalFlip;
 }
 
-@property BOOL hasHorizontalFlip;
-@property BOOL hasVerticalFlip;
+@property bool hasHorizontalFlip;
+@property bool hasVerticalFlip;
 
-+ (id)pathSourceForShapeType:(int)arg1 naturalSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)pathSourceForShapeType:(int)arg1 naturalSize:(struct CGSize { double x1; double x2; })arg2;
 + (id)pathSourceWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
 
 - (id)bezierPath;
 - (id)bezierPathWithoutFlips;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)hasHorizontalFlip;
-- (BOOL)hasVerticalFlip;
+- (bool)hasHorizontalFlip;
+- (bool)hasVerticalFlip;
 - (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
 - (id)interiorWrapPath;
-- (BOOL)isCircular;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isRectangular;
-- (BOOL)isRectangularForever;
+- (bool)isCircular;
+- (bool)isEqual:(id)arg1;
+- (bool)isRectangular;
+- (bool)isRectangularForever;
 - (void)loadSharedFromArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })pathFlipTransform;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
+- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })pathFlipTransform;
 - (Class)preferredControllerClass;
 - (void)saveSharedToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
 - (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct PointPathSourceArchive {} *x3; struct ScalarPathSourceArchive {} *x4; struct BezierPathSourceArchive {} *x5; struct CalloutPathSourceArchive {} *x6; struct ConnectionLinePathSourceArchive {} *x7; struct EditableBezierPathSourceArchive {} *x8; boolx9; boolx10; int x11; unsigned int x12[1]; }*)arg1;
-- (void)scaleToNaturalSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setHasHorizontalFlip:(BOOL)arg1;
-- (void)setHasVerticalFlip:(BOOL)arg1;
-- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
-- (float)uniformScaleForScalingToNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)scaleToNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setHasHorizontalFlip:(bool)arg1;
+- (void)setHasVerticalFlip:(bool)arg1;
+- (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)uniformScaleForScalingToNaturalSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)valueForSetSelector:(SEL)arg1;
 
 @end

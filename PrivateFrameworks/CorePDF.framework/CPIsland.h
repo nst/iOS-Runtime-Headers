@@ -5,6 +5,6 @@
 @interface CPIsland : CPZone {
 }
 
-- (BOOL)bordersWindClockwise;
+- (bool)bordersWindClockwise;
 
 @end

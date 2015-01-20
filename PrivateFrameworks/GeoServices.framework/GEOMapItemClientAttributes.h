@@ -10,8 +10,8 @@
 }
 
 @property(retain) GEOMapItemAddressBookAttributes * addressBookAttributes;
-@property(readonly) BOOL hasAddressBookAttributes;
-@property(readonly) BOOL hasRoutineAttributes;
+@property(readonly) bool hasAddressBookAttributes;
+@property(readonly) bool hasRoutineAttributes;
 @property(retain) GEOMapItemRoutineAttributes * routineAttributes;
 
 + (id)clientAttributesCopyForSharing:(id)arg1;
@@ -22,13 +22,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddressBookAttributes;
-- (BOOL)hasRoutineAttributes;
-- (unsigned int)hash;
-- (id)initWithLOIType:(int)arg1 event:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddressBookAttributes;
+- (bool)hasRoutineAttributes;
+- (unsigned long long)hash;
+- (id)initWithLOIType:(long long)arg1 event:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routineAttributes;
 - (void)setAddressBookAttributes:(id)arg1;
 - (void)setRoutineAttributes:(id)arg1;

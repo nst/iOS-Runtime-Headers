@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)flowControlledOperationClasses;
 - (id)init;
-- (BOOL)isOperationLimited:(id)arg1;
+- (bool)isOperationLimited:(id)arg1;
 - (void)limitOperation:(id)arg1 retryAfter:(id)arg2;
 - (double)secondsUntilUnlimited:(id)arg1;
 - (id)statusReport;

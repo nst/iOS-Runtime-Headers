@@ -10,23 +10,23 @@
     float _averagePower;
     NSXPCConnection *_connection;
     <AFDictationDelegate> *_delegate;
-    BOOL _hasActiveRequest;
-    BOOL _isCapturingSpeech;
     NSString *_lastUsedLanguage;
     float _peakPower;
+    bool_hasActiveRequest;
+    bool_isCapturingSpeech;
 }
 
-@property(readonly) BOOL currentlyUsingLocalDication;
+@property(readonly) bool currentlyUsingLocalDication;
 @property <AFDictationDelegate> * delegate;
 
-+ (BOOL)dictationIsEnabled;
-+ (BOOL)dictationIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
++ (bool)dictationIsEnabled;
++ (bool)dictationIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
 + (void)fetchSupportedLanguageCodes:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_availabilityChanged:(id)arg1;
 - (void)_cancelRequestTimeout;
-- (void)_checkAndSetIsCapturingSpeech:(BOOL)arg1;
+- (void)_checkAndSetIsCapturingSpeech:(bool)arg1;
 - (void)_clearConnections;
 - (id)_connection;
 - (void)_connectionInterrupted;
@@ -59,10 +59,10 @@
 - (void)beginAvailabilityMonitoring;
 - (void)cancelAvailabilityMonitoring;
 - (void)cancelSpeech;
-- (BOOL)currentlyUsingLocalDication;
+- (bool)currentlyUsingLocalDication;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)dictationIsAvailableForLanguage:(id)arg1;
+- (bool)dictationIsAvailableForLanguage:(id)arg1;
 - (void)endSession;
 - (id)init;
 - (float)peakPower;
@@ -72,7 +72,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2;
-- (void)startDictationWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2 options:(id)arg3 forLanguage:(id)arg4;
+- (void)startDictationWithSpeechFileAtURL:(id)arg1 isNarrowBand:(bool)arg2 options:(id)arg3 forLanguage:(id)arg4;
 - (void)startDictationWithSpeechFileAtURL:(id)arg1 options:(id)arg2 forLanguage:(id)arg3;
 - (void)stopSpeech;
 - (void)stopSpeechWithOptions:(id)arg1;

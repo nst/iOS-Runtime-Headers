@@ -7,37 +7,37 @@
 @interface HDSQLiteQueryDescriptor : NSObject <NSCopying> {
     Class _entityClass;
     NSString *_groupBy;
-    int _limitCount;
+    long long _limitCount;
     NSArray *_orderingDirections;
     NSArray *_orderingProperties;
     HDSQLitePredicate *_predicate;
-    BOOL _returnsDistinctEntities;
+    bool_returnsDistinctEntities;
 }
 
 @property Class entityClass;
 @property(copy) NSString * groupBy;
-@property int limitCount;
+@property long long limitCount;
 @property(copy) NSArray * orderingDirections;
 @property(copy) NSArray * orderingProperties;
 @property(copy) HDSQLitePredicate * predicate;
-@property BOOL returnsDistinctEntities;
+@property bool returnsDistinctEntities;
 
 - (id)_newSelectSQLWithProperties:(id)arg1 columns:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (Class)entityClass;
 - (id)groupBy;
-- (int)limitCount;
+- (long long)limitCount;
 - (id)orderingDirections;
 - (id)orderingProperties;
 - (id)predicate;
-- (BOOL)returnsDistinctEntities;
+- (bool)returnsDistinctEntities;
 - (void)setEntityClass:(Class)arg1;
 - (void)setGroupBy:(id)arg1;
-- (void)setLimitCount:(int)arg1;
+- (void)setLimitCount:(long long)arg1;
 - (void)setOrderingDirections:(id)arg1;
 - (void)setOrderingProperties:(id)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setReturnsDistinctEntities:(BOOL)arg1;
+- (void)setReturnsDistinctEntities:(bool)arg1;
 
 @end

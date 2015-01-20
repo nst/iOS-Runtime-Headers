@@ -5,34 +5,34 @@
 @interface SBFLockScreenMetrics : NSObject {
 }
 
-+ (float)_notificationListBottomOffset;
-+ (float)_notificationListSideOffset;
-+ (float)_notificationListTopPadding;
-+ (float)dateBaselineOffsetFromTime;
-+ (float)dateLabelFontSize;
-+ (float)dateViewBaselineY;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })notificationListInsets;
-+ (float)pinFourDigitEntryFieldBottomYDistanceFromNumberPadTopButton:(BOOL)arg1;
-+ (float)pinFourDigitEntryFieldIndicatorDiameter;
-+ (float)pinFourDigitEntryFieldIndicatorPaddingWidth;
-+ (float)pinKeypadEntryFieldOffsetForSubtitle;
++ (double)_notificationListBottomOffset;
++ (double)_notificationListSideOffset;
++ (double)_notificationListTopPadding;
++ (double)dateBaselineOffsetFromTime;
++ (double)dateLabelFontSize;
++ (double)dateViewBaselineY;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })notificationListInsets;
++ (double)pinFourDigitEntryFieldBottomYDistanceFromNumberPadTopButton:(bool)arg1;
++ (double)pinFourDigitEntryFieldIndicatorDiameter;
++ (double)pinFourDigitEntryFieldIndicatorPaddingWidth;
++ (double)pinKeypadEntryFieldOffsetForSubtitle;
 + (id)pinKeypadStatusSubtitleViewTitleFont;
-+ (float)pinKeypadStatusTitleBaselineOffset:(BOOL)arg1;
-+ (float)pinKeypadStatusTitleBaselineOffsetFromTitle;
-+ (float)pinKeypadStatusTitleBaselineOffsetIncludingSubtitle:(BOOL)arg1;
++ (double)pinKeypadStatusTitleBaselineOffset:(bool)arg1;
++ (double)pinKeypadStatusTitleBaselineOffsetFromTitle;
++ (double)pinKeypadStatusTitleBaselineOffsetIncludingSubtitle:(bool)arg1;
 + (id)pinKeypadStatusTitleViewTitleFont;
-+ (float)pinLongNumericEntryFieldBottomYDistanceFromNumberPadTopButton;
-+ (float)pinNumberPadAncillaryButtonOffset;
-+ (float)pinNumberPadBaseOffsetFromTopOfScreen:(BOOL)arg1;
-+ (float)pinNumberPadBottomPaddingHeight;
-+ (float)pinNumberPadButtonOuterCircleDiameter;
-+ (float)pinNumberPadButtonPaddingHeight;
-+ (float)pinNumberPadButtonPaddingWidth;
-+ (float)pinNumberPadWidth;
-+ (float)slideToUnlockFontSize;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })slideToUnlockInsets;
-+ (float)slideToUnlockOverlayMargin;
-+ (float)slideUpGrabberInset;
-+ (float)subtitleBaselineOffsetFromTopOfScreen;
++ (double)pinLongNumericEntryFieldBottomYDistanceFromNumberPadTopButton;
++ (double)pinNumberPadAncillaryButtonOffset;
++ (double)pinNumberPadBaseOffsetFromTopOfScreen:(bool)arg1;
++ (double)pinNumberPadBottomPaddingHeight;
++ (double)pinNumberPadButtonOuterCircleDiameter;
++ (double)pinNumberPadButtonPaddingHeight;
++ (double)pinNumberPadButtonPaddingWidth;
++ (double)pinNumberPadWidth;
++ (double)slideToUnlockFontSize;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })slideToUnlockInsets;
++ (double)slideToUnlockOverlayMargin;
++ (double)slideUpGrabberInset;
++ (double)subtitleBaselineOffsetFromTopOfScreen;
 
 @end

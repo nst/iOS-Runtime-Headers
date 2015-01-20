@@ -7,14 +7,14 @@
 @interface _UIAlertControllerCarActionHighlightedBackgroundView : UIView <UIAlertControllerBackgroundView> {
 }
 
-@property float cornerRadius;
+@property double cornerRadius;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (float)cornerRadius;
-- (void)setCornerRadius:(float)arg1;
+- (double)cornerRadius;
+- (void)setCornerRadius:(double)arg1;
 - (void)tintColorDidChange;
 
 @end

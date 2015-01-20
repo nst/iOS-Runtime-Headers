@@ -31,10 +31,14 @@
     AVAsset *asset;
     AVAudioMix *audioMix;
     NSString *audioTimePitchAlgorithm;
-    BOOL canUseFastFrameRateConversion;
+    boolcanUseFastFrameRateConversion;
+    booloptimizeForNetworkUse;
+    booloutputFileCreatedByRemaker;
+    booluseMultiPass;
+    boolwaitingForFastFrameRateResponse;
     NSObject<OS_dispatch_semaphore> *canUseFastFrameRateConversionSemaphore;
     NSArray *compatibleFileTypes;
-    long compatibleFileTypesDispatchOncePredicate;
+    long long compatibleFileTypesDispatchOncePredicate;
     AVCustomVideoCompositorSession *customVideoCompositorSession;
     NSURL *directoryForTemporaryFiles;
     NSError *error;
@@ -45,8 +49,6 @@
     NSArray *metadata;
     AVMetadataItemFilter *metadataItemFilter;
     } minVideoFrameDuration;
-    BOOL optimizeForNetworkUse;
-    BOOL outputFileCreatedByRemaker;
     NSString *outputFileType;
     NSURL *outputURL;
     NSString *preset16x9;
@@ -55,12 +57,10 @@
     NSObject<OS_dispatch_queue> *readWriteQueue;
     struct OpaqueFigRemaker { } *remaker;
     NSObject<OS_dispatch_queue> *remakerNotificationSerializationQueue;
-    int status;
+    long long status;
     } timeRange;
-    BOOL useMultiPass;
     AVVideoComposition *videoComposition;
     NSString *videoFrameRateConversionAlgorithm;
-    BOOL waitingForFastFrameRateResponse;
     AVWeakReference *weakReference;
 }
 

@@ -6,42 +6,42 @@
 
 @interface KNWipeDataBuffer : NSObject {
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    float mBlurFraction;
-    unsigned int mDirection;
+    double mBlurFraction;
+    unsigned long long mDirection;
     } mMVPMatrix;
     TSDGLDataBuffer *mSolidDataBuffer;
     TSDGLDataBufferAttribute *mSolidPositionAttribute;
@@ -56,21 +56,21 @@
     TSDGLDataBufferAttribute *mWipeTexCoordAttribute;
 }
 
-@property struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } MVPMatrix;
-@property float blurFraction;
-@property unsigned int direction;
+@property struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } MVPMatrix;
+@property double blurFraction;
+@property unsigned long long direction;
 
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })MVPMatrix;
-- (float)blurFraction;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })MVPMatrix;
+- (double)blurFraction;
 - (void)dealloc;
-- (unsigned int)direction;
-- (void)drawWipeWithPercent:(float)arg1 opacity:(float)arg2;
-- (id)initWithVertexRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textureRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct { float x1; float x2; })p_texCoordFromX:(float)arg1 y:(float)arg2;
-- (void)p_updateVertexInBuffer:(id)arg1 atIndex:(unsigned int)arg2 x:(float)arg3 y:(float)arg4 opacity:(float)arg5;
-- (void)setBlurFraction:(float)arg1;
-- (void)setDirection:(unsigned int)arg1;
-- (void)setMVPMatrix:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
-- (void)updateWipeWithPercent:(float)arg1 solidVertexCount:(unsigned int*)arg2 wipeVertexCount:(unsigned int*)arg3;
+- (unsigned long long)direction;
+- (void)drawWipeWithPercent:(double)arg1 opacity:(double)arg2;
+- (id)initWithVertexRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textureRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct { float x1; float x2; })p_texCoordFromX:(double)arg1 y:(double)arg2;
+- (void)p_updateVertexInBuffer:(id)arg1 atIndex:(unsigned long long)arg2 x:(double)arg3 y:(double)arg4 opacity:(double)arg5;
+- (void)setBlurFraction:(double)arg1;
+- (void)setDirection:(unsigned long long)arg1;
+- (void)setMVPMatrix:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1;
+- (void)updateWipeWithPercent:(double)arg1 solidVertexCount:(unsigned long long*)arg2 wipeVertexCount:(unsigned long long*)arg3;
 
 @end

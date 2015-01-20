@@ -6,39 +6,39 @@
 
 @interface TSCHMultiDataBarFillElementShapeLayer : TSCHMultiDataAnimatingFrameLayer <TSCHMultiDataElementShapeLayer> {
     TSDFill *_p_fill;
-    BOOL mAboveIntercept;
+    boolmAboveIntercept;
     TSDFill *mFill;
     CALayer *mFillLayer;
     TSCHMultiDataBarElementShapeLayer *mShapeLayer;
 }
 
-@property BOOL aboveIntercept;
+@property bool aboveIntercept;
 @property(retain) TSDFill * fill;
 @property(retain) TSDFill * p_fill;
 
-- (BOOL)aboveIntercept;
+- (bool)aboveIntercept;
 - (id)chartRep;
 - (id)currentValueLayer;
 - (void)dealloc;
 - (id)fill;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
-- (void)p_addAnimationsForLayer:(id)arg1 updatingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toAnimationInfo:(id)arg3;
-- (void)p_addAnimationsForUpdatingFillLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(struct CGImage { }*)arg2 toAnimationInfo:(id)arg3;
+- (void)p_addAnimationsForLayer:(id)arg1 updatingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toAnimationInfo:(id)arg3;
+- (void)p_addAnimationsForUpdatingFillLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 image:(struct CGImage { }*)arg2 toAnimationInfo:(id)arg3;
 - (id)p_fill;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_fillFrameFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 aboveIntercept:(BOOL)arg2 animationInfo:(id)arg3;
-- (BOOL)p_hasNoFill;
-- (id)p_imageWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)p_isColorFill;
-- (BOOL)p_revealsFillLayer;
-- (BOOL)p_usesFillLayer;
-- (void)setAboveIntercept:(BOOL)arg1;
-- (void)setContentsScale:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_fillFrameFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 aboveIntercept:(bool)arg2 animationInfo:(id)arg3;
+- (bool)p_hasNoFill;
+- (id)p_imageWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)p_isColorFill;
+- (bool)p_revealsFillLayer;
+- (bool)p_usesFillLayer;
+- (void)setAboveIntercept:(bool)arg1;
+- (void)setContentsScale:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFill:(id)arg1 stroke:(id)arg2 withViewScale:(float)arg3;
+- (void)setFill:(id)arg1 stroke:(id)arg2 withViewScale:(double)arg3;
 - (void)setFill:(id)arg1;
 - (void)setP_fill:(id)arg1;
-- (void)updateElementFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSeries:(id)arg2 addingAnimationsToAnimationInfo:(id)arg3;
+- (void)updateElementFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSeries:(id)arg2 addingAnimationsToAnimationInfo:(id)arg3;
 - (void)updateElementFrameToNullForSeries:(id)arg1 addingAnimationsToAnimationInfo:(id)arg2;
 
 @end

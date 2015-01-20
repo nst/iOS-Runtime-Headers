@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <SSPlayInfoRequestDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) SSPlayInfoRequestContext * playInfoContext;
 @property(readonly) SSPlayInfoResponse * playInfoResponse;
 @property(readonly) Class superclass;
@@ -24,7 +24,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)playInfoContext;
 - (id)playInfoResponse;
-- (BOOL)start;
+- (bool)start;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithPlayInfoResponseBlock:(id)arg1;
 

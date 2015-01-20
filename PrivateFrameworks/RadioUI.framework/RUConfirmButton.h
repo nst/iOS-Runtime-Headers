@@ -6,11 +6,10 @@
 
 @interface RUConfirmButton : UIButton {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    BOOL _attemptsToUseMaximumSize;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     UIImageView *_confirmBackgroundImageView;
     UILabel *_confirmLabel;
     UIImageView *_defaultBackgroundImageView;
@@ -19,53 +18,54 @@
     RUFocusedTouchGestureRecognizer *_focusedTouchGestureRecognizer;
     NSMutableDictionary *_fontByControlState;
     NSMutableDictionary *_shadowOffsetByControlState;
-    BOOL _showingConfirmation;
     } _touchAllowance;
+    bool_attemptsToUseMaximumSize;
+    bool_showingConfirmation;
 }
 
-@property BOOL attemptsToUseMaximumSize;
+@property bool attemptsToUseMaximumSize;
 @property(readonly) UILabel * confirmLabel;
 @property Class confirmLabelClass;
 @property(readonly) UILabel * defaultLabel;
 @property Class defaultLabelClass;
 @property <RUConfirmButtonDelegate> * delegate;
-@property(getter=isShowingConfirmation) BOOL showingConfirmation;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchAllowance;
+@property(getter=isShowingConfirmation) bool showingConfirmation;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchAllowance;
 
 + (id)confirmButton;
 
 - (void).cxx_destruct;
-- (void)_animatedSetShowingConfirmation:(BOOL)arg1;
+- (void)_animatedSetShowingConfirmation:(bool)arg1;
 - (void)_gestureRecognizerChangedStateAction:(id)arg1;
-- (id)_objectForState:(unsigned int)arg1 inDictionary:(id)arg2;
-- (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forControlState:(unsigned int)arg2;
-- (void)_styleLabel:(id)arg1 forState:(unsigned int)arg2;
+- (id)_objectForState:(unsigned long long)arg1 inDictionary:(id)arg2;
+- (struct CGSize { double x1; double x2; })_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 forControlState:(unsigned long long)arg2;
+- (void)_styleLabel:(id)arg1 forState:(unsigned long long)arg2;
 - (void)_touchUpInsideAction:(id)arg1;
-- (BOOL)attemptsToUseMaximumSize;
+- (bool)attemptsToUseMaximumSize;
 - (id)confirmLabel;
 - (Class)confirmLabelClass;
 - (void)dealloc;
 - (id)defaultLabel;
 - (Class)defaultLabelClass;
 - (id)delegate;
-- (id)fontForState:(unsigned int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isShowingConfirmation;
+- (id)fontForState:(unsigned long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isShowingConfirmation;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setAttemptsToUseMaximumSize:(BOOL)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setAttemptsToUseMaximumSize:(bool)arg1;
 - (void)setConfirmLabelClass:(Class)arg1;
 - (void)setDefaultLabelClass:(Class)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFont:(id)arg1 forState:(unsigned int)arg2;
-- (void)setShowingConfirmation:(BOOL)arg1 animationDuration:(double)arg2 animationDelay:(double)arg3 animationOptions:(unsigned int)arg4 animationCompletionHandler:(id)arg5;
-- (void)setShowingConfirmation:(BOOL)arg1;
-- (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1 forState:(unsigned int)arg2;
-- (void)setTouchAllowance:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forControlState:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned int)state;
-- (struct CGSize { float x1; float x2; })titleShadowOffsetForState:(unsigned int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })touchAllowance;
+- (void)setFont:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setShowingConfirmation:(bool)arg1 animationDuration:(double)arg2 animationDelay:(double)arg3 animationOptions:(unsigned long long)arg4 animationCompletionHandler:(id)arg5;
+- (void)setShowingConfirmation:(bool)arg1;
+- (void)setTitleShadowOffset:(struct CGSize { double x1; double x2; })arg1 forState:(unsigned long long)arg2;
+- (void)setTouchAllowance:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 forControlState:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)state;
+- (struct CGSize { double x1; double x2; })titleShadowOffsetForState:(unsigned long long)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchAllowance;
 
 @end

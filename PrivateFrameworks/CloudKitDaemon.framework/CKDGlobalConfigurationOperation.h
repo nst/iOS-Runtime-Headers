@@ -18,6 +18,6 @@
 - (void)main;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfigurationFetchedGroup:(id)arg1;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

@@ -9,10 +9,10 @@
 
 @property(retain,readonly) NSArray * assets;
 @property(readonly) IKViewElement * relatedContent;
-@property(readonly) unsigned int scrubBehavior;
+@property(readonly) unsigned long long scrubBehavior;
 
 - (id)assets;
 - (id)relatedContent;
-- (unsigned int)scrubBehavior;
+- (unsigned long long)scrubBehavior;
 
 @end

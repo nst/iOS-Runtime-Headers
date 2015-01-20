@@ -5,26 +5,26 @@
 @class <SFRemoteHotspotProtocol>, <SFRemoteHotspotSessionDelegate>, NSString;
 
 @interface SFRemoteHotspotSession : NSObject <SFRemoteHotspotClient, SFCompanionXPCManagerObserver> {
-    BOOL _browsing;
     <SFRemoteHotspotProtocol> *_connectionProxy;
     <SFRemoteHotspotSessionDelegate> *_delegate;
+    bool_browsing;
 }
 
-@property BOOL browsing;
+@property bool browsing;
 @property(retain) <SFRemoteHotspotProtocol> * connectionProxy;
 @property(copy,readonly) NSString * debugDescription;
 @property <SFRemoteHotspotSessionDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (BOOL)browsing;
+- (bool)browsing;
 - (id)connectionProxy;
 - (id)delegate;
 - (void)enableHotspotForDevice:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)enableRemoteHotspotForDevice:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)init;
-- (void)setBrowsing:(BOOL)arg1;
+- (void)setBrowsing:(bool)arg1;
 - (void)setConnectionProxy:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startBrowsing;

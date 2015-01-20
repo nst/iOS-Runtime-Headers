@@ -8,18 +8,18 @@
     AVAssetWriterInputWritingHelper *_writingHelper;
 }
 
-- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (BOOL)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
-- (BOOL)canPerformMultiplePasses;
+- (bool)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (bool)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (bool)canPerformMultiplePasses;
 - (id)currentPassDescription;
 - (void)dealloc;
 - (id)initWithConfigurationState:(id)arg1;
 - (id)initWithWritingHelper:(id)arg1;
-- (BOOL)isReadyForMoreMediaData;
+- (bool)isReadyForMoreMediaData;
 - (void)markAsFinished;
 - (void)markCurrentPassAsFinished;
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
-- (int)status;
+- (long long)status;
 
 @end

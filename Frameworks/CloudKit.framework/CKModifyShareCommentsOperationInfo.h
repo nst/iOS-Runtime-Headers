@@ -14,7 +14,7 @@
 @property(retain) NSArray * commentsToSave;
 @property(retain) CKShareID * shareID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)commentIDsToDelete;

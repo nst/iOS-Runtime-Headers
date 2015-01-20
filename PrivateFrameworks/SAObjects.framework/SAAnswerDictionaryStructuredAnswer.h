@@ -11,7 +11,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy) NSArray * definitionGroups;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * phoneticPronunciation;
 @property(copy) NSURL * sound;
 @property(readonly) Class superclass;

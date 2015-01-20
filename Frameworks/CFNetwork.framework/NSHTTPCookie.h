@@ -8,7 +8,7 @@
     NSHTTPCookieInternal *_cookiePrivate;
 }
 
-@property(getter=isHTTPOnly,readonly) BOOL HTTPOnly;
+@property(getter=isHTTPOnly,readonly) bool HTTPOnly;
 @property(copy,readonly) NSString * comment;
 @property(copy,readonly) NSURL * commentURL;
 @property(copy,readonly) NSString * domain;
@@ -17,10 +17,10 @@
 @property(copy,readonly) NSString * path;
 @property(copy,readonly) NSArray * portList;
 @property(copy,readonly) NSDictionary * properties;
-@property(getter=isSecure,readonly) BOOL secure;
-@property(getter=isSessionOnly,readonly) BOOL sessionOnly;
+@property(getter=isSecure,readonly) bool secure;
+@property(getter=isSessionOnly,readonly) bool sessionOnly;
 @property(copy,readonly) NSString * value;
-@property(readonly) unsigned int version;
+@property(readonly) unsigned long long version;
 
 + (id)_cf2nsCookies:(struct __CFArray { }*)arg1;
 + (struct __CFArray { }*)_ns2cfCookies:(id)arg1;
@@ -44,8 +44,8 @@
 - (id)Version;
 - (struct OpaqueCFHTTPCookie { }*)_CFHTTPCookie;
 - (struct OpaqueCFHTTPCookie { }*)_GetInternalCFHTTPCookie;
-- (int)_compareForHeaderOrder:(id)arg1;
-- (BOOL)_isExpired;
+- (long long)_compareForHeaderOrder:(id)arg1;
+- (bool)_isExpired;
 - (id)_key;
 - (id)comment;
 - (id)commentURL;
@@ -55,21 +55,21 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiresDate;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperties:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHTTPOnly;
-- (BOOL)isSecure;
-- (BOOL)isSessionOnly;
+- (bool)isEqual:(id)arg1;
+- (bool)isHTTPOnly;
+- (bool)isSecure;
+- (bool)isSessionOnly;
 - (id)name;
 - (id)path;
 - (id)portList;
 - (id)properties;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)value;
-- (unsigned int)version;
+- (unsigned long long)version;
 
 @end

@@ -142,28 +142,28 @@
         struct { 
             unsigned int textureID; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } textureSize; 
             boolisRetina; 
         } textureInfo; 
-        float lineHeight; 
+        double lineHeight; 
         short characterWidth_texture; 
-        float characterWidth_typography; 
+        double characterWidth_typography; 
         short characterHeight_texture; 
         struct { /* ? */ } *symbolRects; 
     struct { 
         struct { 
             unsigned int textureID; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } textureSize; 
             boolisRetina; 
         } textureInfo; 
-        float lineHeight; 
+        double lineHeight; 
         short characterWidth_texture; 
-        float characterWidth_typography; 
+        double characterWidth_typography; 
         short characterHeight_texture; 
         struct { /* ? */ } *symbolRects; 
     struct { 
@@ -171,7 +171,7 @@
         boolshowFullStatistics; 
         float fps; 
         float waitDisplayLinkTime; 
-        int pressedButtonIndex; 
+        long long pressedButtonIndex; 
         struct __CFString {} *fpsString; 
         struct __CFString {} *shortString; 
         unsigned int lightingStatistics[9]; 
@@ -246,7 +246,6 @@
     } _dynamicLinesInfo;
     } _dynamicTrianglesInfo;
     struct __C3DEngineContext { } *_engineContext;
-    BOOL _hasLighting;
     NSMutableArray *_individualNodesWantingBoundingBox;
     NSMutableArray *_individualNodesWantingCameraAttributes;
     NSMutableArray *_individualNodesWantingLightAttributes;
@@ -261,23 +260,24 @@
     unsigned short _quadrantRingIndicesCount;
     const void *_quadrantRingIndicesOffset;
     <SCNSceneRenderer> *_sceneRenderer;
-    BOOL _showsAllBoundingBoxes;
-    BOOL _showsAllBoundingSpheres;
-    BOOL _showsAttributesOfAllCameras;
-    BOOL _showsAttributesOfAllLights;
-    BOOL _showsLighting;
-    BOOL _showsPhysics;
     } _statisticsInfo;
     } _textInfo;
+    bool_hasLighting;
+    bool_showsAllBoundingBoxes;
+    bool_showsAllBoundingSpheres;
+    bool_showsAttributesOfAllCameras;
+    bool_showsAttributesOfAllLights;
+    bool_showsLighting;
+    bool_showsPhysics;
 }
 
 @property(readonly) <SCNSceneRenderer> * sceneRenderer;
-@property BOOL showsAllBoundingBoxes;
-@property BOOL showsAllBoundingSpheres;
-@property BOOL showsAttributesOfAllCameras;
-@property BOOL showsAttributesOfAllLights;
-@property BOOL showsLighting;
-@property BOOL showsPhysics;
+@property bool showsAllBoundingBoxes;
+@property bool showsAllBoundingSpheres;
+@property bool showsAttributesOfAllCameras;
+@property bool showsAttributesOfAllLights;
+@property bool showsLighting;
+@property bool showsPhysics;
 
 + (id)authoringEnvironmentForSceneRenderer:(id)arg1;
 
@@ -285,9 +285,9 @@
 - (void)beginEditingNode:(id)arg1;
 - (void)cancelEdition;
 - (void)dealloc;
-- (BOOL)didTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)didTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)drawLineFromPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1 toPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg2 color:(id)arg3;
-- (void)drawString:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 color:(id)arg3;
+- (void)drawString:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 color:(id)arg3;
 - (void)hideAllIndividualBoundingBoxes;
 - (void)hideAttributesOfAllIndividualCameras;
 - (void)hideAttributesOfAllIndividualLights;
@@ -296,20 +296,20 @@
 - (void)hideLightAttributesForNode:(id)arg1;
 - (id)init;
 - (id)sceneRenderer;
-- (void)setShowsAllBoundingBoxes:(BOOL)arg1;
-- (void)setShowsAllBoundingSpheres:(BOOL)arg1;
-- (void)setShowsAttributesOfAllCameras:(BOOL)arg1;
-- (void)setShowsAttributesOfAllLights:(BOOL)arg1;
-- (void)setShowsLighting:(BOOL)arg1;
-- (void)setShowsPhysics:(BOOL)arg1;
+- (void)setShowsAllBoundingBoxes:(bool)arg1;
+- (void)setShowsAllBoundingSpheres:(bool)arg1;
+- (void)setShowsAttributesOfAllCameras:(bool)arg1;
+- (void)setShowsAttributesOfAllLights:(bool)arg1;
+- (void)setShowsLighting:(bool)arg1;
+- (void)setShowsPhysics:(bool)arg1;
 - (void)showBoundingBoxForNode:(id)arg1;
 - (void)showCameraAttributesForNode:(id)arg1;
 - (void)showLightAttributesForNode:(id)arg1;
-- (BOOL)showsAllBoundingBoxes;
-- (BOOL)showsAllBoundingSpheres;
-- (BOOL)showsAttributesOfAllCameras;
-- (BOOL)showsAttributesOfAllLights;
-- (BOOL)showsLighting;
-- (BOOL)showsPhysics;
+- (bool)showsAllBoundingBoxes;
+- (bool)showsAllBoundingSpheres;
+- (bool)showsAttributesOfAllCameras;
+- (bool)showsAttributesOfAllLights;
+- (bool)showsLighting;
+- (bool)showsPhysics;
 
 @end

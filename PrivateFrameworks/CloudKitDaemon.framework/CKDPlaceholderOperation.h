@@ -6,16 +6,16 @@
 
 @interface CKDPlaceholderOperation : NSOperation {
     NSObject<OS_dispatch_group> *_group;
-    BOOL _isExecuting;
-    BOOL _isFinished;
     CKDOperation *_realOperation;
     NSDate *_startDate;
     NSOperationQueue *_targetOperationQueue;
+    bool_isExecuting;
+    bool_isFinished;
 }
 
 @property(readonly) CKDClientContext * context;
-@property BOOL isExecuting;
-@property BOOL isFinished;
+@property bool isExecuting;
+@property bool isFinished;
 @property(readonly) NSString * operationID;
 @property(readonly) CKDOperation * realOperation;
 @property(readonly) NSString * sectionID;
@@ -29,15 +29,15 @@
 - (id)context;
 - (id)description;
 - (id)initWithOperation:(id)arg1 targetOperationQueue:(id)arg2;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)main;
 - (id)operationID;
 - (id)realOperation;
 - (id)sectionID;
-- (void)setIsExecuting:(BOOL)arg1;
-- (void)setIsFinished:(BOOL)arg1;
+- (void)setIsExecuting:(bool)arg1;
+- (void)setIsFinished:(bool)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)start;
 - (id)startDate;

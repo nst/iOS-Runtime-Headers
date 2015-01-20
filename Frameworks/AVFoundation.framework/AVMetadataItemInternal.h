@@ -21,7 +21,7 @@
     NSString *extendedLanguageTag;
     NSDictionary *extras;
     NSString *identifier;
-    long itemIndex;
+    long long itemIndex;
     <NSObject><NSCopying> *key;
     NSString *keySpace;
     NSLocale *locale;

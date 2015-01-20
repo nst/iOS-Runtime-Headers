@@ -6,46 +6,46 @@
 
 @interface MPUExtrasZoomingImageTransitionController : UIPercentDrivenInteractiveTransition <UIViewControllerAnimatedTransitioning, MPUExtrasOptionallyInteractiveAnimationController> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     } _initialPinchCenter;
-    float _initialPinchScale;
-    BOOL _interactive;
-    unsigned int _itemIndex;
-    BOOL _shouldUseSpringAnimation;
+    double _initialPinchScale;
+    unsigned long long _itemIndex;
     MPUExtrasBorderedImageView *_zoomingImageView;
+    bool_interactive;
+    bool_shouldUseSpringAnimation;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGPoint { float x1; float x2; } initialPinchCenter;
-@property float initialPinchScale;
-@property(getter=isInteractive) BOOL interactive;
-@property unsigned int itemIndex;
-@property BOOL shouldUseSpringAnimation;
+@property(readonly) unsigned long long hash;
+@property struct CGPoint { double x1; double x2; } initialPinchCenter;
+@property double initialPinchScale;
+@property(getter=isInteractive) bool interactive;
+@property unsigned long long itemIndex;
+@property bool shouldUseSpringAnimation;
 @property(readonly) Class superclass;
 @property(retain) MPUExtrasBorderedImageView * zoomingImageView;
 
 - (void).cxx_destruct;
-- (float)_desiredSpeedForNonInteractiveAnimationWithDuration:(double)arg1 deferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 finalTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
-- (float)_destinationScale;
-- (float)_maximumDistanceTravelledForPoints:(struct CGPoint { float x1; float x2; }*)arg1 count:(unsigned long)arg2 currentTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 finalTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4;
+- (float)_desiredSpeedForNonInteractiveAnimationWithDuration:(double)arg1 deferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 finalTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
+- (double)_destinationScale;
+- (double)_maximumDistanceTravelledForPoints:(struct CGPoint { double x1; double x2; }*)arg1 count:(unsigned long long)arg2 currentTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 finalTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
 - (void)animateTransition:(id)arg1;
 - (void)completeInteractiveTransitionWithPinchGestureRecognizer:(id)arg1;
-- (id)initWithItemIndex:(unsigned int)arg1 forInteractiveTransition:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })initialPinchCenter;
-- (float)initialPinchScale;
-- (BOOL)isInteractive;
-- (unsigned int)itemIndex;
+- (id)initWithItemIndex:(unsigned long long)arg1 forInteractiveTransition:(bool)arg2;
+- (struct CGPoint { double x1; double x2; })initialPinchCenter;
+- (double)initialPinchScale;
+- (bool)isInteractive;
+- (unsigned long long)itemIndex;
 - (void)prepareInteractiveTransitionWithPinchGestureRecognizer:(id)arg1;
-- (void)setInitialPinchCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setInitialPinchScale:(float)arg1;
-- (void)setInteractive:(BOOL)arg1;
-- (void)setItemIndex:(unsigned int)arg1;
-- (void)setShouldUseSpringAnimation:(BOOL)arg1;
+- (void)setInitialPinchCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInitialPinchScale:(double)arg1;
+- (void)setInteractive:(bool)arg1;
+- (void)setItemIndex:(unsigned long long)arg1;
+- (void)setShouldUseSpringAnimation:(bool)arg1;
 - (void)setZoomingImageView:(id)arg1;
-- (BOOL)shouldUseSpringAnimation;
+- (bool)shouldUseSpringAnimation;
 - (double)transitionDuration:(id)arg1;
 - (void)updateInteractiveTransitionWithPinchGestureRecognizer:(id)arg1;
 - (id)zoomingImageView;

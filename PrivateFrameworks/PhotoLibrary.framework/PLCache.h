@@ -6,26 +6,26 @@
 
 @interface PLCache : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     struct entryList { 
         struct lruEntry {} *tqh_first; 
         struct lruEntry {} **tqh_last; 
     NSMutableDictionary *_cacheEntries;
-    int _countLimit;
-    int _currentCost;
-    int _currentCount;
+    long long _countLimit;
+    long long _currentCost;
+    long long _currentCount;
     } _lock;
     } _lru;
-    int _totalCostLimit;
+    long long _totalCostLimit;
 }
 
 - (void)dealloc;
-- (id)initWithCountLimit:(int)arg1 totalCostLimit:(int)arg2;
+- (id)initWithCountLimit:(long long)arg1 totalCostLimit:(long long)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(int)arg3;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(long long)arg3;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

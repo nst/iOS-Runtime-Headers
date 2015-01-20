@@ -5,36 +5,36 @@
 @class <CAMStillImageCaptureRequestDelegate>;
 
 @interface CAMStillImageCaptureRequest : CAMCaptureRequest <NSCopying, NSMutableCopying> {
-    int _captureDevice;
+    long long _captureDevice;
     <CAMStillImageCaptureRequestDelegate> *_delegate;
-    int _deviceOrientation;
-    int _flashMode;
+    long long _deviceOrientation;
+    long long _flashMode;
     int _hdrMode;
-    BOOL _transient;
-    BOOL _usesStillImageStabilization;
-    BOOL _wantsAudioForCapture;
+    bool_transient;
+    bool_usesStillImageStabilization;
+    bool_wantsAudioForCapture;
 }
 
-@property(readonly) int captureDevice;
+@property(readonly) long long captureDevice;
 @property(readonly) <CAMStillImageCaptureRequestDelegate> * delegate;
-@property(readonly) int deviceOrientation;
-@property(readonly) int flashMode;
+@property(readonly) long long deviceOrientation;
+@property(readonly) long long flashMode;
 @property(readonly) int hdrMode;
-@property(getter=isTransient,readonly) BOOL transient;
-@property(readonly) BOOL usesStillImageStabilization;
-@property(readonly) BOOL wantsAudioForCapture;
+@property(getter=isTransient,readonly) bool transient;
+@property(readonly) bool usesStillImageStabilization;
+@property(readonly) bool wantsAudioForCapture;
 
 - (void).cxx_destruct;
-- (int)captureDevice;
+- (long long)captureDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
-- (int)deviceOrientation;
-- (int)flashMode;
+- (long long)deviceOrientation;
+- (long long)flashMode;
 - (int)hdrMode;
 - (id)init;
-- (BOOL)isTransient;
+- (bool)isTransient;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)usesStillImageStabilization;
-- (BOOL)wantsAudioForCapture;
+- (bool)usesStillImageStabilization;
+- (bool)wantsAudioForCapture;
 
 @end

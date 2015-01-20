@@ -19,11 +19,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithPackageChecker:(id)arg1;
-- (id)initWithPath:(id)arg1 isPackage:(BOOL)arg2 packageChecker:(id)arg3;
-- (void)insertInItemsSource:(id)arg1 archiveController:(id)arg2 atIndex:(unsigned int*)arg3 uiIndex:(unsigned int*)arg4 level:(int)arg5;
+- (id)initWithPath:(id)arg1 isPackage:(bool)arg2 packageChecker:(id)arg3;
+- (void)insertInItemsSource:(id)arg1 archiveController:(id)arg2 atIndex:(unsigned long long*)arg3 uiIndex:(unsigned long long*)arg4 level:(long long)arg5;
 - (void)insertInItemsSource:(id)arg1 archiveController:(id)arg2;
-- (BOOL)isFolder;
-- (BOOL)isPackage;
+- (bool)isFolder;
+- (bool)isPackage;
 - (id)path;
 
 @end

@@ -18,11 +18,11 @@
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) NSString * description;
 @property(copy,readonly) CLFloor * floor;
-@property(readonly) BOOL hasMatch;
-@property(readonly) unsigned int hash;
+@property(readonly) bool hasMatch;
+@property(readonly) unsigned long long hash;
 @property(readonly) double horizontalAccuracy;
 @property(readonly) NSString * iso6709Notation;
-@property(readonly) BOOL legacyHasMatch;
+@property(readonly) bool legacyHasMatch;
 @property(readonly) CLLocationMatchInfo * matchInfo;
 @property(readonly) struct { double x1; double x2; } rawCoordinate;
 @property(readonly) double rawCourse;
@@ -35,7 +35,7 @@
 
 + (id)_mapKit_locationWithPlace:(id)arg1;
 + (id)_mapkit_stringWithType:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7 floor:(int)arg8;
 - (int)_mapkit_source;
@@ -46,16 +46,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)course;
 - (double)courseAccuracy;
-- (unsigned int)cplSpecialHash;
-- (BOOL)cplSpecialIsEqual:(id)arg1;
+- (unsigned long long)cplSpecialHash;
+- (bool)cplSpecialIsEqual:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (double)distanceFromLocation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)floor;
 - (double)getDistanceFrom:(id)arg1;
-- (BOOL)hasMatch;
-- (BOOL)hasValidCourse;
+- (bool)hasMatch;
+- (bool)hasValidCourse;
 - (double)horizontalAccuracy;
 - (id)init;
 - (id)initWithCPLArchiver:(id)arg1;
@@ -66,10 +66,10 @@
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 rawCoordinate:(struct { double x1; double x2; })arg2 course:(double)arg3 rawCourse:(double)arg4 courseAccuracy:(double)arg5 speed:(double)arg6 speedAccuracy:(double)arg7 altitude:(double)arg8 timestamp:(double)arg9 horizontalAccuracy:(double)arg10 verticalAccuracy:(double)arg11 type:(int)arg12 matchInfo:(id)arg13;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
-- (BOOL)isEqualToLocationCoordinate:(struct { double x1; double x2; })arg1;
-- (BOOL)isStale;
+- (bool)isEqualToLocationCoordinate:(struct { double x1; double x2; })arg1;
+- (bool)isStale;
 - (id)iso6709Notation;
-- (BOOL)legacyHasMatch;
+- (bool)legacyHasMatch;
 - (id)locationDescription;
 - (id)matchInfo;
 - (int)pl_locationHash;

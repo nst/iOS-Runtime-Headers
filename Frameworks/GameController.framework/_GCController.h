@@ -10,22 +10,22 @@
 
 @interface _GCController : GCController <NSSecureCoding> {
     id _controllerPausedHandler;
-    unsigned int _deviceHash;
+    unsigned long long _deviceHash;
     struct __IOHIDDevice { } *_deviceRef;
-    int _playerIndex;
+    long long _playerIndex;
     <GCNamedProfile> *_profile;
     unsigned int _service;
     NSString *_vendorName;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)clearDeviceRef;
 - (id)controllerPausedHandler;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)deviceHash;
+- (unsigned long long)deviceHash;
 - (struct __IOHIDDevice { }*)deviceRef;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extendedGamepad;
@@ -33,13 +33,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDeviceRef:(struct __IOHIDDevice { }*)arg1;
 - (id)initWithProfile:(id)arg1;
-- (BOOL)isAttachedToDevice;
+- (bool)isAttachedToDevice;
 - (id)motion;
-- (int)playerIndex;
+- (long long)playerIndex;
 - (id)profile;
 - (unsigned int)service;
 - (void)setControllerPausedHandler:(id)arg1;
-- (void)setPlayerIndex:(int)arg1;
+- (void)setPlayerIndex:(long long)arg1;
 - (void)setProfile:(id)arg1;
 - (id)vendorName;
 

@@ -6,10 +6,10 @@
 
 @interface AVCaptureDeviceInternal : NSObject {
     AVCaptureDeviceInput *activeInput;
+    boolusingDevice;
     int configLockPid;
     int configLockRefCount;
     int openRefCount;
-    BOOL usingDevice;
 }
 
 @end

@@ -25,7 +25,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) NSMapTable * delegates;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) HAPAccessoryServerBrowserIP * ipAccessoryServerBrowser;
 @property(retain) NSMutableSet * pairedAccessories;
 @property(retain) NSMapTable * pairingRetryTimersForAccessoryServers;
@@ -37,12 +37,12 @@
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
-- (BOOL)_accessoryServerIsBlocked:(id)arg1;
+- (bool)_accessoryServerIsBlocked:(id)arg1;
 - (void)_createPairedAccessoriesForUnpairedAccessory:(id)arg1 server:(id)arg2;
 - (id)_dequeueAllRetrievalCompletionTuplesForAccessory:(id)arg1;
 - (void)_disablePairedAccessoriesForServer:(id)arg1 error:(id)arg2;
 - (void)_enqueueRetrievalCompletionTuple:(id)arg1 forAccessory:(id)arg2;
-- (BOOL)_isRetrievalInProgressForAccessory:(id)arg1;
+- (bool)_isRetrievalInProgressForAccessory:(id)arg1;
 - (void)_notifyDelegatesOfNewAccessory:(id)arg1;
 - (void)_notifyDelegatesOfPairedAccessories:(id)arg1 addedToBridgeAccessory:(id)arg2;
 - (void)_notifyDelegatesOfPairedAccessories:(id)arg1 removedFromBridgeAccessory:(id)arg2;
@@ -63,13 +63,13 @@
 - (void)_stopDiscoveringAccessories;
 - (id)_unpairedAccessoryForServer:(id)arg1;
 - (void)_updatePairedAccessoriesForServer:(id)arg1;
-- (void)_updatePairingRetryTimerForServer:(id)arg1 delay:(int)arg2;
+- (void)_updatePairingRetryTimerForServer:(id)arg1 delay:(long long)arg2;
 - (void)accessoryServer:(id)arg1 didDiscoverAccessoriesWithError:(id)arg2;
-- (void)accessoryServer:(id)arg1 didReceiveBadPasswordThrottleAttemptsWithDelay:(int)arg2;
+- (void)accessoryServer:(id)arg1 didReceiveBadPasswordThrottleAttemptsWithDelay:(long long)arg2;
 - (void)accessoryServer:(id)arg1 didStopPairingWithError:(id)arg2;
 - (void)accessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2;
 - (void)accessoryServer:(id)arg1 isBlockedWithCompletionHandler:(id)arg2;
-- (void)accessoryServer:(id)arg1 promptUserForPasswordWithType:(unsigned int)arg2;
+- (void)accessoryServer:(id)arg1 promptUserForPasswordWithType:(unsigned long long)arg2;
 - (void)accessoryServer:(id)arg1 requestUserPermissionForUnauthenticatedAccessory:(id)arg2;
 - (void)accessoryServerBrowser:(id)arg1 didFailToDiscoverAccessoryServerWithIdentifier:(id)arg2;
 - (void)accessoryServerBrowser:(id)arg1 didFindAccessoryServer:(id)arg2;
@@ -84,7 +84,7 @@
 - (void)addPairingOnPrimaryAccessory:(id)arg1 forController:(id)arg2 publicKey:(id)arg3 withCompletionHandler:(id)arg4;
 - (id)allPairedAccessories;
 - (id)allUnpairedAccessories;
-- (void)btleAccessoryReachabilityProbeTimer:(BOOL)arg1;
+- (void)btleAccessoryReachabilityProbeTimer:(bool)arg1;
 - (id)btleAccessoryServerBrowser;
 - (id)delegates;
 - (id)initWithPairedAccessories:(id)arg1;

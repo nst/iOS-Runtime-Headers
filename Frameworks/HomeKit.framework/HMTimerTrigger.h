@@ -16,7 +16,7 @@
 @property(copy) NSCalendar * recurrenceCalendar;
 @property(copy) NSTimeZone * timeZone;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_handleTriggerFired:(id)arg1;

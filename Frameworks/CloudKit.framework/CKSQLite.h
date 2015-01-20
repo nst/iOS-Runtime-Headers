@@ -5,23 +5,23 @@
 @class NSDateFormatter, NSMutableDictionary, NSString;
 
 @interface CKSQLite : NSObject {
-    BOOL _corrupt;
     NSDateFormatter *_dateFormatter;
     struct sqlite3 { } *_db;
     NSString *_objectClassPrefix;
-    unsigned int _openCount;
+    unsigned long long _openCount;
     NSString *_path;
     NSString *_schema;
     NSString *_schemaVersion;
     NSMutableDictionary *_statementsBySQL;
+    bool_corrupt;
 }
 
-@property BOOL corrupt;
+@property bool corrupt;
 @property(retain) NSDateFormatter * dateFormatter;
 @property struct sqlite3 { }* db;
-@property(readonly) BOOL isOpen;
+@property(readonly) bool isOpen;
 @property(retain) NSString * objectClassPrefix;
-@property unsigned int openCount;
+@property unsigned long long openCount;
 @property(readonly) NSString * path;
 @property(readonly) NSString * schema;
 @property(readonly) NSString * schemaVersion;
@@ -36,7 +36,7 @@
 - (void)analyze;
 - (void)begin;
 - (void)close;
-- (BOOL)corrupt;
+- (bool)corrupt;
 - (id)creationDate;
 - (id)dateFormatter;
 - (id)datePropertyForKey:(id)arg1;
@@ -45,17 +45,17 @@
 - (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)dropAllTables;
 - (void)end;
-- (void)executeSQL:(id)arg1 arguments:(void*)arg2;
+- (void)executeSQL:(id)arg1 arguments:(char *)arg2;
 - (void)executeSQL:(id)arg1;
 - (id)initWithPath:(id)arg1 schema:(id)arg2;
 - (long long)insertOrReplaceInto:(id)arg1 values:(id)arg2;
 - (long long)insertOrReplaceObject:(id)arg1;
-- (BOOL)isOpen;
+- (bool)isOpen;
 - (long long)lastInsertRowID;
 - (id)objectClassPrefix;
 - (void)open;
-- (unsigned int)openCount;
-- (BOOL)openWithError:(id*)arg1;
+- (unsigned long long)openCount;
+- (bool)openWithError:(id*)arg1;
 - (id)path;
 - (id)propertyForKey:(id)arg1;
 - (void)raise:(id)arg1;
@@ -70,14 +70,14 @@
 - (id)selectAllFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectAllObjectsOfClass:(Class)arg1;
-- (unsigned int)selectCountFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
+- (unsigned long long)selectCountFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectObjectOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
-- (void)setCorrupt:(BOOL)arg1;
+- (void)setCorrupt:(bool)arg1;
 - (void)setDateFormatter:(id)arg1;
 - (void)setDateProperty:(id)arg1 forKey:(id)arg2;
 - (void)setDb:(struct sqlite3 { }*)arg1;
 - (void)setObjectClassPrefix:(id)arg1;
-- (void)setOpenCount:(unsigned int)arg1;
+- (void)setOpenCount:(unsigned long long)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)statementForSQL:(id)arg1;
 - (id)statementsBySQL;

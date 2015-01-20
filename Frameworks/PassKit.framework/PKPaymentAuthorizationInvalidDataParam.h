@@ -5,20 +5,20 @@
 @class NSError;
 
 @interface PKPaymentAuthorizationInvalidDataParam : PKPaymentAuthorizationParam {
-    BOOL _animated;
-    int _dataType;
+    long long _dataType;
     NSError *_error;
+    bool_animated;
 }
 
-@property BOOL animated;
-@property int dataType;
+@property bool animated;
+@property long long dataType;
 @property(retain) NSError * error;
 
-- (BOOL)animated;
-- (int)dataType;
+- (bool)animated;
+- (long long)dataType;
 - (id)error;
-- (void)setAnimated:(BOOL)arg1;
-- (void)setDataType:(int)arg1;
+- (void)setAnimated:(bool)arg1;
+- (void)setDataType:(long long)arg1;
 - (void)setError:(id)arg1;
 
 @end

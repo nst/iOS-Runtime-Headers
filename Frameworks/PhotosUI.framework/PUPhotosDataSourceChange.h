@@ -16,8 +16,8 @@
     NSArray *_insertedIndexPaths;
     NSIndexSet *_insertedSections;
     PHChange *_originatingPhotoLibraryChange;
-    BOOL _prepared;
-    int _previousCollectionsCount;
+    long long _previousCollectionsCount;
+    bool_prepared;
 }
 
 @property(copy,readonly) NSArray * changedIndexPaths;
@@ -25,23 +25,23 @@
 @property(copy,readonly) NSArray * contentChangedIndexPaths;
 @property(copy,readonly) NSArray * deletedIndexPaths;
 @property(copy,readonly) NSIndexSet * deletedSections;
-@property(readonly) BOOL hasIncrementalChanges;
+@property(readonly) bool hasIncrementalChanges;
 @property(copy,readonly) NSArray * insertedIndexPaths;
 @property(copy,readonly) NSIndexSet * insertedSections;
 @property(readonly) PHChange * originatingPhotoLibraryChange;
 
 - (void).cxx_destruct;
 - (void)_prepareIncrementalDetails;
-- (BOOL)_shouldPerformFullReloadForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;
+- (bool)_shouldPerformFullReloadForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;
 - (id)changedIndexPaths;
 - (id)changedSections;
 - (id)contentChangedIndexPaths;
 - (id)deletedIndexPaths;
 - (id)deletedSections;
 - (id)description;
-- (BOOL)hasIncrementalChanges;
+- (bool)hasIncrementalChanges;
 - (id)init;
-- (id)initWithIncrementalChanges:(id)arg1 assetCollectionChangeDetails:(id)arg2 previousCollectionsCount:(int)arg3 assetCollectionToSectionCache:(id)arg4 originatingPhotoLibraryChange:(id)arg5;
+- (id)initWithIncrementalChanges:(id)arg1 assetCollectionChangeDetails:(id)arg2 previousCollectionsCount:(long long)arg3 assetCollectionToSectionCache:(id)arg4 originatingPhotoLibraryChange:(id)arg5;
 - (id)insertedIndexPaths;
 - (id)insertedSections;
 - (id)originatingPhotoLibraryChange;

@@ -7,23 +7,23 @@
 @interface TCOfficeFontInfo : NSObject {
     NSString *_alphaFontName;
     NSString *_fontName;
-    BOOL _isBold;
-    BOOL _isItalic;
+    bool_isBold;
+    bool_isItalic;
 }
 
 @property(retain) NSString * alphaFontName;
 @property(retain) NSString * fontName;
-@property BOOL isBold;
-@property BOOL isItalic;
+@property bool isBold;
+@property bool isItalic;
 
 - (id)alphaFontName;
 - (id)description;
 - (id)fontName;
-- (BOOL)isBold;
-- (BOOL)isItalic;
+- (bool)isBold;
+- (bool)isItalic;
 - (void)setAlphaFontName:(id)arg1;
 - (void)setFontName:(id)arg1;
-- (void)setIsBold:(BOOL)arg1;
-- (void)setIsItalic:(BOOL)arg1;
+- (void)setIsBold:(bool)arg1;
+- (void)setIsItalic:(bool)arg1;
 
 @end

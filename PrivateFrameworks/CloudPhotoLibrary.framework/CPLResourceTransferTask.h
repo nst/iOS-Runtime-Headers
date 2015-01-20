@@ -5,18 +5,18 @@
 @class CPLResource, NSString;
 
 @interface CPLResourceTransferTask : NSObject <NSSecureCoding> {
-    BOOL _cancelled;
-    int _priority;
+    long long _priority;
     CPLResource *_resource;
     NSString *_taskIdentifier;
+    bool_cancelled;
 }
 
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property(getter=isHighPriority) BOOL highPriority;
+@property(getter=isCancelled,readonly) bool cancelled;
+@property(getter=isHighPriority) bool highPriority;
 @property(retain) CPLResource * resource;
 @property(copy) NSString * taskIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetUuid;
@@ -25,16 +25,16 @@
 - (Class)classForKeyedArchiver;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCancelled;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHighPriority;
+- (bool)isCancelled;
+- (bool)isEqual:(id)arg1;
+- (bool)isHighPriority;
 - (void)launch;
 - (id)resource;
 - (void)setAssetUuid:(id)arg1;
-- (void)setHighPriority:(BOOL)arg1;
+- (void)setHighPriority:(bool)arg1;
 - (void)setResource:(id)arg1;
 - (void)setTaskIdentifier:(id)arg1;
 - (id)taskIdentifier;

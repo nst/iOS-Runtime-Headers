@@ -15,30 +15,30 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    BOOL active;
     NSArray *audioChannelLevels;
     NSMutableArray *audioChannels;
     AVCaptureInputPort_FigRecorder *audioInputPort;
-    BOOL automaticallyAdjustsVideoMirroring;
-    BOOL enabled;
-    BOOL enablesVideoStabilizationWhenAvailable;
+    boolactive;
+    boolautomaticallyAdjustsVideoMirroring;
+    boolenabled;
+    boolenablesVideoStabilizationWhenAvailable;
+    boolpreferredVideoStabilizationMode;
+    boolvideoMirrored;
+    boolvideoMirroringSupported;
+    boolvideoOrientationSupported;
+    boolvideoStabilizationEnabled;
     NSMutableArray *inputPorts;
     long long lastGetAudioLevelsTime;
     AVCaptureOutput_FigRecorder *output;
     int outputChangeSeedOnDisable;
-    BOOL preferredVideoStabilizationMode;
     AVCaptureInputPort_FigRecorder *videoInputPort;
     } videoMaxFrameDuration;
-    float videoMaxScaleAndCropFactor;
+    double videoMaxScaleAndCropFactor;
     } videoMinFrameDuration;
-    BOOL videoMirrored;
-    BOOL videoMirroringSupported;
-    int videoOrientation;
-    BOOL videoOrientationSupported;
+    long long videoOrientation;
     AVCaptureVideoPreviewLayer_FigRecorder *videoPreviewLayer;
     int videoRetainedBufferCountHint;
-    float videoScaleAndCropFactor;
-    BOOL videoStabilizationEnabled;
+    double videoScaleAndCropFactor;
 }
 
 @end

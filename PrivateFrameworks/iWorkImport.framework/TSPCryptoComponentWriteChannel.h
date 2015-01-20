@@ -15,12 +15,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_writeData:(id)arg1 updateHmac:(BOOL)arg2;
+- (void)_writeData:(id)arg1 updateHmac:(bool)arg2;
 - (void)close;
 - (void)dealloc;
 - (id)initWithWriteChannel:(id)arg1 encryptionKey:(id)arg2;

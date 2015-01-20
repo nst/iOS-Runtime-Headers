@@ -5,6 +5,6 @@
 @interface CUIKAttendeeDescriptionGenerator : NSObject {
 }
 
-+ (id)displayNameForParticipant:(id)arg1 event:(id)arg2 options:(unsigned int)arg3;
++ (id)displayNameForParticipant:(id)arg1 event:(id)arg2 options:(unsigned long long)arg3;
 
 @end

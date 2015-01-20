@@ -17,11 +17,11 @@
     NSBundle *_frameworkBundle;
     id _invitationHandlerForPresentedAlert;
     NSMutableArray *_invitationsBuffer;
-    BOOL _isAdvertising;
     MCPeerID *_myPeerID;
     NSString *_serviceType;
     MCSession *_session;
-    BOOL _wasAdvertising;
+    bool_isAdvertising;
+    bool_wasAdvertising;
 }
 
 @property(retain) MCNearbyServiceAdvertiser * advertiser;
@@ -32,20 +32,20 @@
 @property(copy,readonly) NSString * description;
 @property(copy) NSDictionary * discoveryInfo;
 @property(retain) NSBundle * frameworkBundle;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) id invitationHandlerForPresentedAlert;
 @property(retain) NSMutableArray * invitationsBuffer;
-@property BOOL isAdvertising;
+@property bool isAdvertising;
 @property(copy) MCPeerID * myPeerID;
 @property(copy) NSString * serviceType;
 @property(retain) MCSession * session;
 @property(readonly) Class superclass;
-@property BOOL wasAdvertising;
+@property bool wasAdvertising;
 
 - (void)advertiser:(id)arg1 didReceiveInvitationFromPeer:(id)arg2 withContext:(id)arg3 invitationHandler:(id)arg4;
 - (id)advertiser;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (id)alertView;
 - (id)appName;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
@@ -58,7 +58,7 @@
 - (id)initWithServiceType:(id)arg1 discoveryInfo:(id)arg2 session:(id)arg3;
 - (id)invitationHandlerForPresentedAlert;
 - (id)invitationsBuffer;
-- (BOOL)isAdvertising;
+- (bool)isAdvertising;
 - (id)myPeerID;
 - (void)presentNextInvitation;
 - (id)serviceType;
@@ -70,14 +70,14 @@
 - (void)setFrameworkBundle:(id)arg1;
 - (void)setInvitationHandlerForPresentedAlert:(id)arg1;
 - (void)setInvitationsBuffer:(id)arg1;
-- (void)setIsAdvertising:(BOOL)arg1;
+- (void)setIsAdvertising:(bool)arg1;
 - (void)setMyPeerID:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setSession:(id)arg1;
-- (void)setWasAdvertising:(BOOL)arg1;
+- (void)setWasAdvertising:(bool)arg1;
 - (void)start;
 - (void)stop;
-- (BOOL)wasAdvertising;
+- (bool)wasAdvertising;
 - (void)willPresentAlertView:(id)arg1;
 
 @end

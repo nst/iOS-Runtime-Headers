@@ -6,20 +6,20 @@
 
 @interface CKFetchNotificationChangesOperationInfo : CKOperationInfo <NSSecureCoding> {
     CKServerChangeToken *_previousServerChangeToken;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
 }
 
 @property(retain) CKServerChangeToken * previousServerChangeToken;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)previousServerChangeToken;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 
 @end

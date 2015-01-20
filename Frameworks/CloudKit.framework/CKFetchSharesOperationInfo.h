@@ -5,20 +5,20 @@
 @class NSArray;
 
 @interface CKFetchSharesOperationInfo : CKOperationInfo <NSSecureCoding> {
-    BOOL _isFetchAllSharesOperation;
     NSArray *_shareIDsToFetch;
+    bool_isFetchAllSharesOperation;
 }
 
-@property BOOL isFetchAllSharesOperation;
+@property bool isFetchAllSharesOperation;
 @property(retain) NSArray * shareIDsToFetch;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFetchAllSharesOperation;
-- (void)setIsFetchAllSharesOperation:(BOOL)arg1;
+- (bool)isFetchAllSharesOperation;
+- (void)setIsFetchAllSharesOperation:(bool)arg1;
 - (void)setShareIDsToFetch:(id)arg1;
 - (id)shareIDsToFetch;
 

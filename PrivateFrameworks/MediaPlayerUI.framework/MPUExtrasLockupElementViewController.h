@@ -6,8 +6,8 @@
 
 @interface MPUExtrasLockupElementViewController : MPUExtrasViewElementViewController {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     NSLayoutConstraint *_artworkContainerHeightConstraint;
     NSLayoutConstraint *_artworkContainerTopConstraint;
     MPUExtrasConstrainedArtworkContainerView *_artworkContainerView;
@@ -42,6 +42,6 @@
 - (id)descriptionTextStyle;
 - (id)initWithViewElement:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

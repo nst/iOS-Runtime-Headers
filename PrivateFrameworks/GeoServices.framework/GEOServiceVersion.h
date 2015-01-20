@@ -12,7 +12,7 @@
     NSMutableArray *_versionDomains;
 }
 
-@property BOOL hasMinimumVersion;
+@property bool hasMinimumVersion;
 @property unsigned int minimumVersion;
 @property(retain) NSMutableArray * versionDomains;
 
@@ -23,18 +23,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMinimumVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMinimumVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)minimumVersion;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMinimumVersion:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMinimumVersion:(bool)arg1;
 - (void)setMinimumVersion:(unsigned int)arg1;
 - (void)setVersionDomains:(id)arg1;
-- (id)versionDomainAtIndex:(unsigned int)arg1;
+- (id)versionDomainAtIndex:(unsigned long long)arg1;
 - (id)versionDomains;
-- (unsigned int)versionDomainsCount;
+- (unsigned long long)versionDomainsCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -5,9 +5,9 @@
 @class NSString, WDCharacterProperties, WDParagraphProperties, WDStyle, WDStyleSheet, WDTableCellProperties, WDTableRowProperties, WDTableStyleOverride;
 
 @interface WDStyle : NSObject <NSCopying> {
+    boolmHidden;
     WDStyle *mBaseStyle;
     WDCharacterProperties *mCharacterProperties;
-    BOOL mHidden;
     NSString *mId;
     NSString *mName;
     WDStyle *mNextStyle;
@@ -23,15 +23,15 @@
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)hidden;
+- (bool)hidden;
 - (id)id;
 - (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;
-- (BOOL)isAnythingOverridden;
+- (bool)isAnythingOverridden;
 - (id)name;
 - (id)nextStyle;
 - (id)paragraphProperties;
 - (void)setBaseStyle:(id)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setNextStyle:(id)arg1;
 - (id)styleSheet;

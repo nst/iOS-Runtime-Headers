@@ -11,39 +11,39 @@
     UICollectionViewLayoutAttributes *_layoutAttributes;
     } _reusableViewFlags;
     NSString *_reuseIdentifier;
-    int _updateAnimationCount;
+    long long _updateAnimationCount;
 }
 
 @property(getter=_collectionView,setter=_setCollectionView:) UICollectionView * collectionView;
-@property(getter=_isInUpdateAnimation,readonly) BOOL inUpdateAnimation;
+@property(getter=_isInUpdateAnimation,readonly) bool inUpdateAnimation;
 @property(getter=_layoutAttributes,setter=_setLayoutAttributes:,copy) UICollectionViewLayoutAttributes * layoutAttributes;
 @property(copy) NSString * reuseIdentifier;
 
-+ (void)_gkAdjustConstraintMargins:(id)arg1 leading:(float)arg2 trailing:(float)arg3;
++ (void)_gkAdjustConstraintMargins:(id)arg1 leading:(double)arg2 trailing:(double)arg3;
 + (void)_gkSetupSelectableThreeLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 middleLine:(id)arg5 lowerLine:(id)arg6 metricOverrides:(id)arg7;
 + (void)_gkSetupSelectableTwoLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
 + (id)_gkSetupThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 middleLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
-+ (id)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLabel:(id)arg3 lowerLabel:(id)arg4 leadingBetween:(float)arg5 fontTextStyle:(id)arg6 metricOverrides:(id)arg7;
-+ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1 withOverrides:(id)arg2;
-+ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1;
++ (id)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLabel:(id)arg3 lowerLabel:(id)arg4 leadingBetween:(double)arg5 fontTextStyle:(id)arg6 metricOverrides:(id)arg7;
++ (id)_gkStandardConstraintMetricsForIdiom:(long long)arg1 withOverrides:(id)arg2;
++ (id)_gkStandardConstraintMetricsForIdiom:(long long)arg1;
 + (void)registerSupplementaryViewClassesForKind:(id)arg1 withCollectionView:(id)arg2;
 
 - (void)_addUpdateAnimation;
 - (void)_clearUpdateAnimation;
 - (id)_collectionView;
-- (BOOL)_disableRasterizeInAnimations;
+- (bool)_disableRasterizeInAnimations;
 - (id)_gkNewStandardImageView;
 - (id)_gkNewStandardInfoLabel;
 - (id)_gkNewStandardTitleLabel;
 - (void)_gkSetLeadingGuideConstraint:(id)arg1 trailingGuideConstraint:(id)arg2;
-- (BOOL)_isInUpdateAnimation;
+- (bool)_isInUpdateAnimation;
 - (id)_layoutAttributes;
 - (void)_markAsDequeued;
 - (void)_setBaseLayoutAttributes:(id)arg1;
 - (void)_setCollectionView:(id)arg1;
 - (void)_setLayoutAttributes:(id)arg1;
 - (void)_setReuseIdentifier:(id)arg1;
-- (BOOL)_wasDequeued;
+- (bool)_wasDequeued;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)dealloc;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;

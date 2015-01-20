@@ -5,8 +5,8 @@
 @interface UIClassicWindow : UIWindow {
 }
 
-- (BOOL)_isConstrainedByScreenJail;
-- (BOOL)_shouldZoom;
+- (bool)_isConstrainedByScreenJail;
+- (bool)_shouldZoom;
 - (void)_updateTransformLayerForClassicPresentation;
 
 @end

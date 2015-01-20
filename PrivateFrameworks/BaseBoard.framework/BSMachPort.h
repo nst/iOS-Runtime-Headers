@@ -6,16 +6,16 @@
 
 @interface BSMachPort : NSObject <NSCopying, BSXPCCoding> {
     NSString *_debugDescription;
-    BOOL _invalidated;
     unsigned int _port;
     unsigned int _portNumber;
-    unsigned int _recvRights;
-    unsigned int _sendRights;
+    unsigned long long _recvRights;
+    unsigned long long _sendRights;
+    bool_invalidated;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) unsigned int port;
 @property(readonly) Class superclass;
 
@@ -32,11 +32,11 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithPort:(unsigned int)arg1 withRights:(id)arg2;
 - (id)initWithRight:(int)arg1;
-- (id)initWithSendRight:(unsigned int)arg1 assumeOwnership:(BOOL)arg2;
+- (id)initWithSendRight:(unsigned int)arg1 assumeOwnership:(bool)arg2;
 - (id)initWithSendRight:(unsigned int)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)invalidate;
-- (BOOL)isUsable;
+- (bool)isUsable;
 - (unsigned int)port;
 
 @end

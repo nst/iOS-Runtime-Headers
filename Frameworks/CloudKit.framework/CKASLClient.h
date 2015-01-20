@@ -6,12 +6,12 @@
 
 @interface CKASLClient : NSObject {
     struct __asl_object_s { } *_aslClient;
-    int _logLevel;
+    long long _logLevel;
     NSObject<OS_dispatch_queue> *_logQueue;
 }
 
 @property struct __asl_object_s { }* aslClient;
-@property int logLevel;
+@property long long logLevel;
 @property(retain) NSObject<OS_dispatch_queue> * logQueue;
 
 + (id)ASLClient;
@@ -25,12 +25,12 @@
 - (struct __asl_object_s { }*)aslClient;
 - (void)dealloc;
 - (id)init;
-- (int)logLevel;
-- (unsigned int)logLevelForASL;
+- (long long)logLevel;
+- (unsigned long long)logLevelForASL;
 - (id)logQueue;
 - (void)performLoggingBlock:(id)arg1;
 - (void)setAslClient:(struct __asl_object_s { }*)arg1;
-- (void)setLogLevel:(int)arg1;
+- (void)setLogLevel:(long long)arg1;
 - (void)setLogQueue:(id)arg1;
 - (void)slurpAndRemoveLookasideHumanFile:(id)arg1 binaryFile:(id)arg2 prefixString:(id)arg3 suffixString:(id)arg4 containerIdentifier:(id)arg5 sectionID:(id)arg6;
 

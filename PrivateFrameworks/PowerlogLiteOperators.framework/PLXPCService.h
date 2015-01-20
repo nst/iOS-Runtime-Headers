@@ -7,6 +7,7 @@
 @interface PLXPCService : PLService {
     NSArray *_clientIDs;
     NSDictionary *_clientNames;
+    PLNSNotificationOperatorComposition *_dailyTaskNotification;
     NSDictionary *_permissionCache;
     NSMutableDictionary *_registeredListeners;
     NSMutableDictionary *_registeredResponders;
@@ -17,6 +18,7 @@
 
 @property(retain) NSArray * clientIDs;
 @property(retain) NSDictionary * clientNames;
+@property(retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
 @property(retain) NSDictionary * permissionCache;
 @property(retain) NSMutableDictionary * registeredListeners;
 @property(retain) NSMutableDictionary * registeredResponders;
@@ -24,6 +26,9 @@
 @property(retain) PLNSTimerOperatorComposition * resetPermissionsForClientsTimer;
 @property(retain) NSObject<OS_xpc_object> * xpcConnection;
 
++ (id)defaults;
++ (id)entryAggregateDefinitionXPCEvent;
++ (id)entryAggregateDefinitions;
 + (id)entryEventPointDefinitionClientLogging;
 + (id)entryEventPointDefinitions;
 + (void)load;
@@ -31,11 +36,14 @@
 - (void).cxx_destruct;
 - (id)clientIDs;
 - (id)clientNames;
+- (id)dailyTaskNotification;
+- (void)dailyTasks;
 - (void)handlePeer:(id)arg1 forEvent:(id)arg2;
 - (void)handlePeerListenerEvent:(id)arg1 withMessage:(id)arg2 withClientID:(short)arg3 withProcessName:(id)arg4 withKey:(id)arg5 withPayload:(id)arg6;
 - (void)handlePeerResponderEvent:(id)arg1 withMessage:(id)arg2 withClientID:(short)arg3 withProcessName:(id)arg4 withKey:(id)arg5 withPayload:(id)arg6;
 - (void)handlePeerShouldLogEvent:(id)arg1 withMessage:(id)arg2 withClientID:(short)arg3 withProcessName:(id)arg4 withKey:(id)arg5;
 - (id)init;
+- (void)initOperatorDependancies;
 - (void)logMessage:(id)arg1 withPayload:(id)arg2;
 - (id)permissionCache;
 - (short)permissionForClientID:(short)arg1 withKey:(id)arg2 withType:(id)arg3 withProcessName:(id)arg4;
@@ -48,6 +56,7 @@
 - (void)respondToEvent:(id)arg1 withResponse:(id)arg2;
 - (void)setClientIDs:(id)arg1;
 - (void)setClientNames:(id)arg1;
+- (void)setDailyTaskNotification:(id)arg1;
 - (void)setPermissionCache:(id)arg1;
 - (void)setRegisteredListeners:(id)arg1;
 - (void)setRegisteredResponders:(id)arg1;

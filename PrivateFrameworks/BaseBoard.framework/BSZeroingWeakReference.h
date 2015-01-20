@@ -7,17 +7,17 @@
 @interface BSZeroingWeakReference : NSObject {
     NSString *_debug;
     id _object;
-    unsigned long _objectAddress;
+    unsigned long long _objectAddress;
 }
 
 + (id)referenceWithObject:(id)arg1;
 
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)object;
 
 @end

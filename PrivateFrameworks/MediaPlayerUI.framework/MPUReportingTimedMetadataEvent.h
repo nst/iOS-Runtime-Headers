@@ -13,7 +13,7 @@
 @property double timestamp;
 
 - (void).cxx_destruct;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (id)timedMetadata;

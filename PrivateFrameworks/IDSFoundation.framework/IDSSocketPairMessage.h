@@ -13,7 +13,7 @@
 @property(readonly) unsigned char command;
 @property(retain) <NSObject> * context;
 @property(retain,readonly) NSData * underlyingData;
-@property(readonly) unsigned int underlyingDataLength;
+@property(readonly) unsigned long long underlyingDataLength;
 
 + (unsigned int)dataLengthFromHeaderData:(id)arg1;
 + (unsigned int)headerDataSize;
@@ -28,6 +28,6 @@
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
 - (void)setContext:(id)arg1;
 - (id)underlyingData;
-- (unsigned int)underlyingDataLength;
+- (unsigned long long)underlyingDataLength;
 
 @end

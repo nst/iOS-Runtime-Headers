@@ -5,10 +5,10 @@
 @interface TSCH3DChart3DBuildRenderCycle : TSCH3DChartRenderCycle {
 }
 
-- (BOOL)allocateFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg1;
+- (bool)allocateFramebufferWithAllocationInfo:(const struct FramebufferAllocationInfo { id x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; }*)arg1;
 - (id)initWithRenderCycleInfo:(const struct RenderCycleInfo { id x1; id x2; id x3; }*)arg1;
-- (unsigned int)multisamples;
-- (void)setAnimationBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)shouldDiscardRenderbuffers;
+- (unsigned long long)multisamples;
+- (void)setAnimationBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)shouldDiscardRenderbuffers;
 
 @end

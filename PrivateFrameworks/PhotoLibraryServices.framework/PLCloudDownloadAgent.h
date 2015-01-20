@@ -17,12 +17,12 @@
 @property(retain) PLPhotoLibrary * localLibrary;
 @property(retain) PLCloudPhotoLibraryManager * remoteLibrary;
 
-- (void)_beginPopulatingResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 startingAtOffset:(unsigned int)arg3 then:(id)arg4;
+- (void)_beginPopulatingResourcesOfType:(unsigned long long)arg1 withFetchRequest:(id)arg2 startingAtOffset:(unsigned long long)arg3 then:(id)arg4;
 - (void)activate;
 - (void)appInForeground:(id)arg1;
-- (unsigned int)batchSize;
-- (void)beginPopulatingResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 then:(id)arg3;
-- (void)cplResourcesForFetchRequest:(id)arg1 ofType:(unsigned int)arg2 startingAtOffset:(unsigned int)arg3 completionHandler:(id)arg4;
+- (unsigned long long)batchSize;
+- (void)beginPopulatingResourcesOfType:(unsigned long long)arg1 withFetchRequest:(id)arg2 then:(id)arg3;
+- (void)cplResourcesForFetchRequest:(id)arg1 ofType:(unsigned long long)arg2 startingAtOffset:(unsigned long long)arg3 completionHandler:(id)arg4;
 - (void)dealloc;
 - (void)downloadResources:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)init;
@@ -38,6 +38,6 @@
 - (void)setLocalLibrary:(id)arg1;
 - (void)setRemoteLibrary:(id)arg1;
 - (void)systemStarted:(id)arg1;
-- (int)typeToIndex:(unsigned int)arg1;
+- (int)typeToIndex:(unsigned long long)arg1;
 
 @end

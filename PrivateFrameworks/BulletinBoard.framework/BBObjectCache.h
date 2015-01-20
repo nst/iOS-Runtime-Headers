@@ -6,8 +6,8 @@
 
 @interface BBObjectCache : NSObject {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     NSMutableDictionary *_cache;
     } _cacheMutex;
     NSString *_identifier;

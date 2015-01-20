@@ -14,7 +14,7 @@
 - (int)externalScale;
 - (int)externalType;
 - (id)initWithProperty:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setExternalPrecision:(unsigned int)arg1;
 - (void)setExternalScale:(int)arg1;
 - (void)setExternalType:(int)arg1;

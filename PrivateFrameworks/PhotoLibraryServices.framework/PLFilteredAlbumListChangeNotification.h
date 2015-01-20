@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) NSIndexSet * filteredIndexes;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) PLIndexMapper * indexMapper;
 @property(readonly) Class superclass;
 @property(retain,readonly) NSIndexSet * updatedFilteredIndexes;
@@ -24,9 +24,9 @@
 
 - (id)_changedObjects;
 - (id)_diffDescription;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)albumList;
-- (BOOL)countDidChange;
+- (bool)countDidChange;
 - (void)dealloc;
 - (id)description;
 - (id)filteredIndexes;
@@ -35,8 +35,8 @@
 - (id)initWithFilteredAlbumList:(id)arg1 albumListChangeNotification:(id)arg2;
 - (id)object;
 - (void)setFilteredIndexes:(id)arg1;
-- (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
-- (BOOL)shouldReload;
+- (bool)shouldIncludeObjectAtIndex:(unsigned long long)arg1;
+- (bool)shouldReload;
 - (id)updatedFilteredIndexes;
 
 @end

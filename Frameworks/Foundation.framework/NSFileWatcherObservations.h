@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface NSFileWatcherObservations : NSObject {
-    BOOL _attributesChanged;
-    BOOL _contentsChanged;
-    BOOL _deleted;
-    BOOL _didResetPath;
     NSString *_lastObservedPath;
-    BOOL _moved;
     NSString *_path;
+    bool_attributesChanged;
+    bool_contentsChanged;
+    bool_deleted;
+    bool_didResetPath;
+    bool_moved;
 }
 
 - (void)addAnnouncedMoveToPath:(id)arg1;

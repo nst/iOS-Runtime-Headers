@@ -12,7 +12,7 @@
     NSMutableArray *_videoQueue;
 }
 
-+ (BOOL)closedCaptionsEnabled;
++ (bool)closedCaptionsEnabled;
 + (void)initialize;
 + (id)sharedManager;
 

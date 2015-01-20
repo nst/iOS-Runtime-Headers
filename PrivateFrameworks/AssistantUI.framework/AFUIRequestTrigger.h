@@ -7,18 +7,18 @@
 @interface AFUIRequestTrigger : NSObject {
     NSMapTable *_observers;
     AFUIRequestOptions *_options;
-    int _state;
+    long long _state;
 }
 
 @property(readonly) AFUIRequestOptions * options;
-@property(readonly) int state;
+@property(readonly) long long state;
 
 - (void).cxx_destruct;
-- (void)_updateState:(int)arg1;
+- (void)_updateState:(long long)arg1;
 - (void)addTriggerTarget:(id)arg1 action:(SEL)arg2;
 - (id)initWithRequestOptions:(id)arg1 updateHandle:(id*)arg2;
 - (id)options;
 - (void)removeTriggerTarget:(id)arg1;
-- (int)state;
+- (long long)state;
 
 @end

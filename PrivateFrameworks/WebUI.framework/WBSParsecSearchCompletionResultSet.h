@@ -12,7 +12,7 @@
     double _maxAge;
     NSString *_prefix;
     NSArray *_results;
-    int _status;
+    long long _status;
 }
 
 @property(readonly) double completionScore;
@@ -22,7 +22,7 @@
 @property(readonly) double maxAge;
 @property(readonly) NSString * prefix;
 @property(readonly) NSArray * results;
-@property(readonly) int status;
+@property(readonly) long long status;
 
 + (id)resultSetWithDictionary:(id)arg1 cache:(id)arg2;
 
@@ -35,6 +35,6 @@
 - (double)maxAge;
 - (id)prefix;
 - (id)results;
-- (int)status;
+- (long long)status;
 
 @end

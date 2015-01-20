@@ -6,7 +6,7 @@
 
 @interface UIDOMHTMLOptionSelectedItem : NSObject <UIWebSelectedItemPrivate> {
     DOMHTMLOptionElement *_node;
-    BOOL _selected;
+    bool_selected;
 }
 
 @property(retain) DOMHTMLOptionElement * _node;
@@ -14,10 +14,10 @@
 - (id)_node;
 - (void)dealloc;
 - (id)initWithHTMLOptionNode:(id)arg1;
-- (BOOL)isGroup;
+- (bool)isGroup;
 - (id)node;
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
+- (bool)selected;
+- (void)setSelected:(bool)arg1;
 - (void)set_node:(id)arg1;
 - (void)unselect;
 

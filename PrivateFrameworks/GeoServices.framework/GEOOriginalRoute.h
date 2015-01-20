@@ -13,9 +13,9 @@
     NSData *_routeHandle;
 }
 
-@property(readonly) BOOL hasOriginalDirectionsResponseID;
-@property BOOL hasOriginalRoutePurpose;
-@property(readonly) BOOL hasRouteHandle;
+@property(readonly) bool hasOriginalDirectionsResponseID;
+@property bool hasOriginalRoutePurpose;
+@property(readonly) bool hasRouteHandle;
 @property(retain) NSData * originalDirectionsResponseID;
 @property int originalRoutePurpose;
 @property(retain) NSData * routeHandle;
@@ -25,17 +25,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOriginalDirectionsResponseID;
-- (BOOL)hasOriginalRoutePurpose;
-- (BOOL)hasRouteHandle;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOriginalDirectionsResponseID;
+- (bool)hasOriginalRoutePurpose;
+- (bool)hasRouteHandle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)originalDirectionsResponseID;
 - (int)originalRoutePurpose;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routeHandle;
-- (void)setHasOriginalRoutePurpose:(BOOL)arg1;
+- (void)setHasOriginalRoutePurpose:(bool)arg1;
 - (void)setOriginalDirectionsResponseID:(id)arg1;
 - (void)setOriginalRoutePurpose:(int)arg1;
 - (void)setRouteHandle:(id)arg1;

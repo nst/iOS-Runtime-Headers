@@ -6,11 +6,11 @@
 
 @interface AVAssetWriterInputInternal : NSObject {
     NSObject<OS_dispatch_queue> *appendFailureReadWriteQueue;
-    BOOL attachedToMetadataAdaptor;
-    BOOL attachedToPixelBufferAdaptor;
+    boolattachedToMetadataAdaptor;
+    boolattachedToPixelBufferAdaptor;
     AVAssetWriterInputHelper *helper;
     NSObject<OS_dispatch_queue> *helperQueue;
-    int numberOfAppendFailures;
+    long long numberOfAppendFailures;
     AVAssetWriterInputPassDescriptionResponder *passDescriptionResponder;
     AVWeakReference *weakReference;
     AVWeakReference *weakReferenceToAssetWriter;

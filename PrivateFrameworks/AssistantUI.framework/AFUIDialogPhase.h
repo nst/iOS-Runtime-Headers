@@ -5,22 +5,22 @@
 @class NSString;
 
 @interface AFUIDialogPhase : NSObject <NSSecureCoding> {
-    int _type;
+    long long _type;
 }
 
 @property(readonly) NSString * aceDialogPhaseValue;
-@property(getter=isCancelledDialogPhase,readonly) BOOL cancelledDialogPhase;
-@property(getter=isClarificationDialogPhase,readonly) BOOL clarificationDialogPhase;
-@property(getter=isConfirmationDialogPhase,readonly) BOOL confirmationDialogPhase;
-@property(getter=isConfirmedDialogPhase,readonly) BOOL confirmedDialogPhase;
-@property(getter=isErrorDialogPhase,readonly) BOOL errorDialogPhase;
-@property(getter=isExpository,readonly) BOOL expository;
-@property(getter=isReflectionDialogPhase,readonly) BOOL reflectionDialogPhase;
-@property(getter=isTemporary,readonly) BOOL temporary;
-@property(getter=_type,readonly) int type;
-@property(getter=isUserRequestDialogPhase,readonly) BOOL userRequestDialogPhase;
+@property(getter=isCancelledDialogPhase,readonly) bool cancelledDialogPhase;
+@property(getter=isClarificationDialogPhase,readonly) bool clarificationDialogPhase;
+@property(getter=isConfirmationDialogPhase,readonly) bool confirmationDialogPhase;
+@property(getter=isConfirmedDialogPhase,readonly) bool confirmedDialogPhase;
+@property(getter=isErrorDialogPhase,readonly) bool errorDialogPhase;
+@property(getter=isExpository,readonly) bool expository;
+@property(getter=isReflectionDialogPhase,readonly) bool reflectionDialogPhase;
+@property(getter=isTemporary,readonly) bool temporary;
+@property(getter=_type,readonly) long long type;
+@property(getter=isUserRequestDialogPhase,readonly) bool userRequestDialogPhase;
 
-+ (id)_dialogPhaseWithType:(int)arg1;
++ (id)_dialogPhaseWithType:(long long)arg1;
 + (id)acknowledgementDialogPhase;
 + (id)cancelledDialogPhase;
 + (id)clarificationDialogPhase;
@@ -32,27 +32,27 @@
 + (id)reflectionDialogPhase;
 + (id)statusDialogPhase;
 + (id)summaryDialogPhase;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userRequestDialogPhase;
 
-- (id)_initWithType:(int)arg1;
-- (int)_type;
+- (id)_initWithType:(long long)arg1;
+- (long long)_type;
 - (id)aceDialogPhaseValue;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCancelledDialogPhase;
-- (BOOL)isClarificationDialogPhase;
-- (BOOL)isConfirmationDialogPhase;
-- (BOOL)isConfirmedDialogPhase;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDialogPhase:(id)arg1;
-- (BOOL)isErrorDialogPhase;
-- (BOOL)isExpository;
-- (BOOL)isReflectionDialogPhase;
-- (BOOL)isTemporary;
-- (BOOL)isUserRequestDialogPhase;
-- (BOOL)replacesPreviousSnippetContents;
+- (bool)isCancelledDialogPhase;
+- (bool)isClarificationDialogPhase;
+- (bool)isConfirmationDialogPhase;
+- (bool)isConfirmedDialogPhase;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDialogPhase:(id)arg1;
+- (bool)isErrorDialogPhase;
+- (bool)isExpository;
+- (bool)isReflectionDialogPhase;
+- (bool)isTemporary;
+- (bool)isUserRequestDialogPhase;
+- (bool)replacesPreviousSnippetContents;
 
 @end

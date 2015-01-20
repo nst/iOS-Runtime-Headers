@@ -9,7 +9,7 @@
 @class CKDRecordCache, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSSet;
 
 @interface CKDFetchRecordsOperation : CKDDatabaseOperation {
-    unsigned int _URLOptions;
+    unsigned long long _URLOptions;
     NSMutableDictionary *_assetFetchGroupsByRecord;
     NSSet *_assetFieldNamesToPublishURLs;
     NSMutableArray *_assetsToFetch;
@@ -26,14 +26,14 @@
     id _recordFetchProgressBlock;
     NSArray *_recordIDsToFetch;
     NSDictionary *_recordIDsToVersionETags;
-    unsigned int _requestedTTL;
-    BOOL _shouldFetchAssetContent;
+    unsigned long long _requestedTTL;
     NSDictionary *_signaturesOfAssetsByRecordIDAndKey;
-    BOOL _useCachedEtags;
     NSDictionary *_webSharingIdentityDataByRecordID;
+    bool_shouldFetchAssetContent;
+    bool_useCachedEtags;
 }
 
-@property unsigned int URLOptions;
+@property unsigned long long URLOptions;
 @property(retain) NSMutableDictionary * assetFetchGroupsByRecord;
 @property(retain) NSSet * assetFieldNamesToPublishURLs;
 @property(retain) NSMutableArray * assetsToFetch;
@@ -50,14 +50,14 @@
 @property(copy) id recordFetchProgressBlock;
 @property(retain) NSArray * recordIDsToFetch;
 @property(retain) NSDictionary * recordIDsToVersionETags;
-@property unsigned int requestedTTL;
-@property BOOL shouldFetchAssetContent;
+@property unsigned long long requestedTTL;
+@property bool shouldFetchAssetContent;
 @property(retain) NSDictionary * signaturesOfAssetsByRecordIDAndKey;
-@property BOOL useCachedEtags;
+@property bool useCachedEtags;
 @property(retain) NSDictionary * webSharingIdentityDataByRecordID;
 
 - (void).cxx_destruct;
-- (unsigned int)URLOptions;
+- (unsigned long long)URLOptions;
 - (id)_assetFetchGroupForRecord:(id)arg1;
 - (void)_continueHandleFetchedRecord:(id)arg1;
 - (void)_decryptPropertiesOnRecord:(id)arg1;
@@ -70,7 +70,7 @@
 - (void)_fetchPackages;
 - (void)_fetchRecords;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(BOOL)arg3 responseCode:(id)arg4;
+- (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(bool)arg3 responseCode:(id)arg4;
 - (id)assetFetchGroupsByRecord;
 - (id)assetFieldNamesToPublishURLs;
 - (id)assetsToFetch;
@@ -85,14 +85,14 @@
 - (id)fullRecordsToFetch;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (id)packagesToFetch;
 - (id)recordFetchCompletionBlock;
 - (id)recordFetchProgressBlock;
 - (id)recordIDsToFetch;
 - (id)recordIDsToVersionETags;
-- (unsigned int)requestedTTL;
+- (unsigned long long)requestedTTL;
 - (void)setAssetFetchGroupsByRecord:(id)arg1;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
 - (void)setAssetsToFetch:(id)arg1;
@@ -110,15 +110,15 @@
 - (void)setRecordFetchProgressBlock:(id)arg1;
 - (void)setRecordIDsToFetch:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
-- (void)setRequestedTTL:(unsigned int)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setRequestedTTL:(unsigned long long)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
-- (void)setURLOptions:(unsigned int)arg1;
-- (void)setUseCachedEtags:(BOOL)arg1;
+- (void)setURLOptions:(unsigned long long)arg1;
+- (void)setUseCachedEtags:(bool)arg1;
 - (void)setWebSharingIdentityDataByRecordID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContent;
 - (id)signaturesOfAssetsByRecordIDAndKey;
-- (BOOL)useCachedEtags;
+- (bool)useCachedEtags;
 - (id)webSharingIdentityDataByRecordID;
 
 @end

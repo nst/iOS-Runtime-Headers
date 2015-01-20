@@ -5,11 +5,11 @@
 @interface _UIInputViewKeyboardOutput : TIKeyboardOutput {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAcceptedCandidate:(id)arg1;
-- (void)setForwardDeletionCount:(unsigned int)arg1;
+- (void)setForwardDeletionCount:(unsigned long long)arg1;
 - (void)setHandwritingStrokesToDelete:(id)arg1;
 - (void)setInsertionTextAfterSelection:(id)arg1;
 - (void)setShortcutConversion:(id)arg1;

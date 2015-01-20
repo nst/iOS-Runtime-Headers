@@ -5,22 +5,22 @@
 @class NSString;
 
 @interface UIPrintInfo : NSObject <NSCopying, NSCoding> {
-    int _copies;
-    int _duplex;
+    long long _copies;
+    long long _duplex;
     NSString *_jobName;
-    int _orientation;
-    int _outputType;
+    long long _orientation;
+    long long _outputType;
     NSString *_printerID;
-    BOOL _scaleUp;
+    bool_scaleUp;
 }
 
-@property int copies;
-@property int duplex;
+@property long long copies;
+@property long long duplex;
 @property(copy) NSString * jobName;
-@property int orientation;
-@property int outputType;
+@property long long orientation;
+@property long long outputType;
 @property(copy) NSString * printerID;
-@property BOOL scaleUp;
+@property bool scaleUp;
 
 + (id)printInfo;
 + (id)printInfoWithDictionary:(id)arg1;
@@ -28,25 +28,25 @@
 - (id)_createPrintSettingsForPrinter:(id)arg1;
 - (id)_initWithDictionary:(id)arg1;
 - (void)_updateWithPrinter:(id)arg1;
-- (int)copies;
+- (long long)copies;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)dictionaryRepresentation;
-- (int)duplex;
+- (long long)duplex;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)jobName;
-- (int)orientation;
-- (int)outputType;
+- (long long)orientation;
+- (long long)outputType;
 - (id)printerID;
-- (BOOL)scaleUp;
-- (void)setCopies:(int)arg1;
-- (void)setDuplex:(int)arg1;
+- (bool)scaleUp;
+- (void)setCopies:(long long)arg1;
+- (void)setDuplex:(long long)arg1;
 - (void)setJobName:(id)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setOutputType:(int)arg1;
+- (void)setOrientation:(long long)arg1;
+- (void)setOutputType:(long long)arg1;
 - (void)setPrinterID:(id)arg1;
-- (void)setScaleUp:(BOOL)arg1;
+- (void)setScaleUp:(bool)arg1;
 
 @end

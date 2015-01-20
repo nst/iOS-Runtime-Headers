@@ -6,27 +6,27 @@
 
 @interface PKPaymentDataItem : NSObject <PKPaymentValidating> {
     PKPaymentAuthorizationDataModel *_model;
-    BOOL _rejected;
-    int _type;
+    long long _type;
+    bool_rejected;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property PKPaymentAuthorizationDataModel * model;
-@property(getter=isRejected) BOOL rejected;
+@property(getter=isRejected) bool rejected;
 @property(readonly) Class superclass;
-@property int type;
+@property long long type;
 
-+ (int)dataType;
++ (long long)dataType;
 
 - (id)initWithModel:(id)arg1;
-- (BOOL)isRejected;
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isRejected;
+- (bool)isValidWithError:(id*)arg1;
 - (id)model;
 - (void)setModel:(id)arg1;
-- (void)setRejected:(BOOL)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setRejected:(bool)arg1;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

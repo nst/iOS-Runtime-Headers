@@ -6,15 +6,15 @@
 
 @interface PTIcon : UIView {
     struct { 
-        float meanRed; 
-        float meanGreen; 
-        float meanBlue; 
-        float meanHue; 
-        float meanSaturation; 
-        float meanBrightness; 
-        float meanAlpha; 
-        float standardDeviationBrightness; 
-        float standardDeviationSaturation; 
+        double meanRed; 
+        double meanGreen; 
+        double meanBlue; 
+        double meanHue; 
+        double meanSaturation; 
+        double meanBrightness; 
+        double meanAlpha; 
+        double standardDeviationBrightness; 
+        double standardDeviationSaturation; 
     _UILegibilityView *_iconLegibilityView;
     PTIconSettings *_iconSettings;
     UIImage *_image;
@@ -28,7 +28,7 @@
 @property(retain) _UILegibilityView * iconLegibilityView;
 @property(retain) PTIconSettings * iconSettings;
 @property(retain) UIImage * image;
-@property struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
+@property struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; } imageStatistics;
 @property(retain) UIImageView * imageView;
 @property(retain) _UILegibilityLabel * label;
 @property struct __CFRunLoopObserver { }* runLoopObserver;
@@ -41,17 +41,17 @@
 - (id)iconLegibilityView;
 - (id)iconSettings;
 - (id)image;
-- (struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })imageStatistics;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })imageStatistics;
 - (id)imageView;
 - (id)init;
 - (id)label;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })labelFrame;
 - (void)layoutSubviews;
 - (struct __CFRunLoopObserver { }*)runLoopObserver;
 - (void)setIconLegibilityView:(id)arg1;
 - (void)setIconSettings:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageStatistics:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })arg1;
+- (void)setImageStatistics:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
 - (void)setImageView:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setRunLoopObserver:(struct __CFRunLoopObserver { }*)arg1;

@@ -19,11 +19,11 @@
 - (struct __asl_object_s { }*)aslclient;
 - (id)init;
 - (id)initWithLogFile:(id)arg1;
-- (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 reason:(id)arg9 admitted:(BOOL)arg10 ableID:(unsigned long long)arg11;
-- (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 role:(unsigned int)arg9 reason:(id)arg10 admitted:(BOOL)arg11 ableID:(unsigned long long)arg12;
-- (void)logCoreDuetEventForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned int)arg4 sequenceNumber:(unsigned long long)arg5 event:(unsigned int)arg6 value:(id)arg7 cellIn:(unsigned long long)arg8 cellOut:(unsigned long long)arg9 wifiIn:(unsigned long long)arg10 wifiOut:(unsigned long long)arg11;
-- (void)logCoreDuetEventStartForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned int)arg4 sequenceNumber:(unsigned long long)arg5 value:(id)arg6;
-- (void)logCoreDuetEventStopForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned int)arg4 sequenceNumber:(unsigned long long)arg5 value:(id)arg6 cellIn:(unsigned long long)arg7 cellOut:(unsigned long long)arg8 wifiIn:(unsigned long long)arg9 wifiOut:(unsigned long long)arg10;
+- (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 reason:(id)arg9 admitted:(bool)arg10 ableID:(unsigned long long)arg11;
+- (void)logCoreDuetAdmissionCheckForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 value:(id)arg4 sequenceNumber:(unsigned long long)arg5 probability:(double)arg6 threshold:(double)arg7 BON:(unsigned long long)arg8 role:(unsigned long long)arg9 reason:(id)arg10 admitted:(bool)arg11 ableID:(unsigned long long)arg12;
+- (void)logCoreDuetEventForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned long long)arg4 sequenceNumber:(unsigned long long)arg5 event:(unsigned long long)arg6 value:(id)arg7 cellIn:(unsigned long long)arg8 cellOut:(unsigned long long)arg9 wifiIn:(unsigned long long)arg10 wifiOut:(unsigned long long)arg11;
+- (void)logCoreDuetEventStartForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned long long)arg4 sequenceNumber:(unsigned long long)arg5 value:(id)arg6;
+- (void)logCoreDuetEventStopForClient:(unsigned long long)arg1 attributeID:(unsigned long long)arg2 attribute:(id)arg3 updateType:(unsigned long long)arg4 sequenceNumber:(unsigned long long)arg5 value:(id)arg6 cellIn:(unsigned long long)arg7 cellOut:(unsigned long long)arg8 wifiIn:(unsigned long long)arg9 wifiOut:(unsigned long long)arg10;
 - (void)logDictionary:(id)arg1;
 - (void)logString:(id)arg1;
 - (id)powerLog;

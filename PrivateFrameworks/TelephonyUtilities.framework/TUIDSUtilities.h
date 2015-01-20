@@ -9,20 +9,20 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)_IDSFormattedDestinationsForPerson:(id)arg1;
-+ (BOOL)_anyStatusInResultDictionary:(id)arg1 equalsIDStatus:(int)arg2;
-+ (BOOL)_availabilityForDestinations:(id)arg1 serviceType:(unsigned int)arg2;
-+ (BOOL)_availabilityForPerson:(id)arg1 serviceType:(unsigned int)arg2;
-+ (BOOL)_refreshAvailabilityForDestinations:(id)arg1 serviceType:(unsigned int)arg2 userInfo:(id)arg3;
-+ (BOOL)_refreshAvailabilityForPerson:(id)arg1 serviceType:(unsigned int)arg2;
-+ (id)idsServiceForType:(unsigned int)arg1;
++ (bool)_anyStatusInResultDictionary:(id)arg1 equalsIDStatus:(long long)arg2;
++ (bool)_availabilityForDestinations:(id)arg1 serviceType:(unsigned long long)arg2;
++ (bool)_availabilityForPerson:(id)arg1 serviceType:(unsigned long long)arg2;
++ (bool)_refreshAvailabilityForDestinations:(id)arg1 serviceType:(unsigned long long)arg2 userInfo:(id)arg3;
++ (bool)_refreshAvailabilityForPerson:(id)arg1 serviceType:(unsigned long long)arg2;
++ (id)idsServiceForType:(unsigned long long)arg1;
 + (void)initialize;
-+ (BOOL)isService:(unsigned int)arg1 availableForABRecordID:(int)arg2;
-+ (BOOL)isService:(unsigned int)arg1 availableForDestinations:(id)arg2;
++ (bool)isService:(unsigned long long)arg1 availableForABRecordID:(int)arg2;
++ (bool)isService:(unsigned long long)arg1 availableForDestinations:(id)arg2;
 + (id)personForABRecordID:(int)arg1;
-+ (BOOL)refreshAvailabilityForABRecordID:(int)arg1 serviceType:(unsigned int)arg2;
++ (bool)refreshAvailabilityForABRecordID:(int)arg1 serviceType:(unsigned long long)arg2;
 
 @end

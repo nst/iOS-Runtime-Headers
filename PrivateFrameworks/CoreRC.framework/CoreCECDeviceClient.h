@@ -5,24 +5,24 @@
 @interface CoreCECDeviceClient : CoreCECDevice {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)activeSourceStatusUpdated:(BOOL)arg1;
+- (void)activeSourceStatusUpdated:(bool)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)deckControlCommandWithMode:(unsigned int)arg1 target:(id)arg2 error:(id*)arg3;
-- (BOOL)deckControlPlayWithMode:(unsigned int)arg1 target:(id)arg2 error:(id*)arg3;
-- (BOOL)deckControlRefreshStatus:(id)arg1 requestType:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)deckControlSetDeckStatus:(unsigned int)arg1 error:(id*)arg2;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)makeActiveSourceWithTVMenus:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)performStandbyWithTargetDevice:(id)arg1 error:(id*)arg2;
-- (BOOL)refreshDevices:(id*)arg1;
-- (BOOL)refreshProperties:(id)arg1 ofDevice:(id)arg2 error:(id*)arg3;
-- (BOOL)requestActiveSource:(id*)arg1;
-- (BOOL)resignActiveSource:(id*)arg1;
-- (BOOL)setSystemAudioControlEnabled:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)systemAudioModeRequest:(unsigned int)arg1 error:(id*)arg2;
+- (bool)deckControlCommandWithMode:(unsigned long long)arg1 target:(id)arg2 error:(id*)arg3;
+- (bool)deckControlPlayWithMode:(unsigned long long)arg1 target:(id)arg2 error:(id*)arg3;
+- (bool)deckControlRefreshStatus:(id)arg1 requestType:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)deckControlSetDeckStatus:(unsigned long long)arg1 error:(id*)arg2;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)makeActiveSourceWithTVMenus:(bool)arg1 error:(id*)arg2;
+- (bool)performStandbyWithTargetDevice:(id)arg1 error:(id*)arg2;
+- (bool)refreshDevices:(id*)arg1;
+- (bool)refreshProperties:(id)arg1 ofDevice:(id)arg2 error:(id*)arg3;
+- (bool)requestActiveSource:(id*)arg1;
+- (bool)resignActiveSource:(id*)arg1;
+- (bool)setSystemAudioControlEnabled:(bool)arg1 error:(id*)arg2;
+- (bool)systemAudioModeRequest:(unsigned long long)arg1 error:(id*)arg2;
 
 @end

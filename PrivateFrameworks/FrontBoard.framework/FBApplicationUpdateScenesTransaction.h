@@ -9,20 +9,20 @@
     NSMutableArray *_pendingUpdateSceneBlocks;
     FBApplicationProcess *_process;
     FBApplicationProcessLaunchTransaction *_processLaunchTransaction;
-    BOOL _processLaunched;
     FBProcessManager *_processManager;
     FBSceneManager *_sceneManager;
     NSMutableArray *_updateSceneTransactions;
+    bool_processLaunched;
 }
 
 @property(retain,readonly) NSString * bundleID;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) FBApplicationProcess * process;
 @property(readonly) Class superclass;
 
-- (BOOL)_canBeInterrupted;
+- (bool)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;

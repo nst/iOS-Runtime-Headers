@@ -12,7 +12,7 @@
 @property(retain) NSArray * invitationsToAccept;
 @property(retain) NSArray * invitationsToDecline;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

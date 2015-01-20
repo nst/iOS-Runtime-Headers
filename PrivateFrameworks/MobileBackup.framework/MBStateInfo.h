@@ -7,14 +7,14 @@
 @interface MBStateInfo : NSObject <NSCoding, NSCopying> {
     NSDate *_date;
     NSError *_error;
-    unsigned int _estimatedTimeRemaining;
+    unsigned long long _estimatedTimeRemaining;
     float _progress;
     int _state;
 }
 
 @property(readonly) NSDate * date;
 @property(readonly) NSError * error;
-@property(readonly) unsigned int estimatedTimeRemaining;
+@property(readonly) unsigned long long estimatedTimeRemaining;
 @property(readonly) float progress;
 @property(readonly) int state;
 
@@ -25,13 +25,13 @@
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
-- (unsigned int)estimatedTimeRemaining;
+- (unsigned long long)estimatedTimeRemaining;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithState:(int)arg1 progress:(float)arg2 estimatedTimeRemaining:(unsigned int)arg3 error:(id)arg4;
+- (id)initWithState:(int)arg1 progress:(float)arg2 estimatedTimeRemaining:(unsigned long long)arg3 error:(id)arg4;
 - (float)progress;
 - (void)setError:(id)arg1;
-- (void)setEstimatedTimeRemaining:(unsigned int)arg1;
+- (void)setEstimatedTimeRemaining:(unsigned long long)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setState:(int)arg1;
 - (int)state;

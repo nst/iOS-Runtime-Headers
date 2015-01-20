@@ -10,29 +10,29 @@
     NSArray *_imageConstraints;
     MPUArtworkView *_imageView;
     NSTimer *_updateTimer;
-    unsigned int _vignetteType;
+    unsigned long long _vignetteType;
     UIImageView *_vignetteView;
 }
 
 @property(readonly) NSArray * backgroundElements;
-@property unsigned int vignetteType;
+@property unsigned long long vignetteType;
 
-+ (id)vignetteImageForType:(unsigned int)arg1;
++ (id)vignetteImageForType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_didReceiveImage:(id)arg1;
 - (void)_invalidateTimer;
 - (void)_scheduleTimerIfNeeded;
-- (void)_updateConstraintsForImageSize:(struct CGSize { float x1; float x2; })arg1 position:(unsigned int)arg2;
+- (void)_updateConstraintsForImageSize:(struct CGSize { double x1; double x2; })arg1 position:(unsigned long long)arg2;
 - (void)_updateImage;
 - (id)backgroundElements;
 - (void)dealloc;
 - (id)initWithBackgroundElement:(id)arg1;
 - (id)initWithBackgroundElements:(id)arg1;
-- (void)setVignetteType:(unsigned int)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)setVignetteType:(unsigned long long)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (unsigned int)vignetteType;
+- (void)viewWillDisappear:(bool)arg1;
+- (unsigned long long)vignetteType;
 
 @end

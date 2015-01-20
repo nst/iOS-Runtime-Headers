@@ -11,62 +11,62 @@
         float start; 
         float duration; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
-    float _colorRandomness;
-    BOOL _didDrawCenterBurst;
-    float _fireworkStartingPositionX;
+        double x; 
+        double y; 
+    double _colorRandomness;
+    double _fireworkStartingPositionX;
     } _lifeSpan;
-    float _lifeSpanMinDuration;
-    float _maxDistance;
+    double _lifeSpanMinDuration;
+    double _maxDistance;
     } _randomParticleSizeMinMax;
     } _randomParticleSpeedMinMax;
     } _startingColorRGB;
     } _startingPoint;
+    bool_didDrawCenterBurst;
 }
 
-@property float colorRandomness;
-@property BOOL didDrawCenterBurst;
-@property float fireworkStartingPositionX;
+@property double colorRandomness;
+@property bool didDrawCenterBurst;
+@property double fireworkStartingPositionX;
 @property struct { float x1; float x2; } lifeSpan;
-@property float lifeSpanMinDuration;
-@property float maxDistance;
-@property struct CGSize { float x1; float x2; } randomParticleSizeMinMax;
-@property struct CGPoint { float x1; float x2; } randomParticleSpeedMinMax;
-@property(readonly) struct CGPoint { float x1; float x2; } startingPoint;
+@property double lifeSpanMinDuration;
+@property double maxDistance;
+@property struct CGSize { double x1; double x2; } randomParticleSizeMinMax;
+@property struct CGPoint { double x1; double x2; } randomParticleSpeedMinMax;
+@property(readonly) struct CGPoint { double x1; double x2; } startingPoint;
 
-+ (BOOL)willOverrideColors;
-+ (BOOL)willOverrideStartingPoints;
++ (bool)willOverrideColors;
++ (bool)willOverrideStartingPoints;
 
-- (struct { float x1; float x2; float x3; float x4; })colorAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)colorRandomness;
-- (BOOL)didDrawCenterBurst;
-- (float)fireworkStartingPositionX;
+- (struct { float x1; float x2; float x3; float x4; })colorAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)colorRandomness;
+- (bool)didDrawCenterBurst;
+- (double)fireworkStartingPositionX;
 - (struct { float x1; float x2; })lifeSpan;
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)lifeSpanMinDuration;
-- (float)maxDistance;
-- (struct CGSize { float x1; float x2; })randomParticleSizeMinMax;
-- (struct CGPoint { float x1; float x2; })randomParticleSpeedMinMax;
-- (float)scaleAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setColorRandomness:(float)arg1;
-- (void)setDidDrawCenterBurst:(BOOL)arg1;
-- (void)setFireworkStartingPositionX:(float)arg1;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)lifeSpanMinDuration;
+- (double)maxDistance;
+- (struct CGSize { double x1; double x2; })randomParticleSizeMinMax;
+- (struct CGPoint { double x1; double x2; })randomParticleSpeedMinMax;
+- (double)scaleAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setColorRandomness:(double)arg1;
+- (void)setDidDrawCenterBurst:(bool)arg1;
+- (void)setFireworkStartingPositionX:(double)arg1;
 - (void)setLifeSpan:(struct { float x1; float x2; })arg1;
-- (void)setLifeSpanMinDuration:(float)arg1;
-- (void)setMaxDistance:(float)arg1;
-- (void)setRandomParticleSizeMinMax:(struct CGSize { float x1; float x2; })arg1;
-- (void)setRandomParticleSpeedMinMax:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setupWithTexture:(id)arg1 particleTextureSize:(struct CGSize { float x1; float x2; })arg2 reverseDrawOrder:(BOOL)arg3;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
-- (struct CGPoint { float x1; float x2; })startingPoint;
-- (struct CGPoint { float x1; float x2; })startingPointAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setLifeSpanMinDuration:(double)arg1;
+- (void)setMaxDistance:(double)arg1;
+- (void)setRandomParticleSizeMinMax:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRandomParticleSpeedMinMax:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setupWithTexture:(id)arg1 particleTextureSize:(struct CGSize { double x1; double x2; })arg2 reverseDrawOrder:(bool)arg3;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
+- (struct CGPoint { double x1; double x2; })startingPoint;
+- (struct CGPoint { double x1; double x2; })startingPointAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

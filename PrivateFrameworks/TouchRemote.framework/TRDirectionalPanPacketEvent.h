@@ -4,27 +4,27 @@
 
 @interface TRDirectionalPanPacketEvent : TRPacketEvent {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
-    int _gestureState;
+        double x; 
+        double y; 
+    long long _gestureState;
     } _location;
     } _velocity;
 }
 
-@property(readonly) int gestureState;
-@property(readonly) struct CGPoint { float x1; float x2; } location;
-@property(readonly) struct CGPoint { float x1; float x2; } velocity;
+@property(readonly) long long gestureState;
+@property(readonly) struct CGPoint { double x1; double x2; } location;
+@property(readonly) struct CGPoint { double x1; double x2; } velocity;
 
 + (unsigned int)_packetEventType;
 
 - (id)_initWithVersion:(unsigned int)arg1 payloadDictionary:(id)arg2;
 - (id)description;
-- (int)gestureState;
-- (id)initWithGestureState:(int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 velocity:(struct CGPoint { float x1; float x2; })arg3;
-- (struct CGPoint { float x1; float x2; })location;
-- (struct CGPoint { float x1; float x2; })velocity;
+- (long long)gestureState;
+- (id)initWithGestureState:(long long)arg1 location:(struct CGPoint { double x1; double x2; })arg2 velocity:(struct CGPoint { double x1; double x2; })arg3;
+- (struct CGPoint { double x1; double x2; })location;
+- (struct CGPoint { double x1; double x2; })velocity;
 
 @end

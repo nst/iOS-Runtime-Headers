@@ -11,7 +11,7 @@
 }
 
 @property(retain) UILabel * hostLabel;
-@property BOOL showActive;
+@property bool showActive;
 @property(retain) UILabel * titleLabel;
 
 - (void)dealloc;
@@ -19,9 +19,9 @@
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (void)setHostLabel:(id)arg1;
-- (void)setShowActive:(BOOL)arg1;
+- (void)setShowActive:(bool)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (BOOL)showActive;
+- (bool)showActive;
 - (id)titleLabel;
 
 @end

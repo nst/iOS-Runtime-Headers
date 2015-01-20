@@ -13,10 +13,10 @@
 - (void).cxx_destruct;
 - (id)_organizerView;
 - (id)_titleView;
-- (BOOL)hasCustomLayout;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (BOOL)shouldDisplayForEvent;
-- (BOOL)update;
+- (bool)hasCustomLayout;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2;
+- (void)layoutForWidth:(double)arg1 position:(int)arg2;
+- (bool)shouldDisplayForEvent;
+- (bool)update;
 
 @end

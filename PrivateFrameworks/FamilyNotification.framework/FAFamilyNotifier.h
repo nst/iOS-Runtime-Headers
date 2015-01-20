@@ -16,7 +16,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <FAFamilyNotificationDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * identifier;
 @property(readonly) NSString * serviceName;
 @property(readonly) Class superclass;
@@ -35,7 +35,7 @@
 - (void)didDismissNotification:(id)arg1;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 machServiceName:(id)arg2;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)pendingNotifications;
 - (void)removeAllNotifications;
 - (void)removeNotificationWithIdentifier:(id)arg1;

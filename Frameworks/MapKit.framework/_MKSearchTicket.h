@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
 @property(readonly) NSArray * exactMapItems;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSArray * refinedMapItems;
 @property(readonly) NSString * searchQuery;
 @property(readonly) Class superclass;

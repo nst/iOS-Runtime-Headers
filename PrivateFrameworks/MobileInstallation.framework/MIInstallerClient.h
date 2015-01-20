@@ -28,13 +28,13 @@
 - (id)initWithProgressBlock:(id)arg1;
 - (void)installPath:(id)arg1 withOptions:(id)arg2 completion:(id)arg3;
 - (void)listArchivesWithOptions:(id)arg1 completion:(id)arg2;
-- (void)listSafeHarborsOfType:(int)arg1 withOptions:(id)arg2 completion:(id)arg3;
+- (void)listSafeHarborsOfType:(long long)arg1 withOptions:(id)arg2 completion:(id)arg3;
 - (void)lookupUninstalledWithOptions:(id)arg1 completion:(id)arg2;
-- (void)processRestoredContainerWithIdentifier:(id)arg1 ofType:(int)arg2 options:(id)arg3 completion:(id)arg4;
+- (void)processRestoredContainerWithIdentifier:(id)arg1 ofType:(long long)arg2 options:(id)arg3 completion:(id)arg4;
 - (id)progressBlock;
-- (void)registerSafeHarborAtPath:(id)arg1 forIdentifier:(id)arg2 ofType:(int)arg3 withOptions:(id)arg4 completion:(id)arg5;
+- (void)registerSafeHarborAtPath:(id)arg1 forIdentifier:(id)arg2 ofType:(long long)arg3 withOptions:(id)arg4 completion:(id)arg5;
 - (void)removeArchiveForIdentifier:(id)arg1 withOptions:(id)arg2 completion:(id)arg3;
-- (void)removeSafeHarborForIdentifier:(id)arg1 ofType:(int)arg2 withOptions:(id)arg3 completion:(id)arg4;
+- (void)removeSafeHarborForIdentifier:(id)arg1 ofType:(long long)arg2 withOptions:(id)arg3 completion:(id)arg4;
 - (void)reportProgress:(id)arg1;
 - (void)setProgressBlock:(id)arg1;
 - (void)uninstallIdentifiers:(id)arg1 withOptions:(id)arg2 completion:(id)arg3;

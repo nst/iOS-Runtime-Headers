@@ -11,12 +11,12 @@
 @interface MCTeslaConfiguration : NSObject {
     id _callback;
     NSXPCConnection *_connection;
-    BOOL _fetching;
+    bool_fetching;
 }
 
 @property(copy) id callback;
 @property(retain) NSXPCConnection * connection;
-@property(getter=isFetching) BOOL fetching;
+@property(getter=isFetching) bool fetching;
 
 - (void).cxx_destruct;
 - (id)callback;
@@ -26,9 +26,9 @@
 - (void)fetchConfigurationWithCompletionBlock:(id)arg1;
 - (void)fetchDidFailWithError:(id)arg1;
 - (id)init;
-- (BOOL)isFetching;
+- (bool)isFetching;
 - (void)setCallback:(id)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setFetching:(BOOL)arg1;
+- (void)setFetching:(bool)arg1;
 
 @end

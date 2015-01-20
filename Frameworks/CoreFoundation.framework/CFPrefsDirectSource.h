@@ -5,17 +5,18 @@
 @class CFPDSource;
 
 @interface CFPrefsDirectSource : CFPrefsPlistSource {
-    BOOL _managed;
+    unsigned long long _inode;
     CFPDSource *_underlyingSource;
+    bool_managed;
 }
 
 - (unsigned char)alreadylocked_requestNewData;
-- (void*)copyReplyForDirectMessage:(id)arg1 error:(BOOL*)arg2;
-- (id)createRequestNewContentMessageForDaemon:(BOOL)arg1;
+- (void*)copyReplyForDirectMessage:(id)arg1 error:(bool*)arg2;
+- (id)createRequestNewContentMessageForDaemon:(bool)arg1;
 - (void)dealloc;
-- (BOOL)managed;
+- (bool)managed;
 - (void)sendFullyPreparedMessage:(id)arg1 settingValue:(void*)arg2 forKey:(struct __CFString { }*)arg3;
-- (BOOL)sendMessage:(id)arg1;
-- (void)setManaged:(BOOL)arg1;
+- (bool)sendMessage:(id)arg1;
+- (void)setManaged:(bool)arg1;
 
 @end

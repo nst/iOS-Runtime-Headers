@@ -24,7 +24,7 @@
 @property(copy) NSString * localID;
 @property(copy) NSString * message;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)CKAssignToContainerWithID:(id)arg1;

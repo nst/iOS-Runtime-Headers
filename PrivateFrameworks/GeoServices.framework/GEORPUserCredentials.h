@@ -9,8 +9,8 @@
     NSString *_icloudUserPersonId;
 }
 
-@property(readonly) BOOL hasIcloudUserMapsAuthToken;
-@property(readonly) BOOL hasIcloudUserPersonId;
+@property(readonly) bool hasIcloudUserMapsAuthToken;
+@property(readonly) bool hasIcloudUserPersonId;
 @property(retain) NSString * icloudUserMapsAuthToken;
 @property(retain) NSString * icloudUserPersonId;
 
@@ -21,14 +21,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIcloudUserMapsAuthToken;
-- (BOOL)hasIcloudUserPersonId;
-- (unsigned int)hash;
+- (bool)hasIcloudUserMapsAuthToken;
+- (bool)hasIcloudUserPersonId;
+- (unsigned long long)hash;
 - (id)icloudUserMapsAuthToken;
 - (id)icloudUserPersonId;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIcloudUserMapsAuthToken:(id)arg1;
 - (void)setIcloudUserPersonId:(id)arg1;
 - (void)writeTo:(id)arg1;

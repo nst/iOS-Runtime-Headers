@@ -7,20 +7,20 @@
 @interface PUPhotosDataSourceSectionCache : NSObject {
     NSDictionary *_assetCollectionToSection;
     PHFetchResult *_collectionListFetchResult;
-    int _estimatedPhotosCount;
-    int _estimatedVideosCount;
+    long long _estimatedPhotosCount;
+    long long _estimatedVideosCount;
 }
 
 @property(readonly) NSDictionary * assetCollectionToSection;
 @property(readonly) PHFetchResult * collectionListFetchResult;
-@property(readonly) int estimatedPhotosCount;
-@property(readonly) int estimatedVideosCount;
+@property(readonly) long long estimatedPhotosCount;
+@property(readonly) long long estimatedVideosCount;
 
 - (void).cxx_destruct;
 - (id)assetCollectionToSection;
 - (id)collectionListFetchResult;
-- (int)estimatedPhotosCount;
-- (int)estimatedVideosCount;
+- (long long)estimatedPhotosCount;
+- (long long)estimatedVideosCount;
 - (id)initWithCollectionListFetchResult:(id)arg1;
 
 @end

@@ -10,6 +10,6 @@
 @property(retain) TDTemplateRenderingMode * templateRenderingMode;
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
-- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
+- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(bool)arg2;
 
 @end

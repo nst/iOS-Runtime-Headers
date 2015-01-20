@@ -10,10 +10,10 @@
 }
 
 - (void)clear;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)createFontWithName:(id)arg1;
 - (void)dealloc;
-- (id)fontWithName:(id)arg1 create:(BOOL)arg2;
+- (id)fontWithName:(id)arg1 create:(bool)arg2;
 - (id)fontWithName:(id)arg1;
 - (id)fonts;
 - (id)init;

@@ -7,26 +7,26 @@
 @interface PKPassPaymentFooterContentView : UIView {
     UIView *_bottomRule;
     UIButton *_infoButton;
-    BOOL _isVisibleAsFooter;
     PKPaymentPass *_pass;
+    bool_isVisibleAsFooter;
 }
 
 @property(readonly) UIView * bottomRule;
 @property(readonly) UIButton * infoButton;
-@property(readonly) BOOL isVisibleAsFooter;
+@property(readonly) bool isVisibleAsFooter;
 @property(readonly) PKPaymentPass * pass;
 
 - (void)_infoButtonPressed:(id)arg1;
 - (id)bottomRule;
 - (void)dealloc;
-- (void)didBecomeHiddenAnimated:(BOOL)arg1;
-- (void)didBecomeVisibleAnimated:(BOOL)arg1;
+- (void)didBecomeHiddenAnimated:(bool)arg1;
+- (void)didBecomeVisibleAnimated:(bool)arg1;
 - (id)infoButton;
 - (id)initWithPass:(id)arg1;
-- (BOOL)isVisibleAsFooter;
+- (bool)isVisibleAsFooter;
 - (void)layoutSubviews;
 - (id)pass;
-- (void)willBecomeHiddenAnimated:(BOOL)arg1;
-- (void)willBecomeVisibleAnimated:(BOOL)arg1;
+- (void)willBecomeHiddenAnimated:(bool)arg1;
+- (void)willBecomeVisibleAnimated:(bool)arg1;
 
 @end

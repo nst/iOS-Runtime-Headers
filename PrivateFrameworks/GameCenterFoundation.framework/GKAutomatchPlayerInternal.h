@@ -6,7 +6,7 @@
 }
 
 - (id)alias;
-- (BOOL)isAutomatchPlayer;
+- (bool)isAutomatchPlayer;
 - (id)playerID;
 
 @end

@@ -15,7 +15,7 @@
 
 + (Class)dataMessageStoreToUse;
 + (unsigned int)displayablePriorityForPriority:(int)arg1;
-+ (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
++ (id)forwardedMessagePrefixWithSpacer:(bool)arg1;
 + (unsigned int)validatePriority:(int)arg1;
 
 - (id)URL;
@@ -53,7 +53,7 @@
 - (void)setSubject:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (id)sg_bestAlternativePart;
-- (BOOL)shouldSetSummary;
+- (bool)shouldSetSummary;
 - (id)subject;
 - (id)subjectAndPrefixLength:(unsigned int*)arg1;
 - (id)subjectNotIncludingReAndFwdPrefix;

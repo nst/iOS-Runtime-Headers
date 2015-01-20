@@ -6,26 +6,26 @@
 
 @interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate> {
     _UIBackdropView *_backdropView;
-    BOOL _backlightActiveOnLaunch;
     PKPassGroupsViewController *_passGroupsViewController;
     CLInUseAssertion *_passbookForegroundAssertion;
     PKPaymentService *_paymentService;
+    bool_backlightActiveOnLaunch;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)_createGroupsController;
-+ (BOOL)_isSecureForRemoteViewService;
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (bool)_isSecureForRemoteViewService;
++ (bool)_shouldForwardViewWillTransitionToSize;
 + (id)groupsController;
 + (void)preloadGroupsController;
 
 - (void)_dismiss;
 - (void)_dismissIfRestricted;
-- (BOOL)_isBacklightActive;
+- (bool)_isBacklightActive;
 - (void)_willAppearInRemoteViewController;
 - (void)dealloc;
 - (void)handleHomeButtonPressed;
@@ -33,13 +33,13 @@
 - (void)paymentContainerDidFinishAnimatingNotification:(id)arg1;
 - (void)paymentPassWithUniqueIdentifierDidAuthorize:(id)arg1;
 - (void)paymentPassWithUniqueIdentifierDidDeauthorize:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)shouldAutorotate;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

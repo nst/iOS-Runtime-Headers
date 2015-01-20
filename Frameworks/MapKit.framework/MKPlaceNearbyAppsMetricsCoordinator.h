@@ -6,28 +6,28 @@
 
 @interface MKPlaceNearbyAppsMetricsCoordinator : NSObject {
     NSMutableArray *_callbacks;
-    BOOL _controllerReady;
     SSMetricsController *_metricsController;
     NSString *_pageContext;
     NSString *_topic;
     SSURLBag *_urlBag;
+    bool_controllerReady;
 }
 
 @property(readonly) NSMutableArray * callbacks;
-@property BOOL controllerReady;
+@property bool controllerReady;
 @property(copy) NSString * pageContext;
 @property(copy) NSString * topic;
 @property(readonly) SSURLBag * urlBag;
 
 - (void).cxx_destruct;
 - (id)callbacks;
-- (BOOL)controllerReady;
+- (bool)controllerReady;
 - (void)getMetricsControllerWithCompletionHandler:(id)arg1;
 - (id)initWithConfigurationIdentifier:(id)arg1;
 - (id)pageContext;
 - (void)performCallbacks;
 - (void)sendEvent:(id)arg1;
-- (void)setControllerReady:(BOOL)arg1;
+- (void)setControllerReady:(bool)arg1;
 - (void)setPageConfiguration:(id)arg1;
 - (void)setPageContext:(id)arg1;
 - (void)setTopic:(id)arg1;

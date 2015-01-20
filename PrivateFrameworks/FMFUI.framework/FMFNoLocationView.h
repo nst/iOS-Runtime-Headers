@@ -5,7 +5,6 @@
 @class <FMFNoLocationViewDelegate>, NSLayoutConstraint, UIImage, UIImageView, UILabel, UIView;
 
 @interface FMFNoLocationView : UIView {
-    BOOL _blockLabelUpdates;
     UIView *_blur;
     NSLayoutConstraint *_bottomInsetConstraint;
     <FMFNoLocationViewDelegate> *_delegate;
@@ -15,9 +14,10 @@
     UIImageView *_offlineProfileImageView;
     UIImageView *_personImageView;
     NSLayoutConstraint *_topInsetConstraint;
+    bool_blockLabelUpdates;
 }
 
-@property BOOL blockLabelUpdates;
+@property bool blockLabelUpdates;
 @property(retain) UIView * blur;
 @property(retain) NSLayoutConstraint * bottomInsetConstraint;
 @property <FMFNoLocationViewDelegate> * delegate;
@@ -30,19 +30,19 @@
 
 - (void).cxx_destruct;
 - (void)addLayoutConstraints;
-- (BOOL)blockLabelUpdates;
+- (bool)blockLabelUpdates;
 - (id)blur;
 - (id)bottomInsetConstraint;
 - (void)dealloc;
 - (id)delegate;
 - (id)detailsLabel;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)insetView;
 - (id)offlineProfileImage;
 - (id)offlineProfileImageView;
 - (id)personImageView;
-- (void)setAlpha:(float)arg1;
-- (void)setBlockLabelUpdates:(BOOL)arg1;
+- (void)setAlpha:(double)arg1;
+- (void)setBlockLabelUpdates:(bool)arg1;
 - (void)setBlur:(id)arg1;
 - (void)setBottomInsetConstraint:(id)arg1;
 - (void)setDelegate:(id)arg1;

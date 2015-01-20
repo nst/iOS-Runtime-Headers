@@ -7,18 +7,18 @@
 @interface HKDataUnit : NSObject <NSCopying> {
     HKSampleType *_dataType;
     NSString *_displayName;
-    BOOL _isCharacteristic;
-    int _keyboardType;
-    BOOL _listeningForLocaleChanges;
-    float _scalarValue;
+    long long _keyboardType;
+    double _scalarValue;
     NSString *_singularDisplayName;
     HKUnit *_unit;
+    bool_isCharacteristic;
+    bool_listeningForLocaleChanges;
 }
 
 @property(readonly) HKSampleType * dataType;
 @property(readonly) NSString * displayName;
-@property int keyboardType;
-@property(readonly) float scalarValue;
+@property long long keyboardType;
+@property(readonly) double scalarValue;
 @property(readonly) NSString * singularDisplayName;
 @property(readonly) HKUnit * unit;
 
@@ -26,7 +26,7 @@
 - (id)_dataTypeForIdentifier:(id)arg1 aggregationType:(id)arg2;
 - (id)_displayNameForUnit:(id)arg1 localizablePrefix:(id)arg2;
 - (id)_initAsCopyOf:(id)arg1;
-- (id)_lengthUnitForCurrentLocaleWithLongLength:(BOOL)arg1;
+- (id)_lengthUnitForCurrentLocaleWithLongLength:(bool)arg1;
 - (id)_massUnitForCurrentLocale;
 - (id)_temperatureUnitForCurrentLocale;
 - (id)_unitForCurrentLocale;
@@ -38,17 +38,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initFromDictionary:(id)arg1;
-- (BOOL)isCharacteristic;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNikeFuel;
-- (BOOL)isSleep;
-- (int)keyboardType;
+- (bool)isCharacteristic;
+- (bool)isEqual:(id)arg1;
+- (bool)isNikeFuel;
+- (bool)isSleep;
+- (long long)keyboardType;
 - (void)localeDidChange:(id)arg1;
-- (float)scalarValue;
-- (void)setKeyboardType:(int)arg1;
+- (double)scalarValue;
+- (void)setKeyboardType:(long long)arg1;
 - (id)singularDisplayName;
 - (id)unit;
 

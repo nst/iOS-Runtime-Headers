@@ -6,25 +6,25 @@
 
 @interface PUPhotoDecoration : NSObject <NSCopying> {
     UIColor *_borderColor;
-    float _borderWidth;
+    double _borderWidth;
     UIColor *_foregroundColor;
 }
 
 @property(copy) UIColor * borderColor;
-@property float borderWidth;
+@property double borderWidth;
 @property(copy) UIColor * foregroundColor;
 
 - (void).cxx_destruct;
 - (id)borderColor;
-- (float)borderWidth;
+- (double)borderWidth;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)foregroundColor;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)photoDecorationVariantsWithIncreasingAlpha:(int)arg1;
-- (id)photoDecorationVariantsWithIncreasingBorderBrightness:(int)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)photoDecorationVariantsWithIncreasingAlpha:(long long)arg1;
+- (id)photoDecorationVariantsWithIncreasingBorderBrightness:(long long)arg1;
 - (void)setBorderColor:(id)arg1;
-- (void)setBorderWidth:(float)arg1;
+- (void)setBorderWidth:(double)arg1;
 - (void)setForegroundColor:(id)arg1;
 
 @end

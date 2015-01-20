@@ -9,37 +9,37 @@
     NSString *_alertMessage;
     NSString *_alternateButtonTitle;
     NSString *_defaultButtonTitle;
-    BOOL _dismissOverlaysOnLockscreen;
-    BOOL _forceModalAlertAppearance;
-    BOOL _showAsTopmost;
-    BOOL _showOnLockscreen;
+    bool_dismissOverlaysOnLockscreen;
+    bool_forceModalAlertAppearance;
+    bool_showAsTopmost;
+    bool_showOnLockscreen;
 }
 
 @property(copy) NSString * alertHeader;
 @property(copy) NSString * alertMessage;
 @property(copy) NSString * alternateButtonTitle;
 @property(copy) NSString * defaultButtonTitle;
-@property BOOL dismissOverlaysOnLockscreen;
-@property BOOL forceModalAlertAppearance;
-@property BOOL showAsTopmost;
-@property BOOL showOnLockscreen;
+@property bool dismissOverlaysOnLockscreen;
+@property bool forceModalAlertAppearance;
+@property bool showAsTopmost;
+@property bool showOnLockscreen;
 
 - (void).cxx_destruct;
 - (id)alertHeader;
 - (id)alertMessage;
 - (id)alternateButtonTitle;
 - (id)defaultButtonTitle;
-- (BOOL)dismissOverlaysOnLockscreen;
-- (BOOL)forceModalAlertAppearance;
+- (bool)dismissOverlaysOnLockscreen;
+- (bool)forceModalAlertAppearance;
 - (void)setAlertHeader:(id)arg1;
 - (void)setAlertMessage:(id)arg1;
 - (void)setAlternateButtonTitle:(id)arg1;
 - (void)setDefaultButtonTitle:(id)arg1;
-- (void)setDismissOverlaysOnLockscreen:(BOOL)arg1;
-- (void)setForceModalAlertAppearance:(BOOL)arg1;
-- (void)setShowAsTopmost:(BOOL)arg1;
-- (void)setShowOnLockscreen:(BOOL)arg1;
-- (BOOL)showAsTopmost;
-- (BOOL)showOnLockscreen;
+- (void)setDismissOverlaysOnLockscreen:(bool)arg1;
+- (void)setForceModalAlertAppearance:(bool)arg1;
+- (void)setShowAsTopmost:(bool)arg1;
+- (void)setShowOnLockscreen:(bool)arg1;
+- (bool)showAsTopmost;
+- (bool)showOnLockscreen;
 
 @end

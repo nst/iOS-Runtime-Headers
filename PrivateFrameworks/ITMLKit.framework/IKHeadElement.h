@@ -10,7 +10,7 @@
 
 @property(retain) NSArray * headChildren;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
 - (id)children;

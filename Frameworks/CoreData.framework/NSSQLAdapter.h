@@ -9,15 +9,15 @@
     NSSQLCore *_sqlCore;
 }
 
-- (id)_newSelectStatementWithFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2;
+- (id)_newSelectStatementWithFetchRequest:(id)arg1 ignoreInheritance:(bool)arg2;
 - (id)_originalRowForUpdate:(id)arg1;
 - (id)connections;
 - (id)createConnection;
 - (void)dealloc;
 - (Class)generatorClass;
-- (BOOL)hasOpenConnections;
+- (bool)hasOpenConnections;
 - (id)initWithSQLCore:(id)arg1;
-- (id)newCopyAndInsertStatementForManyToMany:(id)arg1 toManyToMany:(id)arg2 intermediateTableName:(id)arg3 invertColumns:(BOOL)arg4;
+- (id)newCopyAndInsertStatementForManyToMany:(id)arg1 toManyToMany:(id)arg2 intermediateTableName:(id)arg3 invertColumns:(bool)arg4;
 - (id)newCorrelationDeleteStatementForRelationship:(id)arg1;
 - (id)newCorrelationInsertStatementForRelationship:(id)arg1;
 - (id)newCorrelationMasterReorderStatementForRelationship:(id)arg1;
@@ -46,7 +46,7 @@
 - (id)sqlCore;
 - (unsigned int)sqlTypeForExpressionConstantValue:(id)arg1;
 - (Class)statementClass;
-- (BOOL)supportsCorrelatedSubqueries;
+- (bool)supportsCorrelatedSubqueries;
 - (id)type;
 - (id)typeStringForColumn:(id)arg1;
 - (id)typeStringForSQLType:(unsigned int)arg1;

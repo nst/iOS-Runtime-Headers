@@ -5,26 +5,26 @@
 @class MPUExtrasContext, NSLayoutConstraint, UIView, UIViewController, UIViewController<MPUExtrasVideoPlaybackViewController>;
 
 @interface MPUExtrasFeatureContainerViewController : UIViewController {
-    float _collectionViewHeight;
+    double _collectionViewHeight;
     MPUExtrasContext *_context;
     UIView *_menuBarView;
     NSLayoutConstraint *_overlayViewAdjustmentConstraint;
     UIViewController<MPUExtrasVideoPlaybackViewController> *_videoPlaybackViewController;
 }
 
-@property float collectionViewHeight;
+@property double collectionViewHeight;
 @property(readonly) MPUExtrasContext * context;
 @property UIView * menuBarView;
 @property(retain) UIViewController * videoPlaybackViewController;
 
 - (void).cxx_destruct;
 - (void)_menuBarHeightChange:(id)arg1;
-- (float)collectionViewHeight;
+- (double)collectionViewHeight;
 - (id)context;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;
 - (id)menuBarView;
-- (void)setCollectionViewHeight:(float)arg1;
+- (void)setCollectionViewHeight:(double)arg1;
 - (void)setMenuBarView:(id)arg1;
 - (void)setVideoPlaybackViewController:(id)arg1;
 - (id)videoPlaybackViewController;

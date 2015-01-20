@@ -3,14 +3,14 @@
  */
 
 @interface CKMessageAlertSheet : UIAlertView {
-    BOOL _showingTagline;
+    bool_showingTagline;
 }
 
-@property BOOL showingTagline;
+@property bool showingTagline;
 
-- (void)layoutAnimated:(BOOL)arg1;
-- (void)setShowingTagline:(BOOL)arg1;
-- (BOOL)showingTagline;
+- (void)layoutAnimated:(bool)arg1;
+- (void)setShowingTagline:(bool)arg1;
+- (bool)showingTagline;
 - (void)updateTagline;
 
 @end

@@ -9,18 +9,18 @@
 @class BKSProcessAssertion, NSError, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, _UIAsyncInvocation, _UIRemoteViewService;
 
 @interface _UIViewServiceInterfaceConnectionRequest : NSObject {
-    BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     NSError *_cancellationError;
     _UIAsyncInvocation *_cancellationInvocation;
     id _connectionHandler;
-    BOOL _isCancelled;
     NSObject<OS_dispatch_queue> *_queue;
     _UIRemoteViewService *_service;
     NSString *_serviceBundleIdentifier;
     BKSProcessAssertion *_serviceProcessAssertion;
     NSXPCConnection *_serviceSessionConnection;
     int _sessionRequestNotifyToken;
+    bool__automatic_invalidation_invalidated;
+    bool_isCancelled;
 }
 
 + (id)_connectToViewServiceWithBundleIdentifier:(id)arg1 service:(id)arg2 connectionHandler:(id)arg3;
@@ -36,12 +36,12 @@
 - (void)_createProcessAssertionForPID:(int)arg1 aquiredHandler:(id)arg2;
 - (void)_didConnectToService;
 - (void)_establishConnection;
-- (BOOL)_isDeallocating;
+- (bool)_isDeallocating;
 - (void)_launchService;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

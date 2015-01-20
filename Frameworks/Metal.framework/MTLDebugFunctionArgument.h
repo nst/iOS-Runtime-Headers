@@ -3,15 +3,15 @@
  */
 
 @interface MTLDebugFunctionArgument : NSObject {
-    unsigned int bufferOffset;
-    BOOL hasBeenUsed;
-    BOOL hasLodClamp;
-    BOOL isValid;
+    boolhasBeenUsed;
+    boolhasLodClamp;
+    boolisValid;
+    unsigned long long bufferOffset;
     float lodMaxClamp;
     float lodMinClamp;
     id object;
-    unsigned int threadgroupMemoryLength;
-    unsigned int type;
+    unsigned long long threadgroupMemoryLength;
+    unsigned long long type;
 }
 
 - (void).cxx_destruct;

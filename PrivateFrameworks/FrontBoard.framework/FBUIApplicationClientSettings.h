@@ -5,12 +5,12 @@
 @interface FBUIApplicationClientSettings : BSMutableSettings {
 }
 
-@property BOOL allowCPUThrottlingWhenResuming;
+@property bool allowCPUThrottlingWhenResuming;
 @property double watchdogExtension;
 
-- (BOOL)allowCPUThrottlingWhenResuming;
-- (BOOL)isUIApplicationClientSettings;
-- (void)setAllowCPUThrottlingWhenResuming:(BOOL)arg1;
+- (bool)allowCPUThrottlingWhenResuming;
+- (bool)isUIApplicationClientSettings;
+- (void)setAllowCPUThrottlingWhenResuming:(bool)arg1;
 - (void)setWatchdogExtension:(double)arg1;
 - (double)watchdogExtension;
 

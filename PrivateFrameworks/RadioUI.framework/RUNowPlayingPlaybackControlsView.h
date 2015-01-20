@@ -6,29 +6,29 @@
 
 @interface RUNowPlayingPlaybackControlsView : MPUNowPlayingPlaybackControlsView {
     UIButton *_infoButton;
-    BOOL _isWide;
+    bool_isWide;
 }
 
 @property <RUNowPlayingPlaybackControlsViewDelegate><MPTransportControlsTarget> * delegate;
 @property(readonly) UIButton * infoButton;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForCenteringCreateActivityIndicatorView;
-- (void)_destroyInfoButtonAnimated:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForCenteringCreateActivityIndicatorView;
+- (void)_destroyInfoButtonAnimated:(bool)arg1;
 - (void)_infoButtonAction:(id)arg1;
-- (BOOL)_isRadioItem;
-- (BOOL)_shouldAddBottomGap;
-- (float)_titlesLastResortVerticalOffsetPhone;
+- (bool)_isRadioItem;
+- (bool)_shouldAddBottomGap;
+- (double)_titlesLastResortVerticalOffsetPhone;
 - (Class)_transportControlsClass;
-- (float)_transportControlsLastResortVerticalOffsetPhone;
-- (void)_updateForItemDidChangeAnimated:(BOOL)arg1;
+- (double)_transportControlsLastResortVerticalOffsetPhone;
+- (void)_updateForItemDidChangeAnimated:(bool)arg1;
 - (void)_updateSizeClass;
-- (float)_volumeBottomVerticalInsetPhone;
+- (double)_volumeBottomVerticalInsetPhone;
 - (void)dealloc;
 - (id)infoButton;
 - (void)layoutSubviews;
 - (id)newProgressIndicator;
-- (void)setShowingCreateLoadingIndicator:(BOOL)arg1;
+- (void)setShowingCreateLoadingIndicator:(bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

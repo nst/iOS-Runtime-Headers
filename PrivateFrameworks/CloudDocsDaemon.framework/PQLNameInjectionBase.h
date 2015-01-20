@@ -6,16 +6,16 @@
 
 @interface PQLNameInjectionBase : NSData {
     char *_bytes;
-    unsigned int _length;
+    unsigned long long _length;
 }
 
 @property(readonly) NSData * sql;
 
 - (const void*)bytes;
 - (void)dealloc;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (id)initWithData:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (id)sql;
 
 @end

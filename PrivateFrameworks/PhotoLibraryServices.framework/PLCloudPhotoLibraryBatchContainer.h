@@ -6,30 +6,30 @@
 
 @interface PLCloudPhotoLibraryBatchContainer : NSObject {
     CPLChangeBatch *_batch;
-    BOOL _reachedMinSplit;
-    unsigned int _retryCount;
-    BOOL _wasSplit;
+    unsigned long long _retryCount;
+    bool_reachedMinSplit;
+    bool_wasSplit;
 }
 
 @property(retain) CPLChangeBatch * batch;
-@property BOOL reachedMinSplit;
-@property unsigned int retryCount;
-@property BOOL wasSplit;
+@property bool reachedMinSplit;
+@property unsigned long long retryCount;
+@property bool wasSplit;
 
 - (void)addRecord:(id)arg1;
 - (id)batch;
 - (id)batchesSplitForError;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (void)incrementRetryCount;
 - (id)init;
 - (id)lastAddedRecord;
-- (BOOL)reachedMinSplit;
-- (unsigned int)retryCount;
+- (bool)reachedMinSplit;
+- (unsigned long long)retryCount;
 - (void)setBatch:(id)arg1;
-- (void)setReachedMinSplit:(BOOL)arg1;
-- (void)setRetryCount:(unsigned int)arg1;
-- (void)setWasSplit:(BOOL)arg1;
-- (BOOL)wasSplit;
+- (void)setReachedMinSplit:(bool)arg1;
+- (void)setRetryCount:(unsigned long long)arg1;
+- (void)setWasSplit:(bool)arg1;
+- (bool)wasSplit;
 
 @end

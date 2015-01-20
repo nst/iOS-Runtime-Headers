@@ -43,7 +43,7 @@
 @property float horzUncSemiMin;
 @property double timestampGps;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (double)deltaDistance;

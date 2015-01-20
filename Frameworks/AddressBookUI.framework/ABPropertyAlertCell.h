@@ -10,15 +10,15 @@
 @property(readonly) ABPropertyGroupAlertItem * alertItem;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-+ (BOOL)wantsChevron;
++ (bool)wantsChevron;
 
 - (id)alertItem;
 - (void)performDefaultAction;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 
 @end

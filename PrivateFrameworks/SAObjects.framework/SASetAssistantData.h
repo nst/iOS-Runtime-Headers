@@ -11,7 +11,7 @@
 @property(copy) NSString * aceId;
 @property(copy) NSNumber * allowUserGeneratedContent;
 @property(copy) NSString * anchor;
-@property BOOL censorSpeech;
+@property bool censorSpeech;
 @property(copy) NSString * countryCode;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy) NSNumber * debugFlags;
@@ -21,8 +21,8 @@
 @property(copy) NSString * deviceEnclosure;
 @property(copy) NSString * deviceVersion;
 @property(copy) NSString * firstName;
-@property BOOL handsFree;
-@property(readonly) unsigned int hash;
+@property bool handsFree;
+@property(readonly) unsigned long long hash;
 @property(copy) NSNumber * holdToTalkThresholdInMilliseconds;
 @property(copy) NSString * lastName;
 @property(copy) NSArray * meCards;
@@ -38,7 +38,7 @@
 @property(copy) NSNumber * twentyFourHourTimeDisplay;
 @property(copy) NSNumber * uiScale;
 @property(copy) NSString * userInterfaceIdiom;
-@property BOOL voiceOver;
+@property bool voiceOver;
 @property(copy) NSNumber * voiceTriggerEnabled;
 
 + (id)setAssistantData;
@@ -47,7 +47,7 @@
 - (id)abSources;
 - (id)allowUserGeneratedContent;
 - (id)anchor;
-- (BOOL)censorSpeech;
+- (bool)censorSpeech;
 - (id)countryCode;
 - (id)debugFlags;
 - (id)deviceCapabilities;
@@ -57,7 +57,7 @@
 - (id)encodedClassName;
 - (id)firstName;
 - (id)groupIdentifier;
-- (BOOL)handsFree;
+- (bool)handsFree;
 - (id)holdToTalkThresholdInMilliseconds;
 - (id)lastName;
 - (id)meCards;
@@ -67,7 +67,7 @@
 - (void)setAbSources:(id)arg1;
 - (void)setAllowUserGeneratedContent:(id)arg1;
 - (void)setAnchor:(id)arg1;
-- (void)setCensorSpeech:(BOOL)arg1;
+- (void)setCensorSpeech:(bool)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setDebugFlags:(id)arg1;
 - (void)setDeviceCapabilities:(id)arg1;
@@ -75,7 +75,7 @@
 - (void)setDeviceEnclosure:(id)arg1;
 - (void)setDeviceVersion:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setHandsFree:(BOOL)arg1;
+- (void)setHandsFree:(bool)arg1;
 - (void)setHoldToTalkThresholdInMilliseconds:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMeCards:(id)arg1;
@@ -89,7 +89,7 @@
 - (void)setTwentyFourHourTimeDisplay:(id)arg1;
 - (void)setUiScale:(id)arg1;
 - (void)setUserInterfaceIdiom:(id)arg1;
-- (void)setVoiceOver:(BOOL)arg1;
+- (void)setVoiceOver:(bool)arg1;
 - (void)setVoiceTriggerEnabled:(id)arg1;
 - (id)storefront;
 - (id)temperatureUnit;
@@ -98,7 +98,7 @@
 - (id)twentyFourHourTimeDisplay;
 - (id)uiScale;
 - (id)userInterfaceIdiom;
-- (BOOL)voiceOver;
+- (bool)voiceOver;
 - (id)voiceTriggerEnabled;
 
 @end

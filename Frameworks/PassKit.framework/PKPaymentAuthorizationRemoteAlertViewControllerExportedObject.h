@@ -13,18 +13,18 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <PKPaymentAuthorizationServiceProtocol> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
-- (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
-- (void)authorizationDidSelectShippingMethodCompleteWithStatus:(int)arg1 paymentSummaryItems:(id)arg2;
+- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(long long)arg1;
+- (void)authorizationDidSelectShippingAddressCompleteWithStatus:(long long)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
+- (void)authorizationDidSelectShippingMethodCompleteWithStatus:(long long)arg1 paymentSummaryItems:(id)arg2;
 - (id)controller;
 - (id)delegate;
 - (void)handleDismissWithCompletion:(id)arg1;
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationDidCancel;
-- (void)handleHostApplicationWillResignActive:(BOOL)arg1;
+- (void)handleHostApplicationWillResignActive:(bool)arg1;
 - (id)initWithController:(id)arg1;
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;

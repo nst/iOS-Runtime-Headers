@@ -12,9 +12,9 @@
     id _getBlock;
     CoreDAVContainerMultiGetTask *_multiGetTask;
     NSMutableSet *_parsedContents;
-    BOOL _shouldIgnoreResponseErrors;
     NSMutableSet *_urls;
-    BOOL _usingMultiGet;
+    bool_shouldIgnoreResponseErrors;
+    bool_usingMultiGet;
 }
 
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;
@@ -23,10 +23,10 @@
 @property(readonly) NSSet * deletedURLs;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSError * error;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSSet * missingURLs;
 @property(readonly) NSSet * parsedContents;
-@property BOOL shouldIgnoreResponseErrors;
+@property bool shouldIgnoreResponseErrors;
 @property(readonly) Class superclass;
 @property <CoreDAVTaskManager> * taskManager;
 @property double timeoutInterval;
@@ -40,8 +40,8 @@
 - (id)initWithURLs:(id)arg1 multiGetBlock:(id)arg2 getBlock:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;
 - (id)missingURLs;
 - (id)parsedContents;
-- (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
-- (BOOL)shouldIgnoreResponseErrors;
+- (void)setShouldIgnoreResponseErrors:(bool)arg1;
+- (bool)shouldIgnoreResponseErrors;
 - (void)startTaskGroup;
 
 @end

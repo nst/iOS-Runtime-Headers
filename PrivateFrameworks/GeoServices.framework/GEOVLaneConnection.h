@@ -20,9 +20,9 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)firstLaneIndex;
 - (unsigned int)firstRoadIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)secondLaneIndex;
 - (unsigned int)secondRoadIndex;
 - (void)setFirstLaneIndex:(unsigned int)arg1;

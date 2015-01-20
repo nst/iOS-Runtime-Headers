@@ -5,9 +5,9 @@
 @class AVWeakReference;
 
 @interface AVFlashlightInternal_FigRecorder : NSObject {
-    BOOL available;
+    boolavailable;
+    booloverheated;
     float flashlightLevel;
-    BOOL overheated;
     struct OpaqueFigRecorder { } *recorder;
     AVWeakReference *weakReference;
 }

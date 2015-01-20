@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * description;
 @property(retain) NSExtension * extension;
 @property(copy) <NSCopying><NSObject> * extensionRequestIdentifier;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * identifier;
 @property <_UIDocumentPickerRemoteViewControllerContaining> * publicController;
 @property(readonly) Class superclass;
@@ -27,7 +27,7 @@
 - (void)_didSelectURLWrapper:(id)arg1;
 - (void)_dismissViewController;
 - (void)_dismissWithOption:(id)arg1;
-- (void)_preferredContentSizeChanged:(struct CGSize { float x1; float x2; })arg1;
+- (void)_preferredContentSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (id)extension;
 - (id)extensionRequestIdentifier;

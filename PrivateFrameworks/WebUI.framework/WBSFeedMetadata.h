@@ -14,7 +14,7 @@
 @property(readonly) NSURL * imageURL;
 @property(readonly) NSString * title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

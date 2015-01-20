@@ -6,8 +6,6 @@
 
 @interface BRCSystemResourcesManager : NSObject <BRReachabilityObserver> {
     NSHashTable *_appListObservers;
-    BOOL _invalidated;
-    BOOL _isNetworkReachable;
     NSObject<OS_dispatch_source> *_isNetworkReachableTimer;
     NSMutableDictionary *_lowDiskDict;
     NSMutableSet *_lowDiskSet;
@@ -16,20 +14,22 @@
     NSHashTable *_lowMemoryObservers;
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     NSObject<OS_dispatch_queue> *_notificationQueue;
-    BOOL _powerLevelOK;
     NSObject<OS_dispatch_source> *_powerLevelOKTimer;
     int _powerNotifyToken;
     NSHashTable *_powerObservers;
     NSMapTable *_processObservers;
     BRReachabilityMonitor *_reachabilityMonitor;
     NSHashTable *_reachabilityObservers;
+    bool_invalidated;
+    bool_isNetworkReachable;
+    bool_powerLevelOK;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isNetworkReachable;
-@property(readonly) BOOL isPowerOK;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isNetworkReachable;
+@property(readonly) bool isPowerOK;
 @property(readonly) Class superclass;
 
 + (id)manager;
@@ -51,14 +51,14 @@
 - (void)_invalidateProcessMonitorObject:(id)arg1;
 - (void)_invalidateProcessObservers;
 - (void)_invalidateReachability;
-- (void)_processLowDiskNotification:(BOOL)arg1;
+- (void)_processLowDiskNotification:(bool)arg1;
 - (void)_resetLowDiskManager;
 - (void)_resetPowerManager;
 - (void)_resetReachability;
-- (void)_setNetworkReachable:(BOOL)arg1;
-- (void)_setNetworkReachableWithCoalescing:(BOOL)arg1;
-- (void)_setPowerLevel:(BOOL)arg1;
-- (void)_setPowerLevelWithCoalescing:(BOOL)arg1;
+- (void)_setNetworkReachable:(bool)arg1;
+- (void)_setNetworkReachableWithCoalescing:(bool)arg1;
+- (void)_setPowerLevel:(bool)arg1;
+- (void)_setPowerLevelWithCoalescing:(bool)arg1;
 - (void)addAppListObserver:(id)arg1;
 - (void)addLowDiskObserver:(id)arg1 forDevice:(int)arg2;
 - (void)addLowMemoryObserver:(id)arg1;
@@ -67,11 +67,11 @@
 - (void)addReachabilityObserver:(id)arg1;
 - (void)close;
 - (void)dealloc;
-- (BOOL)hasEnoughSpaceForDevice:(int)arg1;
+- (bool)hasEnoughSpaceForDevice:(int)arg1;
 - (id)init;
-- (BOOL)isNetworkReachable;
-- (BOOL)isPowerOK;
-- (void)reachabilityMonitor:(id)arg1 didChangeReachabilityStatusTo:(BOOL)arg2;
+- (bool)isNetworkReachable;
+- (bool)isPowerOK;
+- (void)reachabilityMonitor:(id)arg1 didChangeReachabilityStatusTo:(bool)arg2;
 - (void)removeAppListObserver:(id)arg1;
 - (void)removeLowDiskObserver:(id)arg1 forDevice:(int)arg2;
 - (void)removeLowMemoryObserver:(id)arg1;

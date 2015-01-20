@@ -6,6 +6,6 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)validateItems:(id)arg1 error:(id*)arg2;
+- (bool)validateItems:(id)arg1 error:(id*)arg2;
 
 @end

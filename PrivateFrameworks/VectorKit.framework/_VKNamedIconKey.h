@@ -6,12 +6,12 @@
 
 @interface _VKNamedIconKey : NSObject {
     NSString *_name;
-    int _size;
+    long long _size;
 }
 
 - (void)dealloc;
-- (unsigned int)hash;
-- (id)initWithName:(id)arg1 size:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithName:(id)arg1 size:(long long)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -5,12 +5,12 @@
 @interface AWDPowerAudioMetrics : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioHeadsetDuration : 1; 
@@ -32,14 +32,14 @@
 @property unsigned int audioSpeakerDuration;
 @property unsigned int audioSpeakerPowerMicroWatt;
 @property(readonly) unsigned int* audioVolumeLevelDurationSpeakers;
-@property(readonly) unsigned int audioVolumeLevelDurationSpeakersCount;
+@property(readonly) unsigned long long audioVolumeLevelDurationSpeakersCount;
 @property(readonly) unsigned int* audioVolumeLevelDurations;
-@property(readonly) unsigned int audioVolumeLevelDurationsCount;
-@property BOOL hasAudioHeadsetDuration;
-@property BOOL hasAudioHeadsetPowerMicroWatt;
-@property BOOL hasAudioSpeakerDuration;
-@property BOOL hasAudioSpeakerPowerMicroWatt;
-@property BOOL hasTimestamp;
+@property(readonly) unsigned long long audioVolumeLevelDurationsCount;
+@property bool hasAudioHeadsetDuration;
+@property bool hasAudioHeadsetPowerMicroWatt;
+@property bool hasAudioSpeakerDuration;
+@property bool hasAudioSpeakerPowerMicroWatt;
+@property bool hasTimestamp;
 @property unsigned long long timestamp;
 
 - (void)addAudioVolumeLevelDuration:(unsigned int)arg1;
@@ -48,12 +48,12 @@
 - (unsigned int)audioHeadsetPowerMicroWatt;
 - (unsigned int)audioSpeakerDuration;
 - (unsigned int)audioSpeakerPowerMicroWatt;
-- (unsigned int)audioVolumeLevelDurationAtIndex:(unsigned int)arg1;
-- (unsigned int)audioVolumeLevelDurationSpeakerAtIndex:(unsigned int)arg1;
+- (unsigned int)audioVolumeLevelDurationAtIndex:(unsigned long long)arg1;
+- (unsigned int)audioVolumeLevelDurationSpeakerAtIndex:(unsigned long long)arg1;
 - (unsigned int*)audioVolumeLevelDurationSpeakers;
-- (unsigned int)audioVolumeLevelDurationSpeakersCount;
+- (unsigned long long)audioVolumeLevelDurationSpeakersCount;
 - (unsigned int*)audioVolumeLevelDurations;
-- (unsigned int)audioVolumeLevelDurationsCount;
+- (unsigned long long)audioVolumeLevelDurationsCount;
 - (void)clearAudioVolumeLevelDurationSpeakers;
 - (void)clearAudioVolumeLevelDurations;
 - (void)copyTo:(id)arg1;
@@ -61,26 +61,26 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAudioHeadsetDuration;
-- (BOOL)hasAudioHeadsetPowerMicroWatt;
-- (BOOL)hasAudioSpeakerDuration;
-- (BOOL)hasAudioSpeakerPowerMicroWatt;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAudioHeadsetDuration;
+- (bool)hasAudioHeadsetPowerMicroWatt;
+- (bool)hasAudioSpeakerDuration;
+- (bool)hasAudioSpeakerPowerMicroWatt;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAudioHeadsetDuration:(unsigned int)arg1;
 - (void)setAudioHeadsetPowerMicroWatt:(unsigned int)arg1;
 - (void)setAudioSpeakerDuration:(unsigned int)arg1;
 - (void)setAudioSpeakerPowerMicroWatt:(unsigned int)arg1;
-- (void)setAudioVolumeLevelDurationSpeakers:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setAudioVolumeLevelDurations:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setHasAudioHeadsetDuration:(BOOL)arg1;
-- (void)setHasAudioHeadsetPowerMicroWatt:(BOOL)arg1;
-- (void)setHasAudioSpeakerDuration:(BOOL)arg1;
-- (void)setHasAudioSpeakerPowerMicroWatt:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setAudioVolumeLevelDurationSpeakers:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setAudioVolumeLevelDurations:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setHasAudioHeadsetDuration:(bool)arg1;
+- (void)setHasAudioHeadsetPowerMicroWatt:(bool)arg1;
+- (void)setHasAudioSpeakerDuration:(bool)arg1;
+- (void)setHasAudioSpeakerPowerMicroWatt:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

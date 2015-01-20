@@ -5,8 +5,8 @@
 @interface DOMPageTransitionEvent : DOMEvent {
 }
 
-@property(readonly) BOOL persisted;
+@property(readonly) bool persisted;
 
-- (BOOL)persisted;
+- (bool)persisted;
 
 @end

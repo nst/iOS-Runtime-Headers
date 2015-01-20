@@ -5,27 +5,27 @@
 @class TSTExpressionNode;
 
 @interface TSTFormulaTokenContext : NSObject {
-    unsigned int mArgumentIndex;
+    unsigned long long mArgumentIndex;
     TSTExpressionNode *mExpressionNode;
-    unsigned int mParenNestingLevel;
+    unsigned long long mParenNestingLevel;
 }
 
-@property(readonly) unsigned int argumentIndex;
+@property(readonly) unsigned long long argumentIndex;
 @property(readonly) TSTExpressionNode * expressionNode;
-@property(readonly) unsigned int parenNestingLevel;
+@property(readonly) unsigned long long parenNestingLevel;
 
-+ (id)tokenContextWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned int)arg2 argumentIndex:(unsigned int)arg3;
-+ (id)tokenContextWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned int)arg2;
++ (id)tokenContextWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned long long)arg2 argumentIndex:(unsigned long long)arg3;
++ (id)tokenContextWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned long long)arg2;
 
-- (unsigned int)argumentIndex;
+- (unsigned long long)argumentIndex;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)expressionNode;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned int)arg2 argumentIndex:(unsigned int)arg3;
-- (id)initWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)parenNestingLevel;
+- (id)initWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned long long)arg2 argumentIndex:(unsigned long long)arg3;
+- (id)initWithExpressionNode:(id)arg1 parenNestingLevel:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)parenNestingLevel;
 
 @end

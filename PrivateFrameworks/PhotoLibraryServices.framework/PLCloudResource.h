@@ -14,9 +14,9 @@
 @property long long fileSize;
 @property(retain) NSString * fingerprint;
 @property int height;
-@property BOOL isAvailable;
-@property BOOL isFlattened;
-@property BOOL isLocallyAvailable;
+@property bool isAvailable;
+@property bool isFlattened;
+@property bool isLocallyAvailable;
 @property(retain) NSDate * lastOnDemandDownloadDate;
 @property(retain) NSDate * prunedAt;
 @property int type;
@@ -27,10 +27,10 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 forAsset:(id)arg2 withCPLResource:(id)arg3;
-+ (void)markResource:(id)arg1 asLocallyAvailable:(BOOL)arg2 inPhotoLibrary:(id)arg3;
++ (void)markResource:(id)arg1 asLocallyAvailable:(bool)arg2 inPhotoLibrary:(id)arg3;
 
 - (void)applyPropertiesFromCloudResource:(id)arg1 forAsset:(id)arg2;
-- (id)cplResourceWithItemIdentifier:(id)arg1 includeFile:(BOOL)arg2;
+- (id)cplResourceWithItemIdentifier:(id)arg1 includeFile:(bool)arg2;
 - (id)description;
 - (void)duplicatePropertiesFromCloudResource:(id)arg1 withFilePath:(id)arg2 forAssetUuid:(id)arg3;
 

@@ -26,36 +26,36 @@
         float x; 
         float y; 
         float z; 
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
-    BOOL _active;
-    unsigned int _categoryBitMask;
+     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8 */
+     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}16@0:8 */
+    unsigned long long _categoryBitMask;
     } _direction;
-    BOOL _exclusive;
-    float _falloffExponent;
+    double _falloffExponent;
     struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; } *_field;
     } _halfExtent;
-    float _minimumDistance;
+    double _minimumDistance;
     SCNNode *_node;
     } _offset;
     void *_reserved;
-    int _scope;
-    float _strength;
-    BOOL _usesEllipsoidalExtent;
+    long long _scope;
+    double _strength;
     SCNPhysicsWorld *_world;
+    bool_active;
+    bool_exclusive;
+    bool_usesEllipsoidalExtent;
 }
 
-@property(getter=isActive) BOOL active;
-@property unsigned int categoryBitMask;
+@property(getter=isActive) bool active;
+@property unsigned long long categoryBitMask;
 @property struct SCNVector3 { float x1; float x2; float x3; } direction;
-@property(getter=isExclusive) BOOL exclusive;
-@property float falloffExponent;
+@property(getter=isExclusive) bool exclusive;
+@property double falloffExponent;
 @property struct SCNVector3 { float x1; float x2; float x3; } halfExtent;
-@property float minimumDistance;
+@property double minimumDistance;
 @property struct SCNVector3 { float x1; float x2; float x3; } offset;
-@property int scope;
-@property float strength;
-@property BOOL usesEllipsoidalExtent;
+@property long long scope;
+@property double strength;
+@property bool usesEllipsoidalExtent;
 
 + (id)SCNJSExportProtocol;
 + (id)customFieldWithEvaluationBlock:(id)arg1;
@@ -64,11 +64,11 @@
 + (id)field;
 + (id)linearGravityField;
 + (id)magneticField;
-+ (id)noiseFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
++ (id)noiseFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)radialGravityField;
 + (id)springField;
-+ (BOOL)supportsSecureCoding;
-+ (id)turbulenceFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
++ (bool)supportsSecureCoding;
++ (id)turbulenceFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)vortexField;
 
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; boolx7; boolx8; boolx9; boolx10; float x11; }*)_createField;
@@ -80,33 +80,33 @@
 - (void)_setOwner:(id)arg1;
 - (void)_setWorld:(id)arg1;
 - (void)_setupCommonProperties;
-- (unsigned int)categoryBitMask;
+- (unsigned long long)categoryBitMask;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (struct SCNVector3 { float x1; float x2; float x3; })direction;
 - (void)encodeWithCoder:(id)arg1;
-- (float)falloffExponent;
+- (double)falloffExponent;
 - (struct SCNVector3 { float x1; float x2; float x3; })halfExtent;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isExclusive;
-- (float)minimumDistance;
+- (bool)isActive;
+- (bool)isExclusive;
+- (double)minimumDistance;
 - (struct SCNVector3 { float x1; float x2; float x3; })offset;
-- (int)scope;
-- (void)setActive:(BOOL)arg1;
-- (void)setCategoryBitMask:(unsigned int)arg1;
+- (long long)scope;
+- (void)setActive:(bool)arg1;
+- (void)setCategoryBitMask:(unsigned long long)arg1;
 - (void)setDirection:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setExclusive:(BOOL)arg1;
-- (void)setFalloffExponent:(float)arg1;
+- (void)setExclusive:(bool)arg1;
+- (void)setFalloffExponent:(double)arg1;
 - (void)setHalfExtent:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setMinimumDistance:(float)arg1;
+- (void)setMinimumDistance:(double)arg1;
 - (void)setOffset:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setScope:(int)arg1;
-- (void)setStrength:(float)arg1;
-- (void)setUsesEllipsoidalExtent:(BOOL)arg1;
-- (float)strength;
-- (BOOL)usesEllipsoidalExtent;
+- (void)setScope:(long long)arg1;
+- (void)setStrength:(double)arg1;
+- (void)setUsesEllipsoidalExtent:(bool)arg1;
+- (double)strength;
+- (bool)usesEllipsoidalExtent;
 
 @end

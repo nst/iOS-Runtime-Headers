@@ -6,8 +6,8 @@
 
 @interface SKUIBadgeViewElement : SKUIViewElement {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     UIImage *_fallbackImage;
     NSString *_resourceName;
     } _size;
@@ -17,20 +17,20 @@
 
 @property(readonly) NSURL * URL;
 @property(readonly) NSAttributedString * attributedString;
-@property(readonly) int badgeType;
+@property(readonly) long long badgeType;
 @property(readonly) UIImage * fallbackImage;
 @property(readonly) NSString * resourceName;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (id)accessibilityText;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)attributedString;
-- (int)badgeType;
+- (long long)badgeType;
 - (id)fallbackImage;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)resourceName;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

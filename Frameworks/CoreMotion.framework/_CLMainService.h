@@ -5,7 +5,7 @@
 @interface _CLMainService : NSObject <CLIntersiloServiceProtocol> {
 }
 
-@property BOOL valid;
+@property bool valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;

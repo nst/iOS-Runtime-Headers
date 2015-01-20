@@ -27,17 +27,17 @@
     NSSet *_relativePathsToRestoreOnly;
     NSSet *_relativePathsToRestoreOnlyFromService;
     NSString *_rootPath;
-    BOOL _shouldDigest;
+    bool_shouldDigest;
 }
 
-@property(getter=isAppDomain,readonly) BOOL appDomain;
+@property(getter=isAppDomain,readonly) bool appDomain;
 @property(readonly) NSString * containerID;
 @property(readonly) int containerType;
-@property(getter=isGroupAppDomain,readonly) BOOL groupAppDomain;
-@property(getter=isUninstalledAppDomain,readonly) BOOL installedAppDomain;
+@property(getter=isGroupAppDomain,readonly) bool groupAppDomain;
+@property(getter=isUninstalledAppDomain,readonly) bool installedAppDomain;
 @property(readonly) NSString * name;
-@property(getter=isPlaceholderAppDomain,readonly) BOOL placeholderAppDomain;
-@property(getter=isPluginAppDomain,readonly) BOOL pluginAppDomain;
+@property(getter=isPlaceholderAppDomain,readonly) bool placeholderAppDomain;
+@property(getter=isPluginAppDomain,readonly) bool pluginAppDomain;
 @property(retain) NSDictionary * relativePathAggregateDictionaryGroups;
 @property(retain) NSDictionary * relativePathDomainRedirects;
 @property(retain) NSSet * relativePathsNotToBackup;
@@ -61,9 +61,9 @@
 @property(retain) NSSet * relativePathsToRestoreOnly;
 @property(retain) NSSet * relativePathsToRestoreOnlyFromService;
 @property(readonly) NSString * rootPath;
-@property BOOL shouldDigest;
+@property bool shouldDigest;
 
-+ (BOOL)_boolFromValue:(id)arg1 forKey:(id)arg2;
++ (bool)_boolFromValue:(id)arg1 forKey:(id)arg2;
 + (id)_dictionaryOfStringsToStringFromValue:(id)arg1 forKey:(id)arg2;
 + (double)_doubleFromStringValueForKey:(id)arg1 plist:(id)arg2;
 + (void)_loadSystemDomains;
@@ -77,10 +77,10 @@
 + (id)containerIDWithName:(id)arg1;
 + (int)containerTypeWithName:(id)arg1;
 + (id)domainWithName:(id)arg1 rootPath:(id)arg2;
-+ (BOOL)isAppGroupName:(id)arg1;
-+ (BOOL)isAppPlaceholderName:(id)arg1;
-+ (BOOL)isAppPluginName:(id)arg1;
-+ (BOOL)isContainerName:(id)arg1;
++ (bool)isAppGroupName:(id)arg1;
++ (bool)isAppPlaceholderName:(id)arg1;
++ (bool)isAppPluginName:(id)arg1;
++ (bool)isContainerName:(id)arg1;
 + (id)nameWithAppID:(id)arg1;
 + (id)systemDomains;
 + (id)systemDomainsByName;
@@ -88,21 +88,21 @@
 + (double)systemDomainsMinSupportedVersion;
 + (double)systemDomainsVersion;
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)containerID;
 - (int)containerType;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithName:(id)arg1 plist:(id)arg2;
 - (id)initWithName:(id)arg1 rootPath:(id)arg2;
-- (BOOL)isAppDomain;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDomain:(id)arg1;
-- (BOOL)isGroupAppDomain;
-- (BOOL)isPlaceholderAppDomain;
-- (BOOL)isPluginAppDomain;
-- (BOOL)isUninstalledAppDomain;
+- (bool)isAppDomain;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDomain:(id)arg1;
+- (bool)isGroupAppDomain;
+- (bool)isPlaceholderAppDomain;
+- (bool)isPluginAppDomain;
+- (bool)isUninstalledAppDomain;
 - (id)name;
 - (id)relativePathAggregateDictionaryGroups;
 - (id)relativePathDomainRedirects;
@@ -147,7 +147,7 @@
 - (void)setRelativePathsToRemoveOnRestore:(id)arg1;
 - (void)setRelativePathsToRestoreOnly:(id)arg1;
 - (void)setRelativePathsToRestoreOnlyFromService:(id)arg1;
-- (void)setShouldDigest:(BOOL)arg1;
-- (BOOL)shouldDigest;
+- (void)setShouldDigest:(bool)arg1;
+- (bool)shouldDigest;
 
 @end

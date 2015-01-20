@@ -6,9 +6,9 @@
 }
 
 + (id)predicate;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)evaluateWithObject:(id)arg1;
+- (bool)evaluateWithObject:(id)arg1;
 
 @end

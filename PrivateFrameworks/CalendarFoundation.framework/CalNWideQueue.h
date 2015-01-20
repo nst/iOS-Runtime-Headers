@@ -11,6 +11,6 @@
 
 - (void).cxx_destruct;
 - (void)executeBlock:(id)arg1;
-- (id)initWithSerialQueue:(id)arg1 andWidth:(unsigned int)arg2;
+- (id)initWithSerialQueue:(id)arg1 andWidth:(unsigned long long)arg2;
 
 @end

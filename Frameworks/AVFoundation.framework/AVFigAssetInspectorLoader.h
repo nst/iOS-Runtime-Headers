@@ -7,14 +7,14 @@
 @interface AVFigAssetInspectorLoader : AVAssetInspectorLoader {
     NSURL *_URL;
     AVAssetInspector *_assetInspector;
-    long _assetInspectorOnce;
+    long long _assetInspectorOnce;
     NSObject<OS_dispatch_queue> *_completionHandlerQueue;
     struct OpaqueFigAsset { } *_figAsset;
-    long _figAssetCreationStatus;
+    int _figAssetCreationStatus;
     NSMutableArray *_loadingBatches;
-    BOOL _loadingCanceled;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
     AVWeakReference *_weakReferenceToAsset;
+    bool_loadingCanceled;
 }
 
 + (id)_figAssetPropertiesForKeys;
@@ -29,8 +29,8 @@
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (void)_invokeCompletionHandlerForLoadingBatches:(id)arg1;
-- (BOOL)_isStreaming;
-- (int)_loadStatusForProperty:(id)arg1 figAsset:(struct OpaqueFigAsset { }*)arg2 returningError:(int*)arg3;
+- (bool)_isStreaming;
+- (long long)_loadStatusForProperty:(id)arg1 figAsset:(struct OpaqueFigAsset { }*)arg2 returningError:(int*)arg3;
 - (id)_loadingBatches;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (void)_removeFigAssetNotifications;
@@ -42,18 +42,18 @@
 - (id)figChapterGroupInfo;
 - (id)figChapters;
 - (void)finalize;
-- (BOOL)hasProtectedContent;
+- (bool)hasProtectedContent;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1 forAsset:(id)arg2;
 - (id)initWithURL:(id)arg1 figAssetCreationFlags:(unsigned long long)arg2 figAssetCreationOptions:(id)arg3 forAsset:(id)arg4;
-- (BOOL)isCompatibleWithSavedPhotosAlbum;
-- (BOOL)isComposable;
-- (BOOL)isExportable;
-- (BOOL)isPlayable;
-- (BOOL)isReadable;
+- (bool)isCompatibleWithSavedPhotosAlbum;
+- (bool)isComposable;
+- (bool)isExportable;
+- (bool)isPlayable;
+- (bool)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
 - (id)lyrics;
 - (id)resolvedURL;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 
 @end

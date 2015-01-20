@@ -10,12 +10,12 @@
 
 - (id)_array;
 - (void)addObject:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (void)removeLastObject;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 
 @end

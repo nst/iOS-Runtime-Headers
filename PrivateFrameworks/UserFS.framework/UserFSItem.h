@@ -6,26 +6,26 @@
 
 @interface UserFSItem : NSObject {
     struct timespec { 
-        int tv_sec; 
-        long tv_nsec; 
+        long long tv_sec; 
+        long long tv_nsec; 
     struct timespec { 
-        int tv_sec; 
-        long tv_nsec; 
+        long long tv_sec; 
+        long long tv_nsec; 
     } _createdDate;
-    BOOL _isDirectory;
     unsigned long long _length;
-    BOOL _locked;
     } _modifiedDate;
     NSString *_name;
     NSString *_path;
     UserFSVolume *_volume;
+    bool_isDirectory;
+    bool_locked;
 }
 
-@property struct timespec { int x1; long x2; } createdDate;
-@property BOOL isDirectory;
+@property struct timespec { long long x1; long long x2; } createdDate;
+@property bool isDirectory;
 @property unsigned long long length;
-@property(getter=isLocked) BOOL locked;
-@property struct timespec { int x1; long x2; } modifiedDate;
+@property(getter=isLocked) bool locked;
+@property struct timespec { long long x1; long long x2; } modifiedDate;
 @property(copy) NSString * name;
 @property(copy) NSString * path;
 @property(retain) UserFSVolume * volume;
@@ -33,18 +33,18 @@
 + (id)_itemWithVolume:(id)arg1 path:(id)arg2 properties:(id)arg3;
 
 - (void).cxx_destruct;
-- (struct timespec { int x1; long x2; })createdDate;
-- (BOOL)isDirectory;
-- (BOOL)isLocked;
+- (struct timespec { long long x1; long long x2; })createdDate;
+- (bool)isDirectory;
+- (bool)isLocked;
 - (unsigned long long)length;
-- (struct timespec { int x1; long x2; })modifiedDate;
+- (struct timespec { long long x1; long long x2; })modifiedDate;
 - (id)name;
 - (id)path;
-- (void)setCreatedDate:(struct timespec { int x1; long x2; })arg1;
-- (void)setIsDirectory:(BOOL)arg1;
+- (void)setCreatedDate:(struct timespec { long long x1; long long x2; })arg1;
+- (void)setIsDirectory:(bool)arg1;
 - (void)setLength:(unsigned long long)arg1;
-- (void)setLocked:(BOOL)arg1;
-- (void)setModifiedDate:(struct timespec { int x1; long x2; })arg1;
+- (void)setLocked:(bool)arg1;
+- (void)setModifiedDate:(struct timespec { long long x1; long long x2; })arg1;
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setVolume:(id)arg1;

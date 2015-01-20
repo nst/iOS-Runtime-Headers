@@ -6,26 +6,26 @@
 
 @interface WBUPrintPageRenderer : UIPrintPageRenderer <UIPrintInteractionControllerDelegate> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     NSString *_URLString;
-    float _URLWidth;
+    double _URLWidth;
     UIWebBrowserView *_browserView;
     UIPrintFormatter *_contentFormatter;
     } _contentOffset;
     NSString *_dateString;
-    float _dateWidth;
+    double _dateWidth;
     UIColor *_footerColor;
     UIFont *_footerFont;
     } _footerOffset;
     NSNumberFormatter *_numberFormatter;
     UIWebPaginationInfo *_paginationInfo;
-    BOOL _printFooter;
-    float _printWidth;
+    double _printWidth;
     WebFrame *_webFrame;
+    bool_printFooter;
 }
 
 @property(retain) NSString * URLString;
@@ -33,8 +33,8 @@
 @property(retain) UIPrintFormatter * contentFormatter;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL printFooter;
+@property(readonly) unsigned long long hash;
+@property bool printFooter;
 @property(readonly) Class superclass;
 @property(retain) WebFrame * webFrame;
 
@@ -43,19 +43,19 @@
 - (void)associateWithPrintController:(id)arg1;
 - (id)browserView;
 - (id)contentFormatter;
-- (void)drawContentForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawFooterForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawContentForPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)drawFooterForPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)init;
-- (int)numberOfPages;
+- (long long)numberOfPages;
 - (id)printControllerWithPageTitle:(id)arg1;
-- (BOOL)printFooter;
+- (bool)printFooter;
 - (id)printInfoWithPageTitle:(id)arg1;
 - (void)printInteractionControllerDidFinishJob:(id)arg1;
 - (void)printInteractionControllerWillStartJob:(id)arg1;
 - (id)printingFrame;
 - (void)setBrowserView:(id)arg1;
 - (void)setContentFormatter:(id)arg1;
-- (void)setPrintFooter:(BOOL)arg1;
+- (void)setPrintFooter:(bool)arg1;
 - (void)setURLString:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (id)webFrame;

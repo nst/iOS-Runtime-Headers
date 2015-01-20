@@ -13,7 +13,7 @@
 @property(readonly) NSString * effect;
 
 + (id)attributesWithEffect:(id)arg1 attributes:(id)arg2;
-+ (BOOL)customAttributeKeyIsValid:(id)arg1;
++ (bool)customAttributeKeyIsValid:(id)arg1;
 + (id)supportedCustomAttributes;
 
 - (id)attributes;
@@ -22,7 +22,7 @@
 - (id)attributesByChangingEffectToEffect:(id)arg1;
 - (id)attributesByRemovingAttributeForKey:(id)arg1;
 - (id)attributesBySettingValue:(id)arg1 forAttributeKey:(id)arg2;
-- (BOOL)containsAttributeForKey:(id)arg1;
+- (bool)containsAttributeForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

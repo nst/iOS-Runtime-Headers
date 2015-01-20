@@ -5,10 +5,10 @@
 @interface BKSRestartAction : BSAction {
 }
 
-@property(readonly) BOOL shouldShowAppleLogo;
+@property(readonly) bool shouldShowAppleLogo;
 
-+ (id)restartActionWithAppleLogoDesired:(BOOL)arg1;
++ (id)restartActionWithAppleLogoDesired:(bool)arg1;
 
-- (BOOL)shouldShowAppleLogo;
+- (bool)shouldShowAppleLogo;
 
 @end

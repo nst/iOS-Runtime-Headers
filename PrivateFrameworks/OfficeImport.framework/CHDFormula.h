@@ -12,7 +12,7 @@
 + (id)formulaWithReference:(id)arg1;
 + (id)formulaWithReferences:(id)arg1;
 
-- (unsigned int)countOfCellsBeingReferenced;
+- (unsigned long long)countOfCellsBeingReferenced;
 - (void)dealloc;
 - (id)initWithReference:(id)arg1;
 - (id)initWithReferences:(id)arg1;

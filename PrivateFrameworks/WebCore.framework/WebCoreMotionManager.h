@@ -26,10 +26,10 @@
             int m_keyCount; 
             int m_deletedCount; 
         } m_impl; 
+    boolm_gyroAvailable;
+    boolm_headingAvailable;
     } m_deviceMotionClients;
     } m_deviceOrientationClients;
-    BOOL m_gyroAvailable;
-    BOOL m_headingAvailable;
     CLLocationManager *m_locationManager;
     CMMotionManager *m_motionManager;
     NSTimer *m_updateTimer;
@@ -43,8 +43,8 @@
 - (void)addOrientationClient:(struct DeviceOrientationClientIOS { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientationData> { struct DeviceOrientationData {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)checkClientStatus;
 - (void)dealloc;
-- (BOOL)gyroAvailable;
-- (BOOL)headingAvailable;
+- (bool)gyroAvailable;
+- (bool)headingAvailable;
 - (id)init;
 - (void)initializeOnMainThread;
 - (void)removeMotionClient:(struct DeviceMotionClientIOS { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;

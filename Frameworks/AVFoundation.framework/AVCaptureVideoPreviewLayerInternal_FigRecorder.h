@@ -6,37 +6,37 @@
 
 @interface AVCaptureVideoPreviewLayerInternal_FigRecorder : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    BOOL automaticallyAdjustsMirroring;
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    boolautomaticallyAdjustsMirroring;
+    boolchromaNoiseReductionEnabled;
+    booldisableActions;
+    boolisPaused;
+    boolisPresentationLayer;
+    boolmirrored;
+    boolvisible;
     } captureDeviceTransform;
     int changeSeed;
-    BOOL chromaNoiseReductionEnabled;
     AVCaptureConnection_FigRecorder *connection;
-    BOOL disableActions;
     NSString *gravity;
-    BOOL isPaused;
-    BOOL isPresentationLayer;
-    BOOL mirrored;
-    int orientation;
-    float previewRotationDegrees;
+    long long orientation;
+    double previewRotationDegrees;
     } previewSize;
-    float rollAdjustment;
+    double rollAdjustment;
     } sensorSize;
     NSString *sensorToPreviewVTScalingMode;
     AVCaptureSession_FigRecorder *session;
     CALayer *sublayer;
-    BOOL visible;
 }
 
 @end

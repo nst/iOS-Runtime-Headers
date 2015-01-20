@@ -5,14 +5,14 @@
 @interface SAUIDelayedConfirmationView : SAUIConfirmationView {
 }
 
-@property int autoConfirmDelay;
+@property long long autoConfirmDelay;
 
 + (id)delayedConfirmationView;
 + (id)delayedConfirmationViewWithDictionary:(id)arg1 context:(id)arg2;
 
-- (int)autoConfirmDelay;
+- (long long)autoConfirmDelay;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setAutoConfirmDelay:(int)arg1;
+- (void)setAutoConfirmDelay:(long long)arg1;
 
 @end

@@ -7,12 +7,12 @@
 @interface TSUDescription : NSObject {
     void *_cfType;
     Class _class;
-    BOOL _commaSeparated;
-    unsigned int _fieldNameWidth;
+    unsigned long long _fieldNameWidth;
     NSMutableArray *_fieldOrder;
     NSMutableDictionary *_fields;
     NSString *_header;
     NSObject *_object;
+    bool_commaSeparated;
 }
 
 + (id)descriptionWithCFType:(void*)arg1 format:(id)arg2;
@@ -29,7 +29,7 @@
 - (void)dealloc;
 - (id)descriptionString;
 - (id)initWithCFType:(void*)arg1 header:(id)arg2;
-- (id)initWithObject:(id)arg1 class:(Class)arg2 format:(id)arg3 arguments:(void*)arg4;
+- (id)initWithObject:(id)arg1 class:(Class)arg2 format:(id)arg3 arguments:(char *)arg4;
 - (id)initWithObject:(id)arg1 class:(Class)arg2 format:(id)arg3;
 - (id)initWithObject:(id)arg1 class:(Class)arg2 header:(id)arg3;
 - (id)initWithObject:(id)arg1 format:(id)arg2;

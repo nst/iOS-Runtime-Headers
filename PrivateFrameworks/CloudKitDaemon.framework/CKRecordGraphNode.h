@@ -6,23 +6,23 @@
 
 @interface CKRecordGraphNode : NSObject {
     NSMutableSet *_edges;
-    int _indegree;
+    long long _indegree;
     CKRecord *_record;
 }
 
 @property(copy) NSMutableSet * edges;
-@property int indegree;
+@property long long indegree;
 @property(retain) CKRecord * record;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)description;
 - (id)edges;
-- (int)indegree;
+- (long long)indegree;
 - (id)init;
 - (id)record;
 - (void)setEdges:(id)arg1;
-- (void)setIndegree:(int)arg1;
+- (void)setIndegree:(long long)arg1;
 - (void)setRecord:(id)arg1;
 
 @end

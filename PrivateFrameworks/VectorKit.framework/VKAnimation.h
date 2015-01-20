@@ -29,15 +29,15 @@
 @property(copy) id completionHandler;
 @property double duration;
 @property(readonly) int priority;
-@property(readonly) BOOL running;
-@property BOOL runsForever;
+@property(readonly) bool running;
+@property bool runsForever;
 @property(copy) id stepHandler;
 @property(copy) id timingFunction;
 
 + (void)setDragCoefficientGetter:(id)arg1;
 
 - (id).cxx_construct;
-- (void)_stopAnimation:(BOOL)arg1;
+- (void)_stopAnimation:(bool)arg1;
 - (id)completionHandler;
 - (void)dealloc;
 - (id)description;
@@ -53,11 +53,11 @@
 - (void)pause;
 - (int)priority;
 - (void)resume;
-- (BOOL)running;
-- (BOOL)runsForever;
+- (bool)running;
+- (bool)runsForever;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setRunsForever:(BOOL)arg1;
+- (void)setRunsForever:(bool)arg1;
 - (void)setStepHandler:(id)arg1;
 - (void)setTimingFunction:(id)arg1;
 - (void)startWithRunner:(id)arg1;

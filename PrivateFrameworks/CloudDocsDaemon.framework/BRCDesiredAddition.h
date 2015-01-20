@@ -9,40 +9,40 @@
     NSString *_etag;
     BRCItemID *_itemID;
     NSString *_key;
-    BOOL _needsInsert;
     NSNumber *_stagedFileID;
     NSData *_thumbnailData;
     unsigned int _type;
     id _versionOrThumbData;
+    bool_needsInsert;
 }
 
 @property(readonly) BRCLocalContainer * container;
 @property(readonly) NSString * etag;
 @property(readonly) BRCItemID * itemID;
 @property(retain) NSString * key;
-@property BOOL needsInsert;
+@property bool needsInsert;
 @property(retain) NSNumber * stagedFileID;
 @property unsigned int type;
 @property(retain) id versionOrThumbData;
 
-+ (BOOL)dumpContainer:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
-+ (BOOL)dumpContainer:(id)arg1 type:(unsigned int)arg2 name:(id)arg3 toContext:(id)arg4 error:(id*)arg5;
++ (bool)dumpContainer:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
++ (bool)dumpContainer:(id)arg1 type:(unsigned int)arg2 name:(id)arg3 toContext:(id)arg4 error:(id*)arg5;
 + (id)fetchFromContainer:(id)arg1 itemID:(id)arg2 etag:(id)arg3 type:(unsigned int)arg4;
 
 - (void).cxx_destruct;
 - (id)container;
-- (BOOL)deleteFromDB;
+- (bool)deleteFromDB;
 - (id)description;
 - (id)etag;
 - (id)initFromPQLResultSet:(id)arg1 container:(id)arg2 error:(id*)arg3;
 - (id)initWithItemID:(id)arg1 container:(id)arg2 etag:(id)arg3 type:(unsigned int)arg4;
 - (id)itemID;
 - (id)key;
-- (BOOL)moveToStageFromDownloadPath:(id)arg1;
-- (BOOL)needsInsert;
-- (BOOL)saveToDB;
+- (bool)moveToStageFromDownloadPath:(id)arg1;
+- (bool)needsInsert;
+- (bool)saveToDB;
 - (void)setKey:(id)arg1;
-- (void)setNeedsInsert:(BOOL)arg1;
+- (void)setNeedsInsert:(bool)arg1;
 - (void)setStagedFileID:(id)arg1;
 - (void)setType:(unsigned int)arg1;
 - (void)setVersionOrThumbData:(id)arg1;

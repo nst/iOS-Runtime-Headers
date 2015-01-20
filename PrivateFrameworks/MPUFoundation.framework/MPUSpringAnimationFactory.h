@@ -3,25 +3,25 @@
  */
 
 @interface MPUSpringAnimationFactory : MPUAnimationFactory {
-    float _damping;
-    float _mass;
-    float _stiffness;
-    float _velocity;
+    double _damping;
+    double _mass;
+    double _stiffness;
+    double _velocity;
 }
 
-@property float damping;
-@property float mass;
-@property float stiffness;
-@property float velocity;
+@property double damping;
+@property double mass;
+@property double stiffness;
+@property double velocity;
 
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
-- (float)damping;
-- (float)mass;
-- (void)setDamping:(float)arg1;
-- (void)setMass:(float)arg1;
-- (void)setStiffness:(float)arg1;
-- (void)setVelocity:(float)arg1;
-- (float)stiffness;
-- (float)velocity;
+- (double)damping;
+- (double)mass;
+- (void)setDamping:(double)arg1;
+- (void)setMass:(double)arg1;
+- (void)setStiffness:(double)arg1;
+- (void)setVelocity:(double)arg1;
+- (double)stiffness;
+- (double)velocity;
 
 @end

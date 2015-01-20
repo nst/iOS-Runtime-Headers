@@ -6,6 +6,6 @@
 }
 
 - (id)chatItemForIMChatItem:(id)arg1;
-- (BOOL)shouldShowRaiseMessageStatus;
+- (bool)shouldShowRaiseMessageStatus;
 
 @end

@@ -6,13 +6,13 @@
 
 @interface CABTMIDILocalPeripheralViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ServiceNameEditedDelegate> {
     UISwitch *advertiseSwitch;
-    int advertiseTimeout;
+    long long advertiseTimeout;
     NSTimer *advertiseTimer;
-    BOOL advertising;
     AMSBTLEAdvertisementManager *advertisingManager;
-    BOOL didCleanup;
+    booladvertising;
+    booldidCleanup;
+    boolisErrorMessage;
     UIActivityIndicatorView *indicator;
-    BOOL isErrorMessage;
     NSTimer *messageTimer;
     NSString *statusString;
     NSString *theServiceName;
@@ -20,34 +20,34 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)activateController:(id)arg1;
 - (void)advertiseServiceSwitchToggled:(id)arg1;
-- (BOOL)advertiseServiceWithName:(id)arg1 completionBlock:(id)arg2 error:(id*)arg3;
+- (bool)advertiseServiceWithName:(id)arg1 completionBlock:(id)arg2 error:(id*)arg3;
 - (void)advertiseTimerFired:(id)arg1;
 - (id)advertisedServiceName;
-- (BOOL)changeServiceNameTo:(id)arg1 completionBlock:(id)arg2 error:(id*)arg3;
+- (bool)changeServiceNameTo:(id)arg1 completionBlock:(id)arg2 error:(id*)arg3;
 - (void)cleanup;
 - (void)deactivateController:(id)arg1;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
-- (BOOL)disconnectLocalPeripheral;
+- (bool)disconnectLocalPeripheral;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (void)messageTimerFired:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)serviceNameEdited:(id)arg1;
-- (void)setStatusString:(id)arg1 animateIndicator:(BOOL)arg2 isError:(BOOL)arg3;
+- (void)setStatusString:(id)arg1 animateIndicator:(bool)arg2 isError:(bool)arg3;
 - (id)statusString;
-- (BOOL)stopAdvertisingServiceWithCompletionBlock:(id)arg1 error:(id*)arg2;
+- (bool)stopAdvertisingServiceWithCompletionBlock:(id)arg1 error:(id*)arg2;
 - (void)stopTimers;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)title;
 - (void)updateAdvertiseUI;
 - (void)viewDidLoad;

@@ -5,6 +5,6 @@
 @interface TSCH3DChartAntialiasedStaticCanvasRenderCycle : TSCH3DChartStaticCanvasRenderCycle {
 }
 
-- (BOOL)antialiasing;
+- (bool)antialiasing;
 
 @end

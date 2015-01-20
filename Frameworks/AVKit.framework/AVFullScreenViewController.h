@@ -8,9 +8,9 @@
 
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)modalPresentationCapturesStatusBarAppearance;
-- (BOOL)prefersStatusBarHidden;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (bool)modalPresentationCapturesStatusBarAppearance;
+- (bool)prefersStatusBarHidden;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

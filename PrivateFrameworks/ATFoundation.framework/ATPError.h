@@ -19,10 +19,10 @@
 @property(retain) NSString * domain;
 @property long long domainCode;
 @property(retain) NSString * errorDescription;
-@property BOOL hasCode;
-@property(readonly) BOOL hasDomain;
-@property BOOL hasDomainCode;
-@property(readonly) BOOL hasErrorDescription;
+@property bool hasCode;
+@property(readonly) bool hasDomain;
+@property bool hasDomainCode;
+@property(readonly) bool hasErrorDescription;
 
 - (void).cxx_destruct;
 - (int)code;
@@ -33,19 +33,19 @@
 - (id)domain;
 - (long long)domainCode;
 - (id)errorDescription;
-- (BOOL)hasCode;
-- (BOOL)hasDomain;
-- (BOOL)hasDomainCode;
-- (BOOL)hasErrorDescription;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasCode;
+- (bool)hasDomain;
+- (bool)hasDomainCode;
+- (bool)hasErrorDescription;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCode:(int)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setDomainCode:(long long)arg1;
 - (void)setErrorDescription:(id)arg1;
-- (void)setHasCode:(BOOL)arg1;
-- (void)setHasDomainCode:(BOOL)arg1;
+- (void)setHasCode:(bool)arg1;
+- (void)setHasDomainCode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

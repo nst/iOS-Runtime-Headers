@@ -13,7 +13,7 @@
 @property(readonly) TSUCustomFormatWrapper * customFormatWrapper;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)dataFormatterWithCustomFormatWrapper:(id)arg1 customFormatListKey:(unsigned int)arg2 formatType:(int)arg3;
@@ -26,7 +26,7 @@
 - (void)dealloc;
 - (int)formatType;
 - (id)initWithCustomFormatWrapper:(id)arg1 customFormatListKey:(unsigned int)arg2 formatType:(int)arg3;
-- (BOOL)isCompatibleWithDataFormatter:(id)arg1;
+- (bool)isCompatibleWithDataFormatter:(id)arg1;
 - (id)p_stringForValue:(id)arg1;
 
 @end

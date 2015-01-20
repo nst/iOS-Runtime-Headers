@@ -5,8 +5,8 @@
 @interface GKTextStylePad : GKTextStyle {
 }
 
-+ (float)bubbleTextScale;
-+ (float)standardFontSize;
++ (double)bubbleTextScale;
++ (double)standardFontSize;
 
 - (id)bubbleHeadline;
 - (id)bubbleText;

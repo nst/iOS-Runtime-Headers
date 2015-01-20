@@ -8,13 +8,13 @@
 + (Class)_associatedDataObjectClass;
 + (id)_objectsWithIDs:(id)arg1 healthDaemon:(id)arg2;
 + (id)_tableValuesFromDataObject:(id)arg1;
-+ (BOOL)acceptsObject:(id)arg1;
++ (bool)acceptsObject:(id)arg1;
 + (void)applyRelatedPropertiesToObject:(id)arg1 entity:(id)arg2 properties:(id)arg3 values:(id*)arg4 authorizationFilter:(id)arg5 healthDaemon:(id)arg6;
 + (id)createTableSQL;
-+ (BOOL)isBackedByTable;
++ (bool)isBackedByTable;
 + (void)load;
 
-- (BOOL)deleteAssociatedEntitiesInDatabase:(id)arg1 error:(id*)arg2;
-- (BOOL)deleteFromDatabase:(id)arg1;
+- (bool)deleteAssociatedEntitiesInDatabase:(id)arg1 error:(id*)arg2;
+- (bool)deleteFromDatabase:(id)arg1;
 
 @end

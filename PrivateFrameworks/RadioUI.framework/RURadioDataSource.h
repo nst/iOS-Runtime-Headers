@@ -18,8 +18,8 @@
 @property <RURadioDataSourceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(readonly) NSArray * featuredStations;
-@property(readonly) unsigned int hash;
-@property(getter=isOptedInToRadio,readonly) BOOL optedInToRadio;
+@property(readonly) unsigned long long hash;
+@property(getter=isOptedInToRadio,readonly) bool optedInToRadio;
 @property(retain) RURadioPlaybackCoordinator * playbackCoordinator;
 @property(readonly) NSArray * stations;
 @property(readonly) Class superclass;
@@ -31,8 +31,8 @@
 + (void)_storeBagDidLoadNotification:(id)arg1;
 + (void)_updateRadioAvailabilityWithStoreBag:(id)arg1 error:(id)arg2;
 + (void)initialize;
-+ (BOOL)isOptedInToRadio;
-+ (BOOL)isRadioAvailable;
++ (bool)isOptedInToRadio;
++ (bool)isRadioAvailable;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;
@@ -46,24 +46,24 @@
 - (void)dealloc;
 - (void)deauthenticateIfNecessary;
 - (id)delegate;
-- (int)editingTypeForEntityAtIndex:(unsigned int)arg1;
+- (long long)editingTypeForEntityAtIndex:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entities;
-- (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
+- (bool)entityIsNowPlayingAtIndex:(unsigned long long)arg1;
 - (id)featuredStations;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEntityType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isOptedInToRadio;
-- (id)playbackContextForIndex:(unsigned int)arg1;
+- (id)initWithEntityType:(long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isOptedInToRadio;
+- (id)playbackContextForIndex:(unsigned long long)arg1;
 - (id)playbackCoordinator;
 - (void)pushNotificationControllerDidReceiveSyncRequest:(id)arg1 toGlobalVersion:(unsigned long long)arg2;
 - (void)refreshFeaturedStations;
 - (void)setDelegate:(id)arg1;
 - (void)setPlaybackCoordinator:(id)arg1;
 - (id)stations;
-- (void)synchronizeStationsAsAutomaticUpdate:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)synchronizeStationsAsAutomaticUpdate:(bool)arg1 withCompletionHandler:(id)arg2;
 - (id)userStations;
 
 @end

@@ -12,7 +12,7 @@
 @property(retain) NSString * id_str;
 @property(retain) NSURL * objectID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 + (id)userRecordWithScreenName:(id)arg1;
 

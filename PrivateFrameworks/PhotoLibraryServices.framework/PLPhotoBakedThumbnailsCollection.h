@@ -9,7 +9,7 @@
     NSData *_data;
 }
 
-+ (void)setTesting:(BOOL)arg1;
++ (void)setTesting:(bool)arg1;
 
 - (void)_parseDataWithContentsOfFile:(id)arg1;
 - (id)availableFormats;

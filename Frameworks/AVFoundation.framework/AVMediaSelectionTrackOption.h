@@ -6,10 +6,10 @@
 
 @interface AVMediaSelectionTrackOption : AVMediaSelectionOption {
     NSDictionary *_dictionary;
-    BOOL _displaysNonForcedSubtitles;
     id _groupID;
     AVAssetTrack *_track;
     AVWeakReference *_weakReferenceToGroup;
+    bool_displaysNonForcedSubtitles;
 }
 
 - (id)_groupID;
@@ -18,13 +18,13 @@
 - (id)commonMetadata;
 - (void)dealloc;
 - (id)dictionary;
-- (BOOL)displaysNonForcedSubtitles;
+- (bool)displaysNonForcedSubtitles;
 - (id)group;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasMediaCharacteristic:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPlayable;
+- (bool)isEqual:(id)arg1;
+- (bool)isPlayable;
 - (id)locale;
 - (id)mediaSubTypes;
 - (id)mediaType;

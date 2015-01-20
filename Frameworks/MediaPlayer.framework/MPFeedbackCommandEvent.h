@@ -3,12 +3,12 @@
  */
 
 @interface MPFeedbackCommandEvent : MPRemoteCommandEvent {
-    BOOL _negative;
+    bool_negative;
 }
 
-@property(getter=isNegative,readonly) BOOL negative;
+@property(getter=isNegative,readonly) bool negative;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
-- (BOOL)isNegative;
+- (bool)isNegative;
 
 @end

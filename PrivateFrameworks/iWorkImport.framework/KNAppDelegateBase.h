@@ -5,12 +5,12 @@
 @class NSArray;
 
 @interface KNAppDelegateBase : TSABaseApplicationDelegate {
-    BOOL _cachedBidiIsSupported;
+    bool_cachedBidiIsSupported;
 }
 
 @property(readonly) NSArray * powerPointDocumentTypes;
 
-- (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
+- (bool)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)appChartPropertyOverrides;
 - (void)applicationDidFinishLaunching;
 - (id)applicationName;
@@ -22,8 +22,8 @@
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
-- (float)maximumAspectRatioForPreviewImage;
-- (float)mimimumAspectRatioForPreviewImage;
+- (double)maximumAspectRatioForPreviewImage;
+- (double)mimimumAspectRatioForPreviewImage;
 - (id)nativeDocumentType;
 - (id)nativeSFFDocumentType;
 - (void)p_inputMethodsChanged:(id)arg1;
@@ -33,7 +33,7 @@
 - (id)previewImageNameForNativeDocument;
 - (void)registerAllowedElementKinds;
 - (void)registerClassTypeMappings;
-- (BOOL)supportsRTL;
+- (bool)supportsRTL;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;

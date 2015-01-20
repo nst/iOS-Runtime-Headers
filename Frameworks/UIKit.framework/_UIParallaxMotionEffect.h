@@ -6,8 +6,8 @@
 
 @interface _UIParallaxMotionEffect : UIMotionEffect {
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     UIMotionEffectGroup *_group;
     UIInterpolatingMotionEffect *_horizontalSlideEffect;
     } _slideMagnitude;
@@ -15,12 +15,12 @@
     UIInterpolatingMotionEffect *_verticalSlideEffect;
 }
 
-@property float horizontalSlideAccelerationBoostFactor;
-@property float maximumHorizontalTiltAngle;
-@property float maximumVerticalTiltAngle;
-@property float rotatingSphereRadius;
-@property struct UIOffset { float x1; float x2; } slideMagnitude;
-@property float verticalSlideAccelerationBoostFactor;
+@property double horizontalSlideAccelerationBoostFactor;
+@property double maximumHorizontalTiltAngle;
+@property double maximumVerticalTiltAngle;
+@property double rotatingSphereRadius;
+@property struct UIOffset { double x1; double x2; } slideMagnitude;
+@property double verticalSlideAccelerationBoostFactor;
 
 - (void)_activateTiltEffectIfNecessary;
 - (id)_keyPathsAndRelativeValuesForPose:(id)arg1;
@@ -30,20 +30,20 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (float)horizontalSlideAccelerationBoostFactor;
+- (double)horizontalSlideAccelerationBoostFactor;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)keyPathsAndRelativeValuesForViewerOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (float)maximumHorizontalTiltAngle;
-- (float)maximumVerticalTiltAngle;
-- (float)rotatingSphereRadius;
-- (void)setHorizontalSlideAccelerationBoostFactor:(float)arg1;
-- (void)setMaximumHorizontalTiltAngle:(float)arg1;
-- (void)setMaximumVerticalTiltAngle:(float)arg1;
-- (void)setRotatingSphereRadius:(float)arg1;
-- (void)setSlideMagnitude:(struct UIOffset { float x1; float x2; })arg1;
-- (void)setVerticalSlideAccelerationBoostFactor:(float)arg1;
-- (struct UIOffset { float x1; float x2; })slideMagnitude;
-- (float)verticalSlideAccelerationBoostFactor;
+- (id)keyPathsAndRelativeValuesForViewerOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (double)maximumHorizontalTiltAngle;
+- (double)maximumVerticalTiltAngle;
+- (double)rotatingSphereRadius;
+- (void)setHorizontalSlideAccelerationBoostFactor:(double)arg1;
+- (void)setMaximumHorizontalTiltAngle:(double)arg1;
+- (void)setMaximumVerticalTiltAngle:(double)arg1;
+- (void)setRotatingSphereRadius:(double)arg1;
+- (void)setSlideMagnitude:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setVerticalSlideAccelerationBoostFactor:(double)arg1;
+- (struct UIOffset { double x1; double x2; })slideMagnitude;
+- (double)verticalSlideAccelerationBoostFactor;
 
 @end

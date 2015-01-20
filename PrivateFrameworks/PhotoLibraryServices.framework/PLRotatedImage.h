@@ -3,12 +3,12 @@
  */
 
 @interface PLRotatedImage : UIImage {
-    BOOL _wasRotated;
+    bool_wasRotated;
 }
 
-@property BOOL wasRotated;
+@property bool wasRotated;
 
-- (void)setWasRotated:(BOOL)arg1;
-- (BOOL)wasRotated;
+- (void)setWasRotated:(bool)arg1;
+- (bool)wasRotated;
 
 @end

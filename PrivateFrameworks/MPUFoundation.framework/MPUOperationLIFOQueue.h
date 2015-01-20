@@ -8,8 +8,8 @@
 - (void)_addLIFODependencyToOperations:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (void)addOperationWithBlock:(id)arg1;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (void)addOperations:(id)arg1 waitUntilFinished:(bool)arg2;
 - (id)init;
-- (void)setMaxConcurrentOperationCount:(int)arg1;
+- (void)setMaxConcurrentOperationCount:(long long)arg1;
 
 @end

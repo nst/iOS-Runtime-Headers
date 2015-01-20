@@ -14,8 +14,8 @@
     NSString *_identifier;
     NSObject<OS_dispatch_queue> *_queue;
     FBSSceneSettings *_settings;
-    BOOL _shouldObserveContexts;
     <FBSSceneUpdater> *_updater;
+    bool_shouldObserveContexts;
 }
 
 - (id)_descriptionWithMultilinePrefix:(id)arg1;
@@ -41,7 +41,7 @@
 - (id)initWithQueue:(id)arg1 identifier:(id)arg2 display:(id)arg3 settings:(id)arg4 clientSettings:(id)arg5;
 - (void)sceneContextDidInvalidate:(id)arg1;
 - (void)sceneContextDidUpdate:(id)arg1;
-- (BOOL)sceneContextShouldObserveUpdates:(id)arg1;
+- (bool)sceneContextShouldObserveUpdates:(id)arg1;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)settings;

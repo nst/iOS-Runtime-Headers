@@ -20,7 +20,7 @@
                     struct __hash_node<_GEOTileKey, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -31,20 +31,20 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<GEOTileKey> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::equal_to<GEOTileKey> > { 
                 float __first_; 
             } __p3_; 
         } __table_; 
-    BOOL _buildAhead;
-    BOOL _buildBehind;
     GEOMapTileFinder *_currentTileFinder;
     id _edgeHandler;
     } _firstTilePoint;
     } _lastTilePoint;
-    BOOL _searchDirection;
     } _tileKeysSeen;
+    bool_buildAhead;
+    bool_buildBehind;
+    bool_searchDirection;
 }
 
 @property(copy) id edgeHandler;
@@ -53,20 +53,20 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_buildCompleteEdge;
-- (BOOL)_edgeStart:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 end:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 connectsTo:(const struct { double x1; double x2; }*)arg3 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
-- (BOOL)_findEdgeAhead;
-- (BOOL)_findEdgeAheadInTile:(id)arg1;
-- (BOOL)_findEdgeBehind;
-- (BOOL)_findEdgeBehindInTile:(id)arg1;
-- (BOOL)_findNextEdge;
-- (void)_findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 findAhead:(BOOL)arg3;
+- (bool)_edgeStart:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 end:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 connectsTo:(const struct { double x1; double x2; }*)arg3 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
+- (bool)_findEdgeAhead;
+- (bool)_findEdgeAheadInTile:(id)arg1;
+- (bool)_findEdgeBehind;
+- (bool)_findEdgeBehindInTile:(id)arg1;
+- (bool)_findNextEdge;
+- (void)_findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 findAhead:(bool)arg3;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)_firstJunction;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_firstPoint;
 - (id)_firstTile;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)_lastJunction;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_lastPoint;
 - (id)_lastTile;
-- (BOOL)_pointConnects:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 to:(const struct { double x1; double x2; }*)arg3;
+- (bool)_pointConnects:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 to:(const struct { double x1; double x2; }*)arg3;
 - (id)_tileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 - (void)buildEdge:(id)arg1;
 - (void)cancel;

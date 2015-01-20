@@ -8,7 +8,7 @@
     NSMutableSet *_componentSets;
 }
 
-+ (BOOL)allowedCalendars:(id)arg1 contains:(id)arg2;
++ (bool)allowedCalendars:(id)arg1 contains:(id)arg2;
 
 - (void)addCompSet:(id)arg1;
 - (id)childrenToWrite;

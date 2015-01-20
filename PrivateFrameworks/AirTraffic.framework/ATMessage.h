@@ -19,7 +19,7 @@
 @property unsigned int sessionID;
 @property double timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ATPMessage;

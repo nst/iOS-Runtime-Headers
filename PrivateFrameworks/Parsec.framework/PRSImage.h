@@ -10,21 +10,21 @@
     NSString *_dataType;
     NSString *_identifier;
     UIImage *_image;
-    BOOL _isTemplate;
-    BOOL _loaded;
     UIImage *_preloadedImage;
     NSURL *_url;
+    bool_isTemplate;
+    bool_loaded;
 }
 
 @property(retain) NSData * data;
 @property(retain) NSString * dataType;
 @property(retain) NSString * identifier;
 @property(retain) UIImage * image;
-@property BOOL isTemplate;
+@property bool isTemplate;
 @property(retain) NSURL * url;
 
 + (id)converterBlock;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)data;
@@ -33,14 +33,14 @@
 - (id)identifier;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isTemplate;
-- (void)loadImageWithSource:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
+- (bool)isTemplate;
+- (void)loadImageWithSource:(id)arg1 maxSize:(struct CGSize { double x1; double x2; })arg2 completion:(id)arg3;
 - (void)preloadImageWithSource:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDataType:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setIsTemplate:(BOOL)arg1;
+- (void)setIsTemplate:(bool)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

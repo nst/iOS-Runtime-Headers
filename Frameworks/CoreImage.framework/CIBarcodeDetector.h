@@ -5,8 +5,8 @@
 @class CIContext, NSMutableDictionary;
 
 @interface CIBarcodeDetector : CIDetector {
-    float _height;
-    float _width;
+    double _height;
+    double _width;
     CIContext *context;
     NSMutableDictionary *featureOptions;
 }

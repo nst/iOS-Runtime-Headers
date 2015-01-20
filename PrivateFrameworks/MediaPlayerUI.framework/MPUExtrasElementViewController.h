@@ -7,10 +7,10 @@
 @interface MPUExtrasElementViewController : UIViewController {
     MPUExtrasBackgroundViewController *_backgroundViewController;
     NSMapTable *_bannerButtonMap;
-    BOOL _wide;
+    bool_wide;
 }
 
-@property(getter=isWide) BOOL wide;
+@property(getter=isWide) bool wide;
 
 + (id)_borderView;
 
@@ -23,11 +23,11 @@
 - (id)backgroundViewController;
 - (void)configureBackgroundWithElements:(id)arg1;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (unsigned int)extrasSize;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (unsigned long long)extrasSize;
 - (id)init;
-- (BOOL)isWide;
-- (void)setWide:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (bool)isWide;
+- (void)setWide:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

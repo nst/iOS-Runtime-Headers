@@ -6,16 +6,16 @@
 
 @interface SCROScriptClient : NSObject {
     SCROConnection *_connection;
-    BOOL _isReady;
     NSLock *_lock;
     SCRCTargetSelectorTimer *_timer;
+    bool_isReady;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)sharedClient;
 
-- (BOOL)_isReady;
+- (bool)_isReady;
 - (void)_killConnection;
 - (id)_lazyConnection;
 - (id)autorelease;
@@ -25,7 +25,7 @@
 - (id)init;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)runScriptFile:(id)arg1;
+- (unsigned long long)retainCount;
+- (bool)runScriptFile:(id)arg1;
 
 @end

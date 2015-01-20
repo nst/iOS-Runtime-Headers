@@ -14,7 +14,7 @@
 - (id)alignmentGuides;
 - (id)alignmentGuidesForEditing;
 - (id)copyWithContext:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (id)guides;

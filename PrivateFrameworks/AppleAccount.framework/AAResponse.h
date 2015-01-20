@@ -10,7 +10,7 @@
     NSHTTPURLResponse *_httpResponse;
     NSNumber *_maxAge;
     NSDictionary *_responseDictionary;
-    int _statusCode;
+    long long _statusCode;
 }
 
 @property(readonly) NSData * data;
@@ -18,7 +18,7 @@
 @property(readonly) NSNumber * maxAge;
 @property(readonly) NSString * protocolVersion;
 @property(readonly) NSDictionary * responseDictionary;
-@property(readonly) int statusCode;
+@property(readonly) long long statusCode;
 
 - (void).cxx_destruct;
 - (id)_deviceSpecificLocalizedString:(id)arg1;
@@ -26,12 +26,12 @@
 - (id)_stringWithDescriptionForResponseError:(id)arg1;
 - (id)data;
 - (id)error;
-- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(BOOL)arg3;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(bool)arg3;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)maxAge;
 - (id)protocolVersion;
 - (id)responseDictionary;
 - (void)setError:(id)arg1;
-- (int)statusCode;
+- (long long)statusCode;
 
 @end

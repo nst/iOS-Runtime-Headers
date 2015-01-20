@@ -7,30 +7,30 @@
 @interface UIKeyboardRotationState : NSObject {
     UIInputViewAnimationStyle *_animationStyle;
     int _postRotationState;
-    BOOL _requiresNewState;
     int _state;
-    int _targetOrientation;
+    long long _targetOrientation;
+    bool_requiresNewState;
 }
 
 @property(retain) UIInputViewAnimationStyle * animationStyle;
 @property int postRotationState;
-@property BOOL requiresNewState;
+@property bool requiresNewState;
 @property int state;
-@property int targetOrientation;
+@property long long targetOrientation;
 
-+ (id)stateWithState:(int)arg1 targetOrientation:(int)arg2;
++ (id)stateWithState:(int)arg1 targetOrientation:(long long)arg2;
 
 - (id)animationStyle;
 - (void)dealloc;
 - (int)postRotationState;
-- (BOOL)requiresNewState;
+- (bool)requiresNewState;
 - (void)setAnimationStyle:(id)arg1;
 - (void)setPostRotationState:(int)arg1 animationStyle:(id)arg2;
 - (void)setPostRotationState:(int)arg1;
-- (void)setRequiresNewState:(BOOL)arg1;
+- (void)setRequiresNewState:(bool)arg1;
 - (void)setState:(int)arg1;
-- (void)setTargetOrientation:(int)arg1;
+- (void)setTargetOrientation:(long long)arg1;
 - (int)state;
-- (int)targetOrientation;
+- (long long)targetOrientation;
 
 @end

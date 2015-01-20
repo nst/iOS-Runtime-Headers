@@ -5,7 +5,7 @@
 @interface ABTelephonyUtilities : NSObject {
 }
 
-+ (BOOL)supportsFaceTimeAudioCalls;
-+ (BOOL)supportsTelephonyCalls;
++ (bool)supportsFaceTimeAudioCalls;
++ (bool)supportsTelephonyCalls;
 
 @end

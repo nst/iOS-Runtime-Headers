@@ -9,7 +9,6 @@
 @class HAPRemoteSession, HMDIDSMessageDispatcher, HMDIdentityRegistry, HMDNotificationRelay, HMMessageDispatcher, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMDSecureSession : NSObject {
-    BOOL _clientMode;
     NSString *_destination;
     HAPRemoteSession *_hapRemoteSession;
     HMDIdentityRegistry *_identityRegistry;
@@ -19,9 +18,10 @@
     NSUUID *_sessionID;
     id _stoppedNotificationHandler;
     NSObject<OS_dispatch_queue> *_workQueue;
+    bool_clientMode;
 }
 
-@property BOOL clientMode;
+@property bool clientMode;
 @property(retain) NSString * destination;
 @property(retain) HAPRemoteSession * hapRemoteSession;
 @property(retain) HMDIdentityRegistry * identityRegistry;
@@ -34,20 +34,20 @@
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
-- (void)_configureAsClient:(BOOL)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (BOOL)clientMode;
+- (void)_configureAsClient:(bool)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (bool)clientMode;
 - (id)destination;
 - (void)handleSecureMessage:(id)arg1;
 - (id)hapRemoteSession;
 - (id)identityRegistry;
-- (id)initWithDestination:(id)arg1 messageDispatcher:(id)arg2 notificationDispatcher:(id)arg3 identityRegistry:(id)arg4 notificationRelay:(id)arg5 clientMode:(BOOL)arg6 sessionID:(id)arg7;
+- (id)initWithDestination:(id)arg1 messageDispatcher:(id)arg2 notificationDispatcher:(id)arg3 identityRegistry:(id)arg4 notificationRelay:(id)arg5 clientMode:(bool)arg6 sessionID:(id)arg7;
 - (id)msgDispatcher;
 - (id)notificationDispatcher;
 - (id)notificationRelay;
 - (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
 - (id)sessionID;
 - (id)sessionStoppedNotificationHandler;
-- (void)setClientMode:(BOOL)arg1;
+- (void)setClientMode:(bool)arg1;
 - (void)setDestination:(id)arg1;
 - (void)setHapRemoteSession:(id)arg1;
 - (void)setIdentityRegistry:(id)arg1;

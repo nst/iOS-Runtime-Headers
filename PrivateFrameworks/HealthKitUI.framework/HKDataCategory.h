@@ -8,41 +8,41 @@
     UIColor *_bottomColor;
     NSMutableDictionary *_cachedGradients;
     NSMutableDictionary *_cachedRoundedCornerGradients;
-    unsigned int _categoryID;
+    unsigned long long _categoryID;
     UIImage *_dashboardIcon;
     NSMutableArray *_dataUnitGroups;
     NSString *_displayName;
-    BOOL _isMeCategory;
     UIImage *_listIcon;
     NSString *_listIconName;
     UIImage *_shareIcon;
     UIColor *_topColor;
+    bool_isMeCategory;
 }
 
-@property(readonly) unsigned int categoryID;
+@property(readonly) unsigned long long categoryID;
 @property(readonly) UIImage * dashboardIcon;
 @property(readonly) NSArray * dataUnitGroups;
 @property(readonly) NSString * displayName;
-@property(readonly) BOOL isMeCategory;
+@property(readonly) bool isMeCategory;
 @property(readonly) UIImage * listIcon;
 @property(readonly) NSString * listIconName;
 @property(readonly) UIImage * shareIcon;
 
 - (void).cxx_destruct;
-- (id)_generateGradientOfHeight:(float)arg1;
-- (id)_generateRoundedCornerGradientWithHeight:(float)arg1;
+- (id)_generateGradientOfHeight:(double)arg1;
+- (id)_generateRoundedCornerGradientWithHeight:(double)arg1;
 - (void)addDataUnitGroup:(id)arg1;
-- (unsigned int)categoryID;
+- (unsigned long long)categoryID;
 - (id)dashboardIcon;
 - (id)dataUnitGroups;
 - (id)displayName;
-- (id)gradientWithHeight:(float)arg1;
+- (id)gradientWithHeight:(double)arg1;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isMeCategory;
+- (bool)isMeCategory;
 - (id)listIcon;
 - (id)listIconName;
-- (id)roundedCornerGradientWithHeight:(float)arg1;
+- (id)roundedCornerGradientWithHeight:(double)arg1;
 - (id)shareIcon;
 
 @end

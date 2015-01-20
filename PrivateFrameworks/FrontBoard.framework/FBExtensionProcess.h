@@ -5,6 +5,6 @@
 @interface FBExtensionProcess : FBProcess {
 }
 
-- (BOOL)isExtensionProcess;
+- (bool)isExtensionProcess;
 
 @end

@@ -8,13 +8,13 @@
 }
 
 @property(retain,readonly) NSArray * images;
-@property(readonly) int showSettings;
-@property(readonly) unsigned int transition;
+@property(readonly) long long showSettings;
+@property(readonly) unsigned long long transition;
 @property(readonly) double transitionInterval;
 
 - (id)images;
-- (int)showSettings;
-- (unsigned int)transition;
+- (long long)showSettings;
+- (unsigned long long)transition;
 - (double)transitionInterval;
 
 @end

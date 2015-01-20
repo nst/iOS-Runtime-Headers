@@ -5,15 +5,11 @@
 @class CKContainer, CKOperationInfo, CKPlaceholderOperation, NSArray, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface CKOperation : NSOperation {
-    BOOL _allowsCellularAccess;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     CKContainer *_container;
     id _context;
     NSString *_deviceIdentifier;
     NSError *_error;
-    BOOL _isDiscretionary;
-    BOOL _isExecuting;
-    BOOL _isFinished;
     NSString *_operationID;
     NSString *_parentSectionID;
     CKPlaceholderOperation *_placeholderOperation;
@@ -22,18 +18,22 @@
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSObject<OS_dispatch_source> *_timeoutSource;
-    int _usesBackgroundSessionOverride;
+    long long _usesBackgroundSessionOverride;
+    bool_allowsCellularAccess;
+    bool_isDiscretionary;
+    bool_isExecuting;
+    bool_isFinished;
 }
 
-@property BOOL allowsCellularAccess;
+@property bool allowsCellularAccess;
 @property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
 @property(retain) CKContainer * container;
 @property(readonly) id context;
 @property(retain) NSString * deviceIdentifier;
 @property(retain) NSError * error;
-@property BOOL isDiscretionary;
-@property BOOL isExecuting;
-@property BOOL isFinished;
+@property bool isDiscretionary;
+@property bool isExecuting;
+@property bool isFinished;
 @property(retain) NSString * operationID;
 @property(readonly) CKOperationInfo * operationInfo;
 @property(readonly) NSString * parentSectionID;
@@ -43,11 +43,11 @@
 @property(retain) NSString * sourceApplicationBundleIdentifier;
 @property(retain) NSString * sourceApplicationSecondaryIdentifier;
 @property(retain) NSObject<OS_dispatch_source> * timeoutSource;
-@property BOOL usesBackgroundSession;
-@property int usesBackgroundSessionOverride;
+@property bool usesBackgroundSession;
+@property long long usesBackgroundSessionOverride;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (id)CKPropertiesDescription;
 - (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -55,7 +55,7 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (void)_installTimeoutSource;
 - (void)_uninstallTimeoutSource;
-- (BOOL)allowsCellularAccess;
+- (bool)allowsCellularAccess;
 - (id)callbackQueue;
 - (void)cancel;
 - (id)container;
@@ -68,10 +68,10 @@
 - (void)fillOutOperationInfo:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (id)init;
-- (BOOL)isConcurrent;
-- (BOOL)isDiscretionary;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isDiscretionary;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)main;
 - (id)operationID;
 - (id)operationInfo;
@@ -82,14 +82,14 @@
 - (void)processOperationResult:(id)arg1;
 - (id)requestUUIDs;
 - (id)sectionID;
-- (void)setAllowsCellularAccess:(BOOL)arg1;
+- (void)setAllowsCellularAccess:(bool)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setContainer:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setIsDiscretionary:(BOOL)arg1;
-- (void)setIsExecuting:(BOOL)arg1;
-- (void)setIsFinished:(BOOL)arg1;
+- (void)setIsDiscretionary:(bool)arg1;
+- (void)setIsExecuting:(bool)arg1;
+- (void)setIsFinished:(bool)arg1;
 - (void)setOperationID:(id)arg1;
 - (void)setPlaceholderOperation:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
@@ -97,13 +97,13 @@
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setTimeoutSource:(id)arg1;
-- (void)setUsesBackgroundSession:(BOOL)arg1;
-- (void)setUsesBackgroundSessionOverride:(int)arg1;
+- (void)setUsesBackgroundSession:(bool)arg1;
+- (void)setUsesBackgroundSessionOverride:(long long)arg1;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)start;
 - (id)timeoutSource;
-- (BOOL)usesBackgroundSession;
-- (int)usesBackgroundSessionOverride;
+- (bool)usesBackgroundSession;
+- (long long)usesBackgroundSessionOverride;
 
 @end

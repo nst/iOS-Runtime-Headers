@@ -11,6 +11,6 @@
 
 - (void).cxx_destruct;
 - (void)_setSuffix:(id)arg1;
-- (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setActive:(bool)arg1 animated:(bool)arg2;
 
 @end

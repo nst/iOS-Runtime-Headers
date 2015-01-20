@@ -11,10 +11,10 @@
     NSHashTable *_components;
     TSPObjectContext *_context;
     int _ignoreCachedObjectEvictionCount;
-    BOOL _isTornDown;
     TSPComponent *_packageMetadataComponent;
     NSObject<OS_dispatch_queue> *_readFlushedComponentQueue;
     TSPComponent *_viewStateComponent;
+    bool_isTornDown;
 }
 
 @property(readonly) TSPObjectContext * context;
@@ -22,9 +22,9 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) TSPComponent * documentComponent;
 @property(readonly) TSPComponent * documentObjectContainerComponent;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isDocumentComponentTreeModified;
-@property(readonly) BOOL isSupportComponentTreeModified;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isDocumentComponentTreeModified;
+@property(readonly) bool isSupportComponentTreeModified;
 @property(readonly) TSPComponent * packageMetadataComponent;
 @property(readonly) Class superclass;
 @property(readonly) TSPComponent * supportComponent;
@@ -33,7 +33,7 @@
 
 - (void).cxx_destruct;
 - (void)beginIgnoringCachedObjectEviction;
-- (void)cacheComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
+- (void)cacheComponent:(id)arg1 isDiscardingContent:(bool)arg2;
 - (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)componentForRootObjectIdentifier:(long long)arg1;
 - (void)componentForRootObjectOfLazyReference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
@@ -50,12 +50,12 @@
 - (void)endIgnoringCachedObjectEviction;
 - (void)enumerateComponents:(id)arg1;
 - (void)evictAllCachedObjects;
-- (void)flushComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
+- (void)flushComponent:(id)arg1 isDiscardingContent:(bool)arg2;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isDocumentComponentTreeModified;
-- (BOOL)isSupportComponentTreeModified;
+- (bool)isActive;
+- (bool)isDocumentComponentTreeModified;
+- (bool)isSupportComponentTreeModified;
 - (void)loadFromPackage:(id)arg1 metadata:(id)arg2;
 - (id)objectForIdentifier:(long long)arg1;
 - (id)packageMetadataComponent;
@@ -64,7 +64,7 @@
 - (id)rootComponentForPackageIdentifier:(unsigned char)arg1;
 - (id)rootComponentWithIdentifierImpl:(long long)arg1 locator:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)setViewStateComponent:(id)arg1;
-- (BOOL)shouldKeepAllCachedObjectsInMemory;
+- (bool)shouldKeepAllCachedObjectsInMemory;
 - (id)supportComponent;
 - (id)supportComponentImpl;
 - (id)supportObjectContainerComponent;
@@ -72,6 +72,6 @@
 - (void)tearDown;
 - (void)traverseComponentTreeFromRoot:(id)arg1 accessor:(id)arg2;
 - (id)viewStateComponent;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(bool)arg2;
 
 @end

@@ -10,24 +10,24 @@
     struct OpaqueCMClock { } *_clock;
     BWDeviceOrientationMonitor *_deviceOrientationMonitor;
     NSObject<OS_dispatch_queue> *_emitSamplesDispatchQueue;
-    unsigned long _localIDOfOrientationMetadata;
+    unsigned int _localIDOfOrientationMetadata;
     struct OpaqueCMClock { } *_masterClock;
     int _mostRecentDevicePortraitLandscapeOrientation;
-    BOOL _recording;
     int _sourcePosition;
     NSMutableArray *_transforms;
+    bool_recording;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (void)initialize;
 
-- (void)_queueUpCallToEmitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 markerBufferOrFirstSample:(BOOL)arg2;
+- (void)_queueUpCallToEmitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 markerBufferOrFirstSample:(bool)arg2;
 - (void)_releaseTransformData;
-- (void)_renderSampleBufferForBoxedFormatOutputAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 orientation:(int)arg2 firstSample:(BOOL)arg3;
+- (void)_renderSampleBufferForBoxedFormatOutputAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 orientation:(int)arg2 firstSample:(bool)arg3;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;

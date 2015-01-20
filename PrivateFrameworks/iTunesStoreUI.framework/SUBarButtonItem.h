@@ -6,10 +6,10 @@
 
 @interface SUBarButtonItem : UIBarButtonItem {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     UIView *_accessoryView;
     } _accessoryViewInsets;
     SUUIAppearance *_confirmationAppearance;
@@ -19,29 +19,29 @@
 }
 
 @property(retain) UIView * accessoryView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
-@property(getter=isLoading) BOOL loading;
-@property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } accessoryViewInsets;
+@property(getter=isLoading) bool loading;
+@property(getter=isShowingConfirmation,readonly) bool showingConfirmation;
 
 + (Class)classForNavigationButton;
 
 - (void)_addTouchCaptureViewForNavigationButton:(id)arg1;
 - (id)_navigationButton;
 - (void)_removeTouchCaptureView;
-- (void)_setTitle:(id)arg1 isConfirmation:(BOOL)arg2 appearance:(id)arg3 animated:(BOOL)arg4;
+- (void)_setTitle:(id)arg1 isConfirmation:(bool)arg2 appearance:(id)arg3 animated:(bool)arg4;
 - (void)_touchCaptureAction:(id)arg1;
 - (void)_updateViewForAccessoryChange;
 - (id)accessoryView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })accessoryViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })accessoryViewInsets;
 - (void)configureFromScriptButton:(id)arg1;
 - (id)createViewForNavigationItem:(id)arg1;
 - (void)dealloc;
-- (void)hideConfirmationWithAppearance:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)isLoading;
-- (BOOL)isShowingConfirmation;
+- (void)hideConfirmationWithAppearance:(id)arg1 animated:(bool)arg2;
+- (bool)isLoading;
+- (bool)isShowingConfirmation;
 - (void)setAccessoryView:(id)arg1;
-- (void)setAccessoryViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setLoading:(BOOL)arg1;
-- (void)showConfirmationWithTitle:(id)arg1 appearance:(id)arg2 animated:(BOOL)arg3;
+- (void)setAccessoryViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setLoading:(bool)arg1;
+- (void)showConfirmationWithTitle:(id)arg1 appearance:(id)arg2 animated:(bool)arg3;
 
 @end

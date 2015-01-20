@@ -12,14 +12,14 @@
     BRCDownloadContext *_context;
     id _downloadCompletionBlock;
     NSString *_etag;
-    BOOL _isConflict;
     NSProgress *_progress;
+    bool_isConflict;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id downloadCompletionBlock;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSProgress * progress;
 @property(readonly) Class superclass;
 
@@ -30,7 +30,7 @@
 - (id)_stageRecord:(id)arg1 error:(id*)arg2;
 - (id)downloadCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (id)initWithDownloadContext:(id)arg1 etag:(id)arg2 isConflict:(BOOL)arg3;
+- (id)initWithDownloadContext:(id)arg1 etag:(id)arg2 isConflict:(bool)arg3;
 - (void)main;
 - (id)progress;
 - (void)setDownloadCompletionBlock:(id)arg1;

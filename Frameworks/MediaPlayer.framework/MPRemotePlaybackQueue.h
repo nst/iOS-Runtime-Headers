@@ -9,7 +9,7 @@
     NSDictionary *_userInfo;
 }
 
-@property(getter=isRequestingImmediatePlayback,readonly) BOOL requestingImmediatePlayback;
+@property(getter=isRequestingImmediatePlayback,readonly) bool requestingImmediatePlayback;
 @property(readonly) NSDictionary * userInfo;
 
 + (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
-- (BOOL)isRequestingImmediatePlayback;
+- (bool)isRequestingImmediatePlayback;
 - (id)userInfo;
 
 @end

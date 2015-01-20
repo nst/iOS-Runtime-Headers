@@ -15,7 +15,7 @@
 + (id)sharedAuthenticator;
 
 - (void)_addAccountAuthenticationObserers;
-- (void)_addDeferredRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
+- (void)_addDeferredRequest:(id)arg1 accountAuthRequired:(bool)arg2;
 - (void)_addDeviceAuthenticationObserers;
 - (void)_completeAuthenticationForDeferredRequests;
 - (void)_didAuthenticateDevice:(id)arg1;
@@ -24,16 +24,16 @@
 - (void)_removeAccountAuthenticationObservers;
 - (void)_removeDefferredRequests;
 - (void)_removeDeviceAuthenticationObservers;
-- (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
-- (BOOL)cachedCredentialsValid;
+- (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(bool)arg2;
+- (bool)cachedCredentialsValid;
 - (void)clearAccountInfo;
 - (void)dealloc;
 - (void)didAuthenticateAccount;
 - (id)init;
 - (void)invalidateToken;
-- (BOOL)isAccountAuthenticated;
-- (BOOL)isWaitingForAuthentication;
-- (BOOL)loadStoredCredentials;
+- (bool)isAccountAuthenticated;
+- (bool)isWaitingForAuthentication;
+- (bool)loadStoredCredentials;
 - (void)setAccount:(id)arg1 password:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)userCancelledAccountAuthentication;

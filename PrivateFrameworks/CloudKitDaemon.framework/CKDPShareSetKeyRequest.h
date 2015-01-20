@@ -12,9 +12,9 @@
 }
 
 @property(retain) NSString * currentKeyVersion;
-@property(readonly) BOOL hasCurrentKeyVersion;
-@property(readonly) BOOL hasKeyData;
-@property(readonly) BOOL hasShareId;
+@property(readonly) bool hasCurrentKeyVersion;
+@property(readonly) bool hasKeyData;
+@property(readonly) bool hasShareId;
 @property(retain) NSData * keyData;
 @property(retain) NSMutableArray * participantIds;
 @property(retain) CKDPShareIdentifier * shareId;
@@ -29,17 +29,17 @@
 - (id)currentKeyVersion;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrentKeyVersion;
-- (BOOL)hasKeyData;
-- (BOOL)hasShareId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrentKeyVersion;
+- (bool)hasKeyData;
+- (bool)hasShareId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)keyData;
 - (void)mergeFrom:(id)arg1;
-- (id)participantIdAtIndex:(unsigned int)arg1;
+- (id)participantIdAtIndex:(unsigned long long)arg1;
 - (id)participantIds;
-- (unsigned int)participantIdsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)participantIdsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrentKeyVersion:(id)arg1;
 - (void)setKeyData:(id)arg1;
 - (void)setParticipantIds:(id)arg1;

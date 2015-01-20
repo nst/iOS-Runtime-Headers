@@ -7,9 +7,9 @@
 @interface ABPersonTableViewImageDataDelegate : NSObject <ABPersonImageDataDelegate> {
     NSMutableDictionary *_currentImageData;
     ABPersonTableViewDataSource *_dataSource;
-    BOOL _didChangePreferredPersonForImage;
-    BOOL _hasImageChanges;
     ABUIPerson *_personForImageData;
+    bool_didChangePreferredPersonForImage;
+    bool_hasImageChanges;
 }
 
 @property ABPersonTableViewDataSource * dataSource;
@@ -17,11 +17,11 @@
 - (id)currentImageData;
 - (id)dataSource;
 - (void)dealloc;
-- (BOOL)didChangePreferredPersonForImage;
-- (BOOL)hasImageChanges;
-- (BOOL)hasImageDataForPerson:(id)arg1;
-- (id)imageDataWithFormat:(int)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forPerson:(id)arg3 isRemoved:(BOOL*)arg4;
-- (id)imageDataWithFormat:(int)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forPerson:(id)arg3;
+- (bool)didChangePreferredPersonForImage;
+- (bool)hasImageChanges;
+- (bool)hasImageDataForPerson:(id)arg1;
+- (id)imageDataWithFormat:(int)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 forPerson:(id)arg3 isRemoved:(bool*)arg4;
+- (id)imageDataWithFormat:(int)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 forPerson:(id)arg3;
 - (void)imageWillSave;
 - (void)markImagesWith:(id)arg1 forPerson:(id)arg2;
 - (id)people;
@@ -33,7 +33,7 @@
 - (void)resetImageData;
 - (void)setCurrentImageData:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setImageData:(id)arg1 withFormat:(int)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 forPerson:(id)arg4;
+- (void)setImageData:(id)arg1 withFormat:(int)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 forPerson:(id)arg4;
 - (void)setPersonForImageData:(id)arg1;
 - (void)updateRecordImages;
 - (id)writablePeople;

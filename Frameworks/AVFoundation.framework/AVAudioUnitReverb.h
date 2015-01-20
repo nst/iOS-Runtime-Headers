@@ -8,7 +8,7 @@
 @property float wetDryMix;
 
 - (id)init;
-- (void)loadFactoryPreset:(int)arg1;
+- (void)loadFactoryPreset:(long long)arg1;
 - (void)setWetDryMix:(float)arg1;
 - (float)wetDryMix;
 

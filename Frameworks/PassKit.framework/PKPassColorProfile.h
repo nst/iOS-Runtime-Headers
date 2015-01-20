@@ -6,51 +6,51 @@
 
 @interface PKPassColorProfile : NSObject {
     UIColor *_backgroundColor;
-    float _backgroundLightness;
+    double _backgroundLightness;
     UIColor *_foregroundColor;
-    float _foregroundLightness;
+    double _foregroundLightness;
     UIColor *_highlightColor;
     UIColor *_labelColor;
-    float _labelLightness;
-    float _overlayDarkeningAlpha;
-    float _overlayLighteningAlpha;
-    float _regularDarkeningAlpha;
-    float _regularLighteningAlpha;
+    double _labelLightness;
+    double _overlayDarkeningAlpha;
+    double _overlayLighteningAlpha;
+    double _regularDarkeningAlpha;
+    double _regularLighteningAlpha;
     PKPassColorProfile *_stripProfile;
 }
 
 @property(readonly) UIColor * backgroundColor;
 @property(readonly) UIColor * foregroundColor;
 @property(readonly) UIColor * highlightColor;
-@property(readonly) BOOL isLight;
+@property(readonly) bool isLight;
 @property(readonly) UIColor * labelColor;
-@property(readonly) float overlayDarkeningAlpha;
-@property(readonly) float overlayLighteningAlpha;
-@property(readonly) float regularDarkeningAlpha;
-@property(readonly) float regularLighteningAlpha;
+@property(readonly) double overlayDarkeningAlpha;
+@property(readonly) double overlayLighteningAlpha;
+@property(readonly) double regularDarkeningAlpha;
+@property(readonly) double regularLighteningAlpha;
 
 + (id)profileForDisplayProfile:(id)arg1;
 
 - (void)_calculateColorsWithBackgroundColor:(id)arg1 foregroundColor:(id)arg2 labelColor:(id)arg3;
 - (id)_imageForGlyph:(id)arg1 color:(id)arg2;
 - (id)_initWithBackgroundColor:(id)arg1 foregroundColor:(id)arg2 labelColor:(id)arg3;
-- (int)_sizeForFont:(id)arg1;
-- (int)_sizeForGlyph:(id)arg1;
+- (long long)_sizeForFont:(id)arg1;
+- (long long)_sizeForGlyph:(id)arg1;
 - (id)backgroundColor;
 - (void)dealloc;
 - (id)foregroundAttributesForFont:(id)arg1;
 - (id)foregroundColor;
-- (id)foregroundColorOverStrip:(BOOL)arg1;
+- (id)foregroundColorOverStrip:(bool)arg1;
 - (id)foregroundImageForGlyph:(id)arg1;
 - (id)highlightColor;
-- (BOOL)isLight;
+- (bool)isLight;
 - (id)labelAttributesForFont:(id)arg1;
 - (id)labelColor;
-- (id)labelColorOverStrip:(BOOL)arg1;
+- (id)labelColorOverStrip:(bool)arg1;
 - (id)labelImageForGlyph:(id)arg1;
-- (float)overlayDarkeningAlpha;
-- (float)overlayLighteningAlpha;
-- (float)regularDarkeningAlpha;
-- (float)regularLighteningAlpha;
+- (double)overlayDarkeningAlpha;
+- (double)overlayLighteningAlpha;
+- (double)regularDarkeningAlpha;
+- (double)regularLighteningAlpha;
 
 @end

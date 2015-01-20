@@ -6,23 +6,23 @@
 
 @interface CPLPullFromTransportTask : CPLEngineSyncTask {
     NSString *_clientCacheIdentifier;
-    BOOL _didBeginTransientRepository;
-    BOOL _didGetSomeChanges;
     <CPLEngineTransportDownloadBatchTask> *_downloadTask;
     NSData *_initialSyncAnchor;
     NSObject<OS_dispatch_queue> *_queue;
-    BOOL _resetSyncAnchor;
+    bool_didBeginTransientRepository;
+    bool_didGetSomeChanges;
+    bool_resetSyncAnchor;
 }
 
 @property(retain) <CPLPullFromTransportTaskDelegate> * delegate;
-@property(readonly) BOOL didGetSomeChanges;
+@property(readonly) bool didGetSomeChanges;
 
 - (void).cxx_destruct;
 - (void)_finishTaskWithErrorAndCleanupIfNecessary:(id)arg1;
 - (void)_handleNewBatch:(id)arg1 newSyncAnchor:(id)arg2;
 - (void)_launch;
 - (void)cancel;
-- (BOOL)didGetSomeChanges;
+- (bool)didGetSomeChanges;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)launch;
 - (void)pause;

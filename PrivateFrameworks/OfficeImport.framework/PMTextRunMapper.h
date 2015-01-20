@@ -8,7 +8,7 @@
     OADTextRun *mTextRun;
 }
 
-- (BOOL)_isDefaultFill:(id)arg1;
+- (bool)_isDefaultFill:(id)arg1;
 - (void)addFontForLanguageType:(int)arg1 toCharacterStyle:(id)arg2;
 - (id)copyCharacterStyleWithState:(id)arg1;
 - (id)fontScheme;

@@ -10,7 +10,7 @@
 @interface KNBuildAttributes : KNAnimationAttributes {
 }
 
-+ (BOOL)customAttributeKeyIsValid:(id)arg1;
++ (bool)customAttributeKeyIsValid:(id)arg1;
 + (id)defaultAttributesForEffect:(id)arg1 buildType:(int)arg2;
 + (id)supportedCustomAttributes;
 

@@ -6,51 +6,51 @@
 
 @interface _UIRemoteKeyboards : NSObject <_UIKeyboardArbitrationClient, _UIRemoteKeyboardControllerDelegate> {
     NSXPCConnection *_connection;
-    BOOL _currentKeyboard;
     _UIKeyboardChangedInformation *_currentState;
     NSHashTable *_windowControllers;
+    bool_currentKeyboard;
 }
 
 @property(retain) NSXPCConnection * connection;
-@property BOOL currentKeyboard;
+@property bool currentKeyboard;
 @property(retain) _UIKeyboardChangedInformation * currentState;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float intersectionHeight;
-@property(readonly) BOOL keyboardActive;
-@property(readonly) BOOL keyboardVisible;
+@property(readonly) unsigned long long hash;
+@property(readonly) double intersectionHeight;
+@property(readonly) bool keyboardActive;
+@property(readonly) bool keyboardVisible;
 @property(readonly) UIWindow * keyboardWindow;
 @property(readonly) <_UIKeyboardArbitration> * proxy;
 @property(readonly) Class superclass;
 
-+ (BOOL)enabled;
++ (bool)enabled;
 + (id)sharedRemoteKeyboards;
 
 - (void)completeMoveKeyboardForScreen:(id)arg1;
 - (id)connection;
 - (void)controllerDidLayoutSubviews:(id)arg1;
-- (BOOL)currentKeyboard;
+- (bool)currentKeyboard;
 - (id)currentState;
 - (void)dealloc;
 - (void)didActivate:(id)arg1;
 - (void)didSuspend:(id)arg1;
 - (id)init;
-- (float)intersectionHeight;
-- (BOOL)keyboardActive;
+- (double)intersectionHeight;
+- (bool)keyboardActive;
 - (void)keyboardChanged:(id)arg1;
-- (BOOL)keyboardVisible;
+- (bool)keyboardVisible;
 - (id)keyboardWindow;
 - (void)performOnControllers:(id)arg1;
 - (id)prepareForHostedWindow;
-- (void)prepareToMoveKeyboard:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showing:(BOOL)arg2 forScreen:(id)arg3;
+- (void)prepareToMoveKeyboard:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 showing:(bool)arg2 forScreen:(id)arg3;
 - (id)proxy;
 - (void)registerController:(id)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setCurrentKeyboard:(BOOL)arg1;
+- (void)setCurrentKeyboard:(bool)arg1;
 - (void)setCurrentState:(id)arg1;
 - (void)setHostedWindowView:(id)arg1;
-- (void)setWindowEnabled:(BOOL)arg1;
+- (void)setWindowEnabled:(bool)arg1;
 - (void)startConnection;
 - (void)stopConnection;
 - (void)unregisterController:(id)arg1;

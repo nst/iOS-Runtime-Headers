@@ -8,17 +8,17 @@
     NEConfiguration *_configuration;
     NEConfigurationManager *_configurationManager;
     NEVPNConnection *_connection;
-    BOOL _hasLoaded;
     NSString *_localizedDescription;
+    bool_hasLoaded;
 }
 
 @property(copy) NEConfiguration * configuration;
 @property(readonly) NEConfigurationManager * configurationManager;
 @property(readonly) NEVPNConnection * connection;
-@property(getter=isEnabled) BOOL enabled;
-@property BOOL hasLoaded;
+@property(getter=isEnabled) bool enabled;
+@property bool hasLoaded;
 @property(copy) NSString * localizedDescription;
-@property(getter=isOnDemandEnabled) BOOL onDemandEnabled;
+@property(getter=isOnDemandEnabled) bool onDemandEnabled;
 @property(copy) NSArray * onDemandRules;
 @property(retain) NEVPNProtocol * protocol;
 
@@ -28,11 +28,11 @@
 - (id)configuration;
 - (id)configurationManager;
 - (id)connection;
-- (BOOL)hasLoaded;
+- (bool)hasLoaded;
 - (id)init;
 - (id)initVPNManager;
-- (BOOL)isEnabled;
-- (BOOL)isOnDemandEnabled;
+- (bool)isEnabled;
+- (bool)isOnDemandEnabled;
 - (void)loadFromPreferencesWithCompletionHandler:(id)arg1;
 - (id)localizedDescription;
 - (id)onDemandRules;
@@ -40,10 +40,10 @@
 - (void)removeFromPreferencesWithCompletionHandler:(id)arg1;
 - (void)saveToPreferencesWithCompletionHandler:(id)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHasLoaded:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHasLoaded:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
-- (void)setOnDemandEnabled:(BOOL)arg1;
+- (void)setOnDemandEnabled:(bool)arg1;
 - (void)setOnDemandRules:(id)arg1;
 - (void)setProtocol:(id)arg1;
 

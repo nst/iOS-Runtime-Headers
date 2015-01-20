@@ -21,7 +21,7 @@
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property(copy,readonly) <NSObject><NSCopying> * value;
 
-+ (BOOL)_clientExpectsISOUserDataKeysInQuickTimeUserDataKeySpace;
++ (bool)_clientExpectsISOUserDataKeysInQuickTimeUserDataKeySpace;
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
 + (id)_isoUserDataKeysRequiringKeySpaceConversion;
 + (id)_replaceQuickTimeUserDataKeySpaceWithISOUserDataKeySpaceIfRequired:(id)arg1;
@@ -37,7 +37,7 @@
 + (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
 + (id)metadataItemsFromArray:(id)arg1 withStringValue:(id)arg2;
 
-- (BOOL)_areExtraAttributesOf:(id)arg1 comparableToExtraAttributesOf:(id)arg2;
+- (bool)_areExtraAttributesOf:(id)arg1 comparableToExtraAttributesOf:(id)arg2;
 - (id)_conformingDataTypes;
 - (void*)_copyValueAsCFTypeWithFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 failureReason:(id*)arg2;
 - (void)_extractPropertiesFromDictionary:(id)arg1;
@@ -46,7 +46,7 @@
 - (id)_figMetadataProperties;
 - (id)_figMetadataSpecificationReturningError:(id*)arg1;
 - (id)_initWithFigMetadataDictionary:(id)arg1;
-- (id)_initWithReader:(struct OpaqueFigMetadataReader { }*)arg1 itemIndex:(long)arg2;
+- (id)_initWithReader:(struct OpaqueFigMetadataReader { }*)arg1 itemIndex:(long long)arg2;
 - (id)_keyAsString;
 - (void)_makePropertiesReady;
 - (void)_makeValueReady;
@@ -67,19 +67,19 @@
 - (id)extendedLanguageTag;
 - (id)extraAttributes;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (struct CGImage { }*)imageValue;
 - (id)init;
 - (id)intrinsicAttributesOfExtraAttributes:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (id)keySpace;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)locale;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)numberValue;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)stringValue;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)value;

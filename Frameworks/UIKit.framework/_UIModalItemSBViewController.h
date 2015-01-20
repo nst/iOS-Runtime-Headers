@@ -5,9 +5,9 @@
 @interface _UIModalItemSBViewController : UIViewController {
 }
 
-- (int)preferredInterfaceOrientationForPresentation;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

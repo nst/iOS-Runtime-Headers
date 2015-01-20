@@ -14,7 +14,7 @@
 
 - (id)appleID;
 - (id)bagKey;
-- (BOOL)canSendURLRequest:(id)arg1;
+- (bool)canSendURLRequest:(id)arg1;
 - (void)cancelTapped;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)dealloc;

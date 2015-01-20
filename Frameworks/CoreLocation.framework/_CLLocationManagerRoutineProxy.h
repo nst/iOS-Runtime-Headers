@@ -9,17 +9,17 @@
     <CLLocationManagerDelegate> *_delegate;
     CLLocationManagerRoutine *_locationManagerRoutine;
     NSObject<OS_dispatch_queue> *_queue;
-    BOOL _updating;
+    bool_updating;
 }
 
 @property(retain) NSXPCConnection * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property <CLLocationManagerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property CLLocationManagerRoutine * locationManagerRoutine;
 @property(readonly) Class superclass;
-@property BOOL updating;
+@property bool updating;
 
 - (id)connection;
 - (void)createConnection;
@@ -31,7 +31,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLocationManagerRoutine:(id)arg1;
-- (void)setUpdating:(BOOL)arg1;
-- (BOOL)updating;
+- (void)setUpdating:(bool)arg1;
+- (bool)updating;
 
 @end

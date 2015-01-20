@@ -5,17 +5,17 @@
 @class NSArray, NSMutableDictionary;
 
 @interface IMMultiDict : NSObject {
-    unsigned int _count;
+    unsigned long long _count;
     NSMutableDictionary *_dictionary;
 }
 
 @property(readonly) NSArray * allKeys;
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
 @property(retain) NSMutableDictionary * dictionary;
 
 - (id)allKeys;
-- (unsigned int)count;
-- (unsigned int)countForKey:(id)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countForKey:(id)arg1;
 - (void)dealloc;
 - (id)dequeueObjectForKey:(id)arg1;
 - (id)description;

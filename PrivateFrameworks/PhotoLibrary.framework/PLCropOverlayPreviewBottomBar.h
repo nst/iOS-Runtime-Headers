@@ -5,28 +5,28 @@
 @class UIButton;
 
 @interface PLCropOverlayPreviewBottomBar : UIView {
-    int _backgroundStyle;
+    long long _backgroundStyle;
     UIButton *_cancelButton;
     UIButton *_doneButton;
     UIButton *_playbackButton;
 }
 
-@property int backgroundStyle;
+@property long long backgroundStyle;
 @property(readonly) UIButton * cancelButton;
 @property(readonly) UIButton * doneButton;
 @property(readonly) UIButton * playbackButton;
 
 - (void)_commonPLCropOverlayEditPhotoBottomBarInitialization;
 - (void)_updateBackgroundStyle;
-- (int)backgroundStyle;
+- (long long)backgroundStyle;
 - (id)cancelButton;
 - (void)dealloc;
 - (id)doneButton;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)playbackButton;
-- (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
-- (void)setBackgroundStyle:(int)arg1;
+- (void)setBackgroundStyle:(long long)arg1 animated:(bool)arg2;
+- (void)setBackgroundStyle:(long long)arg1;
 
 @end

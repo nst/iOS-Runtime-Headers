@@ -13,8 +13,8 @@
 @property(copy) NSString * language;
 @property(copy) NSNumber * regionOfInterestRadiusInMiles;
 @property(retain) SALocalSearchMapItemList * searchItems;
-@property BOOL showDirections;
-@property BOOL showTraffic;
+@property bool showDirections;
+@property bool showTraffic;
 
 + (id)showMapPoints;
 + (id)showMapPointsWithDictionary:(id)arg1 context:(id)arg2;
@@ -26,7 +26,7 @@
 - (id)itemSource;
 - (id)language;
 - (id)regionOfInterestRadiusInMiles;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)searchItems;
 - (void)setDirectionsType:(id)arg1;
 - (void)setItemDestination:(id)arg1;
@@ -34,9 +34,9 @@
 - (void)setLanguage:(id)arg1;
 - (void)setRegionOfInterestRadiusInMiles:(id)arg1;
 - (void)setSearchItems:(id)arg1;
-- (void)setShowDirections:(BOOL)arg1;
-- (void)setShowTraffic:(BOOL)arg1;
-- (BOOL)showDirections;
-- (BOOL)showTraffic;
+- (void)setShowDirections:(bool)arg1;
+- (void)setShowTraffic:(bool)arg1;
+- (bool)showDirections;
+- (bool)showTraffic;
 
 @end

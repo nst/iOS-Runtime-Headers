@@ -6,58 +6,58 @@
 
 @interface SUTableDataSource : NSObject {
     id _cellReuseSource;
-    int _columnCount;
+    long long _columnCount;
     SUVariableCellConfigurationCache *_configurationCache;
-    int _preferringUserInteractionCount;
+    long long _preferringUserInteractionCount;
 }
 
 @property id cellReuseSource;
-@property int columnCount;
+@property long long columnCount;
 @property(readonly) SUImageCache * imageCache;
 @property(readonly) ISURLOperationPool * imagePool;
-@property(readonly) int numberOfSections;
-@property(getter=isPreferringUserInteraction,readonly) BOOL preferringUserInteraction;
+@property(readonly) long long numberOfSections;
+@property(getter=isPreferringUserInteraction,readonly) bool preferringUserInteraction;
 @property(readonly) NSArray * sectionIndexTitles;
-@property(readonly) int tableViewStyle;
+@property(readonly) long long tableViewStyle;
 
 - (void)beginPreferringUserInteraction;
-- (id)cachedConfigurationForClass:(Class)arg1 index:(int)arg2;
-- (BOOL)canDeleteIndexPath:(id)arg1;
-- (BOOL)canDoubleTapIndexPath:(id)arg1;
-- (BOOL)canSelectIndexPath:(id)arg1;
+- (id)cachedConfigurationForClass:(Class)arg1 index:(long long)arg2;
+- (bool)canDeleteIndexPath:(id)arg1;
+- (bool)canDoubleTapIndexPath:(id)arg1;
+- (bool)canSelectIndexPath:(id)arg1;
 - (id)cellContextForConfigurationClass:(Class)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (float)cellHeightForIndexPath:(id)arg1;
+- (double)cellHeightForIndexPath:(id)arg1;
 - (id)cellReuseSource;
-- (int)columnCount;
+- (long long)columnCount;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)configurePlaceholderCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)dealloc;
-- (BOOL)deleteIndexPath:(id)arg1;
+- (bool)deleteIndexPath:(id)arg1;
 - (void)didBeginPreferringUserInteraction;
 - (void)didEndPreferringUserInteraction;
 - (void)endPreferringUserInteraction;
-- (id)headerViewForSection:(int)arg1;
-- (float)heightForFooterInSection:(int)arg1;
-- (float)heightForPlaceholderCells;
+- (id)headerViewForSection:(long long)arg1;
+- (double)heightForFooterInSection:(long long)arg1;
+- (double)heightForPlaceholderCells;
 - (id)imageCache;
 - (id)imagePool;
 - (id)init;
-- (BOOL)isPreferringUserInteraction;
-- (int)numberOfColumnsInSection:(int)arg1;
-- (int)numberOfRowsInSection:(int)arg1;
-- (int)numberOfSections;
+- (bool)isPreferringUserInteraction;
+- (long long)numberOfColumnsInSection:(long long)arg1;
+- (long long)numberOfRowsInSection:(long long)arg1;
+- (long long)numberOfSections;
 - (id)placeholderCellForIndexPath:(id)arg1;
 - (void)reloadCellContexts;
 - (void)reloadData;
 - (void)resetCaches;
 - (void)resetLayoutCaches;
-- (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
+- (long long)sectionIndexForIndexTitle:(id)arg1 atIndex:(long long)arg2;
 - (id)sectionIndexTitles;
 - (void)setCellReuseSource:(id)arg1;
-- (void)setColumnCount:(int)arg1;
-- (int)tableViewStyle;
+- (void)setColumnCount:(long long)arg1;
+- (long long)tableViewStyle;
 - (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
-- (id)titleForHeaderInSection:(int)arg1;
+- (id)titleForHeaderInSection:(long long)arg1;
 
 @end

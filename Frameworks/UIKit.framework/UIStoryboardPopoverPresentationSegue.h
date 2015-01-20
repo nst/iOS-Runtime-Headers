@@ -7,42 +7,42 @@
 @interface UIStoryboardPopoverPresentationSegue : UIStoryboardSegue <UIPopoverPresentationControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     UIBarButtonItem *_anchorBarButtonItem;
     } _anchorRect;
     UIView *_anchorView;
     NSArray *_passthroughViews;
-    unsigned int _permittedArrowDirections;
+    unsigned long long _permittedArrowDirections;
 }
 
 @property(retain) UIBarButtonItem * anchorBarButtonItem;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } anchorRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } anchorRect;
 @property(retain) UIView * anchorView;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSArray * passthroughViews;
-@property unsigned int permittedArrowDirections;
+@property unsigned long long permittedArrowDirections;
 @property(readonly) Class superclass;
 
 - (void)_prepare;
 - (id)anchorBarButtonItem;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })anchorRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })anchorRect;
 - (id)anchorView;
 - (void)dealloc;
 - (id)passthroughViews;
 - (void)perform;
-- (unsigned int)permittedArrowDirections;
+- (unsigned long long)permittedArrowDirections;
 - (void)setAnchorBarButtonItem:(id)arg1;
-- (void)setAnchorRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAnchorRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAnchorView:(id)arg1;
 - (void)setPassthroughViews:(id)arg1;
-- (void)setPermittedArrowDirections:(unsigned int)arg1;
+- (void)setPermittedArrowDirections:(unsigned long long)arg1;
 
 @end

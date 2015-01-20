@@ -9,6 +9,6 @@
 - (void)layoutSubviews;
 - (id)newButtonForPart:(unsigned long long)arg1;
 - (id)newVolumeSlider;
-- (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
+- (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(bool)arg3;
 
 @end

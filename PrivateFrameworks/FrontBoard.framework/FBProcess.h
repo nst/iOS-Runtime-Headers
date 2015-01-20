@@ -25,7 +25,7 @@
 @property(getter=_queue_jobLabel,setter=_queue_setJobLabel:,copy) NSString * queue_jobLabel;
 @property(getter=_queue_name,setter=_queue_setName:,copy) NSString * queue_name;
 @property(getter=_queue_pid,setter=_queue_setPid:) int queue_pid;
-@property(getter=_queue_isRunning,setter=_queue_setRunning:) BOOL queue_running;
+@property(getter=_queue_isRunning,setter=_queue_setRunning:) bool queue_running;
 @property(getter=_queue_taskState,setter=_queue_setTaskState:) int queue_taskState;
 @property(getter=_queue_visibility,setter=_queue_setVisibility:) int queue_visibility;
 @property(copy,readonly) FBProcessState * state;
@@ -37,8 +37,8 @@
 - (id)_queue_delegate;
 - (int)_queue_effectiveVisibilityForVisibility:(int)arg1;
 - (void)_queue_enumerateObserversWithBlock:(id)arg1;
-- (BOOL)_queue_isForeground;
-- (BOOL)_queue_isRunning;
+- (bool)_queue_isForeground;
+- (bool)_queue_isRunning;
 - (id)_queue_jobLabel;
 - (id)_queue_name;
 - (int)_queue_pid;
@@ -46,11 +46,11 @@
 - (void)_queue_setJobLabel:(id)arg1;
 - (void)_queue_setName:(id)arg1;
 - (void)_queue_setPid:(int)arg1;
-- (void)_queue_setRunning:(BOOL)arg1;
+- (void)_queue_setRunning:(bool)arg1;
 - (void)_queue_setTaskState:(int)arg1;
 - (void)_queue_setVisibility:(int)arg1;
 - (int)_queue_taskState;
-- (void)_queue_toggleProcessDeathObserver:(BOOL)arg1;
+- (void)_queue_toggleProcessDeathObserver:(bool)arg1;
 - (void)_queue_updateStateWithBlock:(id)arg1;
 - (int)_queue_visibility;
 - (id)_workspace;
@@ -59,9 +59,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithBundleID:(id)arg1 pid:(int)arg2 callOutQueue:(id)arg3;
-- (BOOL)isApplicationProcess;
-- (BOOL)isExtensionProcess;
-- (BOOL)isSystemApplicationProcess;
+- (bool)isApplicationProcess;
+- (bool)isExtensionProcess;
+- (bool)isSystemApplicationProcess;
 - (id)jobLabel;
 - (id)name;
 - (void)removeObserver:(id)arg1;

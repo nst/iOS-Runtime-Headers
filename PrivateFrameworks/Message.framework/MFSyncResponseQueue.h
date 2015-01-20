@@ -3,10 +3,10 @@
  */
 
 @interface MFSyncResponseQueue : MFBaseSyncResponseQueue {
-    BOOL _shouldSyncFlags;
+    bool_shouldSyncFlags;
 }
 
-- (BOOL)addItem:(id)arg1;
-- (BOOL)shouldSyncFlags;
+- (bool)addItem:(id)arg1;
+- (bool)shouldSyncFlags;
 
 @end

@@ -14,15 +14,15 @@
     id _tileErrorHandler;
 }
 
-@property(readonly) BOOL allowsNetworkTileLoad;
+@property(readonly) bool allowsNetworkTileLoad;
 @property <GEOMapAccessRestrictions> * restrictions;
 @property(copy) id tileErrorHandler;
 
 + (id)realisticMap;
-+ (BOOL)supportsRealisticMap;
++ (bool)supportsRealisticMap;
 
-- (BOOL)allowsNetworkTileLoad;
-- (id)buildMapEdgeFrom:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 edgeHandler:(id)arg2;
+- (bool)allowsNetworkTileLoad;
+- (id)buildMapEdgeFrom:(const struct { struct { /* ? */ } *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 edgeHandler:(id)arg2;
 - (id)callbackQueue;
 - (void)dealloc;
 - (id)findClosestNamedFeaturesAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id)arg2 pointHandler:(id)arg3 polygonHandler:(id)arg4 completionHandler:(id)arg5;

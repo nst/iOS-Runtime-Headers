@@ -7,18 +7,18 @@
 @interface RCSavedRecordingsModel : NSObject <NSFetchedResultsControllerDelegate> {
     NSManagedObjectContext *_context;
     NSFetchedResultsController *_fetchController;
-    int _isSavingDisabledCount;
+    long long _isSavingDisabledCount;
     NSManagedObjectModel *_model;
     int _notifyToken;
     NSFetchRequest *_savedRecordingsFetchRequest;
-    BOOL _valid;
+    bool_valid;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long long count;
 @property(readonly) long long currentEntityRevision;
-@property int isSavingDisabledCount;
+@property long long isSavingDisabledCount;
 @property(readonly) NSArray * recordings;
-@property BOOL valid;
+@property bool valid;
 
 + (id)_copyFileIntoRecordingsDirectory:(id)arg1;
 + (void)_importImportableRecordingWithSourceAudioURL:(id)arg1 name:(id)arg2 date:(id)arg3 completionHandler:(id)arg4;
@@ -34,10 +34,10 @@
 
 - (void).cxx_destruct;
 - (id)_allCustomLabels;
-- (void)_deleteOrphanedEntityRevisionsAndSave:(BOOL)arg1;
+- (void)_deleteOrphanedEntityRevisionsAndSave:(bool)arg1;
 - (void)_deleteRecordingsWithDurationLessThan:(double)arg1 passingTest:(id)arg2;
 - (id)_entityRevisionWithRecordingID:(long long)arg1;
-- (void)_enumerateSavedRecordingsAndEntityRevisionInArrayOfManagedObjects:(id)arg1 createIfNeeded:(BOOL)arg2 block:(id)arg3;
+- (void)_enumerateSavedRecordingsAndEntityRevisionInArrayOfManagedObjects:(id)arg1 createIfNeeded:(bool)arg2 block:(id)arg3;
 - (void)_handleExternalModelDidSaveNotification:(id)arg1;
 - (void)_handleInternalModelDidSaveNotification:(id)arg1;
 - (id)_initWithManagedObjectContext:(id)arg1;
@@ -48,29 +48,29 @@
 - (void)_postRecordingsModelDidChangeForNotificationName:(id)arg1;
 - (id)_recordingWithRecordingID:(long long)arg1;
 - (void)_scheduleAutomaticRecordingDeletions;
-- (void)_setNextEntityRevisionID:(long long)arg1 save:(BOOL)arg2;
-- (void)_setNextRecordingID:(long long)arg1 save:(BOOL)arg2;
-- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
+- (void)_setNextEntityRevisionID:(long long)arg1 save:(bool)arg2;
+- (void)_setNextRecordingID:(long long)arg1 save:(bool)arg2;
+- (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(id)arg5;
 - (void)controllerDidChangeContent:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (long long)currentEntityRevision;
 - (void)dealloc;
-- (BOOL)deleteDatabaseProperty:(id)arg1;
+- (bool)deleteDatabaseProperty:(id)arg1;
 - (void)deleteRecording:(id)arg1;
 - (id)entityRevisionsForRecording:(id)arg1;
 - (void)enumerateExistingRecordingsSinceEntityRevision:(long long)arg1 withBlock:(id)arg2;
 - (void)enumerateExistingRecordingsWithBlock:(id)arg1;
 - (id)fetchSavedRecordingIDs;
-- (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
+- (bool)hasExistingRecordingForAudioFile:(id)arg1;
 - (id)indexPathForRecording:(id)arg1;
 - (id)init;
 - (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3 customLabelBase:(id)arg4;
 - (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3;
-- (int)isSavingDisabledCount;
+- (long long)isSavingDisabledCount;
 - (id)nextRecordingDefaultLabelWithCustomLabelBase:(id)arg1;
 - (void)performBlockAndWait:(id)arg1;
 - (void)performWithSavingDisabled:(id)arg1;
-- (id)recordingAtIndex:(unsigned int)arg1;
+- (id)recordingAtIndex:(unsigned long long)arg1;
 - (id)recordingWithID:(id)arg1;
 - (id)recordingWithITunesPersistentID:(long long)arg1;
 - (id)recordingWithURIRepresentation:(id)arg1;
@@ -78,12 +78,12 @@
 - (id)recordingsForSpotlightSearch:(id)arg1;
 - (void)save;
 - (void)saveIfNecessary;
-- (BOOL)saveManagedObjectContext:(id*)arg1;
-- (void)setIsSavingDisabledCount:(int)arg1;
-- (void)setValid:(BOOL)arg1;
-- (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2 save:(BOOL)arg3;
-- (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
-- (BOOL)valid;
+- (bool)saveManagedObjectContext:(id*)arg1;
+- (void)setIsSavingDisabledCount:(long long)arg1;
+- (void)setValid:(bool)arg1;
+- (bool)setValue:(id)arg1 forDatabaseProperty:(id)arg2 save:(bool)arg3;
+- (bool)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
+- (bool)valid;
 - (id)valueForDatabaseProperty:(id)arg1;
 
 @end

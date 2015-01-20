@@ -7,25 +7,25 @@
 @interface EKTravelEngineAgendaEntry : NSObject {
     EKTravelAdvisor *_advisor;
     EKTravelAgendaItem *_agendaItem;
-    BOOL _dismissed;
     NSString *_eventExternalURL;
+    bool_dismissed;
 }
 
 @property(retain) EKTravelAdvisor * advisor;
 @property(retain) EKTravelAgendaItem * agendaItem;
-@property BOOL dismissed;
+@property bool dismissed;
 @property(retain) NSString * eventExternalURL;
 
 - (id)advisor;
 - (id)agendaItem;
 - (void)dealloc;
 - (id)description;
-- (BOOL)dismissed;
+- (bool)dismissed;
 - (id)eventExternalURL;
 - (id)init;
 - (void)setAdvisor:(id)arg1;
 - (void)setAgendaItem:(id)arg1;
-- (void)setDismissed:(BOOL)arg1;
+- (void)setDismissed:(bool)arg1;
 - (void)setEventExternalURL:(id)arg1;
 
 @end

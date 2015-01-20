@@ -14,16 +14,16 @@
 @property(readonly) NSString * name;
 @property(readonly) int uniqueID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithName:(id)arg1 uniqueID:(int)arg2 advertisingInfo:(id)arg3;
 - (id)advertisingInfo;
 - (void)connectWithCompletionHandler:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (int)uniqueID;
 

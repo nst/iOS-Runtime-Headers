@@ -6,7 +6,7 @@
 }
 
 - (id)_label;
-- (unsigned int)_minimumLength;
+- (unsigned long long)_minimumLength;
 - (void)_tryNodesWithContext:(id)arg1 solutionTest:(id)arg2;
 
 @end

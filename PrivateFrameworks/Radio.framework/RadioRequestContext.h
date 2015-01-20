@@ -3,13 +3,13 @@
  */
 
 @interface RadioRequestContext : NSObject <NSCopying> {
-    BOOL _usesLocalNetworking;
+    bool_usesLocalNetworking;
 }
 
-@property BOOL usesLocalNetworking;
+@property bool usesLocalNetworking;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setUsesLocalNetworking:(BOOL)arg1;
-- (BOOL)usesLocalNetworking;
+- (void)setUsesLocalNetworking:(bool)arg1;
+- (bool)usesLocalNetworking;
 
 @end

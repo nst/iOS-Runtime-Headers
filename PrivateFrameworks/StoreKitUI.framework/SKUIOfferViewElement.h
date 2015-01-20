@@ -5,10 +5,10 @@
 @interface SKUIOfferViewElement : SKUIViewElement {
 }
 
-@property(getter=isSimpleOffer,readonly) BOOL simpleOffer;
+@property(getter=isSimpleOffer,readonly) bool simpleOffer;
 
 - (void)enumerateChildrenUsingBlock:(id)arg1;
-- (BOOL)isSimpleOffer;
-- (int)pageComponentType;
+- (bool)isSimpleOffer;
+- (long long)pageComponentType;
 
 @end

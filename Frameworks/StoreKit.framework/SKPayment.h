@@ -12,7 +12,7 @@
 @property(copy,readonly) NSString * partnerIdentifier;
 @property(copy,readonly) NSString * partnerTransactionIdentifier;
 @property(copy,readonly) NSString * productIdentifier;
-@property(readonly) int quantity;
+@property(readonly) long long quantity;
 @property(copy,readonly) NSData * requestData;
 @property(copy,readonly) NSDictionary * requestParameters;
 
@@ -22,14 +22,14 @@
 - (id)applicationUsername;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)partnerIdentifier;
 - (id)partnerTransactionIdentifier;
 - (id)productIdentifier;
-- (int)quantity;
+- (long long)quantity;
 - (id)requestData;
 - (id)requestParameters;
 

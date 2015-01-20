@@ -6,42 +6,42 @@
 
 @interface _UILabelScaledMetrics : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct CGSize { 
-        float width; 
-        float height; 
-    float _actualScaleFactor;
-    float _baselineOffset;
+        double width; 
+        double height; 
+    double _actualScaleFactor;
+    double _baselineOffset;
     NSAttributedString *_scaledAttributedText;
-    float _scaledBaselineOffset;
-    float _scaledLineHeight;
+    double _scaledBaselineOffset;
+    double _scaledLineHeight;
     } _scaledSize;
     } _targetSize;
 }
 
-@property float actualScaleFactor;
-@property float baselineOffset;
+@property double actualScaleFactor;
+@property double baselineOffset;
 @property(retain) NSAttributedString * scaledAttributedText;
-@property float scaledBaselineOffset;
-@property float scaledLineHeight;
-@property struct CGSize { float x1; float x2; } scaledSize;
-@property struct CGSize { float x1; float x2; } targetSize;
+@property double scaledBaselineOffset;
+@property double scaledLineHeight;
+@property struct CGSize { double x1; double x2; } scaledSize;
+@property struct CGSize { double x1; double x2; } targetSize;
 
-- (float)actualScaleFactor;
-- (float)baselineOffset;
+- (double)actualScaleFactor;
+- (double)baselineOffset;
 - (void)dealloc;
 - (id)scaledAttributedText;
-- (float)scaledBaselineOffset;
-- (float)scaledLineHeight;
-- (struct CGSize { float x1; float x2; })scaledSize;
-- (void)setActualScaleFactor:(float)arg1;
-- (void)setBaselineOffset:(float)arg1;
+- (double)scaledBaselineOffset;
+- (double)scaledLineHeight;
+- (struct CGSize { double x1; double x2; })scaledSize;
+- (void)setActualScaleFactor:(double)arg1;
+- (void)setBaselineOffset:(double)arg1;
 - (void)setScaledAttributedText:(id)arg1;
-- (void)setScaledBaselineOffset:(float)arg1;
-- (void)setScaledLineHeight:(float)arg1;
-- (void)setScaledSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTargetSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })targetSize;
+- (void)setScaledBaselineOffset:(double)arg1;
+- (void)setScaledLineHeight:(double)arg1;
+- (void)setScaledSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })targetSize;
 
 @end

@@ -7,11 +7,11 @@
  */
 
 @interface PTSRowAction : NSObject <NSCopying> {
-    BOOL _deselectRowOnSuccess;
     id _handler;
+    bool_deselectRowOnSuccess;
 }
 
-@property BOOL deselectRowOnSuccess;
+@property bool deselectRowOnSuccess;
 @property(copy) id handler;
 
 + (id)action;
@@ -19,11 +19,11 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)deselectRowOnSuccess;
+- (bool)deselectRowOnSuccess;
 - (id)handler;
 - (id)init;
-- (void)resolveTemplatesWithIndex:(unsigned int)arg1;
-- (void)setDeselectRowOnSuccess:(BOOL)arg1;
+- (void)resolveTemplatesWithIndex:(unsigned long long)arg1;
+- (void)setDeselectRowOnSuccess:(bool)arg1;
 - (void)setHandler:(id)arg1;
 
 @end

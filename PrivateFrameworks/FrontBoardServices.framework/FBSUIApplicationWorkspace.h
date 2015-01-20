@@ -10,13 +10,13 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <FBSUIApplicationWorkspaceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (Class)_clientClass;
 - (void)client:(id)arg1 handleLaunch:(id)arg2 withCompletion:(id)arg3;
 - (void)clientHandleAssertionExpirationImminent:(id)arg1;
 - (void)clientHandleExit:(id)arg1;
-- (BOOL)isUIApplicationWorkspace;
+- (bool)isUIApplicationWorkspace;
 
 @end

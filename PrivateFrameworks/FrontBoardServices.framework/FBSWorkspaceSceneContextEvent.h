@@ -6,19 +6,19 @@
 
 @interface FBSWorkspaceSceneContextEvent : FBSWorkspaceSceneEvent {
     FBSContext *_context;
-    BOOL _orderOut;
+    bool_orderOut;
 }
 
 @property(retain) FBSContext * context;
-@property BOOL orderOut;
+@property bool orderOut;
 
 - (id)context;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)orderOut;
+- (bool)orderOut;
 - (void)setContext:(id)arg1;
-- (void)setOrderOut:(BOOL)arg1;
+- (void)setOrderOut:(bool)arg1;
 
 @end

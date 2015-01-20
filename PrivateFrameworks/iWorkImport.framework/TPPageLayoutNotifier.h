@@ -10,12 +10,12 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithPageController:(id)arg1;
-- (void)pageController:(id)arg1 didLayoutPageAtIndex:(unsigned int)arg2 sectionIndex:(unsigned int)arg3 syncing:(BOOL)arg4;
+- (void)pageController:(id)arg1 didLayoutPageAtIndex:(unsigned long long)arg2 sectionIndex:(unsigned long long)arg3 syncing:(bool)arg4;
 - (void)teardown;
 
 @end

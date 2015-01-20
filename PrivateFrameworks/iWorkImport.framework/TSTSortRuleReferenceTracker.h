@@ -32,11 +32,11 @@
 - (void)registerWithCalculationEngineChoosingUniqueID:(id)arg1;
 - (void)setOwnerID:(struct __CFUUID { }*)arg1;
 - (void)setTableInfo:(id)arg1;
-- (BOOL)shouldRewriteOnCellMerge;
-- (BOOL)shouldRewriteOnRangeMove;
-- (BOOL)shouldRewriteOnSort;
-- (BOOL)shouldRewriteOnTectonicShift;
-- (BOOL)shouldRewriteOnTranspose;
+- (bool)shouldRewriteOnCellMerge;
+- (bool)shouldRewriteOnRangeMove;
+- (bool)shouldRewriteOnSort;
+- (bool)shouldRewriteOnTectonicShift;
+- (bool)shouldRewriteOnTranspose;
 - (id)tableInfo;
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
 - (void)unregisterFromCalculationEngine;

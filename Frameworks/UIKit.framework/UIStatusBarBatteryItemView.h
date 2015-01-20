@@ -11,13 +11,13 @@
 }
 
 - (id)_accessoryImage;
-- (float)_batteryYOffsetWithBackground:(id)arg1;
-- (BOOL)_needsAccessoryImage;
+- (double)_batteryYOffsetWithBackground:(id)arg1;
+- (bool)_needsAccessoryImage;
 - (void)_updateAccessoryImage;
 - (id)contentsImage;
 - (void)dealloc;
-- (float)extraRightPadding;
-- (float)legibilityStrength;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)extraRightPadding;
+- (double)legibilityStrength;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

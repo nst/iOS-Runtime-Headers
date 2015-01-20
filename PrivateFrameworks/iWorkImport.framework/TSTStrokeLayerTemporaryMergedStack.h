@@ -5,14 +5,14 @@
 @interface TSTStrokeLayerTemporaryMergedStack : TSTStrokeLayerStack {
 }
 
-+ (float)p_maxWidthForMajorStrokes:(id)arg1 mergedWithMinorStrokes:(id)arg2 atIndex:(int)arg3;
-+ (float)p_maxWidthForMajorStrokes:(id)arg1 mergedWithMinorStrokes:(id)arg2 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg3 cachedMax:(float)arg4;
++ (double)p_maxWidthForMajorStrokes:(id)arg1 mergedWithMinorStrokes:(id)arg2 atIndex:(long long)arg3;
++ (double)p_maxWidthForMajorStrokes:(id)arg1 mergedWithMinorStrokes:(id)arg2 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg3 cachedMax:(double)arg4;
 
 - (id)initWithMajorStrokes:(id)arg1 andMinorStrokes:(id)arg2;
 - (void)lockForRead;
 - (void)lockForWrite;
-- (float)p_maxWidthOfStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 cachedMax:(float)arg2;
-- (float)p_widthOfStrokesAtIndex:(int)arg1;
+- (double)p_maxWidthOfStrokesInRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1 cachedMax:(double)arg2;
+- (double)p_widthOfStrokesAtIndex:(long long)arg1;
 - (void)unlock;
 
 @end

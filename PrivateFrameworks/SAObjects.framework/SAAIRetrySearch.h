@@ -13,7 +13,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (double)minimumDurationForRetry;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setMinimumDurationForRetry:(double)arg1;
 
 @end

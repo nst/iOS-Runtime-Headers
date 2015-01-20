@@ -9,22 +9,22 @@
     <WPDeviceScannerDelegate> *_delegate;
     NSMutableArray *_liveDevices;
     NSObject<OS_dispatch_queue> *_queue;
-    int _state;
+    long long _state;
     XPCClient *_xpcClient;
 }
 
 @property(retain) NSMutableDictionary * activeScans;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSMutableArray * liveDevices;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
-@property int state;
+@property long long state;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)activeScans;
-- (void)changeState:(int)arg1;
+- (void)changeState:(long long)arg1;
 - (void)connectionDied;
 - (void)connectionInterrupted;
 - (void)dealloc;
@@ -40,8 +40,8 @@
 - (void)setActiveScans:(id)arg1;
 - (void)setLiveDevices:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 - (void)timerFinished:(id)arg1;
 - (void)unregisterAllDeviceChanges;
 - (void)unregisterForDevices:(id)arg1;

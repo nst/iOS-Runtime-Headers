@@ -7,21 +7,21 @@
  */
 
 @interface UIViewAnimationBlockDelegate : NSObject {
-    BOOL _allowUserInteraction;
-    BOOL _allowsUserInteractionToCutOffEndOfAnimation;
-    BOOL _animationDidStopSent;
     id _completion;
-    BOOL _didBeginBlockAnimation;
-    BOOL _isZeroDuration;
     id _start;
+    bool_allowUserInteraction;
+    bool_allowsUserInteractionToCutOffEndOfAnimation;
+    bool_animationDidStopSent;
+    bool_didBeginBlockAnimation;
+    bool_isZeroDuration;
 }
 
-@property(readonly) BOOL _allowsUserInteraction;
+@property(readonly) bool _allowsUserInteraction;
 
-+ (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(unsigned int)arg2 start:(id)arg3 completion:(id)arg4;
++ (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(unsigned long long)arg2 start:(id)arg3 completion:(id)arg4;
 
-- (BOOL)_allowsUserInteraction;
-- (BOOL)_allowsUserInteractionToCutOffEndOfAnimation;
+- (bool)_allowsUserInteraction;
+- (bool)_allowsUserInteractionToCutOffEndOfAnimation;
 - (void)_didEndBlockAnimation:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_sendDeferredCompletion:(id)arg1;
 - (void)_willBeginBlockAnimation:(id)arg1 context:(id)arg2;

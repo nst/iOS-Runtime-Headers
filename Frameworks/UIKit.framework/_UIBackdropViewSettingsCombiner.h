@@ -9,14 +9,14 @@
     _UIBackdropViewSettings *_inputSettingsB;
     _UIBackdropViewSettings *_outputSettingsA;
     _UIBackdropViewSettings *_outputSettingsB;
-    float _weighting;
+    double _weighting;
 }
 
 @property(retain) _UIBackdropViewSettings * inputSettingsA;
 @property(retain) _UIBackdropViewSettings * inputSettingsB;
 @property(retain) _UIBackdropViewSettings * outputSettingsA;
 @property(retain) _UIBackdropViewSettings * outputSettingsB;
-@property float weighting;
+@property double weighting;
 
 - (void)computeOutputSettingsUsingModel:(id)arg1;
 - (void)dealloc;
@@ -28,7 +28,7 @@
 - (void)setInputSettingsB:(id)arg1;
 - (void)setOutputSettingsA:(id)arg1;
 - (void)setOutputSettingsB:(id)arg1;
-- (void)setWeighting:(float)arg1;
-- (float)weighting;
+- (void)setWeighting:(double)arg1;
+- (double)weighting;
 
 @end

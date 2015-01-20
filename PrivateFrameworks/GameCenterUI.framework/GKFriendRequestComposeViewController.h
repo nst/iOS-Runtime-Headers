@@ -9,47 +9,47 @@
     GKComposeHostedViewController *_composeController;
     <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegateWeak;
     NSString *_message;
-    unsigned int _recipientCount;
+    unsigned long long _recipientCount;
 }
 
 @property(retain) UIAlertController * alertController;
 @property(retain) GKComposeHostedViewController * composeController;
 @property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
 @property(retain) NSString * message;
-@property unsigned int recipientCount;
+@property unsigned long long recipientCount;
 @property unsigned int rid;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
-+ (unsigned int)maxNumberOfRecipients;
++ (bool)_preventsAppearanceProxyCustomization;
++ (unsigned long long)maxNumberOfRecipients;
 
-- (void)__viewControllerWillBePresented:(BOOL)arg1;
+- (void)__viewControllerWillBePresented:(bool)arg1;
 - (void)addRecipientPlayers:(id)arg1;
 - (void)addRecipientsWithEmailAddresses:(id)arg1;
 - (void)addRecipientsWithPlayerIDs:(id)arg1;
 - (id)alertController;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)composeController;
 - (id)composeViewDelegate;
 - (void)dealloc;
 - (id)init;
 - (id)message;
-- (BOOL)navigationBarHidden;
+- (bool)navigationBarHidden;
 - (void)prepareForNewRecipients:(id)arg1;
-- (unsigned int)recipientCount;
+- (unsigned long long)recipientCount;
 - (unsigned int)rid;
-- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
+- (void)sendFinishedMessageToDelegateCancelled:(bool)arg1;
 - (void)setAlertController:(id)arg1;
 - (void)setComposeController:(id)arg1;
 - (void)setComposeViewDelegate:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setRecipientCount:(unsigned int)arg1;
+- (void)setRecipientCount:(unsigned long long)arg1;
 - (void)setRid:(unsigned int)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldAutomaticallyForwardRotationMethods;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

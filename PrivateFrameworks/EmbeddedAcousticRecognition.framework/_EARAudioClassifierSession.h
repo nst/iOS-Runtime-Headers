@@ -24,15 +24,15 @@
         } linearBuffer; 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
-                long __sig; 
-                BOOL __opaque[40]; 
+                long long __sig; 
+                BOOL __opaque[56]; 
             } __m_; 
         } bufferMutex; 
         struct condition_variable_any { 
             struct condition_variable { 
                 struct _opaque_pthread_cond_t { 
-                    long __sig; 
-                    BOOL __opaque[24]; 
+                    long long __sig; 
+                    BOOL __opaque[40]; 
                 } __cv_; 
             } __cv_; 
             struct shared_ptr<std::__1::mutex> { 
@@ -53,7 +53,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)appendAudioSamples:(const float*)arg1 count:(unsigned int)arg2;
+- (void)appendAudioSamples:(const float*)arg1 count:(unsigned long long)arg2;
 - (void)cancel;
 - (void)finish;
 - (double)frameDuration;

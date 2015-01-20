@@ -12,7 +12,7 @@
 @property <_UIScrollNotification> * controller;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property UIScrollView * scrollView;
 @property(readonly) Class superclass;
 

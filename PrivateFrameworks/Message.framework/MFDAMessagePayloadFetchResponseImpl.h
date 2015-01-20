@@ -5,15 +5,15 @@
 @class NSData;
 
 @interface MFDAMessagePayloadFetchResponseImpl : NSObject <MFDAMessagePayloadFetchResponse> {
+    boolstreaming;
+    boolstreamingDone;
     NSData *data;
-    BOOL streaming;
-    BOOL streamingDone;
 }
 
 - (id)data;
 - (void)dealloc;
-- (id)initWithData:(id)arg1 streaming:(BOOL)arg2 streamingDone:(BOOL)arg3;
-- (BOOL)streaming;
-- (BOOL)streamingDone;
+- (id)initWithData:(id)arg1 streaming:(bool)arg2 streamingDone:(bool)arg3;
+- (bool)streaming;
+- (bool)streamingDone;
 
 @end

@@ -16,7 +16,7 @@
 
 + (id)_artistLabelFont;
 + (id)_songLabelFont;
-+ (float)defaultHeightForTraitCollection:(id)arg1;
++ (double)defaultHeightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)artistText;

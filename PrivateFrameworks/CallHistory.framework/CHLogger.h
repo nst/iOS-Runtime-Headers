@@ -9,19 +9,18 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
                 } __first_; 
@@ -36,13 +35,13 @@
     } _logger;
 }
 
-+ (void)logWithLevel:(unsigned char)arg1 logger:(struct LoggerBase<std::__1::shared_ptr<ctu::LogServer> > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned char x2; unsigned char x3; struct shared_ptr<ctu::LogServer> { struct LogServer {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; }*)arg2 format:(id)arg3 argList:(void*)arg4;
++ (void)logWithLevel:(unsigned char)arg1 logger:(struct LoggerBase<std::__1::shared_ptr<ctu::LogServer> > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned char x2; unsigned char x3; struct shared_ptr<ctu::LogServer> { struct LogServer {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; }*)arg2 format:(id)arg3 argList:(char *)arg4;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initWithDomain:(id)arg1;
-- (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2 withArgs:(void*)arg3;
+- (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2 withArgs:(char *)arg3;
 - (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2;
-- (BOOL)shouldLogForLevel:(unsigned int)arg1;
+- (bool)shouldLogForLevel:(unsigned int)arg1;
 
 @end

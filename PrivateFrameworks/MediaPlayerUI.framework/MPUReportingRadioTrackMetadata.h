@@ -7,20 +7,20 @@
 @interface MPUReportingRadioTrackMetadata : MPUReportingTrackMetadata {
     long long _storeID;
     NSDictionary *_trackInfo;
-    int _trackType;
+    long long _trackType;
 }
 
 @property long long storeID;
 @property(copy) NSDictionary * trackInfo;
-@property int trackType;
+@property long long trackType;
 
 - (void).cxx_destruct;
 - (id)initWithRadioTrack:(id)arg1;
 - (void)setStoreID:(long long)arg1;
 - (void)setTrackInfo:(id)arg1;
-- (void)setTrackType:(int)arg1;
+- (void)setTrackType:(long long)arg1;
 - (long long)storeID;
 - (id)trackInfo;
-- (int)trackType;
+- (long long)trackType;
 
 @end

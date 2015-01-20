@@ -15,9 +15,9 @@
 
 @property float bias;
 @property float errorPeriodSeconds;
-@property BOOL hasBias;
-@property BOOL hasErrorPeriodSeconds;
-@property BOOL hasScale;
+@property bool hasBias;
+@property bool hasErrorPeriodSeconds;
+@property bool hasScale;
 @property float scale;
 
 - (float)bias;
@@ -26,19 +26,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (float)errorPeriodSeconds;
-- (BOOL)hasBias;
-- (BOOL)hasErrorPeriodSeconds;
-- (BOOL)hasScale;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBias;
+- (bool)hasErrorPeriodSeconds;
+- (bool)hasScale;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (float)scale;
 - (void)setBias:(float)arg1;
 - (void)setErrorPeriodSeconds:(float)arg1;
-- (void)setHasBias:(BOOL)arg1;
-- (void)setHasErrorPeriodSeconds:(BOOL)arg1;
-- (void)setHasScale:(BOOL)arg1;
+- (void)setHasBias:(bool)arg1;
+- (void)setHasErrorPeriodSeconds:(bool)arg1;
+- (void)setHasScale:(bool)arg1;
 - (void)setScale:(float)arg1;
 - (void)writeTo:(id)arg1;
 

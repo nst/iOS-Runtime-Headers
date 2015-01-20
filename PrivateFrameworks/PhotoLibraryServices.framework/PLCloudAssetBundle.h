@@ -5,18 +5,18 @@
 @class NSArray, NSString;
 
 @interface PLCloudAssetBundle : NSObject {
-    unsigned int _combinedAvailableResourcesSize;
+    unsigned long long _combinedAvailableResourcesSize;
     NSString *_masterIdentifier;
     NSArray *_resources;
 }
 
-@property(readonly) unsigned int combinedAvailableResourcesSize;
+@property(readonly) unsigned long long combinedAvailableResourcesSize;
 @property(retain,readonly) NSString * masterIdentifier;
 @property(retain,readonly) NSArray * resources;
 
-- (unsigned int)combinedAvailableResourcesSize;
+- (unsigned long long)combinedAvailableResourcesSize;
 - (id)description;
-- (id)initWithAsset:(id)arg1 verifyAvailability:(BOOL)arg2;
+- (id)initWithAsset:(id)arg1 verifyAvailability:(bool)arg2;
 - (id)masterIdentifier;
 - (id)resources;
 

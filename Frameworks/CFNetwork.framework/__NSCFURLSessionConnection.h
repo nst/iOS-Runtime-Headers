@@ -11,49 +11,49 @@
 
 @interface __NSCFURLSessionConnection : NSObject <NSURLAuthenticationChallengeSender, NSCopying> {
     NSObject<OS_dispatch_data> *_cacheData;
-    unsigned long _cacheDataMax;
+    unsigned long long _cacheDataMax;
     NSURLResponse *_cacheResponse;
-    BOOL _canceled;
     long long _clientBufferLength;
     NSURLResponse *_currentResponse;
     <SessionConnectionDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _didCheckMixedReplace;
-    unsigned int _didReceiveResponseDisposition;
-    BOOL _isMixedReplace;
-    struct URLConnectionLoader { int (**x1)(); struct __CFAllocator {} *x2; int (**x3)(); unsigned char x4; unsigned char x5; struct InterfaceRequiredForLoader {} *x6; id x7; int (**x8)(); int (**x9)(); struct PerformanceTiming {} *x10; id x11; int x12; struct RedirectionRecorder {} *x13; unsigned char x14; unsigned char x15; unsigned char x16; id x17; unsigned char x18; double x19; struct URLProtocol {} *x20; id x21; unsigned char x22; struct CoreSchedulingSet {} *x23; double x24; double x25; unsigned long long x26; struct ConfigFlags { unsigned int x_27_1_1 : 1; unsigned int x_27_1_2 : 1; unsigned int x_27_1_3 : 1; unsigned int x_27_1_4 : 1; unsigned int x_27_1_5 : 1; unsigned int x_27_1_6 : 1; unsigned int x_27_1_7 : 1; } x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; } *_loader;
-    struct SessionConnectionLoadable { int (**x1)(); int x2; int x3; int x4; int x5; int (**x6)(); int (**x7)(); id x8; } *_loaderClient;
-    int _pendingCompletion;
+    unsigned long long _didReceiveResponseDisposition;
+    struct URLConnectionLoader { int (**x1)(); struct __CFAllocator {} *x2; int (**x3)(); unsigned char x4; unsigned char x5; struct InterfaceRequiredForLoader {} *x6; id x7; int (**x8)(); int (**x9)(); struct PerformanceTiming {} *x10; id x11; long long x12; struct RedirectionRecorder {} *x13; unsigned char x14; unsigned char x15; unsigned char x16; id x17; unsigned char x18; double x19; struct URLProtocol {} *x20; id x21; unsigned char x22; struct CoreSchedulingSet {} *x23; double x24; double x25; unsigned long long x26; struct ConfigFlags { unsigned int x_27_1_1 : 1; unsigned int x_27_1_2 : 1; unsigned int x_27_1_3 : 1; unsigned int x_27_1_4 : 1; unsigned int x_27_1_5 : 1; unsigned int x_27_1_6 : 1; unsigned int x_27_1_7 : 1; } x27; unsigned char x28; unsigned char x29; unsigned char x30; unsigned char x31; } *_loader;
+    struct SessionConnectionLoadable { int (**x1)(); long long x2; long long x3; long long x4; long long x5; int (**x6)(); int (**x7)(); id x8; } *_loaderClient;
+    long long _pendingCompletion;
     NSObject<OS_dispatch_data> *_pendingData;
     NSError *_pendingError;
     NSObject<OS_dispatch_data> *_sniffData;
     NSURLResponse *_sniffResponse;
     int _state;
-    int _suspended;
+    long long _suspended;
     NSURLSessionTask *_task;
     NSObject<OS_dispatch_queue> *_workQueue;
+    bool_canceled;
+    bool_didCheckMixedReplace;
+    bool_isMixedReplace;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) <SessionConnectionDelegate> * delegate;
 @property NSObject<OS_dispatch_queue> * delegateQueue;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(copy) NSURLSessionTask * task;
 
 - (void)_cleanup;
-- (void)_conditionalRequirementsChanged:(BOOL)arg1;
+- (void)_conditionalRequirementsChanged:(bool)arg1;
 - (void)_connectionIsWaiting;
 - (void)_didFinishWithError:(id)arg1;
 - (void)_didReceiveChallenge:(id)arg1;
-- (void)_didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg1;
+- (void)_didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned long long x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned long long x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg1;
 - (void)_didReceiveData:(id)arg1;
-- (void)_didReceiveResponse:(id)arg1 sniff:(BOOL)arg2;
-- (void)_didSendBodyData:(struct UploadProgressInfo { int x1; int x2; int x3; })arg1;
+- (void)_didReceiveResponse:(id)arg1 sniff:(bool)arg2;
+- (void)_didSendBodyData:(struct UploadProgressInfo { long long x1; long long x2; long long x3; })arg1;
 - (void)_needNewBodyStream;
 - (void)_redirectRequest:(id)arg1 redirectResponse:(id)arg2 completion:(id)arg3;
-- (void)_setupForCache:(BOOL)arg1 expectedLength:(long long)arg2 response:(id)arg3;
+- (void)_setupForCache:(bool)arg1 expectedLength:(long long)arg2 response:(id)arg3;
 - (void)_task_sendFinish;
 - (void)_tick;
 - (void)_tick_finishing;

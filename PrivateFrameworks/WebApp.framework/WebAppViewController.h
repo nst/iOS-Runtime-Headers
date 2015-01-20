@@ -3,14 +3,14 @@
  */
 
 @interface WebAppViewController : UIViewController {
-    BOOL _setupRootViewColor;
-    int _statusBarStyle;
+    long long _statusBarStyle;
+    bool_setupRootViewColor;
 }
 
-@property int statusBarStyle;
+@property long long statusBarStyle;
 
-- (int)preferredStatusBarStyle;
-- (void)setStatusBarStyle:(int)arg1;
-- (int)statusBarStyle;
+- (long long)preferredStatusBarStyle;
+- (void)setStatusBarStyle:(long long)arg1;
+- (long long)statusBarStyle;
 
 @end

@@ -13,11 +13,11 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) <MTLDevice> * device;
-@property BOOL executionEnabled;
-@property(readonly) unsigned int hash;
+@property bool executionEnabled;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * label;
-@property(getter=isProfilingEnabled) BOOL profilingEnabled;
-@property BOOL skipRender;
+@property(getter=isProfilingEnabled) bool profilingEnabled;
+@property bool skipRender;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,17 +27,17 @@
 - (id)commandBufferWithUnretainedReferences;
 - (id)commandBuffers;
 - (id)device;
-- (BOOL)executionEnabled;
+- (bool)executionEnabled;
 - (void)finish;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (void)insertDebugCaptureBoundary;
-- (BOOL)isProfilingEnabled;
+- (bool)isProfilingEnabled;
 - (id)label;
 - (void)setBackgroundTrackingPID:(int)arg1;
-- (void)setExecutionEnabled:(BOOL)arg1;
+- (void)setExecutionEnabled:(bool)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setProfilingEnabled:(BOOL)arg1;
-- (void)setSkipRender:(BOOL)arg1;
-- (BOOL)skipRender;
+- (void)setProfilingEnabled:(bool)arg1;
+- (void)setSkipRender:(bool)arg1;
+- (bool)skipRender;
 
 @end

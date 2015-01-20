@@ -12,9 +12,9 @@
 + (id)allServicesFromHealthDatabase:(id)arg1 error:(id*)arg2;
 + (id)createTableSQL;
 + (id)databaseTable;
-+ (BOOL)deleteDevice:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
++ (bool)deleteDevice:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (id)insertOrUpdateDevice:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (void)load;
-+ (int)protectionClass;
++ (long long)protectionClass;
 
 @end

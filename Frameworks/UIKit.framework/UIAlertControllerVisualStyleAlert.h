@@ -10,25 +10,25 @@
 
 @property(retain) UIAlertControllerDescriptor * descriptor;
 
-- (float)backgroundCornerRadius;
+- (double)backgroundCornerRadius;
 - (void)dealloc;
 - (id)defaultActionFont;
 - (id)descriptor;
-- (float)horizontalContentMargin;
-- (float)marginAboveMessageLabelFirstBaseline;
-- (float)marginAboveTitleLabelFirstBaseline;
-- (float)marginBelowLastLabelLastBaseline;
-- (float)marginBelowMessageLabelLastBaseline;
-- (float)marginBelowTitleLabelLastBaseline;
-- (float)maximumWidth;
+- (double)horizontalContentMargin;
+- (double)marginAboveMessageLabelFirstBaseline;
+- (double)marginAboveTitleLabelFirstBaseline;
+- (double)marginBelowLastLabelLastBaseline;
+- (double)marginBelowMessageLabelLastBaseline;
+- (double)marginBelowTitleLabelLastBaseline;
+- (double)maximumWidth;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
-- (float)minimumActionHeight;
+- (double)minimumActionHeight;
 - (id)regularActionFont;
 - (void)setDescriptor:(id)arg1;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
-- (float)verticalContentMargin;
-- (float)visualAltitude;
+- (double)verticalContentMargin;
+- (double)visualAltitude;
 
 @end

@@ -3,26 +3,26 @@
  */
 
 @interface MFBase64Encoder : MFBaseFilterDataConsumer {
-    unsigned long _left;
+    unsigned long long _left;
     unsigned char _leftovers[3];
-    unsigned long _line;
-    unsigned long _lineBreak;
+    unsigned long long _line;
+    unsigned long long _lineBreak;
     BOOL _padChar;
     const char *_table;
 }
 
-@property BOOL allowSlash;
-@property unsigned long lineBreak;
+@property bool allowSlash;
+@property unsigned long long lineBreak;
 @property BOOL padChar;
 
-- (BOOL)allowSlash;
-- (int)appendData:(id)arg1;
+- (bool)allowSlash;
+- (long long)appendData:(id)arg1;
 - (void)done;
 - (id)initWithConsumers:(id)arg1;
-- (unsigned long)lineBreak;
+- (unsigned long long)lineBreak;
 - (BOOL)padChar;
-- (void)setAllowSlash:(BOOL)arg1;
-- (void)setLineBreak:(unsigned long)arg1;
+- (void)setAllowSlash:(bool)arg1;
+- (void)setLineBreak:(unsigned long long)arg1;
 - (void)setPadChar:(BOOL)arg1;
 - (void)setStandardLineBreak;
 

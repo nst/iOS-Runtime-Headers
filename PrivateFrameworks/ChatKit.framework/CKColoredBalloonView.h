@@ -8,38 +8,38 @@
     BOOL _color;
     CKGradientView *_gradientView;
     CKBalloonImageView *_mask;
-    BOOL _wantsGradient;
+    bool_wantsGradient;
 }
 
 @property BOOL color;
 @property(retain) UIView<CKGradientReferenceView> * gradientReferenceView;
 @property(retain) CKGradientView * gradientView;
 @property(retain) CKBalloonImageView * mask;
-@property BOOL wantsGradient;
+@property bool wantsGradient;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (BOOL)color;
 - (void)configureForMessagePart:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)gradientReferenceView;
 - (id)gradientView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)mask;
 - (id)overlayColor;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCanUseOpaqueMask:(BOOL)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCanUseOpaqueMask:(bool)arg1;
 - (void)setColor:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGradientReferenceView:(id)arg1;
 - (void)setGradientView:(id)arg1;
-- (void)setHasTail:(BOOL)arg1;
+- (void)setHasTail:(bool)arg1;
 - (void)setMask:(id)arg1;
-- (void)setWantsGradient:(BOOL)arg1;
+- (void)setWantsGradient:(bool)arg1;
 - (void)updateWantsGradient;
-- (BOOL)wantsGradient;
+- (bool)wantsGradient;
 
 @end

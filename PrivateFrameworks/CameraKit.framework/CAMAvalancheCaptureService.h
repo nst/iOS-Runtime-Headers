@@ -11,7 +11,7 @@
     double __avalancheStartTime;
     NSCountedSet *__inflightRequestsByUUID;
     NSArray *_recentFaceMetadata;
-    BOOL _supportsAvalancheAnalysis;
+    bool_supportsAvalancheAnalysis;
 }
 
 @property(readonly) CAMAvalancheSession * _activeAvalancheSession;
@@ -20,31 +20,31 @@
 @property(readonly) double _avalancheStartTime;
 @property(readonly) NSCountedSet * _inflightRequestsByUUID;
 @property(copy) NSArray * recentFaceMetadata;
-@property BOOL supportsAvalancheAnalysis;
+@property bool supportsAvalancheAnalysis;
 
 - (void).cxx_destruct;
 - (id)_activeAvalancheSession;
 - (id)_avalancheSessionsByUUID;
 - (id)_avalancheSessionsToBeFinalizedAfterNextResponseCompletion;
 - (double)_avalancheStartTime;
-- (BOOL)_canFinishCapturingActiveAvalanche;
+- (bool)_canFinishCapturingActiveAvalanche;
 - (void)_cancelAvalancheSession:(id)arg1;
 - (void)_ensureValidAvalancheSession;
 - (void)_finalizeAndBeginNewAvalancheSession;
 - (void)_finalizeAvalancheSession:(id)arg1;
 - (id)_inflightRequestsByUUID;
-- (BOOL)canContinueAvalancheCapture;
+- (bool)canContinueAvalancheCapture;
 - (void)cancelAvalancheCapture;
 - (void)finishAvalancheCapture;
 - (id)init;
-- (int)numberOfPhotos;
+- (long long)numberOfPhotos;
 - (id)recentFaceMetadata;
 - (void)requestWasEnqueued:(id)arg1;
 - (void)responseWasCompleted:(id)arg1 error:(id)arg2;
 - (void)responseWasGenerated:(id)arg1 error:(id)arg2;
 - (void)setRecentFaceMetadata:(id)arg1;
-- (void)setSupportsAvalancheAnalysis:(BOOL)arg1;
+- (void)setSupportsAvalancheAnalysis:(bool)arg1;
 - (void)startAvalancheCapture;
-- (BOOL)supportsAvalancheAnalysis;
+- (bool)supportsAvalancheAnalysis;
 
 @end

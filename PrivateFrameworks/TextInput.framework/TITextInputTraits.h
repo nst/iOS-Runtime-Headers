@@ -4,7 +4,7 @@
 
 @interface TITextInputTraits : NSObject <NSCopying, NSSecureCoding> {
     union { 
-        int integerValue; 
+        long long integerValue; 
         struct { 
             unsigned int autocapitalizationType : 2; 
             unsigned int autocorrectionType : 2; 
@@ -18,44 +18,44 @@
     } _mask;
 }
 
-@property unsigned int autocapitalizationType;
-@property unsigned int autocorrectionType;
-@property BOOL enablesReturnKeyAutomatically;
-@property unsigned int keyboardAppearance;
-@property unsigned int keyboardType;
-@property unsigned int returnKeyType;
-@property BOOL secureTextEntry;
-@property unsigned int spellCheckingType;
+@property unsigned long long autocapitalizationType;
+@property unsigned long long autocorrectionType;
+@property bool enablesReturnKeyAutomatically;
+@property unsigned long long keyboardAppearance;
+@property unsigned long long keyboardType;
+@property unsigned long long returnKeyType;
+@property bool secureTextEntry;
+@property unsigned long long spellCheckingType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)traitsForUITextInputTraits:(id)arg1;
-+ (unsigned int)translateToTextInputAutocapitalizationType:(int)arg1;
-+ (unsigned int)translateToTextInputAutocorrectionType:(int)arg1;
-+ (unsigned int)translateToTextInputKeyboardAppearance:(int)arg1;
-+ (unsigned int)translateToTextInputKeyboardType:(int)arg1;
-+ (unsigned int)translateToTextInputReturnKeyType:(int)arg1;
-+ (unsigned int)translateToTextInputSpellCheckingType:(int)arg1;
++ (unsigned long long)translateToTextInputAutocapitalizationType:(long long)arg1;
++ (unsigned long long)translateToTextInputAutocorrectionType:(long long)arg1;
++ (unsigned long long)translateToTextInputKeyboardAppearance:(long long)arg1;
++ (unsigned long long)translateToTextInputKeyboardType:(long long)arg1;
++ (unsigned long long)translateToTextInputReturnKeyType:(long long)arg1;
++ (unsigned long long)translateToTextInputSpellCheckingType:(long long)arg1;
 
-- (unsigned int)autocapitalizationType;
-- (unsigned int)autocorrectionType;
+- (unsigned long long)autocapitalizationType;
+- (unsigned long long)autocorrectionType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)enablesReturnKeyAutomatically;
+- (bool)enablesReturnKeyAutomatically;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)keyboardAppearance;
-- (unsigned int)keyboardType;
-- (unsigned int)returnKeyType;
-- (BOOL)secureTextEntry;
-- (void)setAutocapitalizationType:(unsigned int)arg1;
-- (void)setAutocorrectionType:(unsigned int)arg1;
-- (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
-- (void)setKeyboardAppearance:(unsigned int)arg1;
-- (void)setKeyboardType:(unsigned int)arg1;
-- (void)setReturnKeyType:(unsigned int)arg1;
-- (void)setSecureTextEntry:(BOOL)arg1;
-- (void)setSpellCheckingType:(unsigned int)arg1;
-- (unsigned int)spellCheckingType;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)keyboardAppearance;
+- (unsigned long long)keyboardType;
+- (unsigned long long)returnKeyType;
+- (bool)secureTextEntry;
+- (void)setAutocapitalizationType:(unsigned long long)arg1;
+- (void)setAutocorrectionType:(unsigned long long)arg1;
+- (void)setEnablesReturnKeyAutomatically:(bool)arg1;
+- (void)setKeyboardAppearance:(unsigned long long)arg1;
+- (void)setKeyboardType:(unsigned long long)arg1;
+- (void)setReturnKeyType:(unsigned long long)arg1;
+- (void)setSecureTextEntry:(bool)arg1;
+- (void)setSpellCheckingType:(unsigned long long)arg1;
+- (unsigned long long)spellCheckingType;
 
 @end

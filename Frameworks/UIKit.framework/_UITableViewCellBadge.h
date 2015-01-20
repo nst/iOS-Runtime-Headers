@@ -6,24 +6,24 @@
 
 @interface _UITableViewCellBadge : UIView {
     struct CGSize { 
-        float width; 
-        float height; 
-    BOOL _isSelected;
+        double width; 
+        double height; 
     NSString *_text;
     } _textSize;
+    bool_isSelected;
 }
 
-@property(getter=isSelected) BOOL selected;
+@property(getter=isSelected) bool selected;
 @property(copy) NSString * text;
 
 - (void)_sizeToFit;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isHighlighted;
-- (BOOL)isSelected;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setIsSelected:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isHighlighted;
+- (bool)isSelected;
+- (void)setHighlighted:(bool)arg1;
+- (void)setIsSelected:(bool)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

@@ -9,7 +9,7 @@
     NSString *_manufacturer;
     NSString *_model;
     NSString *_name;
-    unsigned int _properties;
+    unsigned long long _properties;
     NSString *_ssid;
 }
 
@@ -17,18 +17,18 @@
 @property(copy,readonly) NSString * manufacturer;
 @property(copy,readonly) NSString * model;
 @property(copy,readonly) NSString * name;
-@property(readonly) unsigned int properties;
+@property(readonly) unsigned long long properties;
 @property(copy,readonly) NSString * ssid;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithAirPortAssistantWACDevice:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)macAddress;
 - (id)manufacturer;
 - (id)model;
 - (id)name;
-- (unsigned int)properties;
+- (unsigned long long)properties;
 - (id)ssid;
 
 @end

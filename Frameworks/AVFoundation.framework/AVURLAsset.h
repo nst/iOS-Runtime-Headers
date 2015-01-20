@@ -13,8 +13,8 @@
 @property(readonly) NSString * cacheKey;
 @property(readonly) double rc_durationInSeconds;
 @property(readonly) AVAssetResourceLoader * resourceLoader;
-@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+@property(readonly) bool shouldMatchDataInCacheByURLPathComponentOnly;
+@property(readonly) bool shouldMatchDataInCacheByURLWithoutQueryComponent;
 
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 + (id)_UTTypes;
@@ -27,7 +27,7 @@
 + (id)_streamingUTTypes;
 + (id)audiovisualMIMETypes;
 + (id)audiovisualTypes;
-+ (BOOL)isPlayableExtendedMIMEType:(id)arg1;
++ (bool)isPlayableExtendedMIMEType:(id)arg1;
 + (id)rc_preciseTimingAssetWithURL:(id)arg1;
 
 - (id)SHA1Digest;
@@ -42,11 +42,11 @@
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)_handleURLAssetInitializationOptionsReturningFigAssetCreationOptions:(id)arg1 selector:(SEL)arg2;
 - (void)_handleURLRequest:(id)arg1;
-- (BOOL)_hasResourceLoaderDelegate;
+- (bool)_hasResourceLoaderDelegate;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_removeFigAssetNotifications;
 - (void)_setAssetInspectorLoader:(id)arg1;
-- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
+- (bool)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)_tracks;
 - (void)_tracksDidChange;
 - (id)assetCache;
@@ -61,11 +61,11 @@
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)lyrics;
 - (double)rc_durationInSeconds;
-- (unsigned int)referenceRestrictions;
+- (unsigned long long)referenceRestrictions;
 - (id)resolvedURL;
 - (id)resourceLoader;
-- (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
-- (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
+- (bool)shouldMatchDataInCacheByURLPathComponentOnly;
+- (bool)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (id)tracks;
 
 @end

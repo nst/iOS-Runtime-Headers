@@ -8,17 +8,17 @@
     SBCXPCServiceInterface *_XPCServiceInterface;
     id _applicationWillTerminateObserver;
     SBCClientConfiguration *_clientConfiguration;
-    BOOL _isConnecting;
     NSMutableDictionary *_pendingReplyBlockCompletionHandlers;
     NSObject<OS_dispatch_queue> *_queue;
     id _serviceProxy;
     NSXPCConnection *_xpcConnection;
+    bool_isConnecting;
 }
 
 @property(readonly) SBCXPCServiceInterface * XPCServiceInterface;
 @property(readonly) id applicationWillTerminateObserver;
 @property(readonly) SBCClientConfiguration * clientConfiguration;
-@property(readonly) BOOL isConnecting;
+@property(readonly) bool isConnecting;
 @property(readonly) NSMutableDictionary * pendingReplyBlockCompletionHandlers;
 @property(readonly) NSObject<OS_dispatch_queue> * queue;
 @property(readonly) id serviceProxy;
@@ -43,7 +43,7 @@
 - (void)dealloc;
 - (void)didConnectToService;
 - (id)initWithClientConfiguration:(id)arg1;
-- (BOOL)isConnecting;
+- (bool)isConnecting;
 - (id)newServiceConnection;
 - (id)pendingReplyBlockCompletionHandlers;
 - (id)queue;

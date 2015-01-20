@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSMutableSet * messageLinks;
 @property(retain) NSHashTable * observers;
 @property(readonly) Class superclass;
@@ -28,9 +28,9 @@
 - (id)observers;
 - (void)removeMessageLink:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (BOOL)run;
+- (bool)run;
 - (void)setMessageLinks:(id)arg1;
 - (void)setObservers:(id)arg1;
-- (BOOL)stop;
+- (bool)stop;
 
 @end

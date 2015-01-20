@@ -8,15 +8,15 @@
     NSIndexSet *_deletedIndexes;
     NSIndexSet *_insertedIndexes;
     NSSet *_sectionInfosWithCommentChanges;
-    BOOL _shouldReload;
     NSSet *_updatedAssets;
     NSIndexSet *_updatedIndexes;
+    bool_shouldReload;
 }
 
 @property(retain) NSIndexSet * deletedIndexes;
 @property(retain) NSIndexSet * insertedIndexes;
 @property(retain) NSSet * sectionInfosWithCommentChanges;
-@property BOOL shouldReload;
+@property bool shouldReload;
 @property(retain) NSSet * updatedAssets;
 @property(retain) NSIndexSet * updatedIndexes;
 
@@ -27,10 +27,10 @@
 - (void)setDeletedIndexes:(id)arg1;
 - (void)setInsertedIndexes:(id)arg1;
 - (void)setSectionInfosWithCommentChanges:(id)arg1;
-- (void)setShouldReload:(BOOL)arg1;
+- (void)setShouldReload:(bool)arg1;
 - (void)setUpdatedAssets:(id)arg1;
 - (void)setUpdatedIndexes:(id)arg1;
-- (BOOL)shouldReload;
+- (bool)shouldReload;
 - (id)updatedAssets;
 - (id)updatedIndexes;
 

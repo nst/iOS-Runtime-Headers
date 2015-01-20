@@ -16,12 +16,12 @@
 - (id)date;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSearchString:(id)arg1 date:(id)arg2;
 - (id)initWithSearchString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)searchString;
 
 @end

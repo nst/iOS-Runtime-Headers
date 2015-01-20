@@ -18,15 +18,15 @@
 + (id)instance;
 + (id)localizedCategoryNameForCategory:(int)arg1;
 + (id)localizedNameForUnsupportedAnimation:(id)arg1;
-+ (BOOL)p_dumpRegistry;
++ (bool)p_dumpRegistry;
 
 - (id)allAnimationInfos;
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3 drawable:(id)arg4;
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(bool)arg3 drawable:(id)arg4;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(bool)arg3;
 - (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2;
 - (id)animationInfosForAnimationType:(int)arg1 category:(id)arg2;
 - (id)animationInfosForAnimationType:(int)arg1 filter:(id)arg2;
-- (BOOL)canMapEffectIdentifier:(id)arg1 animationType:(int)arg2 toEffectIdentifier:(id)arg3 includeObsoleteNames:(BOOL)arg4 forDrawable:(id)arg5;
+- (bool)canMapEffectIdentifier:(id)arg1 animationType:(int)arg2 toEffectIdentifier:(id)arg3 includeObsoleteNames:(bool)arg4 forDrawable:(id)arg5;
 - (void)dealloc;
 - (id)distinctCategoriesForType:(int)arg1;
 - (id)init;

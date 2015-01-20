@@ -11,15 +11,15 @@
 @property(retain) NSData * mescalCert;
 
 - (void).cxx_destruct;
-- (BOOL)allowsAnonymousAccount;
-- (BOOL)hasRequestBody;
+- (bool)allowsAnonymousAccount;
+- (bool)hasRequestBody;
 - (id)httpMethod;
 - (id)mescalCert;
-- (int)partitionType;
+- (long long)partitionType;
 - (void)requestDidParsePlaintextObject:(id)arg1;
-- (BOOL)requiresDeviceID;
-- (BOOL)requiresSignature;
-- (int)serverType;
+- (bool)requiresDeviceID;
+- (bool)requiresSignature;
+- (long long)serverType;
 - (void)setMescalCert:(id)arg1;
 - (id)url;
 

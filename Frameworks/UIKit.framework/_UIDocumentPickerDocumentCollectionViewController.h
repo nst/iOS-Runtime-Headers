@@ -9,22 +9,22 @@
     NSArray *_modelObjects;
     id _monitoringToken;
     _UIDocumentPickerViewServiceViewController *_serviceViewController;
-    BOOL _shouldHideSortBar;
     _UIDocumentPickerSortOrderView *_sortView;
-    BOOL _updatesMayAnimate;
+    bool_shouldHideSortBar;
+    bool_updatesMayAnimate;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) _UIDocumentPickerContainerModel * model;
 @property(copy) NSArray * modelObjects;
 @property(retain) id monitoringToken;
 @property _UIDocumentPickerViewServiceViewController * serviceViewController;
-@property BOOL shouldHideSortBar;
+@property bool shouldHideSortBar;
 @property(retain) _UIDocumentPickerSortOrderView * sortView;
 @property(readonly) Class superclass;
-@property BOOL updatesMayAnimate;
+@property bool updatesMayAnimate;
 
 - (void)_dynamicTypeSizeChanged:(id)arg1;
 - (void)_sortViewChanged:(id)arg1;
@@ -32,8 +32,8 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (void)dealloc;
@@ -45,17 +45,17 @@
 - (id)serviceViewController;
 - (void)setModel:(id)arg1;
 - (void)setModelObjects:(id)arg1;
-- (void)setMonitoring:(BOOL)arg1;
+- (void)setMonitoring:(bool)arg1;
 - (void)setMonitoringToken:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
-- (void)setShouldHideSortBar:(BOOL)arg1;
+- (void)setShouldHideSortBar:(bool)arg1;
 - (void)setSortView:(id)arg1;
-- (void)setUpdatesMayAnimate:(BOOL)arg1;
-- (BOOL)shouldHideSortBar;
+- (void)setUpdatesMayAnimate:(bool)arg1;
+- (bool)shouldHideSortBar;
 - (id)sortView;
 - (void)traitCollectionDidChange:(id)arg1;
-- (BOOL)updatesMayAnimate;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)updatesMayAnimate;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)willMoveToParentViewController:(id)arg1;
 

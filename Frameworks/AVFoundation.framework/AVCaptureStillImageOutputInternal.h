@@ -6,34 +6,34 @@
 
 @interface AVCaptureStillImageOutputInternal : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct { 
         unsigned int imageCount; 
         int outputFormat; 
         unsigned int outputWidth; 
         unsigned int outputHeight; 
-    BOOL EV0CaptureEnabled;
-    int HDRCaptureMode;
-    BOOL SISActive;
-    BOOL SISEnabled;
-    BOOL SISSupported;
-    BOOL highResStillEnabled;
-    unsigned long imageDataFormatType;
-    BOOL isCapturingPhoto;
+    long long HDRCaptureMode;
+    boolEV0CaptureEnabled;
+    boolSISActive;
+    boolSISEnabled;
+    boolSISSupported;
+    boolhighResStillEnabled;
+    boolisCapturingPhoto;
+    booljpegQualitySpecified;
+    boolnoiseReductionEnabled;
+    boolrawCaptureEnabled;
+    boolsquareCropEnabled;
+    boolsuspendsVideoProcessingDuringCapture;
+    unsigned int imageDataFormatType;
     float jpegQuality;
-    BOOL jpegQualitySpecified;
-    unsigned int maxBracketedCaptureCount;
-    BOOL noiseReductionEnabled;
+    unsigned long long maxBracketedCaptureCount;
     NSDictionary *outputSettings;
     NSMutableArray *prepareRequests;
     } preparedBracket;
     } previewImageSize;
-    BOOL rawCaptureEnabled;
-    unsigned long shutterSoundID;
-    BOOL squareCropEnabled;
+    unsigned int shutterSoundID;
     NSMutableArray *stillImageRequests;
-    BOOL suspendsVideoProcessingDuringCapture;
     AVWeakReference *weakReference;
 }
 

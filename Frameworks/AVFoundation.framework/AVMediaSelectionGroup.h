@@ -8,7 +8,7 @@
     AVMediaSelectionGroupInternal *_mediaSelectionGroup;
 }
 
-@property(readonly) BOOL allowsEmptySelection;
+@property(readonly) bool allowsEmptySelection;
 @property(readonly) AVMediaSelectionOption * defaultOption;
 @property(readonly) NSArray * options;
 
@@ -21,11 +21,11 @@
 
 - (id)_groupID;
 - (id)_groupMediaType;
-- (BOOL)_isStreamingGroup;
-- (BOOL)_matchesGroupID:(id)arg1 mediaType:(id)arg2;
-- (id)_optionWithID:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
+- (bool)_isStreamingGroup;
+- (bool)_matchesGroupID:(id)arg1 mediaType:(id)arg2;
+- (id)_optionWithID:(id)arg1 displaysNonForcedSubtitles:(bool)arg2;
 - (id)_weakReference;
-- (BOOL)allowsEmptySelection;
+- (bool)allowsEmptySelection;
 - (id)asset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -6,21 +6,21 @@
 
 @interface VKIconArtwork : NSObject {
     NSMutableArray *_completionHandlers;
-    float _contentScale;
-    BOOL _hasIcon;
+    double _contentScale;
     VKImage *_image;
+    bool_hasIcon;
 }
 
-@property(readonly) float contentScale;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property(readonly) double contentScale;
+@property(readonly) struct CGSize { double x1; double x2; } size;
 
 - (void)_cleanUpAfterDrawing;
 - (id)_newImage;
-- (float)contentScale;
+- (double)contentScale;
 - (void)dealloc;
 - (void)getImage:(id)arg1;
 - (id)image;
-- (id)initWithImage:(struct CGImage { }*)arg1 contentScale:(float)arg2;
-- (struct CGSize { float x1; float x2; })size;
+- (id)initWithImage:(struct CGImage { }*)arg1 contentScale:(double)arg2;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

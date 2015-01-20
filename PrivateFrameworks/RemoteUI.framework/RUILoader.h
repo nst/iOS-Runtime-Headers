@@ -5,21 +5,21 @@
 @class <RUIParserDelegate>, NSURL, RUIParser;
 
 @interface RUILoader : RUIHTTPRequest {
-    BOOL _allowNonSecureHTTP;
     RUIParser *_parser;
     <RUIParserDelegate> *_parserDelegate;
     NSURL *_url;
+    bool_allowNonSecureHTTP;
 }
 
-@property BOOL allowNonSecureHTTP;
+@property bool allowNonSecureHTTP;
 @property <RUIParserDelegate> * parserDelegate;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (void)_finishLoad;
 - (void)allWebViewsFinishedLoading;
-- (BOOL)allowNonSecureHTTP;
-- (BOOL)anyWebViewLoading;
+- (bool)allowNonSecureHTTP;
+- (bool)anyWebViewLoading;
 - (void)cancel;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)dealloc;
@@ -31,8 +31,8 @@
 - (void)loadXMLUIWithURL:(id)arg1;
 - (void)parseData:(id)arg1;
 - (id)parserDelegate;
-- (BOOL)receivedValidResponse:(id)arg1;
-- (void)setAllowNonSecureHTTP:(BOOL)arg1;
+- (bool)receivedValidResponse:(id)arg1;
+- (void)setAllowNonSecureHTTP:(bool)arg1;
 - (void)setParserDelegate:(id)arg1;
 - (void)webViewFinishedLoading;
 

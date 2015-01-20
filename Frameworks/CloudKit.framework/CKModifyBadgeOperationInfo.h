@@ -3,16 +3,16 @@
  */
 
 @interface CKModifyBadgeOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned int _badgeValue;
+    unsigned long long _badgeValue;
 }
 
-@property unsigned int badgeValue;
+@property unsigned long long badgeValue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)badgeValue;
+- (unsigned long long)badgeValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setBadgeValue:(unsigned int)arg1;
+- (void)setBadgeValue:(unsigned long long)arg1;
 
 @end

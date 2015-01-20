@@ -5,21 +5,21 @@
 @class UIColor;
 
 @interface SKUIDividerView : UIView {
-    int _dividerOrientation;
-    float _dividerSize;
+    long long _dividerOrientation;
+    double _dividerSize;
 }
 
 @property(retain) UIColor * dividerColor;
-@property int dividerOrientation;
-@property float dividerSize;
+@property long long dividerOrientation;
+@property double dividerSize;
 
 - (id)dividerColor;
-- (int)dividerOrientation;
-- (float)dividerSize;
+- (long long)dividerOrientation;
+- (double)dividerSize;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDividerColor:(id)arg1;
-- (void)setDividerOrientation:(int)arg1;
-- (void)setDividerSize:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDividerOrientation:(long long)arg1;
+- (void)setDividerSize:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

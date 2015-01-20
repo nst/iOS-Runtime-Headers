@@ -15,7 +15,7 @@
 @property(readonly) NSDate * startDate;
 
 + (id)_newSampleWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4 config:(id)arg5;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setEndDate:(id)arg1;
@@ -25,7 +25,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (int)entityType;
+- (long long)entityType;
 - (id)initWithCoder:(id)arg1;
 - (id)sampleType;
 - (id)startDate;

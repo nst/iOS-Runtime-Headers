@@ -13,12 +13,12 @@
 @property(readonly) struct  arrowColorStale; /* unknown property attribute:  1>=[4f]} */
 @property(readonly) float arrowBrightness;
 @property(readonly) float circleBrightness;
-@property(readonly) BOOL hasArrowBrightness;
-@property(readonly) BOOL hasArrowColor;
-@property(readonly) BOOL hasArrowColorStale;
-@property(readonly) BOOL hasCircleBrightness;
-@property(readonly) BOOL hasOffset;
-@property(readonly) BOOL hasSize;
+@property(readonly) bool hasArrowBrightness;
+@property(readonly) bool hasArrowColor;
+@property(readonly) bool hasArrowColorStale;
+@property(readonly) bool hasCircleBrightness;
+@property(readonly) bool hasOffset;
+@property(readonly) bool hasSize;
 @property(readonly) float offset;
 @property(readonly) float size;
 
@@ -28,12 +28,12 @@
 - (struct Matrix<float, 4, 1> { float x1[4]; })arrowColor;
 - (struct Matrix<float, 4, 1> { float x1[4]; })arrowColorStale;
 - (float)circleBrightness;
-- (BOOL)hasArrowBrightness;
-- (BOOL)hasArrowColor;
-- (BOOL)hasArrowColorStale;
-- (BOOL)hasCircleBrightness;
-- (BOOL)hasOffset;
-- (BOOL)hasSize;
+- (bool)hasArrowBrightness;
+- (bool)hasArrowColor;
+- (bool)hasArrowColorStale;
+- (bool)hasCircleBrightness;
+- (bool)hasOffset;
+- (bool)hasSize;
 - (float)offset;
 - (float)size;
 

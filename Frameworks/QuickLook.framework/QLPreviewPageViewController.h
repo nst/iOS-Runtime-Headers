@@ -5,6 +5,6 @@
 @interface QLPreviewPageViewController : UIPageViewController {
 }
 
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
 
 @end

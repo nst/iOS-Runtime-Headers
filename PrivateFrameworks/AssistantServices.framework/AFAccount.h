@@ -13,12 +13,12 @@
     NSString *_group;
     NSString *_hostname;
     NSString *_identifier;
-    BOOL _isActive;
     NSString *_label;
     NSDictionary *_lastSyncDates;
     NSString *_localeIdentifier;
     NSString *_predefinedServer;
     NSString *_speechIdentifier;
+    bool_isActive;
 }
 
 @property(copy) NSString * aceHost;
@@ -29,7 +29,7 @@
 @property(copy) NSString * group;
 @property(copy) NSString * hostname;
 @property(copy) NSString * identifier;
-@property(readonly) BOOL isActive;
+@property(readonly) bool isActive;
 @property(copy) NSString * label;
 @property(copy) NSDictionary * lastSyncDates;
 @property(copy) NSString * localeIdentifier;
@@ -47,7 +47,7 @@
 - (id)hostname;
 - (id)identifier;
 - (id)initWithMessageDictionary:(id)arg1;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)label;
 - (id)lastSyncDates;
 - (id)localeIdentifier;

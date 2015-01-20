@@ -10,11 +10,11 @@
 - (int)callStatus;
 - (int)endedError;
 - (unsigned int)endedReason;
-- (BOOL)hasReceivedFirstFrame;
-- (BOOL)isSendingVideo;
-- (BOOL)isVideo;
+- (bool)hasReceivedFirstFrame;
+- (bool)isSendingVideo;
+- (bool)isVideo;
 - (int)service;
-- (void)setIsSendingVideo:(BOOL)arg1;
+- (void)setIsSendingVideo:(bool)arg1;
 - (int)supportedModelType;
 
 @end

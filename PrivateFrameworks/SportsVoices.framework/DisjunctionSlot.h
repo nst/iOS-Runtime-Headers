@@ -9,7 +9,7 @@
 + (id)instanceFromPlist:(id)arg1;
 
 - (id)description;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (id)reversed;
 
 @end

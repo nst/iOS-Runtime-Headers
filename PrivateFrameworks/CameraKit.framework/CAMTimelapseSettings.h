@@ -9,26 +9,26 @@
 }
 
 @property(readonly) double initialCaptureTimeInterval;
-@property(readonly) int maxFailedStateReadAttempts;
-@property(readonly) int maxMovieWriteAttempts;
+@property(readonly) long long maxFailedStateReadAttempts;
+@property(readonly) long long maxMovieWriteAttempts;
 @property(readonly) double maxOutputFPS;
-@property(readonly) int maxOutputFrames;
+@property(readonly) long long maxOutputFrames;
 @property(readonly) double maxOutputLength;
 
 + (id)sharedInstance;
 
-- (int)averageMovieBitrateForWidth:(int)arg1 height:(int)arg2;
+- (long long)averageMovieBitrateForWidth:(long long)arg1 height:(long long)arg2;
 - (id)init;
 - (double)initialCaptureTimeInterval;
-- (int)maxFailedStateReadAttempts;
-- (long long)maxMovieFileLengthForWidth:(int)arg1 height:(int)arg2;
-- (int)maxMovieWriteAttempts;
+- (long long)maxFailedStateReadAttempts;
+- (long long)maxMovieFileLengthForWidth:(long long)arg1 height:(long long)arg2;
+- (long long)maxMovieWriteAttempts;
 - (double)maxOutputFPS;
-- (int)maxOutputFrames;
+- (long long)maxOutputFrames;
 - (double)maxOutputLength;
-- (long long)minAvailableBytesNeededForCaptureForWidth:(int)arg1 height:(int)arg2;
-- (double)outputFPSForFrameCount:(int)arg1;
-- (id)outputSettingsPresetForWidth:(int)arg1 height:(int)arg2;
-- (double)waitTimeBeforeNextWriteForNumberOfPreviousAttempts:(int)arg1;
+- (long long)minAvailableBytesNeededForCaptureForWidth:(long long)arg1 height:(long long)arg2;
+- (double)outputFPSForFrameCount:(long long)arg1;
+- (id)outputSettingsPresetForWidth:(long long)arg1 height:(long long)arg2;
+- (double)waitTimeBeforeNextWriteForNumberOfPreviousAttempts:(long long)arg1;
 
 @end

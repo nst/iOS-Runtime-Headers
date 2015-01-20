@@ -3,26 +3,26 @@
  */
 
 @interface QLPreviewItemAVState : NSObject <NSSecureCoding> {
+    boolplaying;
     double duration;
-    BOOL playing;
     double position;
 }
 
 @property double duration;
-@property(getter=isPlaying) BOOL playing;
+@property(getter=isPlaying) bool playing;
 @property double position;
 
-+ (id)avStateWithPosition:(double)arg1 duration:(double)arg2 playing:(BOOL)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)avStateWithPosition:(double)arg1 duration:(double)arg2 playing:(bool)arg3;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (double)position;
 - (void)setDuration:(double)arg1;
-- (void)setPlaying:(BOOL)arg1;
+- (void)setPlaying:(bool)arg1;
 - (void)setPosition:(double)arg1;
 
 @end

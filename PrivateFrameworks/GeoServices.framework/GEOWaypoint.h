@@ -11,8 +11,8 @@
 }
 
 @property(retain) NSMutableArray * entryPoints;
-@property(readonly) BOOL hasLocation;
-@property(readonly) BOOL hasPlaceSearchRequest;
+@property(readonly) bool hasLocation;
+@property(readonly) bool hasPlaceSearchRequest;
 @property(retain) GEOLocation * location;
 @property(retain) GEOPlaceSearchRequest * placeSearchRequest;
 
@@ -23,17 +23,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)entryPointAtIndex:(unsigned int)arg1;
+- (id)entryPointAtIndex:(unsigned long long)arg1;
 - (id)entryPoints;
-- (unsigned int)entryPointsCount;
-- (BOOL)hasLocation;
-- (BOOL)hasPlaceSearchRequest;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)entryPointsCount;
+- (bool)hasLocation;
+- (bool)hasPlaceSearchRequest;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
 - (id)placeSearchRequest;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntryPoints:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPlaceSearchRequest:(id)arg1;

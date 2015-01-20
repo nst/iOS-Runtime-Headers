@@ -9,11 +9,11 @@
 @interface TSWPTwoPartAction : NSObject {
     id _cancelAction;
     id _finishAction;
-    BOOL _performImmediately;
     id _startAction;
+    bool_performImmediately;
 }
 
-@property BOOL performImmediately;
+@property bool performImmediately;
 
 + (id)actionWithStartAction:(id)arg1 cancelAction:(id)arg2 finishAction:(id)arg3;
 
@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (id)initWithStartAction:(id)arg1 cancelAction:(id)arg2 finishAction:(id)arg3;
 - (void)performFinishAction;
-- (BOOL)performImmediately;
+- (bool)performImmediately;
 - (void)performStartAction;
-- (void)setPerformImmediately:(BOOL)arg1;
+- (void)setPerformImmediately:(bool)arg1;
 
 @end

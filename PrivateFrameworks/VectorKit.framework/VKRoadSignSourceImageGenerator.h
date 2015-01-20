@@ -5,8 +5,8 @@
 @interface VKRoadSignSourceImageGenerator : NSObject {
 }
 
-+ (void)_drawSign:(int)arg1 context:(struct CGContext { }*)arg2 scale:(float)arg3 contentScale:(float)arg4 signColor:(int)arg5;
-+ (struct CGSize { float x1; float x2; })_sizeForSignType:(int)arg1 scale:(float)arg2 contentScale:(float)arg3;
-+ (struct CGImage { }*)newImageForSignType:(int)arg1 isOffRoute:(BOOL)arg2 scale:(float)arg3 contentScale:(float)arg4;
++ (void)_drawSign:(long long)arg1 context:(struct CGContext { }*)arg2 scale:(double)arg3 contentScale:(double)arg4 signColor:(long long)arg5;
++ (struct CGSize { double x1; double x2; })_sizeForSignType:(long long)arg1 scale:(double)arg2 contentScale:(double)arg3;
++ (struct CGImage { }*)newImageForSignType:(long long)arg1 isOffRoute:(bool)arg2 scale:(double)arg3 contentScale:(double)arg4;
 
 @end

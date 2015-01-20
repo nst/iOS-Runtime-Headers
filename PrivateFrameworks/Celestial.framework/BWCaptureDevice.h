@@ -13,23 +13,23 @@
 @property(readonly) int position;
 @property(readonly) NSArray * supportedFormats;
 
-- (int)activeFormatIndex;
+- (long long)activeFormatIndex;
 - (void)captureStillImageBracketNow:(int)arg1 bracketSettings:(id)arg2;
 - (void)captureStillImageNow;
 - (void)captureStillImageWithFlashNow;
 - (struct OpaqueCMClock { }*)clock;
 - (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; long long x11; }*)arg1;
-- (BOOL)isStreaming;
+- (bool)isStreaming;
 - (int)maximumFrameRate;
 - (int)minimumFrameRate;
 - (int)position;
-- (BOOL)registerStillImageBufferHandler:(id)arg1 error:(id*)arg2;
-- (void)setActiveFormatIndex:(int)arg1;
+- (bool)registerStillImageBufferHandler:(id)arg1 error:(id*)arg2;
+- (void)setActiveFormatIndex:(long long)arg1;
 - (void)setMaximumFrameRate:(int)arg1;
 - (void)setMinimumFrameRate:(int)arg1;
-- (BOOL)startStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
-- (BOOL)stopStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
+- (bool)startStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
+- (bool)stopStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
 - (id)supportedFormats;
-- (BOOL)unregisterStillImageBufferHandler:(id)arg1 error:(id*)arg2;
+- (bool)unregisterStillImageBufferHandler:(id)arg1 error:(id*)arg2;
 
 @end

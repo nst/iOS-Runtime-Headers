@@ -12,16 +12,17 @@
 @property(copy) NSString * identifier;
 @property(retain) NSUserDefaults * userDefaults;
 
-- (BOOL)activityIsHidden:(id)arg1;
+- (bool)activityIsHidden:(id)arg1;
 - (id)applicationExtensionForActivity:(id)arg1;
-- (BOOL)canHideActivity:(id)arg1;
+- (bool)canHideActivity:(id)arg1;
 - (void)dealloc;
 - (id)defaultsValueForKey:(id)arg1 activity:(id)arg2;
 - (id)identifier;
 - (id)identifierForActivity:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 userDefaults:(id)arg2;
+- (id)mergeArray:(id)arg1 withObjectsFromArray:(id)arg2;
 - (void)postActivityUserDefaultsNotification;
-- (void)setActivity:(id)arg1 asHidden:(BOOL)arg2;
+- (void)setActivity:(id)arg1 asHidden:(bool)arg2;
 - (void)setDefaultsValue:(id)arg1 forKey:(id)arg2 activity:(id)arg3;
 - (void)setIdentifier:(id)arg1;
 - (void)setUserDefaults:(id)arg1;

@@ -6,7 +6,7 @@
 
 @interface TIKeyboardState : NSObject <NSCopying, NSSecureCoding> {
     union { 
-        int integerValue; 
+        long long integerValue; 
         struct { 
             unsigned int userSelectedCurrentCandidate : 1; 
             unsigned int shouldSkipCandidateSelection : 1; 
@@ -22,7 +22,7 @@
             unsigned int autocapitalizationEnabled : 1; 
         } fields; 
     union { 
-        int integerValue; 
+        long long integerValue; 
         struct { 
             unsigned int displayed : 1; 
             unsigned int autoDisplayMode : 1; 
@@ -43,43 +43,43 @@
     TITextInputTraits *_textInputTraits;
 }
 
-@property BOOL autocapitalizationEnabled;
-@property unsigned int autocapitalizationType;
-@property BOOL autocorrectionEnabled;
-@property BOOL autocorrectionListUIAutoDisplayMode;
-@property BOOL autocorrectionListUIDisplayed;
+@property bool autocapitalizationEnabled;
+@property unsigned long long autocapitalizationType;
+@property bool autocorrectionEnabled;
+@property bool autocorrectionListUIAutoDisplayMode;
+@property bool autocorrectionListUIDisplayed;
 @property(copy) NSString * clientIdentifier;
 @property(retain) TIKeyboardCandidate * currentCandidate;
 @property(retain) TIDocumentState * documentState;
-@property BOOL hardwareKeyboardMode;
+@property bool hardwareKeyboardMode;
 @property(copy) NSString * inputForMarkedText;
 @property(copy) NSString * inputMode;
 @property(retain) TIKeyboardLayout * keyLayout;
-@property BOOL keyboardEventsLagging;
-@property unsigned int keyboardType;
+@property bool keyboardEventsLagging;
+@property unsigned long long keyboardType;
 @property(copy) TIKeyboardLayoutState * layoutState;
-@property BOOL needsCandidateMetadata;
+@property bool needsCandidateMetadata;
 @property(copy) NSString * recipientIdentifier;
 @property(copy) NSString * responseContext;
 @property(copy) NSString * searchStringForMarkedText;
-@property BOOL secureTextEntry;
+@property bool secureTextEntry;
 @property int shiftState;
-@property BOOL shortcutConversionEnabled;
-@property BOOL shouldSkipCandidateSelection;
-@property BOOL splitKeyboardMode;
-@property BOOL suppressingCandidateSelection;
+@property bool shortcutConversionEnabled;
+@property bool shouldSkipCandidateSelection;
+@property bool splitKeyboardMode;
+@property bool suppressingCandidateSelection;
 @property(retain) TITextInputTraits * textInputTraits;
-@property BOOL userSelectedCurrentCandidate;
-@property BOOL wordLearningEnabled;
+@property bool userSelectedCurrentCandidate;
+@property bool wordLearningEnabled;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_createTextInputTraitsIfNecessary;
-- (BOOL)autocapitalizationEnabled;
-- (unsigned int)autocapitalizationType;
-- (BOOL)autocorrectionEnabled;
-- (BOOL)autocorrectionListUIAutoDisplayMode;
-- (BOOL)autocorrectionListUIDisplayed;
+- (bool)autocapitalizationEnabled;
+- (unsigned long long)autocapitalizationType;
+- (bool)autocorrectionEnabled;
+- (bool)autocorrectionListUIAutoDisplayMode;
+- (bool)autocorrectionListUIDisplayed;
 - (id)clientIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentCandidate;
@@ -87,54 +87,54 @@
 - (id)description;
 - (id)documentState;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hardwareKeyboardMode;
+- (bool)hardwareKeyboardMode;
 - (id)initWithCoder:(id)arg1;
 - (id)inputForMarkedText;
 - (id)inputMode;
 - (id)keyLayout;
-- (BOOL)keyboardEventsLagging;
-- (unsigned int)keyboardType;
+- (bool)keyboardEventsLagging;
+- (unsigned long long)keyboardType;
 - (id)layoutState;
-- (BOOL)needsCandidateMetadata;
+- (bool)needsCandidateMetadata;
 - (id)recipientIdentifier;
 - (id)responseContext;
 - (id)searchStringForMarkedText;
-- (BOOL)secureTextEntry;
-- (void)setAutocapitalizationEnabled:(BOOL)arg1;
-- (void)setAutocapitalizationType:(unsigned int)arg1;
-- (void)setAutocorrectionEnabled:(BOOL)arg1;
-- (void)setAutocorrectionListUIAutoDisplayMode:(BOOL)arg1;
-- (void)setAutocorrectionListUIDisplayed:(BOOL)arg1;
+- (bool)secureTextEntry;
+- (void)setAutocapitalizationEnabled:(bool)arg1;
+- (void)setAutocapitalizationType:(unsigned long long)arg1;
+- (void)setAutocorrectionEnabled:(bool)arg1;
+- (void)setAutocorrectionListUIAutoDisplayMode:(bool)arg1;
+- (void)setAutocorrectionListUIDisplayed:(bool)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setCurrentCandidate:(id)arg1;
 - (void)setDocumentState:(id)arg1;
-- (void)setHardwareKeyboardMode:(BOOL)arg1;
+- (void)setHardwareKeyboardMode:(bool)arg1;
 - (void)setInputForMarkedText:(id)arg1;
 - (void)setInputMode:(id)arg1;
 - (void)setKeyLayout:(id)arg1;
-- (void)setKeyboardEventsLagging:(BOOL)arg1;
-- (void)setKeyboardType:(unsigned int)arg1;
+- (void)setKeyboardEventsLagging:(bool)arg1;
+- (void)setKeyboardType:(unsigned long long)arg1;
 - (void)setLayoutState:(id)arg1;
-- (void)setNeedsCandidateMetadata:(BOOL)arg1;
+- (void)setNeedsCandidateMetadata:(bool)arg1;
 - (void)setRecipientIdentifier:(id)arg1;
 - (void)setResponseContext:(id)arg1;
 - (void)setSearchStringForMarkedText:(id)arg1;
-- (void)setSecureTextEntry:(BOOL)arg1;
+- (void)setSecureTextEntry:(bool)arg1;
 - (void)setShiftState:(int)arg1;
-- (void)setShortcutConversionEnabled:(BOOL)arg1;
-- (void)setShouldSkipCandidateSelection:(BOOL)arg1;
-- (void)setSplitKeyboardMode:(BOOL)arg1;
-- (void)setSuppressingCandidateSelection:(BOOL)arg1;
+- (void)setShortcutConversionEnabled:(bool)arg1;
+- (void)setShouldSkipCandidateSelection:(bool)arg1;
+- (void)setSplitKeyboardMode:(bool)arg1;
+- (void)setSuppressingCandidateSelection:(bool)arg1;
 - (void)setTextInputTraits:(id)arg1;
-- (void)setUserSelectedCurrentCandidate:(BOOL)arg1;
-- (void)setWordLearningEnabled:(BOOL)arg1;
+- (void)setUserSelectedCurrentCandidate:(bool)arg1;
+- (void)setWordLearningEnabled:(bool)arg1;
 - (int)shiftState;
-- (BOOL)shortcutConversionEnabled;
-- (BOOL)shouldSkipCandidateSelection;
-- (BOOL)splitKeyboardMode;
-- (BOOL)suppressingCandidateSelection;
+- (bool)shortcutConversionEnabled;
+- (bool)shouldSkipCandidateSelection;
+- (bool)splitKeyboardMode;
+- (bool)suppressingCandidateSelection;
 - (id)textInputTraits;
-- (BOOL)userSelectedCurrentCandidate;
-- (BOOL)wordLearningEnabled;
+- (bool)userSelectedCurrentCandidate;
+- (bool)wordLearningEnabled;
 
 @end

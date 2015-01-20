@@ -17,10 +17,10 @@
     NSString *_persistentUUID;
     NSString *_protocolVersion;
     NSNumber *_successfulRequests;
-    BOOL _syncingAllowed;
     NSNumber *_timeInNetworking;
     NSNumber *_timeSpan;
     NSNumber *_uploadedElements;
+    bool_syncingAllowed;
 }
 
 @property(retain) NSString * accountType;
@@ -35,7 +35,7 @@
 @property(retain) NSString * persistentUUID;
 @property(retain) NSString * protocolVersion;
 @property(retain) NSNumber * successfulRequests;
-@property BOOL syncingAllowed;
+@property bool syncingAllowed;
 @property(retain) NSNumber * timeInNetworking;
 @property(retain) NSNumber * timeSpan;
 @property(retain) NSNumber * uploadedElements;
@@ -76,12 +76,12 @@
 - (void)setPersistentUUID:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setSuccessfulRequests:(id)arg1;
-- (void)setSyncingAllowed:(BOOL)arg1;
+- (void)setSyncingAllowed:(bool)arg1;
 - (void)setTimeInNetworking:(id)arg1;
 - (void)setTimeSpan:(id)arg1;
 - (void)setUploadedElements:(id)arg1;
 - (id)successfulRequests;
-- (BOOL)syncingAllowed;
+- (bool)syncingAllowed;
 - (id)timeInNetworking;
 - (id)timeSpan;
 - (id)uploadedElements;

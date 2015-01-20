@@ -9,18 +9,18 @@
     struct BTLocalDeviceImpl { } *_btLocalDevice;
     struct __CFRunLoop { } *_btRunLoop;
     struct BTDeviceImpl { } *_btSensorDevice;
-    unsigned int _btSensorDeviceCount;
+    unsigned long long _btSensorDeviceCount;
     NSFileHandle *_btSensorDeviceInputHandle;
     struct BTSessionImpl { } *_btSession;
     int _deviceVirtualType;
     struct __CFRunLoopTimer { } *_futureTimer;
-    BOOL _isActivating;
-    BOOL _isActive;
-    BOOL _isConnecting;
     NSTimer *_multiSensorTimer;
     BOOL _rssi;
     unsigned int _serviceMask;
-    BOOL _shouldCancelBTThread;
+    bool_isActivating;
+    bool_isActive;
+    bool_isConnecting;
+    bool_shouldCancelBTThread;
 }
 
 @property(readonly) BOOL rssi;
@@ -71,11 +71,11 @@
 - (void)_handleDeviceLost:(struct BTDeviceImpl { }*)arg1;
 - (void)_handleMultiSensorTimer:(id)arg1;
 - (void)_handleScanDidEnd;
-- (BOOL)_isPowerOnForLocalDeviceModule:(unsigned int)arg1;
+- (bool)_isPowerOnForLocalDeviceModule:(unsigned int)arg1;
 - (void)_openInputPort;
 - (void)_retryConnectToDevice;
 - (void)_setDeviceForAddress:(struct { unsigned char x1[6]; })arg1;
-- (void)_setPowerOn:(BOOL)arg1 forLocalDeviceModule:(unsigned int)arg2;
+- (void)_setPowerOn:(bool)arg1 forLocalDeviceModule:(unsigned int)arg2;
 - (void)_setSensorDeviceVirtualType;
 - (void)_setupLocalDeviceCallbacks;
 - (void)_setupServiceCallbacks;
@@ -88,9 +88,9 @@
 - (struct { unsigned char x1[6]; })deviceAddressForSensor;
 - (void)forgetSensorDevice;
 - (id)init;
-- (BOOL)isActive;
-- (BOOL)isSensorDeviceConnected;
-- (BOOL)isSensorDeviceDiscovered;
+- (bool)isActive;
+- (bool)isSensorDeviceConnected;
+- (bool)isSensorDeviceDiscovered;
 - (void)requestRSSI;
 - (BOOL)rssi;
 - (void)startReadingInput;

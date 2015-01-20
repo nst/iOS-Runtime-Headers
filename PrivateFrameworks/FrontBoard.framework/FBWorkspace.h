@@ -7,20 +7,20 @@
 @interface FBWorkspace : NSObject <FBSceneClientProvider> {
     NSObject<OS_dispatch_queue> *_callOutQueue;
     NSMapTable *_hostToClientMap;
-    BOOL _invalidated;
     FBSceneClientProviderInvalidationAction *_invalidationAction;
     NSObject<OS_dispatch_queue> *_queue;
     FBWorkspaceServer *_server;
-    BOOL _willInvalidate;
     BSZeroingWeakReference *_zeroingWeakDelegate;
     BSZeroingWeakReference *_zeroingWeakProcess;
+    bool_invalidated;
+    bool_willInvalidate;
 }
 
 @property(retain,readonly) BSAuditToken * auditToken;
 @property(copy,readonly) NSString * debugDescription;
 @property <FBWorkspaceDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) FBProcess * process;
 @property(readonly) Class superclass;
 

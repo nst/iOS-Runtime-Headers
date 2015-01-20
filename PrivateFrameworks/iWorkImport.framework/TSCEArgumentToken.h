@@ -5,6 +5,6 @@
 @interface TSCEArgumentToken : NSObject {
 }
 
-+ (BOOL)isStringValidArgumentToken:(id)arg1;
++ (bool)isStringValidArgumentToken:(id)arg1;
 
 @end

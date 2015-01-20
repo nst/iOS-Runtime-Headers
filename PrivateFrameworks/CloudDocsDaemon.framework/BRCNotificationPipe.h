@@ -13,14 +13,12 @@
     BRCXPCClient *_client;
     NSMutableSet *_externalContainers;
     BRCNotificationGatherer *_gatherer;
-    BOOL _hasUpdatesInFlight;
     BRCNotificationManager *_manager;
     BRNotificationQueue *_notifs;
     BRCItemID *_oldWatchedAncestorItemID;
     NSObject<OS_dispatch_queue> *_queue;
     <BRItemNotificationReceiving> *_receiver;
     BRCRelativePath *_root;
-    BOOL _volumeIsCaseSensitive;
     NSString *_watchForBundleID;
     unsigned short _watchItemOptions;
     int _watchKind;
@@ -30,12 +28,14 @@
     BRCItemID *_watchedAncestorItemID;
     NSSet *_watchedContainerIDs;
     NSSet *_watchedContainers;
-    unsigned int _watchedContainersFlags;
+    unsigned long long _watchedContainersFlags;
+    bool_hasUpdatesInFlight;
+    bool_volumeIsCaseSensitive;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -45,7 +45,7 @@
 - (int)_isInterestingUpdate:(id)arg1;
 - (void)_stopWatchingItems;
 - (void)addDequeueCallback:(id)arg1;
-- (void)addNotification:(id)arg1 asDead:(BOOL)arg2;
+- (void)addNotification:(id)arg1 asDead:(bool)arg2;
 - (void)boostPriority:(id)arg1;
 - (void)close;
 - (void)dealloc;

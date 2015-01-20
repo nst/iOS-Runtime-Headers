@@ -12,42 +12,42 @@
     NSString *_title;
 }
 
-@property(readonly) unsigned int approximateCount;
+@property(readonly) unsigned long long approximateCount;
 @property(retain,readonly) NSOrderedSet * assets;
-@property(readonly) unsigned int assetsCount;
-@property(readonly) BOOL canShowAvalancheStacks;
-@property(readonly) BOOL canShowComments;
+@property(readonly) unsigned long long assetsCount;
+@property(readonly) bool canShowAvalancheStacks;
+@property(readonly) bool canShowComments;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSDate * endDate;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isEmpty;
 @property(retain) PLManagedAsset * keyAsset;
 @property(copy,readonly) NSArray * localizedLocationNames;
 @property(copy,readonly) NSString * localizedTitle;
-@property(readonly) unsigned int photosCount;
+@property(readonly) unsigned long long photosCount;
 @property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(retain,readonly) NSDate * startDate;
 @property(readonly) Class superclass;
 @property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(retain,readonly) NSString * title;
 @property(retain,readonly) NSString * uuid;
-@property(readonly) unsigned int videosCount;
+@property(readonly) unsigned long long videosCount;
 
-- (int)_countOfAssetType:(short)arg1;
-- (unsigned int)approximateCount;
+- (long long)_countOfAssetType:(short)arg1;
+- (unsigned long long)approximateCount;
 - (id)assets;
-- (unsigned int)assetsCount;
-- (BOOL)canPerformEditOperation:(unsigned int)arg1;
-- (BOOL)canShowAvalancheStacks;
-- (BOOL)canShowComments;
+- (unsigned long long)assetsCount;
+- (bool)canPerformEditOperation:(unsigned long long)arg1;
+- (bool)canShowAvalancheStacks;
+- (bool)canShowComments;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 assets:(id)arg2;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)keyAsset;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
-- (unsigned int)photosCount;
+- (unsigned long long)photosCount;
 - (id)secondaryKeyAsset;
 - (void)setKeyAsset:(id)arg1;
 - (void)setSecondaryKeyAsset:(id)arg1;
@@ -55,6 +55,6 @@
 - (id)tertiaryKeyAsset;
 - (id)title;
 - (id)uuid;
-- (unsigned int)videosCount;
+- (unsigned long long)videosCount;
 
 @end

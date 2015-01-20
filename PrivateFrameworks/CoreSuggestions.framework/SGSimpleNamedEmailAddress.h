@@ -15,18 +15,18 @@
 + (id)namedEmailAddressWithFieldValue:(id)arg1;
 + (id)namedEmailAddressesWithFieldValues:(id)arg1;
 + (id)serializeAll:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToNamedEmailAddress:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToNamedEmailAddress:(id)arg1;
 - (id)name;
 - (id)serialized;
 

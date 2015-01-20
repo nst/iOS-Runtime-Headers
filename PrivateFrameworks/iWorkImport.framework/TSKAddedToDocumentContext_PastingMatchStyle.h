@@ -6,6 +6,6 @@
 }
 
 - (id)description;
-- (BOOL)matchStyle;
+- (bool)matchStyle;
 
 @end

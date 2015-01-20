@@ -13,19 +13,19 @@
     NSData *_cursor;
     NSData *_nextCursor;
     CKCommentQuery *_query;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
 }
 
 @property(copy) id commentFetchedBlock;
 @property(retain) NSData * cursor;
 @property(retain) NSData * nextCursor;
 @property(retain) CKCommentQuery * query;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 
 - (void).cxx_destruct;
 - (id)commentFetchedBlock;
 - (id)cursor;
-- (id)initWithQuery:(id)arg1 cursor:(id)arg2 resultsLimit:(unsigned int)arg3;
+- (id)initWithQuery:(id)arg1 cursor:(id)arg2 resultsLimit:(unsigned long long)arg3;
 - (id)nextCursor;
 - (int)operationType;
 - (id)query;
@@ -33,11 +33,11 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setCommentFetchedBlock:(id)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setNextCursor:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 
 @end

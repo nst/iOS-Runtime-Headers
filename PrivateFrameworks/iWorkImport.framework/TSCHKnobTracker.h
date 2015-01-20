@@ -3,15 +3,15 @@
  */
 
 @interface TSCHKnobTracker : TSDKnobTracker {
-    BOOL mIsDirectManipulation;
+    boolmIsDirectManipulation;
 }
 
-@property BOOL isDirectManipulation;
+@property bool isDirectManipulation;
 
 - (void)changeDynamicLayoutsForReps:(id)arg1;
 - (id)initWithRep:(id)arg1 knob:(id)arg2;
-- (BOOL)isDirectManipulation;
+- (bool)isDirectManipulation;
 - (void)resetCurrentPositionToKnob;
-- (void)setIsDirectManipulation:(BOOL)arg1;
+- (void)setIsDirectManipulation:(bool)arg1;
 
 @end

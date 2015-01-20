@@ -12,18 +12,18 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <HKEmergencyCardDeletionDelegate> * deletionDelegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)deletionDelegate;
-- (id)initInEditMode:(BOOL)arg1;
+- (id)initInEditMode:(bool)arg1;
 - (void)setDeletionDelegate:(id)arg1;
-- (BOOL)shouldHighlightRowAtIndex:(int)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
+- (bool)shouldHighlightRowAtIndex:(long long)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 - (id)title;
 
 @end

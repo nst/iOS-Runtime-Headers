@@ -21,10 +21,10 @@
 - (void).cxx_destruct;
 - (id)_ciContext;
 - (id)_eaglContext;
-- (void)_renderBaseThumbnailIfNeededOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_renderBaseThumbnailIfNeededOfSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_renderQueue;
 - (id)_renderThumbnailWithFilter:(id)arg1;
-- (void)_requestThumbnailsWithFilters:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 singleCompletion:(id)arg3 fullCompletion:(id)arg4;
+- (void)_requestThumbnailsWithFilters:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 singleCompletion:(id)arg3 fullCompletion:(id)arg4;
 - (void)_setCiContext:(id)arg1;
 - (void)_setEaglContext:(id)arg1;
 - (void)_setRenderQueue:(id)arg1;
@@ -33,7 +33,7 @@
 - (id)init;
 - (id)initWithInputImage:(id)arg1;
 - (id)inputImage;
-- (void)requestThumbnailsWithFilters:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 fullCompletion:(id)arg3;
-- (void)requestThumbnailsWithFilters:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 singleCompletion:(id)arg3;
+- (void)requestThumbnailsWithFilters:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 fullCompletion:(id)arg3;
+- (void)requestThumbnailsWithFilters:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 singleCompletion:(id)arg3;
 
 @end

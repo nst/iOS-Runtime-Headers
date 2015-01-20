@@ -9,14 +9,14 @@
     _DKDAAPWriterContainer *_currentContainer;
     NSOutputStream *_outputStream;
     NSObject<OS_dispatch_queue> *_outputStreamAccessQueue;
-    unsigned int _state;
+    unsigned long long _state;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSOutputStream * outputStream;
-@property(readonly) unsigned int state;
+@property(readonly) unsigned long long state;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (id)initWithStream:(id)arg1;
 - (id)outputStream;
 - (void)startContainerWithCode:(unsigned int)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (void)writeBytes:(char *)arg1 ofLength:(unsigned int)arg2 withCode:(unsigned int)arg3;
 - (void)writeCString:(const char *)arg1 withCode:(unsigned int)arg2;
 - (void)writeContainerData:(id)arg1;

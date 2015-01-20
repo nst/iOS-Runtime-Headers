@@ -5,19 +5,19 @@
 @class <TSCEReferenceTrackerDelegate>, NSMutableArray, NSString, TSCECalculationEngine;
 
 @interface TSCEReferenceTracker : TSPObject <TSCEFormulaOwning> {
+    boolmIsRegisteredWithCalculationEngine;
     TSCECalculationEngine *mCalculationEngine;
     <TSCEReferenceTrackerDelegate> *mDelegate;
     NSMutableArray *mFormulaIDsToRewrite;
-    BOOL mIsRegisteredWithCalculationEngine;
-    unsigned int mNextEmptyTrackedReferencesIndex;
-    unsigned int mNumberOfTrackedReferences;
+    unsigned long long mNextEmptyTrackedReferencesIndex;
+    unsigned long long mNumberOfTrackedReferences;
     NSMutableArray *mTrackedReferences;
     struct __CFUUID { } *mUUID;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (id)allTrackedReferences;
@@ -34,21 +34,21 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 delegate:(id)arg3;
 - (void)invalidateForCalculationEngine:(id)arg1;
-- (unsigned int)numberOfTrackedReferences;
+- (unsigned long long)numberOfTrackedReferences;
 - (id)objectToArchiveInDependencyTracker;
-- (struct { BOOL x1; BOOL x2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
-- (void)registerWithCalculationEngine:(BOOL)arg1;
+- (struct { boolx1; boolx2; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
+- (void)registerWithCalculationEngine:(bool)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
 - (void)retainForCalculationEngine:(id)arg1;
 - (void)rewriteForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 rewriteSpec:(id)arg3;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)serializeCalculations;
+- (bool)serializeCalculations;
 - (void)setCalculationEngine:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFormulaOwnerID:(struct __CFUUID { }*)arg1;
 - (id)trackedReferenceAtID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1;
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
-- (BOOL)trackedReferencesExistForTable:(struct __CFUUID { }*)arg1;
+- (bool)trackedReferencesExistForTable:(struct __CFUUID { }*)arg1;
 - (void)unregisterFromCalculationEngine;
 - (void)writeResultsForCalculationEngine:(id)arg1;
 

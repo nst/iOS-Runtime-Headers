@@ -7,43 +7,43 @@
 @interface CAMEffectsGridLabelsView : UIView <_UIBackdropViewObserver> {
     _UIBackdropView *__backdropView;
     _UILegibilitySettingsProvider *__legibilitySettingsProvider;
-    BOOL _disableLayoutForLabels;
     NSArray *_filterIndices;
     NSArray *_filterLabelViews;
     CAMEffectsGridView *_gridView;
-    int _orientation;
+    long long _orientation;
+    bool_disableLayoutForLabels;
 }
 
 @property(retain) _UIBackdropView * _backdropView;
 @property(retain) _UILegibilitySettingsProvider * _legibilitySettingsProvider;
-@property(getter=isDisabledLayoutForLabels) BOOL disableLayoutForLabels;
+@property(getter=isDisabledLayoutForLabels) bool disableLayoutForLabels;
 @property(retain) NSArray * filterIndices;
 @property(retain) NSArray * filterLabelViews;
 @property(retain) CAMEffectsGridView * gridView;
-@property int orientation;
+@property long long orientation;
 
 - (void).cxx_destruct;
 - (id)_backdropView;
 - (id)_legibilitySettingsProvider;
 - (void)_rebuildLabelViews;
-- (void)_replaceLabelViews:(BOOL)arg1;
+- (void)_replaceLabelViews:(bool)arg1;
 - (void)_setFilterIndices:(id)arg1;
 - (void)_setFilterLabelViews:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForOrientation:(int)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForOrientation:(long long)arg1;
 - (void)backdropViewDidChange:(id)arg1;
 - (void)dealloc;
 - (id)filterIndices;
 - (id)filterLabelViews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabelView:(id)arg1 withinGridFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForLabelView:(id)arg1 withinGridFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)gridView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDisabledLayoutForLabels;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDisabledLayoutForLabels;
 - (void)layoutSubviews;
-- (int)orientation;
-- (void)setDisableLayoutForLabels:(BOOL)arg1;
+- (long long)orientation;
+- (void)setDisableLayoutForLabels:(bool)arg1;
 - (void)setGridView:(id)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setOrientation:(int)arg1;
+- (void)setOrientation:(long long)arg1 animated:(bool)arg2;
+- (void)setOrientation:(long long)arg1;
 - (void)set_backdropView:(id)arg1;
 - (void)set_legibilitySettingsProvider:(id)arg1;
 - (void)updateFilterLabels;

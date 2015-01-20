@@ -12,14 +12,14 @@
  */
 
 @interface SCNActionFade : SCNAction {
-    struct SCNCActionFade { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; float x9; float x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; BOOL x25; } *_mycaction;
+    struct SCNCActionFade { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; boolx6; double x7; double x8; double x9; double x10; double x11; boolx12; boolx13; id x14; void*x15; struct __CFString {} *x16; long long x17; double x18; double x19; double x20; double x21; float x22; float x23; float x24; boolx25; } *_mycaction;
 }
 
 + (id)fadeInWithDuration:(double)arg1;
-+ (id)fadeOpacityBy:(float)arg1 duration:(double)arg2;
-+ (id)fadeOpacityTo:(float)arg1 duration:(double)arg2;
++ (id)fadeOpacityBy:(double)arg1 duration:(double)arg2;
++ (id)fadeOpacityTo:(double)arg1 duration:(double)arg2;
 + (id)fadeOutWithDuration:(double)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

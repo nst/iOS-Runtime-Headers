@@ -5,24 +5,24 @@
 @class <MTLFunction>, NSString;
 
 @interface MTLComputePipelineDescriptor : NSObject <NSCopying> {
-    struct MTLComputePipelineDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; id x4; } *_private;
+    struct MTLComputePipelineDescriptorPrivate { id x1; unsigned long long x2; unsigned long long x3; id x4; } *_private;
 }
 
 @property(retain) <MTLFunction> * computeFunction;
 @property(copy) NSString * label;
 
-- (const struct MTLComputePipelineDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; id x4; }*)_descriptorPrivate;
+- (const struct MTLComputePipelineDescriptorPrivate { id x1; unsigned long long x2; unsigned long long x3; id x4; }*)_descriptorPrivate;
 - (id)computeFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (void)reset;
 - (void)setComputeFunction:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (BOOL)validate;
+- (bool)validate;
 
 @end

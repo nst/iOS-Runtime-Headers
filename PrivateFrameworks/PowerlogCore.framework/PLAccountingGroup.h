@@ -10,19 +10,19 @@
         double length; 
     NSString *_accountingGroupName;
     short _accountingGroupType;
-    BOOL _eventCacheOn;
     NSArray *_eventCacheResults;
     } _eventCacheTimeRange;
+    bool_eventCacheOn;
 }
 
 @property(retain,readonly) NSString * accountingGroupName;
 @property(readonly) short accountingGroupType;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property BOOL eventCacheOn;
+@property bool eventCacheOn;
 @property(retain) NSArray * eventCacheResults;
 @property struct _PLTimeIntervalRange { double x1; double x2; } eventCacheTimeRange;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)accountingGroupFromAGName:(id)arg1;
@@ -38,9 +38,9 @@
 - (void)batchAddAccountingEvents:(id)arg1;
 - (void)cacheEventsForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (void)clearEventCache;
-- (void)closeAllOpenEventAtTime:(id)arg1 withForceClose:(BOOL)arg2;
+- (void)closeAllOpenEventAtTime:(id)arg1 withForceClose:(bool)arg2;
 - (void)closeLastOpenEventAtTime:(id)arg1;
-- (BOOL)eventCacheOn;
+- (bool)eventCacheOn;
 - (id)eventCacheResults;
 - (struct _PLTimeIntervalRange { double x1; double x2; })eventCacheTimeRange;
 - (id)getEventsInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
@@ -51,11 +51,11 @@
 - (id)initWithName:(id)arg1 withAccountingGroupType:(short)arg2;
 - (void)logEventCacheStats:(id)arg1;
 - (double)safeTimeForAccounting;
-- (void)setEventCacheOn:(BOOL)arg1;
+- (void)setEventCacheOn:(bool)arg1;
 - (void)setEventCacheResults:(id)arg1;
 - (void)setEventCacheTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (double)timeOfLastEndedSnapshot;
 - (double)timeOfLastSnapshot;
-- (BOOL)useCachedEventsForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
+- (bool)useCachedEventsForTimeInterval:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 
 @end

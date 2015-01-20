@@ -7,16 +7,16 @@
 @interface BBDataProviderManager : NSObject <BBDataProviderStoreDelegate> {
     <BBDataProviderManagerDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_loadDataProviderQueue;
-    BOOL _loadQueueSuspended;
     BBLocalDataProviderStore *_localDataProviderStore;
     NSMutableDictionary *_parentFactoriesBySectionID;
     NSObject<OS_dispatch_queue> *_queue;
     BBRemoteDataProviderConnectionResolver *_remoteDataProviderResolver;
+    bool_loadQueueSuspended;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (id)_configureDataProvider:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)dataProviderStore:(id)arg1 didRemoveDataProvider:(id)arg2;
 - (void)dealloc;
 - (id)debugDescription;
-- (id)debugDescriptionWithChildren:(unsigned int)arg1;
+- (id)debugDescriptionWithChildren:(unsigned long long)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)loadAllDataProviders;
 - (id)localSectionIdentifierFromDismissalSectionIdentifer:(id)arg1;

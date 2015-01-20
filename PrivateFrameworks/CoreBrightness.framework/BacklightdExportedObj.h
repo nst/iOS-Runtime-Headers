@@ -5,16 +5,16 @@
 @class BrightnessSystemInternal, NSString, NSXPCConnection;
 
 @interface BacklightdExportedObj : NSObject <BacklightdXPCProtocol> {
-    unsigned int _clientID;
-    BOOL _clientIDSet;
+    unsigned long long _clientID;
     NSXPCConnection *_connection;
     BrightnessSystemInternal *_server;
+    bool_clientIDSet;
 }
 
 @property(retain) NSXPCConnection * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property BrightnessSystemInternal * server;
 @property(readonly) Class superclass;
 

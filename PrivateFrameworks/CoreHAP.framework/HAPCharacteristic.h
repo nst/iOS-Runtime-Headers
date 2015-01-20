@@ -5,19 +5,19 @@
 @class HAPCharacteristicMetadata, HAPService, NSNumber, NSString;
 
 @interface HAPCharacteristic : NSObject {
-    BOOL _eventNotificationsEnabled;
     NSNumber *_instanceID;
     HAPCharacteristicMetadata *_metadata;
-    unsigned int _properties;
+    unsigned long long _properties;
     HAPService *_service;
     NSString *_type;
     id _value;
+    bool_eventNotificationsEnabled;
 }
 
-@property BOOL eventNotificationsEnabled;
+@property bool eventNotificationsEnabled;
 @property(copy) NSNumber * instanceID;
 @property(retain) HAPCharacteristicMetadata * metadata;
-@property unsigned int properties;
+@property unsigned long long properties;
 @property HAPService * service;
 @property(copy) NSString * type;
 @property(copy) id value;
@@ -30,18 +30,18 @@
 - (id)_getDefaultMetadata;
 - (void)_updateMetadata:(id)arg1 withProvidedMetadata:(id)arg2;
 - (id)description;
-- (BOOL)eventNotificationsEnabled;
-- (id)initWithType:(id)arg1 instanceID:(id)arg2 value:(id)arg3 properties:(unsigned int)arg4 eventNotificationsEnabled:(BOOL)arg5 metadata:(id)arg6;
+- (bool)eventNotificationsEnabled;
+- (id)initWithType:(id)arg1 instanceID:(id)arg2 value:(id)arg3 properties:(unsigned long long)arg4 eventNotificationsEnabled:(bool)arg5 metadata:(id)arg6;
 - (id)instanceID;
-- (BOOL)isEqualToCharacteristic:(id)arg1;
+- (bool)isEqualToCharacteristic:(id)arg1;
 - (id)metadata;
-- (unsigned int)properties;
+- (unsigned long long)properties;
 - (id)propertiesDescription;
 - (id)service;
-- (void)setEventNotificationsEnabled:(BOOL)arg1;
+- (void)setEventNotificationsEnabled:(bool)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setMetadata:(id)arg1;
-- (void)setProperties:(unsigned int)arg1;
+- (void)setProperties:(unsigned long long)arg1;
 - (void)setService:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;

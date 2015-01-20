@@ -5,24 +5,24 @@
 @class NSDictionary;
 
 @interface MTLCompileOptions : NSObject <NSCopying> {
-    BOOL _debuggingEnabled;
-    BOOL _fastMathEnabled;
     NSDictionary *_preprocessorMacros;
+    bool_debuggingEnabled;
+    bool_fastMathEnabled;
 }
 
-@property BOOL debuggingEnabled;
-@property BOOL fastMathEnabled;
+@property bool debuggingEnabled;
+@property bool fastMathEnabled;
 @property(copy) NSDictionary * preprocessorMacros;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)debuggingEnabled;
+- (bool)debuggingEnabled;
 - (id)description;
-- (BOOL)fastMathEnabled;
+- (bool)fastMathEnabled;
 - (id)init;
 - (id)preprocessorMacros;
-- (void)setDebuggingEnabled:(BOOL)arg1;
-- (void)setFastMathEnabled:(BOOL)arg1;
+- (void)setDebuggingEnabled:(bool)arg1;
+- (void)setFastMathEnabled:(bool)arg1;
 - (void)setPreprocessorMacros:(id)arg1;
 
 @end

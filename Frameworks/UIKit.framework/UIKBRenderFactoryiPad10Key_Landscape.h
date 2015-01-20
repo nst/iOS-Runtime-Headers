@@ -5,8 +5,8 @@
 @interface UIKBRenderFactoryiPad10Key_Landscape : UIKBRenderFactoryiPad10Key_Portrait {
 }
 
-- (float)controlColumnWidthFactor;
-- (float)keyCornerRadius;
+- (double)controlColumnWidthFactor;
+- (double)keyCornerRadius;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 

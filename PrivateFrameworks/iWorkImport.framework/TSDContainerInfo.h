@@ -15,15 +15,15 @@
     NSObject<TSDContainerInfo> *mParentInfo;
 }
 
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
+@property(getter=isAnchoredToText,readonly) bool anchoredToText;
+@property(getter=isAttachedToBodyText,readonly) bool attachedToBodyText;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
+@property(getter=isFloatingAboveText,readonly) bool floatingAboveText;
 @property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned int hash;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property BOOL matchesObjectPlaceholderGeometry;
+@property(readonly) unsigned long long hash;
+@property(getter=isInlineWithText,readonly) bool inlineWithText;
+@property bool matchesObjectPlaceholderGeometry;
 @property TSPObject<TSDOwningAttachment> * owningAttachment;
 @property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
 @property NSObject<TSDContainerInfo> * parentInfo;
@@ -38,17 +38,17 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (void)insertChildInfo:(id)arg1 above:(id)arg2;
-- (void)insertChildInfo:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertChildInfo:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertChildInfo:(id)arg1 below:(id)arg2;
-- (BOOL)isAnchoredToText;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isFloatingAboveText;
-- (BOOL)isInlineWithText;
-- (BOOL)isThemeContent;
+- (bool)isAnchoredToText;
+- (bool)isAttachedToBodyText;
+- (bool)isFloatingAboveText;
+- (bool)isInlineWithText;
+- (bool)isThemeContent;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ContainerArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct GeometryArchive {} *x3; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;

@@ -24,15 +24,15 @@
 - (int)firstColumn;
 - (int)firstRow;
 - (bool)fullyAdjacentToReference:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
 - (id)initWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 - (id)initWithReference:(id)arg1;
 - (bool)isCellReference;
 - (bool)isColumnReference;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToReference:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToReference:(id)arg1;
 - (bool)isRowReference;
 - (bool)isValidAreaReference;
 - (bool)isValidCellReference;

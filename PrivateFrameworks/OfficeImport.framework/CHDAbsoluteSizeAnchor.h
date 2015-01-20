@@ -4,19 +4,19 @@
 
 @interface CHDAbsoluteSizeAnchor : CHDAnchor {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     } mFrom;
     } mSize;
 }
 
 - (id).cxx_construct;
-- (struct CGPoint { float x1; float x2; })from;
-- (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGPoint { double x1; double x2; })from;
+- (void)setFrom:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

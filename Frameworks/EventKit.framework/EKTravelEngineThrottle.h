@@ -12,17 +12,17 @@
     id _adviceBlock;
     PCPersistentTimer *_emissionTimer;
     NSDate *_nextEmissionDate;
-    unsigned int _numberOfThrottleAdviceObjectsToEmitLater;
-    BOOL _running;
+    unsigned long long _numberOfThrottleAdviceObjectsToEmitLater;
     NSObject<OS_dispatch_queue> *_throttleQueue;
     NSMutableOrderedSet *_throttledAdviceQueue;
+    bool_running;
 }
 
 @property(copy) id adviceBlock;
 @property(retain) PCPersistentTimer * emissionTimer;
 @property(retain) NSDate * nextEmissionDate;
-@property unsigned int numberOfThrottleAdviceObjectsToEmitLater;
-@property BOOL running;
+@property unsigned long long numberOfThrottleAdviceObjectsToEmitLater;
+@property bool running;
 @property NSObject<OS_dispatch_queue> * throttleQueue;
 @property(retain) NSMutableOrderedSet * throttledAdviceQueue;
 
@@ -44,15 +44,15 @@
 - (id)init;
 - (void)injectAdvice:(id)arg1 forEventWithExternalURL:(id)arg2;
 - (id)nextEmissionDate;
-- (unsigned int)numberOfThrottleAdviceObjectsToEmitLater;
+- (unsigned long long)numberOfThrottleAdviceObjectsToEmitLater;
 - (void)removeAllThrottledAdvice;
 - (void)removeThrottledAdviceForEventWithExternalURL:(id)arg1;
-- (BOOL)running;
+- (bool)running;
 - (void)setAdviceBlock:(id)arg1;
 - (void)setEmissionTimer:(id)arg1;
 - (void)setNextEmissionDate:(id)arg1;
-- (void)setNumberOfThrottleAdviceObjectsToEmitLater:(unsigned int)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setNumberOfThrottleAdviceObjectsToEmitLater:(unsigned long long)arg1;
+- (void)setRunning:(bool)arg1;
 - (void)setThrottleQueue:(id)arg1;
 - (void)setThrottledAdviceQueue:(id)arg1;
 - (void)start;

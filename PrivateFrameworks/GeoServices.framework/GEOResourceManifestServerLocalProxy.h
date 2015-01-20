@@ -11,10 +11,8 @@
     GEOResourceManifestConfiguration *_configuration;
     NSURLConnection *_connection;
     <GEOResourceManifestServerProxyDelegate> *_delegate;
-    BOOL _isObservingManifestReachability;
-    BOOL _isObservingTileGroupReachability;
     NSError *_lastResourceManifestLoadError;
-    unsigned int _manifestRetryCount;
+    unsigned long long _manifestRetryCount;
     NSMutableArray *_manifestUpdateCompletionHandlers;
     NSTimer *_manifestUpdateTimer;
     GEOResourceLoader *_resourceLoader;
@@ -22,31 +20,33 @@
     NSMutableDictionary *_resourceRetainCounts;
     NSMutableData *_responseData;
     NSString *_responseETag;
-    BOOL _started;
-    unsigned int _tileGroupRetryCount;
+    unsigned long long _tileGroupRetryCount;
     NSTimer *_tileGroupUpdateTimer;
+    bool_isObservingManifestReachability;
+    bool_isObservingTileGroupReachability;
+    bool_started;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <GEOResourceManifestServerProxyDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)_activeTileGroupOverridesChanged:(id)arg1;
 - (void)_cancelConnection;
-- (BOOL)_changeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2;
+- (bool)_changeActiveTileGroup:(id)arg1 flushTileCache:(bool)arg2;
 - (void)_cleanupConnection;
 - (void)_considerChangingActiveTileGroup;
 - (void)_countryProvidersDidChange:(id)arg1;
-- (void)_forceChangeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2 ignoreIdentifier:(BOOL)arg3;
+- (void)_forceChangeActiveTileGroup:(id)arg1 flushTileCache:(bool)arg2 ignoreIdentifier:(bool)arg3;
 - (id)_idealTileGroupToUse;
 - (void)_loadFromDisk;
 - (id)_manifestURL;
 - (void)_notifyManifestUpdateCompletionHandlers:(id)arg1;
 - (void)_purgeOldRegionalResources;
 - (void)_reachabilityChanged:(id)arg1;
-- (void)_registerReachabilityObserver:(unsigned int)arg1;
+- (void)_registerReachabilityObserver:(unsigned long long)arg1;
 - (id)_resourceInfosForTileGroup:(id)arg1;
 - (void)_retainResource:(id)arg1;
 - (void)_scheduleTileGroupUpdateTimerWithTimeInterval:(double)arg1;
@@ -55,7 +55,7 @@
 - (void)_tileGroupTimerFired:(id)arg1;
 - (void)_updateManifest:(id)arg1;
 - (void)_updateManifest;
-- (BOOL)_updateManifestIfNecessary:(id)arg1;
+- (bool)_updateManifestIfNecessary:(id)arg1;
 - (void)_updateTimerFired:(id)arg1;
 - (void)_writeActiveTileGroupToDisk:(id)arg1;
 - (void)_writeManifestToDisk:(id)arg1;

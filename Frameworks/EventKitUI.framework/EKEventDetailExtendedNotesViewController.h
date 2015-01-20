@@ -9,9 +9,9 @@
 }
 
 @property <EKEditItemViewControllerDelegate> * editDelegate;
-@property BOOL editItemShouldBeAskedForInjectableViewController;
+@property bool editItemShouldBeAskedForInjectableViewController;
 @property(copy) NSString * notes;
-@property BOOL presentModally;
+@property bool presentModally;
 
 - (void).cxx_destruct;
 - (id)_textView;
@@ -19,6 +19,6 @@
 - (void)loadView;
 - (id)notes;
 - (void)setNotes:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

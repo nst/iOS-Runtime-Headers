@@ -3,7 +3,7 @@
  */
 
 @interface TPInflatableFootnoteContainerLayout : TPFootnoteContainerLayout {
-    BOOL _inflated;
+    bool_inflated;
 }
 
 - (id)computeLayoutGeometry;

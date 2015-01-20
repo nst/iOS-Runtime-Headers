@@ -9,14 +9,14 @@
     GKDiscovery *_discovery;
     NSDictionary *_pendingInvite;
     GKPlayer *_player;
-    int _state;
+    long long _state;
 }
 
 @property(retain) NSString * deviceID;
 @property(retain) GKDiscovery * discovery;
 @property(retain) NSDictionary * pendingInvite;
 @property(retain) GKPlayer * player;
-@property int state;
+@property long long state;
 
 + (id)nearbyDeviceWithID:(id)arg1 discovery:(id)arg2;
 
@@ -30,7 +30,7 @@
 - (void)setDiscovery:(id)arg1;
 - (void)setPendingInvite:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

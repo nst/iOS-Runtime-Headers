@@ -11,6 +11,6 @@
 - (id)_appBundleIdentifier;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

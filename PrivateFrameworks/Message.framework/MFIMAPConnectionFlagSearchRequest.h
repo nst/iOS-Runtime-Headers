@@ -5,20 +5,20 @@
 @class NSArray;
 
 @interface MFIMAPConnectionFlagSearchRequest : NSObject {
-    BOOL _isPositiveMatch;
     unsigned long long _mask;
     NSArray *_searchTerms;
+    bool_isPositiveMatch;
 }
 
-@property(readonly) BOOL isPositiveMatch;
+@property(readonly) bool isPositiveMatch;
 @property(readonly) unsigned long long mask;
 @property(readonly) NSArray * searchTerms;
 
-+ (id)requestWithMask:(unsigned long long)arg1 searchTerms:(id)arg2 positiveMatch:(BOOL)arg3;
++ (id)requestWithMask:(unsigned long long)arg1 searchTerms:(id)arg2 positiveMatch:(bool)arg3;
 
 - (void)dealloc;
-- (id)initWithMask:(unsigned long long)arg1 searchTerms:(id)arg2 positiveMatch:(BOOL)arg3;
-- (BOOL)isPositiveMatch;
+- (id)initWithMask:(unsigned long long)arg1 searchTerms:(id)arg2 positiveMatch:(bool)arg3;
+- (bool)isPositiveMatch;
 - (unsigned long long)mask;
 - (id)searchTerms;
 

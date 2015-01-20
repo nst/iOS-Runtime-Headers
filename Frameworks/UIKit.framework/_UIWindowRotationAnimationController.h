@@ -9,29 +9,29 @@
 @interface _UIWindowRotationAnimationController : _UIWindowAnimationController {
     id _animations;
     double _duration;
-    BOOL _earlyLayoutIsNeeded;
-    BOOL _skipCallbacks;
-    BOOL _updateStatusBarIfNecessary;
+    bool_earlyLayoutIsNeeded;
+    bool_skipCallbacks;
+    bool_updateStatusBarIfNecessary;
 }
 
 @property(copy) id animations;
 @property double duration;
-@property BOOL earlyLayoutIsNeeded;
-@property BOOL skipCallbacks;
-@property BOOL updateStatusBarIfNecessary;
+@property bool earlyLayoutIsNeeded;
+@property bool skipCallbacks;
+@property bool updateStatusBarIfNecessary;
 
 - (void)animateTransition:(id)arg1;
 - (id)animations;
 - (void)dealloc;
 - (double)duration;
-- (BOOL)earlyLayoutIsNeeded;
+- (bool)earlyLayoutIsNeeded;
 - (void)setAnimations:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setEarlyLayoutIsNeeded:(BOOL)arg1;
-- (void)setSkipCallbacks:(BOOL)arg1;
-- (void)setUpdateStatusBarIfNecessary:(BOOL)arg1;
-- (BOOL)skipCallbacks;
+- (void)setEarlyLayoutIsNeeded:(bool)arg1;
+- (void)setSkipCallbacks:(bool)arg1;
+- (void)setUpdateStatusBarIfNecessary:(bool)arg1;
+- (bool)skipCallbacks;
 - (double)transitionDuration:(id)arg1;
-- (BOOL)updateStatusBarIfNecessary;
+- (bool)updateStatusBarIfNecessary;
 
 @end

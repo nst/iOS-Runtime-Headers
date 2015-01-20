@@ -6,33 +6,33 @@
 
 @interface IKDOMXPathResult : IKJSObject <IKJSDOMXPathResult> {
     NSArray *_nodes;
-    int _type;
+    long long _type;
 }
 
-@property(readonly) BOOL booleanValue;
-@property(readonly) BOOL invalidIteratorState;
+@property(readonly) bool booleanValue;
+@property(readonly) bool invalidIteratorState;
 @property(copy) NSArray * nodes;
-@property(readonly) int numberValue;
-@property(readonly) int resultType;
+@property(readonly) long long numberValue;
+@property(readonly) long long resultType;
 @property(readonly) IKDOMNode * singleNodeValue;
-@property(readonly) int snapshotLength;
+@property(readonly) long long snapshotLength;
 @property(readonly) NSString * stringValue;
-@property int type;
+@property long long type;
 
 - (void).cxx_destruct;
-- (BOOL)booleanValue;
-- (id)initWithAppContext:(id)arg1 type:(int)arg2 nodes:(id)arg3;
-- (BOOL)invalidIteratorState;
+- (bool)booleanValue;
+- (id)initWithAppContext:(id)arg1 type:(long long)arg2 nodes:(id)arg3;
+- (bool)invalidIteratorState;
 - (id)iterateNext;
 - (id)nodes;
-- (int)numberValue;
-- (int)resultType;
+- (long long)numberValue;
+- (long long)resultType;
 - (void)setNodes:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (id)singleNodeValue;
-- (id)snapshotItem:(int)arg1;
-- (int)snapshotLength;
+- (id)snapshotItem:(long long)arg1;
+- (long long)snapshotLength;
 - (id)stringValue;
-- (int)type;
+- (long long)type;
 
 @end

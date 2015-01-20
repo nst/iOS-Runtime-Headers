@@ -5,7 +5,7 @@
 @interface CLGeomagneticModelProviderClientAdapter : CLNotifierServiceAdapter <CLGeomagneticModelProviderClientProtocol> {
 }
 
-@property BOOL valid;
+@property bool valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;

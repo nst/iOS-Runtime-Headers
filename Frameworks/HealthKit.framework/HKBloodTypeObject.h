@@ -3,12 +3,12 @@
  */
 
 @interface HKBloodTypeObject : NSObject {
-    int _bloodType;
+    long long _bloodType;
 }
 
-@property(readonly) int bloodType;
+@property(readonly) long long bloodType;
 
-- (id)_initWithBloodType:(int)arg1;
-- (int)bloodType;
+- (id)_initWithBloodType:(long long)arg1;
+- (long long)bloodType;
 
 @end

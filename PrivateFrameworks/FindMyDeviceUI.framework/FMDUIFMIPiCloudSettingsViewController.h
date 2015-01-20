@@ -6,23 +6,23 @@
 
 @interface FMDUIFMIPiCloudSettingsViewController : PSListController {
     ACAccount *_account;
-    BOOL _activityInProgress;
-    BOOL _firstTimeSetup;
     PSSpecifier *_fmipSpecifier;
     UIProgressHUD *_hud;
     RemoteUIController *_ruiController;
     PSSpecifier *_sendLastLocationSpecifier;
-    BOOL _togglingFMIPSwitch;
+    bool_activityInProgress;
+    bool_firstTimeSetup;
+    bool_togglingFMIPSwitch;
 }
 
 @property(retain) ACAccount * account;
-@property BOOL activityInProgress;
-@property BOOL firstTimeSetup;
+@property bool activityInProgress;
+@property bool firstTimeSetup;
 @property(retain) PSSpecifier * fmipSpecifier;
 @property(retain) UIProgressHUD * hud;
 @property(retain) RemoteUIController * ruiController;
 @property(retain) PSSpecifier * sendLastLocationSpecifier;
-@property BOOL togglingFMIPSwitch;
+@property bool togglingFMIPSwitch;
 
 - (void).cxx_destruct;
 - (id)_clientInfoHeader;
@@ -41,30 +41,30 @@
 - (id)_specifierForSendLastLocation;
 - (id)_userAgentHeader;
 - (id)account;
-- (BOOL)activityInProgress;
-- (BOOL)firstTimeSetup;
+- (bool)activityInProgress;
+- (bool)firstTimeSetup;
 - (id)fmipSpecifier;
 - (void)hideActivityInProgressUI;
 - (void)hideActivityInProgressUIWithDelay:(double)arg1;
 - (id)hud;
 - (id)init;
-- (BOOL)isShowingActivityInProgressUI;
+- (bool)isShowingActivityInProgressUI;
 - (id)ruiController;
 - (id)sendLastLocationSpecifier;
 - (void)setAccount:(id)arg1;
-- (void)setActivityInProgress:(BOOL)arg1;
-- (void)setFirstTimeSetup:(BOOL)arg1;
+- (void)setActivityInProgress:(bool)arg1;
+- (void)setFirstTimeSetup:(bool)arg1;
 - (void)setFmipSpecifier:(id)arg1;
 - (void)setHud:(id)arg1;
 - (void)setRuiController:(id)arg1;
 - (void)setSendLastLocationSpecifier:(id)arg1;
-- (void)setTogglingFMIPSwitch:(BOOL)arg1;
+- (void)setTogglingFMIPSwitch:(bool)arg1;
 - (void)showActivityInProgressUIWithMessage:(id)arg1;
 - (id)specifiers;
-- (BOOL)togglingFMIPSwitch;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)togglingFMIPSwitch;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

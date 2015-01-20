@@ -6,42 +6,42 @@
 
 @interface SSSQLiteQueryDescriptor : NSObject <NSCopying> {
     Class _entityClass;
-    int _limitCount;
+    long long _limitCount;
     Class _memoryEntityClass;
     NSString *_orderingClause;
     NSArray *_orderingDirections;
     NSArray *_orderingProperties;
     SSSQLitePredicate *_predicate;
-    BOOL _returnsDistinctEntities;
+    bool_returnsDistinctEntities;
 }
 
 @property Class entityClass;
-@property int limitCount;
+@property long long limitCount;
 @property Class memoryEntityClass;
 @property(copy) NSString * orderingClause;
 @property(copy) NSArray * orderingDirections;
 @property(copy) NSArray * orderingProperties;
 @property(copy) SSSQLitePredicate * predicate;
-@property BOOL returnsDistinctEntities;
+@property bool returnsDistinctEntities;
 
-- (id)_newSelectSQLWithProperties:(const id*)arg1 count:(unsigned int)arg2 columns:(id)arg3;
+- (id)_newSelectSQLWithProperties:(const id*)arg1 count:(unsigned long long)arg2 columns:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (Class)entityClass;
-- (int)limitCount;
+- (long long)limitCount;
 - (Class)memoryEntityClass;
 - (id)orderingClause;
 - (id)orderingDirections;
 - (id)orderingProperties;
 - (id)predicate;
-- (BOOL)returnsDistinctEntities;
+- (bool)returnsDistinctEntities;
 - (void)setEntityClass:(Class)arg1;
-- (void)setLimitCount:(int)arg1;
+- (void)setLimitCount:(long long)arg1;
 - (void)setMemoryEntityClass:(Class)arg1;
 - (void)setOrderingClause:(id)arg1;
 - (void)setOrderingDirections:(id)arg1;
 - (void)setOrderingProperties:(id)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setReturnsDistinctEntities:(BOOL)arg1;
+- (void)setReturnsDistinctEntities:(bool)arg1;
 
 @end

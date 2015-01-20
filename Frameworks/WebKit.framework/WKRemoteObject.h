@@ -14,7 +14,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_initWithObjectRegistry:(id)arg1 interface:(id)arg2;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 

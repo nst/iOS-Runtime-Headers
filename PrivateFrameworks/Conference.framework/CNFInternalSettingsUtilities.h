@@ -7,7 +7,7 @@
 
 + (id)IDSEnvironment;
 + (id)currentInternalSettingsBundle;
-+ (BOOL)isViceroyLoggingEnabled;
++ (bool)isViceroyLoggingEnabled;
 + (void)killEverything;
 + (void)killFaceTime;
 + (void)killImagent;
@@ -18,7 +18,7 @@
 + (void)nukeKeychain;
 + (void)setCurrentInternalSettingsBundle:(id)arg1;
 + (void)setIDSEnvironment:(id)arg1;
-+ (void)setViceroyLoggingEnabled:(BOOL)arg1;
++ (void)setViceroyLoggingEnabled:(bool)arg1;
 + (void)signOutAllAccounts;
 + (void)syncImagentLogSettings;
 

@@ -6,6 +6,7 @@
 
 @interface BRDaemonConnection : NSXPCConnection {
     NSUUID *_uuid;
+    bool_isUsingTokenService;
 }
 
 + (id)cloudDocsAppSupportURL;
@@ -23,6 +24,8 @@
 - (void)_setupAndResume;
 - (void)dealloc;
 - (id)initUsingUserLocalDaemon;
+- (id)initUsingUserLocalDaemonTokenService;
 - (struct BRXPCSyncProxy { Class x1; id x2; id x3; id x4; id x5; int x6; }*)syncProxy;
+- (struct BRXPCSyncProxy { Class x1; id x2; id x3; id x4; id x5; int x6; }*)syncTokenProxy;
 
 @end

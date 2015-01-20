@@ -24,14 +24,14 @@
         unsigned int strikethrough : 2; 
         unsigned int caps : 2; 
     } mData;
-    unsigned int mHash;
+    unsigned long long mHash;
 }
 
 - (id).cxx_construct;
 - (void)applyToParagraphProperties:(id)arg1 graphicStyleCache:(id)arg2;
 - (void)applyToTextBodyProperties:(id)arg1 graphicStyleCache:(id)arg2;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTextBodyProperties:(id)arg1 paragraphProperties:(id)arg2 characterProperties:(id)arg3 colorContext:(id)arg4 graphicStyleCache:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

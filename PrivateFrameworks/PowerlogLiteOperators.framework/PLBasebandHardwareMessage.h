@@ -45,9 +45,9 @@
 - (id)convertUint32ArrayToNSArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 andFill:(unsigned int)arg3;
 - (id)convertUint32ArrayToNSArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2;
 - (id)convertUint8ArrayToNSArray:(char *)arg1 ofSize:(unsigned int)arg2;
-- (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 inString:(id)arg3 inReverse:(BOOL)arg4;
+- (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 inString:(id)arg3 inReverse:(bool)arg4;
 - (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 inString:(id)arg3;
-- (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 withMultiplier:(float)arg3 inString:(id)arg4 inReverse:(BOOL)arg5;
+- (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 withMultiplier:(float)arg3 inString:(id)arg4 inReverse:(bool)arg5;
 - (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 withMultiplier:(float)arg3 inString:(id)arg4;
 - (void)formatOnOffStates:(struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; }*)arg1 inString:(id)arg2;
 - (struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; }*)gps;

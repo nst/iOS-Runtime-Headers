@@ -26,7 +26,7 @@
 @property(retain) NSString * countryCode;
 @property(retain) NSString * guid;
 @property(retain) NSString * handle;
-@property(readonly) BOOL isFromMe;
+@property(readonly) bool isFromMe;
 @property long long messageID;
 @property(retain) NSString * roomName;
 @property(retain) NSString * sender;
@@ -38,7 +38,7 @@
 
 + (Class)classForIMItemType:(long long)arg1;
 
-- (BOOL)_hasMessageChatItem;
+- (bool)_hasMessageChatItem;
 - (id)_newChatItems;
 - (id)_otherHandle;
 - (id)_senderHandle;
@@ -59,14 +59,14 @@
 - (void)encodeWithIMRemoteObjectSerializedDictionary:(id)arg1;
 - (id)guid;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithIMRemoteObjectSerializedDictionary:(id)arg1;
 - (id)initWithSender:(id)arg1 time:(id)arg2 guid:(id)arg3 type:(long long)arg4;
 - (id)initWithSenderInfo:(id)arg1 time:(id)arg2 guid:(id)arg3 messageID:(long long)arg4 account:(id)arg5 accountID:(id)arg6 service:(id)arg7 handle:(id)arg8 roomName:(id)arg9 unformattedID:(id)arg10 countryCode:(id)arg11 type:(long long)arg12;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFromMe;
+- (bool)isEqual:(id)arg1;
+- (bool)isFromMe;
 - (id)message;
 - (long long)messageID;
 - (id)roomName;

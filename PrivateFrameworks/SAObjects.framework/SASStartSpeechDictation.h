@@ -10,7 +10,7 @@
 @property(copy) NSData * activationToken;
 @property(copy) NSString * applicationName;
 @property(copy) NSString * applicationVersion;
-@property BOOL censorSpeech;
+@property bool censorSpeech;
 @property(copy) NSString * fieldId;
 @property(copy) NSString * fieldLabel;
 @property(copy) NSString * interactionId;
@@ -28,7 +28,7 @@
 - (id)activationToken;
 - (id)applicationName;
 - (id)applicationVersion;
-- (BOOL)censorSpeech;
+- (bool)censorSpeech;
 - (id)encodedClassName;
 - (id)fieldId;
 - (id)fieldLabel;
@@ -44,7 +44,7 @@
 - (void)setActivationToken:(id)arg1;
 - (void)setApplicationName:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
-- (void)setCensorSpeech:(BOOL)arg1;
+- (void)setCensorSpeech:(bool)arg1;
 - (void)setFieldId:(id)arg1;
 - (void)setFieldLabel:(id)arg1;
 - (void)setInteractionId:(id)arg1;

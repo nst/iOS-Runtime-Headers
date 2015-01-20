@@ -10,16 +10,16 @@
 @class NSDate, NSString;
 
 @interface TSTDateNode : TSTExpressionNode {
-    BOOL mBlank;
+    boolmBlank;
     NSString *mDateFormat;
     NSDate *mValue;
 }
 
-@property(getter=isBlank) BOOL blank;
+@property(getter=isBlank) bool blank;
 @property(retain) NSString * format;
 @property(retain) NSDate * value;
 
-- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)buildASTNodeArray:(struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)arg1 hostCell:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)date;
 - (void)dealloc;
 - (id)description;
@@ -29,14 +29,14 @@
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initFromArchive:(const struct DateNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; int x6; unsigned int x7[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 asBlank:(BOOL)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (id)initWithContext:(id)arg1 dateValue:(id)arg2 firstIndex:(unsigned int)arg3 lastIndex:(unsigned int)arg4;
-- (void)insertFormulaText:(id)arg1 includeWhitespace:(BOOL)arg2;
-- (BOOL)isBlank;
+- (id)initWithContext:(id)arg1 asBlank:(bool)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (id)initWithContext:(id)arg1 dateValue:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
+- (void)insertFormulaText:(id)arg1 includeWhitespace:(bool)arg2;
+- (bool)isBlank;
 - (void)saveToArchive:(struct DateNodeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ExpressionNodeArchive {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; int x6; unsigned int x7[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setBlank:(BOOL)arg1;
+- (void)setBlank:(bool)arg1;
 - (void)setFormat:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)string;

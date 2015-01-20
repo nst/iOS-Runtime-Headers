@@ -6,7 +6,7 @@
 }
 
 - (id)_connectionInstanceUUID;
-- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(BOOL)arg4;
+- (void)_sendMessageType:(long long)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(bool)arg4;
 - (id)init;
 - (id)initWithEndpoint:(id)arg1;
 - (void)killService;

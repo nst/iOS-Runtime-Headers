@@ -5,43 +5,43 @@
 @class CPLResourceIdentity, NSString;
 
 @interface CPLResource : NSObject <NSSecureCoding, NSCopying> {
-    BOOL _generateDerivative;
     CPLResourceIdentity *_identity;
     NSString *_itemIdentifier;
-    unsigned int _resourceType;
+    unsigned long long _resourceType;
+    bool_generateDerivative;
 }
 
-@property BOOL generateDerivative;
+@property bool generateDerivative;
 @property(retain) CPLResourceIdentity * identity;
 @property(copy) NSString * itemIdentifier;
-@property unsigned int resourceType;
+@property unsigned long long resourceType;
 
-+ (id)descriptionForResourceType:(unsigned int)arg1;
-+ (unsigned int)maxPixelSizeForResourceType:(unsigned int)arg1;
++ (id)descriptionForResourceType:(unsigned long long)arg1;
++ (unsigned long long)maxPixelSizeForResourceType:(unsigned long long)arg1;
 + (id)normalizedResourcesFromResources:(id)arg1;
-+ (id)shortDescriptionForResourceType:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)shortDescriptionForResourceType:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bestFileNameForResource;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)deleteAfterUpload;
+- (bool)deleteAfterUpload;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)generateDerivative;
-- (unsigned int)hash;
+- (bool)generateDerivative;
+- (unsigned long long)hash;
 - (id)identity;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2 resourceType:(unsigned int)arg3;
+- (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2 resourceType:(unsigned long long)arg3;
 - (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)itemIdentifier;
-- (unsigned int)maxPixelSizeForPhotoResource;
-- (unsigned int)resourceType;
-- (void)setDeleteAfterUpload:(BOOL)arg1;
-- (void)setGenerateDerivative:(BOOL)arg1;
+- (unsigned long long)maxPixelSizeForPhotoResource;
+- (unsigned long long)resourceType;
+- (void)setDeleteAfterUpload:(bool)arg1;
+- (void)setGenerateDerivative:(bool)arg1;
 - (void)setIdentity:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
-- (void)setResourceType:(unsigned int)arg1;
+- (void)setResourceType:(unsigned long long)arg1;
 
 @end

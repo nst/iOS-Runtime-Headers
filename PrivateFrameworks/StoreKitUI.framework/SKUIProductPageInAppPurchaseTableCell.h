@@ -6,10 +6,10 @@
 
 @interface SKUIProductPageInAppPurchaseTableCell : SKUITableViewCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     SKUIColorScheme *_colorScheme;
     } _contentInsets;
     UILabel *_indexLabel;
@@ -18,25 +18,25 @@
 }
 
 @property(retain) SKUIColorScheme * colorScheme;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property(copy) NSString * indexString;
 @property(copy) NSString * priceString;
 @property(copy) NSString * productName;
 
 - (void).cxx_destruct;
 - (id)colorScheme;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)indexString;
 - (void)layoutSubviews;
 - (id)priceString;
 - (id)productName;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setIndexString:(id)arg1;
 - (void)setPriceString:(id)arg1;
 - (void)setProductName:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 
 @end

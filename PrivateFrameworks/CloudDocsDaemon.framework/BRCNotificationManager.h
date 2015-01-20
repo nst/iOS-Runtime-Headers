@@ -24,8 +24,8 @@
 @property(readonly) PQLConnection * clientTruthConnection;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasActiveAliasWatchers;
-@property(readonly) unsigned int hash;
+@property(readonly) bool hasActiveAliasWatchers;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,16 +33,16 @@
 - (id)clientTruthConnection;
 - (void)close;
 - (void)flushUpdates;
-- (BOOL)hasActiveAliasWatchers;
+- (bool)hasActiveAliasWatchers;
 - (id)initWithAccountSession:(id)arg1;
 - (void)invalidatePipesWatchingContainerID:(id)arg1;
 - (id)notificationGatheredFromItem:(id)arg1;
 - (id)pipeWithReceiver:(id)arg1 root:(id)arg2;
 - (id)pipeWithXPCReceiver:(id)arg1 client:(id)arg2 root:(id)arg3;
 - (void)queueUpdate:(id)arg1;
-- (void)registerContainers:(id)arg1 forFlags:(unsigned int)arg2;
+- (void)registerContainers:(id)arg1 forFlags:(unsigned long long)arg2;
 - (void)resume;
 - (void)suspend;
-- (void)unregisterContainers:(id)arg1 forFlags:(unsigned int)arg2;
+- (void)unregisterContainers:(id)arg1 forFlags:(unsigned long long)arg2;
 
 @end

@@ -7,24 +7,24 @@
 @interface SSKeyValueStore : NSObject {
     SSXPCConnection *_connection;
     SSKeyValueStoreDatabase *_database;
-    BOOL _useLocalRead;
-    BOOL _useLocalWrite;
+    bool_useLocalRead;
+    bool_useLocalWrite;
 }
 
-@property(getter=isLocalReadable,readonly) BOOL localReadable;
-@property(getter=isLocalWritable,readonly) BOOL localWritable;
+@property(getter=isLocalReadable,readonly) bool localReadable;
+@property(getter=isLocalWritable,readonly) bool localWritable;
 
-+ (BOOL)isLocalReadable;
++ (bool)isLocalReadable;
 
 - (id)copyAccountDictionaryForDomain:(id)arg1;
 - (id)copyAccounts;
 - (void)dealloc;
 - (void)getValueForDomain:(id)arg1 key:(id)arg2 usingBlock:(id)arg3;
-- (void)getValuesForDomain:(id)arg1 keys:(const id*)arg2 count:(unsigned int)arg3 usingBlock:(id)arg4;
+- (void)getValuesForDomain:(id)arg1 keys:(const id*)arg2 count:(unsigned long long)arg3 usingBlock:(id)arg4;
 - (id)iTunesValueForKey:(id)arg1 usedDomain:(id*)arg2;
 - (id)init;
-- (BOOL)isLocalReadable;
-- (BOOL)isLocalWritable;
+- (bool)isLocalReadable;
+- (bool)isLocalWritable;
 - (void)modifyUsingTransactionBlock:(id)arg1;
 - (void)readUsingSessionBlock:(id)arg1;
 - (void)removeAccountFromDomain:(id)arg1;

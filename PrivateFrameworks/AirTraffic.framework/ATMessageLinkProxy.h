@@ -8,23 +8,23 @@
     NSXPCConnection *_connection;
     NSXPCListenerEndpoint *_endpoint;
     int _endpointType;
-    BOOL _initialized;
     NSString *_libraryIdentifier;
     NSHashTable *_observers;
-    BOOL _open;
     NSMutableDictionary *_requestHandlers;
+    bool_initialized;
+    bool_open;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property int endpointType;
-@property(readonly) unsigned int hash;
-@property(getter=isInitialized) BOOL initialized;
+@property(readonly) unsigned long long hash;
+@property(getter=isInitialized) bool initialized;
 @property(copy) NSString * libraryIdentifier;
-@property(getter=isOpen) BOOL open;
+@property(getter=isOpen) bool open;
 @property(readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1;
@@ -35,8 +35,8 @@
 - (int)endpointType;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEndpoint:(id)arg1;
-- (BOOL)isInitialized;
-- (BOOL)isOpen;
+- (bool)isInitialized;
+- (bool)isOpen;
 - (id)libraryIdentifier;
 - (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2 completion:(id)arg3;
 - (void)messageLinkWasClosed:(id)arg1;
@@ -47,8 +47,8 @@
 - (void)sendRequest:(id)arg1 withCompletion:(id)arg2;
 - (void)sendResponse:(id)arg1 withCompletion:(id)arg2;
 - (void)setEndpointType:(int)arg1;
-- (void)setInitialized:(BOOL)arg1;
+- (void)setInitialized:(bool)arg1;
 - (void)setLibraryIdentifier:(id)arg1;
-- (void)setOpen:(BOOL)arg1;
+- (void)setOpen:(bool)arg1;
 
 @end

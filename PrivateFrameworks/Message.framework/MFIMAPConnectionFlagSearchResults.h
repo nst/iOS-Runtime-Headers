@@ -9,10 +9,10 @@
     NSMutableDictionary *_uidsWithoutFlagMaskSet;
 }
 
-- (unsigned long long)_flagsForUID:(unsigned int)arg1;
+- (unsigned long long)_flagsForUID:(unsigned long long)arg1;
 - (id)_indexSetFromUIDs:(id)arg1;
-- (void)cacheStateForUIDs:(id)arg1 mask:(unsigned long long)arg2 existenceSetsFlag:(BOOL)arg3;
-- (id)copyResponseForUID:(unsigned int)arg1;
+- (void)cacheStateForUIDs:(id)arg1 mask:(unsigned long long)arg2 existenceSetsFlag:(bool)arg3;
+- (id)copyResponseForUID:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;

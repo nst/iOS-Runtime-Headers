@@ -6,33 +6,33 @@
 
 @interface MusicFlipsidePlaylistTrackTableViewCell : MusicSongListTableViewCell {
     MPURatingControl *_ratingControl;
-    BOOL _showsRatingControl;
+    bool_showsRatingControl;
 }
 
 @property(copy) NSString * durationText;
-@property float maximumDurationWidth;
+@property double maximumDurationWidth;
 @property(readonly) MPURatingControl * ratingControl;
-@property BOOL showsRatingControl;
+@property bool showsRatingControl;
 @property(copy) NSString * trackNumberText;
 
 + (Class)contentViewClass;
-+ (struct CGSize { float x1; float x2; })sizeForDuration:(double)arg1;
++ (struct CGSize { double x1; double x2; })sizeForDuration:(double)arg1;
 
 - (void).cxx_destruct;
 - (id)_flipsidePlaylistTrackCellContentView;
 - (void)dealloc;
 - (id)durationText;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (float)maximumDurationWidth;
+- (double)maximumDurationWidth;
 - (id)ratingControl;
-- (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentBoundsEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDurationText:(id)arg1;
-- (void)setMaximumDurationWidth:(float)arg1;
-- (void)setShowsRatingControl:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShowsRatingControl:(BOOL)arg1;
+- (void)setMaximumDurationWidth:(double)arg1;
+- (void)setShowsRatingControl:(bool)arg1 animated:(bool)arg2;
+- (void)setShowsRatingControl:(bool)arg1;
 - (void)setTrackNumberText:(id)arg1;
-- (BOOL)showsRatingControl;
+- (bool)showsRatingControl;
 - (id)trackNumberText;
 
 @end

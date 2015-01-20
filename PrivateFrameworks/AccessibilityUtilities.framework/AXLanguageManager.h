@@ -21,7 +21,7 @@
 
 + (id)commonPunctuationCharacters;
 + (id)dialectForAlternativeVoiceIdentifier:(id)arg1;
-+ (BOOL)isDialectIdentifierAlternativeVoice:(id)arg1;
++ (bool)isDialectIdentifierAlternativeVoice:(id)arg1;
 + (id)nameForAlternativeVoiceIdentifier:(id)arg1;
 + (id)nonlocalizedNameForLanguage:(id)arg1;
 + (id)sharedInstance;
@@ -45,7 +45,7 @@
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)init;
-- (BOOL)isCharacterCommon:(unsigned short)arg1;
+- (bool)isCharacterCommon:(unsigned short)arg1;
 - (id)langMaps;
 - (void)setCommonCharacters:(id)arg1;
 - (void)setDialectForCurrentLocale:(id)arg1;

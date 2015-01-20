@@ -3,24 +3,24 @@
  */
 
 @interface _HKWorkoutGoalTypeFilter : _HKFilter {
-    unsigned int _goalType;
-    unsigned int _operatorType;
+    unsigned long long _goalType;
+    unsigned long long _operatorType;
 }
 
-@property(readonly) unsigned int goalType;
-@property(readonly) unsigned int operatorType;
+@property(readonly) unsigned long long goalType;
+@property(readonly) unsigned long long operatorType;
 
-+ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
-+ (id)filterWithGoalType:(unsigned int)arg1 operatorType:(unsigned int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
++ (id)filterWithGoalType:(unsigned long long)arg1 operatorType:(unsigned long long)arg2;
++ (bool)supportsSecureCoding;
 
-- (BOOL)acceptsDataObject:(id)arg1;
+- (bool)acceptsDataObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)goalType;
+- (unsigned long long)goalType;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)operatorType;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)operatorType;
 - (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

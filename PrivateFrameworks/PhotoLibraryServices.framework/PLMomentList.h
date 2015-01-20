@@ -6,16 +6,16 @@
 
 @interface PLMomentList : PLManagedObject <PLAssetContainerList, PLMomentListData> {
     PLMomentNameInfo *_cachedNameInfo;
-    BOOL _loadedNameInfo;
+    bool_loadedNameInfo;
 }
 
-@property(readonly) unsigned int containersCount;
+@property(readonly) unsigned long long containersCount;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSDate * endDate;
 @property short generationType;
 @property short granularityLevel;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) NSArray * localizedLocationNames;
 @property(retain,readonly) NSString * localizedTitle;
 @property(retain) NSOrderedSet * moments;
@@ -23,7 +23,7 @@
 @property(retain) NSOrderedSet * momentsForYear;
 @property(retain) NSDate * representativeDate;
 @property(retain) NSData * reverseLocationData;
-@property BOOL reverseLocationDataIsValid;
+@property bool reverseLocationDataIsValid;
 @property int sortIndex;
 @property(retain) NSDate * startDate;
 @property(readonly) Class superclass;
@@ -34,22 +34,22 @@
 @property(retain) NSArray * userTitles;
 @property(retain) NSString * uuid;
 
-+ (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2 returnsObjectsAsFaults:(BOOL)arg3;
++ (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2 returnsObjectsAsFaults:(bool)arg3;
 + (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2;
-+ (id)allMomentListsInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3 returnsObjectsAsFaults:(BOOL)arg4;
++ (id)allMomentListsInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3 returnsObjectsAsFaults:(bool)arg4;
 + (id)allMomentListsInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3;
 + (id)allMomentListsRequiringAnalysisInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)allMomentListsRequiringAnalysisInManagedObjectContext:(id)arg1 forLevel:(short)arg2 error:(id*)arg3;
 + (id)descriptionForGranularityLevel:(short)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)findOrCreateMegaMomentListForLeftoverMomentsInMonth:(int)arg1 inYear:(int)arg2 withDay:(int)arg3 inManagedObjectContext:(id)arg4;
-+ (id)findOrCreateYearMomentListForYear:(int)arg1 inManagedObjectContext:(id)arg2;
++ (id)findOrCreateMegaMomentListForLeftoverMomentsInMonth:(long long)arg1 inYear:(long long)arg2 withDay:(long long)arg3 inManagedObjectContext:(id)arg4;
++ (id)findOrCreateYearMomentListForYear:(long long)arg1 inManagedObjectContext:(id)arg2;
 
 - (id)_typeDescription;
 - (void)_updateCachedNameInfoIfNeeded;
-- (BOOL)_validateForInsertOrUpdate:(id*)arg1;
-- (void)addMoment:(id)arg1 forMegaMomentAtIndex:(unsigned int)arg2;
+- (bool)_validateForInsertOrUpdate:(id*)arg1;
+- (void)addMoment:(id)arg1 forMegaMomentAtIndex:(unsigned long long)arg2;
 - (void)addMoment:(id)arg1 forMomentListLevel:(short)arg2;
 - (void)addMomentToFront:(id)arg1;
 - (void)addMoments:(id)arg1 forMomentListLevel:(short)arg2;
@@ -59,9 +59,9 @@
 - (void)addMomentsForYear:(id)arg1;
 - (void)addMomentsForYearObject:(id)arg1;
 - (void)awakeFromInsert;
-- (BOOL)canEditContainers;
+- (bool)canEditContainers;
 - (id)containers;
-- (unsigned int)containersCount;
+- (unsigned long long)containersCount;
 - (id)containersRelationshipName;
 - (void)dealloc;
 - (void)delete;
@@ -69,11 +69,11 @@
 - (void)didTurnIntoFault;
 - (void)insertMomentsForMegaMoment:(id)arg1 atIndexes:(id)arg2;
 - (void)insertMomentsForYear:(id)arg1 atIndexes:(id)arg2;
-- (void)insertObject:(id)arg1 inMomentsForMegaMomentAtIndex:(unsigned int)arg2;
-- (void)insertObject:(id)arg1 inMomentsForYearAtIndex:(unsigned int)arg2;
+- (void)insertObject:(id)arg1 inMomentsForMegaMomentAtIndex:(unsigned long long)arg2;
+- (void)insertObject:(id)arg1 inMomentsForYearAtIndex:(unsigned long long)arg2;
 - (void)invalidateNameInfo;
-- (BOOL)isEmpty;
-- (BOOL)isMeaningful;
+- (bool)isEmpty;
+- (bool)isMeaningful;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
 - (id)momentListDebugDescription;
@@ -88,19 +88,19 @@
 - (void)removeMomentsForYear:(id)arg1;
 - (void)removeMomentsForYearAtIndexes:(id)arg1;
 - (void)removeMomentsForYearObject:(id)arg1;
-- (void)removeObjectFromMomentsForMegaMomentAtIndex:(unsigned int)arg1;
-- (void)removeObjectFromMomentsForYearAtIndex:(unsigned int)arg1;
+- (void)removeObjectFromMomentsForMegaMomentAtIndex:(unsigned long long)arg1;
+- (void)removeObjectFromMomentsForYearAtIndex:(unsigned long long)arg1;
 - (void)replaceMomentsForMegaMomentAtIndexes:(id)arg1 withMomentsForMegaMoment:(id)arg2;
 - (void)replaceMomentsForYearAtIndexes:(id)arg1 withMomentsForYear:(id)arg2;
-- (void)replaceObjectInMomentsForMegaMomentAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (void)replaceObjectInMomentsForYearAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)replaceObjectInMomentsForMegaMomentAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)replaceObjectInMomentsForYearAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)setMoments:(id)arg1;
 - (void)setUserTitles:(id)arg1;
-- (BOOL)supportsDiagnosticInformation;
+- (bool)supportsDiagnosticInformation;
 - (id)uniqueObjectID;
 - (id)userTitles;
-- (BOOL)validateForInsert:(id*)arg1;
-- (BOOL)validateForUpdate:(id*)arg1;
+- (bool)validateForInsert:(id*)arg1;
+- (bool)validateForUpdate:(id*)arg1;
 - (void)willSave;
 
 @end

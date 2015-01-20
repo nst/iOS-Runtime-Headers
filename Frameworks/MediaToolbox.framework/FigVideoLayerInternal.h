@@ -5,10 +5,10 @@
 @class NSObject<OS_dispatch_queue>;
 
 @interface FigVideoLayerInternal : NSObject {
-    BOOL isPresentationLayer;
+    boolisPresentationLayer;
+    boolvisible;
     NSObject<OS_dispatch_queue> *notificationSerialQueue;
     struct OpaqueFigSimpleMutex { } *serializationMutex;
-    BOOL visible;
 }
 
 @end

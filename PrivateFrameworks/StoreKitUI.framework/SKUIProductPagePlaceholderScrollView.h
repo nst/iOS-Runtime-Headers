@@ -5,22 +5,22 @@
 @class UIView;
 
 @interface SKUIProductPagePlaceholderScrollView : UIScrollView {
-    BOOL _isPad;
-    float _offset;
+    double _offset;
     UIView *_placeholderView;
+    bool_isPad;
 }
 
-@property BOOL isPad;
-@property float offset;
+@property bool isPad;
+@property double offset;
 @property(retain) UIView * placeholderView;
 
 - (void).cxx_destruct;
-- (BOOL)isPad;
+- (bool)isPad;
 - (void)layoutSubviews;
-- (float)offset;
+- (double)offset;
 - (id)placeholderView;
-- (void)setIsPad:(BOOL)arg1;
-- (void)setOffset:(float)arg1;
+- (void)setIsPad:(bool)arg1;
+- (void)setOffset:(double)arg1;
 - (void)setPlaceholderView:(id)arg1;
 
 @end

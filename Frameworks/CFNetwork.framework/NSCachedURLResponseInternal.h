@@ -5,10 +5,10 @@
 @class NSData, NSDictionary, NSURLResponse;
 
 @interface NSCachedURLResponseInternal : NSObject {
-    struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; } *_cachedURLResponse;
+    struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFCachedURLResponse {} *x2; } *_cachedURLResponse;
     NSData *data;
     NSURLResponse *response;
-    unsigned int storagePolicy;
+    unsigned long long storagePolicy;
     NSDictionary *userInfo;
 }
 

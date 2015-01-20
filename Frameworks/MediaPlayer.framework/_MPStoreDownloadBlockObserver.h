@@ -19,7 +19,7 @@
 @property(copy) id didFinishDownloadHandler;
 @property(copy) id didFinishPurchaseHandler;
 @property(readonly) MPStoreDownload * download;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;

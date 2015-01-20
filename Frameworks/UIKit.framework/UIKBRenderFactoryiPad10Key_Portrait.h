@@ -8,9 +8,9 @@
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
-- (float)controlColumnWidthFactor;
-- (unsigned int)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
-- (float)keyCornerRadius;
+- (double)controlColumnWidthFactor;
+- (unsigned long long)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
+- (double)keyCornerRadius;
 - (id)lightKeycapsFontName;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
@@ -18,6 +18,6 @@
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (id)thinKeycapsFontName;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })topEdgeAdjustmentInsets;
 
 @end

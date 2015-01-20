@@ -14,7 +14,7 @@
 
 + (id)contentsRecordIDForItemID:(id)arg1 zoneName:(id)arg2;
 + (id)structureRecordIDForItemID:(id)arg1 zoneName:(id)arg2 forType:(BOOL)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -25,13 +25,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecordName:(id)arg1 zoneID:(id)arg2;
 - (id)initWithRecordName:(id)arg1;
 - (id)initWithSqliteRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)markServerItemDeadInContainer:(id)arg1 stateIsInconsistent:(BOOL)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)markServerItemDeadInContainer:(id)arg1 stateIsInconsistent:(bool)arg2;
 - (id)recordName;
 - (void)setRecordName:(id)arg1;
 - (void)setZoneID:(id)arg1;

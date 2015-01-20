@@ -14,7 +14,7 @@
 @property(retain) NSString * operationID;
 @property(retain) NSArray * requestUUIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

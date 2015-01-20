@@ -15,9 +15,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)first;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithFirst:(id)arg1 second:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)second;
 - (void)setFirst:(id)arg1;
 - (void)setSecond:(id)arg1;

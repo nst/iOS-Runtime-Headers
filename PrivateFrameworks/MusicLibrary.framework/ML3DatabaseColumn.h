@@ -5,26 +5,26 @@
 @class NSString;
 
 @interface ML3DatabaseColumn : NSObject {
-    unsigned int _columnConstraints;
-    unsigned int _datatype;
+    unsigned long long _columnConstraints;
+    unsigned long long _datatype;
     id _defaultValue;
     NSString *_name;
 }
 
-@property(readonly) unsigned int columnConstraints;
-@property(readonly) unsigned int datatype;
+@property(readonly) unsigned long long columnConstraints;
+@property(readonly) unsigned long long datatype;
 @property(readonly) id defaultValue;
 @property(readonly) NSString * name;
 
-+ (id)columnWithName:(id)arg1 datatype:(unsigned int)arg2 constraints:(unsigned int)arg3 defaultValue:(id)arg4;
++ (id)columnWithName:(id)arg1 datatype:(unsigned long long)arg2 constraints:(unsigned long long)arg3 defaultValue:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)_columnDefinitionSQL;
-- (unsigned int)columnConstraints;
-- (unsigned int)datatype;
+- (unsigned long long)columnConstraints;
+- (unsigned long long)datatype;
 - (id)defaultValue;
 - (id)description;
-- (id)initWithName:(id)arg1 datatype:(unsigned int)arg2 constraints:(unsigned int)arg3 defaultValue:(id)arg4;
+- (id)initWithName:(id)arg1 datatype:(unsigned long long)arg2 constraints:(unsigned long long)arg3 defaultValue:(id)arg4;
 - (id)name;
 
 @end

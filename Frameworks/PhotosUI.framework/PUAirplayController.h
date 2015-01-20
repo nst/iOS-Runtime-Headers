@@ -10,21 +10,21 @@
 
 @interface PUAirplayController : NSObject <MPAVRoutingControllerDelegate> {
     MPAVRoutingController *_airplayDeviceController;
-    BOOL _applicationInBackground;
     NSMutableArray *_availabilityHandlers;
     PUAirplayRoute *_currentRoute;
     NSMutableArray *_currentRouteHandlers;
     PUAirplayRoute *_defaultRoute;
-    BOOL _hasNonDefaultRoute;
     NSMutableDictionary *_knownRoutes;
     id _routeChangeCompletionBlock;
     NSMutableArray *_routeHandlers;
     NSArray *_sortedRoutes;
+    bool_applicationInBackground;
+    bool_hasNonDefaultRoute;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)sharedInstance;

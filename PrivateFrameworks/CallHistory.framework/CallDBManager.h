@@ -8,11 +8,11 @@
     DBManager *fDBManager;
 }
 
-+ (id)_create:(BOOL)arg1;
-+ (BOOL)bootUp;
++ (id)_create:(bool)arg1;
++ (bool)bootUp;
 + (id)create;
 + (id)dataStoreName;
-+ (int)isBootUpRequired;
++ (long long)isBootUpRequired;
 + (id)modelURL;
 
 - (void).cxx_destruct;

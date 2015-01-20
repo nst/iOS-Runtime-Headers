@@ -9,11 +9,11 @@
 }
 
 @property(readonly) NSString * description;
-@property(readonly) unsigned int numberOfCards;
+@property(readonly) unsigned long long numberOfCards;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
-- (unsigned int)numberOfCards;
+- (unsigned long long)numberOfCards;
 
 @end

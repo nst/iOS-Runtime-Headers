@@ -20,7 +20,7 @@
 @property(readonly) NSDate * date;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property <TSKModel> * hostingModel;
 @property(copy) TSDCommentStorage * storage;
 @property(readonly) Class superclass;
@@ -37,11 +37,11 @@
 - (id)date;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)hostingModel;
 - (id)initWithChange:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChangeDetails:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChangeDetails:(id)arg1;
 - (void)p_updateChangeStrings;
 - (void)setAuthor:(id)arg1;
 - (void)setChange:(id)arg1;

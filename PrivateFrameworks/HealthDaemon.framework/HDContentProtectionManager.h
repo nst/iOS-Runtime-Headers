@@ -15,24 +15,24 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
-+ (BOOL)isProtectedDataAvailableWithState:(int)arg1;
++ (bool)isProtectedDataAvailableWithState:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_contentProtectionStateString:(int)arg1;
-- (int)_keyBagLockState;
-- (void)_notifyObserversWithContentProtectionState:(int)arg1;
+- (id)_contentProtectionStateString:(long long)arg1;
+- (long long)_keyBagLockState;
+- (void)_notifyObserversWithContentProtectionState:(long long)arg1;
 - (void)addContentProtectionObserver:(id)arg1 withQueue:(id)arg2;
 - (void)dealloc;
-- (BOOL)deviceUnlockedSinceBoot;
+- (bool)deviceUnlockedSinceBoot;
 - (id)diagnosticDescription;
 - (id)init;
-- (id)initWithNotifications:(BOOL)arg1 initialState:(int)arg2;
-- (BOOL)isProtectedDataAvailable;
-- (int)observedState;
+- (id)initWithNotifications:(bool)arg1 initialState:(long long)arg2;
+- (bool)isProtectedDataAvailable;
+- (long long)observedState;
 - (void)removeContentProtectionObserver:(id)arg1;
-- (void)setContentProtectionState:(int)arg1;
+- (void)setContentProtectionState:(long long)arg1;
 
 @end

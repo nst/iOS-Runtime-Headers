@@ -5,27 +5,27 @@
 @class <WPTransferDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, XPCClient;
 
 @interface WPTransfer : NSObject <XPCClientDelegate> {
-    int _advertiserState;
+    long long _advertiserState;
     XPCClient *_connection;
     <WPTransferDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
-    int _scannerState;
+    long long _scannerState;
     NSObject<OS_xpc_object> *_server;
 }
 
-@property int advertiserState;
+@property long long advertiserState;
 @property(retain) XPCClient * connection;
 @property(copy,readonly) NSString * debugDescription;
 @property <WPTransferDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
-@property int scannerState;
+@property long long scannerState;
 @property(retain) NSObject<OS_xpc_object> * server;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)advertiserState;
+- (long long)advertiserState;
 - (id)connection;
 - (void)connectionDied;
 - (void)connectionInterrupted;
@@ -39,20 +39,20 @@
 - (void)initXPCHandler:(id)arg1;
 - (void)messageArrived:(id)arg1;
 - (id)queue;
-- (int)scannerState;
+- (long long)scannerState;
 - (id)server;
-- (void)setAdvertiserState:(int)arg1;
+- (void)setAdvertiserState:(long long)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setScannerState:(int)arg1;
+- (void)setScannerState:(long long)arg1;
 - (void)setServer:(id)arg1;
 - (void)startAdvertising;
 - (void)startScan;
-- (id)stateToString:(int)arg1;
+- (id)stateToString:(long long)arg1;
 - (void)stopAdvertising;
 - (void)stopScan;
-- (void)updateAdvertiserState:(int)arg1;
-- (void)updateScannerState:(int)arg1;
+- (void)updateAdvertiserState:(long long)arg1;
+- (void)updateScannerState:(long long)arg1;
 
 @end

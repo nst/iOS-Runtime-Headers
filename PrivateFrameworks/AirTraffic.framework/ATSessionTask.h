@@ -5,40 +5,40 @@
 @class ATSession, NSArray, NSError, NSString;
 
 @interface ATSessionTask : NSObject <NSSecureCoding, NSCopying> {
-    BOOL _cancelled;
-    unsigned int _completedItemCount;
+    unsigned long long _completedItemCount;
     NSArray *_currentItemDescriptions;
     NSError *_error;
-    BOOL _finished;
     NSString *_localizedDescription;
     double _progress;
-    BOOL _running;
     ATSession *_session;
     NSString *_sessionGroupingKey;
     NSString *_sessionTaskIdentifier;
-    unsigned int _totalItemCount;
+    unsigned long long _totalItemCount;
+    bool_cancelled;
+    bool_finished;
+    bool_running;
 }
 
-@property(getter=isCancelled) BOOL cancelled;
-@property unsigned int completedItemCount;
+@property(getter=isCancelled) bool cancelled;
+@property unsigned long long completedItemCount;
 @property(copy) NSArray * currentItemDescriptions;
 @property(copy) NSError * error;
-@property(getter=isFinished) BOOL finished;
+@property(getter=isFinished) bool finished;
 @property(copy) NSString * localizedDescription;
 @property double progress;
-@property(getter=isRunning) BOOL running;
+@property(getter=isRunning) bool running;
 @property ATSession * session;
 @property(copy) NSString * sessionGroupingKey;
 @property(copy) NSString * sessionTaskIdentifier;
-@property unsigned int totalItemCount;
+@property unsigned long long totalItemCount;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_start;
 - (id)baseClassRepresentation;
 - (void)cancel;
-- (unsigned int)completedItemCount;
+- (unsigned long long)completedItemCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentItemDescriptions;
 - (id)description;
@@ -46,27 +46,27 @@
 - (id)error;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
-- (BOOL)isRunning;
+- (bool)isCancelled;
+- (bool)isFinished;
+- (bool)isRunning;
 - (id)localizedDescription;
 - (double)progress;
 - (id)session;
 - (id)sessionGroupingKey;
 - (id)sessionTaskIdentifier;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setCompletedItemCount:(unsigned int)arg1;
+- (void)setCancelled:(bool)arg1;
+- (void)setCompletedItemCount:(unsigned long long)arg1;
 - (void)setCurrentItemDescriptions:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setProgress:(double)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setRunning:(bool)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSessionGroupingKey:(id)arg1;
 - (void)setSessionTaskIdentifier:(id)arg1;
-- (void)setTotalItemCount:(unsigned int)arg1;
+- (void)setTotalItemCount:(unsigned long long)arg1;
 - (void)start;
-- (unsigned int)totalItemCount;
+- (unsigned long long)totalItemCount;
 
 @end

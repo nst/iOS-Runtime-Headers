@@ -3,12 +3,12 @@
  */
 
 @interface CKDModifyBadgeOperation : CKDDatabaseOperation {
-    unsigned int _badgeValue;
+    unsigned long long _badgeValue;
 }
 
-@property(readonly) unsigned int badgeValue;
+@property(readonly) unsigned long long badgeValue;
 
-- (unsigned int)badgeValue;
+- (unsigned long long)badgeValue;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 

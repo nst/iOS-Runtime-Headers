@@ -10,17 +10,17 @@
         unsigned int isMe : 1; 
     int _addressType;
     } _has;
-    BOOL _isMe;
     NSString *_name;
     NSString *_spokenName;
+    bool_isMe;
 }
 
 @property int addressType;
-@property BOOL hasAddressType;
-@property BOOL hasIsMe;
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasSpokenName;
-@property BOOL isMe;
+@property bool hasAddressType;
+@property bool hasIsMe;
+@property(readonly) bool hasName;
+@property(readonly) bool hasSpokenName;
+@property bool isMe;
 @property(retain) NSString * name;
 @property(retain) NSString * spokenName;
 
@@ -30,20 +30,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddressType;
-- (BOOL)hasIsMe;
-- (BOOL)hasName;
-- (BOOL)hasSpokenName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMe;
+- (bool)hasAddressType;
+- (bool)hasIsMe;
+- (bool)hasName;
+- (bool)hasSpokenName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isMe;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddressType:(int)arg1;
-- (void)setHasAddressType:(BOOL)arg1;
-- (void)setHasIsMe:(BOOL)arg1;
-- (void)setIsMe:(BOOL)arg1;
+- (void)setHasAddressType:(bool)arg1;
+- (void)setHasIsMe:(bool)arg1;
+- (void)setIsMe:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setSpokenName:(id)arg1;
 - (id)spokenName;

@@ -29,7 +29,7 @@
 - (id)initWithOperator:(id)arg1 forNotifications:(id)arg2 withBlock:(id)arg3;
 - (id)initWithWorkQueue:(id)arg1 forNotification:(id)arg2 withBlock:(id)arg3;
 - (id)initWithWorkQueue:(id)arg1 forNotifications:(id)arg2 withBlock:(id)arg3;
-- (void)listenForNotifications:(BOOL)arg1;
+- (void)listenForNotifications:(bool)arg1;
 - (void)notificationCallback:(id)arg1;
 - (id)notificationName;
 - (id)notificationNames;

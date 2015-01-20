@@ -11,16 +11,16 @@
 }
 
 @property(readonly) SEL action;
-@property(getter=isOn) BOOL on;
+@property(getter=isOn) bool on;
 @property(readonly) id target;
 
 - (SEL)action;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
-- (BOOL)isOn;
+- (bool)isOn;
 - (void)layoutSubviews;
-- (void)setOn:(BOOL)arg1;
+- (void)setOn:(bool)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (id)target;
 

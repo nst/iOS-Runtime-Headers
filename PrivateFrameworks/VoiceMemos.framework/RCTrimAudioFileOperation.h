@@ -6,15 +6,15 @@
 
 @interface RCTrimAudioFileOperation : RCTrimTimeRangeOperation {
     RCCompositionComposedAssetWriter *_assetWriter;
-    BOOL _createWaveform;
     NSURL *_destinationURL;
     NSError *_error;
     double _exportedDuration;
     NSURL *_sourceURL;
-    BOOL _success;
+    bool_createWaveform;
+    bool_success;
 }
 
-@property(readonly) BOOL createWaveform;
+@property(readonly) bool createWaveform;
 @property(copy,readonly) NSURL * destinationURL;
 @property(copy,readonly) NSURL * sourceURL;
 
@@ -22,14 +22,14 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (BOOL)createWaveform;
+- (bool)createWaveform;
 - (id)destinationURL;
 - (id)error;
 - (double)exportedDuration;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 createWaveform:(BOOL)arg3 timeRange:(struct { double x1; double x2; })arg4 trimMode:(int)arg5;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 createWaveform:(bool)arg3 timeRange:(struct { double x1; double x2; })arg4 trimMode:(long long)arg5;
 - (void)main;
 - (double)progress;
 - (id)sourceURL;
-- (BOOL)success;
+- (bool)success;
 
 @end

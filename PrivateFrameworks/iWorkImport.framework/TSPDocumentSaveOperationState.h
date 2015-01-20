@@ -6,7 +6,6 @@
 
 @interface TSPDocumentSaveOperationState : TSPSaveOperationState {
     NSURL *_URL;
-    BOOL _didEndWriteOperation;
     TSPObject *_documentObject;
     TSPPackageWriter *_documentPackageWriter;
     NSString *_documentPasswordHint;
@@ -15,18 +14,19 @@
     NSUUID *_documentUUID;
     SFUCryptoKey *_encryptionKey;
     NSURL *_originalSupportURL;
-    int _packageType;
+    long long _packageType;
     NSData *_passwordVerifier;
     NSProgress *_progress;
     NSURL *_relativeURLForExternalData;
     unsigned long long _saveToken;
-    BOOL _shouldLeavePendingEndSave;
     TSPObject *_supportObject;
     TSPPackageWriter *_supportPackageWriter;
+    bool_didEndWriteOperation;
+    bool_shouldLeavePendingEndSave;
 }
 
 @property(readonly) NSURL * URL;
-@property BOOL didEndWriteOperation;
+@property bool didEndWriteOperation;
 @property(retain) TSPObject * documentObject;
 @property(retain) TSPPackageWriter * documentPackageWriter;
 @property(copy) NSString * documentPasswordHint;
@@ -35,18 +35,18 @@
 @property(copy) NSUUID * documentUUID;
 @property(retain) SFUCryptoKey * encryptionKey;
 @property(copy) NSURL * originalSupportURL;
-@property(readonly) int packageType;
+@property(readonly) long long packageType;
 @property(retain) NSData * passwordVerifier;
 @property(retain) NSProgress * progress;
 @property(copy) NSURL * relativeURLForExternalData;
 @property unsigned long long saveToken;
-@property BOOL shouldLeavePendingEndSave;
+@property bool shouldLeavePendingEndSave;
 @property(retain) TSPObject * supportObject;
 @property(retain) TSPPackageWriter * supportPackageWriter;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (BOOL)didEndWriteOperation;
+- (bool)didEndWriteOperation;
 - (id)documentObject;
 - (id)documentPackageWriter;
 - (id)documentPasswordHint;
@@ -55,14 +55,14 @@
 - (id)documentUUID;
 - (id)encryptionKey;
 - (id)init;
-- (id)initWithURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3;
+- (id)initWithURL:(id)arg1 updateType:(long long)arg2 packageType:(long long)arg3;
 - (id)originalSupportURL;
-- (int)packageType;
+- (long long)packageType;
 - (id)passwordVerifier;
 - (id)progress;
 - (id)relativeURLForExternalData;
 - (unsigned long long)saveToken;
-- (void)setDidEndWriteOperation:(BOOL)arg1;
+- (void)setDidEndWriteOperation:(bool)arg1;
 - (void)setDocumentObject:(id)arg1;
 - (void)setDocumentPackageWriter:(id)arg1;
 - (void)setDocumentPasswordHint:(id)arg1;
@@ -75,10 +75,10 @@
 - (void)setProgress:(id)arg1;
 - (void)setRelativeURLForExternalData:(id)arg1;
 - (void)setSaveToken:(unsigned long long)arg1;
-- (void)setShouldLeavePendingEndSave:(BOOL)arg1;
+- (void)setShouldLeavePendingEndSave:(bool)arg1;
 - (void)setSupportObject:(id)arg1;
 - (void)setSupportPackageWriter:(id)arg1;
-- (BOOL)shouldLeavePendingEndSave;
+- (bool)shouldLeavePendingEndSave;
 - (id)supportObject;
 - (id)supportPackageWriter;
 

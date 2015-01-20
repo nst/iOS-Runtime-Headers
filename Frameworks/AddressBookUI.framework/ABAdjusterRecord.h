@@ -5,31 +5,31 @@
 @class NSTimer, UIScrollView;
 
 @interface ABAdjusterRecord : NSObject {
-    float _adjustment;
+    double _adjustment;
     NSTimer *_delayedScrollTimer;
-    BOOL _manuallyAdjusted;
     UIScrollView *_scrollView;
+    bool_manuallyAdjusted;
 }
 
-@property float adjustment;
+@property double adjustment;
 @property(retain) NSTimer * delayedScrollTimer;
-@property BOOL manuallyAdjusted;
+@property bool manuallyAdjusted;
 @property(retain) UIScrollView * scrollView;
 
 + (id)recordWithScrollView:(id)arg1;
 
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
-- (float)adjustment;
+- (double)adjustment;
 - (void)cancelDelayedAdjustments;
 - (void)dealloc;
 - (id)delayedScrollTimer;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)manuallyAdjusted;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)manuallyAdjusted;
 - (id)scrollView;
-- (void)setAdjustment:(float)arg1;
+- (void)setAdjustment:(double)arg1;
 - (void)setDelayedScrollTimer:(id)arg1;
-- (void)setManuallyAdjusted:(BOOL)arg1;
+- (void)setManuallyAdjusted:(bool)arg1;
 - (void)setScrollView:(id)arg1;
 
 @end

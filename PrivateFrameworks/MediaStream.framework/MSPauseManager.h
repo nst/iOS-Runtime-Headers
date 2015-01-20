@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isPaused;
+- (bool)isPaused;
 - (void)pingPauseUUID:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)unpauseUUID:(id)arg1;

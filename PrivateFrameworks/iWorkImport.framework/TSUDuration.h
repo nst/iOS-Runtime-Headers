@@ -9,9 +9,9 @@
 + (id)durationWithTimeInterval:(double)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTimeInterval:(double)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)timeInterval;
 
 @end

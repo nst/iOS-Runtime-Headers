@@ -8,7 +8,7 @@
     AVCaptureVideoDataOutputInternal_FigRecorder *_internal;
 }
 
-@property BOOL alwaysDiscardsLateVideoFrames;
+@property bool alwaysDiscardsLateVideoFrames;
 @property(readonly) NSArray * availableVideoCVPixelFormatTypes;
 @property(readonly) NSArray * availableVideoCodecTypes;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
@@ -23,9 +23,9 @@
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_setMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
-- (BOOL)alwaysDiscardsLateVideoFrames;
-- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
-- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
+- (bool)alwaysDiscardsLateVideoFrames;
+- (bool)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (bool)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (id)availableVideoCVPixelFormatTypes;
 - (id)availableVideoCodecTypes;
 - (id)connectionMediaTypes;
@@ -34,14 +34,14 @@
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)init;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isTheOnlyDataOutput;
+- (bool)isKindOfClass:(Class)arg1;
+- (bool)isTheOnlyDataOutput;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
-- (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
+- (struct CGSize { double x1; double x2; })outputSizeForCaptureOptions:(id)arg1;
 - (id)recommendedVideoSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
-- (void)setAlwaysDiscardsLateVideoFrames:(BOOL)arg1;
+- (void)setAlwaysDiscardsLateVideoFrames:(bool)arg1;
 - (void)setMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
 - (void)setSession:(id)arg1;

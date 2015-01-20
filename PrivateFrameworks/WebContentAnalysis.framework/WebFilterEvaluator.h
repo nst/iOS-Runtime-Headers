@@ -6,14 +6,14 @@
 
 @interface WebFilterEvaluator : NSObject <NSSecureCoding> {
     NSMutableData *_buffer;
-    unsigned int _filterState;
+    unsigned long long _filterState;
     NSString *_pageTitle;
     NSURL *_url;
 }
 
 + (id)createWithResponse:(id)arg1;
-+ (BOOL)isManagedSession;
-+ (BOOL)supportsSecureCoding;
++ (bool)isManagedSession;
++ (bool)supportsSecureCoding;
 
 - (id)addData:(id)arg1;
 - (void)attemptUnblockWithCompletion:(id)arg1;
@@ -22,10 +22,10 @@
 - (void)dealloc;
 - (id)debugPageForPageWithData:(id)arg1 forURL:(id)arg2 debugString:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
-- (long)filterState;
+- (int)filterState;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResponse:(id)arg1;
 - (void)unblockWithCompletion:(id)arg1;
-- (BOOL)wasBlocked;
+- (bool)wasBlocked;
 
 @end

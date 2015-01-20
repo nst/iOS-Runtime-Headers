@@ -8,39 +8,39 @@
  */
 
 @interface TSWPColumns : NSObject {
-    unsigned int _columnCount;
-    BOOL _equalWidth;
-    float _gapArray[9];
-    float _widthArray[10];
+    unsigned long long _columnCount;
+    double _gapArray[9];
+    double _widthArray[10];
+    bool_equalWidth;
 }
 
-@property unsigned int columnCount;
-@property BOOL equalWidth;
+@property unsigned long long columnCount;
+@property bool equalWidth;
 
 + (id)columns;
 
-- (unsigned int)columnCount;
+- (unsigned long long)columnCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)equalWidth;
-- (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (bool)equalWidth;
+- (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (id)init;
 - (id)initWithArchive:(const struct ColumnsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ColumnsArchive_EqualColumnsArchive {} *x3; struct ColumnsArchive_NonEqualColumnsArchive {} *x4; int x5; unsigned int x6[1]; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithColumnCount:(unsigned int)arg1 equalWidth:(BOOL)arg2 widthArray:(float*)arg3 gapArray:(float*)arg4;
-- (id)initWithColumnCount:(unsigned int)arg1;
-- (id)initWithEqualColumnCount:(unsigned int)arg1 gapFraction:(float)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (float)p_equalGapForEqualWidth:(float)arg1;
-- (float)p_equalWidthForEqualGap:(float)arg1;
-- (float)p_maxEqualGapForBodyWidth:(float)arg1;
-- (void)p_setColumnCount:(unsigned int)arg1 gapFraction:(float)arg2;
-- (void)p_setEqualWidth:(float)arg1 equalGap:(float)arg2;
-- (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 outWidth:(float*)arg3 outGap:(float*)arg4;
+- (id)initWithColumnCount:(unsigned long long)arg1 equalWidth:(bool)arg2 widthArray:(double*)arg3 gapArray:(double*)arg4;
+- (id)initWithColumnCount:(unsigned long long)arg1;
+- (id)initWithEqualColumnCount:(unsigned long long)arg1 gapFraction:(double)arg2;
+- (bool)isEqual:(id)arg1;
+- (double)p_equalGapForEqualWidth:(double)arg1;
+- (double)p_equalWidthForEqualGap:(double)arg1;
+- (double)p_maxEqualGapForBodyWidth:(double)arg1;
+- (void)p_setColumnCount:(unsigned long long)arg1 gapFraction:(double)arg2;
+- (void)p_setEqualWidth:(double)arg1 equalGap:(double)arg2;
+- (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 outWidth:(double*)arg3 outGap:(double*)arg4;
 - (void)saveToArchive:(struct ColumnsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct ColumnsArchive_EqualColumnsArchive {} *x3; struct ColumnsArchive_NonEqualColumnsArchive {} *x4; int x5; unsigned int x6[1]; }*)arg1 archiver:(id)arg2;
-- (void)setColumnCount:(unsigned int)arg1;
-- (void)setEqualWidth:(BOOL)arg1;
-- (void)setGap:(float)arg1 forColumnIndex:(unsigned int)arg2 bodyWidth:(float)arg3;
-- (void)setWidth:(float)arg1 forColumnIndex:(unsigned int)arg2 bodyWidth:(float)arg3;
-- (float)widthForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (void)setColumnCount:(unsigned long long)arg1;
+- (void)setEqualWidth:(bool)arg1;
+- (void)setGap:(double)arg1 forColumnIndex:(unsigned long long)arg2 bodyWidth:(double)arg3;
+- (void)setWidth:(double)arg1 forColumnIndex:(unsigned long long)arg2 bodyWidth:(double)arg3;
+- (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 
 @end

@@ -10,8 +10,8 @@
 }
 
 @property(retain) CKDPDate * creation;
-@property(readonly) BOOL hasCreation;
-@property(readonly) BOOL hasModification;
+@property(readonly) bool hasCreation;
+@property(readonly) bool hasModification;
 @property(retain) CKDPDate * modification;
 
 - (void).cxx_destruct;
@@ -20,13 +20,13 @@
 - (id)creation;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCreation;
-- (BOOL)hasModification;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCreation;
+- (bool)hasModification;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)modification;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCreation:(id)arg1;
 - (void)setModification:(id)arg1;
 - (void)writeTo:(id)arg1;

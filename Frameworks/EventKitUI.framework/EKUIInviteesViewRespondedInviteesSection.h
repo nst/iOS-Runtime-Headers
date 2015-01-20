@@ -10,60 +10,60 @@
 
 @interface EKUIInviteesViewRespondedInviteesSection : NSObject <EKUIInviteesViewSection> {
     NSString *_cachedCellReuseIdentifier;
-    BOOL _editable;
     EKEvent *_event;
     id _participantRemoved;
     id _participantTapped;
     NSMutableArray *_participants;
-    unsigned int _reuseIdentifierVersion;
+    unsigned long long _reuseIdentifierVersion;
     id _tableViewCellHook;
+    bool_editable;
 }
 
 @property(retain) NSString * cachedCellReuseIdentifier;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property BOOL editable;
+@property bool editable;
 @property(retain) EKEvent * event;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) id participantRemoved;
 @property(copy) id participantTapped;
 @property(retain) NSMutableArray * participants;
-@property unsigned int reuseIdentifierVersion;
+@property unsigned long long reuseIdentifierVersion;
 @property(readonly) Class superclass;
 @property(copy) id tableViewCellHook;
 
 - (void).cxx_destruct;
-- (BOOL)_isValidRow:(int)arg1;
+- (bool)_isValidRow:(long long)arg1;
 - (id)cachedCellReuseIdentifier;
-- (BOOL)canEditRow:(id)arg1;
-- (BOOL)canSelectRow:(id)arg1;
+- (bool)canEditRow:(id)arg1;
+- (bool)canSelectRow:(id)arg1;
 - (void)cancelOutstandingOperations;
 - (id)cellForIndexPath:(id)arg1 inTableView:(id)arg2;
-- (void)commitEditingStyle:(int)arg1 forRow:(id)arg2;
+- (void)commitEditingStyle:(long long)arg1 forRow:(id)arg2;
 - (id)debugTitle;
-- (BOOL)editable;
-- (int)editingStyleForRow:(id)arg1;
-- (float)estimatedHeightForRow:(id)arg1;
+- (bool)editable;
+- (long long)editingStyleForRow:(id)arg1;
+- (double)estimatedHeightForRow:(id)arg1;
 - (id)event;
 - (id)headerTitle;
-- (unsigned int)numberOfRows;
+- (unsigned long long)numberOfRows;
 - (id)participantRemoved;
 - (id)participantTapped;
 - (id)participants;
 - (void)reloadAndRegisterReusableCellsWithTableView:(id)arg1;
-- (unsigned int)reuseIdentifierVersion;
-- (BOOL)sectionShouldBeShown;
+- (unsigned long long)reuseIdentifierVersion;
+- (bool)sectionShouldBeShown;
 - (void)selectRow:(id)arg1;
 - (void)setCachedCellReuseIdentifier:(id)arg1;
-- (void)setEditable:(BOOL)arg1;
+- (void)setEditable:(bool)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setParticipantRemoved:(id)arg1;
 - (void)setParticipantTapped:(id)arg1;
 - (void)setParticipants:(id)arg1;
-- (void)setReuseIdentifierVersion:(unsigned int)arg1;
+- (void)setReuseIdentifierVersion:(unsigned long long)arg1;
 - (void)setTableViewCellHook:(id)arg1;
 - (id)tableViewCellHook;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
-- (void)updateWithEvent:(id)arg1 editable:(BOOL)arg2;
+- (void)updateWithEvent:(id)arg1 editable:(bool)arg2;
 
 @end

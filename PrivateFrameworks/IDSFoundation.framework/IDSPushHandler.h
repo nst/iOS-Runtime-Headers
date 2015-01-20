@@ -15,8 +15,8 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isConnected;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isConnected;
 @property(readonly) NSData * pushToken;
 @property(readonly) Class superclass;
 
@@ -26,7 +26,7 @@
 - (void)_updateTopicsOnIvarQueue;
 - (void)addListener:(id)arg1 topics:(id)arg2 commands:(id)arg3 queue:(id)arg4;
 - (void)configureAsMacNotificationCenterObserver:(id)arg1;
-- (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
+- (void)connection:(id)arg1 didChangeConnectedStatus:(bool)arg2;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
@@ -34,7 +34,7 @@
 - (void)connectionDidReconnect:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isConnected;
+- (bool)isConnected;
 - (id)pushToken;
 - (void)removeListener:(id)arg1;
 - (void)setCommands:(id)arg1 forListener:(id)arg2;

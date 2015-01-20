@@ -6,12 +6,12 @@
 
 @interface KNActionBounce : KNAnimationEffect <KNActionEffectBuildAnimator> {
     KNAnimParameterGroup *_parameterGroup;
-    float decayFactor;
+    double decayFactor;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)actionEffectStyle;
@@ -21,9 +21,9 @@
 + (id)applyActionEffect:(id)arg1 toAttributes:(id)arg2;
 + (id)customAttributes;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (BOOL)isEmphasisBuildAnimation;
++ (bool)isEmphasisBuildAnimation;
 + (id)localizedMenuString:(int)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
@@ -31,7 +31,7 @@
 - (id)animationsForTextureSet:(id)arg1 finalTextureSet:(id)arg2 duration:(double)arg3 attributes:(id)arg4 previousAttributes:(id)arg5;
 - (void)dealloc;
 - (id)initWithAnimationContext:(id)arg1;
-- (void)p_addAnimationToLayer:(id)arg1 decay:(BOOL)arg2 bounceCount:(float)arg3 duration:(double)arg4 result:(id)arg5;
-- (id)p_bounceArrayWithLayer:(id)arg1 duration:(double)arg2 numberOfBounces:(unsigned int)arg3 decay:(BOOL)arg4;
+- (void)p_addAnimationToLayer:(id)arg1 decay:(bool)arg2 bounceCount:(double)arg3 duration:(double)arg4 result:(id)arg5;
+- (id)p_bounceArrayWithLayer:(id)arg1 duration:(double)arg2 numberOfBounces:(unsigned long long)arg3 decay:(bool)arg4;
 
 @end

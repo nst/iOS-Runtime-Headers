@@ -11,7 +11,7 @@
 @property(retain) UIView * productPageHeaderView;
 
 - (void).cxx_destruct;
-- (void)_addContentSubview:(id)arg1 atBack:(BOOL)arg2;
+- (void)_addContentSubview:(id)arg1 atBack:(bool)arg2;
 - (id)productPageHeaderView;
 - (void)setProductPageHeaderView:(id)arg1;
 

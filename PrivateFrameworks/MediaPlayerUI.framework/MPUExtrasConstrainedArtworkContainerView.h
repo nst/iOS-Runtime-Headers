@@ -7,45 +7,45 @@
 @interface MPUExtrasConstrainedArtworkContainerView : UIView {
     MPUArtworkView *_artworkView;
     UIImage *_overlayImage;
-    unsigned int _overlayPosition;
+    unsigned long long _overlayPosition;
     NSArray *_overlayPositionConstraints;
-    float _overlayScale;
+    double _overlayScale;
     NSArray *_overlaySizeConstraints;
     UIImageView *_overlayView;
-    BOOL _shouldAutoresizeMaskLayerToFillBounds;
-    BOOL _shouldBottomAlignArtwork;
+    bool_shouldAutoresizeMaskLayerToFillBounds;
+    bool_shouldBottomAlignArtwork;
 }
 
 @property(retain) MPUArtworkView * artworkView;
 @property(retain) UIImage * overlayImage;
-@property unsigned int overlayPosition;
+@property unsigned long long overlayPosition;
 @property(retain) NSArray * overlayPositionConstraints;
-@property float overlayScale;
+@property double overlayScale;
 @property(retain) NSArray * overlaySizeConstraints;
 @property(retain) UIImageView * overlayView;
-@property BOOL shouldAutoresizeMaskLayerToFillBounds;
-@property BOOL shouldBottomAlignArtwork;
+@property bool shouldAutoresizeMaskLayerToFillBounds;
+@property bool shouldBottomAlignArtwork;
 
 - (void).cxx_destruct;
 - (id)artworkView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)overlayImage;
-- (unsigned int)overlayPosition;
+- (unsigned long long)overlayPosition;
 - (id)overlayPositionConstraints;
-- (float)overlayScale;
+- (double)overlayScale;
 - (id)overlaySizeConstraints;
 - (id)overlayView;
 - (void)setArtworkView:(id)arg1;
 - (void)setOverlayImage:(id)arg1;
-- (void)setOverlayPosition:(unsigned int)arg1;
+- (void)setOverlayPosition:(unsigned long long)arg1;
 - (void)setOverlayPositionConstraints:(id)arg1;
-- (void)setOverlayScale:(float)arg1;
+- (void)setOverlayScale:(double)arg1;
 - (void)setOverlaySizeConstraints:(id)arg1;
 - (void)setOverlayView:(id)arg1;
-- (void)setShouldAutoresizeMaskLayerToFillBounds:(BOOL)arg1;
-- (void)setShouldBottomAlignArtwork:(BOOL)arg1;
-- (BOOL)shouldAutoresizeMaskLayerToFillBounds;
-- (BOOL)shouldBottomAlignArtwork;
+- (void)setShouldAutoresizeMaskLayerToFillBounds:(bool)arg1;
+- (void)setShouldBottomAlignArtwork:(bool)arg1;
+- (bool)shouldAutoresizeMaskLayerToFillBounds;
+- (bool)shouldBottomAlignArtwork;
 
 @end

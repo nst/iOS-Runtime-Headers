@@ -9,8 +9,8 @@
 @class <WebQuotaManager>, WebSecurityOriginPrivate;
 
 @interface WebSecurityOrigin : NSObject {
-     /* Encoded args for previous method: ^{SecurityOrigin={atomic<int>=Ai}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}SBBBBiBB}8@0:4 */
-     /* Encoded args for previous method: @12@0:4^{SecurityOrigin={atomic<int>=Ai}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}SBBBBiBB}8 */
+     /* Encoded args for previous method: ^{SecurityOrigin={atomic<int>=Ai}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}SBBBBiBB}16@0:8 */
+     /* Encoded args for previous method: @24@0:8^{SecurityOrigin={atomic<int>=Ai}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}SBBBBiBB}16 */
     <WebQuotaManager> *_applicationCacheQuotaManager;
     <WebQuotaManager> *_databaseQuotaManager;
     WebSecurityOriginPrivate *_private;
@@ -27,7 +27,7 @@
 - (void)finalize;
 - (id)host;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned short)port;
 - (id)protocol;
 - (unsigned long long)quota;

@@ -6,30 +6,30 @@
 
 @interface SCROBrailleHandler : SCROHandler <SCROSBrailleDisplayManagerDelegate> {
     struct { 
-        BOOL didDisplay; 
-        BOOL keypress; 
-        BOOL keyWillMem; 
-        BOOL keymem; 
-        BOOL panLeft; 
-        BOOL panRight; 
-        BOOL showPreviousAnnouncement; 
-        BOOL showNextAnnouncement; 
-        BOOL configChanged; 
-        BOOL playDisplayConnectionSound; 
-        BOOL playBorderHitSound; 
-        BOOL playCommandNotSupportedSound; 
-        BOOL bluetoothDisplayLoadFailed; 
-        BOOL tableLoadFailed; 
-        BOOL displayModeChanged; 
+        booldidDisplay; 
+        boolkeypress; 
+        boolkeyWillMem; 
+        boolkeymem; 
+        boolpanLeft; 
+        boolpanRight; 
+        boolshowPreviousAnnouncement; 
+        boolshowNextAnnouncement; 
+        boolconfigChanged; 
+        boolplayDisplayConnectionSound; 
+        boolplayBorderHitSound; 
+        boolplayCommandNotSupportedSound; 
+        boolbluetoothDisplayLoadFailed; 
+        booltableLoadFailed; 
+        booldisplayModeChanged; 
     SCROBrailleDisplayManager *_brailleDisplayManager;
     } _callbacks;
-    BOOL _wantsDidDisplayCallbacks;
-    BOOL _wantsInputCallbacks;
+    bool_wantsDidDisplayCallbacks;
+    bool_wantsInputCallbacks;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)configurationDidChange;
@@ -47,12 +47,12 @@
 - (void)handleBrailleTableFailedToLoad:(id)arg1;
 - (void)handleDisplayModeChanged:(id)arg1;
 - (void)handleFailedToLoadBluetoothDevice:(id)arg1;
-- (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
-- (int)handlePerformActionForKey:(int)arg1 trusted:(BOOL)arg2;
+- (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(bool)arg4;
+- (int)handlePerformActionForKey:(int)arg1 trusted:(bool)arg2;
 - (void)handlePlayBorderHitSound;
 - (void)handlePlayCommandNotSupportedSound;
-- (int)handleRegisterCallbackForKey:(int)arg1 trusted:(BOOL)arg2;
-- (int)handleSetValue:(id)arg1 forKey:(int)arg2 trusted:(BOOL)arg3;
+- (int)handleRegisterCallbackForKey:(int)arg1 trusted:(bool)arg2;
+- (int)handleSetValue:(id)arg1 forKey:(int)arg2 trusted:(bool)arg3;
 - (id)initWithBrailleDisplayManager:(id)arg1;
 - (void)invalidate;
 

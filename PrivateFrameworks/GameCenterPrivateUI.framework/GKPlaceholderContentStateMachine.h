@@ -5,9 +5,9 @@
 @interface GKPlaceholderContentStateMachine : GKStateMachine {
 }
 
-@property(readonly) BOOL isInPlaceholderState;
+@property(readonly) bool isInPlaceholderState;
 
 - (id)init;
-- (BOOL)isInPlaceholderState;
+- (bool)isInPlaceholderState;
 
 @end

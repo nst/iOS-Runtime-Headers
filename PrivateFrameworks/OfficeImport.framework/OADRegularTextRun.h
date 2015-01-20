@@ -8,10 +8,10 @@
     NSMutableString *mText;
 }
 
-- (unsigned int)characterCount;
+- (unsigned long long)characterCount;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)text;
 
 @end

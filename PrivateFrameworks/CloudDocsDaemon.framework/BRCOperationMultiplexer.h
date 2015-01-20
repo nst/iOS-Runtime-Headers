@@ -7,8 +7,8 @@
 @interface BRCOperationMultiplexer : NSObject {
     BRCLocalContainer *_container;
     NSMutableArray *_inflightBatches;
-    unsigned int _maxCountOfBatchesInFlight;
-    unsigned int _maxCountOfOperationInBatch;
+    unsigned long long _maxCountOfBatchesInFlight;
+    unsigned long long _maxCountOfOperationInBatch;
     NSMutableArray *_multiplexedOperations;
     NSString *_name;
     NSObject<OS_dispatch_queue> *_queue;

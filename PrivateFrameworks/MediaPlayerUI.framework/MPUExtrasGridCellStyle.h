@@ -6,59 +6,59 @@
 
 @interface MPUExtrasGridCellStyle : NSObject <NSCopying> {
     struct CGSize { 
-        float width; 
-        float height; 
-    int _defaultTextAlignment;
+        double width; 
+        double height; 
+    long long _defaultTextAlignment;
     } _imageSize;
     NSDictionary *_subtitleDefaultFontAttributes;
-    float _subtitleFirstBaselineHeight;
+    double _subtitleFirstBaselineHeight;
     UIColor *_subtitleTextColor;
     NSString *_subtitleTextStyle;
-    float _textFirstBaselineToBottom;
-    float _textLastBaselineToBottom;
+    double _textFirstBaselineToBottom;
+    double _textLastBaselineToBottom;
     NSDictionary *_titleDefaultFontAttributes;
-    float _titleFirstBaselineHeight;
+    double _titleFirstBaselineHeight;
     UIColor *_titleTextColor;
     NSString *_titleTextStyle;
 }
 
-@property int defaultTextAlignment;
-@property struct CGSize { float x1; float x2; } imageSize;
+@property long long defaultTextAlignment;
+@property struct CGSize { double x1; double x2; } imageSize;
 @property(copy) NSDictionary * subtitleDefaultFontAttributes;
-@property float subtitleFirstBaselineHeight;
+@property double subtitleFirstBaselineHeight;
 @property(copy) UIColor * subtitleTextColor;
 @property(copy) NSString * subtitleTextStyle;
-@property float textFirstBaselineToBottom;
-@property float textLastBaselineToBottom;
+@property double textFirstBaselineToBottom;
+@property double textLastBaselineToBottom;
 @property(copy) NSDictionary * titleDefaultFontAttributes;
-@property float titleFirstBaselineHeight;
+@property double titleFirstBaselineHeight;
 @property(copy) UIColor * titleTextColor;
 @property(copy) NSString * titleTextStyle;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)defaultTextAlignment;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (void)setDefaultTextAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (long long)defaultTextAlignment;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (void)setDefaultTextAlignment:(long long)arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSubtitleDefaultFontAttributes:(id)arg1;
-- (void)setSubtitleFirstBaselineHeight:(float)arg1;
+- (void)setSubtitleFirstBaselineHeight:(double)arg1;
 - (void)setSubtitleTextColor:(id)arg1;
 - (void)setSubtitleTextStyle:(id)arg1;
-- (void)setTextFirstBaselineToBottom:(float)arg1;
-- (void)setTextLastBaselineToBottom:(float)arg1;
+- (void)setTextFirstBaselineToBottom:(double)arg1;
+- (void)setTextLastBaselineToBottom:(double)arg1;
 - (void)setTitleDefaultFontAttributes:(id)arg1;
-- (void)setTitleFirstBaselineHeight:(float)arg1;
+- (void)setTitleFirstBaselineHeight:(double)arg1;
 - (void)setTitleTextColor:(id)arg1;
 - (void)setTitleTextStyle:(id)arg1;
 - (id)subtitleDefaultFontAttributes;
-- (float)subtitleFirstBaselineHeight;
+- (double)subtitleFirstBaselineHeight;
 - (id)subtitleTextColor;
 - (id)subtitleTextStyle;
-- (float)textFirstBaselineToBottom;
-- (float)textLastBaselineToBottom;
+- (double)textFirstBaselineToBottom;
+- (double)textLastBaselineToBottom;
 - (id)titleDefaultFontAttributes;
-- (float)titleFirstBaselineHeight;
+- (double)titleFirstBaselineHeight;
 - (id)titleTextColor;
 - (id)titleTextStyle;
 

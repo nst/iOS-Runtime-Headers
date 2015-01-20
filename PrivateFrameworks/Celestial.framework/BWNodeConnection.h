@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) BWNodeInput * input;
 @property(readonly) BWNodeOutput * output;
 @property(readonly) BWPipelineStage * pipelineStage;
@@ -21,14 +21,14 @@
 + (id)_requirementsArrayForInputByResolvingPassthroughTree:(id)arg1;
 + (void)initialize;
 
-- (BOOL)attach;
+- (bool)attach;
 - (void)consumeMessage:(id)arg1 fromOutput:(id)arg2;
 - (void)dealloc;
-- (BOOL)detach;
+- (bool)detach;
 - (id)initWithOutput:(id)arg1 input:(id)arg2 pipelineStage:(id)arg3;
 - (id)input;
 - (id)output;
 - (id)pipelineStage;
-- (BOOL)resolveCommonBufferFormat;
+- (bool)resolveCommonBufferFormat;
 
 @end

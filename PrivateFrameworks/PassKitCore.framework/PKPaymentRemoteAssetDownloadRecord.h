@@ -12,7 +12,7 @@
 @property(retain) NSURL * passURL;
 @property(retain) NSDictionary * remoteAssetsByTaskIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

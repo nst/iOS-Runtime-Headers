@@ -3,9 +3,9 @@
  */
 
 @interface CKAlertItem : SBAlertItem {
-    int _alignment;
-    BOOL _alignmentHasBeenSet;
-    BOOL _displayingEntireMessage;
+    long long _alignment;
+    bool_alignmentHasBeenSet;
+    bool_displayingEntireMessage;
 }
 
 - (void)_deactivateAllTaggedAlertItems;
@@ -15,16 +15,16 @@
 - (void)_untag;
 - (id)alertSheet;
 - (Class)alertSheetClass;
-- (int)bodyTextAlignmentForAlertSheet:(id)arg1 displayedLineCount:(int)arg2;
+- (long long)bodyTextAlignmentForAlertSheet:(id)arg1 displayedLineCount:(int)arg2;
 - (void)didDeactivateForReason:(int)arg1;
-- (BOOL)forcesModalAlertAppearance;
+- (bool)forcesModalAlertAppearance;
 - (id)lockLabel;
 - (id)messageText;
 - (id)name;
-- (BOOL)shouldHideSMSPreview;
-- (BOOL)shouldShowInEmergencyCall;
-- (BOOL)shouldShowInLockScreen;
+- (bool)shouldHideSMSPreview;
+- (bool)shouldShowInEmergencyCall;
+- (bool)shouldShowInLockScreen;
 - (void)willActivate;
-- (BOOL)willShowInAwayItems;
+- (bool)willShowInAwayItems;
 
 @end

@@ -7,11 +7,11 @@
 @interface SASportsMatchupPlaySummary : AceObject <SAAceSerializable> {
 }
 
-@property BOOL appliesToAwayTeam;
-@property BOOL appliesToHomeTeam;
+@property bool appliesToAwayTeam;
+@property bool appliesToHomeTeam;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * summaryDescription;
 @property(readonly) Class superclass;
 @property(copy) NSString * time;
@@ -19,12 +19,12 @@
 + (id)matchupPlaySummary;
 + (id)matchupPlaySummaryWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)appliesToAwayTeam;
-- (BOOL)appliesToHomeTeam;
+- (bool)appliesToAwayTeam;
+- (bool)appliesToHomeTeam;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setAppliesToAwayTeam:(BOOL)arg1;
-- (void)setAppliesToHomeTeam:(BOOL)arg1;
+- (void)setAppliesToAwayTeam:(bool)arg1;
+- (void)setAppliesToHomeTeam:(bool)arg1;
 - (void)setSummaryDescription:(id)arg1;
 - (void)setTime:(id)arg1;
 - (id)summaryDescription;

@@ -5,6 +5,6 @@
 @interface PUMapPhotosAlbumViewController : PUPhotosAlbumViewController {
 }
 
-- (BOOL)wantsGlobalFooter;
+- (bool)wantsGlobalFooter;
 
 @end

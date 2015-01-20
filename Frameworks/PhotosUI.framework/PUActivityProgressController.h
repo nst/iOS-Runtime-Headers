@@ -12,13 +12,13 @@
     UIAlertController *_alertController;
     id _cancellationHandler;
     UIView *_containerView;
-    BOOL _didHide;
-    BOOL _didShow;
     UIView *_dimmingView;
     UIView *_progressContainerView;
     PUActivityProgressViewController *_progressViewController;
     NSString *_title;
     double _whenDidShow;
+    bool_didHide;
+    bool_didShow;
 }
 
 @property(copy) id cancellationHandler;
@@ -27,12 +27,12 @@
 - (void).cxx_destruct;
 - (id)_newProgressContainerView;
 - (id)cancellationHandler;
-- (void)hideAnimated:(BOOL)arg1 allowDelay:(BOOL)arg2;
+- (void)hideAnimated:(bool)arg1 allowDelay:(bool)arg2;
 - (id)init;
 - (void)setCancellationHandler:(id)arg1;
 - (void)setProgress:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)showAnimated:(BOOL)arg1 allowDelay:(BOOL)arg2;
+- (void)showAnimated:(bool)arg1 allowDelay:(bool)arg2;
 - (id)title;
 
 @end

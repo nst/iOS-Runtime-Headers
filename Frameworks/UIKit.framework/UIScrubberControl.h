@@ -14,8 +14,8 @@
         id view; 
         /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     unsigned int _didDrag : 1;
     unsigned int _sentScrubbingStart : 1;
     unsigned int _autoSizesToFitDuration : 1;
@@ -50,50 +50,50 @@
     float _valueAvailable;
 }
 
-+ (BOOL)allowLayeredFillForKnob;
++ (bool)allowLayeredFillForKnob;
 
-- (BOOL)_notAllValueAvailable;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectOfTrack;
+- (bool)_notAllValueAvailable;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectOfTrack;
 - (void)_resetTimeFrames;
-- (void)_sendDelegateDidEnterScrubbingState:(BOOL)arg1;
-- (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
+- (void)_sendDelegateDidEnterScrubbingState:(bool)arg1;
+- (void)_setValue:(float)arg1 andSendAction:(bool)arg2;
 - (void)_updateAvailableFill;
-- (void)_updateTimes:(BOOL)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)_updateTimes:(bool)arg1;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)createSliderKnobView;
 - (void)dealloc;
 - (void)disableTimesLayout;
-- (void)drawSliderPiece:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawSliderPiece:(int)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (double)duration;
 - (void)enableTimesLayout;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fillBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fillBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)imageForSliderPiece:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maxTrackWidth:(float)arg2 showTimes:(BOOL)arg3 knobStyle:(int)arg4;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maxTrackWidth:(float)arg2 showTimes:(BOOL)arg3 showKnob:(BOOL)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 maxTrackWidth:(float)arg2 showTimes:(bool)arg3 knobStyle:(int)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 maxTrackWidth:(float)arg2 showTimes:(bool)arg3 showKnob:(bool)arg4;
 - (const struct { float x1; float x2; float x3; }*)metrics;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)pointInsideKnob:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)pointInsideKnob:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInsideKnob:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (bool)pointInsideKnob:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (double)requiredAutoUpdateDurationForDuration:(double)arg1;
 - (float)scrubValue;
-- (void)setAllowsAnyValue:(BOOL)arg1;
+- (void)setAllowsAnyValue:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setPinTimeToOutsideEdges:(BOOL)arg1;
-- (void)setScrubbingRequiresMomentaryDelay:(BOOL)arg1;
-- (void)setShowDuration:(BOOL)arg1;
-- (void)setShowFullWidthComponents:(BOOL)arg1;
-- (void)setShowTimeCenteredInAvailableArea:(BOOL)arg1;
+- (void)setPinTimeToOutsideEdges:(bool)arg1;
+- (void)setScrubbingRequiresMomentaryDelay:(bool)arg1;
+- (void)setShowDuration:(bool)arg1;
+- (void)setShowFullWidthComponents:(bool)arg1;
+- (void)setShowTimeCenteredInAvailableArea:(bool)arg1;
 - (void)setTimeColor:(id)arg1;
 - (void)setTimeShadowColor:(id)arg1;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3;
+- (void)setValue:(float)arg1 animated:(bool)arg2 animationCurve:(int)arg3;
 - (void)setValueAvailable:(float)arg1;
 - (void)sizeToFit;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sliderBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sliderBounds;
 
 @end

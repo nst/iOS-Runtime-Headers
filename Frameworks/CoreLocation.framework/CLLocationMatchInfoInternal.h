@@ -6,15 +6,15 @@
     struct { 
         double latitude; 
         double longitude; 
+    boolfMatchShifted;
     } fMatchCoordinate;
     double fMatchCourse;
     int fMatchFormOfWay;
-    int fMatchQuality;
+    long long fMatchQuality;
     int fMatchRoadClass;
-    BOOL fMatchShifted;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(BOOL)arg6;
+- (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(bool)arg6;
 
 @end

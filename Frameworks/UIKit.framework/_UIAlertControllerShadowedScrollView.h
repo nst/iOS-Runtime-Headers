@@ -6,16 +6,16 @@
 
 @interface _UIAlertControllerShadowedScrollView : UIScrollView {
     _UIAlertControllerGradientView *_shadowView;
-    BOOL _shouldPinToBottomOnResize;
+    bool_shouldPinToBottomOnResize;
 }
 
-@property BOOL shouldPinToBottomOnResize;
+@property bool shouldPinToBottomOnResize;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForPinningToBottomWithNewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForPinningToBottomWithNewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updateScrollabilityAndShadow;
 - (void)dealloc;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setShouldPinToBottomOnResize:(BOOL)arg1;
-- (BOOL)shouldPinToBottomOnResize;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setShouldPinToBottomOnResize:(bool)arg1;
+- (bool)shouldPinToBottomOnResize;
 
 @end

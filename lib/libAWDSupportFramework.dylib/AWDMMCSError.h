@@ -15,8 +15,8 @@
 
 @property int code;
 @property(retain) NSString * domain;
-@property BOOL hasCode;
-@property(readonly) BOOL hasDomain;
+@property bool hasCode;
+@property(readonly) bool hasDomain;
 @property(retain) NSMutableArray * underlyingErrors;
 
 - (void)addUnderlyingErrors:(id)arg1;
@@ -28,19 +28,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (BOOL)hasCode;
-- (BOOL)hasDomain;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCode;
+- (bool)hasDomain;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCode:(int)arg1;
 - (void)setDomain:(id)arg1;
-- (void)setHasCode:(BOOL)arg1;
+- (void)setHasCode:(bool)arg1;
 - (void)setUnderlyingErrors:(id)arg1;
 - (id)underlyingErrors;
-- (id)underlyingErrorsAtIndex:(unsigned int)arg1;
-- (unsigned int)underlyingErrorsCount;
+- (id)underlyingErrorsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)underlyingErrorsCount;
 - (void)writeTo:(id)arg1;
 
 @end

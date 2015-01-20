@@ -5,56 +5,56 @@
 @class NSMutableData, NSURL, NSUUID;
 
 @interface NEFilterSource : NSObject {
-    int _direction;
+    long long _direction;
     NSUUID *_flowUUID;
     unsigned long long _passLength;
     unsigned long long _peekIndex;
     NSMutableData *_pendingData;
     unsigned long long _pendingDataStartIndex;
-    BOOL _registered;
     unsigned long long _socketIdentifier;
-    int _status;
+    long long _status;
     NSURL *_url;
+    bool_registered;
 }
 
-@property(readonly) int direction;
+@property(readonly) long long direction;
 @property(retain) NSUUID * flowUUID;
 @property unsigned long long passLength;
 @property unsigned long long peekIndex;
 @property(retain) NSMutableData * pendingData;
 @property unsigned long long pendingDataStartIndex;
-@property BOOL registered;
+@property bool registered;
 @property(readonly) unsigned long long socketIdentifier;
-@property(readonly) int status;
+@property(readonly) long long status;
 @property(readonly) NSURL * url;
 
 + (unsigned int)checkPolicyFilterUnit;
 + (void)connectToAgentWithCompletionHandler:(id)arg1;
-+ (BOOL)filterRequired;
++ (bool)filterRequired;
 + (unsigned int)filterUnit;
 + (void)initializeGlobals;
 
 - (void).cxx_destruct;
 - (void)addData:(id)arg1 withCompletionQueue:(id)arg2 completionHandler:(id)arg3;
 - (void)dataCompleteWithCompletionQueue:(id)arg1 completionHandler:(id)arg2;
-- (int)direction;
+- (long long)direction;
 - (id)flowUUID;
-- (id)initWithURL:(id)arg1 direction:(int)arg2 socketIdentifier:(unsigned long long)arg3;
+- (id)initWithURL:(id)arg1 direction:(long long)arg2 socketIdentifier:(unsigned long long)arg3;
 - (unsigned long long)passLength;
 - (unsigned long long)peekIndex;
 - (id)pendingData;
 - (unsigned long long)pendingDataStartIndex;
 - (void)prepareAgentWithHandler:(id)arg1;
-- (BOOL)registered;
-- (BOOL)sendDataToPluginWithConnection:(id)arg1 completionHandler:(id)arg2;
+- (bool)registered;
+- (bool)sendDataToPluginWithConnection:(id)arg1 completionHandler:(id)arg2;
 - (void)setFlowUUID:(id)arg1;
 - (void)setPassLength:(unsigned long long)arg1;
 - (void)setPeekIndex:(unsigned long long)arg1;
 - (void)setPendingData:(id)arg1;
 - (void)setPendingDataStartIndex:(unsigned long long)arg1;
-- (void)setRegistered:(BOOL)arg1;
+- (void)setRegistered:(bool)arg1;
 - (unsigned long long)socketIdentifier;
-- (int)status;
+- (long long)status;
 - (id)url;
 
 @end

@@ -14,9 +14,9 @@
 }
 
 @property(retain) NSData * directionsResponseId;
-@property(readonly) BOOL hasDirectionsResponseId;
-@property(readonly) BOOL hasOverviewScreenshotImageData;
-@property BOOL hasProblematicStepIndex;
+@property(readonly) bool hasDirectionsResponseId;
+@property(readonly) bool hasOverviewScreenshotImageData;
+@property bool hasProblematicStepIndex;
 @property(retain) NSData * overviewScreenshotImageData;
 @property unsigned int problematicStepIndex;
 
@@ -26,17 +26,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)directionsResponseId;
-- (BOOL)hasDirectionsResponseId;
-- (BOOL)hasOverviewScreenshotImageData;
-- (BOOL)hasProblematicStepIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDirectionsResponseId;
+- (bool)hasOverviewScreenshotImageData;
+- (bool)hasProblematicStepIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)overviewScreenshotImageData;
 - (unsigned int)problematicStepIndex;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDirectionsResponseId:(id)arg1;
-- (void)setHasProblematicStepIndex:(BOOL)arg1;
+- (void)setHasProblematicStepIndex:(bool)arg1;
 - (void)setOverviewScreenshotImageData:(id)arg1;
 - (void)setProblematicStepIndex:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

@@ -5,15 +5,15 @@
 @interface KNBuildAnvilSmokeSystem : KNBuildAnvilSystem {
 }
 
-+ (BOOL)useVisibilities;
-+ (BOOL)willOverrideStartingPoints;
++ (bool)useVisibilities;
++ (bool)willOverrideStartingPoints;
 
-- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)rotationMax;
-- (float)scaleAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)speedMax;
-- (struct CGPoint { float x1; float x2; })startingPointAtIndexPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { float x1; float x2; })lifeSpanAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct { float x1; float x2; float x3; })rotationAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)rotationMax;
+- (double)scaleAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct { float x1; float x2; float x3; })speedAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (double)speedMax;
+- (struct CGPoint { double x1; double x2; })startingPointAtIndexPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

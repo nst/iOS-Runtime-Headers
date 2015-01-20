@@ -9,14 +9,14 @@
     NSMutableArray *_attachments;
     MFMonitoredInvocation *_invocation;
     NSThread *_loader;
-    BOOL _stopped;
     NSURL *_url;
+    bool_stopped;
 }
 
-+ (BOOL)canInitWithRequest:(id)arg1;
++ (bool)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (void)initialize;
-+ (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
++ (bool)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 
 - (void)_downloadAttachment;
 - (void)_downloadedData:(id)arg1 mimeType:(id)arg2;

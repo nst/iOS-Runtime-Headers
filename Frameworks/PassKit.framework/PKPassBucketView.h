@@ -5,7 +5,7 @@
 @class NSArray, NSMutableArray, PKPass, PKPassBucketTemplate, PKPassColorProfile;
 
 @interface PKPassBucketView : UIView {
-    int _background;
+    long long _background;
     NSArray *_bucket;
     PKPassBucketTemplate *_bucketTemplate;
     PKPassColorProfile *_colorProfile;
@@ -18,7 +18,7 @@
 @property(retain) PKPassColorProfile * colorProfile;
 @property(retain) PKPass * pass;
 
-- (int)_backgroundForBucketTemplate:(id)arg1;
+- (long long)_backgroundForBucketTemplate:(id)arg1;
 - (id)_fieldViewsByWidth;
 - (void)_measureAndFitEvenlySizedSubviews;
 - (void)_measureAndFitVariablySizedSubviews;

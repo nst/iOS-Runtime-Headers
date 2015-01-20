@@ -6,11 +6,11 @@
 
 @interface _GCACHomeButton : _GCControllerButtonInput {
     <_GCACHomeButtonDelegate> *_delegate;
-    BOOL needsReset;
+    boolneedsReset;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_setValue:(float)arg1;
+- (bool)_setValue:(float)arg1;
 - (id)initWithDelegate:(id)arg1;
 
 @end

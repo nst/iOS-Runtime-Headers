@@ -3,17 +3,17 @@
  */
 
 @interface EKCalendarSharedCalendarNotification : EKCalendarNotification {
-    unsigned int _allowedEntityTypes;
+    unsigned long long _allowedEntityTypes;
     int _sharingInvitationResponse;
 }
 
-@property unsigned int allowedEntityTypes;
+@property unsigned long long allowedEntityTypes;
 @property int sharingInvitationResponse;
 
-- (unsigned int)allowedEntityTypes;
+- (unsigned long long)allowedEntityTypes;
 - (id)calendarFromEventStore:(id)arg1;
-- (id)initWithType:(int)arg1;
-- (void)setAllowedEntityTypes:(unsigned int)arg1;
+- (id)initWithType:(long long)arg1;
+- (void)setAllowedEntityTypes:(unsigned long long)arg1;
 - (void)setSharingInvitationResponse:(int)arg1;
 - (int)sharingInvitationResponse;
 

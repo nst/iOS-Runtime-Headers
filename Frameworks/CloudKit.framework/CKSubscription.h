@@ -9,8 +9,8 @@
     NSPredicate *_predicate;
     NSString *_recordType;
     NSString *_subscriptionID;
-    unsigned int _subscriptionOptions;
-    int _subscriptionType;
+    unsigned long long _subscriptionOptions;
+    long long _subscriptionType;
     CKRecordZoneID *_zoneID;
 }
 
@@ -18,26 +18,26 @@
 @property(copy) NSPredicate * predicate;
 @property(copy) NSString * recordType;
 @property(copy) NSString * subscriptionID;
-@property unsigned int subscriptionOptions;
-@property int subscriptionType;
+@property unsigned long long subscriptionOptions;
+@property long long subscriptionType;
 @property(copy) CKRecordZoneID * zoneID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)_initBare;
-- (void)_validateSubscriptionOptions:(unsigned int)arg1;
+- (void)_validateSubscriptionOptions:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecordType:(id)arg1 predicate:(id)arg2 options:(unsigned int)arg3;
-- (id)initWithRecordType:(id)arg1 predicate:(id)arg2 subscriptionID:(id)arg3 options:(unsigned int)arg4;
-- (id)initWithZoneID:(id)arg1 options:(unsigned int)arg2;
-- (id)initWithZoneID:(id)arg1 subscriptionID:(id)arg2 options:(unsigned int)arg3;
+- (id)initWithRecordType:(id)arg1 predicate:(id)arg2 options:(unsigned long long)arg3;
+- (id)initWithRecordType:(id)arg1 predicate:(id)arg2 subscriptionID:(id)arg3 options:(unsigned long long)arg4;
+- (id)initWithZoneID:(id)arg1 options:(unsigned long long)arg2;
+- (id)initWithZoneID:(id)arg1 subscriptionID:(id)arg2 options:(unsigned long long)arg3;
 - (id)notificationInfo;
 - (id)predicate;
 - (id)recordType;
@@ -45,12 +45,12 @@
 - (void)setPredicate:(id)arg1;
 - (void)setRecordType:(id)arg1;
 - (void)setSubscriptionID:(id)arg1;
-- (void)setSubscriptionOptions:(unsigned int)arg1;
-- (void)setSubscriptionType:(int)arg1;
+- (void)setSubscriptionOptions:(unsigned long long)arg1;
+- (void)setSubscriptionType:(long long)arg1;
 - (void)setZoneID:(id)arg1;
 - (id)subscriptionID;
-- (unsigned int)subscriptionOptions;
-- (int)subscriptionType;
+- (unsigned long long)subscriptionOptions;
+- (long long)subscriptionType;
 - (id)zoneID;
 
 @end

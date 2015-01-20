@@ -7,13 +7,13 @@
 @interface _NSProgressGroup : NSObject {
     NSMutableSet *_children;
     _NSProgressFraction *_childrenFraction;
-    BOOL _closed;
     unsigned long long _finishedChildrenCount;
     NSProgress *_parent;
     long long _portionOfParent;
+    bool_closed;
 }
 
-- (id)_indentedDescription:(unsigned int)arg1;
+- (id)_indentedDescription:(unsigned long long)arg1;
 - (void)addChild:(id)arg1;
 - (void)cancel;
 - (void)close;

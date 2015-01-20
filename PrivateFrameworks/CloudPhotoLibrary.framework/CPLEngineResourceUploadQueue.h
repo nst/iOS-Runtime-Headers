@@ -5,35 +5,35 @@
 @class CPLPlatformObject, NSString;
 
 @interface CPLEngineResourceUploadQueue : CPLEngineStorage <CPLAbstractObject> {
-    BOOL _immediateUploads[18];
+    bool_immediateUploads[18];
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) CPLPlatformObject * platformObject;
 @property(readonly) Class superclass;
 
-- (BOOL)_markResourcesAsStaleForItemWithIdentifier:(id)arg1 withResources:(id)arg2 includePending:(BOOL)arg3 error:(id*)arg4;
-- (id)_uploadTaskForResource:(id)arg1 foreground:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (unsigned int)availabilityOfResource:(id)arg1;
-- (unsigned int)countOfOriginalImages;
-- (unsigned int)countOfOriginalOthers;
-- (unsigned int)countOfOriginalVideos;
-- (unsigned int)countOfQueuedUploadTasks;
-- (id)dequeueBackgroundUploadTaskForResourceType:(unsigned int)arg1 foreground:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (BOOL)discardResourceForUpload:(id)arg1 error:(id*)arg2;
-- (BOOL)enqueueResourceForBackgroundUpload:(id)arg1 error:(id*)arg2;
-- (BOOL)enqueueResourcesForUploadForBatch:(id)arg1 error:(id*)arg2;
-- (BOOL)isResourceInQueue:(id)arg1;
-- (BOOL)markResourceAsSuccessfullyUploaded:(id)arg1 uploadURL:(id)arg2 error:(id*)arg3;
-- (BOOL)markResourcesAsStaleForItemWithIdentifier:(id)arg1 withResources:(id)arg2 error:(id*)arg3;
-- (BOOL)noteMedataWasUploadedForStaleOrNotAvailableResource:(id)arg1 error:(id*)arg2;
-- (BOOL)openWithError:(id*)arg1;
-- (BOOL)prepareCloudResourceForUpload:(id)arg1 fromLocalResource:(id)arg2 error:(id*)arg3;
-- (BOOL)reenqueueResource:(id)arg1 uploadURL:(id)arg2 failedToUploadWithUploadError:(id)arg3 error:(id*)arg4;
-- (BOOL)resetDequeuedBackgroundUploadTasksWithError:(id*)arg1;
-- (BOOL)resetWithError:(id*)arg1;
-- (BOOL)shouldUploadResourceWithMetadata:(id)arg1;
+- (bool)_markResourcesAsStaleForItemWithIdentifier:(id)arg1 withResources:(id)arg2 includePending:(bool)arg3 error:(id*)arg4;
+- (id)_uploadTaskForResource:(id)arg1 foreground:(bool)arg2 withCompletionHandler:(id)arg3;
+- (unsigned long long)availabilityOfResource:(id)arg1;
+- (unsigned long long)countOfOriginalImages;
+- (unsigned long long)countOfOriginalOthers;
+- (unsigned long long)countOfOriginalVideos;
+- (unsigned long long)countOfQueuedUploadTasks;
+- (id)dequeueBackgroundUploadTaskForResourceType:(unsigned long long)arg1 foreground:(bool)arg2 withCompletionHandler:(id)arg3;
+- (bool)discardResourceForUpload:(id)arg1 error:(id*)arg2;
+- (bool)enqueueResourceForBackgroundUpload:(id)arg1 error:(id*)arg2;
+- (bool)enqueueResourcesForUploadForBatch:(id)arg1 error:(id*)arg2;
+- (bool)isResourceInQueue:(id)arg1;
+- (bool)markResourceAsSuccessfullyUploaded:(id)arg1 uploadURL:(id)arg2 error:(id*)arg3;
+- (bool)markResourcesAsStaleForItemWithIdentifier:(id)arg1 withResources:(id)arg2 error:(id*)arg3;
+- (bool)noteMedataWasUploadedForStaleOrNotAvailableResource:(id)arg1 error:(id*)arg2;
+- (bool)openWithError:(id*)arg1;
+- (bool)prepareCloudResourceForUpload:(id)arg1 fromLocalResource:(id)arg2 error:(id*)arg3;
+- (bool)reenqueueResource:(id)arg1 uploadURL:(id)arg2 failedToUploadWithUploadError:(id)arg3 error:(id*)arg4;
+- (bool)resetDequeuedBackgroundUploadTasksWithError:(id*)arg1;
+- (bool)resetWithError:(id*)arg1;
+- (bool)shouldUploadResourceWithMetadata:(id)arg1;
 
 @end

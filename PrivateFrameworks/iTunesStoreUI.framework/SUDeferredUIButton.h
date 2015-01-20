@@ -7,24 +7,24 @@
 @interface SUDeferredUIButton : UIButton <SUDeferredUIView> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    BOOL _deferredEnabled;
     } _deferredFrame;
     NSMutableDictionary *_deferredImages;
     NSMutableDictionary *_deferredTitles;
-    BOOL _isDeferringInterfaceUpdates;
+    bool_deferredEnabled;
+    bool_isDeferringInterfaceUpdates;
 }
 
 @property(copy,readonly) NSString * debugDescription;
-@property(getter=isDeferringInterfaceUpdates) BOOL deferringInterfaceUpdates;
+@property(getter=isDeferringInterfaceUpdates) bool deferringInterfaceUpdates;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)_commitDeferredInterfaceUpdates;
@@ -32,15 +32,15 @@
 - (void)_saveImagesAsDeferred;
 - (void)_saveTitlesAsDeferred;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (id)imageForState:(unsigned int)arg1;
-- (BOOL)isDeferringInterfaceUpdates;
-- (BOOL)isEnabled;
-- (void)setDeferringInterfaceUpdates:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setTitle:(id)arg1 forState:(unsigned int)arg2;
-- (id)titleForState:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (id)imageForState:(unsigned long long)arg1;
+- (bool)isDeferringInterfaceUpdates;
+- (bool)isEnabled;
+- (void)setDeferringInterfaceUpdates:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setTitle:(id)arg1 forState:(unsigned long long)arg2;
+- (id)titleForState:(unsigned long long)arg1;
 
 @end

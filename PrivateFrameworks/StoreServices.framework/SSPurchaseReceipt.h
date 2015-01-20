@@ -9,8 +9,8 @@
 }
 
 @property(readonly) NSDate * expirationDate;
-@property(readonly) BOOL isRevoked;
-@property(readonly) BOOL isVPPLicensed;
+@property(readonly) bool isRevoked;
+@property(readonly) bool isVPPLicensed;
 
 + (void)getReceiptPathWithCompletionBlock:(id)arg1;
 
@@ -18,7 +18,7 @@
 - (id)expirationDate;
 - (id)initWithContainerPath:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
-- (BOOL)isRevoked;
-- (BOOL)isVPPLicensed;
+- (bool)isRevoked;
+- (bool)isVPPLicensed;
 
 @end

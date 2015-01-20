@@ -5,11 +5,11 @@
 @class CMDeviceOrientationManager, NSOperationQueue, _VTLockscreenPolicy;
 
 @interface _VTFacedownGesturePolicy : _VTStatePolicy {
-    BOOL _isOrienting;
     _VTLockscreenPolicy *_lockscreenPolicy;
     NSOperationQueue *_opQueue;
     unsigned char _orientationState;
     CMDeviceOrientationManager *_whichWayMan;
+    bool_isOrienting;
 }
 
 - (void).cxx_destruct;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (void)dependencyUpdated:(id)arg1;
 - (id)initWithCallback:(id)arg1 queue:(id)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)reload;
 - (void)screenEventObserved:(struct __CFString { }*)arg1;
 

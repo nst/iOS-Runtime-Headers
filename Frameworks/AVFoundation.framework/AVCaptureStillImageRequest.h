@@ -14,7 +14,7 @@
     id _iosurfaceCompletionBlock;
     id _sbufCompletionBlock;
     long long _settingsID;
-    unsigned long _shutterSoundID;
+    unsigned int _shutterSoundID;
 }
 
 @property(copy) id bracketedCaptureCompletionBlock;
@@ -22,7 +22,7 @@
 @property(copy) id iosurfaceCompletionBlock;
 @property(copy) id sbufCompletionBlock;
 @property long long settingsID;
-@property unsigned long shutterSoundID;
+@property unsigned int shutterSoundID;
 
 + (id)request;
 
@@ -36,8 +36,8 @@
 - (void)setIosurfaceCompletionBlock:(id)arg1;
 - (void)setSbufCompletionBlock:(id)arg1;
 - (void)setSettingsID:(long long)arg1;
-- (void)setShutterSoundID:(unsigned long)arg1;
+- (void)setShutterSoundID:(unsigned int)arg1;
 - (long long)settingsID;
-- (unsigned long)shutterSoundID;
+- (unsigned int)shutterSoundID;
 
 @end

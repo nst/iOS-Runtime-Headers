@@ -12,20 +12,20 @@
 
 @property(readonly) ML3Container * container;
 @property(readonly) NSArray * limitedPersistentIDs;
-@property(readonly) BOOL requiresSmartLimiting;
+@property(readonly) bool requiresSmartLimiting;
 
 - (void).cxx_destruct;
 - (id)container;
-- (unsigned int)countOfDistinctRowsForColumn:(id)arg1;
-- (unsigned int)countOfEntities;
+- (unsigned long long)countOfDistinctRowsForColumn:(id)arg1;
+- (unsigned long long)countOfEntities;
 - (void)encodeWithCoder:(id)arg1;
 - (id)enumerationDatabaseResultForSQL:(id)arg1 onConnection:(id)arg2 withParameters:(id)arg3;
-- (BOOL)hasEntities;
+- (bool)hasEntities;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingTerms:(id)arg4;
 - (id)limitedPersistentIDs;
-- (BOOL)requiresSmartLimiting;
-- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
+- (bool)requiresSmartLimiting;
+- (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(bool)arg2;
 - (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
 
 @end

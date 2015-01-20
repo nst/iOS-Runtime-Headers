@@ -13,7 +13,7 @@
     NSObject<OS_dispatch_group> *_group;
     id _handler;
     BRCItemID *_parentID;
-    unsigned int _rowID;
+    unsigned long long _rowID;
     NSMutableIndexSet *_seen;
     BRCAccountSession *_session;
     NSMutableIndexSet *_toVisit;
@@ -23,10 +23,10 @@
 @property(copy) id whenDone;
 
 - (void).cxx_destruct;
-- (void)_iterate:(unsigned int)arg1;
-- (void)_iterateWithoutParent:(unsigned int)arg1;
+- (void)_iterate:(unsigned long long)arg1;
+- (void)_iterateWithoutParent:(unsigned long long)arg1;
 - (void)_scheduleAsync;
-- (void)_visitNewParent:(unsigned int)arg1;
+- (void)_visitNewParent:(unsigned long long)arg1;
 - (void)done;
 - (void)enumerateBelow:(id)arg1 group:(id)arg2;
 - (id)initWithContainer:(id)arg1 handler:(id)arg2;

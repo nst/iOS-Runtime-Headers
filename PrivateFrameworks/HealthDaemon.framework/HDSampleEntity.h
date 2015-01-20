@@ -15,18 +15,18 @@
 + (id)_propertySettersForDataObject;
 + (id)_tableValuesFromDataObject:(id)arg1;
 + (id)columnNameForSortIdentifier:(id)arg1;
-+ (int)countOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 withError:(id*)arg4;
-+ (BOOL)deleteSamplesWithTypes:(id)arg1 sourceIdentifier:(id)arg2 deleteSampleTypes:(id)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
-+ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 filter:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 sortDescriptors:(id)arg6 limit:(unsigned int)arg7 handler:(id)arg8;
-+ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 limit:(unsigned int)arg6 anchor:(id*)arg7 withHandler:(id)arg8;
-+ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 orderBy:(id)arg6 directions:(id)arg7 limit:(unsigned int)arg8 handler:(id)arg9;
-+ (void)enumerateStartDatesOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 limit:(unsigned int)arg4 withHandler:(id)arg5;
-+ (void)enumerateUUIDsOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 limit:(unsigned int)arg4 withHandler:(id)arg5;
++ (long long)countOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 withError:(id*)arg4;
++ (bool)deleteSamplesWithTypes:(id)arg1 sourceIdentifier:(id)arg2 deleteSampleTypes:(id)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 filter:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 sortDescriptors:(id)arg6 limit:(unsigned long long)arg7 handler:(id)arg8;
++ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 limit:(unsigned long long)arg6 anchor:(id*)arg7 withHandler:(id)arg8;
++ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 orderBy:(id)arg6 directions:(id)arg7 limit:(unsigned long long)arg8 handler:(id)arg9;
++ (void)enumerateStartDatesOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 limit:(unsigned long long)arg4 withHandler:(id)arg5;
++ (void)enumerateUUIDsOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 limit:(unsigned long long)arg4 withHandler:(id)arg5;
 + (id)firstAndLastSampleDateOfType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 sourceIdentifier:(id)arg4;
 + (void)load;
 + (id)mostRecentSampleWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
-+ (int)preferredEntityType;
-+ (id)samplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 limit:(unsigned int)arg4 anchor:(id*)arg5 error:(id*)arg6;
++ (long long)preferredEntityType;
++ (id)samplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 limit:(unsigned long long)arg4 anchor:(id*)arg5 error:(id*)arg6;
 + (id)sourceIDsForSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 
 - (id)_sampleTypeInDatabase:(id)arg1;

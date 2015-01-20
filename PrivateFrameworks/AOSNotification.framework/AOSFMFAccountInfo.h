@@ -10,7 +10,7 @@
     NSString *_aosServerHost;
     NSString *_aosServerProtocolScheme;
     NSString *_appAuthToken;
-    int _appAuthTokenStatus;
+    long long _appAuthTokenStatus;
     NSString *_appServerHost;
     NSString *_dsid;
     NSString *_internalAuthToken;
@@ -24,7 +24,7 @@
 @property(retain) NSString * aosServerHost;
 @property(retain) NSString * aosServerProtocolScheme;
 @property(retain) NSString * appAuthToken;
-@property int appAuthTokenStatus;
+@property long long appAuthTokenStatus;
 @property(retain) NSString * appServerHost;
 @property(retain) NSString * dsid;
 @property(retain) NSString * internalAuthToken;
@@ -32,7 +32,7 @@
 @property(retain) NSString * legacyUsername;
 @property(retain) NSString * username;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)additionalInfo;
@@ -40,7 +40,7 @@
 - (id)aosServerHost;
 - (id)aosServerProtocolScheme;
 - (id)appAuthToken;
-- (int)appAuthTokenStatus;
+- (long long)appAuthTokenStatus;
 - (id)appServerHost;
 - (void)dealloc;
 - (id)description;
@@ -55,7 +55,7 @@
 - (void)setAosServerHost:(id)arg1;
 - (void)setAosServerProtocolScheme:(id)arg1;
 - (void)setAppAuthToken:(id)arg1;
-- (void)setAppAuthTokenStatus:(int)arg1;
+- (void)setAppAuthTokenStatus:(long long)arg1;
 - (void)setAppServerHost:(id)arg1;
 - (void)setDsid:(id)arg1;
 - (void)setInternalAuthToken:(id)arg1;

@@ -5,6 +5,6 @@
 @interface _UIDocumentPickerFlowLayout : UICollectionViewFlowLayout {
 }
 
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
+- (struct CGSize { double x1; double x2; })collectionViewContentSize;
 
 @end

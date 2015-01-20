@@ -10,7 +10,7 @@
 @property(retain) NSString * topic;
 
 - (id)decorateReportingURL:(id)arg1;
-- (BOOL)isFieldBlacklistEnabled;
+- (bool)isFieldBlacklistEnabled;
 - (void)setTopic:(id)arg1;
 - (id)topic;
 

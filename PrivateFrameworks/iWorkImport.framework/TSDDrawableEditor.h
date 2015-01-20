@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) TSDDrawableInfo * firstInfo;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) TSDDrawableInfo * info;
 @property(retain) NSSet * infos;
 @property(readonly) TSDInteractiveCanvasController * interactiveCanvasController;
@@ -39,12 +39,12 @@
 + (id)keyPathsForValuesAffectingFirstInfo;
 + (id)keyPathsForValuesAffectingInfo;
 + (id)keyPathsForValuesAffectingLayouts;
-+ (BOOL)shouldSuppressMultiselection;
++ (bool)shouldSuppressMultiselection;
 
 - (void)addOrShowComment:(id)arg1;
 - (void)applyStylePresetWithIndex:(id)arg1;
 - (void)beginChangingStrokeWidth:(id)arg1;
-- (BOOL)canAddOrShowComment;
+- (bool)canAddOrShowComment;
 - (int)canPerformAction:(SEL)arg1;
 - (int)canPerformEditorAction:(SEL)arg1 withSender:(id)arg2;
 - (void)dealloc;
@@ -61,7 +61,7 @@
 - (id)interactiveCanvasController;
 - (id)layouts;
 - (void)p_flipInOrientation:(int)arg1;
-- (float)pictureFrameAssetScaleForNormalizedWidth:(float)arg1;
+- (double)pictureFrameAssetScaleForNormalizedWidth:(double)arg1;
 - (id)selectedLayoutsSupportingFlipping;
 - (id)selectedLayoutsSupportingInspectorPositioning;
 - (id)selectedLayoutsSupportingRotation;
@@ -84,7 +84,7 @@
 - (id)strokeColor;
 - (id)strokeColorPickerTitle;
 - (id)strokeSwatches;
-- (float)strokeWidthForNormalizedWidth:(float)arg1;
+- (double)strokeWidthForNormalizedWidth:(double)arg1;
 - (void)takePatternFromStroke:(id)arg1 withDefaultStroke:(id)arg2;
 - (id)topLevelInspectorAutosaveName;
 

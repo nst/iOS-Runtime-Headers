@@ -12,13 +12,13 @@
 @property GKMatchmakerViewController * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) GKGame * game;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
-- (BOOL)_dismissSelfAfterGettingShouldFinish;
+- (bool)_dismissSelfAfterGettingShouldFinish;
 - (void)applicationWillEnterForeground;
 - (void)cancelInviteToPlayer:(id)arg1;
 - (void)dealloc;
@@ -29,18 +29,18 @@
 - (void)sendData:(id)arg1;
 - (void)setAcceptedInviteInternal:(id)arg1;
 - (void)setAutomatchFailedWithError:(id)arg1;
-- (void)setAutomatchPlayerCount:(int)arg1;
-- (void)setBrowsingForNearbyPlayers:(BOOL)arg1;
+- (void)setAutomatchPlayerCount:(long long)arg1;
+- (void)setBrowsingForNearbyPlayers:(bool)arg1;
 - (void)setDefaultInvitationMessage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExistingPlayers:(id)arg1;
 - (void)setFailedWithError:(id)arg1;
-- (void)setHosted:(BOOL)arg1;
+- (void)setHosted:(bool)arg1;
 - (void)setInvitesFailedWithError:(id)arg1;
 - (void)setMatchRequestInternal:(id)arg1;
-- (void)setNearbyPlayer:(id)arg1 reachable:(BOOL)arg2;
-- (void)setPlayer:(id)arg1 connected:(BOOL)arg2;
-- (void)setPlayer:(id)arg1 responded:(int)arg2;
+- (void)setNearbyPlayer:(id)arg1 reachable:(bool)arg2;
+- (void)setPlayer:(id)arg1 connected:(bool)arg2;
+- (void)setPlayer:(id)arg1 responded:(long long)arg2;
 - (void)setPlayer:(id)arg1 sentData:(id)arg2;
 - (void)setupRemoteView;
 - (void)startMatchingWithRequest:(id)arg1;

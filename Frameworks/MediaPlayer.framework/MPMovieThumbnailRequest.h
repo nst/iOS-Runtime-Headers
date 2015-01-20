@@ -5,17 +5,17 @@
 @class NSArray;
 
 @interface MPMovieThumbnailRequest : NSObject {
-    int _timeOption;
+    long long _timeOption;
     NSArray *_times;
 }
 
-@property int timeOption;
+@property long long timeOption;
 @property(retain) NSArray * times;
 
 - (void).cxx_destruct;
-- (void)setTimeOption:(int)arg1;
+- (void)setTimeOption:(long long)arg1;
 - (void)setTimes:(id)arg1;
-- (int)timeOption;
+- (long long)timeOption;
 - (id)times;
 
 @end

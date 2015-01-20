@@ -8,19 +8,19 @@
     CKQueryCursor *_cursor;
     NSArray *_desiredKeys;
     CKQuery *_query;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContent;
+    unsigned long long _resultsLimit;
     CKRecordZoneID *_zoneID;
+    bool_shouldFetchAssetContent;
 }
 
 @property(retain) CKQueryCursor * cursor;
 @property(retain) NSArray * desiredKeys;
 @property(retain) CKQuery * query;
-@property unsigned int resultsLimit;
-@property BOOL shouldFetchAssetContent;
+@property unsigned long long resultsLimit;
+@property bool shouldFetchAssetContent;
 @property(retain) CKRecordZoneID * zoneID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cursor;
@@ -28,14 +28,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)query;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setCursor:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
 - (void)setZoneID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContent;
 - (id)zoneID;
 
 @end

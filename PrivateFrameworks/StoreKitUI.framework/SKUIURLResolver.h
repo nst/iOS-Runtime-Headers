@@ -15,7 +15,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIURLResolverDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property <UINavigationControllerDelegate> * navigationControllerDelegate;
 @property(retain) NSOperationQueue * operationQueue;
 @property(readonly) Class superclass;
@@ -29,7 +29,7 @@
 - (void)_presentViewController:(id)arg1;
 - (void)_resolveURLRequest:(id)arg1 withOriginURL:(id)arg2;
 - (void)_selectTabWithIdentifier:(id)arg1;
-- (void)_sendDidFinishWithResult:(BOOL)arg1;
+- (void)_sendDidFinishWithResult:(bool)arg1;
 - (void)_showAccountViewControllerWithURL:(id)arg1;
 - (void)_showBagURLWithURL:(id)arg1;
 - (void)_showDonationViewControllerWithURL:(id)arg1;

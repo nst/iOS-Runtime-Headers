@@ -7,13 +7,13 @@
 @interface PLCloudFeedEntriesChangeNotification : PLChangeNotification {
     NSSet *_deletedEntries;
     NSSet *_insertedEntries;
-    BOOL _shouldReload;
     NSSet *_updatedEntries;
+    bool_shouldReload;
 }
 
 @property(copy) NSSet * deletedEntries;
 @property(copy) NSSet * insertedEntries;
-@property BOOL shouldReload;
+@property bool shouldReload;
 @property(copy) NSSet * updatedEntries;
 
 + (id)notificationWithFullReload;
@@ -28,9 +28,9 @@
 - (id)object;
 - (void)setDeletedEntries:(id)arg1;
 - (void)setInsertedEntries:(id)arg1;
-- (void)setShouldReload:(BOOL)arg1;
+- (void)setShouldReload:(bool)arg1;
 - (void)setUpdatedEntries:(id)arg1;
-- (BOOL)shouldReload;
+- (bool)shouldReload;
 - (id)updatedEntries;
 - (id)userInfo;
 

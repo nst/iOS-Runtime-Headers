@@ -16,20 +16,20 @@
 @property(copy) NSDictionary * labelTextAttributes;
 @property(readonly) ABTransportButton * transportIcon;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (id)constantConstraints;
 - (void)dealloc;
 - (id)delegate;
 - (id)faceTimeLabel;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)labelTextAttributes;
 - (void)performDefaultAction;
 - (void)setDelegate:(id)arg1;
 - (void)setFaceTimeLabel:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setLabelTextAttributes:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)tintColorDidChange;
 - (void)transportButtonClicked:(id)arg1;
 - (id)transportIcon;

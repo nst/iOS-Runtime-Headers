@@ -10,12 +10,12 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    boolpaused;
+    boolrecording;
+    boolsendLastVideoPreviewFrame;
     NSArray *metadata;
     } movieFragmentInterval;
-    BOOL paused;
-    BOOL recording;
     NSMutableArray *recordingDelegatesArray;
-    BOOL sendLastVideoPreviewFrame;
     AVWeakReference *weakReference;
 }
 

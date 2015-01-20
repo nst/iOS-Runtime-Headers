@@ -11,17 +11,17 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSNumber * isPackageObj;
 @property(readonly) NSNumber * sizeObj;
 @property(readonly) Class superclass;
 @property(retain) NSError * uploadError;
 @property(retain) CKRecord * uploadedAssets;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)clearVersionSignatures:(unsigned int)arg1 isPackage:(BOOL)arg2;
+- (void)clearVersionSignatures:(unsigned long long)arg1 isPackage:(bool)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithContext:(id)arg1;
 - (unsigned long long)diffAgainstLocalVersion:(id)arg1;
@@ -31,7 +31,7 @@
 - (id)initWithLocalVersion:(id)arg1;
 - (id)initWithServerVersion:(id)arg1;
 - (id)initWithVersion:(id)arg1;
-- (BOOL)isMissingUploadsWithDiffs:(unsigned long long)arg1;
+- (bool)isMissingUploadsWithDiffs:(unsigned long long)arg1;
 - (id)isPackageObj;
 - (void)setUploadError:(id)arg1;
 - (void)setUploadedAssets:(id)arg1;

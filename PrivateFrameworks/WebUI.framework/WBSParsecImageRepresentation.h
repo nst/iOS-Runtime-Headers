@@ -8,7 +8,7 @@
     NSString *_dataString;
     NSString *_identifier;
     UIImage *_image;
-    BOOL _template;
+    bool_template;
 }
 
 - (void).cxx_destruct;

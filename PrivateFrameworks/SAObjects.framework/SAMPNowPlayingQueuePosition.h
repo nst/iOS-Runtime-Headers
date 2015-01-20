@@ -9,9 +9,9 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int index;
-@property int queueSize;
+@property(readonly) unsigned long long hash;
+@property long long index;
+@property long long queueSize;
 @property(readonly) Class superclass;
 
 + (id)nowPlayingQueuePosition;
@@ -19,9 +19,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)index;
-- (int)queueSize;
-- (void)setIndex:(int)arg1;
-- (void)setQueueSize:(int)arg1;
+- (long long)index;
+- (long long)queueSize;
+- (void)setIndex:(long long)arg1;
+- (void)setQueueSize:(long long)arg1;
 
 @end

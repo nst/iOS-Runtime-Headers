@@ -6,19 +6,19 @@
 
 @interface _RKResponse : NSObject {
     NSString *_text;
-    unsigned int _type;
+    unsigned long long _type;
 }
 
 @property(retain) NSString * text;
-@property unsigned int type;
+@property unsigned long long type;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)init;
-- (id)initWithText:(id)arg1 type:(unsigned int)arg2;
+- (id)initWithText:(id)arg1 type:(unsigned long long)arg2;
 - (void)setText:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (id)text;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

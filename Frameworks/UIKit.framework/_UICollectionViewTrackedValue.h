@@ -5,22 +5,22 @@
 @class NSArray;
 
 @interface _UICollectionViewTrackedValue : NSObject {
-    int _currentIndex;
-    BOOL _isAccumulating;
-    float _trackedValue;
+    long long _currentIndex;
+    double _trackedValue;
     NSArray *_values;
-    int _valuesCount;
+    long long _valuesCount;
+    bool_isAccumulating;
 }
 
-@property BOOL isAccumulating;
-@property float trackedValue;
+@property bool isAccumulating;
+@property double trackedValue;
 
-- (void)addValue:(float)arg1;
+- (void)addValue:(double)arg1;
 - (id)init;
-- (BOOL)isAccumulating;
-- (void)setIsAccumulating:(BOOL)arg1;
-- (void)setTrackedValue:(float)arg1;
-- (float)speed;
-- (float)trackedValue;
+- (bool)isAccumulating;
+- (void)setIsAccumulating:(bool)arg1;
+- (void)setTrackedValue:(double)arg1;
+- (double)speed;
+- (double)trackedValue;
 
 @end

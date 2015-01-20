@@ -13,7 +13,7 @@
 @property(readonly) PLCloudSharedAlbum * album;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,9 +22,9 @@
 - (void)_dismiss;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_saveAndDismiss;
-- (BOOL)_validateRecipientsToAdd:(id)arg1;
+- (bool)_validateRecipientsToAdd:(id)arg1;
 - (id)album;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (id)backingNavigationControllerForComposeRecipientViewController:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
@@ -33,9 +33,9 @@
 - (void)recipientViewController:(id)arg1 didEnterText:(id)arg2;
 - (void)recipientViewControllerDidAddRecipient:(id)arg1;
 - (void)recipientViewControllerDidRemoveRecipient:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

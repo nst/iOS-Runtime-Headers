@@ -9,11 +9,11 @@
 }
 
 - (void)_removeContextProviderOnMainThread;
-- (BOOL)allowContextProvider:(id)arg1;
+- (bool)allowContextProvider:(id)arg1;
 - (id)contextManager;
 - (void)dealloc;
 - (id)getCurrentContext;
 - (id)initWithContact:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

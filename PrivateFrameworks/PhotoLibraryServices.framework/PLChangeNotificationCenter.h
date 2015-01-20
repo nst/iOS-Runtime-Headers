@@ -54,23 +54,23 @@
     } _changedMomentLists;
     } _changedMoments;
     NSMutableArray *_enqueuedNotifications;
-    BOOL _isOverloaded;
-    BOOL _isProcessingRemoteDidSave;
     PLManagedObjectContext *_moc;
     } _momentListsContent;
     } _momentsContent;
     NSMutableSet *_overloadedObjects;
     NSDictionary *_remoteNotificationData;
     NSMutableArray *_snapshots;
+    bool_isOverloaded;
+    bool_isProcessingRemoteDidSave;
 }
 
-@property(readonly) BOOL _shouldForceFetchingAlbumsToReload;
+@property(readonly) bool _shouldForceFetchingAlbumsToReload;
 @property(retain,readonly) NSNotificationCenter * backingCenter;
 
 + (id)allManagedObjectKeysStrategy;
 + (id)defaultCenter;
 + (void)forceFetchingAlbumReload;
-+ (void)getInsertedAssetCount:(unsigned int*)arg1 deletedAssetCount:(unsigned int*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
++ (void)getInsertedAssetCount:(unsigned long long*)arg1 deletedAssetCount:(unsigned long long*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
 
 - (id)_attributesOfInterestForObject:(id)arg1;
 - (void)_cleanupState;
@@ -86,24 +86,24 @@
 - (void)_enqueueMomentChangeNotifications;
 - (void)_enqueueMomentListChangeNotifications;
 - (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
-- (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfoWithObjects:(const id*)arg3 forKeys:(const id*)arg4 count:(unsigned int)arg5;
+- (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfoWithObjects:(const id*)arg3 forKeys:(const id*)arg4 count:(unsigned long long)arg5;
 - (void)_enqueuePhotoLibraryNotifications;
 - (void)_evaluateContainersWithUpdatedContent;
 - (void)_evaluateUpdatedAssets;
-- (BOOL)_isInterestedInUpdatesOfObject:(id)arg1;
+- (bool)_isInterestedInUpdatesOfObject:(id)arg1;
 - (id)_keysOfInterestForObject:(id)arg1;
 - (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
 - (void)_postEnqueuedNotifications;
 - (void)_registerForCameraPreviewWellChanges;
 - (void)_saveCurrentStateForAlbum:(id)arg1;
 - (void)_sendNotificationsForSplitChanges;
-- (BOOL)_shouldForceFetchingAlbumsToReload;
+- (bool)_shouldForceFetchingAlbumsToReload;
 - (id)_snapshotForObject:(id)arg1;
 - (void)_splitContextDidChangeNotification:(id)arg1;
 - (id)_takeSnapshotFromCommittedValuesOfObject:(id)arg1;
-- (id)_takeSnapshotOfObject:(id)arg1 useCommitedValues:(BOOL)arg2;
+- (id)_takeSnapshotOfObject:(id)arg1 useCommitedValues:(bool)arg2;
 - (id)_takeSnapshotOfObject:(id)arg1;
-- (void)_takeSnapshotsFromContext:(id)arg1 forRemoteContextSaveNotification:(id)arg2 usingObjectIDs:(BOOL)arg3;
+- (void)_takeSnapshotsFromContext:(id)arg1 forRemoteContextSaveNotification:(id)arg2 usingObjectIDs:(bool)arg3;
 - (id)_toOneRelationshipsOfInterestForObject:(id)arg1;
 - (void)_unregisterForCameraPreviewWellChanges;
 - (void)addAssetChangeObserver:(id)arg1;
@@ -123,10 +123,10 @@
 - (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id)arg2;
 - (void)inflightAssetsAlbumWillChange:(id)arg1;
 - (id)init;
-- (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3;
-- (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3 isCoalescedEvent:(BOOL)arg4;
-- (void)managedObjectContextWasOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(BOOL)arg3;
-- (void)managedObjectContextWillBeOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(BOOL)arg3;
+- (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(bool)arg3;
+- (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(bool)arg3 isCoalescedEvent:(bool)arg4;
+- (void)managedObjectContextWasOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(bool)arg3;
+- (void)managedObjectContextWillBeOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(bool)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)postShouldReloadNotification;
 - (void)processContextDidChangeNotification:(id)arg1;

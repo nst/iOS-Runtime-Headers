@@ -10,8 +10,8 @@
 }
 
 @property(retain) GEOAddress * address;
-@property(readonly) BOOL hasAddress;
-@property(readonly) BOOL hasLocale;
+@property(readonly) bool hasAddress;
+@property(readonly) bool hasLocale;
 @property(retain) NSString * locale;
 
 - (id)address;
@@ -20,13 +20,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddress;
-- (BOOL)hasLocale;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddress;
+- (bool)hasLocale;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)locale;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)writeTo:(id)arg1;

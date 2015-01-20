@@ -10,7 +10,7 @@
 @property(retain) NSString * address;
 @property(copy) NSString * addressBookEntityID;
 @property(retain) CLLocation * geoLocation;
-@property(readonly) BOOL isStructured;
+@property(readonly) bool isStructured;
 @property double radius;
 @property(retain) NSString * routing;
 @property(retain) NSString * title;
@@ -27,8 +27,8 @@
 - (id)geoLocation;
 - (id)humanReadableContactString;
 - (id)init;
-- (BOOL)isEqualToLocation:(id)arg1;
-- (BOOL)isStructured;
+- (bool)isEqualToLocation:(id)arg1;
+- (bool)isStructured;
 - (double)radius;
 - (id)routing;
 - (void)setAddress:(id)arg1;

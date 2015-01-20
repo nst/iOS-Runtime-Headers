@@ -6,26 +6,26 @@
 
 @interface SCNJitterer : NSObject {
     <SCNJittererDelegate> *_delegate;
-    BOOL _enabled;
-    unsigned int _iteration;
-    BOOL _jitteringSupported;
+    unsigned long long _iteration;
     NSObject<OS_dispatch_source> *_restartSource;
-    BOOL _restartSourceIsSuspended;
-    unsigned int _state;
+    unsigned long long _state;
+    bool_enabled;
+    bool_jitteringSupported;
+    bool_restartSourceIsSuspended;
 }
 
-@property(getter=isEnabled) BOOL enabled;
+@property(getter=isEnabled) bool enabled;
 
 + (void)initialize;
 
 - (void)dealloc;
 - (void)delegateWillDie;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)isAborting;
-- (BOOL)isEnabled;
+- (bool)isAborting;
+- (bool)isEnabled;
 - (void)jitter;
 - (void)restart;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)stopIfNeeded;
 - (void)update;
 

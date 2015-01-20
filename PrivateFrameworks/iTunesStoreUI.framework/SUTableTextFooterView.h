@@ -7,28 +7,28 @@
 @interface SUTableTextFooterView : UIView {
     UIFont *_font;
     UIColor *_shadowColor;
-    int _textAlignment;
+    long long _textAlignment;
     UIColor *_textColor;
     NSArray *_textLines;
 }
 
 @property(retain) UIFont * font;
 @property(retain) UIColor * shadowColor;
-@property int textAlignment;
+@property long long textAlignment;
 @property(retain) UIColor * textColor;
 @property(retain) NSArray * textLines;
 
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)font;
 - (void)setFont:(id)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTextLines:(id)arg1;
 - (id)shadowColor;
 - (void)sizeToFit;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (id)textColor;
 - (id)textLines;
 

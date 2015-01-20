@@ -5,6 +5,6 @@
 @interface _UIBackgroundHitTestWindow : UIWindow {
 }
 
-+ (BOOL)_isSystemWindow;
++ (bool)_isSystemWindow;
 
 @end

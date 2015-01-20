@@ -3,15 +3,15 @@
  */
 
 @interface ABPropertyEmailAddressCell : ABPropertySimpleTransportCell {
-    BOOL _VIP;
+    bool_VIP;
 }
 
-@property(getter=isVIP) BOOL VIP;
+@property(getter=isVIP) bool VIP;
 
-- (BOOL)isVIP;
-- (void)setVIP:(BOOL)arg1;
-- (BOOL)shouldPerformDefaultAction;
-- (BOOL)shouldShowStar;
+- (bool)isVIP;
+- (void)setVIP:(bool)arg1;
+- (bool)shouldPerformDefaultAction;
+- (bool)shouldShowStar;
 - (void)updateTransportButtons;
 
 @end

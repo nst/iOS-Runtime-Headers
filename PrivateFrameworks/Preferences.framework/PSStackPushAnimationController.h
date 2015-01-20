@@ -9,63 +9,63 @@
 @class NSArray, NSMutableArray, NSString, UINavigationController;
 
 @interface PSStackPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
-    int _animationPreset;
+    long long _animationPreset;
     NSMutableArray *_animationsToRunAlongsideToVC;
     id _completionBlock;
     double _completionStagger;
-    BOOL _hasStartedAnimation;
     UINavigationController *_navigationController;
     double _pushDuration;
     NSArray *_snapshots;
-    float _springDamping;
+    double _springDamping;
     double _startStagger;
     NSArray *_viewControllers;
+    bool_hasStartedAnimation;
 }
 
-@property int animationPreset;
+@property long long animationPreset;
 @property(copy) id completionBlock;
 @property double completionStagger;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property UINavigationController * navigationController;
 @property double pushDuration;
-@property float springDamping;
+@property double springDamping;
 @property double startStagger;
 @property(readonly) Class superclass;
 @property(retain) NSArray * viewControllers;
 
-+ (id)_animationParametersForPreset:(int)arg1;
++ (id)_animationParametersForPreset:(long long)arg1;
 + (id)_snapshotOfViewController:(id)arg1 withNavigationBar:(id)arg2 prevViewController:(id)arg3;
 + (id)controllerWithViewControllerStack:(id)arg1 navigationController:(id)arg2;
 + (void)resetDefaultAnimationParameters;
-+ (void)setDefaultAnimationPreset:(int)arg1;
++ (void)setDefaultAnimationPreset:(long long)arg1;
 
 - (double)_actualDuration;
-- (void)_addAnimation:(id)arg1 forViewAtIndex:(unsigned int)arg2 count:(unsigned int)arg3;
+- (void)_addAnimation:(id)arg1 forViewAtIndex:(unsigned long long)arg2 count:(unsigned long long)arg3;
 - (double)_desiredDuration;
 - (void)_loadDefaultValues;
-- (BOOL)_shouldSkipFirstPush;
+- (bool)_shouldSkipFirstPush;
 - (id)_valueForAnimationParameter:(id)arg1;
 - (void)animateAlongsideToViewController:(id)arg1;
 - (void)animateTransition:(id)arg1;
-- (void)animationEnded:(BOOL)arg1;
-- (int)animationPreset;
+- (void)animationEnded:(bool)arg1;
+- (long long)animationPreset;
 - (id)completionBlock;
 - (double)completionStagger;
 - (void)dealloc;
 - (id)init;
 - (id)navigationController;
 - (double)pushDuration;
-- (void)setAnimationPreset:(int)arg1;
+- (void)setAnimationPreset:(long long)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setCompletionStagger:(double)arg1;
 - (void)setNavigationController:(id)arg1;
 - (void)setPushDuration:(double)arg1;
-- (void)setSpringDamping:(float)arg1;
+- (void)setSpringDamping:(double)arg1;
 - (void)setStartStagger:(double)arg1;
 - (void)setViewControllers:(id)arg1;
-- (float)springDamping;
+- (double)springDamping;
 - (double)startStagger;
 - (double)transitionDuration:(id)arg1;
 - (id)viewControllers;

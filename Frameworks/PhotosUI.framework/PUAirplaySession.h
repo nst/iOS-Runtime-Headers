@@ -6,10 +6,10 @@
 
 @interface PUAirplaySession : NSObject {
     PUAirplayRoute *_airplayRoute;
-    BOOL _isAuthenticating;
     MediaControlClient *_mediaControlClient;
     NSString *_password;
     NSDictionary *_slideshowTransitions;
+    bool_isAuthenticating;
 }
 
 @property(readonly) PUAirplayRoute * airplayRoute;

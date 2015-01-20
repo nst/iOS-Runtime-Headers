@@ -14,7 +14,7 @@
 @property UIAlertView * representedAlert;
 
 - (void)_buttonTapped:(id)arg1;
-- (id)_buttonWithTitle:(id)arg1 index:(int)arg2;
+- (id)_buttonWithTitle:(id)arg1 index:(long long)arg2;
 - (void)_dismissIfCapable;
 - (id)_messageAttributedString;
 - (id)_messageAttributedStringSmallText;

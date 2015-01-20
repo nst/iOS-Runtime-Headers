@@ -6,11 +6,11 @@
 
 @interface SBManagerClient : NSObject <SBManagerClientInterface> {
     int _clientType;
-    BOOL _connected;
     <SBManagerClientDelegate> *_delegate;
     struct dispatch_queue_s { } *_queue;
     NSXPCConnection *_serverConnection;
-    BOOL _serverIsExiting;
+    bool_connected;
+    bool_serverIsExiting;
 }
 
 @property int clientType;
@@ -19,7 +19,7 @@
 
 - (void)_invalidateConnection;
 - (id)_remoteInterface;
-- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
+- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(bool)arg2;
 - (id)_remoteInterfaceWithErrorHandler:(id)arg1;
 - (void)_setClientType;
 - (void)checkForSoftwareBehaviorBundleUpdate:(id)arg1;

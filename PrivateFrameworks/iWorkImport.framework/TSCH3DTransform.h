@@ -79,8 +79,8 @@
                 float q; 
             } ; 
         } value[4]; 
+    boolmDirty;
     } mCenter;
-    BOOL mDirty;
     } mMatrix;
     } mRotation;
     } mScaleFactor;

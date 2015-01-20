@@ -6,7 +6,7 @@
 
 @interface GKRequestIdentifier : NSObject <NSCopying> {
     NSArray *_arguments;
-    unsigned int _savedHash;
+    unsigned long long _savedHash;
     SEL _selector;
 }
 
@@ -16,8 +16,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithInvocation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

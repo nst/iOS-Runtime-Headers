@@ -5,23 +5,23 @@
 @class NSString, SSItemOfferDeviceError;
 
 @interface SSItemOfferDevice : NSObject {
-    int _deviceIdentifier;
+    long long _deviceIdentifier;
     SSItemOfferDeviceError *_incompatibleDeviceError;
     SSItemOfferDeviceError *_incompatibleSystemError;
     NSString *_minimumProductVersion;
 }
 
-@property(readonly) int deviceIdentifier;
+@property(readonly) long long deviceIdentifier;
 @property(readonly) SSItemOfferDeviceError * incompatibleDeviceError;
 @property(readonly) SSItemOfferDeviceError * incompatibleSystemError;
 @property(readonly) NSString * minimumProductVersion;
 
 - (void)dealloc;
-- (int)deviceIdentifier;
+- (long long)deviceIdentifier;
 - (id)incompatibleDeviceError;
 - (id)incompatibleSystemError;
 - (id)init;
-- (id)initWithDeviceIdentifier:(int)arg1;
+- (id)initWithDeviceIdentifier:(long long)arg1;
 - (id)initWithOfferDeviceDicitionary:(id)arg1;
 - (id)minimumProductVersion;
 

@@ -30,15 +30,15 @@
 - (id)getProperty:(id)arg1 forTrace:(id)arg2;
 - (void)getRAT:(id*)arg1 preferredRAT:(id*)arg2 campedRAT:(id*)arg3;
 - (id)getRemotePortNameWithLocalName:(id)arg1;
-- (void)getSignalStrength:(int*)arg1 asPercentage:(int*)arg2 withBars:(int*)arg3;
+- (void)getSignalStrength:(long long*)arg1 asPercentage:(long long*)arg2 withBars:(long long*)arg3;
 - (id)humanReadableCallStatus:(int)arg1;
 - (id)humanReadableRATName:(struct __CFString { }*)arg1;
 - (id)init;
 - (void)invalidate;
 - (id)observerAgent;
 - (void)registerCallback:(int (*)())arg1 forTelephonyNotification:(struct __CFString { }*)arg2;
-- (BOOL)requestBasebandCoreDump:(id)arg1;
-- (BOOL)requestBasebandStateDump:(id)arg1;
+- (bool)requestBasebandCoreDump:(id)arg1;
+- (bool)requestBasebandStateDump:(id)arg1;
 - (void)requestBasebandStateDurationReport;
 - (void)setObserverAgent:(id)arg1;
 - (void)teardownConnection;

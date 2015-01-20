@@ -12,7 +12,7 @@
 @interface WKWebProcessPlugInPageGroup : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPageGroupProxy> { 
         struct type { 
-            unsigned char __lx[52]; 
+            unsigned char __lx[80]; 
         } data; 
     } _bundlePageGroup;
 }
@@ -20,7 +20,7 @@
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * identifier;
 @property(readonly) Class superclass;
 

@@ -5,7 +5,7 @@
 @interface _UIAlertControllerActionSheetCompactPresentationController : _UIAlertControllerPresentationController {
 }
 
-- (int)attributeToAlignAlertControllerViewBy;
-- (float)constantForAligningAlertControllerToAvailableSpace;
+- (long long)attributeToAlignAlertControllerViewBy;
+- (double)constantForAligningAlertControllerToAvailableSpace;
 
 @end

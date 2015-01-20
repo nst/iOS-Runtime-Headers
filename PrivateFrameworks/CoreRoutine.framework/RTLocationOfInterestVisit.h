@@ -12,10 +12,10 @@
 @property(readonly) NSDate * entryTime;
 @property(readonly) NSDate * exitTime;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_enteredAndExitedOnSameDay;
+- (bool)_enteredAndExitedOnSameDay;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entryTime;

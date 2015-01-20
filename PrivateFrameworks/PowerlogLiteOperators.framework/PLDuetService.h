@@ -72,7 +72,7 @@
 - (void)flushInMemoryStartStopEvents:(id)arg1 withDict:(id)arg2;
 - (id)gCddClientConnection;
 - (id)getBundleIDsFromContainerID:(unsigned long long)arg1 clientID:(unsigned long long)arg2;
-- (id)getDuetForecast:(unsigned long long)arg1 clientID:(unsigned long long)arg2 forHistoryWindow:(id)arg3 forecastType:(int)arg4 maximumElements:(unsigned long long)arg5 error:(id*)arg6;
+- (id)getDuetForecast:(unsigned long long)arg1 clientID:(unsigned long long)arg2 forHistoryWindow:(id)arg3 forecastType:(long long)arg4 maximumElements:(unsigned long long)arg5 error:(id*)arg6;
 - (id)getMatchingCoreDuetEvent:(id)arg1 inTable:(id)arg2;
 - (void)handleDuetAccountingTimer:(id)arg1;
 - (id)init;

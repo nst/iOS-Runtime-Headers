@@ -16,14 +16,14 @@
 
 - (id)controllingTM;
 - (void)dealloc;
-- (BOOL)hasRegisteredTrackerManipulator:(id)arg1;
+- (bool)hasRegisteredTrackerManipulator:(id)arg1;
 - (id)init;
 - (void)operationDidEnd;
 - (void)operationWillEnd;
 - (void)p_notifyControlChange;
 - (void)registerTrackerManipulator:(id)arg1;
-- (BOOL)relinquishTrackerManipulatorControl:(id)arg1;
-- (BOOL)takeControlWithTrackerManipulator:(id)arg1;
+- (bool)relinquishTrackerManipulatorControl:(id)arg1;
+- (bool)takeControlWithTrackerManipulator:(id)arg1;
 - (void)unregisterTrackerManipulator:(id)arg1;
 
 @end

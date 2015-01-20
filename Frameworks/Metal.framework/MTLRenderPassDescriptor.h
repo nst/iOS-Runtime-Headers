@@ -8,7 +8,7 @@
     struct MTLRenderPassDescriptorPrivate { 
         MTLRenderPassColorAttachmentDescriptorArray *attachments; 
         <MTLBuffer> *visibilityResultBuffer; 
-        BOOL ditherEnabled; 
+        boolditherEnabled; 
     } _private;
 }
 
@@ -19,20 +19,20 @@
 
 + (id)renderPassDescriptor;
 
-- (const struct MTLRenderPassDescriptorPrivate { id x1; id x2; BOOL x3; }*)_descriptorPrivate;
+- (const struct MTLRenderPassDescriptorPrivate { id x1; id x2; boolx3; }*)_descriptorPrivate;
 - (id)colorAttachments;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)depthAttachment;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setDepthAttachment:(id)arg1;
 - (void)setStencilAttachment:(id)arg1;
 - (void)setVisibilityResultBuffer:(id)arg1;
 - (id)stencilAttachment;
-- (BOOL)validate:(id)arg1 width:(unsigned int*)arg2 height:(unsigned int*)arg3;
+- (bool)validate:(id)arg1 width:(unsigned long long*)arg2 height:(unsigned long long*)arg3;
 - (id)visibilityResultBuffer;
 
 @end

@@ -5,7 +5,6 @@
 @class <SKUIIPhoneProductPageDelegate>, NSOperationQueue, NSString, NSURL, NSURLRequest, SKUIIncompatibleAppViewController, SKUIItem, SKUILoadProductPageOperation, SKUIMessageBanner, SKUIMetricsController, SKUINetworkErrorViewController, SKUIProductPage, SKUIProductPageDetailsViewController, SKUIProductPageHeaderViewController, SKUIProductPagePlaceholderViewController, SKUIProductPageReviewsViewController, SKUISwooshArrayViewController, SSMetricsPageEvent, UIViewController<SKUIProductPageChildViewController>;
 
 @interface SKUIIPhoneProductPageViewController : SKUIViewController <SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageHeaderViewDelegate, SKUIProductPageChildViewControllerDelegate, UIScrollViewDelegate, SKStoreProductViewControllerDelegate, SKUIMessageBannerDelegate> {
-    BOOL _askPermission;
     SKUIMessageBanner *_banner;
     NSString *_bannerText;
     UIViewController<SKUIProductPageChildViewController> *_childViewController;
@@ -25,18 +24,19 @@
     SKUIProductPagePlaceholderViewController *_relatedPlaceholderViewController;
     SKUISwooshArrayViewController *_relatedViewController;
     SKUIProductPageReviewsViewController *_reviewsViewController;
-    int _sectionIndex;
+    long long _sectionIndex;
     NSURLRequest *_urlRequest;
-    BOOL _wantsActivityViewController;
+    bool_askPermission;
+    bool_wantsActivityViewController;
 }
 
 @property(readonly) NSURL * URL;
-@property BOOL askPermission;
+@property bool askPermission;
 @property(copy) NSString * bannerText;
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUIIPhoneProductPageDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) SKUIItem * item;
 @property(readonly) SKUIProductPage * productPage;
 @property(readonly) Class superclass;
@@ -49,7 +49,7 @@
 - (void)_hideBanner;
 - (id)_initSKUIIPhoneProductPageViewController;
 - (void)_invalidateChildViewControllers;
-- (BOOL)_isIncompatibleItem;
+- (bool)_isIncompatibleItem;
 - (id)_loadingViewController;
 - (void)_metricsEnterEventNotification:(id)arg1;
 - (void)_presentHTMLProductPage;
@@ -61,21 +61,21 @@
 - (void)_setHeaderPositionForChildViewController:(id)arg1;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setProductPage:(id)arg1 error:(id)arg2;
-- (void)_setSectionIndexWithFragment:(int)arg1;
+- (void)_setSectionIndexWithFragment:(long long)arg1;
 - (void)_shareButtonAction:(id)arg1;
 - (void)_showActivityViewController;
 - (void)_showBanner;
 - (void)_showError:(id)arg1;
-- (id)_viewControllerForSectionIndex:(unsigned int)arg1;
+- (id)_viewControllerForSectionIndex:(unsigned long long)arg1;
 - (id)activeMetricsController;
-- (BOOL)askPermission;
+- (bool)askPermission;
 - (void)askPermissionBannerDidSelect:(id)arg1;
 - (id)bannerText;
 - (void)configureMetricsWithPageEvent:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (id)initWithItem:(id)arg1;
 - (id)initWithItemIdentifier:(long long)arg1;
 - (id)initWithProductPage:(id)arg1;
@@ -92,16 +92,16 @@
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
 - (void)productPageChildViewControllerDidScroll:(id)arg1;
 - (void)productPageHeaderView:(id)arg1 didReloadItemOffer:(id)arg2;
-- (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(int)arg2;
+- (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(long long)arg2;
 - (void)productPageHeaderView:(id)arg1 didSelectURL:(id)arg2;
 - (void)productPageHeaderViewDidWantAskPermissionBanner:(id)arg1;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)reloadData;
-- (void)setAskPermission:(BOOL)arg1;
+- (void)setAskPermission:(bool)arg1;
 - (void)setBannerText:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (struct CGPoint { float x1; float x2; })topContentOffset;
+- (struct CGPoint { double x1; double x2; })topContentOffset;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -6,28 +6,28 @@
 
 @interface MPUTextDrawing : NSObject {
     NSAttributedString *_attributedText;
-    float _firstBaselineOffsetFromTop;
+    double _firstBaselineOffsetFromTop;
     UIImage *_image;
-    float _lastBaselineOffsetFromBottom;
+    double _lastBaselineOffsetFromBottom;
     NSString *_text;
 }
 
 @property(copy) NSAttributedString * attributedText;
-@property float firstBaselineOffsetFromTop;
+@property double firstBaselineOffsetFromTop;
 @property(retain) UIImage * image;
-@property float lastBaselineOffsetFromBottom;
+@property double lastBaselineOffsetFromBottom;
 @property(copy) NSString * text;
 
 - (void).cxx_destruct;
 - (void)_setAttributedText:(id)arg1;
-- (void)_setFirstBaselineOffsetFromTop:(float)arg1;
+- (void)_setFirstBaselineOffsetFromTop:(double)arg1;
 - (void)_setImage:(id)arg1;
-- (void)_setLastBaselineOffsetFromBottom:(float)arg1;
+- (void)_setLastBaselineOffsetFromBottom:(double)arg1;
 - (void)_setText:(id)arg1;
 - (id)attributedText;
-- (float)firstBaselineOffsetFromTop;
+- (double)firstBaselineOffsetFromTop;
 - (id)image;
-- (float)lastBaselineOffsetFromBottom;
+- (double)lastBaselineOffsetFromBottom;
 - (id)text;
 
 @end

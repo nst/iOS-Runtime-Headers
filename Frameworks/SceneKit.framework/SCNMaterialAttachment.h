@@ -6,8 +6,8 @@
 
 @interface SCNMaterialAttachment : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     void *context;
     unsigned int glID;
     NSDictionary *options;
@@ -18,7 +18,7 @@
 @property void* context;
 @property unsigned int glID;
 @property(copy) NSDictionary * options;
-@property struct CGSize { float x1; float x2; } size;
+@property struct CGSize { double x1; double x2; } size;
 @property unsigned int target;
 
 - (void*)context;
@@ -28,9 +28,9 @@
 - (void)setContext:(void*)arg1;
 - (void)setGlID:(unsigned int)arg1;
 - (void)setOptions:(id)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTarget:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (unsigned int)target;
 
 @end

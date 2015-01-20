@@ -5,17 +5,17 @@
 @class SBKTransactionController;
 
 @interface SBKSimpleTransactionRequestHandler : SBKRequestHandler {
-    BOOL _canceled;
     SBKTransactionController *_transactionController;
+    bool_canceled;
 }
 
-@property(readonly) BOOL canceled;
+@property(readonly) bool canceled;
 @property(readonly) SBKTransactionController * transactionController;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)cancelWithError:(id)arg1;
-- (BOOL)canceled;
+- (bool)canceled;
 - (id)initWithBagContext:(id)arg1;
 - (void)scheduleTransaction:(id)arg1 finishedBlock:(id)arg2;
 - (void)timeout;

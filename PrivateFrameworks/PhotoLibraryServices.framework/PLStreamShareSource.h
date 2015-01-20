@@ -7,24 +7,24 @@
 @interface PLStreamShareSource : NSObject {
     NSString *_fileExtension;
     NSData *_mediaData;
-    int _mediaType;
+    long long _mediaType;
     NSURL *_mediaURL;
 }
 
 @property(retain) NSString * fileExtension;
 @property(retain) NSData * mediaData;
-@property int mediaType;
+@property long long mediaType;
 @property(retain) NSURL * mediaURL;
 
 - (id)fileExtension;
 - (id)initWithDictionary:(id)arg1;
 - (id)mediaData;
-- (int)mediaType;
+- (long long)mediaType;
 - (id)mediaURL;
 - (id)serializedDictionary;
 - (void)setFileExtension:(id)arg1;
 - (void)setMediaData:(id)arg1;
-- (void)setMediaType:(int)arg1;
+- (void)setMediaType:(long long)arg1;
 - (void)setMediaURL:(id)arg1;
 
 @end

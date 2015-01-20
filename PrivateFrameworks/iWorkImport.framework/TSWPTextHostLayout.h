@@ -13,7 +13,7 @@
 @property(copy,readonly) NSString * description;
 @property(retain) TSWPShapeInfo * editingShape;
 @property(readonly) TSWPShapeLayout * editingShapeLayout;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void)dealloc;

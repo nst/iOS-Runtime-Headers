@@ -7,23 +7,23 @@
 @interface CKFetchShareCommentsOperationInfo : CKOperationInfo {
     CKCommentCursor *_cursor;
     CKCommentQuery *_query;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
 }
 
 @property(retain) CKCommentCursor * cursor;
 @property(retain) CKCommentQuery * query;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cursor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)query;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setCursor:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 
 @end

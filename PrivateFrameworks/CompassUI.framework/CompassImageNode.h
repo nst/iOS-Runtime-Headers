@@ -7,12 +7,12 @@
 @interface CompassImageNode : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     NSString *_imageKey;
     CompassImageNode *_leftChild;
@@ -22,19 +22,19 @@
 
 @property(copy) NSString * imageKey;
 @property(retain) CompassImageNode * leftChild;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rect;
 @property(retain) CompassImageNode * rightChild;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)imageKey;
-- (id)insertImageWithSize:(struct CGSize { float x1; float x2; })arg1 key:(id)arg2;
+- (id)insertImageWithSize:(struct CGSize { double x1; double x2; })arg1 key:(id)arg2;
 - (id)leftChild;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rect;
 - (id)rightChild;
 - (void)setImageKey:(id)arg1;
 - (void)setLeftChild:(id)arg1;
-- (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setRightChild:(id)arg1;
 
 @end

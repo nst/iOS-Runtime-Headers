@@ -13,36 +13,36 @@
     MPUserNotification *_explicitUserNotification;
     RadioGetTracksRequest *_getTracksRequest;
     NSLock *_lock;
-    unsigned int _numberOfTracks;
+    unsigned long long _numberOfTracks;
     RadioPlaybackContext *_playbackContext;
-    int _reasonType;
+    long long _reasonType;
     RadioRequestContext *_requestContext;
     id _responseBlock;
     RadioStation *_station;
 }
 
-@property unsigned int numberOfTracks;
+@property unsigned long long numberOfTracks;
 @property(copy) RadioPlaybackContext * playbackContext;
-@property(readonly) int reasonType;
+@property(readonly) long long reasonType;
 @property(retain) RadioRequestContext * requestContext;
 @property(copy) id responseBlock;
 @property(readonly) RadioStation * station;
 
 - (void).cxx_destruct;
-- (id)_heartbeatTokenDataAllowingDelay:(BOOL)arg1 error:(id*)arg2;
-- (id)_newGetTracksRequestAllowingHeartbeatDelay:(BOOL)arg1 additionalRequestParameters:(id)arg2 returningError:(id*)arg3;
-- (id)_runFullGetTracksProcessAllowingNoAvailableVersionDialog:(BOOL)arg1 additionalRequestParameters:(id)arg2 returningError:(id*)arg3;
-- (id)_runRequestAllowingHeartbeatDelay:(BOOL)arg1 additionalRequestParameters:(id)arg2 returningError:(id*)arg3;
+- (id)_heartbeatTokenDataAllowingDelay:(bool)arg1 error:(id*)arg2;
+- (id)_newGetTracksRequestAllowingHeartbeatDelay:(bool)arg1 additionalRequestParameters:(id)arg2 returningError:(id*)arg3;
+- (id)_runFullGetTracksProcessAllowingNoAvailableVersionDialog:(bool)arg1 additionalRequestParameters:(id)arg2 returningError:(id*)arg3;
+- (id)_runRequestAllowingHeartbeatDelay:(bool)arg1 additionalRequestParameters:(id)arg2 returningError:(id*)arg3;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithStation:(id)arg1 reasonType:(int)arg2;
+- (id)initWithStation:(id)arg1 reasonType:(long long)arg2;
 - (void)main;
-- (unsigned int)numberOfTracks;
+- (unsigned long long)numberOfTracks;
 - (id)playbackContext;
-- (int)reasonType;
+- (long long)reasonType;
 - (id)requestContext;
 - (id)responseBlock;
-- (void)setNumberOfTracks:(unsigned int)arg1;
+- (void)setNumberOfTracks:(unsigned long long)arg1;
 - (void)setPlaybackContext:(id)arg1;
 - (void)setRequestContext:(id)arg1;
 - (void)setResponseBlock:(id)arg1;

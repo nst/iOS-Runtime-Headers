@@ -13,14 +13,14 @@
     BWNodeOutput *_output;
     NSMutableArray *_outputs;
     <BWNodeRenderDelegate> *_renderDelegate;
-    BOOL _singleInput;
-    BOOL _singleOutput;
-    BOOL _supportsConcurrentLiveInputCallbacks;
-    BOOL _supportsLiveReconfiguration;
+    bool_singleInput;
+    bool_singleOutput;
+    bool_supportsConcurrentLiveInputCallbacks;
+    bool_supportsLiveReconfiguration;
 }
 
 @property BWGraph * graph;
-@property(readonly) BOOL hasNonLiveConfigurationChanges;
+@property(readonly) bool hasNonLiveConfigurationChanges;
 @property(readonly) BWNodeInput * input;
 @property(readonly) NSArray * inputs;
 @property(copy) NSString * name;
@@ -29,15 +29,15 @@
 @property(readonly) BWNodeOutput * output;
 @property(readonly) NSArray * outputs;
 @property <BWNodeRenderDelegate> * renderDelegate;
-@property BOOL supportsConcurrentLiveInputCallbacks;
-@property BOOL supportsLiveReconfiguration;
+@property bool supportsConcurrentLiveInputCallbacks;
+@property bool supportsLiveReconfiguration;
 
 + (void)initialize;
 
 - (void)_handleMessage:(id)arg1 fromInput:(id)arg2;
 - (void)addInput:(id)arg1;
 - (void)addOutput:(id)arg1;
-- (BOOL)allInputsHaveReachedState:(int)arg1;
+- (bool)allInputsHaveReachedState:(int)arg1;
 - (long long)configurationID;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
@@ -47,7 +47,7 @@
 - (id)graph;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
-- (BOOL)hasNonLiveConfigurationChanges;
+- (bool)hasNonLiveConfigurationChanges;
 - (id)init;
 - (id)input;
 - (id)inputs;
@@ -64,9 +64,9 @@
 - (void)setGraph:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setRenderDelegate:(id)arg1;
-- (void)setSupportsConcurrentLiveInputCallbacks:(BOOL)arg1;
-- (void)setSupportsLiveReconfiguration:(BOOL)arg1;
-- (BOOL)supportsConcurrentLiveInputCallbacks;
-- (BOOL)supportsLiveReconfiguration;
+- (void)setSupportsConcurrentLiveInputCallbacks:(bool)arg1;
+- (void)setSupportsLiveReconfiguration:(bool)arg1;
+- (bool)supportsConcurrentLiveInputCallbacks;
+- (bool)supportsLiveReconfiguration;
 
 @end

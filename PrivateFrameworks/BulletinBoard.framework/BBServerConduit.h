@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)clientInterface;
@@ -22,6 +22,6 @@
 - (void)invalidate;
 - (void)sendMessageToDataProviderSectionID:(id)arg1 name:(id)arg2 userInfo:(id)arg3;
 - (void)weeAppWithBundleID:(id)arg1 getHiddenFromUser:(id)arg2;
-- (void)weeAppWithBundleID:(id)arg1 setHiddenFromUser:(BOOL)arg2;
+- (void)weeAppWithBundleID:(id)arg1 setHiddenFromUser:(bool)arg2;
 
 @end

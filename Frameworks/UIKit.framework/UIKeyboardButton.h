@@ -3,12 +3,12 @@
  */
 
 @interface UIKeyboardButton : UIButton {
-    int _keyboardButtonStyle;
+    long long _keyboardButtonStyle;
 }
 
-@property(readonly) int keyboardButtonStyle;
+@property(readonly) long long keyboardButtonStyle;
 
-- (id)initWithKeyboardButtonStyle:(int)arg1;
-- (int)keyboardButtonStyle;
+- (id)initWithKeyboardButtonStyle:(long long)arg1;
+- (long long)keyboardButtonStyle;
 
 @end

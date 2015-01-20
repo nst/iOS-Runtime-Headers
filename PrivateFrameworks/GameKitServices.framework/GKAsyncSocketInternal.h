@@ -12,14 +12,14 @@
     id _connectedHandler;
     int _connectionSocket;
     NSMutableData *_dataToSend;
-    BOOL _invalidated;
     id _receiveDataHandler;
     NSObject<OS_dispatch_source> *_receiveSource;
     NSObject<OS_dispatch_source> *_sendSource;
-    BOOL _sendSourceSuspended;
     NSString *_socketName;
     NSObject<OS_dispatch_queue> *_syncQueue;
     NSObject<OS_dispatch_queue> *_targetQueue;
+    bool_invalidated;
+    bool_sendSourceSuspended;
 }
 
 - (void)closeConnectionNow;
@@ -35,7 +35,7 @@
 - (void)setReceiveDataHandler:(id)arg1;
 - (void)setSocketName:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
-- (BOOL)setupSourcesWithSocket:(int)arg1 receiveEventHandler:(id)arg2 sendEventHandler:(id)arg3;
+- (bool)setupSourcesWithSocket:(int)arg1 receiveEventHandler:(id)arg2 sendEventHandler:(id)arg3;
 - (id)socketName;
 - (id)targetQueue;
 - (void)tcpAttachSocketDescriptor:(int)arg1;

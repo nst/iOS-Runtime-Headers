@@ -18,7 +18,7 @@
 - (void)CA_prepareRenderValue;
 - (id)TSD_animationForKeyPath:(id)arg1 atTime:(double)arg2;
 - (double)TSD_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2;
-- (BOOL)TSD_containsAnimationForKeyPath:(id)arg1;
+- (bool)TSD_containsAnimationForKeyPath:(id)arg1;
 - (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
 - (id)animations;

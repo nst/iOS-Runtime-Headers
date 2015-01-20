@@ -5,7 +5,7 @@
 @interface UIApplicationSceneSettingsDiffInspector : FBSSceneSettingsDiffInspector {
 }
 
-- (void)_observeOtherSetting:(unsigned int)arg1 withBlock:(id)arg2;
+- (void)_observeOtherSetting:(unsigned long long)arg1 withBlock:(id)arg2;
 - (void)observeStatusBarStyleOverridesToSuppressWithBlock:(id)arg1;
 - (void)observeUnderLockWithBlock:(id)arg1;
 

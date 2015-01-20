@@ -6,7 +6,7 @@
 
 @interface PKMerchant : NSObject <NSSecureCoding> {
     NSString *_industryCategory;
-    int _industryCode;
+    long long _industryCode;
     double _locationLatitude;
     double _locationLongitude;
     unsigned long long _mapsIdentifier;
@@ -18,7 +18,7 @@
 
 @property(readonly) NSString * displayName;
 @property(copy) NSString * industryCategory;
-@property int industryCode;
+@property long long industryCode;
 @property(copy) CLLocation * location;
 @property double locationLatitude;
 @property double locationLongitude;
@@ -28,18 +28,18 @@
 @property(copy) NSString * shortName;
 @property(setter=setURL:,copy) NSURL * url;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)industryCategory;
-- (int)industryCode;
+- (long long)industryCode;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToMerchant:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToMerchant:(id)arg1;
 - (id)location;
 - (double)locationLatitude;
 - (double)locationLongitude;
@@ -47,7 +47,7 @@
 - (id)name;
 - (id)phoneNumber;
 - (void)setIndustryCategory:(id)arg1;
-- (void)setIndustryCode:(int)arg1;
+- (void)setIndustryCode:(long long)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationLatitude:(double)arg1;
 - (void)setLocationLongitude:(double)arg1;

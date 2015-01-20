@@ -6,36 +6,36 @@
 
 @interface SKUIGiftSendDateSection : SKUIGiftTableViewSection {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     NSString *_dateString;
     SKUIItem *_giftItem;
     } _headerInsets;
     SKUIGiftTableSectionHeaderView *_headerView;
     NSDate *_sendDate;
-    int _sendDateStyle;
+    long long _sendDateStyle;
 }
 
 @property(retain) SKUIItem * giftItem;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } headerInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } headerInsets;
 @property(copy) NSDate * sendDate;
-@property int sendDateStyle;
+@property long long sendDateStyle;
 
 - (void).cxx_destruct;
 - (id)_headerView;
 - (id)giftItem;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })headerInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })headerInsets;
 - (id)headerViewForTableView:(id)arg1;
-- (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
-- (int)numberOfRowsInSection;
+- (double)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
+- (long long)numberOfRowsInSection;
 - (id)sendDate;
-- (int)sendDateStyle;
+- (long long)sendDateStyle;
 - (void)setGiftItem:(id)arg1;
-- (void)setHeaderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHeaderInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSendDate:(id)arg1;
-- (void)setSendDateStyle:(int)arg1;
+- (void)setSendDateStyle:(long long)arg1;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 
 @end

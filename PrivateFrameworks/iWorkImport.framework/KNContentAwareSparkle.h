@@ -17,21 +17,21 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
++ (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (BOOL)isCharacterAwareEffect;
++ (bool)isCharacterAwareEffect;
 + (id)localizedMenuString:(int)arg1;
 + (int)rendererTypeForCapabilities:(id)arg1;
-+ (BOOL)requiresBullets;
-+ (BOOL)requiresPerspectiveTransform;
-+ (BOOL)shouldDisableMagicMoveOnText;
++ (bool)requiresBullets;
++ (bool)requiresPerspectiveTransform;
++ (bool)shouldDisableMagicMoveOnText;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(int)arg1;
 

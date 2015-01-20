@@ -6,26 +6,26 @@
     struct { 
         unsigned short category; 
         unsigned short subtype; 
-    unsigned int _end;
-    unsigned int _start;
+    unsigned long long _end;
+    unsigned long long _start;
     } _type;
 }
 
-@property(readonly) unsigned int end;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(readonly) unsigned int start;
+@property(readonly) unsigned long long end;
+@property(readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property(readonly) unsigned long long start;
 @property(readonly) struct { unsigned short x1; unsigned short x2; } type;
 
-+ (id)sliceWithType:(struct { unsigned short x1; unsigned short x2; })arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-+ (id)sliceWithType:(struct { unsigned short x1; unsigned short x2; })arg1 start:(unsigned int)arg2 end:(unsigned int)arg3;
++ (id)sliceWithType:(struct { unsigned short x1; unsigned short x2; })arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
++ (id)sliceWithType:(struct { unsigned short x1; unsigned short x2; })arg1 start:(unsigned long long)arg2 end:(unsigned long long)arg3;
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)description;
-- (unsigned int)end;
-- (id)initWithType:(struct { unsigned short x1; unsigned short x2; })arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithType:(struct { unsigned short x1; unsigned short x2; })arg1 start:(unsigned int)arg2 end:(unsigned int)arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (unsigned int)start;
+- (unsigned long long)end;
+- (id)initWithType:(struct { unsigned short x1; unsigned short x2; })arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)initWithType:(struct { unsigned short x1; unsigned short x2; })arg1 start:(unsigned long long)arg2 end:(unsigned long long)arg3;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (unsigned long long)start;
 - (struct { unsigned short x1; unsigned short x2; })type;
 
 @end

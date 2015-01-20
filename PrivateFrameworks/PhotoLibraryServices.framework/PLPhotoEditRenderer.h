@@ -19,24 +19,24 @@
     PLPhotoEditModel *_photoEditModel;
     PLPhotoEditModel *_photoEditModelInCachedEditedImage;
     CIFilter *_redEyeFilter;
-    unsigned int _renderMode;
+    unsigned long long _renderMode;
     CIFilter *_smartBWFilter;
-    float _smartBWLevelInCachedAdjustments;
+    double _smartBWLevelInCachedAdjustments;
     NSDictionary *_smartBWStatisticsInCachedAdjustments;
     CIFilter *_smartColorFilter;
-    float _smartColorLevelInCachedAdjustments;
+    double _smartColorLevelInCachedAdjustments;
     NSDictionary *_smartColorStatisticsInCachedAdjustments;
-    int _smartFiltersCubeSize;
+    long long _smartFiltersCubeSize;
     CIFilter *_smartToneFilter;
-    float _smartToneLevelInCachedAdjustments;
+    double _smartToneLevelInCachedAdjustments;
     NSDictionary *_smartToneStatisticsInCachedAdjustments;
 }
 
 @property(retain) CIImage * originalImage;
 @property(retain,readonly) CIImage * outputImage;
-@property(readonly) struct CGSize { float x1; float x2; } outputImageSize;
+@property(readonly) struct CGSize { double x1; double x2; } outputImageSize;
 @property(retain) PLPhotoEditModel * photoEditModel;
-@property unsigned int renderMode;
+@property unsigned long long renderMode;
 @property(readonly) double smartBWBaseGrain;
 @property(readonly) double smartBWBaseHue;
 @property(readonly) double smartBWBaseNeutralGamma;
@@ -45,13 +45,16 @@
 @property(readonly) double smartColorBaseCast;
 @property(readonly) double smartColorBaseContrast;
 @property(readonly) double smartColorBaseVibrancy;
-@property int smartFiltersCubeSize;
+@property long long smartFiltersCubeSize;
 @property(readonly) double smartToneBaseBlackPoint;
 @property(readonly) double smartToneBaseBrightness;
 @property(readonly) double smartToneBaseContrast;
 @property(readonly) double smartToneBaseExposure;
 @property(readonly) double smartToneBaseHighlights;
 @property(readonly) double smartToneBaseShadows;
+
++ (id)_editedImagePropertiesFromOriginalImageProperties:(id)arg1 preserveRegions:(bool)arg2;
++ (id)createImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(double)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(bool)arg4;
 
 - (id)_editedGeometryImageWithBaseImage:(id)arg1;
 - (id)_editedImage;
@@ -64,18 +67,19 @@
 - (id)_smartToneAdjustments;
 - (void)createEditedImageWithCompletion:(id)arg1;
 - (void)dealloc;
-- (void)drawEditedImageInContext:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 viewportWidth:(int)arg3 viewportHeight:(int)arg4;
+- (void)drawEditedImageInContext:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 viewportWidth:(int)arg3 viewportHeight:(int)arg4;
+- (void)generateEditedImageDataWithCompressionQuality:(double)arg1 metadataSourceImageURL:(id)arg2 completionHandler:(id)arg3;
 - (id)init;
 - (struct CGImage { }*)newEditedImage;
 - (id)originalImage;
 - (id)outputImage;
-- (struct CGSize { float x1; float x2; })outputImageSize;
+- (struct CGSize { double x1; double x2; })outputImageSize;
 - (id)photoEditModel;
-- (unsigned int)renderMode;
+- (unsigned long long)renderMode;
 - (void)setOriginalImage:(id)arg1;
 - (void)setPhotoEditModel:(id)arg1;
-- (void)setRenderMode:(unsigned int)arg1;
-- (void)setSmartFiltersCubeSize:(int)arg1;
+- (void)setRenderMode:(unsigned long long)arg1;
+- (void)setSmartFiltersCubeSize:(long long)arg1;
 - (double)smartBWBaseGrain;
 - (double)smartBWBaseHue;
 - (double)smartBWBaseNeutralGamma;
@@ -84,7 +88,7 @@
 - (double)smartColorBaseCast;
 - (double)smartColorBaseContrast;
 - (double)smartColorBaseVibrancy;
-- (int)smartFiltersCubeSize;
+- (long long)smartFiltersCubeSize;
 - (double)smartToneBaseBlackPoint;
 - (double)smartToneBaseBrightness;
 - (double)smartToneBaseContrast;

@@ -10,15 +10,15 @@
 
 @interface CKDFetchRecordVersionsRequest : CKDURLRequest {
     NSArray *_desiredKeys;
-    BOOL _isDeleted;
     NSString *_minimumVersionETag;
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDs;
     id _recordVersionsFetchedBlock;
+    bool_isDeleted;
 }
 
 @property(retain) NSArray * desiredKeys;
-@property BOOL isDeleted;
+@property bool isDeleted;
 @property(retain) NSString * minimumVersionETag;
 @property(retain) NSMutableDictionary * recordIDByRequestID;
 @property(retain) NSArray * recordIDs;
@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (id)desiredKeys;
 - (id)initWithRecordIDs:(id)arg1 desiredKeys:(id)arg2 minimumVersionETag:(id)arg3;
-- (BOOL)isDeleted;
+- (bool)isDeleted;
 - (id)minimumVersionETag;
 - (int)operationType;
 - (id)recordIDByRequestID;
@@ -38,7 +38,7 @@
 - (id)requestOperationClasses;
 - (id)requestOperations;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setIsDeleted:(BOOL)arg1;
+- (void)setIsDeleted:(bool)arg1;
 - (void)setMinimumVersionETag:(id)arg1;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDs:(id)arg1;

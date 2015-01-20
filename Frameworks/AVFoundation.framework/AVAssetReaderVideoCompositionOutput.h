@@ -16,12 +16,12 @@
 + (id)assetReaderVideoCompositionOutputWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 
 - (id)_asset;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (id)_errorForOSStatus:(long)arg1;
-- (BOOL)_prepareForReadingReturningError:(id*)arg1;
+- (bool)_enableTrackExtractionReturningError:(id*)arg1;
+- (id)_errorForOSStatus:(int)arg1;
+- (bool)_prepareForReadingReturningError:(id*)arg1;
 - (void)_setVideoComposition:(id)arg1 customVideoCompositorSession:(id)arg2;
 - (void)_setVideoComposition:(id)arg1;
-- (BOOL)alwaysCopiesSampleData;
+- (bool)alwaysCopiesSampleData;
 - (id)customVideoCompositor;
 - (void)dealloc;
 - (id)description;

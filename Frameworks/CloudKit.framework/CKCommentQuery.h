@@ -8,17 +8,17 @@
     NSString *_context;
     CKSharedItemID *_creatorID;
     NSObject<CKCommenting> *_owner;
-    int _resultsOrdering;
+    long long _resultsOrdering;
     CKShareID *_shareID;
 }
 
 @property(retain) NSString * context;
 @property(retain) CKSharedItemID * creatorID;
 @property(retain) NSObject<CKCommenting> * owner;
-@property int resultsOrdering;
+@property long long resultsOrdering;
 @property(retain) CKShareID * shareID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -30,11 +30,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithShareID:(id)arg1;
 - (id)owner;
-- (int)resultsOrdering;
+- (long long)resultsOrdering;
 - (void)setContext:(id)arg1;
 - (void)setCreatorID:(id)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setResultsOrdering:(int)arg1;
+- (void)setResultsOrdering:(long long)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
 

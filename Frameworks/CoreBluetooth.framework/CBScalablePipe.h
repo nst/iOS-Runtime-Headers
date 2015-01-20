@@ -10,26 +10,26 @@
     NSString *_name;
     NSOutputStream *_output;
     CBScalablePipeManager *_pipeManager;
-    int _priority;
-    int _type;
+    long long _priority;
+    long long _type;
 }
 
 @property(retain,readonly) CBCentral * central;
 @property(retain,readonly) NSInputStream * input;
 @property(retain,readonly) NSString * name;
 @property(retain,readonly) NSOutputStream * output;
-@property(readonly) int priority;
-@property(readonly) int type;
+@property(readonly) long long priority;
+@property(readonly) long long type;
 
 - (id)central;
 - (void)dealloc;
 - (id)description;
-- (id)initWithPipeManager:(id)arg1 central:(id)arg2 name:(id)arg3 type:(int)arg4 priority:(int)arg5 inputStream:(id)arg6 outputStream:(id)arg7;
+- (id)initWithPipeManager:(id)arg1 central:(id)arg2 name:(id)arg3 type:(long long)arg4 priority:(long long)arg5 inputStream:(id)arg6 outputStream:(id)arg7;
 - (id)input;
 - (id)name;
 - (id)output;
-- (int)priority;
+- (long long)priority;
 - (void)setOrphan;
-- (int)type;
+- (long long)type;
 
 @end

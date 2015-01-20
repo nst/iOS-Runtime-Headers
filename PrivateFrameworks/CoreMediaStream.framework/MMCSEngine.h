@@ -11,7 +11,7 @@
 
 @interface MMCSEngine : NSObject {
     struct { 
-        int version; 
+        long long version; 
         void *context; 
         int (*getFileDescriptorAndContentTypeFromItemCallback)(); 
         int (*getItemProgressCallback)(); 
@@ -20,7 +20,6 @@
         int (*putItemDoneCallback)(); 
         int (*requestCompletedCallback)(); 
     NSString *_appIDHeader;
-    BOOL _autoGenerateItemID;
     NSMutableDictionary *_autoItemIDDictionary;
     NSObject<OS_dispatch_queue> *_autoItemIDDictionaryQueue;
     NSURL *_autoItemIDPersistenceURL;
@@ -28,8 +27,6 @@
     <MMCSEngineDelegate> *_delegate;
     struct __MMCSEngine { } *_engine;
     } _engineClientContext;
-    BOOL _isDone;
-    BOOL _isMetricsGatheringEnabled;
     NSMutableDictionary *_itemIDToAssetMap;
     NSObject<OS_dispatch_queue> *_itemIDToAssetMapQueue;
     NSDictionary *_options;
@@ -38,13 +35,16 @@
     NSTimer *_threadKeepAliveTimer;
     NSURL *_workPathURL;
     NSThread *_workThread;
+    bool_autoGenerateItemID;
+    bool_isDone;
+    bool_isMetricsGatheringEnabled;
 }
 
-@property BOOL autoGenerateItemID;
+@property bool autoGenerateItemID;
 @property <MMCSEngineDelegate> * delegate;
-@property(readonly) BOOL hasOutstandingActivity;
-@property BOOL isDone;
-@property BOOL isMetricsGatheringEnabled;
+@property(readonly) bool hasOutstandingActivity;
+@property bool isDone;
+@property bool isMetricsGatheringEnabled;
 @property(retain) NSTimer * threadKeepAliveTimer;
 @property(retain) NSThread * workThread;
 
@@ -54,7 +54,7 @@
 - (void).cxx_destruct;
 - (id)_assetWithItemID:(unsigned long long)arg1;
 - (void)_doNothingTimerHandler:(id)arg1;
-- (BOOL)_getFileDescriptorAndContentTypeFromItemID:(unsigned long long)arg1 outFD:(int*)arg2 outItemType:(id*)arg3 outError:(id*)arg4;
+- (bool)_getFileDescriptorAndContentTypeFromItemID:(unsigned long long)arg1 outFD:(int*)arg2 outItemType:(id*)arg3 outError:(id*)arg4;
 - (void)_getItemDoneItemID:(unsigned long long)arg1 path:(id)arg2 requestorContext:(id)arg3 error:(id)arg4;
 - (void)_getItemProgressItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 requestorContext:(id)arg4 error:(id)arg5;
 - (void)_initItemIDPersistence;
@@ -67,29 +67,29 @@
 - (void)_removeAssetForItemID:(unsigned long long)arg1;
 - (void)_removeRequestorContext:(id)arg1;
 - (void)_requestCompletedRequestorContext:(id)arg1;
-- (BOOL)autoGenerateItemID;
+- (bool)autoGenerateItemID;
 - (void)cancelAllOperations;
 - (void)cancelOperationsWithContext:(id)arg1;
 - (id)delegate;
 - (void)getAssets:(id)arg1 requestURL:(id)arg2 DSID:(id)arg3 options:(id)arg4;
-- (BOOL)hasOutstandingActivity;
+- (bool)hasOutstandingActivity;
 - (id)initWithWorkPath:(id)arg1 appIDHeader:(id)arg2 dataClass:(id)arg3 options:(id)arg4 modes:(id)arg5;
 - (id)initWithWorkPath:(id)arg1 appIDHeader:(id)arg2 dataClass:(id)arg3 options:(id)arg4;
-- (BOOL)isActive;
-- (BOOL)isDone;
-- (BOOL)isMetricsGatheringEnabled;
+- (bool)isActive;
+- (bool)isDone;
+- (bool)isMetricsGatheringEnabled;
 - (void)performBlock:(id)arg1;
-- (void)performBlockOnWorkThread:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)performBlockOnWorkThread:(id)arg1 waitUntilDone:(bool)arg2;
 - (void)performBlockOnWorkThread:(id)arg1;
 - (void)putAssets:(id)arg1 requestURL:(id)arg2 DSID:(id)arg3 options:(id)arg4;
 - (void)registerAssetForUpload:(id)arg1 completionBlock:(id)arg2;
 - (void)registerAssets:(id)arg1 forDownloadCompletionBlock:(id)arg2;
 - (void)reregisterAssetForDownload:(id)arg1;
 - (void)reregisterAssetForUpload:(id)arg1;
-- (void)setAutoGenerateItemID:(BOOL)arg1;
+- (void)setAutoGenerateItemID:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsDone:(BOOL)arg1;
-- (void)setIsMetricsGatheringEnabled:(BOOL)arg1;
+- (void)setIsDone:(bool)arg1;
+- (void)setIsMetricsGatheringEnabled:(bool)arg1;
 - (void)setThreadKeepAliveTimer:(id)arg1;
 - (void)setWorkThread:(id)arg1;
 - (void)shutDownCompletionBlock:(id)arg1;

@@ -8,14 +8,14 @@
 + (id)sharedInstance;
 
 - (int)ambiguityState;
-- (BOOL)isAddCallAllowed;
-- (BOOL)isEndAndAnswerAllowed;
-- (BOOL)isHardPauseAvailable;
-- (BOOL)isHoldAllowed;
-- (BOOL)isHoldAndAnswerAllowed;
-- (BOOL)isMergeable;
-- (BOOL)isSendToVoicemailAllowed;
-- (BOOL)isSwappable;
-- (BOOL)isTakingCallsPrivateAllowed;
+- (bool)isAddCallAllowed;
+- (bool)isEndAndAnswerAllowed;
+- (bool)isHardPauseAvailable;
+- (bool)isHoldAllowed;
+- (bool)isHoldAndAnswerAllowed;
+- (bool)isMergeable;
+- (bool)isSendToVoicemailAllowed;
+- (bool)isSwappable;
+- (bool)isTakingCallsPrivateAllowed;
 
 @end

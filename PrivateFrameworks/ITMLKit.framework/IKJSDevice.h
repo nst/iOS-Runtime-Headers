@@ -11,7 +11,7 @@
 @property(readonly) NSString * appIdentifier;
 @property(readonly) NSString * appVersion;
 @property <IKAppDeviceConfig> * deviceConfig;
-@property(readonly) BOOL isInRetailDemoMode;
+@property(readonly) bool isInRetailDemoMode;
 @property(readonly) NSString * model;
 @property(readonly) NSNumber * pixelRatio;
 @property(readonly) NSString * productType;
@@ -28,7 +28,7 @@
 - (void)dealloc;
 - (id)deviceConfig;
 - (id)initWithAppContext:(id)arg1 deviceConfig:(id)arg2;
-- (BOOL)isInRetailDemoMode;
+- (bool)isInRetailDemoMode;
 - (id)model;
 - (id)pixelRatio;
 - (id)productType;

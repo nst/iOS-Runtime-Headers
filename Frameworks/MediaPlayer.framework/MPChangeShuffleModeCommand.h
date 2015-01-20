@@ -3,13 +3,13 @@
  */
 
 @interface MPChangeShuffleModeCommand : MPRemoteCommand {
-    unsigned int _currentShuffleType;
+    unsigned long long _currentShuffleType;
 }
 
-@property unsigned int currentShuffleType;
+@property unsigned long long currentShuffleType;
 
 - (id)_mediaRemoteCommandInfoOptions;
-- (unsigned int)currentShuffleType;
-- (void)setCurrentShuffleType:(unsigned int)arg1;
+- (unsigned long long)currentShuffleType;
+- (void)setCurrentShuffleType:(unsigned long long)arg1;
 
 @end

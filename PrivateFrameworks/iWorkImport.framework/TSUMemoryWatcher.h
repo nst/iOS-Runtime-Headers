@@ -6,8 +6,8 @@
 
 @interface TSUMemoryWatcher : NSObject {
     TSUFlushingManager *_flushingManager;
-    BOOL _going;
-    BOOL _stop;
+    bool_going;
+    bool_stop;
 }
 
 - (void)_periodicallySimulateMemoryWarning:(id)arg1;

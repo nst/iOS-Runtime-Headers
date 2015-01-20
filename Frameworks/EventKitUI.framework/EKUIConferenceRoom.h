@@ -5,26 +5,26 @@
 @class EKDirectoryLocation;
 
 @interface EKUIConferenceRoom : NSObject {
-    int _availability;
-    BOOL _availabilityRequestInProgress;
+    long long _availability;
     EKDirectoryLocation *_location;
-    BOOL _supportsAvailability;
+    bool_availabilityRequestInProgress;
+    bool_supportsAvailability;
 }
 
-@property int availability;
-@property BOOL availabilityRequestInProgress;
+@property long long availability;
+@property bool availabilityRequestInProgress;
 @property(retain) EKDirectoryLocation * location;
-@property BOOL supportsAvailability;
+@property bool supportsAvailability;
 
 - (void).cxx_destruct;
-- (int)availability;
-- (BOOL)availabilityRequestInProgress;
+- (long long)availability;
+- (bool)availabilityRequestInProgress;
 - (id)init;
 - (id)location;
-- (void)setAvailability:(int)arg1;
-- (void)setAvailabilityRequestInProgress:(BOOL)arg1;
+- (void)setAvailability:(long long)arg1;
+- (void)setAvailabilityRequestInProgress:(bool)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setSupportsAvailability:(BOOL)arg1;
-- (BOOL)supportsAvailability;
+- (void)setSupportsAvailability:(bool)arg1;
+- (bool)supportsAvailability;
 
 @end

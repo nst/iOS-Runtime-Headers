@@ -11,20 +11,20 @@
         unsigned short *directUniCharBuffer; 
         char *directCStringBuffer; 
         struct { 
-            int location; 
-            int length; 
+            long long location; 
+            long long length; 
         } rangeToBuffer; 
-        int bufferedRangeStart; 
-        int bufferedRangeEnd; 
+        long long bufferedRangeStart; 
+        long long bufferedRangeEnd; 
     unsigned int _eatOneNewline : 1;
     unsigned int _insideComment : 1;
     unsigned int _wantsPlainText : 1;
     unsigned int _noFillLevel : 30;
     struct __CFArray { } *_commandStack;
-    long _currentIndex;
+    long long _currentIndex;
     float _indentWidth;
     } _inputBuffer;
-    long _inputLength;
+    long long _inputLength;
     int _lastQuoteLevel;
     NSMutableString *_outputBuffer;
     id _outputString;
@@ -51,7 +51,7 @@
 - (void)parseParameterString:(id)arg1;
 - (int)readTokenInto:(id*)arg1;
 - (void)resetStateWithString:(id)arg1 outputString:(id)arg2;
-- (void)setWantsHTML:(BOOL)arg1;
+- (void)setWantsHTML:(bool)arg1;
 - (void)setupFontStackEntry:(struct _CommandStackEntry { struct { /* ? */ } *x1; id x2; }*)arg1;
 
 @end

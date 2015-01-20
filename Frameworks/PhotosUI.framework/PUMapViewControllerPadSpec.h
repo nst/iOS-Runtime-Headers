@@ -5,11 +5,11 @@
 @interface PUMapViewControllerPadSpec : PUMapViewControllerSpec {
 }
 
-- (BOOL)alwaysFadeRemoves;
-- (float)borderAnnotationPadding;
+- (bool)alwaysFadeRemoves;
+- (double)borderAnnotationPadding;
 - (void)configureStackView:(id)arg1;
 - (id)gridViewControllerSpec;
-- (float)stackWidth;
+- (double)stackWidth;
 - (int)thumbnailImageFormat;
 
 @end

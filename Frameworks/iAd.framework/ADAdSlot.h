@@ -11,17 +11,17 @@
 @interface ADAdSlot : NSObject <ADBannerViewInternalDelegate, NSSecureCoding> {
     id _completionHandler;
     <ADAdSlotDelegate> *_delegate;
-    BOOL _didBeginPlayback;
-    BOOL _didReportFinish;
-    BOOL _didRequest;
     NSData *_followingSongData;
-    BOOL _gatewayAdSlot;
     NSString *_identifier;
     NSMutableArray *_pendingBannerLoads;
     NSData *_previousSongData;
     NSData *_stationData;
     NSMutableArray *_visuallyDisengagedBanners;
     NSMutableArray *_visuallyEngagedBanners;
+    bool_didBeginPlayback;
+    bool_didReportFinish;
+    bool_didRequest;
+    bool_gatewayAdSlot;
 }
 
 @property(retain,readonly) NSArray * ads;
@@ -29,12 +29,12 @@
 @property(copy,readonly) NSString * debugDescription;
 @property <ADAdSlotDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property BOOL didBeginPlayback;
-@property BOOL didReportFinish;
-@property BOOL didRequest;
+@property bool didBeginPlayback;
+@property bool didReportFinish;
+@property bool didRequest;
 @property(copy) NSData * followingSongData;
-@property BOOL gatewayAdSlot;
-@property(readonly) unsigned int hash;
+@property bool gatewayAdSlot;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * identifier;
 @property(retain) NSMutableArray * pendingBannerLoads;
 @property(copy) NSData * previousSongData;
@@ -43,7 +43,7 @@
 @property(retain) NSMutableArray * visuallyDisengagedBanners;
 @property(retain) NSMutableArray * visuallyEngagedBanners;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_bannersForAds:(id)arg1;
 - (void)_considerInvokingCompletionHandler;
@@ -55,13 +55,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (BOOL)didBeginPlayback;
-- (void)didFinishPlaybackOfAds:(id)arg1 skippedCount:(int)arg2;
-- (BOOL)didReportFinish;
-- (BOOL)didRequest;
+- (bool)didBeginPlayback;
+- (void)didFinishPlaybackOfAds:(id)arg1 skippedCount:(long long)arg2;
+- (bool)didReportFinish;
+- (bool)didRequest;
 - (void)encodeWithCoder:(id)arg1;
 - (id)followingSongData;
-- (BOOL)gatewayAdSlot;
+- (bool)gatewayAdSlot;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -70,11 +70,11 @@
 - (id)previousSongData;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDidBeginPlayback:(BOOL)arg1;
-- (void)setDidReportFinish:(BOOL)arg1;
-- (void)setDidRequest:(BOOL)arg1;
+- (void)setDidBeginPlayback:(bool)arg1;
+- (void)setDidReportFinish:(bool)arg1;
+- (void)setDidRequest:(bool)arg1;
 - (void)setFollowingSongData:(id)arg1;
-- (void)setGatewayAdSlot:(BOOL)arg1;
+- (void)setGatewayAdSlot:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPendingBannerLoads:(id)arg1;
 - (void)setPreviousSongData:(id)arg1;

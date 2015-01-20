@@ -9,17 +9,17 @@
 @class NSArray, NSCondition;
 
 @interface TSUFastReadInvalidatingCache : NSObject {
+    boolmIsGenerating;
+    boolmReentrant;
     NSCondition *mCondition;
     id mGenerator;
-    BOOL mIsGenerating;
     long long mReaderCount;
-    BOOL mReentrant;
     NSArray *mToDispose;
     id mValue;
 }
 
 - (void)dealloc;
-- (id)initForReentrant:(BOOL)arg1 withGenerator:(id)arg2;
+- (id)initForReentrant:(bool)arg1 withGenerator:(id)arg2;
 - (void)invalidate;
 - (void)p_setValue:(id)arg1;
 - (id)value;

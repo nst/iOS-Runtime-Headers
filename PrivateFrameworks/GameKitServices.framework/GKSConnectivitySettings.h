@@ -16,7 +16,7 @@
 + (void)setAddress:(id)arg1 forService:(id)arg2;
 + (void)setClientOptions:(id)arg1;
 + (void)setServerAddresses:(id)arg1;
-+ (BOOL)supportsHEVCEncoding;
++ (bool)supportsHEVCEncoding;
 
 - (void)dealloc;
 - (id)init;

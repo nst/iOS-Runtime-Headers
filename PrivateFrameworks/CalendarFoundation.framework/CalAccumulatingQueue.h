@@ -17,7 +17,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_hasQueuedUpBlock;
+- (bool)_hasQueuedUpBlock;
 - (id)initWithQueue:(id)arg1 andBlock:(id)arg2 delay:(float)arg3;
 - (id)initWithQueue:(id)arg1 andBlock:(id)arg2;
 - (void)updateTagsAndExecuteBlock:(id)arg1 withContext:(id)arg2;

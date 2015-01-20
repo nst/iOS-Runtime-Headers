@@ -6,41 +6,41 @@
 
 @interface ClockManager : NSObject {
     ObjectUpdates *_localNotificationUpdates;
-    BOOL _performingUpgrade;
     NSMutableArray *_scheduledLocalNotifications;
-    BOOL ignoringNotificationPostRequests;
-    BOOL runningInAssistantPlugin;
-    BOOL runningInSpringBoard;
+    bool_performingUpgrade;
+    boolignoringNotificationPostRequests;
+    boolrunningInAssistantPlugin;
+    boolrunningInSpringBoard;
 }
 
-@property(getter=isIgnoringNotificationPostRequests) BOOL ignoringNotificationPostRequests;
-@property(getter=isRunningInAssistantPlugin) BOOL runningInAssistantPlugin;
-@property(getter=isRunningInSpringBoard) BOOL runningInSpringBoard;
+@property(getter=isIgnoringNotificationPostRequests) bool ignoringNotificationPostRequests;
+@property(getter=isRunningInAssistantPlugin) bool runningInAssistantPlugin;
+@property(getter=isRunningInSpringBoard) bool runningInSpringBoard;
 @property(readonly) NSArray * scheduledLocalNotificationsCache;
 @property(readonly) ObjectUpdates * updatesToLocalNotificationsCache;
 
 + (void)loadUserPreferences;
-+ (void)saveAndNotifyForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
++ (void)saveAndNotifyForUserPreferences:(bool)arg1 localNotifications:(bool)arg2;
 + (int)sectionFromClockAppURL:(id)arg1;
 + (id)sharedManager;
 + (id)urlForClockAppSection:(int)arg1;
 
 - (void)cancelLocalNotification:(id)arg1;
 - (void)dealloc;
-- (BOOL)discardOldVersion;
-- (BOOL)isIgnoringNotificationPostRequests;
-- (BOOL)isRunningInAssistantPlugin;
-- (BOOL)isRunningInSpringBoard;
+- (bool)discardOldVersion;
+- (bool)isIgnoringNotificationPostRequests;
+- (bool)isRunningInAssistantPlugin;
+- (bool)isRunningInSpringBoard;
 - (void)postUserPreferencesChangedNotification;
 - (void)refreshScheduledLocalNotificationsCache;
 - (void)resetUpdatesToLocalNotificationsCache;
 - (void)scheduleLocalNotification:(id)arg1;
 - (id)scheduledLocalNotificationsCache;
-- (void)setIgnoringNotificationPostRequests:(BOOL)arg1;
-- (void)setRunningInAssistantPlugin:(BOOL)arg1;
-- (void)setRunningInSpringBoard:(BOOL)arg1;
+- (void)setIgnoringNotificationPostRequests:(bool)arg1;
+- (void)setRunningInAssistantPlugin:(bool)arg1;
+- (void)setRunningInSpringBoard:(bool)arg1;
 - (id)updatesToLocalNotificationsCache;
-- (BOOL)upgrade;
-- (BOOL)upgradeIfNeverAttempted;
+- (bool)upgrade;
+- (bool)upgradeIfNeverAttempted;
 
 @end

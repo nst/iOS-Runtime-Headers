@@ -6,24 +6,24 @@
 
 @interface NEIPv4Settings : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSSecureCoding, NSCopying> {
     NSString *_address;
-    int _configMethod;
-    BOOL _overridePrimary;
+    long long _configMethod;
     NSString *_router;
     NSString *_subnetMask;
+    bool_overridePrimary;
 }
 
 @property(copy) NSString * address;
-@property int configMethod;
-@property BOOL overridePrimary;
+@property long long configMethod;
+@property bool overridePrimary;
 @property(copy) NSString * router;
 @property(copy) NSString * subnetMask;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)address;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
-- (int)configMethod;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (long long)configMethod;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1;
@@ -31,11 +31,11 @@
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)overridePrimary;
+- (bool)overridePrimary;
 - (id)router;
 - (void)setAddress:(id)arg1;
-- (void)setConfigMethod:(int)arg1;
-- (void)setOverridePrimary:(BOOL)arg1;
+- (void)setConfigMethod:(long long)arg1;
+- (void)setOverridePrimary:(bool)arg1;
 - (void)setRouter:(id)arg1;
 - (void)setSubnetMask:(id)arg1;
 - (id)subnetMask;

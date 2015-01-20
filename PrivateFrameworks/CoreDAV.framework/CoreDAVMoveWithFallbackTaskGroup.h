@@ -13,7 +13,7 @@
     NSString *_previousETag;
     NSDictionary *_responseHeaders;
     NSURL *_sourceURL;
-    BOOL _useFallback;
+    bool_useFallback;
 }
 
 @property(retain) NSString * dataContentType;
@@ -24,7 +24,7 @@
 @property(retain) NSString * previousETag;
 @property(readonly) NSDictionary * responseHeaders;
 @property(readonly) NSURL * sourceURL;
-@property BOOL useFallback;
+@property bool useFallback;
 
 - (void)_completedMoveTask:(id)arg1;
 - (void)_completedPutTask:(id)arg1;
@@ -42,9 +42,9 @@
 - (void)setDataPayload:(id)arg1;
 - (void)setOverwrite:(int)arg1;
 - (void)setPreviousETag:(id)arg1;
-- (void)setUseFallback:(BOOL)arg1;
+- (void)setUseFallback:(bool)arg1;
 - (id)sourceURL;
 - (void)startTaskGroup;
-- (BOOL)useFallback;
+- (bool)useFallback;
 
 @end

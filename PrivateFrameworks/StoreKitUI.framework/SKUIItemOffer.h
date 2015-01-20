@@ -23,9 +23,9 @@
 @property(copy,readonly) NSString * description;
 @property(readonly) long long fileSize;
 @property(readonly) NSString * fileSizeText;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSDictionary * lookupDictionary;
-@property(readonly) int offerType;
+@property(readonly) long long offerType;
 @property(readonly) float price;
 @property(readonly) Class superclass;
 @property(readonly) NSString * variantIdentifier;
@@ -46,7 +46,7 @@
 - (id)initWithOfferDictionary:(id)arg1;
 - (id)initWithRedownloadToken:(id)arg1;
 - (id)lookupDictionary;
-- (int)offerType;
+- (long long)offerType;
 - (float)price;
 - (id)variantIdentifier;
 

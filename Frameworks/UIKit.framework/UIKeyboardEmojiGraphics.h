@@ -5,12 +5,12 @@
 @interface UIKeyboardEmojiGraphics : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGGradient { } *_backgroundGradient;
     struct UIKBTheme { } *_backgroundTheme;
@@ -29,23 +29,23 @@
     struct CGColor { } *_symbolColor;
 }
 
-+ (BOOL)boldText;
-+ (unsigned char)colCount:(BOOL)arg1;
++ (bool)boldText;
++ (unsigned char)colCount:(bool)arg1;
 + (id)emojiFontAttributes;
-+ (id)emojiFontAttributesForPortrait:(BOOL)arg1;
-+ (float)emojiPageControlYOffset:(BOOL)arg1;
-+ (struct CGSize { float x1; float x2; })emojiSize:(BOOL)arg1;
-+ (id)imageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(BOOL)arg3;
-+ (BOOL)isLandscape;
-+ (struct CGPoint { float x1; float x2; })margin:(BOOL)arg1;
-+ (float)optionalDescriptionPadding:(BOOL)arg1;
-+ (struct CGPoint { float x1; float x2; })padding:(BOOL)arg1;
-+ (id)pressIndicatorViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 whiteKeyboard:(BOOL)arg2;
-+ (unsigned char)rowCount:(BOOL)arg1;
++ (id)emojiFontAttributesForPortrait:(bool)arg1;
++ (double)emojiPageControlYOffset:(bool)arg1;
++ (struct CGSize { double x1; double x2; })emojiSize:(bool)arg1;
++ (id)imageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(bool)arg3;
++ (bool)isLandscape;
++ (struct CGPoint { double x1; double x2; })margin:(bool)arg1;
++ (double)optionalDescriptionPadding:(bool)arg1;
++ (struct CGPoint { double x1; double x2; })padding:(bool)arg1;
++ (id)pressIndicatorViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 whiteKeyboard:(bool)arg2;
++ (unsigned char)rowCount:(bool)arg1;
 + (id)sharedInstance;
 
 - (id)backgroundGradientGenerator:(id)arg1;
-- (id)categoryKeyGenerator:(BOOL)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)categoryKeyGenerator:(bool)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)categoryNatureGenerator:(id)arg1;
 - (id)categoryObjectsGenerator:(id)arg1;
 - (id)categoryPeopleGenerator:(id)arg1;
@@ -59,12 +59,12 @@
 - (id)dividerGenerator:(id)arg1;
 - (id)dividerWithTheme:(struct UIKBTheme { }*)arg1;
 - (void)drawTopEdgeInContext:(struct CGContext { }*)arg1 withTheme:(struct UIKBTheme { }*)arg2;
-- (id)emojiPressedGenerator:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)generateImageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(BOOL)arg3;
+- (id)emojiPressedGenerator:(id)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)generateImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(bool)arg3;
 - (id)init;
 - (void)initializeThemes;
-- (id)keyImageWithDisplayString:(id)arg1 state:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 fontSize:(float)arg4 offset:(struct CGPoint { float x1; float x2; })arg5;
-- (id)keyImageWithDisplayString:(id)arg1 state:(int)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 fontSize:(float)arg4;
+- (id)keyImageWithDisplayString:(id)arg1 state:(int)arg2 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 fontSize:(double)arg4 offset:(struct CGPoint { double x1; double x2; })arg5;
+- (id)keyImageWithDisplayString:(id)arg1 state:(int)arg2 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 fontSize:(double)arg4;
 - (id)pageIndicatorCurrentGenerator:(id)arg1;
 - (id)pageIndicatorGenerator:(id)arg1;
 - (id)protoKeyWithDisplayString:(id)arg1;

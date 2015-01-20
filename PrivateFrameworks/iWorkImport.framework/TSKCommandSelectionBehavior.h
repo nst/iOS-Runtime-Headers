@@ -5,9 +5,9 @@
 @interface TSKCommandSelectionBehavior : TSPObject {
 }
 
-@property(readonly) BOOL modifiesUndoRedoState;
+@property(readonly) bool modifiesUndoRedoState;
 
-- (BOOL)modifiesUndoRedoState;
+- (bool)modifiesUndoRedoState;
 - (void)registerSelectionChangesForCommit;
 - (void)registerSelectionChangesForRedo;
 - (void)registerSelectionChangesForUndo;

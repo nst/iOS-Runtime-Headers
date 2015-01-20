@@ -6,18 +6,18 @@
 
 @interface SKUICollectionViewLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
     UIColor *_backgroundColor;
-    int _position;
+    long long _position;
 }
 
 @property(copy) UIColor * backgroundColor;
-@property int position;
+@property long long position;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)position;
+- (bool)isEqual:(id)arg1;
+- (long long)position;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setPosition:(int)arg1;
+- (void)setPosition:(long long)arg1;
 
 @end

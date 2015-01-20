@@ -12,11 +12,11 @@
 @property(readonly) NSArray * members;
 @property(readonly) NSDictionary * namesByLanguage;
 
-- (id)bestMatchForStyling:(struct TCFontStyling { int x1; unsigned int x2; BOOL x3; BOOL x4; int x5; })arg1;
+- (id)bestMatchForStyling:(struct TCFontStyling { int x1; unsigned int x2; BOOL x3; boolx4; int x5; })arg1;
 - (void)dealloc;
 - (id)description;
 - (id)equivalentDictionary;
-- (BOOL)fontIsDesignatedBold:(id)arg1;
+- (bool)fontIsDesignatedBold:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithNamesByLanguage:(id)arg1 members:(id)arg2;
 - (id)memberForFullName:(id)arg1;

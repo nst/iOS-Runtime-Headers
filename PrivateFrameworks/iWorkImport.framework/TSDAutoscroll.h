@@ -6,13 +6,13 @@
 
 @interface TSDAutoscroll : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
-    BOOL mActive;
-    unsigned int mCount;
+        double x; 
+        double y; 
+    boolmActive;
+    unsigned long long mCount;
     int mDirections;
     } mLastAutoscrollDelta;
     double mLastFired;
@@ -22,32 +22,32 @@
     NSTimer *mTimer;
 }
 
-@property BOOL active;
-@property unsigned int count;
+@property bool active;
+@property unsigned long long count;
 @property int directions;
-@property(readonly) struct CGPoint { float x1; float x2; } lastAutoscrollDelta;
-@property struct CGPoint { float x1; float x2; } point;
+@property(readonly) struct CGPoint { double x1; double x2; } lastAutoscrollDelta;
+@property struct CGPoint { double x1; double x2; } point;
 @property double repeatInterval;
 @property NSObject<TSDAutoscrollDelegate> * target;
 
-+ (void)startAutoscroll:(id)arg1 unscaledPoint:(struct CGPoint { float x1; float x2; })arg2;
++ (void)startAutoscroll:(id)arg1 unscaledPoint:(struct CGPoint { double x1; double x2; })arg2;
 
-- (BOOL)active;
-- (unsigned int)count;
+- (bool)active;
+- (unsigned long long)count;
 - (void)dealloc;
 - (int)directions;
 - (void)invalidate;
-- (struct CGPoint { float x1; float x2; })lastAutoscrollDelta;
-- (unsigned int)p_deltaForCount:(unsigned int)arg1;
-- (struct CGPoint { float x1; float x2; })point;
+- (struct CGPoint { double x1; double x2; })lastAutoscrollDelta;
+- (unsigned long long)p_deltaForCount:(unsigned long long)arg1;
+- (struct CGPoint { double x1; double x2; })point;
 - (double)repeatInterval;
-- (void)setActive:(BOOL)arg1;
-- (void)setCount:(unsigned int)arg1;
+- (void)setActive:(bool)arg1;
+- (void)setCount:(unsigned long long)arg1;
 - (void)setDirections:(int)arg1;
-- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRepeatInterval:(double)arg1;
 - (void)setTarget:(id)arg1;
-- (BOOL)startAutoscroll:(id)arg1 unscaledPoint:(struct CGPoint { float x1; float x2; })arg2 directions:(int)arg3 repeatInterval:(double)arg4;
+- (bool)startAutoscroll:(id)arg1 unscaledPoint:(struct CGPoint { double x1; double x2; })arg2 directions:(int)arg3 repeatInterval:(double)arg4;
 - (id)target;
 - (void)timerFired:(id)arg1;
 

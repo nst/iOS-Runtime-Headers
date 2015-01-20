@@ -6,33 +6,33 @@
 
 @interface LSPlugInKitProxy : LSBundleProxy <NSSecureCoding> {
     NSDictionary *_infoPlist;
-    BOOL _isOnSystemPartition;
     LSBundleProxy *_parentBundle;
-    unsigned long _parentBundleID;
+    unsigned int _parentBundleID;
     NSString *_pluginIdentifier;
     NSDictionary *_pluginKitDictionary;
     NSUUID *_pluginUUID;
     NSString *_protocol;
     NSDate *_registrationDate;
+    bool_isOnSystemPartition;
 }
 
 @property(readonly) LSBundleProxy * containingBundle;
 @property(readonly) NSDictionary * infoPlist;
-@property(readonly) BOOL isOnSystemPartition;
+@property(readonly) bool isOnSystemPartition;
 @property(readonly) NSString * pluginIdentifier;
 @property(readonly) NSDictionary * pluginKitDictionary;
 @property(readonly) NSUUID * pluginUUID;
 @property(readonly) NSString * protocol;
 @property(readonly) NSDate * registrationDate;
 
-+ (id)plugInKitProxyForPlugin:(unsigned long)arg1;
++ (id)plugInKitProxyForPlugin:(unsigned int)arg1;
 + (id)plugInKitProxyForUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 version:(id)arg4 bundleURL:(id)arg5;
 + (id)pluginKitProxyForIdentifier:(id)arg1;
 + (id)pluginKitProxyForURL:(id)arg1;
 + (id)pluginKitProxyForUUID:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithPlugin:(unsigned long)arg1;
+- (id)_initWithPlugin:(unsigned int)arg1;
 - (id)_initWithUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 version:(id)arg4 bundleURL:(id)arg5;
 - (id)appStoreReceiptURL;
 - (id)containingBundle;
@@ -42,8 +42,8 @@
 - (id)iconDataForVariant:(int)arg1;
 - (id)infoPlist;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isOnSystemPartition;
+- (bool)isEqual:(id)arg1;
+- (bool)isOnSystemPartition;
 - (id)localizedName;
 - (id)localizedShortName;
 - (id)pluginIdentifier;

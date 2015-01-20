@@ -6,26 +6,26 @@
 
 @interface EKObjectToOneRelation : EKObjectRelation {
     EKObject *_relatedObject;
-    BOOL _weak;
+    bool_weak;
 }
 
-- (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
+- (void)_addRelatedObject:(id)arg1 setInverse:(bool)arg2 dirty:(bool)arg3;
 - (void)_clear;
-- (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
-- (void)_setRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
+- (void)_removeRelatedObject:(id)arg1 setInverse:(bool)arg2 dirty:(bool)arg3;
+- (void)_setRelatedObject:(id)arg1 setInverse:(bool)arg2 dirty:(bool)arg3;
 - (void)_unload;
 - (id)committedValue;
 - (void)dealloc;
 - (id)description;
 - (void)didCommit;
-- (id)initWithObject:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3 weak:(BOOL)arg4;
-- (BOOL)isWeak;
+- (id)initWithObject:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3 weak:(bool)arg4;
+- (bool)isWeak;
 - (void)refresh;
 - (id)relatedObject;
 - (void)reset;
 - (void)rollback;
 - (void)setRelatedObject:(id)arg1;
 - (void)updatePersistentObject;
-- (BOOL)validate:(id*)arg1;
+- (bool)validate:(id*)arg1;
 
 @end

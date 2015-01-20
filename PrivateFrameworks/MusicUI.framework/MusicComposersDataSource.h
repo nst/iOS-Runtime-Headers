@@ -6,6 +6,6 @@
 }
 
 - (id)entityCountFormat;
-- (BOOL)showsEntityCountFooter;
+- (bool)showsEntityCountFooter;
 
 @end

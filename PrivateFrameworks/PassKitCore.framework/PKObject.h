@@ -11,10 +11,10 @@
     PKDisplayProfile *_displayProfile;
     PKImageSet *_imageSets[5];
     NSData *_manifestHash;
-    float _preferredImageScale;
+    double _preferredImageScale;
     NSString *_preferredImageSuffix;
-    int _settings;
-    int _shareCount;
+    long long _settings;
+    long long _shareCount;
     NSString *_uniqueID;
     NSURL *_webServiceURL;
 }
@@ -26,17 +26,17 @@
 @property(retain) PKDisplayProfile * displayProfile;
 @property(copy) NSData * manifestHash;
 @property(retain,readonly) NSDate * modificationDate;
-@property float preferredImageScale;
+@property double preferredImageScale;
 @property(retain) NSString * preferredImageSuffix;
-@property(readonly) BOOL remoteAssetsDownloaded;
+@property(readonly) bool remoteAssetsDownloaded;
 @property(retain,readonly) NSData * serializedFileWrapper;
-@property int settings;
-@property int shareCount;
+@property long long settings;
+@property long long shareCount;
 @property(copy) NSString * uniqueID;
 @property(copy) NSURL * webServiceURL;
 
-+ (BOOL)isValidObjectWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)isValidObjectWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
++ (bool)supportsSecureCoding;
 
 - (id)allImageSetsLoadedIfNecessary;
 - (id)archiveData;
@@ -52,7 +52,7 @@
 - (void)flushFormattedFieldValues;
 - (void)flushLoadedContent;
 - (void)flushLoadedImageSets;
-- (id)imageSetLoadedIfNeeded:(int)arg1;
+- (id)imageSetLoadedIfNeeded:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
@@ -60,21 +60,21 @@
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2;
 - (id)initWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
-- (BOOL)isContentLoaded;
-- (BOOL)isImageSetLoaded:(int)arg1;
-- (BOOL)isImageSetType:(int)arg1 equalToImageSetTypeFromObject:(id)arg2;
+- (bool)isContentLoaded;
+- (bool)isImageSetLoaded:(long long)arg1;
+- (bool)isImageSetType:(long long)arg1 equalToImageSetTypeFromObject:(id)arg2;
 - (void)loadContentAsyncWithCompletion:(id)arg1;
 - (void)loadContentSync;
-- (void)loadImageSetAsync:(int)arg1 preheat:(BOOL)arg2 withCompletion:(id)arg3;
-- (void)loadImageSetSync:(int)arg1 preheat:(BOOL)arg2;
+- (void)loadImageSetAsync:(long long)arg1 preheat:(bool)arg2 withCompletion:(id)arg3;
+- (void)loadImageSetSync:(long long)arg1 preheat:(bool)arg2;
 - (id)localizedString:(id)arg1;
 - (id)manifestHash;
 - (id)modificationDate;
 - (void)noteShared;
-- (float)preferredImageScale;
+- (double)preferredImageScale;
 - (id)preferredImageSuffix;
-- (void)reloadDisplayProfileOfType:(int)arg1;
-- (BOOL)remoteAssetsDownloaded;
+- (void)reloadDisplayProfileOfType:(long long)arg1;
+- (bool)remoteAssetsDownloaded;
 - (void)requestUpdateWithCompletion:(id)arg1;
 - (void)revocationStatusWithCompletion:(id)arg1;
 - (id)serializedFileWrapper;
@@ -84,14 +84,14 @@
 - (void)setDisplayProfile:(id)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)setMissingImageSetsFromObject:(id)arg1;
-- (void)setPreferredImageScale:(float)arg1;
+- (void)setPreferredImageScale:(double)arg1;
 - (void)setPreferredImageSuffix:(id)arg1;
-- (void)setSettings:(int)arg1;
-- (void)setShareCount:(int)arg1;
+- (void)setSettings:(long long)arg1;
+- (void)setShareCount:(long long)arg1;
 - (void)setUniqueID:(id)arg1;
 - (void)setWebServiceURL:(id)arg1;
-- (int)settings;
-- (int)shareCount;
+- (long long)settings;
+- (long long)shareCount;
 - (id)uniqueID;
 - (id)webServiceURL;
 

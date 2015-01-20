@@ -10,7 +10,7 @@
 }
 
 + (id)_buildViewHierarchyFrom:(id)arg1 publishedObjectViewClassMap:(id)arg2 into:(id)arg3;
-+ (BOOL)_shouldCatchDecodingExceptions;
++ (bool)_shouldCatchDecodingExceptions;
 + (void)loadPackageViewWithContentsOfURL:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(id)arg3;
 + (void)loadPackageViewWithData:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(id)arg3;
 + (void)loadPackageViewWithObject:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(id)arg3;

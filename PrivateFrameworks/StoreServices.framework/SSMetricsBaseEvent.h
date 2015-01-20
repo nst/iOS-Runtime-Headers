@@ -42,7 +42,7 @@
 - (id)eventVersion;
 - (id)hostApplicationIdentifier;
 - (id)init;
-- (BOOL)isBlacklistedByConfiguration:(id)arg1;
+- (bool)isBlacklistedByConfiguration:(id)arg1;
 - (double)originalTime;
 - (id)pageContext;
 - (id)pageDescription;

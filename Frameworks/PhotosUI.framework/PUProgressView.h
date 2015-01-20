@@ -6,18 +6,18 @@
 
 @interface PUProgressView : UIView {
     UIActivityIndicatorView *_spinner;
-    int _style;
+    long long _style;
 }
 
-@property(readonly) int style;
+@property(readonly) long long style;
 
 - (void).cxx_destruct;
-- (void)hideAnimated:(BOOL)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithStyle:(int)arg1;
+- (void)hideAnimated:(bool)arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithStyle:(long long)arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)showInView:(id)arg1 animated:(BOOL)arg2 afterDelay:(double)arg3;
-- (int)style;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)showInView:(id)arg1 animated:(bool)arg2 afterDelay:(double)arg3;
+- (long long)style;
 
 @end

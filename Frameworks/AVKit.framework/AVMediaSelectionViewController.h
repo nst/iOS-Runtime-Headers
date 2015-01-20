@@ -19,28 +19,28 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(copy) id doneButtonHandler;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) AVPlayerController * playerController;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doneButtonTapped:(id)arg1;
-- (BOOL)_isSelectedOrCurrentAudioMediaSelectionOption:(id)arg1;
-- (BOOL)_isSelectedOrCurrentLegibleMediaSelectionOption:(id)arg1;
+- (bool)_isSelectedOrCurrentAudioMediaSelectionOption:(id)arg1;
+- (bool)_isSelectedOrCurrentLegibleMediaSelectionOption:(id)arg1;
 - (id)doneButtonHandler;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)playerController;
-- (BOOL)prefersStatusBarHidden;
+- (bool)prefersStatusBarHidden;
 - (void)setDoneButtonHandler:(id)arg1;
 - (void)setPlayerController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -5,17 +5,17 @@
 @class AVAssetExportSession, RCComposition, RCWaveformDataSource;
 
 @interface RCCompositionComposedAssetWriter : NSObject {
-    BOOL _canGenerateWaveform;
-    BOOL _canGenerateWaveformByProcessingAVURL;
-    BOOL _canSaveCompositionMetadata;
     RCComposition *_composition;
     AVAssetExportSession *_exportSession;
     RCWaveformDataSource *_waveformDataSource;
+    bool_canGenerateWaveform;
+    bool_canGenerateWaveformByProcessingAVURL;
+    bool_canSaveCompositionMetadata;
 }
 
-@property BOOL canGenerateWaveform;
-@property BOOL canGenerateWaveformByProcessingAVURL;
-@property BOOL canSaveCompositionMetadata;
+@property bool canGenerateWaveform;
+@property bool canGenerateWaveformByProcessingAVURL;
+@property bool canSaveCompositionMetadata;
 @property(readonly) RCComposition * composition;
 @property(readonly) float progress;
 
@@ -23,16 +23,16 @@
 - (void)_writeCompositionWaveformForFinalizedAssetFromFragmentsWithCompletionHandler:(id)arg1;
 - (void)_writeCompositionWaveformForFinalizedAssetWithCompletionHandler:(id)arg1;
 - (void)_writeCompositionWithCompletionHandler:(id)arg1;
-- (BOOL)canGenerateWaveform;
-- (BOOL)canGenerateWaveformByProcessingAVURL;
-- (BOOL)canSaveCompositionMetadata;
+- (bool)canGenerateWaveform;
+- (bool)canGenerateWaveformByProcessingAVURL;
+- (bool)canSaveCompositionMetadata;
 - (void)cancel;
 - (id)composition;
 - (id)initWithComposition:(id)arg1;
 - (float)progress;
-- (void)setCanGenerateWaveform:(BOOL)arg1;
-- (void)setCanGenerateWaveformByProcessingAVURL:(BOOL)arg1;
-- (void)setCanSaveCompositionMetadata:(BOOL)arg1;
+- (void)setCanGenerateWaveform:(bool)arg1;
+- (void)setCanGenerateWaveformByProcessingAVURL:(bool)arg1;
+- (void)setCanSaveCompositionMetadata:(bool)arg1;
 - (void)writeCompositionWithCompletionBlock:(id)arg1;
 
 @end

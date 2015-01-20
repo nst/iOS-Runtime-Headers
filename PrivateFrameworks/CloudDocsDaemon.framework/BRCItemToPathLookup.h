@@ -11,7 +11,6 @@
         unsigned int byPath : 1; 
         unsigned int parent : 1; 
     BRCLocalContainer *_container;
-    BOOL _documentIDMayStillExist;
     } _fetched;
     BRCLocalItem *_item;
     BRCRelativePath *_matchByDocumentID;
@@ -20,13 +19,14 @@
     unsigned long long _parentFileID;
     BRCRelativePath *_parentPath;
     BRCServerItem *_serverItem;
+    bool_documentIDMayStillExist;
 }
 
 @property(readonly) BRCRelativePath * byDocumentID;
 @property(readonly) BRCRelativePath * byFileID;
 @property(readonly) BRCRelativePath * byPath;
 @property(readonly) NSURL * coordinationURL;
-@property(readonly) BOOL documentIDMayStillExist;
+@property(readonly) bool documentIDMayStillExist;
 @property(readonly) unsigned long long parentFileID;
 @property(readonly) BRCRelativePath * parentPath;
 
@@ -34,10 +34,10 @@
 + (id)lookupForServerItem:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_fetchByDocumentID;
-- (BOOL)_fetchByFileID;
-- (BOOL)_fetchByPath;
-- (BOOL)_fetchParent;
+- (bool)_fetchByDocumentID;
+- (bool)_fetchByFileID;
+- (bool)_fetchByPath;
+- (bool)_fetchParent;
 - (id)byDocumentID;
 - (id)byFileID;
 - (id)byPath;
@@ -45,7 +45,7 @@
 - (id)coordinationURL;
 - (void)dealloc;
 - (id)description;
-- (BOOL)documentIDMayStillExist;
+- (bool)documentIDMayStillExist;
 - (id)initWithItem:(id)arg1;
 - (id)initWithServerItem:(id)arg1;
 - (unsigned long long)parentFileID;

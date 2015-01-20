@@ -6,10 +6,10 @@
 
 @interface SUStorePageView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     UIView *_backdropView;
     UIView *_contentView;
     } _contentViewInsets;
@@ -20,20 +20,20 @@
 
 @property(retain) UIView * backdropView;
 @property(retain) UIView * contentView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentViewInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentViewInsets;
 @property(retain) UIView * headerView;
 @property(retain) UIView * previewOverlayView;
 
 - (id)backdropView;
 - (id)contentView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
 - (void)dealloc;
 - (id)headerView;
 - (void)layoutSubviews;
 - (id)previewOverlayView;
 - (void)setBackdropView:(id)arg1;
 - (void)setContentView:(id)arg1;
-- (void)setContentViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setHeaderView:(id)arg1;
 - (void)setPreviewOverlayView:(id)arg1;
 

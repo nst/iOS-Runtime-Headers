@@ -11,11 +11,11 @@
     unsigned int _headerColumnSeparatorColumn;
     unsigned int _headerRowSeparatorRow;
     unsigned int _headerSideBorderColumn;
-    BOOL _isValid;
     TSTMasterLayout *_masterLayout;
     <TSTTableStrokeProviding> *_strokeProvider;
     NSPointerArray *_strokeTypeToLayerMap;
     unsigned int _topBorderRow;
+    bool_isValid;
 }
 
 @property unsigned int bodySideBorderColumn;
@@ -24,7 +24,7 @@
 @property unsigned int headerColumnSeparatorColumn;
 @property unsigned int headerRowSeparatorRow;
 @property unsigned int headerSideBorderColumn;
-@property BOOL isValid;
+@property bool isValid;
 @property TSTMasterLayout * masterLayout;
 @property <TSTTableStrokeProviding> * strokeProvider;
 @property(retain) NSPointerArray * strokeTypeToLayerMap;
@@ -39,7 +39,7 @@
 - (unsigned int)headerSideBorderColumn;
 - (id)initWithMasterLayout:(id)arg1;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)masterLayout;
 - (int)p_strokeTypeForColumn:(unsigned int)arg1;
 - (int)p_strokeTypeForRow:(unsigned int)arg1;
@@ -51,7 +51,7 @@
 - (void)setHeaderColumnSeparatorColumn:(unsigned int)arg1;
 - (void)setHeaderRowSeparatorRow:(unsigned int)arg1;
 - (void)setHeaderSideBorderColumn:(unsigned int)arg1;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setMasterLayout:(id)arg1;
 - (void)setStrokeProvider:(id)arg1;
 - (void)setStrokeTypeToLayerMap:(id)arg1;
@@ -62,7 +62,7 @@
 - (id)strokeProvider;
 - (id)strokeTypeToLayerMap;
 - (unsigned int)topBorderRow;
-- (BOOL)validate;
-- (BOOL)validateGeometry;
+- (bool)validate;
+- (bool)validateGeometry;
 
 @end

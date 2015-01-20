@@ -3,17 +3,17 @@
  */
 
 @interface NSDocumentDifferenceSize : NSObject {
-    int _changeCount;
-    int _generationCount;
+    long long _changeCount;
+    long long _generationCount;
 }
 
-@property int changeCount;
-@property int generationCount;
+@property long long changeCount;
+@property long long generationCount;
 
-- (int)changeCount;
+- (long long)changeCount;
 - (id)description;
-- (int)generationCount;
-- (void)setChangeCount:(int)arg1;
-- (void)setGenerationCount:(int)arg1;
+- (long long)generationCount;
+- (void)setChangeCount:(long long)arg1;
+- (void)setGenerationCount:(long long)arg1;
 
 @end

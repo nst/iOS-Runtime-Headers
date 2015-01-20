@@ -9,39 +9,39 @@
 @class NSArray, NSData, NSDictionary, NSMutableDictionary;
 
 @interface CKDModifyRecordsURLRequest : CKDURLRequest {
-    BOOL _atomic;
     NSData *_clientChangeTokenData;
     NSDictionary *_conflictLosersToResolveByRecordID;
-    BOOL _oplock;
     NSMutableDictionary *_recordByRequestID;
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;
     id _recordPostedBlock;
     NSArray *_records;
-    BOOL _sendAllFields;
+    bool_atomic;
+    bool_oplock;
+    bool_sendAllFields;
 }
 
-@property BOOL atomic;
+@property bool atomic;
 @property(retain) NSData * clientChangeTokenData;
 @property(retain) NSDictionary * conflictLosersToResolveByRecordID;
-@property BOOL oplock;
+@property bool oplock;
 @property(retain) NSMutableDictionary * recordByRequestID;
 @property(retain) NSMutableDictionary * recordIDByRequestID;
 @property(retain) NSArray * recordIDsToDelete;
 @property(retain) NSDictionary * recordIDsToDeleteToEtags;
 @property(copy) id recordPostedBlock;
 @property(retain) NSArray * records;
-@property BOOL sendAllFields;
+@property bool sendAllFields;
 
 - (void).cxx_destruct;
-- (BOOL)atomic;
+- (bool)atomic;
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;
-- (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 oplock:(BOOL)arg3 sendAllFields:(BOOL)arg4 clientChangeTokenData:(id)arg5;
+- (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 oplock:(bool)arg3 sendAllFields:(bool)arg4 clientChangeTokenData:(id)arg5;
 - (int)isolationLevel;
 - (int)operationType;
-- (BOOL)oplock;
+- (bool)oplock;
 - (id)recordByRequestID;
 - (id)recordIDByRequestID;
 - (id)recordIDsToDelete;
@@ -52,18 +52,18 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (BOOL)sendAllFields;
-- (void)setAtomic:(BOOL)arg1;
+- (bool)sendAllFields;
+- (void)setAtomic:(bool)arg1;
 - (void)setClientChangeTokenData:(id)arg1;
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
-- (void)setOplock:(BOOL)arg1;
+- (void)setOplock:(bool)arg1;
 - (void)setRecordByRequestID:(id)arg1;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordPostedBlock:(id)arg1;
 - (void)setRecords:(id)arg1;
-- (void)setSendAllFields:(BOOL)arg1;
+- (void)setSendAllFields:(bool)arg1;
 - (id)zoneIDsToLock;
 
 @end

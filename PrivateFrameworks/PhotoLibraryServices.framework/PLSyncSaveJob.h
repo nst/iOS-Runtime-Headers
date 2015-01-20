@@ -10,13 +10,13 @@
 
 @interface PLSyncSaveJob : NSObject {
     NSDate *_cleanupBeforeDate;
-    BOOL _cleanupSyncState;
     id _finishedBlock;
     NSSet *albumURIs;
+    bool_cleanupSyncState;
+    boolisSyncComplete;
+    boolisVideo;
     NSDate *creationDate;
     NSArray *facesInfo;
-    BOOL isSyncComplete;
-    BOOL isVideo;
     CLLocation *location;
     NSDate *modificationDate;
     NSURL *originalAssetURL;
@@ -27,12 +27,12 @@
 
 @property(copy) NSSet * albumURIs;
 @property(copy) NSDate * cleanupBeforeDate;
-@property BOOL cleanupSyncState;
+@property bool cleanupSyncState;
 @property(copy) NSDate * creationDate;
 @property(retain) NSArray * facesInfo;
 @property(copy) id finishedBlock;
-@property BOOL isSyncComplete;
-@property BOOL isVideo;
+@property bool isSyncComplete;
+@property bool isVideo;
 @property(copy) CLLocation * location;
 @property(copy) NSDate * modificationDate;
 @property(retain) NSURL * originalAssetURL;
@@ -42,15 +42,15 @@
 
 - (id)albumURIs;
 - (id)cleanupBeforeDate;
-- (BOOL)cleanupSyncState;
+- (bool)cleanupSyncState;
 - (id)creationDate;
 - (void)dealloc;
 - (id)description;
 - (id)facesInfo;
 - (id)finishedBlock;
 - (id)initFromSerializedData:(id)arg1;
-- (BOOL)isSyncComplete;
-- (BOOL)isVideo;
+- (bool)isSyncComplete;
+- (bool)isVideo;
 - (id)location;
 - (id)modificationDate;
 - (id)originalAssetURL;
@@ -59,12 +59,12 @@
 - (id)serializedData;
 - (void)setAlbumURIs:(id)arg1;
 - (void)setCleanupBeforeDate:(id)arg1;
-- (void)setCleanupSyncState:(BOOL)arg1;
+- (void)setCleanupSyncState:(bool)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setFacesInfo:(id)arg1;
 - (void)setFinishedBlock:(id)arg1;
-- (void)setIsSyncComplete:(BOOL)arg1;
-- (void)setIsVideo:(BOOL)arg1;
+- (void)setIsSyncComplete:(bool)arg1;
+- (void)setIsVideo:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setOriginalAssetURL:(id)arg1;

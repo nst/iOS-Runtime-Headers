@@ -10,7 +10,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSObject<OS_dispatch_queue> * queue;
 @property(readonly) Class superclass;
 
@@ -18,38 +18,38 @@
 + (id)systemStore;
 
 - (void).cxx_destruct;
-- (long)_addKeychainItem:(id)arg1;
-- (long)_createControllerPublicKey:(id*)arg1 secretKey:(id*)arg2 username:(id*)arg3;
-- (long)_deleteAllPeripheralIdentifiers;
-- (long)_deletePeripheralIdentifierForAccessoryName:(id)arg1;
-- (long)_getControllerPublicKey:(id*)arg1 secretKey:(id*)arg2 username:(id*)arg3;
-- (id)_getKeychainItemsForAccessGroup:(id)arg1 type:(id)arg2 account:(id)arg3 shouldReturnData:(BOOL)arg4 error:(int*)arg5;
-- (long)_getPeripheralIdentifier:(id*)arg1 forAccessoryName:(id)arg2;
-- (long)_getPublicKey:(id*)arg1 registeredWithHomeKit:(BOOL*)arg2 forAccessoryName:(id)arg3;
-- (BOOL)_removeAccessoryKeyForName:(id)arg1;
-- (long)_removeControllerKeyPair;
-- (long)_removeControllerKeyPairForIdentifier:(id)arg1;
-- (long)_removeKeychainItem:(id)arg1 leaveTombstone:(BOOL)arg2;
-- (long)_savePeripheralIdentifier:(id)arg1 forAccessoryName:(id)arg2;
-- (long)_savePublicKey:(id)arg1 forAccessoryName:(id)arg2;
-- (long)_updateCurrentiCloudIdentifier:(id)arg1 controllerPairingIdentifier:(id)arg2;
-- (BOOL)deleteAllPeripheralIdentifiers:(id*)arg1;
-- (BOOL)deletePeripheralIdentifierForAccessoryName:(id)arg1 error:(id*)arg2;
-- (BOOL)getControllerPublicKey:(id*)arg1 secretKey:(id*)arg2 username:(id*)arg3 allowCreation:(BOOL)arg4 error:(id*)arg5;
-- (BOOL)getCurrentiCloudIdentifier:(id*)arg1 controllerPairingIdentifier:(id*)arg2 error:(id*)arg3;
+- (int)_addKeychainItem:(id)arg1;
+- (int)_createControllerPublicKey:(id*)arg1 secretKey:(id*)arg2 username:(id*)arg3;
+- (int)_deleteAllPeripheralIdentifiers;
+- (int)_deletePeripheralIdentifierForAccessoryName:(id)arg1;
+- (int)_getControllerPublicKey:(id*)arg1 secretKey:(id*)arg2 username:(id*)arg3;
+- (id)_getKeychainItemsForAccessGroup:(id)arg1 type:(id)arg2 account:(id)arg3 shouldReturnData:(bool)arg4 error:(int*)arg5;
+- (int)_getPeripheralIdentifier:(id*)arg1 forAccessoryName:(id)arg2;
+- (int)_getPublicKey:(id*)arg1 registeredWithHomeKit:(bool*)arg2 forAccessoryName:(id)arg3;
+- (bool)_removeAccessoryKeyForName:(id)arg1;
+- (int)_removeControllerKeyPair;
+- (int)_removeControllerKeyPairForIdentifier:(id)arg1;
+- (int)_removeKeychainItem:(id)arg1 leaveTombstone:(bool)arg2;
+- (int)_savePeripheralIdentifier:(id)arg1 forAccessoryName:(id)arg2;
+- (int)_savePublicKey:(id)arg1 forAccessoryName:(id)arg2;
+- (int)_updateCurrentiCloudIdentifier:(id)arg1 controllerPairingIdentifier:(id)arg2;
+- (bool)deleteAllPeripheralIdentifiers:(id*)arg1;
+- (bool)deletePeripheralIdentifierForAccessoryName:(id)arg1 error:(id*)arg2;
+- (bool)getControllerPublicKey:(id*)arg1 secretKey:(id*)arg2 username:(id*)arg3 allowCreation:(bool)arg4 error:(id*)arg5;
+- (bool)getCurrentiCloudIdentifier:(id*)arg1 controllerPairingIdentifier:(id*)arg2 error:(id*)arg3;
 - (id)getPeripherialIdentifiersAndAccessoryNames;
 - (id)queue;
 - (id)readPeripheralIdentifierForAccessoryName:(id)arg1 error:(id*)arg2;
-- (id)readPublicKeyForAccessoryName:(id)arg1 registeredWithHomeKit:(BOOL*)arg2 error:(id*)arg3;
-- (BOOL)registerAccessoryWithHomeKit:(id)arg1 error:(id*)arg2;
-- (BOOL)removeAccessoryKeyForName:(id)arg1 error:(id*)arg2;
-- (BOOL)removeAllAccessoryKeys:(id*)arg1;
-- (BOOL)removeControllerKeyPairForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)removeControllerKeyPairWithError:(id*)arg1;
-- (BOOL)savePeripheralIdentifier:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
-- (BOOL)savePublicKey:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
+- (id)readPublicKeyForAccessoryName:(id)arg1 registeredWithHomeKit:(bool*)arg2 error:(id*)arg3;
+- (bool)registerAccessoryWithHomeKit:(id)arg1 error:(id*)arg2;
+- (bool)removeAccessoryKeyForName:(id)arg1 error:(id*)arg2;
+- (bool)removeAllAccessoryKeys:(id*)arg1;
+- (bool)removeControllerKeyPairForIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)removeControllerKeyPairWithError:(id*)arg1;
+- (bool)savePeripheralIdentifier:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
+- (bool)savePublicKey:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
 - (void)setQueue:(id)arg1;
-- (BOOL)updateCurrentiCloudIdentifier:(id)arg1 controllerPairingIdentifier:(id)arg2 error:(id*)arg3;
-- (BOOL)updatePeripheralIdentifier:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
+- (bool)updateCurrentiCloudIdentifier:(id)arg1 controllerPairingIdentifier:(id)arg2 error:(id*)arg3;
+- (bool)updatePeripheralIdentifier:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
 
 @end

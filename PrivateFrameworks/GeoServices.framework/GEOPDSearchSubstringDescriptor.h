@@ -18,10 +18,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)endIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBeginIndex:(int)arg1;
 - (void)setEndIndex:(int)arg1;
 - (void)setStringType:(int)arg1;

@@ -3,40 +3,40 @@
  */
 
 @interface TSTLayoutProcessChangesActions : NSObject {
-    BOOL _layoutInvalidate;
-    BOOL _layoutInvalidateChildren;
-    BOOL _layoutInvalidateProvider;
-    BOOL _layoutInvalidateSize;
-    BOOL _layoutInvalidateTableNameVisibility;
-    BOOL _layoutSpacesInvalidateCoordinates;
-    BOOL _layoutSpacesInvalidateTableOffsets;
-    BOOL _layoutUpdateChildren;
+    bool_layoutInvalidate;
+    bool_layoutInvalidateChildren;
+    bool_layoutInvalidateProvider;
+    bool_layoutInvalidateSize;
+    bool_layoutInvalidateTableNameVisibility;
+    bool_layoutSpacesInvalidateCoordinates;
+    bool_layoutSpacesInvalidateTableOffsets;
+    bool_layoutUpdateChildren;
 }
 
-@property BOOL layoutInvalidate;
-@property BOOL layoutInvalidateChildren;
-@property BOOL layoutInvalidateProvider;
-@property BOOL layoutInvalidateSize;
-@property BOOL layoutInvalidateTableNameVisibility;
-@property BOOL layoutSpacesInvalidateCoordinates;
-@property BOOL layoutSpacesInvalidateTableOffsets;
-@property BOOL layoutUpdateChildren;
+@property bool layoutInvalidate;
+@property bool layoutInvalidateChildren;
+@property bool layoutInvalidateProvider;
+@property bool layoutInvalidateSize;
+@property bool layoutInvalidateTableNameVisibility;
+@property bool layoutSpacesInvalidateCoordinates;
+@property bool layoutSpacesInvalidateTableOffsets;
+@property bool layoutUpdateChildren;
 
-- (BOOL)layoutInvalidate;
-- (BOOL)layoutInvalidateChildren;
-- (BOOL)layoutInvalidateProvider;
-- (BOOL)layoutInvalidateSize;
-- (BOOL)layoutInvalidateTableNameVisibility;
-- (BOOL)layoutSpacesInvalidateCoordinates;
-- (BOOL)layoutSpacesInvalidateTableOffsets;
-- (BOOL)layoutUpdateChildren;
-- (void)setLayoutInvalidate:(BOOL)arg1;
-- (void)setLayoutInvalidateChildren:(BOOL)arg1;
-- (void)setLayoutInvalidateProvider:(BOOL)arg1;
-- (void)setLayoutInvalidateSize:(BOOL)arg1;
-- (void)setLayoutInvalidateTableNameVisibility:(BOOL)arg1;
-- (void)setLayoutSpacesInvalidateCoordinates:(BOOL)arg1;
-- (void)setLayoutSpacesInvalidateTableOffsets:(BOOL)arg1;
-- (void)setLayoutUpdateChildren:(BOOL)arg1;
+- (bool)layoutInvalidate;
+- (bool)layoutInvalidateChildren;
+- (bool)layoutInvalidateProvider;
+- (bool)layoutInvalidateSize;
+- (bool)layoutInvalidateTableNameVisibility;
+- (bool)layoutSpacesInvalidateCoordinates;
+- (bool)layoutSpacesInvalidateTableOffsets;
+- (bool)layoutUpdateChildren;
+- (void)setLayoutInvalidate:(bool)arg1;
+- (void)setLayoutInvalidateChildren:(bool)arg1;
+- (void)setLayoutInvalidateProvider:(bool)arg1;
+- (void)setLayoutInvalidateSize:(bool)arg1;
+- (void)setLayoutInvalidateTableNameVisibility:(bool)arg1;
+- (void)setLayoutSpacesInvalidateCoordinates:(bool)arg1;
+- (void)setLayoutSpacesInvalidateTableOffsets:(bool)arg1;
+- (void)setLayoutUpdateChildren:(bool)arg1;
 
 @end

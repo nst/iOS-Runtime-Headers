@@ -17,9 +17,9 @@
 - (void)assertOnQueue;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)performAsync:(id)arg1;
 
 @end

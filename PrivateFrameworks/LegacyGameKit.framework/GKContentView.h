@@ -10,11 +10,11 @@
     NSArray *_connectionButtons;
     UIImageView *_iconView;
     UILabel *_messageLabel;
-    BOOL _needsLayout;
     UIButton *_otherButton;
     UITableView *_table;
     UIImageView *_tableWellView;
     UILabel *_titleLabel;
+    bool_needsLayout;
 }
 
 @property(retain) UIActivityIndicatorView * activityIndicator;
@@ -25,19 +25,19 @@
 @property NSString * message;
 @property(readonly) UIFont * messageFont;
 @property(retain) UILabel * messageLabel;
-@property int numberOfMessageLines;
-@property int numberOfTitleLines;
+@property long long numberOfMessageLines;
+@property long long numberOfTitleLines;
 @property(retain) UIButton * otherButton;
 @property(retain,readonly) UITableView * table;
 @property NSString * title;
 @property(readonly) UIFont * titleFont;
 @property(retain) UILabel * titleLabel;
 
-+ (float)maxTextWidth;
++ (double)maxTextWidth;
 
-- (id)_createButton:(BOOL)arg1;
+- (id)_createButton:(bool)arg1;
 - (void)_createCancelButtonWithTitle:(id)arg1;
-- (id)_createConnectionButtonWithType:(unsigned int)arg1;
+- (id)_createConnectionButtonWithType:(unsigned long long)arg1;
 - (void)_createMessageLabelIfNeeded;
 - (void)_createOtherButtonWithTitle:(id)arg1;
 - (void)_createTitleLabelIfNeeded;
@@ -53,22 +53,22 @@
 - (id)message;
 - (id)messageFont;
 - (id)messageLabel;
-- (int)numberOfMessageLines;
-- (int)numberOfTitleLines;
+- (long long)numberOfMessageLines;
+- (long long)numberOfTitleLines;
 - (id)otherButton;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setCancelButton:(id)arg1;
-- (void)setConnectionButtonTypes:(unsigned int)arg1;
+- (void)setConnectionButtonTypes:(unsigned long long)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
-- (void)setNumberOfMessageLines:(int)arg1;
-- (void)setNumberOfTitleLines:(int)arg1;
+- (void)setNumberOfMessageLines:(long long)arg1;
+- (void)setNumberOfTitleLines:(long long)arg1;
 - (void)setOtherButton:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (void)showActivityIndicator:(BOOL)arg1;
+- (void)showActivityIndicator:(bool)arg1;
 - (id)table;
 - (id)title;
 - (id)titleFont;

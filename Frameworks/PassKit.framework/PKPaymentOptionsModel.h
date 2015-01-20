@@ -32,8 +32,8 @@
 - (id)modelChangedHandler;
 - (id)optionGroups;
 - (void)setModelChangedHandler:(id)arg1;
-- (void)setOptionGroupType:(id)arg1 options:(id)arg2 selectedIndex:(int)arg3 newItemHandler:(id)arg4 pickedItemHandler:(id)arg5 selectedValueChangedHandler:(id)arg6;
-- (void)setPaymentPasses:(id)arg1 selectedIndex:(int)arg2 selectedValueChangedHandler:(id)arg3;
-- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 selectedValueChangedHandler:(id)arg4;
+- (void)setOptionGroupType:(id)arg1 options:(id)arg2 selectedIndex:(long long)arg3 newItemHandler:(id)arg4 pickedItemHandler:(id)arg5 selectedValueChangedHandler:(id)arg6;
+- (void)setPaymentPasses:(id)arg1 selectedIndex:(long long)arg2 selectedValueChangedHandler:(id)arg3;
+- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(long long)arg3 selectedValueChangedHandler:(id)arg4;
 
 @end

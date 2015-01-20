@@ -5,7 +5,7 @@
 @class CPBitmapStore;
 
 @interface WeatherImageLoader : NSObject {
-    float _scale;
+    double _scale;
     CPBitmapStore *_store;
 }
 
@@ -14,9 +14,9 @@
 + (void)cacheImageIfNecessary:(id)arg1;
 + (id)cachedImageNamed:(id)arg1 completion:(id)arg2;
 + (id)conditionImageBundle;
-+ (id)conditionImageNameWithConditionIndex:(int)arg1;
++ (id)conditionImageNameWithConditionIndex:(long long)arg1;
 + (id)conditionImageNamed:(id)arg1;
-+ (id)conditionImageWithConditionIndex:(int)arg1;
++ (id)conditionImageWithConditionIndex:(long long)arg1;
 + (void)preCacheMiniIcons;
 + (id)sharedImageLoader;
 

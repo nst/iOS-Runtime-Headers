@@ -11,13 +11,13 @@
     <SFCompanionConnectionDelegate> *_delegate;
     SFCompanionInterface *_exportedInterface;
     id _exportedObject;
-    BOOL _invalid;
     SFCompanionInterface *_remoteObjectInterface;
     SFCompanionService *_service;
-    unsigned int _status;
+    unsigned long long _status;
     NSXPCConnection *_userConnection;
-    BOOL _waitForAccept;
     NSObject<OS_dispatch_queue> *_workQueue;
+    bool_invalid;
+    bool_waitForAccept;
 }
 
 @property(retain) SFCompanionDevice * connectedDevice;
@@ -28,14 +28,14 @@
 @property(copy,readonly) NSString * description;
 @property(retain) SFCompanionInterface * exportedInterface;
 @property(retain) id exportedObject;
-@property(readonly) unsigned int hash;
-@property BOOL invalid;
+@property(readonly) unsigned long long hash;
+@property bool invalid;
 @property(retain) SFCompanionInterface * remoteObjectInterface;
 @property(retain) SFCompanionService * service;
-@property unsigned int status;
+@property unsigned long long status;
 @property(readonly) Class superclass;
 @property(retain) NSXPCConnection * userConnection;
-@property BOOL waitForAccept;
+@property bool waitForAccept;
 @property NSObject<OS_dispatch_queue> * workQueue;
 
 - (void)connect;
@@ -51,7 +51,7 @@
 - (id)initWithDevice:(id)arg1 connectionID:(id)arg2 serviceType:(id)arg3 delegate:(id)arg4;
 - (id)initWithDevice:(id)arg1 serviceType:(id)arg2 delegate:(id)arg3;
 - (id)initWithService:(id)arg1;
-- (BOOL)invalid;
+- (bool)invalid;
 - (void)invalidate;
 - (void)invalidationCallback;
 - (void)onqueue_invalidate;
@@ -64,7 +64,7 @@
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (void)resume;
-- (BOOL)sendData:(id)arg1 withErrorHandler:(id)arg2;
+- (bool)sendData:(id)arg1 withErrorHandler:(id)arg2;
 - (void)sendData:(id)arg1 withReply:(id)arg2;
 - (id)service;
 - (void)setConnectedDevice:(id)arg1;
@@ -72,18 +72,18 @@
 - (void)setDelegate:(id)arg1;
 - (void)setExportedInterface:(id)arg1;
 - (void)setExportedObject:(id)arg1;
-- (void)setInvalid:(BOOL)arg1;
+- (void)setInvalid:(bool)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
 - (void)setService:(id)arg1;
-- (void)setStatus:(unsigned int)arg1;
+- (void)setStatus:(unsigned long long)arg1;
 - (void)setUserConnection:(id)arg1;
-- (void)setWaitForAccept:(BOOL)arg1;
+- (void)setWaitForAccept:(bool)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)setupWorkQueue;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (void)suspend;
 - (id)userConnection;
-- (BOOL)waitForAccept;
+- (bool)waitForAccept;
 - (id)workQueue;
 - (void)xpcManagerConnectionInterrupted;
 

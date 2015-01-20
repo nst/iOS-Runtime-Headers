@@ -16,9 +16,9 @@
 }
 
 @property(retain) GEOPDPlaceGlobalResult * globalResult;
-@property(readonly) BOOL hasGlobalResult;
-@property BOOL hasRequestType;
-@property BOOL hasStatus;
+@property(readonly) bool hasGlobalResult;
+@property bool hasRequestType;
+@property bool hasStatus;
 @property(retain) NSMutableArray * placeResults;
 @property int requestType;
 @property int status;
@@ -32,21 +32,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)globalResult;
-- (BOOL)hasGlobalResult;
-- (BOOL)hasRequestType;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
+- (bool)hasGlobalResult;
+- (bool)hasRequestType;
+- (bool)hasStatus;
+- (unsigned long long)hash;
 - (id)initWithGeocoderPlace:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)placeResultAtIndex:(unsigned int)arg1;
+- (id)placeResultAtIndex:(unsigned long long)arg1;
 - (id)placeResults;
-- (unsigned int)placeResultsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)placeResultsCount;
+- (bool)readFrom:(id)arg1;
 - (int)requestType;
 - (void)setGlobalResult:(id)arg1;
-- (void)setHasRequestType:(BOOL)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasRequestType:(bool)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setPlaceResults:(id)arg1;
 - (void)setRequestType:(int)arg1;
 - (void)setStatus:(int)arg1;

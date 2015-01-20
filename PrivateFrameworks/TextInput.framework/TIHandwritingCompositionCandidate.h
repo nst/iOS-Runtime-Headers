@@ -3,17 +3,17 @@
  */
 
 @interface TIHandwritingCompositionCandidate : TIKeyboardCandidateSingle {
-    unsigned int _deleteCount;
+    unsigned long long _deleteCount;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)deleteCount;
+- (unsigned long long)deleteCount;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCandidate:(id)arg1 deleteCount:(unsigned int)arg2;
+- (id)initWithCandidate:(id)arg1 deleteCount:(unsigned long long)arg2;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)label;

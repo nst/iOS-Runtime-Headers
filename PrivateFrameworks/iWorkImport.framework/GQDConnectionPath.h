@@ -4,18 +4,18 @@
 
 @interface GQDConnectionPath : GQDPath {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     } mPoint;
     } mSize;
 }
 
 - (id).cxx_construct;
 - (struct CGPath { }*)createBezierPath;
-- (struct CGPoint { float x1; float x2; })point;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGPoint { double x1; double x2; })point;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

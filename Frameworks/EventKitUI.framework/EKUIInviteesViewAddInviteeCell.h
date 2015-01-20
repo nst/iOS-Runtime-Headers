@@ -5,14 +5,14 @@
 @class NSArray, NSLayoutConstraint, NSString, UILabel;
 
 @interface EKUIInviteesViewAddInviteeCell : UITableViewCell {
-    float _leftInset;
+    double _leftInset;
     NSLayoutConstraint *_leftInsetConstraint;
     NSArray *_persistentConstraints;
     NSString *_simpleText;
     UILabel *_simpleTextLabel;
 }
 
-@property float leftInset;
+@property double leftInset;
 @property(retain) NSLayoutConstraint * leftInsetConstraint;
 @property(retain) NSArray * persistentConstraints;
 @property(retain) NSString * simpleText;
@@ -21,11 +21,11 @@
 + (id)_simpleTextLabelFont;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (float)leftInset;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (double)leftInset;
 - (id)leftInsetConstraint;
 - (id)persistentConstraints;
-- (void)setLeftInset:(float)arg1;
+- (void)setLeftInset:(double)arg1;
 - (void)setLeftInsetConstraint:(id)arg1;
 - (void)setPersistentConstraints:(id)arg1;
 - (void)setSimpleText:(id)arg1;

@@ -4,43 +4,43 @@
 
 @interface ML3MigrationDirectives : NSObject {
     int _currentUserVersion;
-    BOOL _needsAnalyze;
-    BOOL _needsToAutogenerateArtworkVariants;
-    BOOL _needsToRecreateIndexes;
-    BOOL _needsToRecreateTriggers;
-    BOOL _needsToReloadContainerMediaTypes;
-    BOOL _needsToReloadStoreBookmarkMetadataIdentifiers;
-    BOOL _needsToRemoveLocationsForItemsMissingAssets;
     int _originalUserVersion;
+    bool_needsAnalyze;
+    bool_needsToAutogenerateArtworkVariants;
+    bool_needsToRecreateIndexes;
+    bool_needsToRecreateTriggers;
+    bool_needsToReloadContainerMediaTypes;
+    bool_needsToReloadStoreBookmarkMetadataIdentifiers;
+    bool_needsToRemoveLocationsForItemsMissingAssets;
 }
 
 @property int currentUserVersion;
-@property BOOL needsAnalyze;
-@property BOOL needsToAutogenerateArtworkVariants;
-@property BOOL needsToRecreateIndexes;
-@property BOOL needsToRecreateTriggers;
-@property BOOL needsToReloadContainerMediaTypes;
-@property BOOL needsToReloadStoreBookmarkMetadataIdentifiers;
-@property BOOL needsToRemoveLocationsForItemsMissingAssets;
+@property bool needsAnalyze;
+@property bool needsToAutogenerateArtworkVariants;
+@property bool needsToRecreateIndexes;
+@property bool needsToRecreateTriggers;
+@property bool needsToReloadContainerMediaTypes;
+@property bool needsToReloadStoreBookmarkMetadataIdentifiers;
+@property bool needsToRemoveLocationsForItemsMissingAssets;
 @property(readonly) int originalUserVersion;
 
 - (int)currentUserVersion;
 - (id)initWithOriginalUserVersion:(int)arg1;
-- (BOOL)needsAnalyze;
-- (BOOL)needsToAutogenerateArtworkVariants;
-- (BOOL)needsToRecreateIndexes;
-- (BOOL)needsToRecreateTriggers;
-- (BOOL)needsToReloadContainerMediaTypes;
-- (BOOL)needsToReloadStoreBookmarkMetadataIdentifiers;
-- (BOOL)needsToRemoveLocationsForItemsMissingAssets;
+- (bool)needsAnalyze;
+- (bool)needsToAutogenerateArtworkVariants;
+- (bool)needsToRecreateIndexes;
+- (bool)needsToRecreateTriggers;
+- (bool)needsToReloadContainerMediaTypes;
+- (bool)needsToReloadStoreBookmarkMetadataIdentifiers;
+- (bool)needsToRemoveLocationsForItemsMissingAssets;
 - (int)originalUserVersion;
 - (void)setCurrentUserVersion:(int)arg1;
-- (void)setNeedsAnalyze:(BOOL)arg1;
-- (void)setNeedsToAutogenerateArtworkVariants:(BOOL)arg1;
-- (void)setNeedsToRecreateIndexes:(BOOL)arg1;
-- (void)setNeedsToRecreateTriggers:(BOOL)arg1;
-- (void)setNeedsToReloadContainerMediaTypes:(BOOL)arg1;
-- (void)setNeedsToReloadStoreBookmarkMetadataIdentifiers:(BOOL)arg1;
-- (void)setNeedsToRemoveLocationsForItemsMissingAssets:(BOOL)arg1;
+- (void)setNeedsAnalyze:(bool)arg1;
+- (void)setNeedsToAutogenerateArtworkVariants:(bool)arg1;
+- (void)setNeedsToRecreateIndexes:(bool)arg1;
+- (void)setNeedsToRecreateTriggers:(bool)arg1;
+- (void)setNeedsToReloadContainerMediaTypes:(bool)arg1;
+- (void)setNeedsToReloadStoreBookmarkMetadataIdentifiers:(bool)arg1;
+- (void)setNeedsToRemoveLocationsForItemsMissingAssets:(bool)arg1;
 
 @end

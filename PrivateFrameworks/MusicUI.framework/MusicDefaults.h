@@ -7,47 +7,47 @@
 @interface MusicDefaults : MPUApplicationDefaults {
 }
 
-@property(getter=isActivityContinuationEnabled,readonly) BOOL activityContinuationEnabled;
+@property(getter=isActivityContinuationEnabled,readonly) bool activityContinuationEnabled;
 @property(readonly) int eqPreset;
-@property(getter=isGeniusUserEnabled) BOOL geniusUserEnabled;
-@property(getter=isGroupByAlbumArtistEnabled,readonly) BOOL groupByAlbumArtistEnabled;
-@property BOOL lastEffectiveRadioExplicitTracksEnabled;
-@property(getter=areLyricsAndPodcastInfoEnabled,readonly) BOOL lyricsAndPodcastInfoEnabled;
-@property(getter=isPinningEnabled,readonly) BOOL pinningEnabled;
-@property unsigned int playbackSpeed;
-@property unsigned int repeatType;
-@property(getter=isShakeToShuffleEnabled,readonly) BOOL shakeToShuffleEnabled;
-@property(getter=isShowCloudMediaEnabled,readonly) BOOL showCloudMediaEnabled;
-@property unsigned int shuffleType;
-@property(getter=isSortByArtistEnabled,readonly) BOOL sortByArtistEnabled;
-@property(getter=isSoundCheckEnabled,readonly) BOOL soundCheckEnabled;
+@property(getter=isGeniusUserEnabled) bool geniusUserEnabled;
+@property(getter=isGroupByAlbumArtistEnabled,readonly) bool groupByAlbumArtistEnabled;
+@property bool lastEffectiveRadioExplicitTracksEnabled;
+@property(getter=areLyricsAndPodcastInfoEnabled,readonly) bool lyricsAndPodcastInfoEnabled;
+@property(getter=isPinningEnabled,readonly) bool pinningEnabled;
+@property unsigned long long playbackSpeed;
+@property unsigned long long repeatType;
+@property(getter=isShakeToShuffleEnabled,readonly) bool shakeToShuffleEnabled;
+@property(getter=isShowCloudMediaEnabled,readonly) bool showCloudMediaEnabled;
+@property unsigned long long shuffleType;
+@property(getter=isSortByArtistEnabled,readonly) bool sortByArtistEnabled;
+@property(getter=isSoundCheckEnabled,readonly) bool soundCheckEnabled;
 @property(copy) NSArray * tabBarOrdering;
 
 + (id)sharedDefaults;
 
-- (BOOL)areLyricsAndPodcastInfoEnabled;
+- (bool)areLyricsAndPodcastInfoEnabled;
 - (void)beginObservingDefaultsChanges;
 - (void)ensureInvertedDefaultPlaybackSpeedHackIsInPlace;
 - (int)eqPreset;
-- (BOOL)isActivityContinuationEnabled;
-- (BOOL)isGeniusUserEnabled;
-- (BOOL)isGroupByAlbumArtistEnabled;
-- (BOOL)isPinningEnabled;
-- (BOOL)isShakeToShuffleEnabled;
-- (BOOL)isShowCloudMediaEnabled;
-- (BOOL)isSortByArtistEnabled;
-- (BOOL)isSoundCheckEnabled;
-- (BOOL)lastEffectiveRadioExplicitTracksEnabled;
+- (bool)isActivityContinuationEnabled;
+- (bool)isGeniusUserEnabled;
+- (bool)isGroupByAlbumArtistEnabled;
+- (bool)isPinningEnabled;
+- (bool)isShakeToShuffleEnabled;
+- (bool)isShowCloudMediaEnabled;
+- (bool)isSortByArtistEnabled;
+- (bool)isSoundCheckEnabled;
+- (bool)lastEffectiveRadioExplicitTracksEnabled;
 - (void)migrateTabBarOrderingIfNeeded;
-- (unsigned int)playbackSpeed;
-- (unsigned int)repeatType;
-- (void)setGeniusUserEnabled:(BOOL)arg1;
-- (void)setLastEffectiveRadioExplicitTracksEnabled:(BOOL)arg1;
-- (void)setPlaybackSpeed:(unsigned int)arg1;
-- (void)setRepeatType:(unsigned int)arg1;
-- (void)setShuffleType:(unsigned int)arg1;
+- (unsigned long long)playbackSpeed;
+- (unsigned long long)repeatType;
+- (void)setGeniusUserEnabled:(bool)arg1;
+- (void)setLastEffectiveRadioExplicitTracksEnabled:(bool)arg1;
+- (void)setPlaybackSpeed:(unsigned long long)arg1;
+- (void)setRepeatType:(unsigned long long)arg1;
+- (void)setShuffleType:(unsigned long long)arg1;
 - (void)setTabBarOrdering:(id)arg1;
-- (unsigned int)shuffleType;
+- (unsigned long long)shuffleType;
 - (id)tabBarOrdering;
 
 @end

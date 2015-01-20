@@ -6,8 +6,8 @@
 
 @interface TIKeyboardOutput : NSObject <NSSecureCoding> {
     TIKeyboardCandidate *_acceptedCandidate;
-    unsigned int _deletionCount;
-    unsigned int _forwardDeletionCount;
+    unsigned long long _deletionCount;
+    unsigned long long _forwardDeletionCount;
     NSIndexSet *_handwritingStrokesToDelete;
     NSString *_insertionText;
     NSString *_insertionTextAfterSelection;
@@ -16,37 +16,37 @@
 }
 
 @property(retain) TIKeyboardCandidate * acceptedCandidate;
-@property unsigned int deletionCount;
-@property unsigned int forwardDeletionCount;
+@property unsigned long long deletionCount;
+@property unsigned long long forwardDeletionCount;
 @property(copy) NSIndexSet * handwritingStrokesToDelete;
 @property(copy) NSString * insertionText;
 @property(copy) NSString * insertionTextAfterSelection;
 @property(retain) TIKeyboardCandidate * shortcutConversion;
 @property(copy) NSString * textToCommit;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)acceptedCandidate;
 - (void)dealloc;
-- (void)deleteBackward:(unsigned int)arg1;
+- (void)deleteBackward:(unsigned long long)arg1;
 - (void)deleteBackward;
-- (void)deleteForward:(unsigned int)arg1;
+- (void)deleteForward:(unsigned long long)arg1;
 - (void)deleteForward;
-- (unsigned int)deletionCount;
+- (unsigned long long)deletionCount;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)forwardDeletionCount;
+- (unsigned long long)forwardDeletionCount;
 - (id)handwritingStrokesToDelete;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)insertText:(id)arg1;
 - (void)insertTextAfterSelection:(id)arg1;
 - (id)insertionText;
 - (id)insertionTextAfterSelection;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAcceptedCandidate:(id)arg1;
-- (void)setDeletionCount:(unsigned int)arg1;
-- (void)setForwardDeletionCount:(unsigned int)arg1;
+- (void)setDeletionCount:(unsigned long long)arg1;
+- (void)setForwardDeletionCount:(unsigned long long)arg1;
 - (void)setHandwritingStrokesToDelete:(id)arg1;
 - (void)setInsertionText:(id)arg1;
 - (void)setInsertionTextAfterSelection:(id)arg1;

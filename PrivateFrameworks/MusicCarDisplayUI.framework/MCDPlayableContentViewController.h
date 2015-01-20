@@ -19,6 +19,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)refreshNavigationStack;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

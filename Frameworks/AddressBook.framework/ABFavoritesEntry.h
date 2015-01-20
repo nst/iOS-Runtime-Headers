@@ -27,7 +27,7 @@
 - (void)_queueLookup;
 - (void)_unqueueLookup;
 - (void)dealloc;
-- (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
+- (void)dictionaryRepresentation:(id*)arg1 isDirty:(bool*)arg2;
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (int)identifier;
@@ -35,7 +35,7 @@
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 type:(int)arg4;
 - (id)initWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (id)nonLocalizedLabel;
 - (int)property;

@@ -42,8 +42,8 @@
 
 - (id)longDescription;
 - (void)setLongDescription:(id)arg1;
-- (BOOL)validateForInsert:(id*)arg1;
-- (BOOL)validateForUpdate:(id*)arg1;
+- (bool)validateForInsert:(id*)arg1;
+- (bool)validateForUpdate:(id*)arg1;
 - (void)willSave;
 
 @end

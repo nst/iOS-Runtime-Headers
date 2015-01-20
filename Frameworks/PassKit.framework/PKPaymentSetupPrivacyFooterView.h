@@ -5,26 +5,26 @@
 @class UIButton, UILabel;
 
 @interface PKPaymentSetupPrivacyFooterView : UIView {
-    int _context;
+    long long _context;
     UIButton *_linkButton;
     UILabel *_message;
 }
 
-@property int context;
+@property long long context;
 @property(retain) UIButton * linkButton;
 @property(retain) UILabel * message;
 
 - (id)_highlightedStringAttributes;
 - (id)_normalStringAttributes;
-- (int)context;
+- (long long)context;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(long long)arg2;
 - (void)layoutSubviews;
 - (id)linkButton;
 - (id)message;
-- (void)setContext:(int)arg1;
+- (void)setContext:(long long)arg1;
 - (void)setLinkButton:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

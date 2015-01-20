@@ -12,15 +12,15 @@
 
 @property(readonly) NSURL * writeURL;
 
-+ (BOOL)finishWritingToURL:(id)arg1 byMovingItemAtURL:(id)arg2 addingAttributes:(id)arg3 error:(id*)arg4;
++ (bool)finishWritingToURL:(id)arg1 byMovingItemAtURL:(id)arg2 addingAttributes:(id)arg3 error:(id*)arg4;
 + (void)removeTemporaryDirectoryAtURL:(id)arg1;
 + (id)temporaryDirectoryURLForWritingToURL:(id)arg1 error:(id*)arg2;
 + (void)writeAttributes:(id)arg1 toURL:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (BOOL)endSaveWithSuccess:(BOOL)arg1 addingAttributes:(id)arg2 error:(id*)arg3;
-- (BOOL)endSaveWithSuccess:(BOOL)arg1 toURL:(id)arg2 addingAttributes:(id)arg3 error:(id*)arg4;
+- (bool)endSaveWithSuccess:(bool)arg1 addingAttributes:(id)arg2 error:(id*)arg3;
+- (bool)endSaveWithSuccess:(bool)arg1 toURL:(id)arg2 addingAttributes:(id)arg3 error:(id*)arg4;
 - (id)init;
 - (id)initForSavingToURL:(id)arg1 error:(id*)arg2;
 - (void)removeTemporaryDirectory;

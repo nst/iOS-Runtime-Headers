@@ -15,16 +15,16 @@
     <FBSceneDelegate> *_delegate;
     FBSDisplay *_display;
     NSString *_identifier;
-    BOOL _lockedForMutation;
     FBSMutableSceneSettings *_mutableSettings;
     FBSSceneSettings *_settings;
-    unsigned int _transactionID;
-    BOOL _valid;
+    unsigned long long _transactionID;
+    bool_lockedForMutation;
+    bool_valid;
 }
 
 @property(setter=_setBoundsDelegate:) <FBSceneBoundsDelegate> * _boundsDelegate;
-@property(setter=_setLockedForMutation:) BOOL _lockedForMutation;
-@property(readonly) unsigned int _transactionID;
+@property(setter=_setLockedForMutation:) bool _lockedForMutation;
+@property(readonly) unsigned long long _transactionID;
 @property(retain,readonly) <FBSceneClient> * client;
 @property(retain,readonly) FBProcess * clientProcess;
 @property(retain,readonly) <FBSceneClientProvider> * clientProvider;
@@ -36,18 +36,18 @@
 @property(copy,readonly) NSString * identifier;
 @property(retain,readonly) FBSMutableSceneSettings * mutableSettings;
 @property(retain,readonly) FBSSceneSettings * settings;
-@property(getter=isValid,readonly) BOOL valid;
+@property(getter=isValid,readonly) bool valid;
 
 - (void)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id)arg3;
 - (id)_boundsDelegate;
 - (id)_descriptionWithMultilinePrefix:(id)arg1;
 - (void)_handleSceneClientMessage:(id)arg1 withBlock:(id)arg2;
-- (unsigned int)_incrementTransactionID;
+- (unsigned long long)_incrementTransactionID;
 - (void)_invalidateWithTransitionContext:(id)arg1;
-- (BOOL)_lockedForMutation;
+- (bool)_lockedForMutation;
 - (void)_setBoundsDelegate:(id)arg1;
-- (void)_setLockedForMutation:(BOOL)arg1;
-- (unsigned int)_transactionID;
+- (void)_setLockedForMutation:(bool)arg1;
+- (unsigned long long)_transactionID;
 - (void)client:(id)arg1 attachContext:(id)arg2;
 - (void)client:(id)arg1 detachContext:(id)arg2;
 - (void)client:(id)arg1 didReceiveActions:(id)arg2;
@@ -66,7 +66,7 @@
 - (id)display;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 display:(id)arg2 initialClientSettings:(id)arg3 clientProvider:(id)arg4;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)mutableSettings;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;

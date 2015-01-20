@@ -12,11 +12,11 @@
  */
 
 @interface SKFade : SKAction {
-    struct SKCFade { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; BOOL x25; } *_mycaction;
+    struct SKCFade { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; boolx7; double x8; double x9; float x10; float x11; double x12; boolx13; boolx14; id x15; void*x16; long long x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; boolx25; } *_mycaction;
 }
 
-+ (id)fadeAlphaBy:(float)arg1 duration:(double)arg2;
-+ (id)fadeAlphaTo:(float)arg1 duration:(double)arg2;
++ (id)fadeAlphaBy:(double)arg1 duration:(double)arg2;
++ (id)fadeAlphaTo:(double)arg1 duration:(double)arg2;
 + (id)fadeInWithDuration:(double)arg1;
 + (id)fadeOutWithDuration:(double)arg1;
 

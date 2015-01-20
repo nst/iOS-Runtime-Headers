@@ -10,8 +10,8 @@
 @property id observer;
 @property SEL selector;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)observer;
 - (SEL)selector;
 - (void)setObserver:(id)arg1;

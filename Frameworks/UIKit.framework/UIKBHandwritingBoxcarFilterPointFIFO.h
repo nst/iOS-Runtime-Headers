@@ -6,21 +6,21 @@
 
 @interface UIKBHandwritingBoxcarFilterPointFIFO : UIKBHandwritingPointFIFO {
     NSMutableArray *_prevPoints;
-    unsigned int _width;
+    unsigned long long _width;
 }
 
 @property(retain) NSMutableArray * prevPoints;
-@property unsigned int width;
+@property unsigned long long width;
 
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)clear;
 - (void)dealloc;
 - (void)emitAveragedPoint;
 - (void)flush;
-- (id)initWithFIFO:(id)arg1 width:(unsigned int)arg2;
+- (id)initWithFIFO:(id)arg1 width:(unsigned long long)arg2;
 - (id)prevPoints;
 - (void)setPrevPoints:(id)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)width;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)width;
 
 @end

@@ -6,19 +6,19 @@
 
 @interface _UIInputViewControllerOutput : NSObject <NSCopying, NSSecureCoding> {
     TIKeyboardOutput *_keyboardOutput;
-    int _positionOffset;
+    long long _positionOffset;
     NSString *_primaryLanguage;
-    BOOL _shouldAdvanceInputMode;
-    BOOL _shouldDismiss;
+    bool_shouldAdvanceInputMode;
+    bool_shouldDismiss;
 }
 
 @property(retain) TIKeyboardOutput * keyboardOutput;
-@property int positionOffset;
+@property long long positionOffset;
 @property(copy) NSString * primaryLanguage;
-@property BOOL shouldAdvanceInputMode;
-@property BOOL shouldDismiss;
+@property bool shouldAdvanceInputMode;
+@property bool shouldDismiss;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)createKeyboardOutputIfNecessary;
@@ -26,16 +26,16 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)keyboardOutput;
-- (int)positionOffset;
+- (long long)positionOffset;
 - (id)primaryLanguage;
 - (void)setKeyboardOutput:(id)arg1;
-- (void)setPositionOffset:(int)arg1;
+- (void)setPositionOffset:(long long)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
-- (void)setShouldAdvanceInputMode:(BOOL)arg1;
-- (void)setShouldDismiss:(BOOL)arg1;
-- (BOOL)shouldAdvanceInputMode;
-- (BOOL)shouldDismiss;
+- (void)setShouldAdvanceInputMode:(bool)arg1;
+- (void)setShouldDismiss:(bool)arg1;
+- (bool)shouldAdvanceInputMode;
+- (bool)shouldDismiss;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface STWorkoutController : NSObject {
-    int _calibrationType;
-    int _customWorkoutCalories;
+    long long _calibrationType;
+    long long _customWorkoutCalories;
     float _customWorkoutDistance;
     float _customWorkoutDuration;
-    int _distanceUnits;
+    long long _distanceUnits;
     double _elapsedWorkoutTime;
-    BOOL _skipNextEmpedSearch;
-    int _workoutPreset;
-    int _workoutState;
-    int _workoutType;
+    long long _workoutPreset;
+    long long _workoutState;
+    long long _workoutType;
+    bool_skipNextEmpedSearch;
 }
 
-+ (id)shortDescriptionForWorkoutType:(int)arg1 preset:(int)arg2;
-+ (id)stringQuantificationForWorkoutType:(int)arg1 preset:(int)arg2;
++ (id)shortDescriptionForWorkoutType:(long long)arg1 preset:(long long)arg2;
++ (id)stringQuantificationForWorkoutType:(long long)arg1 preset:(long long)arg2;
 
 @end

@@ -12,7 +12,7 @@
 
 - (void)addToEventHandlerQ:(id)arg1;
 - (void)dealloc;
-- (BOOL)eject;
+- (bool)eject;
 - (void)enumerateContent;
 - (void)finalize;
 - (id)initWithTCPIPInfo:(id)arg1;

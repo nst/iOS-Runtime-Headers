@@ -11,13 +11,13 @@
 - (id)entryFieldButtonColor;
 - (id)entryFieldCoverBorderColor;
 - (id)entryFieldCoverFillColor;
-- (float)entryFieldDividerHeight;
-- (BOOL)entryFieldShouldUseBackdropView;
+- (double)entryFieldDividerHeight;
+- (bool)entryFieldShouldUseBackdropView;
 - (id)entryFieldTextColor;
 - (id)green_sendButtonColor;
-- (int)keyboardAppearance;
-- (BOOL)shouldNotShowSendButton;
+- (long long)keyboardAppearance;
+- (bool)shouldNotShowSendButton;
 - (id)siri_sendButtonColor;
-- (BOOL)usesJoystick;
+- (bool)usesJoystick;
 
 @end

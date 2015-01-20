@@ -8,21 +8,21 @@
     NSAttributedString *_attributedText;
     NSDate *_date;
     NSString *_guid;
-    BOOL _isOutgoing;
-    BOOL _isRead;
     long long _messageID;
     NSArray *_recipients;
     IMSPIHandle *_sender;
     NSString *_subject;
     NSString *_text;
     NSURL *_url;
+    bool_isOutgoing;
+    bool_isRead;
 }
 
 @property(retain) NSAttributedString * attributedText;
 @property(retain) NSDate * date;
 @property(retain) NSString * guid;
-@property BOOL isOutgoing;
-@property BOOL isRead;
+@property bool isOutgoing;
+@property bool isRead;
 @property long long messageID;
 @property(retain) NSArray * recipients;
 @property(retain) IMSPIHandle * sender;
@@ -35,16 +35,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)guid;
-- (BOOL)isOutgoing;
-- (BOOL)isRead;
+- (bool)isOutgoing;
+- (bool)isRead;
 - (long long)messageID;
 - (id)recipients;
 - (id)sender;
 - (void)setAttributedText:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setIsOutgoing:(BOOL)arg1;
-- (void)setIsRead:(BOOL)arg1;
+- (void)setIsOutgoing:(bool)arg1;
+- (void)setIsRead:(bool)arg1;
 - (void)setMessageID:(long long)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSender:(id)arg1;

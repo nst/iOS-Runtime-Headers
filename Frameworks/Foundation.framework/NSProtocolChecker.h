@@ -15,7 +15,7 @@
 
 - (id)_imMethodSignatureForSelector:(SEL)arg1;
 - (const char *)_localClassNameForClass;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (void)doesNotRecognizeSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
@@ -23,7 +23,7 @@
 - (struct objc_method_description { SEL x1; char *x2; }*)methodDescriptionForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)protocol;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)target;
 
 @end

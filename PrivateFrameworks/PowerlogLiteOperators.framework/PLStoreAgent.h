@@ -12,7 +12,7 @@
 @property(retain) NSMutableDictionary * currentDownloads;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) SSEventMonitor * monitor;
 @property(readonly) Class superclass;
 

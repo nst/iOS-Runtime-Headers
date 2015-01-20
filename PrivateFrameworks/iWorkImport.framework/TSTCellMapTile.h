@@ -10,27 +10,27 @@
 @class NSMutableArray;
 
 @interface TSTCellMapTile : TSPObject {
-    unsigned int mCapacity;
+    unsigned long long mCapacity;
     struct { unsigned short x1; unsigned char x2; unsigned char x3; } *mCellIDs;
     NSMutableArray *mCells;
-    unsigned int mIndexOffset;
+    unsigned long long mIndexOffset;
 }
 
-@property(readonly) unsigned int indexOffset;
+@property(readonly) unsigned long long indexOffset;
 
 - (void)addCell:(id)arg1 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (id)cellAtIndex:(unsigned int)arg1;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDAtIndex:(unsigned int)arg1;
-- (unsigned int)count;
+- (id)cellAtIndex:(unsigned long long)arg1;
+- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDAtIndex:(unsigned long long)arg1;
+- (unsigned long long)count;
 - (void)dealloc;
-- (unsigned int)indexOffset;
+- (unsigned long long)indexOffset;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 indexOffset:(unsigned int)arg2;
-- (BOOL)isFull;
+- (id)initWithContext:(id)arg1 indexOffset:(unsigned long long)arg2;
+- (bool)isFull;
 - (void)loadFromArchive:(const struct CellMapTileArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TST::CellMapTileArchive_CellMapEntry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 - (void)popLastCell;
 - (void)saveToArchive:(struct CellMapTileArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TST::CellMapTileArchive_CellMapEntry> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setIndexOffset:(unsigned int)arg1;
+- (void)setIndexOffset:(unsigned long long)arg1;
 
 @end

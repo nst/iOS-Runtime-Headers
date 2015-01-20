@@ -11,6 +11,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isValid:(id)arg1;
+- (bool)isValid:(id)arg1;
 
 @end

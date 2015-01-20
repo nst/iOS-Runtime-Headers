@@ -7,28 +7,28 @@
 @interface LSDocumentProxy : LSResourceProxy {
     NSString *_MIMEType;
     NSString *_name;
-    BOOL _sourceIsManaged;
     NSString *_typeIdentifier;
+    bool_sourceIsManaged;
 }
 
 @property(readonly) NSString * MIMEType;
 @property(readonly) NSString * name;
-@property(readonly) BOOL sourceIsManaged;
+@property(readonly) bool sourceIsManaged;
 @property(readonly) NSString * typeIdentifier;
 
-+ (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
++ (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(bool)arg4;
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
 
 - (id)MIMEType;
-- (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
-- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
+- (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;
+- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 - (void)bind;
 - (void)dealloc;
 - (id)description;
 - (id)iconStyleDomain;
-- (id)initWithName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
+- (id)initWithName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(bool)arg4;
 - (id)name;
-- (BOOL)sourceIsManaged;
+- (bool)sourceIsManaged;
 - (id)typeIdentifier;
 
 @end

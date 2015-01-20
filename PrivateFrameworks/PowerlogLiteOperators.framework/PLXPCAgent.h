@@ -107,7 +107,7 @@
 - (id)UIKitAlertXPCListener;
 - (id)UIKitKeyboardXPCListener;
 - (id)WebAppXPCListener;
-- (void)createAccessoryAccountingEventWithName:(id)arg1 isStartEvent:(BOOL)arg2;
+- (void)createAccessoryAccountingEventWithName:(id)arg1 isStartEvent:(bool)arg2;
 - (void)createAirDropAccountingEvent:(id)arg1;
 - (void)createApsdAccountingEvent:(id)arg1;
 - (void)createInCallServiceAccountingEvent:(id)arg1;
@@ -133,7 +133,7 @@
 - (void)logEventPointDACalendarItemsDownloaded:(id)arg1;
 - (void)logEventPointDACalendarItemsUploaded:(id)arg1;
 - (void)logEventPointDASyncStart:(id)arg1;
-- (void)logEventPointJetsam:(unsigned long)arg1;
+- (void)logEventPointJetsam:(unsigned long long)arg1;
 - (void)logEventPointMailFetch:(id)arg1;
 - (void)logEventPointNetworkSymptomsAdviosry:(id)arg1;
 - (void)logEventPointPush:(id)arg1;

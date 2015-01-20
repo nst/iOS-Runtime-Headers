@@ -23,7 +23,7 @@
 - (id)connection;
 - (id)description;
 - (id)entitlements;
-- (BOOL)hasEntitlement:(id)arg1 withError:(id*)arg2;
+- (bool)hasEntitlement:(id)arg1 withError:(id*)arg2;
 - (id)initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)initWithConnection:(id)arg1;
 - (id)initWithEntitlements:(id)arg1;

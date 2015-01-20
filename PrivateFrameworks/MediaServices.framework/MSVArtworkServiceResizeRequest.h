@@ -5,19 +5,19 @@
 @class NSMutableArray, NSURL;
 
 @interface MSVArtworkServiceResizeRequest : MSVArtworkServiceRequest {
-    BOOL _overwriteExistingDestinations;
     NSMutableArray *_resizeDestinations;
     NSURL *_sourceURL;
+    bool_overwriteExistingDestinations;
 }
 
-@property BOOL overwriteExistingDestinations;
+@property bool overwriteExistingDestinations;
 @property(retain) NSMutableArray * resizeDestinations;
 @property(copy) NSURL * sourceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addDestinationWithSize:(struct CGSize { float x1; float x2; })arg1 url:(id)arg2;
+- (void)addDestinationWithSize:(struct CGSize { double x1; double x2; })arg1 url:(id)arg2;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -25,9 +25,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceURL:(id)arg1;
 - (Class)operationClass;
-- (BOOL)overwriteExistingDestinations;
+- (bool)overwriteExistingDestinations;
 - (id)resizeDestinations;
-- (void)setOverwriteExistingDestinations:(BOOL)arg1;
+- (void)setOverwriteExistingDestinations:(bool)arg1;
 - (void)setResizeDestinations:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (id)sourceURL;

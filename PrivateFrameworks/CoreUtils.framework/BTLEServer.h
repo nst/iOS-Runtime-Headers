@@ -16,9 +16,9 @@
     CBPeripheralManager *_peripheralManager;
     NSObject<OS_dispatch_queue> *_queue;
     id _readHandler;
-    BOOL _started;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; } *_ucat;
     id _writeHandler;
+    bool_started;
 }
 
 @property(copy) NSUUID * advertiseUUID;
@@ -26,18 +26,18 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }* logCategory;
 @property(copy) id readHandler;
 @property(readonly) Class superclass;
 @property(copy) id writeHandler;
 
-- (long)_start2;
+- (int)_start2;
 - (void)_start;
-- (void)_stop:(long)arg1;
+- (void)_stop:(int)arg1;
 - (id)advertiseUUID;
-- (void)completeReadRequest:(id)arg1 status:(long)arg2;
-- (void)completeWriteRequests:(id)arg1 status:(long)arg2;
+- (void)completeReadRequest:(id)arg1 status:(int)arg2;
+- (void)completeWriteRequests:(id)arg1 status:(int)arg2;
 - (id)configuration;
 - (void)dealloc;
 - (id)dispatchQueue;

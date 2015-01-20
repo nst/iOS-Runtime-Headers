@@ -6,15 +6,15 @@
 
 @interface SBCPlaybackPositionService : SBCXPCService <SBCPlaybackPositionServiceProtocol> {
     SBCPlaybackPositionDomain *_playbackPositionDomain;
-    BOOL _usingPlaybackPositions;
+    bool_usingPlaybackPositions;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) SBCPlaybackPositionDomain * playbackPositionDomain;
 @property(readonly) Class superclass;
-@property(readonly) BOOL usingPlaybackPositions;
+@property(readonly) bool usingPlaybackPositions;
 
 + (Class)XPCServiceInterfaceClass;
 + (id)_serviceForPlaybackPositionDomain:(id)arg1;
@@ -31,9 +31,9 @@
 - (id)playbackPositionDomain;
 - (oneway void)pullPlaybackPositionEntity:(id)arg1 completionBlock:(id)arg2;
 - (oneway void)pushPlaybackPositionEntity:(id)arg1 completionBlock:(id)arg2;
-- (oneway void)savePlaybackPositionEntity:(id)arg1 isCheckpoint:(BOOL)arg2;
+- (oneway void)savePlaybackPositionEntity:(id)arg1 isCheckpoint:(bool)arg2;
 - (oneway void)synchronizeImmediatelyWithCompletionHandler:(id)arg1;
 - (oneway void)updateForeignDatabaseWithValuesFromPlaybackPositionEntity:(id)arg1;
-- (BOOL)usingPlaybackPositions;
+- (bool)usingPlaybackPositions;
 
 @end

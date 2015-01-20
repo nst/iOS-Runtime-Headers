@@ -5,16 +5,16 @@
 @interface PUPhotoEditViewControllerSpec : PUViewControllerSpec {
 }
 
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previewViewInsetsLandscape;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previewViewInsetsPortrait;
-@property(readonly) BOOL shouldDisplayExtensionButtonInMainToolbar;
-@property(readonly) BOOL shouldDisplaySecondaryToolButtonsInMainToolbar;
-@property(readonly) float toolbarLongSideMargin;
+@property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previewViewInsetsLandscape;
+@property(readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previewViewInsetsPortrait;
+@property(readonly) bool shouldDisplayExtensionButtonInMainToolbar;
+@property(readonly) bool shouldDisplaySecondaryToolButtonsInMainToolbar;
+@property(readonly) double toolbarLongSideMargin;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previewViewInsetsLandscape;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previewViewInsetsPortrait;
-- (BOOL)shouldDisplayExtensionButtonInMainToolbar;
-- (BOOL)shouldDisplaySecondaryToolButtonsInMainToolbar;
-- (float)toolbarLongSideMargin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previewViewInsetsLandscape;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previewViewInsetsPortrait;
+- (bool)shouldDisplayExtensionButtonInMainToolbar;
+- (bool)shouldDisplaySecondaryToolButtonsInMainToolbar;
+- (double)toolbarLongSideMargin;
 
 @end

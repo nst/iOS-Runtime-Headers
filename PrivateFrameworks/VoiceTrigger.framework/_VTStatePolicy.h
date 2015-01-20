@@ -17,11 +17,11 @@
 
 - (void).cxx_destruct;
 - (void)addDependent:(id)arg1;
-- (BOOL)dependenciesSatisfied;
+- (bool)dependenciesSatisfied;
 - (void)dependencyUpdated:(id)arg1;
 - (void)dependsOn:(id)arg1;
 - (id)initWithCallback:(id)arg1 queue:(id)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)notify;
 - (void)reload;
 

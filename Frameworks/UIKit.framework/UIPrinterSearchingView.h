@@ -13,6 +13,6 @@
 - (void)dealloc;
 - (id)initInView:(id)arg1;
 - (void)searchTimeout;
-- (void)setSearching:(BOOL)arg1;
+- (void)setSearching:(bool)arg1;
 
 @end

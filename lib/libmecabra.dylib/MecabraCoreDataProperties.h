@@ -20,7 +20,7 @@
 + (id)sharedInstanceForType:(id)arg1;
 + (id)ubiquityContainerURL;
 
-- (BOOL)databaseSyncs;
+- (bool)databaseSyncs;
 - (void)dealloc;
 - (id)descriptionDictionary;
 - (id)entityDescriptionURL;

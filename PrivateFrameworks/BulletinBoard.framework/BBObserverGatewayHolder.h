@@ -5,40 +5,40 @@
 @class BBObserverClientProxy, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_source>, NSString;
 
 @interface BBObserverGatewayHolder : NSObject {
-    BOOL _didHandleObservers;
-    unsigned int _feed;
+    unsigned long long _feed;
     BBObserverClientProxy *_gateway;
-    unsigned int _gatewayPriority;
+    unsigned long long _gatewayPriority;
     NSString *_name;
     NSMutableSet *_observersByFeed[9];
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSMutableArray *_timeouts;
+    bool_didHandleObservers;
 }
 
-@property BOOL didHandleObservers;
-@property unsigned int feed;
+@property bool didHandleObservers;
+@property unsigned long long feed;
 @property(retain) BBObserverClientProxy * gateway;
-@property unsigned int gatewayPriority;
+@property unsigned long long gatewayPriority;
 @property(copy) NSString * name;
 
 - (id)_addTimeout:(double)arg1 handler:(id)arg2;
 - (void)_handleTimeout;
-- (BOOL)_invalidateTimeout:(id)arg1;
+- (bool)_invalidateTimeout:(id)arg1;
 - (void)_startNextTimer;
 - (void)dealloc;
-- (BOOL)didHandleObservers;
-- (unsigned int)feed;
+- (bool)didHandleObservers;
+- (unsigned long long)feed;
 - (id)gateway;
-- (unsigned int)gatewayPriority;
+- (unsigned long long)gatewayPriority;
 - (id)initWithQueue:(id)arg1 name:(id)arg2;
 - (id)name;
-- (void)sendAddBulletin:(id)arg1 bulletinID:(id)arg2 feeds:(unsigned int)arg3 shouldPlayLightsAndSirens:(BOOL)arg4 timeout:(double)arg5 handler:(id)arg6;
-- (void)sendAddBulletin:(id)arg1 bulletinID:(id)arg2 feeds:(unsigned int)arg3 shouldPlayLightsAndSirens:(BOOL)arg4;
-- (void)sendAddBulletinToObservers:(id)arg1 bulletinID:(id)arg2 feeds:(unsigned int)arg3 shouldPlayLightsAndSirens:(BOOL)arg4;
-- (void)setDidHandleObservers:(BOOL)arg1;
-- (void)setFeed:(unsigned int)arg1;
+- (void)sendAddBulletin:(id)arg1 bulletinID:(id)arg2 feeds:(unsigned long long)arg3 shouldPlayLightsAndSirens:(bool)arg4 timeout:(double)arg5 handler:(id)arg6;
+- (void)sendAddBulletin:(id)arg1 bulletinID:(id)arg2 feeds:(unsigned long long)arg3 shouldPlayLightsAndSirens:(bool)arg4;
+- (void)sendAddBulletinToObservers:(id)arg1 bulletinID:(id)arg2 feeds:(unsigned long long)arg3 shouldPlayLightsAndSirens:(bool)arg4;
+- (void)setDidHandleObservers:(bool)arg1;
+- (void)setFeed:(unsigned long long)arg1;
 - (void)setGateway:(id)arg1;
-- (void)setGatewayPriority:(unsigned int)arg1;
+- (void)setGatewayPriority:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 
 @end

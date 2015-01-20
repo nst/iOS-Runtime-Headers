@@ -5,8 +5,8 @@
 @interface PLModelingUtilities : NSObject {
 }
 
-+ (BOOL)alsCurveHigherThanDefault;
++ (bool)alsCurveHigherThanDefault;
 + (double)defaultBatteryEnergyCapacity;
-+ (BOOL)internalBuild;
++ (bool)internalBuild;
 
 @end

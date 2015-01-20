@@ -9,19 +9,19 @@
     UIView *_dividerLine;
     UIButton *_downButton;
     NSInvocation *_invocation;
-    BOOL _shouldInsetButtons;
     UIButton *_upButton;
+    bool_shouldInsetButtons;
 }
 
-@property BOOL shouldInsetButtons;
+@property bool shouldInsetButtons;
 
 - (void)_updateButtonConstraints;
 - (void)buttonTapped:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })centeringBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })centeringBounds;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setShouldInsetButtons:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setShouldInsetButtons:(bool)arg1;
 - (void)setTarget:(id)arg1 forAction:(SEL)arg2;
-- (BOOL)shouldInsetButtons;
+- (bool)shouldInsetButtons;
 
 @end

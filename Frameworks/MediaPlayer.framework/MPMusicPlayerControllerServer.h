@@ -10,7 +10,7 @@
 
 @property(readonly) MPAVController * player;
 
-+ (BOOL)isMusicPlayerControllerServerRunning;
++ (bool)isMusicPlayerControllerServerRunning;
 + (id)sharedInstance;
 + (void)startMusicPlayerControllerServerWithDelegate:(id)arg1;
 

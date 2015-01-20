@@ -11,7 +11,7 @@
 @property SiriUISiriStatusView * statusView;
 
 - (void).cxx_destruct;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setStatusView:(id)arg1;
 - (id)statusView;
 

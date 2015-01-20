@@ -10,30 +10,30 @@
 
 @interface EKTravelEngine : NSObject {
     id _adviceBlock;
-    BOOL _databaseIsEncryptedAndUnreadable;
     NSMutableDictionary *_eventExternalURLsToAgendaEntries;
-    BOOL _needsRefresh;
     PCPersistentTimer *_periodicRefreshTimer;
-    BOOL _running;
     NSObject<OS_dispatch_source> *_syncYieldTimer;
     EKTravelEngineThrottle *_throttle;
     EKTravelAdvisor *_travelAdvisor;
     NSObject<OS_dispatch_queue> *_travelEngineQueue;
-    BOOL _yieldingToSync;
+    bool_databaseIsEncryptedAndUnreadable;
+    bool_needsRefresh;
+    bool_running;
+    bool_yieldingToSync;
 }
 
 @property(copy) id adviceBlock;
 
 + (id)_engineIdentifier;
-+ (int)_geoTransportTypeForCalLocationRoutingMode:(int)arg1;
-+ (BOOL)hasTravelEligibleEvents:(id)arg1;
++ (int)_geoTransportTypeForCalLocationRoutingMode:(long long)arg1;
++ (bool)hasTravelEligibleEvents:(id)arg1;
 
 - (void)_calDatabaseChangedNotificationReceived;
 - (void)_calSyncClientBeginningMultiSaveNotificationReceived;
 - (void)_calSyncClientFinishedMultiSaveNotificationReceived;
 - (void)_installPeriodicRefreshTimer;
 - (void)_installSyncYieldTimer;
-- (BOOL)_isProtectedDataAvailable;
+- (bool)_isProtectedDataAvailable;
 - (void)_locationAuthorizationChanged:(int)arg1;
 - (void)_mobileKeyBagLockStatusNotificationReceived;
 - (void)_periodicRefreshTimerFired:(id)arg1;

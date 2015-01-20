@@ -29,7 +29,7 @@
 + (id)postalAddressWithDictionary:(id)arg1;
 
 - (id)ISOCountryCode;
-- (BOOL)_isAddressFieldEqual:(id)arg1 toField:(id)arg2;
+- (bool)_isAddressFieldEqual:(id)arg1 toField:(id)arg2;
 - (id)addressDictionary;
 - (id)city;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -40,7 +40,7 @@
 - (id)formattedAddressSingleLine;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)keyboardSettingsForAddressPart:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)pkAddressDictionary;

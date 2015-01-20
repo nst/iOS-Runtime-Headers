@@ -6,7 +6,7 @@
 
 @interface MMCSRequestorContext : NSObject {
     char **_authTokens;
-    unsigned long _count;
+    unsigned long long _count;
     MMCSEngine *_engine;
     unsigned int *_itemFlags;
     unsigned long long *_itemIDs;
@@ -15,7 +15,7 @@
 }
 
 @property char ** authTokens;
-@property unsigned long count;
+@property unsigned long long count;
 @property MMCSEngine * engine;
 @property unsigned int* itemFlags;
 @property unsigned long long* itemIDs;
@@ -26,15 +26,15 @@
 
 - (void).cxx_destruct;
 - (char **)authTokens;
-- (unsigned long)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)engine;
 - (id)initWithEngine:(id)arg1 type:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int*)itemFlags;
 - (unsigned long long*)itemIDs;
 - (void)setAuthTokens:(char **)arg1;
-- (void)setCount:(unsigned long)arg1;
+- (void)setCount:(unsigned long long)arg1;
 - (void)setEngine:(id)arg1;
 - (void)setItemFlags:(unsigned int*)arg1;
 - (void)setItemIDs:(unsigned long long*)arg1;

@@ -8,8 +8,8 @@
     NSDictionary *_info;
     NSString *_name;
     SPXPCConnection *_receivingConnection;
-    unsigned long _shmemLen;
-    unsigned int _shmemPtr;
+    unsigned long long _shmemLen;
+    unsigned long long _shmemPtr;
     NSObject<OS_xpc_object> *_x_message;
     NSObject<OS_xpc_object> *_x_reply;
     NSObject<OS_xpc_object> *_x_reply_connection;
@@ -17,8 +17,8 @@
 
 @property(copy) NSDictionary * info;
 @property(readonly) NSString * name;
-@property unsigned long sharedMemoryLength;
-@property unsigned int sharedMemoryRegion;
+@property unsigned long long sharedMemoryLength;
+@property unsigned long long sharedMemoryRegion;
 
 - (id)_createXPCMessage;
 - (id)_initWithXPCMessage:(id)arg1 onConnection:(id)arg2;
@@ -26,12 +26,12 @@
 - (id)info;
 - (id)initWithName:(id)arg1;
 - (id)name;
-- (BOOL)needsReply;
+- (bool)needsReply;
 - (void)sendReply:(id)arg1;
 - (void)setInfo:(id)arg1;
-- (void)setSharedMemoryLength:(unsigned long)arg1;
-- (void)setSharedMemoryRegion:(unsigned int)arg1;
-- (unsigned long)sharedMemoryLength;
-- (unsigned int)sharedMemoryRegion;
+- (void)setSharedMemoryLength:(unsigned long long)arg1;
+- (void)setSharedMemoryRegion:(unsigned long long)arg1;
+- (unsigned long long)sharedMemoryLength;
+- (unsigned long long)sharedMemoryRegion;
 
 @end

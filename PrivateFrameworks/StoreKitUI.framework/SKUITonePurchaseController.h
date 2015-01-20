@@ -19,7 +19,7 @@
 @property(retain) SKUIClientContext * clientContext;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property UIViewController * parentViewController;
 @property(readonly) Class superclass;
 

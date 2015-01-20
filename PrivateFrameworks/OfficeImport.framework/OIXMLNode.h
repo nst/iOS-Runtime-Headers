@@ -10,7 +10,7 @@
     id _value;
 }
 
-+ (void)_escapeCharacters:(const unsigned short*)arg1 amount:(unsigned int)arg2 escapeWhiteSpaces:(BOOL)arg3 inString:(id)arg4 appendingToString:(struct __CFString { }*)arg5;
++ (void)_escapeCharacters:(const unsigned short*)arg1 amount:(unsigned int)arg2 escapeWhiteSpaces:(bool)arg3 inString:(id)arg4 appendingToString:(struct __CFString { }*)arg5;
 + (void)_escapeHTMLAttributeCharacters:(id)arg1 withQuote:(unsigned short)arg2 appendingToString:(struct __CFString { }*)arg3;
 + (id)attributeWithName:(id)arg1 stringValue:(id)arg2;
 + (id)elementWithName:(id)arg1 stringValue:(id)arg2;

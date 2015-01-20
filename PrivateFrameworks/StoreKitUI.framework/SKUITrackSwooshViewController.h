@@ -7,20 +7,20 @@
 @interface SKUITrackSwooshViewController : SKUISwooshViewController <SKUIItemStateCenterObserver, UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_collectionView;
     SKUITrackSwooshCollectionViewLayout *_collectionViewLayout;
-    BOOL _didInitialReload;
     NSObject<OS_dispatch_source> *_doubleTapTimer;
     SKUIItemOfferButtonAppearance *_itemOfferButtonAppearance;
     SKUISwooshView *_swooshView;
     SKUISwooshPageComponent *_trackSwoosh;
+    bool_didInitialReload;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <SKUITrackSwooshViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) SKUIItemOfferButtonAppearance * itemOfferButtonAppearance;
 @property(readonly) NSArray * lockups;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } seeAllButtonFrame;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,9 +30,9 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemAtIndex:(long long)arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithTrackSwoosh:(id)arg1;
 - (void)itemCollectionView:(id)arg1 didConfirmItemOfferForCell:(id)arg2;
@@ -42,10 +42,10 @@
 - (void)loadView;
 - (id)lockups;
 - (void)reloadCellsForLockups:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })seeAllButtonFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })seeAllButtonFrame;
 - (void)setColorScheme:(id)arg1;
-- (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
+- (void)setImage:(id)arg1 forItemAtIndex:(long long)arg2;
 - (void)setItemOfferButtonAppearance:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

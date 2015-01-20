@@ -7,14 +7,14 @@
 @interface SUNetworkObserver : NSObject <ISSingleton, ISStoreURLOperationDelegate> {
     ISStoreURLOperation *_partnerDetectOperation;
     NSString *_partnerIdentifier;
-    BOOL _partnersEnabled;
     NSTimer *_startupTimer;
-    int _storeServicesNetworkUsageCount;
+    long long _storeServicesNetworkUsageCount;
+    bool_partnersEnabled;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * partnerIdentifier;
 @property(readonly) Class superclass;
 
@@ -39,7 +39,7 @@
 - (id)init;
 - (id)partnerIdentifier;
 - (void)setPartnerIdentifier:(id)arg1;
-- (void)setPartnersEnabled:(BOOL)arg1;
+- (void)setPartnersEnabled:(bool)arg1;
 - (void)startNetworkAvailabilityTimer;
 
 @end

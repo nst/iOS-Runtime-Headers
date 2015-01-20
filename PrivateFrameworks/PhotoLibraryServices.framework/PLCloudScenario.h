@@ -6,21 +6,21 @@
 
 @interface PLCloudScenario : NSObject {
     NSArray *_operations;
-    unsigned int _priority;
+    unsigned long long _priority;
     NSProgress *_progress;
 }
 
 @property(retain) NSArray * operations;
-@property unsigned int priority;
+@property unsigned long long priority;
 @property(retain) NSProgress * progress;
 
 - (void)dealloc;
 - (id)operations;
-- (unsigned int)priority;
+- (unsigned long long)priority;
 - (id)progress;
 - (void)requestCancel;
 - (void)setOperations:(id)arg1;
-- (void)setPriority:(unsigned int)arg1;
+- (void)setPriority:(unsigned long long)arg1;
 - (void)setProgress:(id)arg1;
 
 @end

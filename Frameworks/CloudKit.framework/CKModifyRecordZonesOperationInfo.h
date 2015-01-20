@@ -5,28 +5,28 @@
 @class NSArray;
 
 @interface CKModifyRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL _allowDefaultZoneSave;
-    BOOL _markZonesAsUserPurged;
     NSArray *_recordZoneIDsToDelete;
     NSArray *_recordZonesToSave;
+    bool_allowDefaultZoneSave;
+    bool_markZonesAsUserPurged;
 }
 
-@property BOOL allowDefaultZoneSave;
-@property BOOL markZonesAsUserPurged;
+@property bool allowDefaultZoneSave;
+@property bool markZonesAsUserPurged;
 @property(retain) NSArray * recordZoneIDsToDelete;
 @property(retain) NSArray * recordZonesToSave;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)allowDefaultZoneSave;
+- (bool)allowDefaultZoneSave;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)markZonesAsUserPurged;
+- (bool)markZonesAsUserPurged;
 - (id)recordZoneIDsToDelete;
 - (id)recordZonesToSave;
-- (void)setAllowDefaultZoneSave:(BOOL)arg1;
-- (void)setMarkZonesAsUserPurged:(BOOL)arg1;
+- (void)setAllowDefaultZoneSave:(bool)arg1;
+- (void)setMarkZonesAsUserPurged:(bool)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (void)setRecordZonesToSave:(id)arg1;
 

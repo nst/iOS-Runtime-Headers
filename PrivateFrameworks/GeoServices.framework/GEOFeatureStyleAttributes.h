@@ -18,25 +18,25 @@
 - (id)description;
 - (int)drivingSide;
 - (BOOL)featureType;
-- (BOOL)hasDrivingSide;
-- (unsigned int)hash;
+- (bool)hasDrivingSide;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithAttributes:(unsigned int)arg1;
 - (id)initWithPlaceDataStyleAttributes:(id)arg1;
 - (id)initWithSharedStyleAttributes:(id)arg1 extAttributes:(struct { unsigned int x1; unsigned long long x2; }*)arg2 extAttributeCount:(unsigned char)arg3;
 - (id)initWithStyleAttributes:(id)arg1;
-- (BOOL)isDrivable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFreeway;
-- (BOOL)isRailway;
-- (BOOL)isRamp;
-- (BOOL)isTunnel;
-- (BOOL)isWalkable;
+- (bool)isDrivable;
+- (bool)isEqual:(id)arg1;
+- (bool)isFreeway;
+- (bool)isRailway;
+- (bool)isRamp;
+- (bool)isTunnel;
+- (bool)isWalkable;
 - (int)rampDirection;
 - (int)rampType;
 - (void)replaceAttributes:(struct { unsigned int x1; int x2; }*)arg1 count:(unsigned int)arg2;
 - (void)setExtAttributes:(struct { unsigned int x1; unsigned long long x2; }*)arg1 count:(unsigned int)arg2;
-- (BOOL)shouldSuppress3DBuildingStrokes;
+- (bool)shouldSuppress3DBuildingStrokes;
 - (void)sort;
 
 @end

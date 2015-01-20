@@ -25,14 +25,14 @@
 @property(copy,readonly) NSString * description;
 @property(retain) CADisplayLink * displayLink;
 @property(readonly) double duration;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) CKMediaObject * mediaObject;
-@property(getter=isPlaying,readonly) BOOL playing;
+@property(getter=isPlaying,readonly) bool playing;
 @property double prevCurrentTime;
 @property(readonly) Class superclass;
 
 - (id)audioPlayer;
-- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
+- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
 - (id)block;
 - (double)currentTime;
 - (void)dealloc;
@@ -42,7 +42,7 @@
 - (double)duration;
 - (id)initWithFileURL:(id)arg1;
 - (id)initWithMediaObject:(id)arg1;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)mediaObject;
 - (void)pause;
 - (void)play;

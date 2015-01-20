@@ -6,14 +6,16 @@
 }
 
 + (id)newBufferFromCFData:(struct __CFData { }*)arg1;
-+ (id)newBufferFromFile:(int)arg1 allowMappingIfSafe:(BOOL)arg2;
++ (id)newBufferFromFile:(int)arg1 allowMappingIfSafe:(bool)arg2;
 + (id)newBufferFromPropertyList:(void*)arg1;
 
+- (bool)beginAccessing;
 - (void*)bytes;
 - (struct __CFData { }*)copyCFData;
-- (void*)copyPropertyListWithMutability:(unsigned long)arg1;
+- (void*)copyPropertyListWithMutability:(unsigned long long)arg1;
 - (id)copyXPCData;
-- (unsigned long)length;
-- (BOOL)validatePlist;
+- (void)endAccessing;
+- (unsigned long long)length;
+- (bool)validatePlist;
 
 @end

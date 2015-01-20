@@ -9,7 +9,7 @@
     NSMutableArray *_mutableItems;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

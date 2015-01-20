@@ -10,45 +10,45 @@
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct RefPtr<WebKit::ShareableBitmap> { 
         struct ShareableBitmap {} *m_ptr; 
     struct RetainPtr<UIImage> { 
         void *m_ptr; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     } _URL;
     } _boundingRect;
     } _image;
     } _interactionLocation;
     } _title;
-    int _type;
+    long long _type;
     } _uiImage;
 }
 
 @property(readonly) NSURL * URL;
-@property(readonly) struct CGPoint { float x1; float x2; } _interactionLocation;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
+@property(readonly) struct CGPoint { double x1; double x2; } _interactionLocation;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRect;
 @property(copy,readonly) UIImage * image;
 @property(readonly) NSString * title;
-@property(readonly) int type;
+@property(readonly) long long type;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)URL;
-- (id)_initWithType:(int)arg1 URL:(id)arg2 location:(struct CGPoint { float x1; float x2; })arg3 title:(id)arg4 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 image:(struct ShareableBitmap { unsigned int x1; struct IntSize { int x_2_1_1; int x_2_1_2; } x2; unsigned int x3; struct RefPtr<WebKit::SharedMemory> { struct SharedMemory {} *x_4_1_1; } x4; void *x5; }*)arg6;
-- (struct CGPoint { float x1; float x2; })_interactionLocation;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
+- (id)_initWithType:(long long)arg1 URL:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3 title:(id)arg4 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 image:(struct ShareableBitmap { unsigned int x1; struct IntSize { int x_2_1_1; int x_2_1_2; } x2; unsigned int x3; struct RefPtr<WebKit::SharedMemory> { struct SharedMemory {} *x_4_1_1; } x4; void *x5; }*)arg6;
+- (struct CGPoint { double x1; double x2; })_interactionLocation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
 - (id)image;
 - (id)title;
-- (int)type;
+- (long long)type;
 
 @end

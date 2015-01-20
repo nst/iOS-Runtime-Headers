@@ -6,64 +6,64 @@
 
 @interface MPDetailScrubController : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     float _accumulatedDelta;
     } _beginLocationInView;
-    int _currentScrubSpeed;
+    long long _currentScrubSpeed;
     float _currentValue;
     <MPDetailScrubControllerDelegate> *_delegate;
-    BOOL _detailedScrubbingEnabled;
-    BOOL _didBeginTracking;
     double _duration;
-    BOOL _isTracking;
     } _lastCommittedLocationInView;
-    BOOL _needsCommit;
     } _previousLocationInView;
     UIControl<MPDetailedScrubbing> *_scrubbingControl;
-    float _scrubbingVerticalRange;
+    double _scrubbingVerticalRange;
+    bool_detailedScrubbingEnabled;
+    bool_didBeginTracking;
+    bool_isTracking;
+    bool_needsCommit;
 }
 
-@property(readonly) int currentScrubSpeed;
+@property(readonly) long long currentScrubSpeed;
 @property <MPDetailScrubControllerDelegate> * delegate;
-@property BOOL detailedScrubbingEnabled;
+@property bool detailedScrubbingEnabled;
 @property double duration;
-@property(readonly) BOOL durationAllowsForDetailedScrubbing;
-@property(readonly) BOOL isTracking;
+@property(readonly) bool durationAllowsForDetailedScrubbing;
+@property(readonly) bool isTracking;
 @property UIControl<MPDetailedScrubbing> * scrubbingControl;
-@property float scrubbingVerticalRange;
+@property double scrubbingVerticalRange;
 
 - (void).cxx_destruct;
 - (void)_beginScrubbing;
 - (void)_commitValue:(float)arg1;
 - (void)_endScrubbing;
 - (float)_minimumScale;
-- (float)_scaleForIdealValueForVerticalPosition:(float)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (float)_scaleForIdealValueForVerticalPosition:(double)arg1;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (int)currentScrubSpeed;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (long long)currentScrubSpeed;
 - (id)delegate;
-- (BOOL)detailedScrubbingEnabled;
+- (bool)detailedScrubbingEnabled;
 - (double)duration;
-- (BOOL)durationAllowsForDetailedScrubbing;
+- (bool)durationAllowsForDetailedScrubbing;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (id)initWithScrubbingControl:(id)arg1;
-- (BOOL)isTracking;
-- (float)scaleForVerticalPosition:(float)arg1;
+- (bool)isTracking;
+- (float)scaleForVerticalPosition:(double)arg1;
 - (id)scrubbingControl;
-- (float)scrubbingVerticalRange;
+- (double)scrubbingVerticalRange;
 - (void)setDelegate:(id)arg1;
-- (void)setDetailedScrubbingEnabled:(BOOL)arg1;
+- (void)setDetailedScrubbingEnabled:(bool)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setScrubbingControl:(id)arg1;
-- (void)setScrubbingVerticalRange:(float)arg1;
+- (void)setScrubbingVerticalRange:(double)arg1;
 
 @end

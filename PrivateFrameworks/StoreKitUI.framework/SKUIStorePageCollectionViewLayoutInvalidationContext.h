@@ -3,12 +3,12 @@
  */
 
 @interface SKUIStorePageCollectionViewLayoutInvalidationContext : UICollectionViewFlowLayoutInvalidationContext {
-    BOOL _invalidateItemPinningLayoutInformation;
+    bool_invalidateItemPinningLayoutInformation;
 }
 
-@property BOOL invalidateItemPinningLayoutInformation;
+@property bool invalidateItemPinningLayoutInformation;
 
-- (BOOL)invalidateItemPinningLayoutInformation;
-- (void)setInvalidateItemPinningLayoutInformation:(BOOL)arg1;
+- (bool)invalidateItemPinningLayoutInformation;
+- (void)setInvalidateItemPinningLayoutInformation:(bool)arg1;
 
 @end

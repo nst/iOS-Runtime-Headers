@@ -10,10 +10,10 @@
 
 - (void)addCommand:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasCommands;
+- (bool)hasCommands;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)modifiesAnyObjectPassingTest:(id)arg1;
+- (bool)modifiesAnyObjectPassingTest:(id)arg1;
 - (void)populateChangePropagationMapAfterCommit:(id)arg1;
 - (void)redo;
 - (void)saveToArchiver:(id)arg1;

@@ -5,6 +5,6 @@
 @interface _RUTermsTextView : UITextView {
 }
 
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 
 @end

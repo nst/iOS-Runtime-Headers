@@ -12,7 +12,7 @@
 @interface WKWebProcessPlugInBrowserContextController : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPage> { 
         struct type { 
-            unsigned char __lx[1360]; 
+            unsigned char __lx[2000]; 
         } data; 
     struct WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> > { 
         id m_weakReference; 
@@ -28,14 +28,14 @@
 
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 @property(readonly) struct OpaqueWKBundlePage { }* _bundlePageRef;
-@property(setter=_setDefersLoading:) BOOL _defersLoading;
+@property(setter=_setDefersLoading:) bool _defersLoading;
 @property(setter=_setFormDelegate:) <WKWebProcessPlugInFormDelegatePrivate> * _formDelegate;
 @property(readonly) _WKRemoteObjectRegistry * _remoteObjectRegistry;
-@property(readonly) BOOL _usesNonPersistentWebsiteDataStore;
+@property(readonly) bool _usesNonPersistentWebsiteDataStore;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
 @property(readonly) WKBrowsingContextHandle * handle;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property <WKWebProcessPlugInLoadDelegate> * loadDelegate;
 @property(readonly) WKWebProcessPlugInFrame * mainFrame;
 @property(readonly) WKDOMDocument * mainFrameDocument;
@@ -49,12 +49,12 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct OpaqueWKBundlePage { }*)_bundlePageRef;
-- (BOOL)_defersLoading;
+- (bool)_defersLoading;
 - (id)_formDelegate;
 - (id)_remoteObjectRegistry;
-- (void)_setDefersLoading:(BOOL)arg1;
+- (void)_setDefersLoading:(bool)arg1;
 - (void)_setFormDelegate:(id)arg1;
-- (BOOL)_usesNonPersistentWebsiteDataStore;
+- (bool)_usesNonPersistentWebsiteDataStore;
 - (void)dealloc;
 - (id)handle;
 - (id)loadDelegate;

@@ -4,38 +4,38 @@
 
 @interface OADVectorArcPathElement : OADPathElement {
     struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
+        boolisFormulaResult; 
         int value; 
     struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
+        boolisFormulaResult; 
         int value; 
     struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
+        boolisFormulaResult; 
         int value; 
     struct OADAdjustCoord { 
-        BOOL isFormulaResult; 
+        boolisFormulaResult; 
         int value; 
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } x; 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } y; 
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } x; 
         struct OADAdjustCoord { 
-            BOOL isFormulaResult; 
+            boolisFormulaResult; 
             int value; 
         } y; 
+    boolmClockwise;
+    boolmConnectedToPrevious;
     } mBottom;
-    BOOL mClockwise;
-    BOOL mConnectedToPrevious;
     } mEndVector;
     } mLeft;
     } mRight;
@@ -44,14 +44,14 @@
 }
 
 - (id).cxx_construct;
-- (struct OADAdjustCoord { BOOL x1; int x2; })bottom;
-- (BOOL)clockwise;
-- (BOOL)connectedToPrevious;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })endVector;
-- (id)initWithLeft:(struct OADAdjustCoord { BOOL x1; int x2; })arg1 top:(struct OADAdjustCoord { BOOL x1; int x2; })arg2 right:(struct OADAdjustCoord { BOOL x1; int x2; })arg3 bottom:(struct OADAdjustCoord { BOOL x1; int x2; })arg4 startVector:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg5 endVector:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg6 clockwise:(BOOL)arg7 connectedToPrevious:(BOOL)arg8;
-- (struct OADAdjustCoord { BOOL x1; int x2; })left;
-- (struct OADAdjustCoord { BOOL x1; int x2; })right;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })startVector;
-- (struct OADAdjustCoord { BOOL x1; int x2; })top;
+- (struct OADAdjustCoord { boolx1; int x2; })bottom;
+- (bool)clockwise;
+- (bool)connectedToPrevious;
+- (struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })endVector;
+- (id)initWithLeft:(struct OADAdjustCoord { boolx1; int x2; })arg1 top:(struct OADAdjustCoord { boolx1; int x2; })arg2 right:(struct OADAdjustCoord { boolx1; int x2; })arg3 bottom:(struct OADAdjustCoord { boolx1; int x2; })arg4 startVector:(struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })arg5 endVector:(struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })arg6 clockwise:(bool)arg7 connectedToPrevious:(bool)arg8;
+- (struct OADAdjustCoord { boolx1; int x2; })left;
+- (struct OADAdjustCoord { boolx1; int x2; })right;
+- (struct OADAdjustPoint { struct OADAdjustCoord { boolx_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { boolx_2_1_1; int x_2_1_2; } x2; })startVector;
+- (struct OADAdjustCoord { boolx1; int x2; })top;
 
 @end

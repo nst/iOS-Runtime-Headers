@@ -13,10 +13,10 @@
 + (id)showHelp;
 + (id)showHelpWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
+- (bool)_afui_isUsefulUserResultCommand;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setSpeakableText:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)speakableText;

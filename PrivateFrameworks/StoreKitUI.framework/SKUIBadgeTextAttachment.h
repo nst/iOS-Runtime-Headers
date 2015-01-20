@@ -8,12 +8,12 @@
     NSURL *_imageURL;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } badgeSize;
+@property(readonly) struct CGSize { double x1; double x2; } badgeSize;
 @property(readonly) NSURL * imageURL;
 
 - (void).cxx_destruct;
 - (void)_loadImageWithResourceName:(id)arg1 fallbackImage:(id)arg2 styleColor:(id)arg3;
-- (struct CGSize { float x1; float x2; })badgeSize;
+- (struct CGSize { double x1; double x2; })badgeSize;
 - (id)imageURL;
 - (id)initWithViewElement:(id)arg1;
 

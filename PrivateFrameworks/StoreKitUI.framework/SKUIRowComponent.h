@@ -8,33 +8,33 @@
     UIColor *_backgroundColor;
     NSArray *_childComponents;
     NSArray *_columnWidths;
-    int _missingItemCount;
-    int _numberOfColumns;
-    BOOL _shouldAutoFlow;
+    long long _missingItemCount;
+    long long _numberOfColumns;
+    bool_shouldAutoFlow;
 }
 
 @property(readonly) UIColor * backgroundColor;
 @property(readonly) NSArray * childComponents;
 @property(readonly) NSArray * columnWidths;
-@property(readonly) int numberOfColumns;
-@property(readonly) BOOL shouldAutoFlow;
+@property(readonly) long long numberOfColumns;
+@property(readonly) bool shouldAutoFlow;
 @property(readonly) SKUIRowViewElement * viewElement;
 
 - (void).cxx_destruct;
 - (id)_childComponentWithContext:(id)arg1;
-- (BOOL)_isChildMissingItemData:(id)arg1;
+- (bool)_isChildMissingItemData:(id)arg1;
 - (id)_updateWithMissingItems:(id)arg1;
 - (id)backgroundColor;
 - (id)childComponents;
 - (id)columnWidths;
-- (int)componentType;
+- (long long)componentType;
 - (id)description;
-- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateMissingItemIdentifiersFromIndex:(long long)arg1 usingBlock:(id)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithViewElement:(id)arg1;
-- (BOOL)isMissingItemData;
+- (bool)isMissingItemData;
 - (id)metricsElementName;
-- (int)numberOfColumns;
-- (BOOL)shouldAutoFlow;
+- (long long)numberOfColumns;
+- (bool)shouldAutoFlow;
 
 @end

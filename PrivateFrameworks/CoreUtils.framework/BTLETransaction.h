@@ -9,7 +9,7 @@
     NSString *_replyCharacteristic;
     NSData *_replyData;
     CBATTRequest *_request;
-    BOOL _waitingToUpdate;
+    bool_waitingToUpdate;
 }
 
 @property(copy) NSString * identifier;
@@ -18,7 +18,7 @@
 @property CBATTRequest * request;
 @property(readonly) NSString * requestCharacteristic;
 @property(copy) NSData * requestData;
-@property BOOL waitingToUpdate;
+@property bool waitingToUpdate;
 
 - (void)dealloc;
 - (id)identifier;
@@ -32,7 +32,7 @@
 - (void)setReplyData:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setRequestData:(id)arg1;
-- (void)setWaitingToUpdate:(BOOL)arg1;
-- (BOOL)waitingToUpdate;
+- (void)setWaitingToUpdate:(bool)arg1;
+- (bool)waitingToUpdate;
 
 @end

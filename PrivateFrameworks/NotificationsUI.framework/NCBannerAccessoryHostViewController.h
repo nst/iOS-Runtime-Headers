@@ -16,7 +16,7 @@
 
 - (void)_becomeSticky;
 - (void)_dismiss;
-- (void)_setSticky:(BOOL)arg1;
+- (void)_setSticky:(bool)arg1;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 

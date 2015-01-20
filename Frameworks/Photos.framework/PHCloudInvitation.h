@@ -15,7 +15,7 @@
     NSString *_inviteeHashedPersonID;
     NSString *_inviteeLastName;
     NSDate *_inviteeSubscriptionDate;
-    BOOL _isMine;
+    bool_isMine;
 }
 
 @property(readonly) NSString * albumGUID;
@@ -31,20 +31,20 @@
 @property(readonly) NSString * inviteeLastName;
 @property(readonly) NSArray * inviteePhones;
 @property(readonly) NSDate * inviteeSubscriptionDate;
-@property(readonly) BOOL isMine;
+@property(readonly) bool isMine;
 
 + (id)managedEntityName;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)albumGUID;
 - (Class)changeRequestClass;
 - (id)cloudGUID;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (int)invitationState;
 - (id)invitationStateDescription;
 - (int)invitationStateLocal;
-- (id)inviteeDisplayNameIncludingEmail:(BOOL)arg1;
+- (id)inviteeDisplayNameIncludingEmail:(bool)arg1;
 - (id)inviteeEmailKey;
 - (id)inviteeEmails;
 - (id)inviteeFirstName;
@@ -53,6 +53,6 @@
 - (id)inviteeLastName;
 - (id)inviteePhones;
 - (id)inviteeSubscriptionDate;
-- (BOOL)isMine;
+- (bool)isMine;
 
 @end

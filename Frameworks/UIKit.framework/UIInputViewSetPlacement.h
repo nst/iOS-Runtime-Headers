@@ -3,28 +3,28 @@
  */
 
 @interface UIInputViewSetPlacement : NSObject {
-    float _extendedHeight;
+    double _extendedHeight;
 }
 
-@property float extendedHeight;
-@property(readonly) BOOL isInteractive;
-@property(readonly) BOOL isUndocked;
-@property(readonly) BOOL showsInputViews;
-@property(readonly) BOOL showsKeyboard;
+@property double extendedHeight;
+@property(readonly) bool isInteractive;
+@property(readonly) bool isUndocked;
+@property(readonly) bool showsInputViews;
+@property(readonly) bool showsKeyboard;
 
 + (id)placement;
 
-- (BOOL)accessoryViewWillAppear;
-- (float)extendedHeight;
+- (bool)accessoryViewWillAppear;
+- (double)extendedHeight;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
-- (BOOL)inputViewWillAppear;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isInteractive;
-- (BOOL)isUndocked;
-- (unsigned int)notificationsForTransitionToPlacement:(id)arg1;
-- (void)setExtendedHeight:(float)arg1;
-- (BOOL)showsInputViews;
-- (BOOL)showsKeyboard;
+- (bool)inputViewWillAppear;
+- (bool)isEqual:(id)arg1;
+- (bool)isInteractive;
+- (bool)isUndocked;
+- (unsigned long long)notificationsForTransitionToPlacement:(id)arg1;
+- (void)setExtendedHeight:(double)arg1;
+- (bool)showsInputViews;
+- (bool)showsKeyboard;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 
 @end

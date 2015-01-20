@@ -10,8 +10,8 @@
     <_UITextDocumentInterfaceDelegate> *_delegate;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
+@property long long autocapitalizationType;
+@property long long autocorrectionType;
 @property(getter=_controllerOutput,retain) _UIInputViewControllerOutput * controllerOutput;
 @property(getter=_controllerState,retain) _UIInputViewControllerState * controllerState;
 @property(copy,readonly) NSString * debugDescription;
@@ -20,14 +20,14 @@
 @property(readonly) NSString * documentContextAfterInput;
 @property(readonly) NSString * documentContextBeforeInput;
 @property(getter=_documentState,readonly) TIDocumentState * documentState;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) unsigned int hash;
-@property int keyboardAppearance;
+@property bool enablesReturnKeyAutomatically;
+@property(readonly) unsigned long long hash;
+@property long long keyboardAppearance;
 @property(getter=_keyboardOutput,readonly) TIKeyboardOutput * keyboardOutput;
-@property int keyboardType;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
+@property long long keyboardType;
+@property long long returnKeyType;
+@property(getter=isSecureTextEntry) bool secureTextEntry;
+@property long long spellCheckingType;
 @property(readonly) Class superclass;
 @property(getter=_textInputTraits,readonly) TITextInputTraits * textInputTraits;
 
@@ -44,24 +44,24 @@
 - (void)_setShouldDismiss;
 - (id)_textInputTraits;
 - (void)_willPerformOutputOperation;
-- (void)adjustTextPositionByCharacterOffset:(int)arg1;
-- (int)autocapitalizationType;
-- (int)autocorrectionType;
+- (void)adjustTextPositionByCharacterOffset:(long long)arg1;
+- (long long)autocapitalizationType;
+- (long long)autocorrectionType;
 - (void)dealloc;
 - (void)deleteBackward;
 - (id)documentContextAfterInput;
 - (id)documentContextBeforeInput;
-- (BOOL)enablesReturnKeyAutomatically;
-- (BOOL)hasText;
+- (bool)enablesReturnKeyAutomatically;
+- (bool)hasText;
 - (void)insertText:(id)arg1;
-- (BOOL)isSecureTextEntry;
-- (int)keyboardAppearance;
-- (int)keyboardType;
-- (int)returnKeyType;
+- (bool)isSecureTextEntry;
+- (long long)keyboardAppearance;
+- (long long)keyboardType;
+- (long long)returnKeyType;
 - (void)setControllerOutput:(id)arg1;
 - (void)setControllerState:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForwardingInterface:(id)arg1;
-- (int)spellCheckingType;
+- (long long)spellCheckingType;
 
 @end

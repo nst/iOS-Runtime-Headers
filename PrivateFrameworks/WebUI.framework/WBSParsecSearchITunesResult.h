@@ -13,15 +13,15 @@
     double _rating;
     NSString *_ratingText;
     WBSParsecImageRepresentation *_rottenTomatoesGlyph;
-    BOOL _rottenTomatoesInformationOnSecondLine;
     NSString *_rottenTomatoesText;
+    bool_rottenTomatoesInformationOnSecondLine;
 }
 
 @property(readonly) NSString * descriptionFirstLine;
 @property(readonly) NSString * descriptionSecondLine;
 @property(readonly) double rating;
 @property(readonly) NSString * ratingText;
-@property(readonly) BOOL rottenTomatoesInformationOnSecondLine;
+@property(readonly) bool rottenTomatoesInformationOnSecondLine;
 @property(readonly) NSString * rottenTomatoesText;
 
 - (void).cxx_destruct;
@@ -34,7 +34,7 @@
 - (double)rating;
 - (id)ratingText;
 - (id)rottenTomatoesGlyphWithSession:(id)arg1;
-- (BOOL)rottenTomatoesInformationOnSecondLine;
+- (bool)rottenTomatoesInformationOnSecondLine;
 - (id)rottenTomatoesText;
 
 @end

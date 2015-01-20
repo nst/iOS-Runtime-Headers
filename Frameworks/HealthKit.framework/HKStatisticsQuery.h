@@ -10,14 +10,14 @@
 
 @interface HKStatisticsQuery : HKQuery <HKStatisticsQueryClient> {
     id _completionHandler;
-    unsigned int _options;
+    unsigned long long _options;
 }
 
 @property(readonly) id completionHandler;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int options;
+@property(readonly) unsigned long long hash;
+@property unsigned long long options;
 @property(readonly) Class superclass;
 
 + (id)_clientInterfaceProtocol;
@@ -30,8 +30,8 @@
 - (void)_queue_validate;
 - (id)completionHandler;
 - (void)deliverStatistics:(id)arg1 forQuery:(id)arg2;
-- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
-- (unsigned int)options;
-- (void)setOptions:(unsigned int)arg1;
+- (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id)arg4;
+- (unsigned long long)options;
+- (void)setOptions:(unsigned long long)arg1;
 
 @end

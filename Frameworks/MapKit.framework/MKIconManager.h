@@ -5,7 +5,7 @@
 @interface MKIconManager : NSObject {
 }
 
-+ (id)imageForMapItem:(id)arg1 forScale:(float)arg2;
-+ (id)imageForMapItem:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4;
++ (id)imageForMapItem:(id)arg1 forScale:(double)arg2;
++ (id)imageForMapItem:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3 format:(int)arg4;
 
 @end

@@ -6,8 +6,8 @@
 
 @interface SKUICounterViewElement : SKUIViewElement {
     double _changeRatePerSecond;
-    int _counterType;
-    int _dateFormatType;
+    long long _counterType;
+    long long _dateFormatType;
     NSDate *_endDate;
     NSString *_numberFormat;
     long long _startValue;
@@ -17,8 +17,8 @@
 
 @property(readonly) SKUIImageViewElement * backgroundImageElement;
 @property(readonly) double changeRatePerSecond;
-@property(readonly) int counterType;
-@property(readonly) int dateFormatType;
+@property(readonly) long long counterType;
+@property(readonly) long long dateFormatType;
 @property(readonly) NSDate * endDate;
 @property(readonly) NSString * numberFormat;
 @property(readonly) long long startValue;
@@ -29,9 +29,9 @@
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)backgroundImageElement;
 - (double)changeRatePerSecond;
-- (int)counterType;
+- (long long)counterType;
 - (long long)currentNumberValue;
-- (int)dateFormatType;
+- (long long)dateFormatType;
 - (id)endDate;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)numberFormat;

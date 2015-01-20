@@ -5,15 +5,15 @@
 @class UIView;
 
 @interface EKRecurrenceTypeTableViewCell : EKUIConstrainedFontsTableViewCell {
-    BOOL _checked;
     UIView *_checkmarkView;
+    bool_checked;
 }
 
-@property(getter=isChecked) BOOL checked;
+@property(getter=isChecked) bool checked;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isChecked;
-- (void)setChecked:(BOOL)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isChecked;
+- (void)setChecked:(bool)arg1;
 
 @end

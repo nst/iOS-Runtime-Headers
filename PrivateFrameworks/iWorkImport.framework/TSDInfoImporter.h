@@ -22,8 +22,8 @@
 @property(readonly) TSSTheme * theme;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)i_canImportFileAtURL:(id)arg1 type:(id)arg2;
-+ (BOOL)i_canImportFileWithData:(id)arg1 type:(id)arg2;
++ (bool)i_canImportFileAtURL:(id)arg1 type:(id)arg2;
++ (bool)i_canImportFileWithData:(id)arg1 type:(id)arg2;
 + (id)i_supportedFileTypesForSubclass;
 + (Class)p_classForTSPData:(id)arg1;
 + (Class)p_classForURL:(id)arg1;

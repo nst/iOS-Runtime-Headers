@@ -11,7 +11,7 @@
 @property NSMutableDictionary * loadingGroups;
 
 - (void)dealloc;
-- (BOOL)imageNeedsRefresh:(id)arg1;
+- (bool)imageNeedsRefresh:(id)arg1;
 - (void)loadImageForURLString:(id)arg1 reference:(id)arg2 queue:(id)arg3 handler:(id)arg4;
 - (id)loadingGroups;
 - (void)setLoadingGroups:(id)arg1;

@@ -10,16 +10,16 @@
     NSString *_currentSongName;
     float _goal;
     NSString *_goalType;
-    BOOL _hasEverStarted;
-    BOOL _hasPowerSong;
-    int _musicSelection;
+    long long _musicSelection;
     NSString *_powerSongName;
     NSString *_presetGoal;
     NSString *_sensorSearchState;
-    BOOL _shouldControlMusic;
     NSTimer *_updateTimer;
     NSDictionary *_workoutData;
     NSString *_workoutState;
+    bool_hasEverStarted;
+    bool_hasPowerSong;
+    bool_shouldControlMusic;
 }
 
 - (void)_checkinWithServer;
@@ -39,10 +39,10 @@
 - (void)goToNowPlaying;
 - (float)goal;
 - (id)goalType;
-- (BOOL)hasEverStarted;
-- (BOOL)hasPowerSong;
+- (bool)hasEverStarted;
+- (bool)hasPowerSong;
 - (id)init;
-- (int)musicSelection;
+- (long long)musicSelection;
 - (void)pauseMusic;
 - (void)pauseWorkout;
 - (void)playMusic;
@@ -54,7 +54,7 @@
 - (void)selectNextSong;
 - (void)selectPreviousSong;
 - (id)sensorSearchState;
-- (BOOL)shouldControlMusic;
+- (bool)shouldControlMusic;
 - (id)workoutData;
 - (id)workoutState;
 

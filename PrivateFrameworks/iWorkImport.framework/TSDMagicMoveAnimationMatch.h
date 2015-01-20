@@ -5,46 +5,46 @@
 @class NSLock, TSDTextureSet;
 
 @interface TSDMagicMoveAnimationMatch : NSObject {
-    BOOL _didUseMorphTexture;
-    BOOL _hasBeenTornDown;
     TSDTextureSet *_incomingTexture;
-    BOOL _isMorphMatch;
-    BOOL _isTextStyleIdenticalExceptSize;
-    BOOL _isUsingMorphTexture;
     TSDTextureSet *_morphQueuedForDeletionTexture;
     TSDTextureSet *_morphQueuedTexture;
     TSDTextureSet *_morphTexture;
     NSLock *_morphTextureUpdateLock;
     TSDTextureSet *_outgoingTexture;
-    BOOL _shouldDisableTextMorphing;
+    bool_didUseMorphTexture;
+    bool_hasBeenTornDown;
+    bool_isMorphMatch;
+    bool_isTextStyleIdenticalExceptSize;
+    bool_isUsingMorphTexture;
+    bool_shouldDisableTextMorphing;
 }
 
 @property(retain) TSDTextureSet * incomingTexture;
-@property(readonly) BOOL isMatched;
-@property BOOL isMorphMatch;
-@property BOOL isTextStyleIdenticalExceptSize;
+@property(readonly) bool isMatched;
+@property bool isMorphMatch;
+@property bool isTextStyleIdenticalExceptSize;
 @property(retain) TSDTextureSet * outgoingTexture;
-@property BOOL shouldDisableTextMorphing;
+@property bool shouldDisableTextMorphing;
 
 + (id)animationMatch;
-+ (unsigned int)magicMoveMorphTexturesPerSecond;
++ (unsigned long long)magicMoveMorphTexturesPerSecond;
 
 - (void)addMorphTexture:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)incomingTexture;
 - (id)init;
-- (BOOL)isMatched;
-- (BOOL)isMorphMatch;
-- (BOOL)isTextStyleIdenticalExceptSize;
+- (bool)isMatched;
+- (bool)isMorphMatch;
+- (bool)isTextStyleIdenticalExceptSize;
 - (id)lockCurrentMorphTexture;
 - (id)outgoingTexture;
 - (void)setIncomingTexture:(id)arg1;
-- (void)setIsMorphMatch:(BOOL)arg1;
-- (void)setIsTextStyleIdenticalExceptSize:(BOOL)arg1;
+- (void)setIsMorphMatch:(bool)arg1;
+- (void)setIsTextStyleIdenticalExceptSize:(bool)arg1;
 - (void)setOutgoingTexture:(id)arg1;
-- (void)setShouldDisableTextMorphing:(BOOL)arg1;
-- (BOOL)shouldDisableTextMorphing;
+- (void)setShouldDisableTextMorphing:(bool)arg1;
+- (bool)shouldDisableTextMorphing;
 - (void)teardown;
 - (void)unlockCurrentMorphTexture;
 

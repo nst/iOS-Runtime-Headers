@@ -6,17 +6,17 @@
 
 @interface SKUITrackViewElement : SKUIViewElement {
     BOOL _enabled;
-    BOOL _selected;
+    bool_selected;
 }
 
-@property(getter=isSelected,readonly) BOOL selected;
+@property(getter=isSelected,readonly) bool selected;
 @property(readonly) SKUIActionsViewElement * swipeActions;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)enumerateChildrenUsingBlock:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isEnabled;
-- (BOOL)isSelected;
+- (bool)isEnabled;
+- (bool)isSelected;
 - (id)swipeActions;
 
 @end

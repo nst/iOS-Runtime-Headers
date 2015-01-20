@@ -5,18 +5,18 @@
 @class NSString;
 
 @interface IKGridElement : IKCollectionElement {
-    BOOL _paged;
+    bool_paged;
 }
 
-@property(readonly) unsigned int columnCount;
-@property(getter=isPaged,readonly) BOOL paged;
-@property(readonly) unsigned int rowCount;
+@property(readonly) unsigned long long columnCount;
+@property(getter=isPaged,readonly) bool paged;
+@property(readonly) unsigned long long rowCount;
 @property(readonly) NSString * rowHeight;
 
-- (unsigned int)columnCount;
+- (unsigned long long)columnCount;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isPaged;
-- (unsigned int)rowCount;
+- (bool)isPaged;
+- (unsigned long long)rowCount;
 - (id)rowHeight;
 
 @end

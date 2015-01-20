@@ -3,21 +3,21 @@
  */
 
 @interface MusicDownloadAllTableViewCell : MusicTableViewCell {
-    BOOL _downloadAllCellForArtist;
+    bool_downloadAllCellForArtist;
 }
 
-@property(getter=isDownloadAllCellForArtist) BOOL downloadAllCellForArtist;
-@property int downloadableSongCount;
+@property(getter=isDownloadAllCellForArtist) bool downloadAllCellForArtist;
+@property long long downloadableSongCount;
 
 + (Class)contentViewClass;
 
 - (id)_downloadAllCellContentView;
-- (int)downloadableSongCount;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isDownloadAllCellForArtist;
-- (void)setDownloadAllCellForArtist:(BOOL)arg1;
-- (void)setDownloadableSongCount:(int)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (long long)downloadableSongCount;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isDownloadAllCellForArtist;
+- (void)setDownloadAllCellForArtist:(bool)arg1;
+- (void)setDownloadableSongCount:(long long)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -7,8 +7,8 @@
 
 + (id)sharedRadioAdArtworkDataSource;
 
-- (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
-- (id)requestForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (bool)areRepresentationsAvailableForCatalog:(id)arg1;
+- (id)requestForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)supportedSizesForCatalog:(id)arg1;
 
 @end

@@ -9,13 +9,13 @@
 
 @property(retain,readonly) IKTextElement * descriptionText;
 @property(retain,readonly) IKImageElement * image;
-@property(readonly) int separator;
+@property(readonly) long long separator;
 @property(retain,readonly) IKTextElement * subtitle;
 @property(retain,readonly) IKTextElement * title;
 
 - (id)descriptionText;
 - (id)image;
-- (int)separator;
+- (long long)separator;
 - (id)subtitle;
 - (id)title;
 

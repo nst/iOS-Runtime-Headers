@@ -11,13 +11,13 @@
 @interface AXHARemoteMessage : AXHAMessage {
     NSString *_UUID;
     id _ackCompletion;
-    BOOL _isACK;
     id _sendCompletion;
+    bool_isACK;
 }
 
 @property(retain) NSString * UUID;
 @property(copy) id ackCompletion;
-@property BOOL isACK;
+@property bool isACK;
 @property(copy) id sendCompletion;
 
 + (id)messageWithPayload:(id)arg1 sendCompletion:(id)arg2 andAckCompletion:(id)arg3;
@@ -26,10 +26,10 @@
 - (id)ackCompletion;
 - (void)dealloc;
 - (id)initWithPayload:(id)arg1;
-- (BOOL)isACK;
+- (bool)isACK;
 - (id)sendCompletion;
 - (void)setAckCompletion:(id)arg1;
-- (void)setIsACK:(BOOL)arg1;
+- (void)setIsACK:(bool)arg1;
 - (void)setSendCompletion:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (id)transportPayload;

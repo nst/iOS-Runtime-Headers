@@ -5,18 +5,18 @@
 @class NSArray, SKUIImageViewElement;
 
 @interface SKUIBrowseItemViewElement : SKUIItemViewElement {
-    BOOL _expands;
+    bool_expands;
 }
 
 @property(readonly) SKUIImageViewElement * decorationImage;
-@property(readonly) BOOL expands;
+@property(readonly) bool expands;
 @property(readonly) NSArray * metadata;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)decorationImage;
-- (BOOL)expands;
+- (bool)expands;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)metadata;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 
 @end

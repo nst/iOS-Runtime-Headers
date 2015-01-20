@@ -6,32 +6,32 @@
 
 @interface PKPassPaymentFooterView : UIView {
     PKPassPaymentFooterContentView *_contentView;
-    BOOL _isVisible;
     PKPassView *_passView;
-    int _paymentApplicationState;
-    int _state;
+    long long _paymentApplicationState;
+    long long _state;
+    bool_isVisible;
 }
 
 @property(retain) PKPassView * passView;
-@property(readonly) int state;
+@property(readonly) long long state;
 
-- (void)_configureForState:(int)arg1 withPassView:(id)arg2;
+- (void)_configureForState:(long long)arg1 withPassView:(id)arg2;
 - (void)_deleteButtonTapped;
 - (void)_handleEnterBackgroundNotification:(id)arg1;
 - (void)_handleEnterForegroundNotification:(id)arg1;
 - (void)_lostModeButtonTapped;
 - (void)configureForPaymentApplication;
-- (void)configureForState:(int)arg1 withPassView:(id)arg2;
+- (void)configureForState:(long long)arg1 withPassView:(id)arg2;
 - (void)dealloc;
-- (void)didBecomeHiddenAnimated:(BOOL)arg1;
-- (void)didBecomeVisibleAnimated:(BOOL)arg1;
+- (void)didBecomeHiddenAnimated:(bool)arg1;
+- (void)didBecomeVisibleAnimated:(bool)arg1;
 - (id)initWithPassView:(id)arg1;
 - (void)layoutSubviews;
 - (id)passView;
 - (void)setContentView:(id)arg1;
 - (void)setPassView:(id)arg1;
-- (int)state;
-- (void)willBecomeHiddenAnimated:(BOOL)arg1;
-- (void)willBecomeVisibleAnimated:(BOOL)arg1;
+- (long long)state;
+- (void)willBecomeHiddenAnimated:(bool)arg1;
+- (void)willBecomeVisibleAnimated:(bool)arg1;
 
 @end

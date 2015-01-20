@@ -15,6 +15,6 @@
 - (id)destinationFile;
 - (id)initWithURL:(id)arg1 destinationFile:(id)arg2;
 - (void)setDestinationFile:(id)arg1;
-- (BOOL)shouldLogResponseBody;
+- (bool)shouldLogResponseBody;
 
 @end

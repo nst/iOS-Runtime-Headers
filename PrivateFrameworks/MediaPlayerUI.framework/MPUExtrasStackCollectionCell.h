@@ -6,10 +6,10 @@
 
 @interface MPUExtrasStackCollectionCell : UICollectionViewCell {
     NSArray *_fitConstraints;
-    BOOL _needsViewWillAppear;
     MPUExtrasStackTemplateViewController *_parentViewController;
     MPUExtrasGridSectionHeaderStyle *_sectionStyle;
     MPUExtrasGridElementViewController *_viewController;
+    bool_needsViewWillAppear;
 }
 
 @property(retain) MPUExtrasStackTemplateViewController * parentViewController;

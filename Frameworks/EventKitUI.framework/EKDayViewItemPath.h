@@ -3,19 +3,19 @@
  */
 
 @interface EKDayViewItemPath : NSObject <NSCopying> {
-    unsigned int _index;
+    unsigned long long _index;
     int _section;
 }
 
-@property(readonly) unsigned int index;
+@property(readonly) unsigned long long index;
 @property(readonly) int section;
 
-+ (id)itemPathWithIndex:(unsigned int)arg1 inSection:(int)arg2;
++ (id)itemPathWithIndex:(unsigned long long)arg1 inSection:(int)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)index;
-- (id)initWithIndex:(unsigned int)arg1 inSection:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)index;
+- (id)initWithIndex:(unsigned long long)arg1 inSection:(int)arg2;
+- (bool)isEqual:(id)arg1;
 - (int)section;
 
 @end

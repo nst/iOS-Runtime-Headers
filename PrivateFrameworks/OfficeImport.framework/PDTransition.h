@@ -5,12 +5,12 @@
 @class PDTransitionOptions;
 
 @interface PDTransition : OADProperties {
+    boolmHasAdvanceAfterTime;
+    boolmHasAdvanceOnClick;
+    boolmHasSpeed;
+    boolmHasType;
+    boolmIsAdvanceOnClick;
     int mAdvanceAfterTime;
-    BOOL mHasAdvanceAfterTime;
-    BOOL mHasAdvanceOnClick;
-    BOOL mHasSpeed;
-    BOOL mHasType;
-    BOOL mIsAdvanceOnClick;
     PDTransitionOptions *mOptions;
     int mSpeed;
     int mType;
@@ -18,16 +18,16 @@
 
 - (int)advanceAfterTime;
 - (void)dealloc;
-- (BOOL)hasAdvanceAfterTime;
-- (BOOL)hasIsAdvanceOnClick;
-- (BOOL)hasSpeed;
-- (BOOL)hasTransitionOptions;
-- (BOOL)hasType;
+- (bool)hasAdvanceAfterTime;
+- (bool)hasIsAdvanceOnClick;
+- (bool)hasSpeed;
+- (bool)hasTransitionOptions;
+- (bool)hasType;
 - (id)init;
-- (BOOL)isAdvanceOnClick;
+- (bool)isAdvanceOnClick;
 - (id)options;
 - (void)setAdvanceAfterTime:(int)arg1;
-- (void)setIsAdvanceOnClick:(BOOL)arg1;
+- (void)setIsAdvanceOnClick:(bool)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setSpeed:(int)arg1;
 - (void)setType:(int)arg1;

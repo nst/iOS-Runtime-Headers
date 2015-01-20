@@ -5,61 +5,61 @@
 @class NSString;
 
 @interface ATStatus : NSObject <NSSecureCoding> {
-    BOOL _automaticSync;
-    unsigned int _completedAssetCount;
+    unsigned long long _completedAssetCount;
     NSString *_dataClass;
     NSString *_libraryID;
     NSString *_localizedDescription;
     float _progress;
     unsigned int _syncStage;
     unsigned int _syncType;
-    unsigned int _totalAssetCount;
-    unsigned int _totalItemCount;
-    BOOL _wirelessSync;
+    unsigned long long _totalAssetCount;
+    unsigned long long _totalItemCount;
+    bool_automaticSync;
+    bool_wirelessSync;
 }
 
-@property(getter=isAutomaticSync) BOOL automaticSync;
-@property unsigned int completedAssetCount;
+@property(getter=isAutomaticSync) bool automaticSync;
+@property unsigned long long completedAssetCount;
 @property(copy) NSString * dataClass;
 @property(copy) NSString * libraryID;
 @property(copy) NSString * localizedDescription;
 @property float progress;
 @property unsigned int syncStage;
 @property unsigned int syncType;
-@property unsigned int totalAssetCount;
-@property unsigned int totalItemCount;
-@property(getter=isWirelessSync) BOOL wirelessSync;
+@property unsigned long long totalAssetCount;
+@property unsigned long long totalItemCount;
+@property(getter=isWirelessSync) bool wirelessSync;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)completedAssetCount;
+- (unsigned long long)completedAssetCount;
 - (id)dataClass;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryID:(id)arg1 dataClass:(id)arg2;
-- (BOOL)isAutomaticSync;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isWirelessSync;
+- (bool)isAutomaticSync;
+- (bool)isEqual:(id)arg1;
+- (bool)isWirelessSync;
 - (id)libraryID;
 - (id)localizedDescription;
 - (float)progress;
-- (void)setAutomaticSync:(BOOL)arg1;
-- (void)setCompletedAssetCount:(unsigned int)arg1;
+- (void)setAutomaticSync:(bool)arg1;
+- (void)setCompletedAssetCount:(unsigned long long)arg1;
 - (void)setDataClass:(id)arg1;
 - (void)setLibraryID:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setSyncStage:(unsigned int)arg1;
 - (void)setSyncType:(unsigned int)arg1;
-- (void)setTotalAssetCount:(unsigned int)arg1;
-- (void)setTotalItemCount:(unsigned int)arg1;
-- (void)setWirelessSync:(BOOL)arg1;
+- (void)setTotalAssetCount:(unsigned long long)arg1;
+- (void)setTotalItemCount:(unsigned long long)arg1;
+- (void)setWirelessSync:(bool)arg1;
 - (unsigned int)syncStage;
 - (unsigned int)syncType;
-- (unsigned int)totalAssetCount;
-- (unsigned int)totalItemCount;
+- (unsigned long long)totalAssetCount;
+- (unsigned long long)totalItemCount;
 
 @end

@@ -7,21 +7,21 @@
 @interface CPSpacerFinder : NSObject <CPDisposable> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     struct { 
         unsigned int allocatedSize; 
@@ -30,7 +30,7 @@
         struct { /* ? */ } *stats; 
         struct { /* ? */ } **ordered; 
     CPZone *contentZone;
-    struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct { float x_15_1_1; float x_15_1_2; } x15; struct { float x_16_1_1; float x_16_1_2; } x16; struct { float x_17_1_1; float x_17_1_2; } x17; struct { float x_18_1_1; float x_18_1_2; } x18; float x19; float x20; BOOL x21; BOOL x22; BOOL x23; } *qualityEntries;
+    struct { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct { double x_15_1_1; double x_15_1_2; } x15; struct { double x_16_1_1; double x_16_1_2; } x16; struct { double x_17_1_1; double x_17_1_2; } x17; struct { double x_18_1_1; double x_18_1_2; } x18; double x19; double x20; boolx21; boolx22; boolx23; } *qualityEntries;
     unsigned int segmentationCount;
     struct { id x1; unsigned int x2; struct { /* ? */ } *x3; } *segmentations;
     } spacerSequence;

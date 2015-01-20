@@ -9,14 +9,14 @@
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSURL;
 
 @interface LBFSEventsWatcher : NSObject {
-    int _disableCount;
+    long long _disableCount;
     NSObject<OS_dispatch_queue> *_eventQueue;
     NSMutableDictionary *_inodeMap;
     NSOperationQueue *_messageQueue;
-    BOOL _started;
     struct __FSEventStream { } *_streamRef;
     id _updateHandler;
     NSURL *_url;
+    bool_started;
 }
 
 @property(copy) id updateHandler;
@@ -26,9 +26,9 @@
 - (void)disableUpdates;
 - (void)enableUpdates;
 - (id)initWithDirectoryURL:(id)arg1;
-- (id)messageForURL:(id)arg1 inode:(long long)arg2 exists:(BOOL)arg3 flags:(unsigned long)arg4;
-- (void)processEventForPath:(id)arg1 flags:(unsigned long)arg2;
-- (void)scanDirectory:(id)arg1 isGathering:(BOOL)arg2;
+- (id)messageForURL:(id)arg1 inode:(long long)arg2 exists:(bool)arg3 flags:(unsigned int)arg4;
+- (void)processEventForPath:(id)arg1 flags:(unsigned int)arg2;
+- (void)scanDirectory:(id)arg1 isGathering:(bool)arg2;
 - (void)sendMessage:(id)arg1;
 - (void)setUpdateHandler:(id)arg1;
 - (void)start;

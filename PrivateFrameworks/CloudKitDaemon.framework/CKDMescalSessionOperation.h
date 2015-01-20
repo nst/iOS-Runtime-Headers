@@ -17,15 +17,15 @@
 - (void)_handleCertRequestFinished:(id)arg1;
 - (void)_handleDataExchanged:(id)arg1 withError:(id)arg2;
 - (void)_handleSessionRequestFinished:(id)arg1;
-- (BOOL)allowsAnonymousAccount;
+- (bool)allowsAnonymousAccount;
 - (id)flowControlKey;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (id)mescalSession;
-- (BOOL)requiresTokenRegistration;
+- (bool)requiresTokenRegistration;
 - (int)serverVersion;
 - (void)setMescalSession:(id)arg1;
 - (void)setServerVersion:(int)arg1;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

@@ -7,13 +7,13 @@
 @interface UIStoryboardSegueTemplate : NSObject <NSCoding> {
     NSString *_destinationViewControllerIdentifier;
     NSString *_identifier;
-    BOOL _performOnViewLoad;
     NSString *_segueClassName;
     UIViewController *_viewController;
+    bool_performOnViewLoad;
 }
 
 @property(readonly) NSString * identifier;
-@property BOOL performOnViewLoad;
+@property bool performOnViewLoad;
 @property UIViewController * viewController;
 
 - (void)_perform:(id)arg1;
@@ -24,9 +24,9 @@
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (void)perform:(id)arg1;
-- (BOOL)performOnViewLoad;
+- (bool)performOnViewLoad;
 - (id)segueWithDestinationViewController:(id)arg1;
-- (void)setPerformOnViewLoad:(BOOL)arg1;
+- (void)setPerformOnViewLoad:(bool)arg1;
 - (void)setViewController:(id)arg1;
 - (id)viewController;
 

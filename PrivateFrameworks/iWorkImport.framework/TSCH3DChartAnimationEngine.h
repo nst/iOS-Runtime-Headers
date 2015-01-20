@@ -7,14 +7,14 @@
 @interface TSCH3DChartAnimationEngine : NSObject <TSCHUnretainedParent> {
     TSCH3DChartAnimation *mAnimation;
     TSCH3DChartRep *mRep;
-    int mStage;
+    long long mStage;
 }
 
 @property(readonly) TSCH3DChartAnimation * animation;
 @property(retain) Class animationClass;
 @property(readonly) TSCH3DScene * layoutScene;
 @property(readonly) TSCH3DScene * scene;
-@property int stage;
+@property long long stage;
 
 + (id)animationEngineWithRep:(id)arg1;
 
@@ -26,8 +26,8 @@
 - (id)layoutScene;
 - (id)scene;
 - (void)setAnimationClass:(Class)arg1;
-- (void)setStage:(int)arg1;
-- (int)stage;
+- (void)setStage:(long long)arg1;
+- (long long)stage;
 - (void)update:(float)arg1;
 - (void)updateTimings;
 

@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithUsername:(id)arg1 service:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)service;
 - (id)username;
 

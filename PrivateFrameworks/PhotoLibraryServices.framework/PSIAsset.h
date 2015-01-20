@@ -16,7 +16,7 @@
 @property(readonly) struct __CFArray { }* owningCategories;
 @property(setter=setUUID:,copy) NSString * uuid;
 
-- (id)_initForCopy:(BOOL)arg1;
+- (id)_initForCopy:(bool)arg1;
 - (void)addContentString:(id)arg1 category:(short)arg2 owningCategory:(short)arg3;
 - (struct __CFArray { }*)categories;
 - (void)clear;

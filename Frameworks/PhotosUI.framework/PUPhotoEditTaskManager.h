@@ -17,7 +17,7 @@
 - (void)createEditableCopyForReadOnlyPhoto:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (id)pendingSaveRequestForPhoto:(id)arg1;
-- (id)saveEditsForPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(int)arg3 completionHandler:(id)arg4;
-- (id)saveEditsForPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(int)arg3 completionHandler:(id)arg4;
+- (id)saveEditsForPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(long long)arg3 completionHandler:(id)arg4;
+- (id)saveEditsForPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(long long)arg3 completionHandler:(id)arg4;
 
 @end

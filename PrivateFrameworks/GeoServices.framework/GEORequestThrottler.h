@@ -11,7 +11,7 @@
 + (id)sharedThrottler;
 
 - (void)_countryProvidersDidChange:(id)arg1;
-- (BOOL)allowRequest:(unsigned int)arg1 toURL:(id)arg2;
+- (bool)allowRequest:(unsigned int)arg1 toURL:(id)arg2;
 - (void)clear;
 - (void)dealloc;
 - (id)init;

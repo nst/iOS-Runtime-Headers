@@ -3,13 +3,13 @@
  */
 
 @interface TDNamedArtworkProduction : TDSimpleArtworkElementProduction {
-    BOOL _hasCustomDateOfLastChange;
+    bool_hasCustomDateOfLastChange;
 }
 
-@property BOOL hasCustomDateOfLastChange;
+@property bool hasCustomDateOfLastChange;
 
-- (BOOL)hasCustomDateOfLastChange;
+- (bool)hasCustomDateOfLastChange;
 - (void)setDateOfLastChange:(id)arg1;
-- (void)setHasCustomDateOfLastChange:(BOOL)arg1;
+- (void)setHasCustomDateOfLastChange:(bool)arg1;
 
 @end

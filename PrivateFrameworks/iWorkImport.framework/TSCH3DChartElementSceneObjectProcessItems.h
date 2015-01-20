@@ -17,10 +17,10 @@
     TSCH3DChartElementSceneObject *mSceneObject;
 }
 
-@property(readonly) BOOL geometryOnly;
+@property(readonly) bool geometryOnly;
 @property(readonly) TSCH3DRenderProcessor * processor;
-@property(readonly) BOOL pushStates;
-@property(readonly) BOOL useBoundsGeometry;
+@property(readonly) bool pushStates;
+@property(readonly) bool useBoundsGeometry;
 
 + (id)processItemsWithSceneObject:(id)arg1 properties:(id)arg2 pipeline:(id)arg3;
 
@@ -28,16 +28,16 @@
 - (void).cxx_destruct;
 - (void)clearParent;
 - (void)dealloc;
-- (struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; })elementInfoWithSeries:(id)arg1 position:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2;
-- (BOOL)geometryOnly;
+- (struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; boolx5; boolx6; boolx7; boolx8; })elementInfoWithSeries:(id)arg1 position:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2;
+- (bool)geometryOnly;
 - (id)initWithSceneObject:(id)arg1 properties:(id)arg2 pipeline:(id)arg3;
-- (BOOL)p_delayedItemsAreUnique;
+- (bool)p_delayedItemsAreUnique;
 - (void)p_processElementInfoWithSeries:(id)arg1 position:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2;
 - (void)performItemsProcessing;
 - (void)processDelayedItemsWithOpacity:(float)arg1;
 - (void)processItems;
 - (id)processor;
-- (BOOL)pushStates;
-- (BOOL)useBoundsGeometry;
+- (bool)pushStates;
+- (bool)useBoundsGeometry;
 
 @end

@@ -14,7 +14,6 @@
     unsigned int _blocksSize;
     id *_classInfos;
     unsigned int _classInfosCount;
-    BOOL _exactScanningEnabled;
     unsigned long long _maxInteriorOffset;
     id _nodeLogger;
     VMUObjectIdentifier *_objectIdentifier;
@@ -26,14 +25,15 @@
     unsigned int _regionsSize;
     int _scanningMask;
     unsigned int _task;
-    struct _VMUThreadNode { unsigned long long x1; unsigned int x2; unsigned int x3; unsigned int *x4; } *_threads;
+    struct _VMUThreadNode { unsigned long long x1; unsigned int x2; unsigned int x3; unsigned long long *x4; } *_threads;
     unsigned int _threadsCount;
     struct _VMUZoneNode { unsigned long long x1; struct malloc_introspection_t {} *x2; id x3; } *_zones;
     unsigned int _zonesCount;
     unsigned int _zonesSize;
+    bool_exactScanningEnabled;
 }
 
-@property BOOL exactScanningEnabled;
+@property bool exactScanningEnabled;
 @property(readonly) unsigned int mallocNodeCount;
 @property unsigned long long maxInteriorOffset;
 @property(readonly) unsigned int nodeCount;
@@ -43,7 +43,7 @@
 - (void)_fixupBlockIsas;
 - (void)_orderedScanWithScanner:(id)arg1 recorder:(id)arg2 keepMapped:(bool)arg3 actions:(id)arg4;
 - (void)_sortBlocks;
-- (BOOL)_suspend;
+- (bool)_suspend;
 - (void)_withMemoryReaderBlock:(id)arg1;
 - (void)_withOrderedNodeMapper:(id)arg1;
 - (void)_withScanningContext:(id)arg1;
@@ -54,7 +54,7 @@
 - (void)dealloc;
 - (void)detachFromTask;
 - (void)enumerateNodesWithBlock:(id)arg1;
-- (BOOL)exactScanningEnabled;
+- (bool)exactScanningEnabled;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)labelForMallocNode:(unsigned int)arg1;
 - (unsigned int)mallocNodeCount;
@@ -64,12 +64,12 @@
 - (id)nodeDescription:(unsigned int)arg1;
 - (struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
 - (void)orderedNodeTraversal:(int)arg1 withBlock:(id)arg2;
-- (id)referenceDescription:(struct { unsigned long long x1; int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg4 alignmentSpacing:(unsigned int)arg5;
+- (id)referenceDescription:(struct { unsigned long long x1; int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg4 alignmentSpacing:(unsigned int)arg5;
 - (void)removeRootReachableNodes;
 - (void)scanNodesForReferences:(id)arg1;
 - (id)scanNodesIntoGraph;
 - (int)scanningMask;
-- (void)setExactScanningEnabled:(BOOL)arg1;
+- (void)setExactScanningEnabled:(bool)arg1;
 - (void)setMaxInteriorOffset:(unsigned long long)arg1;
 - (void)setNodeScanningLogger:(id)arg1;
 - (void)setReferenceScanningLogger:(id)arg1;

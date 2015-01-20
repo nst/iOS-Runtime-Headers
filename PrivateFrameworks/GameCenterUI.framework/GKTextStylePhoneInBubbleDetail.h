@@ -5,6 +5,6 @@
 @interface GKTextStylePhoneInBubbleDetail : GKTextStylePhone {
 }
 
-+ (float)bubbleTextScale;
++ (double)bubbleTextScale;
 
 @end

@@ -16,29 +16,29 @@
 @property <CKComposeRecipientSelectionControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain,readonly) NSArray * expandedRecipients;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) NSArray * proposedRecipients;
 @property(copy) id sendBlock;
 @property(readonly) Class superclass;
 
 - (void)_updateBackfillForNewRecipients;
 - (void)addRecipient:(id)arg1;
-- (BOOL)alwaysShowSearchResultsTable;
+- (bool)alwaysShowSearchResultsTable;
 - (void)atomizeAndInvokeBlock:(id)arg1;
 - (void)atomizeAndSendTimeoutHandler;
 - (void)dealloc;
 - (id)expandedRecipients;
-- (BOOL)homogenizePreferredServiceForiMessage;
-- (BOOL)peoplePickerShouldUsePopovers;
+- (bool)homogenizePreferredServiceForiMessage;
+- (bool)peoplePickerShouldUsePopovers;
 - (id)proposedRecipients;
 - (void)recipientSelectionControllerDidChange;
 - (void)reset;
-- (BOOL)searchListShouldUsePopvoers;
+- (bool)searchListShouldUsePopvoers;
 - (id)sendBlock;
 - (void)setSendBlock:(id)arg1;
-- (BOOL)shouldAtomizeToConversationName;
-- (BOOL)shouldSuppressSearchResultsTable;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)shouldAtomizeToConversationName;
+- (bool)shouldSuppressSearchResultsTable;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

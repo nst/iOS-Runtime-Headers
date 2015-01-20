@@ -13,22 +13,22 @@
 + (Class)__ck_attachmentItemClass;
 + (void)_cachePowerLevels:(id)arg1 forKey:(id)arg2;
 + (id)_cachedPowerLevelsForKey:(id)arg1;
-+ (id)attachmentSummary:(unsigned int)arg1;
++ (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 
-- (BOOL)canExport;
+- (bool)canExport;
 - (Class)coloredBalloonViewClass;
-- (id)composeWaveformForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (id)composeWaveformForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (void)export:(id)arg1;
-- (id)generatePlaceholderThumbnailForWidth:(float)arg1;
-- (id)generatePreviewFromThumbnail:(id)arg1 width:(float)arg2 orientation:(BOOL)arg3;
-- (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (id)generatePlaceholderThumbnailForWidth:(double)arg1;
+- (id)generatePreviewFromThumbnail:(id)arg1 width:(double)arg2 orientation:(BOOL)arg3;
+- (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (int)mediaType;
 - (id)powerLevels;
 - (id)previewItemTitle;
 - (void)savePreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (void)setPowerLevels:(id)arg1;
-- (id)waveformForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (id)waveformForWidth:(double)arg1 orientation:(BOOL)arg2;
 
 @end

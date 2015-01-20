@@ -9,9 +9,9 @@
 }
 
 @property(retain) AVPlayer * player;
-@property(getter=isReadyForDisplay,readonly) BOOL readyForDisplay;
+@property(getter=isReadyForDisplay,readonly) bool readyForDisplay;
 @property(copy) NSString * videoGravity;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property(readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } videoRect;
 
 + (id)keyPathsForValuesAffectingVideoLayerGravity;
 + (id)keyPathsForValuesAffectingVideoRect;
@@ -19,42 +19,42 @@
 
 - (void)_addAnimationsForClosedCaptionLayer:(id)arg1 gravity:(id)arg2;
 - (void)_addAnimationsForMaskLayer:(id)arg1;
-- (void)_addAnimationsForVideoLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 gravity:(id)arg3;
+- (void)_addAnimationsForVideoLayer:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 gravity:(id)arg3;
 - (id)_closedCaptionLayer;
 - (void)_forBoundsAnimations:(id)arg1 applyBlock:(id)arg2;
-- (struct CGSize { float x1; float x2; })_getAVPlayerCurrentItemPresentationSizeKeyFromPlayer:(id)arg1;
+- (struct CGSize { double x1; double x2; })_getAVPlayerCurrentItemPresentationSizeKeyFromPlayer:(id)arg1;
 - (void)_notifyPlayerOfDisplaySize;
-- (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
-- (void)_setItem:(id)arg1 readyForDisplay:(BOOL)arg2;
+- (void)_setHasPlayerToObserve:(long long)arg1 andShouldObserveIt:(long long)arg2;
+- (void)_setItem:(id)arg1 readyForDisplay:(bool)arg2;
 - (void)_setSubtitleGravity:(id)arg1;
 - (id)_subtitleGravity;
 - (id)_subtitleLayer;
 - (id)_transformToAbsoluteAnimationOfBounds:(id)arg1;
-- (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1 forceUpdate:(BOOL)arg2;
+- (void)_updatePresentationSize:(struct CGSize { double x1; double x2; })arg1 forceUpdate:(bool)arg2;
 - (id)_videoLayer;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_videoRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
-- (BOOL)isOverscanSubtitleSupportEnabled;
-- (BOOL)isReadyForDisplay;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (bool)isOverscanSubtitleSupportEnabled;
+- (bool)isReadyForDisplay;
+- (void)layerDidBecomeVisible:(bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pixelBufferAttributes;
 - (id)player;
 - (void)removeAllAnimations;
 - (void)removeAnimationForKey:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOverscanSubtitleSupportEnabled:(bool)arg1;
 - (void)setPixelBufferAttributes:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setPlayerController:(id)arg1;
 - (void)setVideoGravity:(id)arg1;
-- (void)setVideoLayerGravity:(int)arg1;
+- (void)setVideoLayerGravity:(long long)arg1;
 - (id)videoGravity;
-- (int)videoLayerGravity;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
+- (long long)videoLayerGravity;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoRect;
 
 @end

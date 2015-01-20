@@ -7,9 +7,9 @@
 }
 
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)type;
 
 @end

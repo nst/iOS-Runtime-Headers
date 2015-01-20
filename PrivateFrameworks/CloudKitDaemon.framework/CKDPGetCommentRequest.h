@@ -9,7 +9,7 @@
 }
 
 @property(retain) CKDPIdentifier * commentId;
-@property(readonly) BOOL hasCommentId;
+@property(readonly) bool hasCommentId;
 
 + (id)options;
 
@@ -19,11 +19,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCommentId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCommentId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCommentId:(id)arg1;
 - (void)writeTo:(id)arg1;
 

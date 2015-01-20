@@ -7,13 +7,13 @@
 @interface SKProductInternal : NSObject {
     NSString *_contentVersion;
     NSArray *_downloadContentLengths;
-    BOOL _downloadable;
     NSString *_localeIdentifier;
     NSString *_localizedDescription;
     NSString *_localizedTitle;
     NSDecimalNumber *_price;
     NSLocale *_priceLocale;
     NSString *_productIdentifier;
+    bool_downloadable;
 }
 
 - (void)dealloc;

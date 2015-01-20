@@ -12,7 +12,7 @@
 @property(retain) NSNumber * groupID;
 @property(retain) NSMutableArray * uniqueIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -20,7 +20,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupID;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualToGroup:(id)arg1;
+- (bool)isEqualToGroup:(id)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setUniqueIDs:(id)arg1;
 - (id)uniqueIDs;

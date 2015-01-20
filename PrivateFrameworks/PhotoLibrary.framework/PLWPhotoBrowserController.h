@@ -9,14 +9,14 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (id)initWithAssetCollections:(id)arg1 atImageIndexPath:(id)arg2 dataSource:(id)arg3 modalDoneButtonItem:(id)arg4;
 - (void)loadView;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)wantsPhotoBrowserStyleStatusBar;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (bool)wantsPhotoBrowserStyleStatusBar;
 
 @end

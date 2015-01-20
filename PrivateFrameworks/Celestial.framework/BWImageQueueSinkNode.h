@@ -13,7 +13,7 @@
     unsigned int _imageQueueWidth;
     struct OpaqueFigPreviewSynchronizer { } *_previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> *_previewTapDelegate;
-    BOOL _syncedWithDisplay;
+    bool_syncedWithDisplay;
 }
 
 @property(readonly) struct _CAImageQueue { }* imageQueue;
@@ -26,7 +26,7 @@
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
-- (BOOL)hasNonLiveConfigurationChanges;
+- (bool)hasNonLiveConfigurationChanges;
 - (struct _CAImageQueue { }*)imageQueue;
 - (unsigned int)imageQueueSlot;
 - (id)initWithHFRSupport:(unsigned char)arg1;
@@ -36,7 +36,7 @@
 - (id)previewTapDelegate;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setPreviewTapDelegate:(id)arg1;
-- (void)setSyncedWithDisplay:(BOOL)arg1;
-- (BOOL)syncedWithDisplay;
+- (void)setSyncedWithDisplay:(bool)arg1;
+- (bool)syncedWithDisplay;
 
 @end

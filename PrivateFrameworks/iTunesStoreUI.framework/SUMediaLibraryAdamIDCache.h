@@ -8,7 +8,7 @@
     NSMutableSet *_adamIDs;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _isPopulated;
+    bool_isPopulated;
 }
 
 + (id)sharedCache;

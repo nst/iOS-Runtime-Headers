@@ -7,21 +7,21 @@
 @interface MPLocalMediaQueryRemotePlaybackQueue : MPRemotePlaybackQueue {
     MPMediaItem *_firstItem;
     MPMediaQuery *_mediaQuery;
-    unsigned int _repeatType;
-    unsigned int _shuffleType;
+    unsigned long long _repeatType;
+    unsigned long long _shuffleType;
 }
 
 @property(readonly) MPMediaItem * firstItem;
 @property(readonly) MPMediaQuery * mediaQuery;
-@property(readonly) unsigned int repeatType;
-@property(readonly) unsigned int shuffleType;
+@property(readonly) unsigned long long repeatType;
+@property(readonly) unsigned long long shuffleType;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)firstItem;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 - (id)mediaQuery;
-- (unsigned int)repeatType;
-- (unsigned int)shuffleType;
+- (unsigned long long)repeatType;
+- (unsigned long long)shuffleType;
 
 @end

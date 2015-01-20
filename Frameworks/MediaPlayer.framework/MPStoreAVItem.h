@@ -7,23 +7,23 @@
 @interface MPStoreAVItem : MPAVItem {
     NSString *_aggregateDictionaryItemIdentifier;
     MPMediaItem *_mediaItem;
-    unsigned int _options;
+    unsigned long long _options;
     MPStoreItemContext *_storeItemContext;
 }
 
-@property(readonly) unsigned int options;
+@property(readonly) unsigned long long options;
 
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
-+ (void)setShouldAlwaysAirplayFromCloud:(BOOL)arg1;
++ (void)setShouldAlwaysAirplayFromCloud:(bool)arg1;
 
 - (void).cxx_destruct;
 - (id)aggregateDictionaryItemIdentifier;
-- (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
-- (id)initWithMediaItem:(id)arg1 options:(unsigned int)arg2;
-- (id)initWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3 options:(unsigned int)arg4;
+- (void)applyVolumeNormalizationWithSoundCheckEnabled:(bool)arg1;
+- (id)initWithMediaItem:(id)arg1 options:(unsigned long long)arg2;
+- (id)initWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned long long)arg3 options:(unsigned long long)arg4;
 - (void)loadAssetAndPlayerItem;
 - (id)mediaItem;
-- (unsigned int)options;
-- (unsigned int)type;
+- (unsigned long long)options;
+- (unsigned long long)type;
 
 @end

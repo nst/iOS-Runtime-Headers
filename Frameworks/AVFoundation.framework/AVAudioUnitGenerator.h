@@ -7,15 +7,15 @@
 @interface AVAudioUnitGenerator : AVAudioUnit <AVAudioMixing> {
 }
 
-@property BOOL bypass;
+@property bool bypass;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property float volume;
 
-- (BOOL)bypass;
+- (bool)bypass;
 - (id)initWithAudioComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;
-- (void)setBypass:(BOOL)arg1;
+- (void)setBypass:(bool)arg1;
 
 @end

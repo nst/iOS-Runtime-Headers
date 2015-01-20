@@ -6,7 +6,7 @@
 }
 
 - (id)init;
-- (id)initWithWorkspace:(id)arg1 withCache:(BOOL)arg2;
+- (id)initWithWorkspace:(id)arg1 withCache:(bool)arg2;
 - (id)networkAttachmentsWithId:(id)arg1;
 - (id)networkAttachmentsWithIdInSet:(id)arg1;
 

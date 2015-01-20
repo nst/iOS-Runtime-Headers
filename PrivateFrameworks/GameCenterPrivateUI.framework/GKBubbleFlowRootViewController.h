@@ -6,33 +6,33 @@
 
 @interface GKBubbleFlowRootViewController : GKViewController {
     GKBubbleFlowAnimator *_animator;
-    BOOL _coveringContentUnderneath;
-    BOOL _currentlyAnimatingADismiss;
-    BOOL _showingInterstitial;
+    bool_coveringContentUnderneath;
+    bool_currentlyAnimatingADismiss;
+    bool_showingInterstitial;
 }
 
 @property(retain) GKBubbleFlowAnimator * animator;
-@property(getter=isCoveringContentUnderneath,readonly) BOOL coveringContentUnderneath;
-@property(getter=isCurrentlyAnimatingADismiss) BOOL currentlyAnimatingADismiss;
-@property(getter=isShowingInterstitial) BOOL showingInterstitial;
+@property(getter=isCoveringContentUnderneath,readonly) bool coveringContentUnderneath;
+@property(getter=isCurrentlyAnimatingADismiss) bool currentlyAnimatingADismiss;
+@property(getter=isShowingInterstitial) bool showingInterstitial;
 
-+ (BOOL)_useTwoPartBubbleFlowModalPresentation;
++ (bool)_useTwoPartBubbleFlowModalPresentation;
 + (id)sharedBubbleFlowRootViewController;
 
-- (void)_updateViewAlpha:(float)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)_updateViewAlpha:(double)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (id)animator;
-- (void)clearInterstitialViewAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)clearInterstitialViewAnimated:(bool)arg1 completion:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCoveringContentUnderneath;
-- (BOOL)isCurrentlyAnimatingADismiss;
-- (BOOL)isShowingInterstitial;
-- (void)popAllModalViewControllersAnimated:(BOOL)arg1 completion:(id)arg2;
+- (bool)isCoveringContentUnderneath;
+- (bool)isCurrentlyAnimatingADismiss;
+- (bool)isShowingInterstitial;
+- (void)popAllModalViewControllersAnimated:(bool)arg1 completion:(id)arg2;
 - (id)pseudoModalViewController;
 - (void)setAnimator:(id)arg1;
-- (void)setCurrentlyAnimatingADismiss:(BOOL)arg1;
-- (void)setShowingInterstitial:(BOOL)arg1;
-- (void)showInterstitialViewAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)setCurrentlyAnimatingADismiss:(bool)arg1;
+- (void)setShowingInterstitial:(bool)arg1;
+- (void)showInterstitialViewAnimated:(bool)arg1 completion:(id)arg2;
 - (void)viewDidLoad;
 
 @end

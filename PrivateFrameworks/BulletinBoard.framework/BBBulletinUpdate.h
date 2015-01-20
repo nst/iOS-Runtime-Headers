@@ -6,22 +6,22 @@
 
 @interface BBBulletinUpdate : NSObject <NSSecureCoding> {
     BBBulletin *_bulletin;
-    unsigned int _transactionID;
-    int _updateType;
+    unsigned long long _transactionID;
+    long long _updateType;
 }
 
 @property(retain,readonly) BBBulletin * bulletin;
-@property(readonly) unsigned int transactionID;
-@property(readonly) int updateType;
+@property(readonly) unsigned long long transactionID;
+@property(readonly) long long updateType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)bulletin;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithBulletin:(id)arg1 updateType:(int)arg2 transactionID:(unsigned int)arg3;
+- (id)initWithBulletin:(id)arg1 updateType:(long long)arg2 transactionID:(unsigned long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)transactionID;
-- (int)updateType;
+- (unsigned long long)transactionID;
+- (long long)updateType;
 
 @end

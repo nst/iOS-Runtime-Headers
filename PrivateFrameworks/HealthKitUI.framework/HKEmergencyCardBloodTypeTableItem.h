@@ -13,15 +13,15 @@
 - (id)_cell;
 - (id)_displayCell;
 - (id)_editableCell;
-- (BOOL)canEditRowAtIndex:(int)arg1;
-- (int)commitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
-- (void)didCommitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
-- (int)editingStyleForRowAtIndex:(int)arg1;
-- (BOOL)hasPresentableData;
+- (bool)canEditRowAtIndex:(long long)arg1;
+- (long long)commitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;
+- (void)didCommitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;
+- (long long)editingStyleForRowAtIndex:(long long)arg1;
+- (bool)hasPresentableData;
 - (void)medicalIDEditorCellDidChangeValue:(id)arg1;
-- (BOOL)shouldHighlightRowAtIndex:(int)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
+- (bool)shouldHighlightRowAtIndex:(long long)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 - (id)title;
 
 @end

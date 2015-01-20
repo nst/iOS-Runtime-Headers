@@ -12,8 +12,8 @@
 - (id)colors;
 - (void)dealloc;
 - (id)fills;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithColors:(id)arg1 fills:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

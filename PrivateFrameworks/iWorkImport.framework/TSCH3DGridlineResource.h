@@ -8,14 +8,14 @@
     TSCH3DAxisGridEnumerator *mAxis;
 }
 
-@property(readonly) BOOL enabled;
+@property(readonly) bool enabled;
 @property(readonly) float opacity;
 @property(readonly) TSDStroke * stroke;
 
 + (id)resourceWithAxisEnumerator:(id)arg1;
 
 - (void)dealloc;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)get;
 - (id)initWithAxisEnumerator:(id)arg1;
 - (float)opacity;

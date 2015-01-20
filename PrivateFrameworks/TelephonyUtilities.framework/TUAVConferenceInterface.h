@@ -6,18 +6,18 @@
 
 @interface TUAVConferenceInterface : NSObject <AVConferenceDelegate> {
     NSMutableArray *_activeConferenceConnections;
-    int _callID;
+    long long _callID;
     AVConference *_conference;
     <TUAVConferenceInterfaceDelegate> *_delegate;
-    BOOL _hasActiveConference;
+    bool_hasActiveConference;
 }
 
 @property(retain) NSMutableArray * activeConferenceConnections;
-@property int callID;
+@property long long callID;
 @property(retain) AVConference * conference;
 @property <TUAVConferenceInterfaceDelegate> * delegate;
-@property BOOL hasActiveConference;
-@property(getter=isMuted) BOOL muted;
+@property bool hasActiveConference;
+@property(getter=isMuted) bool muted;
 
 + (id)sharedInstance;
 
@@ -26,43 +26,43 @@
 - (void)_cleanUpConferenceConnection:(id)arg1 error:(id)arg2;
 - (id)_conferenceConnectionForCall:(id)arg1;
 - (void)_setUpDidStartTimeoutForConference:(id)arg1 conferenceConnection:(id)arg2;
-- (BOOL)_shouldIgnoreAVConferenceError:(id)arg1;
+- (bool)_shouldIgnoreAVConferenceError:(id)arg1;
 - (void)_startAudioSession;
 - (void)_startConferenceForConferenceConnection:(id)arg1 withSocket:(int)arg2;
 - (void)_stopAudioSession;
 - (id)activeConferenceConnections;
-- (int)callID;
-- (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
-- (void)conference:(id)arg1 closeConnectionForCallID:(int)arg2;
-- (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
-- (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
-- (void)conference:(id)arg1 inititiateRelayRequest:(int)arg2 requestDict:(id)arg3;
-- (void)conference:(id)arg1 receivedFirstRemoteFrameForCallID:(int)arg2;
-- (void)conference:(id)arg1 remoteAudioPaused:(BOOL)arg2 callID:(int)arg3;
-- (void)conference:(id)arg1 remoteScreenAttributesChanged:(id)arg2 callID:(int)arg3;
-- (void)conference:(id)arg1 remoteVideoAttributesChanged:(id)arg2 callID:(int)arg3;
-- (void)conference:(id)arg1 remoteVideoPaused:(BOOL)arg2 callID:(int)arg3;
-- (void)conference:(id)arg1 sendRelayUpdate:(int)arg2 updateDict:(id)arg3;
+- (long long)callID;
+- (void)conference:(id)arg1 cancelRelayRequest:(long long)arg2 requestDict:(id)arg3;
+- (void)conference:(id)arg1 closeConnectionForCallID:(long long)arg2;
+- (void)conference:(id)arg1 didStartSession:(bool)arg2 withUserInfo:(id)arg3;
+- (void)conference:(id)arg1 didStopWithCallID:(long long)arg2 error:(id)arg3;
+- (void)conference:(id)arg1 inititiateRelayRequest:(long long)arg2 requestDict:(id)arg3;
+- (void)conference:(id)arg1 receivedFirstRemoteFrameForCallID:(long long)arg2;
+- (void)conference:(id)arg1 remoteAudioPaused:(bool)arg2 callID:(long long)arg3;
+- (void)conference:(id)arg1 remoteScreenAttributesChanged:(id)arg2 callID:(long long)arg3;
+- (void)conference:(id)arg1 remoteVideoAttributesChanged:(id)arg2 callID:(long long)arg3;
+- (void)conference:(id)arg1 remoteVideoPaused:(bool)arg2 callID:(long long)arg3;
+- (void)conference:(id)arg1 sendRelayUpdate:(long long)arg2 updateDict:(id)arg3;
 - (void)conference:(id)arg1 updateInputFrequencyLevel:(id)arg2;
 - (void)conference:(id)arg1 updateInputMeterLevel:(float)arg2;
 - (void)conference:(id)arg1 updateOutputFrequencyLevel:(id)arg2;
 - (void)conference:(id)arg1 updateOutputMeterLevel:(float)arg2;
-- (void)conference:(id)arg1 videoQualityNotificationForCallID:(int)arg2 isDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
-- (void)conference:(id)arg1 withCallID:(int)arg2 networkHint:(BOOL)arg3;
-- (void)conference:(id)arg1 withCallID:(int)arg2 remoteMediaStalled:(BOOL)arg3;
+- (void)conference:(id)arg1 videoQualityNotificationForCallID:(long long)arg2 isDegraded:(bool)arg3 isRemote:(bool)arg4;
+- (void)conference:(id)arg1 withCallID:(long long)arg2 networkHint:(bool)arg3;
+- (void)conference:(id)arg1 withCallID:(long long)arg2 remoteMediaStalled:(bool)arg3;
 - (id)conference;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)hasActiveConference;
+- (bool)hasActiveConference;
 - (id)init;
-- (BOOL)isMuted;
+- (bool)isMuted;
 - (void)serverDiedForConference:(id)arg1;
 - (void)setActiveConferenceConnections:(id)arg1;
-- (void)setCallID:(int)arg1;
+- (void)setCallID:(long long)arg1;
 - (void)setConference:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHasActiveConference:(BOOL)arg1;
-- (void)setMuted:(BOOL)arg1;
+- (void)setHasActiveConference:(bool)arg1;
+- (void)setMuted:(bool)arg1;
 - (void)startConferenceForCall:(id)arg1 withSocket:(int)arg2 didStartHandler:(id)arg3 didStopHandler:(id)arg4;
 - (void)stopConferenceForAllCalls;
 - (void)stopConferenceForCall:(id)arg1;

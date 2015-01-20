@@ -12,7 +12,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,7 +23,7 @@
 - (void)messageLinkWasInitialized:(id)arg1;
 - (void)messageLinkWasOpened:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (BOOL)run;
-- (BOOL)stop;
+- (bool)run;
+- (bool)stop;
 
 @end

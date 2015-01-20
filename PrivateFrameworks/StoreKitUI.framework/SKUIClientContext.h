@@ -18,11 +18,11 @@
     NSString *_navigationHistoryPersistenceKey;
     NSString *_purchaseAffiliateIdentifier;
     SKUIURL *_purchaseReferrerURL;
-    int _purchaseURLBagType;
+    long long _purchaseURLBagType;
     IKAppContext *_scriptAppContext;
     NSString *_storeFrontIdentifier;
     SKUIURLBag *_urlBag;
-    int _userInterfaceIdiomOverride;
+    long long _userInterfaceIdiomOverride;
 }
 
 @property(readonly) SSURLBag * URLBag;
@@ -31,7 +31,7 @@
 @property(readonly) SUClientInterface * clientInterface;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * metricsConfigurationIdentifier;
 @property(readonly) NSArray * navigationHistory;
 @property(copy) NSString * navigationHistoryPersistenceKey;
@@ -39,7 +39,7 @@
 @property(copy) SKUIURL * purchaseReferrerURL;
 @property(readonly) NSString * storeFrontIdentifier;
 @property(readonly) Class superclass;
-@property int userInterfaceIdiomOverride;
+@property long long userInterfaceIdiomOverride;
 
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
 + (id)_configurationDictionaryWithBagDictionary:(id)arg1;
@@ -53,7 +53,7 @@
 - (void)_setAdditionalPurchaseParameters:(id)arg1;
 - (void)_setApplicationController:(id)arg1;
 - (void)_setPurchaseAffiliateIdentifier:(id)arg1;
-- (void)_setPurchaseURLBagType:(int)arg1;
+- (void)_setPurchaseURLBagType:(long long)arg1;
 - (void)_setScriptAppContext:(id)arg1;
 - (void)_setValue:(id)arg1 forConfigurationKey:(id)arg2;
 - (void)clientInterface:(id)arg1 dispatchOnPageResponseWithData:(id)arg2 response:(id)arg3;
@@ -83,10 +83,10 @@
 - (void)setMetricsPageContext:(id)arg1 forViewController:(id)arg2;
 - (void)setNavigationHistoryPersistenceKey:(id)arg1;
 - (void)setPurchaseReferrerURL:(id)arg1;
-- (void)setUserInterfaceIdiomOverride:(int)arg1;
+- (void)setUserInterfaceIdiomOverride:(long long)arg1;
 - (id)storeFrontIdentifier;
-- (id)tabBarItemsForStyle:(int)arg1;
-- (int)userInterfaceIdiomOverride;
+- (id)tabBarItemsForStyle:(long long)arg1;
+- (long long)userInterfaceIdiomOverride;
 - (id)valueForConfigurationKey:(id)arg1;
 
 @end

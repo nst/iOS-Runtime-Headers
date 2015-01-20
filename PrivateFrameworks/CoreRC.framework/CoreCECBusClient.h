@@ -5,16 +5,16 @@
 @interface CoreCECBusClient : CoreCECBus {
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)activeSourceHasChangedTo:(id)arg1 fromDevice:(id)arg2;
-- (id)addDeviceWithType:(unsigned int)arg1 error:(id*)arg2;
+- (id)addDeviceWithType:(unsigned long long)arg1 error:(id*)arg2;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergePropertiesFromBus:(id)arg1;
-- (BOOL)setOSDName:(id)arg1 error:(id*)arg2;
-- (BOOL)setTvLanguageCode:(id)arg1 error:(id*)arg2;
+- (bool)setOSDName:(id)arg1 error:(id*)arg2;
+- (bool)setTvLanguageCode:(id)arg1 error:(id*)arg2;
 
 @end

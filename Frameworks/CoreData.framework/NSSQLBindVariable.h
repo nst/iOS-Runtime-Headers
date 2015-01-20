@@ -13,11 +13,11 @@
     id _value;
 }
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (id)attributeDescription;
 - (void)dealloc;
-- (BOOL)hasObjectValue;
+- (bool)hasObjectValue;
 - (unsigned int)index;
 - (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
 - (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned int)arg2;
@@ -25,7 +25,7 @@
 - (long long)int64;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setIndex:(unsigned int)arg1;
 - (void)setInt64:(long long)arg1;
 - (void)setUnsignedInt:(unsigned int)arg1;

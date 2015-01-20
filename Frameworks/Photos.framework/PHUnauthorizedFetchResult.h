@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (id)changeHandlingKey;
 - (id)changeHandlingValue;
-- (int)collectionFetchType;
+- (long long)collectionFetchType;
 - (id)containerIdentifier;
 - (id)description;
 - (id)fetchBlock;
@@ -34,12 +34,12 @@
 - (id)fetchedObjectIDs;
 - (id)fetchedObjects;
 - (void)getMediaTypeCounts;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithOptions:(id)arg1 fetchBlock:(id)arg2;
-- (BOOL)interestedInChange:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)objectIDAtIndex:(unsigned int)arg1;
+- (bool)interestedInChange:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)objectIDAtIndex:(unsigned long long)arg1;
 - (id)objectIDs;
 - (id)objects;
 - (id)options;

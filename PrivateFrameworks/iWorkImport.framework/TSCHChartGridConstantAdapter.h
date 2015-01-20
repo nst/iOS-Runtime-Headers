@@ -5,6 +5,6 @@
 @interface TSCHChartGridConstantAdapter : TSCHChartGridCountAdapter {
 }
 
-- (id)valueAtIndex:(unsigned int)arg1;
+- (id)valueAtIndex:(unsigned long long)arg1;
 
 @end

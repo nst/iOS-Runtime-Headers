@@ -13,19 +13,19 @@
     id _completionBlock;
     NSString *_defaultButtonText;
     double _dismissAfterTimeInterval;
-    BOOL _displayInAppWhitelistModes;
-    BOOL _displayOnLockScreen;
     NSString *_message;
     id _notification;
     NSString *_title;
+    bool_displayInAppWhitelistModes;
+    bool_displayOnLockScreen;
 }
 
 @property(retain) NSString * alternateButtonText;
 @property(copy) id completionBlock;
 @property(retain) NSString * defaultButtonText;
 @property double dismissAfterTimeInterval;
-@property BOOL displayInAppWhitelistModes;
-@property BOOL displayOnLockScreen;
+@property bool displayInAppWhitelistModes;
+@property bool displayOnLockScreen;
 @property(retain) NSString * message;
 @property(retain) id notification;
 @property(retain) NSString * title;
@@ -35,16 +35,16 @@
 - (id)completionBlock;
 - (id)defaultButtonText;
 - (double)dismissAfterTimeInterval;
-- (BOOL)displayInAppWhitelistModes;
-- (BOOL)displayOnLockScreen;
+- (bool)displayInAppWhitelistModes;
+- (bool)displayOnLockScreen;
 - (id)message;
 - (id)notification;
 - (void)setAlternateButtonText:(id)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setDefaultButtonText:(id)arg1;
 - (void)setDismissAfterTimeInterval:(double)arg1;
-- (void)setDisplayInAppWhitelistModes:(BOOL)arg1;
-- (void)setDisplayOnLockScreen:(BOOL)arg1;
+- (void)setDisplayInAppWhitelistModes:(bool)arg1;
+- (void)setDisplayOnLockScreen:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setTitle:(id)arg1;

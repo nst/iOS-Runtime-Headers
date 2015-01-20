@@ -15,13 +15,13 @@
 - (id)description;
 - (id)fontForFontSchemeRef:(id)arg1;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFontSchemeRef:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isFontSchemeRef:(id)arg1;
 - (id)majorFont;
-- (unsigned int)majorFontCount;
+- (unsigned long long)majorFontCount;
 - (id)majorTypefaceForScript:(id)arg1;
 - (id)minorFont;
-- (unsigned int)minorFontCount;
+- (unsigned long long)minorFontCount;
 - (id)minorTypefaceForScript:(id)arg1;
 
 @end

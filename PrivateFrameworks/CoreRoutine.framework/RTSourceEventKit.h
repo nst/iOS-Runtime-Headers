@@ -10,7 +10,7 @@
 
 @property(retain,readonly) NSString * eventIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

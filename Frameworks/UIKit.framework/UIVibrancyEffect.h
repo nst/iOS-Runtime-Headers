@@ -3,18 +3,18 @@
  */
 
 @interface UIVibrancyEffect : UIVisualEffect {
-    int _blurStyle;
+    long long _blurStyle;
 }
 
 + (id)effectForBlurEffect:(id)arg1;
 + (id)notificationCenterVibrancyEffect;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_highQualityEffectConfig;
 - (id)_lowQualityEffectConfig;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
-- (id)effectConfigForQuality:(int)arg1;
+- (id)effectConfigForQuality:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

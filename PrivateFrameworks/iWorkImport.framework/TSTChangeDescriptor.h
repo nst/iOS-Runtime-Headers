@@ -46,7 +46,7 @@
 - (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })expandedRange;
 - (id)expandedRegion;
 - (id)initWithChangeDescriptorType:(int)arg1 andCellRegion:(id)arg2 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 andStrokeRegion:(id)arg4 andReferenceIdentifiers:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)referenceIdentifiers;
 - (void)setExpandedRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)setExpandedRegion:(id)arg1;

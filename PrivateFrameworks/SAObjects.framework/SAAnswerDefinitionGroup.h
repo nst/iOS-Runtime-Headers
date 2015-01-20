@@ -10,7 +10,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(copy) NSArray * definitionEntries;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(copy) NSString * origin;
 @property(copy) NSString * partOfSpeech;
 @property(readonly) Class superclass;

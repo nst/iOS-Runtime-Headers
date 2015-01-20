@@ -10,7 +10,7 @@
 @property(readonly) NSData * data;
 
 + (id)options;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)data;
 - (id)dictionaryRepresentation;
@@ -19,7 +19,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

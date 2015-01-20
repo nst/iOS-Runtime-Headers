@@ -15,9 +15,9 @@
 - (void)_threadedMain;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isCurrentThreadOtherwiseAssert:(BOOL)arg1;
+- (bool)isCurrentThreadOtherwiseAssert:(bool)arg1;
 - (void)performBlock:(id)arg1 afterDelay:(double)arg2;
-- (void)performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)performBlock:(id)arg1 waitUntilDone:(bool)arg2;
 - (void)performBlock:(id)arg1;
 - (id)thread;
 

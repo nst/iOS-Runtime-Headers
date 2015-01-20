@@ -15,7 +15,7 @@
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain,readonly) NSMutableSet * hiddenContexts;
 @property(retain) NSDictionary * realContextHostViewChangedProperties;
 @property(retain) NSDictionary * realContextHostViewOriginalProperties;
@@ -29,7 +29,7 @@
 - (id)realContextHostViewOriginalProperties;
 - (void)setRealContextHostViewChangedProperties:(id)arg1;
 - (void)setRealContextHostViewOriginalProperties:(id)arg1;
-- (void)windowContextManager:(id)arg1 didRepositionContext:(id)arg2 from:(unsigned int)arg3 to:(unsigned int)arg4;
+- (void)windowContextManager:(id)arg1 didRepositionContext:(id)arg2 from:(unsigned long long)arg3 to:(unsigned long long)arg4;
 - (id)wrapperView;
 
 @end

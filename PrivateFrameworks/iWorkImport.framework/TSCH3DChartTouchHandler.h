@@ -5,20 +5,20 @@
 @class TSCH3DChartRep;
 
 @interface TSCH3DChartTouchHandler : NSObject {
-    BOOL mIsActive;
+    boolmIsActive;
     TSCH3DChartRep *mRep;
 }
 
-@property(readonly) BOOL hasChanges;
-@property BOOL isActive;
+@property(readonly) bool hasChanges;
+@property bool isActive;
 
 + (id)handlerWithRep:(id)arg1;
 
 - (void)clearParent;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)initWithRep:(id)arg1;
-- (BOOL)isActive;
-- (void)setIsActive:(BOOL)arg1;
+- (bool)isActive;
+- (void)setIsActive:(bool)arg1;
 - (void)setNeedsDisplay;
 
 @end

@@ -8,18 +8,18 @@
     SEL mCallback;
     id mCallbackTarget;
     OITSUNoCopyDictionary *mData;
-    unsigned int mMax;
+    unsigned long long mMax;
     NSMutableArray *mOrderedKeys;
 }
 
-@property(readonly) unsigned int maxSize;
+@property(readonly) unsigned long long maxSize;
 
 - (id)allKeys;
 - (id)allValues;
 - (void)clearEvictionCallbackTarget;
 - (void)dealloc;
-- (id)initWithMaxSize:(unsigned int)arg1;
-- (unsigned int)maxSize;
+- (id)initWithMaxSize:(unsigned long long)arg1;
+- (unsigned long long)maxSize;
 - (id)objectForKey:(id)arg1;
 - (void)p_removeOldestObject;
 - (void)removeAllObjects;

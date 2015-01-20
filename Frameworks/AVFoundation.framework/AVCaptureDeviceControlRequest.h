@@ -8,12 +8,12 @@
 
 @interface AVCaptureDeviceControlRequest : NSObject {
     id _completionBlock;
-    long _errorCode;
+    int _errorCode;
     int _requestID;
 }
 
 @property(copy,readonly) id completionBlock;
-@property long errorCode;
+@property int errorCode;
 @property(readonly) int requestID;
 
 + (id)deviceControlRequestWithCompletionBlock:(id)arg1;
@@ -21,8 +21,8 @@
 - (id)_initWithCompletionBlock:(id)arg1;
 - (id)completionBlock;
 - (void)dealloc;
-- (long)errorCode;
+- (int)errorCode;
 - (int)requestID;
-- (void)setErrorCode:(long)arg1;
+- (void)setErrorCode:(int)arg1;
 
 @end

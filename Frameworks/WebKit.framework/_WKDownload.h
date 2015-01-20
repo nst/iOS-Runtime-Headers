@@ -12,7 +12,7 @@
 @interface _WKDownload : NSObject <WKObject> {
     struct ObjectStorage<WebKit::DownloadProxy> { 
         struct type { 
-            unsigned char __lx[192]; 
+            unsigned char __lx[264]; 
         } data; 
     struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
@@ -23,7 +23,7 @@
 @property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property WKWebView * originatingWebView;
 @property(readonly) NSURLRequest * request;
 @property(readonly) Class superclass;

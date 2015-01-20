@@ -18,7 +18,7 @@
 @property(copy) NSString * message;
 @property(copy) CKShareID * shareID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

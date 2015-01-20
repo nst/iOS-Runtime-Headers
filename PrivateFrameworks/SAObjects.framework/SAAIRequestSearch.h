@@ -15,7 +15,7 @@
 - (id)acousticIdSearchSessionId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAcousticIdSearchSessionId:(id)arg1;
 
 @end

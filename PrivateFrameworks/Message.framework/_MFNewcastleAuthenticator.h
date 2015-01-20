@@ -6,7 +6,7 @@
 
 @interface _MFNewcastleAuthenticator : MFSASLAuthenticator {
     CastleIMAPAccount *_castleAccount;
-    BOOL _sentResponse;
+    bool_sentResponse;
 }
 
 @property(retain) CastleIMAPAccount * castleAccount;
@@ -14,10 +14,10 @@
 - (id)castleAccount;
 - (void)dealloc;
 - (id)initWithAuthScheme:(id)arg1 account:(id)arg2 connection:(id)arg3;
-- (BOOL)justSentPlainTextPassword;
+- (bool)justSentPlainTextPassword;
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;
 - (void)setCastleAccount:(id)arg1;
-- (BOOL)supportsInitialClientResponse;
+- (bool)supportsInitialClientResponse;
 
 @end

@@ -13,7 +13,7 @@
     int _lastAmount;
     float _lastStrength;
     CIFilter *_maskFilter;
-    BOOL _needsReprocess;
+    bool_needsReprocess;
 }
 
 @property(retain) CIFilter * ciMatrix;

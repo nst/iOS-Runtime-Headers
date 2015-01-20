@@ -8,13 +8,13 @@
     <CPLEngineTransportRemoveLibraryTask> *_removeLibraryTask;
 }
 
-+ (BOOL)shouldCoalesceTasks;
++ (bool)shouldCoalesceTasks;
 + (id)taskIdentifier;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)launch;
-- (unsigned int)priority;
-- (BOOL)shouldStopSyncSession;
+- (unsigned long long)priority;
+- (bool)shouldStopSyncSession;
 
 @end

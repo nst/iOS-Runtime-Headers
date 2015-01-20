@@ -36,7 +36,7 @@
 - (void).cxx_destruct;
 - (void)_dequeueTrimmingControl;
 - (void)_sendDidFinish;
-- (BOOL)_shouldShowVideoTooLongAlertForVideoSource:(id)arg1;
+- (bool)_shouldShowVideoTooLongAlertForVideoSource:(id)arg1;
 - (void)_showTrimViewControllerForSource:(id)arg1;
 - (void)_trimVideoSource:(id)arg1;
 - (id)_videoTooLongAlert;

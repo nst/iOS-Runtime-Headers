@@ -10,8 +10,8 @@
 }
 
 @property(retain) NSString * bundleIdentifier;
-@property(readonly) BOOL hasBundleIdentifier;
-@property(readonly) BOOL hasUserPrivacySettings;
+@property(readonly) bool hasBundleIdentifier;
+@property(readonly) bool hasUserPrivacySettings;
 @property(retain) CKDPUserPrivacySettings * userPrivacySettings;
 
 + (id)options;
@@ -22,12 +22,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBundleIdentifier;
-- (BOOL)hasUserPrivacySettings;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBundleIdentifier;
+- (bool)hasUserPrivacySettings;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setBundleIdentifier:(id)arg1;

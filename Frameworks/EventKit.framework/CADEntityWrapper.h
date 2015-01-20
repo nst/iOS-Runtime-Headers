@@ -5,14 +5,15 @@
 @class EKObjectID, NSArray, NSMutableDictionary;
 
 @interface CADEntityWrapper : NSObject <NSSecureCoding> {
-    void *_entity;
+    int _entityType;
     NSArray *_loadedKeys;
     NSMutableDictionary *_loadedProperties;
     NSArray *_loadedValues;
     EKObjectID *_objectID;
+    int _rowID;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

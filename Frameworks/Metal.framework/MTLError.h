@@ -5,7 +5,7 @@
 @interface MTLError : NSError {
 }
 
-- (id)initWithIOAccelError:(int)arg1;
+- (id)initWithIOAccelError:(long long)arg1;
 - (id)localizedDescription;
 
 @end

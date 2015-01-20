@@ -7,20 +7,20 @@
 @interface RUSeeMoreTableViewCell : RUTableViewCell {
     SKUICircleProgressIndicator *_activityIndicator;
     UILabel *_detailLabel;
-    int _seeMoreState;
+    long long _seeMoreState;
 }
 
-@property int seeMoreState;
+@property long long seeMoreState;
 
-+ (id)_detailLabelFontForSeeMoreState:(int)arg1;
-+ (float)defaultHeightForTraitCollection:(id)arg1;
++ (id)_detailLabelFontForSeeMoreState:(long long)arg1;
++ (double)defaultHeightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updateForChangedState;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (int)seeMoreState;
-- (void)setSeeMoreState:(int)arg1;
+- (long long)seeMoreState;
+- (void)setSeeMoreState:(long long)arg1;
 - (void)tintColorDidChange;
 
 @end

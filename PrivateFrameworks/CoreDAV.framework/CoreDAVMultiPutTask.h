@@ -16,7 +16,7 @@
     NSMutableDictionary *_uuidToErrorItems;
     NSMutableDictionary *_uuidToHREF;
     NSMutableDictionary *_uuidToStatus;
-    BOOL _validCTag;
+    bool_validCTag;
 }
 
 @property(readonly) NSDictionary * hrefToETag;

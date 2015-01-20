@@ -26,7 +26,7 @@
 + (id)dateFromRSSDateString:(id)arg1;
 + (id)feedEntryWithAtomFeedElement:(id)arg1;
 + (id)feedEntryWithRSSFeedElement:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)content;

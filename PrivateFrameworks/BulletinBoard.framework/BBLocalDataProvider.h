@@ -6,11 +6,11 @@
 
 @interface BBLocalDataProvider : BBDataProvider {
     <BBDataProvider> *_dataProvider;
-    BOOL _invalidated;
     NSObject<OS_dispatch_queue> *_localQueue;
     NSObject<OS_dispatch_queue> *_remoteQueue;
-    BOOL _unresponsive;
     NSObject<OS_dispatch_source> *_watchdogTimer;
+    bool_invalidated;
+    bool_unresponsive;
 }
 
 @property(retain) <BBDataProvider> * dataProvider;
@@ -30,7 +30,7 @@
 - (id)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2;
 - (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id)arg3;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
-- (BOOL)canPerformMigration;
+- (bool)canPerformMigration;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
 - (id)dataProvider;
@@ -41,7 +41,7 @@
 - (id)initWithDataProvider:(id)arg1 serverQueue:(id)arg2;
 - (id)initWithPrincipalClass:(Class)arg1 serverQueue:(id)arg2 initializationCompletion:(id)arg3;
 - (void)invalidate;
-- (BOOL)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
+- (bool)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;
 - (void)reloadIdentityWithCompletion:(id)arg1;
 - (void)setDataProvider:(id)arg1;

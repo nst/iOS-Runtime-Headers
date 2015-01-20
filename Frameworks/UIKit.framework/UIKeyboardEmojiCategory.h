@@ -7,23 +7,23 @@
 @interface UIKeyboardEmojiCategory : NSObject {
     int _categoryType;
     NSArray *_emoji;
-    int _lastVisibleFirstEmojiIndex;
+    long long _lastVisibleFirstEmojiIndex;
 }
 
 @property int categoryType;
 @property(getter=displayName,readonly) NSString * displayName;
 @property(getter=displaySymbol,readonly) NSString * displaySymbol;
 @property(retain) NSArray * emoji;
-@property int lastVisibleFirstEmojiIndex;
+@property long long lastVisibleFirstEmojiIndex;
 @property(getter=name,readonly) NSString * name;
 @property(getter=recentDescription,readonly) NSString * recentDescription;
 
 + (id)categories;
 + (id)categoryForType:(int)arg1;
 + (id)emojiRecentsFromPreferences;
-+ (BOOL)hasVariantsForEmoji:(id)arg1;
++ (bool)hasVariantsForEmoji:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
-+ (int)numberOfCategories;
++ (long long)numberOfCategories;
 
 - (int)categoryType;
 - (void)dealloc;
@@ -31,12 +31,12 @@
 - (id)displayName;
 - (id)displaySymbol;
 - (id)emoji;
-- (int)lastVisibleFirstEmojiIndex;
+- (long long)lastVisibleFirstEmojiIndex;
 - (id)name;
 - (id)recentDescription;
 - (void)releaseCategories;
 - (void)setCategoryType:(int)arg1;
 - (void)setEmoji:(id)arg1;
-- (void)setLastVisibleFirstEmojiIndex:(int)arg1;
+- (void)setLastVisibleFirstEmojiIndex:(long long)arg1;
 
 @end

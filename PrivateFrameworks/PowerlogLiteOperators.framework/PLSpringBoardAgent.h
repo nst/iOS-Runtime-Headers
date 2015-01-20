@@ -6,7 +6,6 @@
 
 @interface PLSpringBoardAgent : PLAgent {
     PLAccountingGroup *_appAccountingGroup;
-    BOOL _autoLockIsNil;
     PLNSTimerOperatorComposition *_dailyWallpaperPoll;
     PLEntryNotificationOperatorComposition *_displayOffNotification;
     PLNSNotificationOperatorComposition *_notificationSBAutoLockTimerFiredNotification;
@@ -17,10 +16,11 @@
     PLNSNotificationOperatorComposition *_notificationSBScreenTimeTrackingChanged;
     PLNSNotificationOperatorComposition *_notificationSBWallpaperTrackingChanged;
     NSDictionary *_screenNumberToName;
+    bool_autoLockIsNil;
 }
 
 @property(retain) PLAccountingGroup * appAccountingGroup;
-@property BOOL autoLockIsNil;
+@property bool autoLockIsNil;
 @property(retain) PLNSTimerOperatorComposition * dailyWallpaperPoll;
 @property(retain) PLEntryNotificationOperatorComposition * displayOffNotification;
 @property(readonly) PLNSNotificationOperatorComposition * notificationSBAutoLockTimerFiredNotification;
@@ -48,12 +48,12 @@
 - (void).cxx_destruct;
 - (void)addAccountingEvent:(id)arg1;
 - (id)appAccountingGroup;
-- (BOOL)autoLockIsNil;
+- (bool)autoLockIsNil;
 - (void)closeLastOpenEventAtDate:(id)arg1;
 - (id)dailyWallpaperPoll;
 - (void)dealloc;
 - (id)displayOffNotification;
-- (id)fetchSBWallpaperTypeForHomescreen:(BOOL)arg1;
+- (id)fetchSBWallpaperTypeForHomescreen:(bool)arg1;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
@@ -69,7 +69,7 @@
 - (id)screenLock:(id)arg1;
 - (id)screenNumberToName;
 - (void)setAppAccountingGroup:(id)arg1;
-- (void)setAutoLockIsNil:(BOOL)arg1;
+- (void)setAutoLockIsNil:(bool)arg1;
 - (void)setAutolockAG;
 - (void)setDailyWallpaperPoll:(id)arg1;
 - (void)setDisplayOffNotification:(id)arg1;

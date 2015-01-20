@@ -5,7 +5,7 @@
 @interface GEOMigrator : NSObject {
 }
 
-- (BOOL)_migratePhoneNumberMappingWithError:(id*)arg1;
-- (BOOL)performMigrationWithError:(id*)arg1;
+- (bool)_migratePhoneNumberMappingWithError:(id*)arg1;
+- (bool)performMigrationWithError:(id*)arg1;
 
 @end

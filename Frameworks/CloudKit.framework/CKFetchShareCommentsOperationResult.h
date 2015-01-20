@@ -10,7 +10,7 @@
 
 @property(retain) CKCommentCursor * cursor;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

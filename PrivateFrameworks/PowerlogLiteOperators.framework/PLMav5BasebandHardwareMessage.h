@@ -46,7 +46,7 @@
 - (struct _PLMav5BasebandHWClocksDuration { unsigned int x1[114]; unsigned int x2[95]; }*)clock;
 - (void)formatDurationandCount:(unsigned int)arg1 withCount:(unsigned int)arg2 inString:(id)arg3;
 - (struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; }*)gps_dpo;
-- (id)indexToRAT:(unsigned int)arg1;
+- (id)indexToRAT:(unsigned long long)arg1;
 - (id)initWithData:(id)arg1;
 - (void)logAPPSWithLogger:(id)arg1;
 - (void)logClockWithLogger:(id)arg1;

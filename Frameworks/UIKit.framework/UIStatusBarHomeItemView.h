@@ -5,9 +5,9 @@
 @interface UIStatusBarHomeItemView : UIStatusBarButtonActionItemView {
 }
 
-- (int)buttonType;
+- (long long)buttonType;
 - (id)contentsImage;
-- (float)extraRightPadding;
-- (BOOL)usesAdvancedActions;
+- (double)extraRightPadding;
+- (bool)usesAdvancedActions;
 
 @end

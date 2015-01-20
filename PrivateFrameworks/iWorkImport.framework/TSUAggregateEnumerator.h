@@ -13,7 +13,7 @@
 - (void)addObject:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithFirstObject:(id)arg1 argumentList:(void*)arg2;
+- (id)initWithFirstObject:(id)arg1 argumentList:(char *)arg2;
 - (id)initWithObjects:(id)arg1;
 - (id)nextObject;
 

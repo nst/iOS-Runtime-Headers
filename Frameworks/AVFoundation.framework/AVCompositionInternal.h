@@ -6,17 +6,17 @@
 
 @interface AVCompositionInternal : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     AVAssetInspector *assetInspector;
-    long assetInspectorInitializationOnce;
+    long long assetInspectorInitializationOnce;
     AVAssetInspectorLoader *assetInspectorLoader;
     struct OpaqueFigFormatReader { } *formatReader;
-    long formatReaderInitializationOnce;
+    long long formatReaderInitializationOnce;
     struct OpaqueFigMutableComposition { } *mutableComposition;
     } naturalSize;
     NSMutableArray *tracks;
-    long tracksInitializationOnce;
+    long long tracksInitializationOnce;
 }
 
 @end

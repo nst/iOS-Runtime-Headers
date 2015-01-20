@@ -15,6 +15,6 @@
 - (void)main;
 - (id)recordID;
 - (void)setRecordID:(id)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

@@ -5,9 +5,9 @@
 @interface VKMapAnnotationTrackingCameraController : VKAnnotationTrackingCameraController {
 }
 
-- (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
+- (void)_goToAnnotationAnimated:(bool)arg1 duration:(double)arg2 isInitial:(bool)arg3;
 - (double)_minTrackingCameraDistance;
-- (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
+- (void)_rotateToHeadingAnimated:(bool)arg1 duration:(double)arg2;
 - (double)_zoomLevelForCameraPosition:(struct VKPoint { double x1; double x2; double x3; })arg1;
 
 @end

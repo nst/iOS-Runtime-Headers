@@ -21,7 +21,7 @@
 @property(copy) NSArray * selectedAliases;
 @property(copy) NSString * selectionSummaryText;
 @property(retain) NSMutableDictionary * setupOperations;
-@property(readonly) BOOL shouldShowAliasSelectionUI;
+@property(readonly) bool shouldShowAliasSelectionUI;
 
 + (id)sharedInstance;
 
@@ -29,14 +29,14 @@
 - (id)_appleID;
 - (void)_cleanup;
 - (void)_notifyFailureWithError:(id)arg1;
-- (void)_notifySuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_notifySuccess:(bool)arg1 error:(id)arg2;
 - (void)_notifySuccess;
-- (BOOL)_shouldShowAliasSelectionUI;
+- (bool)_shouldShowAliasSelectionUI;
 - (void)_updateCandidateAliases;
 - (void)_updateSelectionSummaryText;
-- (void)addSetupDictionary:(id)arg1 forService:(int)arg2;
-- (BOOL)aliasIsEnabled:(id)arg1;
-- (BOOL)beginSetupWithCompletionHandler:(id)arg1;
+- (void)addSetupDictionary:(id)arg1 forService:(long long)arg2;
+- (bool)aliasIsEnabled:(id)arg1;
+- (bool)beginSetupWithCompletionHandler:(id)arg1;
 - (id)candidateAliases;
 - (void)dealloc;
 - (id)handler;
@@ -50,7 +50,7 @@
 - (void)setSelectionSummaryText:(id)arg1;
 - (void)setSetupOperations:(id)arg1;
 - (id)setupOperations;
-- (BOOL)shouldShowAliasSelectionUI;
-- (BOOL)showsPhoneNumberDisplayString;
+- (bool)shouldShowAliasSelectionUI;
+- (bool)showsPhoneNumberDisplayString;
 
 @end

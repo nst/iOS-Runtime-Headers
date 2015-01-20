@@ -5,17 +5,17 @@
 @class BRCItemID, BRiWorkSharingInfo, NSArray;
 
 @interface BRCiWorkPublishingOperation : BRCOperation {
-    BOOL _forPublish;
     BRCItemID *_itemID;
-    BOOL _readonly;
     NSArray *_recordIDs;
     BRiWorkSharingInfo *_sharingInfo;
+    bool_forPublish;
+    bool_readonly;
 }
 
 - (void).cxx_destruct;
 - (void)_updateItemAfterShareCompleted;
-- (id)initWithItem:(id)arg1 forPublish:(BOOL)arg2 readonly:(BOOL)arg3;
+- (id)initWithItem:(id)arg1 forPublish:(bool)arg2 readonly:(bool)arg3;
 - (void)main;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

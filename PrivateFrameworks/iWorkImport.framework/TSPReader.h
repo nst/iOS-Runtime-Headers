@@ -12,7 +12,7 @@
                     struct __hash_node<std::__1::pair<long long, TSP::ObjectInfo>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<long long, TSP::ObjectInfo>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<long long, TSP::ObjectInfo>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -23,7 +23,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<long long, TSP::ObjectInfo>, TSP::ObjectIdentifierHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<long long, TSP::ObjectInfo>, std::__1::equal_to<long long>, true> > { 
                 float __first_; 
@@ -51,7 +51,6 @@
     NSObject<OS_dispatch_queue> *_errorQueue;
     TSPFinalizeHandlerQueue *_finalizeHandlerQueue;
     } _flags;
-    BOOL _hasReadFailure;
     NSDictionary *_objectIdentifierToUUIDDictionary;
     } _objectInfoMap;
     NSMapTable *_objects;
@@ -60,6 +59,7 @@
     NSObject<OS_dispatch_queue> *_objectsToModifyQueue;
     } _repeatedReferences;
     NSObject<OS_dispatch_queue> *_unarchiveQueue;
+    bool_hasReadFailure;
 }
 
 @property(readonly) NSObject<OS_dispatch_group> * completionGroup;
@@ -68,14 +68,14 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(readonly) <TSPReaderDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) BOOL didFinishResolvingReferences;
+@property(readonly) bool didFinishResolvingReferences;
 @property(retain) NSError * error;
 @property(readonly) unsigned long long fileFormatVersion;
-@property(readonly) BOOL hasReadFailure;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isCrossAppPaste;
-@property(readonly) BOOL isCrossDocumentPaste;
-@property(readonly) BOOL isFromPasteboard;
+@property(readonly) bool hasReadFailure;
+@property(readonly) unsigned long long hash;
+@property(readonly) bool isCrossAppPaste;
+@property(readonly) bool isCrossDocumentPaste;
+@property(readonly) bool isFromPasteboard;
 @property(readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -89,17 +89,17 @@
 - (id)context;
 - (id)dataForIdentifier:(long long)arg1;
 - (id)delegate;
-- (BOOL)didFinishResolvingReferences;
+- (bool)didFinishResolvingReferences;
 - (void)didUnarchiveObject:(id)arg1 withUnarchiver:(id)arg2;
 - (id)error;
 - (unsigned long long)fileFormatVersion;
-- (BOOL)finishUnarchiving;
-- (BOOL)hasReadFailure;
+- (bool)finishUnarchiving;
+- (bool)hasReadFailure;
 - (id)init;
 - (id)initWithComponent:(id)arg1 finalizeHandlerQueue:(id)arg2 delegate:(id)arg3;
-- (BOOL)isCrossAppPaste;
-- (BOOL)isCrossDocumentPaste;
-- (BOOL)isFromPasteboard;
+- (bool)isCrossAppPaste;
+- (bool)isCrossDocumentPaste;
+- (bool)isFromPasteboard;
 - (long long)modifyObjectTokenForNewObject;
 - (long long)newObjectIdentifier;
 - (id)newObjectUUIDForObject:(id)arg1;
@@ -111,8 +111,8 @@
 - (void)setError:(id)arg1;
 - (void)setObjectDelegatesToContextObjectDelegate;
 - (void)unarchiveObjectWithUnarchiver:(id)arg1;
-- (void)unarchiver:(id)arg1 didReadLazyReference:(id)arg2 isExternal:(BOOL*)arg3;
-- (BOOL)validateObjectIdentifierForObject:(id)arg1;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)unarchiver:(id)arg1 didReadLazyReference:(id)arg2 isExternal:(bool*)arg3;
+- (bool)validateObjectIdentifierForObject:(id)arg1;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(bool)arg2;
 
 @end

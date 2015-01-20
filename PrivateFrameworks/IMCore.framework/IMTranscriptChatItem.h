@@ -12,14 +12,14 @@
 }
 
 @property(readonly) unsigned char attachmentContiguousType;
-@property(getter=isContiguous,readonly) BOOL contiguous;
+@property(getter=isContiguous,readonly) bool contiguous;
 @property(readonly) unsigned char contiguousType;
 @property(copy) NSString * guid;
 
 - (Class)__ck_chatItemClass;
-- (BOOL)_isContiguousLoaded;
+- (bool)_isContiguousLoaded;
 - (void)_setAttachmentContiguousType:(unsigned char)arg1;
-- (void)_setContiguousLoaded:(BOOL)arg1;
+- (void)_setContiguousLoaded:(bool)arg1;
 - (void)_setContiguousType:(unsigned char)arg1;
 - (void)_setGUID:(id)arg1;
 - (unsigned char)attachmentContiguousType;
@@ -28,10 +28,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)guid;
-- (unsigned int)hash;
-- (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
-- (BOOL)isContiguous;
-- (BOOL)isContiguousWithChatItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isAttachmentContiguousWithChatItem:(id)arg1;
+- (bool)isContiguous;
+- (bool)isContiguousWithChatItem:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

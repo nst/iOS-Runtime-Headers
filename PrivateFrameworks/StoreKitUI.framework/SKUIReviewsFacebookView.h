@@ -6,10 +6,10 @@
 
 @interface SKUIReviewsFacebookView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
     } _contentInsets;
@@ -19,31 +19,31 @@
     UIImageView *_logoImageView;
     UIView *_separatorView;
     UILabel *_titleLabel;
-    BOOL _userLiked;
+    bool_userLiked;
 }
 
 @property(retain) SKUIColorScheme * colorScheme;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property(copy) NSArray * friendNames;
 @property(readonly) UIControl * likeToggleButton;
-@property(getter=isUserLiked) BOOL userLiked;
+@property(getter=isUserLiked) bool userLiked;
 
 - (void).cxx_destruct;
-- (id)_composedStringForNames:(id)arg1 userLiked:(BOOL)arg2;
+- (id)_composedStringForNames:(id)arg1 userLiked:(bool)arg2;
 - (void)_reloadFriendNamesLabel;
 - (void)_reloadLikeButtonState;
 - (id)colorScheme;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)friendNames;
 - (id)initWithClientContext:(id)arg1;
-- (BOOL)isUserLiked;
+- (bool)isUserLiked;
 - (void)layoutSubviews;
 - (id)likeToggleButton;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setFriendNames:(id)arg1;
-- (void)setUserLiked:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUserLiked:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -28,7 +28,7 @@
 - (void)_fetchNextAssetPackage;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_finishPackage:(id)arg1 error:(id)arg2;
-- (BOOL)_handleSectionItemFetched:(id)arg1 package:(id)arg2 error:(id*)arg3;
+- (bool)_handleSectionItemFetched:(id)arg1 package:(id)arg2 error:(id*)arg3;
 - (void)cancel;
 - (id)cancelToken;
 - (id)indexSets;

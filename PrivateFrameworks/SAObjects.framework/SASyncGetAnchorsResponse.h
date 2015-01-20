@@ -15,7 +15,7 @@
 - (id)anchors;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAnchors:(id)arg1;
 
 @end

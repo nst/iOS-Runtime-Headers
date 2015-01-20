@@ -9,6 +9,6 @@
 
 - (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
 - (id)name;
-- (BOOL)requiresPassword;
+- (bool)requiresPassword;
 
 @end

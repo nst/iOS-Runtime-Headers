@@ -5,27 +5,27 @@
 @class NSHashTable, NSObject<OS_dispatch_queue>;
 
 @interface ATEnvironmentMonitor : NSObject {
-    BOOL _internetReachable;
-    BOOL _internetReachableViaOnlyWWAN;
     NSHashTable *_observers;
-    BOOL _power;
     unsigned int _powerNotification;
     NSObject<OS_dispatch_queue> *_queue;
     struct __SCNetworkReachability { } *_reachability;
+    bool_internetReachable;
+    bool_internetReachableViaOnlyWWAN;
+    bool_power;
 }
 
-@property(getter=isInternetReachable,readonly) BOOL internetReachable;
-@property(getter=isInternetReachableViaOnlyWWAN,readonly) BOOL internetReachableViaOnlyWWAN;
-@property(getter=hasPower,readonly) BOOL power;
+@property(getter=isInternetReachable,readonly) bool internetReachable;
+@property(getter=isInternetReachableViaOnlyWWAN,readonly) bool internetReachableViaOnlyWWAN;
+@property(getter=hasPower,readonly) bool power;
 
 + (id)sharedMonitor;
 
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1;
-- (BOOL)hasPower;
+- (bool)hasPower;
 - (id)init;
-- (BOOL)isInternetReachable;
-- (BOOL)isInternetReachableViaOnlyWWAN;
+- (bool)isInternetReachable;
+- (bool)isInternetReachableViaOnlyWWAN;
 - (void)removeObserver:(id)arg1;
 - (void)start;
 - (void)stop;

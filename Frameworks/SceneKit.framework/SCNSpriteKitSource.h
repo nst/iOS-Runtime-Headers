@@ -11,7 +11,7 @@
 @property(retain) SKScene * scene;
 
 - (void)dealloc;
-- (BOOL)isOpaque;
+- (bool)isOpaque;
 - (id)scene;
 - (void)setScene:(id)arg1;
 - (id)textureSourceForContext:(void*)arg1;

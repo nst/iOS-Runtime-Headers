@@ -7,6 +7,6 @@
 
 + (id)managedEntityName;
 
-- (BOOL)collectionHasFixedOrder;
+- (bool)collectionHasFixedOrder;
 
 @end

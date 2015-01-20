@@ -9,8 +9,8 @@
     UICollectionView *_collectionView;
     <SKUIDownloadsChildViewControllerDelegate> *_delegate;
     NSArray *_downloads;
-    BOOL _editing;
     _UIContentUnavailableView *_noContentView;
+    bool_editing;
 }
 
 @property(retain) SKUIClientContext * clientContext;
@@ -18,7 +18,7 @@
 @property <SKUIDownloadsChildViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
 @property(retain) NSArray * downloads;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,8 +32,8 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)delegate;
 - (id)downloads;
 - (void)loadView;

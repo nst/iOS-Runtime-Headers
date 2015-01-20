@@ -24,20 +24,20 @@
 + (id)defaultTypes;
 
 - (void)dealloc;
-- (unsigned int)deckControlModeForString:(id)arg1;
-- (unsigned int)deckInfoForString:(id)arg1;
-- (unsigned int)deviceTypeForString:(id)arg1;
+- (unsigned long long)deckControlModeForString:(id)arg1;
+- (unsigned long long)deckInfoForString:(id)arg1;
+- (unsigned long long)deviceTypeForString:(id)arg1;
 - (id)init;
-- (unsigned int)playModeForString:(id)arg1;
-- (unsigned int)requestTypeForString:(id)arg1;
-- (id)stringForDeckControlMode:(unsigned int)arg1;
-- (id)stringForDeckInfo:(unsigned int)arg1;
-- (id)stringForDeviceType:(unsigned int)arg1;
-- (id)stringForPlayMode:(unsigned int)arg1;
-- (id)stringForRequestType:(unsigned int)arg1;
-- (id)stringForSystemAudioStatus:(unsigned int)arg1;
-- (id)stringForUICommand:(unsigned int)arg1;
-- (unsigned int)systemAudioStatusForString:(id)arg1;
-- (unsigned int)uiCommandForString:(id)arg1;
+- (unsigned long long)playModeForString:(id)arg1;
+- (unsigned long long)requestTypeForString:(id)arg1;
+- (id)stringForDeckControlMode:(unsigned long long)arg1;
+- (id)stringForDeckInfo:(unsigned long long)arg1;
+- (id)stringForDeviceType:(unsigned long long)arg1;
+- (id)stringForPlayMode:(unsigned long long)arg1;
+- (id)stringForRequestType:(unsigned long long)arg1;
+- (id)stringForSystemAudioStatus:(unsigned long long)arg1;
+- (id)stringForUICommand:(unsigned long long)arg1;
+- (unsigned long long)systemAudioStatusForString:(id)arg1;
+- (unsigned long long)uiCommandForString:(id)arg1;
 
 @end

@@ -5,30 +5,30 @@
 @class NSDate, NSString;
 
 @interface EKTravelAdvice : NSObject <EKTravelAdvice> {
-    unsigned int _accidentState;
+    unsigned long long _accidentState;
     NSDate *_predictedDepartureTime;
-    unsigned int _trafficLevel;
-    unsigned int _travelState;
+    unsigned long long _trafficLevel;
+    unsigned long long _travelState;
     double _travelStateScore;
 }
 
-@property(readonly) unsigned int accidentState;
+@property(readonly) unsigned long long accidentState;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSDate * predictedDepartureTime;
 @property(readonly) Class superclass;
-@property(readonly) unsigned int trafficLevel;
-@property(readonly) unsigned int travelState;
+@property(readonly) unsigned long long trafficLevel;
+@property(readonly) unsigned long long travelState;
 @property(readonly) double travelStateScore;
 
-- (unsigned int)accidentState;
+- (unsigned long long)accidentState;
 - (void)dealloc;
 - (id)description;
-- (id)initWithTrafficLevel:(unsigned int)arg1 accidentState:(unsigned int)arg2 travelState:(unsigned int)arg3 travelStateScore:(double)arg4 predictedDepartureTime:(id)arg5;
+- (id)initWithTrafficLevel:(unsigned long long)arg1 accidentState:(unsigned long long)arg2 travelState:(unsigned long long)arg3 travelStateScore:(double)arg4 predictedDepartureTime:(id)arg5;
 - (id)predictedDepartureTime;
-- (unsigned int)trafficLevel;
-- (unsigned int)travelState;
+- (unsigned long long)trafficLevel;
+- (unsigned long long)travelState;
 - (double)travelStateScore;
 
 @end

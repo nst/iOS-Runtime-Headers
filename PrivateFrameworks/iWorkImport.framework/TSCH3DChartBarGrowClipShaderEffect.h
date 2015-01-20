@@ -5,24 +5,24 @@
 @class TSCH3DShaderVariable;
 
 @interface TSCH3DChartBarGrowClipShaderEffect : TSCH3DChartClippingShaderEffect {
+    boolmDisableClipping;
+    boolmDisableClippingInitialCap;
+    boolmPositiveOnly;
+    boolmUseCapScaling;
+    boolmUseDiscard;
+    boolmUseXAxis;
     float mCapFudge;
     float mClipFudge;
     float mClipInitialCapFudge;
-    BOOL mDisableClipping;
-    BOOL mDisableClippingInitialCap;
-    BOOL mPositiveOnly;
     TSCH3DShaderVariable *mTimingValue;
-    BOOL mUseCapScaling;
-    BOOL mUseDiscard;
-    BOOL mUseXAxis;
 }
 
 @property float capFudge;
 @property float clipFudge;
-@property BOOL positiveOnly;
-@property BOOL useCapScaling;
-@property BOOL useDiscard;
-@property BOOL useXAxis;
+@property bool positiveOnly;
+@property bool useCapScaling;
+@property bool useDiscard;
+@property bool useXAxis;
 
 + (id)variableClipVertex;
 + (id)variableElementRange;
@@ -34,20 +34,20 @@
 - (float)clipFudge;
 - (id)init;
 - (void)inject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)numberOfClippingValues;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)numberOfClippingValues;
 - (void)p_injectFunctions:(id)arg1;
-- (BOOL)positiveOnly;
+- (bool)positiveOnly;
 - (void)setCapFudge:(float)arg1;
 - (void)setClipFudge:(float)arg1;
-- (void)setPositiveOnly:(BOOL)arg1;
-- (void)setUseCapScaling:(BOOL)arg1;
-- (void)setUseDiscard:(BOOL)arg1;
-- (void)setUseXAxis:(BOOL)arg1;
+- (void)setPositiveOnly:(bool)arg1;
+- (void)setUseCapScaling:(bool)arg1;
+- (void)setUseDiscard:(bool)arg1;
+- (void)setUseXAxis:(bool)arg1;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
-- (BOOL)useCapScaling;
-- (BOOL)useDiscard;
-- (BOOL)useXAxis;
+- (bool)useCapScaling;
+- (bool)useDiscard;
+- (bool)useXAxis;
 - (id)variableClipVertex;
 - (id)variableElementRange;
 - (id)variableInverseBevelInfo;

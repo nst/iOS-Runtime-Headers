@@ -9,10 +9,10 @@
 
 @property(readonly) UIImage * displayImage;
 @property(readonly) NSURL * fileURL;
-@property(getter=isVideo,readonly) BOOL video;
+@property(getter=isVideo,readonly) bool video;
 
 - (id)displayImage;
 - (id)fileURL;
-- (BOOL)isVideo;
+- (bool)isVideo;
 
 @end

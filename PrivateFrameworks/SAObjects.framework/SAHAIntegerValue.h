@@ -5,14 +5,14 @@
 @interface SAHAIntegerValue : SAHAAttributeValue {
 }
 
-@property int value;
+@property long long value;
 
 + (id)integerValue;
 + (id)integerValueWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setValue:(int)arg1;
-- (int)value;
+- (void)setValue:(long long)arg1;
+- (long long)value;
 
 @end

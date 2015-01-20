@@ -8,7 +8,7 @@
     struct OpaqueCMClock { } *_clock;
     NSObject<OS_dispatch_queue> *_emitSamplesDispatchQueue;
     struct opaqueCMFormatDescription { } *_formatDescription;
-    BOOL _running;
+    bool_running;
 }
 
 @property(readonly) struct opaqueCMFormatDescription { }* formatDescription;
@@ -21,7 +21,7 @@
 - (struct opaqueCMFormatDescription { }*)formatDescription;
 - (id)initWithFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 clock:(struct OpaqueCMClock { }*)arg2;
 - (id)nodeSubType;
-- (BOOL)start:(id*)arg1;
-- (BOOL)stop:(id*)arg1;
+- (bool)start:(id*)arg1;
+- (bool)stop:(id*)arg1;
 
 @end

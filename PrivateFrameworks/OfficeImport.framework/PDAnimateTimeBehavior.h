@@ -11,7 +11,7 @@
 - (void)addTimeAnimateValue:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)timeAnimateValueAtIndex:(unsigned int)arg1;
-- (unsigned int)timeAnimateValueCount;
+- (id)timeAnimateValueAtIndex:(unsigned long long)arg1;
+- (unsigned long long)timeAnimateValueCount;
 
 @end

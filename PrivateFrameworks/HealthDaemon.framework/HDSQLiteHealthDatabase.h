@@ -16,12 +16,12 @@
 + (id)virtualFilesystemModule;
 
 - (void).cxx_destruct;
-- (BOOL)attachProtectedDatabaseWithError:(id*)arg1;
+- (bool)attachProtectedDatabaseWithError:(id*)arg1;
 - (void)detachProtectedDatabase;
 - (id)homeDirectoryPath;
 - (id)initWithDatabaseURL:(id)arg1;
 - (id)initWithHomeDirectoryPath:(id)arg1;
-- (BOOL)isProtectedDatabaseAttached;
+- (bool)isProtectedDatabaseAttached;
 - (void)setHomeDirectoryPath:(id)arg1;
 
 @end

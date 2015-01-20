@@ -9,26 +9,26 @@
 @class AVAssetImageGenerator, TSDMovieRep;
 
 @interface TSDMovieTimePropertyTracker : NSObject {
-    BOOL mChangesPosterTime;
+    boolmChangesPosterTime;
+    boolmDidCancel;
+    boolmDynamicVisibleTimeChangeDidBegin;
     id mCommitCompletionHandler;
-    BOOL mDidCancel;
-    BOOL mDynamicVisibleTimeChangeDidBegin;
     AVAssetImageGenerator *mMovieAssetImageGenerator;
     TSDMovieRep *mMovieRep;
-    unsigned int mPendingTimeChangeRequestCount;
+    unsigned long long mPendingTimeChangeRequestCount;
     double mPreciseTime;
     double mRequestedTime;
     int mTimeProperty;
     double mTolerance;
 }
 
-@property(readonly) BOOL changesPosterTime;
+@property(readonly) bool changesPosterTime;
 @property(readonly) double preciseTime;
 @property double requestedTime;
 @property double tolerance;
 
 - (void)cancel;
-- (BOOL)changesPosterTime;
+- (bool)changesPosterTime;
 - (void)commitChangesWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (id)init;

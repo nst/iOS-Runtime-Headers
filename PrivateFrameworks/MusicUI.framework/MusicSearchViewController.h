@@ -7,10 +7,8 @@
 @interface MusicSearchViewController : UIViewController <MusicSearchTableViewDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicatorView;
     NSMapTable *_calculatedHeightByTableViewRelatedClass;
-    BOOL _canShowContinueSearch;
     UIButton *_continueSearchButton;
     <MusicSearchViewControllerDelegate> *_delegate;
-    BOOL _isSearchInProgress;
     UILabel *_loadingLabel;
     UILabel *_noResultsLabel;
     NSMutableArray *_nonEmptySearchDataSources;
@@ -22,12 +20,14 @@
     UIView *_tableViewBackgroundView;
     UIView *_tableViewDimmingView;
     UITapGestureRecognizer *_tapGestureRecognizer;
+    bool_canShowContinueSearch;
+    bool_isSearchInProgress;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property <MusicSearchViewControllerDelegate> * delegate;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) NSString * searchTerm;
 @property(readonly) Class superclass;
 @property(readonly) UITableView * tableView;
@@ -35,9 +35,9 @@
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_continueSearchAction:(id)arg1;
-- (float)_heightForCellConfigurationClass:(Class)arg1 inTableView:(id)arg2;
+- (double)_heightForCellConfigurationClass:(Class)arg1 inTableView:(id)arg2;
 - (void)_invalidateCalculatedHeights;
-- (BOOL)_isSearchInProgress;
+- (bool)_isSearchInProgress;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_musicDefaultsDidChangeNotification:(id)arg1;
 - (id)_newSearchDataSources;
@@ -55,11 +55,11 @@
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)musicSearchTableView:(id)arg1 traitCollectionDidChange:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
-- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (bool)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;
 - (void)searchDisplayControllerDidEndSearch:(id)arg1;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
@@ -68,14 +68,14 @@
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (id)tableView;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

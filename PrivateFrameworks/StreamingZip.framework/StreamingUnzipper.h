@@ -14,9 +14,9 @@
 @property NSXPCConnection * xpcConnection;
 
 - (void).cxx_destruct;
-- (id)_beginNonStreamablePassthroughWithRemainingBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (id)_beginNonStreamablePassthroughWithRemainingBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (void)_setErrorState;
-- (void)_supplyBytes:(const char *)arg1 length:(unsigned int)arg2 withReply:(id)arg3;
+- (void)_supplyBytes:(const char *)arg1 length:(unsigned long long)arg2 withReply:(id)arg3;
 - (void)dealloc;
 - (void)finishStreamWithReply:(id)arg1;
 - (id)init;

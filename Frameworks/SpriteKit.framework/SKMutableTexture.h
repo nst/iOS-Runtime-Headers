@@ -4,24 +4,24 @@
 
 @interface SKMutableTexture : SKTexture {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     struct __IOSurface { } *_ioSurface;
-    BOOL _ioSurfaceBacked;
     void *_pixelData;
-    unsigned long _pixelDataLength;
+    unsigned long long _pixelDataLength;
     int _pixelFormat;
     } _textureSize;
+    bool_ioSurfaceBacked;
 }
 
-+ (id)mutableTextureWithSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)mutableTextureWithSize:(struct CGSize { double x1; double x2; })arg1;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 ioSurfaceBacked:(BOOL)arg2 pixelFormat:(int)arg3;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 pixelFormat:(int)arg2;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 ioSurfaceBacked:(bool)arg2 pixelFormat:(int)arg3;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 pixelFormat:(int)arg2;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)load;
 - (void)modifyPixelDataWithBlock:(id)arg1;
 

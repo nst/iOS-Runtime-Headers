@@ -5,10 +5,10 @@
 @class CLLocation, CLLocationManager;
 
 @interface PUSuggestedSearchNearby : PUSuggestedSearch {
-    BOOL _cancelled;
     CLLocation *_lastLocation;
     CLLocationManager *_locationManager;
-    BOOL _monitoringLocation;
+    bool_cancelled;
+    bool_monitoringLocation;
 }
 
 - (void).cxx_destruct;

@@ -5,9 +5,9 @@
 @interface PLSharingController : NSObject {
 }
 
-+ (BOOL)allowedToModifyEmailAccounts;
-+ (BOOL)canSendEmail;
-+ (BOOL)canUploadHDVideoOverCellular;
++ (bool)allowedToModifyEmailAccounts;
++ (bool)canSendEmail;
++ (bool)canUploadHDVideoOverCellular;
 + (void)copyItemsToPasteboard:(id)arg1;
 + (void)openEmailAccountPrefs;
 

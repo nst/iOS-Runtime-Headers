@@ -17,20 +17,20 @@
     OADGraphicProperties *mGraphicProperties;
     CHDDataValue *mLastCachedName;
     CHDFormula *mName;
-    unsigned int mOrder;
-    unsigned int mStyleIndex;
+    unsigned long long mOrder;
+    unsigned long long mStyleIndex;
     EDCollection *mTrendlinesCollection;
     CHDData *mValueData;
 }
 
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 + (id)seriesWithChart:(id)arg1;
 
-- (unsigned int)categoryCount;
+- (unsigned long long)categoryCount;
 - (id)categoryData;
 - (id)chart;
 - (id)chartType;
@@ -38,7 +38,7 @@
 - (id)dataValuePropertiesCollection;
 - (void)dealloc;
 - (id)defaultDataLabel;
-- (id)defaultSeriesNameForIndex:(unsigned int)arg1;
+- (id)defaultSeriesNameForIndex:(unsigned long long)arg1;
 - (id)errorBarXAxis;
 - (id)errorBarYAxis;
 - (id)graphicProperties;
@@ -48,10 +48,10 @@
 - (bool)isDateTimeFormattingFlag;
 - (bool)isEmpty;
 - (bool)isHidden;
-- (int)key;
+- (long long)key;
 - (id)lastCachedName;
 - (id)name;
-- (unsigned int)order;
+- (unsigned long long)order;
 - (void)setCategoryData:(id)arg1;
 - (void)setChartType:(id)arg1;
 - (void)setDataValuePropertiesCollection:(id)arg1;
@@ -64,12 +64,12 @@
 - (void)setHiddenFlag:(bool)arg1;
 - (void)setLastCachedName:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setOrder:(unsigned int)arg1;
-- (void)setStyleIndex:(unsigned int)arg1;
+- (void)setOrder:(unsigned long long)arg1;
+- (void)setStyleIndex:(unsigned long long)arg1;
 - (void)setTrendlineCollection:(id)arg1;
 - (void)setValueData:(id)arg1;
 - (id)shallowCopy;
-- (unsigned int)styleIndex;
+- (unsigned long long)styleIndex;
 - (id)trendlineCollection;
 - (id)valueData;
 

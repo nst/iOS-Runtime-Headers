@@ -12,18 +12,18 @@
 @property(copy) NSString * detail;
 @property(copy) NSString * identifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)detail;
 - (void)encodeWithCoder:(id)arg1;
 - (id)formattedString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToShippingMethod:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToShippingMethod:(id)arg1;
 - (void)setDetail:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 

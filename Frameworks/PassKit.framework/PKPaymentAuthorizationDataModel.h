@@ -12,7 +12,7 @@
     NSArray *_acceptedPasses;
     CNContact *_billingAddress;
     PKPaymentOptionsDefaults *_defaults;
-    unsigned int _holdPendingUpdatesCount;
+    unsigned long long _holdPendingUpdatesCount;
     NSString *_hostAppLocalizedName;
     NSMutableArray *_items;
     PKPassLibrary *_library;
@@ -36,7 +36,7 @@
 @property(copy,readonly) NSString * debugDescription;
 @property(retain) PKPaymentOptionsDefaults * defaults;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property(readonly) unsigned long long hash;
 @property(retain) NSString * hostAppLocalizedName;
 @property(readonly) NSArray * items;
 @property(retain) PKPassLibrary * library;
@@ -72,8 +72,8 @@
 - (void)endUpdates;
 - (id)hostAppLocalizedName;
 - (id)init;
-- (BOOL)isValidWithError:(id*)arg1;
-- (id)itemForType:(int)arg1;
+- (bool)isValidWithError:(id*)arg1;
+- (id)itemForType:(long long)arg1;
 - (id)items;
 - (id)library;
 - (id)merchantName;
@@ -83,7 +83,7 @@
 - (id)paymentSummaryItems;
 - (id)pendingTransaction;
 - (id)recents;
-- (void)rejectItemWithType:(int)arg1;
+- (void)rejectItemWithType:(long long)arg1;
 - (void)setBillingAddress:(id)arg1;
 - (void)setDefaults:(id)arg1;
 - (void)setHostAppLocalizedName:(id)arg1;

@@ -5,34 +5,34 @@
 @class NSString;
 
 @interface UIStoryboardPresentationSegue : UIStoryboardSegue <UIAdaptivePresentationControllerDelegate> {
-    BOOL _animates;
-    int _modalPresentationStyle;
-    int _modalTransitionStyle;
-    BOOL _useDefaultModalPresentationStyle;
-    BOOL _useDefaultModalTransitionStyle;
+    long long _modalPresentationStyle;
+    long long _modalTransitionStyle;
+    bool_animates;
+    bool_useDefaultModalPresentationStyle;
+    bool_useDefaultModalTransitionStyle;
 }
 
-@property BOOL animates;
+@property bool animates;
 @property(copy,readonly) NSString * debugDescription;
 @property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int modalPresentationStyle;
-@property int modalTransitionStyle;
+@property(readonly) unsigned long long hash;
+@property long long modalPresentationStyle;
+@property long long modalTransitionStyle;
 @property(readonly) Class superclass;
-@property BOOL useDefaultModalPresentationStyle;
-@property BOOL useDefaultModalTransitionStyle;
+@property bool useDefaultModalPresentationStyle;
+@property bool useDefaultModalTransitionStyle;
 
 - (void)_prepare;
-- (BOOL)animates;
-- (int)modalPresentationStyle;
-- (int)modalTransitionStyle;
+- (bool)animates;
+- (long long)modalPresentationStyle;
+- (long long)modalTransitionStyle;
 - (void)perform;
-- (void)setAnimates:(BOOL)arg1;
-- (void)setModalPresentationStyle:(int)arg1;
-- (void)setModalTransitionStyle:(int)arg1;
-- (void)setUseDefaultModalPresentationStyle:(BOOL)arg1;
-- (void)setUseDefaultModalTransitionStyle:(BOOL)arg1;
-- (BOOL)useDefaultModalPresentationStyle;
-- (BOOL)useDefaultModalTransitionStyle;
+- (void)setAnimates:(bool)arg1;
+- (void)setModalPresentationStyle:(long long)arg1;
+- (void)setModalTransitionStyle:(long long)arg1;
+- (void)setUseDefaultModalPresentationStyle:(bool)arg1;
+- (void)setUseDefaultModalTransitionStyle:(bool)arg1;
+- (bool)useDefaultModalPresentationStyle;
+- (bool)useDefaultModalTransitionStyle;
 
 @end

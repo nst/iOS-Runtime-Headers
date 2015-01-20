@@ -11,26 +11,26 @@
 @interface CKDFetchLikesOperation : CKDOperation {
     NSArray *_likeIDsToFetch;
     id _likesFetchedProgressBlock;
-    unsigned int _resultsLimit;
+    unsigned long long _resultsLimit;
     CKShareID *_shareID;
 }
 
 @property(retain) NSArray * likeIDsToFetch;
 @property(copy) id likesFetchedProgressBlock;
-@property unsigned int resultsLimit;
+@property unsigned long long resultsLimit;
 @property(retain) CKShareID * shareID;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (void)_handleLikesFetched:(id)arg1 count:(unsigned int)arg2 likes:(id)arg3 response:(id)arg4;
+- (void)_handleLikesFetched:(id)arg1 count:(unsigned long long)arg2 likes:(id)arg3 response:(id)arg4;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (id)likeIDsToFetch;
 - (id)likesFetchedProgressBlock;
 - (void)main;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setLikeIDsToFetch:(id)arg1;
 - (void)setLikesFetchedProgressBlock:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
 

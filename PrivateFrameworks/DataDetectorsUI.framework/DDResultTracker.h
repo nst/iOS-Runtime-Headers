@@ -8,27 +8,27 @@
     boolsortByProximity;
     unsigned int countRemainingByCategory[6];
     struct __DDResult { } *existingAddressResult;
-    unsigned int maximumDistance;
-    unsigned int maximumDistanceForEmails;
+    unsigned long long maximumDistance;
+    unsigned long long maximumDistanceForEmails;
     struct __DDResult { } *referenceResult;
-    unsigned int referenceResultLocation;
+    unsigned long long referenceResultLocation;
     NSMutableArray *resultsAfter;
     NSMutableArray *resultsBefore;
     unsigned int totalCountRemaining;
 }
 
-@property unsigned int maximumDistance;
-@property unsigned int maximumDistanceForEmails;
+@property unsigned long long maximumDistance;
+@property unsigned long long maximumDistanceForEmails;
 @property(readonly) unsigned int totalCountRemaining;
 
-- (BOOL)addResultIfAppropriate:(struct __DDResult { }*)arg1;
+- (bool)addResultIfAppropriate:(struct __DDResult { }*)arg1;
 - (void)dealloc;
 - (id)initWithReferenceResult:(struct __DDResult { }*)arg1;
-- (unsigned int)maximumDistance;
-- (unsigned int)maximumDistanceForEmails;
+- (unsigned long long)maximumDistance;
+- (unsigned long long)maximumDistanceForEmails;
 - (id)results;
-- (void)setMaximumDistance:(unsigned int)arg1;
-- (void)setMaximumDistanceForEmails:(unsigned int)arg1;
+- (void)setMaximumDistance:(unsigned long long)arg1;
+- (void)setMaximumDistanceForEmails:(unsigned long long)arg1;
 - (unsigned int)totalCountRemaining;
 
 @end

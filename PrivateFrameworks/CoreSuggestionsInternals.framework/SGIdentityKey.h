@@ -6,14 +6,14 @@
 
 @interface SGIdentityKey : NSObject <NSCopying> {
     NSString *_content;
-    unsigned int _type;
+    unsigned long long _type;
 }
 
 @property(readonly) NSString * externalId;
-@property(readonly) unsigned int type;
+@property(readonly) unsigned long long type;
 
-+ (unsigned int)identityTypeForKeyPart:(id)arg1;
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (unsigned long long)identityTypeForKeyPart:(id)arg1;
++ (bool)isSupportedEntityType:(long long)arg1;
 + (id)keyForContactExternalId:(int)arg1;
 + (id)keyForEmail:(id)arg1;
 + (id)keyForNormalizedEmail:(id)arg1;
@@ -23,14 +23,14 @@
 - (id)description;
 - (id)emailAddress;
 - (id)externalId;
-- (BOOL)hasEmailAddress;
-- (unsigned int)hash;
+- (bool)hasEmailAddress;
+- (unsigned long long)hash;
 - (id)identityKey;
 - (id)initWithSerialized:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 content:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToIdentityKey:(id)arg1;
+- (id)initWithType:(unsigned long long)arg1 content:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToIdentityKey:(id)arg1;
 - (id)serialize;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

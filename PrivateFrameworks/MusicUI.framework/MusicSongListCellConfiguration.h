@@ -5,12 +5,12 @@
 @interface MusicSongListCellConfiguration : MusicSongCellConfiguration {
 }
 
-+ (BOOL)_showsArtwork;
-+ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;
-+ (BOOL)mediaCellConfigurationUsesSubtitle;
++ (bool)_showsArtwork;
++ (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned long long)arg4 animated:(bool)arg5;
++ (bool)mediaCellConfigurationUsesSubtitle;
 + (id)mediaEntityPropertiesToFetch;
 + (id)reuseIdentifier;
 + (Class)tableViewCellClass;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tableViewSeparatorInset;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tableViewSeparatorInset;
 
 @end

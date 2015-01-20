@@ -18,7 +18,7 @@
 @property(retain) NSString * maskedApplicationID;
 @property(retain) NSString * statusText;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -26,7 +26,7 @@
 - (id)imageData;
 - (id)inReplyToStatusID;
 - (id)initWithCoder:(id)arg1;
-- (void)loadAssetDataIfNecessaryWithMaxByteSize:(unsigned int)arg1 completion:(id)arg2;
+- (void)loadAssetDataIfNecessaryWithMaxByteSize:(unsigned long long)arg1 completion:(id)arg2;
 - (id)maskedApplicationID;
 - (void)setImageAssetURLs:(id)arg1;
 - (void)setImageData:(id)arg1;

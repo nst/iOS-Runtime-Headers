@@ -6,30 +6,30 @@
 
 @interface DataClassMigrator : NSObject {
     NSDictionary *_context;
-    BOOL _didUpgrade;
+    bool_didUpgrade;
 }
 
 @property(retain) NSDictionary * context;
-@property(readonly) BOOL didMigrateBackupFromDifferentDevice;
-@property(readonly) BOOL didRestoreFromBackup;
-@property(readonly) BOOL didRestoreFromCloudBackup;
-@property BOOL didUpgrade;
-@property(readonly) BOOL shouldPreserveSettingsAfterRestore;
-@property(readonly) BOOL wasPasscodeSetInBackup;
+@property(readonly) bool didMigrateBackupFromDifferentDevice;
+@property(readonly) bool didRestoreFromBackup;
+@property(readonly) bool didRestoreFromCloudBackup;
+@property bool didUpgrade;
+@property(readonly) bool shouldPreserveSettingsAfterRestore;
+@property(readonly) bool wasPasscodeSetInBackup;
 
 - (void).cxx_destruct;
 - (id)context;
 - (id)dataClassName;
-- (BOOL)didMigrateBackupFromDifferentDevice;
-- (BOOL)didRestoreFromBackup;
-- (BOOL)didRestoreFromCloudBackup;
-- (BOOL)didUpgrade;
+- (bool)didMigrateBackupFromDifferentDevice;
+- (bool)didRestoreFromBackup;
+- (bool)didRestoreFromCloudBackup;
+- (bool)didUpgrade;
 - (float)estimatedDuration;
 - (float)migrationProgress;
-- (BOOL)performMigration;
+- (bool)performMigration;
 - (void)setContext:(id)arg1;
-- (void)setDidUpgrade:(BOOL)arg1;
-- (BOOL)shouldPreserveSettingsAfterRestore;
-- (BOOL)wasPasscodeSetInBackup;
+- (void)setDidUpgrade:(bool)arg1;
+- (bool)shouldPreserveSettingsAfterRestore;
+- (bool)wasPasscodeSetInBackup;
 
 @end

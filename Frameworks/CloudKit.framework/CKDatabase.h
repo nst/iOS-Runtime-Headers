@@ -7,18 +7,18 @@
 @interface CKDatabase : NSObject {
     CKContainer *_container;
     NSOperationQueue *_operationQueue;
-    int _scope;
+    long long _scope;
     int _statusReportToken;
 }
 
 @property CKContainer * container;
 @property(readonly) NSOperationQueue * operationQueue;
-@property int scope;
+@property long long scope;
 @property int statusReportToken;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (id)_initWithContainer:(id)arg1 scope:(int)arg2;
+- (id)_initWithContainer:(id)arg1 scope:(long long)arg2;
 - (void)_scheduleOperation:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (void)clearAssetCache;
@@ -43,9 +43,9 @@
 - (void)saveRecord:(id)arg1 completionHandler:(id)arg2;
 - (void)saveRecordZone:(id)arg1 completionHandler:(id)arg2;
 - (void)saveSubscription:(id)arg1 completionHandler:(id)arg2;
-- (int)scope;
+- (long long)scope;
 - (void)setContainer:(id)arg1;
-- (void)setScope:(int)arg1;
+- (void)setScope:(long long)arg1;
 - (void)setStatusReportToken:(int)arg1;
 - (id)statusReport;
 - (int)statusReportToken;

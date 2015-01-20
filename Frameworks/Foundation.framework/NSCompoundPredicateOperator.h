@@ -10,8 +10,8 @@
 + (id)orPredicateOperator;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2 substitutionVariables:(id)arg3;
-- (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2;
+- (bool)evaluatePredicates:(id)arg1 withObject:(id)arg2 substitutionVariables:(id)arg3;
+- (bool)evaluatePredicates:(id)arg1 withObject:(id)arg2;
 - (id)minimalFormInContext:(id)arg1 ofPredicates:(id)arg2;
 - (id)predicateFormat;
 - (id)symbol;
